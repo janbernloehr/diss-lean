@@ -32,7 +32,11 @@ one common open simply connected complex domain extends the actual original
 real solutions, with all roots in the original disks on suitable local
 source neighborhoods. A verified counterexample corrects the subsequent
 source-only estimate when roots vary independently; the joint estimate
-provides the required control. Lemma 12.11 is the next source statement.
+provides the required control. Lemma 12.11 now gives the literal diagonal
+normalization 2π on that unchanged W and for every original cycle, via
+original equation zeros, finite contour decomposition, and the exterior
+limit. Both individual sine asymptotics have a corrected minus sign;
+the quotient and final normalization are unchanged. Lemma 12.12 is next.
 
 Proposition 12.9 now gives the unique global real analytic solution of the
 original equation on the projected original domain, with exact gap placement,
@@ -944,3 +948,62 @@ constructs the required original family at each real source.
 | [SourcePsiOriginalAtlasPlacement](../NLS/ZakharovShabat/SourcePsiOriginalAtlasPlacement.lean) | Compact gap-product margin, all-index original disk placement, and source restriction |
 | [SourceLemma12_10](../NLS/ZakharovShabat/SourceLemma12_10.lean) | One analytic extension of the actual original real solutions, original equation, local families, and retained Theorem 12.1 |
 | [SourcePsiOriginalSourceOnlyCounterexample](../NLS/ZakharovShabat/SourcePsiOriginalSourceOnlyCounterexample.lean) | Arbitrarily small root variation at fixed source refutes full and deleted source-only bounds |
+
+## Lemma 12.11: original diagonal normalization
+
+`SourceLemma12_10Data.lemma12_11` proves the literal diagonal integral
+2π for every complex source in the same common W, for every finite
+1<p<∞ and every signed index. Both W₀ and W and all root maps are
+unchanged. Every admissible original circle has this value; every
+original piecewise C¹ circuit has 2π times its winding, hence 2π for
+the source's positive cycles. Original period circles are constructed
+at every source, including complex sources.
+
+The proof follows the source's contour argument. The actual original
+equation makes each retained period zero. Nested circles with disjoint
+analytic collars are constructed inside any supplied original disk
+family. Their exact free tail gives finite-hole geometry at all large
+half-integer cutoffs. The outer contour therefore equals the omitted
+original period, and the actual exterior limit fixes its value. This
+argument does not use the retained Theorem 12.1 diagonal-period field.
+
+The literal full standard-root quotient is an unconditional product,
+including vanishing numerator factors. Filling the omitted coordinate
+with the moving midpoint gives the printed pole formula. The product
+tends uniformly to one on the outer circles, for arbitrary ℓᵖ numerator
+roots and complex sources.
+
+The two individual sine asymptotics on printed p. 70 need a minus sign.
+With π₀=1, both underlying products have leading term −sin λ. Their
+quotient still tends to one and the final integral is still +2π. The
+corrected asymptotics are proved, and at the free source the error in
+each printed positive-sine ratio is exactly two on every outer circle.
+See SOURCE_ERRATA.md for the normalization convention and exact scope.
+
+Twenty-six public checks cover original geometry, direct equation zeros,
+large-circle equality, literal products and midpoint fill, numerator
+zeros, orientation and winding, constructed circles, all collapsed free
+gaps, unchanged preceding data, and exponents 3/2 and 4.
+
+Next: Lemma 12.12's locally uniform squared-gap root offsets on this
+same W. The dissertation remains incomplete.
+
+Validation: the full build passed 7050 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33437 NLS
+declarations. The four new modules and twenty-six new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, and all 158 checked local Markdown file links resolve.
+
+The core diagonal proof calls `original_retained_contour_zero`,
+`eventually_original_outer_eq`, and the actual exterior limit. The
+retained Theorem 12.1 package supplies the earlier source-domain analytic
+data, not a diagonal normalization premise. Source neighborhoods,
+original disk families, and arbitrary original circles are explicit.
+No reality or noncollapsed-gap restriction is added to the source.
+
+| Module | Verified scope |
+| --- | --- |
+| [SourcePsiOriginalFiniteGeometry](../NLS/ZakharovShabat/SourcePsiOriginalFiniteGeometry.lean) | Inner circles and analytic collars in arbitrary original disks, finite geometry, and contour decomposition |
+| [SourcePsiOriginalNormalization](../NLS/ZakharovShabat/SourcePsiOriginalNormalization.lean) | Equation zeros, large-circle equality, direct diagonal normalization, and arbitrary winding |
+| [SourcePsiOriginalOuterProduct](../NLS/ZakharovShabat/SourcePsiOriginalOuterProduct.lean) | Literal full quotient product, moving-midpoint pole formula, corrected sine signs, and exact free sign obstruction |
+| [SourceLemma12_11](../NLS/ZakharovShabat/SourceLemma12_11.lean) | Raw normalization and outer identity retaining exactly Lemma 12.10's domains and root maps |

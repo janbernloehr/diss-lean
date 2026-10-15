@@ -1,5 +1,35 @@
 # Source discrepancies
 
+## Lemma 12.11: both individual sine asymptotics have a minus sign
+
+Printed p. 70 (visually checked) puts +sin λ in the leading terms of
+both ∏ₘ(σₘ−λ)/πₘ and ∏ₘwₘ(λ)/πₘ. The source's convention is π₀=1
+and πₘ=mπ for m≠0; its notation table on p. 145 explicitly gives
+sin λ=−∏ₘ(mπ−λ)/πₘ. Thus both p. 70 leading terms must be −sin λ.
+Products with factors individually divided by πₘ use the symmetric
+cutoff convention; the quotient of root factors has an unconditional
+product because its factor errors are absolutely summable.
+
+The formal entire single product includes a factor 2, so the first
+literal product is `entireSingleSpectralProduct (displacedRoots a) z/2`.
+The canonical root includes a factor 2i, so the second is
+`sourceCanonicalRoot hp hp1 ψ z/(2*I)`. The theorems
+`eventually_centralCircle_sourcePsiNumerator_sine_sign` and
+`eventually_centralCircle_sourceStandardProduct_sine_sign` show that
+each divided by sin z tends uniformly to −1 on the outer circles.
+
+`sourcePsi_free_product_sineSigns` gives exact −sin z values at the
+free source, including at sine zeros. On every half-integer circle sine
+is nonzero; `sourcePsi_free_positiveSine_error` proves that each printed
+positive-sine normalized error is exactly 2. These are actual products
+with the source's zero-mode convention, not a branch-choice ambiguity.
+
+The two missing minus signs cancel in their quotient. The literal
+quotient product still tends uniformly to 1, and `sourceLemma12_11`
+proves the unchanged conclusion +2π for positively winding original
+cycles on exactly the complex domain and root family of Lemma 12.10.
+
+
 ## Lemma 12.10: the order of the local-uniformity quantifiers matters
 
 Printed p. 69 (visually checked) says Qⁿ→Q* in operator norm locally

@@ -3609,3 +3609,7 @@ import NLS.ZakharovShabat.SourceLemma12_10InverseBounds
 import NLS.ZakharovShabat.SourcePsiOriginalAtlasPlacement
 import NLS.ZakharovShabat.SourceLemma12_10
 import NLS.ZakharovShabat.SourcePsiOriginalSourceOnlyCounterexample
+import NLS.ZakharovShabat.SourcePsiOriginalFiniteGeometry
+import NLS.ZakharovShabat.SourcePsiOriginalNormalization
+import NLS.ZakharovShabat.SourcePsiOriginalOuterProduct
+import NLS.ZakharovShabat.SourceLemma12_11

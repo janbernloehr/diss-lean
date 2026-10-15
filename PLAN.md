@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Current milestone: Lemma 12.10 common original-domain extension
+## Current milestone: Lemma 12.11 original diagonal normalization
+
+`SourceLemma12_10Data.lemma12_11` proves the literal diagonal integral
+2π for every complex source in the same common W, for every finite
+1<p<∞ and every signed index. Both W₀ and W and all root maps are
+unchanged. Every admissible original circle has this value; every
+original piecewise C¹ circuit has 2π times its winding, hence 2π for
+the source's positive cycles. Original period circles are constructed
+at every source, including complex sources.
+
+The proof follows the source's contour argument. The actual original
+equation makes each retained period zero. Nested circles with disjoint
+analytic collars are constructed inside any supplied original disk
+family. Their exact free tail gives finite-hole geometry at all large
+half-integer cutoffs. The outer contour therefore equals the omitted
+original period, and the actual exterior limit fixes its value. This
+argument does not use the retained Theorem 12.1 diagonal-period field.
+
+The literal full standard-root quotient is an unconditional product,
+including vanishing numerator factors. Filling the omitted coordinate
+with the moving midpoint gives the printed pole formula. The product
+tends uniformly to one on the outer circles, for arbitrary ℓᵖ numerator
+roots and complex sources.
+
+The two individual sine asymptotics on printed p. 70 need a minus sign.
+With π₀=1, both underlying products have leading term −sin λ. Their
+quotient still tends to one and the final integral is still +2π. The
+corrected asymptotics are proved, and at the free source the error in
+each printed positive-sine ratio is exactly two on every outer circle.
+See SOURCE_ERRATA.md for the normalization convention and exact scope.
+
+Twenty-six public checks cover original geometry, direct equation zeros,
+large-circle equality, literal products and midpoint fill, numerator
+zeros, orientation and winding, constructed circles, all collapsed free
+gaps, unchanged preceding data, and exponents 3/2 and 4.
+
+Next: Lemma 12.12's locally uniform squared-gap root offsets on this
+same W. The dissertation remains incomplete.
+
+Validation: the full build passed 7050 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33437 NLS
+declarations. The four new modules and twenty-six new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, and all 158 checked local Markdown file links resolve.
+
+## Previous milestone: Lemma 12.10 common original-domain extension
 
 `sourceLemma12_10` completes the common complex extension for every finite
 1<p<∞. One open simply connected W lies inside the unchanged Proposition

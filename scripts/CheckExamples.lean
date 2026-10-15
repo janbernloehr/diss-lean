@@ -51793,3 +51793,200 @@ example : ∃ V : Set (CoeffPair (4:ℝ≥0∞)), ∃ D : ℤ → Set ℂ, ∃ c
 
 end
 end SourceLemma1210ExtensionChecks
+
+namespace SourceLemma1211Checks
+noncomputable section
+open Set Complex Filter Topology Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (H : SourceLemma12_10Data hp hp1 W₀ W s) (hW₀ : IsOpen W₀)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+variable (ψ : CoeffPair p) (hψ : ψ ∈ W) (hψV : ψ ∈ V)
+
+-- The source may be complex; the supplied original disks are kept.
+example : Nonempty (SourcePsiOriginalCircleFamily hp hp1 ψ D) :=
+  hD.nonempty_originalCircleFamily ψ hψV
+
+example (C : SourcePsiOriginalCircleFamily hp hp1 ψ D) (m : ℤ) :
+    closedBall ((C.circle m).center:ℂ) (C.outer m) ⊆ D m := C.closed_outer_subset m
+
+example (C : SourcePsiOriginalCircleFamily hp hp1 ψ D) :
+    ∀ᶠ k : ℕ in atTop,
+      SourcePsiFiniteGapCircleGeometry hp hp1 ψ 0 (centralCircleRadius k)
+        (Finset.Icc (-(k:ℤ)) (k:ℤ)) (fun m => ((C.circle m).center:ℂ))
+        (fun m => (C.circle m).radius) C.outer := C.eventually_finite_geometry
+
+-- Finite decomposition works for arbitrary numerator roots, before imposing equations.
+example (C : SourcePsiOriginalCircleFamily hp hp1 ψ D) (n : ℤ) (a : Coeff p) :
+    ∀ᶠ k : ℕ in atTop,
+      sourcePsiContour hp hp1 n a ψ 0 (centralCircleRadius k) =
+        ∑ m ∈ Finset.Icc (-(k:ℤ)) (k:ℤ),
+          sourcePsiContour hp hp1 n a ψ ((C.circle m).center:ℂ) (C.circle m).radius :=
+  C.eventually_decomposition n a
+
+-- Retained zeros follow from the actual original equation, including signed indices.
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ 2) :
+    sourcePsiContour hp hp1 (-3) (s (-3) ψ:Coeff p) ψ (P.center:ℂ) P.radius = 0 :=
+  H.original_retained_contour_zero hW₀ ψ hψ (-3) 2 (by decide) P
+
+example (n : ℤ) (P : SourceCriticalRootPeriodCircle hp hp1 ψ n) :
+    ∀ᶠ k : ℕ in atTop,
+      sourcePsiContour hp hp1 n (s n ψ:Coeff p) ψ 0 (centralCircleRadius k) =
+        sourcePsiContour hp hp1 n (s n ψ:Coeff p) ψ (P.center:ℂ) P.radius :=
+  H.eventually_original_outer_eq hW₀ ψ hψ n P
+
+example (n : ℤ) (P : SourceCriticalRootPeriodCircle hp hp1 ψ n) :
+    (∮ z in C((P.center:ℂ),P.radius),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) = (2*Real.pi:ℂ) :=
+  H.original_diagonal_raw_circle hW₀ ψ hψ n P
+
+example (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ n) = 1) :
+    Γ.integral (fun z => sourcePsiCandidate n (z,(s n ψ:Coeff p))/sourceCanonicalRoot hp hp1 ψ z) =
+      (2*Real.pi:ℂ) := H.original_diagonal_raw_circuit hW₀ hD ψ hψ hψV n Γ hΓ hw
+
+-- Orientation and multiplicity are explicit, not hidden in the word cycle.
+example (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ n) = -2) :
+    Γ.integral (fun z => sourcePsiCandidate n (z,(s n ψ:Coeff p))/sourceCanonicalRoot hp hp1 ψ z) =
+      (-4*Real.pi:ℂ) := by
+  rw [H.original_diagonal_raw_circuit_winding hW₀ hD ψ hψ hψV n Γ hΓ,hw]
+  ring
+
+example (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ n) = 0) :
+    Γ.integral (fun z => sourcePsiCandidate n (z,(s n ψ:Coeff p))/sourceCanonicalRoot hp hp1 ψ z) = 0 := by
+  rw [H.original_diagonal_raw_circuit_winding hW₀ hD ψ hψ hψV n Γ hΓ,hw,mul_zero]
+
+example (n : ℤ) (P : SourceCriticalRootPeriodCircle hp hp1 ψ n) :
+    ∀ᶠ k : ℕ in atTop,
+      (∮ z in C(0,centralCircleRadius k),
+        sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) =
+      (∮ z in C((P.center:ℂ),P.radius),
+        sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) :=
+  H.eventually_original_raw_outer_eq hW₀ ψ hψ n P
+
+-- Inserting the omitted factor permits zero numerator factors and root collisions.
+example (n : ℤ) (a : Coeff p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    HasProd (fun m : ℤ => (displacedRoots a m-z)/sourceStandardRoot hp hp1 ψ m z)
+      ((displacedRoots a n-z)*sourcePsiContourIntegrandJoint hp hp1 n (z,(a,ψ))/Complex.I) :=
+  sourcePsiFullRatio_hasProd hp hp1 n a ψ z hz
+
+example (n : ℤ) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ)) =
+      Complex.I/(sourceStandardRootMidpoint hp hp1 ψ n-z)*
+        ∏' m : ℤ, (displacedRoots (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n)) m-z)/
+          sourceStandardRoot hp hp1 ψ m z :=
+  sourcePsiContourIntegrand_midpoint_fullProduct hp hp1 n (s n ψ) ψ z hz
+
+example (n : ℤ) (ε : ℝ) (hε : 0 < ε) :
+    ∀ᶠ k : ℕ in atTop, ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+      ‖(∏' m : ℤ, (displacedRoots (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n)) m-z)/
+        sourceStandardRoot hp hp1 ψ m z)-1‖ ≤ ε :=
+  eventually_centralCircle_sourcePsiFullRatio_close hp hp1 _ ψ hε
+
+example (n : ℤ) :
+    Tendsto (fun k : ℕ => ∮ z in C(0,centralCircleRadius k),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) atTop (𝓝 (2*Real.pi:ℂ)) :=
+  tendsto_centralCircle_sourcePsi_raw_integral hp hp1 n (s n ψ:Coeff p) ψ
+
+example (n : ℤ) : ∃ P : SourceCriticalRootPeriodCircle hp hp1 ψ n,
+    (∮ z in C((P.center:ℂ),P.radius),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) = (2*Real.pi:ℂ) :=
+  H.exists_original_diagonal_raw_circle hW₀ ψ hψ n
+
+-- No atlas replacement or domain shrink occurs in the step.
+example : SourceLemma12_11Data hp hp1 W₀ W s := H.lemma12_11 hW₀
+
+example (H11 : SourceLemma12_11Data hp hp1 W₀ W s) :
+    SourceLemma12_10Data hp hp1 W₀ W s ∧ W ⊆ W₀ ∧ ∀ n, AnalyticOnNhd ℂ (s n) W :=
+  ⟨H11.previous,H11.previous.subset,H11.previous.analytic⟩
+
+private def freeCircle (m : ℤ) : SourceCriticalRootPeriodCircle hp hp1 (0:CoeffPair p) m where
+  center := Real.pi*m
+  radius := Real.pi/4
+  radius_pos := by positivity
+  gap := by
+    rw [sourcePeriodicSegment_zero_source]
+    intro z hz
+    rw [mem_singleton_iff] at hz
+    subst z
+    simpa using (show 0 < Real.pi/4 by positivity)
+  other := by
+    intro k hkm z hz
+    rw [sourcePeriodicSegment_zero_source,mem_singleton_iff] at hz
+    subst z
+    simp only [mul_re,ofReal_re,intCast_re,ofReal_im,intCast_im,mul_zero,sub_zero]
+    rcases lt_or_gt_of_ne hkm with hlt | hgt
+    · left
+      have hk : (k:ℝ)+1 ≤ m := by exact_mod_cast (show k+1 ≤ m by omega)
+      nlinarith [Real.pi_pos]
+    · right
+      have hk : (m:ℝ)+1 ≤ k := by exact_mod_cast (show m+1 ≤ k by omega)
+      nlinarith [Real.pi_pos]
+
+-- All gaps collapse at the free source, but every signed diagonal period remains 2π.
+example (h0 : (0:CoeffPair p) ∈ W) (n : ℤ) :
+    (∮ z in C((Real.pi:ℂ)*n,Real.pi/4),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,((0:Coeff p),(0:CoeffPair p)))) = (2*Real.pi:ℂ) := by
+  have hzero : s n 0 = 0 := by
+    simpa using H.real_agreement n (0:realTypeSourceSubmodule p)
+  have h := H.original_diagonal_raw_circle hW₀ 0 h0 n (freeCircle n)
+  simpa only [hzero,ZeroMemClass.coe_zero,freeCircle,Complex.ofReal_mul,Complex.ofReal_intCast] using h
+
+-- Both individual sine signs are negative with the original zero-mode denominator.
+example (a : Coeff p) (ε : ℝ) (hε : 0 < ε) :
+    ∃ K : ℕ, ∀ k : ℕ, K ≤ k → ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+      ‖(entireSingleSpectralProduct (displacedRoots a) z/2)/sin z+1‖ ≤ ε :=
+  eventually_centralCircle_sourcePsiNumerator_sine_sign hp a hε
+
+example (ε : ℝ) (hε : 0 < ε) :
+    ∃ K : ℕ, ∀ k : ℕ, K ≤ k → ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+      ‖(sourceCanonicalRoot hp hp1 ψ z/(2*Complex.I))/sin z+1‖ ≤ ε :=
+  eventually_centralCircle_sourceStandardProduct_sine_sign hp hp1 ψ hε
+
+example (z : ℂ) :
+    entireSingleSpectralProduct (displacedRoots (0:Coeff p)) z/2 = -sin z ∧
+      sourceCanonicalRoot hp hp1 (0:CoeffPair p) z/(2*Complex.I) = -sin z :=
+  sourcePsi_free_product_sineSigns hp hp1 z
+
+example (k : ℕ) (z : ℂ) (hz : z ∈ sphere (0:ℂ) (centralCircleRadius k)) :
+    ‖(entireSingleSpectralProduct (displacedRoots (0:Coeff p)) z/2)/sin z-1‖ = 2 ∧
+      ‖(sourceCanonicalRoot hp hp1 (0:CoeffPair p) z/(2*Complex.I))/sin z-1‖ = 2 :=
+  sourcePsi_free_positiveSine_error hp hp1 k z hz
+
+-- A vanished numerator factor is retained correctly in the unconditional product.
+example (n : ℤ) (a : Coeff p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ)
+    (hroot : displacedRoots a n = z) :
+    (∏' m : ℤ, (displacedRoots a m-z)/sourceStandardRoot hp hp1 ψ m z) = 0 := by
+  rw [(sourcePsiFullRatio_hasProd hp hp1 n a ψ z hz).tprod_eq,hroot]
+  simp
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W₀ : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsConnected W₀ ∧ realTypeSourceLocus _ ⊆ W₀ ∧
+    ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus _ ⊆ W ∧
+      ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n,
+        SourceLemma12_11Data (by norm_num) (by norm_num) W₀ W s :=
+  sourceLemma12_11 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+-- End-to-end literal normalization, retaining the exact preceding family.
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus _ ⊆ W₀ ∧ IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus _ ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair (4:ℝ≥0∞) → DeletedCoeff (4:ℝ≥0∞) n,
+      SourceLemma12_10Data (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ ψ ∈ W, ∀ n : ℤ, ∀ P : SourceCriticalRootPeriodCircle (by norm_num) (by norm_num) ψ n,
+        (∮ z in C((P.center:ℂ),P.radius),
+          sourcePsiContourIntegrandJoint (by norm_num) (by norm_num) n
+            (z,((s n ψ:Coeff (4:ℝ≥0∞)),ψ))) = (2*Real.pi:ℂ) := by
+  obtain ⟨W₀,ho,hc,hr,W,hW,hs,hrW,s,H11⟩ :=
+    sourceLemma12_11 (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hc,hr,hW,hs,hrW,s,H11.previous,H11.circle⟩
+
+end
+end SourceLemma1211Checks
