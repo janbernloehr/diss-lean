@@ -52882,3 +52882,149 @@ example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
   exact ⟨W₀,W,s,H,fun n m φ => (hc n m φ).2.2⟩
 
 end Section13OriginalSeriesChecks
+
+section Section13ArbitraryImproperChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter Topology MeasureTheory
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (H : SourceLemma12_12Data hp hp1 W₀ W s)
+  (ψ : CoeffPair p) (hψ : ψ ∈ W) (m : ℤ)
+  (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+  (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+  (Q : ℂ × CoeffPair p → ℂ)
+  (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+    (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+  (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+  (hnorm : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+    Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+      sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+  (hγ : ContDiffOn ℝ 1 γ.extend (Ioo 0 1))
+
+-- The two cutoffs vary independently; neither absolute integrability nor endpoint C¹ is assumed.
+example (n : ℤ) (hmn : m ≠ n) :
+    Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2,
+      sourceAngularIntegrand n s Q (γ.extend t,ψ)*deriv γ.extend t)
+      ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 (sourceAngularBeta hp hp1 n m s ψ)) :=
+  H.beta_original_improper_limit ψ hψ n m hmn P hμ Q γ hQ hnorm hγ
+
+-- Beta agrees across distinct isolating disks and arbitrary continued roots.
+example (n : ℤ) (hmn : m ≠ n)
+    (P' : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ' : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P'.center:ℂ) P'.radius)
+    (Q' : ℂ × CoeffPair p → ℂ)
+    (γ' : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ' : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P'.center:ℂ) P'.radius Q' γ')
+    (hnorm' : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q' (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hγ' : ContDiffOn ℝ 1 γ'.extend (Ioo 0 1)) :
+    improperPathIntegral (fun z => sourceAngularIntegrand n s Q (z,ψ)) γ =
+      improperPathIntegral (fun z => sourceAngularIntegrand n s Q' (z,ψ)) γ' := by
+  rw [H.beta_original_improperIntegral_eq_value ψ hψ n m hmn P hμ Q γ hQ hnorm hγ,
+    H.beta_original_improperIntegral_eq_value ψ hψ n m hmn P' hμ' Q' γ' hQ' hnorm' hγ']
+
+-- A periodic terminal gives zero on either sheet; collapsed gaps are included.
+example (n : ℤ) (hmn : m ≠ n) {b : ℂ}
+    (hb : b ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m} : Set ℂ))
+    (γ₀ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) b)
+    (hQ₀ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ₀)
+    (hγ₀ : ContDiffOn ℝ 1 γ₀.extend (Ioo 0 1)) :
+    improperPathIntegral (fun z => sourceAngularIntegrand n s Q (z,ψ)) γ₀ = 0 :=
+  (H.beta_original_periodic_terminal_improper_limit ψ hψ n m hmn P hb Q γ₀ hQ₀ hγ₀).limUnder_eq
+
+variable (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0)
+
+example : ∃ L : ℂ,
+    Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2,
+      sourceAngularIntegrand m s Q (γ.extend t,ψ)*deriv γ.extend t)
+      ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 L) ∧
+      ∃ k : ℤ, L-sourceAngularOriginalEta hp hp1 m s ψ = (k:ℂ)*(2*Real.pi) :=
+  H.eta_original_admissible_improper_limit ψ hψ m hgap P hμ Q γ hQ hnorm hγ
+
+-- Two arbitrary eta integrals, even in different disks, agree modulo exactly 2π.
+example (P' : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ' : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P'.center:ℂ) P'.radius)
+    (Q' : ℂ × CoeffPair p → ℂ)
+    (γ' : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ' : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P'.center:ℂ) P'.radius Q' γ')
+    (hnorm' : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q' (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hγ' : ContDiffOn ℝ 1 γ'.extend (Ioo 0 1)) :
+    ∃ k : ℤ, improperPathIntegral (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ -
+      improperPathIntegral (fun z => sourceAngularIntegrand m s Q' (z,ψ)) γ' = (k:ℂ)*(2*Real.pi) := by
+  obtain ⟨k,hk⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ hnorm hγ).2
+  obtain ⟨j,hj⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P' hμ' Q' γ' hQ' hnorm' hγ').2
+  refine ⟨k-j,?_⟩
+  push_cast
+  linear_combination hk-hj
+
+-- The actual arbitrary-path eta has the previously constructed analytic phase.
+example : Complex.exp (2*Complex.I*improperPathIntegral
+    (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ) = sourceAngularEtaAnalyticPhase hp hp1 m s ψ := by
+  rw [← H.eta_original_integral_phase ψ hψ m hgap]
+  obtain ⟨k,hk⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ hnorm hγ).2
+  apply Complex.exp_eq_exp_iff_exists_int.mpr
+  refine ⟨2*k,?_⟩
+  push_cast
+  linear_combination 2*Complex.I*hk
+
+-- Adding the beta correction gives the same literal theta modulo 2π.
+example : Complex.exp (Complex.I*(improperPathIntegral
+    (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ + sourceAngularBetaCorrection hp hp1 m s ψ)) =
+      Complex.exp (Complex.I*sourceAngularOriginalTheta hp hp1 m s ψ) := by
+  obtain ⟨k,hk⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ hnorm hγ).2
+  apply Complex.exp_eq_exp_iff_exists_int.mpr
+  refine ⟨k,?_⟩
+  dsimp only [sourceAngularOriginalTheta]
+  linear_combination Complex.I*hk
+
+example (hreal : IsRealType (CoeffPair.toMax p ψ)) :
+    (improperPathIntegral (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ).im = 0 := by
+  obtain ⟨k,hk⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ hnorm hγ).2
+  have hi := congrArg Complex.im hk
+  simpa [Complex.sub_im,H.eta_original_integral_im_eq_zero ψ hψ hreal m hgap] using hi
+
+-- The same analytic chart represents every improper eta integral modulo π.
+example : ∃ U : Set (CoeffPair p), ∃ f : CoeffPair p → ℂ,
+    ψ ∈ U ∧ U ⊆ W ∧ AnalyticOnNhd ℂ f U ∧
+    ∃ k : ℤ, improperPathIntegral (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ-f ψ = (k:ℂ)*Real.pi := by
+  obtain ⟨U,f,_,hψU,hUW,_,ha,_,hv⟩ := H.eta_original_value_local_representative ψ hψ m hgap
+  obtain ⟨j,hj⟩ := hv ψ hψU
+  obtain ⟨k,hk⟩ := (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ hnorm hγ).2
+  refine ⟨U,f,hψU,hUW,ha,2*k+j,?_⟩
+  push_cast
+  linear_combination hk+hj
+
+-- At a periodic Dirichlet terminal no sign normalization is needed for eta.
+example (hw0 : sourceAntiDiscriminantCandidate hp hp1 ψ
+    (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) = 0) :
+    ∃ k : ℤ, improperPathIntegral (fun z => sourceAngularIntegrand m s Q (z,ψ)) γ -
+      sourceAngularOriginalEta hp hp1 m s ψ = (k:ℂ)*(2*Real.pi) :=
+  (H.eta_original_improperIntegral_spec ψ hψ m hgap P hμ Q γ hQ
+    (fun hw => False.elim (hw hw0)) hγ).2
+
+end Section13ArbitraryImproperChecks
+
+section Section13ImproperFoundationsChecks
+open NLS.ComplexAnalysis Set Filter Topology MeasureTheory
+
+-- Agreement with ordinary curve integrals requires no primitive or endpoint differentiability.
+example (f : ℂ → ℂ) {a b : ℂ} (γ : Path a b)
+    (hi : CurveIntegrable (holomorphicOneForm f) γ) :
+    improperPathIntegral f γ = ∫ᶜ z in γ, holomorphicOneForm f z :=
+  improperPathIntegral_eq_curveIntegral_of_integrable f γ hi
+
+-- The logarithm lift supplies a joint limit even without global absolute integrability.
+example (q g : ℝ → ℂ) (hq : ContinuousOn q (Ioo (0:ℝ) 1))
+    (hg : ContinuousOn g (Icc (0:ℝ) 1)) (hne : ∀ t ∈ Icc (0:ℝ) 1, g t ≠ 0)
+    (hd : ∀ t ∈ Ioo (0:ℝ) 1, HasDerivAt g (q t*g t) t) :
+    ∃ L : ℂ, Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2, q t)
+      ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 L) ∧ Complex.exp L*g 0 = g 1 :=
+  exists_improper_integral_of_logarithmic_derivative q g hq hg hne hd
+
+end Section13ImproperFoundationsChecks

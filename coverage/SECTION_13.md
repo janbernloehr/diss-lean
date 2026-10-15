@@ -8,16 +8,62 @@ modules remain available; this audit follows the retained Section 12 data.
 | Source assertion | Current original-domain evidence | Remaining work |
 | --- | --- | --- |
 | One common W and actual psi family | `sourceSection13OriginalDomain` retains Lemma 12.12 and constructs original disks containing the Dirichlet roots at every complex source | None for domain and terminal geometry |
-| Beta does not depend on the admissible path or root continuation | `original_dirichlet_integral_path` constructs integrable paths; `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value` identify their values, including different disks and collapsed gaps | Extend to arbitrary admissible C¹ paths interpreted through improper endpoint limits |
-| A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_zero` and constructed integrable endpoint paths, at open and collapsed gaps | None for periodic-terminal beta values |
-| Eta is independent modulo 2π of the admissible path | `eta_original_integral_values_period` and `eta_original_dirichlet_path_periods_across_circles` identify actual normalized integrable paths, including different disks and periodic terminals | General supplied paths retain C¹ and actual/model integrability hypotheses |
+| Beta does not depend on the admissible path or root continuation | `beta_original_improper_limit` and `beta_original_improperIntegral_eq_value` apply to every admissible interior C¹ path, including different disks and collapsed gaps | Proved with independent improper endpoint limits |
+| A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_improper_limit` applies at open and collapsed gaps without a sign prescription | Proved for arbitrary admissible interior C¹ paths |
+| Eta is independent modulo 2π of the admissible path | `eta_original_admissible_improper_limit` and `eta_original_improperIntegral_spec` prove convergence and identify every admissible interior C¹ path with the same original eta class | Proved across original disks, including periodic terminals |
 | Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` gives uniqueness, complex analyticity, and the locally uniform estimate; `beta_original_im_eq_zero` proves reality on the real-type locus | Constructed endpoint integrals, analyticity, reality, and estimate proved on the retained domain |
-| Theorem 13.1(ii): eta analytic modulo π | `sourceTheorem13_1_original_eta` constructs literal eta values and real analytic local representatives on the same W; every normalized integrable original-disk path has the same phase | Original-domain analytic identification proved |
+| Theorem 13.1(ii): eta analytic modulo π | `sourceTheorem13_1_original_eta` constructs literal eta values and real analytic local representatives on the same W; every normalized admissible interior C¹ path has the same phase | Original-domain analytic identification proved |
 | Theorem 13.1(iii): locally uniform beta series and o(1) | `beta_original_series` gives absolute/local uniform convergence, analyticity, and absolute/correction decay on W | Proved on the retained domain |
-| Theorem 13.1(iv): real theta and analytic extension modulo π | `sourceTheorem13_1_original` and `sourceAngularOriginalTheta` identify the literal sum, analytic local representatives, reality, and its phase differential | Proved for the constructed literal integral family |
+| Theorem 13.1(iv): real theta and analytic extension modulo π | `sourceTheorem13_1_original` and `sourceAngularOriginalTheta` identify the literal sum, analytic local representatives, reality, and its phase differential | Proved for the literal family and its arbitrary-path improper interpretation |
 | Corollary 13.2: three Poisson bracket identities | `sourceCorollary13_2_original`, `originalActionCotangent`, and `theta_original_regularCotangent_representative` identify the original actions and literal theta differentials for every finite p>1 | All three canonical identities and absolute Fourier pairings proved |
 
-## Verified original series, theta, and canonical brackets
+## Verified arbitrary-path improper integrals
+
+The original angular integrals now exist along every admissible path
+whose parameterization is C¹ on the open unit interval and whose root
+continuation is continuous on the closed interval. Both endpoint cutoffs
+vary independently. No absolute-integrability assumption or endpoint
+C¹ assumption is required.
+
+`beta_original_improper_limit` identifies the actual truncated beta
+integrals with `sourceAngularBeta` on the retained Lemma 12.12 domain.
+It includes collapsed gaps and regular terminals in the cut. At either
+periodic terminal, `beta_original_periodic_terminal_improper_limit`
+gives zero on either sheet. The value therefore agrees between different
+original isolating disks.
+
+`eta_original_admissible_improper_limit` proves existence at every open
+gap and identifies every limit with `sourceAngularOriginalEta` modulo 2π.
+The proof lifts the model's nonvanishing logarithmic coordinate along
+the whole parameter interval, and evaluates the normalized remainder
+by its primitive endpoint limits. It compares an arbitrary path with a
+constructed integrable path in the same disk, then uses the established
+cross-disk comparison. At a periodic terminal no root sign prescription
+is needed. `eta_original_improperIntegral_spec` exposes both convergence
+and the 2π class of the limit-defined integral.
+
+Twelve public checks cover joint endpoint limits, beta equality and eta
+periods across different disks, periodic terminals, the actual eta and
+theta phases, reality, the same local analytic representative modulo π,
+and agreement with ordinary curve integrals when they are integrable.
+The statements apply to every finite p>1. The previous convergence,
+analyticity, and canonical-bracket results consequently apply to this
+arbitrary-path interpretation of the angle definitions.
+
+The remaining Section 13 path obligation is discharged for the stated
+interior C¹ class. No claim of absolute integrability for all such paths
+is made. Next: audit Section 14's rectangular coordinates (3.1) against
+these original actions and angles, then the five assertions of Theorem
+14.1 and their proofs in Sections 15–17. The dissertation is not complete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,099
+jobs, all public examples pass, and the transitive axiom audit checks 33,665
+NLS declarations. The nine new modules, extended primitive-integral module,
+and twelve new checks introduce no warnings; the 21 existing warnings
+remain. The source inventory verifies all 156 candidate labels, all 209
+checked local Markdown file links resolve, and `git diff --check` passes.
+
+## Previous original series, theta, and canonical brackets
 
 `sourceTheorem13_1_original` retains the same W₀, simply connected W,
 and normalized psi family from Lemma 12.12. The literal beta correction
@@ -295,3 +341,16 @@ and `git diff --check` passes.
 | [SourceAngularOriginalCanonicalDifferentials](../NLS/ZakharovShabat/SourceAngularOriginalCanonicalDifferentials.lean) | Actual local theta differentials and the indexed-action regular cotangent |
 | [SourceTheorem13_1Original](../NLS/ZakharovShabat/SourceTheorem13_1Original.lean) | Unconditional retained-domain theorem for the constructed literal angles |
 | [SourceCorollary13_2Original](../NLS/ZakharovShabat/SourceCorollary13_2Original.lean) | All three canonical identities for every finite p greater than one |
+
+| Improper-integral module | Verified scope |
+| --- | --- |
+| [ImproperPrimitivePathIntegral](../NLS/ComplexAnalysis/ImproperPrimitivePathIntegral.lean) | Joint parameter-integral limits from primitive endpoint limits |
+| [ImproperCurveIntegral](../NLS/ComplexAnalysis/ImproperCurveIntegral.lean) | Agreement with ordinary absolutely integrable curves |
+| [ImproperLogarithmicIntegral](../NLS/ComplexAnalysis/ImproperLogarithmicIntegral.lean) | Continuous logarithm lifts and actual improper logarithmic integrals |
+| [ImproperQuadraticRootPathIntegral](../NLS/ComplexAnalysis/ImproperQuadraticRootPathIntegral.lean) | The quadratic-root model with only interior C¹ regularity |
+| [SourceAngularBetaImproperPath](../NLS/ZakharovShabat/SourceAngularBetaImproperPath.lean) | Signed primitive evaluation along arbitrary admissible root continuations |
+| [SourceAngularOriginalBetaImproper](../NLS/ZakharovShabat/SourceAngularOriginalBetaImproper.lean) | Original beta limits at all complex gaps and zero periodic-terminal values |
+| [SourceAngularEtaImproperModel](../NLS/ZakharovShabat/SourceAngularEtaImproperModel.lean) | Model convergence, endpoint exponential identity, and 2π periods |
+| [SourceAngularEtaImproperRemainder](../NLS/ZakharovShabat/SourceAngularEtaImproperRemainder.lean) | Joint limit of the actual-minus-model truncation difference |
+| [SourceAngularOriginalEtaImproperRemainder](../NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder.lean) | One normalized remainder for every original disk and all its admissible paths |
+| [SourceAngularOriginalEtaImproper](../NLS/ZakharovShabat/SourceAngularOriginalEtaImproper.lean) | Arbitrary-path existence and agreement with the original eta modulo 2π |

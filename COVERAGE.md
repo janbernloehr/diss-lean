@@ -6486,3 +6486,49 @@ NLS declarations. The six new modules and fourteen new checks introduce no
 warnings; the 21 existing warnings remain. The source inventory verifies
 all 156 candidate labels, all 199 checked local Markdown file links resolve,
 and `git diff --check` passes.
+
+## Section 13 arbitrary-path improper integrals
+
+The original angular integrals now exist along every admissible path
+whose parameterization is C¹ on the open unit interval and whose root
+continuation is continuous on the closed interval. Both endpoint cutoffs
+vary independently. No absolute-integrability assumption or endpoint
+C¹ assumption is required.
+
+`beta_original_improper_limit` identifies the actual truncated beta
+integrals with `sourceAngularBeta` on the retained Lemma 12.12 domain.
+It includes collapsed gaps and regular terminals in the cut. At either
+periodic terminal, `beta_original_periodic_terminal_improper_limit`
+gives zero on either sheet. The value therefore agrees between different
+original isolating disks.
+
+`eta_original_admissible_improper_limit` proves existence at every open
+gap and identifies every limit with `sourceAngularOriginalEta` modulo 2π.
+The proof lifts the model's nonvanishing logarithmic coordinate along
+the whole parameter interval, and evaluates the normalized remainder
+by its primitive endpoint limits. It compares an arbitrary path with a
+constructed integrable path in the same disk, then uses the established
+cross-disk comparison. At a periodic terminal no root sign prescription
+is needed. `eta_original_improperIntegral_spec` exposes both convergence
+and the 2π class of the limit-defined integral.
+
+Twelve public checks cover joint endpoint limits, beta equality and eta
+periods across different disks, periodic terminals, the actual eta and
+theta phases, reality, the same local analytic representative modulo π,
+and agreement with ordinary curve integrals when they are integrable.
+The statements apply to every finite p>1. The previous convergence,
+analyticity, and canonical-bracket results consequently apply to this
+arbitrary-path interpretation of the angle definitions.
+
+The remaining Section 13 path obligation is discharged for the stated
+interior C¹ class. No claim of absolute integrability for all such paths
+is made. Next: audit Section 14's rectangular coordinates (3.1) against
+these original actions and angles, then the five assertions of Theorem
+14.1 and their proofs in Sections 15–17. The dissertation is not complete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,099
+jobs, all public examples pass, and the transitive axiom audit checks 33,665
+NLS declarations. The nine new modules, extended primitive-integral module,
+and twelve new checks introduce no warnings; the 21 existing warnings
+remain. The source inventory verifies all 156 candidate labels, all 209
+checked local Markdown file links resolve, and `git diff --check` passes.

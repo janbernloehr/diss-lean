@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original beta series and literal theta sum now have the
-convergence, decay, reality, and analyticity asserted in Theorem 13.1.
-Corollary 13.2's three canonical identities use the actual indexed-action
-and theta differentials, for every finite p greater than one.
+Latest step: Section 13's beta and eta integrals now converge along
+arbitrary admissible interior C¹ paths, with independent endpoint limits.
+They agree with the existing beta values and eta values modulo 2π,
+including periodic terminals and comparisons across original disks.
 
-Next: finish the arbitrary-path improper-integral comparison in Section 13,
-then proceed to Section 14. The dissertation remains incomplete.
+Next: audit Section 14's rectangular coordinates and Theorem 14.1 against
+the original actions and angles. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md), and

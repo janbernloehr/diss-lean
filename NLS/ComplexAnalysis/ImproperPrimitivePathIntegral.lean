@@ -14,6 +14,27 @@ noncomputable section
 open Set Filter Topology MeasureTheory Complex
 namespace NLS.ComplexAnalysis
 
+/-- Independent endpoint limits of a primitive evaluate the joint improper integral.
+Only continuity of the integrand on the open parameter interval is required. -/
+theorem tendsto_intervalIntegral_of_primitive_limits
+    (f F : ℝ → ℂ) (hf : ContinuousOn f (Ioo (0:ℝ) 1))
+    (hF : ∀ t ∈ Ioo (0:ℝ) 1, HasDerivAt F (f t) t) {A B : ℂ}
+    (ha : Tendsto F (𝓝[>] (0:ℝ)) (𝓝 A))
+    (hb : Tendsto F (𝓝[<] (1:ℝ)) (𝓝 B)) :
+    Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2, f t)
+      ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 (B-A)) := by
+  have hlim := (hb.comp tendsto_snd).sub (ha.comp tendsto_fst)
+  apply hlim.congr'
+  have hu : ∀ᶠ u in 𝓝[>] (0:ℝ), u ∈ Ioo (0:ℝ) (1/2) := Ioo_mem_nhdsGT (by norm_num)
+  have hv : ∀ᶠ v in 𝓝[<] (1:ℝ), v ∈ Ioo (1/2:ℝ) 1 := Ioo_mem_nhdsLT (by norm_num)
+  filter_upwards [hu.prod_mk hv] with u hu
+  have huv : u.1 ≤ u.2 := by linarith [hu.1.2,hu.2.1]
+  have hsub : uIcc u.1 u.2 ⊆ Ioo (0:ℝ) 1 := by
+    rw [uIcc_of_le huv]
+    exact fun _ ht => ⟨hu.1.1.trans_le ht.1,ht.2.trans_lt hu.2.2⟩
+  exact (intervalIntegral.integral_eq_sub_of_hasDerivAt (fun t ht => hF t (hsub ht))
+    ((hf.mono hsub).intervalIntegrable)).symm
+
 /-- An ordinary integral on a truncated portion of the actual path. -/
 def truncatedPathIntegral (f : ℂ → ℂ) {a b : ℂ} (γ : Path a b) (u v : ℝ) : ℂ :=
   ∫ t in u..v, f (γ.extend t)*deriv γ.extend t
