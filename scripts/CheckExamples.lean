@@ -57985,3 +57985,118 @@ example : ¬∀ a : C₀(ℤ,ℂ), ∃ f : Lp ℂ 1 (AddCircle.haarAddCircle (T 
 
 end AppendixANonSurjectivityChecks
 end NLS.Fourier
+
+
+noncomputable section
+open MeasureTheory Set Filter Topology
+open scoped ENNReal ZeroAtInfty
+namespace NLS.Fourier
+section AppendixASharpnessChecks
+open SmoothPeriodicTest
+local instance : Fact (0 < (3:ℝ)) := ⟨by norm_num⟩
+local instance : Fact (0 < (1:ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4/3:ℝ≥0∞)) := ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (5/2:ℝ≥0∞)) := ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example : shiftedRudinShapiro (L := 3) 0 = fourier 1 := by
+  simp [shiftedRudinShapiro,rudinShapiroPair]
+
+example : shiftedRudinShapiroBlock 2 = Finset.Ico (16:ℤ) 32 := rfl
+
+example : ‖fourierCoeff (shiftedRudinShapiro (L := 3) 2) 15‖ = 0 := by
+  norm_num [shiftedRudinShapiro_coeff_norm]
+
+example : ‖fourierCoeff (shiftedRudinShapiro (L := 3) 2) 16‖ = 1 := by
+  norm_num [shiftedRudinShapiro_coeff_norm]
+
+example : ‖fourierCoeff (shiftedRudinShapiro (L := 3) 2) 31‖ = 1 := by
+  norm_num [shiftedRudinShapiro_coeff_norm]
+
+example : ‖fourierCoeff (shiftedRudinShapiro (L := 3) 2) 32‖ = 0 := by
+  norm_num [shiftedRudinShapiro_coeff_norm]
+
+example (j : ℕ) : fourierCoeff (shiftedRudinShapiro (L := 1) j) (-7) = 0 := by
+  apply norm_eq_zero.mp
+  rw [shiftedRudinShapiro_coeff_norm,if_neg (by omega)]
+
+example {i j : ℕ} (hij : i ≠ j) (k : ℤ) (hk : k ∈ shiftedRudinShapiroBlock i) :
+    k ∉ shiftedRudinShapiroBlock j := by
+  exact fun hj => shiftedRudinShapiro_blocks_disjoint hij k (Finset.mem_Ico.mp hk) (Finset.mem_Ico.mp hj)
+
+example : toContinuousCLM (mode (-3) : SmoothPeriodicTest (3:ℝ)) = fourier (-3) := toContinuousCLM_mode _
+
+example (j : ℕ) : continuousFourierPolynomial (shiftedRudinShapiroBlock j)
+    (fourierCoeff (shiftedRudinShapiro (L := L) j)) = shiftedRudinShapiro (L := L) j :=
+  continuousFourierPolynomial_shiftedRudinShapiro j
+
+example : Summable (fun j : ℕ => ‖continuousCounterexampleTerm (L := 3) j‖) :=
+  summable_norm_continuousCounterexampleTerm
+
+example : UniformContinuous (continuousFourierCounterexample (L := 3)) :=
+  CompactSpace.uniformContinuous_of_continuous (continuousFourierCounterexample (L := 3)).continuous
+
+example : ‖continuousCounterexampleBlock (L := 3) 1 2‖ = (4:ℝ)/9 := by
+  convert norm_continuousCounterexampleBlock (L := 3) (p := 1) (by norm_num) 2 using 1; norm_num
+
+example : ‖continuousCounterexampleBlock (L := 3) 2 2‖ = (1:ℝ)/9 := by
+  convert norm_continuousCounterexampleBlock (L := 3) (p := 2) (by norm_num) 2 using 1; norm_num
+
+example : ¬Memℓp (fourierCoeff (continuousFourierCounterexample (L := 1))) 1 :=
+  continuousFourierCounterexample_not_memℓp (by norm_num)
+
+example : ¬Memℓp (fourierCoeff (continuousFourierCounterexample (L := 3))) (4/3:ℝ≥0∞) := by
+  apply continuousFourierCounterexample_not_memℓp
+  rw [ENNReal.div_lt_iff (by norm_num) (by norm_num)]
+  norm_num
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p < 2) :
+    Distribution.ofContinuous (continuousFourierCounterexample (L := L)) ∉
+      periodicFourierLebesgueSubmodule Weight.one p := continuousFourierCounterexample_not_fourierLebesgue hp
+
+example : ∃ f : C(AddCircle L,ℂ), ∀ p : ℝ≥0∞, 1 ≤ p → p < 2 →
+    Distribution.ofContinuous f ∉ periodicFourierLebesgueSubmodule Weight.one p :=
+  exists_continuous_not_fourierLebesgue_below_two
+
+example : nonMeasureDistribution (L := 3) (nonMeasureBlockTest 0) = 1 := by
+  simpa using nonMeasureDistribution_blockTest (L := 3) 0
+
+example : nonMeasureDistribution (L := 3) (nonMeasureBlockTest 3) = 32 := by
+  have h := nonMeasureDistribution_blockTest (L := 3) 3
+  norm_num at h
+  exact h
+
+example (j : ℕ) : ‖toContinuousCLM (nonMeasureBlockTest (L := L) j)‖ ≤ Real.sqrt 2 * (2:ℝ)^j := by
+  rw [toContinuous_nonMeasureBlockTest,norm_star]
+  exact norm_shiftedRudinShapiro_le j
+
+example : Summable (fun j : ℕ => ‖nonMeasureBlockCoefficients (L := 3) 3 j‖) :=
+  summable_norm_nonMeasureBlockCoefficients (by norm_num) (by norm_num)
+
+example : Summable (fun j : ℕ => ‖nonMeasureBlockCoefficients (L := 3) (5/2) j‖) := by
+  apply summable_norm_nonMeasureBlockCoefficients
+  · rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]
+    norm_num
+  · exact ENNReal.div_ne_top (by norm_num) (by norm_num)
+
+example {p : ℝ≥0∞} (hp : 2 < p) :
+    nonMeasureDistribution (L := L) ∈ periodicFourierLebesgueSubmodule Weight.one p := by
+  let : Fact (1 ≤ p) := ⟨(by norm_num : (1:ℝ≥0∞) ≤ 2).trans hp.le⟩
+  exact nonMeasureDistribution_mem_fourierLebesgue hp
+
+example : nonMeasureDistribution (L := 3) ∈ periodicFourierLebesgueSubmodule Weight.one ⊤ :=
+  nonMeasureDistribution_mem_fourierLebesgue (by norm_num)
+
+example : (nonMeasureDistribution (L := 1)).order ≠ 0 := nonMeasureDistribution_order_ne_zero
+
+example : ¬∃ μ : ComplexMeasure (AddCircle (3:ℝ)),
+    Distribution.ofComplexMeasure μ = nonMeasureDistribution := nonMeasureDistribution_not_measure
+
+example : ∃ u : Distribution L,
+    (∀ p : ℝ≥0∞, 2 < p → u ∈ periodicFourierLebesgueSubmodule Weight.one p) ∧
+    ¬∃ μ : ComplexMeasure (AddCircle L), Distribution.ofComplexMeasure μ = u :=
+  exists_fourierLebesgue_above_two_not_measure
+
+end AppendixASharpnessChecks
+end NLS.Fourier

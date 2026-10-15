@@ -3824,3 +3824,6 @@ import NLS.Fourier.PeriodicFourierLebesgueEmbeddings
 import NLS.Fourier.RudinShapiro
 import NLS.Fourier.RudinShapiroCoefficients
 import NLS.Fourier.PeriodicL1NonSurjective
+import NLS.Fourier.ShiftedRudinShapiro
+import NLS.Fourier.ContinuousFourierCounterexample
+import NLS.Fourier.NonMeasureFourierCounterexample

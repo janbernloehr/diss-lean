@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Remark A.6 is complete. The actual L1-to-c0 Fourier transform
-has dense, nonclosed range and is not onto, at every positive period. A
-sequence tending to zero need not be the Fourier sequence of an integrable
-function. This also gives an original FL-infinity distribution whose Fourier
-truncations converge in norm but which has no L1 representative. The proof
-uses Rudin–Shapiro polynomials and the open mapping theorem.
+Latest step: Lemmas A.3 and A.5 are proved for every positive physical
+period. One original distribution lies in every FLp with p > 2, including
+infinity, but is not a complex measure. One continuous function lies in no
+FLp with 1 ≤ p < 2. Both witnesses are constructed from disjoint
+Rudin–Shapiro blocks; the A.5 construction differs from the printed series
+and proves the same existential statement. Remark A.6 is also complete.
 
-Next: the counterexamples A.3 and A.5, then source integration of A.7–A.9.
+Next: source integration of A.7–A.9, including original-space products and
+physical Sobolev normalization.
 The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
 remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

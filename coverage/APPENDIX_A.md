@@ -7,7 +7,8 @@ derivative on printed page 122. It also covers the original Fourier–Lebesgue
 spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
 synthesis and pseudomeasure-dual statements on page 123, plus both assertions
 in Remark A.6, the actual L1-to-c0 Fourier map, and the full embeddings
-of Lemmas A.2 and A.4 on page 123. The test space
+of Lemmas A.2 and A.4 and the counterexamples A.3 and A.5 on page 123.
+The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
@@ -33,6 +34,8 @@ positive physical period. It is not defined as a coefficient-sequence space.
 | Sharp finite interpolation prerequisites | `Coeff.norm_kernelPair_interpolate_sharp`, `sum_norm_sq_dft`, `norm_dft_piLp_two` | Geometric three-lines constant for arbitrary finite inputs; exact discrete Parseval and sqrt(N) Hilbert norm factor. Extended to the full A.2/A.4 embeddings below. |
 | Lemma A.2, Lᵖ → FLᑫ | `PeriodicFourierLebesgue.ofLp`, `ofLp_injective`, `norm_ofLp_le` | Every conjugate pair with 1 ≤ p ≤ 2, including p=1, q=infinity; complex continuous linear injection of the actual Lᵖ quotient into original distributions, norm bound one and exact 1/L action. The source names the output exponent p. |
 | Lemma A.4, FLᵖ → Lᑫ | `lpRepresentative`, `lpRepresentative_injective`, `norm_lpRepresentative_le` | Full inclusive range 1 ≤ p ≤ 2; unique actual Lᑫ representative, constant-one norm bound, original smooth-test action, and both endpoint identifications. |
+| Lemma A.3, non-measure distribution | `exists_fourierLebesgue_above_two_not_measure` | One original distribution lies in every FLp with p > 2, including infinity, but is not represented by any actual complex measure on the physical circle. |
+| Lemma A.5, continuous counterexample | `exists_continuous_not_fourierLebesgue_below_two` | One continuous physical-circle function lies outside every original FLp with 1 ≤ p < 2. Same witness for all exponents; alternative construction to the printed series. |
 | Uniqueness of integrable representatives | `Distribution.ofCircleL1_eq_iff`, `ofCircleLp_injective`, `circleLp_fourierCoeff_injective` | Equality of original distributions iff a.e. equality for integrable functions; all Fourier coefficients determine every Banach Lᵖ equivalence class. |
 | Complex Radon representation, (A.2) | `Distribution.existsUnique_normalized_measure`, `order_zero_iff_measure` | Unique actual complex measure on the physical circle, with 1/L times the standard complex integral; holds on all continuous functions and all original smooth tests. |
 | Converse and identification with measures | `Distribution.ofComplexMeasure_order`, `complexMeasureOrderZeroEquiv` | Every complex Borel measure gives least order zero; both directions of the equivalence recover the original object. |
@@ -249,6 +252,47 @@ coefficients and no L1 representative. Its Fourier truncations nevertheless
 converge in the original FL-infinity norm. Thus neither coefficient decay
 nor that norm convergence is a converse to L1 representability.
 
+## Sharpness counterexamples A.3 and A.5
+
+[`ShiftedRudinShapiro.lean`](../NLS/Fourier/ShiftedRudinShapiro.lean) shifts
+the polynomial P_(2j) by frequency 4^j. Its coefficients have norm one on
+[4^j, 2*4^j) and vanish elsewhere. These blocks are pairwise disjoint, and
+the uniform norm is at most sqrt(2)*2^j. Finite Fourier synthesis recovers
+the actual continuous polynomial, and the original smooth modes realize
+the corresponding physical-circle characters.
+
+[`NonMeasureFourierCounterexample.lean`](../NLS/Fourier/NonMeasureFourierCounterexample.lean)
+uses amplitudes (j+1)/2^j. The p-norm of block j is exactly
+(j+1)*(2^(2/p-1))^j, so the blocks are summable in every finite exponent
+p > 2. Their sum at p=3 synthesizes one original periodic distribution.
+Coefficient evaluation shows that this same distribution lies in every
+other finite FLp above two; exponent inclusion gives infinity as well.
+
+For the non-measure assertion, the conjugate of the jth block polynomial
+is an actual original smooth test, with uniform norm at most sqrt(2)*2^j.
+Its pairing with the constructed distribution is exactly (j+1)*2^j.
+A bounded extension to all continuous functions would therefore force
+j+1 ≤ sqrt(2)*C for every j. This contradiction proves that its least order
+is nonzero. Since every complex measure produces an order-zero original
+distribution, no complex measure represents it. This proves all of A.3,
+including its quantifier order and physical-circle interpretation.
+
+[`ContinuousFourierCounterexample.lean`](../NLS/Fourier/ContinuousFourierCounterexample.lean)
+uses amplitudes 1/((j+1)^2*2^j). The uniform norms are bounded by
+sqrt(2)/(j+1)^2, giving an absolutely convergent series in C(T_L) and hence
+a continuous sum. On each block its coefficients are exactly those of that
+single term. Their p-norm is (2^(2/p-1))^j/(j+1)^2, which is unbounded
+for every 1 ≤ p < 2. Any full ℓp coefficient sequence would bound all these
+block norms, a contradiction. The conclusion is stated both for the actual
+Fourier coefficients and for membership of the original distribution.
+The witness is independent of p. This proves A.5 by an alternative
+construction; it does not assert convergence properties of the particular
+exp(i*n*log(n))/(sqrt(n)*log(n)^2) series printed in the source's proof.
+
+Both constructions apply to every positive physical period and use the
+previously established normalized Fourier maps. Neither assumes the desired
+counterexample, a failure of membership, or non-measure representability.
+
 ## Sharp finite interpolation prerequisites
 
 [`FiniteInterpolationSharp.lean`](../NLS/SequenceSpaces/FiniteInterpolationSharp.lean)
@@ -398,8 +442,13 @@ three, finite fractional norms, the infinity synthesis endpoint, the exact c0
 norm, the L1 growth bound, non-surjectivity, nonclosed dense range, and the
 counterexamples as sequences and original distributions.
 
-Examples A.3 and A.5 remain open here. A.7–A.9 still require their Appendix A
-source audit and integration.
+Three further modules and 28 checks cover A.3 and A.5, including signed
+frequencies, all support boundaries, disjointness, uniform continuity,
+physical periods one and three, the fractional exponents 4/3 and 5/2,
+the exponent-two block norm, the infinity membership endpoint, exact
+original-test pairing, positive order, and actual measure nonrepresentability.
+
+A.7–A.9 still require their Appendix A source audit and integration.
 In particular, the use of the rescaled weight
 (1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
 are not silently substituted for the exact Section 2 norm above. The present

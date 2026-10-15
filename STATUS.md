@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: Appendix A.6 Fourier non-surjectivity
+## Current milestone: Appendix A.3 and A.5 sharpness counterexamples
+
+For every positive physical period, one original periodic distribution
+belongs to every FLp with p > 2, including infinity, but cannot be represented
+by any complex measure. A second, continuous function belongs to no FLp with
+1 ≤ p < 2. In both statements the same witness works for all the exponents.
+These complete the existential assertions in Lemmas A.3 and A.5.
+
+Both constructions use disjoint Rudin–Shapiro frequency blocks of length
+4^j and uniform norm at most sqrt(2)*2^j. For A.3, amplitudes (j+1)/2^j give
+summable coefficient-block norms at every finite p > 2. Pairing the resulting
+original distribution with conjugate block polynomials rules out order zero,
+and hence any actual complex-measure representative. For A.5, amplitudes
+1/((j+1)^2*2^j) give a uniformly convergent continuous series, while the
+coefficient-block norms grow without bound for every p < 2. This is an
+alternative construction proving A.5, not an analysis of its printed series.
+
+Three new modules and 28 public checks cover disjoint supports and their
+boundaries, signed modes, uniform convergence, fractional exponents,
+the exponent-two block norm, the infinity membership endpoint, exact
+original smooth-test action, and actual measure nonrepresentability.
+See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: source integration of A.7–A.9, including original-space multiplication
+and physical Sobolev normalization. The Section 14 and unrestricted
+Lemma 27.2 endpoint qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,492 build jobs, all 6,171
+public examples, and the transitive axiom audit for 35,657 NLS declarations.
+The three new modules and 28 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+625 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A.6 Fourier non-surjectivity
 
 The actual L1 Fourier transform into c0 is not onto at any positive physical
 period. Its image is dense and not closed. There is an integer sequence
