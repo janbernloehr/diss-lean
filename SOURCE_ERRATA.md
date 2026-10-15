@@ -1691,6 +1691,34 @@ locus, and can be shared with Proposition 28.2. The actual complex bound
 4736 at n=±10 and P²=21/16 is checked publicly. None of these results
 validates the printed intermediate scalar comparison disproved above.
 
+## Lemma 28.1: the literal signed-index ratio
+
+Source: printed page 117, checked in the rendered PDF. The hypothesis
+uses ⟨n⟩≥⟨N⟩, but the first rational bound uses signed n directly:
+
+```
+|χ_n| ≤ 128(n+N+2/5)/(n−N+3/10).
+```
+
+At the actual zero source and n=−1, N=1, the selected gap is collapsed,
+the deleted product at its midpoint is exactly one, and the proposed
+right-hand side is −512/17. The physical H¹ norm is zero and the printed
+cutoff holds. Thus this is an actual source counterexample to the first
+inequality, distinct from the scalar-only positive-boundary failures above.
+
+[`SourceSection28SignedIndex.lean`](NLS/ZakharovShabat/SourceSection28SignedIndex.lean)
+proves the counterexample, the exact physical cutoff, and its presence in
+every retained original U and T. The proof's later restriction to n≥N
+and instruction to treat n≤−N similarly requires reflecting the index;
+it does not validate the signed formula as printed.
+
+The final χ bound 2048 and action bound 4608 remain proved on a common
+connected L²-open restriction of the same original family. The factor-nine
+step gives 9·2048=18432 for 4|I_n|/|γ_n|²; division by four gives 4608 for
+|I_n|/|γ_n|². The implementation keeps this factor explicit. See
+[the Section 28 audit](coverage/SECTION_28.md) for the original-action,
+continuity, and uniformity statements.
+
 ## Section 2: norm convergence at the infinity endpoint
 
 Source: dissertation, printed page 21, checked in the rendered PDF.

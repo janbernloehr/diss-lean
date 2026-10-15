@@ -3786,3 +3786,10 @@ import NLS.ZakharovShabat.SourceSection26SupremumCorrection
 import NLS.ZakharovShabat.SourceSection27Actions
 import NLS.ZakharovShabat.SourceSection27DerivativeBound
 import NLS.ZakharovShabat.SourceSection27Original
+import NLS.ZakharovShabat.NormalizedWeightedSourceCompact
+import NLS.ZakharovShabat.SourceSection28Asymptotics
+import NLS.ZakharovShabat.SourceSection28GapBounds
+import NLS.ZakharovShabat.SourceSection28WeightedContinuity
+import NLS.ZakharovShabat.SourceSection28WeightedActions
+import NLS.ZakharovShabat.SourceSection28SignedIndex
+import NLS.ZakharovShabat.SourceSection28Original

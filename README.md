@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 27 now retains the original indexed actions and
-exact physical norms, including coefficient one in the derivative
-estimate. The printed Lemma 27.2 bound holds for m≥2; its m=1 endpoint
-remains explicitly qualified. The same original family and domains
-support all estimates.
+Latest step: Section 28 now retains the original weighted actions,
+exact physical norms, and all final constants. The ℓ² asymptotic is
+uniform on bounded H¹ sets; complex weighted sums converge continuously.
+An actual zero-source counterexample corrects the printed signed ratio.
 
-Next: Section 28's weighted action and gap estimates. The separate
-fractional-smoothness qualifications remain. The dissertation is incomplete.
+Next: Appendix A's periodic distributions and Fourier coefficients.
+The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
+remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -29,7 +29,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 24 audit](coverage/SECTION_24.md),
 [the Section 25 audit](coverage/SECTION_25.md),
 [the Section 26 audit](coverage/SECTION_26.md),
-[the Section 27 audit](coverage/SECTION_27.md), and
+[the Section 27 audit](coverage/SECTION_27.md),
+[the Section 28 audit](coverage/SECTION_28.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

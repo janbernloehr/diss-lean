@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Section 27 original Sobolev-norm estimates
+## Current milestone: Section 28 original weighted actions and gaps
+
+Formula (5.14) now has an actual locally uniform ℓ² realization for the
+original filled normalized actions. Compact decoding proves uniformity
+on every real M₁ weighted ball, including bounded sets in the exact
+physical H¹ norm. Formula (5.15) retains the factor nine and includes
+collapsed complex gaps.
+
+The literal χ product and original indexed actions satisfy the final
+constants 2048 and 4608 on one connected L²-open S⊆T⊆U containing the
+entire real locus. Weighted action sums converge and are continuous
+throughout the weighted part of S. The exact 2²⁰ real and 2²¹ complex
+bounds hold, with connected weight-dependent estimate neighborhoods.
+`SourceSection28Data` retains the preceding original family.
+
+The signed ratio in the literal statement of Lemma 28.1 is refuted by
+the actual zero H¹ source at n=−1, N=1: χ has norm one, but the proposed
+upper bound is −512/17. This is distinct from the earlier positive-boundary
+scalar counterexamples and does not refute the final spectral bounds.
+See [the Section 28 audit](coverage/SECTION_28.md).
+
+Seven new modules and 31 public checks cover the compact embedding,
+uniform estimates, complex continuity and summability, exact constants,
+signed and collapsed gaps, physical norms, and original-domain retention.
+
+Next: Appendix A's periodic distributions and Fourier coefficients.
+The [Section 14 qualifications](coverage/SECTION_14.md) and unrestricted
+printed m=1 coefficient in [Section 27](coverage/SECTION_27.md) remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,231 build jobs, all 5,929
+public examples, and the transitive axiom audit for 34,759 NLS
+declarations. The seven new modules and 31 focused checks compile
+without new warnings; the full build retains 21 existing warnings.
+The 156-label source inventory, 538 local file links across 35 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: Section 27 original Sobolev-norm estimates
 
 Formula (5.13) now uses the original indexed higher actions, the actual
 physical remainder integral over [0,1], and both component derivative

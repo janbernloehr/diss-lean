@@ -56930,3 +56930,171 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
     ∃ B U T : Set (CoeffPair 2), SourceSection27Data D A B U T :=
   sourceSection27_original
 end Section27OriginalChecks
+
+noncomputable section
+open Set Filter Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+section Section28OriginalChecks
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    IsCompactOperator (normalizedWeightedSourceCLM (p := 2) w) :=
+  isCompactOperator_normalizedWeightedSource w hw
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    IsCompactOperator (normalizedWeightedSourceCLM (p := ⊤) w) :=
+  isCompactOperator_normalizedWeightedSource w hw
+
+example : normalizedWeightedSourceInverseSymbol (SpectralWeight.sobolev 1 (by norm_num)) (-2) = 1/5 := by
+  norm_num [normalizedWeightedSourceInverseSymbol,SpectralWeight.sobolev_apply,Weight.sobolev_apply]
+
+example (w : SpectralWeight) (n : ℤ) :
+    normalizedWeightedSourceInverseSymbol w (-n) = normalizedWeightedSourceInverseSymbol w n := by
+  simp [normalizedWeightedSourceInverseSymbol]
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (ε : ℝ) (hε : 0 < ε) :
+    ∃ s : Finset ℤ, ∀ n ∉ s, ‖normalizedWeightedSourceInverseSymbol w n‖ ≤ ε :=
+  normalizedWeightedSourceInverseSymbol_tail w hw ε hε
+
+example : (1+|(-1:ℝ)| ≥ 1+|(1:ℝ)|) ∧
+    1+|(1:ℝ)| ≥ 8*‖sourcePhysicalH1Coordinates (0 : ScalarDomain 2 × ScalarDomain 2)‖^2 :=
+  section28_zero_physical_cutoff
+
+example : sobolevSourceInclusion (0 : ScalarDomain 2 × ScalarDomain 2) = 0 := by
+  apply (CoeffPair.toMax 2).injective
+  apply Prod.ext <;> ext n <;> simp
+
+example (W : Set (CoeffPair 2)) (H : SourceEquation2_19Data (by simp) (by norm_num) W)
+    (hz : (0 : CoeffPair 2) ∈ W) :
+    ¬ ‖sourceActionChi (by simp) (by norm_num) (-1) (0 : CoeffPair 2)
+      (sourceStandardRootMidpoint (by simp) (by norm_num) (0 : CoeffPair 2) (-1))‖ ≤ -512/17 := by
+  convert H.section28_signed_ratio_zero hz using 1; norm_num
+
+example : ¬ (((1:ℝ)+1+2/5)/(1-1+3/10) ≤ 2*(1+1)) :=
+  lemma281_ratio_boundary_counterexample
+
+example : 128*((10:ℝ)+10+2/5)/(10-10+3/10) ≤ 8192*(1+21/16) := by
+  norm_num
+
+example (W : Set (CoeffPair 2)) (H : SourceEquation2_19Data (by simp) (by norm_num) W)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ W) (n : ℤ)
+    (hu : ‖sourceActionCriticalCoordinate (by simp) (by norm_num) n ψ‖ ≤ 2)
+    (hb : ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n,
+      ‖sourceActionChi (by simp) (by norm_num) n ψ z‖ ≤ 1) :
+    ‖4*sourceNormalizedIndexedAction (by simp) (by norm_num) n ψ‖ ≤ 9 := by
+  simpa using H.section28_normalized_bound ψ hψ n 1 (by norm_num) hu hb
+
+example (W : Set (CoeffPair 2)) (H : SourceEquation2_19Data (by simp) (by norm_num) W)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ W) (n : ℤ)
+    (hu : ‖sourceActionCriticalCoordinate (by simp) (by norm_num) n ψ‖ ≤ 2)
+    (hb : ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n,
+      ‖sourceActionChi (by simp) (by norm_num) n ψ z‖ ≤ 2048) :
+    4*‖sourceIndexedAction (by simp) (by norm_num) n ψ‖ ≤
+      18432*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n‖^2 := by
+  simpa only [show (9:ℝ)*2048=18432 by norm_num] using H.section28_action_bound ψ hψ n 2048 (by norm_num) hu hb
+
+example (ψ : CoeffPair 2) (n : ℤ)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    ‖sourceActionCriticalCoordinate (by simp) (by norm_num) n ψ‖ = 0 := by
+  rw [sourceActionCriticalCoordinate,sourceStandardRootHalfGap,hg,zero_div,div_zero,norm_zero]
+
+example (W : Set (CoeffPair 2)) (H : SourceSection11OriginalEstimates (by simp) (by norm_num) W)
+    (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (haW : normalizedWeightedSource w a ∈ W)
+    (haS : normalizedWeightedSource w a ∈ sourceSpectralStripNeighborhood (by simp)) :
+    ContinuousAt (fun b : CoeffPair 2 => ∑' n : ℤ, (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w b)‖) a :=
+  H.section28_weighted_continuousAt w hw a haW haS
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    Summable (fun n : ℤ => (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a.val)‖) :=
+  (section28_real_weighted_action_bound w hw a).1
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    (∑' n : ℤ, (w (2*n))^2*‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a.val)‖) ≤
+      1048576*(w.realExtension (16*‖a.val‖^2))^2*‖a.val‖^2 := by
+  simpa only [show (2:ℝ)^20=1048576 by norm_num] using (section28_real_weighted_action_bound w hw a).2
+
+example (ψ : CoeffPair 2) (n : ℤ)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    4*sourceNormalizedIndexedAction (by simp) (by norm_num) n ψ =
+      4*sourceIndexedAction (by simp) (by norm_num) n ψ /
+        (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 := by
+  rw [sourceNormalizedIndexedAction_eq_quotient (by simp) (by norm_num) n ψ hg,mul_div_assoc]
+
+example (n : ℤ) : 4*sourceNormalizedIndexedAction (by simp) (by norm_num) n (0 : CoeffPair 2) = 1 := by
+  rw [sourceNormalizedIndexedAction_zero_source]
+  norm_num
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    (∑' n : ℤ, (w (2*n))^2*‖sourceIndexedAction (by simp) (by norm_num) n
+      (normalizedWeightedSource w (0 : CoeffPair 2))‖) ≤ 0 := by
+  have h := (section28_real_weighted_action_bound w hw (0 : realTypeSourceSubmodule 2)).2
+  simpa only [ZeroMemClass.coe_zero,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero] using h
+
+variable {W₀ W V Wa B U T S : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection28Data D A B U T S)
+
+example : IsOpen S ∧ IsConnected S ∧ realTypeSourceLocus 2 ⊆ S :=
+  ⟨Q.action_gap_open,Q.action_gap_connected,Q.action_gap_real_subset⟩
+
+example (ψ : CoeffPair 2) (hψ : ψ ∈ S) : ψ ∈ U ∩ T :=
+  ⟨Q.gap_subset (Q.action_gap_subset hψ),Q.action_gap_subset hψ⟩
+
+example : SourceSection27Data D A B U T := Q.toSourceSection27Data
+
+example (φ : CoeffPair 2) (hφ : φ ∈ S) :
+    ∃ O : Set (CoeffPair 2), IsOpen O ∧ φ ∈ O ∧ O ⊆ S ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ ψ ∈ O, ∃ b : Coeff 2,
+        (∀ n : ℤ, b n = 4*sourceNormalizedIndexedAction (by simp) (by norm_num) n ψ-1) ∧ ‖b‖ ≤ C :=
+  Q.normalized_locally_uniform φ hφ
+
+example (R : ℝ) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ R →
+      ∃ b : Coeff 2, (∀ n : ℤ, b n = 4*sourceNormalizedIndexedAction (by simp) (by norm_num) n
+        (sobolevSourceInclusion a.val)-1) ∧ ‖b‖ ≤ C := Q.normalized_uniform_H1_ball R
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ S)
+    (hn : 8*‖sourcePhysicalH1Coordinates a‖^2 ≤ 10) :
+    ‖sourceIndexedAction (by simp) (by norm_num) (-10) (sobolevSourceInclusion a)‖ ≤
+      4608*(1+‖sourcePhysicalH1Coordinates a‖^2)*
+        ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) (-10)‖^2 :=
+  (Q.physical_H1_bounds a ha).2 (-10) (by simpa using hn)
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : normalizedWeightedSource w a ∈ S) (hn : 8*‖a‖^2 ≤ 1) :
+    ‖sourceIndexedAction (by simp) (by norm_num) 0 (normalizedWeightedSource w a)‖ ≤
+      4608*(1+‖a‖^2)*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (normalizedWeightedSource w a) 0‖^2 :=
+  (Q.chi_action_bound w hw a ha 0 (by simpa using hn)).2
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : normalizedWeightedSource w a ∈ S) :
+    Summable (fun n : ℤ => (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) := Q.weighted_summable w hw a ha
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    ContinuousOn (fun a : CoeffPair 2 => ∑' n : ℤ, (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖)
+      (normalizedWeightedSource w ⁻¹' S) := Q.weighted_continuous w hw
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    ∃ R : Set (CoeffPair 2), IsOpen R ∧ IsConnected R ∧ realTypeSourceLocus 2 ⊆ R ∧
+      (∀ a ∈ R, normalizedWeightedSource w a ∈ S) ∧ ∀ a ∈ R,
+        Summable (fun n : ℤ => (w (2*n))^2*‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ∧
+        (∑' n : ℤ, (w (2*n))^2*‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+          2097152*(w.realExtension (16*‖a‖^2))^2*‖a‖^2 := by
+  simpa only [show (2:ℝ)^21=2097152 by norm_num] using Q.weighted_bound w hw
+
+example : (0 : CoeffPair 2) ∈ S := Q.action_gap_real_subset (by simp [realTypeSourceLocus])
+
+example :
+    ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+      ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+      ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+      ∃ B U T S : Set (CoeffPair 2), SourceSection28Data D A B U T S := sourceSection28_original
+
+end Section28OriginalChecks
+end NLS.ZakharovShabat
