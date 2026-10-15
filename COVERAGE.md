@@ -56,11 +56,13 @@ angle flow differentiates to it in H¹ throughout its pre-collapse interval.
 The physical energy differential and original Poisson bivector recover the
 same frequency. Physical momentum now has a unique Hilbert cotangent at
 every complex H¹ source and generates the actual spatial-translation orbit.
-The original angle–momentum bracket is analytic on its complex H¹ open-gap
-domain and is calibrated with the physical H₂ action derivative at real
-finite-gap sources. Its expected value 2πn and the general complex H¹
-energy Poisson identity in Section 20 remain open, followed by the original
-Section 21 assertions.
+The original angle–momentum bracket now equals 2πn on all real H¹ sources
+with the selected gap open, using the same Section 19 primitive's physical
+H₂ contour and H¹ finite-gap density. For each index it also equals 2πn
+on an open complex H¹ neighborhood of all its real open-gap sources inside
+the original domain. Full-domain continuation, general H¹ angle-vector
+regularity, and Section 20's general complex H¹ energy Poisson identity
+remain open, followed by the original Section 21 assertions.
 
 ## Nonextension proof and limits
 

@@ -54779,3 +54779,206 @@ example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by s
   D.complex.finiteGap_momentum_bracket_eq_physical_deriv D.previous.original_theta_common_domain φ hf n hn
 end OriginalMomentum
 end Section20Momentum
+
+section Section20MomentumNormalization
+open Set Metric Filter NLS NLS.ZakharovShabat NLS.Poisson
+open scoped ENNReal Topology
+
+example (A : ℂ → ℂ) (hA : AnalyticAt ℂ A 0) (hA0 : A 0 = 0) (H₁ H₂ : ℂ)
+    (h₁ : iteratedDeriv 1 A 0 = Complex.I*H₁/2) (h₂ : iteratedDeriv 2 A 0 = Complex.I*H₂/2) :
+    ∃ B : ℂ → ℂ, AnalyticAt ℂ B 0 ∧ ∃ ε : ℝ, 0 < ε ∧ ∀ z : ℂ,
+      z ≠ 0 → ‖z⁻¹‖ < ε →
+      (-Complex.I*z+A z⁻¹)^2 = -z^2+H₁+H₂/(2*z)+z⁻¹^2*B z⁻¹ :=
+  NLS.ComplexAnalysis.exists_phase_square_analytic_remainder A hA hA0 H₁ H₂ h₁ h₂
+
+example (A : ℂ → ℂ) (hA : AnalyticAt ℂ A 0) (hA0 : A 0 = 0) (H₁ H₂ : ℂ)
+    (h₁ : iteratedDeriv 1 A 0 = Complex.I*H₁/2) (h₂ : iteratedDeriv 2 A 0 = Complex.I*H₂/2) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      (∮ z in C(0,R), (-Complex.I*z+A z⁻¹)^2) = (Real.pi : ℂ)*Complex.I*H₂ :=
+  NLS.ComplexAnalysis.exists_phase_square_contour A hA hA0 H₁ H₂ h₁ h₂
+
+-- An explicit Laurent polynomial checks the residue sign and factor four.
+example : ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+    (∮ z in C(0,R), (-Complex.I*z+Complex.I*(z⁻¹)^2)^2) = 4*(Real.pi : ℂ)*Complex.I := by
+  have h₁ : iteratedDeriv 1 (fun w : ℂ => Complex.I*w^2) 0 = Complex.I*0/2 := by
+    simp
+  have h₂ : iteratedDeriv 2 (fun w : ℂ => Complex.I*w^2) 0 = Complex.I*4/2 := by
+    simp
+    ring
+  obtain ⟨T,hT,he⟩ := NLS.ComplexAnalysis.exists_phase_square_contour (fun w : ℂ => Complex.I*w^2)
+    (by fun_prop) (by simp) 0 4 h₁ h₂
+  refine ⟨T,hT,fun R hR => ?_⟩
+  convert he R hR using 1
+  ring
+
+section GeneralMomentum
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R → sourceFiniteGapNLSHamiltonian hp hp1 φ hf 2 =
+      (-Complex.I/Real.pi : ℂ)*(∮ z in C(0,R), (sourceFullAbelianPrimitive hp hp1 B 0 (z,φ.val))^2) :=
+  Q.momentum_contour φ hf
+
+example (h2p : (2 : ℝ≥0∞) ≤ p) (φ : realTypeSourceSubmodule p)
+    (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      sphere (0 : ℂ) R ⊆ sourceCanonicalRootDomain hp hp1 φ.val →
+      ∀ n : ℤ, canonicalPeriodicGap hp hp1 (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n ≠ 0 →
+      sourceAngularThetaFunctionalBracket hp hp1 h2p n s
+        (sourceFullAbelianMomentumContour hp hp1 B 0 R) φ.val = 2*(Real.pi : ℂ)*n :=
+  Q.momentum_contour_bracket h2p φ hf
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1)
+    (C : SourceAbelianSpectralChart hp hp1 B φ.val) (R : ℝ) (hR : 0 < R)
+    (hgap : ∀ k : ℤ, canonicalPeriodicGap hp hp1 (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0 → sourcePeriodicSegment hp hp1 φ.val k ⊆ ball 0 R) :
+    sourceFullAbelianMomentumContour hp hp1 B 0 R φ.val = sourceFiniteGapNLSHamiltonian hp hp1 φ hf 2 :=
+  sourceFullAbelianMomentumContour_eq_physical_of_enclosing φ hf C R hR hgap
+
+example (c : ℂ) (R : ℝ) (hR : 0 ≤ R) (φ : CoeffPair p) (hφ : φ ∈ U)
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 φ) :
+    AnalyticAt ℂ (sourceFullAbelianMomentumContour hp hp1 B c R) φ :=
+  Q.toSourceFullAbelianDifferentialData.analyticAt_momentumContour c R hR φ hφ hcircle
+
+example (φ : realTypeSourceLocus p) (ψ : CoeffPair p) (hψ : ψ ∈ A.sourceBall φ) (n k : ℤ) :
+    sourceAbelianMomentCircle hp hp1 Wa n 0 1 (s n ψ : Coeff p) ψ
+      ((A.localChart φ).center k) ((A.localChart φ).contourRadius k) =
+        -(Complex.I*(Real.pi : ℂ)*k)*((2*Real.pi : ℂ)*(if k = n then 1 else 0)) :=
+  A.unshifted_linear_circle φ ψ hψ n k
+end GeneralMomentum
+
+section HilbertMomentum
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection20Data D A B U)
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n s (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) =
+      2*(Real.pi : ℂ)*n := Q.finiteGap_momentum_bracket φ hf n hn
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    deriv (D.complex.physicalActionReductionHamiltonian φ hf n 2) 0 = -(2*(Real.pi : ℂ)*n) := by
+  have he := Q.finiteGap_momentum_bracket φ hf n hn
+  rw [D.complex.finiteGap_momentum_bracket_eq_physical_deriv D.previous.original_theta_common_domain φ hf n hn] at he
+  linear_combination -he
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    fderiv ℂ periodOneSobolevMomentum (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf)
+      (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn) =
+      -(2*(Real.pi : ℂ)*n) := by
+  have he := Q.finiteGap_momentum_bracket φ hf n hn
+  rw [D.complex.finiteGap_momentum_bracket D.previous.original_theta_common_domain φ hf n hn] at he
+  linear_combination -he
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n s a.val = 2*(Real.pi : ℂ)*n := Q.sobolev_momentum_bracket a n hn
+
+example (a : realTypeSobolevSourceLocus)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) 0 ≠ 0) : sourceSobolevThetaMomentumBracket 0 s a.val = 0 := by
+  simpa using Q.sobolev_momentum_bracket a 0 hn
+
+example (a : realTypeSobolevSourceLocus)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) (-1) ≠ 0) : sourceSobolevThetaMomentumBracket (-1) s a.val = -2*(Real.pi : ℂ) := by
+  simpa using Q.sobolev_momentum_bracket a (-1) hn
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) :
+    sourceAngularThetaDifferential (by simp) (by norm_num) n s (sobolevSourceInclusion a.val)
+      (sourceSobolevSpatialDerivative a.val) = 2*(Real.pi : ℂ)*n := by
+  rw [← sourceSobolevThetaMomentumBracket_eq_spatial]
+  exact Q.sobolev_momentum_bracket a n hn
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) :
+    sourceBivector le_rfl (sourceAngularThetaDifferential (by simp) (by norm_num) n s
+      (sobolevSourceInclusion a.val)) (sourceSobolevMomentumCotangent a.val) = 2*(Real.pi : ℂ)*n :=
+  Q.sobolev_momentum_bracket a n hn
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n s =ᶠ[𝓝 a.val] (fun _ => 2*(Real.pi : ℂ)*n) :=
+  Q.sobolev_momentum_bracket_complex_germ a n hn
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) : fderiv ℂ (sourceSobolevThetaMomentumBracket n s) a.val = 0 := by
+  rw [(Q.sobolev_momentum_bracket_complex_germ a n hn).fderiv_eq]
+  exact (hasFDerivAt_const (2*(Real.pi : ℂ)*n) a.val).fderiv
+
+example (n : ℤ) :
+    ∃ T : Set (ScalarDomain 2 × ScalarDomain 2), IsOpen T ∧
+      (∀ a : realTypeSobolevSourceLocus, canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0 → a.val ∈ T) ∧
+      T ⊆ {a | sobolevSourceInclusion a ∈ U ∧ canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential (sobolevSourceInclusion a)) (periodOnePotential_mem _) n ≠ 0} ∧
+      ∀ a ∈ T, sourceSobolevThetaMomentumBracket n s a = 2*(Real.pi : ℂ)*n :=
+  Q.exists_sobolev_momentum_domain n
+
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) :
+    ∃ θ : CoeffPair 2 → ℂ, AnalyticAt ℂ θ (sobolevSourceInclusion a.val) ∧
+      HasDerivAt (fun r => θ (sourceSpatialTranslation r (sobolevSourceInclusion a.val)))
+        (2*(Real.pi : ℂ)*n) 0 := by
+  obtain ⟨θ,hθ,_,hd⟩ := D.previous.original_theta_common_domain.exists_local_theta_translation_derivative
+    n a.val (D.previous.original_theta_common_domain.real_subset a.property) hn
+  exact ⟨θ,hθ,by simpa only [Q.sobolev_momentum_bracket a n hn] using hd⟩
+
+example {W₀' W' V' Wa' B' U' : Set (CoeffPair 2)}
+    {s' : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D' : SourceSection17OriginalData (by simp) (by norm_num) W₀' W' V' s'}
+    {A' : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa' s'}
+    (Q' : SourceSection20Data D' A' B' U') (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+      (periodOnePotential_mem _) n ≠ 0) : sourceSobolevThetaMomentumBracket n s a.val =
+      sourceSobolevThetaMomentumBracket n s' a.val := by
+  rw [Q.sobolev_momentum_bracket a n hn,Q'.sobolev_momentum_bracket a n hn]
+end HilbertMomentum
+
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), ∃ _Q : SourceSection20Data D A B U,
+      ∀ a : realTypeSobolevSourceLocus, ∀ n : ℤ, canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0 →
+        sourceSobolevThetaMomentumBracket n s a.val = 2*(Real.pi : ℂ)*n := sourceSection20_original_momentum
+
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), ∃ _Q : SourceSection20Data D A B U,
+    ∃ a : realTypeSobolevSourceLocus,
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+        (periodOnePotential_mem _) (-1) ≠ 0 ∧
+      sourceSobolevThetaMomentumBracket (-1) s a.val = -2*(Real.pi : ℂ) := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := 2) (by simp) (by norm_num)
+  obtain ⟨a,ha,_,_⟩ := exists_realSobolev_single_action (-1) 1 (by norm_num)
+  have hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) (-1) ≠ 0 := by
+    intro hz
+    have hact := (sourceComplexAction_nonneg_and_eq_zero_iff_gap_zero (by simp) (by norm_num)
+      (-1) (sobolevSourceInclusion a.val) a.property).2.2.mpr
+      (by simpa only [sourcePeriodicGapDisplacement_apply] using hz)
+    rw [ha (-1)] at hact
+    norm_num at hact
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,a,hn,by simpa using Q.sobolev_momentum_bracket a (-1) hn⟩
+end Section20MomentumNormalization

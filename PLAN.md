@@ -1,6 +1,50 @@
 # Implementation plan
 
-## Current milestone: physical momentum and translation on complex H¹
+## Current milestone: physical angle–momentum normalization on H¹
+
+The original Section 20 family now satisfies the actual physical identity
+{θₙ,P}=2πn at every real H¹ source with the selected gap open. The proof
+retains the original normalized roots and the same primitive used in
+Section 19. The original constructor supplies every auxiliary package;
+no momentum normalization or tangent regularity is assumed.
+
+An exact analytic inverse-square remainder identifies physical H₂ with
+−i/π times the integral of the squared primitive. Annular Cauchy deformation
+permits any positive circle enclosing all open gaps. Differentiation of
+this fixed contour, the primitive's index shift, and the zero- and
+first-order moment identities evaluate its actual angle bracket as 2πn.
+Local agreement along the original action-reduction curve transfers the
+identity to the independently defined physical momentum bracket.
+
+H¹ finite-gap density preserves the selected open gap and extends the
+identity to every real H¹ source. Analytic uniqueness gives a constant
+complex germ at each such source. For each index n, one open complex H¹
+domain contains all real H¹ sources with gap n open and lies inside the
+original Section 20 domain. This does not yet prove the identity on the
+entire original complex domain or on one domain shared by every index.
+
+Seven new modules and 23 public checks cover the contour coefficient,
+physical action derivative, original bivector, translation derivative,
+zero and negative indices, complex germs, and family independence. An
+actual single-action source checks a nonzero bracket without a supplied
+open-gap witness. See [the Section 20 audit](coverage/SECTION_20.md).
+
+Next: use the differentiated translation identity to obtain H¹ regularity
+and control of the general angle vector, then extend Section 20's physical
+energy bracket by density and complex continuation. Fixed-tail
+reconstruction alone does not give the needed uniform control. The
+original Section 21 audit follows those steps; Section 14's external
+Hilbert-map and full fractional-smoothness qualifications remain. The
+dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,163
+jobs, all 5,640 public examples pass, and the transitive axiom audit checks
+34,187 NLS declarations. The seven new modules and 23 new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 324 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: physical momentum and translation on complex H¹
 
 The independently defined physical momentum now has an explicit, unique
 Hilbert cotangent at every complex H¹ source. Periodic integration by parts

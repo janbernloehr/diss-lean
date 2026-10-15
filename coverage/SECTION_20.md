@@ -17,6 +17,9 @@ Here Q denotes the constructed `SourceSection20Data` and M a local
 | --- | --- | --- |
 | Definition of the moments, p. 92 | `Q.moment_contours` | Actual raw circle integrals of the retained Section 19 primitive to power m times the original psi function divided by the canonical root; one admissible circle family for all indices and orders |
 | Opening physical energy bracket, finite-gap case | `Q.finiteGap_energy_bracket`, `Q.finiteGap_energy_cotangent` | Constructed H¹ angle tangent and one actual physical energy cotangent give the original Poisson identity at every real finite-gap source, for every open selected gap; arbitrary complex H¹ sources remain open |
+| Physical momentum contour | `Q.momentum_contour`, `sourceFullAbelianMomentumContour_eq_physical_of_enclosing` | Actual physical H₂ equals −i/π times the quadratic contour of the retained primitive, at real finite-gap sources; any positive circle enclosing all open gaps is allowed |
+| Physical angle–momentum bracket on H¹ | `Q.finiteGap_momentum_bracket`, `Q.sobolev_momentum_bracket`, `sourceSection20_original_momentum` | Actual original bivector equals 2πn at every real H¹ source with gap n open; the original constructor supplies all data |
+| Complex momentum normalization | `Q.sobolev_momentum_bracket_complex_germ`, `Q.exists_sobolev_momentum_domain` | Each index has a constant complex germ at every real open-gap H¹ source and an open H¹ domain containing all such sources inside Q's domain; no common domain for all indices or full-domain identity is claimed |
 | Lemma 20.1(i) | `Q.lemma20_1` | Exact zero-order value 2πδₖₙ, with no factor i |
 | Lemma 20.1(ii) | `Q.lemma20_1` | Every moment is complex analytic on U, including order zero |
 | Lemma 20.1(iii) | `Q.lemma20_1` | Every odd moment vanishes |
@@ -187,11 +190,46 @@ All these statements retain arbitrary original normalized angle families;
 public checks also specialize them to the original Section 17 family used
 in Section 20.
 
-The equality of this bracket with 2πn remains to be proved. The next
-proposed step identifies physical H₂ with the quadratic contour of the
-same Section 19 primitive, then evaluates its angle bracket. The current
-analyticity theorem does not replace that normalization or establish
-H¹ regularity of the general angle vector.
+## Exact physical momentum normalization
+
+[`SquareInversionContour.lean`](../NLS/ComplexAnalysis/SquareInversionContour.lean)
+extracts the simple-pole coefficient of the squared inverse-frequency
+phase with an exact analytic inverse-square remainder. The contour is
+πiH₂. No differentiation of an asymptotic error term is assumed.
+[`SourceFullAbelianMomentumContour.lean`](../NLS/ZakharovShabat/SourceFullAbelianMomentumContour.lean)
+therefore identifies physical H₂ with −i/π times the quadratic contour
+of the original full primitive. Neighborhood independence retains any
+original ambient chart; annular Cauchy deformation permits any positive
+circle enclosing all open gaps. Fixed finite gap support gives the local
+identity needed along the actual action-reduction curve.
+
+[`SourceAbelianMomentLinearShift.lean`](../NLS/ZakharovShabat/SourceAbelianMomentLinearShift.lean)
+uses F₀=Fₖ−ikπ, the vanishing first moment, and the period 2πδₖₙ to
+evaluate the linear psi contour.
+[`SourceFullAbelianMomentumPoisson.lean`](../NLS/ZakharovShabat/SourceFullAbelianMomentumPoisson.lean)
+identifies that contour with the actual angle bracket of the quadratic
+contour. The primitive and moment atlas may use different ambient
+neighborhoods, as they do in the retained Section 20 construction.
+
+[`SourceFiniteGapMomentumNormalization.lean`](../NLS/ZakharovShabat/SourceFiniteGapMomentumNormalization.lean)
+differentiates the local physical identity along the original
+finite-gap action-reduction curve. This gives the physical bracket 2πn
+and the physical H₂ action derivative −2πn.
+[`SourceSobolevMomentumNormalization.lean`](../NLS/ZakharovShabat/SourceSobolevMomentumNormalization.lean)
+extends the bracket identity to every real H¹ source with the selected
+gap open, by H¹ finite-gap density. Real-form analytic uniqueness then
+gives a constant complex germ at each such source.
+
+[`SourceSection20MomentumBracket.lean`](../NLS/ZakharovShabat/SourceSection20MomentumBracket.lean)
+packages the results with Q's original roots and Section 19 primitive.
+Its constructor is unconditional. For each n, an open complex H¹ domain
+contains every real H¹ source with gap n open and lies inside the original
+Section 20 domain. The construction uses the interior of the equality
+locus and verifies its neighborhood property at each real open-gap source.
+It does not intersect infinitely many neighborhoods. The full original
+complex domain and a domain common to all n remain outside this result.
+The general H¹ regularity of the angle vector is also still needed for
+the physical energy identity.
 
 ## Validation and remaining scope
 
@@ -215,6 +253,14 @@ to generic complex H¹ derivatives and uniqueness, the checks fix both
 signed Fourier normalizations and the zero-mode cotangent, verify the
 actual translation derivative and local angle realization, and retain
 the original family's physical H₂ derivative.
+
+The normalization step adds seven modules and 23 public examples. They
+check the residue sign with an explicit Laurent polynomial, the physical
+contour, the original bivector, the negative physical action derivative,
+zero and negative indices, the translation derivative, complex germs and
+their zero differential, the per-index domains, family independence, and
+the unconditional constructor. A constructed source with one nonzero
+action at index −1 gives an actual bracket −2π.
 
 The physical energy identity packaged here is for real finite-gap sources; the
 analytic continuation and original action-frequency identification hold on
