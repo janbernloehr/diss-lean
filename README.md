@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix A's Riemann–Lebesgue decay now gives FL-infinity
-norm convergence for Fourier truncations of every L1 function. The actual
-L1-to-c0 Fourier transform has dense range and operator norm exactly one.
-Sharp finite interpolation and exact discrete Parseval provide the constants
-needed for the remaining full interpolation lemmas.
+Latest step: Appendix A.2 and A.4 now give the full continuous embeddings
+Lᵖ → FLᑫ and FLᵖ → Lᑫ for conjugate exponents with 1 ≤ p ≤ 2, including
+both endpoints. They use the original periodic distributions and actual Lᵖ
+quotients, with constant-one bounds and exact 1/L normalization. Integrable
+representatives are unique almost everywhere; the L1-to-c0 Fourier map is
+also injective.
 
-Next: finish the intermediate-exponent embeddings and counterexamples in
-Appendix A, including non-surjectivity of L1-to-c0; then integrate A.7–A.9.
+Next: the counterexamples A.3 and A.5 and non-surjectivity of L1-to-c0 in A.6;
+then integrate A.7–A.9.
 The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
 remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

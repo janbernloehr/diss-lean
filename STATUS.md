@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: Appendix A Riemann–Lebesgue decay and sharp finite interpolation
+## Current milestone: Appendix A.2 and A.4 Hausdorff–Young embeddings
+
+For every positive period and conjugate pair with 1 ≤ p ≤ 2, physical Lᵖ
+embeds continuously and complex linearly into original FLᑫ, and original
+FLᵖ embeds continuously and complex linearly into physical Lᑫ. Both maps
+are injective with norm at most one. The action on every original smooth
+test retains exactly 1/L times the interval integral. The physical Lᑫ
+representative is unique modulo a.e. equality.
+
+The proof interpolates the finite cyclic transform with its exact size
+factor, passes normalized grid moments to Haar integration, and extends
+polynomial synthesis by density. Full sequence duality and Hölder pairing
+give analysis. The separate p=1 endpoint includes the actual L-infinity
+quotient. The new maps agree with the existing L2 isometry and the continuous
+FL1 representative. A density-measure uniqueness argument also proves that
+the L1-to-c0 Fourier map is injective.
+
+Eight new modules and 36 public checks cover fractional exponents 4/3 and 4,
+both endpoints, signed frequencies and aliasing, transform sizes one and
+sixteen, physical period three, exact original action, injectivity, and
+unique representatives. See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: examples A.3 and A.5 and non-surjectivity in A.6, then source
+integration of A.7–A.9. The Section 14 and unrestricted Lemma 27.2 endpoint
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,486 build jobs, all 6,115
+public examples, and the transitive axiom audit for 35,527 NLS declarations.
+The eight new modules and 36 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+609 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A Riemann–Lebesgue decay and sharp finite interpolation
 
 For every positive period, the normalized Fourier coefficients of an L1
 function vanish at both ends of the integer frequency axis. Its Fourier

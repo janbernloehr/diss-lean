@@ -57714,3 +57714,154 @@ example (a : C₀(ℤ,ℂ)) (ε : ℝ) (hε : 0 < ε) :
 end AppendixARiemannLebesgueChecks
 end Fourier
 end NLS
+
+
+noncomputable section
+open Set MeasureTheory Filter Topology
+open scoped ENNReal ZeroAtInfty
+namespace NLS.Fourier
+section AppendixAHausdorffYoungChecks
+open SmoothPeriodicTest PeriodicFourierLebesgue
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4/3 : ℝ≥0∞)) := ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (4/3 : ℝ≥0∞).HolderConjugate 4 :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem four_thirds_le_two : (4/3 : ℝ≥0∞) ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]
+  norm_num
+variable {L : ℝ} [Fact (0 < L)]
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+
+-- A non-Hilbert exponent with exact discrete normalization.
+example (a : ZMod 16 → ℂ) :
+    ‖WithLp.toLp 4 (ZMod.dft a)‖ ≤ (16:ℝ)^(1/4:ℝ) * ‖WithLp.toLp (4/3) a‖ := by
+  simpa only [ENNReal.toReal_ofNat,Nat.cast_ofNat] using norm_dft_hausdorffYoung_finite
+    (p := 4/3) (q := 4) four_thirds_le_two (by norm_num) (by norm_num) a
+
+example (a : ZMod 1 → ℂ) :
+    ‖WithLp.toLp 4 (ZMod.dft a)‖ ≤ ‖WithLp.toLp (4/3) a‖ := by
+  simpa using norm_dft_hausdorffYoung_finite (p := 4/3) (q := 4)
+    four_thirds_le_two (by norm_num) (by norm_num) a
+
+example : circleGridAverage (L := 3) 4 (fourier (-4)) = 1 := by
+  rw [circleGridAverage_fourier,if_pos (by decide)]
+
+example : circleGridAverage (L := 3) 4 (fourier (-3)) = 0 := by
+  rw [circleGridAverage_fourier,if_neg (by decide)]
+
+example (f : C(AddCircle (3:ℝ),ℂ)) :
+    Tendsto (fun N : ℕ => circleGridAverage (N+1) f) atTop (𝓝 (∫ x, f x ∂AddCircle.haarAddCircle)) := by
+  simpa only [circleMean_apply] using tendsto_circleGridAverage f
+
+example : Function.Injective (fun n : ({-2,0,5} : Finset ℤ) => (n.val : ZMod 11)) := by
+  exact frequency_injective_of_large {-2,0,5} 10 (by decide)
+
+example (a : ℤ → ℂ) :
+    ‖ContinuousMap.toLp 4 AddCircle.haarAddCircle ℂ (continuousFourierPolynomial (L := 3) {-2,0,5} a)‖ ≤
+      ‖WithLp.toLp (4/3) (fun n : ({-2,0,5} : Finset ℤ) => a n.val)‖ :=
+  norm_polynomial_toLp_le four_thirds_le_two (by norm_num) (by norm_num) _ _
+
+example (a : Coeff (4/3)) (n : ℤ) : fourierCoeff (circleSynthesis (L := 3) (q := 4) a) n = a n :=
+  circleSynthesis_coefficient four_thirds_le_two a n
+
+example (a : Coeff 1) : ‖circleSynthesis (L := L) (q := ⊤) a‖ ≤ ‖a‖ := by
+  simpa only [one_mul] using (circleSynthesis (L := L) (p := 1) (q := ⊤)).le_of_opNorm_le
+    (norm_circleSynthesis_le (by norm_num)) a
+
+example : circleSynthesis (L := 3) (p := 4/3) (q := 4) (lp.single (4/3) (-2) 1) =
+    ContinuousMap.toLp 4 AddCircle.haarAddCircle ℂ (fourier (-2)) := circleSynthesis_single four_thirds_le_two (-2)
+
+example (f : Lp ℂ (4/3) (AddCircle.haarAddCircle (T := 3))) :
+    circleAnalysisCLM (q := 4) four_thirds_le_two f (-2) = fourierCoeff f (-2) :=
+  circleAnalysisCLM_apply _ _ _
+
+example (f g : Lp ℂ (4/3) (AddCircle.haarAddCircle (T := L))) :
+    circleAnalysisCLM (q := 4) four_thirds_le_two (f + Complex.I • g) =
+      circleAnalysisCLM (q := 4) four_thirds_le_two f + Complex.I • circleAnalysisCLM (q := 4) four_thirds_le_two g := by
+  rw [map_add,map_smul]
+
+-- Actual original-distribution embeddings in both directions, endpoints included.
+example (hp₂ : p ≤ 2) (f : Lp ℂ p (AddCircle.haarAddCircle (T := L))) :
+    ‖ofLp (q := q) hp₂ f‖ ≤ ‖f‖ := norm_ofLp_le hp₂ f
+
+example (f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L))) :
+    ‖ofLp (q := ⊤) (by norm_num) f‖ ≤ ‖f‖ := norm_ofLp_le _ _
+
+example : Function.Injective (ofLp (L := 3) (p := 4/3) (q := 4) four_thirds_le_two) := ofLp_injective _
+
+example : Function.Injective (ofLp (L := 3) (p := 1) (q := ⊤) (by norm_num)) := ofLp_injective _
+
+example (f : Lp ℂ (4/3) (AddCircle.haarAddCircle (T := 3))) (t : SmoothPeriodicTest 3) :
+    (ofLp (q := 4) four_thirds_le_two f).val t = (3:ℂ)⁻¹ * ∫ x in (0:ℝ)..3, f (x : AddCircle (3:ℝ))*t x := by
+  simpa only [Complex.ofReal_ofNat] using ofLp_apply_interval (q := 4) four_thirds_le_two f t
+
+example (f : Lp ℂ (4/3) (AddCircle.haarAddCircle (T := L))) :
+    (ofLp (q := 4) four_thirds_le_two f).val (mode 2) = fourierCoeff f (-2) := by
+  simpa using ofLp_coefficient (q := 4) four_thirds_le_two f (-2)
+
+example (f : Lp ℂ 2 (AddCircle.haarAddCircle (T := L))) :
+    ofLp (q := 2) (by norm_num) f = l2Isometry.symm f := ofLp_two f
+
+example (hp₂ : p ≤ 2) (u : PeriodicFourierLebesgue L Weight.one p) :
+    ‖lpRepresentative (q := q) u‖ ≤ ‖u‖ := norm_lpRepresentative_le hp₂ u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    ‖lpRepresentative (q := ⊤) u‖ ≤ ‖u‖ := norm_lpRepresentative_le (by norm_num) u
+
+example : Function.Injective (lpRepresentative (L := 3) (p := 4/3) (q := 4)) :=
+  lpRepresentative_injective four_thirds_le_two
+
+example : Function.Injective (lpRepresentative (L := 3) (p := 1) (q := ⊤)) :=
+  lpRepresentative_injective (by norm_num)
+
+example (u : PeriodicFourierLebesgue (3:ℝ) Weight.one (4/3)) (t : SmoothPeriodicTest 3) :
+    u.val t = (3:ℂ)⁻¹ * ∫ x in (0:ℝ)..3, lpRepresentative (q := 4) u (x : AddCircle (3:ℝ))*t x := by
+  simpa only [Complex.ofReal_ofNat] using lpRepresentative_apply_interval (q := 4) four_thirds_le_two u t
+
+example (u : PeriodicFourierLebesgue L Weight.one (4/3)) :
+    ∃! f : Lp ℂ 4 (AddCircle.haarAddCircle (T := L)),
+      Distribution.ofCircleL1 f ((Lp.memLp f).integrable (by norm_num)) = u.val :=
+  existsUnique_lpRepresentative four_thirds_le_two u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    ∃! f : Lp ℂ ⊤ (AddCircle.haarAddCircle (T := L)),
+      Distribution.ofCircleL1 f ((Lp.memLp f).integrable (by simp)) = u.val :=
+  existsUnique_lpRepresentative (by norm_num) u
+
+example (u : PeriodicFourierLebesgue L Weight.one 2) : lpRepresentative (q := 2) u = l2Isometry u :=
+  lpRepresentative_two u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    lpRepresentative (q := ⊤) u = ContinuousMap.toLp ⊤ AddCircle.haarAddCircle ℂ (continuousRepresentative u) :=
+  lpRepresentative_one u
+
+example (u v : PeriodicFourierLebesgue L Weight.one (4/3)) :
+    lpRepresentative (q := 4) (u + Complex.I • v) = lpRepresentative (q := 4) u + Complex.I • lpRepresentative (q := 4) v := by
+  rw [map_add,map_smul]
+
+example : ‖ofLp (L := 3) (p := 4/3) (q := 4) four_thirds_le_two‖ ≤ 1 := norm_ofLp _
+
+example : ‖lpRepresentative (L := 3) (p := 1) (q := ⊤)‖ ≤ 1 := norm_lpRepresentative (by norm_num)
+
+-- Uniqueness is modulo a.e. equality, including integrable endpoint data.
+example {f g : AddCircle L → ℂ} (hf : Integrable f AddCircle.haarAddCircle)
+    (hg : Integrable g AddCircle.haarAddCircle) :
+    Distribution.ofCircleL1 f hf = Distribution.ofCircleL1 g hg ↔ f =ᵐ[AddCircle.haarAddCircle] g :=
+  Distribution.ofCircleL1_eq_iff hf hg
+
+example {r : ℝ≥0∞} [Fact (1 ≤ r)] (f g : Lp ℂ r (AddCircle.haarAddCircle (T := L)))
+    (h : ∀ n, fourierCoeff f n = fourierCoeff g n) : f = g := circleLp_fourierCoeff_injective (funext h)
+
+example : Function.Injective (circleL1Fourier (L := 3)) := circleL1Fourier_injective
+
+example (f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L)))
+    (h : circleL1Fourier f = 0) : f = 0 := circleL1Fourier_injective (h.trans (map_zero circleL1Fourier).symm)
+
+example (f : Lp ℂ ⊤ (AddCircle.haarAddCircle (T := L)))
+    (h : Distribution.ofCircleL1 f ((Lp.memLp f).integrable (by simp)) = 0) : f = 0 := by
+  apply Lp.ext
+  exact (Distribution.ofCircleL1_eq_zero_iff _).mp h |>.trans (Lp.coeFn_zero _ _ _).symm
+
+end AppendixAHausdorffYoungChecks
+end NLS.Fourier

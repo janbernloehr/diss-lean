@@ -3813,3 +3813,11 @@ import NLS.SequenceSpaces.FiniteInterpolationSharp
 import NLS.Fourier.DiscreteParseval
 import NLS.Fourier.PeriodicRiemannLebesgue
 import NLS.Fourier.PeriodicL1Fourier
+import NLS.SequenceSpaces.FiniteMatrixInterpolation
+import NLS.Fourier.DiscreteHausdorffYoung
+import NLS.Fourier.CircleSampling
+import NLS.Fourier.PolynomialHausdorffYoung
+import NLS.Fourier.CircleHausdorffYoungSynthesis
+import NLS.Fourier.CircleHausdorffYoungAnalysis
+import NLS.Fourier.PeriodicL1Uniqueness
+import NLS.Fourier.PeriodicFourierLebesgueEmbeddings

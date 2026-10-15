@@ -6,7 +6,8 @@ action on printed page 121, plus both parts of Theorem A.1 and the distributiona
 derivative on printed page 122. It also covers the original Fourier–Lebesgue
 spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
 synthesis and pseudomeasure-dual statements on page 123, plus the decay assertion
-in Remark A.6 and the actual L1-to-c0 Fourier map. The test space
+in Remark A.6, the actual L1-to-c0 Fourier map, and the full embeddings
+of Lemmas A.2 and A.4 on page 123. The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
@@ -26,8 +27,11 @@ positive physical period. It is not defined as a coefficient-sequence space.
 | Pseudomeasures and duality | `unweightedDualIsometry`, `pseudomeasureDualIsometry` | Full continuous dual for finite p, including FL-infinity as the dual of FL1; opposite indices in the bilinear pairing and exact operator norm. |
 | Riemann–Lebesgue decay, first part of A.6 | `tendsto_intervalFourierCoefficient_cofinite`, `tendsto_fourierCoeff_cofinite` | Every positive period; normalized interval and physical-circle coefficients vanish along the cofinite filter on integer frequencies. |
 | L1 Fourier-series convergence in FL-infinity | `tendsto_truncate_ofIntervalL1`, `Distribution.evaluation_zero_not_ofL1` | Original FL-infinity norm convergence for interval L1 data; point evaluation at zero has no interval L1 representative. |
-| Actual Fourier map L1 → c0 | `circleL1Fourier`, `norm_circleL1Fourier`, `denseRange_circleL1Fourier` | Complex continuous linear map from the actual L1 quotient, sharp operator norm one and dense range; non-surjectivity is not yet proved. |
-| Sharp finite interpolation prerequisites | `Coeff.norm_kernelPair_interpolate_sharp`, `sum_norm_sq_dft`, `norm_dft_piLp_two` | Geometric three-lines constant for arbitrary finite inputs; exact discrete Parseval and sqrt(N) Hilbert norm factor. These do not yet prove the full A.2/A.4 embeddings. |
+| Actual Fourier map L1 → c0 | `circleL1Fourier`, `norm_circleL1Fourier`, `denseRange_circleL1Fourier` | Complex continuous linear map from the actual L1 quotient, sharp operator norm one, injectivity, and dense range; non-surjectivity is not yet proved. |
+| Sharp finite interpolation prerequisites | `Coeff.norm_kernelPair_interpolate_sharp`, `sum_norm_sq_dft`, `norm_dft_piLp_two` | Geometric three-lines constant for arbitrary finite inputs; exact discrete Parseval and sqrt(N) Hilbert norm factor. Extended to the full A.2/A.4 embeddings below. |
+| Lemma A.2, Lᵖ → FLᑫ | `PeriodicFourierLebesgue.ofLp`, `ofLp_injective`, `norm_ofLp_le` | Every conjugate pair with 1 ≤ p ≤ 2, including p=1, q=infinity; complex continuous linear injection of the actual Lᵖ quotient into original distributions, norm bound one and exact 1/L action. The source names the output exponent p. |
+| Lemma A.4, FLᵖ → Lᑫ | `lpRepresentative`, `lpRepresentative_injective`, `norm_lpRepresentative_le` | Full inclusive range 1 ≤ p ≤ 2; unique actual Lᑫ representative, constant-one norm bound, original smooth-test action, and both endpoint identifications. |
+| Uniqueness of integrable representatives | `Distribution.ofCircleL1_eq_iff`, `ofCircleLp_injective`, `circleLp_fourierCoeff_injective` | Equality of original distributions iff a.e. equality for integrable functions; all Fourier coefficients determine every Banach Lᵖ equivalence class. |
 | Complex Radon representation, (A.2) | `Distribution.existsUnique_normalized_measure`, `order_zero_iff_measure` | Unique actual complex measure on the physical circle, with 1/L times the standard complex integral; holds on all continuous functions and all original smooth tests. |
 | Converse and identification with measures | `Distribution.ofComplexMeasure_order`, `complexMeasureOrderZeroEquiv` | Every complex Borel measure gives least order zero; both directions of the equivalence recover the original object. |
 | Finiteness and Radon regularity | `complexMeasure_finite_variation`, `complexMeasure_variation_regular` | Every complex measure has finite total variation. Its variation on the compact metrizable physical circle is regular, hence inner regular. |
@@ -176,8 +180,8 @@ coefficients, represents the entire original distribution, and is unique
 among continuous functions. The map to continuous functions is complex linear
 and continuous with norm at most one. Uniform continuity and the pointwise
 series with frequencies 2πn/L are also explicit. These prove the endpoints
-used by A.2 and A.4; the full intermediate-exponent interpolation assertions
-remain open.
+used by A.2 and A.4; the full intermediate-exponent embeddings are now
+proved by the construction below.
 
 [`PeriodicFourierLebesgueDuality.lean`](../NLS/Fourier/PeriodicFourierLebesgueDuality.lean)
 transports the proved full sequence-space duality to these original spaces.
@@ -228,9 +232,56 @@ orthogonality for finite cyclic characters and the adjoint identity for the
 negative-phase discrete Fourier transform. Applying that identity twice gives
 Parseval with squared norm factor N, hence the Hilbert norm factor sqrt(N).
 The L1 coefficient bound has constant one. All results include transform size
-one. These are finite prerequisites: passing sampled sums to the physical
-circle and extending synthesis to the required Lp quotients remain before
-claiming the full embeddings A.2 and A.4.
+one. The following modules use these endpoints to prove the full embeddings.
+
+## Full Hausdorff–Young embeddings, Lemmas A.2 and A.4
+
+[`FiniteMatrixInterpolation.lean`](../NLS/SequenceSpaces/FiniteMatrixInterpolation.lean)
+extends sharp bilinear interpolation to arbitrary finite input and output
+index types, with their actual PiLp norms. Complex norming tests recover the
+conjugate norm, and extension by zero preserves every finite exponent norm.
+[`DiscreteHausdorffYoung.lean`](../NLS/Fourier/DiscreteHausdorffYoung.lean)
+then proves the exact N^(1/q) bound for the unnormalized discrete transform.
+The normalized qth moment has constant one.
+
+[`CircleSampling.lean`](../NLS/Fourier/CircleSampling.lean) proves that equally
+spaced averages on the physical circle converge to probability Haar integration
+for every continuous function. The proof uses exact character averages,
+uniform operator bounds, and density of Fourier polynomials.
+[`PolynomialHausdorffYoung.lean`](../NLS/Fourier/PolynomialHausdorffYoung.lean)
+embeds any finite set of signed frequencies into a sufficiently large cyclic
+grid without aliasing. The negative-phase discrete transform is evaluated at
+the reflected grid index to recover positive-phase synthesis. Passing sample
+moments to the integral gives the constant-one polynomial estimate.
+
+[`CircleHausdorffYoungSynthesis.lean`](../NLS/Fourier/CircleHausdorffYoungSynthesis.lean)
+extends polynomial synthesis by density from ℓᵖ to the actual Lᑫ quotient,
+for every conjugate pair with 1 ≤ p ≤ 2. The endpoint p=1, q=infinity has a
+separate uniform estimate. Continuous coefficient functionals recover the
+original coefficients after extension.
+[`CircleHausdorffYoungAnalysis.lean`](../NLS/Fourier/CircleHausdorffYoungAnalysis.lean)
+uses Hölder pairing with synthesis and the full ℓᵖ duality theorem to construct
+Lᵖ → ℓᑫ. Reflection of the dual sequence supplies the negative Fourier sign.
+Both maps are complex linear and continuous, with norm at most one.
+
+[`PeriodicL1Uniqueness.lean`](../NLS/Fourier/PeriodicL1Uniqueness.lean) proves
+that continuous tests separate integrable complex densities. For real densities,
+uniqueness of regular positive and negative density measures gives a.e. zero;
+real and imaginary parts give the complex result. Density of the original
+smooth tests transfers it to the original distribution space. Thus equality
+of represented distributions is exactly a.e. equality, including the L1 and
+L-infinity endpoints. This also proves injectivity of the L1-to-c0 Fourier map.
+
+[`PeriodicFourierLebesgueEmbeddings.lean`](../NLS/Fourier/PeriodicFourierLebesgueEmbeddings.lean)
+packages the full source assertions on the original distribution subtypes.
+`ofLp` is the continuous injection Lᵖ → FLᑫ, and `lpRepresentative` is the
+continuous injection FLᵖ → Lᑫ. Both have constant-one bounds for normalized
+Haar measure, and the action on every original smooth test is exactly 1/L
+times the interval integral. The Lᑫ representative is unique. At p=2 these
+maps agree with the previous L2 isometry and its inverse; at p=1 synthesis
+is the L-infinity equivalence class of the earlier uniformly convergent
+continuous Fourier series. No representation or coefficient-recovery premise
+is required from the caller.
 
 ## Faithful realization and the period factors
 
@@ -305,9 +356,15 @@ normalization, physical-period decay, the actual L1 quotient map, exact
 operator norm one, signed finite cutoffs, and density in c0. They compile
 without new warnings.
 
-The full interpolation assertions A.2 and A.4, examples A.3 and A.5, and
-the non-surjectivity assertion of Remark A.6 remain open here. A.7–A.9 still
-require their Appendix A source audit and integration. In particular, the use of the rescaled weight
+Eight further modules and 36 public checks cover the full Hausdorff–Young
+embeddings, the fractional pair 4/3 and 4, size-one and size-sixteen transforms,
+aliased and unaliased signed frequencies, physical period three, exact interval
+action, both endpoint identifications, injectivity, and unique Lᑫ representatives.
+All eight modules and the focused checks compile without new warnings.
+
+Examples A.3 and A.5 and the non-surjectivity assertion of Remark A.6 remain
+open here. A.7–A.9 still require their Appendix A source audit and integration.
+In particular, the use of the rescaled weight
 (1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
 are not silently substituted for the exact Section 2 norm above. The present
 Hilbert identification is at s=0; the link to physical Sobolev spaces at
