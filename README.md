@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: equations (2.28) and (2.29) construct the intrinsic bounded
-Q* on the original placed-root domain, with continuity in the joint
-root/source topology. For real roots, its diagonal is nonzero and 2+ℓᵖ,
-its off-diagonal entries have an ℓᵖ reciprocal-distance bound, and Q*−2I
-is compact.
+Latest step: the original full Jacobians converge in operator norm to Q*
+throughout the original real root domain. Convergence is uniform on
+compact subsets and locally uniform with a neighborhood depending on
+the error tolerance. A formal free-source counterexample rules out
+uniform convergence on any fixed neighborhood of zero.
 
-Next: finish Lemma 12.10's full-domain norm convergence, injectivity,
-and common complex extension. The dissertation remains incomplete.
+Next: finish Lemma 12.10's full-domain injectivity and common complex
+extension. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

@@ -51361,3 +51361,155 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceEquation228229Checks
+
+namespace SourceLemma1210NormChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology Metric
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+variable (hR : realTypeSourceLocus p ⊆ W)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (φ : CoeffPair p) (hφW : φ ∈ W) (hφV : φ ∈ V)
+variable (hφ : IsRealType (CoeffPair.toMax p φ))
+variable (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+variable (haReal : ∀ k : ℤ, (a k).im = 0)
+
+-- Reality suffices for the diagonal estimate; disk placement is not assumed.
+example (b : Coeff p) (hb : ∀ k : ℤ, (b k).im = 0) (ε : ℝ) (hε : 0 < ε) :
+    ∃ K : ℕ, ∀ᶠ n : ℤ in Filter.comap Int.natAbs atTop,
+      ∀ m : ℤ, K ≤ m.natAbs →
+        ‖(sourcePsiOriginalFullRootJacobian hp hp1 n b φ (lp.single p m 1)) m-2‖ < ε :=
+  H.originalFullRootJacobian_diagonal_uniformTail φ hφW hφ b hb ε hε
+
+-- One majorant covers all indices at a fixed complex placed-root input.
+example : ∃ B : Coeff p, ∀ n m k : ℤ, k ≠ m →
+    ‖(sourcePsiOriginalFullRootJacobian hp hp1 n a φ (lp.single p k 1)) m‖ ≤
+      ‖B m‖/|((k-m:ℤ):ℝ)| :=
+  H.originalFullRootJacobian_offDiagonal_majorant hW hD hV φ hφW hφV hφ a ha
+
+example : Tendsto
+    (fun n : ℤ => Coeff.operatorOffDiagonal (sourcePsiOriginalFullRootJacobian hp hp1 n a φ))
+    (Filter.comap Int.natAbs atTop)
+    (𝓝 (Coeff.operatorOffDiagonal (sourcePsiOriginalLimitOperator hp hp1 a φ))) :=
+  H.originalFullRootJacobian_offDiagonal_tendsto hW hD hV φ hφW hφV hφ a ha
+
+-- The full norm limit is on the entire original real root domain.
+example : Tendsto (fun n : ℤ => sourcePsiOriginalFullRootJacobian hp hp1 n a φ)
+    (Filter.comap Int.natAbs atTop) (𝓝 (sourcePsiOriginalLimitOperator hp hp1 a φ)) :=
+  H.originalFullRootJacobian_tendsto hW hD hV φ hφW hφV hφ a ha haReal
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+    ‖sourcePsiOriginalFullRootJacobian hp hp1 n a φ-sourcePsiOriginalLimitOperator hp hp1 a φ‖ < ε :=
+  (Coeff.tendsto_operator_natAbs_iff _ _).mp
+    (H.originalFullRootJacobian_tendsto hW hD hV φ hφW hφV hφ a ha haReal) ε hε
+
+example (x : Coeff p) : Tendsto (fun n : ℤ => sourcePsiOriginalFullRootJacobian hp hp1 n a φ x)
+    (Filter.comap Int.natAbs atTop) (𝓝 (sourcePsiOriginalLimitOperator hp hp1 a φ x)) :=
+  ((ContinuousLinearMap.apply ℂ (Coeff p) x).continuous.tendsto _).comp
+    (H.originalFullRootJacobian_tendsto hW hD hV φ hφW hφV hφ a ha haReal)
+
+-- Mathlib local uniformity allows a neighborhood depending on the tolerance.
+example : TendstoLocallyUniformlyOn
+    (fun (n : ℤ) (t : Coeff p × CoeffPair p) => sourcePsiOriginalFullRootJacobian hp hp1 n t.1 t.2)
+    (fun t : Coeff p × CoeffPair p => sourcePsiOriginalLimitOperator hp hp1 t.1 t.2)
+    (Filter.comap Int.natAbs atTop) (sourcePsiOriginalRealLimitDomain W V D) :=
+  H.originalFullRootJacobian_tendstoLocallyUniformlyOn hW hD hV
+
+example : TendstoLocallyUniformlyOn
+    (fun (n : ℤ) (t : realTypeSourceSubmodule p × RealCoeff p) =>
+      sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1)
+    (fun t : realTypeSourceSubmodule p × RealCoeff p =>
+      sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1)
+    (Filter.comap Int.natAbs atTop) (sourcePsiOriginalOmega V D) :=
+  H.originalOmega_tendstoLocallyUniformlyOn hW hR hD hV
+
+example (K : Set (realTypeSourceSubmodule p × RealCoeff p)) (hK : IsCompact K)
+    (hKD : K ⊆ sourcePsiOriginalOmega V D) :
+    TendstoUniformlyOn
+      (fun (n : ℤ) (t : realTypeSourceSubmodule p × RealCoeff p) =>
+        sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1)
+      (fun t : realTypeSourceSubmodule p × RealCoeff p =>
+        sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1)
+      (Filter.comap Int.natAbs atTop) K :=
+  H.originalOmega_tendstoUniformlyOn_compact hW hR hD hV K hK hKD
+
+-- A single omitted-index cutoff works for every input of each compact set.
+example (K : Set (realTypeSourceSubmodule p × RealCoeff p)) (hK : IsCompact K)
+    (hKD : K ⊆ sourcePsiOriginalOmega V D) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs → ∀ t ∈ K,
+      ‖sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1-
+        sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1‖ < ε := by
+  have hu := Metric.tendstoUniformlyOn_iff.mp
+    (H.originalOmega_tendstoUniformlyOn_compact hW hR hD hV K hK hKD) ε hε
+  obtain ⟨N,hN⟩ := eventually_atTop.mp (eventually_comap.mp hu)
+  exact ⟨N,fun n hn t ht => by simpa only [dist_eq_norm,norm_sub_rev] using hN n.natAbs hn n rfl t ht⟩
+
+variable (h0W : (0:CoeffPair p) ∈ W) (h0V : (0:CoeffPair p) ∈ V)
+
+-- Free spikes are actual placed root inputs, even though free gaps are singletons.
+example (n : ℤ) (hn : D n = refinedResonantDisk n) (z : ℂ) (hz : ‖z‖ < Real.pi/4) :
+    (lp.single p n z:Coeff p) ∈ sourcePsiOriginalRootPlacement D :=
+  hD.original_free_spike_placement h0V n hn z hz
+
+example (n : ℤ) (z : ℂ) (hz : (lp.single p n z:Coeff p) ∈ sourcePsiOriginalRootPlacement D)
+    (r : ℝ) (hr : 0 < r) (hrπ : r < Real.pi)
+    (he : D (n+1) = ball ((Real.pi:ℂ)*((n+1:ℤ):ℂ)) r) :
+    ((sourcePsiOriginalFullRootJacobian hp hp1 n (lp.single p n z) (0:CoeffPair p)-
+      sourcePsiOriginalLimitOperator hp hp1 (lp.single p n z) (0:CoeffPair p)) (lp.single p (n+1) 1)) (n+1) =
+      2*z/(Real.pi:ℂ) :=
+  H.original_free_spike_diagonal_difference hD h0W h0V n z hz r hr hrπ he
+
+example (n : ℤ) (z : ℂ) (hz : ‖z‖ < Real.pi/4)
+    (hn : D n = refinedResonantDisk n) (hm : D (n+1) = refinedResonantDisk (n+1)) :
+    2*‖z‖/Real.pi ≤ ‖sourcePsiOriginalFullRootJacobian hp hp1 n (lp.single p n z) (0:CoeffPair p)-
+      sourcePsiOriginalLimitOperator hp hp1 (lp.single p n z) (0:CoeffPair p)‖ :=
+  H.original_free_spike_norm_lowerBound hD h0W h0V n z hz hn hm
+
+example (r : ℝ) (hr : 0 < r) :
+    ¬ TendstoUniformlyOn
+      (fun (n : ℤ) (t : realTypeSourceSubmodule p × RealCoeff p) =>
+        sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1)
+      (fun t : realTypeSourceSubmodule p × RealCoeff p =>
+        sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1)
+      (Filter.comap Int.natAbs atTop) (ball 0 r ∩ sourcePsiOriginalOmega V D) :=
+  H.originalOmega_free_not_tendstoUniformlyOn_ball hD h0W h0V r hr
+
+example : ¬ ∃ U ∈ 𝓝[sourcePsiOriginalOmega V D] (0 : realTypeSourceSubmodule p × RealCoeff p),
+    TendstoUniformlyOn
+      (fun (n : ℤ) (t : realTypeSourceSubmodule p × RealCoeff p) =>
+        sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1)
+      (fun t : realTypeSourceSubmodule p × RealCoeff p =>
+        sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1)
+      (Filter.comap Int.natAbs atTop) U :=
+  H.originalOmega_free_no_uniform_neighborhood hD h0W h0V
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W ∧
+    ∀ {V : Set (CoeffPair (ENNReal.ofReal (3/2)))} {D : ℤ → Set ℂ} {c : ℝ},
+      SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c → IsOpen V →
+      TendstoLocallyUniformlyOn
+        (fun (n : ℤ) (t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))) =>
+          sourcePsiOriginalFullRootJacobian (by norm_num) (by norm_num) n (RealCoeff.complexCLM _ t.2) t.1)
+        (fun t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)) =>
+          sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) (RealCoeff.complexCLM _ t.2) t.1)
+        (Filter.comap Int.natAbs atTop) (sourcePsiOriginalOmega V D) :=
+  sourceLemma12_10_normLimit (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+-- An unconditional counterexample includes an existing original neighborhood of zero.
+example : ∃ V : Set (CoeffPair (4:ℝ≥0∞)), ∃ D : ℤ → Set ℂ, ∃ c : ℝ,
+    IsOpen V ∧ (0:CoeffPair (4:ℝ≥0∞)) ∈ V ∧ SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c ∧
+    ¬ ∃ U ∈ 𝓝[sourcePsiOriginalOmega V D] (0 : realTypeSourceSubmodule (4:ℝ≥0∞) × RealCoeff (4:ℝ≥0∞)),
+      TendstoUniformlyOn
+        (fun (n : ℤ) (t : realTypeSourceSubmodule (4:ℝ≥0∞) × RealCoeff (4:ℝ≥0∞)) =>
+          sourcePsiOriginalFullRootJacobian (by norm_num) (by norm_num) n (RealCoeff.complexCLM _ t.2) t.1)
+        (fun t : realTypeSourceSubmodule (4:ℝ≥0∞) × RealCoeff (4:ℝ≥0∞) =>
+          sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) (RealCoeff.complexCLM _ t.2) t.1)
+        (Filter.comap Int.natAbs atTop) U :=
+  sourceLemma12_10_no_fixedUniformNeighborhood (by norm_num) (by norm_num)
+
+end
+end SourceLemma1210NormChecks

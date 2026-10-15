@@ -23,8 +23,11 @@ Corollary 12.8 now gives continuous inverses on the actual complex and real
 deleted spaces, including identification with the real equation's derivative.
 The first proof steps of Lemma 12.10 now establish literal (2.28), the
 bounded intrinsic Q*, equation (2.29), compactness of Q*−2I, and continuity
-on the original domain. Full-domain norm convergence, injectivity, and
-the common complex extension are still outstanding.
+on the original domain. Full original-domain operator-norm convergence
+and compact-set uniformity are now proved. Tolerance-dependent local
+uniformity holds, while uniform convergence on any fixed neighborhood
+of the free point is disproved. Full-domain injectivity and the common
+complex extension are still outstanding.
 
 Proposition 12.9 now gives the unique global real analytic solution of the
 original equation on the projected original domain, with exact gap placement,
@@ -775,3 +778,58 @@ the 21 existing warnings remain. The source inventory still verifies all
 | [SourcePsiOriginalLimitEntries](../NLS/ZakharovShabat/SourcePsiOriginalLimitEntries.lean) | Twice-period formula, exact weighted original equation identity, off-diagonal lp majorant |
 | [SourcePsiOriginalLimitDiagonal](../NLS/ZakharovShabat/SourcePsiOriginalLimitDiagonal.lean) | Nonzero diagonal, actual-gap mean value, locally bounded lp correction |
 | [SourceEquation2_29](../NLS/ZakharovShabat/SourceEquation2_29.lean) | Original real-domain package, compact correction, Fredholm reduction, and retained Proposition 12.9 |
+
+## Lemma 12.10: norm convergence and its uniformity quantifiers
+
+The full original Jacobians now converge in operator norm to the intrinsic
+Q* at every fixed real placed-root input, for every finite 1<p<∞ and as
+the omitted index escapes in either direction. Roots need not lie in
+their spectral gaps. The existing diagonal proof is generalized to
+arbitrary real root inputs; its former gap-domain API remains available.
+A single fixed ℓᵖ majorant controls all off-diagonal matrices and gives
+uniform finite-block approximation. The off-diagonal norm limit even
+allows complex placed-root inputs.
+
+`sourceLemma12_10_normLimit` retains Proposition 12.9 and its unchanged
+open connected W. Convergence on each original real Ωᵖ is locally
+uniform in mathlib's sense: for each error tolerance and each base point,
+one neighborhood and one index cutoff work for every input there.
+Consequently convergence is uniform on every compact subset of Ωᵖ,
+with both roots and sources allowed to vary.
+
+A verified free-source counterexample resolves the stronger interpretation
+of printed p. 69. For a real displacement δ at the omitted index n,
+the adjacent diagonal of Qⁿ−Q* is exactly 2δ/π. Fixed small spikes can
+move arbitrarily far out while staying in any given ball inside Ωᵖ.
+Thus no fixed neighborhood of the free point supports uniform norm
+convergence. This does not contradict the tolerance-dependent local
+uniformity proved above. The counterexample includes existence of an
+original isolating family and uses the actual original operators.
+See [the source clarification](../SOURCE_ERRATA.md).
+
+Seventeen public checks cover unrestricted real diagonal inputs, complex
+off-diagonal inputs, full-domain norm convergence, signed-index cutoffs,
+strong convergence on every input vector, joint local and compact-set
+uniformity, the actual free-spike identity and lower bound, failure on
+all fixed neighborhoods, and exponents 3/2 and 4.
+
+Lemma 12.10 remains incomplete: full original-domain Q* injectivity and
+the common original complex extension are next. The printed source-only
+Lipschitz bound remains under audit; the proved bound controls both roots
+and source parameters.
+
+Validation: the full build passed 7037 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33286 NLS
+declarations. The four new modules, two generalized modules, and seventeen
+new checks are warning-free; the 21 existing warnings remain. The source
+inventory verifies all 156 candidate labels, and all 145 checked local
+Markdown file links resolve.
+
+| Module | Verified scope |
+| --- | --- |
+| [ReciprocalMatrixConvergence](../NLS/SequenceSpaces/ReciprocalMatrixConvergence.lean) | Fixed reciprocal majorant and coordinatewise limits imply off-diagonal norm convergence |
+| [SourcePsiJacobianEscapingDiagonalTail](../NLS/ZakharovShabat/SourcePsiJacobianEscapingDiagonalTail.lean) | Scalar diagonal tail for arbitrary real root inputs |
+| [SourcePsiJacobianDiagonalNormLimit](../NLS/ZakharovShabat/SourcePsiJacobianDiagonalNormLimit.lean) | Uniform diagonal tail with reality alone; previous gap-domain APIs retained |
+| [SourcePsiOriginalNormLimit](../NLS/ZakharovShabat/SourcePsiOriginalNormLimit.lean) | Actual full-domain pointwise operator-norm limit |
+| [SourcePsiOriginalNormUniformity](../NLS/ZakharovShabat/SourcePsiOriginalNormUniformity.lean) | Tolerance-dependent local uniformity and uniformity on all compact subsets of original Ωᵖ |
+| [SourcePsiOriginalUniformityCounterexample](../NLS/ZakharovShabat/SourcePsiOriginalUniformityCounterexample.lean) | Moving real spikes disprove convergence uniformly on a fixed original neighborhood |

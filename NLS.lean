@@ -3596,3 +3596,7 @@ import NLS.ZakharovShabat.SourcePsiOriginalLimitContinuity
 import NLS.ZakharovShabat.SourcePsiOriginalLimitEntries
 import NLS.ZakharovShabat.SourcePsiOriginalLimitDiagonal
 import NLS.ZakharovShabat.SourceEquation2_29
+import NLS.SequenceSpaces.ReciprocalMatrixConvergence
+import NLS.ZakharovShabat.SourcePsiOriginalNormLimit
+import NLS.ZakharovShabat.SourcePsiOriginalNormUniformity
+import NLS.ZakharovShabat.SourcePsiOriginalUniformityCounterexample

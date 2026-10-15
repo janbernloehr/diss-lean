@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: equations (2.28) and (2.29) on the original domain
+## Current milestone: Lemma 12.10 norm convergence and precise uniformity
+
+The full original Jacobians now converge in operator norm to the intrinsic
+Q* at every fixed real placed-root input, for every finite 1<p<∞ and as
+the omitted index escapes in either direction. Roots need not lie in
+their spectral gaps. The existing diagonal proof is generalized to
+arbitrary real root inputs; its former gap-domain API remains available.
+A single fixed ℓᵖ majorant controls all off-diagonal matrices and gives
+uniform finite-block approximation. The off-diagonal norm limit even
+allows complex placed-root inputs.
+
+`sourceLemma12_10_normLimit` retains Proposition 12.9 and its unchanged
+open connected W. Convergence on each original real Ωᵖ is locally
+uniform in mathlib's sense: for each error tolerance and each base point,
+one neighborhood and one index cutoff work for every input there.
+Consequently convergence is uniform on every compact subset of Ωᵖ,
+with both roots and sources allowed to vary.
+
+A verified free-source counterexample resolves the stronger interpretation
+of printed p. 69. For a real displacement δ at the omitted index n,
+the adjacent diagonal of Qⁿ−Q* is exactly 2δ/π. Fixed small spikes can
+move arbitrarily far out while staying in any given ball inside Ωᵖ.
+Thus no fixed neighborhood of the free point supports uniform norm
+convergence. This does not contradict the tolerance-dependent local
+uniformity proved above. The counterexample includes existence of an
+original isolating family and uses the actual original operators.
+See [the source clarification](SOURCE_ERRATA.md).
+
+Seventeen public checks cover unrestricted real diagonal inputs, complex
+off-diagonal inputs, full-domain norm convergence, signed-index cutoffs,
+strong convergence on every input vector, joint local and compact-set
+uniformity, the actual free-spike identity and lower bound, failure on
+all fixed neighborhoods, and exponents 3/2 and 4.
+
+Lemma 12.10 remains incomplete: full original-domain Q* injectivity and
+the common original complex extension are next. The printed source-only
+Lipschitz bound remains under audit; the proved bound controls both roots
+and source parameters.
+
+Validation: the full build passed 7037 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33286 NLS
+declarations. The four new modules, two generalized modules, and seventeen
+new checks are warning-free; the 21 existing warnings remain. The source
+inventory verifies all 156 candidate labels, and all 145 checked local
+Markdown file links resolve.
+
+## Previous milestone: equations (2.28) and (2.29) on the original domain
 
 The first operator-construction steps of Lemma 12.10 now hold on the
 original isolating disks. Equation (2.28) uses the literal ratio

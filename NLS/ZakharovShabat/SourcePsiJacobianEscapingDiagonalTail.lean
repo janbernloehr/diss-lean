@@ -19,13 +19,13 @@ namespace NLS.ZakharovShabat
 
 /-- The diagonal scalar Jacobians on free tail circles tend to two
 in the output tail, uniformly for all sufficiently distant deleted
-copies of a fixed gap-contained root sequence. -/
-theorem exists_sourcePsi_escaping_diagonal_scalarUniformTail
+copies of a fixed real root sequence, without a gap-placement premise. -/
+theorem exists_sourcePsi_escaping_diagonal_scalarUniformTail_of_real_roots
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
     (hφ : IsRealType (CoeffPair.toMax p φ))
-    (ha : a ∈ sourcePeriodicGapRootSet hp hp1 φ) :
+    (haReal : ∀ k : ℤ, (a k).im = 0) :
     ∀ ε : ℝ, 0 < ε → ∃ K : ℕ,
       ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
         ∀ m : ℤ, K ≤ m.natAbs → ∀ hmn : m ≠ n,
@@ -65,7 +65,7 @@ theorem exists_sourcePsi_escaping_diagonal_scalarUniformTail
         simp [aₙ,displacedRoots,Coeff.deleteCoordinateTo,
           Coeff.deleteCoordinate_apply_other n j hj]
       rw [heq]
-      exact sourcePeriodicSegment_im_eq_zero_of_realType hp hp1 φ hφ j _ (ha j)
+      simp [displacedRoots,haReal]
   intro m hm hmn
   have hmFree : Kfree < m.natAbs := by omega
   have hmErr : Kerr ≤ m.natAbs := by omega
@@ -127,5 +127,25 @@ theorem exists_sourcePsi_escaping_diagonal_scalarUniformTail
     dsimp only [E]
     linarith
   simpa only [hcenter,aₙ] using hbound.trans_lt hfinal
+
+/-- Compatibility form for roots contained in their spectral gaps. -/
+theorem exists_sourcePsi_escaping_diagonal_scalarUniformTail
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (ha : a ∈ sourcePeriodicGapRootSet hp hp1 φ) :
+    ∀ ε : ℝ, 0 < ε → ∃ K : ℕ,
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ∀ m : ℤ, K ≤ m.natAbs → ∀ hmn : m ≠ n,
+          ‖deriv (fun t : ℂ =>
+            sourcePsiDeletedEquationCoordinate hp hp1 n m
+              (Coeff.deleteCoordinateTo n a +
+                Coeff.deletedSingleCLM n m hmn t) φ
+              ((Real.pi : ℂ)*m) (Real.pi/8)) 0-2‖ < ε := by
+  apply exists_sourcePsi_escaping_diagonal_scalarUniformTail_of_real_roots hp hp1 a φ hφ
+  intro k
+  have h := sourcePeriodicSegment_im_eq_zero_of_realType hp hp1 φ hφ k _ (ha k)
+  simpa [displacedRoots] using h
 
 end NLS.ZakharovShabat

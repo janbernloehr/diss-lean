@@ -20,6 +20,44 @@ namespace NLS.ZakharovShabat
 /-- The diagonal correction of the common-contour full Jacobian is
 uniformly small on distant output rows, eventually in the deleted
 index. This includes the omitted diagonal, where the correction is zero. -/
+theorem sourcePsiFullRootJacobian_diagonal_uniformTail_of_real_roots
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (haReal : ∀ k : ℤ, (a k).im = 0)
+    (c : ℤ → ℂ) (R : ℤ → ℝ) (Kfree : ℕ)
+    (hfree : ∀ m : ℤ, Kfree < m.natAbs →
+      c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8)
+    (hmatrix : ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+      ∀ m k : ℤ, ∀ _hmn : m ≠ n, ∀ hkn : k ≠ n,
+        (sourcePsiFullRootJacobian hp hp1 n c R
+          (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m =
+          deriv (fun t : ℂ =>
+            sourcePsiDeletedEquationCoordinate hp hp1 n m
+              (Coeff.deleteCoordinateTo n a +
+                Coeff.deletedSingleCLM n k hkn t) φ (c m) (R m)) 0) :
+    ∀ ε : ℝ, 0 < ε → ∃ K : ℕ,
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ∀ m : ℤ, K ≤ m.natAbs →
+          ‖(sourcePsiFullRootJacobian hp hp1 n c R
+            (Coeff.deleteCoordinateTo n a) φ (lp.single p m 1)) m-2‖ < ε := by
+  intro ε hε
+  obtain ⟨Kscalar,hscalar⟩ :=
+    exists_sourcePsi_escaping_diagonal_scalarUniformTail_of_real_roots hp hp1 a φ hφ haReal ε hε
+  refine ⟨max Kscalar (Kfree+1),?_⟩
+  filter_upwards [hmatrix,hscalar] with n hn hs
+  intro m hm
+  by_cases hmn : m = n
+  · subst m
+    rw [sourcePsiFullRootJacobian_entry_deleted_diagonal]
+    simpa using hε
+  · have hmScalar : Kscalar ≤ m.natAbs := by omega
+    have hmFree : Kfree < m.natAbs := by omega
+    rw [hn m m hmn hmn,(hfree m hmFree).1,(hfree m hmFree).2]
+    exact hs m hmScalar hmn
+
+/-- Compatibility form for gap-contained roots. -/
 theorem sourcePsiFullRootJacobian_diagonal_uniformTail
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -42,20 +80,10 @@ theorem sourcePsiFullRootJacobian_diagonal_uniformTail
         ∀ m : ℤ, K ≤ m.natAbs →
           ‖(sourcePsiFullRootJacobian hp hp1 n c R
             (Coeff.deleteCoordinateTo n a) φ (lp.single p m 1)) m-2‖ < ε := by
-  intro ε hε
-  obtain ⟨Kscalar,hscalar⟩ :=
-    exists_sourcePsi_escaping_diagonal_scalarUniformTail hp hp1 a φ hφ ha ε hε
-  refine ⟨max Kscalar (Kfree+1),?_⟩
-  filter_upwards [hmatrix,hscalar] with n hn hs
-  intro m hm
-  by_cases hmn : m = n
-  · subst m
-    rw [sourcePsiFullRootJacobian_entry_deleted_diagonal]
-    simpa using hε
-  · have hmScalar : Kscalar ≤ m.natAbs := by omega
-    have hmFree : Kfree < m.natAbs := by omega
-    rw [hn m m hmn hmn,(hfree m hmFree).1,(hfree m hmFree).2]
-    exact hs m hmScalar hmn
+  apply sourcePsiFullRootJacobian_diagonal_uniformTail_of_real_roots hp hp1 a φ hφ
+    (fun k => by
+      have h := sourcePeriodicSegment_im_eq_zero_of_realType hp hp1 φ hφ k _ (ha k)
+      simpa [displacedRoots] using h) c R Kfree hfree hmatrix
 
 /-- The extracted diagonal operators of the full psi Jacobians
 converge in norm to the diagonal of the coordinatewise limit operator. -/

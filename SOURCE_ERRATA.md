@@ -1,5 +1,41 @@
 # Source discrepancies
 
+## Lemma 12.10: the order of the local-uniformity quantifiers matters
+
+Printed p. 69 (visually checked) says Qⁿ→Q* in operator norm locally
+uniformly on Ωᵖ. The formalization proves the following precise version:
+for every ε>0 and every point x∈Ωᵖ, there are a neighborhood U of x in
+Ωᵖ and an index cutoff N such that the norm error is below ε for all
+y∈U and |n|≥N. This is mathlib's `TendstoLocallyUniformlyOn`. It suffices
+for continuity of Q* and uniform convergence on every compact subset.
+
+The stronger order, choosing one neighborhood before all error
+tolerances, is false here. At the free source, let a=δeₙ with real
+0<δ<π/4. In the original tail disks this is a valid real root input.
+The actual Qⁿ ignores its omitted root coordinate, whereas Q* uses all
+roots. At row and column n+1 the exact difference is
+
+    [(Qⁿ(δeₙ,0)−Q*(δeₙ,0))eₙ₊₁]ₙ₊₁ = 2δ/π.
+
+Hence the operator-norm error is at least 2δ/π, independently of n.
+Choose a fixed δ small enough for any prescribed ball about zero and
+move its index to infinity. The inputs remain in that ball and in the
+original Ωᵖ, so convergence cannot be uniform there. The theorem
+`originalOmega_free_no_uniform_neighborhood` rules out every fixed
+relative neighborhood; `sourceLemma12_10_no_fixedUniformNeighborhood`
+also constructs an existing original isolating family, for every finite
+p>1. The proof concerns the literal original operators, with diagonal
+fill 2 at the omitted coordinate.
+
+This is a quantifier clarification of the source's convergence sentence,
+not a negation of mathlib's weaker local-uniform statement. The positive
+result `sourceLemma12_10_normLimit` proves that statement on every
+original real Ωᵖ while retaining Proposition 12.9 and the same W.
+Full Lemma 12.10 still requires the original-domain injectivity and
+common complex extension. Its subsequent source-only Lipschitz estimate
+remains under audit; the established estimate uses joint root/source
+distance.
+
 ## Lemma 12.5: the nonvanishing sentence names the wrong gap
 
 Printed p. 66 (visually checked) obtains a mean-value point μ∈Gₘ and
