@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: Appendix A test-space foundations and derivatives
+## Current milestone: Appendix A complex Radon measures and (A.2)
+
+Every original periodic distribution of least order zero is now integration
+against a unique actual complex measure on the physical circle. The action
+retains exactly 1/L, and the unique representation also holds on all continuous
+functions. Conversely, every complex Borel measure defines an order-zero
+distribution. Finite total variation and regularity are proved, giving the
+finite complex Radon-measure assertion in (A.2).
+
+The proof decomposes a bounded real functional into positive functionals using
+Hahn–Banach, then applies the positive real Riesz theorem. Signed and complex
+representation follow through the standard Jordan-component integral. This
+integral is independent of a positive-minus-negative representation and
+recovers the actual measure uniquely. A mass Lz at x acts as z times point
+evaluation, and the zeroth Fourier coefficient is the total mass divided by L.
+
+Four new modules and 28 public checks cover existence, uniqueness, both
+identification round trips, finite variation and regularity, signed and
+imaginary masses, periods one through three, the zero measure, constant
+tests, L1 representation, and tempered Fourier coefficients.
+See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: the Fourier Lebesgue assertions and Lemmas A.2–A.9. The Section 14 and
+unrestricted Lemma 27.2 endpoint qualifications remain. The dissertation
+is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,259 build jobs, all 6,015
+public examples, and the transitive axiom audit for 35,144 NLS declarations.
+The four new modules and 28 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+571 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A test-space foundations and derivatives
 
 The original smooth periodic test space is now proved complete, metrizable,
 Hausdorff, and locally convex for its exact physical derivative-norm topology.

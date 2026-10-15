@@ -3801,3 +3801,7 @@ import NLS.Fourier.SmoothPeriodicTestFrechet
 import NLS.Fourier.PeriodicDistributionOrderZero
 import NLS.Fourier.PeriodicDistributionPhysicalOrderZero
 import NLS.Fourier.SmoothPeriodicDistributionDerivative
+import NLS.Fourier.RealContinuousFunctionalDecomposition
+import NLS.Fourier.ComplexMeasureContinuousIntegral
+import NLS.Fourier.ComplexMeasureRepresentation
+import NLS.Fourier.PeriodicDistributionMeasure

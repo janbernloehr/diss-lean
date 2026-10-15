@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix A's original smooth periodic test space is complete,
-metrizable, locally convex, and dense in continuous functions on the physical
-circle. Order-zero distributions have unique continuous extensions; L1
-functions retain the exact normalized integral. The original-dual derivative
-has the signed physical Fourier multiplier and agrees with tempered differentiation.
+Latest step: Appendix A's order-zero distributions are identified with actual
+finite complex Radon measures. Formula (A.2) retains the exact 1/L integral,
+with unique representation on all continuous functions, both identification
+round trips, and verified signed and complex point-mass normalization.
 
-Next: the complex Radon-measure representation in (A.2), then the remaining
-Fourier Lebesgue assertions. The separate fractional-smoothness and Lemma 27.2
-endpoint qualifications remain. The dissertation is incomplete.
+Next: the Fourier Lebesgue assertions and Lemmas A.2–A.9. The separate
+fractional-smoothness and Lemma 27.2 endpoint qualifications remain.
+The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

@@ -57311,3 +57311,120 @@ example (T : 𝓢'(ℝ,ℂ)) :
 
 end AppendixAFoundationsChecks
 end NLS.Fourier
+
+noncomputable section
+open Set MeasureTheory
+namespace NLS.Fourier
+open SmoothPeriodicTest
+section AppendixAMeasureChecks
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example (ell : C(AddCircle L,ℝ) →L[ℝ] ℝ) :
+    ∃ g h : C(AddCircle L,ℝ) →ₚ[ℝ] ℝ, ∀ f, ell f = g f - h f := exists_positive_decomposition ell
+
+example (ell : C(AddCircle L,ℝ) →L[ℝ] ℝ) :
+    ∃ s : SignedMeasure (AddCircle L), ∀ f : C(AddCircle L,ℝ),
+      signedMeasureContinuousIntegral s (realContinuousTest f) = (ell f : ℂ) :=
+  exists_signedMeasure_real_representation ell
+
+example (μ : ComplexMeasure (AddCircle L)) : IsFiniteMeasure μ.variation := inferInstance
+
+example (μ : ComplexMeasure (AddCircle L)) : μ.variation.Regular := complexMeasure_variation_regular μ
+
+example (μ : ComplexMeasure (AddCircle L)) : μ.variation.InnerRegular := inferInstance
+
+example (μ : ComplexMeasure (AddCircle L)) : μ.variation ≤ complexMeasureControl μ := complexMeasure_variation_le μ
+
+example (F : C(AddCircle L,ℂ) →L[ℂ] ℂ) : ∃ μ : ComplexMeasure (AddCircle L),
+    complexMeasureContinuousIntegral μ = F := complexMeasureContinuousIntegral_surjective F
+
+example (μ ν : ComplexMeasure (AddCircle L))
+    (h : ∀ f : C(AddCircle L,ℂ), complexMeasureContinuousIntegral μ f = complexMeasureContinuousIntegral ν f) : μ = ν :=
+  complexMeasureContinuousIntegral_injective (DFunLike.ext _ _ h)
+
+example (μ : ComplexMeasure (AddCircle L)) (f : SmoothPeriodicTest L) :
+    Distribution.ofComplexMeasure μ f = (L:ℂ)⁻¹ * complexMeasureContinuousIntegral μ (toContinuousCLM f) :=
+  Distribution.ofComplexMeasure_apply μ f
+
+example (μ : ComplexMeasure (AddCircle L)) : (Distribution.ofComplexMeasure μ).order = 0 :=
+  Distribution.ofComplexMeasure_order μ
+
+example (u : Distribution L) : u.order = 0 ↔ ∃! μ : ComplexMeasure (AddCircle L),
+    Distribution.ofComplexMeasure μ = u := u.order_zero_iff_measure
+
+example (F : C(AddCircle L,ℂ) →L[ℂ] ℂ) : ∃! μ : ComplexMeasure (AddCircle L),
+    ∀ f : C(AddCircle L,ℂ), F f = (L:ℂ)⁻¹ * complexMeasureContinuousIntegral μ f :=
+  Distribution.existsUnique_normalized_measure F
+
+example (μ ν : ComplexMeasure (AddCircle L))
+    (h : ∀ f : SmoothPeriodicTest L, Distribution.ofComplexMeasure μ f = Distribution.ofComplexMeasure ν f) : μ = ν :=
+  Distribution.ofComplexMeasure_injective (DFunLike.ext _ _ h)
+
+example (μ : ComplexMeasure (AddCircle L)) :
+    Distribution.complexMeasureOrderZeroEquiv.symm (Distribution.complexMeasureOrderZeroEquiv μ) = μ :=
+  Distribution.complexMeasureOrderZeroEquiv.symm_apply_apply μ
+
+example (u : {u : Distribution L // u.order = 0}) :
+    Distribution.complexMeasureOrderZeroEquiv (Distribution.complexMeasureOrderZeroEquiv.symm u) = u :=
+  Distribution.complexMeasureOrderZeroEquiv.apply_symm_apply u
+
+example (x : ℝ) (z : ℂ) :
+    Distribution.ofComplexMeasure (VectorMeasure.dirac (x : AddCircle L) ((L:ℂ)*z)) = z • Distribution.evaluation x :=
+  Distribution.ofComplexMeasure_dirac x z
+
+example (x : ℝ) : Distribution.ofComplexMeasure (VectorMeasure.dirac (x : AddCircle (2:ℝ)) 1) =
+    (1/2:ℂ) • Distribution.evaluation x := by
+  simpa using Distribution.ofComplexMeasure_dirac (L := 2) x (1/2)
+
+example (x : ℝ) : Distribution.ofComplexMeasure (VectorMeasure.dirac (x : AddCircle (3:ℝ)) (-3)) =
+    (-1:ℂ) • Distribution.evaluation x := by
+  simpa using Distribution.ofComplexMeasure_dirac (L := 3) x (-1)
+
+example (x : ℝ) : Distribution.ofComplexMeasure (VectorMeasure.dirac (x : AddCircle (1:ℝ)) (2-3*Complex.I)) =
+    (2-3*Complex.I) • Distribution.evaluation x := by
+  simpa using Distribution.ofComplexMeasure_dirac (L := 1) x (2-3*Complex.I)
+
+example (x : AddCircle L) (f : C(AddCircle L,ℂ)) :
+    complexMeasureContinuousIntegral (VectorMeasure.dirac x Complex.I) f = Complex.I*f x :=
+  complexMeasureContinuousIntegral_dirac x Complex.I f
+
+example (x : AddCircle L) (f : C(AddCircle L,ℂ)) :
+    signedMeasureContinuousIntegral (VectorMeasure.dirac x (-2:ℝ)) f = -2*f x := by
+  simpa using signedMeasureContinuousIntegral_dirac x (-2) f
+
+example (n : ℤ) (z : ℂ) :
+    Distribution.ofComplexMeasure (VectorMeasure.dirac (0 : AddCircle L) ((L:ℂ)*z)) (mode (-n)) = z := by
+  rw [← AddCircle.coe_zero,Distribution.ofComplexMeasure_dirac]
+  simp only [_root_.smul_apply,smul_eq_mul,Distribution.evaluation_zero_coefficient,mul_one]
+
+example (n : ℤ) (z : ℂ) :
+    (Distribution.ofComplexMeasure (VectorMeasure.dirac (0 : AddCircle L) ((L:ℂ)*z))).toTempered
+      (periodCoefficientTest L Fact.out n) = z := by
+  rw [Distribution.toTempered_coefficient,← AddCircle.coe_zero,Distribution.ofComplexMeasure_dirac]
+  simp only [_root_.smul_apply,smul_eq_mul,Distribution.evaluation_zero_coefficient,mul_one]
+
+example : Distribution.ofComplexMeasure (0 : ComplexMeasure (AddCircle L)) = 0 := by
+  ext f
+  change Distribution.ofComplexMeasure (0 : ComplexMeasure (AddCircle L)) f = 0
+  have h := congrArg (fun u : Distribution L => u f) (Distribution.ofComplexMeasure_dirac (L := L) 0 0)
+  simpa only [mul_zero,VectorMeasure.dirac_zero,_root_.smul_apply,smul_eq_mul,zero_mul] using h
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    ∃! μ : ComplexMeasure (AddCircle L), Distribution.ofComplexMeasure μ = Distribution.ofL1 f hf :=
+  (Distribution.order_zero_iff_measure _).mp (Distribution.ofL1_order f hf)
+
+example (μ ν : Measure (AddCircle L)) [IsFiniteMeasure μ] [IsFiniteMeasure ν]
+    (s : SignedMeasure (AddCircle L)) (hs : s = μ.toSignedMeasure - ν.toSignedMeasure) :
+    signedMeasureContinuousIntegral s = finiteMeasureContinuousIntegral μ - finiteMeasureContinuousIntegral ν :=
+  signedMeasureContinuousIntegral_eq_of_rep s μ ν hs
+
+example (μ : ComplexMeasure (AddCircle L)) (z : ℂ) :
+    complexMeasureContinuousIntegral μ (ContinuousMap.const (AddCircle L) z) = z * μ univ :=
+  complexMeasureContinuousIntegral_const μ z
+
+example (μ : ComplexMeasure (AddCircle L)) :
+    Distribution.ofComplexMeasure μ (mode 0) = (L:ℂ)⁻¹ * μ univ := Distribution.ofComplexMeasure_zero_coefficient μ
+
+end AppendixAMeasureChecks
+end NLS.Fourier
