@@ -5,17 +5,17 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Proposition 12.9 proves a unique global real analytic solution
-of the original psi equation, for every finite 1<p<∞ and omitted index.
-Its graph lies in the original domain and its roots lie in the actual gaps,
-including collapsed gaps. The original-domain projection, local analytic
-branches, and full ℓᵖ-norm convergence of solutions are certified.
-Next: Lemma 12.10, uniform inverse bounds and a common complex extension.
-[The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
-[the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
-The dissertation remains incomplete.
+Latest step: equations (2.28) and (2.29) construct the intrinsic bounded
+Q* on the original placed-root domain, with continuity in the joint
+root/source topology. For real roots, its diagonal is nonzero and 2+ℓᵖ,
+its off-diagonal entries have an ℓᵖ reciprocal-distance bound, and Q*−2I
+is compact.
+
+Next: finish Lemma 12.10's full-domain norm convergence, injectivity,
+and common complex extension. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
-and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
+[the Section 12 audit](coverage/SECTION_12.md), and
+[source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

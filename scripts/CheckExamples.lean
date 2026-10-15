@@ -51182,3 +51182,182 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceProposition129Checks
+
+namespace SourceEquation228229Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology Metric
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (φ : CoeffPair p) (hφW : φ ∈ W) (hφV : φ ∈ V)
+variable (hφ : IsRealType (CoeffPair.toMax p φ))
+variable (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+variable (haReal : ∀ k : ℤ, (a k).im = 0)
+
+-- Equation (2.28) allows complex roots anywhere in the original disks.
+example (n m : ℤ) (z : ℂ) (hz : displacedRoots a n ≠ z) :
+    sourcePsiOriginalIndexRatio n m a z = 1+
+      ((Real.pi:ℂ)*n-displacedRoots a n+(z-(Real.pi:ℂ)*m))/(displacedRoots a n-z) :=
+  sourcePsiOriginalIndexRatio_sub_one n m a z hz
+
+example : ∃ K : ℝ, 0 ≤ K ∧ ∀ b ∈ sourcePsiOriginalRootPlacement (p := p) D,
+    ∀ n m : ℤ, m ≠ n → ∀ z ∈ D m,
+      ‖sourcePsiOriginalIndexRatio n m b z-1‖ ≤ K/‖((n-m:ℤ):ℂ)‖ :=
+  hD.original_indexRatio_uniform_bound
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    ∀ b ∈ sourcePsiOriginalRootPlacement (p := p) D, ∀ z ∈ D (-7),
+      ‖sourcePsiOriginalIndexRatio n (-7) b z-1‖ < ε :=
+  hD.original_indexRatio_uniform_tail (-7) ε hε
+
+-- Both signs and the central row are retained in the literal ratio.
+example : sourcePsiOriginalIndexRatio (-7) 0 (0:Coeff p) 0 = 1 := by
+  norm_num [sourcePsiOriginalIndexRatio,displacedRoots,Real.pi_ne_zero]
+
+-- The full extension fills the omitted diagonal with 2.
+example (n : ℤ) (x : Coeff p) : (sourcePsiOriginalFullRootJacobian hp hp1 n a φ x) n = 2*x n := by
+  simp [sourcePsiOriginalFullRootJacobian,Coeff.deletedJacobianExtension]
+
+example (n : ℤ) (z : ℂ) :
+    sourcePsiOriginalFullRootJacobian hp hp1 n a φ (lp.single p n z) = lp.single p n (2*z) :=
+  Coeff.deletedOperatorExtension_single_same n 2 z _
+
+example : (sourcePsiOriginalFullRootJacobian hp hp1 (-7) a φ (lp.single p 0 Complex.I)) (-7) = 0 := by
+  simp [sourcePsiOriginalFullRootJacobian,Coeff.deletedJacobianExtension]
+
+example (n m k : ℤ) (hmn : m ≠ n) :
+    (sourcePsiOriginalFullRootJacobian hp hp1 n a φ (lp.single p k 1)) m =
+      sourcePsiOriginalJacobianEntry hp hp1 n m k a φ :=
+  sourcePsiOriginalFullRootJacobian_entry hp hp1 n m k hmn a φ
+
+-- The norm bound even allows completely unrestricted complex root inputs.
+example (b : Coeff p) : ∃ M : ℝ, 0 ≤ M ∧ ∀ᶠ n : ℤ in Filter.comap Int.natAbs atTop,
+    ‖sourcePsiOriginalFullRootJacobian hp hp1 n b φ‖ ≤ M :=
+  H.originalFullRootJacobian_eventually_bounded φ hφW hφ b
+
+-- Scalar convergence uses original disk placement, not gap placement or root reality.
+example (m k : ℤ) (d r : ℝ) (hr : 0 < r) (he : D m = ball (d:ℂ) r) :
+    Tendsto (fun n : ℤ => sourcePsiOriginalJacobianEntry hp hp1 n m k a φ)
+      (Filter.comap Int.natAbs atTop) (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (d:ℂ) r)) :=
+  H.originalJacobianEntry_tendsto hD φ hφW hφV hφ a ha m k d r hr he
+
+example (x : Coeff p) (m : ℤ) :
+    Tendsto (fun n : ℤ => (sourcePsiOriginalFullRootJacobian hp hp1 n a φ x) m)
+      (Filter.comap Int.natAbs atTop) (𝓝 ((sourcePsiOriginalLimitOperator hp hp1 a φ x) m)) :=
+  H.originalLimitOperator_spec hD φ hφW hφV hφ a ha x m
+
+example (Q R : Coeff p →L[ℂ] Coeff p)
+    (hQ : SourcePsiOriginalLimitProperty hp hp1 a φ Q)
+    (hR : SourcePsiOriginalLimitProperty hp hp1 a φ R) : Q = R := hQ.unique hR
+
+-- Independence across different original isolating families and original circles.
+example {V' : Set (CoeffPair p)} {D' : ℤ → Set ℂ} {c' : ℝ}
+    (hD' : SourceIsolatingNeighborhoods hp hp1 V' D' c') (hφV' : φ ∈ V')
+    (ha' : a ∈ sourcePsiOriginalRootPlacement D')
+    (m k : ℤ) (d r d' r' : ℝ) (hr : 0 < r) (hr' : 0 < r')
+    (he : D m = ball (d:ℂ) r) (he' : D' m = ball (d':ℂ) r') :
+    sourcePsiLimitMatrixEntry hp hp1 m k a φ (d:ℂ) r =
+      sourcePsiLimitMatrixEntry hp hp1 m k a φ (d':ℂ) r' :=
+  (H.originalLimitOperator_entry hD φ hφW hφV hφ a ha m k d r hr he).symm.trans
+    (H.originalLimitOperator_entry hD' φ hφW hφV' hφ a ha' m k d' r' hr' he')
+
+example (m k : ℤ) :
+    ((k-m:ℤ):ℂ)*(sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p k 1)) m =
+      (Real.pi:ℂ)⁻¹*(sourcePsiOriginalEquation hp hp1 k (Coeff.deleteCoordinateTo k a) φ:Coeff p) m :=
+  H.originalLimitOperator_weighted_entry hD φ hφW hφV hφ a ha m k
+
+example : ∃ B : Coeff p, ∀ m k : ℤ, m ≠ k →
+    ‖(sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p k 1)) m‖ ≤ ‖B m‖/‖((m-k:ℤ):ℂ)‖ :=
+  H.originalLimitOperator_offDiagonal_majorant hW hD φ hφW hφV hφ a ha
+
+-- The diagonal assertions require real roots, but still allow them outside the gaps.
+example (m : ℤ) : ∃ μ ∈ sourcePeriodicSegment hp hp1 φ m,
+    (sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p m 1)) m =
+      2*sourceSingleRootQuotientJointProduct hp hp1 m (μ,(a,φ)) :=
+  H.originalLimitOperator_diagonal_meanValue hD φ hφW hφV hφ a ha haReal m
+
+example (m : ℤ) (hg : canonicalPeriodicGap hp hp1 (periodOnePotential φ)
+    (periodOnePotential_mem φ) m = 0) :
+    (sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p m 1)) m =
+      2*sourceSingleRootQuotientJointProduct hp hp1 m (sourceStandardRootMidpoint hp hp1 φ m,(a,φ)) := by
+  obtain ⟨μ,hμ,he⟩ := H.originalLimitOperator_diagonal_meanValue hD φ hφW hφV hφ a ha haReal m
+  rw [sourcePeriodicSegment_eq_midpoint_singleton_of_zeroGap hp hp1 φ m hg,mem_singleton_iff] at hμ
+  simpa only [hμ] using he
+
+example : (sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p (-7) 1)) (-7) ≠ 0 :=
+  H.originalLimitOperator_diagonal_ne_zero hD φ hφW hφV hφ a ha haReal (-7)
+
+example : SourceEquation2_29Data hp hp1 a φ := H.equation2_29 hW hD hV φ hφW hφV hφ a ha haReal
+
+example : ∃ S : Coeff p, ∀ m : ℤ,
+    (sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p m 1)) m = 2+S m :=
+  (H.equation2_29 hW hD hV φ hφW hφV hφ a ha haReal).diagonal
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ N : ℕ, ∀ m : ℤ, N ≤ m.natAbs →
+    ‖(sourcePsiOriginalLimitOperator hp hp1 a φ (lp.single p m 1)) m-2‖ < ε :=
+  (H.equation2_29 hW hD hV φ hφW hφV hφ a ha haReal).diagonal_tail ε hε
+
+example : IsCompactOperator (sourcePsiOriginalLimitOperator hp hp1 a φ -
+    (2:ℂ) • ContinuousLinearMap.id ℂ (Coeff p)) :=
+  (H.equation2_29 hW hD hV φ hφW hφV hφ a ha haReal).compact
+
+-- This is a Fredholm reduction, not a claim of full-domain injectivity.
+example (hinj : Function.Injective (sourcePsiOriginalLimitOperator hp hp1 a φ)) :
+    Function.Bijective (sourcePsiOriginalLimitOperator hp hp1 a φ) :=
+  (H.equation2_29 hW hD hV φ hφW hφV hφ a ha haReal).bijective_of_injective hinj
+
+-- Continuity uses the joint root/source topology and allows complex root inputs.
+example : ContinuousOn (fun t : Coeff p × CoeffPair p => sourcePsiOriginalLimitOperator hp hp1 t.1 t.2)
+    (sourcePsiOriginalLimitDomain W V D) := H.originalLimitOperator_continuousOn hD
+
+example : ∃ r L : ℝ, 0 < r ∧ 0 ≤ L ∧ ∀ n : ℤ,
+    ∀ t ∈ ball (a,φ) r, t.2 ∈ W → IsRealType (CoeffPair.toMax p t.2) →
+    ∀ u ∈ ball (a,φ) r, u.2 ∈ W → IsRealType (CoeffPair.toMax p u.2) →
+      ‖sourcePsiOriginalFullRootJacobian hp hp1 n t.1 t.2 -
+        sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2‖ ≤ L*‖t-u‖ :=
+  H.originalFullRootJacobian_local_Lipschitz a φ hφ
+
+-- The stronger prior inverse results are used only on their proved gap-product domain.
+example (b : sourcePeriodicGapRootSet hp hp1 φ) :
+    sourcePsiOriginalLimitOperator hp hp1 b.val φ = sourcePsiGapLimitOperator hp hp1 φ hφ b :=
+  H.originalLimitOperator_eq_gapLimit φ hφW hφ b
+
+example (b : sourcePeriodicGapRootSet hp hp1 φ) :
+    Function.Bijective (sourcePsiOriginalLimitOperator hp hp1 b.val φ) := by
+  rw [H.originalLimitOperator_eq_gapLimit φ hφW hφ b]
+  exact sourcePsiGapLimitOperator_bijective hp hp1 φ hφ b
+
+example : ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ, ∀ b : sourcePeriodicGapRootSet hp hp1 φ,
+    ∃ S : DeletedCoeff p n →L[ℂ] DeletedCoeff p n,
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n b.val) φ).comp S =
+        ContinuousLinearMap.id ℂ (DeletedCoeff p n) ∧
+      S.comp (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n b.val) φ) =
+        ContinuousLinearMap.id ℂ (DeletedCoeff p n) ∧ ‖S‖ ≤ M :=
+  H.originalRootJacobian_gapUniform_inverse φ hφW hφ
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W ∧
+    ∀ {V : Set (CoeffPair (ENNReal.ofReal (3/2)))} {D : ℤ → Set ℂ} {c : ℝ},
+      SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c → IsOpen V →
+      ∀ t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)),
+        t ∈ sourcePsiOriginalOmega V D →
+        SourceEquation2_29Data (by norm_num) (by norm_num) (RealCoeff.complexCLM _ t.2) t.1 :=
+  sourceEquation2_29 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W ∧
+    ∀ {V : Set (CoeffPair (4:ℝ≥0∞))} {D : ℤ → Set ℂ} {c : ℝ},
+      SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c → IsOpen V →
+      ∀ t : realTypeSourceSubmodule (4:ℝ≥0∞) × RealCoeff (4:ℝ≥0∞),
+        t ∈ sourcePsiOriginalOmega V D →
+        IsCompactOperator (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num)
+          (RealCoeff.complexCLM _ t.2) t.1 - (2:ℂ) • ContinuousLinearMap.id ℂ (Coeff (4:ℝ≥0∞))) := by
+  obtain ⟨W,ho,hc,hr,H,h29⟩ := sourceEquation2_29 (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+  exact ⟨W,ho,hc,hr,H,fun hD hV t ht => (h29 hD hV t ht).compact⟩
+
+end
+end SourceEquation228229Checks

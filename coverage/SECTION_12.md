@@ -21,6 +21,11 @@ on the original domain, including the complex kernel reduction, original
 gap interpolation, and literal outer-circle product and decay formulas.
 Corollary 12.8 now gives continuous inverses on the actual complex and real
 deleted spaces, including identification with the real equation's derivative.
+The first proof steps of Lemma 12.10 now establish literal (2.28), the
+bounded intrinsic Q*, equation (2.29), compactness of Q*−2I, and continuity
+on the original domain. Full-domain norm convergence, injectivity, and
+the common complex extension are still outstanding.
+
 Proposition 12.9 now gives the unique global real analytic solution of the
 original equation on the projected original domain, with exact gap placement,
 local implicit branches, and norm convergence along source sequences.
@@ -709,3 +714,64 @@ source-first order. An omitted root can be filled at the real center of
 its original disk; its free location need not belong to that disk. The
 canonical graph lies in every original family wherever that family is
 admissible, and the same canonical solution works for all such families.
+
+## Lemma 12.10, first proof steps: equations (2.28) and (2.29) on the original domain
+
+The first operator-construction steps of Lemma 12.10 now hold on the
+original isolating disks. Equation (2.28) uses the literal ratio
+(nπ−mπ)/(σₙ−λ), with a uniform reciprocal-distance bound over every placed
+complex root input and every point of the selected disk. At each fixed
+row, one cutoff works in both index directions for all those inputs.
+
+Actual original Jacobian entries converge to the literal Q* contour
+entries. An eventual common operator bound makes these entries a bounded
+operator, with coordinatewise convergence on every ℓᵖ input. Uniqueness
+identifies one intrinsic Q*, independently of the original disk family
+or circle. Its total definition's default branch is excluded throughout
+the original placed-root domain at real-type sources. Roots may be
+complex and need not lie in their spectral gaps for these results.
+
+`sourceEquation2_29` retains Proposition 12.9 and its unchanged W. On every
+original real Ωᵖ it proves the actual Q* diagonal is nonzero and equals
+2 plus an ℓᵖ sequence, and its off-diagonal entries have one ℓᵖ row
+majorant divided by index distance. Both sequence bounds are locally
+bounded in the original parameters. The diagonal mean-value formula
+uses an actual gap point and includes collapsed gaps. These estimates
+make Q*−2I compact; bijectivity is reduced to a separate injectivity proof.
+
+One joint root/source Lipschitz estimate controls every original full
+Jacobian near a real-type source, with all omitted indices included.
+Passing that estimate through coordinatewise limits proves operator-norm
+continuity of Q* on the full original domain. On the smaller compact gap
+product, Q* agrees with the prior bijective limit; the proved uniform
+norm convergence and actual deleted inverse bounds transfer there.
+
+Thirty new public checks cover complex root inputs, original circle and
+family independence, the omitted diagonal convention, signed and central
+indices, collapsed gaps, joint topology, compactness, the exact weighted
+equation identity, and exponents 3/2 and 4. See the
+[source coverage](../COVERAGE.md).
+
+Lemma 12.10 remains incomplete. Next: full-domain operator-norm convergence,
+Q* injectivity, and the original common complex extension. The printed
+local-uniformity claim is also being audited. Gap-product norm convergence
+and inverses are not asserted on the larger domain. No new source
+correction is claimed in this milestone.
+
+Validation: the full build passed (7033 jobs), the complete public example
+suite passed, and the transitive axiom audit passed for 33238 NLS
+declarations. The nine new modules and thirty new checks are warning-free;
+the 21 existing warnings remain. The source inventory still verifies all
+156 candidate labels, and all 134 checked local Markdown file links resolve.
+
+| Module | Verified scope |
+| --- | --- |
+| [SourcePsiOriginalIndexRatio](../NLS/ZakharovShabat/SourcePsiOriginalIndexRatio.lean) | Literal (2.28), uniform all-disk bound and signed-index tail |
+| [SourcePsiOriginalJacobianComparison](../NLS/ZakharovShabat/SourcePsiOriginalJacobianComparison.lean) | Exact original/selected equation and derivative identities; explicit gap-product bridges |
+| [SourcePsiOriginalJacobianScalarLimit](../NLS/ZakharovShabat/SourcePsiOriginalJacobianScalarLimit.lean) | Actual scalar Jacobian limits for all original placed roots |
+| [SourcePsiOriginalLimitOperator](../NLS/ZakharovShabat/SourcePsiOriginalLimitOperator.lean) | Bounded Q* construction and convergence on every input coordinate |
+| [SourcePsiOriginalLimitCanonical](../NLS/ZakharovShabat/SourcePsiOriginalLimitCanonical.lean) | Intrinsic choice, uniqueness, every-circle formula, and gap-limit agreement |
+| [SourcePsiOriginalLimitContinuity](../NLS/ZakharovShabat/SourcePsiOriginalLimitContinuity.lean) | Common joint Lipschitz control and continuity on the full original domain |
+| [SourcePsiOriginalLimitEntries](../NLS/ZakharovShabat/SourcePsiOriginalLimitEntries.lean) | Twice-period formula, exact weighted original equation identity, off-diagonal lp majorant |
+| [SourcePsiOriginalLimitDiagonal](../NLS/ZakharovShabat/SourcePsiOriginalLimitDiagonal.lean) | Nonzero diagonal, actual-gap mean value, locally bounded lp correction |
+| [SourceEquation2_29](../NLS/ZakharovShabat/SourceEquation2_29.lean) | Original real-domain package, compact correction, Fredholm reduction, and retained Proposition 12.9 |

@@ -3587,3 +3587,12 @@ import NLS.ZakharovShabat.SourcePsiOriginalSolutionGap
 import NLS.ZakharovShabat.SourcePsiOriginalRealSolution
 import NLS.ZakharovShabat.SourcePsiOriginalImplicit
 import NLS.ZakharovShabat.SourceProposition12_9
+import NLS.ZakharovShabat.SourcePsiOriginalIndexRatio
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianComparison
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianScalarLimit
+import NLS.ZakharovShabat.SourcePsiOriginalLimitOperator
+import NLS.ZakharovShabat.SourcePsiOriginalLimitCanonical
+import NLS.ZakharovShabat.SourcePsiOriginalLimitContinuity
+import NLS.ZakharovShabat.SourcePsiOriginalLimitEntries
+import NLS.ZakharovShabat.SourcePsiOriginalLimitDiagonal
+import NLS.ZakharovShabat.SourceEquation2_29
