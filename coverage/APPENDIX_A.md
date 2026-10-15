@@ -5,7 +5,8 @@ order-zero continuous extension, complex Radon representation (A.2), and L1
 action on printed page 121, plus both parts of Theorem A.1 and the distributional
 derivative on printed page 122. It also covers the original Fourier–Lebesgue
 spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
-synthesis and pseudomeasure-dual statements on page 123. The test space
+synthesis and pseudomeasure-dual statements on page 123, plus the decay assertion
+in Remark A.6 and the actual L1-to-c0 Fourier map. The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
@@ -23,6 +24,10 @@ positive physical period. It is not defined as a coefficient-sequence space.
 | Normalized L1 bound | `ofIntervalL1`, `norm_ofIntervalL1_le` | Every interval-integrable function produces an original FL-infinity distribution with norm at most the exact normalized L1 norm. |
 | Absolute and uniform Fourier synthesis | `continuousRepresentativeCLM`, `existsUnique_continuousRepresentative`, `hasSum_continuousRepresentative` | Unique uniformly continuous representative, absolute convergence in C(T_L), uniform convergence, physical frequencies 2πn/L, sup-norm bound one. |
 | Pseudomeasures and duality | `unweightedDualIsometry`, `pseudomeasureDualIsometry` | Full continuous dual for finite p, including FL-infinity as the dual of FL1; opposite indices in the bilinear pairing and exact operator norm. |
+| Riemann–Lebesgue decay, first part of A.6 | `tendsto_intervalFourierCoefficient_cofinite`, `tendsto_fourierCoeff_cofinite` | Every positive period; normalized interval and physical-circle coefficients vanish along the cofinite filter on integer frequencies. |
+| L1 Fourier-series convergence in FL-infinity | `tendsto_truncate_ofIntervalL1`, `Distribution.evaluation_zero_not_ofL1` | Original FL-infinity norm convergence for interval L1 data; point evaluation at zero has no interval L1 representative. |
+| Actual Fourier map L1 → c0 | `circleL1Fourier`, `norm_circleL1Fourier`, `denseRange_circleL1Fourier` | Complex continuous linear map from the actual L1 quotient, sharp operator norm one and dense range; non-surjectivity is not yet proved. |
+| Sharp finite interpolation prerequisites | `Coeff.norm_kernelPair_interpolate_sharp`, `sum_norm_sq_dft`, `norm_dft_piLp_two` | Geometric three-lines constant for arbitrary finite inputs; exact discrete Parseval and sqrt(N) Hilbert norm factor. These do not yet prove the full A.2/A.4 embeddings. |
 | Complex Radon representation, (A.2) | `Distribution.existsUnique_normalized_measure`, `order_zero_iff_measure` | Unique actual complex measure on the physical circle, with 1/L times the standard complex integral; holds on all continuous functions and all original smooth tests. |
 | Converse and identification with measures | `Distribution.ofComplexMeasure_order`, `complexMeasureOrderZeroEquiv` | Every complex Borel measure gives least order zero; both directions of the equivalence recover the original object. |
 | Finiteness and Radon regularity | `complexMeasure_finite_variation`, `complexMeasure_variation_regular` | Every complex measure has finite total variation. Its variation on the compact metrizable physical circle is regular, hence inner regular. |
@@ -182,6 +187,51 @@ is reversed in the bilinear action. The exact norm is retained under both
 coefficient transport and reflection. This gives the source's identification
 of pseudomeasures with the full dual of the Wiener space.
 
+## Riemann–Lebesgue decay and the L1 Fourier map
+
+[`PeriodicRiemannLebesgue.lean`](../NLS/Fourier/PeriodicRiemannLebesgue.lean)
+identifies the normalized interval coefficient with the real Fourier integral
+of the function extended by zero, evaluated at frequency n/L and multiplied
+by 1/L. Both positive and negative integer frequencies escape every compact
+real set. Mathlib's real Riemann–Lebesgue theorem therefore gives cofinite
+decay, with the exact normalization preserved. Rewriting the physical-circle
+coefficient gives the same result for normalized Haar measure. The raw decay
+statements also cover nonintegrable functions under Mathlib's convention for
+Bochner integrals; the source application is to integrable functions.
+
+The proved c0 criterion for original FL-infinity truncations then gives norm
+convergence for every interval L1 function. Point evaluation has all
+coefficients equal to one, so it cannot equal integration against an L1
+function. This last obstruction concerns the larger FL-infinity space and
+does not prove failure of surjectivity onto c0.
+
+[`PeriodicL1Fourier.lean`](../NLS/Fourier/PeriodicL1Fourier.lean) constructs the
+actual complex continuous linear map from the L1 quotient on the physical
+circle to Mathlib's c0 space on the discrete integers. Almost-everywhere
+invariance makes the map well defined on the quotient. The integral bound
+proves operator norm at most one; the constant function attains one. Every
+finite coefficient cutoff is the transform of a continuous physical
+trigonometric polynomial. The defining c0 decay then proves dense range in
+the uniform coefficient norm. Non-surjectivity in the second part of A.6
+remains to be proved.
+
+## Sharp finite interpolation prerequisites
+
+[`FiniteInterpolationSharp.lean`](../NLS/SequenceSpaces/FiniteInterpolationSharp.lean)
+retains the geometric endpoint constant B0^(1-t) B1^t in the existing finite
+analytic-family argument. Independent complex scalings factor out of the
+bilinear kernel pairing, so normalization extends the result from unit inputs
+to arbitrary finite inputs, including zero inputs and zero endpoint bounds.
+
+[`DiscreteParseval.lean`](../NLS/Fourier/DiscreteParseval.lean) proves exact
+orthogonality for finite cyclic characters and the adjoint identity for the
+negative-phase discrete Fourier transform. Applying that identity twice gives
+Parseval with squared norm factor N, hence the Hilbert norm factor sqrt(N).
+The L1 coefficient bound has constant one. All results include transform size
+one. These are finite prerequisites: passing sampled sums to the physical
+circle and extending synthesis to the required Lp quotients remain before
+claiming the full embeddings A.2 and A.4.
+
 ## Faithful realization and the period factors
 
 [`SmoothPeriodicDistribution.lean`](../NLS/Fourier/SmoothPeriodicDistribution.lean)
@@ -249,9 +299,15 @@ round trips and physical normalization, the L1 bound, absolute and uniform
 FL1 synthesis, and the entire pseudomeasure dual. These modules and their
 focused checks compile without new warnings.
 
+Four further modules add 28 checks for the geometric interpolation constant,
+complex scalings, both interpolation endpoints, discrete orthogonality and
+normalization, physical-period decay, the actual L1 quotient map, exact
+operator norm one, signed finite cutoffs, and density in c0. They compile
+without new warnings.
+
 The full interpolation assertions A.2 and A.4, examples A.3 and A.5, and
-Remark A.6 remain open here. A.7–A.9 still require their Appendix A source
-audit and integration. In particular, the use of the rescaled weight
+the non-surjectivity assertion of Remark A.6 remain open here. A.7–A.9 still
+require their Appendix A source audit and integration. In particular, the use of the rescaled weight
 (1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
 are not silently substituted for the exact Section 2 norm above. The present
 Hilbert identification is at s=0; the link to physical Sobolev spaces at

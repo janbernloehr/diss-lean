@@ -3809,3 +3809,7 @@ import NLS.Fourier.PeriodicFourierLebesgueSpace
 import NLS.Fourier.PeriodicFourierLebesgueSeries
 import NLS.Fourier.PeriodicFourierLebesgueEndpoints
 import NLS.Fourier.PeriodicFourierLebesgueDuality
+import NLS.SequenceSpaces.FiniteInterpolationSharp
+import NLS.Fourier.DiscreteParseval
+import NLS.Fourier.PeriodicRiemannLebesgue
+import NLS.Fourier.PeriodicL1Fourier

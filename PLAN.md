@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: Appendix A original Fourier–Lebesgue spaces
+## Current milestone: Appendix A Riemann–Lebesgue decay and sharp finite interpolation
+
+For every positive period, the normalized Fourier coefficients of an L1
+function vanish at both ends of the integer frequency axis. Its Fourier
+truncations therefore converge in the original FL-infinity coefficient norm.
+Point evaluation at zero has no interval L1 representative. This proves the
+decay assertion in Remark A.6.
+
+The actual L1 quotient on the physical circle now maps continuously and
+complex linearly into c0, with operator norm exactly one. Its range is dense:
+physical trigonometric polynomials realize every finite coefficient cutoff.
+Non-surjectivity onto c0, the second assertion of Remark A.6, remains open.
+
+The finite three-lines estimate now retains the exact geometric constant
+B0^(1-t) B1^t and applies to arbitrary finite inputs. Discrete Fourier
+orthogonality, the adjoint identity, Parseval, the L1 bound, and the exact
+sqrt(N) Hilbert norm factor are proved for every nonzero transform size,
+including size one. These supply sharp endpoints for the remaining
+intermediate-exponent embeddings in A.2 and A.4.
+
+Four new modules and 28 public checks cover fractional interpolation exponents,
+complex scalings, both interpolation endpoints, signed discrete frequencies,
+size-one and size-four transforms, physical period three, L1 quotient
+linearity, the exact operator norm, and arbitrary c0 approximation.
+See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: complete the full embeddings A.2 and A.4, then examples A.3 and A.5
+and non-surjectivity in A.6; source integration of A.7–A.9 also remains.
+The Section 14 and unrestricted Lemma 27.2 endpoint qualifications remain.
+The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,477 build jobs, all 6,079
+public examples, and the transitive axiom audit for 35,362 NLS declarations.
+The four new modules and 28 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+591 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A original Fourier–Lebesgue spaces
 
 The Fourier–Lebesgue spaces now consist of original periodic distributions,
 with the exact weighted coefficient norm. They are complete for all real

@@ -57571,3 +57571,146 @@ example (u : PeriodicFourierLebesgue L Weight.one 1) :
 
 end AppendixAFourierLebesgueChecks
 end NLS.Fourier
+
+noncomputable section
+open Set MeasureTheory Filter Topology
+open scoped ENNReal ZeroAtInfty ComplexConjugate
+namespace NLS
+section AppendixASharpInterpolationChecks
+local instance : Fact (1 ≤ (4/3 : ℝ≥0∞)) := ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+
+example (K : ℤ → ℤ → ℂ) (a b : ℤ →₀ ℂ) :
+    Coeff.kernelPair K (Complex.I • a) ((-2 : ℂ) • b) = (-2*Complex.I)*Coeff.kernelPair K a b := by
+  rw [Coeff.kernelPair_smul]
+  ring
+
+example (K : ℤ → ℤ → ℂ)
+    (h₀ : ∀ a b : ℤ →₀ ℂ, ‖Coeff.kernelPair K a b‖ ≤
+      1 * ‖Coeff.ofFinsupp (p := 1) a‖ * ‖Coeff.ofFinsupp (p := 1) b‖)
+    (h₁ : ∀ a b : ℤ →₀ ℂ, ‖Coeff.kernelPair K a b‖ ≤
+      4 * ‖Coeff.ofFinsupp (p := 2) a‖ * ‖Coeff.ofFinsupp (p := 2) b‖)
+    (a b : ℤ →₀ ℂ) :
+    ‖Coeff.kernelPair K a b‖ ≤ 2*‖Coeff.ofFinsupp (p := 4/3) a‖*‖Coeff.ofFinsupp (p := 4/3) b‖ := by
+  have h := Coeff.norm_kernelPair_interpolate_sharp
+    (r := 4/3) (s := 4/3) (t := 1/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) K (by norm_num) (by norm_num) h₀ h₁ a b
+  norm_num [← Real.sqrt_eq_rpow] at h ⊢
+  exact h
+
+example (K : ℤ → ℤ → ℂ) {B : ℝ} (hB : 0 ≤ B)
+    (h : ∀ a b : ℤ →₀ ℂ, ‖Coeff.kernelPair K a b‖ ≤
+      B * ‖Coeff.ofFinsupp (p := 2) a‖ * ‖Coeff.ofFinsupp (p := 2) b‖)
+    (a b : ℤ →₀ ℂ) (ha : ‖Coeff.ofFinsupp (p := 2) a‖ ≤ 1)
+    (hb : ‖Coeff.ofFinsupp (p := 2) b‖ ≤ 1) : ‖Coeff.kernelPair K a b‖ ≤ B := by
+  simpa only [sub_zero,Real.rpow_one,Real.rpow_zero,mul_one] using
+    Coeff.norm_kernelPair_interpolate_unit_sharp (r := 2) (s := 2) (t := 0)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+      (by norm_num) (by norm_num) K hB hB h h a b ha hb
+
+example (K : ℤ → ℤ → ℂ) {B : ℝ} (hB : 0 ≤ B)
+    (h : ∀ a b : ℤ →₀ ℂ, ‖Coeff.kernelPair K a b‖ ≤
+      B * ‖Coeff.ofFinsupp (p := 2) a‖ * ‖Coeff.ofFinsupp (p := 2) b‖)
+    (a b : ℤ →₀ ℂ) :
+    ‖Coeff.kernelPair K a b‖ ≤ B*‖Coeff.ofFinsupp (p := 2) a‖*‖Coeff.ofFinsupp (p := 2) b‖ := by
+  simpa only [sub_self,Real.rpow_one,Real.rpow_zero,one_mul] using
+    Coeff.norm_kernelPair_interpolate_sharp (r := 2) (s := 2) (t := 1)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+      (by norm_num) (by norm_num) K hB hB h h a b
+
+end AppendixASharpInterpolationChecks
+namespace Fourier
+section AppendixADiscreteParsevalChecks
+variable {N : ℕ} [NeZero N]
+
+example : (∑ k : ZMod 4, ZMod.stdAddChar (0*k)) = (4:ℂ) := by
+  simp
+
+example : (∑ k : ZMod 4, ZMod.stdAddChar ((-1)*k)) = (0:ℂ) := by
+  rw [sum_stdAddChar_mul,if_neg (by decide)]
+
+example (f g : ZMod N → ℂ) :
+    (∑ k, conj (ZMod.dft f k)*g k) = ∑ j, conj (f j)*ZMod.dft g (-j) := sum_dft_adjoint f g
+
+example (f g : ZMod N → ℂ) :
+    (∑ k, conj (ZMod.dft f k)*ZMod.dft g k) = (N:ℂ)*∑ j, conj (f j)*g j := sum_dft_mul_conj f g
+
+example (f : ZMod 1 → ℂ) : (∑ k, ‖ZMod.dft f k‖^2) = ∑ j, ‖f j‖^2 := by
+  simpa only [Nat.cast_one,one_mul] using sum_norm_sq_dft f
+
+example (f : ZMod 4 → ℂ) : (∑ k, ‖ZMod.dft f k‖^2) = 4*∑ j, ‖f j‖^2 := sum_norm_sq_dft f
+
+example (f : ZMod N → ℂ) (k : ZMod N) : ‖ZMod.dft f k‖ ≤ ∑ j, ‖f j‖ := norm_dft_le_sum_norm f k
+
+example (f : ZMod 4 → ℂ) : ‖WithLp.toLp 2 (ZMod.dft f)‖ = 2*‖WithLp.toLp 2 f‖ := by
+  have hs : Real.sqrt (4:ℝ) = 2 := by
+    convert Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 2) using 1
+    norm_num
+  simpa only [Nat.cast_ofNat,hs] using norm_dft_piLp_two f
+
+end AppendixADiscreteParsevalChecks
+section AppendixARiemannLebesgueChecks
+open SmoothPeriodicTest PeriodicFourierLebesgue
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example (f : ℝ → ℂ) : Tendsto (intervalFourierCoefficient (3:ℝ) f) cofinite (𝓝 0) :=
+  tendsto_intervalFourierCoefficient_cofinite f
+
+example (f : AddCircle L → ℂ) : Tendsto (fourierCoeff f) cofinite (𝓝 0) := tendsto_fourierCoeff_cofinite f
+
+example (f : ℝ → ℂ) (n : ℤ) :
+    intervalFourierCoefficient (3:ℝ) f n = (3:ℂ)⁻¹ *
+      ∫ v : ℝ, Real.fourierChar (-(v*((n:ℝ)/3))) • (Ioc (0:ℝ) 3).indicator f v := by
+  simpa only [Complex.ofReal_ofNat] using intervalFourierCoefficient_eq_restrictedFourier (L := 3) f n
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    Tendsto (fun S : Finset ℤ => truncate Weight.one ⊤ Weight.hasTemperedInverse_one S (ofIntervalL1 f hf))
+      atTop (𝓝 (ofIntervalL1 f hf)) := tendsto_truncate_ofIntervalL1 f hf
+
+example : ¬∃ (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 (3:ℝ)),
+    Distribution.ofL1 f hf = Distribution.evaluation (L := 3) 0 := Distribution.evaluation_zero_not_ofL1
+
+example (f : AddCircle L → ℂ) (n : ℤ) : circleFourierC0 f n = fourierCoeff f n := circleFourierC0_apply f n
+
+example (f : AddCircle L → ℂ) :
+    ‖circleFourierC0 f‖ ≤ ∫ x, ‖f x‖ ∂AddCircle.haarAddCircle := norm_circleFourierC0_le f
+
+example (f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L))) (n : ℤ) :
+    circleL1Fourier f n = fourierCoeff f n := circleL1Fourier_apply f n
+
+example (f g : Lp ℂ 1 (AddCircle.haarAddCircle (T := L))) :
+    circleL1Fourier (f + Complex.I • g) = circleL1Fourier f + Complex.I • circleL1Fourier g := by
+  rw [map_add,map_smul]
+
+example : ‖circleL1Fourier (L := 3)‖ = 1 := norm_circleL1Fourier
+
+example (f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L))) : ‖circleL1Fourier f‖ ≤ ‖f‖ := by
+  simpa only [norm_circleL1Fourier,one_mul] using circleL1Fourier.le_opNorm f
+
+example : Continuous (circleL1Fourier (L := 3)) := circleL1Fourier.continuous
+
+example (a : ℤ → ℂ) :
+    circleL1Fourier (ContinuousMap.toLp 1 AddCircle.haarAddCircle ℂ
+      (continuousFourierPolynomial (L := 3) {-2,0,5} a)) (-2) = a (-2) := by
+  rw [circleL1Fourier_polynomial]
+  norm_num
+
+example (a : ℤ → ℂ) :
+    circleL1Fourier (ContinuousMap.toLp 1 AddCircle.haarAddCircle ℂ
+      (continuousFourierPolynomial (L := 3) {-2,0,5} a)) 1 = 0 := by
+  rw [circleL1Fourier_polynomial]
+  norm_num
+
+example : DenseRange (circleL1Fourier (L := 3)) := denseRange_circleL1Fourier
+
+example (a : C₀(ℤ,ℂ)) (ε : ℝ) (hε : 0 < ε) :
+    ∃ f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L)), dist a (circleL1Fourier f) < ε :=
+  Metric.denseRange_iff.mp denseRange_circleL1Fourier a ε hε
+
+end AppendixARiemannLebesgueChecks
+end Fourier
+end NLS
