@@ -57428,3 +57428,146 @@ example (μ : ComplexMeasure (AddCircle L)) :
 
 end AppendixAMeasureChecks
 end NLS.Fourier
+
+noncomputable section
+open Set MeasureTheory Filter Topology
+open scoped ENNReal SchwartzMap
+namespace NLS.Fourier
+open SmoothPeriodicTest PeriodicFourierLebesgue
+section AppendixAFourierLebesgueChecks
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example : CompleteSpace (FourierLebesgueSpace (3:ℝ) (-3/2) ⊤) := inferInstance
+
+example : CompleteSpace (FourierLebesgueSpace (1:ℝ) (2/3) 1) := inferInstance
+
+example (p : ℝ≥0∞) : FourierLebesgueSpace L 0 p = PeriodicFourierLebesgue L Weight.one p := by
+  simp only [FourierLebesgueSpace,Weight.sobolev_zero_eq_one]
+
+example (s : ℝ) (p : ℝ≥0∞) [Fact (1 ≤ p)] (u : FourierLebesgueSpace L s p) :
+    ‖u‖ = ‖WeightedCoeff.weightEquiv (Weight.sobolev s) p (coefficientsLM _ _ u)‖ := norm_eq _ _ u
+
+example (s : ℝ) (p : ℝ≥0∞) [Fact (1 ≤ p)] (u : FourierLebesgueSpace L s p) (n : ℤ) :
+    ‖u.val (mode (-n))‖ ≤ ‖u‖/(1+|(n:ℝ)|)^s :=
+  WeightedCoeff.norm_apply_le _ _ (coefficientsLM _ _ u) n
+
+example (a : WeightedCoeff (Weight.sobolev (-2)) 3) (n : ℤ) :
+    ((coefficientsIsometry (L := 3) _ 3 (Weight.hasTemperedInverse_sobolev (-2))).symm a).val (mode (-n)) = a.val n := by
+  change (coefficientsIsometry (L := 3) _ 3 (Weight.hasTemperedInverse_sobolev (-2))
+    ((coefficientsIsometry _ 3 (Weight.hasTemperedInverse_sobolev (-2))).symm a)).val n = _
+  rw [LinearIsometryEquiv.apply_symm_apply]
+
+example : Function.Surjective (NormedSpace.inclusionInDoubleDual ℂ (FourierLebesgueSpace (3:ℝ) (-2) 3)) :=
+  bidual_surjective _ _ (Weight.hasTemperedInverse_sobolev (-2)) (by norm_num) (by simp)
+
+example (u : FourierLebesgueSpace L (1/2) 1) :
+    Tendsto (fun S : Finset ℤ => truncate _ 1 (Weight.hasTemperedInverse_sobolev (1/2)) S u) atTop (𝓝 u) :=
+  tendsto_truncate _ _ _ (by simp) u
+
+example (u : FourierLebesgueSpace L (-1) ⊤) :
+    Tendsto (fun S : Finset ℤ => truncate _ ⊤ (Weight.hasTemperedInverse_sobolev (-1)) S u) atTop (𝓝 u) ↔
+      ∀ ε : ℝ, 0 < ε → ∃ S : Finset ℤ, ∀ n ∉ S, ‖(Weight.sobolev (-1) n : ℂ)*u.val (mode (-n))‖ ≤ ε :=
+  tendsto_truncate_top_iff _ _ u
+
+example : (inverseWeightDistribution (L := 3) Weight.one Weight.hasTemperedInverse_one).val = Distribution.evaluation 0 :=
+  inverseWeightDistribution_one
+
+example (S : Finset ℤ) :
+    ‖inverseWeightDistribution (L := 3) Weight.one Weight.hasTemperedInverse_one -
+      truncate Weight.one ⊤ Weight.hasTemperedInverse_one S (inverseWeightDistribution Weight.one Weight.hasTemperedInverse_one)‖ = 1 :=
+  norm_inverseWeightDistribution_sub_truncate _ _ S
+
+example : ¬Tendsto (fun S : Finset ℤ => truncate Weight.one ⊤ Weight.hasTemperedInverse_one S
+    (inverseWeightDistribution (L := 3) Weight.one Weight.hasTemperedInverse_one)) atTop
+      (𝓝 (inverseWeightDistribution Weight.one Weight.hasTemperedInverse_one)) :=
+  not_tendsto_truncate_inverseWeightDistribution _ _
+
+example (S : Finset ℤ) (u : FourierLebesgueSpace L (-3) ⊤) :
+    (truncate _ ⊤ (Weight.hasTemperedInverse_sobolev (-3)) S u).val =
+      Distribution.ofContinuous (continuousFourierPolynomial S (fun n => u.val (mode (-n)))) :=
+  truncate_eq_ofContinuous _ _ _ S u
+
+example (u : FourierLebesgueSpace L (-3) ⊤) (f : SmoothPeriodicTest L) :
+    Tendsto (fun S : Finset ℤ => (truncate _ ⊤ (Weight.hasTemperedInverse_sobolev (-3)) S u).val f) atTop (𝓝 (u.val f)) :=
+  tendsto_truncate_action _ _ _ u f
+
+example (u : FourierLebesgueSpace L (-3) ⊤) :
+    Tendsto (fun S : Finset ℤ => (truncate _ ⊤ (Weight.hasTemperedInverse_sobolev (-3)) S u).val.toTempered)
+      atTop (𝓝 u.val.toTempered) := tendsto_toTempered_truncate _ _ _ u
+
+example (a : ℤ → ℂ) :
+    fourierCoeff (continuousFourierPolynomial (L := 3) {-2,0,5} a) (-2) = a (-2) := by
+  simp [continuousFourierPolynomial_coefficient]
+
+example : Distribution.ofContinuous (fourier (-2) : C(AddCircle (3:ℝ),ℂ)) (mode 2) = 1 := by
+  simpa using Distribution.ofContinuous_fourier_coefficient (L := 3) (-2) (-2)
+
+example : Distribution.ofContinuous (fourier (-2) : C(AddCircle (3:ℝ),ℂ)) (mode (-2)) = 0 := by
+  simpa using Distribution.ofContinuous_fourier_coefficient (L := 3) (-2) 2
+
+example (u : PeriodicFourierLebesgue L Weight.one 2) : ‖l2Isometry u‖ = ‖u‖ := l2Isometry_norm u
+
+example (f : Lp ℂ 2 (AddCircle.haarAddCircle (T := L))) : l2Isometry (l2Isometry.symm f) = f :=
+  l2Isometry.apply_symm_apply f
+
+example (u : PeriodicFourierLebesgue L Weight.one 2) : l2Isometry.symm (l2Isometry u) = u :=
+  l2Isometry.symm_apply_apply u
+
+example (u : PeriodicFourierLebesgue (3:ℝ) Weight.one 2) :
+    ‖u‖^2 = (1/3:ℝ) * ∫ x in (0:ℝ)..3, ‖l2Isometry u (x : AddCircle (3:ℝ))‖^2 := by
+  simpa only [one_div] using l2Isometry_parseval_interval u
+
+example (u : PeriodicFourierLebesgue (3:ℝ) Weight.one 2) (f : SmoothPeriodicTest (3:ℝ)) :
+    u.val f = (1/3:ℂ) * ∫ x in (0:ℝ)..3, l2Isometry u (x : AddCircle (3:ℝ))*f x := by
+  simpa only [Complex.ofReal_ofNat,one_div] using l2Isometry_apply_interval u f
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    ‖ofIntervalL1 f hf‖ ≤ L⁻¹ * ∫ x in (0:ℝ)..L, ‖f x‖ := norm_ofIntervalL1_le f hf
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) (g : SmoothPeriodicTest L) :
+    (ofIntervalL1 f hf).val g = (L:ℂ)⁻¹ * ∫ x in (0:ℝ)..L, f x*g x := Distribution.ofL1_apply f hf g
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    ∃! f : C(AddCircle L,ℂ), Distribution.ofContinuous f = u.val := existsUnique_continuousRepresentative u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) : ‖continuousRepresentative u‖ ≤ ‖u‖ := norm_continuousRepresentative_le u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    HasSum (fun n : ℤ => u.val (mode (-n)) • fourier n) (continuousRepresentative u) := hasSum_continuousRepresentative u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    Summable (fun n : ℤ => ‖u.val (mode (-n)) • (fourier n : C(AddCircle L,ℂ))‖) := summable_norm_continuousRepresentative u
+
+example : Continuous (continuousRepresentativeCLM (L := 3)) := continuousRepresentativeCLM.continuous
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) : UniformContinuous (continuousRepresentative u) :=
+  uniformlyContinuous_continuousRepresentative u
+
+example (u : PeriodicFourierLebesgue (3:ℝ) Weight.one 1) (x : ℝ) :
+    continuousRepresentative u (x : AddCircle (3:ℝ)) =
+      ∑' n : ℤ, u.val (mode (-n))*Complex.exp (2*Real.pi*Complex.I*n*x/3) := by
+  simpa only [Complex.ofReal_ofNat] using continuousRepresentative_apply u x
+
+example (u : PeriodicFourierLebesgue L Weight.one ⊤) : ‖pseudomeasureDualIsometry u‖ = ‖u‖ :=
+  pseudomeasureDualIsometry.norm_map u
+
+example (F : PeriodicFourierLebesgue L Weight.one 1 →L[ℂ] ℂ) :
+    pseudomeasureDualIsometry (pseudomeasureDualIsometry.symm F) = F := pseudomeasureDualIsometry.apply_symm_apply F
+
+example (v : PeriodicFourierLebesgue L Weight.one ⊤) (u : PeriodicFourierLebesgue L Weight.one 1) :
+    pseudomeasureDualIsometry v u = ∑' n : ℤ, v.val (mode n)*u.val (mode (-n)) :=
+  unweightedDualEquiv_apply (by simp) v u
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) :
+    pseudomeasureDualIsometry (inverseWeightDistribution Weight.one Weight.hasTemperedInverse_one) u = continuousRepresentative u 0 := by
+  change unweightedDualEquiv (by simp : (1:ℝ≥0∞) ≠ ⊤) _ u = _
+  rw [unweightedDualEquiv_apply]
+  have hc (n : ℤ) : (inverseWeightDistribution (L := L) Weight.one Weight.hasTemperedInverse_one).val (mode n) = 1 := by
+    simpa using inverseWeightDistribution_coefficient (L := L) Weight.one Weight.hasTemperedInverse_one (-n)
+  rw [show (0 : AddCircle L) = ((0 : ℝ) : AddCircle L) by rfl,continuousRepresentative_apply]
+  simp only [hc,one_mul,Complex.ofReal_zero,mul_zero,zero_div,Complex.exp_zero,mul_one]
+
+end AppendixAFourierLebesgueChecks
+end NLS.Fourier

@@ -3805,3 +3805,7 @@ import NLS.Fourier.RealContinuousFunctionalDecomposition
 import NLS.Fourier.ComplexMeasureContinuousIntegral
 import NLS.Fourier.ComplexMeasureRepresentation
 import NLS.Fourier.PeriodicDistributionMeasure
+import NLS.Fourier.PeriodicFourierLebesgueSpace
+import NLS.Fourier.PeriodicFourierLebesgueSeries
+import NLS.Fourier.PeriodicFourierLebesgueEndpoints
+import NLS.Fourier.PeriodicFourierLebesgueDuality

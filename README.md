@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix A's order-zero distributions are identified with actual
-finite complex Radon measures. Formula (A.2) retains the exact 1/L integral,
-with unique representation on all continuous functions, both identification
-round trips, and verified signed and complex point-mass normalization.
+Latest step: Appendix A's Fourier–Lebesgue spaces are defined on the original
+periodic distributions, with completeness, reflexivity, actual Fourier
+polynomials, and the precise infinity-endpoint convergence criterion.
+The physical L2 identification, normalized L1 bound, continuous FL1
+representatives, and full unweighted duality retain their exact norms.
 
-Next: the Fourier Lebesgue assertions and Lemmas A.2–A.9. The separate
-fractional-smoothness and Lemma 27.2 endpoint qualifications remain.
-The dissertation is incomplete.
+Next: the full interpolation lemmas and counterexamples in Appendix A,
+then integration of A.7–A.9. The separate fractional-smoothness and
+Lemma 27.2 endpoint qualifications remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

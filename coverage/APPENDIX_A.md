@@ -3,7 +3,9 @@
 This audit covers the test-space foundations, finite-order criterion (A.1),
 order-zero continuous extension, complex Radon representation (A.2), and L1
 action on printed page 121, plus both parts of Theorem A.1 and the distributional
-derivative on printed page 122. The test space
+derivative on printed page 122. It also covers the original Fourier–Lebesgue
+spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
+synthesis and pseudomeasure-dual statements on page 123. The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
@@ -13,6 +15,14 @@ positive physical period. It is not defined as a coefficient-sequence space.
 | Fréchet test space | `derivativeJetEquiv` and the completeness, metrizability, Hausdorff, and local convexity instances | A closed derivative-jet subspace of a countable product of Banach spaces, with the original topology. |
 | Density in C(T_L) | `denseRange_toContinuousCLM` | Dense range on the actual physical circle, with the exact uniform norm `norm_toContinuousCLM`. |
 | Least order zero iff unique continuous extension | `Distribution.order_zero_iff_physical_extension` | Unique complex continuous linear functional on C(AddCircle L, ℂ), for every positive L. |
+| Original Fourier–Lebesgue spaces | `PeriodicFourierLebesgue`, `FourierLebesgueSpace`, `coefficientsIsometry` | Actual original-distribution subtype with exact weighted coefficient norm; all positive periods and all real Sobolev orders. |
+| Completeness and reflexivity | `completeSpace`, Sobolev completeness instances, `bidual_surjective` | Complete for every Banach exponent; canonical double-dual map surjective for 1 < p < infinity. |
+| Actual Fourier-series convergence | `truncate_eq_ofContinuous`, `tendsto_truncate`, `tendsto_truncate_action` | Continuous physical trigonometric polynomials; norm convergence for finite p and convergence on every original smooth test for all p. |
+| Qualified infinity endpoint | `tendsto_truncate_top_iff`, `inverseWeightDistribution_one`, `norm_inverseWeightDistribution_sub_truncate` | Norm convergence iff weighted c0. At unit weight, point evaluation at zero has norm and every truncation error equal to one. |
+| FL2 = L2 and Parseval | `l2Isometry`, `l2Isometry_represents`, `l2Isometry_parseval_interval` | Actual L2 quotient of the physical circle with normalized Haar measure; exact original action and 1/L interval square norm. |
+| Normalized L1 bound | `ofIntervalL1`, `norm_ofIntervalL1_le` | Every interval-integrable function produces an original FL-infinity distribution with norm at most the exact normalized L1 norm. |
+| Absolute and uniform Fourier synthesis | `continuousRepresentativeCLM`, `existsUnique_continuousRepresentative`, `hasSum_continuousRepresentative` | Unique uniformly continuous representative, absolute convergence in C(T_L), uniform convergence, physical frequencies 2πn/L, sup-norm bound one. |
+| Pseudomeasures and duality | `unweightedDualIsometry`, `pseudomeasureDualIsometry` | Full continuous dual for finite p, including FL-infinity as the dual of FL1; opposite indices in the bilinear pairing and exact operator norm. |
 | Complex Radon representation, (A.2) | `Distribution.existsUnique_normalized_measure`, `order_zero_iff_measure` | Unique actual complex measure on the physical circle, with 1/L times the standard complex integral; holds on all continuous functions and all original smooth tests. |
 | Converse and identification with measures | `Distribution.ofComplexMeasure_order`, `complexMeasureOrderZeroEquiv` | Every complex Borel measure gives least order zero; both directions of the equivalence recover the original object. |
 | Finiteness and Radon regularity | `complexMeasure_finite_variation`, `complexMeasure_variation_regular` | Every complex measure has finite total variation. Its variation on the compact metrizable physical circle is regular, hence inner regular. |
@@ -120,6 +130,58 @@ coefficient is the total mass divided by L, and a complex mass Lz at a physical
 point x acts as z times evaluation at x. Integration is on the physical circle,
 so representatives at 0 and L denote the same point.
 
+## Original Fourier–Lebesgue spaces and function endpoints
+
+[`PeriodicFourierLebesgueSpace.lean`](../NLS/Fourier/PeriodicFourierLebesgueSpace.lean)
+defines a subtype of the original smooth-test dual by membership of its
+normalized Fourier coefficients in the weighted sequence space. Its norm is
+induced by those coefficients, rather than by the ambient dual topology.
+Surjectivity of coefficient extraction is proved using actual tempered
+synthesis and its original-distribution inverse. The resulting linear isometry
+establishes completeness and reflexivity, including negative and fractional
+Sobolev orders. The Sobolev weight is exactly (1+|n|)^s, as explicitly defined
+in Section 2 on printed page 22. At s=0 it equals the unit weight.
+
+[`PeriodicFourierLebesgueSeries.lean`](../NLS/Fourier/PeriodicFourierLebesgueSeries.lean)
+identifies transported coefficient cutoffs with integration against the actual
+finite continuous trigonometric sum on the physical circle. Norm convergence
+holds for finite p. At infinity it holds precisely when the weighted
+coefficients vanish at infinity. Inverse-weight coefficients give a unit-norm
+original distribution with truncation error one for every finite set. For the
+unit weight this is exactly evaluation at zero, not an abstract sequence-only
+counterexample. Thus the blanket norm-convergence sentence on page 122 is
+false at infinity. Convergence against every original smooth test nevertheless
+holds at all exponents, as does convergence in Mathlib's pointwise topology
+on the actual tempered realization. No strong-dual convergence is inferred
+from the pointwise statement.
+
+[`PeriodicFourierLebesgueEndpoints.lean`](../NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean)
+identifies FL2 linearly and isometrically with the actual L2 quotient on
+AddCircle L, using Haar measure of total mass one. The represented original
+distribution acts by integration of the L2 representative times the smooth
+test. Rewriting the Haar integral gives exactly 1/L times the integral over
+[0,L], both for this action and for Parseval. The identification has both
+round trips; it does not merely compare coefficient norms.
+
+For arbitrary interval L1 data the same original action defines an element
+of FL-infinity whose norm is bounded by L^{-1} times the integral of its
+absolute value. For FL1, the Fourier series is absolutely summable in the
+Banach space C(T_L), hence converges uniformly. Its sum has the exact original
+coefficients, represents the entire original distribution, and is unique
+among continuous functions. The map to continuous functions is complex linear
+and continuous with norm at most one. Uniform continuity and the pointwise
+series with frequencies 2πn/L are also explicit. These prove the endpoints
+used by A.2 and A.4; the full intermediate-exponent interpolation assertions
+remain open.
+
+[`PeriodicFourierLebesgueDuality.lean`](../NLS/Fourier/PeriodicFourierLebesgueDuality.lean)
+transports the proved full sequence-space duality to these original spaces.
+At finite source exponent p the entire continuous dual is linearly isometric
+to FLq for its conjugate q, including q=infinity when p=1. One Fourier index
+is reversed in the bilinear action. The exact norm is retained under both
+coefficient transport and reflection. This gives the source's identification
+of pseudomeasures with the full dual of the Wiener space.
+
 ## Faithful realization and the period factors
 
 [`SmoothPeriodicDistribution.lean`](../NLS/Fourier/SmoothPeriodicDistribution.lean)
@@ -180,8 +242,21 @@ measure, constants and total mass, L1 realization, and actual tempered Fourier
 coefficients. All twelve modules and their focused checks compile without
 new warnings. Full validation is recorded in [STATUS.md](../STATUS.md).
 
-The Fourier Lebesgue assertions and Lemmas A.2–A.9 still require their
-Appendix A source audit and integration.
+Four new modules add 36 public checks for original-space completeness,
+reflexivity, negative and fractional orders, actual finite polynomials,
+finite-p and infinity convergence, the point-evaluation obstruction, both L2
+round trips and physical normalization, the L1 bound, absolute and uniform
+FL1 synthesis, and the entire pseudomeasure dual. These modules and their
+focused checks compile without new warnings.
+
+The full interpolation assertions A.2 and A.4, examples A.3 and A.5, and
+Remark A.6 remain open here. A.7–A.9 still require their Appendix A source
+audit and integration. In particular, the use of the rescaled weight
+(1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
+are not silently substituted for the exact Section 2 norm above. The present
+Hilbert identification is at s=0; the link to physical Sobolev spaces at
+nonzero order and multiplication on the original Wiener space remain part
+of the Sobolev and product integration work.
 
 The blanket norm-convergence assertion on page 122 includes the infinity
 endpoint. The obstruction already formalized for Section 2 applies there

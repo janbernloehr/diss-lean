@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Appendix A complex Radon measures and (A.2)
+## Current milestone: Appendix A original Fourier–Lebesgue spaces
+
+The Fourier–Lebesgue spaces now consist of original periodic distributions,
+with the exact weighted coefficient norm. They are complete for all real
+Sobolev orders and Banach exponents, and reflexive for 1 < p < infinity.
+Finite truncations are identified with actual continuous trigonometric
+polynomials. They converge in norm at finite exponents, and against every
+original smooth test at all exponents. At infinity, norm convergence holds
+exactly for weighted coefficients vanishing at infinity; point evaluation
+at zero has norm one and truncation error one for every finite set.
+
+The unweighted exponent-two space is linearly isometric to the actual L2
+quotient on the physical circle, with exact 1/L interval action and Parseval
+identity. Interval L1 data has the constant-one bound into FL-infinity.
+Every FL1 distribution has a unique uniformly continuous representative,
+with an absolutely and uniformly convergent Fourier series and sup norm
+bounded by its FL1 norm. Full unweighted duality preserves the exact norm
+and reverses one Fourier index; FL-infinity is the entire dual of FL1.
+
+Four new modules and 36 public checks cover negative and fractional orders,
+periods one and three, signed frequencies, reflexivity, both L2 round trips,
+physical normalization, absolute and uniform convergence, and the endpoint
+counterexample as an actual point evaluation. See
+[the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: the full interpolation assertions A.2 and A.4, examples A.3 and A.5,
+and Remark A.6; then source integration of A.7–A.9. The Section 14 and
+unrestricted Lemma 27.2 endpoint qualifications remain. The dissertation
+is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,263 build jobs, all 6,051
+public examples, and the transitive axiom audit for 35,313 NLS declarations.
+The four new modules and 36 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+581 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A complex Radon measures and (A.2)
 
 Every original periodic distribution of least order zero is now integration
 against a unique actual complex measure on the physical circle. The action
