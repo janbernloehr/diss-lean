@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Current milestone: physical angle–momentum normalization on H¹
+## Current milestone: the physical energy bracket on real H¹
+
+The original angle Hamiltonian now has a constructed H¹ vector at every
+real H¹ source with the selected gap open. Its original Fourier
+coefficients are preserved, its lift is unique and real type, and it is
+nonzero. It decreases exactly the selected action at unit speed and is
+independent of the auxiliary original family.
+
+Differentiating the proved constant momentum bracket, together with
+symmetry of the original theta Hessian, controls the spatial derivative
+of the angle vector. An explicit bounded Fourier multiplier recovers H¹
+from the L² source and its derivative. This yields an analytic H¹ vector
+map and a fixed graph-norm bound, so the finite-gap supports may grow.
+The recovered vector agrees with the earlier finite-gap tangent.
+
+The full physical H¹ energy differential applied to that vector now
+equals the negative original frequency, with mass and dispersion restored,
+for every real H¹ source with the selected gap open. H¹ finite-gap density
+proves the identity; the bracket is not defined to be the spectral
+frequency. Whenever the physical energy differential has a Hilbert
+cotangent representative, the value is exactly the original Poisson
+bivector. No L² energy cotangent is assumed to exist at arbitrary H¹ data.
+
+For each index, one open complex H¹ domain contains all its real open-gap
+sources, stays inside the original Section 20 domain, and carries both
+the actual analytic H¹ angle vector and the energy identity. The full
+original complex domain and a domain shared by all indices remain open.
+The original constructor supplies all data before choosing the source
+or index. See [the Section 20 audit](coverage/SECTION_20.md).
+
+Five new modules and 15 public checks cover signed and zero Fourier
+recovery, both reflection signs, the action and momentum signs, a uniform
+local H¹ bound, physical energy differentiation along a complex H¹ line,
+zero and negative indices, complex differentials, per-index domains,
+family independence, and an actual nonzero single-action source.
+
+Next: establish continuation on the full intended complex H¹ domain and
+resolve the common-domain scope before the original Section 21 audit.
+Section 14's external Hilbert-map and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,168
+jobs, all 5,655 public examples compile, and the transitive axiom audit
+passes for 34,254 NLS declarations. The five new modules and 15 focused
+checks compile without warnings; the full build retains 21 existing
+warnings. The 156-label source inventory, all 331 local documentation
+links, and `git diff --check` also pass.
+
+## Previous milestone: physical angle–momentum normalization on H¹
 
 The original Section 20 family now satisfies the actual physical identity
 {θₙ,P}=2πn at every real H¹ source with the selected gap open. The proof

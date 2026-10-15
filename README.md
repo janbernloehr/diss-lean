@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original angle–momentum bracket now equals 2πn at every
-real H¹ source with the selected gap open. The proof uses the physical
-momentum's quadratic contour, the retained Section 19 primitive, and H¹
-finite-gap density. Each index also has an open complex H¹ neighborhood
-containing all its real open-gap sources and lying inside the original
-domain. The physical H¹ energy bracket remains proved at real finite-gap
-sources.
+Latest step: the original angle vector now has a unique, analytic H¹
+recovery, and its physical energy bracket equals the original frequency
+at every real H¹ source with the selected gap open. Each index also has
+an open complex H¹ domain carrying both the actual vector and the energy
+identity. The proof uses bounded derivative-graph recovery and H¹
+finite-gap density, retaining the original Section 20 family.
 
-Next: establish H¹ regularity of the general angle vector and extend
-Section 20's physical energy bracket before the original Section 21 audit.
+Next: establish the full intended complex-domain continuation and resolve
+the common-domain scope before the original Section 21 audit.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),

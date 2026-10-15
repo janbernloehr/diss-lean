@@ -54982,3 +54982,226 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
     norm_num at hact
   exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,a,hn,by simpa using Q.sobolev_momentum_bracket a (-1) hn⟩
 end Section20MomentumNormalization
+
+section Section20SobolevEnergyChecks
+open Set Filter Topology NLS NLS.Poisson NLS.ZakharovShabat
+
+-- Recovery includes the zero mode without dividing by its frequency.
+example (c : ℂ) : spatialGraphRecovery (lp.single 2 0 c,0) = scalarMode 0 c := by
+  have hd : periodOneDerivative (scalarMode (p := 2) 0 c) = 0 := by
+    ext n
+    simp only [periodOneDerivative_apply,scalarMode_apply]
+    split_ifs with hn
+    · subst n; simp
+    · simp
+  simpa only [scalarInclusion_scalarMode,hd] using spatialGraphRecovery_leftInverse (scalarMode 0 c)
+
+-- Opposite nonzero frequencies check both branches of the graph multiplier.
+example (c d : ℂ) : sourceSpatialGraphRecovery
+    ((CoeffPair.toMax 2).symm (lp.single 2 3 c,lp.single 2 (-2) d),
+     (CoeffPair.toMax 2).symm (lp.single 2 3 (6*Complex.I*Real.pi*c),
+       lp.single 2 (-2) (-4*Complex.I*Real.pi*d))) = (scalarMode 3 c,scalarMode (-2) d) := by
+  have hd : sourceSobolevSpatialDerivative (scalarMode 3 c,scalarMode (-2) d) =
+      (CoeffPair.toMax 2).symm (lp.single 2 3 (6*Complex.I*Real.pi*c),
+        lp.single 2 (-2) (-4*Complex.I*Real.pi*d)) := by
+    apply (CoeffPair.toMax 2).injective
+    apply Prod.ext <;> ext n
+    · change periodOneDerivative (scalarMode 3 c) n = (lp.single 2 3 (6*Complex.I*Real.pi*c) : Coeff 2) n
+      simp only [periodOneDerivative_apply,scalarMode_apply,lp.single_apply,Pi.single_apply]
+      split_ifs with hn
+      · subst n; ring
+      · simp
+    · change periodOneDerivative (scalarMode (-2) d) n = (lp.single 2 (-2) (-4*Complex.I*Real.pi*d) : Coeff 2) n
+      simp only [periodOneDerivative_apply,scalarMode_apply,lp.single_apply,Pi.single_apply]
+      split_ifs with hn
+      · subst n; ring
+      · simp
+  have hi : sobolevSourceInclusion (scalarMode 3 c,scalarMode (-2) d) =
+      (CoeffPair.toMax 2).symm (lp.single 2 3 c,lp.single 2 (-2) d) := by
+    apply (CoeffPair.toMax 2).injective
+    exact Prod.ext (scalarInclusion_scalarMode _ _) (scalarInclusion_scalarMode _ _)
+  simpa only [hi,hd] using sourceSpatialGraphRecovery_leftInverse (scalarMode 3 c,scalarMode (-2) d)
+
+section OriginalFamily
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection20Data D A B U)
+
+-- Both original reflection signs survive H¹ recovery.
+example (a : realTypeSobolevSourceLocus) (n m : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    (sourceSobolevThetaVector n s a.val).1.val m = -Complex.I*
+      sourceAngularThetaDifferential (by simp) (by norm_num) n s (sobolevSourceInclusion a.val)
+        (CoeffPair.inrCLM (lp.single 2 (-m) 1)) ∧
+    (sourceSobolevThetaVector n s a.val).2.val m = Complex.I*
+      sourceAngularThetaDifferential (by simp) (by norm_num) n s (sobolevSourceInclusion a.val)
+        (CoeffPair.inlCLM (lp.single 2 (-m) 1)) := by
+  have h := Q.sobolevThetaVector_inclusion a n hn
+  constructor
+  · have he := congrArg (fun φ : CoeffPair 2 => φ.fst m) h
+    rw [sobolevSourceInclusion_fst] at he
+    exact he.trans (by change -Complex.I*(CoeffPair.cotangentCoefficients le_rfl _).2 (-m) = _; rw [CoeffPair.cotangentCoefficients_snd])
+  · have he := congrArg (fun φ : CoeffPair 2 => φ.snd m) h
+    rw [sobolevSourceInclusion_snd] at he
+    exact he.trans (by change Complex.I*(CoeffPair.cotangentCoefficients le_rfl _).1 (-m) = _; rw [CoeffPair.cotangentCoefficients_fst])
+
+-- A negative selected index has a nonzero real H¹ tangent and decreases only its own action.
+example (a : realTypeSobolevSourceLocus)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) (-1) ≠ 0) :
+    sourceSobolevThetaVector (-1) s a.val ≠ 0 ∧
+    IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion (sourceSobolevThetaVector (-1) s a.val))) ∧
+    fderiv ℂ (sourceComplexAction (by simp) (by norm_num) (-1)) (sobolevSourceInclusion a.val)
+      (sobolevSourceInclusion (sourceSobolevThetaVector (-1) s a.val)) = -1 ∧
+    fderiv ℂ (sourceComplexAction (by simp) (by norm_num) 0) (sobolevSourceInclusion a.val)
+      (sobolevSourceInclusion (sourceSobolevThetaVector (-1) s a.val)) = 0 := by
+  refine ⟨Q.sobolevThetaVector_ne_zero a (-1) hn,Q.sobolevThetaVector_realType a (-1) hn,?_,?_⟩
+  · simpa using Q.sobolevThetaVector_action a (-1) hn (-1)
+  · simpa using Q.sobolevThetaVector_action a (-1) hn 0
+
+-- The full physical momentum derivative has the negative angle-bracket sign, beyond finite gaps.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    fderiv ℂ periodOneSobolevMomentum a.val (sourceSobolevThetaVector n s a.val) = -(2*(Real.pi : ℂ)*n) := by
+  have h := sourceSobolevThetaMomentumBracket_eq_neg_derivative n s a.val (sourceSobolevThetaVector n s a.val)
+    (Q.sobolevThetaVector_inclusion a n hn)
+  rw [Q.sobolev_momentum_bracket a n hn] at h
+  exact neg_eq_iff_eq_neg.mp h.symm
+
+-- Actual recovery satisfies the spatial derivative equation at a general real H¹ point.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    ‖sourceSobolevThetaVector n s a.val‖ ≤ ‖sourceSpatialGraphRecovery‖ *
+      max ‖sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion a.val)‖
+        ‖sourceHamiltonianDirection le_rfl
+          (fderiv ℂ (sourceAngularThetaDifferential (by simp) (by norm_num) n s)
+            (sobolevSourceInclusion a.val) (sourceSobolevSpatialDerivative a.val))‖ := by
+  have he := norm_sobolev_source_le_graph (sourceSobolevThetaVector n s a.val)
+  rwa [Q.sobolevThetaVector_inclusion a n hn,Q.sobolevThetaVector_spatial a n hn] at he
+
+-- Analyticity supplies a neighborhood bound independent of the approximating finite-gap support.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    ∃ M : ℝ, 0 < M ∧ ∀ᶠ b in 𝓝 a.val, ‖sourceSobolevThetaVector n s b‖ ≤ M := by
+  have hc := (Q.analyticOnNhd_sobolevThetaVector n a.val ⟨Q.real_subset a.property,hn⟩).continuousAt.norm
+  refine ⟨‖sourceSobolevThetaVector n s a.val‖+1,by positivity,?_⟩
+  have he := hc.eventually (Iio_mem_nhds (lt_add_one ‖sourceSobolevThetaVector n s a.val‖))
+  filter_upwards [he] with b hb
+  exact le_of_lt hb
+
+-- The zero-index energy bracket keeps the mass correction and has no free dispersion.
+example (a : realTypeSobolevSourceLocus)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) 0 ≠ 0) :
+    -(fderiv ℂ periodOneSobolevHamiltonian a.val (sourceSobolevThetaVector 0 s a.val)) =
+      A.renormalizedFrequency 0 (sobolevSourceInclusion a.val)+4*periodOneSobolevMass a.val := by
+  simpa [sourceSobolevThetaEnergyBracket] using Q.sobolev_energy_bracket a 0 hn
+
+-- At index -1 the dispersion is positive 4π².
+example (a : realTypeSobolevSourceLocus)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) (-1) ≠ 0) :
+    sourceSobolevThetaEnergyBracket (-1) s a.val =
+      A.renormalizedFrequency (-1) (sobolevSourceInclusion a.val)+
+        4*periodOneSobolevMass a.val+4*(Real.pi : ℂ)^2 := by
+  convert Q.sobolev_energy_bracket a (-1) hn using 1
+  norm_num
+  ring
+
+-- The bracket is a derivative along an actual complex H¹ line, with the original negative sign.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    HasDerivAt (fun z : ℂ => periodOneSobolevHamiltonian (a.val+z • sourceSobolevThetaVector n s a.val))
+      (-(A.renormalizedFrequency n (sobolevSourceInclusion a.val)+
+        4*periodOneSobolevMass a.val+(2*(n : ℂ)*Real.pi)^2)) 0 := by
+  have hd : HasDerivAt (fun z : ℂ => a.val+z • sourceSobolevThetaVector n s a.val)
+      (sourceSobolevThetaVector n s a.val) 0 := by
+    simpa using ((hasDerivAt_id (0 : ℂ)).smul_const (sourceSobolevThetaVector n s a.val)).const_add a.val
+  have hH := (analyticAt_periodOneSobolevHamiltonian a.val).differentiableAt.hasFDerivAt
+  have he := hH.comp_hasDerivAt_of_eq 0 hd (by simp)
+  have hbr := Q.sobolev_energy_bracket a n hn
+  change -(fderiv ℂ periodOneSobolevHamiltonian a.val (sourceSobolevThetaVector n s a.val)) = _ at hbr
+  have hval := congrArg Neg.neg hbr
+  simp only [neg_neg] at hval
+  simpa only [hval] using! he
+
+-- A supplied physical Hilbert cotangent gives the same original bivector without a finite-gap hypothesis.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0)
+    (L : CoeffPair 2 →L[ℂ] ℂ)
+    (hL : HasFDerivAt periodOneSobolevHamiltonian (L.comp sobolevSourceInclusion) a.val) :
+    sourceBivector le_rfl
+      (sourceAngularThetaDifferential (by simp) (by norm_num) n s (sobolevSourceInclusion a.val)) L =
+      sourceSobolevThetaEnergyBracket n s a.val := by
+  exact (sourceSobolevThetaEnergyBracket_eq_sourceBivector n s a.val
+    (Q.sobolevThetaVector_inclusion a n hn) L hL.fderiv).symm
+
+-- Complex-germ equality identifies the full complex H¹ differentials, not only real derivatives.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    fderiv ℂ (sourceSobolevThetaEnergyBracket n s) a.val =
+      fderiv ℂ (fun b => A.renormalizedFrequency n (sobolevSourceInclusion b)+
+        4*periodOneSobolevMass b+(2*(n : ℂ)*Real.pi)^2) a.val :=
+  (Q.sobolev_energy_bracket_complex_germ a n hn).fderiv_eq
+
+-- One neighborhood supplies both the actual vector and the energy identity for each selected index.
+example (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    ∃ T : Set (ScalarDomain 2 × ScalarDomain 2), IsOpen T ∧ a.val ∈ T ∧
+      AnalyticOnNhd ℂ (sourceSobolevThetaVector n s) T ∧
+      ∀ b ∈ T, sobolevSourceInclusion (sourceSobolevThetaVector n s b) =
+        sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion b) ∧
+        sourceSobolevThetaEnergyBracket n s b = A.renormalizedFrequency n (sobolevSourceInclusion b)+
+          4*periodOneSobolevMass b+(2*(n : ℂ)*Real.pi)^2 := by
+  obtain ⟨T,hT,hr,_,hv,he⟩ := Q.exists_sobolev_energy_domain n
+  exact ⟨T,hT,hr a hn,hv,he⟩
+
+-- The bracket cannot depend on the auxiliary original family because the actual H¹ vectors agree.
+example {W₀' W' V' Wa' B' U' : Set (CoeffPair 2)}
+    {s' : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D' : SourceSection17OriginalData (by simp) (by norm_num) W₀' W' V' s'}
+    {A' : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa' s'}
+    (Q' : SourceSection20Data D' A' B' U') (a : realTypeSobolevSourceLocus) (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaEnergyBracket n s a.val = sourceSobolevThetaEnergyBracket n s' a.val := by
+  simp only [sourceSobolevThetaEnergyBracket,Q.sobolevThetaVector_independent Q' a n hn]
+end OriginalFamily
+
+-- The original constructor and an actual single-action source give a nonzero H¹ vector,
+-- an open selected gap, and the physical energy identity without supplied package witnesses.
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), ∃ _Q : SourceSection20Data D A B U,
+    ∃ a : realTypeSobolevSourceLocus,
+      sourceSobolevThetaVector (-1) s a.val ≠ 0 ∧
+      sourceSobolevThetaEnergyBracket (-1) s a.val =
+        A.renormalizedFrequency (-1) (sobolevSourceInclusion a.val)+4+4*(Real.pi : ℂ)^2 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,hall⟩ := sourceSection20_original_sobolev_energy
+  obtain ⟨a,ha,hm,_⟩ := exists_realSobolev_single_action (-1) 1 (by norm_num)
+  have hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) (-1) ≠ 0 := by
+    intro hz
+    have hact := (sourceComplexAction_nonneg_and_eq_zero_iff_gap_zero (by simp) (by norm_num)
+      (-1) (sobolevSourceInclusion a.val) a.property).2.2.mpr
+      (by simpa only [sourcePeriodicGapDisplacement_apply] using hz)
+    rw [ha (-1)] at hact
+    norm_num at hact
+  refine ⟨W₀,W,V,s,D,Wa,A,B,U,Q,a,Q.sobolevThetaVector_ne_zero a (-1) hn,?_⟩
+  have he := (hall a (-1) hn).2
+  rw [hm] at he
+  convert he using 1
+  norm_num
+  ring
+end Section20SobolevEnergyChecks

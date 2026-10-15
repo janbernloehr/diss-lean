@@ -16,7 +16,9 @@ Here Q denotes the constructed `SourceSection20Data` and M a local
 | Source assertion | Public evidence | Scope |
 | --- | --- | --- |
 | Definition of the moments, p. 92 | `Q.moment_contours` | Actual raw circle integrals of the retained Section 19 primitive to power m times the original psi function divided by the canonical root; one admissible circle family for all indices and orders |
-| Opening physical energy bracket, finite-gap case | `Q.finiteGap_energy_bracket`, `Q.finiteGap_energy_cotangent` | Constructed H¹ angle tangent and one actual physical energy cotangent give the original Poisson identity at every real finite-gap source, for every open selected gap; arbitrary complex H¹ sources remain open |
+| Opening physical energy bracket, p. 92 | `Q.sobolev_energy_bracket`, `Q.sobolev_energy_bivector`, `sourceSection20_original_sobolev_energy` | Full physical H¹ energy derivative along the actual original H¹ angle vector gives the original frequency at every real H¹ source with gap n open; any representing Hilbert cotangent gives the original bivector |
+| H¹ regularity of the original angle vector | `Q.sobolevThetaVector_inclusion`, `Q.existsUnique_sobolevThetaVector`, `Q.analyticOnNhd_sobolevThetaVector` | Explicit bounded derivative-graph recovery, original coefficients, unique lift, actual spatial derivative, real type, nonzero selected direction, family independence, and analytic H¹ dependence |
+| Complex H¹ energy identity | `Q.sobolev_energy_bracket_complex_germ`, `Q.exists_sobolev_energy_domain` | For each index, one open complex H¹ domain contains all its real open-gap sources and retains the actual vector and energy identity inside Q's original domain; full-domain continuation remains open |
 | Physical momentum contour | `Q.momentum_contour`, `sourceFullAbelianMomentumContour_eq_physical_of_enclosing` | Actual physical H₂ equals −i/π times the quadratic contour of the retained primitive, at real finite-gap sources; any positive circle enclosing all open gaps is allowed |
 | Physical angle–momentum bracket on H¹ | `Q.finiteGap_momentum_bracket`, `Q.sobolev_momentum_bracket`, `sourceSection20_original_momentum` | Actual original bivector equals 2πn at every real H¹ source with gap n open; the original constructor supplies all data |
 | Complex momentum normalization | `Q.sobolev_momentum_bracket_complex_germ`, `Q.exists_sobolev_momentum_domain` | Each index has a constant complex germ at every real open-gap H¹ source and an open H¹ domain containing all such sources inside Q's domain; no common domain for all indices or full-domain identity is claimed |
@@ -228,8 +230,56 @@ Section 20 domain. The construction uses the interior of the equality
 locus and verifies its neighborhood property at each real open-gap source.
 It does not intersect infinitely many neighborhoods. The full original
 complex domain and a domain common to all n remain outside this result.
-The general H¹ regularity of the angle vector is also still needed for
-the physical energy identity.
+Differentiating these proved germs supplies the H¹ angle-vector recovery
+and energy identity below.
+
+## H¹ angle recovery and the physical energy identity
+
+[`SourceSobolevSpatialGraph.lean`](../NLS/ZakharovShabat/SourceSobolevSpatialGraph.lean)
+constructs a bounded linear operator recovering H¹ coefficients from an
+L² source and its period-one spatial derivative. Its multiplier has the
+opposite signs at positive and negative frequencies; the zero mode is
+retained. The operator is a left inverse of the actual derivative graph,
+and its fixed norm bounds the H¹ norm independently of finite-gap support.
+Testing a cotangent integration-by-parts identity on signed Fourier modes
+gives the exact differentiated coefficients of the original Hamiltonian
+vector, with both source reflections and Poisson signs preserved.
+
+[`SourceSobolevAngleVector.lean`](../NLS/ZakharovShabat/SourceSobolevAngleVector.lean)
+differentiates the actual constant momentum bracket and uses the original
+theta Hessian symmetry. If L=dθₙ and T is the physical spatial derivative,
+the resulting identity L(T h)=−dL[T a](h) places J L in H¹ and identifies
+its spatial derivative with J(dL[T a]). The explicit graph recovery is
+analytic in the H¹ source. Its identification with the actual vector uses
+the proved constant momentum germ, not just analyticity of a candidate.
+
+[`SourceSection20AngleSobolev.lean`](../NLS/ZakharovShabat/SourceSection20AngleSobolev.lean)
+supplies that germ from Q's original momentum identity. At every real H¹
+source with gap n open, the vector is unique, real type, nonzero, has
+unchanged original Fourier coefficients, and decreases Iₙ at unit speed
+while leaving the other actions unchanged. It is independent of the
+auxiliary original family and equals the earlier finite-gap H¹ tangent.
+Each real open-gap source also has a complex germ of actual vectors.
+
+[`SourceSobolevAngleEnergy.lean`](../NLS/ZakharovShabat/SourceSobolevAngleEnergy.lean)
+defines the physical directional bracket as −dH(a)[Xθₙ(a)], using the full
+complex H¹ differential of the independently defined physical energy.
+It is analytic on the H¹ preimage of the original open-gap domain. The
+same value is the original Poisson bivector whenever an L² cotangent
+represents dH; existence of such a cotangent is not asserted for arbitrary
+H¹ sources. Any H¹ lift with the original coefficients gives the same
+physical directional bracket.
+
+[`SourceSection20SobolevEnergy.lean`](../NLS/ZakharovShabat/SourceSection20SobolevEnergy.lean)
+first calibrates this bracket with the earlier finite-gap physical result.
+H¹ finite-gap density preserving the selected open gap then proves
+{θₙ,H}=ω*ₙ+4H₁+(2nπ)² on every real H¹ open-gap source. This also agrees
+with any previously constructed original Hilbert action frequency.
+Real-form analytic uniqueness gives complex germs. For each index one
+open H¹ domain contains all its real open-gap sources and carries both
+the actual analytic vector and the physical energy identity, inside Q's
+original domain. The original constructor supplies every package before
+choosing a source or index.
 
 ## Validation and remaining scope
 
@@ -262,14 +312,20 @@ their zero differential, the per-index domains, family independence, and
 the unconditional constructor. A constructed source with one nonzero
 action at index −1 gives an actual bracket −2π.
 
-The physical energy identity packaged here is for real finite-gap sources; the
-analytic continuation and original action-frequency identification hold on
-the stated complex neighborhoods. The opening p. 92 Poisson identity now
-has the physical H¹ interpretation at real finite-gap sources. Extending
-the H¹ angle tangent and bracket to arbitrary complex H¹ sources remains
-open: the fixed-tail weighted reconstruction used above does not give
-uniform H¹ control as the finite-gap supports grow. Establish that
-regularity and continuation before proceeding to the original Section 21
-assertions. Section 14's external Hilbert-map and full
-fractional-smoothness qualifications also remain. The dissertation is
-incomplete.
+The H¹ extension adds five modules and 15 public examples. Checks include
+zero and signed graph recovery, the exact reflected coefficients, the
+selected action sign and unselected zero, the physical momentum sign,
+H¹ graph and neighborhood bounds, zero and negative energy indices, a
+physical energy derivative along a complex H¹ line, bivector consistency,
+full complex differential equality, a common local domain for the vector
+and bracket, family independence, and a constructed nonzero source.
+
+The opening p. 92 physical identity is now proved on all real H¹ sources
+with the selected gap open and on the stated per-index complex H¹
+domains. Its full printed domain H¹_c ∩ (W² \ Zₙ) is not yet covered.
+No intersection of infinitely many neighborhoods is asserted to be open.
+The bounded graph recovery resolves the previous lack of H¹ control as
+finite-gap supports grow; full-domain continuation and common-domain
+scope remain before the original Section 21 assertions. Section 14's
+external Hilbert-map and full fractional-smoothness qualifications also
+remain. The dissertation is incomplete.

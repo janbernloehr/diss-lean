@@ -50,19 +50,24 @@ the same primitive and original roots, proves the physical finite-gap
 normalization, fixed mixed remainders, analytic sequence maps, and
 compatibility with the original action frequency. The unrestricted
 diagonal auxiliary-factor analyticity claim has a formal zero-source
-counterexample. At every real finite-gap source with an open selected gap,
-the original angle vector now has a unique constructed H¹ lift; the actual
-angle flow differentiates to it in H¹ throughout its pre-collapse interval.
-The physical energy differential and original Poisson bivector recover the
-same frequency. Physical momentum now has a unique Hilbert cotangent at
-every complex H¹ source and generates the actual spatial-translation orbit.
-The original angle–momentum bracket now equals 2πn on all real H¹ sources
-with the selected gap open, using the same Section 19 primitive's physical
-H₂ contour and H¹ finite-gap density. For each index it also equals 2πn
-on an open complex H¹ neighborhood of all its real open-gap sources inside
-the original domain. Full-domain continuation, general H¹ angle-vector
-regularity, and Section 20's general complex H¹ energy Poisson identity
-remain open, followed by the original Section 21 assertions.
+counterexample. At real finite-gap sources the original angle flow
+differentiates in H¹ throughout its pre-collapse interval. Physical
+momentum has a unique Hilbert cotangent at every complex H¹ source and
+generates the actual spatial-translation orbit. The original
+angle–momentum bracket is 2πn on all real H¹ sources with the selected gap
+open, with complex germs, using the retained primitive's physical H₂
+contour and H¹ finite-gap density.
+
+Differentiating that identity now gives bounded H¹ recovery of the angle
+vector. On every real open-gap H¹ source it is the unique actual original
+vector, and the full physical H¹ energy derivative recovers the original
+frequency with mass and dispersion restored. Each index has an open
+complex H¹ domain containing all its real open-gap sources inside the
+original domain, carrying both identities. An L² energy cotangent is not
+assumed at arbitrary H¹ sources; whenever one represents the energy
+differential, the original bivector gives the same value. Continuation on
+the full intended complex domain and common-domain control remain open,
+followed by the original Section 21 assertions.
 
 ## Nonextension proof and limits
 

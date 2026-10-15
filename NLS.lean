@@ -3725,3 +3725,8 @@ import NLS.ZakharovShabat.SourceFullAbelianMomentumPoisson
 import NLS.ZakharovShabat.SourceFiniteGapMomentumNormalization
 import NLS.ZakharovShabat.SourceSobolevMomentumNormalization
 import NLS.ZakharovShabat.SourceSection20MomentumBracket
+import NLS.ZakharovShabat.SourceSobolevSpatialGraph
+import NLS.ZakharovShabat.SourceSobolevAngleVector
+import NLS.ZakharovShabat.SourceSection20AngleSobolev
+import NLS.ZakharovShabat.SourceSobolevAngleEnergy
+import NLS.ZakharovShabat.SourceSection20SobolevEnergy
