@@ -186,6 +186,7 @@ normalization, sign, concavity, nonextension, all wellposedness cases, and
 actual-source correction witnesses. Full gate results are recorded in
 [the implementation status](../STATUS.md).
 
-Next: audit Section 19's detailed abelian integral assertions. Section 14's
+The subsequent [Section 19 audit](SECTION_19.md) integrates the original
+abelian integral assertions. Next: Section 20. Section 14's
 precise external Hilbert-map identification and full fractional-smoothness
 qualifications remain. The dissertation is incomplete.

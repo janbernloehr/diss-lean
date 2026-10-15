@@ -3697,3 +3697,9 @@ import NLS.ZakharovShabat.SourceHamiltonianOriginalNonextension
 import NLS.ZakharovShabat.SourceSection18Wellposedness
 import NLS.ZakharovShabat.SourceSection18GaugeCorrection
 import NLS.ZakharovShabat.SourceSection18HamiltonianCorrection
+import NLS.ZakharovShabat.SourceAbelianAdmissibleIntegrals
+import NLS.ZakharovShabat.SourceAbelianGapSupremum
+import NLS.ZakharovShabat.SourceSection19Domain
+import NLS.ZakharovShabat.SourceSection19Primitive
+import NLS.ZakharovShabat.SourceSection19Laurent
+import NLS.ZakharovShabat.SourceSection19Original

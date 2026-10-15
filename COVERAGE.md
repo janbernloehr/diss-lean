@@ -39,7 +39,11 @@ nonextension, and all four wellposedness cases of Theorems 18.1–18.5 are
 audited in [`coverage/SECTION_18.md`](coverage/SECTION_18.md). The same
 Hamiltonian retains the original frequency as its gradient and its physical
 identity on every real H¹ source. Three printed normalization errors have
-formal witnesses; the next detailed audit is Section 19.
+formal witnesses. The original abelian integral, admissible paths,
+endpoint and side limits, physical Laurent series, and literal mixed gap
+supremum are audited in [`coverage/SECTION_19.md`](coverage/SECTION_19.md).
+These assertions hold for one canonical primitive on one common source
+domain inside the original family. The next detailed audit is Section 20.
 
 ## Nonextension proof and limits
 

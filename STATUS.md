@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: Section 18 Hamiltonian, wellposedness, and normalization
+## Current milestone: Section 19 original abelian integrals
+
+`sourceSection19_original` attaches the Section 19 abelian-integral package
+to an original Section 17 Birkhoff family. Its open connected source
+domain lies inside the original domain and retains the entire real locus.
+The same primitive has its joint discriminant differential, spectral
+analyticity with collapsed gaps filled, endpoint values and continuous
+endpoint extension, square continuation, real arcosh boundary values,
+and exact free normalization.
+
+The actual improper integral along every admissible interior C¹ path,
+and every finite piecewise interior C¹ path with admissible corners,
+equals that primitive. Both truncation endpoints vary independently.
+The two original endpoint integrals and their average agree, without an
+additional absolute-integrability or path-independence assumption.
+
+Lemma 19.4 now has a literal bounded supremum over both sides of the
+entire closed gap. Its exact complex gap-displacement factorization uses
+one locally uniform ℓ^(p/2)+ℓ^(1+) decomposition chosen before every
+auxiliary exponent, including p/2<1. The literal supremum estimate of
+Lemma 19.1(iii) holds on the same neighborhood for every index. Collapsed
+gaps and the zero potential have exactly zero error.
+
+The same package retains the convergent physical Hamiltonian Laurent
+series and the cubic big-O formula in all complex directions for every
+real finite-gap source. One exterior radius and one cubic remainder bound
+work for all normalization indices. No smooth representative or physical
+coefficient identity is supplied as an assumption.
+
+Six new modules and 29 public checks cover this step, including p=3/2
+with its quasi-normed 3/4 component. See [the Section 19 audit](coverage/SECTION_19.md).
+Next: Section 20's original frequency and contour-moment assertions.
+Section 14's external Hilbert-map and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,141
+jobs, all 5,542 public examples pass, and the transitive axiom audit checks
+33,989 NLS declarations. The six new modules and 29 new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 284 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 18 Hamiltonian, wellposedness, and normalization
 
 `sourceSection18_original_hamiltonian` constructs the original Section 17
 family, its action frequency F, and the scalar Hamiltonian H* on one open

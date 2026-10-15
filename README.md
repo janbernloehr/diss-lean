@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 18's original Hamiltonian now shares its action
-frequency and domain, with the physical H¹ identity, local concavity, and
-nonextension proved. All four wellposedness assertions use the original
-smooth-approximation solution definition. Three printed normalization
-errors have formal witnesses.
+Latest step: Section 19's original abelian integral now has one common
+source domain, admissible-path independence, exact endpoint and boundary
+values, literal mixed gap suprema, and the physical Hamiltonian Laurent
+and cubic expansions. The same package attaches to the original Birkhoff
+family and retains every real source.
 
-Next: Section 19's abelian integral assertions.
+Next: Section 20's original frequency and contour-moment assertions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -20,7 +20,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 15 audit](coverage/SECTION_15.md),
 [the Section 16 audit](coverage/SECTION_16.md),
 [the Section 17 audit](coverage/SECTION_17.md),
-[the Section 18 audit](coverage/SECTION_18.md), and
+[the Section 18 audit](coverage/SECTION_18.md),
+[the Section 19 audit](coverage/SECTION_19.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

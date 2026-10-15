@@ -54077,3 +54077,200 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
     EqOn γ η (J ∩ K) := (source_theorem18_5 hp hp1).unique J K φ γ η hγ hη
 
 end OriginalSection18Wellposedness
+
+section OriginalSection19
+open Set Metric Filter Topology NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W U : Set (CoeffPair p)} (D : SourceSection19Data hp hp1 W U)
+
+example (X : Set (CoeffPair p)) (hX : IsOpen X) (hreal : realTypeSourceLocus p ⊆ X) :
+    ∃ A V : Set (CoeffPair p), V ⊆ X ∧ SourceSection19Data hp hp1 A V :=
+  exists_sourceSection19Data hp hp1 X hX hreal
+
+example : ∃ W₀ W V : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    SourceSection17OriginalData hp hp1 W₀ W V s ∧
+      ∃ A U : Set (CoeffPair p), U ⊆ V ∧ SourceSection19Data hp hp1 A U :=
+  sourceSection19_original hp hp1
+
+example {W₀ W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (E : SourceSection17OriginalData hp hp1 W₀ W V s) :
+    ∃ A U : Set (CoeffPair p), U ⊆ V ∧ SourceSection19Data hp hp1 A U := E.exists_section19
+
+example : IsOpen W ∧ IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus p ⊆ U ∧ U ⊆ W :=
+  ⟨D.ambient_open,D.source_open,D.connected,D.real_subset,D.source_subset⟩
+
+example (n : ℤ) : AnalyticOnNhd ℂ (sourceFullAbelianPrimitive hp hp1 W n)
+    (sourceCanonicalRootJointDomain hp hp1 U) := D.analytic n
+
+example (n : ℤ) (t : ℂ × CoeffPair p) (ht : t ∈ sourceCanonicalRootJointDomain hp hp1 U) :
+    HasFDerivAt (sourceFullAbelianPrimitive hp hp1 W n)
+      ((sourceCanonicalRoot hp hp1 t.2 t.1)⁻¹ •
+        fderiv ℂ (fun u : ℂ × CoeffPair p => canonicalDiscriminant hp (periodOnePotential u.2) u.1) t) t :=
+  D.differential n t ht
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,ψ))
+      (sourceOpenGapComplement hp hp1 ψ) := D.spectral_analytic ψ hψ n
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    HasFDerivAt (fun χ => sourceFullAbelianPrimitive hp hp1 W n (z,χ))
+      ((sourceCanonicalRoot hp hp1 ψ z)⁻¹ • sourceDiscriminantCotangent hp z ψ) ψ :=
+  D.source_derivative ψ hψ n z hz
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (z : ℂ)
+    (hz : z ∈ sourceOpenGapComplement hp hp1 ψ) :
+    sourceFullAbelianPrimitive hp hp1 W n (z,ψ) =
+      sourceFullAbelianPrimitive hp hp1 W 0 (z,ψ)+Complex.I*(Real.pi : ℂ)*n := D.index_shift ψ hψ n z hz
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (j n : ℤ) (a : ℂ)
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) j,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) j} : Set ℂ)) :
+    Tendsto (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,ψ))
+      (𝓝[sourceOpenGapComplement hp hp1 ψ] a) (𝓝 (Complex.I*(Real.pi : ℂ)*(n-j))) :=
+  D.endpoint_limit ψ hψ j n a ha
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) :
+    EqOn (sourceAbelianEndpointExtension hp hp1 W n ψ)
+      (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,ψ)) (sourceOpenGapComplement hp hp1 ψ) :=
+  D.endpointExtension_eqOn ψ hψ n
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (j n : ℤ) (a : ℂ)
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) j,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) j} : Set ℂ)) :
+    sourceAbelianEndpointExtension hp hp1 W n ψ a = Complex.I*(Real.pi : ℂ)*(n-j) ∧
+    ContinuousWithinAt (sourceAbelianEndpointExtension hp hp1 W n ψ)
+      (insert a (sourceOpenGapComplement hp hp1 ψ)) a := D.endpointExtension_value ψ hψ j n a ha
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (a ν : ℂ)
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Set ℂ))
+    (hν : ν ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    sourceAbelianEndpointIntegral hp hp1 ψ a ν = sourceFullAbelianPrimitive hp hp1 W n (ν,ψ) ∧
+    sourceAbelianEndpointAverage hp hp1 n ν ψ = sourceFullAbelianPrimitive hp hp1 W n (ν,ψ) :=
+  D.endpoint_integrals ψ hψ n a ν ha hν
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (a ν : ℂ)
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Set ℂ))
+    (hν : ν ∈ sourceCanonicalRootDomain hp hp1 ψ) (γ : Path a ν)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Ioo 0 1)) (hadm : SourceAdmissiblePath hp hp1 ψ γ) :
+    Tendsto (fun t : ℝ × ℝ => truncatedPathIntegral (sourceAbelianDifferential hp hp1 ψ) γ t.1 t.2)
+      ((𝓝[>] (0 : ℝ)) ×ˢ (𝓝[<] (1 : ℝ))) (𝓝 (sourceFullAbelianPrimitive hp hp1 W n (ν,ψ))) ∧
+    improperPathIntegral (sourceAbelianDifferential hp hp1 ψ) γ = sourceFullAbelianPrimitive hp hp1 W n (ν,ψ) :=
+  D.endpointPath_integral ψ hψ n a ν ha hν γ hγ hadm
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (a ν : ℂ)
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Set ℂ))
+    (hν : ν ∈ sourceCanonicalRootDomain hp hp1 ψ) (Γ : PiecewiseInteriorC1Path a ν)
+    (hadm : SourceAdmissiblePiecewisePath hp hp1 ψ Γ) :
+    Tendsto (fun t : ℝ × ℝ => Γ.truncatedIntegral (sourceAbelianDifferential hp hp1 ψ) t.1 t.2)
+      ((𝓝[>] (0 : ℝ)) ×ˢ (𝓝[<] (1 : ℝ))) (𝓝 (sourceFullAbelianPrimitive hp hp1 W n (ν,ψ))) ∧
+    Γ.improperIntegral (sourceAbelianDifferential hp hp1 ψ) = sourceFullAbelianPrimitive hp hp1 W n (ν,ψ) :=
+  D.endpointPiecewisePath_integral ψ hψ n a ν ha hν Γ hadm
+
+example (φ : CoeffPair p) (hφ : φ ∈ U) :
+    ∃ C : SourceFullAbelianUniformCauchyFamily hp hp1 W,
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ V ⊆ U ∧
+      V ⊆ ball C.discs.source.val C.discs.sourceRadius ∧ SourceAbelianMixedGapData C V ∧
+      ∃ B : ℝ, 0 < B ∧ ∀ ψ ∈ V, ∀ n : ℤ, ∀ θ ∈ Icc (0 : ℝ) Real.pi, ∀ upper : Bool,
+        ‖C.gapBoundary n ψ θ upper‖ ≤ B*‖sourcePeriodicGapDisplacement hp hp1 ψ n‖ := D.uniform_gap_bounds φ hφ
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun z => (sourceFullAbelianPrimitive hp hp1 W n (z,ψ))^2)
+      (sourceOpenGapComplement hp hp1 ψ) ∧
+    AnalyticOnNhd ℂ (fun z => sourceFullAbelianSquare hp hp1 W n (z,ψ))
+      (sourceFullAbelianSquareDomain hp hp1 ψ n) := D.square_analytic ψ hψ n
+
+example (φ : realTypeSourceSubmodule p) (n : ℤ) (upper : Bool) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re) :
+    Tendsto (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,φ.val))
+      (𝓝[sourceAbelianHalfPlane upper] (x:ℂ))
+      (𝓝 (if upper then (sourceRealGapArcoshProfile hp φ.val n x : ℂ)
+        else -(sourceRealGapArcoshProfile hp φ.val n x : ℂ))) := D.real_gap_boundary φ n upper x hx
+
+example (n : ℤ) (z : ℂ) :
+    sourceFullAbelianPrimitive hp hp1 W n (z,0) = -Complex.I*z+Complex.I*(Real.pi:ℂ)*n ∧
+    sourceFullAbelianPrimitive hp hp1 W n (z,0) = Complex.I*sourceStandardRoot hp hp1 (0 : CoeffPair p) n z :=
+  D.zero n z
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ R : ℝ, 0 < R ∧
+      (∀ n : ℤ, AnalyticOnNhd ℂ (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,φ.val)) {z : ℂ | R < ‖z‖}) ∧
+      ∀ (n : ℤ) (z : ℂ), R < ‖z‖ →
+        HasSum (fun k : ℕ => Complex.I*sourceFiniteGapNLSHamiltonian hp hp1 φ hf (k+1)/(2*z)^(k+1))
+          (sourceFullAbelianPrimitive hp hp1 W n (z,φ.val)+Complex.I*z-Complex.I*(Real.pi : ℂ)*n) := D.laurent φ hf
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ R : ℝ, 0 < R ∧ ∃ K : ℝ, 0 < K ∧
+      (∀ n : ℤ, AnalyticOnNhd ℂ
+        (fun z => (sourceFullAbelianPrimitive hp hp1 W n (z,φ.val)-Complex.I*(Real.pi : ℂ)*n)^3) {z : ℂ | R < ‖z‖}) ∧
+      ∀ (n : ℤ) (z : ℂ), R < ‖z‖ →
+        ‖(sourceFullAbelianPrimitive hp hp1 W n (z,φ.val)-Complex.I*(Real.pi : ℂ)*n)^3-
+          phaseCubeLaurentPart (sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1)
+            (sourceFiniteGapNLSHamiltonian hp hp1 φ hf 2) (sourceFiniteGapNLSHamiltonian hp hp1 φ hf 3) z‖ ≤ K/‖z‖^2 :=
+  D.cube_asymptotic φ hf
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    (fun z : ℂ => (sourceFullAbelianPrimitive hp hp1 W 0 (z,φ.val))^3-
+      (Complex.I*z^3-(3*Complex.I/2)*sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1*z-
+        (3*Complex.I/4)*sourceFiniteGapNLSHamiltonian hp hp1 φ hf 2-
+        (3*Complex.I/8)*(sourceFiniteGapNLSHamiltonian hp hp1 φ hf 3-
+          2*(sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1)^2)/z))
+      =O[Bornology.cobounded ℂ] (fun z : ℂ => z⁻¹^2) := D.cube_isBigO φ hf
+
+variable {V : Set (CoeffPair p)} {C : SourceFullAbelianUniformCauchyFamily hp hp1 W}
+  (M : SourceAbelianMixedGapData C V)
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) : BddAbove (C.gapErrorRange ψ n) := M.bounded ψ hψ n
+
+example : ∃ g : CoeffPair p → Coeff (ENNReal.ofReal (p.toReal/2)), ∃ h : CoeffPair p → CoeffOnePlus,
+    (∀ ψ ∈ V, ∀ n, (C.gapErrorSup ψ n : ℂ) =
+      sourcePeriodicGapDisplacement hp hp1 ψ n*(g ψ n+(h ψ).1 n)) ∧
+    (∃ B : ℝ, 0 ≤ B ∧ ∀ ψ ∈ V, ‖g ψ‖ ≤ B) ∧
+    ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+      ∃ B : ℝ, 0 ≤ B ∧ ∀ ψ ∈ V, ‖CoeffOnePlus.toCoeff q hq1 hq (h ψ)‖ ≤ B := M.mixed_displacement
+
+example : ∃ B : ℝ, 0 < B ∧ ∀ ψ ∈ V, ∀ n : ℤ,
+    let S := range (fun u : Icc (0 : ℝ) Real.pi × Bool => ‖C.gapBoundary n ψ u.1.val u.2‖)
+    BddAbove S ∧ sSup S ≤ B*‖sourcePeriodicGapDisplacement hp hp1 ψ n‖ := M.uniform_boundary_sup
+
+example (ψ : CoeffPair p) (n : ℤ) (hn : sourcePeriodicGapDisplacement hp hp1 ψ n = 0) :
+    C.gapErrorSup ψ n = 0 := C.gapErrorSup_eq_zero_of_collapsed ψ n hn
+
+-- These are limits of the actual primitive, so the suprema measure its boundary values.
+example (ψ : CoeffPair p) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0)
+    (θ : ℝ) (hθ : θ ∈ Icc (0 : ℝ) Real.pi) (upper : Bool) :
+    Tendsto (fun z => sourceFullAbelianPrimitive hp hp1 W n (z,ψ)-Complex.I*sourceStandardRoot hp hp1 ψ n z)
+      (𝓝[sourceAbelianGapSide hp hp1 ψ n upper]
+        (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(Real.cos θ:ℂ)))
+      (𝓝 (C.gapBoundary n ψ θ upper-Complex.I*sourceStandardRootGapBoundary hp hp1 ψ n θ upper)) :=
+  C.fullPrimitive_sub_root_tendsto_gapBoundary n ψ hψ hn θ hθ upper
+
+end OriginalSection19
+
+section OriginalSection19QuasiExponent
+open Set Metric Filter Topology NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal unitInterval
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ A U : Set (CoeffPair (ENNReal.ofReal (3/2))), U ⊆ univ ∧
+    SourceSection19Data (by norm_num) (by norm_num) A U :=
+  exists_sourceSection19Data (by norm_num) (by norm_num) univ isOpen_univ (subset_univ _)
+
+-- The first component has exponent 3/4; there is no Banach instance for it.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {C : SourceFullAbelianUniformCauchyFamily (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W}
+    (M : SourceAbelianMixedGapData C V) :
+    ∃ g : CoeffPair (ENNReal.ofReal (3/2)) → Coeff (ENNReal.ofReal ((ENNReal.ofReal (3/2)).toReal/2)),
+    ∃ h : CoeffPair (ENNReal.ofReal (3/2)) → CoeffOnePlus,
+      (∀ ψ ∈ V, ∀ n, (C.gapErrorSup ψ n : ℂ) =
+        sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n*(g ψ n+(h ψ).1 n)) ∧
+      (∃ B : ℝ, 0 ≤ B ∧ ∀ ψ ∈ V, ‖g ψ‖ ≤ B) ∧
+      ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+        ∃ B : ℝ, 0 ≤ B ∧ ∀ ψ ∈ V, ‖CoeffOnePlus.toCoeff q hq1 hq (h ψ)‖ ≤ B := M.mixed_displacement
+end OriginalSection19QuasiExponent
