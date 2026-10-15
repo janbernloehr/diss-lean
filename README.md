@@ -5,18 +5,19 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Theorem 14.1's five assertions now hold for the constructed
-original-family Birkhoff maps. The maps agree throughout their complex
-exponent-domain intersections, and their full complex derivatives commute
-with exponent inclusion. The original formulas, canonical brackets, and
-real inverse properties are retained.
+Latest step: Section 15 now has index-uniform bounds and analytic ℓᵖ
+sequences for the original gap-weighted coordinates throughout the angular
+domain. The outside-gap locus is open, and the signed limits at collapsed
+gaps are classified. The same compatible Birkhoff map retains equation
+(3.2), real and complex analyticity, and all three canonical brackets.
 
-Next: audit the detailed arguments and auxiliary assertions in Sections
-15–17. The dissertation remains incomplete.
+Next: audit Section 16's Jacobian and operator arguments, then Section 17.
+The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
-[the Section 14 audit](coverage/SECTION_14.md), and
+[the Section 14 audit](coverage/SECTION_14.md),
+[the Section 15 audit](coverage/SECTION_15.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

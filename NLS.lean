@@ -3670,3 +3670,8 @@ import NLS.ZakharovShabat.SourceSection14Original
 import NLS.ZakharovShabat.SourceRealBallCore
 import NLS.ZakharovShabat.SourceBirkhoffOriginalExponent
 import NLS.ZakharovShabat.SourceSection14
+import NLS.ZakharovShabat.SourceAngularOriginalDiagonalBound
+import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalBound
+import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalSequence
+import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalCollapsed
+import NLS.ZakharovShabat.SourceSection15Original

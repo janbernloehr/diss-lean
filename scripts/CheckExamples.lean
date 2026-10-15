@@ -53267,3 +53267,143 @@ example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
   exact ⟨W₀,W,V,s,D,e,he,ha,hb,e.symm_apply_apply,e.apply_symm_apply⟩
 
 end Section14CompatibleChecks
+
+section Section15OriginalChecks
+open NLS.ZakharovShabat Set Complex Filter Topology NLS.Poisson
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection15OriginalData hp hp1 W₀ W V s)
+
+-- The scalar extension is analytic at every complex point of the original W, including zero gaps.
+example (n : ℤ) (sign : ℂ) : AnalyticOnNhd ℂ (sourceGapWeightedEtaCoordinate hp hp1 n s sign) W :=
+  D.previous.gapWeightedEta_original_analytic n sign
+
+-- A single neighborhood and constant precede every index and both signs.
+example (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ U, ∀ n : ℤ, ∀ sign : ℂ, ‖sign‖ ≤ 1 →
+        ‖sourceGapWeightedEtaCoordinate hp hp1 n s sign ψ‖ ≤ C *
+          (‖sourcePeriodicGapDisplacement hp hp1 ψ n‖ +
+            ‖canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n - sourceStandardRootMidpoint hp hp1 ψ n‖) :=
+  D.gap_bound φ hφ
+
+-- Actual sequence membership, exact evaluations, and a common norm bound hold on the same neighborhood.
+example (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ M : ℝ, 0 ≤ M ∧
+        (∀ sign : ℂ, ‖sign‖ ≤ 1 → AnalyticOnNhd ℂ (sourceGapWeightedEtaSequence hp hp1 s sign) U) ∧
+        ∀ ψ ∈ U, ∀ sign : ℂ, ‖sign‖ ≤ 1 → ‖sourceGapWeightedEtaSequence hp hp1 s sign ψ‖ ≤ M ∧
+          ∀ n : ℤ, sourceGapWeightedEtaSequence hp hp1 s sign ψ n = sourceGapWeightedEtaCoordinate hp hp1 n s sign ψ :=
+  D.sequence_local φ hφ
+
+example : AnalyticOnNhd ℂ (sourceGapWeightedEtaSequence hp hp1 s 1) W ∧
+    AnalyticOnNhd ℂ (sourceGapWeightedEtaSequence hp hp1 s (-1)) W :=
+  ⟨D.gap_sequence_analytic 1 (by norm_num), D.gap_sequence_analytic (-1) (by norm_num)⟩
+
+-- The sequence entries use the literal original eta phase wherever the gap is open.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (sign : ℂ) (hsign : sign = 1 ∨ sign = -1)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    sourceGapWeightedEtaSequence hp hp1 s sign ψ n =
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n *
+        Complex.exp (sign*Complex.I*sourceAngularOriginalEta hp hp1 n s ψ) := by
+  have hnorm : ‖sign‖ ≤ 1 := by rcases hsign with rfl | rfl <;> norm_num
+  rw [D.previous.gapWeighted_original_sequence_apply ψ hψ sign hnorm n]
+  exact D.previous.gapWeightedEta_original_signed ψ hψ n hgap sign hsign
+
+-- The geometric locus from the source is open and contains no real-type potential.
+example (n : ℤ) : IsOpen (sourceDirichletOutsideGap hp hp1 W n) ∧
+    Disjoint (sourceDirichletOutsideGap hp hp1 W n) (realTypeSourceLocus p) :=
+  ⟨D.previous.dirichletOutsideGap_original_open n, disjoint_sourceDirichletOutsideGap_realType hp hp1 W n⟩
+
+-- The original phases have the asserted analytic limit along any converging net of open gaps.
+example {α : Type*} {l : Filter α} (u : α → CoeffPair p) (ψ : CoeffPair p) (hψ : ψ ∈ W)
+    (n : ℤ) (sign : ℂ) (hsign : sign = 1 ∨ sign = -1) (hu : Tendsto u l (𝓝 ψ))
+    (hopen : ∀ᶠ j in l, u j ∈ W ∧
+      canonicalPeriodicGap hp hp1 (periodOnePotential (u j)) (periodOnePotential_mem (u j)) n ≠ 0) :
+    Tendsto (fun j => canonicalPeriodicGap hp hp1 (periodOnePotential (u j)) (periodOnePotential_mem (u j)) n *
+      Complex.exp (sign*Complex.I*sourceAngularOriginalEta hp hp1 n s (u j))) l
+      (𝓝 (sourceGapWeightedEtaCoordinate hp hp1 n s sign ψ)) :=
+  D.previous.gapWeighted_original_phase_limit u ψ hψ n sign hsign hu hopen
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    (sourceGapWeightedEtaCoordinate hp hp1 n s 1 ψ = 0 ∧
+      sourceGapWeightedEtaCoordinate hp hp1 n s (-1) ψ = 0) ↔
+        canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n = sourceStandardRootMidpoint hp hp1 ψ n :=
+  D.previous.gapWeighted_original_collapsed_pair_zero_iff ψ hψ n hgap
+
+-- On the source's outside-gap locus at a collapsed gap, exactly one signed limit is nonzero.
+example (ψ : CoeffPair p) (n : ℤ) (hψ : ψ ∈ sourceDirichletOutsideGap hp hp1 W n)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    (sourceGapWeightedEtaCoordinate hp hp1 n s 1 ψ = 0 ∧
+      sourceGapWeightedEtaCoordinate hp hp1 n s (-1) ψ ≠ 0) ∨
+    (sourceGapWeightedEtaCoordinate hp hp1 n s 1 ψ ≠ 0 ∧
+      sourceGapWeightedEtaCoordinate hp hp1 n s (-1) ψ = 0) := by
+  apply D.previous.gapWeighted_original_collapsed_pair_exactly_one_nonzero ψ hψ.1 n hgap
+  intro he
+  apply hψ.2
+  rw [he]
+  exact sourcePeriodicMidpoint_mem_segment hp hp1 ψ n
+
+-- Equation (3.2) has the correct minus sign in y and needs no open-gap hypothesis.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    let ξ := sourceNormalizedActionRoot hp hp1 n ψ
+    let β := sourceAngularBetaCorrection hp hp1 n s ψ
+    let zp := sourceGapWeightedEtaSequence hp hp1 s 1 ψ n
+    let zm := sourceGapWeightedEtaSequence hp hp1 s (-1) ψ n
+    (sourceBirkhoffMap hp hp1 s ψ).1 n = ξ/(Real.sqrt 8 : ℂ)*(zp*Complex.exp (Complex.I*β)+zm*Complex.exp (-Complex.I*β)) ∧
+      (sourceBirkhoffMap hp hp1 s ψ).2 n = ξ/((Real.sqrt 8 : ℂ)*Complex.I)*(zp*Complex.exp (Complex.I*β)-zm*Complex.exp (-Complex.I*β)) :=
+  D.equation3_2 ψ hψ n
+
+example : AnalyticOnNhd ℝ (sourceRealBirkhoffMap hp hp1 s) univ ∧
+    AnalyticOnNhd ℂ (sourceBirkhoffMap hp hp1 s) V ∧
+    ∀ φ : realTypeSourceSubmodule p,
+      ((RealCoeff.complexCLM p).prodMap (RealCoeff.complexCLM p))
+        (sourceRealBirkhoffMap hp hp1 s φ) = sourceBirkhoffMap hp hp1 s φ.val :=
+  D.theorem15_2
+
+-- Canonical brackets use the actual derivatives at all real sources, also below exponent two.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ X Y : ℤ → RegularSourceCotangent p,
+      (∀ n, (X n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 n) φ.val ∧
+        (Y n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 n) φ.val) ∧
+      ∀ n m, (X n).bivector (X m) = 0 ∧
+        (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 :=
+  D.lemma15_3 φ
+
+example (φ : realTypeSourceSubmodule p) (n m : ℤ) :
+    let L := fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 n) φ.val
+    let M := fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 m) φ.val
+    Summable (fun j : ℤ => ‖L (CoeffPair.inlCLM (lp.single p j 1)) *
+      M (CoeffPair.inrCLM (lp.single p (-j) 1)) -
+      L (CoeffPair.inrCLM (lp.single p j 1)) * M (CoeffPair.inlCLM (lp.single p (-j) 1))‖) ∧
+    -Complex.I * ∑' j : ℤ, (L (CoeffPair.inlCLM (lp.single p j 1)) *
+      M (CoeffPair.inrCLM (lp.single p (-j) 1)) -
+      L (CoeffPair.inrCLM (lp.single p j 1)) * M (CoeffPair.inlCLM (lp.single p (-j) 1))) =
+        -(if n = m then 1 else 0) :=
+  D.complex.mixed_fourier_canonical n m φ
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The hypotheses of the package are constructed, including the original-domain estimate above two.
+example : ∃ W₀ W V : Set (CoeffPair (4:ℝ≥0∞)), ∃ s,
+    SourceSection15OriginalData (p := 4) (by norm_num) (by norm_num) W₀ W V s :=
+  sourceSection15_original (by norm_num) (by norm_num)
+
+-- The new package retains full complex compatibility for independently constructed exponents.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    ∃ _D : SourceSection15OriginalData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s,
+    ∃ A B C : Set (CoeffPair (4:ℝ≥0∞)), ∃ t,
+    ∃ _E : SourceSection15OriginalData (p := 4) (by norm_num) (by norm_num) A B C t,
+    ∀ ψ ∈ V, ∀ _hψ' : CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ ∈ C,
+      ((Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)).prodMap
+        (Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)))
+          (sourceBirkhoffMap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) s ψ) =
+            sourceBirkhoffMap (p := 4) (by norm_num) (by norm_num) t
+              (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection15_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨A,B,C,t,E⟩ := sourceSection15_original (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,A,B,C,t,E,D.toSourceSection14Data.exponent E.toSourceSection14Data (by norm_num)⟩
+
+end Section15OriginalChecks

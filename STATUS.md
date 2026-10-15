@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Section 14 full complex exponent compatibility
+## Current milestone: Section 15 original-domain bounds and analytic sequences
+
+`sourceSection15_original` now constructs the gap-weighted sequences for
+every finite p>1 using the original Lemma 12.12 root family and integral-defined
+eta. Lemma 15.1's estimate holds at every complex source in the unchanged
+angular domain W: one neighborhood and positive constant control every
+index and both signs. The actual z sequences belong to ℓᵖ, are locally
+bounded in norm, and are analytic as Banach-valued maps on all of W.
+
+The outside-gap locus Fₙ is proved open and disjoint from real sources.
+Original open-gap phases converge to the analytic coordinates along any
+converging net, including at collapsed gaps. At a collapsed gap both signed
+coordinates vanish exactly when μₙ=τₙ; otherwise exactly one is nonzero.
+This classifies the conditional behavior without asserting that a potential
+with μₙ outside a collapsed gap exists.
+
+The package retains the compatible Section 14 Birkhoff map on its open
+domain V⊆W containing the entire real locus. Equation (3.2) uses the actual
+z sequence entries and the correct difference for y. Theorem 15.2 and all
+three brackets in Lemma 15.3 hold for this same map, including p<2. The
+full complex exponent compatibility and real inverse results are retained.
+No equality V=W is claimed.
+
+Fifteen new public checks cover the bounds, sequence values and original
+phases, outside-gap geometry, net limits, collapsed classification,
+rectangular formula, map analyticity, and canonical derivatives. Independent
+constructions at p=3/2 and p=4 retain full complex exponent compatibility.
+See [the Section 15 audit](coverage/SECTION_15.md).
+
+Next: audit Section 16's Jacobian and operator arguments, then Section 17.
+The Section 14 qualifications concerning the precise external Hilbert map
+and fractional smoothness remain; surjectivity for p>2 is not claimed.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,113
+jobs, all public examples pass, and the transitive axiom audit checks 33,743
+NLS declarations. The five new modules and fifteen new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory
+verifies all 156 candidate labels, all 235 checked local Markdown file
+links resolve, and `git diff --check` passes.
+
+## Previous milestone: Section 14 full complex exponent compatibility
 
 `sourceSection14` now constructs the original Birkhoff map on compatible
 complex neighborhoods for every finite p>1. `SourceSection14Data.exponent`

@@ -19,6 +19,21 @@ The PDF page was visually checked; the plus is not a text-extraction error.
 positive sine of the original integral-defined theta, as in equation (3.1).
 The canonical mixed bracket consequently retains the source's -δₙₘ sign.
 
+## Section 15 collapsed limits: the two signs must be distinguished
+
+The narrative on printed p. 74 says the collapsed limit is nonzero when
+μₙ lies outside its gap. The exact identity zₙ+ zₙ− = γₙ² forces at least
+one sign to vanish at a collapsed gap. The formal results
+`gapWeighted_original_collapsed_pair_zero_iff` and
+`gapWeighted_original_collapsed_pair_exactly_one_nonzero` prove the precise
+classification: both vanish iff μₙ=τₙ; otherwise exactly one is nonzero.
+`gapWeighted_original_phase_limit` identifies these analytic values with
+limits of the original open-gap phases.
+
+This qualifies the interpretation of the narrative; it does not construct
+a potential with γₙ=0 and μₙ≠τₙ, or claim an unconditional physical
+counterexample. See [the Section 15 audit](coverage/SECTION_15.md).
+
 ## Lemma 12.11: both individual sine asymptotics have a minus sign
 
 Printed p. 70 (visually checked) puts +sin λ in the leading terms of

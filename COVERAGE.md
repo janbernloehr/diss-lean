@@ -27,7 +27,9 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 The current original-domain angle audit is in
 [`coverage/SECTION_13.md`](coverage/SECTION_13.md). The original Birkhoff
 map and assertion-by-assertion Theorem 14.1 audit are in
-[`coverage/SECTION_14.md`](coverage/SECTION_14.md).
+[`coverage/SECTION_14.md`](coverage/SECTION_14.md). The original-domain
+gap-weighted bounds, collapsed limits, and analytic sequences are audited in
+[`coverage/SECTION_15.md`](coverage/SECTION_15.md).
 
 ## Nonextension proof and limits
 
