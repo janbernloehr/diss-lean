@@ -5,20 +5,20 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 16 now retains the original map's Jacobian and
-Holder-conjugate gradient estimates. The normalized Jacobian is identity
-plus compact at every real source. Corrected Fourier series and finite-rank
-cutoffs are verified in source and operator norm, with explicit witnesses
-for the printed sign and norm discrepancies.
+Latest step: Section 17 now retains the original map's analytic inverses,
+unique angle flow, and isospectral images. The flow has the original
+spectral action law and continuous displacement in every finite exponent
+above one. Two printed formulas are corrected with explicit Lean witnesses.
 
-Next: audit Section 17's inverse and flow arguments. The dissertation
-remains incomplete.
+Next: Section 18's Hamiltonian, frequency, and wellposedness statements.
+The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
 [the Section 14 audit](coverage/SECTION_14.md),
 [the Section 15 audit](coverage/SECTION_15.md),
-[the Section 16 audit](coverage/SECTION_16.md), and
+[the Section 16 audit](coverage/SECTION_16.md),
+[the Section 17 audit](coverage/SECTION_17.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

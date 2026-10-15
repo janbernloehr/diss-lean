@@ -53583,3 +53583,219 @@ example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
   exact ⟨W₀,W,V,s,D,A,B,C,t,E,D.toSourceSection14Data.exponent E.toSourceSection14Data (by norm_num)⟩
 
 end Section16OriginalChecks
+
+section Section17OriginalChecks
+open NLS.ZakharovShabat Set Complex Filter Topology NLS.Poisson
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection17OriginalData hp hp1 W₀ W V s)
+
+-- Both actual derivatives are isomorphisms, including below exponent two.
+example (φ : realTypeSourceSubmodule p) :
+    Function.Bijective (sourceBirkhoffJacobian hp hp1 s φ.val) ∧
+    Function.Bijective (fderiv ℝ (sourceRealBirkhoffMap hp hp1 s) φ) :=
+  ⟨D.complex.jacobian_bijective_all_exponents φ,D.complex.real_jacobian_bijective_all_exponents φ⟩
+
+example (φ : realTypeSourceSubmodule p) :
+    ∃ g : (RealCoeff p × RealCoeff p) → realTypeSourceSubmodule p,
+      AnalyticAt ℝ g (sourceRealBirkhoffMap hp hp1 s φ) ∧
+      g (sourceRealBirkhoffMap hp hp1 s φ) = φ ∧
+      (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap hp hp1 s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap hp hp1 s φ), sourceRealBirkhoffMap hp hp1 s (g z) = z) ∧
+      HasStrictFDerivAt g (D.complex.realJacobianEquivAll φ).symm.toContinuousLinearMap
+        (sourceRealBirkhoffMap hp hp1 s φ) := D.proposition17_1 φ
+
+-- The local inverse also exists in the ambient complex source space.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ g : (Coeff p × Coeff p) → CoeffPair p,
+      AnalyticAt ℂ g (sourceBirkhoffMap hp hp1 s φ.val) ∧
+      g (sourceBirkhoffMap hp hp1 s φ.val) = φ.val ∧
+      (∀ᶠ ψ in 𝓝 φ.val, g (sourceBirkhoffMap hp hp1 s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceBirkhoffMap hp hp1 s φ.val), sourceBirkhoffMap hp hp1 s (g z) = z) ∧
+      HasStrictFDerivAt g (D.complex.jacobianEquivAll φ).symm.toContinuousLinearMap
+        (sourceBirkhoffMap hp hp1 s φ.val) := D.complex_localInverse φ
+
+example : Function.Injective (sourceRealBirkhoffMap hp hp1 s) ∧
+    IsOpenEmbedding (sourceRealBirkhoffMap hp hp1 s) ∧
+    (p ≤ 2 → Function.Surjective (sourceRealBirkhoffMap hp hp1 s)) :=
+  ⟨D.proposition17_2,D.complex.real_map_isOpenEmbedding,D.proposition17_3⟩
+
+-- The global inverse derivative is certified at every target in the stated exponent range.
+example (hp2 : p ≤ 2) :
+    ∃ e : realTypeSourceSubmodule p ≃ₜ (RealCoeff p × RealCoeff p),
+      (∀ φ, e φ = sourceRealBirkhoffMap hp hp1 s φ) ∧
+      AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun z => e.symm z) univ ∧
+      ∀ z, HasStrictFDerivAt e.symm
+        (D.complex.realJacobianEquivAll (e.symm z)).symm.toContinuousLinearMap z := D.global_inverse hp2
+
+-- The normalized Hamiltonian images swap x/y gradient labels.
+example (h2p : 2 ≤ p) (φ : realTypeSourceSubmodule p) (m : ℤ) :
+    sourceBirkhoffNormalizedJacobian hp hp1 s φ.val
+      (sourceHamiltonianDirection h2p (fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 m) φ.val)) =
+        -sourceBirkhoffFreeYGradient p (-m) ∧
+    sourceBirkhoffNormalizedJacobian hp hp1 s φ.val
+      (sourceHamiltonianDirection h2p (fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 m) φ.val)) =
+        -sourceBirkhoffFreeXGradient p (-m) :=
+  D.toSourceSection16OriginalData.normalizedJacobian_hamiltonian_coordinates h2p φ m
+
+example (h2p : 2 ≤ p) (φ : realTypeSourceSubmodule p) (m : ℤ) :
+    sourceBirkhoffNormalizedJacobian hp hp1 s φ.val
+      (sourceHamiltonianDirection h2p (fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 m) φ.val)) ≠
+        -sourceBirkhoffFreeXGradient p (-m) :=
+  D.toSourceSection16OriginalData.normalizedJacobian_hamiltonian_x_ne_printed h2p φ m
+
+-- Isospectrality is the original periodic spectrum with multiplicities, not a surrogate set.
+example (φ ψ : realTypeSourceSubmodule p) :
+    (periodicSpectrum hp (periodOnePotential ψ.val) = periodicSpectrum hp (periodOnePotential φ.val) ∧
+      ∀ z : ℂ, periodicAlgebraicMultiplicity hp (periodOnePotential ψ.val) z =
+        periodicAlgebraicMultiplicity hp (periodOnePotential φ.val) z) ↔
+      canonicalDiscriminant hp (periodOnePotential ψ.val) = canonicalDiscriminant hp (periodOnePotential φ.val) :=
+  mem_sourceIsospectralSet_iff_discriminant_eq hp hp1 φ ψ
+
+example (φ : realTypeSourceSubmodule p) :
+    IsCompact (RealCoeff.actionTorus p (fun n => (sourceRealAction hp hp1 φ.val φ.property n).re)) ∧
+    sourceRealBirkhoffMap hp hp1 s '' sourceIsospectralSet hp φ ⊆
+      RealCoeff.actionTorus p (fun n => (sourceRealAction hp hp1 φ.val φ.property n).re) ∧
+    (p ≤ 2 → sourceRealBirkhoffMap hp hp1 s '' sourceIsospectralSet hp φ =
+      RealCoeff.actionTorus p (fun n => (sourceRealAction hp hp1 φ.val φ.property n).re) ∧
+        IsCompact (sourceIsospectralSet hp φ)) := D.lemma17_5 φ
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The complete original package is constructed above exponent two.
+example : ∃ W₀ W V : Set (CoeffPair (4:ℝ≥0∞)), ∃ s,
+    SourceSection17OriginalData (p := 4) (by norm_num) (by norm_num) W₀ W V s :=
+  sourceSection17_original (by norm_num) (by norm_num)
+
+-- Below two both global inverse identities hold on the entire source and target.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    ∃ _D : SourceSection17OriginalData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s,
+    ∃ e : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) ≃ₜ
+        (RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))),
+      (∀ φ, e φ = sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) ∧
+      AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun z => e.symm z) univ ∧
+      (∀ φ, e.symm (e φ) = φ) ∧ (∀ z, e (e.symm z) = z) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection17_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨e,he,ha,hb,_⟩ := D.global_inverse (by norm_num)
+  exact ⟨W₀,W,V,s,D,e,he,ha,hb,e.symm_apply_apply,e.apply_symm_apply⟩
+
+-- The upgraded package retains compatibility on the full complex exponent overlap.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A B C : Set (CoeffPair q)} {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection17OriginalData hq hq1 A B C t) (hpq : p ≤ q)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (hψ' : CoeffPair.exponentInclusion hpq ψ ∈ C) :
+    ((Coeff.exponentInclusion hpq).prodMap (Coeff.exponentInclusion hpq))
+      (sourceBirkhoffMap hp hp1 s ψ) =
+        sourceBirkhoffMap hq hq1 t (CoeffPair.exponentInclusion hpq ψ) :=
+  D.toSourceSection14Data.exponent E.toSourceSection14Data hpq ψ hψ hψ'
+
+-- Independently constructed global inverses preserve the original coefficient inclusions.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A B C : Set (CoeffPair q)} {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection17OriginalData hq hq1 A B C t)
+    (hp2 : p ≤ 2) (hq2 : q ≤ 2) (hpq : p ≤ q) (z : RealCoeff p × RealCoeff p) :
+    realTypeSourceExponentInclusion hpq ((D.complex.realHomeomorph hp2).symm z) =
+      (E.complex.realHomeomorph hq2).symm
+        (((RealCoeff.exponentInclusion hpq).prodMap (RealCoeff.exponentInclusion hpq)) z) :=
+  D.complex.realHomeomorph_symm_exponent E.complex hp2 hq2 hpq z
+
+end Section17OriginalChecks
+
+section Section17OriginalHilbertChecks
+open NLS.ZakharovShabat Set Complex Filter Topology
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection17OriginalData (p := 2) (by simp) (by norm_num) W₀ W V s)
+
+-- Equation (3.9) uses the actual theta Hamiltonian for the same original family s.
+example (k : ℤ) (φ : realTypeSourceSubmodule 2)
+    (hk : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0) :
+    sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val
+      (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k s φ.val) =
+    ((RealCoeff.complexCLM 2).prodMap (RealCoeff.complexCLM 2))
+      (RealCoeff.actionReductionVector (D.complex.hilbertRealHomeomorph φ) k) :=
+  D.toSourceSection16OriginalData.equation3_9 k φ hk
+
+-- Full-time uniqueness and simultaneous stronger displacement regularity, with no supplied flow.
+example (k : ℤ) (φ : realTypeSourceSubmodule 2)
+    (hk : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0) :
+    let a := (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re
+    ∃ f : ℝ → realTypeSourceSubmodule 2,
+      f 0 = φ ∧ ContDiffOn ℝ 1 f (Iio a) ∧
+      (∀ t < a, HasDerivAt (fun t => (f t).val)
+        (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k s (f t).val) t) ∧
+      (∀ g : ℝ → CoeffPair 2, g 0 = φ.val →
+        (∀ t < a, HasDerivAt g
+          (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k s (g t)) t) →
+        EqOn g (fun t => (f t).val) (Iio a)) ∧
+      Tendsto (fun t => (sourceRealAction (by simp) (by norm_num) (f t).val (f t).property k).re)
+        (𝓝[<] a) (𝓝 0) ∧
+      ∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+        ∃ d : Iio a → realTypeSourceSubmodule r, Continuous d ∧ ∀ t : Iio a, ∀ n : ℤ,
+          (d t).val.fst n = (f t.val).val.fst n-φ.val.fst n ∧
+          (d t).val.snd n = (f t.val).val.snd n-φ.val.snd n :=
+  D.toSourceSection16OriginalData.lemma17_4 k φ hk
+
+example (k : ℤ) (φ : realTypeSourceSubmodule 2)
+    (hk : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0)
+    (t : ℝ) (ht : t ≤ (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re) (n : ℤ) :
+    (sourceRealAction (by simp) (by norm_num) (D.complex.hilbertActionReduction φ k t).val
+      (D.complex.hilbertActionReduction φ k t).property n).re =
+        (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re - if n = k then t else 0 :=
+  D.toSourceSection16OriginalData.angleFlow_action_law k φ hk t ht n
+
+-- Collapse is a limit in the source norm and closes the selected original spectral gap.
+example (k : ℤ) (φ : realTypeSourceSubmodule 2)
+    (hk : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0) :
+    let a := (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re
+    Tendsto (D.complex.hilbertActionReduction φ k) (𝓝[<] a)
+      (𝓝 (D.complex.hilbertActionReduction φ k a)) ∧
+    sourcePeriodicGapDisplacement (by simp) (by norm_num)
+      (D.complex.hilbertActionReduction φ k a).val k = 0 :=
+  D.toSourceSection16OriginalData.angleFlow_collapse k φ hk
+
+-- Finite original flow moves preserve membership in a smaller exponent space.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    (φ : realTypeSourceSubmodule 2) (moves : List (ℤ × ℝ))
+    (hm : D.complex.AdmissibleActionReductions φ moves) :
+    (∃ ψ : realTypeSourceSubmodule p, CoeffPair.exponentInclusion hp2 ψ.val =
+      (D.complex.hilbertActionReductionSequence φ moves).val) ↔
+    ∃ ψ : realTypeSourceSubmodule p, CoeffPair.exponentInclusion hp2 ψ.val = φ.val :=
+  D.complex.hilbertActionReductionSequence_mem_exponent_iff hp hp1 hp2 φ moves hm
+
+-- The finite list of moves is constructed, retaining every outside coordinate and all displacement exponents.
+example (φ : realTypeSourceSubmodule 2) (A : Finset ℤ) (ε : ℤ → ℝ) (hε : ∀ n ∈ A, 0 < ε n) :
+    ∃ moves : List (ℤ × ℝ), D.complex.AdmissibleActionReductions φ moves ∧
+      (∀ move ∈ moves, move.1 ∈ A) ∧
+      (∀ n ∈ A, (sourceRealAction (by simp) (by norm_num)
+        (D.complex.hilbertActionReductionSequence φ moves).val
+        (D.complex.hilbertActionReductionSequence φ moves).property n).re < ε n) ∧
+      (∀ n ∉ A,
+        (D.complex.hilbertRealHomeomorph (D.complex.hilbertActionReductionSequence φ moves)).1 n =
+          (D.complex.hilbertRealHomeomorph φ).1 n ∧
+        (D.complex.hilbertRealHomeomorph (D.complex.hilbertActionReductionSequence φ moves)).2 n =
+          (D.complex.hilbertRealHomeomorph φ).2 n) ∧
+      ∀ (p : ℝ≥0∞) [Fact (1 ≤ p)], p ≠ ⊤ → 1 < p →
+        ∃ d : realTypeSourceSubmodule p, ∀ n : ℤ,
+          d.val.fst n = (D.complex.hilbertActionReductionSequence φ moves).val.fst n-φ.val.fst n ∧
+          d.val.snd n = (D.complex.hilbertActionReductionSequence φ moves).val.snd n-φ.val.snd n :=
+  D.complex.exists_hilbertActionReductionSequence_small_actions φ A ε hε
+
+-- A constructed original family and an actual source certify the printed x-velocity error.
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (p := 2) (by simp) (by norm_num) W₀ W V s,
+    ∃ φ : realTypeSourceSubmodule 2,
+      (D.complex.hilbertRealHomeomorph φ).1 0 = 1 ∧
+      (D.complex.hilbertRealHomeomorph φ).2 0 = 0 ∧
+      (sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val
+        (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) 0 s φ.val)).1 0 = -1 ∧
+      (D.complex.hilbertRealHomeomorph φ).1 0 /
+        (((D.complex.hilbertRealHomeomorph φ).1 0)^2+((D.complex.hilbertRealHomeomorph φ).2 0)^2) = 1 := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection17_original (p := 2) (by simp) (by norm_num)
+  exact ⟨W₀,W,V,s,D,D.toSourceSection16OriginalData.equation3_9_printed_sign_counterexample⟩
+
+end Section17OriginalHilbertChecks

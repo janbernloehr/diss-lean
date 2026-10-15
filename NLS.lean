@@ -3682,3 +3682,7 @@ import NLS.ZakharovShabat.SourceBirkhoffNormalizedCutoff
 import NLS.ZakharovShabat.SourceGapWeightedEtaAuxiliary
 import NLS.ZakharovShabat.SourceBirkhoffSection16Corrections
 import NLS.ZakharovShabat.SourceSection16Original
+import NLS.ZakharovShabat.SourceBirkhoffOriginalCanonicalImages
+import NLS.ZakharovShabat.SourceBirkhoffOriginalAngleFlow
+import NLS.ZakharovShabat.SourceBirkhoffOriginalFlowSign
+import NLS.ZakharovShabat.SourceSection17Original

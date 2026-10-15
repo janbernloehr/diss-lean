@@ -1,5 +1,35 @@
 # Source discrepancies
 
+## Proposition 17.1: normalized canonical images swap the gradient labels
+
+The first display in the proof on printed p. 78 writes A K bₘ±=−d₋ₘ±.
+For the actual coordinate gradients and the exact Fourier normalization,
+the identities are A K bₘˣ=−d₋ₘʸ and A K bₘʸ=−d₋ₘˣ. The source's next
+pairing display already switches to bₘ∓. The formal theorem
+`SourceSection16OriginalData.normalizedJacobian_hamiltonian_coordinates`
+proves both corrected identities for every real source and p≥2.
+`normalizedJacobian_hamiltonian_x_ne_printed` proves the unswapped x
+formula is false throughout that range. Proposition 17.1 itself holds
+for all finite p>1; below two the proof uses Hilbert kernel transport
+and the compact Fredholm alternative.
+
+## Equation (3.9): both angle-flow components must point inward
+
+The display on printed p. 80 has +xₖ/(xₖ²+yₖ²) in the x-component and
+−yₖ/(xₖ²+yₖ²) in the y-component. The actual original theta Hamiltonian
+has a minus in both components, consistent with the selected action
+having derivative −1.
+
+`SourceSection16OriginalData.equation3_9` identifies the actual Jacobian
+image with the inward radial vector. For every original Hilbert package,
+`equation3_9_printed_sign_counterexample` constructs a real source with
+x₀=1 and y₀=0 using the proved global inverse. The true x₀ velocity is −1,
+whereas the printed expression is +1. Its positive actual action also
+proves that the selected gap is open. Lemma 17.4 holds with the corrected
+vector, including uniqueness on the full pre-collapse interval and
+continuous displacement in every finite exponent above one. See
+[the Section 17 audit](coverage/SECTION_17.md).
+
 ## Section 16: inverse-series sign and free-mode witness
 
 The inverse Fourier series and equation (3.4) on printed p. 77 use a plus

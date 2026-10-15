@@ -32,6 +32,8 @@ gap-weighted bounds, collapsed limits, and analytic sequences are audited in
 [`coverage/SECTION_15.md`](coverage/SECTION_15.md). The original Jacobian,
 Holder-conjugate gradient estimates, corrected reconstruction, and compact
 normalization are audited in [`coverage/SECTION_16.md`](coverage/SECTION_16.md).
+The original inverse, angle-flow, and isospectral assertions are audited in
+[`coverage/SECTION_17.md`](coverage/SECTION_17.md).
 
 ## Nonextension proof and limits
 

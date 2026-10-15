@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: Section 16 original Jacobian and corrected reconstruction
+## Current milestone: Section 17 original inverses, flows, and isospectral images
+
+`sourceSection17_original` retains the original Sections 12–16 family
+and proves the Section 17 assertions for that same map. The real and
+complex Jacobians are invertible at every real source for every finite
+p>1. Both local inverse identities and the exact inverse derivatives
+are retained. The real map is globally injective; for 1<p≤2 its global
+inverse is analytic on the entire target with the actual inverse Jacobian.
+
+The original Hilbert theta Hamiltonian has a unique C¹ solution throughout
+(−∞,Iₖ(φ)). It lowers the selected original action at unit speed, preserves
+all other actions, and has continuous displacement in every finite
+exponent above one. The explicit source flow has a source-norm limit at
+collapse and closes the selected gap. Finite admissible flow moves retain
+all outside coordinates and preserve membership in stronger exponent
+spaces, supporting surjectivity below two.
+
+Actual isospectral sets use the periodic spectrum and its algebraic
+multiplicities. Their images lie in the compact original action tori for
+all finite p>1. For p≤2 the images equal the whole tori, and the source
+isospectral sets are compact. No equality or source compactness above
+two is asserted by this milestone.
+
+Two printed formulas are corrected with Lean proofs. Proposition 17.1's
+first canonical-image display must swap the x/y gradient labels after
+normalization. Equation (3.9) must have negative signs in both components.
+For the latter, the actual global inverse constructs a real source with
+x₀=1 and y₀=0 where the true x₀ velocity is −1 and the printed value is +1.
+These corrections preserve the numbered results.
+
+Four new modules and 20 public checks cover the full original-family
+statements, constructions at p=3/2, p=2, and p=4, and retained complex
+exponent and global-inverse compatibility. See
+[the Section 17 audit](coverage/SECTION_17.md) and
+[the source corrections](SOURCE_ERRATA.md).
+
+Next: Section 18's original Hamiltonian, frequency, and wellposedness
+statements. Section 14's external Hilbert-map and fractional-smoothness
+qualifications remain. Surjectivity for p>2 is not claimed.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,124
+jobs, all public examples pass, and the transitive axiom audit checks 33,822
+NLS declarations. The four new modules and 20 new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 253 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 16 original Jacobian and corrected reconstruction
 
 `sourceSection16_original` constructs the original Section 15 family with
 its actual analytic operator-valued Jacobian for every finite p>1.
