@@ -54274,3 +54274,198 @@ example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
       ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
         ∃ B : ℝ, 0 ≤ B ∧ ∀ ψ ∈ V, ‖CoeffOnePlus.toCoeff q hq1 hq (h ψ)‖ ≤ B := M.mixed_displacement
 end OriginalSection19QuasiExponent
+
+section OriginalSection20
+open Set Metric Filter Topology NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+
+example : ∃ W₀ W V : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ D : SourceSection17OriginalData hp hp1 W₀ W V s,
+    ∃ Wa : Set (CoeffPair p), ∃ A : SourceAbelianMomentAtlas hp hp1 Wa s,
+    ∃ B U : Set (CoeffPair p), SourceSection20Data D A B U := sourceSection20_original hp hp1
+
+example : ∃ Wa : Set (CoeffPair p), ∃ A : SourceAbelianMomentAtlas hp hp1 Wa s,
+    ∃ B U : Set (CoeffPair p), SourceSection20Data D A B U := D.exists_section20
+
+example : IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus p ⊆ U ∧ U ⊆ V ∧ U ⊆ A.domain :=
+  ⟨Q.source_open,Q.connected,Q.real_subset,Q.original_subset,Q.moment_subset⟩
+
+example : SourceSection19Data hp hp1 B U := Q.toSourceSection19Data
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, sourcePsiRealCenteredContourFamily hp hp1 ψ c R ∧
+      ∀ (n k : ℤ) (m : ℕ), A.moment n k m ψ =
+        ∮ z in C(c k,R k), (sourceFullAbelianPrimitive hp hp1 B k (z,ψ))^m*
+          (sourcePsiCandidate n (z,(s n ψ : Coeff p))/sourceCanonicalRoot hp hp1 ψ z) := Q.moment_contours ψ hψ
+
+example (n k : ℤ) (m : ℕ) : AnalyticOnNhd ℂ (A.moment n k m) U := Q.lemma20_1.1 n k m
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n k : ℤ) :
+    A.moment n k 0 ψ = (2*Real.pi : ℂ)*(if k = n then 1 else 0) := Q.lemma20_1.2.1 ψ hψ n k
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n k : ℤ) (l : ℕ) :
+    A.moment n k (2*l+1) ψ = 0 := Q.lemma20_1.2.2.1 ψ hψ n k l
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n k : ℤ)
+    (hk : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) k = 0)
+    (m : ℕ) (hm : 1 ≤ m) : A.moment n k m ψ = 0 := Q.lemma20_1.2.2.2 ψ hψ n k hk m hm
+
+example (φ : CoeffPair p) (hφ : φ ∈ U) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ ∈ T ∧ T ⊆ U ∧ SourceSecondMomentMixedData A T := Q.moment_estimates φ hφ
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) :
+    Summable (fun k => ‖A.moment n k 2 ψ‖) := Q.summable ψ hψ n
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) :
+    HasSum (fun k => -(4/(2*Real.pi):ℂ)*A.moment n k 2 ψ) (A.renormalizedFrequency n ψ) := Q.frequency_hasSum ψ hψ n
+
+example (φ : CoeffPair p) (hφ : φ ∈ U) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ ∈ T ∧ T ⊆ U ∧ ∀ n : ℤ,
+      TendstoUniformlyOn
+        (fun (N : ℕ) ψ => -(4/(2*Real.pi):ℂ)*∑ k ∈ Finset.Icc (-(N : ℤ)) N, A.moment n k 2 ψ)
+        (A.renormalizedFrequency n) atTop T := Q.frequency_uniform φ hφ
+
+example (n : ℤ) : AnalyticOnNhd ℂ (A.renormalizedFrequency n) U ∧
+    AnalyticOnNhd ℝ (A.renormalizedFrequency n) U := ⟨Q.frequency_analytic n,(Q.frequency_analytic n).restrictScalars⟩
+
+example {W₂ B₂ V₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D₂ : SourceSection17OriginalData (by simp) (by norm_num) W₂ B₂ V₂ s₂)
+    (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) (n : ℤ) :
+    D₂.complex.finiteGapFrequencyAtExponent hp hp1 φ hf n-
+      4*sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1-(2*(n:ℂ)*Real.pi)^2 =
+      -(4/(2*Real.pi):ℂ)*(∑' k : ℤ, A.moment n k 2 φ.val) := Q.physical_frequency D₂ φ hf n
+
+example {W₂ B₂ V₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D₂ : SourceSection17OriginalData (by simp) (by norm_num) W₂ B₂ V₂ s₂)
+    (n : ℤ) (F : CoeffPair p → ℂ) (hF : AnalyticOnNhd ℂ F U)
+    (he : ∀ (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1),
+      F φ.val = D₂.complex.finiteGapFrequencyAtExponent hp hp1 φ hf n-
+        4*sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1-(2*(n:ℂ)*Real.pi)^2) :
+    EqOn F (A.renormalizedFrequency n) U := Q.unique_frequency D₂ n F hF he
+
+example (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r)
+    (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) :
+    (∀ ψ ∈ U, ∀ n, A.frequencySequence r ψ n = A.renormalizedFrequency n ψ) ∧
+    AnalyticOnNhd ℂ (A.frequencySequence r) U ∧ AnalyticOnNhd ℝ (A.frequencySequence r) U ∧
+    ∀ φ : realTypeSourceSubmodule p, ∀ n, (A.frequencySequence r φ.val n).im = 0 := Q.sequence_analytic r hr hr1 hpr
+
+example (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r)
+    (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) : A.frequencySequence r 0 = 0 := Q.sequence_zero r hr hr1 hpr
+
+example (φ : CoeffPair p) (hφ : φ ∈ U) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ ∈ T ∧ T ⊆ U ∧
+    ∃ g : CoeffPair p → Coeff (ENNReal.ofReal (p.toReal/3)), ∃ h : CoeffPair p → CoeffOnePlus,
+      (∀ ψ ∈ T, ∀ n, A.renormalizedFrequency n ψ+(sourcePeriodicGapDisplacement hp hp1 ψ n)^2/2 =
+        g ψ n+(h ψ).1 n) ∧
+      (∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ‖g ψ‖ ≤ M) ∧
+      ∀ (r : ℝ≥0∞) (hr1 : 1 < r) (hr : r ≠ ⊤),
+        ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ‖CoeffOnePlus.toCoeff r hr1 hr (h ψ)‖ ≤ M := Q.frequency_mixed φ hφ
+
+example {T : Set (CoeffPair p)} (M : SourceSecondMomentMixedData A T) :
+    ∃ g : CoeffPair p → Coeff (ENNReal.ofReal (p.toReal/2)), ∃ h : CoeffPair p → CoeffOnePlus,
+      (∀ ψ ∈ T, ∀ k, A.moment k k 2 ψ = (sourcePeriodicGapDisplacement hp hp1 ψ k)^2/4*
+        ((Real.pi : ℂ)+g ψ k+(h ψ).1 k)) ∧
+      (∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ‖g ψ‖ ≤ C) ∧
+      ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+        ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ‖CoeffOnePlus.toCoeff q hq1 hq (h ψ)‖ ≤ C := M.diagonal
+
+example {T : Set (CoeffPair p)} (M : SourceSecondMomentMixedData A T) :
+    ∃ g : CoeffPair p → ℤ → Coeff (ENNReal.ofReal (p.toReal/2)), ∃ h : CoeffPair p → ℤ → CoeffOnePlus,
+      (∀ ψ ∈ T, ∀ n k : ℤ, k ≠ n → A.moment n k 2 ψ =
+        (sourcePeriodicGapDisplacement hp hp1 ψ k)^3/((n-k:ℤ):ℂ)*(g ψ n k+(h ψ n).1 k)) ∧
+      (∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∀ n, ‖g ψ n‖ ≤ C) ∧
+      ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+        ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∀ n, ‖CoeffOnePlus.toCoeff q hq1 hq (h ψ n)‖ ≤ C := M.rows
+
+example {T : Set (CoeffPair p)} (M : SourceSecondMomentMixedData A T)
+    (r : ℝ≥0∞) (hr : r ≠ ⊤) (hr1 : 1 < r) (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) :
+    ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ T, ∀ n : ℤ,
+      Summable (fun k => ‖sourceSecondMomentCubicCoefficient A n ψ k‖^r.toReal) ∧
+      (∑' k : ℤ, ‖sourceSecondMomentCubicCoefficient A n ψ k‖^r.toReal) ≤ C := M.row_power_sum r hr hr1 hpr
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] [p.HolderTriple p q] {T : Set (Coeff q)} {F : Coeff q → Coeff q}
+    (E : SourceOriginalFrequencyData D T F) (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    F (sourceActionSequence hp hp1 s φ.val) n = A.renormalizedFrequency n φ.val := Q.action_frequency E φ n
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] [p.HolderTriple p q] {T : Set (Coeff q)} {F : Coeff q → Coeff q}
+    (E : SourceOriginalFrequencyData D T F) :
+    ∃ Y : Set (CoeffPair p), IsOpen Y ∧ IsConnected Y ∧ realTypeSourceLocus p ⊆ Y ∧ Y ⊆ U ∧
+      (∀ ψ ∈ Y, sourceActionSequence (q := q) hp hp1 s ψ ∈ T) ∧
+      ∀ ψ ∈ Y, ∀ n, F (sourceActionSequence hp hp1 s ψ) n = A.renormalizedFrequency n ψ := Q.action_frequency_complex E
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n k : ℤ) :
+    AnalyticOnNhd ℂ (sourceSection20Zeta hp hp1 s n k ψ) (sourceStandardRootOmittedDomain hp hp1 ψ k) := Q.zeta_analytic ψ hψ n k
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) (n k : ℤ) :
+    AnalyticOnNhd ℂ (sourceSection20PrintedAuxiliary hp hp1 s n k ψ)
+      (sourceStandardRootOmittedDomain hp hp1 ψ k ∩ {z | z ≠ sourceStandardRootMidpoint hp hp1 ψ n}) := Q.auxiliary_analytic ψ hψ n k
+
+example (ψ : CoeffPair p) (n : ℤ) (z : ℂ) :
+    sourcePsiCandidate n (z,(s n ψ : Coeff p))/sourceCanonicalRoot hp hp1 ψ z =
+      (-Complex.I/sourceStandardRoot hp hp1 ψ n z)*sourceSection20Zeta hp hp1 s n n ψ z := SourceSection20Data.diagonal_factor ψ n z
+
+example (ψ : CoeffPair p) (n k : ℤ) (hkn : k ≠ n) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    sourcePsiCandidate n (z,(s n ψ : Coeff p))/sourceCanonicalRoot hp hp1 ψ z =
+      ((displacedRoots (s n ψ : Coeff p) k-z)/sourceStandardRoot hp hp1 ψ k z)*
+        sourceSection20PrintedAuxiliary hp hp1 s n k ψ z := SourceSection20Data.offDiagonal_factor ψ n k hkn z hz
+
+example (ψ : CoeffPair p) (n k : ℤ) (z : ℂ) (hz : z ∈ sourceStandardRootOmittedDomain hp hp1 ψ k) :
+    HasProd (fun m : {m : ℤ // m ≠ k} =>
+      (displacedRoots (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n)) m-z)/
+        sourceStandardRoot hp hp1 ψ m z) (-sourceSection20Zeta hp hp1 s n k ψ z) := SourceSection20Data.zeta_product ψ n k z hz
+
+example (n : ℤ) : ¬ ContinuousAt (sourceSection20PrintedAuxiliary hp hp1 s n n 0) ((Real.pi : ℂ)*n) :=
+  Q.printed_diagonal_auxiliary_not_continuous n
+
+example {p' : ℝ≥0∞} [Fact (1 ≤ p')] {hp' : p' ≠ ⊤} {hp1' : 1 < p'}
+    {W₀' W' V' Wa' B' U' : Set (CoeffPair p')}
+    {s' : (n : ℤ) → CoeffPair p' → DeletedCoeff p' n}
+    {D' : SourceSection17OriginalData hp' hp1' W₀' W' V' s'}
+    {A' : SourceAbelianMomentAtlas hp' hp1' Wa' s'} (Q' : SourceSection20Data D' A' B' U')
+    (φ : realTypeSourceSubmodule p) (ψ : realTypeSourceSubmodule p')
+    (he : ∀ j : ℤ, ψ.val.fst j = φ.val.fst j ∧ ψ.val.snd j = φ.val.snd j) (n : ℤ) :
+    A.renormalizedFrequency n φ.val = A'.renormalizedFrequency n ψ.val := Q.frequency_eq_of_coefficients Q' φ ψ he n
+
+end OriginalSection20
+
+section OriginalSection20Exponents
+open Set Metric Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+example {W₀ W V Wa B U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s} (Q : SourceSection20Data D A B U)
+    (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r) : AnalyticOnNhd ℂ (A.frequencySequence r) U :=
+  (Q.sequence_analytic r hr hr1 (by simpa using hr1.le)).2.1
+
+example {W₀ W V Wa B U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s} (Q : SourceSection20Data D A B U)
+    {T : Set (Coeff 1)} {F : Coeff 1 → ℤ → ℂ} (E : SourceOriginalHilbertFrequencyData D T F)
+    (φ : realTypeSourceSubmodule 2) (n : ℤ) :
+    F (sourceActionSequence (q := 1) (by simp) (by norm_num) s φ.val) n = A.renormalizedFrequency n φ.val := Q.hilbert_action_frequency E φ n
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (5/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (5/4)) := ⟨by norm_num⟩
+
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    ∃ D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s,
+    ∃ Wa, ∃ A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s,
+    ∃ B U, SourceSection20Data D A B U ∧ ENNReal.ofReal ((ENNReal.ofReal (3/2)).toReal/2) < 1 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,by norm_num⟩
+
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (5/2))), ∃ s,
+    ∃ D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s,
+    ∃ Wa, ∃ A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s,
+    ∃ B U, SourceSection20Data D A B U ∧ AnalyticOnNhd ℂ (A.frequencySequence (ENNReal.ofReal (5/4))) U ∧
+      ENNReal.ofReal ((ENNReal.ofReal (5/2)).toReal/3) < 1 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := ENNReal.ofReal (5/2)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,(Q.sequence_analytic _ (by norm_num) (by norm_num) (by norm_num)).2.1,by norm_num⟩
+
+end OriginalSection20Exponents

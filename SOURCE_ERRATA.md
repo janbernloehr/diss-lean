@@ -2348,3 +2348,32 @@ It covers r≤1 and the finite-support endpoint. Optimality is existential;
 it is not a claim about every source, and the free source is smoother.
 This settles the optimality assertion without reinstating the false
 printed remainder display. See `coverage/SECTION_10.md`.
+
+## Section 20: the diagonal auxiliary factor has a pole (page 92)
+
+After (4.9), the text asserts analyticity of both ζₖ and ζₖⁿ on the
+isolating disk Uₖ for every k. Formula (4.10) defines the auxiliary
+factor by ζₖⁿ=−i ζₖ/(τₙ−λ), with the unused numerator root σₙⁿ filled
+by τₙ. The assertion about ζₖⁿ is false on the diagonal k=n.
+
+[`SourceSection20Factors.lean`](NLS/ZakharovShabat/SourceSection20Factors.lean)
+defines the literal negative product and the printed quotient without
+changing the diagonal case. For the actual zero source in any original
+family, the filled root sequence is zero displacement, and the convergent
+quotient product is one near nπ. Thus ζₙ=−1 there and the printed ζₙⁿ is
+i/(nπ−λ) away from the center. The theorem
+`SourceSection20Data.printed_diagonal_auxiliary_not_continuous` proves
+that this function is not continuous at nπ. Lean's totalized division
+at the center does not remove the punctured-neighborhood obstruction.
+
+The corrected analytic domain for the printed auxiliary quotient is the
+selected omitted-gap domain with τₙ excluded, as proved by
+`SourceSection20Data.auxiliary_analytic`. On the original isolating disk
+the auxiliary-factor claim is used only for k≠n. The regular ζₙ itself
+is analytic across the selected gap and supplies the diagonal factor
+−i ζₙ/wₙ in (4.9). The off-diagonal factorization and literal convergent
+product in (4.9)–(4.10) are also proved. The moment and frequency theorems
+do not require the false diagonal auxiliary-factor claim.
+
+See [the Section 20 audit](coverage/SECTION_20.md) for the common original
+family, exact formulas, and remaining scope.

@@ -3703,3 +3703,9 @@ import NLS.ZakharovShabat.SourceSection19Domain
 import NLS.ZakharovShabat.SourceSection19Primitive
 import NLS.ZakharovShabat.SourceSection19Laurent
 import NLS.ZakharovShabat.SourceSection19Original
+import NLS.ZakharovShabat.SourceSecondMomentMixed
+import NLS.ZakharovShabat.SourceSection20Domain
+import NLS.ZakharovShabat.SourceSection20Moments
+import NLS.ZakharovShabat.SourceSection20Frequencies
+import NLS.ZakharovShabat.SourceSection20Factors
+import NLS.ZakharovShabat.SourceSection20Original

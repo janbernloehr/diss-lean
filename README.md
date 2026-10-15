@@ -5,13 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 19's original abelian integral now has one common
-source domain, admissible-path independence, exact endpoint and boundary
-values, literal mixed gap suprema, and the physical Hamiltonian Laurent
-and cubic expansions. The same package attaches to the original Birkhoff
-family and retains every real source.
+Latest step: Section 20's contour moments and renormalized frequencies now
+use the original Birkhoff roots and the retained Section 19 primitive on
+one common source domain. The package proves the moment identities,
+physical finite-gap normalization, analytic frequency extensions, fixed
+mixed remainders, and agreement with the original action frequency.
+The printed diagonal auxiliary-factor analyticity claim has a formal
+counterexample at the zero potential.
 
-Next: Section 20's original frequency and contour-moment assertions.
+Next: audit Section 20's opening complex H¹ Poisson identity, then the
+original Section 21 assertions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -21,7 +24,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 16 audit](coverage/SECTION_16.md),
 [the Section 17 audit](coverage/SECTION_17.md),
 [the Section 18 audit](coverage/SECTION_18.md),
-[the Section 19 audit](coverage/SECTION_19.md), and
+[the Section 19 audit](coverage/SECTION_19.md),
+[the Section 20 audit](coverage/SECTION_20.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

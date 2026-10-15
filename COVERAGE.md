@@ -43,7 +43,15 @@ formal witnesses. The original abelian integral, admissible paths,
 endpoint and side limits, physical Laurent series, and literal mixed gap
 supremum are audited in [`coverage/SECTION_19.md`](coverage/SECTION_19.md).
 These assertions hold for one canonical primitive on one common source
-domain inside the original family. The next detailed audit is Section 20.
+domain inside the original family. The original contour moments and
+frequency assertions are audited in
+[`coverage/SECTION_20.md`](coverage/SECTION_20.md). That package retains
+the same primitive and original roots, proves the physical finite-gap
+normalization, fixed mixed remainders, analytic sequence maps, and
+compatibility with the original action frequency. The unrestricted
+diagonal auxiliary-factor analyticity claim has a formal zero-source
+counterexample. The next work is the opening complex H¹ Poisson identity
+in Section 20, followed by the original Section 21 assertions.
 
 ## Nonextension proof and limits
 

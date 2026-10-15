@@ -113,6 +113,8 @@ normalization, both side limits, the two suprema, physical Laurent
 coefficients, and p=3/2 with a quasi-normed p/2=3/4 component. Gate results
 are recorded in [the implementation status](../STATUS.md).
 
-Next: the original Section 20 frequency and contour-moment assertions.
+The original Section 20 frequency and contour-moment package now retains
+this primitive; see [the Section 20 audit](SECTION_20.md) for its exact
+scope and remaining work.
 Section 14's external Hilbert-map identification and full fractional
 smoothness qualifications remain. The dissertation is incomplete.

@@ -1,6 +1,50 @@
 # Implementation plan
 
-## Current milestone: Section 19 original abelian integrals
+## Current milestone: Section 20 original moments and frequencies
+
+`sourceSection20_original` constructs the original contour moments and
+renormalized frequencies on one open connected source domain containing
+every real source. It retains the original Birkhoff roots and the same
+Section 19 primitive. An already chosen original family can also be kept.
+
+The package covers all four Lemma 20.1 clauses, the actual physical
+finite-gap frequency normalization in Lemma 20.2, and the diagonal and
+off-diagonal estimates of Lemma 20.3. The mixed remainder sequences are
+chosen before every auxiliary exponent, and the off-diagonal bounds are
+uniform in the deleted index. Quasi-normed p/2 and p/3 components are
+included.
+
+The actual moment sum converges absolutely and locally uniformly, gives
+the unique analytic continuation of the physical finite-gap frequencies,
+and has analytic sequence-space realizations with the Theorem 20.5
+mixed remainder. It agrees with the previously constructed original
+action frequency on every real source and, for the higher-exponent map,
+on a common connected complex neighborhood containing all real sources.
+
+Equations (4.9)–(4.10) retain their literal signs and convergent product.
+The unrestricted analyticity claim for the diagonal auxiliary factor is
+formally refuted: at the actual zero source it has a pole at nπ. The
+regular diagonal factor and corrected auxiliary domain are proved.
+
+Six new modules and 35 public checks include p=3/2 and p=5/2, physical
+normalization, uniqueness, the mixed quantifiers, and the counterexample.
+See [the Section 20 audit](coverage/SECTION_20.md) and
+[the source corrections](SOURCE_ERRATA.md).
+Next: audit Section 20's opening complex H¹ Poisson identity, then the
+original Section 21 assertions. The physical normalization packaged here
+is for real finite-gap sources; the complex continuation and action
+identity have the domains stated above. Section 14's external Hilbert-map
+and full fractional-smoothness qualifications remain. The dissertation
+is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,147
+jobs, all 5,577 public examples pass, and the transitive axiom audit checks
+34,051 NLS declarations. The six new modules and 35 new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 302 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 19 original abelian integrals
 
 `sourceSection19_original` attaches the Section 19 abelian-integral package
 to an original Section 17 Birkhoff family. Its open connected source
