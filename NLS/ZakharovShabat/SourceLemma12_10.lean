@@ -23,6 +23,8 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 with original equation zeros and placement in supplied original disks. -/
 structure SourceLemma12_10Data (hp : p ≠ ⊤) (hp1 : 1 < p)
     (W₀ W : Set (CoeffPair p)) (s : (n : ℤ) → CoeffPair p → DeletedCoeff p n) : Prop where
+  atlas : ∃ A : SourcePsiSquaredGapComplexRootAtlas hp hp1 W₀,
+    A.toSourcePsiComplexRootAtlas.domain = W ∧ A.toSourcePsiComplexRootAtlas.branch = s
   previous : SourceProposition12_9Data hp hp1 W₀
   psi : SourceTheorem12_1Data hp hp1 W₀ W s
   subset : W ⊆ W₀
@@ -52,6 +54,7 @@ theorem SourceProposition12_9Data.lemma12_10
       fun ψ hψ n m D => A.toSourcePsiIsolatingComplexRootAtlas.periodCircle_orthogonality
         W₀ (Subset.refl _) H4.previous.psiIntegrand_joint ψ hψ n m D⟩
   refine ⟨B.domain,B.isOpen_domain,B.isSimplyConnected_domain,B.realType_subset_domain,B.branch,{
+    atlas := ⟨A,rfl,rfl⟩,
     previous := H,
     psi := H12,
     subset := H12.subset,

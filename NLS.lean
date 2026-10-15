@@ -3613,3 +3613,12 @@ import NLS.ZakharovShabat.SourcePsiOriginalFiniteGeometry
 import NLS.ZakharovShabat.SourcePsiOriginalNormalization
 import NLS.ZakharovShabat.SourcePsiOriginalOuterProduct
 import NLS.ZakharovShabat.SourceLemma12_11
+import NLS.SequenceSpaces.WeightQuotient
+import NLS.ZakharovShabat.SourcePsiOriginalRootFamily
+import NLS.ZakharovShabat.SourcePsiOriginalChi
+import NLS.ZakharovShabat.SourcePsiOriginalFamilyQuotient
+import NLS.ZakharovShabat.SourcePsiOriginalChiMajorant
+import NLS.ZakharovShabat.SourcePsiOriginalChiCauchy
+import NLS.ZakharovShabat.SourcePsiOriginalRootOffset
+import NLS.ZakharovShabat.SourcePsiOriginalRootBootstrap
+import NLS.ZakharovShabat.SourceLemma12_12

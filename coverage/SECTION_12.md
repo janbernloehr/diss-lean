@@ -36,7 +36,10 @@ provides the required control. Lemma 12.11 now gives the literal diagonal
 normalization 2π on that unchanged W and for every original cycle, via
 original equation zeros, finite contour decomposition, and the exterior
 limit. Both individual sine asymptotics have a corrected minus sign;
-the quotient and final normalization are unchanged. Lemma 12.12 is next.
+the quotient and final normalization are unchanged. Lemma 12.12 now proves
+the literal locally uniform squared-gap root estimate on that same W,
+including the original-disk chi bounds, Cauchy estimates, and both
+substitution stages. Section 13 is next.
 
 Proposition 12.9 now gives the unique global real analytic solution of the
 original equation on the projected original domain, with exact gap placement,
@@ -1007,3 +1010,66 @@ No reality or noncollapsed-gap restriction is added to the source.
 | [SourcePsiOriginalNormalization](../NLS/ZakharovShabat/SourcePsiOriginalNormalization.lean) | Equation zeros, large-circle equality, direct diagonal normalization, and arbitrary winding |
 | [SourcePsiOriginalOuterProduct](../NLS/ZakharovShabat/SourcePsiOriginalOuterProduct.lean) | Literal full quotient product, moving-midpoint pole formula, corrected sine signs, and exact free sign obstruction |
 | [SourceLemma12_11](../NLS/ZakharovShabat/SourceLemma12_11.lean) | Raw normalization and outer identity retaining exactly Lemma 12.10's domains and root maps |
+
+## Lemma 12.12: original squared-gap root estimates
+
+`SourceLemma12_11Data.lemma12_12` proves the literal squared-gap root
+factorization on exactly Lemma 12.10's W and root maps, retaining
+Lemma 12.11's periods and the original W₀. For every finite 1<p<∞,
+one positive bound for the summable p-power series works for all
+omitted indices on a neighborhood of every complex source. The omitted
+coordinate is filled with the moving midpoint and has zero offset;
+collapsed complex gaps force the actual root to equal that midpoint.
+
+The original construction witness is now retained in Lemma 12.10's
+package. It supplies the common positive midpoint lower bound for the
+same family. Its previously proved squared-gap estimate also supplies
+norm compactness of the filled root vectors at each complex source.
+Uniform branch continuity and a compact-parameter argument then transfer
+the quotient estimates to every supplied original disk, including the
+full quarter-π tail disks. This proof reuses that established estimate
+for compactness; it does not assume compactness of arbitrary norm balls.
+
+The literal identities (2.30), (2.31), and (2.33) hold on original
+circles. Equation (2.32) has a complete ℓᵖ majorant locally throughout
+W, uniformly in the omitted index. Existing simultaneous original
+contours have a common positive boundary margin. Cauchy's estimate
+bounds the divided differences on their entire filled disks. The actual
+gap maximum gives both inequalities in (2.34), including their common
+ℓᵖ bound. An O(1) branch estimate followed by the two substitutions
+produces first-gap and squared-gap sequences, with exact factorizations
+also at zero gaps. No further shrink of the common W occurs.
+
+Twenty-eight public checks cover the unchanged domains and normalization,
+complex-source compactness and uniform graph continuity, literal products,
+original disk and contour estimates, signed indices, the first-order
+expansion, both substitution stages, partial and total power sums,
+collapsed complex and free gaps, and exponents 3/2 and 4.
+
+Next: Section 13's admissible-path angle definitions and Theorem 13.1.
+The dissertation remains incomplete.
+
+Validation: the full build passed 7059 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33501 NLS
+declarations. The nine new modules and twenty-eight new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, and all 167 checked local Markdown file links resolve.
+
+The dependency chain is explicit: the retained atlas was constructed
+and proved earlier. Its offset estimate is used to obtain compactness;
+the original-disk proof assertions are then verified for that same family.
+The new package derives its p-power estimate from `original_two_stage_offsets`.
+The sign in (2.31) includes the minus already present in (2.25); no new
+sign correction to Lemma 12.12 is needed.
+
+| Module | Verified scope |
+| --- | --- |
+| [WeightQuotient](../NLS/SequenceSpaces/WeightQuotient.lean) | Exact linear-weight quotient, including zero weights |
+| [SourcePsiOriginalRootFamily](../NLS/ZakharovShabat/SourcePsiOriginalRootFamily.lean) | Literal offsets, compact filled root family, complex midpoint continuity and uniform branch stability |
+| [SourcePsiOriginalChi](../NLS/ZakharovShabat/SourcePsiOriginalChi.lean) | Original-circle identities (2.30), (2.31), (2.33), and the retained midpoint lower bound |
+| [SourcePsiOriginalFamilyQuotient](../NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean) | One lp bound for actual quotient suprema on all supplied original disks |
+| [SourcePsiOriginalChiMajorant](../NLS/ZakharovShabat/SourcePsiOriginalChiMajorant.lean) | Equation (2.32) on full original disks throughout the complex domain |
+| [SourcePsiOriginalChiCauchy](../NLS/ZakharovShabat/SourcePsiOriginalChiCauchy.lean) | Uniform original contour margins and divided-difference lp bounds |
+| [SourcePsiOriginalRootOffset](../NLS/ZakharovShabat/SourcePsiOriginalRootOffset.lean) | Attained gap maximum and both locally uniform inequalities (2.34) |
+| [SourcePsiOriginalRootBootstrap](../NLS/ZakharovShabat/SourcePsiOriginalRootBootstrap.lean) | O(1) bounds and the two actual gap substitutions |
+| [SourceLemma12_12](../NLS/ZakharovShabat/SourceLemma12_12.lean) | Literal p-power sum and collapsed-gap consequences on the unchanged domains and family |

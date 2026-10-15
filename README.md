@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 12.11 now proves the literal diagonal period 2π on
-Lemma 12.10's unchanged complex domain. The proof uses original equation
-zeros, contour decomposition, and the exterior limit. Two sign corrections
-in the printed intermediate sine asymptotics leave this result unchanged.
+Latest step: Lemma 12.12 proves the squared-gap root estimates on the
+unchanged complex domain, uniformly in the omitted index. The original
+contour identities, full-disk chi estimates, Cauchy bound, and both
+substitution stages are verified, including collapsed gaps.
 
-Next: Lemma 12.12's squared-gap root offsets. The dissertation remains
-incomplete.
+Next: Section 13's angle definitions and Theorem 13.1. The dissertation
+remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

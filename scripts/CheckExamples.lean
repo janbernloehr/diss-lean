@@ -51990,3 +51990,206 @@ example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsConnect
 
 end
 end SourceLemma1211Checks
+
+namespace SourceLemma1212Checks
+noncomputable section
+open Set Complex Filter Topology Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (H : SourceLemma12_11Data hp hp1 W₀ W s) (hW₀ : IsOpen W₀)
+variable (H12 : SourceLemma12_12Data hp hp1 W₀ W s)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (ψ : CoeffPair p) (hψ : ψ ∈ W) (hψV : ψ ∈ V)
+
+-- The step preserves the exact domains, root maps, analytic extension, and original equation.
+example : SourceLemma12_12Data hp hp1 W₀ W s := H.lemma12_12 hW₀
+
+example : W ⊆ W₀ ∧ (∀ n, AnalyticOnNhd ℂ (s n) W) ∧
+    ∀ χ ∈ W, ∀ n, sourcePsiOriginalEquation hp hp1 n (s n χ) χ = 0 :=
+  ⟨H12.previous.previous.subset,H12.previous.previous.analytic,H12.previous.previous.equation⟩
+
+example (n : ℤ) (P : SourceCriticalRootPeriodCircle hp hp1 ψ n) :
+    (∮ z in C((P.center:ℂ),P.radius),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,((s n ψ:Coeff p),ψ))) = (2*Real.pi:ℂ) :=
+  H12.previous.circle ψ hψ n P
+
+example (n : ℤ) (φ : realTypeSourceSubmodule p) :
+    s n φ = RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal hp hp1 n φ) :=
+  H12.previous.previous.real_agreement n φ
+
+-- One p-power bound works for every omitted index near an arbitrary complex source.
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧
+    ∃ C : ℝ, 0 < C ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ α : Coeff p, α n = 0 ∧
+      (∀ m, displacedRoots (sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n)) m =
+        sourceStandardRootMidpoint hp hp1 χ m+(sourcePeriodicGapDisplacement hp hp1 χ m)^2*α m) ∧
+      Summable (fun m : ℤ => ‖α m‖^p.toReal) ∧ (∑' m : ℤ, ‖α m‖^p.toReal) ≤ C :=
+  H12.offsets ψ hψ
+
+-- Retained collapsed complex gaps and the filled omitted coordinate are both included.
+example (n m : ℤ) (hmn : m ≠ n) (hg : sourcePeriodicGapDisplacement hp hp1 ψ m = 0) :
+    displacedRoots (s n ψ:Coeff p) m = sourceStandardRootMidpoint hp hp1 ψ m := by
+  simpa only [displacedRoots_sourcePsiFillDeletedRoot_other n m hmn] using
+    H12.collapsed_root_eq_midpoint ψ hψ n m hg
+
+example (n : ℤ) :
+    displacedRoots (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n)) n =
+      sourceStandardRootMidpoint hp hp1 ψ n := displacedRoots_sourcePsiFillDeletedRoot_same _ _ _
+
+-- The two substitutions also retain their intermediate first-gap factorization.
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧
+    ∃ C : ℝ, 0 < C ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ β α : Coeff p, β n = 0 ∧ α n = 0 ∧
+      (∀ m, displacedRoots (sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n)) m =
+        sourceStandardRootMidpoint hp hp1 χ m+sourcePeriodicGapDisplacement hp hp1 χ m*β m) ∧
+      (∀ m, displacedRoots (sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n)) m =
+        sourceStandardRootMidpoint hp hp1 χ m+(sourcePeriodicGapDisplacement hp hp1 χ m)^2*α m) ∧
+      ‖β‖ ≤ C ∧ ‖α‖ ≤ C := H.original_two_stage_offsets hW₀ ψ hψ
+
+-- A finite partial sum and each coordinate obey the literal total power-sum bound.
+example (α : Coeff p) (hs : Summable (fun m : ℤ => ‖α m‖^p.toReal))
+    (C : ℝ) (hC : (∑' m : ℤ, ‖α m‖^p.toReal) ≤ C) (F : Finset ℤ) :
+    (∑ m ∈ F, ‖α m‖^p.toReal) ≤ C :=
+  (Summable.sum_le_tsum F (fun m _ => Real.rpow_nonneg (norm_nonneg (α m)) _) hs).trans hC
+
+example (α : Coeff p) (hs : Summable (fun m : ℤ => ‖α m‖^p.toReal))
+    (C : ℝ) (hC : (∑' m : ℤ, ‖α m‖^p.toReal) ≤ C) : ‖α (-7)‖^p.toReal ≤ C :=
+  (hs.le_tsum (-7) (fun m _ => Real.rpow_nonneg (norm_nonneg (α m)) _)).trans hC
+
+example (γ δ : ℤ → ℂ) (B : Coeff p) (C : ℝ) (hC : 0 ≤ C)
+    (hb : ∀ m, ‖δ m‖ ≤ C*‖γ m‖*‖B m‖) (m : ℤ) (hg : γ m = 0) : δ m = 0 := by
+  obtain ⟨A,_,hf,_⟩ := exists_coeff_weight_quotient γ δ B C hC hb
+  simpa only [hg,zero_mul] using hf m
+
+-- Compactness and one graph radius hold at complex points, uniformly over all signed indices.
+example : ∃ K : Set (Coeff p), IsCompact K ∧ ∀ n : ℤ,
+    sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n) ∈ K :=
+  H.original_filled_rootFamily_compact ψ hψ
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ r : ℝ, 0 < r ∧ ball ψ r ⊆ W ∧
+    ∀ χ ∈ ball ψ r, ∀ n : ℤ,
+      dist (sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n),χ)
+        (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n),ψ) < ε :=
+  H.original_filled_graph_radius ψ hψ ε hε
+
+example : ContinuousAt (sourcePeriodicMidpointDisplacement hp hp1) ψ :=
+  H.original_midpoint_continuous ψ hψ
+
+-- Arbitrary original disks, including the full quarter-pi tail, are kept in (2.32).
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∩ V ∧
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ E : Coeff p, ‖E‖ ≤ C ∧
+      ∀ m : ℤ, m ≠ n → ∀ z ∈ D m,
+        ‖sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n χ) χ z-Complex.I‖ ≤ ‖E m‖ :=
+  H.original_allDisk_chi_errorBound hD hV ψ hψ hψV
+
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∩ V ∧
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ E : Coeff p, ‖E‖ ≤ C ∧
+      (∀ m : ℤ, E m = (sourceQuotientDiscSup hp hp1 D
+        (sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n),χ) m : ℂ)) ∧
+      ∀ m : ℤ, ∀ z ∈ D m, ‖sourceSingleRootQuotientJointProduct hp hp1 m
+        (z,(sourcePsiFillDeletedRoot n (s n χ) (sourceStandardRootMidpoint hp hp1 χ n),χ))-1‖ ≤ ‖E m‖ :=
+  H.original_allDisk_quotient_errorBound hD hV ψ hψ hψV
+
+example (C : SourceActionContourFamily hp hp1 V D) :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ m : ℤ, C.radius m+δ ≤ C.outer m := C.uniform_outer_margin
+
+example (C : SourceActionContourFamily hp hp1 V D) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∩ V ∧
+      ∃ L : ℝ, 0 ≤ L ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ E : Coeff p, ‖E‖ ≤ L ∧
+        ∀ m : ℤ, m ≠ n → ∀ z ∈ closedBall (C.center m:ℂ) (C.radius m),
+          ‖dslope (sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n χ) χ)
+            (sourceStandardRootMidpoint hp hp1 χ m) z‖ ≤ ‖E m‖ :=
+  H.original_chi_dslope_errorBound hD hV C ψ hψ hψV
+
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧
+    ∃ c₀ : ℝ, 0 < c₀ ∧ ∀ χ ∈ U, ∀ n m : ℤ, m ≠ n →
+      c₀ ≤ ‖sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n χ) χ
+        (sourceStandardRootMidpoint hp hp1 χ m)‖ := H.original_midpoint_lower_bound ψ hψ
+
+-- The literal (2.31) keeps the minus sign already present in (2.25).
+example (n m : ℤ) (hmn : m ≠ n) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain hp hp1 ψ m) :
+    sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ z =
+      ((Real.pi:ℂ)*((n-m:ℤ):ℂ))/(Complex.I*(sourceStandardRootMidpoint hp hp1 ψ n-z))*
+        (-(∏' k : {k : ℤ // k ≠ m},
+          (displacedRoots (sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n)) k-z)/
+            sourceStandardRoot hp hp1 ψ k z)) :=
+  sourcePsiMidpointFilledRegularFactor_eq_literal_product hp hp1 n m hmn (s n ψ) ψ z hz
+
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ 2) :
+    (∮ z in C((P.center:ℂ),P.radius),
+      ((displacedRoots (s (-3) ψ:Coeff p) 2-z)/sourceStandardRoot hp hp1 ψ 2 z)*
+        sourcePsiMidpointFilledRegularFactor hp hp1 (-3) 2 (s (-3) ψ) ψ z) = 0 :=
+  H.original_chi_zero_period hW₀ ψ hψ (-3) 2 (by decide) P
+
+example (n m : ℤ) (hmn : m ≠ n) (P : SourceCriticalRootPeriodCircle hp hp1 ψ m) :
+    AnalyticOnNhd ℂ (sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ)
+      (closedBall (P.center:ℂ) P.radius) := H.original_chi_analytic ψ hψ n m hmn P
+
+example (n m : ℤ) (hmn : m ≠ n) (P : SourceCriticalRootPeriodCircle hp hp1 ψ m) :
+    (2*Real.pi*Complex.I:ℂ)*(displacedRoots (s n ψ:Coeff p) m-sourceStandardRootMidpoint hp hp1 ψ m)*
+      sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ (sourceStandardRootMidpoint hp hp1 ψ m) =
+        ∮ z in C((P.center:ℂ),P.radius),
+          ((displacedRoots (s n ψ:Coeff p) m-z)*(z-sourceStandardRootMidpoint hp hp1 ψ m)/
+            sourceStandardRoot hp hp1 ψ m z)*
+              dslope (sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ)
+                (sourceStandardRootMidpoint hp hp1 ψ m) z :=
+  H.original_chi_dslope_identity hW₀ ψ hψ n m hmn P
+
+-- The first-order expansion includes its filled value at the midpoint.
+example (n m : ℤ) (z : ℂ) :
+    sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ z =
+      sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ (sourceStandardRootMidpoint hp hp1 ψ m)+
+        (z-sourceStandardRootMidpoint hp hp1 ψ m)*
+          dslope (sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ)
+            (sourceStandardRootMidpoint hp hp1 ψ m) z := by
+  have hh := sub_smul_dslope (sourcePsiMidpointFilledRegularFactor hp hp1 n m (s n ψ) ψ)
+    (sourceStandardRootMidpoint hp hp1 ψ m) z
+  simp only [smul_eq_mul] at hh
+  linear_combination -hh
+
+example (hVW : V ⊆ W₀) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∩ V ∧
+      ∃ L : ℝ, 0 ≤ L ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ E : Coeff p, ‖E‖ ≤ L ∧
+        ∀ m : ℤ, m ≠ n → ∃ ξ ∈ sourcePeriodicSegment hp hp1 χ m,
+          IsMaxOn (fun z => ‖displacedRoots (s n χ:Coeff p) m-z‖) (sourcePeriodicSegment hp hp1 χ m) ξ ∧
+          ‖displacedRoots (s n χ:Coeff p) m-sourceStandardRootMidpoint hp hp1 χ m‖ ≤
+            ‖displacedRoots (s n χ:Coeff p) m-ξ‖*‖sourcePeriodicGapDisplacement hp hp1 χ m‖*‖E m‖ ∧
+          ‖displacedRoots (s n χ:Coeff p) m-ξ‖*‖sourcePeriodicGapDisplacement hp hp1 χ m‖*‖E m‖ ≤
+            (‖displacedRoots (s n χ:Coeff p) m-sourceStandardRootMidpoint hp hp1 χ m‖+
+              ‖sourcePeriodicGapDisplacement hp hp1 χ m‖/2)*‖sourcePeriodicGapDisplacement hp hp1 χ m‖*‖E m‖ :=
+  H.original_root_offset_inequalities hW₀ hD hV hVW ψ hψ hψV
+
+-- The free source has collapsed gaps at every signed index.
+example (h0 : (0:CoeffPair p) ∈ W) (n m : ℤ) (hmn : m ≠ n) :
+    displacedRoots (s n 0:Coeff p) m = (Real.pi:ℂ)*m := by
+  have hg : sourcePeriodicGapDisplacement hp hp1 (0:CoeffPair p) m = 0 := by
+    rw [sourcePeriodicGapDisplacement_zero_source hp hp1]
+    rfl
+  have hh := H12.collapsed_root_eq_midpoint 0 h0 n m hg
+  simpa only [displacedRoots_sourcePsiFillDeletedRoot_other n m hmn,
+    sourceStandardRootMidpoint,map_zero,canonicalPeriodicMidpoint_zero] using hh
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W₀ : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsConnected W₀ ∧ realTypeSourceLocus _ ⊆ W₀ ∧
+    ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus _ ⊆ W ∧
+      ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n,
+        SourceLemma12_12Data (by norm_num) (by norm_num) W₀ W s :=
+  sourceLemma12_12 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s : (n : ℤ) → CoeffPair (4:ℝ≥0∞) → DeletedCoeff (4:ℝ≥0∞) n,
+      SourceLemma12_11Data (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ ψ ∈ W, ∃ U : Set (CoeffPair (4:ℝ≥0∞)), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧
+        ∃ C : ℝ, 0 < C ∧ ∀ χ ∈ U, ∀ n : ℤ, ∃ α : Coeff (4:ℝ≥0∞), α n = 0 ∧
+          (∀ m, displacedRoots (sourcePsiFillDeletedRoot n (s n χ)
+            (sourceStandardRootMidpoint (by norm_num) (by norm_num) χ n)) m =
+              sourceStandardRootMidpoint (by norm_num) (by norm_num) χ m+
+                (sourcePeriodicGapDisplacement (by norm_num) (by norm_num) χ m)^2*α m) ∧
+          Summable (fun m : ℤ => ‖α m‖^(4:ℝ)) ∧ (∑' m : ℤ, ‖α m‖^(4:ℝ)) ≤ C := by
+  obtain ⟨W₀,ho,_,_,W,hW,hs,hr,s,H12⟩ := sourceLemma12_12 (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hW,hs,hr,s,H12.previous,by simpa using H12.offsets⟩
+
+end
+end SourceLemma1212Checks
