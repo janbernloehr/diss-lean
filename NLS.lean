@@ -3646,3 +3646,9 @@ import NLS.ZakharovShabat.SourceAngularOriginalEtaAnalytic
 import NLS.ZakharovShabat.SourceAngularOriginalEtaValues
 import NLS.ZakharovShabat.SourceAngularOriginalEtaIntegral
 import NLS.ZakharovShabat.SourceTheorem13_1OriginalEta
+import NLS.ZakharovShabat.SourceAngularOriginalBetaSeries
+import NLS.ZakharovShabat.SourceAngularOriginalTheta
+import NLS.ZakharovShabat.SourceAngularOriginalThetaDomain
+import NLS.ZakharovShabat.SourceAngularOriginalCanonicalDifferentials
+import NLS.ZakharovShabat.SourceTheorem13_1Original
+import NLS.ZakharovShabat.SourceCorollary13_2Original

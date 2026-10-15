@@ -1,6 +1,57 @@
 # Implementation status
 
-## Current milestone: Section 13 original-domain eta integrals and analyticity
+## Current milestone: Section 13 original series, theta, and canonical brackets
+
+`sourceTheorem13_1_original` retains the same W₀, simply connected W,
+and normalized psi family from Lemma 12.12. The literal beta correction
+series converges absolutely at every source and locally uniformly on a
+neighborhood common to every deleted index. Its sum is complex analytic
+on W. Both the absolute sum and the correction tend to zero as the signed
+index tends to either infinity. At real-type sources the correction is real.
+
+`sourceAngularOriginalTheta` is exactly the constructed eta integral plus
+this beta series. Changing the eta integral changes theta by an integer
+multiple of 2π. Local analytic representatives agree with the literal sum
+modulo π, are real at real-type sources, and have exactly the existing
+phase differential. The complete angular interface is constructed with
+W in all three domain slots, preserving the original root family.
+
+`sourceCorollary13_2_original` supplies all three canonical identities for
+every finite p>1. The action/action bracket needs no open-gap hypothesis;
+the theta/theta bracket requires the two angle gaps to be open; the mixed
+bracket requires only the angle gap. A collapsed action gap is allowed.
+
+The action comparison is explicit: the original indexed action and the
+earlier complex action have equal complex germs near every real source,
+hence equal Fréchet derivatives. `originalActionCotangent` has the indexed
+action's actual derivative as its underlying functional. The angle's
+regular cotangent is likewise the derivative of a local representative of
+the literal theta sum. Their square-summable coefficients give the actual,
+absolutely convergent Fourier pairing with frequency reversal and sign -i,
+including below exponent two.
+
+Fourteen public checks cover the common-neighborhood quantifier order,
+absolute convergence, decay in both directions, real values, integral-choice
+periods, actual local differentials, all three brackets, collapsed action
+gaps, and the literal Fourier sum. Unconditional checks at exponents 4 and
+3/2 retain the original domain and verify the canonical mixed identity.
+
+Remaining Section 13 work: extend the general path comparison from supplied
+curve-integrable C¹ paths to arbitrary admissible C¹ paths whose endpoint
+integrals are interpreted as improper limits. Constructed paths already
+have absolute integrability and independent endpoint limits. No blanket
+absolute-integrability assertion for arbitrary C¹ paths is made. After
+that source-definition audit, proceed to Section 14. The dissertation is
+not complete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,089
+jobs, all public examples pass, and the transitive axiom audit checks 33,629
+NLS declarations. The six new modules and fourteen new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 199 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 13 original-domain eta integrals and analyticity
 
 `sourceTheorem13_1_original_eta` retains the same W₀, simply connected W,
 and normalized psi family from Lemma 12.12. At every complex open gap,

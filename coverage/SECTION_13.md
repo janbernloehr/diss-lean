@@ -8,16 +8,67 @@ modules remain available; this audit follows the retained Section 12 data.
 | Source assertion | Current original-domain evidence | Remaining work |
 | --- | --- | --- |
 | One common W and actual psi family | `sourceSection13OriginalDomain` retains Lemma 12.12 and constructs original disks containing the Dirichlet roots at every complex source | None for domain and terminal geometry |
-| Beta does not depend on the admissible path or root continuation | `original_dirichlet_integral_path` constructs integrable paths; `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value` identify their values, including different disks and collapsed gaps | None for the beta integral construction and comparison |
+| Beta does not depend on the admissible path or root continuation | `original_dirichlet_integral_path` constructs integrable paths; `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value` identify their values, including different disks and collapsed gaps | Extend to arbitrary admissible C¹ paths interpreted through improper endpoint limits |
 | A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_zero` and constructed integrable endpoint paths, at open and collapsed gaps | None for periodic-terminal beta values |
 | Eta is independent modulo 2π of the admissible path | `eta_original_integral_values_period` and `eta_original_dirichlet_path_periods_across_circles` identify actual normalized integrable paths, including different disks and periodic terminals | General supplied paths retain C¹ and actual/model integrability hypotheses |
 | Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` gives uniqueness, complex analyticity, and the locally uniform estimate; `beta_original_im_eq_zero` proves reality on the real-type locus | Constructed endpoint integrals, analyticity, reality, and estimate proved on the retained domain |
 | Theorem 13.1(ii): eta analytic modulo π | `sourceTheorem13_1_original_eta` constructs literal eta values and real analytic local representatives on the same W; every normalized integrable original-disk path has the same phase | Original-domain analytic identification proved |
-| Theorem 13.1(iii): locally uniform beta series and o(1) | Existing summation tools remain available | Apply to the same-domain beta family and its bound |
-| Theorem 13.1(iv): real theta and analytic extension modulo π | Existing theta packages remain available | Identify the literal sum of the preceding same-domain angles |
-| Corollary 13.2: three Poisson bracket identities | Existing bracket machinery remains available | Audit identities for the same literal action/angle family and all finite p>1 |
+| Theorem 13.1(iii): locally uniform beta series and o(1) | `beta_original_series` gives absolute/local uniform convergence, analyticity, and absolute/correction decay on W | Proved on the retained domain |
+| Theorem 13.1(iv): real theta and analytic extension modulo π | `sourceTheorem13_1_original` and `sourceAngularOriginalTheta` identify the literal sum, analytic local representatives, reality, and its phase differential | Proved for the constructed literal integral family |
+| Corollary 13.2: three Poisson bracket identities | `sourceCorollary13_2_original`, `originalActionCotangent`, and `theta_original_regularCotangent_representative` identify the original actions and literal theta differentials for every finite p>1 | All three canonical identities and absolute Fourier pairings proved |
 
-## Verified original-domain eta integrals and analyticity
+## Verified original series, theta, and canonical brackets
+
+`sourceTheorem13_1_original` retains the same W₀, simply connected W,
+and normalized psi family from Lemma 12.12. The literal beta correction
+series converges absolutely at every source and locally uniformly on a
+neighborhood common to every deleted index. Its sum is complex analytic
+on W. Both the absolute sum and the correction tend to zero as the signed
+index tends to either infinity. At real-type sources the correction is real.
+
+`sourceAngularOriginalTheta` is exactly the constructed eta integral plus
+this beta series. Changing the eta integral changes theta by an integer
+multiple of 2π. Local analytic representatives agree with the literal sum
+modulo π, are real at real-type sources, and have exactly the existing
+phase differential. The complete angular interface is constructed with
+W in all three domain slots, preserving the original root family.
+
+`sourceCorollary13_2_original` supplies all three canonical identities for
+every finite p>1. The action/action bracket needs no open-gap hypothesis;
+the theta/theta bracket requires the two angle gaps to be open; the mixed
+bracket requires only the angle gap. A collapsed action gap is allowed.
+
+The action comparison is explicit: the original indexed action and the
+earlier complex action have equal complex germs near every real source,
+hence equal Fréchet derivatives. `originalActionCotangent` has the indexed
+action's actual derivative as its underlying functional. The angle's
+regular cotangent is likewise the derivative of a local representative of
+the literal theta sum. Their square-summable coefficients give the actual,
+absolutely convergent Fourier pairing with frequency reversal and sign -i,
+including below exponent two.
+
+Fourteen public checks cover the common-neighborhood quantifier order,
+absolute convergence, decay in both directions, real values, integral-choice
+periods, actual local differentials, all three brackets, collapsed action
+gaps, and the literal Fourier sum. Unconditional checks at exponents 4 and
+3/2 retain the original domain and verify the canonical mixed identity.
+
+Remaining Section 13 work: extend the general path comparison from supplied
+curve-integrable C¹ paths to arbitrary admissible C¹ paths whose endpoint
+integrals are interpreted as improper limits. Constructed paths already
+have absolute integrability and independent endpoint limits. No blanket
+absolute-integrability assertion for arbitrary C¹ paths is made. After
+that source-definition audit, proceed to Section 14. The dissertation is
+not complete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,089
+jobs, all public examples pass, and the transitive axiom audit checks 33,629
+NLS declarations. The six new modules and fourteen new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 199 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous original-domain eta integrals and analyticity
 
 `sourceTheorem13_1_original_eta` retains the same W₀, simply connected W,
 and normalized psi family from Lemma 12.12. At every complex open gap,
@@ -235,3 +286,12 @@ and `git diff --check` passes.
 | [SourceAngularOriginalEtaValues](../NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean) | All normalized integrable original paths agree with local analytic representatives modulo π |
 | [SourceAngularOriginalEtaIntegral](../NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean) | A chosen literal eta integral, its 2π class, reality, and joint improper limit |
 | [SourceTheorem13_1OriginalEta](../NLS/ZakharovShabat/SourceTheorem13_1OriginalEta.lean) | Unconditional retained-domain statement for every finite p greater than one |
+
+| Original series and canonical module | Verified scope |
+| --- | --- |
+| [SourceAngularOriginalBetaSeries](../NLS/ZakharovShabat/SourceAngularOriginalBetaSeries.lean) | Actual correction series, local uniform convergence, analyticity, reality, and decay |
+| [SourceAngularOriginalTheta](../NLS/ZakharovShabat/SourceAngularOriginalTheta.lean) | Literal eta-plus-beta sum, 2π integral-choice periods, phase, and analytic real representatives |
+| [SourceAngularOriginalThetaDomain](../NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean) | Complete angular data with W in every domain slot and the same normalized family |
+| [SourceAngularOriginalCanonicalDifferentials](../NLS/ZakharovShabat/SourceAngularOriginalCanonicalDifferentials.lean) | Actual local theta differentials and the indexed-action regular cotangent |
+| [SourceTheorem13_1Original](../NLS/ZakharovShabat/SourceTheorem13_1Original.lean) | Unconditional retained-domain theorem for the constructed literal angles |
+| [SourceCorollary13_2Original](../NLS/ZakharovShabat/SourceCorollary13_2Original.lean) | All three canonical identities for every finite p greater than one |

@@ -52754,3 +52754,131 @@ example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧
   exact ⟨U,f,hχU,hUW,ha,hv⟩
 
 end Section13OriginalEtaChecks
+section Section13OriginalSeriesChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.Poisson Set Metric Filter Topology
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (H : SourceLemma12_12Data hp hp1 W₀ W s)
+
+-- One source neighborhood works for all deleted indices in the locally uniform series.
+example (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧ ∀ n : ℤ,
+      TendstoUniformlyOn (fun (N : ℕ) ψ => ∑ m ∈ Finset.Icc (-(N:ℤ)) N,
+        sourceAngularBetaSeriesTerm hp hp1 n s ψ m)
+        (sourceAngularBetaCorrection hp hp1 n s) atTop U := H.beta_original_series.locally_uniform φ hφ
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    Summable (fun m => ‖sourceAngularBetaSeriesTerm hp hp1 n s ψ m‖) ∧
+      AnalyticAt ℂ (sourceAngularBetaCorrection hp hp1 n s) ψ :=
+  ⟨H.beta_original_series.summable_norm ψ hψ n,H.beta_original_series.analytic_correction n ψ hψ⟩
+
+-- The correction decays in both signed index directions.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    Tendsto (fun n : ℤ => sourceAngularBetaCorrection hp hp1 n s ψ) atTop (𝓝 0) ∧
+    Tendsto (fun n : ℤ => sourceAngularBetaCorrection hp hp1 n s ψ) atBot (𝓝 0) :=
+  ⟨(H.beta_original_series.correction_decay ψ hψ).mono_left atTop_le_cofinite,
+    (H.beta_original_series.correction_decay ψ hψ).mono_left atBot_le_cofinite⟩
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (hreal : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ) :
+    (sourceAngularBetaCorrection hp hp1 n s ψ).im = 0 := H.beta_original_correction_im_eq_zero ψ hψ hreal n
+
+-- Any literal normalized eta integral gives the same theta modulo 2π.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0)
+    {v : ℂ} (hv : v ∈ sourceAngularOriginalEtaIntegralValues hp hp1 n s ψ) :
+    Complex.exp (Complex.I*(v+sourceAngularBetaCorrection hp hp1 n s ψ)) =
+      Complex.exp (Complex.I*sourceAngularOriginalTheta hp hp1 n s ψ) := by
+  obtain ⟨k,hk⟩ := H.theta_original_integral_choice_period ψ hψ n hn hv
+  apply Complex.exp_eq_exp_iff_exists_int.mpr
+  exact ⟨k,by linear_combination Complex.I*hk⟩
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (hreal : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    (sourceAngularOriginalTheta hp hp1 n s ψ).im = 0 := H.theta_original_im_eq_zero ψ hψ hreal n hn
+
+-- The phase of the literal sum is analytic, not just an unrelated phase function.
+example (n : ℤ) : AnalyticOnNhd ℂ
+    (fun ψ => Complex.exp (2*Complex.I*sourceAngularOriginalTheta hp hp1 n s ψ))
+    {ψ : CoeffPair p | ψ ∈ W ∧ canonicalPeriodicGap hp hp1
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0} := by
+  intro ψ hψ
+  apply (H.theta_original_phase_analytic n ψ hψ).congr
+  filter_upwards [((H.eta_original_phase_analytic n).1).mem_nhds hψ] with χ hχ
+  exact (H.theta_original_phase χ hχ.1 n hχ.2).symm
+
+-- The original indexed action, including at collapsed gaps, has the actual regular cotangent.
+example (n : ℤ) (φ : realTypeSourceLocus p) :
+    (H.originalActionCotangent n φ).toCotangent = fderiv ℂ (sourceIndexedAction hp hp1 n) φ.val := rfl
+
+example (n : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    ∃ U : Set (CoeffPair p), ∃ f : CoeffPair p → ℂ,
+      φ.val ∈ U ∧ AnalyticOnNhd ℂ f U ∧
+      (∀ ψ ∈ U, ∃ k : ℤ, sourceAngularOriginalTheta hp hp1 n s ψ-f ψ = (k:ℂ)*Real.pi) ∧
+      (H.original_theta_common_domain.thetaRegularCotangent n φ hn).toCotangent = fderiv ℂ f φ.val := by
+  obtain ⟨U,f,_,hφU,_,ha,hv,hd⟩ := H.theta_original_regularCotangent_representative n φ hn
+  exact ⟨U,f,hφU,ha,hv,hd⟩
+
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    (H.originalActionCotangent n φ).bivector (H.originalActionCotangent m φ) = 0 ∧
+    (H.original_theta_common_domain.thetaRegularCotangent n φ hn).bivector
+      (H.original_theta_common_domain.thetaRegularCotangent m φ hm) = 0 ∧
+    (H.original_theta_common_domain.thetaRegularCotangent n φ hn).bivector
+      (H.originalActionCotangent m φ) = if n = m then 1 else 0 := by
+  have hc := H.original_corollary13_2 n m φ
+  exact ⟨hc.1,hc.2.1 hn hm,hc.2.2 hn⟩
+
+-- A collapsed action gap is permitted by the mixed identity.
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m = 0) :
+    (H.original_theta_common_domain.thetaRegularCotangent n φ hn).bivector
+      (H.originalActionCotangent m φ) = 0 := by
+  have hnm : n ≠ m := by intro he; subst m; exact hn hm
+  simpa only [if_neg hnm] using (H.original_corollary13_2 n m φ).2.2 hn
+
+-- The mixed bracket is the absolutely convergent physical Fourier sum of the original derivatives.
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    let L := sourceAngularThetaDifferential hp hp1 n s φ.val
+    let M := fderiv ℂ (sourceIndexedAction hp hp1 m) φ.val
+    Summable (fun k : ℤ => ‖L (CoeffPair.inlCLM (lp.single p k 1))*M (CoeffPair.inrCLM (lp.single p (-k) 1))-
+      L (CoeffPair.inrCLM (lp.single p k 1))*M (CoeffPair.inlCLM (lp.single p (-k) 1))‖) ∧
+    -Complex.I*(∑' k : ℤ, (L (CoeffPair.inlCLM (lp.single p k 1))*M (CoeffPair.inrCLM (lp.single p (-k) 1))-
+      L (CoeffPair.inrCLM (lp.single p k 1))*M (CoeffPair.inlCLM (lp.single p (-k) 1)))) =
+        if n = m then 1 else 0 := by
+  have hs := (H.original_theta_common_domain.thetaRegularCotangent n φ hn).summable_norm
+    (H.originalActionCotangent m φ)
+  have he := (H.original_theta_common_domain.thetaRegularCotangent n φ hn).bivector_eq_tsum
+    (H.originalActionCotangent m φ)
+  rw [(H.original_corollary13_2 n m φ).2.2 hn] at he
+  simpa only [SourceAngularThetaCommonDomainData.thetaRegularCotangent_toCotangent,
+    SourceLemma12_12Data.originalActionCotangent_toCotangent] using And.intro hs he.symm
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The full original-domain construction requires no supplied root family at p=4.
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := 4) (by norm_num) (by norm_num) W₀ W s ∧
+      SourceAngularThetaCommonDomainData (p := 4) (by norm_num) (by norm_num) W W W s := by
+  obtain ⟨W₀,_,_,_,W,ho,hc,hr,s,H,D,_⟩ := sourceTheorem13_1_original (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hc,hr,s,H,D⟩
+
+-- The same construction supplies canonical mixed brackets below the Hilbert exponent.
+example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∃ s, ∃ H : SourceLemma12_12Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W s,
+      ∀ n m : ℤ, ∀ φ : realTypeSourceLocus (ENNReal.ofReal (3/2)),
+      ∀ hn : canonicalPeriodicGap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0,
+        (H.original_theta_common_domain.thetaRegularCotangent n φ hn).bivector
+          (H.originalActionCotangent m φ) = if n = m then 1 else 0 := by
+  obtain ⟨W₀,_,_,_,W,_,_,_,s,H,hc⟩ :=
+    sourceCorollary13_2_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,s,H,fun n m φ => (hc n m φ).2.2⟩
+
+end Section13OriginalSeriesChecks
