@@ -3576,3 +3576,8 @@ import NLS.ZakharovShabat.SourcePsiOriginalGapInterpolation
 import NLS.ZakharovShabat.SourcePsiOriginalOuterCircles
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianInjective
 import NLS.ZakharovShabat.SourceLemma12_7
+import NLS.SequenceSpaces.DeletedRealEquiv
+import NLS.SequenceSpaces.DeletedRealInverse
+import NLS.ZakharovShabat.SourcePsiOriginalRealEquation
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianInverse
+import NLS.ZakharovShabat.SourceCorollary12_8

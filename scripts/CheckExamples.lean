@@ -50906,3 +50906,138 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceLemma127Checks
+
+namespace SourceCorollary128Checks
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal unitInterval
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable (H : SourceLemma12_7Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+variable (hV : IsOpen V) (t : realTypeSourceSubmodule p × RealCoeff p)
+variable (htW : (t.1:CoeffPair p) ∈ W) (htΩ : t ∈ sourcePsiOriginalOmega V D) (n : ℤ)
+
+-- The inverse acts on the actual derivative for arbitrary complex right-hand sides.
+example (b : DeletedCoeff p n) :
+    sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1
+      ((H.originalJacobianEquiv hD hV t htW htΩ n).symm b) = b :=
+  (H.originalJacobianEquiv hD hV t htW htΩ n).apply_symm_apply b
+
+example (b : DeletedCoeff p n) :
+    (H.originalJacobianEquiv hD hV t htW htΩ n).symm
+      (sourcePsiOriginalRootJacobian hp hp1 n
+        (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1 b) = b :=
+  (H.originalJacobianEquiv hD hV t htW htΩ n).symm_apply_apply b
+
+-- The real inverse is an inverse of fderiv over the actual real deleted space.
+example (b : RealDeletedCoeff p n) :
+    sourcePsiOriginalRealRootJacobian hp hp1 n (RealDeletedCoeff.deleteCoordinateTo n t.2) t.1
+      ((H.originalJacobianRealEquiv hD hV t htW htΩ n).symm b) = b := by
+  rw [← H.originalJacobianRealEquiv_toCLM hD hV t htW htΩ n]
+  exact (H.originalJacobianRealEquiv hD hV t htW htΩ n).apply_symm_apply b
+
+example (b : RealDeletedCoeff p n) :
+    (H.originalJacobianRealEquiv hD hV t htW htΩ n).symm
+      (sourcePsiOriginalRealRootJacobian hp hp1 n (RealDeletedCoeff.deleteCoordinateTo n t.2) t.1 b) = b := by
+  rw [← H.originalJacobianRealEquiv_toCLM hD hV t htW htΩ n]
+  exact (H.originalJacobianRealEquiv hD hV t htW htΩ n).symm_apply_apply b
+
+example : HasFDerivAt
+    (fun b : RealDeletedCoeff p n => sourcePsiOriginalRealEquation hp hp1 n b t.1)
+    (H.originalJacobianRealEquiv hD hV t htW htΩ n).toContinuousLinearMap
+    (RealDeletedCoeff.deleteCoordinateTo n t.2) := by
+  rw [H.originalJacobianRealEquiv_toCLM hD hV t htW htΩ n,
+    H.previous.previous.previous.originalRealRootJacobian_eq t.1 htW]
+  exact H.previous.previous.previous.originalRealEquation_hasFDerivAt t.1 htW n _
+
+example (b : RealDeletedCoeff p n) :
+    RealDeletedCoeff.complexCLM n (sourcePsiOriginalRealEquation hp hp1 n b t.1) =
+      sourcePsiOriginalEquation hp hp1 n (RealDeletedCoeff.complexCLM n b) t.1 :=
+  H.previous.previous.previous.originalRealEquation_complex t.1 htW t.1.property n b
+
+example (b : RealDeletedCoeff p n) :
+    RealDeletedCoeff.complexCLM n ((H.originalJacobianRealEquiv hD hV t htW htΩ n).symm b) =
+      (H.originalJacobianEquiv hD hV t htW htΩ n).symm (RealDeletedCoeff.complexCLM n b) := by
+  apply (H.originalJacobianEquiv hD hV t htW htΩ n).injective
+  rw [ContinuousLinearEquiv.apply_symm_apply]
+  change sourcePsiOriginalRootJacobian hp hp1 n
+    (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1 _ = _
+  rw [← H.originalJacobianRealEquiv_complex hD hV t htW htΩ n,
+    ContinuousLinearEquiv.apply_symm_apply]
+
+example (b : DeletedCoeff p n) (hb : ∀ m : ℤ, ((b:Coeff p) m).im = 0) :
+    ∃! x : DeletedCoeff p n,
+      sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1 x = b ∧
+      ∀ m : ℤ, ((x:Coeff p) m).im = 0 :=
+  H.originalJacobian_real_existsUnique hD hV t htW htΩ n b hb
+
+-- Genuinely nonreal data at the central coordinate are allowed when another index is omitted.
+example : ∃ x : DeletedCoeff p (-7),
+    sourcePsiOriginalRootJacobian hp hp1 (-7)
+      (Coeff.deleteCoordinateTo (-7) (RealCoeff.complexCLM p t.2)) t.1 x =
+        Coeff.deletedSingleCLM (-7) 0 (by norm_num) Complex.I :=
+  (H.originalJacobian_bijective hD hV t htW htΩ (-7)).2 _
+
+example : IsUnit (sourcePsiOriginalRootJacobian hp hp1 0
+    (Coeff.deleteCoordinateTo 0 (RealCoeff.complexCLM p t.2)) t.1) :=
+  H.originalJacobian_isUnit hD hV t htW htΩ 0
+
+-- A change in the unused fill does not affect the invertible operator.
+example (z : ℂ) : Function.Bijective (sourcePsiOriginalRootJacobian hp hp1 n
+    (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2+lp.single p n z)) t.1) := by
+  simpa only [map_add,Coeff.deleteCoordinateTo_single_same,add_zero] using
+    H.originalJacobian_bijective hD hV t htW htΩ n
+
+example (b : DeletedCoeff p n) :
+    ‖b‖ ≤ ‖(H.originalJacobianEquiv hD hV t htW htΩ n).symm.toContinuousLinearMap‖ *
+      ‖sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1 b‖ :=
+  H.originalJacobian_inverse_bound hD hV t htW htΩ n b
+
+example (b : RealDeletedCoeff p n) :
+    ‖b‖ ≤ ‖(H.originalJacobianRealEquiv hD hV t htW htΩ n).symm.toContinuousLinearMap‖ *
+      ‖sourcePsiOriginalRealRootJacobian hp hp1 n (RealDeletedCoeff.deleteCoordinateTo n t.2) t.1 b‖ :=
+  H.originalJacobianReal_inverse_bound hD hV t htW htΩ n b
+
+example (a : RealCoeff p) :
+    RealDeletedCoeff.complexCLM n (RealDeletedCoeff.deleteCoordinateTo n a) =
+      Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p a) :=
+  RealDeletedCoeff.complex_deleteCoordinateTo n a
+
+example (a : RealDeletedCoeff p (-7)) :
+    ((RealDeletedCoeff.complexCLM (-7) a : DeletedCoeff p (-7)) : Coeff p) (-7) = 0 :=
+  (RealDeletedCoeff.complexCLM (-7) a).property
+
+example (a : RealDeletedCoeff p 0) :
+    RealDeletedCoeff.reCLM 0 (RealDeletedCoeff.complexCLM 0 a) = a :=
+  RealDeletedCoeff.re_complex 0 a
+
+example (a : DeletedCoeff p n) (ha : ∀ m : ℤ, ((a:Coeff p) m).im = 0) :
+    RealDeletedCoeff.complexCLM n (RealDeletedCoeff.reCLM n a) = a :=
+  RealDeletedCoeff.complex_re n a ha
+
+example : CompleteSpace (RealDeletedCoeff p n) := inferInstance
+
+-- Corollary 12.8 retains the original domain and all preceding results.
+example : SourceCorollary12_8Data hp hp1 W := H.corollary12_8
+example (H8 : SourceCorollary12_8Data hp hp1 W) : SourceLemma12_7Data hp hp1 W := H8.previous
+
+example (H8 : SourceCorollary12_8Data hp hp1 W) :
+    ∃ r : RealDeletedCoeff p n ≃L[ℝ] RealDeletedCoeff p n,
+      r.toContinuousLinearMap = fderiv ℝ
+        (fun b : RealDeletedCoeff p n => sourcePsiOriginalRealEquation hp hp1 n b t.1)
+        (RealDeletedCoeff.deleteCoordinateTo n t.2) := by
+  obtain ⟨_,r,_,hr,_⟩ := H8.isomorphism hD hV t htW htΩ n
+  exact ⟨r,hr⟩
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceCorollary12_8Data (by norm_num) (by norm_num) W :=
+  sourceCorollary12_8 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceCorollary12_8Data (by norm_num) (by norm_num) W :=
+  sourceCorollary12_8 (by norm_num) (by norm_num)
+
+end
+end SourceCorollary128Checks

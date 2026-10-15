@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Lemma 12.7 on the original real domain
+## Current milestone: Corollary 12.8 on the original real domain
+
+`SourceLemma12_7Data.corollary12_8` proves that the actual root Jacobian
+is a continuous linear isomorphism at every original Ωᵖ point, for every
+finite 1<p<∞ and every omitted index. The Fredholm alternative combines
+the preceding diagonal-plus-compact decomposition with injectivity. Both
+the complex and real deleted Banach spaces have continuous inverses.
+The same open connected source domain W and all preceding data are retained.
+
+`RealDeletedCoeff` is the closed subspace of real ℓᵖ sequences whose omitted
+coordinate is zero. Complex inclusion and real-part projection connect it
+to the complex deleted space. Real matrix entries imply that the complex
+inverse preserves real inputs, giving the real linear equivalence.
+Its underlying operator is exactly the real Fréchet derivative of
+`sourcePsiOriginalRealEquation` at the original root input. At real-type
+sources this equation agrees, under inclusion, with the original equation.
+
+Twenty-three new public checks cover both inverse identities on both
+spaces, the actual real derivative, compatibility of the two inverses,
+unique real preimages, nonreal right-hand sides, omitted and negative
+indices, unused root fills, fixed-point inverse norm bounds, the unchanged
+source domain, and exponents 3/2 and 4. The norm bounds here are for a fixed
+source and omitted index; uniform inverse bounds are a later obligation.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: Proposition 12.9, the unique global real analytic solution map with
+roots in the actual gaps. The dissertation remains incomplete. No new
+source correction is needed for Corollary 12.8.
+
+Validation: `./scripts/check.sh` passed (7,018 build jobs, the complete
+public example suite, and the axiom audit of 33,111 NLS declarations).
+The build retains 21 existing warnings. The five new modules and twenty-three
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 120 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+## Previous milestone: Lemma 12.7 on the original real domain
 
 `SourceLemma12_6Data.lemma12_7` proves injectivity of the actual bounded
 root Jacobian at every original Ωᵖ point, for every finite 1<p<∞ and

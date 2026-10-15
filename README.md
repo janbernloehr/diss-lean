@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 12.7 proves injectivity of the actual Jacobian at every
-point of the original real domain Ωᵖ, on the complex deleted ℓᵖ space for
-every finite 1<p<∞. The proof connects the bounded derivative to gap zeros
-and entire-function interpolation, with the source's exact product and
-outer-circle decay formulas. The preceding source domain is retained.
-Next: Corollary 12.8, invertibility by the Fredholm alternative.
+Latest step: Corollary 12.8 proves that the actual Jacobian at every
+point of the original real domain Ωᵖ is a continuous linear isomorphism,
+for every finite 1<p<∞. Both the real and complex deleted ℓᵖ spaces have
+bounded inverses, and the real operator is identified with the derivative
+of the actual real equation. The preceding source domain is retained.
+Next: Proposition 12.9, the global real analytic solution map.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
 [the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.
