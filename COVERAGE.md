@@ -90,9 +90,16 @@ phase velocities at every nonzero index. For p ≤ 2 the printed source
 flows fail the original physical solution definition. The corrected
 flows satisfy that definition, have analytic compact-time source
 trajectories and analytic inverse time maps, and characterize all
-continuous solutions through their coordinate laws. Higher-exponent
-source inversion, the full solution characterization, and the original
-nonextension assertions remain subsequent Section 22 steps.
+continuous solutions through their coordinate laws. Corrected Remark
+22.3 now holds at every finite exponent above one, and the actual image
+condition is exactly when the inverse flow defines a compact-time
+solution. Above two, the same family gives local analytic solutions
+around every source and global analytic solutions on one invariant
+neighborhood of zero. Both scalar-coordinate nonextension statements
+and physical forward-time source nonextension use the original data.
+Each scalar coordinate is jointly analytic in time and initial
+coordinates. The named Section 22 assertions are thus integrated, with
+the documented sign correction; Chapter 5's original-map audit is next.
 
 ## Nonextension proof and limits
 

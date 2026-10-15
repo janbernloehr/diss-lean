@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 22's coordinate trajectories now retain the original
-complex domain, Birkhoff family, and moment frequencies. Both physical
-NLS flows are globally analytic for 1 < p ≤ 2, with complete compact-time
-trajectories and analytic inverse time maps. Actual finite-gap sources
-refute the printed phase signs; the corrected phase law characterizes
-the original solution notion in this exponent range.
+Latest step: Section 22 now retains the original family for local and
+small-data global solutions above exponent two, the full corrected phase
+characterization at every finite p > 1, and both coordinate and physical
+PDE nonextension results. Image membership exactly characterizes when
+the original inverse formula defines a solution. The earlier global
+ordinary and renormalized theories for 1 < p ≤ 2 remain available.
 
-Next: finish the original higher-exponent flow, solution-characterization,
-and nonextension assertions in Section 22.
+Next: audit Chapter 5's Sobolev and weighted estimates, starting with
+Section 23 and retaining the same original Birkhoff map.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),

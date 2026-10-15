@@ -21,16 +21,20 @@ printed-sign source flows fail the all-smooth-approximation solution
 definition on ℝ at the same actual finite-gap source. The corrected flows
 satisfy that definition. `renormalized_solution_iff_coordinates` proves
 the corrected Remark 22.3 in this range, on any time set containing zero;
-`ordinary_solution_iff_coordinates` gives its ordinary analogue. The
-higher-exponent characterization remains a subsequent original audit.
+`ordinary_solution_iff_coordinates` gives its ordinary analogue.
+`SourceSection20Data.remark22_3` now proves the full renormalized
+characterization for every finite p > 1 on compact symmetric time
+intervals, with the original approximation-solution definition.
 The analytic and group properties of the coordinate phases survive the
 time reversal.
 
 Implemented in
 [`SourceSection22SignCorrection.lean`](NLS/ZakharovShabat/SourceSection22SignCorrection.lean)
-and [`SourceSection22Solutions.lean`](NLS/ZakharovShabat/SourceSection22Solutions.lean).
+and [`SourceSection22Solutions.lean`](NLS/ZakharovShabat/SourceSection22Solutions.lean),
+with the full characterization in
+[`SourceSection22Characterization.lean`](NLS/ZakharovShabat/SourceSection22Characterization.lean).
 See [the Section 22 audit](coverage/SECTION_22.md) for exact domains,
-physical trajectory analyticity, and the remaining assertions.
+physical trajectory analyticity, higher-exponent solutions, and nonextension.
 
 ## Section 21: equation (4.13) requires the negative cubic coefficient
 

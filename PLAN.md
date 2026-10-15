@@ -1,6 +1,62 @@
 # Implementation plan
 
-## Current milestone: original Section 22 phases and physical solutions
+## Current milestone: original Section 22 higher-exponent solutions and nonextension
+
+The retained original family now supplies local analytic renormalized
+solutions around every source above exponent two, and global solutions
+on one invariant open neighborhood of zero containing a positive
+source-norm ball. The neighborhood works for every compact time horizon.
+Its physical flows are jointly continuous, satisfy the group law, and
+have analytic dependence in the full uniform source trajectory norm.
+
+Corrected Remark 22.3 now holds for every finite p > 1. The proof starts
+from actual smooth classical solutions, passes through arbitrary smooth
+approximations, and recovers the original phase law. Conversely, the law
+for a continuous curve forces its coordinates to remain in the original
+Birkhoff image, so the actual inverse flow satisfies the original
+approximation-solution definition. Image membership is both necessary
+and sufficient for that inverse formula to define a solution on the
+asserted compact interval. Uniqueness holds throughout the continuous
+curve class, including the degenerate interval T = 0.
+
+Both physical scalar coordinates fail continuous extension at every
+non-Hilbert point of the actual coordinate image where that component
+is nonzero. All signed indices are allowed. The ordinary PDE solution
+map has no continuous extension at any non-Hilbert source into
+C([0,T], FL^q), for every positive T and finite q ≥ p > 2. Agreement on
+actual finite-gap classical solutions already suffices; the all-smooth
+and symmetric-time versions follow. These proofs use the retained
+original source family and constructed original Hilbert and target
+families, with the physical time orientation.
+
+Each scalar phase coordinate is also jointly real analytic in time and
+initial coordinates throughout the actual open image. The strengthened
+`sourceSection22_original` constructor chooses one original family
+before all sources and time horizons, and retains the earlier global
+ordinary and renormalized theories for 1 < p ≤ 2.
+
+Four new modules, an extended original constructor, and 23 public checks
+cover all finite exponents, scalar and full phase laws, image-domain
+necessity, arbitrary continuous curves, local and invariant global
+solutions, both coordinate obstructions, and the actual classical PDE
+nonextension. See [the Section 22 audit](coverage/SECTION_22.md).
+
+The named Section 22 assertions are now integrated with the original
+family, with the documented phase-sign correction. Global source
+solvability above two is claimed only where the image condition holds;
+no global surjectivity is asserted there. Section 14's external
+Hilbert-map and full fractional-smoothness qualifications remain.
+Next: audit Chapter 5, starting with Section 23's Sobolev and weighted
+estimates against the same original map. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,186 build jobs, all 5,739
+public examples, and the transitive axiom audit for 34,393 NLS
+declarations. The four new modules, extended constructor, and 23 focused
+checks compile without new warnings; the full build retains 21 existing
+warnings. The 156-label source inventory, 378 local documentation links
+across 29 documents, and `git diff --check` also pass.
+
+## Previous milestone: original Section 22 phases and physical solutions
 
 The retained original Section 20 domain now carries the full complex
 coordinate trajectory map for every compact time horizon. Its bounded

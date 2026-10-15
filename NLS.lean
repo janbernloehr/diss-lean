@@ -3744,3 +3744,7 @@ import NLS.ZakharovShabat.SourceSection22SignCorrection
 import NLS.ZakharovShabat.SourceSection22Solutions
 import NLS.ZakharovShabat.SourceSection22Global
 import NLS.ZakharovShabat.SourceSection22Original
+import NLS.ZakharovShabat.SourceSection22Characterization
+import NLS.ZakharovShabat.SourceSection22Higher
+import NLS.ZakharovShabat.SourceSection22Nonextension
+import NLS.ZakharovShabat.SourceSection22Coordinates

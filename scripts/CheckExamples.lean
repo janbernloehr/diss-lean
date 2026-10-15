@@ -55748,3 +55748,215 @@ example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s,
   exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Q.exists_finiteGap_positive_phase (-1) (by norm_num)⟩
 end AboveTwo
 end Section22OriginalChecks
+
+section Section22CompletionChecks
+open Set Metric Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+section OriginalFamily
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+
+-- Actual smooth solutions have the physical phase at every finite exponent.
+example (f : SmoothNLSData) (τ : ℝ) :
+    sourceComplexBirkhoffMap hp hp1 s (f.renormalizedSource p τ).val =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency (f.source p)) τ
+        (sourceComplexBirkhoffMap hp hp1 s (f.source p).val) := Q.smooth_renormalized_phase f τ
+
+-- Arbitrary approximation solutions have the same phase even on a general time set.
+example (J : Set ℝ) (φ : realTypeSourceSubmodule p) (γ : ℝ → realTypeSourceSubmodule p)
+    (hγ : IsRenormalizedNLSSolutionOn J φ γ) (τ : ℝ) (hτ : τ ∈ J) :
+    (sourceComplexBirkhoffMap hp hp1 s (γ τ).val).1 0 =
+      Complex.exp (((-τ*A.phaseFrequency φ 0:ℝ):ℂ)*Complex.I)*
+        (sourceComplexBirkhoffMap hp hp1 s φ.val).1 0 := by
+  rw [Q.renormalized_solution_coordinates J φ γ hγ τ hτ]
+  exact Birkhoff.hamiltonianPhaseFlow_fst _ _ _ _
+
+-- Both scalar laws imply the original solution condition, without an initial-value premise.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (γ : ℝ → realTypeSourceSubmodule p) (hc : ContinuousOn γ (Icc (-T) T))
+    (he : ∀ τ ∈ Icc (-T) T, ∀ n : ℤ,
+      (sourceComplexBirkhoffMap hp hp1 s (γ τ).val).1 n =
+        Complex.exp (((-τ*A.phaseFrequency φ n:ℝ):ℂ)*Complex.I)*
+          (sourceComplexBirkhoffMap hp hp1 s φ.val).1 n ∧
+      (sourceComplexBirkhoffMap hp hp1 s (γ τ).val).2 n =
+        Complex.exp (((τ*A.phaseFrequency φ n:ℝ):ℂ)*Complex.I)*
+          (sourceComplexBirkhoffMap hp hp1 s φ.val).2 n) :
+    IsRenormalizedNLSSolutionOn (Icc (-T) T) φ γ := by
+  apply (Q.remark22_3 T hT φ γ).mpr
+  refine ⟨hc,fun τ hτ => ?_⟩
+  apply Prod.ext <;> ext n
+  · exact (he τ hτ n).1
+  · simpa only [Birkhoff.hamiltonianPhaseFlow_snd] using (he τ hτ n).2
+
+-- The phase law forces the original initial value.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (γ : ℝ → realTypeSourceSubmodule p) (hc : ContinuousOn γ (Icc (-T) T))
+    (he : ∀ τ ∈ Icc (-T) T, sourceComplexBirkhoffMap hp hp1 s (γ τ).val =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency φ) τ (sourceComplexBirkhoffMap hp hp1 s φ.val)) :
+    γ 0 = φ := ((Q.remark22_3 T hT φ γ).mpr ⟨hc,he⟩).initial
+
+-- Uniqueness is in the full continuous-curve class.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (γ η : ℝ → realTypeSourceSubmodule p)
+    (hcγ : ContinuousOn γ (Icc (-T) T)) (hcη : ContinuousOn η (Icc (-T) T))
+    (heγ : ∀ τ ∈ Icc (-T) T, sourceComplexBirkhoffMap hp hp1 s (γ τ).val =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency φ) τ (sourceComplexBirkhoffMap hp hp1 s φ.val))
+    (heη : ∀ τ ∈ Icc (-T) T, sourceComplexBirkhoffMap hp hp1 s (η τ).val =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency φ) τ (sourceComplexBirkhoffMap hp hp1 s φ.val)) :
+    EqOn γ η (Icc (-T) T) := Q.coordinate_curve_unique T hT φ γ η hcγ hcη heγ heη
+
+-- Image membership is necessary, including at negative physical times.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (hsol : IsRenormalizedNLSSolutionOn (Icc (-T) T) φ
+      (A.hamiltonianRenormalizedImageFlow D.complex φ)) (τ : Icc (-T) T) :
+    (-τ.val,φ) ∈ A.renormalizedImageDomain s :=
+  (Q.trajectory_domain_iff_solution T hT φ).mpr hsol (hamiltonianTimeReflection T τ)
+
+-- It is also sufficient; the total inverse's fallback cannot create a spurious solution.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (hvalid : φ ∈ A.renormalizedTrajectoryDomain s T) :
+    IsRenormalizedNLSSolutionOn (Icc (-T) T) φ (A.hamiltonianRenormalizedImageFlow D.complex φ) :=
+  (Q.trajectory_domain_iff_solution T hT φ).mp hvalid
+
+-- The characterization includes the degenerate interval T=0.
+example (φ : realTypeSourceSubmodule p) :
+    IsRenormalizedNLSSolutionOn (Icc (0:ℝ) 0) φ (fun _ => φ) := by
+  have h := Q.remark22_3 0 le_rfl φ (fun _ => φ)
+  simp only [neg_zero] at h
+  apply h.mpr
+  refine ⟨continuousOn_const,fun τ hτ => ?_⟩
+  have ht : τ = 0 := le_antisymm hτ.2 (by simpa using hτ.1)
+  simp [ht]
+
+-- Joint scalar analyticity includes every real time and a negative index.
+example : AnalyticOnNhd ℝ (fun x : ℝ × (RealCoeff p × RealCoeff p) =>
+    ((Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency (D.complex.realImageInverse x.2))
+      x.1 (Birkhoff.encodeReal x.2)).1 (-1),
+     (Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency (D.complex.realImageInverse x.2))
+      x.1 (Birkhoff.encodeReal x.2)).2 (-1)))
+    (univ ×ˢ range (sourceRealBirkhoffMap hp hp1 s)) := Q.phase_coordinate_joint_analytic (-1)
+
+-- Every source has local analytic wellposedness at all finite exponents above one.
+example : IsLocallyAnalyticallyWellposed (fun f : SmoothNLSData => f.renormalizedSource p) :=
+  Q.local_analytic_wellposedness
+
+section HigherRange
+variable (h2p : 2 ≤ p)
+-- A common time and neighborhood work for all nearby initial values.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ T > 0, ∃ V' : Set (realTypeSourceSubmodule p), IsOpen V' ∧ φ ∈ V' ∧
+      ∀ ψ ∈ V', IsRenormalizedNLSSolutionOn (Icc (-T) T) ψ
+        (A.hamiltonianRenormalizedImageFlow D.complex ψ) := by
+  obtain ⟨T,hT,V',hV,hφ,_,hsol,_,_⟩ := Q.local_physical_solutions h2p φ
+  exact ⟨T,hT,V',hV,hφ,hsol⟩
+
+-- The local trajectory analyticity is in the full uniform source norm.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ T > 0, ∃ V' : Set (realTypeSourceSubmodule p), IsOpen V' ∧ φ ∈ V' ∧
+      AnalyticOnNhd ℝ (A.hamiltonianRenormalizedImageTrajectoryOn D.complex T) V' ∧
+      ∀ ψ ∈ V', ∀ τ : Icc (-T) T,
+        A.hamiltonianRenormalizedImageTrajectoryOn D.complex T ψ τ =
+          A.hamiltonianRenormalizedImageFlow D.complex ψ τ.val := by
+  obtain ⟨T,hT,V',hV,hφ,_,_,ha,he⟩ := Q.local_physical_solutions h2p φ
+  exact ⟨T,hT,V',hV,hφ,ha,he⟩
+
+-- One positive source-norm ball sits in an invariant globally solvable neighborhood.
+example : ∃ V' : Set (realTypeSourceSubmodule p), IsOpen V' ∧
+    (∃ r > 0, Metric.ball 0 r ⊆ V') ∧
+    (∀ φ ∈ V', ∀ τ : ℝ, A.hamiltonianRenormalizedImageFlow D.complex φ τ ∈ V') ∧
+    ∀ φ ∈ V', IsRenormalizedNLSSolutionOn univ φ (A.hamiltonianRenormalizedImageFlow D.complex φ) := by
+  obtain ⟨V',hV,_,hb,_,hi,hs,_,_,_,_⟩ := Q.small_global_physical_solutions h2p
+  exact ⟨V',hV,hb,hi,hs⟩
+
+-- That same neighborhood supports every time horizon and joint time-source continuity.
+example : ∃ V' : Set (realTypeSourceSubmodule p), (0 : realTypeSourceSubmodule p) ∈ V' ∧
+    (∀ T : ℝ, AnalyticOnNhd ℝ (A.hamiltonianRenormalizedImageTrajectoryOn D.complex T) V') ∧
+    ContinuousOn (fun x : ℝ × realTypeSourceSubmodule p =>
+      A.hamiltonianRenormalizedImageFlow D.complex x.2 x.1) (univ ×ˢ V') := by
+  obtain ⟨V',_,hz,_,_,_,_,ha,hc,_,_⟩ := Q.small_global_physical_solutions h2p
+  exact ⟨V',hz,ha,hc⟩
+
+-- Negative physical time cancels positive time inside the same small neighborhood.
+example : ∃ V' : Set (realTypeSourceSubmodule p), (0 : realTypeSourceSubmodule p) ∈ V' ∧
+    ∀ φ ∈ V', ∀ τ : ℝ, A.hamiltonianRenormalizedImageFlow D.complex
+      (A.hamiltonianRenormalizedImageFlow D.complex φ τ) (-τ) = φ := by
+  obtain ⟨V',_,hz,_,_,_,_,_,_,hg,_⟩ := Q.small_global_physical_solutions h2p
+  refine ⟨V',hz,fun φ hφ τ => ?_⟩
+  simpa only [neg_add_cancel,A.hamiltonianRenormalizedImageFlow_zero] using hg φ hφ (-τ) τ
+
+-- First-coordinate nonextension works at a negative index with the physical minus sign.
+example (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p)
+    (hφ : ¬ Summable (fun k : ℤ => ‖(sourceComplexBirkhoffMap hp hp1 s φ.val).1 k‖^2))
+    (hn : (sourceComplexBirkhoffMap hp hp1 s φ.val).1 (-1) ≠ 0)
+    (F : range (sourceRealBirkhoffMap hp hp1 s) → C(Icc (-T) T,ℂ))
+    (he : ∀ ψ : realTypeSourceSubmodule p, ∀ hf : ψ ∈ sourceFiniteGapLocus hp hp1,
+      ∀ τ : Icc (-T) T, F (D.complex.realImageHomeomorph ψ) τ =
+        Complex.exp (((-τ.val*A.finiteGapOrdinaryFrequency ψ hf (-1):ℝ):ℂ)*Complex.I)*
+          (sourceComplexBirkhoffMap hp hp1 s ψ.val).1 (-1)) :
+    ¬ ContinuousAt F (D.complex.realImageHomeomorph φ) :=
+  Q.coordinate_nonextension_fst h2p T hT φ hφ (-1) hn F he
+
+-- The second-coordinate obstruction includes index zero and the opposite phase sign.
+example (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p)
+    (hφ : ¬ Summable (fun k : ℤ => ‖(sourceComplexBirkhoffMap hp hp1 s φ.val).1 k‖^2))
+    (hn : (sourceComplexBirkhoffMap hp hp1 s φ.val).2 0 ≠ 0)
+    (F : range (sourceRealBirkhoffMap hp hp1 s) → C(Icc (-T) T,ℂ))
+    (he : ∀ ψ : realTypeSourceSubmodule p, ∀ hf : ψ ∈ sourceFiniteGapLocus hp hp1,
+      ∀ τ : Icc (-T) T, F (D.complex.realImageHomeomorph ψ) τ =
+        Complex.exp (((τ.val*A.finiteGapOrdinaryFrequency ψ hf 0:ℝ):ℂ)*Complex.I)*
+          (sourceComplexBirkhoffMap hp hp1 s ψ.val).2 0) :
+    ¬ ContinuousAt F (D.complex.realImageHomeomorph φ) :=
+  Q.coordinate_nonextension_snd h2p T hT φ hφ 0 hn F he
+
+-- Forward-time source nonextension holds for every finite larger output exponent.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq : q ≠ ⊤) (hpq : p ≤ q)
+    (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p) (hφ : φ ∉ sourceHilbertLocus h2p)
+    (F : realTypeSourceSubmodule p → C(Icc (0:ℝ) T,realTypeSourceSubmodule q))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (0:ℝ) T) F) : ¬ ContinuousAt F φ :=
+  Q.smooth_source_nonextension hq (hp1.trans_le hpq) h2p (h2p.trans hpq) T hT φ hφ F hF
+
+-- Agreement only on actual finite-gap classical solutions already suffices.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq : q ≠ ⊤) (hpq : p ≤ q)
+    (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p) (hφ : φ ∉ sourceHilbertLocus h2p)
+    (F : realTypeSourceSubmodule p → C(Icc (0:ℝ) T,realTypeSourceSubmodule q))
+    (hF : AgreesWithFiniteGapClassicalNLS hp hp1 T F) : ¬ ContinuousAt F φ :=
+  Q.finiteGap_source_nonextension hq (hp1.trans_le hpq) h2p (h2p.trans hpq) T hT φ hφ F hF
+
+-- The symmetric-time analogue uses the same physical solution map.
+example (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p) (hφ : φ ∉ sourceHilbertLocus h2p)
+    (F : realTypeSourceSubmodule p → C(Icc (-T) T,realTypeSourceSubmodule p))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (-T) T) F) : ¬ ContinuousAt F φ :=
+  Q.smooth_source_nonextension_symmetric hp hp1 h2p h2p T hT φ hφ F hF
+end HigherRange
+end OriginalFamily
+
+section AboveTwo
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+-- No spectral or image-domain premise is needed for the higher-exponent constructor.
+example : IsLocallyAnalyticallyWellposed (fun f : SmoothNLSData => f.renormalizedSource 4) := by
+  obtain ⟨_,_,_,_,_,_,_,_,_,_,_,_,hl,_,_,_⟩ := sourceSection22_original (p := 4) (by simp) (by norm_num)
+  exact hl
+
+-- The same unconditional construction supplies a positive ball of globally solvable data.
+example : ∃ V' : Set (realTypeSourceSubmodule 4),
+    (0 : realTypeSourceSubmodule 4) ∈ V' ∧ (∃ r > 0, Metric.ball 0 r ⊆ V') ∧
+    IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.renormalizedSource 4) V' := by
+  obtain ⟨_,_,_,_,_,_,_,_,_,_,_,_,_,_,hs,_⟩ := sourceSection22_original (p := 4) (by simp) (by norm_num)
+  obtain ⟨V',hz,hb,_,_,hwp⟩ := hs (by norm_num)
+  exact ⟨V',hz,hb,hwp⟩
+end AboveTwo
+
+section BelowTwo
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+-- The strengthened constructor still supplies both global physical PDE solution theories below two.
+example : IsGloballyAnalyticallyWellposedOn
+    (fun f : SmoothNLSData => f.renormalizedSource (ENNReal.ofReal (3/2))) univ ∧
+    IsGloballyAnalyticallyWellposedOn
+      (fun f : SmoothNLSData => f.ordinarySource (ENNReal.ofReal (3/2))) univ := by
+  obtain ⟨_,_,_,_,_,_,_,_,_,_,_,_,_,hg,_,_⟩ :=
+    sourceSection22_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact hg (by norm_num)
+end BelowTwo
+end Section22CompletionChecks

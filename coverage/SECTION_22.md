@@ -1,15 +1,15 @@
 # Section 22: original phases and physical solutions
 
-This audit concerns printed pp. 98–101. The current step connects the
-coordinate trajectories and global solutions for 1 < p ≤ 2 to the
-original Sections 17–20 family. It also proves the phase-sign correction
-in equation (4.14) and Remark 22.3. The original higher-exponent source
-inversion, nonextension assertions, and full Remark 22.3 remain subsequent
-steps; this is not a completion claim for the whole section.
+This audit concerns printed pp. 98–101. The named Section 22 assertions
+are integrated with the original Sections 17–20 family, with the formal
+phase-sign correction in equation (4.14) and Remark 22.3. The source
+inverse keeps its actual image condition above exponent two. This is
+not a completion claim for the dissertation or for the separate
+Section 14 qualifications.
 
 ## One original family and domain
 
-[`sourceSection22_original_flows`](../NLS/ZakharovShabat/SourceSection22Original.lean)
+[`sourceSection22_original`](../NLS/ZakharovShabat/SourceSection22Original.lean)
 constructs the original Birkhoff family D and Section 20 moment package Q
 before choosing any source, coordinate index, or compact time horizon.
 Every finite exponent p > 1 is allowed. The moment frequency, original
@@ -26,6 +26,12 @@ On the real source space the phase curve is jointly continuous in time
 and source in the full sequence norm. Its two components remain conjugate
 and preserve the pair norm. The actual spectral action is preserved even
 at nonreal sources in U, including at a collapsed gap.
+
+[`SourceSection22Coordinates.lean`](../NLS/ZakharovShabat/SourceSection22Coordinates.lean)
+also proves joint real analyticity of both scalar coordinates in real
+time and initial coordinates for every signed index. This scalar
+statement does not assert sequence-valued differentiability in time
+at arbitrary low-regularity sources.
 
 The coordinate-parameterized trajectory uses the original inverse on the
 open image of the real Birkhoff map. Analyticity holds on that entire
@@ -66,8 +72,13 @@ nonnegative physical mass. See [source discrepancies](../SOURCE_ERRATA.md).
 | Theorem 22.1(ii): ordinary trajectories and diffeomorphisms | `ordinary_coordinate_trajectory_analytic`, `ordinary_coordinate_trajectory_apply`, `ordinary_coordinate_time_map`, `global_physical_joint_continuous` | Same range and original family, full compact-time analyticity and physical mass correction. |
 | Equations (4.15)–(4.16), physical meaning | `global_physical_solutions` and the retained `complex_map_hamiltonianRenormalizedSourceFlow` / `complex_map_hamiltonianOrdinarySourceFlow` | Original inverse lifts for p ≤ 2, with actual coordinate laws and original approximation-solution meaning. |
 | Corollary 22.2(i) | `global_analytic_wellposedness`, `global_physical_trajectories` | Both ordinary and renormalized NLS, original physical flows as witnesses, analytic dependence in the full uniform source norm. |
-| Remark 22.3 and the ordinary analogue | `renormalized_solution_iff_coordinates`, `ordinary_solution_iff_coordinates` | Corrected phase characterization for p ≤ 2 on any time set containing zero, with continuity of the whole source curve. |
-| Theorem 22.1(iii), Corollary 22.2(ii)–(iii), Remark 22.3 above two | Subsequent original-family integration | Earlier general flow and nonextension results exist, but their complete original-family and physical-orientation audit is not claimed here. |
+| Opening scalar analyticity | `phase_coordinate_joint_analytic` | Every finite p > 1 and signed index, joint real time and initial coordinate dependence on the actual open image. |
+| Equation (4.15) above two | `trajectory_domain_iff_solution` | The original physical inverse formula is an approximation solution on [−T,T] exactly when its full coordinate curve stays in the original image. |
+| Corollary 22.2(ii) | `local_physical_solutions`, `local_analytic_wellposedness`, `small_global_physical_solutions` | Local solutions around every source; one invariant open neighborhood of zero containing a positive norm ball has global solutions, full trajectory analyticity, joint continuity, and group laws. |
+| Theorem 22.1(iii) | `coordinate_nonextension_fst`, `coordinate_nonextension_snd` | Both physical coordinate signs, any signed index, actual image points outside ℓ² with the corresponding amplitude nonzero; finite-gap agreement suffices. |
+| Corollary 22.2(iii) | `finiteGap_source_nonextension`, `smooth_source_nonextension` | No extension continuous at any non-Hilbert source into C([0,T], FL^q) for any finite q ≥ p > 2 and T > 0; actual finite-gap classical agreement already suffices. |
+| Remark 22.3 | `remark22_3`, `renormalized_solution_coordinates`, `coordinate_curve_unique` | Full corrected characterization at every finite p > 1, with the original approximation definition and uniqueness in the continuous-curve class. T = 0 is included. |
+| Arbitrary time sets and the ordinary analogue | `renormalized_solution_iff_coordinates`, `ordinary_solution_iff_coordinates` | Both corrected phase characterizations for p ≤ 2 on any time set containing zero. |
 
 The physical solution characterizations are in
 [`SourceSection22Solutions.lean`](../NLS/ZakharovShabat/SourceSection22Solutions.lean).
@@ -84,23 +95,71 @@ their analytic negative-time inverses. The source trajectory maps are
 analytic as maps into continuous source-valued paths, not only at each
 coordinate or fixed time.
 
-## Validation and remaining work
+## Higher-exponent inversion and full solution characterization
 
-Five modules and 26 public examples check actual frequency coordinates,
-one U for every time horizon, both phase signs at a negative index,
-complex action preservation at zero index, zero-length time intervals,
-reality and pair norms, joint continuity, and the entire coordinate image.
-They also check actual finite-gap sign witnesses, both physical solution
-definitions, both directions of the solution characterization, the exact
-ordinary mass term, cancellation by negative time, full trajectory
-analyticity, and analytic coordinate inverse maps. Unconditional
-constructors are checked at p = 3/2 and p = 4, including a witness above
-the surjective range. Full results are in [implementation status](../STATUS.md).
+[`SourceSection22Characterization.lean`](../NLS/ZakharovShabat/SourceSection22Characterization.lean)
+first identifies the original coordinates of every actual smooth
+renormalized solution, at every finite exponent above one. Smooth-data
+density and joint continuity of the physical phase then pass the law to
+an arbitrary approximation solution. This implication is proved on any
+time set in the original solution definition.
 
-For p > 2, globally defined coordinate phases are not asserted to remain
-in the Birkhoff image for all time. The remaining original audit must
-retain that guard for source inversion, prove the higher-exponent version
-of the corrected solution characterization, and connect both nonextension
-statements to the same original data and physical solution map. Section
-14's external Hilbert-map and full fractional-smoothness qualifications
-remain. The dissertation is incomplete.
+For the converse on [−T,T], a continuous curve satisfying the coordinate
+law supplies its own image membership: the phase at each time equals the
+original map of an actual source. The guarded inverse flow consequently
+exists on the interval and satisfies the all-smooth-approximation
+condition. Injectivity identifies it with the given curve. The exact
+`trajectory_domain_iff_solution` rules out treating the total inverse's
+fallback outside its image as a solution. The initial value is forced
+by the coordinate law at zero. `coordinate_curve_unique` states the
+continuous-curve uniqueness conclusion explicitly.
+
+[`SourceSection22Higher.lean`](../NLS/ZakharovShabat/SourceSection22Higher.lean)
+constructs one positive time and open source neighborhood around every
+initial source. On that neighborhood the physical inverse trajectories
+are analytic in the full uniform source norm. The small-data result
+constructs one open invariant neighborhood of zero, containing a
+positive source-norm ball, on which every time is admissible. The same
+neighborhood supports all compact-time analytic trajectory maps,
+joint continuity, both signs of time, and the physical group law.
+
+## Original physical nonextension
+
+[`SourceSection22Nonextension.lean`](../NLS/ZakharovShabat/SourceSection22Nonextension.lean)
+proves both scalar obstructions on the original open coordinate image.
+A proposed extension need agree only with the actual finite-gap
+frequencies and amplitudes. Time reflection transfers the proved
+oscillation obstruction to the physical signs. The first and second
+components have separate nonvanishing guards, and the index may be zero
+or negative.
+
+The source theorem uses the retained original source family and
+constructs original Hilbert and target families. Actual classical
+finite-gap Fourier coefficients identify the physical Hilbert flow;
+the frequency-divergence obstruction then rules out continuity in the
+complete forward-time trajectory norm. Agreement with all smooth
+classical solutions implies this finite-gap agreement. A symmetric-time
+version follows by restriction to [0,T]. No hypothetical classical
+trajectory or spectral-flow agreement is required as an extra premise.
+
+## Validation and limits
+
+The first phase/global-flow step added five modules and 26 public
+examples. This completion step adds four modules, strengthens the
+original constructor, and adds 23 public examples. They cover actual
+smooth solutions, arbitrary approximation solutions, the converse from
+both scalar laws, forced initial values, full continuous-curve
+uniqueness, necessity and sufficiency of the image guard, and T = 0.
+Further checks cover joint scalar analyticity, common local existence,
+full uniform trajectory analyticity, an invariant positive source ball,
+negative-time cancellation, both coordinate obstructions at zero or
+negative indices, forward-time nonextension at every larger finite
+exponent, finite-gap classical agreement, and the symmetric-time case.
+Unconditional constructors are checked at p = 4 and p = 3/2. Full build
+and axiom-audit results are in [implementation status](../STATUS.md).
+
+For p > 2, global source solvability is asserted only where the phase
+curve stays in the original image; global surjectivity is not asserted.
+The Section 14 external Hilbert-map and full fractional-smoothness
+qualifications remain. The next original-map audit is Chapter 5,
+starting with Section 23. The dissertation is incomplete.
