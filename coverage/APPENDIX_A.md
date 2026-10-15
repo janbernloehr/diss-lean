@@ -1,13 +1,20 @@
 # Appendix A: periodic distributions and Fourier Lebesgue spaces
 
-This audit currently covers the finite-order criterion (A.1) on printed
-page 121 and both parts of Theorem A.1 on printed page 122. The test space
+This audit covers the test-space foundations, finite-order criterion (A.1),
+order-zero continuous extension, and L1 action on printed page 121, plus both
+parts of Theorem A.1 and the distributional derivative on printed page 122.
+The general complex Radon-measure representation in (A.2) remains open. The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
 | Source assertion | Public entry point | Verified scope |
 | --- | --- | --- |
 | Smooth periodic test space and its derivative-norm topology | `SmoothPeriodicTest`, `SmoothPeriodicTest.cNorm_apply` | Every positive period L; the seminorm at N is exactly the sum of the sup norms of physical derivatives of orders 0 through N. |
+| Fréchet test space | `derivativeJetEquiv` and the completeness, metrizability, Hausdorff, and local convexity instances | A closed derivative-jet subspace of a countable product of Banach spaces, with the original topology. |
+| Density in C(T_L) | `denseRange_toContinuousCLM` | Dense range on the actual physical circle, with the exact uniform norm `norm_toContinuousCLM`. |
+| Least order zero iff unique continuous extension | `Distribution.order_zero_iff_physical_extension` | Unique complex continuous linear functional on C(AddCircle L, ℂ), for every positive L. |
+| L1 action following (A.2) | `Distribution.ofL1_apply`, `ofL1_order`, `ofL1_coefficient`, `toTempered_ofL1` | Only interval integrability is required; retains 1/L, original tests, all Fourier coefficients, and actual tempered realization. |
+| Distributional derivative | `Distribution.derivative_apply`, `derivative_coefficient`, `derivative_order_le`, `toTempered_derivative` | Negative test derivative, exact signed multiplier i·2πn/L, order at most N+1, physical realization compatibility. |
 | Continuity iff a finite-order estimate, (A.1) | `SmoothPeriodicTest.continuous_iff_finite_order` | Every complex-linear functional on the original test space; one N and one strictly positive constant before all tests. |
 | Least distribution order | `Distribution.order`, `hasOrderAtMost_order`, `order_le` | The least admissible natural number, including order zero. |
 | Theorem A.1(i) | `Distribution.coefficients_isBigO_of_order`, `coefficients_isBigO` | The prescribed order N gives the same polynomial degree N; the least-order version follows. The cofinite filter on integer frequencies expresses the two-sided asymptotic as absolute frequency tends to infinity. |
@@ -36,10 +43,36 @@ a single derivative order N. Conversely, any such bound implies continuity.
 Multiplication by a fixed Schwartz window is continuous for this topology,
 with a proved finite Leibniz bound for every Schwartz seminorm.
 
-This step constructs the topology and proves the continuity criterion.
-It does not yet package completeness, metrizability, or density in the
-continuous periodic functions as formal results for this new test-space type.
-Those preliminary assertions remain to be completed.
+[`SmoothPeriodicTestFrechet.lean`](../NLS/Fourier/SmoothPeriodicTestFrechet.lean)
+identifies the same space with the closed set of compatible derivative jets
+in a countable product of bounded-continuous-function Banach spaces. Uniform
+convergence of each derivative preserves the derivative identities and period.
+Conversely, each compatible jet comes from an original smooth periodic test.
+The equivalence preserves the original seminorm topology. The resulting
+completeness, metrizability, Hausdorff, and local convexity instances prove
+the source's Fréchet assertion without assuming completeness of Schwartz space.
+
+## Density, order-zero extension, and L1 action
+
+[`PeriodicDistributionOrderZero.lean`](../NLS/Fourier/PeriodicDistributionOrderZero.lean)
+first represents smooth periodic functions on the period-two circle. The
+existing dense Schwartz periodization yields density of the original tests,
+and the uniform norm is exactly the zeroth source seminorm. A finite
+order-zero bound extends the functional continuously; density gives uniqueness.
+
+[`PeriodicDistributionPhysicalOrderZero.lean`](../NLS/Fourier/PeriodicDistributionPhysicalOrderZero.lean)
+transports these results isometrically to the actual circle of period L.
+Evaluation at a real representative is the original test value, so no
+rescaling remains in the physical extension statement. The L1 functional
+acts by exactly (1/L) times the interval integral of the function times the
+test. Its least order is zero, including the zero function. Its Fourier
+coefficients and tempered realization agree with the existing interval-L1
+construction without any boundedness or square-integrability hypothesis.
+
+These results prove the continuous-extension criterion and L1 special case.
+They do not yet prove that every such extension is integration against a
+unique finite complex Radon measure, or the converse for arbitrary finite
+complex Borel measures. Those parts of (A.2) remain open.
 
 ## Faithful realization and the period factors
 
@@ -76,19 +109,30 @@ actual distributional synthesis and uniqueness then apply. The asymptotic
 version separately controls the arbitrary zero-mode value. The faithful
 test-space bridge transfers this existence result to the original dual.
 
+## Physical distributional derivative
+
+[`SmoothPeriodicDistributionDerivative.lean`](../NLS/Fourier/SmoothPeriodicDistributionDerivative.lean)
+constructs the continuous physical derivative on the original test space.
+The derivative of a distribution is its negative transpose. Evaluation on
+physical exponential modes gives the signed multiplier i·2πn/L, including
+the zero frequency, and the finite-order estimate increases by at most one.
+Differentiation commutes with the actual physical tempered realization;
+the proof tracks both Schwartz and distribution dilation factors, including
+negative dilation.
+
 ## Validation and remaining Appendix A work
 
-Four new modules and 28 public checks cover the continuity criterion, least
-order, both directions of Theorem A.1, realization round trips, arbitrary
-zero modes, degree zero, and signed frequencies. Explicit period-one and
-period-two tests retain the physical 2π/L derivative multiplier. The nonzero
-point-evaluation example checks the order-zero endpoint. Full validation
-is recorded in [STATUS.md](../STATUS.md).
+The first four modules and 28 public checks cover finite order and Theorem A.1.
+The next four modules add 30 public checks for the Fréchet instances, density,
+unique physical-circle extension, normalized L1 action at periods one and
+three, signed and zero derivative modes, order bounds for L1 functions and
+point evaluation, negative dilation, and physical derivative realization.
+All eight modules and their focused checks compile without new warnings.
+Full validation is recorded in [STATUS.md](../STATUS.md).
 
-The remaining preliminary work includes test-space completeness and density,
-the order-zero continuous extension and Radon-measure statement (A.2), and
-the derivative on the original dual. The Fourier Lebesgue assertions and
-Lemmas A.2–A.9 still require their Appendix A source audit and integration.
+The remaining preliminary work is the complex Radon-measure representation,
+uniqueness, and converse in (A.2). The Fourier Lebesgue assertions and Lemmas
+A.2–A.9 still require their Appendix A source audit and integration.
 
 The blanket norm-convergence assertion on page 122 includes the infinity
 endpoint. The obstruction already formalized for Section 2 applies there

@@ -3797,3 +3797,7 @@ import NLS.Fourier.SmoothPeriodicTestSpace
 import NLS.Fourier.SmoothPeriodicDistribution
 import NLS.Fourier.PolynomialPeriodicDistribution
 import NLS.Fourier.PeriodicDistributionFourierGrowth
+import NLS.Fourier.SmoothPeriodicTestFrechet
+import NLS.Fourier.PeriodicDistributionOrderZero
+import NLS.Fourier.PeriodicDistributionPhysicalOrderZero
+import NLS.Fourier.SmoothPeriodicDistributionDerivative

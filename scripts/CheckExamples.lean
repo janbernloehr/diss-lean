@@ -57201,3 +57201,113 @@ example (z : ℂ) : ∃! T : 𝓢'(ℝ,ℂ), IsPeriodicDistribution 3 T ∧
 
 end AppendixA1Checks
 end NLS.Fourier
+
+noncomputable section
+open Set Filter Topology MeasureTheory
+open scoped SchwartzMap BoundedContinuousFunction
+namespace NLS.Fourier
+open SmoothPeriodicTest
+section AppendixAFoundationsChecks
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example : CompleteSpace (SmoothPeriodicTest L) := inferInstance
+
+example : TopologicalSpace.MetrizableSpace (SmoothPeriodicTest L) := inferInstance
+
+example : T2Space (SmoothPeriodicTest L) := inferInstance
+
+example : LocallyConvexSpace ℝ (SmoothPeriodicTest L) := inferInstance
+
+example : IsClosed (range (derivativeJet (L := L))) := isClosed_range_derivativeJet
+
+example (f : SmoothPeriodicTest L) : derivativeJetEquiv.symm (derivativeJetEquiv f) = f :=
+  derivativeJetEquiv.symm_apply_apply f
+
+example (f : SmoothPeriodicTest L) (x : ℝ) : toContinuousCLM f (x : AddCircle L) = f x :=
+  toContinuousCLM_apply f x
+
+example (f : SmoothPeriodicTest L) :
+    ‖toContinuousCLM f‖ = cNorm (Fact.out : 0 < L).ne' 0 f := norm_toContinuousCLM f
+
+example : DenseRange (toContinuousCLM (L := L)) := denseRange_toContinuousCLM
+
+example (u : Distribution L) : u.order = 0 ↔
+    ∃! v : C(AddCircle L,ℂ) →L[ℂ] ℂ, ∀ f : SmoothPeriodicTest L, v (toContinuousCLM f) = u f :=
+  u.order_zero_iff_physical_extension
+
+example (u : Distribution L) : u.HasOrderAtMost 0 ↔
+    ∃! v : C(AddCircle (2:ℝ),ℂ) →L[ℂ] ℂ, ∀ f : SmoothPeriodicTest L, v (toContinuousTwo f) = u f :=
+  u.hasOrderAtMost_zero_iff_extension
+
+example (v w : C(AddCircle L,ℂ) →L[ℂ] ℂ)
+    (h : ∀ f : SmoothPeriodicTest L, v (toContinuousCLM f) = w (toContinuousCLM f)) : v = w := by
+  apply DFunLike.coe_injective
+  exact (denseRange_toContinuousCLM (L := L)).equalizer v.continuous w.continuous (funext h)
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) (g : SmoothPeriodicTest L) :
+    Distribution.ofL1 f hf g = (L:ℂ)⁻¹ * ∫ x in (0:ℝ)..L, f x*g x := Distribution.ofL1_apply f hf g
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    (Distribution.ofL1 f hf).order = 0 := Distribution.ofL1_order f hf
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) (n : ℤ) :
+    Distribution.ofL1 f hf (mode (-n)) = intervalFourierCoefficient L f n :=
+  Distribution.ofL1_coefficient f hf n
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    (Distribution.ofL1 f hf).toTempered = periodicL1Distribution L f hf := Distribution.toTempered_ofL1 f hf
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 1) (g : SmoothPeriodicTest 1) :
+    Distribution.ofL1 f hf g = ∫ x in (0:ℝ)..1, f x*g x := by
+  simpa using Distribution.ofL1_apply f hf g
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 3) (g : SmoothPeriodicTest 3) :
+    Distribution.ofL1 f hf g = (1/3:ℂ) * ∫ x in (0:ℝ)..3, f x*g x := by
+  simpa only [Complex.ofReal_ofNat,one_div] using Distribution.ofL1_apply f hf g
+
+example (f : SmoothPeriodicTest L) (x : ℝ) : derivCLM f x = deriv (f : ℝ → ℂ) x := derivLM_apply f x
+
+example (u : Distribution L) (f : SmoothPeriodicTest L) :
+    u.derivative f = -u (derivCLM f) := u.derivative_apply f
+
+example (u : Distribution L) (n : ℤ) :
+    u.derivative (mode (-n)) = (Complex.I*(2*(n:ℂ)*(Real.pi:ℂ)/(L:ℂ)))*u (mode (-n)) :=
+  u.derivative_coefficient n
+
+example (u : Distribution L) : u.derivative (mode 0) = 0 := by
+  simpa using u.derivative_coefficient 0
+
+example (u : Distribution 1) : u.derivative (mode 3) = (-6*Complex.I*(Real.pi:ℂ))*u (mode 3) := by
+  have h := u.derivative_coefficient (-3)
+  norm_num at h
+  convert h using 1; ring
+
+example (u : Distribution 2) : u.derivative (mode (-2)) = (2*Complex.I*(Real.pi:ℂ))*u (mode (-2)) := by
+  have h := u.derivative_coefficient 2
+  norm_num at h
+  convert h using 1; ring
+
+example (u : Distribution L) : u.derivative.order ≤ u.order+1 := u.derivative_order_le
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    (Distribution.ofL1 f hf).derivative.order ≤ 1 := by
+  simpa only [Distribution.ofL1_order,zero_add] using (Distribution.ofL1 f hf).derivative_order_le
+
+example (x : ℝ) : (Distribution.evaluation x : Distribution L).derivative.order ≤ 1 := by
+  simpa only [Distribution.evaluation_order,zero_add] using (Distribution.evaluation x : Distribution L).derivative_order_le
+
+example (u : Distribution L) : u.derivative.toTempered = TemperedDistribution.derivCLM ℂ u.toTempered :=
+  u.toTempered_derivative
+
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    (Distribution.ofL1 f hf).derivative.toTempered = TemperedDistribution.derivCLM ℂ (periodicL1Distribution L f hf) := by
+  rw [Distribution.toTempered_derivative,Distribution.toTempered_ofL1]
+
+example (T : 𝓢'(ℝ,ℂ)) :
+    TemperedDistribution.derivCLM ℂ (distributionDilation (-1) (by norm_num) T) =
+      (-1:ℂ) • distributionDilation (-1) (by norm_num) (TemperedDistribution.derivCLM ℂ T) := by
+  simpa only [Complex.ofReal_neg,Complex.ofReal_one] using distributionDilation_deriv (-1) (by norm_num) T
+
+end AppendixAFoundationsChecks
+end NLS.Fourier
