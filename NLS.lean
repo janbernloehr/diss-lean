@@ -3780,3 +3780,6 @@ import NLS.ZakharovShabat.SourceSection26Actions
 import NLS.ZakharovShabat.SourceSection26Sum
 import NLS.ZakharovShabat.SourceSection26SignCorrection
 import NLS.ZakharovShabat.SourceSection26Original
+import NLS.ZakharovShabat.SobolevSourceFourierSums
+import NLS.ZakharovShabat.SourceSection26Interpolation
+import NLS.ZakharovShabat.SourceSection26SupremumCorrection

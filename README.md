@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 26's action estimates now use the original indexed
-actions and exact physical norms. An actual real H² source refutes the
-full alternating-sign inequality in Lemma 26.2; the positive-sign estimate
-and the uniform physical remainder bounds are proved.
+Latest step: the supremum endpoint in (5.11) is formally refuted by
+actual real sources with nonzero mass and bounded physical H¹ norm.
+Both valid interpolation ranges are now stated in the exact physical
+norm. The Section 26 action and remainder estimates remain available.
 
-Next: audit the top-derivative supremum endpoint in (5.11), then continue
-to Section 27. The separate full fractional-smoothness qualifications
-remain. The dissertation remains incomplete.
+Next: Section 27's original Sobolev-norm estimates. The separate
+fractional-smoothness qualifications and the unrestricted m=1 coefficient
+in Lemma 27.2 remain explicit. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

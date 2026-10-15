@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: original Section 26 action estimates and sign correction
+## Current milestone: Section 26 supremum-endpoint correction
+
+The printed supremum estimate (5.11) is false at m=i=1. For every
+proposed nonnegative constant, an actual real H² source violates it.
+Its first component has L² norm at least one and uniformly bounded
+physical H¹ norm. That component’s first derivative is continuous and
+its norm grows without bound. The obstruction does not rely on an
+undefined top derivative or a zero norm raised to a negative power.
+Every retained original U and T contains a counterexample for every
+proposed constant.
+
+The scalar Fourier construction has frequencies 1 through N² with
+amplitudes 1/(Nn), plus a unit constant mode. Its derivative at zero has
+norm exactly 2πN, while its physical H¹ norm is at most 2+2π. Exact
+finite-sum coefficients, weighted energies, physical derivatives, and
+conjugate completion to a real source are public APIs.
+
+Both valid interpolation ranges now use the exact physical Sobolev
+norm: the supremum estimate for i<m, and the L² estimate for i≤m.
+Their explicit constants retain the physical 2π multiplier. Lemma 26.3
+uses only lower derivatives, so its proved remainder estimate remains
+valid. See [the Section 26 audit](coverage/SECTION_26.md).
+
+Three new modules and 20 public checks cover signed finite supports,
+exact physical norms and derivative values, block boundary frequencies,
+nonzero mass, arbitrary proposed constants, the corrected ranges, and
+original-domain membership.
+
+Next: Section 27's original Sobolev-norm estimates. The separate
+[Section 14 qualifications](coverage/SECTION_14.md) and the unrestricted
+m=1 coefficient in Lemma 27.2 remain explicitly qualified. The
+dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,221 build jobs, all 5,873
+public examples, and the transitive axiom audit for 34,665 NLS
+declarations. The three new modules and 20 focused checks compile
+without new warnings; the full build retains 21 existing warnings.
+The 156-label source inventory, 496 local documentation links across
+33 documents, and `git diff --check` also pass.
+
+## Previous milestone: original Section 26 action estimates and sign correction
 
 Proposition 26.1 now uses the original indexed actions and exact physical
 H¹ pair norm, without an auxiliary realization premise. Its actual gap

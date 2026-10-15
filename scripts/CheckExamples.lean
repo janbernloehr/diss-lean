@@ -56704,3 +56704,88 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
     ∃ B U T : Set (CoeffPair 2), SourceSection26Data D A B U T :=
   sourceSection26_original
 end Section26OriginalChecks
+
+section Section26EndpointChecks
+-- The finite support and its signed endpoints are literal Fourier coefficients.
+example : sobolevSourceFourierSum 2 ∅ (fun _ => 1) = 0 := by
+  simp [sobolevSourceFourierSum]
+example : (sobolevSourceFourierSum 2 {-2,3} (fun _ => 2)).val (-2) = 2 := by
+  simp [sobolevSourceFourierSum_apply]
+example : (sobolevSourceFourierSum 2 {-2,3} (fun _ => 2)).val 42 = 0 := by
+  simp [sobolevSourceFourierSum_apply]
+example : ‖sourcePiSobolevScalar 2 1 (by omega)
+      (sobolevSourceFourierSum 2 {-2,3} (fun _ => 1))‖^2 =
+    (1+4*Real.pi)^2+(1+6*Real.pi)^2 := by
+  rw [sobolevSourceFourierSum_pi_sq]
+  norm_num
+  ring
+
+-- The physical derivatives use signed frequency and the original period one.
+example : hierarchySobolevJetContinuous 2 1 (by omega) (sobolevSourceScalarMode 2 (-3) 2) 0 =
+    -12*Complex.I*(Real.pi:ℂ) := by
+  rw [sobolevSourceScalarMode_firstJet_zero]
+  push_cast
+  ring
+example : hierarchySobolevJetContinuous 2 1 (by omega)
+    (sobolevSourceFourierSum 2 {1,2} (fun _ => 1)) 0 = 6*Complex.I*(Real.pi:ℂ) := by
+  rw [sobolevSourceFourierSum_jet_zero]
+  norm_num
+  ring
+example : (section26EndpointBlock 1).val 1 = 1 := by
+  simp [section26EndpointBlock,sobolevSourceFourierSum_apply]
+example : (section26EndpointBlock 2).val 4 = (1/8:ℂ) := by
+  norm_num [section26EndpointBlock,sobolevSourceFourierSum_apply]
+example : (section26EndpointBlock 2).val 5 = 0 := by
+  norm_num [section26EndpointBlock,sobolevSourceFourierSum_apply]
+example : section26EndpointBlock 0 = 0 := by
+  simp [section26EndpointBlock,sobolevSourceFourierSum,Finset.Icc_eq_empty_of_lt]
+example : (section26EndpointSource 2).val 0 = 1 := by
+  norm_num [section26EndpointSource,WeightedCoeff.add_val,sobolevSourceScalarMode_apply,
+    section26EndpointBlock,sobolevSourceFourierSum_apply]
+example : ‖hierarchySobolevJetContinuous 2 1 (by omega) (section26EndpointSource 2) 0‖ = 4*Real.pi := by
+  rw [section26EndpointSource_jet_zero_norm 2 (by omega)]
+  ring
+example : ‖sourcePiSobolevScalar 2 1 (by omega) (section26EndpointSource 10)‖ ≤ 2+2*Real.pi :=
+  section26EndpointSource_H1 10 (by omega)
+example : 1 ≤ ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) (section26EndpointSource 10)‖ :=
+  section26EndpointSource_mass 10
+
+-- Real completion works at arbitrary Sobolev order, retaining the first component.
+example (m : ℕ) (a : ScalarSobolev m) (n : ℤ) :
+    (sobolevSourceRealCompletion m a).val.2.val n = conj (a.val (-n)) := by
+  simp [sobolevSourceRealCompletion]
+
+-- The obstruction keeps nonzero mass and a uniform physical H¹ bound.
+example (C : ℝ) (hC : 0 ≤ C) : ∃ a : realTypeHigherSobolevSourceLocus 2,
+    1 ≤ ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) a.val.1‖ ∧
+    ‖sourcePiSobolevScalar 2 1 (by omega) a.val.1‖ ≤ 2+2*Real.pi ∧
+    C*‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) a.val.1‖^(-(1/2:ℝ))*
+      ‖sourcePiSobolevScalar 2 1 (by omega) a.val.1‖^(3/2:ℝ) <
+        ‖hierarchySobolevJetContinuous 2 1 (by omega) a.val.1‖ :=
+  section26_supremum_real_counterexample C hC
+example : ¬ ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    ‖hierarchySobolevJetContinuous 2 1 (by omega) a.val.1‖ ≤
+      C*‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) a.val.1‖^(-(1/2:ℝ))*
+        ‖sourcePiSobolevScalar 2 1 (by omega) a.val.1‖^(3/2:ℝ) :=
+  section26_supremum_no_uniform_constant
+
+-- The lower supremum range and the top L² estimate remain available.
+example (a : ScalarSobolev 1) : ‖hierarchySobolevJetContinuous 1 0 (by omega) a‖ ≤
+    4*‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 1) a‖^(1/2:ℝ)*
+      ‖sourcePiSobolevScalar 1 1 le_rfl a‖^(1/2:ℝ) := by
+  have h := sourceSection26_supremum_interpolate 1 0 (by omega) a
+  norm_num at h ⊢
+  exact h
+example (a : ScalarSobolev 1) : ‖hierarchySobolevJetL2 1 1 le_rfl a‖ ≤
+    2*Real.pi*‖sourcePiSobolevScalar 1 1 le_rfl a‖ := by
+  simpa using sourceSection26_L2_interpolate 1 1 le_rfl le_rfl a
+
+example {W₀ W V Wa B U T : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection26Data D A B U T) (C : ℝ) (hC : 0 ≤ C) :
+    ∃ a : realTypeHigherSobolevSourceLocus 2, higherSobolevSourceInclusion 2 a.val ∈ U ∩ T ∧
+      1 ≤ ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) a.val.1‖ := by
+  obtain ⟨a,ha,hm,_⟩ := Q.supremum_counterexample C hC
+  exact ⟨a,ha,hm⟩
+end Section26EndpointChecks

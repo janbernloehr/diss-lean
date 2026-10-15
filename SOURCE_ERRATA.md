@@ -1553,10 +1553,30 @@ arbitrary ε and source-independent remainder constant. The actual
 physical remainder and Hamiltonian conclusions share one constant in
 `exists_sourceSection26_remainder_bounds`.
 
-The printed supremum range 0≤i≤m in (5.11) has a separate outstanding
-endpoint audit. The verified supremum estimate requires i<m; the L²
-estimate allows i≤m. Lemma 26.3's monomial argument uses only i<m.
-See [the Section 26 audit](coverage/SECTION_26.md).
+## Formula (5.11): the printed supremum endpoint
+
+The supremum range 0≤i≤m on printed p. 114 is false at m=i=1.
+[`SourceSection26SupremumCorrection.lean`](NLS/ZakharovShabat/SourceSection26SupremumCorrection.lean)
+constructs a counterexample for every proposed nonnegative constant.
+The scalar Fourier source has constant coefficient one and coefficients
+1/(Nn) at frequencies 1 through N². Its L² norm is at least one,
+its physical H¹ norm is at most 2+2π, and its first derivative at zero
+has norm 2πN. The printed right-hand side
+`C ‖ψ‖_L²^(−1/2) ‖ψ‖_H¹^(3/2)` is therefore bounded for fixed C,
+while the derivative supremum grows without bound.
+
+`section26_supremum_real_counterexample` gives an actual real H² source
+with nonzero mass and continuous first derivative.
+`section26_supremum_no_uniform_constant` refutes the uniform estimate.
+`SourceSection26Data.supremum_counterexample` retains membership in
+every original U and T. The argument does not rely on assigning a norm
+to an undefined derivative or on a zero norm with negative exponent.
+
+[`SourceSection26Interpolation.lean`](NLS/ZakharovShabat/SourceSection26Interpolation.lean)
+proves the valid ranges using the exact physical Hᵐ norm: i<m for the
+supremum estimate and i≤m for the L² estimate. Lemma 26.3's monomial
+argument uses only i<m and remains valid. See
+[the Section 26 audit](coverage/SECTION_26.md).
 
 ## Lemma 27.2: corrected global coefficient and optional endpoint sharpening
 
