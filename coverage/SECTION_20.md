@@ -16,12 +16,12 @@ Here Q denotes the constructed `SourceSection20Data` and M a local
 | Source assertion | Public evidence | Scope |
 | --- | --- | --- |
 | Definition of the moments, p. 92 | `Q.moment_contours` | Actual raw circle integrals of the retained Section 19 primitive to power m times the original psi function divided by the canonical root; one admissible circle family for all indices and orders |
-| Opening physical energy bracket, p. 92 | `Q.sobolev_energy_bracket`, `Q.sobolev_energy_bivector`, `sourceSection20_original_sobolev_energy` | Full physical H¹ energy derivative along the actual original H¹ angle vector gives the original frequency at every real H¹ source with gap n open; any representing Hilbert cotangent gives the original bivector |
-| H¹ regularity of the original angle vector | `Q.sobolevThetaVector_inclusion`, `Q.existsUnique_sobolevThetaVector`, `Q.analyticOnNhd_sobolevThetaVector` | Explicit bounded derivative-graph recovery, original coefficients, unique lift, actual spatial derivative, real type, nonzero selected direction, family independence, and analytic H¹ dependence |
-| Complex H¹ energy identity | `Q.sobolev_energy_bracket_complex_germ`, `Q.exists_sobolev_energy_domain` | For each index, one open complex H¹ domain contains all its real open-gap sources and retains the actual vector and energy identity inside Q's original domain; full-domain continuation remains open |
+| Opening physical energy bracket, p. 92 | `Q.sobolev_energy_bracket_complex`, `Q.sobolev_energy_bivector_complex`, `sourceSection20_original_complex_sobolev` | Full physical H¹ energy derivative along the actual original H¹ angle vector gives the restored original frequency on all H¹_c ∩ (U \ Zₙ); any representing Hilbert cotangent gives the original bivector |
+| H¹ regularity of the original angle vector | `Q.sobolevThetaVector_inclusion_complex`, `Q.existsUnique_sobolevThetaVector_complex`, `Q.sobolevThetaVector_spatial_complex` | Explicit bounded derivative-graph recovery, original coefficients, unique lift, exact spatial derivative, and analytic H¹ dependence on the full complex open-gap domain; real type, nonzero direction, and family independence on the real locus |
+| Complex H¹ domain and continuation | `Q.isConnected_sobolev_openGapDomain`, `Q.eqOn_sobolev_openGapDomain_of_real_germs` | The whole original H¹ open-gap domain is open and connected; real germs determine analytic maps on it, without any index-dependent shrinking of U |
 | Physical momentum contour | `Q.momentum_contour`, `sourceFullAbelianMomentumContour_eq_physical_of_enclosing` | Actual physical H₂ equals −i/π times the quadratic contour of the retained primitive, at real finite-gap sources; any positive circle enclosing all open gaps is allowed |
 | Physical angle–momentum bracket on H¹ | `Q.finiteGap_momentum_bracket`, `Q.sobolev_momentum_bracket`, `sourceSection20_original_momentum` | Actual original bivector equals 2πn at every real H¹ source with gap n open; the original constructor supplies all data |
-| Complex momentum normalization | `Q.sobolev_momentum_bracket_complex_germ`, `Q.exists_sobolev_momentum_domain` | Each index has a constant complex germ at every real open-gap H¹ source and an open H¹ domain containing all such sources inside Q's domain; no common domain for all indices or full-domain identity is claimed |
+| Complex momentum normalization | `Q.sobolev_momentum_bracket_complex` | Actual physical bracket equals 2πn throughout H¹_c ∩ (U \ Zₙ); the same original U is chosen before every n |
 | Lemma 20.1(i) | `Q.lemma20_1` | Exact zero-order value 2πδₖₙ, with no factor i |
 | Lemma 20.1(ii) | `Q.lemma20_1` | Every moment is complex analytic on U, including order zero |
 | Lemma 20.1(iii) | `Q.lemma20_1` | Every odd moment vanishes |
@@ -228,10 +228,10 @@ Its constructor is unconditional. For each n, an open complex H¹ domain
 contains every real H¹ source with gap n open and lies inside the original
 Section 20 domain. The construction uses the interior of the equality
 locus and verifies its neighborhood property at each real open-gap source.
-It does not intersect infinitely many neighborhoods. The full original
-complex domain and a domain common to all n remain outside this result.
-Differentiating these proved germs supplies the H¹ angle-vector recovery
-and energy identity below.
+It does not intersect infinitely many neighborhoods. Differentiating
+these germs supplies the H¹ angle-vector recovery and energy identity
+below. The subsequent connected-domain continuation extends both
+identities to the whole original H¹ open-gap domain.
 
 ## H¹ angle recovery and the physical energy identity
 
@@ -281,6 +281,42 @@ the actual analytic vector and the physical energy identity, inside Q's
 original domain. The original constructor supplies every package before
 choosing a source or index.
 
+## Full complex-domain continuation
+
+[`DenseLinearConnectedPreimage.lean`](../NLS/ComplexAnalysis/DenseLinearConnectedPreimage.lean)
+proves that the preimage of an open connected set under a dense real
+linear map is connected. Ball preimages are convex, and density lifts
+every overlap in a chain of balls. Continuity of the linear map is not
+needed for this connectedness theorem.
+
+[`AnalyticNonzeroConnected.lean`](../NLS/ComplexAnalysis/AnalyticNonzeroConnected.lean)
+proves connectedness of the nonzero locus of any nontrivial scalar
+complex analytic function on an open connected domain, including
+infinite-dimensional domains. On convex pieces, a complex line reduces
+the problem to a discrete countable zero set in an open convex subset
+of the plane. Two line segments can avoid that set while remaining in
+the domain. Analytic uniqueness makes each open ball overlap contain a
+nonzero point, which connects the local pieces. The countable-complement
+argument adapts Mathlib's proof with attribution and its license retained.
+
+[`SourceSection20SobolevDomain.lean`](../NLS/ZakharovShabat/SourceSection20SobolevDomain.lean)
+applies both results to the dense physical H¹ inclusion and the actual
+squared periodic gap from the original angular data. The H¹ preimage of
+U is connected, and removing Zₙ preserves connectedness and openness.
+A constructed real H¹ single-action source proves that each squared gap
+is nontrivial. Thus `sourceSobolevOpenGapDomain U n` is exactly the full
+H¹_c ∩ (U \ Zₙ), with the same U for all indices.
+
+[`SourceSection20ComplexSobolev.lean`](../NLS/ZakharovShabat/SourceSection20ComplexSobolev.lean)
+uses analytic uniqueness to extend the actual physical momentum and
+energy germs to every complex point of that domain. The constant
+momentum germ there identifies the analytic graph recovery with the
+unique original H¹ angle vector and gives its exact spatial derivative.
+The energy bracket uses the full H¹ differential, and any representing
+Hilbert cotangent gives the original Poisson bivector. The unconditional
+constructor chooses every original package and U before every complex
+source and index. No further source-domain shrink occurs in this step.
+
 ## Validation and remaining scope
 
 Six new modules and 35 public examples cover the common-domain constructor,
@@ -320,12 +356,20 @@ physical energy derivative along a complex H¹ line, bivector consistency,
 full complex differential equality, a common local domain for the vector
 and bracket, family independence, and a constructed nonzero source.
 
-The opening p. 92 physical identity is now proved on all real H¹ sources
-with the selected gap open and on the stated per-index complex H¹
-domains. Its full printed domain H¹_c ∩ (W² \ Zₙ) is not yet covered.
-No intersection of infinitely many neighborhoods is asserted to be open.
-The bounded graph recovery resolves the previous lack of H¹ control as
-finite-gap supports grow; full-domain continuation and common-domain
-scope remain before the original Section 21 assertions. Section 14's
-external Hilbert-map and full fractional-smoothness qualifications also
-remain. The dissertation is incomplete.
+The full complex continuation adds four modules and 13 public examples.
+They check connected complements of complex coordinate hyperplanes and
+two zeros in a disk, the full H¹ open-gap domain, signed and zero-index
+momentum, cancellation of mass between two indices on the same domain,
+complex physical energy differentiation, lift uniqueness, the actual
+spatial graph bound, bivector consistency, full complex differential
+equality, vector-valued analytic uniqueness, and an unconditional
+constructor with U chosen before all sources and indices.
+
+The opening p. 92 physical identity now holds on the full stated domain
+H¹_c ∩ (U \ Zₙ), where U is the constructed Section 20 neighborhood.
+The full-domain continuation and common-domain requirements are resolved;
+U is unchanged from the original Section 20 package. This does not assert
+an angle bracket at a collapsed selected gap or a representing L² energy
+cotangent at every H¹ source. The original Section 21 audit is next.
+Section 14's external Hilbert-map and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.

@@ -54,20 +54,20 @@ counterexample. At real finite-gap sources the original angle flow
 differentiates in H¹ throughout its pre-collapse interval. Physical
 momentum has a unique Hilbert cotangent at every complex H¹ source and
 generates the actual spatial-translation orbit. The original
-angle–momentum bracket is 2πn on all real H¹ sources with the selected gap
-open, with complex germs, using the retained primitive's physical H₂
-contour and H¹ finite-gap density.
+angle–momentum bracket is 2πn on the full complex H¹ part of the
+original Section 20 domain with the selected gap open. The proof starts
+from the retained primitive's physical H₂ contour and H¹ finite-gap
+density, then continues the real germs on the connected complex domain.
 
-Differentiating that identity now gives bounded H¹ recovery of the angle
-vector. On every real open-gap H¹ source it is the unique actual original
-vector, and the full physical H¹ energy derivative recovers the original
-frequency with mass and dispersion restored. Each index has an open
-complex H¹ domain containing all its real open-gap sources inside the
-original domain, carrying both identities. An L² energy cotangent is not
-assumed at arbitrary H¹ sources; whenever one represents the energy
-differential, the original bivector gives the same value. Continuation on
-the full intended complex domain and common-domain control remain open,
-followed by the original Section 21 assertions.
+The original angle vector has a unique analytic H¹ lift throughout that
+domain. Its full physical H¹ energy differential recovers the original
+frequency with mass and dispersion restored. Dense H¹ inclusion and
+connectedness of the nonzero locus of the analytic squared gap give the
+full domain H¹_c ∩ (U \ Zₙ) for every n; U is chosen once before all
+indices. No infinite intersection or further shrinking is needed. An L²
+energy cotangent is not assumed at arbitrary H¹ sources; whenever one
+represents the energy differential, the original bivector gives the same
+value. The original Section 21 assertions are next.
 
 ## Nonextension proof and limits
 

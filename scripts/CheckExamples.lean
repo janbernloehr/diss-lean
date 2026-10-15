@@ -55205,3 +55205,140 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
   norm_num
   ring
 end Section20SobolevEnergyChecks
+
+section Section20ComplexSobolevChecks
+open Set Filter Topology Metric NLS NLS.ZakharovShabat NLS.Poisson
+
+-- Removing both complex coordinate hyperplanes does not disconnect the domain.
+example : IsConnected {z : ℂ × ℂ | z.1 ≠ 0 ∧ z.2 ≠ 0} := by
+  have h := NLS.ComplexAnalysis.isConnected_analytic_nonzero isOpen_univ
+    (isConnected_univ : IsConnected (univ : Set (ℂ × ℂ)))
+    (fun z : ℂ × ℂ => z.1*z.2) (fun z _ => by fun_prop) (1,1) (mem_univ _) (by norm_num)
+  simpa using! h
+
+-- Two distinct interior zeros can be avoided by paths in the same disk.
+example : IsPathConnected {z : ℂ | z ∈ ball 0 2 ∧ z^2+1 ≠ 0} := by
+  exact NLS.ComplexAnalysis.isPathConnected_convex_analytic_nonzero
+    isOpen_ball (convex_ball _ _) (fun z : ℂ => z^2+1)
+    (fun z _ => by fun_prop) 0 (by simp) (by norm_num)
+
+section OriginalComplexFamily
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection20Data D A B U)
+
+-- Connectedness survives the denser H¹ topology and removal of the selected gap divisor.
+example (n : ℤ) : IsOpen (sourceSobolevOpenGapDomain U n) ∧
+    IsConnected (sourceSobolevOpenGapDomain U n) ∧
+    IsConnected (sobolevSourceInclusion ⁻¹' U) :=
+  ⟨Q.isOpen_sobolev_openGapDomain n,Q.isConnected_sobolev_openGapDomain n,Q.isConnected_sobolev_domain⟩
+
+-- Negative momentum normalization on arbitrary complex, not necessarily real, sources.
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : a ∈ sourceSobolevOpenGapDomain U (-2)) :
+    sourceSobolevThetaMomentumBracket (-2) s a = -4*(Real.pi : ℂ) := by
+  rw [Q.sobolev_momentum_bracket_complex a ha.1 (-2) ha.2]
+  norm_num
+  ring
+
+-- The zero-index momentum direction remains stationary on the full complex domain.
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : a ∈ sourceSobolevOpenGapDomain U 0) :
+    fderiv ℂ periodOneSobolevMomentum a (sourceSobolevThetaVector 0 s a) = 0 := by
+  have h := Q.sobolev_momentum_bracket_complex a ha.1 0 ha.2
+  rw [sourceSobolevThetaMomentumBracket_eq_neg_derivative 0 s a _
+    (Q.sobolevThetaVector_inclusion_complex a ha.1 0 ha.2)] at h
+  simpa using h
+
+-- Two indices use the very same source domain; mass cancels and dispersion has its exact sign.
+example (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : a ∈ sourceSobolevOpenGapDomain U (-1)) (hb : a ∈ sourceSobolevOpenGapDomain U 2) :
+    sourceSobolevThetaEnergyBracket 2 s a-sourceSobolevThetaEnergyBracket (-1) s a =
+      A.renormalizedFrequency 2 (sobolevSourceInclusion a)-
+        A.renormalizedFrequency (-1) (sobolevSourceInclusion a)+12*(Real.pi : ℂ)^2 := by
+  rw [Q.sobolev_energy_bracket_complex a hb.1 2 hb.2,
+    Q.sobolev_energy_bracket_complex a ha.1 (-1) ha.2]
+  norm_num
+  ring
+
+-- The physical energy's actual complex line derivative has the negative bracket sign.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ)
+    (ha : a ∈ sourceSobolevOpenGapDomain U n) :
+    HasDerivAt (fun z : ℂ => periodOneSobolevHamiltonian (a+z • sourceSobolevThetaVector n s a))
+      (-(A.renormalizedFrequency n (sobolevSourceInclusion a)+
+        4*periodOneSobolevMass a+(2*(n : ℂ)*Real.pi)^2)) 0 := by
+  have hd : HasDerivAt (fun z : ℂ => a+z • sourceSobolevThetaVector n s a)
+      (sourceSobolevThetaVector n s a) 0 := by
+    simpa using ((hasDerivAt_id (0 : ℂ)).smul_const (sourceSobolevThetaVector n s a)).const_add a
+  have he := (analyticAt_periodOneSobolevHamiltonian a).differentiableAt.hasFDerivAt.comp_hasDerivAt_of_eq
+    0 hd (by simp)
+  have hbr := Q.sobolev_energy_bracket_complex a ha.1 n ha.2
+  change -(fderiv ℂ periodOneSobolevHamiltonian a (sourceSobolevThetaVector n s a)) = _ at hbr
+  have hval := congrArg Neg.neg hbr
+  simp only [neg_neg] at hval
+  simpa only [hval] using! he
+
+-- Any H¹ lift with the original Fourier coefficients is the constructed analytic lift.
+example (a v : ScalarDomain 2 × ScalarDomain 2) (n : ℤ)
+    (ha : a ∈ sourceSobolevOpenGapDomain U n)
+    (hv : sobolevSourceInclusion v = sourceAngularThetaHamiltonianVector
+      (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion a)) :
+    v = sourceSobolevThetaVector n s a :=
+  sobolevSourceInclusion_injective (hv.trans (Q.sobolevThetaVector_inclusion_complex a ha.1 n ha.2).symm)
+
+-- The physical spatial derivative is controlled by the original theta Hessian on complex sources.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ)
+    (ha : a ∈ sourceSobolevOpenGapDomain U n) :
+    ‖sourceSobolevThetaVector n s a‖ ≤ ‖sourceSpatialGraphRecovery‖ *
+      max ‖sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion a)‖
+        ‖sourceSobolevSpatialDerivative (sourceSobolevThetaVector n s a)‖ := by
+  rw [Q.sobolevThetaVector_spatial_complex a ha.1 n ha.2]
+  exact norm_sourceSobolevThetaVector_le n s a
+
+-- A genuine physical L² cotangent gives precisely the original Poisson bivector.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ)
+    (ha : a ∈ sourceSobolevOpenGapDomain U n) (L : CoeffPair 2 →L[ℂ] ℂ)
+    (hL : HasFDerivAt periodOneSobolevHamiltonian (L.comp sobolevSourceInclusion) a) :
+    sourceBivector le_rfl
+      (sourceAngularThetaDifferential (by simp) (by norm_num) n s (sobolevSourceInclusion a)) L =
+        A.renormalizedFrequency n (sobolevSourceInclusion a)+
+          4*periodOneSobolevMass a+(2*(n : ℂ)*Real.pi)^2 :=
+  Q.sobolev_energy_bivector_complex a ha.1 n ha.2 L hL.fderiv
+
+-- Full complex differentials agree, not just values on the real form.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ)
+    (ha : a ∈ sourceSobolevOpenGapDomain U n) :
+    fderiv ℂ (sourceSobolevThetaEnergyBracket n s) a =
+      fderiv ℂ (fun b => A.renormalizedFrequency n (sobolevSourceInclusion b)+
+        4*periodOneSobolevMass b+(2*(n : ℂ)*Real.pi)^2) a := by
+  apply Filter.EventuallyEq.fderiv_eq
+  filter_upwards [(Q.isOpen_sobolev_openGapDomain n).mem_nhds ha] with b hb
+  exact Q.sobolev_energy_bracket_complex b hb.1 n hb.2
+
+-- The uniqueness principle also applies to Hilbert-valued analytic maps.
+example (n : ℤ) (f g : (ScalarDomain 2 × ScalarDomain 2) → CoeffPair 2)
+    (hf : AnalyticOnNhd ℂ f (sourceSobolevOpenGapDomain U n))
+    (hg : AnalyticOnNhd ℂ g (sourceSobolevOpenGapDomain U n))
+    (he : ∀ a : realTypeSobolevSourceLocus, canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a.val)) (periodOnePotential_mem _) n ≠ 0 →
+        f =ᶠ[𝓝 a.val] g) : EqOn f g (sourceSobolevOpenGapDomain U n) :=
+  Q.eqOn_sobolev_openGapDomain_of_real_germs n f g hf hg he
+end OriginalComplexFamily
+
+-- The original construction chooses U and the family before every complex source and every index.
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), ∃ _Q : SourceSection20Data D A B U,
+      ∀ n : ℤ, ∀ a ∈ sourceSobolevOpenGapDomain U n,
+        ∃ v : ScalarDomain 2 × ScalarDomain 2,
+          sobolevSourceInclusion v = sourceAngularThetaHamiltonianVector
+            (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion a) ∧
+          -(fderiv ℂ periodOneSobolevHamiltonian a v) =
+            A.renormalizedFrequency n (sobolevSourceInclusion a)+
+              4*periodOneSobolevMass a+(2*(n : ℂ)*Real.pi)^2 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,hall⟩ := sourceSection20_original_complex_sobolev
+  refine ⟨W₀,W,V,s,D,Wa,A,B,U,Q,?_⟩
+  intro n a ha
+  exact ⟨sourceSobolevThetaVector n s a,(hall a ha.1 n ha.2).2.1,(hall a ha.1 n ha.2).2.2⟩
+end Section20ComplexSobolevChecks

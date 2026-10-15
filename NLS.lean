@@ -3730,3 +3730,7 @@ import NLS.ZakharovShabat.SourceSobolevAngleVector
 import NLS.ZakharovShabat.SourceSection20AngleSobolev
 import NLS.ZakharovShabat.SourceSobolevAngleEnergy
 import NLS.ZakharovShabat.SourceSection20SobolevEnergy
+import NLS.ComplexAnalysis.DenseLinearConnectedPreimage
+import NLS.ComplexAnalysis.AnalyticNonzeroConnected
+import NLS.ZakharovShabat.SourceSection20SobolevDomain
+import NLS.ZakharovShabat.SourceSection20ComplexSobolev

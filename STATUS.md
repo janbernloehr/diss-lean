@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: the physical energy bracket on real H¹
+## Current milestone: physical brackets on the full complex H¹ domain
+
+The original Section 20 family now satisfies the physical momentum and
+energy identities at every complex H¹ source in its existing domain U
+with the selected gap open. The angle vector has a unique actual H¹
+lift there, depends analytically on the H¹ source, and has the exact
+spatial derivative supplied by the original theta Hessian. The momentum
+bracket is 2πn; the energy bracket is ω*ₙ+4H₁+(2nπ)², using the full
+physical H¹ energy differential.
+
+The domain U and original family are chosen before every index. There
+is no further source-domain shrink: for each n the identity holds on
+all of H¹_c ∩ (U \ Zₙ), matching the opening p. 92 domain convention.
+The gap divisor itself is excluded because the angle is singular there;
+the already constructed moment frequency remains analytic through it.
+
+Two general topology results supply the continuation. Dense linear maps
+pull open connected sets back to connected sets. A nontrivial scalar
+complex analytic function has a connected nonzero locus on an open
+connected domain, also in infinite dimension. The latter proof uses
+complex lines inside convex balls, avoids their discrete zero sets, and
+joins overlapping balls. Applied to the actual squared periodic gap,
+these results give connectedness of the full H¹ open-gap domain. A
+constructed real single-action source supplies a nonzero witness for
+every index. Analytic uniqueness then extends the previously proved
+physical germs throughout that domain.
+
+Four new modules and 13 public checks cover complex coordinate
+hyperplanes, a disk with two zeros removed, H¹ connectedness, signed and
+zero-index momentum, exact dispersion after comparing two indices,
+complex physical energy derivatives, unique lifts, graph bounds,
+representing Hilbert cotangents, vector-valued analytic uniqueness, and
+one unconditional constructor for all complex sources and indices.
+The adapted Mathlib countable-complement proof retains its attribution
+and Apache 2.0 license. See [the Section 20 audit](coverage/SECTION_20.md).
+
+Next: audit the original assertions and domains in Section 21, then
+implement the first remaining step. Section 14's external Hilbert-map
+and full fractional-smoothness qualifications remain. The dissertation
+is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,172 build jobs, all 5,668
+public examples, and the transitive axiom audit for 34,290 NLS
+declarations. The four new modules and 13 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 337 local documentation links, and `git diff --check`
+also pass.
+
+## Previous milestone: the physical energy bracket on real H¹
 
 The original angle Hamiltonian now has a constructed H¹ vector at every
 real H¹ source with the selected gap open. Its original Fourier
