@@ -54469,3 +54469,137 @@ example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (5/2))), ∃ s,
   exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,(Q.sequence_analytic _ (by norm_num) (by norm_num) (by norm_num)).2.1,by norm_num⟩
 
 end OriginalSection20Exponents
+
+section OriginalSection20Energy
+open Set Filter Topology NLS NLS.Poisson NLS.ZakharovShabat
+open scoped ENNReal
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection20Data D A B U)
+
+example : Function.Injective sobolevSourceInclusion := sobolevSourceInclusion_injective
+
+example (w : SpectralWeight) (a : CoeffPair 2) (ha : IsRealType (CoeffPair.toMax 2 a))
+    (hf : (⟨normalizedWeightedSource w a,normalizedWeightedSource_realType w a ha⟩ : realTypeSourceSubmodule 2)
+      ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (normalizedWeightedSource w a)) (periodOnePotential_mem _) n ≠ 0) :
+    ∃! v : CoeffPair 2, normalizedWeightedSource w v =
+      sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s (normalizedWeightedSource w a) :=
+  D.complex.existsUnique_finiteGap_thetaHamiltonian_weighted D.previous.original_theta_common_domain w a ha hf n hn
+
+variable (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+  (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+    (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0)
+
+example : ∃! v : ScalarDomain 2 × ScalarDomain 2, sobolevSourceInclusion v =
+    sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s φ.val :=
+  D.complex.existsUnique_finiteGap_thetaHamiltonian_sobolev D.previous.original_theta_common_domain φ hf n hn
+
+example : sobolevSourceInclusion
+    (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn) =
+      sourceAngularThetaHamiltonianVector (by simp) (by norm_num) le_rfl n s φ.val :=
+  D.complex.finiteGapThetaSobolevVector_inclusion D.previous.original_theta_common_domain φ hf n hn
+
+example : D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn ≠ 0 :=
+  D.complex.finiteGapThetaSobolevVector_ne_zero D.previous.original_theta_common_domain φ hf n hn
+
+example (k : ℤ) :
+    (fderiv ℂ (sourceComplexAction (by simp) (by norm_num) k) φ.val)
+      (sobolevSourceInclusion (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn)) =
+      -(if n = k then 1 else 0) :=
+  D.complex.finiteGapThetaSobolevVector_action D.previous.original_theta_common_domain φ hf n hn k
+
+example (k : ℤ) (hkn : n ≠ k) :
+    (fderiv ℂ (sourceComplexAction (by simp) (by norm_num) k) φ.val)
+      (sobolevSourceInclusion (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn)) = 0 := by
+  simpa only [if_neg hkn,neg_zero] using
+    D.complex.finiteGapThetaSobolevVector_action D.previous.original_theta_common_domain φ hf n hn k
+
+example {W₀' W' V' : Set (CoeffPair 2)} {s' : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D' : SourceSection17OriginalData (by simp) (by norm_num) W₀' W' V' s') :
+    D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn =
+      D'.complex.finiteGapThetaSobolevVector D'.previous.original_theta_common_domain φ hf n hn :=
+  D.complex.finiteGapThetaSobolevVector_independent D.previous.original_theta_common_domain
+    D'.complex D'.previous.original_theta_common_domain φ hf n hn
+
+example (t : ℝ) (ht : t < (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) :
+    HasDerivAt (fun r => sourceFiniteGapSobolevPair (by simp) (by norm_num)
+      (D.complex.hilbertActionReduction φ n r) (D.complex.hilbertActionReduction_mem_finiteGap φ hf n r))
+      (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain (D.complex.hilbertActionReduction φ n t)
+        (D.complex.hilbertActionReduction_mem_finiteGap φ hf n t) n
+        (D.complex.hilbertActionReduction_gap_ne_zero n φ
+          (SourceBirkhoffMapComplexData.hilbert_action_pos_of_gap_ne_zero φ n hn) ht)) t :=
+  D.complex.hasDerivAt_hilbertActionReduction_sobolev D.previous.original_theta_common_domain φ hf n hn t ht
+
+example : D.complex.finiteGapOpenFrequency φ hf n hn =
+    -(fderiv ℂ periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf)
+      (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn)) :=
+  D.complex.finiteGapOpenFrequency_eq_sobolev_energy_bracket D.previous.original_theta_common_domain φ hf n hn
+
+example (L : CoeffPair 2 →L[ℂ] ℂ)
+    (hL : fderiv ℂ periodOneSobolevHamiltonian
+      (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) = L.comp sobolevSourceInclusion) :
+    sourceBivector le_rfl (sourceAngularThetaDifferential (by simp) (by norm_num) n s φ.val) L =
+      D.complex.finiteGapOpenFrequency φ hf n hn :=
+  D.complex.finiteGap_energy_bivector_eq D.previous.original_theta_common_domain φ hf n hn L hL
+
+example : ∃ L : CoeffPair 2 →L[ℂ] ℂ,
+    HasFDerivAt periodOneSobolevHamiltonian (L.comp sobolevSourceInclusion)
+      (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) ∧
+    ∀ (k : ℤ) (hk : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) k ≠ 0),
+      sourceBivector le_rfl (sourceAngularThetaDifferential (by simp) (by norm_num) k s φ.val) L =
+        D.complex.finiteGapOpenFrequency φ hf k hk :=
+  D.complex.exists_finiteGap_energy_cotangent_bracket D.previous.original_theta_common_domain φ hf
+
+example : -(fderiv ℂ periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf)
+    (D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf n hn)) =
+      A.renormalizedFrequency n φ.val +
+        4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1+(2*(n : ℂ)*Real.pi)^2 :=
+  Q.finiteGap_energy_bracket φ hf n hn
+
+example : ∃ L : CoeffPair 2 →L[ℂ] ℂ,
+    HasFDerivAt periodOneSobolevHamiltonian (L.comp sobolevSourceInclusion)
+      (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) ∧
+    ∀ (k : ℤ) (hk : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) k ≠ 0),
+      sourceBivector le_rfl (sourceAngularThetaDifferential (by simp) (by norm_num) k s φ.val) L =
+        A.renormalizedFrequency k φ.val +
+          4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1+(2*(k : ℂ)*Real.pi)^2 :=
+  Q.finiteGap_energy_cotangent φ hf
+
+end OriginalSection20Energy
+
+section OriginalSection20EnergyWitness
+open Set NLS NLS.ZakharovShabat
+
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ φ : realTypeSourceSubmodule 2, ∃ hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+    ∃ hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) 0 ≠ 0,
+      D.complex.finiteGapThetaSobolevVector D.previous.original_theta_common_domain φ hf 0 hn ≠ 0 := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection17_original (p := 2) (by simp) (by norm_num)
+  obtain ⟨a,ha,_,_⟩ := exists_realSobolev_single_action 0 1 (by norm_num)
+  let φ : realTypeSourceSubmodule 2 := ⟨sobolevSourceInclusion a.val,a.property⟩
+  have hgap (k : ℤ) : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem _) k = 0 ↔ k ≠ 0 := by
+    have hz := (sourceComplexAction_nonneg_and_eq_zero_iff_gap_zero
+      (by simp) (by norm_num) k φ.val φ.property).2.2
+    rw [sourcePeriodicGapDisplacement_apply] at hz
+    rw [← hz]
+    change sourceComplexAction (by simp) (by norm_num) k (sobolevSourceInclusion a.val) = 0 ↔ k ≠ 0
+    rw [ha k]
+    simp
+  have hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) := by
+    apply (Set.finite_singleton (0 : ℤ)).subset
+    intro k hk
+    by_contra h
+    exact hk ((hgap k).mpr h)
+  have hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) 0 ≠ 0 := by
+    simpa using (hgap 0)
+  exact ⟨W₀,W,V,s,D,φ,hf,hn,D.complex.finiteGapThetaSobolevVector_ne_zero D.previous.original_theta_common_domain φ hf 0 hn⟩
+
+end OriginalSection20EnergyWitness

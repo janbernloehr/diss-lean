@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: Section 20 original moments and frequencies
+## Current milestone: Section 20 physical H¹ energy bracket at finite-gap sources
+
+The original angle Hamiltonian now has a constructed, unique H¹ tangent
+at every real finite-gap source with an open selected gap. The proof first
+lifts the actual action-reduction tangent to any spectral weight in which
+the source is represented. Its H¹ specialization uses the physical
+finite-gap representative and retains every original Fourier coefficient.
+
+The H¹ tangent is independent of the auxiliary Birkhoff and angle
+families, is nonzero, and decreases exactly the selected action at unit
+speed. The original action-reduction curve is differentiable in H¹ at
+every time before collapse, with this actual tangent.
+
+The full physical H¹ energy differential applied to that vector is minus
+the independently constructed physical frequency. One physical Hilbert
+cotangent exists at each source and gives the original Poisson identity
+for every open selected gap. Attached to the same Section 20 original
+family, the value is its moment frequency plus four times the mass and
+the free dispersion. No Sobolev tangent or physical cotangent is supplied
+as an assumption of these constructions.
+
+Four new modules and 15 public checks cover the weighted lift, uniqueness,
+exact coefficients, action sign, full pre-collapse H¹ derivative, energy
+bracket, and one cotangent for all open gaps. An actual source with one
+nonzero action provides a nonzero H¹ tangent. See
+[the Section 20 audit](coverage/SECTION_20.md).
+
+Next: extend the angle tangent and Poisson identity to arbitrary complex
+H¹ sources. Fixed-tail reconstruction alone does not provide uniform H¹
+control for growing finite-gap supports. The next proposed route starts
+with the physical momentum cotangent and its quadratic-contour angle
+bracket, then uses the spatial-translation identity to obtain H¹ regularity.
+These additional identities are not yet proved. The original Section 21
+audit follows that step. Section 14's external Hilbert-map and full fractional
+smoothness qualifications remain; the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,151
+jobs, all 5,592 public examples pass, and the transitive axiom audit checks
+34,077 NLS declarations. The four new modules and 15 new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 308 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 20 original moments and frequencies
 
 `sourceSection20_original` constructs the original contour moments and
 renormalized frequencies on one open connected source domain containing

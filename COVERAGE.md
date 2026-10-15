@@ -50,8 +50,12 @@ the same primitive and original roots, proves the physical finite-gap
 normalization, fixed mixed remainders, analytic sequence maps, and
 compatibility with the original action frequency. The unrestricted
 diagonal auxiliary-factor analyticity claim has a formal zero-source
-counterexample. The next work is the opening complex H¹ Poisson identity
-in Section 20, followed by the original Section 21 assertions.
+counterexample. At every real finite-gap source with an open selected gap,
+the original angle vector now has a unique constructed H¹ lift; the actual
+angle flow differentiates to it in H¹ throughout its pre-collapse interval.
+The physical energy differential and original Poisson bivector recover the
+same frequency. The general complex H¹ Poisson identity in Section 20
+remains open, followed by the original Section 21 assertions.
 
 ## Nonextension proof and limits
 

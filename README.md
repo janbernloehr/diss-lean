@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 20's contour moments and renormalized frequencies now
-use the original Birkhoff roots and the retained Section 19 primitive on
-one common source domain. The package proves the moment identities,
-physical finite-gap normalization, analytic frequency extensions, fixed
-mixed remainders, and agreement with the original action frequency.
-The printed diagonal auxiliary-factor analyticity claim has a formal
-counterexample at the zero potential.
+Latest step: Section 20's original angle Hamiltonian now has a constructed
+H¹ tangent at every real finite-gap source with an open selected gap.
+The original action-reduction flow differentiates to that tangent in H¹
+throughout its pre-collapse interval. The physical energy derivative and
+the original Poisson bracket both recover the frequency, retaining the
+mass and free-dispersion terms. The moment package and its source correction
+remain available on the same original family.
 
-Next: audit Section 20's opening complex H¹ Poisson identity, then the
+Next: extend Section 20's Poisson identity to general complex H¹ sources, then the
 original Section 21 assertions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

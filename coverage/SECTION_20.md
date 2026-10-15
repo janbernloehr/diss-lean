@@ -16,6 +16,7 @@ Here Q denotes the constructed `SourceSection20Data` and M a local
 | Source assertion | Public evidence | Scope |
 | --- | --- | --- |
 | Definition of the moments, p. 92 | `Q.moment_contours` | Actual raw circle integrals of the retained Section 19 primitive to power m times the original psi function divided by the canonical root; one admissible circle family for all indices and orders |
+| Opening physical energy bracket, finite-gap case | `Q.finiteGap_energy_bracket`, `Q.finiteGap_energy_cotangent` | Constructed H¹ angle tangent and one actual physical energy cotangent give the original Poisson identity at every real finite-gap source, for every open selected gap; arbitrary complex H¹ sources remain open |
 | Lemma 20.1(i) | `Q.lemma20_1` | Exact zero-order value 2πδₖₙ, with no factor i |
 | Lemma 20.1(ii) | `Q.lemma20_1` | Every moment is complex analytic on U, including order zero |
 | Lemma 20.1(iii) | `Q.lemma20_1` | Every odd moment vanishes |
@@ -100,6 +101,49 @@ sentence following (4.9) therefore needs a restriction to k≠n for the
 auxiliary factor on the isolating disk. The diagonal factorization uses
 the regular ζₙ. See [the source correction](../SOURCE_ERRATA.md).
 
+## The physical H¹ angle tangent and energy bracket
+
+[`SourceFiniteGapAngleWeighted.lean`](../NLS/ZakharovShabat/SourceFiniteGapAngleWeighted.lean)
+proves `D.existsUnique_finiteGap_thetaHamiltonian_weighted`. For a real
+finite-gap source represented in a spectral weight, the original angle
+Hamiltonian has a unique tangent in that same weight. The proof uses the
+actual action-reduction curve, its fixed closed-gap tail, and the analytic
+weighted reconstruction. Differentiating the decoding identity recovers
+the unchanged original Fourier coefficients. It does not assume that the
+angle vector already has weighted regularity.
+
+[`SourceFiniteGapAngleSobolev.lean`](../NLS/ZakharovShabat/SourceFiniteGapAngleSobolev.lean)
+specializes this construction to H¹, using the existing physical H¹
+representative of every real finite-gap source. The resulting
+`D.finiteGapThetaSobolevVector E` is unique, independent of both the
+auxiliary Birkhoff realization and normalized angle family, and nonzero
+on an open selected gap. Its action derivative is exactly −δₙₖ.
+`D.hasDerivAt_hilbertActionReduction_sobolev` proves that the actual
+physical H¹ representatives of the action-reduction curve differentiate
+to this tangent at every t<Iₙ(φ), including negative times.
+
+[`SourceFiniteGapAngleEnergy.lean`](../NLS/ZakharovShabat/SourceFiniteGapAngleEnergy.lean)
+then applies the full complex H¹ energy differential to that tangent.
+The chain rule identifies it with the derivative of the independently
+defined physical Hamiltonian along the original action-reduction curve.
+Since this curve decreases Iₙ at unit speed, the physical frequency is
+the negative energy derivative. The proof uses the physical H¹ energy,
+not just a scalar contour functional with the same value at the base point.
+
+At each real finite-gap source there is one Hilbert cotangent whose H¹
+restriction is the full physical energy differential in every complex H¹
+direction. Its source Poisson bivector against the original angle
+cotangent is the same physical frequency, simultaneously for every open
+gap. The equality is also proved for any other Hilbert cotangent with
+that restriction; no such cotangent is assumed in the existence theorem.
+
+[`SourceSection20EnergyBracket.lean`](../NLS/ZakharovShabat/SourceSection20EnergyBracket.lean)
+attaches both identities to Q's actual original family. The final value is
+ω*ₙ+4H₁+(2nπ)², where ω*ₙ is the already proved original moment sum.
+The bracket requires an open selected gap because the angle cotangent is
+singular at collapse. The existing moment-frequency extension still
+includes collapsed gaps; no angle bracket there is asserted.
+
 ## Validation and remaining scope
 
 Six new modules and 35 public examples cover the common-domain constructor,
@@ -109,11 +153,22 @@ diagonal counterexample, and compatibility with the action frequency.
 Checks include p=3/2 with p/2<1 and p=5/2 with target r=5/4 and p/3<1.
 Full gate results are recorded in [the implementation status](../STATUS.md).
 
+The subsequent physical bracket step adds four modules and 15 public
+examples. They check weighted and H¹ tangent uniqueness, preservation of
+the original coefficients, the action sign and unselected-action zeros,
+independence of the auxiliary families, the full pre-collapse H¹ flow
+derivative, the energy differential, and one cotangent for all open gaps.
+An actual source realizing a single nonzero action supplies a nonzero
+H¹ angle tangent without a supplied open-gap witness.
+
 The physical identity packaged here is for real finite-gap sources; the
 analytic continuation and original action-frequency identification hold on
-the stated complex neighborhoods. The opening p. 92 identity involving
-the Poisson bracket on arbitrary complex H¹ sources is not separately
-certified by this package. Audit that identity before proceeding to the
-original Section 21 assertions. Section 14's external Hilbert-map and full
+the stated complex neighborhoods. The opening p. 92 Poisson identity now
+has the physical H¹ interpretation at real finite-gap sources. Extending
+the H¹ angle tangent and bracket to arbitrary complex H¹ sources remains
+open: the fixed-tail weighted reconstruction used above does not give
+uniform H¹ control as the finite-gap supports grow. Establish that
+regularity and continuation before proceeding to the original Section 21
+assertions. Section 14's external Hilbert-map and full
 fractional-smoothness qualifications also remain. The dissertation is
 incomplete.
