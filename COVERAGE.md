@@ -67,7 +67,20 @@ full domain H¹_c ∩ (U \ Zₙ) for every n; U is chosen once before all
 indices. No infinite intersection or further shrinking is needed. An L²
 energy cotangent is not assumed at arbitrary H¹ sources; whenever one
 represents the energy differential, the original bivector gives the same
-value. The original Section 21 assertions are next.
+value.
+
+The original primitive-power moments and cubic Hamiltonian are audited
+in [`coverage/SECTION_21.md`](coverage/SECTION_21.md). On one common
+connected restriction retaining all real sources, the same Section 19
+primitive satisfies every clause of Lemma 21.1. At exponent four, the
+absolutely and locally uniformly convergent negative cubic series
+recovers the original action Hamiltonian; its gradient is the retained
+Section 20 frequency throughout the complex source domain. The full
+source derivative has an absolutely convergent scalar series. The same
+Hamiltonian retains its physical H¹ normalization, sign on its actual
+action domain, Hessian, and local concavity. Three printed sign errors
+have actual finite-gap or unit-mass source counterexamples. Section 22
+is the next original assertion audit.
 
 ## Nonextension proof and limits
 

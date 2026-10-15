@@ -1,5 +1,38 @@
 # Source discrepancies
 
+## Section 21: equation (4.13) requires the negative cubic coefficient
+
+Lemma 21.2 on printed p. 97 gives +4/3 times the cubic moment sum.
+Its proof concludes with −4/3, consistent with Proposition 21.3 and the
+normalization Rₙ⁽ᵐ⁾ = −π⁻¹ ∮ Fₙᵐ dλ. The formal
+`SourceSection21MomentData.lemma21_2` proves the corrected identity
+using the original Section 19 primitive.
+
+`SourcePrimitivePowerAtlas.printed_lemma21_2_sign_counterexample`
+constructs an actual real finite-gap source with I₀ = 1 and every other
+action zero. All other cubic moments vanish, while R₀⁽³⁾ is strictly
+positive. Hence the printed positive coefficient gives a different
+value of the Hamiltonian correction.
+
+## Section 21: the two Hamiltonian proof claims must say nonpositive
+
+The proofs of Proposition 21.3 and Theorem 18.3 on printed p. 98 say
+that H* is nonnegative. The statements have the correct sign:
+nonpositive, with equality only at zero.
+
+`SourcePrimitivePowerAtlas.printed_nonnegative_hamiltonian_counterexample`
+constructs a real H¹ source of physical mass one whose cubic Hamiltonian
+is strictly negative.
+`SourceOriginalHamiltonianData.printed_nonnegative_action_hamiltonian_counterexample`
+places such a source's original actions in both the chosen Hamiltonian
+domain L and the nonnegative ℓ² cone, with a strictly negative value of
+that same Hamiltonian. The domain is not replaced by the whole cone.
+
+All three witnesses are implemented in
+[`SourceSection21SignCorrections.lean`](NLS/ZakharovShabat/SourceSection21SignCorrections.lean).
+See [the Section 21 audit](coverage/SECTION_21.md) for the common original
+moment, source-Hamiltonian, action-gradient, and concavity package.
+
 ## Section 18: the full Hamiltonian Hessian includes the mass-square term
 
 The expansion on printed p. 83 includes 2H₁², but the next display gives

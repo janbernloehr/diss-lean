@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Current milestone: physical brackets on the full complex H¹ domain
+## Current milestone: Section 21 on the original common domain
+
+The Section 21 primitive-power moments now use the same primitive and
+original Birkhoff family as Sections 19–20. For every finite p > 1, one
+open connected complex neighborhood contains every real source and
+supports all five clauses of Lemma 21.1. One local constant controls all
+indices and moment orders. The first moment is the original action;
+all moments vanish at collapsed complex gaps.
+
+At p = 4, a further common connected restriction identifies the
+absolutely and locally uniformly convergent negative cubic series with
+the already chosen original action Hamiltonian. Its full complex action
+gradient is the retained Section 20 frequency. The source derivative is
+an absolutely convergent frequency-weighted action-derivative series.
+The same Hamiltonian retains the physical H¹ identity, including the
+mass-square and weighted action subtractions, its sign on the actual
+nonnegative action domain, Hessian −2 times complex bilinear duality at
+zero, and quantitative local concavity.
+
+The original printed pages also contain three sign discrepancies.
+Equation (4.13) needs a minus before the cubic sum; the proofs of
+Proposition 21.3 and Theorem 18.3 must say nonpositive. Actual finite-gap
+and unit-mass H¹ sources formally refute the printed signs, including a
+strictly negative value inside the original action domain and positive
+cone. See [the Section 21 audit](coverage/SECTION_21.md) and
+[source discrepancies](SOURCE_ERRATA.md).
+
+Five new modules and 22 public checks cover the retained contours,
+common moment bounds, complex collapsed gaps and action differentials,
+a below-two constructor, convergence, the original frequency gradient,
+the full source differential, physical reconstruction, the complex
+Hessian, local concavity, and all three sign counterexamples.
+
+The source neighborhood is a common restriction of the previous domain;
+it retains all real sources. Extension to the whole nonnegative ℓ² cone
+and global concavity are not asserted. Section 14's external Hilbert-map
+and full fractional-smoothness qualifications remain. Next: audit the
+original assertions in Section 22. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,177 build jobs, all 5,690
+public examples, and the transitive axiom audit for 34,339 NLS
+declarations. The five new modules and 22 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 354 local documentation links across 28 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: physical brackets on the full complex H¹ domain
 
 The original Section 20 family now satisfies the physical momentum and
 energy identities at every complex H¹ source in its existing domain U

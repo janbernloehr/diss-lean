@@ -55342,3 +55342,195 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
   intro n a ha
   exact ⟨sourceSobolevThetaVector n s a,(hall a ha.1 n ha.2).2.1,(hall a ha.1 n ha.2).2.2⟩
 end Section20ComplexSobolevChecks
+
+section Section21OriginalChecks
+open Set Metric Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+section AllExponents
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U Wp T : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} {Q : SourceSection20Data D A B U}
+  {P : SourcePrimitivePowerAtlas hp hp1 Wp} (M : SourceSection21MomentData Q P T)
+
+-- The raw contour has -1/pi, and uses the retained Section 19 ambient B.
+example (ψ : CoeffPair p) (hψ : ψ ∈ T) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, sourcePsiRealCenteredContourFamily hp hp1 ψ c R ∧
+      ∀ n m, P.moment n m ψ = -(Real.pi : ℂ)⁻¹ *
+        ∮ z in C(c n,R n), (sourceFullAbelianPrimitive hp hp1 B n (z,ψ))^m :=
+  M.moment_contours ψ hψ
+
+-- The zeroth and a nontrivial even order vanish at arbitrary complex sources.
+example (ψ : CoeffPair p) (hψ : ψ ∈ T) (n : ℤ) :
+    P.moment n 0 ψ = 0 ∧ P.moment n 6 ψ = 0 :=
+  ⟨M.lemma21_1.2.1 ψ hψ n 0,M.lemma21_1.2.1 ψ hψ n 3⟩
+
+-- The same neighborhood and constant control different powers and every signed index.
+example (φ : CoeffPair p) (hφ : φ ∈ T) :
+    ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ T ∧ ∃ C : ℝ, 0 < C ∧
+      ∀ ψ ∈ ball φ r, ∀ n : ℤ,
+        ‖P.moment n 3 ψ‖ ≤ C^3*‖canonicalPeriodicGap hp hp1
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖^4 ∧
+        ‖P.moment n 5 ψ‖ ≤ C^5*‖canonicalPeriodicGap hp hp1
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖^6 := by
+  obtain ⟨r,hr,hs,C,hC,hb⟩ := M.locally_uniform φ hφ
+  exact ⟨r,hr,hs,C,hC,fun ψ hψ n => ⟨hb ψ hψ n 3,hb ψ hψ n 5⟩⟩
+
+-- A collapsed complex gap kills all orders, without a reality premise.
+example (ψ : CoeffPair p) (hψ : ψ ∈ T) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    ∀ m, P.moment n m ψ = 0 :=
+  M.lemma21_1.2.2.2.1 ψ hψ n hn
+
+-- Odd moments are strictly positive at a real open gap, including a negative index.
+example (φ : realTypeSourceSubmodule p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem _) (-2) ≠ 0) :
+    0 < (P.moment (-2) 7 φ.val).re := by
+  obtain ⟨_,_,_,_,hpos,hzero,_⟩ := M.lemma21_1
+  apply lt_of_le_of_ne (hpos φ (-2) 7).1
+  intro he
+  apply hn
+  apply (hzero φ (-2) 3).mp
+  exact Complex.ext he.symm (hpos φ (-2) 7).2
+
+-- The first moment has the full complex action differential on the original domain.
+example (ψ : CoeffPair p) (hψ : ψ ∈ T) (n : ℤ) :
+    fderiv ℂ (P.moment n 1) ψ = fderiv ℂ (sourceComplexAction hp hp1 n) ψ := by
+  apply Filter.EventuallyEq.fderiv_eq
+  filter_upwards [M.source_open.mem_nhds hψ] with χ hχ
+  exact M.lemma21_1.2.2.2.2.2.2 n hχ
+
+-- Reconstruct physical H3 from these moments with both mass and dispersion restored.
+example (φ : realTypeSourceLocus p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    sourceFiniteGapNLSHamiltonian hp hp1 φ hf 3 =
+      2*(sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1)^2+
+      (∑' n : ℤ, (2*(n:ℂ)*Real.pi)^2*sourceComplexAction hp hp1 n φ.val)-
+        (4/3:ℂ)*(∑' n : ℤ, P.moment n 3 φ.val) := by
+  obtain ⟨c,R,_,_,he⟩ := M.lemma21_2 φ hf
+  linear_combination he
+end AllExponents
+
+section BelowTwo
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+-- The original construction supplies every moment order and the first action below exponent two.
+example : ∃ Wp T : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∃ P : SourcePrimitivePowerAtlas (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) Wp,
+      IsOpen T ∧ IsConnected T ∧ realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ T ∧
+      (∀ n m, AnalyticOnNhd ℂ (P.moment n m) T) ∧
+      ∀ n, EqOn (P.moment n 1) (sourceComplexAction (by norm_num) (by norm_num) n) T := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Wp,P,T,M⟩ :=
+    sourceSection21_original_moments (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact ⟨Wp,T,P,M.source_open,M.connected,M.real_subset,M.lemma21_1.1,M.lemma21_1.2.2.2.2.2.2⟩
+end BelowTwo
+
+section Quartic
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+variable {W₀ W V Wa B U Wp T : Set (CoeffPair 4)}
+  {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s} {Q : SourceSection20Data D A B U}
+  {P : SourcePrimitivePowerAtlas (by simp) (by norm_num) Wp}
+  {L : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+  {E : SourceOriginalHamiltonianData D L F H} (M : SourceSection21HamiltonianData Q P E T)
+
+-- One original domain carries an actual sum and the same action Hamiltonian value.
+example (ψ : CoeffPair 4) (hψ : ψ ∈ T) :
+    HasSum (fun n => -(4/3:ℂ)*P.moment n 3 ψ)
+      (H (sourceActionSequence (q := 2) (by simp) (by norm_num) s ψ)) := by
+  rw [M.action_hamiltonian ψ hψ]
+  exact M.hamiltonian_hasSum ψ hψ
+
+-- Convergence is locally uniform throughout the complex domain, not just pointwise on real data.
+example : TendstoLocallyUniformlyOn
+    (fun (N : ℕ) ψ => -(4/3:ℂ)*∑ n ∈ Finset.Icc (-(N:ℤ)) N, P.moment n 3 ψ)
+    P.renormalizedHamiltonian atTop T := M.proposition21_3.2.2.1
+
+-- The entire real source restriction is analytic and its only zero is the actual zero source.
+example : AnalyticOnNhd ℝ
+    (fun φ : realTypeSourceSubmodule 4 => P.renormalizedHamiltonian φ.val) univ ∧
+    ∀ φ : realTypeSourceSubmodule 4, P.renormalizedHamiltonian φ.val = 0 ↔ φ = 0 :=
+  ⟨M.real_analytic,fun φ => (M.real_sign φ).2.2⟩
+
+-- The complex action derivative is the retained Section 20 moment frequency.
+example (ψ : CoeffPair 4) (hψ : ψ ∈ T) :
+    fderiv ℂ H (sourceActionSequence (q := 2) (by simp) (by norm_num) s ψ) (lp.single 2 (-1) 1) =
+      A.renormalizedFrequency (-1) ψ := by
+  rw [← Coeff.scalarGradient_apply,← E.gradient_eq (M.action_mem ψ hψ)]
+  exact M.action_frequency ψ hψ (-1)
+
+-- The full complex source derivative has an absolutely convergent scalar series at infinite gap support.
+example (ψ h : CoeffPair 4) (hψ : ψ ∈ T) :
+    Summable (fun n : ℤ => ‖A.renormalizedFrequency n ψ *
+      fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) ψ h‖) ∧
+    fderiv ℂ P.renormalizedHamiltonian ψ h = ∑' n : ℤ, A.renormalizedFrequency n ψ *
+      fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) ψ h :=
+  M.source_derivative_series ψ h hψ
+
+-- The original source domain maps into the original Hamiltonian's actual action domain.
+example (ψ : CoeffPair 4) (hψ : ψ ∈ T) : ψ ∈ U ∧ ψ ∈ V ∧
+    sourceActionSequence (q := 2) (by simp) (by norm_num) s ψ ∈ L :=
+  ⟨M.source_subset hψ,Q.original_subset (M.source_subset hψ),M.action_mem ψ hψ⟩
+
+-- The H¹ physical identity retains the literal infinite weighted action subtraction.
+example (a : realTypeSobolevSourceLocus) :
+    P.renormalizedHamiltonian (sobolevSourceFL4 a.val)+2*(periodOneSobolevMass a.val)^2+
+      (∑' n : ℤ, sourceSobolevWeightedAction a.val n) = periodOneSobolevHamiltonian a.val := by
+  rw [M.physical_identity a]
+  ring
+
+-- Retaining an already chosen original Hamiltonian does not replace H or its frequency F.
+example (M₀ : SourceSection21MomentData Q P T) :
+    ∃ S : Set (CoeffPair 4), SourceSection21HamiltonianData Q P E S ∧ S ⊆ T :=
+  M₀.exists_hamiltonian_domain E
+
+-- The origin Hessian is complex bilinear, fixing both its sign and normalization.
+example : fderiv ℂ (fderiv ℂ H) 0
+    (Complex.I • (lp.single 2 (-1) 1 : Coeff 2)) (lp.single 2 (-1) 1) = -2*Complex.I := by
+  rw [E.hessian_zero]
+  simp [Coeff.dualPairing_apply,lp.single_apply,Pi.single_apply]
+
+-- The same action Hamiltonian keeps the quantitative local concavity bound.
+example : ∃ r : ℝ, 0 < r ∧ ball (0 : Coeff 2) r ⊆ L ∧
+    ∀ b ∈ ball (0 : Coeff 2) r, ∀ J : RealCoeff 2,
+      (fderiv ℂ (fderiv ℂ H) b (RealCoeff.complexCLM 2 J) (RealCoeff.complexCLM 2 J)).re ≤ -‖J‖^2 :=
+  E.concavity
+
+-- The printed nonnegative source claim fails at an actual source of physical mass one.
+example : ∃ a : realTypeSobolevSourceLocus, periodOneSobolevMass a.val = 1 ∧
+    (P.renormalizedHamiltonian (sobolevSourceFL4 a.val)).re < 0 :=
+  P.printed_nonnegative_hamiltonian_counterexample
+
+-- The printed nonnegative action claim fails inside L and inside the nonnegative action cone.
+example : ∃ a : realTypeSobolevSourceLocus, periodOneSobolevMass a.val = 1 ∧
+    sourceActionSequence (q := 2) (by simp) (by norm_num) s (sobolevSourceFL4 a.val) ∈
+      L ∩ Coeff.nonnegativeLocus 2 ∧
+    (H (sourceActionSequence (q := 2) (by simp) (by norm_num) s (sobolevSourceFL4 a.val))).re < 0 := by
+  obtain ⟨a,hm,hL,hpos,hneg⟩ := E.printed_nonnegative_action_hamiltonian_counterexample
+  exact ⟨a,hm,⟨hL,hpos⟩,hneg⟩
+-- The unconditional constructor supplies a common complex domain with a genuine negative witness.
+example : ∃ Wp : Set (CoeffPair 4), ∃ P : SourcePrimitivePowerAtlas (by simp) (by norm_num) Wp,
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ IsConnected T ∧ realTypeSourceLocus 4 ⊆ T ∧
+      AnalyticOnNhd ℂ P.renormalizedHamiltonian T ∧
+      ∃ a : realTypeSobolevSourceLocus, periodOneSobolevMass a.val = 1 ∧
+        sobolevSourceFL4 a.val ∈ T ∧ (P.renormalizedHamiltonian (sobolevSourceFL4 a.val)).re < 0 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Wp,P,L,F,H,E,T,M⟩ := sourceSection21_original
+  obtain ⟨a,hm,hneg⟩ := P.printed_nonnegative_hamiltonian_counterexample
+  exact ⟨Wp,P,T,M.source_open,M.connected,M.real_subset,M.analytic,a,hm,
+    M.real_subset (realSobolevSourceFL4 a).property,hneg⟩
+end Quartic
+
+-- Equation (4.13)'s positive sign is refuted with actual original moments and a finite-gap source.
+example : ∃ Wp : Set (CoeffPair 2), ∃ P : SourcePrimitivePowerAtlas (by simp) (by norm_num) Wp,
+    ∃ φ : realTypeSourceLocus 2, ∃ hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+      sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 3-
+        2*(sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1)^2-
+          (∑' n : ℤ, (2*(n:ℂ)*Real.pi)^2*sourceComplexAction (by simp) (by norm_num) n φ.val) ≠
+            (4/3:ℂ)*(∑' n : ℤ, P.moment n 3 φ.val) := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Wp,P,T,M⟩ :=
+    sourceSection21_original_moments (p := 2) (by simp) (by norm_num)
+  exact ⟨Wp,P,P.printed_lemma21_2_sign_counterexample⟩
+end Section21OriginalChecks

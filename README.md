@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the physical momentum and energy brackets now hold on the
-full complex H¹ part of the existing Section 20 domain wherever the
-selected gap is open. The actual angle vector has a unique analytic H¹
-lift there. One original family and source domain work for every index,
-with no further shrinking. The proof uses connectedness of analytic
-nonzero loci to continue the established real H¹ identities.
+Latest step: Section 21's primitive-power moments and cubic Hamiltonian
+now share the original Birkhoff family and primitive. One complex
+neighborhood contains all real sources, and the cubic series recovers
+the same original action Hamiltonian and frequency gradient. All five
+moment clauses, absolute and locally uniform convergence, the complete
+physical H¹ identity, and formal witnesses for three printed sign errors
+are checked.
 
-Next: audit and implement the original Section 21 assertions.
+Next: audit and implement the original Section 22 assertions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -23,7 +24,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 17 audit](coverage/SECTION_17.md),
 [the Section 18 audit](coverage/SECTION_18.md),
 [the Section 19 audit](coverage/SECTION_19.md),
-[the Section 20 audit](coverage/SECTION_20.md), and
+[the Section 20 audit](coverage/SECTION_20.md),
+[the Section 21 audit](coverage/SECTION_21.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

@@ -3734,3 +3734,8 @@ import NLS.ComplexAnalysis.DenseLinearConnectedPreimage
 import NLS.ComplexAnalysis.AnalyticNonzeroConnected
 import NLS.ZakharovShabat.SourceSection20SobolevDomain
 import NLS.ZakharovShabat.SourceSection20ComplexSobolev
+import NLS.ZakharovShabat.SourceSection21Domain
+import NLS.ZakharovShabat.SourceSection21Moments
+import NLS.ZakharovShabat.SourceSection21Hamiltonian
+import NLS.ZakharovShabat.SourceSection21SignCorrections
+import NLS.ZakharovShabat.SourceSection21Original
