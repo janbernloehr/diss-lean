@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Current milestone: original Section 23 Sobolev and weighted estimates
+## Current milestone: original Section 24 higher actions and full-domain physical traces
+
+The original higher actions now use the original isolating contours and
+indexed ordinary actions. Their values are independent of the circle;
+arbitrary piecewise C¹ circuits retain the exact winding factor. Formula
+(5.2) uses the same Section 19 primitive. Formula (5.5) is the literal
+arcosh integral over the actual real gap, and (5.6) uses the original
+indexed action. Odd printed levels detect open real gaps, including
+central gaps crossing zero. Every collapsed complex gap contributes zero
+at every level on the retained source domain.
+
+Theorem 24.1 now holds on the full complex Sobolev preimage of the
+unchanged Section 19/20 domain U, at every printed level k≥1, with factor
+1/2^(k−1). The sharp odd-order physical trace holds on Hᵐ_c ∩ U with
+factor 1/4ᵐ. Locally uniform polynomial bounds at every complex point
+give actual analytic ℓ¹-valued sequences, absolute convergence, and
+analytic literal sums. Dense Sobolev inclusion and connectedness extend
+the independently defined physical Hamiltonians' real identities over
+the full domain.
+
+`SourceSection24Data` extends the same Section 23 package without changing
+the original family or its domain. `sourceSection24_original` chooses
+that family before all levels, orders, and potentials. Fifteen new modules
+and 33 public checks cover the definitions, full-domain formulas, sharp
+regularity, and common-family construction. See
+[the Section 24 audit](coverage/SECTION_24.md).
+
+Two actual-source counterexamples correct the p. 105 trace outline:
+the sum must run over all integer indices, and the odd trace has positive
+factor 1/4ᵐ. A unit central-action source defeats the positive-index sum;
+an actual finite-gap source with H₅>0 defeats the alternating sign even
+when all integer indices are included. See
+[source discrepancies](SOURCE_ERRATA.md).
+
+Next: formalize the precise asymptotic following (5.6) and audit the
+p. 106 zero-detection claim beyond odd levels at real sources, then
+continue the Section 25 localization audit. Section 14's separate full
+fractional-smoothness qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,206 build jobs, all 5,796
+public examples, and the transitive axiom audit for 34,526 NLS
+declarations. The fifteen new modules and 33 focused checks compile
+without new warnings; the full build retains 21 existing warnings. The
+156-label source inventory, 427 local documentation links across 31
+documents, and `git diff --check` also pass.
+
+## Previous milestone: original Section 23 Sobolev and weighted estimates
 
 One retained original Birkhoff family now satisfies Theorems 23.1,
 23.2, and 23.4, Remark 23.3, and Corollary 23.5. The original indexed

@@ -1,5 +1,27 @@
 # Source discrepancies
 
+## Section 23: the higher-action trace needs all integer indices and a positive sign
+
+The outline on printed p. 105 writes a sum over n≥1 with coefficient
+(−1)^(m+1)/4ᵐ. Both features fail for the physical Hamiltonians used by
+the source. Theorem 24.1 on p. 107 instead has the full integer sum and
+positive coefficient 1/4ᵐ at odd levels.
+
+`section23_positiveIndex_trace_counterexample` constructs an actual
+source with only I₀=1. Every positive-index higher-action sum is zero,
+whereas its physical H₃ is at least one. Thus the restricted sum is
+wrong independently of the sign issue.
+
+`section23_alternating_trace_counterexample` constructs an actual
+finite-gap source with H₅>0. Even after including every integer index,
+the level-five sum is H₅/16 and is not −H₅/16. The two counterexamples
+use the original indexed higher actions, not a model sequence.
+
+Implemented in
+[`SourceSection23TraceCorrections.lean`](NLS/ZakharovShabat/SourceSection23TraceCorrections.lean).
+The corrected original-domain traces and their precise Sobolev scope
+are in [the Section 24 audit](coverage/SECTION_24.md).
+
 ## Section 23: the weight-growth bound needs the value at index one
 
 After Theorem 23.4, printed p. 105 claims w(m) ≤ w(0)^|m|.
@@ -18,7 +40,7 @@ growth survives, and the named weighted estimates are unchanged.
 Implemented in
 [`SpectralWeightGrowth.lean`](NLS/SequenceSpaces/SpectralWeightGrowth.lean).
 See [the Section 23 audit](coverage/SECTION_23.md) for the original-map
-estimates and the remaining higher-action outline comparison.
+estimates and the completed trace-outline comparison.
 
 ## Section 22: the physical complex phases have the opposite signs
 

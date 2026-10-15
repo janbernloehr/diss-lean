@@ -56147,3 +56147,205 @@ example : ∃ w : SpectralWeight, w.HasLinearFactor ∧ ¬ w 1 ≤ w 0 := by
   simpa using SpectralWeight.section23_printed_geometric_bound_counterexample
 
 end Section23OriginalChecks
+
+section Section24OriginalChecks
+open Set Metric Complex NLS.ZakharovShabat NLS.ComplexAnalysis
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Level one is definitionally tied to the original indexed action even off the domain.
+example (ψ : CoeffPair 3) : sourceIndexedHigherAction (by simp) (by norm_num) (-2) 0 ψ =
+    sourceIndexedAction (by simp) (by norm_num) (-2) ψ :=
+  sourceIndexedHigherAction_zero _ _ _ _
+
+-- Circle independence is valid for complex sources and different enclosing circles.
+example (ψ : CoeffPair 3) (n : ℤ)
+    (C D : SourceCriticalRootPeriodCircle (by simp) (by norm_num) ψ n) :
+    sourceHigherActionCircle (by simp) (by norm_num) ψ (C.center:ℂ) C.radius 3 =
+      sourceHigherActionCircle (by simp) (by norm_num) ψ (D.center:ℂ) D.radius 3 :=
+  C.higherAction_eq D 3
+
+example (ψ : CoeffPair 3) (n k : ℕ)
+    (C : SourceCriticalRootPeriodCircle (by simp) (by norm_num) ψ n) :
+    sourceIndexedHigherAction (by simp) (by norm_num) n k ψ =
+      sourceHigherActionCircle (by simp) (by norm_num) ψ (C.center:ℂ) C.radius k :=
+  sourceIndexedHigherAction_eq_circle C k
+
+-- Piecewise circuits retain the winding factor, including reversed or repeated traversals.
+example (ψ : CoeffPair 3) (n : ℤ) (k : ℕ)
+    (C : SourceCriticalRootPeriodCircle (by simp) (by norm_num) ψ n)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (ball (C.center:ℂ) C.radius \ sourcePeriodicSegment (by simp) (by norm_num) ψ n)) :
+    sourceHigherActionContour (by simp) (by norm_num) ψ Γ k =
+      sourceIndexedHigherAction (by simp) (by norm_num) n k ψ * Γ.windingIntegral
+        (canonicalPeriodicMidpoint (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n) :=
+  C.higherActionContour_eq_mul_winding Γ k hΓ
+
+example (φ : realTypeSourceSubmodule 3) :
+    (sourceIndexedHigherAction (by simp) (by norm_num) (-2) 1 φ.val).im = 0 :=
+  sourceIndexedHigherAction_real _ _ φ _ _
+
+example (φ : realTypeSourceSubmodule 3) :
+    0 ≤ (sourceIndexedHigherAction (by simp) (by norm_num) 0 4 φ.val).re :=
+  sourceIndexedHigherAction_even_nonneg _ _ φ 0 2
+
+-- An open central gap remains strictly positive at odd printed levels even if it crosses zero.
+example (φ : realTypeSourceSubmodule 3)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 0 ≠ 0) :
+    0 < sourceRealHigherAction (by simp) (by norm_num) φ 0 4 :=
+  sourceRealHigherAction_even_pos _ _ φ 0 2 hgap
+
+example (φ : realTypeSourceSubmodule 3) :
+    sourceIndexedHigherAction (by simp) (by norm_num) (-2) 4 φ.val = 0 ↔
+      canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-2) = 0 :=
+  sourceIndexedHigherAction_even_eq_zero_iff _ _ φ (-2) 2
+
+-- The literal arcosh gap integral includes even printed levels and collapsed gaps.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceRealHigherAction (by simp) (by norm_num) φ n 1 = (2/Real.pi) *
+      ∫ x in (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re..
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+        x*sourceRealGapArcoshProfile (by simp) φ.val n x := by
+  simpa only [pow_one] using sourceRealHigherAction_eq_gapIntegral (by simp) (by norm_num) φ n 1
+
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    ∃ ζ ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+      sourceIndexedHigherAction (by simp) (by norm_num) n 4 φ.val =
+        (ζ:ℂ)^4*sourceIndexedAction (by simp) (by norm_num) n φ.val :=
+  sourceIndexedHigherAction_eq_power_mul_action _ _ φ n 4
+
+-- Analyticity holds on the unchanged original Section 11 contour domain.
+example {W : Set (CoeffPair 3)} (Q : SourceSection11ContourData (by simp) (by norm_num) W)
+    (hW : IsOpen W) : AnalyticOnNhd ℂ (sourceIndexedHigherAction (by simp) (by norm_num) (-3) 5) W :=
+  Q.analytic_indexedHigherAction hW (-3) 5
+
+-- Equation (5.5) also refers directly to the original contour-defined action.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceIndexedHigherAction (by simp) (by norm_num) n 2 φ.val =
+      ((2/Real.pi * ∫ x in
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re..
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+        x^2*sourceRealGapArcoshProfile (by simp) φ.val n x : ℝ) : ℂ) :=
+  sourceIndexedHigherAction_eq_gapIntegral _ _ φ n 2
+
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection24Data D A B U)
+
+example : AnalyticOnNhd ℂ (sourceIndexedHigherAction (by simp) (by norm_num) (-7) 10) U :=
+  Q.higherAction_analytic (-7) 10
+
+-- All levels vanish on a collapsed complex gap; no real-type premise occurs.
+example (ψ : CoeffPair 2) (hψ : ψ ∈ U) (k : ℕ)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 = 0) :
+    sourceIndexedHigherAction (by simp) (by norm_num) 0 k ψ = 0 :=
+  Q.toSourceSection19Data.indexedHigherAction_of_collapsed ψ hψ 0 k hgap
+
+example (ψ : CoeffPair 2) (hψ : ψ ∈ U) :
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ ψ ∈ T ∧ T ⊆ U ∧
+      ∃ C E : ℝ, 0 < C ∧ 0 < E ∧ ∀ χ ∈ T, ∀ (n : ℤ) (k : ℕ),
+        ‖sourceIndexedHigherAction (by simp) (by norm_num) n k χ‖ ≤
+          C*E^k*(1+|(n:ℝ)|)^k*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) χ n‖^2 :=
+  Q.toSourceSection19Data.exists_local_indexedHigherAction_polynomial_bound ψ hψ
+
+example (ψ : CoeffPair 2) (hψ : ψ ∈ U)
+    (C : SourceCriticalRootPeriodCircle (by simp) (by norm_num) ψ (-2)) :
+    sourceIndexedHigherAction (by simp) (by norm_num) (-2) 4 ψ = -(Real.pi:ℂ)⁻¹ *
+      ∮ z in C((C.center:ℂ),C.radius), z^4*sourceFullAbelianPrimitive (by simp) (by norm_num) B 7 (z,ψ) :=
+  Q.higherAction_eq_original_primitive ψ hψ (-2) 4 7 C
+
+example (r : ℕ) : IsConnected (higherSobolevSourceInclusion r ⁻¹' U) :=
+  Q.toSourceSection19Data.isConnected_higherSobolev_domain r
+
+-- Sharp sequence regularity includes level 2r+1 on the entire complex H^r preimage.
+example (r : ℕ) : AnalyticOnNhd ℂ (sourceIndexedHigherSobolevActionSequence r (2*r))
+    (higherSobolevSourceInclusion r ⁻¹' U) :=
+  Q.sequence_analytic r (2*r) le_rfl
+
+example (a : SobolevSource 1) (ha : higherSobolevSourceInclusion 1 a ∈ U) (n : ℤ) :
+    sourceIndexedHigherSobolevActionSequence 1 2 a n =
+      sourceIndexedHigherAction (by simp) (by norm_num) n 2 (higherSobolevSourceInclusion 1 a) :=
+  Q.toSourceSection19Data.indexedHigherSobolevActionSequence_apply 1 2 (by omega) a ha n
+
+example (a : SobolevSource 0) (ha : higherSobolevSourceInclusion 0 a ∈ U) :
+    Summable (fun n : ℤ => ‖sourceIndexedHigherAction (by simp) (by norm_num) n 0
+      (higherSobolevSourceInclusion 0 a)‖) :=
+  Q.absolute_convergence 0 0 le_rfl a ha
+
+example (a : SobolevSource 1) (ha : higherSobolevSourceInclusion 1 a ∈ U) :
+    Summable (fun n : ℤ => ‖sourceIndexedHigherAction (by simp) (by norm_num) n 2
+      (higherSobolevSourceInclusion 1 a)‖) :=
+  Q.absolute_convergence 1 2 le_rfl a ha
+
+example : AnalyticOnNhd ℂ (fun a : SobolevSource 2 => ∑' n : ℤ,
+    sourceIndexedHigherAction (by simp) (by norm_num) n 4 (higherSobolevSourceInclusion 2 a))
+      (higherSobolevSourceInclusion 2 ⁻¹' U) :=
+  Q.toSourceSection19Data.analytic_tsum_indexedHigherAction 2 4 le_rfl
+
+-- The physical mass trace includes the zero Sobolev order.
+example (a : SobolevSource 0) (ha : higherSobolevSourceInclusion 0 a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 0
+      (higherSobolevSourceInclusion 0 a)) = sobolevNLSHamiltonian 0 a 1 (by omega) := by
+  simpa using Q.trace 0 0 le_rfl a ha
+
+example (a : SobolevSource 1) (ha : higherSobolevSourceInclusion 1 a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 1
+      (higherSobolevSourceInclusion 1 a)) = sobolevNLSHamiltonian 1 a 2 (by omega)/2 := by
+  simpa only [pow_one] using Q.trace 1 1 le_rfl a ha
+
+example (a : SobolevSource 2) (ha : higherSobolevSourceInclusion 2 a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 2
+      (higherSobolevSourceInclusion 2 a)) = sobolevNLSHamiltonian 2 a 3 (by omega)/4 := by
+  simpa only [show (2:ℂ)^2 = 4 by norm_num] using Q.trace 2 2 le_rfl a ha
+
+-- The sharp odd trace needs only H^m, not H^(2m).
+example (a : SobolevSource 1) (ha : higherSobolevSourceInclusion 1 a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 2
+      (higherSobolevSourceInclusion 1 a)) = sobolevOddHamiltonian 1 (by omega) a/4 := by
+  simpa only [pow_one] using Q.odd_trace 1 le_rfl a ha
+
+example (a : SobolevSource 2) (ha : higherSobolevSourceInclusion 2 a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 4
+      (higherSobolevSourceInclusion 2 a)) = sobolevOddHamiltonian 2 (by omega) a/16 := by
+  simpa only [show (4:ℂ)^2 = 16 by norm_num] using Q.odd_trace 2 (by omega) a ha
+
+example (k : ℕ) (hk : 1 ≤ k) (a : SobolevSource (k-1))
+    (ha : higherSobolevSourceInclusion (k-1) a ∈ U) :
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n (k-1)
+      (higherSobolevSourceInclusion (k-1) a)) =
+        sobolevNLSHamiltonian (k-1) a k (by omega)/2^(k-1) :=
+  Q.trace_printed_level k hk a ha
+
+-- Existing Section 23 estimates are retained in the same package.
+example (m : ℕ) (hm : 1 ≤ m) : ∃ c d : ℝ, SourceSection23SobolevBounds D m hm c d :=
+  Q.sobolev m hm
+
+example : SourceSection24Data D A B U := Q.toSourceSection23Data.section24
+
+-- The original family is chosen before every trace order and every potential.
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), SourceSection24Data D A B U :=
+  sourceSection24_original
+
+example : ∃ a : realTypeSobolevSourceLocus,
+    (∀ k : ℕ, (∑' n : {n : ℤ // 1 ≤ n}, sourceIndexedHigherAction
+      (by simp) (by norm_num) n.val k (sobolevSourceInclusion a.val)) = 0) ∧
+    (periodOneSobolevHamiltonian a.val).re ≥ 1 ∧
+    (∑' n : {n : ℤ // 1 ≤ n}, sourceIndexedHigherAction
+      (by simp) (by norm_num) n.val 2 (sobolevSourceInclusion a.val)) ≠
+        periodOneSobolevHamiltonian a.val/4 := section23_positiveIndex_trace_counterexample
+
+example : ∃ φ : realTypeSourceSubmodule 2, ∃ hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+    0 < (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 5).re ∧
+    (∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n 4 φ.val) ≠
+      -sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 5/16 :=
+  section23_alternating_trace_counterexample
+end Section24OriginalChecks

@@ -94,9 +94,11 @@ are not established merely by these norm estimates. The external
 Hilbert-map and full fractional-smoothness qualifications in
 [the Section 14 audit](SECTION_14.md) remain.
 
-Next, audit the outline's higher-action asymptotics and trace formula
-together with Section 24. The printed p. 105 trace uses a restricted
-index sum and an alternating sign, whereas Theorem 24.1 has the full
-integer sum and positive normalization. This discrepancy still needs
-an explicit source-level comparison before a correction is claimed.
-The dissertation remains incomplete.
+The outline's p. 105 trace now has two actual-source counterexamples:
+the index sum must include all integers, and the alternating sign is
+incorrect even with that index correction. The full original-domain
+physical trace has positive factor 1/4ᵐ. See
+[the Section 24 audit](SECTION_24.md) and
+[`SourceSection23TraceCorrections.lean`](../NLS/ZakharovShabat/SourceSection23TraceCorrections.lean).
+The precise asymptotic and the remaining Section 24 zero-detection scope
+still require work. The dissertation remains incomplete.

@@ -14,6 +14,7 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Theorem 24.1; (5.2)–(5.6) | [`SourceSection24Original.lean`](NLS/ZakharovShabat/SourceSection24Original.lean), `sourceSection24_original`, `SourceSection24Data.trace_printed_level` | Original contour-defined actions and retained primitive; absolute, analytic physical traces on the full complex H^(k−1) part of the unchanged original Section 19/20 domain, sharp odd Hᵐ traces, literal real gap integral and original mean-value comparison. See the [Section 24 audit](coverage/SECTION_24.md) for the remaining asymptotic and zero-detection scope. |
 | Theorem 0.1; Theorems 23.1–23.2; Remark 23.3 | [`SourceSection23Sobolev.lean`](NLS/ZakharovShabat/SourceSection23Sobolev.lean), `SourceSection17OriginalData.section23_sobolev_bounds` | One original map, every positive integer Sobolev order, common positive constants chosen before the potential, both Birkhoff bounds and both original indexed action bounds. |
 | Theorem 23.4; Corollary 23.5 | [`SourceSection23Weighted.lean`](NLS/ZakharovShabat/SourceSection23Weighted.lean), `SourceSection20Data.section23_weighted_neighborhood`, `section23_realSobolev_neighborhood` | Same original family, every M₁ weight and every real order at least one; full real weighted locus inside one complex neighborhood decoding into the original domain, exact physical weights, original indexed actions and weighted target norms. |
 | Theorem 0.2: analytic action Hamiltonian, sign, Hessian and local concavity | [`SourceHamiltonianActionConcavity.lean`](NLS/ZakharovShabat/SourceHamiltonianActionConcavity.lean), `exists_sourceHamiltonian_action_extension_with_concavity` | Actual source Hamiltonian on an open complex ℓ² domain containing all nonnegative summable actions; actual frequency gradient, Hessian −2 times Hilbert bilinear duality, quantitative local negativity. |
@@ -32,7 +33,11 @@ retains one original family for all orders and weights, including the
 original indexed actions throughout each complex weighted neighborhood.
 The printed weight-growth bound has a formal M₁ counterexample and a
 corrected geometric majorant. The opening fractional-smoothness claims
-and higher-action outline remain separately qualified in that audit.
+remain separately qualified.
+The higher-action outline now has actual-source counterexamples to its
+restricted index set and alternating sign; the original physical traces
+and remaining assertions are audited in
+[`coverage/SECTION_24.md`](coverage/SECTION_24.md).
 
 The current original-domain angle audit is in
 [`coverage/SECTION_13.md`](coverage/SECTION_13.md). The original Birkhoff

@@ -5,17 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 23's integer Sobolev, weighted, and real-order
-estimates now use one original Birkhoff family and its indexed actions.
-The four integer estimates share positive constants. Weighted complex
-neighborhoods retain every real weighted source and decode into the
-original domain. Exact physical norms and the existing NLS solution
-theory are preserved. A formal counterexample corrects the printed
-weight-growth bound.
+Latest step: Section 24's original higher actions now satisfy the
+physical trace formulas on the full complex Sobolev part of the retained
+Section 19/20 domain. The same original family carries analytic ℓ¹ action
+sequences, absolute convergence, exact contour and real gap formulas,
+and the sharp odd-order Hᵐ trace. Formal source counterexamples correct
+the positive-index sum and alternating sign in the Section 23 outline.
 
-Next: audit the higher-action outline and Section 24's trace formulas.
-The separate full fractional-smoothness qualifications remain.
-The dissertation remains incomplete.
+Next: finish the Section 24 asymptotic and zero-detection audit, then
+continue Section 25. The separate full fractional-smoothness
+qualifications remain. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -28,7 +27,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 20 audit](coverage/SECTION_20.md),
 [the Section 21 audit](coverage/SECTION_21.md),
 [the Section 22 audit](coverage/SECTION_22.md),
-[the Section 23 audit](coverage/SECTION_23.md), and
+[the Section 23 audit](coverage/SECTION_23.md),
+[the Section 24 audit](coverage/SECTION_24.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
