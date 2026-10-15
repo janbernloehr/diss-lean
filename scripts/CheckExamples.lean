@@ -53407,3 +53407,179 @@ example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
   exact ⟨W₀,W,V,s,D,A,B,C,t,E,D.toSourceSection14Data.exponent E.toSourceSection14Data (by norm_num)⟩
 
 end Section15OriginalChecks
+
+section Section16OriginalChecks
+open NLS.ZakharovShabat Set Complex Filter Topology
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+  {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection16OriginalData hp hp1 W₀ W V s)
+
+-- The actual bounded derivatives vary analytically throughout the complex map domain.
+example : AnalyticOnNhd ℂ (sourceBirkhoffJacobian hp hp1 s) V ∧
+    AnalyticOnNhd ℂ (sourceBirkhoffNormalizedJacobian hp hp1 s) V :=
+  ⟨D.jacobian_analytic,D.normalized_analytic⟩
+
+-- The gradients of actual sequence entries recover both components of the full Jacobian.
+example [q.HolderConjugate p] (hq : q ≠ ⊤) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (h : CoeffPair p) (n : ℤ) :
+    let X := CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun χ => (sourceBirkhoffMap hp hp1 s χ).1 n) ψ)
+    let Y := CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun χ => (sourceBirkhoffMap hp hp1 s χ).2 n) ψ)
+    (sourceBirkhoffJacobian hp hp1 s ψ h).1 n =
+      Coeff.dualPairing (Coeff.reflection X.fst) h.fst+Coeff.dualPairing (Coeff.reflection X.snd) h.snd ∧
+    (sourceBirkhoffJacobian hp hp1 s ψ h).2 n =
+      Coeff.dualPairing (Coeff.reflection Y.fst) h.fst+Coeff.dualPairing (Coeff.reflection Y.snd) h.snd :=
+  D.jacobian_gradients hq ψ hψ h n
+
+-- The gap sequence derivative is the original scalar derivative everywhere in W.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (sign : ℂ) (hsign : ‖sign‖ ≤ 1) (n : ℤ) :
+    fderiv ℂ (fun χ => sourceGapWeightedEtaSequence hp hp1 s sign χ n) ψ =
+      fderiv ℂ (sourceGapWeightedEtaCoordinate hp hp1 n s sign) ψ :=
+  D.toSourceSection15OriginalData.gapSequence_fderiv ψ hψ sign hsign n
+
+-- Lemma 16.1 uses Holder-conjugate norms and the actual two signed sequence gradients.
+example [q.HolderConjugate p] (hq : q ≠ ⊤) (φ : realTypeSourceSubmodule p)
+    (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun ψ => sourceGapWeightedEtaSequence hp hp1 s 1 ψ n) φ.val)+
+      (2 : ℂ) • CoeffPair.inrCLM (lp.single q (-n) 1)‖) p ∧
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun ψ => sourceGapWeightedEtaSequence hp hp1 s (-1) ψ n) φ.val)+
+      (2 : ℂ) • CoeffPair.inlCLM (lp.single q n 1)‖) p :=
+  D.toSourceSection15OriginalData.lemma16_1 hq φ hfinite
+
+example [q.HolderConjugate p] (hq : q ≠ ⊤) (φ : realTypeSourceSubmodule p)
+    (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 n) φ.val)-sourceBirkhoffFreeXGradient q n‖) p ∧
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient hp hq
+      (fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 n) φ.val)-sourceBirkhoffFreeYGradient q n‖) p :=
+  D.toSourceSection15OriginalData.lemma16_2 hq φ hfinite
+
+example (n : ℤ) : AnalyticOnNhd ℂ (sourceGapWeightedEtaAuxiliary hp hp1 n) W :=
+  D.toSourceSection15OriginalData.auxiliary_analytic n
+
+-- The corrected auxiliary is the actual quotient at every real source, without a nonzero premise.
+example (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    sourceGapWeightedEtaAuxiliary hp hp1 n φ.val =
+      sourceSingleRootQuotientJointProduct hp hp1 n
+        (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n,((s n φ.val : Coeff p),φ.val)) /
+        sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n,(s n φ.val : Coeff p)) :=
+  D.toSourceSection15OriginalData.auxiliary_eq_real_quotient φ n
+
+example (φ : realTypeSourceSubmodule p) :
+    Memℓp (fun n => 2*sourceGapWeightedEtaAuxiliary hp hp1 n φ.val+cos ((Real.pi : ℂ)*n)) p :=
+  memlp_sourceGapWeightedEtaAuxiliary_sub_free hp hp1 φ
+
+-- Equation (3.3) keeps both moving-terminal terms under the shared sign.
+example (φ : realTypeSourceSubmodule p) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n = 0)
+    (sign : ℂ) :
+    let μ := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n
+    let dμ := fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n) φ.val
+    let dτ := fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodicMidpoint hp hp1
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ.val
+    fderiv ℂ (sourceGapWeightedEtaCoordinate hp hp1 n s sign) φ.val =
+      (2 : ℂ) • (dτ-dμ) + (sign*Complex.I) •
+        ((2*sourceAntiDiscriminantCandidate hp hp1 φ.val μ) •
+          fderiv ℂ (sourceGapWeightedEtaAuxiliary hp hp1 n) φ.val +
+        (2*sourceGapWeightedEtaAuxiliary hp hp1 n φ.val) •
+          (sourceAntiDiscriminantCotangent hp hp1 μ φ.val +
+            deriv (sourceAntiDiscriminantCandidate hp hp1 φ.val) μ • dμ)) :=
+  D.toSourceSection15OriginalData.equation3_3 φ n hgap sign
+
+-- Inverse and normalized series converge in source norm with a minus on the y term.
+example (v : Coeff p × Coeff p) :
+    HasSum (fun n : ℤ => v.1 (-n) • sourceBirkhoffFreeXGradient p n -
+      v.2 (-n) • sourceBirkhoffFreeYGradient p n) (sourceBirkhoffFourierInverse v) :=
+  sourceBirkhoffFourierInverse_hasSum hp v
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (h : CoeffPair p) :
+    HasSum (fun n : ℤ =>
+      ((fderiv ℂ (sourceBirkhoffX hp hp1 (-n) s) ψ) h) • sourceBirkhoffFreeXGradient p n -
+      ((fderiv ℂ (sourceBirkhoffY hp hp1 (-n) s) ψ) h) • sourceBirkhoffFreeYGradient p n)
+      (sourceBirkhoffNormalizedJacobian hp hp1 s ψ h) :=
+  D.toSourceSection15OriginalData.normalizedJacobian_hasSum ψ hψ h
+
+example (ψ h : CoeffPair p) (S : Finset ℤ) :
+    sourceBirkhoffNormalizedJacobianCutoff hp hp1 s ψ S h =
+      ∑ n ∈ S, ((sourceBirkhoffJacobianRemainder hp hp1 s ψ h).1 n • sourceBirkhoffFreeXGradient p (-n) -
+        (sourceBirkhoffJacobianRemainder hp hp1 s ψ h).2 n • sourceBirkhoffFreeYGradient p (-n)) :=
+  sourceBirkhoffNormalizedJacobianCutoff_apply hp hp1 s ψ h S
+
+example (ψ : CoeffPair p) (S : Finset ℤ) :
+    FiniteDimensional ℂ (LinearMap.range (sourceBirkhoffNormalizedJacobianCutoff hp hp1 s ψ S).toLinearMap) :=
+  sourceBirkhoffNormalizedJacobianCutoff_finiteDimensional hp hp1 s ψ S
+
+-- The majorants are constructed; the norm estimate retains the bounded reconstruction factor.
+example (φ : realTypeSourceSubmodule p) (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ b₁ b₂ : Coeff p, ∀ S : Finset ℤ,
+      ‖sourceBirkhoffNormalizedJacobianCutoff hp hp1 s φ.val S -
+        (sourceBirkhoffNormalizedJacobian hp hp1 s φ.val-ContinuousLinearMap.id ℂ (CoeffPair p))‖ ≤
+        ‖sourceBirkhoffFourierInverse (p := p)‖ * max ‖Coeff.truncate S b₁-b₁‖ ‖Coeff.truncate S b₂-b₂‖ := by
+  obtain ⟨b₁,b₂,hrow⟩ := D.complex.exists_jacobianRemainder_rowMajorants_finiteGap φ hfinite
+  exact ⟨b₁,b₂,sourceBirkhoffNormalizedJacobianCutoff_error_le hp hp1 s φ.val b₁ b₂ hrow⟩
+
+example (φ : realTypeSourceSubmodule p) (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :
+    Tendsto (sourceBirkhoffNormalizedJacobianCutoff hp hp1 s φ.val) atTop
+      (𝓝 (sourceBirkhoffNormalizedJacobian hp hp1 s φ.val-ContinuousLinearMap.id ℂ (CoeffPair p))) ∧
+    Tendsto (fun N : ℕ => sourceBirkhoffNormalizedJacobianCutoff hp hp1 s φ.val (Finset.Icc (-(N:ℤ)) N)) atTop
+      (𝓝 (sourceBirkhoffNormalizedJacobian hp hp1 s φ.val-ContinuousLinearMap.id ℂ (CoeffPair p))) :=
+  ⟨D.toSourceSection15OriginalData.normalizedCutoff_tendsto φ hfinite,
+    D.toSourceSection15OriginalData.normalizedCutoff_symmetric_tendsto φ hfinite⟩
+
+-- Lemma 16.3 applies to every real potential, without any finite-gap restriction.
+example : AnalyticOnNhd ℝ (fun φ : realTypeSourceSubmodule p =>
+      sourceBirkhoffNormalizedJacobian hp hp1 s φ.val) univ ∧
+    ∀ φ : realTypeSourceSubmodule p,
+      IsCompactOperator (sourceBirkhoffNormalizedJacobian hp hp1 s φ.val-ContinuousLinearMap.id ℂ (CoeffPair p)) ∧
+      ((∃ e : CoeffPair p ≃L[ℂ] (Coeff p × Coeff p), e.toContinuousLinearMap = sourceBirkhoffJacobian hp hp1 s φ.val) ↔
+       (∃ e : CoeffPair p ≃L[ℂ] CoeffPair p, e.toContinuousLinearMap = sourceBirkhoffNormalizedJacobian hp hp1 s φ.val)) :=
+  D.lemma16_3
+
+example : sourceBirkhoffJacobian hp hp1 s 0 = sourceBirkhoffFourier ∧
+    sourceBirkhoffNormalizedJacobian hp hp1 s 0 = ContinuousLinearMap.id ℂ (CoeffPair p) :=
+  ⟨D.jacobian_zero,D.complex.normalizedJacobian_zero⟩
+
+-- Concrete free modes certify the source sign discrepancy.
+example (n : ℤ) : sourceBirkhoffJacobian hp hp1 s 0 (sourceBirkhoffFreeYGradient p n) =
+    -(0,lp.single p (-n) 1) ∧
+    sourceBirkhoffFourierInverse (0,lp.single p (-n) 1) ≠ sourceBirkhoffFreeYGradient p n :=
+  ⟨D.toSourceSection15OriginalData.freeJacobian_y_mode n,sourceBirkhoffFreeYGradient_ne_fourierInverse_y_mode n⟩
+
+example (n : ℤ) : -sourceSingleRootQuotientJointProduct hp hp1 n
+    ((Real.pi : ℂ)*n,((s n 0 : Coeff p),(0 : CoeffPair p))) = -1 :=
+  D.toSourceSection15OriginalData.printed_auxiliary_product_free n
+
+example : (-sourceSingleRootQuotientJointProduct hp hp1 0 (0,((s 0 0 : Coeff p),(0 : CoeffPair p)))) /
+    sourcePsiCandidate 0 (0,(s 0 0 : Coeff p)) = (1/2 : ℂ) :=
+  D.toSourceSection15OriginalData.printed_auxiliary_quotient_zero
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+example (n : ℤ) : ‖sourceBirkhoffFreeXGradient 4 n‖^4 = (1/2 : ℝ) :=
+  sourceBirkhoffFreeXGradient_norm_fourth n
+
+example : ∃ W₀ W V : Set (CoeffPair (4:ℝ≥0∞)), ∃ s,
+    SourceSection16OriginalData (p := 4) (by norm_num) (by norm_num) W₀ W V s :=
+  sourceSection16_original (by norm_num) (by norm_num)
+
+-- Independent constructions below and above two retain full complex exponent compatibility.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    ∃ _D : SourceSection16OriginalData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s,
+    ∃ A B C : Set (CoeffPair (4:ℝ≥0∞)), ∃ t,
+    ∃ _E : SourceSection16OriginalData (p := 4) (by norm_num) (by norm_num) A B C t,
+    ∀ ψ ∈ V, ∀ _hψ' : CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ ∈ C,
+      ((Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)).prodMap
+        (Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)))
+          (sourceBirkhoffMap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) s ψ) =
+            sourceBirkhoffMap (p := 4) (by norm_num) (by norm_num) t
+              (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection16_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨A,B,C,t,E⟩ := sourceSection16_original (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,A,B,C,t,E,D.toSourceSection14Data.exponent E.toSourceSection14Data (by norm_num)⟩
+
+end Section16OriginalChecks

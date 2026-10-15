@@ -1,5 +1,59 @@
 # Source discrepancies
 
+## Section 16: inverse-series sign and free-mode witness
+
+The inverse Fourier series and equation (3.4) on printed p. 77 use a plus
+before the y-gradient term. With the actual free gradients on p. 76 the
+inverse requires a minus. `sourceBirkhoffFourierInverse_single` proves the
+exact inverse on arbitrary pairs of single modes, and
+`sourceBirkhoffFreeYGradient_ne_fourierInverse_y_mode` proves the printed
+positive y term is different. `SourceSection15OriginalData.freeJacobian_y_mode`
+checks the sign using the actual original map's derivative at zero.
+The same correction applies to the displayed remainder and finite cutoffs.
+
+The second error formula in the proof of Lemma 16.2 on p. 77 also prints
+an unscripted ∂zₙ where ∂yₙ is needed. The numbered Lemma 16.2 is unaffected.
+Both actual sequence-coordinate gradients satisfy its stated estimates.
+
+## Section 16: the leading minus in the auxiliary product
+
+The displayed ζₙ on printed p. 76 is minus the literal product over m≠n
+of (σₘ−λ)/wₘ(λ). `hasProd_sourceSingleRootQuotient_subtype` identifies this
+literal product with Q=A/P, where A is the deleted numerator and P the
+omitted standard-root product. The actual psi numerator is −2A.
+
+For the original root family, `printed_auxiliary_product_free` proves
+−Q=−1 at every free center, contradicting the free leading value +1 used
+in the subsequent asymptotic argument. `printed_auxiliary_quotient_zero`
+proves that the printed quotient at the zero center is +1/2. Using positive
+Q instead gives Q/ψₙ=−1/(2P), the auxiliary required by equation (3.3).
+
+`sourceGapWeightedEtaAuxiliary` uses this corrected expression. It is
+analytic throughout the original angular W, equals the actual quotient
+at every real source, and has the signed ℓᵖ asymptotic there. Equation
+(3.3) is proved at every real collapsed gap. Both moving-terminal terms
+are under the same sign in the printed equation; that grouping is correct.
+Complex quotient identification requires the psi numerator to be nonzero.
+The analytic extension itself requires no such additional premise on W.
+
+## Section 16: the general-p Fourier norm equality needs a bound
+
+The compactness proof on printed p. 77 equates a source p-norm power with
+the sum of p-powers of its coefficients in the free gradient basis. The
+source norm on p. 22 is the genuine two-component p-norm. At p=4,
+`sourceBirkhoffFreeXGradient_norm_fourth` proves that a single free x-gradient
+has norm to the fourth power 1/2, whereas its single reconstruction
+coefficient has fourth-power sum 1. Thus this coefficient norm equality
+cannot be used as a general identity. The witness concerns the norm
+identity, not realization of a particular nonlinear remainder.
+
+`sourceBirkhoffNormalizedJacobianCutoff_error_le` instead retains the
+bounded inverse Fourier operator factor and the two ℓᵖ majorant tails.
+These tails tend to zero, which proves the required operator-norm
+convergence and compactness. All-real compactness then uses finite-gap
+density and closedness of compact operators. See
+[the Section 16 audit](coverage/SECTION_16.md) for exact scopes and APIs.
+
 ## Section 15 opening formula: the y-coordinate needs an exponential difference
 
 The first display in Section 15, printed p. 74, writes the y-coordinate as

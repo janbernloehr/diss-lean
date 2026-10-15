@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Current milestone: Section 15 original-domain bounds and analytic sequences
+## Current milestone: Section 16 original Jacobian and corrected reconstruction
+
+`sourceSection16_original` constructs the original Section 15 family with
+its actual analytic operator-valued Jacobian for every finite p>1.
+The physical Holder-conjugate gradients represent both coordinate rows.
+Lemmas 16.1 and 16.2 hold for the actual original sequence entries at every
+real finite-gap source. Lemma 16.3 gives real analytic dependence,
+compact difference from identity at every real source, and equivalence
+of the original and normalized bounded-isomorphism assertions.
+
+The inverse Fourier series and normalized Jacobian reconstruction converge
+in source norm. Their y-gradient term carries a minus sign, certified by
+an actual free-Jacobian witness. The finite cutoffs have finite-dimensional
+range and converge in operator norm along all finite sets and [−N,N].
+Their error estimate retains the norm of the bounded Fourier inverse.
+A p=4 free-mode calculation shows why the printed coefficient norm equality
+cannot be used as a general p-isometry identity.
+
+The corrected auxiliary in equation (3.3) is −1/(2P), where P is the omitted
+standard-root product at the Dirichlet root. It is analytic on the original
+angular domain W and equals the positive literal product divided by actual
+psi at every real source. The printed leading minus gives the opposite
+free value. The real collapsed-gap formula is proved with both moving-root
+terms under their shared sign. Identification of the literal quotient at
+complex points requires nonzero psi; the analytic extension is defined
+throughout W. The separate locally uniform auxiliary asymptotic and Cauchy
+bound are not asserted: the δ dφ term vanishes exactly on the closed tail.
+
+Seven new modules and 23 new public checks cover these results, including
+independent unconditional packages at p=3/2 and p=4 and their full complex
+exponent compatibility. See [the Section 16 audit](coverage/SECTION_16.md)
+and [the source corrections](SOURCE_ERRATA.md).
+
+Next: audit Section 17's detailed inverse and flow arguments for this same
+family. Section 14's external Hilbert-map and fractional-smoothness
+qualifications remain. Surjectivity for p>2 is not claimed.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,120
+jobs, all public examples pass, and the transitive axiom audit checks 33,798
+NLS declarations. The seven new modules and 23 new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 244 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 15 original-domain bounds and analytic sequences
 
 `sourceSection15_original` now constructs the gap-weighted sequences for
 every finite p>1 using the original Lemma 12.12 root family and integral-defined

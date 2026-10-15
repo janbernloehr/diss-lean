@@ -5,19 +5,20 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 15 now has index-uniform bounds and analytic ℓᵖ
-sequences for the original gap-weighted coordinates throughout the angular
-domain. The outside-gap locus is open, and the signed limits at collapsed
-gaps are classified. The same compatible Birkhoff map retains equation
-(3.2), real and complex analyticity, and all three canonical brackets.
+Latest step: Section 16 now retains the original map's Jacobian and
+Holder-conjugate gradient estimates. The normalized Jacobian is identity
+plus compact at every real source. Corrected Fourier series and finite-rank
+cutoffs are verified in source and operator norm, with explicit witnesses
+for the printed sign and norm discrepancies.
 
-Next: audit Section 16's Jacobian and operator arguments, then Section 17.
-The dissertation remains incomplete.
+Next: audit Section 17's inverse and flow arguments. The dissertation
+remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
 [the Section 14 audit](coverage/SECTION_14.md),
-[the Section 15 audit](coverage/SECTION_15.md), and
+[the Section 15 audit](coverage/SECTION_15.md),
+[the Section 16 audit](coverage/SECTION_16.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

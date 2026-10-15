@@ -3675,3 +3675,10 @@ import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalSequence
 import NLS.ZakharovShabat.SourceGapWeightedEtaOriginalCollapsed
 import NLS.ZakharovShabat.SourceSection15Original
+import NLS.SequenceSpaces.PairOutputCutoff
+import NLS.ZakharovShabat.SourceBirkhoffFourierSeries
+import NLS.ZakharovShabat.SourceBirkhoffOriginalJacobian
+import NLS.ZakharovShabat.SourceBirkhoffNormalizedCutoff
+import NLS.ZakharovShabat.SourceGapWeightedEtaAuxiliary
+import NLS.ZakharovShabat.SourceBirkhoffSection16Corrections
+import NLS.ZakharovShabat.SourceSection16Original
