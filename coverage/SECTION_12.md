@@ -21,6 +21,9 @@ on the original domain, including the complex kernel reduction, original
 gap interpolation, and literal outer-circle product and decay formulas.
 Corollary 12.8 now gives continuous inverses on the actual complex and real
 deleted spaces, including identification with the real equation's derivative.
+Proposition 12.9 now gives the unique global real analytic solution of the
+original equation on the projected original domain, with exact gap placement,
+local implicit branches, and norm convergence along source sequences.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -625,3 +628,84 @@ proved directly by the chain rule. Real coordinate deletion commutes with
 complex inclusion, so the real equivalence acts at the same full root input
 as the original complex Jacobian. No smaller source neighborhood, different
 root-placement domain, or stronger summability exponent is introduced.
+
+## Proposition 12.9 on the original real domain
+
+`SourceCorollary12_8Data.proposition12_9` proves the unique global real
+analytic solution map for the original psi equation, for every finite
+1<p<∞ and every omitted index. Its values are actual real deleted ℓᵖ
+vectors. Complex inclusion recovers the canonical gap-root map exactly.
+The same open connected source domain W and all preceding data are retained.
+
+The deleted placement domain is open and is exactly the projection of
+original Ωᵖ under coordinate deletion. The solution graph lies in every
+supplied original disk family over its real sources. Any real zero with
+retained roots in those disks has its roots in the actual gaps, including
+collapsed gaps, and equals the canonical solution. Uniqueness requires
+no prior gap-placement assumption and holds across different disk families.
+
+The earlier gap-solution construction supplies global existence,
+continuation, and uniqueness. Exact original-circle coordinates now
+transfer those results to the original equation and domain. The analytic
+implicit theorem is also applied directly to the original complex
+equation using Corollary 12.8's actual Jacobian. The real equation is
+jointly analytic, and a local real branch through any placed zero stays
+in the same original domain. Solutions converge in the full real ℓᵖ norm
+along converging source sequences. At the free source the unique solution
+has zero displacement.
+
+Twenty-seven new public checks cover the actual equation and real codomain,
+original-domain projection and graph lifting, uniqueness across disk
+families, collapsed and free gaps, local real and complex analytic
+branches, full sequence convergence, unchanged preceding data, and
+exponents 3/2 and 4.
+
+Next: Lemma 12.10, original-domain uniform inverse bounds and a common
+complex extension for all omitted indices. The dissertation remains
+incomplete. No new source correction is needed for Proposition 12.9.
+
+Validation: the full build (7024 jobs), public example suite, and axiom
+audit (33156 NLS declarations) pass. The six new modules and 27 new
+checks are warning-free; the build reports 21 pre-existing warnings.
+All 156 source inventory labels and 123 local Markdown links verify.
+
+### Original domains, solution identity, and continuation
+
+| Source assertion (printed p. 67) | Lean implementation |
+| --- | --- |
+| The original deleted placement domain | `sourcePsiOriginalDeletedOmega` |
+| It is exactly the projection of Ωᵖ | `SourceIsolatingNeighborhoods.mem_originalDeletedOmega_iff` |
+| It is open in the real product space | `.isOpen_originalDeletedOmega` |
+| The real root map and exact complex inclusion | `sourcePsiOriginalRootReal`, `sourcePsiOriginalRootReal_complex` |
+| Global real analyticity and the actual equation | `analyticOnNhd_sourcePsiOriginalRootReal`, `SourceLemma12_4Data.originalRootReal_solves` |
+| Placed equation zeros have their roots in gaps | `.originalRealEquation_zero_mem_gap` |
+| Original circles yield a valid gap solution | `.originalRealEquation_zero_gapSolution` |
+| Pointwise uniqueness on any original disk family | `.originalRealEquation_zero_unique`, `.originalRealSolution_unique` |
+| Unique global analytic solution | `.existsUnique_originalRealSolution` |
+| Graph membership for every admissible original family | `SourceIsolatingNeighborhoods.originalRootReal_graph` |
+| Direct analytic implicit theorem for the original equation | `SourceLemma12_7Data.originalEquation_local_analytic_branch` |
+| Joint real analyticity and local real branches | `SourceLemma12_4Data.originalRealEquation_joint_analytic`, `.originalRealEquation_local_real_branch` |
+| Full norm convergence along converging sources | `.originalRealSolution_tendsto` |
+| Free normalization | `sourcePsiOriginalRootReal_zero` |
+| Source package retaining Corollary 12.8 on W | `SourceCorollary12_8Data.proposition12_9`, `sourceProposition12_9` |
+
+Implementation: `SourcePsiOriginalDeletedOmega`, `SourcePsiOriginalRealRoot`,
+`SourcePsiOriginalSolutionGap`, `SourcePsiOriginalRealSolution`,
+`SourcePsiOriginalImplicit`, and `SourceProposition12_9`, under
+`NLS/ZakharovShabat/`.
+
+The original-to-gap transfer uses the actual original equation as the
+coordinate witness for the selected equation on the original circles.
+This certifies each contour value before invoking the existing uniqueness
+result. The earlier `SourcePsiGapGlobalExistence` and
+`SourcePsiGapMultiplicity` prove global existence and uniqueness by
+openness, compactness at convergent sources, and connectedness. Their
+compactness input supplies convergence in ℓᵖ using uniform gap-root tail
+bounds, strengthening the source's coordinatewise subsequence argument.
+The resulting original solutions satisfy the full-sequence norm limit.
+
+The source's domain Ω with the nth coordinate deleted is realized in
+source-first order. An omitted root can be filled at the real center of
+its original disk; its free location need not belong to that disk. The
+canonical graph lies in every original family wherever that family is
+admissible, and the same canonical solution works for all such families.

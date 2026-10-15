@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: Corollary 12.8 on the original real domain
+## Current milestone: Proposition 12.9 on the original real domain
+
+`SourceCorollary12_8Data.proposition12_9` proves the unique global real
+analytic solution map for the original psi equation, for every finite
+1<p<∞ and every omitted index. Its values are actual real deleted ℓᵖ
+vectors. Complex inclusion recovers the canonical gap-root map exactly.
+The same open connected source domain W and all preceding data are retained.
+
+The deleted placement domain is open and is exactly the projection of
+original Ωᵖ under coordinate deletion. The solution graph lies in every
+supplied original disk family over its real sources. Any real zero with
+retained roots in those disks has its roots in the actual gaps, including
+collapsed gaps, and equals the canonical solution. Uniqueness requires
+no prior gap-placement assumption and holds across different disk families.
+
+The earlier gap-solution construction supplies global existence,
+continuation, and uniqueness. Exact original-circle coordinates now
+transfer those results to the original equation and domain. The analytic
+implicit theorem is also applied directly to the original complex
+equation using Corollary 12.8's actual Jacobian. The real equation is
+jointly analytic, and a local real branch through any placed zero stays
+in the same original domain. Solutions converge in the full real ℓᵖ norm
+along converging source sequences. At the free source the unique solution
+has zero displacement.
+
+Twenty-seven new public checks cover the actual equation and real codomain,
+original-domain projection and graph lifting, uniqueness across disk
+families, collapsed and free gaps, local real and complex analytic
+branches, full sequence convergence, unchanged preceding data, and
+exponents 3/2 and 4. See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: Lemma 12.10, original-domain uniform inverse bounds and a common
+complex extension for all omitted indices. The dissertation remains
+incomplete. No new source correction is needed for Proposition 12.9.
+
+Validation: the full build (7024 jobs), public example suite, and axiom
+audit (33156 NLS declarations) pass. The six new modules and 27 new
+checks are warning-free; the build reports 21 pre-existing warnings.
+All 156 source inventory labels and 123 local Markdown links verify.
+
+## Previous milestone: Corollary 12.8 on the original real domain
 
 `SourceLemma12_7Data.corollary12_8` proves that the actual root Jacobian
 is a continuous linear isomorphism at every original Ωᵖ point, for every

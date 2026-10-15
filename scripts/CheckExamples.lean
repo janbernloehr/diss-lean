@@ -51041,3 +51041,144 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceCorollary128Checks
+
+namespace SourceProposition129Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable (H : SourceProposition12_9Data hp hp1 W) (hW : IsOpen W) (hR : realTypeSourceLocus p ⊆ W)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (φ : realTypeSourceSubmodule p) (hφV : (φ:CoeffPair p) ∈ V) (n : ℤ)
+
+-- The real map is exactly the existing root map under complex inclusion.
+example : RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal hp hp1 n φ) =
+    sourcePsiGapRoot hp hp1 n φ := sourcePsiOriginalRootReal_complex hp hp1 n φ
+
+example : AnalyticAt ℝ (sourcePsiOriginalRootReal hp hp1 n) φ :=
+  analyticOnNhd_sourcePsiOriginalRootReal hp hp1 n φ (mem_univ _)
+
+example : sourcePsiOriginalRealEquation hp hp1 n (sourcePsiOriginalRootReal hp hp1 n φ) φ = 0 :=
+  (H.canonical n φ).1
+
+example : sourcePsiOriginalEquation hp hp1 n
+    (RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal hp hp1 n φ)) φ = 0 := by
+  rw [← H.previous.previous.previous.previous.previous.originalRealEquation_complex φ (hR φ.property) φ.property,
+    (H.canonical n φ).1,map_zero]
+
+-- Domain membership holds for every supplied original disk family, for all deleted indices.
+example : ∀ k : ℤ, (φ,sourcePsiOriginalRootReal hp hp1 k φ) ∈ sourcePsiOriginalDeletedOmega V D k :=
+  H.graph hD φ hφV
+
+example : IsOpen (sourcePsiOriginalDeletedOmega V D n) := hD.isOpen_originalDeletedOmega hV n
+
+example (a : RealDeletedCoeff p n) :
+    (φ,a) ∈ sourcePsiOriginalDeletedOmega V D n ↔
+      ∃ b : RealCoeff p, (φ,b) ∈ sourcePsiOriginalOmega V D ∧ RealDeletedCoeff.deleteCoordinateTo n b = a :=
+  hD.mem_originalDeletedOmega_iff n (φ,a)
+
+-- The omitted root can be filled inside its actual disk, without requiring its free location to lie there.
+example : ∃ b : RealCoeff p, (φ,b) ∈ sourcePsiOriginalOmega V D ∧
+    RealDeletedCoeff.deleteCoordinateTo n b = sourcePsiOriginalRootReal hp hp1 n φ :=
+  (hD.mem_originalDeletedOmega_iff n _).mp (H.graph hD φ hφV n)
+
+example (b : RealCoeff p) (hb : (φ,b) ∈ sourcePsiOriginalOmega V D) :
+    (φ,RealDeletedCoeff.deleteCoordinateTo n b) ∈ sourcePsiOriginalDeletedOmega V D n :=
+  (hD.mem_originalDeletedOmega_iff n _).mpr ⟨b,hb,rfl⟩
+
+-- Uniqueness assumes original disk placement, not prior gap placement.
+example (a : RealDeletedCoeff p n) (ht : (φ,a) ∈ sourcePsiOriginalDeletedOmega V D n)
+    (hz : sourcePsiOriginalRealEquation hp hp1 n a φ = 0) :
+    a = sourcePsiOriginalRootReal hp hp1 n φ :=
+  H.unique n φ a ⟨hz,V,D,c,hD,ht⟩
+
+example {V' : Set (CoeffPair p)} {D' : ℤ → Set ℂ} {c' : ℝ}
+    (hD' : SourceIsolatingNeighborhoods hp hp1 V' D' c')
+    (a b : RealDeletedCoeff p n)
+    (ha : (φ,a) ∈ sourcePsiOriginalDeletedOmega V D n)
+    (hb : (φ,b) ∈ sourcePsiOriginalDeletedOmega V' D' n)
+    (hza : sourcePsiOriginalRealEquation hp hp1 n a φ = 0)
+    (hzb : sourcePsiOriginalRealEquation hp hp1 n b φ = 0) : a = b :=
+  (H.unique n φ a ⟨hza,V,D,c,hD,ha⟩).trans (H.unique n φ b ⟨hzb,V',D',c',hD',hb⟩).symm
+
+example (a : RealDeletedCoeff p n) (ht : (φ,a) ∈ sourcePsiOriginalDeletedOmega V D n)
+    (hz : sourcePsiOriginalRealEquation hp hp1 n a φ = 0) (m : ℤ) (hmn : m ≠ n) :
+    displacedRoots (RealDeletedCoeff.complexCLM n a:Coeff p) m ∈ sourcePeriodicSegment hp hp1 φ m :=
+  H.previous.previous.previous.previous.previous.originalRealEquation_zero_mem_gap hD φ (hR φ.property)
+    ht.1 n a ht.2 hz m hmn
+
+-- A collapsed actual gap pins its root exactly to the midpoint.
+example (m : ℤ) (hmn : m ≠ n)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential (φ:CoeffPair p))
+      (periodOnePotential_mem (φ:CoeffPair p)) m = 0) :
+    displacedRoots (RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal hp hp1 n φ):Coeff p) m =
+      sourceStandardRootMidpoint hp hp1 φ m := by
+  simpa only [sourcePeriodicSegment_eq_midpoint_singleton_of_zeroGap hp hp1 φ m hg,mem_singleton_iff]
+    using H.gap n m hmn φ
+
+example : (sourcePsiOriginalRootReal hp hp1 (-7) φ:RealCoeff p) (-7) = 0 :=
+  (sourcePsiOriginalRootReal hp hp1 (-7) φ).property
+
+example : sourcePsiOriginalRootReal hp hp1 0 (0:realTypeSourceSubmodule p) = 0 :=
+  sourcePsiOriginalRootReal_zero hp hp1 0
+
+example : displacedRoots
+    (RealDeletedCoeff.complexCLM 0 (sourcePsiOriginalRootReal hp hp1 0 (0:realTypeSourceSubmodule p)):Coeff p) (-7) =
+      (Real.pi:ℂ)*(-7:ℤ) := by
+  simp [displacedRoots]
+
+example (a : RealDeletedCoeff p n) (ha : SourcePsiOriginalRealSolution hp hp1 n 0 a) : a = 0 := by
+  rw [H.unique n 0 a ha,sourcePsiOriginalRootReal_zero]
+
+example : ∃! s : realTypeSourceSubmodule p → RealDeletedCoeff p n,
+    AnalyticOnNhd ℝ s univ ∧ ∀ ψ, SourcePsiOriginalRealSolution hp hp1 n ψ (s ψ) := H.solution n
+
+-- A global solution selection is pointwise unique even without an analyticity premise.
+example (s : realTypeSourceSubmodule p → RealDeletedCoeff p n)
+    (hs : ∀ ψ, SourcePsiOriginalRealSolution hp hp1 n ψ (s ψ)) : s = sourcePsiOriginalRootReal hp hp1 n :=
+  funext (fun ψ => H.unique n ψ (s ψ) (hs ψ))
+
+example : AnalyticOnNhd ℝ
+    (fun t : realTypeSourceSubmodule p × RealDeletedCoeff p n => sourcePsiOriginalRealEquation hp hp1 n t.2 t.1)
+    {t | (t.1:CoeffPair p) ∈ W} :=
+  H.previous.previous.previous.previous.previous.originalRealEquation_joint_analytic n
+
+example (a : RealDeletedCoeff p n) (ht : (φ,a) ∈ sourcePsiOriginalDeletedOmega V D n)
+    (hz : sourcePsiOriginalRealEquation hp hp1 n a φ = 0) :
+    ∃ s : realTypeSourceSubmodule p → RealDeletedCoeff p n, AnalyticAt ℝ s φ ∧ s φ = a ∧
+      ∀ᶠ ψ in 𝓝 φ, (ψ,s ψ) ∈ sourcePsiOriginalDeletedOmega V D n ∧
+        sourcePsiOriginalRealEquation hp hp1 n (s ψ) ψ = 0 :=
+  H.previous.previous.previous.previous.previous.originalRealEquation_local_real_branch
+    hW hR hD hV φ n a ht hz
+
+-- The actual complex equation, with the original root input, admits an analytic local branch.
+example (t : realTypeSourceSubmodule p × RealCoeff p) (htΩ : t ∈ sourcePsiOriginalOmega V D)
+    (hz : sourcePsiOriginalEquation hp hp1 n
+      (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1 = 0) :
+    ∃ s : CoeffPair p → DeletedCoeff p n, AnalyticAt ℂ s (t.1:CoeffPair p) ∧
+      s t.1 = Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2) ∧
+      ∀ᶠ ψ in 𝓝 (t.1:CoeffPair p), sourcePsiOriginalEquation hp hp1 n (s ψ) ψ = 0 :=
+  H.previous.previous.originalEquation_local_analytic_branch hD hV t (hR t.1.property) htΩ n hz
+
+-- The full sequence converges in lp, not only a coordinatewise subsequence.
+example (ψ : ℕ → realTypeSourceSubmodule p) (hψ : Tendsto ψ atTop (𝓝 φ))
+    (a : ℕ → RealDeletedCoeff p n) (ha : ∀ k, SourcePsiOriginalRealSolution hp hp1 n (ψ k) (a k)) :
+    Tendsto a atTop (𝓝 (sourcePsiOriginalRootReal hp hp1 n φ)) :=
+  H.previous.previous.previous.previous.previous.originalRealSolution_tendsto hR n φ ψ hψ a ha
+
+example : SourceCorollary12_8Data hp hp1 W := H.previous
+example (H8 : SourceCorollary12_8Data hp hp1 W) : SourceProposition12_9Data hp hp1 W := H8.proposition12_9 hW hR
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W :=
+  sourceProposition12_9 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W :=
+  sourceProposition12_9 (by norm_num) (by norm_num)
+
+end
+end SourceProposition129Checks

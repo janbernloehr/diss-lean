@@ -3581,3 +3581,9 @@ import NLS.SequenceSpaces.DeletedRealInverse
 import NLS.ZakharovShabat.SourcePsiOriginalRealEquation
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianInverse
 import NLS.ZakharovShabat.SourceCorollary12_8
+import NLS.ZakharovShabat.SourcePsiOriginalDeletedOmega
+import NLS.ZakharovShabat.SourcePsiOriginalRealRoot
+import NLS.ZakharovShabat.SourcePsiOriginalSolutionGap
+import NLS.ZakharovShabat.SourcePsiOriginalRealSolution
+import NLS.ZakharovShabat.SourcePsiOriginalImplicit
+import NLS.ZakharovShabat.SourceProposition12_9

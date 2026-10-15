@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Corollary 12.8 proves that the actual Jacobian at every
-point of the original real domain Ωᵖ is a continuous linear isomorphism,
-for every finite 1<p<∞. Both the real and complex deleted ℓᵖ spaces have
-bounded inverses, and the real operator is identified with the derivative
-of the actual real equation. The preceding source domain is retained.
-Next: Proposition 12.9, the global real analytic solution map.
+Latest step: Proposition 12.9 proves a unique global real analytic solution
+of the original psi equation, for every finite 1<p<∞ and omitted index.
+Its graph lies in the original domain and its roots lie in the actual gaps,
+including collapsed gaps. The original-domain projection, local analytic
+branches, and full ℓᵖ-norm convergence of solutions are certified.
+Next: Lemma 12.10, uniform inverse bounds and a common complex extension.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
 [the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.
