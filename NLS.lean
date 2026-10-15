@@ -3768,3 +3768,5 @@ import NLS.ZakharovShabat.SourceRealHigherActionIntegral
 import NLS.ZakharovShabat.SourceHigherActionPiecewiseContour
 import NLS.ZakharovShabat.SourceSection23TraceCorrections
 import NLS.ZakharovShabat.SourceSection24Original
+import NLS.ZakharovShabat.SourceIndexedHigherActionAsymptotic
+import NLS.ZakharovShabat.SourceSection24ZeroDetectionCorrection

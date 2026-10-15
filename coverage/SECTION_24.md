@@ -3,9 +3,10 @@
 This audit covers printed pp. 106–107 and the related trace outline on
 p. 105. The original higher-action definition, formulas (5.2), (5.4),
 (5.5), and (5.6), reality, odd-level positivity, and vanishing on collapsed
-complex gaps are implemented. The general zero-detection claim and the
-final asymptotic sentence still require separate work; this is not a
-certificate that all of Section 24 is complete.
+complex gaps are implemented on the precise domains below. The final
+asymptotic now has an explicit two-sided limiting statement. An actual
+source counterexample refutes the printed all-level zero-detection claim;
+the corrected real odd-level converse is retained.
 
 ## Original actions and domains
 
@@ -63,11 +64,42 @@ assertion.
 | Odd-level zero detection | `sourceIndexedHigherAction_even_eq_zero_iff` | Every real gap, including central gaps crossing zero. |
 | Collapsed complex gaps | `SourceSection19Data.indexedHigherAction_of_collapsed` | Every source in U and every level. |
 | Mean-value formula (5.6) | `sourceIndexedHigherAction_eq_power_mul_action` | In fact every natural spectral power, with ζ in the actual closed real gap and the original indexed ordinary action. No division by that action. |
+| Asymptotic after (5.6) | `sourceIndexedHigherAction_exists_asymptotic_samples`, `sourceIndexedHigherAction_asymptotic` | Every natural spectral power, every real source at finite p>1, cofinite filter on ℤ; actual gap samples and ℓᵖ displacement, including collapsed gaps. |
+| Printed all-level zero detection, p. 106 | `SourceSection24Data.not_higherAction_zero_iff_gap_zero` | Refuted on every retained U by an actual real finite-gap source with open central gap and zero level-two action. |
 
 The real assertions are in
 [`SourceIndexedHigherActionReal.lean`](../NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean),
 [`SourceRealHigherActionPositive.lean`](../NLS/ZakharovShabat/SourceRealHigherActionPositive.lean),
 and [`SourceRealHigherActionIntegral.lean`](../NLS/ZakharovShabat/SourceRealHigherActionIntegral.lean).
+
+## Precise asymptotics and the level-two counterexample
+
+[`SourceIndexedHigherActionAsymptotic.lean`](../NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean)
+proves that every choice ρₙ in the actual complex periodic segments has
+ρₙ/(nπ) → 1 along the cofinite filter on ℤ. This filter expresses
+|n| → ∞, and both individual signed tails follow by restriction.
+For a real source, one choice of the mean-value samples ζₙ simultaneously
+has ζₙ in the actual closed gap, ζₙ−nπ in ℓᵖ, the exact formula
+Jₙ,k+1 = ζₙ^k Iₙ, and ζₙ^k/(nπ)^k → 1. Multiplication then gives the
+asymptotic equivalence Jₙ,k+1 ∼ (nπ)^k Iₙ without dividing by Iₙ.
+Zero actions and k=0 are included. No uniform rate over a source-norm ball
+is asserted; Section 25 supplies the next quantitative localization.
+
+[`SourceSection24ZeroDetectionCorrection.lean`](../NLS/ZakharovShabat/SourceSection24ZeroDetectionCorrection.lean)
+shows why the printed assertion that all higher actions detect open gaps
+cannot hold. Along central-action reduction of a source with only its
+central gap open, the level-two action is half the physical momentum.
+Its derivative vanishes by the momentum bracket at index zero, and its
+value at collapse is zero. Continuity through collapse gives J₀,₂=0 at
+the original source despite its open central gap.
+
+`SourceSection24Data.exists_levelTwo_zero_of_action_pos` constructs such
+a real finite-gap source inside the same U for every prescribed I₀=c>0.
+`section24_levelTwo_zero_counterexample` gives an unconditional witness
+with c=1. The formal negation covers all complex sources in U because its
+witness already lies in the real locus. The corrected established
+converse is for odd printed levels at real sources; this audit does not
+assert a converse at arbitrary complex sources or even printed levels.
 
 ## Corrections to the Section 23 outline
 
@@ -83,23 +115,24 @@ alternating sign remains incorrect even after restoring the full index
 set. The correct odd trace is the full integer sum H_(2m+1)/4ᵐ, agreeing
 with Theorem 24.1. See [source discrepancies](../SOURCE_ERRATA.md).
 
-## Validation and remaining work
+## Validation and next work
 
-Thirty-three new public checks cover non-Hilbert exponent three, complex
+The initial 33 public checks cover non-Hilbert exponent three, complex
 sources, circle independence, piecewise contours, negative indices,
 central open gaps, the literal gap integral, mean-value comparisons,
 complex collapsed gaps, exact ℓ¹ coordinates, connected full Sobolev
 domains, the mass endpoint, factors two/four/sixteen, the sharp Hᵐ trace,
-and the unconditional original-family constructor. Both outline
-counterexamples are checked through the original indexed actions.
-Full validation is recorded in [implementation status](../STATUS.md).
+and the unconditional original-family constructor. Both Section 23
+outline counterexamples are checked through original indexed actions.
 
-The sentence after (5.6) asserting the precise two-sided-index asymptotic
-still needs a public theorem with its limiting filter and normalization.
-The p. 106 claim that every higher-level action vanishes only at a
-collapsed gap is not established here: the proved converse is for odd
-printed levels at real sources. Its even-level and complex-source scope
-must be audited before marking that sentence covered. Existing
-[Section 14 qualifications](SECTION_14.md) also remain. The dissertation
-is incomplete; Section 25's original localization audit follows these
-remaining Section 24 assertions.
+Twelve additional checks cover the new sample and action asymptotics,
+zero and odd spectral powers, the positive and negative tails separately,
+prescribed positive action in every original domain, the formal negation
+of the printed zero-detection claim, and an unconditional actual source.
+At that same source, the level-two action is zero and the level-three
+action is nonzero. Full validation is recorded in
+[implementation status](../STATUS.md).
+
+Section 25's original localization audit is next. Existing
+[Section 14 qualifications](SECTION_14.md) remain, and the dissertation
+is incomplete.

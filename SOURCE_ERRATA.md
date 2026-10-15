@@ -1,5 +1,31 @@
 # Source discrepancies
 
+## Section 24: higher actions do not all detect open gaps
+
+Printed p. 106 asserts that every action at level k≥2 vanishes if and
+only if the corresponding gap is closed. This fails already at level
+two and at a real source. For every retained original Section 24 domain
+U and every c>0, `SourceSection24Data.exists_levelTwo_zero_of_action_pos`
+constructs a real finite-gap source in U with I₀=c, an open central gap,
+and J₀,₂=0. `section24_levelTwo_zero_counterexample` supplies an
+unconditional actual source with c=1.
+
+The proof uses central-action reduction and the physical momentum bracket
+at index zero: the level-two action stays constant and is zero at gap
+collapse. This is a counterexample for the original contour-defined action.
+`SourceSection24Data.not_higherAction_zero_iff_gap_zero` formally negates
+the printed equivalence on each retained domain.
+
+The valid statements retained here are that odd printed levels detect
+open gaps at real sources, and that collapsed complex gaps contribute
+zero at every level. At the constructed source the level-three action
+is nonzero. No general complex-source converse is asserted.
+
+Implemented in
+[`SourceSection24ZeroDetectionCorrection.lean`](NLS/ZakharovShabat/SourceSection24ZeroDetectionCorrection.lean).
+See [the Section 24 audit](coverage/SECTION_24.md) for exact domains and
+the independently proved higher-action asymptotic.
+
 ## Section 23: the higher-action trace needs all integer indices and a positive sign
 
 The outline on printed p. 105 writes a sum over n≥1 with coefficient

@@ -5,16 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 24's original higher actions now satisfy the
-physical trace formulas on the full complex Sobolev part of the retained
-Section 19/20 domain. The same original family carries analytic ℓ¹ action
-sequences, absolute convergence, exact contour and real gap formulas,
-and the sharp odd-order Hᵐ trace. Formal source counterexamples correct
-the positive-index sum and alternating sign in the Section 23 outline.
+Latest step: the Section 24 higher-action asymptotic now holds along
+both integer tails, with actual mean-value samples and ℓᵖ displacements.
+An actual real finite-gap source in the original domain disproves the
+printed all-level zero-detection claim: its central gap is open while its
+level-two action is zero. The existing odd-level real converse and the
+full-domain physical trace formulas remain valid.
 
-Next: finish the Section 24 asymptotic and zero-detection audit, then
-continue Section 25. The separate full fractional-smoothness
-qualifications remain. The dissertation remains incomplete.
+Next: Section 25's original uniform spectral-localization audit. The
+separate full fractional-smoothness qualifications remain. The
+dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

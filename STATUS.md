@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: original Section 24 higher actions and full-domain physical traces
+## Current milestone: Section 24 asymptotics and the zero-detection correction
+
+The asymptotic following (5.6) now has a public theorem along the cofinite
+filter on ℤ, covering both signed tails. For every finite p>1 and real
+source, the original action at spectral power k is asymptotic to
+(nπ)^k times the original ordinary action. The selected mean-value points
+lie in the actual closed gaps, have an ℓᵖ displacement from nπ, and retain
+the exact action identity. The proof includes collapsed gaps without
+dividing by an action and applies to every natural power, including zero.
+
+The blanket p. 106 zero-detection claim is false. In every retained
+original Section 24 domain, any prescribed positive central action is
+realized by a real finite-gap source whose central gap is open but whose
+level-two action is zero. An unconditional source with I₀=1 supplies a
+public counterexample. Central-action reduction and the physical momentum
+bracket prove the vanishing; the source is not an abstract sequence.
+Odd real levels still detect open gaps, and collapsed complex gaps still
+contribute zero at every level. See [the Section 24 audit](coverage/SECTION_24.md)
+and [source discrepancies](SOURCE_ERRATA.md).
+
+Two new modules and 12 public checks cover actual sample sequences,
+Hilbert and non-Hilbert sources, both tails separately, prescribed action,
+original-domain membership, the negation of the printed claim, and the
+contrast between levels two and three at the same source.
+
+Next: Section 25's original uniform spectral-localization audit. The
+separate [Section 14 qualifications](coverage/SECTION_14.md) remain; the
+dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,208 build jobs, all 5,808
+public examples, and the transitive axiom audit for 34,536 NLS
+declarations. Both new modules and all 12 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 439 local documentation links across 31 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: original Section 24 higher actions and full-domain physical traces
 
 The original higher actions now use the original isolating contours and
 indexed ordinary actions. Their values are independent of the circle;

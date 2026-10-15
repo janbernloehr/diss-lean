@@ -56349,3 +56349,102 @@ example : ∃ φ : realTypeSourceSubmodule 2, ∃ hf : φ ∈ sourceFiniteGapLoc
       -sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 5/16 :=
   section23_alternating_trace_counterexample
 end Section24OriginalChecks
+
+section Section24CompletionChecks
+open Set Filter NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Complex gap samples have one normalized limit along both integer tails.
+example (ψ : CoeffPair 3) (ρ : ℤ → ℂ)
+    (hρ : ∀ n, ρ n ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n) :
+    Tendsto (fun n : ℤ => ρ n/((Real.pi:ℂ)*n)) cofinite (𝓝 1) :=
+  sourceGapSample_ratio_tendsto _ _ ψ ρ hρ
+
+example (ψ : CoeffPair 3) (ρ : ℤ → ℂ)
+    (hρ : ∀ n, ρ n ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n) :
+    Tendsto (fun n : ℤ => (ρ n)^6/((Real.pi:ℂ)*n)^6) cofinite (𝓝 1) :=
+  sourceGapSample_power_ratio_tendsto _ _ ψ ρ hρ 6
+
+example (φ : realTypeSourceSubmodule 2) (m : ℕ) :
+    ∃ ζ : ℤ → ℝ,
+      (∀ n, ζ n ∈ Icc
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re) ∧
+      Memℓp (fun n => (ζ n:ℂ)-(Real.pi:ℂ)*n) 2 ∧
+      (∀ n, sourceIndexedHigherAction (by simp) (by norm_num) n (2*m) φ.val =
+        (ζ n:ℂ)^(2*m)*sourceIndexedAction (by simp) (by norm_num) n φ.val) ∧
+      Tendsto (fun n : ℤ => (ζ n:ℂ)^(2*m)/((Real.pi:ℂ)*n)^(2*m)) cofinite (𝓝 1) :=
+  sourceIndexedHigherAction_exists_asymptotic_samples _ _ φ (2*m)
+
+-- The ordinary level and an even printed level are included without nonzero-action premises.
+example (φ : realTypeSourceSubmodule 3) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 0 φ.val)
+      (fun n : ℤ => sourceIndexedAction (by simp) (by norm_num) n φ.val) := by
+  simpa using sourceIndexedHigherAction_asymptotic (by simp) (by norm_num) φ 0
+
+example (φ : realTypeSourceSubmodule 3) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 1 φ.val)
+      (fun n : ℤ => ((Real.pi:ℂ)*n)*sourceIndexedAction (by simp) (by norm_num) n φ.val) := by
+  simpa only [pow_one] using sourceIndexedHigherAction_asymptotic (by simp) (by norm_num) φ 1
+
+example (φ : realTypeSourceSubmodule 3) (m : ℕ) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n (2*m) φ.val)
+      (fun n : ℤ => ((Real.pi:ℂ)*n)^(2*m)*sourceIndexedAction (by simp) (by norm_num) n φ.val) :=
+  sourceIndexedHigherAction_asymptotic _ _ φ (2*m)
+
+-- Each signed tail is a restriction of the same cofinite assertion.
+example (φ : realTypeSourceSubmodule 2) :
+    Asymptotics.IsEquivalent atTop
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 4 φ.val)
+      (fun n : ℤ => ((Real.pi:ℂ)*n)^4*sourceIndexedAction (by simp) (by norm_num) n φ.val) :=
+  (sourceIndexedHigherAction_asymptotic _ _ φ 4).mono atTop_le_cofinite
+
+example (φ : realTypeSourceSubmodule 2) :
+    Asymptotics.IsEquivalent atBot
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 4 φ.val)
+      (fun n : ℤ => ((Real.pi:ℂ)*n)^4*sourceIndexedAction (by simp) (by norm_num) n φ.val) :=
+  (sourceIndexedHigherAction_asymptotic _ _ φ 4).mono atBot_le_cofinite
+
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection24Data D A B U)
+
+-- The counterexample remains in each chosen original domain, with prescribed action.
+example (c : ℝ) (hc : 0 < c) :
+    ∃ φ : realTypeSourceSubmodule 2, φ.val ∈ U ∧
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 0 ≠ 0 ∧
+      sourceIndexedAction (by simp) (by norm_num) 0 φ.val = (c:ℂ) ∧
+      sourceIndexedHigherAction (by simp) (by norm_num) 0 1 φ.val = 0 :=
+  Q.exists_levelTwo_zero_of_action_pos c hc
+
+example : ¬ ∀ ψ ∈ U, ∀ (n : ℤ) (k : ℕ), 1 ≤ k →
+    (sourceIndexedHigherAction (by simp) (by norm_num) n k ψ = 0 ↔
+      canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :=
+  Q.not_higherAction_zero_iff_gap_zero
+
+example : ∃ φ : realTypeSourceSubmodule 2,
+    φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+    canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 0 ≠ 0 ∧
+    sourceIndexedAction (by simp) (by norm_num) 0 φ.val = 1 ∧
+    sourceIndexedHigherAction (by simp) (by norm_num) 0 1 φ.val = 0 :=
+  section24_levelTwo_zero_counterexample
+
+-- The very same source has zero level-two but nonzero level-three action.
+example : ∃ φ : realTypeSourceSubmodule 2,
+    sourceIndexedHigherAction (by simp) (by norm_num) 0 1 φ.val = 0 ∧
+    sourceIndexedHigherAction (by simp) (by norm_num) 0 2 φ.val ≠ 0 := by
+  obtain ⟨φ,_,hgap,_,hzero⟩ := section24_levelTwo_zero_counterexample
+  refine ⟨φ,hzero,?_⟩
+  intro h
+  exact hgap ((sourceIndexedHigherAction_even_eq_zero_iff
+    (by simp) (by norm_num) φ 0 1).mp h)
+end Section24CompletionChecks
