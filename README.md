@@ -5,15 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 22 now retains the original family for local and
-small-data global solutions above exponent two, the full corrected phase
-characterization at every finite p > 1, and both coordinate and physical
-PDE nonextension results. Image membership exactly characterizes when
-the original inverse formula defines a solution. The earlier global
-ordinary and renormalized theories for 1 < p ≤ 2 remain available.
+Latest step: Section 23's integer Sobolev, weighted, and real-order
+estimates now use one original Birkhoff family and its indexed actions.
+The four integer estimates share positive constants. Weighted complex
+neighborhoods retain every real weighted source and decode into the
+original domain. Exact physical norms and the existing NLS solution
+theory are preserved. A formal counterexample corrects the printed
+weight-growth bound.
 
-Next: audit Chapter 5's Sobolev and weighted estimates, starting with
-Section 23 and retaining the same original Birkhoff map.
+Next: audit the higher-action outline and Section 24's trace formulas.
+The separate full fractional-smoothness qualifications remain.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -26,7 +27,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 19 audit](coverage/SECTION_19.md),
 [the Section 20 audit](coverage/SECTION_20.md),
 [the Section 21 audit](coverage/SECTION_21.md),
-[the Section 22 audit](coverage/SECTION_22.md), and
+[the Section 22 audit](coverage/SECTION_22.md),
+[the Section 23 audit](coverage/SECTION_23.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

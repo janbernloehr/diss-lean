@@ -1,5 +1,25 @@
 # Source discrepancies
 
+## Section 23: the weight-growth bound needs the value at index one
+
+After Theorem 23.4, printed p. 105 claims w(m) ≤ w(0)^|m|.
+The normalized M₁ weight w(n) = 1 + |n| has w(1) = 2 and w(0) = 1,
+so the printed inequality fails already at m = 1.
+`SpectralWeight.section23_printed_geometric_bound_counterexample`
+constructs this actual weight and proves the failure.
+
+`SpectralWeight.le_geometric` proves the corrected bound
+w(n) ≤ w(0) * w(1)^|n| for every integer n. Submultiplicativity gives
+the natural-index induction and symmetry handles negative indices.
+The prefactor includes zero even when w(0) > 1, which the source's
+weight assumptions allow. The conclusion of at most exponential
+growth survives, and the named weighted estimates are unchanged.
+
+Implemented in
+[`SpectralWeightGrowth.lean`](NLS/SequenceSpaces/SpectralWeightGrowth.lean).
+See [the Section 23 audit](coverage/SECTION_23.md) for the original-map
+estimates and the remaining higher-action outline comparison.
+
 ## Section 22: the physical complex phases have the opposite signs
 
 With zₙ = (xₙ − iyₙ)/√2 and wₙ = (xₙ + iyₙ)/√2, the original source

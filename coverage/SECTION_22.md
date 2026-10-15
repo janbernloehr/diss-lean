@@ -161,5 +161,6 @@ and axiom-audit results are in [implementation status](../STATUS.md).
 For p > 2, global source solvability is asserted only where the phase
 curve stays in the original image; global surjectivity is not asserted.
 The Section 14 external Hilbert-map and full fractional-smoothness
-qualifications remain. The next original-map audit is Chapter 5,
-starting with Section 23. The dissertation is incomplete.
+qualifications remain. The original family now also carries the named
+Sobolev and weighted estimates in [the Section 23 audit](SECTION_23.md).
+The dissertation is incomplete.

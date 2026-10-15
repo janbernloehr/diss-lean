@@ -3748,3 +3748,8 @@ import NLS.ZakharovShabat.SourceSection22Characterization
 import NLS.ZakharovShabat.SourceSection22Higher
 import NLS.ZakharovShabat.SourceSection22Nonextension
 import NLS.ZakharovShabat.SourceSection22Coordinates
+import NLS.SequenceSpaces.SpectralWeightGrowth
+import NLS.ZakharovShabat.SourceSection23Actions
+import NLS.ZakharovShabat.SourceSection23Sobolev
+import NLS.ZakharovShabat.SourceSection23Weighted
+import NLS.ZakharovShabat.SourceSection23Original

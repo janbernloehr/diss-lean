@@ -14,7 +14,8 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
-| Theorem 0.1; Theorems 23.1–23.2; Remark 23.3 | [`SourceSobolevCommonConstants.lean`](NLS/ZakharovShabat/SourceSobolevCommonConstants.lean), `exists_sourceBirkhoffMap_sobolev_common_constants` | One constructed map, every positive integer Sobolev order, common positive constants chosen before the potential, both Birkhoff bounds and both action bounds. |
+| Theorem 0.1; Theorems 23.1–23.2; Remark 23.3 | [`SourceSection23Sobolev.lean`](NLS/ZakharovShabat/SourceSection23Sobolev.lean), `SourceSection17OriginalData.section23_sobolev_bounds` | One original map, every positive integer Sobolev order, common positive constants chosen before the potential, both Birkhoff bounds and both original indexed action bounds. |
+| Theorem 23.4; Corollary 23.5 | [`SourceSection23Weighted.lean`](NLS/ZakharovShabat/SourceSection23Weighted.lean), `SourceSection20Data.section23_weighted_neighborhood`, `section23_realSobolev_neighborhood` | Same original family, every M₁ weight and every real order at least one; full real weighted locus inside one complex neighborhood decoding into the original domain, exact physical weights, original indexed actions and weighted target norms. |
 | Theorem 0.2: analytic action Hamiltonian, sign, Hessian and local concavity | [`SourceHamiltonianActionConcavity.lean`](NLS/ZakharovShabat/SourceHamiltonianActionConcavity.lean), `exists_sourceHamiltonian_action_extension_with_concavity` | Actual source Hamiltonian on an open complex ℓ² domain containing all nonnegative summable actions; actual frequency gradient, Hessian −2 times Hilbert bilinear duality, quantitative local negativity. |
 | Physical normalization of H* | [`SourceSobolevHamiltonianIdentification.lean`](NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean), `SourcePrimitivePowerAtlas.renormalizedHamiltonian_eq_sobolevPhysicalCorrection` | Identification with the H¹ energy correction on all real H¹ sources, beyond the finite-gap normalization. |
 | Consequence after Theorem 0.2, printed p. 12: no C¹ extension for q > 2 | [`SourceHamiltonianNonextension.lean`](NLS/ZakharovShabat/SourceHamiltonianNonextension.lean), `exists_sourceHamiltonian_no_continuous_extension` | No continuous extension at zero relative to the nonnegative ℓ^q cone, hence no C¹ extension, for every finite q > 2. The same Hamiltonian retains actual source recovery and the physical H¹ identity. |
@@ -23,6 +24,15 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 | Remark after Theorem 0.3; Corollary 18.2(iv): generic local invertibility | [`SourceFrequencyGenericLocalInverse.lean`](NLS/ZakharovShabat/SourceFrequencyGenericLocalInverse.lean), `exists_sourceFrequency_genericLocalInverse` | Open dense set of points with two-sided analytic local inverses on a connected action domain containing all real-source actions and all nonnegative summable actions. |
 | Remark after Theorem 0.2: open dense positive Hamiltonian domain | [`SourceHamiltonianPositiveDomain.lean`](NLS/ZakharovShabat/SourceHamiltonianPositiveDomain.lean), `exists_sourceHamiltonian_open_dense_positive_domain` | The actual Hamiltonian domain restricted to the positive ℓ² cone is open and dense; source recovery, gradient, Hessian and local concavity are retained. |
 | Remark after Theorem 0.3: open dense positive frequency domains | [`SourceFrequencyPositiveDomains.lean`](NLS/ZakharovShabat/SourceFrequencyPositiveDomains.lean), `exists_sourceFrequency_open_dense_positive_domains` | For every finite p > 2 the compatible action domain at exponent p/2 is open dense relative to the positive cone, retaining real analytic ranges and all locally uniform mixed remainder conclusions. |
+
+The named Section 23 estimates and exact physical norms are audited in
+[`coverage/SECTION_23.md`](coverage/SECTION_23.md).
+[`SourceSection23Original.lean`](NLS/ZakharovShabat/SourceSection23Original.lean)
+retains one original family for all orders and weights, including the
+original indexed actions throughout each complex weighted neighborhood.
+The printed weight-growth bound has a formal M₁ counterexample and a
+corrected geometric majorant. The opening fractional-smoothness claims
+and higher-action outline remain separately qualified in that audit.
 
 The current original-domain angle audit is in
 [`coverage/SECTION_13.md`](coverage/SECTION_13.md). The original Birkhoff

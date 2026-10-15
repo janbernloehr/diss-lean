@@ -55960,3 +55960,190 @@ example : IsGloballyAnalyticallyWellposedOn
   exact hg (by norm_num)
 end BelowTwo
 end Section22CompletionChecks
+
+
+set_option autoImplicit false
+noncomputable section
+open Set NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+namespace Section23OriginalChecks
+variable {W₀ W V Wa B U : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s)
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection23Data D A B U)
+
+-- Complex sources in the retained domain use the same indexed actions, including negative indices.
+example (ψ : CoeffPair 2) (hψ : ψ ∈ U) :
+    sourceIndexedAction (by simp) (by norm_num) (-3) ψ =
+      sourceComplexAction (by simp) (by norm_num) (-3) ψ :=
+  D.indexed_action_eq_complex ψ (Q.original_subset hψ) (-3)
+
+-- Parseval uses the sum of both squared coordinate norms.
+example (φ : realTypeSourceSubmodule 2) :
+    ‖WithLp.toLp 2 (sourceRealBirkhoffMap (by simp) (by norm_num) s φ)‖ = ‖φ.val‖ :=
+  D.section23_parseval φ
+
+-- Decoding preserves the literal absolutely convergent weighted energy of both source components.
+example (w : SpectralWeight) (a : CoeffPair 2) :
+    Summable (fun n : ℤ => (w (2*n))^2*
+      (‖(normalizedWeightedSource w a).fst n‖^2+‖(normalizedWeightedSource w a).snd n‖^2)) :=
+  (normalizedWeightedSource_physical_norm w a).1
+
+example (w : SpectralWeight) (a : CoeffPair 2) :
+    ‖a‖^2 = ∑' n : ℤ, (w (2*n))^2*
+      (‖(normalizedWeightedSource w a).fst n‖^2+‖(normalizedWeightedSource w a).snd n‖^2) :=
+  (normalizedWeightedSource_physical_norm w a).2
+
+-- Common constants are chosen once for all potentials and all four inequalities.
+example (m : ℕ) (hm : 1 ≤ m) :
+    ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ SourceSection23SobolevBounds D m hm c d := by
+  obtain ⟨c,d,H⟩ := Q.sobolev m hm
+  exact ⟨c,d,H.c_pos,H.d_pos,H⟩
+
+-- At order one the lower power is exactly one, with the same constant as the action inequality.
+example : ∃ c d : ℝ, SourceSection23SobolevBounds D 1 (by omega) c d ∧
+    ∀ a : realTypeHigherSobolevSourceLocus 1,
+      ‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖ ≤ d*
+        (‖D.complex.sobolevCoordinates 1 (by omega) 1 le_rfl a‖+
+          (1+‖D.complex.sobolevCoordinates 1 (by omega) 1 le_rfl a‖)*
+            ‖D.complex.sobolevCoordinates 1 (by omega) 0 (by omega) a‖) := by
+  obtain ⟨c,d,H⟩ := Q.sobolev 1 (by omega)
+  refine ⟨c,d,H,?_⟩
+  simpa using H.birkhoff_lower
+
+-- At order two the upper Birkhoff power is four and the lower power is five.
+example : ∃ c d : ℝ, SourceSection23SobolevBounds D 2 (by omega) c d ∧
+    ∀ a : realTypeHigherSobolevSourceLocus 2,
+      ‖D.complex.sobolevCoordinates 2 (by omega) 2 le_rfl a‖ ≤ c*
+        (‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖+
+          (1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^4*
+            ‖higherSobolevSourceInclusion 2 a.val‖) := by
+  obtain ⟨c,d,H⟩ := Q.sobolev 2 (by omega)
+  exact ⟨c,d,H,H.birkhoff_upper⟩
+
+-- The same squared constant controls the indexed action sum, with exponent eight.
+example : ∃ c d : ℝ, SourceSection23SobolevBounds D 2 (by omega) c d ∧
+    ∀ a : realTypeHigherSobolevSourceLocus 2,
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm
+        ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) ≤ c^2*
+          (‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖^2+
+            (1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^8*
+              ‖higherSobolevSourceInclusion 2 a.val‖^2) := by
+  obtain ⟨c,d,H⟩ := Q.sobolev 2 (by omega)
+  exact ⟨c,d,H,H.action_upper⟩
+
+-- The lower action estimate retains the zero-order factor and power five.
+example : ∃ c d : ℝ, SourceSection23SobolevBounds D 2 (by omega) c d ∧
+    ∀ a : realTypeHigherSobolevSourceLocus 2,
+      ‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖^2 ≤ d^2*
+        ((∑' n : ℤ, sourceIndexedWeightedActionTerm
+          ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+          (1+∑' n : ℤ, sourceIndexedWeightedActionTerm
+            ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+          (∑' n : ℤ, sourceIndexedWeightedActionTerm
+            ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n)) := by
+  obtain ⟨c,d,H⟩ := Q.sobolev 2 (by omega)
+  exact ⟨c,d,H,H.action_lower⟩
+
+-- The norm identity holds at every lower order, including zero.
+example (m : ℕ) (hm : 1 ≤ m) (k : ℕ) (hk : k ≤ m)
+    (a : realTypeHigherSobolevSourceLocus m) :
+    ‖D.complex.sobolevCoordinates m hm k hk a‖^2 =
+      2*(∑' n : ℤ, sourceIndexedWeightedActionTerm
+        ⟨higherSobolevSourceInclusion m a.val,a.property⟩ k n) :=
+  D.section23_sobolev_norm_sq m hm k hk a
+
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (∑' n : ℤ, sourceIndexedWeightedActionTerm
+      ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n) =
+        ‖higherSobolevSourceInclusion 2 a.val‖^2/2 := by
+  have h := D.section23_sobolev_norm_sq 2 (by omega) 0 (by omega) a
+  rw [D.complex.sobolevCoordinates_zero_norm] at h
+  linarith
+
+-- The actual weighted coordinate at a negative index keeps the physical factor 2nπ.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (D.complex.sobolevCoordinates 2 (by omega) 2 le_rfl a).snd (-2) =
+      (1+|((-4:ℤ):ℝ)*Real.pi|)^2*
+        (sourceRealBirkhoffMap (by simp) (by norm_num) s
+          ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩).2 (-2) := by
+  rfl
+
+-- One complex neighborhood retains the entire real locus and decodes into the original domain.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+      ∀ a ∈ T, normalizedWeightedSource w a ∈ U := by
+  obtain ⟨T,hT,hr,hd,_,_⟩ := Q.weighted w hw
+  exact ⟨T,hT,hr,hd⟩
+
+-- The complex-neighborhood estimate is for the literal absolute original action sum.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+      ∀ a ∈ T, (∑' n : ℤ, (w (2*n))^2*
+        ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+          (2048:ℝ)^2*(w.realExtension (16*‖a‖^2))^2*‖a‖^2 := by
+  obtain ⟨T,hT,hr,_,hb,_⟩ := Q.weighted w hw
+  exact ⟨T,hT,hr,fun a ha => (hb a ha).2⟩
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    ‖D.complex.m1Coordinates w hw a‖ ≤ 2048*w.realExtension (16*‖a.val‖^2)*‖a.val‖ := by
+  obtain ⟨_,_,_,_,_,hb⟩ := Q.weighted w hw
+  exact hb a
+
+-- The target norm is exactly twice the indexed weighted action sum.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    ‖D.complex.m1Coordinates w hw a‖^2 =
+      2*(∑' n : ℤ, (w (2*n))^2*
+        ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a.val)‖) :=
+  D.section23_weighted_norm_sq w hw a
+
+-- Fractional order 3/2 has the literal action power six on a complex neighborhood.
+example : ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+    ∀ a ∈ T, (∑' n : ℤ, (1+|((2*n:ℤ):ℝ)*Real.pi|)^(3:ℝ)*
+      ‖sourceIndexedAction (by simp) (by norm_num) n
+        (sourceRealSobolevInclusion (3/2) (by norm_num) a)‖) ≤
+      (realSobolevEstimateConstant (3/2))^2*(1+‖a‖)^(6:ℝ)*‖a‖^2 := by
+  obtain ⟨T,hT,hr,_,hb,_⟩ := Q.realSobolev (3/2) (by norm_num)
+  refine ⟨T,hT,hr,fun a ha => ?_⟩
+  convert (hb a ha).2 using 1 <;> norm_num
+
+-- The same fractional-order constant controls the coordinate norm with power three.
+example (a : realTypeSourceSubmodule 2) :
+    ‖D.complex.realSobolevCoordinates (3/2) (by norm_num) a‖ ≤
+      realSobolevEstimateConstant (3/2)*(1+‖a.val‖)^(3:ℝ)*‖a.val‖ := by
+  obtain ⟨_,_,_,_,_,hb⟩ := Q.realSobolev (3/2) (by norm_num)
+  convert hb a using 1
+  norm_num
+
+-- The endpoint r=1 is included, and its decoder stays inside the retained domain.
+example : ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+    ∀ a ∈ T, sourceRealSobolevInclusion 1 (by norm_num) a ∈ U := by
+  obtain ⟨T,hT,hr,hd,_,_⟩ := Q.realSobolev 1 le_rfl
+  exact ⟨T,hT,hr,hd⟩
+
+-- The new package preserves both original physical solution theories.
+example : IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.renormalizedSource 2) univ ∧
+    IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.ordinarySource 2) univ :=
+  Q.toSourceSection20Data.global_analytic_wellposedness le_rfl
+
+-- No original-map existence hypothesis is required to obtain all orders and all weights together.
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 2), SourceSection23Data D A B U :=
+  sourceSection23_original_estimates
+
+-- The corrected geometric majorant handles negative indices and unnormalized w(0).
+example (w : SpectralWeight) : w (-3) ≤ w 0*(w 1)^3 := by
+  simpa using w.le_geometric (-3)
+
+example (w : SpectralWeight) : w 0 ≤ w 0*(w 1)^0 := by
+  simp
+
+-- A normalized M₁ weight refutes the printed w(0) base.
+example : ∃ w : SpectralWeight, w.HasLinearFactor ∧ ¬ w 1 ≤ w 0 := by
+  simpa using SpectralWeight.section23_printed_geometric_bound_counterexample
+
+end Section23OriginalChecks

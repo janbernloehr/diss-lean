@@ -1,6 +1,50 @@
 # Implementation plan
 
-## Current milestone: original Section 22 higher-exponent solutions and nonextension
+## Current milestone: original Section 23 Sobolev and weighted estimates
+
+One retained original Birkhoff family now satisfies Theorems 23.1,
+23.2, and 23.4, Remark 23.3, and Corollary 23.5. The original indexed
+actions agree with the contour actions throughout the original complex
+domain. Parseval and the integer and weighted target norm identities
+retain both components and the exact physical frequency 2nπ.
+
+At every integer order m ≥ 1, one positive pair of constants is chosen
+before the potential and controls all four norm and action estimates.
+The exact lower-order terms and powers 2m, 4m, and 4m−3 are retained.
+For every M₁ weight, one complex weighted neighborhood contains the
+entire real weighted source locus and decodes into the original domain.
+The absolute original indexed action sum and the actual weighted target
+norm have the same constant, 2048. For every real order r ≥ 1, the
+corresponding bounds retain the physical weight and powers 4r and 2r.
+
+`sourceSection23_original_estimates` chooses the original family once
+before all orders, weights, and potentials. The package extends the
+same Section 20 data and preserves the Section 22 physical solution
+theory. Five new modules and 24 public examples cover these estimates,
+exact norms, original-domain conditions, negative indices, orders one,
+two, and 3/2, and the unconditional common-family constructor. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The printed p. 105 bound w(n) ≤ w(0)^|n| has a formal counterexample
+within M₁: w(n) = 1 + |n|. The corrected general bound is
+w(n) ≤ w(0) * w(1)^|n|. Thus the stated at-most-exponential growth
+conclusion remains valid. See [source discrepancies](SOURCE_ERRATA.md).
+
+The named estimates do not by themselves establish the opening claim
+of a bi-analytic Sobolev diffeomorphism at every nonnegative real order
+or the full one-smoothing assertion. Section 14's external Hilbert-map
+and full fractional-smoothness qualifications remain. Next: audit the
+Section 23 higher-action outline with Section 24's trace formulas.
+The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,191 build jobs, all 5,763
+public examples, and the transitive axiom audit for 34,443 NLS
+declarations. The five new modules and 24 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 397 local documentation links across 30 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: original Section 22 higher-exponent solutions and nonextension
 
 The retained original family now supplies local analytic renormalized
 solutions around every source above exponent two, and global solutions
