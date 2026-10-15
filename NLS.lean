@@ -3686,3 +3686,8 @@ import NLS.ZakharovShabat.SourceBirkhoffOriginalCanonicalImages
 import NLS.ZakharovShabat.SourceBirkhoffOriginalAngleFlow
 import NLS.ZakharovShabat.SourceBirkhoffOriginalFlowSign
 import NLS.ZakharovShabat.SourceSection17Original
+import NLS.ZakharovShabat.SourceOriginalActionImage
+import NLS.ZakharovShabat.SourceFrequencyOriginalAsymptotic
+import NLS.ZakharovShabat.SourceFrequencyOriginalInverse
+import NLS.ZakharovShabat.SourceFrequencyOriginalHilbert
+import NLS.ZakharovShabat.SourceFrequencyOriginalPhysical

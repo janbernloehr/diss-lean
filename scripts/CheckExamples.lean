@@ -53799,3 +53799,149 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
   exact ⟨W₀,W,V,s,D,D.toSourceSection16OriginalData.equation3_9_printed_sign_counterexample⟩
 
 end Section17OriginalHilbertChecks
+
+section OriginalSection18Frequency
+open NLS NLS.ZakharovShabat
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection17OriginalData hp hp1 W₀ W V s)
+  {U : Set (Coeff q)} {F : Coeff q → Coeff q} (E : SourceOriginalFrequencyData D U F)
+
+example {X₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (C : SourceBirkhoffMapComplexData hp hp1 X₀ B X t) (φ : CoeffPair p)
+    (hφ : φ ∈ V) (hφ' : φ ∈ X) :
+    sourceActionSequence (q := q) hp hp1 s φ = sourceActionSequence hp hp1 t φ :=
+  D.actionSequence_eq C φ hφ hφ'
+
+example (hp2 : 2 < p) :
+    ∃ U : Set (Coeff q), ∃ F : Coeff q → Coeff q, SourceOriginalFrequencyData D U F :=
+  D.exists_frequency_asymptotic hp2
+
+example : IsOpen U ∧ IsPreconnected U ∧ (0 : Coeff q) ∈ U ∧
+    ∃ Y : Set (CoeffPair p), IsOpen Y ∧ realTypeSourceLocus p ⊆ Y ∧ Y ⊆ V ∧
+      sourceActionSequence (q := q) hp hp1 s '' Y = U :=
+  ⟨E.isOpen,E.isPreconnected,E.zero_mem,E.source_image⟩
+
+example (φ : realTypeSourceSubmodule p) (b : RealCoeff 1) (hb : ∀ n, 0 ≤ b n) :
+    sourceActionSequence (q := q) hp hp1 s φ.val ∈ U ∧
+      Coeff.exponentInclusion (Fact.out : 1 ≤ q) (RealCoeff.complexCLM 1 b) ∈ U :=
+  ⟨E.real_actions_mem φ,E.positive_actions_mem b hb⟩
+
+example (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r)
+    (hpr : ENNReal.ofReal (p.toReal/3) ≤ r) :
+    ∃ H : Coeff q → Coeff r, AnalyticOnNhd ℂ H U ∧ AnalyticOnNhd ℝ H U ∧
+      ∀ b ∈ U, ∀ n, H b n = F b n+2*b n := E.refined r hr hr1 hpr
+
+example (b : Coeff q) (hb : b ∈ U) :
+    ∃ T : Set (Coeff q), IsOpen T ∧ b ∈ T ∧ T ⊆ U ∧
+      ∃ g : Coeff q → Coeff (ENNReal.ofReal (p.toReal/3)), ∃ h : Coeff q → CoeffOnePlus,
+        (∀ c ∈ T, ∀ n, F c n+2*c n = g c n+(h c).1 n) ∧
+        (∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖g c‖ ≤ M) ∧
+        ∀ (r : ℝ≥0∞) (hr1 : 1 < r) (hr : r ≠ ⊤),
+          ∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖CoeffOnePlus.toCoeff r hr1 hr (h c)‖ ≤ M := E.mixed b hb
+
+example : F 0 = 0 ∧ AnalyticOnNhd ℂ F U ∧ AnalyticOnNhd ℝ F U :=
+  ⟨E.map_zero,E.analytic,E.analytic.restrictScalars⟩
+
+example (hp2 : 2 < p) : fderiv ℂ F 0 = (-2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff q) :=
+  E.derivative_zero hp2
+
+example (hp2 : 2 < p) (b : Coeff q) (hb : b ∈ U) :
+    IsCompactOperator (fderiv ℂ F b+(2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff q)) :=
+  E.compact_derivative hp2 b hb
+
+example (hp2 : 2 < p) (b : Coeff q) (hb : b ∈ U) :
+    (fderiv ℂ F b).IsFredholm ∧ Module.finrank ℂ (fderiv ℂ F b).ker =
+      Module.finrank ℂ (Coeff q ⧸ (fderiv ℂ F b).range) := E.fredholm hp2 b hb
+
+example (hp2 : 2 < p) :
+    ∃ G : Coeff q → Coeff q, AnalyticAt ℂ G 0 ∧ G 0 = 0 ∧
+      (∀ᶠ b in 𝓝 (0 : Coeff q), G (F b) = b) ∧
+      (∀ᶠ c in 𝓝 (0 : Coeff q), F (G c) = c) ∧
+      fderiv ℂ G 0 = (-2 : ℂ)⁻¹ • ContinuousLinearMap.id ℂ (Coeff q) := E.local_inverse hp2
+
+example (hp2 : 2 < p) :
+    ∃ O : Set (Coeff q), IsOpen O ∧ O ⊆ U ∧ U ⊆ closure O ∧
+      ∀ b ∈ O, IsUnit (fderiv ℂ F b) ∧
+        ∃ G : Coeff q → Coeff q, AnalyticAt ℂ G (F b) ∧ G (F b) = b ∧
+          (∀ᶠ c in 𝓝 b, G (F c) = c) ∧ (∀ᶠ z in 𝓝 (F b), F (G z) = z) ∧
+          fderiv ℂ G (F b) = Ring.inverse (fderiv ℂ F b) := E.generic_local_inverse hp2
+
+example (h2p : 2 ≤ p) :
+    ∃ R : RealCoeff q → RealCoeff q, AnalyticOnNhd ℝ R (RealCoeff.complexCLM q ⁻¹' U) ∧
+      ∀ b : RealCoeff q, RealCoeff.complexCLM q b ∈ U → (∀ n, 0 ≤ b n) →
+        RealCoeff.complexCLM q (R b) = F (RealCoeff.complexCLM q b) := E.real_extension h2p
+
+variable {W₂ B₂ V₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D₂ : SourceSection17OriginalData (by simp) (by norm_num) W₂ B₂ V₂ s₂)
+  {U₂ : Set (Coeff 1)} {ωstar : Coeff 1 → ℤ → ℂ} (H : SourceOriginalHilbertFrequencyData D₂ U₂ ωstar)
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) (n : ℤ) :
+    F (sourceActionSequence hp hp1 s φ.val) n = D₂.complex.finiteGapFrequencyAtExponent hp hp1 φ hf n -
+      4*sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1 - (2*(n:ℂ)*Real.pi)^2 :=
+  E.physical_finiteGap D₂ φ hf n
+
+example (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r) :
+    ∃ F : Coeff 1 → Coeff r, AnalyticOnNhd ℂ F U₂ ∧ AnalyticOnNhd ℝ F U₂ ∧
+      (∀ b ∈ U₂, ∀ n, F b n = ωstar b n) ∧
+      ∃ R : RealCoeff 1 → RealCoeff r, AnalyticOnNhd ℝ R (RealCoeff.complexCLM 1 ⁻¹' U₂) ∧
+        ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∀ n, (R b n : ℂ) = ωstar (RealCoeff.complexCLM 1 b) n :=
+  H.realizations r hr hr1
+
+example (h2p : 2 ≤ p) (b : RealCoeff 1) (hb : ∀ n, 0 ≤ b n) (n : ℤ) :
+    F (Coeff.exponentInclusion (Fact.out : 1 ≤ q) (RealCoeff.complexCLM 1 b)) n =
+      ωstar (RealCoeff.complexCLM 1 b) n := E.eq_hilbert_on_positive h2p H b hb n
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ) :
+    ωstar (sourceActionSequence (q := 1) (by simp) (by norm_num) s₂ φ.val) n =
+      D₂.complex.finiteGapFrequencyAtExponent (by simp) (by norm_num) φ hf n -
+        4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1 - (2*(n:ℂ)*Real.pi)^2 :=
+  H.physical_finiteGap φ hf n
+
+example {p' q' : ℝ≥0∞} [Fact (1 ≤ p')] [Fact (1 ≤ q')] [p'.HolderTriple p' q']
+    {hp' : p' ≠ ⊤} {hp1' : 1 < p'} {W₀' W' V' : Set (CoeffPair p')}
+    {s' : (n : ℤ) → CoeffPair p' → DeletedCoeff p' n}
+    {D' : SourceSection17OriginalData hp' hp1' W₀' W' V' s'}
+    {U' : Set (Coeff q')} {F' : Coeff q' → Coeff q'} (E' : SourceOriginalFrequencyData D' U' F')
+    (φ : realTypeSourceSubmodule p) (ψ : realTypeSourceSubmodule p')
+    (hcoeff : ∀ j : ℤ, ψ.val.fst j = φ.val.fst j ∧ ψ.val.snd j = φ.val.snd j) (n : ℤ) :
+    F (sourceActionSequence hp hp1 s φ.val) n = F' (sourceActionSequence hp' hp1' s' ψ.val) n :=
+  E.eq_of_coefficients E' φ ψ hcoeff n
+
+example (hp2 : 2 < p) :
+    ∃ W₀ W V : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+      ∃ D : SourceSection17OriginalData hp hp1 W₀ W V s,
+        ∃ U : Set (Coeff q), ∃ F : Coeff q → Coeff q, SourceOriginalFrequencyData D U F ∧
+          fderiv ℂ F 0 = (-2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff q) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection17_original hp hp1
+  obtain ⟨U,F,E⟩ := D.exists_frequency_asymptotic (q := q) hp2
+  exact ⟨W₀,W,V,s,D,U,F,E,E.derivative_zero hp2⟩
+
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+      ∃ U : Set (Coeff 1), ∃ ωstar : Coeff 1 → ℤ → ℂ, SourceOriginalHilbertFrequencyData D U ωstar := by
+  obtain ⟨W₀,W,V,s,D,U,ωstar,H,_⟩ := sourceSection18_original_frequencies
+  exact ⟨W₀,W,V,s,D,U,ωstar,H⟩
+
+end OriginalSection18Frequency
+
+section OriginalSection18QuasiNormedRemainder
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ ENNReal.ofReal (5/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (5/4)) := ⟨by norm_num⟩
+local instance : (ENNReal.ofReal (5/2)).HolderTriple (ENNReal.ofReal (5/2)) (ENNReal.ofReal (5/4)) :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (5/2))), ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (5/2)) → DeletedCoeff (ENNReal.ofReal (5/2)) n,
+    ∃ D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s,
+      ∃ U : Set (Coeff (ENNReal.ofReal (5/4))), ∃ F : Coeff (ENNReal.ofReal (5/4)) → Coeff (ENNReal.ofReal (5/4)),
+        SourceOriginalFrequencyData D U F ∧
+          ENNReal.ofReal ((ENNReal.ofReal (5/2)).toReal/3) < 1 := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection17_original (p := ENNReal.ofReal (5/2)) (by norm_num) (by norm_num)
+  obtain ⟨U,F,E⟩ := D.exists_frequency_asymptotic (q := ENNReal.ofReal (5/4)) (by norm_num)
+  exact ⟨W₀,W,V,s,D,U,F,E,by norm_num⟩
+
+end OriginalSection18QuasiNormedRemainder

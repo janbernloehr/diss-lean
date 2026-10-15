@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: Section 17 original inverses, flows, and isospectral images
+## Current milestone: Section 18 original action frequencies and inverses
+
+`sourceSection18_original_frequencies` constructs one Hilbert frequency
+with analytic sequence-space realizations in every finite exponent above
+one, and compatible higher-exponent extensions for every original Section
+17 family. The same higher map retains the full locally uniform mixed
+ℓ^(p/3)+ℓ^(1+) remainder and all four Corollary 18.2 conclusions: a local
+inverse at zero, compact corrected derivative, Fredholm index zero, and
+analytic local inverses on an open dense subset.
+
+The action domain is open and connected, contains every original real-source
+action and the nonnegative summable cone, and is exactly the image of an
+open source neighborhood inside the original complex domain. Root-family
+independence of the action sequence is proved on the full common complex
+domain. No equality with the image of the entire original domain is assumed.
+
+The exact derivative at zero is −2Id and the inverse derivative is −½Id.
+The maps have real-valued analytic extensions on nonnegative actions.
+Their values agree across independently chosen atlases and exponents for
+every real potential with equal Fourier coefficients. On finite-gap sources,
+the physical identity retains four times the mass and the free dispersion.
+
+Five new modules and 21 public checks include an unconditional p=5/2
+construction, explicitly retaining the quasi-normed p/3<1 remainder.
+See [the Section 18 frequency audit](coverage/SECTION_18.md).
+Next: integrate Theorem 18.3, Remark 18.4, and Theorem 18.5, and verify
+the overview's remaining normalization formulas. The Section 14
+qualifications remain; the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,129
+jobs, all public examples pass, and the transitive axiom audit checks 33,868
+NLS declarations. The five new modules and 21 new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 258 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 17 original inverses, flows, and isospectral images
 
 `sourceSection17_original` retains the original Sections 12–16 family
 and proves the Section 17 assertions for that same map. The real and

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 17 now retains the original map's analytic inverses,
-unique angle flow, and isospectral images. The flow has the original
-spectral action law and continuous displacement in every finite exponent
-above one. Two printed formulas are corrected with explicit Lean witnesses.
+Latest step: Section 18's frequency extensions now use the original
+spectral actions. One map retains the mixed remainder, compact corrected
+derivative, Fredholm index zero, and generic analytic local inverses.
+Physical normalization and exponent compatibility are proved.
 
-Next: Section 18's Hamiltonian, frequency, and wellposedness statements.
+Next: Section 18's Hamiltonian and wellposedness statements.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -18,7 +18,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 14 audit](coverage/SECTION_14.md),
 [the Section 15 audit](coverage/SECTION_15.md),
 [the Section 16 audit](coverage/SECTION_16.md),
-[the Section 17 audit](coverage/SECTION_17.md), and
+[the Section 17 audit](coverage/SECTION_17.md),
+[the Section 18 frequency audit](coverage/SECTION_18.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

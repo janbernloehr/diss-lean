@@ -34,6 +34,10 @@ Holder-conjugate gradient estimates, corrected reconstruction, and compact
 normalization are audited in [`coverage/SECTION_16.md`](coverage/SECTION_16.md).
 The original inverse, angle-flow, and isospectral assertions are audited in
 [`coverage/SECTION_17.md`](coverage/SECTION_17.md).
+The original action-frequency extensions and inverse assertions of
+Theorem 18.1 and Corollary 18.2 are audited in
+[`coverage/SECTION_18.md`](coverage/SECTION_18.md). The remaining Section 18
+Hamiltonian and wellposedness integration is listed there as next work.
 
 ## Nonextension proof and limits
 
