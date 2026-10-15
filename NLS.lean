@@ -3667,3 +3667,6 @@ import NLS.ZakharovShabat.SourceBirkhoffOriginalFormula
 import NLS.ZakharovShabat.SourceBirkhoffOriginalDomain
 import NLS.ZakharovShabat.SourceBirkhoffOriginalMap
 import NLS.ZakharovShabat.SourceSection14Original
+import NLS.ZakharovShabat.SourceRealBallCore
+import NLS.ZakharovShabat.SourceBirkhoffOriginalExponent
+import NLS.ZakharovShabat.SourceSection14

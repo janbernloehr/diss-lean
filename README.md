@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 14's Birkhoff map now uses the original actions and
-integral-defined angles, with the exact cosine/sine formula and a complex
-analytic sequence map through collapsed gaps. The same map has canonical
-brackets, an injective real restriction with open dense image, local
-analytic inverses, and a global analytic inverse for 1<p≤2.
+Latest step: Theorem 14.1's five assertions now hold for the constructed
+original-family Birkhoff maps. The maps agree throughout their complex
+exponent-domain intersections, and their full complex derivatives commute
+with exponent inclusion. The original formulas, canonical brackets, and
+real inverse properties are retained.
 
-Next: prove compatibility on full complex intersections of exponent
-domains, as required by Theorem 14.1(ii), then audit Sections 15–17.
-The dissertation remains incomplete.
+Next: audit the detailed arguments and auxiliary assertions in Sections
+15–17. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

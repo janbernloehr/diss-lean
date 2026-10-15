@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: Section 14 original Birkhoff map and real geometry
+## Current milestone: Section 14 full complex exponent compatibility
+
+`sourceSection14` now constructs the original Birkhoff map on compatible
+complex neighborhoods for every finite p>1. `SourceSection14Data.exponent`
+proves equality on the entire complex intersection after coefficient
+exponent inclusion. It applies to arbitrary complex sources, including
+collapsed gaps, and to any two independently constructed packages.
+Together with the inherited original-family results, this establishes
+the five assertions of Theorem 14.1 for these constructed maps.
+
+The domain is the union of every ball centered at a real source and
+contained in the preceding map domain. It is open and still contains the
+whole real locus. Given a point in two exponent domains, choose one ball
+from each. The intersection of the first ball with the inclusion preimage
+of the second is convex and contains the point's real-type projection.
+The projection contracts distances from real centers and commutes with
+exponent inclusion. Banach-valued analytic uniqueness propagates real
+agreement across this convex overlap to the original complex point.
+
+`eventually_map_exponent` identifies the whole sequence map on one germ
+at every overlap point; `fderiv_exponent` identifies its full complex
+Fréchet derivative after the input and output inclusions. Neither result
+requires the source to be real. The construction preserves the original
+root family, exact rectangular formula, indexed-action radius, canonical
+brackets, real local inverses, and global inverse for 1<p≤2.
+
+Twelve new public checks cover the domain geometry, full complex
+intersection, sequence-valued germs and derivatives, independence of
+families at a fixed exponent, and retained formulas and inverses.
+Independent unconditional constructions at p=3/2 and p=4 agree on their
+complex intersection; the p=3/2 construction retains both global inverse
+identities on the entire real target.
+
+Next: audit the detailed arguments and auxiliary assertions in Sections
+15–17 against the original quantities. The identification in Remark
+14.2(i) with the precise external Hilbert-space construction and the full
+fractional Fourier–Lebesgue extension mentioned in Remark 14.2(iii) are
+not separately certified by this milestone. Surjectivity for p>2 is not
+claimed. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,108
+jobs, all public examples pass, and the transitive axiom audit checks 33,710
+NLS declarations. The three new modules and twelve new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory
+verifies all 156 candidate labels, all 223 checked local Markdown file
+links resolve, and `git diff --check` passes.
+
+## Previous milestone: Section 14 original Birkhoff map and real geometry
 
 `sourceSection14_original` constructs the Birkhoff sequence map for every
 finite p>1 using the same normalized root family retained from Lemma 12.12.

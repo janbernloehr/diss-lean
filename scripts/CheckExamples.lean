@@ -53148,3 +53148,122 @@ example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
   D.complex.real_map_exponent E.complex hpq φ
 
 end Section14OriginalChecks
+
+section Section14CompatibleChecks
+open NLS NLS.ZakharovShabat Set Metric Filter Topology
+open scoped ENNReal
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+  {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {hq : q ≠ ⊤} {hq1 : 1 < q} {A B C : Set (CoeffPair q)}
+  {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+  (D : SourceSection14Data hp hp1 W₀ W V s) (E : SourceSection14Data hq hq1 A B C t)
+
+-- The domain restriction retains every real source and changes neither the functions nor the family.
+example (U : Set (CoeffPair p)) (hU : IsOpen U) (hrU : realTypeSourceLocus p ⊆ U) :
+    IsOpen (sourceRealBallCore U) ∧ realTypeSourceLocus p ⊆ sourceRealBallCore U ∧
+      sourceRealBallCore U ⊆ U ∧ sourceRealBallCore (sourceRealBallCore U) = sourceRealBallCore U :=
+  ⟨sourceRealBallCore_open U,sourceRealBallCore_real_subset U hU hrU,
+    sourceRealBallCore_subset U,sourceRealBallCore_idem U⟩
+
+-- The real-type projection used in the overlap proof commutes with exponent inclusion.
+example (hpq : p ≤ q) (ψ : CoeffPair p) :
+    CoeffPair.exponentInclusion hpq (sourceRealPart ψ) =
+      sourceRealPart (CoeffPair.exponentInclusion hpq ψ) :=
+  sourceRealPart_exponent hpq ψ
+
+-- One open neighborhood carries the full analytic sequence map and all scalar evaluations.
+example : IsOpen V ∧ realTypeSourceLocus p ⊆ V ∧ sourceRealBallCore V = V ∧
+    AnalyticOnNhd ℂ (sourceBirkhoffMap hp hp1 s) V ∧ ∀ ψ ∈ V, ∀ n : ℤ,
+      (sourceBirkhoffMap hp hp1 s ψ).1 n = sourceBirkhoffX hp hp1 n s ψ ∧
+      (sourceBirkhoffMap hp hp1 s ψ).2 n = sourceBirkhoffY hp hp1 n s ψ :=
+  ⟨D.complex.source_open,D.complex.real_subset,D.domain_eq_core,D.complex.analytic,D.complex.coordinates⟩
+
+-- Theorem 14.1(ii) on the entire complex intersection: no real-type or open-gap hypothesis.
+example (hpq : p ≤ q) :
+    EqOn (fun ψ => ((Coeff.exponentInclusion hpq).prodMap (Coeff.exponentInclusion hpq))
+      (sourceBirkhoffMap hp hp1 s ψ))
+      (sourceBirkhoffMap hq hq1 t ∘ CoeffPair.exponentInclusion hpq)
+      (V ∩ CoeffPair.exponentInclusion hpq ⁻¹' C) :=
+  fun ψ hψ => D.exponent E hpq ψ hψ.1 hψ.2
+
+-- At any complex overlap point a single germ works for the entire target sequence.
+example (hpq : p ≤ q) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (hψ' : CoeffPair.exponentInclusion hpq ψ ∈ C) :
+    (fun χ => ((Coeff.exponentInclusion hpq).prodMap (Coeff.exponentInclusion hpq))
+      (sourceBirkhoffMap hp hp1 s χ)) =ᶠ[𝓝 ψ]
+        (sourceBirkhoffMap hq hq1 t ∘ CoeffPair.exponentInclusion hpq) :=
+  D.eventually_map_exponent E hpq ψ hψ hψ'
+
+-- Derivative compatibility is for full complex Fréchet derivatives at arbitrary complex sources.
+example (hpq : p ≤ q) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (hψ' : CoeffPair.exponentInclusion hpq ψ ∈ C) :
+    ((Coeff.exponentInclusion hpq).prodMap (Coeff.exponentInclusion hpq)).comp
+      (fderiv ℂ (sourceBirkhoffMap hp hp1 s) ψ) =
+        (fderiv ℂ (sourceBirkhoffMap hq hq1 t) (CoeffPair.exponentInclusion hpq ψ)).comp
+          (CoeffPair.exponentInclusion hpq) :=
+  D.fderiv_exponent E hpq ψ hψ hψ'
+
+-- At a fixed exponent, different constructed root families still give the same map on overlaps.
+example {U₀ U Z : Set (CoeffPair p)} {u : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (F : SourceSection14Data hp hp1 U₀ U Z u) (ψ : CoeffPair p) (hψ : ψ ∈ V ∩ Z) :
+    sourceBirkhoffMap hp hp1 s ψ = sourceBirkhoffMap hp hp1 u ψ := by
+  have he := D.exponent F le_rfl ψ hψ.1 (by simpa using hψ.2)
+  apply Prod.ext <;> ext n
+  · exact congrArg (fun z : Coeff p × Coeff p => z.1 n) he
+  · exact congrArg (fun z : Coeff p × Coeff p => z.2 n) he
+
+-- Restriction preserves the original rectangular formula and its orientation.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    let a := sourceNormalizedActionRoot hp hp1 n ψ *
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n / (Real.sqrt 2 : ℂ)
+    (sourceBirkhoffMap hp hp1 s ψ).1 n = a*Complex.cos (sourceAngularOriginalTheta hp hp1 n s ψ) ∧
+      (sourceBirkhoffMap hp hp1 s ψ).2 n = a*Complex.sin (sourceAngularOriginalTheta hp hp1 n s ψ) :=
+  D.toSourceSection14OriginalData.rectangular_formula ψ hψ n hgap
+
+-- Indexed-action radii remain valid at complex collapsed gaps as well.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    ((sourceBirkhoffMap hp hp1 s ψ).1 n)^2 + ((sourceBirkhoffMap hp hp1 s ψ).2 n)^2 =
+      2*sourceIndexedAction hp hp1 n ψ :=
+  D.indexed_action_radius ψ hψ n
+
+-- The same restricted construction still has both analytic local inverse identities everywhere real.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ g : (RealCoeff p × RealCoeff p) → realTypeSourceSubmodule p,
+      AnalyticAt ℝ g (sourceRealBirkhoffMap hp hp1 s φ) ∧ g (sourceRealBirkhoffMap hp hp1 s φ) = φ ∧
+      (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap hp hp1 s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap hp hp1 s φ), sourceRealBirkhoffMap hp hp1 s (g z) = z) :=
+  D.toSourceSection14OriginalData.real_geometry.2.2.2.2 φ
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Independent constructions below and above two agree on the full complex intersection.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    ∃ _D : SourceSection14Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s,
+    ∃ A B C : Set (CoeffPair (4:ℝ≥0∞)), ∃ t,
+    ∃ _E : SourceSection14Data (p := 4) (by norm_num) (by norm_num) A B C t,
+    ∀ ψ ∈ V, ∀ _hψ' : CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ ∈ C,
+      ((Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)).prodMap
+        (Coeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4)))
+          (sourceBirkhoffMap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) s ψ) =
+            sourceBirkhoffMap (p := 4) (by norm_num) (by norm_num) t
+              (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 4) ψ) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection14 (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨A,B,C,t,E⟩ := sourceSection14 (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,A,B,C,t,E,D.exponent E (by norm_num)⟩
+
+-- The new compatible-domain construction retains the global inverse on the entire target below two.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    SourceSection14Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s ∧
+    ∃ e : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) ≃ₜ
+      (RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))),
+      (∀ φ, e φ = sourceRealBirkhoffMap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) s φ) ∧
+      AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun z => e.symm z) univ ∧
+      (∀ φ, e.symm (e φ) = φ) ∧ (∀ z, e (e.symm z) = z) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection14 (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨e,he,ha,hb⟩ := D.toSourceSection14OriginalData.global_inverse (by norm_num)
+  exact ⟨W₀,W,V,s,D,e,he,ha,hb,e.symm_apply_apply,e.apply_symm_apply⟩
+
+end Section14CompatibleChecks
