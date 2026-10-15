@@ -55534,3 +55534,217 @@ example : ∃ Wp : Set (CoeffPair 2), ∃ P : SourcePrimitivePowerAtlas (by simp
     sourceSection21_original_moments (p := 2) (by simp) (by norm_num)
   exact ⟨Wp,P,P.printed_lemma21_2_sign_counterexample⟩
 end Section21OriginalChecks
+
+section Section22OriginalChecks
+open Set Metric Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+section OriginalFamily
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+
+-- The bounded symbol has actual moment-frequency coordinates throughout the old U.
+example (ψ : CoeffPair p) (hψ : ψ ∈ U) :
+    A.boundedPhaseCorrection ψ (-1) = A.renormalizedFrequency (-1) ψ :=
+  Q.bounded_phase_correction.2 ψ hψ (-1)
+
+-- One existing source domain supports every compact time horizon.
+example : ∀ T : ℝ, AnalyticOnNhd ℂ (A.hamiltonianComplexPhaseTrajectoryOn T) U :=
+  Q.hamiltonian_phase_analytic
+
+-- A negative index checks both signs in the literal complex formula.
+example (T : ℝ) (ψ : CoeffPair p) (hψ : ψ ∈ U) (τ : Icc (-T) T) :
+    (A.hamiltonianComplexPhaseTrajectoryOn T ψ τ).1 (-1) =
+      Complex.exp (-(τ.val:ℂ)*Complex.I*((2*(Real.pi:ℂ)*(-1))^2+A.renormalizedFrequency (-1) ψ))*
+        (sourceComplexBirkhoffMap hp hp1 s ψ).1 (-1) ∧
+    (A.hamiltonianComplexPhaseTrajectoryOn T ψ τ).2 (-1) =
+      Complex.exp ((τ.val:ℂ)*Complex.I*((2*(Real.pi:ℂ)*(-1))^2+A.renormalizedFrequency (-1) ψ))*
+        (sourceComplexBirkhoffMap hp hp1 s ψ).2 (-1) := by
+  simpa using Q.hamiltonian_phase_coordinates T ψ hψ τ (-1)
+
+-- Action preservation holds even for nonreal sources and the zero mode.
+example (T : ℝ) (ψ : CoeffPair p) (hψ : ψ ∈ U) (τ : Icc (-T) T) :
+    (A.hamiltonianComplexPhaseTrajectoryOn T ψ τ).1 0 *
+      (A.hamiltonianComplexPhaseTrajectoryOn T ψ τ).2 0 = sourceComplexAction hp hp1 0 ψ :=
+  Q.hamiltonian_phase_action T ψ hψ τ 0
+
+-- The degenerate time interval still recovers the actual initial pair.
+example (φ : realTypeSourceSubmodule p) :
+    A.hamiltonianComplexPhaseTrajectoryOn 0 φ.val ⟨0,by simp⟩ =
+      sourceComplexBirkhoffMap hp hp1 s φ.val := by
+  rw [Q.hamiltonian_phase_real]
+  exact Birkhoff.hamiltonianPhaseFlow_zero _ _
+
+-- Reality and the full pair norm are preserved without a finite-gap assumption.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) (τ : Icc (-T) T) :
+    Birkhoff.IsConjugatePair (A.hamiltonianComplexPhaseTrajectoryOn T φ.val τ) ∧
+      ‖A.hamiltonianComplexPhaseTrajectoryOn T φ.val τ‖ =
+        ‖sourceComplexBirkhoffMap hp hp1 s φ.val‖ := by
+  rw [Q.hamiltonian_phase_real]
+  exact ⟨Birkhoff.phaseFlow_real _ _ _ (D.complex.complex_map_real φ),Birkhoff.norm_phaseFlow _ _ _⟩
+
+-- Joint continuity is in the sequence norm, also above exponent two.
+example : Continuous (fun x : ℝ × realTypeSourceSubmodule p =>
+    Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency x.2) x.1
+      (sourceComplexBirkhoffMap hp hp1 s x.2.val)) := Q.hamiltonian_phase_joint_continuous
+
+-- Analytic dependence on initial coordinates uses the entire actual image.
+example (T : ℝ) : AnalyticOnNhd ℝ (A.hamiltonianCoordinateTrajectoryOn D.complex T)
+    (range (sourceRealBirkhoffMap hp hp1 s)) := Q.hamiltonian_coordinate_analytic T
+
+-- Image inversion recovers the original source's trajectory exactly.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) (τ : Icc (-T) T) :
+    A.hamiltonianCoordinateTrajectoryOn D.complex T (sourceRealBirkhoffMap hp hp1 s φ) τ =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency φ) τ.val
+        (sourceComplexBirkhoffMap hp hp1 s φ.val) := by
+  rw [Q.hamiltonian_coordinate_apply T _ (mem_range_self φ),D.complex.realImageInverse_real_map,
+    D.complex.encode_real_map]
+
+-- A positive frequency and both nonzero amplitudes are constructed at a negative index.
+example : ∃ φ : realTypeSourceSubmodule p, φ ∈ sourceFiniteGapLocus hp hp1 ∧
+    0 < A.phaseFrequency φ (-2) ∧
+    (sourceComplexBirkhoffMap hp hp1 s φ.val).1 (-2) ≠ 0 ∧
+    (sourceComplexBirkhoffMap hp hp1 s φ.val).2 (-2) ≠ 0 :=
+  Q.exists_finiteGap_positive_phase (-2) (by norm_num)
+
+-- The two printed signs fail together, without a supplied nonzero-frequency hypothesis.
+example : ∃ φ : realTypeSourceSubmodule p,
+    (¬ HasDerivAt (fun τ => (A.renormalizedPhaseTrajectory s φ τ).1 1)
+      (-Complex.I*(A.phaseFrequency φ 1:ℂ)*(sourceComplexBirkhoffMap hp hp1 s φ.val).1 1) 0) ∧
+    (¬ HasDerivAt (fun τ => (A.renormalizedPhaseTrajectory s φ τ).2 1)
+      (Complex.I*(A.phaseFrequency φ 1:ℂ)*(sourceComplexBirkhoffMap hp hp1 s φ.val).2 1) 0) := by
+  obtain ⟨φ,_,_,_,_,hz,hw⟩ := Q.equation4_14_printed_sign_counterexample 1 (by norm_num)
+  exact ⟨φ,hz,hw⟩
+
+section GlobalRange
+variable (hp2 : p ≤ 2)
+
+-- Both original physical flows satisfy the all-smooth-sequence solution definition.
+example (φ : realTypeSourceSubmodule p) :
+    IsRenormalizedNLSSolutionOn univ φ (A.hamiltonianRenormalizedSourceFlow D.complex hp2 φ) ∧
+    IsOrdinaryNLSSolutionOn univ φ (A.hamiltonianOrdinarySourceFlow D.complex hp2 φ) :=
+  Q.global_physical_solutions hp2 φ
+
+-- A given continuous approximation solution has the corrected phase, at every time in its domain.
+example (J : Set ℝ) (φ : realTypeSourceSubmodule p) (γ : ℝ → realTypeSourceSubmodule p)
+    (hγ : IsRenormalizedNLSSolutionOn J φ γ) (τ : ℝ) (hτ : τ ∈ J) :
+    (sourceComplexBirkhoffMap hp hp1 s (γ τ).val).1 (-1) =
+      Complex.exp (((-τ*A.phaseFrequency φ (-1):ℝ):ℂ)*Complex.I)*
+        (sourceComplexBirkhoffMap hp hp1 s φ.val).1 (-1) := by
+  rw [((Q.renormalized_solution_iff_coordinates hp2 J φ γ).mp hγ).2.2 τ hτ]
+  exact Birkhoff.hamiltonianPhaseFlow_fst _ _ _ _
+
+-- Conversely, the coordinate law proves the original solution condition, not a redefinition.
+example (J : Set ℝ) (hJ : 0 ∈ J) (φ : realTypeSourceSubmodule p)
+    (γ : ℝ → realTypeSourceSubmodule p) (hc : ContinuousOn γ J)
+    (he : ∀ τ ∈ J, sourceComplexBirkhoffMap hp hp1 s (γ τ).val =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency φ) τ (sourceComplexBirkhoffMap hp hp1 s φ.val)) :
+    IsRenormalizedNLSSolutionOn J φ γ :=
+  (Q.renormalized_solution_iff_coordinates hp2 J φ γ).mpr ⟨hJ,hc,he⟩
+
+-- Ordinary solutions have the opposite sign on the second coordinate and retain their mass.
+example (φ : realTypeSourceSubmodule p) (γ : ℝ → realTypeSourceSubmodule p)
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (τ : ℝ) :
+    (sourceComplexBirkhoffMap hp hp1 s (γ τ).val).2 0 =
+      Complex.exp (((τ*A.ordinaryPhaseFrequency hp2 φ 0:ℝ):ℂ)*Complex.I)*
+        (sourceComplexBirkhoffMap hp hp1 s φ.val).2 0 := by
+  rw [((Q.ordinary_solution_iff_coordinates hp2 univ φ γ).mp hγ).2.2 τ (mem_univ _)]
+  exact Birkhoff.hamiltonianPhaseFlow_snd _ _ _ _
+
+-- The ordinary frequency restores exactly four times physical mass.
+example (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    (A.ordinaryPhaseFrequency hp2 φ n:ℂ) =
+      (2*(Real.pi:ℂ)*n)^2 + A.renormalizedFrequency n φ.val + 4*sourceOrdinaryComplexMass hp2 φ.val :=
+  A.ordinaryPhaseFrequency_complex Q.roots.toSourcePsiIsolatingComplexExtension hp2 φ n
+
+-- Negative time cancels both physical flows in the original source norm.
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) :
+    A.hamiltonianRenormalizedSourceFlow D.complex hp2
+      (A.hamiltonianRenormalizedSourceFlow D.complex hp2 φ τ) (-τ) = φ ∧
+    A.hamiltonianOrdinarySourceFlow D.complex hp2
+      (A.hamiltonianOrdinarySourceFlow D.complex hp2 φ τ) (-τ) = φ := by
+  simpa only [neg_add_cancel,A.hamiltonianRenormalizedSourceFlow_zero,A.hamiltonianOrdinarySourceFlow_zero]
+    using Q.global_physical_group hp2 φ (-τ) τ
+
+-- Both complete source trajectories, not only scalar observations, are analytic.
+example (T : ℝ) :
+    AnalyticOnNhd ℝ
+      (A.hamiltonianRenormalizedSourceTrajectoryOn Q.roots D.roots_open D.roots_real_subset D.complex hp2 T) univ ∧
+    AnalyticOnNhd ℝ
+      (A.hamiltonianOrdinarySourceTrajectoryOn Q.roots D.roots_open D.roots_real_subset D.complex hp2 T) univ :=
+  Q.global_physical_trajectories hp2 T
+
+-- The printed source flows fail the actual PDE solution definition at the same finite-gap source.
+example : ∃ φ : realTypeSourceSubmodule p, φ ∈ sourceFiniteGapLocus hp hp1 ∧
+    (¬ IsRenormalizedNLSSolutionOn univ φ (A.renormalizedSourceFlow D.complex hp2 φ)) ∧
+    (¬ IsOrdinaryNLSSolutionOn univ φ (A.ordinarySourceFlow D.complex hp2 φ)) := by
+  obtain ⟨φ,hf,_,hr,ho⟩ := Q.printed_flows_not_physical_solutions hp2 (-1) (by norm_num)
+  exact ⟨φ,hf,hr,ho⟩
+
+-- The ordinary compact-time coordinate map is analytic on the full real coordinate space.
+example (T : ℝ) : AnalyticOnNhd ℝ (fun z : RealCoeff p × RealCoeff p =>
+    (A.ordinaryPhaseTrajectoryOn Q.roots D.roots_open D.roots_real_subset D.complex hp2 T
+      ((D.complex.realHomeomorph hp2).symm z)).comp (hamiltonianTimeReflection T)) univ :=
+  Q.ordinary_coordinate_trajectory_analytic hp2 T
+
+-- Its actual value carries the physical orientation and the original initial coordinates.
+example (T : ℝ) (z : RealCoeff p × RealCoeff p) (τ : Icc (-T) T) :
+    ((A.ordinaryPhaseTrajectoryOn Q.roots D.roots_open D.roots_real_subset D.complex hp2 T
+      ((D.complex.realHomeomorph hp2).symm z)).comp (hamiltonianTimeReflection T)) τ =
+      Birkhoff.hamiltonianPhaseFlow (A.ordinaryPhaseFrequency hp2 ((D.complex.realHomeomorph hp2).symm z))
+        τ.val (Birkhoff.encodeReal z) := Q.ordinary_coordinate_trajectory_apply hp2 T z τ
+
+-- Both coordinate time maps have analytic negative-time inverses.
+example (τ : ℝ) : ∃ e : (RealCoeff p × RealCoeff p) ≃ₜ (RealCoeff p × RealCoeff p),
+    (∀ z, Birkhoff.encodeReal (e.symm z) =
+      Birkhoff.hamiltonianPhaseFlow (A.phaseFrequency ((D.complex.realHomeomorph hp2).symm z)) (-τ)
+        (Birkhoff.encodeReal z)) ∧ AnalyticOnNhd ℝ e univ ∧ AnalyticOnNhd ℝ e.symm univ := by
+  obtain ⟨e,_,hi,ha,hb⟩ := Q.renormalized_coordinate_time_map hp2 τ
+  exact ⟨e,hi,ha,hb⟩
+
+example (τ : ℝ) : ∃ e : (RealCoeff p × RealCoeff p) ≃ₜ (RealCoeff p × RealCoeff p),
+    (∀ z, Birkhoff.encodeReal (e.symm z) =
+      Birkhoff.hamiltonianPhaseFlow (A.ordinaryPhaseFrequency hp2 ((D.complex.realHomeomorph hp2).symm z)) (-τ)
+        (Birkhoff.encodeReal z)) ∧ AnalyticOnNhd ℝ e univ ∧ AnalyticOnNhd ℝ e.symm univ := by
+  obtain ⟨e,_,hi,ha,hb⟩ := Q.ordinary_coordinate_time_map hp2 τ
+  exact ⟨e,hi,ha,hb⟩
+end GlobalRange
+end OriginalFamily
+
+section BelowTwo
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+-- The unconditional original construction supplies ordinary and renormalized wellposedness below two.
+example :
+    IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.renormalizedSource (ENNReal.ofReal (3/2))) univ ∧
+    IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.ordinarySource (ENNReal.ofReal (3/2))) univ := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,_,_,hg⟩ :=
+    sourceSection22_original_flows (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact (hg (by norm_num)).2
+end BelowTwo
+
+section AboveTwo
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+-- Above two, the constructor still supplies the full original complex neighborhood and all time horizons.
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 4), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U, SourceSection20Data D A B U ∧
+      ∀ T : ℝ, AnalyticOnNhd ℂ (A.hamiltonianComplexPhaseTrajectoryOn T) U := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,ha,_,_⟩ := sourceSection22_original_flows (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,ha⟩
+
+-- The all-exponent sign witness exists independently of global source surjectivity.
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 4), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U, SourceSection20Data D A B U ∧
+      ∃ φ : realTypeSourceSubmodule 4, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+        0 < A.phaseFrequency φ (-1) ∧
+        (sourceComplexBirkhoffMap (by simp) (by norm_num) s φ.val).1 (-1) ≠ 0 ∧
+        (sourceComplexBirkhoffMap (by simp) (by norm_num) s φ.val).2 (-1) ≠ 0 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q,_,_,_⟩ := sourceSection22_original_flows (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Q.exists_finiteGap_positive_phase (-1) (by norm_num)⟩
+end AboveTwo
+end Section22OriginalChecks

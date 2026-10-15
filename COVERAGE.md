@@ -79,8 +79,20 @@ Section 20 frequency throughout the complex source domain. The full
 source derivative has an absolutely convergent scalar series. The same
 Hamiltonian retains its physical H¹ normalization, sign on its actual
 action domain, Hessian, and local concavity. Three printed sign errors
-have actual finite-gap or unit-mass source counterexamples. Section 22
-is the next original assertion audit.
+have actual finite-gap or unit-mass source counterexamples.
+
+The original coordinate phases and global physical solutions are audited
+in [`coverage/SECTION_22.md`](coverage/SECTION_22.md). The same complex
+source domain supports every compact-time coordinate trajectory, with
+analytic dependence on the actual original coordinate image. For every
+finite p > 1, actual original finite-gap sources refute both printed
+phase velocities at every nonzero index. For p ≤ 2 the printed source
+flows fail the original physical solution definition. The corrected
+flows satisfy that definition, have analytic compact-time source
+trajectories and analytic inverse time maps, and characterize all
+continuous solutions through their coordinate laws. Higher-exponent
+source inversion, the full solution characterization, and the original
+nonextension assertions remain subsequent Section 22 steps.
 
 ## Nonextension proof and limits
 

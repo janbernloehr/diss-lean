@@ -99,5 +99,6 @@ domain U; it does not assert these new identities on all of the old U.
 The action domain L contains all real-source actions and all nonnegative
 summable actions. Extension to the whole nonnegative ℓ² cone and global
 concavity are not asserted. The Section 14 external Hilbert-map and full
-fractional-smoothness qualifications remain. The next original assertion
-audit is Section 22; the dissertation is incomplete.
+fractional-smoothness qualifications remain. The subsequent original phases
+and physical flows are audited in [Section 22](SECTION_22.md). The
+dissertation is incomplete.

@@ -1,5 +1,37 @@
 # Source discrepancies
 
+## Section 22: the physical complex phases have the opposite signs
+
+With zₙ = (xₙ − iyₙ)/√2 and wₙ = (xₙ + iyₙ)/√2, the original source
+Hamiltonian rotation (−yₙ,xₙ) has velocities (−izₙ,+iwₙ). Equation (4.14)
+on printed p. 98 and the coordinate law in Remark 22.3 on p. 101 instead
+use exp(+itωʳₙ)zₙ and exp(−itωʳₙ)wₙ. The physical solution uses
+exp(−itωʳₙ)zₙ and exp(+itωʳₙ)wₙ. The ordinary NLS flow requires the
+same orientation, with its physical mass correction restored.
+
+`SourceSection20Data.equation4_14_printed_sign_counterexample` constructs,
+for every nonzero integer index and finite p > 1, an actual real finite-gap
+source with positive frequency and both complex amplitudes nonzero.
+Both printed trajectories fail to have their source-Hamiltonian velocities.
+The construction uses the original local inverse on its open image and
+also applies above two without assuming surjectivity.
+
+`printed_flows_not_physical_solutions` proves that, for 1 < p ≤ 2, both
+printed-sign source flows fail the all-smooth-approximation solution
+definition on ℝ at the same actual finite-gap source. The corrected flows
+satisfy that definition. `renormalized_solution_iff_coordinates` proves
+the corrected Remark 22.3 in this range, on any time set containing zero;
+`ordinary_solution_iff_coordinates` gives its ordinary analogue. The
+higher-exponent characterization remains a subsequent original audit.
+The analytic and group properties of the coordinate phases survive the
+time reversal.
+
+Implemented in
+[`SourceSection22SignCorrection.lean`](NLS/ZakharovShabat/SourceSection22SignCorrection.lean)
+and [`SourceSection22Solutions.lean`](NLS/ZakharovShabat/SourceSection22Solutions.lean).
+See [the Section 22 audit](coverage/SECTION_22.md) for exact domains,
+physical trajectory analyticity, and the remaining assertions.
+
 ## Section 21: equation (4.13) requires the negative cubic coefficient
 
 Lemma 21.2 on printed p. 97 gives +4/3 times the cubic moment sum.

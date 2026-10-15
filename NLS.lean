@@ -3739,3 +3739,8 @@ import NLS.ZakharovShabat.SourceSection21Moments
 import NLS.ZakharovShabat.SourceSection21Hamiltonian
 import NLS.ZakharovShabat.SourceSection21SignCorrections
 import NLS.ZakharovShabat.SourceSection21Original
+import NLS.ZakharovShabat.SourceSection22Phases
+import NLS.ZakharovShabat.SourceSection22SignCorrection
+import NLS.ZakharovShabat.SourceSection22Solutions
+import NLS.ZakharovShabat.SourceSection22Global
+import NLS.ZakharovShabat.SourceSection22Original

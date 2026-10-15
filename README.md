@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 21's primitive-power moments and cubic Hamiltonian
-now share the original Birkhoff family and primitive. One complex
-neighborhood contains all real sources, and the cubic series recovers
-the same original action Hamiltonian and frequency gradient. All five
-moment clauses, absolute and locally uniform convergence, the complete
-physical H¹ identity, and formal witnesses for three printed sign errors
-are checked.
+Latest step: Section 22's coordinate trajectories now retain the original
+complex domain, Birkhoff family, and moment frequencies. Both physical
+NLS flows are globally analytic for 1 < p ≤ 2, with complete compact-time
+trajectories and analytic inverse time maps. Actual finite-gap sources
+refute the printed phase signs; the corrected phase law characterizes
+the original solution notion in this exponent range.
 
-Next: audit and implement the original Section 22 assertions.
+Next: finish the original higher-exponent flow, solution-characterization,
+and nonextension assertions in Section 22.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -25,7 +25,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 18 audit](coverage/SECTION_18.md),
 [the Section 19 audit](coverage/SECTION_19.md),
 [the Section 20 audit](coverage/SECTION_20.md),
-[the Section 21 audit](coverage/SECTION_21.md), and
+[the Section 21 audit](coverage/SECTION_21.md),
+[the Section 22 audit](coverage/SECTION_22.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

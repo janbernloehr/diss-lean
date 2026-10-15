@@ -1,6 +1,56 @@
 # Implementation plan
 
-## Current milestone: Section 21 on the original common domain
+## Current milestone: original Section 22 phases and physical solutions
+
+The retained original Section 20 domain now carries the full complex
+coordinate trajectory map for every compact time horizon. Its bounded
+frequency correction has the actual original moment frequencies as its
+coordinates. The physical phases preserve the original actions even at
+complex sources. On real sources they are jointly continuous in time
+and source, preserve reality and norm, and depend analytically on the
+initial coordinates throughout the actual open Birkhoff image.
+
+The original source Hamiltonian fixes the phases as exp(−itω)z and
+exp(+itω)w. Equation (4.14) and Remark 22.3 print the opposite signs.
+For every finite p > 1 and every nonzero signed index, the original
+local image inverse constructs a real finite-gap source with positive
+frequency and two nonzero amplitudes, formally refuting both printed
+velocities. No global surjectivity assumption is used for this witness.
+For p ≤ 2, the same actual source makes both printed-sign source flows
+fail the original all-smooth-approximation solution definition.
+
+For 1 < p ≤ 2, the original family now supplies both global physical
+NLS solutions, analytic compact-time source trajectories, group laws,
+and analytic coordinate time maps with negative-time analytic inverses.
+The ordinary flow retains its exact four-times-physical-mass correction.
+The corrected coordinate law characterizes the original solution notion
+for arbitrary continuous curves on any time set containing zero. These
+are the original maps and frequencies, with no independent replacement
+family. See [the Section 22 audit](coverage/SECTION_22.md) and
+[source discrepancies](SOURCE_ERRATA.md).
+
+Five new modules and 26 public checks cover the original domains,
+complex and real phase formulas, action and norm preservation, actual
+finite-gap sign witnesses, both physical solution definitions, both
+directions of the phase characterization, complete trajectory
+analyticity, group inverses, and unconditional constructions at p = 3/2
+and p = 4.
+
+Next: retain the original data and physical time orientation in
+higher-exponent source inversion, the full corrected Remark 22.3, and
+the coordinate and source nonextension assertions. Global phase curves
+above two are not asserted to stay in the original Birkhoff image for
+all time. Section 14's external Hilbert-map and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,182 build jobs, all 5,716
+public examples, and the transitive axiom audit for 34,376 NLS
+declarations. The five new modules and 26 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 371 local documentation links across 29 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: Section 21 on the original common domain
 
 The Section 21 primitive-power moments now use the same primitive and
 original Birkhoff family as Sections 19–20. For every finite p > 1, one
