@@ -3770,3 +3770,8 @@ import NLS.ZakharovShabat.SourceSection23TraceCorrections
 import NLS.ZakharovShabat.SourceSection24Original
 import NLS.ZakharovShabat.SourceIndexedHigherActionAsymptotic
 import NLS.ZakharovShabat.SourceSection24ZeroDetectionCorrection
+import NLS.ZakharovShabat.NormalizedWeightedSourceRange
+import NLS.ZakharovShabat.SourceSection25Localization
+import NLS.ZakharovShabat.SourceSection25Coefficients
+import NLS.ZakharovShabat.SourceSection25Gaps
+import NLS.ZakharovShabat.SourceSection25Original

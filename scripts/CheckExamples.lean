@@ -56448,3 +56448,150 @@ example : ∃ φ : realTypeSourceSubmodule 2,
   exact hgap ((sourceIndexedHigherAction_even_eq_zero_iff
     (by simp) (by norm_num) φ 0 1).mp h)
 end Section24CompletionChecks
+
+section Section25OriginalChecks
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- The inclusive source cutoff keeps both boundary frequencies.
+example (a : CoeffPair 2) : (sourceFourierTail 3 a).fst (-3) = a.fst (-3) := by simp
+example (a : CoeffPair 2) : (sourceFourierTail 3 a).snd 3 = a.snd 3 := by simp
+
+-- No norm constant is lost by either weight normalization or period doubling.
+example (w : SpectralWeight) (a : CoeffPair 2) (N : ℕ) :
+    ‖weightedPairFourierTail w.toWeight (2*N) (normalizedWeightedPeriodOne w a)‖ =
+      ‖sourceFourierTail N a‖ := by
+  rw [weightedPairFourierTail_normalizedWeightedPeriodOne,norm_normalizedWeightedPeriodOne]
+
+example (a : SobolevSource 1) (h : 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a‖^2 ≤ 1) :
+    ‖canonicalPeriodicLeft (by simp) (by norm_num)
+        (periodOnePotential (higherSobolevSourceInclusion 1 a)) (periodOnePotential_mem _) 0‖ ≤
+      quadraticLocalizationRadius ‖sourcePiSobolevCoordinates 1 1 le_rfl a‖ 0 := by
+  simpa using ((sourceH1_uniform_localization a).1 0 (by simpa using h)).1
+
+example (a : SobolevSource 1) (h : 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a‖^2 ≤ 5) :
+    ‖canonicalPeriodicRight (by simp) (by norm_num)
+        (periodOnePotential (higherSobolevSourceInclusion 1 a)) (periodOnePotential_mem _) (-4)
+      -(Real.pi:ℂ)*(-4)‖ ≤
+      quadraticLocalizationRadius ‖sourcePiSobolevCoordinates 1 1 le_rfl a‖ (-4) := by
+  simpa only [Int.cast_neg,Int.cast_ofNat] using
+    ((sourceH1_uniform_localization a).1 (-4) (by norm_num at *; exact h)).2.1
+
+-- The cutoff N=0 is admitted when the exact smallness threshold holds.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : 8*‖a‖^2 ≤ 1) :
+    (∑' n : ℤ, (w (2*n)*‖sourcePeriodicGapDisplacement (by simp) (by norm_num)
+      (normalizedWeightedSource w a) n‖)^2) ≤ 6*‖sourceFourierTail 0 a‖^2+1152*‖a‖^6 := by
+  simpa using (sourceM1_gap_tail w hw a 0 (by simpa using ha)).2
+
+-- Superlinear weights retain the same individual constant.
+example (a : CoeffPair 2) (n : ℤ) (hn : 8*‖a‖^2 ≤ 1+|(n:ℝ)|) :
+    (SpectralWeight.piSobolev 3 (by norm_num)) (2*n)*
+      ‖sourcePeriodicGapDisplacement (by simp) (by norm_num)
+        (normalizedWeightedSource (SpectralWeight.piSobolev 3 (by norm_num)) a) n‖ ≤
+      Real.sqrt 12*‖a‖ :=
+  sourceM1_gap_individual _ (SpectralWeight.hasLinearFactor_piSobolev 3 (by norm_num)) a n hn
+
+-- At the free source, two coincident endpoints still have multiplicity two.
+example (n : ℤ) :
+    analyticOrderNatAt (resonantDeterminantExtension (by simp)
+      (SpectralWeight.piSobolev 1 (by norm_num))
+      (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates 1 1 le_rfl (0:SobolevSource 1))) n)
+      ((Real.pi:ℂ)*n) = 2 := by
+  have h0 : sourcePiSobolevCoordinates 1 1 le_rfl (0:SobolevSource 1) = 0 := by
+    apply (CoeffPair.toMax 2).injective
+    apply Prod.ext <;> ext k <;> simp
+  have h := (sourceH1_canonical_pair (0:SobolevSource 1) n
+    (by rw [h0]; simp; positivity)).2.2.1 ((Real.pi:ℂ)*n)
+      (by simp only [resonantStrip,Set.mem_ofPred_eq,Complex.mul_re,Complex.ofReal_re,
+        Complex.intCast_re,Complex.ofReal_im,Complex.intCast_im,mul_zero,sub_zero,sub_self,abs_zero]
+          ; positivity)
+  have hz : periodOnePotential (higherSobolevSourceInclusion 1 (0:SobolevSource 1)) = (0:PairSpace 2) := by simp
+  simp only [hz,canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero] at h
+  simpa using h
+
+-- Every even weighted potential is covered, also at a non-Hilbert exponent.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0) :
+    ∃ a : CoeffPair 3, normalizedWeightedPeriodOne w a = φ ∧ ‖a‖ = ‖φ‖ :=
+  exists_normalizedWeightedPeriodOne_of_even w φ heven
+
+-- The norm is the literal physical weighted Hilbert norm of both components.
+example (w : SpectralWeight) (a : CoeffPair 2) :
+    Summable (fun n : ℤ => (w (2*n))^2*
+      (‖(normalizedWeightedSource w a).fst n‖^2+‖(normalizedWeightedSource w a).snd n‖^2)) ∧
+    ‖a‖^2 = ∑' n : ℤ, (w (2*n))^2*
+      (‖(normalizedWeightedSource w a).fst n‖^2+‖(normalizedWeightedSource w a).snd n‖^2) :=
+  normalizedWeightedSource_physical_norm w a
+
+example (a : SobolevSource 1) :
+    ‖sourcePiSobolevCoordinates 1 1 le_rfl a‖^2 =
+      ∑' n : ℤ, (1+|((2*n:ℤ):ℝ)*Real.pi|)^2*(‖a.1.val n‖^2+‖a.2.val n‖^2) := by
+  simpa using sourcePiSobolevCoordinates_norm_sq 1 1 le_rfl a
+
+example (a : SobolevSource 1) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) (periodOnePotential (higherSobolevSourceInclusion 1 a))) :
+    z ∈ quadraticSpectralBox ‖sourcePiSobolevCoordinates 1 1 le_rfl a‖ ∨
+      ∃ n : ℤ, 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a‖^2 ≤ 1+|(n:ℝ)| ∧
+        ‖z-(Real.pi:ℂ)*n‖ ≤ quadraticLocalizationRadius ‖sourcePiSobolevCoordinates 1 1 le_rfl a‖ n :=
+  sourceH1_spectrum_subset a z hz
+
+-- Equality at the quadratic threshold is included in the one-half contraction.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (n : ℤ) (hn : 8*‖a‖^2 = 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖weightedPotentialSquareInShift (by simp) w (normalizedWeightedPeriodOne w a) n z hz‖ ≤ (1/2:ℝ) :=
+  sourceM1_square_contraction w hw a n hn.le z hz
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (hn : 8*‖a‖^2 ≤ 3) (z : ℂ) (hz : z ∈ resonantStrip (-2)) :
+    w (-4)*‖weightedResonantBMinusExtension (by simp) w (normalizedWeightedPeriodOne w a) (-2) z
+      -(normalizedWeightedSource w a).fst 2‖ ≤ (8/3)*‖a‖^2*‖a.fst‖ := by
+  have h := ((sourceM1_coefficients w hw a (-2) (by norm_num at *; exact hn)).2.2.2 z hz).2.2
+  norm_num at h ⊢
+  exact h
+
+-- Joint analyticity includes varying the source at boundary points of the closed strip.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (n : ℤ) (hn : 8*‖a‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    AnalyticAt ℂ (fun x : CoeffPair 2 × ℂ =>
+      weightedResonantBPlusExtension (by simp) w (normalizedWeightedPeriodOne w x.1) n x.2) (a,z) :=
+  (sourceM1_coefficients_joint_analytic w hw a n hn z hz).2.1
+
+-- Both diagonal formulas in (5.7) use the actual inverse and resonant modes.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ < 1) :
+    weightedResonantA (by simp) w φ n z hz h =
+      resonantCoordinates w.toWeight n
+        (weightedPotentialInverse (by simp) w φ n z hz (weightedResonantEvenVector (by simp) w φ n z hz h 0)) 0 ∧
+    weightedResonantA (by simp) w φ n z hz h =
+      resonantCoordinates w.toWeight n
+        (weightedPotentialInverse (by simp) w φ n z hz (weightedResonantEvenVector (by simp) w φ n z hz h 1)) 1 :=
+  ⟨weightedResonantA_parity_zero _ w φ n z hz h,weightedResonantA_parity _ w φ n z hz h⟩
+
+variable {W₀ W V Wa B U T : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection25Data D A B U T)
+
+example (w : SpectralWeight) (a : realTypeSourceSubmodule 2) :
+    normalizedWeightedSource w a.val ∈ U :=
+  Q.gap_subset (Q.real_weighted_mem w a)
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : normalizedWeightedSource w a ∈ T) :
+    Summable (fun n : ℤ => (w (2*n)*‖sourcePeriodicGapDisplacement
+      (by simp) (by norm_num) (normalizedWeightedSource w a) n‖)^2) ∧
+    (∑' n : ℤ, (w (2*n)*‖sourcePeriodicGapDisplacement
+      (by simp) (by norm_num) (normalizedWeightedSource w a) n‖)^2) ≤
+      265*Real.pi^2*(w.realExtension (16*‖a‖^2))^2*(1+‖a‖^2)*‖a‖^2 :=
+  Q.gap_bound w hw a ha
+
+-- The previous original-family trace package remains available on the same U.
+example : SourceSection24Data D A B U := Q.toSourceSection24Data
+
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U T : Set (CoeffPair 2), SourceSection25Data D A B U T :=
+  sourceSection25_original
+end Section25OriginalChecks

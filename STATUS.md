@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Section 24 asymptotics and the zero-detection correction
+## Current milestone: original Section 25 uniform spectral localization
+
+Theorem 25.1 and Lemmas 25.2–25.4 now have a public formulation on the
+original complex source. The physical H¹ norm retains both components
+and the exact weight 1+|2nπ|. The quadratic threshold 8P², the explicit
+radius below π/5, and the central box are unchanged. Canonical signed
+endpoints exhaust the determinant roots on the full closed strip, with
+exact analytic orders and algebraic multiplicities, including double
+roots at collapsed gaps.
+
+The weighted square and coefficient estimates retain constants four,
+one, and eight, the individual component norms, and joint analyticity in
+the source and spectral parameter. Both diagonal formulas in (5.7) use
+the actual inverse. The exact weighted realization covers every even
+weighted potential and preserves the norm and inclusive Fourier tails.
+
+Proposition 25.5 now gives original gap-tail summability with constants
+six and 1152, and the global bound with 265π² on one open T⊆U containing
+all real sources. T is chosen before every M₁ weight and potential.
+The individual estimate (5.8) retains √12, including superlinear weights.
+`SourceSection25Data` extends the same Section 24 family and keeps its
+domain U; `sourceSection25_original` constructs the family and T once.
+See [the Section 25 audit](coverage/SECTION_25.md).
+
+Five new modules and 20 public checks cover exact norms, signed and zero
+indices, threshold equality, inclusive tail cutoffs, source analyticity,
+coincident-root multiplicities, superlinear weights, and the original
+common-family constructor.
+
+Next: Section 26's original action estimates and the alternating-sign
+audit for Lemma 26.2. The separate
+[Section 14 qualifications](coverage/SECTION_14.md) remain; the
+dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,213 build jobs, all 5,828
+public examples, and the transitive axiom audit for 34,564 NLS
+declarations. All five new modules and 20 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 459 local documentation links across 32 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: Section 24 asymptotics and the zero-detection correction
 
 The asymptotic following (5.6) now has a public theorem along the cofinite
 filter on ℤ, covering both signed tails. For every finite p>1 and real

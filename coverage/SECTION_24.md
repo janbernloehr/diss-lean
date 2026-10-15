@@ -133,6 +133,7 @@ At that same source, the level-two action is zero and the level-three
 action is nonzero. Full validation is recorded in
 [implementation status](../STATUS.md).
 
-Section 25's original localization audit is next. Existing
+[Section 25's original localization audit](SECTION_25.md) now covers the
+quantitative estimates following this section. Existing
 [Section 14 qualifications](SECTION_14.md) remain, and the dissertation
 is incomplete.
