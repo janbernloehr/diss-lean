@@ -3661,3 +3661,9 @@ import NLS.ZakharovShabat.SourceAngularEtaImproperModel
 import NLS.ZakharovShabat.SourceAngularEtaImproperRemainder
 import NLS.ZakharovShabat.SourceAngularOriginalEtaImproperRemainder
 import NLS.ZakharovShabat.SourceAngularOriginalEtaImproper
+import NLS.ZakharovShabat.SourceAngularOriginalEtaRemainderValue
+import NLS.ZakharovShabat.SourceGapWeightedEtaOriginal
+import NLS.ZakharovShabat.SourceBirkhoffOriginalFormula
+import NLS.ZakharovShabat.SourceBirkhoffOriginalDomain
+import NLS.ZakharovShabat.SourceBirkhoffOriginalMap
+import NLS.ZakharovShabat.SourceSection14Original

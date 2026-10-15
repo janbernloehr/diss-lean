@@ -1,5 +1,24 @@
 # Source discrepancies
 
+## Section 15 opening formula: the y-coordinate needs an exponential difference
+
+The first display in Section 15, printed p. 74, writes the y-coordinate as
+`ξₙ γₙ / (√8 i) * (exp(iθₙ) + exp(-iθₙ))`, with a plus between the
+exponentials. This does not rewrite equation (3.1), whose y-coordinate is
+`ξₙ γₙ / √2 * sin θₙ`. The correct exponential form has a minus:
+`ξₙ γₙ / (√8 i) * (exp(iθₙ) - exp(-iθₙ))`.
+
+This is a discrepancy in the algebraic rewrite: at θ=0 and ξγ=1 the
+printed plus form is nonzero, whereas the sine form is zero. This scalar
+check does not assert a potential realizing those particular parameters.
+The PDF page was visually checked; the plus is not a text-extraction error.
+
+`sourceBirkhoffY` uses the exponential difference.
+`SourceLemma12_12Data.birkhoffXY_original_formula` and
+`SourceSection14OriginalData.rectangular_formula` now identify it with the
+positive sine of the original integral-defined theta, as in equation (3.1).
+The canonical mixed bracket consequently retains the source's -δₙₘ sign.
+
 ## Lemma 12.11: both individual sine asymptotics have a minus sign
 
 Printed p. 70 (visually checked) puts +sin λ in the leading terms of

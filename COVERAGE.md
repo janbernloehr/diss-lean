@@ -25,7 +25,9 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 | Remark after Theorem 0.3: open dense positive frequency domains | [`SourceFrequencyPositiveDomains.lean`](NLS/ZakharovShabat/SourceFrequencyPositiveDomains.lean), `exists_sourceFrequency_open_dense_positive_domains` | For every finite p > 2 the compatible action domain at exponent p/2 is open dense relative to the positive cone, retaining real analytic ranges and all locally uniform mixed remainder conclusions. |
 
 The current original-domain angle audit is in
-[`coverage/SECTION_13.md`](coverage/SECTION_13.md).
+[`coverage/SECTION_13.md`](coverage/SECTION_13.md). The original Birkhoff
+map and assertion-by-assertion Theorem 14.1 audit are in
+[`coverage/SECTION_14.md`](coverage/SECTION_14.md).
 
 ## Nonextension proof and limits
 
@@ -6532,3 +6534,49 @@ NLS declarations. The nine new modules, extended primitive-integral module,
 and twelve new checks introduce no warnings; the 21 existing warnings
 remain. The source inventory verifies all 156 candidate labels, all 209
 checked local Markdown file links resolve, and `git diff --check` passes.
+
+## Section 14 original Birkhoff map and real geometry
+
+`sourceSection14_original` constructs the Birkhoff sequence map for every
+finite p>1 using the same normalized root family retained from Lemma 12.12.
+On an open complex neighborhood of the entire real locus, the full map is
+complex analytic, its coordinates are the actual rectangular functions,
+and their squared radius is twice `sourceIndexedAction`.
+
+The exact signed phase is now proved: the gap-weighted coordinate equals
+the canonical gap times exp(±i eta) for the literal original eta integral.
+This fixes the sign not determined by equality of doubled phases.
+`rectangular_formula` consequently proves equation (3.1), with cosine for
+x and positive sine for y, using the original eta-plus-beta theta.
+The analytic coordinates extend through complex collapsed gaps; at real
+collapsed gaps both coordinates vanish.
+
+The same map has all three canonical brackets on the real locus, with
+regular cotangents whose underlying functionals are the actual complex
+Fréchet derivatives. The mixed bracket is the absolutely convergent
+Fourier pairing with frequency reversal and sign -i. This covers the
+canonical assertion in the sense specified by Lemma 15.3, including p<2.
+The real map is analytic and injective, has a two-sided analytic local
+inverse at every source, and has open dense image. For 1<p≤2 it has a
+global analytic inverse on the entire target.
+
+Thirteen public checks cover the exact phase, original rectangular
+formula, full sequence analyticity and evaluations, original action
+radius, real closed-gap zeros, real restriction, canonical derivatives
+and Fourier sum, real geometry, and real exponent compatibility.
+Unconditional examples at p=4 and p=3/2 verify the construction and the
+appropriate image and inverse conclusions.
+
+Theorem 14.1(ii) is still incomplete: equality at real sources and equality
+of complex germs do not establish equality on the entire intersection of
+the complex exponent domains. That domain-compatibility proof is next,
+followed by detailed source audits of Sections 15–17. Surjectivity for p>2
+is not claimed; Remark 14.2(ii) leaves it open. The dissertation remains
+incomplete. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,105
+jobs, all public examples pass, and the transitive axiom audit checks 33,689
+NLS declarations. The six new modules and thirteen new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory
+verifies all 156 candidate labels, all 220 checked local Markdown file
+links resolve, and `git diff --check` passes.

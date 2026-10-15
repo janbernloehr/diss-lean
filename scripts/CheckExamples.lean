@@ -53028,3 +53028,123 @@ example (q g : ℝ → ℂ) (hq : ContinuousOn q (Ioo (0:ℝ) 1))
   exists_improper_integral_of_logarithmic_derivative q g hq hg hne hd
 
 end Section13ImproperFoundationsChecks
+
+section Section14OriginalChecks
+open NLS NLS.ZakharovShabat NLS.Poisson Set Metric Filter Topology
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection14OriginalData hp hp1 W₀ W V s)
+
+-- Both signs of the original eta phase are exact, not just equal after squaring.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0)
+    (sign : ℂ) (hsign : sign = 1 ∨ sign = -1) :
+    sourceGapWeightedEtaCoordinate hp hp1 n s sign ψ =
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n *
+        Complex.exp (sign*Complex.I*sourceAngularOriginalEta hp hp1 n s ψ) :=
+  D.previous.gapWeightedEta_original_signed ψ (D.complex.source_subset hψ) n hgap sign hsign
+
+-- Equation (3.1) uses the literal original theta, including the positive sine orientation.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    let a := sourceNormalizedActionRoot hp hp1 n ψ *
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n / (Real.sqrt 2 : ℂ)
+    (sourceBirkhoffMap hp hp1 s ψ).1 n = a*Complex.cos (sourceAngularOriginalTheta hp hp1 n s ψ) ∧
+      (sourceBirkhoffMap hp hp1 s ψ).2 n = a*Complex.sin (sourceAngularOriginalTheta hp hp1 n s ψ) :=
+  D.rectangular_formula ψ hψ n hgap
+
+-- One neighborhood serves the whole sequence, including sources with collapsed complex gaps.
+example : IsOpen V ∧ realTypeSourceLocus p ⊆ V ∧ V ⊆ W ∧
+    AnalyticOnNhd ℂ (sourceBirkhoffMap hp hp1 s) V ∧
+    ∀ ψ ∈ V, ∀ n : ℤ,
+      (sourceBirkhoffMap hp hp1 s ψ).1 n = sourceBirkhoffX hp hp1 n s ψ ∧
+      (sourceBirkhoffMap hp hp1 s ψ).2 n = sourceBirkhoffY hp hp1 n s ψ :=
+  ⟨D.complex.source_open,D.complex.real_subset,D.complex.source_subset,D.complex.analytic,D.complex.coordinates⟩
+
+-- The radius is twice the original indexed action at every complex source in V.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    ((sourceBirkhoffMap hp hp1 s ψ).1 n)^2 + ((sourceBirkhoffMap hp hp1 s ψ).2 n)^2 =
+      2*sourceIndexedAction hp hp1 n ψ :=
+  D.indexed_action_radius ψ hψ n
+
+-- A collapsed real gap gives two zero coordinates, not merely a zero squared radius.
+example (φ : realTypeSourceSubmodule p) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n = 0) :
+    (sourceBirkhoffMap hp hp1 s φ.val).1 n = 0 ∧ (sourceBirkhoffMap hp hp1 s φ.val).2 n = 0 :=
+  D.complex.real_closed_gap_zero φ.val (D.complex.real_subset φ.property) φ.property n
+    (by simpa only [sourcePeriodicGapDisplacement_apply] using hgap)
+
+-- The real map is the actual restriction of the complex sequence map.
+example (φ : realTypeSourceSubmodule p) :
+    ((RealCoeff.complexCLM p).prodMap (RealCoeff.complexCLM p))
+      (sourceRealBirkhoffMap hp hp1 s φ) = sourceBirkhoffMap hp hp1 s φ.val :=
+  D.complex.real_map_complex_inclusion φ
+
+-- All three brackets use actual coordinate derivatives, including below exponent two.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ X Y : ℤ → RegularSourceCotangent p,
+      (∀ n, (X n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 n) φ.val ∧
+        (Y n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 n) φ.val) ∧
+      ∀ n m, (X n).bivector (X m) = 0 ∧
+        (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 :=
+  D.canonical φ
+
+-- The mixed bracket is the absolutely convergent Fourier pairing, with frequency reversal.
+example (n m : ℤ) (φ : realTypeSourceSubmodule p) :
+    let L := fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).1 n) φ.val
+    let M := fderiv ℂ (fun ψ => (sourceBirkhoffMap hp hp1 s ψ).2 m) φ.val
+    Summable (fun j : ℤ => ‖L (CoeffPair.inlCLM (lp.single p j 1))*M (CoeffPair.inrCLM (lp.single p (-j) 1))-
+      L (CoeffPair.inrCLM (lp.single p j 1))*M (CoeffPair.inlCLM (lp.single p (-j) 1))‖) ∧
+    -Complex.I*(∑' j : ℤ, (L (CoeffPair.inlCLM (lp.single p j 1))*M (CoeffPair.inrCLM (lp.single p (-j) 1))-
+      L (CoeffPair.inrCLM (lp.single p j 1))*M (CoeffPair.inlCLM (lp.single p (-j) 1)))) =
+        -(if n = m then 1 else 0) :=
+  D.complex.mixed_fourier_canonical n m φ
+
+-- Real analyticity, injectivity, and the open dense image hold for every finite p > 1.
+example : AnalyticOnNhd ℝ (sourceRealBirkhoffMap hp hp1 s) univ ∧
+    Function.Injective (sourceRealBirkhoffMap hp hp1 s) ∧
+    IsOpen (range (sourceRealBirkhoffMap hp hp1 s)) ∧ Dense (range (sourceRealBirkhoffMap hp hp1 s)) :=
+  ⟨D.real_geometry.1,D.real_geometry.2.1,D.real_geometry.2.2.1,D.real_geometry.2.2.2.1⟩
+
+-- The inverse near every real source satisfies both inverse identities.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ g : (RealCoeff p × RealCoeff p) → realTypeSourceSubmodule p,
+      AnalyticAt ℝ g (sourceRealBirkhoffMap hp hp1 s φ) ∧ g (sourceRealBirkhoffMap hp hp1 s φ) = φ ∧
+      (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap hp hp1 s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap hp hp1 s φ), sourceRealBirkhoffMap hp hp1 s (g z) = z) :=
+  D.real_geometry.2.2.2.2 φ
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Above exponent two the construction supplies the original map and an open dense image.
+example : ∃ W₀ W V : Set (CoeffPair (4:ℝ≥0∞)), ∃ s,
+    SourceSection14OriginalData (p := 4) (by norm_num) (by norm_num) W₀ W V s ∧
+      IsOpen (range (sourceRealBirkhoffMap (p := 4) (by norm_num) (by norm_num) s)) ∧
+      Dense (range (sourceRealBirkhoffMap (p := 4) (by norm_num) (by norm_num) s)) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection14_original (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,V,s,D,D.real_geometry.2.2.1,D.real_geometry.2.2.2.1⟩
+
+-- Below exponent two the actual map has a global analytic inverse on the entire target.
+example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ s,
+    SourceSection14OriginalData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W V s ∧
+    ∃ e : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) ≃ₜ
+      (RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))),
+      (∀ φ, e φ = sourceRealBirkhoffMap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) s φ) ∧
+      AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun y => e.symm y) univ ∧
+      (∀ φ, e.symm (e φ) = φ) ∧ (∀ z, e (e.symm z) = z) := by
+  obtain ⟨W₀,W,V,s,D⟩ := sourceSection14_original (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  obtain ⟨e,he,ha,hb⟩ := D.global_inverse (by norm_num)
+  exact ⟨W₀,W,V,s,D,e,he,ha,hb,e.symm_apply_apply,e.apply_symm_apply⟩
+
+-- Real exponent compatibility is weaker than agreement throughout complex intersections.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A B C : Set (CoeffPair q)} {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection14OriginalData hq hq1 A B C t) (hpq : p ≤ q) (φ : realTypeSourceSubmodule p) :
+    ((RealCoeff.exponentInclusion hpq).prodMap (RealCoeff.exponentInclusion hpq))
+      (sourceRealBirkhoffMap hp hp1 s φ) =
+        sourceRealBirkhoffMap hq hq1 t (realTypeSourceExponentInclusion hpq φ) :=
+  D.complex.real_map_exponent E.complex hpq φ
+
+end Section14OriginalChecks
