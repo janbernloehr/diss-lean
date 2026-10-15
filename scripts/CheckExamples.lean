@@ -56789,3 +56789,144 @@ example {W₀ W V Wa B U T : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 �
   obtain ⟨a,ha,hm,_⟩ := Q.supremum_counterexample C hC
   exact ⟨a,ha,hm⟩
 end Section26EndpointChecks
+
+section Section27OriginalChecks
+-- Lemma 27.1 retains absolute convergence, signed frequencies, and the physical constants.
+example (a : realTypeSobolevSourceLocus) :
+    Summable (fun n : ℤ => ‖(2*(Real.pi:ℂ)*n)^2*
+      sourceIndexedAction (by simp) (by norm_num) n (sourceH1RealSource a).val‖) :=
+  sourceSection27_kinetic_summable a
+example (a : realTypeSobolevSourceLocus) :
+    (periodOneSobolevHamiltonian a.val).re-2*(periodOneSobolevMass a.val).re^2 ≤
+      ∑' n : ℤ, (2*Real.pi*(n:ℝ))^2*
+        (sourceIndexedAction (by simp) (by norm_num) n (sourceH1RealSource a).val).re :=
+  sourceSection27_energy_action_bound a
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (1/3:ℝ)*‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2 ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 0 n)^2 :=
+  sourceSection27_H1_norm 1 le_rfl a
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re =
+      (periodOneSobolevHamiltonian (realHigherSobolevToH1 1 le_rfl a).val).re :=
+  sourceSection27_H3_bridge a
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+      2*(∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 0 n)^2 :=
+  sourceSection27_H3_action_mass_bound a
+
+-- The m=1 literal coefficient is checked at the boundary S=2 and at S=0.
+example (a : realTypeHigherSobolevSourceLocus 1)
+    (h : (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n) = 2) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤ 8 := by
+  have hb := sourceSection27_endpoint_of_small a h.le
+  rw [h] at hb
+  norm_num at hb ⊢
+  exact hb
+example (a : realTypeHigherSobolevSourceLocus 1)
+    (h : (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n) = 0) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤ 0 := by
+  have hb := sourceSection27_endpoint_of_small a (by rw [h]; norm_num)
+  simpa only [h,zero_mul,mul_zero,add_zero] using hb
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤
+      3*(∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+      2*(∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)^2 := by
+  have hb := sourceSection27_hamiltonian_estimate_all 1 le_rfl a
+  norm_num only [Nat.reduceMul,Nat.reduceSub,pow_zero,pow_one,mul_one] at hb
+  nlinarith
+
+-- At m=2 and m=3 the literal powers and the factor 64π are unchanged.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (sobolevOddHamiltonian 2 (by omega) a.val).re ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+      (64*Real.pi)^2*(1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+        (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n) := by
+  simpa using sourceSection27_hamiltonian_estimate 2 le_rfl a
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    (sobolevOddHamiltonian 3 (by omega) a.val).re ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 3 n)+
+      (64*Real.pi)^4*(1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 1 n)^9*
+        (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 1 n) := by
+  simpa using sourceSection27_hamiltonian_estimate 3 (by omega) a
+
+-- Pair normalization, including order zero and an actual negative Fourier mode.
+example (a : realTypeHigherSobolevSourceLocus 0) :
+    (1/2:ℝ)*(‖hierarchySobolevJetL2 0 0 le_rfl a.val.1‖^2+
+      ‖hierarchySobolevJetL2 0 0 le_rfl a.val.2‖^2) = ‖hierarchySobolevJetL2 0 0 le_rfl a.val.1‖^2 :=
+  sourceSection27_pair_jet_norm 0 a
+example :
+    (1/2:ℝ)*(‖hierarchySobolevJetL2 2 2 le_rfl (sobolevSourceRealMode 2 (-1) 2).val.1‖^2+
+      ‖hierarchySobolevJetL2 2 2 le_rfl (sobolevSourceRealMode 2 (-1) 2).val.2‖^2) = 64*Real.pi^4 := by
+  rw [sourceSection27_pair_jet_norm]
+  change ‖hierarchySobolevJetL2 2 2 le_rfl (sobolevSourceScalarMode 2 (-1) 2)‖^2 = _
+  rw [norm_sobolevSourceScalarMode_jet]
+  norm_num
+  ring
+example (m : ℕ) :
+    (1/2:ℝ)*(‖hierarchySobolevJetL2 m m le_rfl (0:ScalarSobolev m)‖^2+
+      ‖hierarchySobolevJetL2 m m le_rfl (0:ScalarSobolev m)‖^2) = 0 := by simp
+
+-- The adjustable cutoff works on both sides of the unit-mass split.
+example : (1:ℝ)*(1+1^2)^2*(1+2*1^2) ≤
+    0/2+(9^4/2+3*(6^2*1))*(1+1)^5*1 := by
+  exact section27_central_remainder_budget 2 le_rfl 1 1 1 0 1 9
+    (by norm_num) le_rfl (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+example : (1:ℝ)*(1+3^2)^2*(2+2*2^2) ≤
+    0/2+(9^4/2+3*(6^2*1))*(1+2)^5*2 := by
+  exact section27_central_remainder_budget 2 le_rfl 3 2 2 0 1 9
+    (by norm_num) le_rfl (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+
+-- One uniform constant retains coefficient one and the unweighted final action sum.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    (1/4:ℝ)*(‖hierarchySobolevJetL2 2 2 le_rfl a.val.1‖^2+
+      ‖hierarchySobolevJetL2 2 2 le_rfl a.val.2‖^2) ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+      C*(1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+        (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n) := by
+  simpa using exists_sourceSection27_derivative_bound 2 le_rfl
+example (m : ℕ) (hm : 1 ≤ m) : ∃ d : ℝ, 0 ≤ d ∧ ∀ a : realTypeHigherSobolevSourceLocus m,
+    ‖sourcePiSobolevCoordinates m m le_rfl a.val‖^2 ≤ d^2*
+      ((∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ m n)+
+        (1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 1 n)^(4*m-3)*
+          (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 0 n)) :=
+  exists_sourceSection27_sobolev_bound m hm
+
+variable {W₀ W V Wa B U T : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection27Data D A B U T)
+
+-- Both components and the actual unit-interval integral occur in the physical identity.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    Complex.ofReal ((1/2:ℝ)*(‖hierarchySobolevJetL2 m m le_rfl a.val.1‖^2+
+      ‖hierarchySobolevJetL2 m m le_rfl a.val.2‖^2)) =
+      4^m*(∑' n : ℤ, sourceIndexedHigherAction (by simp) (by norm_num) n (2*m)
+        (higherSobolevSourceInclusion m a.val))-
+        ∫ x in (0:ℝ)..1, sobolevPolynomialField m (nlsOddReducedPolynomial m hm) a.val (x : AddCircle (2:ℝ)) :=
+  Q.toSourceSection26Data.section27_pair_top_jet_identity m hm a
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    HasSum (fun n : ℤ => 4*sourceIndexedHigherAction (by simp) (by norm_num) n 2
+      (higherSobolevSourceInclusion 1 a.val)) (sobolevOddHamiltonian 1 le_rfl a.val) := by
+  simpa using Q.toSourceSection26Data.section27_hamiltonian_hasSum 1 le_rfl a
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    HasSum (fun n : ℤ => 16*sourceIndexedHigherAction (by simp) (by norm_num) n 4
+      (higherSobolevSourceInclusion 2 a.val)) (sobolevOddHamiltonian 2 (by omega) a.val) := by
+  simpa only [show (4:ℂ)^2 = 16 by norm_num,show 2*2=4 from rfl] using
+    Q.toSourceSection26Data.section27_hamiltonian_hasSum 2 (by omega) a
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    Summable (fun n : ℤ => ‖sourceIndexedHigherAction (by simp) (by norm_num) n 4
+      (higherSobolevSourceInclusion 2 a.val)‖) :=
+  Q.absolute_convergence 2 4 le_rfl a.val (Q.real_subset a.property)
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    higherSobolevSourceInclusion 1 a.val ∈ U ∩ T := ⟨Q.real_subset a.property,Q.gap_real_subset a.property⟩
+example : SourceSection26Data D A B U T := Q.toSourceSection26Data
+example (m : ℕ) (hm : 1 ≤ m) : ∃ c d : ℝ, SourceSection23SobolevBounds D m hm c d :=
+  Q.sobolev m hm
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U T : Set (CoeffPair 2), SourceSection27Data D A B U T :=
+  sourceSection27_original
+end Section27OriginalChecks

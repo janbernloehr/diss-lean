@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: Section 26 supremum-endpoint correction
+## Current milestone: Section 27 original Sobolev-norm estimates
+
+Formula (5.13) now uses the original indexed higher actions, the actual
+physical remainder integral over [0,1], and both component derivative
+energies with the exact factor 1/2. The scaled series has the independently
+defined Hamiltonian as its sum. Lemma 27.1 retains signed kinetic weights,
+absolute convergence, and the physical pair H¹ norm coefficient 1/3.
+
+Lemma 27.2 retains its printed constant for every m≥2 and for m=1 on
+the closed weighted-action ball S≤2. Its unrestricted all-order variant
+explicitly doubles the remainder. The original unrestricted m=1
+coefficient remains open and has not been refuted.
+
+A new adjustable-cutoff proof preserves coefficient one on the highest
+action sum in the last displayed derivative estimate. It keeps the
+literal pair factor 1/4, the unweighted final action factor M, and one
+constant chosen before every source. The full physical Sobolev-norm
+bound and the original common Birkhoff constants remain available.
+`SourceSection27Data` extends the same family without changing U or T.
+See [the Section 27 audit](coverage/SECTION_27.md).
+
+Three new modules and 25 public checks cover exact constants, endpoint
+and zero-action cases, both component derivatives, both cutoff regimes,
+physical integration, convergent traces, and original-family retention.
+
+Next: Section 28's original weighted action and gap estimates. The
+separate [Section 14 qualifications](coverage/SECTION_14.md) remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,224 build jobs, all 5,898
+public examples, and the transitive axiom audit for 34,707 NLS
+declarations. The three new modules and 25 focused checks compile
+without new warnings; the full build retains 21 existing warnings.
+The 156-label source inventory, 514 local documentation links across
+34 documents, and `git diff --check` also pass.
+
+## Previous milestone: Section 26 supremum-endpoint correction
 
 The printed supremum estimate (5.11) is false at m=i=1. For every
 proposed nonnegative constant, an actual real H² source violates it.

@@ -1618,6 +1618,16 @@ Lemma 27.1 with d=√3. Its higher-order branch absorbs its explicit scalar
 constants. Theorem 23.1 and Remark 23.3 inherit that proved bound, so no
 exact downstream theorem needs a changed constant.
 
+The original indexed-action formulations are now in
+[`SourceSection27Actions.lean`](NLS/ZakharovShabat/SourceSection27Actions.lean).
+[`SourceSection27DerivativeBound.lean`](NLS/ZakharovShabat/SourceSection27DerivativeBound.lean)
+also proves the literal coefficient-one derivative estimate used in
+Theorem 23.2(ii), by enlarging the action-moment cutoff before applying
+the physical remainder bound. This retains the final unweighted mass
+factor and does not require the unresolved m=1 coefficient. The same
+original family and domains are recorded in
+[the Section 27 audit](coverage/SECTION_27.md).
+
 For comparison, [the cited paper, Lemma 16, page 27](https://arxiv.org/pdf/1403.1369#page=27)
 uses the different remainder `(64π)^(2m) (1+M)^(2m-1) S^(2m-1)`.
 Its coefficient does not disappear on substituting m=1. This comparison

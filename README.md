@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the supremum endpoint in (5.11) is formally refuted by
-actual real sources with nonzero mass and bounded physical H¹ norm.
-Both valid interpolation ranges are now stated in the exact physical
-norm. The Section 26 action and remainder estimates remain available.
+Latest step: Section 27 now retains the original indexed actions and
+exact physical norms, including coefficient one in the derivative
+estimate. The printed Lemma 27.2 bound holds for m≥2; its m=1 endpoint
+remains explicitly qualified. The same original family and domains
+support all estimates.
 
-Next: Section 27's original Sobolev-norm estimates. The separate
-fractional-smoothness qualifications and the unrestricted m=1 coefficient
-in Lemma 27.2 remain explicit. The dissertation remains incomplete.
+Next: Section 28's weighted action and gap estimates. The separate
+fractional-smoothness qualifications remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -28,7 +28,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 23 audit](coverage/SECTION_23.md),
 [the Section 24 audit](coverage/SECTION_24.md),
 [the Section 25 audit](coverage/SECTION_25.md),
-[the Section 26 audit](coverage/SECTION_26.md), and
+[the Section 26 audit](coverage/SECTION_26.md),
+[the Section 27 audit](coverage/SECTION_27.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
