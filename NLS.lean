@@ -3622,3 +3622,10 @@ import NLS.ZakharovShabat.SourcePsiOriginalChiCauchy
 import NLS.ZakharovShabat.SourcePsiOriginalRootOffset
 import NLS.ZakharovShabat.SourcePsiOriginalRootBootstrap
 import NLS.ZakharovShabat.SourceLemma12_12
+import NLS.ZakharovShabat.SourceAngularOriginalDomain
+import NLS.ZakharovShabat.SourceAngularOriginalPrimitives
+import NLS.ZakharovShabat.SourceAngularBetaAdmissiblePath
+import NLS.ZakharovShabat.SourceAngularOriginalCollapsedPrimitive
+import NLS.ZakharovShabat.SourceAngularOriginalBetaPaths
+import NLS.ZakharovShabat.SourceAngularOriginalEtaPaths
+import NLS.ZakharovShabat.SourceSection13OriginalDomain

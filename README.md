@@ -5,15 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 12.12 proves the squared-gap root estimates on the
-unchanged complex domain, uniformly in the omitted index. The original
-contour identities, full-disk chi estimates, Cauchy bound, and both
-substitution stages are verified, including collapsed gaps.
+Latest step: Section 13's beta and eta path comparisons now retain the
+original domain and disks. Continued roots give path-independent beta
+integrals and eta integrals modulo 2π, with collapsed-gap beta cases included.
 
-Next: Section 13's angle definitions and Theorem 13.1. The dissertation
+Next: construct and identify endpoint integral values on the same domain,
+then complete the Theorem 13.1 and Corollary 13.2 audit. The dissertation
 remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
-[the Section 12 audit](coverage/SECTION_12.md), and
+[the Section 12 audit](coverage/SECTION_12.md),
+[the Section 13 audit](coverage/SECTION_13.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

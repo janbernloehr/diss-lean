@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 original squared-gap root estimates
+## Current milestone: Section 13 original-domain path invariance
+
+`sourceSection13OriginalDomain` retains exactly Lemma 12.12's W₀, W,
+and psi root family. The earlier spectral results supply endpoint data
+at every complex source. Actual original disk neighborhoods contain all
+gaps and Dirichlet terminals simultaneously; no additional intersection
+or replacement root atlas is used.
+
+The original periods construct off-diagonal primitives and diagonal
+model-remainder primitives on the full cut complement of every supplied
+original disk. Their periodic endpoint values agree. Prescribed-sheet
+primitives extend through cut interiors. At collapsed gaps, the actual
+numerator cancels the selected root and gives a removable extension;
+its normalized sheet data satisfy the same interface as open gaps.
+
+For beta, any two integrable C¹ admissible paths with continuously
+continued roots give the same integral when normalized at the actual
+Dirichlet anti-discriminant. They may use different original disks, and
+neither path must stay inside its terminal root chart. At periodic
+terminals either sign gives zero, including collapsed gaps. For collapsed
+beta gaps, integrability of every such C¹ path is also proved. For eta,
+two admissible paths in any supplied original disk agree modulo 2π on
+open gaps, with either sign permitted at a periodic terminal.
+
+The general path comparisons explicitly require curve integrability;
+the eta comparison requires it for both the actual and model integrands.
+This step proves invariance of these integrals. It does not yet construct
+every endpoint integral or identify the analytic angle functions on the
+retained W. These remaining obligations are recorded in the Section 13
+audit, before Theorem 13.1's estimates and series assertions.
+
+Nineteen public checks cover the retained domain and family, actual
+Dirichlet containment, full original-disk primitives, continued roots,
+comparisons across disks, periodic terminals, collapsed complex and free
+gaps, and exponents 3/2 and 4.
+
+Next: construct and identify the endpoint integral values on this same W,
+then audit Theorem 13.1 and Corollary 13.2. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 7066 build jobs, the complete
+public example suite, and the transitive axiom audit of 33524 NLS
+declarations. The seven new modules and nineteen new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, all 176 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Lemma 12.12 original squared-gap root estimates
 
 `SourceLemma12_11Data.lemma12_12` proves the literal squared-gap root
 factorization on exactly Lemma 12.10's W and root maps, retaining

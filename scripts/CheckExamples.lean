@@ -52193,3 +52193,178 @@ example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsOpen W 
 
 end
 end SourceLemma1212Checks
+
+-- Section 13: the original domain, disks, and continued endpoint paths.
+namespace Section13OriginalChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (H : SourceLemma12_12Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W)
+
+example : SourcePsiSquaredGapComplexExtension hp hp1 W s := H.angular_extension
+
+example (m : ℤ) : SourceAngularEndpointSpectralData hp hp1 ψ m := H.angular_endpoint_data ψ hψ m
+
+example : ∃ V : Set (CoeffPair p), IsOpen V ∧ ψ ∈ V ∧ V ⊆ W ∧
+    ∃ D : ℤ → Set ℂ, ∃ c : ℝ, SourceIsolatingNeighborhoods hp hp1 V D c ∧
+      ∀ χ ∈ V, ∀ m : ℤ, canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet χ m ∈ D m :=
+  H.angular_original_disks ψ hψ
+
+example : ∃ P : (m : ℤ) → SourceCriticalRootPeriodCircle hp hp1 ψ m,
+    ∀ m, canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball ((P m).center:ℂ) (P m).radius :=
+  H.angular_original_circles ψ hψ
+
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ 2) :
+    ∃ F : ℂ → ℂ, ∀ z ∈ ball (P.center:ℂ) P.radius \ sourcePeriodicSegment hp hp1 ψ 2,
+      HasDerivAt F (sourceAngularIntegrand (-3) s
+        (fun t => sourceCanonicalRoot hp hp1 t.2 t.1) (z,ψ)) z :=
+  H.angular_original_primitive ψ hψ (-3) 2 (by decide) P
+
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ (-3)) :
+    ∃ F : ℂ → ℂ, ∀ z ∈ ball (P.center:ℂ) P.radius \ sourcePeriodicSegment hp hp1 ψ (-3),
+      HasDerivAt F (sourceAngularEtaRemainderIntegrand hp hp1 (-3) s ψ z) z :=
+  H.eta_original_remainder_primitive ψ hψ (-3) P
+
+-- No noncollapse assumption is needed for the off-diagonal prescribed sheet.
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ 5) (w : ℂ) (hw : w ≠ 0) :
+    ∃ F : ℂ → ℂ, ∃ A : ℂ, ∃ E : ℂ → ℂ,
+      SourceAngularSheetPrimitiveData hp hp1 (-2) 5 s ψ (P.center:ℂ) P.radius w F A E :=
+  H.angular_original_sheet_primitive_all_gaps ψ hψ (-2) 5 (by decide) P w hw
+
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ 5) :
+    ∃ F : ℂ → ℂ, ∀ z ∈ ball (P.center:ℂ) P.radius,
+      HasDerivAt F (sourceAngularCollapsedIntegrand hp hp1 (-2) 5 s ψ z) z :=
+  H.angular_collapsed_original_primitive ψ hψ (-2) 5 P
+
+example (n m : ℤ) (hmn : m ≠ n) (hgap : sourcePeriodicGapDisplacement hp hp1 ψ m = 0)
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    sourceAngularIntegrand n s (fun t => sourceCanonicalRoot hp hp1 t.2 t.1) (z,ψ) =
+      sourceAngularCollapsedIntegrand hp hp1 n m s ψ z :=
+  H.angular_extension.angular_collapsed_integrand_eq_canonical ψ hψ n m hmn hgap z hz
+
+example (n : ℤ) (w : ℂ) (hw : w ≠ 0) :
+    AnalyticOnNhd ℂ (sourceAngularIntegrand n s (sourceAngularRootSheet hp w))
+      (sourceAngularRootSheetDomain hp w ∩ (univ ×ˢ W)) :=
+  H.angular_extension.toSourcePsiIsolatingComplexExtension.angular_rootSheet_integrand_analyticOnNhd n w hw
+
+example (m : ℤ)
+    (hw : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0) :
+    sourceAngularRootSheet hp
+      (sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) :=
+  (sourceAngularRootSheet_dirichlet_base hp hp1 ψ m hw).2
+
+-- Original spectral isolation supplies terminal containment, not an extra spectral hypothesis.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hψV : ψ ∈ V)
+    (m : ℤ) (a r : ℝ) (hr : 0 < r) (he : D m = ball (a:ℂ) r) :
+    canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈
+      ball ((hD.periodCircle ψ hψV m a r hr he).center:ℂ) (hD.periodCircle ψ hψV m a r hr he).radius :=
+  SourceLemma12_12Data.original_dirichlet_mem_circle hD ψ hψV m a r hr he
+
+example (n m : ℤ) (hmn : m ≠ n)
+    (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hgap : sourcePeriodicGapDisplacement hp hp1 ψ m = 0)
+    {b : ℂ} (hb : b ∈ ball (P.center:ℂ) P.radius)
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) b)
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1)) :
+    CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ :=
+  H.beta_original_collapsed_curveIntegrable ψ hψ n m hmn P hgap hb Q γ hQ hγ
+
+example (n m : ℤ) (hmn : m ≠ n)
+    (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    {b : ℂ} (hb : b ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m} : Set ℂ))
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) b)
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ) :
+    sourceAngularPathIntegral n s Q ψ γ = 0 :=
+  H.beta_original_periodic_terminal_zero ψ hψ n m hmn P hb Q γ hQ hγ hint
+
+example (n m : ℤ) (hmn : m ≠ n)
+    (P P' : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+    (hμ' : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P'.center:ℂ) P'.radius)
+    (Q Q' : ℂ × CoeffPair p → ℂ)
+    (γ κ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+    (hQ' : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P'.center:ℂ) P'.radius Q' κ)
+    (hnorm : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hnorm' : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q' (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1)) (hκ : ContDiffOn ℝ 1 κ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ)
+    (hint' : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q' (z,ψ))) κ) :
+    sourceAngularPathIntegral n s Q ψ γ = sourceAngularPathIntegral n s Q' ψ κ :=
+  H.beta_original_dirichlet_path_independent ψ hψ n m hmn P P' hμ hμ' Q Q' γ κ hQ hQ' hnorm hnorm' hγ hκ hint hint'
+
+example (n : ℤ)
+    (P : SourceCriticalRootPeriodCircle hp hp1 ψ n)
+    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+    (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n ∈ ball (P.center:ℂ) P.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n
+    let w := sourceAntiDiscriminantCandidate hp hp1 ψ μ
+    ∀ Q Q' : ℂ × CoeffPair p → ℂ,
+    ∀ (γ κ : Path
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) μ),
+      SourceAngularAdmissiblePathRootData hp hp1 n ψ (P.center:ℂ) P.radius Q γ →
+      SourceAngularAdmissiblePathRootData hp hp1 n ψ (P.center:ℂ) P.radius Q' κ →
+      (w ≠ 0 → Q (μ,ψ) = w) → (w ≠ 0 → Q' (μ,ψ) = w) →
+      ContDiffOn ℝ 1 γ.extend (Icc 0 1) → ContDiffOn ℝ 1 κ.extend (Icc 0 1) →
+      CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ →
+      CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q' (z,ψ))) κ →
+      CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 n ψ Q)) γ →
+      CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 n ψ Q')) κ →
+      ∃ k : ℤ, sourceAngularPathIntegral n s Q ψ γ-sourceAngularPathIntegral n s Q' ψ κ =
+        k*(2*Real.pi) :=
+  H.eta_original_dirichlet_path_periods ψ hψ n P hgap hμ
+
+-- At the free source every selected gap is collapsed, so integrability is proved.
+example (h0 : (0:CoeffPair p) ∈ W) (n m : ℤ) (hmn : m ≠ n)
+    (P : SourceCriticalRootPeriodCircle hp hp1 (0:CoeffPair p) m)
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential (0:CoeffPair p)) (periodOnePotential_mem 0) m)
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential (0:CoeffPair p)) (periodOnePotential_mem 0) m))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m (0:CoeffPair p) (P.center:ℂ) P.radius Q γ)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1)) :
+    sourceAngularPathIntegral n s Q (0:CoeffPair p) γ = 0 := by
+  have hg : sourcePeriodicGapDisplacement hp hp1 (0:CoeffPair p) m = 0 := by
+    rw [sourcePeriodicGapDisplacement_zero_source hp hp1]; rfl
+  exact H.beta_original_periodic_terminal_zero 0 h0 n m hmn P (by simp) Q γ hQ hγ
+    (H.beta_original_collapsed_curveIntegrable 0 h0 n m hmn P hg
+      (P.gap (left_mem_segment ℝ _ _)) Q γ hQ hγ)
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s, SourceLemma12_12Data (p := 4) (by norm_num) (by norm_num) W₀ W s ∧
+      SourcePsiSquaredGapComplexExtension (p := 4) (by norm_num) (by norm_num) W s ∧
+      ∀ ψ ∈ W, ∀ m : ℤ, SourceAngularEndpointSpectralData (p := 4) (by norm_num) (by norm_num) ψ m := by
+  obtain ⟨W₀,ho,_,_,W,hW,hs,hr,s,H,he,hd,_⟩ :=
+    sourceSection13OriginalDomain (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hW,hs,hr,s,H,he,hd⟩
+
+example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsOpen W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ ψ ∈ W, ∃ P : (m : ℤ) → SourceCriticalRootPeriodCircle (p := ENNReal.ofReal (3/2))
+        (by norm_num) (by norm_num) ψ m,
+          ∀ m, canonicalPeriodOneBoundaryRoots (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+            .dirichlet ψ m ∈ ball ((P m).center:ℂ) (P m).radius := by
+  obtain ⟨W₀,ho,_,_,W,hW,_,hr,s,H,_,_,hc⟩ :=
+    sourceSection13OriginalDomain (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hW,hr,s,H,hc⟩
+
+end Section13OriginalChecks
