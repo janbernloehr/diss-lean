@@ -10,14 +10,57 @@ modules remain available; this audit follows the retained Section 12 data.
 | One common W and actual psi family | `sourceSection13OriginalDomain` retains Lemma 12.12 and constructs original disks containing the Dirichlet roots at every complex source | None for domain and terminal geometry |
 | Beta does not depend on the admissible path or root continuation | `original_dirichlet_integral_path` constructs integrable paths; `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value` identify their values, including different disks and collapsed gaps | None for the beta integral construction and comparison |
 | A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_zero` and constructed integrable endpoint paths, at open and collapsed gaps | None for periodic-terminal beta values |
-| Eta is independent modulo 2π of the admissible path | `original_dirichlet_integral_path` supplies actual/model integrability; `eta_original_dirichlet_path_periods` proves invariance modulo 2π in each original disk | Identify the resulting eta integral class with the analytic charts on W |
-| Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` proves uniqueness, complex analyticity on W, and the literal estimate locally uniform in both indices at every complex source | Beta endpoint integrals, analyticity, and estimate proved on the retained domain |
-| Theorem 13.1(ii): eta analytic modulo π | Earlier complex-angle charts need identification with the retained eta integrals | Audit and prove the complete same-domain assertion |
+| Eta is independent modulo 2π of the admissible path | `eta_original_integral_values_period` and `eta_original_dirichlet_path_periods_across_circles` identify actual normalized integrable paths, including different disks and periodic terminals | General supplied paths retain C¹ and actual/model integrability hypotheses |
+| Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` gives uniqueness, complex analyticity, and the locally uniform estimate; `beta_original_im_eq_zero` proves reality on the real-type locus | Constructed endpoint integrals, analyticity, reality, and estimate proved on the retained domain |
+| Theorem 13.1(ii): eta analytic modulo π | `sourceTheorem13_1_original_eta` constructs literal eta values and real analytic local representatives on the same W; every normalized integrable original-disk path has the same phase | Original-domain analytic identification proved |
 | Theorem 13.1(iii): locally uniform beta series and o(1) | Existing summation tools remain available | Apply to the same-domain beta family and its bound |
 | Theorem 13.1(iv): real theta and analytic extension modulo π | Existing theta packages remain available | Identify the literal sum of the preceding same-domain angles |
 | Corollary 13.2: three Poisson bracket identities | Existing bracket machinery remains available | Audit identities for the same literal action/angle family and all finite p>1 |
 
-## Verified endpoint integral construction
+## Verified original-domain eta integrals and analyticity
+
+`sourceTheorem13_1_original_eta` retains the same W₀, simply connected W,
+and normalized psi family from Lemma 12.12. At every complex open gap,
+`sourceAngularOriginalEta` is chosen from actual normalized endpoint
+integrals. The fallback in its definition is never used on this domain.
+
+Two original disks admit a shared transverse path in their open convex
+intersection. Comparing each given path with this common path proves
+that all normalized integrable eta values differ by an integer multiple
+of 2π, even across different disks and at periodic terminals. No nesting
+of the disks or nonzero terminal anti-discriminant is required.
+
+The original annulus charts construct local analytic representatives
+on the unchanged W. Every original-disk eta integral differs from these
+representatives by an integer multiple of π. Consequently the phase
+`exp(2i eta)` is a single nonzero complex analytic function throughout
+the open-gap domain. The representatives and actual eta integrals are
+real at real-type sources. The original off-diagonal beta values are
+also proved real there, including collapsed gaps.
+
+The chosen eta is a joint improper integral: both endpoint truncations
+converge independently to its value. Actual and model integrability are
+constructed for the chosen paths. General comparisons of other supplied
+paths retain their C¹ and curve-integrability hypotheses.
+
+Twelve public checks cover a noncircular convex intersection, common paths
+in different disks, the stronger 2π period, literal integral phases,
+real-type values, independent endpoint truncations, and periodic terminals
+without a sign condition. Unconditional checks at exponents 4 and 3/2
+construct the original domain and integral values or local representatives.
+
+Next: prove locally uniform convergence and decay of the beta series on
+this same W, then identify the literal theta sum and audit Corollary 13.2.
+The remaining Section 13 assertions and the dissertation are incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,083 build jobs, the complete
+public example suite, and the transitive axiom audit of 33,603 NLS
+declarations. The five new modules, two extended construction modules,
+and twelve new checks introduce no warnings; the 21 existing warnings
+remain. The source inventory verifies all 156 candidate labels, all
+193 checked local Markdown file links resolve, and `git diff --check` passes.
+
+## Previous endpoint integral construction
 
 `SourceLemma12_12Data.original_dirichlet_integral_path` constructs a
 smooth path and continuously continued square root in every supplied
@@ -184,3 +227,11 @@ and `git diff --check` passes.
 | [SourceAngularAdmissiblePathConstruction](../NLS/ZakharovShabat/SourceAngularAdmissiblePathConstruction.lean) | Actual original-disk paths with prescribed Dirichlet normalization |
 | [SourceAngularTransversePathIntegrability](../NLS/ZakharovShabat/SourceAngularTransversePathIntegrability.lean) | Actual angular and eta-model integrability at every open complex gap |
 | [SourceAngularOriginalEndpointIntegrals](../NLS/ZakharovShabat/SourceAngularOriginalEndpointIntegrals.lean) | One constructed path for all off-diagonal beta values and their literal improper integral limits |
+
+| Original eta module | Verified scope |
+| --- | --- |
+| [SourceAngularOriginalEtaComparison](../NLS/ZakharovShabat/SourceAngularOriginalEtaComparison.lean) | Shared integrable paths and eta periods across different original disks |
+| [SourceAngularOriginalEtaAnalytic](../NLS/ZakharovShabat/SourceAngularOriginalEtaAnalytic.lean) | Original-domain analytic charts, nonzero phase, beta reality, and a phase-realizing integral |
+| [SourceAngularOriginalEtaValues](../NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean) | All normalized integrable original paths agree with local analytic representatives modulo π |
+| [SourceAngularOriginalEtaIntegral](../NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean) | A chosen literal eta integral, its 2π class, reality, and joint improper limit |
+| [SourceTheorem13_1OriginalEta](../NLS/ZakharovShabat/SourceTheorem13_1OriginalEta.lean) | Unconditional retained-domain statement for every finite p greater than one |

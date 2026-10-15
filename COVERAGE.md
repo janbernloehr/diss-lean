@@ -6392,3 +6392,46 @@ declarations. The six new modules and twelve new checks are warning-free;
 the 21 existing warnings remain. The source inventory verifies all 156
 candidate labels, all 188 checked local Markdown file links resolve,
 and `git diff --check` passes.
+
+## Section 13 original-domain eta integrals and analyticity
+
+`sourceTheorem13_1_original_eta` retains the same W₀, simply connected W,
+and normalized psi family from Lemma 12.12. At every complex open gap,
+`sourceAngularOriginalEta` is chosen from actual normalized endpoint
+integrals. The fallback in its definition is never used on this domain.
+
+Two original disks admit a shared transverse path in their open convex
+intersection. Comparing each given path with this common path proves
+that all normalized integrable eta values differ by an integer multiple
+of 2π, even across different disks and at periodic terminals. No nesting
+of the disks or nonzero terminal anti-discriminant is required.
+
+The original annulus charts construct local analytic representatives
+on the unchanged W. Every original-disk eta integral differs from these
+representatives by an integer multiple of π. Consequently the phase
+`exp(2i eta)` is a single nonzero complex analytic function throughout
+the open-gap domain. The representatives and actual eta integrals are
+real at real-type sources. The original off-diagonal beta values are
+also proved real there, including collapsed gaps.
+
+The chosen eta is a joint improper integral: both endpoint truncations
+converge independently to its value. Actual and model integrability are
+constructed for the chosen paths. General comparisons of other supplied
+paths retain their C¹ and curve-integrability hypotheses.
+
+Twelve public checks cover a noncircular convex intersection, common paths
+in different disks, the stronger 2π period, literal integral phases,
+real-type values, independent endpoint truncations, and periodic terminals
+without a sign condition. Unconditional checks at exponents 4 and 3/2
+construct the original domain and integral values or local representatives.
+
+Next: prove locally uniform convergence and decay of the beta series on
+this same W, then identify the literal theta sum and audit Corollary 13.2.
+The remaining Section 13 assertions and the dissertation are incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,083 build jobs, the complete
+public example suite, and the transitive axiom audit of 33,603 NLS
+declarations. The five new modules, two extended construction modules,
+and twelve new checks introduce no warnings; the 21 existing warnings
+remain. The source inventory verifies all 156 candidate labels, all
+193 checked local Markdown file links resolve, and `git diff --check` passes.

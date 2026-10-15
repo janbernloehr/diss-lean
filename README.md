@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 13's endpoint integrals are now constructed on the
-original domain. Smooth admissible paths with continued roots realize the
-analytic beta values, including collapsed gaps and periodic terminals.
-Both endpoint truncations converge independently to the same value; the
-open-gap eta integral and its model are also proved integrable.
+Latest step: Section 13's eta is now chosen from actual endpoint integrals
+on the original domain. Different admissible integral choices agree modulo
+2π, including across different disks. Local analytic representatives agree
+with those integrals modulo π and are real at real-type sources.
 
-Next: identify eta with its analytic charts on the same domain, then prove
-the beta-series and theta assertions. The dissertation remains incomplete.
+Next: prove the beta-series and theta assertions on this same domain, then
+audit Corollary 13.2. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md), and

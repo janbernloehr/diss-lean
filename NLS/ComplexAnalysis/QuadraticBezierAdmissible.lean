@@ -4,7 +4,7 @@ import Mathlib.Tactic.Module
 /-!
 # Smooth admissible paths avoiding a complex segment
 
-A quadratic Bézier arc stays in a convex disk and lies strictly on one
+A quadratic Bézier arc stays in any open convex set and lies strictly on one
 side of the line through a given segment. Its distances to both segment
 endpoints have a common positive lower bound proportional to t(1-t).
 The construction includes coincident endpoints and closed paths.
@@ -44,16 +44,23 @@ theorem quadraticBezier_eq_lineMap (a c b : ℂ) (t : ℝ) :
   simp only [quadraticBezier,AffineMap.lineMap_apply_module,smul_add,smul_smul]
   module
 
+/-- Every convex set containing the control points contains the entire arc. -/
+theorem quadraticBezierPath_mem_convex (a c b : ℂ) (S : Set ℂ) (hS : Convex ℝ S)
+    (ha : a ∈ S) (hc : c ∈ S) (hb : b ∈ S)
+    (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    (quadraticBezierPath a c b).extend t ∈ S := by
+  rw [quadraticBezierPath_extend _ _ _ _ ht,quadraticBezier_eq_lineMap]
+  apply hS.segment_subset
+    (hS.segment_subset ha hc (lineMap_mem_segment ℝ a c ht))
+    (hS.segment_subset hc hb (lineMap_mem_segment ℝ c b ht))
+  exact lineMap_mem_segment ℝ _ _ ht
+
 /-- A convex disk containing the three control points contains the entire curve. -/
 theorem quadraticBezierPath_mem_ball (a c b o : ℂ) (R : ℝ)
     (ha : a ∈ ball o R) (hc : c ∈ ball o R) (hb : b ∈ ball o R)
     (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
-    (quadraticBezierPath a c b).extend t ∈ ball o R := by
-  rw [quadraticBezierPath_extend _ _ _ _ ht,quadraticBezier_eq_lineMap]
-  apply (convex_ball o R).segment_subset
-    ((convex_ball o R).segment_subset ha hc (lineMap_mem_segment ℝ a c ht))
-    ((convex_ball o R).segment_subset hc hb (lineMap_mem_segment ℝ c b ht))
-  exact lineMap_mem_segment ℝ _ _ ht
+    (quadraticBezierPath a c b).extend t ∈ ball o R :=
+  quadraticBezierPath_mem_convex a c b _ (convex_ball o R) ha hc hb t ht
 
 /-- The initial displacement has a useful polynomial factorization. -/
 theorem quadraticBezier_sub (a c b : ℂ) (t : ℝ) :
@@ -93,20 +100,20 @@ private theorem transverse_distance_lower (a v z w : ℂ) (hv : v ≠ 0)
       _ = _ := norm_div _ _
   simpa only [norm_sub_rev] using (le_div_iff₀ (norm_pos_iff.mpr hv)).mp hh
 
-private theorem exists_upper_bezier_path (a r b o v : ℂ) (R : ℝ)
-    (ha : a ∈ ball o R) (hb : b ∈ ball o R) (hv : v ≠ 0)
+private theorem exists_upper_bezier_path (a r b v : ℂ) (S : Set ℂ) (hS : IsOpen S) (hconv : Convex ℝ S)
+    (ha : a ∈ S) (hb : b ∈ S) (hv : v ≠ 0)
     (hr : ((r-a)/v).im = 0) (hbup : 0 ≤ ((b-a)/v).im) :
     ∃ γ : Path a b, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
-      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball o R) ∧
+      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ S) ∧
       ∃ k : ℝ, 0 < k ∧ ∀ t ∈ Ioo (0:ℝ) 1,
         γ.extend t ∉ segment ℝ a r ∧
         k*t*(1-t) ≤ ‖a-γ.extend t‖ ∧ k*t*(1-t) ≤ ‖r-γ.extend t‖ := by
-  obtain ⟨δ,hδ,hball⟩ := Metric.mem_nhds_iff.mp (isOpen_ball.mem_nhds ha)
+  obtain ⟨δ,hδ,hball⟩ := Metric.mem_nhds_iff.mp (hS.mem_nhds ha)
   let ε := δ/(2*‖v‖)
   have hvpos : 0 < ‖v‖ := norm_pos_iff.mpr hv
   have hε : 0 < ε := by dsimp [ε]; positivity
   let c := a+(ε:ℂ)*Complex.I*v
-  have hc : c ∈ ball o R := by
+  have hc : c ∈ S := by
     apply hball
     rw [mem_ball,dist_eq_norm]
     have he : ‖c-a‖ = δ/2 := by
@@ -119,7 +126,7 @@ private theorem exists_upper_bezier_path (a r b o v : ℂ) (R : ℝ)
   let γ := quadraticBezierPath a c b
   let k := 2*ε*‖v‖
   have hk : 0 < k := by dsimp [k]; positivity
-  refine ⟨γ,quadraticBezierPath_contDiffOn _ _ _,quadraticBezierPath_mem_ball _ _ _ _ _ ha hc hb,k,hk,?_⟩
+  refine ⟨γ,quadraticBezierPath_contDiffOn _ _ _,quadraticBezierPath_mem_convex _ _ _ _ hconv ha hc hb,k,hk,?_⟩
   intro t ht
   have hi : 2*ε*t*(1-t) ≤ ((γ.extend t-a)/v).im := by
     rw [quadraticBezierPath_extend _ _ _ _ (Ioo_subset_Icc_self ht),quadraticBezier_im_div,hcim]
@@ -136,11 +143,12 @@ private theorem exists_upper_bezier_path (a r b o v : ℂ) (R : ℝ)
   simp only [sub_self,norm_zero] at h
   linarith
 
-/-- A disk admits a smooth segment-avoiding path with quantitative endpoint separation. -/
-theorem exists_bezier_admissible_path (a r b o : ℂ) (R : ℝ)
-    (ha : a ∈ ball o R) (hb : b ∈ ball o R) :
+/-- An open convex set admits a segment-avoiding smooth path with endpoint separation. -/
+theorem exists_bezier_admissible_path_in_open_convex (a r b : ℂ)
+    (S : Set ℂ) (hS : IsOpen S) (hconv : Convex ℝ S)
+    (ha : a ∈ S) (hb : b ∈ S) :
     ∃ γ : Path a b, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
-      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball o R) ∧
+      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ S) ∧
       ∃ k : ℝ, 0 < k ∧ ∀ t ∈ Ioo (0:ℝ) 1,
         γ.extend t ∉ segment ℝ a r ∧
         k*t*(1-t) ≤ ‖a-γ.extend t‖ ∧ k*t*(1-t) ≤ ‖r-γ.extend t‖ := by
@@ -156,10 +164,21 @@ theorem exists_bezier_admissible_path (a r b o : ℂ) (R : ℝ)
     · simp [h]
     · simp [sub_ne_zero.mpr h]
   by_cases hbup : 0 ≤ ((b-a)/v).im
-  · exact exists_upper_bezier_path a r b o v R ha hb hv hr hbup
-  · apply exists_upper_bezier_path a r b o (-v) R ha hb (neg_ne_zero.mpr hv)
+  · exact exists_upper_bezier_path a r b v S hS hconv ha hb hv hr hbup
+  · apply exists_upper_bezier_path a r b (-v) S hS hconv ha hb (neg_ne_zero.mpr hv)
     · simp only [div_neg,Complex.neg_im,hr,neg_zero]
     · simp only [div_neg,Complex.neg_im]
       linarith
+
+
+/-- A disk admits a smooth segment-avoiding path with quantitative endpoint separation. -/
+theorem exists_bezier_admissible_path (a r b o : ℂ) (R : ℝ)
+    (ha : a ∈ ball o R) (hb : b ∈ ball o R) :
+    ∃ γ : Path a b, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
+      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball o R) ∧
+      ∃ k : ℝ, 0 < k ∧ ∀ t ∈ Ioo (0:ℝ) 1,
+        γ.extend t ∉ segment ℝ a r ∧
+        k*t*(1-t) ≤ ‖a-γ.extend t‖ ∧ k*t*(1-t) ≤ ‖r-γ.extend t‖ :=
+  exists_bezier_admissible_path_in_open_convex a r b (ball o R) isOpen_ball (convex_ball o R) ha hb
 
 end NLS.ComplexAnalysis

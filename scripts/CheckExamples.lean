@@ -52622,3 +52622,135 @@ example {W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   exact ⟨Q,γ,hint hgap⟩
 
 end Section13EndpointChecks
+section Section13OriginalEtaChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter Topology MeasureTheory
+open scoped ENNReal unitInterval
+
+-- A noncircular convex intersection admits a nonconstant closed path.
+example : ∃ γ : Path (0:ℂ) 0, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
+    (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball (1:ℂ) 2 ∩ ball (-1:ℂ) 2) ∧
+    ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ≠ 0 := by
+  obtain ⟨γ,hγ,hmem,k,hk,hsep⟩ := exists_bezier_admissible_path_in_open_convex (0:ℂ) 0 0
+    (ball (1:ℂ) 2 ∩ ball (-1:ℂ) 2) (isOpen_ball.inter isOpen_ball)
+    ((convex_ball _ _).inter (convex_ball _ _)) (by norm_num [mem_ball,dist_eq_norm])
+    (by norm_num [mem_ball,dist_eq_norm])
+  exact ⟨γ,hγ,hmem,fun t ht => by simpa using (hsep t ht).1⟩
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (H : SourceLemma12_12Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W) (m : ℤ)
+  (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0)
+
+-- Neither of the two supplied disks is assumed to contain the other.
+example (P P' : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+    (hμ' : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P'.center:ℂ) P'.radius) :
+    ∃ Q : ℂ × CoeffPair p → ℂ,
+      ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+        (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+        SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+        SourceAngularAdmissiblePathRootData hp hp1 m ψ (P'.center:ℂ) P'.radius Q γ ∧
+        CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,ψ))) γ := by
+  have hg : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m := by
+    intro he
+    apply hgap
+    simp only [canonicalPeriodicGap,he,sub_self]
+  obtain ⟨Q,γ,hQ,hQ',_,_,hi,_⟩ := H.original_dirichlet_common_integral_path ψ hψ m P P' hg hμ hμ'
+  exact ⟨Q,γ,hQ,hQ',hi⟩
+
+-- The fallback in the chosen eta definition is never used on its domain.
+example : sourceAngularOriginalEta hp hp1 m s ψ ∈ sourceAngularOriginalEtaIntegralValues hp hp1 m s ψ :=
+  H.eta_original_integral_mem ψ hψ m hgap
+
+-- The integral class is modulo 2π, a stronger result than agreement of exp(2i eta).
+example {v v' : ℂ} (hv : v ∈ sourceAngularOriginalEtaIntegralValues hp hp1 m s ψ)
+    (hv' : v' ∈ sourceAngularOriginalEtaIntegralValues hp hp1 m s ψ) :
+    Complex.exp (Complex.I*v) = Complex.exp (Complex.I*v') := by
+  obtain ⟨k,hk⟩ := H.eta_original_integral_values_period ψ hψ m hgap hv hv'
+  apply Complex.exp_eq_exp_iff_exists_int.mpr
+  exact ⟨k,by linear_combination Complex.I*hk⟩
+
+-- The literal chosen integral itself has an analytic phase on the original open-gap domain.
+example : AnalyticOnNhd ℂ (fun χ => Complex.exp (2*Complex.I*sourceAngularOriginalEta hp hp1 m s χ))
+    {χ : CoeffPair p | χ ∈ W ∧ canonicalPeriodicGap hp hp1
+      (periodOnePotential χ) (periodOnePotential_mem χ) m ≠ 0} := by
+  obtain ⟨ho,ha,_⟩ := H.eta_original_phase_analytic m
+  intro χ hχ
+  apply (ha χ hχ).congr
+  filter_upwards [ho.mem_nhds hχ] with ξ hξ
+  exact (H.eta_original_integral_phase ξ hξ.1 m hξ.2).symm
+
+-- No selected-gap hypothesis is needed for beta reality.
+example (hreal : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ) (hmn : m ≠ n) :
+    (sourceAngularBeta hp hp1 n m s ψ).im = 0 := H.beta_original_im_eq_zero ψ hψ hreal n m hmn
+
+example (hreal : IsRealType (CoeffPair.toMax p ψ)) :
+    (sourceAngularOriginalEta hp hp1 m s ψ).im = 0 := H.eta_original_integral_im_eq_zero ψ hψ hreal m hgap
+
+-- Independent truncations at both singular endpoints converge to the chosen literal eta.
+example : ∃ Q : ℂ × CoeffPair p → ℂ,
+    ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+      Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2,
+        curveIntegralFun (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,ψ))) γ t)
+        ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 (sourceAngularOriginalEta hp hp1 m s ψ)) := by
+  obtain ⟨_,Q,γ,_,_,_,hl⟩ := H.eta_original_exists_improper_integral ψ hψ m hgap
+  exact ⟨Q,γ,hl⟩
+
+-- At a periodic terminal, no choice of terminal sign is imposed.
+example (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+    (hz : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) = 0)
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hi : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,ψ))) γ)
+    (hm : CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 m ψ Q)) γ) :
+    Complex.exp (2*Complex.I*sourceAngularPathIntegral m s Q ψ γ) =
+      Complex.exp (2*Complex.I*sourceAngularOriginalEta hp hp1 m s ψ) := by
+  rw [H.eta_original_integral_phase ψ hψ m hgap]
+  exact H.eta_original_pathIntegral_phase ψ hψ m hgap P hμ Q γ hQ (fun h => (h hz).elim) hγ hi hm
+
+example : ∃ U : Set (CoeffPair p), ∃ f : CoeffPair p → ℂ,
+    IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧ AnalyticOnNhd ℂ f U ∧
+    (∀ χ ∈ U, IsRealType (CoeffPair.toMax p χ) → (f χ).im = 0) ∧
+    ∀ χ ∈ U, ∃ k : ℤ, sourceAngularOriginalEta hp hp1 m s χ-f χ = (k:ℂ)*Real.pi := by
+  obtain ⟨U,f,ho,hψU,hUW,_,ha,hr,hv⟩ := H.eta_original_value_local_representative ψ hψ m hgap
+  exact ⟨U,f,ho,hψU,hUW,ha,hr,hv⟩
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The whole original domain, root family, and actual integral values are constructed at p=4.
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := 4) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ χ ∈ W, ∀ m : ℤ, canonicalPeriodicGap (p := 4) (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) m ≠ 0 →
+        sourceAngularOriginalEta (p := 4) (by norm_num) (by norm_num) m s χ ∈
+          sourceAngularOriginalEtaIntegralValues (p := 4) (by norm_num) (by norm_num) m s χ := by
+  obtain ⟨W₀,_,_,_,W,hW,hs,hr,s,H,_,he⟩ := sourceTheorem13_1_original_eta (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,hW,hs,hr,s,H,fun χ hχ m hg => ((he m).2.2 χ hχ hg).1⟩
+
+-- At p=3/2 the local representatives apply to all complex open gaps of that same W.
+example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ χ ∈ W, ∀ m : ℤ, canonicalPeriodicGap (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) m ≠ 0 →
+        ∃ U : Set (CoeffPair (ENNReal.ofReal (3/2))), ∃ f : CoeffPair (ENNReal.ofReal (3/2)) → ℂ,
+          χ ∈ U ∧ U ⊆ W ∧ AnalyticOnNhd ℂ f U ∧
+          ∀ ξ ∈ U, ∃ k : ℤ,
+            sourceAngularOriginalEta (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) m s ξ-f ξ =
+              (k:ℂ)*Real.pi := by
+  obtain ⟨W₀,_,_,_,W,hW,_,hr,s,H,_,_⟩ :=
+    sourceTheorem13_1_original_eta (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  refine ⟨W₀,W,hW,hr,s,H,?_⟩
+  intro χ hχ m hg
+  obtain ⟨U,f,_,hχU,hUW,_,ha,_,hv⟩ := H.eta_original_value_local_representative χ hχ m hg
+  exact ⟨U,f,hχU,hUW,ha,hv⟩
+
+end Section13OriginalEtaChecks
