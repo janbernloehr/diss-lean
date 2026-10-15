@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 25's localization, coefficient, and gap estimates
-now apply directly to the original source with exact physical norms and
-constants. The full closed-strip root count retains multiplicities.
-One complex neighborhood supports the global gap bound for every M₁
-weight while retaining the original Section 24 family and domain.
+Latest step: Section 26's action estimates now use the original indexed
+actions and exact physical norms. An actual real H² source refutes the
+full alternating-sign inequality in Lemma 26.2; the positive-sign estimate
+and the uniform physical remainder bounds are proved.
 
-Next: Section 26's original action estimates and the printed sign in
-Lemma 26.2. The separate full fractional-smoothness qualifications remain.
-The dissertation remains incomplete.
+Next: audit the top-derivative supremum endpoint in (5.11), then continue
+to Section 27. The separate full fractional-smoothness qualifications
+remain. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -28,7 +27,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 22 audit](coverage/SECTION_22.md),
 [the Section 23 audit](coverage/SECTION_23.md),
 [the Section 24 audit](coverage/SECTION_24.md),
-[the Section 25 audit](coverage/SECTION_25.md), and
+[the Section 25 audit](coverage/SECTION_25.md),
+[the Section 26 audit](coverage/SECTION_26.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

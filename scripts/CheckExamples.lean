@@ -56595,3 +56595,112 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
     ∃ B U T : Set (CoeffPair 2), SourceSection25Data D A B U T :=
   sourceSection25_original
 end Section25OriginalChecks
+
+section Section26OriginalChecks
+-- Actual signed Fourier coefficients and physical jet norms.
+example : (sobolevSourceScalarMode 2 (-5) 3).val (-5) = 3 := by
+  simp [sobolevSourceScalarMode_apply]
+example : (sobolevSourceRealMode 2 5 3).val.2.val (-5) = 3 := by
+  simp [sobolevSourceRealMode,sobolevSourceScalarMode_apply]
+example : ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) (sobolevSourceScalarMode 2 1 (-3))‖ = 3 := by
+  rw [norm_sobolevSourceScalarMode_L2]; norm_num
+example : ‖hierarchySobolevJetL2 2 1 (by omega) (sobolevSourceScalarMode 2 (-2) 1)‖ = 4*Real.pi := by
+  rw [norm_sobolevSourceScalarMode_jet]; norm_num; ring
+example : ‖hierarchySobolevJetL2 4 0 (by omega) (sobolevSourceScalarMode 4 0 (-5))‖ = 5 := by
+  rw [norm_sobolevSourceScalarMode_jet]; norm_num
+example : ‖hierarchySobolevJetL2 3 3 le_rfl (sobolevSourceScalarMode 3 0 7)‖ = 0 := by
+  rw [norm_sobolevSourceScalarMode_jet]; norm_num
+example : ‖higherSobolevSourceInclusion 2 (sobolevSourceRealMode 2 7 2).val‖^2 = 8 := by
+  rw [sobolevSourceRealMode_mass]; norm_num
+example : ‖sourcePiSobolevCoordinates 2 1 (by omega) (sobolevSourceRealMode 2 1 1).val‖^2 =
+    2*(1+2*Real.pi)^2 := by
+  rw [sobolevSourceRealMode_piNorm]; norm_num
+example : ‖sourcePiSobolevCoordinates 2 1 (by omega) (sobolevSourceRealMode 2 7 (1/7)).val‖ ≤
+    2*(1+2*Real.pi) := by
+  simpa using (section26_highMode_bounds 7 (by omega)).2.2.1
+example : 7 ≤ ‖hierarchySobolevJetL2 2 2 le_rfl (sobolevSourceRealMode 2 7 (1/7)).val.1‖ := by
+  simpa using (section26_highMode_bounds 7 (by omega)).2.2.2
+
+-- Summability at the first sharp order, and both parity cases for the sign.
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    Summable (sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1) :=
+  (sourceSection26_action_estimate_half_mass 1 le_rfl a).1
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 3 n) ≤
+      (1+16*Real.pi)^6*(1+‖sourcePiSobolevCoordinates 3 1 (by omega) a.val‖)^12*
+        ‖higherSobolevSourceInclusion 3 a.val‖^2 +
+        (-1:ℝ)^4*2^3*(sobolevOddHamiltonian 3 (by omega) a.val).re := by
+  simpa using sourceSection26_printed_estimate_of_odd 3 (by omega) (by decide) a
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) ≤
+      (1+16*Real.pi)^4*(1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^8*
+        ‖higherSobolevSourceInclusion 2 a.val‖^2 +
+        4*(sobolevOddHamiltonian 2 (by omega) a.val).re := by
+  have h := sourceSection26_action_estimate 2 (by omega) a
+  norm_num at h ⊢
+  exact h
+
+-- Level m=0 and the negative spectral index are admitted.
+example (a : realTypeHigherSobolevSourceLocus 1)
+    (hn : 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2 ≤ 2) :
+    (sourceIndexedAction (by simp) (by norm_num) (-1) (higherSobolevSourceInclusion 1 a.val)).re =
+      (sourceIndexedHigherAction (by simp) (by norm_num) (-1) 0 (higherSobolevSourceInclusion 1 a.val)).re := by
+  have h := sourceSection26_exterior a (-1) (by omega) (by norm_num at *; exact hn) 0
+  simp only [pow_zero,mul_zero,one_mul] at h
+  exact le_antisymm h.1 h.2
+example (a : realTypeHigherSobolevSourceLocus 1)
+    (hn : 1 < 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2) :
+    ‖sourceIndexedHigherAction (by simp) (by norm_num) 0 0 (higherSobolevSourceInclusion 1 a.val)‖ ≤
+      (sourceIndexedAction (by simp) (by norm_num) 0 (higherSobolevSourceInclusion 1 a.val)).re := by
+  simpa using sourceSection26_central a 0 (by simpa using hn) 0
+example (a : realTypeHigherSobolevSourceLocus 1)
+    (hn : 8*‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2 ≤ 1) :
+    ∃ ζ : ℝ, sourceIndexedHigherAction (by simp) (by norm_num) 0 4 (higherSobolevSourceInclusion 1 a.val) =
+      (ζ:ℂ)^4*sourceIndexedAction (by simp) (by norm_num) 0 (higherSobolevSourceInclusion 1 a.val) := by
+  obtain ⟨ζ,_,he,_⟩ := sourceSection26_meanValue_complex a 0 (by simpa using hn) 2
+  exact ⟨ζ,he⟩
+
+-- Full printed inequalities, with their positive remainder, are checked.
+example : ∃ a : realTypeHigherSobolevSourceLocus 2,
+    (1+16*Real.pi)^4*(1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^8*
+      ‖higherSobolevSourceInclusion 2 a.val‖^2 - 4*(sobolevOddHamiltonian 2 (by omega) a.val).re < 0 :=
+  section26_printedRhs_negative
+example : ∃ a : realTypeHigherSobolevSourceLocus 2,
+    Summable (sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2) ∧
+    (1+16*Real.pi)^4*(1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^8*
+        ‖higherSobolevSourceInclusion 2 a.val‖^2 + (-1:ℝ)^3*2^2*(sobolevOddHamiltonian 2 (by omega) a.val).re <
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) :=
+  section26_printedInequality_strict_counterexample
+example : ∃ a : ScalarSobolev 1,
+    ‖hierarchySobolevJetL2 1 1 le_rfl a‖^2+‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 1) a‖^2 <
+      ‖sourcePiSobolevScalar 1 1 le_rfl a‖^2 :=
+  section26_printed_physicalNorm_split_counterexample
+
+-- Lower derivatives have uniform bounds; the top derivative retains its L² estimate.
+example (a : ScalarSobolev 2) :
+    ‖hierarchySobolevJetContinuous 2 1 (by omega) a‖ ≤
+      4*(2*Real.pi)^1*‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 2) a‖^(1-((1:ℝ)+1/2)/2)*
+        ‖a‖^(((1:ℝ)+1/2)/2) := by
+  simpa only [Nat.cast_ofNat,Nat.cast_one] using
+    norm_hierarchySobolevJetContinuous_interpolate 2 1 (by omega) a
+example (a : ScalarSobolev 2) :
+    ‖hierarchySobolevJetL2 2 2 le_rfl a‖ ≤ (2*Real.pi)^2*‖a‖ := by
+  simpa using norm_hierarchySobolevJetL2_interpolate 2 2 (by omega) le_rfl a
+
+variable {W₀ W V Wa B U T : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+  (Q : SourceSection26Data D A B U T)
+
+example : ∃ C : ℝ, SourceSection26RemainderBounds 2 (by omega) (1/2) C :=
+  Q.remainder_estimates 2 (by omega) (1/2) (by norm_num)
+example : SourceSection25Data D A B U T := Q.toSourceSection25Data
+example : ∃ a : realTypeHigherSobolevSourceLocus 2, higherSobolevSourceInclusion 2 a.val ∈ U ∩ T := by
+  obtain ⟨a,ha,_⟩ := Q.printed_counterexample
+  exact ⟨a,ha⟩
+example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 2), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U T : Set (CoeffPair 2), SourceSection26Data D A B U T :=
+  sourceSection26_original
+end Section26OriginalChecks

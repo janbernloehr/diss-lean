@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: original Section 25 uniform spectral localization
+## Current milestone: original Section 26 action estimates and sign correction
+
+Proposition 26.1 now uses the original indexed actions and exact physical
+H¹ pair norm, without an auxiliary realization premise. Its actual gap
+point satisfies the complex mean-value identity and the exact radius.
+The exterior and central estimates retain the printed constants, include
+signed indices and collapsed gaps, and allow every natural level m≥0.
+
+The corrected Lemma 26.2 has a positive Hamiltonian term at every order,
+with absolute summability and the stronger half-mass remainder. At odd m
+the printed sign agrees. At m=2 an actual real H² source makes the full
+printed right-hand side negative while its original action sum is
+nonnegative and summable. The strict counterexample lies in every
+retained original U and T. This refutes the entire inequality, including
+its positive remainder, rather than only the trace step in its proof.
+
+Lemma 26.3 retains the actual physical remainder integral and the
+L²-only error, with one constant chosen before all sources for both
+conclusions. A separate single-mode counterexample refutes the printed
+H¹ norm-splitting coefficient for the exact physical weight; the valid
+quantitative bound used in the formal remainder proof avoids that step.
+`SourceSection26Data` extends the same original family without changing
+either U or T. See [the Section 26 audit](coverage/SECTION_26.md).
+
+Five new modules and 25 public checks cover exact mode and derivative
+norms, zero levels, both sign parities, strict counterexamples, uniform
+remainder constants, and the retained common-family constructor.
+
+Next: audit the top-derivative supremum endpoint in (5.11), then continue
+to Section 27. The verified supremum estimate currently has i<m; the L²
+estimate allows i≤m. The separate
+[Section 14 qualifications](coverage/SECTION_14.md) remain; the
+dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,218 build jobs, all 5,853
+public examples, and the transitive axiom audit for 34,619 NLS
+declarations. All five new modules and 25 focused checks compile without
+new warnings; the full build retains 21 existing warnings. The 156-label
+source inventory, 487 local documentation links across 33 documents,
+and `git diff --check` also pass.
+
+## Previous milestone: original Section 25 uniform spectral localization
 
 Theorem 25.1 and Lemmas 25.2–25.4 now have a public formulation on the
 original complex source. The physical H¹ norm retains both components

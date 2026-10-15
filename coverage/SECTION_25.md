@@ -108,7 +108,8 @@ both diagonal formulas, coincident-root multiplicity, superlinear
 weights, the full global bound, and the unconditional common-family
 constructor. Full validation is recorded in [implementation status](../STATUS.md).
 
-Next: the original Section 26 action estimates, including the printed
-alternating sign in Lemma 26.2. The separate
+[The Section 26 audit](SECTION_26.md) now records the original action
+estimates, the full Lemma 26.2 sign counterexample, and the remaining
+supremum-endpoint audit. The separate
 [Section 14 qualifications](SECTION_14.md) remain. The dissertation is
 incomplete.

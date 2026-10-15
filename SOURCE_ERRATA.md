@@ -1520,11 +1520,43 @@ Formal results:
 - `sourceWeightedAction_le_mass` weakens the half-mass factor to the
   full squared pair norm appearing in the printed remainder.
 
-This establishes the corrected estimate and identifies the error in the
-printed proof equality. It does not constitute a formal counterexample
-to the entire printed inequality, whose positive remainder must also be
-accounted for. The literal signed statement of Lemma 26.2 is not claimed
-as a proved result.
+The original-source formulations in
+[`SourceSection26Sum.lean`](NLS/ZakharovShabat/SourceSection26Sum.lean)
+remove the auxiliary weighted-realization premise and retain the exact
+physical norm. The literal printed estimate is valid at odd m.
+
+The entire printed inequality is now formally refuted at m=2 in
+[`SourceSection26SignCorrection.lean`](NLS/ZakharovShabat/SourceSection26SignCorrection.lean).
+Real Fourier-mode pairs with amplitude 1/n have uniformly bounded H¹
+norm and pair mass, but their second-derivative norm is at least n.
+The physical Hamiltonian coercivity bound makes H₅ grow without bound.
+Thus `section26_printedRhs_negative` makes the full printed positive
+remainder minus 4H₅ negative. The original action sum is nonnegative.
+`section26_printedInequality_strict_counterexample` proves its absolute
+summability and the strict reverse inequality. The witness is an actual
+real H² source, and `SourceSection26Data.printed_counterexample` places
+it in every retained original U and T.
+
+## Lemma 26.3 proof: physical Sobolev norm splitting
+
+At the end of the proof on printed p. 115 the source uses
+`‖ψ‖²_Hm ≤ 2^(m−1)(‖∂^m ψ‖²_L2 + ‖ψ‖²_L2)`.
+For the exact physical weight `1+|2nπ|`, this is false already at m=1.
+A unit scalar mode at frequency one has weighted norm squared
+`(1+2π)²`, whereas the derivative energy plus mass is `(2π)²+1`.
+`section26_printed_physicalNorm_split_counterexample` proves this strict
+inequality in the same correction module.
+
+Lemma 26.3 itself remains valid. The formal proof uses the quantitative
+bound `norm_sobolev_sq_le_highestJet` and absorbs its constant into the
+arbitrary ε and source-independent remainder constant. The actual
+physical remainder and Hamiltonian conclusions share one constant in
+`exists_sourceSection26_remainder_bounds`.
+
+The printed supremum range 0≤i≤m in (5.11) has a separate outstanding
+endpoint audit. The verified supremum estimate requires i<m; the L²
+estimate allows i≤m. Lemma 26.3's monomial argument uses only i<m.
+See [the Section 26 audit](coverage/SECTION_26.md).
 
 ## Lemma 27.2: corrected global coefficient and optional endpoint sharpening
 

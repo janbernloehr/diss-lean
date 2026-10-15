@@ -3775,3 +3775,8 @@ import NLS.ZakharovShabat.SourceSection25Localization
 import NLS.ZakharovShabat.SourceSection25Coefficients
 import NLS.ZakharovShabat.SourceSection25Gaps
 import NLS.ZakharovShabat.SourceSection25Original
+import NLS.ZakharovShabat.SobolevSourceFourierModes
+import NLS.ZakharovShabat.SourceSection26Actions
+import NLS.ZakharovShabat.SourceSection26Sum
+import NLS.ZakharovShabat.SourceSection26SignCorrection
+import NLS.ZakharovShabat.SourceSection26Original
