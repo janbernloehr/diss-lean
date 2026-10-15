@@ -57098,3 +57098,106 @@ example :
 
 end Section28OriginalChecks
 end NLS.ZakharovShabat
+
+noncomputable section
+open Set Filter Topology
+open scoped SchwartzMap BoundedContinuousFunction
+namespace NLS.Fourier
+open SmoothPeriodicTest
+section AppendixA1Checks
+variable {L : ℝ} [Fact (0 < L)]
+
+example (u : SmoothPeriodicTest L →ₗ[ℂ] ℂ) : Continuous u ↔
+    ∃ N : ℕ, ∃ C : ℝ, 0 < C ∧ ∀ f, ‖u f‖ ≤ C*cNorm (Fact.out : 0 < L).ne' N f :=
+  continuous_iff_finite_order u
+
+example (f : SmoothPeriodicTest L) (N : ℕ) :
+    cNorm (Fact.out : 0 < L).ne' N f =
+      ∑ j ∈ Finset.range (N+1), ‖derivative (Fact.out : 0 < L).ne' j f‖ := cNorm_apply _ N f
+
+example (u : Distribution L) : u.HasOrderAtMost u.order := u.hasOrderAtMost_order
+
+example (u : Distribution L) (N : ℕ) (h : u.HasOrderAtMost N) : u.order ≤ N := Distribution.order_le h
+
+example (u : Distribution L) (N : ℕ) (h : u.HasOrderAtMost N) :
+    Asymptotics.IsBigO cofinite (fun n : ℤ => u (mode (-n))) (fun n : ℤ => |(n:ℝ)|^N) := Distribution.coefficients_isBigO_of_order h
+
+example (u : Distribution L) :
+    Asymptotics.IsBigO cofinite (fun n : ℤ => u (mode (-n))) (fun n : ℤ => |(n:ℝ)|^u.order) := u.coefficients_isBigO
+
+example (α : ℤ → ℂ) (N : ℕ) (h : Asymptotics.IsBigO cofinite α (fun n : ℤ => |(n:ℝ)|^N)) :
+    ∃! u : Distribution L, ∀ n : ℤ, u (mode (-n)) = α n := Distribution.existsUnique_of_polynomial_isBigO α N h
+
+example (α : ℤ → ℂ) : (∃ N : ℕ, Asymptotics.IsBigO cofinite α (fun n : ℤ => |(n:ℝ)|^N)) ↔
+    ∃! u : Distribution L, ∀ n : ℤ, u (mode (-n)) = α n := Distribution.polynomial_growth_iff_existsUnique α
+
+example (u : Distribution L) : IsPeriodicDistribution L u.toTempered := u.toTempered_periodic
+
+example (u : Distribution L) (n : ℤ) : u.toTempered (periodCoefficientTest L Fact.out n) = u (mode (-n)) :=
+  u.toTempered_coefficient n
+
+example (u : Distribution L) : Distribution.ofTempered u.toTempered = u := u.ofTempered_toTempered
+
+example (T : 𝓢'(ℝ,ℂ)) (hT : IsPeriodicDistribution L T) :
+    (Distribution.ofTempered T : Distribution L).toTempered = T := Distribution.toTempered_ofTempered T hT
+
+example : Distribution L ≃ {T : 𝓢'(ℝ,ℂ) // IsPeriodicDistribution L T} := Distribution.periodicTemperedEquiv
+
+example (u v : Distribution L) (h : ∀ n : ℤ, u (mode (-n)) = v (mode (-n))) : u = v := Distribution.ext_coefficients h
+
+example (x : ℝ) : (Distribution.evaluation x : Distribution L).order = 0 := Distribution.evaluation_order x
+
+example (n : ℤ) : (Distribution.evaluation 0 : Distribution L) (mode (-n)) = 1 := Distribution.evaluation_zero_coefficient n
+
+example (n : ℤ) : (Distribution.evaluation 0 : Distribution L).toTempered (periodCoefficientTest L Fact.out n) = 1 := by
+  rw [Distribution.toTempered_coefficient,Distribution.evaluation_zero_coefficient]
+
+example (n : ℤ) : ‖derivative (by norm_num : (2:ℝ) ≠ 0) 1 (mode n : SmoothPeriodicTest 2)‖ = Real.pi*|(n:ℝ)| := by
+  rw [norm_derivative_mode_physical]
+  ring
+
+example : ‖derivative (by norm_num : (1:ℝ) ≠ 0) 2 (mode (-3) : SmoothPeriodicTest 1)‖ = 36*Real.pi^2 := by
+  rw [norm_derivative_mode_physical]
+  norm_num
+  ring
+
+example (L : ℝ) [Fact (0 < L)] : cNorm (Fact.out : 0 < L).ne' 0 (mode 0 : SmoothPeriodicTest L) = 1 := by
+  simp [cNorm_apply,norm_derivative_mode_physical]
+
+example (L : ℝ) [Fact (0 < L)] : cNorm (Fact.out : 0 < L).ne' 2 (mode 0 : SmoothPeriodicTest L) = 1 := by
+  simp [cNorm_apply,Finset.sum_range_succ,norm_derivative_mode_physical]
+
+example (x : ℝ) : (mode (-2) : SmoothPeriodicTest 1) x = Complex.exp (Complex.I*(-4*(Real.pi:ℂ))*x) := by
+  rw [mode_apply_physical]
+  norm_num
+
+example (f : SmoothPeriodicTest L) :
+    (ofPeriodization (smoothPeriodicTestLift (fun x => f ((L/2)*x))) : SmoothPeriodicTest L) = f := ofPeriodization_lift f
+
+example (n : ℤ) : (ofPeriodization (coefficientTest n) : SmoothPeriodicTest L) = (1/2:ℂ) • mode (-n) :=
+  ofPeriodization_coefficientTest n
+
+example (L : ℝ) (hL : 0 < L) (α : ℤ → ℂ) (N : ℕ) (C : ℝ)
+    (h : ∀ n : ℤ, ‖α n‖ ≤ C*(1+|(n:ℝ)|)^N) :
+    ∃! T : 𝓢'(ℝ,ℂ), IsPeriodicDistribution L T ∧ ∀ n : ℤ, T (periodCoefficientTest L hL n) = α n :=
+  existsUnique_periodicDistribution_of_polynomial_bound L hL α N C h
+
+example (L : ℝ) (hL : 0 < L) (T : 𝓢'(ℝ,ℂ)) (hT : IsPeriodicDistribution L T) :
+    ∃ N : ℕ, Asymptotics.IsBigO cofinite (fun n : ℤ => T (periodCoefficientTest L hL n)) (fun n : ℤ => |(n:ℝ)|^N) :=
+  periodicDistribution_coefficients_isBigO L hL T hT
+
+example (z : ℂ) : ∃! T : 𝓢'(ℝ,ℂ), IsPeriodicDistribution 1 T ∧
+    ∀ n : ℤ, T (periodCoefficientTest 1 (by norm_num) n) = z := by
+  apply existsUnique_periodicDistribution_of_polynomial_bound 1 (by norm_num) (fun _ => z) 0 ‖z‖
+  simp
+
+example (z : ℂ) : ∃! T : 𝓢'(ℝ,ℂ), IsPeriodicDistribution 3 T ∧
+    ∀ n : ℤ, T (periodCoefficientTest 3 (by norm_num) n) = if n=0 then z else 0 := by
+  apply existsUnique_periodicDistribution_of_polynomial_isBigO 3 (by norm_num) _ 1
+  apply Asymptotics.isBigO_iff.mpr
+  refine ⟨0,?_⟩
+  filter_upwards [(Filter.le_cofinite_iff_eventually_ne.mp le_rfl) (0:ℤ)] with n hn
+  simp [hn]
+
+end AppendixA1Checks
+end NLS.Fourier

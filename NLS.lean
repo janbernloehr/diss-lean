@@ -3793,3 +3793,7 @@ import NLS.ZakharovShabat.SourceSection28WeightedContinuity
 import NLS.ZakharovShabat.SourceSection28WeightedActions
 import NLS.ZakharovShabat.SourceSection28SignedIndex
 import NLS.ZakharovShabat.SourceSection28Original
+import NLS.Fourier.SmoothPeriodicTestSpace
+import NLS.Fourier.SmoothPeriodicDistribution
+import NLS.Fourier.PolynomialPeriodicDistribution
+import NLS.Fourier.PeriodicDistributionFourierGrowth
