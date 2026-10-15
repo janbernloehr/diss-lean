@@ -8,16 +8,63 @@ modules remain available; this audit follows the retained Section 12 data.
 | Source assertion | Current original-domain evidence | Remaining work |
 | --- | --- | --- |
 | One common W and actual psi family | `sourceSection13OriginalDomain` retains Lemma 12.12 and constructs original disks containing the Dirichlet roots at every complex source | None for domain and terminal geometry |
-| Beta does not depend on the admissible path or root continuation | `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value`, including different original disks and collapsed complex gaps | Construct integrable paths at open singular endpoints |
-| A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_zero`; collapsed paths also have proved integrability | Integrability at noncollapsed singular endpoints remains explicit in the general comparison |
-| Eta is independent modulo 2π of the admissible path | `eta_original_dirichlet_path_periods` for every original disk and open gap, including periodic terminals | Construct endpoint values and discharge actual/model integrability for those chosen paths |
-| Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` proves uniqueness, complex analyticity on W, and the literal estimate locally uniform in both indices at every complex source | Analyticity and estimate proved; open-endpoint path existence remains in the integral construction |
+| Beta does not depend on the admissible path or root continuation | `original_dirichlet_integral_path` constructs integrable paths; `beta_original_dirichlet_path_independent` and `beta_original_pathIntegral_eq_value` identify their values, including different disks and collapsed gaps | None for the beta integral construction and comparison |
+| A periodic terminal makes beta zero on either sheet | `beta_original_periodic_terminal_zero` and constructed integrable endpoint paths, at open and collapsed gaps | None for periodic-terminal beta values |
+| Eta is independent modulo 2π of the admissible path | `original_dirichlet_integral_path` supplies actual/model integrability; `eta_original_dirichlet_path_periods` proves invariance modulo 2π in each original disk | Identify the resulting eta integral class with the analytic charts on W |
+| Theorem 13.1(i): analytic beta and literal uniform bound | `sourceTheorem13_1_original_beta` proves uniqueness, complex analyticity on W, and the literal estimate locally uniform in both indices at every complex source | Beta endpoint integrals, analyticity, and estimate proved on the retained domain |
 | Theorem 13.1(ii): eta analytic modulo π | Earlier complex-angle charts need identification with the retained eta integrals | Audit and prove the complete same-domain assertion |
 | Theorem 13.1(iii): locally uniform beta series and o(1) | Existing summation tools remain available | Apply to the same-domain beta family and its bound |
 | Theorem 13.1(iv): real theta and analytic extension modulo π | Existing theta packages remain available | Identify the literal sum of the preceding same-domain angles |
 | Corollary 13.2: three Poisson bracket identities | Existing bracket machinery remains available | Audit identities for the same literal action/angle family and all finite p>1 |
 
-## Verified beta analyticity and estimate step
+## Verified endpoint integral construction
+
+`SourceLemma12_12Data.original_dirichlet_integral_path` constructs a
+smooth path and continuously continued square root in every supplied
+original disk containing its actual Dirichlet terminal. The root equals
+the actual terminal anti-discriminant, including when it vanishes. The
+same path realizes every off-diagonal beta numerator. No path or curve
+integrability assumption is supplied by the caller.
+
+The geometric construction uses a quadratic Bézier arc inside the
+convex disk. Its interior stays strictly on one side of the selected
+gap's line. Distances to both periodic endpoints have a common positive
+lower bound proportional to `t(1-t)`. The construction also covers a
+collapsed segment and a closed path with coincident endpoints.
+
+For an open gap, the quadratic root gives an inverse-square-root bound
+at each endpoint. The pulled-back actual angular one-forms and the eta
+model are integrable under the weight `sqrt(t(1-t))`. The full root is
+continued from the canonical interior root, with its global sign chosen
+to match the prescribed terminal value. At zero endpoints, convergence
+of the square proves convergence of the root. Collapsed-gap beta
+integrability uses the original removable extension.
+
+`beta_original_exists_improper_integral` identifies every beta with the
+joint limit of ordinary parameter integrals as both truncation endpoints
+approach independently. Thus the previously proved analytic beta and
+uniform estimate now apply to constructed literal endpoint integrals.
+At every open gap, the diagonal eta integral and its model also exist.
+General path comparisons retain explicit integrability for other paths.
+
+Twelve public checks cover collapsed closed paths, prescribed zero and
+nonzero roots, independent endpoint truncations, one path for all beta
+numerators, periodic-terminal zeros, open-gap eta/model integrability,
+and exponents 3/2 and 4. The exponent-4 check constructs the original
+domain, disks, paths, and integral values without any supplied witnesses.
+
+Next: identify the eta integral class with the analytic eta charts on
+the same W, then prove the remaining beta-series and theta assertions.
+The full Corollary 13.2 audit and the dissertation remain incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,078 build jobs, the complete
+public example suite, and the transitive axiom audit of 33,571 NLS
+declarations. The six new modules and twelve new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, all 188 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous beta analyticity and estimate step
 
 `sourceTheorem13_1_original_beta` constructs the same W₀, W, and psi root
 family retained by Lemma 12.12. Every off-diagonal beta has a unique
@@ -128,3 +175,12 @@ and `git diff --check` passes.
 | [SourceAngularOriginalBetaSelectedBound](../NLS/ZakharovShabat/SourceAngularOriginalBetaSelectedBound.lean) | Original chi bounds and one beta constant for all deleted indices on each selected chart |
 | [SourceAngularOriginalBetaBound](../NLS/ZakharovShabat/SourceAngularOriginalBetaBound.lean) | One local beta constant for all off-diagonal pairs throughout W |
 | [SourceTheorem13_1OriginalBeta](../NLS/ZakharovShabat/SourceTheorem13_1OriginalBeta.lean) | Unconditional retained-domain beta uniqueness, analyticity, and uniform estimate |
+
+| Endpoint-construction module | Verified scope |
+| --- | --- |
+| [QuadraticBezierAdmissible](../NLS/ComplexAnalysis/QuadraticBezierAdmissible.lean) | Smooth disk paths avoiding a segment, with quantitative separation from both endpoints |
+| [CanonicalRootPathExtension](../NLS/ComplexAnalysis/CanonicalRootPathExtension.lean) | Continuous continuation with any valid terminal root, including zero |
+| [TwoEndpointSquareRootIntegrability](../NLS/ComplexAnalysis/TwoEndpointSquareRootIntegrability.lean) | Integrability at both branch endpoints and independent two-parameter truncation limits |
+| [SourceAngularAdmissiblePathConstruction](../NLS/ZakharovShabat/SourceAngularAdmissiblePathConstruction.lean) | Actual original-disk paths with prescribed Dirichlet normalization |
+| [SourceAngularTransversePathIntegrability](../NLS/ZakharovShabat/SourceAngularTransversePathIntegrability.lean) | Actual angular and eta-model integrability at every open complex gap |
+| [SourceAngularOriginalEndpointIntegrals](../NLS/ZakharovShabat/SourceAngularOriginalEndpointIntegrals.lean) | One constructed path for all off-diagonal beta values and their literal improper integral limits |

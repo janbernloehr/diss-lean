@@ -6345,3 +6345,50 @@ declarations. The six new modules and twelve new checks are warning-free;
 the 21 existing warnings remain. The source inventory verifies all 156
 candidate labels, all 182 checked local Markdown file links resolve,
 and `git diff --check` passes.
+
+## Section 13 constructed endpoint integrals
+
+`SourceLemma12_12Data.original_dirichlet_integral_path` constructs a
+smooth path and continuously continued square root in every supplied
+original disk containing its actual Dirichlet terminal. The root equals
+the actual terminal anti-discriminant, including when it vanishes. The
+same path realizes every off-diagonal beta numerator. No path or curve
+integrability assumption is supplied by the caller.
+
+The geometric construction uses a quadratic Bézier arc inside the
+convex disk. Its interior stays strictly on one side of the selected
+gap's line. Distances to both periodic endpoints have a common positive
+lower bound proportional to `t(1-t)`. The construction also covers a
+collapsed segment and a closed path with coincident endpoints.
+
+For an open gap, the quadratic root gives an inverse-square-root bound
+at each endpoint. The pulled-back actual angular one-forms and the eta
+model are integrable under the weight `sqrt(t(1-t))`. The full root is
+continued from the canonical interior root, with its global sign chosen
+to match the prescribed terminal value. At zero endpoints, convergence
+of the square proves convergence of the root. Collapsed-gap beta
+integrability uses the original removable extension.
+
+`beta_original_exists_improper_integral` identifies every beta with the
+joint limit of ordinary parameter integrals as both truncation endpoints
+approach independently. Thus the previously proved analytic beta and
+uniform estimate now apply to constructed literal endpoint integrals.
+At every open gap, the diagonal eta integral and its model also exist.
+General path comparisons retain explicit integrability for other paths.
+
+Twelve public checks cover collapsed closed paths, prescribed zero and
+nonzero roots, independent endpoint truncations, one path for all beta
+numerators, periodic-terminal zeros, open-gap eta/model integrability,
+and exponents 3/2 and 4. The exponent-4 check constructs the original
+domain, disks, paths, and integral values without any supplied witnesses.
+
+Next: identify the eta integral class with the analytic eta charts on
+the same W, then prove the remaining beta-series and theta assertions.
+The full Corollary 13.2 audit and the dissertation remain incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,078 build jobs, the complete
+public example suite, and the transitive axiom audit of 33,571 NLS
+declarations. The six new modules and twelve new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, all 188 checked local Markdown file links resolve,
+and `git diff --check` passes.

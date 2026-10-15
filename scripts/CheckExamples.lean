@@ -52471,3 +52471,154 @@ example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧
   exact ⟨W₀,W,hW,hr,s,H,ha⟩
 
 end Section13OriginalBetaChecks
+
+section Section13EndpointChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter Topology MeasureTheory
+open scoped ENNReal unitInterval
+
+-- A collapsed gap still admits a nonconstant closed admissible path.
+example : ∃ γ : Path (0:ℂ) 0, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
+    (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball (0:ℂ) 1) ∧
+    ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ≠ 0 := by
+  obtain ⟨γ,hγ,hball,k,hk,hsep⟩ := exists_bezier_admissible_path (0:ℂ) 0 0 0 1 (by simp) (by simp)
+  refine ⟨γ,hγ,hball,?_⟩
+  intro t ht
+  simpa using (hsep t ht).1
+
+-- Both singular endpoints can be approached independently.
+example {a b : ℂ} (omegaForm : ℂ → ℂ →L[ℂ] ℂ) (γ : Path a b) (hint : CurveIntegrable omegaForm γ) :
+    Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2, curveIntegralFun omegaForm γ t)
+      ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 (∫ᶜ z in γ, omegaForm z)) :=
+  tendsto_curveIntegral_truncations omegaForm γ hint
+
+example (a r b o : ℂ) (R : ℝ) (ha : a ∈ ball o R) (hb : b ∈ ball o R) :
+    ∃ γ : Path a b, ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
+      (∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ ball o R) ∧
+      ∃ k : ℝ, 0 < k ∧ ∀ t ∈ Ioo (0:ℝ) 1,
+        γ.extend t ∉ segment ℝ a r ∧
+        k*t*(1-t) ≤ ‖a-γ.extend t‖ ∧ k*t*(1-t) ≤ ‖r-γ.extend t‖ :=
+  exists_bezier_admissible_path a r b o R ha hb
+
+example (F R : ℂ → ℂ) (D : Set ℂ) (hF : AnalyticOnNhd ℂ F univ)
+    (hR : ContinuousOn R D) (hsq : ∀ z ∈ D, R z^2 = F z) {a b : ℂ} (γ : Path a b)
+    (ha : a ∉ D) (hFa : F a = 0) (hγ : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ D)
+    (w : ℂ) (hw : F b = w^2) :
+    ∃ Q : ℂ → ℂ, ContinuousOn (fun t : ℝ => Q (γ.extend t)) (Icc 0 1) ∧
+      (∀ t ∈ Icc (0:ℝ) 1, Q (γ.extend t)^2 = F (γ.extend t)) ∧ Q a = 0 ∧ Q b = w := by
+  obtain ⟨Q,hQ,hroot,h0,h1,_⟩ := exists_continuous_canonical_path_root F R D hF hR hsq γ ha hFa hγ w hw
+  exact ⟨Q,hQ,hroot,h0,h1⟩
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (H : SourceLemma12_12Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W) (m : ℤ)
+  (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+  (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+
+-- The prescribed root may be zero or nonzero, with no path supplied.
+example (b : ℂ) (hb : b ∈ ball (P.center:ℂ) P.radius) (w : ℂ)
+    (hw : sourceAngularRadicand hp (b,ψ) = w^2) :
+    ∃ Q : ℂ × CoeffPair p → ℂ,
+      ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) b,
+        SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+        ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧ Q (b,ψ) = w := by
+  obtain ⟨Q,γ,hQ,hγ,hbQ,_,_⟩ := P.exists_admissible_path_root b hb w hw
+  exact ⟨Q,γ,hQ,hγ,hbQ⟩
+
+-- The actual terminal anti-discriminant normalization is unconditional.
+example : ∃ Q : ℂ × CoeffPair p → ℂ,
+    ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+      SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+      Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) := by
+  obtain ⟨Q,γ,hQ,_,hnorm,_,_⟩ := P.exists_dirichlet_admissible_path_root hμ
+  exact ⟨Q,γ,hQ,hnorm⟩
+
+-- A single constructed path realizes all off-diagonal numerators.
+example : ∃ Q : ℂ × CoeffPair p → ℂ,
+    ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+      SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+      ContDiffOn ℝ 1 γ.extend (Icc 0 1) ∧
+      ∀ n : ℤ, m ≠ n →
+        CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ ∧
+        sourceAngularPathIntegral n s Q ψ γ = sourceAngularBeta hp hp1 n m s ψ := by
+  obtain ⟨Q,γ,hQ,hγ,_,hint,_⟩ := H.original_dirichlet_integral_path ψ hψ m P hμ
+  exact ⟨Q,γ,hQ,hγ,hint⟩
+
+example (n : ℤ) (hmn : m ≠ n) : ∃ Q : ℂ × CoeffPair p → ℂ,
+    ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+      SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+      CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ ∧
+      Tendsto (fun u : ℝ × ℝ => ∫ t in u.1..u.2,
+        curveIntegralFun (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ t)
+        ((𝓝[>] (0:ℝ)) ×ˢ (𝓝[<] (1:ℝ))) (𝓝 (sourceAngularBeta hp hp1 n m s ψ)) := by
+  obtain ⟨Q,γ,hQ,_,_,hint,hl⟩ := H.beta_original_exists_improper_integral ψ hψ n m hmn P hμ
+  exact ⟨Q,γ,hQ,hint,hl⟩
+
+example (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
+    canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) :
+    ∃ Q : ℂ × CoeffPair p → ℂ,
+      ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+        (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+        SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+        CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,ψ))) γ ∧
+        CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 m ψ Q)) γ := by
+  obtain ⟨Q,γ,hQ,_,_,_,hint⟩ := H.original_dirichlet_integral_path ψ hψ m P hμ
+  exact ⟨Q,γ,hQ,hint hgap⟩
+
+example (n : ℤ) (hmn : m ≠ n) (hend : SourceAngularDirichletTerminalIsEndpoint hp hp1 ψ m) :
+    ∃ Q : ℂ × CoeffPair p → ℂ,
+      ∃ γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+        (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m),
+        SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ ∧
+        CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ ∧
+        sourceAngularPathIntegral n s Q ψ γ = 0 := by
+  obtain ⟨Q,γ,hQ,_,_,hint,_⟩ := H.original_dirichlet_integral_path ψ hψ m P hμ
+  exact ⟨Q,γ,hQ,(hint n hmn).1,(hint n hmn).2.trans
+    (sourceAngularBeta_eq_zero_of_endpoint hp hp1 n m s ψ hend)⟩
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- No original disk, path, root continuation, or integrability assumption is supplied.
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := 4) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ χ ∈ W, ∀ m : ℤ, ∃ P : SourceCriticalRootPeriodCircle (p := 4) (by norm_num) (by norm_num) χ m,
+        ∃ Q : ℂ × CoeffPair (4:ℝ≥0∞) → ℂ,
+          ∃ γ : Path (canonicalPeriodicLeft (p := 4) (by norm_num) (by norm_num)
+            (periodOnePotential χ) (periodOnePotential_mem χ) m)
+            (canonicalPeriodOneBoundaryRoots (p := 4) (by norm_num) (by norm_num) .dirichlet χ m),
+            SourceAngularAdmissiblePathRootData (p := 4) (by norm_num) (by norm_num) m χ (P.center:ℂ) P.radius Q γ ∧
+            ∀ n : ℤ, m ≠ n →
+              CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,χ))) γ ∧
+              sourceAngularPathIntegral n s Q χ γ = sourceAngularBeta (p := 4) (by norm_num) (by norm_num) n m s χ := by
+  obtain ⟨W₀,_,_,_,W,hW,hs,hr,s,H⟩ := sourceLemma12_12 (p := 4) (by norm_num) (by norm_num)
+  refine ⟨W₀,W,hW,hs,hr,s,H,?_⟩
+  intro χ hχ m
+  obtain ⟨P,hμ⟩ := H.angular_original_circles χ hχ
+  obtain ⟨Q,γ,hQ,_,_,hint,_⟩ := H.original_dirichlet_integral_path χ hχ m (P m) (hμ m)
+  exact ⟨P m,Q,γ,hQ,hint⟩
+
+example {W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n}
+    (H : SourceLemma12_12Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W s)
+    (χ : CoeffPair (ENNReal.ofReal (3/2))) (hχ : χ ∈ W) (m : ℤ)
+    (hgap : canonicalPeriodicLeft (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) m ≠
+      canonicalPeriodicRight (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) m) :
+    ∃ Q : ℂ × CoeffPair (ENNReal.ofReal (3/2)) → ℂ,
+      ∃ γ : Path (canonicalPeriodicLeft (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) m)
+        (canonicalPeriodOneBoundaryRoots (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) .dirichlet χ m),
+        CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,χ))) γ ∧
+        CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand
+          (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) m χ Q)) γ := by
+  obtain ⟨P,hμ⟩ := H.angular_original_circles χ hχ
+  obtain ⟨Q,γ,_,_,_,_,hint⟩ := H.original_dirichlet_integral_path χ hχ m (P m) (hμ m)
+  exact ⟨Q,γ,hint hgap⟩
+
+end Section13EndpointChecks
