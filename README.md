@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Q* is invertible on the full original real domain. The actual
-Jacobian inverses converge in norm, and one complex radius and inverse
-bound work for every omitted index near each real-domain point, on both
-the full and deleted spaces.
+Latest step: Lemma 12.10 is complete. All original real solution maps
+extend to one open simply connected complex domain, with local placement
+in the original isolating disks. A verified counterexample corrects the
+printed source-only estimate for independently varying roots.
 
-Next: complete Lemma 12.10's common analytic solution extension with
-original-disk placement. The dissertation remains incomplete.
+Next: Lemma 12.11's diagonal period normalization. The dissertation remains
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

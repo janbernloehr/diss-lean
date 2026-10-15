@@ -51658,3 +51658,138 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceLemma1210InverseChecks
+
+namespace SourceLemma1210ExtensionChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology Metric
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (H : SourceLemma12_10Data hp hp1 W₀ W s)
+variable (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (φ : realTypeSourceLocus p) (hφV : φ.val ∈ V)
+
+-- The margin is uniform on the entire compact gap product in the supplied disks.
+example : ∃ μ : ℝ, 0 < μ ∧ ∀ a ∈ sourcePeriodicGapRootSet hp hp1 φ.val,
+    ball a μ ⊆ sourcePsiOriginalRootPlacement D :=
+  hD.originalGapProduct_margin φ.val hφV
+
+example (A : SourcePsiComplexRootAtlas hp hp1) :
+    ∃ δ : ℝ, 0 < δ ∧ ball φ.val δ ⊆ A.domain ∩ V ∧
+      ∀ ψ ∈ ball φ.val δ, ∀ n : ℤ,
+        sourcePsiFillDeletedRoot n (A.branch n ψ) (sourceStandardRootMidpoint hp hp1 ψ n) ∈
+          sourcePsiOriginalRootPlacement D :=
+  A.original_filled_placement_near_real hD hV φ hφV
+
+-- Previous source results concern exactly the same W₀ and root family.
+example : SourceProposition12_9Data hp hp1 W₀ := H.previous
+example : SourceTheorem12_1Data hp hp1 W₀ W s := H.psi
+example : W ⊆ W₀ := H.subset
+
+-- Both index directions use one domain.
+example : AnalyticOnNhd ℂ (s (-100)) W ∧ AnalyticOnNhd ℂ (s 100) W :=
+  ⟨H.analytic (-100),H.analytic 100⟩
+
+example (n : ℤ) (χ : realTypeSourceSubmodule p) :
+    s n χ = RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal hp hp1 n χ) :=
+  H.real_agreement n χ
+
+-- Any original real solution is the restriction of this extension.
+example (n : ℤ) (χ : realTypeSourceSubmodule p) (a : RealDeletedCoeff p n)
+    (ha : SourcePsiOriginalRealSolution hp hp1 n χ a) :
+    s n χ = RealDeletedCoeff.complexCLM n a := by
+  rw [H.previous.unique n χ a ha]
+  exact H.real_agreement n χ
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourcePsiOriginalEquation hp hp1 n (s n ψ) ψ = 0 :=
+  H.equation ψ hψ n
+
+-- All supplied original disks survive source-neighborhood restriction unchanged.
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ φ.val ∈ U ∧ U ⊆ V ∧
+    SourceIsolatingNeighborhoods hp hp1 U D c ∧
+    ∀ ψ ∈ W ∩ U, ∀ n m : ℤ, m ≠ n → displacedRoots (s n ψ:Coeff p) m ∈ D m :=
+  H.original_assignment hD hV φ hφV
+
+-- The original isolating family is constructed, not merely assumed to exist.
+example : ∃ V : Set (CoeffPair p), ∃ D : ℤ → Set ℂ, ∃ c : ℝ,
+    IsOpen V ∧ IsConnected V ∧ φ.val ∈ V ∧ V ⊆ W₀ ∧
+    SourceIsolatingNeighborhoods hp hp1 V D c ∧
+    ∀ ψ ∈ W ∩ V, ∀ n m : ℤ, m ≠ n → displacedRoots (s n ψ:Coeff p) m ∈ D m :=
+  H.local_original_isolation φ
+
+-- Filling the omitted coordinate gives an actual full original placed root vector.
+example : ∃ δ : ℝ, 0 < δ ∧ ball φ.val δ ⊆ W ∩ V ∧
+    ∀ ψ ∈ ball φ.val δ, ∀ n : ℤ,
+      sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n) ∈
+        sourcePsiOriginalRootPlacement D :=
+  H.original_filled_placement hD hV φ hφV
+
+-- The extension is constructed within any retained original source domain.
+example (H9 : SourceProposition12_9Data hp hp1 W₀) (hW₀ : IsOpen W₀)
+    (hR : realTypeSourceLocus p ⊆ W₀) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n, SourceLemma12_10Data hp hp1 W₀ W s :=
+  H9.lemma12_10 hW₀ hR
+
+variable (H4 : SourceLemma12_4Data hp hp1 W₀) (hW₀ : IsOpen W₀)
+variable (h0W : (0:CoeffPair p) ∈ W₀) (h0V : (0:CoeffPair p) ∈ V)
+
+-- Arbitrarily small real placed-root variations change an actual Jacobian at fixed source.
+example (r : ℝ) (hr : 0 < r) :
+    ∃ a : Coeff p, a ∈ ball 0 r ∧ a ∈ sourcePsiOriginalRootPlacement D ∧
+      (∀ j : ℤ, (a j).im = 0) ∧ ∃ n : ℤ,
+        sourcePsiOriginalFullRootJacobian hp hp1 n a (0:CoeffPair p) ≠
+          sourcePsiOriginalFullRootJacobian hp hp1 n 0 (0:CoeffPair p) :=
+  H4.original_free_root_variation_on_every_ball hW₀ hD hV h0W h0V r hr
+
+example : ¬ ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, ∀ a : Coeff p, a ∈ ball 0 r →
+    a ∈ sourcePsiOriginalRootPlacement D → (∀ j : ℤ, (a j).im = 0) → ∀ n : ℤ,
+    ‖sourcePsiOriginalFullRootJacobian hp hp1 n a (0:CoeffPair p)-
+      sourcePsiOriginalFullRootJacobian hp hp1 n 0 (0:CoeffPair p)‖ ≤ C*‖(0:CoeffPair p)-0‖ :=
+  H4.original_free_no_sourceOnly_bound hW₀ hD hV h0W h0V
+
+-- The printed estimate fails for genuine deleted blocks as well as full extensions.
+example : ¬ ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, ∀ a : Coeff p, a ∈ ball 0 r →
+    a ∈ sourcePsiOriginalRootPlacement D → (∀ j : ℤ, (a j).im = 0) → ∀ n : ℤ,
+    ‖sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) (0:CoeffPair p)-
+      sourcePsiOriginalRootJacobian hp hp1 n 0 (0:CoeffPair p)‖ ≤ C*‖(0:CoeffPair p)-0‖ :=
+  H4.original_free_no_sourceOnly_deleted_bound hW₀ hD hV h0W h0V
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W₀ : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus _ ⊆ W₀ ∧
+    ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus _ ⊆ W ∧
+      ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n,
+        SourceLemma12_10Data (by norm_num) (by norm_num) W₀ W s :=
+  sourceLemma12_10 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+-- End-to-end source statement: one domain and a constructed original family at every real source.
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus _ ⊆ W₀ ∧ IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ W ⊆ W₀ ∧
+    ∃ s : (n : ℤ) → CoeffPair (4:ℝ≥0∞) → DeletedCoeff (4:ℝ≥0∞) n,
+      (∀ n, AnalyticOnNhd ℂ (s n) W) ∧
+      (∀ n, ∀ φ : realTypeSourceSubmodule (4:ℝ≥0∞),
+        s n φ = RealDeletedCoeff.complexCLM n (sourcePsiOriginalRootReal (by norm_num) (by norm_num) n φ)) ∧
+      ∀ φ : realTypeSourceLocus (4:ℝ≥0∞), ∃ V : Set (CoeffPair (4:ℝ≥0∞)), ∃ D : ℤ → Set ℂ, ∃ c : ℝ,
+        IsOpen V ∧ IsConnected V ∧ φ.val ∈ V ∧ V ⊆ W₀ ∧
+        SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c ∧
+        ∀ ψ ∈ W ∩ V, ∀ n m : ℤ, m ≠ n → displacedRoots (s n ψ:Coeff (4:ℝ≥0∞)) m ∈ D m := by
+  obtain ⟨W₀,ho,hc,hr,W,hW,hs,hrW,s,H⟩ :=
+    sourceLemma12_10 (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,ho,hc,hr,hW,hs,hrW,H.subset,s,H.analytic,H.real_agreement,H.local_original_isolation⟩
+
+-- The refutation also includes an existing original isolating family.
+example : ∃ V : Set (CoeffPair (4:ℝ≥0∞)), ∃ D : ℤ → Set ℂ, ∃ c : ℝ,
+    IsOpen V ∧ (0:CoeffPair (4:ℝ≥0∞)) ∈ V ∧ SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c ∧
+    ¬ ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, ∀ a : Coeff (4:ℝ≥0∞), a ∈ ball 0 r →
+      a ∈ sourcePsiOriginalRootPlacement D → (∀ j : ℤ, (a j).im = 0) → ∀ n : ℤ,
+      ‖sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) n (Coeff.deleteCoordinateTo n a) (0:CoeffPair (4:ℝ≥0∞))-
+        sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) n 0 (0:CoeffPair (4:ℝ≥0∞))‖ ≤ C*‖(0:CoeffPair (4:ℝ≥0∞))-0‖ :=
+  sourceLemma12_10_no_sourceOnly_deleted_bound (by norm_num) (by norm_num)
+
+end
+end SourceLemma1210ExtensionChecks

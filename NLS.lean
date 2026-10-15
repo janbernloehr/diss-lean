@@ -3606,3 +3606,6 @@ import NLS.ZakharovShabat.SourcePsiOriginalInverseLimit
 import NLS.ZakharovShabat.SourcePsiOriginalComplexJacobianCharts
 import NLS.ZakharovShabat.SourcePsiOriginalComplexInverseBounds
 import NLS.ZakharovShabat.SourceLemma12_10InverseBounds
+import NLS.ZakharovShabat.SourcePsiOriginalAtlasPlacement
+import NLS.ZakharovShabat.SourceLemma12_10
+import NLS.ZakharovShabat.SourcePsiOriginalSourceOnlyCounterexample

@@ -6119,3 +6119,44 @@ suite passed, and the transitive axiom audit passed for 33317 NLS
 declarations. The six new modules and eighteen new checks are warning-free;
 the 21 existing warnings remain. The source inventory verifies all 156
 candidate labels, and all 151 checked local Markdown file links resolve.
+
+## Lemma 12.10: common original-domain extension
+
+`sourceLemma12_10` completes the common complex extension for every finite
+1<p<∞. One open simply connected W lies inside the unchanged Proposition
+12.9 domain W₀ and contains the entire real-type source locus. All actual
+original real solution maps extend analytically to this same W, and the
+extensions solve the actual original equation. The package retains
+Proposition 12.9 and Theorem 12.1 for exactly these domains and root maps.
+
+For every supplied original disk family, compactness of the full gap
+product gives a common placement margin. Uniform stability of the analytic
+branches then places all retained roots, and the moving-midpoint fill,
+in the same disks on one source ball independent of the omitted index.
+The source neighborhood may shrink; the disks and comparison constant
+are unchanged. Existing original isolating families also give the literal
+local placement assertion on W∩V at every real-type source.
+
+The printed p. 69 source-only Jacobian estimate is false when roots vary
+independently. Arbitrarily small real placed-root perturbations change an
+actual Jacobian at the fixed free source, making its proposed right-hand
+side zero. This is proved for both full extensions and genuine deleted
+blocks, with an existing original disk family. The previously proved
+joint root/source estimate supplies the needed control. This correction
+does not rule out source-only estimates along a prescribed solution graph.
+
+Nineteen new public checks cover the common domain, actual real-solution
+agreement and original equation, retained preceding data, uniform original
+disk placement, the midpoint fill, constructed local families, both forms
+of the counterexample, and exponents 3/2 and 4. An end-to-end example
+states the full extension and local original-placement conclusion.
+
+Next: Lemma 12.11, the remaining diagonal period normalization. The
+dissertation remains incomplete; Lemma 12.10 is complete with the precise
+uniformity clarification and estimate correction recorded in SOURCE_ERRATA.md.
+
+Validation: the full build passed 7046 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33349 NLS
+declarations. The three new modules and nineteen new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, and all 154 checked local Markdown file links resolve.

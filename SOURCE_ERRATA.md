@@ -32,10 +32,40 @@ not a negation of mathlib's weaker local-uniform statement. The positive
 result `sourceLemma12_10_normLimit` proves that statement on every
 original real Ωᵖ while retaining Proposition 12.9 and the same W.
 Original-domain invertibility and common local complex inverse bounds
-are now proved. Full Lemma 12.10 still requires the common analytic
-solution extension on the original domains. Its subsequent source-only
-Lipschitz estimate remains under audit; the established complex estimate
-uses joint root/source distance.
+are now proved, as is the common analytic solution extension on the
+original domains. Lemma 12.10 is complete with this quantifier clarification
+and the source-only estimate correction below.
+
+## Lemma 12.10: independently varying roots require a root-distance term
+
+Printed p. 69 states an estimate of the form
+
+    ‖Qⁿ(ψ,t)−Qⁿ(φ,s)‖ ≤ C ‖ψ−φ‖
+
+on a joint source/root neighborhood. If t and s vary independently,
+this is false even with ψ=φ=0. Every root ball about zero contains a
+nonzero real spike placed in the original disks which changes at least
+one actual full Jacobian Qⁿ. The source difference is zero, so no finite
+constant can bound that nonzero operator difference by the displayed
+right-hand side. The same obstruction holds for the actual deleted blocks.
+
+`original_free_spike_limit_ne_zeroRoot` first proves that the spike changes
+Q*. Operator-norm convergence then forces at least one Qⁿ to change.
+`original_free_root_variation_on_every_ball` supplies such inputs in every
+ball, and `original_free_no_sourceOnly_bound` and
+`original_free_no_sourceOnly_deleted_bound` negate the proposed bounds.
+`sourceLemma12_10_no_sourceOnly_deleted_bound` constructs an existing
+original isolating family for every finite p>1, so the counterexample is
+not conditional on hypothetical disk data.
+
+The proved replacement controls the joint distance of roots and sources,
+uniformly in n on a common complex ball. It gives the common inverse
+bounds used in the formalization. The common analytic extension itself
+is proved by `sourceLemma12_10`, with exact agreement on the original
+real solutions and placement in the original disks on smaller source
+neighborhoods. This counterexample does not rule out source-only estimates
+along a prescribed Lipschitz solution graph, where the root difference
+can be controlled by the source difference.
 
 ## Lemma 12.5: the nonvanishing sentence names the wrong gap
 
