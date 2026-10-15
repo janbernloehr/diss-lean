@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Current milestone: Section 20 physical H¹ energy bracket at finite-gap sources
+## Current milestone: physical momentum and translation on complex H¹
+
+The independently defined physical momentum now has an explicit, unique
+Hilbert cotangent at every complex H¹ source. Periodic integration by parts
+proves that its H¹ restriction is the full complex Fréchet differential.
+The cotangent depends boundedly and complex linearly on the source, and
+its original Hamiltonian direction is exactly the physical period-one
+spatial derivative in both components.
+
+A strong derivative theorem for diagonal phase flows permits unbounded
+frequencies at every finite Banach exponent. Applied to the multiplier
+2πin, it proves that this Hamiltonian direction is the actual L² tangent
+of the spatial-translation orbit for every complex H¹ source. The momentum
+bracket of any differentiable Hilbert functional is its translation
+derivative; translation-invariant functionals have zero bracket.
+
+The original angle–momentum bracket is now analytic throughout its
+complex H¹ open-gap domain. A constructed local angle realizes it as an
+actual translation derivative. At real finite-gap sources it is minus
+the full physical momentum derivative along the constructed H¹ angle
+vector, and minus the physical H₂ action derivative. The flow identity
+holds at every time before collapse, including negative times.
+
+Five new modules and 25 public checks cover these results, including
+positive, negative, and zero Fourier modes and the retained original
+family. See [the Section 20 audit](coverage/SECTION_20.md).
+
+Next: integrate the quadratic-contour formula for physical momentum and
+the angle–momentum identity 2πn into the public library. Then obtain H¹
+regularity of the general angle vector and
+extend Section 20's physical energy bracket by density and complex
+continuation. Fixed-tail reconstruction alone does not give the needed
+uniform control. The original Section 21 audit follows those steps;
+Section 14's external Hilbert-map and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,156
+jobs, all 5,617 public examples pass, and the transitive axiom audit checks
+34,141 NLS declarations. The five new modules and 25 new checks introduce
+no warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 315 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 20 physical H¹ energy bracket at finite-gap sources
 
 The original angle Hamiltonian now has a constructed, unique H¹ tangent
 at every real finite-gap source with an open selected gap. The proof first

@@ -54,8 +54,13 @@ counterexample. At every real finite-gap source with an open selected gap,
 the original angle vector now has a unique constructed H¹ lift; the actual
 angle flow differentiates to it in H¹ throughout its pre-collapse interval.
 The physical energy differential and original Poisson bivector recover the
-same frequency. The general complex H¹ Poisson identity in Section 20
-remains open, followed by the original Section 21 assertions.
+same frequency. Physical momentum now has a unique Hilbert cotangent at
+every complex H¹ source and generates the actual spatial-translation orbit.
+The original angle–momentum bracket is analytic on its complex H¹ open-gap
+domain and is calibrated with the physical H₂ action derivative at real
+finite-gap sources. Its expected value 2πn and the general complex H¹
+energy Poisson identity in Section 20 remain open, followed by the original
+Section 21 assertions.
 
 ## Nonextension proof and limits
 

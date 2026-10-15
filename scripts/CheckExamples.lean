@@ -54603,3 +54603,179 @@ example : ∃ W₀ W V : Set (CoeffPair 2), ∃ s,
   exact ⟨W₀,W,V,s,D,φ,hf,hn,D.complex.finiteGapThetaSobolevVector_ne_zero D.previous.original_theta_common_domain φ hf 0 hn⟩
 
 end OriginalSection20EnergyWitness
+
+section Section20Momentum
+open NLS NLS.ZakharovShabat NLS.Poisson
+open scoped ENNReal Topology
+
+-- Physical momentum, translation, and the original angle bracket on H¹.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    HasFDerivAt periodOneSobolevMomentum
+      ((sourceSobolevMomentumCotangent a).comp sobolevSourceInclusion) a :=
+  hasFDerivAt_periodOneSobolevMomentum a
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (L : CoeffPair 2 →L[ℂ] ℂ)
+    (hL : HasFDerivAt periodOneSobolevMomentum (L.comp sobolevSourceInclusion) a) :
+    L = sourceSobolevMomentumCotangent a := sourceSobolevMomentumCotangent_unique a L hL
+
+example : AnalyticOnNhd ℂ sourceSobolevMomentumCotangent Set.univ :=
+  fun a _ => sourceSobolevMomentumCotangent.analyticAt a
+
+example (a b : ScalarDomain 2) :
+    reflectedHilbertPairing (scalarInclusion a) (periodOneDerivative b) =
+      -reflectedHilbertPairing (periodOneDerivative a) (scalarInclusion b) :=
+  reflectedHilbertPairing_periodOneDerivative a b
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    CoeffPair.cotangentCoefficients le_rfl (sourceSobolevMomentumCotangent a) =
+      ((-Complex.I) • Coeff.reflection (periodOneDerivative a.2),
+        Complex.I • Coeff.reflection (periodOneDerivative a.1)) :=
+  sourceSobolevMomentumCotangent_coefficients a
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    sourceHamiltonianDirection le_rfl (sourceSobolevMomentumCotangent a) =
+      sourceSobolevSpatialDerivative a := sourceHamiltonianDirection_momentum a
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (L : CoeffPair 2 →L[ℂ] ℂ) :
+    sourceBivector le_rfl L (sourceSobolevMomentumCotangent a) =
+      L (sourceSobolevSpatialDerivative a) := sourceBivector_momentum a L
+
+example (a b z : ℂ) :
+    sourceSobolevMomentumCotangent (scalarMode 2 a,scalarMode (-2) b)
+      (CoeffPair.inlCLM (lp.single 2 2 z)) = (-4*(Real.pi : ℂ))*b*z := by
+  simp [reflectedHilbertPairing_apply, periodOneDerivative_apply, scalarMode_apply,
+    lp.single_apply, Pi.single_apply, mul_ite, ite_mul, neg_eq_iff_eq_neg]
+  ring_nf
+  simp [Complex.I_sq]
+
+example (a b z : ℂ) :
+    sourceSobolevMomentumCotangent (scalarMode (-3) a,scalarMode 3 b)
+      (CoeffPair.inrCLM (lp.single 2 3 z)) = (6*(Real.pi : ℂ))*a*z := by
+  simp [reflectedHilbertPairing_apply, periodOneDerivative_apply, scalarMode_apply,
+    lp.single_apply, Pi.single_apply, mul_ite, ite_mul, neg_eq_iff_eq_neg]
+  ring_nf
+  simp [Complex.I_sq]
+
+example (a b : ℂ) : sourceSobolevMomentumCotangent (scalarMode 0 a,scalarMode 0 b) = 0 := by
+  have he (z : ℂ) : periodOneDerivative (scalarMode 0 z) = 0 := by
+    ext n
+    by_cases hn : n = 0
+    · subst n; simp
+    · simp [periodOneDerivative_apply, scalarMode_apply, hn]
+  apply ContinuousLinearMap.ext
+  intro h
+  simp only [sourceSobolevMomentumCotangent_apply, he, map_zero, zero_apply,
+    mul_zero, add_zero]
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (freq : ℤ → ℝ) (a v : Coeff p)
+    (hv : ∀ n, v n = Complex.I * (freq n : ℂ) * a n) (t : ℝ) :
+    HasDerivAt (fun r => Coeff.phaseFlow freq r a) (Coeff.phaseFlow freq t v) t :=
+  Coeff.hasDerivAt_phaseFlow hp freq a v hv t
+
+example (a : ScalarDomain 2) (t : ℝ) :
+    HasDerivAt (fun r => Coeff.spatialTranslation (2*Real.pi) r (scalarInclusion a))
+      (Coeff.spatialTranslation (2*Real.pi) t (periodOneDerivative a)) t :=
+  hasDerivAt_periodOneSpatialTranslation a t
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (t : ℝ) :
+    HasDerivAt (fun r => sourceSpatialTranslation r (sobolevSourceInclusion a))
+      (sourceSpatialTranslation t (sourceSobolevSpatialDerivative a)) t :=
+  hasDerivAt_sourceSpatialTranslation_sobolev a t
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    HasDerivAt (fun r => sourceSpatialTranslation r (sobolevSourceInclusion a))
+      (sourceHamiltonianDirection le_rfl (sourceSobolevMomentumCotangent a)) 0 :=
+  hasDerivAt_sourceSpatialTranslation_momentum a
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (F : CoeffPair 2 → ℂ)
+    (hF : DifferentiableAt ℂ F (sobolevSourceInclusion a)) :
+    HasDerivAt (fun r => F (sourceSpatialTranslation r (sobolevSourceInclusion a)))
+      (sourceBivector le_rfl (fderiv ℂ F (sobolevSourceInclusion a))
+        (sourceSobolevMomentumCotangent a)) 0 :=
+  hasDerivAt_sourceSpatialTranslation_functional a F hF
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (F : CoeffPair 2 → ℂ)
+    (hF : DifferentiableAt ℂ F (sobolevSourceInclusion a))
+    (hinv : ∀ r : ℝ, F (sourceSpatialTranslation r (sobolevSourceInclusion a)) =
+      F (sobolevSourceInclusion a)) :
+    sourceBivector le_rfl (fderiv ℂ F (sobolevSourceInclusion a))
+      (sourceSobolevMomentumCotangent a) = 0 :=
+  sourceBivector_momentum_eq_zero_of_translation_invariant a F hF hinv
+
+example (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (a : ScalarDomain 2 × ScalarDomain 2) :
+    sourceSobolevThetaMomentumBracket n s a = sourceAngularThetaDifferential
+      (by simp) (by norm_num) n s (sobolevSourceInclusion a) (sourceSobolevSpatialDerivative a) :=
+  sourceSobolevThetaMomentumBracket_eq_spatial n s a
+
+example (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (a h : ScalarDomain 2 × ScalarDomain 2)
+    (hh : sobolevSourceInclusion h = sourceAngularThetaHamiltonianVector
+      (by simp) (by norm_num) le_rfl n s (sobolevSourceInclusion a)) :
+    sourceSobolevThetaMomentumBracket n s a = -(fderiv ℂ periodOneSobolevMomentum a h) :=
+  sourceSobolevThetaMomentumBracket_eq_neg_derivative n s a h hh
+
+section
+variable {W₀ B W V₀ C V : Set (CoeffPair 2)}
+  {s u : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+  (E : SourceAngularThetaCommonDomainData (by simp) (by norm_num) V₀ C V u)
+
+example (n : ℤ) : AnalyticOnNhd ℂ (sourceSobolevThetaMomentumBracket n u)
+    {a | sobolevSourceInclusion a ∈ V ∧ canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a)) (periodOnePotential_mem _) n ≠ 0} :=
+  E.analyticOnNhd_sobolevThetaMomentumBracket n
+
+example (n : ℤ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ V)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a)) (periodOnePotential_mem _) n ≠ 0) :
+    ∃ θ : CoeffPair 2 → ℂ, AnalyticAt ℂ θ (sobolevSourceInclusion a) ∧
+      sourceAngularThetaDifferential (by simp) (by norm_num) n u =ᶠ[𝓝 (sobolevSourceInclusion a)]
+        (fun φ => fderiv ℂ θ φ) ∧
+      HasDerivAt (fun r => θ (sourceSpatialTranslation r (sobolevSourceInclusion a)))
+        (sourceSobolevThetaMomentumBracket n u a) 0 :=
+  E.exists_local_theta_translation_derivative n a ha hn
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n u (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) =
+      -(fderiv ℂ periodOneSobolevMomentum (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf)
+        (D.finiteGapThetaSobolevVector E φ hf n hn)) :=
+  D.finiteGap_momentum_bracket E φ hf n hn
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0)
+    (t : ℝ) (ht : t < (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) :
+    HasDerivAt (D.physicalActionReductionHamiltonian φ hf n 2)
+      (-sourceSobolevThetaMomentumBracket n u
+        (sourceFiniteGapSobolevPair (by simp) (by norm_num) (D.hilbertActionReduction φ n t)
+          (D.hilbertActionReduction_mem_finiteGap φ hf n t))) t :=
+  D.hasDerivAt_physicalActionReductionHamiltonian_two E φ hf n hn t ht
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n u (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) =
+      -deriv (D.physicalActionReductionHamiltonian φ hf n 2) 0 :=
+  D.finiteGap_momentum_bracket_eq_physical_deriv E φ hf n hn
+end
+
+section OriginalMomentum
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s)
+
+example (n : ℤ) : AnalyticOnNhd ℂ (sourceSobolevThetaMomentumBracket n s)
+    {a | sobolevSourceInclusion a ∈ W ∧ canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceInclusion a)) (periodOnePotential_mem _) n ≠ 0} :=
+  D.previous.original_theta_common_domain.analyticOnNhd_sobolevThetaMomentumBracket n
+
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0) :
+    sourceSobolevThetaMomentumBracket n s (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) =
+      -deriv (D.complex.physicalActionReductionHamiltonian φ hf n 2) 0 :=
+  D.complex.finiteGap_momentum_bracket_eq_physical_deriv D.previous.original_theta_common_domain φ hf n hn
+end OriginalMomentum
+end Section20Momentum

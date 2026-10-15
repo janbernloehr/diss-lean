@@ -3713,3 +3713,8 @@ import NLS.ZakharovShabat.SourceFiniteGapAngleWeighted
 import NLS.ZakharovShabat.SourceFiniteGapAngleSobolev
 import NLS.ZakharovShabat.SourceFiniteGapAngleEnergy
 import NLS.ZakharovShabat.SourceSection20EnergyBracket
+import NLS.SequenceSpaces.PhaseFlowDerivative
+import NLS.ZakharovShabat.SourceSobolevMomentumDifferential
+import NLS.ZakharovShabat.SourceSobolevMomentumTranslation
+import NLS.ZakharovShabat.SourceSobolevAngleMomentum
+import NLS.ZakharovShabat.SourceFiniteGapAngleMomentum

@@ -144,6 +144,55 @@ The bracket requires an open selected gap because the angle cotangent is
 singular at collapse. The existing moment-frequency extension still
 includes collapsed gaps; no angle bracket there is asserted.
 
+## Physical momentum and spatial translation on complex H¹
+
+[`SourceSobolevMomentumDifferential.lean`](../NLS/ZakharovShabat/SourceSobolevMomentumDifferential.lean)
+constructs `sourceSobolevMomentumCotangent`, a bounded complex-linear map
+from H¹ sources to Hilbert cotangents. Its coefficients are the reflected
+physical gradients (−ib′, ia′). Periodic integration by parts proves that
+its restriction is the full complex derivative of the independently
+defined physical momentum −i∫ab′. Density of H¹ variations proves uniqueness.
+The actual source Hamiltonian direction is (a′,b′), with the period-one
+Fourier multiplier 2πin and the original Poisson signs.
+
+[`PhaseFlowDerivative.lean`](../NLS/SequenceSpaces/PhaseFlowDerivative.lean)
+proves strong norm differentiation for arbitrary real diagonal frequencies
+whenever the generator velocity belongs to the same finite-exponent
+coefficient space. No frequency bound or finite-support hypothesis is
+used. Bounded coordinate evaluations and the scalar fundamental theorem
+supply the full Banach-space integral identity.
+
+[`SourceSobolevMomentumTranslation.lean`](../NLS/ZakharovShabat/SourceSobolevMomentumTranslation.lean)
+applies that theorem to actual period-one translation. Every complex H¹
+source has an L² derivative along its translation orbit, at every real
+time. At time zero it is the physical momentum Hamiltonian direction.
+For any differentiable Hilbert functional, its original momentum bracket
+is its actual translation derivative. Spatial invariance implies a zero
+bracket.
+
+[`SourceSobolevAngleMomentum.lean`](../NLS/ZakharovShabat/SourceSobolevAngleMomentum.lean)
+defines the original angle–momentum bracket using the actual two
+cotangents. It is analytic on the complex H¹ preimage of the original
+open-gap domain. A constructed local analytic angle has translation
+derivative equal to this bracket. Whenever an actual H¹ angle tangent
+is available, the bracket is its negative physical momentum derivative.
+
+[`SourceFiniteGapAngleMomentum.lean`](../NLS/ZakharovShabat/SourceFiniteGapAngleMomentum.lean)
+uses the previously constructed H¹ angle tangent at real finite-gap
+sources, so no new tangent regularity is assumed. The physical second
+hierarchy Hamiltonian along the original action-reduction curve has
+derivative minus the bracket, throughout the full pre-collapse interval.
+At the base point, the bracket is therefore −dH₂/dt along that curve.
+All these statements retain arbitrary original normalized angle families;
+public checks also specialize them to the original Section 17 family used
+in Section 20.
+
+The equality of this bracket with 2πn remains to be proved. The next
+proposed step identifies physical H₂ with the quadratic contour of the
+same Section 19 primitive, then evaluates its angle bracket. The current
+analyticity theorem does not replace that normalization or establish
+H¹ regularity of the general angle vector.
+
 ## Validation and remaining scope
 
 Six new modules and 35 public examples cover the common-domain constructor,
@@ -161,7 +210,13 @@ derivative, the energy differential, and one cotangent for all open gaps.
 An actual source realizing a single nonzero action supplies a nonzero
 H¹ angle tangent without a supplied open-gap witness.
 
-The physical identity packaged here is for real finite-gap sources; the
+The momentum step adds five modules and 25 public examples. In addition
+to generic complex H¹ derivatives and uniqueness, the checks fix both
+signed Fourier normalizations and the zero-mode cotangent, verify the
+actual translation derivative and local angle realization, and retain
+the original family's physical H₂ derivative.
+
+The physical energy identity packaged here is for real finite-gap sources; the
 analytic continuation and original action-frequency identification hold on
 the stated complex neighborhoods. The opening p. 92 Poisson identity now
 has the physical H¹ interpretation at real finite-gap sources. Extending

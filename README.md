@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 20's original angle Hamiltonian now has a constructed
-H¹ tangent at every real finite-gap source with an open selected gap.
-The original action-reduction flow differentiates to that tangent in H¹
-throughout its pre-collapse interval. The physical energy derivative and
-the original Poisson bracket both recover the frequency, retaining the
-mass and free-dispersion terms. The moment package and its source correction
-remain available on the same original family.
+Latest step: physical momentum now has a unique Hilbert cotangent at every
+complex H¹ source, and its Hamiltonian vector is the actual spatial-translation
+tangent. The original angle–momentum bracket is analytic on the complex H¹
+open-gap domain and equals the negative physical H₂ action derivative at
+real finite-gap sources. The previous physical H¹ energy bracket remains
+proved at real finite-gap sources.
 
-Next: extend Section 20's Poisson identity to general complex H¹ sources, then the
-original Section 21 assertions.
+Next: compute the momentum bracket as 2πn, then use it to extend Section 20's
+energy bracket to general complex H¹ sources before the original Section 21 audit.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
