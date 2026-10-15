@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix A.2 and A.4 now give the full continuous embeddings
-Lᵖ → FLᑫ and FLᵖ → Lᑫ for conjugate exponents with 1 ≤ p ≤ 2, including
-both endpoints. They use the original periodic distributions and actual Lᵖ
-quotients, with constant-one bounds and exact 1/L normalization. Integrable
-representatives are unique almost everywhere; the L1-to-c0 Fourier map is
-also injective.
+Latest step: Remark A.6 is complete. The actual L1-to-c0 Fourier transform
+has dense, nonclosed range and is not onto, at every positive period. A
+sequence tending to zero need not be the Fourier sequence of an integrable
+function. This also gives an original FL-infinity distribution whose Fourier
+truncations converge in norm but which has no L1 representative. The proof
+uses Rudin–Shapiro polynomials and the open mapping theorem.
 
-Next: the counterexamples A.3 and A.5 and non-surjectivity of L1-to-c0 in A.6;
-then integrate A.7–A.9.
+Next: the counterexamples A.3 and A.5, then source integration of A.7–A.9.
 The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
 remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

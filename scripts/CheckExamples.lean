@@ -57865,3 +57865,123 @@ example (f : Lp ℂ ⊤ (AddCircle.haarAddCircle (T := L)))
 
 end AppendixAHausdorffYoungChecks
 end NLS.Fourier
+
+
+noncomputable section
+open MeasureTheory Set Filter Topology
+open scoped ENNReal ZeroAtInfty
+namespace NLS.Fourier
+section AppendixANonSurjectivityChecks
+open SmoothPeriodicTest PeriodicFourierLebesgue
+local instance : Fact (0 < (3:ℝ)) := ⟨by norm_num⟩
+local instance : Fact (0 < (1:ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4/3:ℝ≥0∞)) := ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example : rudinShapiroPair (L := 3) 0 = (1,1) := rfl
+
+example : (rudinShapiroPair (L := 3) 1).1 = 1 + fourier 1 := by
+  simp [rudinShapiroPair]
+
+example : (rudinShapiroPair (L := 3) 1).2 = 1 - fourier 1 := by
+  simp [rudinShapiroPair]
+
+example (x : AddCircle (3:ℝ)) :
+    ‖(rudinShapiroPair 3).1 x‖^2 + ‖(rudinShapiroPair 3).2 x‖^2 = 16 := by
+  have h := rudinShapiro_energy 3 x
+  norm_num at h
+  exact h
+
+example : ‖(rudinShapiroPair (L := 3) 3).1‖ ≤ 4 := by
+  have h := norm_rudinShapiro_le (L := 3) 3
+  norm_num at h
+  have hs : Real.sqrt (16:ℝ) = 4 := by
+    convert Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 4) using 1; norm_num
+  simpa only [hs] using h
+
+example : ‖fourierCoeff (rudinShapiroPair (L := 3) 3).1 (-1)‖ = 0 := by
+  simpa using (rudinShapiro_coeff_norm (L := 3) 3 (-1)).1
+
+example : ‖fourierCoeff (rudinShapiroPair (L := 3) 3).1 7‖ = 1 := by
+  simpa using (rudinShapiro_coeff_norm (L := 3) 3 7).1
+
+example : ‖fourierCoeff (rudinShapiroPair (L := 3) 3).2 8‖ = 0 := by
+  simpa using (rudinShapiro_coeff_norm (L := 3) 3 8).2
+
+example (f : C(AddCircle (3:ℝ),ℂ)) :
+    fourierCoeff (fourier (-3) * f : C(AddCircle (3:ℝ),ℂ)) (-2) = fourierCoeff f 1 := by
+  simpa using fourierCoeff_fourier_mul (-3) (-2) f
+
+example : (∫ x, ‖(rudinShapiroPair (L := 3) 3).1 x‖^2 ∂AddCircle.haarAddCircle) = 8 := by
+  have h := integral_sq_rudinShapiro (L := 3) 3
+  norm_num at h
+  exact h
+
+example : (rudinShapiroCoefficients (L := 3) 0).support = {0} := by
+  rw [rudinShapiroCoefficients_support]
+  decide
+
+example : (rudinShapiroCoefficients (L := 3) 2).support = Finset.Ico (0:ℤ) 4 := by
+  simpa using rudinShapiroCoefficients_support (L := 3) 2
+
+example (n : ℕ) (k : ℤ) :
+    rudinShapiroCoefficients (L := L) n k = fourierCoeff (rudinShapiroPair (L := L) n).1 k :=
+  rudinShapiroCoefficients_apply n k
+
+example : ‖Coeff.ofFinsupp (p := 1) (rudinShapiroCoefficients (L := 3) 4)‖ = 16 := by
+  have h := norm_rudinShapiroCoefficients (L := 3) (p := 1) (by simp) 4
+  norm_num at h
+  exact h
+
+example : ‖Coeff.ofFinsupp (p := 4/3) (rudinShapiroCoefficients (L := 3) 4)‖ = (16:ℝ)^(3/4:ℝ) := by
+  convert norm_rudinShapiroCoefficients (L := 3) (p := 4/3) (by norm_num) 4 using 1; norm_num
+
+example (n : ℕ) : finiteCircleSynthesis (q := 2) (rudinShapiroCoefficients (L := L) n) =
+    ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (rudinShapiroPair (L := L) n).1 :=
+  finiteCircleSynthesis_rudinShapiro n
+
+example (n : ℕ) : finiteCircleSynthesis (q := ⊤) (rudinShapiroCoefficients (L := L) n) =
+    ContinuousMap.toLp ⊤ AddCircle.haarAddCircle ℂ (rudinShapiroPair (L := L) n).1 :=
+  finiteCircleSynthesis_rudinShapiro n
+
+example (n : ℕ) : ‖circleL1Fourier (rudinShapiroL1 (L := L) n)‖ = 1 := norm_fourier_rudinShapiroL1 n
+
+example (n : ℕ) : (2:ℝ)^n ≤ Real.sqrt (2^(n+1)) * ‖rudinShapiroL1 (L := L) n‖ :=
+  rudinShapiroL1_lower_bound n
+
+example : (8:ℝ) ≤ 4*‖rudinShapiroL1 (L := 3) 3‖ := by
+  have h := rudinShapiroL1_lower_bound (L := 3) 3
+  norm_num at h
+  have hs : Real.sqrt (16:ℝ) = 4 := by
+    convert Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 4) using 1; norm_num
+  simpa only [hs] using h
+
+example : ¬Function.Surjective (circleL1Fourier (L := 1)) := circleL1Fourier_not_surjective
+
+example : ¬Function.Surjective (circleL1Fourier (L := 3)) := circleL1Fourier_not_surjective
+
+example : DenseRange (circleL1Fourier (L := 3)) ∧ ¬IsClosed (Set.range (circleL1Fourier (L := 3))) :=
+  ⟨denseRange_circleL1Fourier,not_isClosed_range_circleL1Fourier⟩
+
+example : ∃ a : C₀(ℤ,ℂ),
+    ¬∃ f : AddCircle L → ℂ, Integrable f AddCircle.haarAddCircle ∧ fourierCoeff f = a := exists_c0_not_fourierCoeff
+
+example : ∃ a : ℤ → ℂ, Tendsto a cofinite (𝓝 0) ∧
+    ¬∃ f : AddCircle (3:ℝ) → ℂ, Integrable f AddCircle.haarAddCircle ∧ fourierCoeff f = a :=
+  exists_vanishing_not_fourierCoeff
+
+example : ∃ u : PeriodicFourierLebesgue L Weight.one ⊤,
+    Tendsto (fun n : ℤ => u.val (mode (-n))) cofinite (𝓝 0) ∧
+      ¬∃ (f : AddCircle L → ℂ) (hf : Integrable f AddCircle.haarAddCircle), Distribution.ofCircleL1 f hf = u.val :=
+  exists_vanishing_not_ofCircleL1
+
+example : ∃ u : PeriodicFourierLebesgue (3:ℝ) Weight.one ⊤,
+    Tendsto (fun S : Finset ℤ => truncate Weight.one ⊤ Weight.hasTemperedInverse_one S u) atTop (𝓝 u) ∧
+      ¬∃ (f : AddCircle (3:ℝ) → ℂ) (hf : Integrable f AddCircle.haarAddCircle), Distribution.ofCircleL1 f hf = u.val :=
+  exists_norm_convergent_not_ofCircleL1
+
+example : ¬∀ a : C₀(ℤ,ℂ), ∃ f : Lp ℂ 1 (AddCircle.haarAddCircle (T := L)), circleL1Fourier f = a :=
+  circleL1Fourier_not_surjective
+
+end AppendixANonSurjectivityChecks
+end NLS.Fourier

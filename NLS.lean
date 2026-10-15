@@ -3821,3 +3821,6 @@ import NLS.Fourier.CircleHausdorffYoungSynthesis
 import NLS.Fourier.CircleHausdorffYoungAnalysis
 import NLS.Fourier.PeriodicL1Uniqueness
 import NLS.Fourier.PeriodicFourierLebesgueEmbeddings
+import NLS.Fourier.RudinShapiro
+import NLS.Fourier.RudinShapiroCoefficients
+import NLS.Fourier.PeriodicL1NonSurjective

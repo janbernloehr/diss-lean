@@ -5,7 +5,7 @@ order-zero continuous extension, complex Radon representation (A.2), and L1
 action on printed page 121, plus both parts of Theorem A.1 and the distributional
 derivative on printed page 122. It also covers the original Fourier–Lebesgue
 spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
-synthesis and pseudomeasure-dual statements on page 123, plus the decay assertion
+synthesis and pseudomeasure-dual statements on page 123, plus both assertions
 in Remark A.6, the actual L1-to-c0 Fourier map, and the full embeddings
 of Lemmas A.2 and A.4 on page 123. The test space
 contains the actual smooth complex-valued functions with the stated
@@ -27,7 +27,9 @@ positive physical period. It is not defined as a coefficient-sequence space.
 | Pseudomeasures and duality | `unweightedDualIsometry`, `pseudomeasureDualIsometry` | Full continuous dual for finite p, including FL-infinity as the dual of FL1; opposite indices in the bilinear pairing and exact operator norm. |
 | Riemann–Lebesgue decay, first part of A.6 | `tendsto_intervalFourierCoefficient_cofinite`, `tendsto_fourierCoeff_cofinite` | Every positive period; normalized interval and physical-circle coefficients vanish along the cofinite filter on integer frequencies. |
 | L1 Fourier-series convergence in FL-infinity | `tendsto_truncate_ofIntervalL1`, `Distribution.evaluation_zero_not_ofL1` | Original FL-infinity norm convergence for interval L1 data; point evaluation at zero has no interval L1 representative. |
-| Actual Fourier map L1 → c0 | `circleL1Fourier`, `norm_circleL1Fourier`, `denseRange_circleL1Fourier` | Complex continuous linear map from the actual L1 quotient, sharp operator norm one, injectivity, and dense range; non-surjectivity is not yet proved. |
+| Actual Fourier map L1 → c0 | `circleL1Fourier`, `norm_circleL1Fourier`, `denseRange_circleL1Fourier` | Complex continuous linear map from the actual L1 quotient, sharp operator norm one, injectivity, and dense range; non-surjectivity is proved below. |
+| Non-surjectivity, second part of A.6 | `circleL1Fourier_not_surjective`, `not_isClosed_range_circleL1Fourier`, `exists_vanishing_not_fourierCoeff` | Actual L1 quotient to c0; every positive period; proper dense nonclosed range and a decaying sequence with no integrable preimage. |
+| Original-space obstruction in A.6 | `PeriodicFourierLebesgue.exists_norm_convergent_not_ofCircleL1` | Norm-convergent Fourier truncations of an original FL-infinity distribution do not imply existence of an L1 representative. |
 | Sharp finite interpolation prerequisites | `Coeff.norm_kernelPair_interpolate_sharp`, `sum_norm_sq_dft`, `norm_dft_piLp_two` | Geometric three-lines constant for arbitrary finite inputs; exact discrete Parseval and sqrt(N) Hilbert norm factor. Extended to the full A.2/A.4 embeddings below. |
 | Lemma A.2, Lᵖ → FLᑫ | `PeriodicFourierLebesgue.ofLp`, `ofLp_injective`, `norm_ofLp_le` | Every conjugate pair with 1 ≤ p ≤ 2, including p=1, q=infinity; complex continuous linear injection of the actual Lᵖ quotient into original distributions, norm bound one and exact 1/L action. The source names the output exponent p. |
 | Lemma A.4, FLᵖ → Lᑫ | `lpRepresentative`, `lpRepresentative_injective`, `norm_lpRepresentative_le` | Full inclusive range 1 ≤ p ≤ 2; unique actual Lᑫ representative, constant-one norm bound, original smooth-test action, and both endpoint identifications. |
@@ -216,8 +218,36 @@ invariance makes the map well defined on the quotient. The integral bound
 proves operator norm at most one; the constant function attains one. Every
 finite coefficient cutoff is the transform of a continuous physical
 trigonometric polynomial. The defining c0 decay then proves dense range in
-the uniform coefficient norm. Non-surjectivity in the second part of A.6
-remains to be proved.
+the uniform coefficient norm. The following construction proves non-surjectivity
+and completes Remark A.6.
+
+[`RudinShapiro.lean`](../NLS/Fourier/RudinShapiro.lean) constructs the classical
+recursive polynomial pair on the physical circle. Its pointwise squared
+energy is exactly 2^(n+1); each coefficient has norm one on the block
+[0, 2^n) and is zero outside. The first polynomial therefore has uniform norm
+at most sqrt(2^(n+1)) and normalized L2 square norm exactly 2^n.
+[`RudinShapiroCoefficients.lean`](../NLS/Fourier/RudinShapiroCoefficients.lean)
+packages the actual finite coefficients, proves their exact support and
+p-norm (2^n)^(1/p), and recovers the polynomial by finite synthesis in every
+Banach Lᑫ quotient, including infinity.
+
+[`PeriodicL1NonSurjective.lean`](../NLS/Fourier/PeriodicL1NonSurjective.lean)
+uses the actual L1 classes of these polynomials. Every transformed sequence
+has c0 norm exactly one, whereas Parseval and the uniform bound force
+2^n ≤ sqrt(2^(n+1)) times the L1 norm. If the Fourier map were onto, its
+previously proved injectivity and the open mapping theorem would give a
+bounded inverse with norm C. The estimates would then force 2^n ≤ 2C² for
+every n, a contradiction. This makes the open-mapping argument mentioned
+in A.6 explicit; it does not assume non-surjectivity or a counterexample.
+
+Together with the established dense range, this proves that the image is
+not closed. The existential counterexample is exported both as a c0 element
+and as a raw integer sequence tending to zero along the cofinite filter,
+with no integrable function having those Fourier coefficients. Transport
+to the original FL-infinity space yields a distribution with vanishing
+coefficients and no L1 representative. Its Fourier truncations nevertheless
+converge in the original FL-infinity norm. Thus neither coefficient decay
+nor that norm convergence is a converse to L1 representability.
 
 ## Sharp finite interpolation prerequisites
 
@@ -362,8 +392,14 @@ aliased and unaliased signed frequencies, physical period three, exact interval
 action, both endpoint identifications, injectivity, and unique Lᑫ representatives.
 All eight modules and the focused checks compile without new warnings.
 
-Examples A.3 and A.5 and the non-surjectivity assertion of Remark A.6 remain
-open here. A.7–A.9 still require their Appendix A source audit and integration.
+Three further modules and 28 public checks cover the Rudin–Shapiro recurrence,
+energy, support boundaries, signed frequency shifts, physical periods one and
+three, finite fractional norms, the infinity synthesis endpoint, the exact c0
+norm, the L1 growth bound, non-surjectivity, nonclosed dense range, and the
+counterexamples as sequences and original distributions.
+
+Examples A.3 and A.5 remain open here. A.7–A.9 still require their Appendix A
+source audit and integration.
 In particular, the use of the rescaled weight
 (1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
 are not silently substituted for the exact Section 2 norm above. The present

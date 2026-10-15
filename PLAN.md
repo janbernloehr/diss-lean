@@ -1,6 +1,38 @@
 # Implementation plan
 
-## Current milestone: Appendix A.2 and A.4 Hausdorff–Young embeddings
+## Current milestone: Appendix A.6 Fourier non-surjectivity
+
+The actual L1 Fourier transform into c0 is not onto at any positive physical
+period. Its image is dense and not closed. There is an integer sequence
+tending to zero at both ends which is not the Fourier sequence of any
+integrable function. An original FL-infinity distribution can therefore
+have norm-convergent Fourier truncations without an L1 representative.
+Together with the previous Riemann–Lebesgue result, this completes A.6.
+
+The proof makes the source's open-mapping argument explicit using actual
+Rudin–Shapiro polynomials. Their coefficients have norm one on exactly
+2^n indices. Their normalized L2 square norm is 2^n and their uniform norm
+is at most sqrt(2^(n+1)), forcing unbounded L1 norms while their Fourier
+c0 norms stay exactly one. Surjectivity and the established injectivity
+would give a bounded inverse, contradicting those estimates.
+
+Three new modules and 28 public checks cover the polynomial recurrence,
+energy and support, signed modes, finite fractional coefficient norms,
+physical periods one and three, the infinity synthesis endpoint, exact
+c0 norms, L1 growth, proper dense range, and the original-distribution
+counterexample. See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: examples A.3 and A.5, then source integration of A.7–A.9. The
+Section 14 and unrestricted Lemma 27.2 endpoint qualifications remain.
+The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,489 build jobs, all 6,143
+public examples, and the transitive axiom audit for 35,580 NLS declarations.
+The three new modules and 28 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+617 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A.2 and A.4 Hausdorff–Young embeddings
 
 For every positive period and conjugate pair with 1 ≤ p ≤ 2, physical Lᵖ
 embeds continuously and complex linearly into original FLᑫ, and original
