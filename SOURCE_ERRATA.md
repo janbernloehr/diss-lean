@@ -1,5 +1,52 @@
 # Source discrepancies
 
+## Section 18: the full Hamiltonian Hessian includes the mass-square term
+
+The expansion on printed p. 83 includes 2H₁², but the next display gives
+∂Iₙ∂IₘH(0)=−2δₙₘ. Restoring the mass contribution gives 4−2δₙₘ instead.
+`SourceOriginalHamiltonianData.restored_frequency_derivative` proves this
+formula for the original frequency. The diagonal is +2.
+
+This discrepancy is checked against actual physical sources:
+`exists_realSobolev_single_action` realizes any nonnegative single action
+as a real finite-gap H¹ potential, with its physical mass and weighted
+spectral sum. `single_action_physical_energy` identifies the full energy
+on each such action axis. `full_hessian_diagonal` and
+`full_hessian_ne_printed` prove its second derivative at zero is +2 and
+cannot be the printed −2. The −2 diagonal belongs to H*, whose full Hessian
+is −2 times the bilinear Hilbert pairing. The identical introductory
+full-Hamiltonian display has the same correction.
+
+## Section 18: H* requires the weighted linear action subtraction
+
+The paragraph before Theorem 18.3 on printed p. 84 writes H*=H−2H₁²,
+omitting the term ∑(2πn)²Iₙ that appears in the earlier definition.
+`SourceOriginalHamiltonianData.physical_identity` retains the complete
+formula on every real H¹ source. `printed_subtraction_counterexample`
+constructs an actual real H¹ source with I₁=1 and every other action zero.
+Its weighted sum is 4π², so omitting this term changes the value.
+H−2H₁² is instead the renormalized PDE Hamiltonian Hʳ.
+
+Both corrections are implemented in
+[`SourceSection18HamiltonianCorrection.lean`](NLS/ZakharovShabat/SourceSection18HamiltonianCorrection.lean).
+They preserve Theorem 18.3 and Remark 18.4 for the correctly normalized H*.
+
+## Section 18: the renormalized gauge phase is exp(4 i mass t)
+
+Printed p. 85 gives exp(i ‖u₀‖₂ t). The phase consistent with equation (4.5)
+is exp(4 i ‖u₀‖₂² t). `SmoothNLSData.renormalized_phase` proves the exact
+conversion for the constructed smooth classical trajectories, using the
+physical integral mass. `original_gauge_printed_phase_counterexample`
+constructs the constant initial datum one, whose physical mass is one,
+and proves that the printed exp(i t) gauge fails the renormalized PDE.
+This unit-mass witness refutes the factor independently of the missing
+square. Theorem 18.5 uses the corrected trajectories.
+
+Implemented in
+[`SourceSection18GaugeCorrection.lean`](NLS/ZakharovShabat/SourceSection18GaugeCorrection.lean).
+See [the Section 18 audit](coverage/SECTION_18.md) for the common original
+Hamiltonian, frequency, and wellposedness packages.
+
 ## Proposition 17.1: normalized canonical images swap the gradient labels
 
 The first display in the proof on printed p. 78 writes A K bₘ±=−d₋ₘ±.

@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Section 18 original action frequencies and inverses
+## Current milestone: Section 18 Hamiltonian, wellposedness, and normalization
+
+`sourceSection18_original_hamiltonian` constructs the original Section 17
+family, its action frequency F, and the scalar Hamiltonian H* on one open
+connected action domain. Any previously constructed original p=4 frequency
+can be retained while attaching H*. Its gradient is exactly F throughout
+the common domain, so the mixed remainder and every Corollary 18.2
+conclusion remain available for this same map.
+
+Theorem 18.3 now includes the analytic FL⁴ source extension, recovery of
+the physical H¹ Hamiltonian minus twice the mass squared and the literal
+weighted action sum, real nonpositivity with equality only at zero, the
+exact Hessian −2 times bilinear Hilbert pairing at zero, and the local
+bound d²H*(J,J)≤−‖J‖₂². Remark 18.4 uses this same H*: it admits no continuous
+extension at zero on the nonnegative ℓ^q cone for any finite q>2.
+
+`source_theorem18_5` packages all four wellposedness assertions and
+uniqueness. Solutions use every convergent smooth approximation sequence;
+analytic dependence is into continuous trajectories with the uniform norm
+on each compact time interval. The ordinary NLS obstruction concerns the
+actual classical solution map at every non-Hilbert source.
+
+Three printed normalization errors are certified. The full physical
+Hamiltonian has diagonal action Hessian +2 at zero, while −2 belongs to
+H*. A realized single-action H¹ source has weighted action sum 4π², proving
+that its subtraction cannot be omitted. The correct smooth gauge is
+exp(4 i mass t); the printed phase fails the renormalized PDE at unit mass.
+
+Six new modules and 22 public checks cover this integration and the actual
+source witnesses. See [the Section 18 audit](coverage/SECTION_18.md) and
+[the source corrections](SOURCE_ERRATA.md). Next: Section 19's abelian
+integral assertions. Section 14's external Hilbert-map and full fractional
+smoothness qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: the full build completes 7,135
+jobs, all 5,513 public examples pass, and the transitive axiom audit checks
+33,924 NLS declarations. The six new modules and 22 new checks introduce no
+warnings; the 21 existing warnings remain. The source inventory verifies
+all 156 candidate labels, all 271 checked local Markdown file links resolve,
+and `git diff --check` passes.
+
+## Previous milestone: Section 18 original action frequencies and inverses
 
 `sourceSection18_original_frequencies` constructs one Hilbert frequency
 with analytic sequence-space realizations in every finite exponent above

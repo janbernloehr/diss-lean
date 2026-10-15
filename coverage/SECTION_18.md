@@ -1,9 +1,11 @@
-# Section 18: original frequency audit
+# Section 18: original frequencies, Hamiltonian, and wellposedness
 
-Source: printed pp. 83–86. This milestone integrates Theorem 18.1 and
-Corollary 18.2 with the original Section 17 Birkhoff family. The Hamiltonian
-and wellposedness assertions later in this overview remain to be audited
-and integrated; existing results for them are listed below as next work.
+Source: printed pp. 83–86. Theorems 18.1 and 18.3 and Corollary 18.2 use
+the original Section 17 Birkhoff family. The Hamiltonian and frequency
+share a domain and gradient identity; Remark 18.4 concerns that same
+Hamiltonian. Theorem 18.5 uses the original all-smooth-approximation
+solution definition. Three normalization errors in the overview are
+corrected below.
 
 ## One frequency and its domains
 
@@ -88,22 +90,102 @@ compatibility proves equality across independently chosen atlases and
 exponents. This milestone does not infer physical agreement from an
 arbitrary coordinate flow.
 
-## Validation and remaining Section 18 work
+## One original Hamiltonian and its nonextension
 
-Five new modules and 21 public checks cover the original action image,
-mixed remainders, all four inverse assertions, real-valued extensions,
-physical normalization, and exponent compatibility. Unconditional
-constructions include p=2 and p=5/2; the latter explicitly checks p/3<1.
-Full gate results are recorded in [the implementation status](../STATUS.md).
+[`SourceHamiltonianOriginal.lean`](../NLS/ZakharovShabat/SourceHamiltonianOriginal.lean)
+constructs `SourceOriginalHamiltonianData D T F H` for the original p=4
+family D. `E.exists_original_hamiltonian` can start with any existing
+original frequency E and retain its F. The Hamiltonian is recovered from
+the actual cubic moments and agrees with the full physical correction
+on every real H¹ source, not only on finite-gap potentials.
 
-Next, audit and integrate these statements for the same original quantities:
+The domain T is the component of zero in the intersection of the original
+frequency and Hamiltonian domains. It contains every original real-source
+action and every nonnegative summable action. Analytic uniqueness from
+nonnegative actions identifies F with the gradient of H throughout T.
+`SourceFrequencyOriginalRestriction` preserves the original source-image
+representation, refined remainders, and mixed estimates on this domain.
+Thus all four inverse and Fredholm conclusions remain available for F.
 
-| Remaining source item | Existing starting points | Required integration |
+| Source assertion | Public evidence | Scope |
 | --- | --- | --- |
-| Theorem 18.3 | `SourceHamiltonianActionConcavity`, `SourceSobolevHamiltonianIdentification` | One Hamiltonian with the physical H¹ identity, original-family action recovery, sign, and local Hessian bound |
-| Remark 18.4 | `SourceHamiltonianNonextension` | Retain that same Hamiltonian in the nonextension assertion; the existing obstruction is stronger than failure of C¹ extension |
-| Theorem 18.5 | `GlobalAnalyticNLSSolutions`, `HigherExponentAnalyticNLSSolutions`, `SmoothClassicalNLSNonextension` | Audit all-smooth-approximation solutions, analytic compact-time maps, and all four numbered cases |
-| Introductory normalization formulas | `ClassicalRenormalizedNLSGauge`, physical Hamiltonian identities | Check the printed full-Hamiltonian Hessian, omitted linear-action subtraction, and gauge phase; these candidates are not certified by this milestone |
+| Theorem 18.3(i), source extension | `Q.source_extension`, `Q.source_sign` | Open complex FL⁴ neighborhood of the entire real locus; real nonpositive values, vanishing exactly at zero |
+| Physical H¹ recovery | `Q.physical_identity` | H*=physical H−2mass²−∑(2πn)²Iₙ for every real H¹ source; the literal weighted series is absolutely summable |
+| Theorem 18.3(ii), action extension and sign | `Q.analytic`, `Q.sign` | One open connected complex ℓ² domain T, nonpositive and zero only at zero on its nonnegative cone |
+| Same frequency gradient | `Q.gradient_eq`, `Q.frequency` | F=∇H* throughout T, retaining the complete original frequency package |
+| Origin Hessian and local concavity | `Q.hessian_zero`, `Q.concavity` | Hessian −2 times unconjugated Hilbert pairing at zero; one positive ball in T with d²H*(J,J)≤−‖J‖₂² for every real direction J |
+| Remark 18.4 | `Q.no_continuous_extension` | No continuous, hence no C¹, extension at zero relative to the nonnegative ℓ^q cone for every finite q>2 |
 
-Section 14's precise external Hilbert-map identification and full
-fractional-smoothness qualifications remain. The dissertation is incomplete.
+Here Q denotes `SourceOriginalHamiltonianData`. The unconditional
+`sourceSection18_original_hamiltonian` constructs D, T, F, H, and Q.
+
+[`SourceHamiltonianOriginalNonextension.lean`](../NLS/ZakharovShabat/SourceHamiltonianOriginalNonextension.lean)
+integrates this Hamiltonian's Hessian estimate twice to obtain
+Re H*(I)≤−‖I‖₂²/2 near zero. Nonnegative finite blocks of fixed small ℓ²
+norm converge to zero in ℓ^q for q>2. Agreement on summable nonnegative
+actions then contradicts continuity. The extension can be arbitrary away
+from those actions. No ℓ∞ endpoint or global concavity is asserted.
+
+## Theorem 18.5 and the original solution definition
+
+[`SourceSection18Wellposedness.lean`](../NLS/ZakharovShabat/SourceSection18Wellposedness.lean)
+provides the unconditional `source_theorem18_5 hp hp1` for every finite p>1.
+A solution is continuous, takes its prescribed initial value, and is the
+pointwise source-norm limit of the actual renormalized classical trajectories
+for **every** smooth initial-data sequence converging to that initial value.
+The classical solutions are constructed, not supplied as an assumption.
+
+| Source assertion | Package field | Scope |
+| --- | --- | --- |
+| Part (i) | `global` | Global real analytic wellposedness on all FLᵖ for 1<p≤2 |
+| Part (ii) | `local_wellposed` | Local real analytic wellposedness for every finite p>1, including the printed 2<p<∞ range |
+| Part (iii) | `small_global` | Global real analytic wellposedness on an open neighborhood containing a positive ball about zero for every finite p>2 |
+| Part (iv) | `ordinary_nonextension` | For finite q≥p>2 and every T>0, no map agreeing with ordinary smooth classical NLS into C([−T,T],FL^q) is continuous at any source outside L² |
+| Uniqueness after the solution definition | `unique` | Any two solutions agree on their common time domain |
+
+Analytic dependence is in the uniform norm on the continuous trajectory
+space for each compact time interval. Local existence uses one time
+interval and one open neighborhood for each datum. Global existence uses
+one trajectory for all real times and analytic restrictions for every
+positive compact time horizon.
+
+## Certified normalization corrections
+
+[`SourceSection18HamiltonianCorrection.lean`](../NLS/ZakharovShabat/SourceSection18HamiltonianCorrection.lean)
+realizes every single nonnegative action as a genuine real finite-gap H¹
+source, retaining its physical mass and weighted action sum.
+
+* On p. 83 the full Hamiltonian expansion contains 2mass², so its frequency
+  derivative is 4−2δₙₘ. `Q.restored_frequency_derivative` proves this formula.
+  `Q.single_action_physical_energy` identifies the restored energy with
+  the actual physical H¹ energy along every nonnegative action axis;
+  `Q.full_hessian_diagonal` proves its second derivative at zero is +2.
+  `Q.full_hessian_ne_printed` refutes the displayed −2 diagonal.
+  The Hessian −2δₙₘ is correct for H*, not the full H.
+* The paragraph before Theorem 18.3 on p. 84 drops the weighted linear
+  action subtraction. `Q.printed_subtraction_counterexample` constructs
+  an actual source with I₁=1 and other actions zero, whose omitted term
+  is 4π². The corrected H* includes that subtraction; H−2mass² is Hʳ.
+* The gauge phase on p. 85 must be exp(4 i mass t), with mass equal to the
+  squared L² norm. `SmoothNLSData.renormalized_phase` proves the corrected
+  conversion, and `original_gauge_printed_phase_counterexample` uses an
+  actual smooth constant initial datum of mass one to refute the printed
+  phase directly in the renormalized PDE. See
+  [`SourceSection18GaugeCorrection.lean`](../NLS/ZakharovShabat/SourceSection18GaugeCorrection.lean).
+
+These corrections preserve the numbered results. Details are also recorded
+in [the source discrepancy log](../SOURCE_ERRATA.md).
+
+## Validation and next work
+
+The first integration added five modules and 21 public frequency checks,
+including p=5/2 with its quasi-normed p/3<1 remainder. The Hamiltonian and
+wellposedness integration adds six modules and 22 public checks: original
+construction and recovery, common-domain frequency retention, full H¹
+normalization, sign, concavity, nonextension, all wellposedness cases, and
+actual-source correction witnesses. Full gate results are recorded in
+[the implementation status](../STATUS.md).
+
+Next: audit Section 19's detailed abelian integral assertions. Section 14's
+precise external Hilbert-map identification and full fractional-smoothness
+qualifications remain. The dissertation is incomplete.

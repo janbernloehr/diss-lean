@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 18's frequency extensions now use the original
-spectral actions. One map retains the mixed remainder, compact corrected
-derivative, Fredholm index zero, and generic analytic local inverses.
-Physical normalization and exponent compatibility are proved.
+Latest step: Section 18's original Hamiltonian now shares its action
+frequency and domain, with the physical H¹ identity, local concavity, and
+nonextension proved. All four wellposedness assertions use the original
+smooth-approximation solution definition. Three printed normalization
+errors have formal witnesses.
 
-Next: Section 18's Hamiltonian and wellposedness statements.
+Next: Section 19's abelian integral assertions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
@@ -19,7 +20,7 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 15 audit](coverage/SECTION_15.md),
 [the Section 16 audit](coverage/SECTION_16.md),
 [the Section 17 audit](coverage/SECTION_17.md),
-[the Section 18 frequency audit](coverage/SECTION_18.md), and
+[the Section 18 audit](coverage/SECTION_18.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

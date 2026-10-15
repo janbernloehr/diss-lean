@@ -53945,3 +53945,135 @@ example : ∃ W₀ W V : Set (CoeffPair (ENNReal.ofReal (5/2))), ∃ s : (n : �
   exact ⟨W₀,W,V,s,D,U,F,E,by norm_num⟩
 
 end OriginalSection18QuasiNormedRemainder
+
+section OriginalSection18Hamiltonian
+open NLS NLS.ZakharovShabat
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+
+-- The original family, frequency, and Hamiltonian are constructed together.
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ T : Set (Coeff 2), ∃ F : Coeff 2 → Coeff 2, ∃ H : Coeff 2 → ℂ,
+      SourceOriginalHamiltonianData D T F H := sourceSection18_original_hamiltonian
+
+variable {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+  (Q : SourceOriginalHamiltonianData D T F H)
+
+-- Attaching H retains the already chosen F, including its full frequency package.
+example {U : Set (Coeff 2)} (E : SourceOriginalFrequencyData D U F) :
+    ∃ T : Set (Coeff 2), ∃ H : Coeff 2 → ℂ, T ⊆ U ∧ SourceOriginalHamiltonianData D T F H :=
+  E.exists_original_hamiltonian
+
+example : ∃ X : Set (CoeffPair 4), IsOpen X ∧ realTypeSourceLocus 4 ⊆ X ∧ X ⊆ V ∧
+    AnalyticOnNhd ℂ (fun φ => H (sourceActionSequence (q := 2) (by simp) (by norm_num) s φ)) X :=
+  Q.source_extension
+
+example (φ : realTypeSourceSubmodule 4) :
+    (H (sourceActionSequence (q := 2) (by simp) (by norm_num) s φ.val)).re ≤ 0 ∧
+    (H (sourceActionSequence (q := 2) (by simp) (by norm_num) s φ.val)).im = 0 ∧
+    (H (sourceActionSequence (q := 2) (by simp) (by norm_num) s φ.val) = 0 ↔ φ = 0) := Q.source_sign φ
+
+-- Physical identification covers every real H¹ source, with the literal infinite sum.
+example (a : realTypeSobolevSourceLocus) :
+    H (sourceActionSequence (q := 2) (by simp) (by norm_num) s (sobolevSourceFL4 a.val)) =
+      periodOneSobolevHamiltonian a.val - 2*(periodOneSobolevMass a.val)^2 -
+        ∑' n : ℤ, sourceSobolevWeightedAction a.val n := Q.physical_identity a
+
+example : EqOn F (Coeff.scalarGradient H) T ∧ H 0 = 0 ∧ Coeff.scalarGradient H 0 = 0 :=
+  ⟨Q.gradient_eq,Q.map_zero,Q.gradient_zero⟩
+
+example (v w : Coeff 2) : fderiv ℂ (fderiv ℂ H) 0 v w = -2 * Coeff.dualPairing v w :=
+  Q.hessian_zero v w
+
+example : ∃ r : ℝ, 0 < r ∧ Metric.ball (0 : Coeff 2) r ⊆ T ∧
+    ∀ b ∈ Metric.ball (0 : Coeff 2) r, ∀ J : RealCoeff 2,
+      (fderiv ℂ (fderiv ℂ H) b (RealCoeff.complexCLM 2 J) (RealCoeff.complexCLM 2 J)).re ≤ -‖J‖^2 :=
+  Q.concavity
+
+example : ∃ r : ℝ, 0 < r ∧ ∀ b ∈ Coeff.nonnegativeLocus 2, ‖b‖ < r → (H b).re ≤ -‖b‖^2/2 :=
+  Q.quadratic_bound
+
+example (q : ℝ≥0∞) [Fact (1 ≤ q)] (hq : q ≠ ⊤) (h2q : 2 < q)
+    (G : Coeff q → ℂ) (U : Set (Coeff q)) (hU : U ∈ 𝓝 (0 : Coeff q))
+    (hagree : ∀ a : Coeff 1, a ∈ Coeff.nonnegativeLocus 1 →
+      Coeff.exponentInclusion (le_trans (by norm_num : (1 : ℝ≥0∞) ≤ 2) h2q.le) a ∈ U →
+      G (Coeff.exponentInclusion (le_trans (by norm_num : (1 : ℝ≥0∞) ≤ 2) h2q.le) a) =
+        H (Coeff.exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 2) a)) :
+    ¬ ContinuousWithinAt G (Coeff.nonnegativeLocus q) 0 ∧
+      ¬ ContDiffWithinAt ℝ 1 G (Coeff.nonnegativeLocus q) 0 :=
+  Q.no_continuous_extension q hq h2q G U hU hagree
+
+-- Corollary 18.2 is still available on this Hamiltonian's domain.
+example (b : Coeff 2) (hb : b ∈ T) : (fderiv ℂ F b).IsFredholm ∧
+    Module.finrank ℂ (fderiv ℂ F b).ker = Module.finrank ℂ (Coeff 2 ⧸ (fderiv ℂ F b).range) :=
+  Q.frequency.fredholm (by norm_num) b hb
+
+example : ∃ a : realTypeSobolevSourceLocus,
+    sourceSobolevWeightedActionSum a.val = 4*(Real.pi : ℂ)^2 ∧
+      H (sourceActionSequence (q := 2) (by simp) (by norm_num) s (sobolevSourceFL4 a.val)) ≠
+        periodOneSobolevHamiltonian a.val - 2*(periodOneSobolevMass a.val)^2 :=
+  Q.printed_subtraction_counterexample
+
+example (m n : ℤ) :
+    HasDerivAt (fun z : ℂ => F (z • lp.single 2 m 1) n + 4*z + (2*(n:ℂ)*Real.pi)^2)
+      (4 - if n = m then 2 else 0) 0 := Q.restored_frequency_derivative m n
+
+-- The Hessian witness uses the full physical energy on an actually realized action axis.
+example (m : ℤ) (t : ℝ) (ht : 0 ≤ t) :
+    (∃ a : realTypeSobolevSourceLocus,
+      sourceActionSequence (q := 2) (by simp) (by norm_num) s (sobolevSourceFL4 a.val) =
+        (t : ℂ) • lp.single 2 m 1 ∧
+      sourceSingleActionFullHamiltonian H m t = periodOneSobolevHamiltonian a.val) ∧
+    deriv (deriv (sourceSingleActionFullHamiltonian H m)) 0 = 2 ∧
+    deriv (deriv (sourceSingleActionFullHamiltonian H m)) 0 ≠ -2 :=
+  ⟨Q.single_action_physical_energy m t ht,Q.full_hessian_diagonal m,Q.full_hessian_ne_printed m⟩
+
+end OriginalSection18Hamiltonian
+
+section OriginalSection18Wellposedness
+open NLS NLS.ZakharovShabat
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+example (f : SmoothNLSData) (time : ℝ) :
+    f.renormalized time =
+      Complex.exp (((4*classicalNLSMass f.value*time : ℝ) : ℂ)*Complex.I) • f.ordinary time :=
+  f.renormalized_phase time
+
+example : ∃ f : SmoothNLSData, (∀ x, f.value x = 1) ∧ classicalNLSMass f.value = 1 ∧
+    ¬ IsClassicalRenormalizedNLSTrajectory (classicalNLSMass f.value)
+      (fun time => Complex.exp ((time : ℂ)*Complex.I) • f.ordinary time) :=
+  original_gauge_printed_phase_counterexample
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    SourceSection18WellposednessData hp hp1 := source_theorem18_5 hp hp1
+
+example : IsGloballyAnalyticallyWellposedOn
+    (fun f : SmoothNLSData => f.renormalizedSource 2) univ :=
+  (source_theorem18_5 (p := 2) (by simp) (by norm_num)).global (le_refl 2)
+
+example : IsLocallyAnalyticallyWellposed (fun f : SmoothNLSData => f.renormalizedSource 4) :=
+  (source_theorem18_5 (p := 4) (by simp) (by norm_num)).local_wellposed
+
+example : ∃ U : Set (realTypeSourceSubmodule 4), (0 : realTypeSourceSubmodule 4) ∈ U ∧
+    (∃ r > 0, Metric.ball 0 r ⊆ U) ∧
+    IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.renormalizedSource 4) U :=
+  (source_theorem18_5 (p := 4) (by simp) (by norm_num)).small_global (by norm_num)
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hq : q ≠ ⊤) (h2p : 2 < p) (hpq : p ≤ q) (T : ℝ) (hT : 0 < T)
+    (φ : realTypeSourceSubmodule p) (hφ : φ ∉ sourceHilbertLocus h2p.le)
+    (F : realTypeSourceSubmodule p → C(Icc (-T) T,realTypeSourceSubmodule q))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (-T) T) F) : ¬ ContinuousAt F φ :=
+  (source_theorem18_5 hp (lt_trans (by norm_num) h2p)).ordinary_nonextension q hq h2p hpq T hT φ hφ F hF
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (J K : Set ℝ) (φ : realTypeSourceSubmodule p) (γ η : ℝ → realTypeSourceSubmodule p)
+    (hγ : IsRenormalizedNLSSolutionOn J φ γ) (hη : IsRenormalizedNLSSolutionOn K φ η) :
+    EqOn γ η (J ∩ K) := (source_theorem18_5 hp hp1).unique J K φ γ η hγ hη
+
+end OriginalSection18Wellposedness
