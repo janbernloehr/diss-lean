@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: Lemma 12.10 norm convergence and precise uniformity
+## Current milestone: Lemma 12.10 original-domain inverse bounds
+
+The intrinsic Q* is now bijective throughout the original real Ωᵖ for
+every finite 1<p<∞. Its actual original contour action turns a real
+kernel direction into a full product variation with a zero in every
+spectral gap. Entire-function uniqueness, original-disk separation,
+and reality of the matrix give complex injectivity; the Fredholm
+alternative gives surjectivity. The input roots need only be real and
+lie in the original disks.
+
+The full original inverses converge in operator norm to (Q*)⁻¹ as the
+omitted index escapes in either direction. One bound controls every
+signed index at each base point, including the genuine deleted-space
+inverse from Corollary 12.8.
+
+Direct use of Lemma 12.4 gives one joint complex equation bound at all
+deleted centers. Coordinate decay handles the tail and finitely many
+local bounds handle the remaining indices. Cauchy's estimate gives a
+common Lipschitz bound in both roots and sources. The Neumann estimate
+then supplies actual two-sided inverses on one joint complex ball,
+with radius and norm bound independent of the deleted index. This is
+proved for both the full operators and the actual deleted Banach spaces.
+An open neighborhood can also be kept inside the original source
+neighborhoods and every original isolating disk.
+
+`sourceLemma12_10_inverseBounds` packages the limit's bijectivity and
+the common deleted-space complex inverse bounds, retaining Proposition
+12.9 and the unchanged open connected W. Eighteen public checks cover
+complex kernel directions, unique inhomogeneous solutions, signed-index
+inverse limits, the actual Corollary 12.8 inverse, unrestricted complex
+chart inputs, preservation of original domains, solution norm bounds,
+and exponents 3/2 and 4.
+
+Lemma 12.10 remains incomplete: the common analytic solution extension
+must still be connected to the original isolating disks and global
+domain requirements. The printed source-only Lipschitz estimate remains
+under audit; the proved complex estimate controls both roots and sources.
+
+Validation: the full build passed 7043 jobs, the complete public example
+suite passed, and the transitive axiom audit passed for 33317 NLS
+declarations. The six new modules and eighteen new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, and all 151 checked local Markdown file links resolve.
+
+## Previous milestone: Lemma 12.10 norm convergence and precise uniformity
 
 The full original Jacobians now converge in operator norm to the intrinsic
 Q* at every fixed real placed-root input, for every finite 1<p<∞ and as

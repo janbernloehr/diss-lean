@@ -31,10 +31,11 @@ This is a quantifier clarification of the source's convergence sentence,
 not a negation of mathlib's weaker local-uniform statement. The positive
 result `sourceLemma12_10_normLimit` proves that statement on every
 original real Ωᵖ while retaining Proposition 12.9 and the same W.
-Full Lemma 12.10 still requires the original-domain injectivity and
-common complex extension. Its subsequent source-only Lipschitz estimate
-remains under audit; the established estimate uses joint root/source
-distance.
+Original-domain invertibility and common local complex inverse bounds
+are now proved. Full Lemma 12.10 still requires the common analytic
+solution extension on the original domains. Its subsequent source-only
+Lipschitz estimate remains under audit; the established complex estimate
+uses joint root/source distance.
 
 ## Lemma 12.5: the nonvanishing sentence names the wrong gap
 

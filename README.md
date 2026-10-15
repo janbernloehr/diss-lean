@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original full Jacobians converge in operator norm to Q*
-throughout the original real root domain. Convergence is uniform on
-compact subsets and locally uniform with a neighborhood depending on
-the error tolerance. A formal free-source counterexample rules out
-uniform convergence on any fixed neighborhood of zero.
+Latest step: Q* is invertible on the full original real domain. The actual
+Jacobian inverses converge in norm, and one complex radius and inverse
+bound work for every omitted index near each real-domain point, on both
+the full and deleted spaces.
 
-Next: finish Lemma 12.10's full-domain injectivity and common complex
-extension. The dissertation remains incomplete.
+Next: complete Lemma 12.10's common analytic solution extension with
+original-disk placement. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

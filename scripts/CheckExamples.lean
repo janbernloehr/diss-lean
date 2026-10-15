@@ -51513,3 +51513,148 @@ example : ∃ V : Set (CoeffPair (4:ℝ≥0∞)), ∃ D : ℤ → Set ℂ, ∃ c
 
 end
 end SourceLemma1210NormChecks
+
+namespace SourceLemma1210InverseChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology Metric
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+variable (H : SourceLemma12_4Data hp hp1 W) (H9 : SourceProposition12_9Data hp hp1 W)
+variable (hW : IsOpen W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (hV : IsOpen V)
+variable (φ : CoeffPair p) (hφW : φ ∈ W) (hφV : φ ∈ V)
+variable (hφ : IsRealType (CoeffPair.toMax p φ))
+variable (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D) (haReal : ∀ k : ℤ, (a k).im = 0)
+variable (t : realTypeSourceSubmodule p × RealCoeff p) (htW : (t.1:CoeffPair p) ∈ W)
+variable (ht : t ∈ sourcePsiOriginalOmega V D)
+
+-- Block differences retain their norm bound at a negative omitted index.
+example (A B : DeletedCoeff p (-7) →L[ℂ] DeletedCoeff p (-7)) :
+    ‖Coeff.deletedJacobianExtension (-7) A-Coeff.deletedJacobianExtension (-7) B‖ ≤ ‖A-B‖ :=
+  Coeff.norm_deletedJacobianExtension_sub_le (-7) A B
+
+-- The actual contour action accepts complex placed roots and arbitrary directions.
+example (m : ℤ) (d r : ℝ) (hr : 0 < r) (he : D m = ball (d:ℂ) r) (h : Coeff p) :
+    (sourcePsiOriginalLimitOperator hp hp1 a φ h) m =
+      -(∮ z in C((d:ℂ),r), sourcePsiFullProductVariation a h z / sourceCanonicalRoot hp hp1 φ z)/(Real.pi:ℂ) :=
+  H.originalLimitOperator_apply_eq_fullProductContour hD φ hφW hφV hφ a ha m d r hr he h
+
+example (h : Coeff p) (hreal : ∀ k : ℤ, (h k).im = 0)
+    (hker : sourcePsiOriginalLimitOperator hp hp1 a φ h = 0) : h = 0 :=
+  H.originalLimitOperator_realKernel_eq_zero hD φ hφW hφV hφ a ha haReal h hreal hker
+
+-- Kernel triviality also holds for complex directions.
+example (h : Coeff p) (hker : sourcePsiOriginalLimitOperator hp hp1 a φ h = 0) : h = 0 := by
+  apply H.originalLimitOperator_injective hD φ hφW hφV hφ a ha haReal
+  simpa only [map_zero] using hker
+
+-- Every inhomogeneous right-hand side has one solution, with no gap-placement premise.
+example (b : Coeff p) : ∃! h : Coeff p, sourcePsiOriginalLimitOperator hp hp1 a φ h = b := by
+  have hb := H.originalLimitOperator_bijective hW hD hV φ hφW hφV hφ a ha haReal
+  obtain ⟨x,hx⟩ := hb.2 b
+  exact ⟨x,hx,fun y hy => hb.1 (hy.trans hx.symm)⟩
+
+-- The inverse limit gives a common cutoff for positive and negative indices.
+example (ε : ℝ) (hε : 0 < ε) : ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+    ‖Ring.inverse (sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1) -
+      Ring.inverse (sourcePsiOriginalLimitOperator hp hp1 (RealCoeff.complexCLM p t.2) t.1)‖ < ε :=
+  (Coeff.tendsto_operator_natAbs_iff _ _).mp
+    (H9.originalFullRootJacobian_inverse_tendsto hW hD hV t htW ht) ε hε
+
+example (n : ℤ) :
+    let Q := sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1
+    Q.comp (Ring.inverse Q) = ContinuousLinearMap.id ℂ (Coeff p) ∧
+      (Ring.inverse Q).comp Q = ContinuousLinearMap.id ℂ (Coeff p) :=
+  H9.originalFullRootJacobian_inverse_identities hD hV t htW ht n
+
+example : ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ,
+    ‖Ring.inverse (sourcePsiOriginalFullRootJacobian hp hp1 n (RealCoeff.complexCLM p t.2) t.1)‖ ≤ M :=
+  H9.originalFullRootJacobian_inverse_bound hW hD hV t htW ht
+
+-- The bound concerns Corollary 12.8's actual deleted inverse.
+example : ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ,
+    ‖(H9.previous.previous.originalJacobianEquiv hD hV t htW ht n).symm.toContinuousLinearMap‖ ≤ M :=
+  H9.originalRootJacobian_inverse_bound hW hD hV t htW ht
+
+-- The complex chart theorem needs no reality or root-placement hypothesis.
+example : ∃ r C : ℝ, 0 < r ∧ 0 ≤ C ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
+      u.2 ∈ W ∧ ‖sourcePsiOriginalEquation hp hp1 n u.1 u.2‖ ≤ C :=
+  H.originalEquation_allIndex_complex_ball_bound φ hφW a
+
+example : ∃ r L : ℝ, 0 < r ∧ 0 ≤ L ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (a,φ) r, ∀ v ∈ ball (a,φ) r,
+      ‖sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2 -
+        sourcePsiOriginalFullRootJacobian hp hp1 n v.1 v.2‖ ≤ L*‖u-v‖ :=
+  H.originalFullRootJacobian_complex_local_Lipschitz φ hφW a
+
+example : ∃ r L : ℝ, 0 < r ∧ 0 ≤ L ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
+      ∀ v ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
+        ‖sourcePsiOriginalRootJacobian hp hp1 n u.1 u.2 - sourcePsiOriginalRootJacobian hp hp1 n v.1 v.2‖ ≤ L*‖u-v‖ :=
+  H.originalRootJacobian_allIndex_complex_local_Lipschitz φ hφW a
+
+example : ∃ δ M : ℝ, 0 < δ ∧ 0 ≤ M ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (RealCoeff.complexCLM p t.2,(t.1:CoeffPair p)) δ,
+      ∃ R : Coeff p →L[ℂ] Coeff p,
+        (sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2).comp R = ContinuousLinearMap.id ℂ (Coeff p) ∧
+        R.comp (sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2) = ContinuousLinearMap.id ℂ (Coeff p) ∧ ‖R‖ ≤ M :=
+  H9.originalFullRootJacobian_local_inverse_bound_complex hW hD hV t htW ht
+
+-- The common radius also works on the actual, index-dependent deleted spaces.
+example : ∃ δ M : ℝ, 0 < δ ∧ 0 ≤ M ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2),(t.1:CoeffPair p)) δ,
+      ∃ R : DeletedCoeff p n →L[ℂ] DeletedCoeff p n,
+        (sourcePsiOriginalRootJacobian hp hp1 n u.1 u.2).comp R = ContinuousLinearMap.id ℂ (DeletedCoeff p n) ∧
+        R.comp (sourcePsiOriginalRootJacobian hp hp1 n u.1 u.2) = ContinuousLinearMap.id ℂ (DeletedCoeff p n) ∧ ‖R‖ ≤ M :=
+  H9.originalRootJacobian_local_inverse_bound_complex hW hD hV t htW ht
+
+example : ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧ (RealCoeff.complexCLM p t.2,(t.1:CoeffPair p)) ∈ U ∧
+    U ⊆ sourcePsiOriginalRootPlacement D ×ˢ (W ∩ V) ∧
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ, ∀ u ∈ U,
+      ∃ R : Coeff p →L[ℂ] Coeff p,
+        (sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2).comp R = ContinuousLinearMap.id ℂ (Coeff p) ∧
+        R.comp (sourcePsiOriginalFullRootJacobian hp hp1 n u.1 u.2) = ContinuousLinearMap.id ℂ (Coeff p) ∧ ‖R‖ ≤ M :=
+  H9.original_isolating_neighborhood_inverseBound hW hD hV t htW ht
+
+-- A single inverse bound controls all solutions in the common complex ball.
+example : ∃ δ M : ℝ, 0 < δ ∧ 0 ≤ M ∧ ∀ n : ℤ,
+    ∀ u ∈ ball (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2),(t.1:CoeffPair p)) δ,
+      ∀ b : DeletedCoeff p n, ∃ x : DeletedCoeff p n,
+        sourcePsiOriginalRootJacobian hp hp1 n u.1 u.2 x = b ∧ ‖x‖ ≤ M*‖b‖ := by
+  obtain ⟨δ,M,hδ,hM,hb⟩ := H9.originalRootJacobian_local_inverse_bound_complex hW hD hV t htW ht
+  refine ⟨δ,M,hδ,hM,?_⟩
+  intro n u hu b
+  obtain ⟨R,hQR,_,hR⟩ := hb n u hu
+  refine ⟨R b,?_,(R.le_opNorm b).trans (mul_le_mul_of_nonneg_right hR (norm_nonneg b))⟩
+  exact congrArg (fun A : DeletedCoeff p n →L[ℂ] DeletedCoeff p n => A b) hQR
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+-- The full-domain result is available below the Hilbert exponent.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W ∧
+    ∀ {V : Set (CoeffPair (ENNReal.ofReal (3/2)))} {D : ℤ → Set ℂ} {c : ℝ},
+      SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c → IsOpen V →
+      ∀ t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)),
+        t ∈ sourcePsiOriginalOmega V D →
+        Function.Bijective (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) (RealCoeff.complexCLM _ t.2) t.1) := by
+  obtain ⟨W,ho,hc,hr,H,hb⟩ := sourceLemma12_10_inverseBounds (p := (ENNReal.ofReal (3/2))) (by norm_num) (by norm_num)
+  exact ⟨W,ho,hc,hr,H,fun hD hV t ht => (hb hD hV t ht).1⟩
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+-- And above it, with a neighborhood independent of the deleted index.
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceProposition12_9Data (by norm_num) (by norm_num) W ∧
+    ∀ {V : Set (CoeffPair (4:ℝ≥0∞))} {D : ℤ → Set ℂ} {c : ℝ},
+      SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c → IsOpen V →
+      ∀ t : realTypeSourceSubmodule (4:ℝ≥0∞) × RealCoeff (4:ℝ≥0∞), t ∈ sourcePsiOriginalOmega V D →
+        ∃ δ M : ℝ, 0 < δ ∧ 0 ≤ M ∧ ∀ n : ℤ,
+          ∀ u ∈ ball (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM _ t.2),(t.1:CoeffPair (4:ℝ≥0∞))) δ,
+            ∃ R : DeletedCoeff (4:ℝ≥0∞) n →L[ℂ] DeletedCoeff (4:ℝ≥0∞) n,
+              (sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) n u.1 u.2).comp R = ContinuousLinearMap.id ℂ _ ∧
+              R.comp (sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) n u.1 u.2) = ContinuousLinearMap.id ℂ _ ∧ ‖R‖ ≤ M := by
+  obtain ⟨W,ho,hc,hr,H,hb⟩ := sourceLemma12_10_inverseBounds (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+  exact ⟨W,ho,hc,hr,H,fun hD hV t ht => (hb hD hV t ht).2⟩
+
+end
+end SourceLemma1210InverseChecks
