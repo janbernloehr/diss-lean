@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 13's beta and eta path comparisons now retain the
-original domain and disks. Continued roots give path-independent beta
-integrals and eta integrals modulo 2π, with collapsed-gap beta cases included.
+Latest step: Section 13's beta values are unique and complex analytic on
+the original domain. The Theorem 13.1(i) estimate now holds locally uniformly
+in both indices at every complex source. Every integrable normalized
+admissible path evaluates to that beta, including collapsed-gap cases.
 
-Next: construct and identify endpoint integral values on the same domain,
-then complete the Theorem 13.1 and Corollary 13.2 audit. The dissertation
-remains incomplete.
+Next: construct the remaining endpoint paths, identify eta on the same
+domain, and apply the beta estimate to the series. The dissertation remains
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md), and

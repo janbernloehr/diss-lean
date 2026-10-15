@@ -6298,3 +6298,50 @@ declarations. The seven new modules and nineteen new checks are warning-free;
 the 21 existing warnings remain. The source inventory verifies all 156
 candidate labels, all 176 checked local Markdown file links resolve,
 and `git diff --check` passes.
+
+## Section 13 original-domain beta analyticity and estimate
+
+`sourceTheorem13_1_original_beta` constructs the same W₀, W, and psi root
+family retained by Lemma 12.12. Every off-diagonal beta has a unique
+normalized primitive value at every complex source in W. Every integrable
+C¹ admissible path in an original disk, with the actual Dirichlet terminal
+normalization when nonzero, evaluates to that beta. Periodic terminals
+and collapsed gaps are included.
+
+Each beta is complex analytic throughout this unchanged W. Original
+isolating disks supply local annuli around the periodic segment and
+Dirichlet terminal. The proof uses stability of the whole segment and
+analyticity of the terminal, without assuming analyticity of the ordered
+periodic endpoints or dividing by the gap length.
+
+The literal Theorem 13.1(i) estimate is now locally uniform in both
+indices at every complex source:
+
+`‖β_m^n‖ ≤ C (‖γ_m‖ + ‖μ_m − τ_m‖) / |n − m|`.
+
+One neighborhood and positive constant work for all `m ≠ n`. The original
+all-disk chi majorant controls each selected central chart uniformly in
+the deleted index. Analyticity of the boundary displacement sequences
+in their full sequence norm supplies the small Dirichlet tail at complex
+sources. Fixed tail annuli then give a bound uniform in both indices;
+a finite intersection handles the remaining selected gaps.
+
+Twelve public checks cover value uniqueness, path evaluation, original
+chart geometry, fixed tail annuli, sequence analyticity, the order of the
+uniform quantifiers, periodic-terminal zeros, and exponents 3/2 and 4.
+
+The analytic and estimate assertions for these beta values are proved.
+Constructing integrable admissible paths at open singular endpoints is
+still required for the complete literal integral construction. The eta
+identification, beta-series assertions, theta assertions, and the full
+same-domain Corollary 13.2 audit remain unfinished.
+
+Next: construct the remaining endpoint paths and identify eta on this W,
+then apply the beta estimate to the series. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 7072 build jobs, the complete
+public example suite, and the transitive axiom audit of 33546 NLS
+declarations. The six new modules and twelve new checks are warning-free;
+the 21 existing warnings remain. The source inventory verifies all 156
+candidate labels, all 182 checked local Markdown file links resolve,
+and `git diff --check` passes.

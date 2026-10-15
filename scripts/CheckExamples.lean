@@ -52368,3 +52368,106 @@ example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ I
   exact ⟨W₀,W,ho,hW,hr,s,H,hc⟩
 
 end Section13OriginalChecks
+
+section Section13OriginalBetaChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (H : SourceLemma12_12Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W)
+
+example (n m : ℤ) (hmn : m ≠ n) :
+    ∃! b : ℂ, b ∈ sourceAngularBetaValues hp hp1 n m s ψ :=
+  H.beta_original_value_unique ψ hψ n m hmn
+
+example (n m : ℤ) (hmn : m ≠ n) :
+    sourceAngularBeta hp hp1 n m s ψ ∈ sourceAngularBetaValues hp hp1 n m s ψ :=
+  H.beta_original_mem_values ψ hψ n m hmn
+
+-- Uniqueness identifies any supplied original primitive value with the chosen beta.
+example (n m : ℤ) (hmn : m ≠ n) (b : ℂ)
+    (hb : b ∈ sourceAngularBetaValues hp hp1 n m s ψ) :
+    b = sourceAngularBeta hp hp1 n m s ψ :=
+  (H.beta_original_value_unique ψ hψ n m hmn).unique hb
+    (H.beta_original_mem_values ψ hψ n m hmn)
+
+example (n m : ℤ) (hmn : m ≠ n) :
+    AnalyticOnNhd ℂ (sourceAngularBeta hp hp1 n m s) W :=
+  H.beta_original_analytic n m hmn
+
+-- One neighborhood and constant precede both integer indices.
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ ψ ∈ U ∧ U ⊆ W ∧
+    ∃ C : ℝ, 0 < C ∧ ∀ χ ∈ U, ∀ n m : ℤ, m ≠ n →
+      ‖sourceAngularBeta hp hp1 n m s χ‖ ≤ C *
+        (‖sourcePeriodicGapDisplacement hp hp1 χ m‖ +
+          ‖canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet χ m-
+            sourceStandardRootMidpoint hp hp1 χ m‖) / |((n-m : ℤ) : ℝ)| :=
+  H.beta_original_uniform_bound ψ hψ
+
+-- Every selected chart retains an original isolating family.
+example (m : ℤ) : ∃ V : Set (CoeffPair p), ∃ c : ℤ → ℂ, ∃ T : ℤ → ℝ,
+    ∃ r R : ℝ, ∃ z₀ : ℂ, ψ ∈ V ∧
+      SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀ ∧
+      ∃ C : ℝ, SourceIsolatingNeighborhoods hp hp1 V (fun k => ball (c k) (T k)) C :=
+  H.angular_original_annulus_chart ψ hψ m
+
+example : ∃ V : Set (CoeffPair p), IsOpen V ∧ ψ ∈ V ∧ V ⊆ W ∧
+    ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ T : ℤ → ℝ, ∀ m : ℤ, K < m.natAbs →
+      c m = (Real.pi:ℂ)*m ∧ T m = Real.pi/4 ∧
+        SourceAngularJointAnnulusChartData hp hp1 m s W V c T
+          (Real.pi/16) (Real.pi/8) (c m+(3*Real.pi/32:ℝ)) :=
+  H.angular_original_annulus_tail ψ hψ
+
+example (b : BoundaryCondition) : AnalyticOnNhd ℂ (sourceBoundaryDisplacement hp hp1 b) W :=
+  H.boundary_original_displacement_analytic b
+
+-- Arbitrary continued roots and paths are allowed; endpoint integrability is explicit.
+example (n m : ℤ) (hmn : m ≠ n)
+    (P : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (hμ : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (P.center:ℂ) P.radius)
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (P.center:ℂ) P.radius Q γ)
+    (hnorm : sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ) :
+    sourceAngularPathIntegral n s Q ψ γ = sourceAngularBeta hp hp1 n m s ψ :=
+  H.beta_original_pathIntegral_eq_value ψ hψ n m hmn P hμ Q γ hQ hnorm hγ hint
+
+-- A periodic terminal forces the unique primitive value to vanish.
+example (n m : ℤ) (hmn : m ≠ n)
+    (hend : SourceAngularDirichletTerminalIsEndpoint hp hp1 ψ m)
+    (b : ℂ) (hb : b ∈ sourceAngularBetaValues hp hp1 n m s ψ) : b = 0 := by
+  have he := (H.beta_original_value_unique ψ hψ n m hmn).unique hb
+    (H.beta_original_mem_values ψ hψ n m hmn)
+  exact he.trans (sourceAngularBeta_eq_zero_of_endpoint hp hp1 n m s ψ hend)
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+example : ∃ W₀ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsSimplyConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := 4) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ φ ∈ W, ∃ U : Set (CoeffPair (4:ℝ≥0∞)), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+        ∃ C : ℝ, 0 < C ∧ ∀ χ ∈ U, ∀ n m : ℤ, m ≠ n →
+          ‖sourceAngularBeta (p := 4) (by norm_num) (by norm_num) n m s χ‖ ≤ C *
+            (‖sourcePeriodicGapDisplacement (p := 4) (by norm_num) (by norm_num) χ m‖ +
+              ‖canonicalPeriodOneBoundaryRoots (p := 4) (by norm_num) (by norm_num) .dirichlet χ m-
+                sourceStandardRootMidpoint (p := 4) (by norm_num) (by norm_num) χ m‖) / |((n-m : ℤ) : ℝ)| := by
+  obtain ⟨W₀,_,_,_,W,hW,hs,hr,s,H,_,_,hb⟩ :=
+    sourceTheorem13_1_original_beta (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,hW,hs,hr,s,H,hb⟩
+
+example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧
+    realTypeSourceLocus _ ⊆ W ∧ ∃ s,
+      SourceLemma12_12Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W s ∧
+      ∀ n m : ℤ, m ≠ n → AnalyticOnNhd ℂ
+        (sourceAngularBeta (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) n m s) W := by
+  obtain ⟨W₀,_,_,_,W,hW,_,hr,s,H,_,ha,_⟩ :=
+    sourceTheorem13_1_original_beta (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+  exact ⟨W₀,W,hW,hr,s,H,ha⟩
+
+end Section13OriginalBetaChecks
