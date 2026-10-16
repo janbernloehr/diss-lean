@@ -59036,3 +59036,154 @@ example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 �
 
 end Section14WeightedCompatibilityChecks
 end NLS.ZakharovShabat
+
+namespace NLS
+section ForcedQuadraticTailChecks
+open Filter Topology
+
+-- Exact summability with a zero linear coefficient.
+example (u f : ℕ → ℝ) (hu : ∀ k, 0 ≤ u k) (hf : ∀ k, 0 ≤ f k)
+    (hs : Summable f) (h : ∀ k, u (k+1) ≤ f k) : Summable u :=
+  summable_of_nonnegative_linear_recurrence u f 0 hu hf hs (by norm_num)
+    (by simpa using h)
+
+-- The forcing keeps its rate, including a negative quadratic coefficient.
+example (u f : ℕ → ℝ) (hu : ∀ k, 0 ≤ u k) (hf : ∀ k, 0 ≤ f k)
+    (hl : Tendsto u atTop (𝓝 0)) (hs : Summable (fun k => (2:ℝ)^k*f k))
+    (h : ∀ k, u (k+1) ≤ f k-(u k)^2) : Summable (fun k => (2:ℝ)^k*u k) :=
+  summable_geometric_weight_of_forced_quadratic_recurrence u f (-1) 2 hu hf hl
+    (by norm_num) hs (by simpa only [neg_one_mul,sub_eq_add_neg] using h)
+
+example (u f : ℕ → ℝ) (B : ℝ) (hu : ∀ k, 0 ≤ u k) (hf : ∀ k, 0 ≤ f k)
+    (hl : Tendsto u atTop (𝓝 0)) (hs : Summable f)
+    (h : ∀ k, u (k+1) ≤ f k+B*(u k)^2) : Summable u := by
+  simpa using summable_geometric_weight_of_forced_quadratic_recurrence u f B 1 hu hf hl
+    (by norm_num) (by simpa using hs) h
+
+example (v g : ℕ → ℝ) (A B : ℝ) (M : ℕ) (hM : 0 < M)
+    (hv : ∀ N, 0 ≤ v N) (hg : ∀ N, 0 ≤ g N) (hA : 0 ≤ A)
+    (hl : Tendsto v atTop (𝓝 0))
+    (hs : Summable (fun k => (2:ℝ)^k*g (4*(4^k*M))))
+    (h : ∀ N : ℕ, M ≤ N → v (4*N) ≤ g (4*N)+A/(4*N:ℝ)+B*(v N)^2) :
+    Summable (fun k => (2:ℝ)^k*v (4^k*M)) :=
+  summable_four_adic_of_forced_quadratic_tail v g A B 1 2 M M hv hg hl hA
+    (by norm_num) (by norm_num) (by norm_num) hM le_rfl hs (by simpa using h)
+
+end ForcedQuadraticTailChecks
+end NLS
+
+namespace NLS.ZakharovShabat
+section Section14ForcedGapChecks
+open Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+private theorem forced_three_halves_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem forced_three_halves_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example (φ : CoeffPair (3/2)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (CoeffPair (3/2)), IsOpen U ∧ φ ∈ U ∧
+      ∀ ψ ∈ U, IsRealType (CoeffPair.toMax (3/2) ψ) → ∀ n : ℤ, N ≤ n.natAbs →
+        let ζ := weightedResonantDiagonalCenter forced_three_halves_ne_top SpectralWeight.one
+          (sourceWeightedPeriodOne ψ) n
+        ‖weightedResonantBPlusExtension forced_three_halves_ne_top SpectralWeight.one
+          (sourceWeightedPeriodOne ψ) n ζ‖ ≤
+            2*‖sourcePeriodicGapDisplacement forced_three_halves_ne_top forced_three_halves_gt_one ψ n‖ ∧
+        ‖weightedResonantBMinusExtension forced_three_halves_ne_top SpectralWeight.one
+          (sourceWeightedPeriodOne ψ) n ζ‖ ≤
+            2*‖sourcePeriodicGapDisplacement forced_three_halves_ne_top forced_three_halves_gt_one ψ n‖ :=
+  exists_uniform_sourceResonantCenter_gap_bound _ _ φ
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+example (φ : realTypeSourceSubmodule p) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M → ∀ w : Weight,
+      (∀ n : ℤ, w (-n) = w n) →
+      Memℓp (fun n : ℤ => (w n:ℂ)*sourcePeriodicGapDisplacement hp hp1 φ.val n) p →
+      Memℓp (fun n : ℤ => (w n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).fst n) p ∧
+        Memℓp (fun n : ℤ => (w n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).snd n) p :=
+  sourceAdaptedClosingMap_mem_weighted_of_gap hp hp1 φ
+
+-- The same cutoff works for all real Sobolev orders, including negative orders.
+example (φ : realTypeSourceSubmodule p) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M → ∀ s : ℝ,
+      Memℓp (fun n : ℤ => (Weight.sobolev s n:ℂ)*sourcePeriodicGapDisplacement hp hp1 φ.val n) p →
+      Memℓp (fun n : ℤ => (Weight.sobolev s n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).fst n) p ∧
+        Memℓp (fun n : ℤ => (Weight.sobolev s n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).snd n) p := by
+  obtain ⟨N,hN,h⟩ := sourceAdaptedClosingMap_mem_weighted_of_gap hp hp1 φ
+  exact ⟨N,hN,fun M hM s hg => h M hM (Weight.sobolev s)
+    (fun n => by simp [Weight.sobolev_apply]) hg⟩
+
+example (w : SpectralWeight) (φ : CoeffPair p) :
+    0 ≤ sourceWeightedGapPowerTail hp hp1 w φ 0 :=
+  sourceWeightedGapPowerTail_nonneg hp hp1 w φ 0
+
+example (w : SpectralWeight) (φ : CoeffPair p) (M : ℕ) :
+    sourceWeightedGapPowerTail hp hp1 w φ M =
+      ∑' n : ℤ, if M ≤ n.natAbs then
+        ‖(w (2*n):ℂ)*sourcePeriodicGapDisplacement hp hp1 φ n‖^p.toReal else 0 := rfl
+
+variable (φ : realTypeSourceSubmodule p) (w : SpectralWeight)
+  (ψ : WeightedCoeffPair w.toWeight p)
+  (hψ : w.forgetPairWeight ψ = sourceWeightedPeriodOne φ.val)
+
+-- Signed negative indices retain the same actual periodic gap.
+example : ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+    ‖weightedResonantBMinusExtension hp w ψ (-n) (weightedResonantDiagonalCenter hp w ψ (-n))‖ ≤
+      2*‖sourcePeriodicGapDisplacement hp hp1 φ.val (-n)‖ := by
+  obtain ⟨N,hN,h⟩ := exists_sourceWeightedResonantCenter_gap_bound hp hp1 φ w ψ hψ
+  exact ⟨N,hN,fun n hn => (h (-n) (by simpa using hn)).2⟩
+
+-- A collapsed gap forces both actual center coefficients to vanish.
+example : ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+    sourcePeriodicGapDisplacement hp hp1 φ.val n = 0 →
+      weightedResonantBPlusExtension hp w ψ n (weightedResonantDiagonalCenter hp w ψ n) = 0 ∧
+      weightedResonantBMinusExtension hp w ψ n (weightedResonantDiagonalCenter hp w ψ n) = 0 := by
+  obtain ⟨N,hN,h⟩ := exists_sourceWeightedResonantCenter_gap_bound hp hp1 φ w ψ hψ
+  refine ⟨N,hN,?_⟩
+  intro n hn hg
+  have hb := h n hn
+  simpa only [hg,norm_zero,mul_zero,norm_le_zero_iff] using hb
+
+example : ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M →
+    ‖weightedResonantCenterClosingTail hp w ψ M‖^p.toReal ≤
+      (2*(2:ℝ)^p.toReal)*sourceWeightedGapPowerTail hp hp1 w φ.val M :=
+  exists_sourceWeightedResonantCenterClosingTail_bound hp hp1 φ w ψ hψ
+
+example : ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M →
+    ‖weightedPairFourierTail w.toWeight (2*(4*M)) ψ‖^p.toReal ≤
+      (2:ℝ)^p.toReal*((2*(2:ℝ)^p.toReal)*sourceWeightedGapPowerTail hp hp1 w φ.val (4*M) +
+        offDiagonalSummationConstant p*‖ψ‖^p.toReal*
+          (‖ψ‖^(2*p.toReal)/(4*M:ℝ)^(min 1 (p.toReal-1)) +
+            ‖weightedPairFourierTail w.toWeight (2*M) ψ‖^(2*p.toReal))) :=
+  source_weighted_fourierTail_forced_recurrence hp hp1 φ w ψ hψ
+
+example : ∃ M : ℕ, 2 ≤ M ∧ ∀ r : ℝ, 0 < r → r*(4:ℝ)^(-min 1 (p.toReal-1)) < 1 →
+    Summable (fun k => r^k*sourceWeightedGapPowerTail hp hp1 w φ.val (4*(4^k*M))) →
+      Summable (fun k => r^k*‖weightedPairFourierTail w.toWeight (2*(4^k*M)) ψ‖^p.toReal) :=
+  source_weighted_fourierTail_summable_of_gap_tail hp hp1 φ w ψ hψ
+
+example (φ : realTypeSourceSubmodule 2) (w : SpectralWeight)
+    (ψ : WeightedCoeffPair w.toWeight 2)
+    (hψ : w.forgetPairWeight ψ = sourceWeightedPeriodOne φ.val) :
+    ∃ M : ℕ, 2 ≤ M ∧
+      (Summable (fun k => (2:ℝ)^k*sourceWeightedGapPowerTail (by norm_num) (by norm_num) w φ.val (4*(4^k*M))) →
+        Summable (fun k => (2:ℝ)^k*‖weightedPairFourierTail w.toWeight (2*(4^k*M)) ψ‖^2)) := by
+  obtain ⟨M,hM,h⟩ := source_weighted_fourierTail_summable_of_gap_tail (by norm_num) (by norm_num) φ w ψ hψ
+  refine ⟨M,hM,?_⟩
+  simpa using h 2 (by norm_num) (by norm_num)
+
+variable {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M → ∀ w : Weight,
+      (∀ n : ℤ, w (-n) = w n) →
+      (Memℓp (fun n : ℤ => w n*(sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+        Memℓp (fun n : ℤ => w n*(sourceRealBirkhoffMap hp hp1 s φ).2 n) p) →
+      Memℓp (fun n : ℤ => (w n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).fst n) p ∧
+        Memℓp (fun n : ℤ => (w n:ℂ)*(sourceAdaptedClosingMap hp φ.val M).snd n) p :=
+  D.adaptedClosingMap_mem_weighted_of_real_map φ
+
+end Section14ForcedGapChecks
+end NLS.ZakharovShabat

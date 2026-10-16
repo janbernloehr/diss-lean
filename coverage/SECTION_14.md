@@ -222,6 +222,46 @@ negative and zero indices, fractional Sobolev orders, decreasing positive
 weights, both membership implications, and independent actual constructions.
 Validation is recorded in [the current implementation status](../STATUS.md).
 
+## Actual gap forcing and weighted source regularity
+
+The source-regularity route now includes quantitative estimates for nonzero
+gaps. The following modules prove intermediate statements used by the
+weighted extension; they do not yet prove its full inverse assertion.
+
+| Module | Proved result |
+| --- | --- |
+| [Real diagonal-center estimate](../NLS/ZakharovShabat/ResonantRealGapCenter.lean) | Analytic diagonal and off-diagonal bounds, two real counted roots, and the actual diagonal fixed point imply both center coefficients have norm at most twice the root gap. |
+| [Actual source center bound](../NLS/ZakharovShabat/SourceResonantCenterGapBound.lean) | Actual canonical counted endpoints discharge the root hypotheses uniformly for nearby real sources, including repeated roots. |
+| [Weighted adapted membership](../NLS/ZakharovShabat/SourceAdaptedGapWeightedMembership.lean) | Weighted gaps or weighted real Birkhoff outputs imply weighted adapted coordinates for every positive even weight, with one cutoff before choosing the weight. |
+| [Weighted center transfer](../NLS/ZakharovShabat/SourceWeightedCenterGapBound.lean) | Every compatible weighted realization has the same actual centers and inherits the factor-two bound. |
+| [Forced quadratic summability](../NLS/SequenceSpaces/ForcedQuadraticTailSummability.lean) | A vanishing nonnegative tail inherits exactly the geometric summability of its forcing; the quadratic coefficient may be any real number. |
+| [Actual forced Fourier tails](../NLS/ZakharovShabat/SourceGapWeightedTail.lean) | Explicit recurrence with actual weighted gap forcing, followed by geometric summability transfer below the algebraic remainder rate. |
+
+Let P=||psi||, C_p=2^p, alpha=min(1,p-1), and C be
+`offDiagonalSummationConstant p`. Let v(N) be the p-power of the actual
+weighted Fourier tail at physical cutoff 2N and G(N) be
+`sourceWeightedGapPowerTail` at source cutoff N, weighted by w(2n).
+For all sufficiently large N, the proved recurrence is
+
+```
+v(4N) <= C_p * (2*C_p*G(4N) + C*P^p*(P^(2p)/(4N)^alpha + v(N)^2)).
+```
+
+For one M>=2, every r>0 with r*4^(-alpha)<1 transfers summability of
+r^k G(4^(k+1)M) to summability of r^k v(4^k M). This conclusion is at
+the same rate r, and the polynomial forcing has already been discharged.
+The source is only assumed to have the displayed weighted realization;
+it need not be finite-gap. The adapted-coordinate result needs no initial
+weighted realization, but it concerns the adapted map rather than the
+original Fourier coefficients.
+
+Still to prove: the exact Sobolev coefficient/tail summability bridge,
+iteration of positive regularity gains for arbitrary gaps, and the full
+weighted inverse assertions. The 16 public checks exercise fractional
+and Hilbert exponents, negative frequencies, collapsed gaps, arbitrary
+real Sobolev orders for adapted coordinates, and exact-rate summability.
+Validation is recorded in [the implementation status](../STATUS.md).
+
 ## Previous validation: complex exponent compatibility
 
 Twelve new checks exercise the domain restriction, projection compatibility,

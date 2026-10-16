@@ -3851,3 +3851,9 @@ import NLS.SequenceSpaces.WeightedRealExponent
 import NLS.ZakharovShabat.SourceWeightedRealExponent
 import NLS.ZakharovShabat.SourceBirkhoffWeightedExponent
 import NLS.ZakharovShabat.SourceBirkhoffGapNormEquivalence
+import NLS.SequenceSpaces.ForcedQuadraticTailSummability
+import NLS.ZakharovShabat.ResonantRealGapCenter
+import NLS.ZakharovShabat.SourceResonantCenterGapBound
+import NLS.ZakharovShabat.SourceAdaptedGapWeightedMembership
+import NLS.ZakharovShabat.SourceWeightedCenterGapBound
+import NLS.ZakharovShabat.SourceGapWeightedTail

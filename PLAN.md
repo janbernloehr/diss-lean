@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Current milestone: weighted real exponent compatibility and gap characterization
+## Current milestone: Fourier-tail recurrence with nonzero spectral gaps
+
+The actual off-diagonal coefficients at the moving diagonal center are
+now bounded by twice the periodic gap, uniformly on a neighborhood of
+each source and for every sufficiently distant index. Canonical counted
+endpoints supply the roots; the proof includes collapsed gaps and does
+not assume that the center lies between them. Forgetting a spectral
+weight preserves the centers and transfers the same bound to any
+available weighted realization.
+
+Consequently, weighted gaps imply weighted membership of the actual
+adapted closing coordinates for every positive even weight. The cutoff
+is chosen before the weight, and no weighted regularity of the original
+source is assumed. The previous gap/Birkhoff characterization gives the
+same implication from weighted real Birkhoff outputs.
+
+The Fourier-tail recurrence now retains a nonzero gap forcing term.
+Writing v(N) for the p-power Fourier tail at physical cutoff 2N and G(N)
+for the actual weighted gap power tail at source cutoff N, it proves
+v(4N) <= C_p (2 C_p G(4N) + C ||psi||^p
+(||psi||^(2p)/(4N)^alpha + v(N)^2)), where C_p=2^p and
+alpha=min(1,p-1). Here C is the existing off-diagonal summation constant,
+and psi is any weighted realization already carried by the source.
+All norms are the actual component-sum norms.
+
+A forced quadratic summability theorem then transfers the exact geometric
+weight r^k from G(4^(k+1)M) to v(4^k M), provided r>0 and
+r*4^(-alpha)<1. The proof absorbs the quadratic term after the tail becomes
+small and retains the finite prefix. It does not replace the requested
+weight with a slower geometric rate. Six modules and 16 public checks
+cover these estimates, signed indices, collapsed gaps, fractional
+exponents, and arbitrary real Sobolev orders for adapted coordinates.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: identify geometric tail summability with exact Sobolev coefficient
+membership and iterate the gain to recover weighted regularity of the
+original source. Weighted complex analyticity and compatibility,
+canonicality, open image, local inverses and global inversion for 1<p<=2
+remain. The complex Dirichlet-minus-periodic-midpoint estimate is still
+missing. The external map comparison, unrestricted Lemma 27.2 and G.2
+norm qualifications remain; the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,522 build jobs, all 6,370
+public examples, and the transitive axiom audit for 36,092 NLS declarations.
+The six new modules and 16 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+737 local file links across 38 documents, and `git diff --check` also pass.
+
+## Previous milestone: weighted real exponent compatibility and gap characterization
 
 The original weighted real Birkhoff maps now commute with increasing the
 exponent, for every finite 1<p<=q and every Section 6 spectral weight.
