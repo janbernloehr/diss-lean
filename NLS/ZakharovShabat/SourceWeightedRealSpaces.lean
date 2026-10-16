@@ -116,4 +116,18 @@ theorem weightedRealCoeff_inverse_norm (w : Weight) (a : RealCoeff p) :
       · exact lp.norm_mono (zero_lt_one.trans_le (Fact.out : 1 ≤ p)).ne' (fun n => by simp)
 
 
+/-- Undo real target weights in both components, with the original lp pair topology. -/
+def weightedRealTargetDecode (w : Weight) :
+    WithLp p (RealCoeff p × RealCoeff p) ≃ₜ WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p) :=
+  (WithLp.homeomorphProd p _ _).trans
+    (((WeightedRealCoeff.weightEquiv w p).symm.toHomeomorph.prodCongr
+      (WeightedRealCoeff.weightEquiv w p).symm.toHomeomorph).trans
+      (WithLp.homeomorphProd p _ _).symm)
+
+@[simp] theorem weightedRealTargetDecode_fst (w : Weight) (a : WithLp p (RealCoeff p × RealCoeff p)) :
+    (weightedRealTargetDecode w a).fst = (WeightedRealCoeff.weightEquiv w p).symm a.fst := rfl
+
+@[simp] theorem weightedRealTargetDecode_snd (w : Weight) (a : WithLp p (RealCoeff p × RealCoeff p)) :
+    (weightedRealTargetDecode w a).snd = (WeightedRealCoeff.weightEquiv w p).symm a.snd := rfl
+
 end NLS.ZakharovShabat

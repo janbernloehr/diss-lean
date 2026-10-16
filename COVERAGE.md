@@ -14,6 +14,9 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Weighted complex gap topology | [`SourceWeightedGapSequence.lean`](NLS/ZakharovShabat/SourceWeightedGapSequence.lean) | Actual full lp sequence, locally uniform norm bound and small tails for all later cutoffs; arbitrary complex compatible weighted sources. |
+| Original weighted Birkhoff continuity | [`SourceBirkhoffWeightedContinuity.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedContinuity.lean), `originalWeightedRealMap_continuous` | Stronger weighted source and target topologies, every Section 6 spectral weight and finite p>1. |
+| Fractional Sobolev dense image | [`SourceBirkhoffSobolevDenseRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean), `originalWeightedRealMap_sobolev_denseRange` | Every real s>=0 and finite p>1; exact weights, actual finite-gap lifts, finite target attainment and density in the original weighted target norm. No open-image or surjectivity claim. |
 | Remark 14.2(iii), weighted membership | [`SourceBirkhoffWeightedMembership.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean), `sourceWeightedGap_mem`, `real_map_mem_weighted` | Every finite p>1 and every Section 6 spectral weight; full gap sequence and both original real rectangular coordinates. |
 | Original weighted real spaces | [`SourceWeightedRealSpaces.lean`](NLS/ZakharovShabat/SourceWeightedRealSpaces.lean) | Closed conjugate-reflection source, complete real Banach space, norm-preserving coordinates, and exact raw input coefficients. |
 | Original weighted Birkhoff map | [`SourceBirkhoffOriginalWeightedMap.lean`](NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean) | Original weighted source and target, exact raw output coefficients, injectivity and component-sum norm identity. |
@@ -6814,5 +6817,40 @@ inverse for 1<p<=2 still need their full extension. This membership and
 injectivity result does not complete Remark 14.2(iii). The external map
 comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
 the dissertation is incomplete.
+
+Validation is recorded in [the current implementation status](STATUS.md).
+
+## Remark 14.2(iii) topology milestone: weighted continuity and fractional Sobolev dense range
+
+The original real Birkhoff map is now continuous in the stronger source
+and target norms for every Section 6 spectral weight and every finite
+1<p<infinity. A common weighted complex neighborhood controls the actual
+gap sequence and all sufficiently distant tails. One coordinate bound
+holds for all nearby real sources, so the same tail control proves
+continuity of the full weighted real map.
+
+For every nonnegative real Sobolev order s, the image is dense in the
+original weighted target norm. Every finite target truncation has an
+actual finite-gap preimage; the existing regularity bootstrap puts that
+same source in the exact (1+|n|)^s space at the same exponent. Removing
+and restoring the target weight preserves the finite coefficients, and
+weighted truncation convergence proves density. This includes fractional
+orders, zero regularity, and p>2 without asserting surjectivity there.
+
+One constructed Section 14 package gives continuous injections for every
+spectral weight and dense image for every Sobolev weight. Four new modules,
+two updated modules, and 22 public checks cover the complex gap bounds,
+uniform tails, exact weighted target coordinates, continuity, finite-gap
+lifts, and approximation of arbitrary weighted targets.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove weighted complex analyticity and the remaining extension in
+Remark 14.2(iii). In particular, the weighted Dirichlet-minus-midpoint
+estimate needed for the complex coordinate bound is still missing.
+Weighted canonicality, exponent compatibility, open image and local
+inverse, and the global inverse for 1<p<=2 remain. Dense image is proved
+for Sobolev weights; no arbitrary-spectral-weight density claim is made.
+The external map comparison, unrestricted Lemma 27.2 and G.2 norm
+qualifications remain, and the dissertation is incomplete.
 
 Validation is recorded in [the current implementation status](STATUS.md).

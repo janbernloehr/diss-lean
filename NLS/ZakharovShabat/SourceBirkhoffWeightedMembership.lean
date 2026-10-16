@@ -51,47 +51,58 @@ namespace SourceBirkhoffMapComplexData
 variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
   {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
 
+/-- One constant controls all real Birkhoff coordinates at every nearby real source. -/
+theorem exists_local_uniform_real_map_gap_bound (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (φ : realTypeSourceSubmodule p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ.val ∈ U ∧ ∃ A : ℝ, 0 < A ∧
+      ∀ ψ : realTypeSourceSubmodule p, ψ.val ∈ U → ∀ n : ℤ,
+        |(sourceRealBirkhoffMap hp hp1 s ψ).1 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖ ∧
+        |(sourceRealBirkhoffMap hp hp1 s ψ).2 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖ := by
+  obtain ⟨U, hU, hφU, A, hA, hb⟩ :=
+    exists_local_uniform_sourceNormalizedActionRoot_bound hp hp1 φ.val φ.property
+  obtain ⟨V, hV, hφV, _, hf⟩ :=
+    exists_local_sourceNormalizedActionRoot_allIndices_analytic hp hp1 φ.val φ.property
+  refine ⟨U ∩ V, hU.inter hV, ⟨hφU, hφV⟩, A, hA, ?_⟩
+  intro ψ hψ n
+  obtain ⟨hIpos, hIim, _⟩ := sourceRealAction_nonneg_and_eq_zero_iff_gap_zero hp hp1 ψ.val ψ.property n
+  have he : sourceRealAction hp hp1 ψ.val ψ.property n =
+      ((sourceRealAction hp hp1 ψ.val ψ.property n).re : ℂ) := by
+    apply Complex.ext
+    · rfl
+    · simpa using hIim
+  have hnI : ‖sourceComplexAction hp hp1 n ψ.val‖ =
+      (sourceRealAction hp hp1 ψ.val ψ.property n).re := by
+    rw [sourceComplexAction_eq_sourceRealAction hp hp1 n ψ.val ψ.property, he]
+    exact Complex.norm_of_nonneg hIpos
+  have hx := congrArg norm (hf ψ.val hψ.2 n).1
+  have hI := congrArg norm (hf ψ.val hψ.2 n).2
+  norm_num only [norm_pow, norm_mul, show ‖(4 : ℂ)‖ = (4 : ℝ) by norm_num] at hx hI
+  rw [hnI] at hI
+  have hξ := hb ψ.val hψ.1 n
+  have hξsq : ‖sourceNormalizedActionRoot hp hp1 n ψ.val‖^2 ≤ A^2 :=
+    pow_le_pow_left₀ (norm_nonneg _) hξ 2
+  have hrad := D.real_map_action_radius ψ n
+  have hmul := mul_le_mul_of_nonneg_left hξsq (sq_nonneg ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖)
+  have hprod := congrArg (fun x : ℝ => ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖^2 * x) hx
+  have hbound :
+      ((sourceRealBirkhoffMap hp hp1 s ψ).1 n)^2 + ((sourceRealBirkhoffMap hp hp1 s ψ).2 n)^2 ≤
+        (A * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖)^2 := by
+    nlinarith [sq_nonneg ‖sourceNormalizedActionRoot hp hp1 n ψ.val‖]
+  constructor
+  · apply (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hA.le (norm_nonneg _))).mp
+    simpa only [sq_abs] using le_trans (le_add_of_nonneg_right (sq_nonneg _)) hbound
+  · apply (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hA.le (norm_nonneg _))).mp
+    simpa only [sq_abs] using le_trans (le_add_of_nonneg_left (sq_nonneg _)) hbound
+
+
 /-- A single constant bounds both real rectangular coordinates by the actual gap lengths. -/
 theorem real_map_gap_bound (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
     (φ : realTypeSourceSubmodule p) :
     ∃ A : ℝ, 0 < A ∧ ∀ n : ℤ,
       |(sourceRealBirkhoffMap hp hp1 s φ).1 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖ ∧
       |(sourceRealBirkhoffMap hp hp1 s φ).2 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖ := by
-  obtain ⟨U, _, hφU, A, hA, hb⟩ :=
-    exists_local_uniform_sourceNormalizedActionRoot_bound hp hp1 φ.val φ.property
-  obtain ⟨V, _, hφV, _, hf⟩ :=
-    exists_local_sourceNormalizedActionRoot_allIndices_analytic hp hp1 φ.val φ.property
-  refine ⟨A, hA, ?_⟩
-  intro n
-  obtain ⟨hIpos, hIim, _⟩ := sourceRealAction_nonneg_and_eq_zero_iff_gap_zero hp hp1 φ.val φ.property n
-  have he : sourceRealAction hp hp1 φ.val φ.property n =
-      ((sourceRealAction hp hp1 φ.val φ.property n).re : ℂ) := by
-    apply Complex.ext
-    · rfl
-    · simpa using hIim
-  have hnI : ‖sourceComplexAction hp hp1 n φ.val‖ =
-      (sourceRealAction hp hp1 φ.val φ.property n).re := by
-    rw [sourceComplexAction_eq_sourceRealAction hp hp1 n φ.val φ.property, he]
-    exact Complex.norm_of_nonneg hIpos
-  have hx := congrArg norm (hf φ.val hφV n).1
-  have hI := congrArg norm (hf φ.val hφV n).2
-  norm_num only [norm_pow, norm_mul, show ‖(4 : ℂ)‖ = (4 : ℝ) by norm_num] at hx hI
-  rw [hnI] at hI
-  have hξ := hb φ.val hφU n
-  have hξsq : ‖sourceNormalizedActionRoot hp hp1 n φ.val‖^2 ≤ A^2 :=
-    pow_le_pow_left₀ (norm_nonneg _) hξ 2
-  have hrad := D.real_map_action_radius φ n
-  have hmul := mul_le_mul_of_nonneg_left hξsq (sq_nonneg ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖)
-  have hprod := congrArg (fun x : ℝ => ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖^2 * x) hx
-  have hbound :
-      ((sourceRealBirkhoffMap hp hp1 s φ).1 n)^2 + ((sourceRealBirkhoffMap hp hp1 s φ).2 n)^2 ≤
-        (A * ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖)^2 := by
-    nlinarith [sq_nonneg ‖sourceNormalizedActionRoot hp hp1 n φ.val‖]
-  constructor
-  · apply (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hA.le (norm_nonneg _))).mp
-    simpa only [sq_abs] using le_trans (le_add_of_nonneg_right (sq_nonneg _)) hbound
-  · apply (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hA.le (norm_nonneg _))).mp
-    simpa only [sq_abs] using le_trans (le_add_of_nonneg_left (sq_nonneg _)) hbound
+  obtain ⟨U, _, hφU, A, hA, hbound⟩ := D.exists_local_uniform_real_map_gap_bound φ
+  exact ⟨A, hA, hbound φ hφU⟩
 
 /-- The original real Birkhoff coordinates retain every admissible source spectral weight. -/
 theorem real_map_mem_weighted (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)

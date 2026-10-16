@@ -58756,3 +58756,132 @@ example (a : realTypeSourceSubmodule p) :
 
 end Section14WeightedChecks
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section14WeightedTopologyChecks
+open Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem topology_three_halves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem topology_three_halves_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example (w : SpectralWeight) : Continuous (normalizedWeightedRealSourceLp (p := 4) w) :=
+  continuous_normalizedWeightedRealSourceLp w
+
+example (w : Weight) (a : WithLp (3/2) (RealCoeff (3/2) × RealCoeff (3/2))) :
+    (weightedRealTargetDecode w a).fst = (WeightedRealCoeff.weightEquiv w (3/2)).symm a.fst :=
+  weightedRealTargetDecode_fst w a
+
+example (w : Weight) (a : WithLp 4 (RealCoeff 4 × RealCoeff 4)) :
+    (weightedRealTargetDecode w a).snd = (WeightedRealCoeff.weightEquiv w 4).symm a.snd :=
+  weightedRealTargetDecode_snd w a
+
+example (w : Weight) (a : WithLp (3/2) (RealCoeff (3/2) × RealCoeff (3/2))) :
+    (weightedRealTargetDecode w).symm (weightedRealTargetDecode w a) = a :=
+  (weightedRealTargetDecode w).symm_apply_apply a
+
+example (w : Weight) (a : WithLp 4 (WeightedRealCoeff w 4 × WeightedRealCoeff w 4)) :
+    weightedRealTargetDecode w ((weightedRealTargetDecode w).symm a) = a :=
+  (weightedRealTargetDecode w).apply_symm_apply a
+
+example : ∃ W₀ W V : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+      ∃ D : SourceSection14Data topology_three_halves_ne_top topology_three_halves_gt_one W₀ W V s,
+        ∀ w : SpectralWeight, Continuous (D.complex.originalWeightedRealMap w) ∧
+          Function.Injective (D.complex.originalWeightedRealMap w) :=
+  sourceSection14_weighted_real_continuous_injective _ _
+
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection14Data (by norm_num) (by norm_num) W₀ W V s,
+      Continuous (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))) ∧
+      Function.Injective (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))) ∧
+      DenseRange (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))) := by
+  obtain ⟨W₀, W, V, s, D, hD⟩ := sourceSection14_weighted_sobolev_continuous_injective_dense
+    (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀, W, V, s, D, hD (1/3) (by norm_num)⟩
+
+example : ∃ W₀ W V : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+      ∃ D : SourceSection14Data topology_three_halves_ne_top topology_three_halves_gt_one W₀ W V s,
+        ∀ t : ℝ, ∀ ht : 0 ≤ t,
+          Continuous (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) ∧
+            Function.Injective (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) ∧
+            DenseRange (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  sourceSection14_weighted_sobolev_continuous_injective_dense _ _
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+  (w : SpectralWeight) (L : E →L[ℂ] CoeffPair p) (S : E →L[ℂ] WeightedCoeffPair w.toWeight p)
+  (hSL : ∀ b, weightedBaseToPair w (S b) = periodOnePotential (L b))
+
+example (a : E) : sourceWeightedGapSequence hp hp1 w L S hSL a (-7) =
+    (w (-14) : ℂ) * sourcePeriodicGapDisplacement hp hp1 (L a) (-7) := by
+  simp
+
+example (a : E) : ∃ U : Set E, IsOpen U ∧ a ∈ U ∧ ∃ C : ℝ, 0 ≤ C ∧
+    ∀ b ∈ U, ‖sourceWeightedGapSequence hp hp1 w L S hSL b‖ ≤ C :=
+  exists_local_sourceWeightedGapSequence_bound hp hp1 w L S hSL a
+
+example (a : E) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, ∃ U : Set E, IsOpen U ∧ a ∈ U ∧ ∀ b ∈ U, ∀ M : ℕ, N ≤ M →
+      ‖sourceWeightedGapSequence hp hp1 w L S hSL b -
+        Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (sourceWeightedGapSequence hp hp1 w L S hSL b)‖ ≤ ε :=
+  exists_uniform_small_sourceWeightedGapSequence hp hp1 w L S hSL a hε
+
+variable {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+
+example (φ : realTypeSourceSubmodule p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ.val ∈ U ∧ ∃ A : ℝ, 0 < A ∧
+      ∀ ψ : realTypeSourceSubmodule p, ψ.val ∈ U → ∀ n : ℤ,
+        |(sourceRealBirkhoffMap hp hp1 s ψ).1 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖ ∧
+        |(sourceRealBirkhoffMap hp hp1 s ψ).2 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖ :=
+  D.exists_local_uniform_real_map_gap_bound φ
+
+example : Continuous (D.weightedRealMap w) := D.weightedRealMap_continuous w
+
+example : Continuous (D.originalWeightedRealMap w) := D.originalWeightedRealMap_continuous w
+
+example : Continuous (fun a => ‖D.originalWeightedRealMap w a‖) :=
+  (D.originalWeightedRealMap_continuous w).norm
+
+example (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight (1/3) (by norm_num)),
+      originalWeightedRealSource (sourceSobolevSpectralWeight (1/3) (by norm_num)) a = φ :=
+  sourceFiniteGap_exists_originalWeightedRealSource hp hp1 φ hf (1/3) (by norm_num)
+
+example (t : ℝ) (ht : 0 ≤ t) (A : Finset ℤ) (z : RealCoeff p × RealCoeff p) :
+    ∃ a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight t ht),
+      sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource (sourceSobolevSpectralWeight t ht) a) =
+        RealCoeff.truncatePair A z := D.truncatePair_attained_by_sobolev_source t ht A z
+
+example (t : ℝ) (ht : 0 ≤ t) (A : Finset ℤ) (z : RealCoeff p × RealCoeff p) :
+    WithLp.toLp p (RealCoeff.truncatePair A z) ∈
+      range (D.weightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  D.truncatePair_mem_weightedRealMap_sobolev_range t ht A z
+
+example (t : ℝ) (ht : 0 ≤ t) :
+    DenseRange (D.weightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  D.weightedRealMap_sobolev_denseRange t ht
+
+example (t : ℝ) (ht : 0 ≤ t) :
+    DenseRange (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  D.originalWeightedRealMap_sobolev_denseRange t ht
+
+example : DenseRange (D.originalWeightedRealMap (sourceSobolevSpectralWeight 0 (by norm_num))) :=
+  D.originalWeightedRealMap_sobolev_denseRange 0 (by norm_num)
+
+example (t : ℝ) (ht : 0 ≤ t)
+    (y : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p))
+    {ε : ℝ} (hε : 0 < ε) :
+    ∃ a, dist (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht) a) y < ε := by
+  obtain ⟨z, ⟨a, rfl⟩, ha⟩ := Metric.mem_closure_iff.mp
+    (D.originalWeightedRealMap_sobolev_denseRange t ht y) ε hε
+  exact ⟨a, by simpa only [dist_comm] using ha⟩
+
+end Section14WeightedTopologyChecks
+end NLS.ZakharovShabat

@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: Remark 14.2(iii), original weighted membership and injectivity
+## Current milestone: weighted continuity and fractional Sobolev dense range
+
+The original real Birkhoff map is now continuous in the stronger source
+and target norms for every Section 6 spectral weight and every finite
+1<p<infinity. A common weighted complex neighborhood controls the actual
+gap sequence and all sufficiently distant tails. One coordinate bound
+holds for all nearby real sources, so the same tail control proves
+continuity of the full weighted real map.
+
+For every nonnegative real Sobolev order s, the image is dense in the
+original weighted target norm. Every finite target truncation has an
+actual finite-gap preimage; the existing regularity bootstrap puts that
+same source in the exact (1+|n|)^s space at the same exponent. Removing
+and restoring the target weight preserves the finite coefficients, and
+weighted truncation convergence proves density. This includes fractional
+orders, zero regularity, and p>2 without asserting surjectivity there.
+
+One constructed Section 14 package gives continuous injections for every
+spectral weight and dense image for every Sobolev weight. Four new modules,
+two updated modules, and 22 public checks cover the complex gap bounds,
+uniform tails, exact weighted target coordinates, continuity, finite-gap
+lifts, and approximation of arbitrary weighted targets.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove weighted complex analyticity and the remaining extension in
+Remark 14.2(iii). In particular, the weighted Dirichlet-minus-midpoint
+estimate needed for the complex coordinate bound is still missing.
+Weighted canonicality, exponent compatibility, open image and local
+inverse, and the global inverse for 1<p<=2 remain. Dense image is proved
+for Sobolev weights; no arbitrary-spectral-weight density claim is made.
+The external map comparison, unrestricted Lemma 27.2 and G.2 norm
+qualifications remain, and the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,512 build jobs, all 6,331
+public examples, and the transitive axiom audit for 36,012 NLS declarations.
+The four new modules, two updated modules, and 22 focused checks compile
+without new warnings; the full build retains 21 existing warnings. The
+156-label source inventory, 712 local file links across 38 documents, and
+`git diff --check` also pass.
+
+## Previous milestone: Remark 14.2(iii), original weighted membership and injectivity
 
 For every finite 1<p<infinity, the original real Birkhoff map now takes every
 weighted real source into the corresponding weighted real target. The result

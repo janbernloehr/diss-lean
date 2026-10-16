@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_real_injective`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real membership and injectivity for all finite p>1, exact Sobolev weights for every real s>=0. Weighted analyticity and the remaining Theorem 14.1 assertions are not yet extended. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_sobolev_continuous_injective_dense`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real continuous injection with dense image for all finite p>1 and every real s>=0, using exact Sobolev weights. Weighted analyticity, canonicality, exponent compatibility, open image and inverse assertions remain. |
 
 ## Original definitions and exact phase
 
@@ -83,7 +83,7 @@ hypothesis. `eventually_map_exponent` then gives one common germ for the
 entire sequence at every complex overlap point, and `fderiv_exponent`
 identifies the full complex Fréchet derivatives after both inclusions.
 
-## Weighted extension: current result and remaining work
+## Weighted extension: membership and original coefficients
 
 [`SourceBirkhoffWeightedMembership.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean)
 proves full weighted summability of the actual periodic gaps, adding the
@@ -118,12 +118,10 @@ period-one weight w(2n)=(1+|n|)^s. All nonnegative real s are included, so
 the result covers fractional positive smoothness and the zero endpoint.
 
 This establishes weighted membership and injectivity for the original
-map. It does not yet establish the full extension in Remark 14.2(iii):
-weighted complex analyticity, exponent compatibility, canonicality, local
-inverse and open dense image, and the global inverse in the source range
-1<p<=2 remain to be extended. A pointwise real gap bound alone does not
-prove analyticity in the stronger norm. Surjectivity for p>2 remains the
-separate open question recorded by the source.
+map. The following extension adds continuity and Sobolev dense image.
+A pointwise real gap bound alone does not prove analyticity in the stronger
+norm. Surjectivity for p>2 remains the separate open question recorded by
+the source.
 
 Twenty-four new checks cover p=3/2 and p=4, fractional s=1/3, zero regularity,
 negative frequencies, exact raw input and output coefficients, real-space
@@ -131,6 +129,58 @@ completeness and inverse coordinate identities, injectivity, and exact
 weighted norm identities. The p=3/2 and p=4 constructions are obtained
 without assuming a Section 14 package. The current full-gate result is
 recorded in [STATUS.md](../STATUS.md).
+
+## Weighted continuity and Sobolev dense image
+
+[`SourceWeightedGapSequence.lean`](../NLS/ZakharovShabat/SourceWeightedGapSequence.lean)
+constructs the full actual weighted gap sequence for compatible continuous
+complex linear source maps. The corrected gap budget becomes uniformly
+small on one weighted complex neighborhood. Adding a fixed finite head
+gives a uniform lp norm bound; choosing cutoff M+1 matches the complement
+of the finite interval [-M,M] and proves small tails for all later cutoffs.
+No continuity of a complex ordered endpoint choice is assumed.
+
+The normalized-action bound and factor identity hold on a common
+neighborhood. The existing real action-radius argument therefore yields
+one constant for all nearby real sources and all coordinate indices.
+[`LocallyDominatedContinuity.lean`](../NLS/SequenceSpaces/LocallyDominatedContinuity.lean)
+transfers uniform tails through this coordinate bound. Together with
+continuity of the original scalar coordinates, this proves norm continuity
+of the entire weighted real map. The majorizing sequence need not itself
+be continuous.
+
+[`SourceBirkhoffWeightedContinuity.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedContinuity.lean)
+proves continuity both in normalized coordinates and on the actual
+original weighted source and target. One unconditional `sourceSection14`
+construction gives continuous injections for every Section 6 spectral
+weight. This is continuity in the stronger weighted norms.
+
+[`SourceBirkhoffSobolevDenseRange.lean`](../NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean)
+proves dense image for every nonnegative real Sobolev order at every finite
+p>1. The unweighted map already attains each finite target truncation.
+Its preimage is spectrally finite-gap, so the original Fourier coefficients
+have every Sobolev order at that same p. The resulting weighted source
+lift preserves all raw coefficients. Dividing the finite target values
+by their positive weights, taking this preimage, and restoring the weights
+attains every finite normalized weighted target. Truncations converge in
+the weighted target norm, and the target coordinate homeomorphism gives
+density for the actual original map.
+
+The finite-gap argument establishes Sobolev density, not density for
+arbitrary spectral weights such as exponential weights. Dense image does
+not establish open image or surjectivity. The remaining Remark 14.2(iii)
+requirements are weighted complex analyticity, exponent compatibility,
+canonicality, open image and local inverse, and the global inverse for
+1<p<=2. The complex-coordinate argument still needs a weighted estimate
+of the actual Dirichlet-minus-periodic-midpoint displacement; the weighted
+gap bound alone does not supply it.
+
+Twenty-two public checks exercise fractional p=3/2, p=4, s=1/3 and s=0;
+negative indices; complex weighted gap bounds and tails; exact real target
+coordinate inverses; continuity in the weighted norms; finite-gap lifts
+and finite target attainment; unconditional continuous dense injections;
+and approximation of arbitrary original weighted targets. The full gate
+result is recorded in [STATUS.md](../STATUS.md).
 
 ## Previous validation: complex exponent compatibility
 

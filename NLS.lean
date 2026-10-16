@@ -3843,3 +3843,7 @@ import NLS.ZakharovShabat.SourceWeightedRealSpaces
 import NLS.ZakharovShabat.SourceBirkhoffWeightedMap
 import NLS.ZakharovShabat.SourceBirkhoffOriginalWeightedMap
 import NLS.ZakharovShabat.SourceSection14WeightedMembership
+import NLS.SequenceSpaces.LocallyDominatedContinuity
+import NLS.ZakharovShabat.SourceWeightedGapSequence
+import NLS.ZakharovShabat.SourceBirkhoffWeightedContinuity
+import NLS.ZakharovShabat.SourceBirkhoffSobolevDenseRange
