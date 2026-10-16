@@ -8,12 +8,20 @@ spaces, convergence and L2/L1 statements on page 122, and the absolute Fourier
 synthesis and pseudomeasure-dual statements on page 123, plus both assertions
 in Remark A.6, the actual L1-to-c0 Fourier map, and the full embeddings
 of Lemmas A.2 and A.4 and the counterexamples A.3 and A.5 on page 123.
+On page 124, A.7 and the embedding in A.8 are proved; the false constant-one
+estimate (A.4) is replaced by a quantified bound and a polynomial counterexample.
 The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
 | Source assertion | Public entry point | Verified scope |
 | --- | --- | --- |
+| Lemma A.7, original product | `PeriodicFourierLebesgue.youngProduct`, `youngProduct_unique`, `norm_youngProductCLM` | All positive periods and Banach Young triples; absolutely convergent coefficients, unique original distribution, sharp bilinear norm one. |
+| Product compatibility | `youngProduct_eq_of_val_eq`, `tendsto_youngProduct_truncate`, `youngProduct_eq_ofContinuous` | Exponent independence; finite-input truncation limits even with infinity output; actual pointwise multiplication when one continuous factor is in FL1. |
+| Original Wiener Banach algebra | `instWienerNormedCommRing`, `instWienerNormedAlgebra`, `wienerContinuousAlgHom` | Complete original FL1, norm-one unit, injective algebra map to C(T_L). |
+| Lemma A.8, embedding | `sobolevToWiener`, `sobolevToWiener_val`, `sobolevToWiener_continuous_represents` | All finite Banach p; continuous linear injection preserving the original distribution and supplying an actual continuous representative. |
+| Corrected (A.4) | `norm_sobolevProduct_le`, `norm_sobolevToWiener_le_two_mul` | Required inverse-weight Hölder constant C_p ≤ 2p; exact Section 2 weight (1+|n|), without silently rescaling it. |
+| Printed (A.4) counterexample | `a8OriginalProduct_eq_ofContinuous`, `a8Original_constant_one_fails` | Finite physical polynomials, squared norms 8, 5 and 41. Works on all original positive-period spaces and on the proof's rescaled weight at period two. |
 | Smooth periodic test space and its derivative-norm topology | `SmoothPeriodicTest`, `SmoothPeriodicTest.cNorm_apply` | Every positive period L; the seminorm at N is exactly the sum of the sup norms of physical derivatives of orders 0 through N. |
 | Fréchet test space | `derivativeJetEquiv` and the completeness, metrizability, Hausdorff, and local convexity instances | A closed derivative-jet subspace of a countable product of Banach spaces, with the original topology. |
 | Density in C(T_L) | `denseRange_toContinuousCLM` | Dense range on the actual physical circle, with the exact uniform norm `norm_toContinuousCLM`. |
@@ -448,13 +456,24 @@ physical periods one and three, the fractional exponents 4/3 and 5/2,
 the exponent-two block norm, the infinity membership endpoint, exact
 original-test pairing, positive order, and actual measure nonrepresentability.
 
-A.7–A.9 still require their Appendix A source audit and integration.
-In particular, the use of the rescaled weight
-(1+|2n/L|) in the proof of A.8 and its displayed constant-one product bound
-are not silently substituted for the exact Section 2 norm above. The present
-Hilbert identification is at s=0; the link to physical Sobolev spaces at
-nonzero order and multiplication on the original Wiener space remain part
-of the Sobolev and product integration work.
+Four further modules and 42 checks cover A.7, the Wiener algebra, the corrected
+A.8 estimate and its finite-polynomial counterexample. The product is first
+constructed through the exact original coefficient isometries. Uniqueness
+holds among all original distributions. Mapping the uniformly convergent
+Fourier series through continuous multiplication proves agreement with actual
+pointwise products, which in turn proves the algebra laws.
+
+[`PeriodicSobolevEmbedding.lean`](../NLS/Fourier/PeriodicSobolevEmbedding.lean)
+transports the coefficient Hölder bound through the same isometries and proves
+equality of the entire original functional. The constant is retained explicitly.
+[`SobolevProductCounterexample.lean`](../NLS/Fourier/SobolevProductCounterexample.lean)
+identifies both witnesses and their product with actual physical polynomials,
+then computes the exact squared norms. See [SOURCE_ERRATA.md](../SOURCE_ERRATA.md).
+
+A.9 still requires its Appendix A source audit and original-space integration.
+The present original-space Hilbert identification is at s=0; the link to
+physical Sobolev spaces at nonzero order remains part of that work. Earlier
+coefficient-space and intrinsic-Sobolev results provide its prerequisites.
 
 The blanket norm-convergence assertion on page 122 includes the infinity
 endpoint. The obstruction already formalized for Section 2 applies there

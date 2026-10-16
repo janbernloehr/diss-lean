@@ -58100,3 +58100,170 @@ example : ∃ u : Distribution L,
 
 end AppendixASharpnessChecks
 end NLS.Fourier
+
+
+
+noncomputable section
+open MeasureTheory Set Filter Topology
+open scoped ENNReal
+namespace NLS.Fourier
+section AppendixAProductChecks
+open SmoothPeriodicTest PeriodicFourierLebesgue
+local instance instPositiveOneA78 : Fact (0 < (1:ℝ)) := ⟨by norm_num⟩
+local instance instPositiveTwoA78 : Fact (0 < (2:ℝ)) := ⟨by norm_num⟩
+local instance instPositiveThreeA78 : Fact (0 < (3:ℝ)) := ⟨by norm_num⟩
+local instance instFractionA78 : Fact (1 ≤ (4/3:ℝ≥0∞)) :=
+  ⟨by rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+private theorem hilbertYoungA78 : YoungRelation 2 2 ⊤ := by
+  simpa [YoungRelation] using (ENNReal.HolderConjugate.inv_add_inv_eq_one 2 2).symm
+
+private theorem fractionalYoungA78 : YoungRelation (4/3) (4/3) 2 := by
+  unfold YoungRelation
+  apply (ENNReal.toReal_eq_toReal_iff' (by simp) (by simp)).mp
+  norm_num [ENNReal.toReal_add, ENNReal.toReal_inv, ENNReal.toReal_div]
+
+variable {L : ℝ} [Fact (0 < L)]
+variable {p q r : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [Fact (1 ≤ r)]
+
+example (h : YoungRelation p q r) (u : PeriodicFourierLebesgue L Weight.one p)
+    (v : PeriodicFourierLebesgue L Weight.one q) (n : ℤ) :
+    (youngProduct h u v).val (mode (-n)) = ∑' k : ℤ, u.val (mode (-(n-k))) * v.val (mode (-k)) :=
+  youngProduct_coefficient h u v n
+
+example (u : PeriodicFourierLebesgue L Weight.one ⊤) (v : PeriodicFourierLebesgue L Weight.one 1) :
+    ‖youngProduct (show YoungRelation ⊤ 1 ⊤ by simp [YoungRelation]) u v‖ ≤ ‖u‖ * ‖v‖ := norm_youngProduct_le _ u v
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) (v : PeriodicFourierLebesgue L Weight.one ⊤) :
+    ‖youngProduct (show YoungRelation 1 ⊤ ⊤ by simp [YoungRelation]) u v‖ ≤ ‖u‖ * ‖v‖ := norm_youngProduct_le _ u v
+
+example (u v : PeriodicFourierLebesgue (3:ℝ) Weight.one 2) :
+    ‖youngProduct hilbertYoungA78 u v‖ ≤ ‖u‖ * ‖v‖ :=
+  norm_youngProduct_le _ u v
+
+example (u v : PeriodicFourierLebesgue (3:ℝ) Weight.one (4/3)) :
+    ‖youngProduct fractionalYoungA78 u v‖ ≤ ‖u‖ * ‖v‖ :=
+  norm_youngProduct_le _ u v
+
+example (u : PeriodicFourierLebesgue L Weight.one ⊤) (v : PeriodicFourierLebesgue L Weight.one 1) :
+    Summable (fun k : ℤ => ‖u.val (mode (-(-7-k))) * v.val (mode (-k))‖) :=
+  summable_norm_youngProduct_terms (show YoungRelation ⊤ 1 ⊤ by simp [YoungRelation]) u v (-7)
+
+example (h : YoungRelation p q r) : ‖youngProductCLM (L := L) h‖ = 1 := norm_youngProductCLM h
+
+example : ‖youngProductCLM (L := 1) hilbertYoungA78‖ = 1 :=
+  norm_youngProductCLM _
+
+example (h : YoungRelation p q r) (u : PeriodicFourierLebesgue L Weight.one p)
+    (v : PeriodicFourierLebesgue L Weight.one q) : youngProduct h u v = youngProduct h.symm v u :=
+  youngProduct_comm h u v
+
+example (h : YoungRelation p q r) (u : PeriodicFourierLebesgue L Weight.one p)
+    (v : PeriodicFourierLebesgue L Weight.one q) (w : Distribution L)
+    (hw : ∀ n, w (mode (-n)) = ∑' k : ℤ, u.val (mode (-(n-k))) * v.val (mode (-k))) :
+    (youngProduct h u v).val = w := youngProduct_unique h u v w hw
+
+example {p' q' r' : ℝ≥0∞} [Fact (1 ≤ p')] [Fact (1 ≤ q')] [Fact (1 ≤ r')]
+    (h : YoungRelation p q r) (h' : YoungRelation p' q' r')
+    (u : PeriodicFourierLebesgue L Weight.one p) (v : PeriodicFourierLebesgue L Weight.one q)
+    (u' : PeriodicFourierLebesgue L Weight.one p') (v' : PeriodicFourierLebesgue L Weight.one q')
+    (hu : u.val = u'.val) (hv : v.val = v'.val) :
+    (youngProduct h u v).val = (youngProduct h' u' v').val := youngProduct_eq_of_val_eq h h' u v u' v' hu hv
+
+example (u v : PeriodicFourierLebesgue L Weight.one 2) :
+    Tendsto (fun S : Finset ℤ => youngProduct hilbertYoungA78
+      (truncate Weight.one 2 Weight.hasTemperedInverse_one S u)
+      (truncate Weight.one 2 Weight.hasTemperedInverse_one S v)) atTop
+        (𝓝 (youngProduct hilbertYoungA78 u v)) :=
+  tendsto_youngProduct_truncate _ (by norm_num) (by norm_num) u v
+
+example (f : C(AddCircle L,ℂ)) (v : PeriodicFourierLebesgue L Weight.one 1) :
+    fourierCoeff (f * continuousRepresentative v : C(AddCircle L,ℂ)) (-3) =
+      ∑' k : ℤ, fourierCoeff f (-3-k) * v.val (mode (-k)) :=
+  fourierCoeff_mul_continuousRepresentative f v (-3)
+
+example (u v : PeriodicFourierLebesgue L Weight.one 1) :
+    continuousRepresentative (u*v) = continuousRepresentative u * continuousRepresentative v :=
+  continuousRepresentative_mul u v
+
+example : CompleteSpace (PeriodicFourierLebesgue L Weight.one 1) := inferInstance
+
+example : NormedAlgebra ℂ (PeriodicFourierLebesgue L Weight.one 1) := inferInstance
+
+example (u v w : PeriodicFourierLebesgue L Weight.one 1) : (u*v)*w = u*(v*w) := mul_assoc u v w
+
+example (u : PeriodicFourierLebesgue L Weight.one 1) : 1*u = u := one_mul u
+
+example : ‖(1 : PeriodicFourierLebesgue (3:ℝ) Weight.one 1)‖ = 1 := norm_one
+
+example (u v : PeriodicFourierLebesgue L Weight.one 1) : ‖u*v‖ ≤ ‖u‖*‖v‖ := norm_mul_le u v
+
+example : Function.Injective (wienerContinuousAlgHom (L := L)) := continuousRepresentative_injective
+
+example (c : ℂ) : wienerContinuousAlgHom (L := 3) (algebraMap ℂ _ c) = algebraMap ℂ _ c :=
+  (wienerContinuousAlgHom (L := 3)).commutes c
+
+example (hp : p ≠ ⊤) (u : PeriodicFourierLebesgue L (Weight.sobolev 1) p) :
+    (sobolevToWiener hp u).val = u.val := sobolevToWiener_val hp u
+
+example (hp : p ≠ ⊤) : Function.Injective (sobolevToWiener (L := L) hp) := sobolevToWiener_injective hp
+
+example (u : PeriodicFourierLebesgue (3:ℝ) (Weight.sobolev 1) 1) :
+    ‖sobolevToWiener (by norm_num) u‖ ≤ WeightedCoeff.sobolevEmbeddingConstant 1 (by norm_num) * ‖u‖ :=
+  norm_sobolevToWiener_le _ u
+
+example (u : PeriodicFourierLebesgue (3:ℝ) (Weight.sobolev 1) (4/3)) :
+    ‖sobolevToWiener (by finiteness) u‖ ≤ (8/3:ℝ)*‖u‖ := by
+  convert norm_sobolevToWiener_le_two_mul (by finiteness) u using 1; norm_num
+
+example (hp : p ≠ ⊤) (u : PeriodicFourierLebesgue L (Weight.sobolev 1) p) :
+    Distribution.ofContinuous (continuousRepresentative (sobolevToWiener hp u)) = u.val :=
+  sobolevToWiener_continuous_represents hp u
+
+example (hp : p ≠ ⊤) (u : PeriodicFourierLebesgue L (Weight.sobolev 1) p)
+    (v : PeriodicFourierLebesgue L Weight.one p) :
+    ‖sobolevProduct hp u v‖ ≤ WeightedCoeff.sobolevEmbeddingConstant p hp * ‖u‖ * ‖v‖ :=
+  norm_sobolevProduct_le hp u v
+
+example (hp : p ≠ ⊤) (u : PeriodicFourierLebesgue L (Weight.sobolev 1) p)
+    (v : PeriodicFourierLebesgue L Weight.one p) :
+    (sobolevProduct hp u v).val (mode 0) = ∑' k : ℤ, u.val (mode k) * v.val (mode (-k)) := by
+  simpa using sobolevProduct_coefficient hp u v 0
+
+example : ‖WeightedCoeff.ofFinsupp (Weight.sobolev 1) 2 a8Multiplier‖^2 = 8 := a8Multiplier_weighted_norm_sq
+
+example : ‖Coeff.ofFinsupp (p := 2) a8Input‖^2 = 5 := a8Input_norm_sq
+
+example : ‖Coeff.ofFinsupp (p := 2) a8Output‖^2 = 41 := a8Output_norm_sq
+
+example : (a8OriginalMultiplier (L := 3)).val (mode 0) = 2 := by
+  simpa [a8Multiplier,Finsupp.single_apply] using a8OriginalMultiplier_coefficient (L := 3) 0
+
+example : (a8OriginalMultiplier (L := 3)).val (mode 1) = 0 := by
+  simpa [a8Multiplier,Finsupp.single_apply] using a8OriginalMultiplier_coefficient (L := 3) (-1)
+
+example : ‖sobolevProduct (by norm_num) (a8OriginalMultiplier (L := 2)) a8OriginalInput‖^2 = 41 :=
+  a8OriginalProduct_norm_sq
+
+example : ‖a8OriginalMultiplier (L := 2)‖ * ‖a8OriginalInput (L := 2)‖ <
+    ‖sobolevProduct (by norm_num) (a8OriginalMultiplier (L := 2)) a8OriginalInput‖ :=
+  a8Original_constant_one_fails
+
+example : ∃ (u : PeriodicFourierLebesgue (3:ℝ) (Weight.sobolev 1) 2)
+    (v : PeriodicFourierLebesgue (3:ℝ) Weight.one 2), ‖u‖*‖v‖ < ‖sobolevProduct (by norm_num) u v‖ :=
+  exists_sobolevProduct_norm_gt_one
+
+example : (a8OriginalMultiplier (L := 2)).val = Distribution.ofContinuous a8MultiplierPolynomial :=
+  a8OriginalMultiplier_eq_ofContinuous
+
+example : (a8OriginalInput (L := 3)).val = Distribution.ofContinuous a8InputPolynomial :=
+  a8OriginalInput_eq_ofContinuous
+
+example : ‖a8OriginalMultiplier (L := 2)‖^2 = 8 := a8OriginalMultiplier_norm_sq
+
+example : ‖a8OriginalInput (L := 2)‖^2 = 5 := a8OriginalInput_norm_sq
+
+example : (sobolevProduct (by norm_num) (a8OriginalMultiplier (L := 2)) a8OriginalInput).val =
+    Distribution.ofContinuous (a8MultiplierPolynomial * a8InputPolynomial) := a8OriginalProduct_eq_ofContinuous
+
+end AppendixAProductChecks
+end NLS.Fourier

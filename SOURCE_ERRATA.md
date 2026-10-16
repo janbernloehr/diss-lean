@@ -2604,3 +2604,32 @@ do not require the false diagonal auxiliary-factor claim.
 
 See [the Section 20 audit](coverage/SECTION_20.md) for the common original
 family, exact formulas, and remaining scope.
+
+## Appendix A.8: the constant-one product estimate (A.4) fails (page 124)
+
+The continuous embedding FL^{1,p} → FL1 for finite p is valid, but the
+printed product bound omits the inverse-weight Hölder norm from its proof.
+The displayed constant one is false even for finite trigonometric polynomials.
+With θ = 2πx/L, take
+
+    u(x) = 2 + exp(iθ),    v(x) = sum_(k=0)^4 exp(ikθ).
+
+Using the Section 2 coefficient weight (1+|n|), their squared norms are
+‖u‖_{FL^{1,2}}² = 8 and ‖v‖_{FL2}² = 5. Their product has coefficients
+2, 3, 3, 3, 3, 1 at frequencies zero through five, so
+‖uv‖_{FL2}² = 41 > 8*5. These identities and the strict failure are proved
+for the original distributions at every positive physical period in
+[`SobolevProductCounterexample.lean`](NLS/Fourier/SobolevProductCounterexample.lean).
+The witnesses and their product are identified with integration against the
+actual continuous polynomials. At L=2 the proof's weight (1+|2n/L|) equals
+(1+|n|), so the source's alternative normalization does not repair (A.4).
+
+The corrected estimate is
+
+    ‖uv‖_{FLp} ≤ C_p ‖u‖_{FL^{1,p}} ‖v‖_{FLp},
+    C_p = ‖((1+|n|)^(-1))_n‖_{ℓ^{p'}},    C_p ≤ 2p.
+
+[`PeriodicSobolevEmbedding.lean`](NLS/Fourier/PeriodicSobolevEmbedding.lean)
+proves this bound, the continuous injective inclusion, and preservation of
+the entire original distribution. The generalized Young estimate (A.3)
+retains its sharp constant one. No constant-one claim is made for (A.4).

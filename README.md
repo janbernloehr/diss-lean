@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemmas A.3 and A.5 are proved for every positive physical
-period. One original distribution lies in every FLp with p > 2, including
-infinity, but is not a complex measure. One continuous function lies in no
-FLp with 1 ≤ p < 2. Both witnesses are constructed from disjoint
-Rudin–Shapiro blocks; the A.5 construction differs from the printed series
-and proves the same existential statement. Remark A.6 is also complete.
+Latest step: Lemma A.7 is proved on the original distribution spaces at every
+positive physical period, with sharp bilinear norm one. FL1 is a complete
+commutative normed complex algebra. Lemma A.8's embedding preserves the
+original distribution and supplies a continuous representative. Its product
+estimate requires a Hölder constant: finite polynomials disprove the printed
+constant one, with squared norms 41 > 8*5. See [source errata](SOURCE_ERRATA.md).
 
-Next: source integration of A.7–A.9, including original-space products and
-physical Sobolev normalization.
+Next: A.9's original-space integration and physical Sobolev normalization.
 The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
 remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

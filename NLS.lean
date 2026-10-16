@@ -3827,3 +3827,7 @@ import NLS.Fourier.PeriodicL1NonSurjective
 import NLS.Fourier.ShiftedRudinShapiro
 import NLS.Fourier.ContinuousFourierCounterexample
 import NLS.Fourier.NonMeasureFourierCounterexample
+import NLS.Fourier.PeriodicFourierLebesgueProduct
+import NLS.Fourier.PeriodicWienerAlgebra
+import NLS.Fourier.PeriodicSobolevEmbedding
+import NLS.Fourier.SobolevProductCounterexample

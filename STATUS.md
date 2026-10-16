@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Appendix A.3 and A.5 sharpness counterexamples
+## Current milestone: Appendix A.7 products and corrected A.8 embedding
+
+For every positive physical period and every Banach Young triple, the product
+of original Fourier–Lebesgue distributions is defined by absolutely convergent
+coefficient convolution. The continuous bilinear map has operator norm exactly
+one, is independent of the exponents representing its factors, and agrees with
+pointwise multiplication of continuous functions when one factor is in FL1.
+The original Wiener space FL1 is now a complete commutative normed complex
+algebra, with norm-one identity and an injective algebra map into C(T_L).
+
+For every finite p ≥ 1, the original FL^{1,p} space embeds continuously and
+injectively into FL1 while preserving the entire original distribution. Its
+continuous representative is therefore an actual function. The corrected
+product bound is C_p*‖u‖*‖v‖, where C_p is the inverse-weight Hölder norm and
+C_p ≤ 2p, using the exact Section 2 weight (1+|n|).
+
+The constant one printed in (A.4) is false. The actual polynomials
+u = 2 + exp(i*2πx/L) and v = sum_(k=0)^4 exp(i*2πkx/L) have squared norms
+8 and 5 in the input spaces, but their product has squared norm 41 > 40.
+This is proved on the original spaces at every positive period; at period
+two it also uses exactly the rescaled weight in the source's proof.
+See [the source correction](SOURCE_ERRATA.md) and
+[the Appendix A audit](coverage/APPENDIX_A.md).
+
+Four new modules and 42 public checks cover finite, fractional and infinity
+Young triples, absolute coefficient convergence, sharp operator norm,
+truncation limits, the Wiener algebra laws, exact preservation of original
+distributions, the finite-p Sobolev inclusion, and the actual polynomial
+counterexample, including physical periods one, two and three.
+
+Next: A.9's original-space integration and physical Sobolev normalization.
+The Section 14 and unrestricted Lemma 27.2 endpoint qualifications remain.
+The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,496 build jobs, all 6,213
+public examples, and the transitive axiom audit for 35,809 NLS declarations.
+The four new modules and 42 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+639 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A.3 and A.5 sharpness counterexamples
 
 For every positive physical period, one original periodic distribution
 belongs to every FLp with p > 2, including infinity, but cannot be represented
