@@ -58629,3 +58629,130 @@ example (a : Coeff ⊤) : ‖modifiedHilbertCorrection s r hc hsep a‖ ≤
 
 end AppendixCSourceChecks
 end NLS.Fourier
+
+namespace NLS.ZakharovShabat
+section Section14WeightedChecks
+open scoped ENNReal ComplexConjugate
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem weighted_three_halves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem weighted_three_halves_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example (w : SpectralWeight) (φ : CoeffPair (3/2)) (ψ : WeightedCoeffPair w.toWeight (3/2))
+    (hψ : weightedBaseToPair w ψ = periodOnePotential φ) :
+    Memℓp (fun n : ℤ => (w (2*n) : ℂ) * sourcePeriodicGapDisplacement
+      weighted_three_halves_ne_top weighted_three_halves_gt_one φ n) (3/2 : ℝ≥0∞) :=
+  sourceWeightedGap_mem _ _ w φ ψ hψ
+
+example (w : SpectralWeight) : CompleteSpace (weightedRealSourceSubmodule (p := 3/2) w) :=
+  inferInstance
+
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) (3/2)) :
+    a ∈ weightedRealSourceSubmodule w ↔ ∀ n : ℤ, a.snd.val n = conj (a.fst.val (-n)) :=
+  mem_weightedRealSourceSubmodule_iff w a
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := 3/2) w) :
+    ‖weightedRealSourceEquiv w a‖ = ‖a‖ := norm_weightedRealSourceEquiv w a
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := 3/2) w) :
+    (originalWeightedRealSource w a).val.fst (-7) = a.val.fst.val (-7) :=
+  originalWeightedRealSource_fst w a (-7)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := 4) w) :
+    (originalWeightedRealSource w a).val.snd 0 = a.val.snd.val 0 :=
+  originalWeightedRealSource_snd w a 0
+
+example (w : SpectralWeight) (a : realTypeSourceSubmodule (3/2)) :
+    weightedRealSourceEquiv w ((weightedRealSourceEquiv w).symm a) = a :=
+  (weightedRealSourceEquiv w).apply_symm_apply a
+
+example (w : Weight) (a : RealCoeff (3/2)) :
+    ((WeightedRealCoeff.weightEquiv w (3/2)).symm a).val.val (-7) = (a (-7) : ℂ) / (w (-7) : ℂ) :=
+  weightedRealCoeff_inverse_raw w a (-7)
+
+example (w : Weight) (a : RealCoeff ⊤) : ‖(WeightedRealCoeff.weightEquiv w ⊤).symm a‖ = ‖a‖ :=
+  weightedRealCoeff_inverse_norm w a
+
+example (t : ℝ) (ht : 0 ≤ t) :
+    sourceFrequencyWeight (sourceSobolevSpectralWeight t ht) = Weight.sobolev t :=
+  sourceFrequencyWeight_sobolev t ht
+
+example : sourceSobolevSpectralWeight (1/3) (by norm_num) (2*(-7)) = (8 : ℝ) ^ (1/3 : ℝ) := by
+  rw [sourceSobolevSpectralWeight_even, Weight.sobolev_apply]
+  norm_num
+
+example (n : ℤ) : sourceSobolevSpectralWeight 0 (by norm_num) (2*n) = 1 := by
+  simp
+
+example : ∃ W₀ W V : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+      ∃ D : SourceSection14Data weighted_three_halves_ne_top weighted_three_halves_gt_one W₀ W V s,
+        ∀ w : SpectralWeight, Function.Injective (D.complex.originalWeightedRealMap w) :=
+  sourceSection14_weighted_real_injective _ _
+
+example : ∃ W₀ W V : Set (CoeffPair 4),
+    ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+      ∃ D : SourceSection14Data (by norm_num) (by norm_num) W₀ W V s,
+        Function.Injective (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))) := by
+  obtain ⟨W₀, W, V, s, D, hD⟩ := sourceSection14_weighted_real_injective (p := 4) (by norm_num) (by norm_num)
+  exact ⟨W₀, W, V, s, D, hD _⟩
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) (w : SpectralWeight)
+
+example (φ : realTypeSourceSubmodule p) : ∃ A : ℝ, 0 < A ∧ ∀ n : ℤ,
+    |(sourceRealBirkhoffMap hp hp1 s φ).1 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖ ∧
+    |(sourceRealBirkhoffMap hp hp1 s φ).2 n| ≤ A * ‖sourcePeriodicGapDisplacement hp hp1 φ.val n‖ :=
+  D.real_map_gap_bound φ
+
+example (φ : realTypeSourceSubmodule p) (ψ : WeightedCoeffPair w.toWeight p)
+    (hψ : weightedBaseToPair w ψ = periodOnePotential φ.val) :
+    Memℓp (fun n : ℤ => w (2*n) * (sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+    Memℓp (fun n : ℤ => w (2*n) * (sourceRealBirkhoffMap hp hp1 s φ).2 n) p :=
+  D.real_map_mem_weighted w φ ψ hψ
+
+example (a : realTypeSourceSubmodule p) (n : ℤ) :
+    (D.weightedRealMap w a).fst n =
+      w (2*n) * (sourceRealBirkhoffMap hp hp1 s (normalizedWeightedRealSourceLp w a)).1 n :=
+  D.weightedRealMap_fst w a n
+
+example (a : realTypeSourceSubmodule p) (n : ℤ) :
+    (D.weightedRealMap w a).snd n =
+      w (2*n) * (sourceRealBirkhoffMap hp hp1 s (normalizedWeightedRealSourceLp w a)).2 n :=
+  D.weightedRealMap_snd w a n
+
+example : Function.Injective (D.weightedRealMap w) := D.weightedRealMap_injective w
+
+example (a : weightedRealSourceSubmodule (p := p) w) (n : ℤ) :
+    (D.originalWeightedRealMap w a).fst.val.val n =
+      ((sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource w a)).1 n : ℂ) :=
+  D.originalWeightedRealMap_fst w a n
+
+example (a : weightedRealSourceSubmodule (p := p) w) (n : ℤ) :
+    (D.originalWeightedRealMap w a).snd.val.val n =
+      ((sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource w a)).2 n : ℂ) :=
+  D.originalWeightedRealMap_snd w a n
+
+example (a b : weightedRealSourceSubmodule (p := p) w) (hab : a ≠ b) :
+    D.originalWeightedRealMap w a ≠ D.originalWeightedRealMap w b :=
+  fun h => hab (D.originalWeightedRealMap_injective w h)
+
+example (a : weightedRealSourceSubmodule (p := p) w) :
+    ‖D.originalWeightedRealMap w a‖ ^ p.toReal = ∑' n : ℤ,
+      (|w (2*n) * (sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource w a)).1 n| ^ p.toReal +
+       |w (2*n) * (sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource w a)).2 n| ^ p.toReal) :=
+  D.originalWeightedRealMap_norm_rpow w a
+
+example (a : realTypeSourceSubmodule p) :
+    ‖D.weightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num)) a‖ ^ p.toReal = ∑' n : ℤ,
+      (|Weight.sobolev (1/3) n * (sourceRealBirkhoffMap hp hp1 s
+        (normalizedWeightedRealSourceLp (sourceSobolevSpectralWeight (1/3) (by norm_num)) a)).1 n| ^ p.toReal +
+       |Weight.sobolev (1/3) n * (sourceRealBirkhoffMap hp hp1 s
+        (normalizedWeightedRealSourceLp (sourceSobolevSpectralWeight (1/3) (by norm_num)) a)).2 n| ^ p.toReal) :=
+  D.weightedRealMap_sobolev_norm_rpow (1/3) (by norm_num) a
+
+end Section14WeightedChecks
+end NLS.ZakharovShabat

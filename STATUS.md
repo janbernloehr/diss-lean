@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Appendix C source operators and all-exponent obstruction
+## Current milestone: Remark 14.2(iii), original weighted membership and injectivity
+
+For every finite 1<p<infinity, the original real Birkhoff map now takes every
+weighted real source into the corresponding weighted real target. The result
+holds for every Section 6 spectral weight, and one constructed Section 14
+map works for all these weights. It is injective on each full weighted real
+source space.
+
+The proof completes the finite central set in the weighted spectral-gap
+estimate, then uses the original action radius and normalized-action bound
+to control both real coordinates by the actual gap lengths. Positive
+weighting identifies the original closed real source with a complete real
+lp space. Input and output coefficient identities show that this is the
+same original map, with the exact weighted component-sum target norm.
+
+The half-scale spectral weight w(k)=(1+|k|/2)^s gives w(2n)=(1+|n|)^s
+exactly. Every real s>=0 is covered, including fractional orders; no
+doubling constant or integer-order restriction is introduced. The five
+new modules and 24 public checks include fractional p and s, negative and
+zero frequencies, original coefficients, completeness, norm identities,
+and unconditional constructions below and above p=2.
+See [the updated Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove locally uniform bounds for the weighted complex coordinates
+and their analyticity in the weighted topology. Weighted canonicality,
+local inverse and open dense image, exponent compatibility, and the global
+inverse for 1<p<=2 still need their full extension. This membership and
+injectivity result does not complete Remark 14.2(iii). The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,508 build jobs, all 6,309
+public examples, and the transitive axiom audit for 35,981 NLS declarations.
+The five new modules and 24 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+700 local file links across 38 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix C source operators and all-exponent obstruction
 
 C.1 now has one source-level theorem giving the unique bounded complex
 linear operator with its actual convergent series and operator norm bound,

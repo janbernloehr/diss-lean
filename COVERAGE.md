@@ -14,6 +14,10 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Remark 14.2(iii), weighted membership | [`SourceBirkhoffWeightedMembership.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean), `sourceWeightedGap_mem`, `real_map_mem_weighted` | Every finite p>1 and every Section 6 spectral weight; full gap sequence and both original real rectangular coordinates. |
+| Original weighted real spaces | [`SourceWeightedRealSpaces.lean`](NLS/ZakharovShabat/SourceWeightedRealSpaces.lean) | Closed conjugate-reflection source, complete real Banach space, norm-preserving coordinates, and exact raw input coefficients. |
+| Original weighted Birkhoff map | [`SourceBirkhoffOriginalWeightedMap.lean`](NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean) | Original weighted source and target, exact raw output coefficients, injectivity and component-sum norm identity. |
+| Fractional Sobolev specialization | [`SourceSection14WeightedMembership.lean`](NLS/ZakharovShabat/SourceSection14WeightedMembership.lean), `sourceSection14_weighted_real_injective` | One actual Section 14 construction for all weights; exact (1+abs(n))^s for every real s>=0. Weighted analyticity and inverse properties remain; see [the Section 14 audit](coverage/SECTION_14.md). |
 | Appendix C.1, bounded source operator | [`AppendixCSourceTransform.lean`](NLS/Fourier/AppendixCSourceTransform.lean), `sourceLemmaC1_bounded` | Unique continuous linear realization with all-input convergent rows and operator bound for every finite p>1. |
 | Appendix C.1, all-exponent discrepancy | [`HilbertNotIsomorphismLp.lean`](NLS/Fourier/HilbertNotIsomorphismLp.lean), `sourceLemmaC1_not_bijective`, `sourceLemmaC1_no_linearEquiv` | Growing alternating blocks refute isomorphism for every finite p>1, including algebraic equivalences realizing the printed series. |
 | Appendix C.2, uniform source operator | `sourceLemmaC2`, `sourceModifiedHilbert_hasSum` | One bound before both arbitrary complex displacement sequences, unique bounded operator, exact pi factor and omitted diagonal. See [the Appendix C audit](coverage/APPENDIX_C.md). |
@@ -6779,3 +6783,36 @@ NLS declarations. The three new modules and twelve new checks introduce
 no warnings; the 21 existing warnings remain. The source inventory
 verifies all 156 candidate labels, all 223 checked local Markdown file
 links resolve, and `git diff --check` passes.
+
+## Remark 14.2(iii) milestone: Remark 14.2(iii), original weighted membership and injectivity
+
+For every finite 1<p<infinity, the original real Birkhoff map now takes every
+weighted real source into the corresponding weighted real target. The result
+holds for every Section 6 spectral weight, and one constructed Section 14
+map works for all these weights. It is injective on each full weighted real
+source space.
+
+The proof completes the finite central set in the weighted spectral-gap
+estimate, then uses the original action radius and normalized-action bound
+to control both real coordinates by the actual gap lengths. Positive
+weighting identifies the original closed real source with a complete real
+lp space. Input and output coefficient identities show that this is the
+same original map, with the exact weighted component-sum target norm.
+
+The half-scale spectral weight w(k)=(1+|k|/2)^s gives w(2n)=(1+|n|)^s
+exactly. Every real s>=0 is covered, including fractional orders; no
+doubling constant or integer-order restriction is introduced. The five
+new modules and 24 public checks include fractional p and s, negative and
+zero frequencies, original coefficients, completeness, norm identities,
+and unconditional constructions below and above p=2.
+See [the updated Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove locally uniform bounds for the weighted complex coordinates
+and their analyticity in the weighted topology. Weighted canonicality,
+local inverse and open dense image, exponent compatibility, and the global
+inverse for 1<p<=2 still need their full extension. This membership and
+injectivity result does not complete Remark 14.2(iii). The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
+
+Validation is recorded in [the current implementation status](STATUS.md).

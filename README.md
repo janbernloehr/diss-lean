@@ -5,17 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix C has source-level theorems for the unique bounded
-ordinary and modified Hilbert transforms, with their actual convergent
-series. C.2 retains arbitrary bounded complex lattice displacements and
-one uniform constant. C.1's printed isomorphism claim is now refuted for
-every finite 1<p<infinity, using alternating blocks with unbounded input
-norms and uniformly bounded transforms.
+Latest step: the original real Birkhoff map preserves every Section 6
+spectral weight and is injective between the corresponding weighted real
+spaces for every finite 1<p<infinity. Exact input and output coefficient
+formulas and the weighted norm identity are proved. Half-scale spectral
+weights recover precisely (1+|n|)^s for every real s>=0, including fractional
+regularity. One constructed Section 14 map works for all these weights.
 
-Next: Remark 14.2(iii)'s positive-smoothness extension of the original
-Birkhoff map. Fractional analyticity and inverse properties, the unrestricted
-Lemma 27.2 estimate, and G.2's norm interpretation remain qualified.
-The dissertation is incomplete.
+Next: weighted complex analyticity and the remaining assertions of Remark
+14.2(iii). The unrestricted Lemma 27.2 estimate and G.2 norm interpretation
+remain qualified. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

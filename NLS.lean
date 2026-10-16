@@ -3838,3 +3838,8 @@ import NLS.SequenceSpaces.AppendixBSourceInequalities
 import NLS.SequenceSpaces.MixedYoungZeroExponent
 import NLS.Fourier.HilbertNotIsomorphismLp
 import NLS.Fourier.AppendixCSourceTransform
+import NLS.ZakharovShabat.SourceBirkhoffWeightedMembership
+import NLS.ZakharovShabat.SourceWeightedRealSpaces
+import NLS.ZakharovShabat.SourceBirkhoffWeightedMap
+import NLS.ZakharovShabat.SourceBirkhoffOriginalWeightedMap
+import NLS.ZakharovShabat.SourceSection14WeightedMembership

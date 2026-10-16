@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | Existing later Sobolev interfaces | A full fractional Fourier–Lebesgue comparison is outside this milestone |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_real_injective`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real membership and injectivity for all finite p>1, exact Sobolev weights for every real s>=0. Weighted analyticity and the remaining Theorem 14.1 assertions are not yet extended. |
 
 ## Original definitions and exact phase
 
@@ -83,7 +83,56 @@ hypothesis. `eventually_map_exponent` then gives one common germ for the
 entire sequence at every complex overlap point, and `fderiv_exponent`
 identifies the full complex Fréchet derivatives after both inclusions.
 
-## Current validation and next step
+## Weighted extension: current result and remaining work
+
+[`SourceBirkhoffWeightedMembership.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean)
+proves full weighted summability of the actual periodic gaps, adding the
+finite central set to the existing tail estimate. On real sources, the
+original identity x_n^2+y_n^2=2 I_n and a uniform-in-index normalized-action
+root bound give one constant times the gap length for each coordinate.
+Thus both original real coordinate sequences retain the source weight.
+This works for every finite p>1 and every Section 6 spectral weight.
+
+[`SourceWeightedRealSpaces.lean`](../NLS/ZakharovShabat/SourceWeightedRealSpaces.lean)
+defines the closed real subspace of original weighted coefficient pairs,
+with the raw relation a_2(n)=conj(a_1(-n)). Its real coordinate equivalence
+preserves the weighted pair norm, proves completeness, and has both
+inverse identities. Including the weighted source into the unweighted
+source preserves every raw Fourier coefficient.
+
+[`SourceBirkhoffWeightedMap.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedMap.lean)
+first expresses the weighted output in normalized lp coordinates.
+[`SourceBirkhoffOriginalWeightedMap.lean`](../NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean)
+then gives a map between the original weighted source and target spaces.
+Its raw output is exactly the existing original real Birkhoff map, with
+both coordinate identities proved. Positive weighting and the original
+injectivity imply injectivity in the weighted spaces. The target's p-th
+norm power equals the sum of the p-th powers of both weighted coordinate
+magnitudes, with no change from the source's component-sum convention.
+
+[`SourceSection14WeightedMembership.lean`](../NLS/ZakharovShabat/SourceSection14WeightedMembership.lean)
+obtains an actual `SourceSection14Data` package from `sourceSection14` and
+proves that this single construction works for every spectral weight.
+Its half-scale spectral weight w(k)=(1+|k|/2)^s gives exactly the original
+period-one weight w(2n)=(1+|n|)^s. All nonnegative real s are included, so
+the result covers fractional positive smoothness and the zero endpoint.
+
+This establishes weighted membership and injectivity for the original
+map. It does not yet establish the full extension in Remark 14.2(iii):
+weighted complex analyticity, exponent compatibility, canonicality, local
+inverse and open dense image, and the global inverse in the source range
+1<p<=2 remain to be extended. A pointwise real gap bound alone does not
+prove analyticity in the stronger norm. Surjectivity for p>2 remains the
+separate open question recorded by the source.
+
+Twenty-four new checks cover p=3/2 and p=4, fractional s=1/3, zero regularity,
+negative frequencies, exact raw input and output coefficients, real-space
+completeness and inverse coordinate identities, injectivity, and exact
+weighted norm identities. The p=3/2 and p=4 constructions are obtained
+without assuming a Section 14 package. The current full-gate result is
+recorded in [STATUS.md](../STATUS.md).
+
+## Previous validation: complex exponent compatibility
 
 Twelve new checks exercise the domain restriction, projection compatibility,
 full complex intersections, sequence germs, complex derivatives,
@@ -99,8 +148,9 @@ no warnings; the 21 existing warnings remain. The source inventory
 verifies all 156 candidate labels, all 223 checked local Markdown file
 links resolve, and `git diff --check` passes.
 
-The detailed source audits of Sections 15–17 are next. The qualifications
-for the external-map and positive-smoothness remarks in the table remain.
+The separate source audits of Sections 15–17 are recorded in their audit
+files. The external-map qualification and the remaining weighted-extension
+requirements are listed above.
 
 ## Previous validation: original map and real geometry
 
