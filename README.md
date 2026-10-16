@@ -5,15 +5,17 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Appendix B has source-level theorems for the reciprocal-series
-bounds, the unique convergent Young convolution at every Banach endpoint,
-and the mixed three-sequence inequality for finite positive exponents.
-The mixed bound is sharp, including exponents below one. Its printed zero
-auxiliary endpoints are explicitly qualified: the formula is undefined
-there, and actual inputs give divergent nested sums.
+Latest step: Appendix C has source-level theorems for the unique bounded
+ordinary and modified Hilbert transforms, with their actual convergent
+series. C.2 retains arbitrary bounded complex lattice displacements and
+one uniform constant. C.1's printed isomorphism claim is now refuted for
+every finite 1<p<infinity, using alternating blocks with unbounded input
+norms and uniformly bounded transforms.
 
-Next: source audit of Appendix C. The separate fractional-smoothness and
-Lemma 27.2 endpoint qualifications remain. The dissertation is incomplete.
+Next: Remark 14.2(iii)'s positive-smoothness extension of the original
+Birkhoff map. Fractional analyticity and inverse properties, the unrestricted
+Lemma 27.2 estimate, and G.2's norm interpretation remain qualified.
+The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -33,7 +35,8 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 27 audit](coverage/SECTION_27.md),
 [the Section 28 audit](coverage/SECTION_28.md),
 [the Appendix A audit](coverage/APPENDIX_A.md),
-[the Appendix B audit](coverage/APPENDIX_B.md), and
+[the Appendix B audit](coverage/APPENDIX_B.md),
+[the Appendix C audit](coverage/APPENDIX_C.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

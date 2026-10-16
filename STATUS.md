@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Appendix B source inequalities and exponent qualification
+## Current milestone: Appendix C source operators and all-exponent obstruction
+
+C.1 now has one source-level theorem giving the unique bounded complex
+linear operator with its actual convergent series and operator norm bound,
+for every finite 1<p<infinity. The printed isomorphism claim is refuted
+throughout that range, strengthening the earlier exponent-two result.
+
+Alternating blocks have p-th norm power N+1. Their transforms are exactly
+the sum of two translates of one lp kernel factor and have a bound
+independent of N. Thus no lower norm bound or continuous linear left inverse
+exists. The Banach inverse theorem excludes bijectivity. Even an algebraic
+linear equivalence satisfying the printed series is impossible. No claim
+about a nonzero kernel or failure of surjectivity alone is made.
+
+C.2 is assembled with its exact pi factor and omitted diagonal on every
+input. A single constant is chosen before both bounded complex lattice
+displacements, depending only on p, c and their norm bounds. Every pair
+satisfying the printed off-diagonal separation has a unique bounded operator.
+No smallness, reality or ordering assumption is added. The correction alone
+has the Banach endpoints; the full transform is only asserted for 1<p<infinity.
+See [the Appendix C audit](coverage/APPENDIX_C.md) and
+[the source correction](SOURCE_ERRATA.md).
+
+Two new modules and 20 public checks cover all-input series, operator
+uniqueness, the all-exponent obstruction, fractional exponents, exact block
+norms, uniform constants, complex linearity, diagonal omission, arbitrary
+common translations, and the correction's endpoint bounds.
+
+Next: return to Remark 14.2(iii)'s positive-smoothness extension, beginning
+with weighted membership of the original real Birkhoff coordinates. Full
+fractional analyticity and inverse properties remain to be established.
+The separate unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,503 build jobs, all 6,285
+public examples, and the transitive axiom audit for 35,928 NLS declarations.
+The two new modules and 20 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+685 local file links across 38 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix B source inequalities and exponent qualification
 
 B.1 now has one source-level theorem proving summability and both printed
 reciprocal-series bounds for every nonnegative shift and finite conjugate

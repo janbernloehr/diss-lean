@@ -1239,34 +1239,37 @@ silently applied to the literal source statement.
 ## Appendix C.1: ordinary Hilbert transform is not an isomorphism
 
 Source: dissertation, Lemma C.1, printed page 125. The operator is
-`(Hx)_n = sum_{m != n} x_m/(m-n)`. The assertion that it is a Banach-space
-isomorphism for every 1 < p < infinity is false already at p=2.
+`(Hx)_n = sum_{m != n} x_m/(m-n)`. The isomorphism assertion is false for
+every finite 1<p<infinity, extending the earlier exponent-two obstruction.
 
-`HilbertKernelFactorization.lean` proves h(n)=t(n)+t(n-1), with t in ℓ²
-and h(n)=-1/n (zero on the diagonal). For the finitely supported sequence
-`a_N(k)=(-1)^k` on 0,...,N, `HilbertNotIsomorphism.lean` proves
+[`HilbertKernelFactorization.lean`](NLS/Fourier/HilbertKernelFactorization.lean)
+proves h(n)=t(n)+t(n-1), with t in every lp space above one and h(n)=-1/n
+(zero on the diagonal). For a_N(k)=(-1)^k on 0,...,N,
+[`HilbertNotIsomorphismLp.lean`](NLS/Fourier/HilbertNotIsomorphismLp.lean) proves
 
-```
-||a_N||₂² = N+1
-H a_N = t + (-1)^N shift_(N+1) t
-||H a_N||₂ <= 2 ||t||₂.
-```
+    norm(a_N)^p = N+1,
+    H a_N = t + (-1)^N shift_(N+1) t,
+    norm(H a_N) <= 2 norm(t).
 
-Consequently `discreteHilbert_not_bounded_below` rules out every nonnegative
-constant C satisfying `||a||₂ <= C ||Ha||₂` for all a. The theorem
-`hilbertTransform_two_no_left_inverse` rules out any bounded linear left
-inverse of the completed transform, and `hilbertTransform_two_ne_equiv`
-rules out its equality with any continuous linear equivalence. A generic
-version applies to any bounded operator agreeing with the printed formula
-on finite inputs, so the obstruction is independent of the construction.
+`HilbertLpObstruction.not_bounded_below` rules out every nonnegative C with
+norm(a)<=C*norm(Ha) for all inputs. Its `no_left_inverse` theorem excludes
+continuous linear left inverses. These apply to every bounded operator
+agreeing with the printed finite-input formula, independently of construction.
+The Banach inverse theorem then excludes bijectivity at every finite p>1.
 
-The correction is to assert boundedness, which `HilbertBoundedness.lean`
-already proves for every 1 < p < infinity. Neither failure of injectivity
-nor the corresponding obstruction at every other exponent is asserted here.
-Existing library proofs never used the false invertibility assertion.
-The source proof of Lemma C.2 uses only the boundedness part of C.1.
-`ModifiedHilbert.lean` now proves C.2 with its full two-lattice hypotheses,
-exact normalization, and uniform dependence on the specified norms.
+[`AppendixCSourceTransform.lean`](NLS/Fourier/AppendixCSourceTransform.lean)
+proves `sourceLemmaC1_not_bijective`, `sourceLemmaC1_no_isomorphism`, and
+`sourceLemmaC1_no_linearEquiv`. The last result also excludes an algebraic
+linear equivalence satisfying the original convergent series: its coefficient
+formulas would force equality with the already bounded Hilbert operator.
+No nonzero-kernel claim or separate failure-of-surjectivity claim is inferred.
+
+The corrected assertion is boundedness, with absolutely convergent rows
+for all lp inputs. `sourceLemmaC1_bounded` packages this together with
+uniqueness and its norm bound. Existing library proofs use this valid part.
+C.2 remains proved with its full two-lattice hypotheses, exact pi factor,
+omitted diagonal, and uniform dependence on the specified norms; its source
+package is `sourceLemmaC2`. See [the Appendix C audit](coverage/APPENDIX_C.md).
 
 ## Theorem 1.1: printed height proved through four; all-exponent assertion refuted
 

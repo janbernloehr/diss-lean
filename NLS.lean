@@ -3836,3 +3836,5 @@ import NLS.Fourier.PeriodicIntrinsicSobolevEmbedding
 import NLS.Fourier.PeriodicIntrinsicSobolevEquivalence
 import NLS.SequenceSpaces.AppendixBSourceInequalities
 import NLS.SequenceSpaces.MixedYoungZeroExponent
+import NLS.Fourier.HilbertNotIsomorphismLp
+import NLS.Fourier.AppendixCSourceTransform

@@ -14,6 +14,9 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Appendix C.1, bounded source operator | [`AppendixCSourceTransform.lean`](NLS/Fourier/AppendixCSourceTransform.lean), `sourceLemmaC1_bounded` | Unique continuous linear realization with all-input convergent rows and operator bound for every finite p>1. |
+| Appendix C.1, all-exponent discrepancy | [`HilbertNotIsomorphismLp.lean`](NLS/Fourier/HilbertNotIsomorphismLp.lean), `sourceLemmaC1_not_bijective`, `sourceLemmaC1_no_linearEquiv` | Growing alternating blocks refute isomorphism for every finite p>1, including algebraic equivalences realizing the printed series. |
+| Appendix C.2, uniform source operator | `sourceLemmaC2`, `sourceModifiedHilbert_hasSum` | One bound before both arbitrary complex displacement sequences, unique bounded operator, exact pi factor and omitted diagonal. See [the Appendix C audit](coverage/APPENDIX_C.md). |
 | Appendix B.1 | [`AppendixBSourceInequalities.lean`](NLS/SequenceSpaces/AppendixBSourceInequalities.lean), `sourceLemmaB1` | Summability and both printed bounds; all nonnegative shifts and finite conjugate exponents. |
 | Appendix B.2 | `Coeff.sourceLemmaB2` | Unique target sequence with convergent convolution rows and unit norm bound; all Banach Young triples, including infinity. |
 | Appendix B.3, positive interpretation | `Coeff.sourceLemmaB3_positive`, `sourceLemmaB3_constant_sharp` | Finite positive exponents, including below one; every nested sum converges, exact bound one, and optimality for every admissible tuple. |
@@ -240,11 +243,16 @@ height is adopted.
 The full-range boundedness assertion is proved by
 [`HilbertBoundedness.lean`](NLS/Fourier/HilbertBoundedness.lean), including
 the finite-input formula and, through `HilbertSeries.lean`, the convergent
-series on every input. The printed isomorphism assertion is refuted at p=2
-by [`HilbertNotIsomorphism.lean`](NLS/Fourier/HilbertNotIsomorphism.lean).
-Alternating finite blocks have squared norm N+1 and uniformly bounded
+series on every input. The printed isomorphism assertion is now refuted for
+every finite p>1 by
+[`HilbertNotIsomorphismLp.lean`](NLS/Fourier/HilbertNotIsomorphismLp.lean).
+Alternating finite blocks have p-th norm power N+1 and uniformly bounded
 transforms. The public results rule out a lower norm estimate, a bounded
-linear left inverse, and a continuous linear equivalence realizing H.
+linear left inverse, and bijectivity. `sourceLemmaC1_no_linearEquiv` excludes
+even an algebraic linear equivalence satisfying the printed series.
+The source-level bounded operator and its unique convergent formulas are
+packaged in `sourceLemmaC1_bounded`. See
+[the focused Appendix C audit](coverage/APPENDIX_C.md).
 
 This is a proved source discrepancy, not a completed proof of the literal
 statement. The correction and its precise scope are recorded in
@@ -269,6 +277,8 @@ operator on ℓp. `modifiedHilbert_source_apply` identifies it with
 `C_p+c*(norm(s)+norm(r))*norm(hilbertSquareCoeffs)`.
 `exists_modifiedHilbert_uniform_bound` explicitly chooses the bound before
 s and r, uniformly over prescribed upper bounds for their norms.
+`sourceLemmaC2` combines that quantifier order with the unique continuous
+linear operator and its actual convergent source series on every input.
 
 No smallness, real-valuedness, or ordering of the two displacements is
 required. The diagonal is omitted even when rho_n differs from sigma_n.

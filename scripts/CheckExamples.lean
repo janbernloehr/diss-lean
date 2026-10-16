@@ -58513,3 +58513,119 @@ example : ¬Summable (fun l : ℤ => (∑' m : ℤ,
 
 end AppendixBSourceChecks
 end NLS
+
+namespace NLS.Fourier
+section AppendixCSourceChecks
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem appendixC_three_halves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem appendixC_three_halves_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example (a : Coeff (3/2)) (n : ℤ) :
+    HasSum (fun k : ℤ => if k = n then 0 else a k / ((k : ℂ) - n))
+      (hilbertTransform appendixC_three_halves_gt_one appendixC_three_halves_ne_top a n) :=
+  sourceHilbert_hasSum _ _ a n
+
+example (a : Coeff 4) :
+    HasSum (fun k : ℤ => if k = -7 then 0 else a k / ((k : ℂ) - (-7)))
+      (hilbertTransform (by norm_num) (by norm_num) a (-7)) :=
+  by simpa only [Int.cast_neg, Int.cast_ofNat] using
+    sourceHilbert_hasSum (p := 4) (by norm_num) (by norm_num) a (-7)
+
+example : ∃! H : Coeff 2 →L[ℂ] Coeff 2,
+    (∀ (a : Coeff 2) (n : ℤ),
+      HasSum (fun k : ℤ => if k = n then 0 else a k / ((k : ℂ) - n)) (H a n)) ∧
+    ‖H‖ ≤ hilbertTransformBound (p := 2) (by norm_num) (by norm_num) :=
+  sourceLemmaC1_bounded (by norm_num) (by norm_num)
+
+example (H : Coeff 2 ≃L[ℂ] Coeff 2)
+    (h : ∀ (a : Coeff 2) (n : ℤ),
+      HasSum (fun k : ℤ => if k = n then 0 else a k / ((k : ℂ) - n)) (H a n)) : False :=
+  sourceLemmaC1_no_isomorphism (by norm_num) (by norm_num) ⟨H, h⟩
+
+example : ¬ Function.Bijective (hilbertTransform (p := 2) (by norm_num) (by norm_num)) :=
+  sourceLemmaC1_not_bijective (by norm_num) (by norm_num)
+
+example (N : ℕ) : ‖alternatingHilbertBlock N‖^2 = (N : ℝ) + 1 :=
+  norm_alternatingHilbertBlock_sq N
+
+example (N : ℕ) :
+    ‖hilbertTransform (p := 2) (by norm_num) (by norm_num) (alternatingHilbertBlock N)‖ ≤
+      2 * ‖hilbertFactorCoeffs‖ :=
+  norm_transform_alternatingHilbertBlock_le _ (hilbertTransform_finite _ _) N
+
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ s r : Coeff ⊤, ‖s‖ ≤ 100 → ‖r‖ ≤ 200 →
+    HilbertLatticeSeparated s r 3 →
+      ∃! A : Coeff (3/2) →L[ℂ] Coeff (3/2),
+        (∀ (a : Coeff (3/2)) (n : ℤ), HasSum (fun k : ℤ => if k = n then 0 else
+          (Real.pi : ℂ) * (a k / (hilbertLattice r k - hilbertLattice s n))) (A a n)) ∧ ‖A‖ ≤ C :=
+  sourceLemmaC2 appendixC_three_halves_gt_one appendixC_three_halves_ne_top (by norm_num) (by norm_num) (by norm_num)
+
+
+example : ¬ Function.Bijective
+    (hilbertTransform (p := 3/2) appendixC_three_halves_gt_one appendixC_three_halves_ne_top) :=
+  sourceLemmaC1_not_bijective _ _
+
+example (N : ℕ) : ‖HilbertLpObstruction.block (p := 3/2) N‖ ^ (3/2 : ℝ) = (N : ℝ) + 1 := by
+  simpa only [ENNReal.toReal_div, ENNReal.toReal_ofNat] using
+    HilbertLpObstruction.norm_block_rpow appendixC_three_halves_gt_one appendixC_three_halves_ne_top N
+
+example : ¬ ∃ H : Coeff 4 ≃ₗ[ℂ] Coeff 4,
+    ∀ (a : Coeff 4) (n : ℤ),
+      HasSum (fun k : ℤ => if k = n then 0 else a k / ((k : ℂ) - n)) (H a n) :=
+  sourceLemmaC1_no_linearEquiv (by norm_num) (by norm_num)
+
+example (L : Coeff (3/2) →L[ℂ] Coeff (3/2)) :
+    ¬ Function.LeftInverse L (hilbertTransform appendixC_three_halves_gt_one appendixC_three_halves_ne_top) :=
+  HilbertLpObstruction.no_left_inverse appendixC_three_halves_gt_one _
+    (hilbertTransform_finite _ _) appendixC_three_halves_ne_top L
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤)
+  (s r : Coeff ⊤) {c : ℝ} (hc : 0 < c) (hsep : HilbertLatticeSeparated s r c)
+
+example (a : Coeff p) (n : ℤ) : HasSum
+    (fun k : ℤ => if k = n then 0 else (Real.pi : ℂ) * (a k / (hilbertLattice r k - hilbertLattice s n)))
+    (modifiedHilbert s r hc hsep hp1 hp a n) := sourceModifiedHilbert_hasSum hp1 hp s r hc hsep a n
+
+example (a : Coeff p) (n : ℤ) :
+    Summable (fun k : ℤ => ‖if k = n then 0 else a k / (hilbertLattice r k - hilbertLattice s n)‖) :=
+  summable_norm_modifiedHilbert_source_series s r hc hsep hp1 hp a n
+
+example : ‖modifiedHilbert s r hc hsep hp1 hp‖ ≤
+    hilbertTransformBound hp1 hp + c * (‖s‖ + ‖r‖) * ‖hilbertSquareCoeffs‖ :=
+  norm_modifiedHilbert_le s r hc hsep hp1 hp
+
+example (a : Coeff p) :
+    modifiedHilbert s r hc hsep hp1 hp (Complex.I • a) =
+      Complex.I • modifiedHilbert s r hc hsep hp1 hp a := map_smul _ _ _
+
+example (hs : ∀ n, s n = s 0) :
+    modifiedHilbert s s (inv_pos.mpr Real.pi_pos)
+      (hilbertLatticeSeparated_common_constant s hs) hp1 hp = hilbertTransform hp1 hp :=
+  modifiedHilbert_common_constant s hs hp1 hp
+
+example (n : ℤ) :
+    modifiedHilbert s r hc hsep hp1 hp (lp.single p n 1) n = 0 := by
+  rw [modifiedHilbert_source_apply]
+  have h : (fun k : ℤ => if k = n then (0 : ℂ) else
+      (lp.single p n 1 : Coeff p) k / (hilbertLattice r k - hilbertLattice s n)) = 0 := by
+    funext k
+    by_cases hk : k = n
+    · simp [hk]
+    · simp [hk, lp.single_apply]
+  rw [h]
+  change (Real.pi : ℂ) * (∑' _k : ℤ, (0 : ℂ)) = 0
+  rw [tsum_zero, mul_zero]
+
+example (a : Coeff 1) : ‖modifiedHilbertCorrection s r hc hsep a‖ ≤
+    (modifiedHilbertCorrectionBound s r c * ‖hilbertSquareCoeffs‖) * ‖a‖ :=
+  norm_modifiedHilbertCorrection_le s r hc hsep a
+
+example (a : Coeff ⊤) : ‖modifiedHilbertCorrection s r hc hsep a‖ ≤
+    (modifiedHilbertCorrectionBound s r c * ‖hilbertSquareCoeffs‖) * ‖a‖ :=
+  norm_modifiedHilbertCorrection_le s r hc hsep a
+
+end AppendixCSourceChecks
+end NLS.Fourier
