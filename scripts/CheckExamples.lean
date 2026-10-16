@@ -58267,3 +58267,166 @@ example : (sobolevProduct (by norm_num) (a8OriginalMultiplier (L := 2)) a8Origin
 
 end AppendixAProductChecks
 end NLS.Fourier
+
+
+noncomputable section
+open MeasureTheory Set Filter Topology
+open scoped ENNReal
+
+namespace NLS.Fourier
+open SmoothPeriodicTest PeriodicFourierLebesgue IntrinsicIntervalSobolev
+section AppendixA9OriginalChecks
+local instance instPositiveThreeA9 : Fact (0 < (3:ℝ)) := ⟨by norm_num⟩
+local instance instPositiveOneA9 : Fact (0 < (1:ℝ)) := ⟨by norm_num⟩
+local instance instOfRealThreeA9 : Fact (1 ≤ ENNReal.ofReal (3:ℝ)) := ⟨by norm_num⟩
+local instance instOfRealTwoA9 : Fact (1 ≤ ENNReal.ofReal (2:ℝ)) := ⟨by norm_num⟩
+local instance instOfRealFractionA9 : Fact (1 ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+variable {L : ℝ} [Fact (0 < L)]
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L))) :
+    (ofIntervalL2 (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f hf).val =
+      Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) := ofIntervalL2_val _ f hf
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 (3:ℝ)))) :
+    ‖ofIntervalL2 (by norm_num : (2:ℝ≥0∞) ≤ 2) f hf‖ ≤
+      Real.sqrt (1/3) * Real.sqrt (intervalSquareEnergy 3 f).toReal := norm_ofIntervalL2_le _ f hf
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 (1:ℝ)))) :
+    ‖ofIntervalL2 (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f hf‖ ≤ Real.sqrt (intervalSquareEnergy 1 f).toReal := by
+  simpa using norm_ofIntervalL2_le (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f hf
+
+example : Function.Injective (l2OriginalEmbedding (L := 3) (by norm_num : (2:ℝ≥0∞) ≤ ⊤)) :=
+  l2OriginalEmbedding_injective _
+
+example (f : CircleL2) : ‖l2OriginalEmbedding (L := 3) (by norm_num : (2:ℝ≥0∞) ≤ 2) f‖ ≤ ‖f‖ :=
+  norm_l2OriginalEmbedding_le _ f
+
+example (f : CircleL2) :
+    (l2OriginalEmbedding (L := 3) (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f).val (mode 7) =
+      intervalFourierCoefficient 3 (intervalPullback 3 f) (-7) := by
+  simpa using l2OriginalEmbedding_coefficient (L := 3) (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f (-7)
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L))) :
+    l2OriginalEmbedding (L := L) (by norm_num : (2:ℝ≥0∞) ≤ ⊤)
+      (intervalL2Class (Fact.out : 0 < L) f hf) = ofIntervalL2 (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f hf :=
+  l2OriginalEmbedding_intervalL2Class _ f hf
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L))) :
+    (ofIntervalSobolev (by norm_num : (0:ℝ) ≤ 0) (by norm_num) (q := 3) (by norm_num)
+      f hf (by intro hs; norm_num at hs)).val = Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) := by
+  exact ofIntervalSobolev_val _ _ _ f hf _
+
+example (f : IntrinsicIntervalSobolev (1/4) L) (n : ℤ) :
+    (originalFourierEmbedding (q := 3/2) (by norm_num) (by norm_num) (by norm_num) f).val (mode (-n)) =
+      intervalFourierCoefficient L (intervalPullback L f.val) n := originalFourierEmbedding_coefficient _ _ _ f n
+
+example (f : IntrinsicIntervalSobolev (1/4) (3:ℝ)) (g : SmoothPeriodicTest (3:ℝ)) :
+    (originalFourierEmbedding (q := 3/2) (by norm_num) (by norm_num) (by norm_num) f).val g =
+      (3:ℂ)⁻¹ * ∫ x in (0:ℝ)..3, intervalPullback 3 f.val x * g x := originalFourierEmbedding_apply _ _ _ f g
+
+example : Function.Injective (originalFourierEmbedding (L := L) (s := 1/4) (q := 3/2)
+    (by norm_num) (by norm_num) (by norm_num)) := originalFourierEmbedding_injective _ _ _
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hE : fractionalIntervalEnergy (1/4) L f < ⊤) (g : SmoothPeriodicTest L) :
+    (originalFourierEmbedding (q := 3/2) (by norm_num) (by norm_num) (by norm_num)
+      (ofFunction f hf hE)).val g = (L:ℂ)⁻¹ * ∫ x in (0:ℝ)..L, f x * g x :=
+  originalFourierEmbedding_ofFunction_apply _ _ _ f hf hE g
+
+example (f : IntrinsicIntervalSobolev (1/2) L) :
+    (originalHalfFourierEmbedding (q := 3/2) (by norm_num) f).val = Distribution.ofL1 (intervalPullback L f.val)
+      (intervalIntegrable_of_memLp_two (memLp_intervalPullback (Fact.out : 0 < L) f.val)) :=
+  originalHalfFourierEmbedding_val _ f
+
+example : Function.Injective (originalHalfFourierEmbedding (L := 3) (q := 3/2) (by norm_num)) :=
+  originalHalfFourierEmbedding_injective _
+
+example (f : IntrinsicIntervalSobolev (1/2) L) :
+    ‖originalHalfFourierEmbedding (q := 3/2) (by norm_num) f‖ ≤
+      (halfIntervalFourierLebesgueBoundConstant (by norm_num : (1:ℝ) < 3/2) *
+        Real.sqrt (intrinsicDilationConstant (1/2) (L/2)).toReal) * ‖f‖ := norm_originalHalfFourierEmbedding_le _ f
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hE : fractionalIntervalEnergy (1/2) L f < ⊤) :
+    (originalHalfFourierEmbedding (q := 3/2) (by norm_num) (ofFunction f hf hE)).val =
+      Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) := originalHalfFourierEmbedding_ofFunction_val _ f hf hE
+
+example (f : IntrinsicIntervalSobolev (1/2) (3:ℝ)) :
+    ‖originalL2TargetEmbedding (by norm_num : (2:ℝ≥0∞) ≤ ⊤) f‖ ≤ (Real.sqrt 3)⁻¹ * ‖f‖ :=
+  norm_originalL2TargetEmbedding_le _ f
+
+example : Function.Injective (originalL2TargetEmbedding (s := 1/2) (L := 3)
+    (by norm_num : (2:ℝ≥0∞) ≤ ⊤)) := originalL2TargetEmbedding_injective _
+
+example (f : IntrinsicIntervalSobolev (1/4) L) :
+    (originalSobolevEquiv (by norm_num) (by norm_num)).symm
+      (originalSobolevEquiv (by norm_num) (by norm_num) f) = f := ContinuousLinearEquiv.symm_apply_apply _ f
+
+example (u : PeriodicFourierLebesgue L (Weight.sobolev (1/4)) 2) :
+    originalSobolevEquiv (by norm_num) (by norm_num)
+      ((originalSobolevEquiv (by norm_num) (by norm_num)).symm u) = u := ContinuousLinearEquiv.apply_symm_apply _ u
+
+example (f : IntrinsicIntervalSobolev (1/4) (3:ℝ)) :
+    (originalSobolevEquiv (by norm_num) (by norm_num) f).val (mode 0) =
+      intervalFourierCoefficient 3 (intervalPullback 3 f.val) 0 := by
+  simpa using originalSobolevEquiv_coefficient (by norm_num) (by norm_num) f 0
+
+example (f : IntrinsicIntervalSobolev (1/4) L) :
+    ‖originalSobolevEquiv (by norm_num) (by norm_num) f‖ ≤ weightedAnalysisBoundConstant (1/4) L * ‖f‖ :=
+  norm_originalSobolevEquiv_le _ _ f
+
+example (u : PeriodicFourierLebesgue L (Weight.sobolev (1/4)) 2) :
+    ‖(originalSobolevEquiv (by norm_num) (by norm_num)).symm u‖ ≤ weightedSynthesisBoundConstant (1/4) L * ‖u‖ :=
+  norm_originalSobolevEquiv_symm_le _ _ u
+
+example (u : PeriodicFourierLebesgue L (Weight.sobolev (1/4)) 2) :
+    Distribution.ofL1 (intervalPullback L ((originalSobolevEquiv (by norm_num) (by norm_num)).symm u).val)
+      (intervalIntegrable_of_memLp_two (memLp_intervalPullback (Fact.out : 0 < L) _)) = u.val :=
+  originalSobolevEquiv_symm_represents _ _ u
+
+example {s q : ℝ} (hs : 0 ≤ s) (hs₁ : s < 1/2) (hq : 1/(s+1/2) < q)
+    (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hE : 0 < s → fractionalIntervalEnergy s L f < ⊤) :
+    Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) ∈
+      periodicFourierLebesgueSubmodule Weight.one (ENNReal.ofReal q) :=
+  ofL1_mem_fourierLebesgue_of_intervalSobolev hs hs₁ hq f hf hE
+
+example {q : ℝ} (hq : 1 < q) (f : ℝ → ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 (3:ℝ))))
+    (hE : fractionalIntervalEnergy (1/2) 3 f < ⊤) :
+    Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) ∈
+      periodicFourierLebesgueSubmodule Weight.one (ENNReal.ofReal q) :=
+  ofL1_mem_fourierLebesgue_of_intervalHalfSobolev hq f hf hE
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 (3:ℝ)))) :
+    Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) ∈ periodicFourierLebesgueSubmodule Weight.one ⊤ :=
+  ofL1_mem_fourierLebesgue_of_intervalL2 (by norm_num) f hf
+
+example (f : IntrinsicIntervalSobolev (1/4) L) :
+    (originalFourierEmbedding (q := 3/2) (by norm_num) (by norm_num) (by norm_num) f).val =
+      (originalSobolevEquiv (by norm_num) (by norm_num) f).val :=
+  originalFourierEmbedding_eq_originalSobolevEquiv_val _ _ _ f
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hE : fractionalIntervalEnergy (1/4) L f < ⊤) :
+    (originalSobolevEquiv (by norm_num) (by norm_num) (ofFunction f hf hE)).val =
+      Distribution.ofL1 f (intervalIntegrable_of_memLp_two hf) := originalSobolevEquiv_ofFunction_val _ _ f hf hE
+
+example (f : IntrinsicIntervalSobolev (1/4) L) :
+    ‖originalFourierEmbedding (q := 3/2) (by norm_num) (by norm_num) (by norm_num) f‖ ≤
+      arbitraryPeriodFourierBoundConstant L (by norm_num : (0:ℝ) < 1/4) (by norm_num)
+        (by norm_num : 1/((1/4:ℝ)+1/2) < 3/2) * ‖f‖ := norm_originalFourierEmbedding_le _ _ _ f
+
+example (f : IntrinsicIntervalSobolev (1/2) L) :
+    (originalHalfFourierEmbedding (q := 3/2) (by norm_num) (Complex.I • f)).val =
+      Complex.I • (originalHalfFourierEmbedding (q := 3/2) (by norm_num) f).val := by
+  rw [map_smul]
+  rfl
+
+example (f g : IntrinsicIntervalSobolev (1/4) L) :
+    originalSobolevEquiv (by norm_num) (by norm_num) (f+g) =
+      originalSobolevEquiv (by norm_num) (by norm_num) f + originalSobolevEquiv (by norm_num) (by norm_num) g :=
+  map_add _ f g
+
+end AppendixA9OriginalChecks
+end NLS.Fourier

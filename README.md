@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma A.7 is proved on the original distribution spaces at every
-positive physical period, with sharp bilinear norm one. FL1 is a complete
-commutative normed complex algebra. Lemma A.8's embedding preserves the
-original distribution and supplies a continuous representative. Its product
-estimate requires a Hölder constant: finite polynomials disprove the printed
-constant one, with squared norms 41 > 8*5. See [source errata](SOURCE_ERRATA.md).
+Latest step: Lemma A.9 is integrated on the original distribution spaces for
+every positive physical period. The interval Sobolev embeddings retain their
+full exponent ranges, including zero and half regularity and infinity targets.
+Below half regularity, the original weighted Hilbert space is continuously
+linearly equivalent to the intrinsic interval Sobolev space. All maps preserve
+the actual normalized smooth-test action and the physical norm factors.
 
-Next: A.9's original-space integration and physical Sobolev normalization.
+Next: source audit of the remaining Appendix B inequalities and Appendix C.
 The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
 remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

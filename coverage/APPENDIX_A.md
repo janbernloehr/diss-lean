@@ -10,12 +10,18 @@ in Remark A.6, the actual L1-to-c0 Fourier map, and the full embeddings
 of Lemmas A.2 and A.4 and the counterexamples A.3 and A.5 on page 123.
 On page 124, A.7 and the embedding in A.8 are proved; the false constant-one
 estimate (A.4) is replaced by a quantified bound and a polynomial counterexample.
+A.9's full exponent ranges and the subcritical interval/periodic Sobolev
+identification are now realized on the original distribution spaces.
 The test space
 contains the actual smooth complex-valued functions with the stated
 positive physical period. It is not defined as a coefficient-sequence space.
 
 | Source assertion | Public entry point | Verified scope |
 | --- | --- | --- |
+| Lemma A.9, full original-space membership | `ofL1_mem_fourierLebesgue_of_intervalSobolev`, `ofL1_mem_fourierLebesgue_of_intervalHalfSobolev` | 0≤s<1/2 and finite q>1/(s+1/2); separately s=1/2 and finite q>1. Original arbitrary interval input, no endpoint matching, and no fractional assumption at zero. |
+| A.9 zero and infinity cases | `PeriodicFourierLebesgue.ofIntervalL2`, `norm_ofIntervalL2_le`, `l2OriginalEmbedding` | Ordinary interval L2 to every q≥2, including infinity; exact physical L^(-1/2) bound. This also supplies the infinity target for positive and half regularity. |
+| A.9 continuous linear injections | `IntrinsicIntervalSobolev.originalFourierEmbedding`, `originalHalfFourierEmbedding`, `originalL2TargetEmbedding` | Injective maps on actual intrinsic interval classes, original smooth-test action and explicit physical norm bounds. |
+| A.9 interval/periodic Sobolev identification | `IntrinsicIntervalSobolev.originalSobolevEquiv`, `originalSobolevEquiv_symm_represents` | Continuous linear equivalence for 0<s<1/2; both inverse identities, actual interval representatives, and bounds in both directions using the exact Section 2 weight. |
 | Lemma A.7, original product | `PeriodicFourierLebesgue.youngProduct`, `youngProduct_unique`, `norm_youngProductCLM` | All positive periods and Banach Young triples; absolutely convergent coefficients, unique original distribution, sharp bilinear norm one. |
 | Product compatibility | `youngProduct_eq_of_val_eq`, `tendsto_youngProduct_truncate`, `youngProduct_eq_ofContinuous` | Exponent independence; finite-input truncation limits even with infinity output; actual pointwise multiplication when one continuous factor is in FL1. |
 | Original Wiener Banach algebra | `instWienerNormedCommRing`, `instWienerNormedAlgebra`, `wienerContinuousAlgHom` | Complete original FL1, norm-one unit, injective algebra map to C(T_L). |
@@ -470,10 +476,33 @@ equality of the entire original functional. The constant is retained explicitly.
 identifies both witnesses and their product with actual physical polynomials,
 then computes the exact squared norms. See [SOURCE_ERRATA.md](../SOURCE_ERRATA.md).
 
-A.9 still requires its Appendix A source audit and original-space integration.
-The present original-space Hilbert identification is at s=0; the link to
-physical Sobolev spaces at nonzero order remains part of that work. Earlier
-coefficient-space and intrinsic-Sobolev results provide its prerequisites.
+Three further modules and 32 checks cover A.9 on the original spaces.
+[`PeriodicIntervalFourierLebesgue.lean`](../NLS/Fourier/PeriodicIntervalFourierLebesgue.lean)
+identifies the coefficient synthesis with integration against arbitrary interval
+input. Its source-level membership theorems require only the printed L2 and
+fractional regularity hypotheses, and include the strict exponent range at
+zero and at half regularity. The zero-regularity result is stronger at q=2;
+the ordinary L2 inclusion also supplies the infinity target.
+
+[`PeriodicIntrinsicSobolevEmbedding.lean`](../NLS/Fourier/PeriodicIntrinsicSobolevEmbedding.lean)
+transfers the established coefficient maps through the original coefficient
+isometry. The equality of original distributions proves the exact 1/L action
+on every smooth test. The domain is the actual a.e. interval quotient with
+finite Slobodeckij difference energy. No periodic endpoint condition is imposed.
+At s=0 the ordinary L2 API is used; the intrinsic graph energy at zero is not
+silently identified with the usual L2 norm.
+
+[`PeriodicIntrinsicSobolevEquivalence.lean`](../NLS/Fourier/PeriodicIntrinsicSobolevEquivalence.lean)
+provides the continuous linear equivalence invoked in A.9's proof for
+0<s<1/2. Both directions preserve the original function, and the inverse gives
+an actual interval representative of every original FL^{s,2} distribution.
+The exact weight (1+|n|)^s is retained. The analysis and synthesis constants
+record the physical dilation from length L, so no isometric assertion about
+the source's rescaled weight is substituted for this equivalence. At s=0,
+the existing physical L2 isometry supplies the Hilbert identification.
+
+This completes A.9's original-space integration. The separately recorded
+corrections to the infinity Fourier-series assertion and (A.4) remain.
 
 The blanket norm-convergence assertion on page 122 includes the infinity
 endpoint. The obstruction already formalized for Section 2 applies there

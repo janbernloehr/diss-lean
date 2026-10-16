@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Appendix A.7 products and corrected A.8 embedding
+## Current milestone: Appendix A.9 on the original distribution spaces
+
+For every positive physical interval length, the A.9 embeddings now take values
+in the original smooth-test distribution spaces. For 0 < s < 1/2, the intrinsic
+interval H^s quotient embeds continuously and injectively into FLq for every
+q > 1/(s+1/2). At half regularity the corresponding map exists for every q > 1.
+The infinity target is included through the ordinary L2 injection.
+
+At zero regularity the input is ordinary interval L2, with no fractional-energy
+condition. Every target q ≥ 2 is covered, including infinity, with the exact
+physical factor L^(-1/2). The intrinsic graph norm at s=0 is not used as an
+L2 norm. Arbitrary interval functions are admitted without endpoint matching.
+
+For 0 < s < 1/2, the original FL^{s,2} space is continuously linearly equivalent
+to the intrinsic interval Sobolev space. Both inverse identities and explicit
+forward and inverse norm bounds hold. The Section 2 weight stays exactly
+(1+|n|)^s; physical scaling remains in the constants. Each construction is
+identified with the original interval function on every smooth test, with
+exactly 1/L times the interval integral, not just equality of coefficients.
+
+Three new modules and 32 public checks cover zero, quarter and half regularity,
+finite and infinity targets, physical periods one and three, signed and zero
+modes, original test action, source-level membership, both inverse identities,
+physical norm bounds, arbitrary-input recovery, and complex linearity.
+See [the Appendix A audit](coverage/APPENDIX_A.md).
+
+Next: audit the remaining Appendix B source inequalities and the current
+Appendix C results against their original statements. The Section 14 and
+unrestricted Lemma 27.2 endpoint qualifications remain. The dissertation is
+incomplete; the existing source corrections also remain explicit.
+
+Validation: `./scripts/check.sh` passes: 7,499 build jobs, all 6,245
+public examples, and the transitive axiom audit for 35,877 NLS declarations.
+The three new modules and 32 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+646 local file links across 36 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A.7 products and corrected A.8 embedding
 
 For every positive physical period and every Banach Young triple, the product
 of original Fourier–Lebesgue distributions is defined by absolutely convergent

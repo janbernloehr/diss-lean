@@ -3831,3 +3831,6 @@ import NLS.Fourier.PeriodicFourierLebesgueProduct
 import NLS.Fourier.PeriodicWienerAlgebra
 import NLS.Fourier.PeriodicSobolevEmbedding
 import NLS.Fourier.SobolevProductCounterexample
+import NLS.Fourier.PeriodicIntervalFourierLebesgue
+import NLS.Fourier.PeriodicIntrinsicSobolevEmbedding
+import NLS.Fourier.PeriodicIntrinsicSobolevEquivalence
