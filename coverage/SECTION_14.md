@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_sobolev_continuous_injective_dense`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real continuous injection with dense image for all finite p>1 and every real s>=0, using exact Sobolev weights. Weighted analyticity, canonicality, exponent compatibility, open image and inverse assertions remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_sobolev_continuous_injective_dense`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real continuous injection with dense image for all finite p>1 and every real s>=0, using exact Sobolev weights. Weighted real exponent compatibility is proved. Weighted complex analyticity and compatibility, canonicality, open image and inverse assertions remain. |
 
 ## Original definitions and exact phase
 
@@ -169,7 +169,7 @@ density for the actual original map.
 The finite-gap argument establishes Sobolev density, not density for
 arbitrary spectral weights such as exponential weights. Dense image does
 not establish open image or surjectivity. The remaining Remark 14.2(iii)
-requirements are weighted complex analyticity, exponent compatibility,
+requirements are weighted complex analyticity and complex exponent compatibility,
 canonicality, open image and local inverse, and the global inverse for
 1<p<=2. The complex-coordinate argument still needs a weighted estimate
 of the actual Dirichlet-minus-periodic-midpoint displacement; the weighted
@@ -181,6 +181,46 @@ coordinate inverses; continuity in the weighted norms; finite-gap lifts
 and finite target attainment; unconditional continuous dense injections;
 and approximation of arbitrary original weighted targets. The full gate
 result is recorded in [STATUS.md](../STATUS.md).
+
+## Weighted real exponents and gap characterization
+
+[`WeightedRealExponent.lean`](../NLS/SequenceSpaces/WeightedRealExponent.lean)
+and [`SourceWeightedRealExponent.lean`](../NLS/ZakharovShabat/SourceWeightedRealExponent.lean)
+construct continuous real linear inclusions in the original weighted spaces.
+They preserve raw coefficients, the source conjugate-reflection relation,
+and the target reality condition. Injectivity, reflexivity and composition
+are proved; the single-coordinate-space inclusion is contractive. The pair
+maps use the respective WithLp p and WithLp q topologies.
+
+[`SourceBirkhoffWeightedExponent.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedExponent.lean)
+proves the exact commuting identity for the full original weighted real
+Birkhoff map. It applies for every spectral weight and finite 1<p<=q,
+with independent normalized families at the two exponents. The public
+`sourceSection14_weighted_real_compatible` obtains both packages from
+`sourceSection14`, with no map-existence or compatibility premise. At equal
+exponents this also gives independence of the original weighted real map
+from the selected family. Weighted complex-domain compatibility still
+requires constructing the weighted complex map.
+
+[`SourceBirkhoffGapNormEquivalence.lean`](../NLS/ZakharovShabat/SourceBirkhoffGapNormEquivalence.lean)
+uses the locally uniform positive real part of four times the normalized
+action, exact action factorization, and x_n^2+y_n^2=2 I_n. It proves one
+positive lower bound for the squared coordinate radius relative to the
+squared gap at every nearby real source and every signed index. Taking
+square roots gives gap <= A (abs(x_n)+abs(y_n)) on the same neighborhood,
+including collapsed gaps. Combining this with the existing forward bound
+proves `weighted_gap_mem_iff_real_map_mem` for every positive `Weight`.
+No monotonicity, symmetry or submultiplicativity of that weight is needed.
+The construction `sourceSection14_weighted_gap_characterization` makes
+the result unconditional for the original Section 14 map.
+
+This is equivalence between weighted spectral gaps and Birkhoff outputs.
+It does not establish the converse from weighted gaps to weighted Fourier
+coefficients of the source, nor weighted surjectivity or an inverse. The
+23 public checks include p=3/2 to p=4, infinite-exponent sequence inclusions,
+negative and zero indices, fractional Sobolev orders, decreasing positive
+weights, both membership implications, and independent actual constructions.
+Validation is recorded in [the current implementation status](../STATUS.md).
 
 ## Previous validation: complex exponent compatibility
 

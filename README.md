@@ -5,16 +5,17 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original weighted real Birkhoff map is continuous for
-every Section 6 spectral weight and every finite 1<p<infinity. For each
-real Sobolev order s>=0, it is an injective map with dense image in the
-exact weighted target norm. Actual finite-gap preimages attain every
-finite target truncation, including at fractional orders and p>2.
+Latest step: original weighted real Birkhoff maps now agree across all
+finite exponents 1<p<=q, including independently constructed families.
+The actual gap sequence and both real coordinates have exactly the same
+weighted lp membership for every positive weight. The existing maps are
+continuous and injective, with dense image at every nonnegative real
+Sobolev order.
 
 Next: weighted complex analyticity and the remaining canonical and inverse
-assertions of Remark 14.2(iii). Open image and surjectivity in the weighted
-spaces are not yet established. The unrestricted Lemma 27.2 and G.2 norm
-qualifications remain. The dissertation is incomplete.
+assertions of Remark 14.2(iii). Weighted source regularity from the gap
+data, open image and surjectivity still need proofs. The unrestricted
+Lemma 27.2 and G.2 norm qualifications remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

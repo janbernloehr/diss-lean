@@ -58885,3 +58885,154 @@ example (t : ℝ) (ht : 0 ≤ t)
 
 end Section14WeightedTopologyChecks
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section14WeightedCompatibilityChecks
+open Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem compatibility_three_halves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem compatibility_three_halves_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ := by finiteness
+private theorem compatibility_three_halves_le_two : (3/2 : ℝ≥0∞) ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]; norm_num
+private theorem compatibility_three_halves_le_four : (3/2 : ℝ≥0∞) ≤ 4 :=
+  compatibility_three_halves_le_two.trans (by norm_num)
+
+example (w : Weight) (a : WeightedRealCoeff w (3/2)) :
+    (WeightedRealCoeff.exponentInclusion w compatibility_three_halves_le_four a).val.val (-7) =
+      a.val.val (-7) := by simp
+
+example (w : Weight) (a : WeightedRealCoeff w 2) :
+    (WeightedRealCoeff.exponentInclusion w le_top a).val.val 0 = a.val.val 0 := by simp
+
+example (w : Weight) (a : WeightedRealCoeff w (3/2)) :
+    ‖WeightedRealCoeff.exponentInclusion w compatibility_three_halves_le_four a‖ ≤ ‖a‖ :=
+  WeightedRealCoeff.norm_exponentInclusion_le w _ a
+
+example (w : Weight) (a : WeightedRealCoeff w (3/2)) :
+    WeightedRealCoeff.exponentInclusion w (show (2 : ℝ≥0∞) ≤ 4 by norm_num)
+      (WeightedRealCoeff.exponentInclusion w compatibility_three_halves_le_two a) =
+        WeightedRealCoeff.exponentInclusion w compatibility_three_halves_le_four a := by simp
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := 3/2) w) :
+    (weightedRealSourceExponentInclusion w compatibility_three_halves_le_four a).val.fst.val 0 =
+      a.val.fst.val 0 := by simp
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := 3/2) w) :
+    (weightedRealSourceExponentInclusion w compatibility_three_halves_le_four a).val.snd.val (-7) =
+      a.val.snd.val (-7) := by simp
+
+variable {p q r : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [Fact (1 ≤ r)]
+  (hpq : p ≤ q) (hqr : q ≤ r)
+
+example (w : SpectralWeight) : Continuous (weightedRealSourceExponentInclusion w hpq) :=
+  (weightedRealSourceExponentInclusion w hpq).continuous
+
+example (w : SpectralWeight) : Function.Injective (weightedRealSourceExponentInclusion w hpq) :=
+  weightedRealSourceExponentInclusion_injective w hpq
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    weightedRealSourceExponentInclusion w hqr (weightedRealSourceExponentInclusion w hpq a) =
+      weightedRealSourceExponentInclusion w (hpq.trans hqr) a := by simp
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    originalWeightedRealSource w (weightedRealSourceExponentInclusion w hpq a) =
+      realTypeSourceExponentInclusion hpq (originalWeightedRealSource w a) :=
+  originalWeightedRealSource_exponent w hpq a
+
+example (w : Weight) : Continuous (WeightedRealCoeff.pairExponentInclusion w hpq) :=
+  (WeightedRealCoeff.pairExponentInclusion w hpq).continuous
+
+example (w : Weight) : Function.Injective (WeightedRealCoeff.pairExponentInclusion w hpq) :=
+  WeightedRealCoeff.pairExponentInclusion_injective w hpq
+
+example (w : Weight) (a : WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p)) :
+    WeightedRealCoeff.pairExponentInclusion w hqr (WeightedRealCoeff.pairExponentInclusion w hpq a) =
+      WeightedRealCoeff.pairExponentInclusion w (hpq.trans hqr) a := by simp
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+  {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+  {hq : q ≠ ⊤} {hq1 : 1 < q} {V₀ C V : Set (CoeffPair q)}
+  {t : (k : ℤ) → CoeffPair q → DeletedCoeff q k}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+  (E : SourceBirkhoffMapComplexData hq hq1 V₀ C V t)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    WeightedRealCoeff.pairExponentInclusion (sourceFrequencyWeight w) hpq
+      (D.originalWeightedRealMap w a) =
+        E.originalWeightedRealMap w (weightedRealSourceExponentInclusion w hpq a) :=
+  D.originalWeightedRealMap_exponent E w hpq a
+
+example {A₀ A₁ A₂ : Set (CoeffPair p)} {u : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (F : SourceBirkhoffMapComplexData hp hp1 A₀ A₁ A₂ u) (w : SpectralWeight) :
+    D.originalWeightedRealMap w = F.originalWeightedRealMap w := by
+  funext a
+  simpa using D.originalWeightedRealMap_exponent F w le_rfl a
+
+example (a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight (1/3) (by norm_num))) :
+    WeightedRealCoeff.pairExponentInclusion
+      (sourceFrequencyWeight (sourceSobolevSpectralWeight (1/3) (by norm_num))) hpq
+      (D.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num)) a) =
+        E.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))
+          (weightedRealSourceExponentInclusion (sourceSobolevSpectralWeight (1/3) (by norm_num)) hpq a) :=
+  D.originalWeightedRealMap_exponent E _ hpq a
+
+example : ∃ W₀ W V : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+      ∃ D : SourceSection14Data compatibility_three_halves_ne_top compatibility_three_halves_gt_one W₀ W V s,
+        ∃ A B C : Set (CoeffPair 4), ∃ t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+          ∃ E : SourceSection14Data (by norm_num) (by norm_num) A B C t,
+            ∀ w : SpectralWeight, ∀ a : weightedRealSourceSubmodule (p := 3/2) w,
+              WeightedRealCoeff.pairExponentInclusion (sourceFrequencyWeight w) compatibility_three_halves_le_four
+                (D.complex.originalWeightedRealMap w a) =
+                  E.complex.originalWeightedRealMap w
+                    (weightedRealSourceExponentInclusion w compatibility_three_halves_le_four a) :=
+  sourceSection14_weighted_real_compatible _ _ _ _ _
+
+example (φ : realTypeSourceSubmodule p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ.val ∈ U ∧ ∃ c : ℝ, 0 < c ∧
+      ∀ ψ : realTypeSourceSubmodule p, ψ.val ∈ U → ∀ n : ℤ,
+        c * ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖^2 ≤
+          ((sourceRealBirkhoffMap hp hp1 s ψ).1 n)^2 +
+            ((sourceRealBirkhoffMap hp hp1 s ψ).2 n)^2 :=
+  D.exists_local_uniform_gap_sq_le_real_map_radius φ
+
+example (φ : realTypeSourceSubmodule p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ.val ∈ U ∧ ∃ A : ℝ, 0 < A ∧
+      ∀ ψ : realTypeSourceSubmodule p, ψ.val ∈ U → ∀ n : ℤ,
+        ‖sourcePeriodicGapDisplacement hp hp1 ψ.val n‖ ≤
+          A * (|(sourceRealBirkhoffMap hp hp1 s ψ).1 n| +
+            |(sourceRealBirkhoffMap hp hp1 s ψ).2 n|) :=
+  D.exists_local_uniform_gap_le_real_map φ
+
+example (w : Weight) (φ : realTypeSourceSubmodule p) :
+    Memℓp (fun n : ℤ => (w n : ℂ) * sourcePeriodicGapDisplacement hp hp1 φ.val n) p ↔
+      Memℓp (fun n : ℤ => w n * (sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+        Memℓp (fun n : ℤ => w n * (sourceRealBirkhoffMap hp hp1 s φ).2 n) p :=
+  D.weighted_gap_mem_iff_real_map_mem w φ
+
+example (φ : realTypeSourceSubmodule p)
+    (h : Memℓp (fun n : ℤ => Weight.sobolev (-2) n * (sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+      Memℓp (fun n : ℤ => Weight.sobolev (-2) n * (sourceRealBirkhoffMap hp hp1 s φ).2 n) p) :
+    Memℓp (fun n : ℤ => (Weight.sobolev (-2) n : ℂ) * sourcePeriodicGapDisplacement hp hp1 φ.val n) p :=
+  (D.weighted_gap_mem_iff_real_map_mem (Weight.sobolev (-2)) φ).mpr h
+
+example (φ : realTypeSourceSubmodule p)
+    (h : Memℓp (fun n : ℤ => (Weight.sobolev (1/3) n : ℂ) * sourcePeriodicGapDisplacement hp hp1 φ.val n) p) :
+    Memℓp (fun n : ℤ => Weight.sobolev (1/3) n * (sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+      Memℓp (fun n : ℤ => Weight.sobolev (1/3) n * (sourceRealBirkhoffMap hp hp1 s φ).2 n) p :=
+  (D.weighted_gap_mem_iff_real_map_mem (Weight.sobolev (1/3)) φ).mp h
+
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ _D : SourceSection14Data (by norm_num) (by norm_num) W₀ W V s,
+      ∀ w : Weight, ∀ φ : realTypeSourceSubmodule 4,
+        Memℓp (fun n : ℤ => (w n : ℂ) * sourcePeriodicGapDisplacement (by norm_num) (by norm_num) φ.val n) 4 ↔
+          Memℓp (fun n : ℤ => w n * (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ).1 n) 4 ∧
+            Memℓp (fun n : ℤ => w n * (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ).2 n) 4 :=
+  sourceSection14_weighted_gap_characterization _ _
+
+end Section14WeightedCompatibilityChecks
+end NLS.ZakharovShabat

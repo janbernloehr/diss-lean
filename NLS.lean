@@ -3847,3 +3847,7 @@ import NLS.SequenceSpaces.LocallyDominatedContinuity
 import NLS.ZakharovShabat.SourceWeightedGapSequence
 import NLS.ZakharovShabat.SourceBirkhoffWeightedContinuity
 import NLS.ZakharovShabat.SourceBirkhoffSobolevDenseRange
+import NLS.SequenceSpaces.WeightedRealExponent
+import NLS.ZakharovShabat.SourceWeightedRealExponent
+import NLS.ZakharovShabat.SourceBirkhoffWeightedExponent
+import NLS.ZakharovShabat.SourceBirkhoffGapNormEquivalence

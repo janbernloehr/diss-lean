@@ -14,6 +14,8 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Weighted real exponent compatibility | [`SourceBirkhoffWeightedExponent.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedExponent.lean), `sourceSection14_weighted_real_compatible` | Original maps commute with continuous coefficient-preserving inclusions, every finite 1<p<=q, every spectral weight, independent normalized families. |
+| Gap/coordinate weighted characterization | [`SourceBirkhoffGapNormEquivalence.lean`](NLS/ZakharovShabat/SourceBirkhoffGapNormEquivalence.lean), `weighted_gap_mem_iff_real_map_mem` | Locally uniform converse gap bounds and exact weighted membership equivalence for any positive weight. This does not yet recover weighted regularity of the source. |
 | Weighted complex gap topology | [`SourceWeightedGapSequence.lean`](NLS/ZakharovShabat/SourceWeightedGapSequence.lean) | Actual full lp sequence, locally uniform norm bound and small tails for all later cutoffs; arbitrary complex compatible weighted sources. |
 | Original weighted Birkhoff continuity | [`SourceBirkhoffWeightedContinuity.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedContinuity.lean), `originalWeightedRealMap_continuous` | Stronger weighted source and target topologies, every Section 6 spectral weight and finite p>1. |
 | Fractional Sobolev dense image | [`SourceBirkhoffSobolevDenseRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean), `originalWeightedRealMap_sobolev_denseRange` | Every real s>=0 and finite p>1; exact weights, actual finite-gap lifts, finite target attainment and density in the original weighted target norm. No open-image or surjectivity claim. |
@@ -6852,5 +6854,43 @@ inverse, and the global inverse for 1<p<=2 remain. Dense image is proved
 for Sobolev weights; no arbitrary-spectral-weight density claim is made.
 The external map comparison, unrestricted Lemma 27.2 and G.2 norm
 qualifications remain, and the dissertation is incomplete.
+
+Validation is recorded in [the current implementation status](STATUS.md).
+
+## Remark 14.2(iii) compatibility milestone: weighted real exponents and gap characterization
+
+The original weighted real Birkhoff maps now commute with increasing the
+exponent, for every finite 1<p<=q and every Section 6 spectral weight.
+The maps can use independently constructed normalized families. Both
+source and target inclusions preserve the raw coefficients and their
+reality conditions, are continuous and injective, and compose exactly.
+The real coefficient inclusion is contractive; the pair maps use their
+actual source and target lp norms. An unconditional construction supplies
+two compatible Section 14 packages for every such exponent pair.
+
+A common positive lower bound for normalized actions also gives a
+converse gap estimate near every real source: one constant bounds each
+gap by the sum of the two absolute rectangular coordinates, uniformly
+in the source and signed index. Together with the forward bound, this
+proves that the actual gap sequence has any given positive weight in lp
+if and only if both original real Birkhoff coordinates do. This result
+allows arbitrary positive weights, including decreasing weights; it does
+not assume that the original source already carries that weight.
+
+Four new modules and 23 public checks cover fractional exponents across
+two, negative and zero frequencies, exact compositions, source decoding,
+independent map families, fractional Sobolev weights, and both directions
+of the weighted gap characterization. The sequence-space inclusions also
+cover the infinite Banach exponent; the Birkhoff statements retain finite
+p>1. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove weighted complex analyticity and compatibility on complex
+domains, weighted canonicality, open image and local inverses, and the
+global inverse for 1<p<=2. The gap characterization concerns spectral
+gaps and Birkhoff outputs; recovering weighted source regularity remains
+a separate step. The complex estimate for the actual Dirichlet-minus-
+periodic-midpoint displacement is also missing. The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
 
 Validation is recorded in [the current implementation status](STATUS.md).

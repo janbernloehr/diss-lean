@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: weighted continuity and fractional Sobolev dense range
+## Current milestone: weighted real exponent compatibility and gap characterization
+
+The original weighted real Birkhoff maps now commute with increasing the
+exponent, for every finite 1<p<=q and every Section 6 spectral weight.
+The maps can use independently constructed normalized families. Both
+source and target inclusions preserve the raw coefficients and their
+reality conditions, are continuous and injective, and compose exactly.
+The real coefficient inclusion is contractive; the pair maps use their
+actual source and target lp norms. An unconditional construction supplies
+two compatible Section 14 packages for every such exponent pair.
+
+A common positive lower bound for normalized actions also gives a
+converse gap estimate near every real source: one constant bounds each
+gap by the sum of the two absolute rectangular coordinates, uniformly
+in the source and signed index. Together with the forward bound, this
+proves that the actual gap sequence has any given positive weight in lp
+if and only if both original real Birkhoff coordinates do. This result
+allows arbitrary positive weights, including decreasing weights; it does
+not assume that the original source already carries that weight.
+
+Four new modules and 23 public checks cover fractional exponents across
+two, negative and zero frequencies, exact compositions, source decoding,
+independent map families, fractional Sobolev weights, and both directions
+of the weighted gap characterization. The sequence-space inclusions also
+cover the infinite Banach exponent; the Birkhoff statements retain finite
+p>1. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: prove weighted complex analyticity and compatibility on complex
+domains, weighted canonicality, open image and local inverses, and the
+global inverse for 1<p<=2. The gap characterization concerns spectral
+gaps and Birkhoff outputs; recovering weighted source regularity remains
+a separate step. The complex estimate for the actual Dirichlet-minus-
+periodic-midpoint displacement is also missing. The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,516 build jobs, all 6,354
+public examples, and the transitive axiom audit for 36,050 NLS declarations.
+The four new modules and 23 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+723 local file links across 38 documents, and `git diff --check` also pass.
+
+## Previous milestone: weighted continuity and fractional Sobolev dense range
 
 The original real Birkhoff map is now continuous in the stronger source
 and target norms for every Section 6 spectral weight and every finite
