@@ -4,7 +4,9 @@ import NLS.SequenceSpaces.PowerYoung
 # The exponent conditions in Appendix B.3
 
 The source's single reciprocal identity produces the two powered Young
-relations needed for the nested convolution estimate.
+relations needed for the nested convolution estimate. The displayed divisions
+require strictly positive auxiliary exponents; the printed nonnegative endpoints
+are diagnosed separately in `MixedYoungZeroExponent`.
 -/
 
 noncomputable section

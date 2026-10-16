@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Appendix A.9 on the original distribution spaces
+## Current milestone: Appendix B source inequalities and exponent qualification
+
+B.1 now has one source-level theorem proving summability and both printed
+reciprocal-series bounds for every nonnegative shift and finite conjugate
+pair. B.2 supplies a unique convolution sequence with its actual convergent
+coefficient formula and norm bound one for every Banach Young triple,
+including all infinity endpoints.
+
+B.3 has an explicit source-level theorem for finite positive auxiliary
+exponents, with the printed orderings and reciprocal identity. All three
+nested sums converge and the bound has constant one. Input exponents below
+one are included; unit modes prove optimality for every admissible tuple.
+
+The printed nonnegative auxiliary range is qualified explicitly: divisions
+by alpha and beta make the formula undefined at zero. Actual l1,l2,l2 inputs
+show that the inner sum at alpha=0, or the middle sum at beta=0, can diverge.
+All relevant bases are nonzero, so these examples do not use a 0^0 convention.
+Lean's totalized transcription is labeled separately from the mathematical
+source formula. No infinity extension of B.3's nested powers is claimed.
+See [the Appendix B audit](coverage/APPENDIX_B.md) and
+[the source qualification](SOURCE_ERRATA.md).
+
+Two new modules and 20 public checks cover the exact source constants,
+convergent convolution uniqueness, infinity endpoints, fractional Banach
+exponents, positive exponents below one, sharpness, and the zero diagnostics.
+
+Next: audit Appendix C against its original statements, including its
+printed isomorphism claim and the full modified-transform hypotheses.
+The Section 14 fractional-smoothness and unrestricted Lemma 27.2
+qualifications remain. The dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,501 build jobs, all 6,265
+public examples, and the transitive axiom audit for 35,910 NLS declarations.
+The two new modules and 20 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+664 local file links across 37 documents, and `git diff --check` also pass.
+
+## Previous milestone: Appendix A.9 on the original distribution spaces
 
 For every positive physical interval length, the A.9 embeddings now take values
 in the original smooth-test distribution spaces. For 0 < s < 1/2, the intrinsic

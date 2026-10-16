@@ -33,7 +33,7 @@ theorem mixedYoungRow_nonneg (α β : ℝ) (a b c : ℤ → ℂ) (k : ℤ) :
     0 ≤ mixedYoungRow α β a b c k :=
   tsum_nonneg (fun _ => Real.rpow_nonneg (tsum_nonneg (fun _ => by positivity)) _)
 
-/-- Appendix B.3, with convergence of every nested sum and the exact constant one. -/
+/-- Appendix B.3 for finite positive auxiliary exponents, with convergence of every nested sum and the exact constant one. -/
 theorem mixedYoung_summable_and_le {α β γ p₁ p₂ p₃ : ℝ}
     (h : MixedYoungRelation α β γ p₁ p₂ p₃)
     (a : Coeff (ENNReal.ofReal p₁)) (b : Coeff (ENNReal.ofReal p₂))

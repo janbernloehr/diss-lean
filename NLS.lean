@@ -3834,3 +3834,5 @@ import NLS.Fourier.SobolevProductCounterexample
 import NLS.Fourier.PeriodicIntervalFourierLebesgue
 import NLS.Fourier.PeriodicIntrinsicSobolevEmbedding
 import NLS.Fourier.PeriodicIntrinsicSobolevEquivalence
+import NLS.SequenceSpaces.AppendixBSourceInequalities
+import NLS.SequenceSpaces.MixedYoungZeroExponent

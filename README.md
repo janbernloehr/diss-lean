@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma A.9 is integrated on the original distribution spaces for
-every positive physical period. The interval Sobolev embeddings retain their
-full exponent ranges, including zero and half regularity and infinity targets.
-Below half regularity, the original weighted Hilbert space is continuously
-linearly equivalent to the intrinsic interval Sobolev space. All maps preserve
-the actual normalized smooth-test action and the physical norm factors.
+Latest step: Appendix B has source-level theorems for the reciprocal-series
+bounds, the unique convergent Young convolution at every Banach endpoint,
+and the mixed three-sequence inequality for finite positive exponents.
+The mixed bound is sharp, including exponents below one. Its printed zero
+auxiliary endpoints are explicitly qualified: the formula is undefined
+there, and actual inputs give divergent nested sums.
 
-Next: source audit of the remaining Appendix B inequalities and Appendix C.
-The separate fractional-smoothness and Lemma 27.2 endpoint qualifications
-remain. The dissertation is incomplete.
+Next: source audit of Appendix C. The separate fractional-smoothness and
+Lemma 27.2 endpoint qualifications remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
@@ -33,11 +32,13 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 26 audit](coverage/SECTION_26.md),
 [the Section 27 audit](coverage/SECTION_27.md),
 [the Section 28 audit](coverage/SECTION_28.md),
-[the Appendix A audit](coverage/APPENDIX_A.md), and
+[the Appendix A audit](coverage/APPENDIX_A.md),
+[the Appendix B audit](coverage/APPENDIX_B.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
-Young convolution inequality, the mixed three-sequence inequality, and the
+Young convolution inequality, the finite positive-exponent mixed
+three-sequence inequality, and the
 canonical periodic-distribution product (Appendices B.2, B.3, and A.7). It also
 proves a closed, densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is

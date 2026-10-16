@@ -2633,3 +2633,33 @@ The corrected estimate is
 proves this bound, the continuous injective inclusion, and preservation of
 the entire original distribution. The generalized Young estimate (A.3)
 retains its sharp constant one. No constant-one claim is made for (A.4).
+
+## Appendix B.3: zero auxiliary exponents are undefined (page 125)
+
+The printed conditions include gamma>=p1>=beta>=0 and p2,p3>=alpha>=0.
+The same formula divides by alpha and beta and uses the power ratios
+beta/alpha and gamma/beta. At zero these ordinary real expressions are
+undefined; the source states no endpoint convention.
+
+[`AppendixBSourceInequalities.lean`](NLS/SequenceSpaces/AppendixBSourceInequalities.lean)
+proves the finite positive interpretation, retaining all printed orderings,
+the reciprocal identity, and the exact bound one. Every nested sum converges;
+input exponents below one are included. Unit modes prove the constant sharp.
+
+[`MixedYoungZeroExponent.lean`](NLS/SequenceSpaces/MixedYoungZeroExponent.lean)
+separately diagnoses the zero cases. Its `TotalizedMixedYoungConditions`
+explicitly uses Lean's totalized division and is not a mathematical definition
+of the source formula at zero. Under that transcription, both exponent tuples
+(0,1,1,1,2,2) and (1,0,1,1,2,2) satisfy the displayed conditions.
+
+Take b(n)=c(n)=(1+|n|)^(-1), both in l2. For alpha=0, the unit sequence a
+at zero gives nonzero inner products at k=l=0, and the row of their zeroth
+powers consists of ones. For beta=0 and alpha=1, take a(n)=(1+|n|)^(-2)
+in l1. Every inner sum is proved finite and strictly positive, but the
+middle row of zeroth powers again consists of ones. Both divergence claims
+are formalized without relying on 0^0 or the totalized value of a divergent
+sum. They do not refute the well-defined positive-exponent estimate.
+
+B.2 retains all infinity endpoints. B.3's current theorem is finite positive;
+no infinity convention for its nested power expression is asserted.
+See [the Appendix B audit](coverage/APPENDIX_B.md).

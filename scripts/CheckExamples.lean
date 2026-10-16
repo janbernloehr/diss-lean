@@ -58430,3 +58430,86 @@ example (f g : IntrinsicIntervalSobolev (1/4) L) :
 
 end AppendixA9OriginalChecks
 end NLS.Fourier
+
+namespace NLS
+open Coeff
+section AppendixBSourceChecks
+local instance instFourThirdsB : Fact (1 ≤ (4/3:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+
+example : Summable (fun n : ℕ => 1/(0+(n+1:ℝ))^(2:ℝ)) :=
+  (sourceLemmaB1 (by norm_num : (0:ℝ) ≤ 0) Real.HolderConjugate.two_two).1
+
+example : (∑' n : ℕ, 1/(0+(n+1:ℝ))^(2:ℝ)) ≤ 2 := by
+  convert (sourceLemmaB1 (by norm_num : (0:ℝ) ≤ 0) Real.HolderConjugate.two_two).2.1 using 1; norm_num
+
+example {α : ℝ} (hα : 0 ≤ α) {p q : ℝ} (hpq : p.HolderConjugate q) :
+    (∑' n : ℕ, 1/(α+(n+1:ℝ))^q) ≤ p/(1+α)^(q-1) :=
+  (sourceLemmaB1 hα hpq).2.1.trans (sourceLemmaB1 hα hpq).2.2
+
+example : (∑' n : ℕ, 1/(3+(n+1:ℝ))^(2:ℝ)) ≤ 5/16 := by
+  convert (sourceLemmaB1 (by norm_num : (0:ℝ) ≤ 3) Real.HolderConjugate.two_two).2.1 using 1; norm_num
+
+example (a b : Coeff 2) :
+    ∃! c : Coeff ⊤, (∀ n : ℤ, HasSum (fun k : ℤ => a (n-k)*b k) (c n)) ∧ ‖c‖ ≤ ‖a‖*‖b‖ := by
+  apply sourceLemmaB2
+  simpa [YoungRelation] using (ENNReal.HolderConjugate.inv_add_inv_eq_one 2 2).symm
+
+example (a : Coeff 1) (b : Coeff ⊤) :
+    ∃! c : Coeff ⊤, (∀ n : ℤ, HasSum (fun k : ℤ => a (n-k)*b k) (c n)) ∧ ‖c‖ ≤ ‖a‖*‖b‖ :=
+  sourceLemmaB2 (by simp [YoungRelation]) a b
+
+example (a : Coeff ⊤) (b : Coeff 1) :
+    ∃! c : Coeff ⊤, (∀ n : ℤ, HasSum (fun k : ℤ => a (n-k)*b k) (c n)) ∧ ‖c‖ ≤ ‖a‖*‖b‖ :=
+  sourceLemmaB2 (by simp [YoungRelation]) a b
+
+example (a b : Coeff (4/3)) :
+    ∃! c : Coeff 2, (∀ n : ℤ, HasSum (fun k : ℤ => a (n-k)*b k) (c n)) ∧ ‖c‖ ≤ ‖a‖*‖b‖ := by
+  apply sourceLemmaB2
+  unfold YoungRelation
+  apply (ENNReal.toReal_eq_toReal_iff' (by simp) (by simp)).mp
+  norm_num [ENNReal.toReal_add,ENNReal.toReal_inv,ENNReal.toReal_div]
+
+example (a : Coeff (ENNReal.ofReal 4)) (b c : Coeff (ENNReal.ofReal (4/3))) :
+    (∑' k : ℤ, (∑' l : ℤ, (∑' m : ℤ, ‖a (k-l)*b (l-m)*c m‖)^(2:ℝ))^(2:ℝ))^(1/4:ℝ) ≤
+      ‖a‖*‖b‖*‖c‖ := by
+  simpa [show (4:ℝ)/2 = 2 by norm_num] using (sourceLemmaB3_positive (α := 1) (β := 2) (γ := 4) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) a b c).2.2.2
+
+example (a b c : Coeff (ENNReal.ofReal (1/2))) :
+    (∑' k : ℤ, ∑' l : ℤ, ∑' m : ℤ, ‖a (k-l)*b (l-m)*c m‖^(1/2:ℝ))^(2:ℝ) ≤
+      ‖a‖*‖b‖*‖c‖ := by
+  simpa using (sourceLemmaB3_positive (α := 1/2) (β := 1/2) (γ := 1/2) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) a b c).2.2.2
+
+example {K : ℝ} (hK : ∀ a b c : Coeff (ENNReal.ofReal (1/2)),
+    (∑' k : ℤ, mixedYoungRow (1/2) (1/2) a b c k ^ ((1/2)/(1/2):ℝ))^(1/(1/2):ℝ) ≤ K*‖a‖*‖b‖*‖c‖) :
+    1 ≤ K := sourceLemmaB3_constant_sharp (by constructor <;> norm_num) hK
+
+example : TotalizedMixedYoungConditions 0 1 1 1 2 2 := printedMixedYoung_zero_inner
+
+example : TotalizedMixedYoungConditions 1 0 1 1 2 2 := printedMixedYoung_zero_middle
+
+example (n : ℤ) : b3PositiveInput n ≠ 0 := b3PositiveInput_ne_zero n
+
+example (m : ℤ) : (lp.single 1 0 (1:ℂ) : Coeff 1) (0-0) *
+    b3PositiveInput (0-m) * b3PositiveInput m ≠ 0 := b3_zero_inner_terms_nonzero m
+
+example : ¬Summable (fun m : ℤ => ‖(lp.single 1 0 (1:ℂ) : Coeff 1) (0-0) *
+    b3PositiveInput (0-m) * b3PositiveInput m‖^(0:ℝ)) := b3_zero_inner_not_summable
+
+example (n : ℤ) : b3PositiveOneInput n ≠ 0 := b3PositiveOneInput_ne_zero n
+
+example (k l : ℤ) : Summable (fun m : ℤ =>
+    ‖b3PositiveOneInput (k-l)*b3PositiveInput (l-m)*b3PositiveInput m‖^(1:ℝ)) :=
+  b3_zero_middle_inner_summable k l
+
+example (k l : ℤ) : 0 < ∑' m : ℤ,
+    ‖b3PositiveOneInput (k-l)*b3PositiveInput (l-m)*b3PositiveInput m‖^(1:ℝ) := b3_zero_middle_inner_pos k l
+
+example : ¬Summable (fun l : ℤ => (∑' m : ℤ,
+    ‖b3PositiveOneInput (-7-l)*b3PositiveInput (l-m)*b3PositiveInput m‖^(1:ℝ))^((0:ℝ)/1)) :=
+  b3_zero_middle_not_summable (-7)
+
+end AppendixBSourceChecks
+end NLS
