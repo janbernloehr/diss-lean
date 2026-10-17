@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and Jacobian injectivity are also proved. Weighted Jacobian surjectivity, analytic local inverses, and weighted inverse continuity and analyticity remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Restriction to real local inverses and continuity and analyticity of the weighted Sobolev global inverse remain. |
 
 ## Original definitions and exact phase
 
@@ -493,11 +493,48 @@ p=3/2 and p=4, and construction of the actual Section 14 family and inverse
 without supplied compactness or inverse assumptions. Validation is recorded
 in [the implementation status](../STATUS.md).
 
-Remaining: identify weighted inverse derivatives with the original ones,
-transfer the exact blocks using the even weight, and prove compactness of
-the weighted Birkhoff derivative remainder. Weighted Jacobian surjectivity,
-local analytic inverses, and the Sobolev global analytic inverse remain.
-No p>2 surjectivity or external map comparison is asserted.
+The weighted transfer, weighted Jacobian surjectivity, and complex analytic
+local inverses are now proved by the next step.
+
+## Weighted Jacobian bijectivity and actual complex local inverses
+
+For every spectral weight and finite p>1, the actual native complex weighted
+Jacobian is bijective at every weighted real source. The analytic inverse
+function theorem supplies an inverse of the actual map, both inverse germs,
+and the strict derivative equal to the bounded inverse Jacobian. Closed
+gaps require no separate exclusion. The inverse Jacobian commutes with
+forgetting the weight, using the same original unweighted family.
+
+| Module | Public evidence |
+| --- | --- |
+| [Diagonal tail compactness](../NLS/SequenceSpaces/TailDiagonalCompact.lean) | Exact diagonal tail rows and vanishing entries imply compactness, including p=infinity. |
+| [Signed block compactness](../NLS/ZakharovShabat/SourceSignedBlockCompact.lean) | Two signed source modes per output row and four vanishing block entries imply compactness. |
+| [Weighted signed blocks](../NLS/ZakharovShabat/WeightedSignedBlockLift.lean) | Even weights cancel in each exact block, transferring compactness to the stronger weighted norm. |
+| [Adapted derivative equivalences](../NLS/ZakharovShabat/NormalizedWeightedClosingDerivativeEquiv.lean) | Constructs both weighted and unweighted equivalences at a common cutoff; their inverses commute with decoding and have norm at most two. |
+| [Normalized weighted Jacobian](../NLS/ZakharovShabat/NormalizedWeightedBirkhoffJacobian.lean) | Represents the actual native derivative in normalized coordinates and proves exact decoding. |
+| [Finite-gap weighted compactness](../NLS/ZakharovShabat/SourceBirkhoffWeightedFiniteGapJacobianCompact.lean) | Transfers the compact Fourier remainder through one actual adapted inverse chart and back to the original weighted derivative. |
+| [Weighted finite-gap density](../NLS/ZakharovShabat/SourceWeightedFiniteGapDensity.lean) | Actual finite-gap sources approximate in every native weighted real norm. |
+| [All-real weighted compactness](../NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianCompact.lean) | Continuity and weighted finite-gap density extend the compact Fourier remainder to every weighted real source. |
+| [Native Jacobian bijectivity](../NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianInvertible.lean) | The Fredholm alternative and the proved trivial kernel give native weighted surjectivity. |
+| [Actual complex local inverse](../NLS/ZakharovShabat/SourceBirkhoffWeightedLocalInverse.lean) | Bounded inverse Jacobian, compatibility with forgetting the weight, both nonlinear inverse germs, and strict inverse derivative. |
+| [Constructed Section 14 family](../NLS/ZakharovShabat/SourceSection14WeightedLocalInverse.lean) | Constructs the family before choosing the weight or real source; no inverse, derivative equivalence, or compactness premise is supplied. |
+
+The proof of weighted compactness uses exact tail rows. It does not infer
+compactness in a stronger norm merely by restricting a compact unweighted
+operator. Its density argument is also in the actual weighted norm.
+
+Twenty-one public checks cover signed complex inputs, exceptional finite
+rows at infinity, native weighted density, both derivative inverse identities,
+both nonlinear inverse germs, local injectivity and local surjectivity,
+and fractional Sobolev weights on both sides of p=2. Validation is recorded
+in [the implementation status](../STATUS.md).
+
+Remaining: prove that the inverse Jacobian preserves the weighted real
+spaces, construct real analytic local inverses, and use the existing
+Sobolev bijection to obtain the global analytic inverse for 1<p<=2.
+The present complex local inverse theorem does not assert real-form
+preservation or global surjectivity for arbitrary spectral weights.
+No p>2 global surjectivity or external map comparison is asserted.
 
 ## Previous validation: complex exponent compatibility
 

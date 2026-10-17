@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: compact adapted derivatives and finite-gap Fourier blocks
+## Current milestone: weighted Jacobian bijectivity and analytic local inverses
+
+For every spectral weight and every finite p>1, the actual complex
+weighted Birkhoff Jacobian is bijective at every weighted real source,
+including closed gaps. Its bounded inverse commutes with forgetting the
+weight. The actual native weighted map has a complex analytic local
+inverse with both inverse identities as germs and strict derivative equal
+to that bounded inverse Jacobian. One Section 14 construction supplies
+these results for all weights and real sources.
+
+The proof transfers the exact signed two-mode rows through the even
+weight, establishing compactness in the stronger weighted norm. Actual
+finite-gap sources are dense in that norm; continuity then extends the
+compact Fourier remainder to every weighted real source. The Fredholm
+alternative combines this remainder with the previously proved trivial
+kernel to give surjectivity. Compatible weighted and unweighted adapted
+derivative equivalences are constructed with inverse norm at most two.
+
+Eleven new modules and 21 public checks cover exceptional finite rows at
+infinity, native weighted finite-gap density, arbitrary complex target
+amplitudes, both Jacobian inverse identities, compatibility with forgetting
+the weight, both nonlinear inverse germs, local injectivity and local
+surjectivity, and fractional Sobolev weights at p=3/2 and p=4.
+
+Next: restrict the inverse Jacobian to the weighted real spaces and prove
+real analytic local inverses. Then combine them with the existing Sobolev
+bijection to prove continuity and analyticity of its global inverse for
+1<p<=2. The complex local inverses proved here do not yet assert real-form
+preservation. No p>2 global surjectivity or global surjectivity for arbitrary
+spectral weights is asserted. The external map comparison, unrestricted
+Lemma 27.2 and G.2 norm qualifications remain; the dissertation is incomplete.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passed: 7,576 build jobs, all 6,501 public
+examples, and the transitive axiom audit for 36,400 NLS declarations. The
+full build retains the same 21 existing warnings. An unused simplifier
+argument in a new check was removed; all 21 final new checks were rechecked.
+All eleven new modules and the final focused checks are warning-free.
+All 156 source inventory labels, 835 local file links across 38 documents,
+and `git diff --check` pass.
+
+## Previous milestone: compact adapted derivatives and finite-gap Fourier blocks
 
 The normalized weighted adapted closing map has derivative equal to the
 identity plus a compact operator on one common complex neighborhood, at

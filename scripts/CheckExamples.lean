@@ -60067,3 +60067,203 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end AdaptedCompactChecks
 end NLS
+
+noncomputable section
+open scoped ENNReal Topology
+namespace NLS
+open ZakharovShabat Set Filter Metric
+section WeightedLocalInverseChecks
+
+-- Finite exceptional rows may couple unrelated modes, even at infinity.
+example :
+    let T : Coeff ⊤ →L[ℂ] Coeff ⊤ :=
+      (lp.singleContinuousLinearMap ℂ (fun _ : ℤ => ℂ) ⊤ 0).comp
+        (lp.evalCLM ℂ (fun _ : ℤ => ℂ) ⊤ 7)
+    IsCompactOperator T := by
+  intro T
+  have hn0 (n : ℤ) (hn : 1 ≤ n.natAbs) : n ≠ 0 := by omega
+  apply Coeff.isCompactOperator_of_tail_diagonal T 1
+  · intro n hn a
+    simp [T,lp.single_apply,hn0 n hn]
+  · intro ε hε
+    refine ⟨1,fun n hn => ?_⟩
+    simpa [T,lp.single_apply,hn0 n hn] using hε
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+
+-- Actual weighted and unweighted inverse derivatives have a common late cutoff.
+example (w : SpectralWeight) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∃ A B : CoeffPair p ≃L[ℂ] CoeffPair p,
+      A.toContinuousLinearMap = fderiv ℂ (fun ψ => normalizedWeightedClosingMap hp w ψ N) φ ∧
+      B.toContinuousLinearMap = fderiv ℂ (fun ψ => sourceAdaptedClosingMap hp ψ N) (normalizedWeightedSource w φ) ∧
+      ∀ v : CoeffPair p, normalizedWeightedSource w (A.symm v) = B.symm (normalizedWeightedSource w v) := by
+  obtain ⟨N,_,h⟩ := exists_uniform_normalizedWeightedClosingMap_derivative_equivs hp hp1 w φ
+  obtain ⟨_,_,A,B,hA,hB,_,_,_,hi⟩ := h N le_rfl
+  exact ⟨N,A,B,hA,hB,fun v => congrArg (fun L => L v) hi⟩
+
+example (w : SpectralWeight) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∃ A : CoeffPair p ≃L[ℂ] CoeffPair p,
+      A.toContinuousLinearMap = fderiv ℂ (fun ψ => normalizedWeightedClosingMap hp w ψ N) φ ∧
+      ‖A.symm.toContinuousLinearMap‖ ≤ 2 := by
+  obtain ⟨N,_,h⟩ := exists_uniform_normalizedWeightedClosingMap_derivative_equivs hp hp1 w φ
+  obtain ⟨_,_,A,B,hA,hB,hbound,_⟩ := h N le_rfl
+  exact ⟨N,A,hA,hbound⟩
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) (ε : ℝ) (hε : 0 < ε) :
+    ∃ b : weightedRealSourceSubmodule (p := p) w,
+      originalWeightedRealSource w b ∈ sourceFiniteGapLocus hp hp1 ∧ dist b a < ε := by
+  obtain ⟨b,hb,hclose⟩ := exists_weightedRealSource_finiteGap_norm_sub_lt hp hp1 w a ε hε
+  exact ⟨b,hb,by rwa [dist_eq_norm]⟩
+
+example (w : SpectralWeight) :
+    closure {a : weightedRealSourceSubmodule (p := p) w |
+      originalWeightedRealSource w a ∈ sourceFiniteGapLocus hp hp1} = univ :=
+  (dense_weightedRealSource_finiteGap hp hp1 w).closure_eq
+
+variable {W₀ B W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection14Data hp hp1 W₀ B W s)
+
+-- Decoding is valid at every complex point of the fixed domain and every signed index.
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w) (v : CoeffPair p) (n : ℤ) :
+    (normalizedWeightedBirkhoffJacobian hp hp1 s w a v).1 (-n)/(w (2*(-n)) : ℂ) =
+      (sourceBirkhoffJacobian hp hp1 s (originalWeightedSourceCLM w a) (normalizedWeightedSource w v)).1 (-n) :=
+  (D.complex.normalizedWeightedBirkhoffJacobian_decode w a ha v (-n)).1
+
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w) (v : CoeffPair p) :
+    (normalizedWeightedBirkhoffJacobian hp hp1 s w a v).2 0/(w 0 : ℂ) =
+      (sourceBirkhoffJacobian hp hp1 s (originalWeightedSourceCLM w a) (normalizedWeightedSource w v)).2 0 := by
+  simpa using (D.complex.normalizedWeightedBirkhoffJacobian_decode w a ha v 0).2
+
+-- Compactness extends to every real weighted source, without a finite-gap hypothesis.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    IsCompactOperator (normalizedWeightedBirkhoffJacobian hp hp1 s w a.val-sourceBirkhoffFourier (p := p)) :=
+  D.complex.isCompactOperator_normalizedWeightedBirkhoffJacobian_sub_fourier_real w a
+
+example (w : SpectralWeight) :
+    Continuous (fun a : weightedRealSourceSubmodule (p := p) w =>
+      normalizedWeightedBirkhoffJacobian hp hp1 s w a.val) :=
+  D.complex.continuous_normalizedWeightedBirkhoffJacobian_real w
+
+-- Surjectivity is in the native weighted space, including arbitrary complex target amplitudes.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) (n : ℤ) :
+    ∃! v : WeightedCoeffPair (sourceFrequencyWeight w) p,
+      fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val v =
+        WeightedCoeffPair.inrCLM (sourceFrequencyWeight w)
+          (WeightedCoeff.single (sourceFrequencyWeight w) (-n) (2+Complex.I)) := by
+  have hb := D.complex.originalWeightedBirkhoffMap_fderiv_bijective w a
+  obtain ⟨v,hv⟩ := hb.2 (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w)
+    (WeightedCoeff.single (sourceFrequencyWeight w) (-n) (2+Complex.I)))
+  exact ⟨v,hv,fun u hu => hb.1 (hu.trans hv.symm)⟩
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) :
+    fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val
+      ((D.complex.originalWeightedJacobianEquiv w a).symm v) = v :=
+  (D.complex.originalWeightedJacobianEquiv w a).apply_symm_apply v
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) :
+    (D.complex.originalWeightedJacobianEquiv w a).symm
+      (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val v) = v :=
+  (D.complex.originalWeightedJacobianEquiv w a).symm_apply_apply v
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) :
+    originalWeightedSourceCLM w ((D.complex.originalWeightedJacobianEquiv w a).symm v) =
+      (D.complex.jacobianEquivAll (originalWeightedRealSource w a)).symm (weightedBirkhoffTargetInclusion w v) :=
+  congrArg (fun L => L v) (D.complex.originalWeightedJacobianEquiv_symm_forget w a)
+
+-- The constructed local inverse has the actual inverse Jacobian as its derivative.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    ∃ g : WeightedCoeffPair (sourceFrequencyWeight w) p → WeightedCoeffPair (sourceFrequencyWeight w) p,
+      g (originalWeightedBirkhoffMap hp hp1 s w a.val) = a.val ∧
+      fderiv ℂ g (originalWeightedBirkhoffMap hp hp1 s w a.val) =
+        (D.complex.originalWeightedJacobianEquiv w a).symm.toContinuousLinearMap := by
+  obtain ⟨g,_,hga,_,_,hd⟩ := D.complex.exists_originalWeighted_complex_localInverse w a
+  exact ⟨g,hga,hd.hasFDerivAt.fderiv⟩
+
+private theorem range_mem_nhds_of_inverse_germ
+    {X Y : Type*} [TopologicalSpace Y] (f : X → Y) (g : Y → X) (y : Y)
+    (h : ∀ᶠ z in 𝓝 y, f (g z) = z) : range f ∈ 𝓝 y := by
+  filter_upwards [h] with z hz
+  exact ⟨g z,hz⟩
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    range (originalWeightedBirkhoffMap hp hp1 s w) ∈
+      𝓝 (originalWeightedBirkhoffMap hp hp1 s w a.val) := by
+  obtain ⟨g,_,_,_,hr,_⟩ := D.complex.exists_originalWeighted_complex_localInverse w a
+  exact range_mem_nhds_of_inverse_germ _ g _ hr
+
+-- The local inverse can be kept inside the established complex analytic domain.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    ∃ g : WeightedCoeffPair (sourceFrequencyWeight w) p → WeightedCoeffPair (sourceFrequencyWeight w) p,
+      ∀ᶠ z in 𝓝 (originalWeightedBirkhoffMap hp hp1 s w a.val),
+        g z ∈ D.complex.originalWeightedComplexDomain w ∧ originalWeightedBirkhoffMap hp hp1 s w (g z) = z := by
+  obtain ⟨g,hg,hga,_,hr,_⟩ := D.complex.exists_originalWeighted_complex_localInverse w a
+  have hspec := D.complex.originalWeightedComplexDomain_spec w
+  have hdom : D.complex.originalWeightedComplexDomain w ∈ 𝓝 (g (originalWeightedBirkhoffMap hp hp1 s w a.val)) := by
+    rw [hga]
+    exact hspec.1.mem_nhds (hspec.2.1 a)
+  refine ⟨g,?_⟩
+  filter_upwards [hg.continuousAt.preimage_mem_nhds hdom,hr] with z hz hzr
+  exact ⟨hz,hzr⟩
+
+private theorem exists_injOn_ball_of_left_inverse_germ
+    {X Y : Type*} [MetricSpace X] (f : X → Y) (g : Y → X) (a : X)
+    (h : ∀ᶠ b in 𝓝 a, g (f b) = b) : ∃ r : ℝ, 0 < r ∧ InjOn f (ball a r) := by
+  obtain ⟨r,hr,hball⟩ := Metric.mem_nhds_iff.mp h
+  refine ⟨r,hr,fun x hx y hy hxy => ?_⟩
+  exact (hball hx).symm.trans ((congrArg g hxy).trans (hball hy))
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    ∃ r : ℝ, 0 < r ∧ InjOn (originalWeightedBirkhoffMap hp hp1 s w) (ball a.val r) := by
+  obtain ⟨g,_,_,hl,_,_⟩ := D.complex.exists_originalWeighted_complex_localInverse w a
+  exact exists_injOn_ball_of_left_inverse_germ _ g a.val hl
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem weighted_inverse_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem weighted_inverse_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+
+-- Closed gaps and fractional weights on both sides of the Hilbert exponent.
+example {A C V : Set (CoeffPair (3/2))} {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (F : SourceSection14Data weighted_inverse_ne_top weighted_inverse_gt_one A C V u) :
+    Function.Bijective (fderiv ℂ (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u
+      (sourceSobolevSpectralWeight (1/3) (by norm_num))) 0) :=
+  F.complex.originalWeightedBirkhoffMap_fderiv_bijective _ 0
+
+example {A C V : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (F : SourceSection14Data (by norm_num) (by norm_num) A C V u)
+    (a : weightedRealSourceSubmodule (p := 4) (sourceSobolevSpectralWeight (7/3) (by norm_num))) :
+    Function.Bijective (fderiv ℂ (originalWeightedBirkhoffMap (by norm_num) (by norm_num) u
+      (sourceSobolevSpectralWeight (7/3) (by norm_num))) a.val) :=
+  F.complex.originalWeightedBirkhoffMap_fderiv_bijective _ a
+
+example {A C V : Set (CoeffPair (3/2))} {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (F : SourceSection14Data weighted_inverse_ne_top weighted_inverse_gt_one A C V u) (w : SpectralWeight) :
+    ∃ g : WeightedCoeffPair (sourceFrequencyWeight w) (3/2) → WeightedCoeffPair (sourceFrequencyWeight w) (3/2),
+      AnalyticAt ℂ g (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w 0) ∧
+      g (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w 0) = 0 := by
+  obtain ⟨g,hg,hg0,_⟩ := F.complex.exists_originalWeighted_complex_localInverse w 0
+  exact ⟨g,hg,hg0⟩
+
+-- The family and its inverse are supplied by construction, for all spectral weights.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ _F : SourceSection14Data weighted_inverse_ne_top weighted_inverse_gt_one A C V u,
+      ∀ w : SpectralWeight, ∀ a : weightedRealSourceSubmodule (p := 3/2) w,
+        ∃ g : WeightedCoeffPair (sourceFrequencyWeight w) (3/2) → WeightedCoeffPair (sourceFrequencyWeight w) (3/2),
+          AnalyticAt ℂ g (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w a.val) ∧
+          (∀ᶠ b in 𝓝 a.val, g (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w b) = b) ∧
+          (∀ᶠ z in 𝓝 (originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w a.val),
+            originalWeightedBirkhoffMap weighted_inverse_ne_top weighted_inverse_gt_one u w (g z) = z) := by
+  obtain ⟨A,C,V,u,F,h⟩ := sourceSection14_weighted_complex_local_inverse weighted_inverse_ne_top weighted_inverse_gt_one
+  refine ⟨A,C,V,u,F,fun w a => ?_⟩
+  obtain ⟨g,hg,_,hl,hr,_⟩ := (h w a).2
+  exact ⟨g,hg,hl,hr⟩
+
+end WeightedLocalInverseChecks
+end NLS
