@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual spectral gap sizes now control the moving-center
-closing coefficients and the weighted Fourier-tail recurrence, including
-nonzero and collapsed gaps. Exact geometric summability transfers from
-gap tails to Fourier tails below the remainder rate. Weighted gaps or
-Birkhoff outputs also give weighted adapted closing coordinates.
+Latest step: the original real source, periodic gaps, and Birkhoff
+coordinates now have exactly the same Sobolev regularity at every finite
+p>1 and real order t>=0. The original weighted map has open dense image
+for all these exponents and is bijective for 1<p<=2, with both inverse
+identities and compatibility across exponents.
 
-Next: convert tail summability into exact Sobolev regularity of the
-original source. Weighted complex analyticity and the remaining canonical
-and inverse assertions of Remark 14.2(iii) still need proofs. The
+Next: weighted complex analyticity, canonicality, analytic local inverses,
+and continuity and analyticity of the weighted global inverse. The
 unrestricted Lemma 27.2 and G.2 norm qualifications remain. The dissertation
 is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

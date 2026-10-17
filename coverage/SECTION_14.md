@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_weighted_sobolev_continuous_injective_dense`, `D.complex.originalWeightedRealMap`, `sourceFrequencyWeight_sobolev` | Original weighted real continuous injection with dense image for all finite p>1 and every real s>=0, using exact Sobolev weights. Weighted real exponent compatibility is proved. Weighted complex analyticity and compatibility, canonicality, open image and inverse assertions remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Weighted complex analyticity and compatibility, canonicality, analytic local inverses, and weighted inverse continuity and analyticity remain. |
 
 ## Original definitions and exact phase
 
@@ -261,6 +261,63 @@ weighted inverse assertions. The 16 public checks exercise fractional
 and Hilbert exponents, negative frequencies, collapsed gaps, arbitrary
 real Sobolev orders for adapted coordinates, and exact-rate summability.
 Validation is recorded in [the implementation status](../STATUS.md).
+
+## Exact Sobolev regularity and original weighted range
+
+The converse regularity statement is now proved for the actual original
+real source at every finite p>1 and every real t>=0. It is combined with
+the forward gap estimate and the original Birkhoff gap characterization:
+
+```
+source Fourier components in lp_t
+  iff actual periodic gaps in lp_t
+  iff both original real Birkhoff coordinates in lp_t.
+```
+
+No finite-gap hypothesis or prior positive source order is required.
+For positive t, a nonnegative summable sequence has a finite t-weighted
+coefficient sum exactly when its tails at 4^k M are summable with weight
+4^(t k). The forced recurrence transfers that exact summability. The proof
+then chooses a finite K and delta=t/K below the one-step threshold and
+iterates only up to K, reaching t without assuming gap regularity above t.
+The zero-order case uses original lp membership directly.
+
+| Module | Public evidence |
+| --- | --- |
+| [Exact summable tails](../NLS/SequenceSpaces/SummableGeometricTails.lean) | Both coefficient/tail implications and the lp Fourier-tail bridge at the same requested order. |
+| [Weighted real inclusion](../NLS/SequenceSpaces/WeightedRealInclusion.lean) | Continuous, injective forgetting of weights bounded below by one; exact raw real coefficients, including the infinite Banach exponent. |
+| [Physical weighted gain](../NLS/ZakharovShabat/SourceGapWeightedRegularity.lean) | The actual gap forcing gives a further Sobolev weight on any available weighted realization. |
+| [Original source converse](../NLS/ZakharovShabat/SourceSobolevGapRegularity.lean) | Half-scale weights, exact original coefficient recovery, finite iteration, and the full nonnegative-order converse. |
+| [Native weighted membership](../NLS/ZakharovShabat/SourceWeightedRealMembership.lean) | Original weighted representatives iff raw membership; continuous target inclusion preserving every coefficient. |
+| [Source/gap/output equivalence](../NLS/ZakharovShabat/SourceBirkhoffSobolevRegularity.lean) | Exact Sobolev equivalences and one actual Section 14 construction for all nonnegative real orders. |
+| [Original weighted range](../NLS/ZakharovShabat/SourceBirkhoffSobolevRange.lean) | Exact range equality, open dense image, surjectivity for 1<p<=2, native bijections, both inverse identities, and inverse compatibility across exponents. |
+
+Let J_t denote `originalWeightedRealTarget` and F_t the original weighted
+real Birkhoff map, with F the original unweighted map.
+`originalWeightedRealMap_sobolev_range` proves
+`range F_t = J_t ⁻¹' range F`. The forward implication is the exact
+coefficient compatibility diagram. Conversely, every unweighted preimage
+of a weighted target has the required source Sobolev regularity and thus
+a native weighted representative. Since J_t is continuous and the
+unweighted range is open, the weighted range is open. Existing density
+holds in the weighted target norm.
+
+For 1<p<=2, unweighted surjectivity makes the weighted range the whole
+target. `originalWeightedRealSobolevEquiv` packages the original map as a
+bijection of the native weighted spaces. Its inverse has both identities,
+agrees with the original unweighted inverse after inclusion, and commutes
+with p<=q<=2 inclusions even for independently constructed families.
+No continuity or analyticity of this inverse in the stronger topology is
+asserted. Open range alone does not prove that the map is open on every
+open subset or is a local homeomorphism.
+
+Remaining clauses: weighted complex analyticity and complex compatibility,
+weighted canonicality, analytic local inverses, and weighted inverse
+continuity and analyticity. The actual complex Dirichlet-minus-periodic-
+midpoint estimate remains missing. Surjectivity at p>2 is still the source's
+open question. The 28 public checks include p=3/2 at the one-step threshold,
+p=4 at order 7/3, zero order, both inverse identities, and actual Section
+14 constructions. Validation is recorded in [the implementation status](../STATUS.md).
 
 ## Previous validation: complex exponent compatibility
 

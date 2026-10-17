@@ -59187,3 +59187,205 @@ example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) :
 
 end Section14ForcedGapChecks
 end NLS.ZakharovShabat
+
+namespace NLS
+section SummableSobolevChecks
+open scoped ENNReal
+
+example (f : ℤ → ℝ) (hf : ∀ n, 0 ≤ f n) (M : ℕ) (hM : 0 < M)
+    (hw : Summable (fun n : ℤ => (1+|(n:ℝ)|)^(1/3:ℝ)*f n)) :
+    Summable (fun k : ℕ => ((4:ℝ)^(1/3:ℝ))^k*(∑' n : ℤ, if 4^k*M ≤ n.natAbs then f n else 0)) :=
+  summable_geometric_tails_of_summable_sobolev f hf M hM (1/3) (by norm_num) hw
+
+example (f : ℤ → ℝ) (hf : ∀ n, 0 ≤ f n) (hs : Summable f) (M : ℕ) (hM : 0 < M)
+    (hb : Summable (fun k : ℕ => ((4:ℝ)^(1/3:ℝ))^k*(∑' n : ℤ, if 4^k*M ≤ n.natAbs then f n else 0))) :
+    Summable (fun n : ℤ => (1+|(n:ℝ)|)^(1/3:ℝ)*f n) :=
+  summable_sobolev_of_summable_geometric_tails f hf hs M hM (1/3) (by norm_num) hb
+
+-- The sequence-space bridge also covers p=1, independently of the spectral range p>1.
+example (a : Coeff 1) (M : ℕ) (hM : 0 < M)
+    (hb : Summable (fun k : ℕ => ((4:ℝ)^(1/3:ℝ))^k*‖Coeff.fourierTail (4^k*M) a‖)) :
+    Memℓp (fun n => (Weight.sobolev (1/3) n:ℂ)*a n) 1 := by
+  apply Coeff.mem_sobolev_of_summable_geometric_tails (by simp) a M hM (1/3) (by norm_num)
+  simpa using hb
+
+example (w : Weight) (hw : ∀ n, 1 ≤ w n) (a : WeightedRealCoeff w ⊤) :
+    (WeightedRealCoeff.forgetWeightCLM w hw a (-7):ℂ) = a.val.val (-7) :=
+  WeightedRealCoeff.coe_forgetWeightCLM_apply w hw a (-7)
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (w : Weight) (hw : ∀ n, 1 ≤ w n) :
+    Function.Injective (WeightedRealCoeff.forgetWeightCLM (p := p) w hw) :=
+  WeightedRealCoeff.forgetWeightCLM_injective w hw
+
+example (w : Weight) (hw : ∀ n, 1 ≤ w n) :
+    Continuous (WeightedRealCoeff.forgetPairWeightCLM (p := p) w hw) :=
+  (WeightedRealCoeff.forgetPairWeightCLM w hw).continuous
+
+example (w : Weight) (hw : ∀ n, 1 ≤ w n) (a : WeightedRealCoeff w p) :
+    Memℓp (fun n : ℤ => w n*WeightedRealCoeff.forgetWeightCLM w hw a n) p :=
+  WeightedRealCoeff.mem_weighted_forgetWeightCLM w hw a
+
+end SummableSobolevChecks
+end NLS
+
+namespace NLS.ZakharovShabat
+section Section14SobolevRegularityChecks
+open Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem regularity_three_halves_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem regularity_three_halves_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+private theorem regularity_three_halves_le_two : (3/2:ℝ≥0∞) ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]; norm_num
+
+-- Large fractional order at p>2: no Hilbert or finite-gap hypothesis.
+example (φ : realTypeSourceSubmodule 4)
+    (hg : Memℓp (fun n : ℤ => (Weight.sobolev (7/3) n:ℂ)*sourcePeriodicGapDisplacement
+      (by norm_num) (by norm_num) φ.val n) 4) :
+    Memℓp (fun n => (Weight.sobolev (7/3) n:ℂ)*φ.val.fst n) 4 ∧
+      Memℓp (fun n => (Weight.sobolev (7/3) n:ℂ)*φ.val.snd n) 4 :=
+  source_mem_sobolev_of_gap (by norm_num) (by norm_num) φ (7/3) (by norm_num) hg
+
+-- The requested order reaches the one-step threshold at p=3/2, so finite iteration is needed.
+example (φ : realTypeSourceSubmodule (3/2))
+    (hg : Memℓp (fun n : ℤ => (Weight.sobolev (1/3) n:ℂ)*sourcePeriodicGapDisplacement
+      regularity_three_halves_ne_top regularity_three_halves_gt_one φ.val n) (3/2)) :
+    Memℓp (fun n => (Weight.sobolev (1/3) n:ℂ)*φ.val.fst n) (3/2) ∧
+      Memℓp (fun n => (Weight.sobolev (1/3) n:ℂ)*φ.val.snd n) (3/2) :=
+  source_mem_sobolev_of_gap _ _ φ (1/3) (by norm_num) hg
+
+example (φ : realTypeSourceSubmodule 2) :
+    (Memℓp (fun n => (Weight.sobolev 0 n:ℂ)*φ.val.fst n) 2 ∧
+      Memℓp (fun n => (Weight.sobolev 0 n:ℂ)*φ.val.snd n) 2) ↔
+    Memℓp (fun n : ℤ => (Weight.sobolev 0 n:ℂ)*sourcePeriodicGapDisplacement
+      (by norm_num) (by norm_num) φ.val n) 2 :=
+  source_sobolev_mem_iff_gap_mem (by norm_num) (by norm_num) φ 0 le_rfl
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+
+example (w : SpectralWeight) (φ : realTypeSourceSubmodule p) :
+    (∃ a : weightedRealSourceSubmodule (p := p) w, originalWeightedRealSource w a = φ) ↔
+      Memℓp (fun n : ℤ => (w (2*n):ℂ)*φ.val.fst n) p ∧
+        Memℓp (fun n : ℤ => (w (2*n):ℂ)*φ.val.snd n) p :=
+  exists_originalWeightedRealSource_iff w φ
+
+example (φ : realTypeSourceSubmodule p) (t : ℝ) (ht : 0 ≤ t) :
+    (Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.fst n) p ∧
+      Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.snd n) p) ↔
+    Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*sourcePeriodicGapDisplacement hp hp1 φ.val n) p :=
+  source_sobolev_mem_iff_gap_mem hp hp1 φ t ht
+
+example (w : SpectralWeight)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p)) :
+    ((originalWeightedRealTarget w z).1 (-5):ℂ) = z.fst.val.val (-5) :=
+  originalWeightedRealTarget_fst w z (-5)
+
+example (w : SpectralWeight)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p)) :
+    ((originalWeightedRealTarget w z).2 0:ℂ) = z.snd.val.val 0 :=
+  originalWeightedRealTarget_snd w z 0
+
+variable {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+
+example (φ : realTypeSourceSubmodule p) (t : ℝ) (ht : 0 ≤ t) :
+    (Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.fst n) p ∧
+      Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.snd n) p) ↔
+    (Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+      Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap hp hp1 s φ).2 n) p) :=
+  D.source_sobolev_mem_iff_real_map_mem φ t ht
+
+example (φ : realTypeSourceSubmodule p) (t : ℝ) (ht : 0 ≤ t)
+    (hz : Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap hp hp1 s φ).1 n) p ∧
+      Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap hp hp1 s φ).2 n) p) :
+    ∃ a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight t ht),
+      originalWeightedRealSource (sourceSobolevSpectralWeight t ht) a = φ :=
+  (D.exists_originalWeightedRealSource_iff_real_map_mem φ t ht).mpr hz
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    originalWeightedRealTarget w (D.originalWeightedRealMap w a) =
+      sourceRealBirkhoffMap hp hp1 s (originalWeightedRealSource w a) :=
+  D.originalWeightedRealTarget_map w a
+
+example (t : ℝ) (ht : 0 ≤ t) :
+    range (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) =
+      originalWeightedRealTarget (sourceSobolevSpectralWeight t ht) ⁻¹'
+        range (sourceRealBirkhoffMap hp hp1 s) :=
+  D.originalWeightedRealMap_sobolev_range t ht
+
+example (t : ℝ) (ht : 0 ≤ t) :
+    IsOpen (range (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht))) :=
+  D.originalWeightedRealMap_sobolev_isOpen_range t ht
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t) :
+    Function.Surjective (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  D.originalWeightedRealMap_sobolev_surjective hp2 t ht
+
+example (hp2 : p ≤ 2) :
+    Function.Bijective (D.originalWeightedRealMap (sourceSobolevSpectralWeight (7/3) (by norm_num))) :=
+  D.originalWeightedRealMap_sobolev_bijective hp2 (7/3) (by norm_num)
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight t ht)) :
+    (D.originalWeightedRealSobolevEquiv hp2 t ht).symm
+      (D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht) a) = a :=
+  (D.originalWeightedRealSobolevEquiv hp2 t ht).symm_apply_apply a
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    D.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)
+      ((D.originalWeightedRealSobolevEquiv hp2 t ht).symm z) = z :=
+  (D.originalWeightedRealSobolevEquiv hp2 t ht).apply_symm_apply z
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    originalWeightedRealSource (sourceSobolevSpectralWeight t ht)
+      ((D.originalWeightedRealSobolevEquiv hp2 t ht).symm z) =
+        (D.realHomeomorph hp2).symm (originalWeightedRealTarget (sourceSobolevSpectralWeight t ht) z) :=
+  D.originalWeightedRealSource_sobolevEquiv_symm hp2 t ht z
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {V₀ C V : Set (CoeffPair q)} {u : (k : ℤ) → CoeffPair q → DeletedCoeff q k}
+    (E : SourceBirkhoffMapComplexData hq hq1 V₀ C V u)
+    (hpq : p ≤ q) (hp2 : p ≤ 2) (hq2 : q ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    weightedRealSourceExponentInclusion (sourceSobolevSpectralWeight t ht) hpq
+      ((D.originalWeightedRealSobolevEquiv hp2 t ht).symm z) =
+        (E.originalWeightedRealSobolevEquiv hq2 t ht).symm
+          (WeightedRealCoeff.pairExponentInclusion (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) hpq z) :=
+  D.originalWeightedRealSobolevEquiv_symm_exponent E hpq hp2 hq2 t ht z
+
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ _D : SourceSection14Data (by norm_num) (by norm_num) W₀ W V s, ∀ t : ℝ, ∀ _ht : 0 ≤ t,
+      ∀ φ : realTypeSourceSubmodule 4,
+        (Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.fst n) 4 ∧
+          Memℓp (fun n : ℤ => (Weight.sobolev t n:ℂ)*φ.val.snd n) 4) ↔
+        (Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ).1 n) 4 ∧
+          Memℓp (fun n : ℤ => Weight.sobolev t n*(sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ).2 n) 4) :=
+  sourceSection14_sobolev_characterization (by norm_num) (by norm_num)
+
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection14Data (by norm_num) (by norm_num) W₀ W V s, ∀ t : ℝ, ∀ ht : 0 ≤ t,
+      Continuous (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) ∧
+        Function.Injective (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) ∧
+        IsOpen (range (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht))) ∧
+        DenseRange (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  sourceSection14_sobolev_open_dense (by norm_num) (by norm_num)
+
+example : ∃ W₀ W V : Set (CoeffPair (3/2)), ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ D : SourceSection14Data regularity_three_halves_ne_top regularity_three_halves_gt_one W₀ W V s,
+      ∀ t : ℝ, ∀ ht : 0 ≤ t,
+        Continuous (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) ∧
+          Function.Bijective (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)) :=
+  sourceSection14_sobolev_continuous_bijective _ _ regularity_three_halves_le_two
+
+end Section14SobolevRegularityChecks
+end NLS.ZakharovShabat

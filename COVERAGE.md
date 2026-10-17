@@ -14,14 +14,18 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Exact Sobolev source regularity | [`SourceSobolevGapRegularity.lean`](NLS/ZakharovShabat/SourceSobolevGapRegularity.lean), `source_mem_sobolev_of_gap` | Every finite p>1 and real t>=0; actual weighted gaps imply the same exact original source weight, without finite-gap or prior positive-regularity hypotheses. |
+| Source/gap/Birkhoff characterization | [`SourceBirkhoffSobolevRegularity.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevRegularity.lean), `sourceSection14_sobolev_characterization` | Exact equivalence at every nonnegative real Sobolev order, with native weighted source representatives. |
+| Original Sobolev range | [`SourceBirkhoffSobolevRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevRange.lean), `originalWeightedRealMap_sobolev_range`, `sourceSection14_sobolev_open_dense` | Weighted range equals the continuous target inclusion's preimage of the unweighted range; open dense image for all finite p>1. |
+| Original Sobolev bijection | [`SourceBirkhoffSobolevRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevRange.lean), `originalWeightedRealSobolevEquiv` | Onto for 1<p<=2, both inverse identities, exact agreement with the unweighted inverse, and inverse exponent compatibility. Weighted inverse continuity and analyticity remain. |
 | Weighted real exponent compatibility | [`SourceBirkhoffWeightedExponent.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedExponent.lean), `sourceSection14_weighted_real_compatible` | Original maps commute with continuous coefficient-preserving inclusions, every finite 1<p<=q, every spectral weight, independent normalized families. |
 | Actual center/gap estimate | [`SourceResonantCenterGapBound.lean`](NLS/ZakharovShabat/SourceResonantCenterGapBound.lean), `exists_uniform_sourceResonantCenter_gap_bound` | Both center coefficients bounded by twice the actual gap, uniformly nearby; counted collapsed gaps included. |
 | Weighted adapted coordinates | [`SourceAdaptedGapWeightedMembership.lean`](NLS/ZakharovShabat/SourceAdaptedGapWeightedMembership.lean) | Every positive even gap weight is inherited by the adapted map; cutoff independent of the weight, with no weighted-source premise. |
-| Forced Fourier-tail recurrence | [`SourceGapWeightedTail.lean`](NLS/ZakharovShabat/SourceGapWeightedTail.lean), `source_weighted_fourierTail_summable_of_gap_tail` | Actual nonzero gap forcing in every available spectral weight; exact geometric summability transfer below the algebraic rate. The Sobolev source converse remains. |
-| Gap/coordinate weighted characterization | [`SourceBirkhoffGapNormEquivalence.lean`](NLS/ZakharovShabat/SourceBirkhoffGapNormEquivalence.lean), `weighted_gap_mem_iff_real_map_mem` | Locally uniform converse gap bounds and exact weighted membership equivalence for any positive weight. This does not yet recover weighted regularity of the source. |
+| Forced Fourier-tail recurrence | [`SourceGapWeightedTail.lean`](NLS/ZakharovShabat/SourceGapWeightedTail.lean), `source_weighted_fourierTail_summable_of_gap_tail` | Actual nonzero gap forcing in every available spectral weight; exact geometric summability transfer below the algebraic rate. The exact Sobolev source converse is proved above. |
+| Gap/coordinate weighted characterization | [`SourceBirkhoffGapNormEquivalence.lean`](NLS/ZakharovShabat/SourceBirkhoffGapNormEquivalence.lean), `weighted_gap_mem_iff_real_map_mem` | Locally uniform converse gap bounds and exact weighted membership equivalence for any positive weight. The source converse is separately proved for Sobolev weights. |
 | Weighted complex gap topology | [`SourceWeightedGapSequence.lean`](NLS/ZakharovShabat/SourceWeightedGapSequence.lean) | Actual full lp sequence, locally uniform norm bound and small tails for all later cutoffs; arbitrary complex compatible weighted sources. |
 | Original weighted Birkhoff continuity | [`SourceBirkhoffWeightedContinuity.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedContinuity.lean), `originalWeightedRealMap_continuous` | Stronger weighted source and target topologies, every Section 6 spectral weight and finite p>1. |
-| Fractional Sobolev dense image | [`SourceBirkhoffSobolevDenseRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean), `originalWeightedRealMap_sobolev_denseRange` | Every real s>=0 and finite p>1; exact weights, actual finite-gap lifts, finite target attainment and density in the original weighted target norm. No open-image or surjectivity claim. |
+| Fractional Sobolev dense image | [`SourceBirkhoffSobolevDenseRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean), `originalWeightedRealMap_sobolev_denseRange` | Every real s>=0 and finite p>1; exact weights, actual finite-gap lifts, finite target attainment and density in the original weighted target norm. The open-image and surjectivity extensions are listed above. |
 | Remark 14.2(iii), weighted membership | [`SourceBirkhoffWeightedMembership.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedMembership.lean), `sourceWeightedGap_mem`, `real_map_mem_weighted` | Every finite p>1 and every Section 6 spectral weight; full gap sequence and both original real rectangular coordinates. |
 | Original weighted real spaces | [`SourceWeightedRealSpaces.lean`](NLS/ZakharovShabat/SourceWeightedRealSpaces.lean) | Closed conjugate-reflection source, complete real Banach space, norm-preserving coordinates, and exact raw input coefficients. |
 | Original weighted Birkhoff map | [`SourceBirkhoffOriginalWeightedMap.lean`](NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean) | Original weighted source and target, exact raw output coefficients, injectivity and component-sum norm identity. |
@@ -6939,5 +6943,45 @@ canonicality, open image, local inverses and global inversion for 1<p<=2
 remain. The complex Dirichlet-minus-periodic-midpoint estimate is still
 missing. The external map comparison, unrestricted Lemma 27.2 and G.2
 norm qualifications remain; the dissertation is incomplete.
+
+Validation is recorded in [the implementation status](STATUS.md).
+
+## Remark 14.2(iii) milestone: exact Sobolev regularity and original weighted range
+
+For every finite p>1 and every real t>=0, the original real source,
+its actual periodic gaps, and both original Birkhoff coordinates have
+exactly the same Sobolev regularity. The source converse assumes no
+finite-gap property and no prior positive source regularity. Summability
+of four-adic tails preserves the exact requested order; a finite sequence
+of gains delta=t/K reaches t without requiring any greater gap weight.
+Half-scale spectral weights retain the original (1+abs(n))^t convention.
+
+The original weighted range is exactly the preimage of the unweighted
+range under a continuous inclusion preserving every raw target coefficient.
+It follows that the original Sobolev map has open dense image for every
+finite p>1. For 1<p<=2 it is onto and therefore bijective on the native
+weighted source and target spaces. One actual Section 14 construction
+supplies these conclusions simultaneously at all nonnegative real orders.
+
+The weighted bijection has both inverse identities. Its inverse agrees
+with the original unweighted inverse on raw source coefficients and
+commutes with increasing exponents within 1<p<=q<=2, including independent
+normalized families. These are algebraic inverse statements; continuity
+or analyticity of the inverse in the stronger weighted topology is not
+inferred from bijectivity or from open image.
+
+Seven new modules and 28 public checks cover exact tail summability,
+original weighted representatives and inclusions, fractional and zero
+orders, p=3/2 and p=4, large-order iteration, range equality, open image,
+surjectivity, both inverse identities, and inverse exponent compatibility.
+The sequence-space lemmas also retain their applicable p=1 and infinity
+endpoints. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: weighted complex analyticity and compatibility, weighted canonicality,
+analytic local inverses, and continuity and analyticity of the weighted
+global inverse. The complex Dirichlet-minus-periodic-midpoint estimate is
+still missing. No surjectivity for p>2 is asserted. The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
 
 Validation is recorded in [the implementation status](STATUS.md).

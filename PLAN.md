@@ -1,6 +1,50 @@
 # Implementation plan
 
-## Current milestone: Fourier-tail recurrence with nonzero spectral gaps
+## Current milestone: exact Sobolev regularity and original weighted range
+
+For every finite p>1 and every real t>=0, the original real source,
+its actual periodic gaps, and both original Birkhoff coordinates have
+exactly the same Sobolev regularity. The source converse assumes no
+finite-gap property and no prior positive source regularity. Summability
+of four-adic tails preserves the exact requested order; a finite sequence
+of gains delta=t/K reaches t without requiring any greater gap weight.
+Half-scale spectral weights retain the original (1+abs(n))^t convention.
+
+The original weighted range is exactly the preimage of the unweighted
+range under a continuous inclusion preserving every raw target coefficient.
+It follows that the original Sobolev map has open dense image for every
+finite p>1. For 1<p<=2 it is onto and therefore bijective on the native
+weighted source and target spaces. One actual Section 14 construction
+supplies these conclusions simultaneously at all nonnegative real orders.
+
+The weighted bijection has both inverse identities. Its inverse agrees
+with the original unweighted inverse on raw source coefficients and
+commutes with increasing exponents within 1<p<=q<=2, including independent
+normalized families. These are algebraic inverse statements; continuity
+or analyticity of the inverse in the stronger weighted topology is not
+inferred from bijectivity or from open image.
+
+Seven new modules and 28 public checks cover exact tail summability,
+original weighted representatives and inclusions, fractional and zero
+orders, p=3/2 and p=4, large-order iteration, range equality, open image,
+surjectivity, both inverse identities, and inverse exponent compatibility.
+The sequence-space lemmas also retain their applicable p=1 and infinity
+endpoints. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Next: weighted complex analyticity and compatibility, weighted canonicality,
+analytic local inverses, and continuity and analyticity of the weighted
+global inverse. The complex Dirichlet-minus-periodic-midpoint estimate is
+still missing. No surjectivity for p>2 is asserted. The external map
+comparison, unrestricted Lemma 27.2 and G.2 norm qualifications remain;
+the dissertation is incomplete.
+
+Validation: `./scripts/check.sh` passes: 7,529 build jobs, all 6,398
+public examples, and the transitive axiom audit for 36,150 NLS declarations.
+The seven new modules and 28 focused checks compile without new warnings;
+the full build retains 21 existing warnings. The 156-label source inventory,
+753 local file links across 38 documents, and `git diff --check` also pass.
+
+## Previous milestone: Fourier-tail recurrence with nonzero spectral gaps
 
 The actual off-diagonal coefficients at the moving diagonal center are
 now bounded by twice the periodic gap, uniformly on a neighborhood of

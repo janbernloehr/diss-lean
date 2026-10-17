@@ -3857,3 +3857,10 @@ import NLS.ZakharovShabat.SourceResonantCenterGapBound
 import NLS.ZakharovShabat.SourceAdaptedGapWeightedMembership
 import NLS.ZakharovShabat.SourceWeightedCenterGapBound
 import NLS.ZakharovShabat.SourceGapWeightedTail
+import NLS.SequenceSpaces.SummableGeometricTails
+import NLS.SequenceSpaces.WeightedRealInclusion
+import NLS.ZakharovShabat.SourceGapWeightedRegularity
+import NLS.ZakharovShabat.SourceSobolevGapRegularity
+import NLS.ZakharovShabat.SourceWeightedRealMembership
+import NLS.ZakharovShabat.SourceBirkhoffSobolevRegularity
+import NLS.ZakharovShabat.SourceBirkhoffSobolevRange
