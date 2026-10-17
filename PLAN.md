@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: weighted complex exponent compatibility and real analyticity
+## Current milestone: compact adapted derivatives and finite-gap Fourier blocks
+
+The normalized weighted adapted closing map has derivative equal to the
+identity plus a compact operator on one common complex neighborhood, at
+every sufficiently large cutoff. This holds for every spectral weight and
+every finite p>1. An exact difference between cutoffs has finite output
+support; the derivative estimate makes its remaining error arbitrarily
+small. The unit-weight specialization gives the original adapted map.
+
+Actual analytic inverse charts at every real source retain the complex
+deleted-slice zeros. In each chart, the derivative of the original Birkhoff
+map is a compact perturbation of the free Fourier transform. At finite-gap
+sources, every sufficiently distant output row depends exactly on the two
+matching signed input modes. All four entries of the difference from the
+free Fourier block tend uniformly to zero. These facts hold in the same
+constructed chart, including closed gaps and exponents below two.
+
+Eight new modules and 18 public checks cover symmetric projections at one
+and infinity, signed raw amplitudes, zero resonance, derivatives on every
+nonmatching input mode, bounded input families without a weak convergence
+assumption, fractional Sobolev weights at p=3/2 and p=4, and the actual
+Section 14 construction supplying the inverse and compact remainder.
+
+Next: identify weighted and unweighted inverse derivatives and transfer
+the exact two-mode formulas to the normalized weighted Birkhoff derivative.
+Then prove its compact Fourier remainder, first at finite-gap sources and
+then by weighted density. This will support weighted Jacobian surjectivity,
+analytic local inverses, and the Sobolev global analytic inverse for 1<p<=2.
+The compactness proved here for adapted weighted maps does not yet prove
+compactness of the weighted Birkhoff derivative. The external map comparison,
+unrestricted Lemma 27.2 and G.2 norm qualifications remain; the dissertation
+is incomplete. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passed: 7,565 build jobs, all 6,480 public
+examples, and the transitive axiom audit for 36,351 NLS declarations. The
+full build retains 21 existing warnings. An unused witness name in the
+new checks was corrected and all 18 new examples rechecked. All eight new
+modules and the final checks are warning-free. All 156 source inventory
+labels, 817 local file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: weighted complex exponent compatibility and real analyticity
 
 The full original weighted Birkhoff maps now agree on the entire complex
 intersection of their domains for every spectral weight and every pair

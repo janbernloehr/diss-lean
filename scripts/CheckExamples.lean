@@ -59903,3 +59903,167 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end WeightedComplexCompatibilityChecks
 end NLS
+
+
+noncomputable section
+open scoped ENNReal Topology
+namespace NLS
+open ZakharovShabat Set Filter Metric
+section AdaptedCompactChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- Symmetric finite projections retain their boundary and kill both exterior tails.
+example : IsCompactOperator (sourceSymmetricTruncateCLM (p := ⊤) 3) :=
+  isCompactOperator_sourceSymmetricTruncateCLM 3
+
+example : (sourceSymmetricTruncateCLM (p := 1) 3
+    (CoeffPair.inlCLM (lp.single 1 (-3) Complex.I))).fst (-3) = Complex.I := by
+  simp [sourceSymmetricTruncateCLM, Coeff.truncate_apply]
+
+example (a : CoeffPair ⊤) :
+    (sourceSymmetricTruncateCLM 3 a).fst (-4) = 0 ∧
+    (sourceSymmetricTruncateCLM 3 a).snd 4 = 0 := by
+  simp [sourceSymmetricTruncateCLM, Coeff.truncate_apply]
+
+-- Deletion removes precisely the signed pair, also at zero resonance.
+example (a : CoeffPair p) (h : a.fst 0 = 0 ∧ a.snd 0 = 0) :
+    sourceDeleteResonance 0 a = a := by
+  apply sourceDeleteResonance_eq_self
+  simpa using h
+
+example (a : CoeffPair 1) : a-sourceDeleteResonance (-5) a =
+    a.fst 5 • CoeffPair.inlCLM (lp.single 1 5 (1:ℂ))+
+      a.snd (-5) • CoeffPair.inrCLM (lp.single 1 (-5) (1:ℂ)) := by
+  simpa using sub_sourceDeleteResonance_eq_smul_single (-5) a
+
+-- A bounded constant input family is allowed; no weakly-null premise is required.
+example (T : ℂ →L[ℂ] Coeff 1) (hT : IsCompactOperator T) (z : ℂ) :
+    ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs → ‖T z n‖ < 1/7 :=
+  Coeff.exists_compactOperator_diagonal_tail (by norm_num) T hT
+    (fun _ => z) ‖z‖ (fun _ => le_rfl) (1/7) (by norm_num)
+
+example (A B : CoeffPair p →L[ℂ] CoeffPair p)
+    (hA : IsCompactOperator (A-ContinuousLinearMap.id ℂ (CoeffPair p)))
+    (hr : A.comp B = ContinuousLinearMap.id ℂ (CoeffPair p)) :
+    IsCompactOperator (B-ContinuousLinearMap.id ℂ (CoeffPair p)) :=
+  isCompactOperator_rightInverse_sub_id A B hA hr
+
+variable (F : CoeffPair p → Coeff p × Coeff p) (b : CoeffPair p) (n : ℤ)
+    (hF : AnalyticAt ℂ F b) (hb : b.fst (-n) = 0 ∧ b.snd n = 0)
+    (hz : ∀ᶠ y in 𝓝 b, (F (sourceDeleteResonance n y)).1 n = 0 ∧
+      (F (sourceDeleteResonance n y)).2 n = 0)
+
+-- Both output rows vanish on every nonmatching input mode, with complex amplitudes.
+example (j : ℤ) (hj : j ≠ -n) (z : ℂ) :
+    (fderiv ℂ F b (CoeffPair.inlCLM (lp.single p j z))).1 n = 0 ∧
+    (fderiv ℂ F b (CoeffPair.inlCLM (lp.single p j z))).2 n = 0 := by
+  simpa [hj, Ne.symm hj] using fderiv_coordinate_rows_of_deleted_zero F b n hF hb hz
+    (CoeffPair.inlCLM (lp.single p j z))
+
+example (j : ℤ) (hj : j ≠ n) (z : ℂ) :
+    (fderiv ℂ F b (CoeffPair.inrCLM (lp.single p j z))).1 n = 0 ∧
+    (fderiv ℂ F b (CoeffPair.inrCLM (lp.single p j z))).2 n = 0 := by
+  simpa [hj, Ne.symm hj] using fderiv_coordinate_rows_of_deleted_zero F b n hF hb hz
+    (CoeffPair.inrCLM (lp.single p j z))
+
+example (a : CoeffPair p) (ha : a.fst (-n) = 0 ∧ a.snd n = 0) :
+    (fderiv ℂ F b a).1 n = 0 ∧ (fderiv ℂ F b a).2 n = 0 := by
+  simpa [ha.1,ha.2] using fderiv_coordinate_rows_of_deleted_zero F b n hF hb hz a
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection14Data hp hp1 W₀ B W s)
+
+-- Compact adapted remainders are constructed around arbitrary complex sources.
+example (w : SpectralWeight) (φ : CoeffPair p) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∀ ψ ∈ ball φ r, IsCompactOperator
+        (fderiv ℂ (fun χ => normalizedWeightedClosingMap hp w χ N) ψ-
+          ContinuousLinearMap.id ℂ (CoeffPair p)) := by
+  obtain ⟨r,hr,N₀,hN₀,h⟩ := exists_uniform_compact_normalizedWeightedClosingMap_derivative hp hp1 w φ
+  exact ⟨r,hr,N₀,hN₀,fun N hN => (h N hN).2⟩
+
+example (φ : CoeffPair p) (N : ℕ) :
+    fderiv ℂ (fun ψ => normalizedWeightedClosingMap hp SpectralWeight.one ψ N) φ =
+      fderiv ℂ (fun ψ => sourceAdaptedClosingMap hp ψ N) φ := rfl
+
+-- The actual inverse and the compact Birkhoff remainder are obtained together.
+example (φ : realTypeSourceLocus p) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ δ : ℝ, 0 < δ ∧ ∃ g : CoeffPair p → CoeffPair p,
+      AnalyticOnNhd ℂ g (ball (sourceAdaptedClosingMap hp φ.val N) δ) ∧
+      g (sourceAdaptedClosingMap hp φ.val N) = φ.val ∧
+      IsCompactOperator (fderiv ℂ (fun y => sourceBirkhoffMap hp hp1 s (g y))
+        (sourceAdaptedClosingMap hp φ.val N)-sourceBirkhoffFourier (p := p)) := by
+  obtain ⟨N,hN,h⟩ := D.complex.exists_uniform_complex_closing_inverse_compact φ
+  obtain ⟨δ,hδ,g,hg,hgφ,_,hc,_⟩ := h N le_rfl
+  exact ⟨N,hN,δ,hδ,g,hg,hgφ,hc⟩
+
+-- Actual finite-gap charts have no distant coupling to other signed modes.
+example (φ : realTypeSourceLocus p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ N K : ℕ, N ≤ K ∧ ∃ g : CoeffPair p → CoeffPair p,
+      g (sourceAdaptedClosingMap hp φ.val N) = φ.val ∧
+      ∀ n : ℤ, K ≤ n.natAbs → ∀ j : ℤ, j ≠ -n →
+        let v := CoeffPair.inlCLM (lp.single p j (Complex.I:ℂ))
+        let L := fderiv ℂ (fun y => sourceBirkhoffMap hp hp1 s (g y)) (sourceAdaptedClosingMap hp φ.val N)
+        (L v).1 n = 0 ∧ (L v).2 n = 0 := by
+  obtain ⟨N,_,h⟩ := D.complex.exists_uniform_finiteGap_adapted_derivative_blocks φ hf
+  obtain ⟨δ,hδ,g,hg,hgφ,hdata,hc,hrows⟩ := h N le_rfl
+  obtain ⟨K,hNK,hK⟩ := hrows 1 (by norm_num)
+  refine ⟨N,K,hNK,g,hgφ,fun n hn j hj => ?_⟩
+  simpa [hj,Ne.symm hj] using (hK n hn).1 (CoeffPair.inlCLM (lp.single p j Complex.I))
+
+example (φ : realTypeSourceLocus p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ N : ℕ, ∃ g : CoeffPair p → CoeffPair p,
+      g (sourceAdaptedClosingMap hp φ.val N) = φ.val ∧
+      ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+        let R := fderiv ℂ (fun y => sourceBirkhoffMap hp hp1 s (g y))
+          (sourceAdaptedClosingMap hp φ.val N)-sourceBirkhoffFourier (p := p)
+        ‖(R (CoeffPair.inlCLM (lp.single p (-n) (1:ℂ)))).1 n‖ < ε ∧
+        ‖(R (CoeffPair.inrCLM (lp.single p n (1:ℂ)))).2 n‖ < ε := by
+  obtain ⟨N,_,h⟩ := D.complex.exists_uniform_finiteGap_adapted_derivative_blocks φ hf
+  obtain ⟨δ,hδ,g,hg,hgφ,hdata,hc,hrows⟩ := h N le_rfl
+  refine ⟨N,g,hgφ,fun ε hε => ?_⟩
+  obtain ⟨K,_,hK⟩ := hrows ε hε
+  exact ⟨K,fun n hn => ⟨(hK n hn).2.1,(hK n hn).2.2.2.2⟩⟩
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem adapted_compact_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem adapted_compact_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example (φ : CoeffPair (3/2)) :
+    ∃ N : ℕ, IsCompactOperator
+      (fderiv ℂ (fun ψ => normalizedWeightedClosingMap adapted_compact_ne_top
+        (sourceSobolevSpectralWeight (1/3) (by norm_num)) ψ N) φ-
+        ContinuousLinearMap.id ℂ (CoeffPair (3/2))) := by
+  obtain ⟨r,hr,N,_,h⟩ := exists_uniform_compact_normalizedWeightedClosingMap_derivative
+    adapted_compact_ne_top adapted_compact_gt_one (sourceSobolevSpectralWeight (1/3) (by norm_num)) φ
+  exact ⟨N,(h N le_rfl).2 φ (mem_ball_self hr)⟩
+
+example (φ : CoeffPair 4) :
+    ∃ N : ℕ, IsCompactOperator
+      (fderiv ℂ (fun ψ => normalizedWeightedClosingMap (by norm_num)
+        (sourceSobolevSpectralWeight (7/3) (by norm_num)) ψ N) φ-
+        ContinuousLinearMap.id ℂ (CoeffPair 4)) := by
+  obtain ⟨r,hr,N,_,h⟩ := exists_uniform_compact_normalizedWeightedClosingMap_derivative
+    (show (4:ℝ≥0∞) ≠ ⊤ by norm_num) (show (1:ℝ≥0∞) < 4 by norm_num)
+    (sourceSobolevSpectralWeight (7/3) (by norm_num)) φ
+  exact ⟨N,(h N le_rfl).2 φ (mem_ball_self hr)⟩
+
+-- The Section 14 construction supplies the family; no inverse or compactness data are assumed.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ _F : SourceSection14Data adapted_compact_ne_top adapted_compact_gt_one A C V u,
+      ∀ φ : realTypeSourceLocus (3/2), ∃ N : ℕ, ∃ g : CoeffPair (3/2) → CoeffPair (3/2),
+        g (sourceAdaptedClosingMap adapted_compact_ne_top φ.val N) = φ.val ∧
+        IsCompactOperator (fderiv ℂ (fun y => sourceBirkhoffMap adapted_compact_ne_top adapted_compact_gt_one u (g y))
+          (sourceAdaptedClosingMap adapted_compact_ne_top φ.val N)-sourceBirkhoffFourier (p := 3/2)) := by
+  obtain ⟨A,C,V,u,F⟩ := sourceSection14 adapted_compact_ne_top adapted_compact_gt_one
+  refine ⟨A,C,V,u,F,fun φ => ?_⟩
+  obtain ⟨N,_,h⟩ := F.complex.exists_uniform_complex_closing_inverse_compact φ
+  obtain ⟨δ,hδ,g,hg,hgφ,hdata,hc,hzero⟩ := h N le_rfl
+  exact ⟨N,g,hgφ,hc⟩
+
+end AdaptedCompactChecks
+end NLS

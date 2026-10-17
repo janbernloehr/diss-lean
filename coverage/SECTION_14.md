@@ -459,6 +459,46 @@ and continuity and analyticity of the weighted Sobolev global inverse for
 spaces. The direct complex Dirichlet-minus-periodic-midpoint estimate,
 external map comparison, and p>2 surjectivity question are unchanged.
 
+## Compact adapted derivatives and finite-gap Fourier blocks
+
+The next part of the weighted inverse argument now has actual compact
+operators and exact finite-gap derivative rows. For every spectral weight
+and finite p>1, the normalized adapted map has derivative equal to identity
+plus compact on a common complex neighborhood, uniformly over all late
+cutoffs. The difference of two cutoffs has finite output support. After
+differentiation, the remaining error is the derivative remainder at the
+later cutoff and tends to zero in operator norm.
+
+| Module | Public evidence |
+| --- | --- |
+| [Symmetric source projections](../NLS/ZakharovShabat/SourceSymmetricTruncate.lean) | Compact bounded projections in the native pair norm, including one and infinity. |
+| [Adapted derivative compactness](../NLS/ZakharovShabat/NormalizedWeightedClosingCompact.lean) | Exact cutoff identity, compact weighted derivative remainder, and original unit-weight specialization. |
+| [Compact inverse derivative algebra](../NLS/FunctionalAnalysis/CompactInverseDerivative.lean) | Right-inverse and chain-rule transfer of compact remainders through actual analytic germs. |
+| [Compact diagonal observations](../NLS/SequenceSpaces/CompactDiagonalEntries.lean) | Matching output coordinates vanish uniformly for any bounded input family at finite exponents; weak convergence of the family is not assumed. |
+| [Signed compact entries](../NLS/ZakharovShabat/SourceCompactSignedEntries.lean) | All four entries on the two raw signed unit directions vanish in the tail. |
+| [Deleted-slice derivative rows](../NLS/ZakharovShabat/SourceDeletedSliceDerivative.lean) | Actual complex slice zeros imply both rows depend on exactly the matching signed source pair. |
+| [Actual compact inverse charts](../NLS/ZakharovShabat/SourceBirkhoffClosingInverseCompact.lean) | Constructs an analytic inverse with its exact base point, right-inverse identity, complex slice zeros, and compact Birkhoff derivative remainder at every real source. |
+| [Finite-gap Fourier blocks](../NLS/ZakharovShabat/SourceBirkhoffFiniteGapAdaptedDerivative.lean) | One actual chart supplies exact two-mode rows and uniformly small differences from all four free Fourier entries. |
+
+At finite-gap sources, the adapted base is a finite Fourier truncation.
+Deleting a sufficiently distant resonant pair therefore fixes the base.
+Differentiating the established complex slice zeros kills every other input
+mode. Compactness in the same chart makes the four remainder entries tend
+to zero. This uses uniform tails of a compact image; it does not infer a
+summable sequence of row norms from arbitrary compactness.
+
+The 18 public checks include signed boundary projections, zero resonance,
+complex amplitudes on nonmatching modes, fractional Sobolev weights at
+p=3/2 and p=4, and construction of the actual Section 14 family and inverse
+without supplied compactness or inverse assumptions. Validation is recorded
+in [the implementation status](../STATUS.md).
+
+Remaining: identify weighted inverse derivatives with the original ones,
+transfer the exact blocks using the even weight, and prove compactness of
+the weighted Birkhoff derivative remainder. Weighted Jacobian surjectivity,
+local analytic inverses, and the Sobolev global analytic inverse remain.
+No p>2 surjectivity or external map comparison is asserted.
+
 ## Previous validation: complex exponent compatibility
 
 Twelve new checks exercise the domain restriction, projection compatibility,
