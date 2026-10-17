@@ -60267,3 +60267,188 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end WeightedLocalInverseChecks
 end NLS
+
+noncomputable section
+open Set Filter Topology Metric
+open scoped ENNReal
+namespace NLS
+open ZakharovShabat
+section WeightedRealInverseChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ B W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (D : SourceSection14Data hp hp1 W₀ B W s)
+
+-- Actual inverse Jacobians send real target directions back to real sources.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p)) :
+    (D.complex.originalWeightedJacobianEquiv w a).symm
+      (WeightedCoeffPair.complexCLM (sourceFrequencyWeight w) z) ∈ weightedRealSourceSubmodule w :=
+  D.complex.originalWeightedJacobianEquiv_symm_real w a z
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p)) :
+    fderiv ℝ (D.complex.originalWeightedRealMap w) a
+      ((D.complex.originalWeightedRealJacobianEquiv w a).symm z) = z :=
+  (D.complex.originalWeightedRealJacobianEquiv w a).apply_symm_apply z
+
+example (w : SpectralWeight) (a v : weightedRealSourceSubmodule (p := p) w) :
+    (D.complex.originalWeightedRealJacobianEquiv w a).symm
+      (fderiv ℝ (D.complex.originalWeightedRealMap w) a v) = v :=
+  (D.complex.originalWeightedRealJacobianEquiv w a).symm_apply_apply v
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p)) :
+    ((D.complex.originalWeightedRealJacobianEquiv w a).symm z).val =
+      (D.complex.originalWeightedJacobianEquiv w a).symm
+        (WeightedCoeffPair.complexCLM (sourceFrequencyWeight w) z) :=
+  D.complex.originalWeightedRealJacobianEquiv_symm_complex w a z
+
+-- A constructed complex inverse respects the weighted real form locally.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    ∃ g : WeightedCoeffPair (sourceFrequencyWeight w) p → WeightedCoeffPair (sourceFrequencyWeight w) p,
+      AnalyticAt ℂ g (originalWeightedBirkhoffMap hp hp1 s w a.val) ∧
+      ∀ᶠ z in 𝓝 (D.complex.originalWeightedRealMap w a),
+        g (WeightedCoeffPair.complexCLM (sourceFrequencyWeight w) z) ∈ weightedRealSourceSubmodule w := by
+  obtain ⟨g,hg,_,hl,_⟩ := D.complex.exists_originalWeighted_complex_localInverse w a
+  exact ⟨g,hg,D.complex.originalWeighted_complex_localInverse_real_germ w a g hl⟩
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    ∃ g : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p) →
+        weightedRealSourceSubmodule (p := p) w,
+      g (D.complex.originalWeightedRealMap w a) = a ∧
+      fderiv ℝ g (D.complex.originalWeightedRealMap w a) =
+        (D.complex.originalWeightedRealJacobianEquiv w a).symm.toContinuousLinearMap := by
+  obtain ⟨g,_,hga,_,_,hd⟩ := D.complex.exists_originalWeighted_real_localInverse w a
+  exact ⟨g,hga,hd.hasFDerivAt.fderiv⟩
+
+-- The open-map result holds for every spectral weight, not just Sobolev weights.
+example (w : SpectralWeight) (U : Set (weightedRealSourceSubmodule (p := p) w)) (hU : IsOpen U) :
+    IsOpen (D.complex.originalWeightedRealMap w '' U) :=
+  (D.complex.originalWeightedRealMap_isOpenEmbedding w).isOpenMap U hU
+
+example (w : SpectralWeight) : IsOpen (range (D.complex.originalWeightedRealMap w)) := by
+  simpa only [image_univ] using
+    (D.complex.originalWeightedRealMap_isOpenEmbedding w).isOpenMap univ isOpen_univ
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t) :
+    Continuous (D.complex.originalWeightedRealSobolevEquiv hp2 t ht).symm :=
+  (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm.continuous
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t) :
+    AnalyticOnNhd ℝ (D.complex.originalWeightedRealSobolevEquiv hp2 t ht).symm univ :=
+  D.complex.originalWeightedRealSobolevEquiv_symm_analytic hp2 t ht
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht)
+      ((D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm z) = z :=
+  (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).apply_symm_apply z
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight t ht)) :
+    (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm
+      (D.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht) a) = a :=
+  (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm_apply_apply a
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    HasStrictFDerivAt (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm
+      (D.complex.originalWeightedRealJacobianEquiv (sourceSobolevSpectralWeight t ht)
+        ((D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm z)).symm.toContinuousLinearMap z :=
+  D.complex.originalWeightedRealSobolevEquiv_symm_hasStrictFDerivAt hp2 t ht z
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    originalWeightedRealSource (sourceSobolevSpectralWeight t ht)
+      ((D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm z) =
+        (D.complex.realHomeomorph hp2).symm (originalWeightedRealTarget (sourceSobolevSpectralWeight t ht) z) :=
+  D.complex.originalWeightedRealSource_sobolevEquiv_symm hp2 t ht z
+
+
+-- Image inverse statements retain the actual range condition above the onto range.
+example (w : SpectralWeight) :
+    AnalyticOnNhd ℝ (D.complex.originalWeightedRealImageInverse w)
+      (range (D.complex.originalWeightedRealMap w)) :=
+  D.complex.originalWeightedRealImageInverse_analytic w
+
+example (w : SpectralWeight)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight w) p × WeightedRealCoeff (sourceFrequencyWeight w) p))
+    (hz : z ∈ range (D.complex.originalWeightedRealMap w)) :
+    D.complex.originalWeightedRealMap w (D.complex.originalWeightedRealImageInverse w z) = z ∧
+      HasStrictFDerivAt (D.complex.originalWeightedRealImageInverse w)
+        (D.complex.originalWeightedRealJacobianEquiv w (D.complex.originalWeightedRealImageInverse w z)).symm.toContinuousLinearMap z :=
+  ⟨D.complex.originalWeightedRealMap_imageInverse w z hz,
+    D.complex.originalWeightedRealImageInverse_hasStrictFDerivAt w z hz⟩
+
+example (hp2 : p ≤ 2) (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    D.complex.originalWeightedRealImageInverse (sourceSobolevSpectralWeight t ht) z =
+      (D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm z := by
+  let w := sourceSobolevSpectralWeight t ht
+  apply D.complex.originalWeightedRealMap_injective w
+  rw [D.complex.originalWeightedRealMap_imageInverse w z
+    (D.complex.originalWeightedRealMap_sobolev_surjective hp2 t ht z)]
+  exact ((D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).apply_symm_apply z).symm
+
+-- Homeomorphic inverses still commute with exponent inclusions and independent families.
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A C V : Set (CoeffPair q)} {u : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection14Data hq hq1 A C V u) (hpq : p ≤ q) (hp2 : p ≤ 2) (hq2 : q ≤ 2)
+    (t : ℝ) (ht : 0 ≤ t)
+    (z : WithLp p (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p ×
+      WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) p)) :
+    weightedRealSourceExponentInclusion (sourceSobolevSpectralWeight t ht) hpq
+      ((D.complex.originalWeightedRealSobolevHomeomorph hp2 t ht).symm z) =
+        (E.complex.originalWeightedRealSobolevHomeomorph hq2 t ht).symm
+          (WeightedRealCoeff.pairExponentInclusion (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) hpq z) :=
+  D.complex.originalWeightedRealSobolevEquiv_symm_exponent E.complex hpq hp2 hq2 t ht z
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem real_weighted_inverse_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem real_weighted_inverse_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+private theorem real_weighted_inverse_le_two : (3/2:ℝ≥0∞) ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]; norm_num
+
+-- The real Jacobian is invertible at the fully closed-gap source above p=2.
+example {A C V : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (F : SourceSection14Data (by norm_num) (by norm_num) A C V u) :
+    Function.Bijective (fderiv ℝ (F.complex.originalWeightedRealMap
+      (sourceSobolevSpectralWeight (7/3) (by norm_num))) 0) :=
+  F.complex.originalWeightedRealMap_fderiv_bijective _ 0
+
+-- The global inverse is continuous and analytic in an actual fractional weighted norm.
+example {A C V : Set (CoeffPair (3/2))} {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (F : SourceSection14Data real_weighted_inverse_ne_top real_weighted_inverse_gt_one A C V u) :
+    AnalyticOnNhd ℝ
+      (F.complex.originalWeightedRealSobolevEquiv real_weighted_inverse_le_two (1/3) (by norm_num)).symm univ :=
+  F.complex.originalWeightedRealSobolevEquiv_symm_analytic real_weighted_inverse_le_two (1/3) (by norm_num)
+
+example {A C V : Set (CoeffPair 2)} {u : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (F : SourceSection14Data (by norm_num) (by norm_num) A C V u) :
+    AnalyticOnNhd ℝ (F.complex.originalWeightedRealSobolevHomeomorph le_rfl 0 le_rfl).symm univ :=
+  F.complex.originalWeightedRealSobolevHomeomorph_symm_analytic le_rfl 0 le_rfl
+
+-- One actual family gives every nonnegative Sobolev order and both analytic directions.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ F : SourceSection14Data real_weighted_inverse_ne_top real_weighted_inverse_gt_one A C V u,
+      ∀ t : ℝ, ∀ ht : 0 ≤ t,
+        ∃ e : weightedRealSourceSubmodule (p := 3/2) (sourceSobolevSpectralWeight t ht) ≃ₜ
+          WithLp (3/2) (WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) (3/2) ×
+            WeightedRealCoeff (sourceFrequencyWeight (sourceSobolevSpectralWeight t ht)) (3/2)),
+          (∀ a, e a = F.complex.originalWeightedRealMap (sourceSobolevSpectralWeight t ht) a) ∧
+          AnalyticOnNhd ℝ e univ ∧ AnalyticOnNhd ℝ e.symm univ := by
+  obtain ⟨A,C,V,u,F,h⟩ := sourceSection14_sobolev_global_analytic_inverse
+    real_weighted_inverse_ne_top real_weighted_inverse_gt_one real_weighted_inverse_le_two
+  refine ⟨A,C,V,u,F,fun t ht => ?_⟩
+  obtain ⟨e,he,_,ha,hi⟩ := h t ht
+  exact ⟨e,he,ha,hi⟩
+
+end WeightedRealInverseChecks
+end NLS

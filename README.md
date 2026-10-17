@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual weighted Birkhoff Jacobian is bijective at every
-weighted real source, for every spectral weight and finite p>1. The native
-complex weighted maps have analytic local inverses with both inverse germs.
+Latest step: real weighted Birkhoff maps have analytic local inverses and
+analytic inverses on their open images for every spectral weight and finite
+p>1. At every nonnegative Sobolev order, the map is a global real analytic
+homeomorphism with analytic inverse for 1<p<=2.
 
-Next: real weighted local inverses, followed by the Sobolev global analytic
-inverse for 1<p<=2. The unrestricted Lemma 27.2 and G.2 norm qualifications
-remain. The dissertation is incomplete.
+Next: revisit the remaining source qualifications and external map
+comparison. The unrestricted Lemma 27.2 and G.2 norm qualifications remain.
+The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

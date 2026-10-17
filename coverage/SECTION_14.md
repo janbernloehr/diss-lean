@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Restriction to real local inverses and continuity and analyticity of the weighted Sobolev global inverse remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 
 ## Original definitions and exact phase
 
@@ -529,12 +529,54 @@ both nonlinear inverse germs, local injectivity and local surjectivity,
 and fractional Sobolev weights on both sides of p=2. Validation is recorded
 in [the implementation status](../STATUS.md).
 
-Remaining: prove that the inverse Jacobian preserves the weighted real
-spaces, construct real analytic local inverses, and use the existing
-Sobolev bijection to obtain the global analytic inverse for 1<p<=2.
-The present complex local inverse theorem does not assert real-form
-preservation or global surjectivity for arbitrary spectral weights.
-No p>2 global surjectivity or external map comparison is asserted.
+The real-form restriction and Sobolev global analytic inverse are now
+proved by the following step.
+
+## Real weighted inverses and global Sobolev analyticity
+
+The actual complex inverse Jacobian preserves the native weighted real
+forms: forgetting the weight identifies it with the unweighted inverse,
+whose real restriction is already known. The source inclusion reflects
+the exact raw conjugate-reflection condition, so this proves reality in
+the original weighted source. Differentiating the actual complex inclusion
+then constructs the bounded real derivative equivalence.
+
+For every spectral weight and finite p>1, the real map has analytic local
+inverses with both inverse germs and the exact strict inverse derivative.
+Its complex inverse preserves the real form locally. Global injectivity
+makes the real map an open embedding, with an analytic inverse on its
+actual open image. All image regularity statements retain the image
+condition; the total inverse extension is set to zero outside that image.
+
+For 1<p<=2 and every nonnegative real Sobolev order, the already constructed
+native weighted bijection is a homeomorphism with both analytic directions.
+Local uniqueness identifies its inverse with the actual analytic local
+inverse. Its strict derivative is the bounded inverse weighted real
+Jacobian at the recovered source. This retains the previous exact raw
+agreement with the unweighted inverse and inverse exponent compatibility,
+including independently chosen original families.
+
+| Module | Public evidence |
+| --- | --- |
+| [Weighted real pair inclusion](../NLS/SequenceSpaces/WeightedRealPairInclusion.lean) | Bounded, injective complex inclusion preserving every raw coefficient, including Banach endpoints. |
+| [Original real inclusions](../NLS/ZakharovShabat/SourceWeightedRealInclusion.lean) | Source inclusion reflects reality; real and complex target inclusions commute with forgetting the weight. |
+| [Actual weighted real Jacobian](../NLS/ZakharovShabat/SourceBirkhoffWeightedRealJacobian.lean) | Actual derivative compatibility, complex inverse preservation of reality, native real bijectivity, and a bounded real inverse equal to the complex restriction. |
+| [Real analytic local inverses](../NLS/ZakharovShabat/SourceBirkhoffWeightedRealLocalInverse.lean) | Both inverse germs, strict inverse derivative, local real-form preservation of complex inverses, and open embedding for all spectral weights. |
+| [Inverse on the actual image](../NLS/ZakharovShabat/SourceBirkhoffWeightedImageInverse.lean) | Image homeomorphism, both inverse identities, analyticity, and exact strict derivative on the open image for every finite p>1. |
+| [Global Sobolev inverse](../NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean) | Native Sobolev homeomorphism with both analytic directions and the exact inverse Jacobian, for 1<p<=2 and every real t>=0. |
+| [Constructed original families](../NLS/ZakharovShabat/SourceSection14WeightedRealInverse.lean) | Constructs the original family before choosing any spectral weight or nonnegative Sobolev order. |
+
+Twenty-two public checks cover both inverse Jacobian identities, actual
+complex real-form preservation, open images, inverse regularity on the
+image, both Sobolev inverse identities, compatibility with the unweighted
+inverse and exponent inclusions, p=4 closed gaps, p=3/2 with Sobolev order
+1/3, and p=2 at order zero. Validation is recorded in
+[the implementation status](../STATUS.md).
+
+The positive-smoothness inverse properties in Remark 14.2(iii) are now
+proved in the original weighted norms. The external [23] comparison in
+Remark 14.2(i) remains separately uncertified. No p>2 global surjectivity
+or global surjectivity for arbitrary spectral weights is asserted.
 
 ## Previous validation: complex exponent compatibility
 

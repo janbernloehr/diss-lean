@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Current milestone: weighted Jacobian bijectivity and analytic local inverses
+## Current milestone: real weighted inverses and global Sobolev analyticity
+
+The actual weighted real Birkhoff Jacobian is a bounded real linear
+equivalence at every weighted real source, for every spectral weight and
+every finite p>1. Its inverse is the restriction of the proved complex
+inverse Jacobian. The actual native weighted real map has real analytic
+local inverses, with both inverse germs and the exact strict inverse
+derivative. The complex local inverse also preserves the real form locally.
+
+Every weighted real map is an open embedding. Its source is homeomorphic
+to its actual open image, and its inverse on that image is real analytic
+with the actual bounded inverse Jacobian as strict derivative. These image
+statements include p>2 and arbitrary spectral weights; they retain the
+image condition and do not assume surjectivity.
+
+For 1<p<=2 and every nonnegative real Sobolev order, the existing original
+Sobolev bijection is now a homeomorphism and its global inverse is real
+analytic in the native weighted norm. Both inverse identities, raw
+coefficient agreement with the unweighted inverse, and inverse exponent
+compatibility are retained. The global inverse has the exact inverse
+weighted real Jacobian as strict derivative. One original Section 14
+construction supplies all weights and all nonnegative Sobolev orders.
+
+Seven new modules and 22 public checks cover both real Jacobian inverse
+identities, compatibility with the complex inverse, complex inverse
+preservation of real sources, open images, image inverse regularity,
+both global inverse identities, inverse exponent compatibility for
+independent families, closed gaps above p=2, fractional Sobolev order
+1/3 at p=3/2, and the zero Sobolev order at p=2.
+
+The positive-smoothness inverse properties in Remark 14.2(iii) are now
+proved in the original weighted spaces. No p>2 global surjectivity or
+global surjectivity for arbitrary spectral weights is asserted. The
+external [23] map comparison, unrestricted Lemma 27.2 and G.2 norm
+qualifications remain; the dissertation is incomplete. See
+[the Section 14 audit](coverage/SECTION_14.md) for the exact scope.
+
+Validation: `./scripts/check.sh` passed: 7,583 build jobs, all 6,523 public
+examples, and the transitive axiom audit for 36,446 NLS declarations. The
+full build retains the same 21 existing warnings; all seven new modules
+and 22 new checks are warning-free. All 156 source inventory labels,
+850 local file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: weighted Jacobian bijectivity and analytic local inverses
 
 For every spectral weight and every finite p>1, the actual complex
 weighted Birkhoff Jacobian is bijective at every weighted real source,
