@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Current milestone: exact Sobolev regularity and original weighted range
+## Current milestone: canonical coordinate identities on weighted sources
+
+The actual original weighted real Birkhoff coordinates now satisfy all
+three physical canonical relations for every Section 6 spectral weight
+and every finite p>1, including exponents below two and collapsed gaps.
+Their full scalar complex derivatives are continuous functionals on the
+native weighted source spaces. Verified square-summable Fourier values
+make their Poisson pairings absolutely convergent and independent of the
+coefficient witnesses.
+
+Raw Fourier directions keep coefficient one. Their norms include the
+weight at the chosen frequency. The actual complex source inclusion
+preserves these directions, both raw source components, and the original
+real inclusion. Pulling back an unweighted regular cotangent therefore
+preserves its physical bracket, including frequency reversal, factor -i,
+and the mixed relation {x_n,y_m}=-delta_nm. The mixed identity is also
+proved as the literal absolutely convergent Fourier sum.
+
+Each coordinate extends complex analytically to one common open weighted
+domain containing every weighted real source. The extension equals the
+raw coordinate of the actual original weighted map, and one constructed
+Section 14 package supplies all the canonical identities simultaneously
+for every spectral weight. Seven modules and 18 public checks cover raw
+amplitudes, zero and infinity sequence endpoints, signed frequencies,
+closed gaps, fractional Sobolev weights, p=3/2 and p=4, and the actual
+construction without supplied canonicality premises.
+
+Next: weighted sequence-valued complex analyticity and compatibility,
+a bounded weighted Jacobian and analytic local inverses, and continuity
+and analyticity of the weighted global inverse. Scalar analyticity and
+canonical relations do not supply these stronger assertions. The complex
+Dirichlet-minus-periodic-midpoint estimate remains missing. No p>2
+surjectivity is asserted. The external map comparison, unrestricted
+Lemma 27.2 and G.2 norm qualifications remain; the dissertation is incomplete.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passed: 7,536 build jobs, all 6,416 public
+examples, and the transitive axiom audit for 36,215 NLS declarations. The
+seven new modules and 18 new examples introduce no warnings; the full
+build retains 21 existing warnings. All 156 statement inventory labels,
+767 local file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: exact Sobolev regularity and original weighted range
 
 For every finite p>1 and every real t>=0, the original real source,
 its actual periodic gaps, and both original Birkhoff coordinates have

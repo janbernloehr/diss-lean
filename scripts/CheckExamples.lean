@@ -59389,3 +59389,142 @@ example : ∃ W₀ W V : Set (CoeffPair (3/2)), ∃ s : (n : ℤ) → CoeffPair 
 
 end Section14SobolevRegularityChecks
 end NLS.ZakharovShabat
+
+noncomputable section
+open scoped ENNReal
+namespace NLS
+section WeightedCanonicalChecks
+open Set Poisson ZakharovShabat
+
+-- Raw single coefficients do not require a Banach exponent or normalize the amplitude.
+example (w : Weight) (c : ℂ) : (WeightedCoeff.single (p := 0) w (-3) c).val (-3) = c := by simp
+
+example (w : Weight) (c : ℂ) : (WeightedCoeff.single (p := ⊤) w (-3) c).val 0 = 0 := by simp
+
+example (c : ℂ) : ‖WeightedCoeff.single (p := ⊤) (Weight.sobolev (2/3)) (-3) c‖ =
+    Weight.sobolev (2/3) (-3) * ‖c‖ := WeightedCoeff.norm_single _ _ _
+
+example (w : SpectralWeight) (n : ℤ) :
+    originalWeightedSourceCLM (p := ⊤) w
+      (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ n Complex.I)) =
+        CoeffPair.inlCLM (lp.single ⊤ n Complex.I) := by simp
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (w : SpectralWeight) : Function.Injective (originalWeightedSourceCLM (p := p) w) :=
+  originalWeightedSourceCLM_injective w
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    originalWeightedSourceCLM w a.val = (originalWeightedRealSource w a).val :=
+  originalWeightedSourceCLM_real w a
+
+example (w : SpectralWeight) (L : RegularSourceCotangent p) :
+    (L.restrictWeight w).toCotangent
+      (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ (-7) 1)) =
+        L.toCotangent (CoeffPair.inrCLM (lp.single p (-7) 1)) := by
+  change L.toCotangent (originalWeightedSourceCLM w _) = _
+  simp
+
+example (w : SpectralWeight) (L M : RegularSourceCotangent p) :
+    (L.restrictWeight w).bivector (M.restrictWeight w) = L.bivector M :=
+  RegularSourceCotangent.bivector_restrictWeight w L M
+
+example (w : Weight) (L L' M M' : WeightedRegularSourceCotangent w p)
+    (hL : L.toCotangent = L'.toCotangent) (hM : M.toCotangent = M'.toCotangent) :
+    L.bivector M = L'.bivector M' := WeightedRegularSourceCotangent.bivector_congr hL hM
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+
+example (w : SpectralWeight) :
+    IsOpen (originalWeightedSourceCLM w ⁻¹' W) ∧
+      ∀ a : weightedRealSourceSubmodule (p := p) w, originalWeightedSourceCLM w a.val ∈ W :=
+  D.originalWeightedBirkhoff_domain w
+
+-- The analytic extension also accepts complex sources in its domain.
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : originalWeightedSourceCLM w a ∈ W) :
+    AnalyticAt ℂ (originalWeightedBirkhoffX hp hp1 s w (-2)) a ∧
+      AnalyticAt ℂ (originalWeightedBirkhoffY hp hp1 s w (-2)) a :=
+  D.originalWeightedBirkhoff_analytic w a ha (-2)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    originalWeightedBirkhoffX hp hp1 s w 0 a.val = (D.originalWeightedRealMap w a).fst.val.val 0 ∧
+      originalWeightedBirkhoffY hp hp1 s w 0 a.val = (D.originalWeightedRealMap w a).snd.val.val 0 :=
+  D.originalWeightedBirkhoff_real w a 0
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    fderiv ℂ (originalWeightedBirkhoffX hp hp1 s w (-1)) a.val =
+      (fderiv ℂ (fun b => (sourceBirkhoffMap hp hp1 s b).1 (-1))
+        (originalWeightedRealSource w a).val).comp (originalWeightedSourceCLM w) :=
+  (D.originalWeightedBirkhoff_fderiv w a.val
+    (D.real_subset (originalWeightedRealSource w a).property) (-1)).1
+
+-- Diagonal and off-diagonal brackets retain the same sign and signed index convention.
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    let L := fderiv ℂ (originalWeightedBirkhoffX hp hp1 s w (-5)) a.val
+    let M := fderiv ℂ (originalWeightedBirkhoffY hp hp1 s w 0) a.val;
+    -Complex.I * ∑' j : ℤ,
+      (L (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1)) *
+        M (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ (-j) 1)) -
+      L (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1)) *
+        M (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ (-j) 1))) = 0 := by
+  simpa using (D.originalWeightedBirkhoff_mixed_fourier_canonical w a (-5) 0).2
+
+-- The zero source has collapsed gaps; its coordinate brackets are still canonical.
+example (w : SpectralWeight) :
+    let L := fderiv ℂ (originalWeightedBirkhoffX hp hp1 s w 0) 0
+    let M := fderiv ℂ (originalWeightedBirkhoffY hp hp1 s w 0) 0;
+    -Complex.I * ∑' j : ℤ,
+      (L (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1)) *
+        M (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ (-j) 1)) -
+      L (WeightedCoeffPair.inrCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1)) *
+        M (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ (-j) 1))) = -1 := by
+  simpa using (D.originalWeightedBirkhoff_mixed_fourier_canonical w 0 0 0).2
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem canonical_three_halves_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem canonical_three_halves_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example {A C V : Set (CoeffPair (3/2))}
+    {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (E : SourceBirkhoffMapComplexData canonical_three_halves_ne_top canonical_three_halves_gt_one A C V u)
+    (a : weightedRealSourceSubmodule (p := 3/2) (sourceSobolevSpectralWeight (1/3) (by norm_num))) :
+    ∃ X Y : ℤ → WeightedRegularSourceCotangent (sourceFrequencyWeight (sourceSobolevSpectralWeight (1/3) (by norm_num))) (3/2),
+      (∀ n, (X n).toCotangent = fderiv ℂ (originalWeightedBirkhoffX canonical_three_halves_ne_top canonical_three_halves_gt_one u
+        (sourceSobolevSpectralWeight (1/3) (by norm_num)) n) a.val ∧
+        (Y n).toCotangent = fderiv ℂ (originalWeightedBirkhoffY canonical_three_halves_ne_top canonical_three_halves_gt_one u
+        (sourceSobolevSpectralWeight (1/3) (by norm_num)) n) a.val) ∧
+      ∀ n m, (X n).bivector (X m) = 0 ∧
+        (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 := by
+  exact E.originalWeightedBirkhoff_canonical (sourceSobolevSpectralWeight (1/3) (by norm_num)) a
+
+example {A C V : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (E : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) A C V u)
+    (a : weightedRealSourceSubmodule (p := 4) (sourceSobolevSpectralWeight (7/3) (by norm_num))) :
+    ∃ X Y : ℤ → WeightedRegularSourceCotangent (sourceFrequencyWeight (sourceSobolevSpectralWeight (7/3) (by norm_num))) 4,
+      (∀ n, (X n).toCotangent = fderiv ℂ (originalWeightedBirkhoffX (by norm_num) (by norm_num) u
+        (sourceSobolevSpectralWeight (7/3) (by norm_num)) n) a.val ∧
+        (Y n).toCotangent = fderiv ℂ (originalWeightedBirkhoffY (by norm_num) (by norm_num) u
+        (sourceSobolevSpectralWeight (7/3) (by norm_num)) n) a.val) ∧
+      ∀ n m, (X n).bivector (X m) = 0 ∧
+        (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 := by
+  exact E.originalWeightedBirkhoff_canonical (sourceSobolevSpectralWeight (7/3) (by norm_num)) a
+
+-- No supplied family or canonicality hypothesis is needed for the actual construction.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ _E : SourceSection14Data canonical_three_halves_ne_top canonical_three_halves_gt_one A C V u,
+      ∀ w : SpectralWeight, ∀ a : weightedRealSourceSubmodule (p := 3/2) w,
+        ∃ X Y : ℤ → WeightedRegularSourceCotangent (sourceFrequencyWeight w) (3/2),
+          (∀ n, (X n).toCotangent = fderiv ℂ (originalWeightedBirkhoffX canonical_three_halves_ne_top canonical_three_halves_gt_one u w n) a.val ∧
+            (Y n).toCotangent = fderiv ℂ (originalWeightedBirkhoffY canonical_three_halves_ne_top canonical_three_halves_gt_one u w n) a.val) ∧
+          ∀ n m, (X n).bivector (X m) = 0 ∧
+            (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 :=
+  sourceSection14_weighted_canonical _ _
+
+end WeightedCanonicalChecks
+end NLS

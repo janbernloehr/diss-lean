@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Weighted complex analyticity and compatibility, canonicality, analytic local inverses, and weighted inverse continuity and analyticity remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical scalar coordinate identities and common scalar complex analytic extensions are proved. Weighted sequence-valued complex analyticity and compatibility, a bounded weighted Jacobian, analytic local inverses, and weighted inverse continuity and analyticity remain. |
 
 ## Original definitions and exact phase
 
@@ -318,6 +318,55 @@ midpoint estimate remains missing. Surjectivity at p>2 is still the source's
 open question. The 28 public checks include p=3/2 at the one-step threshold,
 p=4 at order 7/3, zero order, both inverse identities, and actual Section
 14 constructions. Validation is recorded in [the implementation status](../STATUS.md).
+
+## Canonical coordinate identities on original weighted sources
+
+For every Section 6 spectral weight and every finite p>1, the actual
+original weighted real coordinates have regular full scalar complex
+derivatives. Their physical Fourier brackets satisfy
+
+```
+{x_n,x_m} = 0,    {x_n,y_m} = -delta_nm,    {y_n,y_m} = 0.
+```
+
+These statements include closed gaps and exponents below two. No
+finite-gap hypothesis, supplied coordinate derivative, or canonicality
+assumption is required. The mixed identity is also stated as the literal
+absolutely convergent sum with frequency reversal and factor -i.
+
+| Module | Public evidence |
+| --- | --- |
+| [Raw weighted directions](../NLS/SequenceSpaces/WeightedSingle.lean) | A single raw coefficient c at n; its norm is exactly w(n) times norm(c), including the infinite Banach exponent. |
+| [Original complex inclusion](../NLS/ZakharovShabat/SourceWeightedInclusion.lean) | Bounded injective inclusion preserves both raw components, agrees with the real inclusion, and preserves both single-direction families. |
+| [Weighted regular cotangents](../NLS/Poisson/WeightedRegularSourceCotangent.lean) | Verified square-summable values on raw Fourier directions, witness independence, antisymmetry, norm bound, absolute convergence, and the physical Fourier formula. |
+| [Actual cotangent restriction](../NLS/ZakharovShabat/SourceWeightedCotangent.lean) | Pullback along the original complex source inclusion retains all Fourier coefficient witnesses and physical brackets. |
+| [Actual canonical coordinates](../NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean) | Exact agreement with original weighted real outputs, actual full scalar derivatives, all three canonical relations, and the literal mixed Fourier sum. |
+| [Common scalar domain](../NLS/ZakharovShabat/SourceBirkhoffWeightedScalarAnalytic.lean) | Scalar complex power-series analyticity at every point of the common open weighted domain, which contains all weighted real sources. |
+| [Actual Section 14 construction](../NLS/ZakharovShabat/SourceSection14WeightedCanonical.lean) | One constructed family supplies all canonical identities for every spectral weight and finite p>1. |
+
+The raw unit directions have coefficient one and weighted norm w(n). Their image under the original source
+inclusion is therefore the same unweighted Fourier direction. Pullback
+preserves the coefficient witnesses of the previously constructed regular
+cotangents, so the absolutely convergent physical brackets are identical.
+The chain rule identifies these pullbacks with the full scalar derivatives
+of the actual coordinate extensions.
+
+The common weighted complex domain is the preimage of the original
+unweighted domain under the continuous complex source inclusion. Each
+scalar extension equals the corresponding raw coordinate of the original
+weighted real map. This establishes scalar power-series analyticity and
+the canonical coordinate identities; it does not give weighted local norm
+bounds for the entire sequence map or a bounded weighted Jacobian.
+
+Remaining clauses: weighted sequence-valued complex analyticity and complex
+compatibility, the weighted Jacobian and analytic local inverses, and
+continuity and analyticity of the weighted global inverse. The actual
+complex Dirichlet-minus-periodic-midpoint estimate remains missing; the
+p>2 surjectivity question and the external map comparison are unchanged.
+The 18 new public checks cover raw amplitudes, zero/infinite sequence
+endpoints, signed indices, collapsed gaps at the zero source, fractional
+weights at p=3/2 and p=4, and the actual canonical construction.
+Validation is recorded in [the implementation status](../STATUS.md).
 
 ## Previous validation: complex exponent compatibility
 

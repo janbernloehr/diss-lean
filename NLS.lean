@@ -3864,3 +3864,10 @@ import NLS.ZakharovShabat.SourceSobolevGapRegularity
 import NLS.ZakharovShabat.SourceWeightedRealMembership
 import NLS.ZakharovShabat.SourceBirkhoffSobolevRegularity
 import NLS.ZakharovShabat.SourceBirkhoffSobolevRange
+import NLS.SequenceSpaces.WeightedSingle
+import NLS.ZakharovShabat.SourceWeightedInclusion
+import NLS.Poisson.WeightedRegularSourceCotangent
+import NLS.ZakharovShabat.SourceWeightedCotangent
+import NLS.ZakharovShabat.SourceBirkhoffWeightedCanonical
+import NLS.ZakharovShabat.SourceBirkhoffWeightedScalarAnalytic
+import NLS.ZakharovShabat.SourceSection14WeightedCanonical

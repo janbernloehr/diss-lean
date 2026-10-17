@@ -14,6 +14,8 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Weighted canonical coordinate identities | [`SourceBirkhoffWeightedCanonical.lean`](NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean), `originalWeightedBirkhoff_canonical`, `originalWeightedBirkhoff_mixed_fourier_canonical` | Actual full scalar coordinate derivatives on native weighted sources, every spectral weight and finite p>1, including closed gaps; all three physical brackets and the literal absolutely convergent mixed Fourier sum. |
+| Actual weighted canonical construction | [`SourceSection14WeightedCanonical.lean`](NLS/ZakharovShabat/SourceSection14WeightedCanonical.lean), `sourceSection14_weighted_canonical`, `originalWeightedBirkhoff_analytic` | One constructed family for all weights; scalar complex analytic extensions share an open domain containing all weighted real sources. Weighted sequence-valued analyticity and a bounded weighted Jacobian remain separate. |
 | Exact Sobolev source regularity | [`SourceSobolevGapRegularity.lean`](NLS/ZakharovShabat/SourceSobolevGapRegularity.lean), `source_mem_sobolev_of_gap` | Every finite p>1 and real t>=0; actual weighted gaps imply the same exact original source weight, without finite-gap or prior positive-regularity hypotheses. |
 | Source/gap/Birkhoff characterization | [`SourceBirkhoffSobolevRegularity.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevRegularity.lean), `sourceSection14_sobolev_characterization` | Exact equivalence at every nonnegative real Sobolev order, with native weighted source representatives. |
 | Original Sobolev range | [`SourceBirkhoffSobolevRange.lean`](NLS/ZakharovShabat/SourceBirkhoffSobolevRange.lean), `originalWeightedRealMap_sobolev_range`, `sourceSection14_sobolev_open_dense` | Weighted range equals the continuous target inclusion's preimage of the unweighted range; open dense image for all finite p>1. |
@@ -189,6 +191,22 @@ and physical forward-time source nonextension use the original data.
 Each scalar coordinate is jointly analytic in time and initial
 coordinates. The named Section 22 assertions are thus integrated, with
 the documented sign correction; Chapter 5's original-map audit is next.
+
+## Canonical coordinate identities on weighted sources
+
+Seven modules extend the actual scalar coordinate derivatives and physical
+Poisson brackets to native weighted source spaces for every Section 6
+spectral weight and finite p>1. Raw unit Fourier directions are preserved
+by the original complex inclusion. Consequently all three canonical
+relations, including the literal absolutely convergent mixed Fourier sum,
+follow for the actual weighted coordinates even at collapsed gaps.
+
+Scalar complex extensions share one open weighted domain containing the
+entire real subspace. One actual Section 14 construction supplies the
+canonical relations for all weights. Weighted sequence-valued analyticity,
+a bounded weighted Jacobian, local inverses, and weighted inverse continuity
+and analyticity remain separate work. See [the Section 14 audit](coverage/SECTION_14.md)
+for exact statements and [the implementation status](STATUS.md) for validation.
 
 ## Nonextension proof and limits
 
