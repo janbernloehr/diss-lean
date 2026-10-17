@@ -59528,3 +59528,181 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end WeightedCanonicalChecks
 end NLS
+
+
+noncomputable section
+open scoped ENNReal Topology
+namespace NLS
+open ZakharovShabat Set Metric
+section WeightedComplexChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- Signed deletion removes exactly the resonance and retains unrelated modes.
+example (a : CoeffPair p) :
+    (sourceDeleteResonance (-3) a).fst 3 = 0 ∧
+    (sourceDeleteResonance (-3) a).snd (-3) = 0 := by simp
+
+example (a : CoeffPair p) :
+    (sourceDeleteResonance (-3) a).fst (-3) = a.fst (-3) ∧
+    (sourceDeleteResonance (-3) a).snd 3 = a.snd 3 := by
+  simp [Coeff.deleteCoordinate_apply_other]
+
+example (a : realTypeSourceLocus p) (n : ℤ) :
+    sourceDeleteResonance n a.val ∈ realTypeSourceLocus p :=
+  sourceDeleteResonance_realType n a.val a.property
+
+example (hp : p ≠ ⊤) (a b : CoeffPair p) (n : ℤ) :
+    ‖sourceDeleteResonance n a-sourceDeleteResonance n b‖ ≤ ‖a-b‖ := by
+  rw [← map_sub]
+  exact norm_sourceDeleteResonance_le hp n (a-b)
+
+example (hp : p ≠ ⊤) (a : CoeffPair p) :
+    ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+      MapsTo (sourceDeleteResonance n) (ball a (1/2)) (ball a 1) :=
+  exists_uniform_sourceDeleteResonance_mapsTo hp a 1 (by norm_num)
+
+-- Finite support is retained even when the untruncated sequence has no lp hypothesis.
+example (f : ℤ → ℂ) :
+    Coeff.finiteHead (p := 0) {-2,0,3} f (-2) = f (-2) ∧
+    Coeff.finiteHead (p := 0) {-2,0,3} f 2 = 0 := by simp
+
+example (f : ℤ → ℂ) (a b : Coeff ⊤)
+    (h : ∀ n : ℤ, n ≠ 0 → ‖f n‖ ≤ ‖a n‖+‖b n‖) :
+    Memℓp f ⊤ ∧ ‖Coeff.ofFunctionOrZero ⊤ f‖ ≤
+      ‖Coeff.finiteHead (p := ⊤) {0} f‖+(‖a‖+‖b‖) := by
+  simpa only [one_mul] using
+    Coeff.memℓp_and_norm_ofFunctionOrZero_le_of_head_tail_bound f f {0} a b 1
+      (by norm_num) (fun _ _ => le_rfl) (fun n hn => by simpa using h n (by simpa using hn))
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+
+-- The decoded adapted maps agree on a complex neighborhood, at all later cutoffs.
+example (w : SpectralWeight) (a : CoeffPair p) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair p), IsOpen U ∧ a ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ U,
+        normalizedWeightedSource w (normalizedWeightedClosingMap hp w ψ N) =
+          sourceAdaptedClosingMap hp (normalizedWeightedSource w ψ) N :=
+  exists_uniform_normalizedWeightedClosingMap_decode hp hp1 w a
+
+-- In a complex neighborhood, closing the two adapted coefficients kills both outputs.
+example (a : realTypeSourceLocus p) :
+    ∃ N K : ℕ, 2 ≤ N ∧ N ≤ K ∧ ∃ U : Set (CoeffPair p), IsOpen U ∧ a.val ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, K ≤ n.natAbs →
+        (sourceAdaptedClosingMap hp ψ N).fst (-n) = 0 →
+        (sourceAdaptedClosingMap hp ψ N).snd n = 0 →
+        (sourceBirkhoffMap hp hp1 s ψ).1 n = 0 ∧ (sourceBirkhoffMap hp hp1 s ψ).2 n = 0 := by
+  obtain ⟨C,_,N,hN,h⟩ := D.exists_uniform_complex_closing_bound a
+  obtain ⟨K,hK,U,ho,ha,_,hb⟩ := h N le_rfl
+  refine ⟨N,K,hN,hK,U,ho,ha,fun ψ hψ n hn hx hy => ?_⟩
+  have hzero := hb ψ hψ n hn
+  simpa only [hx,hy,norm_zero,zero_add,mul_zero,norm_le_zero_iff] using hzero
+
+-- Full weighted sequence membership holds for nearby complex sources.
+example (w : SpectralWeight) (a : realTypeSourceLocus p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ a.val ∈ U ∧
+      ∀ ψ ∈ U,
+        Memℓp (fun n => (w (2*n):ℂ)*(sourceBirkhoffMap hp hp1 s (normalizedWeightedSource w ψ)).1 n) p ∧
+        Memℓp (fun n => (w (2*n):ℂ)*(sourceBirkhoffMap hp hp1 s (normalizedWeightedSource w ψ)).2 n) p := by
+  obtain ⟨U,ho,ha,_,M,_,hb⟩ := D.exists_local_normalizedWeightedBirkhoffMap_bound w a
+  exact ⟨U,ho,ha,fun ψ hψ => (hb ψ hψ).1⟩
+
+example (w : SpectralWeight) (a : realTypeSourceLocus p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ a.val ∈ U ∧ ∃ M : ℝ,
+      ∀ ψ ∈ U, ‖normalizedWeightedBirkhoffMap hp hp1 s w ψ‖ ≤ M := by
+  obtain ⟨U,ho,ha,_,M,_,hb⟩ := D.exists_local_normalizedWeightedBirkhoffMap_bound w a
+  exact ⟨U,ho,ha,M,fun ψ hψ => (hb ψ hψ).2⟩
+
+example (w : SpectralWeight) (a : realTypeSourceLocus p) :
+    AnalyticAt ℂ (normalizedWeightedBirkhoffMap hp hp1 s w) a.val := by
+  obtain ⟨U,_,hr,_,hA,_⟩ := D.exists_normalizedWeightedBirkhoffMap_analytic w
+  exact hA a.val (hr a.property)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    AnalyticAt ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val := by
+  obtain ⟨U,_,hr,_,hA,_⟩ := D.exists_originalWeightedBirkhoffMap_analytic w
+  exact hA a.val (hr a)
+
+-- No open-gap condition is needed at the zero source.
+example (w : SpectralWeight) :
+    HasFDerivAt (originalWeightedBirkhoffMap hp hp1 s w)
+      (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) 0) 0 := by
+  obtain ⟨U,_,hr,_,hA,_⟩ := D.exists_originalWeightedBirkhoffMap_analytic w
+  exact (hA 0 (hr 0)).differentiableAt.hasFDerivAt
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    (originalWeightedBirkhoffMap hp hp1 s w a.val).fst.val (-5) =
+      (D.originalWeightedRealMap w a).fst.val.val (-5) :=
+  (D.originalWeightedBirkhoffMap_real w a (-5)).1
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    (originalWeightedBirkhoffMap hp hp1 s w a.val).snd.val 5 =
+      (D.originalWeightedRealMap w a).snd.val.val 5 :=
+  (D.originalWeightedBirkhoffMap_real w a 5).2
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    weightedBirkhoffTargetInclusion w (originalWeightedBirkhoffMap hp hp1 s w a.val) =
+      sourceBirkhoffMap hp hp1 s (originalWeightedRealSource w a).val := by
+  obtain ⟨U,_,hr,_,hc⟩ := D.exists_originalWeightedBirkhoffMap_compatible_derivative w
+  exact (hc a.val (hr a)).2.1
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) :
+    weightedBirkhoffTargetInclusion w (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val v) =
+      fderiv ℂ (sourceBirkhoffMap hp hp1 s) (originalWeightedSourceCLM w a.val)
+        (originalWeightedSourceCLM w v) := by
+  obtain ⟨U,_,hr,_,hc⟩ := D.exists_originalWeightedBirkhoffMap_compatible_derivative w
+  exact congrArg (fun L => L v) (hc a.val (hr a)).2.2
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) (j : ℤ) :
+    weightedBirkhoffTargetInclusion w
+      (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val
+        (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1))) =
+      fderiv ℂ (sourceBirkhoffMap hp hp1 s) (originalWeightedSourceCLM w a.val)
+        (CoeffPair.inlCLM (lp.single p j 1)) := by
+  obtain ⟨U,_,hr,_,hc⟩ := D.exists_originalWeightedBirkhoffMap_compatible_derivative w
+  have h := congrArg (fun L => L
+    (WeightedCoeffPair.inlCLM (sourceFrequencyWeight w) (WeightedCoeff.single _ j 1)))
+    (hc a.val (hr a)).2.2
+  simpa only [ContinuousLinearMap.comp_apply,originalWeightedSourceCLM_inl_single] using h
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem complex_three_halves_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem complex_three_halves_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+
+example {A C V : Set (CoeffPair (3/2))}
+    {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (E : SourceBirkhoffMapComplexData complex_three_halves_ne_top complex_three_halves_gt_one A C V u) :
+    AnalyticAt ℂ (originalWeightedBirkhoffMap complex_three_halves_ne_top complex_three_halves_gt_one u
+      (sourceSobolevSpectralWeight (1/3) (by norm_num))) 0 := by
+  obtain ⟨U,_,hr,_,hA,_⟩ := E.exists_originalWeightedBirkhoffMap_analytic
+    (sourceSobolevSpectralWeight (1/3) (by norm_num))
+  exact hA 0 (hr 0)
+
+example {A C V : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (E : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) A C V u)
+    (a : weightedRealSourceSubmodule (p := 4) (sourceSobolevSpectralWeight (7/3) (by norm_num))) :
+    AnalyticAt ℂ (originalWeightedBirkhoffMap (by norm_num) (by norm_num) u
+      (sourceSobolevSpectralWeight (7/3) (by norm_num))) a.val := by
+  obtain ⟨U,_,hr,_,hA,_⟩ := E.exists_originalWeightedBirkhoffMap_analytic
+    (sourceSobolevSpectralWeight (7/3) (by norm_num))
+  exact hA a.val (hr a)
+
+-- The family and its full weighted analytic maps are constructed together.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ _E : SourceSection14Data complex_three_halves_ne_top complex_three_halves_gt_one A C V u,
+      ∀ w : SpectralWeight, ∃ U : Set (WeightedCoeffPair (sourceFrequencyWeight w) (3/2)),
+        IsOpen U ∧ (∀ a : weightedRealSourceSubmodule (p := 3/2) w, a.val ∈ U) ∧
+        AnalyticOnNhd ℂ (originalWeightedBirkhoffMap complex_three_halves_ne_top complex_three_halves_gt_one u w) U := by
+  obtain ⟨A,C,V,u,E,h⟩ := sourceSection14_weighted_complex_analytic
+    complex_three_halves_ne_top complex_three_halves_gt_one
+  refine ⟨A,C,V,u,E,fun w => ?_⟩
+  obtain ⟨U,ho,hr,hA,_⟩ := h w
+  exact ⟨U,ho,hr,hA⟩
+
+end WeightedComplexChecks
+end NLS

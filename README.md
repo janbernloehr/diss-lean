@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original weighted Birkhoff coordinates satisfy the physical
-canonical identities for every spectral weight and finite p>1. Actual scalar
-complex derivatives give absolutely convergent Fourier brackets, including
-collapsed gaps; the scalar extensions share an open weighted domain.
+Latest step: the full original Birkhoff map is complex analytic in every
+spectral weight and finite p>1 on a common neighborhood of all weighted real
+sources. Its raw coefficients agree with the original map, and its full
+bounded weighted derivative commutes with the unweighted inclusions.
 
-Next: weighted sequence-valued complex analyticity, a bounded weighted
+Next: weighted complex exponent compatibility, invertibility of the weighted
 Jacobian, analytic local inverses, and continuity and analyticity of the
 weighted global inverse. The unrestricted Lemma 27.2 and G.2 norm
 qualifications remain. The dissertation is incomplete.

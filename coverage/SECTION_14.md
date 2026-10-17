@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical scalar coordinate identities and common scalar complex analytic extensions are proved. Weighted sequence-valued complex analyticity and compatibility, a bounded weighted Jacobian, analytic local inverses, and weighted inverse continuity and analyticity remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Weighted complex exponent compatibility, Jacobian invertibility, analytic local inverses, and weighted inverse continuity and analyticity remain. |
 
 ## Original definitions and exact phase
 
@@ -167,13 +167,12 @@ the weighted target norm, and the target coordinate homeomorphism gives
 density for the actual original map.
 
 The finite-gap argument establishes Sobolev density, not density for
-arbitrary spectral weights such as exponential weights. Dense image does
-not establish open image or surjectivity. The remaining Remark 14.2(iii)
-requirements are weighted complex analyticity and complex exponent compatibility,
-canonicality, open image and local inverse, and the global inverse for
-1<p<=2. The complex-coordinate argument still needs a weighted estimate
-of the actual Dirichlet-minus-periodic-midpoint displacement; the weighted
-gap bound alone does not supply it.
+arbitrary spectral weights such as exponential weights. Dense image alone
+does not establish open image or surjectivity. Subsequent steps below prove
+Sobolev open image and bijectivity, canonicality, and full weighted complex
+analyticity. The separate direct estimate of the complex Dirichlet-minus-
+periodic-midpoint displacement remains unproved; the closing-coordinate
+argument below establishes analyticity without that estimate.
 
 Twenty-two public checks exercise fractional p=3/2, p=4, s=1/3 and s=0;
 negative indices; complex weighted gap bounds and tails; exact real target
@@ -199,8 +198,8 @@ with independent normalized families at the two exponents. The public
 `sourceSection14_weighted_real_compatible` obtains both packages from
 `sourceSection14`, with no map-existence or compatibility premise. At equal
 exponents this also gives independence of the original weighted real map
-from the selected family. Weighted complex-domain compatibility still
-requires constructing the weighted complex map.
+from the selected family. Weighted complex-domain compatibility was not
+part of that milestone; the weighted complex map is now constructed below.
 
 [`SourceBirkhoffGapNormEquivalence.lean`](../NLS/ZakharovShabat/SourceBirkhoffGapNormEquivalence.lean)
 uses the locally uniform positive real part of four times the normalized
@@ -311,8 +310,8 @@ No continuity or analyticity of this inverse in the stronger topology is
 asserted. Open range alone does not prove that the map is open on every
 open subset or is a local homeomorphism.
 
-Remaining clauses: weighted complex analyticity and complex compatibility,
-weighted canonicality, analytic local inverses, and weighted inverse
+At that milestone, remaining clauses included weighted complex analyticity,
+complex compatibility, weighted canonicality, analytic local inverses, and weighted inverse
 continuity and analyticity. The actual complex Dirichlet-minus-periodic-
 midpoint estimate remains missing. Surjectivity at p>2 is still the source's
 open question. The 28 public checks include p=3/2 at the one-step threshold,
@@ -358,15 +357,65 @@ weighted real map. This establishes scalar power-series analyticity and
 the canonical coordinate identities; it does not give weighted local norm
 bounds for the entire sequence map or a bounded weighted Jacobian.
 
-Remaining clauses: weighted sequence-valued complex analyticity and complex
-compatibility, the weighted Jacobian and analytic local inverses, and
-continuity and analyticity of the weighted global inverse. The actual
+At that milestone, full sequence analyticity and the weighted Jacobian
+were still missing. These are established in the following extension;
+complex exponent compatibility and analytic inverse properties remain. The actual
 complex Dirichlet-minus-periodic-midpoint estimate remains missing; the
 p>2 surjectivity question and the external map comparison are unchanged.
 The 18 new public checks cover raw amplitudes, zero/infinite sequence
 endpoints, signed indices, collapsed gaps at the zero source, fractional
 weights at p=3/2 and p=4, and the actual canonical construction.
 Validation is recorded in [the implementation status](../STATUS.md).
+
+## Full weighted complex analyticity and the actual Jacobian
+
+For every spectral weight and finite p>1, the full original sequence map
+is complex analytic on one open native weighted domain containing all
+weighted real sources. Both raw components agree with the original
+unweighted complex map. The restriction to real sources equals the actual
+original weighted real map, including at closed gaps.
+
+| Module | Role |
+| --- | --- |
+| [Signed resonance deletion](../NLS/ZakharovShabat/SourceDeleteResonance.lean) | Complex linear real-preserving projection; norm contraction and uniform control of distant deleted pairs on a common ball. |
+| [Singleton spectral strips](../NLS/ZakharovShabat/SourceBirkhoffSingletonStrip.lean) | Actual real singleton strips force both original coordinates to vanish uniformly in the tail. |
+| [Real-form analytic observations](../NLS/ZakharovShabat/SourceRealTypeAnalyticSlice.lean) | Analytic observations zero on the real slice are zero on the complex ball. |
+| [Deleted complex slices](../NLS/ZakharovShabat/SourceBirkhoffDeletedSlice.lean) | Applies the identity principle to the two actual coordinate observations. |
+| [Actual closing inverse](../NLS/ZakharovShabat/SourceBirkhoffComplexClosingInverse.lean) | Constructs a real-preserving analytic adapted inverse and complex coordinate zeros after deletion. |
+| [Complex coordinate bound](../NLS/ZakharovShabat/SourceBirkhoffComplexClosingBound.lean) | Uniform distant-coordinate bound by the two signed adapted coefficients, for all later cutoffs. |
+| [Uniform center compatibility](../NLS/ZakharovShabat/WeightedResonantCenterForget.lean) | Extends weight forgetting from a fixed source to a common complex neighborhood. |
+| [Adapted map compatibility](../NLS/ZakharovShabat/NormalizedWeightedClosingCompatibility.lean) | Weighted decoding commutes with the actual adapted maps on that neighborhood. |
+| [Finite head and tail bound](../NLS/SequenceSpaces/FiniteHeadTailBound.lean) | Actual sequence membership and norm bound from a finite head and two tail majorants, including the infinite Banach exponent. |
+| [Normalized complex sequence](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexSequence.lean) | Defines the weighted sequence map and derives Banach analyticity from verified local bounds and coordinate analyticity. |
+| [Constructed weighted bound](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexBound.lean) | Full weighted membership and uniform local norm control at arbitrary nearby complex inputs. |
+| [Native analytic extension](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic.lean) | Common domain, full weighted analyticity, original raw coefficients, and exact agreement with the weighted real map. |
+| [Full derivative compatibility](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative.lean) | The bounded weighted Fréchet derivative commutes with both original unweighted inclusions. |
+| [Actual Section 14 construction](../NLS/ZakharovShabat/SourceSection14WeightedComplex.lean) | Constructs one family with these properties simultaneously for every spectral weight. |
+
+The complex coordinate estimate uses the actual adapted inverse. On real
+sources, deleting a resonance closes the corresponding gap and kills both
+coordinates. The real-form identity principle extends those zeros to a
+complex ball. The adapted map's lower distance estimate and the original
+Birkhoff map's local Lipschitz bound control each coordinate by the deleted
+pair. Compatibility transfers this estimate to the weighted adapted map.
+A finite head and the two weighted tail sequences give full local norm
+bounds. Bounded-coordinate analyticity and weight isometries then yield
+the native sequence-valued analytic map. Differentiating its exact
+unweighted compatibility proves the full Jacobian identity.
+
+The 22 public checks include complex closing zeros, actual membership and
+norm bounds, p=3/2 and p=4 at fractional Sobolev orders, the zero source with
+closed gaps, exact original real coefficients, and derivatives on raw unit
+Fourier directions. The Section 14 wrapper supplies the family and all
+weighted analytic maps without extra analyticity or inverse assumptions.
+Validation is recorded in [the implementation status](../STATUS.md).
+
+Remaining: weighted complex exponent compatibility for independent
+families, invertibility of the weighted Jacobian, analytic weighted local
+inverses, and weighted global inverse continuity and analyticity. The
+separate complex Dirichlet-minus-periodic-midpoint estimate is still
+unproved; it is no longer needed for this analyticity argument. No p>2
+surjectivity or comparison with the external map in [23] is inferred.
 
 ## Previous validation: complex exponent compatibility
 

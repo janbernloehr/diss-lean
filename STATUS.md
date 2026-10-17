@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: canonical coordinate identities on weighted sources
+## Current milestone: full weighted complex Birkhoff analyticity
+
+The actual Birkhoff map is now complex analytic as a full sequence map
+between the native weighted spaces, for every Section 6 spectral weight
+and every finite p>1. One open complex domain contains every weighted
+real source, including sources with collapsed gaps. Both raw output
+components agree with the original unweighted complex map and extend
+the existing original weighted real map.
+
+The proof constructs a uniform complex bound by the actual adapted
+closing coordinates. Deleting one signed resonant pair closes that gap
+on real sources; the real-form identity principle extends the resulting
+coordinate zeros to complex sources. An actual local inverse and a
+Lipschitz bound give the coordinate estimate. Weighted and unweighted
+moving centers and adapted maps agree on common complex neighborhoods.
+A finite head and the weighted adapted tails then give full sequence
+membership and a local norm bound, which supplies Banach-space analyticity.
+
+The full weighted Fréchet derivative is a bounded linear map. Including
+its output into the original unweighted target agrees with differentiating
+the original map after source inclusion. Thirteen new modules, one extended
+center-compatibility module, and 22 public checks cover signed deletion,
+finite-head endpoint cases, complex closing zeros, actual sequence bounds,
+fractional Sobolev weights at p=3/2 and p=4, closed gaps at zero, exact
+real-map agreement, and derivatives on raw Fourier directions.
+
+Next: weighted complex exponent compatibility for independent families,
+invertibility of the weighted Jacobian and analytic local inverses, then
+continuity and analyticity of the weighted global inverse. The separate
+complex Dirichlet-minus-periodic-midpoint estimate remains missing; the
+new closing-coordinate proof establishes weighted analyticity without it.
+No p>2 surjectivity is asserted. The external map comparison, unrestricted
+Lemma 27.2 and G.2 norm qualifications remain; the dissertation is incomplete.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passed: 7,549 build jobs, all 6,438 public
+examples, and the transitive axiom audit for 36,280 NLS declarations. The
+13 new modules and 22 new checks introduce no warnings; the full build
+retains 21 existing warnings. All 156 source inventory labels, 788 local
+file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: canonical coordinate identities on weighted sources
 
 The actual original weighted real Birkhoff coordinates now satisfy all
 three physical canonical relations for every Section 6 spectral weight
