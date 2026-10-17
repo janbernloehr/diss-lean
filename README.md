@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the full original Birkhoff map is complex analytic in every
-spectral weight and finite p>1 on a common neighborhood of all weighted real
-sources. Its raw coefficients agree with the original map, and its full
-bounded weighted derivative commutes with the unweighted inclusions.
+Latest step: the weighted complex Birkhoff maps and their full derivatives
+commute with increasing exponents throughout their complex overlaps, including
+independently chosen families. The original weighted real map is real analytic,
+and its complex weighted Jacobian is injective at every real source.
 
-Next: weighted complex exponent compatibility, invertibility of the weighted
-Jacobian, analytic local inverses, and continuity and analyticity of the
-weighted global inverse. The unrestricted Lemma 27.2 and G.2 norm
-qualifications remain. The dissertation is incomplete.
+Next: weighted Jacobian surjectivity, analytic local inverses, and continuity
+and analyticity of the weighted Sobolev global inverse. The unrestricted
+Lemma 27.2 and G.2 norm qualifications remain. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Current milestone: full weighted complex Birkhoff analyticity
+## Current milestone: weighted complex exponent compatibility and real analyticity
+
+The full original weighted Birkhoff maps now agree on the entire complex
+intersection of their domains for every spectral weight and every pair
+of finite exponents 1<p<=q. The normalized root families may be chosen
+independently. At equal exponents this proves independence from the chosen
+family. One common complex germ identifies the whole sequence, and the
+full bounded weighted derivatives commute with the same exponent inclusions.
+
+Native weighted pair inclusions retain every raw coefficient, preserve
+the existing real restriction, and commute with forgetting the weight.
+Their identities, injectivity, and composition also cover the Banach
+sequence endpoints one and infinity. Each original family has a fixed
+open weighted analytic domain containing every weighted real source;
+comparisons with other families use that same domain.
+
+The actual original weighted real map is real analytic in its native
+source and target norms. Restricting the constructed complex extension
+and applying a bounded real-part projection proves this for the complete
+sequence, not just individual coordinates. Its full complex weighted
+Jacobian is injective at every weighted real source, by compatibility with
+the unweighted bijective Jacobian. Closed gaps are included.
+
+Eight modules and 24 public checks cover signed complex amplitudes,
+endpoint inclusions, common complex germs, independent families, full
+derivative compatibility, fractional Sobolev weights at p=3/2 and p=4,
+real analyticity, trivial weighted kernels, and actual Section 14
+constructions supplying both families and their domains.
+
+Next: surjectivity of the weighted Jacobian and analytic weighted local
+inverses, followed by continuity and analyticity of the weighted Sobolev
+global inverse for 1<p<=2. Weighted injectivity alone does not supply an
+inverse in the stronger topology. The separate complex Dirichlet-minus-
+periodic-midpoint estimate remains unproved but is not needed for the
+weighted analyticity established here. No p>2 surjectivity is asserted.
+The external map comparison, unrestricted Lemma 27.2 and G.2 norm
+qualifications remain; the dissertation is incomplete.
+See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: `./scripts/check.sh` passed: 7,557 build jobs, all 6,462 public
+examples, and the transitive axiom audit for 36,310 NLS declarations. The
+eight new modules and 24 new checks introduce no warnings; the full build
+retains 21 existing warnings. All 156 source inventory labels, 803 local
+file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: full weighted complex Birkhoff analyticity
 
 The actual Birkhoff map is now complex analytic as a full sequence map
 between the native weighted spaces, for every Section 6 spectral weight

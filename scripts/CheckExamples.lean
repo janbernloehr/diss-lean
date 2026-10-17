@@ -59706,3 +59706,200 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end WeightedComplexChecks
 end NLS
+
+
+noncomputable section
+open scoped ENNReal Topology
+namespace NLS
+open ZakharovShabat Set Filter
+section WeightedComplexCompatibilityChecks
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+
+-- The native pair inclusions retain complex amplitudes, signed indices, and Banach endpoints.
+example (w : Weight) :
+    (WeightedCoeffPair.exponentInclusion (p := 1) (q := ⊤) w le_top
+      (WeightedCoeffPair.inlCLM w (WeightedCoeff.single w (-3) Complex.I))).fst.val (-3) = Complex.I := by simp
+
+example (w : Weight) :
+    (WeightedCoeffPair.exponentInclusion (p := 1) (q := ⊤) w le_top
+      (WeightedCoeffPair.inrCLM w (WeightedCoeff.single w 3 (2+Complex.I)))).snd.val 3 = 2+Complex.I ∧
+    (WeightedCoeffPair.exponentInclusion (p := 1) (q := ⊤) w le_top
+      (WeightedCoeffPair.inrCLM w (WeightedCoeff.single w 3 (2+Complex.I)))).fst.val (-3) = 0 := by simp
+
+example (w : Weight) (a : WeightedCoeffPair w 1) :
+    WeightedCoeffPair.exponentInclusion (p := 2) (q := ⊤) w le_top
+      (WeightedCoeffPair.exponentInclusion w (by norm_num : (1:ℝ≥0∞) ≤ 2) a) =
+        WeightedCoeffPair.exponentInclusion w (show (1:ℝ≥0∞) ≤ ⊤ from le_top) a := by simp
+
+example (w : Weight) (a : WeightedCoeffPair w ⊤) :
+    WeightedCoeffPair.exponentInclusion w le_rfl a = a := by simp
+
+example (w : Weight) (a b : WeightedCoeffPair w 1)
+    (h : WeightedCoeffPair.exponentInclusion (q := ⊤) w le_top a =
+      WeightedCoeffPair.exponentInclusion (q := ⊤) w le_top b) : a = b :=
+  WeightedCoeffPair.exponentInclusion_injective w le_top h
+
+example (w : Weight) (b : WithLp ⊤ (WeightedRealCoeff w ⊤ × WeightedRealCoeff w ⊤)) :
+    WeightedCoeffPair.reCLM w (WithLp.toLp ⊤ (b.fst.val,b.snd.val)) = b := by
+  apply WeightedCoeffPair.reCLM_pair_eq_of_coordinates
+  intro n
+  exact ⟨rfl,rfl⟩
+
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) 1) (n : ℤ) :
+    (originalWeightedSourceCLM w
+      (WeightedCoeffPair.exponentInclusion (q := ⊤) (sourceFrequencyWeight w) le_top a)).fst (-n) = a.fst.val (-n) := by simp
+
+example (w : SpectralWeight) (a : WeightedCoeffPair (sourceFrequencyWeight w) 1) (n : ℤ) :
+    (weightedBirkhoffTargetInclusion w
+      (WeightedCoeffPair.exponentInclusion (q := ⊤) (sourceFrequencyWeight w) le_top a)).2 n = a.snd.val n := by simp
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {hq : q ≠ ⊤} {hq1 : 1 < q} {A C V : Set (CoeffPair q)}
+  {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+  (D : SourceSection14Data hp hp1 W₀ B W s) (E : SourceSection14Data hq hq1 A C V t)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    a.val ∈ D.complex.originalWeightedComplexDomain w ∧
+    AnalyticAt ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val := by
+  have h := D.complex.originalWeightedComplexDomain_spec w
+  exact ⟨h.2.1 a,h.2.2.1 a.val (h.2.1 a)⟩
+
+example (w : SpectralWeight) (hpq : p ≤ q) (a : weightedRealSourceSubmodule (p := p) w) :
+    WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a.val ∈
+      E.complex.originalWeightedComplexDomain w := by
+  rw [weightedComplexExponent_real]
+  exact (E.complex.originalWeightedComplexDomain_spec w).2.1 _
+
+-- Compatibility holds at arbitrary complex overlap points, not only on the real locus.
+example (w : SpectralWeight) (hpq : p ≤ q) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w)
+    (hb : WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a ∈ E.complex.originalWeightedComplexDomain w)
+    (n : ℤ) :
+    (originalWeightedBirkhoffMap hp hp1 s w a).fst.val n =
+      (originalWeightedBirkhoffMap hq hq1 t w (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a)).fst.val n := by
+  simpa only [WeightedCoeffPair.exponentInclusion_fst] using
+    congrArg (fun z => z.fst.val n) (D.weighted_complex_exponent E w hpq a ha hb)
+
+example (w : SpectralWeight) (hpq : p ≤ q) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w)
+    (hb : WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a ∈ E.complex.originalWeightedComplexDomain w) :
+    (originalWeightedBirkhoffMap hp hp1 s w a).snd.val (-7) =
+      (originalWeightedBirkhoffMap hq hq1 t w (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a)).snd.val (-7) := by
+  simpa only [WeightedCoeffPair.exponentInclusion_snd] using
+    congrArg (fun z => z.snd.val (-7)) (D.weighted_complex_exponent E w hpq a ha hb)
+
+example (w : SpectralWeight) (hpq : p ≤ q) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w)
+    (hb : WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a ∈ E.complex.originalWeightedComplexDomain w) :
+    ∀ᶠ b in 𝓝 a, ∀ n : ℤ,
+      (originalWeightedBirkhoffMap hp hp1 s w b).fst.val n =
+        (originalWeightedBirkhoffMap hq hq1 t w (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq b)).fst.val n := by
+  filter_upwards [D.eventually_weighted_complex_exponent E w hpq a ha hb] with b he n
+  simpa only [WeightedCoeffPair.exponentInclusion_fst] using congrArg (fun z => z.fst.val n) he
+
+example (w : SpectralWeight) (hpq : p ≤ q) (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w)
+    (hb : WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a ∈ E.complex.originalWeightedComplexDomain w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) :
+    WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq
+      (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a v) =
+      fderiv ℂ (originalWeightedBirkhoffMap hq hq1 t w)
+        (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq a)
+        (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) hpq v) :=
+  congrArg (fun L => L v) (D.weighted_complex_fderiv_exponent E w hpq a ha hb)
+
+-- Equal exponents still allow independently chosen normalized root families.
+example {A' C' V' : Set (CoeffPair p)} {u : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (F : SourceSection14Data hp hp1 A' C' V' u) (w : SpectralWeight)
+    (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w) (hb : a ∈ F.complex.originalWeightedComplexDomain w) :
+    originalWeightedBirkhoffMap hp hp1 s w a = originalWeightedBirkhoffMap hp hp1 u w a :=
+  D.weighted_complex_family_independent F w a ha hb
+
+example {A' C' V' : Set (CoeffPair p)} {u : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (F : SourceSection14Data hp hp1 A' C' V' u) (w : SpectralWeight)
+    (a : WeightedCoeffPair (sourceFrequencyWeight w) p)
+    (ha : a ∈ D.complex.originalWeightedComplexDomain w) (hb : a ∈ F.complex.originalWeightedComplexDomain w) :
+    fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a = fderiv ℂ (originalWeightedBirkhoffMap hp hp1 u w) a := by
+  have h := D.weighted_complex_fderiv_exponent F w le_rfl a ha (by simpa using hb)
+  apply ContinuousLinearMap.ext
+  intro v
+  simpa only [ContinuousLinearMap.comp_apply,WeightedCoeffPair.exponentInclusion_refl] using congrArg (fun L => L v) h
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    AnalyticAt ℝ (D.complex.originalWeightedRealMap w) a := D.complex.originalWeightedRealMap_analytic w a (mem_univ a)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w) :
+    LinearMap.ker (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val).toLinearMap = ⊥ :=
+  LinearMap.ker_eq_bot.mpr (D.complex.originalWeightedBirkhoffMap_fderiv_injective w a)
+
+example (w : SpectralWeight) (a : weightedRealSourceSubmodule (p := p) w)
+    (v : WeightedCoeffPair (sourceFrequencyWeight w) p) (hv : v ≠ 0) :
+    fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val v ≠ 0 := by
+  intro h
+  apply hv
+  exact D.complex.originalWeightedBirkhoffMap_fderiv_injective w a
+    (h.trans (map_zero (fderiv ℂ (originalWeightedBirkhoffMap hp hp1 s w) a.val)).symm)
+
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]; norm_num⟩
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem weighted_compat_gt_one : (1:ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]; norm_num
+private theorem weighted_compat_ne_top : (3/2:ℝ≥0∞) ≠ ⊤ := by finiteness
+private theorem weighted_compat_le_four : (3/2:ℝ≥0∞) ≤ 4 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]; norm_num
+
+-- Fractional Sobolev weights, closed gaps, and exponents on either side of two.
+example {A C V : Set (CoeffPair (3/2))} {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (F : SourceSection14Data weighted_compat_ne_top weighted_compat_gt_one A C V u) :
+    AnalyticAt ℝ (F.complex.originalWeightedRealMap (sourceSobolevSpectralWeight (1/3) (by norm_num))) 0 :=
+  F.complex.originalWeightedRealMap_analytic _ 0 (mem_univ 0)
+
+example {A C V : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (F : SourceSection14Data (by norm_num) (by norm_num) A C V u)
+    (a : weightedRealSourceSubmodule (p := 4) (sourceSobolevSpectralWeight (7/3) (by norm_num))) :
+    Function.Injective (fderiv ℂ (originalWeightedBirkhoffMap (by norm_num) (by norm_num) u
+      (sourceSobolevSpectralWeight (7/3) (by norm_num))) a.val) :=
+  F.complex.originalWeightedBirkhoffMap_fderiv_injective _ a
+
+example {A C V : Set (CoeffPair (3/2))} {u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    {A' C' V' : Set (CoeffPair 4)} {v : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (F : SourceSection14Data weighted_compat_ne_top weighted_compat_gt_one A C V u)
+    (G : SourceSection14Data (by norm_num) (by norm_num) A' C' V' v) :
+    let w := sourceSobolevSpectralWeight (1/3) (by norm_num)
+    ∀ a ∈ F.complex.originalWeightedComplexDomain w,
+      WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four a ∈ G.complex.originalWeightedComplexDomain w →
+      WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four
+        (originalWeightedBirkhoffMap weighted_compat_ne_top weighted_compat_gt_one u w a) =
+        originalWeightedBirkhoffMap (by norm_num) (by norm_num) v w
+          (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four a) := by
+  intro w a ha hb
+  exact F.weighted_complex_exponent G w weighted_compat_le_four a ha hb
+
+-- Both the map and its analytic domain are supplied by the actual construction.
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ F : SourceSection14Data weighted_compat_ne_top weighted_compat_gt_one A C V u,
+      ∀ w : SpectralWeight, AnalyticOnNhd ℝ (F.complex.originalWeightedRealMap w) univ ∧
+        ∀ a : weightedRealSourceSubmodule (p := 3/2) w,
+          Function.Injective (fderiv ℂ (originalWeightedBirkhoffMap weighted_compat_ne_top weighted_compat_gt_one u w) a.val) :=
+  sourceSection14_weighted_real_analytic _ _
+
+example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ F : SourceSection14Data weighted_compat_ne_top weighted_compat_gt_one A C V u,
+      ∃ A' C' V' : Set (CoeffPair 4), ∃ v : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+        ∃ G : SourceSection14Data (by norm_num) (by norm_num) A' C' V' v,
+          ∀ w : SpectralWeight, ∀ a ∈ F.complex.originalWeightedComplexDomain w,
+            WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four a ∈ G.complex.originalWeightedComplexDomain w →
+            WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four
+              (originalWeightedBirkhoffMap weighted_compat_ne_top weighted_compat_gt_one u w a) =
+              originalWeightedBirkhoffMap (by norm_num) (by norm_num) v w
+                (WeightedCoeffPair.exponentInclusion (sourceFrequencyWeight w) weighted_compat_le_four a) := by
+  obtain ⟨A,C,V,u,F,A',C',V',v,G,h⟩ := sourceSection14_weighted_complex_compatible
+    weighted_compat_ne_top weighted_compat_gt_one (show (4:ℝ≥0∞) ≠ ⊤ by norm_num)
+    (show (1:ℝ≥0∞) < 4 by norm_num) weighted_compat_le_four
+  exact ⟨A,C,V,u,F,A',C',V',v,G,fun w a ha hb => ((h w).2.2.2.2.2.2 a ha hb).1⟩
+
+end WeightedComplexCompatibilityChecks
+end NLS

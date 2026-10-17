@@ -20,7 +20,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
 | Remark 14.2(i): agreement with the external Hilbert-space map | Existing historical Hilbert compatibility interfaces | Identification with the precise external construction in [23] is not separately certified by this audit |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
-| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Weighted complex exponent compatibility, Jacobian invertibility, analytic local inverses, and weighted inverse continuity and analyticity remain. |
+| Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and Jacobian injectivity are also proved. Weighted Jacobian surjectivity, analytic local inverses, and weighted inverse continuity and analyticity remain. |
 
 ## Original definitions and exact phase
 
@@ -410,12 +410,54 @@ Fourier directions. The Section 14 wrapper supplies the family and all
 weighted analytic maps without extra analyticity or inverse assumptions.
 Validation is recorded in [the implementation status](../STATUS.md).
 
-Remaining: weighted complex exponent compatibility for independent
-families, invertibility of the weighted Jacobian, analytic weighted local
-inverses, and weighted global inverse continuity and analyticity. The
+The next extension below establishes complex exponent compatibility,
+native weighted real analyticity, and Jacobian injectivity. Weighted
+Jacobian surjectivity, analytic local inverses, and weighted Sobolev global
+inverse continuity and analyticity remain. The
 separate complex Dirichlet-minus-periodic-midpoint estimate is still
 unproved; it is no longer needed for this analyticity argument. No p>2
 surjectivity or comparison with the external map in [23] is inferred.
+
+## Complex weighted compatibility and native real analyticity
+
+For each original family and spectral weight, a fixed open weighted domain
+contains every weighted real source. The full complex weighted sequence
+maps agree throughout the intersection of two such domains after exponent
+inclusion, for every finite 1<p<=q. The root families are independent.
+The equality has one common complex germ for all coordinates. The full
+bounded weighted derivatives obey the same identity. At equal exponents,
+this proves that the map is independent of the family on the overlap.
+
+| Module | Public evidence |
+| --- | --- |
+| [Native weighted pair inclusions](../NLS/SequenceSpaces/WeightedPairExponent.lean) | Complex linear coefficient-preserving inclusion, injectivity, identity, and composition at all Banach exponents, including one and infinity. |
+| [Real pair projection](../NLS/SequenceSpaces/WeightedRealPairProjection.lean) | Bounded projection onto the original weighted real target, with exact identification by raw coefficients. |
+| [Source and target exponent inclusions](../NLS/ZakharovShabat/SourceWeightedComplexExponent.lean) | Both unweighted inclusions commute with exponent change; the native complex inclusion restricts to the existing real one. |
+| [Fixed complex domains](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDomain.lean) | One chosen open domain per family and weight retains all real sources, full analyticity, and map/derivative inclusion identities. |
+| [Full complex exponent overlaps](../NLS/ZakharovShabat/SourceBirkhoffWeightedComplexExponent.lean) | Whole-sequence equality, common germs, full derivative compatibility, and family independence, without a real-type or open-gap premise on the overlap point. |
+| [Native real analytic map](../NLS/ZakharovShabat/SourceBirkhoffWeightedRealAnalytic.lean) | Full real power-series analyticity of the actual original map on its entire weighted real source. |
+| [Injective weighted Jacobian](../NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianInjective.lean) | Every weighted kernel vector vanishes, by inclusion into the original unweighted bijective derivative. |
+| [Actual compatible constructions](../NLS/ZakharovShabat/SourceSection14WeightedCompatibility.lean) | Constructs both families and their domains, simultaneously for all spectral weights, and supplies native real analyticity and injective derivatives. |
+
+The compatibility proof includes each weighted output in the unweighted
+target, applies the existing full complex exponent theorem, and uses the
+injectivity of that inclusion. The derivative proof applies the same
+argument to actual bounded derivatives. Real analyticity uses restriction
+of scalars and the bounded real-part projection; equality of the raw
+coefficients identifies the result with the original weighted real map.
+
+The 24 public checks cover signed complex single coefficients, inclusion
+from one to infinity, composition through exponent two, real projection,
+full common germs, independent families at equal exponents, derivatives
+on arbitrary complex directions, fractional Sobolev weights, and the actual
+p=3/2 to p=4 construction. Zero and collapsed-gap sources are included.
+Validation is recorded in [the implementation status](../STATUS.md).
+
+Remaining: weighted Jacobian surjectivity, analytic weighted local inverses,
+and continuity and analyticity of the weighted Sobolev global inverse for
+1<p<=2. Injectivity does not imply surjectivity in these infinite-dimensional
+spaces. The direct complex Dirichlet-minus-periodic-midpoint estimate,
+external map comparison, and p>2 surjectivity question are unchanged.
 
 ## Previous validation: complex exponent compatibility
 
