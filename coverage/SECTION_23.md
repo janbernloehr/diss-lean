@@ -508,10 +508,47 @@ spectral derivative of this same error, of order C/|z|^N on |z| >= 2.
 The source regularity is unchanged. This is a statement about the actual
 canonical discriminant, not an extension of the full WKB vector.
 
-The next spectral work requires both solution columns and the precise
-root and product cancellations in the two literal Fourier errors.
-The proved local sampling and nonsmooth discriminant bounds are inputs
-to that work; they do not complete Fourier one-smoothing.
+The two-column results below supply the next input. The precise root
+and product cancellations in the two literal Fourier errors remain open;
+these estimates do not complete Fourier one-smoothing.
+
+## Both standard fundamental columns and periodic endpoint samples
+
+[`ClassicalSwapSymmetry.lean`](../NLS/ZakharovShabat/ClassicalSwapSymmetry.lean)
+proves exact covariance of the actual solution under
+(a,b,z) -> (-b,-a,-z), with swapped solution components. ODE uniqueness
+fixes the signs for every initial vector and time.
+[`SobolevWKBSecondColumn.lean`](../NLS/ZakharovShabat/SobolevWKBSecondColumn.lean)
+then gives the second WKB vector's actual leading oscillatory integral
+and uniform order-(N+1) remainder on original Hs balls and strips.
+
+[`ClassicalBasisReconstruction.lean`](../NLS/ZakharovShabat/ClassicalBasisReconstruction.lean)
+reconstructs the standard columns from initial vectors (1,p) and (q,1)
+using the exact inverse determinant (1-pq)^(-1). It bounds that inverse
+by two when |pq| <= 1/2 and propagates both vector errors.
+[`SobolevWKBInitialBasis.lean`](../NLS/ZakharovShabat/SobolevWKBInitialBasis.lean)
+chooses one frequency threshold for each original Hs ball so that
+|p|,|q| <= 1/2. This includes the empty H0 truncation.
+[`SobolevWKBFundamentalColumns.lean`](../NLS/ZakharovShabat/SobolevWKBFundamentalColumns.lean)
+retains this exact normalization and both leading density integrals in
+explicit models for the standard columns. Their errors have order N+1
+uniformly in the original source ball, physical time, and horizontal
+strip, for s >= 1 and N <= s. Smooth periodic physical representatives
+must still match the original source's Fourier coefficients exactly.
+
+[`SourceRiccatiPeriodicSampling.lean`](../NLS/ZakharovShabat/SourceRiccatiPeriodicSampling.lean)
+first bounds both full canonical periodic displacement norms on one
+complex source neighborhood. Its Sobolev pullback also controls the
+original source norm. The actual top-density samples at both periodic
+endpoint sequences consequently have L2 realizations with one common
+local norm bound. This includes N=s and H0; no real-type assumption or
+continuity of individual ordered endpoint labels is needed. Smooth
+periodic representatives with exact source coefficients remain explicit.
+
+The next spectral step is to combine these column models in the actual
+separated characteristics and anti-discriminant, then evaluate at the
+canonical roots. No sharp Fourier error or full one-smoothing theorem
+is inferred from the column and sampling bounds alone.
 
 ## Validation and remaining work
 
@@ -564,6 +601,12 @@ Six WKB checks cover off-axis spectral values with negative real part,
 constant complex potentials, the zeroth truncation and |z|=1 boundary,
 the nonsmooth H0 density, the order-zero residual coefficient, and the
 uniform H1 discriminant estimate at z=I.
+
+Four column checks cover the second standard initial vector at empty
+truncation, the reflected leading term's sign at zero spectral parameter,
+the closed half-product determinant bound, and both normalized models
+at time zero. Full validation is recorded in
+[implementation status](../STATUS.md).
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

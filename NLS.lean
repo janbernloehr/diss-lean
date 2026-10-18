@@ -4084,3 +4084,9 @@ import NLS.ZakharovShabat.SobolevFiniteBoundExtension
 import NLS.ZakharovShabat.SobolevHamiltonianPhase
 import NLS.ZakharovShabat.SourceSobolevDiscriminantUniform
 import NLS.ZakharovShabat.SobolevDiscriminantDerivativeUniform
+import NLS.ZakharovShabat.ClassicalSwapSymmetry
+import NLS.ZakharovShabat.SobolevWKBSecondColumn
+import NLS.ZakharovShabat.ClassicalBasisReconstruction
+import NLS.ZakharovShabat.SobolevWKBInitialBasis
+import NLS.ZakharovShabat.SobolevWKBFundamentalColumns
+import NLS.ZakharovShabat.SourceRiccatiPeriodicSampling

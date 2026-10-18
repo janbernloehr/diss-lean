@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: leading Fourier terms and nonsmooth discriminant estimates
+## Current milestone: both WKB fundamental columns and periodic endpoint sampling
+
+Both standard fundamental columns now have explicit WKB models with
+order-(N+1) error, uniform on each original Hs source ball and horizontal
+spectral strip for s >= 1 and N <= s. The models retain both leading
+oscillatory density integrals and the exact inverse initial-basis
+determinant. A common frequency threshold makes the initial basis
+uniformly invertible; no additional source derivative is required.
+The second vector follows from the exact signed-swap symmetry of the
+actual ODE, including spectral reflection.
+
+Samples of the actual top Riccati density at both canonical periodic
+endpoint sequences have a common local L2 bound near every complex Hs
+source. This includes N=s and H0 and does not require a real-type source
+or continuity of the separately ordered endpoint labels. Both the WKB
+and sampling statements still require smooth periodic representatives
+with exactly matching original Fourier coefficients.
+
+Six modules and four public examples cover the empty second truncation,
+the reflected leading term's sign, the closed half-product determinant
+bound, and both normalized models at their initial time. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The next step is to transfer the two-column models to the actual
+separated characteristics and anti-discriminant at spectral roots.
+The two sharp Fourier spectral errors and full Fourier one-smoothing
+remain open, as does extension of the leading WKB vectors to nonsmooth
+physical data.
+
+Validation: `./scripts/check.sh` passes with 7,755 build jobs, 6,800
+public examples, and a transitive axiom audit of 37,617 NLS declarations.
+The build retains 21 existing warnings; the six new modules introduce none.
+Documentation checks cover 1,240 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: leading Fourier terms and nonsmooth discriminant estimates
 
 For every integer s >= 1 and N <= s, subtracting the actual leading
 oscillatory Riccati-density integral from the WKB solution error leaves

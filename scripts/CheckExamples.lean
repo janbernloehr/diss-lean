@@ -62485,3 +62485,30 @@ example (R : ℝ) (hR : 0 ≤ R) :
   simpa [show (2:ℝ)^2=4 by norm_num] using h ab hab (-2) (by norm_num) (by norm_num)
 
 end NLS.SpectralWKBChecks
+
+namespace NLS.WKBFundamentalColumnsChecks
+open Set Complex NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped unitInterval
+
+-- Empty truncation uses the second standard initial vector.
+example (a b : ℝ → ℂ) (z : ℂ) : nlsWKBSecondVector a b 0 z 0 = (0,1) := by
+  simp [nlsWKBSecondVector,nlsWKBVector,nlsRiccatiApproximation]
+
+-- At zero spectral parameter the reflected leading term retains its sign.
+example (a b : ℝ → ℂ) (t : ℝ) :
+    nlsWKBLeadingTerm (-b) (-a) 0 0 t = -Complex.I*(∫ x in (0:ℝ)..t, a x) := by
+  simp [nlsWKBLeadingTerm,nlsRiccatiDensity_zero]
+
+-- The inverse determinant estimate includes the closed half-product boundary.
+example : 1-(1/2:ℂ)*1 ≠ 0 ∧ ‖(1-(1/2:ℂ)*1)⁻¹‖ ≤ 2 := by
+  apply norm_inv_one_sub_mul_le_two
+  norm_num
+
+-- Both normalized models retain the standard initial columns at empty truncation.
+example (a b : ℝ → ℂ) (z : ℂ) :
+    nlsWKBFirstColumnModel a b 0 z 0 = (1,0) ∧
+    nlsWKBSecondColumnModel a b 0 z 0 = (0,1) := by
+  simp [nlsWKBFirstColumnModel,nlsWKBSecondColumnModel,nlsWKBInitialLower,
+    nlsWKBInitialUpper,nlsWKBSecondVector,nlsWKBVector,nlsWKBLeadingTerm,nlsRiccatiApproximation]
+
+end NLS.WKBFundamentalColumnsChecks
