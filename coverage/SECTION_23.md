@@ -97,9 +97,54 @@ conclusion of at most exponential growth remains valid. This correction
 does not change Theorem 23.4 or Corollary 23.5. See
 [source discrepancies](../SOURCE_ERRATA.md).
 
+## Progress toward the separate one-smoothing assertion
+
+[`SourceAngularBetaH1Decay.lean`](../NLS/ZakharovShabat/SourceAngularBetaH1Decay.lean)
+proves locally uniform inverse-bracket decay for the actual angular
+correction on every real H1 source. Real interlacing bounds the
+Dirichlet-minus-midpoint term by half the periodic gap. The actual
+weighted gap sequence, with its original even-frequency weight,
+controls the reciprocal sum through
+[`WeightedReciprocalDecay.lean`](../NLS/SequenceSpaces/WeightedReciprocalDecay.lean).
+The zero mode and both signed tails are included.
+
+[`SourceAngularBetaCompactBound.lean`](../NLS/ZakharovShabat/SourceAngularBetaCompactBound.lean)
+uses a finite subcover and compactness of the normalized weighted decoder
+to make the off-diagonal beta constant uniform on each physical H1 ball.
+[`SourceAngularBetaH1BallBound.lean`](../NLS/ZakharovShabat/SourceAngularBetaH1BallBound.lean)
+combines it with the proved global M1 gap estimate. The actual H1 gap
+sequence and the full beta correction are consequently bounded uniformly
+on every ball measured by `sourcePhysicalH1Coordinates`.
+
+For any retained `SourceBirkhoffMapComplexData` family, the phase results in
+[`SourceBirkhoffH1PhaseDecay.lean`](../NLS/ZakharovShabat/SourceBirkhoffH1PhaseDecay.lean)
+and
+[`SourceBirkhoffH1BallPhase.lean`](../NLS/ZakharovShabat/SourceBirkhoffH1BallPhase.lean)
+prove, for all real sources of physical H1 norm at most R,
+
+    (1+|n|)*|beta_n| <= K(R),
+    (1+|n|)*|exp(t*i*beta_n)-1| <= |t|*K(R).
+
+These hold for every signed index n and every real t, without a finite-gap
+hypothesis. The correction and phase error are in every sequence exponent
+q>1, including infinity. `beta_phase_multipliers_uniform_physical_H1_ball`
+constructs multiplication by the exact phase error as a bounded
+complex-linear map from h^r_p to h^(r+1)_p, with norm at most |t|*K(R),
+for every real r and Banach p. These multiplier spaces use
+`Weight.sobolev r`, namely (1+|n|)^r. The local version additionally
+retains an open H1 neighborhood inside the original complex domain.
+
+This supplies the beta-phase ingredient of the separate argument in
+Kappeler, Schaad and Topalov's
+[*Semi-linearity of the non-linear Fourier transform of the defocusing NLS equation*](https://arxiv.org/abs/1505.04455).
+The proof uses the project's actual spectral quantities, without assuming
+an external asymptotic theorem. The remaining coordinate and normalization
+asymptotics, the full Birkhoff-minus-Fourier derivative gain, and analyticity
+into that stronger target are not established by the phase result.
+
 ## Validation and remaining work
 
-The 24 new public checks cover complex original-domain action identity,
+The original 24 public checks cover complex original-domain action identity,
 Parseval, both weighted source components, common constants, integer
 orders one and two, lower-order target norms, negative coordinate
 indices, the full real locus in each complex neighborhood, and both
@@ -107,13 +152,17 @@ weighted estimates. Fractional order 3/2 checks the literal exponents
 six and three; order one checks the endpoint domain. Further checks
 retain both original physical solution theories, the unconditional
 common-family constructor, and the weight-growth correction.
-Full validation results are recorded in [implementation status](../STATUS.md).
+Eight further checks cover H1 beta and phase decay at zero and negative
+indices, exponents 3/2 and infinity, a negative-order multiplier, one
+original family valid for all real H1 sources, and phase/operator
+constants chosen before every source in a physical H1 ball. Full
+validation results are recorded in [implementation status](../STATUS.md).
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing
 property on p. 104 cites [39]. A full one-derivative gain for the
 Birkhoff map minus its Fourier linearization is not proved by the
-norm estimates alone and is not asserted here.
+norm estimates or the phase estimates alone and is not asserted here.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is

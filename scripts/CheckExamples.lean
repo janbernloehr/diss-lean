@@ -61696,3 +61696,85 @@ example {W : Set (CoeffPair 2)} (C : SourceFullAbelianUniformCauchyFamily (by si
   C.real_profile_eq_actual_correction_finiteGap (-2) φ hφ hf hg Real.pi ⟨Real.pi_pos.le,le_rfl⟩
 
 end NLS.Lemma272CompletionChecks
+
+/-! H1 beta decay for the retained original family, including endpoint indices and exponents. -/
+namespace NLS.H1BetaDecayChecks
+open ZakharovShabat Complex Set
+open scoped ENNReal
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) 0‖ ≤
+      ‖sourceH1WeightedGapSequence a 0‖ := by
+  simpa only [Int.cast_zero, abs_zero, add_zero, one_mul] using sourceH1WeightedGapSequence_majorant a 0
+
+example (φ : realTypeSourceSubmodule 2) :
+    ‖sourceDirichletMidpointDisplacement (by simp) (by norm_num) φ.val (-3)‖ ≤
+      ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val (-3)‖ / 2 :=
+  norm_sourceDirichletMidpointDisplacement_le_half_gap φ (-3)
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSobolevSourceLocus) :
+    Memℓp (fun n => exp ((-1 : ℂ) * Complex.I * sourceAngularBetaCorrection (by simp) (by norm_num)
+      n s (sobolevSourceInclusion a.val)) - 1) (3 / 2 : ℝ≥0∞) := by
+  simpa only [Complex.ofReal_neg, Complex.ofReal_one] using
+    (D.memlp_H1_beta_phase (by
+      apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+      norm_num : 1 < (3 / 2 : ℝ≥0∞)) a (-1)).2
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSobolevSourceLocus) :
+    Memℓp (fun n => sourceAngularBetaCorrection (by simp) (by norm_num) n s
+      (sobolevSourceInclusion a.val)) ⊤ :=
+  (D.memlp_H1_beta_phase (by simp) a 1).1
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSobolevSourceLocus) :
+    ∃ T : WeightedCoeff (Weight.sobolev (-1 / 2)) ⊤ →L[ℂ]
+        WeightedCoeff (Weight.sobolev (-1 / 2 + 1)) ⊤,
+      ∀ c n, (T c).val n =
+        (exp ((-1 : ℂ) * Complex.I * sourceAngularBetaCorrection (by simp) (by norm_num) n s
+          (sobolevSourceInclusion a.val)) - 1) * c.val n := by
+  obtain ⟨U, _, ha, _, K, _, h⟩ := D.exists_local_uniform_H1_beta_phase_multipliers a
+  obtain ⟨T, hT, _⟩ := h a ha ⊤ inferInstance (-1 / 2) (-1)
+  exact ⟨T, by simpa only [Complex.ofReal_neg, Complex.ofReal_one] using hT⟩
+
+example : ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∀ a : realTypeSobolevSourceLocus,
+      Memℓp (fun n => sourceAngularBetaCorrection (by simp) (by norm_num) n s
+        (sobolevSourceInclusion a.val)) 2 ∧
+      Memℓp (fun n => exp (Complex.I * sourceAngularBetaCorrection (by simp) (by norm_num) n s
+        (sobolevSourceInclusion a.val)) - 1) 2 := by
+  obtain ⟨W₀, B, W, s, D⟩ := exists_sourceBirkhoffMap_complex_analytic
+    (p := 2) (by simp) (by norm_num)
+  refine ⟨s, fun a => ?_⟩
+  simpa only [Complex.ofReal_one, one_mul] using D.memlp_H1_beta_phase (by norm_num) a 1
+
+end NLS.H1BetaDecayChecks
+
+namespace NLS.H1BetaBallDecayChecks
+open ZakharovShabat Complex Set
+open scoped ENNReal
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ∀ n : ℤ, (1+|(n:ℝ)|)*‖exp ((-1:ℂ)*Complex.I*sourceAngularBetaCorrection (by simp) (by norm_num)
+        n s (sobolevSourceInclusion a.val))-1‖ ≤ K := by
+  obtain ⟨K,hK,h⟩ := D.beta_phase_uniform_physical_H1_ball 1
+  refine ⟨K,hK,fun a ha n => ?_⟩
+  simpa only [Complex.ofReal_neg,Complex.ofReal_one,abs_neg,abs_one,one_mul] using (h a ha n).2 (-1)
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ∃ T : WeightedCoeff (Weight.sobolev (3/2)) ⊤ →L[ℂ] WeightedCoeff (Weight.sobolev (3/2+1)) ⊤,
+        (∀ c n, (T c).val n = (exp ((-1:ℂ)*Complex.I*sourceAngularBetaCorrection (by simp) (by norm_num)
+          n s (sobolevSourceInclusion a.val))-1)*c.val n) ∧ ‖T‖ ≤ K := by
+  obtain ⟨K,hK,h⟩ := D.beta_phase_multipliers_uniform_physical_H1_ball 1
+  refine ⟨K,hK,fun a ha => ?_⟩
+  simpa only [Complex.ofReal_neg,Complex.ofReal_one,abs_neg,abs_one,one_mul] using h a ha ⊤ inferInstance (3/2) (-1)
+
+end NLS.H1BetaBallDecayChecks

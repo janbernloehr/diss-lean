@@ -3988,3 +3988,9 @@ import NLS.ZakharovShabat.SourceH1SharpEndpoint
 import NLS.ZakharovShabat.SourcePrimitivePowerGlobalCubic
 import NLS.ZakharovShabat.SourceSection27SharpEndpoint
 import NLS.ZakharovShabat.SourceWeightedPrimitiveBoundary
+import NLS.SequenceSpaces.WeightedReciprocalDecay
+import NLS.ZakharovShabat.SourceAngularBetaH1Decay
+import NLS.ZakharovShabat.SourceBirkhoffH1PhaseDecay
+import NLS.ZakharovShabat.SourceAngularBetaCompactBound
+import NLS.ZakharovShabat.SourceAngularBetaH1BallBound
+import NLS.ZakharovShabat.SourceBirkhoffH1BallPhase

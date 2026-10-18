@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: the unrestricted printed Lemma 27.2
+## Current milestone: uniform H1 beta decay and phase multipliers
+
+The actual angular correction beta_n now satisfies
+(1+|n|)*|beta_n| <= K(R) uniformly on each physical H1 ball of
+radius R. The same original Birkhoff family is retained, including
+sources with infinitely many open gaps. A local H1 neighborhood
+version also keeps all decoded sources inside the original domain.
+
+Real Dirichlet interlacing reduces the midpoint displacement to half
+the gap. A weighted reciprocal-sum estimate controls the full angular
+series. Compactness of normalized weighted decoding makes the
+off-diagonal beta constant uniform on physical H1 balls; the proved
+global M1 gap estimate bounds the actual weighted gap sequence there.
+
+The real phase estimate gives
+(1+|n|)*|exp(t*i*beta_n)-1| <= |t|*K(R) for every real t.
+Both beta and the phase error belong to every sequence exponent q>1,
+including infinity. Multiplication by the phase error is a bounded
+linear operator from h^r_p to h^(r+1)_p for every real r and every
+Banach exponent p, with operator norm at most |t|*K(R) throughout
+the ball. These multiplier spaces use the exact weight (1+|n|)^r.
+Both coordinate phase signs are included.
+
+Six new modules and eight public checks cover zero and negative
+indices, exponents 3/2 and infinity, a negative-order multiplier,
+one family chosen before all real H1 sources, and common constants
+for all sources in a physical H1 ball.
+
+This supplies the beta-phase ingredient of the separate one-smoothing
+assertion discussed on dissertation p. 104. The full difference between
+the Birkhoff map and its Fourier linearization remains unproved, as does
+analyticity into its stronger target. Next prove the remaining
+normalization and spectral-coordinate asymptotics for the same original
+family, then assemble that full difference estimate.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+Validation: `./scripts/check.sh` passes with 7,659 build jobs, 6,744
+public examples, and a transitive axiom audit of 37,239 NLS declarations.
+The build retains 21 existing warnings; all six new modules are warning-free.
+Documentation checks cover 1,072 file links across 38 documents, with
+candidate source-label coverage unchanged.
+
+## Previous milestone: the unrestricted printed Lemma 27.2
 
 Lemma 27.2 now holds with its exact printed constant for every m>=1 and
 every real H^m source. The m=1 endpoint H3<=2*S+S² has no smallness,

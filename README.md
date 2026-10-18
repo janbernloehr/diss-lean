@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 27.2 is proved with its exact printed coefficient for
-every m>=1, including the unrestricted H1 endpoint H3<=2*S+S². The proof
-constructs the actual finite-gap exterior-kernel representation, obtains
-the sharp cubic bound, and extends that inequality by density. No smallness
-or representation hypothesis remains in the endpoint theorem.
+Latest step: the actual angular corrections and signed phase errors have
+inverse-bracket decay uniformly on physical H1 balls. The exact phase-error
+multiplier gains one Sobolev derivative for the same original Birkhoff
+family, including sources with infinitely many open gaps. This supplies
+the beta-phase ingredient of the separate full one-smoothing assertion,
+which remains unproved. Lemma 27.2 with its printed constants is complete.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
