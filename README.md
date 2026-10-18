@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the printed m=1 estimate of Lemma 27.2 now holds without
-smallness restrictions when the central spectral gap is closed. For the
-remaining case, a checked chain of scalar and spectral integral estimates
-reduces a sufficient condition to a positive exterior-kernel representation
-of the actual zero-gap profile. Constructing that representation remains
-open; the unrestricted printed bound is not yet proved.
+Latest step: the actual spectral gaps now define a nonnegative continuous
+kernel correction with a proved integrable majorant. For Lemma 27.2's
+remaining m=1 case, the only supplied hypothesis is equality of the
+actual zero-gap profile with this explicit candidate. That representation
+identity remains open; the endpoint is already proved without a smallness
+restriction when the central gap is closed.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

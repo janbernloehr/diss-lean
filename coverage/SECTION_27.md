@@ -24,7 +24,8 @@ include both components with this exact physical Fourier weight.
 | Lemma 27.2, m≥2 | `sourceSection27_hamiltonian_estimate` | H₂ₘ₊₁≤S_m+(64π)^(2m−2)(1+S)^(4m−3)S, with the printed coefficient and final weighted factor. |
 | Lemma 27.2, m=1 on S≤2 | `sourceSection27_endpoint_of_small` | The literal bound H₃≤2S+S² on the closed weighted-action ball, including its boundary. |
 | Lemma 27.2, closed zero gap | `sourceH1_energy_le_lemma272_of_zero_gap` | Literal H3<=2S+S² for every real H1 source whose central gap is closed, with no smallness restriction; the stronger H3<=S-M+S²/2 is proved. |
-| Lemma 27.2, open-gap representation criterion | `sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation` | A precise positive exterior-kernel formula for the actual zero-gap profile implies the literal bound. Its existence and integrable majorant remain unproved for arbitrary open zero gaps. |
+| Lemma 27.2, open-gap representation criterion | `sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation` | A precise positive exterior-kernel formula for the actual zero-gap profile implies the literal bound. The actual integrable kernel candidate is now constructed below; equality with the original profile remains unproved. |
+| Lemma 27.2, explicit actual-kernel criterion | `sourceH1_energy_le_lemma272_of_actual_zero_gap_identity` | Only the identity with the constructed spectral correction remains a hypothesis; the actual H1 source supplies summability, integrability and the moment atlas. |
 | Lemma 27.2, unrestricted m≥1 variant | `sourceSection27_hamiltonian_estimate_all` | Twice the printed remainder; the unrestricted literal m=1 coefficient is neither proved nor refuted. |
 | Last derivative estimate in the proof of Theorem 23.2(ii) | `exists_sourceSection27_derivative_bound` | m≥2, exact factor 1/4 on the pair derivative energy, coefficient one on S_m, and one source-independent C multiplying (1+S)^(4m−3)M. |
 | Theorem 23.2(ii) | `exists_sourceSection27_sobolev_bound` | Every m≥1, one d before all sources, exact physical Hᵐ pair norm, and the unweighted final factor M. The retained Section 23 package also keeps its common positive constants and original Birkhoff map. |
@@ -147,6 +148,42 @@ specified actual zero-gap representation and its integrable majorant.
 The motivating exterior-kernel identity is equation (2.15) of
 [Korotyaev, *Hamiltonian and small action variables for periodic dNLS*](https://arxiv.org/pdf/0911.5235).
 Its applicability to the actual source profile is not imported as an axiom.
-Constructing that representation and its majorant is the remaining spectral
+The integrable majorant has now been constructed from actual spectral data
+as detailed below. Equality with the actual profile remains the spectral
 obligation; the unrestricted literal m=1 estimate is still unproved and
 unrefuted. The previously proved Theorem 23.2(ii) is unaffected.
+
+## The explicit actual-kernel candidate
+
+[`SourceRealGapSeparation.lean`](../NLS/ZakharovShabat/SourceRealGapSeparation.lean)
+applies the ordered-interval argument of
+[`OrderedGapSeparation.lean`](../NLS/ComplexAnalysis/OrderedGapSeparation.lean)
+to the actual periodic endpoints. For each fixed gap n, the two neighboring
+bands give delta>0 separating all other gaps from both endpoints and from
+the central interval. No uniformity in n or the potential is asserted.
+
+[`SourceGapAngularDensity.lean`](../NLS/ZakharovShabat/SourceGapAngularDensity.lean)
+defines d_m(theta)=gamma_m/(2*pi)*sin(theta)*f_m(theta) on [0,pi], and zero
+outside. Here gamma_m is the real gap length and f_m is the actual arcosh
+profile in cosine coordinates. This density is nonnegative, integrable,
+and has integral I_m/2. The actual action trace therefore proves joint
+integrability over all m different from n and all real angles.
+
+[`SourceExteriorGapKernel.lean`](../NLS/ZakharovShabat/SourceExteriorGapKernel.lean)
+uses t equal to the exterior gap's cosine point, r the selected half-width,
+and c its center. Its normalized pole is s=(t-c)/r and its coefficient is
+d_m/(r*sqrt(abs((t-L_n)*(t-R_n)))). Separation proves abs(s)>1 and bounds
+the majorant by d_m/delta². Measurability and action summability discharge
+the integrability premise of the scalar kernel theorem. The normalization
+lemma retains equality with the original real-gap kernel, including r.
+
+[`SourceExteriorGapCorrection.lean`](../NLS/ZakharovShabat/SourceExteriorGapCorrection.lean)
+defines V_n(theta) as the integral of these actual kernels over exterior
+indices and angles. For open selected gaps and summable actions, it is
+nonnegative and continuous. The sharp cubic bound follows if the actual
+profile equals r*sin(theta)*(1+V_n(theta)).
+[`SourceH1ActualGapCriterion.lean`](../NLS/ZakharovShabat/SourceH1ActualGapCriterion.lean)
+supplies action summability by the H1-to-FL4 comparison and constructs the
+moment atlas, so this explicit identity at n=0 is its only hypothesis.
+The identity is still unproved; the candidate's existence and integrability
+alone do not establish it.

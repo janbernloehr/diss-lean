@@ -61504,3 +61504,77 @@ example (a : realTypeSobolevSourceLocus)
   sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation a μ c s hcm hsm hc hs hint hrep
 
 end NLS.SharpCubicEndpointChecks
+
+noncomputable section
+open Set MeasureTheory
+open scoped ENNReal
+namespace NLS.ExteriorGapCorrectionChecks
+open ZakharovShabat
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+example (φ : realTypeSourceSubmodule 2) :
+    (∫ θ : ℝ, sourceGapAngularDensity (by simp) (by norm_num) φ (-3) θ) =
+      (1/2:ℝ)*‖sourceComplexAction (by simp) (by norm_num) (-3) φ.val‖ :=
+  integral_sourceGapAngularDensity (by simp) (by norm_num) φ (-3)
+
+example (φ : realTypeSourceSubmodule 2) :
+    Integrable (fun z : {m : ℤ // m ≠ -3} × ℝ =>
+      sourceGapAngularDensity (by simp) (by norm_num) φ z.1.val z.2)
+      (Measure.count.prod volume) :=
+  integrable_sourceGapAngularDensity_exterior φ (-3)
+
+example (φ : realTypeSourceSubmodule 2) (n : ℤ) (θ : ℝ) (hθ : θ ∉ Icc (0:ℝ) Real.pi) :
+    sourceGapAngularDensity (by simp) (by norm_num) φ n θ = 0 := by
+  simp [sourceGapAngularDensity, indicator_of_notMem hθ]
+
+example (a : realTypeSobolevSourceLocus) :
+    let φ : realTypeSourceSubmodule 4 := ⟨sobolevSourceFL4 a.val,(realSobolevSourceFL4 a).property⟩
+    Integrable (fun z : {m : ℤ // m ≠ 0} × ℝ =>
+      sourceGapAngularDensity (by simp) (by norm_num) φ z.1.val z.2)
+      (Measure.count.prod volume) := by
+  apply integrable_sourceGapAngularDensity_exterior_of_summable
+  exact (sourceWeightedActionTerm_zero_summable (sourceH1RealSource a)).congr
+    (sourceH1_actionTerm_zero_eq_FL4 a)
+
+example (φ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (z : {m : ℤ // m ≠ n} × ℝ) :
+    1 < |sourceExteriorGapPole (by simp) (by norm_num) φ n z| := by
+  obtain ⟨_,_,hs⟩ := sourceExteriorGapKernel_separation (by simp) (by norm_num) φ n hg
+  exact (hs z).2.2.1
+
+example (a : realTypeSobolevSourceLocus)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sobolevSourceFL4 a.val)) (periodOnePotential_mem (sobolevSourceFL4 a.val)) 0 ≠ 0) :
+    let φ : realTypeSourceSubmodule 4 := ⟨sobolevSourceFL4 a.val,(realSobolevSourceFL4 a).property⟩
+    Continuous (sourceExteriorGapCorrection (by simp) (by norm_num) φ 0) := by
+  dsimp only
+  exact continuous_sourceExteriorGapCorrection (by simp) (by norm_num)
+    ⟨sobolevSourceFL4 a.val,(realSobolevSourceFL4 a).property⟩ 0 hg
+    ((sourceWeightedActionTerm_zero_summable (sourceH1RealSource a)).congr
+      (sourceH1_actionTerm_zero_eq_FL4 a))
+
+example (φ : realTypeSourceSubmodule 2) (n : ℤ) (θ : ℝ) :
+    sourceExteriorGapCorrection (by simp) (by norm_num) φ n (-θ) =
+      sourceExteriorGapCorrection (by simp) (by norm_num) φ n θ := by
+  simp only [sourceExteriorGapCorrection, Real.cos_neg]
+
+example (a : realTypeSobolevSourceLocus)
+    (hrep : let φ : realTypeSourceSubmodule 4 := ⟨sobolevSourceFL4 a.val,(realSobolevSourceFL4 a).property⟩
+      ∀ x ∈ Icc (0:ℝ) Real.pi,
+        sourceRealGapCosineProfile (by simp) (by norm_num) φ.val 0 x =
+          sourceGapHalfWidthReal (by simp) (by norm_num) φ 0*Real.sin x*
+            (1+sourceExteriorGapCorrection (by simp) (by norm_num) φ 0 x)) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  sourceH1_energy_le_lemma272_of_actual_zero_gap_identity a hrep
+
+
+example (x : ℝ) :
+    ((2:ℝ)/(3*5))/|((-8:ℝ)-1)/3-x| = 2/(5*|(-8:ℝ)-(1+3*x)|) :=
+  NLS.ComplexAnalysis.normalized_exterior_kernel_eq 2 3 5 (-8) 1 x (by norm_num)
+
+end NLS.ExteriorGapCorrectionChecks

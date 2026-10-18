@@ -3966,3 +3966,9 @@ import NLS.ZakharovShabat.SourcePrimitivePowerSharpCubic
 import NLS.ZakharovShabat.SourceH1ZeroModeActionBound
 import NLS.ZakharovShabat.SourceH1ZeroModeMomentCriterion
 import NLS.ZakharovShabat.SourceH1ZeroModeKernelCriterion
+import NLS.ComplexAnalysis.OrderedGapSeparation
+import NLS.ZakharovShabat.SourceRealGapSeparation
+import NLS.ZakharovShabat.SourceGapAngularDensity
+import NLS.ZakharovShabat.SourceExteriorGapKernel
+import NLS.ZakharovShabat.SourceExteriorGapCorrection
+import NLS.ZakharovShabat.SourceH1ActualGapCriterion

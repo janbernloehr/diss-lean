@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Current milestone: zero-mode reduction of the Lemma 27.2 endpoint
+## Current milestone: an integrable kernel from the actual spectral gaps
+
+The original gap endpoints and arcosh profiles now define an explicit
+exterior-kernel correction. Each angular density is nonnegative and its
+integral is exactly half the corresponding action. The action trace makes
+the full family of exterior densities integrable over indices and angles.
+
+The two neighboring gaps supply a positive separation constant for every
+fixed gap. For an open selected gap this puts every normalized pole
+strictly outside [-1,1], bounds the square-root factor away from zero,
+and dominates the kernel by the angular density divided by the square
+of the separation. Measurability and the required integrability follow.
+The resulting correction is nonnegative and continuous. An exact scaling
+identity identifies the normalized and original real-gap kernels.
+
+The sharp cubic criterion now uses this actual candidate. At H1 the
+moment atlas and action summability are supplied internally: the only
+remaining hypothesis is equality of the actual zero-gap profile with
+r*sin(theta)*(1+the constructed correction). The representation identity
+itself is not proved, so the unrestricted literal m=1 bound in Lemma 27.2
+remains open. The earlier unconditional closed-central-gap result remains.
+
+Six new modules and nine public checks cover negative exterior indices,
+angular support, exact action normalization, joint integrability, the H1
+to FL4 transfer, exterior poles, continuity, reflection symmetry, and the
+remaining identity-to-endpoint implication.
+
+Next: prove the spectral representation identity for the actual profile.
+The exact 2014 edition comparison for Remark 14.2(i) and the recorded G.2
+qualification also remain. The dissertation is incomplete. See
+[the Section 27 audit](coverage/SECTION_27.md) and
+[source discrepancies](SOURCE_ERRATA.md).
+
+Validation: the full project gate passes with 7,637 build jobs, 6,722 examples,
+and a transitive axiom audit of 37,120 NLS declarations. The build reports 21
+pre-existing warnings and none in the new modules. Documentation checks cover
+1,009 file links across 38 documents and all 156 candidate source labels.
+
+## Previous milestone: zero-mode reduction of the Lemma 27.2 endpoint
 
 The actual H1 action sums now satisfy 2*M-I_0 <= S, with the source's
 exact bracket weights. If the central action is zero, the physical energy

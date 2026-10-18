@@ -1586,7 +1586,7 @@ supremum estimate and i≤m for the L² estimate. Lemma 26.3's monomial
 argument uses only i<m and remains valid. See
 [the Section 26 audit](coverage/SECTION_26.md).
 
-## Lemma 27.2: corrected global coefficient and optional endpoint sharpening
+## Lemma 27.2: corrected global coefficient and remaining endpoint sharpening
 
 Source: [dissertation, Lemma 27.2, page 116](https://janbernloehr.de/Download/fs16/diss.pdf#page=116).
 At m=1 the printed conclusion is `H3 ≤ 2S+S²`, where
@@ -1628,8 +1628,14 @@ the exact constants in the actual action and moment integrals.
 [`SourceH1ZeroModeKernelCriterion.lean`](NLS/ZakharovShabat/SourceH1ZeroModeKernelCriterion.lean)
 connects a precise positive exterior-kernel representation of the actual
 zero-gap profile to the printed endpoint, constructing the atlas internally.
-Existence of that representation and its integrable majorant at arbitrary
-open zero gaps remains unproved. See [the Section 27 audit](coverage/SECTION_27.md).
+The later construction in
+[`SourceExteriorGapKernel.lean`](NLS/ZakharovShabat/SourceExteriorGapKernel.lean)
+proves the required majorant integrable using the actual action trace and
+neighboring-gap separation. The resulting explicit correction is nonnegative
+and continuous. [`SourceH1ActualGapCriterion.lean`](NLS/ZakharovShabat/SourceH1ActualGapCriterion.lean)
+therefore needs only the actual profile identity; kernel data, integrability
+and the atlas are constructed internally. Equality of the actual profile
+with this candidate remains unproved. See [the Section 27 audit](coverage/SECTION_27.md).
 
 The proved global substitute is
 `sobolevOddHamiltonian_le_twice_weighted_action_remainder`, with twice
