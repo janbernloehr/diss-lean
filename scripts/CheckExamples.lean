@@ -62590,3 +62590,73 @@ example (f : ℝ → ℂ) (hf : Continuous f) (w : NLS.Weight) :
   simpa using he (-3)
 
 end NLS.WeightedSamplingChecks
+
+namespace NLS.HamiltonianReflectionChecks
+open Complex MeasureTheory NLS.ZakharovShabat
+open scoped ContDiff unitInterval
+
+-- The momentum reflection sign is checked against its original physical integral.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
+    classicalNLSHamiltonian (-b) (-a) 2 = Complex.I*(∫ x in (0:ℝ)..1, a x*deriv b x) := by
+  rw [show 2=1+1 from rfl,classicalNLSHamiltonian_signedSwap a b ha hb hpa hpb,
+    classicalNLSHamiltonian_two_unsymmetrized]
+  norm_num
+
+-- Mass invariance holds at the nonsmooth H0 endpoint.
+example (ab : SobolevSource 0) :
+    sobolevNLSHamiltonian 0 (-ab.2,-ab.1) 1 (by omega) =
+      sobolevNLSHamiltonian 0 ab 1 (by omega) := by
+  simpa using sobolevNLSHamiltonian_signedSwap 0 0 (by omega) ab
+
+-- The total phase definition has no exceptional zero-frequency branch.
+example (s N : ℕ) (hNs : N ≤ s) (ab : SobolevSource s) :
+    sobolevHamiltonianPhase s N hNs ab 0 = 0 := by
+  simp [sobolevHamiltonianPhase]
+
+end NLS.HamiltonianReflectionChecks
+
+namespace NLS.RiccatiLeadingSamplingChecks
+open Complex NLS.ZakharovShabat
+
+-- The H0 endpoint introduces no artificial nonlinear remainder.
+example (ab : SobolevSource 0) : sobolevRiccatiSmoothingRemainder 0 ab 0 le_rfl = 0 := by
+  rw [sobolevRiccatiSmoothingRemainder]
+
+-- At the first derivative, the original period-one factor cancels exactly.
+example (s : ℕ) (hs : 1 ≤ s) (ab : SobolevSource s) (n : ℤ) :
+    (sobolevRiccatiSmoothingRemainder s ab 1 hs).val n = 0 := by
+  rw [sobolevRiccatiSmoothingRemainder_apply,sobolevRiccatiDensity_one]
+  simp
+
+-- The first nonlinear remainder is the actual cubic convolution at a negative index.
+example (s : ℕ) (hs : 2 ≤ s) (ab : SobolevSource s) :
+    (sobolevRiccatiSmoothingRemainder s ab 2 hs).val (-1) =
+      ∑' l : ℤ, ab.1.val (-1-l)*∑' m : ℤ, ab.2.val (l-m)*ab.2.val m := by
+  rw [sobolevRiccatiSmoothingRemainder_apply,sobolevRiccatiDensity_two_apply]
+  ring
+
+end NLS.RiccatiLeadingSamplingChecks
+
+namespace NLS.WKBLeadingFourierChecks
+open Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped unitInterval
+
+-- At empty truncation, the original second coefficient has exactly the +i sign,
+-- for every signed index, including the zero mode.
+example (a b : ℝ → ℂ) (n : ℤ) :
+    nlsWKBLeadingTerm a b 0 ((Real.pi:ℂ)*n) 1 =
+      Complex.I*exp (Complex.I*((Real.pi:ℂ)*n))*periodOneCoefficient b n := by
+  simp only [nlsWKBLeadingTerm,pow_zero,mul_one,Complex.ofReal_one,
+    nlsRiccatiDensity_zero,Pi.neg_apply,neg_mul,intervalIntegral.integral_neg]
+  have hc := integral_pi_lattice_eq_periodOneCoefficient b n
+  simp only [neg_mul] at hc
+  rw [hc]
+  ring
+
+-- With no inverse-frequency power the relative error is solely the exponential shift.
+example (δ : ℂ) (hδ : ‖δ‖ ≤ 1) : ‖exp (Complex.I*δ)-1‖ ≤ 2*‖δ‖ := by
+  simpa only [norm_mul,norm_I,one_mul] using Complex.norm_exp_sub_one_le
+    (by simpa only [norm_mul,norm_I,one_mul] using hδ : ‖Complex.I*δ‖ ≤ 1)
+
+end NLS.WKBLeadingFourierChecks

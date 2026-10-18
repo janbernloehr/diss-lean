@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: weighted Fourier sampling at boundary and critical roots
+## Current milestone: reflected phases and sharp leading Fourier tails
+
+The physical NLS Hamiltonians now satisfy the exact signed-swap identity
+H_(k+1)(-b,-a) = (-1)^k H_(k+1)(a,b). The proof derives it from actual
+discriminant symmetry and arbitrary-order asymptotics. Continuity and
+smooth density extend it to nonsmooth complex Sobolev sources, including
+the sharper original domains of the odd Hamiltonians. The two finite WKB
+phases therefore cancel exactly at every spectral parameter.
+
+The endpoint characteristic models now use a single phase. Combining
+the anti-discriminant and separated models eliminates that phase exactly,
+leaving the two actual leading integrals and explicit initial-coordinate
+factors. Their phase coefficient has inverse norm at most four when
+both initial coordinates have norm at most one half.
+
+The nonlinear Riccati density remainder gains one Sobolev derivative:
+rho_N(n) + (2*pi*i*n)^N b_n belongs to H^(s-N+1), analytically and
+uniformly on original complex Hs balls, through N=s. At actual canonical
+boundary and critical sequences, the sampled density has the same leading
+Fourier derivative with a locally uniform H1 error near real Hs sources.
+
+Including the actual inverse-frequency and exponential factors gives
+the sharp leading-integral estimate at N=s: its difference from
+i exp(i*pi*n) b_n is an H^(s+1) tail. The cutoff and bound are uniform
+on original Hs balls with bounded shifts and inverse-index displacement
+budgets. This applies to actual Dirichlet, Neumann, and critical points
+on complex neighborhoods near real sources for s >= 1. The error sequence
+is set to zero in the finite central block. Physical integral comparisons
+retain smooth periodic representatives with exact original coefficients.
+
+Seventeen modules and eight public examples cover reflection signs,
+the nonsmooth H0 endpoint, zero frequency, the first nonlinear remainder
+at a negative index, and the leading-integral sign. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The WKB contributions to the spectral errors still need sharp weighted
+L2 estimates. The reflected leading integral, critical-to-midpoint comparison, and
+omitted-product cancellations remain inputs to the two literal spectral
+errors. Full Fourier one-smoothing remains open.
+
+Validation: `./scripts/check.sh` passes with 7,792 build jobs, 6,814
+public examples, and a transitive axiom audit of 37,798 NLS declarations.
+The build retains 21 existing warnings; the seventeen new modules introduce none.
+Documentation checks cover 1,300 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: weighted Fourier sampling at boundary and critical roots
 
 Actual Fourier integrals sampled at any bounded complex displacement
 of the pi lattice now form an L2 sequence, with bound exp(2||delta||_infinity)

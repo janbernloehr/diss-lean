@@ -653,6 +653,77 @@ negative index. The two sharp Fourier spectral errors and full one-smoothing
 still require weighted WKB remainders and the actual phase, midpoint, and
 omitted-product cancellations.
 
+## Exact Hamiltonian reflection and phase elimination
+
+[`ClassicalSwapDiscriminant.lean`](../NLS/ZakharovShabat/ClassicalSwapDiscriminant.lean)
+identifies the actual discriminant under signed potential swap and
+spectral reflection. At free cosine zeros,
+[`NLSHamiltonianReflectedPhaseEstimate.lean`](../NLS/ZakharovShabat/NLSHamiltonianReflectedPhaseEstimate.lean)
+uses both discriminant asymptotics and a local sinh inverse estimate
+to obtain arbitrary-order cancellation of their phase corrections.
+[`NLSHamiltonianReflection.lean`](../NLS/ZakharovShabat/NLSHamiltonianReflection.lean)
+recovers every Hamiltonian coefficient by analytic order, proving
+H_(k+1)(-b,-a) = (-1)^k H_(k+1)(a,b).
+[`NLSHamiltonianPhaseReflection.lean`](../NLS/ZakharovShabat/NLSHamiltonianPhaseReflection.lean)
+then gives exact phase cancellation at all truncations and frequencies,
+including the total definition at zero.
+
+[`SobolevHamiltonianReflection.lean`](../NLS/ZakharovShabat/SobolevHamiltonianReflection.lean)
+extends these identities to nonsmooth complex original Sobolev sources
+by smooth density. Odd Hamiltonians retain their sharper Hm domains.
+[`NLSWKBSinglePhaseModels.lean`](../NLS/ZakharovShabat/NLSWKBSinglePhaseModels.lean)
+expresses the endpoint trace, anti-discriminant, and both separated models
+using one phase and the actual leading integrals S and T. Write p and q
+for the initial coordinates, eta for the boundary sign, d=1-pq, and
+A=1+pq-eta(p+q). With d nonzero,
+[`NLSWKBBoundaryPhaseElimination.lean`](../NLS/ZakharovShabat/NLSWKBBoundaryPhaseElimination.lean)
+proves the exact identity
+A d anti + (1-eta q)^2 S + (1-eta p)^2 T = -2i(p-q)d separated.
+Also, the inverse of A has norm at most four when both initial
+coordinates have norm at most one half. These are identities of the
+actual explicit WKB models, with no assumed sharp solution remainder.
+
+## Original Fourier coefficients in the leading WKB integrals
+
+[`SobolevRiccatiSmoothingRemainder.lean`](../NLS/ZakharovShabat/SobolevRiccatiSmoothingRemainder.lean)
+constructs the actual nonlinear Riccati remainder in H^(s-N+1) and proves
+its coefficient formula rho_N(n)+(2*pi*i*n)^N b_n and analyticity.
+[`SobolevRiccatiSmoothingUniform.lean`](../NLS/ZakharovShabat/SobolevRiccatiSmoothingUniform.lean)
+bounds it uniformly on every original complex Hs ball.
+[`SobolevRiccatiLeadingSampling.lean`](../NLS/ZakharovShabat/SobolevRiccatiLeadingSampling.lean)
+combines it with weighted sampling to give an H1 error for the sampled
+density plus its original leading Fourier derivative, for N <= s.
+[`SourceRiccatiBoundaryLeadingSampling.lean`](../NLS/ZakharovShabat/SourceRiccatiBoundaryLeadingSampling.lean)
+and [`SourceRiccatiCriticalLeadingSampling.lean`](../NLS/ZakharovShabat/SourceRiccatiCriticalLeadingSampling.lean)
+apply this to the actual canonical sequences near real Hs sources.
+
+[`WKBLeadingScalarMultipliers.lean`](../NLS/ZakharovShabat/WKBLeadingScalarMultipliers.lean)
+controls the combined exponential and inverse-frequency multiplier by
+the actual displacement, including zero powers.
+[`WKBLeadingTailFourierError.lean`](../NLS/ZakharovShabat/WKBLeadingTailFourierError.lean)
+then converts an Hs original coefficient and an H1 sampled-density error
+into an H^(s+1) error for the literal leading expression.
+[`WKBLeadingFrequencyCutoff.lean`](../NLS/ZakharovShabat/WKBLeadingFrequencyCutoff.lean)
+provides a common cutoff on both signed tails from the displacement budgets.
+
+[`SobolevWKBLeadingFourierTail.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingFourierTail.lean)
+proves that at full order N=s, the actual explicit leading integral
+minus i exp(i*pi*n) b_n is an H^(s+1) tail, uniformly on original Hs balls
+and displacement budgets. The constructed sequence is zero on the
+finite central block.
+[`SourceWKBLeadingFourierTails.lean`](../NLS/ZakharovShabat/SourceWKBLeadingFourierTails.lean)
+applies this to actual Dirichlet, Neumann, and critical points on complex
+neighborhoods near real Hs sources, s >= 1. The physical integrals retain
+matching smooth periodic representatives; the bounds require only the
+original Hs norm, with no additional source derivative.
+
+Eight public examples check physical momentum reflection, nonsmooth H0
+mass invariance, the total zero-frequency phase, the H0 and first-order
+zero remainders, the actual cubic convolution at a negative index,
+the leading-integral sign at every lattice index, and zero-order
+exponential displacement. These estimates do not yet give the sharp
+full WKB remainder or the two literal Fourier spectral errors.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
