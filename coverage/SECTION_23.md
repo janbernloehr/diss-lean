@@ -383,6 +383,64 @@ and restricts to a common open neighborhood inside the original family's
 domain. Their sharp estimates and analytic realizations remain necessary
 for full one-smoothing; this conditional reduction does not prove them.
 
+## WKB estimates uniform on Sobolev balls
+
+The spectral part now has uniform finite-order WKB bounds. For integer
+s >= 1, N <= s, a fixed original SobolevSource s norm ball, and a fixed
+horizontal complex spectral strip, one constant controls the actual
+solution error by C/(2|z|)^N for |z| >= 1. Smooth periodic representatives
+must have the original source's exact Fourier coefficients. The constants
+use no additional derivative; the WKB statements themselves still require
+smooth representatives and do not yet extend to every nonsmooth source.
+
+[`SobolevRiccatiUniformBounds.lean`](../NLS/ZakharovShabat/SobolevRiccatiUniformBounds.lean)
+bounds every actual Fourier Riccati density through the highest L2 order,
+including nonsmooth sources.
+[`SobolevRiccatiPhysicalBounds.lean`](../NLS/ZakharovShabat/SobolevRiccatiPhysicalBounds.lean)
+uses Parseval and continuous synthesis to identify physical L2 and
+pointwise bounds for smooth periodic representatives.
+[`SobolevRiccatiApproximationUniform.lean`](../NLS/ZakharovShabat/SobolevRiccatiApproximationUniform.lean)
+and [`SobolevWKBCarrierUniform.lean`](../NLS/ZakharovShabat/SobolevWKBCarrierUniform.lean)
+bound the finite correction, the carrier, and its reciprocal uniformly
+on the original source ball.
+
+[`NLSRiccatiResidualDegree.lean`](../NLS/ZakharovShabat/NLSRiccatiResidualDegree.lean)
+gives a source-independent polynomial degree bound.
+[`NLSRiccatiResidualIntegralCoefficient.lean`](../NLS/ZakharovShabat/NLSRiccatiResidualIntegralCoefficient.lean)
+controls coefficients using pointwise lower densities and L1 derivatives.
+[`PolynomialFunctionIntegralPower.lean`](../NLS/ComplexAnalysis/PolynomialFunctionIntegralPower.lean)
+preserves the exact vanishing power under integration.
+[`SobolevRiccatiResidualIntegralUniform.lean`](../NLS/ZakharovShabat/SobolevRiccatiResidualIntegralUniform.lean)
+combines these with the top derivative's L2 bound. No supremum of that
+top derivative is required.
+
+[`ClassicalIntegralResidualStability.lean`](../NLS/ZakharovShabat/ClassicalIntegralResidualStability.lean)
+controls the actual forced solution by the forcing's integral norm.
+Forcing remains continuous; the scalar L2 version also states its MemLp
+hypothesis explicitly.
+[`SobolevWKBUniformComparison.lean`](../NLS/ZakharovShabat/SobolevWKBUniformComparison.lean)
+then gives the actual initial-value solution error.
+[`SobolevWKBUniformEndpoint.lean`](../NLS/ZakharovShabat/SobolevWKBUniformEndpoint.lean)
+gives the monodromy's Hamiltonian approximate eigenvector, and
+[`SobolevDiscriminantUniformAsymptotics.lean`](../NLS/ZakharovShabat/SobolevDiscriminantUniformAsymptotics.lean)
+gives the same uniform order for the actual discriminant minus
+2 cos(I*nlsHamiltonianPhase).
+
+[`NLSRiccatiLeadingResidual.lean`](../NLS/ZakharovShabat/NLSRiccatiLeadingResidual.lean)
+identifies the coefficient at the first possible nonzero order as minus
+the next Riccati density, including N=0. Removing this term raises exact
+polynomial divisibility to N+1. Bounds exploiting its sampled Fourier
+cancellation are still needed for the two sharp spectral errors.
+
+For each fixed smooth potential, all-order complex strip bounds are also
+available in
+[`ClassicalStripResidualStability.lean`](../NLS/ZakharovShabat/ClassicalStripResidualStability.lean),
+[`NLSWKBCarrierStripBounds.lean`](../NLS/ZakharovShabat/NLSWKBCarrierStripBounds.lean),
+[`NLSWKBStripComparison.lean`](../NLS/ZakharovShabat/NLSWKBStripComparison.lean), and
+[`NLSHamiltonianDiscriminantStripAsymptotics.lean`](../NLS/ZakharovShabat/NLSHamiltonianDiscriminantStripAsymptotics.lean).
+These include complex potentials without a real-type condition. Their
+constants may depend on the fixed smooth potential.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -429,6 +487,11 @@ Three higher complex checks cover polynomial coefficient realization in
 weighted l-infinity at negative order, differentiation of the negative
 signed H3 angular error into h4 at a negative index, and an analytic H2
 Fourier remainder into h3 under the two literal spectral-error hypotheses.
+
+Six WKB checks cover off-axis spectral values with negative real part,
+constant complex potentials, the zeroth truncation and |z|=1 boundary,
+the nonsmooth H0 density, the order-zero residual coefficient, and the
+uniform H1 discriminant estimate at z=I.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

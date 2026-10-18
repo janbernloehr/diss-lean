@@ -62295,3 +62295,75 @@ example {W₀ B₀ W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Del
   exact ⟨E,(hE a.val haV).differentiableAt,(he a.val haV (-3)).1⟩
 
 end NLS.HigherComplexAngularChecks
+
+namespace NLS.UniformWKBChecks
+
+open Set Complex NLS.LinearVolterra
+open scoped ContDiff
+open NLS.ZakharovShabat
+
+-- Off-axis spectral values with negative real part retain fourth-order decay.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
+    ∃ C : ℝ, 0 < C ∧ ∀ r : ℝ, r ≤ -1 →
+      ‖classicalDiscriminant (classicalPotentialOfFunctions a b ha.continuous hb.continuous)
+          ((r:ℂ)+Complex.I/2)-2*cos (Complex.I*nlsHamiltonianPhase a b 4 ((r:ℂ)+Complex.I/2))‖ ≤
+        C/(2*‖(r:ℂ)+Complex.I/2‖)^4 := by
+  obtain ⟨C,hC,h⟩ := exists_classicalDiscriminant_hamiltonian_strip_error_bound a b ha hb hpa hpb 4 1
+  refine ⟨C,hC,?_⟩
+  intro r hr
+  apply h
+  · have hre : ((r:ℂ)+Complex.I/2).re = r := by simp
+    have hh := Complex.abs_re_le_norm ((r:ℂ)+Complex.I/2)
+    rw [hre,abs_of_nonpos (by linarith)] at hh
+    linarith
+  · norm_num
+
+-- Constant genuinely complex potentials are allowed in the endpoint theorem.
+example : ∃ C : ℝ, 0 < C ∧ ∀ z : ℂ, 1 ≤ ‖z‖ → |z.im| ≤ 2 →
+    ‖classicalSolution (classicalPotentialOfFunctions (fun _ => 1) (fun _ => Complex.I)
+        continuous_const continuous_const) z
+        (nlsWKBVector (fun _ => 1) (fun _ => Complex.I) 2 z 0) 1 -
+      exp (nlsHamiltonianPhase (fun _ => 1) (fun _ => Complex.I) 2 z) •
+        nlsWKBVector (fun _ => 1) (fun _ => Complex.I) 2 z 0‖ ≤ C/(2*‖z‖)^2 := by
+  exact exists_nlsWKBVector_strip_endpoint_error_bound (fun _ => 1) (fun _ => Complex.I)
+    contDiff_const contDiff_const (fun _ => rfl) (fun _ => rfl) 2 2
+
+-- Zeroth truncation and the |z|=1 boundary are included for both carrier directions.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) :
+    ∃ B : ℝ, 0 < B ∧ ∀ x ∈ Icc (0:ℝ) 1,
+      ‖nlsWKBCarrier a b 0 Complex.I x‖ ≤ B ∧ ‖(nlsWKBCarrier a b 0 Complex.I x)⁻¹‖ ≤ B := by
+  obtain ⟨B,hB,h⟩ := exists_nlsWKBCarrier_strip_bounds a b ha hb 0 1
+  exact ⟨B,hB,fun x hx => h x hx Complex.I (by simp) (by simp)⟩
+
+open Set Complex NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped ContDiff
+
+-- The nonsmooth H0 endpoint of the density bound is included.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 0, ‖ab‖ ≤ R →
+      ‖sobolevRiccatiDensity 0 ab 0 le_rfl‖ ≤ C :=
+  exists_uniform_sobolevRiccatiDensity_bound 0 0 le_rfl R hR
+
+-- The leading residual identity also covers the empty truncation.
+example (a b : ℝ → ℂ) : (nlsRiccatiResidualPolynomial a b 0).coeff 0 = b := by
+  simpa only [nlsRiccatiDensity_zero,neg_neg] using coeff_nlsRiccatiResidualPolynomial_leading a b 0
+
+-- The first-order discriminant estimate is uniform on an H1 ball, even at
+-- the nonreal spectral value Complex.I on the |z|=1 boundary.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 1, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+        ‖classicalDiscriminant (classicalPotentialOfFunctions a b ha.continuous hb.continuous) Complex.I-
+          2*cos (Complex.I*nlsHamiltonianPhase a b 1 Complex.I)‖ ≤ C/2 := by
+  obtain ⟨C,hC,h⟩ := exists_uniform_classicalDiscriminant_hamiltonian_strip_error_bound
+    1 1 le_rfl le_rfl R hR 1
+  refine ⟨C,hC,?_⟩
+  intro ab hab a b ha hb hpa hpb hca hcb
+  simpa only [norm_I,mul_one,pow_one] using
+    h ab hab a b ha hb hpa hpb hca hcb Complex.I (by simp) (by simp)
+
+end NLS.UniformWKBChecks

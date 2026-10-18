@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: complex angular analyticity at every positive integer order
+## Current milestone: WKB errors uniform on Sobolev balls and complex strips
+
+For every integer s >= 1 and truncation order N <= s, the actual WKB
+initial-value solution, its monodromy endpoint, and the discriminant have
+error bounds C/(2|z|)^N on |z| >= 1 and |Im z| <= H. The constant is
+chosen before every source in a fixed original SobolevSource s norm ball.
+The physical potentials are smooth periodic complex functions whose
+actual Fourier coefficients match that source. No real-type hypothesis
+or additional source derivative is used in these constants.
+
+Uniform bounds for the actual Riccati hierarchy include its highest L2
+density, even for nonsmooth coefficient sources. Parseval identifies the
+physical square integrals for smooth representatives. Lower densities
+have pointwise bounds; the highest residual derivative is controlled in
+L2, then L1. Integral residual stability transfers these estimates to
+the actual spectral solution. Carrier and inverse-carrier bounds, plus
+the unimodular monodromy identity, give the endpoint and discriminant
+estimates with the same source uniformity.
+
+The exact leading residual is isolated: its coefficient at order N is
+minus the next Riccati density, and removing it leaves a polynomial
+divisible by the (N+1)st inverse-frequency power. Separately, fixed smooth
+potentials have strip estimates at every truncation order.
+
+Seventeen modules and six public checks cover the H0 density endpoint,
+empty truncation, complex potentials, negative real spectral values,
+the |z|=1 boundary, and the uniform H1 discriminant bound. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+These WKB statements still require smooth representatives. Extension to
+nonsmooth WKB data and sharp sampled Fourier remainders remain open,
+as do the two spectral-error bounds needed for full Fourier one-smoothing.
+The proved higher-order complex angular analyticity remains available.
+
+Validation: `./scripts/check.sh` passes with 7,728 build jobs, 6,786
+public examples, and a transitive axiom audit of 37,527 NLS declarations.
+The build retains 21 existing warnings; the seventeen new modules introduce none.
+Documentation checks cover 1,198 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: complex angular analyticity at every positive integer order
 
 For every integer m >= 1, both actual signed Birkhoff-minus-terminal
 errors are locally bounded and analytic with values in h^(m+1) on a

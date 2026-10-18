@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: for every integer m >= 1, both actual signed
-Birkhoff-minus-terminal errors are analytic with values in h^(m+1)
-on complex neighborhoods of real Hm sources, including collapsed gaps.
-The maps retain the original potential and exact error coefficients.
-Uniform physical Hm-ball bounds hold for this angular part. The Fourier
-comparison has an analytic reduction, but its two sharp spectral-error
-hypotheses remain unproved; full one-smoothing is not yet proved.
-Lemma 27.2 with its printed constants is complete.
+Latest step: WKB solution, monodromy endpoint, and discriminant errors
+are bounded by C/(2|z|)^N uniformly on original Hs source balls and
+horizontal complex spectral strips, for s >= 1 and N <= s. These
+estimates use smooth periodic representatives with matching Fourier
+coefficients and require no extra source derivative in their constants.
+Complex angular errors are already analytic into h^(m+1) at every
+integer m >= 1. The two sharp Fourier spectral-error estimates remain
+open; full one-smoothing is not yet proved. Lemma 27.2 with its printed
+constants is complete.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
