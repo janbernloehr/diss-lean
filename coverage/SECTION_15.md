@@ -20,6 +20,19 @@ In the table, D denotes `SourceSection15OriginalData` and H denotes
 | Theorem 15.2 | `D.theorem15_2` | Real analytic map on the entire real space, complex analytic extension on V, and exact complex inclusion of the real map |
 | Lemma 15.3 | `D.lemma15_3`, `D.complex.mixed_fourier_canonical` | All three brackets at every real source; actual complex derivatives and absolutely convergent Fourier bracket, also for p<2 |
 
+
+## Physical Hilbert form of Lemma 15.3
+
+[`PhysicalBirkhoffCanonical.lean`](../NLS/ZakharovShabat/PhysicalBirkhoffCanonical.lean)
+now proves the same three identities using literal physical L2 integrals,
+with the unique physical gradients of the full complex differentials.
+The map is the intrinsic physical action-angle map constructed in the
+[Section 14 audit](SECTION_14.md). The mixed bracket retains the source
+sign -delta_nm. All real Hilbert inputs, including collapsed gaps, are
+covered, and a canonical complex extension is constructed without a
+supplied original family. The general finite-exponent Fourier statements
+above remain unchanged.
+
 ## Uniformity on the original domain
 
 The original quotient estimate bounds each diagonal eta numerator minus i

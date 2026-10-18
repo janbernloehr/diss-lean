@@ -61045,3 +61045,84 @@ example (z : PhysicalRealBirkhoffTarget) :
 
 end Family
 end NLS.PhysicalAnglesChecks
+
+
+noncomputable section
+open Set MeasureTheory Complex Filter Topology NLS.ComplexAnalysis
+open scoped ENNReal Classical
+
+namespace NLS.PhysicalPoissonChecks
+open ZakharovShabat NLS.Fourier NLS.Poisson
+
+example (g h : IntervalL2) : IntervalIntegrable (fun x => g x*h x) volume 0 1 :=
+  physicalL2_intervalIntegrable_mul g h
+
+example (L : IntervalPairL2 →L[ℂ] ℂ) (h : IntervalPairL2) :
+    (∫ x in (0:ℝ)..1, (physicalCotangentGradient L).fst x*h.fst x+
+      (physicalCotangentGradient L).snd x*h.snd x) = L h :=
+  physicalCotangentGradient_pairing L h
+
+example (L : IntervalPairL2 →L[ℂ] ℂ) (g : IntervalPairL2)
+    (hg : ∀ h : IntervalPairL2,
+      (∫ x in (0:ℝ)..1, g.fst x*h.fst x+g.snd x*h.snd x) = L h) :
+    g = physicalCotangentGradient L := physicalCotangentGradient_unique L g hg
+
+example (F G : IntervalPairL2 → ℂ) (u : IntervalPairL2)
+    (hF : DifferentiableAt ℂ F u) (hG : DifferentiableAt ℂ G u) :
+    physicalBracket F G u = sourceBracket le_rfl (F ∘ sourcePhysicalL2)
+      (G ∘ sourcePhysicalL2) (sourcePhysicalL2Equiv.symm u) :=
+  physicalBracket_eq_source F G u hF hG
+
+example (u : IntervalPairL2) :
+    physicalBracket (fun v => intervalFourierCoefficient 1 v.ofLp.1 (-4))
+      (fun v => intervalFourierCoefficient 1 v.ofLp.2 4) u = -Complex.I := by
+  simpa using physicalBracket_fourier (-4) 4 u
+
+example (u : IntervalPairL2) :
+    physicalBracket (fun v => intervalFourierCoefficient 1 v.ofLp.1 4)
+      (fun v => intervalFourierCoefficient 1 v.ofLp.2 4) u = 0 := by
+  simpa using physicalBracket_fourier 4 4 u
+
+example (u : IntervalPairL2) :
+    physicalBracket (fun v => intervalFourierCoefficient 1 v.ofLp.1 0)
+      (fun v => intervalFourierCoefficient 1 v.ofLp.2 0) u = -Complex.I := by
+  simpa using physicalBracket_fourier 0 0 u
+
+example (F : IntervalPairL2 → ℂ) (u : IntervalPairL2) : physicalBracket F F u = 0 :=
+  physicalBracket_self F u
+
+example (F G : IntervalPairL2 → ℂ) (u : IntervalPairL2) :
+    physicalBracket F G u = -physicalBracket G F u := physicalBracket_antisymm F G u
+
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) (n m : ℤ) :
+    -Complex.I * (∫ x in (0:ℝ)..1,
+      (physicalCotangentGradient (fderiv ℂ (fun v => (physicalBirkhoffMap s v).fst n) u.val)).fst x*
+        (physicalCotangentGradient (fderiv ℂ (fun v => (physicalBirkhoffMap s v).snd m) u.val)).snd x-
+      (physicalCotangentGradient (fderiv ℂ (fun v => (physicalBirkhoffMap s v).fst n) u.val)).snd x*
+        (physicalCotangentGradient (fderiv ℂ (fun v => (physicalBirkhoffMap s v).snd m) u.val)).fst x) =
+      -(if n = m then 1 else 0) :=
+  (D.physicalBirkhoffMap_canonical n m u).2.1
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s) :
+    physicalBracket (fun v => (physicalBirkhoffMap s v).fst (-3))
+      (fun v => (physicalBirkhoffMap s v).snd (-3)) 0 = -1 := by
+  simpa using (D.physicalBirkhoffMap_canonical (-3) (-3) 0).2.1
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s) :
+    physicalBracket (fun v => (physicalBirkhoffMap s v).fst (-3))
+      (fun v => (physicalBirkhoffMap s v).snd 4) 0 = 0 := by
+  simpa using (D.physicalBirkhoffMap_canonical (-3) 4 0).2.1
+
+example : ∃ U : Set IntervalPairL2, ∃ F : IntervalPairL2 → CoeffPair 2,
+    IsOpen U ∧ (∀ u : physicalRealSubmodule, u.val ∈ U) ∧ AnalyticOnNhd ℂ F U ∧
+    (∀ u : physicalRealSubmodule, physicalRealTargetComplex (intrinsicPhysicalBirkhoffMap u) = F u.val) ∧
+    ∀ (u : physicalRealSubmodule) (n m : ℤ),
+      physicalBracket (fun v => (F v).fst n) (fun v => (F v).fst m) u.val = 0 ∧
+      physicalBracket (fun v => (F v).fst n) (fun v => (F v).snd m) u.val = -(if n = m then 1 else 0) ∧
+      physicalBracket (fun v => (F v).snd n) (fun v => (F v).snd m) u.val = 0 :=
+  intrinsicPhysicalBirkhoffMap_canonical_extension
+
+end NLS.PhysicalPoissonChecks

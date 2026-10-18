@@ -3944,3 +3944,7 @@ import NLS.ZakharovShabat.PhysicalAngularValues
 import NLS.ZakharovShabat.PhysicalBirkhoffIntrinsic
 import NLS.ZakharovShabat.PhysicalAngularReality
 import NLS.ZakharovShabat.PhysicalBirkhoffIntrinsicProperties
+import NLS.ZakharovShabat.PhysicalL2BilinearPairing
+import NLS.ZakharovShabat.PhysicalCotangentGradient
+import NLS.ZakharovShabat.PhysicalPoissonBracket
+import NLS.ZakharovShabat.PhysicalBirkhoffCanonical

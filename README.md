@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: physical contour and path integrals now define the full
-Birkhoff map independently. Its beta integrals are unique and absolutely
-summable; eta choices agree modulo 2*pi. The map equals every original
-Section 14 family and has a global analytic inverse in the physical
-Hilbert norms, including at collapsed gaps.
+Latest step: the physical Birkhoff coordinates now satisfy the canonical
+Poisson identities using literal L2 gradient integrals, including at
+collapsed gaps. Every continuous complex cotangent has a unique physical
+L2 gradient. The Fourier comparison verifies the frequency reversal and
+minus i factor; the mixed x,y bracket is minus the Kronecker delta.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

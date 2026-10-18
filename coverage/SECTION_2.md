@@ -124,6 +124,25 @@ representability is an additional condition; analyticity does not imply it.
 The same issue constrains the later automatic Poisson-regularity sentence
 when one functional has infinity as its source exponent.
 
+## Native physical Hilbert gradients
+
+At p=2 the representation now also holds directly on the ordinary
+unit-interval physical L2 pair space, with its original Hilbert norm.
+[`PhysicalL2BilinearPairing.lean`](../NLS/ZakharovShabat/PhysicalL2BilinearPairing.lean)
+proves integrability of arbitrary L2 products, the exact reflected Fourier
+pairing, and separation of physical pairs by all L2 directions.
+[`PhysicalCotangentGradient.lean`](../NLS/ZakharovShabat/PhysicalCotangentGradient.lean)
+constructs the unique physical gradient of every continuous complex
+cotangent and proves its integral representation on every direction.
+The literal cross-gradient integral equals the source bivector, retaining
+minus i and the frequency reversal of unconjugated physical duality.
+[`PhysicalPoissonBracket.lean`](../NLS/ZakharovShabat/PhysicalPoissonBracket.lean)
+then uses actual full complex differentials and proves the Fourier pullback
+identity, antisymmetry, and the opposite-frequency coordinate check.
+These results require neither continuous representatives nor endpoint
+matching. They concern the Hilbert exponent and do not remove the infinity
+obstruction above.
+
 ## Sobolev Poisson bracket on common physical states
 
 The positive automatic-regularity statement is proved when both conjugate

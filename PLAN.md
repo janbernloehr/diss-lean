@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: the Birkhoff map from physical action and angle integrals
+## Current milestone: literal physical Poisson brackets
+
+Every continuous complex cotangent on the original physical Hilbert pair
+space now has a unique L2 gradient for the dissertation's unconjugated
+integral pairing. Products of arbitrary L2 representatives are integrable.
+The Fourier comparison retains the necessary frequency reversal, and
+pairing against all L2 directions proves uniqueness without extra
+regularity or endpoint assumptions.
+
+The physical bracket is defined by minus i times the literal integral of
+the two cross-gradient products. The chain rule proves its equality with
+the established source bracket under the exact Fourier equivalence.
+Actual physical Fourier integrals pair at opposite frequencies with
+factor minus i. Antisymmetry and the zero self-bracket are also proved.
+
+The complex extension of the intrinsic physical action-angle map satisfies
+all three canonical identities at every real L2 input: {x_n,x_m}=0,
+{x_n,y_m}=-delta_nm, and {y_n,y_m}=0. This includes collapsed gaps and
+negative indices. A constructed extension supplies these identities with
+no original family or canonical-bracket hypotheses required from callers.
+The proof uses the full complex differentials and the literal physical
+integral, completing the Hilbert physical interpretation of Lemma 15.3.
+
+Four new modules and 13 public checks cover arbitrary L2 cotangents,
+uniqueness, Fourier pullback, the sign and frequency reversal, the explicit
+cross-gradient integral, collapsed zero-source brackets, and a constructed
+canonical extension of the intrinsic map.
+
+The exact 2014 edition comparison for Remark 14.2(i) and the recorded G.2
+and Lemma 27.2 qualifications remain. The dissertation is incomplete. See
+[the Section 14 audit](coverage/SECTION_14.md) and
+[the Section 15 audit](coverage/SECTION_15.md).
+
+Validation: the full project gate passed: 7,613 build jobs, 6,646 public
+examples, and the transitive axiom audit of 36,919 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The four new
+modules and 13 new checks are warning-free; the build retains 21 existing
+warnings. All 156 source labels and 931 local file links across 38 documents
+validate, and `git diff --check` passes. The new examples use `Complex.I`
+explicitly to avoid the aggregate check file's existing real-set variable.
+
+## Previous milestone: the Birkhoff map from physical action and angle integrals
 
 The physical angle construction now uses paths from the independently
 specified left periodic endpoint to the physical Dirichlet root. The

@@ -18,7 +18,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(iii): canonical | `D.toSourceSection14OriginalData.canonical`, `D.complex.mixed_fourier_canonical` | All three brackets on the real locus, as in Lemma 15.3; actual coordinate derivatives and absolutely convergent Fourier pairings, including p<2 |
 | Theorem 14.1(iv): injective, local diffeomorphism, open dense image | `D.toSourceSection14OriginalData.real_geometry` | Actual real map; analytic local inverse at every point with both inverse identities |
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
-| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The precise 2014 construction comparison remains unproved. |
+| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The literal physical canonical brackets are now proved as well. The precise 2014 construction comparison remains unproved. |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
 | Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 
@@ -862,6 +862,41 @@ neighborhood containing every real input.
 
 This proves the full-map identity for the intrinsic physical formulas and
 path class matching the inspected 2013 manuscript. It does not equate the
-2013 manuscript with the cited 2014 edition. Nor is norm preservation alone
-being used to assert preservation of physical Poisson brackets; a literal
-physical-bracket statement requires the corresponding cotangent comparison.
+2013 manuscript with the cited 2014 edition. The physical Poisson bracket
+comparison is now established separately by the cotangent results below.
+
+
+## Literal physical canonical brackets
+
+The dissertation defines the physical bracket by -i times the integral of
+cross-gradient products (introduction, p. 10; gradient convention, p. 22).
+Lemma 15.3 uses {x_n,y_m}=-delta_nm. The positive sine convention of the
+intrinsic map is retained.
+
+[`PhysicalL2BilinearPairing.lean`](../NLS/ZakharovShabat/PhysicalL2BilinearPairing.lean)
+proves integrability for products of arbitrary physical L2 representatives
+and identifies the literal bilinear integral with reflected Fourier
+duality. The pairing separates all L2 pairs.
+[`PhysicalCotangentGradient.lean`](../NLS/ZakharovShabat/PhysicalCotangentGradient.lean)
+constructs the unique physical gradient of every continuous complex
+cotangent. Its integral against every physical L2 direction is the full
+cotangent evaluation. Reflection is essential because this pairing is
+unconjugated. The literal cross-gradient integral equals `sourceBivector`.
+
+[`PhysicalPoissonBracket.lean`](../NLS/ZakharovShabat/PhysicalPoissonBracket.lean)
+defines the bracket from the actual complex differentials. The chain rule
+identifies it with the source bracket under `sourcePhysicalL2Equiv`.
+Actual unit-interval Fourier integral functionals verify the opposite
+frequency pairing and the factor -i. The bracket is antisymmetric and
+vanishes on equal functionals.
+
+[`PhysicalBirkhoffCanonical.lean`](../NLS/ZakharovShabat/PhysicalBirkhoffCanonical.lean)
+proves all three canonical bracket identities for every original physical
+complex extension at every real input, including collapsed gaps. The
+unconditional `intrinsicPhysicalBirkhoffMap_canonical_extension` constructs
+an open physical neighborhood, an analytic complex extension of the
+integral-defined real map, and its canonical identities together.
+
+These are literal integral statements about unique physical L2 gradients,
+with no canonical-bracket premise. The exact 2014 edition comparison remains
+open; this result does not assert global surjectivity at p>2.
