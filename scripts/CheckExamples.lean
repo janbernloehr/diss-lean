@@ -62078,3 +62078,172 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Delete
     simpa using (hB n).symm
 
 end NLS.HigherFourierReductionChecks
+
+/-! Complex native weights, phase smoothing, and the stronger h2 angular target. -/
+
+namespace NLS.ZakharovShabat
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- All indices share the same complex neighborhood, at source exponent three.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ.val ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ,
+        ‖(sourceNormalizedActionRoot (by norm_num) (by norm_num) n ψ)⁻¹‖ ≤ 2 := by
+  obtain ⟨U,hU,hφ,h⟩ := exists_local_sourceNormalizedActionRoot_uniform_lower
+    (by norm_num : (3 : ℝ≥0∞) ≠ ⊤) (by norm_num) φ
+  exact ⟨U,hU,hφ,fun ψ hψ n => (h ψ hψ n).2⟩
+
+-- The negative sign and a physical Sobolev weight have the same native analytic target.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 3) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ.val ∈ U ∧
+      AnalyticOnNhd ℂ (normalizedWeightedEtaSequence (by norm_num) (by norm_num)
+        s (SpectralWeight.piSobolev 2 (by norm_num)) (-1)) U ∧
+      ∀ ψ ∈ U,
+        normalizedWeightedEtaSequence (by norm_num) (by norm_num) s
+          (SpectralWeight.piSobolev 2 (by norm_num)) (-1) ψ (-4) =
+        ((SpectralWeight.piSobolev 2 (by norm_num)) (2*(-4)):ℂ)*
+          sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) (-4) s (-1)
+            (normalizedWeightedSource (SpectralWeight.piSobolev 2 (by norm_num)) ψ) := by
+  obtain ⟨U,hU,hφ,M,hM,h⟩ := D.exists_local_normalizedWeightedEta_analytic
+    (SpectralWeight.piSobolev 2 (by norm_num)) φ
+  exact ⟨U,hU,hφ,(h (-1) (Or.inr rfl)).1,
+    fun ψ hψ => ((h (-1) (Or.inr rfl)).2 ψ hψ).2 (-4)⟩
+
+end NLS.ZakharovShabat
+
+namespace NLS.ComplexEtaRemainderChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 3) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ.val ∈ U ∧
+      AnalyticOnNhd ℂ (normalizedWeightedEtaRemainderSequence (by norm_num) (by norm_num)
+        s (SpectralWeight.piSobolev 2 (by norm_num))) U ∧
+      ∀ ψ ∈ U, normalizedWeightedEtaRemainderSequence (by norm_num) (by norm_num)
+        s (SpectralWeight.piSobolev 2 (by norm_num)) ψ (-2) =
+        ((SpectralWeight.piSobolev 2 (by norm_num)) (2*(-2)):ℂ)*
+          sourceAngularEtaRemainder (by norm_num) (by norm_num) (-2) s
+            (normalizedWeightedSource (SpectralWeight.piSobolev 2 (by norm_num)) ψ) := by
+  obtain ⟨U,hU,hφ,ha,M,hM,h⟩ := D.exists_local_normalizedWeightedEtaRemainder_analytic
+    (SpectralWeight.piSobolev 2 (by norm_num)) φ
+  exact ⟨U,hU,hφ,ha,fun ψ hψ => (h ψ hψ).2 (-2)⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ U,
+        ∃ T : WeightedCoeff (Weight.sobolev (-1/2)) ⊤ →L[ℂ]
+          WeightedCoeff (Weight.sobolev (-1/2+1)) ⊤,
+          (∀ c n, (T c).val n = (exp (-Complex.I*sourceAngularEtaRemainder (by norm_num) (by norm_num) n s
+            (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ))-1)*c.val n) ∧
+          ‖T‖ ≤ K*Real.exp K := by
+  obtain ⟨U,hU,hφ,K,hK,h⟩ := D.exists_local_normalizedSobolevEtaRemainder_phase_smoothing φ
+  refine ⟨U,hU,hφ,K,hK,fun ψ hψ => ?_⟩
+  obtain ⟨T,hT,hnT⟩ := h ψ hψ ⊤ inferInstance (-1/2) (-1)
+  exact ⟨T,by simpa using hT,by simpa using hnT⟩
+
+end NLS.ComplexEtaRemainderChecks
+
+namespace NLS.ComplexBetaSmoothingChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+example (f : ℤ → ℂ) (K : ℝ) (hK : 0 ≤ K)
+    (hf : ∀ n : ℤ, (1+|(n:ℝ)|)*‖f n‖ ≤ K) :
+    ∃ T : WeightedCoeff (Weight.sobolev (-2)) ⊤ →L[ℂ] WeightedCoeff (Weight.sobolev (-2+1)) ⊤,
+      (∀ c n, (T c).val n = 0) ∧ ‖T‖ ≤ 0 := by
+  obtain ⟨T,hT,hn⟩ := WeightedCoeff.exists_sobolev_complex_phase_gain_multiplier
+    (q := ⊤) (-2) 0 f K hK hf
+  exact ⟨T,by simpa using hT,by simpa using hn⟩
+
+local instance : Fact ((1:ℝ≥0∞) ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ U,
+        ∃ T : WeightedCoeff (Weight.sobolev (-1/2)) (ENNReal.ofReal (3/2 : ℝ)) →L[ℂ]
+          WeightedCoeff (Weight.sobolev (-1/2+1)) (ENNReal.ofReal (3/2 : ℝ)),
+          (∀ c n, (T c).val n = (exp (Complex.I*sourceAngularBetaCorrection (by norm_num) (by norm_num) n s
+            (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ))-1)*c.val n) ∧
+          ‖T‖ ≤ K*Real.exp K := by
+  obtain ⟨U,hU,hφ,K,hK,h⟩ := D.exists_local_normalizedSobolevBetaCorrection_phase_smoothing φ
+  refine ⟨U,hU,hφ,K,hK,fun ψ hψ => ?_⟩
+  obtain ⟨T,hT,hn⟩ := h ψ hψ (ENNReal.ofReal (3/2 : ℝ)) inferInstance (-1/2) 1
+  exact ⟨T,by simpa using hT,by simpa using hn⟩
+
+end NLS.ComplexBetaSmoothingChecks
+
+namespace NLS.ComplexNormalizationChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+example (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧ ∀ ψ ∈ U,
+      Memℓp (sourceNormalizedActionRootDeviation (by norm_num) (by norm_num)
+        (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ)) (ENNReal.ofReal (3/2 : ℝ)) := by
+  obtain ⟨U,hU,hφ,K,_,h⟩ := exists_local_normalizedSobolevRootDeviation_decay φ
+  exact ⟨U,hU,hφ,fun ψ hψ => memlp_of_inverse_bracket_bound (by norm_num) _ K (h ψ hψ)⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ U,
+        ∃ T : WeightedCoeff (Weight.sobolev (-1)) ⊤ →L[ℂ] WeightedCoeff (Weight.sobolev 0) ⊤,
+          (∀ c n, (T c).val n = (sourceNormalizedActionRoot (by norm_num) (by norm_num) n
+            (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ)-1)*c.val n) ∧ ‖T‖ ≤ K := by
+  obtain ⟨U,hU,hφ,K,hK,h⟩ := D.exists_local_normalizedSobolevNormalizationPhase_smoothing φ
+  refine ⟨U,hU,hφ,K,hK,fun ψ hψ => ?_⟩
+  have hm := h ψ hψ ⊤ inferInstance (-1) 0
+  rw [show (-1:ℝ)+1=0 by norm_num] at hm
+  obtain ⟨T,hT,hn⟩ := hm
+  exact ⟨T,by simpa using hT,by simpa using hn⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧
+      ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ U,
+        ∃ z : WeightedCoeff (Weight.sobolev 2) 2,
+          z.val (-3) = sourceBirkhoffWeightedCoordinate (by norm_num) (by norm_num) (-3) s (-1)
+              (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ)-
+            sourceGapWeightedEtaTerminalCoordinate (by norm_num) (by norm_num) (-3) (-1)
+              (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ) ∧ ‖z‖ ≤ M := by
+  obtain ⟨U,hU,hφ,M,hM,h⟩ := D.exists_local_normalizedSobolevBirkhoffSpectralTerminal_bound φ
+  refine ⟨U,hU,hφ,M,hM,fun ψ hψ => ?_⟩
+  obtain ⟨z,hz,hn⟩ := h ψ hψ (-1) (Or.inr rfl)
+  exact ⟨z,by simpa using hz (-3),hn⟩
+
+end NLS.ComplexNormalizationChecks
+
+namespace NLS.ComplexAngularH2Checks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) :
+    ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ.val ∈ U ∧ ∀ ψ ∈ U,
+      DifferentiableAt ℂ (normalizedSobolevBirkhoffSpectralTerminalH2 s (-1)) ψ ∧
+      (normalizedSobolevBirkhoffSpectralTerminalH2 s (-1) ψ).val (-2) =
+        sourceBirkhoffWeightedCoordinate (by norm_num) (by norm_num) (-2) s (-1)
+            (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ)-
+          sourceGapWeightedEtaTerminalCoordinate (by norm_num) (by norm_num) (-2) (-1)
+            (normalizedWeightedSource (SpectralWeight.sobolev 1 (by norm_num)) ψ) := by
+  obtain ⟨U,hU,hφ,M,hM,h⟩ := D.exists_local_normalizedSobolevBirkhoffSpectralTerminalH2_analytic φ
+  refine ⟨U,hU,hφ,?_⟩
+  intro ψ hψ
+  have ha := ((h (-1) (Or.inr rfl)).1 ψ hψ).differentiableAt
+  have he := ((h (-1) (Or.inr rfl)).2 ψ hψ).2 (-2)
+  exact ⟨by simpa using ha,by simpa using he⟩
+
+end NLS.ComplexAngularH2Checks

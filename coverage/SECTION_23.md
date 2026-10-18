@@ -294,6 +294,64 @@ two literal spectral errors A and B above are represented there. Their
 sharp estimates are still hypotheses of this reduction. Those estimates
 and stronger-target analyticity remain needed for full one-smoothing.
 
+## Complex angular smoothing and stronger-target analyticity
+
+The complex argument now follows the same original Birkhoff family
+through all normalization and angle factors. The normalized first-order
+source decoder divides the nth coefficient by 1+|2n|. The final target
+h2 uses weight (1+|n|)^2. These local complex estimates are distinct from
+the uniform physical real Hm-ball bounds above.
+
+[`SourceNormalizedRootComplexLower.lean`](../NLS/ZakharovShabat/SourceNormalizedRootComplexLower.lean)
+gives one complex neighborhood where all normalized roots have norm at
+least 1/2, hence inverse norm at most 2.
+[`SourceEtaInverseNormalization.lean`](../NLS/ZakharovShabat/SourceEtaInverseNormalization.lean)
+recovers the actual signed eta by exact inverse normalization.
+[`SourceWeightedEtaComplexBound.lean`](../NLS/ZakharovShabat/SourceWeightedEtaComplexBound.lean)
+and [`SourceWeightedEtaComplexAnalytic.lean`](../NLS/ZakharovShabat/SourceWeightedEtaComplexAnalytic.lean)
+then preserve every native spectral weight locally and analytically for
+finite source exponents p>1. The exact evaluation statements rule out
+the fallback in the sequence realization on the specified neighborhood.
+
+[`SourceWeightedTerminalComplexBound.lean`](../NLS/ZakharovShabat/SourceWeightedTerminalComplexBound.lean)
+removes the eta-remainder phase and bounds the literal terminal.
+[`SourceWeightedSpectralTermsComplex.lean`](../NLS/ZakharovShabat/SourceWeightedSpectralTermsComplex.lean)
+reconstructs the midpoint displacement and sine numerator from its two
+signs. [`SourceWeightedEtaRemainderComplex.lean`](../NLS/ZakharovShabat/SourceWeightedEtaRemainderComplex.lean)
+and [`SourceWeightedEtaRemainderAnalytic.lean`](../NLS/ZakharovShabat/SourceWeightedEtaRemainderAnalytic.lean)
+give the actual remainder's native weighted analyticity.
+
+[`ComplexPhaseSmoothing.lean`](../NLS/SequenceSpaces/ComplexPhaseSmoothing.lean)
+turns inverse-bracket decay of a complex symbol into a one-derivative
+gain for its exact exponential error, at every real sequence order and
+Banach exponent, including infinity. It is used by
+[`SourceEtaRemainderComplexSmoothing.lean`](../NLS/ZakharovShabat/SourceEtaRemainderComplexSmoothing.lean)
+and [`SourceBetaComplexPhaseSmoothing.lean`](../NLS/ZakharovShabat/SourceBetaComplexPhaseSmoothing.lean).
+The beta bound comes from actual weighted spectral majorants in
+[`SourceBetaComplexSobolevDecay.lean`](../NLS/ZakharovShabat/SourceBetaComplexSobolevDecay.lean).
+
+[`SourceMidpointProductSobolevDecay.lean`](../NLS/ZakharovShabat/SourceMidpointProductSobolevDecay.lean),
+[`SourceSquaredGapSobolevDecay.lean`](../NLS/ZakharovShabat/SourceSquaredGapSobolevDecay.lean),
+and [`SourceCriticalOffsetSobolevMajorant.lean`](../NLS/ZakharovShabat/SourceCriticalOffsetSobolevMajorant.lean)
+provide the weighted product and row estimates needed for
+[`SourceCriticalFactorSobolevDecay.lean`](../NLS/ZakharovShabat/SourceCriticalFactorSobolevDecay.lean).
+Exact common-circle agreement and the finite central block then give
+actual normalized-action and principal-root decay in
+[`SourceNormalizedActionComplexSobolevDecay.lean`](../NLS/ZakharovShabat/SourceNormalizedActionComplexSobolevDecay.lean).
+[`SourceNormalizationComplexPhaseSmoothing.lean`](../NLS/ZakharovShabat/SourceNormalizationComplexPhaseSmoothing.lean)
+combines the exact root and beta phase into a multiplier gaining one
+derivative, including all complex collapsed gaps on that neighborhood.
+
+[`SourceBirkhoffComplexSpectralTerminal.lean`](../NLS/ZakharovShabat/SourceBirkhoffComplexSpectralTerminal.lean)
+assembles the h2 bound for both actual signed errors.
+[`SourceBirkhoffComplexSpectralTerminalAnalytic.lean`](../NLS/ZakharovShabat/SourceBirkhoffComplexSpectralTerminalAnalytic.lean)
+proves analyticity in that stronger norm and exposes an h2-valued map
+whose every coefficient is the actual Birkhoff-minus-terminal error.
+Both signs share the neighborhood and norm bound. This completes the
+complex angular part at first source order. It does not prove the sharp
+Fourier errors A and B, higher-order complex angular analyticity, or
+full one-smoothing.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -329,6 +387,12 @@ at a negative index, and the conditional h2 Fourier reduction.
 Four higher-order checks cover the exact physical H3-to-H1 norm inequality,
 H2 eta at a negative index, the negative signed H3 terminal error in h4,
 and the conditional H2 Fourier remainder in h3.
+
+Ten complex checks cover normalized roots at exponent three, both native
+eta constructions at a physical weight and negative indices, phase
+multipliers at negative order with infinite or fractional exponents,
+zero phase, root-error summability, a negative signed terminal error,
+and differentiation in the actual h2 target.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

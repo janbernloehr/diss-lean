@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: angular smoothing at every positive integer Sobolev order
+## Current milestone: complex angular smoothing and h2 analyticity
+
+Both actual signed Birkhoff coordinates minus their literal spectral
+terminal terms are now locally bounded and analytic with values in h2
+on one complex neighborhood of every normalized first-order Sobolev
+real source. Both signs use the same original Birkhoff family, and the
+coefficient identities include collapsed complex gaps. The public h2 map
+has the actual unweighted error as each coefficient.
+
+The proof first constructs locally bounded analytic eta sequences and
+eta remainders in every native spectral weight, for finite p > 1. The
+two terminal signs recover the actual midpoint displacement and sine
+numerator. Weighted Hilbert majorants then give inverse-bracket beta
+and eta-remainder decay on the complex first-order Sobolev neighborhood.
+An exact exponential-error multiplier gains one sequence derivative
+at every real order and Banach exponent, including infinity.
+
+Weighted critical offsets and squared-gap rows control the complementary
+normalization factor. Exact common-circle agreement transfers its decay
+to the normalized action and principal root, including the finite central
+indices. Combining the actual normalization and phase errors gives the
+h2 bound; coordinate analyticity and local boundedness give analyticity
+in that stronger target norm.
+
+This complex neighborhood uses the normalized decoder with spectral
+weight 1+|2n|. It is not a new uniform physical H1-ball estimate. The
+previous physical Hm-ball bounds remain available for all integers m >= 1.
+Higher-order complex angular analyticity and the two sharp Fourier
+spectral-error bounds remain open. Full Birkhoff-minus-Fourier
+one-smoothing is not asserted.
+
+Twenty new modules and ten public checks cover both signs, physical
+native weights, negative indices and sequence orders, fractional and
+infinite exponents, zero phase, and differentiation in the actual h2
+target. See [the Section 23 audit](coverage/SECTION_23.md).
+
+Validation: `./scripts/check.sh` passes with 7,706 build jobs, 6,777
+public examples, and a transitive axiom audit of 37,448 NLS declarations.
+The build retains 21 existing warnings; the twenty new modules introduce none.
+Documentation checks cover 1,161 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: angular smoothing at every positive integer Sobolev order
 
 For every integer m >= 1, each actual signed Birkhoff coordinate differs
 from its literal spectral terminal by an h^(m+1) sequence, uniformly on
