@@ -545,10 +545,60 @@ local norm bound. This includes N=s and H0; no real-type assumption or
 continuity of individual ordered endpoint labels is needed. Smooth
 periodic representatives with exact source coefficients remain explicit.
 
-The next spectral step is to combine these column models in the actual
-separated characteristics and anti-discriminant, then evaluate at the
-canonical roots. No sharp Fourier error or full one-smoothing theorem
-is inferred from the column and sampling bounds alone.
+The characteristic and root estimates below perform the next transfer.
+The column and sampling bounds alone do not imply sharp Fourier errors
+or full one-smoothing.
+
+## Actual scalar spectral functions and canonical boundary roots
+
+[`ClassicalCharacteristicColumnBounds.lean`](../NLS/ZakharovShabat/ClassicalCharacteristicColumnBounds.lean)
+transfers both column errors to the trace, off-diagonal anti-discriminant,
+and either source-normalized separated characteristic with factor two.
+[`SobolevWKBCharacteristicModels.lean`](../NLS/ZakharovShabat/SobolevWKBCharacteristicModels.lean)
+therefore gives one threshold and one uniform order-(N+1) error constant
+for all these classical spectral functions on an original Hs ball and
+horizontal strip, for s >= 1 and N <= s.
+[`SobolevWKBEndpointFormulas.lean`](../NLS/ZakharovShabat/SobolevWKBEndpointFormulas.lean)
+expands the endpoint models exactly. Both Hamiltonian phases, both
+leading density integrals, and (1-pq)^(-1) remain explicit; no identity
+between the two phases is assumed.
+
+[`SourceSobolevClassicalCompatibility.lean`](../NLS/ZakharovShabat/SourceSobolevClassicalCompatibility.lean)
+identifies the original canonical source functions with their classical
+values for matching continuous periodic representatives. Every actual
+canonical boundary root is a zero of the corresponding characteristic.
+[`SourceSobolevWKBCharacteristicModels.lean`](../NLS/ZakharovShabat/SourceSobolevWKBCharacteristicModels.lean)
+transfers the uniform WKB estimates to these original source functions.
+[`SourceSobolevWKBBoundaryRoots.lean`](../NLS/ZakharovShabat/SourceSobolevWKBBoundaryRoots.lean)
+uses actual tail localization to give one complex Sobolev neighborhood,
+one cutoff, and one bound C/(1+|n|)^(N+1) at both Dirichlet and Neumann
+root sequences. Both signed tails are included; the neighborhood may
+be centered on a complex source. The WKB statements retain smooth
+representatives and exact original coefficients.
+
+The pointwise tail bound is not an h^(N+1) sequence bound: weighting it
+only yields a bounded sequence. The sharp Fourier errors still require
+square-summable remainder control and the actual phase, midpoint, and
+product cancellations.
+
+## Fourier moment series for bounded complex displacements
+
+[`UnitIntervalFourierMoments.lean`](../NLS/Fourier/UnitIntervalFourierMoments.lean)
+identifies the existing interval L2 realization with the original
+period-one coefficients and proves its exact Parseval norm. The actual
+coefficients of x^k f have norm at most the original coefficient norm,
+uniformly in k, without requiring equal endpoint values.
+[`BoundedLatticeMomentSeries.lean`](../NLS/Fourier/BoundedLatticeMomentSeries.lean)
+realizes each Taylor moment as an L2 sequence for any bounded complex
+displacement sequence delta. Its norm is bounded by
+(2||delta||_infinity)^k/k! times the original coefficient norm.
+The full series consequently converges in L2 with bound
+exp(2||delta||_infinity) times that norm.
+
+Identification of this series with the actual sampled Fourier integrals
+remains open, as does the removable divided-difference L2 estimate.
+The series bound alone is not yet the stronger sampling theorem needed
+for the sharp Fourier remainder.
 
 ## Validation and remaining work
 
@@ -606,6 +656,11 @@ Four column checks cover the second standard initial vector at empty
 truncation, the reflected leading term's sign at zero spectral parameter,
 the closed half-product determinant bound, and both normalized models
 at time zero. Full validation is recorded in
+[implementation status](../STATUS.md).
+
+Three characteristic checks cover the exact free trace for arbitrary
+complex frequency and the two mean-value signs at zero frequency, for
+both separated boundary conditions. Full validation is recorded in
 [implementation status](../STATUS.md).
 
 The native Sobolev geometry is now covered by the independent inverse

@@ -62512,3 +62512,36 @@ example (a b : ℝ → ℂ) (z : ℂ) :
     nlsWKBInitialUpper,nlsWKBSecondVector,nlsWKBVector,nlsWKBLeadingTerm,nlsRiccatiApproximation]
 
 end NLS.WKBFundamentalColumnsChecks
+
+namespace NLS.WKBCharacteristicChecks
+open Complex NLS.ZakharovShabat
+open scoped unitInterval
+
+-- The empty trace model has the exact free normalization for every complex z.
+example (a b : ℝ → ℂ) (z : ℂ) : nlsWKBDiscriminantModel a b 0 z = 2*cos z := by
+  rw [Complex.two_cos]
+  simp [nlsWKBDiscriminantModel,nlsWKBFirstColumnModel,nlsWKBSecondColumnModel,
+    nlsWKBInitialLower,nlsWKBInitialUpper,nlsWKBSecondVector,nlsWKBVector,
+    nlsWKBCarrier,nlsRiccatiApproximation,mul_comm,add_comm]
+
+-- The anti-discriminant uses the difference of the original two means.
+example (a b : ℝ → ℂ) :
+    nlsWKBAntiDiscriminantModel a b 0 0 =
+      Complex.I*((∫ x in (0:ℝ)..1, a x)-(∫ x in (0:ℝ)..1, b x)) := by
+  simp [nlsWKBAntiDiscriminantModel,nlsWKBFirstColumnModel,nlsWKBSecondColumnModel,
+    nlsWKBInitialLower,nlsWKBInitialUpper,nlsWKBSecondVector,nlsWKBVector,
+    nlsWKBLeadingTerm,nlsRiccatiApproximation,nlsRiccatiDensity_zero]
+  ring
+
+-- Both separated boundary conditions use the sum of the means with the source sign.
+example (θ : BoundaryCondition) (a b : ℝ → ℂ) :
+    nlsWKBSeparatedCharacteristicModel θ a b 0 0 =
+      -(BoundaryCondition.extensionSign θ/2)*
+        ((∫ x in (0:ℝ)..1, a x)+(∫ x in (0:ℝ)..1, b x)) := by
+  simp [nlsWKBSeparatedCharacteristicModel,nlsWKBFirstColumnModel,nlsWKBSecondColumnModel,
+    nlsWKBInitialLower,nlsWKBInitialUpper,nlsWKBSecondVector,nlsWKBVector,
+    nlsWKBLeadingTerm,nlsWKBCarrier,nlsRiccatiApproximation,nlsRiccatiDensity_zero]
+  field_simp
+  ring
+
+end NLS.WKBCharacteristicChecks

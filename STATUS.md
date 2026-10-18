@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: both WKB fundamental columns and periodic endpoint sampling
+## Current milestone: actual characteristic/root estimates and Fourier moment series
+
+The explicit WKB column models now give order-(N+1) errors for the
+actual discriminant, off-diagonal anti-discriminant, and both normalized
+separated characteristics, uniformly on original Hs balls and spectral
+strips for s >= 1 and N <= s. Their endpoint formulas retain both
+Hamiltonian phases, both leading density integrals, and the exact
+inverse initial-basis determinant.
+
+Matching continuous periodic Fourier representatives identify the
+original source spectral functions with the classical functions.
+Consequently, both actual canonical Dirichlet and Neumann root
+sequences satisfy the model bound C/(1+|n|)^(N+1) beyond one signed
+cutoff, on a common neighborhood of every complex Hs source. The WKB
+estimates still require smooth representatives with exact original
+coefficients. These pointwise bounds are not h^(N+1) sequence estimates.
+
+Separately, the actual Fourier coefficients of x^k f on [0,1] have L2
+norm at most that of f, uniformly in k and without endpoint matching.
+For any bounded complex lattice displacement sequence, the resulting
+Taylor-moment series converges in L2 with bound exp(2||delta||_infinity)
+times the original coefficient norm. Its identification with the actual
+sampled integrals and the removable divided-difference estimate remain
+open. These are the next sampling inputs to the sharp Fourier errors.
+
+Eight modules and three public examples check the exact free trace
+normalization and the original mean-value signs in both the
+anti-discriminant and separated characteristics. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The two sharp Fourier spectral errors and full Fourier one-smoothing
+remain open. Pointwise inverse-frequency estimates alone do not supply
+the required weighted square-summable remainder.
+
+Validation: `./scripts/check.sh` passes with 7,763 build jobs, 6,803
+public examples, and a transitive axiom audit of 37,654 NLS declarations.
+The build retains 21 existing warnings; the eight new modules introduce none.
+Documentation checks cover 1,255 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: both WKB fundamental columns and periodic endpoint sampling
 
 Both standard fundamental columns now have explicit WKB models with
 order-(N+1) error, uniform on each original Hs source ball and horizontal

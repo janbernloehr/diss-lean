@@ -4090,3 +4090,11 @@ import NLS.ZakharovShabat.ClassicalBasisReconstruction
 import NLS.ZakharovShabat.SobolevWKBInitialBasis
 import NLS.ZakharovShabat.SobolevWKBFundamentalColumns
 import NLS.ZakharovShabat.SourceRiccatiPeriodicSampling
+import NLS.ZakharovShabat.ClassicalCharacteristicColumnBounds
+import NLS.ZakharovShabat.SobolevWKBCharacteristicModels
+import NLS.ZakharovShabat.SobolevWKBEndpointFormulas
+import NLS.ZakharovShabat.SourceSobolevClassicalCompatibility
+import NLS.ZakharovShabat.SourceSobolevWKBCharacteristicModels
+import NLS.ZakharovShabat.SourceSobolevWKBBoundaryRoots
+import NLS.Fourier.UnitIntervalFourierMoments
+import NLS.Fourier.BoundedLatticeMomentSeries
