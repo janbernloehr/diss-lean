@@ -441,6 +441,78 @@ available in
 These include complex potentials without a real-type condition. Their
 constants may depend on the fixed smooth potential.
 
+## Leading Fourier terms and actual spectral sampling
+
+[`NLSRiccatiResidualCorrection.lean`](../NLS/ZakharovShabat/NLSRiccatiResidualCorrection.lean)
+and [`SobolevRiccatiResidualCorrectionUniform.lean`](../NLS/ZakharovShabat/SobolevRiccatiResidualCorrectionUniform.lean)
+remove the exact top density from the residual. All higher residual
+coefficients use only lower-density products. Consequently the correction
+has order N+1 uniformly on the original Hs ball for N <= s.
+[`SobolevWKBCarrierFreeUniform.lean`](../NLS/ZakharovShabat/SobolevWKBCarrierFreeUniform.lean)
+gives the order-one free-carrier error, and
+[`SobolevWKBLeadingForcing.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingForcing.lean)
+identifies the actual leading scalar forcing with an L1 remainder of
+order N+1. The top density is controlled in L2, without a supremum bound.
+
+[`SobolevClassicalFreeUniform.lean`](../NLS/ZakharovShabat/SobolevClassicalFreeUniform.lean)
+transfers the free-column estimate to the original Hs norm, preserving
+the exact factor two from period doubling.
+[`IntegralMajorantUnit.lean`](../NLS/ComplexAnalysis/IntegralMajorantUnit.lean),
+[`ClassicalScalarForcingFreeComparison.lean`](../NLS/ZakharovShabat/ClassicalScalarForcingFreeComparison.lean),
+and [`ClassicalLeadingForcedResidual.lean`](../NLS/ZakharovShabat/ClassicalLeadingForcedResidual.lean)
+compare actual forced solutions with their free integral response.
+[`SobolevWKBLeadingForcedComparison.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingForcedComparison.lean),
+[`NLSWKBLeadingScalarIntegral.lean`](../NLS/ZakharovShabat/NLSWKBLeadingScalarIntegral.lean),
+and [`SobolevWKBLeadingOscillatoryComparison.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingOscillatoryComparison.lean)
+therefore give the explicit leading oscillatory integral in the actual
+WKB solution error, with a uniform order-(N+1) remainder. These statements
+still require smooth periodic representatives with exact original Fourier
+coefficients, for s >= 1 and N <= s.
+
+[`PiLatticeCoefficient.lean`](../NLS/Fourier/PiLatticeCoefficient.lean)
+identifies the lattice integral with the exact unit-period coefficient,
+including negative indices and index zero.
+[`SobolevWKBLatticeLeading.lean`](../NLS/ZakharovShabat/SobolevWKBLatticeLeading.lean)
+uses that identity at every nonzero signed index in the endpoint error.
+[`PerturbedLatticeFourierL2.lean`](../NLS/Fourier/PerturbedLatticeFourierL2.lean)
+proves a displacement-Lipschitz estimate for continuous-density Fourier
+integrals and then realizes their perturbed samples as an L2 sequence.
+The bound uses the original coefficient norm, density L1 norm, and the
+actual complex displacement L2 norm.
+[`SobolevRiccatiPerturbedLattice.lean`](../NLS/ZakharovShabat/SobolevRiccatiPerturbedLattice.lean)
+applies this through the top Riccati order, including N=s and H0.
+[`SourceRiccatiBoundarySampling.lean`](../NLS/ZakharovShabat/SourceRiccatiBoundarySampling.lean)
+and [`SourceRiccatiCriticalSampling.lean`](../NLS/ZakharovShabat/SourceRiccatiCriticalSampling.lean)
+instantiate the original canonical Dirichlet, Neumann, and critical
+points. Their actual samples have a local L2 bound on a complex
+neighborhood of every real original Hs source. No sharp Fourier spectral
+error is inferred from this sampling bound alone.
+
+## Discriminant estimates for nonsmooth original sources
+
+[`SobolevFiniteBoundExtension.lean`](../NLS/ZakharovShabat/SobolevFiniteBoundExtension.lean)
+transfers continuous scalar bounds from finite Fourier sources in a
+slightly larger ball to the original Sobolev ball.
+[`SobolevHamiltonianPhase.lean`](../NLS/ZakharovShabat/SobolevHamiltonianPhase.lean)
+defines the phase from the actual Fourier NLS Hamiltonians and proves
+its exact agreement with the physical phase on smooth sources.
+[`SourceSobolevDiscriminantUniform.lean`](../NLS/ZakharovShabat/SourceSobolevDiscriminantUniform.lean)
+then extends the Hamiltonian approximation bound to every complex Hs
+source for s >= 1 and N <= s. The error is bounded by C/(2|z|)^N on
+|z| >= 1 and each fixed horizontal strip. The constant is uniform on
+the original source ball; no smoothness or real-type assumption remains.
+
+[`SobolevDiscriminantDerivativeUniform.lean`](../NLS/ZakharovShabat/SobolevDiscriminantDerivativeUniform.lean)
+proves spectral analyticity away from zero and a Cauchy bound for the
+spectral derivative of this same error, of order C/|z|^N on |z| >= 2.
+The source regularity is unchanged. This is a statement about the actual
+canonical discriminant, not an extension of the full WKB vector.
+
+The next spectral work requires both solution columns and the precise
+root and product cancellations in the two literal Fourier errors.
+The proved local sampling and nonsmooth discriminant bounds are inputs
+to that work; they do not complete Fourier one-smoothing.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

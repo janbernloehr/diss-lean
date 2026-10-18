@@ -62367,3 +62367,121 @@ example (R : ℝ) (hR : 0 ≤ R) :
     h ab hab a b ha hb hpa hpb hca hcb Complex.I (by simp) (by simp)
 
 end NLS.UniformWKBChecks
+
+namespace NLS.SpectralWKBChecks
+open scoped unitInterval
+open Set Complex NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped ContDiff
+
+-- The empty truncation's corrected residual vanishes exactly, without smoothness.
+example (a b : ℝ → ℂ) (x : ℝ) (w : ℂ) :
+    (nlsRiccatiResidualPolynomial a b 0).eval₂ (Pi.evalRingHom (fun _ : ℝ => ℂ) x) w+
+      nlsRiccatiDensity a b 0 x*w^0 = 0 := by
+  simp [nlsRiccatiResidualPolynomial,nlsRiccatiTruncation,nlsRiccatiDerivativeTruncation]
+
+-- The algebraic free-response identity retains the zero-frequency endpoint.
+example (a b : ℝ → ℂ) (t : ℝ) :
+    (∫ x in (0:ℝ)..t, nlsWKBLeadingScalar a b 0 0 x) =
+      -Complex.I*(∫ x in (0:ℝ)..t, nlsRiccatiDensity a b 0 x) := by
+  simpa using free_integral_nlsWKBLeadingScalar a b 0 0 t
+
+-- The full leading correction gives second-order error at the H1 endpoint,
+-- including the nonreal |z|=1 boundary.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 1, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ‖nlsWKBVector a b 1 Complex.I 1-
+        classicalSolution (classicalPotentialOfFunctions a b ha.continuous hb.continuous) Complex.I
+          (nlsWKBVector a b 1 Complex.I 0) 1-
+        (0,-Complex.I*((2*Complex.I*Complex.I)⁻¹)*exp (Complex.I*Complex.I)*(∫ x in (0:ℝ)..1, nlsRiccatiDensity a b 1 x*exp (-2*Complex.I*Complex.I*x)))‖ ≤ C/4 := by
+  obtain ⟨C,hC,h⟩ := exists_uniform_nlsWKB_leading_oscillatory_error_bound 1 1 le_rfl le_rfl R hR 1
+  refine ⟨C,hC,?_⟩
+  intro ab hab a b ha hb hpa hpb hca hcb
+  have he := h ab hab a b ha hb hpa hpb hca hcb Complex.I (by simp) (by simp) ⟨1,⟨zero_le_one,le_rfl⟩⟩
+  norm_num only [pow_one,Complex.ofReal_one,mul_one,norm_inv,norm_mul,norm_ofNat,norm_I] at he
+  convert he using 1
+  ring
+
+open Set Complex NLS.Fourier NLS.ZakharovShabat
+open scoped ContDiff
+
+-- Negative lattice indices use the original Fourier sign convention.
+example (f : ℝ → ℂ) :
+    (∫ x in (0:ℝ)..1, f x*exp (-2*Complex.I*((Real.pi:ℂ)*(-3))*x)) = periodOneCoefficient f (-3) := by
+  simpa using integral_pi_lattice_eq_periodOneCoefficient f (-3)
+
+-- Zero displacement preserves the full coefficient norm, including index zero.
+example (f : ℝ → ℂ) (hf : Continuous f) (c : NLS.Coeff 2)
+    (hc : ∀ n, c n = periodOneCoefficient f n) :
+    ∃ a : NLS.Coeff 2, a 0 = ∫ x in (0:ℝ)..1, f x ∧ ‖a‖ ≤ ‖c‖ := by
+  obtain ⟨a,ha,hn⟩ := exists_perturbed_lattice_coefficients f hf c 0 hc 0 (by simp)
+  exact ⟨a,by simpa using ha 0,by simpa using hn⟩
+
+-- The sampled top-density result includes order zero and complex L2 shifts.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 0, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff 2, ‖δ‖ ≤ 1 → ∃ c : NLS.Coeff 2,
+        (∀ n, c n = ∫ x in (0:ℝ)..1, -b x*exp (-2*Complex.I*((Real.pi:ℂ)*n+δ n)*x)) ∧ ‖c‖ ≤ C := by
+  simpa only [nlsRiccatiDensity_zero,Pi.neg_apply] using
+    exists_uniform_sobolevRiccati_perturbed_lattice_bound 0 0 le_rfl R hR 1 (by norm_num)
+
+open Set Complex NLS.Fourier NLS.ZakharovShabat
+open scoped ContDiff unitInterval
+
+-- Critical sampling includes the H0 top density on a complex neighborhood
+-- of each real source; exact physical Fourier agreement remains explicit.
+example (a₀ : realTypeHigherSobolevSourceLocus 0) :
+    ∃ U : Set (SobolevSource 0), IsOpen U ∧ a₀.val ∈ U ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ ab ∈ U, ∀ a b : ℝ → ℂ, ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∃ c : NLS.Coeff 2,
+        (∀ n, c n = ∫ x in (0:ℝ)..1, -b x*
+          exp (-2*Complex.I*canonicalCriticalPoints (by norm_num) (by norm_num)
+            (periodOnePotential (higherSobolevSourceInclusion 0 ab))
+            (periodOnePotential_mem (higherSobolevSourceInclusion 0 ab)) n*x)) ∧ ‖c‖ ≤ C := by
+  simpa only [nlsRiccatiDensity_zero,Pi.neg_apply] using
+    exists_local_sobolevRiccati_critical_sample_bound 0 0 le_rfl a₀
+
+open Set Complex NLS.Fourier NLS.ZakharovShabat
+open scoped unitInterval
+
+-- The empty phase is defined even at zero, for every original source.
+example (s : ℕ) (ab : SobolevSource s) (z : ℂ) :
+    sobolevHamiltonianPhase s 0 (Nat.zero_le _) ab z = -Complex.I*z := by
+  simp [sobolevHamiltonianPhase]
+
+-- No smooth representative is required at the off-axis |z|=1 boundary.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 1, ‖ab‖ ≤ R →
+      ‖canonicalDiscriminant (by norm_num)
+          (periodOnePotential (higherSobolevSourceInclusion 1 ab)) Complex.I-
+        2*cos (Complex.I*sobolevHamiltonianPhase 1 1 le_rfl ab Complex.I)‖ ≤ C/2 := by
+  obtain ⟨C,hC,h⟩ := exists_uniform_sourceSobolevDiscriminant_hamiltonian_strip_error_bound
+    1 1 le_rfl le_rfl R hR 1
+  refine ⟨C,hC,?_⟩
+  intro ab hab
+  simpa using h ab hab Complex.I (by simp) (by simp)
+
+-- The derivative estimate includes a negative real point on |z|=2 and N=s.
+example (R : ℝ) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ ab : SobolevSource 2, ‖ab‖ ≤ R →
+      ‖deriv (fun w =>
+        canonicalDiscriminant (by norm_num)
+          (periodOnePotential (higherSobolevSourceInclusion 2 ab)) w-
+        2*cos (Complex.I*sobolevHamiltonianPhase 2 2 le_rfl ab w)) (-2)‖ ≤ C/4 := by
+  obtain ⟨C,hC,h⟩ := exists_uniform_sourceSobolevDiscriminant_derivative_strip_error_bound
+    2 2 (by norm_num) le_rfl R hR 0
+  refine ⟨C,hC,?_⟩
+  intro ab hab
+  simpa [show (2:ℝ)^2=4 by norm_num] using h ab hab (-2) (by norm_num) (by norm_num)
+
+end NLS.SpectralWKBChecks

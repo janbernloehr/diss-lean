@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: WKB errors uniform on Sobolev balls and complex strips
+## Current milestone: leading Fourier terms and nonsmooth discriminant estimates
+
+For every integer s >= 1 and N <= s, subtracting the actual leading
+oscillatory Riccati-density integral from the WKB solution error leaves
+an order-(N+1) remainder. Its constant is uniform on each original Hs
+source ball and horizontal complex spectral strip. The WKB statements
+still use smooth periodic representatives with exactly matching Fourier
+coefficients; no additional source derivative enters the constants.
+At every nonzero signed pi-lattice index, the leading integral is
+exactly the original Sobolev Riccati density's Fourier coefficient.
+
+For a continuous density, square-summable complex displacements of the
+pi lattice preserve square-summability of the actual Fourier integrals.
+The norm estimate uses the density's L1 norm and the displacement's L2
+norm. Applied to the actual Riccati hierarchy, this includes the top
+order N=s and the H0 endpoint. The canonical Dirichlet, Neumann, and
+critical-point samples have one local L2 bound on a complex neighborhood
+of every real original Sobolev source.
+
+The discriminant estimate now holds for every original complex Hs
+source, including nonsmooth sources. The finite phase uses the actual
+Fourier-defined NLS Hamiltonians. Finite Fourier approximation and
+continuity transfer the bound C/(2|z|)^N to the canonical discriminant
+on |z| >= 1 and fixed horizontal strips. A Cauchy estimate bounds the
+spectral derivative of that error by C/|z|^N on |z| >= 2, with the same
+source regularity. Neither final discriminant estimate assumes a real
+source or a smooth physical representative.
+
+Twenty-one modules and ten public examples cover empty truncation,
+zero spectral parameter in the exact free-response identity, negative
+lattice indices, zero displacement, the H0 top density, and the sharp
+regularity endpoints in the nonsmooth discriminant estimates. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The two-column monodromy expansions, the two sharp Fourier spectral
+errors, and full Fourier one-smoothing remain open. The leading WKB
+vector estimate has not yet been extended to nonsmooth physical data.
+
+Validation: `./scripts/check.sh` passes with 7,749 build jobs, 6,796
+public examples, and a transitive axiom audit of 37,585 NLS declarations.
+The build retains 21 existing warnings; the twenty-one new modules introduce none.
+Documentation checks cover 1,228 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: WKB errors uniform on Sobolev balls and complex strips
 
 For every integer s >= 1 and truncation order N <= s, the actual WKB
 initial-value solution, its monodromy endpoint, and the discriminant have

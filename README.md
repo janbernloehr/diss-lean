@@ -5,15 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: WKB solution, monodromy endpoint, and discriminant errors
-are bounded by C/(2|z|)^N uniformly on original Hs source balls and
-horizontal complex spectral strips, for s >= 1 and N <= s. These
-estimates use smooth periodic representatives with matching Fourier
-coefficients and require no extra source derivative in their constants.
-Complex angular errors are already analytic into h^(m+1) at every
-integer m >= 1. The two sharp Fourier spectral-error estimates remain
-open; full one-smoothing is not yet proved. Lemma 27.2 with its printed
-constants is complete.
+Latest step: the WKB error now has its explicit leading Fourier term
+with a uniform extra-order remainder on original Sobolev balls. Actual
+Dirichlet, Neumann, and critical-point samples of the top Riccati density
+have local L2 bounds. These WKB and sampling statements use smooth
+periodic representatives with matching Fourier coefficients. Separately,
+the canonical discriminant and its error's spectral derivative have
+uniform Hamiltonian approximations for all complex Hs sources, including
+nonsmooth ones. Full Fourier one-smoothing and its two sharp spectral-error
+estimates remain open. Higher-order complex angular analyticity and
+Lemma 27.2 with its printed constants are already proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
