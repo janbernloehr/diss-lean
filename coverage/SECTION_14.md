@@ -18,7 +18,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(iii): canonical | `D.toSourceSection14OriginalData.canonical`, `D.complex.mixed_fourier_canonical` | All three brackets on the real locus, as in Lemma 15.3; actual coordinate derivatives and absolutely convergent Fourier pairings, including p<2 |
 | Theorem 14.1(iv): injective, local diffeomorphism, open dense image | `D.toSourceSection14OriginalData.real_geometry` | Actual real map; analytic local inverse at every point with both inverse identities |
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
-| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Matching the remaining independent external spectral/angle primitives and the precise 2014 construction remains unproved. |
+| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, and normalized psi-functions are now identified below. Physical terminal-sheet angles and the precise 2014 construction remain unproved. |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
 | Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 
@@ -62,8 +62,9 @@ The inspected manuscript uses the following normalizations:
 | Section 15, angles | Left periodic endpoint to Dirichlet endpoint, terminal sheet fixed by delta; theta=eta+beta and eta has 2*pi ambiguity | Original eta integral values, beta series, and `real_rectangular_formula_of_eta` |
 | Chapter IV opening and Section 16, printed p. 88 (PDF p. 94) | x_n=sqrt(2 I_n) cos(theta_n), y_n=sqrt(2 I_n) sin(theta_n); positive sine orientation | `real_rectangular_formula`, `realActionAngleMap_eq` |
 
-These are source comparisons, not formal equalities between independently
-constructed external objects. The existing `sourcePhysicalL2` in
+The action and angle rows are source comparisons. The independent physical
+spectral and normalized-function equalities proved below provide additional
+formal identifications for the inspected 2013 specifications. The existing `sourcePhysicalL2` in
 [`SourcePhysicalL2.lean`](../NLS/ZakharovShabat/SourcePhysicalL2.lean) already
 maps every Hilbert coefficient source to its physical class.
 [`L2SourceCharacteristics.lean`](../NLS/ZakharovShabat/L2SourceCharacteristics.lean)
@@ -74,12 +75,22 @@ should be reused.
 
 The physical source identification is now completed by the exact
 `sourcePhysicalL2Equiv` and `realSourcePhysicalL2Equiv` described below.
-To complete Remark 14.2(i), identify the independent external spectral
-labels, canonical root, normalized functions, and terminal-sheet angle
-integrals under this equivalence. The literal formulas and eta-choice
+The independent physical spectral labels, canonical root, and normalized
+functions are now identified under this equivalence. To complete Remark
+14.2(i), identify the independent physical terminal-sheet angle integrals. The literal formulas and eta-choice
 independence provide the final coordinate-equality step. Agreement of the
 relevant 2013 and 2014 source conventions also remains to be established.
 No p>2 surjectivity assertion is added.
+
+The publisher's public [2014 contents](https://ems.press/content/book-chapter-files/23100)
+locate the separated spectra in Section 5 (p. 26), psi-functions in Section
+14 (p. 84), angles in Section 15 (p. 97), and Birkhoff coordinates in Chapter
+IV (p. 105). Its [preface](https://ems.press/content/book-chapter-files/23099)
+still bears the July 2013 date. Its public
+[overview](https://ems.press/content/book-chapter-files/23102) states the
+global bi-analytic map and its Fourier derivative at zero. These checks
+confirm the publication context and broad theorem, but do not establish
+identity of the construction formulas in the chapters requiring a subscription.
 
 ## The original physical Hilbert spaces and map
 
@@ -106,8 +117,8 @@ lambda*deriv(l2Discriminant u)/physicalCanonicalRoot u. The canonical
 product squares to (l2Discriminant u)^2-4 and at zero equals -2*i*sin(lambda),
 fixing the sign. Every real physical source supplies an actual nonsingular
 isolating circle, including collapsed gaps. Every admissible winding-one
-circuit gives the same action. These statements do not assert independent
-identification of the transported labels with an external labeling.
+circuit gives the same action. The independent physical specifications below now identify these
+transported labels and the canonical root.
 
 [`SourcePhysicalActionAngle.lean`](../NLS/ZakharovShabat/SourcePhysicalActionAngle.lean)
 uses `PhysicalRealBirkhoffTarget = WithLp 2 (RealCoeff 2 × RealCoeff 2)`.
@@ -733,3 +744,65 @@ links resolve, and `git diff --check` passes.
 - [Real-centered ball domains](../NLS/ZakharovShabat/SourceRealBallCore.lean)
 - [Original maps on complex intersections](../NLS/ZakharovShabat/SourceBirkhoffOriginalExponent.lean)
 - [Compatible Section 14 construction](../NLS/ZakharovShabat/SourceSection14.lean)
+
+## Independent physical spectral and normalized-function specifications
+
+The inspected 2013 manuscript specifies separated roots in printed
+pp. 24–26 by zeros of the actual monodromy characteristics, analytic
+multiplicities, lexicographic ordering, and l2 free-lattice displacements.
+[`PhysicalBoundaryRoots.lean`](../NLS/ZakharovShabat/PhysicalBoundaryRoots.lean)
+uses exactly these conditions, without source labels in the specification.
+Existence is witnessed by the source construction. To prove uniqueness,
+l2 decay and the distant simple-root count fix both tails; equal global
+multiplicities then fix the finite ordered central block.
+[`OrderedEnumerationFiniteException.lean`](../NLS/SequenceSpaces/OrderedEnumerationFiniteException.lean)
+proves that last step with repeated entries allowed. The selected roots
+satisfy the actual Dirichlet and Neumann endpoint equations and the
+normalized product for the physical characteristic. Their analytic orders
+are proved as ENat equalities, not merely natural-number truncations.
+
+[`PeriodicEndpointGlobalMultiplicity.lean`](../NLS/ZakharovShabat/PeriodicEndpointGlobalMultiplicity.lean)
+upgrades finite-box counts to global multiplicities for the original
+periodic labels. In
+[`OrderedPairedL2Enumeration.lean`](../NLS/SequenceSpaces/OrderedPairedL2Enumeration.lean),
+common real strips isolate arbitrarily large finite blocks of two ordered
+paired sequences. Global multiplicities and l2 displacements determine
+both sequences, including repeated roots and collapsed pairs.
+[`PhysicalPeriodicEndpoints.lean`](../NLS/ZakharovShabat/PhysicalPeriodicEndpoints.lean)
+therefore selects unique labels using only the physical discriminant
+squared minus four, its analytic zero orders, ordering, and asymptotics.
+
+Printed pp. 59–61, formulas (12.4)–(12.5), fix the principal standard root
+and the canonical product with prefactor 2i and denominator pi_0=1.
+[`PhysicalCanonicalRoot.lean`](../NLS/ZakharovShabat/PhysicalCanonicalRoot.lean)
+forms these expressions directly from the physical endpoints. Every
+symmetric finite cutoff converges to the paired infinite product. Its
+identity with the established source root retains the exact free sign,
+the square identity on the cut complement, and the physical action
+contour formula.
+[`PhysicalSpectralCircles.lean`](../NLS/ZakharovShabat/PhysicalSpectralCircles.lean)
+specifies circle geometry in physical gaps alone and constructs a
+nonsingular isolating circle for every real source and index.
+
+Printed pp. 70–71 specify the entire psi numerator by the normalized
+deleted root product, real gap placement, and the 1/(2*pi) Kronecker
+periods. In
+[`PhysicalPsiComparison.lean`](../NLS/ZakharovShabat/PhysicalPsiComparison.lean),
+`PhysicalPsiGapData` contains only the deleted l2 vector, physical gap
+placement, and literal vanishing off-diagonal periods against the intrinsic
+product root. Existence and uniqueness are proved before selecting
+`physicalPsiGapRoot`. The entire `physicalPsiFunction` then has every
+normalized period, including the diagonal value one. The uniqueness claim
+is within this gap-contained product class; it is not uniqueness among
+arbitrary entire functions.
+
+[`PhysicalPsiFamily.lean`](../NLS/ZakharovShabat/PhysicalPsiFamily.lean)
+identifies this independent selection with every original Section 14
+family. It proves global real analyticity of the root map in the physical
+Hilbert norm, complex analytic extension on the physical Birkhoff domain,
+and exact periods for complex inputs on every supplied isolating circle.
+At zero potential all deleted displacements vanish, with diagonal periods
+still normalized at the collapsed gaps. These results complete the physical
+spectral and normalized-function specification comparison for the inspected
+2013 conventions. They do not yet identify independent physical
+terminal-sheet eta/beta integrals or the cited 2014 edition.

@@ -5,16 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original physical L2 Fourier map is an exact complex and
-real Hilbert equivalence. The physical action–angle map and its global
-inverse are analytic in the original Hilbert norms and preserve the norm
-exactly. Its complex extension uses an open neighborhood of every real
-physical input; the actions are actual physical monodromy contour integrals.
+Latest step: physical spectral labels are uniquely specified by actual
+monodromy zeros, multiplicities, ordering, and l2 asymptotics. Their literal
+canonical product and normalized psi-functions agree with the original
+Birkhoff family, including exact periods, collapsed gaps, and analytic
+dependence on physical Hilbert inputs.
 
-Next: match the remaining spectral labels, normalized functions, and angle
-integrals with the external construction in Remark 14.2(i). Identification
-with the cited 2014 edition remains open. The Lemma 27.2 and G.2
-qualifications remain recorded. The dissertation is incomplete.
+Next: identify the independent physical terminal-sheet angle integrals
+for Remark 14.2(i) and compare the cited 2014 edition with the inspected
+2013 manuscript. The Lemma 27.2 and G.2 qualifications remain recorded.
+The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

@@ -60740,3 +60740,162 @@ example : ∃ e : physicalRealSubmodule ≃ₜ PhysicalRealBirkhoffTarget,
 
 end PhysicalHilbertChecks
 end NLS
+namespace NLS.PhysicalSpectralChecks
+open Set Metric Complex Filter Topology NLS.ComplexAnalysis NLS.ZakharovShabat
+open scoped ENNReal Classical
+noncomputable section
+
+example (u : IntervalPairL2) : ∃! ξ : ℤ → ℂ, PhysicalBoundaryRootData .dirichlet u ξ :=
+  existsUnique_physicalBoundaryRootData .dirichlet u
+
+example (u : IntervalPairL2) : ∃! ξ : ℤ → ℂ, PhysicalBoundaryRootData .neumann u ξ :=
+  existsUnique_physicalBoundaryRootData .neumann u
+
+example : physicalBoundaryRoots .dirichlet 0 (-7) = (Real.pi : ℂ)*(-7) := by
+  simpa using physicalBoundaryRoots_zero .dirichlet (-7)
+
+example (u : IntervalPairL2) (ξ : ℤ → ℂ) (h : PhysicalBoundaryRootData .neumann u ξ) :
+    boundaryCharacteristicProduct ξ = l2SeparatedCharacteristic .neumann u := by
+  rw [h.unique]
+  exact (physicalBoundaryRoots_product .neumann u).symm
+
+example (u : physicalRealSubmodule) (n : ℤ) :
+    (physicalBoundaryRoots .dirichlet u.val n).im = 0 ∧
+      ContinuousAt (fun v : IntervalPairL2 => physicalBoundaryRoots .neumann v n) u.val :=
+  ⟨physicalBoundaryRoots_im_eq_zero .dirichlet u n,continuousAt_physicalBoundaryRoots_real .neumann u n⟩
+
+
+example (u : IntervalPairL2) (ξ η : ℤ → ℂ) (h : PhysicalPeriodicEndpointData u ξ η) :
+    ξ = physicalPeriodicLeft u ∧ η = physicalPeriodicRight u :=
+  h.unique (physicalPeriodicEndpoints_spec u)
+
+example (n : ℤ) : physicalPeriodicLeft 0 n = physicalPeriodicRight 0 n :=
+  (physicalPeriodicEndpoints_zero n).1.trans (physicalPeriodicEndpoints_zero n).2.symm
+
+example : physicalPeriodicLeft 0 (-7) = (Real.pi:ℂ)*(-7) := by
+  simpa using (physicalPeriodicEndpoints_zero (-7)).1
+
+example (u : IntervalPairL2) (z : ℂ) :
+    l2Discriminant u z^2 = 4 ↔ ∃ n, physicalPeriodicLeft u n = z ∨ physicalPeriodicRight u n = z :=
+  physicalPeriodicEndpoints_exhaustive u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    analyticOrderAt (fun z => l2Discriminant u z^2-4) z =
+      ((∑ᶠ n : ℤ, ({physicalPeriodicLeft u n,physicalPeriodicRight u n} : Multiset ℂ).count z : ℕ) : ℕ∞) :=
+  physicalPeriodicEndpoints_order u z
+
+example (u : IntervalPairL2) (z : ℂ) : Multipliable (physicalRootPairFactor u z) :=
+  multipliable_physicalRootPairFactor u z
+
+example : physicalCanonicalProductRoot 0 ((Real.pi:ℂ)/2) = -2*Complex.I := by
+  rw [physicalCanonicalProductRoot_zero,Complex.sin_pi_div_two,mul_one]
+
+example (u : IntervalPairL2) (z : ℂ) (hz : z ∈ physicalSpectralRootDomain u) :
+    physicalCanonicalProductRoot u z ≠ 0 ∧ physicalCanonicalProductRoot u z^2 = l2Discriminant u z^2-4 :=
+  ⟨physicalCanonicalProductRoot_ne_zero u z hz,physicalCanonicalProductRoot_sq u z hz⟩
+
+example (u : IntervalPairL2) (Γ : PiecewiseC1Loop) :
+    physicalActionContour u Γ = (Real.pi:ℂ)⁻¹*Γ.integral
+      (fun z => z*deriv (l2Discriminant u) z/physicalCanonicalProductRoot u z) :=
+  physicalActionContour_eq_productRoot u Γ
+
+example (u : physicalRealSubmodule) (n : ℤ) : ∃ C : PhysicalSpectralCircle u.val n,
+    (∀ z ∈ sphere (C.center:ℂ) C.radius, physicalCanonicalProductRoot u.val z ≠ 0) ∧
+    physicalIndexedAction n u.val = (Real.pi:ℂ)⁻¹ *
+      ∮ z in C((C.center:ℂ),C.radius), z*deriv (l2Discriminant u.val) z/physicalCanonicalProductRoot u.val z := by
+  obtain ⟨C⟩ := exists_physicalSpectralCircle u n
+  exact ⟨C,C.root_ne_zero,C.action⟩
+
+
+-- Actual boundary endpoint signs, for arbitrary complex L2 potentials.
+example (u : IntervalPairL2) (z : ℂ) :
+    (∃ n, physicalBoundaryRoots .dirichlet u n = z) ↔
+      (l2SolutionCurve u z (1,1) ⟨1,by constructor <;> norm_num⟩).1 =
+        (l2SolutionCurve u z (1,1) ⟨1,by constructor <;> norm_num⟩).2 := by
+  simpa [BoundaryCondition.extensionSign] using physicalBoundaryRoots_endpoint .dirichlet u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    (∃ n, physicalBoundaryRoots .neumann u n = z) ↔
+      (l2SolutionCurve u z (1,-1) ⟨1,by constructor <;> norm_num⟩).1 =
+        -(l2SolutionCurve u z (1,-1) ⟨1,by constructor <;> norm_num⟩).2 := by
+  simpa [BoundaryCondition.extensionSign] using physicalBoundaryRoots_endpoint .neumann u z
+
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) :
+    analyticOrderAt (l2SeparatedCharacteristic b u) z =
+      ((∑ᶠ n : ℤ, if physicalBoundaryRoots b u n = z then (1:ℕ) else 0 : ℕ) : ℕ∞) :=
+  physicalBoundaryRoots_order b u z
+
+-- The symmetric finite products converge even on the removed segments.
+example (u : IntervalPairL2) (z : ℂ) :
+    Tendsto (fun N => physicalCanonicalProductRootPartial N u z) atTop
+      (𝓝 (physicalCanonicalProductRoot u z)) := tendsto_physicalCanonicalProductRootPartial u z
+
+example (u : physicalRealSubmodule) (n : ℤ) :
+    ∃! a : DeletedCoeff 2 n, PhysicalPsiGapData n u a := existsUnique_physicalPsiGapData n u
+
+example (n : ℤ) (u : physicalRealSubmodule) (a : DeletedCoeff 2 n)
+    (ha : PhysicalPsiGapData n u a) : a = physicalPsiGapRoot n u :=
+  ha.unique (physicalPsiGapRoot_spec n u)
+
+example (n m : ℤ) (hm : m ≠ n) (u : physicalRealSubmodule) :
+    displacedRoots (physicalPsiGapRoot n u : Coeff 2) m ∈ physicalPeriodicSegment u.val m :=
+  (physicalPsiGapRoot_spec n u).gap m hm
+
+example : physicalPsiGapRoot (-7) 0 = 0 := physicalPsiGapRoot_zero (-7)
+
+example (n : ℤ) (u : physicalRealSubmodule) : Differentiable ℂ (physicalPsiFunction n u) :=
+  differentiable_physicalPsiFunction n u
+
+example (n : ℤ) : AnalyticOnNhd ℝ (physicalPsiGapRoot n) univ :=
+  analyticOnNhd_physicalPsiGapRoot n
+
+-- The circles and normalized function are constructed; no root family is assumed.
+example (n : ℤ) (u : physicalRealSubmodule) : ∃ C : PhysicalSpectralCircle u.val n,
+    (2*Real.pi:ℂ)⁻¹*(∮ z in C((C.center:ℂ),C.radius),
+      physicalPsiFunction n u z/physicalCanonicalProductRoot u.val z) = 1 := by
+  obtain ⟨C⟩ := exists_physicalSpectralCircle u n
+  exact ⟨C,by simpa using physicalPsiFunction_period n n u C⟩
+
+example (n m : ℤ) (hm : m ≠ n) (u : physicalRealSubmodule) (C : PhysicalSpectralCircle u.val m) :
+    (2*Real.pi:ℂ)⁻¹*(∮ z in C((C.center:ℂ),C.radius),
+      physicalPsiFunction n u z/physicalCanonicalProductRoot u.val z) = 0 := by
+  simpa only [if_neg hm] using physicalPsiFunction_period n m u C
+
+-- Collapsed free gaps retain the diagonal normalization at a negative index.
+example : ∃ C : PhysicalSpectralCircle (0 : IntervalPairL2) (-7),
+    (2*Real.pi:ℂ)⁻¹*(∮ z in C((C.center:ℂ),C.radius),
+      physicalPsiFunction (-7) 0 z/physicalCanonicalProductRoot 0 z) = 1 := by
+  obtain ⟨C⟩ := exists_physicalSpectralCircle 0 (-7)
+  exact ⟨C,by simpa using physicalPsiFunction_period (-7) (-7) 0 C⟩
+
+section Family
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+include D
+
+example (n : ℤ) (u : physicalRealSubmodule) :
+    physicalPsiGapRoot n u = s n (sourcePhysicalL2Equiv.symm u.val) := D.physicalPsiGapRoot_eq_family n u
+
+example (n : ℤ) (u : physicalRealSubmodule) (z : ℂ) :
+    physicalPsiFunction n u z = sourcePsiCandidate n (z,(s n (sourcePhysicalL2Equiv.symm u.val) : Coeff 2)) :=
+  D.physicalPsiFunction_eq_family n u z
+
+example (n : ℤ) : IsOpen (physicalBirkhoffDomain V) ∧
+    AnalyticOnNhd ℂ (physicalPsiRootExtension s n) (physicalBirkhoffDomain V) :=
+  ⟨D.physicalBirkhoffDomain_open,D.physicalPsiRootExtension_analytic n⟩
+
+example (n m : ℤ) (u : IntervalPairL2) (hu : u ∈ physicalBirkhoffDomain V)
+    (C : PhysicalSpectralCircle u m) :
+    (2*Real.pi:ℂ)⁻¹*(∮ z in C((C.center:ℂ),C.radius),
+      (-2*jointDeletedSingleSpectralProduct n (z,(physicalPsiRootExtension s n u : Coeff 2)))/
+        physicalCanonicalProductRoot u z) = if m = n then 1 else 0 :=
+  D.physicalPsiRootExtension_period n m u hu C
+
+example {A B C : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (E : SourceSection14OriginalData (by simp) (by norm_num) A B C t) (n : ℤ) (u : physicalRealSubmodule) :
+    physicalPsiRootExtension s n u.val = physicalPsiRootExtension t n u.val :=
+  (D.physicalPsiGapRoot_eq_family n u).symm.trans (E.physicalPsiGapRoot_eq_family n u)
+
+end Family
+end
+end NLS.PhysicalSpectralChecks

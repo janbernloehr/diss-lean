@@ -3928,3 +3928,12 @@ import NLS.ZakharovShabat.SourcePhysicalActions
 import NLS.ZakharovShabat.SourcePhysicalActionAngle
 import NLS.ZakharovShabat.SourcePhysicalBirkhoffComplex
 import NLS.ZakharovShabat.SourceSection14PhysicalHilbert
+import NLS.SequenceSpaces.OrderedEnumerationFiniteException
+import NLS.ZakharovShabat.PhysicalBoundaryRoots
+import NLS.SequenceSpaces.OrderedPairedL2Enumeration
+import NLS.ZakharovShabat.PeriodicEndpointGlobalMultiplicity
+import NLS.ZakharovShabat.PhysicalPeriodicEndpoints
+import NLS.ZakharovShabat.PhysicalCanonicalRoot
+import NLS.ZakharovShabat.PhysicalSpectralCircles
+import NLS.ZakharovShabat.PhysicalPsiComparison
+import NLS.ZakharovShabat.PhysicalPsiFamily

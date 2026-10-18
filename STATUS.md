@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: the original physical Hilbert Birkhoff map
+## Current milestone: independently specified physical spectral data
+
+Physical Dirichlet and Neumann labels are now selected from actual L2
+monodromy zeros, analytic multiplicities, lexicographic ordering, and l2
+displacements from the signed free lattice. The specification has exactly
+one solution. Its labels agree with the source construction, exhaust the
+zeros with their full analytic orders, give the normalized characteristic
+product, and satisfy the actual separated endpoint conditions.
+
+Both periodic endpoint sequences are likewise determined by physical
+monodromy discriminant zero orders, ordering, and l2 asymptotics. The
+uniqueness proof covers repeated roots and collapsed gaps. Principal
+standard roots formed from these endpoints define a literal symmetric
+canonical product. Its finite products converge; it has the exact free
+sign -2i sin(z), squares to the physical discriminant squared minus four
+off the gaps, and equals the root used by the physical action integrals.
+Every real physical input supplies nonsingular isolating circles.
+
+The normalized psi roots are selected independently by physical gap
+placement and vanishing off-diagonal contour periods. Existence and
+uniqueness are proved, as is the diagonal period with the exact 1/(2*pi)
+normalization. The entire numerator agrees with every original Section 14
+family. The selected roots vary real analytically in the native physical
+Hilbert norm and extend holomorphically to each family's complex physical
+Birkhoff domain, retaining all periods on supplied isolating circles.
+
+Nine new modules and 33 public checks cover independently supplied labels,
+actual endpoint signs, negative indices, multiplicities, collapsed free
+gaps, product convergence, constructed circles, exact periods, family
+independence, and real/complex analyticity. The source construction supplies
+existence witnesses; the new uniqueness proofs establish the identities.
+The physical labels and products are not defined as aliases of source labels.
+
+These definitions match the inspected 2013 manuscript's spectral and
+normalized-function specifications. The independent physical terminal-sheet
+angle integrals and the precise 2014 source-version comparison remain for
+Remark 14.2(i). The recorded G.2 and Lemma 27.2 qualifications remain.
+The dissertation is incomplete. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: the full project gate passed: 7,602 build jobs, 6,605 public
+examples, and the transitive axiom audit of 36,767 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The nine new
+modules and 33 new checks are warning-free; the build retains 21 existing
+warnings. All 156 source labels and 898 local file links across 38 documents
+validate, and `git diff --check` passes.
+
+## Previous milestone: the original physical Hilbert Birkhoff map
 
 The existing source-to-physical L2 map is now an explicit complex linear
 isometry equivalence onto the ordinary unit-interval L2 pair space. Its
