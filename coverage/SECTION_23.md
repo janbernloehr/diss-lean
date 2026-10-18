@@ -595,10 +595,63 @@ displacement sequence delta. Its norm is bounded by
 The full series consequently converges in L2 with bound
 exp(2||delta||_infinity) times that norm.
 
-Identification of this series with the actual sampled Fourier integrals
-remains open, as does the removable divided-difference L2 estimate.
-The series bound alone is not yet the stronger sampling theorem needed
-for the sharp Fourier remainder.
+[`PerturbedLatticeMomentIntegral.lean`](../NLS/Fourier/PerturbedLatticeMomentIntegral.lean)
+identifies the scalar Taylor series with the actual perturbed Fourier
+integral using integrable factorial majorants.
+[`BoundedLatticeFourierL2.lean`](../NLS/Fourier/BoundedLatticeFourierL2.lean)
+then identifies the L2 sum with every actual sample, with norm at most
+exp(2||delta||_infinity) times the original coefficient norm. The complex
+displacement sequence need only be bounded, not square-summable.
+
+[`BoundedLatticeDifferenceSeries.lean`](../NLS/Fourier/BoundedLatticeDifferenceSeries.lean)
+constructs the removable divided-difference series, with norm at most
+2 exp(2||delta||_infinity) times the original coefficient norm.
+[`BoundedLatticeFourierDifference.lean`](../NLS/Fourier/BoundedLatticeFourierDifference.lean)
+proves that the literal sampling difference equals delta times this
+L2 sequence. At delta_n=0, its value is exactly -2i times the original
+Fourier coefficient of x f. No division by delta is used.
+[`WeightedLatticeFourierDifference.lean`](../NLS/Fourier/WeightedLatticeFourierDifference.lean)
+transfers any weighted supremum bound on delta to the corresponding
+weighted L2 bound on the actual error. Inverse-index displacements
+therefore give one weighted derivative.
+
+## Weighted Riccati sampling at actual boundary and critical roots
+
+[`SobolevRiccatiWeightedSampling.lean`](../NLS/ZakharovShabat/SobolevRiccatiWeightedSampling.lean)
+applies the weighted estimate uniformly to the actual original Riccati
+hierarchy on Hs balls, through N=s and including the H0 hierarchy endpoint.
+[`SourceBoundaryWeightedDisplacement.lean`](../NLS/ZakharovShabat/SourceBoundaryWeightedDisplacement.lean)
+gives locally uniform inverse-bracket displacement bounds at every index
+for either canonical boundary condition near each real original Hs source,
+s >= 1. The neighborhoods include complex sources; the finite central block
+uses continuity of the full displacement sequence.
+[`SourceRiccatiBoundarySamplingError.lean`](../NLS/ZakharovShabat/SourceRiccatiBoundarySamplingError.lean)
+therefore gives one weighted L2 derivative for the actual boundary-sampled
+Riccati density minus its original Fourier coefficients.
+
+[`ClassicalSobolevCriticalRootDisplacement.lean`](../NLS/ZakharovShabat/ClassicalSobolevCriticalRootDisplacement.lean)
+uses a fixed-radius Cauchy estimate to control the actual discriminant
+derivative error on physical H1 balls. The filled sine quotient then gives
+inverse-index bounds for every critical root in the distant quarter-pi discs.
+[`SourceCriticalSobolevDisplacement.lean`](../NLS/ZakharovShabat/SourceCriticalSobolevDisplacement.lean)
+transfers this estimate to the actual canonical critical points through
+exact physical compatibility and their critical equation.
+[`SourceCriticalWeightedDisplacement.lean`](../NLS/ZakharovShabat/SourceCriticalWeightedDisplacement.lean)
+includes the finite central block and both signed tails on one complex Hs
+neighborhood near each real source.
+[`SourceRiccatiCriticalSamplingError.lean`](../NLS/ZakharovShabat/SourceRiccatiCriticalSamplingError.lean)
+then gives the same one-derivative weighted L2 gain at the actual critical
+sequence. No smooth representative is required for displacement estimates.
+The physical-density conclusions retain smooth periodic representatives
+with exactly matching original coefficients, and include N=s without an
+additional source derivative.
+
+Three sampling examples check a constant pi displacement (allowed even
+though it is not L2), the removable derivative -i for the constant density
+at index zero, and vanishing error in an arbitrary weighted space at a
+negative index. The two sharp Fourier spectral errors and full one-smoothing
+still require weighted WKB remainders and the actual phase, midpoint, and
+omitted-product cancellations.
 
 ## Validation and remaining work
 

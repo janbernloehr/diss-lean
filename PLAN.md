@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Current milestone: actual characteristic/root estimates and Fourier moment series
+## Current milestone: weighted Fourier sampling at boundary and critical roots
+
+Actual Fourier integrals sampled at any bounded complex displacement
+of the pi lattice now form an L2 sequence, with bound exp(2||delta||_infinity)
+times the original Fourier L2 norm. The displacement need not be L2.
+The literal sampling error factors by delta and an L2 divided difference,
+with bound 2 exp(2||delta||_infinity) times that norm. Zero displacements
+have the exact removable derivative value. Any weighted supremum bound
+on delta therefore gives the same weighted L2 bound on the actual error.
+These statements apply to continuous unit-interval densities without
+matching endpoint values.
+
+For each real original Hs source, s >= 1, the actual Dirichlet, Neumann,
+and critical displacements have locally uniform inverse-index bounds
+on complex Hs neighborhoods, including the central block and both signed
+tails. The critical bound follows from a Cauchy estimate for the physical
+H1 discriminant derivative and the actual canonical critical equation.
+No smooth representative is needed for these displacement bounds.
+
+Consequently, the actual Riccati density sampled at any of these three
+canonical root sequences minus its original Fourier coefficients gains
+one weighted L2 derivative locally uniformly. Every N <= s is included,
+particularly N=s, without an additional source derivative. These physical
+density statements retain smooth periodic representatives with exact
+original Fourier coefficients.
+
+Twelve modules and three public examples cover bounded non-L2 shifts,
+the removable derivative's sign, and zero error in an arbitrary weighted
+space at a negative index. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The two sharp Fourier spectral errors and full Fourier one-smoothing
+remain open. The new sampling bound supplies one required ingredient;
+weighted square-summable WKB remainders and the actual phase, midpoint,
+and omitted-product cancellations still need proofs.
+
+Validation: `./scripts/check.sh` passes with 7,775 build jobs, 6,806
+public examples, and a transitive axiom audit of 37,687 NLS declarations.
+The build retains 21 existing warnings; the twelve new modules introduce none.
+Documentation checks cover 1,274 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: actual characteristic/root estimates and Fourier moment series
 
 The explicit WKB column models now give order-(N+1) errors for the
 actual discriminant, off-diagonal anti-discriminant, and both normalized

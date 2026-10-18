@@ -62545,3 +62545,48 @@ example (θ : BoundaryCondition) (a b : ℝ → ℂ) :
   ring
 
 end NLS.WKBCharacteristicChecks
+
+namespace NLS.WeightedSamplingChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+-- A constant nonzero displacement is allowed and shifts the actual signed index.
+example (f : ℝ → ℂ) (hf : Continuous f) :
+    ∃ c : NLS.Coeff 2, ∀ n : ℤ, c n = periodOneCoefficient f (n+1) := by
+  let δ : NLS.Coeff ⊤ := (Real.pi:ℂ) • 1
+  obtain ⟨c,hc,_⟩ := exists_bounded_lattice_fourier_coefficients f hf δ
+  refine ⟨c,?_⟩
+  intro n
+  rw [hc n]
+  have he : (Real.pi:ℂ)*n+δ n = (Real.pi:ℂ)*(n+1:ℤ) := by
+    change (Real.pi:ℂ)*n+(Real.pi:ℂ)*1 = (Real.pi:ℂ)*(n+1:ℤ)
+    push_cast
+    ring
+  rw [he]
+  exact integral_pi_lattice_eq_periodOneCoefficient f (n+1)
+
+-- The removable divided difference at zero frequency has the correct sign.
+example : ∃ r : NLS.Coeff 2, r 0 = -Complex.I := by
+  obtain ⟨r,_,hz,_⟩ := exists_bounded_lattice_fourier_difference (fun _ : ℝ => (1:ℂ))
+    continuous_const (0 : NLS.Coeff ⊤)
+  refine ⟨r,?_⟩
+  have h := hz 0 rfl
+  have hi : periodOneCoefficient (fun x : ℝ => (x:ℂ)*1) 0 = 1/2 := by
+    rw [← integral_pi_lattice_eq_periodOneCoefficient]
+    simp only [Int.cast_zero,mul_zero,zero_mul,Complex.exp_zero,mul_one]
+    rw [intervalIntegral.integral_ofReal]
+    norm_num
+  rw [hi] at h
+  exact h.trans (by ring)
+
+-- Zero displacement makes the literal weighted error identically zero, including negative indices.
+example (f : ℝ → ℂ) (hf : Continuous f) (w : NLS.Weight) :
+    ∃ e : NLS.WeightedCoeff w 2, ‖e‖ ≤ 0 ∧
+      e.val (-3) = (∫ x in (0:ℝ)..1, f x*exp (-2*Complex.I*((Real.pi:ℂ)*(-3))*x))-
+        periodOneCoefficient f (-3) := by
+  obtain ⟨e,he,hn⟩ := exists_weighted_lattice_fourier_difference f hf (0 : NLS.Coeff ⊤)
+    w 0 le_rfl (by simp)
+  refine ⟨e,by simpa using hn,?_⟩
+  simpa using he (-3)
+
+end NLS.WeightedSamplingChecks
