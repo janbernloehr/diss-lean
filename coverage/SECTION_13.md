@@ -354,3 +354,13 @@ and `git diff --check` passes.
 | [SourceAngularEtaImproperRemainder](../NLS/ZakharovShabat/SourceAngularEtaImproperRemainder.lean) | Joint limit of the actual-minus-model truncation difference |
 | [SourceAngularOriginalEtaImproperRemainder](../NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder.lean) | One normalized remainder for every original disk and all its admissible paths |
 | [SourceAngularOriginalEtaImproper](../NLS/ZakharovShabat/SourceAngularOriginalEtaImproper.lean) | Arbitrary-path existence and agreement with the original eta modulo 2π |
+
+## Literal physical spectral commutation
+
+[`PhysicalSpectralPoisson.lean`](../NLS/ZakharovShabat/PhysicalSpectralPoisson.lean)
+proves that the actual physical monodromy discriminants commute under the
+literal L2 gradient bracket at every complex physical input. It also proves
+that the indexed physical actions commute at every real physical input,
+including closed gaps. The action proof uses their full complex differentials
+on the physical Birkhoff domain, with the exact identity dI=x dx+y dy.
+The top-level commutation theorem constructs the normalized family internally.

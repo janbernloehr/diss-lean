@@ -900,3 +900,20 @@ integral-defined real map, and its canonical identities together.
 These are literal integral statements about unique physical L2 gradients,
 with no canonical-bracket premise. The exact 2014 edition comparison remains
 open; this result does not assert global surjectivity at p>2.
+
+## Physical action Hamiltonian fields
+
+[`PhysicalSpectralPoisson.lean`](../NLS/ZakharovShabat/PhysicalSpectralPoisson.lean)
+proves analyticity of each indexed physical action on the full complex
+physical Birkhoff domain and the cotangent identity dI_n=x_n dx_n+y_n dy_n.
+The actions commute on the physical real form. This uses the actual
+physical indexed integrals and the literal physical gradient bracket.
+
+[`PhysicalActionHamiltonian.lean`](../NLS/ZakharovShabat/PhysicalActionHamiltonian.lean)
+then proves that the native action field is tangent to the real form and
+has coordinate velocities (-y_n,x_n) in its selected pair, zero in every
+other pair. A closed physical gap makes both the full complex cotangent
+and the whole native field zero. The constructed extension theorem supplies
+these identities for the intrinsic physical map without caller-supplied
+family data. This step establishes the vector fields and their coordinate
+velocities; it does not assert a physical flow-existence theorem.

@@ -256,3 +256,15 @@ The numbered Section 3 audit now starts with Proposition 3.1 in
 [SECTION_3.md](SECTION_3.md), retaining the printed-height qualification.
 The candidate inventory and these maps are not a completeness certificate
 for the dissertation.
+
+## Native physical Hamiltonian directions
+
+[`PhysicalPoissonAlgebra.lean`](../NLS/ZakharovShabat/PhysicalPoissonAlgebra.lean)
+proves complex bilinearity of the literal cotangent bivector.
+[`PhysicalHamiltonianDirection.lean`](../NLS/ZakharovShabat/PhysicalHamiltonianDirection.lean)
+defines the native L2 direction by (-i grad_2, i grad_1), proves that every
+cotangent evaluates on it to the literal integral bracket, and identifies
+it with the exact Fourier realization of the source direction. A functional
+that is complex differentiable and real on the physical real form has a
+Hamiltonian field tangent to that real form. No regularity beyond the stated
+differentiability is imposed; this does not prove a flow exists.

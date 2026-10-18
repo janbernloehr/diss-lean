@@ -108,3 +108,20 @@ certificate for Chapter 3 or the dissertation.
 - [Actual analytic gap-weighted sequences](../NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean)
 - [Outside-gap geometry and collapsed limits](../NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean)
 - [Section 15 original-family package](../NLS/ZakharovShabat/SourceSection15Original.lean)
+
+## Physical action differentials and Hamiltonian signs
+
+[`PhysicalHamiltonianDirection.lean`](../NLS/ZakharovShabat/PhysicalHamiltonianDirection.lean)
+realizes the Hamiltonian direction in the native physical Hilbert pair by
+the actual cross-gradients (-i grad_2, i grad_1). Every differential evaluates
+on it to the literal physical bracket. Together with the full physical
+identity dI_n=x_n dx_n+y_n dy_n, Lemma 15.3's mixed bracket -delta_nm
+therefore gives velocity (-y_n,x_n) in the selected coordinate pair.
+
+[`PhysicalActionHamiltonian.lean`](../NLS/ZakharovShabat/PhysicalActionHamiltonian.lean)
+proves this for every real physical input, including closed gaps and signed
+indices, and for a constructed extension of the intrinsic map. At closed
+gaps, the entire action differential and physical field vanish, which is
+stronger than zero coordinate velocities alone. Real tangency is proved
+independently through the physical cross-gradient formula. Flow existence
+is outside this step's claims.

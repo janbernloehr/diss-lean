@@ -61126,3 +61126,105 @@ example : ∃ U : Set IntervalPairL2, ∃ F : IntervalPairL2 → CoeffPair 2,
   intrinsicPhysicalBirkhoffMap_canonical_extension
 
 end NLS.PhysicalPoissonChecks
+
+
+noncomputable section
+open Set Metric MeasureTheory Complex Filter Topology NLS.ComplexAnalysis NLS.Poisson
+open scoped ENNReal Classical
+namespace NLS.PhysicalActionPoissonChecks
+open ZakharovShabat
+
+example (u : IntervalPairL2) (z w : ℂ) :
+    physicalBracket (fun v => l2Discriminant v z) (fun v => l2Discriminant v w) u = 0 :=
+  physicalBracket_discriminants u z w
+
+example (u : physicalRealSubmodule) :
+    physicalBracket (physicalIndexedAction (-4)) (physicalIndexedAction 3) u.val = 0 :=
+  physicalBracket_indexedActions (-4) 3 u
+
+example (L M : IntervalPairL2 →L[ℂ] ℂ) :
+    L (physicalHamiltonianDirection M) = physicalCotangentBivector L M :=
+  apply_physicalHamiltonianDirection L M
+
+example (L : IntervalPairL2 →L[ℂ] ℂ) :
+    (physicalHamiltonianDirection L).fst = (-Complex.I) • (physicalCotangentGradient L).snd ∧
+    (physicalHamiltonianDirection L).snd = Complex.I • (physicalCotangentGradient L).fst := ⟨rfl,rfl⟩
+
+example (L : IntervalPairL2 →L[ℂ] ℂ) :
+    physicalHamiltonianDirection L =
+      sourcePhysicalL2 (sourceHamiltonianDirection le_rfl (L.comp sourcePhysicalL2)) :=
+  physicalHamiltonianDirection_eq_source L
+
+example (L : IntervalPairL2 →L[ℂ] ℂ)
+    (hL : ∀ h : physicalRealSubmodule, (L h.val).im = 0) :
+    physicalHamiltonianDirection L ∈ physicalRealSubmodule :=
+  physicalHamiltonianDirection_mem_real L hL
+
+example (H : IntervalPairL2 → ℂ) (u : physicalRealSubmodule)
+    (hH : DifferentiableAt ℂ H u.val)
+    (hreal : ∀ v : physicalRealSubmodule, (H v.val).im = 0) :
+    physicalHamiltonianVector H u.val ∈ physicalRealSubmodule :=
+  physicalHamiltonianVector_mem_real H u hH hreal
+
+example (F G : IntervalPairL2 → ℂ) (u : IntervalPairL2) :
+    (fderiv ℂ F u) (physicalHamiltonianVector G u) = physicalBracket F G u :=
+  fderiv_apply_physicalHamiltonianVector F G u
+
+example (n : ℤ) (u : physicalRealSubmodule) :
+    physicalHamiltonianVector (physicalIndexedAction n) u.val ∈ physicalRealSubmodule :=
+  physicalHamiltonianVector_indexedAction_real n u
+
+example (n : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val n = physicalPeriodicRight u.val n) :
+    physicalHamiltonianVector (physicalIndexedAction n) u.val = 0 :=
+  physicalHamiltonianVector_indexedAction_zero_of_collapsed n u hg
+
+example : physicalHamiltonianVector (physicalIndexedAction (-7)) 0 = 0 :=
+  physicalHamiltonianVector_indexedAction_zero_of_collapsed (-7) 0
+    ((physicalPeriodicEndpoints_zero (-7)).1.trans (physicalPeriodicEndpoints_zero (-7)).2.symm)
+
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s) (n : ℤ) :
+    AnalyticOnNhd ℂ (physicalIndexedAction n) (physicalBirkhoffDomain V) := D.physicalIndexedAction_analytic n
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s) (n : ℤ)
+    (u : IntervalPairL2) (hu : u ∈ physicalBirkhoffDomain V) :
+    fderiv ℂ (physicalIndexedAction n) u =
+      (physicalBirkhoffMap s u).fst n • fderiv ℂ (fun v => (physicalBirkhoffMap s v).fst n) u+
+      (physicalBirkhoffMap s u).snd n • fderiv ℂ (fun v => (physicalBirkhoffMap s v).snd n) u :=
+  D.physicalIndexedAction_fderiv u hu n
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) :
+    (fderiv ℂ (fun v => (physicalBirkhoffMap s v).fst (-2)) u.val)
+      (physicalHamiltonianVector (physicalIndexedAction 3) u.val) = 0 ∧
+    (fderiv ℂ (fun v => (physicalBirkhoffMap s v).snd (-2)) u.val)
+      (physicalHamiltonianVector (physicalIndexedAction 3) u.val) = 0 := by
+  simpa using D.physicalBirkhoffMap_actionHamiltonian 3 (-2) u
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) (k : ℤ) :
+    (fderiv ℂ (fun v => (physicalBirkhoffMap s v).fst k) u.val)
+      (physicalHamiltonianVector (physicalIndexedAction k) u.val) = -(physicalBirkhoffMap s u.val).snd k ∧
+    (fderiv ℂ (fun v => (physicalBirkhoffMap s v).snd k) u.val)
+      (physicalHamiltonianVector (physicalIndexedAction k) u.val) = (physicalBirkhoffMap s u.val).fst k := by
+  simpa using D.physicalBirkhoffMap_actionHamiltonian k k u
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) (k : ℤ)
+    (hg : physicalPeriodicLeft u.val k = physicalPeriodicRight u.val k) :
+    fderiv ℂ (physicalIndexedAction k) u.val = 0 :=
+  D.physicalIndexedAction_fderiv_zero_of_collapsed k u hg
+
+example : ∃ U : Set IntervalPairL2, ∃ F : IntervalPairL2 → CoeffPair 2,
+    IsOpen U ∧ (∀ u : physicalRealSubmodule, u.val ∈ U) ∧ AnalyticOnNhd ℂ F U ∧
+    (∀ u : physicalRealSubmodule, physicalRealTargetComplex (intrinsicPhysicalBirkhoffMap u) = F u.val) ∧
+    ∀ (u : physicalRealSubmodule) (k n : ℤ),
+      (fderiv ℂ (fun v => (F v).fst n) u.val) (physicalHamiltonianVector (physicalIndexedAction k) u.val) =
+        -(F u.val).snd k*(if n = k then 1 else 0) ∧
+      (fderiv ℂ (fun v => (F v).snd n) u.val) (physicalHamiltonianVector (physicalIndexedAction k) u.val) =
+        (F u.val).fst k*(if n = k then 1 else 0) :=
+  intrinsicPhysicalBirkhoffMap_actionHamiltonian_extension
+
+end NLS.PhysicalActionPoissonChecks

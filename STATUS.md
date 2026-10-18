@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: literal physical Poisson brackets
+## Current milestone: physical actions and Hamiltonian fields
+
+The literal physical Poisson bracket now proves commutation of the actual
+monodromy discriminants on the entire complex L2 pair space. Physical
+indexed actions are analytic on the complex Birkhoff domain, with full
+differential dI_n = x_n dx_n + y_n dy_n. The actions commute at every real
+physical input, including collapsed gaps.
+
+The physical Hamiltonian direction is defined by the actual cross-gradient
+components (-i grad_2, i grad_1). Evaluating any continuous complex cotangent
+on this direction gives the literal physical bracket. The direction agrees
+with the Fourier realization of the source field and preserves the physical
+real form for real differentiable functionals.
+
+Each action field rotates precisely its Birkhoff coordinate pair with
+velocity (-y_n,x_n); every other pair has zero velocity. At a collapsed
+gap, the full complex action differential and the entire physical field
+vanish. A constructed analytic extension of the intrinsic physical map
+supplies these identities without a normalized-family hypothesis.
+These are vector-field identities; existence of a physical flow is not
+asserted by this step.
+
+Four new modules and 17 public checks cover arbitrary complex discriminants,
+real action commutation, the literal physical gradient direction, real-form
+preservation, negative and unequal indices, selected-pair rotation, and
+complete field vanishing at collapsed gaps.
+
+Next: integrate the exact physical Fourier linearization of the intrinsic
+map and its inverse. The exact 2014 edition comparison for Remark 14.2(i)
+and the recorded G.2 and Lemma 27.2 qualifications remain. The dissertation
+is incomplete. See [the Section 14 audit](coverage/SECTION_14.md) and
+[the Section 15 audit](coverage/SECTION_15.md).
+
+Validation: the full project gate passed: 7,617 build jobs, 6,663 public
+examples, and the transitive axiom audit of 36,951 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The four new
+modules and 17 new checks are warning-free; the build retains 21 existing
+warnings. All 156 candidate source labels and 946 local file links across
+38 documents validate, and `git diff --check` passes.
+
+## Previous milestone: literal physical Poisson brackets
 
 Every continuous complex cotangent on the original physical Hilbert pair
 space now has a unique L2 gradient for the dissertation's unconjugated

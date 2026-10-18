@@ -3948,3 +3948,7 @@ import NLS.ZakharovShabat.PhysicalL2BilinearPairing
 import NLS.ZakharovShabat.PhysicalCotangentGradient
 import NLS.ZakharovShabat.PhysicalPoissonBracket
 import NLS.ZakharovShabat.PhysicalBirkhoffCanonical
+import NLS.ZakharovShabat.PhysicalPoissonAlgebra
+import NLS.ZakharovShabat.PhysicalHamiltonianDirection
+import NLS.ZakharovShabat.PhysicalSpectralPoisson
+import NLS.ZakharovShabat.PhysicalActionHamiltonian

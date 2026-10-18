@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the physical Birkhoff coordinates now satisfy the canonical
-Poisson identities using literal L2 gradient integrals, including at
-collapsed gaps. Every continuous complex cotangent has a unique physical
-L2 gradient. The Fourier comparison verifies the frequency reversal and
-minus i factor; the mixed x,y bracket is minus the Kronecker delta.
+Latest step: the actual physical discriminants and actions now Poisson
+commute, and physical action Hamiltonian fields rotate exactly one Birkhoff
+coordinate pair with velocity (-y,x). The direction uses the literal L2
+cross-gradients. At a collapsed gap, the full action differential and the
+entire field vanish. These are vector-field identities, not a flow-existence
+result.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
