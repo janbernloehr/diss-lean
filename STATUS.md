@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: independently specified physical spectral data
+## Current milestone: the Birkhoff map from physical action and angle integrals
+
+The physical angle construction now uses paths from the independently
+specified left periodic endpoint to the physical Dirichlet root. The
+continued scalar root squares to the actual monodromy discriminant squared
+minus four and is continuous along the path. At a regular Dirichlet terminal,
+the actual physical anti-discriminant fixes its sign. One constructed C1
+path makes every off-diagonal integrand integrable; at open gaps the diagonal
+integrand and its omitted-product model are integrable as well.
+
+Literal physical integrals determine beta uniquely, independently of the
+path, circle, and continued root. They determine eta modulo 2*pi on each
+open gap. The selected beta terms are real and absolutely summable,
+including collapsed gaps, whose terms vanish. Every admissible eta and the
+selected theta are real on their open-gap domains. Their comparison with
+every original Section 14 family preserves the terminal sign and the exact
+2*pi ambiguity.
+
+The intrinsic action is a literal physical discriminant contour integral.
+Together with theta it defines x_n=sqrt(2 I_n) cos(theta_n) and
+y_n=sqrt(2 I_n) sin(theta_n). Both sequences belong to the native Hilbert
+target, and the full map equals every original physical Birkhoff family.
+The map is defined by these physical integrals, not by transport of an
+existing Birkhoff map. The comparison proves a global homeomorphism,
+analyticity in both directions, both inverse identities, and exact norm
+preservation. Every admissible eta gives the same coordinates; closed gaps
+allow arbitrary angles. The zero source maps to zero. A complex analytic
+extension exists on an open physical neighborhood of the whole real form.
+
+Seven new modules and 28 public checks cover actual terminal signs, arbitrary
+root continuation, path-independent integrals, eta periods, collapsed gaps,
+negative indices, reality, absolute convergence, full-map equality, both
+inverse identities, and the complex extension.
+
+This completes the intrinsic physical action-angle formula comparison for
+the inspected 2013 manuscript's conventions. The precise 2014 edition
+comparison remains open for Remark 14.2(i). The recorded G.2 and Lemma 27.2
+qualifications remain; the dissertation is incomplete. See
+[the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: the full project gate passed: 7,609 build jobs, 6,633 public
+examples, and the transitive axiom audit of 36,886 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The seven new
+modules and 28 new checks are warning-free; the build retains 21 existing
+warnings. All 156 source labels and 914 local file links across 38 documents
+validate, and `git diff --check` passes.
+
+## Previous milestone: independently specified physical spectral data
 
 Physical Dirichlet and Neumann labels are now selected from actual L2
 monodromy zeros, analytic multiplicities, lexicographic ordering, and l2

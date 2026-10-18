@@ -3937,3 +3937,10 @@ import NLS.ZakharovShabat.PhysicalCanonicalRoot
 import NLS.ZakharovShabat.PhysicalSpectralCircles
 import NLS.ZakharovShabat.PhysicalPsiComparison
 import NLS.ZakharovShabat.PhysicalPsiFamily
+import NLS.ZakharovShabat.PhysicalAngularPaths
+import NLS.ZakharovShabat.PhysicalDirichletPaths
+import NLS.ZakharovShabat.PhysicalAngularComparison
+import NLS.ZakharovShabat.PhysicalAngularValues
+import NLS.ZakharovShabat.PhysicalBirkhoffIntrinsic
+import NLS.ZakharovShabat.PhysicalAngularReality
+import NLS.ZakharovShabat.PhysicalBirkhoffIntrinsicProperties

@@ -60899,3 +60899,149 @@ example {A B C : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCo
 end Family
 end
 end NLS.PhysicalSpectralChecks
+
+noncomputable section
+open Set Metric Complex Filter Topology NLS.ComplexAnalysis
+open scoped ENNReal Classical unitInterval
+namespace NLS.PhysicalAnglesChecks
+open NLS.ZakharovShabat
+
+example (n m : ℤ) (hm : m ≠ n) (u : physicalRealSubmodule) :
+    ∃! v : ℂ, v ∈ physicalAngularIntegralValues n m u := existsUnique_physicalBeta_value n m hm u
+
+example (n : ℤ) (u : physicalRealSubmodule) : physicalBeta n n u = 0 := by
+  simp [physicalBeta]
+
+example (n : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val n ≠ physicalPeriodicRight u.val n) :
+    physicalEta n u ∈ physicalAngularIntegralValues n n u := physicalEta_mem n u hg
+
+example (u : physicalRealSubmodule) :
+    Memℓp (intrinsicPhysicalX u) 2 ∧ Memℓp (intrinsicPhysicalY u) 2 := intrinsicPhysical_coordinates_memlp u
+
+example (n : ℤ) (u : physicalRealSubmodule) (C : PhysicalSpectralCircle u.val n) :
+    intrinsicPhysicalAction n u = (Real.pi:ℂ)⁻¹*∮ z in C((C.center:ℂ),C.radius),
+      z*deriv (l2Discriminant u.val) z/physicalCanonicalProductRoot u.val z := by
+  rw [intrinsicPhysicalAction_eq_indexed]
+  exact C.action
+
+example (u : physicalRealSubmodule) : ‖intrinsicPhysicalBirkhoffMap u‖ = ‖u‖ := by
+  obtain ⟨e,he,_,_,hn⟩ := intrinsicPhysicalBirkhoffMap_global_inverse
+  rw [← he]
+  exact hn u
+
+example : ∃ e : physicalRealSubmodule ≃ₜ PhysicalRealBirkhoffTarget,
+    (e : physicalRealSubmodule → PhysicalRealBirkhoffTarget) = intrinsicPhysicalBirkhoffMap ∧
+    (∀ u, e.symm (intrinsicPhysicalBirkhoffMap u) = u) ∧
+    ∀ z, intrinsicPhysicalBirkhoffMap (e.symm z) = z := by
+  obtain ⟨e,he,_⟩ := intrinsicPhysicalBirkhoffMap_global_inverse
+  exact ⟨e,he,fun u => by rw [← he]; exact e.symm_apply_apply u,
+    fun z => by rw [← he]; exact e.apply_symm_apply z⟩
+
+example : (intrinsicPhysicalBirkhoffMap 0).fst (-7) = 0 := by
+  rw [intrinsicPhysicalBirkhoffMap_zero]
+  rfl
+
+example (u : IntervalPairL2) (m : ℤ) (C : PhysicalSpectralCircle u m)
+    (q : ℂ → ℂ) {a b : ℂ} (γ : Path a b)
+    (h : PhysicalAngularPathRootData u m (C.center:ℂ) C.radius q γ) :
+    ∃ k : ℂ, (k = 1 ∨ k = -1) ∧ ∀ t ∈ Ioo (0:ℝ) 1,
+      q (γ.extend t) = k*physicalCanonicalProductRoot u (γ.extend t) := h.exists_fixed_sign C
+
+
+-- The terminal sign uses the actual physical anti-discriminant.
+example (u : physicalRealSubmodule) (m : ℤ) (P : PhysicalDirichletPathData m u)
+    (h : l2AntiDiscriminant u.val (physicalBoundaryRoots .dirichlet u.val m) ≠ 0) :
+    P.root (physicalBoundaryRoots .dirichlet u.val m) =
+      l2AntiDiscriminant u.val (physicalBoundaryRoots .dirichlet u.val m) := P.normalized h
+
+example (n m : ℤ) (hm : m ≠ n) (u : physicalRealSubmodule)
+    {v w : ℂ} (hv : v ∈ physicalAngularIntegralValues n m u)
+    (hw : w ∈ physicalAngularIntegralValues n m u) : v = w :=
+  (physicalBeta_unique n m hm u hv).trans (physicalBeta_unique n m hm u hw).symm
+
+example (n : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val n ≠ physicalPeriodicRight u.val n)
+    {v w : ℂ} (hv : v ∈ physicalAngularIntegralValues n n u)
+    (hw : w ∈ physicalAngularIntegralValues n n u) :
+    v.im = 0 ∧ ∃ k : ℤ, v-w = (k:ℂ)*(2*Real.pi) :=
+  ⟨physicalEta_value_im_eq_zero n u hg hv,physicalEta_values_period n u hg hv hw⟩
+
+example (n : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val n ≠ physicalPeriodicRight u.val n) : (physicalTheta n u).im = 0 :=
+  physicalTheta_im_eq_zero n u hg
+
+example (n : ℤ) (u : physicalRealSubmodule) : Summable (fun m => ‖physicalBeta n m u‖) :=
+  summable_norm_physicalBeta n u
+
+example (n m : ℤ) (u : physicalRealSubmodule) : (physicalBeta n m u).im = 0 :=
+  physicalBeta_im_eq_zero n m u
+
+example (n m : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val m = physicalPeriodicRight u.val m) : physicalBeta n m u = 0 :=
+  physicalBeta_eq_zero_of_collapsed n m u hg
+
+example : physicalBeta 3 (-7) 0 = 0 := by
+  apply physicalBeta_eq_zero_of_collapsed
+  exact (physicalPeriodicEndpoints_zero (-7)).1.trans (physicalPeriodicEndpoints_zero (-7)).2.symm
+
+-- Neither source families nor path integrability are supplied by the caller.
+example (u : physicalRealSubmodule) (m : ℤ) : ∃ P : PhysicalDirichletPathData m u,
+    ∀ n : ℤ, m ≠ n → CurveIntegrable (holomorphicOneForm (physicalAngularIntegrand n u P.root)) P.path := by
+  obtain ⟨_,_,_,_,D⟩ := sourceSection14 (p := 2) (by simp) (by norm_num)
+  obtain ⟨P,hi,_⟩ := D.toSourceSection14OriginalData.exists_physicalDirichlet_integrablePath m u
+  exact ⟨P,hi⟩
+
+example (u : physicalRealSubmodule) (n : ℤ) (v : ℂ)
+    (hv : v ∈ physicalAngularIntegralValues n n u) :
+    (intrinsicPhysicalBirkhoffMap u).snd n = Real.sqrt (2*(intrinsicPhysicalAction n u).re)*
+      Real.sin (v+physicalBetaCorrection n u).re :=
+  (intrinsicPhysicalBirkhoffMap_formula_of_eta u n v (fun _ => hv)).2
+
+-- At a collapsed gap the formula accepts any angle, with no membership premise.
+example (u : physicalRealSubmodule) (n : ℤ) (v : ℂ)
+    (hg : physicalPeriodicLeft u.val n = physicalPeriodicRight u.val n) :
+    (intrinsicPhysicalBirkhoffMap u).fst n = Real.sqrt (2*(intrinsicPhysicalAction n u).re)*
+      Real.cos (v+physicalBetaCorrection n u).re :=
+  (intrinsicPhysicalBirkhoffMap_formula_of_eta u n v (fun h => (h hg).elim)).1
+
+example : AnalyticOnNhd ℝ intrinsicPhysicalBirkhoffMap univ ∧
+    AnalyticOnNhd ℝ intrinsicPhysicalBirkhoffHomeomorph.symm univ :=
+  ⟨intrinsicPhysicalBirkhoffMap_analytic,intrinsicPhysicalBirkhoffHomeomorph_analytic.2⟩
+
+example (u : physicalRealSubmodule) :
+    intrinsicPhysicalBirkhoffHomeomorph.symm (intrinsicPhysicalBirkhoffMap u) = u :=
+  intrinsicPhysicalBirkhoffHomeomorph_left_inv u
+
+example (z : PhysicalRealBirkhoffTarget) :
+    intrinsicPhysicalBirkhoffMap (intrinsicPhysicalBirkhoffHomeomorph.symm z) = z ∧
+      ‖intrinsicPhysicalBirkhoffHomeomorph.symm z‖ = ‖z‖ :=
+  ⟨intrinsicPhysicalBirkhoffHomeomorph_right_inv z,intrinsicPhysicalBirkhoffHomeomorph_symm_norm z⟩
+
+example : ∃ U : Set IntervalPairL2, ∃ F : IntervalPairL2 → CoeffPair 2,
+    IsOpen U ∧ (∀ u : physicalRealSubmodule, u.val ∈ U) ∧ AnalyticOnNhd ℂ F U ∧
+    ∀ u : physicalRealSubmodule, physicalRealTargetComplex (intrinsicPhysicalBirkhoffMap u) = F u.val :=
+  intrinsicPhysicalBirkhoffMap_complex_extension
+
+section Family
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+include D
+
+example (n : ℤ) (u : physicalRealSubmodule)
+    (hg : physicalPeriodicLeft u.val n ≠ physicalPeriodicRight u.val n) :
+    ∃ k : ℤ, physicalTheta n u-sourceAngularOriginalTheta (by simp) (by norm_num) n s
+      (sourcePhysicalL2Equiv.symm u.val) = (k:ℂ)*(2*Real.pi) := D.physicalTheta_sub_source n u hg
+
+example : intrinsicPhysicalBirkhoffMap = D.physicalRealActionAngleHomeomorph := D.intrinsicPhysicalBirkhoffMap_eq
+
+example (u : physicalRealSubmodule) :
+    physicalRealTargetComplex (intrinsicPhysicalBirkhoffMap u) = physicalBirkhoffMap s u.val :=
+  D.intrinsicPhysicalBirkhoffMap_complex u
+
+example (z : PhysicalRealBirkhoffTarget) :
+    intrinsicPhysicalBirkhoffHomeomorph.symm z = D.physicalRealActionAngleHomeomorph.symm z :=
+  D.intrinsicPhysicalBirkhoffHomeomorph_symm z
+
+end Family
+end NLS.PhysicalAnglesChecks

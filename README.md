@@ -5,16 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: physical spectral labels are uniquely specified by actual
-monodromy zeros, multiplicities, ordering, and l2 asymptotics. Their literal
-canonical product and normalized psi-functions agree with the original
-Birkhoff family, including exact periods, collapsed gaps, and analytic
-dependence on physical Hilbert inputs.
+Latest step: physical contour and path integrals now define the full
+Birkhoff map independently. Its beta integrals are unique and absolutely
+summable; eta choices agree modulo 2*pi. The map equals every original
+Section 14 family and has a global analytic inverse in the physical
+Hilbert norms, including at collapsed gaps.
 
-Next: identify the independent physical terminal-sheet angle integrals
-for Remark 14.2(i) and compare the cited 2014 edition with the inspected
-2013 manuscript. The Lemma 27.2 and G.2 qualifications remain recorded.
-The dissertation is incomplete.
+The physical formula comparison is complete for the inspected 2013
+manuscript's conventions. The precise 2014 edition comparison and the
+recorded Lemma 27.2 and G.2 qualifications remain. The dissertation is
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
