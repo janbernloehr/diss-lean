@@ -62020,3 +62020,61 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Delete
     simpa using (hB n).symm
 
 end NLS.BirkhoffEtaEndpointChecks
+
+/-! Higher-order angular smoothing with the exact physical source norm. -/
+
+namespace NLS.HigherAngularSmoothingChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+example (a : SobolevSource 3) :
+    ‖sourcePiSobolevCoordinates 3 1 (by omega) a‖ ≤
+      ‖sourcePiSobolevCoordinates 3 3 le_rfl a‖ :=
+  norm_sourcePiSobolevCoordinates_mono 3 1 3 (by omega) le_rfl (by omega) a
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeHigherSobolevSourceLocus 2) :
+    (D.signedEtaHm 2 a (-1) (Or.inr rfl)).val (-3) =
+      sourceGapWeightedEtaCoordinate (by simp) (by norm_num) (-3) s (-1)
+        (higherSobolevSourceInclusion 2 a.val) := rfl
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus 3,
+      ‖sourcePiSobolevCoordinates 3 3 le_rfl a.val‖ ≤ 2 →
+      ∃ z : WeightedCoeff (Weight.sobolev (3+1)) 2,
+        (∀ n, z.val n = sourceBirkhoffWeightedCoordinate (by simp) (by norm_num) n s (-1)
+          (higherSobolevSourceInclusion 3 a.val)-sourceGapWeightedEtaTerminalCoordinate (by simp) (by norm_num)
+            n (-1) (higherSobolevSourceInclusion 3 a.val)) ∧ ‖z‖ ≤ C := by
+  obtain ⟨C,hC,h⟩ := D.birkhoff_minus_spectral_terminal_uniform_physical_Hm_ball 3 (by omega) 2
+  refine ⟨C,hC,fun a ha => ?_⟩
+  simpa only [Nat.cast_ofNat,Complex.ofReal_neg,Complex.ofReal_one] using! h a ha (-1) (Or.inr rfl)
+
+end NLS.HigherAngularSmoothingChecks
+
+namespace NLS.HigherFourierReductionChecks
+open ZakharovShabat
+open scoped ENNReal
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeHigherSobolevSourceLocus 2)
+    (hA : ∀ n, sourceEtaMidpointFourierError (by simp) (by norm_num)
+      (higherSobolevSourceInclusion 2 a.val) n = 0)
+    (hB : ∀ n, sourceEtaSineFourierError (by simp) (by norm_num)
+      (higherSobolevSourceInclusion 2 a.val) n = 0) :
+    ∃ E : WeightedCoeff (Weight.sobolev (2+1)) 2 × WeightedCoeff (Weight.sobolev (2+1)) 2,
+      ∀ n, E.1.val n = (sourceBirkhoffMap (by simp) (by norm_num) s
+          (higherSobolevSourceInclusion 2 a.val)).1 n-
+          (sourceBirkhoffFourier (higherSobolevSourceInclusion 2 a.val)).1 n ∧
+        E.2.val n = (sourceBirkhoffMap (by simp) (by norm_num) s
+          (higherSobolevSourceInclusion 2 a.val)).2 n-
+          (sourceBirkhoffFourier (higherSobolevSourceInclusion 2 a.val)).2 n := by
+  apply D.birkhoff_fourier_higher_sobolev_of_spectral_errors 2 (by omega) a 0 0
+  · intro n
+    simpa using (hA n).symm
+  · intro n
+    simpa using (hB n).symm
+
+end NLS.HigherFourierReductionChecks

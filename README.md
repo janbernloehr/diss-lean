@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual signed Birkhoff coordinates differ from their
-literal spectral terminal terms by h2 sequences, uniformly on physical
-H1 balls. All normalization and angular factors are accounted for,
-including collapsed gaps. The exact Fourier comparison now reduces to
-two explicit spectral errors whose h2 bounds remain open, together with
-higher-order estimates and analyticity into the stronger target.
-Lemma 27.2 with its printed constants is complete.
+Latest step: for every integer m >= 1, the actual signed Birkhoff
+coordinates differ from their literal spectral terminal terms by
+h^(m+1) sequences, uniformly on physical Hm balls. This accounts for all
+normalization and angular factors, including collapsed gaps. The exact
+Fourier comparison reduces to two explicit spectral errors whose sharp
+bounds and stronger-target analyticity remain open. Full one-smoothing
+is not yet proved. Lemma 27.2 with its printed constants is complete.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

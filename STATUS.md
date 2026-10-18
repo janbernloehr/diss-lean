@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: uniform H1 angular smoothing and the spectral terminal
+## Current milestone: angular smoothing at every positive integer Sobolev order
+
+For every integer m >= 1, each actual signed Birkhoff coordinate differs
+from its literal spectral terminal by an h^(m+1) sequence, uniformly on
+each physical Hm ball. Both signs use the same retained original family,
+and collapsed gaps are included. The target weight is (1+|n|)^(m+1);
+the input uses the exact physical pair norm with weights (1+2*pi*|n|)^m.
+
+The proof constructs the actual weighted Hm gap sequence and obtains its
+uniform bound from the established global M1 estimate. Exact monotonicity
+of physical Sobolev norms transfers the H1 normalization and phase bounds
+to the Hm ball. Applying those multipliers to the actual eta hm sequence
+then proves the one-derivative gain for all normalization and angle factors.
+
+The Fourier-error reduction also holds at every integer m >= 1. If the
+two literal midpoint and sine errors are represented in h^(m+1), it
+constructs the actual rectangular Birkhoff-minus-Fourier error there.
+Those spectral-error hypotheses remain explicit. Their sharp bounds and
+analyticity into the stronger target are still required for full
+one-smoothing; this milestone does not assert that theorem.
+
+Four new modules and four public checks cover physical H3-to-H1 norm
+monotonicity, actual H2 eta at a negative index, the negative signed H3
+terminal error in h4, and the conditional H2 Fourier remainder in h3.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+Validation: `./scripts/check.sh` passes with 7,686 build jobs, 6,767
+public examples, and a transitive axiom audit of 37,394 NLS declarations.
+The build retains 21 existing warnings; the four new modules introduce none.
+Documentation checks cover 1,131 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: uniform H1 angular smoothing and the spectral terminal
 
 The actual signed eta coordinate has norm equal to the real spectral gap,
 including collapsed gaps and at every finite source exponent p>1. Its

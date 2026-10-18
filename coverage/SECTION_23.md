@@ -264,9 +264,35 @@ original signed Fourier convention. The remaining spectral quantities are
 
 If these two literal errors are represented in h2, the theorem constructs
 an h2 pair equal coefficientwise to the original Birkhoff map minus its
-Fourier linearization. This statement is conditional. Bounds for A and B,
-the required higher-order scope, and stronger-target analyticity remain
-open, so full one-smoothing is not asserted.
+Fourier linearization. This statement is conditional. Bounds for A and B
+and stronger-target analyticity remain open, so full one-smoothing is
+not asserted. The higher-order version is supplied below.
+
+## Angular smoothing at every positive integer order
+
+[`SourceHmGapBounds.lean`](../NLS/ZakharovShabat/SourceHmGapBounds.lean)
+constructs the actual weighted gap sequence at every integer order and
+proves a uniform norm bound on physical Hm balls for every m >= 1. The
+proof uses the established global M1 estimate with the physical weight
+(1+2*pi*|n|)^m. It also proves exact monotonicity of the physical pair
+norms when lowering the integer order.
+
+[`SourceGapWeightedEtaHmSequence.lean`](../NLS/ZakharovShabat/SourceGapWeightedEtaHmSequence.lean)
+constructs both actual signed eta sequences in hm and bounds their norms
+by the weighted gap norm. This includes collapsed gaps.
+[`SourceBirkhoffHmSpectralTerminal.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmSpectralTerminal.lean)
+then applies the H1 multiplier estimates at order m, using the exact
+physical norm comparison. For every integer m >= 1, both actual signed
+Birkhoff coordinates minus their literal spectral terminals belong to
+h^(m+1), with one bound on each physical Hm ball and the same original
+family. The sequence-space weight is (1+|n|)^(m+1).
+
+[`SourceBirkhoffHmFourierErrorReduction.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmFourierErrorReduction.lean)
+extends the exact Fourier comparison to every integer m >= 1. It constructs
+the actual rectangular Birkhoff-minus-Fourier error in h^(m+1) when the
+two literal spectral errors A and B above are represented there. Their
+sharp estimates are still hypotheses of this reduction. Those estimates
+and stronger-target analyticity remain needed for full one-smoothing.
 
 ## Validation and remaining work
 
@@ -299,6 +325,10 @@ Six further checks cover eta norm at exponent three, negative-order
 l-infinity phase multiplication, a common bound for both signed terminal
 errors, both spectral errors at the zero source, collapsed-gap vanishing
 at a negative index, and the conditional h2 Fourier reduction.
+
+Four higher-order checks cover the exact physical H3-to-H1 norm inequality,
+H2 eta at a negative index, the negative signed H3 terminal error in h4,
+and the conditional H2 Fourier remainder in h3.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

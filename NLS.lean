@@ -4017,3 +4017,7 @@ import NLS.ZakharovShabat.SourceEtaRemainderH1Decay
 import NLS.ZakharovShabat.SourceEtaRemainderPhaseSmoothing
 import NLS.ZakharovShabat.SourceBirkhoffSpectralTerminal
 import NLS.ZakharovShabat.SourceBirkhoffFourierErrorReduction
+import NLS.ZakharovShabat.SourceHmGapBounds
+import NLS.ZakharovShabat.SourceGapWeightedEtaHmSequence
+import NLS.ZakharovShabat.SourceBirkhoffHmSpectralTerminal
+import NLS.ZakharovShabat.SourceBirkhoffHmFourierErrorReduction
