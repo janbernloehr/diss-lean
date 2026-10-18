@@ -3952,3 +3952,5 @@ import NLS.ZakharovShabat.PhysicalPoissonAlgebra
 import NLS.ZakharovShabat.PhysicalHamiltonianDirection
 import NLS.ZakharovShabat.PhysicalSpectralPoisson
 import NLS.ZakharovShabat.PhysicalActionHamiltonian
+import NLS.ZakharovShabat.PhysicalBirkhoffFourier
+import NLS.ZakharovShabat.PhysicalBirkhoffLinearization

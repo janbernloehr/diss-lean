@@ -61228,3 +61228,60 @@ example : ∃ U : Set IntervalPairL2, ∃ F : IntervalPairL2 → CoeffPair 2,
   intrinsicPhysicalBirkhoffMap_actionHamiltonian_extension
 
 end NLS.PhysicalActionPoissonChecks
+
+
+noncomputable section
+open Set Complex Filter Topology NLS.ComplexAnalysis NLS.Fourier
+open scoped ENNReal Classical
+namespace NLS.PhysicalFourierChecks
+open ZakharovShabat
+
+example (h : IntervalPairL2) : ‖physicalBirkhoffFourier h‖ = ‖h‖ := physicalBirkhoffFourier_norm h
+
+example (z : CoeffPair 2) : ‖physicalBirkhoffFourierEquiv.symm z‖ = ‖z‖ :=
+  physicalBirkhoffFourierEquiv_symm_norm z
+
+example (h : IntervalPairL2) : physicalBirkhoffFourierEquiv.symm (physicalBirkhoffFourier h) = h :=
+  physicalBirkhoffFourierEquiv.symm_apply_apply h
+
+example (z : CoeffPair 2) : physicalBirkhoffFourier (physicalBirkhoffFourierEquiv.symm z) = z :=
+  physicalBirkhoffFourierEquiv.apply_symm_apply z
+
+example (h : IntervalPairL2) :
+    (physicalBirkhoffFourier h).fst (-3) =
+      -(intervalFourierCoefficient 1 h.ofLp.1 3+intervalFourierCoefficient 1 h.ofLp.2 (-3))/(Real.sqrt 2:ℂ) := by
+  simpa using physicalBirkhoffFourier_fst h (-3)
+
+example (h : IntervalPairL2) :
+    (physicalBirkhoffFourier h).snd 3 =
+      (intervalFourierCoefficient 1 h.ofLp.1 (-3)-intervalFourierCoefficient 1 h.ofLp.2 3)/
+        ((Real.sqrt 2:ℂ)*Complex.I) := physicalBirkhoffFourier_snd h 3
+
+example (h : physicalRealSubmodule) :
+    physicalRealTargetComplex (fderiv ℝ intrinsicPhysicalBirkhoffMap 0 h) = physicalBirkhoffFourier h.val :=
+  intrinsicPhysicalBirkhoffMap_fderiv_zero_complex h
+
+example (z : PhysicalRealBirkhoffTarget) :
+    (fderiv ℝ intrinsicPhysicalBirkhoffHomeomorph.symm 0 z).val =
+      physicalBirkhoffFourierEquiv.symm (physicalRealTargetComplex z) :=
+  intrinsicPhysicalBirkhoffHomeomorph_symm_fderiv_zero z
+
+example (h : physicalRealSubmodule) (n : ℤ) :
+    (fderiv ℝ intrinsicPhysicalBirkhoffMap 0 h).fst n =
+      (-(intervalFourierCoefficient 1 h.val.ofLp.1 (-n)+intervalFourierCoefficient 1 h.val.ofLp.2 n)/(Real.sqrt 2:ℂ)).re ∧
+    (fderiv ℝ intrinsicPhysicalBirkhoffMap 0 h).snd n =
+      ((intervalFourierCoefficient 1 h.val.ofLp.1 (-n)-intervalFourierCoefficient 1 h.val.ofLp.2 n)/
+        ((Real.sqrt 2:ℂ)*Complex.I)).re := intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates h n
+
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s) :
+    fderiv ℂ (physicalBirkhoffMap s) 0 = physicalBirkhoffFourier := D.physicalBirkhoffMap_fderiv_zero
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u h : physicalRealSubmodule) :
+    physicalRealTargetComplex (fderiv ℝ intrinsicPhysicalBirkhoffMap u h) =
+      (fderiv ℂ (physicalBirkhoffMap s) u.val) h.val :=
+  D.intrinsicPhysicalBirkhoffMap_fderiv_complex u h
+
+end NLS.PhysicalFourierChecks

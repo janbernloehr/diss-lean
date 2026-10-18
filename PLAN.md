@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: physical actions and Hamiltonian fields
+## Current milestone: exact physical Fourier linearization
+
+The physical Birkhoff Fourier operator now has explicit formulas in terms
+of the actual unit-interval Fourier integrals. The first input frequency
+is reversed, and the original square-root-two and imaginary factors are
+retained. This is a complex linear isometry equivalence between the native
+physical and sequence Hilbert pair spaces, with exact inverse identities
+and exact norm preservation in both directions.
+
+Every original complex physical extension has this operator as its full
+bounded derivative at zero. At every real physical input, the native real
+differential agrees with the full complex differential restricted to real
+directions. The intrinsic integral-defined map therefore has the exact
+physical Fourier derivative at zero. Its global inverse has exactly the
+inverse Fourier derivative there, proved by differentiating its inverse
+identity.
+
+Two new modules and 11 public checks cover both transform directions,
+exact norms, signed Fourier frequencies, full real and complex derivatives,
+and the derivative of the actual intrinsic inverse. These are identities
+of bounded derivatives on the full Hilbert spaces.
+
+Next: integrate the complete physical action flows, their uniqueness,
+conservation laws, continuity, and group identities. The precise 2014
+edition comparison for Remark 14.2(i) and the recorded G.2 and Lemma 27.2
+qualifications remain. The dissertation is incomplete. See
+[the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: the full project gate passed: 7,619 build jobs, 6,674 public
+examples, and the transitive axiom audit of 36,968 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The two new
+modules and 11 new checks are warning-free; the build retains 21 existing
+warnings. All 156 candidate source labels and 952 local file links across
+38 documents validate, and `git diff --check` passes.
+
+## Previous milestone: physical actions and Hamiltonian fields
 
 The literal physical Poisson bracket now proves commutation of the actual
 monodromy discriminants on the entire complex L2 pair space. Physical

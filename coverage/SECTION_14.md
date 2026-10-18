@@ -18,7 +18,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(iii): canonical | `D.toSourceSection14OriginalData.canonical`, `D.complex.mixed_fourier_canonical` | All three brackets on the real locus, as in Lemma 15.3; actual coordinate derivatives and absolutely convergent Fourier pairings, including p<2 |
 | Theorem 14.1(iv): injective, local diffeomorphism, open dense image | `D.toSourceSection14OriginalData.real_geometry` | Actual real map; analytic local inverse at every point with both inverse identities |
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
-| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The literal physical canonical brackets are now proved as well. The precise 2014 construction comparison remains unproved. |
+| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The literal physical canonical brackets and the exact Fourier derivatives of the intrinsic physical map and inverse at zero are now proved as well. The precise 2014 construction comparison remains unproved. |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
 | Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 
@@ -917,3 +917,27 @@ and the whole native field zero. The constructed extension theorem supplies
 these identities for the intrinsic physical map without caller-supplied
 family data. This step establishes the vector fields and their coordinate
 velocities; it does not assert a physical flow-existence theorem.
+
+## Exact physical Fourier derivative at zero
+
+[`PhysicalBirkhoffFourier.lean`](../NLS/ZakharovShabat/PhysicalBirkhoffFourier.lean)
+constructs the bounded complex transform directly through the exact physical
+Fourier equivalence. At index n its components are
+-(hat(h1)(-n)+hat(h2)(n))/sqrt(2) and
+(hat(h1)(-n)-hat(h2)(n))/(sqrt(2)*i). The coefficients are actual
+unit-interval Fourier integrals. The transform is a complex linear isometry
+equivalence of the native Hilbert pair spaces; both inverse identities and
+the inverse norm equality hold on the entire spaces.
+
+[`PhysicalBirkhoffLinearization.lean`](../NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean)
+proves that every original physical complex extension has exactly this
+full bounded derivative at zero. At every real physical input its complex
+differential restricts to the native real differential of the intrinsic
+integral-defined map. At zero this supplies both literal coordinate formulas.
+Differentiating the actual global inverse identity proves that the inverse's
+native real derivative at zero is exactly the inverse physical Fourier
+operator on the complex inclusion of the real target.
+
+This verifies the physical Fourier linearization and its normalization.
+It does not identify the unavailable construction text of the cited 2014
+edition with the inspected 2013 manuscript.

@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual physical discriminants and actions now Poisson
-commute, and physical action Hamiltonian fields rotate exactly one Birkhoff
-coordinate pair with velocity (-y,x). The direction uses the literal L2
-cross-gradients. At a collapsed gap, the full action differential and the
-entire field vanish. These are vector-field identities, not a flow-existence
-result.
+Latest step: the intrinsic physical Birkhoff map now has the exact signed
+Fourier transform as its full derivative at zero, and its inverse has the
+inverse Fourier derivative. The transform is given by actual unit-interval
+Fourier integrals and preserves the original complex Hilbert norms in
+both directions.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
