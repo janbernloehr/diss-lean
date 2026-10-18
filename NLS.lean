@@ -3959,3 +3959,10 @@ import NLS.ZakharovShabat.PhysicalActionFlow
 import NLS.ZakharovShabat.PhysicalActionFlowProperties
 import NLS.SequenceSpaces.RealActionRotationProperties
 import NLS.ZakharovShabat.PhysicalActionFlowGroup
+import NLS.ComplexAnalysis.SineCorrectedCubicIntegral
+import NLS.ComplexAnalysis.SineExteriorKernelCorrection
+import NLS.ComplexAnalysis.SineIntegralKernelCorrection
+import NLS.ZakharovShabat.SourcePrimitivePowerSharpCubic
+import NLS.ZakharovShabat.SourceH1ZeroModeActionBound
+import NLS.ZakharovShabat.SourceH1ZeroModeMomentCriterion
+import NLS.ZakharovShabat.SourceH1ZeroModeKernelCriterion

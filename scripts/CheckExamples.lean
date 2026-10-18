@@ -61390,3 +61390,117 @@ example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
   (physicalActionFlowHomeomorph k t).symm_apply_apply u
 
 end NLS.PhysicalActionFlowChecks
+
+
+noncomputable section
+open Set MeasureTheory NLS.ComplexAnalysis
+
+example : 0 ≤ ∫ x in (0:ℝ)..Real.pi,
+    (2*(Real.sin x)^4-(Real.sin x)^2)/|(2:ℝ)-Real.cos x| :=
+  sine_correction_exterior_kernel_integral_nonneg 2 (by norm_num)
+
+example : 0 ≤ ∫ x in (0:ℝ)..Real.pi,
+    (2*(Real.sin x)^4-(Real.sin x)^2)/|(-2:ℝ)-Real.cos x| :=
+  sine_correction_exterior_kernel_integral_nonneg (-2) (by norm_num)
+
+example {ι : Type*} (S : Finset ι) (c s : ι → ℝ)
+    (hc : ∀ i ∈ S, 0 ≤ c i) (hs : ∀ i ∈ S, 1 < |s i|) :
+    let V : ℝ → ℝ := fun x => ∑ i ∈ S, c i/|s i-Real.cos x|
+    3*(∫ x in (0:ℝ)..Real.pi, (Real.sin x)^2*(1+V x))^2 ≤
+      2*Real.pi*(∫ x in (0:ℝ)..Real.pi, (Real.sin x)^4*(1+V x)^3) :=
+  sine_finite_exterior_kernel_profile_cubic S c s hc hs
+
+example (r A B : ℝ) (h : 3*A^2 ≤ 2*Real.pi*B) :
+    (3/4:ℝ)*(2*r^2/Real.pi*A)^2 ≤ 2*r^4/Real.pi*B :=
+  scaled_profile_cubic_lower_bound r A B h
+
+example (H M S I₀ U : ℝ)
+    (hM : 0 ≤ M) (hIM : I₀ ≤ M) (hS : 2*M-I₀ ≤ S)
+    (hU : I₀^2 ≤ U) (hH : H ≤ S-M+2*M^2-U) : H ≤ S-M+S^2 :=
+  NLS.ZakharovShabat.energy_bound_of_zero_mode_correction H M S I₀ U hM hIM hS hU hH
+noncomputable section
+open Set MeasureTheory NLS.ComplexAnalysis
+open scoped ENNReal
+namespace NLS.SharpCubicEndpointChecks
+open ZakharovShabat
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+example (ψ : realTypeSourceSubmodule 2) : Summable (sourceWeightedActionTerm ψ 0) :=
+  sourceWeightedActionTerm_zero_summable ψ
+
+example (ψ : realTypeSourceSubmodule 2) :
+    2*sourceWeightedActionTerm ψ 0 (-3) ≤ sourceWeightedActionTerm ψ 1 (-3) :=
+  two_mul_sourceAction_le_weighted_of_ne_zero ψ (-3) (by norm_num)
+
+example (a : realTypeSobolevSourceLocus) :
+    2*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)-
+      sourceWeightedActionTerm (sourceH1RealSource a) 0 0 ≤
+      ∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n :=
+  sourceH1_two_mass_sub_zero_action_le_weighted a
+
+example (a : realTypeSobolevSourceLocus) :
+    sourceWeightedActionTerm (sourceH1RealSource a) 0 0 =
+      ‖sourceComplexAction (by simp : (4:ℝ≥0∞) ≠ ⊤) (by norm_num) 0 (sobolevSourceFL4 a.val)‖ :=
+  sourceH1_actionTerm_zero_eq_FL4 a 0
+
+example (a : realTypeSobolevSourceLocus)
+    (hz : sourceWeightedActionTerm (sourceH1RealSource a) 0 0 = 0) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)+
+      (1/2:ℝ)*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 :=
+  sourceH1_energy_le_half_square_of_zero_action a hz
+
+example (a : realTypeSobolevSourceLocus)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sourceH1RealSource a).val)
+      (periodOnePotential_mem (sourceH1RealSource a).val) 0 = 0) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  sourceH1_energy_le_lemma272_of_zero_gap a hgap
+
+example {α : Type*} [MeasurableSpace α] (μ : Measure α)
+    (c s : α → ℝ) (hcm : Measurable c) (hsm : Measurable s)
+    (hc : ∀ a, 0 ≤ c a) (hs : ∀ a, 1 < |s a|)
+    (hint : Integrable (fun a => c a/(|s a|-1)) μ) :
+    Continuous (fun x : ℝ => ∫ a, c a/|s a-Real.cos x| ∂μ) :=
+  continuous_integral_exterior_cosine_kernel μ c s hcm hsm hc hs hint
+
+example {α : Type*} [MeasurableSpace α] (μ : Measure α) [SFinite μ]
+    (c s : α → ℝ) (hcm : Measurable c) (hsm : Measurable s)
+    (hc : ∀ a, 0 ≤ c a) (hs : ∀ a, 1 < |s a|)
+    (hint : Integrable (fun a => c a/(|s a|-1)) μ) :
+    let V : ℝ → ℝ := fun x => ∫ a, c a/|s a-Real.cos x| ∂μ
+    3*(∫ x in (0:ℝ)..Real.pi, (Real.sin x)^2*(1+V x))^2 ≤
+      2*Real.pi*(∫ x in (0:ℝ)..Real.pi, (Real.sin x)^4*(1+V x)^3) :=
+  sine_dominated_exterior_kernel_profile_cubic μ c s hcm hsm hc hs hint
+
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (a : realTypeSobolevSourceLocus)
+    (hz : (3/4:ℝ)*(sourceWeightedActionTerm (sourceH1RealSource a) 0 0)^2 ≤
+      (A.moment 0 3 (sobolevSourceFL4 a.val)).re) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  A.sourceH1_energy_le_lemma272_of_zero_moment a hz
+
+example (a : realTypeSobolevSourceLocus)
+    {α : Type*} [MeasurableSpace α] (μ : Measure α) [SFinite μ]
+    (c s : α → ℝ) (hcm : Measurable c) (hsm : Measurable s)
+    (hc : ∀ b, 0 ≤ c b) (hs : ∀ b, 1 < |s b|)
+    (hint : Integrable (fun b => c b/(|s b|-1)) μ)
+    (hrep : ∀ x ∈ Set.Icc (0:ℝ) Real.pi,
+      sourceRealGapCosineProfile (by simp) (by norm_num) (sobolevSourceFL4 a.val) 0 x =
+        (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceFL4 a.val))
+          (periodOnePotential_mem (sobolevSourceFL4 a.val)) 0).re/2*
+          Real.sin x*(1+(∫ b, c b/|s b-Real.cos x| ∂μ))) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation a μ c s hcm hsm hc hs hint hrep
+
+end NLS.SharpCubicEndpointChecks

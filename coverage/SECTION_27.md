@@ -23,6 +23,8 @@ include both components with this exact physical Fourier weight.
 | Lemma 27.1, physical H¹ norm | `sourceSection27_H1_norm` | P²/3≤S+M², retaining the literal pair norm and coefficient 1/3. |
 | Lemma 27.2, m≥2 | `sourceSection27_hamiltonian_estimate` | H₂ₘ₊₁≤S_m+(64π)^(2m−2)(1+S)^(4m−3)S, with the printed coefficient and final weighted factor. |
 | Lemma 27.2, m=1 on S≤2 | `sourceSection27_endpoint_of_small` | The literal bound H₃≤2S+S² on the closed weighted-action ball, including its boundary. |
+| Lemma 27.2, closed zero gap | `sourceH1_energy_le_lemma272_of_zero_gap` | Literal H3<=2S+S² for every real H1 source whose central gap is closed, with no smallness restriction; the stronger H3<=S-M+S²/2 is proved. |
+| Lemma 27.2, open-gap representation criterion | `sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation` | A precise positive exterior-kernel formula for the actual zero-gap profile implies the literal bound. Its existence and integrable majorant remain unproved for arbitrary open zero gaps. |
 | Lemma 27.2, unrestricted m≥1 variant | `sourceSection27_hamiltonian_estimate_all` | Twice the printed remainder; the unrestricted literal m=1 coefficient is neither proved nor refuted. |
 | Last derivative estimate in the proof of Theorem 23.2(ii) | `exists_sourceSection27_derivative_bound` | m≥2, exact factor 1/4 on the pair derivative energy, coefficient one on S_m, and one source-independent C multiplying (1+S)^(4m−3)M. |
 | Theorem 23.2(ii) | `exists_sourceSection27_sobolev_bound` | Every m≥1, one d before all sources, exact physical Hᵐ pair norm, and the unweighted final factor M. The retained Section 23 package also keeps its common positive constants and original Birkhoff map. |
@@ -75,6 +77,8 @@ directly and does not require the unresolved coefficient in Lemma 27.2.
 
 The printed coefficient in Lemma 27.2 is proved for every m≥2. At m=1,
 retaining the mass subtraction in the energy budget proves it on S≤2.
+The later zero-mode argument below also proves it for every source with
+a collapsed central gap, without restricting S.
 An all-order global statement with twice the remainder is available.
 The scalar budget alone is insufficient to establish the printed bound
 for all sizes; this does not constitute a counterexample potential.
@@ -103,3 +107,46 @@ Next: Section 28's original weighted action and gap estimates. The
 separate [Section 14 qualifications](SECTION_14.md) and unrestricted
 printed m=1 coefficient of Lemma 27.2 remain explicit. The dissertation
 is incomplete.
+
+## The zero mode and the remaining sharp cubic input
+
+[`SourceH1ZeroModeActionBound.lean`](../NLS/ZakharovShabat/SourceH1ZeroModeActionBound.lean)
+proves that every nonzero frequency has bracket weight at least two.
+Absolute summability then gives 2*M-I_0<=S. With I_0=0 the original physical
+energy satisfies H3<=S-M+S²/2. A collapsed zero gap gives I_0=0 and hence
+the literal endpoint for arbitrary action size. The actual action summands
+are also identified exactly under the inclusion from H1 into FL4.
+
+[`SourceH1ZeroModeMomentCriterion.lean`](../NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean)
+uses the exact energy identity and nonnegative cubic moments. The single
+condition R_0>=(3/4)*I_0² suffices for H3<=S-M+S². This is a sufficient
+condition, not a claimed equivalence or a proved lower bound at every source.
+
+[`SineCorrectedCubicIntegral.lean`](../NLS/ComplexAnalysis/SineCorrectedCubicIntegral.lean)
+proves 3*A²<=2*pi*B for
+A=integral(sin²(theta)*(1+V(theta))) and
+B=integral(sin⁴(theta)*(1+V(theta))³) over [0,pi], assuming V is continuous,
+nonnegative and its linear correction integral is nonnegative.
+[`SineExteriorKernelCorrection.lean`](../NLS/ComplexAnalysis/SineExteriorKernelCorrection.lean)
+proves that correction condition for kernels 1/|s-cos(theta)| with |s|>1
+on either side of the gap, including finite positive mixtures.
+[`SineIntegralKernelCorrection.lean`](../NLS/ComplexAnalysis/SineIntegralKernelCorrection.lean)
+extends this to positive kernel integrals. Measurability and integrability
+of c/(|s|-1) give continuity and justify Fubini; these requirements are
+explicit in the statements.
+
+[`SourcePrimitivePowerSharpCubic.lean`](../NLS/ZakharovShabat/SourcePrimitivePowerSharpCubic.lean)
+connects these scalar bounds to the actual arcosh gap profile when that
+profile equals r*sin(theta)*(1+V(theta)), with r the half-gap length.
+The original action is 2*r²*A/pi and the cubic moment is 2*r⁴*B/pi, giving
+R_n>=(3/4)*I_n² with no changed normalization.
+[`SourceH1ZeroModeKernelCriterion.lean`](../NLS/ZakharovShabat/SourceH1ZeroModeKernelCriterion.lean)
+constructs the moment atlas and proves the printed endpoint from the
+specified actual zero-gap representation and its integrable majorant.
+
+The motivating exterior-kernel identity is equation (2.15) of
+[Korotyaev, *Hamiltonian and small action variables for periodic dNLS*](https://arxiv.org/pdf/0911.5235).
+Its applicability to the actual source profile is not imported as an axiom.
+Constructing that representation and its majorant is the remaining spectral
+obligation; the unrestricted literal m=1 estimate is still unproved and
+unrefuted. The previously proved Theorem 23.2(ii) is unaffected.

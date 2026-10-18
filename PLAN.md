@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: complete physical action flows
+## Current milestone: zero-mode reduction of the Lemma 27.2 endpoint
+
+The actual H1 action sums now satisfy 2*M-I_0 <= S, with the source's
+exact bracket weights. If the central action is zero, the physical energy
+satisfies H3 <= S-M+S^2/2 without a smallness restriction. A collapsed
+zero gap supplies that condition, so the printed m=1 bound is proved on
+this class as well as on the previously covered ball S<=2.
+
+For an arbitrary real H1 input, the exact energy identity reduces a
+sufficient condition to one sharp cubic bound: R_0 >= (3/4)*I_0^2.
+The scalar sine-profile estimate, finite and integral positive mixtures
+of exterior kernels, continuity under an integrable majorant, and the
+Fubini justification are all proved. The exact action and cubic-moment
+integrals retain the constants when passing to the actual spectral profile.
+
+A conditional theorem now connects a positive exterior-kernel formula for
+the actual zero-gap profile directly to the printed endpoint inequality.
+It constructs the moment atlas internally. The representation itself and
+its integrable majorant remain hypotheses for open zero gaps; existence
+of those data has not been proved. The unrestricted literal m=1 estimate
+therefore remains unproved and unrefuted.
+
+Seven new modules and 15 public checks cover signed nonzero modes,
+actual action summability and exponent compatibility, the closed central
+gap, both exterior kernel signs, integral kernels, the full moment
+normalization, and the precise remaining representation obligation.
+
+Next: prove the positive exterior-kernel representation and its majorant
+for the actual open zero-gap profile. The exact 2014 edition comparison
+for Remark 14.2(i) and the recorded G.2 qualification also remain. The
+dissertation is incomplete. See [the Section 27 audit](coverage/SECTION_27.md)
+and [source discrepancies](SOURCE_ERRATA.md).
+
+Validation: the full project gate passed: 7,631 build jobs, 6,713 public
+examples, and the transitive axiom audit of 37,067 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The seven new
+modules and 15 new checks are warning-free; the build retains 21 existing
+warnings. All 156 candidate source labels and 991 local file links across
+38 documents validate, and `git diff --check` passes.
+
+## Previous milestone: complete physical action flows
 
 Every real physical L2 input now has a trajectory for each indexed action
 at every real time. The construction uses the intrinsic physical Birkhoff

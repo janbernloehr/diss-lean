@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: from each real physical L2 input, every indexed action
-Hamiltonian now has a complete, unique trajectory. The trajectories rotate
-one Birkhoff pair, conserve every action,
-the monodromy discriminant, and the physical Hilbert norm, and remain
-stationary at collapsed selected gaps. The flows commute and form
-continuous groups with negative-time inverses.
+Latest step: the printed m=1 estimate of Lemma 27.2 now holds without
+smallness restrictions when the central spectral gap is closed. For the
+remaining case, a checked chain of scalar and spectral integral estimates
+reduces a sufficient condition to a positive exterior-kernel representation
+of the actual zero-gap profile. Constructing that representation remains
+open; the unrestricted printed bound is not yet proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

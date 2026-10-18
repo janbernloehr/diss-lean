@@ -1616,11 +1616,26 @@ closed gaps. This supplies a quantitative sufficient condition using only
 actions and gaps, but does not yet prove the comparison needed for all
 sources. The unrestricted literal endpoint therefore remains open.
 
-The accepted formalization uses the proved corrected global statement
+The later zero-mode argument in
+[`SourceH1ZeroModeActionBound.lean`](NLS/ZakharovShabat/SourceH1ZeroModeActionBound.lean)
+proves 2*M-I_0<=S and H3<=S-M+S²/2 when I_0=0. Thus the literal endpoint
+also holds for every real H1 input with a collapsed zero gap, without any
+smallness restriction. The bound R_0>=(3/4)*I_0² is sufficient in the
+remaining case by
+[`SourceH1ZeroModeMomentCriterion.lean`](NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean).
+The scalar profile estimate and positive kernel-integral bounds now retain
+the exact constants in the actual action and moment integrals.
+[`SourceH1ZeroModeKernelCriterion.lean`](NLS/ZakharovShabat/SourceH1ZeroModeKernelCriterion.lean)
+connects a precise positive exterior-kernel representation of the actual
+zero-gap profile to the printed endpoint, constructing the atlas internally.
+Existence of that representation and its integrable majorant at arbitrary
+open zero gaps remains unproved. See [the Section 27 audit](coverage/SECTION_27.md).
+
+The proved global substitute is
 `sobolevOddHamiltonian_le_twice_weighted_action_remainder`, with twice
 the printed remainder for all m ≥ 1. The exact printed bound remains
-proved for m ≥ 2; the original unrestricted m=1 coefficient is optional
-future work, not a blocker, and has not been disproved.
+proved for m ≥ 2; the original unrestricted m=1 coefficient remains open and has not been
+disproved.
 The downstream proof of Theorem 23.2(ii) treats m=1 directly through
 Lemma 27.1 with d=√3. Its higher-order branch absorbs its explicit scalar
 constants. Theorem 23.1 and Remark 23.3 inherit that proved bound, so no
