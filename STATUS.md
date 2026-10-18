@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: an integrable kernel from the actual spectral gaps
+## Current milestone: analytic quotient and finite-gap endpoint reduction
+
+The normalized actual quotient -i*F_n/root_n now has an analytic filling
+across the entire selected gap. Its real part recovers the exact cosine
+profile, including the endpoints, and is positive in an open gap's interior.
+The boundary limits on every other gap retain the signed index constants;
+these constants cancel in the jump. For finite-gap sources, the primitive
+has leading term -i*z and the filled quotient tends to one at complex
+infinity.
+
+The contour tools now prove Cauchy's value formula in a disc with finitely
+many disjoint circular holes and the limiting outer integral 2*pi*i.
+Continuity of the actual moments and density of finite-gap sources show
+that the sharp cubic inequality for all real sources is equivalent to its
+finite-gap case, at every finite p>1. Finite spectral support supplies the
+required action summability.
+
+Consequently the unrestricted H1 endpoint now follows from the explicit
+zero-profile identity only on finite-gap FL4 sources. The moment atlas,
+summability and passage to arbitrary real sources are internal to the
+proved reduction. The finite-gap profile identity is still unproved, so
+the unrestricted literal m=1 bound in Lemma 27.2 remains open. An infinite-gap
+representation theorem is not needed to finish that inequality.
+
+Six new modules and seven public checks cover the root normalization,
+finite-hole Cauchy formula, actual finite-gap quotient at negative indices,
+outer-contour constant, density transfer, finite-support summability, and
+the final conditional H1 implication.
+
+Next: express each exterior contour as its weighted arcosh-profile integral,
+apply the finite-hole Cauchy formula to the actual filled quotient, and
+identify the resulting positive kernel. The exact 2014 edition comparison
+for Remark 14.2(i) and the recorded G.2 qualification also remain. The
+dissertation is incomplete. See [the Section 27 audit](coverage/SECTION_27.md)
+and [source discrepancies](SOURCE_ERRATA.md).
+
+Validation: the full project gate passes with 7,643 build jobs, 6,729 examples,
+and a transitive axiom audit of 37,164 NLS declarations. The build reports 21
+pre-existing warnings and none in the new modules. Documentation checks cover
+1,028 file links across 38 documents and all 156 candidate source labels.
+
+## Previous milestone: an integrable kernel from the actual spectral gaps
 
 The original gap endpoints and arcosh profiles now define an explicit
 exterior-kernel correction. Each angular density is nonnegative and its

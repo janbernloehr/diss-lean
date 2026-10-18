@@ -3972,3 +3972,9 @@ import NLS.ZakharovShabat.SourceGapAngularDensity
 import NLS.ZakharovShabat.SourceExteriorGapKernel
 import NLS.ZakharovShabat.SourceExteriorGapCorrection
 import NLS.ZakharovShabat.SourceH1ActualGapCriterion
+import NLS.ComplexAnalysis.CauchyFiniteHoles
+import NLS.ComplexAnalysis.CauchyOuterLimit
+import NLS.ZakharovShabat.StandardRootInfinity
+import NLS.ZakharovShabat.SourceFilledGapQuotient
+import NLS.ZakharovShabat.SourceFilledGapQuotientInfinity
+import NLS.ZakharovShabat.SourceSharpCubicFiniteGapReduction

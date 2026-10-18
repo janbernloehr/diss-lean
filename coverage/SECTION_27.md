@@ -26,6 +26,7 @@ include both components with this exact physical Fourier weight.
 | Lemma 27.2, closed zero gap | `sourceH1_energy_le_lemma272_of_zero_gap` | Literal H3<=2S+S² for every real H1 source whose central gap is closed, with no smallness restriction; the stronger H3<=S-M+S²/2 is proved. |
 | Lemma 27.2, open-gap representation criterion | `sourceH1_energy_le_lemma272_of_zero_gap_kernel_representation` | A precise positive exterior-kernel formula for the actual zero-gap profile implies the literal bound. The actual integrable kernel candidate is now constructed below; equality with the original profile remains unproved. |
 | Lemma 27.2, explicit actual-kernel criterion | `sourceH1_energy_le_lemma272_of_actual_zero_gap_identity` | Only the identity with the constructed spectral correction remains a hypothesis; the actual H1 source supplies summability, integrability and the moment atlas. |
+| Lemma 27.2, finite-gap identity criterion | `sourceH1_energy_le_lemma272_of_finiteGap_zero_profile_identity` | Only the actual zero-profile identities for finite-gap FL4 sources are required. Density, continuity, action summability and the moment atlas are supplied internally; the identities remain unproved. |
 | Lemma 27.2, unrestricted m≥1 variant | `sourceSection27_hamiltonian_estimate_all` | Twice the printed remainder; the unrestricted literal m=1 coefficient is neither proved nor refuted. |
 | Last derivative estimate in the proof of Theorem 23.2(ii) | `exists_sourceSection27_derivative_bound` | m≥2, exact factor 1/4 on the pair derivative energy, coefficient one on S_m, and one source-independent C multiplying (1+S)^(4m−3)M. |
 | Theorem 23.2(ii) | `exists_sourceSection27_sobolev_bound` | Every m≥1, one d before all sources, exact physical Hᵐ pair norm, and the unweighted final factor M. The retained Section 23 package also keeps its common positive constants and original Birkhoff map. |
@@ -187,3 +188,38 @@ supplies action summability by the H1-to-FL4 comparison and constructs the
 moment atlas, so this explicit identity at n=0 is its only hypothesis.
 The identity is still unproved; the candidate's existence and integrability
 alone do not establish it.
+
+## Analytic quotient and finite-gap reduction
+
+[`SourceFilledGapQuotient.lean`](../NLS/ZakharovShabat/SourceFilledGapQuotient.lean)
+constructs the actual normalized quotient Q_n=-i*F_n/root_n using its local
+analytic filling on the selected gap. The exact real profile satisfies
+f_n(theta)=r_n*sin(theta)*Re Q_n(c_n+r_n*cos(theta)), including both endpoints.
+On every exterior gap the actual upper and lower boundary values differ by
+-2*i*v_m/root_n; their index constants cancel.
+
+[`StandardRootInfinity.lean`](../NLS/ZakharovShabat/StandardRootInfinity.lean)
+proves root_n(z)/z tends to -1. With the existing finite-gap inversion
+expansion, [`SourceFilledGapQuotientInfinity.lean`](../NLS/ZakharovShabat/SourceFilledGapQuotientInfinity.lean)
+proves F_n(z)/z tends to -i and Q_n(z) tends to one in every complex direction.
+[`CauchyFiniteHoles.lean`](../NLS/ComplexAnalysis/CauchyFiniteHoles.lean)
+proves (2*pi*i)*f(x) equals the outer Cauchy contour minus the sum of the
+inner contours for analytic f on a closed disc with finitely many disjoint
+circular holes. [`CauchyOuterLimit.lean`](../NLS/ComplexAnalysis/CauchyOuterLimit.lean)
+proves that the outer integral tends to 2*pi*i when f tends to one and is
+continuous on sufficiently large circles. The signs and constants are
+proved for the repository's original root and contour conventions.
+
+[`SourceSharpCubicFiniteGapReduction.lean`](../NLS/ZakharovShabat/SourceSharpCubicFiniteGapReduction.lean)
+proves continuity of all actual moments on the real source space. Density
+of finite-gap sources therefore makes the sharp cubic inequality for all
+real sources equivalent to the finite-gap case, for every finite p>1.
+Finite-gap support also gives absolute summability of the actual actions.
+Only the explicit zero-profile identity for finite-gap FL4 sources is now
+needed for the unrestricted H1 endpoint. The atlas is constructed internally.
+
+The remaining obligation is to identify each exterior contour with its
+weighted arcosh-profile integral and then with the constructed positive
+kernel. Neither the finite-gap profile identity nor the unrestricted
+literal m=1 inequality is proved by these analytic and density reductions.
+An infinite-gap profile representation is not necessary for that inequality.

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual spectral gaps now define a nonnegative continuous
-kernel correction with a proved integrable majorant. For Lemma 27.2's
-remaining m=1 case, the only supplied hypothesis is equality of the
-actual zero-gap profile with this explicit candidate. That representation
-identity remains open; the endpoint is already proved without a smallness
-restriction when the central gap is closed.
+Latest step: the actual primitive/root quotient is now analytically filled
+across the selected gap and normalized at infinity for finite-gap sources.
+Cauchy's finite-hole formula and a density argument reduce the remaining
+Lemma 27.2 endpoint to the explicit profile identity only for finite-gap
+sources. That identity remains open; the endpoint is already proved
+without a smallness restriction when the central gap is closed.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

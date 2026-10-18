@@ -1635,7 +1635,16 @@ neighboring-gap separation. The resulting explicit correction is nonnegative
 and continuous. [`SourceH1ActualGapCriterion.lean`](NLS/ZakharovShabat/SourceH1ActualGapCriterion.lean)
 therefore needs only the actual profile identity; kernel data, integrability
 and the atlas are constructed internally. Equality of the actual profile
-with this candidate remains unproved. See [the Section 27 audit](coverage/SECTION_27.md).
+with this candidate remains unproved. The analytic filling and finite-gap
+normalization of the actual quotient are proved in
+[`SourceFilledGapQuotient.lean`](NLS/ZakharovShabat/SourceFilledGapQuotient.lean) and
+[`SourceFilledGapQuotientInfinity.lean`](NLS/ZakharovShabat/SourceFilledGapQuotientInfinity.lean).
+[`SourceSharpCubicFiniteGapReduction.lean`](NLS/ZakharovShabat/SourceSharpCubicFiniteGapReduction.lean)
+now reduces the sharp cubic bound to finite-gap sources by continuity and
+density, and proves the H1 endpoint conditional only on the finite-gap
+zero-profile identities. Those identities remain unproved; an infinite-gap
+representation is not needed for the final inequality. See
+[the Section 27 audit](coverage/SECTION_27.md).
 
 The proved global substitute is
 `sobolevOddHamiltonian_le_twice_weighted_action_remainder`, with twice

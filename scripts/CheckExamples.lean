@@ -61578,3 +61578,59 @@ example (x : ℝ) :
   NLS.ComplexAnalysis.normalized_exterior_kernel_eq 2 3 5 (-8) 1 x (by norm_num)
 
 end NLS.ExteriorGapCorrectionChecks
+
+noncomputable section
+open Set Metric Filter Topology Complex
+open scoped ENNReal
+namespace NLS.GapRepresentationAnalyticChecks
+open ZakharovShabat ComplexAnalysis
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+example : Tendsto (fun z : ℂ => normalizedStandardRoot (-3) 4 z/z)
+    (Bornology.cobounded ℂ) (𝓝 (-1)) := normalizedStandardRoot_div_tendsto (-3) 4
+
+example (f : ℂ → ℂ) (R : ℝ) (hR : 0 ≤ R) (x : ℂ) (hx : x ∈ ball 0 R)
+    (hf : AnalyticOnNhd ℂ f (closedBall 0 R)) :
+    (2*(Real.pi:ℂ)*Complex.I)*f x = ∮ z in C(0,R), f z/(z-x) := by
+  simpa only [Finset.sum_empty,sub_zero] using circleIntegral_cauchy_value_of_finite_holes
+    0 R hR (∅ : Finset Unit) (fun _ => 0) (fun _ => 1) (fun _ => 2) f
+    (by simp) (by simp) (by simp) (by simp)
+    (fun z hz => hf z hz.1) x hx (by simp)
+
+example {W : Set (CoeffPair 4)} (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Tendsto (C.filledGapQuotient (-2) φ.val) (Bornology.cobounded ℂ) (𝓝 1) :=
+  C.filledGapQuotient_tendsto_one_finiteGap (-2) φ hφ hf
+
+example (f : ℂ → ℂ) (x : ℂ) (hf : Tendsto f (Bornology.cobounded ℂ) (𝓝 1))
+    (hc : ∀ᶠ R : ℝ in atTop, ContinuousOn f (sphere (0:ℂ) R)) :
+    Tendsto (fun R : ℝ => ∮ z in C(0,R), f z/(z-x)) atTop (𝓝 (2*(Real.pi:ℂ)*Complex.I)) :=
+  tendsto_outerCircle_cauchy_of_limit_one f x hf hc
+
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (hfinite : ∀ φ : realTypeSourceSubmodule 4, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      (3/4:ℝ)*‖sourceComplexAction (by simp) (by norm_num) 0 φ.val‖^2 ≤ (A.moment 0 3 φ.val).re)
+    (φ : realTypeSourceSubmodule 4) :
+    (3/4:ℝ)*‖sourceComplexAction (by simp) (by norm_num) 0 φ.val‖^2 ≤ (A.moment 0 3 φ.val).re :=
+  (A.real_action_sq_le_cubic_iff_finiteGap 0).mpr hfinite φ
+
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Summable (fun n : ℤ => ‖sourceComplexAction (by simp) (by norm_num) n φ.val‖) :=
+  A.summable_actions_of_finiteGap φ hf
+
+example
+    (hrep : ∀ φ : realTypeSourceSubmodule 4, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      ∀ x ∈ Icc (0:ℝ) Real.pi,
+        sourceRealGapCosineProfile (by simp) (by norm_num) φ.val 0 x =
+          sourceGapHalfWidthReal (by simp) (by norm_num) φ 0*Real.sin x*
+            (1+sourceExteriorGapCorrection (by simp) (by norm_num) φ 0 x))
+    (a : realTypeSobolevSourceLocus) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  sourceH1_energy_le_lemma272_of_finiteGap_zero_profile_identity hrep a
+
+end NLS.GapRepresentationAnalyticChecks
