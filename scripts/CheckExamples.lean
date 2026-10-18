@@ -60452,3 +60452,137 @@ example : ∃ A C V : Set (CoeffPair (3/2)), ∃ u : (n : ℤ) → CoeffPair (3/
 
 end WeightedRealInverseChecks
 end NLS
+
+
+namespace NLS
+namespace ActionAngleChecks
+open Set Complex ZakharovShabat
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  (D : SourceSection14OriginalData hp hp1 W₀ W V s)
+
+-- The positive branch is fixed before the angle is chosen.
+example (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    sourceNormalizedActionRoot hp hp1 n φ.val * sourcePeriodicGapDisplacement hp hp1 φ.val n /
+      (Real.sqrt 2 : ℂ) = (Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re) : ℂ) :=
+  sourceRealActionAmplitude_eq_sqrt hp hp1 φ n
+
+example (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    (sourceRealBirkhoffMap hp hp1 s φ).1 n =
+      Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.cos (sourceAngularOriginalTheta hp hp1 n s φ.val).re ∧
+    (sourceRealBirkhoffMap hp hp1 s φ).2 n =
+      Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.sin (sourceAngularOriginalTheta hp hp1 n s φ.val).re :=
+  D.real_rectangular_formula φ n
+
+-- No eta-integral premise is needed at a collapsed gap.
+example (φ : realTypeSourceSubmodule p) (n : ℤ) (v : ℂ)
+    (hg : sourcePeriodicGapDisplacement hp hp1 φ.val n = 0) :
+    (sourceRealBirkhoffMap hp hp1 s φ).1 n =
+      Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.cos (v+sourceAngularBetaCorrection hp hp1 n s φ.val).re ∧
+    (sourceRealBirkhoffMap hp hp1 s φ).2 n =
+      Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.sin (v+sourceAngularBetaCorrection hp hp1 n s φ.val).re :=
+  D.real_rectangular_formula_of_eta φ n v (fun h => (h hg).elim)
+
+example (φ : realTypeSourceSubmodule p) (n : ℤ) (v w : ℂ)
+    (hv : v ∈ sourceAngularOriginalEtaIntegralValues hp hp1 n s φ.val)
+    (hw : w ∈ sourceAngularOriginalEtaIntegralValues hp hp1 n s φ.val) :
+    Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.sin (v+sourceAngularBetaCorrection hp hp1 n s φ.val).re =
+      Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+        Real.sin (w+sourceAngularBetaCorrection hp hp1 n s φ.val).re :=
+  (D.real_rectangular_formula_of_eta φ n v (fun _ => hv)).2.symm.trans
+    (D.real_rectangular_formula_of_eta φ n w (fun _ => hw)).2
+
+example : D.realActionAngleMap = sourceRealBirkhoffMap hp hp1 s := D.realActionAngleMap_eq
+
+example : AnalyticOnNhd ℝ D.realActionAngleMap univ := D.realActionAngleMap_analytic
+
+example (φ : realTypeSourceSubmodule p) (v : ℤ → ℂ)
+    (hv : ∀ n, sourcePeriodicGapDisplacement hp hp1 φ.val n ≠ 0 →
+      v n ∈ sourceAngularOriginalEtaIntegralValues hp hp1 n s φ.val) :
+    Memℓp (fun n => Real.sqrt (2*(sourceIndexedAction hp hp1 n φ.val).re)*
+      Real.cos (v n+sourceAngularBetaCorrection hp hp1 n s φ.val).re) p := by
+  rw [← (D.realActionAngleMap_eta_choices φ v hv).1]
+  exact lp.memℓp _
+
+example (hp2 : p ≤ 2) (φ : realTypeSourceSubmodule p) :
+    (D.realActionAngleHomeomorph hp2).symm (D.realActionAngleMap φ) = φ :=
+  (D.realActionAngleHomeomorph hp2).symm_apply_apply φ
+
+example (hp2 : p ≤ 2) (z : RealCoeff p × RealCoeff p) :
+    D.realActionAngleMap ((D.realActionAngleHomeomorph hp2).symm z) = z :=
+  (D.realActionAngleHomeomorph hp2).apply_symm_apply z
+
+example (hp2 : p ≤ 2) :
+    AnalyticOnNhd ℝ (D.realActionAngleHomeomorph hp2) univ ∧
+    AnalyticOnNhd ℝ (D.realActionAngleHomeomorph hp2).symm univ :=
+  D.realActionAngleHomeomorph_analytic hp2
+
+example (hp2 : p ≤ 2) (z : RealCoeff p × RealCoeff p) :
+    (D.realActionAngleHomeomorph hp2).symm z = (D.complex.realHomeomorph hp2).symm z :=
+  D.realActionAngleHomeomorph_symm_apply hp2 z
+
+-- Independent root families define the same full map.
+example {A B C : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (E : SourceSection14OriginalData hp hp1 A B C t) :
+    D.realActionAngleMap = E.realActionAngleMap := D.realActionAngleMap_family E
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A B C : Set (CoeffPair q)} {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection14OriginalData hq hq1 A B C t) (hpq : p ≤ q)
+    (φ : realTypeSourceSubmodule p) :
+    ((RealCoeff.exponentInclusion hpq).prodMap (RealCoeff.exponentInclusion hpq))
+      (D.realActionAngleMap φ) = E.realActionAngleMap (realTypeSourceExponentInclusion hpq φ) :=
+  D.realActionAngleMap_exponent E hpq φ
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {A B C : Set (CoeffPair q)} {t : (n : ℤ) → CoeffPair q → DeletedCoeff q n}
+    (E : SourceSection14OriginalData hq hq1 A B C t) (hpq : p ≤ q)
+    (hp2 : p ≤ 2) (hq2 : q ≤ 2) (z : RealCoeff p × RealCoeff p) :
+    realTypeSourceExponentInclusion hpq ((D.realActionAngleHomeomorph hp2).symm z) =
+      (E.realActionAngleHomeomorph hq2).symm
+        (((RealCoeff.exponentInclusion hpq).prodMap (RealCoeff.exponentInclusion hpq)) z) :=
+  D.realActionAngleHomeomorph_symm_exponent E hpq hp2 hq2 z
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Membership above two is separate from the inverse's onto range.
+example {A B C : Set (CoeffPair 4)} {t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (E : SourceSection14OriginalData (by norm_num) (by norm_num) A B C t)
+    (φ : realTypeSourceSubmodule 4) :
+    Memℓp (fun n => Real.sqrt (2*(sourceIndexedAction (by norm_num) (by norm_num) n φ.val).re)*
+      Real.cos (sourceAngularOriginalTheta (by norm_num) (by norm_num) n t φ.val).re) 4 ∧
+    Memℓp (fun n => Real.sqrt (2*(sourceIndexedAction (by norm_num) (by norm_num) n φ.val).re)*
+      Real.sin (sourceAngularOriginalTheta (by norm_num) (by norm_num) n t φ.val).re) 4 :=
+  E.real_actionAngle_mem φ
+
+example : ∃ F : realTypeSourceSubmodule 4 → RealCoeff 4 × RealCoeff 4,
+    AnalyticOnNhd ℝ F univ ∧ ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+      F = sourceRealBirkhoffMap (by norm_num) (by norm_num) s := by
+  obtain ⟨_,_,_,s,_,F,_,he,ha,_⟩ := sourceSection14_actionAngle_map (p := 4) (by norm_num) (by norm_num)
+  exact ⟨F,ha,s,he⟩
+
+-- The Hilbert homeomorphism and its inverse are constructed without input data.
+example : ∃ e : realTypeSourceSubmodule 2 ≃ₜ (RealCoeff 2 × RealCoeff 2),
+    AnalyticOnNhd ℝ e univ ∧ AnalyticOnNhd ℝ e.symm univ ∧
+      (∀ φ, e.symm (e φ) = φ) ∧ (∀ z, e (e.symm z) = z) := by
+  obtain ⟨_,_,_,_,_,e,_,ha,hi,_⟩ := sourceSection14_hilbert_actionAngle_inverse
+  exact ⟨e,ha,hi,e.symm_apply_apply,e.apply_symm_apply⟩
+
+example : ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ e : realTypeSourceSubmodule 2 ≃ₜ (RealCoeff 2 × RealCoeff 2),
+      ∀ (φ : realTypeSourceSubmodule 2) (n : ℤ) (v : ℂ),
+        (sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n ≠ 0 →
+          v ∈ sourceAngularOriginalEtaIntegralValues (by simp) (by norm_num) n s φ.val) →
+        (e φ).2 n = Real.sqrt (2*(sourceIndexedAction (by simp) (by norm_num) n φ.val).re)*
+          Real.sin (v+sourceAngularBetaCorrection (by simp) (by norm_num) n s φ.val).re := by
+  obtain ⟨_,_,_,s,_,e,_,_,_,hf⟩ := sourceSection14_hilbert_actionAngle_inverse
+  exact ⟨s,e,fun φ n v hv => (hf φ n v hv).2⟩
+
+end ActionAngleChecks
+end NLS

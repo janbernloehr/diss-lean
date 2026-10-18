@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: real weighted inverses and global Sobolev analyticity
+## Current milestone: literal real action–angle map and global inverse
+
+The normalized analytic amplitude is now proved to be the nonnegative
+square root of twice the actual indexed action. The real coordinates are
+therefore exactly sqrt(2 I_n) cos(theta_n) and sqrt(2 I_n) sin(theta_n),
+including at collapsed gaps. Every admissible normalized eta integral
+gives the same coordinates; at collapsed gaps any angle value is allowed.
+
+The literal formulas define full lp sequences and an analytic real map
+for every finite p>1. This map equals the existing Birkhoff map, is
+independent of the constructed normalized root family, and commutes with
+exponent inclusion. For 1<p<=2 its global homeomorphism has analytic
+forward and inverse maps, both inverse identities, and inverse exponent
+compatibility. The Hilbert specialization constructs the family and
+inverse together, with the same formulas for every admissible eta choice.
+
+Three new modules and 18 public checks cover the positive branch, collapsed
+gaps, eta-choice invariance, actual sequence membership at p=4, full-map
+analyticity, both inverse identities, family independence, exponent
+compatibility, and the constructed Hilbert inverse.
+
+The public 2013 Grébert–Kappeler manuscript has been retrieved and its
+normalizations compared with the source definitions. It is distinguished
+from the cited 2014 edition. The remaining comparison requires the physical
+Hilbert-space identification and agreement of the external primitives;
+matching the coordinate formulas alone does not prove map equality.
+See [the Section 14 audit](coverage/SECTION_14.md). The G.2 local norm
+qualification and the recorded Lemma 27.2 qualification remain explicit.
+
+Validation: `./scripts/check.sh` passed: 7,586 build jobs, all 6,541 public
+examples, and the transitive axiom audit for 36,473 NLS declarations. The
+full build retains the same 21 existing warnings; all three new modules
+and 18 new checks are warning-free. All 156 source inventory labels,
+864 local file links across 38 documents, and `git diff --check` pass.
+
+## Previous milestone: real weighted inverses and global Sobolev analyticity
 
 The actual weighted real Birkhoff Jacobian is a bounded real linear
 equivalence at every weighted real source, for every spectral weight and

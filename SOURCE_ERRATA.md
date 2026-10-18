@@ -1132,10 +1132,15 @@ is sqrt(1+t^2), with right-hand limit one at zero; both the identity and
 limit are proved. No finite-time optimality claim is made.
 
 This correction has not been adopted as the source's intended statement.
-The interval norm convention remains unresolved. The publisher's
-[2014 reference page](https://ems.press/books/elm/205) requires a subscription;
-its accessible metadata supplies no norm definition. The separate verified
-unit-interval consequence remains unchanged.
+The interval norm convention remains unresolved. The public
+[2013 Grébert–Kappeler manuscript](https://www.math.uzh.ch/preprint?key1=2013)
+has now been inspected: Theorem 2.3, printed p. 13 (PDF p. 19), bounds the
+weighted remainder on [0,1] using the global periodic H1 norm and coefficient
+3*(1+norm(phi)*exp(norm(phi)))/abs(lambda), for abs(lambda)>=1. This does
+not justify the arbitrary-time local norm in G.2. The exact inspected
+version is recorded in [the Section 14 audit](coverage/SECTION_14.md).
+The [published 2014 reference](https://ems.press/books/elm/205) remains a
+separate source version. The verified unit-interval consequence is unchanged.
 
 ## The proof of Lemma F.2: a common-path coefficient and a real majorant
 

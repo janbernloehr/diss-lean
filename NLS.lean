@@ -3918,3 +3918,6 @@ import NLS.ZakharovShabat.SourceBirkhoffWeightedRealLocalInverse
 import NLS.ZakharovShabat.SourceBirkhoffWeightedImageInverse
 import NLS.ZakharovShabat.SourceBirkhoffSobolevGlobalInverse
 import NLS.ZakharovShabat.SourceSection14WeightedRealInverse
+import NLS.ZakharovShabat.SourceBirkhoffRealActionAngle
+import NLS.ZakharovShabat.SourceBirkhoffActionAngleMap
+import NLS.ZakharovShabat.SourceSection14ActionAngle

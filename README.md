@@ -5,13 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: real weighted Birkhoff maps have analytic local inverses and
-analytic inverses on their open images for every spectral weight and finite
-p>1. At every nonnegative Sobolev order, the map is a global real analytic
-homeomorphism with analytic inverse for 1<p<=2.
+Latest step: the literal real action–angle formulas define the full analytic
+Birkhoff sequence map, including collapsed gaps. Admissible eta-integral
+choices and independent normalized root families give the same map. For
+1<p<=2 it has the previously constructed global analytic inverse.
 
-Next: revisit the remaining source qualifications and external map
-comparison. The unrestricted Lemma 27.2 and G.2 norm qualifications remain.
+Next: identify the physical Hilbert-space realization with the external
+construction cited in Remark 14.2(i). The 2013 public manuscript now has an
+explicit normalization audit; identification with the cited 2014 edition
+remains open. The Lemma 27.2 and G.2 qualifications remain recorded.
 The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),

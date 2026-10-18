@@ -59,6 +59,17 @@ on the original source-norm ball of radius M. It holds for every nonzero
 complex z and every time in [0,1]. This repairs the intermediate proof
 estimate; the stated G.3 remainder conclusions retain their existing proofs.
 
+## Public manuscript comparison for G.2
+
+Theorem 2.3 of the [2013 Grébert–Kappeler manuscript](https://www.math.uzh.ch/preprint?key1=2013),
+printed p. 13 (PDF p. 19), uses the global periodic H1 norm on the fixed
+unit interval and coefficient 3*(1+norm(phi)*exp(norm(phi)))/abs(lambda)
+for the weighted remainder, with abs(lambda)>=1. It does not supply an
+arbitrary-time local interval norm convention for dissertation G.2.
+The inspected version is recorded in [the Section 14 audit](SECTION_14.md);
+it is distinct from a verification of the published 2014 reference.
+The local integral-norm counterexample and proved correction remain valid.
+
 ## Unresolved and refuted statements
 
 G.2's arbitrary-time interval norm still needs an explicit source convention
