@@ -187,6 +187,7 @@ actual-source correction witnesses. Full gate results are recorded in
 [the implementation status](../STATUS.md).
 
 The subsequent [Section 19 audit](SECTION_19.md) integrates the original
-abelian integral assertions. Next: Section 20. Section 14's
-precise external Hilbert-map identification and full fractional-smoothness
-qualifications remain. The dissertation is incomplete.
+abelian integrals, and [Section 20](SECTION_20.md) covers their frequency
+and contour-moment applications. Native fractional Sobolev analyticity
+and analytic inverses are proved in [Section 14](SECTION_14.md); its
+precise 2014 construction comparison remains unverified.

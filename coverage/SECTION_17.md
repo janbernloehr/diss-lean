@@ -121,8 +121,9 @@ and actual spectral tori. Unconditional constructions are checked at
 p=3/2, p=2, and p=4. Full gate results are recorded in
 [the implementation status](../STATUS.md).
 
-The precise external Hilbert-map identification and full fractional
-smoothness qualification from Section 14 remain. Surjectivity for p>2
-is not claimed. Next: audit Section 18 and the Chapter 4 Hamiltonian,
-frequency, and flow statements against the original source quantities.
-The dissertation remains incomplete.
+Native weighted analyticity and global analytic Sobolev inverses for
+1<p≤2 at every nonnegative real order are proved in
+[Section 14](SECTION_14.md). Its precise 2014 construction comparison
+remains unverified; surjectivity for p>2 is not claimed. The original
+Hamiltonian, frequency, and flow statements are audited in
+[Section 18](SECTION_18.md) and the following sections.

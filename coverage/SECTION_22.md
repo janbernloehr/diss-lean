@@ -160,7 +160,7 @@ and axiom-audit results are in [implementation status](../STATUS.md).
 
 For p > 2, global source solvability is asserted only where the phase
 curve stays in the original image; global surjectivity is not asserted.
-The Section 14 external Hilbert-map and full fractional-smoothness
-qualifications remain. The original family now also carries the named
-Sobolev and weighted estimates in [the Section 23 audit](SECTION_23.md).
-The dissertation is incomplete.
+[Section 14](SECTION_14.md) now proves native fractional Sobolev
+analyticity and analytic inverses; its precise 2014 construction
+comparison remains unverified. The same original family carries the
+named Sobolev and weighted estimates in [Section 23](SECTION_23.md).

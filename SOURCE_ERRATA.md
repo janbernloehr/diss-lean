@@ -840,8 +840,9 @@ checks, not counterexamples to the printed statement.
 The weighted theorem uses raw coefficients for pointwise boundedness and
 the exact weighted norm for tails. The compact-operator consequence gives
 small full output tails in operator norm, as needed at the start of I.4.
-The relative-cone density argument and the displayed signs are audited above;
-real inverse restriction remains open; weighted transport is now proved.
+The relative-cone density argument, displayed signs, and real analytic
+inverse restriction are audited above. The real inverse restriction
+and weighted transport are proved with the stated neighborhood convention.
 
 ## Lemma I.1: missing lower-block invertibility hypothesis
 

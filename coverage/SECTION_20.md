@@ -372,5 +372,6 @@ U is unchanged from the original Section 20 package. This does not assert
 an angle bracket at a collapsed selected gap or a representing L² energy
 cotangent at every H¹ source. The subsequent original moment and
 Hamiltonian construction is audited in [Section 21](SECTION_21.md).
-Section 14's external Hilbert-map and full fractional-smoothness
-qualifications remain. The dissertation is incomplete.
+[Section 14](SECTION_14.md) now proves native fractional Sobolev
+analyticity and analytic inverses. Its precise 2014 construction
+comparison remains unverified.

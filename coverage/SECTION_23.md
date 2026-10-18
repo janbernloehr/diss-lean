@@ -3,8 +3,10 @@
 This audit concerns printed pp. 103–106. Theorems 23.1, 23.2, and 23.4,
 Remark 23.3, and Corollary 23.5 now hold for one retained original
 Sections 17–22 family. The exact norms and indexed actions are retained.
-This is an audit of the named estimates; the opening smoothness claims
-and the outline of the higher-action proof have separate qualifications.
+The opening Sobolev diffeomorphism assertion also follows from the
+native weighted inverse results below. The cited one-smoothing property
+is a separate assertion, and the higher-action outline has the source
+corrections recorded in Section 24.
 
 ## One original map and exact norms
 
@@ -33,6 +35,25 @@ target norm squared with twice the absolutely convergent weighted sum of
 the original indexed actions. The integer identity holds at every lower
 order k ≤ m, including k = 0. No maximum-product norm replaces the
 component-sum norm in these statements.
+
+## Sobolev geometry of the same original map
+
+The later
+[`SourceBirkhoffSobolevGlobalInverse.lean`](../NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean)
+applies to the already chosen D.complex. At p=2 and every real t>=0,
+`originalWeightedRealSobolevHomeomorph` is the original map in its
+native weighted source and target norms. Both it and its inverse are
+real analytic on their entire spaces; the inverse's strict derivative
+is the actual bounded inverse Jacobian. The result includes t=0 and
+fractional orders, and does not choose a new Birkhoff family.
+
+[`SourceBirkhoffWeightedCanonical.lean`](../NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean)
+identifies the scalar extensions with that same map's raw coordinates
+and proves all three canonical identities for their full weighted
+derivatives. Together these results establish the opening canonical
+bi-analytic Sobolev diffeomorphism assertion independently of the norm
+estimates. The precise comparison with the published 2014 construction
+is still qualified in [Section 14](SECTION_14.md).
 
 ## Named estimates
 
@@ -88,11 +109,11 @@ retain both original physical solution theories, the unconditional
 common-family constructor, and the weight-growth correction.
 Full validation results are recorded in [implementation status](../STATUS.md).
 
-The opening assertion of a bi-analytic Sobolev diffeomorphism at every
-real nonnegative order, and the discussion of the one-smoothing property,
-are not established merely by these norm estimates. The external
-Hilbert-map and full fractional-smoothness qualifications in
-[the Section 14 audit](SECTION_14.md) remain.
+The native Sobolev geometry is now covered by the independent inverse
+and canonical results above. The discussion of the one-smoothing
+property on p. 104 cites [39]. A full one-derivative gain for the
+Birkhoff map minus its Fourier linearization is not proved by the
+norm estimates alone and is not asserted here.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is
@@ -100,5 +121,9 @@ incorrect even with that index correction. The full original-domain
 physical trace has positive factor 1/4ᵐ. See
 [the Section 24 audit](SECTION_24.md) and
 [`SourceSection23TraceCorrections.lean`](../NLS/ZakharovShabat/SourceSection23TraceCorrections.lean).
-The precise asymptotic and the remaining Section 24 zero-detection scope
-still require work. The dissertation remains incomplete.
+The precise two-sided asymptotic is proved there by
+`sourceIndexedHigherAction_asymptotic`. The all-level zero-detection
+claim is refuted by an actual open central gap with zero level-two
+action, while `sourceIndexedHigherAction_even_eq_zero_iff` gives the
+correct real odd-level converse. These distinctions are resolved;
+they are not additional unproved requirements for the norm estimates.

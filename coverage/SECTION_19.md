@@ -116,5 +116,6 @@ are recorded in [the implementation status](../STATUS.md).
 The original Section 20 frequency and contour-moment package now retains
 this primitive; see [the Section 20 audit](SECTION_20.md) for its exact
 scope and remaining work.
-Section 14's external Hilbert-map identification and full fractional
-smoothness qualifications remain. The dissertation is incomplete.
+[Section 14](SECTION_14.md) now proves native fractional Sobolev
+analyticity and analytic inverses. Its precise 2014 construction
+comparison remains unverified.

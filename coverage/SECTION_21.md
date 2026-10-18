@@ -98,7 +98,7 @@ Section 21 uses a common connected restriction T of the prior Section 20
 domain U; it does not assert these new identities on all of the old U.
 The action domain L contains all real-source actions and all nonnegative
 summable actions. Extension to the whole nonnegative ℓ² cone and global
-concavity are not asserted. The Section 14 external Hilbert-map and full
-fractional-smoothness qualifications remain. The subsequent original phases
-and physical flows are audited in [Section 22](SECTION_22.md). The
-dissertation is incomplete.
+concavity are not asserted. Native fractional Sobolev analyticity and
+analytic inverses are proved in [Section 14](SECTION_14.md); its precise
+2014 construction comparison remains unverified. The subsequent original
+phases and physical flows are audited in [Section 22](SECTION_22.md).

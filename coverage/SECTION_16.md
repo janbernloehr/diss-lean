@@ -97,8 +97,10 @@ same ± sign; no discrepancy is claimed for that grouping.
 The package extends Section 15 without replacing the root family or the
 map. It retains the full complex exponent compatibility from Section 14,
 all canonical brackets, real local inverses, and the global inverse for
-1<p≤2. The qualifications about the precise external Hilbert construction
-and fractional smoothness remain. No surjectivity for p>2 is asserted.
+1<p≤2. Native weighted analyticity and the analytic inverse at every
+nonnegative real Sobolev order are now proved in
+[Section 14](SECTION_14.md). Its precise 2014 construction comparison
+remains unverified. No surjectivity for p>2 is asserted.
 
 Seven new modules and 23 new public examples cover the original derivatives,
 physical gradients, quotient identification, equation (3.3), corrected
@@ -107,5 +109,5 @@ witnesses. Independent packages at p=3/2 and p=4 are constructed and compared
 on their full complex intersection. Full validation is recorded in
 [the implementation status](../STATUS.md).
 
-Next: audit Section 17's detailed inverse and flow arguments against the
-same original family. The dissertation remains incomplete.
+The detailed inverse and flow arguments for this same original family
+are audited in [Section 17](SECTION_17.md).

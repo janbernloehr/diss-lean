@@ -9,6 +9,13 @@ of Theorem 14.1 on compatible complex neighborhoods. In the table below,
 D denotes `SourceSection14Data`; the original-family formulas and real
 geometry are inherited through `D.toSourceSection14OriginalData`.
 
+The detailed sections also preserve earlier proof milestones. Their
+then-open inverse and compatibility tasks are superseded by the current
+table and the later completion sections. An auxiliary complex
+Dirichlet-minus-periodic-midpoint estimate remains unproved but is no
+longer needed by the weighted inverse proof. The exact 2014 edition
+comparison remains unverified.
+
 | Source assertion | Public evidence | Scope and remaining work |
 | --- | --- | --- |
 | Equation (3.1) on open gaps | `SourceSection14OriginalData.rectangular_formula` | Exact cosine/sine formula for the full sequence coordinates and the original theta; positive sine orientation |
