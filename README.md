@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual normalized-action and root errors have inverse-square
-index decay uniformly on physical H1 balls, including collapsed gaps.
-Root and inverse-root error multipliers gain two sequence derivatives;
-the combined normalization-and-phase error gains one for the same original
-Birkhoff family. Full Birkhoff-minus-Fourier smoothing and analyticity into
-the stronger target remain unproved. Lemma 27.2 with its printed constants
-is complete.
+Latest step: the actual signed Birkhoff coordinates differ from their
+literal spectral terminal terms by h2 sequences, uniformly on physical
+H1 balls. All normalization and angular factors are accounted for,
+including collapsed gaps. The exact Fourier comparison now reduces to
+two explicit spectral errors whose h2 bounds remain open, together with
+higher-order estimates and analyticity into the stronger target.
+Lemma 27.2 with its printed constants is complete.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

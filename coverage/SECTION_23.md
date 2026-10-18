@@ -214,8 +214,59 @@ combines normalization and beta-phase decay. The exact multiplier with
 symbol xi_n*exp(t*i*beta_n)-1 maps h^r_q to h^(r+1)_q with norm at most
 (1+|t|)*C(R), for every real t, r and Banach q. The sequence weights are
 (1+|n|)^r; the input ball is measured by the original physical H1 coordinates.
-The eta/spectral-coordinate error relative to Fourier and analyticity into
-the stronger target are still required for full one-smoothing.
+The eta factors are handled below. The spectral-coordinate error relative
+to Fourier and stronger-target analyticity remain required for full one-smoothing.
+
+## Actual eta and the spectral terminal
+
+[`SourceGapWeightedEtaH1Sequence.lean`](../NLS/ZakharovShabat/SourceGapWeightedEtaH1Sequence.lean)
+proves that each actual signed eta coordinate has norm equal to the real
+gap, for every finite source exponent p>1, including collapsed gaps. The
+actual H1 gap sequence gives an h1 eta sequence with its exact coefficients.
+[`SourceBirkhoffH1EtaDifference.lean`](../NLS/ZakharovShabat/SourceBirkhoffH1EtaDifference.lean)
+applies the normalization-phase multiplier and obtains an h2 difference
+between the signed Birkhoff coordinate and eta, uniformly on physical H1
+balls and for both signs of the same original family.
+
+[`SourceEtaRemainderLocalGapBound.lean`](../NLS/ZakharovShabat/SourceEtaRemainderLocalGapBound.lean)
+uses analytic evaluation at the moving Dirichlet terminal for the finite
+central indices, and fixed tail annuli with the diagonal numerator bound
+for the tail. One constant bounds all actual eta remainders by the
+Dirichlet-to-midpoint displacement plus half the gap on a complex
+neighborhood of each real source. In
+[`SourceEtaRemainderH1Decay.lean`](../NLS/ZakharovShabat/SourceEtaRemainderH1Decay.lean),
+real interlacing, compactness of the physical H1 decoder, and the actual
+weighted gaps yield a uniform gap bound and inverse-bracket decay on
+physical H1 balls.
+
+[`SourceEtaRemainderPhaseSmoothing.lean`](../NLS/ZakharovShabat/SourceEtaRemainderPhaseSmoothing.lean)
+proves real-valuedness of the remainder and vanishing at every real
+collapsed gap, at all finite source exponents p>1. Its exact exponential
+error multipliers gain one sequence derivative for every real sequence
+order and Banach exponent, uniformly on physical H1 balls.
+
+[`SourceBirkhoffSpectralTerminal.lean`](../NLS/ZakharovShabat/SourceBirkhoffSpectralTerminal.lean)
+defines the literal terminal coordinate
+
+    T_sign,n = -2 * (mu_n - tau_n + sign*i*sineNumerator_n)
+
+and identifies it with eta times the inverse remainder phase. The actual
+signed Birkhoff coordinate minus T_sign,n belongs to h2, with a uniform
+bound for both signs on each physical H1 ball. This accounts for all
+normalization and angular factors.
+
+[`SourceBirkhoffFourierErrorReduction.lean`](../NLS/ZakharovShabat/SourceBirkhoffFourierErrorReduction.lean)
+proves the exact rectangular Fourier-error decomposition in the project's
+original signed Fourier convention. The remaining spectral quantities are
+
+    A_n = mu_n - tau_n - (phi.fst(-n) + phi.snd(n))/2,
+    B_n = sineNumerator_n - (i/2)*(phi.fst(-n) - phi.snd(n)).
+
+If these two literal errors are represented in h2, the theorem constructs
+an h2 pair equal coefficientwise to the original Birkhoff map minus its
+Fourier linearization. This statement is conditional. Bounds for A and B,
+the required higher-order scope, and stronger-target analyticity remain
+open, so full one-smoothing is not asserted.
 
 ## Validation and remaining work
 
@@ -243,6 +294,11 @@ order, and H1 gap-opening perturbations preserving an open physical norm
 constraint. They also check the combined signed factor and identify its
 exponent-3/2 multiplier applied to an eta sequence with the original
 Birkhoff weighted coordinate minus that sequence.
+
+Six further checks cover eta norm at exponent three, negative-order
+l-infinity phase multiplication, a common bound for both signed terminal
+errors, both spectral errors at the zero source, collapsed-gap vanishing
+at a negative index, and the conditional h2 Fourier reduction.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

@@ -61929,3 +61929,94 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Delete
   ring
 
 end NLS.NormalizationPhaseH1Checks
+
+/-! Actual eta, angular smoothing, and the remaining spectral errors. -/
+
+namespace NLS.BirkhoffEtaSmoothingChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSourceSubmodule 3) :
+    ‖sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s (-1) a.val‖ =
+      ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) a.val 0‖ :=
+  D.norm_gapWeightedEta_eq_gap a 0 (-1) (Or.inr rfl)
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ∃ T : WeightedCoeff (Weight.sobolev (-1/2)) ⊤ →L[ℂ]
+        WeightedCoeff (Weight.sobolev (-1/2+1)) ⊤,
+        (∀ c n, (T c).val n = (exp (-Complex.I*sourceAngularEtaRemainder (by simp) (by norm_num)
+          n s (sobolevSourceInclusion a.val))-1)*c.val n) ∧ ‖T‖ ≤ C := by
+  obtain ⟨C,hC,h⟩ := D.etaRemainder_phase_multipliers_uniform_physical_H1_ball 1
+  refine ⟨C,hC,fun a ha => ?_⟩
+  obtain ⟨T,hT,hnT⟩ := h a ha ⊤ inferInstance (-1/2) (-1)
+  refine ⟨T,?_,by simpa using hnT⟩
+  intro c n
+  simpa using hT c n
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 2 →
+      ∃ zplus zminus : WeightedCoeff (Weight.sobolev 2) 2,
+        (∀ n, zplus.val n = sourceBirkhoffWeightedCoordinate (by simp) (by norm_num) n s 1
+          (sobolevSourceInclusion a.val)-sourceGapWeightedEtaTerminalCoordinate (by simp) (by norm_num) n 1
+            (sobolevSourceInclusion a.val)) ∧
+        (∀ n, zminus.val n = sourceBirkhoffWeightedCoordinate (by simp) (by norm_num) n s (-1)
+          (sobolevSourceInclusion a.val)-sourceGapWeightedEtaTerminalCoordinate (by simp) (by norm_num) n (-1)
+            (sobolevSourceInclusion a.val)) ∧ ‖zplus‖ ≤ C ∧ ‖zminus‖ ≤ C := by
+  obtain ⟨C,hC,h⟩ := D.birkhoff_minus_spectral_terminal_uniform_physical_H1_ball 2
+  refine ⟨C,hC,fun a ha => ?_⟩
+  obtain ⟨zplus,hp,hpn⟩ := h a ha 1 (Or.inl rfl)
+  obtain ⟨zminus,hm,hmn⟩ := h a ha (-1) (Or.inr rfl)
+  exact ⟨zplus,zminus,by simpa using hp,by simpa using hm,hpn,hmn⟩
+
+end NLS.BirkhoffEtaSmoothingChecks
+
+namespace NLS.BirkhoffSpectralErrorChecks
+open ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+example (n : ℤ) :
+    sourceEtaMidpointFourierError (by simp) (by norm_num) (0 : CoeffPair 3) n = 0 ∧
+      sourceEtaSineFourierError (by simp) (by norm_num) (0 : CoeffPair 3) n = 0 := by
+  simp only [sourceEtaMidpointFourierError,sourceEtaSineFourierError,sourceDirichletMidpointDisplacement_apply,
+    sourceDirichletEtaSineNumerator,sourceStandardRootMidpoint,canonicalPeriodOneBoundaryRoots_zero,
+    map_zero,canonicalPeriodicMidpoint_zero,sourceAntiDiscriminantCandidate_zero]
+  simp
+end NLS.BirkhoffSpectralErrorChecks
+
+namespace NLS.BirkhoffEtaEndpointChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSourceSubmodule 3)
+    (hg : sourcePeriodicGapDisplacement (by simp) (by norm_num) a.val (-2) = 0) :
+    sourceAngularEtaRemainder (by simp) (by norm_num) (-2) s a.val = 0 ∧
+      exp (-Complex.I*sourceAngularEtaRemainder (by simp) (by norm_num) (-2) s a.val) = 1 := by
+  have h := D.etaRemainder_eq_zero_of_real_collapsed_gap a (-2) hg
+  exact ⟨h,by rw [h,mul_zero,exp_zero]⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSobolevSourceLocus)
+    (hA : ∀ n, sourceEtaMidpointFourierError (by simp) (by norm_num) (sobolevSourceInclusion a.val) n = 0)
+    (hB : ∀ n, sourceEtaSineFourierError (by simp) (by norm_num) (sobolevSourceInclusion a.val) n = 0) :
+    ∃ E : WeightedCoeff (Weight.sobolev 2) 2 × WeightedCoeff (Weight.sobolev 2) 2,
+      ∀ n, E.1.val n = (sourceBirkhoffMap (by simp) (by norm_num) s (sobolevSourceInclusion a.val)).1 n-
+          (sourceBirkhoffFourier (sobolevSourceInclusion a.val)).1 n ∧
+        E.2.val n = (sourceBirkhoffMap (by simp) (by norm_num) s (sobolevSourceInclusion a.val)).2 n-
+          (sourceBirkhoffFourier (sobolevSourceInclusion a.val)).2 n := by
+  apply D.birkhoff_fourier_h2_of_spectral_errors a 0 0
+  · intro n
+    simpa using (hA n).symm
+  · intro n
+    simpa using (hB n).symm
+
+end NLS.BirkhoffEtaEndpointChecks

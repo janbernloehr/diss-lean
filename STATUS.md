@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: uniform H1 normalization decay and smoothing multipliers
+## Current milestone: uniform H1 angular smoothing and the spectral terminal
+
+The actual signed eta coordinate has norm equal to the real spectral gap,
+including collapsed gaps and at every finite source exponent p>1. Its
+sequence therefore lies in h1 on real H1 sources. Applying the previously
+proved normalization-phase multiplier gives an h2 bound for the signed
+Birkhoff coordinate minus eta, uniformly on each physical H1 ball.
+
+The eta remainder now has one gap-factor bound on a complex neighborhood
+of every real source, uniformly in the signed index. Real interlacing
+and compactness of the physical H1 decoder turn this into a uniform
+inverse-bracket bound on each physical H1 ball. The remainder is real on
+all real sources and vanishes at collapsed gaps. Its exact exponential
+error multipliers gain one derivative at every real sequence order and
+Banach exponent, including infinity.
+
+Together these results prove that each actual signed Birkhoff coordinate
+minus its literal spectral terminal belongs to h2, with one bound for
+both signs on the physical H1 ball. The terminal is
+
+    -2 * (mu_n - tau_n + sign*i*sineNumerator_n).
+
+This accounts for all normalization and angular factors of the original
+family. The exact rectangular Fourier-error decomposition identifies two
+remaining spectral errors:
+
+    A_n = mu_n - tau_n - (phi.fst(-n) + phi.snd(n))/2,
+    B_n = sineNumerator_n - (i/2)*(phi.fst(-n) - phi.snd(n)).
+
+A public reduction constructs the actual h2 Fourier remainder when these
+two literal errors are represented in h2. Their h2 bounds remain unproved;
+the reduction is conditional and does not assert full one-smoothing.
+Uniform bounds for these errors, the required higher-order scope, and
+analyticity into the stronger target are the next obligations.
+
+Seven new modules and six public checks cover finite exponent three,
+zero and negative indices, collapsed-gap vanishing, a phase multiplier
+at negative sequence order on l-infinity, both signed terminal errors
+with the same uniform bound, and the conditional Fourier reduction.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+Validation: `./scripts/check.sh` passes with 7,682 build jobs, 6,763
+public examples, and a transitive axiom audit of 37,375 NLS declarations.
+The build retains 21 existing warnings; the seven new modules introduce none.
+Documentation checks cover 1,121 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: uniform H1 normalization decay and smoothing multipliers
 
 The actual normalized action rho_n and root xi_n satisfy
 
