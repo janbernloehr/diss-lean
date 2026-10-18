@@ -61285,3 +61285,108 @@ example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
   D.intrinsicPhysicalBirkhoffMap_fderiv_complex u h
 
 end NLS.PhysicalFourierChecks
+
+
+noncomputable section
+open Set Metric MeasureTheory Complex Filter Topology NLS.ComplexAnalysis NLS.Poisson
+open scoped ENNReal Classical
+namespace NLS.PhysicalActionFlowChecks
+open ZakharovShabat
+
+example (L : IntervalPairL2 →L[ℂ] ℂ) :
+    physicalHamiltonianDirectionCLM L = physicalHamiltonianDirection L := physicalHamiltonianDirectionCLM_apply L
+
+example {U : Set IntervalPairL2} {H : IntervalPairL2 → ℂ} (hH : AnalyticOnNhd ℂ H U) :
+    AnalyticOnNhd ℂ (physicalHamiltonianVector H) U := analyticOnNhd_physicalHamiltonianVector hH
+
+example (H : IntervalPairL2 → ℂ) (u : IntervalPairL2) (hH : DifferentiableAt ℂ H u) :
+    physicalHamiltonianVector H u = sourcePhysicalL2
+      (sourceHamiltonianVector le_rfl (H ∘ sourcePhysicalL2) (sourcePhysicalL2Equiv.symm u)) :=
+  physicalHamiltonianVector_eq_source H u hH
+
+example (u : physicalRealSubmodule) : physicalActionFlow u (-7) 0 = u := physicalActionFlow_zero u (-7)
+
+example (u : physicalRealSubmodule) (k : ℤ) (t r : ℝ) :
+    physicalActionFlow (physicalActionFlow u k t) k r = physicalActionFlow u k (t+r) :=
+  physicalActionFlow_add u k t r
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    physicalActionFlow (physicalActionFlow u k t) k (-t) = u := physicalActionFlow_neg u k t
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    HasDerivAt (fun r => (physicalActionFlow u k r).val)
+      (physicalHamiltonianVector (physicalIndexedAction k) (physicalActionFlow u k t).val) t :=
+  hasDerivAt_physicalActionFlow u k t
+
+-- Uniqueness includes complex physical trajectories; reality need not be assumed of g.
+example (u : physicalRealSubmodule) (k : ℤ) (g : ℝ → IntervalPairL2) (hg0 : g 0 = u.val)
+    (hg : ∀ t, HasDerivAt g (physicalHamiltonianVector (physicalIndexedAction k) (g t)) t) :
+    g = fun t => (physicalActionFlow u k t).val := physicalActionFlow_unique u k g hg0 hg
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) (z : ℂ) :
+    l2Discriminant (physicalActionFlow u k t).val z = l2Discriminant u.val z :=
+  congrFun (l2Discriminant_physicalActionFlow u k t) z
+
+example (u : physicalRealSubmodule) (k n : ℤ) (t : ℝ) :
+    physicalIndexedAction n (physicalActionFlow u k t).val = physicalIndexedAction n u.val :=
+  physicalIndexedAction_actionFlow u k n t
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) : ‖physicalActionFlow u k t‖ = ‖u‖ :=
+  physicalActionFlow_norm u k t
+
+example (u : physicalRealSubmodule) (k : ℤ)
+    (hk : physicalPeriodicLeft u.val k = physicalPeriodicRight u.val k) (t : ℝ) :
+    physicalActionFlow u k t = u := physicalActionFlow_eq_self_of_collapsed u k hk t
+
+example (t : ℝ) : physicalActionFlow 0 (-7) t = 0 :=
+  physicalActionFlow_eq_self_of_collapsed 0 (-7)
+    ((physicalPeriodicEndpoints_zero (-7)).1.trans (physicalPeriodicEndpoints_zero (-7)).2.symm) t
+
+example (u : physicalRealSubmodule) (t : ℝ) :
+    (intrinsicPhysicalBirkhoffMap (physicalActionFlow u 3 t)).fst (-2) = (intrinsicPhysicalBirkhoffMap u).fst (-2) :=
+  (physicalActionFlow_coordinates_ne u 3 (-2) (by norm_num) t).1
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    (intrinsicPhysicalBirkhoffMap (physicalActionFlow u k t)).snd k =
+      Real.sin t*(intrinsicPhysicalBirkhoffMap u).fst k+Real.cos t*(intrinsicPhysicalBirkhoffMap u).snd k :=
+  (physicalActionFlow_coordinates_same u k t).2
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    physicalActionFlow u k (t+2*Real.pi) = physicalActionFlow u k t := physicalActionFlow_periodic u k t
+
+example (u : physicalRealSubmodule) (k l : ℤ) (t r : ℝ) :
+    physicalActionFlow (physicalActionFlow u k t) l r = physicalActionFlow (physicalActionFlow u l r) k t :=
+  physicalActionFlow_comm u k l t r
+
+-- The coordinate commutation also holds at non-Hilbert and infinity exponents.
+example (z : RealCoeff ⊤ × RealCoeff ⊤) (t r : ℝ) :
+    RealCoeff.actionRotation (RealCoeff.actionRotation z (-3) t) 4 r =
+      RealCoeff.actionRotation (RealCoeff.actionRotation z 4 r) (-3) t := RealCoeff.actionRotation_comm z (-3) 4 t r
+
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    physicalActionFlow u k t = realSourcePhysicalL2Equiv
+      (D.complex.hilbertActionRotation (realSourcePhysicalL2Equiv.symm u) k t) := D.physicalActionFlow_eq_source u k t
+
+example (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+    (u : physicalRealSubmodule) (k : ℤ) :
+    physicalHamiltonianVector (physicalIndexedAction k) u.val = sourcePhysicalL2
+      (sourceHamiltonianVector le_rfl (sourceComplexAction (by simp) (by norm_num) k)
+        (sourcePhysicalL2Equiv.symm u.val)) := D.physicalHamiltonianVector_indexedAction_eq_source k u
+
+example (k : ℤ) : Continuous (fun x : ℝ × physicalRealSubmodule => physicalActionFlow x.2 k x.1) :=
+  continuous_physicalActionFlow k
+
+example (k : ℤ) : Continuous (fun x : ℝ × (RealCoeff ⊤ × RealCoeff ⊤) =>
+    RealCoeff.actionRotation x.2 k x.1) := RealCoeff.continuous_actionRotation k
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    physicalActionFlowHomeomorph k t u = physicalActionFlow u k t := rfl
+
+example (u : physicalRealSubmodule) (k : ℤ) (t : ℝ) :
+    (physicalActionFlowHomeomorph k t).symm (physicalActionFlowHomeomorph k t u) = u :=
+  (physicalActionFlowHomeomorph k t).symm_apply_apply u
+
+end NLS.PhysicalActionFlowChecks

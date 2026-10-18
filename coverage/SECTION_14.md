@@ -941,3 +941,34 @@ operator on the complex inclusion of the real target.
 This verifies the physical Fourier linearization and its normalization.
 It does not identify the unavailable construction text of the cited 2014
 edition with the inspected 2013 manuscript.
+
+## Complete intrinsic physical action flows
+
+[`PhysicalActionFlow.lean`](../NLS/ZakharovShabat/PhysicalActionFlow.lean)
+uses the actual intrinsic homeomorphism to lift a one-coordinate rotation
+to a trajectory in the native physical real L2 space. The construction is
+defined for every real time and agrees with each original source family.
+Its derivative equals the literal physical action Hamiltonian vector field,
+with cross-gradient components (-i grad_2, i grad_1).
+
+[`PhysicalActionFlowProperties.lean`](../NLS/ZakharovShabat/PhysicalActionFlowProperties.lean)
+proves uniqueness even among complex L2 trajectories sharing the real initial
+value. The field is analytic near the constructed trajectory by
+[`PhysicalHamiltonianAnalytic.lean`](../NLS/ZakharovShabat/PhysicalHamiltonianAnalytic.lean),
+so local ODE uniqueness propagates over all real times. Every physical
+indexed action, the entire actual monodromy discriminant, and the exact
+physical Hilbert norm remain constant. A closed selected gap gives a
+constant trajectory.
+
+[`PhysicalActionFlowGroup.lean`](../NLS/ZakharovShabat/PhysicalActionFlowGroup.lean)
+identifies the exact positive-sine coordinate rotation. All other coordinates
+are fixed. The time maps compose by addition, have negative-time inverses,
+commute across arbitrary indices, and depend jointly continuously on time
+and the initial physical state. Each is a homeomorphism. All trajectories
+have period 2*pi; this does not claim a least period for stationary inputs.
+The required coordinate commutation and joint continuity are also proved for
+arbitrary Banach lp spaces, including infinity, in
+[`RealActionRotationProperties.lean`](../NLS/SequenceSpaces/RealActionRotationProperties.lean).
+
+These results establish complete flows of individual actions. They retain
+the precise 2014 edition comparison qualification recorded above.

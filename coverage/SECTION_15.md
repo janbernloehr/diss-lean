@@ -125,3 +125,16 @@ gaps, the entire action differential and physical field vanish, which is
 stronger than zero coordinate velocities alone. Real tangency is proved
 independently through the physical cross-gradient formula. Flow existence
 is outside this step's claims.
+
+## Complete physical evolution of the action fields
+
+The later modules
+[`PhysicalActionFlow.lean`](../NLS/ZakharovShabat/PhysicalActionFlow.lean) and
+[`PhysicalActionFlowProperties.lean`](../NLS/ZakharovShabat/PhysicalActionFlowProperties.lean)
+now construct complete trajectories of the fields above and prove uniqueness
+against arbitrary complex physical L2 solutions from the same real initial
+state. A closed selected gap is stationary for all times. The full
+discriminant, every action, and the original physical norm are preserved.
+[`PhysicalActionFlowGroup.lean`](../NLS/ZakharovShabat/PhysicalActionFlowGroup.lean)
+proves the exact signed rotation, commutation, period 2*pi, joint continuity,
+and homeomorphism group properties.

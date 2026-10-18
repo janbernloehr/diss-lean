@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: exact physical Fourier linearization
+## Current milestone: complete physical action flows
+
+Every real physical L2 input now has a trajectory for each indexed action
+at every real time. The construction uses the intrinsic physical Birkhoff
+homeomorphism and solves the literal cross-gradient Hamiltonian equation.
+The selected coordinate pair rotates with velocity (-y,x), and every other
+pair stays fixed. No action-flow existence premise is required.
+
+The trajectory is unique even among arbitrary complex physical L2 curves
+with the same real initial value and the same differential equation.
+The proof uses analyticity of the actual field near the constructed real
+trajectory. Every indexed action, the whole monodromy discriminant, and the
+original Hilbert norm are conserved. A collapsed selected gap gives a
+stationary trajectory.
+
+The flows form groups in time, commute for arbitrary indices, have period
+2*pi, and are jointly continuous in time and the initial state. Every
+fixed time is a physical homeomorphism with inverse at negative time.
+The general coordinate rotation results also include the infinity exponent.
+The period claim includes stationary trajectories and does not assert that
+2*pi is always the least period.
+
+Five new modules and 24 public checks cover the actual Hamiltonian equation,
+complex-curve uniqueness, conservation, signed and repeated indices,
+closed gaps, exact coordinate rotations, continuity, and inverse identities.
+
+Next: integrate the zero-mode reduction and sharp cubic-moment estimates
+for Lemma 27.2, including the unrestricted closed-zero-gap case. Then prove
+the required representation for the actual open spectral gap profile. The precise 2014 edition comparison for Remark 14.2(i)
+and the recorded G.2 qualification also remain. The dissertation is
+incomplete. See [the Section 14 audit](coverage/SECTION_14.md) and
+[the Section 27 audit](coverage/SECTION_27.md).
+
+Validation: the full project gate passed: 7,624 build jobs, 6,698 public
+examples, and the transitive axiom audit of 37,025 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The five new
+modules and 24 new checks are warning-free; the build retains 21 existing
+warnings. All 156 candidate source labels and 969 local file links across
+38 documents validate, and `git diff --check` passes.
+
+## Previous milestone: exact physical Fourier linearization
 
 The physical Birkhoff Fourier operator now has explicit formulas in terms
 of the actual unit-interval Fourier integrals. The first input frequency

@@ -3954,3 +3954,8 @@ import NLS.ZakharovShabat.PhysicalSpectralPoisson
 import NLS.ZakharovShabat.PhysicalActionHamiltonian
 import NLS.ZakharovShabat.PhysicalBirkhoffFourier
 import NLS.ZakharovShabat.PhysicalBirkhoffLinearization
+import NLS.ZakharovShabat.PhysicalHamiltonianAnalytic
+import NLS.ZakharovShabat.PhysicalActionFlow
+import NLS.ZakharovShabat.PhysicalActionFlowProperties
+import NLS.SequenceSpaces.RealActionRotationProperties
+import NLS.ZakharovShabat.PhysicalActionFlowGroup

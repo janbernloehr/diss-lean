@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the intrinsic physical Birkhoff map now has the exact signed
-Fourier transform as its full derivative at zero, and its inverse has the
-inverse Fourier derivative. The transform is given by actual unit-interval
-Fourier integrals and preserves the original complex Hilbert norms in
-both directions.
+Latest step: from each real physical L2 input, every indexed action
+Hamiltonian now has a complete, unique trajectory. The trajectories rotate
+one Birkhoff pair, conserve every action,
+the monodromy discriminant, and the physical Hilbert norm, and remain
+stationary at collapsed selected gaps. The flows commute and form
+continuous groups with negative-time inverses.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
