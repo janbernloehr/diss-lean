@@ -61778,3 +61778,66 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Delete
   simpa only [Complex.ofReal_neg,Complex.ofReal_one,abs_neg,abs_one,one_mul] using h a ha ⊤ inferInstance (3/2) (-1)
 
 end NLS.H1BetaBallDecayChecks
+
+/-! Sharp normalized-action bounds and uniform separation of the actual periodic segments. -/
+
+namespace NLS.NormalizationLowerBoundChecks
+open ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example (φ : realTypeSourceSubmodule 3) :
+    (1 / 4 : ℝ) ≤ (sourceNormalizedActionComplexExtension (by simp) (by norm_num) 0 φ.val).re :=
+  sourceNormalizedActionComplexExtension_re_ge_quarter (by simp) (by norm_num) φ 0
+
+example (φ : realTypeSourceSubmodule 3) :
+    ‖(sourceNormalizedActionRoot (by simp) (by norm_num) (-3) φ.val)⁻¹‖ ≤ 1 :=
+  sourceNormalizedActionRoot_inverse_norm_le_one (by simp) (by norm_num) φ (-3)
+
+example (a : Coeff 1) (u : ℤ → ℂ) (C : ℝ) (hC : 0 ≤ C)
+    (hu : ∀ m, ‖u m‖ ≤ C * ‖a m‖ / (1 + |(m : ℝ)|)^2 *
+      ‖Coeff.shift (-3) (Coeff.puncturedLattice 2 (by norm_num)) m‖^2) :
+    Summable (fun m => ‖u m‖) ∧ (∑' m, ‖u m‖) ≤ C * ‖a‖ / 4 := by
+  obtain ⟨hs, hb⟩ := Coeff.summable_norm_reciprocal_sq_of_weighted_l1 a u (-3) C hC hu
+  refine ⟨hs, ?_⟩
+  norm_num at hb
+  nlinarith
+
+
+example (φ : realTypeSourceSubmodule 3) :
+    ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val (-2)‖^2 ≤
+      4 * ‖sourceComplexAction (by simp) (by norm_num) (-2) φ.val‖ :=
+  source_gap_norm_sq_le_four_action (by simp) (by norm_num) φ (-2)
+
+example (φ : realTypeSourceSubmodule 3) :
+    2 * ‖sourceNormalizedActionRoot (by simp) (by norm_num) 0 φ.val - 1‖ ≤
+      ‖4 * sourceNormalizedActionComplexExtension (by simp) (by norm_num) 0 φ.val - 1‖ := by
+  have h := sourceNormalizedActionRoot_deviation_le_half (by simp) (by norm_num) φ 0
+  linarith
+
+end NLS.NormalizationLowerBoundChecks
+
+namespace NLS.UniformGapSeparationChecks
+open ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ C : ℝ, 1 ≤ C ∧ ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) φ.val (-2),
+      ∀ w ∈ sourcePeriodicSegment (by simp) (by norm_num) φ.val 3,
+        5 ≤ C * ‖w-z‖ := by
+  obtain ⟨V,_,_,hφV,C,hC,h⟩ := exists_local_source_segment_index_separation
+    (by simp) (by norm_num) φ.val φ.property
+  refine ⟨C,hC,fun z hz w hw => ?_⟩
+  simpa using h φ.val hφV (-2) 3 (by norm_num) z hz w hw
+
+example : ∃ C : ℝ, 1 ≤ C ∧ ∀ a : realTypeSobolevSourceLocus,
+    ‖sourcePhysicalH1Coordinates a.val‖ ≤ 2 →
+    ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) (sobolevSourceInclusion a.val) 0,
+    ∀ w ∈ sourcePeriodicSegment (by simp) (by norm_num) (sobolevSourceInclusion a.val) 1,
+      1 ≤ C * ‖w-z‖ := by
+  obtain ⟨C,hC,h⟩ := exists_source_segment_index_separation_on_physical_H1_ball 2
+  refine ⟨C,hC,fun a ha z hz w hw => ?_⟩
+  simpa using h a ha 0 1 (by norm_num) z hz w hw
+
+end NLS.UniformGapSeparationChecks

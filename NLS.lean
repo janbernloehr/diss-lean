@@ -3994,3 +3994,9 @@ import NLS.ZakharovShabat.SourceBirkhoffH1PhaseDecay
 import NLS.ZakharovShabat.SourceAngularBetaCompactBound
 import NLS.ZakharovShabat.SourceAngularBetaH1BallBound
 import NLS.ZakharovShabat.SourceBirkhoffH1BallPhase
+import NLS.SequenceSpaces.WeightedReciprocalSquareDecay
+import NLS.ZakharovShabat.SourceGapActionLowerBound
+import NLS.ZakharovShabat.SourceNormalizedActionLowerBound
+import NLS.ZakharovShabat.SourceDiscIndexSeparation
+import NLS.ZakharovShabat.SourceSegmentIndexSeparation
+import NLS.ZakharovShabat.SourceSegmentCompactSeparation

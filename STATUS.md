@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: uniform H1 beta decay and phase multipliers
+## Current milestone: sharp normalization bounds and uniform gap separation
+
+The original gap and action satisfy |gamma_n|² <= 4*|I_n| on every real
+source at every finite exponent p>1. The proof integrates the positive
+finite-gap profile and extends the inequality by continuity and finite-gap
+density. The public theorem constructs its primitive atlas internally and
+includes collapsed gaps.
+
+The actual normalized action rho_n has real part at least 1/4 everywhere
+on the real source space. Its normalized root xi_n is the nonnegative real
+square root of 4*rho_n, has real part at least one, and satisfies
+
+    |xi_n^(-1)| <= 1,
+    |xi_n-1| <= |4*rho_n-1|/2.
+
+The normalized-action factorization first gives the lower bound on open
+gaps; density of the open-gap locus and continuity include collapsed gaps.
+No gap-opening premise remains in these statements.
+
+One constant also bounds |i-j| by C*|w-z| for every pair of points on
+distinct actual periodic segments. This holds on a complex neighborhood
+of every real source, on compact real source sets, and uniformly on each
+physical H1 ball. A shared disc-geometry lemma supplies both the new
+segment estimate and the existing midpoint theorem, whose public statement
+is preserved. A separate reciprocal-square sum estimate transfers two
+index brackets from an l1 majorant and includes the zero mode.
+
+Six new modules and seven public checks cover finite exponent three,
+zero and negative indices, the sharp action bound, normalized-root errors,
+reciprocal-square sums, and separation constants chosen before every
+source in a physical H1 ball. See [the Section 23 audit](coverage/SECTION_23.md).
+
+Next combine the index-scale separation with the positive exterior kernel
+and weighted action sums to prove upper decay of the normalized action and
+root. These lower bounds do not yet establish that decay, the remaining
+spectral-coordinate asymptotics, full Birkhoff-minus-Fourier smoothing, or
+analyticity into the stronger target.
+
+Validation: `./scripts/check.sh` passes with 7,665 build jobs, 6,751
+public examples, and a transitive axiom audit of 37,281 NLS declarations.
+The build retains 21 existing warnings; the six new modules and the shared
+midpoint proof introduce none. Documentation checks cover 1,086 file
+links across 38 documents. The source inventory still matches all 156
+candidate labels; this is a navigation check, not a completeness claim.
+
+## Previous milestone: uniform H1 beta decay and phase multipliers
 
 The actual angular correction beta_n now satisfies
 (1+|n|)*|beta_n| <= K(R) uniformly on each physical H1 ball of

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual angular corrections and signed phase errors have
-inverse-bracket decay uniformly on physical H1 balls. The exact phase-error
-multiplier gains one Sobolev derivative for the same original Birkhoff
-family, including sources with infinitely many open gaps. This supplies
-the beta-phase ingredient of the separate full one-smoothing assertion,
+Latest step: the sharp gap-action bound and normalized-action/root lower
+bounds hold on the full real source space, including collapsed gaps.
+Actual periodic segments have index-scale separation uniformly on physical
+H1 balls. Together with the completed beta-phase decay estimates, these
+prepare the normalization-decay argument needed for full one-smoothing,
 which remains unproved. Lemma 27.2 with its printed constants is complete.
 
 The physical formula comparison is complete for the inspected 2013

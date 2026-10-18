@@ -142,6 +142,40 @@ an external asymptotic theorem. The remaining coordinate and normalization
 asymptotics, the full Birkhoff-minus-Fourier derivative gain, and analyticity
 into that stronger target are not established by the phase result.
 
+## Normalization bounds and separation for the next decay argument
+
+[`SourceGapActionLowerBound.lean`](../NLS/ZakharovShabat/SourceGapActionLowerBound.lean)
+proves the sharp inequality |gamma_n|² <= 4*|I_n| for the original canonical
+quantities, at every real source and every finite p>1. Integration of the
+actual positive finite-gap profile gives the inequality there; continuity
+and finite-gap density give the full real statement. The final theorem
+requires no supplied atlas or representation.
+
+[`SourceNormalizedActionLowerBound.lean`](../NLS/ZakharovShabat/SourceNormalizedActionLowerBound.lean)
+uses the exact action factorization on open gaps, then open-gap density,
+to prove Re(rho_n) >= 1/4 including collapsed gaps. It identifies the actual
+normalized root with sqrt(4*Re(rho_n)), proves Re(xi_n) >= 1 and
+|xi_n^(-1)| <= 1, and bounds |xi_n-1| by |4*rho_n-1|/2.
+
+[`SourceDiscIndexSeparation.lean`](../NLS/ZakharovShabat/SourceDiscIndexSeparation.lean)
+extracts the common geometric argument used by the existing midpoint
+estimate. [`SourceSegmentIndexSeparation.lean`](../NLS/ZakharovShabat/SourceSegmentIndexSeparation.lean)
+applies it to every point of the actual periodic segments, on a complex
+neighborhood of each real source. For distinct i and j, one constant gives
+
+    |i-j| <= C*|w-z|,  z in gap_i, w in gap_j.
+
+[`SourceSegmentCompactSeparation.lean`](../NLS/ZakharovShabat/SourceSegmentCompactSeparation.lean)
+makes this constant uniform on compact real source sets and physical H1
+balls. [`WeightedReciprocalSquareDecay.lean`](../NLS/SequenceSpaces/WeightedReciprocalSquareDecay.lean)
+provides the complementary sum estimate: a two-derivative l1 majorant
+controls the entire reciprocal-square sum at inverse-square-bracket rate.
+
+The next obligation is to combine these results with the actual exterior
+kernel and weighted actions to prove normalized-action/root upper decay.
+The present lower bounds and separation estimates alone do not prove that
+upper decay or the full Birkhoff-minus-Fourier smoothing assertion.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -157,6 +191,11 @@ indices, exponents 3/2 and infinity, a negative-order multiplier, one
 original family valid for all real H1 sources, and phase/operator
 constants chosen before every source in a physical H1 ball. Full
 validation results are recorded in [implementation status](../STATUS.md).
+Seven more checks cover the sharp gap-action bound, normalized action at
+index zero, the reciprocal normalized root at a negative index, the
+factor-two root-error bound, an l1 reciprocal-square sum, separation of
+negative and positive gaps, and one separation constant on an entire
+physical H1 ball.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing
