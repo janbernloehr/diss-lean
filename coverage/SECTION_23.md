@@ -348,9 +348,40 @@ assembles the h2 bound for both actual signed errors.
 proves analyticity in that stronger norm and exposes an h2-valued map
 whose every coefficient is the actual Birkhoff-minus-terminal error.
 Both signs share the neighborhood and norm bound. This completes the
-complex angular part at first source order. It does not prove the sharp
-Fourier errors A and B, higher-order complex angular analyticity, or
-full one-smoothing.
+complex angular part at first source order. The following extension
+covers all higher integer source orders; the sharp Fourier errors A and
+B and full one-smoothing remain open.
+
+## Complex angular analyticity at every higher integer order
+
+[`SourceHigherSobolevFirstNormalizedCoordinates.lean`](../NLS/ZakharovShabat/SourceHigherSobolevFirstNormalizedCoordinates.lean)
+constructs a continuous linear map from the original SobolevSource m,
+for m >= 1, into normalized first-order coordinates. Its decoded
+potential is exactly the original higher-order source, and it preserves
+the real-type condition. The original domain weight is (1+|n|)^m;
+normalized intermediate coordinates do not change the potential.
+
+[`SourceBirkhoffHmComplexSpectralTerminal.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmComplexSpectralTerminal.lean)
+pulls back the complex root-and-phase multipliers through this map and
+applies them to the actual native weighted eta sequence. Both signed
+angular errors have a common local h^(m+1) bound on a complex neighborhood
+of every real Hm source, including collapsed gaps.
+
+[`WeightedAnalyticRealization.lean`](../NLS/SequenceSpaces/WeightedAnalyticRealization.lean)
+provides a general actual weighted realization of scalar coefficients.
+Analytic coefficients and locally bounded weighted realizations imply
+analyticity in the weighted Banach target, including exponent infinity.
+[`SourceBirkhoffHmComplexSpectralTerminalAnalytic.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmComplexSpectralTerminalAnalytic.lean)
+uses this theorem to prove that the actual signed angular-error map is
+analytic into h^(m+1), with the original unweighted error at every index.
+
+[`SourceBirkhoffHmComplexFourierErrorReduction.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmComplexFourierErrorReduction.lean)
+constructs an analytic pair in h^(m+1) realizing the actual rectangular
+Birkhoff-minus-Fourier error whenever the literal errors A and B above
+already have analytic h^(m+1) realizations. It retains both assumptions
+and restricts to a common open neighborhood inside the original family's
+domain. Their sharp estimates and analytic realizations remain necessary
+for full one-smoothing; this conditional reduction does not prove them.
 
 ## Validation and remaining work
 
@@ -393,6 +424,11 @@ eta constructions at a physical weight and negative indices, phase
 multipliers at negative order with infinite or fractional exponents,
 zero phase, root-error summability, a negative signed terminal error,
 and differentiation in the actual h2 target.
+
+Three higher complex checks cover polynomial coefficient realization in
+weighted l-infinity at negative order, differentiation of the negative
+signed H3 angular error into h4 at a negative index, and an analytic H2
+Fourier remainder into h3 under the two literal spectral-error hypotheses.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing

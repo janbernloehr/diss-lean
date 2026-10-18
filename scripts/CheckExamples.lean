@@ -62247,3 +62247,51 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → Delete
   exact ⟨by simpa using ha,by simpa using he⟩
 
 end NLS.ComplexAngularH2Checks
+
+namespace NLS.HigherComplexAngularChecks
+open ZakharovShabat Set Metric Complex
+open scoped ENNReal
+
+example (b : WeightedCoeff (Weight.sobolev (-2)) ⊤) :
+    AnalyticOnNhd ℂ (fun z : ℂ => WeightedCoeff.ofFunctionOrZero (Weight.sobolev (-2)) ⊤
+      (fun n => z*z*b.val n)) (Metric.ball 0 1) := by
+  apply (WeightedCoeff.analytic_realization_of_bound (Weight.sobolev (-2))
+    (fun z : ℂ => fun n => z*z*b.val n) isOpen_ball
+    (fun n z hz => (analyticAt_id.mul analyticAt_id).mul analyticAt_const) ‖b‖ ?_).1
+  intro z hz
+  have hzn : ‖z‖ < 1 := by simpa using hz
+  have hzz : ‖z*z‖ ≤ 1 := by rw [norm_mul]; nlinarith [norm_nonneg z]
+  refine ⟨(z*z) • b,fun n => rfl,?_⟩
+  rw [norm_smul]
+  simpa only [one_mul] using mul_le_mul_of_nonneg_right hzz (norm_nonneg b)
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (a : realTypeHigherSobolevSourceLocus 3) :
+    ∃ U : Set (SobolevSource 3), IsOpen U ∧ a.val ∈ U ∧ ∀ b ∈ U,
+      DifferentiableAt ℂ (higherSobolevBirkhoffSpectralTerminalError 3 s (-1)) b ∧
+      (higherSobolevBirkhoffSpectralTerminalError 3 s (-1) b).val (-4) =
+        sourceBirkhoffWeightedCoordinate (by norm_num) (by norm_num) (-4) s (-1) (higherSobolevSourceInclusion 3 b)-
+          sourceGapWeightedEtaTerminalCoordinate (by norm_num) (by norm_num) (-4) (-1) (higherSobolevSourceInclusion 3 b) := by
+  obtain ⟨U,hU,ha,M,hM,h⟩ := D.exists_local_higherSobolevBirkhoffSpectralTerminal_analytic 3 (by omega) a
+  refine ⟨U,hU,ha,fun b hb => ?_⟩
+  exact ⟨by simpa using ((h (-1) (Or.inr rfl)).1 b hb).differentiableAt,
+    by simpa using ((h (-1) (Or.inr rfl)).2 b hb).2 (-4)⟩
+
+example {W₀ B₀ W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B₀ W s)
+    (a : realTypeHigherSobolevSourceLocus 2)
+    (U : Set (SobolevSource 2)) (hU : IsOpen U) (haU : a.val ∈ U)
+    (A B : SobolevSource 2 → WeightedCoeff (Weight.sobolev ((2:ℝ)+1)) 2)
+    (hAa : AnalyticOnNhd ℂ A U) (hBa : AnalyticOnNhd ℂ B U)
+    (hA : ∀ b ∈ U, ∀ n, (A b).val n = sourceEtaMidpointFourierError (by norm_num) (by norm_num) (higherSobolevSourceInclusion 2 b) n)
+    (hB : ∀ b ∈ U, ∀ n, (B b).val n = sourceEtaSineFourierError (by norm_num) (by norm_num) (higherSobolevSourceInclusion 2 b) n) :
+    ∃ E : SobolevSource 2 → WeightedCoeff (Weight.sobolev ((2:ℝ)+1)) 2 × WeightedCoeff (Weight.sobolev ((2:ℝ)+1)) 2,
+      DifferentiableAt ℂ E a.val ∧
+        (E a.val).1.val (-3) = (sourceBirkhoffMap (by norm_num) (by norm_num) s (higherSobolevSourceInclusion 2 a.val)).1 (-3)-
+          (sourceBirkhoffFourier (higherSobolevSourceInclusion 2 a.val)).1 (-3) := by
+  obtain ⟨V,hV,haV,hVU,E,hE,he⟩ := D.exists_local_higherSobolevBirkhoffFourier_analytic_of_spectral_errors
+    2 (by omega) a U hU haU A B hAa hBa hA hB
+  exact ⟨E,(hE a.val haV).differentiableAt,(he a.val haV (-3)).1⟩
+
+end NLS.HigherComplexAngularChecks

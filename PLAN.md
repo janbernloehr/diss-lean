@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: complex angular smoothing and h2 analyticity
+## Current milestone: complex angular analyticity at every positive integer order
+
+For every integer m >= 1, both actual signed Birkhoff-minus-terminal
+errors are locally bounded and analytic with values in h^(m+1) on a
+complex neighborhood of each real Hm source. The domain is the original
+SobolevSource m, with coefficient weight (1+|n|)^m; the analytic map's
+unweighted coefficients are exactly the original signed errors. Both
+signs share a neighborhood and norm bound, including collapsed gaps.
+
+A continuous map to normalized first-order coordinates preserves the
+original potential and its real-type condition. This transfers the
+proved complex normalization and phase multipliers to Hm. Native
+weighted eta bounds supply the remaining m derivatives. A reusable
+weighted realization theorem then combines analytic raw coefficients
+and locally bounded weighted realizations into analyticity in the
+actual stronger Banach target, including exponent infinity.
+
+The Fourier comparison now has a matching analytic reduction: if the
+two literal spectral errors admit analytic h^(m+1) realizations on a
+neighborhood, an explicit analytic pair realizes the original rectangular
+Birkhoff-minus-Fourier error on a smaller neighborhood. The two sharp
+spectral-error assumptions remain explicit and unproved. Full Fourier
+one-smoothing is not asserted. The earlier uniform physical Hm-ball
+bounds for the angular part remain available.
+
+Five modules and three public checks cover weighted infinity at negative
+order, differentiation of the negative signed H3 error into h4, and the
+conditional analytic H2 Fourier remainder into h3. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+Validation: `./scripts/check.sh` passes with 7,711 build jobs, 6,780
+public examples, and a transitive axiom audit of 37,468 NLS declarations.
+The build retains 21 existing warnings; the five new modules introduce none.
+Documentation checks cover 1,172 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: complex angular smoothing and h2 analyticity
 
 Both actual signed Birkhoff coordinates minus their literal spectral
 terminal terms are now locally bounded and analytic with values in h2
