@@ -1586,91 +1586,56 @@ supremum estimate and i≤m for the L² estimate. Lemma 26.3's monomial
 argument uses only i<m and remains valid. See
 [the Section 26 audit](coverage/SECTION_26.md).
 
-## Lemma 27.2: corrected global coefficient and remaining endpoint sharpening
+## Lemma 27.2: the endpoint proof gap is resolved
 
 Source: [dissertation, Lemma 27.2, page 116](https://janbernloehr.de/Download/fs16/diss.pdf#page=116).
-At m=1 the printed conclusion is `H3 ≤ 2S+S²`, where
-`S = sum_n ⟨2nπ⟩² I_n`. The final energy estimate used in its proof is
-`H3 ≤ S+2M²`, with total action M. Even retaining the stronger available
-estimate `H3 ≤ S-M+2M²`, the scalar conditions `0 ≤ M ≤ S` alone do not
-imply the conclusion at all sizes.
+The literal estimate is now proved for every m>=1, including m=1 without
+smallness or closed-gap restrictions. At m=1 it reads H3<=2*S+S², where
+S=sum_n <2*n*pi>² I_n. The proof retains the original indexed actions and
+the independently defined physical Hamiltonian.
+[`SourceSection27SharpEndpoint.lean`](NLS/ZakharovShabat/SourceSection27SharpEndpoint.lean)
+provides `sourceSection27_hamiltonian_estimate_literal` for every order and
+the corresponding theorem on the same retained SourceSection27Data family.
 
-`Lemma272EndpointArithmetic.lean` proves the precise limitation: the maximum
-of `S-M+2M²` over `0 ≤ M ≤ S` is `max(S,2S²)`, and it is at most `2S+S²`
-exactly when `S ≤ 2`. The scalar choice M=S=3 permits 18 while the target
-is 15. No potential realizing these scalar data and energy is asserted.
+The original scalar proof gap is still a valid diagnostic. Its final
+estimate H3<=S+2*M², or even H3<=S-M+2*M², does not imply the endpoint from
+0<=M<=S alone. [`Lemma272EndpointArithmetic.lean`](NLS/ZakharovShabat/Lemma272EndpointArithmetic.lean)
+shows that the maximum of S-M+2*M² is max(S,2*S²), which lies below
+2*S+S² exactly for S<=2. The scalar values M=S=3 permit 18 while the target
+is 15. No potential attaining those scalar data and energy was asserted,
+and this is not a counterexample to the lemma.
 
-`SourceH1EndpointActionBound.lean` proves the literal endpoint for S ≤ 2,
-a mass-sensitive sufficient condition, and an unrestricted all-order variant
-with twice the printed remainder. `SourceH1EndpointMomentCriterion.lean`
-reduces the literal endpoint exactly to a lower bound on the real cubic
-moments together with the nonnegative kinetic slack. Thus the missing
-spectral input is explicit; the literal unrestricted assertion remains open.
+The missing spectral input is now supplied by
+[`SourceFiniteGapProfileIdentity.lean`](NLS/ZakharovShabat/SourceFiniteGapProfileIdentity.lean).
+For actual finite-gap sources, the analytically filled quotient
+Q_n=-i*F_n/root_n equals one plus the explicit positive exterior correction.
+Cauchy's formula, the actual weighted arcosh integrals, the signs of the
+standard roots, and the exact -2*pi*i contour normalization prove the
+identity without importing an external representation formula as an axiom.
+[`SourcePrimitivePowerGlobalCubic.lean`](NLS/ZakharovShabat/SourcePrimitivePowerGlobalCubic.lean)
+uses it to prove R_n>=(3/4)*I_n², then extends this inequality by continuity
+and finite-gap density to every real source at every finite p>1.
 
-The new `SourcePrimitivePowerCubicLowerBound.lean` proves
-`π² I_n³ ≤ 4|γ_n|² R_n` from the actual nonnegative gap profile, with R_n
-the cubic moment. Summing gives `H3 ≤ S-M+2M²-D-(π²/3)B`, where
-`B = sum_n I_n³/|γ_n|²` is convergent and D is the kinetic slack.
-The quotient has the continuous expression `|γ_n|⁴|rho_n|³`, including
-closed gaps. This supplies a quantitative sufficient condition using only
-actions and gaps, but does not yet prove the comparison needed for all
-sources. The unrestricted literal endpoint therefore remains open.
+[`SourceH1SharpEndpoint.lean`](NLS/ZakharovShabat/SourceH1SharpEndpoint.lean)
+combines the sharp zero-mode bound with 2*M-I_0<=S and the actual physical
+energy identity. It proves H3<=S-M+S² and hence the literal endpoint.
+The closed-zero-gap estimate H3<=S-M+S²/2 remains a stronger bound on that
+special class. The former conditional kernel criteria and twice-remainder
+bound also remain valid; they are no longer substitutes for the unrestricted
+statement. An infinite-gap profile identity is not claimed and is not
+needed for the completed estimate.
 
-The later zero-mode argument in
-[`SourceH1ZeroModeActionBound.lean`](NLS/ZakharovShabat/SourceH1ZeroModeActionBound.lean)
-proves 2*M-I_0<=S and H3<=S-M+S²/2 when I_0=0. Thus the literal endpoint
-also holds for every real H1 input with a collapsed zero gap, without any
-smallness restriction. The bound R_0>=(3/4)*I_0² is sufficient in the
-remaining case by
-[`SourceH1ZeroModeMomentCriterion.lean`](NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean).
-The scalar profile estimate and positive kernel-integral bounds now retain
-the exact constants in the actual action and moment integrals.
-[`SourceH1ZeroModeKernelCriterion.lean`](NLS/ZakharovShabat/SourceH1ZeroModeKernelCriterion.lean)
-connects a precise positive exterior-kernel representation of the actual
-zero-gap profile to the printed endpoint, constructing the atlas internally.
-The later construction in
-[`SourceExteriorGapKernel.lean`](NLS/ZakharovShabat/SourceExteriorGapKernel.lean)
-proves the required majorant integrable using the actual action trace and
-neighboring-gap separation. The resulting explicit correction is nonnegative
-and continuous. [`SourceH1ActualGapCriterion.lean`](NLS/ZakharovShabat/SourceH1ActualGapCriterion.lean)
-therefore needs only the actual profile identity; kernel data, integrability
-and the atlas are constructed internally. Equality of the actual profile
-with this candidate remains unproved. The analytic filling and finite-gap
-normalization of the actual quotient are proved in
-[`SourceFilledGapQuotient.lean`](NLS/ZakharovShabat/SourceFilledGapQuotient.lean) and
-[`SourceFilledGapQuotientInfinity.lean`](NLS/ZakharovShabat/SourceFilledGapQuotientInfinity.lean).
-[`SourceSharpCubicFiniteGapReduction.lean`](NLS/ZakharovShabat/SourceSharpCubicFiniteGapReduction.lean)
-now reduces the sharp cubic bound to finite-gap sources by continuity and
-density, and proves the H1 endpoint conditional only on the finite-gap
-zero-profile identities. Those identities remain unproved; an infinite-gap
-representation is not needed for the final inequality. See
-[the Section 27 audit](coverage/SECTION_27.md).
-
-The proved global substitute is
-`sobolevOddHamiltonian_le_twice_weighted_action_remainder`, with twice
-the printed remainder for all m ≥ 1. The exact printed bound remains
-proved for m ≥ 2; the original unrestricted m=1 coefficient remains open and has not been
-disproved.
-The downstream proof of Theorem 23.2(ii) treats m=1 directly through
-Lemma 27.1 with d=√3. Its higher-order branch absorbs its explicit scalar
-constants. Theorem 23.1 and Remark 23.3 inherit that proved bound, so no
-exact downstream theorem needs a changed constant.
-
-The original indexed-action formulations are now in
-[`SourceSection27Actions.lean`](NLS/ZakharovShabat/SourceSection27Actions.lean).
-[`SourceSection27DerivativeBound.lean`](NLS/ZakharovShabat/SourceSection27DerivativeBound.lean)
-also proves the literal coefficient-one derivative estimate used in
-Theorem 23.2(ii), by enlarging the action-moment cutoff before applying
-the physical remainder bound. This retains the final unweighted mass
-factor and does not require the unresolved m=1 coefficient. The same
-original family and domains are recorded in
-[the Section 27 audit](coverage/SECTION_27.md).
+Theorem 23.2(ii), Theorem 23.1, and Remark 23.3 keep their previously proved
+constants. [`SourceSection27DerivativeBound.lean`](NLS/ZakharovShabat/SourceSection27DerivativeBound.lean)
+retains coefficient one on the top weighted-action sum and the final
+unweighted mass factor. The original family and the full proof are mapped
+in [the Section 27 audit](coverage/SECTION_27.md).
 
 For comparison, [the cited paper, Lemma 16, page 27](https://arxiv.org/pdf/1403.1369#page=27)
 uses the different remainder `(64π)^(2m) (1+M)^(2m-1) S^(2m-1)`.
-Its coefficient does not disappear on substituting m=1. This comparison
-does not establish a counterexample or justify silently replacing the
-constant in the dissertation.
+Its coefficient does not disappear at m=1. This comparison explains why
+that paper's bound alone did not establish the dissertation's endpoint;
+the new proof establishes the dissertation's literal statement directly.
 
 ## Lemma 28.1: the final scalar comparison at n=N
 

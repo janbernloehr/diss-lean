@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual primitive/root quotient is now analytically filled
-across the selected gap and normalized at infinity for finite-gap sources.
-Cauchy's finite-hole formula and a density argument reduce the remaining
-Lemma 27.2 endpoint to the explicit profile identity only for finite-gap
-sources. That identity remains open; the endpoint is already proved
-without a smallness restriction when the central gap is closed.
+Latest step: Lemma 27.2 is proved with its exact printed coefficient for
+every m>=1, including the unrestricted H1 endpoint H3<=2*S+S². The proof
+constructs the actual finite-gap exterior-kernel representation, obtains
+the sharp cubic bound, and extends that inequality by density. No smallness
+or representation hypothesis remains in the endpoint theorem.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
-recorded Lemma 27.2 and G.2 qualifications remain. The dissertation is
+recorded G.2 norm qualification remain. The dissertation is
 incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),

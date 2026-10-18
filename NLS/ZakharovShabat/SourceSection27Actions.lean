@@ -5,8 +5,9 @@ import NLS.ZakharovShabat.SourceActionSobolevLowerBound
 /-! # Section 27 estimates for the original indexed actions
 
 The physical norms and Hamiltonians retain their independent definitions.
-Lemma 27.2 has its printed coefficient for m≥2 and for m=1 on S≤2.
-The unrestricted all-order version explicitly doubles the remainder.
+This file proves Lemma 27.2 for m≥2 and for m=1 on S≤2, and also retains
+the weaker all-order bound with twice the remainder. The later module
+`SourceSection27SharpEndpoint` proves the printed coefficient for every m≥1.
 -/
 noncomputable section
 namespace NLS.ZakharovShabat

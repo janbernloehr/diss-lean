@@ -511,6 +511,6 @@ convergence is available at that endpoint and does not imply norm convergence.
 The source's Lemma A.2 has L^(p') on its left side for 2≤p≤∞; the prime must
 not be lost when reading extracted PDF text.
 
-The [Section 14 qualifications](SECTION_14.md) and unrestricted printed
-m=1 coefficient in [Section 27](SECTION_27.md) remain. The dissertation
-is incomplete.
+The [Section 14 edition comparison](SECTION_14.md) remains. The literal
+all-order Lemma 27.2 is now proved in [Section 27](SECTION_27.md). This
+appendix audit does not certify the whole dissertation complete.

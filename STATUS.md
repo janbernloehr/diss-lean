@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: analytic quotient and finite-gap endpoint reduction
+## Current milestone: the unrestricted printed Lemma 27.2
+
+Lemma 27.2 now holds with its exact printed constant for every m>=1 and
+every real H^m source. The m=1 endpoint H3<=2*S+S² has no smallness,
+closed-gap, or supplied representation hypothesis. The stronger global
+H1 budget H3<=S-M+S² is proved as well. The original indexed actions,
+physical Hamiltonian and exact Fourier bracket weights are retained.
+
+For finite-gap sources, Cauchy's formula expresses the actual filled
+quotient as one minus its exterior contours. Analytic weighted contour
+formulas, the real standard-root signs, and the angular change of variables
+identify each contour with -2*pi*i times the constructed positive kernel.
+This proves the actual finite-gap profile identity, including both selected
+endpoints. The sharp cubic bound R_n>=(3/4)*I_n² then extends to every real
+source at every finite p>1 by continuity and finite-gap density. Closed gaps
+are handled without division by their lengths.
+
+The zero-mode energy criterion gives the unrestricted H1 endpoint. Its
+original indexed-action version combines with the previous higher-order
+proof to establish the literal estimate for all m>=1. The retained
+SourceSection27Data family also satisfies this exact statement, while its
+existing weaker fields remain compatible. The earlier arithmetic diagnostic
+is a limitation of the scalar proof alone, not a refutation of the lemma.
+
+Ten new modules and seven public checks cover negative indices, the
+finite-gap quotient, selected endpoints, the global cubic bound, the
+stronger H1 budget, the literal endpoint, and the exact all-order constants.
+
+Next: continue the dissertation coverage audit. The precise 2014 edition
+comparison for Remark 14.2(i) and the recorded G.2 norm qualification remain.
+An infinite-gap profile representation is not asserted and is unnecessary
+for this completed inequality. The dissertation is not yet declared complete.
+See [the Section 27 audit](coverage/SECTION_27.md) and
+[source discrepancies](SOURCE_ERRATA.md).
+
+Validation: the full project gate passes with 7,653 build jobs, 6,736 examples,
+and a transitive axiom audit of 37,206 NLS declarations. The build reports 21
+pre-existing warnings and none in the new modules. Documentation checks cover
+1,046 file links across 38 documents and all 156 candidate source labels.
+
+## Previous milestone: analytic quotient and finite-gap endpoint reduction
 
 The normalized actual quotient -i*F_n/root_n now has an analytic filling
 across the entire selected gap. Its real part recovers the exact cosine

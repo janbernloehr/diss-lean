@@ -7,7 +7,7 @@ Continuity of actual moments and density of finite-gap sources reduce the
 sharp cubic estimate to the finite-gap case, for every finite p>1. Finite
 spectral support supplies action summability. The H1 endpoint therefore
 follows from only the finite-gap zero-profile identities; those identities
-remain an explicit, unproved hypothesis.
+are an explicit hypothesis here and are proved in `SourceFiniteGapProfileIdentity`.
 -/
 
 noncomputable section

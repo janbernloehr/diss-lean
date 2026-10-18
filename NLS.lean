@@ -3978,3 +3978,13 @@ import NLS.ZakharovShabat.StandardRootInfinity
 import NLS.ZakharovShabat.SourceFilledGapQuotient
 import NLS.ZakharovShabat.SourceFilledGapQuotientInfinity
 import NLS.ZakharovShabat.SourceSharpCubicFiniteGapReduction
+import NLS.ZakharovShabat.SourceExteriorContourKernel
+import NLS.ZakharovShabat.SourceExteriorKernelFiniteSum
+import NLS.ZakharovShabat.SourceExteriorQuotientContour
+import NLS.ZakharovShabat.SourceExteriorRootDenominator
+import NLS.ZakharovShabat.SourceFiniteGapProfileIdentity
+import NLS.ZakharovShabat.SourceFiniteGapQuotientCauchy
+import NLS.ZakharovShabat.SourceH1SharpEndpoint
+import NLS.ZakharovShabat.SourcePrimitivePowerGlobalCubic
+import NLS.ZakharovShabat.SourceSection27SharpEndpoint
+import NLS.ZakharovShabat.SourceWeightedPrimitiveBoundary

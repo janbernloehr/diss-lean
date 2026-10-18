@@ -61634,3 +61634,65 @@ example
   sourceH1_energy_le_lemma272_of_finiteGap_zero_profile_identity hrep a
 
 end NLS.GapRepresentationAnalyticChecks
+
+noncomputable section
+open Set Metric Filter Topology Complex MeasureTheory
+open scoped ENNReal
+namespace NLS.Lemma272CompletionChecks
+open ZakharovShabat
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) :
+    (3/4:ℝ)*‖sourceComplexAction (by simp) (by norm_num) (-3) φ.val‖^2 ≤ (A.moment (-3) 3 φ.val).re :=
+  A.real_action_sq_le_cubic φ (-3)
+
+example (a : realTypeSobolevSourceLocus) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)+
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 :=
+  sourceH1_energy_le_quadratic_budget a
+
+example (a : realTypeSobolevSourceLocus) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      2*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 := by
+  have h := sourceH1_energy_le_lemma272 a
+  nlinarith
+
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+      (1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)*
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n) :=
+  sourceSection27_endpoint a
+
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    (sobolevOddHamiltonian m hm a.val).re ≤
+      (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ m n)+
+      (64*Real.pi)^(2*m-2)*
+        (1+∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 1 n)^(4*m-3)*
+        (∑' n : ℤ, sourceIndexedWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 1 n) :=
+  sourceSection27_hamiltonian_estimate_literal m hm a
+
+example {W : Set (CoeffPair 2)} (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 2) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (hg : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (-2) ≠ 0) (θ : ℝ) :
+    C.filledGapQuotient (-2) φ.val (sourceCanonicalRootGapPoint (by simp) (by norm_num) φ.val (-2) (Real.cos θ)) =
+      1+(sourceExteriorGapCorrection (by simp) (by norm_num) φ (-2) θ:ℂ) :=
+  C.filledGapQuotient_eq_one_add_correction_finiteGap (-2) φ hφ hf hg θ
+
+example {W : Set (CoeffPair 2)} (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 2) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (hg : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (-2) ≠ 0) :
+    sourceRealGapCosineProfile (by simp) (by norm_num) φ.val (-2) Real.pi =
+      sourceGapHalfWidthReal (by simp) (by norm_num) φ (-2)*Real.sin Real.pi*
+        (1+sourceExteriorGapCorrection (by simp) (by norm_num) φ (-2) Real.pi) :=
+  C.real_profile_eq_actual_correction_finiteGap (-2) φ hφ hf hg Real.pi ⟨Real.pi_pos.le,le_rfl⟩
+
+end NLS.Lemma272CompletionChecks
