@@ -62660,3 +62660,37 @@ example (δ : ℂ) (hδ : ‖δ‖ ≤ 1) : ‖exp (Complex.I*δ)-1‖ ≤ 2*‖
     (by simpa only [norm_mul,norm_I,one_mul] using hδ : ‖Complex.I*δ‖ ≤ 1)
 
 end NLS.WKBLeadingFourierChecks
+
+namespace NLS.BothLeadingReductionChecks
+open Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+-- The reflected column uses the original first coefficient at -n, with a minus-i sign.
+example (a b : ℝ → ℂ) (n : ℤ) :
+    nlsWKBLeadingTerm (-b) (-a) 0 (-((Real.pi:ℂ)*n)) 1 =
+      -Complex.I*exp (-Complex.I*((Real.pi:ℂ)*n))*periodOneCoefficient a (-n) := by
+  simp only [nlsWKBLeadingTerm,pow_zero,mul_one,Complex.ofReal_one,
+    nlsRiccatiDensity_zero,Pi.neg_apply,neg_neg]
+  have hz : -((Real.pi:ℂ)*n) = (Real.pi:ℂ)*(-n:ℤ) := by push_cast; ring
+  have he : Complex.I*(-((Real.pi:ℂ)*n)) = -Complex.I*((Real.pi:ℂ)*n) := by ring
+  rw [he,hz,integral_pi_lattice_eq_periodOneCoefficient]
+
+-- Empty initial coordinates leave both exact phase-elimination weights equal to one.
+example (θ : BoundaryCondition) : wkbBoundaryLeadingFactor θ 0 0 = 1 := by
+  simp [wkbBoundaryLeadingFactor]
+
+-- The inverse-square sequence lies in H1 with a uniform norm bound, including negative indices.
+example : ∃ a : ScalarSobolev 1,
+    a.val (-2) = (1:ℂ)/9 ∧ ‖a‖ ≤ 2 := by
+  let f (n : ℤ) : ℂ := ((1+|(n:ℝ)|:ℝ):ℂ)⁻¹^2
+  have hf (n : ℤ) : (1+|(n:ℝ)|)^(1+1)*‖f n‖ ≤ 1 := by
+    simp only [f,norm_pow,norm_inv,Complex.norm_real,Real.norm_eq_abs,
+      abs_of_pos (by positivity : 0 < 1+|(n:ℝ)|)]
+    rw [← mul_pow,mul_inv_cancel₀ (by positivity : (1:ℝ)+|(n:ℝ)| ≠ 0)]
+    norm_num
+  obtain ⟨a,ha,hn⟩ := NLS.WeightedCoeff.exists_sobolev_coeff_of_inverse_power_bound 1 f 1 (by norm_num) hf
+  refine ⟨a,?_,by simpa using hn⟩
+  rw [ha]
+  norm_num [f]
+
+end NLS.BothLeadingReductionChecks

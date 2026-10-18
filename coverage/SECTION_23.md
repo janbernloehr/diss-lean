@@ -724,6 +724,55 @@ the leading-integral sign at every lattice index, and zero-order
 exponential displacement. These estimates do not yet give the sharp
 full WKB remainder or the two literal Fourier spectral errors.
 
+## Both leading coefficients and the diagonal error contribution
+
+[`SobolevWKBBothLeadingFourierTails.lean`](../NLS/ZakharovShabat/SobolevWKBBothLeadingFourierTails.lean)
+uses signed potential swap, frequency reflection, and the Sobolev
+reflection isometry to prove both leading-integral tail estimates with
+one cutoff and constant. The first leading coefficient is
+ i exp(i*pi*n) b_n; the reflected coefficient is
+-i exp(-i*pi*n) a_(-n).
+[`SourceWKBBothLeadingFourierTails.lean`](../NLS/ZakharovShabat/SourceWKBBothLeadingFourierTails.lean)
+applies the same result to the actual boundary and critical sequences
+near real Hs sources, with no covariance assumption on canonical labels.
+
+[`WKBBoundaryLeadingFactors.lean`](../NLS/ZakharovShabat/WKBBoundaryLeadingFactors.lean)
+bounds the exact phase-elimination factors by six and their difference
+from one by six times the sum of the initial-coordinate norms.
+The separated-model coefficient has bound eight times that sum.
+[`NLSWKBBoundaryLeadingCombination.lean`](../NLS/ZakharovShabat/NLSWKBBoundaryLeadingCombination.lean)
+gives the exact anti-discriminant model as the two leading-integral
+terms and the small separated-model contribution, with the phase eliminated.
+
+[`NLSWKBAntiErrorDecomposition.lean`](../NLS/ZakharovShabat/NLSWKBAntiErrorDecomposition.lean)
+defines the two actual WKB remainders E and F after subtracting the
+explicit leading integrals. With initial coordinates p and q and
+nonzero d=1-pq, it proves
+ d (anti_actual - anti_model) = q E.fst + p F.snd - E.snd - F.fst.
+Thus the diagonal terms carry additional small factors.
+[`SobolevWKBInitialDecay.lean`](../NLS/ZakharovShabat/SobolevWKBInitialDecay.lean)
+bounds both initial coordinates by one inverse-frequency factor,
+uniformly on original Sobolev balls through N=s.
+[`SobolevWKBDiagonalRemainder.lean`](../NLS/ZakharovShabat/SobolevWKBDiagonalRemainder.lean)
+consequently gives order N+2 for q E.fst + p F.snd.
+
+[`SobolevInversePowerBound.lean`](../NLS/SequenceSpaces/SobolevInversePowerBound.lean)
+turns a bound C/(1+|n|)^(s+1) into an actual Hs sequence with norm at
+most 2C, including the central index.
+[`SobolevWKBDiagonalFourierTail.lean`](../NLS/ZakharovShabat/SobolevWKBDiagonalFourierTail.lean)
+applies it to the literal diagonal contribution at N=s, giving a uniform
+H^(s+1) tail on original Hs balls with the stated displacement budgets.
+The central block is set to zero; multiplication by the uniformly bounded
+inverse determinant is still to be included in the final assembly.
+
+Three examples check the reflected sign and exact negative Fourier index,
+unit leading factors at empty initial coordinates, and the inverse-square
+sequence's H1 norm and coefficient at index -2. All physical comparisons
+retain matching smooth periodic representatives. The remaining sharp
+WKB estimate concerns E.snd + F.fst, rather than a stronger bound on
+both full vector remainders. Critical-to-midpoint and omitted-product
+cancellations are still required for the two literal spectral errors.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

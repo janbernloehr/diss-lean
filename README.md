@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: exact Hamiltonian reflection eliminates the two WKB
-phases, and the actual leading WKB integral now has its original Fourier
-coefficient with a sharp H^(s+1) tail error at canonical boundary and
-critical points near real Hs sources. The nonlinear Riccati remainder
-gains one derivative on the original complex Sobolev domains. Physical
-integral comparisons retain matching smooth periodic representatives.
-The full WKB remainder and the two sharp spectral errors still need
-proofs; full Fourier one-smoothing remains open. Higher-order complex
-angular analyticity and Lemma 27.2 with its printed constants are proved.
+Latest step: both leading WKB integrals now have sharp H^(s+1)
+Fourier tails with the original signed coefficients. An exact
+anti-discriminant identity isolates the off-diagonal remainders and
+proves the required Sobolev bound for the diagonal contribution.
+The remaining sharp WKB task is the sampled off-diagonal error;
+critical-to-midpoint and omitted-product cancellations also remain.
+Full Fourier one-smoothing is still open. Higher-order complex angular
+analyticity and Lemma 27.2 with its printed constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

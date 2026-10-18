@@ -4127,3 +4127,12 @@ import NLS.ZakharovShabat.WKBLeadingTailFourierError
 import NLS.ZakharovShabat.WKBLeadingFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBLeadingFourierTail
 import NLS.ZakharovShabat.SourceWKBLeadingFourierTails
+import NLS.ZakharovShabat.SobolevWKBBothLeadingFourierTails
+import NLS.ZakharovShabat.SourceWKBBothLeadingFourierTails
+import NLS.ZakharovShabat.WKBBoundaryLeadingFactors
+import NLS.ZakharovShabat.NLSWKBBoundaryLeadingCombination
+import NLS.ZakharovShabat.NLSWKBAntiErrorDecomposition
+import NLS.ZakharovShabat.SobolevWKBInitialDecay
+import NLS.ZakharovShabat.SobolevWKBDiagonalRemainder
+import NLS.SequenceSpaces.SobolevInversePowerBound
+import NLS.ZakharovShabat.SobolevWKBDiagonalFourierTail

@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Current milestone: reflected phases and sharp leading Fourier tails
+## Current milestone: both leading Fourier tails and diagonal remainder control
+
+Both actual leading WKB integrals now have their original Fourier
+coefficients: i exp(i*pi*n) b_n and -i exp(-i*pi*n) a_(-n).
+A common cutoff and H^(s+1) tail bound work for both columns at N=s,
+on original Hs balls with bounded inverse-index displacement budgets.
+The two-column result applies to the actual Dirichlet, Neumann, and
+critical sequences near real sources without assuming reflection
+covariance of their canonical labels.
+
+Exact phase elimination expresses the anti-discriminant model as a
+combination of those two leading integrals plus a small multiple of
+the separated model. The leading multipliers have norm at most six
+and differ from one by at most six times the sum of the initial-coordinate
+norms. The separated-model factor has norm at most eight times that sum.
+
+The actual anti-discriminant error now has an exact componentwise
+identity. Its diagonal remainders carry the initial-coordinate factors,
+which have uniform inverse-frequency decay. Their combined contribution
+therefore has order N+2 and, at N=s, an H^(s+1) tail bound on the original
+Sobolev ball. This controls q*E_first.fst+p*E_second.snd before the bounded
+inverse initial determinant is applied. The remaining sharp WKB target
+is the sum of the first remainder's second component and the second
+remainder's first component, sampled at the same signed frequencies.
+
+Nine modules and three public examples cover the reflected coefficient's
+sign and negative index, the empty-coordinate multipliers, and the
+inverse-square sequence in H1. Physical comparisons retain smooth
+periodic representatives with exact original coefficients. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The two off-diagonal remainder estimates, critical-to-midpoint comparison,
+and omitted-product cancellations still remain for the literal spectral
+errors. Full Fourier one-smoothing is not yet proved.
+
+Validation: `./scripts/check.sh` passes with 7,801 build jobs, 6,817
+public examples, and a transitive axiom audit of 37,818 NLS declarations.
+The build retains 21 existing warnings; the nine new modules introduce none.
+Documentation checks cover 1,315 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: reflected phases and sharp leading Fourier tails
 
 The physical NLS Hamiltonians now satisfy the exact signed-swap identity
 H_(k+1)(-b,-a) = (-1)^k H_(k+1)(a,b). The proof derives it from actual
