@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Current milestone: sharp normalization bounds and uniform gap separation
+## Current milestone: uniform H1 normalization decay and smoothing multipliers
+
+The actual normalized action rho_n and root xi_n satisfy
+
+    (1+|n|)^2 * |4*rho_n-1| <= K(R),
+    (1+|n|)^2 * |xi_n-1| <= K'(R)
+
+on every physical H1 ball of radius R, for all signed indices including
+zero and all real H1 sources including collapsed gaps. The exact root
+error and inverse-root error define bounded multiplication operators
+from h^r_q to h^(r+2)_q, for every real r and Banach q, including infinity.
+These sequence weights are (1+|n|)^r; the source ball uses the original
+physical coordinate norm.
+
+The proof bounds the actual exterior kernel by its angular density times
+a reciprocal-square index kernel. The exact physical weighted action
+sequence supplies an l1 mass majorant with a uniform ball bound. Integration
+of the finite-gap profile then bounds the action-to-gap ratio. The selected
+open-gap locus is dense in the H1 topology itself; its intersection with
+the finite-gap locus is dense there. Continuity of the normalized action
+extends the estimate across collapsed gaps without dividing by zero or
+assuming an infinite-gap profile representation.
+
+For any retained original Birkhoff family, multiplication by
+xi_n*exp(t*i*beta_n)-1 gains one sequence derivative, with operator norm
+at most (1+|t|)*C(R). Both signs and every real t are covered. A public check
+identifies this multiplier's output on a represented eta coordinate with
+the actual signed Birkhoff coordinate minus that eta coordinate.
+
+Ten new modules and six public checks cover zero and negative indices,
+weighted l-infinity and exponent 3/2, negative sequence order, H1 gap-opening
+perturbations preserving an open norm constraint, and the same original
+family. See [the Section 23 audit](coverage/SECTION_23.md).
+
+Next establish the eta/spectral-coordinate error relative to the original
+Fourier linearization and analyticity into the stronger target. The full
+Birkhoff-minus-Fourier one-smoothing assertion remains unproved.
+
+Validation: `./scripts/check.sh` passes with 7,675 build jobs, 6,757
+public examples, and a transitive axiom audit of 37,328 NLS declarations.
+The build retains 21 existing warnings; the ten new modules introduce none.
+Documentation checks cover 1,105 file
+links across 38 documents. The source inventory still matches all 156
+candidate labels; this is a navigation check, not a completeness claim.
+
+## Previous milestone: sharp normalization bounds and uniform gap separation
 
 The original gap and action satisfy |gamma_n|² <= 4*|I_n| on every real
 source at every finite exponent p>1. The proof integrates the positive

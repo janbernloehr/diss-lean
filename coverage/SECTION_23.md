@@ -138,11 +138,11 @@ This supplies the beta-phase ingredient of the separate argument in
 Kappeler, Schaad and Topalov's
 [*Semi-linearity of the non-linear Fourier transform of the defocusing NLS equation*](https://arxiv.org/abs/1505.04455).
 The proof uses the project's actual spectral quantities, without assuming
-an external asymptotic theorem. The remaining coordinate and normalization
+an external asymptotic theorem. The normalized-action decay is proved below. The remaining coordinate
 asymptotics, the full Birkhoff-minus-Fourier derivative gain, and analyticity
 into that stronger target are not established by the phase result.
 
-## Normalization bounds and separation for the next decay argument
+## Normalization bounds and gap separation
 
 [`SourceGapActionLowerBound.lean`](../NLS/ZakharovShabat/SourceGapActionLowerBound.lean)
 proves the sharp inequality |gamma_n|² <= 4*|I_n| for the original canonical
@@ -171,10 +171,51 @@ balls. [`WeightedReciprocalSquareDecay.lean`](../NLS/SequenceSpaces/WeightedReci
 provides the complementary sum estimate: a two-derivative l1 majorant
 controls the entire reciprocal-square sum at inverse-square-bracket rate.
 
-The next obligation is to combine these results with the actual exterior
-kernel and weighted actions to prove normalized-action/root upper decay.
-The present lower bounds and separation estimates alone do not prove that
-upper decay or the full Birkhoff-minus-Fourier smoothing assertion.
+## Uniform normalized-action and root decay
+
+[`ReciprocalSquareDensityIntegral.lean`](../NLS/SequenceSpaces/ReciprocalSquareDensityIntegral.lean)
+turns an l1 weighted density-mass majorant into joint integrability and an
+inverse-square-bracket bound for the full index-angle integral.
+[`SourceExteriorIndexDecay.lean`](../NLS/ZakharovShabat/SourceExteriorIndexDecay.lean)
+uses the actual gap separation to dominate the exterior correction by
+that integral. [`SourceH1WeightedActionSequence.lean`](../NLS/ZakharovShabat/SourceH1WeightedActionSequence.lean)
+constructs the exact physical weighted action sequence, identifies its l1
+norm with the literal sum, and bounds it uniformly on each physical H1 ball.
+
+[`SineCorrectionActionUpperBound.lean`](../NLS/ComplexAnalysis/SineCorrectionActionUpperBound.lean)
+and [`SourceProfileActionUpperBound.lean`](../NLS/ZakharovShabat/SourceProfileActionUpperBound.lean)
+turn this correction bound into the finite-gap action-to-gap upper ratio.
+The correction estimate itself includes infinitely many open gaps.
+[`SourceSobolevOpenGapDensity.lean`](../NLS/ZakharovShabat/SourceSobolevOpenGapDensity.lean)
+proves selected open gaps are dense in the H1 topology itself. Intersecting
+this open dense set with the dense finite-gap locus allows division on the
+approximants; continuity of the actual normalized action then includes
+collapsed gaps without an infinite-gap profile identity.
+
+The resulting public bounds in
+[`SourceNormalizedActionH1Decay.lean`](../NLS/ZakharovShabat/SourceNormalizedActionH1Decay.lean)
+are, for all real sources of physical H1 norm at most R and every signed n,
+
+    (1+|n|)^2 * |4*rho_n-1| <= K(R),
+    (1+|n|)^2 * |xi_n-1| <= K'(R).
+
+[`SobolevPowerMultiplier.lean`](../NLS/SequenceSpaces/SobolevPowerMultiplier.lean)
+converts a real power bound on a symbol into its exact bounded multiplier.
+[`SourceNormalizedActionRootH1Multiplier.lean`](../NLS/ZakharovShabat/SourceNormalizedActionRootH1Multiplier.lean)
+therefore supplies multiplication by xi_n-1 and xi_n^(-1)-1 from h^r_q to
+h^(r+2)_q, uniformly on physical H1 balls. Every real r and Banach q,
+including infinity, are covered. Inverting the actual positive root does
+not increase its error from one; this comparison holds for every real
+source at every finite source exponent greater than one.
+
+For the same retained original Birkhoff family,
+[`SourceBirkhoffH1NormalizationPhase.lean`](../NLS/ZakharovShabat/SourceBirkhoffH1NormalizationPhase.lean)
+combines normalization and beta-phase decay. The exact multiplier with
+symbol xi_n*exp(t*i*beta_n)-1 maps h^r_q to h^(r+1)_q with norm at most
+(1+|t|)*C(R), for every real t, r and Banach q. The sequence weights are
+(1+|n|)^r; the input ball is measured by the original physical H1 coordinates.
+The eta/spectral-coordinate error relative to Fourier and analyticity into
+the stronger target are still required for full one-smoothing.
 
 ## Validation and remaining work
 
@@ -196,12 +237,18 @@ index zero, the reciprocal normalized root at a negative index, the
 factor-two root-error bound, an l1 reciprocal-square sum, separation of
 negative and positive gaps, and one separation constant on an entire
 physical H1 ball.
+Six new checks cover normalized decay at zero, root decay at a negative
+index, the inverse-root multiplier on weighted l-infinity at negative
+order, and H1 gap-opening perturbations preserving an open physical norm
+constraint. They also check the combined signed factor and identify its
+exponent-3/2 multiplier applied to an eta sequence with the original
+Birkhoff weighted coordinate minus that sequence.
 
 The native Sobolev geometry is now covered by the independent inverse
 and canonical results above. The discussion of the one-smoothing
 property on p. 104 cites [39]. A full one-derivative gain for the
 Birkhoff map minus its Fourier linearization is not proved by the
-norm estimates or the phase estimates alone and is not asserted here.
+norm, normalization, and phase estimates alone and is not asserted here.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is

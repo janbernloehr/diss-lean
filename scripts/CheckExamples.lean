@@ -61841,3 +61841,91 @@ example : ∃ C : ℝ, 1 ≤ C ∧ ∀ a : realTypeSobolevSourceLocus,
   simpa using h a ha 0 1 (by norm_num) z hz w hw
 
 end NLS.UniformGapSeparationChecks
+
+/-! Uniform normalization decay, collapsed-gap density and exact smoothing multipliers. -/
+
+namespace NLS.NormalizationH1DecayChecks
+open ZakharovShabat Set
+open scoped ENNReal
+
+example : ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus,
+    ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ‖4*sourceNormalizedActionComplexExtension (by simp) (by norm_num) 0 (sobolevSourceInclusion a.val)-1‖ ≤ K := by
+  obtain ⟨K,hK,h⟩ := sourceNormalizedAction_uniform_physical_H1_decay 1
+  refine ⟨K,hK,fun a ha => ?_⟩
+  simpa only [Int.cast_zero,abs_zero,add_zero,one_pow,one_mul] using h a ha 0
+
+example : ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus,
+    ‖sourcePhysicalH1Coordinates a.val‖ ≤ 2 →
+      ‖sourceNormalizedActionRoot (by simp) (by norm_num) (-3) (sobolevSourceInclusion a.val)-1‖ ≤ K/16 := by
+  obtain ⟨K,hK,h⟩ := sourceNormalizedActionRoot_uniform_physical_H1_decay 2
+  refine ⟨K,hK,fun a ha => ?_⟩
+  have hn := h a ha (-3)
+  norm_num at hn
+  linarith
+
+example : ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus,
+    ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ∃ S : WeightedCoeff (Weight.sobolev (-1/2)) ⊤ →L[ℂ] WeightedCoeff (Weight.sobolev (-1/2+2)) ⊤,
+        (∀ c n, (S c).val n = ((sourceNormalizedActionRoot (by simp) (by norm_num) n
+          (sobolevSourceInclusion a.val))⁻¹-1)*c.val n) ∧ ‖S‖ ≤ K := by
+  obtain ⟨K,hK,h⟩ := sourceNormalizedActionRoot_multipliers_uniform_physical_H1_ball 1
+  refine ⟨K,hK,fun a ha => ?_⟩
+  obtain ⟨T,S,_,hS,_,hnS⟩ := h a ha ⊤ inferInstance (-1/2)
+  exact ⟨S,hS,hnS⟩
+
+example (a : realTypeSobolevSourceLocus) (R ε : ℝ)
+    (ha : ‖sourcePhysicalH1Coordinates a.val‖ ≤ R) (hε : 0 < ε) :
+    ∃ b : realTypeSobolevSourceLocus, ‖b.val-a.val‖ < ε ∧
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion b.val))
+        (periodOnePotential_mem _) (-2) ≠ 0 ∧ ‖sourcePhysicalH1Coordinates b.val‖ < R+ε := by
+  let U : Set realTypeSobolevSourceLocus := {b | ‖sourcePhysicalH1Coordinates b.val‖ < R+ε} ∩ Metric.ball a ε
+  have hU : IsOpen U := (isOpen_lt
+    (continuous_sourcePhysicalH1Coordinates.comp continuous_subtype_val).norm continuous_const).inter Metric.isOpen_ball
+  have haU : a ∈ U := ⟨by change ‖sourcePhysicalH1Coordinates a.val‖ < R+ε; linarith,Metric.mem_ball_self hε⟩
+  obtain ⟨b,hb⟩ := (dense_sourceSobolevOpenGapRealLocus (-2)).inter_open_nonempty U hU ⟨a,haU⟩
+  refine ⟨b,?_,hb.2,hb.1.1⟩
+  simpa only [Metric.mem_ball,Subtype.dist_eq,dist_eq_norm] using hb.1.2
+
+end NLS.NormalizationH1DecayChecks
+
+namespace NLS.NormalizationPhaseH1Checks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 2 →
+      ‖sourceNormalizedActionRoot (by simp) (by norm_num) (-3) (sobolevSourceInclusion a.val)*
+        exp (-Complex.I*sourceAngularBetaCorrection (by simp) (by norm_num)
+          (-3) s (sobolevSourceInclusion a.val))-1‖ ≤ K/2 := by
+  obtain ⟨K,hK,h⟩ := D.normalization_phase_uniform_physical_H1_ball 2
+  refine ⟨K,hK,fun a ha => ?_⟩
+  have hn := h a ha (-3) (-1)
+  norm_num at hn
+  simp only [neg_mul]
+  linarith
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ K : ℝ, 0 ≤ K ∧ ∀ a : realTypeSobolevSourceLocus, ‖sourcePhysicalH1Coordinates a.val‖ ≤ 1 →
+      ∃ T : WeightedCoeff (Weight.sobolev (-1/2)) (3/2) →L[ℂ]
+        WeightedCoeff (Weight.sobolev (-1/2+1)) (3/2),
+        (∀ c, (∀ n, c.val n = sourceGapWeightedEtaCoordinate (by simp) (by norm_num)
+            n s (-1) (sobolevSourceInclusion a.val)) →
+          ∀ n, (T c).val n = sourceBirkhoffWeightedCoordinate (by simp) (by norm_num)
+              n s (-1) (sobolevSourceInclusion a.val)-c.val n) ∧ ‖T‖ ≤ K := by
+  obtain ⟨K,hK,h⟩ := D.normalization_phase_multipliers_uniform_physical_H1_ball 1
+  refine ⟨2*K,by positivity,fun a ha => ?_⟩
+  obtain ⟨T,hT,hnT⟩ := h a ha (3/2) inferInstance (-1/2) (-1)
+  refine ⟨T,?_,by simpa using (by norm_num at hnT; exact hnT)⟩
+  intro c hc n
+  rw [hT,hc n]
+  simp only [sourceBirkhoffWeightedCoordinate,Complex.ofReal_neg,Complex.ofReal_one]
+  ring
+
+end NLS.NormalizationPhaseH1Checks

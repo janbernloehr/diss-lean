@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the sharp gap-action bound and normalized-action/root lower
-bounds hold on the full real source space, including collapsed gaps.
-Actual periodic segments have index-scale separation uniformly on physical
-H1 balls. Together with the completed beta-phase decay estimates, these
-prepare the normalization-decay argument needed for full one-smoothing,
-which remains unproved. Lemma 27.2 with its printed constants is complete.
+Latest step: the actual normalized-action and root errors have inverse-square
+index decay uniformly on physical H1 balls, including collapsed gaps.
+Root and inverse-root error multipliers gain two sequence derivatives;
+the combined normalization-and-phase error gains one for the same original
+Birkhoff family. Full Birkhoff-minus-Fourier smoothing and analyticity into
+the stronger target remain unproved. Lemma 27.2 with its printed constants
+is complete.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
