@@ -60586,3 +60586,157 @@ example : ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
 
 end ActionAngleChecks
 end NLS
+
+
+namespace NLS
+namespace PhysicalHilbertChecks
+open Set Metric Complex MeasureTheory NLS.Fourier ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+
+-- The physical equivalence uses ordinary unit-interval Lebesgue measure.
+example (a : Coeff 2) : ‖unitL2SynthesisEquiv a‖ = ‖a‖ := unitL2SynthesisEquiv.norm_map a
+
+example (u : IntervalL2) : unitL2SynthesisEquiv (unitL2SynthesisEquiv.symm u) = u :=
+  unitL2SynthesisEquiv.apply_symm_apply u
+
+example (u : IntervalL2) : unitL2SynthesisEquiv.symm u (-7) = intervalFourierCoefficient 1 u (-7) :=
+  unitL2SynthesisEquiv_symm_coefficient u (-7)
+
+-- Arbitrary L2 functions need no endpoint matching or continuity.
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    unitL2SynthesisEquiv (unitIntervalMemLpCoefficients f hf) = hf.toLp f :=
+  unitL2SynthesisEquiv_memLpCoefficients f hf
+
+example (u : IntervalL2) : intervalFourierCoefficient 1 (star u : IntervalL2) (-7) =
+    (starRingEnd ℂ) (intervalFourierCoefficient 1 u 7) := by
+  simpa using intervalFourierCoefficient_Lp_star u (-7)
+
+example (φ : CoeffPair 2) : sourcePhysicalL2Equiv φ = sourcePhysicalL2 φ ∧
+    ‖sourcePhysicalL2 φ‖ = ‖φ‖ := ⟨sourcePhysicalL2Equiv_apply φ,norm_sourcePhysicalL2 φ⟩
+
+example (u : IntervalPairL2) : sourcePhysicalL2 (sourcePhysicalL2Equiv.symm u) = u :=
+  sourcePhysicalL2_equiv_symm u
+
+example (φ : CoeffPair 2) : sourcePhysicalL2Equiv.symm (sourcePhysicalL2 φ) = φ := by
+  rw [← sourcePhysicalL2Equiv_apply,LinearIsometryEquiv.symm_apply_apply]
+
+example (u : IntervalPairL2) (n : ℤ) :
+    (sourcePhysicalL2Equiv.symm u).fst n = intervalFourierCoefficient 1 u.ofLp.1 n ∧
+    (sourcePhysicalL2Equiv.symm u).snd n = intervalFourierCoefficient 1 u.ofLp.2 n :=
+  ⟨sourcePhysicalL2Equiv_symm_fst u n,sourcePhysicalL2Equiv_symm_snd u n⟩
+
+example (φ : CoeffPair 2) : IsClassicalRealType (intervalL2Representative (sourcePhysicalL2 φ)) ↔
+    φ ∈ realTypeSourceSubmodule 2 := sourcePhysicalL2_realType_iff φ
+
+example (u : IntervalPairL2) : u ∈ physicalRealSubmodule ↔
+    IsClassicalRealType (intervalL2Representative u) := mem_physicalRealSubmodule u
+
+-- The physical real source is an actual complete Hilbert-normed subspace.
+example : CompleteSpace physicalRealSubmodule := inferInstance
+
+example (u : physicalRealSubmodule) : ‖realSourcePhysicalL2Equiv.symm u‖ = ‖u‖ ∧
+    realSourcePhysicalL2Equiv (realSourcePhysicalL2Equiv.symm u) = u :=
+  ⟨realSourcePhysicalL2Equiv.symm.norm_map u,realSourcePhysicalL2Equiv.apply_symm_apply u⟩
+
+-- A raw a.e. real-type L2 function gives a physical real source without extra data.
+example (f : ℝ → ℂ × ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (hr : IsClassicalRealType f) : ∃ u : physicalRealSubmodule,
+      intervalL2Representative u.val =ᵐ[volume.restrict (Ioc 0 1)] f := by
+  refine ⟨⟨intervalL2OfFunction f hf,?_⟩,intervalL2Representative_ofFunction f hf⟩
+  exact (mem_physicalRealSubmodule _).mpr
+    (isClassicalRealType_intervalL2Representative_ofFunction f hf hr)
+
+-- The free-root sign is fixed, and the square uses actual physical monodromy.
+example : physicalCanonicalRoot 0 ((Real.pi:ℂ)/2) = -2*Complex.I := by
+  rw [physicalCanonicalRoot_zero,Complex.sin_pi_div_two,mul_one]
+
+example (u : IntervalPairL2) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) (sourcePhysicalL2Equiv.symm u)) :
+    physicalCanonicalRoot u z^2 = l2Discriminant u z^2-4 := physicalCanonicalRoot_sq u z hz
+
+example (u : physicalRealSubmodule) (n : ℤ) :
+    0 ≤ (physicalIndexedAction n u.val).re ∧ (physicalIndexedAction n u.val).im = 0 :=
+  physicalIndexedAction_nonneg u n
+
+example (u : physicalRealSubmodule) (n : ℤ) : ∃ c r : ℝ, 0 < r ∧
+    (∀ z ∈ sphere (c:ℂ) r, physicalCanonicalRoot u.val z ≠ 0 ∧
+      physicalCanonicalRoot u.val z^2 = l2Discriminant u.val z^2-4) ∧
+    physicalIndexedAction n u.val = (Real.pi:ℂ)⁻¹ *
+      ∮ z in C((c:ℂ),r), z*deriv (l2Discriminant u.val) z/physicalCanonicalRoot u.val z :=
+  exists_physicalIndexedAction_circle u n
+
+example (u : IntervalPairL2) (n : ℤ)
+    (C : SourceCriticalRootPeriodCircle (by simp) (by norm_num) (sourcePhysicalL2Equiv.symm u) n)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (ball (C.center:ℂ) C.radius \
+      sourcePeriodicSegment (by simp) (by norm_num) (sourcePhysicalL2Equiv.symm u) n))
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint (by simp) (by norm_num)
+      (periodOnePotential (sourcePhysicalL2Equiv.symm u)) (periodOnePotential_mem _) n) = 1) :
+    physicalActionContour u Γ = physicalIndexedAction n u := (physicalIndexedAction_eq_circuit u n C Γ hΓ hw).symm
+
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  (D : SourceSection14OriginalData (by simp) (by norm_num) W₀ W V s)
+
+example (u : physicalRealSubmodule) :
+    D.physicalRealActionAngleHomeomorph.symm (D.physicalRealActionAngleHomeomorph u) = u :=
+  D.physicalRealActionAngleHomeomorph.symm_apply_apply u
+
+example (z : PhysicalRealBirkhoffTarget) :
+    D.physicalRealActionAngleHomeomorph (D.physicalRealActionAngleHomeomorph.symm z) = z :=
+  D.physicalRealActionAngleHomeomorph.apply_symm_apply z
+
+example : AnalyticOnNhd ℝ D.physicalRealActionAngleHomeomorph univ ∧
+    AnalyticOnNhd ℝ D.physicalRealActionAngleHomeomorph.symm univ :=
+  D.physicalRealActionAngleHomeomorph_analytic
+
+example (u : physicalRealSubmodule) (z : PhysicalRealBirkhoffTarget) :
+    ‖D.physicalRealActionAngleHomeomorph u‖ = ‖u‖ ∧
+    ‖D.physicalRealActionAngleHomeomorph.symm z‖ = ‖z‖ :=
+  ⟨D.physicalRealActionAngleHomeomorph_norm u,D.physicalRealActionAngleHomeomorph_symm_norm z⟩
+
+example (u : physicalRealSubmodule) : HasSum (fun n : ℤ => (physicalIndexedAction n u.val).re) (‖u‖^2/2) :=
+  D.physical_hasSum_actions u
+
+example (u : physicalRealSubmodule) (n : ℤ) (v : ℂ)
+    (hg : sourcePeriodicGapDisplacement (by simp) (by norm_num) (sourcePhysicalL2Equiv.symm u.val) n = 0) :
+    (D.physicalRealActionAngleHomeomorph u).snd n = Real.sqrt (2*(physicalIndexedAction n u.val).re)*
+      Real.sin (v+sourceAngularBetaCorrection (by simp) (by norm_num) n s (sourcePhysicalL2Equiv.symm u.val)).re :=
+  (D.physicalRealActionAngleHomeomorph_formula_of_eta u n v (fun h => (h hg).elim)).2
+
+example : IsOpen (physicalBirkhoffDomain V) ∧
+    AnalyticOnNhd ℂ (physicalBirkhoffMap s) (physicalBirkhoffDomain V) :=
+  ⟨D.physicalBirkhoffDomain_open,D.physicalBirkhoffMap_analytic⟩
+
+example (u : physicalRealSubmodule) : u.val ∈ physicalBirkhoffDomain V ∧
+    physicalRealTargetComplex (D.physicalRealActionAngleHomeomorph u) = physicalBirkhoffMap s u.val :=
+  ⟨D.physicalBirkhoffDomain_real u,D.physicalBirkhoffMap_real u⟩
+
+-- The action-radius identity applies to non-real complex inputs as well.
+example (u : IntervalPairL2) (hu : u ∈ physicalBirkhoffDomain V) (n : ℤ) :
+    (physicalBirkhoffMap s u).fst n^2+(physicalBirkhoffMap s u).snd n^2 = 2*physicalIndexedAction n u :=
+  D.physicalBirkhoffMap_action_radius u hu n
+
+example {A B C : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (E : SourceSection14OriginalData (by simp) (by norm_num) A B C t) :
+    D.physicalRealActionAngleHomeomorph.symm = E.physicalRealActionAngleHomeomorph.symm := by
+  rw [D.physicalRealActionAngleHomeomorph_family E]
+
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example {A B C : Set (CoeffPair 4)} {t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (E : SourceSection14OriginalData (by norm_num) (by norm_num) A B C t)
+    (u : physicalRealSubmodule) :
+    ((RealCoeff.exponentInclusion (by norm_num : (2:ℝ≥0∞) ≤ 4)).prodMap
+      (RealCoeff.exponentInclusion (by norm_num : (2:ℝ≥0∞) ≤ 4)))
+      (D.physicalRealActionAngleHomeomorph u).ofLp =
+      E.realActionAngleMap (realTypeSourceExponentInclusion (by norm_num) (realSourcePhysicalL2Equiv.symm u)) :=
+  D.physicalRealActionAngleHomeomorph_exponent E (by norm_num) u
+
+-- Neither the global physical inverse nor its family is supplied as a hypothesis.
+example : ∃ e : physicalRealSubmodule ≃ₜ PhysicalRealBirkhoffTarget,
+    AnalyticOnNhd ℝ e univ ∧ AnalyticOnNhd ℝ e.symm univ ∧ (∀ u, ‖e u‖ = ‖u‖) ∧
+      (∀ u, e.symm (e u) = u) ∧ (∀ z, e (e.symm z) = z) := by
+  obtain ⟨_,_,_,_,_,e,ha,hi,hn,_⟩ := sourceSection14_physicalHilbert
+  exact ⟨e,ha,hi,hn,e.symm_apply_apply,e.apply_symm_apply⟩
+
+end PhysicalHilbertChecks
+end NLS

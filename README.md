@@ -5,16 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal real action–angle formulas define the full analytic
-Birkhoff sequence map, including collapsed gaps. Admissible eta-integral
-choices and independent normalized root families give the same map. For
-1<p<=2 it has the previously constructed global analytic inverse.
+Latest step: the original physical L2 Fourier map is an exact complex and
+real Hilbert equivalence. The physical action–angle map and its global
+inverse are analytic in the original Hilbert norms and preserve the norm
+exactly. Its complex extension uses an open neighborhood of every real
+physical input; the actions are actual physical monodromy contour integrals.
 
-Next: identify the physical Hilbert-space realization with the external
-construction cited in Remark 14.2(i). The 2013 public manuscript now has an
-explicit normalization audit; identification with the cited 2014 edition
-remains open. The Lemma 27.2 and G.2 qualifications remain recorded.
-The dissertation is incomplete.
+Next: match the remaining spectral labels, normalized functions, and angle
+integrals with the external construction in Remark 14.2(i). Identification
+with the cited 2014 edition remains open. The Lemma 27.2 and G.2
+qualifications remain recorded. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),

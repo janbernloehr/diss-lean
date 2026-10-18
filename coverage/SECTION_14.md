@@ -18,7 +18,7 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 | Theorem 14.1(iii): canonical | `D.toSourceSection14OriginalData.canonical`, `D.complex.mixed_fourier_canonical` | All three brackets on the real locus, as in Lemma 15.3; actual coordinate derivatives and absolutely convergent Fourier pairings, including p<2 |
 | Theorem 14.1(iv): injective, local diffeomorphism, open dense image | `D.toSourceSection14OriginalData.real_geometry` | Actual real map; analytic local inverse at every point with both inverse identities |
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
-| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_hilbert_actionAngle_inverse`; 2013 manuscript normalization audit below | Literal real action–angle map and its analytic global inverse are constructed. Identification of the physical inputs and primitives with the precise external 2014 construction remains unproved. |
+| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Matching the remaining independent external spectral/angle primitives and the precise 2014 construction remains unproved. |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
 | Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 
@@ -72,14 +72,63 @@ identify the physical separated characteristics, anti-discriminant, and
 discriminant, including arbitrary L2 inputs. These established identities
 should be reused.
 
-To complete Remark 14.2(i), promote the physical source map to an explicit
-equivalence respecting the real form, then identify the external spectral
-labels, canonical root, normalized functions, actions, and terminal-sheet
-angle integrals under it. The literal formulas and choice independence
-now provide the final coordinate-equality step once those primitive
-identifications are proved. Agreement of the relevant 2013 and 2014 source
-conventions also remains to be established. No p>2 surjectivity assertion
-is added.
+The physical source identification is now completed by the exact
+`sourcePhysicalL2Equiv` and `realSourcePhysicalL2Equiv` described below.
+To complete Remark 14.2(i), identify the independent external spectral
+labels, canonical root, normalized functions, and terminal-sheet angle
+integrals under this equivalence. The literal formulas and eta-choice
+independence provide the final coordinate-equality step. Agreement of the
+relevant 2013 and 2014 source conventions also remains to be established.
+No p>2 surjectivity assertion is added.
+
+## The original physical Hilbert spaces and map
+
+[`UnitIntervalL2Equiv.lean`](../NLS/Fourier/UnitIntervalL2Equiv.lean)
+constructs a complex linear isometry equivalence from l2 coefficients to
+ordinary Lebesgue L2 classes on (0,1]. Its inverse is the normalized unit
+Fourier integral; arbitrary square-integrable representatives are
+reconstructed, without matching endpoint values or continuity. Pairing
+this equivalence gives `sourcePhysicalL2Equiv` in
+[`SourcePhysicalL2Equiv.lean`](../NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean).
+A density proof identifies it with the existing `sourcePhysicalL2`, so the
+established physical characteristic and gradient identities still apply.
+The old bound by twice the source norm is sharpened to exact norm equality.
+
+[`SourcePhysicalRealL2.lean`](../NLS/ZakharovShabat/SourcePhysicalRealL2.lean)
+proves that physical a.e. conjugation is exactly the source's conjugate
+Fourier reflection. The resulting real physical submodule is complete and
+isometrically equivalent to `realTypeSourceSubmodule 2`.
+
+[`SourcePhysicalActions.lean`](../NLS/ZakharovShabat/SourcePhysicalActions.lean)
+transports the original indexed labels and canonical product through this
+equivalence. Its action is a literal contour integral of
+lambda*deriv(l2Discriminant u)/physicalCanonicalRoot u. The canonical
+product squares to (l2Discriminant u)^2-4 and at zero equals -2*i*sin(lambda),
+fixing the sign. Every real physical source supplies an actual nonsingular
+isolating circle, including collapsed gaps. Every admissible winding-one
+circuit gives the same action. These statements do not assert independent
+identification of the transported labels with an external labeling.
+
+[`SourcePhysicalActionAngle.lean`](../NLS/ZakharovShabat/SourcePhysicalActionAngle.lean)
+uses `PhysicalRealBirkhoffTarget = WithLp 2 (RealCoeff 2 × RealCoeff 2)`.
+This retains the Hilbert sum of the component energies on the target as
+well as the source; the comparison with the product maximum norm is an
+explicit continuous linear equivalence. The physical homeomorphism has
+analytic forward and inverse maps, literal action–angle coordinates for
+all admissible eta choices, family independence, and agreement at every
+larger finite exponent. `physical_hasSum_actions` gives convergence to
+half the physical norm squared. Consequently the nonlinear map and its
+inverse preserve the norm exactly; no distance-preserving claim is made.
+
+[`SourcePhysicalBirkhoffComplex.lean`](../NLS/ZakharovShabat/SourcePhysicalBirkhoffComplex.lean)
+extends the full map analytically to an open physical L2 neighborhood of
+the entire real form. The complex target also carries its Hilbert pair
+norm. Complex inclusion of the real homeomorphism equals this extension,
+and the indexed-action radius holds throughout its complex domain.
+[`SourceSection14PhysicalHilbert.lean`](../NLS/ZakharovShabat/SourceSection14PhysicalHilbert.lean)
+constructs one family, its global real map, inverse, and complex extension
+together. Neither inverse existence nor the physical/source equivalence
+is requested as an additional premise.
 
 ## Original definitions and exact phase
 

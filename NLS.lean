@@ -3921,3 +3921,10 @@ import NLS.ZakharovShabat.SourceSection14WeightedRealInverse
 import NLS.ZakharovShabat.SourceBirkhoffRealActionAngle
 import NLS.ZakharovShabat.SourceBirkhoffActionAngleMap
 import NLS.ZakharovShabat.SourceSection14ActionAngle
+import NLS.Fourier.UnitIntervalL2Equiv
+import NLS.ZakharovShabat.SourcePhysicalL2Equiv
+import NLS.ZakharovShabat.SourcePhysicalRealL2
+import NLS.ZakharovShabat.SourcePhysicalActions
+import NLS.ZakharovShabat.SourcePhysicalActionAngle
+import NLS.ZakharovShabat.SourcePhysicalBirkhoffComplex
+import NLS.ZakharovShabat.SourceSection14PhysicalHilbert

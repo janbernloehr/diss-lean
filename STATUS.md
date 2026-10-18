@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: literal real action–angle map and global inverse
+## Current milestone: the original physical Hilbert Birkhoff map
+
+The existing source-to-physical L2 map is now an explicit complex linear
+isometry equivalence onto the ordinary unit-interval L2 pair space. Its
+inverse consists of the actual unit Fourier integrals. No continuity,
+endpoint matching, or extra regularity is assumed. The a.e. physical
+conjugation relation is equivalent to conjugate reflection of the Fourier
+coefficients, giving an exact real isometry equivalence of complete spaces.
+
+The physical real action–angle map has the original Hilbert norms on both
+source and target: each pair norm is the square root of the sum of its
+component energies. It is a global homeomorphism with analytic forward
+and inverse maps. Both directions preserve the norm exactly. The literal
+positive-root formulas, arbitrary admissible eta choices, collapsed-gap
+behavior, independence of the normalized family, and agreement with every
+larger finite exponent are proved. The actual action series converges to
+half the physical source norm squared.
+
+The physical actions are contour integrals of the derivative of the actual
+L2 monodromy discriminant, divided by the transported canonical product.
+That product has the exact free sign and squares to the physical
+discriminant squared minus four. Every real source supplies nonsingular
+isolating circles; admissible winding-one circuits compute the same action.
+The complex physical sequence map is analytic on an open neighborhood of
+the whole real form, extends the real homeomorphism, and has the exact
+indexed-action radii there. One constructed Section 14 family supplies
+all these maps and domains.
+
+Seven new modules and 31 public checks cover the actual Fourier inverse,
+negative frequencies, physical conjugation, arbitrary L2 representatives,
+the complete real space, the free-root sign, physical integrals, exact
+norms, both inverse identities, complex inputs, and exponent compatibility.
+
+The Fourier/physical-space identification is complete. The canonical root
+and labels here are still transported from the original source construction;
+identification with independently specified external labels, normalized
+functions, and angle integrals is still needed for Remark 14.2(i), together
+with the 2013/2014 source-version comparison. The recorded G.2 and Lemma
+27.2 qualifications remain. See [the Section 14 audit](coverage/SECTION_14.md).
+
+Validation: the full project gate passed: 7,593 build jobs, 6,572 public
+examples, and the transitive axiom audit of 36,586 NLS declarations. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted. The seven new
+modules and 31 new checks are warning-free; the build retains 21 existing
+warnings. All 156 source labels and 880 local file links across 38 documents
+validate, and `git diff --check` passes.
+
+## Previous milestone: literal real action–angle map and global inverse
 
 The normalized analytic amplitude is now proved to be the nonnegative
 square root of twice the actual indexed action. The real coordinates are
