@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both leading WKB integrals now have sharp H^(s+1)
-Fourier tails with the original signed coefficients. An exact
-anti-discriminant identity isolates the off-diagonal remainders and
-proves the required Sobolev bound for the diagonal contribution.
-The remaining sharp WKB task is the sampled off-diagonal error;
-critical-to-midpoint and omitted-product cancellations also remain.
-Full Fourier one-smoothing is still open. Higher-order complex angular
-analyticity and Lemma 27.2 with its printed constants are proved.
+Latest step: actual Fourier sampling now works for arbitrary interval
+L2 densities, uniformly over partial physical intervals and bounded
+complex lattice shifts. Both actual diagonal fundamental entries have
+their first mass corrections with quadratic inverse-frequency errors.
+The exact scalar forcing kernel connects these results to the remaining
+sharp off-diagonal WKB estimate. Critical-to-midpoint and omitted-product
+cancellations also remain; full Fourier one-smoothing is still open.
+Higher-order complex angular analyticity and Lemma 27.2 with its printed
+constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

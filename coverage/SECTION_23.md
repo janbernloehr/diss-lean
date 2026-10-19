@@ -773,6 +773,60 @@ WKB estimate concerns E.snd + F.fst, rather than a stronger bound on
 both full vector remainders. Critical-to-midpoint and omitted-product
 cancellations are still required for the two literal spectral errors.
 
+## Interval L2 sampling and the first diagonal correction
+
+[`UnitIntervalMemLpMoments.lean`](../NLS/Fourier/UnitIntervalMemLpMoments.lean)
+proves that physical moment multiplication contracts the actual Fourier
+coefficient norm for arbitrary interval L2 data.
+[`MemLpLatticeMomentSeries.lean`](../NLS/Fourier/MemLpLatticeMomentSeries.lean)
+sums the resulting bounded-displacement Taylor series in the Hilbert
+sequence space with constant exp(2||delta||_infinity).
+[`PerturbedLatticeIntegrableMoments.lean`](../NLS/Fourier/PerturbedLatticeIntegrableMoments.lean)
+identifies the scalar series with the actual sampled integral using only
+integrability. Together these give
+[`MemLpBoundedLatticeFourier.lean`](../NLS/Fourier/MemLpBoundedLatticeFourier.lean):
+actual samples of any interval L2 density at pi*n+delta_n have an L2
+realization with the same bound. No endpoint matching or continuity is
+assumed, and a bounded displacement need not be square summable.
+
+[`PartialIntervalFourierSampling.lean`](../NLS/Fourier/PartialIntervalFourierSampling.lean)
+uses contraction under measurable cutoffs to give the same bound for
+every partial interval [0,t].
+[`PartialIntervalOscillatorySampling.lean`](../NLS/Fourier/PartialIntervalOscillatorySampling.lean)
+includes the free propagator exp(i*(pi*n+delta_n)*t), with the uniform
+constant exp(3||delta||_infinity) on the whole physical period.
+
+[`SobolevClassicalDiagonalCarrier.lean`](../NLS/ZakharovShabat/SobolevClassicalDiagonalCarrier.lean)
+shows that the actual diagonal fundamental entries differ from their
+first WKB carriers by O(w^2), where w=(2*i*z)^(-1).
+[`NLSWKBFirstCarrier.lean`](../NLS/ZakharovShabat/NLSWKBFirstCarrier.lean)
+defines P(x)=integral_0^x a*b and proves the exact first-carrier identity
+exp(-i*z*x)*exp(-w*P(x)). The primitive is continuous and invariant under
+the signed potential swap, and its norm is bounded by the square of the
+pointwise potential budget on the physical period.
+[`SobolevWKBFirstCarrierExpansion.lean`](../NLS/ZakharovShabat/SobolevWKBFirstCarrierExpansion.lean)
+linearizes both carriers with their exact signed mass corrections.
+[`SobolevClassicalDiagonalExpansion.lean`](../NLS/ZakharovShabat/SobolevClassicalDiagonalExpansion.lean)
+therefore proves the actual expansions
+A1(x)=exp(-i*z*x)*(1-w*P(x))+O(w^2) and
+B2(x)=exp(i*z*x)*(1+w*P(x))+O(w^2).
+The constants are uniform on original complex Hs balls for s >= 1,
+horizontal strips, and all physical x. Smooth periodic representatives
+with exact original Fourier coefficients remain explicit hypotheses.
+
+[`ClassicalScalarForcingLowerKernel.lean`](../NLS/ZakharovShabat/ClassicalScalarForcingLowerKernel.lean)
+identifies the actual lower response to scalar forcing f with the
+partial-interval integral of K22(t,x)*f(x), where
+K22(t,x)=A1(x)*B2(t)-B1(x)*A2(t). This is an exact identity.
+The first-order kernel estimate and its sharp sampled WKB consequence
+are still to be assembled from the diagonal expansions and L2 sampling.
+
+Five examples check the half-period cutoff, the real exponential signs
+at the central sample for the constant imaginary shift delta_n=i, the
+constant-potential mass primitive, the carrier at z=i for potentials 2
+and 3, and K22(t,t)=1 for every potential. Critical-to-midpoint comparison
+and omitted-product cancellations remain for the literal spectral errors.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

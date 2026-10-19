@@ -62694,3 +62694,56 @@ example : ∃ a : ScalarSobolev 1,
   norm_num [f]
 
 end NLS.BothLeadingReductionChecks
+
+namespace NLS.PartialSamplingDiagonalChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+-- A sharp physical cutoff retains the L2 norm bound at every signed Fourier index.
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    ∃ a : NLS.Coeff 2,
+      (∀ n, a n = ∫ x in (0:ℝ)..(1/2:ℝ), f x*exp (-2*Complex.I*((Real.pi:ℂ)*n)*x)) ∧
+      ‖a‖ ≤ ‖unitIntervalMemLpCoefficients f hf‖ := by
+  simpa using exists_partial_interval_bounded_lattice_fourier_coefficients
+    f hf 0 (1/2) (by constructor <;> norm_num)
+
+-- A constant imaginary shift is bounded but need not be square summable.
+-- Its central oscillatory sample has the expected real exponential signs.
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    ∃ a : NLS.Coeff 2,
+      a 0 = exp (-(t:ℂ))*(∫ x in (0:ℝ)..t, f x*exp (2*(x:ℂ))) ∧
+      ‖a‖ ≤ Real.exp 3*‖unitIntervalMemLpCoefficients f hf‖ := by
+  let δ : NLS.Coeff ⊤ := ⟨fun _ => Complex.I, memℓp_infty ⟨1,by
+    rintro _ ⟨n,rfl⟩
+    simp⟩⟩
+  have hn : ‖δ‖ ≤ 1 := lp.norm_le_of_forall_le (by norm_num) (by intro n; simp [δ])
+  obtain ⟨a,ha,hbound⟩ := exists_partial_interval_oscillatory_lattice_coefficients f hf δ t ht
+  refine ⟨a,?_,hbound.trans ?_⟩
+  · rw [ha 0]
+    norm_num [δ,mul_assoc]
+  · apply mul_le_mul_of_nonneg_right _ (norm_nonneg _)
+    exact Real.exp_le_exp.mpr (by linarith)
+
+-- The mass primitive fixes the coefficient and physical interval normalization.
+example (α β : ℂ) (x : ℝ) :
+    nlsWKBMassPrimitive (fun _ => α) (fun _ => β) x = (x:ℂ)*(α*β) := by
+  simp [nlsWKBMassPrimitive]
+  ring
+
+-- At z=i the first carrier for the constants 2 and 3 has exponent +4x.
+example (x : ℝ) :
+    nlsWKBCarrier (fun _ => 2) (fun _ => 3) 1 Complex.I x = exp (4*(x:ℂ)) := by
+  rw [nlsWKBCarrier_order_one]
+  norm_num [nlsWKBMassPrimitive,smul_eq_mul,mul_assoc]
+  rw [← exp_add]
+  congr 1
+  ring
+
+-- Coincident physical endpoints give the identity propagator for any potential.
+example (Φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z : ℂ) (t : Icc (0:ℝ) 1) :
+    classicalScalarForcingLowerKernel Φ z t t = 1 := by
+  simpa [classicalScalarForcingLowerKernel,classicalFundamentalMatrix,Matrix.det_fin_two_of] using
+    det_classicalFundamentalMatrix Φ z t
+
+end NLS.PartialSamplingDiagonalChecks

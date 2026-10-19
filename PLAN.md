@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: both leading Fourier tails and diagonal remainder control
+## Current milestone: interval L2 sampling and the first diagonal correction
+
+Actual Fourier samples of arbitrary interval L2 densities at pi*n+delta_n
+now form an L2 sequence for every bounded complex displacement sequence,
+with norm bound exp(2||delta||_infinity) times the original interval
+coefficient norm. The proof identifies the convergent moment series with
+the actual integrals using only integrability. No continuity or matching
+endpoint values are required, and the displacement need not be L2.
+
+Measurable physical cutoffs contract that coefficient norm. Consequently,
+the same sampling bound holds over every partial interval [0,t]. Including
+the free propagator exp(i*(pi*n+delta_n)*t) gives the uniform constant
+exp(3||delta||_infinity) for all t in [0,1].
+
+The actual diagonal fundamental entries now have explicit first mass
+corrections. With w=(2*i*z)^(-1) and P(x)=integral_0^x a*b, they are
+exp(-i*z*x)*(1-w*P(x)) and exp(i*z*x)*(1+w*P(x)), each with an O(w^2)
+error uniform on original complex Hs balls, horizontal spectral strips,
+and the physical period, for s >= 1. These ODE comparisons retain smooth
+periodic representatives with exact original Fourier coefficients.
+
+The lower scalar forcing response is also exactly the integral against
+K22(t,x)=A1(x)*B2(t)-B1(x)*A2(t), for the actual normalized fundamental
+columns A and B. The diagonal expansions and partial-interval sampling
+are inputs to its sharp off-diagonal remainder estimate; that estimate
+has not yet been assembled.
+
+Eleven modules and five public examples cover the half-period cutoff,
+a bounded constant imaginary displacement, the mass normalization,
+the carrier sign at z=i, and the identity kernel at coincident endpoints.
+See [the Section 23 audit](coverage/SECTION_23.md). The sharp off-diagonal
+WKB tails, critical-to-midpoint comparison, and omitted-product
+cancellations remain. Full Fourier one-smoothing is not yet proved.
+
+Validation: `./scripts/check.sh` passes with 7,812 build jobs, 6,822
+public examples, and a transitive axiom audit of 37,850 NLS declarations.
+The build retains 21 existing warnings; the eleven new modules introduce none.
+Documentation checks cover 1,332 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: both leading Fourier tails and diagonal remainder control
 
 Both actual leading WKB integrals now have their original Fourier
 coefficients: i exp(i*pi*n) b_n and -i exp(-i*pi*n) a_(-n).

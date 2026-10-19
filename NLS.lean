@@ -4136,3 +4136,14 @@ import NLS.ZakharovShabat.SobolevWKBInitialDecay
 import NLS.ZakharovShabat.SobolevWKBDiagonalRemainder
 import NLS.SequenceSpaces.SobolevInversePowerBound
 import NLS.ZakharovShabat.SobolevWKBDiagonalFourierTail
+import NLS.Fourier.UnitIntervalMemLpMoments
+import NLS.Fourier.MemLpLatticeMomentSeries
+import NLS.Fourier.PerturbedLatticeIntegrableMoments
+import NLS.Fourier.MemLpBoundedLatticeFourier
+import NLS.Fourier.PartialIntervalFourierSampling
+import NLS.Fourier.PartialIntervalOscillatorySampling
+import NLS.ZakharovShabat.SobolevClassicalDiagonalCarrier
+import NLS.ZakharovShabat.NLSWKBFirstCarrier
+import NLS.ZakharovShabat.SobolevWKBFirstCarrierExpansion
+import NLS.ZakharovShabat.SobolevClassicalDiagonalExpansion
+import NLS.ZakharovShabat.ClassicalScalarForcingLowerKernel
