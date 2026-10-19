@@ -62804,3 +62804,40 @@ example (a b : ℝ → ℂ) (x : ℝ) :
   simp [nlsRiccatiDensity_zero,pow_two]
 
 end NLS.LowerForcingChecks
+
+namespace NLS.FullOffDiagonalChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+private theorem next_density_first (a b : ℝ → ℂ) (x : ℝ) :
+    nlsRiccatiResidualNextDensity a b 1 x = -a x*(b x)^2 := by
+  have hh := congrFun (coeff_nlsRiccatiResidualPolynomial_above a b 1 2 (by norm_num)) x
+  change nlsRiccatiResidualNextDensity a b 1 x = _ at hh
+  rw [hh]
+  simp only [Pi.neg_apply]
+  rw [Polynomial.coeff_mul_X_pow']
+  norm_num only [le_refl,ite_true,Nat.sub_self]
+  rw [Polynomial.coeff_C_mul,Polynomial.coeff_mul]
+  simp [nlsRiccatiDensity_zero,pow_two]
+
+-- Constant potentials 2 and 3 have a nonzero next forcing with sign -18i.
+example (x : ℝ) :
+    nlsWKBNextForcingDensity (fun _ => 2) (fun _ => 3) 1 x = -18*Complex.I := by
+  simp [nlsWKBNextForcingDensity,next_density_first,nlsRiccatiDensity_one]
+  ring
+
+-- At z=i the squared inverse-frequency factor is +1/4.
+example : nlsWKBNextScalar (fun _ => 2) (fun _ => 3) 1 Complex.I 0 = -(9/2:ℂ)*Complex.I := by
+  norm_num [nlsWKBNextScalar,nlsWKBNextForcingDensity,next_density_first,
+    nlsRiccatiDensity_one,deriv_const,Complex.I_mul_I]
+  ring_nf
+  rw [Complex.I_pow_eq_pow_mod 5]
+  norm_num
+
+-- Both full remainders satisfy their exact zero initial conditions.
+example (a b : ℝ → ℂ) (ha : Continuous a) (hb : Continuous b) (N : ℕ) (z : ℂ) :
+    nlsWKBFirstRemainder a b ha hb N z 0 = 0 ∧
+    nlsWKBSecondRemainder a b ha hb N z 0 = 0 := by
+  simp [nlsWKBFirstRemainder,nlsWKBSecondRemainder,nlsWKBLeadingTerm]
+
+end NLS.FullOffDiagonalChecks

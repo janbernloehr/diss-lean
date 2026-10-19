@@ -4159,3 +4159,10 @@ import NLS.ZakharovShabat.SobolevRiccatiResidualNextOrder
 import NLS.ZakharovShabat.SobolevRiccatiApproximationFirstOrder
 import NLS.ZakharovShabat.SobolevWKBCarrierFirstOrder
 import NLS.ZakharovShabat.SobolevWKBNextForcingExpansion
+import NLS.ZakharovShabat.SobolevWKBNextForcingL2
+import NLS.ZakharovShabat.ClassicalForcedKernelLinearity
+import NLS.ZakharovShabat.SobolevWKBNextScalarComparison
+import NLS.ZakharovShabat.SobolevWKBNextOscillatoryComparison
+import NLS.ZakharovShabat.SobolevWKBNextFreeTail
+import NLS.ZakharovShabat.SobolevWKBFirstOffDiagonalTail
+import NLS.ZakharovShabat.SobolevWKBBothOffDiagonalTails

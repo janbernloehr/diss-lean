@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual lower response to the leading WKB forcing now
-has a sharp H^(N+1) tail on original Hs balls through N=s. The next
-oscillatory density in the full forcing is explicit, with an L1 error
-of order N+2. The full off-diagonal remainder still needs the next-density
-L2 estimate and response assembly. Critical-to-midpoint and omitted-product
-cancellations also remain; full Fourier one-smoothing is still open.
-Higher-order complex angular analyticity and Lemma 27.2 with its printed
-constants are proved.
+Latest step: both full off-diagonal WKB remainders now have sharp
+H^(N+1) tails on original Hs balls for 1 <= N <= s, with one common
+cutoff and norm bound. The proof uses the next forcing density's L2
+bound, the actual forced response, and exact signed swap symmetry.
+The anti-discriminant assembly, extension to nonsmooth sources,
+critical-to-midpoint comparison, and omitted-product cancellations
+remain; full Fourier one-smoothing is still open. Higher-order complex
+angular analyticity and Lemma 27.2 with its printed constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

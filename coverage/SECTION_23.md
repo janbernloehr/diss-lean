@@ -884,6 +884,49 @@ response, both off-diagonal tails, and the anti-discriminant assembly
 remain to be integrated. Critical-to-midpoint comparison and omitted-
 product cancellations are still needed for the literal spectral errors.
 
+## Both full off-diagonal WKB remainders
+
+[`SobolevWKBNextForcingL2.lean`](../NLS/ZakharovShabat/SobolevWKBNextForcingL2.lean)
+proves a uniform physical L2 bound for i*(c_N+rho_N*P), using the
+bounded next residual coefficient and primitive together with the
+original L2 bound for rho_N. No higher source derivative is needed.
+[`ClassicalForcedKernelLinearity.lean`](../NLS/ZakharovShabat/ClassicalForcedKernelLinearity.lean)
+records addition for the actual zero-initial forced solution and for
+the scalar forcing embedding.
+
+[`SobolevWKBNextScalarComparison.lean`](../NLS/ZakharovShabat/SobolevWKBNextScalarComparison.lean)
+defines the explicit next forcing and free oscillatory term. Its actual
+forced response differs from that free term by O(w^(N+2)), uniformly
+on original Hs balls, strips, and the physical period.
+[`SobolevWKBNextOscillatoryComparison.lean`](../NLS/ZakharovShabat/SobolevWKBNextOscillatoryComparison.lean)
+propagates the full forcing expansion through the actual kernel. The
+WKB vector minus its homogeneous solution, actual leading forced
+response, and next free term has an order-(N+2) full vector bound.
+
+[`SobolevWKBNextFreeTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextFreeTail.lean)
+combines the density's physical L2 estimate with partial-interval
+oscillatory sampling and the inverse-frequency multiplier. The result
+is an H^(N+1) tail for every cutoff above a common threshold.
+[`SobolevWKBFirstOffDiagonalTail.lean`](../NLS/ZakharovShabat/SobolevWKBFirstOffDiagonalTail.lean)
+then combines the leading lower-response tail, next free tail, and
+order-(N+2) remainder to prove the full first-column off-diagonal
+H^(N+1) bound for 1 <= N <= s.
+
+[`SobolevWKBBothOffDiagonalTails.lean`](../NLS/ZakharovShabat/SobolevWKBBothOffDiagonalTails.lean)
+proves the exact reflected-remainder identity and applies the first
+estimate to (-b,-a), the spectral parameter -z, and displacement
+-delta(-n). Weighted reflection gives the second off-diagonal tail with
+the same cutoff and constant. No covariance of selected canonical root
+labels is assumed. Smooth periodic representatives with matching
+original coefficients remain explicit hypotheses throughout.
+
+Three examples check the next density -18i for constant potentials
+2 and 3, the next scalar forcing -9i/2 at z=i and x=0, and both exact
+zero initial remainders. The two off-diagonal terms are now ready for
+the anti-discriminant error identity. Extension to nonsmooth sources,
+critical-to-midpoint comparison, and omitted-product cancellations
+remain for the literal Fourier spectral errors.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

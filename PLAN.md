@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: the leading lower response and next WKB forcing
+## Current milestone: both full off-diagonal WKB tails
+
+Both full off-diagonal WKB remainders now have H^(N+1) tails, with a
+single cutoff and norm bound on each original Hs ball, for 1 <= N <= s.
+The estimate is uniform over the physical period and the bounded complex
+lattice shifts with the inverse-index displacement budget.
+
+The next forcing density i*(nextResidualDensity+rho_N*P) has a uniform
+physical L2 bound. Its actual forced response differs from the explicit
+free oscillatory term by O(w^(N+2)), where w=(2*i*z)^(-1). Propagating
+the full forcing expansion leaves the same order of error after retaining
+the actual leading forced response and the next free term. Partial-
+interval L2 sampling puts that free term in H^(N+1).
+
+Combining these estimates with the leading lower-response tail controls
+the entire first off-diagonal remainder. The exact signed potential swap
+and spectral reflection identify the second off-diagonal remainder with
+the first. Reflecting the displacement sequence as -delta(-n) preserves
+the original sampling labels and gives the common two-column bound.
+
+These comparisons retain smooth periodic representatives matching the
+original Fourier coefficients. Their uniform bounds use only the original
+Hs norm; no additional source derivative is required. The next step is
+to combine the two off-diagonal terms with the already controlled diagonal
+contribution in the exact anti-discriminant error identity.
+
+Seven modules and three public examples check the nonzero next-forcing
+sign for constant potentials, its normalization at z=i, and both exact
+zero initial remainders. See [the Section 23 audit](coverage/SECTION_23.md).
+The anti-discriminant assembly, extension to nonsmooth sources,
+critical-to-midpoint comparison, and omitted-product cancellations remain
+for full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,831 build jobs, 6,829
+public examples, and a transitive axiom audit of 37,904 NLS declarations.
+The build retains 21 existing warnings; the seven new modules introduce none.
+Documentation checks cover 1,363 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the leading lower response and next WKB forcing
 
 The actual lower propagator now has the expansion
 K22(t,x)=exp(i*z*(t-x))*(1+w*(P(t)-P(x)))+O(w^2), where
