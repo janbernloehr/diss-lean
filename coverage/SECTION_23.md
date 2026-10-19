@@ -927,6 +927,64 @@ the anti-discriminant error identity. Extension to nonsmooth sources,
 critical-to-midpoint comparison, and omitted-product cancellations
 remain for the literal Fourier spectral errors.
 
+## The complete analytic boundary anti-discriminant Fourier error
+
+[`SobolevWKBAntiModelFourierTail.lean`](../NLS/ZakharovShabat/SobolevWKBAntiModelFourierTail.lean)
+combines the exact determinant-weighted error identity with both full
+off-diagonal tails and the diagonal contribution. It proves an H^(s+1)
+tail for the actual anti-discriminant minus its WKB model, at every
+cutoff above a common threshold and without a spectral-root equation.
+
+[`SobolevWKBBoundaryFactorDecay.lean`](../NLS/ZakharovShabat/SobolevWKBBoundaryFactorDecay.lean)
+controls both phase-elimination factors and the separated factor.
+[`SobolevLeadingMultiplierTail.lean`](../NLS/SequenceSpaces/SobolevLeadingMultiplierTail.lean)
+shows that an inverse-index deviation of a leading multiplier preserves
+the one-order smoother Fourier error, including every larger cutoff.
+[`SobolevWKBBoundaryLeadingTails.lean`](../NLS/ZakharovShabat/SobolevWKBBoundaryLeadingTails.lean)
+applies this to both actual leading oscillatory integrals.
+[`SobolevWKBBoundarySeparatedErrorTail.lean`](../NLS/ZakharovShabat/SobolevWKBBoundarySeparatedErrorTail.lean)
+controls the separated model error after its small phase-elimination factor.
+
+[`SobolevBoundaryAntiFourierTail.lean`](../NLS/ZakharovShabat/SobolevBoundaryAntiFourierTail.lean)
+uses the actual separated-characteristic equation to obtain the literal
+signed Fourier terms at either boundary condition.
+[`SourceBoundaryAntiFourierTail.lean`](../NLS/ZakharovShabat/SourceBoundaryAntiFourierTail.lean)
+transfers this estimate to the actual canonical source roots, locally
+uniformly near every real original Hs source. These intermediate
+physical comparisons retain matching smooth periodic representatives.
+
+[`WeightedCoefficientLimit.lean`](../NLS/SequenceSpaces/WeightedCoefficientLimit.lean)
+retains the weight and norm bound under bounded coefficientwise limits.
+[`DenseWeightedCoordinateBound.lean`](../NLS/SequenceSpaces/DenseWeightedCoordinateBound.lean)
+uses continuous raw coordinates to extend the bound from a dense subset
+of an open source set.
+[`SourceBoundaryAntiSobolevTail.lean`](../NLS/ZakharovShabat/SourceBoundaryAntiSobolevTail.lean)
+then defines the literal source error and extends its H^(s+1) tail to
+all Hs sources by finite Fourier approximation. No smooth representative
+or additional source derivative remains in that theorem.
+
+[`WeightedFiniteBlock.lean`](../NLS/SequenceSpaces/WeightedFiniteBlock.lean)
+constructs finite raw-coordinate blocks in the actual weighted space.
+[`WeightedTailCompletion.lean`](../NLS/SequenceSpaces/WeightedTailCompletion.lean)
+adds the central frequencies to obtain a locally uniform full-sequence bound.
+[`SourceBoundaryAntiFourierAnalytic.lean`](../NLS/ZakharovShabat/SourceBoundaryAntiFourierAnalytic.lean)
+combines this bound with scalar canonical-root analyticity. For every
+integer s >= 1, one open complex neighborhood of the entire real Hs
+locus supports both boundary remainders as H^(s+1)-valued analytic maps,
+with every raw coordinate equal to
+
+    anti(z_n,ab) + i*exp(i*pi*n)*b_n - i*exp(-i*pi*n)*a_(-n).
+
+Six examples check the distinct Dirichlet and Neumann leading factors,
+a negative-mode estimate at an increased cutoff, both strict cutoff
+endpoints of the finite head, a nonunit Sobolev weight at a negative
+frequency, and the full remainder at the free potential.
+
+This is the numerator estimate for the eta-sine Fourier error. The
+omitted standard-root product remains in its denominator. The critical
+phase and midpoint comparison also remain for the Dirichlet-midpoint
+Fourier error; full Fourier one-smoothing is not asserted here.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: both full off-diagonal WKB tails
+## Current milestone: the complete analytic boundary anti-discriminant error
+
+For each integer s >= 1, the actual anti-discriminant at the canonically
+labelled Dirichlet or Neumann root has its original signed Fourier
+leading terms with an analytic H^(s+1) remainder. Writing z_n for that
+boundary root, the literal error is
+
+    anti(z_n,ab) + i*exp(i*pi*n)*b_n - i*exp(-i*pi*n)*a_(-n).
+
+One open complex neighborhood of the entire real Hs source locus works
+for both boundary conditions. Every raw coefficient of the weighted map
+is identified with this expression, and its norm is locally bounded.
+All central frequencies are included. The final theorem applies to all
+original Hs sources in that neighborhood, with no smooth representative
+or additional source derivative assumed.
+
+The proof combines the sharp diagonal and full off-diagonal tails in
+the exact anti-discriminant error identity, eliminates the boundary
+phase, and controls the leading factors by inverse-index symbols.
+The actual boundary-root equation then identifies the Fourier terms.
+Uniform weighted coefficient limits extend the estimate from finite
+Fourier potentials to all Hs sources. A finite-block construction adds
+the central frequencies, and scalar analyticity gives the actual
+weighted Banach-valued analytic realization.
+
+Thirteen modules and six public examples cover both boundary signs,
+increased cutoff radii, negative modes, strict finite-head endpoints,
+raw Sobolev normalization, and the free potential. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+This proves the anti-discriminant numerator remainder. The eta-sine
+Fourier error still divides by the omitted standard-root product.
+The critical phase, midpoint comparison, and omitted-product cancellation
+remain for full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,844 build jobs, 6,835
+public examples, and a transitive axiom audit of 37,931 NLS declarations.
+The build retains 21 existing warnings; the thirteen new modules introduce none.
+Documentation checks cover 1,382 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: both full off-diagonal WKB tails
 
 Both full off-diagonal WKB remainders now have H^(N+1) tails, with a
 single cutoff and norm bound on each original Hs ball, for 1 <= N <= s.

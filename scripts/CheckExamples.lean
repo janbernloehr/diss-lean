@@ -62841,3 +62841,58 @@ example (a b : ℝ → ℂ) (ha : Continuous a) (hb : Continuous b) (N : ℕ) (z
   simp [nlsWKBFirstRemainder,nlsWKBSecondRemainder,nlsWKBLeadingTerm]
 
 end NLS.FullOffDiagonalChecks
+
+namespace NLS.BoundaryLeadingChecks
+open Set Complex NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+-- The two boundary signs give distinct factors for p=1/4,q=0.
+example : wkbBoundaryLeadingFactor .dirichlet (1/4) 0 = (4/3:ℂ) := by
+  norm_num [wkbBoundaryLeadingFactor,BoundaryCondition.extensionSign]
+
+example : wkbBoundaryLeadingFactor .neumann (1/4) 0 = (4/5:ℂ) := by
+  norm_num [wkbBoundaryLeadingFactor,BoundaryCondition.extensionSign]
+
+-- Increasing the cutoff preserves the negative mode and its exact Sobolev budget.
+example : ∃ q : ScalarSobolev 1, q.val (-2) = 1 ∧ q.val 2 = 0 ∧ ‖q‖ ≤ 3 := by
+  let a : ScalarSobolev 0 := WeightedCoeff.single (p := 2) (Weight.sobolev ((0:ℕ):ℝ)) (-2) 1
+  let f (n : ℤ) : ℂ := if n = -2 then 2 else 1
+  have he (n : ℤ) : (0 : ScalarSobolev 1).val n = if 1 ≤ n.natAbs then a.val n-1*a.val n else 0 := by simp
+  have hb (n : ℤ) (_ : 2 ≤ n.natAbs) : ‖f n‖ ≤ 2 := by
+    by_cases hn : n = -2 <;> simp [f,hn]
+  have hd (n : ℤ) (_ : 2 ≤ n.natAbs) : (1+|(n:ℝ)|)*‖f n-1‖ ≤ 3 := by
+    by_cases hn : n = -2
+    · subst n; norm_num [f]
+    · simp [f,hn]
+  obtain ⟨q,hq,hqn⟩ := WeightedCoeff.exists_sobolev_leading_multiplier_tail 0 1 2 (by norm_num) a 0
+    (fun n => a.val n) (fun _ => 1) f 2 3 (by norm_num) (by norm_num) he
+    (by intro n; norm_num) hb hd
+  refine ⟨q,?_,?_,?_⟩
+  · have hh := hq (-2)
+    norm_num [f,a,WeightedCoeff.single_val] at hh
+    exact hh
+  · simpa [f,a,WeightedCoeff.single_val] using hq 2
+  · simpa [a,WeightedCoeff.norm_single] using hqn
+
+end NLS.BoundaryLeadingChecks
+
+namespace NLS.BoundaryAnalyticChecks
+open ZakharovShabat
+open scoped ENNReal
+
+-- The finite block is strict at both cutoff endpoints and retains negative modes.
+example (w : Weight) :
+    (WeightedCoeff.finiteBlock (p := 2) w (Coeff.lowFrequencies 2) (fun _ => (3:ℂ))).val (-1) = 3 ∧
+    (WeightedCoeff.finiteBlock (p := 2) w (Coeff.lowFrequencies 2) (fun _ => (3:ℂ))).val (-2) = 0 ∧
+    (WeightedCoeff.finiteBlock (p := 2) w (Coeff.lowFrequencies 2) (fun _ => (3:ℂ))).val 2 = 0 := by
+  norm_num
+
+-- Raw amplitudes retain the Sobolev weight at a negative frequency.
+example : ‖WeightedCoeff.finiteBlock (p := 2) (Weight.sobolev 1) {(-2:ℤ)} (fun _ => (3:ℂ))‖ = 9 := by
+  norm_num [WeightedCoeff.finiteBlock,norm_smul,WeightedCoeff.norm_single,Weight.sobolev_apply]
+
+-- The complete weighted remainder vanishes at the free potential for either boundary condition.
+example (s : ℕ) (θ : BoundaryCondition) : sourceBoundaryAntiFourierRemainder s θ 0 = 0 := by
+  simp
+
+end NLS.BoundaryAnalyticChecks

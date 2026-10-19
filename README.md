@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both full off-diagonal WKB remainders now have sharp
-H^(N+1) tails on original Hs balls for 1 <= N <= s, with one common
-cutoff and norm bound. The proof uses the next forcing density's L2
-bound, the actual forced response, and exact signed swap symmetry.
-The anti-discriminant assembly, extension to nonsmooth sources,
-critical-to-midpoint comparison, and omitted-product cancellations
-remain; full Fourier one-smoothing is still open. Higher-order complex
-angular analyticity and Lemma 27.2 with its printed constants are proved.
+Latest step: the actual anti-discriminant Fourier error at canonical
+Dirichlet and Neumann roots is now analytic into H^(s+1) on a common
+complex neighborhood of the real Hs locus, for every integer s >= 1.
+The complete sequence includes central frequencies and applies to
+nonsmooth original Hs sources. The critical phase, midpoint comparison,
+and omitted-product cancellation remain for full Fourier one-smoothing.
+Higher-order complex angular analyticity and Lemma 27.2 with its printed
+constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
