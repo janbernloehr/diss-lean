@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual Fourier sampling now works for arbitrary interval
-L2 densities, uniformly over partial physical intervals and bounded
-complex lattice shifts. Both actual diagonal fundamental entries have
-their first mass corrections with quadratic inverse-frequency errors.
-The exact scalar forcing kernel connects these results to the remaining
-sharp off-diagonal WKB estimate. Critical-to-midpoint and omitted-product
+Latest step: the actual lower response to the leading WKB forcing now
+has a sharp H^(N+1) tail on original Hs balls through N=s. The next
+oscillatory density in the full forcing is explicit, with an L1 error
+of order N+2. The full off-diagonal remainder still needs the next-density
+L2 estimate and response assembly. Critical-to-midpoint and omitted-product
 cancellations also remain; full Fourier one-smoothing is still open.
 Higher-order complex angular analyticity and Lemma 27.2 with its printed
 constants are proved.

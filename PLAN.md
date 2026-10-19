@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Current milestone: interval L2 sampling and the first diagonal correction
+## Current milestone: the leading lower response and next WKB forcing
+
+The actual lower propagator now has the expansion
+K22(t,x)=exp(i*z*(t-x))*(1+w*(P(t)-P(x)))+O(w^2), where
+w=(2*i*z)^(-1) and P(x)=integral_0^x a*b. Its constants are uniform
+on original complex Hs balls, horizontal strips, and the physical period.
+
+This identifies the lower response to the leading WKB forcing as the
+free leading integral plus an explicit primitive-difference correction,
+with an O(w^(N+2)) error. Bounded physical multiplication and partial
+interval L2 sampling put that correction in H^(N+1). The actual lower
+response minus the free leading integral therefore has a uniform
+H^(N+1) tail through the full truncation order N=s.
+
+The next Riccati residual coefficient is also isolated and bounded using
+only lower undifferentiated densities. Every positive-order Riccati
+approximation is -b*w+O(w^2), and every positive-order carrier has the
+same first mass correction. Consequently the full scalar WKB forcing,
+after subtracting its leading term, equals
+w^(N+1)*i*(nextResidualDensity+rho_N*P)*exp(-i*z*x)
+up to an L1 error of order N+2, for 1 <= N <= s.
+
+These bounds use only the original Hs source norm. The physical ODE
+comparisons retain smooth periodic representatives with exact source
+Fourier coefficients. The sharp lower-response theorem concerns the
+leading forcing; the full off-diagonal remainder still requires the
+next-density L2 estimate and the solution-response assembly.
+
+Twelve modules and four public examples verify the free-kernel sign,
+a nonzero primitive-difference sample, the constant-potential mass
+normalization, and the cubic next-residual coefficient. See
+[the Section 23 audit](coverage/SECTION_23.md). Full off-diagonal tails,
+the anti-discriminant assembly, critical-to-midpoint comparison, and
+omitted-product cancellations remain for full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,824 build jobs, 6,826
+public examples, and a transitive axiom audit of 37,885 NLS declarations.
+The build retains 21 existing warnings; the twelve new modules introduce none.
+Documentation checks cover 1,350 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: interval L2 sampling and the first diagonal correction
 
 Actual Fourier samples of arbitrary interval L2 densities at pi*n+delta_n
 now form an L2 sequence for every bounded complex displacement sequence,

@@ -827,6 +827,63 @@ constant-potential mass primitive, the carrier at z=i for potentials 2
 and 3, and K22(t,t)=1 for every potential. Critical-to-midpoint comparison
 and omitted-product cancellations remain for the literal spectral errors.
 
+## The leading lower response and the next WKB forcing
+
+[`ClassicalLowerKernelExpansion.lean`](../NLS/ZakharovShabat/ClassicalLowerKernelExpansion.lean)
+combines the actual diagonal expansions with the off-diagonal bounds to
+prove K22(t,x)=exp(i*z*(t-x))*(1+w*(P(t)-P(x)))+O(w^2).
+[`ClassicalLowerForcingExpansion.lean`](../NLS/ZakharovShabat/ClassicalLowerForcingExpansion.lean)
+propagates this estimate for any continuous scalar density, retaining
+the primitive-difference oscillatory correction exactly.
+
+[`IntervalL2BoundedMultiplier.lean`](../NLS/Fourier/IntervalL2BoundedMultiplier.lean)
+proves that a continuous physical multiplier bounded by K preserves
+interval L2 data and multiplies the actual coefficient norm by at most K.
+[`PartialIntervalMassCorrectionSampling.lean`](../NLS/Fourier/PartialIntervalMassCorrectionSampling.lean)
+then gives an L2 sequence realization of the primitive-difference
+correction with bound 2*K*exp(3*||delta||_infinity) times the original
+coefficient norm, uniformly over every partial physical interval.
+
+[`SobolevWKBLeadingLowerExpansion.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingLowerExpansion.lean)
+identifies the actual lower response to the leading forcing as the free
+leading integral plus (-i)*w^(N+1) times the mass-correction integral,
+with an O(w^(N+2)) error. In
+[`SobolevWKBMassCorrectionTail.lean`](../NLS/ZakharovShabat/SobolevWKBMassCorrectionTail.lean),
+the correction is an H^(N+1) tail under the displacement budgets, with a
+bound valid at every cutoff above the common threshold.
+[`SobolevWKBLeadingLowerFourierTail.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingLowerFourierTail.lean)
+combines it with the inverse-power remainder to control the actual
+leading lower response minus the free leading integral in H^(N+1).
+The constants are uniform on original Hs balls through N=s and all
+physical times. This estimates the leading forced response, not yet
+the full off-diagonal WKB remainder.
+
+[`NLSRiccatiResidualNextOrder.lean`](../NLS/ZakharovShabat/NLSRiccatiResidualNextOrder.lean)
+isolates the coefficient c_N of w^(N+1) in the residual polynomial:
+q_N(w)+rho_N*w^N-c_N*w^(N+1)=O(w^(N+2)). Its higher coefficients
+need only lower undifferentiated Riccati densities.
+[`SobolevRiccatiResidualNextOrder.lean`](../NLS/ZakharovShabat/SobolevRiccatiResidualNextOrder.lean)
+proves continuity and uniform pointwise bounds for c_N and the improved
+residual error on original Hs balls through N=s.
+
+[`SobolevRiccatiApproximationFirstOrder.lean`](../NLS/ZakharovShabat/SobolevRiccatiApproximationFirstOrder.lean)
+proves that every positive Riccati truncation equals -b*w+O(w^2).
+[`SobolevWKBCarrierFirstOrder.lean`](../NLS/ZakharovShabat/SobolevWKBCarrierFirstOrder.lean)
+therefore gives the same exp(-i*z*x)*(1-w*P(x))+O(w^2) expansion
+for every positive carrier order. Finally,
+[`SobolevWKBNextForcingExpansion.lean`](../NLS/ZakharovShabat/SobolevWKBNextForcingExpansion.lean)
+proves that the full scalar forcing minus its leading forcing equals
+w^(N+1)*i*(c_N+rho_N*P)*exp(-i*z*x), with an L1 error of order N+2.
+No extra derivative of the source is required for 1 <= N <= s.
+
+Four public examples check the actual free kernel's sign and time
+direction, the central mass-correction sample 1/2 for P(x)=x and density
+1, the correction 3 for constant potentials 2 and 3, and c_1=-a*b^2.
+The uniform physical L2 bound for the next density, the full forced
+response, both off-diagonal tails, and the anti-discriminant assembly
+remain to be integrated. Critical-to-midpoint comparison and omitted-
+product cancellations are still needed for the literal spectral errors.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

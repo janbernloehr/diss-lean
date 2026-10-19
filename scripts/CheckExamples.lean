@@ -62747,3 +62747,60 @@ example (Φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z : ℂ) (t : Icc (0:ℝ) 
     det_classicalFundamentalMatrix Φ z t
 
 end NLS.PartialSamplingDiagonalChecks
+
+namespace NLS.LowerForcingChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+private theorem integral_complex_id_unit :
+    (∫ x in (0:ℝ)..1, (x:ℂ)) = (1:ℂ)/2 := by
+  rw [intervalIntegral.integral_ofReal,integral_id]
+  norm_num
+
+-- The free propagator fixes both the time direction and the exponential sign.
+example (z : ℂ) (t x : Icc (0:ℝ) 1) :
+    classicalScalarForcingLowerKernel 0 z t x = exp (Complex.I*z*(t.val-x.val)) := by
+  simp only [classicalScalarForcingLowerKernel,classicalSolution_free,mul_zero,mul_one,
+    sub_zero]
+  rw [← exp_add]
+  congr 1
+  ring
+
+-- At the central unshifted sample the primitive P(x)=x has correction 1/2.
+example : ∃ q : NLS.Coeff 2, q 0 = (1:ℂ)/2 ∧ ‖q‖ ≤ 2 := by
+  have hr := memLp_two_interval (continuous_const : Continuous (fun _ : ℝ => (1:ℂ)))
+    0 1 (by norm_num : (0:ℝ) ≤ 1)
+  have hP : Continuous (fun x : ℝ => (x:ℂ)) := Complex.continuous_ofReal
+  have hb (x : ℝ) (hx : x ∈ Icc (0:ℝ) 1) : ‖(x:ℂ)‖ ≤ 1 := by
+    simpa only [Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg hx.1] using hx.2
+  obtain ⟨q,hq,hqn⟩ := exists_partial_interval_massCorrection_lattice_coefficients
+    (fun _ => 1) (fun x => (x:ℂ)) hr hP 1 (by norm_num) hb 0 1 (by constructor <;> norm_num)
+  have hn : ‖unitIntervalMemLpCoefficients (fun _ => 1) hr‖ = 1 := by
+    have hh := norm_sq_unitIntervalMemLpCoefficients (fun _ => 1) hr
+    norm_num at hh
+    rcases hh with hh | hh
+    · exact hh
+    · linarith [norm_nonneg (unitIntervalMemLpCoefficients (fun _ => 1) hr)]
+  refine ⟨q,?_,?_⟩
+  · rw [hq 0]
+    norm_num [integral_complex_id_unit]
+  · simpa only [hn,norm_zero,mul_zero,Real.exp_zero,mul_one] using hqn
+
+-- Constant potentials 2 and 3 give a mass correction of 3 at t=1,z=0.
+example : nlsWKBMassCorrectionIntegral (fun _ => 2) (fun _ => 3) (fun _ => 1) 0 1 = 3 := by
+  norm_num [nlsWKBMassCorrectionIntegral,nlsWKBMassPrimitive,smul_eq_mul,
+    intervalIntegral.integral_const_mul,integral_complex_id_unit]
+
+-- The first next-order residual coefficient has the cubic sign -a*b^2.
+example (a b : ℝ → ℂ) (x : ℝ) :
+    nlsRiccatiResidualNextDensity a b 1 x = -a x*(b x)^2 := by
+  have hh := congrFun (coeff_nlsRiccatiResidualPolynomial_above a b 1 2 (by norm_num)) x
+  change nlsRiccatiResidualNextDensity a b 1 x = _ at hh
+  rw [hh]
+  simp only [Pi.neg_apply]
+  rw [Polynomial.coeff_mul_X_pow']
+  norm_num only [le_refl,ite_true,Nat.sub_self]
+  rw [Polynomial.coeff_C_mul,Polynomial.coeff_mul]
+  simp [nlsRiccatiDensity_zero,pow_two]
+
+end NLS.LowerForcingChecks
