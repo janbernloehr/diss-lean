@@ -62978,3 +62978,23 @@ example : nlsWKBDiagonalOscillatoryIntegral (fun x => (x:ℂ)) (fun _ => -1) 0 0
   norm_num
 
 end NLS.CorrectedDiagonalChecks
+
+namespace NLS.PhaseTaylorChecks
+open Complex NLS.ComplexAnalysis
+
+-- The N=0 endpoint retains a quadratic error, with a nonzero real increment.
+example : ‖exp ((1:ℂ)/2)-(3:ℂ)/2‖ ≤ Real.exp 1/4 := by
+  have h := norm_exp_increment_sub_linear_le 0 ((1:ℂ)/2) 1 0 (1/2) 0 1 1
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num)
+  convert h using 1 <;> norm_num <;> ring_nf
+
+-- A cubic imaginary increment gives the stated fourth-order remainder bound.
+example : ‖exp (Complex.I/8)-1-Complex.I/8‖ ≤ Real.exp 1/16 := by
+  have h := norm_exp_increment_sub_linear_le 0 (Complex.I/8) 1 2 (1/2) 0 1 1
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num [norm_div])
+  convert h using 1 <;> norm_num
+  ring_nf
+
+end NLS.PhaseTaylorChecks

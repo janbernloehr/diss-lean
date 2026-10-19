@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: corrected diagonal tails and the next Hamiltonian phase
+## Current milestone: the actual next-phase trace tail
+
+The actual discriminant minus the next Hamiltonian trace has a uniformly
+bounded H^(s+1) tail on original Hs balls for s >= 1. The comparison is
+
+    Delta(pi*n+delta_n) - 2*cos(i*sigma_(s+1)(pi*n+delta_n)).
+
+One cutoff and norm bound work for every larger cutoff. The sampling
+sequence has a uniform bound and an inverse-index bound. Matching smooth
+periodic representatives remain explicit, and no spectral-root equation
+is assumed.
+
+A uniform exponential Taylor estimate turns the exact next phase
+increment into its two diagonal phase primitives, with an order-(N+2)
+remainder through N = s. The exact trace identity then combines both
+corrected diagonal tails, both full off-diagonal tails, and the leading
+oscillatory terms multiplied by their small initial coordinates. Its
+remaining scalar correction has an H^(N+1) tail. The uniform inverse
+bound for the initial-basis determinant completes the actual trace
+comparison at N = s.
+
+Nine modules and two public examples establish this step. The examples
+check a nonzero real increment at N = 0 and a cubic imaginary increment.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+For the critical equation, the trace estimate still needs a spectral
+derivative bound. A fixed-radius Cauchy argument requires estimates for
+merely bounded displacements; the present inverse-index assumption is
+not preserved by those circles. Extending the comparison to all original
+Hs sources and cancelling the omitted standard-root product remain for
+full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,871 build jobs, 6,843
+public examples, and a transitive axiom audit of 37,992 NLS declarations.
+The build retains 21 existing warnings; the nine new modules introduce none.
+Documentation checks cover 1,431 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: corrected diagonal tails and the next Hamiltonian phase
 
 Both full diagonal WKB remainders have H^(N+1) tails after removing
 their explicit phase primitives, uniformly on original Hs balls for

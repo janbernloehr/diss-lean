@@ -1083,6 +1083,54 @@ equation, and the resulting source-space extension still remain.
 The omitted standard-root product cancellation is separate; full
 Fourier one-smoothing is not asserted by these tail estimates alone.
 
+## The actual next-phase trace tail
+
+[`ExponentialIncrementRemainder.lean`](../NLS/ComplexAnalysis/ExponentialIncrementRemainder.lean)
+combines a quadratic exponential remainder with a first-order carrier
+error. [`SobolevHamiltonianPhaseTaylor.lean`](../NLS/ZakharovShabat/SobolevHamiltonianPhaseTaylor.lean)
+applies it uniformly on original Hs balls through N = s, and
+[`SobolevHamiltonianTraceTaylor.lean`](../NLS/ZakharovShabat/SobolevHamiltonianTraceTaylor.lean)
+combines the signed columns. The resulting trace increment differs from
+the negative sum of its diagonal phase primitives by order N+2.
+
+[`SobolevDecayingLeadingTail.lean`](../NLS/SequenceSpaces/SobolevDecayingLeadingTail.lean)
+controls a decaying factor on a leading Sobolev term.
+[`SobolevWKBTraceLeadingTails.lean`](../NLS/ZakharovShabat/SobolevWKBTraceLeadingTails.lean)
+uses it for both leading oscillatory terms multiplied by the initial
+coordinates in the trace identity. They have common H^(s+1) tail bounds
+at every larger cutoff.
+
+[`NLSWKBNextTraceIdentity.lean`](../NLS/ZakharovShabat/NLSWKBNextTraceIdentity.lean)
+rewrites the actual determinant-weighted trace error relative to the
+next phase using both corrected diagonal remainders, both off-diagonal
+remainders, the two small-factor leading terms, and one scalar correction.
+[`SobolevWKBNextTraceCorrection.lean`](../NLS/ZakharovShabat/SobolevWKBNextTraceCorrection.lean)
+bounds that correction to order N+2, while
+[`SobolevWKBNextTraceCorrectionTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextTraceCorrectionTail.lean)
+converts this into an H^(N+1) tail.
+
+[`SobolevWKBNextTraceTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextTraceTail.lean)
+assembles the actual H^(s+1) tail of
+
+    Delta(pi*n+delta_n) - 2*cos(i*sigma_(s+1)(pi*n+delta_n)).
+
+The initial-basis determinant has a uniformly bounded inverse above the
+common cutoff. Every larger cutoff is allowed. The source is measured
+in the original Hs norm, with s >= 1; matching smooth periodic
+representatives and bounded inverse-index displacements remain explicit.
+No critical or boundary-root equation is assumed.
+
+Two examples test the exponential remainder at a nonzero real increment
+with N = 0 and at a cubic imaginary increment with N = 2. The latter
+checks the fourth-order bound.
+
+The spectral derivative and critical-phase comparison still remain in
+the library. Fixed-radius Cauchy circles do not preserve the inverse-index
+displacement bound, so the trace estimates must first be strengthened to
+merely bounded displacements. Extension to all original Hs sources and
+the omitted standard-root product cancellation also remain; this trace
+estimate alone does not establish full Fourier one-smoothing.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

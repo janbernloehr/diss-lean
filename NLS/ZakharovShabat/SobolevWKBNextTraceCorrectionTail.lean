@@ -1,0 +1,65 @@
+import NLS.ZakharovShabat.SobolevWKBNextTraceCorrection
+import NLS.ZakharovShabat.WKBLeadingFrequencyCutoff
+import NLS.SequenceSpaces.SobolevInversePowerBound
+
+/-! # The scalar correction as a Sobolev tail
+
+Inverse-power decay gives an H^(N+1) tail at every larger cutoff.
+-/
+
+noncomputable section
+open Set Complex NLS.Fourier
+open scoped ContDiff ENNReal
+namespace NLS.ZakharovShabat
+
+/-- The scalar correction to the next Hamiltonian trace has an H^(N+1)
+tail, uniformly on original Hs balls and at every larger cutoff. -/
+theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) →
+      ∃ f : ScalarSobolev (N+1),
+        (∀ n, f.val n = if K' ≤ n.natAbs then
+          nlsWKBNextTraceCorrectionError a b N ((Real.pi:ℂ)*n+δ n) else 0) ∧ ‖f‖ ≤ C := by
+  classical
+  obtain ⟨K,hK,hcut⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨C,hC,herr⟩ := exists_uniform_nlsWKB_next_trace_correction_error_bound s N hs hNs R hR D
+  refine ⟨K,hK,2*C,by positivity,?_⟩
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD hδM
+  let ν (n : ℤ) := (Real.pi:ℂ)*n+δ n
+  let F (n : ℤ) := if K' ≤ n.natAbs then nlsWKBNextTraceCorrectionError a b N (ν n) else 0
+  have hδ (n : ℤ) : ‖δ n‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ n).trans hδD
+  have hF (n : ℤ) : (1+|(n:ℝ)|)^((N+1)+1)*‖F n‖ ≤ C := by
+    by_cases hn : K' ≤ n.natAbs
+    · have hgeom := (hcut δ hδ hδM n (hK'.trans hn)).2
+      change 1+|(n:ℝ)| ≤ ‖ν n‖ at hgeom
+      have hz : 1 ≤ ‖ν n‖ := by linarith [abs_nonneg (n:ℝ)]
+      have hzD : |(ν n).im| ≤ D := by
+        have he : (ν n).im = (δ n).im := by simp [ν,Complex.mul_im]
+        rw [he]
+        exact (Complex.abs_im_le_norm _).trans (hδ n)
+      have hbnd := herr ab hab a b ha hb hpa hpb hca hcb (ν n) hz hzD
+      have hw : (1+|(n:ℝ)|)*‖(2*I*ν n)⁻¹‖ ≤ 1 := by
+        simp only [norm_inv,norm_mul,norm_ofNat,norm_I,mul_one]
+        rw [← div_eq_mul_inv]
+        apply (div_le_one (by linarith : 0 < 2*‖ν n‖)).mpr
+        linarith
+      have hp := pow_le_pow_left₀ (by positivity) hw (N+2)
+      rw [mul_pow,one_pow] at hp
+      simp only [F,if_pos hn]
+      calc
+        _ ≤ (1+|(n:ℝ)|)^(N+2)*(C*‖(2*I*ν n)⁻¹‖^(N+2)) :=
+          mul_le_mul_of_nonneg_left hbnd (by positivity)
+        _ = C*((1+|(n:ℝ)|)^(N+2)*‖(2*I*ν n)⁻¹‖^(N+2)) := by ring
+        _ ≤ C*1 := mul_le_mul_of_nonneg_left hp hC
+        _ = C := mul_one C
+    · simpa only [F,if_neg hn,norm_zero,mul_zero] using hC
+  exact WeightedCoeff.exists_sobolev_coeff_of_inverse_power_bound (N+1) F C hC hF
+
+end NLS.ZakharovShabat
