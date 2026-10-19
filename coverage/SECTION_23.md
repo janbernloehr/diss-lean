@@ -1034,6 +1034,55 @@ primitive, followed by the actual critical-phase estimate. The omitted
 standard-root product cancellation remains separate. Full Fourier
 one-smoothing is not claimed by these identities alone.
 
+## Corrected diagonal tails and the next Hamiltonian phase
+
+[`ClassicalDiagonalApproximation.lean`](../NLS/ZakharovShabat/ClassicalDiagonalApproximation.lean)
+quantifies replacement of the lower forced response in the exact
+diagonal identity. The error gains one inverse-frequency power and
+uses only the potential derivative's L1 norm.
+[`SobolevWKBLeadingDiagonalApproximation.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingDiagonalApproximation.lean)
+applies it on original Hs balls: the actual leading upper response has
+an order-(N+2) approximation through N = s.
+[`NLSWKBDiagonalPhaseDecomposition.lean`](../NLS/ZakharovShabat/NLSWKBDiagonalPhaseDecomposition.lean)
+splits that approximation exactly into
+
+    -w^(N+1)*exp(-izt)*integral_0^t(a*r_N)
+
+and its boundary and nested oscillatory terms, with w = (2iz)^(-1).
+
+[`DiagonalOscillatorySampling.lean`](../NLS/Fourier/DiagonalOscillatorySampling.lean)
+realizes those oscillatory terms in l2 at bounded complex lattice
+displacements. [`SobolevWKBDiagonalOscillatoryTail.lean`](../NLS/ZakharovShabat/SobolevWKBDiagonalOscillatoryTail.lean)
+then places the scaled correction in H^(N+1), using the top Riccati
+density's L2 bound and the potential derivative's L1 bound.
+[`SobolevWKBLeadingDiagonalTail.lean`](../NLS/ZakharovShabat/SobolevWKBLeadingDiagonalTail.lean)
+combines this with the pointwise approximation error.
+[`SobolevWKBFirstCorrectedDiagonalTail.lean`](../NLS/ZakharovShabat/SobolevWKBFirstCorrectedDiagonalTail.lean)
+uses the next forcing expansion to obtain the full first diagonal tail.
+[`SobolevWKBBothCorrectedDiagonalTails.lean`](../NLS/ZakharovShabat/SobolevWKBBothCorrectedDiagonalTails.lean)
+transfers it to the second column by exact signed swap and reflection.
+One cutoff and norm bound work for both columns, every larger cutoff,
+all physical times, and all 1 <= N <= s on the original Hs ball.
+Matching smooth periodic representatives remain explicit.
+
+[`NLSHamiltonianPhaseIncrement.lean`](../NLS/ZakharovShabat/NLSHamiltonianPhaseIncrement.lean)
+identifies the endpoint primitive with the next Hamiltonian phase
+increment and combines both signed columns into the first variation
+of the two free carriers.
+[`SobolevHamiltonianPhaseIncrement.lean`](../NLS/ZakharovShabat/SobolevHamiltonianPhaseIncrement.lean)
+proves the uniform increment bound C*norm(w)^(N+1), including N = s.
+No extra density derivative enters that bound.
+
+Three examples check the zeroth and cubic constant-potential primitive
+signs at z = i and the nontrivial boundary-minus-nested central integral
+with a(x) = x and r_0 = 1, whose value is 1/2.
+
+The corrected diagonal tail is established. The uniform exponential
+phase Taylor estimate, its insertion into the trace and critical
+equation, and the resulting source-space extension still remain.
+The omitted standard-root product cancellation is separate; full
+Fourier one-smoothing is not asserted by these tail estimates alone.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

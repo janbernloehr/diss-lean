@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: analytic critical-midpoint corrections and diagonal identities
+## Current milestone: corrected diagonal tails and the next Hamiltonian phase
+
+Both full diagonal WKB remainders have H^(N+1) tails after removing
+their explicit phase primitives, uniformly on original Hs balls for
+1 <= N <= s. One cutoff and norm bound work for both columns, every
+larger cutoff, and every time in the physical period. The estimates
+retain matching smooth periodic representatives and require no extra
+source derivative, including at N = s.
+
+Writing w = (2iz)^(-1) and r_N for the original Riccati density, the
+first diagonal primitive is
+
+    -w^(N+1)*exp(-izt)*integral_0^t(a*r_N).
+
+The actual leading upper response is approximated to order N+2 using
+only the potential derivative's L1 norm. Its remaining boundary and
+nested oscillatory terms have l2 sampling bounds from the top density's
+L2 norm. Weighted sampling, the next forcing estimate, and exact signed
+reflection then give both full corrected diagonal tails.
+
+At one period, the primitive is exactly the negative free carrier
+times the next Hamiltonian phase increment. The two signed primitives
+combine into the corresponding variation of the two free carriers.
+The increment has a uniform C*norm(w)^(N+1) bound using only the
+original Hs source ball, including the top available density.
+
+Ten modules and three public examples check the zeroth and cubic
+constant-potential phase signs and a nontrivial boundary-minus-nested
+central integral. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The corrected diagonal tails and phase-increment bounds are proved.
+The phase exponential still needs its uniform Taylor estimate before
+insertion in the actual trace and critical equation. Extension of that
+comparison to all Hs sources and the omitted standard-root product
+cancellation remain for full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,862 build jobs, 6,841
+public examples, and a transitive axiom audit of 37,976 NLS declarations.
+The build retains 21 existing warnings; the ten new modules introduce none.
+Documentation checks cover 1,415 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: analytic critical-midpoint corrections and diagonal identities
 
 The actual canonical critical point minus the periodic midpoint is
 locally analytic into H^k for every integer k <= 2s near each real

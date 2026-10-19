@@ -62948,3 +62948,33 @@ example : ∃ q : NLS.Coeff 2, q 0 = (1:ℂ)/8 ∧ ‖q‖ ≤ 1 := by
       intervalIntegral.integral_const,sub_zero,smul_eq_mul,mul_one] using hqn
 
 end NLS.DiagonalSamplingChecks
+
+namespace NLS.CorrectedDiagonalChecks
+open Set Complex MeasureTheory ZakharovShabat
+
+-- The zeroth density r_0=-b fixes the sign of the diagonal primitive.
+example : nlsWKBDiagonalPhasePrimitive (fun _ => 2) (fun _ => 3) 0 Complex.I 1 = -3*exp 1 := by
+  norm_num [nlsWKBDiagonalPhasePrimitive,smul_eq_mul]
+  ring_nf
+  norm_num
+
+-- The cubic density r_2=a*b^2 produces the next nonzero constant-potential primitive.
+example : nlsWKBDiagonalPhasePrimitive (fun _ => 2) (fun _ => 3) 2 Complex.I 1 = (9/2:ℂ)*exp 1 := by
+  norm_num [nlsWKBDiagonalPhasePrimitive,deriv_const,smul_eq_mul]
+  ring_nf
+  rw [show (Complex.I:ℂ)^6 = -1 by
+    calc
+      _ = Complex.I^4*Complex.I^2 := by ring
+      _ = -1 := by rw [I_pow_four,I_sq]; ring]
+  ring
+
+-- At zero frequency, the boundary and nested terms for a(x)=x, r_0=1 leave 1/2.
+example : nlsWKBDiagonalOscillatoryIntegral (fun x => (x:ℂ)) (fun _ => -1) 0 0 1 = (1:ℂ)/2 := by
+  have hd (x : ℝ) : deriv (fun y : ℝ => (y:ℂ)) x = 1 := Complex.ofRealCLM.hasDerivAt.deriv
+  simp only [nlsWKBDiagonalOscillatoryIntegral,nlsRiccatiDensity_zero,Pi.neg_apply,neg_neg,
+    mul_zero,zero_mul,exp_zero,one_mul,mul_one,hd,intervalIntegral.integral_const,sub_zero,
+    Complex.real_smul,Complex.ofReal_one,mul_one]
+  rw [intervalIntegral.integral_ofReal,integral_id]
+  norm_num
+
+end NLS.CorrectedDiagonalChecks

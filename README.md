@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the canonical critical-point offset from the periodic
-midpoint is locally analytic into H^(2s) near every real Hs source,
-including all central and collapsed gaps. For s >= 1 this supplies the
-required H^(s+1) midpoint correction. Exact trace and forced-response
-identities, together with nested L2 sampling, prepare the remaining
-critical-phase estimate. The boundary anti-discriminant Fourier
-remainder is already analytic into H^(s+1) for both boundary conditions.
-The critical phase and omitted-product cancellation remain for full
-Fourier one-smoothing. Higher-order complex angular analyticity and
-Lemma 27.2 with its printed constants are proved.
+Latest step: both full diagonal WKB remainders have H^(N+1) tails after
+removing their explicit phase primitives, uniformly on original Hs balls
+for 1 <= N <= s. Those primitives are identified with the next Hamiltonian
+phase increment, whose uniform bound also holds at N = s. The actual
+critical-midpoint correction is already analytic into H^(2s), and the
+boundary anti-discriminant Fourier remainder is analytic into H^(s+1).
+The corrected trace, critical phase, and omitted-product cancellation
+remain for full Fourier one-smoothing. Higher-order complex angular
+analyticity and Lemma 27.2 with its printed constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
