@@ -985,6 +985,55 @@ omitted standard-root product remains in its denominator. The critical
 phase and midpoint comparison also remain for the Dirichlet-midpoint
 Fourier error; full Fourier one-smoothing is not asserted here.
 
+## Critical-midpoint regularity and the diagonal phase identities
+
+[`SobolevSquaredSymbol.lean`](../NLS/SequenceSpaces/SobolevSquaredSymbol.lean)
+shows that the square of an order-s decaying symbol sends an unweighted
+lp sequence into H^(2s), with its literal raw coefficients and an
+explicit norm bound. This includes infinite lp exponent.
+[`SourceCriticalMidpointHigherSobolev.lean`](../NLS/ZakharovShabat/SourceCriticalMidpointHigherSobolev.lean)
+applies it to the actual Hs gap sequence and the bounded l2 quotient
+in the exact critical-midpoint squared-gap identity. The resulting
+bound includes every index, collapsed complex gaps, and s = 0.
+[`SourceCriticalMidpointSobolevAnalytic.lean`](../NLS/ZakharovShabat/SourceCriticalMidpointSobolevAnalytic.lean)
+realizes the actual offset as a locally bounded analytic map into H^k
+for every k <= 2s on a complex neighborhood of each real Hs source.
+For s >= 1, this proves the H^(s+1) critical-to-midpoint correction
+without smooth representatives or additional source derivatives.
+
+[`NLSWKBTraceErrorDecomposition.lean`](../NLS/ZakharovShabat/NLSWKBTraceErrorDecomposition.lean)
+identifies the determinant-weighted actual trace error relative to both
+the WKB model and the single Hamiltonian phase. Both diagonal errors
+are retained; no cancellation is assumed.
+[`ClassicalScalarForcingDiagonalIdentity.lean`](../NLS/ZakharovShabat/ClassicalScalarForcingDiagonalIdentity.lean)
+uses integration by parts in the actual scalar forced ODE to isolate
+the upper response. Its undivided identity also holds at z = 0.
+[`NLSWKBLeadingDiagonalIdentity.lean`](../NLS/ZakharovShabat/NLSWKBLeadingDiagonalIdentity.lean)
+specializes this identity to the original leading WKB forcing. With
+w = (2iz)^(-1) and Riccati density r_N, the isolated diagonal primitive
+contributes -w^(N+1)*exp(-izt)*integral(a*r_N) when z is nonzero.
+Since r_0 = -b, its zeroth-order sign is positive in terms of integral(a*b).
+
+[`WeightedCoordinateIntegral.lean`](../NLS/SequenceSpaces/WeightedCoordinateIntegral.lean)
+constructs the integral of uniformly bounded weighted raw coordinates
+by finite blocks and bounded coefficientwise limits. It needs no
+strong measurability hypothesis on chosen full sequence realizations.
+[`NestedIntervalFourierSampling.lean`](../NLS/Fourier/NestedIntervalFourierSampling.lean)
+uses this construction to bound reverse partial-interval and nested
+oscillatory samples at bounded complex lattice displacements. The
+nested bound uses only the inner density's L2 norm and the continuous
+outer density's L1 norm, with no derivative of either density.
+
+Three examples verify squared weights at a negative frequency with
+nonzero raw amplitude, the zero-source offset at every target order,
+and the triangular nested integral's exact value 1/8 at half the period.
+
+The critical-midpoint regularity is proved. The diagonal response still
+needs its uniform remainder bound after removing the displayed phase
+primitive, followed by the actual critical-phase estimate. The omitted
+standard-root product cancellation remains separate. Full Fourier
+one-smoothing is not claimed by these identities alone.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

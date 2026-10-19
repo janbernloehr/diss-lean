@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: the complete analytic boundary anti-discriminant error
+## Current milestone: analytic critical-midpoint corrections and diagonal identities
+
+The actual canonical critical point minus the periodic midpoint is
+locally analytic into H^k for every integer k <= 2s near each real
+original Hs source. Its complete sequence has a locally uniform norm
+bound and literal raw coefficients, including central indices and
+collapsed complex gaps. The bound holds for s = 0 as well. For s >= 1,
+it supplies the H^(s+1) correction needed to replace critical points
+with periodic midpoints, without smooth representative assumptions.
+
+The proof combines the original Hs gap bound with the exact squared-gap
+identity and its bounded l2 quotient. A squared-symbol estimate gives
+the H^(2s) realization; coordinate analyticity then gives analyticity
+in every lower Sobolev target.
+
+The actual discriminant now also has an exact error decomposition
+relative to the single WKB phase. Integration by parts in the actual
+scalar forced system isolates the leading diagonal primitive, retaining
+the Riccati sign. Nested oscillatory sampling uses the inner density's
+L2 norm and the outer density's L1 norm. The coordinate integral lemma
+constructs a weighted sequence without assuming a chosen full sequence
+realization is strongly measurable.
+
+Eight modules and three public examples check a nonzero negative-mode
+squared weight, the free critical-midpoint correction, and the central
+nested sample 1/8 on half the physical period. See
+[the Section 23 audit](coverage/SECTION_23.md).
+
+The critical-midpoint regularity is resolved. The corrected diagonal
+tail and actual critical spectral phase estimate still remain, as does
+the omitted standard-root product cancellation for the eta-sine error.
+The complete Fourier one-smoothing theorem is not yet proved.
+
+Validation: `./scripts/check.sh` passes with 7,852 build jobs, 6,838
+public examples, and a transitive axiom audit of 37,953 NLS declarations.
+The build retains 21 existing warnings; the eight new modules introduce none.
+Documentation checks cover 1,398 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the complete analytic boundary anti-discriminant error
 
 For each integer s >= 1, the actual anti-discriminant at the canonically
 labelled Dirichlet or Neumann root has its original signed Fourier

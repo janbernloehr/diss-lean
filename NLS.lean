@@ -4179,3 +4179,11 @@ import NLS.ZakharovShabat.SourceBoundaryAntiSobolevTail
 import NLS.SequenceSpaces.WeightedFiniteBlock
 import NLS.SequenceSpaces.WeightedTailCompletion
 import NLS.ZakharovShabat.SourceBoundaryAntiFourierAnalytic
+import NLS.SequenceSpaces.SobolevSquaredSymbol
+import NLS.ZakharovShabat.SourceCriticalMidpointHigherSobolev
+import NLS.ZakharovShabat.SourceCriticalMidpointSobolevAnalytic
+import NLS.ZakharovShabat.NLSWKBTraceErrorDecomposition
+import NLS.SequenceSpaces.WeightedCoordinateIntegral
+import NLS.Fourier.NestedIntervalFourierSampling
+import NLS.ZakharovShabat.ClassicalScalarForcingDiagonalIdentity
+import NLS.ZakharovShabat.NLSWKBLeadingDiagonalIdentity

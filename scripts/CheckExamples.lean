@@ -62896,3 +62896,55 @@ example (s : ℕ) (θ : BoundaryCondition) : sourceBoundaryAntiFourierRemainder 
   simp
 
 end NLS.BoundaryAnalyticChecks
+
+namespace NLS.CriticalMidpointSmoothingChecks
+open ZakharovShabat
+open scoped ENNReal
+
+-- Squared order-one decay gives order-two regularity with the raw amplitude retained.
+example : ∃ e : WeightedCoeff (Weight.sobolev ((2:ℕ):ℝ)) 2,
+    e.val (-2) = 9*Complex.I ∧ ‖e‖ ≤ 81 := by
+  let g : ℤ → ℂ := Pi.single (-2) 3
+  let q : Coeff 2 := lp.single 2 (-2) Complex.I
+  have hg (n : ℤ) : (1+|(n:ℝ)|)^1*‖g n‖ ≤ 9 := by
+    by_cases hn : n = -2
+    · subst n
+      norm_num [g]
+    · simp [g,hn]
+  obtain ⟨e,he,hen⟩ := WeightedCoeff.exists_sobolev_square_mul 1 g q 9 hg
+  refine ⟨e,?_,?_⟩
+  · rw [he]
+    norm_num [g,q,lp.single_apply]
+  · simpa [q,lp.norm_single,show (9:ℝ)^2 = 81 by norm_num] using hen
+
+-- Critical points and periodic midpoints coincide at the free potential at every target order.
+example (s k : ℕ) : sourceCriticalMidpointSobolevRemainder s k 0 = 0 := by
+  simp
+
+end NLS.CriticalMidpointSmoothingChecks
+
+namespace NLS.DiagonalSamplingChecks
+open Set Complex MeasureTheory NLS.Fourier
+open scoped ENNReal
+
+-- The nested integral on half the period is triangular: its central sample is 1/8.
+example : ∃ q : NLS.Coeff 2, q 0 = (1:ℂ)/8 ∧ ‖q‖ ≤ 1 := by
+  have hf := memLp_two_interval (continuous_const : Continuous (fun _ : ℝ => (1:ℂ)))
+    0 1 (by norm_num : (0:ℝ) ≤ 1)
+  obtain ⟨q,hq,hqn⟩ := exists_nested_interval_lattice_coefficients
+    (fun _ => 1) (fun _ => 1) continuous_const continuous_const hf 0 ⟨1/2,by norm_num⟩
+  have hn : ‖unitIntervalMemLpCoefficients (fun _ => 1) hf‖ = 1 := by
+    have hh := norm_sq_unitIntervalMemLpCoefficients (fun _ => 1) hf
+    norm_num at hh
+    rcases hh with hh | hh
+    · exact hh
+    · linarith [norm_nonneg (unitIntervalMemLpCoefficients (fun _ => 1) hf)]
+  refine ⟨q,?_,?_⟩
+  · rw [hq 0]
+    norm_num
+    rw [intervalIntegral.integral_ofReal,integral_id]
+    norm_num
+  · simpa only [hn,norm_zero,mul_zero,Real.exp_zero,one_mul,norm_one,
+      intervalIntegral.integral_const,sub_zero,smul_eq_mul,mul_one] using hqn
+
+end NLS.DiagonalSamplingChecks
