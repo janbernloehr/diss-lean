@@ -1163,6 +1163,55 @@ critical-phase source extension are subsequent steps. The omitted
 standard-root product cancellation still remains for full Fourier
 one-smoothing.
 
+## Spectral differentiation and analytic critical-phase tails
+
+[`WeightedCauchyDerivative.lean`](../NLS/SequenceSpaces/WeightedCauchyDerivative.lean)
+realizes coordinate derivatives in the original weighted sequence space
+with the explicit Cauchy bound 2M/r. Applying it on fixed-radius circles,
+[`SobolevWKBNextTraceDerivativeTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextTraceDerivativeTail.lean)
+proves the H^(s+1) bound for the spectral derivative of the actual next-phase
+trace error. It is uniform on original Hs balls under merely bounded
+displacements and at every larger cutoff.
+
+[`SobolevHamiltonianNextPhaseFree.lean`](../NLS/ZakharovShabat/SobolevHamiltonianNextPhaseFree.lean)
+and
+[`SobolevHamiltonianNextPhaseDerivative.lean`](../NLS/ZakharovShabat/SobolevHamiltonianNextPhaseDerivative.lean)
+extend the free-phase comparison through order s+1 and give a uniformly
+invertible phase derivative at high frequencies. The estimate
+[`CriticalPhaseLocalComparison.lean`](../NLS/ComplexAnalysis/CriticalPhaseLocalComparison.lean)
+controls small phase offsets through the hyperbolic sine uniformly in
+the integer mode. The actual equation Delta' = 0 and
+[`WeightedDomination.lean`](../NLS/SequenceSpaces/WeightedDomination.lean)
+then give the sharp critical-phase tail in
+[`SobolevWKBCriticalPhaseTail.lean`](../NLS/ZakharovShabat/SobolevWKBCriticalPhaseTail.lean).
+This intermediate result retains smooth representatives and both
+supremum and inverse-index displacement bounds.
+
+[`SobolevNextHamiltonianPhase.lean`](../NLS/ZakharovShabat/SobolevNextHamiltonianPhase.lean)
+defines the intrinsic phase using all available source Hamiltonians
+through order s+1. It is jointly analytic away from the spectral pole
+and agrees exactly with the smooth physical phase.
+[`SourceCriticalPhaseSmoothTail.lean`](../NLS/ZakharovShabat/SourceCriticalPhaseSmoothTail.lean)
+uses the actual canonical critical sequence, proves that its tail stays
+away from zero, and supplies a common smooth-source bound.
+
+The final theorem `exists_local_sourceCriticalNextPhaseTail_analytic` in
+[`SourceCriticalPhaseAnalyticTail.lean`](../NLS/ZakharovShabat/SourceCriticalPhaseAnalyticTail.lean)
+removes the smooth representative hypothesis by dense finite Fourier
+approximation. For every real original Hs source, integer s >= 1, it
+gives an open complex neighborhood, positive cutoff K, and a uniform
+H^(s+1) bound for the analytic map with coordinates
+
+    sigma_(s+1)(kappa_n) + i*pi*n,  |n| >= K,
+    0,                            |n| < K.
+
+Here kappa_n is the actual canonical critical point. No central phase
+value is used, so this does not assert analyticity across its pole.
+Two public examples check a constant-potential phase derivative at z=i
+and the local inversion normalization at mode -3. The omitted standard-root
+product cancellation and assembly with the boundary and midpoint errors
+remain before the full Birkhoff-minus-Fourier smoothing conclusion.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

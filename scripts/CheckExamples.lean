@@ -63017,3 +63017,30 @@ example : ∃ K : ℕ, 0 < K ∧ ∀ z : ℂ, ‖z‖ ≤ 1 → ∀ n : ℤ, K �
   exact ⟨K,hK,fun z hz n hn => (h (fun _ => z) (fun _ => hz) n hn).2⟩
 
 end NLS.BoundedTraceChecks
+
+namespace NLS.CriticalPhaseIntegrationChecks
+open Complex NLS.ZakharovShabat NLS.ComplexAnalysis
+
+-- The finite phase derivative can be far from -i before the frequency cutoff.
+example : deriv (nlsHamiltonianPhase (fun _ => 2) (fun _ => 3) 1) Complex.I = 2*Complex.I := by
+  have hphase : nlsHamiltonianPhase (fun _ => 2) (fun _ => 3) 1 =
+      fun z : ℂ => -Complex.I*z+3*Complex.I/z := by
+    funext z
+    norm_num [nlsHamiltonianPhase,smul_eq_mul]
+    ring
+  rw [hphase]
+  have h := ((hasDerivAt_id Complex.I).const_mul (-Complex.I)).add
+    ((hasDerivAt_const Complex.I (3*Complex.I)).div (hasDerivAt_id Complex.I) Complex.I_ne_zero)
+  have hd := h.deriv
+  change deriv (fun z : ℂ => -Complex.I*z+3*Complex.I/z) Complex.I = _ at hd
+  rw [hd]
+  norm_num [Complex.I_sq]
+  ring
+
+-- The local inversion estimate uses the same normalization on negative modes.
+example : ‖sinh ((1:ℂ)/8-3*Complex.I*(Real.pi:ℂ))‖ = ‖sinh ((1:ℂ)/8)‖ := by
+  have he : (1:ℂ)/8-3*Complex.I*(Real.pi:ℂ) =
+      (1:ℂ)/8+Complex.I*(Real.pi:ℂ)*(-3:ℤ) := by push_cast; ring
+  rw [he, norm_sinh_add_int_pi_I]
+
+end NLS.CriticalPhaseIntegrationChecks

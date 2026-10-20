@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: the trace tail under bounded spectral shifts
+## Current milestone: analytic critical-phase tails on the original source
+
+For each integer s >= 1 and every real original Hs source, the next
+Hamiltonian phase evaluated at the canonical critical sequence has a
+locally analytic H^(s+1) tail after subtracting its free value. One open
+complex neighborhood, positive cutoff, and norm bound work for the
+whole tail. No matching smooth representative or extra source derivative
+is assumed in the final statement.
+
+A weighted Cauchy estimate differentiates the bounded-displacement trace
+error without losing a frequency power. The next phase derivative is
+uniformly close to -i at high frequencies. The actual critical equation
+Delta' = 0 then controls the phase offset through a local hyperbolic-sine
+estimate that is uniform in the integer mode. Weighted norm domination
+converts this pointwise comparison into the sharp Sobolev tail.
+
+The intrinsic phase includes all Hamiltonians through order s+1 and is
+jointly analytic away from zero. Canonical critical points stay away
+from zero on a common tail. Dense finite Fourier approximation removes
+the smooth representative hypothesis, and weighted analytic realization
+supplies the final analytic source map. The finitely many central
+coordinates are set to zero; no analyticity across the phase pole is
+claimed.
+
+Ten modules establish this step. Two public examples check a nonfree
+phase derivative below the asymptotic cutoff and the hyperbolic-sine
+normalization at a negative mode. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The omitted standard-root product cancellation and the assembly of the
+literal spectral errors into the Birkhoff-minus-Fourier remainder still
+remain for full Fourier one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,882 build jobs, 6,847
+public examples, and a transitive axiom audit of 38,044 NLS declarations.
+The build retains 21 existing warnings; the ten new modules introduce none.
+Documentation checks cover 1,454 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the trace tail under bounded spectral shifts
 
 The actual discriminant minus the next Hamiltonian trace has a uniformly
 bounded H^(s+1) tail for every bounded displacement sequence. The

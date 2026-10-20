@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual discriminant minus the next Hamiltonian trace
-has a uniformly bounded H^(s+1) tail on original Hs balls for s >= 1
-under merely bounded spectral displacements. Matching smooth periodic
-representatives remain explicit. The estimate now allows fixed-radius
-spectral circles, preparing its derivative bound. The earlier theorem
-statements remain available as corollaries of the stronger estimates.
-The spectral derivative, critical-phase source extension, and omitted
-standard-root product cancellation remain for full Fourier one-smoothing.
+Latest step: the next Hamiltonian phase offset at the canonical critical
+sequence is locally analytic from the original Hs source into H^(s+1)
+on a common tail, for every integer s >= 1. The result uses the actual
+critical equation and requires no smooth representative or extra source
+derivative. The finite central coordinates are zeroed because the phase
+has a pole at zero. The omitted standard-root product cancellation and
+assembly of the literal Fourier errors remain for full one-smoothing.
 The critical-midpoint correction and boundary anti-discriminant Fourier
 remainder are already analytic in their required Sobolev targets.
 Higher-order complex angular analyticity and Lemma 27.2 with its printed
