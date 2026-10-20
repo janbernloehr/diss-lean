@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: analytic critical-phase tails on the original source
+## Current milestone: the complete analytic terminal-sine Fourier remainder
+
+The actual terminal-sine Fourier error is now analytic from the original
+Hs source into h^(s+1) near every real source, for integer s >= 1. This
+includes all signed indices, central coordinates, and collapsed gaps.
+No smooth representative or extra source derivative is assumed.
+
+A contour comparison after removing the two periodic endpoints controls
+the deleted periodic product even when those endpoints coincide. Local
+endpoint displacement and squared-discriminant estimates yield an
+inverse-index error throughout distant unit discs and at either actual
+boundary-root sequence. On a connected source neighborhood, the positive
+real-source normalization fixes the omitted square-root product's sign.
+Both that product and its inverse consequently have the correct signed
+free limit with a locally uniform inverse-index error.
+
+The inverse error is analytic in the order-one weighted supremum space.
+Finite-head completion includes its central coordinates. A signed
+quotient estimate combines this multiplier with the proved
+anti-discriminant Fourier remainder to give the literal terminal-sine
+error in h^(s+1), with a locally uniform bound.
+
+Twelve modules establish this step. Three public examples check the need
+for branch normalization, the free carrier at an odd negative index,
+and vanishing of the complete terminal-sine remainder at the free source.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+The literal midpoint Fourier error and its combination with this sine
+error in the original Birkhoff-minus-Fourier map remain to be proved.
+Full Fourier one-smoothing is not yet established.
+
+Validation: `./scripts/check.sh` passes with 7,894 build jobs, 6,850
+public examples, and a transitive axiom audit of 38,080 NLS declarations.
+The build retains 21 existing warnings; the twelve new modules introduce none.
+Documentation checks cover 1,471 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: analytic critical-phase tails on the original source
 
 For each integer s >= 1 and every real original Hs source, the next
 Hamiltonian phase evaluated at the canonical critical sequence has a

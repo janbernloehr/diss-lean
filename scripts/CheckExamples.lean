@@ -63044,3 +63044,22 @@ example : ‖sinh ((1:ℂ)/8-3*Complex.I*(Real.pi:ℂ))‖ = ‖sinh ((1:ℂ)/8)
   rw [he, norm_sinh_add_int_pi_I]
 
 end NLS.CriticalPhaseIntegrationChecks
+
+namespace NLS.ProductSmoothingChecks
+open Complex NLS.ZakharovShabat
+
+-- Squared error alone cannot select the correct branch: -1 has zero squared error.
+example : ‖(-1:ℂ)^2-1‖ = 0 ∧ ‖(-1:ℂ)-1‖ = 2 := by norm_num
+
+-- Odd negative indices have the same signed free carrier as odd positive indices.
+example : exp (Complex.I*((Real.pi:ℂ)*(-3:ℤ))) = -1 := by
+  rw [exp_freeCenter_eq_natAbs_sign]
+  norm_num
+
+-- The complete terminal-sine remainder vanishes at the free source, including its central block.
+example (s : ℕ) : sourceEtaSineFourierRemainder s 0 = 0 := by
+  apply WeightedCoeff.ofFunctionOrZero_eq_of_coordinates
+  intro n
+  simp [sourceEtaSineFourierError,sourceDirichletEtaSineNumerator]
+
+end NLS.ProductSmoothingChecks

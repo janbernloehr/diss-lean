@@ -1212,6 +1212,63 @@ and the local inversion normalization at mode -3. The omitted standard-root
 product cancellation and assembly with the boundary and midpoint errors
 remain before the full Birkhoff-minus-Fourier smoothing conclusion.
 
+## Omitted-product cancellation and the terminal sine Fourier error
+
+[`TwoRootQuotientDiscBound.lean`](../NLS/ComplexAnalysis/TwoRootQuotientDiscBound.lean)
+passes a contour comparison to the entire quotient after removing two
+nearby roots. The maximum modulus argument does not require those roots
+to be distinct. Its application in
+[`DeletedPeriodicDiscComparison.lean`](../NLS/ZakharovShabat/DeletedPeriodicDiscComparison.lean)
+controls the actual deleted periodic product by the squared-discriminant
+error, including when the selected gap collapses.
+
+[`SourcePeriodicWeightedDisplacement.lean`](../NLS/ZakharovShabat/SourcePeriodicWeightedDisplacement.lean)
+and
+[`SourceSobolevFreeSquaredTrace.lean`](../NLS/ZakharovShabat/SourceSobolevFreeSquaredTrace.lean)
+supply inverse-index endpoint displacement and an inverse-frequency
+squared-trace error on original Hs neighborhoods.
+[`SourceDeletedPeriodicDiscError.lean`](../NLS/ZakharovShabat/SourceDeletedPeriodicDiscError.lean)
+and
+[`SourceDeletedPeriodicBoundaryError.lean`](../NLS/ZakharovShabat/SourceDeletedPeriodicBoundaryError.lean)
+then prove an inverse-index deleted-product error throughout each distant
+unit disc and at either actual canonical boundary sequence.
+
+The generic branch estimate in
+[`UnitSquareRootComparison.lean`](../NLS/ComplexAnalysis/UnitSquareRootComparison.lean)
+propagates a positive real-part normalization across a preconnected set
+when the squared value stays within unit distance of one.
+[`SourceOmittedBoundaryAnalytic.lean`](../NLS/ZakharovShabat/SourceOmittedBoundaryAnalytic.lean)
+gives a common neighborhood on which all boundary samples avoid other
+gaps and their omitted products are analytic and nonzero.
+[`SourceOmittedBoundaryDecay.lean`](../NLS/ZakharovShabat/SourceOmittedBoundaryDecay.lean)
+combines these facts with the real-source sign. The product P_n and its
+inverse both differ from (-1)^|n| by O((1+|n|)^(-1)), uniformly on a
+complex neighborhood of each real original Hs source, for s >= 1.
+
+[`SourceOmittedBoundaryInverseAnalytic.lean`](../NLS/ZakharovShabat/SourceOmittedBoundaryInverseAnalytic.lean)
+completes the finite head and realizes the full inverse error as an
+analytic map into the order-one weighted supremum space. No central
+indices are deleted. The norm estimate in
+[`SobolevSignedQuotientRemainder.lean`](../NLS/SequenceSpaces/SobolevSignedQuotientRemainder.lean)
+shows that this inverse normalization preserves the one-derivative
+remainder of a signed Fourier leading term.
+
+The final theorem `exists_local_sourceEtaSineFourierRemainder_analytic` in
+[`SourceEtaSineFourierAnalytic.lean`](../NLS/ZakharovShabat/SourceEtaSineFourierAnalytic.lean)
+applies that quotient estimate to the original anti-discriminant and
+omitted root product. Its raw coordinates are exactly
+`sourceEtaSineFourierError`, with the original Fourier convention and
+canonical Dirichlet roots. It is locally analytic and bounded from Hs
+into h^(s+1) near every real source, for integer s >= 1, at all indices
+and through collapsed gaps. Smooth representatives are not assumed.
+
+Three public examples distinguish the wrong square-root branch, verify
+the signed free exponential at index -3, and check that the entire
+terminal-sine remainder vanishes at the free source. The literal
+`sourceEtaMidpointFourierError` still needs its stronger-target analytic
+realization before both errors can be inserted into the existing
+Birkhoff-minus-Fourier reduction.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

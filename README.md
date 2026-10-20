@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the next Hamiltonian phase offset at the canonical critical
-sequence is locally analytic from the original Hs source into H^(s+1)
-on a common tail, for every integer s >= 1. The result uses the actual
-critical equation and requires no smooth representative or extra source
-derivative. The finite central coordinates are zeroed because the phase
-has a pole at zero. The omitted standard-root product cancellation and
-assembly of the literal Fourier errors remain for full one-smoothing.
-The critical-midpoint correction and boundary anti-discriminant Fourier
-remainder are already analytic in their required Sobolev targets.
+Latest step: the actual terminal-sine Fourier error is locally analytic
+from the original Hs source into h^(s+1), for every integer s >= 1.
+It includes every signed index and collapsed gaps without assuming
+smooth representatives. The omitted-product inverse has the required
+analytic order-one multiplier bound with the correct signed free limit.
+The literal midpoint Fourier error and final assembly remain for full
+one-smoothing. The analytic critical-phase tail, critical-midpoint
+correction, and boundary anti-discriminant remainder are already proved.
 Higher-order complex angular analyticity and Lemma 27.2 with its printed
 constants are proved.
 
