@@ -63063,3 +63063,29 @@ example (s : ℕ) : sourceEtaSineFourierRemainder s 0 = 0 := by
   simp [sourceEtaSineFourierError,sourceDirichletEtaSineNumerator]
 
 end NLS.ProductSmoothingChecks
+
+namespace NLS.MidpointPhaseChecks
+open Complex NLS.ZakharovShabat
+
+-- Empty truncation has no nonlinear spectral difference, including complex frequencies.
+example (a b : ℝ → ℂ) (z w : ℂ) :
+    nlsHamiltonianPhase a b 0 z-nlsHamiltonianPhase a b 0 w+Complex.I*(z-w) = 0 := by
+  simp only [nlsHamiltonianPhase,Finset.sum_range_zero]
+  ring
+
+-- The reflected primitive is subtracted in the sinh correction for a nonzero constant source.
+example : nlsHamiltonianSinhIncrementError (fun _ => 2) (fun _ => 3) 0 Complex.I =
+    2*sinh 4-2*sinh 1-3*exp 1-3*exp (-1) := by
+  norm_num [nlsHamiltonianSinhIncrementError,nlsHamiltonianPhase,
+    nlsWKBDiagonalPhasePrimitive,smul_eq_mul]
+  ring_nf
+  norm_num [Complex.I_sq,Complex.inv_I,Complex.I_mul_I]
+  ring
+
+-- At empty truncation the remaining correction is independent of the boundary sign.
+example (θ : BoundaryCondition) (a b : ℝ → ℂ) (z : ℂ) :
+    nlsWKBNextSeparatedCorrectionError θ a b 0 z = nlsHamiltonianSinhIncrementError a b 0 z := by
+  simp [nlsWKBNextSeparatedCorrectionError,nlsWKBInitialLower,nlsWKBInitialUpper,
+    nlsWKBVector,nlsWKBSecondVector,nlsRiccatiApproximation]
+
+end NLS.MidpointPhaseChecks

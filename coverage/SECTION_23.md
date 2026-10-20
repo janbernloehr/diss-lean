@@ -1269,6 +1269,42 @@ terminal-sine remainder vanishes at the free source. The literal
 realization before both errors can be inserted into the existing
 Birkhoff-minus-Fourier reduction.
 
+## The next Hamiltonian phase at actual boundary roots
+
+[`SobolevNextPhaseDifference.lean`](../NLS/ZakharovShabat/SobolevNextPhaseDifference.lean)
+uses a fixed-radius Cauchy estimate and the complex mean-value inequality
+to bound the nonlinear next-phase difference by C times the spectral
+distance divided by 1+|n| on distant unit discs. It uses original Hs
+balls and Hamiltonian orders through s+1.
+
+[`SobolevHamiltonianSinhTaylor.lean`](../NLS/ZakharovShabat/SobolevHamiltonianSinhTaylor.lean)
+combines the two signed carrier Taylor estimates with the difference of
+the diagonal primitives. The error has order N+2 through N=s.
+[`NLSWKBNextSeparatedIdentity.lean`](../NLS/ZakharovShabat/NLSWKBNextSeparatedIdentity.lean)
+expresses the actual separated characteristic at the next phase with
+its exact leading integrals, corrected diagonal errors, off-diagonal
+errors, and a scalar correction. The small initial factors on the
+primitive terms remain explicit.
+
+[`SobolevWKBNextSeparatedCorrection.lean`](../NLS/ZakharovShabat/SobolevWKBNextSeparatedCorrection.lean)
+proves the correction's uniform inverse-power decay and sharp sequence
+tail for both boundary conditions.
+[`SobolevWKBNextSeparatedTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextSeparatedTail.lean)
+assembles the actual separated remainder in H^(s+1), under bounded
+displacements and at every larger cutoff.
+[`SobolevWKBBoundaryNextPhaseTail.lean`](../NLS/ZakharovShabat/SobolevWKBBoundaryNextPhaseTail.lean)
+inserts the actual boundary-root equation and divides by the nonzero
+phase factor. The result compares the hyperbolic sine of the next phase
+with the two normalized exact leading integrals.
+
+Smooth periodic representatives are still explicit. Replacing those
+integrals by their Fourier terms, comparing with the critical phase,
+and completing the original-source analytic realization remain before
+the literal midpoint Fourier error and full one-smoothing conclusion.
+Three public examples check empty truncation, the signed primitive
+correction on a nonzero constant source, and boundary-sign independence
+at order zero.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

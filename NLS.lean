@@ -4229,3 +4229,9 @@ import NLS.ZakharovShabat.SourceOmittedBoundaryDecay
 import NLS.ZakharovShabat.SourceOmittedBoundaryInverseAnalytic
 import NLS.SequenceSpaces.SobolevSignedQuotientRemainder
 import NLS.ZakharovShabat.SourceEtaSineFourierAnalytic
+import NLS.ZakharovShabat.SobolevNextPhaseDifference
+import NLS.ZakharovShabat.SobolevHamiltonianSinhTaylor
+import NLS.ZakharovShabat.NLSWKBNextSeparatedIdentity
+import NLS.ZakharovShabat.SobolevWKBNextSeparatedCorrection
+import NLS.ZakharovShabat.SobolevWKBNextSeparatedTail
+import NLS.ZakharovShabat.SobolevWKBBoundaryNextPhaseTail

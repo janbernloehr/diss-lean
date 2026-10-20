@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual terminal-sine Fourier error is locally analytic
-from the original Hs source into h^(s+1), for every integer s >= 1.
-It includes every signed index and collapsed gaps without assuming
-smooth representatives. The omitted-product inverse has the required
-analytic order-one multiplier bound with the correct signed free limit.
-The literal midpoint Fourier error and final assembly remain for full
-one-smoothing. The analytic critical-phase tail, critical-midpoint
-correction, and boundary anti-discriminant remainder are already proved.
-Higher-order complex angular analyticity and Lemma 27.2 with its printed
-constants are proved.
+Latest step: the next Hamiltonian phase at actual Dirichlet and Neumann
+roots has an H^(s+1) remainder after its normalized WKB leading integrals,
+uniformly on original Hs balls for integer s >= 1. A local phase-difference
+estimate provides the inverse-index factor needed for the midpoint
+comparison. Smooth representatives remain explicit in this step.
+The complete terminal-sine Fourier remainder is already analytic in
+h^(s+1) on the original source. The literal midpoint Fourier error and
+final assembly remain for full one-smoothing. Higher-order complex
+angular analyticity and Lemma 27.2 with its printed constants are proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

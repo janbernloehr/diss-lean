@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: the complete analytic terminal-sine Fourier remainder
+## Current milestone: the next Hamiltonian phase at actual boundary roots
+
+For integer s >= 1, the hyperbolic sine of the next Hamiltonian phase at
+actual Dirichlet or Neumann roots differs from the normalized exact WKB
+leading integrals by a uniformly bounded H^(s+1) tail. The bound uses
+original Hs source balls, bounded spectral displacements, and every
+larger cutoff. Smooth periodic representatives remain explicit.
+
+The signed carrier Taylor estimate includes the difference of the two
+diagonal phase primitives. The exact separated-characteristic identity
+retains the corrected diagonals, full off-diagonal remainders, and small
+initial-coordinate factors. Its scalar correction has order N+2 through
+N=s. These estimates assemble the sharp sequence remainder; at a root,
+the characteristic vanishes and the boundary phase factor is invertible.
+
+A companion estimate bounds the nonlinear phase difference between two
+points in a distant unit disc by their distance times (1+|n|)^(-1).
+This supplies the extra frequency decay for comparing boundary and
+critical phases without assuming an extra source derivative.
+
+Six modules establish this step. Three public examples check empty
+truncation at complex frequencies, the reflected primitive's sign for a
+nonzero constant potential, and boundary-sign independence of the
+zeroth correction. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The exact leading integrals still need their Fourier comparison, then
+the boundary-to-critical phase comparison, dense approximation, and
+finite-head analytic completion. The literal midpoint Fourier remainder
+and full Birkhoff-minus-Fourier one-smoothing remain incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,900 build jobs, 6,853
+public examples, and a transitive axiom audit of 38,118 NLS declarations.
+The build retains 21 existing warnings; the six new modules introduce none.
+Documentation checks cover 1,481 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the complete analytic terminal-sine Fourier remainder
 
 The actual terminal-sine Fourier error is now analytic from the original
 Hs source into h^(s+1) near every real source, for integer s >= 1. This
