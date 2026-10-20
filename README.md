@@ -6,10 +6,11 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 Latest step: the actual discriminant minus the next Hamiltonian trace
-has a uniformly bounded H^(s+1) tail on original Hs balls for s >= 1,
-with matching smooth periodic representatives and bounded inverse-index
-spectral displacements. This combines the corrected diagonal tails with
-a uniform phase Taylor estimate and both small-factor leading terms.
+has a uniformly bounded H^(s+1) tail on original Hs balls for s >= 1
+under merely bounded spectral displacements. Matching smooth periodic
+representatives remain explicit. The estimate now allows fixed-radius
+spectral circles, preparing its derivative bound. The earlier theorem
+statements remain available as corollaries of the stronger estimates.
 The spectral derivative, critical-phase source extension, and omitted
 standard-root product cancellation remain for full Fourier one-smoothing.
 The critical-midpoint correction and boundary anti-discriminant Fourier

@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBLeadingLowerFourierTail
 import NLS.ZakharovShabat.SobolevWKBNextOscillatoryComparison
 import NLS.ZakharovShabat.SobolevWKBNextFreeTail
@@ -16,8 +17,8 @@ namespace NLS.ZakharovShabat
 /-- The full first-column off-diagonal WKB remainder is an H^(N+1) tail,
 uniformly on original Hs balls for 1 <= N <= s and throughout the physical
 period. No extra derivative of the source is required. -/
-theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
-    (s N : ℕ) (hN : 1 ≤ N) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound_of_bounded_displacement
+    (s N : ℕ) (hN : 1 ≤ N) (hNs : N ≤ s) (R D : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
     ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
       ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
@@ -25,24 +26,24 @@ theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
       (∀ j, ab.1.val j = periodOneCoefficient a j) →
       (∀ j, ab.2.val j = periodOneCoefficient b j) →
       ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
-      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∀ t : Icc (0:ℝ) 1,
       ∃ f : ScalarSobolev (N+1),
         (∀ n, f.val n = if K ≤ n.natAbs then
           (nlsWKBFirstRemainder a b ha.continuous hb.continuous N ((Real.pi:ℂ)*n+δ n) t).2
           else 0) ∧ ‖f‖ ≤ C := by
   classical
   have hs := hN.trans hNs
-  obtain ⟨K₀,hK₀,C₀,hC₀,hlead⟩ := exists_uniform_nlsWKB_leading_lower_fourier_tail_bound s N hs hNs R D M hR hD
-  obtain ⟨K₁,_,C₁,hC₁,hnext⟩ := exists_uniform_nlsWKB_next_free_tail_bound s N hs hNs R D M hR hD
-  obtain ⟨K₂,_,hcut⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨K₀,hK₀,C₀,hC₀,hlead⟩ := exists_uniform_nlsWKB_leading_lower_fourier_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  obtain ⟨K₁,_,C₁,hC₁,hnext⟩ := exists_uniform_nlsWKB_next_free_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  obtain ⟨K₂,_,hcut⟩ := exists_wkb_bounded_frequency_cutoff D hD
   obtain ⟨C₂,hC₂,herror⟩ := exists_uniform_nlsWKB_next_oscillatory_error_bound s N hN hNs R hR D
   let K := max K₀ (max K₁ K₂)
   refine ⟨K,hK₀.trans_le (le_max_left _ _),C₀+C₁+2*C₂,by positivity,?_⟩
-  intro ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
+  intro ab hab a b ha hb hpa hpb hca hcb δ hδD t
   have hK₁ : K₁ ≤ K := (le_max_left _ _).trans (le_max_right _ _)
   have hK₂ : K₂ ≤ K := (le_max_right _ _).trans (le_max_right _ _)
-  obtain ⟨q₀,hq₀,hq₀n⟩ := hlead ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
-  obtain ⟨q₁,hq₁,hq₁n⟩ := hnext K hK₁ ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
+  obtain ⟨q₀,hq₀,hq₀n⟩ := hlead ab hab a b ha hb hpa hpb hca hcb δ hδD t
+  obtain ⟨q₁,hq₁,hq₁n⟩ := hnext K hK₁ ab hab a b ha hb hpa hpb hca hcb δ hδD t
   let Φ := classicalPotentialOfFunctions a b ha.continuous hb.continuous
   let ν (n : ℤ) := (Real.pi:ℂ)*n+δ n
   let Y (z : ℂ) := classicalForcedKernelSolution Φ
@@ -55,7 +56,7 @@ theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
   have hδ (n : ℤ) : ‖δ n‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ n).trans hδD
   have hF (n : ℤ) : (1+|(n:ℝ)|)^((N+1)+1)*‖F n‖ ≤ C₂ := by
     by_cases hn : K ≤ n.natAbs
-    · have hgeom := (hcut δ hδ hδM n (hK₂.trans hn)).2
+    · have hgeom := (hcut δ hδ n (hK₂.trans hn)).2
       change 1+|(n:ℝ)| ≤ ‖ν n‖ at hgeom
       have hz : 1 ≤ ‖ν n‖ := by linarith [abs_nonneg (n:ℝ)]
       have hzD : |(ν n).im| ≤ D := by
@@ -68,7 +69,7 @@ theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
         congr 1
         dsimp only [E,P,Y,Φ,nlsWKBFirstRemainder]
         simp only [Prod.snd_sub]
-        ring
+        ring_nf
       have hw : (1+|(n:ℝ)|)*‖(2*I*ν n)⁻¹‖ ≤ 1 := by
         simp only [norm_inv,norm_mul,norm_ofNat,norm_I,mul_one]
         rw [← div_eq_mul_inv]
@@ -112,5 +113,27 @@ theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
     · simp [F,hn]
   · exact (norm_add_le _ _).trans ((add_le_add (norm_add_le _ _) le_rfl).trans
       (add_le_add (add_le_add hqn hq₁n) hrn))
+
+/-- The full first-column off-diagonal WKB remainder is an H^(N+1) tail,
+uniformly on original Hs balls for 1 <= N <= s and throughout the physical
+period. No extra derivative of the source is required. -/
+theorem exists_uniform_nlsWKB_first_offDiagonal_tail_bound
+    (s N : ℕ) (hN : 1 ≤ N) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∃ f : ScalarSobolev (N+1),
+        (∀ n, f.val n = if K ≤ n.natAbs then
+          (nlsWKBFirstRemainder a b ha.continuous hb.continuous N ((Real.pi:ℂ)*n+δ n) t).2
+          else 0) ∧ ‖f‖ ≤ C := by
+  obtain ⟨K,hK,C,hC,h⟩ := exists_uniform_nlsWKB_first_offDiagonal_tail_bound_of_bounded_displacement s N hN hNs R D hR hD
+  refine ⟨K,hK,C,hC,?_⟩
+  intro ab hab a b ha hb hpa hpb hca hcb δ hδD _hδM t
+  exact h ab hab a b ha hb hpa hpb hca hcb δ hδD t
 
 end NLS.ZakharovShabat

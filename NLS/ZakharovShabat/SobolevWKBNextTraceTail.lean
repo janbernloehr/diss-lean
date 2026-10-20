@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBTraceLeadingTails
 import NLS.ZakharovShabat.SobolevWKBBothCorrectedDiagonalTails
 import NLS.ZakharovShabat.SobolevWKBBothOffDiagonalTails
@@ -16,9 +17,9 @@ namespace NLS.ZakharovShabat
 
 /-- The actual discriminant differs from the next Hamiltonian trace by
 an H^(s+1) tail uniformly on original Hs balls, at every larger cutoff.
-The sampled displacement retains its inverse-index bound. -/
-theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
-    (s : ℕ) (hs : 1 ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) (hM : 0 ≤ M) :
+Only a uniform displacement bound is required; fixed-radius spectral circles are allowed. -/
+theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound_of_bounded_displacement
+    (s : ℕ) (hs : 1 ≤ s) (R D : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
     ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
       ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
@@ -26,7 +27,6 @@ theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
       (∀ j, ab.1.val j = periodOneCoefficient a j) →
       (∀ j, ab.2.val j = periodOneCoefficient b j) →
       ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
-      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) →
       ∃ f : ScalarSobolev (s+1),
         (∀ n, f.val n = if K' ≤ n.natAbs then
           let z := (Real.pi:ℂ)*n+δ n
@@ -34,23 +34,23 @@ theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
             2*cos (I*nlsHamiltonianPhase a b (s+1) z)
           else 0) ∧ ‖f‖ ≤ C := by
   classical
-  obtain ⟨K₀,hK₀,C₀,hC₀,hlead⟩ := exists_uniform_nlsWKB_trace_leading_fourier_tail_bound s R D M hR hD hM
-  obtain ⟨K₁,_,C₁,hC₁,hdiag⟩ := exists_uniform_nlsWKB_both_corrected_diagonal_tail_bound s s hs le_rfl R D M hR hD
-  obtain ⟨K₂,_,C₂,hC₂,hoff⟩ := exists_uniform_nlsWKB_both_offDiagonal_tail_bound s s hs le_rfl R D M hR hD
-  obtain ⟨K₃,_,C₃,hC₃,hcorr⟩ := exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound s s hs le_rfl R D M hR hD
-  obtain ⟨K₄,_,hgeom⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨K₀,hK₀,C₀,hC₀,hlead⟩ := exists_uniform_nlsWKB_trace_leading_fourier_tail_bound_of_bounded_displacement s R D hR hD
+  obtain ⟨K₁,_,C₁,hC₁,hdiag⟩ := exists_uniform_nlsWKB_both_corrected_diagonal_tail_bound_of_bounded_displacement s s hs le_rfl R D hR hD
+  obtain ⟨K₂,_,C₂,hC₂,hoff⟩ := exists_uniform_nlsWKB_both_offDiagonal_tail_bound_of_bounded_displacement s s hs le_rfl R D hR hD
+  obtain ⟨K₃,_,C₃,hC₃,hcorr⟩ := exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound_of_bounded_displacement s s hs le_rfl R D hR hD
+  obtain ⟨K₄,_,hgeom⟩ := exists_wkb_bounded_frequency_cutoff D hD
   obtain ⟨T,_,hbasis⟩ := exists_uniform_nlsWKB_initial_basis_bounds s s le_rfl R hR
   obtain ⟨L,hL⟩ := exists_nat_ge T
   let K := max K₀ (max K₁ (max K₂ (max K₃ (max K₄ L))))
   refine ⟨K,hK₀.trans_le (le_max_left _ _),2*(C₀+C₀+C₂+C₂+C₁+C₁+C₃),by positivity,?_⟩
-  intro K' hKK' ab hab a b ha hb hpa hpb hca hcb δ hδD hδM
+  intro K' hKK' ab hab a b ha hb hpa hpb hca hcb δ hδD
   have hKs : K₀ ≤ K' ∧ K₁ ≤ K' ∧ K₂ ≤ K' ∧ K₃ ≤ K' ∧ K₄ ≤ K' ∧ L ≤ K' := by
     dsimp only [K] at hKK'
     omega
-  obtain ⟨l₁,l₂,hl₁,hl₂,hl₁n,hl₂n⟩ := hlead K' hKs.1 ab hab a b ha hb hpa hpb hca hcb δ hδD hδM
-  obtain ⟨d₁,d₂,hd₁,hd₂,hd₁n,hd₂n⟩ := hdiag K' hKs.2.1 ab hab a b ha hb hpa hpb hca hcb δ hδD hδM 1
-  obtain ⟨o₁,o₂,ho₁,ho₂,ho₁n,ho₂n⟩ := hoff ab hab a b ha hb hpa hpb hca hcb δ hδD hδM 1
-  obtain ⟨c,hc,hcn⟩ := hcorr K' hKs.2.2.2.1 ab hab a b ha hb hpa hpb hca hcb δ hδD hδM
+  obtain ⟨l₁,l₂,hl₁,hl₂,hl₁n,hl₂n⟩ := hlead K' hKs.1 ab hab a b ha hb hpa hpb hca hcb δ hδD
+  obtain ⟨d₁,d₂,hd₁,hd₂,hd₁n,hd₂n⟩ := hdiag K' hKs.2.1 ab hab a b ha hb hpa hpb hca hcb δ hδD 1
+  obtain ⟨o₁,o₂,ho₁,ho₂,ho₁n,ho₂n⟩ := hoff ab hab a b ha hb hpa hpb hca hcb δ hδD 1
+  obtain ⟨c,hc,hcn⟩ := hcorr K' hKs.2.2.2.1 ab hab a b ha hb hpa hpb hca hcb δ hδD
   let ν (n : ℤ) := (Real.pi:ℂ)*n+δ n
   let p (n : ℤ) := nlsWKBInitialLower a b s (ν n)
   let q (n : ℤ) := nlsWKBInitialUpper a b s (ν n)
@@ -58,7 +58,7 @@ theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
   have hbase (n : ℤ) (hn : K' ≤ n.natAbs) :
       ‖p n‖ ≤ 1 ∧ ‖q n‖ ≤ 1 ∧ d n ≠ 0 ∧ ‖(d n)⁻¹‖ ≤ 2 := by
     have hδ (j : ℤ) : ‖δ j‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ j).trans hδD
-    have hz := (hgeom δ hδ hδM n (hKs.2.2.2.2.1.trans hn)).2
+    have hz := (hgeom δ hδ n (hKs.2.2.2.2.1.trans hn)).2
     have hnL : (L:ℝ) ≤ (n.natAbs:ℝ) := by exact_mod_cast hKs.2.2.2.2.2.trans hn
     have hT : T ≤ ‖ν n‖ := by
       change 1+|(n:ℝ)| ≤ ‖ν n‖ at hz
@@ -123,5 +123,30 @@ theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
         (congrArg (fun x : ℂ => (d n)⁻¹*x) he).symm
       _ = _ := by rw [← mul_assoc,inv_mul_cancel₀ (hbase n hn).2.2.1,one_mul]
   · simp [m,hn]
+
+/-- The actual discriminant differs from the next Hamiltonian trace by
+an H^(s+1) tail uniformly on original Hs balls, at every larger cutoff.
+The sampled displacement retains its inverse-index bound. -/
+theorem exists_uniform_nlsWKB_next_trace_fourier_tail_bound
+    (s : ℕ) (hs : 1 ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) (hM : 0 ≤ M) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) →
+      ∃ f : ScalarSobolev (s+1),
+        (∀ n, f.val n = if K' ≤ n.natAbs then
+          let z := (Real.pi:ℂ)*n+δ n
+          classicalDiscriminant (classicalPotentialOfFunctions a b ha.continuous hb.continuous) z-
+            2*cos (I*nlsHamiltonianPhase a b (s+1) z)
+          else 0) ∧ ‖f‖ ≤ C := by
+  obtain ⟨K,hK,C,hC,h⟩ := exists_uniform_nlsWKB_next_trace_fourier_tail_bound_of_bounded_displacement s hs R D hR hD
+  have _hM := hM
+  refine ⟨K,hK,C,hC,?_⟩
+  intro K' hKK' ab hab a b ha hb hpa hpb hca hcb δ hδD _hδM
+  exact h K' hKK' ab hab a b ha hb hpa hpb hca hcb δ hδD
 
 end NLS.ZakharovShabat

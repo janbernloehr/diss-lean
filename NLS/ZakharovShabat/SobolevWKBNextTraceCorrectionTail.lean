@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBNextTraceCorrection
 import NLS.ZakharovShabat.WKBLeadingFrequencyCutoff
 import NLS.SequenceSpaces.SobolevInversePowerBound
@@ -14,8 +15,8 @@ namespace NLS.ZakharovShabat
 
 /-- The scalar correction to the next Hamiltonian trace has an H^(N+1)
 tail, uniformly on original Hs balls and at every larger cutoff. -/
-theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound
-    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound_of_bounded_displacement
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
     ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
       ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
@@ -23,21 +24,20 @@ theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound
       (∀ j, ab.1.val j = periodOneCoefficient a j) →
       (∀ j, ab.2.val j = periodOneCoefficient b j) →
       ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
-      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) →
       ∃ f : ScalarSobolev (N+1),
         (∀ n, f.val n = if K' ≤ n.natAbs then
           nlsWKBNextTraceCorrectionError a b N ((Real.pi:ℂ)*n+δ n) else 0) ∧ ‖f‖ ≤ C := by
   classical
-  obtain ⟨K,hK,hcut⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨K,hK,hcut⟩ := exists_wkb_bounded_frequency_cutoff D hD
   obtain ⟨C,hC,herr⟩ := exists_uniform_nlsWKB_next_trace_correction_error_bound s N hs hNs R hR D
   refine ⟨K,hK,2*C,by positivity,?_⟩
-  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD hδM
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD
   let ν (n : ℤ) := (Real.pi:ℂ)*n+δ n
   let F (n : ℤ) := if K' ≤ n.natAbs then nlsWKBNextTraceCorrectionError a b N (ν n) else 0
   have hδ (n : ℤ) : ‖δ n‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ n).trans hδD
   have hF (n : ℤ) : (1+|(n:ℝ)|)^((N+1)+1)*‖F n‖ ≤ C := by
     by_cases hn : K' ≤ n.natAbs
-    · have hgeom := (hcut δ hδ hδM n (hK'.trans hn)).2
+    · have hgeom := (hcut δ hδ n (hK'.trans hn)).2
       change 1+|(n:ℝ)| ≤ ‖ν n‖ at hgeom
       have hz : 1 ≤ ‖ν n‖ := by linarith [abs_nonneg (n:ℝ)]
       have hzD : |(ν n).im| ≤ D := by
@@ -61,5 +61,25 @@ theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound
         _ = C := mul_one C
     · simpa only [F,if_neg hn,norm_zero,mul_zero] using hC
   exact WeightedCoeff.exists_sobolev_coeff_of_inverse_power_bound (N+1) F C hC hF
+
+/-- The scalar correction to the next Hamiltonian trace has an H^(N+1)
+tail, uniformly on original Hs balls and at every larger cutoff. -/
+theorem exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) →
+      ∃ f : ScalarSobolev (N+1),
+        (∀ n, f.val n = if K' ≤ n.natAbs then
+          nlsWKBNextTraceCorrectionError a b N ((Real.pi:ℂ)*n+δ n) else 0) ∧ ‖f‖ ≤ C := by
+  obtain ⟨K,hK,C,hC,h⟩ := exists_uniform_nlsWKB_next_trace_correction_fourier_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  refine ⟨K,hK,C,hC,?_⟩
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD _hδM
+  exact h K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD
 
 end NLS.ZakharovShabat

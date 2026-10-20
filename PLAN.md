@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: the actual next-phase trace tail
+## Current milestone: the trace tail under bounded spectral shifts
+
+The actual discriminant minus the next Hamiltonian trace has a uniformly
+bounded H^(s+1) tail for every bounded displacement sequence. The
+inverse-index displacement assumption has been removed. For s >= 1,
+one cutoff and norm bound work on the original Hs source ball, for all
+larger cutoffs and all displacement sequences with the prescribed
+supremum norm. Matching smooth periodic representatives remain explicit.
+
+A bounded-frequency cutoff supplies the linear frequency lower bound.
+The mass correction, next free term, both full off-diagonal remainders,
+both corrected diagonal remainders, and scalar trace correction all
+retain their sharp tails. Direct L2 oscillatory sampling controls the
+leading trace terms; their small initial coordinates supply the extra
+inverse power without a shrinking displacement assumption.
+
+The stronger statements live in the existing twelve tail modules; their
+previous public statements are preserved as corollaries. One new module
+contains the frequency cutoff. Two public examples show that a constant
+imaginary shift has no inverse-index budget and that one cutoff covers
+every complex unit-disk shift on both signed tails.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+The estimate now applies on fixed-radius spectral circles, which is the
+input needed for a Cauchy bound on its derivative. The spectral derivative,
+critical-phase source extension, and omitted standard-root product
+cancellation remain to be integrated or proved for full Fourier
+one-smoothing.
+
+Validation: `./scripts/check.sh` passes with 7,872 build jobs, 6,845
+public examples, and a transitive axiom audit of 38,006 NLS declarations.
+The build retains 21 existing warnings; the new and refactored modules introduce none.
+Documentation checks cover 1,439 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the actual next-phase trace tail
 
 The actual discriminant minus the next Hamiltonian trace has a uniformly
 bounded H^(s+1) tail on original Hs balls for s >= 1. The comparison is

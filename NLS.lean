@@ -4206,3 +4206,4 @@ import NLS.ZakharovShabat.NLSWKBNextTraceIdentity
 import NLS.ZakharovShabat.SobolevWKBNextTraceCorrection
 import NLS.ZakharovShabat.SobolevWKBNextTraceCorrectionTail
 import NLS.ZakharovShabat.SobolevWKBNextTraceTail
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff

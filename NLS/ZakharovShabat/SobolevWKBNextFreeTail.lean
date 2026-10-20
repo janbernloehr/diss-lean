@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBNextScalarComparison
 import NLS.Fourier.PartialIntervalOscillatorySampling
 import NLS.ZakharovShabat.WKBLeadingFrequencyCutoff
@@ -16,8 +17,8 @@ namespace NLS.ZakharovShabat
 /-- The explicit next free term gives an H^(N+1) tail on original Hs
 balls through N=s, uniformly over the physical period and every larger
 cutoff than one common spectral threshold. -/
-theorem exists_uniform_nlsWKB_next_free_tail_bound
-    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+theorem exists_uniform_nlsWKB_next_free_tail_bound_of_bounded_displacement
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
     ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
       ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
@@ -25,15 +26,15 @@ theorem exists_uniform_nlsWKB_next_free_tail_bound
       (∀ j, ab.1.val j = periodOneCoefficient a j) →
       (∀ j, ab.2.val j = periodOneCoefficient b j) →
       ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
-      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∀ t : Icc (0:ℝ) 1,
       ∃ q : ScalarSobolev (N+1),
         (∀ n, q.val n = if K' ≤ n.natAbs then
           nlsWKBNextFreeTerm a b N ((Real.pi:ℂ)*n+δ n) t else 0) ∧ ‖q‖ ≤ C := by
   classical
-  obtain ⟨K,hK,hcut⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨K,hK,hcut⟩ := exists_wkb_bounded_frequency_cutoff D hD
   obtain ⟨L,hL,hL2⟩ := exists_uniform_nlsWKBNextForcingDensity_L2_bound s N hs hNs R hR
   refine ⟨K,hK,Real.exp (3*D)*L,by positivity,?_⟩
-  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD t
   let ρ := nlsWKBNextForcingDensity a b N
   have hρ : Continuous ρ := continuous_nlsWKBNextForcingDensity a b ha hb N
   have hρL2 := memLp_two_interval hρ 0 1 (by norm_num : (0:ℝ) ≤ 1)
@@ -53,7 +54,7 @@ theorem exists_uniform_nlsWKB_next_free_tail_bound
   have hδ (n : ℤ) : ‖δ n‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ n).trans hδD
   have hm (n : ℤ) : v n*‖m n‖ ≤ 1*Weight.one n := by
     by_cases hn : K' ≤ n.natAbs
-    · have hh := (hcut δ hδ hδM n (hK'.trans hn)).2
+    · have hh := (hcut δ hδ n (hK'.trans hn)).2
       change 1+|(n:ℝ)| ≤ ‖ν n‖ at hh
       have hw : (1+|(n:ℝ)|)*‖(2*I*ν n)⁻¹‖ ≤ 1 := by
         simp only [norm_inv,norm_mul,norm_ofNat,norm_I,mul_one]
@@ -82,5 +83,26 @@ theorem exists_uniform_nlsWKB_next_free_tail_bound
       ‖f‖ ≤ 1*‖q₀‖ := WeightedCoeff.norm_weightedMultiplier_le Weight.one v m 1 zero_le_one hm q₀
       _ = ‖q‖ := by simp [q₀]
       _ ≤ _ := hqbound
+
+/-- The explicit next free term gives an H^(N+1) tail on original Hs
+balls through N=s, uniformly over the physical period and every larger
+cutoff than one common spectral threshold. -/
+theorem exists_uniform_nlsWKB_next_free_tail_bound
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ContDiff ℝ ∞ a → ContDiff ℝ ∞ b →
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∃ q : ScalarSobolev (N+1),
+        (∀ n, q.val n = if K' ≤ n.natAbs then
+          nlsWKBNextFreeTerm a b N ((Real.pi:ℂ)*n+δ n) t else 0) ∧ ‖q‖ ≤ C := by
+  obtain ⟨K,hK,C,hC,h⟩ := exists_uniform_nlsWKB_next_free_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  refine ⟨K,hK,C,hC,?_⟩
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD _hδM t
+  exact h K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD t
 
 end NLS.ZakharovShabat

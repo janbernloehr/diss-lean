@@ -62998,3 +62998,22 @@ example : ‖exp (Complex.I/8)-1-Complex.I/8‖ ≤ Real.exp 1/16 := by
   ring_nf
 
 end NLS.PhaseTaylorChecks
+
+namespace NLS.BoundedTraceChecks
+open Complex NLS.ZakharovShabat
+
+-- The constant imaginary shift is bounded but admits no inverse-index budget.
+example : ¬ ∃ M : ℝ, ∀ n : ℤ, (1+|(n:ℝ)|)*‖Complex.I‖ ≤ M := by
+  rintro ⟨M,hM⟩
+  obtain ⟨n,hn⟩ := exists_nat_gt M
+  have h := hM (n:ℤ)
+  simp only [Complex.norm_I,mul_one,Int.cast_natCast,abs_of_nonneg (Nat.cast_nonneg n : (0:ℝ) ≤ (n:ℝ))] at h
+  linarith
+
+-- A common cutoff works for every complex unit-disk shift on both signed tails.
+example : ∃ K : ℕ, 0 < K ∧ ∀ z : ℂ, ‖z‖ ≤ 1 → ∀ n : ℤ, K ≤ n.natAbs →
+    1+|(n:ℝ)| ≤ ‖(Real.pi:ℂ)*n+z‖ := by
+  obtain ⟨K,hK,h⟩ := exists_wkb_bounded_frequency_cutoff 1 zero_le_one
+  exact ⟨K,hK,fun z hz n hn => (h (fun _ => z) (fun _ => hz) n hn).2⟩
+
+end NLS.BoundedTraceChecks

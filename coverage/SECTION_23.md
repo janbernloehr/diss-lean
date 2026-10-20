@@ -1131,6 +1131,38 @@ merely bounded displacements. Extension to all original Hs sources and
 the omitted standard-root product cancellation also remain; this trace
 estimate alone does not establish full Fourier one-smoothing.
 
+## Bounded displacements and fixed-radius spectral circles
+
+The stronger theorem
+`exists_uniform_nlsWKB_next_trace_fourier_tail_bound_of_bounded_displacement`
+in [`SobolevWKBNextTraceTail.lean`](../NLS/ZakharovShabat/SobolevWKBNextTraceTail.lean)
+requires only a uniform supremum bound on the displacement sequence.
+It proves the same actual H^(s+1) trace tail on original Hs balls for
+s >= 1, with a common cutoff valid at every larger cutoff. Matching
+smooth periodic representatives remain explicit. No root equation is
+assumed.
+
+[`WKBBoundedFrequencyCutoff.lean`](../NLS/ZakharovShabat/WKBBoundedFrequencyCutoff.lean)
+gives a linear lower bound for the displaced frequencies on both signed
+tails. The mass correction, next free term, both full off-diagonal tails,
+both corrected diagonal tails, and scalar correction now have stronger
+bounded-displacement statements in their existing modules. The older
+inverse-index statements retain their exact signatures as corollaries.
+
+[`SobolevWKBTraceLeadingTails.lean`](../NLS/ZakharovShabat/SobolevWKBTraceLeadingTails.lean)
+uses L2 sampling of the top Riccati density directly. Multiplication by
+the small initial coordinate supplies the additional inverse power,
+so these leading terms also require only bounded displacements.
+
+The two new examples distinguish the hypotheses: the constant shift i
+has no finite inverse-index budget, while the new geometry supplies
+one cutoff for every shift in the complex unit disk. A fixed-radius
+Cauchy circle preserves boundedness of the displacement and can now be
+used to prove the derivative tail. The actual spectral derivative and
+critical-phase source extension are subsequent steps. The omitted
+standard-root product cancellation still remains for full Fourier
+one-smoothing.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.WKBBoundedFrequencyCutoff
 import NLS.ZakharovShabat.SobolevWKBDiagonalOscillatoryTail
 import NLS.SequenceSpaces.SobolevInversePowerBound
 
@@ -14,8 +15,8 @@ namespace NLS.ZakharovShabat
 /-- The actual upper response to the leading WKB forcing differs from
 its explicit diagonal phase primitive by an H^(N+1) tail. The estimate is uniform on
 original Hs balls through N=s and throughout the physical period. -/
-theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
-    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound_of_bounded_displacement
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
     ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
       ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
@@ -23,7 +24,7 @@ theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
       (∀ j, ab.1.val j = periodOneCoefficient a j) →
       (∀ j, ab.2.val j = periodOneCoefficient b j) →
       ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
-      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∀ t : Icc (0:ℝ) 1,
       ∃ f : ScalarSobolev (N+1),
         (∀ n, f.val n = if K' ≤ n.natAbs then
           let z := (Real.pi:ℂ)*n+δ n
@@ -32,13 +33,13 @@ theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
               (continuous_nlsWKBLeadingScalar a b ha hb N z)) z t).1-
             nlsWKBDiagonalPhasePrimitive a b N z t else 0) ∧ ‖f‖ ≤ C := by
   classical
-  obtain ⟨K₀,hK₀,C₀,hC₀,hosc⟩ := exists_uniform_nlsWKB_diagonal_oscillatory_tail_bound s N hs hNs R D M hR hD
-  obtain ⟨K₁,_,hcut⟩ := exists_wkb_leading_frequency_cutoff D M hD
+  obtain ⟨K₀,hK₀,C₀,hC₀,hosc⟩ := exists_uniform_nlsWKB_diagonal_oscillatory_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  obtain ⟨K₁,_,hcut⟩ := exists_wkb_bounded_frequency_cutoff D hD
   obtain ⟨C₁,hC₁,herr⟩ := exists_uniform_nlsWKB_leading_diagonal_approximation_error_bound s N hs hNs R hR D
   let K := max K₀ K₁
   refine ⟨K,hK₀.trans_le (le_max_left _ _),C₀+2*C₁,by positivity,?_⟩
-  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
-  obtain ⟨q,hq,hqn⟩ := hosc K' ((le_max_left _ _).trans hK') ab hab a b ha hb hpa hpb hca hcb δ hδD hδM t
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD t
+  obtain ⟨q,hq,hqn⟩ := hosc K' ((le_max_left _ _).trans hK') ab hab a b ha hb hpa hpb hca hcb δ hδD t
   let Φ := classicalPotentialOfFunctions a b ha.continuous hb.continuous
   let ν (n : ℤ) := (Real.pi:ℂ)*n+δ n
   let Y (z : ℂ) := (classicalForcedKernelSolution Φ
@@ -49,7 +50,7 @@ theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
   have hδ (n : ℤ) : ‖δ n‖ ≤ D := (lp.norm_apply_le_norm (by simp) δ n).trans hδD
   have hF (n : ℤ) : (1+|(n:ℝ)|)^((N+1)+1)*‖F n‖ ≤ C₁ := by
     by_cases hn : K' ≤ n.natAbs
-    · have hgeom := (hcut δ hδ hδM n ((le_max_right _ _).trans (hK'.trans hn))).2
+    · have hgeom := (hcut δ hδ n ((le_max_right _ _).trans (hK'.trans hn))).2
       change 1+|(n:ℝ)| ≤ ‖ν n‖ at hgeom
       have hz : 1 ≤ ‖ν n‖ := by linarith [abs_nonneg (n:ℝ)]
       have hzD : |(ν n).im| ≤ D := by
@@ -81,5 +82,30 @@ theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
   · simp only [if_pos hn,F,ν,Y,Q,Φ]
     ring
   · simp [F,hn]
+
+/-- The actual upper response to the leading WKB forcing differs from
+its explicit diagonal phase primitive by an H^(N+1) tail. The estimate is uniform on
+original Hs balls through N=s and throughout the physical period. -/
+theorem exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound
+    (s N : ℕ) (hs : 1 ≤ s) (hNs : N ≤ s) (R D M : ℝ) (hR : 0 ≤ R) (hD : 0 ≤ D) :
+    ∃ K : ℕ, 0 < K ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ K' : ℕ, K ≤ K' → ∀ ab : SobolevSource s, ‖ab‖ ≤ R → ∀ a b : ℝ → ℂ,
+      ∀ ha : ContDiff ℝ ∞ a, ∀ hb : ContDiff ℝ ∞ b,
+      Function.Periodic a 1 → Function.Periodic b 1 →
+      (∀ j, ab.1.val j = periodOneCoefficient a j) →
+      (∀ j, ab.2.val j = periodOneCoefficient b j) →
+      ∀ δ : NLS.Coeff ⊤, ‖δ‖ ≤ D →
+      (∀ n : ℤ, (1+|(n:ℝ)|)*‖δ n‖ ≤ M) → ∀ t : Icc (0:ℝ) 1,
+      ∃ f : ScalarSobolev (N+1),
+        (∀ n, f.val n = if K' ≤ n.natAbs then
+          let z := (Real.pi:ℂ)*n+δ n
+          (classicalForcedKernelSolution (classicalPotentialOfFunctions a b ha.continuous hb.continuous)
+            (classicalScalarForcing (nlsWKBLeadingScalar a b N z)
+              (continuous_nlsWKBLeadingScalar a b ha hb N z)) z t).1-
+            nlsWKBDiagonalPhasePrimitive a b N z t else 0) ∧ ‖f‖ ≤ C := by
+  obtain ⟨K,hK,C,hC,h⟩ := exists_uniform_nlsWKB_leading_diagonal_fourier_tail_bound_of_bounded_displacement s N hs hNs R D hR hD
+  refine ⟨K,hK,C,hC,?_⟩
+  intro K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD _hδM t
+  exact h K' hK' ab hab a b ha hb hpa hpb hca hcb δ hδD t
 
 end NLS.ZakharovShabat
