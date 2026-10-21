@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual complex collapsed-gap witnesses realize the corrected
-Section 15 sign classification. Along an explicit sequence of open-gap
-sources exactly one original signed phase limit vanishes. Formalization
-remains in progress.
+Latest step: the corrected auxiliary has a locally uniform full lp
+normalization error and uniformly bounded physical gradients on the
+original complex domain. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

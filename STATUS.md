@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: actual complex collapsed-gap witnesses and signed limits
+## Current milestone: uniform auxiliary asymptotics and physical gradient bounds
+
+The corrected auxiliary error 2*phi_n+cos(pi*n) is now a Banach analytic
+lp sequence on the unchanged original complex angular domain, for every
+finite p>1. One neighborhood bounds the full sequence norm and all
+actual auxiliary derivatives and physical conjugate Fourier gradients.
+
+The proof propagates the normalized root branch from zero, controls
+reciprocal tails and the finite head, and applies Cauchy's estimate in
+the original source norm. Five examples cover p=3/2, p=2 and p=4.
+The [Section 16 audit](coverage/SECTION_16.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,012 build jobs, 6,958
+public examples, and a transitive axiom audit of 39,096 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,849 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual complex collapsed-gap witnesses and signed limits
 
 Every original-source neighborhood of zero contains an actual nonzero
 triangular constant potential with a collapsed central periodic gap and

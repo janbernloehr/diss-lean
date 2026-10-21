@@ -14,7 +14,8 @@ original angular domain W, and compatible Birkhoff domain V⊆W are retained.
 | Lemma 16.1 | `H.lemma16_1` | Both original gap-sequence gradient errors have Holder-conjugate norms in outer ℓᵖ at every real finite-gap source |
 | Corrected auxiliary quotient | `H.auxiliary_eq_real_quotient`, `sourceGapWeightedEtaAuxiliary_eq_quotient` | Positive literal product divided by actual psi; all real sources unconditionally, arbitrary complex points whenever the psi numerator is nonzero |
 | Analytic auxiliary extension | `H.auxiliary_analytic` | Minus the inverse of twice the omitted standard-root product, analytic on all original W |
-| Signed auxiliary asymptotic | `memlp_sourceGapWeightedEtaAuxiliary_sub_free` | The sequence 2φₙ+cos(nπ) belongs to ℓᵖ at every real source |
+| Signed auxiliary asymptotic | `H.previous.auxiliary_remainder_analytic`, `H.previous.auxiliary_error_local_bound` | The full sequence 2φₙ+cos(nπ) is Banach analytic into ℓᵖ on original complex W, with locally bounded norm |
+| Auxiliary Cauchy bound | `H.previous.auxiliary_gradient_local_bound` | One original-source neighborhood bounds all actual auxiliary derivatives and physical conjugate gradients, uniformly in n |
 | Equation (3.3) | `H.equation3_3` | Every real collapsed gap, all complex sign parameters; correct shared sign on both moving-terminal terms |
 | Lemma 16.2 | `H.lemma16_2` | Actual x/y sequence-coordinate gradient errors in outer ℓᵖ, at every real finite-gap source |
 | Inverse Fourier series | `sourceBirkhoffFourierInverse_hasSum` | Unconditional convergence in source norm, with the corrected negative y-gradient term |
@@ -45,7 +46,7 @@ moving terminal retains both the fixed-source anti-discriminant derivative
 and its spectral derivative times dμₙ, under the same sign. This proves
 (3.3) directly without needing an index-uniform derivative bound for φₙ.
 The source's separate locally uniform auxiliary asymptotic and Cauchy
-bound are not independently asserted by this audit.
+bound are now proved on the same original complex domain in the follow-up below.
 
 ## Reconstruction, norms, and compactness
 
@@ -111,3 +112,57 @@ on their full complex intersection. Full validation is recorded in
 
 The detailed inverse and flow arguments for this same original family
 are audited in [Section 17](SECTION_17.md).
+
+## Locally uniform auxiliary asymptotics and the Cauchy bound, printed p. 76
+
+The separate auxiliary estimate used in the proof of Lemma 16.1 is now
+proved throughout the unchanged original complex angular domain W, at
+every finite p>1. Write P_n for the omitted standard-root product sampled
+at the actual Dirichlet root. The corrected auxiliary remains
+phi_n = -1/(2 P_n), with the positive quotient-product convention recorded
+above. No further domain restriction or Sobolev hypothesis is imposed.
+
+[SourceDirichletOmittedSquareAnalytic.lean](../NLS/ZakharovShabat/SourceDirichletOmittedSquareAnalytic.lean)
+first proves that the complete sequence P_n^2-1 is Banach analytic into
+lp. Its local norm bound retains the finite head and uses the original
+Dirichlet displacement and deleted-product estimates for the tail.
+
+Controlling squares alone would not fix the signs of the roots.
+[NormalizedRootBranchPropagation.lean](../NLS/SequenceSpaces/NormalizedRootBranchPropagation.lean)
+proves that a normalized lp root branch propagates from one base point
+across an open preconnected domain when the squared error is continuous
+in lp. It also proves local norm bounds and Banach analyticity of that
+normalized root error. The
+[original-domain application](../NLS/ZakharovShabat/SourceDirichletOmittedNormalizedAnalytic.lean)
+uses (-1)^|n| P_n, fixes its branch at the real zero source, and obtains
+preconnectedness from the retained root atlas itself. It does not add a
+connectedness assumption to the source package.
+
+[NormalizedInverseAnalytic.lean](../NLS/SequenceSpaces/NormalizedInverseAnalytic.lean)
+then preserves lp normalization under coordinatewise inversion. The
+actual omitted products are nonzero everywhere on W. Uniformly small
+tails control their inverses locally; continuity bounds the finite head.
+A global lower bound on all denominators is unnecessary.
+
+[SourceAuxiliaryUniformAsymptotics.lean](../NLS/ZakharovShabat/SourceAuxiliaryUniformAsymptotics.lean)
+identifies every coefficient of `sourceGapWeightedEtaAuxiliaryRemainder`
+with the literal error 2 phi_n + cos(pi n). This full lp-valued map is
+Banach analytic on W. Its norm is bounded on one original-source
+neighborhood of each point. The results apply to complex sources,
+central and negative indices, and both open and collapsed gaps.
+
+[SourceAuxiliaryUniformGradient.lean](../NLS/ZakharovShabat/SourceAuxiliaryUniformGradient.lean)
+applies Cauchy's estimate on nested original-source balls. One
+neighborhood and one constant bound all actual Frechet derivatives,
+uniformly over the signed spectral index. The physical conjugate
+Fourier gradients have a simultaneous bound in the original conjugate
+pair norm. A `HasFDerivAt` statement and the exact reversed-frequency
+pairing identify these gradients with the full actual differentials.
+These results prove the separate O(1) assertion used on p. 76.
+
+The five public examples construct an original domain at p=4, check
+p=3/2 with physical l3 gradients, recover actual Hilbert differentials,
+and derive uniform coordinate-tail decay and a bound on the literal
+fourth-power sum. The previous proof of (3.3), the corrected positive
+product convention, and all existing original-family results remain in
+place. The precise 2014 construction comparison is still unverified.

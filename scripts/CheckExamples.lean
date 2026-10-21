@@ -64332,3 +64332,95 @@ example : ∃ W₀ W : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → 
   exact ⟨W₀,W,s,H,H.original_collapsed_both_signed_values_nonzero_false⟩
 
 end NLS.Section15CollapsedWitnessChecks
+
+noncomputable section
+namespace NLS.Section16AuxiliaryUniformityChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- Construct the original domain and retain all its root data, without assuming the new estimates.
+example : ∃ W₀ W : Set (CoeffPair 4), IsOpen W ∧ realTypeSourceLocus 4 ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+      SourceLemma12_12Data (by simp) (by norm_num) W₀ W s ∧
+      AnalyticOnNhd ℂ (sourceGapWeightedEtaAuxiliaryRemainder (p := 4) (by simp) (by norm_num)) W := by
+  obtain ⟨W₀,_,_,_,W,hW,_,hr,s,H⟩ := sourceLemma12_12 (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,hW,hr,s,H,H.auxiliary_remainder_analytic.1⟩
+
+-- Fractional source exponent: a single neighborhood bounds every physical l3 gradient.
+example {W₀ W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (H : SourceLemma12_12Data fractional_finite fractional_lt W₀ W s)
+    (φ : CoeffPair (3/2)) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair (3/2)), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+        ‖fderiv ℂ (sourceGapWeightedEtaAuxiliary fractional_finite fractional_lt n) ψ‖ ≤ C ∧
+        ‖CoeffPair.conjugateGradient fractional_finite (q := 3) (by simp)
+          (fderiv ℂ (sourceGapWeightedEtaAuxiliary fractional_finite fractional_lt n) ψ)‖ ≤ 2*C :=
+  H.auxiliary_gradient_local_bound (by simp) φ hφ
+
+-- The bounded Hilbert gradient represents the full actual derivative at complex points.
+example {W₀ W : Set (CoeffPair 2)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (H : SourceLemma12_12Data (by simp) (by norm_num) W₀ W s)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ W) (n : ℤ) (h : CoeffPair 2) :
+    HasFDerivAt (sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n)
+      (fderiv ℂ (sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n) ψ) ψ ∧
+    let g := CoeffPair.conjugateGradient (p := 2) (q := 2) (by simp) (by simp)
+      (fderiv ℂ (sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n) ψ)
+    Coeff.dualPairing (Coeff.reflection g.fst) h.fst+
+      Coeff.dualPairing (Coeff.reflection g.snd) h.snd =
+        fderiv ℂ (sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n) ψ h :=
+  H.auxiliary_gradient_represents (by simp) ψ hψ n h
+
+-- Signed tail coordinates become uniformly small in the original topology.
+example {W₀ W : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (H : SourceLemma12_12Data (by simp) (by norm_num) W₀ W s)
+    (φ : CoeffPair 4) (hφ : φ ∈ W) (ε : ℝ) (hε : 0 < ε) :
+    ∃ K : ℕ, ∃ U : Set (CoeffPair 4), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, K < n.natAbs →
+        ‖2*sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n ψ+
+          Complex.cos ((Real.pi:ℂ)*n)‖ < ε := by
+  obtain ⟨K,V,hV,hφV,hb⟩ := Coeff.exists_local_uniform_small_coordinates (by simp)
+    (sourceGapWeightedEtaAuxiliaryRemainder (p := 4) (by simp) (by norm_num)) φ
+    (H.auxiliary_remainder_analytic.1 φ hφ).continuousAt ε hε
+  refine ⟨K,W∩V,H.original_theta_common_domain.source_open.inter hV,⟨hφ,hφV⟩,
+    inter_subset_left,?_⟩
+  intro ψ hψ n hn
+  rw [← H.auxiliary_remainder_analytic.2 ψ hψ.1 n]
+  exact hb ψ hψ.2 n hn
+
+-- The local bound controls the literal fourth-power sum, including the central block.
+example {W₀ W : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (H : SourceLemma12_12Data (by simp) (by norm_num) W₀ W s)
+    (φ : CoeffPair 4) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair 4), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ U,
+        Summable (fun n : ℤ => ‖2*sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n ψ+
+          Complex.cos ((Real.pi:ℂ)*n)‖^(4:ℝ)) ∧
+        (∑' n : ℤ, ‖2*sourceGapWeightedEtaAuxiliary (by simp) (by norm_num) n ψ+
+          Complex.cos ((Real.pi:ℂ)*n)‖^(4:ℝ)) ≤ C := by
+  obtain ⟨U,hU,hφU,hUW,B,hB,hb⟩ := H.auxiliary_error_local_bound φ hφ
+  refine ⟨U,hU,hφU,hUW,B^(4:ℝ),by positivity,?_⟩
+  intro ψ hψ
+  have hpr : 0 < (4:ℝ≥0∞).toReal := by norm_num
+  have hs := (H.auxiliary_error_memlp ψ (hUW hψ)).summable hpr
+  have hn := lp.norm_rpow_eq_tsum hpr (sourceGapWeightedEtaAuxiliaryRemainder (p := 4)
+    (by simp) (by norm_num) ψ)
+  simp only [H.auxiliary_remainder_analytic.2 ψ (hUW hψ)] at hn
+  norm_num only [ENNReal.toReal_ofNat] at hn hs
+  refine ⟨hs,?_⟩
+  rw [← hn]
+  exact Real.rpow_le_rpow (norm_nonneg _) (hb ψ hψ) (by norm_num)
+
+end NLS.Section16AuxiliaryUniformityChecks
