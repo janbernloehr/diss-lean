@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the exact oscillatory phase printed in A.5 satisfies a uniform
-cancellation bound for every dyadic-block prefix. Weighted tails and uniform
-convergence of the literal series remain to be proved.
+Latest step: the particular series printed in A.5 converges uniformly to a
+continuous period-two function. Its actual Fourier integrals and original
+Fourier-Lebesgue threshold are proved, and its L2 class is identified.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

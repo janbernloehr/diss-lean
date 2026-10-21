@@ -4394,3 +4394,10 @@ import NLS.Fourier.ChirpPhaseIncrements
 import NLS.Fourier.ChirpCorrelationSums
 import NLS.Fourier.FiniteCorrelationIdentity
 import NLS.Fourier.ChirpBlockCancellation
+import NLS.Fourier.MonotoneWeightedSums
+import NLS.Fourier.PrintedChirpAmplitude
+import NLS.Fourier.ChirpWeightedBlocks
+import NLS.Fourier.DyadicPrefixConvergence
+import NLS.Fourier.PrintedChirpPolynomials
+import NLS.Fourier.PrintedChirpContinuous
+import NLS.Fourier.PrintedChirpLiteralSeries

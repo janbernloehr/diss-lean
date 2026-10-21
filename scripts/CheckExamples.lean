@@ -65203,3 +65203,35 @@ example (k M : ℕ) (hM : M ≤ 2^k) (x : ℝ) :
       (2 : ℝ)^k+12*Real.pi*(2 : ℝ)^k*(1+(k : ℝ)*Real.log 2) := by
   simpa only [Nat.cast_pow,Nat.cast_ofNat,Real.log_pow] using
     norm_sum_chirpUnit_sq_le_log (2^k) M (Real.pi*x) (one_le_pow₀ (by norm_num)) hM
+
+-- The exact displayed A.5 series, its original-space obstruction, and its physical L2 realization.
+open NLS NLS.Fourier Filter Topology
+open scoped ENNReal
+
+example : Continuous printedChirpFunction ∧ Function.Periodic printedChirpFunction 2 ∧
+    TendstoUniformly (fun (N : ℕ) (x : ℝ) => ∑ n ∈ Finset.Icc 2 N,
+      (Complex.exp (Complex.I*((n : ℝ)*Real.log n)) /
+        ((Real.sqrt n*(Real.log n)^2 : ℝ) : ℂ)) *
+          Complex.exp (Complex.I*((n : ℝ)*Real.pi*x))) printedChirpFunction atTop :=
+  ⟨continuous_printedChirpFunction,periodic_printedChirpFunction,
+    tendstoUniformly_printedChirp_original⟩
+
+example :
+    let p := ENNReal.ofReal (3/2 : ℝ)
+    letI : Fact (1 ≤ p) := ⟨by norm_num [p]⟩
+    SmoothPeriodicTest.Distribution.ofContinuous printedChirpContinuous ∉
+      periodicFourierLebesgueSubmodule Weight.one p ∧
+      periodTwoCoefficient printedChirpFunction (-3) = 0 := by
+  dsimp only
+  let : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+  constructor
+  · rw [printedChirpContinuous_mem_original_iff]
+    norm_num
+  · simp [periodTwoCoefficient_printedChirpFunction,printedChirpCoefficient]
+
+example :
+    ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ printedChirpContinuous = printedChirpL2 ∧
+      periodTwoCoefficient printedChirpFunction 2 =
+        Complex.exp (Complex.I*(2*Real.log 2))/(Real.sqrt 2*(Real.log 2)^2 : ℝ) := by
+  exact ⟨toLp_printedChirpContinuous,by
+    simp [periodTwoCoefficient_printedChirpFunction,printedChirpCoefficient]⟩

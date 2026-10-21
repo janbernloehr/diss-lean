@@ -300,12 +300,13 @@ for every 1 ≤ p < 2. Any full ℓp coefficient sequence would bound all these
 block norms, a contradiction. The conclusion is stated both for the actual
 Fourier coefficients and for membership of the original distribution.
 The witness is independent of p. This proves A.5 by an alternative
-construction. The coefficient and physical L2 properties of the particular
-printed series are recorded below; its continuity remains to be proved.
+construction. The particular printed series, its uniform convergence and
+its exact Fourier and physical L2 properties are also verified below.
 
-Both constructions apply to every positive physical period and use the
-previously established normalized Fourier maps. Neither assumes the desired
-counterexample, a failure of membership, or non-measure representability.
+The two Rudin-Shapiro constructions above apply to every positive physical
+period and use the previously established normalized Fourier maps. Neither
+assumes the desired counterexample, a failure of membership, or non-measure
+representability. The literal printed series is treated separately below.
 
 ## Sharp finite interpolation prerequisites
 
@@ -562,9 +563,9 @@ uniqueness when both conditions hold, and agreement with the original
 Wiener product, plus actual symmetric cancellation and failure of unordered
 convergence. All four modules and their focused examples compile without
 new warnings. Full validation is recorded in [STATUS.md](../STATUS.md).
-Continuity of A.5's particular printed series remains to be proved; its
-coefficient threshold and L2 convergence are verified below. The stated
-existence theorem is already proved by the alternative construction above.
+The particular printed A.5 series is verified in the follow-up sections
+below, including uniform convergence and its exact coefficient threshold.
+The alternative construction above also proves the existential statement.
 
 ## Literal coefficients in the proof of A.5
 
@@ -590,10 +591,9 @@ the complex coefficient at n=2 and a negative mode, the fractional and
 endpoint membership behavior, and the displayed partial sums with the
 phase and denominator expanded.
 
-This step does not prove continuity or uniform convergence of this
-particular series. Those require a separate cancellation estimate for
-its oscillatory partial sums. The earlier continuous Rudin-Shapiro
-witness still proves the complete existential statement of A.5.
+This coefficient step is completed below by actual cancellation, weighted
+tail estimates and uniform convergence of the literal series. The earlier
+Rudin-Shapiro witness independently proves the existential statement.
 
 ## Cancellation for the literal printed A.5 phase
 
@@ -616,12 +616,10 @@ variation bound each correlation prefix by 6*pi*N/h. The finite harmonic
 sum then gives the logarithmic bound above. No unproved exponential-sum
 estimate is assumed.
 
-These bounds are prerequisites for the literal witness. The amplitude
-1/(sqrt(n)*log(n)^2) still needs a weighted block estimate, followed by
-uniform convergence of the ordinary positive-index cutoffs and
-identification of the continuous representative with printedChirpL2.
-The already proved alternative witness establishes A.5's existential
-statement independently.
+The following uniform-convergence result combines these bounds with the
+printed amplitude, controls every ordinary positive-index cutoff, and
+identifies the continuous representative with printedChirpL2. The
+alternative witness establishes A.5's existential statement independently.
 
 Public modules:
 
@@ -632,3 +630,47 @@ Public modules:
 - [`ChirpCorrelationSums.lean`](../NLS/Fourier/ChirpCorrelationSums.lean)
 - [`FiniteCorrelationIdentity.lean`](../NLS/Fourier/FiniteCorrelationIdentity.lean)
 - [`ChirpBlockCancellation.lean`](../NLS/Fourier/ChirpBlockCancellation.lean)
+
+## Uniform convergence of the literal printed series
+
+The exact series displayed in the proof of A.5 now has a continuous
+period-two realization. Its ordinary positive-index partial sums over
+2<=n<=N converge uniformly for all real x to `printedChirpFunction`.
+The public statement expands both exponential factors and the full
+sqrt(n)*log(n)^2 denominator; it preserves the printed cutoff and phase.
+
+The amplitude is positive and decreasing for n>=2. Abel summation
+combines that fact with the actual block-prefix cancellation estimate.
+For the block starting at 2^k, every weighted prefix has norm at most
+
+    C/k^(3/2),
+    C = sqrt(1+12*pi*(1+log 2))/(log 2)^2.
+
+This majorant is summable. A complete-space argument first controls
+dyadic cutoffs, then uses the prefix estimate inside each block to prove
+convergence along every ordinary cutoff. Applied in C(R/2Z), this gives
+uniform convergence and a continuous limit without assuming pointwise
+convergence or replacing the printed coefficients.
+
+Every actual Fourier coefficient and normalized interval Fourier integral
+of the limit equals `printedChirpCoefficient`. Its physical L2 class is
+exactly `printedChirpL2`. Membership in the original distribution-based
+Fourier-Lebesgue space holds precisely for p>=2, including infinity.
+Thus this particular printed witness, independent of p, supplies the
+obstruction for all Banach exponents below two.
+
+The literal displayed factors exp(i*n*pi*x) use physical period two.
+The earlier alternative witness establishes A.5 at every positive period;
+this step does not silently reinterpret the displayed factors at another
+period. Whole-dissertation completeness and the separate source-edition
+and interval-norm qualifications are unchanged.
+
+Public modules:
+
+- [`MonotoneWeightedSums.lean`](../NLS/Fourier/MonotoneWeightedSums.lean)
+- [`PrintedChirpAmplitude.lean`](../NLS/Fourier/PrintedChirpAmplitude.lean)
+- [`ChirpWeightedBlocks.lean`](../NLS/Fourier/ChirpWeightedBlocks.lean)
+- [`DyadicPrefixConvergence.lean`](../NLS/Fourier/DyadicPrefixConvergence.lean)
+- [`PrintedChirpPolynomials.lean`](../NLS/Fourier/PrintedChirpPolynomials.lean)
+- [`PrintedChirpContinuous.lean`](../NLS/Fourier/PrintedChirpContinuous.lean)
+- [`PrintedChirpLiteralSeries.lean`](../NLS/Fourier/PrintedChirpLiteralSeries.lean)

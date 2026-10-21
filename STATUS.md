@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: uniform cancellation for the printed A.5 phase
+## Current milestone: uniform convergence of the printed A.5 series
+
+The particular series displayed in the proof of A.5 converges uniformly
+on the whole real line to a continuous period-two function. The result
+retains the exact phase, logarithmic denominator and ordinary cutoffs 2<=n<=N.
+
+Its actual Fourier integrals are the printed coefficients, its physical L2
+class is printedChirpL2, and membership in the original Fourier-Lebesgue
+spaces holds precisely for p>=2. Weighted prefix estimates decay as k^(-3/2)
+on dyadic blocks and prove convergence for all ordinary cutoffs.
+Three examples check the expanded series, a fractional original-space
+obstruction, and the L2 realization with a literal coefficient.
+The [Appendix A audit](coverage/APPENDIX_A.md) records the physical-period
+convention and the complete proof route.
+
+Validation: `./scripts/check.sh` passes with 8,069 build jobs, 7,028
+public examples, and a transitive axiom audit of 39,689 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,008 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: uniform cancellation for the printed A.5 phase
 
 Every prefix of each dyadic block of the exact phase printed in A.5
 satisfies a uniform cancellation bound. For a block starting at N>=1,
