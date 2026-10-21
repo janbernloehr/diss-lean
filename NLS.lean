@@ -4363,3 +4363,6 @@ import NLS.SequenceSpaces.ExponentialSpectralWeights
 import NLS.SequenceSpaces.LogarithmicSpectralWeights
 import NLS.SequenceSpaces.LogarithmicWeightGrowth
 import NLS.SequenceSpaces.SpectralWeightHierarchy
+import NLS.Fourier.GeometricPeriodOne
+import NLS.Fourier.AbelStripWitness
+import NLS.ZakharovShabat.SourceAbelStripCounterexample

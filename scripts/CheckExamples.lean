@@ -64780,3 +64780,38 @@ example :
   exact ⟨L,hL,fun a => he a (-3)⟩
 
 end NLS.Section23WeightHierarchyChecks
+
+noncomputable section
+namespace NLS.Section23AbelStripChecks
+open NLS.Fourier NLS.ZakharovShabat Set Complex MeasureTheory
+open scoped ENNReal ContDiff
+
+-- The actual physical source has its first positive coefficient and negative support exactly computed.
+example : section23AbelCounterexampleSource.fst 2 = 0 ∧
+    section23AbelCounterexampleSource.snd 2 = (1/9:ℂ) ∧
+    section23AbelCounterexampleSource.snd (-2) = 0 := by
+  norm_num [section23AbelCounterexampleSource,geometricPeriodOneCoefficients,Int.toNat]
+
+-- The lower printed boundary is a smooth, periodic, square-integrable trace.
+example :
+    let y := -Real.log 2/(2*Real.pi)
+    ContDiff ℝ ∞ (fun x : ℝ => section23StripWitness (x+Complex.I*y)) ∧
+      Function.Periodic (fun x : ℝ => section23StripWitness (x+Complex.I*y)) 1 ∧
+      MemLp (fun x : ℝ => section23StripWitness (x+Complex.I*y)) 2 (volume.restrict (Ioc 0 1)) := by
+  have hy : |-Real.log 2/(2*Real.pi)| ≤ Real.log 2/(2*Real.pi) := by
+    rw [neg_div,abs_neg,abs_of_nonneg (by positivity)]
+  exact ⟨section23StripWitness_trace_smooth _ hy,section23StripWitness_trace_periodic _,
+    section23StripWitness_trace_memLp _ hy⟩
+
+-- Weighting the actual physical third coefficient already increases its norm beyond one.
+example : ‖(section23AbelWitnessWeight (2*(3:ℤ)):ℂ)*
+    periodOneCoefficient (fun x : ℝ => section23StripWitness x) 3‖ = (64/27:ℝ) := by
+  convert section23StripWitness_weighted_coefficient_norm 3 using 1 <;> norm_num
+
+-- The original source cannot be obtained from any normalized coefficients in the literal Abel space.
+example : ∀ a : CoeffPair 2,
+    normalizedWeightedSource section23AbelWitnessWeight a ≠ section23AbelCounterexampleSource := by
+  intro a ha
+  exact section23AbelCounterexampleSource_not_weighted ⟨a,ha⟩
+
+end NLS.Section23AbelStripChecks

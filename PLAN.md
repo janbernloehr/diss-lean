@@ -1,6 +1,27 @@
 # Implementation plan
 
-## Current milestone: exact exponential weights and their growth hierarchy
+## Current milestone: the original-source Abel-strip counterexample
+
+The printed narrow-strip condition does not characterize the literal
+Abel space under the original even-frequency convention. An explicit
+physical Hilbert source has holomorphic continuation across the printed
+closed strip and smooth square-integrable boundary traces, but cannot
+be obtained through the original Abel-weight decoder.
+
+The proof computes the actual Fourier integrals and the exponentially
+growing weighted coefficients. Four examples check signed modes, a boundary
+trace, a weighted coefficient and the original source-space obstruction.
+The [Section 23 audit](coverage/SECTION_23.md) states the interpretation.
+This does not refute the weaker forward implication. A full corrected-width
+characterization remains open.
+
+Validation: `./scripts/check.sh` passes with 8,032 build jobs, 6,989
+public examples, and a transitive axiom audit of 39,290 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,916 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: exact exponential weights and their growth hierarchy
 
 The printed Abel, Gevrey and logarithmic weight examples now have exact
 constructors in M and, at polynomial order at least one, M1. The original

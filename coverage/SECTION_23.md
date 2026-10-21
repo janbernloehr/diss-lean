@@ -1686,3 +1686,47 @@ first sentence on p. 105 has not been formalized here. Its width must be
 checked against the period-two index and even-mode convention on p. 103;
 these weight constructions and growth comparisons do not prove that
 characterization. The precise 2014 edition comparison remains qualified.
+
+## Scope of the Abel-strip description
+
+The first sentence on printed p. 105 describes the Abel space using a
+strip of half-width a/(2*pi) and Sobolev boundary traces. The p. 103
+Fourier series labels a physical period-one mode by the even spectral
+index 2n. The exact weight from pp. 104–105 is therefore
+
+    (1+|2*n*pi|)^s exp(2*a*|n|).
+
+Interpreting the printed strip condition as a characterization is false
+with those literal conventions. The weaker forward statement that Abel
+data extend to that narrower strip is not refuted by the following witness.
+
+[GeometricPeriodOne.lean](../NLS/Fourier/GeometricPeriodOne.lean)
+constructs an actual absolutely summable one-sided geometric Fourier
+sequence and identifies both its physical synthesis and its unit-interval
+Fourier integrals. For a=log(2), s=0, the function
+
+    f(z) = 1 / (1-exp(2*pi*i*z)/3)
+
+has coefficients (1/3)^n for n>=0 and zero for negative n.
+[AbelStripWitness.lean](../NLS/Fourier/AbelStripWitness.lean)
+proves that f is holomorphic on a neighborhood of every point of the
+entire printed closed strip. The geometric denominator has ratio norm
+at most 2/3 there. Every horizontal trace, including both boundary lines,
+is periodic, smooth and square integrable on the physical unit interval.
+The weight at 2n is 4^n, so the weighted coefficient norm is (4/3)^n.
+The resulting sequence is unbounded and cannot belong to l2.
+
+[SourceAbelStripCounterexample.lean](../NLS/ZakharovShabat/SourceAbelStripCounterexample.lean)
+packages the physical source (0,f) in the original Hilbert coefficient
+space. Its raw second coefficients are the actual Fourier integrals.
+The source is outside the image of the original normalized Abel-weight
+decoder, so this is a counterexample in the original source space.
+
+Four examples check the signed support and a positive coefficient, the
+actual lower boundary trace, the weighted third coefficient, and failure
+of every possible original normalized weighted lift.
+
+The width suggested by the literal Fourier multiplier is a/pi. A full
+characterization at that width, with precisely stated Sobolev norm traces,
+remains a separate proof obligation. The narrower forward implication and
+the corrected-width equivalence are not established by this counterexample.

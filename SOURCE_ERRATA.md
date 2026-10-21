@@ -1,5 +1,24 @@
 # Source discrepancies
 
+## Section 23, p. 105: interpreting the Abel-strip description
+
+The displayed Abel weight is indexed by the period-two Fourier frequency,
+while a physical period-one mode has index 2n on p. 103. Consequently its
+exponential weight is exp(2*a*|n|). With these literal conventions, the
+printed strip condition |Im z|<a/(2*pi) with H^s boundary traces does not
+characterize the Abel space. This observation does not refute a forward-only
+interpretation of the source sentence.
+
+At a=log(2), s=0, the function 1/(1-exp(2*pi*i*z)/3) is holomorphic across
+the printed closed strip and has smooth periodic square-integrable boundary
+traces. Its actual Fourier coefficients are (1/3)^n on nonnegative modes,
+while the original weight at 2n is 4^n. The weighted coefficients are
+therefore unbounded.
+[The original-source witness](NLS/ZakharovShabat/SourceAbelStripCounterexample.lean)
+proves that (0,f) lies outside the original normalized Abel-weight image.
+The [Section 23 audit](coverage/SECTION_23.md) records the precise distinction.
+A full corrected-width characterization remains unproved.
+
 ## Lemma 21.2 proof, p. 97: the cube of the normalization shift
 
 The expansion of (Fn-i*pi*n)^3 prints +(pi*n)^3 as its constant term.

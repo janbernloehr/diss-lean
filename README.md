@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the exact Abel, Gevrey and logarithmic weights satisfy
-the source weight assumptions and the full growth hierarchy, including
-arbitrary polynomial factors. The original weighted estimates apply.
+Latest step: an actual Hilbert source satisfies the printed Abel-strip
+condition with smooth boundary traces while failing the literal weighted
+space. The characterization and forward-only readings are distinguished.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
