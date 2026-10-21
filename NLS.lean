@@ -4281,3 +4281,4 @@ import NLS.ZakharovShabat.SourceBirkhoffNativeRealRemainders
 import NLS.ZakharovShabat.SourceSection23OneSmoothing
 import NLS.SequenceSpaces.HilbertHamiltonianNonextensionTop
 import NLS.ZakharovShabat.SourceHamiltonianOriginalNonextensionTop
+import NLS.ZakharovShabat.SourceFrequencyOriginalHilbertTop

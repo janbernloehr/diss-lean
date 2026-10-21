@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: Hamiltonian nonextension includes infinity
+## Current milestone: the common frequency includes the infinity target
+
+The original frequency on summable actions now has complex and real
+analytic realizations in every target exponent r > 1, including infinity.
+`SourceOriginalHilbertFrequencyData.realizations_all` keeps its original
+action domain and all coordinate values. `memℓp_all` also gives membership
+of the literal frequency sequence throughout that complex domain.
+
+The endpoint is obtained through the bounded inclusions from ell^2 into
+ell-infinity. The action input domain remains in ell^1. Higher-action
+extensions still use finite p > 2 with action exponent p/2.
+
+Two public examples construct the bounded common frequency without a
+supplied family and identify its real infinity realization with every
+independently constructed higher-exponent family on nonnegative summable
+actions. See [the Section 18 audit](coverage/SECTION_18.md).
+
+The introductory and remaining source-level completion audit continues.
+The precise 2014 edition comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 7,947 build jobs, 6,870
+public examples, and a transitive axiom audit of 38,366 NLS declarations.
+The build retains 21 existing warnings; the new module introduces none.
+Documentation checks cover 1,614 file links across 42 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: Hamiltonian nonextension includes infinity
 
 The original renormalized action Hamiltonian has no extension continuous
 at zero relative to the nonnegative ell^q cone for any q > 2, including

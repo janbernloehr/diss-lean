@@ -10,11 +10,19 @@ corrected below.
 ## One frequency and its domains
 
 `sourceSection18_original_frequencies` constructs a single original Hilbert
-frequency on summable actions. It has analytic realizations in every finite
-target exponent r>1 on one common open connected action domain. The domain
+frequency on summable actions. It has analytic realizations in every
+target exponent r>1, including infinity, on one common open connected action domain. The domain
 contains every original real-source action and the whole nonnegative ℓ¹
 cone. Each realization also has a real-valued analytic extension on the
 real preimage of this domain, agreeing with the frequency on that cone.
+
+[`SourceFrequencyOriginalHilbertTop.lean`](../NLS/ZakharovShabat/SourceFrequencyOriginalHilbertTop.lean)
+supplies the infinity target by composing the existing ell^2 realization
+with the bounded inclusion into ell-infinity. Both real and complex
+realizations preserve every coordinate and the original domain.
+`memℓp_all` gives membership for the literal common sequence throughout
+that domain. This endpoint concerns the target space; it does not extend
+the frequency to all bounded action sequences.
 
 For every finite p>2 and every independently constructed original Section 17
 family, the theorem constructs one frequency F:ℓ^(p/2)→ℓ^(p/2). Its
@@ -26,7 +34,7 @@ be assumed.
 
 | Source assertion | Public evidence | Scope |
 | --- | --- | --- |
-| Theorem 18.1, common Hilbert frequency | `SourceOriginalHilbertFrequencyData.realizations` | Every finite r>1; complex and real analytic realizations on one common domain; real values on nonnegative summable actions |
+| Theorem 18.1, common Hilbert frequency | `SourceOriginalHilbertFrequencyData.realizations_all` | Every r>1, including infinity; complex and real analytic realizations on one common domain; real values on nonnegative summable actions |
 | Higher-exponent extensions | `SourceSection17OriginalData.exists_frequency_asymptotic` | Every finite p>2 and the original family supplied to the theorem; action exponent q=p/2 |
 | Extension of the same Hilbert values | `SourceOriginalFrequencyData.eq_hilbert_on_positive` | Entire nonnegative summable cone; arbitrary independent atlases and original families |
 | Analytic refined correction | `E.refined` | F(I)+2I analytic into every finite ℓʳ with r>1 and r≥p/3 |

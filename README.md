@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original renormalized Hamiltonian has no continuous
-extension at zero on the nonnegative action cone for any exponent q > 2,
-including infinity. The same original family retains its physical
-Hamiltonian identity. The forward and inverse one-smoothing results in
-the exact real Sobolev spaces are also complete. The full dissertation
-formalization remains in progress.
+Latest step: the original common frequency has real and complex analytic
+realizations in every target exponent above one, including infinity,
+on its unchanged summable-action domain. The original Hamiltonian's
+nonextension theorem also includes the infinity endpoint. Forward and
+inverse one-smoothing in the exact real Sobolev spaces are complete.
+The full dissertation formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

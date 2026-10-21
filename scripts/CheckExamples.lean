@@ -63291,3 +63291,44 @@ example (G : Coeff ⊤ → ℂ) (U : Set (Coeff ⊤)) (hU : U ∈ 𝓝 (0:Coeff 
     exact hG a ha hUa
 
 end NLS.HamiltonianEndpointChecks
+
+namespace NLS.FrequencyTopChecks
+
+open Set
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+-- Construct the original family: the common frequency is bounded at
+-- every nonnegative summable action, with no frequency data assumed.
+example : ∃ U : Set (Coeff 1), ∃ ωstar : Coeff 1 → ℤ → ℂ,
+    IsOpen U ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ U) ∧
+    (∀ b ∈ U, Memℓp (ωstar b) ⊤) := by
+  obtain ⟨W₀,W,V,s,D,U,ωstar,Q,_⟩ := sourceSection18_original_frequencies
+  exact ⟨U,ωstar,Q.isOpen,Q.positive_actions_mem,
+    fun b hb => Q.memℓp_all ⊤ (by simp) b hb⟩
+
+-- A higher-action extension and the real infinity realization agree
+-- on the entire positive summable cone, even for independent families.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
+    {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+    {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+    {U : Set (Coeff q)} {F : Coeff q → Coeff q}
+    (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p)
+    {W₂ B₂ V₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D₂ : SourceSection17OriginalData (by simp) (by norm_num) W₂ B₂ V₂ s₂}
+    {U₂ : Set (Coeff 1)} {ωstar : Coeff 1 → ℤ → ℂ}
+    (Q : SourceOriginalHilbertFrequencyData D₂ U₂ ωstar) :
+    ∃ R : RealCoeff 1 → RealCoeff ⊤,
+      AnalyticOnNhd ℝ R (RealCoeff.complexCLM 1 ⁻¹' U₂) ∧
+      ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∀ n,
+        (R b n : ℂ) =
+          F (Coeff.exponentInclusion (Fact.out : 1 ≤ q) (RealCoeff.complexCLM 1 b)) n := by
+  obtain ⟨_,_,_,_,R,hR,hval⟩ := Q.realizations_top
+  exact ⟨R,hR,fun b hb n => (hval b hb n).trans
+    (E.eq_hilbert_on_positive hp2.le Q b hb n).symm⟩
+
+end NLS.ZakharovShabat
+
+end NLS.FrequencyTopChecks
