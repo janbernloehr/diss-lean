@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: the critical-point zero in the real action integrand
+## Current milestone: discontinuous original gap and eta phase
+
+The actual central gap and the original integral phase exp(i eta) have
+continuity failures within the original open-gap domain, arbitrarily
+close to the zero source. The theorem retains the same normalized psi
+family and common angular domain for every finite p>1.
+
+The analytic weighted coordinate is the product of the gap with this
+nonvanishing phase. Continuity of the phase at the constructed witness
+would force continuity of the gap, contradicting the endpoint result.
+The doubled phase and weighted coordinates remain analytic.
+
+The [Section 15 audit](coverage/SECTION_15.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,004 build jobs, 6,950
+public examples, and a transitive axiom audit of 39,041 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,828 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the critical-point zero in the real action integrand
 
 The recentered real action integrand in the proof of Lemma 11.1 vanishes
 at the canonical critical point, strictly inside every open real gap.

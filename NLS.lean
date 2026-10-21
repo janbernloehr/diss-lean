@@ -4338,3 +4338,4 @@ import NLS.ZakharovShabat.SourceConstantCentralPair
 import NLS.ZakharovShabat.SourcePeriodicLabelDiscontinuity
 import NLS.ZakharovShabat.SourceAlmostRealLabelDiscontinuity
 import NLS.ZakharovShabat.SourceActionIntegrandCriticalZero
+import NLS.ZakharovShabat.SourceOriginalGapEtaDiscontinuity

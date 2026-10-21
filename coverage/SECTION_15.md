@@ -138,3 +138,38 @@ discriminant, every action, and the original physical norm are preserved.
 [`PhysicalActionFlowGroup.lean`](../NLS/ZakharovShabat/PhysicalActionFlowGroup.lean)
 proves the exact signed rotation, commutation, period 2*pi, joint continuity,
 and homeomorphism group properties.
+
+## The gap and original eta modulo 2*pi are discontinuous, printed p. 74
+
+The unnumbered paragraph before Lemma 15.1 says that the ordered gap and
+eta modulo 2*pi can have discontinuities.
+[SourceOriginalGapEtaDiscontinuity.lean](../NLS/ZakharovShabat/SourceOriginalGapEtaDiscontinuity.lean)
+proves this for the actual central gap and the literal original-integral
+phase exp(i eta), on the unchanged original angular domain. It uses the
+constant-source endpoint witnesses from the [Section 8 audit](SECTION_8.md).
+
+For every finite p>1, every retained original normalized psi family, and
+every source neighborhood V of zero, a positive r gives a source (r,-r)
+in W intersect V. Its central gap is open. Both that gap and exp(i eta)
+fail continuity within the same original central open-gap domain at
+this source. Neither function is continuous on that domain.
+
+The midpoint and squared gap are analytic. At a collapsed gap,
+continuity of the squared gap forces continuity of the gap itself,
+because its norm is the square root of the squared gap's norm. Thus the
+endpoint-discontinuity witness must have an open gap. Continuity of the
+gap there would make the left endpoint continuous through
+left=midpoint-gap/2, a contradiction.
+
+The exact original integral formula identifies the analytic weighted
+coordinate z+ with gap*exp(i eta). The exponential never vanishes.
+Continuity of exp(i eta) would therefore make the gap continuous by
+division. This proves discontinuity of the actual phase modulo 2*pi,
+independently of the integral representative, while the already proved
+phase modulo pi and weighted-coordinate analyticity remain valid.
+
+Two public examples construct an original family at p=4 with an
+analytic weighted coordinate and both failures of continuity, and give
+a witness in every prescribed source ball at p=3/2. The result concerns
+existence of central-index discontinuities, not discontinuity at every
+source or every signed index, and does not assert a discontinuity at zero.

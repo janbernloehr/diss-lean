@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the real action integrand has an interior zero at the
-critical point, correcting a strict-positivity sentence in the proof
-of Lemma 11.1. The action remains strictly positive on open real gaps.
-Formalization remains in progress.
+Latest step: the central spectral gap and the original eta phase modulo
+2*pi have discontinuities in every neighborhood of zero, within the
+original open-gap domain. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

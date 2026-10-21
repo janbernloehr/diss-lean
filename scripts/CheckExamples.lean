@@ -64233,3 +64233,45 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   H.action_pos_and_recenteredIntegrand_zero ψ hreal n hopen
 
 end NLS.Section11IntegrandCriticalZeroChecks
+
+noncomputable section
+namespace NLS.Section15GapEtaDiscontinuityChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- An original domain and family exist without supplied witnesses; their weighted coordinate is analytic.
+example : ∃ W₀ W : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    SourceLemma12_12Data (by simp) (by norm_num) W₀ W s ∧
+    AnalyticOnNhd ℂ (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s 1) W ∧
+    let G := fun ψ : CoeffPair 4 =>
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 0
+    let U := {ψ : CoeffPair 4 | ψ ∈ W ∧ G ψ ≠ 0}
+    ¬ContinuousOn G U ∧
+    ¬ContinuousOn (fun ψ : CoeffPair 4 =>
+      Complex.exp (Complex.I*sourceAngularOriginalEta (by simp) (by norm_num) 0 s ψ)) U := by
+  obtain ⟨W₀,_,_,_,W,_,_,_,s,H⟩ := sourceLemma12_12 (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,s,H,H.gapWeightedEta_original_analytic 0 1,H.original_gap_eta_phase_not_continuousOn⟩
+
+-- A fractional-exponent witness remains inside any prescribed ball and the original open-gap domain.
+example {W₀ W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (H : SourceLemma12_12Data fractional_finite fractional_lt W₀ W s) (ρ : ℝ) (hρ : 0 < ρ) :
+    let G := fun ψ : CoeffPair (3/2) =>
+      canonicalPeriodicGap fractional_finite fractional_lt (periodOnePotential ψ) (periodOnePotential_mem ψ) 0
+    let U := {ψ : CoeffPair (3/2) | ψ ∈ W ∧ G ψ ≠ 0}
+    ∃ r : ℝ, 0 < r ∧ sourceConstantPotential (p := 3/2) (r : ℂ) (-r) ∈ W ∩ Metric.ball 0 ρ ∧
+      G (sourceConstantPotential (p := 3/2) (r : ℂ) (-r)) ≠ 0 ∧
+      ¬ContinuousWithinAt G U (sourceConstantPotential (p := 3/2) (r : ℂ) (-r)) ∧
+      ¬ContinuousWithinAt (fun ψ : CoeffPair (3/2) =>
+        Complex.exp (Complex.I*sourceAngularOriginalEta fractional_finite fractional_lt 0 s ψ))
+        U (sourceConstantPotential (p := 3/2) (r : ℂ) (-r)) :=
+  H.exists_original_gap_eta_phase_discontinuity (Metric.ball 0 ρ) (Metric.ball_mem_nhds _ hρ)
+
+end NLS.Section15GapEtaDiscontinuityChecks
