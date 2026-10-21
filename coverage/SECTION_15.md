@@ -72,8 +72,9 @@ the two signs. The exact identity zₙ+ zₙ− = γₙ² implies that at a coll
 gap at least one sign vanishes. The formal algebra shows that both vanish
 exactly when μₙ=τₙ; outside that midpoint exactly one is nonzero. The net
 limit theorem identifies these values with the limits of the original
-open-gap expressions. No existence of a potential in Fₙ with γₙ=0 is
-claimed here, so this is not a constructed physical counterexample.
+open-gap expressions. The follow-up below now constructs actual complex
+potentials in F_0 with a collapsed central gap, together with open-gap
+sequences realizing both original signed limits. Exactly one limit is zero.
 
 The opening exponential rewrite for y on p. 74 has a plus where the sine
 formula requires a minus. Equation (3.2) on p. 75 has the correct difference,
@@ -173,3 +174,43 @@ analytic weighted coordinate and both failures of continuity, and give
 a witness in every prescribed source ball at p=3/2. The result concerns
 existence of central-index discontinuities, not discontinuity at every
 source or every signed index, and does not assert a discontinuity at zero.
+
+## Actual complex collapsed-gap witnesses for the printed p. 74 limits
+
+The conditional sign classification above is now realized by actual original
+potentials. For every finite p>1, every retained normalized psi family and
+angular domain W, and every original-source neighborhood of zero, there is
+a nonzero constant triangular source (a,0) in W and that neighborhood with
+both central periodic endpoints zero and its central Dirichlet root nonzero.
+It therefore lies in the source's F_0 and has a collapsed central gap.
+
+[SourceTriangularCollapsedWitness.lean](../NLS/ZakharovShabat/SourceTriangularCollapsedWitness.lean)
+first uses the exact free spectrum of triangular operators. Continuity of
+the canonical endpoints at the zero source forces the nearby central pair
+to remain at the isolated free spectral point zero. In contrast, the actual
+Dirichlet root along the original bounded linear curve a ↦ (a,0) has
+complex derivative 1/2 at zero, for every finite p>1. It cannot vanish
+throughout any parameter neighborhood. This constructs witnesses rather
+than assuming that a collapsed gap with an exterior Dirichlet root exists.
+
+[SourceCollapsedOriginalEtaWitness.lean](../NLS/ZakharovShabat/SourceCollapsedOriginalEtaWitness.lean)
+chooses the witness within the same original angular domain. It then
+constructs a sequence of constant potentials
+
+`(a, (1/(k+1))^2/a)`
+
+approaching (a,0). After shifting the sequence by a finite number of terms,
+every term lies in W and has an open central gap. The exact canonical-pair
+identification gives roots 1/(k+1) and its negative before that shift.
+
+For each sign, the original expression gamma_0*exp(±i*eta_0) converges along
+this sequence to the corresponding analytic extension at the witness.
+Exactly one limit is zero and the other is nonzero. The formal theorem
+`original_collapsed_both_signed_values_nonzero_false` consequently refutes
+simultaneous nonvanishing on F_0. The proof retains the original integral
+signs and normalized psi family; it does not choose which sign is nonzero.
+
+These are complex sources. The existing disjointness of F_0 from the real
+locus excludes real witnesses, and the real interlacing result is unchanged.
+This strengthens the earlier conditional classification to a constructed
+source counterexample, recorded in [source discrepancies](../SOURCE_ERRATA.md).

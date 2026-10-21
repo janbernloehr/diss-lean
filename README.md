@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the central spectral gap and the original eta phase modulo
-2*pi have discontinuities in every neighborhood of zero, within the
-original open-gap domain. Formalization remains in progress.
+Latest step: actual complex collapsed-gap witnesses realize the corrected
+Section 15 sign classification. Along an explicit sequence of open-gap
+sources exactly one original signed phase limit vanishes. Formalization
+remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

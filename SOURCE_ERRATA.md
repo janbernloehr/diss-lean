@@ -349,17 +349,25 @@ The canonical mixed bracket consequently retains the source's -δₙₘ sign.
 ## Section 15 collapsed limits: the two signs must be distinguished
 
 The narrative on printed p. 74 says the collapsed limit is nonzero when
-μₙ lies outside its gap. The exact identity zₙ+ zₙ− = γₙ² forces at least
-one sign to vanish at a collapsed gap. The formal results
-`gapWeighted_original_collapsed_pair_zero_iff` and
-`gapWeighted_original_collapsed_pair_exactly_one_nonzero` prove the precise
-classification: both vanish iff μₙ=τₙ; otherwise exactly one is nonzero.
-`gapWeighted_original_phase_limit` identifies these analytic values with
-limits of the original open-gap phases.
+the Dirichlet root lies outside its periodic gap. The original PDF was
+visually checked. The exact identity z_n+ z_n- = gamma_n^2 forces at least
+one sign to vanish at a collapsed gap. Both vanish exactly when mu_n=tau_n;
+otherwise exactly one is nonzero.
 
-This qualifies the interpretation of the narrative; it does not construct
-a potential with γₙ=0 and μₙ≠τₙ, or claim an unconditional physical
-counterexample. See [the Section 15 audit](coverage/SECTION_15.md).
+There are actual original-source witnesses: for every finite p>1, every
+retained angular domain W, and every neighborhood of zero, some nonzero
+constant triangular source (a,0) in W has both central periodic endpoints
+zero and a nonzero central Dirichlet root. It belongs to F_0. An explicit
+sequence of constant potentials with open central gaps, entirely in W,
+converges to this source. Along that sequence the two original signed
+phase expressions converge, with exactly one limit zero and the other
+nonzero.
+
+[SourceCollapsedOriginalEtaWitness.lean](NLS/ZakharovShabat/SourceCollapsedOriginalEtaWitness.lean)
+constructs the witness and sequence and formally refutes simultaneous
+nonvanishing of both signs. This is an unconditional source counterexample
+within the proved original angular construction, replacing the earlier
+conditional interpretation. See [the Section 15 audit](coverage/SECTION_15.md).
 
 ## Lemma 12.11: both individual sine asymptotics have a minus sign
 

@@ -16,6 +16,7 @@ dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Section 15, printed p.74: actual collapsed-limit counterexample | [Triangular source witnesses](NLS/ZakharovShabat/SourceTriangularCollapsedWitness.lean), [original phase limits](NLS/ZakharovShabat/SourceCollapsedOriginalEtaWitness.lean), [audit](coverage/SECTION_15.md), [erratum](SOURCE_ERRATA.md) | Every original neighborhood of zero contains a collapsed-gap witness in F_0. An actual open-gap sequence has both signed limits, exactly one zero. |
 | Section 15, printed p.74: gap and eta discontinuity | [Original gap and eta phase](NLS/ZakharovShabat/SourceOriginalGapEtaDiscontinuity.lean), [audit](coverage/SECTION_15.md) | Both have continuity failures within the original open-gap domain, arbitrarily close to zero, for every finite p>1. |
 | Lemma 11.1 proof, printed p.61: integrand strictness correction | [Interior zero](NLS/ZakharovShabat/SourceActionIntegrandCriticalZero.lean), [audit](coverage/SECTION_11.md), [erratum](SOURCE_ERRATA.md) | The literal integrand vanishes at the interior critical point with positive denominator; strict positivity of the action remains proved. |
 | Section 10, printed p.55: individual endpoint discontinuity | [Domain discontinuity](NLS/ZakharovShabat/SourceAlmostRealLabelDiscontinuity.lean), [audit](coverage/SECTION_10.md) | Both central labels fail continuity within every source neighborhood of zero; the unchanged Lemma 10.2 domain retains all properties. |

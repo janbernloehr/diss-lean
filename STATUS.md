@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: discontinuous original gap and eta phase
+## Current milestone: actual complex collapsed-gap witnesses and signed limits
+
+Every original-source neighborhood of zero contains an actual nonzero
+triangular constant potential with a collapsed central periodic gap and
+an exterior Dirichlet root, for every finite p>1. The construction retains
+the original angular domain and normalized psi family.
+
+An explicit sequence entirely in that domain with open central gaps
+converges to the witness. Both original signed phase limits exist, and
+exactly one is zero. This refutes the printed simultaneous-nonvanishing
+assertion with actual source witnesses.
+
+Two modules and three examples supply the construction. The
+[Section 15 audit](coverage/SECTION_15.md) records its precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,006 build jobs, 6,953
+public examples, and a transitive axiom audit of 39,062 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,838 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: discontinuous original gap and eta phase
 
 The actual central gap and the original integral phase exp(i eta) have
 continuity failures within the original open-gap domain, arbitrarily

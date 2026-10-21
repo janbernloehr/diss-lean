@@ -4339,3 +4339,5 @@ import NLS.ZakharovShabat.SourcePeriodicLabelDiscontinuity
 import NLS.ZakharovShabat.SourceAlmostRealLabelDiscontinuity
 import NLS.ZakharovShabat.SourceActionIntegrandCriticalZero
 import NLS.ZakharovShabat.SourceOriginalGapEtaDiscontinuity
+import NLS.ZakharovShabat.SourceTriangularCollapsedWitness
+import NLS.ZakharovShabat.SourceCollapsedOriginalEtaWitness

@@ -64275,3 +64275,60 @@ example {W₀ W : Set (CoeffPair (3/2))}
   H.exists_original_gap_eta_phase_discontinuity (Metric.ball 0 ρ) (Metric.ball_mem_nhds _ hρ)
 
 end NLS.Section15GapEtaDiscontinuityChecks
+
+noncomputable section
+namespace NLS.Section15CollapsedWitnessChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- Actual triangular witnesses occur in every ball at a fractional exponent.
+example (ρ : ℝ) (hρ : 0 < ρ) :
+    ∃ a : ℂ, a ≠ 0 ∧ sourceConstantPotential (p := 3/2) a 0 ∈ Metric.ball 0 ρ ∧
+      canonicalPeriodicGap fractional_finite fractional_lt
+        (periodOnePotential (sourceConstantPotential a 0)) (periodOnePotential_mem _) 0 = 0 ∧
+      canonicalPeriodOneBoundaryRoots fractional_finite fractional_lt .dirichlet
+        (sourceConstantPotential a 0) 0 ≠ 0 := by
+  obtain ⟨a,ha,hball,hL,hR,hμ⟩ := exists_sourceUpperConstant_collapsed_dirichlet_ne_zero
+    fractional_finite fractional_lt (Metric.ball 0 ρ) (Metric.ball_mem_nhds _ hρ)
+  exact ⟨a,ha,hball,by simp only [canonicalPeriodicGap,hL,hR,sub_self],hμ⟩
+
+-- Both literal original phases converge along a sequence entirely in the open-gap domain.
+example {W₀ W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (H : SourceLemma12_12Data (by simp) (by norm_num) W₀ W s) :
+    ∃ φ ∈ sourceDirichletOutsideGap (by simp) (by norm_num) W 0,
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem _) 0 = 0 ∧
+      ∃ u : ℕ → CoeffPair 2,
+        (∀ k, u k ∈ W ∧ canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (u k))
+          (periodOnePotential_mem _) 0 ≠ 0) ∧
+        Tendsto u atTop (𝓝 φ) ∧
+        (∀ sign : ℂ, sign = 1 ∨ sign = -1 →
+          Tendsto (fun k => canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (u k))
+            (periodOnePotential_mem _) 0 *
+            Complex.exp (sign*Complex.I*sourceAngularOriginalEta (by simp) (by norm_num) 0 s (u k)))
+            atTop (𝓝 (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s sign φ))) ∧
+        ((sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s 1 φ = 0 ∧
+          sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s (-1) φ ≠ 0) ∨
+         (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s 1 φ ≠ 0 ∧
+          sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s (-1) φ = 0)) := by
+  obtain ⟨φ,hφ,hg,u,hu,ht,hl,hs⟩ := H.exists_original_collapsed_eta_sequence_limits univ univ_mem
+  exact ⟨φ,hφ.2,hg,u,hu,ht,hl,hs⟩
+
+-- No angular domain or collapsed witness needs to be assumed for the source counterexample.
+example : ∃ W₀ W : Set (CoeffPair 4), ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    SourceLemma12_12Data (by simp) (by norm_num) W₀ W s ∧
+    ¬ (∀ φ ∈ sourceDirichletOutsideGap (by simp) (by norm_num) W 0,
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ)
+        (periodOnePotential_mem _) 0 = 0 →
+      sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s 1 φ ≠ 0 ∧
+      sourceGapWeightedEtaCoordinate (by simp) (by norm_num) 0 s (-1) φ ≠ 0) := by
+  obtain ⟨W₀,_,_,_,W,_,_,_,s,H⟩ := sourceLemma12_12 (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,s,H,H.original_collapsed_both_signed_values_nonzero_false⟩
+
+end NLS.Section15CollapsedWitnessChecks
