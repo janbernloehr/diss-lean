@@ -4291,3 +4291,11 @@ import NLS.ZakharovShabat.SourceWeightedActionHamiltonianDerivative
 import NLS.ZakharovShabat.SourceStandardActionHamiltonian
 import NLS.SequenceSpaces.ActionMassNonextension
 import NLS.SequenceSpaces.RealActionMassNonextension
+import NLS.Dynamics.BohrAlmostPeriodic
+import NLS.Dynamics.PhaseAlmostPeriodic
+import NLS.ZakharovShabat.SourceFlowAlmostPeriodic
+import NLS.ZakharovShabat.SourceOriginalAlmostPeriodic
+import NLS.SequenceSpaces.WeightedPhaseAlmostPeriodic
+import NLS.Dynamics.WeightedRealPhaseFlow
+import NLS.ZakharovShabat.SourceSobolevPhaseFlow
+import NLS.ZakharovShabat.SourceSobolevAlmostPeriodic

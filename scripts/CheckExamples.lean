@@ -63494,3 +63494,82 @@ example : ¬ ContinuousWithinAt (fun a : Coeff ⊤ => ∑' n : ℤ, a n)
 
 
 end NLS.ActionMassNonextensionChecks
+
+noncomputable section
+namespace NLS.AlmostPeriodicChecks
+open Set
+open scoped ENNReal
+
+local instance threeFact : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+/-- Cubically growing frequencies still give common full-norm return times. -/
+example (z : Coeff 3 × Coeff 3) :
+    Dynamics.BohrAlmostPeriodic
+      (fun t : ℝ => Birkhoff.hamiltonianPhaseFlow (fun n : ℤ => (n : ℝ)^3) t z) :=
+  Birkhoff.bohrAlmostPeriodic_hamiltonianPhaseFlow (by simp) _ z
+
+/-- The recurrence is uniform in all time and relatively dense, in the actual norm. -/
+example (φ : ZakharovShabat.realTypeSourceSubmodule 2)
+    (γ : ℝ → ZakharovShabat.realTypeSourceSubmodule 2)
+    (hγ : ZakharovShabat.IsOrdinaryNLSSolutionOn univ φ γ) :
+    ∀ ε > 0, ∃ L > 0, ∀ a : ℝ, ∃ τ ∈ Icc a (a+L),
+      ∀ t : ℝ, ‖γ (t+τ)-γ t‖ < ε := by
+  have h := ZakharovShabat.bohrAlmostPeriodic_of_isOrdinaryNLSSolutionOn_univ
+    (by simp) (by norm_num) le_rfl hγ
+  simpa only [dist_eq_norm] using h.periods
+
+private theorem threeHalves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by simp) (by simp)]
+  norm_num
+local instance threeHalvesFact : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨threeHalves_gt_one.le⟩
+
+/-- Both actual physical solutions exist and recur at a non-Hilbert exponent. -/
+example (φ : ZakharovShabat.realTypeSourceSubmodule (3/2)) :
+    ∃ γ γstar : ℝ → ZakharovShabat.realTypeSourceSubmodule (3/2),
+      ZakharovShabat.IsOrdinaryNLSSolutionOn univ φ γ ∧ Dynamics.BohrAlmostPeriodic γ ∧
+      ZakharovShabat.IsRenormalizedNLSSolutionOn univ φ γstar ∧
+        Dynamics.BohrAlmostPeriodic γstar := by
+  apply ZakharovShabat.exists_original_almostPeriodic_solutions
+  · exact ENNReal.div_ne_top (by norm_num) (by norm_num)
+  · exact threeHalves_gt_one
+  · rw [ENNReal.div_le_iff (by simp) (by simp)]
+    norm_num
+
+end NLS.AlmostPeriodicChecks
+
+noncomputable section
+namespace NLS.SobolevAlmostPeriodicChecks
+open Set
+open scoped ENNReal
+open ZakharovShabat
+
+/-- Arbitrary positive weights retain full-norm phase recurrence. -/
+example (w : Weight) (freq : ℤ → ℝ) (a : WeightedCoeff w 2) :
+    Dynamics.BohrAlmostPeriodic (fun t : ℝ => WeightedCoeff.phaseFlow w freq t a) :=
+  WeightedCoeff.bohrAlmostPeriodic_phaseFlow w (by simp) freq a
+
+/-- Both actual solution curves exist and recur at a fractional Sobolev order. -/
+example (a : weightedRealSourceSubmodule (p := 2)
+    (sourceSobolevSpectralWeight (1/2) (by norm_num))) :
+    ∃ γ γstar : ℝ → weightedRealSourceSubmodule (p := 2)
+        (sourceSobolevSpectralWeight (1/2) (by norm_num)),
+      γ 0 = a ∧ γstar 0 = a ∧ Dynamics.BohrAlmostPeriodic γ ∧ Dynamics.BohrAlmostPeriodic γstar ∧
+      IsOrdinaryNLSSolutionOn univ (originalWeightedRealSource _ a)
+        (fun t => originalWeightedRealSource _ (γ t)) ∧
+      IsRenormalizedNLSSolutionOn univ (originalWeightedRealSource _ a)
+        (fun t => originalWeightedRealSource _ (γstar t)) :=
+  exists_original_sobolev_almostPeriodic_solutions (by simp) (by norm_num) le_rfl _ _ a
+
+/-- The stronger representative of any original solution has the same raw coefficients. -/
+example (a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight 1 (by norm_num)))
+    (γ : ℝ → realTypeSourceSubmodule 2)
+    (hγ : IsOrdinaryNLSSolutionOn univ (originalWeightedRealSource _ a) γ) :
+    ∃ Γ : ℝ → weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight 1 (by norm_num)),
+      Γ 0 = a ∧ (∀ t, originalWeightedRealSource _ (Γ t) = γ t) ∧
+      ∀ ε > 0, ∃ L > 0, ∀ a : ℝ, ∃ τ ∈ Icc a (a+L),
+        ∀ t : ℝ, ‖Γ (t+τ)-Γ t‖ < ε := by
+  obtain ⟨Γ,h0,hrec,he⟩ := exists_sobolev_almostPeriodic_lift_of_isOrdinaryNLSSolutionOn_univ
+    (by simp) (by norm_num) le_rfl 1 (by norm_num) a γ hγ
+  exact ⟨Γ,h0,he,by simpa only [dist_eq_norm] using hrec.periods⟩
+
+end NLS.SobolevAlmostPeriodicChecks

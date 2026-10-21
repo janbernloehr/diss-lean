@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: total action cannot extend continuously to any larger
-ell^q action space, q>1, even relative to the nonnegative cone. Real and
-complex versions include infinity. The main-results introduction audit
-now connects the original theorem statements, the full weighted energy,
-and the established normalization corrections. Formalization remains in progress.
+Latest step: original global ordinary and renormalized NLS solutions for
+1<p<=2 are Bohr almost periodic in the full source norm and every
+nonnegative native Sobolev norm available in the initial data. Uniform
+return times are relatively dense; the stronger representatives recover
+the same original solution coefficientwise. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

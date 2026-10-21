@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Current milestone: total-action nonextension and the main-results audit
+## Current milestone: almost periodicity of original global NLS solutions
+
+Every global ordinary or renormalized NLS solution in the original
+smooth-approximation sense is Bohr almost periodic for 1<p<=2, including
+the Hilbert endpoint. Both global solution curves are constructed for
+every source in this range; an atlas is not assumed as an extra input.
+
+The conclusion uses the full original source norm: for each epsilon>0,
+every sufficiently long time interval contains a shift whose error is
+less than epsilon uniformly for all real times. A compact phase orbit
+gives these common shifts for both components, even with unbounded
+frequencies. Uniform continuity on that compact set transfers the result
+through the actual Birkhoff inverse with the Hamiltonian time orientation.
+
+The same original solutions also have Bohr almost-periodic representatives
+in the native Sobolev norm at every nonnegative real regularity. The
+source-frequency identity gives exactly the weight (1+|n|)^s. Forgetting
+this weight recovers the same original solution coefficientwise, and
+uniqueness gives the stronger representative for any global solution.
+
+Eight modules and six public examples cover unbounded cubic frequencies,
+explicit uniform-return quantifiers, non-Hilbert source exponents,
+arbitrary positive weights, fractional Sobolev regularity, and equality
+with the original solution. See the [introduction audit](coverage/INTRODUCTION.md).
+The remaining introductory background, precise 2014 comparison and
+G.2 norm qualification are still open.
+
+Validation: `./scripts/check.sh` passes with 7,964 build jobs, 6,885
+public examples, and a transitive axiom audit of 38,524 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,682 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: total-action nonextension and the main-results audit
 
 Total action has no extension continuous at zero relative to the
 nonnegative ell^q cone for any q>1, including infinity. The theorem holds

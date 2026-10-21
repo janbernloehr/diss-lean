@@ -3,9 +3,58 @@
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
 interfaces below are implemented. The wider introductory background on
-pp. 9–10 remains a separate audit; this document does not certify the
-entire introduction or dissertation. The precise 2014 edition comparison
+pp. 9–10 remains a separate audit, apart from the almost-periodicity
+result documented below. This document does not certify the entire
+introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
+
+## Almost periodicity, printed p. 9
+
+The original ordinary and renormalized global solutions are Bohr almost
+periodic in the full source norm for 1<p<=2. For each epsilon>0 there is
+L>0 such that every interval [a,a+L] contains a shift tau satisfying
+norm(gamma(t+tau)-gamma(t))<epsilon for every real t. This includes the
+Hilbert endpoint and does not merely assert compact orbit closure or
+coordinatewise recurrence. Periodic and quasiperiodic orbits also satisfy
+this recurrence conclusion; no disjoint classification is asserted.
+
+[`BohrAlmostPeriodic.lean`](../NLS/Dynamics/BohrAlmostPeriodic.lean)
+proves the general finite-net argument for continuous isometric orbits
+with totally bounded range, and transport through a continuous map on a
+compact containing set.
+[`PhaseAlmostPeriodic.lean`](../NLS/Dynamics/PhaseAlmostPeriodic.lean)
+supplies a compact coefficient majorant box, common return times for
+both Birkhoff components, and arbitrary unbounded real frequencies at
+every finite sequence exponent. It covers the Hamiltonian signs (-,+).
+
+[`SourceFlowAlmostPeriodic.lean`](../NLS/ZakharovShabat/SourceFlowAlmostPeriodic.lean)
+transfers recurrence through the actual global Birkhoff inverse.
+[`SourceOriginalAlmostPeriodic.lean`](../NLS/ZakharovShabat/SourceOriginalAlmostPeriodic.lean)
+constructs both original solution curves and proves recurrence for every
+global solution in the existing all-smooth-approximation definition.
+The main entry points are `exists_original_almostPeriodic_solutions`,
+`bohrAlmostPeriodic_of_isOrdinaryNLSSolutionOn_univ`, and
+`bohrAlmostPeriodic_of_isRenormalizedNLSSolutionOn_univ`.
+
+The stronger result uses the same original solution at every nonnegative
+real Sobolev order. [Weighted sequence recurrence](../NLS/SequenceSpaces/WeightedPhaseAlmostPeriodic.lean)
+holds for arbitrary positive weights. [Weighted real phase rotation](../NLS/Dynamics/WeightedRealPhaseFlow.lean)
+uses the actual lp pair norm and commutes exactly with forgetting weights.
+[The native Sobolev lift](../NLS/ZakharovShabat/SourceSobolevPhaseFlow.lean)
+uses the original global weighted Birkhoff inverse, retains the initial
+weighted source, and recovers the unweighted source phase curve exactly.
+
+[`SourceSobolevAlmostPeriodic.lean`](../NLS/ZakharovShabat/SourceSobolevAlmostPeriodic.lean)
+constructs both original global solution representatives in the stronger
+norm. Its two `exists_sobolev_almostPeriodic_lift_of_is...SolutionOn_univ`
+theorems identify the same stronger representative for any original
+global ordinary or renormalized solution. The exact source-frequency
+identity `sourceFrequencyWeight_sobolev` gives the weight (1+|n|)^s,
+without an unmentioned doubling factor. Both the native norm and all raw
+coefficients are retained.
+
+These results cover 1<p<=2 and every nonnegative real regularity. They do
+not assert global solutions above p=2 or phase norm continuity at p=infinity.
 
 ## Theorem 0.1 and the original Sobolev norms
 
