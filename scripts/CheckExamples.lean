@@ -65076,3 +65076,39 @@ example (u : ℤ → ℂ) (h : Multipliable (fun n => 1+‖u n‖)) :
   tprod_one_add_ne_zero_iff u ((multipliable_one_add_norm_iff u).mp h)
 
 end NLS.AppendixDAbsoluteProductsChecks
+
+noncomputable section
+namespace NLS.Section3RelativeBoundChecks
+open NLS.ZakharovShabat
+
+-- Odd, asymmetric complex Fourier modes are allowed at the source endpoint p=1.
+example :
+    let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm
+      (lp.single 1 7 (1:ℂ),lp.single 1 (-5) Complex.I)
+    ∃ C : ℝ, 0 < C ∧ ∀ f : WeightedCoeffPair (Weight.sobolev 1) 1,
+      ‖sourceOperator (by simp) φ f-sourceOperator (by simp) 0 f‖ ≤
+        (1/100)*‖sourceOperator (by simp) 0 f‖+C*‖sourceDomainInclusion f‖ := by
+  dsimp only
+  exact exists_source_potential_relative_bound (by simp) _ _ (by norm_num)
+
+local instance : Fact ((1:ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+
+-- At a fractional exponent, one constant precedes every potential in the norm ball.
+example : ∃ C : ℝ, 0 < C ∧ ∀ φ : CoeffPair (ENNReal.ofReal (3/2:ℝ)), ‖φ‖ ≤ 5 →
+    ∀ f : WeightedCoeffPair (Weight.sobolev 1) (ENNReal.ofReal (3/2:ℝ)),
+      ‖sourceOperator (by simp) φ f-sourceOperator (by simp) 0 f‖ ≤
+        (1/100)*‖sourceOperator (by simp) 0 f‖+C*‖sourceDomainInclusion f‖ :=
+  exists_uniform_source_potential_relative_bound (by simp) 5 (1/100) (by norm_num)
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Both graph estimates hold on the entire original one-derivative domain.
+example : ∃ C : ℝ, 0 < C ∧ ∀ φ : CoeffPair 4, ‖φ‖ ≤ 3 →
+    ∀ f : WeightedCoeffPair (Weight.sobolev 1) 4,
+      (‖sourceOperator (by simp) φ f‖ ≤
+        2*‖sourceOperator (by simp) 0 f‖+C*‖sourceDomainInclusion f‖) ∧
+      (‖sourceOperator (by simp) 0 f‖ ≤
+        2*‖sourceOperator (by simp) φ f‖+C*‖sourceDomainInclusion f‖) :=
+  exists_uniform_source_graph_comparison (by simp) 3
+
+end NLS.Section3RelativeBoundChecks

@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: absolute convergence of infinite products in Appendix D
+## Current milestone: infinitesimal relative bounds in Section 3
+
+The opening relative-bound assertion of Section 3 is proved in the
+original finite-exponent source norms, including p=1. For each bounded
+potential set and each positive epsilon, one constant C bounds the potential
+term by epsilon times the free-operator norm plus C times the base norm.
+
+The exact free resolvent identity gives the estimate on every original
+one-derivative domain vector. Both graph directions have uniform bounds.
+Three examples check odd complex modes, a fractional exponent and the
+original graph norms. The [Section 3 audit](coverage/SECTION_3.md) records
+the scope alongside the separately proved closedness result.
+
+Validation: `./scripts/check.sh` passes with 8,051 build jobs, 7,016
+public examples, and a transitive axiom audit of 39,526 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,976 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: absolute convergence of infinite products in Appendix D
 
 The introductory absolute-convergence assertion of Appendix D is proved
 with its literal ordered-product definition. Absolute convergence is

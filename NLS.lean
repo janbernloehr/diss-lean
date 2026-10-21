@@ -4384,3 +4384,4 @@ import NLS.Fourier.SparseConvolutionGrowth
 import NLS.Fourier.PeriodicConvolutionGrowthObstruction
 import NLS.Fourier.PeriodicSymmetricProductExample
 import NLS.ComplexAnalysis.AbsoluteProductConvergence
+import NLS.ZakharovShabat.SourcePotentialRelativeBound

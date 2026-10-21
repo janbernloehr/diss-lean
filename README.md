@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the introductory infinite-product criterion in Appendix D
-is proved with actual ordered limits. Absolute convergence implies complex
-convergence, including zero factors, and is equivalent to an l1 perturbation.
+Latest step: the infinitesimal relative bound in the opening of Section 3
+is proved in the original source norms, uniformly on bounded potential sets.
+The actual free and perturbed graph norms satisfy both comparison bounds.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

@@ -308,3 +308,38 @@ height issue, remain unchanged.
 
 Section 4, equation (1.6) and the AKNS representation of the classical
 Dirichlet/Neumann domains, are audited in [SECTION_4.md](SECTION_4.md).
+
+## Infinitesimal relative bound in the opening paragraph
+
+The unnumbered paragraph on p.23 states that potential multiplication has
+arbitrarily small relative bound with respect to the free differential
+operator. Closedness of the full operator already has a separate proof
+through an actual bounded spectral inverse. The relative-bound assertion
+now has a direct public statement as well.
+
+[`SourcePotentialRelativeBound.lean`](../NLS/ZakharovShabat/SourcePotentialRelativeBound.lean)
+proves that for every finite Banach exponent, every potential norm bound B,
+and every epsilon>0, one positive constant C works for all original
+period-two potentials of norm at most B and every original one-derivative
+domain vector f:
+
+    norm((L(phi)-L(0))f) <= epsilon*norm(L(0)f) + C*norm(f).
+
+Both output norms and the base norm use the original component-sum
+convention. The proof makes the potential composed with a sufficiently
+high free resolvent small, then applies the actual free inverse identity
+to the domain vector. Transport from the internal maximum norm retains
+its exact factor 2^(1/p), absorbed by choosing the smaller relative
+coefficient first. No finite-gap, real-type or even-support premise is
+imposed.
+
+A per-potential corollary gives relative bound zero. Taking epsilon=1/2
+also gives both graph comparisons with coefficient two, uniformly on
+bounded potential sets. This formalizes the source proof paragraph by
+a resolvent argument; it does not assert an unproved decomposition into
+a prescribed analytic part and a remainder of a specified size.
+
+Three public examples check an asymmetric pair of odd complex modes at
+p=1, a uniform original-norm ball at p=3/2, and both graph directions at
+p=4. The full repository verification results are recorded in the
+implementation status.
