@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: full-line NLS dilation and critical homogeneous energy
+## Current milestone: Galilean symmetry on original distributions
+
+The actual scalar NLS equation is covariant under the source boost
+exp(i*(nu*x-nu^2*t))*u(t,x-2*nu*t). The proof retains the original cubic,
+actual time derivative, and second spatial derivative, with explicit
+classical differentiability assumptions.
+
+Physical modulation and translation act on every tempered distribution.
+Their actual Fourier transform has the exact shift nu/(2*pi) and phase.
+For every p>=1, including infinity, Fourier-Lebesgue membership is
+preserved in both directions. The unique Fourier Lp representative
+retains exactly the same norm, without assuming that the original
+physical distribution is an integrable function.
+
+Five modules and seven public examples cover the PDE, function and
+distribution formulas, exact norm invariance, and a singular Dirac
+example. See the [introduction audit](coverage/INTRODUCTION.md).
+The completed homogeneous-space identification, precise 2014 comparison,
+and G.2 norm qualification remain separate.
+
+Validation: `./scripts/check.sh` passes with 7,973 build jobs, 6,897
+public examples, and a transitive axiom audit of 38,639 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,709 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: full-line NLS dilation and critical homogeneous energy
 
 The actual physical scalar NLS equation is preserved by
 u(t,x) -> c*u(c^2*t,c*x). The proof retains the original cubic and actual

@@ -4,7 +4,8 @@ This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
 interfaces below are implemented. The wider introductory background on
 pp. 9–10 remains a separate audit, apart from the almost-periodicity, critical
-Sobolev inclusion, and explicitly scoped dilation results documented below. This document does not certify the entire
+Sobolev inclusion, explicitly scoped dilation, and full distributional
+Galilean results documented below. This document does not certify the entire
 introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
@@ -76,7 +77,7 @@ norm with an unnormalized physical interval norm.
 
 The subsequent full-line dilation and Galilean statements are separate
 background claims. Dilation is covered in the next section in its stated
-energy scope; Galilean symmetry remains a separate integration step.
+energy scope; the full distributional Galilean result follows it.
 
 ## Full-line dilation and critical homogeneous energy, printed p. 10
 
@@ -98,6 +99,34 @@ statement does not silently replace a general distribution by a default
 Bochner transform: a completed homogeneous-space identification remains
 outside this step. The usual inhomogeneous Sobolev norm has a different
 scaling formula. These qualifications remain part of the completion audit.
+
+## Galilean symmetry on the full line, printed p. 10
+
+[`ScalarNLSGalilean.lean`](../NLS/ZakharovShabat/ScalarNLSGalilean.lean)
+proves the literal source boost exp(i*(nu*x-nu^2*t))*u(t,x-2*nu*t)
+preserves the actual scalar NLS equation. The proof uses joint classical
+differentiability and differentiability of the first spatial derivative.
+It retains the original cubic, moving-frame chain rule, and second
+derivative. This PDE theorem has classical regularity assumptions.
+
+[`LineGalileanFourier.lean`](../NLS/Fourier/LineGalileanFourier.lean)
+proves the function formula with the exact Fourier normalization:
+F_boost(xi)=exp(i*(nu^2*t-4*pi*nu*t*xi))*F(xi-nu/(2*pi)).
+[`LineAngularSchwartz.lean`](../NLS/Fourier/LineAngularSchwartz.lean)
+constructs the actual Schwartz modulation and translation operators.
+[`LineTemperedGalilean.lean`](../NLS/Fourier/LineTemperedGalilean.lean)
+then proves covariance of the actual Fourier transform on all tempered
+distributions, using physical translation and smooth distribution
+multiplication. The opposite boost is the inverse.
+
+[`LineFourierLebesgueGalilean.lean`](../NLS/Fourier/LineFourierLebesgueGalilean.lean)
+defines membership by the original distribution's actual Fourier
+transform having an Lp representative. For every p>=1, including infinity,
+`isLineFourierLebesgue_galilean_iff` preserves membership in both directions.
+`exists_lineFourierLebesgue_galilean_representative` retains the exact norm
+of that unique representative. No physical-space integrability assumption
+is imposed. Public examples include a boosted Dirac mass in FL-infinity
+and its exact action on a Schwartz test.
 
 ## Theorem 0.1 and the original Sobolev norms
 

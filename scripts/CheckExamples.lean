@@ -63627,3 +63627,80 @@ example {c : ℝ} (hc : 0 < c) (f : ℝ → ℂ)
   exact ⟨rfl,hf⟩
 
 end NLS.ScalarNLSScalingChecks
+
+noncomputable section
+namespace NLS.GalileanChecks
+open MeasureTheory
+open scoped ENNReal FourierTransform ContDiff
+
+-- The actual Fourier transform of an integrable profile has the physical boost formula.
+example (ν t ξ : ℝ) (f : Lp ℂ 1 (volume : Measure ℝ)) :
+    𝓕 (Fourier.lineGalileanSlice ν t (fun x : ℝ => f x)) ξ =
+      Complex.exp ((ν^2*t-4*Real.pi*ν*t*ξ:ℝ)*Complex.I)*
+        𝓕 (fun x : ℝ => f x) (ξ-ν/(2*Real.pi)) :=
+  Fourier.fourier_lineGalileanSlice ν t _ ξ
+
+-- All extended Fourier Lp seminorms, including infinity, retain their values and membership.
+example (ν t : ℝ) (f : ℝ → ℂ) (p : ℝ≥0∞) (hf : MemLp (𝓕 f) p volume) :
+    eLpNorm (𝓕 (Fourier.lineGalileanSlice ν t f)) p volume = eLpNorm (𝓕 f) p volume ∧
+      MemLp (𝓕 (Fourier.lineGalileanSlice ν t f)) p volume :=
+  ⟨Fourier.eLpNorm_fourier_lineGalileanSlice ν t f p,
+    Fourier.memLp_fourier_lineGalileanSlice ν t f p hf⟩
+
+-- The literal source phase and transport speed preserve the original physical equation.
+example (U : ℝ × ℝ → ℂ) (hU : Differentiable ℝ U)
+    (hxx : ∀ t : ℝ, Differentiable ℝ (deriv (fun y : ℝ => U (t,y))))
+    (hUt : ∀ t x : ℝ, HasDerivAt (fun τ : ℝ => U (τ,x))
+      (ZakharovShabat.scalarClassicalNLSVectorField (fun y : ℝ => U (t,y)) x) t)
+    (ν t x : ℝ) :
+    HasDerivAt (fun τ : ℝ => Complex.exp ((ν*x-ν^2*τ:ℝ)*Complex.I)*U (τ,x-2*ν*τ))
+      (ZakharovShabat.scalarClassicalNLSVectorField
+        (fun y : ℝ => Complex.exp ((ν*y-ν^2*t:ℝ)*Complex.I)*U (t,y-2*ν*t)) x) t := by
+  have h := ZakharovShabat.hasDerivAt_scalarNLS_galilean U hU hxx hUt ν t x
+  unfold Fourier.lineGalileanSlice Fourier.lineModulationTranslation at h
+  simpa only [sub_eq_add_neg,neg_mul] using h
+
+end NLS.GalileanChecks
+
+noncomputable section
+namespace NLS.TemperedGalileanChecks
+open MeasureTheory
+open scoped ENNReal SchwartzMap FourierTransform ContDiff
+
+-- The actual full-line Fourier-Lebesgue property is invariant in both directions.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (ν t : ℝ) (T : 𝓢'(ℝ,ℂ)) :
+    Fourier.IsLineFourierLebesgue p (Fourier.lineTemperedGalilean ν t T) ↔
+      Fourier.IsLineFourierLebesgue p T :=
+  Fourier.isLineFourierLebesgue_galilean_iff ν t T
+
+-- At infinity, the same original distribution retains the exact Fourier norm.
+example (ν t : ℝ) (T : 𝓢'(ℝ,ℂ)) (f : Lp ℂ ⊤ (volume : Measure ℝ))
+    (hf : 𝓕 T = (f : 𝓢'(ℝ,ℂ))) :
+    ∃ g : Lp ℂ ⊤ (volume : Measure ℝ),
+      𝓕 (Fourier.lineTemperedGalilean ν t T) = (g : 𝓢'(ℝ,ℂ)) ∧ ‖g‖ = ‖f‖ :=
+  Fourier.exists_lineFourierLebesgue_galilean_representative ν t T f hf
+
+-- A Dirac mass is a genuinely singular original distribution in full-line FL-infinity.
+example (ν t : ℝ) :
+    Fourier.IsLineFourierLebesgue ⊤
+      (Fourier.lineTemperedGalilean ν t (TemperedDistribution.delta (0:ℝ))) := by
+  apply Fourier.IsLineFourierLebesgue.galilean
+  let hf : MemLp (fun _ : ℝ => (1:ℂ)) ⊤ volume := memLp_top_const 1
+  refine ⟨hf.toLp _,?_⟩
+  rw [TemperedDistribution.fourier_delta_zero]
+  ext g
+  change (∫ x : ℝ, g x) = _
+  rw [Lp.toTemperedDistribution_apply]
+  apply MeasureTheory.integral_congr_ae
+  filter_upwards [hf.coeFn_toLp] with x hx
+  rw [hx,smul_eq_mul,mul_one]
+
+-- The transformed Dirac mass acts on the test at the actual translated point.
+example (ν t : ℝ) (g : 𝓢(ℝ,ℂ)) :
+    Fourier.lineTemperedGalilean ν t (TemperedDistribution.delta (0:ℝ)) g =
+      Complex.exp ((ν^2*t:ℝ)*Complex.I)*g (2*ν*t) := by
+  rw [Fourier.lineTemperedGalilean_apply,TemperedDistribution.delta_apply,
+    Fourier.lineSchwartzModulationTranslation_apply]
+  simp only [Fourier.lineModulationTranslation,mul_zero,zero_add,zero_sub,neg_neg]
+
+end NLS.TemperedGalileanChecks

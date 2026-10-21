@@ -4303,3 +4303,8 @@ import NLS.SequenceSpaces.CriticalSobolevInclusion
 import NLS.Fourier.PeriodicCriticalSobolevInclusion
 import NLS.ZakharovShabat.ScalarNLSScaling
 import NLS.Fourier.HomogeneousNLSScaling
+import NLS.Fourier.LineGalileanFourier
+import NLS.ZakharovShabat.ScalarNLSGalilean
+import NLS.Fourier.LineAngularSchwartz
+import NLS.Fourier.LineTemperedGalilean
+import NLS.Fourier.LineFourierLebesgueGalilean

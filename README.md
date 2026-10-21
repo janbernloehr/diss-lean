@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the physical full-line NLS dilation preserves the equation,
-and its squared homogeneous Fourier energy scales exactly by c^(2s+1).
-The critical energy at s=-1/2 is invariant. The completed homogeneous-space
-identification remains separate. Formalization remains in progress.
+Latest step: Galilean boosts preserve the actual classical NLS equation
+and every full-line Fourier-Lebesgue space for p>=1, including infinity.
+The distributional result retains the unique Fourier representative and
+its exact norm. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
