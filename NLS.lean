@@ -4308,3 +4308,7 @@ import NLS.ZakharovShabat.ScalarNLSGalilean
 import NLS.Fourier.LineAngularSchwartz
 import NLS.Fourier.LineTemperedGalilean
 import NLS.Fourier.LineFourierLebesgueGalilean
+import NLS.Fourier.LineTemperedNLSScaling
+import NLS.Fourier.CriticalFrequencyMeasure
+import NLS.Fourier.CriticalHomogeneousSobolev
+import NLS.Fourier.CriticalHomogeneousCharacterization

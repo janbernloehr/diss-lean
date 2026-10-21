@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: Galilean symmetry on original distributions
+## Current milestone: complete critical homogeneous distribution space
+
+The critical space is realized as L2 with spectral measure |xi| dxi and
+embedded continuously and injectively into actual tempered distributions.
+Its actual Fourier density is |xi| times the L2 representative; its squared
+norm is exactly the homogeneous negative-half Fourier energy.
+
+A converse theorem identifies precisely every original distribution whose
+Fourier transform has a measurable density of finite critical energy.
+Physical NLS dilation acts as a surjective complex linear isometry of this
+complete space, with the same original distribution and exactly the same
+norm. Membership is preserved in both directions.
+
+Four modules and six examples extend the earlier Fourier-integral energy
+result to the complete critical distribution space. See the
+[introduction audit](coverage/INTRODUCTION.md). The norm is homogeneous;
+the inhomogeneous Sobolev norm has a different scaling law. The precise
+2014 comparison, G.2 norm qualification, and remaining source audit are
+still separate work.
+
+Validation: `./scripts/check.sh` passes with 7,977 build jobs, 6,903
+public examples, and a transitive axiom audit of 38,733 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,720 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: Galilean symmetry on original distributions
 
 The actual scalar NLS equation is covariant under the source boost
 exp(i*(nu*x-nu^2*t))*u(t,x-2*nu*t). The proof retains the original cubic,

@@ -63704,3 +63704,54 @@ example (ν t : ℝ) (g : 𝓢(ℝ,ℂ)) :
   simp only [Fourier.lineModulationTranslation,mul_zero,zero_add,zero_sub,neg_neg]
 
 end NLS.TemperedGalileanChecks
+
+noncomputable section
+namespace NLS.CriticalHomogeneousChecks
+open MeasureTheory
+open scoped ENNReal SchwartzMap FourierTransform
+
+-- The critical space is complete and its norm is the literal homogeneous Fourier energy.
+example (f : Fourier.CriticalHomogeneousSobolev) :
+    CompleteSpace Fourier.CriticalHomogeneousSobolev ∧
+      Fourier.homogeneousSpectralEnergy (-(1:ℝ)/2) (fun ξ => (‖ξ‖:ℂ)*f ξ) =
+        ENNReal.ofReal (‖f‖^2) :=
+  ⟨Fourier.criticalHomogeneousSobolev_complete,
+    Fourier.homogeneousSpectralEnergy_criticalDensity f⟩
+
+-- The actual Fourier transform acts by integration against that same density.
+example (f : Fourier.CriticalHomogeneousSobolev) (g : 𝓢(ℝ,ℂ)) :
+    𝓕 (Fourier.criticalHomogeneousSobolevDistribution f) g =
+      ∫ ξ : ℝ, g ξ*((‖ξ‖:ℂ)*f ξ) :=
+  Fourier.criticalHomogeneousSobolev_fourier_apply f g
+
+-- Physical dilation and the surjective linear isometry describe the same distribution.
+example (c : ℝ) (hc : 0 < c) (f : Fourier.CriticalHomogeneousSobolev) :
+    ‖Fourier.criticalHomogeneousSobolevScalingEquiv c hc f‖ = ‖f‖ ∧
+      Fourier.criticalHomogeneousSobolevDistribution
+        (Fourier.criticalHomogeneousSobolevScalingEquiv c hc f) =
+      Fourier.lineTemperedNLSScaling c hc (Fourier.criticalHomogeneousSobolevDistribution f) :=
+  ⟨(Fourier.criticalHomogeneousSobolevScalingEquiv c hc).norm_map f,
+    Fourier.criticalHomogeneousSobolevDistribution_scaling c hc f⟩
+
+-- The original distribution's membership is preserved in both directions.
+example (c : ℝ) (hc : 0 < c) (T : 𝓢'(ℝ,ℂ)) :
+    Fourier.IsCriticalHomogeneousSobolev (Fourier.lineTemperedNLSScaling c hc T) ↔
+      Fourier.IsCriticalHomogeneousSobolev T :=
+  Fourier.isCriticalHomogeneousSobolev_scaling_iff c hc T
+
+-- Any measurable finite-energy density has a representative with exactly matching norm.
+example (F : ℝ → ℂ) (hF : AEStronglyMeasurable F volume)
+    (hE : Fourier.homogeneousSpectralEnergy (-(1:ℝ)/2) F < ⊤) :
+    ∃ f : Fourier.CriticalHomogeneousSobolev,
+      (fun ξ => (‖ξ‖:ℂ)*f ξ) =ᵐ[volume] F ∧
+      Fourier.homogeneousSpectralEnergy (-(1:ℝ)/2) F = ENNReal.ofReal (‖f‖^2) :=
+  Fourier.exists_criticalHomogeneousSobolev_of_finite_energy F hF hE
+
+-- A distribution with the usual finite-energy Fourier-density description belongs to the complete model.
+example (T : 𝓢'(ℝ,ℂ)) (F : ℝ → ℂ) (hF : AEStronglyMeasurable F volume)
+    (hE : Fourier.homogeneousSpectralEnergy (-(1:ℝ)/2) F < ⊤)
+    (hT : ∀ g : 𝓢(ℝ,ℂ), 𝓕 T g = ∫ ξ : ℝ, g ξ*F ξ) :
+    Fourier.IsCriticalHomogeneousSobolev T :=
+  (Fourier.isCriticalHomogeneousSobolev_iff_fourier_density T).mpr ⟨F,hF,hE,hT⟩
+
+end NLS.CriticalHomogeneousChecks

@@ -94,11 +94,37 @@ nonnegative integral of |xi|^(2s)*|F(xi)|^2. The exact factor is c^(2s+1),
 so `homogeneousCriticalEnergy_scalarNLS_dilation` gives equality at s=-1/2,
 including preservation of finite energy and of infinite values.
 
-The physical-profile energy uses the actual Fourier integral. This
-statement does not silently replace a general distribution by a default
-Bochner transform: a completed homogeneous-space identification remains
-outside this step. The usual inhomogeneous Sobolev norm has a different
-scaling formula. These qualifications remain part of the completion audit.
+The physical-profile energy uses the actual Fourier integral. The next
+section supplies a complete distributional realization and its converse
+Fourier-density characterization. The usual inhomogeneous Sobolev norm
+has a different scaling formula; the exact invariance here is homogeneous.
+
+## The complete critical homogeneous space, printed p. 10
+
+[`LineTemperedNLSScaling.lean`](../NLS/Fourier/LineTemperedNLSScaling.lean)
+constructs the actual physical action c*T(c*x) on tempered distributions
+for c>0, with the inverse Jacobian retained. Its actual Fourier transform
+is the inverse frequency dilation, and reciprocal scaling recovers T.
+
+[`CriticalFrequencyMeasure.lean`](../NLS/Fourier/CriticalFrequencyMeasure.lean)
+proves local finiteness, temperate growth, and the exact quadratic dilation
+Jacobian for the measure |xi| dxi.
+[`CriticalHomogeneousSobolev.lean`](../NLS/Fourier/CriticalHomogeneousSobolev.lean)
+uses L2 of this measure as a complete normed model. The actual inverse
+Fourier transform embeds it continuously and injectively into tempered
+distributions. Its Fourier density is |xi|*f(xi), and its norm squared is
+exactly the integral of |xi|^(-1)*|F(xi)|^2. The physical NLS dilation is a
+surjective complex linear isometry of this same space; the distributional
+identity and exact norm are both retained.
+
+[`CriticalHomogeneousCharacterization.lean`](../NLS/Fourier/CriticalHomogeneousCharacterization.lean)
+proves the converse: every measurable Fourier density of finite critical
+energy has a unique representative in the model, with exactly matching
+norm. `isCriticalHomogeneousSobolev_iff_fourier_density` characterizes the
+original tempered distribution by its actual Fourier transform acting on
+Schwartz tests. Thus the complete realization agrees with the finite-energy
+Fourier-density definition. This does not assert a separate completion
+construction from a selected smooth core.
 
 ## Galilean symmetry on the full line, printed p. 10
 
