@@ -4336,3 +4336,4 @@ import NLS.ZakharovShabat.ConstantPeriodicSpectrum
 import NLS.ZakharovShabat.SourceConstantPeriodicSpectrum
 import NLS.ZakharovShabat.SourceConstantCentralPair
 import NLS.ZakharovShabat.SourcePeriodicLabelDiscontinuity
+import NLS.ZakharovShabat.SourceAlmostRealLabelDiscontinuity

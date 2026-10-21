@@ -64136,3 +64136,54 @@ example : (1 : ℂ) ∈ periodicSpectrum (p := 2) (by simp)
   exact ⟨0,by norm_num [Complex.I_sq]⟩
 
 end NLS.Section8LexicographicDiscontinuityChecks
+
+noncomputable section
+namespace NLS.Section10LabelDiscontinuityChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- The common fractional-exponent domain retains every Lemma 10.2 field.
+example : ∃ W : Set (CoeffPair (3/2)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (3/2) ⊆ W ∧ SourceLemma10_2Data fractional_finite fractional_lt W ∧
+    ¬ContinuousOn (fun ψ : CoeffPair (3/2) =>
+      canonicalPeriodicLeft fractional_finite fractional_lt
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) W ∧
+    ¬ContinuousOn (fun ψ : CoeffPair (3/2) =>
+      canonicalPeriodicRight fractional_finite fractional_lt
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) W :=
+  sourceLemma10_2_with_discontinuous_labels fractional_finite fractional_lt
+
+-- The result also applies to any independently chosen open neighborhood of the real locus.
+example (W : Set (CoeffPair 2)) (hW : IsOpen W) (hreal : realTypeSourceLocus 2 ⊆ W) :
+    ¬ContinuousOn (fun ψ : CoeffPair 2 =>
+      canonicalPeriodicLeft (by simp) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) W ∧
+    ¬ContinuousOn (fun ψ : CoeffPair 2 =>
+      canonicalPeriodicRight (by simp) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) W := by
+  apply sourcePeriodicLabels_not_continuousOn (by simp) (by norm_num)
+  exact hW.mem_nhds (hreal (by simp [realTypeSourceLocus]))
+
+-- Openness is not required: both labels fail continuity within any positive closed source ball.
+example (ρ : ℝ) (hρ : 0 < ρ) :
+    ∃ r : ℝ, 0 < r ∧ sourceConstantPotential (p := 4) (r : ℂ) (-r) ∈
+        interior (Metric.closedBall 0 ρ) ∧
+      ¬ContinuousWithinAt (fun ψ : CoeffPair 4 =>
+        canonicalPeriodicLeft (by simp) (by norm_num)
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)
+        (Metric.closedBall 0 ρ) (sourceConstantPotential (p := 4) (r : ℂ) (-r)) ∧
+      ¬ContinuousWithinAt (fun ψ : CoeffPair 4 =>
+        canonicalPeriodicRight (by simp) (by norm_num)
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)
+        (Metric.closedBall 0 ρ) (sourceConstantPotential (p := 4) (r : ℂ) (-r)) :=
+  exists_sourcePeriodicLabels_not_continuousWithinAt (by simp) (by norm_num)
+    (Metric.closedBall 0 ρ) (Metric.closedBall_mem_nhds _ hρ)
+
+end NLS.Section10LabelDiscontinuityChecks

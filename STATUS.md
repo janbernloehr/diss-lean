@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: discontinuity of complex periodic eigenvalue labels
+## Current milestone: discontinuous periodic labels on the almost-real domain
+
+Both actual central periodic endpoint maps fail continuity on every
+original-source neighborhood of zero, for every finite p>1. The witness
+lies in its interior and retains both failures of continuity within the
+chosen neighborhood, even when the neighborhood itself is not open.
+
+The same common domain from Lemma 10.2 retains all its isolation,
+simplicity, analytic symmetric coordinates, and uniform sequence
+estimates. Three examples cover p=3/2, an independently chosen domain
+at p=2, and closed source balls at p=4.
+
+The [Section 10 audit](coverage/SECTION_10.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,002 build jobs, 6,946
+public examples, and a transitive axiom audit of 39,028 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,814 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: discontinuity of complex periodic eigenvalue labels
 
 For every finite p>1, both actual canonical central endpoint maps have
 constant complex source discontinuities in every neighborhood of zero.

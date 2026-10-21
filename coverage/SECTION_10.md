@@ -217,9 +217,9 @@ boundary operator, using the characteristic's analytic order.
 `.critical_order` proves analytic order one for the actual derivative
 of the discriminant at each canonical critical point. These statements
 hold for every ψ∈W, not just real-type sources, and include central and
-negative indices. The assertion that lexicographically ordered periodic
-labels can be discontinuous is not supplied as a formal counterexample
-by this milestone.
+negative indices. The individual periodic-label discontinuities are now proved on
+this same domain in the follow-up below, while these symmetric and
+simple-root analytic properties remain unchanged.
 
 ## Literal half-exponent and locally uniform sequences
 
@@ -1438,3 +1438,33 @@ whole remains incomplete, and the earlier Section 10 source corrections
 and counterexamples are retained.
 
 Validation: `./scripts/check.sh` passed (6,927 build jobs, the complete public example suite, and the axiom audit of 32,249 NLS declarations). The build retains 21 existing warnings; the five new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Individual labels on the same almost-real domain, printed p. 55
+
+The unnumbered paragraph before Lemma 10.2 states that individual periodic
+eigenvalue labels need not be continuous on the almost-real domain. This
+is now proved for the actual central pair in
+[SourceAlmostRealLabelDiscontinuity.lean](../NLS/ZakharovShabat/SourceAlmostRealLabelDiscontinuity.lean),
+using the original-source witnesses from the [Section 8 audit](SECTION_8.md).
+
+For every finite p>1 and every source neighborhood V of zero,
+`exists_sourcePeriodicLabels_not_continuousWithinAt` gives a positive r
+such that the constant source (r,-r) lies in the interior of V and both
+central endpoint labels fail continuity within V there. The proof chooses
+the existing witness inside that interior. Since V is a neighborhood of
+the witness, continuity within V would imply the already refuted ambient
+continuity. Openness of V itself is unnecessary.
+
+`sourcePeriodicLabels_not_continuousOn` consequently rules out continuity
+of either endpoint map on V. Applying it to the original domain supplied
+by `sourceLemma10_2` gives `sourceLemma10_2_with_discontinuous_labels`.
+The same W retains its openness, connectedness, entire real-type locus,
+isolation data, all analytic symmetric coordinates and simple ordinary
+roots, and the original locally uniform sequence estimates. No further
+domain restriction is needed.
+
+Three public examples cover the full common-domain package at p=3/2, an
+arbitrary open neighborhood of the real locus at p=2, and a positive
+closed source ball at p=4. These are existence statements for
+discontinuities of the central labels. They do not assert discontinuity
+at zero, at every source, or for every signed spectral index.

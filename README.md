@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both canonical central eigenvalue labels have discontinuities
-at constant complex sources arbitrarily close to zero. The proof uses the
-actual source spectrum and original norm. Formalization remains in progress.
+Latest step: both central periodic labels fail continuity on the same
+almost-real domain where symmetric spectral coordinates are analytic.
+All Lemma 10.2 domain properties are retained. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
