@@ -92,7 +92,8 @@ For the scalar frequency series, one open neighborhood works for every
 n. The convergence assertion is uniform in the source on that neighborhood
 for each n; it does not assert a convergence rate uniform over n.
 All target sequence exponents share U. At p=2 the target can be any finite
-r>1; at p>2 it includes r=p/2. No ℓ∞ endpoint is claimed.
+r>1; at p>2 it includes r=p/2. The follow-up below also proves the
+l-infinity target on the same unchanged original complex source domain.
 
 ## Printed auxiliary factor
 
@@ -375,3 +376,42 @@ Hamiltonian construction is audited in [Section 21](SECTION_21.md).
 [Section 14](SECTION_14.md) now proves native fractional Sobolev
 analyticity and analytic inverses. Its precise 2014 construction
 comparison remains unverified.
+
+## Infinity target and the copied cubic expansion
+
+Theorem 20.5(i), printed p. 95, allows every target exponent above one.
+[SourceSection20FrequencyTop.lean](../NLS/ZakharovShabat/SourceSection20FrequencyTop.lean)
+now includes infinity on exactly the same original complex source domain U.
+For every finite source exponent p>1, the actual frequency sequence in lp
+embeds continuously into l-infinity. The proof identifies that image with
+the existing `frequencySequence` constructor by proving membership and
+checking every scalar moment coefficient. Thus the constructor's fallback
+is excluded, and both complex and real analyticity hold for the same map.
+Real-source coordinate values and the zero-source identity are retained.
+The theorem `sequence_analytic_all` includes every finite permitted target
+and infinity. This extends the target range, not the source exponent.
+
+There is also a transcription discrepancy in the proof of Lemma 20.2.
+Printed p. 93 repeats Corollary 19.3 with constant term +3H2/4, although
+[Corollary 19.3's implemented formula](../NLS/ZakharovShabat/SourceSection19Laurent.lean)
+and the original p. 91 display have constant term -3iH2/4. Both PDF displays
+were checked. Their difference is -(3/4)(1+i)H2, independent of lambda.
+
+[SourceFiniteGapNonzeroMomentum.lean](../NLS/ZakharovShabat/SourceFiniteGapNonzeroMomentum.lean)
+constructs an actual real finite-gap source with nonzero physical H2.
+A signed Fourier mode has nonzero momentum, and H1 finite-gap density
+preserves this open condition. The reconstructed physical Hamiltonian
+is identified with that momentum; no nonzero-H2 witness is assumed.
+
+[SourceSection20CubeConstantCorrection.lean](../NLS/ZakharovShabat/SourceSection20CubeConstantCorrection.lean)
+then proves that the nonzero constant discrepancy cannot be included in
+an O(lambda^-2) remainder. Every retained original Section 19 domain
+contains an actual finite-gap counterexample to the p. 93 reprint. The
+correct Corollary 19.3 expansion holds at the same witness.
+
+The existing [original moment-frequency theorem](../NLS/ZakharovShabat/SourceSection20Moments.lean)
+remains proved with the correct Laurent coefficient. The discrepancy is
+in the constant term and does not change the coefficient extracted by
+the subsequent contour integral. Four public examples check the infinity
+target at p=4, bounded literal frequencies at p=3/2, the correct and false
+expansions at the same actual source, and the unit-momentum discrepancy.

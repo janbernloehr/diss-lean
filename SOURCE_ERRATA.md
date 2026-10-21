@@ -1,5 +1,23 @@
 # Source discrepancies
 
+## Lemma 20.2 proof, p. 93: the copied momentum coefficient
+
+The cubic expansion at the start of the proof prints +3H2/4 as its constant
+term. Corollary 19.3 on p. 91 instead gives the correct coefficient -3iH2/4.
+The PDF displays were checked directly. The difference is the constant
+-(3/4)(1+i)H2 and cannot be absorbed by O(lambda^-2) when H2 is nonzero.
+
+[SourceFiniteGapNonzeroMomentum.lean](NLS/ZakharovShabat/SourceFiniteGapNonzeroMomentum.lean)
+constructs an actual real finite-gap source with nonzero physical momentum,
+using H1 finite-gap density near a signed Fourier mode.
+[SourceSection20CubeConstantCorrection.lean](NLS/ZakharovShabat/SourceSection20CubeConstantCorrection.lean)
+proves failure of the p. 93 remainder at such a source in every retained
+original domain. The correct expansion in
+[SourceSection19Laurent.lean](NLS/ZakharovShabat/SourceSection19Laurent.lean)
+holds at that same source. Lemma 20.2's frequency identity remains proved;
+the changed constant contributes zero to its circle integral.
+See the [Section 20 audit](coverage/SECTION_20.md).
+
 ## Proposition 17.3 proof, pp. 79–80: power constant and enumeration cutoff
 
 The coordinate-power inequality on p. 79 requires factor two for

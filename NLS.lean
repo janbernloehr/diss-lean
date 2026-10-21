@@ -4351,3 +4351,6 @@ import NLS.ZakharovShabat.SourceActionPowerConstant
 import NLS.ZakharovShabat.SourceActionPowerSum
 import NLS.ZakharovShabat.Section17EnumerationCutoff
 import NLS.ZakharovShabat.SourceActionCutoffCounterexample
+import NLS.ZakharovShabat.SourceSection20FrequencyTop
+import NLS.ZakharovShabat.SourceFiniteGapNonzeroMomentum
+import NLS.ZakharovShabat.SourceSection20CubeConstantCorrection

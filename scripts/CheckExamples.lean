@@ -64499,3 +64499,63 @@ example (r ε A E : ℝ) (hr : 1≤r) (hε : 0<ε)
   exact hb.trans_le (mul_le_mul_of_nonneg_right hfour hpow)
 
 end NLS.Section17ActionPowerCorrectionChecks
+
+noncomputable section
+namespace NLS.Section20FrequencyFollowupChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem fractional_lt : (1:ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+private theorem fractional_finite : (3/2:ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- The infinity target is available with an unconditionally constructed original family above p=2.
+example : ∃ W₀ W V : Set (CoeffPair 4), ∃ s : (n:ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ Wa : Set (CoeffPair 4), ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s,
+    ∃ B U : Set (CoeffPair 4), SourceSection20Data D A B U ∧
+      AnalyticOnNhd ℂ (A.frequencySequence ⊤) U ∧ A.frequencySequence ⊤ 0 = 0 ∧
+      ∀ ψ ∈ U, ∀ n, A.frequencySequence ⊤ ψ n = A.renormalizedFrequency n ψ := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := 4) (by simp) (by norm_num)
+  exact ⟨W₀,W,V,s,D,Wa,A,B,U,Q,Q.sequence_analytic_top.2.1,
+    Q.sequence_zero_all ⊤ (by simp) le_top,Q.sequence_analytic_top.1⟩
+
+-- Below p=2 the literal scalar moment sequence is still bounded on every original complex source.
+example {W₀ W V Wa B U : Set (CoeffPair (3/2))}
+    {s : (n:ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    {D : SourceSection17OriginalData fractional_finite fractional_lt W₀ W V s}
+    {A : SourceAbelianMomentAtlas fractional_finite fractional_lt Wa s}
+    (Q : SourceSection20Data D A B U) (ψ : CoeffPair (3/2)) (hψ : ψ ∈ U) :
+    Memℓp (fun n => A.renormalizedFrequency n ψ) ⊤ :=
+  Q.frequency_memℓp_all ⊤ (by simp) le_top ψ hψ
+
+-- A genuine finite-gap witness has both the valid Corollary19.3 expansion and failure of its p93 reprint.
+example {W U : Set (CoeffPair 2)} (Q : SourceSection19Data (by simp) (by norm_num) W U) :
+    ∃ φ : realTypeSourceSubmodule 2, ∃ hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+      φ.val ∈ U ∧
+      (fun z : ℂ => (sourceFullAbelianPrimitive (by simp) (by norm_num) W 0 (z,φ.val))^3-
+        ComplexAnalysis.phaseCubeLaurentPart (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1)
+          (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 2)
+          (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 3) z)
+        =O[Bornology.cobounded ℂ] (fun z : ℂ => z⁻¹^2) ∧
+      ¬ (fun z : ℂ => (sourceFullAbelianPrimitive (by simp) (by norm_num) W 0 (z,φ.val))^3-
+        section20PrintedCubePart (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1)
+          (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 2)
+          (sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 3) z)
+        =O[Bornology.cobounded ℂ] (fun z : ℂ => z⁻¹^2) := by
+  obtain ⟨φ,hf,hU,_,hbad⟩ := Q.exists_section20Printed_cube_counterexample
+  exact ⟨φ,hf,hU,Q.cube_isBigO φ hf,hbad⟩
+
+-- The discrepancy is already nonzero for a unit momentum coefficient.
+example (H₁ H₃ z : ℂ) :
+    ComplexAnalysis.phaseCubeLaurentPart H₁ 1 H₃ z ≠ section20PrintedCubePart H₁ 1 H₃ z := by
+  intro he
+  have h := cubeLaurentPart_sub_section20Printed H₁ 1 H₃ z
+  rw [he,sub_self] at h
+  have hre := congrArg Complex.re h
+  norm_num at hre
+
+end NLS.Section20FrequencyFollowupChecks

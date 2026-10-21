@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: the action-power constant and enumeration cutoff
+## Current milestone: the infinity frequency target and cubic coefficient correction
+
+The original moment-frequency sequence is analytic into l-infinity on
+the unchanged original complex source domain. Every scalar frequency,
+real-source value and zero-source identity is preserved. All permitted
+finite targets and infinity now share one theorem.
+
+An actual real finite-gap source with nonzero physical momentum refutes
+the copied cubic Laurent coefficient on printed p.93. The correct
+Corollary 19.3 expansion holds at the same witness, and Lemma 20.2's
+frequency identity remains proved. Four examples check these statements.
+The [Section 20 audit](coverage/SECTION_20.md) records their scope.
+
+Validation: `./scripts/check.sh` passes with 8,020 build jobs, 6,968
+public examples, and a transitive axiom audit of 39,146 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,879 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the action-power constant and enumeration cutoff
 
 The proof of Proposition 17.3 needs factor two in the literal
 coordinate-power sum and 2N+1 enumeration positions to cover |n|<=N.
