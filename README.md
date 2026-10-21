@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the normalized scalar nonlinear Fourier transform is globally
-real analytic, and its derivative at zero is the signed reflected physical
-Fourier transform. Formalization remains in progress.
+Latest step: the normalized scalar nonlinear Fourier map has an explicit
+global real analytic inverse with exact scalar norm preservation and the
+signed reflected inverse Fourier differential. Formalization remains in
+progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

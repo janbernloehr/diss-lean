@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: scalar Fourier differential at zero
+## Current milestone: global scalar nonlinear Fourier inverse
+
+The normalized scalar nonlinear Fourier map now has an explicit inverse on all
+complex l2 inputs. Both identities hold for the original physical L2 classes.
+The inverse is globally real analytic, preserves the exact scalar norm, and
+fixes zero.
+
+The native physical pair inverse is transported through two bounded real
+linear coordinate conversions, each with both inverse identities. The physical
+Fourier coefficients of the inverse differential at zero are minus the
+reflected input sequence.
+
+The [introduction audit](coverage/INTRODUCTION.md) records the exact scope and conventions.
+
+Validation: `./scripts/check.sh` passes with 7,994 build jobs, 6,931
+public examples, and a transitive axiom audit of 38,929 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 1,782 file links across 43 documents.
+The 156 source candidate labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: scalar Fourier differential at zero
 
 The normalized scalar nonlinear Fourier transform is real analytic on all
 physical L2 and fixes zero. Its full bounded real differential retains the

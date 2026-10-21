@@ -63994,3 +63994,30 @@ example (a : Coeff 2) (n : ℤ) :
   rw [scalarNonlinearFourier_fderiv_zero_apply, Fourier.unitL2SynthesisLinear_coefficient]
 
 end NLS.ScalarNonlinearLinearizationChecks
+
+noncomputable section
+namespace NLS.ScalarNonlinearInverseChecks
+open ZakharovShabat
+
+-- Both exact identities hold on unrestricted physical L2 and l2 inputs.
+example (u : IntervalL2) (a : Coeff 2) :
+    scalarNonlinearFourierInverse (scalarNonlinearFourier u) = u ∧
+      scalarNonlinearFourier (scalarNonlinearFourierInverse a) = a :=
+  ⟨scalarNonlinearFourier_left_inv u, scalarNonlinearFourier_right_inv a⟩
+
+-- The inverse is analytic everywhere and has exactly the scalar physical norm.
+example (a : Coeff 2) : AnalyticAt ℝ scalarNonlinearFourierInverse a ∧
+    ‖scalarNonlinearFourierInverse a‖ = ‖a‖ :=
+  ⟨scalarNonlinearFourierInverse_analytic a (Set.mem_univ _), scalarNonlinearFourierInverse_norm a⟩
+
+-- The bundled inverse agrees with the explicit physical reconstruction.
+example (a : Coeff 2) :
+    scalarNonlinearFourierHomeomorph.symm a = scalarNonlinearFourierInverse a := rfl
+
+-- The derivative reconstructs the actual Fourier integral, with its signed reflection.
+example (a : Coeff 2) (n : ℤ) :
+    Fourier.intervalFourierCoefficient 1
+      (fderiv ℝ scalarNonlinearFourierInverse 0 a) n = -a (-n) :=
+  scalarNonlinearFourierInverse_fderiv_zero_coefficient a n
+
+end NLS.ScalarNonlinearInverseChecks

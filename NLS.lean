@@ -4328,3 +4328,4 @@ import NLS.ZakharovShabat.SourceCeilingCutoffEstimates
 import NLS.ZakharovShabat.SourceCoefficientFullCutoffs
 import NLS.ZakharovShabat.SourceCoefficientCeilingCutoffs
 import NLS.ZakharovShabat.ScalarNonlinearLinearization
+import NLS.ZakharovShabat.ScalarNonlinearInverse

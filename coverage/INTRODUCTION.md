@@ -24,6 +24,22 @@ exactly (x-i*y)/sqrt(2).
 The index reflection and sign are part of the convention. This is not an
 assertion that the nonlinear map itself is additive.
 
+## Global scalar nonlinear Fourier inverse, printed pp. 10–11
+
+[ScalarNonlinearInverse.lean](../NLS/ZakharovShabat/ScalarNonlinearInverse.lean)
+constructs an explicit inverse for every complex l2 input. It reconstructs
+the native rectangular target from (a, conjugate a), applies the intrinsic
+physical pair inverse, and projects to the original scalar L2 class.
+Both scalar coordinate conversions are bounded real linear and have
+both inverse identities; no regularity or finite support is assumed.
+
+The actual scalar transform and inverse form a global homeomorphism and
+are real analytic everywhere. The inverse preserves the scalar norm and
+fixes zero. For every input a and index n, the original physical Fourier
+coefficient of its derivative at zero is -a(-n), matching the forward
+convention. Norm preservation here is from zero, with no assertion of
+pairwise distance preservation by the nonlinear map.
+
 ## Physical Hamiltonian, normal form and Fourier normalization, printed pp. 9–11
 
 [ClassicalNLSHamiltonians.lean](../NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean)
