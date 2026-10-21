@@ -236,8 +236,7 @@ and final 2N−1 count are formally corrected. The printed numerical height
 is proved at p=2 and refuted as an assertion for every 1<p<∞. Its optimal
 validity range is not claimed, and no replacement bound is adopted.
 
-Continue with Section 6, beginning with Proposition 6.1's original-norm
-quantitative eigenvalue-displacement estimate and its locally uniform cutoff.
-Keep the subsequent weighted-gap assertions, four boundary asymptotics,
-and midpoint/gap corollaries separate until their exact formulations are
-matched to the existing coefficient and physical constructions.
+The original-norm displacement estimates, weighted-gap bounds, four
+boundary asymptotics, and midpoint/gap consequences are recorded in the
+[Section 6 audit](SECTION_6.md). That audit separates corrected quantitative
+bounds from the printed estimates and retains their source qualifications.
