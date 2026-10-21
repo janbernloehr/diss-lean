@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: one-smoothing in the exact original real spaces
+## Current milestone: source audits for Appendices D, E, F, and I
+
+Current coverage pages now compare 19 named results and their relevant
+unnumbered assertions with the canonical Lean statements:
+[D](coverage/APPENDIX_D.md), [E](coverage/APPENDIX_E.md),
+[F](coverage/APPENDIX_F.md), and [I](coverage/APPENDIX_I.md).
+They record exact domains, exponent ranges, normalizations, convergence
+notions, uniformity, and the existing counterexamples and corrections.
+The current coverage table also removes six obsolete one-smoothing
+limitations, while retaining the conditional scope of intermediate lemmas.
+
+This review adds no mathematical assumptions or replacement proofs.
+The reviewed results have implementations in their documented scopes.
+It does not certify the remaining dissertation source requirements;
+the precise 2014 edition comparison and G.2 norm interpretation remain
+qualified, and the whole-dissertation completion audit remains open.
+
+Validation: the Lean sources are unchanged from `fffaed6`, whose
+full check passed with 7,944 build jobs, 6,866 examples,
+and 38,356 audited declarations. Documentation checks pass for 1,607 file links across 42 documents,
+and all 66 identifier references in the four reviewed audits resolve.
+The source inventory is unchanged: these audits cover 16 of its candidate
+labels plus Remarks D.2, D.3, and D.7, which its scanner does not include.
+
+## Previous milestone: one-smoothing in the exact original real spaces
 
 The forward and inverse Fourier remainders now take values in the exact
 native real spaces at order m+1, with the original component-sum norms,

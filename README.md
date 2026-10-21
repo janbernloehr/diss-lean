@@ -37,7 +37,13 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Section 28 audit](coverage/SECTION_28.md),
 [the Appendix A audit](coverage/APPENDIX_A.md),
 [the Appendix B audit](coverage/APPENDIX_B.md),
-[the Appendix C audit](coverage/APPENDIX_C.md), and
+[the Appendix C audit](coverage/APPENDIX_C.md),
+[the Appendix D audit](coverage/APPENDIX_D.md),
+[the Appendix E audit](coverage/APPENDIX_E.md),
+[the Appendix F audit](coverage/APPENDIX_F.md),
+[the Appendix G audit](coverage/APPENDIX_G.md),
+[the Appendix H audit](coverage/APPENDIX_H.md),
+[the Appendix I audit](coverage/APPENDIX_I.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
