@@ -514,3 +514,53 @@ not be lost when reading extracted PDF text.
 The [Section 14 edition comparison](SECTION_14.md) remains. The literal
 all-order Lemma 27.2 is now proved in [Section 27](SECTION_27.md). This
 appendix audit does not certify the whole dissertation complete.
+
+## General convolution criterion before Lemma A.7
+
+The unnumbered paragraph on printed p.123 requires each Fourier convolution
+to converge and its values to have polynomial growth. The previously proved
+Young products cover particular exponent pairs. The general criterion now
+holds directly on the original smooth-test dual at every positive period.
+
+[`PeriodicDistributionConvolutionProduct.lean`](../NLS/Fourier/PeriodicDistributionConvolutionProduct.lean)
+defines a product by genuine coefficient convergence and proves existence
+and uniqueness exactly when the resulting sequence has polynomial growth.
+Uniqueness is equality on every original smooth periodic test. There are
+separate statements for unordered `HasSum` convergence and symmetric integer
+cutoffs. The latter does not require absolute convergence. Unordered
+convergence implies the symmetric relation, and the existing original Young
+products satisfy both. Point evaluation at zero cannot be multiplied by
+itself under the unordered criterion: its convolution terms are all one.
+
+[`SparseConvolutionGrowth.lean`](../NLS/Fourier/SparseConvolutionGrowth.lean)
+shows why convergence alone is insufficient. The first input equals k at
+k=4^j and zero elsewhere; the second equals one at k=j-4^j and zero elsewhere,
+with j a natural number. Their growth has degree at most one and zero.
+For fixed output m, any contributing labels i,j satisfy i,j≤|m|, so every
+convolution has finite support. At nonnegative output m, the diagonal term
+already has value 4^m and every term is nonnegative. The output therefore
+violates every polynomial bound.
+
+[`PeriodicConvolutionGrowthObstruction.lean`](../NLS/Fourier/PeriodicConvolutionGrowthObstruction.lean)
+realizes these two inputs as actual continuous functionals on the original
+test space at every positive physical period. Every actual coefficient
+convolution converges, yet no original distribution has the output
+coefficients. Neither unordered nor symmetric summation gives a product.
+This confirms the necessity of the source's growth premise.
+
+[`PeriodicSymmetricProductExample.lean`](../NLS/Fourier/PeriodicSymmetricProductExample.lean)
+shows that the two convergence conditions differ for actual distributions.
+The bounded coefficient sequence 1/k, with zero at k=0, defines an original
+distribution at every positive period. Its symmetric sums cancel exactly.
+Together with point evaluation at zero this gives a symmetric product equal
+to the zero distribution. The positive-frequency harmonic subseries prevents
+an unordered product for the same inputs.
+
+Seven examples check a negative output at physical period three, a concrete
+exponential lower bound, failure of the symmetric product, construction and
+uniqueness when both conditions hold, and agreement with the original
+Wiener product, plus actual symmetric cancellation and failure of unordered
+convergence. All four modules and their focused examples compile without
+new warnings. Full validation is recorded in [STATUS.md](../STATUS.md).
+The qualification about A.5's particular printed series remains; its stated
+existence theorem is already proved by the alternative construction above.

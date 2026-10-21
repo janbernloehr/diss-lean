@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual small real sources refute two intermediate tail
-errors in the proof of Theorem 23.4. The corrected complex weighted
-tail retains the cutoff boundary and full norm factor.
+Latest step: the general distributional product criterion in Appendix A
+is proved for both unordered sums and symmetric cutoffs. Actual periodic
+distributions show why convergent convolutions still need polynomial growth.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

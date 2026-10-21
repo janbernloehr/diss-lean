@@ -4379,3 +4379,7 @@ import NLS.ZakharovShabat.SourcePlaneWaveSpectrum
 import NLS.ZakharovShabat.SourceL2LocalizationObstruction
 import NLS.ZakharovShabat.SourceSection28TailCounterexample
 import NLS.ZakharovShabat.SourceSection28TailEstimate
+import NLS.Fourier.PeriodicDistributionConvolutionProduct
+import NLS.Fourier.SparseConvolutionGrowth
+import NLS.Fourier.PeriodicConvolutionGrowthObstruction
+import NLS.Fourier.PeriodicSymmetricProductExample

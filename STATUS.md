@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: corrected weighted action tails in Section 28
+## Current milestone: general distributional convolution criterion in Appendix A
+
+The general coefficient criterion before Lemma A.7 is proved on the
+original smooth-test dual. A unique product exists precisely when every
+convolution converges and the output has polynomial growth, for both
+unordered sums and symmetric partial sums.
+
+Actual periodic distributions with finite-support convolutions but
+exponentially growing output show that the growth premise is necessary.
+Symmetric cancellation can give a product when unordered sums fail.
+Seven examples retain signed frequencies, physical period three, uniqueness
+and agreement with the original Young product.
+The [Appendix A audit](coverage/APPENDIX_A.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,049 build jobs, 7,009
+public examples, and a transitive axiom audit of 39,502 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,953 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: corrected weighted action tails in Section 28
 
 A small actual real H1 source separately refutes the omitted cutoff
 boundary and the missing 1+ factor in the p.119 weighted tail display.

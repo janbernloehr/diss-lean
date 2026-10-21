@@ -64978,3 +64978,60 @@ example (Q : SourceSection28Data D A B U T S) (w : SpectralWeight) (hw : w.HasLi
   exact h
 
 end NLS.Section28TailCorrectionChecks
+
+noncomputable section
+namespace NLS.AppendixAConvolutionCriterionChecks
+open NLS.Fourier SmoothPeriodicTest Set Filter Topology
+
+local instance : Fact (0 < (3:ℝ)) := ⟨by norm_num⟩
+
+-- At physical period three, the signed-frequency convolution really converges.
+example : HasSum (fun k : ℤ =>
+    Distribution.sparseConvolutionLeftDistribution (L := (3:ℝ)) (mode (-(-5-k))) *
+      Distribution.sparseConvolutionRightDistribution (L := (3:ℝ)) (mode (-k)))
+    (sparseConvolutionValue (-5)) :=
+  Distribution.hasSum_original_sparseConvolution (-5)
+
+-- A concrete positive frequency already has a coefficient at least 64.
+example : (64:ℝ) ≤ (sparseConvolutionValue 3).re := by
+  convert four_pow_le_sparseConvolution 3 using 1 <;> norm_num
+
+-- Even symmetric summation cannot give a product of these original distributions.
+example (L : ℝ) [Fact (0 < L)] (w : Distribution L) :
+    ¬ Distribution.HasSymmetricFourierProduct
+      Distribution.sparseConvolutionLeftDistribution
+      Distribution.sparseConvolutionRightDistribution w :=
+  Distribution.not_hasSymmetricFourierProduct_sparseConvolution w
+
+-- With both conditions, unordered convergence also gives the unique symmetric product.
+example (L : ℝ) [Fact (0 < L)] (u v : Distribution L)
+    (hs : ∀ n : ℤ, Summable (fun k : ℤ => u (mode (-(n-k)))*v (mode (-k))))
+    (hp : ∃ N : ℕ, Asymptotics.IsBigO cofinite
+      (fun n : ℤ => ∑' k : ℤ, u (mode (-(n-k)))*v (mode (-k)))
+      (fun n : ℤ => |(n:ℝ)|^N)) :
+    ∃! w : Distribution L, Distribution.HasSymmetricFourierProduct u v w := by
+  let w := Distribution.fourierProduct u v hs hp
+  have hw := (Distribution.hasFourierProduct_fourierProduct u v hs hp).symmetric
+  exact ⟨w,hw,fun w' hw' => hw'.unique hw⟩
+
+-- Original Young products agree with the general distributional relation.
+example (L : ℝ) [Fact (0 < L)]
+    (u : PeriodicFourierLebesgue L Weight.one 1)
+    (v : PeriodicFourierLebesgue L Weight.one 1)
+    (h : YoungRelation 1 1 1) :
+    Distribution.HasSymmetricFourierProduct u.val v.val
+      (PeriodicFourierLebesgue.youngProduct h u v).val :=
+  (Distribution.hasFourierProduct_youngProduct h u v).symmetric
+
+-- Symmetric cancellation gives a genuine zero product at physical period three.
+example : Distribution.HasSymmetricFourierProduct
+    (Distribution.evaluation (L := (3:ℝ)) 0) Distribution.harmonicDistribution 0 :=
+  Distribution.hasSymmetricFourierProduct_evaluation_harmonic
+
+-- The same original inputs admit no unordered product, at any positive period.
+example (L : ℝ) [Fact (0 < L)] (w : Distribution L) :
+    ¬ Distribution.HasFourierProduct (Distribution.evaluation (L := L) 0)
+      Distribution.harmonicDistribution w :=
+  Distribution.not_hasFourierProduct_evaluation_harmonic w
+
+end NLS.AppendixAConvolutionCriterionChecks
