@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: the corrected Abel strip with physical Sobolev norm traces
+## Current milestone: physical L2 obstruction to uniform spectral localization
+
+Every positive physical L2 ball has a positive spectral-disc radius for
+which no uniform tail-localization cutoff exists, already on real sources.
+A family of opposite Fourier modes has an exactly translated periodic
+spectrum and unchanged physical L2 norm. Its displaced spectral points
+escape every central box while staying away from the entire free lattice.
+
+The actual physical representatives, all spectral points and both Fourier
+signs are retained. Five examples check complex amplitudes, negative
+carriers, physical energy and the full unit-ball obstruction.
+The [Section 25 audit](coverage/SECTION_25.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,043 build jobs, 6,998
+public examples, and a transitive axiom audit of 39,431 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,933 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the corrected Abel strip with physical Sobolev norm traces
 
 For s>=0 and a>0, the original Abel Hilbert source has exactly the periodic
 holomorphic extensions to the corrected strip of half-width a/pi with Sobolev norm

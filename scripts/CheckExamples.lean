@@ -64878,3 +64878,45 @@ example (b : CoeffPair 2) :
   exact ⟨f,g,hf,hg,he⟩
 
 end NLS.Section23CorrectedStripChecks
+
+noncomputable section
+namespace NLS.Section25L2LocalizationChecks
+open NLS.ZakharovShabat Set MeasureTheory
+open scoped ENNReal
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Negative carriers translate the full actual spectrum, also for complex amplitudes and p=3.
+example (z : ℂ) :
+    z ∈ periodicSpectrum (p := 3) (by simp)
+      (periodOnePotential (sourcePlaneWave (-3) 1 Complex.I)) ↔
+    z-(Real.pi:ℂ)*(-3:ℤ) ∈ periodicSpectrum (p := 3) (by simp)
+      (constantPeriodicPair 1 Complex.I) :=
+  sourcePlaneWave_mem_spectrum_iff_constant (p := 3) (by simp) (-3) 1 Complex.I z (by norm_num)
+
+-- Physical energy stays fixed at an actual negative-frequency source.
+example : ‖sourcePhysicalL2 (sourcePlaneWave (p := 2) (-3) (1/4) (1/4))‖^2 = (1/8:ℝ) := by
+  convert sourcePlaneWave_physical_norm_sq (-3) (1/4) using 1 <;> norm_num
+
+-- The original physical representative retains both opposite Fourier signs.
+example : physicalBase (periodOnePotential (sourcePlaneWave (p := 2) (-2) Complex.I 2))
+    =ᵐ[volume.restrict (Ioc 0 2)]
+      (fun x : ℝ => (Complex.I*NLS.Fourier.wave 4 x,2*NLS.Fourier.wave (-4) x)) := by
+  convert sourcePlaneWave_physicalBase (-2) Complex.I 2 using 1; norm_num
+
+-- A concrete displaced spectral point stays away from every free lattice point.
+example :
+    ((Real.pi*(7:ℤ)+(1/4):ℝ):ℂ) ∈ periodicSpectrum (p := 2) (by simp)
+      (periodOnePotential (sourcePlaneWave (p := 2) 7 ((1/4:ℝ):ℂ) ((1/4:ℝ):ℂ))) ∧
+    ∀ k : ℤ, (1/4:ℝ) ≤ ‖((Real.pi*(7:ℤ)+(1/4):ℝ):ℂ)-(Real.pi:ℂ)*k‖ := by
+  exact ⟨sourcePlaneWave_shifted_point_mem 7 (1/4) (by norm_num),
+    fun k => planeWave_point_lattice_distance 7 k (1/4) (by norm_num)
+      (by linarith [Real.pi_gt_three])⟩
+
+-- No spectral-tail cutoff works uniformly on the actual physical unit ball at every scale.
+example : ∃ ε : ℝ, 0 < ε ∧ ¬ ∃ K : ℝ, ∀ φ : CoeffPair 2,
+    φ ∈ realTypeSourceLocus 2 → ‖sourcePhysicalL2 φ‖ ≤ 1 →
+    ∀ z ∈ periodicSpectrum (p := 2) (by simp) (periodOnePotential φ), K ≤ |z.re| →
+      ∃ k : ℤ, ‖z-(Real.pi:ℂ)*k‖ ≤ ε :=
+  not_uniform_L2_ball_spectral_localization 1 (by norm_num)
+
+end NLS.Section25L2LocalizationChecks

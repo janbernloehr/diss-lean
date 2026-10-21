@@ -1,6 +1,6 @@
 # Section 25: uniform localization for the original source
 
-This audit covers printed pp. 108–112: Theorem 25.1, Lemmas 25.2–25.4,
+This audit covers printed pp. 107–112: Theorem 25.1, Lemmas 25.2–25.4,
 Proposition 25.5, and formulas (5.7)–(5.8). The public API now states
 these estimates for the original period-one source, retaining the exact
 physical norm, signed indices, numerical constants, and multiplicities.
@@ -109,7 +109,45 @@ weights, the full global bound, and the unconditional common-family
 constructor. Full validation is recorded in [implementation status](../STATUS.md).
 
 [The Section 26 audit](SECTION_26.md) now records the original action
-estimates, the full Lemma 26.2 sign counterexample, and the remaining
-supremum-endpoint audit. The separate
+estimates, the full Lemma 26.2 sign counterexample, and the proved
+supremum-endpoint correction. The separate
 [Section 14 qualifications](SECTION_14.md) remain. The dissertation is
 incomplete.
+
+## Why an L2 bound alone gives no uniform asymptotic localization
+
+The opening paragraph on printed p. 107 explains why the localization
+threshold needs regularity beyond L2. The new proofs make that assertion
+precise for the original physical source and periodic operator.
+
+[SourcePlaneWaveSpectrum.lean](../NLS/ZakharovShabat/SourcePlaneWaveSpectrum.lean)
+defines the period-one source with first Fourier coefficient a at -n and
+second coefficient b at n. Its operator parameter has coefficients at
+-2n and 2n. For a nonzero first amplitude, at every finite Banach exponent,
+the actual periodic spectrum is exactly the constant-potential spectrum
+translated by n*pi. The proof constructs two-mode eigenvectors and proves
+the converse from the coupled coefficient equations. Every spectral point
+is included, without assuming an asymptotic endpoint labeling.
+
+[SourceL2LocalizationObstruction.lean](../NLS/ZakharovShabat/SourceL2LocalizationObstruction.lean)
+identifies the physical potential almost everywhere as
+
+    (a*exp(-2*pi*i*n*x), b*exp(2*pi*i*n*x)).
+
+For real equal amplitudes, this is an original real-type source. Its
+exact physical unit-interval L2 norm squared is 2*a^2, independent of n.
+If 0<a<=pi/2, the real spectral point n*pi+a has distance at least a
+from every free lattice point k*pi. Sending n to positive infinity
+therefore defeats every proposed central cutoff at any radius epsilon<a,
+already on that fixed physical L2 sphere.
+
+For every positive ball radius R, choosing a=min(R/2,pi/4) gives a
+positive epsilon=a/2 and proves that no cutoff localizes all spectral
+points in that ball to free-lattice discs of radius epsilon. This is
+failure of uniform asymptotic localization; the excluded radius is
+specified for each ball. The quadratic H1 localization of Theorem 25.1
+and its exact constants remain available on the stronger source space.
+
+Five examples check negative carriers with complex amplitudes at p=3,
+exact physical energy, the opposite physical Fourier signs, an actual
+displaced spectral point, and the complete unit-ball obstruction.

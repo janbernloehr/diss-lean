@@ -4375,3 +4375,5 @@ import NLS.Fourier.AbelFourierExtension
 import NLS.Fourier.AbelSobolevStripCharacterization
 import NLS.Fourier.PhysicalSobolevStripTraces
 import NLS.ZakharovShabat.SourceAbelStripCharacterization
+import NLS.ZakharovShabat.SourcePlaneWaveSpectrum
+import NLS.ZakharovShabat.SourceL2LocalizationObstruction
