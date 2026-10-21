@@ -63144,3 +63144,30 @@ example (a : WeightedCoeff (Weight.sobolev (-3)) ⊤) :
   simpa only [sub_self,norm_zero,mul_zero,zero_mul,add_zero] using h
 
 end NLS.MidpointFourierChecks
+
+namespace NLS.SobolevBallChecks
+open Complex NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- The physical pair norm includes both components, even at the constant source.
+example : ‖sourcePiSobolevCoordinates 1 1 le_rfl (sobolevSourceRealMode 1 0 1).val‖^2 = 2 ∧
+    ‖(sobolevSourceRealMode 1 0 1).val‖ = 1 := by
+  constructor
+  · rw [sobolevSourceRealMode_piNorm]; norm_num
+  · simp [sobolevSourceRealMode,sobolevSourceScalarMode,sourceWeightedSingle,
+      WeightedCoeff.norm_eq,lp.norm_single]
+
+-- The compact-set quotient identity includes collapsed gaps without division.
+example (φ : realTypeSourceLocus 2) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by norm_num) (by norm_num) φ.val n = 0) :
+    canonicalCriticalPoints (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n =
+    canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n := by
+  obtain ⟨_,_,h⟩ := exists_sourceCriticalGapQuotient_bound_on_compact {φ.val} isCompact_singleton
+    (by intro ψ hψ; simpa only [mem_singleton_iff.mp hψ] using φ.property)
+  have he := (h φ.val (mem_singleton _)).2 n
+  rw [hgap,zero_pow (by norm_num : (2:ℕ) ≠ 0),zero_mul] at he
+  exact sub_eq_zero.mp he
+
+end NLS.SobolevBallChecks

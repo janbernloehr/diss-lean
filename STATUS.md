@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: positive-integer Fourier one-smoothing
+## Current milestone: uniform spectral estimates on real Sobolev balls
+
+The canonical Dirichlet, Neumann and critical displacements now have
+common sequence-norm and inverse-index bounds over every real original
+Hs ball, for each integer s >= 1. The cutoff and constants depend on the
+ball, rather than on a selected source neighborhood.
+
+Compactness of the Hs-to-L2 inclusion lets finite subcovers combine the
+existing local spectral estimates. The L2 closure of each real ball image
+is compact and remains real. This controls the central indices as well
+as the spectral tails.
+
+The common displacement bounds give uniform boundary and critical phase
+Fourier tails and an absorbable boundary-to-critical phase comparison.
+Recovering the root difference yields the Dirichlet-to-critical Fourier
+remainder with a common H^(s+1) tail bound. The complete critical-midpoint
+correction is uniformly bounded in H^(2s), using physical norm comparison,
+weighted gaps and the exact squared-gap quotient on the compact source
+set. Adding this correction gives the literal midpoint Fourier error
+with a uniform H^(s+1) tail bound for matching smooth representatives.
+
+Eight modules establish this step. Public checks cover the physical pair
+norm at the constant source and the critical-midpoint identity at a
+collapsed gap. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The previous local analytic one-smoothing result remains available for
+all real original Hs sources. Completing the uniform midpoint bound
+requires the finite central block and approximation by smooth real
+sources. Uniform full Birkhoff remainder bounds and inverse smoothing
+remain separate obligations. The dissertation formalization is ongoing.
+
+Validation: `./scripts/check.sh` passes with 7,927 build jobs, 6,860
+public examples, and a transitive axiom audit of 38,199 NLS declarations.
+The build retains 21 existing warnings; the eight new modules introduce none.
+Documentation checks cover 1,523 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: positive-integer Fourier one-smoothing
 
 For every integer m >= 1, the actual rectangular Birkhoff-minus-Fourier
 map now has an analytic realization in h^(m+1) on a complex neighborhood

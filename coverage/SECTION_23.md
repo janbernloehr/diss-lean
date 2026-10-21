@@ -1394,6 +1394,44 @@ Corollary 1.1 treats the inverse remainder. Those conclusions are not
 implied by the local bounds established here and remain separate.
 This does not certify the entire dissertation.
 
+## Uniform estimates on real Sobolev balls
+
+[`SourceHigherSobolevBallCompact.lean`](../NLS/ZakharovShabat/SourceHigherSobolevBallCompact.lean)
+proves compactness of the original Hs-to-L2 inclusion for every positive
+integer s. The closure of the image of a real Hs ball is compact and
+remains in the real L2 locus.
+[`SourceSpectralDisplacementCompact.lean`](../NLS/ZakharovShabat/SourceSpectralDisplacementCompact.lean)
+combines local spectral bounds by a finite subcover, retaining the fixed
+physical H1 budget. Applying it to that compact closure in
+[`SourceSpectralDisplacementSobolevBall.lean`](../NLS/ZakharovShabat/SourceSpectralDisplacementSobolevBall.lean)
+gives common all-index bounds for both boundary displacements and the
+critical displacement on each entire real original Hs ball.
+
+[`SourcePhaseFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourcePhaseFourierSobolevBall.lean)
+uses these actual displacements in the uniform WKB phase estimates.
+[`SourceBoundaryCriticalPhaseSobolevBall.lean`](../NLS/ZakharovShabat/SourceBoundaryCriticalPhaseSobolevBall.lean)
+provides a common absorption cutoff and inverse-index comparison for
+both boundary conditions.
+[`SourceDirichletCriticalFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceDirichletCriticalFourierSobolevBall.lean)
+then recovers the uniform H^(s+1) Fourier tail of the root difference.
+
+[`SourceCriticalMidpointSobolevBall.lean`](../NLS/ZakharovShabat/SourceCriticalMidpointSobolevBall.lean)
+bounds physical order-k coordinates by 2*(2*pi)^k times the original
+source norm. Uniform weighted gap bounds and the complete squared-gap
+quotient identity on the compact L2 closure give an H^(2s) bound for the
+actual critical-midpoint correction, including all central indices and
+collapsed gaps. Adding it to the root Fourier remainder gives
+[`SourceEtaMidpointFourierSobolevBallSmooth.lean`](../NLS/ZakharovShabat/SourceEtaMidpointFourierSobolevBallSmooth.lean):
+the literal midpoint Fourier error has a uniform H^(s+1) tail bound over
+each entire real original Hs ball for matching smooth representatives.
+
+Public examples distinguish the physical pair norm from the native
+product norm on a constant source and check the exact critical-midpoint
+identity when a gap collapses. The uniform full midpoint remainder still
+requires finite-head completion and smooth real approximation. Full
+Birkhoff remainder boundedness and inverse smoothing remain separate;
+these tail estimates alone do not complete them.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

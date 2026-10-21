@@ -5,16 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual rectangular Birkhoff-minus-Fourier remainder is
-analytic from original Hm into h^(m+1) near every real source, for all
-positive integers m. The complete midpoint and terminal-sine Fourier
-errors include all indices and collapsed gaps, with no smooth
-representative assumption. The same constructed Birkhoff map works at
-all these orders. Bounds on arbitrary Sobolev balls and inverse smoothing
-remain separate, and
-the complete dissertation formalization is still in progress. Higher-order
-complex angular analyticity and Lemma 27.2 with its printed constants
-are also proved.
+Latest step: canonical spectral displacements and phase Fourier tails
+now have common bounds over each entire real original Hs ball, for
+integer s >= 1. The complete critical-midpoint correction is bounded in
+H^(2s), and the literal midpoint Fourier error has a uniform H^(s+1)
+tail bound for smooth sources. The earlier local analytic one-smoothing
+result for the Birkhoff-minus-Fourier map remains proved. Completing
+uniform bounds for its full remainder and inverse smoothing is still
+in progress, as is the full dissertation formalization.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
