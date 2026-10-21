@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both central periodic labels fail continuity on the same
-almost-real domain where symmetric spectral coordinates are analytic.
-All Lemma 10.2 domain properties are retained. Formalization remains in progress.
+Latest step: the real action integrand has an interior zero at the
+critical point, correcting a strict-positivity sentence in the proof
+of Lemma 11.1. The action remains strictly positive on open real gaps.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

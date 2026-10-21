@@ -64187,3 +64187,49 @@ example (ρ : ℝ) (hρ : 0 < ρ) :
     (Metric.closedBall 0 ρ) (Metric.closedBall_mem_nhds _ hρ)
 
 end NLS.Section10LabelDiscontinuityChecks
+
+noncomputable section
+namespace NLS.Section11IntegrandCriticalZeroChecks
+open ZakharovShabat Set Complex
+open scoped ENNReal
+
+-- An actual real source, with no supplied gap witness, refutes pointwise strictness at any index.
+example (n : ℤ) : ∃ ψ : CoeffPair 2, IsRealType (CoeffPair.toMax 2 ψ) ∧
+    ∃ x : ℝ, x ∈ Ioo
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re ∧
+      0 < Real.sqrt ((canonicalDiscriminant (by simp) (periodOnePotential ψ) (x : ℂ)).re^2-4) ∧
+      sourceRecenteredRealActionIntegrand (by simp) (by norm_num) ψ n x = 0 := by
+  obtain ⟨ψ,hψ⟩ := (dense_sourceOpenGapRealLocus (p := 2) (by simp) (by norm_num) n).nonempty
+  have hreal := isRealType_periodOnePotential ψ.val ψ.property
+  have hle := re_le_of_complexLexLE
+    ((canonicalPeriodicEndpoints_spec (p := 2) (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val)).2.1 n)
+  have hlt :
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) n).re <
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) n).re := by
+    apply lt_of_le_of_ne hle
+    intro he
+    apply hψ
+    apply sub_eq_zero.mpr
+    apply Complex.ext
+    · exact he.symm
+    · obtain ⟨hl,hr⟩ := canonicalPeriodicEndpoints_im_eq_zero_of_realType (by simp) (by norm_num)
+        (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) hreal n
+      exact hr.trans hl.symm
+  exact ⟨ψ.val,ψ.property,sourceRecenteredRealActionIntegrand_has_interior_zero
+    (by simp) (by norm_num) ψ.val ψ.property n hlt⟩
+
+-- Positive action and an interior integrand zero coexist on the unchanged source domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ)
+    (hopen :
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re) :
+    0 < (sourceIndexedAction hp hp1 n ψ).re ∧
+      sourceRecenteredRealActionIntegrand hp hp1 ψ n
+        (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re = 0 :=
+  H.action_pos_and_recenteredIntegrand_zero ψ hreal n hopen
+
+end NLS.Section11IntegrandCriticalZeroChecks

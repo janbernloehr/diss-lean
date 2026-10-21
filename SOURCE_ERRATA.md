@@ -1,5 +1,20 @@
 # Source discrepancies
 
+## Lemma 11.1 proof, p. 61: an interior zero of the integrand
+
+The proof's recentered integrand contains the factor
+lambda-critical_n. The actual critical point is strictly inside every
+open real gap, so the assertion of strict positivity at every interior
+point is false there. The denominator is strictly positive at this point.
+
+[SourceActionIntegrandCriticalZero.lean](NLS/ZakharovShabat/SourceActionIntegrandCriticalZero.lean)
+proves the zero and refutes the literal pointwise assertion for every
+finite p>1 and every open real gap. An example constructs an actual real
+source with such a zero at any prescribed signed index. The strict
+positivity of the action in Lemma 11.1 remains proved by the existing
+arcosh integral argument; this correction concerns the intervening
+pointwise sentence. See the [Section 11 audit](coverage/SECTION_11.md).
+
 ## Section 7: the real collapsed-gap locus has codimension two
 
 The paragraph after (2.3) on printed p. 46 calls the squared-gap zero set

@@ -489,3 +489,33 @@ suite, and the axiom audit of 32,305 NLS declarations. The build retains
 warning-free. No admitted proofs, additional axioms or heartbeat overrides
 were introduced. The 156-label source inventory and `git diff --check`
 also passed.
+
+## The critical-point zero in the proof of Lemma 11.1
+
+On printed p. 61, the proof says its recentered real action integrand is
+strictly positive throughout the interior of an open gap. That pointwise
+claim needs an exception at the canonical critical point.
+[SourceActionIntegrandCriticalZero.lean](../NLS/ZakharovShabat/SourceActionIntegrandCriticalZero.lean)
+defines the displayed real integrand, including the literal integer power
+(-1)^(n+1), the factor x-critical_n, the discriminant derivative, and the
+positive square root of Delta(x)^2-4.
+
+For every finite p>1, every real source, and every open indexed gap,
+`sourceRecenteredRealActionIntegrand_has_interior_zero` proves that the
+critical coordinate lies strictly inside the gap, the square-root
+denominator there is strictly positive, and the integrand is zero there.
+Thus this is an ordinary interior zero, independent of any endpoint
+convention for division by zero.
+
+`not_sourceRecenteredRealActionIntegrand_pos_everywhere` refutes the
+literal pointwise strictness sentence. The method
+`SourceLemma11_1Data.action_pos_and_recenteredIntegrand_zero` retains the
+proved strict positivity of the actual action alongside that zero.
+The earlier action proof uses the strictly positive arcosh area and does
+not require the false pointwise assertion.
+
+Two public examples construct an actual Hilbert real-source witness at
+any signed index, using the proved density of open gaps, and retain the
+action conclusion for all finite p>1. This step does not separately prove
+pointwise positivity away from the critical coordinate; the action
+theorem and its integral proof remain unchanged.

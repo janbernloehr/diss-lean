@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: discontinuous periodic labels on the almost-real domain
+## Current milestone: the critical-point zero in the real action integrand
+
+The recentered real action integrand in the proof of Lemma 11.1 vanishes
+at the canonical critical point, strictly inside every open real gap.
+Its denominator is positive there. This refutes the proof's pointwise
+strict-positivity sentence while preserving strict positivity of the
+actual action and its existing arcosh integral proof.
+
+Two examples construct an actual real Hilbert source at every signed
+index and retain the action conclusion for every finite p>1.
+The [Section 11 audit](coverage/SECTION_11.md) records the correction.
+
+Validation: `./scripts/check.sh` passes with 8,003 build jobs, 6,948
+public examples, and a transitive axiom audit of 39,037 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,822 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: discontinuous periodic labels on the almost-real domain
 
 Both actual central periodic endpoint maps fail continuity on every
 original-source neighborhood of zero, for every finite p>1. The witness
