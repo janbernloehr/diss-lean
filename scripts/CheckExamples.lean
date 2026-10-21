@@ -65298,3 +65298,44 @@ example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
       (∫ x in (0 : ℝ)..1,
         evaluate a b (MvPolynomial.X (false,0)*nlsRiccatiRemainder 4) x) = 0 :=
   appendixH_even_unphased_formula_iff a b ha hb hpa hpb 2 (by decide)
+
+/-! The smooth-input regularity warning before Lemma 4.3 (printed p.31). -/
+section
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both signed reflections of a smooth periodic constant fail to have an H¹ pair representative.
+example (b : NLS.ZakharovShabat.BoundaryCondition) :
+    (ContDiff ℝ ∞ (fun _ : ℝ => ((0 : ℂ),(1 : ℂ))) ∧
+      Function.Periodic (fun _ : ℝ => ((0 : ℂ),(1 : ℂ))) 1) ∧
+    ¬∃ a : WeightedCoeffPair (Weight.sobolev 1) 2, ∀ n : ℤ,
+      a.fst.val n = periodTwoCoefficient
+          (fun x => (BoundaryCondition.intervalExtension b (fun _ => ((0 : ℂ),1)) x).1) n ∧
+      a.snd.val n = periodTwoCoefficient
+          (fun x => (BoundaryCondition.intervalExtension b (fun _ => ((0 : ℂ),1)) x).2) n := by
+  exact ⟨reflection_oneSided_source_regular,
+    intervalExtension_oneSided_no_oneDerivative_pair b (by norm_num)⟩
+
+-- The original completed map starts with every real weighted order but loses order one at p=4.
+example (b : NLS.ZakharovShabat.BoundaryCondition) (s : ℝ) :
+    (∃ a : WeightedCoeffPair (Weight.sobolev s) 4, ∀ n : ℤ,
+      a.fst.val n = (sourceReflectionConstantInput 4).fst n ∧
+      a.snd.val n = (sourceReflectionConstantInput 4).snd n) ∧
+    ¬Memℓp (fun n => (Weight.sobolev 1 n : ℂ)*
+      (sourceIntervalExtensionToBoundary b (p := 4) (by norm_num) (by norm_num)
+        (sourceReflectionConstantInput 4)).val.snd.val n) 4 := by
+  exact ⟨sourceReflectionConstantInput_has_all_orders s,
+    sourceIntervalExtension_oneSided_not_oneDerivative b (by norm_num) (by norm_num)⟩
+
+-- A single original smooth-test distribution separates finite target exponents from infinity.
+example (b : NLS.ZakharovShabat.BoundaryCondition) :
+    let u := SmoothPeriodicTest.Distribution.ofTempered
+      (sourceIntervalExtensionDistributionCLM b (p := 2) (by norm_num) (by norm_num)
+        (sourceReflectionConstantInput 2)).2
+    u ∉ periodicFourierLebesgueSubmodule (L := (2 : ℝ)) (Weight.sobolev 1) 3 ∧
+      u ∈ periodicFourierLebesgueSubmodule (L := (2 : ℝ)) (Weight.sobolev 1) ⊤ := by
+  dsimp only
+  simp only [sourceReflectionConstantDistribution_sobolev_one_iff]
+  norm_num
+
+end

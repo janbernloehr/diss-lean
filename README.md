@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the phase in Appendix H's unreduced Hamiltonian remainder is
-explicit. A constant real potential refutes reuse of the H.1 remainder
-without this factor; the H.2 polynomial conclusion is unchanged.
+Latest step: signed interval reflection can destroy one derivative even
+for the smooth period-one constant (0,1). The proof covers both boundary
+signs, every finite Banach exponent, and the actual completed distribution.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
-recorded G.2 norm qualification remain. The dissertation is
+recorded G.2 norm qualification remain. The formalization of the dissertation remains
 incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the introduction main-results audit](coverage/INTRODUCTION.md),

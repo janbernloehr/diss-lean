@@ -138,6 +138,38 @@ Public checks include both boundary signs, the finite endpoint p=1, the
 coupled infinity norm, negative/fractional regularity, negative indices,
 actual physical wave integrals, and forward/inverse classical maps.
 
+## Smooth input can lose one derivative under reflection (page 31)
+
+The unnumbered paragraph before Lemma 4.3 warns that a smooth period-one
+potential can have a reflected extension outside the one-derivative
+Fourier–Lebesgue space. The constant physical potential (0,1) proves this
+for both reflection signs and every finite Banach exponent.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Smooth periodic input | `reflection_oneSided_source_regular`, `sourceReflectionConstantInput_physical` | The finite coefficient input is literally the smooth period-one constant (0,1). |
+| Every input regularity order | `sourceReflectionConstantInput_has_all_orders` | Original component-sum weighted pair, every real order and Banach exponent. |
+| Actual reflected Fourier integrals | `intervalExtension_oneSided_sobolev_one_iff` | The second component's order-one weighted coefficients lie in scalar ℓp exactly when p=infinity. |
+| No finite-exponent pair representative | `intervalExtension_oneSided_no_oneDerivative_pair` | No original one-derivative pair has both actual normalized reflected Fourier coefficients. |
+| Completed extension loses regularity | `sourceReflectionConstantInput_amplitude`, `sourceIntervalExtension_oneSided_not_oneDerivative` | The actual Lemma 4.3 map retains the physical coefficients and fails to preserve order one, for 1<p<infinity. |
+| Original smooth-test distribution | `sourceReflectionConstantDistribution_coefficient`, `sourceReflectionConstantDistribution_sobolev_one_iff` | Exact normalized distributional coefficients; scalar order-one membership holds exactly at target exponent infinity. |
+
+These entries are in
+[SourceReflectionRegularityLoss.lean](../NLS/ZakharovShabat/SourceReflectionRegularityLoss.lean).
+The proof uses the reflected constant's reciprocal odd Fourier tail.
+One derivative leaves bounded coefficients that cannot belong to any
+finite Banach exponent. The distributional conclusion uses the original
+period-two smooth-test space and permits the source and target exponents
+to differ. The infinity statement concerns scalar membership; it does
+not identify different pair norms or extend the completed reflection map
+to an endpoint exponent. No threshold for arbitrary fractional orders is
+asserted.
+
+Three public examples check both signs in the physical H¹ obstruction,
+arbitrary input order with loss at p=4, and a single completed distribution
+that separates finite target exponents from infinity. This confirms the
+printed warning and adds no source correction.
+
 ## Lemma 4.3 (page 31)
 
 | Source assertion | Entry point | Scope |
@@ -290,7 +322,7 @@ physical-spectrum identification at p=1, and the full endpoint statement.
 
 ## Next source assertions
 
-Continue Section 5 with the physical auxiliary boundary conditions (1.10),
-the phase-twisted interval reflections, and Lemma 5.1. Track the distinct
-Neumann-reflected potential and both auxiliary boundary signs before
-formalizing the corresponding physical Fourier expansions (1.11)–(1.12).
+The physical auxiliary boundary conditions (1.10), phase-twisted
+reflections, Lemma 5.1, and Fourier expansions (1.11)–(1.12) are recorded
+in the [Section 5 audit](SECTION_5.md). Those constructions retain the
+distinct Neumann-reflected potential and both auxiliary boundary signs.

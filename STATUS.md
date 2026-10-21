@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: the exact phase of Appendix H's unreduced remainder
+## Current milestone: loss of one derivative under interval reflection
+
+The smooth constant potential (0,1) verifies the regularity-loss warning
+before Lemma 4.3. Both signed reflections fail to have an original
+one-derivative pair representative at every finite Banach exponent.
+The input has every real weighted order; the proof identifies the actual
+physical Fourier coefficients, completed extension map, and original
+smooth-test distribution. Its scalar order-one output coefficients belong
+to the infinity space exactly.
+
+Three examples check the physical H¹ obstruction, loss at p=4 from
+arbitrarily regular input, and distinct finite/infinite target exponents
+for one distribution. The [Section 4 audit](coverage/SECTION_4.md) records
+the precise scope. This confirms the source warning; the completed map's
+range remains 1<p<infinity, and no fractional-order threshold is claimed.
+
+Validation: `./scripts/check.sh` passes with 8,072 build jobs, 7,037
+public examples, and a transitive axiom audit of 39,734 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,028 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the exact phase of Appendix H's unreduced remainder
 
 The odd-Hamiltonian formula retains the exact remainder defined in H.1.
 Its nonlinear integral has the factor (-1)^(m+1). A smooth real constant

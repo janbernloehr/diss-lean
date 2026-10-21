@@ -4403,3 +4403,4 @@ import NLS.Fourier.PrintedChirpContinuous
 import NLS.Fourier.PrintedChirpLiteralSeries
 import NLS.Fourier.PrintedChirpPeriodTransport
 import NLS.ZakharovShabat.SourceAppendixHRemainderPhase
+import NLS.ZakharovShabat.SourceReflectionRegularityLoss
