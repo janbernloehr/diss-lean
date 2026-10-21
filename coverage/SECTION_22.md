@@ -76,7 +76,7 @@ nonnegative physical mass. See [source discrepancies](../SOURCE_ERRATA.md).
 | Equation (4.15) above two | `trajectory_domain_iff_solution` | The original physical inverse formula is an approximation solution on [−T,T] exactly when its full coordinate curve stays in the original image. |
 | Corollary 22.2(ii) | `local_physical_solutions`, `local_analytic_wellposedness`, `small_global_physical_solutions` | Local solutions around every source; one invariant open neighborhood of zero containing a positive norm ball has global solutions, full trajectory analyticity, joint continuity, and group laws. |
 | Theorem 22.1(iii) | `coordinate_nonextension_fst`, `coordinate_nonextension_snd` | Both physical coordinate signs, any signed index, actual image points outside ℓ² with the corresponding amplitude nonzero; finite-gap agreement suffices. |
-| Corollary 22.2(iii) | `finiteGap_source_nonextension`, `smooth_source_nonextension` | No extension continuous at any non-Hilbert source into C([0,T], FL^q) for any finite q ≥ p > 2 and T > 0; actual finite-gap classical agreement already suffices. |
+| Corollary 22.2(iii) | `finiteGap_source_nonextension`, `smooth_source_nonextension_all` | At every non-Hilbert source: finite-gap agreement gives all finite targets q≥p>2; all-smooth agreement gives every q≥1, including infinity. Forward and symmetric intervals are covered. |
 | Remark 22.3 | `remark22_3`, `renormalized_solution_coordinates`, `coordinate_curve_unique` | Full corrected characterization at every finite p > 1, with the original approximation definition and uniqueness in the continuous-curve class. T = 0 is included. |
 | Arbitrary time sets and the ordinary analogue | `renormalized_solution_iff_coordinates`, `ordinary_solution_iff_coordinates` | Both corrected phase characterizations for p ≤ 2 on any time set containing zero. |
 
@@ -164,3 +164,47 @@ curve stays in the original image; global surjectivity is not asserted.
 analyticity and analytic inverses; its precise 2014 construction
 comparison remains unverified. The same original family carries the
 named Sobolev and weighted estimates in [Section 23](SECTION_23.md).
+
+## The infinity target in the physical nonextension theorem
+
+Corollary 22.2(iii) on p. 100 states the obstruction for any q >= p;
+the proof on p. 101 explicitly uses p <= q < infinity. The original
+finite-target proof above remains valid. The follow-up now proves the
+same all-smooth physical nonextension conclusion for every target
+exponent q >= 1, including infinity. The source exponent p remains
+finite, and the source lies outside the original Hilbert locus.
+
+[SmoothSourceMassDivergence.lean](../NLS/ZakharovShabat/SmoothSourceMassDivergence.lean)
+identifies the mass of an actual smooth datum with the squared Hilbert
+norm of its first Fourier component. Finite Fourier energy sums then
+show that every smooth approximation to a non-Hilbert source has mass
+tending to infinity. Smooth approximations exist in the original norm.
+
+[VariableAmplitudePhaseObstruction.lean](../NLS/Dynamics/VariableAmplitudePhaseObstruction.lean)
+proves that a diverging phase frequency prevents uniform convergence
+even when its amplitude is a converging continuous trajectory. At
+times pi/frequency tending to zero the phase equals minus one, which
+contradicts continuity of a putative limit with nonzero initial value.
+
+[SmoothSourceGaugeObstruction.lean](../NLS/ZakharovShabat/SmoothSourceGaugeObstruction.lean)
+applies this argument to an actual nonzero physical Fourier coefficient.
+The exact mass gauge has frequency four times the physical mass. Local
+analytic renormalized solution maps give uniformly converging amplitude
+trajectories on one common short interval. The approximation definition
+itself identifies these maps with the smooth solutions there. Fourier
+evaluation is continuous at every target exponent, including infinity.
+No Birkhoff map at the target exponent is needed.
+
+[SourceSection22NonextensionAll.lean](../NLS/ZakharovShabat/SourceSection22NonextensionAll.lean)
+uses the retained original family's local analytic wellposedness to
+prove both the forward-time and symmetric-time obstruction. This
+requires agreement with every constructed smooth classical solution;
+the separate finite-gap-only theorem above keeps its finite-target
+scope. The proof uses local source solutions and does not assert global
+surjectivity at p > 2.
+
+Four public examples check an unconditionally constructed original
+p=4 family with infinity target, the symmetric obstruction at p=3,
+the exact negative-index gauge between p=3/2 and infinity, and actual
+smooth approximations with diverging mass. The precise 2014 comparison
+and Appendix G.2 norm qualification remain unresolved.

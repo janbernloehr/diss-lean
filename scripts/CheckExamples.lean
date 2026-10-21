@@ -64587,3 +64587,50 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   Q.cube_index_shift ψ hψ n z hz
 
 end NLS.Section21CubeShiftCorrectionChecks
+
+noncomputable section
+namespace NLS.Section22SourceNonextensionAllChecks
+open ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  apply le_of_lt
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num⟩
+
+-- Construct the original family and rule out the infinity-target extension at p=4.
+example (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule 4)
+    (hφ : φ ∉ sourceHilbertLocus (by norm_num : (2 : ℝ≥0∞) ≤ 4))
+    (F : realTypeSourceSubmodule 4 → C(Icc (0 : ℝ) T,realTypeSourceSubmodule ⊤))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (0 : ℝ) T) F) : ¬ ContinuousAt F φ := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := 4) (by simp) (by norm_num)
+  exact Q.smooth_source_nonextension_all (by norm_num) T hT φ hφ F hF
+
+-- The same endpoint conclusion holds on a symmetric interval, at a different source exponent.
+example {W₀ W V Wa B U : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 3)
+    (hφ : φ ∉ sourceHilbertLocus (by norm_num : (2 : ℝ≥0∞) ≤ 3))
+    (F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule ⊤))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (-1 : ℝ) 1) F) : ¬ ContinuousAt F φ :=
+  Q.smooth_source_nonextension_all_symmetric (by norm_num) 1 (by norm_num) φ hφ F hF
+
+-- The actual physical coefficient gauge is independent of the chosen sequence exponent.
+example (f : SmoothNLSData) (time : ℝ) :
+    (f.ordinarySource ⊤ time).val.fst (-1) =
+      Complex.exp (-((4*classicalNLSMass f.value*time : ℝ) : ℂ)*Complex.I)*
+        (f.renormalizedSource (3/2) time).val.fst (-1) :=
+  f.ordinarySource_fst_eq_gauged_renormalized time (-1)
+
+-- Actual smooth approximations exist and their physical masses diverge.
+example (φ : realTypeSourceSubmodule 4)
+    (hφ : φ ∉ sourceHilbertLocus (by norm_num : (2 : ℝ≥0∞) ≤ 4)) :
+    ∃ f : ℕ → SmoothNLSData, Tendsto (fun j => (f j).source 4) atTop (𝓝 φ) ∧
+      Tendsto (fun j => classicalNLSMass (f j).value) atTop atTop := by
+  obtain ⟨f,hf⟩ := exists_smoothNLSData_sequence (p := 4) (by simp) (by norm_num) φ
+  exact ⟨f,hf,tendsto_smoothNLSData_mass_atTop (by norm_num) φ hφ f hf⟩
+
+end NLS.Section22SourceNonextensionAllChecks

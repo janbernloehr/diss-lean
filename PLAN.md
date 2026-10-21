@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: the imaginary constant in the primitive cube shift
+## Current milestone: physical source nonextension including infinity
+
+The ordinary physical NLS solution map cannot extend continuously at
+any non-Hilbert source into a compact trajectory space with target
+exponent q>=1, including infinity. The source exponent remains finite.
+
+The proof combines diverging smooth masses, the exact physical mass
+gauge and local analytic renormalized solutions from the retained
+original family. Fourier evaluation handles the infinity target.
+Four examples cover endpoint targets, symmetric time, the negative-index
+gauge and actual smooth approximation sequences.
+The [Section 22 audit](coverage/SECTION_22.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,025 build jobs, 6,974
+public examples, and a transitive axiom audit of 39,161 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,897 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the imaginary constant in the primitive cube shift
 
 The cube of the original primitive normalization shift has constant
 i*(pi*n)^3. The p.97 display omits i. The corrected identity now holds

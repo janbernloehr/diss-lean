@@ -200,7 +200,7 @@ The classical solutions are constructed, not supplied as an assumption.
 | Part (i) | `global` | Global real analytic wellposedness on all FLᵖ for 1<p≤2 |
 | Part (ii) | `local_wellposed` | Local real analytic wellposedness for every finite p>1, including the printed 2<p<∞ range |
 | Part (iii) | `small_global` | Global real analytic wellposedness on an open neighborhood containing a positive ball about zero for every finite p>2 |
-| Part (iv) | `ordinary_nonextension` | For finite q≥p>2 and every T>0, no map agreeing with ordinary smooth classical NLS into C([−T,T],FL^q) is continuous at any source outside L² |
+| Part (iv) | `ordinary_nonextension`, `smooth_source_nonextension_all_symmetric` | The original package covers finite q≥p>2. The retained-family follow-up gives every target q≥1, including infinity, with the same all-smooth physical meaning. |
 | Uniqueness after the solution definition | `unique` | Any two solutions agree on their common time domain |
 
 Analytic dependence is in the uniform norm on the continuous trajectory
@@ -251,3 +251,7 @@ abelian integrals, and [Section 20](SECTION_20.md) covers their frequency
 and contour-moment applications. Native fractional Sobolev analyticity
 and analytic inverses are proved in [Section 14](SECTION_14.md); its
 precise 2014 construction comparison remains unverified.
+
+The [Section 22 endpoint follow-up](SECTION_22.md) proves the physical
+nonextension statement for the infinity target using the mass gauge and
+local renormalized solutions. The source exponent remains finite.

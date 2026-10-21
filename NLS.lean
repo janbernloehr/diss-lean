@@ -4355,3 +4355,7 @@ import NLS.ZakharovShabat.SourceSection20FrequencyTop
 import NLS.ZakharovShabat.SourceFiniteGapNonzeroMomentum
 import NLS.ZakharovShabat.SourceSection20CubeConstantCorrection
 import NLS.ZakharovShabat.SourceSection21CubeShiftCorrection
+import NLS.Dynamics.VariableAmplitudePhaseObstruction
+import NLS.ZakharovShabat.SmoothSourceMassDivergence
+import NLS.ZakharovShabat.SmoothSourceGaugeObstruction
+import NLS.ZakharovShabat.SourceSection22NonextensionAll
