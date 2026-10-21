@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: one actual periodic distribution belongs to every
-Fourier-Lebesgue space FLp for p>2, including infinity, but lies outside
-FL2=L2. The same witness works for all exponents at every positive period.
-Formalization remains in progress.
+Latest step: the normalized complex nonlinear Fourier coefficients
+(x-i*y)/sqrt(2) preserve the original scalar physical L2 norm exactly.
+The convergent Parseval sum and the factor two in the physical pair's
+squared norm are proved. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -10,6 +10,41 @@ distributional Galilean results documented below. This document does not
 certify the entire introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
+## Physical Hamiltonian, normal form and Fourier normalization, printed pp. 9–11
+
+[ClassicalNLSHamiltonians.lean](../NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean)
+identifies the original pair Hamiltonian with the integral of a'*b'+a^2*b^2.
+[ClassicalNLSEnergyVariation.lean](../NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean)
+proves its actual first variations.
+[ClassicalNLSSobolevEnergy.lean](../NLS/ZakharovShabat/ClassicalNLSSobolevEnergy.lean)
+identifies the scalar energy with the physical unit-interval integral
+of |u'|^2+|u|^4, and
+[ClassicalNLSVectorField.lean](../NLS/ZakharovShabat/ClassicalNLSVectorField.lean)
+gives the scalar NLS vector field with its original signs.
+
+[SourceSection17Original.lean](../NLS/ZakharovShabat/SourceSection17Original.lean)
+constructs the original global analytic Birkhoff inverse for 1<p<=2.
+[SourceWeightedActionHamiltonianDerivative.lean](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean)
+keeps the full action Hamiltonian on its original weighted domain;
+its coordinate derivative is F(a)_n+4*mass(a)+(2*pi*n)^2.
+The physical Hilbert map and inverse are globally real analytic and
+preserve the pair norm, as proved in
+[PhysicalBirkhoffIntrinsicProperties.lean](../NLS/ZakharovShabat/PhysicalBirkhoffIntrinsicProperties.lean).
+
+The bounded physical derivative at zero is identified in
+[PhysicalBirkhoffLinearization.lean](../NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean).
+Its Fourier integral formulas retain the index reflection, signs,
+square-root-two normalization and imaginary factor documented below.
+
+[ScalarNonlinearParseval.lean](../NLS/ZakharovShabat/ScalarNonlinearParseval.lean)
+makes the scalar normalization explicit. The original input is exactly
+the physical pair (u, conjugate u), whose squared norm is 2*norm(u)^2.
+For the intrinsic real Birkhoff coordinates (x,y), the normalized complex
+coefficient z_n=(x_n-i*y_n)/sqrt(2) has norm(z)=norm(u).
+The sum of |z_n|^2 converges to norm(u)^2. Thus scalar nonlinear Parseval
+holds with the exact physical convention. The raw rectangular pair
+continues to use the physical pair norm.
+
 ## Original spectral conservation and oscillators, printed p. 9
 
 [`SourceOriginalSpectralConservation.lean`](../NLS/ZakharovShabat/SourceOriginalSpectralConservation.lean)

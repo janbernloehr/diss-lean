@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: original Fourier-Lebesgue distributions outside L2
+## Current milestone: scalar nonlinear Parseval with exact normalization
+
+The normalized complex nonlinear Fourier coefficient is literally
+(x-i*y)/sqrt(2), using the intrinsic physical Birkhoff map of the pair
+(u, conjugate u). Its l2 norm equals the original scalar unit-interval
+L2 norm. The sum of squared nonlinear coefficients converges to that
+scalar squared norm.
+
+The physical pair has twice the scalar squared norm. This factor is
+proved explicitly and retained in the conversion from rectangular
+coordinates. One module and three examples implement the scalar
+Parseval statement on printed p. 10.
+
+The [introduction audit](coverage/INTRODUCTION.md) also records the
+existing physical Hamiltonian formula, global normal form, and exact
+Fourier derivative conventions. The precise 2014 comparison, G.2 norm
+qualification, and wider source audit remain separate work.
+
+Validation: `./scripts/check.sh` passes with 7,983 build jobs, 6,915
+public examples, and a transitive axiom audit of 38,780 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,749 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: original Fourier-Lebesgue distributions outside L2
 
 One original periodic distribution belongs to every Fourier-Lebesgue space
 FLp with p>2, including infinity, while lying outside FL2=L2. The same

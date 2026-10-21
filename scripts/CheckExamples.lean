@@ -63842,3 +63842,28 @@ example {L : ℝ} [Fact (0 < L)] (u : PeriodicFourierLebesgue L Weight.one 2) : 
   Fourier.order_zero_of_mem_periodicFourierLebesgue_two u.val u.property
 
 end NLS.PeriodicStrictnessChecks
+
+noncomputable section
+namespace NLS.ScalarNonlinearParsevalChecks
+open ZakharovShabat
+
+-- The physical pair has both conjugate components, and hence twice the scalar energy.
+example (u : IntervalL2) :
+    ‖scalarPhysicalRealInput u‖^2 = 2*‖u‖^2 :=
+  norm_sq_scalarPhysicalRealInput u
+
+-- Literal normalization of the actual nonlinear Fourier coefficients.
+example (u : IntervalL2) (n : ℤ) :
+    scalarNonlinearFourier u n =
+      (((intrinsicPhysicalBirkhoffMap (scalarPhysicalRealInput u)).fst n : ℂ)-
+        Complex.I*((intrinsicPhysicalBirkhoffMap (scalarPhysicalRealInput u)).snd n : ℂ))/
+        (Real.sqrt 2:ℂ) ∧
+      ‖scalarNonlinearFourier u‖ = ‖u‖ :=
+  ⟨scalarNonlinearFourier_apply u n,scalarNonlinearFourier_norm u⟩
+
+-- Parseval includes convergence of the sum, not only an equality of possibly divergent sums.
+example (u : IntervalL2) :
+    HasSum (fun n : ℤ => ‖scalarNonlinearFourier u n‖^2) (‖u‖^2) :=
+  scalarNonlinearFourier_hasSum_norm_sq u
+
+end NLS.ScalarNonlinearParsevalChecks
