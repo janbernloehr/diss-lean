@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the real closed-gap locus has codimension two, with an exact
-analytic chart and curve-tangent description. The printed Section 7 psi
-product also requires a mode-dependent denominator; its literal form
-diverges already at the free source. Formalization remains in progress.
+Latest step: both canonical central eigenvalue labels have discontinuities
+at constant complex sources arbitrarily close to zero. The proof uses the
+actual source spectrum and original norm. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

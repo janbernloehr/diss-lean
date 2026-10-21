@@ -390,3 +390,49 @@ printed-sign counterexample.
 
 The subsequent ordinary and auxiliary characteristic results are audited in
 [Section 9](SECTION_9.md).
+
+## Complex endpoint labels can be discontinuous, printed p. 49
+
+The unnumbered paragraph and Figure 2.1 preceding Lemma 8.2 explain why
+lexicographically ordered periodic eigenvalues need not be continuous at
+complex sources. The original PDF was visually checked. The formalization
+now supplies actual source witnesses for both canonical central labels.
+
+[ConstantPeriodicSpectrum.lean](../NLS/ZakharovShabat/ConstantPeriodicSpectrum.lean)
+computes the actual periodic spectrum of a constant complex potential
+(a,b), with a nonzero. A complex number z belongs to that spectrum exactly
+when z^2=(pi*k)^2+a*b for some integer k. The converse constructs a nonzero
+single-mode eigenvector in the original one-derivative domain.
+
+[SourceConstantPeriodicSpectrum.lean](../NLS/ZakharovShabat/SourceConstantPeriodicSpectrum.lean)
+identifies this operator parameter with both the original period-two
+source and the embedded period-one source. The original constant source
+is the value of a bounded complex linear map of its two amplitudes.
+
+[SourceConstantCentralPair.lean](../NLS/ZakharovShabat/SourceConstantCentralPair.lean)
+uses the existing common isolating discs and complete spectral exhaustion.
+On one open source neighborhood of zero, any two distinct small roots
+z and -z of z^2=a*b are exactly the actual canonical central pair, sorted
+in the prescribed lexicographic order.
+
+[SourcePeriodicLabelDiscontinuity.lean](../NLS/ZakharovShabat/SourcePeriodicLabelDiscontinuity.lean)
+proves that, for every finite p>1 and every source neighborhood of zero,
+some positive r gives a constant source (r,-r) in that neighborhood at
+which both canonical central endpoint maps fail to be continuous.
+Along the continuous original-source curve
+
+```
+time ↦ (r, (time+i*r)^2/r),
+```
+
+the two central roots are time+i*r and its negative. For negative time
+the first root has smaller real part. At time zero the imaginary-part
+tie-break reverses the ordering. Their one-sided limits therefore differ
+from their actual labeled values.
+
+This verifies the source's general-complex discontinuity assertion. It
+does not assert discontinuity at every complex source or at zero itself.
+Lemma 8.2's continuity at real sources and the analyticity of symmetric
+spectral coordinates remain valid. Five public examples include actual
+nonreal spectral points, the original source curve, witnesses in every
+source ball at p=3/2, and global discontinuity consequences at p=4.

@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: two corrections to the Section 7 overview
+## Current milestone: discontinuity of complex periodic eigenvalue labels
+
+For every finite p>1, both actual canonical central endpoint maps have
+constant complex source discontinuities in every neighborhood of zero.
+The witness retains the original source norm and spectral realization.
+An explicit continuous source curve crosses the lexicographic ordering
+boundary, giving one-sided limits different from the actual labeled values.
+
+Four modules and five examples connect the exact constant-potential
+spectrum to the original source parameters and the actual canonical pair.
+The [Section 8 audit](coverage/SECTION_8.md) records the unnumbered claim
+on printed p.49. Continuity at real sources and analyticity of symmetric
+spectral coordinates remain valid.
+
+Validation: `./scripts/check.sh` passes with 8,001 build jobs, 6,943
+public examples, and a transitive axiom audit of 39,025 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,808 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: two corrections to the Section 7 overview
 
 The literal closed-gap locus in the original real physical Hilbert space
 has real codimension two. The actual globally bi-analytic Birkhoff map

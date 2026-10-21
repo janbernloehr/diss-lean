@@ -4332,3 +4332,7 @@ import NLS.ZakharovShabat.ScalarNonlinearInverse
 import NLS.ZakharovShabat.PhysicalClosedGapGeometry
 import NLS.ZakharovShabat.PhysicalClosedGapTangents
 import NLS.ZakharovShabat.SourceSection7PsiNormalization
+import NLS.ZakharovShabat.ConstantPeriodicSpectrum
+import NLS.ZakharovShabat.SourceConstantPeriodicSpectrum
+import NLS.ZakharovShabat.SourceConstantCentralPair
+import NLS.ZakharovShabat.SourcePeriodicLabelDiscontinuity

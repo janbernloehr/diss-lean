@@ -64080,3 +64080,59 @@ example (N : ℕ) :
   section7CorrectedPsiPartial_zero N
 
 end NLS.Section7PsiNormalizationChecks
+
+noncomputable section
+namespace NLS.Section8LexicographicDiscontinuityChecks
+open ZakharovShabat Set Filter Topology Complex
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- The original period-two source operator has a genuinely nonreal eigenvalue.
+example : Complex.I ∉ sourceResolventSet (p := 3) (by simp)
+    (sourceConstantPotential 1 (-1)) := by
+  apply (not_mem_sourceResolventSet_constant_iff (p := 3) (by simp) 1 (-1) Complex.I one_ne_zero).mpr
+  exact ⟨0,by norm_num [Complex.I_sq]⟩
+
+-- The parameter curve is continuous in the original source norm and has the stated base point.
+example : Continuous (sourceConstantCrossing (p := 2) 1) ∧
+    sourceConstantCrossing (p := 2) 1 0 = sourceConstantPotential 1 (-1) := by
+  exact ⟨continuous_sourceConstantCrossing 1, sourceConstantCrossing_zero 1 one_ne_zero⟩
+
+-- Arbitrarily small witnesses retain both actual canonical endpoint maps at a fractional exponent.
+example (ρ : ℝ) (hρ : 0 < ρ) :
+    ∃ r : ℝ, 0 < r ∧ sourceConstantPotential (p := 3/2) (r : ℂ) (-r) ∈ Metric.ball 0 ρ ∧
+      ¬ContinuousAt (fun ψ : CoeffPair (3/2) =>
+        canonicalPeriodicLeft fractional_finite fractional_lt
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)
+        (sourceConstantPotential (p := 3/2) (r : ℂ) (-r)) ∧
+      ¬ContinuousAt (fun ψ : CoeffPair (3/2) =>
+        canonicalPeriodicRight fractional_finite fractional_lt
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)
+        (sourceConstantPotential (p := 3/2) (r : ℂ) (-r)) :=
+  exists_sourcePeriodicLabels_not_continuousAt fractional_finite fractional_lt
+    (Metric.ball 0 ρ) (Metric.ball_mem_nhds _ hρ)
+
+-- In particular neither scalar endpoint is globally continuous on the complex p=4 space.
+example :
+    ¬Continuous (fun ψ : CoeffPair 4 =>
+      canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) ∧
+    ¬Continuous (fun ψ : CoeffPair 4 =>
+      canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) := by
+  obtain ⟨r,_,_,hL,hR⟩ := exists_sourcePeriodicLabels_not_continuousAt
+    (p := 4) (by simp) (by norm_num) Set.univ Filter.univ_mem
+  exact ⟨fun h => hL h.continuousAt, fun h => hR h.continuousAt⟩
+
+-- The period-one embedding also handles a nonreal first amplitude exactly.
+example : (1 : ℂ) ∈ periodicSpectrum (p := 2) (by simp)
+    (periodOnePotential (sourceConstantPotential Complex.I (-Complex.I))) := by
+  apply (mem_periodicSpectrum_sourceConstant_iff (p := 2) (by simp) Complex.I (-Complex.I) 1 Complex.I_ne_zero).mpr
+  exact ⟨0,by norm_num [Complex.I_sq]⟩
+
+end NLS.Section8LexicographicDiscontinuityChecks
