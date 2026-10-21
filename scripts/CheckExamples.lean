@@ -64815,3 +64815,66 @@ example : ∀ a : CoeffPair 2,
   exact section23AbelCounterexampleSource_not_weighted ⟨a,ha⟩
 
 end NLS.Section23AbelStripChecks
+
+noncomputable section
+namespace NLS.Section23CorrectedStripChecks
+open Set Complex
+open scoped ENNReal
+
+-- Upper and lower boundaries have opposite effects on the same negative mode.
+example :
+    NLS.Fourier.complexHorizontalCoefficients (fun n : ℤ => if n = -1 then 1 else 0)
+        (Real.log 2/Real.pi) (-1) = 4 ∧
+    NLS.Fourier.complexHorizontalCoefficients (fun n : ℤ => if n = -1 then 1 else 0)
+        (-Real.log 2/Real.pi) (-1) = 1/4 := by
+  have hu : -2*Real.pi*(Real.log 2/Real.pi)*(-1:ℝ) = 2*Real.log 2 := by field_simp
+  have hl : -2*Real.pi*(-Real.log 2/Real.pi)*(-1:ℝ) = -(2*Real.log 2) := by field_simp
+  have hex : Real.exp (2*Real.log 2) = 4 := by
+    rw [show 2*Real.log 2 = Real.log 2+Real.log 2 by ring,Real.exp_add,
+      Real.exp_log (by norm_num : (0:ℝ)<2)]
+    norm_num
+  simp only [NLS.Fourier.complexHorizontalCoefficients,Int.cast_neg,Int.cast_one,hu,hl,Real.exp_neg,hex]
+  norm_num
+
+-- At Sobolev order zero, the physical trace synthesis has exactly the unit-interval L2 norm.
+example (b : Coeff 2) : ‖NLS.Fourier.physicalSobolevTraceSynthesis 0 (by norm_num) b‖ = ‖b‖ := by
+  have he : NLS.Fourier.physicalSobolevTraceSynthesis 0 (by norm_num) b =
+      NLS.Fourier.unitL2SynthesisEquiv b := by
+    apply NLS.Fourier.unitL2_ext_coefficients
+    intro n
+    rw [NLS.Fourier.physicalSobolevTraceSynthesis_coefficient,
+      NLS.Fourier.physicalUnitSobolevWeight_apply]
+    have h := NLS.Fourier.unitL2SynthesisLinear_coefficient b n
+    change NLS.Fourier.intervalFourierCoefficient 1 (NLS.Fourier.unitL2SynthesisEquiv b) n = b n at h
+    simp only [Real.rpow_zero,Complex.ofReal_one,div_one,h]
+  rw [he]
+  exact NLS.Fourier.unitL2SynthesisEquiv.norm_map b
+
+-- Original normalized Abel data have actual physical strip realizations in both components.
+example (b : CoeffPair 2) :
+    let φ := ZakharovShabat.normalizedWeightedSource
+      (SpectralWeight.abel 0 1 (by norm_num) (by norm_num)) b
+    ∃ f : ℂ → ℂ, Function.Periodic f 1 ∧
+      AnalyticOnNhd ℂ f {z : ℂ | |z.im| < 1/Real.pi} ∧
+      (∀ n : ℤ, NLS.Fourier.periodOneCoefficient (fun x : ℝ => f x) n = φ.fst n) ∧
+      NLS.Fourier.HasSobolevNormStripTraces 0 1 f := by
+  dsimp only
+  exact ((ZakharovShabat.source_abel_range_iff_strip_extensions 0 1 (by norm_num)
+    (by norm_num) _).mp ⟨b,rfl⟩).1
+
+-- The strip functions realize the retained original physical potential itself.
+example (b : CoeffPair 2) :
+    let φ := ZakharovShabat.normalizedWeightedSource
+      (SpectralWeight.abel (3/2) 2 (by norm_num) (by norm_num)) b
+    ∃ f g : ℂ → ℂ,
+      AnalyticOnNhd ℂ f {z : ℂ | |z.im| < 2/Real.pi} ∧
+      AnalyticOnNhd ℂ g {z : ℂ | |z.im| < 2/Real.pi} ∧
+      ZakharovShabat.physicalBase (ZakharovShabat.periodOnePotential φ)
+        =ᵐ[MeasureTheory.volume.restrict (Ioc 0 1)] (fun x : ℝ => (f x,g x)) := by
+  dsimp only
+  obtain ⟨f,g,_,_,hf,hg,_,_,he⟩ :=
+    (ZakharovShabat.source_abel_range_iff_physical_strip_extensions (3/2) 2 (by norm_num)
+      (by norm_num) _).mp ⟨b,rfl⟩
+  exact ⟨f,g,hf,hg,he⟩
+
+end NLS.Section23CorrectedStripChecks

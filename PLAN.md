@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: the original-source Abel-strip counterexample
+## Current milestone: the corrected Abel strip with physical Sobolev norm traces
+
+For s>=0 and a>0, the original Abel Hilbert source has exactly the periodic
+holomorphic extensions to the corrected strip of half-width a/pi with Sobolev norm
+traces on both boundaries. The constructed functions realize the actual
+original physical potential, with every Fourier coefficient retained.
+
+The trace condition is equivalent to physical L2 curves whose exact
+Sobolev-weighted Fourier coefficients vary continuously in l2. The
+forward-only assertion for the printed narrower strip is also proved.
+Four examples check signed boundary factors, the order-zero physical
+norm, original decoder data and the actual physical source realization.
+The [Section 23 audit](coverage/SECTION_23.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,041 build jobs, 6,993
+public examples, and a transitive axiom audit of 39,397 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,926 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the original-source Abel-strip counterexample
 
 The printed narrow-strip condition does not characterize the literal
 Abel space under the original even-frequency convention. An explicit
@@ -12,8 +32,8 @@ The proof computes the actual Fourier integrals and the exponentially
 growing weighted coefficients. Four examples check signed modes, a boundary
 trace, a weighted coefficient and the original source-space obstruction.
 The [Section 23 audit](coverage/SECTION_23.md) states the interpretation.
-This does not refute the weaker forward implication. A full corrected-width
-characterization remains open.
+The corrected-width equivalence and the narrower forward implication are
+proved in the subsequent follow-up, with Sobolev norm traces.
 
 Validation: `./scripts/check.sh` passes with 8,032 build jobs, 6,989
 public examples, and a transitive axiom audit of 39,290 NLS declarations.
@@ -33,7 +53,7 @@ and continuous coefficient-preserving inclusions at every Banach exponent,
 including infinity. Eleven examples check the constructors, original-map
 estimates, growth ratios and an infinity-target inclusion.
 The [Section 23 audit](coverage/SECTION_23.md) records the precise scope.
-The separate analytic-strip and boundary-trace characterization remains open.
+The corrected analytic-strip characterization is proved in the current follow-up.
 
 Validation: `./scripts/check.sh` passes with 8,029 build jobs, 6,985
 public examples, and a transitive axiom audit of 39,242 NLS declarations.

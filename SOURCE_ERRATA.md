@@ -17,7 +17,9 @@ therefore unbounded.
 [The original-source witness](NLS/ZakharovShabat/SourceAbelStripCounterexample.lean)
 proves that (0,f) lies outside the original normalized Abel-weight image.
 The [Section 23 audit](coverage/SECTION_23.md) records the precise distinction.
-A full corrected-width characterization remains unproved.
+The corrected half-width a/pi equivalence, with Sobolev norm traces,
+and the forward assertion on the printed strip are now proved in
+[SourceAbelStripCharacterization.lean](NLS/ZakharovShabat/SourceAbelStripCharacterization.lean).
 
 ## Lemma 21.2 proof, p. 97: the cube of the normalization shift
 

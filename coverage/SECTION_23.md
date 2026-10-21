@@ -1681,11 +1681,10 @@ at 2n. Eleven examples also check negative frequencies, fractional
 parameters, normalization, the full growth hierarchy with unequal
 polynomial orders, and an inclusion at the infinity sequence exponent.
 
-The separate analytic-strip and boundary-trace characterization in the
-first sentence on p. 105 has not been formalized here. Its width must be
-checked against the period-two index and even-mode convention on p. 103;
-these weight constructions and growth comparisons do not prove that
-characterization. The precise 2014 edition comparison remains qualified.
+These weight constructions and growth comparisons are supplemented by
+the corrected-strip characterization below. Its half-width is a/pi in
+the original even-frequency convention, with explicit Sobolev norm traces.
+The precise 2014 edition comparison remains qualified.
 
 ## Scope of the Abel-strip description
 
@@ -1726,7 +1725,64 @@ Four examples check the signed support and a positive coefficient, the
 actual lower boundary trace, the weighted third coefficient, and failure
 of every possible original normalized weighted lift.
 
-The width suggested by the literal Fourier multiplier is a/pi. A full
-characterization at that width, with precisely stated Sobolev norm traces,
-remains a separate proof obligation. The narrower forward implication and
-the corrected-width equivalence are not established by this counterexample.
+The following corrected-width theorem proves the equivalence at a/pi
+with explicit Sobolev norm traces and also proves the narrower forward
+implication for the actual original physical source.
+
+## Corrected Abel strip with Sobolev norm traces
+
+For the original Abel weight w(m) = (1+|m*pi|)^s exp(a|m|), the
+physical period-one mode n carries w(2n). Its exponential factor is
+exp(2a|n|), so the corrected strip has half-width a/pi. The new
+characterization assumes s >= 0 and a > 0 and uses genuine Sobolev norm
+traces at both boundaries. It does not identify mere almost-everywhere
+boundary values with norm limits.
+
+[AbelSobolevStripCharacterization.lean](../NLS/Fourier/AbelSobolevStripCharacterization.lean)
+proves both directions. Starting from arbitrary original Abel Hilbert
+coefficients, the complex Fourier series converges absolutely in the
+interior. Uniform geometric bounds on every smaller strip prove
+holomorphicity. Every horizontal trace is the actual continuous
+period-one Fourier synthesis, so its unit-interval Fourier integrals
+recover the input coefficients multiplied by exp(-2*pi*n*y).
+
+The exact Sobolev-weighted coefficient curve extends continuously in l2
+through both boundaries. Conversely, Cauchy rectangle integration gives
+the same coefficient transport for any periodic holomorphic function.
+Continuity of its Sobolev norm traces determines the endpoint coefficient
+sequences. Splitting the positive and negative modes then recovers the
+full original Abel weight, including the zero mode.
+
+[PhysicalSobolevStripTraces.lean](../NLS/Fourier/PhysicalSobolevStripTraces.lean)
+proves that this norm-trace condition is equivalent to actual physical
+L2(0,1) trace curves whose exact Sobolev-weighted Fourier coefficients
+form a continuous l2 curve. The interior representatives agree almost
+everywhere with the holomorphic function. Thus the boundary values are
+physical L2 classes, and the stated convergence is in the specified
+Sobolev norm.
+
+[SourceAbelStripCharacterization.lean](../NLS/ZakharovShabat/SourceAbelStripCharacterization.lean)
+proves the corresponding equivalence for both components of the original
+Hilbert source. It uses the existing native weighted inclusion and proves
+that its image is exactly the existing normalized decoder image. The
+stronger physical theorem identifies the height-zero functions almost
+everywhere with the original physicalBase(periodOnePotential phi).
+It uses the exact [physical Hilbert source equivalence](../NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean),
+so no separately supplied replacement potential is used.
+
+The canonical raw coefficients use positive Fourier waves in both
+components. In the p.103 display, the first component uses negative
+waves, so its printed label is reflected. The weight is even, and
+w(-2n)=w(2n); the native membership and all physical norms retain the
+original weight. The actual unit-interval integrals determine both
+components throughout these statements.
+
+Four public examples check opposite boundary multipliers on a negative
+mode, the exact unit-interval L2 norm at Sobolev order zero, and an actual
+normalized source's strip realization, including the actual physical
+potential at fractional Sobolev order. The preceding printed-width
+counterexample remains valid. It refutes the interpretation as an
+equivalence with the narrower strip. The forward-only printed assertion
+is now proved explicitly for the actual physical source, with Sobolev
+norm traces on both printed boundary lines. The precise 2014 and Appendix G.2 qualifications
+remain unresolved.

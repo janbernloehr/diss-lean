@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: an actual Hilbert source satisfies the printed Abel-strip
-condition with smooth boundary traces while failing the literal weighted
-space. The characterization and forward-only readings are distinguished.
+Latest step: the original Abel source is characterized by the corrected
+strip of half-width a/pi and physical Sobolev norm traces. Its actual
+physical potential is retained, and the narrower forward assertion is proved.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
