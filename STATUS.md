@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: infinitesimal relative bounds in Section 3
+## Current milestone: analytic potential approximation in Section 3
+
+The analytic decomposition in the opening of Section 3 is proved in the
+original finite-exponent source norms, including p=1. Every potential is a
+finite Fourier polynomial plus a remainder with any prescribed positive
+norm bound.
+
+The approximant has an entire physical representative, real-analytic
+period-two restrictions, exact Fourier integrals and equality as actual
+distributions. Three examples check p=1, asymmetric odd modes and a
+fractional exponent. The [Section 3 audit](coverage/SECTION_3.md) records
+the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,052 build jobs, 7,019
+public examples, and a transitive axiom audit of 39,535 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,981 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: infinitesimal relative bounds in Section 3
 
 The opening relative-bound assertion of Section 3 is proved in the
 original finite-exponent source norms, including p=1. For each bounded

@@ -335,11 +335,36 @@ imposed.
 
 A per-potential corollary gives relative bound zero. Taking epsilon=1/2
 also gives both graph comparisons with coefficient two, uniformly on
-bounded potential sets. This formalizes the source proof paragraph by
-a resolvent argument; it does not assert an unproved decomposition into
-a prescribed analytic part and a remainder of a specified size.
+bounded potential sets. This proof uses a resolvent argument. The analytic-decomposition assertion
+in the same paragraph is formalized below.
 
 Three public examples check an asymmetric pair of odd complex modes at
 p=1, a uniform original-norm ball at p=3/2, and both graph directions at
 p=4. The full repository verification results are recorded in the
 implementation status.
+
+## Analytic decomposition in the opening paragraph
+
+The same paragraph on printed p.23 decomposes an arbitrary original
+period-two potential into a real-analytic part and a remainder of
+arbitrarily small norm. This assertion is now separately proved in
+[`SourceAnalyticApproximation.lean`](../NLS/Fourier/SourceAnalyticApproximation.lean).
+
+`exists_source_analytic_decomposition` gives finite coefficient data a
+and an original source remainder r with phi=ofFinsupp(a)+r and norm(r)<epsilon.
+It retains every finite Banach exponent, including p=1, and the original
+component-sum norm. Both components of the approximant have explicit
+entire Fourier-polynomial representatives. Their real restrictions are
+real analytic and physically period two. Every signed normalized Fourier
+integral is the corresponding coefficient of a, and integration against
+every Schwartz test equals the actual synthesized distribution.
+
+The proof uses the established density of finite Fourier pairs and
+identifies their physical representatives with continuous synthesis.
+There is no real-type, finite-gap or even-support restriction. No density
+claim at the infinity endpoint is made.
+
+Three public examples check the p=1 decomposition and its actual
+distribution, two asymmetric odd Fourier modes, and entire approximation
+at p=3/2. The relative-bound theorem above has an independent resolvent
+proof; this step supplies the literal approximation used by the source.

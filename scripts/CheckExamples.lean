@@ -65112,3 +65112,40 @@ example : ∃ C : ℝ, 0 < C ∧ ∀ φ : CoeffPair 4, ‖φ‖ ≤ 3 →
   exists_uniform_source_graph_comparison (by simp) 3
 
 end NLS.Section3RelativeBoundChecks
+
+-- Section 3, p.23: actual analytic representatives and small original-norm remainders.
+open NLS NLS.Fourier MeasureTheory Set
+open scoped ENNReal SchwartzMap
+
+example (φ : CoeffPair 1) :
+    ∃ (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (r : CoeffPair 1),
+      φ = CoeffPair.ofFinsupp a+r ∧ ‖r‖ < 1/100 ∧
+      AnalyticOnNhd ℝ (fun x : ℝ => (finitePeriodTwoEntire a.1 x,
+        finitePeriodTwoEntire a.2 x)) univ ∧
+      Function.Periodic (fun x : ℝ => (finitePeriodTwoEntire a.1 x,
+        finitePeriodTwoEntire a.2 x)) 2 ∧
+      (∀ g : 𝓢(ℝ, ℂ), distributionSynthesis (CoeffPair.ofFinsupp (p := 1) a).fst g =
+        ∫ x : ℝ, finitePeriodTwoEntire a.1 x*g x) := by
+  obtain ⟨a,r,he,hr,_,ha,hp,_,hf,_⟩ :=
+    exists_source_analytic_decomposition (by simp) φ (1/100) (by norm_num)
+  exact ⟨a,r,he,hr,ha,hp,hf⟩
+
+example :
+    let a : ℤ →₀ ℂ := Finsupp.single (-3) Complex.I+Finsupp.single 5 2
+    periodTwoCoefficient (fun x : ℝ => finitePeriodTwoEntire a x) (-3) = Complex.I ∧
+      periodTwoCoefficient (fun x : ℝ => finitePeriodTwoEntire a x) 5 = 2 := by
+  simp [periodTwoCoefficient_finitePeriodTwoEntire]
+
+example :
+    let p := ENNReal.ofReal (3/2 : ℝ)
+    letI : Fact (1 ≤ p) := ⟨by norm_num [p]⟩
+    ∀ φ : CoeffPair p, ∃ (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (r : CoeffPair p),
+      φ = CoeffPair.ofFinsupp a+r ∧ ‖r‖ < 1/1000 ∧
+      AnalyticOnNhd ℂ (fun z => (finitePeriodTwoEntire a.1 z,
+        finitePeriodTwoEntire a.2 z)) univ := by
+  dsimp only
+  let : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+  intro φ
+  obtain ⟨a,r,he,hr,ha,_⟩ :=
+    exists_source_analytic_decomposition (by simp) φ (1/1000) (by norm_num)
+  exact ⟨a,r,he,hr,ha⟩

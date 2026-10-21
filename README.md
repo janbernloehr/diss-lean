@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the infinitesimal relative bound in the opening of Section 3
-is proved in the original source norms, uniformly on bounded potential sets.
-The actual free and perturbed graph norms satisfy both comparison bounds.
+Latest step: every original finite-exponent potential admits an analytic
+approximant with an arbitrarily small remainder in the original norm.
+The physical Fourier coefficients and distributions are identified exactly.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
