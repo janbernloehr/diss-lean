@@ -129,6 +129,19 @@ section supplies a complete distributional realization and its converse
 Fourier-density characterization. The usual inhomogeneous Sobolev norm
 has a different scaling formula; the exact invariance here is homogeneous.
 
+## Original distributions beyond L2, printed p. 10
+
+[PeriodicFourierLebesgueStrictness.lean](../NLS/Fourier/PeriodicFourierLebesgueStrictness.lean)
+proves that an actual integrable circle function induces a distribution
+of order zero. Using the exact FL2=L2 isometry and its representative
+identity, this also holds for every original FL2 distribution.
+
+The existing nonmeasure counterexample has nonzero distributional order.
+It belongs to every FLp with p>2, including infinity, but cannot belong
+to FL2. The theorem supplies this same original distribution simultaneously
+for all exponents, for every positive period. This proves actual strictness
+beyond L2, rather than only failure of a coefficient norm estimate.
+
 ## The complete critical homogeneous space, printed p. 10
 
 [`LineTemperedNLSScaling.lean`](../NLS/Fourier/LineTemperedNLSScaling.lean)

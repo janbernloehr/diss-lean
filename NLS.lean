@@ -4316,3 +4316,4 @@ import NLS.ZakharovShabat.SourceOriginalSpectralConservation
 import NLS.ZakharovShabat.SourceOriginalActionIntegrals
 import NLS.Dynamics.RectangularHamiltonianOscillators
 import NLS.ZakharovShabat.SourceOriginalOscillators
+import NLS.Fourier.PeriodicFourierLebesgueStrictness

@@ -5,11 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: original global ordinary and renormalized solutions preserve
-their spectral actions, periodic spectrum with multiplicities, and normalized
-discriminant. The independent action functions are in involution, while
-the original real Birkhoff coordinates satisfy the literal oscillator
-equations with conserved frequencies. The dynamics range is 1<p<=2.
+Latest step: one actual periodic distribution belongs to every
+Fourier-Lebesgue space FLp for p>2, including infinity, but lies outside
+FL2=L2. The same witness works for all exponents at every positive period.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

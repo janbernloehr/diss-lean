@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: original spectral conservation and oscillators
+## Current milestone: original Fourier-Lebesgue distributions outside L2
+
+One original periodic distribution belongs to every Fourier-Lebesgue space
+FLp with p>2, including infinity, while lying outside FL2=L2. The same
+witness works for all exponents and at every positive period.
+
+The proof identifies every original FL2 distribution with its actual L2
+circle representative and proves that each such distribution has order
+zero. The existing nonmeasure distribution has nonzero order, so it cannot
+belong to FL2. One module and two examples implement the opening claim on
+printed p. 10. See the [introduction audit](coverage/INTRODUCTION.md).
+
+The precise 2014 comparison, G.2 norm qualification, scalar Fourier
+normalization audit, and remaining source review remain separate work.
+
+Validation: `./scripts/check.sh` passes with 7,982 build jobs, 6,912
+public examples, and a transitive axiom audit of 38,764 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,736 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: original spectral conservation and oscillators
 
 Every original global ordinary and renormalized solution for 1<p<=2
 preserves its original spectral actions, periodic spectrum with algebraic

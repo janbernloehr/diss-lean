@@ -63824,3 +63824,21 @@ example (hp2 : p ≤ 2) {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeS
   Q.renormalized_original_frequency_conserved hp2 hγ τ
 
 end NLS.OriginalOscillatorChecks
+
+noncomputable section
+namespace NLS.PeriodicStrictnessChecks
+open NLS.Fourier NLS.Fourier.SmoothPeriodicTest
+open scoped ENNReal
+
+-- One original distribution lies in every FLp above two, but outside L2.
+example {L : ℝ} [Fact (0 < L)] :
+    ∃ u : Distribution L,
+      (∀ p : ℝ≥0∞, 2 < p → u ∈ periodicFourierLebesgueSubmodule Weight.one p) ∧
+      u ∉ periodicFourierLebesgueSubmodule Weight.one 2 :=
+  Fourier.exists_fourierLebesgue_above_two_not_l2
+
+-- The actual normalized L2 circle representative always yields an order-zero distribution.
+example {L : ℝ} [Fact (0 < L)] (u : PeriodicFourierLebesgue L Weight.one 2) : u.val.order = 0 :=
+  Fourier.order_zero_of_mem_periodicFourierLebesgue_two u.val u.property
+
+end NLS.PeriodicStrictnessChecks
