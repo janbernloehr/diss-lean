@@ -14,6 +14,10 @@ They supersede the historical appendix entries below. The focused Section 2 conv
 [`coverage/SECTION_2.md`](coverage/SECTION_2.md). The spectral overview link below and the final
 dyadic-counterexample entry record the current status of Theorem 1.1.
 
+The [reviewed numbered-heading index](coverage/NUMBERED_HEADINGS.md)
+distinguishes actual statements, numbered remarks and reference-only labels.
+Its counts describe source locations, not proved coverage.
+
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
 | Appendix D, p.126: absolute convergence | [Exact convergence criterion](NLS/ComplexAnalysis/AbsoluteProductConvergence.lean), [audit](coverage/APPENDIX_D.md) | Ordered absolute convergence is equivalent to summability of perturbation norms and implies genuine complex convergence, including zero factors; ordinary convergence alone does not imply absolute convergence. |
