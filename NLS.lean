@@ -4401,3 +4401,4 @@ import NLS.Fourier.DyadicPrefixConvergence
 import NLS.Fourier.PrintedChirpPolynomials
 import NLS.Fourier.PrintedChirpContinuous
 import NLS.Fourier.PrintedChirpLiteralSeries
+import NLS.Fourier.PrintedChirpPeriodTransport

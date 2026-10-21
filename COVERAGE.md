@@ -20,6 +20,7 @@ Its counts describe source locations, not proved coverage.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Appendix A, p.123: printed witness at every positive period | [Explicit physical rescaling](NLS/Fourier/PrintedChirpPeriodTransport.lean), [audit](coverage/APPENDIX_A.md) | The same printed coefficients, uniform convergence with 2*pi*n/L frequencies, exact normalized interval Fourier integrals and original-space membership iff p>=2. |
 | Appendix A, p.123: literal continuous witness in A.5 | [Exact displayed series](NLS/Fourier/PrintedChirpLiteralSeries.lean), [audit](coverage/APPENDIX_A.md) | Uniform convergence of ordinary cutoffs to a continuous period-two function; exact physical Fourier integrals, original-space membership iff p>=2 and the same L2 realization. |
 | Appendix A, p.123: cancellation for the printed A.5 phase | [Uniform block estimates](NLS/Fourier/ChirpBlockCancellation.lean), [audit](coverage/APPENDIX_A.md) | Exact phase, every block prefix and every real physical point; squared norm at most N+12*pi*N*(1+log N). The later literal-series result proves weighted tails and uniform convergence. |
 | Appendix A, p.123: printed A.5 series coefficients | [Exact threshold and L2 realization](NLS/Fourier/PrintedChirpCoefficients.lean), [audit](coverage/APPENDIX_A.md) | Literal phase, logarithmic denominator and positive-index cutoffs; lp membership iff p>=2 and actual physical L2 convergence. Its continuity is established by the later literal-series result. |

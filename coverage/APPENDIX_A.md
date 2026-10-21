@@ -660,10 +660,10 @@ Thus this particular printed witness, independent of p, supplies the
 obstruction for all Banach exponents below two.
 
 The literal displayed factors exp(i*n*pi*x) use physical period two.
-The earlier alternative witness establishes A.5 at every positive period;
-this step does not silently reinterpret the displayed factors at another
-period. Whole-dissertation completeness and the separate source-edition
-and interval-norm qualifications are unchanged.
+The explicit transport below realizes the same witness at every positive
+period with the required frequency change. Whole-dissertation completeness
+and the separate source-edition and interval-norm qualifications remain
+separate obligations.
 
 Public modules:
 
@@ -674,3 +674,26 @@ Public modules:
 - [`PrintedChirpPolynomials.lean`](../NLS/Fourier/PrintedChirpPolynomials.lean)
 - [`PrintedChirpContinuous.lean`](../NLS/Fourier/PrintedChirpContinuous.lean)
 - [`PrintedChirpLiteralSeries.lean`](../NLS/Fourier/PrintedChirpLiteralSeries.lean)
+
+## The same printed witness at any positive physical period
+
+[`PrintedChirpPeriodTransport.lean`](../NLS/Fourier/PrintedChirpPeriodTransport.lean)
+transports the literal period-two witness to every positive physical
+period L by the explicit coordinate change x -> 2*x/L. The pullback is
+a continuous linear map between the two spaces of continuous functions.
+It sends each signed Fourier character to the same signed integer mode
+at period L.
+
+The displayed coefficients are unchanged. Ordinary partial sums using
+exp(2*pi*i*n*x/L) converge uniformly on the whole real line, and the
+normalized period-L interval Fourier integrals recover every printed
+coefficient exactly. Membership in the original distribution-based
+Fourier-Lebesgue spaces is equivalent to p>=2, including infinity.
+Thus the same explicit construction supplies one continuous witness
+outside all Banach FLp spaces below two, at every positive period.
+
+The period-two statement retains the literal factors printed in the
+source. This transport states the physical frequency change explicitly.
+Three examples check real-coordinate rescaling, the expanded series and
+an actual Fourier integral at period three, and the all-exponent
+original-space existential statement at an arbitrary positive period.

@@ -65235,3 +65235,34 @@ example :
         Complex.exp (Complex.I*(2*Real.log 2))/(Real.sqrt 2*(Real.log 2)^2 : ℝ) := by
   exact ⟨toLp_printedChirpContinuous,by
     simp [periodTwoCoefficient_printedChirpFunction,printedChirpCoefficient]⟩
+
+-- The literal witness with explicit physical-period rescaling.
+open NLS NLS.Fourier Filter Topology
+open scoped ENNReal
+
+example (x : ℝ) :
+    letI : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+    printedChirpAtPeriod 3 (x : AddCircle (3 : ℝ)) = printedChirpFunction (2*x/3) := by
+  let : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+  exact printedChirpAtPeriod_coe 3 x
+
+example :
+    letI : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+    intervalFourierCoefficient 3 (fun x : ℝ => printedChirpAtPeriod 3 (x : AddCircle (3 : ℝ))) 2 =
+      Complex.exp (Complex.I*(2*Real.log 2))/(Real.sqrt 2*(Real.log 2)^2 : ℝ) ∧
+    TendstoUniformly (fun (N : ℕ) (x : ℝ) => ∑ n ∈ Finset.Icc 2 N,
+      (Complex.exp (Complex.I*((n : ℝ)*Real.log n)) /
+        ((Real.sqrt n*(Real.log n)^2 : ℝ) : ℂ)) *
+          Complex.exp (Complex.I*(2*Real.pi*n*x/3)))
+      (fun x : ℝ => printedChirpAtPeriod 3 (x : AddCircle (3 : ℝ))) atTop := by
+  let : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+  exact ⟨by simp [intervalFourierCoefficient_printedChirpAtPeriod,printedChirpCoefficient],
+    tendstoUniformly_printedChirpAtPeriod_original 3⟩
+
+example (L : ℝ) [Fact (0 < L)] :
+    ∃ f : C(AddCircle L,ℂ), ∀ p : ℝ≥0∞, 1 ≤ p → p < 2 →
+      SmoothPeriodicTest.Distribution.ofContinuous f ∉ periodicFourierLebesgueSubmodule Weight.one p := by
+  refine ⟨printedChirpAtPeriod L,fun p hp hp2 => ?_⟩
+  let : Fact (1 ≤ p) := ⟨hp⟩
+  rw [printedChirpAtPeriod_mem_original_iff]
+  exact not_le_of_gt hp2

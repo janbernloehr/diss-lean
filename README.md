@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the particular series printed in A.5 converges uniformly to a
-continuous period-two function. Its actual Fourier integrals and original
-Fourier-Lebesgue threshold are proved, and its L2 class is identified.
+Latest step: the explicit A.5 witness is realized at every positive physical
+period, with uniform convergence, exact Fourier integrals and its sharp
+original Fourier-Lebesgue threshold. The coordinate rescaling is explicit.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

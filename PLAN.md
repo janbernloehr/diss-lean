@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: uniform convergence of the printed A.5 series
+## Current milestone: the printed A.5 witness at every positive period
+
+The same explicit A.5 witness is now realized at every positive physical
+period L. The coordinate change x -> 2*x/L and the frequencies 2*pi*n/L
+are stated explicitly; every signed integer Fourier coefficient is preserved.
+
+The ordinary partial sums converge uniformly on the whole real line,
+actual normalized period-L interval integrals recover the printed
+coefficients, and original Fourier-Lebesgue membership is equivalent to p>=2.
+Three examples check period-three coordinates, an expanded physical series
+and Fourier integral, and the all-exponent obstruction at arbitrary period.
+The [Appendix A audit](coverage/APPENDIX_A.md) records the construction.
+
+Validation: `./scripts/check.sh` passes with 8,070 build jobs, 7,031
+public examples, and a transitive axiom audit of 39,708 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,013 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: uniform convergence of the printed A.5 series
 
 The particular series displayed in the proof of A.5 converges uniformly
 on the whole real line to a continuous period-two function. The result
