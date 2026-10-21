@@ -30,8 +30,9 @@ C_p [ T^p + (B^p/N^δ + T^p)(1+B^p)B^p ].
 ```
 
 `C_p = rootDisplacementSummationConstant p` depends only on p. In Lean,
-`N/2` is natural-number division. This cutoff convention is explicit: a
-sharper corrected formula using ceiling(N/2) is not established here.
+`N/2` in this earlier API is natural-number division. The stronger full-cutoff
+and ceiling-half source theorems below now establish the corresponding
+corrected formulas with T=‖R_N φ‖ and T=‖R_ceiling(N/2) φ‖.
 The tails sum both root displacements over all integer indices with |n|≥N.
 
 The qualitative theorem selects actual pairs at sufficiently distant
@@ -145,7 +146,8 @@ Here `C_p=rootGapSummationConstant p` and
 `D_p=offDiagonalSummationConstant p` depend only on p. The theorem uses the
 actual contour squared gap through `‖γ_n²‖^(p/2)=|γ_n|^p`. It supplies actual
 counted spectral pairs, their source spectral equivalence, and the sum bound
-on one open convex neighborhood for every larger cutoff.
+on one open convex neighborhood for every larger cutoff. The full-cutoff
+and ceiling-half versions below retain this data with the sharper tail.
 
 | Assertion | Entry point | Scope |
 | --- | --- | --- |
@@ -413,8 +415,9 @@ D_p B_±^p (W^(2p)/N^δ + T_w^(2p)).
 The left-hand sides sum the p-th powers of the actual suprema over all
 integer n with |n|≥N. The off-diagonal supremum already includes w(2n),
 so the weight is raised to p along with the remainder norm. The proof uses
-strict 1<p<∞, not the analytic endpoint p=1. The floor-half cutoff includes
-its boundary; no sharper ceiling-half result is claimed.
+strict 1<p<∞, not the analytic endpoint p=1. The earlier floor-half cutoff
+includes its boundary. The full-cutoff and ceiling-half original-supremum
+versions below retain all three quantitative estimates and strip bounds.
 
 The page-41 printed off-diagonal display has neither these left-hand powers
 nor the same inner norm. The formal result follows the p-power and full-pair
@@ -495,6 +498,8 @@ claim of optimality or a sharp constant.
 The main theorem's displacement budget is exactly
 `sourcePeriodTwoDisplacementBudget`, displayed above in the Proposition 6.1
 audit. It includes the additive leading Fourier-tail term and uses floor(N/2).
+The new `sourceLemma6_9_fullCutoff` and `sourceLemma6_9_ceilingHalf` retain
+all its original determinant, root and neighborhood data with sharper tails.
 The printed formula is not claimed. The new counterexample entry point
 applies the previous actual-source spectral witness to these scalar root
 pairs. Its failure is locally uniform, not a fixed-input assertion about
@@ -507,10 +512,47 @@ the whole strip. The proof uses the existing branch-free root-gap argument;
 it requires neither a global square-root branch nor analytic root labels.
 Finitely many central labels remain unspecified by this high-frequency result.
 
-## Remaining source assertions
+## Full-cutoff and ceiling-half completion
 
-Chapter 2's Theorem 7.1 is now audited in [Section 7](SECTION_7.md).
-The next source step is Lemma 8.1's discriminant assertions.
-Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3 and
-Lemma 6.9 estimates remain unproved. Existing later results and the
+[FullCutoffSummability.lean](../NLS/ZakharovShabat/FullCutoffSummability.lean)
+retains the component Fourier tails at N in the diagonal and off-diagonal
+power-sum bounds. The exponent-only constants are unchanged. The earlier
+proofs weakened these component tails to floor(N/2); no comparison from
+the old final budget to a smaller new budget is assumed.
+
+[SourceCoefficientFullCutoffs.lean](../NLS/ZakharovShabat/SourceCoefficientFullCutoffs.lean)
+transports those bounds to the actual original full-strip suprema.
+[SourceCoefficientCeilingCutoffs.lean](../NLS/ZakharovShabat/SourceCoefficientCeilingCutoffs.lean)
+gives the ceiling-half versions of Lemma 6.8, including all three summable
+p-power tails, bounded strip images, exact original diagonal and weighted
+component norms, and an original unweighted-input neighborhood.
+
+[FullCutoffRootMajorants.lean](../NLS/ZakharovShabat/FullCutoffRootMajorants.lean)
+combines the stronger component estimates with the additive leading term.
+[FullCutoffSpectralRoots.lean](../NLS/ZakharovShabat/FullCutoffSpectralRoots.lean)
+retains the same actual root sequences, spectral equivalence, analytic and
+algebraic multiplicities, midpoint and squared-gap identities.
+
+[SourceFullCutoffEstimates.lean](../NLS/ZakharovShabat/SourceFullCutoffEstimates.lean)
+proves the original corrected Propositions 6.1/6.3 and Lemma 6.9 with the
+full Fourier tail R_N. Their original period-two norms, source pencil and
+determinant, and one open convex neighborhood for every later cutoff are
+preserved. The weighted gap is the actual contour squared gap.
+
+[SourceCeilingCutoffEstimates.lean](../NLS/ZakharovShabat/SourceCeilingCutoffEstimates.lean)
+then proves `sourceProposition6_1_corrected_ceilingHalf`,
+`sourceProposition6_3_corrected_ceilingHalf`, and `sourceLemma6_9_ceilingHalf`.
+Here ceiling(N/2) is represented by (N+1)/2 in natural division, with its
+boundary mode retained. Since (N+1)/2<=N, tail monotonicity gives these
+corollaries from the stronger full-cutoff estimates. The additive leading
+tail is still necessary; all printed-bound counterexamples above remain.
+Public examples check the odd boundary N=3 and original p=3 spectral,
+intrinsic-gap and coefficient-supremum conclusions.
+
+## Remaining source audit
+
+The prior ceiling-cutoff qualification is now closed for the corrected
+Propositions 6.1/6.3 and Lemmas 6.8/6.9. Theorem 7.1 is audited in
+[Section 7](SECTION_7.md), and Lemma 8.1's discriminant assertions are
+already covered in [Section 8](SECTION_8.md). These results and the
 candidate-label inventory do not certify the dissertation complete.

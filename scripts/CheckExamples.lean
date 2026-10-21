@@ -63906,3 +63906,70 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   linearIndependent_originalRealActionIntegral_fderiv_iff hp hp1 φ
 
 end NLS.ActionDifferentialIndependenceChecks
+
+noncomputable section
+namespace NLS.Section6CutoffChecks
+open NLS.ZakharovShabat
+open scoped ENNReal
+
+-- At an odd cutoff, ceiling-half retains precisely the boundary mode two.
+example (φ : CoeffPair 2) :
+    sourcePeriodTwoDisplacementBudget_ceilingHalf φ 3 =
+      rootDisplacementSummationConstant 2 *
+        (‖sourceFourierTail 2 φ‖^2 +
+          (‖φ‖^2/(3:ℝ) + ‖sourceFourierTail 2 φ‖^2) * (1+‖φ‖^2)*‖φ‖^2) := by
+  norm_num [sourcePeriodTwoDisplacementBudget_ceilingHalf]
+
+-- The stronger full-cutoff estimate implies the ceiling-half estimate at odd cutoffs.
+example (φ : CoeffPair 2) :
+    sourcePeriodTwoDisplacementBudget_fullCutoff φ 3 ≤
+      sourcePeriodTwoDisplacementBudget_ceilingHalf φ 3 :=
+  sourcePeriodTwoDisplacementBudget_fullCutoff_le_ceilingHalf (by norm_num) φ 3
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The original determinant roots retain exact multiplicity and their corrected tail
+-- estimate even above the Hilbert exponent.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∃ ξ η : ℤ → ℂ,
+        (∀ n : ℤ, N₀ ≤ n.natAbs →
+          SourceResonantRootPair (p := 3) (by norm_num) ψ n (ξ n) (η n)) ∧
+        ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail 3 N ξ η) ∧
+          (∑' n : ℤ, rootDisplacementPowerTail 3 N ξ η n) ≤
+            sourcePeriodTwoDisplacementBudget_ceilingHalf ψ N := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,_,hr⟩ :=
+    sourceLemma6_9_ceilingHalf (p := 3) (by norm_num) (by norm_num) φ
+  exact ⟨N,hN,U,ho,hc,hφ,h0,hr⟩
+
+-- The intrinsic contour squared gap satisfies the weighted ceiling-half bound.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (periodicGapPowerTail (p := 3) (by norm_num) w ψ N) ∧
+          (∑' n : ℤ, periodicGapPowerTail (p := 3) (by norm_num) w ψ N n) ≤
+            rootGapBudget_ceilingHalf w ψ N := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hr⟩ :=
+    sourceProposition6_3_corrected_ceilingHalf (p := 3) (by norm_num) (by norm_num) w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ
+  obtain ⟨_,_,_,_,ht⟩ := hr ψ hψ
+  exact ht
+
+-- The original weighted negative remainder has the same sharper cutoff at p=3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (sourceCoefficientPowerTail 3 N
+          (sourceResonantBMinusSup (by norm_num) w (sourceWeightedPeriodTwoInput w ψ))) ∧
+        (∑' n : ℤ, sourceCoefficientPowerTail 3 N
+          (sourceResonantBMinusSup (by norm_num) w (sourceWeightedPeriodTwoInput w ψ)) n) ≤
+          sourceOffDiagonalTailBudget_ceilingHalf w ψ ‖ψ.fst‖ N := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hs⟩ :=
+    sourceLemma6_8_summability_ceilingHalf (p := 3) (by norm_num) (by norm_num) w φ
+  exact ⟨N,hN,U,ho,hc,hφ,h0,fun ψ hψ K hK => (hs ψ hψ K hK).2.1⟩
+
+end NLS.Section6CutoffChecks

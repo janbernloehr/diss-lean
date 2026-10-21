@@ -4320,3 +4320,10 @@ import NLS.Fourier.PeriodicFourierLebesgueStrictness
 import NLS.ZakharovShabat.ScalarNonlinearParseval
 import NLS.ZakharovShabat.SourceActionDifferentialIndependence
 import NLS.ZakharovShabat.SourceRealActionDifferentialIndependence
+import NLS.ZakharovShabat.FullCutoffSummability
+import NLS.ZakharovShabat.FullCutoffRootMajorants
+import NLS.ZakharovShabat.FullCutoffSpectralRoots
+import NLS.ZakharovShabat.SourceFullCutoffEstimates
+import NLS.ZakharovShabat.SourceCeilingCutoffEstimates
+import NLS.ZakharovShabat.SourceCoefficientFullCutoffs
+import NLS.ZakharovShabat.SourceCoefficientCeilingCutoffs

@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: exact independence of original action differentials
+## Current milestone: sharper original Section 6 cutoff estimates
+
+The corrected displacement and weighted gap bounds now retain the Fourier
+tail at the full cutoff N. Monotonicity gives the ceiling(N/2) versions with
+the same exponent-only constants. The additive leading-tail term remains;
+the printed formulas without it are still refuted.
+
+The original Propositions 6.1/6.3 and Lemmas 6.8/6.9 retain the actual source
+operator and determinant, original component-sum norms, counted spectral
+roots and multiplicities. One open convex neighborhood works for every
+later cutoff. Lemma 6.8 uses the actual full-strip supremum p-power sums
+and distinguished off-diagonal component norms.
+
+Seven modules and five examples close the previous ceiling-cutoff
+qualification. See the [Section 6 audit](coverage/SECTION_6.md). The exact
+2014 comparison, G.2 norm qualification, and remaining source audit are
+separate work.
+
+Validation: `./scripts/check.sh` passes with 7,992 build jobs, 6,924
+public examples, and a transitive axiom audit of 38,879 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,769 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: exact independence of original action differentials
 
 For every finite p>1, the actual complex indexed-action differentials and
 the actual real action differentials are linearly independent on the
