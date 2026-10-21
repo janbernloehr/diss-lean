@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: general distributional convolution criterion in Appendix A
+## Current milestone: absolute convergence of infinite products in Appendix D
+
+The introductory absolute-convergence assertion of Appendix D is proved
+with its literal ordered-product definition. Absolute convergence is
+equivalent to summability of the perturbation norms and implies complex
+product convergence, including when a factor vanishes.
+
+The majorant limit retains quantitative bounds. A convergent zero product
+with divergent majorants distinguishes ordinary and absolute convergence.
+Four examples check zero factors, signed indices and the exact limits.
+The [Appendix D audit](coverage/APPENDIX_D.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,050 build jobs, 7,013
+public examples, and a transitive axiom audit of 39,514 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,959 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: general distributional convolution criterion in Appendix A
 
 The general coefficient criterion before Lemma A.7 is proved on the
 original smooth-test dual. A unique product exists precisely when every

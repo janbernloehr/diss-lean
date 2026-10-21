@@ -77,3 +77,37 @@ numerator factors, the p=3/2 half-exponent case, negative omitted
 indices, both sine-quotient center signs, arbitrary cutoff-defined
 products, and constants chosen before inputs and samples. The current
 full build and axiom-audit totals are recorded in [status](../STATUS.md).
+
+## Absolute convergence in the introductory paragraph
+
+The unnumbered paragraph on p.126 defines convergence as existence of a
+finite limit of ordered partial products. It permits zero factors and a
+zero limit. Absolute convergence means convergence of the corresponding
+positive products of 1+|a_n|.
+The public source statements use the exact inclusive cutoffs 1≤n≤N,
+with a proved finite reindexing and no constraint on the unused zeroth term.
+
+[`AbsoluteProductConvergence.lean`](../NLS/ComplexAnalysis/AbsoluteProductConvergence.lean)
+proves that this absolute convergence is equivalent to summability of
+|a_n|. The necessity follows from 1+sum|a_n|≤product(1+|a_n|) on every
+finite cutoff and boundedness of a convergent sequence. The sufficiency
+and convergence of the complex products follow from the summable norm
+criterion. The unordered positive products satisfy the same equivalence
+for an arbitrary index type, including the integers.
+
+The ordered complex limit is the genuine unconditional product, also
+when a factor vanishes. Under the summability condition, it is nonzero
+exactly when every factor is nonzero. The positive majorant limit lies
+between 1+sum|a_n| and exp(sum|a_n|).
+
+A sequence with every perturbation equal to -1 has complex partial
+products eventually equal to zero, while its positive majorant products
+have no finite limit. Thus ordinary convergence in the source's stated
+sense need not be absolute. This is a distinction between the definitions,
+not an error in the source.
+
+Four examples check an absolutely convergent product containing a zero
+factor, ordinary convergence without absolute convergence, both limit
+bounds, and the nonvanishing criterion with signed indices. The module
+and focused examples compile without new warnings; full repository
+validation is recorded in [STATUS.md](../STATUS.md).

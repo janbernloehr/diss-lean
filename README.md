@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the general distributional product criterion in Appendix A
-is proved for both unordered sums and symmetric cutoffs. Actual periodic
-distributions show why convergent convolutions still need polynomial growth.
+Latest step: the introductory infinite-product criterion in Appendix D
+is proved with actual ordered limits. Absolute convergence implies complex
+convergence, including zero factors, and is equivalent to an l1 perturbation.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

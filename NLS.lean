@@ -4383,3 +4383,4 @@ import NLS.Fourier.PeriodicDistributionConvolutionProduct
 import NLS.Fourier.SparseConvolutionGrowth
 import NLS.Fourier.PeriodicConvolutionGrowthObstruction
 import NLS.Fourier.PeriodicSymmetricProductExample
+import NLS.ComplexAnalysis.AbsoluteProductConvergence

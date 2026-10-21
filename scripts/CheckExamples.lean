@@ -65035,3 +65035,44 @@ example (L : ℝ) [Fact (0 < L)] (w : Distribution L) :
   Distribution.not_hasFourierProduct_evaluation_harmonic w
 
 end NLS.AppendixAConvolutionCriterionChecks
+
+noncomputable section
+namespace NLS.AppendixDAbsoluteProductsChecks
+open NLS.ComplexAnalysis Filter Topology
+
+-- A single zero factor is allowed even in an absolutely convergent product.
+example : Multipliable (fun n : ℕ => 1 + ‖if n = 2 then (-1:ℂ) else 0‖) ∧
+    Multipliable (fun n : ℕ => 1 + if n = 2 then (-1:ℂ) else 0) ∧
+    (∏' n : ℕ, (1 + if n = 2 then (-1:ℂ) else 0)) = 0 := by
+  have hz : ∃ n : ℕ, (1 + if n = 2 then (-1:ℂ) else 0) = 0 := ⟨2,by norm_num⟩
+  have hs : Summable (fun n : ℕ => ‖if n = 2 then (-1:ℂ) else 0‖) := by
+    apply summable_of_hasFiniteSupport
+    apply (Set.finite_singleton 2).subset
+    intro n hn
+    by_contra h
+    have hn2 : n ≠ 2 := by simpa using h
+    simp [Function.mem_support,hn2] at hn
+  exact ⟨(multipliable_one_add_norm_iff _).mpr hs,
+    multipliable_of_exists_eq_zero hz,tprod_of_exists_eq_zero hz⟩
+
+-- Under the source's convention, ordinary convergence need not be absolute.
+example :
+    Tendsto (fun N : ℕ => ∏ _i ∈ Finset.range N, (1+(-1:ℂ))) atTop (𝓝 0) ∧
+    ¬ ∃ P : ℝ, Tendsto (fun N : ℕ => ∏ _i ∈ Finset.range N, (1+‖(-1:ℂ)‖))
+      atTop (𝓝 P) :=
+  ⟨zero_factor_ordered_product_converges,zero_factor_product_not_absolute⟩
+
+-- The source's exact 1≤n≤N cutoffs retain convergence and quantitative bounds.
+example (u : ℕ → ℂ) (P : ℝ)
+    (h : Tendsto (fun N : ℕ => ∏ i ∈ Finset.Icc 1 N, (1+‖u i‖)) atTop (𝓝 P)) :
+    Tendsto (fun N : ℕ => ∏ i ∈ Finset.Icc 1 N, (1+u i))
+      atTop (𝓝 (∏' i, (1+u (i+1)))) ∧
+      1+(∑' i, ‖u (i+1)‖) ≤ P ∧ P ≤ Real.exp (∑' i, ‖u (i+1)‖) :=
+  source_complex_product_limit_and_bounds h
+
+-- Signed index sets retain the exact nonvanishing criterion.
+example (u : ℤ → ℂ) (h : Multipliable (fun n => 1+‖u n‖)) :
+    (∏' n, (1+u n)) ≠ 0 ↔ ∀ n, 1+u n ≠ 0 :=
+  tprod_one_add_ne_zero_iff u ((multipliable_one_add_norm_iff u).mp h)
+
+end NLS.AppendixDAbsoluteProductsChecks
