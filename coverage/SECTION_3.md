@@ -1,7 +1,8 @@
 # Section 3: periodic spectrum
 
-This audit covers the operator setup, Proposition 3.1, Lemmas 3.2 and
-3.4, Corollaries 3.3 and 3.5, and equation (1.4) on printed pages 23–26.
+This audit covers the operator setup, Proposition 3.1, Lemmas 3.2, 3.4,
+3.6 and 3.7, Corollaries 3.3 and 3.5, and equations (1.4)–(1.5) on printed
+pages 23–27.
 It retains the original period-two space, its finite-exponent component-sum norm, and the
 conditional period-one parity clauses. It is not a completeness certificate
 for Section 3 or the dissertation.

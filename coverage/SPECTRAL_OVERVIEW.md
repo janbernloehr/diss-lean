@@ -1,12 +1,12 @@
 # Spectral overview audit
 
-Source: dissertation Section 1, printed pp. 17–20, and the proof of Theorem
+Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
 ## Theorem 1.1: printed height proved through four; all-exponent assertion refuted
 
-Source: dissertation, printed p. 17 (statement), especially clauses (ii)
+Source: dissertation, printed p. 18 (statement), especially clauses (ii)
 and (iii), and p. 27 (proof). The central box uses the original source
 height `(1+8||phi||_p)^p`, and this box together with the quarter-pi disks
 must contain every periodic eigenvalue.
@@ -230,8 +230,9 @@ not a counterexample to a mere numerical criterion.
 pointwise all-source assertion at p=1024, hence also the printed
 neighborhood conclusion. No replacement height is adopted. The Hilbert
 result above and all finite-p height-N counting results remain valid.
-Theorem 1.1's periodic height is a separate question, still open above
-four. See `SOURCE_ERRATA.md` for the complete construction and source
+Theorem 1.1's periodic height has a separate counterexample at large
+exponents, as recorded above. Its sharp exponent range above four remains
+undetermined. See `SOURCE_ERRATA.md` for the constructions and source
 comparison.
 
 A proposed all-p replacement is now proved in
@@ -332,4 +333,4 @@ four and records both Theorem 1.1's and Theorem 1.4's all-p printed heights
 as refuted.
 The latter still holds at p=2; no replacement height is adopted. This
 audit does not certify the remaining chapters or unnumbered source claims.
-The dissertation remains incomplete.
+The formalization of the dissertation remains incomplete.
