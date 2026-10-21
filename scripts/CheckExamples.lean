@@ -65179,3 +65179,27 @@ example :
   apply tendsto_printedChirpL2_partialSums.congr'
   exact Eventually.of_forall fun N => Finset.sum_congr rfl fun n hn => by
     rw [printedChirpCoefficient,if_pos (Finset.mem_Icc.mp hn).1]
+
+-- Actual chirp cancellation: non-dyadic prefixes, the smallest positive lag, and dyadic blocks.
+open NLS NLS.Fourier
+
+example (x : ℝ) :
+    ‖∑ n ∈ Finset.range 19,
+      Complex.exp (Complex.I*((37+(n : ℝ))*Real.log (37+(n : ℝ)))) *
+        Complex.exp (Complex.I*((37+(n : ℝ))*Real.pi*x))‖ ≤
+      Real.sqrt (37+12*Real.pi*37*(1+Real.log 37)) := by
+  simpa using norm_sum_printedChirp_phases_le 37 19 x
+    (by norm_num) (by norm_num)
+
+example (N : ℕ) (hN : 2 ≤ N) (α : ℝ) :
+    ‖∑ n ∈ Finset.range (N-1),
+      chirpUnit α ((N : ℝ)+n+1)*star (chirpUnit α ((N : ℝ)+n))‖ ≤
+        6*Real.pi*N := by
+  simpa only [Nat.cast_one,div_one] using norm_sum_chirp_correlations N (N-1) 1 α
+    (by omega) (by norm_num) (by omega)
+
+example (k M : ℕ) (hM : M ≤ 2^k) (x : ℝ) :
+    ‖∑ n ∈ Finset.range M, chirpUnit (Real.pi*x) ((2 : ℝ)^k+n)‖^2 ≤
+      (2 : ℝ)^k+12*Real.pi*(2 : ℝ)^k*(1+(k : ℝ)*Real.log 2) := by
+  simpa only [Nat.cast_pow,Nat.cast_ofNat,Real.log_pow] using
+    norm_sum_chirpUnit_sq_le_log (2^k) M (Real.pi*x) (one_le_pow₀ (by norm_num)) hM

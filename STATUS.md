@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: literal Fourier coefficients in Lemma A.5
+## Current milestone: uniform cancellation for the printed A.5 phase
+
+Every prefix of each dyadic block of the exact phase printed in A.5
+satisfies a uniform cancellation bound. For a block starting at N>=1,
+its squared norm is at most N+12*pi*N*(1+log N), at every real physical point.
+
+The proof uses actual phase derivatives, telescoping multiplier variation,
+and an exact finite correlation identity. Three examples check a non-dyadic
+prefix, the smallest positive lag, and the logarithmic estimate on dyadic
+blocks. The [Appendix A audit](coverage/APPENDIX_A.md) records the scope.
+The printed amplitude still needs weighted-tail and uniform-convergence
+arguments before this particular series is proved continuous.
+
+Validation: `./scripts/check.sh` passes with 8,062 build jobs, 7,025
+public examples, and a transitive axiom audit of 39,615 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,997 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: literal Fourier coefficients in Lemma A.5
 
 The coefficients of the particular series printed in the proof of A.5
 have the exact lp threshold p>=2. Their actual period-two physical L2

@@ -4387,3 +4387,10 @@ import NLS.ComplexAnalysis.AbsoluteProductConvergence
 import NLS.ZakharovShabat.SourcePotentialRelativeBound
 import NLS.Fourier.SourceAnalyticApproximation
 import NLS.Fourier.PrintedChirpCoefficients
+import NLS.Fourier.OscillatorySumVariation
+import NLS.Fourier.PhaseReciprocalMultiplier
+import NLS.Fourier.AntitonePhaseCancellation
+import NLS.Fourier.ChirpPhaseIncrements
+import NLS.Fourier.ChirpCorrelationSums
+import NLS.Fourier.FiniteCorrelationIdentity
+import NLS.Fourier.ChirpBlockCancellation

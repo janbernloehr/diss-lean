@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the particular Fourier coefficients printed in A.5 have the
-exact lp threshold p>=2 and an actual physical L2 realization. The original
-positive-index partial sums converge in L2; continuity remains to be proved.
+Latest step: the exact oscillatory phase printed in A.5 satisfies a uniform
+cancellation bound for every dyadic-block prefix. Weighted tails and uniform
+convergence of the literal series remain to be proved.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

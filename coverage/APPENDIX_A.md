@@ -594,3 +594,41 @@ This step does not prove continuity or uniform convergence of this
 particular series. Those require a separate cancellation estimate for
 its oscillatory partial sums. The earlier continuous Rudin-Shapiro
 witness still proves the complete existential statement of A.5.
+
+## Cancellation for the literal printed A.5 phase
+
+The next prerequisite concerns the actual oscillatory factors
+exp(i*n*log(n))*exp(i*n*pi*x), uniformly for every real physical point x.
+For every integer N>=1 and every prefix length 0<=M<=N, their sum over
+N<=n<N+M has squared norm at most
+
+    N + 12*pi*N*(1+log N).
+
+The lower-cutoff case N>=2 needed by the printed series is included.
+The estimate controls every prefix, not just complete dyadic blocks.
+
+The proof squares the finite sum and groups off-diagonal terms by positive
+lag h. In each correlation the linear physical phase becomes a constant.
+Actual derivative and mean-value estimates for t*log(t) show that its
+half-increments decrease and lie between h/(6*N) and 1/2. A reciprocal
+exponential multiplier, exact summation by parts and telescoping total
+variation bound each correlation prefix by 6*pi*N/h. The finite harmonic
+sum then gives the logarithmic bound above. No unproved exponential-sum
+estimate is assumed.
+
+These bounds are prerequisites for the literal witness. The amplitude
+1/(sqrt(n)*log(n)^2) still needs a weighted block estimate, followed by
+uniform convergence of the ordinary positive-index cutoffs and
+identification of the continuous representative with printedChirpL2.
+The already proved alternative witness establishes A.5's existential
+statement independently.
+
+Public modules:
+
+- [`OscillatorySumVariation.lean`](../NLS/Fourier/OscillatorySumVariation.lean)
+- [`PhaseReciprocalMultiplier.lean`](../NLS/Fourier/PhaseReciprocalMultiplier.lean)
+- [`AntitonePhaseCancellation.lean`](../NLS/Fourier/AntitonePhaseCancellation.lean)
+- [`ChirpPhaseIncrements.lean`](../NLS/Fourier/ChirpPhaseIncrements.lean)
+- [`ChirpCorrelationSums.lean`](../NLS/Fourier/ChirpCorrelationSums.lean)
+- [`FiniteCorrelationIdentity.lean`](../NLS/Fourier/FiniteCorrelationIdentity.lean)
+- [`ChirpBlockCancellation.lean`](../NLS/Fourier/ChirpBlockCancellation.lean)
