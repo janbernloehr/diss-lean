@@ -3,8 +3,8 @@
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
 interfaces below are implemented. The wider introductory background on
-pp. 9–10 remains a separate audit, apart from the almost-periodicity
-result documented below. This document does not certify the entire
+pp. 9–10 remains a separate audit, apart from the almost-periodicity and critical
+Sobolev inclusion results documented below. This document does not certify the entire
 introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
@@ -55,6 +55,28 @@ coefficients are retained.
 
 These results cover 1<p<=2 and every nonnegative real regularity. They do
 not assert global solutions above p=2 or phase norm continuity at p=infinity.
+
+## Critical Sobolev inclusion, printed p. 10
+
+For each finite real p>2 and every positive period L, the original FL^p
+space embeds continuously and injectively into H^(-1/2).
+[`CriticalSobolevInclusion.lean`](../NLS/SequenceSpaces/CriticalSobolevInclusion.lean)
+constructs the coefficient-preserving bounded linear map. The exact Holder
+exponent r=(1/2-1/p)^(-1) satisfies r>2, so the negative-half multiplier
+(1+|n|)^(-1/2) has the strict summability needed by Holder's inequality.
+
+[`PeriodicCriticalSobolevInclusion.lean`](../NLS/Fourier/PeriodicCriticalSobolevInclusion.lean)
+transfers this map through the original coefficient isometries. Its
+`criticalSobolevInclusion_val` theorem identifies the output with the
+same original periodic distribution, and `criticalSobolevInclusion_injective`
+proves injectivity. The target is the existing original
+`FourierLebesgueSpace L (-1/2) 2`, with its normalized coefficient norm.
+The statement makes no infinity input claim and does not equate that
+norm with an unnormalized physical interval norm.
+
+The subsequent full-line dilation and Galilean statements are separate
+background claims. They are not consequences of periodic coefficient
+inclusion and remain separate implementation steps.
 
 ## Theorem 0.1 and the original Sobolev norms
 

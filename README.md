@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: original global ordinary and renormalized NLS solutions for
-1<p<=2 are Bohr almost periodic in the full source norm and every
-nonnegative native Sobolev norm available in the initial data. Uniform
-return times are relatively dense; the stronger representatives recover
-the same original solution coefficientwise. Formalization remains in progress.
+Latest step: for every finite p>2 and every positive period, the original
+Fourier-Lebesgue space FL^p embeds continuously and injectively into H^(-1/2).
+The map preserves all Fourier coefficients and the original periodic
+distribution itself. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

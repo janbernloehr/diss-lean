@@ -63573,3 +63573,26 @@ example (a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight 1
   exact ⟨Γ,h0,he,by simpa only [dist_eq_norm] using hrec.periods⟩
 
 end NLS.SobolevAlmostPeriodicChecks
+
+noncomputable section
+namespace NLS.CriticalSobolevChecks
+open scoped ENNReal
+
+local instance fourFact : Fact (1 ≤ ENNReal.ofReal 4) := ⟨by norm_num⟩
+
+/-- The actual negative-half weight is square summable against every ell4 input. -/
+example (a : Coeff (ENNReal.ofReal 4)) :
+    Memℓp (fun n : ℤ => (((1+|(n:ℝ)|)^(-1/2:ℝ) : ℝ) : ℂ)*a n) 2 := by
+  have h := (Coeff.criticalSobolevInclusion 4 (by norm_num) a).property
+  change Memℓp (fun n : ℤ => (Weight.sobolev (-1/2) n : ℂ)*
+    (Coeff.criticalSobolevInclusion 4 (by norm_num) a).val n) 2 at h
+  simpa only [Coeff.criticalSobolevInclusion_apply,Weight.sobolev_apply] using h
+
+/-- The original distribution itself has the new Sobolev regularity at every period. -/
+example {L : ℝ} [Fact (0 < L)]
+    (u : Fourier.PeriodicFourierLebesgue L Weight.one (ENNReal.ofReal 4)) :
+    ∃ v : Fourier.FourierLebesgueSpace L (-1/2) 2, v.val = u.val :=
+  ⟨Fourier.PeriodicFourierLebesgue.criticalSobolevInclusion 4 (by norm_num) u,
+    Fourier.PeriodicFourierLebesgue.criticalSobolevInclusion_val 4 (by norm_num) u⟩
+
+end NLS.CriticalSobolevChecks

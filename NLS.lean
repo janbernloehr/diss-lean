@@ -4299,3 +4299,5 @@ import NLS.SequenceSpaces.WeightedPhaseAlmostPeriodic
 import NLS.Dynamics.WeightedRealPhaseFlow
 import NLS.ZakharovShabat.SourceSobolevPhaseFlow
 import NLS.ZakharovShabat.SourceSobolevAlmostPeriodic
+import NLS.SequenceSpaces.CriticalSobolevInclusion
+import NLS.Fourier.PeriodicCriticalSobolevInclusion

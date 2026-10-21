@@ -1,6 +1,35 @@
 # Implementation status
 
-## Current milestone: almost periodicity of original global NLS solutions
+## Current milestone: the original critical Sobolev inclusion
+
+For every finite p>2 and every positive period, the original Fourier-Lebesgue
+space FL^p embeds continuously and injectively into H^(-1/2). The map
+preserves every Fourier coefficient and is exactly the identity on the
+original periodic distribution.
+
+The proof uses the Holder exponent r=(1/2-1/p)^(-1)>2. Multiplication by
+(1+|n|)^(-1/2) then maps ell^p continuously into ell^2. The target retains
+the existing normalized coefficient norm for its period; no equality with
+an unnormalized physical interval norm is asserted. The infinity input
+endpoint is outside this theorem's stated scope.
+
+Two modules and two public examples implement the unnumbered statement
+on printed p. 10, including literal negative-half weighted membership
+for ell^4 and the unchanged original distribution at every positive period.
+See the [introduction audit](coverage/INTRODUCTION.md).
+
+Full-line scaling and Galilean symmetry remain separate introductory
+background steps. The precise 2014 comparison, G.2 norm qualification,
+and full source-level completion audit also remain open.
+
+Validation: `./scripts/check.sh` passes with 7,966 build jobs, 6,887
+public examples, and a transitive axiom audit of 38,546 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,689 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: almost periodicity of original global NLS solutions
 
 Every global ordinary or renormalized NLS solution in the original
 smooth-approximation sense is Bohr almost periodic for 1<p<=2, including
