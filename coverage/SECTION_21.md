@@ -102,3 +102,24 @@ concavity are not asserted. Native fractional Sobolev analyticity and
 analytic inverses are proved in [Section 14](SECTION_14.md); its precise
 2014 construction comparison remains unverified. The subsequent original
 phases and physical flows are audited in [Section 22](SECTION_22.md).
+
+## The imaginary constant in the cube shift, printed p. 97
+
+The proof of Lemma 21.2 expands F0 = Fn - i*pi*n, but prints the constant
+term +(pi*n)^3 when cubing. The correct term is +i*(pi*n)^3. The PDF was
+checked directly; this is separate from the already recorded overall
+sign discrepancy in equation (4.13).
+
+[SourceSection21CubeShiftCorrection.lean](../NLS/ZakharovShabat/SourceSection21CubeShiftCorrection.lean)
+proves the corrected algebra and applies it to the actual primitive on
+the full filled spectral domain of every retained Section 19 package.
+It also refutes the printed identity at the actual zero source for every
+spectral argument and every nonzero signed normalization index, at every
+finite source exponent above one. No source or spectral witness is assumed.
+
+The missing imaginary unit affects only a constant in the spectral
+variable. Its circle integral is zero, so the existing
+[original moment identity](../NLS/ZakharovShabat/SourceSection21Moments.lean)
+and the corrected negative cubic Hamiltonian coefficient remain proved.
+Two public examples check an unconditional original family at p=4 with
+index -1 and the corrected identity on the entire stated spectral domain.

@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Current milestone: the infinity frequency target and cubic coefficient correction
+## Current milestone: the imaginary constant in the primitive cube shift
+
+The cube of the original primitive normalization shift has constant
+i*(pi*n)^3. The p.97 display omits i. The corrected identity now holds
+on the full filled spectral domain of the unchanged original primitive.
+
+At the actual zero source the printed identity fails for every nonzero
+signed index and every spectral argument, at every finite p>1. This
+constant discrepancy does not change the existing contour residue or
+corrected moment Hamiltonian formula. Two examples check the scope.
+The [Section 21 audit](coverage/SECTION_21.md) records the correction.
+
+Validation: `./scripts/check.sh` passes with 8,021 build jobs, 6,970
+public examples, and a transitive axiom audit of 39,150 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,887 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the infinity frequency target and cubic coefficient correction
 
 The original moment-frequency sequence is analytic into l-infinity on
 the unchanged original complex source domain. Every scalar frequency,

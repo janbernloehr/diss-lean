@@ -64559,3 +64559,31 @@ example (H₁ H₃ z : ℂ) :
   norm_num at hre
 
 end NLS.Section20FrequencyFollowupChecks
+
+noncomputable section
+namespace NLS.Section21CubeShiftCorrectionChecks
+open ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- An original family is constructed and the printed identity is refuted at the actual zero source.
+example : ∃ W U : Set (CoeffPair 4), SourceSection19Data (by simp) (by norm_num) W U ∧
+    let f := sourceFullAbelianPrimitive (by simp) (by norm_num) W (-1) (Complex.I,0)
+    (sourceFullAbelianPrimitive (by simp) (by norm_num) W 0 (Complex.I,0))^3 ≠
+      f^3-3*Complex.I*f^2*((Real.pi:ℂ)*(-1:ℤ))-3*f*((Real.pi:ℂ)*(-1:ℤ))^2+
+        ((Real.pi:ℂ)*(-1:ℤ))^3 := by
+  obtain ⟨W₀,W,V,s,_,A,U,_,Q⟩ := sourceSection19_original (p := 4) (by simp) (by norm_num)
+  exact ⟨A,U,Q,Q.zero_cube_index_shift_ne_printed (-1) (by norm_num) Complex.I⟩
+
+-- The corrected expansion retains the actual primitive throughout the original filled spectral domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W U : Set (CoeffPair p)} (Q : SourceSection19Data hp hp1 W U)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) (n : ℤ) (z : ℂ)
+    (hz : z ∈ sourceOpenGapComplement hp hp1 ψ) :
+    let f := sourceFullAbelianPrimitive hp hp1 W n (z,ψ)
+    (sourceFullAbelianPrimitive hp hp1 W 0 (z,ψ))^3 =
+      f^3-3*Complex.I*f^2*((Real.pi:ℂ)*n)-3*f*((Real.pi:ℂ)*n)^2+
+        Complex.I*((Real.pi:ℂ)*n)^3 :=
+  Q.cube_index_shift ψ hψ n z hz
+
+end NLS.Section21CubeShiftCorrectionChecks

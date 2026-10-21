@@ -1,5 +1,19 @@
 # Source discrepancies
 
+## Lemma 21.2 proof, p. 97: the cube of the normalization shift
+
+The expansion of (Fn-i*pi*n)^3 prints +(pi*n)^3 as its constant term.
+It requires +i*(pi*n)^3. The PDF display was checked directly.
+[SourceSection21CubeShiftCorrection.lean](NLS/ZakharovShabat/SourceSection21CubeShiftCorrection.lean)
+proves the corrected identity for the actual primitive throughout its
+filled spectral domain. At the actual zero source, the printed identity
+fails for every nonzero signed normalization index and every spectral
+argument, for every finite source exponent above one.
+
+The discrepancy is constant in the spectral variable and integrates to
+zero around the circle. The already proved corrected moment formula is
+unchanged. See the [Section 21 audit](coverage/SECTION_21.md).
+
 ## Lemma 20.2 proof, p. 93: the copied momentum coefficient
 
 The cubic expansion at the start of the proof prints +3H2/4 as its constant

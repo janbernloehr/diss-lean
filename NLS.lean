@@ -4354,3 +4354,4 @@ import NLS.ZakharovShabat.SourceActionCutoffCounterexample
 import NLS.ZakharovShabat.SourceSection20FrequencyTop
 import NLS.ZakharovShabat.SourceFiniteGapNonzeroMomentum
 import NLS.ZakharovShabat.SourceSection20CubeConstantCorrection
+import NLS.ZakharovShabat.SourceSection21CubeShiftCorrection

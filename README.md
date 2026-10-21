@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original frequency map includes the infinity target
-on its unchanged domain. An actual finite-gap source certifies the
-corrected constant coefficient in the p.93 cubic expansion. Formalization
-remains in progress.
+Latest step: the actual primitive cube shift retains its imaginary
+constant. The zero source refutes the p.97 expansion at every nonzero
+signed index. The corrected moment Hamiltonian identity remains proved.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
