@@ -11,10 +11,10 @@ geometry are inherited through `D.toSourceSection14OriginalData`.
 
 The detailed sections also preserve earlier proof milestones. Their
 then-open inverse and compatibility tasks are superseded by the current
-table and the later completion sections. An auxiliary complex
-Dirichlet-minus-periodic-midpoint estimate remains unproved but is no
-longer needed by the weighted inverse proof. The exact 2014 edition
-comparison remains unverified.
+table and the later completion sections. The later terminal-coordinate
+construction also proves local complex weighted bounds for the actual
+Dirichlet-minus-periodic-midpoint displacement, as recorded below. The exact
+2014 edition comparison remains unverified.
 
 | Source assertion | Public evidence | Scope and remaining work |
 | --- | --- | --- |
@@ -296,9 +296,9 @@ The finite-gap argument establishes Sobolev density, not density for
 arbitrary spectral weights such as exponential weights. Dense image alone
 does not establish open image or surjectivity. Subsequent steps below prove
 Sobolev open image and bijectivity, canonicality, and full weighted complex
-analyticity. The separate direct estimate of the complex Dirichlet-minus-
-periodic-midpoint displacement remains unproved; the closing-coordinate
-argument below establishes analyticity without that estimate.
+analyticity. The closing-coordinate argument below establishes analyticity
+without the then-missing complex midpoint bound. The later terminal
+construction now supplies that bound, as recorded below.
 
 Twenty-two public checks exercise fractional p=3/2, p=4, s=1/3 and s=0;
 negative indices; complex weighted gap bounds and tails; exact real target
@@ -438,9 +438,9 @@ open subset or is a local homeomorphism.
 
 At that milestone, remaining clauses included weighted complex analyticity,
 complex compatibility, weighted canonicality, analytic local inverses, and weighted inverse
-continuity and analyticity. The actual complex Dirichlet-minus-periodic-
-midpoint estimate remains missing. Surjectivity at p>2 is still the source's
-open question. The 28 public checks include p=3/2 at the one-step threshold,
+continuity and analyticity. The complex Dirichlet-minus-periodic-midpoint
+bound was also then missing; the later terminal construction below supplies
+it. Surjectivity at p>2 is still the source's open question. The 28 public checks include p=3/2 at the one-step threshold,
 p=4 at order 7/3, zero order, both inverse identities, and actual Section
 14 constructions. Validation is recorded in [the implementation status](../STATUS.md).
 
@@ -485,9 +485,10 @@ bounds for the entire sequence map or a bounded weighted Jacobian.
 
 At that milestone, full sequence analyticity and the weighted Jacobian
 were still missing. These are established in the following extension;
-complex exponent compatibility and analytic inverse properties remain. The actual
-complex Dirichlet-minus-periodic-midpoint estimate remains missing; the
-p>2 surjectivity question and the external map comparison are unchanged.
+complex exponent compatibility and analytic inverse properties were also
+still missing. The later sections establish them, and the terminal
+construction below supplies the complex midpoint bound. The p>2
+surjectivity question and the precise 2014 comparison are unchanged.
 The 18 new public checks cover raw amplitudes, zero/infinite sequence
 endpoints, signed indices, collapsed gaps at the zero source, fractional
 weights at p=3/2 and p=4, and the actual canonical construction.
@@ -539,10 +540,11 @@ Validation is recorded in [the implementation status](../STATUS.md).
 The next extension below establishes complex exponent compatibility,
 native weighted real analyticity, and Jacobian injectivity. Weighted
 Jacobian surjectivity, analytic local inverses, and weighted Sobolev global
-inverse continuity and analyticity remain. The
-separate complex Dirichlet-minus-periodic-midpoint estimate is still
-unproved; it is no longer needed for this analyticity argument. No p>2
-surjectivity or comparison with the external map in [23] is inferred.
+inverse continuity and analyticity were still pending at that milestone.
+The subsequent completion sections establish them. The terminal
+construction below now supplies the complex midpoint bound, without making
+it a premise of the earlier weighted analyticity proof. No p>2 surjectivity
+or comparison with the precise 2014 construction in [23] is inferred.
 
 ## Complex weighted compatibility and native real analyticity
 
@@ -979,3 +981,32 @@ arbitrary Banach lp spaces, including infinity, in
 
 These results establish complete flows of individual actions. They retain
 the precise 2014 edition comparison qualification recorded above.
+
+## Later completion of the complex weighted spectral-term bounds
+
+[SourceWeightedTerminalComplexBound.lean](../NLS/ZakharovShabat/SourceWeightedTerminalComplexBound.lean)
+removes the exact eta-remainder phase from the constructed weighted eta
+coordinates. For every spectral weight and finite p>1, both signed literal
+terminals have bounded weighted lp realizations on one complex neighborhood
+of each real source in the normalized weighted chart.
+
+[SourceWeightedSpectralTermsComplex.lean](../NLS/ZakharovShabat/SourceWeightedSpectralTermsComplex.lean)
+then proves the exact identities
+
+```
+mu_n - tau_n = -(terminal_n(1) + terminal_n(-1))/4,
+sine_n = i*(terminal_n(1) - terminal_n(-1))/4.
+```
+
+`SourceBirkhoffMapComplexData.exists_local_normalizedWeightedSpectralTerms_bound`
+constructs two lp sequences whose coefficients are exactly w(2n) times
+these original spectral terms, with a common uniform norm bound and a
+common complex neighborhood. All indices are included. The theorem applies
+to the complex data in the existing `sourceSection14` construction; its
+proof uses the established Birkhoff and eta maps.
+
+This closes the earlier missing local weighted membership and bound for
+the complex Dirichlet-minus-midpoint term. It is not an interlacing estimate
+for arbitrary complex sources, nor a new claim that the term is pointwise
+bounded by half the gap. The same completed construction is documented in
+[Section 23](SECTION_23.md). The exact 2014 edition comparison remains separate.
