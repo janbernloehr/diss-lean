@@ -20,6 +20,7 @@ Its counts describe source locations, not proved coverage.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Appendix A, p.123: printed A.5 series coefficients | [Exact threshold and L2 realization](NLS/Fourier/PrintedChirpCoefficients.lean), [audit](coverage/APPENDIX_A.md) | Literal phase, logarithmic denominator and positive-index cutoffs; lp membership iff p>=2 and actual physical L2 convergence. Continuity of this particular series remains open. |
 | Section 3 opening, p.23: analytic decomposition | [Physical analytic approximation](NLS/Fourier/SourceAnalyticApproximation.lean), [audit](coverage/SECTION_3.md) | Finite Fourier approximants with entire physical representatives, exact Fourier coefficients and distributions, and an arbitrarily small remainder in every original finite-exponent pair norm. |
 | Section 3 opening, p.23: infinitesimal relative bound | [Original-norm bounds](NLS/ZakharovShabat/SourcePotentialRelativeBound.lean), [audit](coverage/SECTION_3.md) | Every positive relative coefficient, uniformly on bounded original potential sets, for all finite Banach exponents; both graph comparisons retain the complete original domain. |
 | Appendix D, p.126: absolute convergence | [Exact convergence criterion](NLS/ComplexAnalysis/AbsoluteProductConvergence.lean), [audit](coverage/APPENDIX_D.md) | Ordered absolute convergence is equivalent to summability of perturbation norms and implies genuine complex convergence, including zero factors; ordinary convergence alone does not imply absolute convergence. |

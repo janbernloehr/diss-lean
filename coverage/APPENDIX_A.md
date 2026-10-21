@@ -300,8 +300,8 @@ for every 1 ≤ p < 2. Any full ℓp coefficient sequence would bound all these
 block norms, a contradiction. The conclusion is stated both for the actual
 Fourier coefficients and for membership of the original distribution.
 The witness is independent of p. This proves A.5 by an alternative
-construction; it does not assert convergence properties of the particular
-exp(i*n*log(n))/(sqrt(n)*log(n)^2) series printed in the source's proof.
+construction. The coefficient and physical L2 properties of the particular
+printed series are recorded below; its continuity remains to be proved.
 
 Both constructions apply to every positive physical period and use the
 previously established normalized Fourier maps. Neither assumes the desired
@@ -562,5 +562,35 @@ uniqueness when both conditions hold, and agreement with the original
 Wiener product, plus actual symmetric cancellation and failure of unordered
 convergence. All four modules and their focused examples compile without
 new warnings. Full validation is recorded in [STATUS.md](../STATUS.md).
-The qualification about A.5's particular printed series remains; its stated
+Continuity of A.5's particular printed series remains to be proved; its
+coefficient threshold and L2 convergence are verified below. The stated
 existence theorem is already proved by the alternative construction above.
+
+## Literal coefficients in the proof of A.5
+
+The series displayed on printed p.123 uses the coefficient
+
+    a_n = exp(i*n*log(n))/(sqrt(n)*log(n)^2),  n>=2,
+
+and zero at all other integer frequencies. The phase, denominator and
+lower cutoff were checked in the original rendered page.
+
+[`PrintedChirpCoefficients.lean`](../NLS/Fourier/PrintedChirpCoefficients.lean)
+proves its exact magnitude and the sharp coefficient-space criterion:
+for every Banach exponent p, this sequence is in lp if and only if p>=2,
+including the infinity endpoint. Square summability follows by Cauchy
+condensation, reducing the positive majorant to a constant multiple of
+1/k^4. Below two, logarithmic growth is dominated by a sufficiently small
+positive power, giving a divergent p-series lower bound.
+
+`printedChirpL2` is an actual normalized period-two physical L2 function
+with exactly these Fourier coefficients. Its literal partial sums over
+2<=n<=N converge in the physical L2 norm. Three public examples check
+the complex coefficient at n=2 and a negative mode, the fractional and
+endpoint membership behavior, and the displayed partial sums with the
+phase and denominator expanded.
+
+This step does not prove continuity or uniform convergence of this
+particular series. Those require a separate cancellation estimate for
+its oscillatory partial sums. The earlier continuous Rudin-Shapiro
+witness still proves the complete existential statement of A.5.

@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: analytic potential approximation in Section 3
+## Current milestone: literal Fourier coefficients in Lemma A.5
+
+The coefficients of the particular series printed in the proof of A.5
+have the exact lp threshold p>=2. Their actual period-two physical L2
+realization has those Fourier coefficients, and the literal positive-index
+partial sums converge in L2.
+
+The logarithmic denominator and oscillatory phase are preserved exactly.
+Three examples check signed coefficients, a fractional exponent and both
+endpoints, and the expanded original partial sums. The
+[Appendix A audit](coverage/APPENDIX_A.md) records the precise scope.
+Continuity of this particular series remains to be proved; A.5's existence
+theorem already has a separate continuous witness.
+
+Validation: `./scripts/check.sh` passes with 8,053 build jobs, 7,022
+public examples, and a transitive axiom audit of 39,563 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,986 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: analytic potential approximation in Section 3
 
 The analytic decomposition in the opening of Section 3 is proved in the
 original finite-exponent source norms, including p=1. Every potential is a

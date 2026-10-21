@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: every original finite-exponent potential admits an analytic
-approximant with an arbitrarily small remainder in the original norm.
-The physical Fourier coefficients and distributions are identified exactly.
+Latest step: the particular Fourier coefficients printed in A.5 have the
+exact lp threshold p>=2 and an actual physical L2 realization. The original
+positive-index partial sums converge in L2; continuity remains to be proved.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

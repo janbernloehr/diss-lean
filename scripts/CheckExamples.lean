@@ -65149,3 +65149,33 @@ example :
   obtain ⟨a,r,he,hr,ha,_⟩ :=
     exists_source_analytic_decomposition (by simp) φ (1/1000) (by norm_num)
   exact ⟨a,r,he,hr,ha⟩
+
+-- The literal series in the proof of A.5: coefficients and physical L2 convergence.
+open NLS NLS.Fourier Set Filter Topology
+open scoped ENNReal
+
+example :
+    fourierCoeff printedChirpL2 2 =
+      Complex.exp (Complex.I*(2*Real.log 2))/(Real.sqrt 2*(Real.log 2)^2 : ℝ) ∧
+      fourierCoeff printedChirpL2 (-3) = 0 := by
+  simp [fourierCoeff_printedChirpL2,printedChirpCoefficient]
+
+example :
+    let p := ENNReal.ofReal (3/2 : ℝ)
+    letI : Fact (1 ≤ p) := ⟨by norm_num [p]⟩
+    ¬Memℓp (fourierCoeff printedChirpL2) p ∧
+      Memℓp (fourierCoeff printedChirpL2) 2 ∧
+      Memℓp (fourierCoeff printedChirpL2) ⊤ := by
+  dsimp only
+  let : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+  simp only [memlp_fourierCoeff_printedChirpL2_iff]
+  norm_num
+
+example :
+    Tendsto (fun N : ℕ => ∑ n ∈ Finset.Icc (2 : ℤ) N,
+      (Complex.exp (Complex.I*((n : ℝ)*Real.log (n : ℝ))) /
+        ((Real.sqrt (n : ℝ)*(Real.log (n : ℝ))^2 : ℝ) : ℂ)) •
+          fourierLp (T := (2 : ℝ)) 2 n) atTop (𝓝 printedChirpL2) := by
+  apply tendsto_printedChirpL2_partialSums.congr'
+  exact Eventually.of_forall fun N => Finset.sum_congr rfl fun n hn => by
+    rw [printedChirpCoefficient,if_pos (Finset.mem_Icc.mp hn).1]
