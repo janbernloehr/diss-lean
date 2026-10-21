@@ -37,6 +37,9 @@ positive coefficient 1/4ᵐ at odd levels.
 source with only I₀=1. Every positive-index higher-action sum is zero,
 whereas its physical H₃ is at least one. Thus the restricted sum is
 wrong independently of the sign issue.
+The introductory trace display on printed p. 14 repeats the same n≥1
+restriction and is refuted by this same source. Its positive coefficient
+is correct; the index set must include all integers.
 
 `section23_alternating_trace_counterexample` constructs an actual
 finite-gap source with H₅>0. Even after including every integer index,
@@ -117,6 +120,8 @@ constructs an actual real finite-gap source with I₀ = 1 and every other
 action zero. All other cubic moments vanish, while R₀⁽³⁾ is strictly
 positive. Hence the printed positive coefficient gives a different
 value of the Hamiltonian correction.
+The introduction on printed p. 14 also gives +4/3 for the cubic sum.
+The same finite-gap witness refutes that sign; the coefficient is −4/3.
 
 ## Section 21: the two Hamiltonian proof claims must say nonpositive
 

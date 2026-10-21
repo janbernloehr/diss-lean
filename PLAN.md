@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: full energy on standard weighted actions
+## Current milestone: total-action nonextension and the main-results audit
+
+Total action has no extension continuous at zero relative to the
+nonnegative ell^q cone for any q>1, including infinity. The theorem holds
+directly for both real and complex action spaces, and only requires
+agreement on summable nonnegative actions in a neighborhood of zero.
+
+The proof uses finite nonnegative sequences of mass exactly one whose
+ell^q norms tend to zero. This verifies the unnumbered assertion on
+printed p. 12. Its threshold q>1 is distinct from the existing q>2
+obstruction for the renormalized Hamiltonian.
+
+Two modules and three public examples cover the actual four-mode block,
+the literal real total-sum formula at q=3/2, and the infinity endpoint.
+The new [introduction audit](coverage/INTRODUCTION.md) maps the three main
+theorems, the weighted full energy, and the method-of-proof outline to
+their retained-family declarations and established normalization corrections.
+
+The wider introductory background and remaining source completion audit
+continue. The precise 2014 comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 7,956 build jobs, 6,879
+public examples, and a transitive axiom audit of 38,478 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,667 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: full energy on standard weighted actions
 
 The full physical Hamiltonian is now a complex analytic function on an
 open ell^(2,1) domain containing every nonnegative action. Its real

@@ -5,17 +5,18 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the full physical energy is analytic on standard weighted
-ell^(2,1) actions, with an exact real realization, physical H1 recovery,
-and the original frequency as its mass-corrected coordinate derivative.
-The two weighted norms are explicitly compared while every coordinate
-is preserved. The full dissertation formalization remains in progress.
+Latest step: total action cannot extend continuously to any larger
+ell^q action space, q>1, even relative to the nonnegative cone. Real and
+complex versions include infinity. The main-results introduction audit
+now connects the original theorem statements, the full weighted energy,
+and the established normalization corrections. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
 recorded G.2 norm qualification remain. The dissertation is
 incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
+[the introduction main-results audit](coverage/INTRODUCTION.md),
 [the Section 12 audit](coverage/SECTION_12.md),
 [the Section 13 audit](coverage/SECTION_13.md),
 [the Section 14 audit](coverage/SECTION_14.md),

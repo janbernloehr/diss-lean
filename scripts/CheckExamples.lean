@@ -63450,3 +63450,47 @@ example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → Delete
 
 
 end NLS.WeightedFullHamiltonianChecks
+
+namespace NLS.ActionMassNonextensionChecks
+
+open Set
+open scoped ENNReal
+open NLS
+private theorem massCheckThreeHalves : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by simp) (by simp)]
+  norm_num
+local instance massCheckThreeHalvesFact : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨massCheckThreeHalves.le⟩
+
+-- A four-mode unit-mass block includes both ends and vanishes off its support.
+example : Coeff.positiveMassBlock ⊤ 3 (-1) = 0 ∧
+    Coeff.positiveMassBlock ⊤ 3 0 = 1/4 ∧
+    Coeff.positiveMassBlock ⊤ 3 3 = 1/4 ∧
+    Coeff.positiveMassBlock ⊤ 3 4 = 0 := by
+  simp only [Coeff.positiveMassBlock,Coeff.positiveUnitBlock,
+    Finset.sum_range_succ,Finset.sum_range_zero,lp.coeFn_add,lp.coeFn_zero,lp.coeFn_smul,
+    Pi.add_apply,Pi.zero_apply,Pi.smul_apply,smul_eq_mul,lp.single_apply,Pi.single_apply]
+  norm_num
+
+-- The literal total-sum formula fails to be continuous already at q=3/2,
+-- below the separate q>2 threshold for the renormalized Hamiltonian.
+example : ¬ ContinuousWithinAt (fun a : RealCoeff (3/2) => ∑' n : ℤ, a n)
+    {a : RealCoeff (3/2) | ∀ n, 0 ≤ a n} 0 := by
+  refine RealCoeff.not_continuousWithinAt_mass_extension massCheckThreeHalves
+    _ Set.univ (by simp) ?_
+  intro a _ _
+  apply tsum_congr
+  intro n
+  exact RealCoeff.exponentInclusion_apply _ a n
+
+-- The same literal extension fails at the bounded-sequence endpoint.
+example : ¬ ContinuousWithinAt (fun a : Coeff ⊤ => ∑' n : ℤ, a n)
+    (Coeff.nonnegativeLocus ⊤) 0 := by
+  refine Coeff.not_continuousWithinAt_mass_extension (by simp)
+    _ Set.univ (by simp) ?_
+  intro a _ _
+  apply tsum_congr
+  intro n
+  exact Coeff.exponentInclusion_apply _ a n
+
+
+end NLS.ActionMassNonextensionChecks
