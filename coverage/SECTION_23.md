@@ -1522,6 +1522,35 @@ inverse positive-integer one-smoothing assertions; they do not certify
 coverage of the entire dissertation or settle the exact 2014 edition
 comparison.
 
+## Exact real spaces and the retained original family
+
+[`SourceSobolevNativeProjection.lean`](../NLS/ZakharovShabat/SourceSobolevNativeProjection.lean)
+realizes the stronger complex coefficient pairs in the native
+component-sum norms. Its bounded real projections preserve all
+coefficients of real rectangular targets and conjugate-reflected real
+sources. Thus they preserve the actual stronger remainders.
+
+[`SourceBirkhoffNativeRealRemainders.lean`](../NLS/ZakharovShabat/SourceBirkhoffNativeRealRemainders.lean)
+defines `nativeForwardFourierRemainder` into the original real target
+at order m+1 and `nativeInverseFourierRemainder` into the original real
+source at that order. For every integer m >= 1, both maps are real
+analytic on their whole native domains and uniformly bounded on every
+ball. Their `literal_coordinates` theorems give the exact original
+Birkhoff-minus-Fourier and inverse-minus-Fourier-inverse sequences.
+
+[`SourceSection23OneSmoothing.lean`](../NLS/ZakharovShabat/SourceSection23OneSmoothing.lean)
+extends `SourceSection23Data` by these four analytic and boundedness
+assertions at all positive integer orders. `SourceSection23Data.oneSmoothing`
+works with any retained family. The unconditional constructor
+`sourceSection23_original_one_smoothing` chooses the original family
+once, preserving its Sections 17–22 data, actions, solution theory,
+and all Section 23 estimates.
+
+The two new public examples check the exact squared order-three norm
+1458 for a pair of unit modes at index -2, and preservation of a pure
+imaginary conjugate-reflected source at indices -3 and 3. The norm
+example checks both components of the native Hilbert norm.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

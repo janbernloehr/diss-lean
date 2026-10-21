@@ -63208,3 +63208,56 @@ example :
       (0, WeightedCoeff.single _ (-3) 1)
     (sourceSobolevBirkhoffFourierInverse 2 v).1.val (-3) = 0 := by
   norm_num [sourceSobolevBirkhoffFourierInverse_fst]
+
+namespace NLS.NativeOneSmoothingChecks
+
+
+open NLS NLS.ZakharovShabat
+open scoped ComplexConjugate
+
+-- The exact native target norm counts both order-three components.
+example :
+    let v : WeightedCoeff (Weight.sobolev (((2:ℕ):ℝ)+1)) 2 × WeightedCoeff (Weight.sobolev (((2:ℕ):ℝ)+1)) 2 :=
+      (WeightedCoeff.single _ (-2) 1,WeightedCoeff.single _ (-2) 1)
+    ‖strongerSobolevRealTargetProjection 2 v‖^2 = 1458 := by
+  let v : WeightedCoeff (Weight.sobolev (((2:ℕ):ℝ)+1)) 2 × WeightedCoeff (Weight.sobolev (((2:ℕ):ℝ)+1)) 2 :=
+    (WeightedCoeff.single _ (-2) 1,WeightedCoeff.single _ (-2) 1)
+  let z := strongerSobolevRealTargetProjection 2 v
+  let w := sourceFrequencyWeight (sourceSobolevSpectralWeight (3:ℝ) (by norm_num))
+  let a : WeightedCoeff w 2 := WeightedCoeff.single _ (-2) 1
+  have hv (n : ℤ) : (v.1.val n).im = 0 ∧ (v.2.val n).im = 0 := by
+    by_cases hn : n = -2 <;> simp [v,WeightedCoeff.single_val,hn]
+  have hx : z.fst.val = a := by
+    apply Subtype.ext
+    funext n
+    simpa only [z,v,a,WeightedCoeff.single_val] using (strongerSobolevRealTargetProjection_coordinates 2 v hv n).1
+  have hy : z.snd.val = a := by
+    apply Subtype.ext
+    funext n
+    simpa only [z,v,a,WeightedCoeff.single_val] using (strongerSobolevRealTargetProjection_coordinates 2 v hv n).2
+  have h := norm_withLp_prod_rpow (p := 2) (by simp) z
+  norm_num only [ENNReal.toReal_ofNat,Real.rpow_two] at h
+  change ‖z‖^2 = ‖z.fst.val‖^2+‖z.snd.val‖^2 at h
+  change ‖z‖^2 = 1458
+  rw [h,hx,hy]
+  norm_num [a,WeightedCoeff.norm_single,w,sourceFrequencyWeight,
+    sourceSobolevSpectralWeight_even,Weight.sobolev_apply]
+
+-- The real-source projection preserves the signed conjugate pair.
+example :
+    let v : WeightedCoeff (Weight.sobolev (((1:ℕ):ℝ)+1)) 2 × WeightedCoeff (Weight.sobolev (((1:ℕ):ℝ)+1)) 2 :=
+      (WeightedCoeff.single _ (-3) Complex.I,WeightedCoeff.single _ 3 (-Complex.I))
+    (strongerSobolevRealSourceProjection 1 v).val.fst.val (-3) = Complex.I ∧
+    (strongerSobolevRealSourceProjection 1 v).val.snd.val 3 = -Complex.I := by
+  let v : WeightedCoeff (Weight.sobolev (((1:ℕ):ℝ)+1)) 2 × WeightedCoeff (Weight.sobolev (((1:ℕ):ℝ)+1)) 2 :=
+    (WeightedCoeff.single _ (-3) Complex.I,WeightedCoeff.single _ 3 (-Complex.I))
+  have hv (n : ℤ) : v.2.val n = conj (v.1.val (-n)) := by
+    by_cases hn : n = 3
+    · subst n; norm_num [v]
+    · have hneg : -n ≠ -3 := by omega
+      simp [v,WeightedCoeff.single_val,hn,hneg]
+  constructor
+  · simpa [v] using (strongerSobolevRealSourceProjection_coordinates 1 v hv (-3)).1
+  · simpa [v] using (strongerSobolevRealSourceProjection_coordinates 1 v hv 3).2
+
+end NLS.NativeOneSmoothingChecks

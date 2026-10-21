@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: bounded forward and inverse Fourier one-smoothing
+## Current milestone: one-smoothing in the exact original real spaces
+
+The forward and inverse Fourier remainders now take values in the exact
+native real spaces at order m+1, with the original component-sum norms,
+for every integer m >= 1. The forward target has real rectangular
+coordinates; the inverse source has the original conjugate-reflection
+condition. Bounded real linear projections preserve every coefficient
+of the already constructed stronger remainders.
+
+Both exact real maps are analytic on their entire native domains and
+uniformly bounded on every ball. Literal coordinate identities identify
+them with the original Birkhoff-minus-Fourier and
+inverse-minus-Fourier-inverse errors, including the reflected first
+component and square-root normalization.
+
+`SourceSection23Data.oneSmoothing` adds these results to any retained
+Section 23 family. `sourceSection23_original_one_smoothing` provides
+one original family with all its actions, estimates, and Section 22
+solution theory, simultaneously at every positive integer order.
+
+Three modules establish this step. Two public examples check the exact
+two-component order-three norm and preservation of a signed imaginary
+conjugate-reflected source. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The complete dissertation audit, the precise 2014 edition comparison,
+and the recorded source qualifications remain open.
+
+Validation: `./scripts/check.sh` passes with 7,944 build jobs, 6,866
+public examples, and a transitive axiom audit of 38,356 NLS declarations.
+The build retains 21 existing warnings; the three new modules introduce none.
+Documentation checks cover 1,556 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: bounded forward and inverse Fourier one-smoothing
 
 One constructed Birkhoff map now has canonical Fourier remainders gaining
 one derivative in both directions, for every integer m >= 1. Both maps

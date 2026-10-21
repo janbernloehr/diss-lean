@@ -4276,3 +4276,6 @@ import NLS.ZakharovShabat.SourceBirkhoffFourierRemainder
 import NLS.ZakharovShabat.SourceSobolevNativeBridge
 import NLS.ZakharovShabat.SourceBirkhoffInverseFourierAnalytic
 import NLS.ZakharovShabat.SourceBirkhoffInverseFourierSobolevBall
+import NLS.ZakharovShabat.SourceSobolevNativeProjection
+import NLS.ZakharovShabat.SourceBirkhoffNativeRealRemainders
+import NLS.ZakharovShabat.SourceSection23OneSmoothing

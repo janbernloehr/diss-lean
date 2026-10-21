@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: one constructed Birkhoff family has canonical forward and
-inverse Fourier remainders gaining one derivative, real analytic and
-uniformly bounded on all native real Sobolev balls for every integer
-m >= 1. Exact coordinates retain the reflected first component and the
-square-root normalization. The forward map also has a complex analytic
-extension near every real original Hm source. The complete dissertation
-formalization remains in progress.
+Latest step: both Fourier remainders now gain one derivative in the
+exact original real Sobolev spaces, retaining their component-sum norms
+and literal coordinates. They are real analytic and uniformly bounded
+on every ball for each integer m >= 1. One retained Section 23 family
+provides both remainders together with its original actions, estimates,
+and solution theory. The complete dissertation formalization remains
+in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
