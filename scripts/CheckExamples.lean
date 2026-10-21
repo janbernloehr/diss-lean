@@ -64920,3 +64920,61 @@ example : ∃ ε : ℝ, 0 < ε ∧ ¬ ∃ K : ℝ, ∀ φ : CoeffPair 2,
   not_uniform_L2_ball_spectral_localization 1 (by norm_num)
 
 end NLS.Section25L2LocalizationChecks
+
+noncomputable section
+namespace NLS.Section28TailCorrectionChecks
+open ZakharovShabat Set
+
+-- A positive central action exists at an explicitly controlled physical H1 size.
+example : ∃ a : realTypeSobolevSourceLocus,
+    sourceIndexedAction (by simp) (by norm_num) 0 (sobolevSourceInclusion a.val) = ((1/100:ℝ):ℂ) ∧
+    0 < ‖sourcePhysicalH1Coordinates a.val‖^2 ∧
+    ‖sourcePhysicalH1Coordinates a.val‖^2 ≤ 303/10000 := by
+  obtain ⟨a,ha,hpos,hbound,_⟩ := exists_realSobolev_small_central_action (1/100) (by norm_num)
+  exact ⟨a,by simpa only [ite_true] using ha 0,hpos,by norm_num at hbound ⊢; exact hbound⟩
+
+-- No finite coefficient can recover the action omitted by the strict gap cutoff.
+example (C : ℝ) : ∃ a : realTypeSobolevSourceLocus,
+    0 < 8*‖sourcePhysicalH1Coordinates a.val‖^2 ∧
+    8*‖sourcePhysicalH1Coordinates a.val‖^2 ≤ 1 ∧
+    C*(∑' n : ℤ, if 0 < n.natAbs then
+      (SpectralWeight.piSobolev 1 (by norm_num) (2*n))^2*
+        ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a.val) n‖^2 else 0) <
+    (∑' n : ℤ, if 0 ≤ n.natAbs then
+      (SpectralWeight.piSobolev 1 (by norm_num) (2*n))^2*
+        ‖sourceIndexedAction (by simp) (by norm_num) n (sobolevSourceInclusion a.val)‖ else 0) := by
+  obtain ⟨a,hpos,hsmall,hI,hstrict,_⟩ := exists_section28_small_tail_counterexample
+  refine ⟨a,hpos,hsmall,?_⟩
+  rw [hI,hstrict]
+  norm_num
+
+variable {W₀ W V Wa B U T S : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+
+-- The corrected zero cutoff keeps all original actions and uses the physical norm.
+example (Q : SourceSection28Data D A B U T S)
+    (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ S)
+    (hsmall : ‖sourcePhysicalH1Coordinates a‖^2 ≤ 1/8) :
+    (∑' n : ℤ, (SpectralWeight.piSobolev 1 (by norm_num) (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (sobolevSourceInclusion a)‖) ≤
+    4608*(1+‖sourcePhysicalH1Coordinates a‖^2)*(∑' n : ℤ,
+      (SpectralWeight.piSobolev 1 (by norm_num) (2*n)*
+        ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) n‖)^2) := by
+  have h := (Q.weighted_action_tail_corrected (SpectralWeight.piSobolev 1 (by norm_num))
+    (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) (sourcePhysicalH1Coordinates a)
+    (by simpa only [normalizedWeightedSource_physicalH1Coordinates] using ha) 0 (by norm_num; linarith)).2
+  simpa only [normalizedWeightedSource_physicalH1Coordinates,Nat.zero_le,ite_true] using h
+
+-- At N=2 the Fourier-tail budget retains both signed boundary modes.
+example (Q : SourceSection28Data D A B U T S) (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (a : CoeffPair 2) (ha : normalizedWeightedSource w a ∈ S) (hsmall : ‖a‖^2 ≤ 3/8) :
+    (∑' n : ℤ, if 2 ≤ n.natAbs then (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖ else 0) ≤
+    4608*(1+‖a‖^2)*(6*‖sourceFourierTail 2 a‖^2+384*‖a‖^6) := by
+  have h := Q.weighted_action_tail_budget w hw a ha 2 (by norm_num; linarith)
+  norm_num only [Nat.cast_ofNat,show (1152:ℝ)/(1+2) = 384 by norm_num] at h
+  exact h
+
+end NLS.Section28TailCorrectionChecks

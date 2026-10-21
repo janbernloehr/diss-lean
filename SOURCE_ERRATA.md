@@ -2813,3 +2813,26 @@ sum. They do not refute the well-defined positive-exponent estimate.
 B.2 retains all infinity endpoints. B.3's current theorem is finite positive;
 no infinity convention for its nested power expression is asserted.
 See [the Appendix B audit](coverage/APPENDIX_B.md).
+
+## Theorem 23.4 proof, p.119: cutoff boundary and missing norm factor
+
+The first weighted-tail display in the proof uses |n|>=N in its action
+sum, |n|>N in its gap sum, and coefficient 4608*||phi||H1^2. These are
+separate defects, verified against the rendered PDF.
+
+[SourceSection28TailCounterexample.lean](NLS/ZakharovShabat/SourceSection28TailCounterexample.lean)
+constructs an actual real H1 source with I_0=t=1/1000000 and every other
+action zero. Its exact physical norm P satisfies 0<P^2<=3*(t+t^2), so
+N=0 satisfies the printed cutoff 0<8*P^2<=1. With the original H1 weight,
+the printed left side is t while its strict gap tail is zero.
+
+Restoring |n|=0 on the right does not repair the missing 1+ factor:
+the actual gap-action bound gives gamma_0^2<=4*t, and hence the resulting
+4608*P^2 times the inclusive weighted gap sum is still strictly below t.
+Both counterexamples lie in every retained Section 28 source domain.
+
+[SourceSection28TailEstimate.lean](NLS/ZakharovShabat/SourceSection28TailEstimate.lean)
+proves the corrected tail with a common inclusive cutoff and coefficient
+4608*(1+||a||^2), including absolute summability. Here ||a|| is the exact
+original weighted norm; its H1 specialization is the physical norm P.
+The independently proved final Theorem 23.4 constants remain unchanged.

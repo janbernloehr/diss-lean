@@ -100,7 +100,48 @@ frequencies, the physical zero-source counterexample, local and bounded-set
 complex continuity, absolute convergence, connected domains, and retention
 of the original family. Full validation is recorded in [STATUS.md](../STATUS.md).
 
-Next: Appendix A, beginning with the actual periodic-distribution and Fourier
-coefficient correspondence. The [Section 14 qualifications](SECTION_14.md)
-and unrestricted printed m=1 coefficient in [Section 27](SECTION_27.md)
-remain explicit. The dissertation is incomplete.
+The unrestricted printed m=1 coefficient is proved in [Section 27](SECTION_27.md).
+The [Section 14 qualifications](SECTION_14.md) remain explicit. The remaining
+source audit continues through the appendices; the dissertation is incomplete.
+
+## The weighted tail display on p.119
+
+The first display in the proof of Theorem 23.4 has two distinct defects:
+its action sum includes |n|=N while its gap sum excludes those indices,
+and its coefficient is 4608*P^2 instead of 4608*(1+P^2). The actual PDF
+was checked, including the permitted cutoff N=0 for small nonzero inputs.
+
+[SourceSection28TailCounterexample.lean](../NLS/ZakharovShabat/SourceSection28TailCounterexample.lean)
+constructs a real H1 source with I_0=t and every other original indexed
+action zero. Its exact physical H1 pair norm satisfies
+
+    0 < P^2 <= 3*(t+t^2).
+
+All noncentral gaps are closed. For t=1/1000000 and the original weight
+w(m)=1+|m*pi|, the cutoff N=0 obeys 0<8*P^2<=1. The inclusive weighted
+action sum is t, while the strictly exterior weighted gap sum is zero.
+Thus no finite coefficient can repair the omitted cutoff boundary.
+
+The same source also distinguishes the missing factor from that cutoff
+error. The sharp actual gap-action inequality gives gamma_0^2<=4*t,
+so even the inclusive weighted gap sum satisfies
+
+    4608*P^2 * sum_{|n|>=0} w(2n)^2*|gamma_n|^2 < t.
+
+Both failures occur in every retained Section 28 domain, because each
+domain contains every real source. They concern the intermediate proof
+display, not the final 2^20 and 2^21 estimates, which remain proved.
+
+[SourceSection28TailEstimate.lean](../NLS/ZakharovShabat/SourceSection28TailEstimate.lean)
+proves a corrected complex weighted tail on the same original domain.
+Both sums use |n|>=N and the full factor 4608*(1+||a||^2) is retained.
+The coefficient norm is the original weighted norm; for the pi-Sobolev
+weight of order one it is exactly the physical H1 norm P.
+The corrected estimate includes absolute summability and combines with
+Proposition 25.5's actual Fourier-tail budget
+6*||R_N a||^2 + 1152/(1+N)*||a||^6.
+
+Four public examples check a prescribed small central action, failure
+for every finite coefficient with the strict gap tail, the corrected
+N=0 physical norm statement, and the N=2 Fourier-tail budget, which
+retains both signed boundary indices.

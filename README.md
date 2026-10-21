@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: uniform asymptotic spectral localization fails on every
-positive physical L2 ball. Explicit original plane-wave sources retain
-their exact physical norm while their spectra translate.
+Latest step: actual small real sources refute two intermediate tail
+errors in the proof of Theorem 23.4. The corrected complex weighted
+tail retains the cutoff boundary and full norm factor.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

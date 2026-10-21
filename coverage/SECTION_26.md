@@ -141,7 +141,7 @@ The action-estimate step added 25 public checks. This endpoint step adds
 values, uniform H¹ bounds, nonzero mass, arbitrary proposed constants,
 corrected interpolation ranges, and original-domain membership.
 Full validation is recorded in [implementation status](../STATUS.md).
-Next: Section 27's original Sobolev-norm estimates, retaining the
-explicit qualification of its unrestricted m=1 coefficient.
+The original Sobolev-norm estimates, including the unrestricted m=1
+coefficient, are proved in [Section 27](SECTION_27.md).
 The separate [Section 14 qualifications](SECTION_14.md) remain; the
 dissertation is incomplete.

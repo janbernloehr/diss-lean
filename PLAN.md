@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Current milestone: physical L2 obstruction to uniform spectral localization
+## Current milestone: corrected weighted action tails in Section 28
+
+A small actual real H1 source separately refutes the omitted cutoff
+boundary and the missing 1+ factor in the p.119 weighted tail display.
+The corrected estimate retains both boundary modes, the full norm factor,
+absolute summability and the original Fourier-tail budget on the same
+complex source domain. The final Theorem 23.4 constants remain proved.
+
+Four examples check explicit small actions, failure for every coefficient
+with the omitted boundary, the physical H1 zero cutoff and the N=2 budget.
+The [Section 28 audit](coverage/SECTION_28.md) records the precise scope.
+
+Validation: `./scripts/check.sh` passes with 8,045 build jobs, 7,002
+public examples, and a transitive axiom audit of 39,439 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,943 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical L2 obstruction to uniform spectral localization
 
 Every positive physical L2 ball has a positive spectral-disc radius for
 which no uniform tail-localization cutoff exists, already on real sources.
