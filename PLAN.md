@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: source audits for Appendices D, E, F, and I
+## Current milestone: Hamiltonian nonextension includes infinity
+
+The original renormalized action Hamiltonian has no extension continuous
+at zero relative to the nonnegative ell^q cone for any q > 2, including
+q = infinity. Consequently it has no C1 extension there. Agreement is
+needed only on summable nonnegative actions in a neighborhood of zero.
+
+`SourceOriginalHamiltonianData.no_continuous_extension_all` applies to
+any retained original Hamiltonian. It preserves that family's physical
+H1 identity and its frequency and gradient data. The endpoint proof
+restricts an alleged extension through the contractive inclusion from
+ell^3 into ell-infinity and invokes the proved finite-exponent obstruction.
+
+Two modules establish this step. Two public examples verify convergence
+of the Hilbert-normalized finite blocks in the infinity norm and the
+obstruction for literal negative quadratic energy. See
+[the Section 18 audit](coverage/SECTION_18.md).
+
+The introductory and remaining source-level completion audit continues.
+The precise 2014 edition comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 7,946 build jobs, 6,868
+public examples, and a transitive axiom audit of 38,363 NLS declarations.
+The build retains 21 existing warnings; the two new modules introduce none.
+Documentation checks cover 1,611 file links across 42 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: source audits for Appendices D, E, F, and I
 
 Current coverage pages now compare 19 named results and their relevant
 unnumbered assertions with the canonical Lean statements:

@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both Fourier remainders now gain one derivative in the
-exact original real Sobolev spaces, retaining their component-sum norms
-and literal coordinates. They are real analytic and uniformly bounded
-on every ball for each integer m >= 1. One retained Section 23 family
-provides both remainders together with its original actions, estimates,
-and solution theory. The complete dissertation formalization remains
-in progress.
+Latest step: the original renormalized Hamiltonian has no continuous
+extension at zero on the nonnegative action cone for any exponent q > 2,
+including infinity. The same original family retains its physical
+Hamiltonian identity. The forward and inverse one-smoothing results in
+the exact real Sobolev spaces are also complete. The full dissertation
+formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

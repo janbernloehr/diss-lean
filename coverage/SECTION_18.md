@@ -114,7 +114,7 @@ Thus all four inverse and Fredholm conclusions remain available for F.
 | Theorem 18.3(ii), action extension and sign | `Q.analytic`, `Q.sign` | One open connected complex ℓ² domain T, nonpositive and zero only at zero on its nonnegative cone |
 | Same frequency gradient | `Q.gradient_eq`, `Q.frequency` | F=∇H* throughout T, retaining the complete original frequency package |
 | Origin Hessian and local concavity | `Q.hessian_zero`, `Q.concavity` | Hessian −2 times unconjugated Hilbert pairing at zero; one positive ball in T with d²H*(J,J)≤−‖J‖₂² for every real direction J |
-| Remark 18.4 | `Q.no_continuous_extension` | No continuous, hence no C¹, extension at zero relative to the nonnegative ℓ^q cone for every finite q>2 |
+| Remark 18.4 | `Q.no_continuous_extension_all` | No continuous, hence no C¹, extension at zero relative to the nonnegative ℓ^q cone for every q>2, including infinity |
 
 Here Q denotes `SourceOriginalHamiltonianData`. The unconditional
 `sourceSection18_original_hamiltonian` constructs D, T, F, H, and Q.
@@ -124,7 +124,16 @@ integrates this Hamiltonian's Hessian estimate twice to obtain
 Re H*(I)≤−‖I‖₂²/2 near zero. Nonnegative finite blocks of fixed small ℓ²
 norm converge to zero in ℓ^q for q>2. Agreement on summable nonnegative
 actions then contradicts continuity. The extension can be arbitrary away
-from those actions. No ℓ∞ endpoint or global concavity is asserted.
+from those actions. The infinity endpoint is now included by
+[`SourceHamiltonianOriginalNonextensionTop.lean`](../NLS/ZakharovShabat/SourceHamiltonianOriginalNonextensionTop.lean).
+Its `no_continuous_extension_all` theorem uses the same Q and H.
+The abstract endpoint argument in
+[`HilbertHamiltonianNonextensionTop.lean`](../NLS/SequenceSpaces/HilbertHamiltonianNonextensionTop.lean)
+restricts any alleged infinity-norm extension along the continuous,
+coefficient-preserving inclusion from ell^3. The inverse image of its
+neighborhood is a neighborhood of zero, and the inclusion preserves
+the nonnegative cone, contradicting the finite-exponent theorem.
+This result does not assert global concavity.
 
 ## Theorem 18.5 and the original solution definition
 

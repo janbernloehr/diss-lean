@@ -4279,3 +4279,5 @@ import NLS.ZakharovShabat.SourceBirkhoffInverseFourierSobolevBall
 import NLS.ZakharovShabat.SourceSobolevNativeProjection
 import NLS.ZakharovShabat.SourceBirkhoffNativeRealRemainders
 import NLS.ZakharovShabat.SourceSection23OneSmoothing
+import NLS.SequenceSpaces.HilbertHamiltonianNonextensionTop
+import NLS.ZakharovShabat.SourceHamiltonianOriginalNonextensionTop

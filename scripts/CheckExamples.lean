@@ -63261,3 +63261,33 @@ example :
   · simpa [v] using (strongerSobolevRealSourceProjection_coordinates 1 v hv 3).2
 
 end NLS.NativeOneSmoothingChecks
+
+namespace NLS.HamiltonianEndpointChecks
+
+open NLS Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The same Hilbert-normalized finite blocks vanish in the infinity norm.
+example : Tendsto (Coeff.positiveFlatBlock ⊤) atTop (𝓝 0) := by
+  have h := (Coeff.exponentInclusion (show (3:ℝ≥0∞) ≤ ⊤ from le_top)).continuous.continuousAt.tendsto.comp
+    (Coeff.tendsto_positiveFlatBlock (q := 3) (by simp) (by norm_num))
+  simpa only [Function.comp_def,map_zero,Coeff.positiveFlatBlock_exponent] using h
+
+-- The literal negative quadratic energy cannot extend continuously to
+-- bounded nonnegative sequences, even when agreement is only near zero.
+example (G : Coeff ⊤ → ℂ) (U : Set (Coeff ⊤)) (hU : U ∈ 𝓝 (0:Coeff ⊤))
+    (hG : ∀ a : Coeff 1, a ∈ Coeff.nonnegativeLocus 1 →
+      Coeff.exponentInclusion (show (1:ℝ≥0∞) ≤ ⊤ from le_top) a ∈ U →
+      G (Coeff.exponentInclusion (show (1:ℝ≥0∞) ≤ ⊤ from le_top) a) =
+        -((‖Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 2) a‖^2:ℝ):ℂ)) :
+    ¬ ContinuousWithinAt G (Coeff.nonnegativeLocus ⊤) 0 := by
+  refine Coeff.not_continuousWithinAt_top_extension_of_quadratic_bound
+    (fun a : Coeff 2 => -((‖a‖^2:ℝ):ℂ)) (by simp) 1 (by norm_num) ?_ G U hU ?_
+  · intro b _ _
+    simp only [Complex.neg_re,Complex.ofReal_re]
+    nlinarith [sq_nonneg ‖b‖]
+  · intro a ha hUa _
+    exact hG a ha hUa
+
+end NLS.HamiltonianEndpointChecks
