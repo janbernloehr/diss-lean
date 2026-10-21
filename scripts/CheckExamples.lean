@@ -63755,3 +63755,72 @@ example (T : 𝓢'(ℝ,ℂ)) (F : ℝ → ℂ) (hF : AEStronglyMeasurable F volu
   (Fourier.isCriticalHomogeneousSobolev_iff_fourier_density T).mpr ⟨F,hF,hE,hT⟩
 
 end NLS.CriticalHomogeneousChecks
+
+noncomputable section
+namespace NLS.OriginalSpectralConservationChecks
+open Set ZakharovShabat
+open scoped ENNReal
+
+-- Every original global solution retains the actual periodic spectrum and its multiplicities.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (τ : ℝ) :
+    periodicSpectrum hp (periodOnePotential (γ τ).val) = periodicSpectrum hp (periodOnePotential φ.val) ∧
+      ∀ z : ℂ, periodicAlgebraicMultiplicity hp (periodOnePotential (γ τ).val) z =
+        periodicAlgebraicMultiplicity hp (periodOnePotential φ.val) z :=
+  isospectral_of_isOrdinaryNLSSolutionOn_univ hp hp1 hp2 hγ τ
+
+-- Renormalization also preserves the normalized discriminant at every spectral parameter.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsRenormalizedNLSSolutionOn univ φ γ) (τ : ℝ) (z : ℂ) :
+    canonicalDiscriminant hp (periodOnePotential (γ τ).val) z =
+      canonicalDiscriminant hp (periodOnePotential φ.val) z :=
+  congrFun (discriminant_of_isRenormalizedNLSSolutionOn_univ hp hp1 hp2 hγ τ) z
+
+-- Each original action function is a conserved quantity along the physical solution.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (τ : ℝ) (n : ℤ) :
+    originalRealActionIntegral hp hp1 n (γ τ) = originalRealActionIntegral hp hp1 n φ :=
+  originalRealActionIntegral_of_isOrdinaryNLSSolutionOn_univ hp hp1 hp2 hγ τ n
+
+-- At the Hilbert endpoint the infinitely many original action functions are independent.
+example : LinearIndependent ℝ (originalRealActionIntegral (p := 2) (by simp) (by norm_num)) :=
+  linearIndependent_originalRealActionIntegral (by simp) (by norm_num) (le_refl 2)
+
+-- The same conserved action differentials commute at every time, including collapsed gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (τ : ℝ) (n m : ℤ) :
+    (sourceActionRegularCotangent hp hp1 n ⟨(γ τ).val,(γ τ).property⟩).bivector
+      (sourceActionRegularCotangent hp hp1 m ⟨(γ τ).val,(γ τ).property⟩) = 0 :=
+  (originalOrdinary_integrals_in_involution hp hp1 hp2 hγ).2.2 τ n m
+
+end NLS.OriginalSpectralConservationChecks
+
+noncomputable section
+namespace NLS.OriginalOscillatorChecks
+open Set ZakharovShabat
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+
+-- The original rectangular coordinates satisfy the literal physical oscillator equations.
+example (hp2 : p ≤ 2) {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (τ : ℝ) (n : ℤ) :
+    HasDerivAt (fun time => (sourceRealBirkhoffMap hp hp1 s (γ time)).1 n)
+      (-A.ordinaryPhaseFrequency hp2 φ n*(sourceRealBirkhoffMap hp hp1 s (γ τ)).2 n) τ ∧
+    HasDerivAt (fun time => (sourceRealBirkhoffMap hp hp1 s (γ time)).2 n)
+      (A.ordinaryPhaseFrequency hp2 φ n*(sourceRealBirkhoffMap hp hp1 s (γ τ)).1 n) τ :=
+  Q.ordinary_original_rectangular_oscillators hp2 hγ τ n
+
+-- The same original renormalized oscillator frequency is retained along the solution.
+example (hp2 : p ≤ 2) {φ : realTypeSourceSubmodule p} {γ : ℝ → realTypeSourceSubmodule p}
+    (hγ : IsRenormalizedNLSSolutionOn univ φ γ) (τ : ℝ) :
+    A.phaseFrequency (γ τ) = A.phaseFrequency φ :=
+  Q.renormalized_original_frequency_conserved hp2 hγ τ
+
+end NLS.OriginalOscillatorChecks

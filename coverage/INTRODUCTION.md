@@ -3,11 +3,41 @@
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
 interfaces below are implemented. The wider introductory background on
-pp. 9–10 remains a separate audit, apart from the almost-periodicity, critical
-Sobolev inclusion, explicitly scoped dilation, and full distributional
-Galilean results documented below. This document does not certify the entire
-introduction or dissertation. The precise 2014 edition comparison
+pp. 9–10 remains a separate audit, apart from the original spectral
+conservation, action integrals, oscillators, almost-periodicity, critical
+Sobolev inclusion, complete critical homogeneous space, dilation, and full
+distributional Galilean results documented below. This document does not
+certify the entire introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
+
+## Original spectral conservation and oscillators, printed p. 9
+
+[`SourceOriginalSpectralConservation.lean`](../NLS/ZakharovShabat/SourceOriginalSpectralConservation.lean)
+proves that every original global ordinary or renormalized solution preserves
+each original action for 1<p<=2. Equal actions imply membership in the actual
+original isospectral set, retaining the periodic spectrum and its algebraic
+multiplicities. The normalized entire discriminant itself is conserved.
+These theorems construct the original solution data internally and use the
+existing all-smooth-approximation solution definition and its uniqueness.
+
+[`SourceOriginalActionIntegrals.lean`](../NLS/ZakharovShabat/SourceOriginalActionIntegrals.lean)
+constructs a one-mode original source to separate each action from all
+others. Thus the original real action functions are linearly independent.
+The same functions are conserved along every original global solution,
+and their actual regular cotangents commute under the physical Poisson
+pairing. This is independence of functions; differential independence at
+every source is not claimed, including at collapsed gaps.
+
+[`RectangularHamiltonianOscillators.lean`](../NLS/Dynamics/RectangularHamiltonianOscillators.lean)
+proves literal coordinate derivatives for the decoded Hamiltonian phase
+flow: x_n'=-omega_n*y_n and y_n'=omega_n*x_n. It allows arbitrary real
+frequency sequences, without a bounded-frequency or finite-gap hypothesis.
+[`SourceOriginalOscillators.lean`](../NLS/ZakharovShabat/SourceOriginalOscillators.lean)
+identifies every original solution with that same real Birkhoff trajectory
+and proves those equations for its actual coordinates at every time.
+The retained original ordinary or renormalized frequency sequence is
+constant along the solution. These are coordinatewise derivatives;
+time differentiability in the full sequence norm is not asserted.
 
 ## Almost periodicity, printed p. 9
 

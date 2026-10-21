@@ -4312,3 +4312,7 @@ import NLS.Fourier.LineTemperedNLSScaling
 import NLS.Fourier.CriticalFrequencyMeasure
 import NLS.Fourier.CriticalHomogeneousSobolev
 import NLS.Fourier.CriticalHomogeneousCharacterization
+import NLS.ZakharovShabat.SourceOriginalSpectralConservation
+import NLS.ZakharovShabat.SourceOriginalActionIntegrals
+import NLS.Dynamics.RectangularHamiltonianOscillators
+import NLS.ZakharovShabat.SourceOriginalOscillators

@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: complete critical homogeneous distribution space
+## Current milestone: original spectral conservation and oscillators
+
+Every original global ordinary and renormalized solution for 1<p<=2
+preserves its original spectral actions, periodic spectrum with algebraic
+multiplicities, and normalized discriminant. Constructed one-mode sources
+show that these action functions are linearly independent; they are
+conserved and commute under the physical Poisson pairing.
+
+The same original real Birkhoff coordinates satisfy the literal oscillator
+equations x_n'=-omega_n*y_n and y_n'=omega_n*x_n. Their original frequency
+sequence is constant along the solution. Coordinate derivatives allow
+unbounded frequencies and require no finite-gap assumption.
+
+Four modules and seven examples implement the corresponding opening
+claims on printed p. 9. Independence here is of the action functions;
+differential independence at every source is not asserted. See the
+[introduction audit](coverage/INTRODUCTION.md). The precise 2014 comparison,
+G.2 norm qualification, and remaining source audit are separate work.
+
+Validation: `./scripts/check.sh` passes with 7,981 build jobs, 6,910
+public examples, and a transitive axiom audit of 38,760 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,731 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: complete critical homogeneous distribution space
 
 The critical space is realized as L2 with spectral measure |xi| dxi and
 embedded continuously and injectively into actual tempered distributions.

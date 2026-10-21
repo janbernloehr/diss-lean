@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the critical homogeneous Sobolev space has a complete,
-continuous and injective realization in actual tempered distributions.
-Its Fourier-density characterization and exact norm are proved, and
-physical NLS dilation is a surjective linear isometry. Formalization
-remains in progress.
+Latest step: original global ordinary and renormalized solutions preserve
+their spectral actions, periodic spectrum with multiplicities, and normalized
+discriminant. The independent action functions are in involution, while
+the original real Birkhoff coordinates satisfy the literal oscillator
+equations with conserved frequencies. The dynamics range is 1<p<=2.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
