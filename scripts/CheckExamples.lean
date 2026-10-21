@@ -64021,3 +64021,62 @@ example (a : Coeff 2) (n : ℤ) :
   scalarNonlinearFourierInverse_fderiv_zero_coefficient a n
 
 end NLS.ScalarNonlinearInverseChecks
+
+noncomputable section
+namespace NLS.ClosedGapCodimensionChecks
+open ZakharovShabat Set Filter Topology
+
+-- The source's literal squared-gap equation means that both real coordinates vanish.
+example (n : ℤ) (u : physicalRealSubmodule) :
+    (physicalPeriodicRight u.val n-physicalPeriodicLeft u.val n)^2 = 0 ↔
+      physicalGapCoordinates n u = 0 :=
+  (physicalSquaredGap_zero_iff_closed n u).trans (physicalGapCoordinates_zero_iff_closed n u).symm
+
+-- Every local differentiable curve in the original spectral locus has tangent velocity.
+example (n : ℤ) (u h : physicalRealSubmodule) (curve : ℝ → physicalRealSubmodule)
+    (hzero : curve 0 = u) (hd : HasDerivAt curve h 0)
+    (hc : ∀ᶠ time in 𝓝 (0:ℝ), curve time ∈ physicalClosedGapLocus n) :
+    h ∈ physicalClosedGapTangent n u :=
+  physicalClosedGap_curve_velocity_mem n u h curve hzero hd hc
+
+-- Conversely every tangent direction has an analytic realization inside the actual gap set.
+example (n : ℤ) (u h : physicalRealSubmodule) (hu : u ∈ physicalClosedGapLocus n)
+    (hh : h ∈ physicalClosedGapTangent n u) :
+    AnalyticOnNhd ℝ (physicalClosedGapCurve u h) univ ∧
+      physicalClosedGapCurve u h 0 = u ∧ HasDerivAt (physicalClosedGapCurve u h) h 0 ∧
+      ∀ time, physicalClosedGapCurve u h time ∈ physicalClosedGapLocus n :=
+  ⟨physicalClosedGapCurve_analytic u h,physicalClosedGapCurve_zero u h,
+    physicalClosedGapCurve_hasDerivAt_zero u h,physicalClosedGapCurve_mem n u h hu hh⟩
+
+-- The counterexample is at the original zero potential and the real normal dimension is exactly two.
+example (n : ℤ) : (0:physicalRealSubmodule) ∈ physicalClosedGapLocus n ∧
+    Module.finrank ℝ (physicalRealSubmodule ⧸ physicalClosedGapTangent n 0) = 2 ∧
+    ¬ (∀ u ∈ physicalClosedGapLocus n,
+      Module.finrank ℝ (physicalRealSubmodule ⧸ physicalClosedGapTangent n u) = 1) :=
+  ⟨zero_mem_physicalClosedGapLocus n,physicalClosedGapTangent_codimension_two n 0,
+    physicalClosedGap_printed_codimension_one_false n⟩
+
+end NLS.ClosedGapCodimensionChecks
+
+noncomputable section
+namespace NLS.Section7PsiNormalizationChecks
+open ZakharovShabat Filter Topology
+
+-- The literal free product has exponential lower growth in norm at every cutoff.
+example (N : ℕ) :
+    2*(4:ℝ)^N ≤ ‖section7PrintedPsiPartial 0 N (displacedRoots (0:Coeff 2)) 0‖ := by
+  rw [section7PrintedPsiPartial_zero]
+  exact section7PrintedPsiFreePartial_norm_lower N
+
+-- There is no finite limiting value for the source's literal printed product.
+example (z : ℂ) :
+    ¬ Tendsto (fun N => section7PrintedPsiPartial 0 N (displacedRoots (0:Coeff 2)) 0)
+      atTop (𝓝 z) := by
+  simpa only [section7PrintedPsiPartial_zero] using section7PrintedPsiFreePartial_no_limit z
+
+-- The mode-dependent normalization gives the correct value already at each finite cutoff.
+example (N : ℕ) :
+    -2 * jointDeletedSingleSpectralPartialProduct (p := 2) 0 N (0,0) = (-2:ℂ) :=
+  section7CorrectedPsiPartial_zero N
+
+end NLS.Section7PsiNormalizationChecks

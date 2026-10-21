@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the normalized scalar nonlinear Fourier map has an explicit
-global real analytic inverse with exact scalar norm preservation and the
-signed reflected inverse Fourier differential. Formalization remains in
-progress.
+Latest step: the real closed-gap locus has codimension two, with an exact
+analytic chart and curve-tangent description. The printed Section 7 psi
+product also requires a mode-dependent denominator; its literal form
+diverges already at the free source. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -1,5 +1,44 @@
 # Source discrepancies
 
+## Section 7: the real collapsed-gap locus has codimension two
+
+The paragraph after (2.3) on printed p. 46 calls the squared-gap zero set
+Z_n a real analytic submanifold of real Hilbert space with codimension
+one. The original PDF was visually checked. The correct real codimension
+is two: gap collapse is exactly x_n=y_n=0 in the globally bi-analytic
+physical Birkhoff coordinates.
+
+The formalization identifies the tangent space with all velocities of
+local differentiable curves in the literal squared-gap zero set. It also
+constructs a global real analytic curve in the set for every tangent
+direction. The real quotient by that tangent space has dimension two.
+The zero physical potential belongs to every Z_n, so the printed value
+one fails there for every spectral index.
+
+[PhysicalClosedGapTangents.lean](NLS/ZakharovShabat/PhysicalClosedGapTangents.lean)
+proves the tangent characterization and the explicit negation of the
+codimension-one value. The [Section 7 audit](coverage/SECTION_7.md)
+records the bounded coordinate insertion and the full global chart.
+This correction concerns real codimension; no complex-variety
+codimension assertion is inferred.
+
+## Section 7: the overview psi product repeats the wrong denominator index
+
+The unnumbered psi product on printed p. 46 places pi_n in every factor
+indexed by m≠n. The original PDF was visually checked. The denominator
+inside the product must be pi_m; the outer factor -2/pi_n is retained.
+
+At the free potential, n=0 and lambda=0, the literal printed symmetric
+cutoffs have norms at least 2*4^N. Those norms tend to infinity, so the
+product converges to no complex value. This is a limit counterexample,
+not merely a discrepancy at a finite cutoff. Under the corrected
+mode-dependent normalization, every cutoff at that point equals -2.
+
+[SourceSection7PsiNormalization.lean](NLS/ZakharovShabat/SourceSection7PsiNormalization.lean)
+proves the literal specialization, norm growth, divergence and corrected
+finite values. The [Section 7 audit](coverage/SECTION_7.md) records the
+relationship to the later normalized psi construction.
+
 ## Section 24: higher actions do not all detect open gaps
 
 Printed p. 106 asserts that every action at level k≥2 vanishes if and

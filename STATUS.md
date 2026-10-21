@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: global scalar nonlinear Fourier inverse
+## Current milestone: two corrections to the Section 7 overview
+
+The literal closed-gap locus in the original real physical Hilbert space
+has real codimension two. The actual globally bi-analytic Birkhoff map
+sends it to the kernel of two real coordinate evaluations. Every tangent
+direction is realized by an analytic curve in the locus, and every local
+differentiable curve has its velocity in that kernel. This refutes the
+printed codimension-one value already at the zero potential.
+
+The same page's psi product repeats pi_n inside each factor. At the actual
+free source, its symmetric cutoff norms tend to infinity. The corrected
+mode-dependent denominator pi_m gives the exact value -2 at every cutoff
+for n=0 and lambda=0.
+
+Three modules and seven examples record these two unnumbered assertions.
+The [Section 7 audit](coverage/SECTION_7.md) gives the precise scope: an
+explicit analytic chart and curve-tangent characterization on real Hilbert
+space, with no complex-variety codimension assertion.
+
+Validation: `./scripts/check.sh` passes with 7,997 build jobs, 6,938
+public examples, and a transitive axiom audit of 38,984 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,797 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: global scalar nonlinear Fourier inverse
 
 The normalized scalar nonlinear Fourier map now has an explicit inverse on all
 complex l2 inputs. Both identities hold for the original physical L2 classes.

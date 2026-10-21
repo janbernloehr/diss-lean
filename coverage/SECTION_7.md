@@ -68,7 +68,59 @@ Public checks include p=3/2, real/complex phase compatibility, local
 derivative agreement, precise open-gap conditions, and the literal Fourier
 bracket formula.
 
-Section 8's Lemma 8.1 is now audited in [Section 8](SECTION_8.md), with
-its necessary normalization and quotient corrections. Next is Lemma 8.2. This audit
-does not certify the remaining dissertation or the cited classical
-background from the introductory overview as complete.
+The discriminant and endpoint assertions, including Lemmas 8.1 and 8.2,
+are audited in [Section 8](SECTION_8.md), with the necessary normalization
+and quotient corrections. The unnumbered overview assertions below require
+two further corrections. This audit does not certify the remaining
+dissertation or the cited classical background as complete.
+
+## The collapsed-gap locus on printed p. 46 has real codimension two
+
+The paragraph following (2.3), visually checked in the original PDF, calls
+Z_n={u : gamma_n(u)^2=0} a real analytic submanifold of codimension one.
+The value one is incompatible with the actual real physical Hilbert geometry.
+
+[PhysicalClosedGapGeometry.lean](../NLS/ZakharovShabat/PhysicalClosedGapGeometry.lean)
+identifies the literal squared-gap equation with equality of the actual
+periodic endpoints and with simultaneous vanishing of the two real
+Birkhoff coordinates x_n and y_n. The global physical Birkhoff homeomorphism
+and its inverse are real analytic. This same map sends Z_n exactly to the
+kernel of the bounded coordinate evaluation (x,y) ↦ (x_n,y_n).
+A bounded single-mode insertion is a right inverse of that evaluation;
+its kernel quotient therefore has real dimension two.
+
+[PhysicalClosedGapTangents.lean](../NLS/ZakharovShabat/PhysicalClosedGapTangents.lean)
+identifies the kernel of the actual coordinate differential with the full
+local curve tangent space at each point of Z_n. Every differentiable curve
+locally in Z_n has velocity in that kernel. Conversely every kernel
+direction is realized by a globally real analytic curve lying entirely in
+Z_n, obtained by mapping a straight Birkhoff-coordinate line back through
+the actual inverse. The original physical velocity is retained exactly.
+
+The quotient by this tangent space has dimension two over R. The zero
+potential belongs to every Z_n, and already refutes the printed universal
+codimension-one value. Thus the valid real codimension is two. This
+result concerns the real Hilbert statement on p. 46; it makes no claim
+about the codimension of a complex spectral zero variety. The proof uses
+an explicit global analytic normal form and an exact tangent-curve
+characterization, rather than a generic manifold-library predicate.
+See [the source discrepancy](../SOURCE_ERRATA.md).
+
+## The psi product in the printed p. 46 overview needs a mode-dependent denominator
+
+The unnumbered psi display on p. 46 has the fixed denominator pi_n in
+every factor of the product over m≠n. The original PDF was visually
+checked. The later normalized construction uses pi_m in those factors,
+while retaining the outer factor -2/pi_n.
+
+[SourceSection7PsiNormalization.lean](../NLS/ZakharovShabat/SourceSection7PsiNormalization.lean)
+defines the literal printed cutoffs. For the actual free root sequence,
+n=0 and lambda=0, their norms are at least 2*4^N and tend to infinity.
+Consequently the printed product has no finite complex limit, and in
+particular cannot represent the normalized free psi-function.
+
+At the same source and spectral point, the established corrected product
+with denominator pi_m equals -2 at every cutoff, including N=0. The
+counterexample concerns the unnumbered overview's denominator index;
+the later normalized construction remains valid. See
+[the source discrepancy](../SOURCE_ERRATA.md).
