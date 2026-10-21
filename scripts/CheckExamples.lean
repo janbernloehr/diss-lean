@@ -63867,3 +63867,42 @@ example (u : IntervalL2) :
   scalarNonlinearFourier_hasSum_norm_sq u
 
 end NLS.ScalarNonlinearParsevalChecks
+
+noncomputable section
+namespace NLS.ActionDifferentialIndependenceChecks
+open ZakharovShabat
+open scoped ENNReal
+
+-- The differential of each real integral is its actual complex derivative restricted to real directions.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (φ h : realTypeSourceSubmodule p) :
+    (fderiv ℝ (originalRealActionIntegral hp hp1 n) φ) h =
+      ((fderiv ℂ (sourceComplexAction hp hp1 n) φ.val) h.val).re :=
+  fderiv_originalRealActionIntegral_apply hp hp1 n φ h
+
+-- Original indexed contour-action differentials are independent on the open gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceLocus p) :
+    LinearIndependent ℂ
+      (fun n : {n : ℤ // canonicalPeriodicGap hp hp1
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0} =>
+        fderiv ℂ (sourceIndexedAction hp hp1 n.val) φ.val) :=
+  linearIndependent_sourceIndexedAction_fderiv_open_gaps hp hp1 φ
+
+-- The actual real action differential vanishes exactly at a closed gap.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    fderiv ℝ (originalRealActionIntegral hp hp1 n) φ = 0 ↔
+      canonicalPeriodicGap hp hp1 (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n = 0 :=
+  fderiv_originalRealActionIntegral_eq_zero_iff_closed_gap hp hp1 φ n
+
+-- Independence of the full real differential family has the exact all-open-gap condition.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) :
+    LinearIndependent ℝ (fun n : ℤ => fderiv ℝ (originalRealActionIntegral hp hp1 n) φ) ↔
+      ∀ n : ℤ, canonicalPeriodicGap hp hp1 (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n ≠ 0 :=
+  linearIndependent_originalRealActionIntegral_fderiv_iff hp hp1 φ
+
+end NLS.ActionDifferentialIndependenceChecks

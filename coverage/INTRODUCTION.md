@@ -60,8 +60,8 @@ constructs a one-mode original source to separate each action from all
 others. Thus the original real action functions are linearly independent.
 The same functions are conserved along every original global solution,
 and their actual regular cotangents commute under the physical Poisson
-pairing. This is independence of functions; differential independence at
-every source is not claimed, including at collapsed gaps.
+pairing. The following differential-independence result gives the precise
+condition on the original source gaps.
 
 [`RectangularHamiltonianOscillators.lean`](../NLS/Dynamics/RectangularHamiltonianOscillators.lean)
 proves literal coordinate derivatives for the decoded Hamiltonian phase
@@ -73,6 +73,31 @@ and proves those equations for its actual coordinates at every time.
 The retained original ordinary or renormalized frequency sequence is
 constant along the solution. These are coordinatewise derivatives;
 time differentiability in the full sequence norm is not asserted.
+
+## Independence of the actual action differentials, printed p. 9
+
+[SourceActionDifferentialIndependence.lean](../NLS/ZakharovShabat/SourceActionDifferentialIndependence.lean)
+uses the original angle/action canonical pairing to separate a finite
+linear combination of the actual complex action differentials. At every
+real source, the differentials indexed by its open gaps are linearly
+independent over C. The result also holds for the original indexed contour
+actions, using their proved local germ agreement.
+
+[SourceRealActionDifferentialIndependence.lean](../NLS/ZakharovShabat/SourceRealActionDifferentialIndependence.lean)
+identifies each real action derivative with the real restriction of the
+complex derivative. The real/imaginary source decomposition transfers
+independence to the actual real action differentials on the open gaps.
+
+At a closed gap the nonnegative real action attains zero, so its
+differential vanishes. Conversely, the open-gap independence theorem
+excludes a zero differential. Thus vanishing is equivalent to gap
+collapse, and independence of the entire real differential family is
+equivalent to every gap being open.
+
+These statements hold for every finite p>1, retaining the same original
+source norm and actions. The separate global-solution conservation result
+above has the range 1<p<=2. No differential independence at closed gaps
+is asserted.
 
 ## Almost periodicity, printed p. 9
 

@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: scalar nonlinear Parseval with exact normalization
+## Current milestone: exact independence of original action differentials
+
+For every finite p>1, the actual complex indexed-action differentials and
+the actual real action differentials are linearly independent on the
+open gaps of each original real source. The real derivative is precisely
+the real restriction of the original complex derivative.
+
+A real action differential vanishes if and only if its gap is closed.
+Consequently the full family of real action differentials is independent
+if and only if all gaps are open. The proof keeps the original contour
+actions and physical canonical pairings.
+
+Two modules and four examples strengthen the earlier independence result
+for the action functions. The separate global conservation theorem retains
+its original 1<p<=2 range. See the
+[introduction audit](coverage/INTRODUCTION.md). The precise 2014 comparison,
+G.2 norm qualification, and wider source audit remain separate work.
+
+Validation: `./scripts/check.sh` passes with 7,985 build jobs, 6,919
+public examples, and a transitive axiom audit of 38,788 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,756 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: scalar nonlinear Parseval with exact normalization
 
 The normalized complex nonlinear Fourier coefficient is literally
 (x-i*y)/sqrt(2), using the intrinsic physical Birkhoff map of the pair

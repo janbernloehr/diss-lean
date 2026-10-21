@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the normalized complex nonlinear Fourier coefficients
-(x-i*y)/sqrt(2) preserve the original scalar physical L2 norm exactly.
-The convergent Parseval sum and the factor two in the physical pair's
-squared norm are proved. Formalization remains in progress.
+Latest step: original real and complex action differentials are
+independent on open gaps for every finite p>1. A real action differential
+vanishes exactly at gap collapse; the full family is independent exactly
+when all gaps are open. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
