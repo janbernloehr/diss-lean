@@ -63332,3 +63332,41 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q
 end NLS.ZakharovShabat
 
 end NLS.FrequencyTopChecks
+
+namespace NLS.OriginalActionDomainsChecks
+
+open Set
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+local instance originalActionDomainCheckFourFact : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance originalActionDomainCheckFourHolder : (4 : ℝ≥0∞).HolderTriple 4 2 :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+-- Construct a real analytic Hamiltonian at zero whose value is strictly
+-- negative at every nonzero nonnegative summable action.
+example : ∃ R : RealCoeff 1 → ℝ, AnalyticAt ℝ R 0 ∧
+    ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → b ≠ 0 → R b < 0 := by
+  obtain ⟨W₀,W,V,s,D,T,F,H,Q⟩ := sourceSection18_original_hamiltonian
+  obtain ⟨R,hR,hval⟩ := Q.real_summable_extension
+  refine ⟨R,hR 0 (by simpa using Q.frequency.zero_mem),?_⟩
+  intro b hb hne
+  exact lt_of_le_of_ne (hval b hb).2.1
+    (fun he => hne ((hval b hb).2.2.mp he))
+
+-- The original constructor supplies an open dense domain inside the
+-- positive Hilbert cone, retaining the same gradient and concavity data.
+example : ∃ W₀ W V : Set (CoeffPair 4),
+    ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s,
+    ∃ T : Set (Coeff 2), ∃ F : Coeff 2 → Coeff 2, ∃ H : Coeff 2 → ℂ,
+      SourceOriginalHamiltonianData D T F H ∧
+      IsOpen {b : Coeff.nonnegativeLocus 2 | b.val ∈ T} ∧
+      Dense {b : Coeff.nonnegativeLocus 2 | b.val ∈ T} := by
+  obtain ⟨W₀,W,V,s,D,T,F,H,Q⟩ := sourceSection18_original_hamiltonian
+  exact ⟨W₀,W,V,s,D,T,F,H,Q,Q.positive_domain⟩
+
+end NLS.ZakharovShabat
+
+end NLS.OriginalActionDomainsChecks

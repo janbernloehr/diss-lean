@@ -1,6 +1,35 @@
 # Implementation plan
 
-## Current milestone: the common frequency includes the infinity target
+## Current milestone: original positive action domains
+
+The same original Hamiltonian now has an explicit real analytic realization
+on summable real actions. It agrees with the original complex Hamiltonian
+on every nonnegative action, is nonpositive there, and vanishes exactly at
+zero. No Hamiltonian or domain is reselected.
+
+`SourceOriginalHamiltonianData.positive_domain` and
+`SourceOriginalFrequencyData.positive_domain` prove that the positive
+parts of their retained domains are relatively open and dense in the
+corresponding nonnegative action cones. Frequency action exponents remain
+finite, as required by the density argument.
+
+Two public examples construct a Hamiltonian strictly negative on every
+nonzero nonnegative summable action and retain the original Hamiltonian
+package together with its open dense positive domain. See
+[the Section 18 audit](coverage/SECTION_18.md).
+
+The native weighted-action full-energy formulation and introduction audit
+remain in progress. The precise 2014 comparison and G.2 norm qualification
+remain open.
+
+Validation: `./scripts/check.sh` passes with 7,948 build jobs, 6,872
+public examples, and a transitive axiom audit of 38,371 NLS declarations.
+The build retains 21 existing warnings; the new module introduces none.
+Documentation checks cover 1,617 file links across 42 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the common frequency includes the infinity target
 
 The original frequency on summable actions now has complex and real
 analytic realizations in every target exponent r > 1, including infinity.

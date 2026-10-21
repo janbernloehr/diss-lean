@@ -51,6 +51,12 @@ be assumed.
 Here E denotes `SourceOriginalFrequencyData` and H denotes
 `SourceOriginalHilbertFrequencyData`.
 
+[`SourceOriginalActionDomains.lean`](../NLS/ZakharovShabat/SourceOriginalActionDomains.lean)
+supplies `E.positive_domain`: the positive part of this exact U is open
+and dense relative to the nonnegative action cone. Its finite exponent
+follows from the original finite source exponent. The same map, domain,
+source recovery, and mixed remainder are retained.
+
 ## Original action image
 
 `SourceSection17OriginalData.actionSequence_eq` proves that the complete
@@ -126,6 +132,12 @@ Thus all four inverse and Fredholm conclusions remain available for F.
 
 Here Q denotes `SourceOriginalHamiltonianData`. The unconditional
 `sourceSection18_original_hamiltonian` constructs D, T, F, H, and Q.
+
+`Q.real_summable_extension` constructs a real analytic function on the real
+ell^1 inverse image of T, agreeing with H at every nonnegative summable
+action. Its values are nonpositive and vanish exactly at zero.
+`Q.positive_domain` proves relative openness and density for the positive
+part of this unchanged Hilbert action domain.
 
 [`SourceHamiltonianOriginalNonextension.lean`](../NLS/ZakharovShabat/SourceHamiltonianOriginalNonextension.lean)
 integrates this Hamiltonian's Hessian estimate twice to obtain
