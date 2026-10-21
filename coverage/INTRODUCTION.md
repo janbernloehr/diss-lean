@@ -10,6 +10,20 @@ distributional Galilean results documented below. This document does not
 certify the entire introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
+## Scalar Fourier differential at zero, printed p. 10
+
+[ScalarNonlinearLinearization.lean](../NLS/ZakharovShabat/ScalarNonlinearLinearization.lean)
+proves global real analyticity for the literal scalar nonlinear transform
+and identifies its full bounded real differential at zero. For every
+original unit-interval L2 class u and index n, the coefficient is
+minus the physical Fourier integral of u at -n. The original L2
+embedding u ↦ (u, conjugate u) is proved bounded and real linear,
+using actual almost-everywhere classes. The target projection uses
+exactly (x-i*y)/sqrt(2).
+
+The index reflection and sign are part of the convention. This is not an
+assertion that the nonlinear map itself is additive.
+
 ## Physical Hamiltonian, normal form and Fourier normalization, printed pp. 9–11
 
 [ClassicalNLSHamiltonians.lean](../NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean)

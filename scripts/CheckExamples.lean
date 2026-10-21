@@ -63973,3 +63973,24 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨N,hN,U,ho,hc,hφ,h0,fun ψ hψ K hK => (hs ψ hψ K hK).2.1⟩
 
 end NLS.Section6CutoffChecks
+
+noncomputable section
+namespace NLS.ScalarNonlinearLinearizationChecks
+open ZakharovShabat
+
+-- The normalized scalar map is analytic on the full physical Hilbert space.
+example : AnalyticOnNhd ℝ scalarNonlinearFourier Set.univ ∧ scalarNonlinearFourier 0 = 0 :=
+  ⟨scalarNonlinearFourier_analytic, scalarNonlinearFourier_zero⟩
+
+-- The differential is a bounded operator on the original scalar L2 classes.
+example : HasFDerivAt scalarNonlinearFourier
+    (normalizedPhysicalScalarCoordinate.comp
+      ((fderiv ℝ intrinsicPhysicalBirkhoffMap 0).comp scalarPhysicalRealInputCLM)) 0 :=
+  scalarNonlinearFourier_hasFDerivAt_zero
+
+-- Synthesized inputs test the exact sign and index reflection on arbitrary l2 data.
+example (a : Coeff 2) (n : ℤ) :
+    fderiv ℝ scalarNonlinearFourier 0 (Fourier.unitL2SynthesisLinear a) n = -a (-n) := by
+  rw [scalarNonlinearFourier_fderiv_zero_apply, Fourier.unitL2SynthesisLinear_coefficient]
+
+end NLS.ScalarNonlinearLinearizationChecks

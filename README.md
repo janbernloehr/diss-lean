@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the corrected original Section 6 displacement, gap, and
-coefficient-supremum estimates now use the full Fourier cutoff N and hence
-the sharper ceiling(N/2) convention. Original norms, multiplicities, and
-local uniformity are retained. Formalization remains in progress.
+Latest step: the normalized scalar nonlinear Fourier transform is globally
+real analytic, and its derivative at zero is the signed reflected physical
+Fourier transform. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

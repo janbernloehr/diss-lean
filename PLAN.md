@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: sharper original Section 6 cutoff estimates
+## Current milestone: scalar Fourier differential at zero
+
+The normalized scalar nonlinear Fourier transform is real analytic on all
+physical L2 and fixes zero. Its full bounded real differential retains the
+original scalar embedding and the normalized target projection. At every index
+n the derivative equals minus the actual unit-period Fourier coefficient at
+-n.
+
+The sign and index reflection remain explicit. Three public examples include
+arbitrary l2 Fourier-synthesized inputs.
+
+The [introduction audit](coverage/INTRODUCTION.md) records the exact scope and conventions.
+
+Validation: `./scripts/check.sh` passes with 7,993 build jobs, 6,927
+public examples, and a transitive axiom audit of 38,903 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 1,777 file links across 43 documents.
+The 156 source candidate labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: sharper original Section 6 cutoff estimates
 
 The corrected displacement and weighted gap bounds now retain the Fourier
 tail at the full cutoff N. Monotonicity gives the ceiling(N/2) versions with
