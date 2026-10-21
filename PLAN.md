@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: the next Hamiltonian phase at actual boundary roots
+## Current milestone: the boundary phase Fourier remainder
+
+The actual next Hamiltonian phase offset at Dirichlet and Neumann roots
+now has its signed Fourier half-sum with a uniformly bounded H^(s+1)
+tail error, for integer s >= 1 on original Hs source balls. Every larger
+cutoff is allowed. The result transfers to canonically labelled source
+roots on one complex neighborhood, with matching smooth periodic
+representatives still explicit.
+
+The normalized leading-integral coefficients factor into inverse
+initial-coordinate multipliers. Their errors from one decay like
+(1+|n|)^(-1), so they preserve the sharp leading Fourier tails. Exact
+integer imaginary shifts keep the signs on both frequency tails.
+A uniform cutoff makes the next-phase offset small with inverse-index
+decay. Weighted hyperbolic-sine linearization then transfers the Fourier
+remainder from its sine to the phase itself.
+
+A general weighted comparison also recovers the Sobolev order of a root
+difference from its phase difference, and gives an extra derivative for
+the inverse-index perturbation. This is the absorption step needed for
+the remaining boundary-to-critical comparison.
+
+Twelve modules establish this step. Three public examples check the
+negative-mode sign, a complex quadratic remainder, and zero
+linearization at infinite exponent and negative Sobolev order.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+The boundary-to-critical comparison still needs its source-neighborhood
+assembly. Adding the critical-midpoint correction, removing smooth
+representatives, and completing the finite head will then address the
+literal midpoint Fourier error. Full Birkhoff-minus-Fourier one-smoothing
+remains incomplete.
+
+Validation: `./scripts/check.sh` passes with 7,912 build jobs, 6,856
+public examples, and a transitive axiom audit of 38,144 NLS declarations.
+The build retains 21 existing warnings; the twelve new modules introduce none.
+Documentation checks cover 1,499 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the next Hamiltonian phase at actual boundary roots
 
 For integer s >= 1, the hyperbolic sine of the next Hamiltonian phase at
 actual Dirichlet or Neumann roots differs from the normalized exact WKB

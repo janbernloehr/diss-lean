@@ -1305,6 +1305,50 @@ Three public examples check empty truncation, the signed primitive
 correction on a nonzero constant source, and boundary-sign independence
 at order zero.
 
+## The boundary phase Fourier remainder
+
+[`WKBBoundaryNextLeadingFactors.lean`](../NLS/ZakharovShabat/WKBBoundaryNextLeadingFactors.lean)
+factors the exact normalized leading combination with the correct
+boundary sign. Its two inverse multipliers have uniform bounds and
+inverse-index deviations from one in
+[`SobolevWKBBoundaryNextFactorDecay.lean`](../NLS/ZakharovShabat/SobolevWKBBoundaryNextFactorDecay.lean).
+[`SobolevWKBBoundaryNextLeadingTails.lean`](../NLS/ZakharovShabat/SobolevWKBBoundaryNextLeadingTails.lean)
+therefore retains both signed original Fourier coefficients with sharp
+remainders. The actual root equation gives the Fourier half-sum for the
+hyperbolic sine phase in
+[`SobolevBoundarySinhFourierTail.lean`](../NLS/ZakharovShabat/SobolevBoundarySinhFourierTail.lean).
+
+[`LocalSinhLinearization.lean`](../NLS/ComplexAnalysis/LocalSinhLinearization.lean)
+proves the quadratic Taylor bound and local inverse comparison.
+[`SobolevSinhLinearization.lean`](../NLS/SequenceSpaces/SobolevSinhLinearization.lean)
+and
+[`SobolevSinhFourierRemainder.lean`](../NLS/SequenceSpaces/SobolevSinhFourierRemainder.lean)
+turn the inverse-index phase bound into a one-order smoother inverse-sine
+remainder, for arbitrary real Sobolev order and every Banach exponent.
+[`SobolevNextPhaseOffsetBounds.lean`](../NLS/ZakharovShabat/SobolevNextPhaseOffsetBounds.lean)
+supplies the required uniform smallness and decay on original Hs balls.
+[`IntegerSinhShift.lean`](../NLS/ComplexAnalysis/IntegerSinhShift.lean)
+keeps the exact signed carriers at all integer imaginary half-periods.
+
+[`SobolevBoundaryPhaseFourierTail.lean`](../NLS/ZakharovShabat/SobolevBoundaryPhaseFourierTail.lean)
+combines these estimates into the actual next-phase Fourier remainder,
+with an H^(s+1) bound for both boundary conditions and every larger
+cutoff. Exact source compatibility transfers the result to canonical
+roots in
+[`SourceBoundaryPhaseSmoothTail.lean`](../NLS/ZakharovShabat/SourceBoundaryPhaseSmoothTail.lean).
+The common tail also avoids the phase pole. Smooth representatives
+remain explicit in this source statement.
+
+[`SobolevPhaseDifferenceRemainder.lean`](../NLS/SequenceSpaces/SobolevPhaseDifferenceRemainder.lean)
+provides the general absorption argument for the remaining root
+comparison: a phase difference close to minus i times a root difference
+controls the latter in the same Sobolev space, and inverse-index decay
+gains one order for the perturbation. Its application to the actual
+boundary and critical roots, the critical-midpoint correction, and the
+full original-source analytic midpoint remainder remain to be assembled.
+Three public examples cover the negative-mode sign, an imaginary phase,
+and zero inverse-sine data at negative order with infinite exponent.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

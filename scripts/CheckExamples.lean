@@ -63089,3 +63089,30 @@ example (θ : BoundaryCondition) (a b : ℝ → ℂ) (z : ℂ) :
     nlsWKBVector,nlsWKBSecondVector,nlsRiccatiApproximation]
 
 end NLS.MidpointPhaseChecks
+
+namespace NLS.BoundaryPhaseFourierChecks
+open Complex NLS.ComplexAnalysis NLS.ZakharovShabat
+open scoped ENNReal
+
+-- Odd negative integer shifts reverse the full complex hyperbolic sine.
+example (z : ℂ) : sinh (z+Complex.I*((Real.pi:ℂ)*(-3:ℤ))) = -sinh z := by
+  rw [sinh_add_int_pi_I_eq_exp,exp_freeCenter_eq_natAbs_sign]
+  norm_num
+
+-- The quadratic bound applies to an imaginary phase inside the unit disc.
+example : ‖sinh (Complex.I/2)-Complex.I/2‖ ≤ (1/4:ℝ) := by
+  have h := norm_sinh_sub_self_le_sq (Complex.I/2) (by norm_num [norm_div])
+  norm_num [norm_div] at h ⊢
+  exact h
+
+-- Linearization includes zero data at infinite exponent and negative Sobolev order.
+example : ∃ f : WeightedCoeff (Weight.sobolev (-2)) ⊤,
+    (∀ n, f.val n = 0) ∧ ‖f‖ ≤ 0 := by
+  have h := WeightedCoeff.exists_sobolev_sinh_fourier_remainder
+    (p := ⊤) (-3) (fun _ => 0) 0 0 0 (by norm_num)
+    (by intro n; simp) (by intro n; simp) (by intro n; simp) (by intro n; simp)
+  have hr : (-3 : ℝ)+1 = -2 := by norm_num
+  rw [hr] at h
+  simpa only [WeightedCoeff.zero_val, sub_zero, norm_zero, mul_zero, zero_mul, add_zero] using h
+
+end NLS.BoundaryPhaseFourierChecks
