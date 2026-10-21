@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the corrected auxiliary has a locally uniform full lp
-normalization error and uniformly bounded physical gradients on the
-original complex domain. Formalization remains in progress.
+Latest step: the proof of Proposition 17.3 uses a corrected action-power
+constant and signed-mode cutoff, with actual original-source counterexamples
+to the printed estimates. The surjectivity conclusion remains proved.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

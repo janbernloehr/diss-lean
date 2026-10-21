@@ -127,3 +127,55 @@ Native weighted analyticity and global analytic Sobolev inverses for
 remains unverified; surjectivity for p>2 is not claimed. The original
 Hamiltonian, frequency, and flow statements are audited in
 [Section 18](SECTION_18.md) and the following sections.
+
+## The power constant and enumeration cutoff in Proposition 17.3
+
+The proof on printed p. 79 bounds the sum of |x_n|^p+|y_n|^p by
+2^(p/2) times the sum of I_n^(p/2), where I_n=(x_n^2+y_n^2)/2.
+For 1<p<2 the printed factor is too small. Balanced coordinates x=y=1
+have action one and coordinate-power sum two, whereas 2^(p/2)<2.
+
+[SourceActionPowerConstant.lean](../NLS/ZakharovShabat/SourceActionPowerConstant.lean)
+proves the sharp pointwise bound with constant two for 0<p<=2. For every
+original Birkhoff family with 1<p<2, its actual global inverse constructs
+a source whose image has only x_0=y_0=1 nonzero. The literal infinite
+coordinate-power sum is two and the original spectral action-power sum
+is one. Thus realizability and convergence are not assumptions of the
+counterexample.
+
+[SourceActionPowerSum.lean](../NLS/ZakharovShabat/SourceActionPowerSum.lean)
+proves summability of the action powers and the corrected full summed
+bound with factor two for every actual real source, 1<p<=2. Both
+coordinate powers remain inside the summand. This states the literal
+sum used by the source; it does not identify that sum with the default
+maximum norm on a Cartesian product used by some internal interfaces.
+
+A separate mismatch occurs when p. 80 replaces the tail after the first
+N enumeration positions by the absolute-mode tail |m|>N. The printed
+one-based ordering is 0,-1,1,-2,2,... .
+[Section17EnumerationCutoff.lean](../NLS/ZakharovShabat/Section17EnumerationCutoff.lean)
+implements that ordering and proves that its first 2N+1 positions cover
+exactly all modes with |m|<=N. It also proves an exact reindexing identity:
+the tail after 2N+1 positions is the absolute-mode tail |m|>N.
+
+[SourceActionCutoffCounterexample.lean](../NLS/ZakharovShabat/SourceActionCutoffCounterexample.lean)
+constructs an actual original source with only x_1=y_1=1 nonzero. Its
+first enumerated action, at mode zero, is already zero. At N=1 its
+absolute-mode action-power tail is zero, but its remaining enumeration
+tail is one. Therefore the printed cutoff cannot be used interchangeably
+with the enumeration length.
+
+The corrected factor and selection rule preserve the small-target
+argument. If the total action-power budget is less than 2 epsilon^p,
+the corrected coordinate-power bound is less than 4 epsilon^p, which is
+at most (4 epsilon)^p for p>=1. A public example checks this final budget.
+The existing [finite-action criterion](../NLS/SequenceSpaces/RealActionTail.lean)
+and [actual surjectivity proof](../NLS/ZakharovShabat/SourceBirkhoffProposition17_3.lean)
+already select an explicit finite set and use its actual complement;
+they do not depend on either false printed estimate. Proposition 17.3
+remains proved on the unchanged original family.
+
+Six public examples cover an unconditional family and power-sum witness
+at p=3/2, the corrected bound at p=2, a fractional-exponent cutoff witness,
+the exact signed tail identity, the symmetric initial block, and the
+retained 4 epsilon budget.

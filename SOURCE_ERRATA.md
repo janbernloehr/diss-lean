@@ -1,5 +1,31 @@
 # Source discrepancies
 
+## Proposition 17.3 proof, pp. 79–80: power constant and enumeration cutoff
+
+The coordinate-power inequality on p. 79 requires factor two for
+1<p<=2. The printed factor 2^(p/2) is false for 1<p<2.
+[SourceActionPowerConstant.lean](NLS/ZakharovShabat/SourceActionPowerConstant.lean)
+constructs an actual original source with balanced single-mode Birkhoff
+image. Its coordinate-power sum is two and its original action-power
+sum is one. [SourceActionPowerSum.lean](NLS/ZakharovShabat/SourceActionPowerSum.lean)
+proves convergence and the corrected full bound for every real source
+in the stated exponent range.
+
+The subsequent cutoff on p. 80 also conflates enumeration position with
+absolute spectral index. In the ordering 0,-1,1,-2,2,..., the first 2N+1
+positions cover |m|<=N.
+[Section17EnumerationCutoff.lean](NLS/ZakharovShabat/Section17EnumerationCutoff.lean)
+proves the corrected initial-block and exact tail identities.
+[SourceActionCutoffCounterexample.lean](NLS/ZakharovShabat/SourceActionCutoffCounterexample.lean)
+constructs an actual source with action one at mode +1 and zero elsewhere.
+Its |m|>1 tail is zero, while its tail after the first enumeration position
+is one, and the first selected action is already zero.
+
+These corrections preserve Proposition 17.3. The existing proof uses
+explicit finite action reductions and a valid small-norm criterion.
+The corrected factor still permits the original 4 epsilon target budget.
+See the [Section 17 audit](coverage/SECTION_17.md).
+
 ## Lemma 11.1 proof, p. 61: an interior zero of the integrand
 
 The proof's recentered integrand contains the factor

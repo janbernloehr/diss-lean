@@ -4347,3 +4347,7 @@ import NLS.ZakharovShabat.SourceDirichletOmittedSquareAnalytic
 import NLS.ZakharovShabat.SourceDirichletOmittedNormalizedAnalytic
 import NLS.ZakharovShabat.SourceAuxiliaryUniformAsymptotics
 import NLS.ZakharovShabat.SourceAuxiliaryUniformGradient
+import NLS.ZakharovShabat.SourceActionPowerConstant
+import NLS.ZakharovShabat.SourceActionPowerSum
+import NLS.ZakharovShabat.Section17EnumerationCutoff
+import NLS.ZakharovShabat.SourceActionCutoffCounterexample

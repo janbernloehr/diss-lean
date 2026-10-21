@@ -64424,3 +64424,78 @@ example {W₀ W : Set (CoeffPair 4)}
   exact Real.rpow_le_rpow (norm_nonneg _) (hb ψ hψ) (by norm_num)
 
 end NLS.Section16AuxiliaryUniformityChecks
+
+noncomputable section
+namespace NLS.Section17ActionPowerCorrectionChecks
+open ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem fractional_lt : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem fractional_lt_two : (3/2 : ℝ≥0∞) < 2 := by
+  apply (ENNReal.toReal_lt_toReal fractional_finite (by norm_num : (2:ℝ≥0∞)≠⊤)).mp
+  norm_num
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_lt.le⟩
+
+-- Construct the original family and an actual source with both literal sums computed.
+example : ∃ W₀ B W : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    SourceBirkhoffMapComplexData fractional_finite fractional_lt W₀ B W s ∧
+    ∃ φ : realTypeSourceSubmodule (3/2),
+      (∑' n : ℤ, (|(sourceRealBirkhoffMap fractional_finite fractional_lt s φ).1 n|^(3/2:ℝ≥0∞).toReal+
+        |(sourceRealBirkhoffMap fractional_finite fractional_lt s φ).2 n|^(3/2:ℝ≥0∞).toReal)) = 2 ∧
+      (∑' n : ℤ, |(sourceRealAction fractional_finite fractional_lt φ.val φ.property n).re|^((3/2:ℝ≥0∞).toReal/2)) = 1 ∧
+      ¬(∑' n : ℤ, (|(sourceRealBirkhoffMap fractional_finite fractional_lt s φ).1 n|^(3/2:ℝ≥0∞).toReal+
+        |(sourceRealBirkhoffMap fractional_finite fractional_lt s φ).2 n|^(3/2:ℝ≥0∞).toReal)) ≤
+        (2:ℝ)^((3/2:ℝ≥0∞).toReal/2)*
+          (∑' n : ℤ, |(sourceRealAction fractional_finite fractional_lt φ.val φ.property n).re|^((3/2:ℝ≥0∞).toReal/2)) := by
+  obtain ⟨W₀,B,W,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic fractional_finite fractional_lt
+  exact ⟨W₀,B,W,s,D,D.printed_action_power_sum_counterexample fractional_lt_two⟩
+
+-- The corrected bound also includes the Hilbert endpoint and proves convergence.
+example {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    Summable (fun n : ℤ => |(sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re|) ∧
+      (∑' n : ℤ, (|(sourceRealBirkhoffMap (by simp) (by norm_num) s φ).1 n|^(2:ℝ)+
+        |(sourceRealBirkhoffMap (by simp) (by norm_num) s φ).2 n|^(2:ℝ))) ≤
+      2*(∑' n : ℤ, |(sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re|) := by
+  simpa using D.corrected_action_power_sum (le_refl 2) φ
+
+-- An actual fractional-exponent source separates the two cutoffs used on p.80.
+example {W₀ B W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (D : SourceBirkhoffMapComplexData fractional_finite fractional_lt W₀ B W s) :
+    ∃ φ : realTypeSourceSubmodule (3/2),
+      (sourceRealAction fractional_finite fractional_lt φ.val φ.property (section17Mode 1)).re=0 ∧
+      (∑' n : ℤ, if 1<n.natAbs then
+        |(sourceRealAction fractional_finite fractional_lt φ.val φ.property n).re|^((3/2:ℝ≥0∞).toReal/2) else 0)=0 ∧
+      (∑' k : ℕ, if 1<k then
+        |(sourceRealAction fractional_finite fractional_lt φ.val φ.property (section17Mode k)).re|^((3/2:ℝ≥0∞).toReal/2) else 0)=1 :=
+  D.printed_action_cutoff_counterexample fractional_lt_two.le
+
+-- The corrected enumeration cutoff gives an exact tail identity, including negative modes.
+example (f : ℤ → ℝ) :
+    (∑' j : ℕ, if 15<j+1 then f (section17Mode (j+1)) else 0) =
+      ∑' n : ℤ, if 7<n.natAbs then f n else 0 := by
+  simpa using section17Mode_corrected_tail_sum 7 f
+
+-- The first five positions cover both endpoints of the symmetric two-mode cutoff.
+example : section17Mode '' {k : ℕ | 1≤k ∧ k≤5} = {n : ℤ | n.natAbs≤2} := by
+  simpa using section17Mode_initial_block 2
+
+-- The corrected factor still yields the original 4*epsilon budget.
+example (r ε A E : ℝ) (hr : 1≤r) (hε : 0<ε)
+    (hE : E≤2*A) (hA : A<2*ε^r) : E<(4*ε)^r := by
+  have hfour : (4:ℝ) ≤ (4:ℝ)^r := by
+    simpa only [Real.rpow_one] using Real.rpow_le_rpow_of_exponent_le (by norm_num : (1:ℝ)≤4) hr
+  have hpow : 0≤ε^r := Real.rpow_nonneg hε.le _
+  have hb : E<4*ε^r := lt_of_le_of_lt hE (by linarith)
+  rw [Real.mul_rpow (by norm_num : (0:ℝ)≤4) hε.le]
+  exact hb.trans_le (mul_le_mul_of_nonneg_right hfour hpow)
+
+end NLS.Section17ActionPowerCorrectionChecks

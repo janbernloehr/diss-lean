@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: uniform auxiliary asymptotics and physical gradient bounds
+## Current milestone: the action-power constant and enumeration cutoff
+
+The proof of Proposition 17.3 needs factor two in the literal
+coordinate-power sum and 2N+1 enumeration positions to cover |n|<=N.
+Actual original sources refute both printed estimates. The corrected
+full sum includes convergence, and the cutoff theorem gives an exact
+identity for the infinite tails.
+
+These corrections preserve Proposition 17.3 and its 4 epsilon budget.
+The existing surjectivity proof uses explicit finite action reductions.
+Six examples check the source witnesses, corrected sum, signed ordering,
+and final small-target estimate.
+The [Section 17 audit](coverage/SECTION_17.md) records the correction.
+
+Validation: `./scripts/check.sh` passes with 8,017 build jobs, 6,964
+public examples, and a transitive axiom audit of 39,131 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,865 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: uniform auxiliary asymptotics and physical gradient bounds
 
 The corrected auxiliary error 2*phi_n+cos(pi*n) is now a Banach analytic
 lp sequence on the unchanged original complex angular domain, for every
