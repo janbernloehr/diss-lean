@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: bounded positive-integer Fourier one-smoothing
+## Current milestone: bounded forward and inverse Fourier one-smoothing
+
+One constructed Birkhoff map now has canonical Fourier remainders gaining
+one derivative in both directions, for every integer m >= 1. Both maps
+are real analytic on the entire native real Sobolev space and uniformly
+bounded on every ball. The forward remainder also has a complex analytic
+extension near every real original Hm source.
+
+Coefficient uniqueness identifies the canonical forward h^(m+1) map
+with the actual rectangular Birkhoff-minus-Fourier error. A contractive
+conversion from the native component-sum source norm to the higher
+source preserves both raw Fourier sequences and the real condition.
+This supplies the analytic map on the space of the existing global
+Sobolev inverse.
+
+The inverse remainder is minus the Fourier inverse applied to the
+forward remainder at the actual inverse source. Its coordinate identities
+retain the reflected first component and the exact square-root
+normalization. Physical norm comparisons and the existing two-sided
+Sobolev estimates bound the inverse source on every bounded native
+target ball. The forward bound then gives the stronger inverse bound.
+No additional spectral or boundedness premise is left to the caller.
+
+Four modules establish this step. Two public checks exercise a negative
+y mode: opposite imaginary signs, the Fourier normalization, reflection
+of only the first source component, and its zero coefficient at the
+unreflected index. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The forward and inverse positive-integer one-smoothing statements are
+now proved for the same family. The complete dissertation audit, the
+precise 2014 edition comparison and the recorded source qualifications
+remain open.
+
+Validation: `./scripts/check.sh` passes with 7,941 build jobs, 6,864
+public examples, and a transitive axiom audit of 38,305 NLS declarations.
+The build retains 21 existing warnings; the four new modules introduce none.
+Documentation checks cover 1,548 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: bounded positive-integer Fourier one-smoothing
 
 The actual rectangular Birkhoff-minus-Fourier remainder now has a uniform
 h^(m+1) bound on every real original Hm ball, for every integer m >= 1.

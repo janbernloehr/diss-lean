@@ -4,9 +4,10 @@ This audit concerns printed pp. 103–106. Theorems 23.1, 23.2, and 23.4,
 Remark 23.3, and Corollary 23.5 now hold for one retained original
 Sections 17–22 family. The exact norms and indexed actions are retained.
 The opening Sobolev diffeomorphism assertion also follows from the
-native weighted inverse results below. The cited forward one-smoothing property now has the analytic and bounded
-positive-integer result described below, and the higher-action outline has the source
-corrections recorded in Section 24.
+native weighted inverse results below. The cited one-smoothing property now
+has canonical analytic and bounded forward and inverse results at every
+positive integer order, as described below. The higher-action outline has
+the source corrections recorded in Section 24.
 
 ## One original map and exact norms
 
@@ -1479,6 +1480,48 @@ free center. The canonical stronger-target map can now be packaged from
 these coordinate witnesses. Inverse smoothing remains a separate
 obligation, and this does not certify the entire dissertation.
 
+## Canonical forward and inverse one-smoothing
+
+[`SourceBirkhoffFourierRemainder.lean`](../NLS/ZakharovShabat/SourceBirkhoffFourierRemainder.lean)
+defines one canonical stronger-target map from the actual rectangular
+Fourier errors. Coefficient uniqueness identifies it with the preceding
+local analytic and uniformly bounded realizations. It has the literal
+coordinates on a complex neighborhood of each real original Hm point,
+and maps bounded real Hm sets to bounded h^(m+1) sets. Outside the proved
+neighborhoods its total definition is not asserted to realize the raw
+Fourier error.
+
+[`SourceSobolevNativeBridge.lean`](../NLS/ZakharovShabat/SourceSobolevNativeBridge.lean)
+converts the native weighted source contractively to the higher source,
+with exactly the same raw coefficients, unweighted inclusion and real
+condition. The canonical forward remainder is therefore real analytic
+on the entire native real Sobolev Banach space used by the global inverse.
+
+[`SourceBirkhoffInverseFourierAnalytic.lean`](../NLS/ZakharovShabat/SourceBirkhoffInverseFourierAnalytic.lean)
+constructs the weighted Fourier inverse with the reflected first component
+and exact square-root normalization. Composing it with the forward error
+at the actual global inverse proves real analyticity of the inverse
+remainder into the space gaining one derivative. Coordinate identities
+identify it with the literal original inverse-minus-Fourier-inverse error
+at every signed index and every real native target.
+
+[`SourceBirkhoffInverseFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceBirkhoffInverseFourierSobolevBall.lean)
+compares native and physical source norms and bounds all lower physical
+Birkhoff norms by the native target norm. The existing two-sided Sobolev
+estimates then bound the original inverse source on every entire native
+target ball. Combining this with the forward error bound proves uniform
+h^(m+1) bounds for the inverse error, and preservation of arbitrary bounded
+target sets. A single constructor packages real analyticity and uniform
+ball bounds for both directions at every positive integer order, using
+the same original Birkhoff map and root family.
+
+The public examples check a negative y mode, including opposite imaginary
+signs, normalization, reflection in the first component only and vanishing
+at the unreflected first index. These results complete the forward and
+inverse positive-integer one-smoothing assertions; they do not certify
+coverage of the entire dissertation or settle the exact 2014 edition
+comparison.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -1547,8 +1590,9 @@ canonical results above. The one-smoothing discussion on p. 104 cites
 [39]. The completed spectral-error argument now proves an analytic
 one-derivative gain near each real original Hm source for every positive
 integer m. The norm estimates alone do not imply this stronger-target
-statement. Boundedness on arbitrary real Sobolev balls is now proved
-below; inverse smoothing remains separate.
+statement. The canonical maps, boundedness on arbitrary real Sobolev
+balls, and actual inverse smoothing are now proved above for the same
+Birkhoff family at every positive integer order.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is

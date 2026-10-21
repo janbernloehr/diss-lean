@@ -63192,3 +63192,19 @@ example (θ : BoundaryCondition) (n : ℤ) : sourceBoundaryOmittedInverseL2Error
   simp [← inv_pow]
 
 end NLS.FourierBallChecks
+
+-- A negative y mode gives opposite imaginary signs in the two source
+-- components, with reflection only in the first component.
+example :
+    let v : WeightedCoeff (Weight.sobolev 2) 2 × WeightedCoeff (Weight.sobolev 2) 2 :=
+      (0, WeightedCoeff.single _ (-3) 1)
+    (sourceSobolevBirkhoffFourierInverse 2 v).1.val 3 = Complex.I / (Real.sqrt 2 : ℂ) ∧
+    (sourceSobolevBirkhoffFourierInverse 2 v).2.val (-3) = -Complex.I / (Real.sqrt 2 : ℂ) := by
+  norm_num [sourceSobolevBirkhoffFourierInverse_fst,sourceSobolevBirkhoffFourierInverse_snd]
+
+-- The same mode has no coefficient at the unreflected first index.
+example :
+    let v : WeightedCoeff (Weight.sobolev 2) 2 × WeightedCoeff (Weight.sobolev 2) 2 :=
+      (0, WeightedCoeff.single _ (-3) 1)
+    (sourceSobolevBirkhoffFourierInverse 2 v).1.val (-3) = 0 := by
+  norm_num [sourceSobolevBirkhoffFourierInverse_fst]
