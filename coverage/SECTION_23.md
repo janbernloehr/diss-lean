@@ -4,8 +4,8 @@ This audit concerns printed pp. 103–106. Theorems 23.1, 23.2, and 23.4,
 Remark 23.3, and Corollary 23.5 now hold for one retained original
 Sections 17–22 family. The exact norms and indexed actions are retained.
 The opening Sobolev diffeomorphism assertion also follows from the
-native weighted inverse results below. The cited one-smoothing property now has the positive-integer result
-described below, and the higher-action outline has the source
+native weighted inverse results below. The cited forward one-smoothing property now has the analytic and bounded
+positive-integer result described below, and the higher-action outline has the source
 corrections recorded in Section 24.
 
 ## One original map and exact norms
@@ -1432,6 +1432,53 @@ requires finite-head completion and smooth real approximation. Full
 Birkhoff remainder boundedness and inverse smoothing remain separate;
 these tail estimates alone do not complete them.
 
+## Complete uniform Fourier bounds
+
+[`SobolevSourceRealSmoothApproximation.lean`](../NLS/ZakharovShabat/SobolevSourceRealSmoothApproximation.lean)
+constructs symmetric Fourier truncations that preserve the real condition,
+do not increase the original Sobolev norm, and converge with actual smooth
+periodic representatives.
+[`SourceEtaMidpointFourierContinuity.lean`](../NLS/ZakharovShabat/SourceEtaMidpointFourierContinuity.lean)
+proves coordinate continuity in the original L2 norm and bounds finite
+weighted heads on compact real L2 sets. Together they complete the
+uniform midpoint Fourier bound in
+[`SourceEtaMidpointFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceEtaMidpointFourierSobolevBall.lean).
+The same approximation and compactness argument gives the entire
+anti-discriminant Fourier bound for both boundary conditions in
+[`SourceBoundaryAntiFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceBoundaryAntiFourierSobolevBall.lean).
+
+[`SourcePeriodicDisplacementSobolevBall.lean`](../NLS/ZakharovShabat/SourcePeriodicDisplacementSobolevBall.lean)
+bounds both periodic endpoints at all indices. The resulting distant-disc
+and canonical boundary estimates appear in
+[`SourceDeletedPeriodicDiscSobolevBall.lean`](../NLS/ZakharovShabat/SourceDeletedPeriodicDiscSobolevBall.lean)
+and
+[`SourceDeletedPeriodicBoundarySobolevBall.lean`](../NLS/ZakharovShabat/SourceDeletedPeriodicBoundarySobolevBall.lean).
+The real normalization sign controls the omitted square root in
+[`SourceOmittedBoundarySobolevBall.lean`](../NLS/ZakharovShabat/SourceOmittedBoundarySobolevBall.lean).
+Its complete inverse error is uniformly bounded in the order-one weighted
+supremum norm. Combining this multiplier with the anti-discriminant
+remainder gives
+[`SourceEtaSineFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceEtaSineFourierSobolevBall.lean):
+the complete literal terminal-sine Fourier remainder is bounded in
+h^(s+1) on each real original Hs ball.
+
+[`SourceBirkhoffFourierSobolevBall.lean`](../NLS/ZakharovShabat/SourceBirkhoffFourierSobolevBall.lean)
+combines the two complete spectral bounds with the already proved angular
+estimate on physical Hm balls. The explicit norm comparison transfers
+that estimate to native source balls. Both actual original rectangular
+Birkhoff-minus-Fourier coordinates then have a common h^(m+1) bound on
+each real Hm ball for every positive integer m. This is the same retained
+family used by the local analytic result; no spectral-error regularity
+premise remains.
+
+The forward positive-integer result now includes boundedness as well as
+local analyticity. All indices, collapsed gaps and arbitrary real Sobolev
+sources are covered. Public examples check the strict symmetric cutoff
+at a negative mode and the signed inverse-product normalization at every
+free center. The canonical stronger-target map can now be packaged from
+these coordinate witnesses. Inverse smoothing remains a separate
+obligation, and this does not certify the entire dissertation.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -1500,8 +1547,8 @@ canonical results above. The one-smoothing discussion on p. 104 cites
 [39]. The completed spectral-error argument now proves an analytic
 one-derivative gain near each real original Hm source for every positive
 integer m. The norm estimates alone do not imply this stronger-target
-statement. Boundedness on arbitrary Sobolev balls and inverse smoothing
-remain separate.
+statement. Boundedness on arbitrary real Sobolev balls is now proved
+below; inverse smoothing remains separate.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is

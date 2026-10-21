@@ -63171,3 +63171,24 @@ example (φ : realTypeSourceLocus 2) (n : ℤ)
   exact sub_eq_zero.mp he
 
 end NLS.SobolevBallChecks
+
+namespace NLS.FourierBallChecks
+open Complex NLS.ZakharovShabat
+open scoped ENNReal
+
+-- The cutoff is strict and symmetric, including the reflected negative mode.
+example : sobolevSourceSymmetricTruncate 2 2 (sobolevSourceRealMode 2 (-2) 3).val = 0 ∧
+    sobolevSourceSymmetricTruncate 2 3 (sobolevSourceRealMode 2 (-2) 3).val =
+      (sobolevSourceRealMode 2 (-2) 3).val := by
+  constructor <;> apply Prod.ext <;> apply Subtype.ext <;> funext n
+  all_goals simp only [sobolevSourceSymmetricTruncate_fst,sobolevSourceSymmetricTruncate_snd,
+    sobolevSourceRealMode,sobolevSourceScalarMode_apply]
+  all_goals split_ifs <;> simp_all
+
+-- The inverse normalization has zero error at every signed free center.
+example (θ : BoundaryCondition) (n : ℤ) : sourceBoundaryOmittedInverseL2Error θ n 0 = 0 := by
+  simp only [sourceBoundaryOmittedInverseL2Error,canonicalPeriodOneBoundaryRoots_zero,
+    sourceStandardRootOmittedProduct_zero_source_center,cos_freeCenter_eq_natAbs_sign]
+  simp [← inv_pow]
+
+end NLS.FourierBallChecks

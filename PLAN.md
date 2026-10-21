@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: uniform spectral estimates on real Sobolev balls
+## Current milestone: bounded positive-integer Fourier one-smoothing
+
+The actual rectangular Birkhoff-minus-Fourier remainder now has a uniform
+h^(m+1) bound on every real original Hm ball, for every integer m >= 1.
+This uses the same retained Birkhoff map and root family as the existing
+local analytic one-smoothing result. Both spectral-error estimates are
+proved; no regularity premise is left to the caller.
+
+Symmetric Fourier truncations preserve the real condition, stay within
+the original Sobolev ball and converge in its norm. Coordinate continuity
+extends the uniform midpoint tail bound to every source in the ball.
+Compactness of its L2 image bounds the finite head. This completes the
+literal midpoint Fourier remainder at all signed indices and collapsed
+gaps. The same method completes the anti-discriminant Fourier remainder.
+
+Uniform periodic endpoint bounds control deleted products on distant
+unit discs and at both boundary sequences. The real normalization sign
+then bounds the omitted product and its inverse. Compact finite-head
+completion gives the full order-one weighted supremum multiplier.
+Combining it with the anti-discriminant remainder proves the complete
+terminal-sine Fourier bound. The existing angular bound on physical Hm
+balls, transferred by the native-to-physical norm comparison, closes the
+uniform bound for both original rectangular Fourier errors.
+
+Ten modules establish this step. Public checks cover the strict symmetric
+Fourier cutoff at a negative mode and the inverse-product normalization
+at every signed free center. See [the Section 23 audit](coverage/SECTION_23.md).
+
+The forward positive-integer result now includes local analyticity and
+boundedness on arbitrary real Sobolev balls. Packaging the canonical
+stronger-target map and proving inverse smoothing are the next steps.
+The complete dissertation formalization remains in progress.
+
+Validation: `./scripts/check.sh` passes with 7,937 build jobs, 6,862
+public examples, and a transitive axiom audit of 38,251 NLS declarations.
+The build retains 21 existing warnings; the ten new modules introduce none.
+Documentation checks cover 1,538 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: uniform spectral estimates on real Sobolev balls
 
 The canonical Dirichlet, Neumann and critical displacements now have
 common sequence-norm and inverse-index bounds over every real original
