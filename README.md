@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the retained original Hamiltonian has a real analytic
-summable-action realization with exact sign and zero detection. Its positive
-domain and the original frequency's positive domains are relatively open
-and dense. Both infinity endpoint results and exact real Sobolev
-one-smoothing remain available. The full dissertation formalization
-remains in progress.
+Latest step: the full physical energy is analytic on standard weighted
+ell^(2,1) actions, with an exact real realization, physical H1 recovery,
+and the original frequency as its mass-corrected coordinate derivative.
+The two weighted norms are explicitly compared while every coordinate
+is preserved. The full dissertation formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

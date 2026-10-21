@@ -63337,7 +63337,7 @@ namespace NLS.OriginalActionDomainsChecks
 
 open Set
 open scoped ENNReal
-namespace NLS.ZakharovShabat
+open NLS.ZakharovShabat
 local instance originalActionDomainCheckFourFact : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
 local instance originalActionDomainCheckFourHolder : (4 : ℝ≥0∞).HolderTriple 4 2 :=
   (ENNReal.holderTriple_iff _ _ _).mpr (by
@@ -63367,6 +63367,86 @@ example : ∃ W₀ W V : Set (CoeffPair 4),
   obtain ⟨W₀,W,V,s,D,T,F,H,Q⟩ := sourceSection18_original_hamiltonian
   exact ⟨W₀,W,V,s,D,T,F,H,Q,Q.positive_domain⟩
 
-end NLS.ZakharovShabat
 
 end NLS.OriginalActionDomainsChecks
+
+namespace NLS.WeightedFullHamiltonianChecks
+
+open Set
+open scoped ENNReal
+open NLS.ZakharovShabat
+local instance weightedFullCheckFourFact : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance weightedFullCheckFourHolder : (4 : ℝ≥0∞).HolderTriple 4 2 :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+-- Construct the full analytic energy without assuming an original family.
+-- The same function recovers the physical energy of every real H1 source.
+example : ∃ G : WeightedCoeff (Weight.sobolev 2) 1 → ℂ,
+    ∃ U : Set (WeightedCoeff (Weight.sobolev 2) 1),
+      IsOpen U ∧ AnalyticOnNhd ℂ G U ∧
+      WeightedCoeff.nonnegativeLocus (Weight.sobolev 2) 1 ⊆ U ∧
+      ∀ a : realTypeSobolevSourceLocus,
+        G (sourceEnergyActionsToStandard (sourceSobolevEnergyActions a)) =
+          periodOneSobolevHamiltonian a.val := by
+  obtain ⟨W₀,W,V,s,D,T,F,H,Q⟩ := sourceSection18_original_hamiltonian
+  exact ⟨sourceStandardFullActionHamiltonian H,sourceStandardFullActionDomain T,
+    Q.standard_full_action_domain.1,Q.standard_full_action_analytic,
+    Q.standard_full_action_domain.2,Q.standard_full_action_physical_identity⟩
+
+-- The retained original Hamiltonian has a real analytic full-energy
+-- realization at zero and exact values on every nonnegative standard action.
+example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+    (Q : SourceOriginalHamiltonianData D T F H) :
+    ∃ R : WeightedRealCoeff (Weight.sobolev 2) 1 → ℝ,
+      AnalyticAt ℝ R 0 ∧
+      ∀ b : WeightedRealCoeff (Weight.sobolev 2) 1,
+        (∀ n, 0 ≤ (b.val.val n).re) → (R b : ℂ) =
+          H (sourceEnergyActionsToHilbert (sourceStandardToEnergyActions b.val)) +
+            2 * (∑' n : ℤ, b.val.val n)^2 +
+            ∑' n : ℤ, (2 * (Real.pi : ℂ) * n)^2 * b.val.val n := by
+  refine ⟨sourceStandardRealFullActionHamiltonian H,?_,?_⟩
+  · apply Q.standard_real_full_action_analytic
+    change sourceEnergyActionsToHilbert (sourceStandardToEnergyActions 0) ∈ T
+    simpa only [map_zero] using Q.frequency.zero_mem
+  · intro b hb
+    exact (Q.standard_real_full_action_values b hb).trans
+      (sourceStandardFullActionHamiltonian_eq H b.val)
+
+-- The new full-space map agrees with the established single-action
+-- physical energy formula, including the free-dispersion normalization.
+example (H : Coeff 2 → ℂ) (m : ℤ) (z : ℂ) :
+    sourceStandardFullActionHamiltonian H
+      (z • WeightedCoeff.single (Weight.sobolev 2) m 1) =
+      sourceSingleActionFullHamiltonian H m z := by
+  simp only [sourceStandardFullActionHamiltonian, sourceFullActionHamiltonian,
+    map_smul, sourceStandardToEnergyActions_single, sourceEnergyActionsToHilbert_single,
+    sourceEnergyActionMass_single, sourceEnergyActionKinetic_single, smul_eq_mul,
+    mul_one, sourceSingleActionFullHamiltonian]
+  ring
+
+-- The standard-space formulation keeps the proved correction to the
+-- printed Hessian: its diagonal second derivative at zero is +2.
+example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+    (Q : SourceOriginalHamiltonianData D T F H) (m : ℤ) :
+    deriv (deriv (fun z : ℂ => sourceStandardFullActionHamiltonian H
+      (z • WeightedCoeff.single (Weight.sobolev 2) m 1))) 0 = 2 := by
+  have he : (fun z : ℂ => sourceStandardFullActionHamiltonian H
+      (z • WeightedCoeff.single (Weight.sobolev 2) m 1)) =
+        sourceSingleActionFullHamiltonian H m := by
+    funext z
+    simp only [sourceStandardFullActionHamiltonian, sourceFullActionHamiltonian,
+      map_smul, sourceStandardToEnergyActions_single, sourceEnergyActionsToHilbert_single,
+      sourceEnergyActionMass_single, sourceEnergyActionKinetic_single, smul_eq_mul,
+      mul_one, sourceSingleActionFullHamiltonian]
+    ring
+  rw [he]
+  exact Q.full_hessian_diagonal m
+
+
+end NLS.WeightedFullHamiltonianChecks

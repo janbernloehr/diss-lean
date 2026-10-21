@@ -155,6 +155,37 @@ neighborhood is a neighborhood of zero, and the inclusion preserves
 the nonnegative cone, contradicting the finite-exponent theorem.
 This result does not assert global concavity.
 
+## Full energy on weighted actions
+
+[`SourceWeightedActionHamiltonian.lean`](../NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean)
+constructs the full energy H*(I) + 2(sum I)^2 + sum (2 pi n)^2 I_n on
+native weighted ell^1 actions. Both series converge absolutely. The
+complex analytic domain is the inverse image of the original T and
+contains the entire nonnegative weighted cone.
+
+[`SourceWeightedActionHamiltonianPhysical.lean`](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean)
+places the actual action sequence of every real H1 source in this space,
+identifies its action sum with physical mass, and proves
+`Q.full_action_physical_identity` for its actual physical energy. No
+finite-gap or preselected action representative is assumed.
+
+[`SourceWeightedActionHamiltonianReal.lean`](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianReal.lean)
+gives a real analytic realization on the native real subspace with exact
+complex values at every nonnegative action.
+[`SourceWeightedActionHamiltonianDerivative.lean`](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean)
+proves the coordinate derivative F_n + 4 mass + (2 pi n)^2 throughout
+the original complex domain, retaining the same F and H*.
+
+The physical weight here is (1+2 pi |n|)^2. The introduction uses the
+standard weight (1+|n|)^2.
+[`SourceWeightedActionHamiltonianNorm.lean`](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianNorm.lean)
+constructs a bounded complex linear equivalence preserving every raw
+coefficient, with norm_standard <= norm_physical <= (2 pi)^2 norm_standard.
+[`SourceStandardActionHamiltonian.lean`](../NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean)
+then proves complex and real analyticity, the whole positive cone in the
+open domain, actual physical recovery, and literal coordinate derivatives
+in the exact standard ell^(2,1) topology. It does not identify the norms.
+
 ## Theorem 18.5 and the original solution definition
 
 [`SourceSection18Wellposedness.lean`](../NLS/ZakharovShabat/SourceSection18Wellposedness.lean)

@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: original positive action domains
+## Current milestone: full energy on standard weighted actions
+
+The full physical Hamiltonian is now a complex analytic function on an
+open ell^(2,1) domain containing every nonnegative action. Its real
+realization retains those exact energy values. Both use the same original
+renormalized Hamiltonian and its original domain.
+
+The formula restores twice squared total action and the absolutely
+convergent weighted linear sum. Every real H1 source recovers its actual
+physical energy, with no finite-gap restriction. Every raw action
+coordinate derivative is the retained frequency plus four times mass
+plus free dispersion (2 pi n)^2.
+
+Six modules cover the physical weighted space, exact physical recovery,
+real analyticity, coordinate derivatives, and transport to the standard
+weight (1+|n|)^2. The transport preserves every coefficient and proves
+norm_standard <= norm_physical <= (2 pi)^2 norm_standard.
+
+Four public examples construct the full energy unconditionally, check
+the exact real formula, identify the earlier single-action energy, and
+retain its corrected diagonal Hessian +2. See
+[the Section 18 audit](coverage/SECTION_18.md).
+
+The introduction source audit remains in progress. The precise 2014
+comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 7,954 build jobs, 6,876
+public examples, and a transitive axiom audit of 38,467 NLS declarations.
+The build retains 21 existing warnings; the six new modules introduce none.
+A final namespace cleanup is checked separately on the six affected public
+examples, eliminating four duplicate-namespace warnings in the example harness.
+Documentation checks cover 1,627 file links across 42 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: original positive action domains
 
 The same original Hamiltonian now has an explicit real analytic realization
 on summable real actions. It agrees with the original complex Hamiltonian
