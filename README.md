@@ -5,15 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual next Hamiltonian phase offset at Dirichlet and
-Neumann roots has the signed original Fourier half-sum with a uniformly
-bounded H^(s+1) tail error on original Hs balls, integer s >= 1. The result
-transfers to canonically labelled source roots; matching smooth periodic
-representatives remain explicit. The boundary-to-critical comparison
-and original-source analytic completion of the midpoint error remain.
-The complete terminal-sine Fourier remainder is already analytic in
-h^(s+1). Full one-smoothing is still incomplete. Higher-order complex
-angular analyticity and Lemma 27.2 with its printed constants are proved.
+Latest step: the actual rectangular Birkhoff-minus-Fourier remainder is
+analytic from original Hm into h^(m+1) near every real source, for all
+positive integers m. The complete midpoint and terminal-sine Fourier
+errors include all indices and collapsed gaps, with no smooth
+representative assumption. The same constructed Birkhoff map works at
+all these orders. Bounds on arbitrary Sobolev balls and inverse smoothing
+remain separate, and
+the complete dissertation formalization is still in progress. Higher-order
+complex angular analyticity and Lemma 27.2 with its printed constants
+are also proved.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

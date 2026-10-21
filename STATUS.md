@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: the boundary phase Fourier remainder
+## Current milestone: positive-integer Fourier one-smoothing
+
+For every integer m >= 1, the actual rectangular Birkhoff-minus-Fourier
+map now has an analytic realization in h^(m+1) on a complex neighborhood
+of every real original Hm source. The same constructed Birkhoff map and
+normalized root family work at all positive integer orders. Both literal
+spectral-error estimates are supplied by proved theorems.
+
+The new boundary-to-critical comparison retains the inverse-index
+factor and gives the smallness bound needed to recover root differences.
+Combining the boundary and critical phase remainders recovers the original
+Fourier half-sum for the Dirichlet-to-critical difference. The existing
+critical-midpoint correction then gives the literal midpoint Fourier
+error with a common H^(m+1) tail bound for smooth representatives.
+
+Dense Fourier approximation removes the smoothness assumption.
+Coordinate continuity and finite-head completion produce a locally
+bounded realization of the entire midpoint error, including central
+indices and collapsed gaps. Analytic realization gives the stronger
+target map. Combining it with the already proved terminal-sine remainder
+closes the complex two-error reduction for the actual original
+Birkhoff-minus-Fourier coordinates.
+
+Seven modules establish this step. Two public examples check the complete
+midpoint remainder at the free source and exact linear phase recovery
+for arbitrary leading data at negative order and infinite exponent.
+See [the Section 23 audit](coverage/SECTION_23.md).
+
+The result stated here covers positive integer source orders and local
+complex neighborhoods of the real locus. Uniform bounds for the smoother
+remainder on arbitrary Sobolev balls and the inverse remainder remain
+separate obligations. The complete dissertation formalization remains in progress.
+
+Validation: `./scripts/check.sh` passes with 7,919 build jobs, 6,858
+public examples, and a transitive axiom audit of 38,176 NLS declarations.
+The build retains 21 existing warnings; the seven new modules introduce none.
+Documentation checks cover 1,510 file links across 38 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the boundary phase Fourier remainder
 
 The actual next Hamiltonian phase offset at Dirichlet and Neumann roots
 now has its signed Fourier half-sum with a uniformly bounded H^(s+1)

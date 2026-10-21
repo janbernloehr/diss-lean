@@ -63116,3 +63116,31 @@ example : ∃ f : WeightedCoeff (Weight.sobolev (-2)) ⊤,
   simpa only [WeightedCoeff.zero_val, sub_zero, norm_zero, mul_zero, zero_mul, add_zero] using h
 
 end NLS.BoundaryPhaseFourierChecks
+
+namespace NLS.MidpointFourierChecks
+open Complex NLS.ZakharovShabat
+open scoped ENNReal
+
+-- The complete midpoint remainder vanishes at the free source, including its finite head.
+example (s : ℕ) : sourceEtaMidpointFourierRemainder s 0 = 0 := by
+  apply WeightedCoeff.ofFunctionOrZero_eq_of_coordinates
+  intro n
+  simp only [WeightedCoeff.zero_val,sourceEtaMidpointFourierError,map_zero,
+    sourceDirichletMidpointDisplacement_apply,canonicalPeriodOneBoundaryRoots_zero,
+    sourceStandardRootMidpoint,canonicalPeriodicMidpoint_zero]
+  simp
+
+-- An exact linear phase recovers any leading sequence, also at infinite exponent.
+example (a : WeightedCoeff (Weight.sobolev (-3)) ⊤) :
+    ∃ f : WeightedCoeff (Weight.sobolev (-2)) ⊤,
+      (∀ n, f.val n = 0) ∧ ‖f‖ ≤ 0 := by
+  have h := WeightedCoeff.exists_sobolev_phase_fourier_remainder (-3) a 0 0
+    (fun n => -Complex.I*a.val n) (fun n => a.val n) 0 (by norm_num)
+    (by intro n; simp)
+    (by intro n; simp)
+    (by intro n; simp)
+  have hr : (-3 : ℝ)+1 = -2 := by norm_num
+  rw [hr] at h
+  simpa only [sub_self,norm_zero,mul_zero,zero_mul,add_zero] using h
+
+end NLS.MidpointFourierChecks

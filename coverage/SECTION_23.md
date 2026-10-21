@@ -4,8 +4,8 @@ This audit concerns printed pp. 103–106. Theorems 23.1, 23.2, and 23.4,
 Remark 23.3, and Corollary 23.5 now hold for one retained original
 Sections 17–22 family. The exact norms and indexed actions are retained.
 The opening Sobolev diffeomorphism assertion also follows from the
-native weighted inverse results below. The cited one-smoothing property
-is a separate assertion, and the higher-action outline has the source
+native weighted inverse results below. The cited one-smoothing property now has the positive-integer result
+described below, and the higher-action outline has the source
 corrections recorded in Section 24.
 
 ## One original map and exact norms
@@ -1349,6 +1349,51 @@ full original-source analytic midpoint remainder remain to be assembled.
 Three public examples cover the negative-mode sign, an imaginary phase,
 and zero inverse-sine data at negative order with infinite exponent.
 
+## Positive-integer Fourier one-smoothing
+
+[`SourceBoundaryCriticalPhaseComparison.lean`](../NLS/ZakharovShabat/SourceBoundaryCriticalPhaseComparison.lean)
+places the actual boundary and critical roots in common unit discs and
+retains the inverse-index nonlinear phase estimate on an original-source
+neighborhood. Its smallness bound allows absorption.
+[`SobolevPhaseFourierRecovery.lean`](../NLS/SequenceSpaces/SobolevPhaseFourierRecovery.lean)
+recovers the one-order smoother root Fourier remainder from the two phase
+errors and the original leading sequence.
+[`WeightedTailRestriction.lean`](../NLS/SequenceSpaces/WeightedTailRestriction.lean)
+allows their cutoffs to be enlarged without increasing norms.
+
+[`SourceDirichletCriticalFourierSmoothTail.lean`](../NLS/ZakharovShabat/SourceDirichletCriticalFourierSmoothTail.lean)
+assembles the actual Dirichlet-to-critical Fourier half-sum on a common
+tail. Adding the critical-midpoint correction gives the literal
+`sourceEtaMidpointFourierError` in
+[`SourceEtaMidpointFourierSmoothTail.lean`](../NLS/ZakharovShabat/SourceEtaMidpointFourierSmoothTail.lean).
+These two intermediate statements keep matching smooth representatives
+explicit.
+
+[`SourceEtaMidpointFourierAnalytic.lean`](../NLS/ZakharovShabat/SourceEtaMidpointFourierAnalytic.lean)
+uses dense Fourier polynomials to remove that assumption. Completing the
+finite head and applying weighted analytic realization gives the entire
+literal midpoint error in h^(m+1), locally bounded and analytic on original
+Hm near each real source, for integer m >= 1. All indices and collapsed
+gaps are included.
+
+[`SourceBirkhoffHmFourierAnalytic.lean`](../NLS/ZakharovShabat/SourceBirkhoffHmFourierAnalytic.lean)
+combines this with the complete analytic terminal-sine remainder and the
+existing two-error reduction. The result realizes both original
+rectangular Birkhoff-minus-Fourier coordinates analytically in h^(m+1).
+The construction theorem uses one Birkhoff map and normalized root family
+at every positive integer order. No additional spectral-error regularity
+premise is left to the caller. Two public examples check the complete free
+midpoint remainder and exact linear phase recovery for arbitrary leading
+data at negative order and infinite exponent.
+
+This completes the stated local complex one-smoothing result at positive
+integer orders. Theorem 1.1 of the
+[2015 semi-linearity paper](https://arxiv.org/pdf/1505.04455) additionally
+requires the smoother remainder to map bounded sets to bounded sets;
+Corollary 1.1 treats the inverse remainder. Those conclusions are not
+implied by the local bounds established here and remain separate.
+This does not certify the entire dissertation.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,
@@ -1412,11 +1457,13 @@ complex frequency and the two mean-value signs at zero frequency, for
 both separated boundary conditions. Full validation is recorded in
 [implementation status](../STATUS.md).
 
-The native Sobolev geometry is now covered by the independent inverse
-and canonical results above. The discussion of the one-smoothing
-property on p. 104 cites [39]. A full one-derivative gain for the
-Birkhoff map minus its Fourier linearization is not proved by the
-norm, normalization, and phase estimates alone and is not asserted here.
+The native Sobolev geometry is covered by the independent inverse and
+canonical results above. The one-smoothing discussion on p. 104 cites
+[39]. The completed spectral-error argument now proves an analytic
+one-derivative gain near each real original Hm source for every positive
+integer m. The norm estimates alone do not imply this stronger-target
+statement. Boundedness on arbitrary Sobolev balls and inverse smoothing
+remain separate.
 
 The outline's p. 105 trace now has two actual-source counterexamples:
 the index sum must include all integers, and the alternating sign is
