@@ -4301,3 +4301,5 @@ import NLS.ZakharovShabat.SourceSobolevPhaseFlow
 import NLS.ZakharovShabat.SourceSobolevAlmostPeriodic
 import NLS.SequenceSpaces.CriticalSobolevInclusion
 import NLS.Fourier.PeriodicCriticalSobolevInclusion
+import NLS.ZakharovShabat.ScalarNLSScaling
+import NLS.Fourier.HomogeneousNLSScaling

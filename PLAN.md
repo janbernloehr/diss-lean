@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: the original critical Sobolev inclusion
+## Current milestone: full-line NLS dilation and critical homogeneous energy
+
+The actual physical scalar NLS equation is preserved by
+u(t,x) -> c*u(c^2*t,c*x). The proof retains the original cubic and actual
+time and second spatial derivatives. Smooth spatial slices remain smooth.
+
+For c>0, the actual Fourier transform of c*f(c*x) is F(xi/c), with no
+remaining amplitude factor. The extended squared homogeneous energy
+integral with weight |xi|^(2s) therefore scales by c^(2s+1). At s=-1/2
+its exact value, including finiteness or infinity, is preserved.
+
+Two modules and three public examples cover the physical PDE, the exact
+Fourier formula, and finite critical energy. See the
+[introduction audit](coverage/INTRODUCTION.md).
+
+This is an explicit Fourier-integral energy statement. It does not identify
+an exact scaling law for the inhomogeneous Sobolev norm or construct a
+completed homogeneous Sobolev space. Those distinctions remain visible
+in the source-level completion audit. The full Galilean milestone,
+precise 2014 comparison, and G.2 norm qualification also remain separate.
+
+Validation: `./scripts/check.sh` passes with 7,968 build jobs, 6,890
+public examples, and a transitive axiom audit of 38,566 NLS declarations.
+The build retains 21 existing warnings; the new modules and public examples
+introduce none. Documentation checks cover 1,696 file links across 43 documents.
+The source inventory still matches all 156 candidate labels; this is a
+navigation check, not a completeness claim.
+
+## Previous milestone: the original critical Sobolev inclusion
 
 For every finite p>2 and every positive period, the original Fourier-Lebesgue
 space FL^p embeds continuously and injectively into H^(-1/2). The map

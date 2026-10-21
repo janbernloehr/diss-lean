@@ -3,8 +3,8 @@
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
 interfaces below are implemented. The wider introductory background on
-pp. 9–10 remains a separate audit, apart from the almost-periodicity and critical
-Sobolev inclusion results documented below. This document does not certify the entire
+pp. 9–10 remains a separate audit, apart from the almost-periodicity, critical
+Sobolev inclusion, and explicitly scoped dilation results documented below. This document does not certify the entire
 introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
@@ -75,8 +75,29 @@ The statement makes no infinity input claim and does not equate that
 norm with an unnormalized physical interval norm.
 
 The subsequent full-line dilation and Galilean statements are separate
-background claims. They are not consequences of periodic coefficient
-inclusion and remain separate implementation steps.
+background claims. Dilation is covered in the next section in its stated
+energy scope; Galilean symmetry remains a separate integration step.
+
+## Full-line dilation and critical homogeneous energy, printed p. 10
+
+[`ScalarNLSScaling.lean`](../NLS/ZakharovShabat/ScalarNLSScaling.lean)
+proves covariance of the actual scalar field under c*f(c*x), including
+its second derivative and cubic nonlinearity. The theorem
+`hasDerivAt_scalarNLS_dilation` preserves the physical time-derivative
+equation under c*u(c^2*t,c*x). Smooth spatial slices remain smooth.
+
+[`HomogeneousNLSScaling.lean`](../NLS/Fourier/HomogeneousNLSScaling.lean)
+retains the full-line Jacobian and proves the actual Fourier formula
+F_c(xi)=F(xi/c) for c>0. Its `homogeneousSpectralEnergy` is the extended
+nonnegative integral of |xi|^(2s)*|F(xi)|^2. The exact factor is c^(2s+1),
+so `homogeneousCriticalEnergy_scalarNLS_dilation` gives equality at s=-1/2,
+including preservation of finite energy and of infinite values.
+
+The physical-profile energy uses the actual Fourier integral. This
+statement does not silently replace a general distribution by a default
+Bochner transform: a completed homogeneous-space identification remains
+outside this step. The usual inhomogeneous Sobolev norm has a different
+scaling formula. These qualifications remain part of the completion audit.
 
 ## Theorem 0.1 and the original Sobolev norms
 

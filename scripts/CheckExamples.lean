@@ -63596,3 +63596,34 @@ example {L : ℝ} [Fact (0 < L)]
     Fourier.PeriodicFourierLebesgue.criticalSobolevInclusion_val 4 (by norm_num) u⟩
 
 end NLS.CriticalSobolevChecks
+
+noncomputable section
+namespace NLS.ScalarNLSScalingChecks
+open scoped ENNReal
+
+open scoped FourierTransform
+
+-- The original physical equation is preserved by the full-line NLS dilation.
+example (u : ℝ → ℝ → ℂ) (c : ℝ)
+    (hu : ∀ t x : ℝ, HasDerivAt (fun τ : ℝ => u τ x)
+      (NLS.ZakharovShabat.scalarClassicalNLSVectorField (u t) x) t) (t x : ℝ) :
+    HasDerivAt (fun τ : ℝ => (c:ℂ)*u (c^2*τ) (c*x))
+      (NLS.ZakharovShabat.scalarClassicalNLSVectorField
+        (fun y : ℝ => (c:ℂ)*u (c^2*t) (c*y)) x) t :=
+  NLS.ZakharovShabat.hasDerivAt_scalarNLS_dilation u c hu t x
+
+-- The actual full-line Fourier transform has the inverse frequency dilation.
+example {c : ℝ} (hc : 0 < c) (f : ℝ → ℂ) (ξ : ℝ) :
+    𝓕 (fun x : ℝ => (c:ℂ)*f (c*x)) ξ = 𝓕 f (ξ/c) :=
+  NLS.Fourier.fourier_scalarNLS_dilation hc f ξ
+
+-- Finite critical homogeneous energy is preserved with its exact value.
+example {c : ℝ} (hc : 0 < c) (f : ℝ → ℂ)
+    (hf : NLS.Fourier.homogeneousSobolevEnergy (-1/2) f < ⊤) :
+    NLS.Fourier.homogeneousSobolevEnergy (-1/2) (fun x : ℝ => (c:ℂ)*f (c*x)) =
+      NLS.Fourier.homogeneousSobolevEnergy (-1/2) f ∧
+    NLS.Fourier.homogeneousSobolevEnergy (-1/2) (fun x : ℝ => (c:ℂ)*f (c*x)) < ⊤ := by
+  rw [NLS.Fourier.homogeneousCriticalEnergy_scalarNLS_dilation hc]
+  exact ⟨rfl,hf⟩
+
+end NLS.ScalarNLSScalingChecks
