@@ -64634,3 +64634,149 @@ example (φ : realTypeSourceSubmodule 4)
   exact ⟨f,hf,tendsto_smoothNLSData_mass_atTop (by norm_num) φ hφ f hf⟩
 
 end NLS.Section22SourceNonextensionAllChecks
+
+noncomputable section
+namespace NLS.Section23WeightExampleChecks
+open ZakharovShabat Set
+open scoped ENNReal
+
+-- The Abel example retains the printed pi-scaled bracket at negative physical frequencies.
+example : SpectralWeight.abel (3/2) 2 (by norm_num) (by norm_num) (-2) =
+    (1+2*Real.pi)^(3/2:ℝ)*Real.exp 4 := by
+  rw [SpectralWeight.abel_apply]
+  norm_num [abs_mul,abs_of_pos Real.pi_pos]
+
+-- A fractional Gevrey example has the required signed shift comparison.
+example (m n : ℤ) :
+    let w := SpectralWeight.gevrey (3/2) 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    w (m-n) ≤ w m*w n := by
+  dsimp only
+  simpa only [sub_eq_add_neg,SpectralWeight.apply_neg] using
+    (SpectralWeight.gevrey (3/2) 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)).add_le m (-n)
+
+-- The actual logarithmic weight is normalized at the central index.
+example : SpectralWeight.logarithmic 1 2 (1/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) 0 = 1 := by
+  simp only [SpectralWeight.logarithmic_apply,Int.cast_zero,abs_zero,add_zero,
+    Real.one_rpow,mul_zero,zero_div,Real.exp_zero,mul_one]
+
+-- Construct the original family and apply the complex indexed-action bound to an Abel weight.
+example :
+    let w := SpectralWeight.abel 1 2 (by norm_num) (by norm_num)
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+      ∀ a ∈ T,
+        Summable (fun n : ℤ => (w (2*n))^2*
+          ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ∧
+        (∑' n : ℤ, (w (2*n))^2*
+          ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+          (2048:ℝ)^2*(w.realExtension (16*‖a‖^2))^2*‖a‖^2 := by
+  obtain ⟨W₀,W,V,s,D,Wa,A,B,U,Q⟩ := sourceSection20_original (p := 2) (by simp) (by norm_num)
+  obtain ⟨T,hT,hr,_,hb,_⟩ := Q.section23_weighted_neighborhood
+    (SpectralWeight.abel 1 2 (by norm_num) (by norm_num))
+    (SpectralWeight.hasLinearFactor_abel 1 2 (by norm_num) (by norm_num))
+  exact ⟨T,hT,hr,hb⟩
+
+-- The actual original Birkhoff target has the full weighted norm bound for a Gevrey weight.
+example {W₀ W V Wa B U : Set (CoeffPair 2)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (a : realTypeSourceSubmodule 2) :
+    let w := SpectralWeight.gevrey (3/2) 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    let hw := SpectralWeight.hasLinearFactor_gevrey (3/2) 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    ‖D.complex.m1Coordinates w hw a‖ ≤ 2048*w.realExtension (16*‖a.val‖^2)*‖a.val‖ := by
+  dsimp only
+  exact (Q.section23_weighted_neighborhood _ _).choose_spec.2.2.2.2 a
+
+-- A logarithmic weight gives one complex neighborhood mapped into the retained original U.
+example {W₀ W V Wa B U : Set (CoeffPair 2)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) :
+    let w := SpectralWeight.logarithmic 1 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ realTypeSourceLocus 2 ⊆ T ∧
+      (∀ a ∈ T, normalizedWeightedSource w a ∈ U) ∧
+      ∀ a ∈ T,
+        (∑' n : ℤ, (w (2*n))^2*
+          ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+          (2048:ℝ)^2*(w.realExtension (16*‖a‖^2))^2*‖a‖^2 := by
+  obtain ⟨T,hT,hr,hU,hb,_⟩ := Q.section23_weighted_neighborhood
+    (SpectralWeight.logarithmic 1 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num))
+    (SpectralWeight.hasLinearFactor_logarithmic 1 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num))
+  exact ⟨T,hT,hr,hU,fun a ha => (hb a ha).2⟩
+
+end NLS.Section23WeightExampleChecks
+
+noncomputable section
+namespace NLS.Section23WeightGrowthChecks
+open Filter
+
+-- At actual discrete physical indices, every positive Abel rate eventually wins.
+example : ∀ᶠ n : ℕ in atTop,
+    SpectralWeight.logarithmic 0 2 (1/2)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num) n <
+      SpectralWeight.abel 0 (1/3) (by norm_num) (by norm_num) n := by
+  have h := (tendsto_natCast_atTop_atTop (R := ℝ)).eventually
+    (SpectralWeight.eventually_logarithmic_exp_lt_abel 2 (1/3) (1/2)
+      (by norm_num) (by norm_num))
+  simpa only [SpectralWeight.logarithmic_apply,SpectralWeight.abel_apply,
+    Real.rpow_zero,one_mul,Int.cast_natCast,Nat.abs_cast,
+    SpectralWeight.logarithmicProfile,mul_div_assoc] using h
+
+-- A faster fixed Gevrey exponent is still eventually below the logarithmic family.
+example : ∀ᶠ n : ℕ in atTop,
+    SpectralWeight.gevrey 0 5 (3/4)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num) n <
+      SpectralWeight.logarithmic 0 1 (1/2)
+        (by norm_num) (by norm_num) (by norm_num) (by norm_num) n := by
+  have h := (tendsto_natCast_atTop_atTop (R := ℝ)).eventually
+    (SpectralWeight.eventually_gevrey_exp_lt_logarithmic 1 5 (1/2) (3/4)
+      (by norm_num) (by norm_num))
+  simpa only [SpectralWeight.gevrey_apply,SpectralWeight.logarithmic_apply,
+    Real.rpow_zero,one_mul,Int.cast_natCast,Nat.abs_cast,
+    SpectralWeight.logarithmicProfile,mul_div_assoc] using h
+
+end NLS.Section23WeightGrowthChecks
+
+noncomputable section
+namespace NLS.Section23WeightHierarchyChecks
+open Filter Topology
+open scoped ENNReal
+
+-- Arbitrarily large polynomial and Gevrey rates are dominated, even by a logarithmic weight of order zero.
+example : Tendsto (fun n : ℕ =>
+    SpectralWeight.gevrey 9 10 (9/10) (by norm_num) (by norm_num) (by norm_num) (by norm_num) n /
+    SpectralWeight.logarithmic 0 1 (1/2) (by norm_num) (by norm_num) (by norm_num) (by norm_num) n)
+    atTop (𝓝 0) :=
+  SpectralWeight.gevrey_div_logarithmic_tendsto_zero 9 0 10 1 (1/2) (9/10)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+
+-- The literal pi-scaled Abel family wins even with a smaller rate and lower polynomial order.
+example : Tendsto (fun n : ℕ =>
+    SpectralWeight.logarithmic 5 2 (1/3) (by norm_num) (by norm_num) (by norm_num) (by norm_num) n /
+    SpectralWeight.abel 0 (1/4) (by norm_num) (by norm_num) n) atTop (𝓝 0) :=
+  SpectralWeight.logarithmic_div_abel_tendsto_zero 5 0 2 (1/4) (1/3)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+
+-- The global inclusion also covers the infinity sequence exponent and a negative raw coefficient.
+example :
+    let v := SpectralWeight.logarithmic 5 2 (1/3)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    let w := SpectralWeight.abel 0 (1/4) (by norm_num) (by norm_num)
+    ∃ L : WeightedCoeff w.toWeight ⊤ →L[ℂ] WeightedCoeff v.toWeight ⊤,
+      Function.Injective L ∧ ∀ a, (L a).val (-3) = a.val (-3) := by
+  obtain ⟨L,hL,he⟩ := SpectralWeight.exists_coefficient_inclusion_of_ratio_tendsto_zero _ _
+    (SpectralWeight.logarithmic_div_abel_tendsto_zero 5 0 2 (1/4) (1/3)
+      (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)) ⊤
+  exact ⟨L,hL,fun a => he a (-3)⟩
+
+end NLS.Section23WeightHierarchyChecks

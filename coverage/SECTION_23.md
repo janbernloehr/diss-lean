@@ -1635,3 +1635,54 @@ claim is refuted by an actual open central gap with zero level-two
 action, while `sourceIndexedHigherAction_even_eq_zero_iff` gives the
 correct real odd-level converse. These distinctions are resolved;
 they are not additional unproved requirements for the norm estimates.
+
+## The explicit Abel, Gevrey, and logarithmic weights
+
+The unnumbered examples on printed pp. 104–105 now have exact constructors
+in the original spectral-weight class M. The normalization here is w(n)>=1;
+it does not require w(0)=1 at every optional parameter endpoint.
+
+[ExponentialSpectralWeights.lean](../NLS/SequenceSpaces/ExponentialSpectralWeights.lean)
+constructs the Abel weight (1+|n*pi|)^s exp(a|n|) and the Gevrey weight
+(1+|n|)^s exp(a|n|^sigma), retaining their distinct printed polynomial
+scales. It proves the M properties by exponentiating nonnegative,
+increasing, subadditive radial profiles. Source parameters s>=0, a>0,
+and 0<sigma<1 are included, with nonnegative endpoints where proved.
+
+[LogarithmicSpectralWeights.lean](../NLS/SequenceSpaces/LogarithmicSpectralWeights.lean)
+constructs exactly
+
+    (1+|n|)^s exp(a|n| / (1+log(1+|n|)^sigma)).
+
+Concavity of the logarithm and of powers between zero and one proves
+monotonicity of its exponent profile. The increasing denominator gives
+subadditivity. All three families have the exact linear factor required
+for M1 whenever s>=1.
+
+[LogarithmicWeightGrowth.lean](../NLS/SequenceSpaces/LogarithmicWeightGrowth.lean)
+proves that this logarithmic profile is sublinear but grows faster than
+every fixed power x^rho with rho<1. Thus each positive Abel exponential
+eventually dominates it, and it eventually dominates every fixed Gevrey
+exponential. [SpectralWeightHierarchy.lean](../NLS/SequenceSpaces/SpectralWeightHierarchy.lean)
+includes the full polynomial factors: the Gevrey/logarithmic and
+logarithmic/Abel weight ratios tend to zero for arbitrary independent
+nonnegative polynomial orders. The Abel denominator keeps its pi scale.
+These limits give global comparisons including every finite central and
+negative index, and injective continuous linear inclusions of the weighted
+coefficient spaces for every Banach exponent, including infinity. Every
+raw coefficient is preserved.
+
+The existing [original weighted estimates](../NLS/ZakharovShabat/SourceSection23Weighted.lean)
+therefore apply to these exact M1 weights. Public examples construct the
+original family for the Abel indexed-action estimate and check the
+Gevrey target norm and logarithmic complex neighborhood for retained
+families. Physical source frequency n still samples the spectral weight
+at 2n. Eleven examples also check negative frequencies, fractional
+parameters, normalization, the full growth hierarchy with unequal
+polynomial orders, and an inclusion at the infinity sequence exponent.
+
+The separate analytic-strip and boundary-trace characterization in the
+first sentence on p. 105 has not been formalized here. Its width must be
+checked against the period-two index and even-mode convention on p. 103;
+these weight constructions and growth comparisons do not prove that
+characterization. The precise 2014 edition comparison remains qualified.

@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: physical source nonextension including infinity
+## Current milestone: exact exponential weights and their growth hierarchy
+
+The printed Abel, Gevrey and logarithmic weight examples now have exact
+constructors in M and, at polynomial order at least one, M1. The original
+weighted action and Birkhoff estimates apply to each family.
+
+The full weight-ratio hierarchy includes arbitrary independent polynomial
+orders and the pi-scaled Abel bracket. It gives global signed comparisons
+and continuous coefficient-preserving inclusions at every Banach exponent,
+including infinity. Eleven examples check the constructors, original-map
+estimates, growth ratios and an infinity-target inclusion.
+The [Section 23 audit](coverage/SECTION_23.md) records the precise scope.
+The separate analytic-strip and boundary-trace characterization remains open.
+
+Validation: `./scripts/check.sh` passes with 8,029 build jobs, 6,985
+public examples, and a transitive axiom audit of 39,242 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 1,907 file links across 43 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical source nonextension including infinity
 
 The ordinary physical NLS solution map cannot extend continuously at
 any non-Hilbert source into a compact trajectory space with target

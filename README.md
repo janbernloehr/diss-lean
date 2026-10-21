@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: physical source nonextension now includes the infinity
-target. The retained original local renormalized solutions and exact
-mass gauge give the endpoint obstruction. Formalization remains in progress.
+Latest step: the exact Abel, Gevrey and logarithmic weights satisfy
+the source weight assumptions and the full growth hierarchy, including
+arbitrary polynomial factors. The original weighted estimates apply.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

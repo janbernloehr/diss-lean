@@ -4359,3 +4359,7 @@ import NLS.Dynamics.VariableAmplitudePhaseObstruction
 import NLS.ZakharovShabat.SmoothSourceMassDivergence
 import NLS.ZakharovShabat.SmoothSourceGaugeObstruction
 import NLS.ZakharovShabat.SourceSection22NonextensionAll
+import NLS.SequenceSpaces.ExponentialSpectralWeights
+import NLS.SequenceSpaces.LogarithmicSpectralWeights
+import NLS.SequenceSpaces.LogarithmicWeightGrowth
+import NLS.SequenceSpaces.SpectralWeightHierarchy
