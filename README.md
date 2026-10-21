@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the explicit A.5 witness is realized at every positive physical
-period, with uniform convergence, exact Fourier integrals and its sharp
-original Fourier-Lebesgue threshold. The coordinate rescaling is explicit.
+Latest step: the phase in Appendix H's unreduced Hamiltonian remainder is
+explicit. A constant real potential refutes reuse of the H.1 remainder
+without this factor; the H.2 polynomial conclusion is unchanged.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

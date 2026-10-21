@@ -4402,3 +4402,4 @@ import NLS.Fourier.PrintedChirpPolynomials
 import NLS.Fourier.PrintedChirpContinuous
 import NLS.Fourier.PrintedChirpLiteralSeries
 import NLS.Fourier.PrintedChirpPeriodTransport
+import NLS.ZakharovShabat.SourceAppendixHRemainderPhase

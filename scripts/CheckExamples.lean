@@ -65266,3 +65266,35 @@ example (L : ℝ) [Fact (0 < L)] :
   let : Fact (1 ≤ p) := ⟨hp⟩
   rw [printedChirpAtPeriod_mem_original_iff]
   exact not_le_of_gt hp2
+
+-- The unreduced H.1 polynomial keeps the Hamiltonian phase.
+open NLS.ZakharovShabat NLS.DifferentialPolynomial
+open scoped ContDiff
+
+example : classicalNLSHamiltonian (fun _ => 1) (fun _ => 1) 5 = 2 ∧
+    (∫ x in (0 : ℝ)..1,
+      evaluate (fun _ => 1) (fun _ => 1) (nlsRiccatiRemainder 4) x) = (-2 : ℂ) ∧
+    classicalNLSHamiltonian (fun _ => 1) (fun _ => 1) 5 ≠
+      ∫ x in (0 : ℝ)..1,
+        (‖iteratedDeriv 2 (fun _ : ℝ => (1 : ℂ)) x‖^2 : ℝ) +
+        evaluate (fun _ => 1) (fun _ => 1) (nlsRiccatiRemainder 4) x :=
+  ⟨classicalNLSHamiltonian_constant_one_five, appendixH_q4_constant_one,
+    appendixH_unphased_display_counterexample⟩
+
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    classicalNLSHamiltonian f (fun x => star (f x)) 5 =
+      (∫ x in (0 : ℝ)..1, (‖iteratedDeriv 2 f x‖^2 : ℝ)) -
+      ∫ x in (0 : ℝ)..1,
+        f x * evaluate f (fun y => star (f y)) (nlsRiccatiRemainder 4) x := by
+  simpa only [show 2*2+1 = 5 by rfl, show 2*2 = 4 by rfl,
+    show (-1 : ℂ)^(2+1) = -1 by norm_num, neg_one_mul, sub_eq_add_neg] using
+    classicalNLSHamiltonian_odd_real_H1_remainder f hf hp 2
+
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
+    (classicalNLSHamiltonian a b 5 =
+      (∫ x in (0 : ℝ)..1, iteratedDeriv 2 a x*iteratedDeriv 2 b x) +
+      ∫ x in (0 : ℝ)..1, evaluate a b (MvPolynomial.X (false,0)*nlsRiccatiRemainder 4) x) ↔
+      (∫ x in (0 : ℝ)..1,
+        evaluate a b (MvPolynomial.X (false,0)*nlsRiccatiRemainder 4) x) = 0 :=
+  appendixH_even_unphased_formula_iff a b ha hb hpa hpb 2 (by decide)

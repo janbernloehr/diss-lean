@@ -20,6 +20,7 @@ Its counts describe source locations, not proved coverage.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Appendix H, p.139: unreduced odd-Hamiltonian remainder | [Exact phase and counterexample](NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean), [audit](coverage/APPENDIX_H.md) | The unchanged H.1 remainder requires (-1)^(m+1); actual constant potential has H5=2 and integral(q4)=-2. The H.2 polynomial can absorb the phase. |
 | Appendix A, p.123: printed witness at every positive period | [Explicit physical rescaling](NLS/Fourier/PrintedChirpPeriodTransport.lean), [audit](coverage/APPENDIX_A.md) | The same printed coefficients, uniform convergence with 2*pi*n/L frequencies, exact normalized interval Fourier integrals and original-space membership iff p>=2. |
 | Appendix A, p.123: literal continuous witness in A.5 | [Exact displayed series](NLS/Fourier/PrintedChirpLiteralSeries.lean), [audit](coverage/APPENDIX_A.md) | Uniform convergence of ordinary cutoffs to a continuous period-two function; exact physical Fourier integrals, original-space membership iff p>=2 and the same L2 realization. |
 | Appendix A, p.123: cancellation for the printed A.5 phase | [Uniform block estimates](NLS/Fourier/ChirpBlockCancellation.lean), [audit](coverage/APPENDIX_A.md) | Exact phase, every block prefix and every real physical point; squared norm at most N+12*pi*N*(1+log N). The later literal-series result proves weighted tails and uniform convergence. |

@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: the printed A.5 witness at every positive period
+## Current milestone: the exact phase of Appendix H's unreduced remainder
+
+The odd-Hamiltonian formula retains the exact remainder defined in H.1.
+Its nonlinear integral has the factor (-1)^(m+1). A smooth real constant
+potential gives H5=2 and integral(q4)=-2, refuting the unphased display
+between H.1 and H.2 when q4 keeps its preceding definition.
+
+The display can be interpreted by redefining the remainder to include
+the phase. H.1 and H.2 themselves remain valid: the reduced polynomial
+in H.2 already absorbs this scalar in the implementation. Three examples
+check the actual constant potential, the real H5 integral formula and
+the exact even-order obstruction. The [Appendix H audit](coverage/APPENDIX_H.md)
+also reconciles its historical note with the completed Lemma 27.2 endpoint.
+
+Validation: `./scripts/check.sh` passes with 8,071 build jobs, 7,034
+public examples, and a transitive axiom audit of 39,714 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,022 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the printed A.5 witness at every positive period
 
 The same explicit A.5 witness is now realized at every positive physical
 period L. The coordinate change x -> 2*x/L and the frequencies 2*pi*n/L

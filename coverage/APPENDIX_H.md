@@ -31,7 +31,32 @@ follow from the physical smooth identities, continuity, and dense smooth
 Fourier sources. No nonzero-scalar hypothesis enters the basic rescaling
 identity; that hypothesis is used only for reciprocal rescaling.
 
-No source correction is recorded here for H.1 or H.2. The separate accepted
-factor-two correction to Lemma 27.2 and its optional original m=1 sharpening
-remain as recorded in `SOURCE_ERRATA.md`; these are not consequences of
-merely proving the Appendix H identities.
+No source correction is recorded here for H.1 or H.2. The literal estimate
+in Lemma 27.2 is separately proved for every m>=1, including the unrestricted
+m=1 endpoint H3<=2*S+S^2. The [Section 27 audit](SECTION_27.md) and
+[resolved proof gap](../SOURCE_ERRATA.md#lemma-272-the-endpoint-proof-gap-is-resolved)
+record the additional spectral argument. The earlier twice-remainder bound
+remains valid; the Appendix H identities alone do not establish the sharper
+estimate.
+
+## The unreduced remainder between H.1 and H.2
+
+The intermediate display on printed page 139 writes the odd Hamiltonian
+as the squared top derivative plus the integral of psi*q_(2m). If q_(2m)
+is the polynomial fixed by H.1, the latter integral requires the factor
+
+    (-i)^(2m+2) = (-1)^(m+1).
+
+[`SourceAppendixHRemainderPhase.lean`](../NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean)
+proves this exact phase and the physical integral identity for every
+smooth real periodic source. At even m, the unphased expression agrees
+with the Hamiltonian exactly when that unreduced remainder integral is
+zero. The constant real potential (1,1) gives H5=2 and integral(q4)=-2,
+so it refutes reuse of the unchanged H.1 remainder in the displayed
+formula at m=2.
+
+The display can instead be read with q_(2m) redefined to include this
+scalar. Such a redefinition must be distinguished from the polynomial
+in H.1. The single reduced polynomial in H.2 already includes the phase
+in the implementation; its jet bound, degree, field balance and physical
+integral conclusion are unchanged. See the [normalization note](../SOURCE_ERRATA.md#appendix-h-phase-of-the-unreduced-remainder).

@@ -2836,3 +2836,27 @@ proves the corrected tail with a common inclusive cutoff and coefficient
 4608*(1+||a||^2), including absolute summability. Here ||a|| is the exact
 original weighted norm; its H1 specialization is the physical norm P.
 The independently proved final Theorem 23.4 constants remain unchanged.
+
+## Appendix H: phase of the unreduced remainder
+
+Source: [the intermediate display between H.1 and H.2, page 139](https://janbernloehr.de/Download/fs16/diss.pdf#page=139).
+If q_(2m) retains its definition from H.1, the odd-Hamiltonian formula
+must read
+
+```
+H_(2m+1) = integral |psi^(m)|^2 + (-1)^(m+1) * integral psi*q_(2m).
+```
+
+The factor follows from the definition H_k=(-i)^(k+1)*integral(phi_minus*u_k).
+[`SourceAppendixHRemainderPhase.lean`](NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean)
+proves the corrected real-source formula, and proves that at even m the
+unphased expression is equal exactly when the unreduced remainder integral
+vanishes. For the smooth periodic real potential (1,1), the actual H5 is
+2 while the unchanged q4 integrates to -2. Its top derivative is zero,
+so this is a concrete counterexample to the unphased reuse of q4.
+
+One can absorb the phase by redefining the polynomial in that intermediate
+display. H.1 and H.2 themselves need no change: the existential polynomial
+p_(2m) in H.2 can include the scalar, and the implemented reduction already
+does so. This is separate from the sign correction in Lemma 26.2 and from
+the now-resolved endpoint proof gap in Lemma 27.2.
