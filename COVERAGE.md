@@ -20,6 +20,7 @@ Its counts describe source locations, not proved coverage.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Proposition 6.1, p.35: literal positive-index sum | [Positive displacement tail](NLS/ZakharovShabat/SourcePositiveDisplacementTail.lean), [audit](coverage/SECTION_6.md) | Corrected original spectral bound for n≥N at finite p>1; actual positive roots refute the printed locally uniform p=2 budget. |
 | Section 4, p.31: regularity loss before Lemma 4.3 | [Smooth constant reflection](NLS/ZakharovShabat/SourceReflectionRegularityLoss.lean), [audit](coverage/SECTION_4.md) | Both signs lose one derivative at every finite Banach exponent, with actual physical coefficients and completed distributions; scalar order-one membership holds exactly at infinity. |
 | Appendix H, p.139: unreduced odd-Hamiltonian remainder | [Exact phase and counterexample](NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean), [audit](coverage/APPENDIX_H.md) | The unchanged H.1 remainder requires (-1)^(m+1); actual constant potential has H5=2 and integral(q4)=-2. The H.2 polynomial can absorb the phase. |
 | Appendix A, p.123: printed witness at every positive period | [Explicit physical rescaling](NLS/Fourier/PrintedChirpPeriodTransport.lean), [audit](coverage/APPENDIX_A.md) | The same printed coefficients, uniform convergence with 2*pi*n/L frequencies, exact normalized interval Fourier integrals and original-space membership iff p>=2. |

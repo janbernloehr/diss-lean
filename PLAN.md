@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: loss of one derivative under interval reflection
+## Current milestone: the printed positive-index displacement sum
+
+Proposition 6.1's page-35 display sums over n≥N. The new positive-index
+tail retains this literal range. For every finite p>1, it satisfies a
+corrected bound on one original open convex neighborhood containing the
+input and zero, with actual counted spectral pairs and every later cutoff.
+
+At p=2, a positive-index actual spectral witness refutes the printed
+locally uniform budget for every choice of labels covering that witness.
+The three examples distinguish the positive and signed tails, check the
+corrected p=4 estimate, and expose the violating root beyond any proposed
+cutoff. The [Section 6 audit](coverage/SECTION_6.md) records the exact scope.
+Lemma 6.9's literal positive range and repeated ξ⁺ term still require a
+separate reconciliation. The precise 2014 edition comparison and G.2 norm
+qualification also remain open.
+
+Validation: `./scripts/check.sh` passes with 8,073 build jobs, 7,040
+public examples, and a transitive axiom audit of 39,744 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,035 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: loss of one derivative under interval reflection
 
 The smooth constant potential (0,1) verifies the regularity-loss warning
 before Lemma 4.3. Both signed reflections fail to have an original

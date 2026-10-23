@@ -55,7 +55,7 @@ resonant input has quadratic displacement energy.
 | Actual original-pencil witness | `exists_sourcePeriodTwoRoot_exceeding_printed_budget` | Every open neighborhood of zero, every proposed uniform cutoff, and every nonnegative constant. |
 | Refuted single-root consequence | `not_exists_locally_uniform_sourcePrintedDisplacementBudget` | No locally uniform printed estimate at zero. |
 | A root is controlled by its pair tail | `sourcePeriodTwoRoot_sq_le_pair_tail` | Uses summability and nonnegativity; no assumption that the two labels are distinct. |
-| Refuted pair-sum assertion | `not_sourceProposition6_1_printed_pair_sum` | Rules out any choice of labels exhausting the actual distant disk spectra and satisfying the printed sum bound. |
+| Refuted full signed pair sum | `not_sourceProposition6_1_printed_pair_sum` | Rules out the printed budget for the sum over abs(n)≥N and labels exhausting the actual distant disk spectra; the literal positive range is treated below. |
 
 These statements are in `SourcePeriodTwoDisplacementCounterexample`.
 The construction inherited from `RootDisplacementSourceAudit` places small
@@ -67,6 +67,33 @@ This refutes the source's **locally uniform quantitative** claim at zero.
 It does not refute the qualitative ℓᵖ assertion, nor does it assert that a
 separate cutoff chosen individually for each fixed input must fail. The
 counterexample covers both natural rounding conventions at N/2.
+
+## Proposition 6.1: the literal positive-index sum
+
+The display on printed page 35 sums over n≥N. The earlier implementation
+uses |n|≥N, so its refutation alone does not refute the smaller printed sum.
+[SourcePositiveDisplacementTail.lean](../NLS/ZakharovShabat/SourcePositiveDisplacementTail.lean)
+makes the printed range explicit and supplies both needed comparisons.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Exact summation range | `sourcePositiveDisplacementPowerTail` | Sum of both displacement p-powers for n≥N, zero elsewhere. |
+| Comparison with the signed tail | `summable_sourcePositiveDisplacementPowerTail`, `tsum_sourcePositiveDisplacementPowerTail_le` | Nonnegative domination transfers summability and the upper bound. |
+| Corrected original spectral estimate | `exists_uniform_sourcePositiveDisplacement` | Finite p>1; actual counted pairs and original-pencil equivalence; one open convex neighborhood containing the input and zero; every later positive tail. |
+| Actual positive-root lower bound | `sourcePeriodTwoRoot_sq_le_positive_pair_tail` | A positive-index root covered by either label contributes its squared displacement to the p=2 sum. |
+| Literal pair-sum refutation | `not_sourceProposition6_1_printed_positive_pair_sum` | No nonnegative constant, uniform cutoff, and open neighborhood of zero can satisfy the printed positive-index bound for labels covering the actual distant positive disk spectra. |
+
+The corrected theorem uses the earlier `sourcePeriodTwoDisplacementBudget`
+with floor(N/2), retaining its additive leading-tail term. Stronger signed
+full-cutoff and ceiling-half estimates are available below. The refutation
+uses the existing positive-index spectral witness and the printed ceiling
+budget. It establishes the literal summation range without asserting a new
+source error or failure of every individually chosen fixed-input cutoff.
+
+Three public examples distinguish a negative-index displacement from this
+positive tail, check the corrected original spectral estimate at p=4, and
+show that every proposed cutoff and zero-neighborhood contain an actual
+positive root violating the budget for every pair of labels covering it.
 
 ## Corollary 6.2: arbitrary period-two input
 
@@ -493,7 +520,7 @@ claim of optimality or a sharp constant.
 | Localization and gap | `SourceResonantRootPair.left_bound`, `.right_bound`, `.gap_le` | Distance at most 3π/32; squared gap at most six times the actual product supremum. |
 | One original neighborhood | `sourceLemma6_9` | Finite p>1; joint analyticity, strip control, counted pairs, summability and corrected power budget, for all later signed-tail cutoffs. |
 | Label independence | `SourceResonantRootPair.eq_or_swap`, `sourceResonantRoot_displacementTail_eq` | Arbitrary exchanges at each mode preserve the complete displacement tail, including double roots. |
-| Printed sum refuted | `not_sourceLemma6_9_printed_pair_sum` | At p=2, no locally uniform printed budget near zero for any choice of counted scalar roots. |
+| Full signed two-root sum refuted | `not_sourceLemma6_9_printed_pair_sum` | At p=2, no locally uniform printed budget for the full signed sum of both counted scalar roots. |
 
 The main theorem's displacement budget is exactly
 `sourcePeriodTwoDisplacementBudget`, displayed above in the Proposition 6.1
@@ -504,6 +531,11 @@ The printed formula is not claimed. The new counterexample entry point
 applies the previous actual-source spectral witness to these scalar root
 pairs. Its failure is locally uniform, not a fixed-input assertion about
 all individual cutoffs.
+
+The literal display on page 43 has the positive-index range n≥N and repeats
+the ξ⁺ displacement twice. The existing signed two-root refutation does
+not itself establish that exact statement. Reconciliation of that display
+is pending; the new positive-index theorem above addresses Proposition 6.1.
 
 The neighborhood is open and convex, contains the specified original input
 and zero, and is chosen before every distant index and every later cutoff.

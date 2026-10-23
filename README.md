@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: signed interval reflection can destroy one derivative even
-for the smooth period-one constant (0,1). The proof covers both boundary
-signs, every finite Banach exponent, and the actual completed distribution.
+Latest step: Proposition 6.1 now has the literal positive-index summation
+range n≥N. Lean verifies a corrected spectral displacement bound and
+refutes the printed locally uniform budget on that exact range.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

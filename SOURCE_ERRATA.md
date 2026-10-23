@@ -2476,9 +2476,12 @@ For small equal amplitudes t at the two resonant frequencies, the squared
 original norm is 2t² and the roots are nπ±t. The printed budget is at most
 24C t⁴. Choosing t sufficiently small and n beyond any proposed cutoff
 violates even the bound for one actual root in every open neighborhood of
-zero. `not_sourceProposition6_1_printed_pair_sum` formally refutes the pair-sum
-assertion for any labels exhausting the actual high disk spectra. The
-ceiling-half-cutoff version is also refuted, so rounding does not repair it.
+zero. The earlier `not_sourceProposition6_1_printed_pair_sum` refutes the
+full signed pair sum. The literal page-35 range n≥N is now refuted by
+`not_sourceProposition6_1_printed_positive_pair_sum` in
+[SourcePositiveDisplacementTail.lean](NLS/ZakharovShabat/SourcePositiveDisplacementTail.lean),
+for any labels covering the actual distant positive disk spectra.
+The printed ceiling-half-cutoff budget is included, so rounding does not repair it.
 This is a failure of the claimed locally uniform cutoff at zero; no failure
 for every individually chosen cutoff at a fixed input is asserted.
 
@@ -2487,13 +2490,17 @@ The qualitative ℓᵖ asymptotics remain valid.
 spectral equivalence, ℓᵖ displacements, and locally uniform small signed
 power tails for every finite p>1. The proved corrected quantitative budget
 adds the leading Fourier-tail power outside the nonlinear factors. It uses
-the explicit discrete convention floor(N/2); a sharper ceiling-cutoff bound
-is not claimed. See `coverage/SECTION_6.md` for exact theorem scope.
+the discrete convention floor(N/2) in the earlier API. The subsequent
+`sourceProposition6_1_corrected_ceilingHalf` and full-cutoff theorem prove
+stronger corrected estimates. See `coverage/SECTION_6.md` for exact scope.
 
-`not_sourceLemma6_9_printed_pair_sum` now directly negates the printed
-Hilbert budget for any labels satisfying `SourceResonantRootPair`. These are
-actual original determinant roots with exact scalar analytic orders, not
-arbitrary approximate spectral labels. The corrected `sourceLemma6_9`
+`not_sourceLemma6_9_printed_pair_sum` negates the Hilbert budget for the
+full signed sum of both labels satisfying `SourceResonantRootPair`. These
+are actual original determinant roots with exact scalar analytic orders.
+The page-43 display literally sums over n≥N and repeats the ξ⁺ displacement
+twice; its exact formulation still requires a separate proof. The existing
+signed two-root theorem does not by itself establish that literal claim.
+The corrected `sourceLemma6_9`
 combines their count, original spectral equivalence, localization, factor-six
 gap bound, and corrected displacement sum on one original neighborhood.
 No new counterexample or stronger fixed-input failure is inferred here.
@@ -2523,18 +2530,21 @@ reduced determinant. The original weighted pair norm is retained throughout.
 
 For unit weight, every open neighborhood of zero and every proposed cutoff
 contain such a witness exceeding the printed bound. Both natural half-cutoff
-roundings fail. `not_sourceProposition6_3_printed_pair_sum` rules out every
-choice of actual counted high-pair labels with the claimed locally uniform
-bound. The assertion for all weights therefore already fails at unit weight
+roundings fail. `not_sourceProposition6_3_printed_pair_sum` rules out the
+printed budget for the full signed sum of actual counted high-pair gaps.
+The literal page-36 range n≥N still requires a separate sum comparison.
+The single-gap witness already occurs at a positive index. The assertion
+for all weights therefore already fails at unit weight
 and p=2. No failure for every individually chosen cutoff at a fixed input is
 asserted.
 
 `sourceProposition6_3_corrected` retains an additive leading Fourier-tail
 term. `sourceProposition6_3_small_tails` and `sourceProposition6_3_gap_mem`
 prove locally small weighted tails and the qualitative weighted ℓᵖ conclusion
-for 1<p<∞. The corrected bound uses floor(N/2); no sharper ceiling-cutoff
-version is claimed. See `coverage/SECTION_6.md` for the exact formula and
-central-index qualifications.
+for 1<p<∞. The earlier corrected bound uses floor(N/2); the subsequent
+`sourceProposition6_3_corrected_ceilingHalf` and full-cutoff theorem prove
+stronger corrected bounds. See `coverage/SECTION_6.md` for the exact formula
+and central-index qualifications.
 
 ## Lemma 6.7(ii): diagonal reality needs the hypothesis used in its proof
 

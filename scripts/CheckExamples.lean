@@ -65339,3 +65339,47 @@ example (b : NLS.ZakharovShabat.BoundaryCondition) :
   norm_num
 
 end
+
+/-! The printed positive-index range in Proposition 6.1 (page 35). -/
+section
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A displacement at a negative index belongs only to the full signed tail.
+example :
+    let ξ : ℤ → ℂ := fun n => (Real.pi : ℂ)*n + if n = -3 then 1 else 0
+    let η : ℤ → ℂ := fun n => (Real.pi : ℂ)*n
+    sourcePositiveDisplacementPowerTail 2 2 ξ η (-3) = 0 ∧
+      rootDisplacementPowerTail 2 2 ξ η (-3) = 1 := by
+  norm_num [sourcePositiveDisplacementPowerTail,rootDisplacementPowerTail]
+
+-- At p=4 one neighborhood controls actual original spectral pairs and every later positive tail.
+example (φ : CoeffPair 4) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 4),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, N₀ ≤ n.natAbs →
+            PeriodicResonantPair (by norm_num) SpectralWeight.one (unitWeightedPairEquiv ψ) n (ξ n) (η n)) ∧
+          ∀ N : ℕ, N₀ ≤ N → Summable (sourcePositiveDisplacementPowerTail 4 N ξ η) ∧
+            (∑' n : ℤ, sourcePositiveDisplacementPowerTail 4 N ξ η n) ≤
+              sourcePeriodTwoDisplacementBudget ψ N := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,h⟩ := exists_uniform_sourcePositiveDisplacement (by norm_num) (by norm_num) φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ
+  obtain ⟨ξ,η,hr,_,ht⟩ := h ψ hψ
+  exact ⟨ξ,η,hr,ht⟩
+
+-- Every proposed cutoff and zero-neighborhood contain an actual positive-index violating root.
+example (C : ℝ) (hC : 0 ≤ C) (U : Set (CoeffPair 2)) (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U, ∃ z ∈ refinedResonantDisk (n : ℤ),
+      z ∉ sourceResolventSet (by norm_num) φ ∧
+      ∀ ξ η : ℤ → ℂ, (z = ξ n ∨ z = η n) →
+        Summable (sourcePositiveDisplacementPowerTail 2 n ξ η) →
+          sourcePrintedHilbertDisplacementBudget C φ n <
+            ∑' k : ℤ, sourcePositiveDisplacementPowerTail 2 n ξ η k := by
+  obtain ⟨n,hn,hn2,φ,hφ,z,hz,hs,hbad⟩ :=
+    exists_sourcePeriodTwoRoot_exceeding_printed_budget C hC U ho h0 M
+  refine ⟨n,hn,hn2,φ,hφ,z,hz,hs,?_⟩
+  intro ξ η hpair hsum
+  exact hbad.trans_le (sourcePeriodTwoRoot_sq_le_positive_pair_tail n n le_rfl ξ η z hpair hsum)
+
+end
