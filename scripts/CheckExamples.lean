@@ -65718,3 +65718,50 @@ example (φ ψ χ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ)))
     (sourceSignedDirichletData_injOn_isospectralSet (by norm_num) (by norm_num) φ hψ hχ hdata)
 
 end
+
+/-! Actual terminal prescriptions: one sheet flip, infinitely many endpoints, and uniqueness. -/
+
+-- Flipping one terminal sheet preserves its Dirichlet root and every other full terminal pair.
+example (φ : realTypeSourceSubmodule 2) (k : ℤ) :
+    ∃ ψ : realTypeSourceSubmodule 2,
+      ψ ∈ sourceIsospectralSet (by simp) φ ∧
+      sourceDirichletTerminalData (by simp) (by norm_num) ψ k =
+        ((sourceDirichletTerminalData (by simp) (by norm_num) φ k).1,
+          -(sourceDirichletTerminalData (by simp) (by norm_num) φ k).2) ∧
+      ∀ n : ℤ, n ≠ k → sourceDirichletTerminalData (by simp) (by norm_num) ψ n =
+        sourceDirichletTerminalData (by simp) (by norm_num) φ n := by
+  apply exists_isospectral_source_with_terminal
+  have h := sourceDirichletTerminalData_mem_sheet (by simp) (by norm_num) φ k
+  refine ⟨h.1,?_⟩
+  simpa only [neg_sq] using h.2
+
+-- All left endpoints can be prescribed simultaneously, also for infinitely many open gaps.
+example (φ : realTypeSourceSubmodule 2) :
+    ∃ ψ : realTypeSourceSubmodule 2,
+      ψ ∈ sourceIsospectralSet (by simp) φ ∧
+      ∀ n : ℤ, sourceDirichletTerminalData (by simp) (by norm_num) ψ n =
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n,0) := by
+  let z : ℤ → ℂ × ℂ := fun n =>
+    (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n,0)
+  have hz (n : ℤ) : z n ∈ sourceDirichletSpectralSheet (by simp) (by norm_num) n φ.val := by
+    refine ⟨left_mem_segment ℝ _ _,?_⟩
+    have h := (canonicalPeriodicEndpoints_discriminant_of_realType (by simp) (by norm_num) _
+      (periodOnePotential_mem φ.val) (isRealType_periodOnePotential φ.val φ.property) n).1
+    change (0 : ℂ)^2 = _
+    rw [h]
+    split_ifs <;> norm_num
+  obtain ⟨ψ,hψ,he⟩ := exists_isospectral_source_with_terminals φ z hz
+  exact ⟨ψ,hψ,fun n => congrFun he n⟩
+
+-- Any admissible full terminal prescription has exactly one realization on the actual isospectral set.
+example (φ : realTypeSourceSubmodule 2) (z : ℤ → ℂ × ℂ)
+    (hz : ∀ n, z n ∈ sourceDirichletSpectralSheet (by simp) (by norm_num) n φ.val) :
+    ∃! ψ : sourceIsospectralSet (by simp) φ,
+      sourceDirichletTerminalData (by simp) (by norm_num) ψ.val = z := by
+  obtain ⟨ψ,hψ,he⟩ := exists_isospectral_source_with_terminals φ z hz
+  refine ⟨⟨ψ,hψ⟩,he,?_⟩
+  intro χ hχ
+  apply Subtype.ext
+  exact sourceDirichletTerminalData_injOn_isospectralSet (by simp) (by norm_num) φ χ.property hψ (hχ.trans he.symm)

@@ -175,6 +175,58 @@ that particular parametrization. Squared-gap-length spectral uniqueness,
 the exact cited 2014 construction comparison, and the G.2 norm qualification
 also remain separate requirements.
 
+## Prescribed actual Dirichlet terminals and the Hilbert sheet product
+
+The page-45 Dirichlet/sign parametrization now has an existence theorem in
+full terminal coordinates. For every real Hilbert source, every collection
+of admissible pairs (mu_n, delta(mu_n)) is realized by exactly one source in
+the original periodic isospectral set. Infinitely many open gaps are allowed.
+
+[RealSheetRecurrence.lean](../NLS/FunctionalAnalysis/RealSheetRecurrence.lean)
+proves that a complete bounded real sheet trajectory has a turning point
+after any given time. A fixed velocity sign would make its position
+monotone and convergent; the derivative limits contradict nonzero
+acceleration at a sheet zero. [RealSheetTraversal.lean](../NLS/FunctionalAnalysis/RealSheetTraversal.lean)
+locates the next upper or lower endpoint, uses nonzero acceleration to
+obtain both velocity signs, and proves that every point on both branches
+is attained. No recurrence or prescribed reachability premise is assumed.
+
+[SourceDirichletRealSpectralSheet.lean](../NLS/ZakharovShabat/SourceDirichletRealSpectralSheet.lean)
+proves reality of both coordinates of every point on the actual algebraic
+sheet, including points not yet realized by a source.
+[SourceDirichletSpectralTraversal.lean](../NLS/ZakharovShabat/SourceDirichletSpectralTraversal.lean)
+applies the real ODE result to the original globally constructed indexed
+flow, with velocity -delta/2 and the actual fixed discriminant. Its
+terminal-pair range is precisely the entire original compact sheet.
+Collapsed sheets are attained at time zero; open gaps include both signs
+and both endpoints, with no index cutoff.
+
+[SourceDirichletTerminalData.lean](../NLS/ZakharovShabat/SourceDirichletTerminalData.lean)
+proves continuity of the actual full terminal data, invariance of whole
+sheets under isospectrality, and injectivity on the isospectral set.
+[SourceDirichletFinitePrescription.lean](../NLS/ZakharovShabat/SourceDirichletFinitePrescription.lean)
+realizes every finite prescription using indexed flows while retaining all
+unselected terminal pairs exactly. The original spectrum and all algebraic
+multiplicities are preserved at every step.
+
+[SourceDirichletSheetParametrization.lean](../NLS/ZakharovShabat/SourceDirichletSheetParametrization.lean)
+uses compactness of the actual Hilbert isospectral set and the closed
+coordinate constraints to realize arbitrary infinite prescriptions.
+`sourceHilbertDirichletSheetHomeomorph` is the original terminal map as a
+homeomorphism onto the product of the original algebraic sheets. Its target
+uses the inherited topology of complex base/full-terminal pairs, so the
+two branches meet at their common endpoints. Three public examples check
+one sheet flip with all other terminals fixed, simultaneous left-endpoint
+prescriptions for all indices, and uniqueness of any admissible prescription.
+
+The continuity and injectivity prerequisites hold at every finite p>1;
+these flow-based existence and homeomorphism theorems concern p=2. A target
+presented literally as eigenvalues plus SignType values still needs an
+explicit admissibility definition and comparison of its glued topology.
+The discrete product topology on SignType is not claimed to work at an
+endpoint. Squared-gap spectral uniqueness, the exact cited 2014 construction
+comparison and the G.2 norm qualification remain open.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

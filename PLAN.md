@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: uniqueness from actual signed Dirichlet data
+## Current milestone: actual Hilbert Dirichlet sheet parametrization
+
+Every admissible collection of actual Dirichlet root/full-terminal pairs
+is now realized by a unique real Hilbert source in its original isospectral
+set. The actual terminal map is a homeomorphism onto the product of its
+original algebraic sheets, including infinitely many open gaps.
+
+The constructed indexed flows traverse both branches and both endpoints.
+Finite prescriptions retain all unselected terminals; compactness gives
+arbitrary infinite prescriptions. The [Section 7 audit](coverage/SECTION_7.md)
+records the inherited sheet topology and the remaining literal SignType
+admissibility and glued-topology comparison. Squared-gap spectral uniqueness,
+the exact 2014 comparison and the G.2 norm interpretation remain open.
+
+Validation: `./scripts/check.sh` passes with 8,098 build jobs, 7,064
+public examples, and a transitive axiom audit of 39,938 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,105 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: uniqueness from actual signed Dirichlet data
 
 The actual periodic spectrum, Dirichlet eigenvalues and their signs now
 uniquely determine every real source at each finite p>1. The literal signed

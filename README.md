@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal Dirichlet eigenvalues and their signs uniquely
-identify every real source within its actual periodic isospectral set,
-for all finite p>1, including infinitely many open gaps.
+Latest step: every admissible full Dirichlet terminal prescription is
+realized uniquely on the actual Hilbert isospectral set. The original
+terminal map is a homeomorphism onto the full product of its spectral sheets.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
