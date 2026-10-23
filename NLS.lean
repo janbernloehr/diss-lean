@@ -4418,3 +4418,8 @@ import NLS.SequenceSpaces.RealActionTorusConnected
 import NLS.ZakharovShabat.SourceHilbertIsospectralConnected
 import NLS.SequenceSpaces.RealActionTorusProduct
 import NLS.ZakharovShabat.SourceHilbertIsospectralTorus
+import NLS.ZakharovShabat.SourceDirichletSignData
+import NLS.ZakharovShabat.SourceAngularPrimitiveSpectralData
+import NLS.ZakharovShabat.SourceAngularBetaSpectralData
+import NLS.ZakharovShabat.SourceAngularEtaRemainderSpectralData
+import NLS.ZakharovShabat.SourceSignedDirichletUniqueness

@@ -123,6 +123,58 @@ that squared gap lengths determine the spectrum remain separate source
 comparisons. Existing action-to-spectrum injectivity is a different assertion.
 The exact 2014 construction comparison and G.2 norm qualification remain open.
 
+## The actual signed Dirichlet data separate isospectral sources
+
+The page-45 overview describes isospectral sets using Dirichlet eigenvalues
+and signs. The following results prove uniqueness for this literal data,
+retaining the original periodic spectrum and all algebraic multiplicities.
+They apply to every real source at every finite p>1, with no finite-gap or
+Hilbert-regularity assumption.
+
+[SourceDirichletSignData.lean](../NLS/ZakharovShabat/SourceDirichletSignData.lean)
+proves that the full terminal anti-discriminant is real at every actual
+Dirichlet root. The actual gap discriminant inequality and square identity
+supply this fact, including at endpoints. Its sign is an element of
+SignType, representing -1, 0 or 1. On an actual isospectral set, equal
+Dirichlet roots and signs recover the full anti-discriminant value.
+
+[SourceAngularPrimitiveSpectralData.lean](../NLS/ZakharovShabat/SourceAngularPrimitiveSpectralData.lean)
+uses uniqueness of the actual normalized psi roots to identify entire
+numerators across independent compatible families. The actual radicands,
+prescribed root sheets and exterior primitives agree. This transports the
+full sets of normalized regular Dirichlet primitive values when the
+selected root and full terminal sheet value agree, including on a cut.
+
+[SourceAngularBetaSpectralData.lean](../NLS/ZakharovShabat/SourceAngularBetaSpectralData.lean)
+identifies the defining beta value sets, each chosen beta summand, and the
+whole infinite correction. It explicitly transports the endpoint zero
+convention. [SourceAngularEtaRemainderSpectralData.lean](../NLS/ZakharovShabat/SourceAngularEtaRemainderSpectralData.lean)
+transports the actual omitted root products and normalized remainder
+primitives. Independent annular Cauchy constructions therefore give the
+same eta remainder at equal signed Dirichlet terminals, even when their
+circles and anchors differ.
+
+[SourceSignedDirichletUniqueness.lean](../NLS/ZakharovShabat/SourceSignedDirichletUniqueness.lean)
+identifies the original rectangular Birkhoff coordinates. On open gaps,
+the actual action factorization fixes the principal normalized action root;
+on closed gaps, the proved zero coordinates avoid any division by the gap.
+The constructed global Birkhoff injectivity theorem then proves
+`source_eq_of_isospectral_dirichlet_roots_signs`.
+`sourceSignedDirichletData_injOn_isospectralSet` states injectivity of the
+literal map n ↦ (mu_n, sign(delta(mu_n))) on each actual isospectral set.
+
+Three public examples check that sign zero detects the full complex terminal
+value at p=3, opposite nonzero sheets have different signs, and these data
+separate sources at p=3/2. The proofs use actual spectral and angular objects;
+no norming-coordinate injectivity theorem is supplied as a premise.
+
+This establishes uniqueness. Existence for arbitrary admissible signed
+gap-circle data and continuity with the glued circle topology remain to be
+proved. The abstract circle-product model above does not by itself identify
+that particular parametrization. Squared-gap-length spectral uniqueness,
+the exact cited 2014 construction comparison, and the G.2 norm qualification
+also remain separate requirements.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

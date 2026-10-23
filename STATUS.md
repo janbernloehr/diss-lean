@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: actual Hilbert isospectral tori
+## Current milestone: uniqueness from actual signed Dirichlet data
+
+The actual periodic spectrum, Dirichlet eigenvalues and their signs now
+uniquely determine every real source at each finite p>1. The literal signed
+Dirichlet map is injective on every actual isospectral set, including sources
+with infinitely many open gaps and exponents below or above two.
+
+Full terminal reality and the spectral square identity recover the actual
+sheet value from its sign. Normalized angular primitive, beta and eta
+remainder comparisons then identify the original rectangular coordinates;
+the constructed global Birkhoff injectivity theorem recovers the source.
+The [Section 7 audit](coverage/SECTION_7.md) records this proof and the
+remaining prescribed-data existence and glued-circle topology requirements.
+Squared-gap spectral uniqueness, the exact 2014 comparison and G.2 norm
+interpretation remain open.
+
+Validation: `./scripts/check.sh` passes with 8,091 build jobs, 7,061
+public examples, and a transitive axiom audit of 39,895 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,093 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual Hilbert isospectral tori
 
 The real Hilbert isospectral set in the page-45 overview is now proved
 compact and connected, with an explicit homeomorphism to a product of one

@@ -65662,3 +65662,59 @@ example (z : RealCoeff 3 × RealCoeff 3) (k : ℤ) (hk : RealCoeff.pairAction z 
       (RealCoeff.actionRotation_apply_same z k t).2
 
 end
+
+/-! Literal signed Dirichlet data: zero sheets, sign separation, and a sub-Hilbert inverse uniqueness check. -/
+
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The zero sign detects the full terminal value, not just its real part.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceDirichletSign (by norm_num) (by norm_num) φ n = 0 ↔
+      sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ.val
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n) = 0 := by
+  let S := sourceAntiDiscriminantCandidate (by norm_num : (3 : ℝ≥0∞) ≠ ⊤)
+    (by norm_num) φ.val (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)
+  change SignType.sign S.re = 0 ↔ S = 0
+  rw [sign_eq_zero_iff]
+  constructor
+  · intro h
+    apply Complex.ext
+    · exact h
+    · exact sourceDirichletTerminalAntiDiscriminant_im_eq_zero (by norm_num) (by norm_num) φ n
+  · intro h
+    rw [h]
+    rfl
+
+-- Opposite nonzero terminal sheets at the same root must have different signs.
+example (φ ψ : realTypeSourceSubmodule 3) (h : ψ ∈ sourceIsospectralSet (by norm_num) φ) (n : ℤ)
+    (hμ : canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ.val n =
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)
+    (hop : sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ.val
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ.val n) =
+      -sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ.val
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n))
+    (hne : sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ.val
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n) ≠ 0) :
+    sourceDirichletSign (by norm_num) (by norm_num) ψ n ≠
+      sourceDirichletSign (by norm_num) (by norm_num) φ n := by
+  intro hσ
+  have he := sourceDirichletTerminal_eq_of_isospectral_root_sign (by norm_num) (by norm_num) φ ψ h n hμ hσ
+  rw [hop] at he
+  exact hne (by linear_combination -(1/2 : ℂ)*he)
+
+end
+
+section
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The signed data separate sources in an arbitrary actual isospectral set below exponent two.
+example (φ ψ χ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ)))
+    (hψ : ψ ∈ sourceIsospectralSet (by norm_num) φ)
+    (hχ : χ ∈ sourceIsospectralSet (by norm_num) φ)
+    (hdata : sourceSignedDirichletData (by norm_num) (by norm_num) ψ =
+      sourceSignedDirichletData (by norm_num) (by norm_num) χ) : ψ.val = χ.val := by
+  exact congrArg Subtype.val
+    (sourceSignedDirichletData_injOn_isospectralSet (by norm_num) (by norm_num) φ hψ hχ hdata)
+
+end

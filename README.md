@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual real Hilbert isospectral sets are compact, connected,
-and homeomorphic to a product of one circle per open periodic gap, including
-infinitely many gaps. The finite-gap case has the exact finite factor count.
+Latest step: the literal Dirichlet eigenvalues and their signs uniquely
+identify every real source within its actual periodic isospectral set,
+for all finite p>1, including infinitely many open gaps.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
