@@ -4446,3 +4446,8 @@ import NLS.ZakharovShabat.SymmetricSignedGapFiniteFibers
 import NLS.ZakharovShabat.SourceSquaredGapUniquenessReduction
 import NLS.ZakharovShabat.SourceSmallSquaredGapUniqueness
 import NLS.ZakharovShabat.SourceSmallGapRealization
+import NLS.ZakharovShabat.SourceMidpointSequenceAnalytic
+import NLS.ZakharovShabat.SourceSpectralSequenceCompactDerivative
+import NLS.ZakharovShabat.SymmetricSignedGapCompactDerivative
+import NLS.FunctionalAnalysis.CompactScalarPerturbation
+import NLS.ZakharovShabat.SymmetricSignedGapFredholm

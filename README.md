@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: two sufficiently small real Hilbert sources with equal
-squared periodic gaps have the same actual periodic spectrum and algebraic
-multiplicities. The global squared-gap uniqueness assertion remains open.
+Latest step: the actual symmetric Hilbert signed-gap derivative is
+twice the identity plus compact and has finite-dimensional kernel at every
+source. Global kernel vanishing and squared-gap uniqueness remain open.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

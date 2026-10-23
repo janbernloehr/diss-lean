@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: small-source squared-gap spectral uniqueness
+## Current milestone: compact signed-gap derivatives and finite kernels
+
+The actual symmetric Hilbert signed-gap derivative is now proved to
+have the form twice the identity plus a compact operator at every source.
+Its real kernel is therefore finite dimensional. If that kernel is zero,
+the derivative has a bounded two-sided linear inverse.
+
+The proof establishes coefficient-valued midpoint analyticity, uses the
+existing H1 spectral-gradient estimates, and extends compactness to an
+open complex neighborhood of all real Hilbert sources by density and
+continuity. No smoothness assumption remains in the compactness theorem.
+
+Global openness now reduces to proving that every derivative kernel
+vanishes. Together with injectivity on the actual finite-gap locus, this
+would imply global squared-gap spectral uniqueness. Both hypotheses
+remain explicit in the public example and are still unproved.
+
+The [Section 7 audit](coverage/SECTION_7.md) records these distinctions.
+No global inverse or Fredholm index formula is claimed. Exact 2014 and
+G.2 qualifications remain in force.
+
+Validation: `./scripts/check.sh` passes with 8,125 build jobs, 7,085
+public examples, and a transitive axiom audit of 40,167 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,161 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: small-source squared-gap spectral uniqueness
 
 Squared periodic gaps now determine the actual periodic spectrum of
 sufficiently small real Hilbert sources, including every algebraic

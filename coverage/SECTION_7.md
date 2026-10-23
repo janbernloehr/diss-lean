@@ -450,6 +450,47 @@ ball; the theorem does not exclude a distant source with the same squared
 gaps. The global Section 7 assertion, exact 2014 comparison and G.2 norm
 interpretation remain unresolved.
 
+## Compact derivatives and the remaining kernel obstruction
+
+[SourceMidpointSequenceAnalytic.lean](../NLS/ZakharovShabat/SourceMidpointSequenceAnalytic.lean)
+proves analyticity of the entire actual periodic-midpoint displacement
+sequence in its coefficient norm, on a common complex neighborhood of
+the real source locus, for every finite p>1. It also identifies the
+coordinate evaluations of the full midpoint and boundary derivatives.
+
+[SourceSpectralSequenceCompactDerivative.lean](../NLS/ZakharovShabat/SourceSpectralSequenceCompactDerivative.lean)
+proves that, at p=2, the midpoint derivative is compact and the Dirichlet
+displacement derivative differs compactly from its exact free derivative.
+Both assertions hold on one open complex neighborhood of the entire real
+Hilbert locus. The proof first uses the square-summable gradient rows at
+physical H1 sources, then density and continuity of the analytic derivatives
+to remove the smoothness assumption.
+
+[SymmetricSignedGapCompactDerivative.lean](../NLS/ZakharovShabat/SymmetricSignedGapCompactDerivative.lean)
+identifies the full actual signed-gap sequence on the reflection-fixed
+slice with twice the difference between the Dirichlet and midpoint displacements.
+Consequently, at every real Hilbert coordinate, the signed-gap derivative
+is twice the identity plus a compact operator.
+
+[CompactScalarPerturbation.lean](../NLS/FunctionalAnalysis/CompactScalarPerturbation.lean)
+establishes finite-dimensional kernels for compact perturbations of a
+nonzero scalar identity over complete nontrivially normed scalar fields.
+On a Banach space, injectivity then gives bijectivity by the compact-operator
+alternative. These statements apply over the real field used by the slice.
+
+[SymmetricSignedGapFredholm.lean](../NLS/ZakharovShabat/SymmetricSignedGapFredholm.lean)
+applies this to the actual signed-gap derivative: its real kernel is finite
+dimensional, and injectivity supplies a bounded linear inverse. If every
+such kernel vanishes, the analytic map is globally open. A public example
+combines that remaining hypothesis with finite-gap injectivity to recover
+actual squared-gap spectral uniqueness, including algebraic multiplicities.
+
+Neither kernel vanishing away from zero nor finite-gap injectivity is
+asserted here. Compactness alone does not prove either condition, a
+Fredholm index-zero formula, or the global inverse theorem. The small-source
+uniqueness theorem remains unconditional within its specified source ball.
+Exact 2014 comparison and the G.2 norm interpretation remain unresolved.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

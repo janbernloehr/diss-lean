@@ -66026,3 +66026,41 @@ example (r : ℝ) (hr : 0 < r) : ∃ δ : ℝ, 0 < δ ∧ ∀ γ : RealCoeff 2,
   intro n hn hz
   apply hn
   rw [he n,hz,Complex.ofReal_zero]
+
+/-! Compactness narrows the remaining global inverse problem to explicit kernel and fiber hypotheses. -/
+
+-- Every actual symmetric Hilbert source has only a finite-dimensional derivative kernel.
+example (a : RealCoeff 2) :
+    FiniteDimensional ℝ
+      (fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a).ker :=
+  finiteDimensional_ker_fderiv_symmetricSourceSignedGapMap a
+
+-- Kernel vanishing at one source gives a bounded inverse to its actual derivative.
+example (a : RealCoeff 2)
+    (ha : ∀ v : RealCoeff 2,
+      (fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a) v = 0 → v = 0) :
+    ∃ e : RealCoeff 2 ≃L[ℝ] RealCoeff 2,
+      e.toContinuousLinearMap =
+        fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a := by
+  apply exists_equiv_fderiv_symmetricSourceSignedGapMap_of_injective a
+  intro x y hxy
+  exact sub_eq_zero.mp (ha (x-y) (by rw [map_sub,hxy,sub_self]))
+
+-- Global kernel vanishing and finite-gap injectivity would establish actual spectral uniqueness.
+example
+    (hk : ∀ a v : RealCoeff 2,
+      (fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a) v = 0 → v = 0)
+    (hf : Set.InjOn (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num))
+      {a | symmetricRealSourceCoefficients 2 a ∈ sourceFiniteGapLocus (by simp) (by norm_num)})
+    (φ ψ : realTypeSourceSubmodule 2)
+    (hg : ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) :
+    ψ ∈ sourceIsospectralSet (by simp) φ := by
+  have hi (a : RealCoeff 2) : Function.Injective
+      (fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a) := by
+    intro x y hxy
+    exact sub_eq_zero.mp (hk a (x-y) (by rw [map_sub,hxy,sub_self]))
+  have ho := isOpenMap_symmetricSourceSignedGapMap_of_derivative_injective hi
+  exact source_isospectral_of_squared_gaps_of_symmetricSignedGap_injective
+    ((symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num) ho).mpr hf) φ ψ hg
