@@ -2564,6 +2564,13 @@ for 1<p<∞. The earlier corrected bound uses floor(N/2); the subsequent
 stronger corrected bounds. See `coverage/SECTION_6.md` for the exact formula
 and central-index qualifications.
 
+[SourcePeriodTwoCanonicalMidpointGap.lean](NLS/ZakharovShabat/SourcePeriodTwoCanonicalMidpointGap.lean)
+now gives the actual ordered-pair midpoint and gap at every index, including
+the central spectrum, with ℓᵖ asymptotics and locally uniformly small tails.
+Their equality with the contour midpoint and squared gap is proved only
+past one common cutoff. No central single-circle identification or repair
+of the printed weighted budget is inferred.
+
 ## Lemma 6.7(ii): diagonal reality needs the hypothesis used in its proof
 
 Source: dissertation, printed pp. 40–41. The displayed part (ii) states

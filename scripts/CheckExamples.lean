@@ -65531,3 +65531,40 @@ example (n : ℤ) :
     simpa using periodicAlgebraicMultiplicity_zero (p := 3) (by norm_num) n
 
 end
+
+/-! Actual canonical midpoint and gap sequences, including central indices. -/
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The free canonical pair has its actual lattice midpoint and zero gap at every index.
+example (n : ℤ) :
+    sourcePeriodTwoCanonicalMidpoint (by norm_num) (by norm_num) (0 : CoeffPair 3) n = (Real.pi : ℂ)*n ∧
+    sourcePeriodTwoCanonicalGap (by norm_num) (by norm_num) (0 : CoeffPair 3) n = 0 := by
+  have he := sourcePeriodTwoCanonicalEndpoints_eq_existing (by norm_num) (by norm_num) (0 : CoeffPair 3)
+    (by simp)
+  simp [sourcePeriodTwoCanonicalMidpoint,sourcePeriodTwoCanonicalGap,he.1,he.2]
+
+-- The actual canonical and contour power tails agree on one original neighborhood.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ K : ℕ, N₀ < K →
+        sourcePeriodTwoCanonicalMidpointGapTail (by norm_num) (by norm_num) ψ K =
+          sourcePeriodTwoMidpointGapTail (by norm_num) ψ K := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hr⟩ := sourcePeriodTwoCanonicalMidpointGap_eq_contours (by norm_num) (by norm_num) φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ K hK
+  funext n
+  unfold sourcePeriodTwoCanonicalMidpointGapTail sourcePeriodTwoMidpointGapTail
+  split_ifs with hn
+  · obtain ⟨hm,hg⟩ := hr ψ hψ n (by omega)
+    rw [← hm,← hg,norm_sq_rpow_half]
+  · rfl
+
+-- Reality holds for actual central as well as distant midpoint and gap labels.
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    (sourcePeriodTwoCanonicalMidpoint (by norm_num) (by norm_num) φ n).im = 0 ∧
+    (sourcePeriodTwoCanonicalGap (by norm_num) (by norm_num) φ n).im = 0 := by
+  have h := (sourcePeriodTwoCanonicalEndpoints_spec (by norm_num) (by norm_num) φ).1.roots_im_eq_zero_of_realType hφ n
+  simp [sourcePeriodTwoCanonicalMidpoint,sourcePeriodTwoCanonicalGap,Complex.add_im,Complex.sub_im,h.1,h.2]
+
+end

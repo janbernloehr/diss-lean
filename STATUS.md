@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: complete canonical period-two labels
+## Current milestone: canonical period-two midpoint and gap sequences
+
+The page-35 midpoint and gap consequences now use the actual canonical
+period-two eigenvalue pairs at every index, including the central spectrum.
+Both sequences have ℓᵖ asymptotics, and their joint signed power tails obey
+a corrected bound and become arbitrarily small locally uniformly.
+
+Past one common cutoff, the canonical midpoint and squared gap agree with
+the existing contour quantities. The three public examples check the free
+spectrum, equality of the two tail functions, and reality at all indices
+for real-type input. The [Section 6 audit](coverage/SECTION_6.md) records the
+central-index distinction and the strict tail-cutoff condition.
+The exact 2014 comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,080 build jobs, 7,052
+public examples, and a transitive axiom audit of 39,816 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,065 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: complete canonical period-two labels
 
 Proposition 6.1 now has complete canonical eigenvalue sequences for every
 original period-two input at finite p>1. Actual central root multisets and

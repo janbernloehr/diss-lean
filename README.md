@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Proposition 6.1 now has complete canonical eigenvalue labels
-for arbitrary period-two input. Lean preserves central multiplicities,
-global ordering, and the corrected locally uniform asymptotic bounds.
+Latest step: the complete canonical period-two midpoint and gap sequences
+have ℓᵖ asymptotics and locally small power tails. Their high-index values
+agree with the actual contour midpoint and squared gap.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

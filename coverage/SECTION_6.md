@@ -195,6 +195,32 @@ both complete power sums converge; `sourcePeriodTwoMidpoint_mem` gives the
 midpoint's actual ℓᵖ membership. This does not assign individual central pairs
 to the fixed low-index contours or assert continuity of eigenvalue labels.
 
+## Complete canonical midpoints and gaps
+
+[SourcePeriodTwoCanonicalMidpointGap.lean](../NLS/ZakharovShabat/SourcePeriodTwoCanonicalMidpointGap.lean)
+uses the actual ordered canonical pair at every integer index, including
+all central eigenvalues. Its midpoint is half the sum of the two endpoints;
+its gap is the right endpoint minus the left endpoint.
+
+`sourcePeriodTwoCanonicalMidpointGap_memℓp` proves both the midpoint
+displacement and the gap belong to ℓᵖ for arbitrary raw period-two input
+and every finite p>1. `sourcePeriodTwoCanonicalMidpointGap_asymptotics`
+proves a corrected joint signed power-tail bound and arbitrarily small
+joint tails on one open convex neighborhood containing the input and zero.
+The sufficient multiplier on the displacement budget is 2·2^(p−1);
+no optimality is asserted. The tail cutoff K is strictly larger than N₀.
+
+`sourcePeriodTwoCanonicalMidpointGap_eq_contours` identifies the canonical
+midpoint and squared gap with the actual contour quantities at every index
+strictly beyond one common cutoff, uniformly on an original-input
+neighborhood. It uses equality of the counted pair multisets. It does not
+identify individual central ordered pairs with the fixed central circles.
+
+Three public examples recover the free midpoint and zero gap, identify the
+entire canonical and contour tail functions past a common cutoff, and prove
+reality of the midpoint and gap at every central and distant index for
+real-type input. Individual eigenvalue-label continuity is not asserted.
+
 ## Proposition 6.3: exact weighted input and corrected bound
 
 The displayed source weight assumptions are exactly those of `SpectralWeight`:
