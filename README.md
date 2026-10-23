@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: explicit reductions isolate global openness and finite-gap
-injectivity as sufficient for squared-gap spectral uniqueness. Every Hilbert
-isospectral set has a symmetric representative with nonpositive signed gaps.
+Latest step: two sufficiently small real Hilbert sources with equal
+squared periodic gaps have the same actual periodic spectrum and algebraic
+multiplicities. The global squared-gap uniqueness assertion remains open.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

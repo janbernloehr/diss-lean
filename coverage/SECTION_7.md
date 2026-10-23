@@ -417,6 +417,39 @@ inverse at zero supplies neither premise globally. No unconditional
 squared-gap spectral uniqueness, exact 2014 comparison, or G.2 norm
 resolution is asserted.
 
+## Unconditional squared-gap uniqueness for small Hilbert sources
+
+[SourceSmallSquaredGapUniqueness.lean](../NLS/ZakharovShabat/SourceSmallSquaredGapUniqueness.lean)
+proves a local case of the squared-gap assertion without assuming global
+openness or injectivity. There is one positive radius such that any two
+real Hilbert sources in that source-norm ball with equal squared periodic
+gaps have the same actual periodic spectrum and every algebraic multiplicity.
+
+The action trace shows that the original Hilbert coefficient-pair norm is
+constant on each actual isospectral set. The symmetric all-left-endpoint
+representative therefore stays small, and its real Fourier coordinates
+have norm at most the original source norm. Its nonpositive signed gaps
+are determined by the squared gaps. The analytic local inverse at zero
+then identifies the two symmetric representatives and their spectra.
+
+For each source in this fixed ball, its entire actual isospectral set is
+exactly its squared-gap fiber restricted to the ball.
+
+[SourceSmallGapRealization.lean](../NLS/ZakharovShabat/SourceSmallGapRealization.lean)
+uses continuity of the analytic local inverse to realize sufficiently
+small signed or nonnegative gap data within any prescribed positive
+source-norm bound. Hence all sufficiently small nonnegative Hilbert gap
+sequences have a symmetric realization in the uniqueness ball and determine
+exactly one actual periodic spectrum among sources in that ball.
+Public examples retain the full normalized discriminant and every
+algebraic multiplicity, and realize finite-support gap data within a
+chosen source-norm bound.
+
+The radius is existential. Both compared sources must lie in the stated
+ball; the theorem does not exclude a distant source with the same squared
+gaps. The global Section 7 assertion, exact 2014 comparison and G.2 norm
+interpretation remain unresolved.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

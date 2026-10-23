@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: conditional global squared-gap reductions
+## Current milestone: small-source squared-gap spectral uniqueness
+
+Squared periodic gaps now determine the actual periodic spectrum of
+sufficiently small real Hilbert sources, including every algebraic
+multiplicity. This theorem has no global openness or injectivity premise.
+
+The action trace conserves the original source norm on isospectral sets.
+It keeps the symmetric endpoint representatives inside the analytic local
+signed-gap inverse chart, where their nonpositive signed gaps identify them.
+For each small source, its entire isospectral set equals its squared-gap
+fiber restricted to one fixed source ball.
+
+Continuity of the inverse also realizes sufficiently small signed and
+nonnegative gap data within any chosen positive source-norm bound.
+Thus sufficiently small nonnegative data have a symmetric realization
+and determine one actual periodic spectrum within the uniqueness ball.
+
+The [Section 7 audit](coverage/SECTION_7.md) states the local scope precisely:
+both compared sources must be small, and the radius is existential.
+Global squared-gap uniqueness, exact 2014 and G.2 remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,120 build jobs, 7,082
+public examples, and a transitive axiom audit of 40,152 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,151 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: conditional global squared-gap reductions
 
 The global squared-gap problem now has explicit Lean reductions.
 Under global openness, injectivity of the actual symmetric signed-gap map

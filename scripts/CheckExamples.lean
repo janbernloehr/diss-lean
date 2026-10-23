@@ -65981,3 +65981,48 @@ example (φ : realTypeSourceSubmodule 2) :
       (sourceSignedGapSequence (by simp) (by norm_num) ψ.val n).re ≤ 0 := by
   obtain ⟨a,ha,hneg⟩ := exists_symmetric_coordinates_isospectral_nonpos_signed_gaps φ
   exact ⟨symmetricRealSourceCoefficients 2 a,ha,symmetricRealSourceCoefficients_reflection_fixed a,hneg⟩
+
+/-! Small-source squared-gap uniqueness retains the actual discriminant and multiplicities. -/
+
+-- Equal gaps of small sources determine the entire canonically normalized discriminant.
+example : ∃ ε : ℝ, 0 < ε ∧ ∀ φ ψ : realTypeSourceSubmodule 2,
+    ‖φ.val‖ < ε → ‖ψ.val‖ < ε →
+    (∀ n, canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n =
+      canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem _) n) →
+    canonicalDiscriminant (by simp) (periodOnePotential ψ.val) =
+      canonicalDiscriminant (by simp) (periodOnePotential φ.val) := by
+  obtain ⟨ε,hε,h⟩ := exists_small_source_squared_gap_spectral_uniqueness
+  refine ⟨ε,hε,fun φ ψ hφ hψ hgaps => ?_⟩
+  apply (mem_sourceIsospectralSet_iff_discriminant_eq (by simp) (by norm_num) φ ψ).mp
+  exact h φ ψ hφ hψ (fun n => congrArg (fun z : ℂ => z^2) (hgaps n))
+
+-- The small-source theorem preserves every algebraic multiplicity, even at a closed gap.
+example : ∃ ε : ℝ, 0 < ε ∧ ∀ φ ψ : realTypeSourceSubmodule 2,
+    ‖φ.val‖ < ε → ‖ψ.val‖ < ε →
+    (∀ n, (canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) →
+    ∀ z : ℂ, periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ.val) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ.val) z := by
+  obtain ⟨ε,hε,h⟩ := exists_small_source_squared_gap_spectral_uniqueness
+  exact ⟨ε,hε,fun φ ψ hφ hψ hgaps => (h φ ψ hφ hψ hgaps).2⟩
+
+-- Small finite-support data give finite-gap realizations within any chosen source-norm bound.
+example (r : ℝ) (hr : 0 < r) : ∃ δ : ℝ, 0 < δ ∧ ∀ γ : RealCoeff 2,
+    ‖γ‖ < δ → (∀ n, 0 ≤ γ n) → (Function.support γ).Finite →
+    ∃ φ : realTypeSourceSubmodule 2, ‖φ.val‖ < r ∧
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      realSourceSpatialReflection φ = φ ∧ ∀ n,
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem _) n = (γ n : ℂ) := by
+  obtain ⟨δ,hδ,h⟩ := exists_small_symmetric_periodic_gap_realization_norm_lt r hr
+  refine ⟨δ,hδ,fun γ hγ hnonneg hsupport => ?_⟩
+  obtain ⟨φ,hφnorm,hφ,he⟩ := h γ hγ hnonneg
+  refine ⟨φ,hφnorm,?_,hφ,he⟩
+  apply hsupport.subset
+  intro n hn hz
+  apply hn
+  rw [he n,hz,Complex.ofReal_zero]
