@@ -65765,3 +65765,62 @@ example (φ : realTypeSourceSubmodule 2) (z : ℤ → ℂ × ℂ)
   intro χ hχ
   apply Subtype.ext
   exact sourceDirichletTerminalData_injOn_isospectralSet (by simp) (by norm_num) φ χ.property hψ (hχ.trans he.symm)
+
+/-! Literal signed topology: endpoint gluing, infinitely many sign reversals, and collapsed gaps. -/
+
+-- The two semicircle branches join at an endpoint and remain distinct in the interior.
+example : ∃ hG : ∀ x ∈ Set.Icc (-1 : ℝ) 1, 0 ≤ 1-x^2,
+    NLS.FunctionalAnalysis.RealSignedSheet.branchMap hG (⟨1,by norm_num⟩,true) =
+      NLS.FunctionalAnalysis.RealSignedSheet.branchMap hG (⟨1,by norm_num⟩,false) ∧
+    NLS.FunctionalAnalysis.RealSignedSheet.branchMap hG (⟨0,by norm_num⟩,true) ≠
+      NLS.FunctionalAnalysis.RealSignedSheet.branchMap hG (⟨0,by norm_num⟩,false) := by
+  have hG : ∀ x ∈ Set.Icc (-1 : ℝ) 1, 0 ≤ 1-x^2 := by
+    intro x hx
+    nlinarith [mul_nonneg (sub_nonneg.mpr hx.1) (sub_nonneg.mpr hx.2)]
+  refine ⟨hG,?_,?_⟩
+  · exact (NLS.FunctionalAnalysis.RealSignedSheet.branchMap_true_eq_false_iff hG ⟨1,by norm_num⟩).mpr (by norm_num)
+  · intro he
+    have hz := (NLS.FunctionalAnalysis.RealSignedSheet.branchMap_true_eq_false_iff hG ⟨0,by norm_num⟩).mp he
+    norm_num at hz
+
+-- Every terminal sign can be reversed simultaneously, retaining every original Dirichlet eigenvalue.
+example (φ : realTypeSourceSubmodule 2) :
+    ∃ ψ : realTypeSourceSubmodule 2,
+      ψ ∈ sourceIsospectralSet (by simp) φ ∧ ∀ n,
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val n =
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ.val n ∧
+      sourceDirichletSign (by simp) (by norm_num) ψ n =
+        -sourceDirichletSign (by simp) (by norm_num) φ n := by
+  let q := sourceHilbertSignedDirichletHomeomorph φ ⟨φ,⟨rfl,fun _ => rfl⟩⟩
+  let z : (n : ℤ) → SourceSignedDirichletSheet (by simp) (by norm_num) φ n := fun n => {
+    q n with
+    sign := -(q n).sign
+    sign_zero_iff := (SignType.neg_eq_zero_iff).trans (q n).sign_zero_iff }
+  obtain ⟨ψ,he⟩ := (sourceHilbertSignedDirichletHomeomorph φ).surjective z
+  refine ⟨ψ.val,ψ.property,?_⟩
+  intro n
+  constructor
+  · apply Complex.ext
+    · exact congrArg NLS.FunctionalAnalysis.RealSignedSheet.base (congrFun he n)
+    · exact (canonicalPeriodOneBoundaryRoots_im_eq_zero (by simp) (by norm_num) .dirichlet ψ.val.val ψ.val.property n).trans
+        (canonicalPeriodOneBoundaryRoots_im_eq_zero (by simp) (by norm_num) .dirichlet φ.val φ.property n).symm
+  · exact congrArg NLS.FunctionalAnalysis.RealSignedSheet.sign (congrFun he n)
+
+section
+local instance signedDirichletTopologyExample_factThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Above exponent two, a collapsed actual gap still has exactly one admissible signed point.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ)
+    (hc : canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n =
+      canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n) :
+    Subsingleton (SourceSignedDirichletSheet (by norm_num) (by norm_num) φ n) := by
+  have hr := congrArg Complex.re hc
+  constructor
+  intro q r
+  have hq := le_antisymm (q.base_mem.2.trans hr.symm.le) q.base_mem.1
+  have ht := le_antisymm (r.base_mem.2.trans hr.symm.le) r.base_mem.1
+  apply NLS.FunctionalAnalysis.RealSignedSheet.ext
+  · exact hq.trans ht.symm
+  · exact ((sourceSignedDirichletSheet_sign_zero_iff_endpoint (by norm_num) (by norm_num) φ n q).mpr (Or.inl hq)).trans
+      ((sourceSignedDirichletSheet_sign_zero_iff_endpoint (by norm_num) (by norm_num) φ n r).mpr (Or.inl ht)).symm
+end

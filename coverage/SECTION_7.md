@@ -227,6 +227,54 @@ The discrete product topology on SignType is not claimed to work at an
 endpoint. Squared-gap spectral uniqueness, the exact cited 2014 construction
 comparison and the G.2 norm qualification remain open.
 
+## The literal eigenvalue/sign parametrization and its glued topology
+
+The remaining literal-coordinate and topology requirements from the two
+preceding sections are now proved. The actual Hilbert eigenvalue/sign map
+is a homeomorphism onto the product of admissible signed gaps. Every real
+gap point may be prescribed, with sign -1 or 1 in the interior and sign zero
+exactly at an endpoint. This permits infinitely many independent choices.
+
+[RealSignedSheet.lean](../NLS/FunctionalAnalysis/RealSignedSheet.lean)
+defines admissible base/sign data and reconstructs the full real terminal
+as sign times the nonnegative square root of the height. Zero sign occurs
+precisely at zero height. The induced topology is proved homeomorphic to
+the original real sheet and, for a continuous nonnegative height, is a
+quotient of two copies of the compact base interval. The two branches over
+a common base are identified exactly where the height is zero. Thus the
+sign coordinate does not carry the discrete product topology at endpoints.
+
+[SourceDirichletRealSheetCoordinates.lean](../NLS/ZakharovShabat/SourceDirichletRealSheetCoordinates.lean)
+uses the original discriminant to define the actual height Delta(mu)^2-4.
+It proves continuity, nonnegativity throughout each real gap, and vanishing
+exactly at the two periodic endpoints. Real-coordinate inclusion gives a
+homeomorphism from the original complex algebraic sheet to its real sheet,
+then to literal eigenvalue/SignType coordinates. The actual signed-gap
+topology is the quotient of its two interval branches. Evaluation lemmas
+identify the base and sign without a change of convention. These individual
+sheet results hold for every finite p>1, including collapsed gaps.
+
+[SourceSignedDirichletParametrization.lean](../NLS/ZakharovShabat/SourceSignedDirichletParametrization.lean)
+composes the proved actual Hilbert terminal homeomorphism with those
+coordinate homeomorphisms. `sourceHilbertSignedDirichletHomeomorph` is
+exactly the original Dirichlet eigenvalue/sign map. The theorem
+`existsUnique_isospectral_source_with_signed_dirichletData` realizes every
+literal prescription satisfying the gap bounds and endpoint sign rule by
+exactly one source with the original spectrum and all algebraic multiplicities.
+No finite-gap or supplied inverse-map hypothesis is needed.
+
+The selected 2013 preprint comparison agrees with its Proposition 9.3 and
+Theorem 10.4: sigma is sign(delta(mu)), and the signed gaps use the joined
+interval-branch topology. This does not identify that preprint with the
+exact cited 2014 edition. Public examples check endpoint gluing versus
+interior separation, reversal of every terminal sign with all Dirichlet
+roots fixed, and the singleton signed gap at a collapsed p=3 coordinate.
+
+Global prescribed-data existence and the product homeomorphism here concern
+p=2. Squared-gap-length determination of the spectrum, a separate dimension
+invariant, the exact 2014 comparison and the G.2 norm qualification remain
+separate requirements; no overall completeness claim is made.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

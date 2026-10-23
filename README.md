@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: every admissible full Dirichlet terminal prescription is
-realized uniquely on the actual Hilbert isospectral set. The original
-terminal map is a homeomorphism onto the full product of its spectral sheets.
+Latest step: the original Dirichlet eigenvalues and their signs give a
+homeomorphism from each actual Hilbert isospectral set to its product of
+signed gaps. Every admissible infinite prescription has a unique realization.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

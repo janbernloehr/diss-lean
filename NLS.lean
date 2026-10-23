@@ -4430,3 +4430,6 @@ import NLS.ZakharovShabat.SourceDirichletSpectralTraversal
 import NLS.ZakharovShabat.SourceDirichletTerminalData
 import NLS.ZakharovShabat.SourceDirichletFinitePrescription
 import NLS.ZakharovShabat.SourceDirichletSheetParametrization
+import NLS.FunctionalAnalysis.RealSignedSheet
+import NLS.ZakharovShabat.SourceDirichletRealSheetCoordinates
+import NLS.ZakharovShabat.SourceSignedDirichletParametrization

@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: actual Hilbert Dirichlet sheet parametrization
+## Current milestone: literal signed Dirichlet parametrization
+
+The literal Dirichlet eigenvalue/sign map is now a homeomorphism from
+an actual Hilbert isospectral set onto the full product of signed gaps.
+Every admissible prescription has exactly one realization, with zero signs
+at endpoints and either nonzero sign in an open-gap interior.
+
+The signed topology is proved to be the quotient of two compact interval
+branches joined at zero height. Actual discriminant and evaluation lemmas
+identify the original eigenvalues and anti-discriminant signs exactly.
+The [Section 7 audit](coverage/SECTION_7.md) records the arbitrary infinite
+prescriptions, collapsed gaps and the selected 2013 reference comparison.
+Squared-gap spectral uniqueness, a separate dimension invariant, the exact
+2014 comparison and G.2 norm interpretation remain open.
+
+Validation: `./scripts/check.sh` passes with 8,101 build jobs, 7,067
+public examples, and a transitive axiom audit of 40,032 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,113 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual Hilbert Dirichlet sheet parametrization
 
 Every admissible collection of actual Dirichlet root/full-terminal pairs
 is now realized by a unique real Hilbert source in its original isospectral
