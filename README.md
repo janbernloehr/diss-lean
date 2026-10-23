@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual signed-gap map has an analytic local inverse
-near zero. Every sufficiently small nonnegative Hilbert gap sequence is
-realized by a symmetric real source, with finite support giving finite gaps.
+Latest step: explicit reductions isolate global openness and finite-gap
+injectivity as sufficient for squared-gap spectral uniqueness. Every Hilbert
+isospectral set has a symmetric representative with nonpositive signed gaps.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

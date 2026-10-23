@@ -65952,3 +65952,32 @@ example : ∃ ε : ℝ, 0 < ε ∧ ∀ a b : RealCoeff 2,
   have ha' := hball (show a ∈ Metric.ball (0 : RealCoeff 2) ε by simpa [Metric.mem_ball,dist_eq_norm] using ha)
   have hb' := hball (show b ∈ Metric.ball (0 : RealCoeff 2) ε by simpa [Metric.mem_ball,dist_eq_norm] using hb)
   exact ha'.symm.trans ((congrArg G he).trans hb')
+
+/-! The remaining global hypotheses are explicit in the squared-gap reduction. -/
+
+-- Openness and injectivity on actual finite-gap coordinates suffice for global injectivity.
+example (ho : IsOpenMap (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)))
+    (hi : Set.InjOn (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num))
+      {a | symmetricRealSourceCoefficients 2 a ∈ sourceFiniteGapLocus (by simp) (by norm_num)}) :
+    Function.Injective (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) :=
+  (symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num) ho).mpr hi
+
+-- These same two pending global hypotheses recover the actual original periodic spectral data.
+example (ho : IsOpenMap (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)))
+    (hi : Set.InjOn (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num))
+      {a | symmetricRealSourceCoefficients 2 a ∈ sourceFiniteGapLocus (by simp) (by norm_num)})
+    (φ ψ : realTypeSourceSubmodule 2)
+    (h : ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) :
+    ψ ∈ sourceIsospectralSet (by simp) φ :=
+  source_isospectral_of_squared_gaps_of_symmetricSignedGap_injective
+    ((symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num) ho).mpr hi) φ ψ h
+
+-- Every actual Hilbert isospectral class already has such a symmetric nonpositive representative.
+example (φ : realTypeSourceSubmodule 2) :
+    ∃ ψ : realTypeSourceSubmodule 2,
+      ψ ∈ sourceIsospectralSet (by simp) φ ∧ realSourceSpatialReflection ψ = ψ ∧ ∀ n,
+      (sourceSignedGapSequence (by simp) (by norm_num) ψ.val n).re ≤ 0 := by
+  obtain ⟨a,ha,hneg⟩ := exists_symmetric_coordinates_isospectral_nonpos_signed_gaps φ
+  exact ⟨symmetricRealSourceCoefficients 2 a,ha,symmetricRealSourceCoefficients_reflection_fixed a,hneg⟩

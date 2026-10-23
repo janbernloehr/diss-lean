@@ -389,6 +389,34 @@ symmetric Fourier coordinates. All inverse and realization statements
 here concern p=2. No global signed-gap injectivity, squared-gap spectral
 uniqueness, exact 2014 comparison, or G.2 norm resolution is asserted.
 
+## Explicit reductions of the global squared-gap problem
+
+The remaining global hypotheses are now separated from their consequences.
+These reductions do not prove global signed-gap openness or injectivity.
+
+[SymmetricSignedGapFiniteFibers.lean](../NLS/ZakharovShabat/SymmetricSignedGapFiniteFibers.lean)
+identifies actual finite-gap symmetric sources with finite-support outputs
+of the real-coordinate signed-gap map, for each finite p>1. If this map is
+globally open, any collision produces a collision between actual finite-gap
+sources: disjoint neighborhoods of the original preimages have overlapping
+open images, and truncations of their common output eventually lie in both.
+Thus, under the explicit global openness premise, injectivity is equivalent
+to injectivity on the actual finite-gap locus.
+
+[SourceSquaredGapUniquenessReduction.lean](../NLS/ZakharovShabat/SourceSquaredGapUniquenessReduction.lean)
+first proves that every actual Hilbert isospectral set has a symmetric
+representative with all signed gaps nonpositive, using its all-left
+Dirichlet endpoint prescription. It then proves that global injectivity of
+the symmetric signed-gap map implies actual Hilbert squared-gap spectral
+uniqueness, including algebraic multiplicities. Equal squared gaps give
+equal nonpositive signed gaps for the chosen representatives.
+
+The public examples compose these reductions and expose both remaining
+premises: global openness and finite-gap injectivity. The analytic local
+inverse at zero supplies neither premise globally. No unconditional
+squared-gap spectral uniqueness, exact 2014 comparison, or G.2 norm
+resolution is asserted.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

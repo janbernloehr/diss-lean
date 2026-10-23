@@ -4442,3 +4442,5 @@ import NLS.ZakharovShabat.SourceSymmetricSignedGaps
 import NLS.ZakharovShabat.SymmetricSourceCoordinates
 import NLS.ZakharovShabat.SourceSignedGapFreeDerivative
 import NLS.ZakharovShabat.SymmetricSignedGapLocalInverse
+import NLS.ZakharovShabat.SymmetricSignedGapFiniteFibers
+import NLS.ZakharovShabat.SourceSquaredGapUniquenessReduction

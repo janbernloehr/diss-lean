@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: local analytic signed-gap inverse
+## Current milestone: conditional global squared-gap reductions
+
+The global squared-gap problem now has explicit Lean reductions.
+Under global openness, injectivity of the actual symmetric signed-gap map
+reduces to injectivity on actual finite-gap sources. This follows from an
+exact support characterization and approximation by finite-support outputs.
+
+Every Hilbert isospectral set has a symmetric representative whose signed
+gaps are all nonpositive. Global signed-gap injectivity would therefore
+imply equality of the actual periodic spectra, with algebraic multiplicities,
+whenever the squared gaps agree.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the hypotheses still
+needed: global openness and finite-gap injectivity are not yet proved.
+The finite-support reduction holds for finite p>1; the spectral uniqueness
+reduction is for p=2. Exact 2014 and G.2 qualifications remain in force.
+
+Validation: `./scripts/check.sh` passes with 8,118 build jobs, 7,079
+public examples, and a transitive axiom audit of 40,142 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,144 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: local analytic signed-gap inverse
 
 The actual signed-gap map now has an analytic two-sided local inverse
 near the zero Hilbert source. Explicit real Fourier coordinates parametrize
