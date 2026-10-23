@@ -275,6 +275,37 @@ p=2. Squared-gap-length determination of the spectrum, a separate dimension
 invariant, the exact 2014 comparison and the G.2 norm qualification remain
 separate requirements; no overall completeness claim is made.
 
+## Finite-gap isospectral sets as manifolds of the stated dimension
+
+The earlier finite-torus description now yields the precise finite-dimensional
+topological-manifold statement on printed p.45. For an actual finite-gap
+Hilbert source, the original isospectral set has a Euclidean atlas with
+dimension equal to the number of its actual open periodic gaps. Its
+inherited Hilbert topology is Hausdorff and second countable.
+
+[FiniteCircleProductManifold.lean](../NLS/FunctionalAnalysis/FiniteCircleProductManifold.lean)
+expresses the standard finite product of circle charts in the ordinary
+N-dimensional Euclidean model. It proves the topological-manifold instance
+and the exact real finrank of that model, including the empty product at N=0.
+
+[SourceHilbertFiniteGapManifold.lean](../NLS/ZakharovShabat/SourceHilbertFiniteGapManifold.lean)
+transports the atlas through the already proved actual finite-torus
+homeomorphism. `sourceHilbertFiniteGap_isManifold` establishes a manifold
+without boundary, modeled on Euclidean space with
+`Nat.card (sourceHilbertOpenGapIndex phi)` real coordinates. Separate
+theorems establish Hausdorffness, second countability and the model finrank.
+All statements use the original isospectral set and its original topology.
+
+Public examples check the zero-dimensional empty product, conversion of a
+separately supplied gap count into an actual manifold atlas, and uniqueness
+of a source in a finite-gap isospectral set with zero open gaps.
+
+This completes the finite topological-manifold interpretation of the stated
+dimension. It does not assert smooth compatibility with the ambient Hilbert
+embedding or prove a separate covering-dimension invariant for infinite
+products. Squared-gap determination of the spectrum, the exact cited 2014
+comparison and the G.2 norm interpretation remain separate requirements.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

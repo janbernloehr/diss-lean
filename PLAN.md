@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: literal signed Dirichlet parametrization
+## Current milestone: finite-gap isospectral manifold dimension
+
+Every actual finite-gap Hilbert isospectral set now has a topological
+manifold atlas whose Euclidean dimension equals its number of open gaps.
+The atlas preserves the inherited topology, which is proved Hausdorff and
+second countable; the zero-gap case uses a zero-dimensional model.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the chart construction,
+the exact model finrank and public examples. This completes the finite
+manifold dimension statement. Squared-gap spectral uniqueness, the exact
+2014 comparison and G.2 norm interpretation remain open. Smooth compatibility
+with the ambient Hilbert embedding and a covering-dimension invariant for
+infinite products are not asserted.
+
+Validation: `./scripts/check.sh` passes with 8,109 build jobs, 7,070
+public examples, and a transitive axiom audit of 40,047 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,120 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: literal signed Dirichlet parametrization
 
 The literal Dirichlet eigenvalue/sign map is now a homeomorphism from
 an actual Hilbert isospectral set onto the full product of signed gaps.

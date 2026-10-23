@@ -65824,3 +65824,44 @@ example (φ : realTypeSourceSubmodule 3) (n : ℤ)
   · exact ((sourceSignedDirichletSheet_sign_zero_iff_endpoint (by norm_num) (by norm_num) φ n q).mpr (Or.inl hq)).trans
       ((sourceSignedDirichletSheet_sign_zero_iff_endpoint (by norm_num) (by norm_num) φ n r).mpr (Or.inl ht)).symm
 end
+
+/-! Finite-gap manifolds: empty products, a supplied gap count, and zero-gap uniqueness. -/
+
+section
+open Manifold
+
+-- The empty circle product uses a zero-dimensional model, with no positivity assumption.
+example :
+    letI := NLS.FunctionalAnalysis.finiteCircleProductChartedSpace 0
+    IsManifold (𝓡 0) 0 (Fin 0 → Circle) ∧
+      Module.finrank ℝ (EuclideanSpace ℝ (Fin 0)) = 0 := by
+  exact ⟨NLS.FunctionalAnalysis.finiteCircleProduct_isManifold 0,
+    NLS.FunctionalAnalysis.finiteCircleProduct_model_finrank 0⟩
+
+-- A separately computed finite gap count supplies the actual Euclidean manifold model.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (N : ℕ)
+    (hN : Nat.card (sourceHilbertOpenGapIndex φ) = N) :
+    ∃ C : ChartedSpace (EuclideanSpace ℝ (Fin N))
+        (sourceIsospectralSet ENNReal.ofNat_ne_top φ),
+      letI := C
+      IsManifold (𝓡 N) 0 (sourceIsospectralSet ENNReal.ofNat_ne_top φ) ∧
+        T2Space (sourceIsospectralSet ENNReal.ofNat_ne_top φ) ∧
+        SecondCountableTopology (sourceIsospectralSet ENNReal.ofNat_ne_top φ) := by
+  subst N
+  exact ⟨sourceHilbertFiniteGapChartedSpace φ hφ,
+    sourceHilbertFiniteGap_isManifold φ hφ, sourceHilbertFiniteGap_t2Space φ hφ,
+    sourceHilbertFiniteGap_secondCountableTopology φ hφ⟩
+
+-- A finite-gap source with no open gaps has a singleton actual isospectral set.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (h0 : Nat.card (sourceHilbertOpenGapIndex φ) = 0)
+    (ψ χ : sourceIsospectralSet ENNReal.ofNat_ne_top φ) : ψ = χ := by
+  obtain ⟨e⟩ := sourceHilbertIsospectralSet_homeomorphic_finiteTorus φ hφ
+  have : Subsingleton (Fin (Nat.card (sourceHilbertOpenGapIndex φ)) → Circle) := by
+    rw [h0]
+    infer_instance
+  exact e.injective (Subsingleton.elim (e ψ) (e χ))
+
+end
