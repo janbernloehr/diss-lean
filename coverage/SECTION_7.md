@@ -74,6 +74,55 @@ and quotient corrections. The unnumbered overview assertions below require
 two further corrections. This audit does not certify the remaining
 dissertation or the cited classical background as complete.
 
+## The actual Hilbert isospectral tori on printed p. 45
+
+The unnumbered overview describes each real Hilbert isospectral set as a
+compact connected torus, with one circle for each noncollapsed periodic
+gap. The earlier Lemma 17.5 implementation identified the entire image
+under the original Birkhoff map and established compactness. The following
+results now supply connectedness and the explicit product topology.
+
+[RealActionTorusConnected.lean](../NLS/SequenceSpaces/RealActionTorusConnected.lean)
+joins each finite coordinate-rotation sequence to its base by scaling all
+of its angles. The finite rotation orbit is connected; its norm closure is
+the full action torus at every finite Banach exponent. This includes tori
+with infinitely many nonzero actions.
+
+[SourceHilbertIsospectralConnected.lean](../NLS/ZakharovShabat/SourceHilbertIsospectralConnected.lean)
+transfers connectedness through the actual global Hilbert Birkhoff
+homeomorphism. `sourceHilbertIsospectralSet_compact_connected` constructs
+the family internally and retains the original periodic spectrum and all
+algebraic multiplicities. It imposes no finite-gap assumption.
+
+[RealActionTorusProduct.lean](../NLS/SequenceSpaces/RealActionTorusProduct.lean)
+defines the relative phase at each nonzero action by dividing the complex
+coordinate by its base coordinate. This is a continuous bijection to the
+product of unit circles. Surjectivity constructs actual ℓᵖ sequences using
+a summable coordinate majorant; zero actions force both omitted coordinates
+to vanish. Compactness turns the bijection into a homeomorphism from the
+sequence norm topology to the product topology, for every finite Banach
+exponent. No corresponding assertion at p=∞ is made.
+
+[SourceHilbertIsospectralTorus.lean](../NLS/ZakharovShabat/SourceHilbertIsospectralTorus.lean)
+restricts the original Hilbert homeomorphism to the actual isospectral set
+and identifies its nonzero-action indices exactly with the original open
+periodic gaps. `sourceHilbertIsospectralSet_homeomorphic_circles` constructs
+a homeomorphism to one unit circle per such gap. For an actual finite-gap
+source, `sourceHilbertIsospectralSet_homeomorphic_finiteTorus` gives a product
+indexed by Fin(Nat.card(sourceHilbertOpenGapIndex φ)). Thus the circle-factor
+count is the exact number of open gaps. This is an explicit torus model;
+a separate covering-dimension or manifold-dimension invariant is not asserted.
+
+Three public examples show that all gaps closed gives a singleton isospectral
+set, exactly one open gap gives a circle, and a positive coordinate rotation
+at p=3 induces exp(i t), checking the phase orientation. These coordinate
+phases are not identified here with the Dirichlet-angle formula.
+
+The overview's Dirichlet-eigenvalue/sign parametrization and the assertion
+that squared gap lengths determine the spectrum remain separate source
+comparisons. Existing action-to-spectrum injectivity is a different assertion.
+The exact 2014 construction comparison and G.2 norm qualification remain open.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: corrected tails for fixed canonical sequences
+## Current milestone: actual Hilbert isospectral tori
+
+The real Hilbert isospectral set in the page-45 overview is now proved
+compact and connected, with an explicit homeomorphism to a product of one
+unit circle per actual open periodic gap. The construction permits infinitely
+many open gaps. An actual finite-gap source gives exactly the corresponding
+finite number of circle factors.
+
+The sequence-space construction uses the original ℓᵖ norm topology at every
+finite Banach exponent. Public examples check the all-closed and single-open
+gap cases and the orientation of coordinate rotations at p=3.
+The [Section 7 audit](coverage/SECTION_7.md) distinguishes the exact circle
+factor count from a separate dimension invariant and records the remaining
+Dirichlet/sign and squared-gap source comparisons. The exact 2014 comparison
+and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,086 build jobs, 7,058
+public examples, and a transitive axiom audit of 39,864 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,083 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: corrected tails for fixed canonical sequences
 
 The complete canonical period-two eigenvalue sequences now satisfy the
 stronger corrected full-cutoff displacement estimates. Their actual gaps

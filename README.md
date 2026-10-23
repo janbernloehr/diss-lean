@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the fixed canonical period-two eigenvalue and gap sequences
-satisfy stronger corrected tail estimates, including the printed positive
-index range and weighted ℓᵖ regularity of the actual full gap sequence.
+Latest step: actual real Hilbert isospectral sets are compact, connected,
+and homeomorphic to a product of one circle per open periodic gap, including
+infinitely many gaps. The finite-gap case has the exact finite factor count.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

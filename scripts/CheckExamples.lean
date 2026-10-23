@@ -65615,3 +65615,50 @@ example (φ : CoeffPair 3) :
   exact ⟨(hd ψ hψ.1 K (by omega)).2.1,(hg ψ hψ.2 K (by omega)).2.1⟩
 
 end
+
+/-! Actual isospectral tori: collapsed gaps, a single circle, and rotation orientation. -/
+
+-- If every periodic gap is closed, the actual isospectral set contains only its base source.
+example (φ : realTypeSourceSubmodule 2)
+    (hclosed : ∀ n : ℤ, sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n = 0)
+    (ψ : realTypeSourceSubmodule 2) :
+    ψ ∈ sourceIsospectralSet (by simp) φ ↔ ψ = φ := by
+  let : IsEmpty (sourceHilbertOpenGapIndex φ) := ⟨fun n => n.property (hclosed n.val)⟩
+  obtain ⟨e⟩ := sourceHilbertIsospectralSet_homeomorphic_circles φ
+  have hφ : φ ∈ sourceIsospectralSet (by simp) φ := ⟨rfl,fun _ => rfl⟩
+  constructor
+  · intro hψ
+    exact congrArg Subtype.val (e.injective (Subsingleton.elim (e ⟨ψ,hψ⟩) (e ⟨φ,hφ⟩)))
+  · rintro rfl
+    exact hφ
+
+-- A source with exactly one open periodic gap has an actual isospectral circle.
+example (φ : realTypeSourceSubmodule 2) (k : ℤ)
+    (hgap : ∀ n : ℤ, sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n ≠ 0 ↔ n = k) :
+    Nonempty (sourceIsospectralSet (by simp) φ ≃ₜ Circle) := by
+  let : Unique (sourceHilbertOpenGapIndex φ) := {
+    default := ⟨k,(hgap k).mpr rfl⟩
+    uniq := fun n => Subtype.ext ((hgap n.val).mp n.property) }
+  obtain ⟨e⟩ := sourceHilbertIsospectralSet_homeomorphic_circles φ
+  exact ⟨e.trans (Homeomorph.piUnique (fun _ : sourceHilbertOpenGapIndex φ => Circle))⟩
+
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At a non-Hilbert exponent, a positive coordinate rotation induces exp(i t), fixing its orientation.
+example (z : RealCoeff 3 × RealCoeff 3) (k : ℤ) (hk : RealCoeff.pairAction z k ≠ 0) (t : ℝ) :
+    let w : RealCoeff.actionTorus 3 (RealCoeff.pairAction z) :=
+      ⟨RealCoeff.actionRotation z k t,fun n => RealCoeff.pairAction_actionRotation z k n t⟩
+    ((RealCoeff.actionTorusHomeomorphCircles (by norm_num) z w ⟨k,hk⟩ : Circle) : ℂ) =
+      Complex.exp ((t : ℂ)*Complex.I) := by
+  change RealCoeff.pairComplexCoordinate (RealCoeff.actionRotation z k t) k /
+    RealCoeff.pairComplexCoordinate z k = _
+  apply (div_eq_iff (RealCoeff.pairComplexCoordinate_ne_zero z k hk)).mpr
+  rw [Complex.exp_mul_I]
+  apply Complex.ext
+  · simpa [RealCoeff.pairComplexCoordinate,Complex.cos_ofReal_re,Complex.sin_ofReal_re] using
+      (RealCoeff.actionRotation_apply_same z k t).1
+  · simpa [RealCoeff.pairComplexCoordinate,Complex.cos_ofReal_re,Complex.sin_ofReal_re,add_comm] using
+      (RealCoeff.actionRotation_apply_same z k t).2
+
+end

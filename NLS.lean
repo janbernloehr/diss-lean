@@ -4414,3 +4414,7 @@ import NLS.ZakharovShabat.SourcePeriodTwoCanonicalEndpoints
 import NLS.ZakharovShabat.SourcePeriodTwoCanonicalMidpointGap
 import NLS.ZakharovShabat.SourcePeriodTwoCanonicalCutoffs
 import NLS.ZakharovShabat.SourceCanonicalWeightedGapTails
+import NLS.SequenceSpaces.RealActionTorusConnected
+import NLS.ZakharovShabat.SourceHilbertIsospectralConnected
+import NLS.SequenceSpaces.RealActionTorusProduct
+import NLS.ZakharovShabat.SourceHilbertIsospectralTorus
