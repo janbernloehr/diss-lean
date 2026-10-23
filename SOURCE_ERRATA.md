@@ -2498,12 +2498,20 @@ stronger corrected estimates. See `coverage/SECTION_6.md` for exact scope.
 full signed sum of both labels satisfying `SourceResonantRootPair`. These
 are actual original determinant roots with exact scalar analytic orders.
 The page-43 display literally sums over n≥N and repeats the ξ⁺ displacement
-twice; its exact formulation still requires a separate proof. The existing
-signed two-root theorem does not by itself establish that literal claim.
+twice. Its exact formulation is now refuted by
+`not_sourceLemma6_9_printed_duplicated_positive_sum` in
+[SourceLemma6_9LiteralSum.lean](NLS/ZakharovShabat/SourceLemma6_9LiteralSum.lean).
+The actual resonant input has roots nπ±t, so either first-label choice has
+squared displacement t² and exceeds the printed budget for sufficiently
+small t, beyond every proposed uniform cutoff. This also handles the
+printed ceiling-half convention.
 The corrected `sourceLemma6_9`
 combines their count, original spectral equivalence, localization, factor-six
 gap bound, and corrected displacement sum on one original neighborhood.
-No new counterexample or stronger fixed-input failure is inferred here.
+`sourceLemma6_9_corrected_positive` retains all this data and gives both
+positive-index sums: the two-root sum has the same corrected budget, and
+the repeated-first-root sum is bounded by twice that budget. No sharpness
+claim is made. No stronger fixed-input failure is inferred here.
 
 ## Corollary 6.2: period-two scope resolved by actual restriction
 

@@ -4406,3 +4406,5 @@ import NLS.ZakharovShabat.SourceAppendixHRemainderPhase
 import NLS.ZakharovShabat.SourceReflectionRegularityLoss
 import NLS.ZakharovShabat.SourcePositiveDisplacementTail
 import NLS.ZakharovShabat.SourcePositiveGapTail
+import NLS.ZakharovShabat.SourceLemma6_9LiteralSum
+import NLS.ZakharovShabat.SourceLemma6_9PositiveCorrected

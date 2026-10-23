@@ -65431,3 +65431,47 @@ example (C : ℝ) (hC : 0 ≤ C)
   simpa [sourcePositiveGapPowerTail] using hterm
 
 end
+
+/-! The exact repeated-first-root positive tail on printed page 43. -/
+
+-- Unlike a two-root sum, the printed repetition can depend on which label is first.
+example :
+    let ξ : ℤ → ℂ := fun n => (Real.pi : ℂ)*n + 1
+    let η : ℤ → ℂ := fun n => (Real.pi : ℂ)*n + 2
+    sourcePositiveDisplacementPowerTail 2 2 ξ ξ 3 = 2 ∧
+      sourcePositiveDisplacementPowerTail 2 2 ξ η 3 = 5 ∧
+      sourcePositiveDisplacementPowerTail 2 2 η η 3 = 8 := by
+  norm_num [sourcePositiveDisplacementPowerTail]
+
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At p=3 the same actual counted roots obey both corrected positive-index bounds.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, N₀ ≤ n.natAbs → SourceResonantRootPair (by norm_num) ψ n (ξ n) (η n)) ∧
+          ∀ N : ℕ, N₀ ≤ N →
+            (Summable (sourcePositiveDisplacementPowerTail 3 N ξ η) ∧
+              (∑' n : ℤ, sourcePositiveDisplacementPowerTail 3 N ξ η n) ≤ sourcePeriodTwoDisplacementBudget ψ N) ∧
+            (Summable (sourcePositiveDisplacementPowerTail 3 N ξ ξ) ∧
+              (∑' n : ℤ, sourcePositiveDisplacementPowerTail 3 N ξ ξ n) ≤ 2 * sourcePeriodTwoDisplacementBudget ψ N) := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,_,hr⟩ := sourceLemma6_9_corrected_positive (by norm_num) (by norm_num) φ
+  exact ⟨N,hN,U,ho,hc,hφ,h0,hr⟩
+
+end
+
+-- The witness violates the exact repeated-root sum for every permitted choice of labels.
+example (C : ℝ) (hC : 0 ≤ C) (U : Set (CoeffPair 2))
+    (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U, ∀ ξ η : ℤ → ℂ,
+      SourceResonantRootPair (by norm_num) φ n (ξ n) (η n) →
+      Summable (sourcePositiveDisplacementPowerTail 2 n ξ ξ) →
+        sourcePrintedHilbertDisplacementBudget C φ n <
+          ∑' k : ℤ, sourcePositiveDisplacementPowerTail 2 n ξ ξ k := by
+  obtain ⟨n,hn,hn2,φ,hφ,hbad⟩ := exists_sourceFirstRoot_exceeding_printed_budget C hC U ho h0 M
+  refine ⟨n,hn,hn2,φ,hφ,?_⟩
+  intro ξ η hpair hs
+  exact (hbad (ξ n) (η n) hpair).trans_le
+    (sourcePeriodTwoRoot_sq_le_positive_pair_tail n n le_rfl ξ ξ (ξ n) (Or.inl rfl) hs)

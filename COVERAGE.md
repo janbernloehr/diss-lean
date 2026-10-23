@@ -20,6 +20,7 @@ Its counts describe source locations, not proved coverage.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 6.9, p.43: literal repeated-label positive sum | [Corrected sums](NLS/ZakharovShabat/SourceLemma6_9PositiveCorrected.lean), [literal counterexample](NLS/ZakharovShabat/SourceLemma6_9LiteralSum.lean), [audit](coverage/SECTION_6.md) | Same actual determinant data and corrected positive sums for finite p>1; actual roots refute the printed repeated-first-label budget locally uniformly at p=2. |
 | Proposition 6.3, p.36: literal positive-index weighted gap sum | [Positive gap tail](NLS/ZakharovShabat/SourcePositiveGapTail.lean), [audit](coverage/SECTION_6.md) | Corrected intrinsic gap bound for n≥N at every source weight and finite p>1; actual positive gaps refute the printed locally uniform p=2 budget at unit weight, for intrinsic and counted-pair sums. |
 | Proposition 6.1, p.35: literal positive-index sum | [Positive displacement tail](NLS/ZakharovShabat/SourcePositiveDisplacementTail.lean), [audit](coverage/SECTION_6.md) | Corrected original spectral bound for n≥N at finite p>1; actual positive roots refute the printed locally uniform p=2 budget. |
 | Section 4, p.31: regularity loss before Lemma 4.3 | [Smooth constant reflection](NLS/ZakharovShabat/SourceReflectionRegularityLoss.lean), [audit](coverage/SECTION_4.md) | Both signs lose one derivative at every finite Banach exponent, with actual physical coefficients and completed distributions; scalar order-one membership holds exactly at infinity. |

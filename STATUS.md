@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: the printed positive-index weighted gap sum
+## Current milestone: the literal positive-index sums in Lemma 6.9
+
+Lemma 6.9's page-43 display uses n≥N and repeats the first root's
+displacement. Both features are now explicit. The corrected theorem
+retains original determinant roots, multiplicities, joint analyticity and
+strip control on one neighborhood for every later cutoff. The two-root
+positive sum has the existing corrected budget; the repeated-first-root
+sum is bounded by twice that budget.
+
+An actual resonant input refutes the literal repeated-label printed budget
+locally uniformly at zero, regardless of which root is chosen first.
+Three examples distinguish the two sums, check the corrected p=3 theorem,
+and produce a violating literal sum beyond every proposed cutoff.
+The [Section 6 audit](coverage/SECTION_6.md) records the exact quantifiers.
+The exact 2014 comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,076 build jobs, 7,046
+public examples, and a transitive axiom audit of 39,769 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,049 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the printed positive-index weighted gap sum
 
 Proposition 6.3's weighted gap sum now has the printed range n≥N.
 The intrinsic contour gap and any representing counted root pair give the

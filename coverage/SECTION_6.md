@@ -559,9 +559,8 @@ pairs. Its failure is locally uniform, not a fixed-input assertion about
 all individual cutoffs.
 
 The literal display on page 43 has the positive-index range n≥N and repeats
-the ξ⁺ displacement twice. The existing signed two-root refutation does
-not itself establish that exact statement. Reconciliation of that display
-is pending; the new positive-index theorem above addresses Proposition 6.1.
+the ξ⁺ displacement twice. The signed two-root refutation alone does not
+establish that exact statement; the additional results below now do.
 
 The neighborhood is open and convex, contains the specified original input
 and zero, and is chosen before every distant index and every later cutoff.
@@ -569,6 +568,38 @@ Each pair exhausts both determinant zeros and original spectral points on
 the whole strip. The proof uses the existing branch-free root-gap argument;
 it requires neither a global square-root branch nor analytic root labels.
 Finitely many central labels remain unspecified by this high-frequency result.
+
+## Lemma 6.9: both positive-index sums and the literal repeated label
+
+The display on printed page 43 sums over n≥N and repeats the ξ⁺ term twice.
+The new results treat that literal display as well as the positive-index
+sum of both roots, without silently changing the printed label.
+
+[SourceLemma6_9PositiveCorrected.lean](../NLS/ZakharovShabat/SourceLemma6_9PositiveCorrected.lean)
+proves `sourceLemma6_9_corrected_positive`. The same original determinant,
+joint analyticity, full-strip control, counted pairs and open convex
+neighborhood from `sourceLemma6_9` now give both positive-index estimates
+at every later cutoff. The two-root sum is bounded by the existing corrected
+`sourcePeriodTwoDisplacementBudget`; the repeated-first-root sum is bounded
+by twice that budget. This factor follows from termwise domination and is
+not claimed sharp. These bounds retain the additive leading-tail term and
+the earlier floor(N/2) convention.
+
+[SourceLemma6_9LiteralSum.lean](../NLS/ZakharovShabat/SourceLemma6_9LiteralSum.lean)
+proves `not_sourceLemma6_9_printed_duplicated_positive_sum`. The resonant
+input has actual spectral points nπ±t. Any two labels exhausting this strip
+spectrum must put one of these points first, so its squared displacement is
+t² whichever ordering is chosen. The printed Hilbert budget is at most
+24C t⁴. The theorem therefore refutes the literal positive-index sum with
+the first label repeated, locally uniformly at zero, for every choice of
+actual counted determinant roots. It uses the printed ceiling-half budget.
+It makes no claim that every individually chosen fixed-input cutoff fails.
+
+The public examples distinguish two-root sums from both repeated-label
+choices, check both corrected bounds at p=3 with the same counted roots,
+and exhibit a violating repeated-label sum beyond every proposed cutoff.
+This resolves the recorded literal-range and repeated-label proof gap;
+it does not infer which label the author intended to print.
 
 ## Full-cutoff and ceiling-half completion
 

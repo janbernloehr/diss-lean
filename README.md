@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Proposition 6.3 now has the literal weighted gap sum over
-n≥N. Lean verifies the corrected estimate for arbitrary source weights
-and refutes the printed locally uniform budget using an actual positive gap.
+Latest step: Lemma 6.9 now treats the printed positive-index sum with
+the first root repeated. Lean proves corrected bounds for both positive
+sums and refutes the literal printed budget regardless of root ordering.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
