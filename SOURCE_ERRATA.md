@@ -2532,11 +2532,13 @@ For unit weight, every open neighborhood of zero and every proposed cutoff
 contain such a witness exceeding the printed bound. Both natural half-cutoff
 roundings fail. `not_sourceProposition6_3_printed_pair_sum` rules out the
 printed budget for the full signed sum of actual counted high-pair gaps.
-The literal page-36 range n≥N still requires a separate sum comparison.
-The single-gap witness already occurs at a positive index. The assertion
-for all weights therefore already fails at unit weight
-and p=2. No failure for every individually chosen cutoff at a fixed input is
-asserted.
+The literal page-36 range n≥N is now handled in
+[SourcePositiveGapTail.lean](NLS/ZakharovShabat/SourcePositiveGapTail.lean).
+`not_sourceProposition6_3_printed_positive_gap_sum` and
+`not_sourceProposition6_3_printed_positive_pair_sum` refute the intrinsic and
+labeled positive-index sums using that actual positive-gap witness.
+The assertion for all weights therefore already fails at unit weight and
+p=2. No failure for every individually chosen cutoff at a fixed input is asserted.
 
 `sourceProposition6_3_corrected` retains an additive leading Fourier-tail
 term. `sourceProposition6_3_small_tails` and `sourceProposition6_3_gap_mem`

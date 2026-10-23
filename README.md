@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Proposition 6.1 now has the literal positive-index summation
-range n≥N. Lean verifies a corrected spectral displacement bound and
-refutes the printed locally uniform budget on that exact range.
+Latest step: Proposition 6.3 now has the literal weighted gap sum over
+n≥N. Lean verifies the corrected estimate for arbitrary source weights
+and refutes the printed locally uniform budget using an actual positive gap.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

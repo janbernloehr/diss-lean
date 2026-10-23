@@ -65383,3 +65383,51 @@ example (C : ℝ) (hC : 0 ≤ C) (U : Set (CoeffPair 2)) (ho : IsOpen U) (h0 : 0
   exact hbad.trans_le (sourcePeriodTwoRoot_sq_le_positive_pair_tail n n le_rfl ξ η z hpair hsum)
 
 end
+
+/-! The literal weighted positive-index gap sum in Proposition 6.3. -/
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A negative-index gap belongs only to the signed tail.
+example :
+    let ξ : ℤ → ℂ := fun n => if n = -3 then 1 else 0
+    let η : ℤ → ℂ := fun _ => 0
+    sourcePositiveRootGapPowerTail 2 SpectralWeight.one 2 ξ η (-3) = 0 ∧
+      rootGapPowerTail 2 SpectralWeight.one 2 ξ η (-3) = 1 := by
+  norm_num [sourcePositiveRootGapPowerTail, rootGapPowerTail]
+
+-- General source weights at p=3 retain actual counted roots and all later intrinsic gap tails.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, N₀ ≤ n.natAbs →
+            PeriodicResonantPair (by norm_num) w ψ n (ξ n) (η n)) ∧
+          ∀ N : ℕ, N₀ ≤ N →
+            Summable (sourcePositiveGapPowerTail (by norm_num) w ψ N) ∧
+            (∑' n : ℤ, sourcePositiveGapPowerTail (by norm_num) w ψ N n) ≤
+              rootGapBudget w ψ N := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hr⟩ := sourceProposition6_3_corrected_positive (by norm_num) (by norm_num) w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ
+  obtain ⟨ξ,η,hpair,_,ht⟩ := hr ψ hψ
+  exact ⟨ξ,η,hpair,ht⟩
+
+-- Every proposed zero-neighborhood and cutoff contain a violating positive intrinsic gap.
+example (C : ℝ) (hC : 0 ≤ C)
+    (U : Set (WeightedCoeffPair SpectralWeight.one.toWeight 2))
+    (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U,
+      Summable (sourcePositiveGapPowerTail (by norm_num) SpectralWeight.one φ n) →
+        sourcePrintedHilbertGapBudget C SpectralWeight.one φ n <
+          ∑' k : ℤ, sourcePositiveGapPowerTail (by norm_num) SpectralWeight.one φ n k := by
+  obtain ⟨n,hn,hn2,φ,hφ,hbad⟩ :=
+    exists_periodicGap_exceeding_printed_ceiling_budget C hC U ho h0 M
+  refine ⟨n,hn,hn2,φ,hφ,?_⟩
+  intro hs
+  have hterm := hs.le_tsum (n : ℤ)
+    (fun k _ => sourcePositiveGapPowerTail_nonneg (by norm_num) SpectralWeight.one φ n k)
+  apply hbad.trans_le
+  simpa [sourcePositiveGapPowerTail] using hterm
+
+end

@@ -198,13 +198,39 @@ intrinsic squared gap with `4t²`. The printed budget is at most `24C t⁴`.
 weights, and `exists_periodicGap_exceeding_printed_ceiling_budget` exceeds that
 smaller budget too. The final negations
 `not_sourceProposition6_3_printed_gap_sum` and
-`not_sourceProposition6_3_printed_pair_sum` exclude the printed locally uniform
-claim for both the intrinsic gap and any actual counted pair labels, already
-at unit weight and p=2. Thus the assertion for all source weights is false.
+`not_sourceProposition6_3_printed_pair_sum` exclude the printed budget for
+the full signed sums of intrinsic gaps and actual counted-pair gaps, already
+at unit weight and p=2. The literal positive-index sums are addressed below.
 
 This is a failure of the uniform cutoff on neighborhoods of zero. It does not
 claim that every separately chosen cutoff for a fixed potential fails. The
 qualitative weighted ℓᵖ asymptotics and the corrected budget remain proved.
+
+## Proposition 6.3: the literal positive-index weighted gap sum
+
+Printed page 36 sums over n≥N. The earlier signed sum has a larger left
+side, so its refutation alone does not settle the literal display.
+[SourcePositiveGapTail.lean](../NLS/ZakharovShabat/SourcePositiveGapTail.lean)
+provides the positive-index intrinsic and labeled gap tails.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Exact intrinsic summand | `sourcePositiveGapPowerTail` | The weight at 2n times the p/2-power of the actual contour squared-gap norm, retained precisely when n≥N. |
+| Domination by the signed tail | `summable_sourcePositiveGapPowerTail`, `tsum_sourcePositiveGapPowerTail_le` | Nonnegativity transfers summability and the signed upper bound. |
+| Corrected weighted estimate | `sourceProposition6_3_corrected_positive` | Every source weight and finite p>1, actual counted spectral pairs, original-pencil equivalence, one open convex neighborhood containing the input and zero, and every later positive tail. |
+| Exact labeled gap | `sourcePositiveRootGapPowerTail`, `sourcePositiveGapPowerTail_eq_rootGap` | Equals the intrinsic tail whenever the pairs represent the actual squared gaps; no choice of square-root branch is needed. |
+| Printed intrinsic sum refuted | `not_sourceProposition6_3_printed_positive_gap_sum` | The actual positive-index gap exceeds the printed ceiling-half budget on every zero-neighborhood and beyond every proposed uniform cutoff at p=2, unit weight. |
+| Printed labeled sum refuted | `not_sourceProposition6_3_printed_positive_pair_sum` | No choice of actual counted positive-index pairs repairs that literal bound. |
+
+The corrected bound is the earlier `rootGapBudget` with floor(N/2) and
+its additive leading-tail term. Stronger signed full-cutoff and ceiling-half
+bounds remain available. The counterexample is the existing actual resonant
+gap; this step verifies its implication for the exact printed sum. It makes
+no claim that every separately chosen cutoff for a fixed input fails.
+
+Three public examples distinguish a negative-index gap from this positive
+tail, retain arbitrary source weights at p=3, and exhibit an actual positive
+intrinsic gap violating the printed budget beyond every proposed cutoff.
 
 ## Equation (1.13), the P/Q equations, and the original derivative domain
 

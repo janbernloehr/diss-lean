@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: the printed positive-index displacement sum
+## Current milestone: the printed positive-index weighted gap sum
+
+Proposition 6.3's weighted gap sum now has the printed range n≥N.
+The intrinsic contour gap and any representing counted root pair give the
+same positive-index tail. For every source weight and finite p>1, the
+corrected estimate retains actual source spectra and one open convex
+neighborhood controlling every later cutoff.
+
+At p=2 and unit weight, the actual positive-gap witness refutes the printed
+locally uniform budget for both intrinsic and labeled positive-index sums.
+Three examples check the signed/positive distinction, arbitrary weights
+at p=3, and a violating intrinsic gap beyond every proposed cutoff.
+The [Section 6 audit](coverage/SECTION_6.md) gives the exact statements.
+The repeated ξ⁺ display in Lemma 6.9 remains a separate integration step;
+the exact 2014 comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,074 build jobs, 7,043
+public examples, and a transitive axiom audit of 39,760 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,041 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the printed positive-index displacement sum
 
 Proposition 6.1's page-35 display sums over n≥N. The new positive-index
 tail retains this literal range. For every finite p>1, it satisfies a
