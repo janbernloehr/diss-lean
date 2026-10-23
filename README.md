@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.9 now treats the printed positive-index sum with
-the first root repeated. Lean proves corrected bounds for both positive
-sums and refutes the literal printed budget regardless of root ordering.
+Latest step: Proposition 6.1 now has complete canonical eigenvalue labels
+for arbitrary period-two input. Lean preserves central multiplicities,
+global ordering, and the corrected locally uniform asymptotic bounds.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

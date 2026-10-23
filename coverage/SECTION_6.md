@@ -35,10 +35,55 @@ and ceiling-half source theorems below now establish the corresponding
 corrected formulas with T=‖R_N φ‖ and T=‖R_ceiling(N/2) φ‖.
 The tails sum both root displacements over all integer indices with |n|≥N.
 
-The qualitative theorem selects actual pairs at sufficiently distant
-indices. Its finitely many remaining entries are unspecified. Their values
-do not affect ℓᵖ membership; the theorem does not assert a new global central
-labeling or continuity of individual eigenvalue labels.
+The earlier qualitative theorem selects actual pairs at sufficiently distant
+indices and leaves its finite central entries unspecified. Their values do
+not affect ℓᵖ membership. The complete canonical construction below now fills
+these entries; continuity of individual eigenvalue labels is not asserted.
+
+## Proposition 6.1: complete canonical labels for arbitrary period-two input
+
+The source assertion concerns the full eigenvalue sequences. The earlier
+high-pair theorem left the finite central entries unspecified; existence
+of the earlier canonical endpoints also required even Fourier support.
+The following construction now covers every raw period-two input at finite
+p>1, preserving the original component-sum norm and every Fourier frequency.
+
+[SourcePeriodTwoCompleteLabels.lean](../NLS/ZakharovShabat/SourcePeriodTwoCompleteLabels.lean)
+splices the actual central root multiset into actual distant pairs. The
+central and distant multiplicities and both ℓᵖ displacement classes are
+retained. `sourceProposition6_1_complete_asymptotics` also preserves the
+corrected signed budget and arbitrarily small high tails on one open convex
+neighborhood containing the input and zero. Its tail cutoff K is strictly
+larger than the central cutoff N₀, whose block includes |n|≤N₀.
+
+[SourcePeriodTwoOrderedLabels.lean](../NLS/ZakharovShabat/SourcePeriodTwoOrderedLabels.lean)
+orders the central multiset and each distant pair lexicographically.
+`rootDisplacementPowerTail_eq_of_high_pair_multiset` proves that this sorting
+preserves the symmetric displacement sum past the central cutoff.
+`sourceProposition6_1_ordered_asymptotics` therefore gives the same corrected
+budget and local smallness for complete globally ordered labels.
+
+[SourcePeriodTwoCanonicalEndpoints.lean](../NLS/ZakharovShabat/SourcePeriodTwoCanonicalEndpoints.lean)
+fixes the sequences `sourcePeriodTwoCanonicalLeft` and
+`sourcePeriodTwoCanonicalRight`. Complete ordered labelings agree even at
+different central cutoffs, so these labels do not depend on the finite
+enumeration used to construct them. They exhaust the original source-pencil
+spectrum, retain every algebraic multiplicity of its coefficient-preserving
+periodic realization, and have ℓᵖ displacements. At even-support inputs they
+agree with the existing canonical periodic endpoints at that same input.
+
+`sourceProposition6_1_canonical_asymptotics` transfers the locally uniform
+corrected signed estimates to these fixed sequences, including complete
+central data at a common cutoff for the neighborhood. Domination also
+gives the literal positive-index sums. The three public examples cover an
+actual odd Fourier mode, the positive-index estimate at p=3, and the free
+spectrum with both copies of each eigenvalue.
+
+This supplies the complete ordered sequences for the qualitative assertion;
+it does not restore the false printed quantitative budget. Individual-label
+continuity, arbitrary-input parity assignments, and sharp constants are not
+asserted. The exact 2014 construction comparison and G.2 norm qualification
+remain separate open items.
 
 ## Proposition 6.1: refutation of the printed quantitative bound
 

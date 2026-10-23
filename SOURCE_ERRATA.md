@@ -2494,6 +2494,14 @@ the discrete convention floor(N/2) in the earlier API. The subsequent
 `sourceProposition6_1_corrected_ceilingHalf` and full-cutoff theorem prove
 stronger corrected estimates. See `coverage/SECTION_6.md` for exact scope.
 
+The complete canonical period-two labels are now supplied by
+[SourcePeriodTwoCanonicalEndpoints.lean](NLS/ZakharovShabat/SourcePeriodTwoCanonicalEndpoints.lean).
+`sourceProposition6_1_canonical_asymptotics` retains every actual central
+root and multiplicity, global lexicographic order, and locally small corrected
+tails for fixed canonical sequences at arbitrary raw period-two input.
+This closes a labeling gap in the formalization of the qualitative assertion;
+it does not change the counterexample to the printed quantitative estimate.
+
 `not_sourceLemma6_9_printed_pair_sum` negates the Hilbert budget for the
 full signed sum of both labels satisfying `SourceResonantRootPair`. These
 are actual original determinant roots with exact scalar analytic orders.

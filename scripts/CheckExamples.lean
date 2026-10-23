@@ -65475,3 +65475,59 @@ example (C : ℝ) (hC : 0 ≤ C) (U : Set (CoeffPair 2))
   intro ξ η hpair hs
   exact (hbad (ξ n) (η n) hpair).trans_le
     (sourcePeriodTwoRoot_sq_le_positive_pair_tail n n le_rfl ξ ξ (ξ n) (Or.inl rfl) hs)
+
+/-! Complete canonical labels for original period-two input, including odd Fourier modes. -/
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A concrete odd Fourier mode is covered without an even-support hypothesis.
+example :
+    let φ : CoeffPair 3 := WithLp.toLp 3 ((lp.single 3 1 1 : Coeff 3),0)
+    CoeffPair.toMax 3 φ ∉ pairParitySubspace 0 ∧
+      (∀ n : ℤ,
+        sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) φ n ∉ sourceResolventSet (by norm_num) φ ∧
+        sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) φ n ∉ sourceResolventSet (by norm_num) φ) ∧
+      Memℓp (fun n => sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) φ n-(Real.pi : ℂ)*n) 3 ∧
+      Memℓp (fun n => sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) φ n-(Real.pi : ℂ)*n) 3 := by
+  dsimp only
+  let φ : CoeffPair 3 := WithLp.toLp 3 ((lp.single 3 1 1 : Coeff 3),0)
+  refine ⟨?_,?_,sourcePeriodTwoCanonicalEndpoints_memℓp (by norm_num) (by norm_num) φ⟩
+  · intro heven
+    have h := (Coeff.mem_paritySubspace 0 _).mp ((mem_pairParitySubspace 0 _).mp heven).1 1 (by norm_num)
+    norm_num [CoeffPair.toMax_apply] at h
+  · intro n
+    exact ⟨(sourcePeriodTwoCanonicalEndpoints_exhaustive (by norm_num) (by norm_num) φ _).mpr ⟨n,Or.inl rfl⟩,
+      (sourcePeriodTwoCanonicalEndpoints_exhaustive (by norm_num) (by norm_num) φ _).mpr ⟨n,Or.inr rfl⟩⟩
+
+-- The same canonical labels obey the literal positive-index estimate uniformly.
+example (φ : CoeffPair 3) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ K : ℕ, N₀ < K →
+        let ξ := sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) ψ
+        let η := sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) ψ
+        Summable (sourcePositiveDisplacementPowerTail 3 K ξ η) ∧
+          (∑' n : ℤ, sourcePositiveDisplacementPowerTail 3 K ξ η n) ≤ sourcePeriodTwoDisplacementBudget ψ K ∧
+          (∑' n : ℤ, sourcePositiveDisplacementPowerTail 3 K ξ η n) < ε := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hr⟩ := sourceProposition6_1_canonical_asymptotics (by norm_num) (by norm_num) φ hε
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ K hK
+  obtain ⟨hs,hb,hsmall⟩ := (hr ψ hψ).2 K hK
+  have hle := tsum_sourcePositiveDisplacementPowerTail_le 3 K _ _ hs
+  exact ⟨summable_sourcePositiveDisplacementPowerTail 3 K _ _ hs,hle.trans hb,hle.trans_lt hsmall⟩
+
+-- At zero the new labels agree with the existing free spectrum, including both copies.
+example (n : ℤ) :
+    sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) (0 : CoeffPair 3) n = (Real.pi : ℂ)*n ∧
+    sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) (0 : CoeffPair 3) n = (Real.pi : ℂ)*n ∧
+    (∑ᶠ k : ℤ, ({sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) (0 : CoeffPair 3) k,
+      sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) (0 : CoeffPair 3) k} : Multiset ℂ).count
+        ((Real.pi : ℂ)*n)) = 2 := by
+  have he := sourcePeriodTwoCanonicalEndpoints_eq_existing (by norm_num) (by norm_num) (0 : CoeffPair 3)
+    (by simp)
+  refine ⟨?_,?_,?_⟩
+  · simpa using congrFun he.1 n
+  · simpa using congrFun he.2 n
+  · rw [sourcePeriodTwoCanonicalEndpoints_global_multiplicity]
+    simpa using periodicAlgebraicMultiplicity_zero (p := 3) (by norm_num) n
+
+end

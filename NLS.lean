@@ -4408,3 +4408,6 @@ import NLS.ZakharovShabat.SourcePositiveDisplacementTail
 import NLS.ZakharovShabat.SourcePositiveGapTail
 import NLS.ZakharovShabat.SourceLemma6_9LiteralSum
 import NLS.ZakharovShabat.SourceLemma6_9PositiveCorrected
+import NLS.ZakharovShabat.SourcePeriodTwoCompleteLabels
+import NLS.ZakharovShabat.SourcePeriodTwoOrderedLabels
+import NLS.ZakharovShabat.SourcePeriodTwoCanonicalEndpoints

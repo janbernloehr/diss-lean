@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: the literal positive-index sums in Lemma 6.9
+## Current milestone: complete canonical period-two labels
+
+Proposition 6.1 now has complete canonical eigenvalue sequences for every
+original period-two input at finite p>1. Actual central root multisets and
+distant pairs are combined and ordered, preserving every algebraic
+multiplicity and both ℓᵖ displacement classes. Uniqueness makes the labels
+independent of the chosen central cutoff; even-support inputs agree with
+the existing canonical periodic labels.
+
+The same fixed sequences satisfy the corrected locally uniform tail bound
+and arbitrarily small high tails. Three public examples cover an odd Fourier
+mode, the exact positive-index estimate at p=3, and both copies of each free
+eigenvalue. The [Section 6 audit](coverage/SECTION_6.md) records the strict
+tail-cutoff condition and the absence of a label-continuity claim.
+The exact 2014 comparison and G.2 norm qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,079 build jobs, 7,049
+public examples, and a transitive axiom audit of 39,799 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,059 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the literal positive-index sums in Lemma 6.9
 
 Lemma 6.9's page-43 display uses n≥N and repeats the first root's
 displacement. Both features are now explicit. The corrected theorem
