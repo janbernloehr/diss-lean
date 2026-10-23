@@ -65865,3 +65865,48 @@ example (φ : realTypeSourceSubmodule 2)
   exact e.injective (Subsingleton.elim (e ψ) (e χ))
 
 end
+
+/-! Reflection symmetry: the original norm, fixed coefficients, and actual endpoint prescriptions. -/
+
+section
+local instance reflectionSymmetryExample_factThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Reflection is an involution preserving the original non-Hilbert source norm as well.
+example (φ : CoeffPair 3) :
+    ‖sourceSpatialReflection φ‖ = ‖φ‖ ∧
+      sourceSpatialReflection (sourceSpatialReflection φ) = φ :=
+  ⟨sourceSpatialReflection.norm_map φ,sourceSpatialReflection_involutive φ⟩
+
+-- Real first Fourier coefficients give zero signs and actual signed-gap coordinates at p=3.
+example (φ : realTypeSourceSubmodule 3)
+    (hφ : ∀ n : ℤ, starRingEnd ℂ (φ.val.fst n) = φ.val.fst n) :
+    ∀ n, sourceDirichletSign (by simp) (by norm_num) φ n = 0 ∧
+      |(sourceSignedGapSequence (by simp) (by norm_num) φ.val n).re| =
+        (canonicalPeriodicGap (by simp) (by norm_num)
+          (periodOnePotential φ.val) (periodOnePotential_mem _) n).re := by
+  have hfix : realSourceSpatialReflection φ = φ :=
+    Subtype.ext ((sourceSpatialReflection_eq_self_iff φ.val φ.property).mpr hφ)
+  intro n
+  exact ⟨(realSourceSpatialReflection_eq_self_iff_signs_zero (by simp) (by norm_num) φ).mp hfix n,
+    abs_sourceSignedGapSequence_re_of_reflection_fixed (by simp) (by norm_num) φ hfix n⟩
+
+-- Every Hilbert isospectral set has exactly one symmetric representative with all left endpoints.
+example (φ : realTypeSourceSubmodule 2) :
+    ∃! ψ : sourceIsospectralSet (by simp) φ,
+      realSourceSpatialReflection ψ.val = ψ.val ∧ ∀ n,
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val.val n =
+          canonicalPeriodicLeft (by simp) (by norm_num)
+            (periodOnePotential φ.val) (periodOnePotential_mem _) n := by
+  let μ n := (canonicalPeriodicLeft (by simp) (by norm_num)
+    (periodOnePotential φ.val) (periodOnePotential_mem _) n).re
+  have he n : (μ n : ℂ) = canonicalPeriodicLeft (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n := by
+    apply Complex.ext
+    · rfl
+    · simpa only [Complex.ofReal_im] using
+        (canonicalPeriodicEndpoints_im_eq_zero_of_realType (by simp) (by norm_num) _
+          (periodOnePotential_mem _) (isRealType_periodOnePotential φ.val φ.property) n).1.symm
+  simpa only [he] using existsUnique_symmetric_source_with_endpoint_dirichletData φ μ
+    (fun _ => Or.inl rfl)
+
+end

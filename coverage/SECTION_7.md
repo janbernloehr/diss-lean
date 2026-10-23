@@ -306,6 +306,53 @@ embedding or prove a separate covering-dimension invariant for infinite
 products. Squared-gap determination of the spectrum, the exact cited 2014
 comparison and the G.2 norm interpretation remain separate requirements.
 
+## Reflection symmetry and actual signed gap coordinates
+
+The remaining squared-gap uniqueness claim is being approached through the
+signed-gap inverse problem. The primary comparison is Grebert–Guillot,
+*Gaps of one dimensional periodic AKNS systems* (1993), printed p.487,
+Theorem 2.5 and equations (2.14)–(2.16). The
+[digitized primary volume](https://gdz.sub.uni-goettingen.de/id/PPN481110151_0005)
+also contains Theorems 2.6 and 3.1, whose inverse-map conclusions remain
+separate obligations. Its Theorem 3.7 on p.501 explicitly assumes H1
+regularity; that hypothesis is not silently dropped.
+
+[ClassicalSpatialReflection.lean](../NLS/ZakharovShabat/ClassicalSpatialReflection.lean)
+proves the literal interval reflection with component swap from ODE
+uniqueness. For original monodromy entries a,b,c,d, reflection gives
+a,-c,-b,d. It preserves the normalized discriminant and both ordinary
+characteristics, and negates the anti-discriminant.
+
+[SourceSpatialReflection.lean](../NLS/ZakharovShabat/SourceSpatialReflection.lean)
+defines frequency reversal with component swap as an involutive isometry
+in the original source norm. Finite Fourier identities and density extend
+the spectral identities to every finite p>1. Real type is preserved; its
+fixed slice is exactly the real-type sources whose first Fourier
+coefficients are real.
+
+[SourceReflectionSymmetry.lean](../NLS/ZakharovShabat/SourceReflectionSymmetry.lean)
+proves that every indexed periodic endpoint and both ordinary boundary
+roots are preserved, while Dirichlet signs reverse. Signed Dirichlet
+uniqueness identifies the fixed slice with sources having all Dirichlet
+roots at periodic endpoints. Every endpoint prescription has a unique
+symmetric Hilbert representative in the actual isospectral set, without
+a finite-gap assumption.
+
+[SourceSymmetricSignedGaps.lean](../NLS/ZakharovShabat/SourceSymmetricSignedGaps.lean)
+proves that Dirichlet and Neumann roots occupy opposite endpoints on the
+fixed slice. Their full difference sequence belongs to the original lp
+coefficient space and is analytic on a common complex neighborhood of the
+entire real-type locus. On the fixed slice its square is the actual squared
+periodic gap, and its absolute real value is exactly the gap length.
+Collapsed gaps and every central signed index are included.
+
+Public examples check reflection in the p=3 norm, actual signed gaps from
+real Fourier coefficients, and the unique Hilbert representative with all
+Dirichlet roots prescribed at left endpoints. Global injectivity of the
+signed-gap map is still unproved. Consequently these prerequisites do not
+yet settle squared-gap determination of the spectrum. The exact 2014
+comparison and the G.2 norm interpretation remain qualified.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

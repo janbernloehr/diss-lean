@@ -4435,3 +4435,7 @@ import NLS.ZakharovShabat.SourceDirichletRealSheetCoordinates
 import NLS.ZakharovShabat.SourceSignedDirichletParametrization
 import NLS.FunctionalAnalysis.FiniteCircleProductManifold
 import NLS.ZakharovShabat.SourceHilbertFiniteGapManifold
+import NLS.ZakharovShabat.ClassicalSpatialReflection
+import NLS.ZakharovShabat.SourceSpatialReflection
+import NLS.ZakharovShabat.SourceReflectionSymmetry
+import NLS.ZakharovShabat.SourceSymmetricSignedGaps

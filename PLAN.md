@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: finite-gap isospectral manifold dimension
+## Current milestone: reflection symmetry and signed gaps
+
+Spatial reflection is now an involutive isometry in the original source
+norm. It preserves the actual periodic and ordinary boundary labels and
+reverses Dirichlet signs. Its fixed slice is exactly the endpoint Dirichlet
+locus, and every endpoint prescription has a unique symmetric Hilbert
+representative in its actual isospectral set.
+
+On that slice, Dirichlet and Neumann roots occupy opposite endpoints.
+Their difference is the actual signed gap length. The full sequence is
+analytic in the coefficient norm on a complex neighborhood of real type;
+its square is the actual squared periodic gap for every finite p>1.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the primary 1993
+comparison and the remaining global signed-gap inverse problem. These
+prerequisites do not yet prove squared-gap spectral uniqueness. The exact
+2014 comparison and G.2 norm interpretation remain open.
+
+Validation: `./scripts/check.sh` passes with 8,113 build jobs, 7,073
+public examples, and a transitive axiom audit of 40,105 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,129 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: finite-gap isospectral manifold dimension
 
 Every actual finite-gap Hilbert isospectral set now has a topological
 manifold atlas whose Euclidean dimension equals its number of open gaps.

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: every actual finite-gap Hilbert isospectral set is a
-topological manifold whose Euclidean dimension is exactly its number of
-open periodic gaps, including the zero-gap case.
+Latest step: reflection symmetry identifies the actual endpoint Dirichlet
+locus. Each endpoint prescription has a unique symmetric Hilbert representative,
+and the analytic boundary-difference sequence gives its actual signed gaps.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
