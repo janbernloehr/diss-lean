@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: compact signed-gap derivatives and finite kernels
+## Current milestone: generic opening of every periodic gap
+
+Every actual periodic gap is simultaneously open on a dense G-delta
+and residual set of real sources, for every finite exponent p>1. Hence
+infinitely many gaps are open generically, as stated on printed p.45.
+
+Arbitrarily small perturbations can open every gap and retain any given
+open condition. The actual finite-gap locus is dense but meagre in this
+same original source topology. Public examples find finite-gap and
+all-open-gap sources in the same arbitrarily small neighborhood.
+
+The [Section 7 audit](coverage/SECTION_7.md) distinguishes generic gap
+count from the separate infinite-dimensional topological invariant,
+which remains unfinished. Global squared-gap uniqueness, exact 2014
+comparison and G.2 norm interpretation also remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,127 build jobs, 7,088
+public examples, and a transitive axiom audit of 40,178 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,168 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: compact signed-gap derivatives and finite kernels
 
 The actual symmetric Hilbert signed-gap derivative is now proved to
 have the form twice the identity plus a compact operator at every source.

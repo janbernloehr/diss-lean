@@ -4451,3 +4451,5 @@ import NLS.ZakharovShabat.SourceSpectralSequenceCompactDerivative
 import NLS.ZakharovShabat.SymmetricSignedGapCompactDerivative
 import NLS.FunctionalAnalysis.CompactScalarPerturbation
 import NLS.ZakharovShabat.SymmetricSignedGapFredholm
+import NLS.ZakharovShabat.SourceGenericOpenGaps
+import NLS.ZakharovShabat.SourceGenericGapApproximation

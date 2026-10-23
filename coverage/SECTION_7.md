@@ -491,6 +491,31 @@ Fredholm index-zero formula, or the global inverse theorem. The small-source
 uniqueness theorem remains unconditional within its specified source ball.
 Exact 2014 comparison and the G.2 norm interpretation remain unresolved.
 
+## Every gap is open generically
+
+The statement on printed p.45 that the number of noncollapsed gaps is
+infinite generically is now proved in the original real source topology,
+for every finite p>1. The conclusion is stronger: every indexed periodic
+gap is simultaneously open on a dense G-delta and residual set.
+
+[SourceGenericOpenGaps.lean](../NLS/ZakharovShabat/SourceGenericOpenGaps.lean)
+uses completeness of the real Banach source space and the previously
+proved dense open one-gap loci. Their countable intersection is a dense
+G-delta. Every source in that intersection has infinitely many open gaps.
+
+[SourceGenericGapApproximation.lean](../NLS/ZakharovShabat/SourceGenericGapApproximation.lean)
+opens all gaps by an arbitrarily small perturbation while retaining any
+given open condition. It also proves that the actual finite-gap locus is
+meagre, while retaining its existing density theorem. The public examples
+find both a finite-gap source and a distinct all-open-gap source in the
+same arbitrarily small neighborhood.
+
+This settles genericity of the gap count. The actual product-circle
+isospectral model and the finite-gap manifold dimension are already
+proved. A separate topological dimension invariant for infinitely many
+circle factors is still outstanding. Global squared-gap uniqueness,
+exact 2014 comparison and the G.2 norm interpretation remain unresolved.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

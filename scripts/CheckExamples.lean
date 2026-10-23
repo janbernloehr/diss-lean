@@ -66064,3 +66064,36 @@ example
   have ho := isOpenMap_symmetricSourceSignedGapMap_of_derivative_injective hi
   exact source_isospectral_of_squared_gaps_of_symmetricSignedGap_injective
     ((symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num) ho).mpr hf) φ ψ hg
+
+/-! Generic opening of every actual gap and finite-gap approximation coexist. -/
+
+-- An arbitrarily small perturbation opens every gap, including all distant signed indices.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : realTypeSourceSubmodule p, ‖ψ.val-φ.val‖ < ε ∧ ∀ n : ℤ,
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ.val) (periodOnePotential_mem _) n ≠ 0 := by
+  obtain ⟨ψ,hψ,_,hclose⟩ := exists_mem_sourceAllOpenGapRealLocus_mem_open
+    hp hp1 Set.univ isOpen_univ φ (Set.mem_univ _) ε hε
+  exact ⟨ψ,hclose,Set.mem_iInter.mp hψ⟩
+
+-- In the same arbitrarily small neighborhood, both finite-gap and all-open-gap sources occur.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ ξ : realTypeSourceSubmodule p,
+      ψ ∈ sourceFiniteGapLocus hp hp1 ∧ ξ ∈ sourceAllOpenGapRealLocus hp hp1 ∧
+      ‖ψ.val-φ.val‖ < ε ∧ ‖ξ.val-φ.val‖ < ε ∧ ψ ≠ ξ := by
+  obtain ⟨ψ,hψ,hclose⟩ := exists_mem_sourceFiniteGapLocus_norm_sub_lt hp hp1 φ ε hε
+  obtain ⟨ξ,hξ,_,hclose'⟩ := exists_mem_sourceAllOpenGapRealLocus_mem_open
+    hp hp1 Set.univ isOpen_univ φ (Set.mem_univ _) ε hε
+  refine ⟨ψ,ξ,hψ,hξ,hclose,hclose',?_⟩
+  rintro rfl
+  exact infinite_open_gaps_of_mem_sourceAllOpenGapRealLocus hp hp1 ψ hξ hψ
+
+-- Finite-gap sources remain dense, even though generic sources have infinitely many open gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    Dense (sourceFiniteGapLocus hp hp1) ∧ IsMeagre (sourceFiniteGapLocus hp hp1) ∧
+      ∀ᶠ φ : realTypeSourceSubmodule p in residual (realTypeSourceSubmodule p),
+        {n : ℤ | canonicalPeriodicGap hp hp1 (periodOnePotential φ.val)
+          (periodOnePotential_mem _) n ≠ 0}.Infinite :=
+  ⟨dense_sourceFiniteGapLocus hp hp1,isMeagre_sourceFiniteGapLocus hp hp1,
+    eventually_residual_infinite_source_open_gaps hp hp1⟩
