@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: reflection symmetry and signed gaps
+## Current milestone: local analytic signed-gap inverse
+
+The actual signed-gap map now has an analytic two-sided local inverse
+near the zero Hilbert source. Explicit real Fourier coordinates parametrize
+the entire symmetric slice, and the derivative at zero is exactly twice
+the identity; the inverse derivative is one half of the identity.
+
+Every sufficiently small nonnegative Hilbert gap sequence is realized as
+the literal actual periodic gaps of a symmetric real source. Finite support
+gives actual finite-gap sources, and arbitrary small signed data realize
+their squares as the actual squared gaps.
+
+The [Section 7 audit](coverage/SECTION_7.md) distinguishes this zero-source
+local result from the remaining global signed-gap inverse problem.
+The coordinate parametrization and real analyticity hold for finite p>1;
+the local inverse is proved at p=2. Squared-gap spectral uniqueness, the
+exact 2014 comparison and G.2 norm interpretation remain open.
+
+Validation: `./scripts/check.sh` passes with 8,116 build jobs, 7,076
+public examples, and a transitive axiom audit of 40,135 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,137 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: reflection symmetry and signed gaps
 
 Spatial reflection is now an involutive isometry in the original source
 norm. It preserves the actual periodic and ordinary boundary labels and

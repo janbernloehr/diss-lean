@@ -353,6 +353,42 @@ signed-gap map is still unproved. Consequently these prerequisites do not
 yet settle squared-gap determination of the spectrum. The exact 2014
 comparison and the G.2 norm interpretation remain qualified.
 
+## An analytic local signed-gap inverse at zero
+
+The signed-gap map now has an explicit analytic inverse near the free
+Hilbert source. This is the zero-source local case of the inverse problem
+needed for squared-gap spectral uniqueness; it does not establish the
+global derivative isomorphism in Grebert–Guillot Theorem 2.6 or the global
+injectivity in their Theorem 3.1.
+
+[SymmetricSourceCoordinates.lean](../NLS/ZakharovShabat/SymmetricSourceCoordinates.lean)
+parametrizes exactly the actual reflection-fixed real-type slice by real
+Fourier sequences. The second component is the chosen real sequence, and
+the first reverses its integer indices. The map is continuous and real
+linear, has an explicit continuous left inverse, and reconstructs every
+symmetric source. In these coordinates the actual signed-gap map is real
+analytic everywhere for each finite p>1.
+
+[SourceSignedGapFreeDerivative.lean](../NLS/ZakharovShabat/SourceSignedGapFreeDerivative.lean)
+evaluates the derivative of the full Hilbert coefficient-valued signed-gap
+sequence. At zero its nth coordinate is exactly the sum of the reversed
+first Fourier direction and the second direction.
+
+[SymmetricSignedGapLocalInverse.lean](../NLS/ZakharovShabat/SymmetricSignedGapLocalInverse.lean)
+proves that the real-coordinate derivative is twice the identity. The
+Banach inverse function theorem supplies an analytic two-sided inverse at
+zero, with derivative one half of the identity. Every sufficiently small
+real signed-gap sequence is realized by an actual symmetric Hilbert
+source. In particular every sufficiently small nonnegative Hilbert
+sequence is its literal actual periodic gap sequence.
+
+Public examples establish finite-gap realization for small nonnegative
+data with finite support, realization of the squares of arbitrarily
+signed small data, and uniqueness in a neighborhood of zero in the
+symmetric Fourier coordinates. All inverse and realization statements
+here concern p=2. No global signed-gap injectivity, squared-gap spectral
+uniqueness, exact 2014 comparison, or G.2 norm resolution is asserted.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

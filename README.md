@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: reflection symmetry identifies the actual endpoint Dirichlet
-locus. Each endpoint prescription has a unique symmetric Hilbert representative,
-and the analytic boundary-difference sequence gives its actual signed gaps.
+Latest step: the actual signed-gap map has an analytic local inverse
+near zero. Every sufficiently small nonnegative Hilbert gap sequence is
+realized by a symmetric real source, with finite support giving finite gaps.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

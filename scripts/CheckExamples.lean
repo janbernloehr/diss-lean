@@ -65910,3 +65910,45 @@ example (φ : realTypeSourceSubmodule 2) :
     (fun _ => Or.inl rfl)
 
 end
+
+/-! Actual local signed-gap inversion: finite-gap realization, arbitrary signs, and local uniqueness. -/
+
+-- Small nonnegative data with finite support give actual finite-gap symmetric potentials.
+example : ∃ ε : ℝ, 0 < ε ∧ ∀ γ : RealCoeff 2, ‖γ‖ < ε →
+    (∀ n, 0 ≤ γ n) → (Function.support γ).Finite →
+    ∃ φ : realTypeSourceSubmodule 2,
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      realSourceSpatialReflection φ = φ ∧ ∀ n,
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem _) n = (γ n : ℂ) := by
+  obtain ⟨ε,hε,h⟩ := exists_small_symmetric_periodic_gap_realization
+  refine ⟨ε,hε,fun γ hγ hnonneg hsupport => ?_⟩
+  obtain ⟨φ,hφ,he⟩ := h γ hγ hnonneg
+  refine ⟨φ,?_,hφ,he⟩
+  apply hsupport.subset
+  intro n hn hz
+  apply hn
+  rw [he n,hz,Complex.ofReal_zero]
+
+-- Arbitrarily chosen small signed data realize their literal squares as the actual squared gaps.
+example : ∃ ε : ℝ, 0 < ε ∧ ∀ b : RealCoeff 2, ‖b‖ < ε →
+    ∃ φ : realTypeSourceSubmodule 2, realSourceSpatialReflection φ = φ ∧ ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem _) n)^2 = (b n : ℂ)^2 := by
+  obtain ⟨ε,hε,h⟩ := exists_small_symmetric_signed_gap_realization
+  refine ⟨ε,hε,fun b hb => ?_⟩
+  obtain ⟨φ,hφ,he⟩ := h b hb
+  refine ⟨φ,hφ,fun n => ?_⟩
+  rw [← sourceSignedGapSequence_sq_of_reflection_fixed (by simp) (by norm_num) φ hφ n,he n]
+
+-- The inverse gives uniqueness on a neighborhood of zero in the actual symmetric Fourier coordinates.
+example : ∃ ε : ℝ, 0 < ε ∧ ∀ a b : RealCoeff 2,
+    ‖a‖ < ε → ‖b‖ < ε →
+    symmetricSourceSignedGapMap (by simp) (by norm_num) a =
+      symmetricSourceSignedGapMap (by simp) (by norm_num) b → a = b := by
+  obtain ⟨G,_,_,hl,_,_⟩ := exists_symmetricSourceSignedGap_localInverse_zero
+  obtain ⟨ε,hε,hball⟩ := Metric.mem_nhds_iff.mp hl
+  refine ⟨ε,hε,fun a b ha hb he => ?_⟩
+  have ha' := hball (show a ∈ Metric.ball (0 : RealCoeff 2) ε by simpa [Metric.mem_ball,dist_eq_norm] using ha)
+  have hb' := hball (show b ∈ Metric.ball (0 : RealCoeff 2) ε by simpa [Metric.mem_ball,dist_eq_norm] using hb)
+  exact ha'.symm.trans ((congrArg G he).trans hb')

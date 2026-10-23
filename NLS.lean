@@ -4439,3 +4439,6 @@ import NLS.ZakharovShabat.ClassicalSpatialReflection
 import NLS.ZakharovShabat.SourceSpatialReflection
 import NLS.ZakharovShabat.SourceReflectionSymmetry
 import NLS.ZakharovShabat.SourceSymmetricSignedGaps
+import NLS.ZakharovShabat.SymmetricSourceCoordinates
+import NLS.ZakharovShabat.SourceSignedGapFreeDerivative
+import NLS.ZakharovShabat.SymmetricSignedGapLocalInverse
