@@ -2571,6 +2571,15 @@ Their equality with the contour midpoint and squared gap is proved only
 past one common cutoff. No central single-circle identification or repair
 of the printed weighted budget is inferred.
 
+The stronger corrected full-cutoff and ceiling-half estimates now also
+hold for the fixed canonical sequences in
+[SourcePeriodTwoCanonicalCutoffs.lean](NLS/ZakharovShabat/SourcePeriodTwoCanonicalCutoffs.lean)
+and [SourceCanonicalWeightedGapTails.lean](NLS/ZakharovShabat/SourceCanonicalWeightedGapTails.lean).
+This includes both signed and printed positive-index ranges, locally small
+weighted gap tails, and weighted ℓᵖ regularity of the actual central and
+distant canonical gaps. The leading Fourier-tail term is still necessary;
+these transfers do not restore the false printed budget.
+
 ## Lemma 6.7(ii): diagonal reality needs the hypothesis used in its proof
 
 Source: dissertation, printed pp. 40–41. The displayed part (ii) states

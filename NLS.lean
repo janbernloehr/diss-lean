@@ -4412,3 +4412,5 @@ import NLS.ZakharovShabat.SourcePeriodTwoCompleteLabels
 import NLS.ZakharovShabat.SourcePeriodTwoOrderedLabels
 import NLS.ZakharovShabat.SourcePeriodTwoCanonicalEndpoints
 import NLS.ZakharovShabat.SourcePeriodTwoCanonicalMidpointGap
+import NLS.ZakharovShabat.SourcePeriodTwoCanonicalCutoffs
+import NLS.ZakharovShabat.SourceCanonicalWeightedGapTails

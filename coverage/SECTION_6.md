@@ -709,6 +709,36 @@ tail is still necessary; all printed-bound counterexamples above remain.
 Public examples check the odd boundary N=3 and original p=3 spectral,
 intrinsic-gap and coefficient-supremum conclusions.
 
+## Stronger cutoff bounds for the fixed canonical sequences
+
+[SourcePeriodTwoCanonicalCutoffs.lean](../NLS/ZakharovShabat/SourcePeriodTwoCanonicalCutoffs.lean)
+transfers the stronger corrected full-Fourier-cutoff displacement estimate
+to the complete canonical eigenvalue sequences. The signed sum over |n|≥K
+and the literal positive-index sum over n≥K satisfy the full-cutoff budget;
+the positive sum also satisfies the ceiling-half budget on that same
+neighborhood. These budgets retain the additive leading Fourier-tail term.
+
+[SourceCanonicalWeightedGapTails.lean](../NLS/ZakharovShabat/SourceCanonicalWeightedGapTails.lean)
+identifies both canonical gap-tail functions with the corresponding intrinsic
+contour gap tails beyond one common cutoff. For every source weight and
+finite p>1, `sourceProposition6_3_canonical_signed` and
+`sourceProposition6_3_canonical_positive` give the full-cutoff and ceiling-half
+corrected bounds and arbitrarily small tails on one open convex neighborhood
+containing the original weighted input and zero.
+
+`sourceProposition6_3_canonical_gap_mem` proves weighted ℓᵖ regularity of
+the actual canonical gap at every integer index. Its finite central part
+uses actual ordered eigenvalue pairs; it is not defined by choosing square
+roots of the individual central-circle contour quantities. The tail proof
+uses the eventual contour identification and adds the finite central part.
+
+The cutoff condition remains K>N₀. No even-support assumption or normalization
+w(0)=1 is required. Three public examples check a weight with w(0)=2, the
+vanishing of both free gap tails, and simultaneous positive displacement and
+gap bounds for the same fixed labels on a single original-input neighborhood.
+The printed quantitative counterexamples and the qualifications concerning
+central contours, individual-label continuity, and sharp constants remain.
+
 ## Remaining source audit
 
 The prior ceiling-cutoff qualification is now closed for the corrected

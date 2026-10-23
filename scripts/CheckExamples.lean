@@ -65568,3 +65568,50 @@ example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
   simp [sourcePeriodTwoCanonicalMidpoint,sourcePeriodTwoCanonicalGap,Complex.add_im,Complex.sub_im,h.1,h.2]
 
 end
+
+/-! Stronger source estimates for fixed complete canonical labels. -/
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The qualitative weighted gap result does not normalize the weight at zero.
+example (φ : WeightedCoeffPair (SpectralWeight.constant 2 (by norm_num)).toWeight 3) :
+    Memℓp (fun n : ℤ => (2 : ℂ) * sourcePeriodTwoCanonicalGap (by norm_num) (by norm_num)
+      (sourceWeightedPeriodTwoInput (SpectralWeight.constant 2 (by norm_num)) φ) n) 3 := by
+  simpa using sourceProposition6_3_canonical_gap_mem (by norm_num) (by norm_num)
+    (SpectralWeight.constant 2 (by norm_num)) φ
+
+-- At zero input both canonical weighted signed and positive gap tails vanish.
+example (w : SpectralWeight) (K : ℕ) :
+    let ξ := sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num)
+      (sourceWeightedPeriodTwoInput w (0 : WeightedCoeffPair w.toWeight 3))
+    let η := sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num)
+      (sourceWeightedPeriodTwoInput w (0 : WeightedCoeffPair w.toWeight 3))
+    rootGapPowerTail 3 w K ξ η = 0 ∧ sourcePositiveRootGapPowerTail 3 w K ξ η = 0 := by
+  have he := sourcePeriodTwoCanonicalEndpoints_eq_existing (by norm_num) (by norm_num) (0 : CoeffPair 3) (by simp)
+  constructor <;> funext n <;>
+    simp [rootGapPowerTail,sourcePositiveRootGapPowerTail,he.1,he.2]
+
+-- Displacement and unit-weight gap bounds hold for the same canonical labels on one neighborhood.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ K : ℕ, N₀ < K →
+        let ξ := sourcePeriodTwoCanonicalLeft (by norm_num) (by norm_num) ψ
+        let η := sourcePeriodTwoCanonicalRight (by norm_num) (by norm_num) ψ
+        (∑' n : ℤ, sourcePositiveDisplacementPowerTail 3 K ξ η n) ≤ sourcePeriodTwoDisplacementBudget_fullCutoff ψ K ∧
+        (∑' n : ℤ, sourcePositiveRootGapPowerTail 3 SpectralWeight.one K ξ η n) ≤
+          rootGapBudget_fullCutoff SpectralWeight.one (unitWeightedPairEquiv ψ) K := by
+  have he (ψ : CoeffPair 3) : sourceWeightedPeriodTwoInput SpectralWeight.one (unitWeightedPairEquiv ψ) = ψ := by
+    apply (CoeffPair.toMax 3).injective
+    rw [toMax_sourceWeightedPeriodTwoInput,weightedBaseToPair_unitWeightedPairEquiv]
+  have hg := sourceUnitWeightedUniformPullback unitWeightedPairEquiv φ _
+    (sourceProposition6_3_canonical_positive (by norm_num) (by norm_num) SpectralWeight.one
+      (unitWeightedPairEquiv φ) (by norm_num : (0 : ℝ) < 1))
+  simp only [he] at hg
+  obtain ⟨Ng,_,V,hoV,hcV,hφV,h0V,hg⟩ := hg
+  obtain ⟨Nd,hNd,W,hoW,hcW,hφW,h0W,hd⟩ := sourceProposition6_1_canonical_positive_cutoffs (by norm_num) (by norm_num) φ
+  refine ⟨max Nd Ng,hNd.trans (le_max_left _ _),W ∩ V,hoW.inter hoV,hcW.inter hcV,
+    ⟨hφW,hφV⟩,⟨h0W,h0V⟩,?_⟩
+  intro ψ hψ K hK
+  exact ⟨(hd ψ hψ.1 K (by omega)).2.1,(hg ψ hψ.2 K (by omega)).2.1⟩
+
+end

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the complete canonical period-two midpoint and gap sequences
-have ℓᵖ asymptotics and locally small power tails. Their high-index values
-agree with the actual contour midpoint and squared gap.
+Latest step: the fixed canonical period-two eigenvalue and gap sequences
+satisfy stronger corrected tail estimates, including the printed positive
+index range and weighted ℓᵖ regularity of the actual full gap sequence.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

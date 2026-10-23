@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: canonical period-two midpoint and gap sequences
+## Current milestone: corrected tails for fixed canonical sequences
+
+The complete canonical period-two eigenvalue sequences now satisfy the
+stronger corrected full-cutoff displacement estimates. Their actual gaps
+satisfy weighted full-cutoff and ceiling-half estimates, for both signed
+and printed positive-index sums, at every finite p>1 and every source weight.
+
+The same weighted neighborhoods give arbitrarily small gap tails. Adding the
+finite central part proves weighted ℓᵖ regularity for the actual canonical
+gap sequence. Public examples check a nonnormalized weight, zero input, and
+simultaneous displacement and gap bounds on a common neighborhood.
+The [Section 6 audit](coverage/SECTION_6.md) records the strict cutoff and
+central-contour qualifications. The exact 2014 comparison and G.2 norm
+qualification remain open.
+
+Validation: `./scripts/check.sh` passes with 8,082 build jobs, 7,055
+public examples, and a transitive axiom audit of 39,835 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,074 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: canonical period-two midpoint and gap sequences
 
 The page-35 midpoint and gap consequences now use the actual canonical
 period-two eigenvalue pairs at every index, including the central spectrum.
