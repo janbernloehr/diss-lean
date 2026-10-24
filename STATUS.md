@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: physical propagation on the full real line
+## Current milestone: the dense minimal whole-line operator
+
+The actual signed whole-line differential expression now defines a
+complex-linear partial operator on the Hermitian L2 space over R.
+Its domain consists exactly of the L2 classes of smooth compactly
+supported pairs and is dense. Its values agree almost everywhere with
+the literal physical expression and the original periodically extended
+potential.
+
+The proof includes exact L2 seminorm preservation on every integer
+period, local square integrability across seams, and global L2 images
+for compactly supported C1 tests. The potential is only required to be
+locally square integrable. The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md)
+records the minimal operator and the remaining closure, self-adjointness,
+spectrum and pure absolute-continuity proofs. The exact 2014 comparison
+and G.2 interval-norm interpretation remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,206 build jobs, 7,146
+public examples, and a transitive axiom audit of 41,096 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,322 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical propagation on the full real line
 
 The actual physical L2 fundamental matrix now extends continuously to
 every real time, using integer powers of its invertible monodromy.

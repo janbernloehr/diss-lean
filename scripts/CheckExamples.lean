@@ -66506,3 +66506,39 @@ example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) :
       (NLS.ZakharovShabat.l2WholeLineSolution u z v)
       =ᵐ[MeasureTheory.volume] (fun t => z • NLS.ZakharovShabat.l2WholeLineSolution u z v t) :=
   NLS.ZakharovShabat.ae_physicalOperator_l2WholeLineSolution u z v
+
+namespace NLS.ZakharovShabat
+noncomputable section WholeLineMinimalOperatorExamples
+open MeasureTheory Set
+
+example (u : IntervalPairL2) (n : ℤ) :
+    eLpNorm (l2WholeLinePotential u) 2 (volume.restrict (Ioc (n : ℝ) ((n : ℝ)+1))) =
+      eLpNorm (intervalL2Representative u) 2 (volume.restrict (Ioc (0 : ℝ) 1)) :=
+  eLpNorm_l2WholeLinePotential_period u n
+
+example (u : IntervalPairL2) {K : Set ℝ} (hK : IsCompact K) :
+    MemLp (l2WholeLinePotential u) 2 (volume.restrict K) :=
+  memLp_l2WholeLinePotential_on_compact u hK
+
+example (u : IntervalPairL2) {f : ℝ → ℂ × ℂ}
+    (hf : ContDiff ℝ 1 f) (hfc : HasCompactSupport f) :
+    MemLp (physicalOperator (l2WholeLinePotential u) f) 2 volume :=
+  memLp_physicalOperator_l2WholeLine_test u hf hfc
+
+example : InnerProductSpace ℂ WholeLineL2 := inferInstance
+
+example : CompleteSpace WholeLineL2 := inferInstance
+
+example : DenseRange wholeLineTestInclusion := denseRange_wholeLineTestInclusion
+
+example (u : IntervalPairL2) :
+    Dense (↑(wholeLineMinimalOperator u).domain : Set WholeLineL2) :=
+  wholeLineMinimalOperator_dense_domain u
+
+example (u : IntervalPairL2) (f : WholeLineTestFunction) :
+    wholeLineMinimalOperator u (wholeLineTestDomainEquiv f) =ᵐ[volume]
+      wholeLineTestPhysicalExpression u f :=
+  wholeLineMinimalOperator_test_ae u f
+
+end WholeLineMinimalOperatorExamples
+end NLS.ZakharovShabat

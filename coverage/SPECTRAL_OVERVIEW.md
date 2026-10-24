@@ -408,3 +408,41 @@ unbounded realization, proving self-adjointness, identifying the
 spectrum, and proving pure
 absolute continuity. Bounded propagation is a prerequisite for that
 work and is not used as a definition of the spectrum.
+
+## The densely defined minimal whole-line physical operator
+
+The construction now reaches an actual partially defined complex-linear
+operator on the Hermitian Hilbert space L2(R; C2). Its domain is exactly
+the L2 classes of smooth compactly supported pairs. Its action is the
+original signed differential expression with the actual periodically
+extended physical L2 potential.
+
+[`L2WholeLinePotentialPeriods.lean`](../NLS/ZakharovShabat/L2WholeLinePotentialPeriods.lean)
+proves that periodization recovers the original unit-interval L2 class
+and preserves its L2 seminorm on every positive or negative integer period.
+
+[`L2WholeLineLocalIntegrability.lean`](../NLS/ZakharovShabat/L2WholeLineLocalIntegrability.lean)
+proves global strong measurability and square integrability on every
+compact subset, including across integer seams. The potential is not
+assumed to be square integrable over the full real line.
+
+[`L2WholeLineTestOperator.lean`](../NLS/ZakharovShabat/L2WholeLineTestOperator.lean)
+proves that potential multiplication maps continuous compactly supported
+tests into L2. The full physical expression maps compactly supported C1
+pairs into L2, with both signed derivative terms retained.
+
+[`L2WholeLineTestDomain.lean`](../NLS/ZakharovShabat/L2WholeLineTestDomain.lean)
+constructs the Hermitian whole-line L2 space and an injective complex-linear
+inclusion of smooth compact tests with dense range. Density uses the
+actual smooth compact approximation theorem in L2.
+
+[`L2WholeLineMinimalOperator.lean`](../NLS/ZakharovShabat/L2WholeLineMinimalOperator.lean)
+constructs the minimal partial linear operator on that dense domain.
+On every test class its value agrees almost everywhere with the literal
+physical differential expression, using the same original potential.
+
+This is the minimal realization on compact tests. Identifying its closure
+and the maximal differential domain, proving self-adjointness for real
+potentials, identifying the spectrum and proving pure absolute continuity
+remain unfinished. The bounded Floquet solutions established earlier
+remain prerequisites for those spectral claims.

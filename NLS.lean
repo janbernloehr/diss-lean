@@ -4522,3 +4522,8 @@ import NLS.ZakharovShabat.L2WholeLineFundamental
 import NLS.ZakharovShabat.L2WholeLineFloquetBound
 import NLS.ZakharovShabat.L2WholeLineSolutionPeriods
 import NLS.ZakharovShabat.L2WholeLineDifferentialEquation
+import NLS.ZakharovShabat.L2WholeLinePotentialPeriods
+import NLS.ZakharovShabat.L2WholeLineLocalIntegrability
+import NLS.ZakharovShabat.L2WholeLineTestOperator
+import NLS.ZakharovShabat.L2WholeLineTestDomain
+import NLS.ZakharovShabat.L2WholeLineMinimalOperator
