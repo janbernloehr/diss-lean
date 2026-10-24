@@ -66814,3 +66814,38 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineCutoffFrameworkExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineBandSpectrumExamples
+open Set MeasureTheory NLS.FunctionalAnalysis
+
+example (χ : ℝ → ℂ) (hχ : ContDiff ℝ 1 χ) (R : ℝ) (hR : 0 < R) :
+    (∫ t : ℝ, ‖deriv (scaledCutoff χ R) t‖ ^ 2) =
+      (∫ t : ℝ, ‖deriv χ t‖ ^ 2) / R :=
+  integral_sq_deriv_scaledCutoff χ hχ R hR
+
+example (χ : ℝ → ℂ) (hχ : ContDiff ℝ 1 χ) (hc : HasCompactSupport χ)
+    (m : ℝ → ℝ) (hm : Continuous m) (B : ℝ) (hB0 : 0 ≤ B)
+    (hB : ∀ t, m t ≤ B) (R : ℝ) (hR : 1 ≤ R) :
+    (∫ t : ℝ, ‖deriv (scaledCutoff χ R) t‖ ^ 2 * m t) ≤
+      B * ∫ t : ℝ, ‖deriv χ t‖ ^ 2 :=
+  scaled_derivative_cutoff_mass_le χ hχ hc m hm B hB0 hB R hR
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z μ : ℂ) (hμ : ‖μ‖ = 1) (v : Fin 2 → ℂ) (hv0 : v ≠ 0)
+    (hv : Matrix.mulVec (l2Monodromy u z) v = μ • v) : z ∈ wholeLineSpectrum u :=
+  mem_wholeLineSpectrum_of_unit_floquet u hu z μ hμ v hv0 hv
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (x : ℝ)
+    (hx : x ∈ sourceFloquetBandSet (by simp) (by norm_num) φ) :
+    (x : ℂ) ∈ wholeLineSpectrum (sourcePhysicalL2 φ) :=
+  source_band_mem_wholeLineSpectrum φ hφ x hx
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    Complex.ofReal '' sourceFloquetBandSet (by simp) (by norm_num) φ ⊆
+      wholeLineSpectrum (sourcePhysicalL2 φ) :=
+  sourceFloquetBandSet_subset_wholeLineSpectrum φ hφ
+
+end WholeLineBandSpectrumExamples
+end NLS.ZakharovShabat

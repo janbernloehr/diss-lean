@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual whole-line cutoff vectors now satisfy exact physical
-residual and norm identities. Unit-multiplier Floquet solutions have positive
-periodic mass with linear growth, ready for the expanding-cutoff argument.
-Band membership, spectrum equality and pure absolute continuity remain pending.
+Latest step: every point in the original closed Floquet bands now belongs
+to the actual whole-line operator spectrum, including endpoints and
+collapsed gaps. The proof uses expanding physical cutoff vectors.
+The reverse inclusion and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

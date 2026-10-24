@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: whole-line physical cutoffs and Floquet mass
+## Current milestone: Floquet band membership in the whole-line spectrum
+
+Every unit-multiplier Floquet parameter now belongs to the actual
+whole-line operator spectrum. In particular, the full closed Floquet band
+set of each unchanged original real Hilbert source is included, with all
+gap endpoints and collapsed gaps.
+
+The proof uses expanding smooth cutoffs of the original locally AC
+physical solution. The cutoff L2 mass grows linearly across periods, while
+the original pencil residual stays uniformly bounded. A bounded two-sided
+resolvent would contradict these estimates.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps real-gap
+bounded inverses, the reverse inclusion, full spectral equality, spectral
+measures and pure absolute continuity unfinished. Exact2014 and G2 remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,244 build jobs, 7,193
+public examples, and a transitive axiom audit of 41,304 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,415 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line physical cutoffs and Floquet mass
 
 The original whole-line operator now has verified spectral criteria
 using actual closure-domain vectors, including a growing-mass criterion.

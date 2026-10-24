@@ -4560,3 +4560,6 @@ import NLS.ZakharovShabat.PhysicalOperatorProductRule
 import NLS.ZakharovShabat.L2WholeLineFloquetMass
 import NLS.ZakharovShabat.L2WholeLineCutoff
 import NLS.ZakharovShabat.L2WholeLineCutoffResidual
+import NLS.FunctionalAnalysis.ScaledCutoff
+import NLS.FunctionalAnalysis.CutoffMassEstimates
+import NLS.ZakharovShabat.L2WholeLineBandSpectrum

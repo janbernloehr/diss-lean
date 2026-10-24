@@ -642,3 +642,27 @@ The next step is to choose expanding cutoffs and bound these integrals.
 Floquet band membership, real-gap resolvents, full spectrum equality,
 spectral measures and pure absolute continuity remain unfinished.
 Exact2014 and G2 remain separate source questions.
+
+## Floquet band membership in the original whole-line spectrum
+
+[`ScaledCutoff.lean`](../NLS/FunctionalAnalysis/ScaledCutoff.lean)
+constructs a fixed smooth compact scalar cutoff equal to one on [0,1].
+Positive dilation preserves smoothness and compact support, gives equality
+to one on [0,R], and divides the squared derivative integral by R.
+[`CutoffMassEstimates.lean`](../NLS/FunctionalAnalysis/CutoffMassEstimates.lean)
+proves that the cutoff retains the mass on [0,R]. A uniform density bound
+controls the derivative-weighted mass uniformly for R at least one.
+
+[`L2WholeLineBandSpectrum.lean`](../NLS/ZakharovShabat/L2WholeLineBandSpectrum.lean)
+applies these estimates to the actual unit-multiplier Floquet solution.
+Its positive periodic mass grows linearly, while the original cutoff
+pencil residual stays bounded. The actual-domain growing-mass criterion
+therefore proves membership in the independently defined physical spectrum.
+
+For every unchanged original real Hilbert source, the full closed Floquet
+band set is included in the whole-line operator spectrum. All endpoints
+and collapsed gaps are included through the original monodromy criterion.
+
+The opposite inclusion still requires bounded resolvents in real gaps.
+Full spectral equality, spectral measures and pure absolute continuity
+remain unfinished. Exact2014 and G2 remain separate source questions.
