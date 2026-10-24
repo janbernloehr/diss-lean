@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: stable and unstable physical gap modes
+## Current milestone: bounded periodic Floquet reduction
+
+The original physical Floquet modes now define an actual periodic
+change of basis. Both the matrix and its inverse are continuous and
+uniformly bounded on the whole real line. Every normalized physical
+column is locally absolutely continuous and satisfies its exact
+differential equation with the constant logarithmic correction.
+
+This reduces construction of a real-gap inverse to bounded scalar
+solution operators followed by the original periodic change of basis.
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the
+bounded physical gap inverse, reverse spectral inclusion, full equality,
+spectral measures and pure absolute continuity unfinished. Exact2014 and
+G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,253 build jobs, 7,205
+public examples, and a transitive axiom audit of 41,348 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,439 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: stable and unstable physical gap modes
 
 Every real gap parameter of an unchanged original source now has
 an actual physical monodromy eigenbasis, ordered into reciprocal stable

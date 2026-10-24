@@ -691,3 +691,26 @@ Decay along fixed period sequences is not yet a uniform global kernel
 bound or a bounded Green operator. Real-gap inverses, reverse spectral
 inclusion, full spectral equality, spectral measures and pure absolute
 continuity remain unfinished. Exact2014 and G2 remain separate questions.
+
+## A bounded periodic Floquet change of basis
+
+[`FloquetPeriodicFactor.lean`](../NLS/ZakharovShabat/FloquetPeriodicFactor.lean)
+removes the exponential factor from each actual Floquet mode. The result
+is one-periodic, with exact reconstruction and a uniform bound.
+[`FloquetPeriodicFactorRegularity.lean`](../NLS/ZakharovShabat/FloquetPeriodicFactorRegularity.lean)
+proves local absolute continuity and the exact derivative of this normalization.
+
+[`L2FloquetPeriodicMatrix.lean`](../NLS/ZakharovShabat/L2FloquetPeriodicMatrix.lean)
+assembles the original physical columns into a periodic matrix. Its exact
+factorization proves pointwise invertibility. The matrix and its inverse
+are continuous and uniformly bounded on the whole real line.
+[`L2FloquetColumnRegularity.lean`](../NLS/ZakharovShabat/L2FloquetColumnRegularity.lean)
+identifies the pair columns with those matrix entries, proves their local
+absolute continuity, and verifies B_j prime = A B_j - log(mu_j) B_j
+almost everywhere for the original physical coefficient.
+
+The remaining real-gap construction is to solve the constant diagonal
+scalar equations, transfer those solutions through this bounded change
+of basis, and verify both physical pencil inverse identities. The reverse
+spectral inclusion, full equality, spectral measures and pure absolute
+continuity remain unfinished. Exact2014 and G2 remain separate questions.

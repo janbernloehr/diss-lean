@@ -4568,3 +4568,7 @@ import NLS.ZakharovShabat.FloquetHyperbolicBasis
 import NLS.ZakharovShabat.L2FloquetGapBasis
 import NLS.ZakharovShabat.FloquetModeProjections
 import NLS.ZakharovShabat.L2FloquetModeDecay
+import NLS.ZakharovShabat.FloquetPeriodicFactor
+import NLS.ZakharovShabat.FloquetPeriodicFactorRegularity
+import NLS.ZakharovShabat.L2FloquetPeriodicMatrix
+import NLS.ZakharovShabat.L2FloquetColumnRegularity

@@ -66893,3 +66893,43 @@ example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
 
 end WholeLineGapModesExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLinePeriodicReductionExamples
+open Set MeasureTheory Module
+open scoped Matrix.Norms.Elementwise
+
+example (μ : ℂ) (hμ : μ ≠ 0) (F : ℝ → ℂ × ℂ)
+    (hF : ∀ t, F (t+1) = μ • F t) : Function.Periodic (floquetPeriodicFactor μ F) 1 :=
+  periodic_floquetPeriodicFactor μ hμ F hF
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (hμ : ∀ j, μ j ≠ 0)
+    (hM : ∀ j, Matrix.mulVec (l2Monodromy u z) (b j) = μ j • b j) :
+    Function.Periodic (l2FloquetPeriodicMatrix u z b μ) 1 :=
+  periodic_l2FloquetPeriodicMatrix u z b μ hμ hM
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (t : ℝ) : IsUnit (l2FloquetPeriodicMatrix u z b μ t) :=
+  isUnit_l2FloquetPeriodicMatrix u z b μ t
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (hμ : ∀ j, μ j ≠ 0)
+    (hM : ∀ j, Matrix.mulVec (l2Monodromy u z) (b j) = μ j • b j) :
+    ∃ C : ℝ, 0 < C ∧ ∀ t, ‖l2FloquetPeriodicMatrix u z b μ t‖ ≤ C ∧
+      ‖(l2FloquetPeriodicMatrix u z b μ t)⁻¹‖ ≤ C :=
+  bounded_l2FloquetPeriodicMatrix_and_inverse u z b μ hμ hM
+
+example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (μ : ℂ) (a b : ℝ) :
+    AbsolutelyContinuousOnInterval (l2FloquetPeriodicColumn u z v μ) a b :=
+  absolutelyContinuousOnInterval_l2FloquetPeriodicColumn u z v μ a b
+
+example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (μ : ℂ) :
+    ∀ᵐ t : ℝ, HasDerivAt (l2FloquetPeriodicColumn u z v μ)
+      (classicalODECoefficient (l2WholeLinePotential u t) z (l2FloquetPeriodicColumn u z v μ t) -
+        Complex.log μ • l2FloquetPeriodicColumn u z v μ t) t :=
+  ae_hasDerivAt_l2FloquetPeriodicColumn u z v μ
+
+end WholeLinePeriodicReductionExamples
+end NLS.ZakharovShabat
