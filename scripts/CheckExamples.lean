@@ -66344,3 +66344,30 @@ example (φ : realTypeSourceSubmodule 2)
     ¬ ∃ n : ℕ, NLS.FunctionalAnalysis.HasCoveringDimensionLE
       (sourceIsospectralSet ENNReal.ofNat_ne_top φ) n :=
   sourceHilbertInfiniteGap_no_finite_covering_dimension φ hφ
+
+/-! Exact standard covering dimension of tori and actual Hilbert isospectral sets. -/
+
+example (n : ℕ) :
+    NLS.FunctionalAnalysis.coveringDimension (Fin n → Circle) = (n : WithBot ℕ∞) := by
+  simpa only [Fintype.card_fin] using
+    NLS.FunctionalAnalysis.coveringDimension_circleProduct (ι := Fin n)
+
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    NLS.FunctionalAnalysis.coveringDimension (sourceIsospectralSet ENNReal.ofNat_ne_top φ) =
+      (Nat.card (sourceHilbertOpenGapIndex φ) : WithBot ℕ∞) :=
+  sourceHilbertFiniteGap_coveringDimension_eq_gapCount φ hφ
+
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∉ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    NLS.FunctionalAnalysis.coveringDimension (sourceIsospectralSet ENNReal.ofNat_ne_top φ) = ⊤ :=
+  sourceHilbertInfiniteGap_coveringDimension_eq_top φ hφ
+
+example (φ : realTypeSourceSubmodule 2) :
+    NLS.FunctionalAnalysis.coveringDimension (sourceIsospectralSet ENNReal.ofNat_ne_top φ) =
+      (ENat.card (sourceHilbertOpenGapIndex φ) : WithBot ℕ∞) :=
+  sourceHilbertIsospectralSet_coveringDimension_eq_gapCount φ
+
+example : ∀ᶠ φ : realTypeSourceSubmodule 2 in residual (realTypeSourceSubmodule 2),
+    NLS.FunctionalAnalysis.coveringDimension (sourceIsospectralSet ENNReal.ofNat_ne_top φ) = ⊤ :=
+  eventually_residual_sourceHilbertIsospectralSet_infinite_coveringDimension

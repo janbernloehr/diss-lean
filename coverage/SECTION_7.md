@@ -1,5 +1,13 @@
 # Section 7: the action-angle overview
 
+Current status: the actual Hilbert isospectral torus description,
+global squared-gap spectral uniqueness, and exact numerical covering
+dimension equal to the open-gap count (including infinity) are proved.
+The sections below record the proof stages; their earlier outstanding
+premises are discharged by the subsequent kernel, properness, and
+covering-dimension theorems. The exact 2014 construction comparison and
+G.2 interval-norm interpretation remain separate qualifications.
+
 Theorem 7.1 is stated on printed page 47. Its source is the unit-period
 Fourier coefficient space, represented by `CoeffPair p` with the original
 component-sum norm. The spectral realization uses `periodOnePotential`.
@@ -827,6 +835,56 @@ previous manifold obstruction. The exact finite-torus covering-dimension
 equality is not proved in this step. The exact 2014 comparison and the G.2
 norm interpretation remain unfinished; no new signed-gap surjectivity
 claim is made.
+
+## Exact covering dimension equals the number of open gaps
+
+The numerical covering dimension of every actual Hilbert isospectral set
+now equals its number of noncollapsed periodic gaps, with infinity for
+an infinite gap set. This proves the dimension assertion on printed p.45
+in the standard finite-open-refinement sense, in the original Hilbert
+topology. Infinite dimension also holds for residual real Hilbert sources.
+
+[CoveringDimensionValue.lean](../NLS/FunctionalAnalysis/CoveringDimensionValue.lean)
+defines the numerical value in `WithBot ℕ∞`, using bottom for the empty
+space, the least finite bound when one exists, and top otherwise. Its
+finite bounds agree exactly with `HasCoveringDimensionLE`.
+[CircleProductCoveringDimensionLower.lean](../NLS/FunctionalAnalysis/CircleProductCoveringDimensionLower.lean)
+uses the proved closed cube embeddings and numerical cube lower bounds to
+count any finite collection of circle factors.
+[SourceHilbertCoveringDimensionValue.lean](../NLS/ZakharovShabat/SourceHilbertCoveringDimensionValue.lean)
+records infinite dimension, nonnegativity, the finite gap-count lower
+bound and the zero-gap value on the actual source spaces.
+
+[IntegerGridStar.lean](../NLS/FunctionalAnalysis/IntegerGridStar.lean)
+constructs open grid stars in real coordinate space. Stars meeting a fixed
+point have coordinatewise comparable integer vertices, each between the
+floor and its successor. [IntegerGridStarMultiplicity.lean](../NLS/FunctionalAnalysis/IntegerGridStarMultiplicity.lean)
+assigns these vertices an injective integer rank from zero to n, proving
+that at most n+1 stars meet any point.
+[AddCircleGridMap.lean](../NLS/FunctionalAnalysis/AddCircleGridMap.lean)
+projects a scaled real grid to unit additive circles. It proves openness,
+surjectivity, the exact integer-period description of fibers and distance
+contraction. [PeriodicGridStar.lean](../NLS/FunctionalAnalysis/PeriodicGridStar.lean)
+indexes projected stars by finite residues and lifts collisions back to
+the real grid, retaining the n+1 overlap bound.
+[PeriodicGridCover.lean](../NLS/FunctionalAnalysis/PeriodicGridCover.lean)
+proves that the projected stars have diameter less than 2/M. A Lebesgue
+number for any finite open cover supplies a sufficiently fine grid
+refinement. Thus an n-fold circle product has covering dimension at most n.
+
+[CircleProductCoveringDimension.lean](../NLS/FunctionalAnalysis/CircleProductCoveringDimension.lean)
+combines these upper and lower bounds: the numerical dimension of any
+circle product is its extended factor count, including infinity.
+[SourceHilbertExactCoveringDimension.lean](../NLS/ZakharovShabat/SourceHilbertExactCoveringDimension.lean)
+transports the equality through the actual isospectral-set homeomorphism.
+Its unconditional result uses `ENat.card` of the actual open-gap index;
+the finite-gap specialization uses `Nat.card`. Infinite dimension is
+equivalent to being outside the finite-gap locus and holds residually.
+
+The exact finite-torus upper bound is now proved. The separate exact 2014
+Birkhoff-construction comparison and G.2 interval-norm interpretation remain
+unfinished. The global squared-gap uniqueness result retains its Hilbert
+scope; no new arbitrary-output or p>2 signed-gap surjectivity is asserted.
 
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 

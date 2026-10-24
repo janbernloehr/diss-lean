@@ -4501,3 +4501,13 @@ import NLS.FunctionalAnalysis.CubeClosedLabels
 import NLS.FunctionalAnalysis.CubeLebesgueCovering
 import NLS.FunctionalAnalysis.CubeCoveringDimensionLower
 import NLS.ZakharovShabat.SourceHilbertInfiniteCoveringDimension
+import NLS.FunctionalAnalysis.CoveringDimensionValue
+import NLS.FunctionalAnalysis.CircleProductCoveringDimensionLower
+import NLS.ZakharovShabat.SourceHilbertCoveringDimensionValue
+import NLS.FunctionalAnalysis.IntegerGridStar
+import NLS.FunctionalAnalysis.IntegerGridStarMultiplicity
+import NLS.FunctionalAnalysis.AddCircleGridMap
+import NLS.FunctionalAnalysis.PeriodicGridStar
+import NLS.FunctionalAnalysis.PeriodicGridCover
+import NLS.FunctionalAnalysis.CircleProductCoveringDimension
+import NLS.ZakharovShabat.SourceHilbertExactCoveringDimension

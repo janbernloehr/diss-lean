@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: infinite covering dimension of actual infinite-gap isospectral sets
+## Current milestone: exact covering dimension of actual Hilbert isospectral sets
+
+The numerical covering dimension of every actual Hilbert isospectral set
+now equals the number of its open periodic gaps, including infinity.
+Finite-gap sets have exactly their finite gap count as dimension, and
+infinite dimension holds for residual real Hilbert sources.
+
+The matching finite upper bound is constructive: integer-grid stars have
+at most n+1-fold overlap, and their projections give arbitrarily fine
+finite covers of the n-torus. A Lebesgue number makes such a grid refine
+any given finite open cover. The proved closed-cube lower bound supplies
+the reverse inequality. The actual isospectral homeomorphism transports
+both bounds in the original Hilbert topology.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the numerical invariant,
+the periodic-cover proof and the actual source conclusions. The exact 2014
+comparison and G.2 norm interpretation remain separate unfinished source
+questions. No new arbitrary-output or p>2 signed-gap surjectivity is claimed.
+
+Validation: `./scripts/check.sh` passes with 8,189 build jobs, 7,121
+public examples, and a transitive axiom audit of 40,929 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,271 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: infinite covering dimension of actual infinite-gap isospectral sets
 
 Every actual infinite-gap Hilbert isospectral set now has infinite
 covering dimension in the finite-open-cover sense. The previously explicit
