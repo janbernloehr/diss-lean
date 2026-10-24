@@ -67375,3 +67375,52 @@ example (u : IntervalPairL2) (z₀ : ℂ) (hdisc : (l2Monodromy u z₀).trace^2-
 
 end GreenKernelBoundsExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section ScalarGreenExamples
+open NLS.FunctionalAnalysis MeasureTheory Set Matrix Module
+open scoped Matrix.Norms.Elementwise
+
+example (α : ℂ) (y h : ℝ → ℂ) (a b : ℝ)
+    (hy : AbsolutelyContinuousOnInterval y a b)
+    (hh : IntervalIntegrable h volume a b)
+    (hd : ∀ᵐ t : ℝ, t ∈ uIcc a b → HasDerivAt y (α*y t+h t) t) :
+    y b = Complex.exp (α*((b-a : ℝ) : ℂ))*y a+
+      ∫ t in a..b, Complex.exp (α*((b-t : ℝ) : ℂ))*h t :=
+  scalarAC_variation α y h a b hy hh hd
+
+example (α c : ℂ) (R : ℝ) (hα : 0 ≤ α.re) (y : ℝ → ℂ)
+    (hy : MemLp y 2 volume)
+    (he : ∀ t ∈ Ici R, y t = Complex.exp (α*((t-R : ℝ) : ℂ))*c) : c = 0 :=
+  scalarL2_right_exponential_coefficient_eq_zero α c R hα y hy he
+
+example (α : ℂ) (hα : 0 < α.re) (h : WholeLineScalarL2) (R : ℝ)
+    (hzero : ∀ᵐ t : ℝ, R ≤ t → h t = 0) :
+    wholeLineScalarODEInverse α hα.ne' h =ᵐ[volume]
+      (fun t => -(∫ s in t..R, Complex.exp (α*((t-s : ℝ) : ℂ))*h s)) :=
+  wholeLineScalarODEInverse_ae_backward_integral α hα h R hzero
+
+example (α : ℂ) (hα : α.re < 0) (h : WholeLineScalarL2) (R : ℝ)
+    (hzero : ∀ᵐ t : ℝ, t ≤ R → h t = 0) :
+    wholeLineScalarODEInverse α hα.ne h =ᵐ[volume]
+      (fun t => ∫ s in R..t, Complex.exp (α*((t-s : ℝ) : ℂ))*h s) :=
+  wholeLineScalarODEInverse_ae_forward_integral α hα h R hzero
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)) (μ : Fin 2 → ℂ)
+    (h0 : (Complex.log (μ 0)).re ≠ 0) (h1 : (Complex.log (μ 1)).re ≠ 0)
+    (C : ℝ) (hC : ∀ t, ‖l2FloquetPeriodicMatrix u z b μ t‖ ≤ C ∧
+      ‖(l2FloquetPeriodicMatrix u z b μ t)⁻¹‖ ≤ C) :
+    wholeLineFloquetInverse u z b μ h0 h1 C hC = wholeLineNonrealResolvent u hu z hz :=
+  wholeLineFloquetInverse_eq_nonrealResolvent u hu z hz b μ h0 h1 C hC
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) :
+    ∃ (μ ν : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)),
+      (l2Monodromy u z).trace = μ+ν ∧ μ*ν = 1 ∧
+      0 < ‖μ‖ ∧ ‖μ‖ < 1 ∧ 1 < ‖ν‖ ∧
+      l2Monodromy u z *ᵥ b 0 = μ • b 0 ∧ l2Monodromy u z *ᵥ b 1 = ν • b 1 :=
+  l2Monodromy_nonreal_exists_stable_unstable_basis_with_trace u hu z hz
+
+end ScalarGreenExamples
+end NLS.ZakharovShabat

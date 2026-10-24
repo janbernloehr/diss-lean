@@ -4627,3 +4627,9 @@ import NLS.ZakharovShabat.FloquetLocalProjectionBound
 import NLS.ZakharovShabat.L2WholeLineFundamentalJoint
 import NLS.ZakharovShabat.L2WholeLineGreenIngredients
 import NLS.ZakharovShabat.L2WholeLineModeKernelBound
+import NLS.FunctionalAnalysis.ScalarACVariation
+import NLS.FunctionalAnalysis.ScalarL2ExponentialTail
+import NLS.FunctionalAnalysis.ScalarL2OneSidedFormula
+import NLS.ZakharovShabat.L2WholeLineScalarGreenFormula
+import NLS.ZakharovShabat.L2WholeLineNonrealFloquetInverse
+import NLS.ZakharovShabat.L2FloquetNonrealTrace

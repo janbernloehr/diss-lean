@@ -1010,3 +1010,33 @@ Green integrals of these kernels. That identity will allow the local
 spectral-measure criterion to be applied to compact inputs. Exceptional
 parameters and extension to all vectors remain unfinished; pure absolute
 continuity is not yet proved. Exact2014 and G2 remain separate questions.
+
+## Scalar Green formulas and the original physical resolvent
+
+[`ScalarACVariation.lean`](../NLS/FunctionalAnalysis/ScalarACVariation.lean)
+uses the verified AC fundamental theorem and a smooth integrating factor
+to prove variation of constants for locally absolutely continuous scalar
+solutions with locally integrable forcing.
+[`ScalarL2ExponentialTail.lean`](../NLS/FunctionalAnalysis/ScalarL2ExponentialTail.lean)
+proves that a nondecaying exponential on an infinite half-line has zero
+coefficient if the full function is globally L2. This includes zero real
+part of the exponent.
+[`ScalarL2OneSidedFormula.lean`](../NLS/FunctionalAnalysis/ScalarL2OneSidedFormula.lean)
+combines these results to remove the growing tail and obtain forward
+and backward one-sided exponential integral formulas.
+
+[`L2WholeLineScalarGreenFormula.lean`](../NLS/ZakharovShabat/L2WholeLineScalarGreenFormula.lean)
+identifies the already constructed bounded scalar inverse with those
+Green integrals when the forcing vanishes on the relevant half-line.
+[`L2WholeLineNonrealFloquetInverse.lean`](../NLS/ZakharovShabat/L2WholeLineNonrealFloquetInverse.lean)
+identifies every global L2 locally AC physical pencil solution with the
+original nonreal resolvent, using the actual closure domain and its inverse
+identity. In particular, the bounded Floquet inverse is that same resolvent.
+[`L2FloquetNonrealTrace.lean`](../NLS/ZakharovShabat/L2FloquetNonrealTrace.lean)
+supplies the original trace-sum identity for its stable and unstable multipliers.
+
+The scalar Green formulas still need to be recombined into the projected
+full-fundamental matrix kernel. Uniform compact-input resolvent bounds,
+the exceptional parameter set and extension of spectral absolute continuity
+to all vectors remain unfinished. Pure absolute continuity is not yet
+proved. Exact2014 and G2 remain separate source questions.

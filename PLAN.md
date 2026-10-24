@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: uniform physical Floquet mode-kernel bounds
+## Current milestone: scalar Green formulas and physical resolvent identification
+
+The existing bounded scalar inverse now equals its one-sided exponential
+Green integral whenever the forcing vanishes on the appropriate half-line.
+The proof uses local absolute continuity and global L2 integrability to
+eliminate the growing homogeneous tail.
+
+The bounded Floquet inverse is also proved equal to the original physical
+nonreal resolvent. The argument uses the unchanged closure domain and its
+actual two-sided inverse identities. The stable and unstable multipliers
+satisfy the trace identity required by the previously proved kernel bounds.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+remaining recombination into the full matrix Green kernel, uniform
+compact-input expectation bounds, exceptional parameters and extension
+to all Hilbert vectors. Pure absolute continuity remains unfinished.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,326 build jobs, 7,275
+public examples, and a transitive axiom audit of 41,707 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,594 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: uniform physical Floquet mode-kernel bounds
 
 The original physical Floquet mode kernels are now uniformly bounded
 on compact input/output time sets near every parameter where the two

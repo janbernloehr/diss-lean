@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual physical Floquet mode kernels are uniformly
-bounded on compact time sets near parameters with distinct roots.
-The original full fundamental matrix and inverse are jointly continuous.
-Identifying the actual resolvent with Green integrals and proving pure
-absolute continuity remain pending.
+Latest step: the original bounded scalar inverse has its one-sided Green
+integral formula, and the bounded Floquet inverse equals the original
+physical nonreal resolvent. Matrix kernel recombination and pure absolute
+continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
