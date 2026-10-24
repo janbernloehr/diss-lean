@@ -66268,3 +66268,29 @@ example (φ : realTypeSourceSubmodule 2)
     unfold sourceFiniteGapLengthSum
     positivity
   nlinarith
+
+/-! The global Hilbert signed-gap and squared-gap conclusions have no injectivity premise. -/
+
+-- Properness uses the original Hilbert topology on the full preimage.
+example (S : Finset ℤ) : IsProperMap (symmetricSignedGapFiniteRestriction S) :=
+  isProperMap_symmetricSignedGapFiniteRestriction S
+
+-- Every finite-support target is attained exactly once.
+example (S : Finset ℤ) (y : finiteSignedGapOutputSpace S) :
+    ∃! a, symmetricSignedGapFiniteRestriction S a = y := by
+  obtain ⟨a,ha⟩ := (bijective_symmetricSignedGapFiniteRestriction S).2 y
+  exact ⟨a,ha,fun b hb => (bijective_symmetricSignedGapFiniteRestriction S).1 (hb.trans ha.symm)⟩
+
+-- Arbitrary signed-gap collisions force equality of the symmetric Fourier coordinates.
+example (a b : RealCoeff 2)
+    (h : symmetricSourceSignedGapMap (by simp) (by norm_num) a =
+      symmetricSourceSignedGapMap (by simp) (by norm_num) b) : a = b :=
+  symmetricSourceSignedGapMap_injective h
+
+-- Equal actual squared gaps determine the intrinsic periodic spectrum with multiplicities.
+example (φ ψ : realTypeSourceSubmodule 2)
+    (h : ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) :
+    ψ ∈ sourceIsospectralSet (by simp) φ :=
+  source_isospectral_of_squared_gaps φ ψ h

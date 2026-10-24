@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: actual finite-gap physical trace and norm bounds
+## Current milestone: global Hilbert squared-gap spectral uniqueness
+
+The actual indexed squared gaps now determine the periodic spectrum,
+including algebraic multiplicities, for every real Hilbert source. The
+actual symmetric Hilbert signed-gap map is globally injective.
+
+The finite-gap trace bound and Birkhoff compact containers prove properness
+over each finite output space. The actual derivative inverse supplies a
+local homeomorphism; its singleton zero fiber makes every finite-output
+restriction bijective. Global openness then reduces all potential
+collisions to that proved finite case. The symmetric representatives of
+the two spectra finish the squared-gap uniqueness argument.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the proof chain and
+its actual source topology. This proves the global p=2 uniqueness assertion
+on printed p.45. Surjectivity onto arbitrary infinite-support outputs or
+at p>2 is not claimed. Separate covering dimension, exact 2014 comparison
+and the G.2 norm interpretation remain unfinished.
+
+Validation: `./scripts/check.sh` passes with 8,163 build jobs, 7,109
+public examples, and a transitive axiom audit of 40,460 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,233 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual finite-gap physical trace and norm bounds
 
 Actual finite-gap sources now satisfy a physical trace identity
 and a uniform pointwise bound by the sum of their open-gap lengths. Their

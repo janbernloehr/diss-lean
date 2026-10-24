@@ -711,6 +711,47 @@ step does not yet establish finite-gap injectivity or global squared-gap
 uniqueness. Covering dimension, the exact 2014 comparison, and the G.2 norm
 interpretation remain separate unfinished questions.
 
+## Global Hilbert squared-gap spectral uniqueness
+
+The Section 7 assertion on printed p.45 is now proved for all actual real
+Hilbert sources: equality of their indexed squared gap lengths implies
+equality of their intrinsic periodic spectra and algebraic multiplicities.
+The global signed-gap injectivity premise has been discharged.
+
+[SourceFiniteGapCompactContainer.lean](../NLS/ZakharovShabat/SourceFiniteGapCompactContainer.lean)
+uses the actual Birkhoff homeomorphism, its norm identity, and exact support
+correspondence to put bounded sources with fixed finite gap support in a
+compact set. [SymmetricSignedGapFiniteBound.lean](../NLS/ZakharovShabat/SymmetricSignedGapFiniteBound.lean)
+identifies each actual gap with the absolute signed coordinate and converts
+the physical trace estimate into a source norm bound for bounded outputs
+on any prescribed finite support.
+
+[SymmetricSignedGapFiniteCompactness.lean](../NLS/ZakharovShabat/SymmetricSignedGapFiniteCompactness.lean)
+projects the compact source container through the continuous inverse of
+the symmetric Fourier coordinates. Compact finite-support output sets
+have compact full preimages in the original Hilbert norm.
+[LocalHomeomorphRestriction.lean](../NLS/FunctionalAnalysis/LocalHomeomorphRestriction.lean)
+proves that local homeomorphisms restrict to the full preimage of any target
+subset. [SymmetricSignedGapFiniteProper.lean](../NLS/ZakharovShabat/SymmetricSignedGapFiniteProper.lean)
+combines compactness with the proved derivative inverse to obtain a proper
+local homeomorphism over each finite-dimensional real output subspace.
+
+[SymmetricSignedGapZeroFiber.lean](../NLS/ZakharovShabat/SymmetricSignedGapZeroFiber.lean)
+proves that the actual signed-gap zero fiber consists only of zero, for
+every finite p>1. [SymmetricSignedGapGlobalInjectivity.lean](../NLS/ZakharovShabat/SymmetricSignedGapGlobalInjectivity.lean)
+applies the closed local-homeomorphism singleton-fiber criterion on each
+connected finite output space. Each finite-support output is attained
+exactly once. Global openness and dense finite-support outputs then exclude
+all collisions. The established symmetric-representative reduction gives
+unconditional squared-gap spectral uniqueness.
+
+The global injectivity and spectral uniqueness assertions here are Hilbert
+p=2 results. Surjectivity is proved over finite-support outputs; arbitrary
+infinite-support or p>2 surjectivity is not asserted. The printed H1 premise
+of Grebert--Guillot Theorem 3.7 remains part of that citation: the Hilbert
+result here has its own proof. Separate covering dimension, exact 2014
+comparison and the G.2 norm interpretation remain unfinished.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls
