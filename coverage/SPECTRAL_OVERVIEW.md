@@ -578,3 +578,34 @@ This establishes the operator and domain needed for the whole-line spectral
 claim on printed p.17. Resolvent construction, identification of the band
 spectrum, spectral measures and pure absolute continuity remain unfinished.
 The exact2014 comparison and G2 interval-norm question remain separate.
+
+## The original whole-line spectrum and bounded nonreal resolvent
+
+[`L2WholeLineNonrealResolvent.lean`](../NLS/ZakharovShabat/L2WholeLineNonrealResolvent.lean)
+defines the original physical pencil on the actual graph-closure domain.
+Its resolvent set requires a bounded two-sided inverse; its spectrum is the
+complement of that independently defined set. The inverse takes values in
+the actual domain with its inherited L2 norm, so boundedness expresses
+precisely the original Hilbert base-space bound.
+
+[`SymmetricPencilEstimate.lean`](../NLS/FunctionalAnalysis/SymmetricPencilEstimate.lean)
+proves the lower bound |Im z| times the input norm for a symmetric partial
+operator's spectral pencil. It gives injectivity at nonreal parameters.
+[`ClosedPencilRange.lean`](../NLS/FunctionalAnalysis/ClosedPencilRange.lean)
+uses this bound and the original closed graph to prove closed range;
+completeness of the inherited domain norm is not assumed.
+[`SelfAdjointPencilRange.lean`](../NLS/FunctionalAnalysis/SelfAdjointPencilRange.lean)
+uses orthogonal separation and the actual adjoint to prove dense range.
+Closedness and density together give bijectivity on the actual domain.
+
+[`SelfAdjointNonrealResolvent.lean`](../NLS/FunctionalAnalysis/SelfAdjointNonrealResolvent.lean)
+constructs the bounded inverse and proves both inverse identities and the
+base-space operator-norm bound 1/|Im z|. Applied to the original whole-line
+operator, every nonreal parameter lies in its resolvent set and its spectrum
+for real physical potentials lies on the real axis. The public examples
+also cover the unchanged original real Hilbert sources.
+
+Real gap resolvents and spectral membership of the Floquet bands, including
+endpoints and collapsed gaps, remain to be proved. Spectral measures and
+pure absolute continuity remain separate unfinished requirements. The
+exact2014 comparison and G2 interval-norm question remain separate.

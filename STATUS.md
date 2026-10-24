@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: whole-line self-adjointness and maximal differential domain
+## Current milestone: whole-line nonreal resolvent and real spectrum
+
+The original whole-line spectrum is now defined through bounded
+invertibility of the physical pencil on the actual graph-closure domain.
+For real potentials, every nonreal parameter has a constructed bounded
+inverse with both inverse identities and operator norm at most 1/|Im z|.
+Consequently the independently defined whole-line spectrum lies on the
+real axis. The construction also applies to the original real sources.
+
+The argument combines the imaginary-part estimate, closedness of the
+original graph, orthogonal separation, and actual self-adjointness.
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps real gap
+resolvents, Floquet band membership, full spectral equality, spectral
+measures and pure absolute continuity unfinished. Exact2014 and G2 remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,234 build jobs, 7,180
+public examples, and a transitive axiom audit of 41,239 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,389 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line self-adjointness and maximal differential domain
 
 The original real whole-line minimal operator is now essentially
 self-adjoint. Its actual graph closure equals its actual Hilbert adjoint.

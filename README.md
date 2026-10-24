@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original real whole-line operator is essentially self-adjoint.
-Its graph closure equals its actual Hilbert adjoint, with the maximal locally
-absolutely continuous differential domain and compact smooth test core.
-The band spectrum and pure absolute continuity remain pending.
+Latest step: the original whole-line spectrum is defined by bounded physical
+pencil invertibility. Real potentials have bounded inverses at every nonreal
+parameter, with norm at most 1/|Im z|; the spectrum lies on the real axis.
+The band-spectrum equality and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

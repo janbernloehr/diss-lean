@@ -4548,3 +4548,8 @@ import NLS.FunctionalAnalysis.SymmetricAdjoint
 import NLS.FunctionalAnalysis.DoubleAdjointClosure
 import NLS.ZakharovShabat.L2WholeLineAdjointSymmetry
 import NLS.ZakharovShabat.L2WholeLineSelfAdjoint
+import NLS.FunctionalAnalysis.SymmetricPencilEstimate
+import NLS.FunctionalAnalysis.ClosedPencilRange
+import NLS.FunctionalAnalysis.SelfAdjointPencilRange
+import NLS.FunctionalAnalysis.SelfAdjointNonrealResolvent
+import NLS.ZakharovShabat.L2WholeLineNonrealResolvent

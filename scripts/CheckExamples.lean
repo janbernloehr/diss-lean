@@ -66730,3 +66730,35 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineSelfAdjointExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineNonrealResolventExamples
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) (f : WholeLineL2) :
+    wholeLinePencil u z (wholeLineNonrealResolventToDomain u hu z hz f) = f :=
+  wholeLinePencil_nonrealResolventToDomain u hu z hz f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) (f : (wholeLineMinimalOperator u).closure.domain) :
+    wholeLineNonrealResolventToDomain u hu z hz (wholeLinePencil u z f) = f :=
+  wholeLineNonrealResolventToDomain_pencil u hu z hz f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) : ‖wholeLineNonrealResolvent u hu z hz‖ ≤ 1 / |z.im| :=
+  norm_wholeLineNonrealResolvent_le u hu z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    wholeLineSpectrum u ⊆ {z : ℂ | z.im = 0} :=
+  wholeLineSpectrum_subset_real u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    (wholeLineResolventSet u).Nonempty := wholeLineResolventSet_nonempty u hu
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (z : ℂ) (hz : z.im ≠ 0) : z ∈ wholeLineResolventSet (sourcePhysicalL2 φ) :=
+  nonreal_mem_wholeLineResolventSet _ ((sourcePhysicalL2_realType_iff φ).mpr hφ) z hz
+
+end WholeLineNonrealResolventExamples
+end NLS.ZakharovShabat
