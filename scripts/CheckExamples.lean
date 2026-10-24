@@ -67190,3 +67190,49 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineRealMeasuresExamples
 end NLS.ZakharovShabat
+
+namespace NLS.FunctionalAnalysis
+section WholeLineResolventIntegralExamples
+open MeasureTheory
+
+example (z : ℂ) (hz : z.im ≠ 0) (t : ℝ) :
+    ‖(z-(t : ℂ))⁻¹‖ ≤ 1/|z.im| :=
+  norm_realResolventKernel_le z hz t
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (z : ℂ) (hz : z.im ≠ 0) :
+    Integrable (fun t : ℝ => (z-(t : ℂ))⁻¹) μ :=
+  integrable_realResolventKernel μ z hz
+
+example (s : Set ℂ) (hs : s ⊆ unitary ℂ) (z : ℂ) (hz : z.im ≠ 0)
+    (ζ : s) (hne : (ζ : ℂ) ≠ 1) :
+    cayleyResolventFunction s hs z hz ζ = (z-(inverseCayleyReal ζ : ℂ))⁻¹ :=
+  cayleyResolventFunction_eq_inverse s hs z hz ζ hne
+
+end WholeLineResolventIntegralExamples
+end NLS.FunctionalAnalysis
+
+namespace NLS.ZakharovShabat
+section WholeLineResolventIntegralExamples
+open MeasureTheory NLS.FunctionalAnalysis
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) :
+    wholeLineNonrealResolvent u hu z hz =
+      cfcHom (wholeLineCayley_isStarNormal u hu)
+        (cayleyResolventFunction (spectrum ℂ (wholeLineCayley u hu))
+          (wholeLineCayley_spectrum_subset_unitary u hu) z hz) :=
+  wholeLineNonrealResolvent_eq_cayley_cfc u hu z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (z : ℂ) (hz : z.im ≠ 0) :
+    Integrable (fun t : ℝ => (z-(t : ℂ))⁻¹) (wholeLineRealSpectralMeasure u hu v) :=
+  integrable_wholeLineRealSpectralMeasure_resolventKernel u hu v z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (z : ℂ) (hz : z.im ≠ 0) :
+    ∫ t, (z-(t : ℂ))⁻¹ ∂wholeLineRealSpectralMeasure u hu v =
+      inner ℂ v (wholeLineNonrealResolvent u hu z hz v) :=
+  wholeLineRealSpectralMeasure_resolvent_integral u hu v z hz
+
+end WholeLineResolventIntegralExamples
+end NLS.ZakharovShabat

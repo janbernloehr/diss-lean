@@ -897,3 +897,30 @@ Identifying the actual unbounded operator resolvent integral remains the
 next step. Atom exclusion alone does not exclude singular continuous
 spectrum or prove pure absolute continuity. Exact2014 and G2 remain
 separate source questions.
+
+## The actual unbounded resolvent and its real spectral integral
+
+[`CayleyResolventFunction.lean`](../NLS/FunctionalAnalysis/CayleyResolventFunction.lean)
+constructs the continuous resolvent function on the actual Cayley spectrum.
+Its denominator is nonzero for nonreal spectral parameters. The function
+vanishes at the exceptional point one; away from one it equals the original
+real resolvent kernel after inverse Cayley transport.
+[`SelfAdjointCayleyResolvent.lean`](../NLS/FunctionalAnalysis/SelfAdjointCayleyResolvent.lean)
+uses the original resolvent identity to identify the actual bounded
+nonreal inverse of a self-adjoint partial operator with this continuous
+functional calculus expression.
+
+[`RealResolventKernel.lean`](../NLS/FunctionalAnalysis/RealResolventKernel.lean)
+proves continuity and the inverse-imaginary-part bound for the scalar
+kernel (z-t)^(-1). It is integrable against every finite real measure.
+[`L2WholeLineSpectralResolventIntegral.lean`](../NLS/ZakharovShabat/L2WholeLineSpectralResolventIntegral.lean)
+applies these results to the original physical operator. Its actual
+resolvent vector expectation equals the integral of (z-t)^(-1) against
+the actual real measure already constructed. The proof transports the
+Cayley integral and uses the proved zero mass of the exceptional fiber.
+
+This identifies the actual operator and measure through their resolvent,
+without assuming a spectral representation as an extra hypothesis.
+Local band-interior estimates and exclusion of singular continuous
+spectrum remain unfinished; pure absolute continuity is not yet proved.
+Exact2014 and G2 remain separate source questions.

@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: atomless physical real measures
+## Current milestone: the actual physical resolvent integral
+
+The actual nonreal resolvent of the original physical operator is now
+represented by integration against the actual finite real spectral measure.
+For every vector v, its expectation inner(v,R(z)v) equals the integral
+of (z-t)^(-1) against that vector's measure.
+
+The proof first identifies the actual self-adjoint resolvent with a
+continuous function of its Cayley operator. It then transports the
+verified Cayley integral through the inverse Cayley coordinate, using
+zero mass of the exceptional point one. The scalar kernel is proved
+integrable with its uniform inverse-imaginary-part bound.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps local
+band-interior estimates and exclusion of singular continuous spectrum
+unfinished. Pure absolute continuity is not yet established.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,306 build jobs, 7,251
+public examples, and a transitive axiom audit of 41,634 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,542 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: atomless physical real measures
 
 The actual scalar spectral measures of the physical Cayley operator
 now have no atoms. The proof uses dense ranges of the original normal

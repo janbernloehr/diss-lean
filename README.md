@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual physical Cayley spectral measures have no atoms.
-Inverse Cayley transport gives finite real-line measures with the original
-total mass and zero measure on countable sets. The unbounded resolvent
-integral and pure absolute continuity remain pending.
+Latest step: the actual physical nonreal resolvent is represented by
+the Cauchy integral of the actual real spectral measure for every vector.
+The scalar kernel is integrable. Local band-interior estimates and
+pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

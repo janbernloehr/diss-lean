@@ -4609,3 +4609,7 @@ import NLS.FunctionalAnalysis.NormalOperatorSpectralMeasureNoAtoms
 import NLS.ZakharovShabat.L2WholeLineCayleyMeasureNoAtoms
 import NLS.FunctionalAnalysis.InverseCayleyCoordinate
 import NLS.ZakharovShabat.L2WholeLineRealSpectralMeasure
+import NLS.FunctionalAnalysis.CayleyResolventFunction
+import NLS.FunctionalAnalysis.SelfAdjointCayleyResolvent
+import NLS.FunctionalAnalysis.RealResolventKernel
+import NLS.ZakharovShabat.L2WholeLineSpectralResolventIntegral
