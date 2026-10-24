@@ -746,3 +746,35 @@ through the periodic matrix and verifies both inverse equations on the
 actual domain. Reverse spectral inclusion, full equality, spectral measures
 and pure absolute continuity remain unfinished in this milestone.
 Exact2014 and G2 remain separate source questions.
+
+## Equality of the actual whole-line spectrum and the closed Floquet bands
+
+[`L2FloquetInhomogeneous.lean`](../NLS/ZakharovShabat/L2FloquetInhomogeneous.lean)
+proves that the original periodic Floquet columns transfer the diagonal
+inhomogeneous equation back to the physical equation. The logarithmic
+terms cancel exactly, with the original signs of the pencil z-L.
+[`L2WholeLineFloquetInverse.lean`](../NLS/ZakharovShabat/L2WholeLineFloquetInverse.lean)
+composes bounded matrix multiplication and the scalar solution maps to
+obtain a bounded physical solution operator. Its representatives are
+locally absolutely continuous and satisfy Lf=z*f-g almost everywhere.
+
+[`L2WholeLinePencilInverse.lean`](../NLS/ZakharovShabat/L2WholeLinePencilInverse.lean)
+places these solutions in the actual graph-closure domain and computes
+the actual closure image. At a real parameter, symmetry and surjectivity
+give injectivity, hence both inverse equations. The resulting continuous
+linear inverse has values in the actual domain with its inherited L2 norm.
+
+[`L2WholeLineGapResolvent.lean`](../NLS/ZakharovShabat/L2WholeLineGapResolvent.lean)
+applies this construction to every real point outside the closed source
+bands. The stable and unstable multipliers have logarithms with nonzero
+real parts, so the verified scalar inverses apply. Combining these real-gap
+resolvents with the nonreal resolvents and the closed-band inclusion proves
+`source_wholeLineSpectrum_eq_floquetBands`: the independently defined
+spectrum of the original physical operator is exactly the full closed
+Floquet band set, including all endpoints and collapsed gaps.
+
+This establishes the spectral-set identity in the printed p.17 claim.
+The accompanying assertion of absolute continuity still requires actual
+spectral measures and exclusion of singular spectral components. Spectral
+set equality alone does not establish that assertion. Exact2014 and G2
+remain separate source questions.

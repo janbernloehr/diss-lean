@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual free resolvent gives bounded scalar and diagonal
-first-order solution maps with locally absolutely continuous representatives.
-Bounded scalar and matrix multiplication preserve the original L2 meaning.
-Physical gap inverses, spectrum equality and pure absolute continuity remain pending.
+Latest step: the actual whole-line operator spectrum equals the full closed
+Floquet bands for every original real Hilbert source. Bounded inverses on
+the actual domain exclude every real gap point and every nonreal parameter.
+The spectral-measure construction and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

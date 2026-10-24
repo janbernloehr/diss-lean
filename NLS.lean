@@ -4580,3 +4580,7 @@ import NLS.ZakharovShabat.L2WholeLineScalarODEInverse
 import NLS.ZakharovShabat.L2WholeLineScalarMultiplication
 import NLS.ZakharovShabat.L2WholeLineMatrixMultiplication
 import NLS.ZakharovShabat.L2WholeLineDiagonalInverse
+import NLS.ZakharovShabat.L2FloquetInhomogeneous
+import NLS.ZakharovShabat.L2WholeLineFloquetInverse
+import NLS.ZakharovShabat.L2WholeLinePencilInverse
+import NLS.ZakharovShabat.L2WholeLineGapResolvent

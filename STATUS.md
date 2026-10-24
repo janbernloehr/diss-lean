@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: bounded scalar inverses and physical L2 multiplication
+## Current milestone: the original whole-line Floquet spectrum
+
+The independently defined spectrum of the original whole-line
+physical operator now equals the full closed Floquet band set for every
+original real Hilbert source, including endpoints and collapsed gaps.
+
+Every real gap parameter has a bounded two-sided inverse on the actual
+closure domain. The construction transfers the bounded scalar solutions
+through the periodic Floquet basis, verifies the physical differential
+equation, and uses symmetry to obtain the second inverse identity.
+Together with the earlier nonreal resolvents and band inclusion, this
+proves the spectral-set identity on printed p.17.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the
+spectral-measure construction and pure absolute continuity unfinished.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,265 build jobs, 7,217
+public examples, and a transitive axiom audit of 41,440 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,469 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: bounded scalar inverses and physical L2 multiplication
 
 The actual free nonreal resolvent now supplies bounded scalar solution
 operators for y prime = alpha*y+h whenever Re(alpha) is nonzero. The

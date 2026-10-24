@@ -66981,3 +66981,54 @@ example {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
 
 end WholeLineScalarInverseExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineSpectrumEqualityExamples
+open MeasureTheory Module
+open scoped Matrix.Norms.Elementwise
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    wholeLineSpectrum (sourcePhysicalL2 φ) =
+      Complex.ofReal '' sourceFloquetBandSet (by simp) (by norm_num) φ :=
+  source_wholeLineSpectrum_eq_floquetBands φ hφ
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (x : ℝ)
+    (hx : x ∉ sourceFloquetBandSet (by simp) (by norm_num) φ) :
+    (x : ℂ) ∈ wholeLineResolventSet (sourcePhysicalL2 φ) :=
+  source_gap_mem_wholeLineResolventSet φ hφ x hx
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im = 0) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)) (μ : Fin 2 → ℂ)
+    (hμ : ∀ j, μ j ≠ 0) (hM : ∀ j, Matrix.mulVec (l2Monodromy u z) (b j) = μ j • b j)
+    (h0 : (Complex.log (μ 0)).re ≠ 0) (h1 : (Complex.log (μ 1)).re ≠ 0) :
+    ∃ R : WholeLineL2 →L[ℂ] (wholeLineMinimalOperator u).closure.domain,
+      (∀ f, wholeLinePencil u z (R f) = f) ∧ (∀ g, R (wholeLinePencil u z g) = g) :=
+  mem_wholeLineResolventSet_of_floquet_basis u hu z hz b μ hμ hM h0 h1
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (h0 : (Complex.log (μ 0)).re ≠ 0) (h1 : (Complex.log (μ 1)).re ≠ 0)
+    (C : ℝ) (hC : ∀ t, ‖l2FloquetPeriodicMatrix u z b μ t‖ ≤ C ∧
+      ‖(l2FloquetPeriodicMatrix u z b μ t)⁻¹‖ ≤ C) (g : WholeLineL2) :
+    ∃ F : ℝ → ℂ × ℂ,
+      wholeLineL2Pair (wholeLineFloquetInverse u z b μ h0 h1 C hC g) =ᵐ[volume] F ∧
+      (∀ a c : ℝ, AbsolutelyContinuousOnInterval F a c) ∧
+      physicalOperator (l2WholeLinePotential u) F =ᵐ[volume]
+        (fun t => z • F t-wholeLineL2Pair g t) :=
+  wholeLineFloquetInverse_exists_AC_solution u z b μ h0 h1 C hC g
+
+example (φ F : ℝ → ℂ × ℂ) (z : ℂ) (g : ℂ × ℂ) (t : ℝ)
+    (hF : HasDerivAt F (classicalODECoefficient (φ t) z (F t)+
+      (Complex.I*g.1,-Complex.I*g.2)) t) : physicalOperator φ F t = z • F t-g :=
+  physicalOperator_of_inhomogeneous_ode φ F z g t hF
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im = 0) (R : WholeLineL2 →L[ℂ] WholeLineL2)
+    (hR : ∀ g : WholeLineL2, ∃ F : ℝ → ℂ × ℂ, wholeLineL2Pair (R g) =ᵐ[volume] F ∧
+      (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+      physicalOperator (l2WholeLinePotential u) F =ᵐ[volume]
+        (fun t => z • F t-wholeLineL2Pair g t)) : z ∈ wholeLineResolventSet u :=
+  mem_wholeLineResolventSet_of_bounded_AC_rightInverse u hu z hz R hR
+
+end WholeLineSpectrumEqualityExamples
+end NLS.ZakharovShabat
