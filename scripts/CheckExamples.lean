@@ -67283,3 +67283,51 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end PoissonEstimatesExamples
 end NLS.ZakharovShabat
+
+namespace NLS.FunctionalAnalysis
+section LocalSpectralACExamples
+open MeasureTheory Set
+open scoped NNReal
+
+example (x ε t : ℝ) (hε : 0 < ε) : realPoissonKernel x ε t ≤ 1/ε :=
+  realPoissonKernel_le_inv_height x ε t hε
+
+example (x ε t δ : ℝ) (hε : 0 < ε) (hδ : 0 < δ) (ht : δ ≤ |x-t|) :
+    realPoissonKernel x ε t ≤ 1/(2*δ) :=
+  realPoissonKernel_le_of_distance x ε t δ hε hδ ht
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (x ε : ℝ) (hε : 0 < ε) :
+    (∫ t, realPoissonKernel x ε t ∂μ) ≤ μ.real univ / ε :=
+  integral_realPoissonKernel_le_inv_height μ x ε hε
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (x ε δ : ℝ)
+    (hε : 0 < ε) (hδ : 0 < δ) (ht : ∀ᵐ t ∂μ, δ ≤ |x-t|) :
+    (∫ t, realPoissonKernel x ε t ∂μ) ≤ μ.real univ / (2*δ) :=
+  integral_realPoissonKernel_le_of_ae_distance μ x ε δ hε hδ ht
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (a b δ η : ℝ) (C : ℝ≥0)
+    (hδ : 0 < δ) (hη : 0 < η)
+    (h : ∀ x ∈ Ioo (a-δ) (b+δ), ∀ ε : ℝ, 0 < ε → ε < η →
+      (∫ t, realPoissonKernel x ε t ∂μ) ≤ C) :
+    μ.restrict (Icc a b) ≪ (volume : Measure ℝ) :=
+  absolutelyContinuous_restrict_Icc_of_local_poisson_bound μ a b δ η C hδ hη h
+
+end LocalSpectralACExamples
+end NLS.FunctionalAnalysis
+
+namespace NLS.ZakharovShabat
+section LocalSpectralACExamples
+open MeasureTheory Set
+open scoped NNReal
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (a b δ η : ℝ) (C : ℝ≥0) (hδ : 0 < δ) (hη : 0 < η)
+    (h : ∀ x ∈ Ioo (a-δ) (b+δ), ∀ ε : ℝ, (hε : 0 < ε) → ε < η →
+      ‖inner ℂ v (wholeLineNonrealResolvent u hu ((x : ℂ)+(ε : ℂ)*Complex.I)
+        (by simpa using ne_of_gt hε) v)‖ ≤ C) :
+    (wholeLineRealSpectralMeasure u hu v).restrict (Icc a b) ≪ (volume : Measure ℝ) :=
+  wholeLineRealSpectralMeasure_restrict_Icc_absolutelyContinuous_of_resolvent_bound
+    u hu v a b δ η C hδ hη h
+
+end LocalSpectralACExamples
+end NLS.ZakharovShabat

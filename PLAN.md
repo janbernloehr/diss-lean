@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: Poisson estimates and absolute-continuity criterion
+## Current milestone: the local physical spectral-measure criterion
+
+A local bound on the actual physical resolvent expectation now implies
+absolute continuity of the actual real spectral measure on a smaller
+interval. Only small positive imaginary parts and centers in a slightly
+larger real interval need to be bounded.
+
+The proof controls large Poisson heights by total mass and distant centers
+by their positive distance from the smaller interval. It then applies the
+verified uniform Poisson criterion to the restricted measure.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+resolvent bound as an explicit hypothesis. Proving it from the original
+Floquet Green operator, handling exceptional parameters and extending
+from compact inputs to all vectors remain unfinished. Pure absolute
+continuity of the physical operator is not yet established.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,313 build jobs, 7,263
+public examples, and a transitive axiom audit of 41,657 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,562 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Poisson estimates and absolute-continuity criterion
 
 The actual physical measure's Poisson transform is now identified with
 the negative imaginary part of its original resolvent expectation.

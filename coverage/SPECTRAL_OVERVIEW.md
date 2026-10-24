@@ -952,3 +952,27 @@ The actual physical band-interior resolvent bounds, localization and
 exclusion of singular continuous spectrum remain unfinished. The general
 criterion does not itself prove pure absolute continuity for this operator.
 Exact2014 and G2 remain separate source questions.
+
+## A local criterion for the actual physical spectral measure
+
+[`RealPoissonBounds.lean`](../NLS/FunctionalAnalysis/RealPoissonBounds.lean)
+proves inverse-height and distance-from-center bounds for the original
+Poisson kernel and its integrals against finite real measures.
+[`LocalPoissonAbsoluteContinuity.lean`](../NLS/FunctionalAnalysis/LocalPoissonAbsoluteContinuity.lean)
+uses these estimates to localize the verified uniform Poisson criterion.
+A uniform bound for small positive heights and centers in a larger interval
+implies absolute continuity of the measure on a smaller closed interval.
+Large heights and centers outside the larger interval are controlled by
+total mass and the positive distance between the interval boundaries.
+
+[`L2WholeLineLocalSpectralAC.lean`](../NLS/ZakharovShabat/L2WholeLineLocalSpectralAC.lean)
+applies this to the actual real spectral measure of the original physical
+operator. A uniform small-height bound on its original resolvent expectation
+near a real interval implies absolute continuity on a smaller interval.
+The resolvent bound is an explicit hypothesis of this theorem.
+
+Proving that physical bound from the original Floquet Green operator is
+still required. Countable exceptional parameters and extension from compact
+inputs to all Hilbert vectors must also be handled. Pure absolute continuity
+of the physical operator remains unfinished. Exact2014 and G2 remain
+separate source questions.

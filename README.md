@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual resolvent expectation controls interval masses
-of its real spectral measure through the Poisson kernel. A uniform Poisson
-bound implies Lebesgue domination and absolute continuity. The required
-physical band-interior bounds and pure absolute continuity remain pending.
+Latest step: a local bound on the actual physical resolvent expectation
+implies absolute continuity of its real spectral measure on a smaller
+interval. The bound remains an explicit hypothesis. Proving the physical
+Green-operator estimates and pure absolute continuity remains pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

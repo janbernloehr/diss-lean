@@ -4617,3 +4617,6 @@ import NLS.FunctionalAnalysis.RealPoissonKernel
 import NLS.FunctionalAnalysis.IntervalMeasureDomination
 import NLS.FunctionalAnalysis.PoissonAbsoluteContinuity
 import NLS.ZakharovShabat.L2WholeLinePoissonIntegral
+import NLS.FunctionalAnalysis.RealPoissonBounds
+import NLS.FunctionalAnalysis.LocalPoissonAbsoluteContinuity
+import NLS.ZakharovShabat.L2WholeLineLocalSpectralAC
