@@ -334,3 +334,36 @@ as refuted.
 The latter still holds at p=2; no replacement height is adopted. This
 audit does not certify the remaining chapters or unnumbered source claims.
 The formalization of the dissertation remains incomplete.
+
+## Whole-line Floquet assertion: band criterion proved, operator theorem pending
+
+The unnumbered paragraph on printed p.17 identifies the spectrum of the
+periodically extended real L2 operator on the real line with the complement
+of the open periodic gaps and says that its spectrum is absolutely
+continuous. This assertion requires additional whole-line operator and
+spectral-measure foundations. The existing closed coefficient operator
+and physical periodic realization do not discharge that requirement.
+
+[`SourceFloquetBandSet.lean`](../NLS/ZakharovShabat/SourceFloquetBandSet.lean)
+defines the real complement of the union of the actual open canonical
+gaps. For every finite p>1 real source, membership is equivalent to
+|Re Delta(x)|<=2. Strict gap interiors have |Re Delta(x)|>2; the proof
+covers every band endpoint and collapsed gap and proves the set closed.
+
+[`FloquetQuadratic.lean`](../NLS/ZakharovShabat/FloquetQuadratic.lean)
+proves the exact algebraic criterion: a real-trace two-by-two matrix of
+determinant one has a characteristic root of modulus one if and only if
+its trace lies in [-2,2].
+
+[`L2FloquetBandCriterion.lean`](../NLS/ZakharovShabat/L2FloquetBandCriterion.lean)
+transfers this criterion to the actual physical L2 monodromy of each
+original real Hilbert source. A nonzero eigenvector with a unit multiplier
+exists exactly on the closed band set. Its propagation by the constructed
+physical fundamental matrix at nonnegative integer times is exactly the
+corresponding power of the multiplier times the same initial vector.
+
+Remaining work is to construct the densely defined operator on
+L2(R;C^2), prove self-adjointness and identify its resolvent and spectrum,
+and prove pure absolute continuity of its spectral measures. No operator
+spectrum is defined by simply declaring it to be the band set. The new
+results establish the monodromy criterion only.

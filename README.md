@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original indexed actions minus squared Fourier coefficients
-have real analytic realizations with one extra summable Sobolev weight,
-at every positive integer order.
+Latest step: the exact closed Floquet band set is characterized by unit
+monodromy multipliers for the original physical Hilbert sources. The
+whole-line operator spectral theorem remains unfinished.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

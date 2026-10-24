@@ -4515,3 +4515,6 @@ import NLS.ComplexAnalysis.AnalyticOpenInverse
 import NLS.ZakharovShabat.SourceFrequencyOpenInverse
 import NLS.SequenceSpaces.WeightedHilbertProduct
 import NLS.ZakharovShabat.SourceActionFourierRemainder
+import NLS.ZakharovShabat.FloquetQuadratic
+import NLS.ZakharovShabat.SourceFloquetBandSet
+import NLS.ZakharovShabat.L2FloquetBandCriterion

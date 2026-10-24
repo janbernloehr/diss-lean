@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: literal action-minus-Fourier-square smoothing
+## Current milestone: physical monodromy and the closed Floquet band criterion
+
+The exact Floquet band criterion now connects the original canonical
+gaps to the actual physical L2 monodromy. For every real Hilbert source,
+a nonzero monodromy eigenvector with multiplier of modulus one exists
+exactly outside the union of its open periodic gaps. Endpoints and
+collapsed gaps are included. The underlying discriminant criterion is
+proved for every finite p>1 real source.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+remaining scope of the printed p.17 whole-line assertion. Construction of
+the whole-line operator, its self-adjointness, the spectral identification,
+and pure absolute continuity remain unfinished. The exact 2014 comparison
+and G.2 interval-norm interpretation also remain separate qualifications.
+
+Validation: `./scripts/check.sh` passes with 8,196 build jobs, 7,132
+public examples, and a transitive axiom audit of 41,001 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,298 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: literal action-minus-Fourier-square smoothing
 
 The original indexed action minus the squared modulus of its Fourier
 coefficient now has a real analytic sequence-valued realization gaining

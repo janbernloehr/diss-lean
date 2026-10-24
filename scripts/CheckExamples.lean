@@ -66433,3 +66433,34 @@ example (m : ℕ) (hm : 1 ≤ m)
       ‖sourceIndexedAction (by simp) (by norm_num) n φ.val - (‖φ.val.fst (-n)‖^2 : ℝ)‖) :=
   D.summable_actionFourier_error m hm a
 end OriginalActionFourierSmoothingExamples
+
+-- A real trace outside the band interval cannot have a unit Floquet root.
+example : ¬ ∃ μ : ℂ, ‖μ‖ = 1 ∧ μ^2-(3 : ℂ)*μ+1 = 0 := by
+  intro h
+  have hbound := (NLS.ZakharovShabat.exists_unit_root_floquet_quadratic_iff (3 : ℝ)).mp (by simpa using h)
+  norm_num at hbound
+
+-- The closed band set is the complement of all actual open gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : NLS.CoeffPair p)
+    (hφ : NLS.ZakharovShabat.IsRealType (NLS.CoeffPair.toMax p φ)) (x : ℝ) :
+    x ∈ NLS.ZakharovShabat.sourceFloquetBandSet hp hp1 φ ↔
+      |(NLS.ZakharovShabat.canonicalDiscriminant hp
+        (NLS.ZakharovShabat.periodOnePotential φ) (x : ℂ)).re| ≤ 2 :=
+  NLS.ZakharovShabat.mem_sourceFloquetBandSet_iff_abs_discriminant_le_two hp hp1 φ hφ x
+
+-- The physical Hilbert monodromy realizes the same band criterion.
+example (φ : NLS.CoeffPair 2)
+    (hφ : NLS.ZakharovShabat.IsRealType (NLS.CoeffPair.toMax 2 φ)) (x : ℝ) :
+    (∃ μ : ℂ, ‖μ‖ = 1 ∧ ∃ v : Fin 2 → ℂ, v ≠ 0 ∧
+      Matrix.mulVec (NLS.ZakharovShabat.l2Monodromy
+        (NLS.ZakharovShabat.sourcePhysicalL2 φ) x) v = μ • v) ↔
+      x ∈ NLS.ZakharovShabat.sourceFloquetBandSet (by simp) (by norm_num) φ :=
+  NLS.ZakharovShabat.source_l2_unit_monodromy_eigenvector_iff_mem_band φ hφ x
+
+-- Integer-time propagation retains the actual monodromy eigenvector.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z μ : ℂ) (v : Fin 2 → ℂ)
+    (hv : Matrix.mulVec (NLS.ZakharovShabat.l2Monodromy u z) v = μ • v) :
+    Matrix.mulVec (NLS.ZakharovShabat.l2PeriodicFundamentalMatrix u z
+      ⟨(3 : ℝ),by norm_num⟩) v = μ^3 • v :=
+  NLS.ZakharovShabat.l2PeriodicFundamentalMatrix_nat_mulVec_of_eigenvector u z μ v hv 3
