@@ -66403,3 +66403,33 @@ example (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p) :
           AnalyticOnNhd ℂ F P.source ∧ AnalyticOnNhd ℂ P.symm P.target :=
   E.generic_open_inverse hp2
 end OriginalFrequencyOpenInverseExamples
+
+/-! Literal action-minus-Fourier-square smoothing with the original signed normalization. -/
+
+example (w v : Weight) (a : WeightedCoeff w 2) (b : WeightedCoeff v 2) :
+    ‖WeightedCoeff.hilbertProduct w v a b‖ ≤ ‖a‖*‖b‖ :=
+  WeightedCoeff.norm_hilbertProduct_le w v a b
+
+section OriginalActionFourierSmoothingExamples
+variable {W₀ W V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s)
+
+example (m : ℕ) (hm : 1 ≤ m) :
+    AnalyticOnNhd ℝ (D.actionFourierRemainder m) univ :=
+  D.actionFourierRemainder_analytic m hm
+
+example (m : ℕ) (hm : 1 ≤ m)
+    (a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight m (Nat.cast_nonneg m))) :
+    let φ := originalWeightedRealSource (sourceSobolevSpectralWeight m (Nat.cast_nonneg m)) a
+    (D.actionFourierRemainder m a).val (-3) =
+      sourceIndexedAction (by simp) (by norm_num) (-3) φ.val - (‖φ.val.fst 3‖^2 : ℝ) := by
+  simpa only [neg_neg] using D.actionFourierRemainder_fourier_square m hm a (-3)
+
+include D in
+example (m : ℕ) (hm : 1 ≤ m)
+    (a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight m (Nat.cast_nonneg m))) :
+    let φ := originalWeightedRealSource (sourceSobolevSpectralWeight m (Nat.cast_nonneg m)) a
+    Summable (fun n : ℤ => (1+|(n:ℝ)|)^(2*m+1) *
+      ‖sourceIndexedAction (by simp) (by norm_num) n φ.val - (‖φ.val.fst (-n)‖^2 : ℝ)‖) :=
+  D.summable_actionFourier_error m hm a
+end OriginalActionFourierSmoothingExamples

@@ -4513,3 +4513,5 @@ import NLS.FunctionalAnalysis.CircleProductCoveringDimension
 import NLS.ZakharovShabat.SourceHilbertExactCoveringDimension
 import NLS.ComplexAnalysis.AnalyticOpenInverse
 import NLS.ZakharovShabat.SourceFrequencyOpenInverse
+import NLS.SequenceSpaces.WeightedHilbertProduct
+import NLS.ZakharovShabat.SourceActionFourierRemainder

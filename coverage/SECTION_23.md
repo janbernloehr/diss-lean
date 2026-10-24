@@ -1551,6 +1551,39 @@ The two new public examples check the exact squared order-three norm
 imaginary conjugate-reflected source at indices -3 and 3. The norm
 example checks both components of the native Hilbert norm.
 
+## Literal actions as smoothing perturbations of Fourier squares
+
+The introduction, printed p.15, describes each action as a smoothing
+perturbation of a squared Fourier coefficient. The original action error
+now has an explicit sequence-valued realization. For each positive integer
+Sobolev order m and every retained original family, its map is real
+analytic from the entire native real Hm space into weighted ell1 of order
+2m+1. In particular, the literal error is absolutely summable with weight
+(1+|n|)^(2m+1).
+
+[`SourceActionFourierRemainder.lean`](../NLS/ZakharovShabat/SourceActionFourierRemainder.lean)
+defines `D.actionFourierRemainder` using the already proved one-order
+Birkhoff remainder. Its coefficient identity is the original indexed
+action I_n minus the squared modulus of the first source coefficient at
+index -n. Equivalently the Fourier square is the product of the first
+coefficient at -n and the second at n, with the source's real conjugacy
+condition retained. The exact Fourier normalization gives the factor
+one half in the rectangular quadratic action formula.
+
+[`WeightedHilbertProduct.lean`](../NLS/SequenceSpaces/WeightedHilbertProduct.lean)
+constructs pointwise products of two weighted Hilbert sequences in the
+summable space with the product weight, proves analyticity, and gives
+the unit Holder bound. Applying it to the remainder r and the sequence
+2z-r, where z is the actual Birkhoff image, realizes the difference of
+quadratic actions without losing the extra weight. The resulting product
+weight is exactly the standard weight of order 2m+1.
+
+This proves a concrete form of the cited action-smoothing assertion for
+the retained original map at positive integer orders. It does not add a
+fractional-order or order-zero endpoint, or verify historical attribution
+to an external construction. The exact 2014 comparison and G.2 interval
+norm interpretation remain separate qualifications.
+
 ## Validation and remaining work
 
 The original 24 public checks cover complex original-domain action identity,

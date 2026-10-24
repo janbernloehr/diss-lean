@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: explicit analytic frequency inverse neighborhoods
+## Current milestone: literal action-minus-Fourier-square smoothing
+
+The original indexed action minus the squared modulus of its Fourier
+coefficient now has a real analytic sequence-valued realization gaining
+one summable Sobolev weight. For every positive integer m and every native
+real Hm source, its literal coefficients are absolutely summable with
+weight (1+|n|)^(2m+1).
+
+The proof uses the existing Birkhoff-minus-Fourier remainder, a weighted
+Hilbert product with unit Holder bound, and the exact quadratic action
+identity. It retains the original map, indexed actions, normalization,
+and signed Fourier reflection. The [Section 23 audit](coverage/SECTION_23.md)
+records the construction and its positive-integer scope. Fractional and
+order-zero endpoints are not asserted. The exact 2014 comparison and G.2
+norm interpretation remain separate unfinished source questions.
+
+Validation: `./scripts/check.sh` passes with 8,193 build jobs, 7,128
+public examples, and a transitive axiom audit of 40,982 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,289 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: explicit analytic frequency inverse neighborhoods
 
 The original frequency map now has explicit open neighborhoods on which
 it and its inverse are analytic. At zero, the source neighborhood lies

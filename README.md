@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original frequency map has explicit open neighborhoods
-at zero and at every point of an open dense subset, with analytic forward
-and inverse maps throughout those neighborhoods.
+Latest step: the original indexed actions minus squared Fourier coefficients
+have real analytic realizations with one extra summable Sobolev weight,
+at every positive integer order.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
