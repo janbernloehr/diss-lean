@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: standard covering-dimension foundations and closed cube embeddings
+## Current milestone: infinite covering dimension of actual infinite-gap isospectral sets
+
+Every actual infinite-gap Hilbert isospectral set now has infinite
+covering dimension in the finite-open-cover sense. The previously explicit
+numerical cube lower-bound premise has been proved.
+
+The proof establishes the cubical Sperner theorem, then a closed covering
+lemma forcing n+1-fold overlap for suitable covers of an n-cube. An
+explicit open cover and the shrinking lemma give the numerical cube lower
+bound. Closed cube embeddings in the actual Hilbert isospectral set then
+rule out every finite bound.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the proof chain and the
+MIT attribution for the adapted Sperner/fixed-point modules. All proofs
+use the project's ordinary axiom audit. Exact finite-torus dimension
+equality, exact 2014 comparison and G.2 norm interpretation remain separate
+unfinished questions.
+
+Validation: `./scripts/check.sh` passes with 8,179 build jobs, 7,116
+public examples, and a transitive axiom audit of 40,858 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,256 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: standard covering-dimension foundations and closed cube embeddings
 
 Covering dimension now has a separate implementation using finite open
 covers and refinements, with proofs of homeomorphism invariance and

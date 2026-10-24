@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: standard covering-dimension bounds and closed-subspace
-monotonicity are implemented. Every infinite-gap Hilbert isospectral set
-contains closed cubes of all finite sizes; higher numerical dimension bounds remain explicit premises.
+Latest step: every actual infinite-gap Hilbert isospectral set has
+infinite standard covering dimension. The numerical cube lower bound is
+proved through cubical Sperner and Lebesgue covering lemmas.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

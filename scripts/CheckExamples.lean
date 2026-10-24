@@ -66317,3 +66317,30 @@ example (φ : realTypeSourceSubmodule 2) (hφ : Nonempty (sourceHilbertOpenGapIn
     ¬ NLS.FunctionalAnalysis.HasCoveringDimensionLE
       (sourceIsospectralSet ENNReal.ofNat_ne_top φ) 0 :=
   sourceHilbertIsospectralSet_not_coveringDimensionLE_zero φ hφ
+
+/-! Numerical cube lower bounds and actual infinite-gap covering dimension. -/
+
+-- The independently audited cubical fixed-point theorem.
+example (n : ℕ) (f : C(@NLS.CubicalSperner.unit_cube n, @NLS.CubicalSperner.unit_cube n)) :
+    ∃ x, Function.IsFixedPt f x :=
+  NLS.CubicalSperner.fixed_point_unit_cube_isFixedPt f
+
+-- A closed cube cover avoiding opposite faces has multiplicity at least n+1 somewhere.
+open Classical in
+example (n m : ℕ) (C : Fin m → Set (@NLS.CubicalSperner.unit_cube n))
+    (hc : ∀ i, IsClosed (C i)) (hu : ∀ x, ∃ i, x ∈ C i)
+    (hf : NLS.CubicalSperner.CubeCoverAvoidsOppositeFaces C) :
+    ∃ x, n+1 ≤ (Finset.univ.filter (fun i => x ∈ C i)).card :=
+  NLS.CubicalSperner.cube_lebesgue_covering C hc hu hf
+
+-- The numerical cube premise from the previous milestone is now proved.
+example (n : ℕ) :
+    ¬ NLS.FunctionalAnalysis.HasCoveringDimensionLE (Fin (n+1) → unitInterval) n :=
+  NLS.FunctionalAnalysis.not_hasCoveringDimensionLE_cube n
+
+-- No finite covering-dimension bound for an actual infinite-gap isospectral set.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∉ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ¬ ∃ n : ℕ, NLS.FunctionalAnalysis.HasCoveringDimensionLE
+      (sourceIsospectralSet ENNReal.ofNat_ne_top φ) n :=
+  sourceHilbertInfiniteGap_no_finite_covering_dimension φ hφ

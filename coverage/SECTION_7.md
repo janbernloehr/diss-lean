@@ -783,6 +783,51 @@ explicit premise at this step. The infinite covering-dimension conclusion
 and exact finite-torus dimension equality are not yet asserted here.
 The exact 2014 comparison and G.2 norm interpretation remain unfinished.
 
+## Infinite covering dimension for actual infinite-gap isospectral sets
+
+Every actual infinite-gap Hilbert isospectral set now has infinite standard
+covering dimension. For every natural number n, a finite open cover exists
+which has no finite open refinement of multiplicity at most n+1. The
+numerical cube premise in the previous reduction has been discharged.
+
+[CubicalSpernerPrep.lean](../NLS/FunctionalAnalysis/CubicalSpernerPrep.lean)
+and [CubicalSperner.lean](../NLS/FunctionalAnalysis/CubicalSperner.lean)
+prove the cubical Sperner parity theorem and existence of a complete
+simplex on a finite grid. [CubeFixedPoint.lean](../NLS/FunctionalAnalysis/CubeFixedPoint.lean)
+provides the compactness passage to Brouwer's fixed-point theorem for a
+finite real cube, together with the discrete-grid distance estimate used
+below. These three modules adapt the MIT-licensed proofs by harfe from
+[fixed-point-theorems-lean4 at commit 770940d](https://github.com/harfe/fixed-point-theorems-lean4/tree/770940ddf9878cf61952ed53d910b92bca841838).
+Each retains the full license notice. The adaptation uses the NLS namespace,
+local imports and Lean 4.33.1 compatibility repairs; the complete proof
+terms pass the project's ordinary axiom audit.
+
+[CubeCoverLabel.lean](../NLS/FunctionalAnalysis/CubeCoverLabel.lean)
+labels each cover member by the least upper face it meets, using the last
+label if it meets none. A member avoiding opposite faces satisfies the
+cubical labeling rules. [CubeClosedLabels.lean](../NLS/FunctionalAnalysis/CubeClosedLabels.lean)
+uses complete simplices on finer grids and compactness to show that all
+closed label sets share a point.
+[CubeLebesgueCovering.lean](../NLS/FunctionalAnalysis/CubeLebesgueCovering.lean)
+groups a finite closed cover by labels and proves Lebesgue's covering
+lemma: if no member meets opposite faces of an n-cube, some point belongs
+to at least n+1 distinct members.
+
+[CubeCoveringDimensionLower.lean](../NLS/FunctionalAnalysis/CubeCoveringDimensionLower.lean)
+constructs an explicit finite open cover avoiding opposite faces. The
+shrinking lemma and the proved closed covering lemma exclude covering
+dimension at most n for the (n+1)-cube, in both cube representations.
+[SourceHilbertInfiniteCoveringDimension.lean](../NLS/ZakharovShabat/SourceHilbertInfiniteCoveringDimension.lean)
+combines this numerical lower bound with the actual closed cube embeddings.
+It rules out every finite covering-dimension bound on each actual
+infinite-gap Hilbert isospectral set.
+
+This is a standard covering-dimension conclusion, independently of the
+previous manifold obstruction. The exact finite-torus covering-dimension
+equality is not proved in this step. The exact 2014 comparison and the G.2
+norm interpretation remain unfinished; no new signed-gap surjectivity
+claim is made.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls
