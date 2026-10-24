@@ -470,3 +470,29 @@ also apply explicitly to the unchanged original real Hilbert sources.
 Self-adjointness requires equality with the adjoint and remains unfinished.
 The maximal differential-domain characterization, band-spectrum identity
 and pure absolute continuity are still separate proof obligations.
+
+## Absolute continuity and Green's identity on the whole real line
+
+[`L2WholeLinePeriodAbsoluteContinuity.lean`](../NLS/ZakharovShabat/L2WholeLinePeriodAbsoluteContinuity.lean)
+proves absolute continuity of the actual unit-interval solution and of its
+continuation in the local coordinate of every closed integer period.
+[`L2WholeLineODEIntegrability.lean`](../NLS/ZakharovShabat/L2WholeLineODEIntegrability.lean)
+proves continuity of the actual whole-line pair and integrability of its
+physical differential-equation right-hand side on every compact interval.
+
+[`L2WholeLineIntegralEquation.lean`](../NLS/ZakharovShabat/L2WholeLineIntegralEquation.lean)
+assembles the closed-period identities into the original integral equation
+between any two real times. It proves absolute continuity on every compact
+interval, including negative times and intervals crossing integer seams.
+This uses the existing Banach-valued primitive and fundamental-theorem
+results, rather than inferring absolute continuity from an a.e. derivative.
+
+[`L2WholeLineGreenIdentity.lean`](../NLS/ZakharovShabat/L2WholeLineGreenIdentity.lean)
+proves the actual Hermitian boundary identity for two solutions of real
+physical potentials, with factor conjugate(z)-w. At a real spectral
+parameter the boundary current is conserved between any two real times.
+No global L2 membership is imposed on these physical solutions.
+
+These results concern the actual constructed solutions. Characterizing
+arbitrary adjoint-domain elements, proving self-adjointness, identifying
+the whole-line spectrum and proving pure absolute continuity remain open.

@@ -4529,3 +4529,7 @@ import NLS.ZakharovShabat.L2WholeLineTestDomain
 import NLS.ZakharovShabat.L2WholeLineMinimalOperator
 import NLS.ZakharovShabat.L2WholeLineReality
 import NLS.ZakharovShabat.L2WholeLineSymmetry
+import NLS.ZakharovShabat.L2WholeLinePeriodAbsoluteContinuity
+import NLS.ZakharovShabat.L2WholeLineODEIntegrability
+import NLS.ZakharovShabat.L2WholeLineIntegralEquation
+import NLS.ZakharovShabat.L2WholeLineGreenIdentity

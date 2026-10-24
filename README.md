@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the real minimal whole-line operator is symmetric and closable.
-Its graph closure is closed and densely defined, with smooth compact tests
-as a core. Self-adjointness and the operator spectrum remain pending.
-Formalization remains in progress.
+Latest step: the actual whole-line physical solutions are absolutely continuous
+on every compact interval and satisfy the original integral equation and
+Hermitian Green identity across all integer seams. Self-adjointness and
+the operator spectrum remain pending. Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

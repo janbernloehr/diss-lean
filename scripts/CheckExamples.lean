@@ -66580,3 +66580,56 @@ example (u : IntervalPairL2) :
 
 end WholeLineSymmetricClosureExamples
 end NLS.ZakharovShabat
+
+-- The actual physical continuation is absolutely continuous through negative and positive seams.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) :
+    AbsolutelyContinuousOnInterval (NLS.ZakharovShabat.l2WholeLineSolution u z v)
+      (-(3 : ℝ)/2) (5/2) :=
+  NLS.ZakharovShabat.absolutelyContinuousOnInterval_l2WholeLineSolution u z v _ _
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (a b : ℝ) :
+    IntervalIntegrable (fun t => NLS.ZakharovShabat.classicalODECoefficient
+      (NLS.ZakharovShabat.l2WholeLinePotential u t) z
+      (NLS.ZakharovShabat.l2WholeLineSolution u z v t)) MeasureTheory.volume a b :=
+  NLS.ZakharovShabat.intervalIntegrable_l2WholeLineODE u z v a b
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (a b : ℝ) :
+    NLS.ZakharovShabat.l2WholeLineSolution u z v b =
+      NLS.ZakharovShabat.l2WholeLineSolution u z v a +
+        ∫ t in a..b, NLS.ZakharovShabat.classicalODECoefficient
+          (NLS.ZakharovShabat.l2WholeLinePotential u t) z
+          (NLS.ZakharovShabat.l2WholeLineSolution u z v t) :=
+  NLS.ZakharovShabat.l2WholeLineSolution_eq_integral_between u z v a b
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (t : ℝ) :
+    NLS.ZakharovShabat.l2WholeLineSolution u z v t = (v 0,v 1) +
+      ∫ s in (0 : ℝ)..t, NLS.ZakharovShabat.classicalODECoefficient
+        (NLS.ZakharovShabat.l2WholeLinePotential u s) z
+        (NLS.ZakharovShabat.l2WholeLineSolution u z v s) :=
+  NLS.ZakharovShabat.l2WholeLineSolution_eq_integral u z v t
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) (v : Fin 2 → ℂ) (a b : ℝ) :
+    AbsolutelyContinuousOnInterval
+      (NLS.ZakharovShabat.l2WholeLineSolution (NLS.ZakharovShabat.sourcePhysicalL2 φ) z v) a b :=
+  NLS.ZakharovShabat.absolutelyContinuousOnInterval_l2WholeLineSolution _ z v a b
+
+example (u : NLS.ZakharovShabat.IntervalPairL2)
+    (hu : NLS.ZakharovShabat.IsClassicalRealType (NLS.ZakharovShabat.intervalL2Representative u))
+    (z w : ℂ) (v q : Fin 2 → ℂ) (a b : ℝ) :
+    (star z-w) * (∫ t in a..b,
+      star (NLS.ZakharovShabat.l2WholeLineSolution u z v t).1 * (NLS.ZakharovShabat.l2WholeLineSolution u w q t).1 +
+        star (NLS.ZakharovShabat.l2WholeLineSolution u z v t).2 * (NLS.ZakharovShabat.l2WholeLineSolution u w q t).2) =
+      NLS.ZakharovShabat.wholeLineBoundaryForm
+        (NLS.ZakharovShabat.l2WholeLineSolution u z v b) (NLS.ZakharovShabat.l2WholeLineSolution u w q b) -
+      NLS.ZakharovShabat.wholeLineBoundaryForm
+        (NLS.ZakharovShabat.l2WholeLineSolution u z v a) (NLS.ZakharovShabat.l2WholeLineSolution u w q a) :=
+  NLS.ZakharovShabat.l2WholeLineSolution_green_identity u hu z w v q a b
+
+example (u : NLS.ZakharovShabat.IntervalPairL2)
+    (hu : NLS.ZakharovShabat.IsClassicalRealType (NLS.ZakharovShabat.intervalL2Representative u))
+    (z : ℝ) (v q : Fin 2 → ℂ) (a b : ℝ) :
+    NLS.ZakharovShabat.wholeLineBoundaryForm
+      (NLS.ZakharovShabat.l2WholeLineSolution u z v b) (NLS.ZakharovShabat.l2WholeLineSolution u z q b) =
+    NLS.ZakharovShabat.wholeLineBoundaryForm
+      (NLS.ZakharovShabat.l2WholeLineSolution u z v a) (NLS.ZakharovShabat.l2WholeLineSolution u z q a) :=
+  NLS.ZakharovShabat.l2WholeLineSolution_boundaryForm_const u hu z v q a b

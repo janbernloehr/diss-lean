@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: whole-line symmetry and closability
+## Current milestone: whole-line absolute continuity and Green identity
+
+The actual whole-line physical solutions now satisfy the original
+integral equation between any two real times. They are absolutely
+continuous on every compact interval, including intervals that cross
+negative and positive integer seams.
+
+For real physical potentials, the Hermitian Green identity has the
+original boundary form and factor conjugate(z)-w. At real spectral
+parameters the boundary current is conserved across the full real line.
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) distinguishes
+these solution identities from the still unfinished characterization of
+all adjoint-domain elements, self-adjointness, spectrum identification
+and pure absolute continuity. Exact2014 and G2 remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,213 build jobs, 7,160
+public examples, and a transitive axiom audit of 41,131 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,340 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line symmetry and closability
 
 For real physical potentials, compact-support integration by parts now
 proves symmetry of the actual minimal whole-line operator in the Hermitian
