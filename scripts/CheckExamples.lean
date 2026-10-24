@@ -66097,3 +66097,34 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
           (periodOnePotential_mem _) n ≠ 0}.Infinite :=
   ⟨dense_sourceFiniteGapLocus hp hp1,isMeagre_sourceFiniteGapLocus hp hp1,
     eventually_residual_infinite_source_open_gaps hp hp1⟩
+
+/-! Infinite open-gap count obstructs local manifold charts on the actual isospectral set. -/
+
+-- Any infinite actual open-gap set rules out every finite-dimensional Euclidean atlas.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : {n : ℤ | canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n ≠ 0}.Infinite) (N : ℕ) :
+    ¬ Nonempty (ChartedSpace (EuclideanSpace ℝ (Fin N))
+      (sourceIsospectralSet ENNReal.ofNat_ne_top φ)) :=
+  sourceHilbertInfiniteGap_not_chartedSpace φ hφ _
+
+-- A single contractible neighborhood anywhere in the actual isospectral set forces finite gaps.
+example (φ : realTypeSourceSubmodule 2)
+    (ψ : sourceIsospectralSet ENNReal.ofNat_ne_top φ)
+    (V : Set (sourceIsospectralSet ENNReal.ofNat_ne_top φ))
+    (hV : V ∈ 𝓝 ψ) (hC : ContractibleSpace V) :
+    φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) := by
+  by_contra hφ
+  exact sourceHilbertInfiniteGap_not_contractible_neighborhood φ hφ ψ hV hC
+
+-- Arbitrarily close to any real Hilbert source is one whose isospectral set admits no Euclidean atlas.
+example (φ : realTypeSourceSubmodule 2) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ξ : realTypeSourceSubmodule 2, ‖ξ.val-φ.val‖ < ε ∧
+      ¬ ∃ N : ℕ, Nonempty (ChartedSpace (EuclideanSpace ℝ (Fin N))
+        (sourceIsospectralSet ENNReal.ofNat_ne_top ξ)) := by
+  obtain ⟨ξ,hξ,_,hclose⟩ := exists_mem_sourceAllOpenGapRealLocus_mem_open
+    (p := 2) (by simp) (by norm_num) Set.univ isOpen_univ φ (Set.mem_univ _) ε hε
+  refine ⟨ξ,hclose,?_⟩
+  intro hc
+  exact infinite_open_gaps_of_mem_sourceAllOpenGapRealLocus (by simp) (by norm_num) ξ hξ
+    ((sourceHilbertIsospectralSet_finiteDimensional_charts_iff_finiteGap ξ).mp hc)

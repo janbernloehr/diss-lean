@@ -4453,3 +4453,7 @@ import NLS.FunctionalAnalysis.CompactScalarPerturbation
 import NLS.ZakharovShabat.SymmetricSignedGapFredholm
 import NLS.ZakharovShabat.SourceGenericOpenGaps
 import NLS.ZakharovShabat.SourceGenericGapApproximation
+import NLS.FunctionalAnalysis.CircleNoncontractible
+import NLS.FunctionalAnalysis.InfiniteCircleProductLocalTopology
+import NLS.FunctionalAnalysis.ChartedContractibleNeighborhood
+import NLS.ZakharovShabat.SourceHilbertInfiniteGapTopology

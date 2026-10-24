@@ -516,6 +516,46 @@ proved. A separate topological dimension invariant for infinitely many
 circle factors is still outstanding. Global squared-gap uniqueness,
 exact 2014 comparison and the G.2 norm interpretation remain unresolved.
 
+## Finite-gap and infinite-gap isospectral sets have different local topology
+
+The actual infinite-circle-product description now gives a topological
+obstruction beyond counting factors. If infinitely many actual Hilbert
+periodic gaps are open, no neighborhood of any point in the isospectral
+set is contractible. Consequently the set has no atlas modeled on any
+real normed vector space, including every finite-dimensional Euclidean model.
+
+[CircleNoncontractible.lean](../NLS/FunctionalAnalysis/CircleNoncontractible.lean)
+proves that the circle is neither simply connected nor contractible. A
+continuous lift of its identity through the real exponential covering
+would invert the exponential on the entire real line, contradicting its
+periodicity.
+
+[InfiniteCircleProductLocalTopology.lean](../NLS/FunctionalAnalysis/InfiniteCircleProductLocalTopology.lean)
+uses the product neighborhood basis: only finitely many coordinates are
+constrained, leaving a circle coordinate available for a retraction.
+Every neighborhood inclusion into the whole infinite product is therefore
+not nullhomotopic. No neighborhood is contractible, and even classical
+local contractibility fails. The neighborhood obstruction transports
+along homeomorphisms.
+
+[ChartedContractibleNeighborhood.lean](../NLS/FunctionalAnalysis/ChartedContractibleNeighborhood.lean)
+pulls back a small convex ball under a real normed chart to obtain a
+contractible neighborhood in the original topology.
+
+[SourceHilbertInfiniteGapTopology.lean](../NLS/ZakharovShabat/SourceHilbertInfiniteGapTopology.lean)
+transfers these facts through the established actual isospectral
+homeomorphism. It proves that an actual Hilbert isospectral set has a
+finite-dimensional Euclidean atlas if and only if its source has finitely
+many open gaps. Generic sources have no such atlas. Public examples also
+show that a single contractible neighborhood would force finite gaps,
+and construct arbitrarily nearby sources whose isospectral sets have
+no finite-dimensional Euclidean atlas.
+
+These are local-topology and manifold statements. They do not compute a
+covering-dimension invariant for the infinite product. That separate
+invariant, global squared-gap uniqueness, exact 2014 comparison and the
+G.2 norm interpretation remain unfinished.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

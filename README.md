@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: every actual periodic gap is open on a dense G-delta
-and residual set of real sources. Finite-gap sources are dense but meagre
-in the same source topology, for every finite exponent p>1.
+Latest step: actual infinite-gap Hilbert isospectral sets have no
+contractible neighborhoods or real normed atlas. Finite-dimensional Euclidean
+atlases exist exactly when finitely many periodic gaps are open.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

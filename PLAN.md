@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: generic opening of every periodic gap
+## Current milestone: local topology of infinite-gap isospectral sets
+
+Actual infinite-gap Hilbert isospectral sets now have a proved local
+topological obstruction: no neighborhood of any point is contractible.
+They therefore admit no atlas modeled on a real normed vector space.
+
+Every product neighborhood leaves a circle coordinate unrestricted.
+That coordinate is a retract, and the circle is not contractible. The
+actual isospectral homeomorphism transfers this obstruction to the
+original Hilbert topology. In contrast, every real normed chart gives
+a contractible neighborhood by pulling back a small convex ball.
+
+Together with the existing finite-gap atlas, this proves that an actual
+Hilbert isospectral set has a finite-dimensional Euclidean atlas exactly
+when finitely many periodic gaps are open. Generically no such atlas exists.
+
+The [Section 7 audit](coverage/SECTION_7.md) distinguishes this manifold
+obstruction from a covering-dimension calculation, which remains open.
+Global squared-gap uniqueness, exact 2014 and G.2 also remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,132 build jobs, 7,091
+public examples, and a transitive axiom audit of 40,191 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,177 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: generic opening of every periodic gap
 
 Every actual periodic gap is simultaneously open on a dense G-delta
 and residual set of real sources, for every finite exponent p>1. Hence
