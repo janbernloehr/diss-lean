@@ -367,3 +367,44 @@ L2(R;C^2), prove self-adjointness and identify its resolvent and spectrum,
 and prove pure absolute continuity of its spectral measures. No operator
 spectrum is defined by simply declaring it to be the band set. The new
 results establish the monodromy criterion only.
+
+## Physical propagation through positive and negative periods
+
+The next prerequisite for the printed p.17 whole-line assertion extends
+the actual physical L2 fundamental matrix to all real times. It uses the
+integer part and fractional part of time, together with integer powers
+of the invertible physical monodromy. Negative integer powers use its
+actual determinant-one inverse.
+
+[`L2WholeLineFundamental.lean`](../NLS/ZakharovShabat/L2WholeLineFundamental.lean)
+proves the exact formula on every closed integer period, continuity at
+all seams, the integer-translation identity, the original identity value
+at zero, and agreement with the previous nonnegative-time continuation.
+
+[`L2WholeLineFloquetBound.lean`](../NLS/ZakharovShabat/L2WholeLineFloquetBound.lean)
+proves exact scalar multiplier propagation for every integer power.
+For every unit-modulus monodromy eigenvector, the propagated vector is
+uniformly bounded on the full real line. In particular, every real point
+of the canonical band set of an original Hilbert source admits a bounded
+continuous propagated curve with nonzero initial vector.
+
+[`L2WholeLineSolutionPeriods.lean`](../NLS/ZakharovShabat/L2WholeLineSolutionPeriods.lean)
+identifies the propagated physical pair on each closed integer period
+with the original L2 initial-value solution, using the transported initial
+vector. In the local coordinate of every positive or negative period,
+the original signed differential equation holds almost everywhere. No
+pointwise regularity of the potential is assumed.
+
+[`L2WholeLineDifferentialEquation.lean`](../NLS/ZakharovShabat/L2WholeLineDifferentialEquation.lean)
+defines the actual period-one physical representative via fractional part.
+Translation invariance and removal of the countable integer seams combine
+the period equations into the signed differential equation almost everywhere
+on the full real line. The literal physical differential expression equals
+z times the same constructed solution almost everywhere.
+
+These facts do not yet identify an operator spectrum. The remaining
+operator work includes constructing the whole-line L2 domain and
+unbounded realization, proving self-adjointness, identifying the
+spectrum, and proving pure
+absolute continuity. Bounded propagation is a prerequisite for that
+work and is not used as a definition of the spectrum.

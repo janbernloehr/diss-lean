@@ -66464,3 +66464,45 @@ example (u : NLS.ZakharovShabat.IntervalPairL2) (z μ : ℂ) (v : Fin 2 → ℂ)
     Matrix.mulVec (NLS.ZakharovShabat.l2PeriodicFundamentalMatrix u z
       ⟨(3 : ℝ),by norm_num⟩) v = μ^3 • v :=
   NLS.ZakharovShabat.l2PeriodicFundamentalMatrix_nat_mulVec_of_eigenvector u z μ v hv 3
+
+-- Negative integer times use the actual inverse monodromy.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) :
+    NLS.ZakharovShabat.l2WholeLineFundamentalMatrix u z (-1) =
+      ((NLS.ZakharovShabat.l2MonodromyUnit u z)^(-1 : ℤ) :
+        (Matrix (Fin 2) (Fin 2) ℂ)ˣ) := by
+  simpa using NLS.ZakharovShabat.l2WholeLineFundamentalMatrix_int u z (-1)
+
+-- All positive and negative period seams are continuous.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) :
+    Continuous (NLS.ZakharovShabat.l2WholeLineFundamentalMatrix u z) :=
+  NLS.ZakharovShabat.continuous_l2WholeLineFundamentalMatrix u z
+
+-- Unit multipliers give bounds on the entire real line.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z μ : ℂ) (hμ : ‖μ‖ = 1)
+    (v : Fin 2 → ℂ)
+    (hv : Matrix.mulVec (NLS.ZakharovShabat.l2Monodromy u z) v = μ • v) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ t : ℝ,
+      ‖Matrix.mulVec (NLS.ZakharovShabat.l2WholeLineFundamentalMatrix u z t) v‖ ≤ C :=
+  NLS.ZakharovShabat.bounded_l2WholeLineFundamentalMatrix_mulVec u z μ hμ v hv
+
+-- The transported physical pair retains the original initial values.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) :
+    NLS.ZakharovShabat.l2WholeLineSolution u z v 0 = (v 0,v 1) :=
+  NLS.ZakharovShabat.l2WholeLineSolution_zero u z v
+
+-- The original signed ODE holds almost everywhere in each period coordinate.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ)
+    (v : Fin 2 → ℂ) (n : ℤ) :
+    ∀ᵐ s ∂MeasureTheory.volume.restrict (Set.Ioc (0 : ℝ) 1),
+      HasDerivAt (fun t : ℝ => NLS.ZakharovShabat.l2WholeLineSolution u z v (t+n))
+        (NLS.ZakharovShabat.classicalODECoefficient
+          (NLS.ZakharovShabat.intervalL2Representative u s) z
+          (NLS.ZakharovShabat.l2WholeLineSolution u z v (s+n))) s :=
+  NLS.ZakharovShabat.ae_hasDerivAt_l2WholeLineSolution_period u z v n
+
+-- The periodic potential and same solution satisfy the literal equation on R.
+example (u : NLS.ZakharovShabat.IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) :
+    NLS.ZakharovShabat.physicalOperator (NLS.ZakharovShabat.l2WholeLinePotential u)
+      (NLS.ZakharovShabat.l2WholeLineSolution u z v)
+      =ᵐ[MeasureTheory.volume] (fun t => z • NLS.ZakharovShabat.l2WholeLineSolution u z v t) :=
+  NLS.ZakharovShabat.ae_physicalOperator_l2WholeLineSolution u z v

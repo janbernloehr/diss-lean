@@ -4518,3 +4518,7 @@ import NLS.ZakharovShabat.SourceActionFourierRemainder
 import NLS.ZakharovShabat.FloquetQuadratic
 import NLS.ZakharovShabat.SourceFloquetBandSet
 import NLS.ZakharovShabat.L2FloquetBandCriterion
+import NLS.ZakharovShabat.L2WholeLineFundamental
+import NLS.ZakharovShabat.L2WholeLineFloquetBound
+import NLS.ZakharovShabat.L2WholeLineSolutionPeriods
+import NLS.ZakharovShabat.L2WholeLineDifferentialEquation

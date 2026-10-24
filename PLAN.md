@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: physical monodromy and the closed Floquet band criterion
+## Current milestone: physical propagation on the full real line
+
+The actual physical L2 fundamental matrix now extends continuously to
+every real time, using integer powers of its invertible monodromy.
+The exact closed-period and integer-translation formulas include negative
+periods and agree with the existing nonnegative-time construction.
+
+Unit-modulus monodromy eigenvectors give uniformly bounded continuous
+propagation on the full real line. The propagated physical pair agrees
+on each closed period with the original L2 initial-value solution and
+satisfies the original signed ODE almost everywhere in that period's
+local coordinate. The periodic potential is defined explicitly, and the
+actual physical equation holds almost everywhere on the full real line.
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md)
+records these prerequisites and the remaining whole-line operator,
+spectral identification and absolute-continuity work. The exact 2014
+comparison and G.2 interval-norm interpretation remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,200 build jobs, 7,138
+public examples, and a transitive axiom audit of 41,039 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,309 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical monodromy and the closed Floquet band criterion
 
 The exact Floquet band criterion now connects the original canonical
 gaps to the actual physical L2 monodromy. For every real Hilbert source,

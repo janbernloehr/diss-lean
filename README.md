@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the exact closed Floquet band set is characterized by unit
-monodromy multipliers for the original physical Hilbert sources. The
-whole-line operator spectral theorem remains unfinished.
+Latest step: the physical L2 fundamental solution extends through all
+positive and negative periods, with bounded unit-multiplier propagation
+and the original differential equation on every period.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
