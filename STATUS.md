@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: actual signed-gap kernel vanishing and global openness
+## Current milestone: actual finite-gap physical trace and norm bounds
+
+Actual finite-gap sources now satisfy a physical trace identity
+and a uniform pointwise bound by the sum of their open-gap lengths. Their
+Hilbert source norm squared is at most twice the square of this sum.
+
+The proof identifies the first coefficient of the actual boundary
+characteristic quotient in two ways: a finite spectral product and a
+continuous-potential Volterra limit. Phase rotation bounds the two physical
+components separately, and spatial translation extends the estimate to
+every point. The resulting source norm bound supplies the missing analytic
+estimate for finite-support signed-gap properness.
+
+The [Section 7 audit](coverage/SECTION_7.md) states the coefficient sign,
+actual characteristic normalization, and scope of each intermediate result.
+Finite-product results hold for finite p>1; physical trace and source norm
+bounds are implemented at p=2. Finite-gap/global injectivity, covering
+dimension, exact 2014 comparison and G.2 remain unfinished at this step.
+
+Validation: `./scripts/check.sh` passes with 8,156 build jobs, 7,105
+public examples, and a transitive axiom audit of 40,432 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,221 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual signed-gap kernel vanishing and global openness
 
 The actual signed-gap derivative is now bijective at every real
 symmetric Hilbert source, and the actual signed-gap map is globally open.

@@ -669,6 +669,48 @@ results. This does not establish finite-gap properness, global injectivity,
 or global squared-gap spectral uniqueness. Separate covering dimension,
 exact 2014 comparison and the G.2 norm interpretation remain unfinished.
 
+## Actual finite-gap trace and physical norm bounds
+
+The finite-gap source bounds now follow from the actual boundary
+characteristics and their physical first asymptotic coefficient. This step
+supplies the norm estimate needed for finite-support signed-gap properness.
+
+[SingleSpectralFiniteChangeRatio.lean](../NLS/ZakharovShabat/SingleSpectralFiniteChangeRatio.lean)
+proves the finite-change quotient formula directly from convergent finite
+cutoffs. [SourceFiniteGapBoundaryRatio.lean](../NLS/ZakharovShabat/SourceFiniteGapBoundaryRatio.lean)
+applies it to the actual Dirichlet and Neumann products: their quotient is
+the finite product over open gaps whenever the spectral parameter is nonreal.
+
+[FiniteRootRatioFirstCoefficient.lean](../NLS/ZakharovShabat/FiniteRootRatioFirstCoefficient.lean)
+computes the derivative at zero of the finite root-ratio germ.
+[SourceFiniteGapBoundaryCoefficient.lean](../NLS/ZakharovShabat/SourceFiniteGapBoundaryCoefficient.lean)
+identifies that germ with the actual characteristic quotient at infinity.
+Its first coefficient is the sum of Neumann roots minus Dirichlet roots,
+whose norm is bounded by the sum of open-gap lengths.
+
+[ClassicalBoundaryFirstCoefficient.lean](../NLS/ZakharovShabat/ClassicalBoundaryFirstCoefficient.lean)
+proves the physical coefficient for every continuous complex potential by
+exponential Volterra approximation and spatial reflection. Along the
+positive imaginary axis, z times (Dirichlet/Neumann minus one) tends to
+minus the sum of the first component at zero and the second component at one.
+This coefficient proof does not assume an H1 derivative.
+
+[SourceFiniteGapPhysicalTrace.lean](../NLS/ZakharovShabat/SourceFiniteGapPhysicalTrace.lean)
+combines the two coefficient limits through the continuous finite-gap
+realization. It proves the actual physical trace identity at the periodic
+base point. [SourceFiniteGapPointwiseBound.lean](../NLS/ZakharovShabat/SourceFiniteGapPointwiseBound.lean)
+then uses phase rotation and spatial translation, with their proved indexed
+gap invariance, to bound both physical components at every point by the
+sum of open-gap lengths. The original Hilbert source norm squared is at
+most twice the square of that sum.
+
+Finite-product prerequisites hold at every finite p>1. The physical trace
+and source bounds here are Hilbert p=2 results. The constants are sufficient
+for the subsequent properness argument; no sharpness is asserted. This
+step does not yet establish finite-gap injectivity or global squared-gap
+uniqueness. Covering dimension, the exact 2014 comparison, and the G.2 norm
+interpretation remain separate unfinished questions.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

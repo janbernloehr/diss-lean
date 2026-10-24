@@ -66241,3 +66241,30 @@ example
   exact source_isospectral_of_squared_gaps_of_symmetricSignedGap_injective
     ((symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num)
       isOpenMap_symmetricSourceSignedGapMap).mpr hf) φ ψ hg
+
+/-! Actual finite-gap traces bound the original potential and Hilbert norm. -/
+
+-- The actual boundary quotient recovers endpoint data for every continuous potential.
+example (Φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => ((y : ℂ)*Complex.I) *
+      (classicalSeparatedCharacteristic .dirichlet Φ ((y : ℂ)*Complex.I) /
+        classicalSeparatedCharacteristic .neumann Φ ((y : ℂ)*Complex.I)-1)) atTop
+      (𝓝 (-((Φ ⟨0,by norm_num⟩).1+(Φ ⟨1,by norm_num⟩).2))) :=
+  tendsto_classicalBoundaryRatio_first_coefficient Φ
+
+-- Both original physical components have a uniform bound using only gap lengths.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (x : ℝ) :
+    ‖(sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x‖ ≤ sourceFiniteGapLengthSum φ hf ∧
+    ‖(sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).2 x‖ ≤ sourceFiniteGapLengthSum φ hf :=
+  norm_sourceFiniteGapPhysicalPair_le φ hf x
+
+-- Gap-length bounds control the original source norm, in the direction needed for properness.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (R : ℝ) (hR : 0 ≤ R)
+    (hgap : sourceFiniteGapLengthSum φ hf ≤ R) : ‖φ.val‖^2 ≤ 2*R^2 := by
+  have hb := norm_sq_sourceFiniteGap_le_gap_sum φ hf
+  have hnonneg : 0 ≤ sourceFiniteGapLengthSum φ hf := by
+    unfold sourceFiniteGapLengthSum
+    positivity
+  nlinarith
