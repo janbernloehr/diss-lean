@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: bounded periodic Floquet reduction
+## Current milestone: bounded scalar inverses and physical L2 multiplication
+
+The actual free nonreal resolvent now supplies bounded scalar solution
+operators for y prime = alpha*y+h whenever Re(alpha) is nonzero. The
+solutions are globally L2 and locally absolutely continuous. Two such
+operators give the diagonal pair solution in the original physical space.
+
+Continuous uniformly bounded scalar and matrix fields now act as bounded
+complex-linear maps with their exact almost-everywhere formulas. For a
+real symmetric pencil, surjectivity is enough to prove injectivity; this
+will turn the physical right inverse into both inverse identities.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the actual
+physical gap inverse, full spectral equality, spectral measures and pure
+absolute continuity unfinished in this milestone. Exact2014 and G2 remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,261 build jobs, 7,211
+public examples, and a transitive axiom audit of 41,414 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,458 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: bounded periodic Floquet reduction
 
 The original physical Floquet modes now define an actual periodic
 change of basis. Both the matrix and its inverse are continuous and

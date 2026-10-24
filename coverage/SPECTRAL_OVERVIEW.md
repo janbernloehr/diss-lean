@@ -714,3 +714,35 @@ scalar equations, transfer those solutions through this bounded change
 of basis, and verify both physical pencil inverse identities. The reverse
 spectral inclusion, full equality, spectral measures and pure absolute
 continuity remain unfinished. Exact2014 and G2 remain separate questions.
+
+## Bounded scalar solvers and physical L2 multiplication
+
+[`SymmetricPencilSurjective.lean`](../NLS/FunctionalAnalysis/SymmetricPencilSurjective.lean)
+proves that a surjective real symmetric pencil is injective.
+[`L2WholeLineScalarMaps.lean`](../NLS/ZakharovShabat/L2WholeLineScalarMaps.lean)
+constructs bounded coordinate projections and embeddings for the original
+Hermitian L2 space, with exact almost-everywhere formulas.
+[`L2WholeLineFreePotential.lean`](../NLS/ZakharovShabat/L2WholeLineFreePotential.lean)
+identifies the actual zero potential.
+[`L2WholeLineClosureRepresentative.lean`](../NLS/ZakharovShabat/L2WholeLineClosureRepresentative.lean)
+gives the exact weak derivative of an AC representative of every vector
+in the actual closure domain.
+
+[`L2WholeLineScalarODEInverse.lean`](../NLS/ZakharovShabat/L2WholeLineScalarODEInverse.lean)
+uses the verified zero-potential resolvent at i*alpha to construct a bounded
+scalar solution map whenever Re(alpha) is nonzero. Its global L2 representative
+is locally absolutely continuous and solves y prime = alpha*y+h almost everywhere.
+[`L2WholeLineDiagonalInverse.lean`](../NLS/ZakharovShabat/L2WholeLineDiagonalInverse.lean)
+assembles the two scalar solutions in the original physical pair coordinates.
+
+[`L2WholeLineScalarMultiplication.lean`](../NLS/ZakharovShabat/L2WholeLineScalarMultiplication.lean)
+and [`L2WholeLineMatrixMultiplication.lean`](../NLS/ZakharovShabat/L2WholeLineMatrixMultiplication.lean)
+construct bounded operators from continuous uniformly bounded scalar and
+matrix fields. The operators have the literal pointwise product formulas
+almost everywhere on the full real line.
+
+The remaining physical gap construction transfers these diagonal solutions
+through the periodic matrix and verifies both inverse equations on the
+actual domain. Reverse spectral inclusion, full equality, spectral measures
+and pure absolute continuity remain unfinished in this milestone.
+Exact2014 and G2 remain separate source questions.

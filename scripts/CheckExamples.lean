@@ -66933,3 +66933,51 @@ example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (μ : ℂ) :
 
 end WholeLinePeriodicReductionExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineScalarInverseExamples
+open MeasureTheory
+open scoped Matrix.Norms.Elementwise
+
+example (α : ℂ) (hα : α.re ≠ 0) (h : WholeLineScalarL2) :
+    ∃ y : ℝ → ℂ, wholeLineScalarODEInverse α hα h =ᵐ[volume] y ∧
+      MemLp y 2 volume ∧ (∀ a b : ℝ, AbsolutelyContinuousOnInterval y a b) ∧
+      ∀ᵐ t : ℝ, HasDerivAt y (α*y t+h t) t :=
+  wholeLineScalarODEInverse_exists_AC_solution α hα h
+
+example (α β : ℂ) (hα : α.re ≠ 0) (hβ : β.re ≠ 0) (h : WholeLineL2) :
+    ∃ y : ℝ → ℂ × ℂ,
+      wholeLineL2Pair (wholeLineDiagonalODEInverse α β hα hβ h) =ᵐ[volume] y ∧
+      MemLp y 2 volume ∧ (∀ a b : ℝ, AbsolutelyContinuousOnInterval y a b) ∧
+      ∀ᵐ t : ℝ, HasDerivAt y
+        (α*(y t).1+(wholeLineL2Pair h t).1,β*(y t).2+(wholeLineL2Pair h t).2) t :=
+  wholeLineDiagonalODEInverse_exists_AC_solution α β hα hβ h
+
+example (P : ℝ → ℂ) (hP : Continuous P) (C : ℝ) (hC : ∀ t, ‖P t‖ ≤ C)
+    (f : WholeLineScalarL2) :
+    wholeLineScalarMulCLM P hP C hC f =ᵐ[volume] (fun t => P t*f t) :=
+  wholeLineScalarMulCLM_ae P hP C hC f
+
+example (M : ℝ → Matrix (Fin 2) (Fin 2) ℂ) (hM : Continuous M)
+    (C : ℝ) (hC : ∀ t, ‖M t‖ ≤ C) (f : WholeLineL2) :
+    wholeLineL2Pair (wholeLineMatrixMulCLM M hM C hC f) =ᵐ[volume]
+      (fun t => wholeLineMatrixAction (M t) (wholeLineL2Pair f t)) :=
+  wholeLineMatrixMulCLM_pair_ae M hM C hC f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f : (wholeLineMinimalOperator u).closure.domain) :
+    ∃ F : ℝ → ℂ × ℂ, wholeLineL2Pair f =ᵐ[volume] F ∧
+      (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+      ∀ᵐ t : ℝ, HasDerivAt F
+        (wholeLineWeakDerivative u f ((wholeLineMinimalOperator u).closure f) t) t :=
+  wholeLineMinimalOperator_closure_exists_AC_representative u hu f
+
+example {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+    (T : E →ₗ.[ℂ] E) (hs : T.IsFormalAdjoint T) (z : ℂ) (hz : z.im = 0)
+    (h : Function.Surjective (NLS.FunctionalAnalysis.linearPMapPencil T z)) :
+    Function.Injective (NLS.FunctionalAnalysis.linearPMapPencil T z) :=
+  NLS.FunctionalAnalysis.linearPMapPencil_injective_of_surjective_real T hs z hz h
+
+end WholeLineScalarInverseExamples
+end NLS.ZakharovShabat

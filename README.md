@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original Floquet modes give a periodic change of basis
-whose matrix and inverse are uniformly bounded. Its locally absolutely
-continuous columns satisfy the exact physical differential equation.
-Real-gap inverses, spectrum equality and pure absolute continuity remain pending.
+Latest step: the actual free resolvent gives bounded scalar and diagonal
+first-order solution maps with locally absolutely continuous representatives.
+Bounded scalar and matrix multiplication preserve the original L2 meaning.
+Physical gap inverses, spectrum equality and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

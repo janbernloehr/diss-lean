@@ -4572,3 +4572,11 @@ import NLS.ZakharovShabat.FloquetPeriodicFactor
 import NLS.ZakharovShabat.FloquetPeriodicFactorRegularity
 import NLS.ZakharovShabat.L2FloquetPeriodicMatrix
 import NLS.ZakharovShabat.L2FloquetColumnRegularity
+import NLS.FunctionalAnalysis.SymmetricPencilSurjective
+import NLS.ZakharovShabat.L2WholeLineScalarMaps
+import NLS.ZakharovShabat.L2WholeLineFreePotential
+import NLS.ZakharovShabat.L2WholeLineClosureRepresentative
+import NLS.ZakharovShabat.L2WholeLineScalarODEInverse
+import NLS.ZakharovShabat.L2WholeLineScalarMultiplication
+import NLS.ZakharovShabat.L2WholeLineMatrixMultiplication
+import NLS.ZakharovShabat.L2WholeLineDiagonalInverse
