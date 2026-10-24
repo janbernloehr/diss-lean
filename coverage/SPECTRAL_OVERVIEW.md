@@ -810,3 +810,23 @@ unchanged original real Hilbert source.
 This rules out point spectrum. Constructing the actual spectral measures
 and excluding singular continuous spectrum remain necessary for the
 printed absolute-continuity claim. Exact2014 and G2 remain separate questions.
+
+## The actual unitary Cayley transform
+
+[`SelfAdjointResolventIdentity.lean`](../NLS/FunctionalAnalysis/SelfAdjointResolventIdentity.lean)
+proves the resolvent identity and the conjugate-parameter adjoint formula
+for the actual bounded resolvents of a self-adjoint partial operator.
+[`SelfAdjointCayley.lean`](../NLS/FunctionalAnalysis/SelfAdjointCayley.lean)
+constructs U = 1 + 2i R(-i), proves both unitary inverse identities, and
+shows that one has no nonzero fixed vector.
+
+[`L2WholeLineCayley.lean`](../NLS/ZakharovShabat/L2WholeLineCayley.lean)
+specializes these results to the closure of the original physical
+whole-line operator. Its Cayley transform is exactly the expression
+formed from the already constructed physical nonreal resolvent and is
+star-normal, providing a bounded operator for continuous functional calculus.
+
+The actual scalar spectral measures have not yet been constructed.
+The spectral-set equality and absence of physical eigenvectors are
+already proved, but exclusion of singular continuous spectrum remains
+necessary for pure absolute continuity. Exact2014 and G2 remain separate questions.

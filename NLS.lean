@@ -4591,3 +4591,6 @@ import NLS.ZakharovShabat.L2WholeLineNoL2Solution
 import NLS.ZakharovShabat.PhysicalWronskian
 import NLS.ZakharovShabat.L2WholeLineACUniqueness
 import NLS.ZakharovShabat.L2WholeLineNoEigenvectors
+import NLS.FunctionalAnalysis.SelfAdjointResolventIdentity
+import NLS.FunctionalAnalysis.SelfAdjointCayley
+import NLS.ZakharovShabat.L2WholeLineCayley

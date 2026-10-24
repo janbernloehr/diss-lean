@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: absence of physical whole-line eigenvectors
+## Current milestone: the actual physical Cayley transform
+
+The actual resolvent identity and adjoint formula now give a unitary
+Cayley transform for the self-adjoint physical whole-line closure.
+This operator is exactly 1 + 2i R(-i), is star-normal, and has no
+nonzero fixed vector at the exceptional Cayley point one.
+
+These results provide the bounded operator needed for continuous
+functional calculus. The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md)
+retains the proved spectrum equality and absence of physical eigenvectors.
+Actual spectral measures and exclusion of singular continuous spectrum
+remain unfinished. Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,275 build jobs, 7,229
+public examples, and a transitive axiom audit of 41,485 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,495 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: absence of physical whole-line eigenvectors
 
 The original whole-line operator now has no nonzero eigenvectors at
 any complex parameter, including all band endpoints. The statement uses

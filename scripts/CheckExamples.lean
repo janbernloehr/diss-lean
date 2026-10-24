@@ -67071,3 +67071,38 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (z : ℂ) :
 
 end WholeLineNoEigenvectorExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineCayleyExamples
+open NLS.FunctionalAnalysis Complex
+
+example {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+    {T : E →ₗ.[ℂ] E} (hT : IsSelfAdjoint T) (z w : ℂ) (hz : z.im ≠ 0) (hw : w.im ≠ 0) :
+    selfAdjointNonrealResolvent hT z hz-selfAdjointNonrealResolvent hT w hw =
+      (w-z) • (selfAdjointNonrealResolvent hT z hz).comp (selfAdjointNonrealResolvent hT w hw) :=
+  selfAdjointNonrealResolvent_sub hT z w hz hw
+
+example {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+    {T : E →ₗ.[ℂ] E} (hT : IsSelfAdjoint T) (z : ℂ) (hz : z.im ≠ 0) :
+    ContinuousLinearMap.adjoint (selfAdjointNonrealResolvent hT z hz) =
+      selfAdjointNonrealResolvent hT (star z) (by simpa using hz) :=
+  adjoint_selfAdjointNonrealResolvent hT z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    wholeLineCayley u hu = 1+(2*Complex.I) • wholeLineNonrealResolvent u hu (-Complex.I) (by simp) :=
+  wholeLineCayley_eq u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    wholeLineCayley u hu ∈ unitary (WholeLineL2 →L[ℂ] WholeLineL2) :=
+  wholeLineCayley_mem_unitary u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f : WholeLineL2) : wholeLineCayley u hu f = f ↔ f = 0 :=
+  wholeLineCayley_apply_eq_self_iff u hu f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    IsStarNormal (wholeLineCayley u hu) := wholeLineCayley_isStarNormal u hu
+
+end WholeLineCayleyExamples
+end NLS.ZakharovShabat

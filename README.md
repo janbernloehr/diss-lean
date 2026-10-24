@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original whole-line operator has no nonzero eigenvectors,
-including at band endpoints. Its actual spectrum equals the closed Floquet
-bands. Spectral measures and exclusion of singular continuous spectrum
-remain necessary for the absolute-continuity claim.
+Latest step: the actual whole-line nonreal resolvent defines a unitary
+Cayley transform with no nonzero fixed vector at one. Its resolvent
+identity, adjoint formula and star-normality are proved. Spectral measures
+and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
