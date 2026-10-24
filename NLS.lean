@@ -4527,3 +4527,5 @@ import NLS.ZakharovShabat.L2WholeLineLocalIntegrability
 import NLS.ZakharovShabat.L2WholeLineTestOperator
 import NLS.ZakharovShabat.L2WholeLineTestDomain
 import NLS.ZakharovShabat.L2WholeLineMinimalOperator
+import NLS.ZakharovShabat.L2WholeLineReality
+import NLS.ZakharovShabat.L2WholeLineSymmetry

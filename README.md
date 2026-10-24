@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original whole-line differential expression defines a
-complex-linear operator on a dense domain of smooth compact tests in
-the Hermitian L2 space. Its self-adjoint closure and spectrum remain pending.
+Latest step: the real minimal whole-line operator is symmetric and closable.
+Its graph closure is closed and densely defined, with smooth compact tests
+as a core. Self-adjointness and the operator spectrum remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

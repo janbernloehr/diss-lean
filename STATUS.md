@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: the dense minimal whole-line operator
+## Current milestone: whole-line symmetry and closability
+
+For real physical potentials, compact-support integration by parts now
+proves symmetry of the actual minimal whole-line operator in the Hermitian
+L2 pairing. The unchanged original real Hilbert sources satisfy the
+required conjugation relation almost everywhere after periodization.
+
+The proof uses Mathlib's formal-adjoint relation and actual adjoint.
+Containment in the closed adjoint proves closability. The graph closure
+is closed and densely defined, and smooth compact test classes form a
+core. The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md)
+keeps self-adjointness, the maximal-domain characterization, spectrum
+identification and pure absolute continuity explicitly unfinished.
+The exact 2014 comparison and G.2 interval-norm interpretation remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,209 build jobs, 7,153
+public examples, and a transitive axiom audit of 41,111 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,329 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the dense minimal whole-line operator
 
 The actual signed whole-line differential expression now defines a
 complex-linear partial operator on the Hermitian L2 space over R.

@@ -446,3 +446,27 @@ and the maximal differential domain, proving self-adjointness for real
 potentials, identifying the spectrum and proving pure absolute continuity
 remain unfinished. The bounded Floquet solutions established earlier
 remain prerequisites for those spectral claims.
+
+## Symmetry and closure for real whole-line potentials
+
+[`L2WholeLineReality.lean`](../NLS/ZakharovShabat/L2WholeLineReality.lean)
+transfers almost-everywhere properties of the original unit-interval
+representative to the actual periodic potential on R. In particular,
+every original real Hilbert source has conjugate off-diagonal potential
+components almost everywhere on the full real line.
+
+[`L2WholeLineSymmetry.lean`](../NLS/ZakharovShabat/L2WholeLineSymmetry.lean)
+proves the Hermitian L2 pairing identity for the actual minimal operator.
+The proof uses the original signed derivatives, removes boundary terms
+by compact support, and cancels potential terms using the a.e. reality
+relation. It establishes Mathlib's formal-adjoint relation and containment
+in the actual Hilbert-space adjoint.
+
+The adjoint is closed. Consequently the real minimal operator is closable,
+its graph closure is a closed operator with dense domain, and the original
+smooth compact test domain is a core for that closure. These statements
+also apply explicitly to the unchanged original real Hilbert sources.
+
+Self-adjointness requires equality with the adjoint and remains unfinished.
+The maximal differential-domain characterization, band-spectrum identity
+and pure absolute continuity are still separate proof obligations.

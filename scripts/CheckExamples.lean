@@ -66542,3 +66542,41 @@ example (u : IntervalPairL2) (f : WholeLineTestFunction) :
 
 end WholeLineMinimalOperatorExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section WholeLineSymmetricClosureExamples
+open MeasureTheory Set
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    ∀ᵐ t : ℝ, (l2WholeLinePotential (sourcePhysicalL2 φ) t).2 =
+      (starRingEnd ℂ) (l2WholeLinePotential (sourcePhysicalL2 φ) t).1 :=
+  ae_source_l2WholeLinePotential_real φ hφ
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f g : WholeLineTestFunction) :
+    inner ℂ (wholeLineTestOperator u f) (wholeLineTestInclusion g) =
+      inner ℂ (wholeLineTestInclusion f) (wholeLineTestOperator u g) :=
+  inner_wholeLineTestOperator_symmetric u hu f g
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    (wholeLineMinimalOperator u).IsFormalAdjoint (wholeLineMinimalOperator u) :=
+  wholeLineMinimalOperator_isFormalAdjoint u hu
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    (wholeLineMinimalOperator (sourcePhysicalL2 φ)).IsClosable :=
+  source_wholeLineMinimalOperator_isClosable φ hφ
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    (wholeLineMinimalOperator u).closure.IsClosed :=
+  wholeLineMinimalOperator_closure_isClosed u hu
+
+example (u : IntervalPairL2) :
+    Dense (↑(wholeLineMinimalOperator u).closure.domain : Set WholeLineL2) :=
+  wholeLineMinimalOperator_closure_dense_domain u
+
+example (u : IntervalPairL2) :
+    (wholeLineMinimalOperator u).closure.HasCore (wholeLineMinimalOperator u).domain :=
+  wholeLineMinimalOperator_test_core u
+
+end WholeLineSymmetricClosureExamples
+end NLS.ZakharovShabat
