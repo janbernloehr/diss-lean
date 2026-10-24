@@ -40,10 +40,10 @@ be assumed.
 | Analytic refined correction | `E.refined` | F(I)+2I analytic into every finite ℓʳ with r>1 and r≥p/3 |
 | Locally uniform mixed asymptotic | `E.mixed` | One neighborhood and decomposition into ℓ^(p/3)+ℓ^(1+), chosen before all ℓ^(1+) projection exponents; uniform bounds on that neighborhood |
 | Exact origin value and derivative | `E.map_zero`, `E.derivative_zero` | F(0)=0 and dF(0)=−2Id |
-| Corollary 18.2(i) | `E.local_inverse` | Analytic inverse at zero with both local identities and derivative −½Id |
+| Corollary 18.2(i) | `E.local_open_inverse`, `E.local_inverse` | Explicit open source and image neighborhoods with analytic inverse throughout; derivative −½Id |
 | Corollary 18.2(ii) | `E.compact_derivative` | dF(I)+2Id compact at every complex point of the action domain |
 | Corollary 18.2(iii) | `E.fredholm` | Fredholm derivative with equal finite kernel and cokernel dimensions throughout the domain |
-| Corollary 18.2(iv) | `E.generic_local_inverse` | Open dense subset with actual two-sided analytic local inverses and exact inverse derivatives |
+| Corollary 18.2(iv) | `E.generic_open_inverse`, `E.generic_local_inverse` | Open dense subset with analytic inverse branches on explicit open sets and exact inverse derivatives |
 | Real-valued higher extension | `E.real_extension` | Analytic real map agreeing with F on every nonnegative action in its domain |
 | Original physical normalization | `E.physical_finiteGap`, `H.physical_finiteGap` | On every real finite-gap source, F=physical frequency−4·physical mass−free dispersion |
 | Exponent and atlas compatibility | `E.eq_of_coefficients` | All real sources represented by equal Fourier coefficients at two exponents |
@@ -56,6 +56,30 @@ supplies `E.positive_domain`: the positive part of this exact U is open
 and dense relative to the nonnegative action cone. Its finite exponent
 follows from the original finite source exponent. The same map, domain,
 source recovery, and mixed remainder are retained.
+
+## Explicit open neighborhoods for the frequency inverse
+
+Theorem 0.3 and Corollary 18.2(i),(iv) now have an interface giving actual
+open sets for the analytic inverse. For every retained original frequency
+F and finite p>2, `E.local_open_inverse` supplies open neighborhoods V and W
+of zero, with V contained in its original domain U, F(V)=W, and a bijection
+between these sets. One inverse G is analytic throughout W, F is analytic
+throughout V, and both inverse identities hold everywhere on these sets.
+
+[`SourceFrequencyOpenInverse.lean`](../NLS/ZakharovShabat/SourceFrequencyOpenInverse.lean)
+also proves `E.generic_open_inverse`: one open subset O of U is dense in U,
+and each point of O has an open partial homeomorphism with forward map F,
+source inside U, and analytic forward and inverse maps throughout its
+source and target. This retains the same original frequency and its
+original domain; the local neighborhoods may depend on the point.
+
+[`AnalyticOpenInverse.lean`](../NLS/ComplexAnalysis/AnalyticOpenInverse.lean)
+provides the general complex Banach-space result. It restricts the inverse
+function theorem's open partial homeomorphism to the original analytic
+domain and the open locus where its inverse is analytic. The previously
+proved derivative formulas and inverse-germ results remain available.
+No global injectivity on the full frequency domain or extension to all
+bounded action inputs is asserted.
 
 ## Original action image
 

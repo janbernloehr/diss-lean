@@ -66371,3 +66371,35 @@ example (φ : realTypeSourceSubmodule 2) :
 example : ∀ᶠ φ : realTypeSourceSubmodule 2 in residual (realTypeSourceSubmodule 2),
     NLS.FunctionalAnalysis.coveringDimension (sourceIsospectralSet ENNReal.ofNat_ne_top φ) = ⊤ :=
   eventually_residual_sourceHilbertIsospectralSet_infinite_coveringDimension
+
+/-! Explicit analytic inverse neighborhoods for the original frequency map. -/
+
+example {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
+    {F : E → E} {U : Set E} (hU : IsOpen U) (hF : AnalyticOnNhd ℂ F U)
+    {x : E} (hx : x ∈ U) (hu : IsUnit (fderiv ℂ F x)) :
+    ∃ P : OpenPartialHomeomorph E E,
+      (P : E → E) = F ∧ x ∈ P.source ∧ P.source ⊆ U ∧
+        AnalyticOnNhd ℂ F P.source ∧ AnalyticOnNhd ℂ P.symm P.target :=
+  NLS.ComplexAnalysis.exists_analytic_openPartialHomeomorph hU hF hx hu
+
+section OriginalFrequencyOpenInverseExamples
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {U : Set (Coeff q)} {F : Coeff q → Coeff q}
+
+example (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p) :
+    ∃ V W : Set (Coeff q), IsOpen V ∧ IsOpen W ∧ (0 : Coeff q) ∈ V ∧
+      (0 : Coeff q) ∈ W ∧ V ⊆ U ∧ F '' V = W ∧ Set.BijOn F V W ∧
+      ∃ G : Coeff q → Coeff q, AnalyticOnNhd ℂ F V ∧ AnalyticOnNhd ℂ G W ∧
+        (∀ b ∈ V, G (F b) = b) ∧ (∀ c ∈ W, G c ∈ V ∧ F (G c) = c) :=
+  E.local_open_inverse hp2
+
+example (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p) :
+    ∃ O : Set (Coeff q), IsOpen O ∧ O ⊆ U ∧ U ⊆ closure O ∧
+      ∀ b ∈ O, ∃ P : OpenPartialHomeomorph (Coeff q) (Coeff q),
+        (P : Coeff q → Coeff q) = F ∧ b ∈ P.source ∧ P.source ⊆ U ∧
+          AnalyticOnNhd ℂ F P.source ∧ AnalyticOnNhd ℂ P.symm P.target :=
+  E.generic_open_inverse hp2
+end OriginalFrequencyOpenInverseExamples

@@ -1,6 +1,27 @@
 # Implementation plan
 
-## Current milestone: exact covering dimension of actual Hilbert isospectral sets
+## Current milestone: explicit analytic frequency inverse neighborhoods
+
+The original frequency map now has explicit open neighborhoods on which
+it and its inverse are analytic. At zero, the source neighborhood lies
+inside the original domain and maps bijectively onto an open neighborhood
+of zero. Both inverse identities hold throughout these sets. The same
+description holds locally at every point of an open dense subset of the
+original domain, for every finite p>2.
+
+The [Section 18 audit](coverage/SECTION_18.md) explains this concrete form
+of Theorem 0.3 and Corollary 18.2. The existing derivative formulas and
+inverse-germ results are retained. This does not assert injectivity on
+the entire original domain. The exact 2014 construction comparison and
+G.2 interval-norm interpretation remain separate unfinished questions.
+
+Validation: `./scripts/check.sh` passes with 8,191 build jobs, 7,124
+public examples, and a transitive axiom audit of 40,934 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,280 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: exact covering dimension of actual Hilbert isospectral sets
 
 The numerical covering dimension of every actual Hilbert isospectral set
 now equals the number of its open periodic gaps, including infinity.

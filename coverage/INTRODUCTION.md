@@ -389,6 +389,30 @@ U in its nonnegative cone follows from the same finite-exponent density
 theorem, now at exponent p/2. Infinity here is only a frequency target;
 no extension on all bounded action inputs is claimed.
 
+## Explicit open neighborhoods for the frequency inverse
+
+Theorem 0.3 and Corollary 18.2(i),(iv) now have an interface giving actual
+open sets for the analytic inverse. For every retained original frequency
+F and finite p>2, `E.local_open_inverse` supplies open neighborhoods V and W
+of zero, with V contained in its original domain U, F(V)=W, and a bijection
+between these sets. One inverse G is analytic throughout W, F is analytic
+throughout V, and both inverse identities hold everywhere on these sets.
+
+[`SourceFrequencyOpenInverse.lean`](../NLS/ZakharovShabat/SourceFrequencyOpenInverse.lean)
+also proves `E.generic_open_inverse`: one open subset O of U is dense in U,
+and each point of O has an open partial homeomorphism with forward map F,
+source inside U, and analytic forward and inverse maps throughout its
+source and target. This retains the same original frequency and its
+original domain; the local neighborhoods may depend on the point.
+
+[`AnalyticOpenInverse.lean`](../NLS/ComplexAnalysis/AnalyticOpenInverse.lean)
+provides the general complex Banach-space result. It restricts the inverse
+function theorem's open partial homeomorphism to the original analytic
+domain and the open locus where its inverse is analytic. The previously
+proved derivative formulas and inverse-germ results remain available.
+No global injectivity on the full frequency domain or extension to all
+bounded action inputs is asserted.
+
 ## The mass term and the renormalized flow
 
 The unnumbered p. 12 assertion about H1=sum I has a direct obstruction.

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: every actual Hilbert isospectral set has numerical covering
-dimension equal to its open-gap count, including infinity. The matching
-finite upper bound follows from fine periodic grid covers.
+Latest step: the original frequency map has explicit open neighborhoods
+at zero and at every point of an open dense subset, with analytic forward
+and inverse maps throughout those neighborhoods.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

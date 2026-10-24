@@ -4511,3 +4511,5 @@ import NLS.FunctionalAnalysis.PeriodicGridStar
 import NLS.FunctionalAnalysis.PeriodicGridCover
 import NLS.FunctionalAnalysis.CircleProductCoveringDimension
 import NLS.ZakharovShabat.SourceHilbertExactCoveringDimension
+import NLS.ComplexAnalysis.AnalyticOpenInverse
+import NLS.ZakharovShabat.SourceFrequencyOpenInverse
