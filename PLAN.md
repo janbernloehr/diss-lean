@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: the actual physical resolvent integral
+## Current milestone: Poisson estimates and absolute-continuity criterion
+
+The actual physical measure's Poisson transform is now identified with
+the negative imaginary part of its original resolvent expectation.
+A bound on that expectation controls the mass of centered intervals.
+
+For an arbitrary finite real measure, a uniform bound C on the Poisson
+transform now implies domination by C times Lebesgue measure, hence
+absolute continuity. The proof passes from interval bounds to the actual
+Stieltjes outer measure. The uniform bound remains an explicit hypothesis.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the
+actual physical band-interior resolvent estimates and their localization
+unfinished. Pure absolute continuity of the physical operator is not
+established by this conditional criterion alone.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,310 build jobs, 7,257
+public examples, and a transitive axiom audit of 41,651 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,553 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the actual physical resolvent integral
 
 The actual nonreal resolvent of the original physical operator is now
 represented by integration against the actual finite real spectral measure.

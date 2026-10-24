@@ -924,3 +924,31 @@ without assuming a spectral representation as an extra hypothesis.
 Local band-interior estimates and exclusion of singular continuous
 spectrum remain unfinished; pure absolute continuity is not yet proved.
 Exact2014 and G2 remain separate source questions.
+
+## Poisson estimates and a sufficient absolute-continuity criterion
+
+[`RealPoissonKernel.lean`](../NLS/FunctionalAnalysis/RealPoissonKernel.lean)
+identifies the negative imaginary part of the original scalar resolvent
+kernel with the unnormalized Poisson kernel epsilon/((x-t)^2+epsilon^2).
+The kernel is nonnegative and integrable against every finite real measure.
+Its integral bounds the mass of the centered interval [x-epsilon,x+epsilon]
+by twice epsilon times the Poisson integral.
+
+[`IntervalMeasureDomination.lean`](../NLS/FunctionalAnalysis/IntervalMeasureDomination.lean)
+extends half-open interval estimates to domination by the actual Stieltjes
+measure through its outer-measure construction. For finite real measures,
+linear closed-interval bounds imply domination by Lebesgue measure.
+[`PoissonAbsoluteContinuity.lean`](../NLS/FunctionalAnalysis/PoissonAbsoluteContinuity.lean)
+combines these results: a uniform Poisson bound by C implies measure
+domination by C times Lebesgue measure, and hence absolute continuity.
+The uniform bound is an explicit hypothesis of this criterion.
+
+[`L2WholeLinePoissonIntegral.lean`](../NLS/ZakharovShabat/L2WholeLinePoissonIntegral.lean)
+identifies the actual physical real measure's Poisson transform with the
+negative imaginary part of its original resolvent expectation. A bound
+on this expectation gives the corresponding linear interval mass estimate.
+
+The actual physical band-interior resolvent bounds, localization and
+exclusion of singular continuous spectrum remain unfinished. The general
+criterion does not itself prove pure absolute continuity for this operator.
+Exact2014 and G2 remain separate source questions.

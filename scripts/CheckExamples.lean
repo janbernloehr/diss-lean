@@ -67236,3 +67236,50 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineResolventIntegralExamples
 end NLS.ZakharovShabat
+
+namespace NLS.FunctionalAnalysis
+section PoissonEstimatesExamples
+open MeasureTheory
+open scoped ENNReal NNReal
+
+example (x ε t : ℝ) :
+    realPoissonKernel x ε t = -(((x : ℂ)+(ε : ℂ)*Complex.I-(t : ℂ))⁻¹).im :=
+  realPoissonKernel_eq_neg_im x ε t
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (x ε : ℝ) (hε : 0 < ε) :
+    μ.real (Set.Icc (x-ε) (x+ε)) ≤ 2*ε*(∫ t, realPoissonKernel x ε t ∂μ) :=
+  measureReal_Icc_le_poisson_integral μ x ε hε
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (C : ℝ≥0)
+    (h : ∀ x ε : ℝ, 0 < ε → (∫ t, realPoissonKernel x ε t ∂μ) ≤ C) :
+    μ ≤ C • (volume : Measure ℝ) :=
+  measure_le_volume_of_poisson_bound μ C h
+
+example (μ : Measure ℝ) [IsFiniteMeasure μ] (C : ℝ≥0)
+    (h : ∀ x ε : ℝ, 0 < ε → (∫ t, realPoissonKernel x ε t ∂μ) ≤ C) :
+    μ ≪ (volume : Measure ℝ) :=
+  absolutelyContinuous_volume_of_poisson_bound μ C h
+
+end PoissonEstimatesExamples
+end NLS.FunctionalAnalysis
+
+namespace NLS.ZakharovShabat
+section PoissonEstimatesExamples
+open MeasureTheory NLS.FunctionalAnalysis
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (x ε : ℝ) (hε : 0 < ε) :
+    ∫ t, realPoissonKernel x ε t ∂wholeLineRealSpectralMeasure u hu v =
+      -(inner ℂ v (wholeLineNonrealResolvent u hu ((x : ℂ)+(ε : ℂ)*Complex.I)
+        (by simpa using ne_of_gt hε) v)).im :=
+  wholeLineRealSpectralMeasure_poisson_integral u hu v x ε hε
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (x ε C : ℝ) (hε : 0 < ε)
+    (hC : ‖inner ℂ v (wholeLineNonrealResolvent u hu ((x : ℂ)+(ε : ℂ)*Complex.I)
+      (by simpa using ne_of_gt hε) v)‖ ≤ C) :
+    (wholeLineRealSpectralMeasure u hu v).real (Set.Icc (x-ε) (x+ε)) ≤ 2*ε*C :=
+  wholeLineRealSpectralMeasure_Icc_le_of_resolvent_bound u hu v x ε C hε hC
+
+end PoissonEstimatesExamples
+end NLS.ZakharovShabat

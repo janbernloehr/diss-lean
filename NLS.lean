@@ -4613,3 +4613,7 @@ import NLS.FunctionalAnalysis.CayleyResolventFunction
 import NLS.FunctionalAnalysis.SelfAdjointCayleyResolvent
 import NLS.FunctionalAnalysis.RealResolventKernel
 import NLS.ZakharovShabat.L2WholeLineSpectralResolventIntegral
+import NLS.FunctionalAnalysis.RealPoissonKernel
+import NLS.FunctionalAnalysis.IntervalMeasureDomination
+import NLS.FunctionalAnalysis.PoissonAbsoluteContinuity
+import NLS.ZakharovShabat.L2WholeLinePoissonIntegral
