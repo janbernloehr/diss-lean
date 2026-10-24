@@ -4488,3 +4488,8 @@ import NLS.FunctionalAnalysis.LocalHomeomorphRestriction
 import NLS.ZakharovShabat.SymmetricSignedGapFiniteProper
 import NLS.ZakharovShabat.SymmetricSignedGapZeroFiber
 import NLS.ZakharovShabat.SymmetricSignedGapGlobalInjectivity
+import NLS.FunctionalAnalysis.CoveringDimensionBasic
+import NLS.FunctionalAnalysis.CoveringDimensionClosedSubspace
+import NLS.FunctionalAnalysis.CoveringDimensionConnected
+import NLS.FunctionalAnalysis.CircleProductCubeEmbedding
+import NLS.ZakharovShabat.SourceHilbertCoveringDimensionReduction

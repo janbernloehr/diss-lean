@@ -752,6 +752,37 @@ of Grebert--Guillot Theorem 3.7 remains part of that citation: the Hilbert
 result here has its own proof. Separate covering dimension, exact 2014
 comparison and the G.2 norm interpretation remain unfinished.
 
+## Standard covering-dimension foundations and closed cube embeddings
+
+The covering-dimension invariant now has its own formal definition, using
+finite open refinements and point multiplicity. The implementation does
+not infer a numerical dimension bound from a failure of manifold charts.
+
+[CoveringDimensionBasic.lean](../NLS/FunctionalAnalysis/CoveringDimensionBasic.lean)
+defines finite indexed open covers, refinement, multiplicity and the bound
+`HasCoveringDimensionLE X n`. It proves monotonicity in the bound and
+invariance under homeomorphisms. On the compact Hausdorff spaces used here,
+this is the standard finite-open-cover definition of covering dimension.
+[CoveringDimensionClosedSubspace.lean](../NLS/FunctionalAnalysis/CoveringDimensionClosedSubspace.lean)
+proves inheritance by closed subspaces and closed embeddings, by extending
+an open cover with the complement of the closed subset.
+
+[CoveringDimensionConnected.lean](../NLS/FunctionalAnalysis/CoveringDimensionConnected.lean)
+shows that a nontrivial connected T1 space cannot have covering dimension
+zero: a multiplicity-one refinement consists of disjoint clopen sets.
+[CircleProductCubeEmbedding.lean](../NLS/FunctionalAnalysis/CircleProductCubeEmbedding.lean)
+embeds every finite cube as a closed subspace of any infinite circle
+product, using short arcs in distinct factors.
+
+[SourceHilbertCoveringDimensionReduction.lean](../NLS/ZakharovShabat/SourceHilbertCoveringDimensionReduction.lean)
+transfers these results through the actual Hilbert isospectral-set
+homeomorphism. Every actual infinite-gap set contains closed cubes of all
+finite dimensions; one open gap already rules out dimension zero. To rule
+out any specified finite bound, the numerical cube lower bound remains an
+explicit premise at this step. The infinite covering-dimension conclusion
+and exact finite-torus dimension equality are not yet asserted here.
+The exact 2014 comparison and G.2 norm interpretation remain unfinished.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

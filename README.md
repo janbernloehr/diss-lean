@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: equal actual squared gaps determine the full periodic
-spectrum, including algebraic multiplicities, for every real Hilbert source.
-The symmetric Hilbert signed-gap map is globally injective.
+Latest step: standard covering-dimension bounds and closed-subspace
+monotonicity are implemented. Every infinite-gap Hilbert isospectral set
+contains closed cubes of all finite sizes; higher numerical dimension bounds remain explicit premises.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

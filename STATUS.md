@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: global Hilbert squared-gap spectral uniqueness
+## Current milestone: standard covering-dimension foundations and closed cube embeddings
+
+Covering dimension now has a separate implementation using finite open
+covers and refinements, with proofs of homeomorphism invariance and
+inheritance by closed subspaces. Every actual infinite-gap Hilbert
+isospectral set contains closed cubes of every finite dimension.
+
+A connectedness argument already excludes covering dimension zero when
+there is an open gap. The numerical lower bound for higher-dimensional
+cubes remains an explicit premise in the infinite-dimensional reduction;
+closed cube embeddings alone do not discharge it.
+
+The [Section 7 audit](coverage/SECTION_7.md) distinguishes this invariant
+from the previously proved manifold obstruction. Global Hilbert squared-gap
+spectral uniqueness remains proved. The numerical cube dimension theorem,
+exact finite-torus dimension equality, exact 2014 comparison and G.2 norm
+interpretation remain unfinished at this step.
+
+Validation: `./scripts/check.sh` passes with 8,168 build jobs, 7,112
+public examples, and a transitive axiom audit of 40,516 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,243 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: global Hilbert squared-gap spectral uniqueness
 
 The actual indexed squared gaps now determine the periodic spectrum,
 including algebraic multiplicities, for every real Hilbert source. The

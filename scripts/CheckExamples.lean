@@ -66294,3 +66294,26 @@ example (φ ψ : realTypeSourceSubmodule 2)
       (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) :
     ψ ∈ sourceIsospectralSet (by simp) φ :=
   source_isospectral_of_squared_gaps φ ψ h
+
+/-! Covering-dimension foundations keep the numerical cube theorem explicit. -/
+
+-- The isospectral set has closed finite cubes in the actual Hilbert subspace topology.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∉ sourceFiniteGapLocus (by simp) (by norm_num)) (m : ℕ) :
+    ∃ f : (Fin m → unitInterval) → sourceIsospectralSet ENNReal.ofNat_ne_top φ,
+      Topology.IsClosedEmbedding f :=
+  sourceHilbertInfiniteGap_exists_closedEmbedding_cube φ hφ m
+
+-- A cube lower bound transfers to the actual infinite-gap set; the cube premise is explicit.
+example (φ : realTypeSourceSubmodule 2)
+    (hφ : φ ∉ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℕ)
+    (hcube : ¬ NLS.FunctionalAnalysis.HasCoveringDimensionLE (Fin (n+1) → unitInterval) n) :
+    ¬ NLS.FunctionalAnalysis.HasCoveringDimensionLE
+      (sourceIsospectralSet ENNReal.ofNat_ne_top φ) n :=
+  sourceHilbertInfiniteGap_not_coveringDimensionLE_of_cube φ hφ n hcube
+
+-- One open periodic gap already prevents covering dimension zero without any cube premise.
+example (φ : realTypeSourceSubmodule 2) (hφ : Nonempty (sourceHilbertOpenGapIndex φ)) :
+    ¬ NLS.FunctionalAnalysis.HasCoveringDimensionLE
+      (sourceIsospectralSet ENNReal.ofNat_ne_top φ) 0 :=
+  sourceHilbertIsospectralSet_not_coveringDimensionLE_zero φ hφ
