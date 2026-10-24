@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: Floquet band membership in the whole-line spectrum
+## Current milestone: stable and unstable physical gap modes
+
+Every real gap parameter of an unchanged original source now has
+an actual physical monodromy eigenbasis, ordered into reciprocal stable
+and unstable multipliers. Complementary mode projections recover every
+initial vector and respect the monodromy action.
+
+The original whole-line propagation satisfies exact multiplier formulas
+at all signed integer translates. Stable modes decay along forward periods,
+and unstable modes decay along backward periods. The next step is a
+uniform global estimate and a bounded physical Green operator.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+verified closed-band inclusion while keeping real-gap inverses, reverse
+inclusion, full spectral equality, spectral measures and pure absolute
+continuity unfinished. Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,249 build jobs, 7,199
+public examples, and a transitive axiom audit of 41,324 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,428 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Floquet band membership in the whole-line spectrum
 
 Every unit-multiplier Floquet parameter now belongs to the actual
 whole-line operator spectrum. In particular, the full closed Floquet band

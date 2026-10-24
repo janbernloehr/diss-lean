@@ -66849,3 +66849,47 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
 
 end WholeLineBandSpectrumExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineGapModesExamples
+open Set Filter Module
+open scoped Topology
+
+example (d : ℂ) (hunit : ¬ ∃ μ : ℂ, ‖μ‖ = 1 ∧ μ^2-d*μ+1 = 0) :
+    ∃ μ ν : ℂ, μ * ν = 1 ∧ 0 < ‖μ‖ ∧ ‖μ‖ < 1 ∧ 1 < ‖ν‖ ∧
+      μ^2-d*μ+1 = 0 ∧ ν^2-d*ν+1 = 0 :=
+  exists_stable_unstable_floquet_roots d hunit
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (x : ℝ)
+    (hx : x ∉ sourceFloquetBandSet (by simp) (by norm_num) φ) :
+    ∃ (μ ν : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)),
+      μ * ν = 1 ∧ 0 < ‖μ‖ ∧ ‖μ‖ < 1 ∧ 1 < ‖ν‖ ∧
+      Matrix.mulVec (l2Monodromy (sourcePhysicalL2 φ) x) (b 0) = μ • b 0 ∧
+      Matrix.mulVec (l2Monodromy (sourcePhysicalL2 φ) x) (b 1) = ν • b 1 :=
+  source_gap_exists_stable_unstable_eigenbasis φ hφ x hx
+
+example (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)) :
+    floquetModeProjection b 0 + floquetModeProjection b 1 = LinearMap.id :=
+  floquetModeProjection_add b
+
+example (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)) (i : Fin 2) :
+    (floquetModeProjection b i).comp (floquetModeProjection b i) = floquetModeProjection b i :=
+  floquetModeProjection_idempotent b i
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (hM : ∀ i, Matrix.mulVec (l2Monodromy u z) (b i) = μ i • b i)
+    (i : Fin 2) (hμ0 : μ i ≠ 0) (hμ : ‖μ i‖ < 1) (v : Fin 2 → ℂ) (t : ℝ) :
+    Tendsto (fun n : ℕ => Matrix.mulVec (l2WholeLineFundamentalMatrix u z (t+n))
+      (floquetModeProjection b i v)) atTop (𝓝 0) :=
+  tendsto_l2WholeLine_stable_mode u z b μ hM i hμ0 hμ v t
+
+example (u : IntervalPairL2) (z : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (μ : Fin 2 → ℂ) (hM : ∀ i, Matrix.mulVec (l2Monodromy u z) (b i) = μ i • b i)
+    (i : Fin 2) (hμ : 1 < ‖μ i‖) (v : Fin 2 → ℂ) (t : ℝ) :
+    Tendsto (fun n : ℕ => Matrix.mulVec (l2WholeLineFundamentalMatrix u z (t-n))
+      (floquetModeProjection b i v)) atTop (𝓝 0) :=
+  tendsto_l2WholeLine_unstable_mode_backward u z b μ hM i hμ v t
+
+end WholeLineGapModesExamples
+end NLS.ZakharovShabat

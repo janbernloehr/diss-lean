@@ -666,3 +666,28 @@ and collapsed gaps are included through the original monodromy criterion.
 The opposite inclusion still requires bounded resolvents in real gaps.
 Full spectral equality, spectral measures and pure absolute continuity
 remain unfinished. Exact2014 and G2 remain separate source questions.
+
+## Stable and unstable physical modes in the real gaps
+
+[`FloquetHyperbolicRoots.lean`](../NLS/ZakharovShabat/FloquetHyperbolicRoots.lean)
+proves that a unimodular quadratic with no unit-circle root has reciprocal
+stable and unstable characteristic roots. The statement applies to the
+actual determinant-one physical monodromy.
+[`FloquetHyperbolicBasis.lean`](../NLS/ZakharovShabat/FloquetHyperbolicBasis.lean)
+constructs a full eigenbasis from the two distinct roots.
+
+[`L2FloquetGapBasis.lean`](../NLS/ZakharovShabat/L2FloquetGapBasis.lean)
+applies this construction to every original real source parameter outside
+the full closed bands. Every original physical solution decomposes into
+the two propagated basis modes.
+[`FloquetModeProjections.lean`](../NLS/ZakharovShabat/FloquetModeProjections.lean)
+constructs the algebraic projections. They sum to the identity, are
+idempotent, annihilate each other, and respect scalar monodromy action.
+[`L2FloquetModeDecay.lean`](../NLS/ZakharovShabat/L2FloquetModeDecay.lean)
+proves exact propagation at all signed integer translates, stable decay
+along forward periods and unstable decay along backward periods.
+
+Decay along fixed period sequences is not yet a uniform global kernel
+bound or a bounded Green operator. Real-gap inverses, reverse spectral
+inclusion, full spectral equality, spectral measures and pure absolute
+continuity remain unfinished. Exact2014 and G2 remain separate questions.
