@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual whole-line operator spectrum equals the full closed
-Floquet bands for every original real Hilbert source. Bounded inverses on
-the actual domain exclude every real gap point and every nonreal parameter.
-The spectral-measure construction and pure absolute continuity remain pending.
+Latest step: the original whole-line operator has no nonzero eigenvectors,
+including at band endpoints. Its actual spectrum equals the closed Floquet
+bands. Spectral measures and exclusion of singular continuous spectrum
+remain necessary for the absolute-continuity claim.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

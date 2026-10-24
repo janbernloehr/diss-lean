@@ -778,3 +778,35 @@ The accompanying assertion of absolute continuity still requires actual
 spectral measures and exclusion of singular spectral components. Spectral
 set equality alone does not establish that assertion. Exact2014 and G2
 remain separate source questions.
+
+## Absence of eigenvectors for the actual whole-line operator
+
+[`L2WholeLineUnitModeNotL2.lean`](../NLS/ZakharovShabat/L2WholeLineUnitModeNotL2.lean)
+excludes nonzero square-integrable unit-multiplier modes by positive periodic
+mass. [`L2WholeLineModeNotL2.lean`](../NLS/ZakharovShabat/L2WholeLineModeNotL2.lean)
+extends this to every nonzero multiplier: translation invariance of the
+full mass would force its norm to be one.
+
+[`FloquetQuadraticReduction.lean`](../NLS/ZakharovShabat/FloquetQuadraticReduction.lean)
+factors the unimodular characteristic quadratic without requiring distinct
+roots. Applying one characteristic factor produces a mode for the other.
+[`L2WholeLineNoL2Solution.lean`](../NLS/ZakharovShabat/L2WholeLineNoL2Solution.lean)
+uses this reduction and translation invariance to exclude every nonzero
+original physical fundamental solution from global L2. The proof includes
+repeated roots and does not assume an eigenbasis at band endpoints.
+
+[`PhysicalWronskian.lean`](../NLS/ZakharovShabat/PhysicalWronskian.lean)
+proves Wronskian conservation for arbitrary locally absolutely continuous
+solutions of the original physical equation.
+[`L2WholeLineACUniqueness.lean`](../NLS/ZakharovShabat/L2WholeLineACUniqueness.lean)
+then identifies every such solution with the constructed fundamental
+solution having its actual initial value.
+[`L2WholeLineNoEigenvectors.lean`](../NLS/ZakharovShabat/L2WholeLineNoEigenvectors.lean)
+applies this to the AC representative of an actual closure-domain vector.
+The original self-adjoint whole-line operator has no nonzero eigenvectors
+at any complex parameter, including every band endpoint, for every
+unchanged original real Hilbert source.
+
+This rules out point spectrum. Constructing the actual spectral measures
+and excluding singular continuous spectrum remain necessary for the
+printed absolute-continuity claim. Exact2014 and G2 remain separate questions.

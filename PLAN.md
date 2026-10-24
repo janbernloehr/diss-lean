@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: the original whole-line Floquet spectrum
+## Current milestone: absence of physical whole-line eigenvectors
+
+The original whole-line operator now has no nonzero eigenvectors at
+any complex parameter, including all band endpoints. The statement uses
+the actual closure domain and applies to every unchanged original real
+Hilbert source.
+
+The proof excludes every global L2 physical solution through the
+monodromy characteristic quadratic, including repeated roots. Wronskian
+conservation gives uniqueness for arbitrary locally absolutely continuous
+solutions and connects the argument to actual operator-domain vectors.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+full spectral-set identity. Actual spectral measures and exclusion of
+singular continuous spectrum remain necessary for pure absolute continuity.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,272 build jobs, 7,223
+public examples, and a transitive axiom audit of 41,456 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,486 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the original whole-line Floquet spectrum
 
 The independently defined spectrum of the original whole-line
 physical operator now equals the full closed Floquet band set for every

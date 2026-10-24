@@ -4584,3 +4584,10 @@ import NLS.ZakharovShabat.L2FloquetInhomogeneous
 import NLS.ZakharovShabat.L2WholeLineFloquetInverse
 import NLS.ZakharovShabat.L2WholeLinePencilInverse
 import NLS.ZakharovShabat.L2WholeLineGapResolvent
+import NLS.ZakharovShabat.L2WholeLineUnitModeNotL2
+import NLS.ZakharovShabat.L2WholeLineModeNotL2
+import NLS.ZakharovShabat.FloquetQuadraticReduction
+import NLS.ZakharovShabat.L2WholeLineNoL2Solution
+import NLS.ZakharovShabat.PhysicalWronskian
+import NLS.ZakharovShabat.L2WholeLineACUniqueness
+import NLS.ZakharovShabat.L2WholeLineNoEigenvectors

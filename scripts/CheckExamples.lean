@@ -67032,3 +67032,42 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineSpectrumEqualityExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineNoEigenvectorExamples
+open MeasureTheory
+
+example (u : IntervalPairL2) (z μ : ℂ) (hμ : ‖μ‖ = 1) (v : Fin 2 → ℂ) (hv0 : v ≠ 0)
+    (hv : Matrix.mulVec (l2Monodromy u z) v = μ • v) :
+    ¬ MemLp (l2WholeLineSolution u z v) 2 volume :=
+  not_memLp_l2WholeLineSolution_of_unit_floquet u z μ hμ v hv0 hv
+
+example (u : IntervalPairL2) (z μ : ℂ) (hμ : μ ≠ 0) (v : Fin 2 → ℂ) (hv0 : v ≠ 0)
+    (hv : Matrix.mulVec (l2Monodromy u z) v = μ • v) :
+    ¬ MemLp (l2WholeLineSolution u z v) 2 volume :=
+  not_memLp_l2WholeLineSolution_of_floquet u z μ hμ v hv0 hv
+
+example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
+    ¬ MemLp (l2WholeLineSolution u z v) 2 volume :=
+  not_memLp_l2WholeLineSolution u z v hv
+
+example (u : IntervalPairL2) (z : ℂ) (F : ℝ → ℂ × ℂ)
+    (hac : ∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b)
+    (hd : ∀ᵐ t : ℝ, HasDerivAt F (classicalODECoefficient (l2WholeLinePotential u t) z (F t)) t) :
+    F = l2WholeLineSolution u z ![(F 0).1,(F 0).2] :=
+  l2WholeLineSolution_unique_AC u z F hac hd
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (z : ℂ) :
+    ¬ ∃ f : (wholeLineMinimalOperator u).closure.domain,
+      (f : WholeLineL2) ≠ 0 ∧ (wholeLineMinimalOperator u).closure f = z • (f : WholeLineL2) :=
+  wholeLineMinimalOperator_closure_no_eigenvectors u hu z
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (z : ℂ) :
+    ¬ ∃ f : (wholeLineMinimalOperator (sourcePhysicalL2 φ)).closure.domain,
+      (f : WholeLineL2) ≠ 0 ∧ (wholeLineMinimalOperator (sourcePhysicalL2 φ)).closure f =
+        z • (f : WholeLineL2) :=
+  source_wholeLineMinimalOperator_closure_no_eigenvectors φ hφ z
+
+end WholeLineNoEigenvectorExamples
+end NLS.ZakharovShabat
