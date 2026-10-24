@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: the actual signed-gap gradient matrix
+## Current milestone: actual signed-gap kernel vanishing and global openness
+
+The actual signed-gap derivative is now bijective at every real
+symmetric Hilbert source, and the actual signed-gap map is globally open.
+The former kernel hypothesis is proved by an entire-product interpolation
+argument.
+
+A real matrix kernel vector supplies an lp root direction after division
+by bounded inverse boundary-root derivatives. Its entire product variation
+has opposite Dirichlet and Neumann values in each actual periodic gap.
+The intermediate value theorem and the existing interpolation uniqueness
+theorem force the variation direction, hence the kernel vector, to vanish.
+The real matrix reduction and compactness then give a bounded inverse to
+every actual real derivative.
+
+The [Section 7 audit](coverage/SECTION_7.md) records the exact characteristic
+normalization, convergence of the matrix series, and collapsed-gap case.
+Public examples use derivative invertibility without a kernel premise.
+The global spectral uniqueness reduction now retains only finite-gap
+injectivity as a premise. That finite-gap argument, separate covering
+dimension, exact 2014 comparison and G.2 remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,149 build jobs, 7,102
+public examples, and a transitive axiom audit of 40,383 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,209 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the actual signed-gap gradient matrix
 
 The actual signed-gap derivative in Dirichlet coordinates now has
 proved matrix entries, constructed from normalized anti-discriminant dual

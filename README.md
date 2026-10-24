@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual signed-gap derivative matrix and its ordinary
-transpose have proved entries and a compact remainder. Transpose-kernel
-vanishing is now explicitly linked to actual derivative invertibility.
+Latest step: the actual signed-gap derivative has a bounded inverse at
+every real symmetric Hilbert source, and the signed-gap map is globally open.
+Global injectivity and squared-gap spectral uniqueness remain unfinished.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

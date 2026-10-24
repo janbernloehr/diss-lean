@@ -66205,3 +66205,39 @@ example
   apply (injective_iff_map_eq_zero _).mpr
   intro τ hτ
   exact hkernel a τ ((symmetricSignedGapGradientMatrix_eq_zero_iff _ _ _ τ).mp hτ)
+
+/-! The actual Hilbert signed-gap derivative has no kernel at any symmetric source. -/
+
+-- Every actual derivative has a bounded linear inverse, without a kernel premise.
+example (a : RealCoeff 2) :
+    ∃ e : RealCoeff 2 ≃L[ℝ] RealCoeff 2,
+      e.toContinuousLinearMap =
+        fderiv ℝ (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) a :=
+  exists_equiv_fderiv_symmetricSourceSignedGapMap_of_injective a
+    (bijective_fderiv_symmetricSourceSignedGapMap a).1
+
+-- Open source-coordinate sets have open images under the actual signed-gap map.
+example (U : Set (RealCoeff 2)) (hU : IsOpen U) :
+    IsOpen (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num) '' U) :=
+  isOpenMap_symmetricSourceSignedGapMap U hU
+
+-- The actual transpose equations admit no nonzero complex square-summable solution.
+example (a : RealCoeff 2) (τ : Coeff 2)
+    (hτ : symmetricSignedGapGradientMatrix
+      (symmetricSourceCoefficients 2 a) (symmetricSourceCoefficients_realType a)
+      (congrArg Subtype.val (symmetricRealSourceCoefficients_reflection_fixed a)) τ = 0) :
+    τ = 0 :=
+  symmetricSignedGapGradientMatrix_injective a (hτ.trans (map_zero _).symm)
+
+-- Only finite-gap injectivity remains as a premise in this global uniqueness reduction.
+example
+    (hf : Set.InjOn (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num))
+      {a | symmetricRealSourceCoefficients 2 a ∈ sourceFiniteGapLocus (by simp) (by norm_num)})
+    (φ ψ : realTypeSourceSubmodule 2)
+    (hg : ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem _) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem _) n)^2) :
+    ψ ∈ sourceIsospectralSet (by simp) φ := by
+  exact source_isospectral_of_squared_gaps_of_symmetricSignedGap_injective
+    ((symmetricSignedGap_injective_iff_finiteGap_of_isOpenMap (by simp) (by norm_num)
+      isOpenMap_symmetricSourceSignedGapMap).mpr hf) φ ψ hg

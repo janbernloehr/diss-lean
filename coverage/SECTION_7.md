@@ -624,6 +624,51 @@ This step does not establish global squared-gap spectral uniqueness.
 The separate covering-dimension invariant, exact 2014 comparison and G.2
 norm interpretation also remain unresolved.
 
+## The actual signed-gap derivative has zero kernel everywhere
+
+The kernel hypothesis in the earlier compactness and matrix reductions is
+now discharged for every real symmetric Hilbert source. Consequently every
+actual real signed-gap derivative is bijective and the actual signed-gap
+map is globally open. Global injectivity is still a separate finite-gap step.
+
+[SymmetricSignedGapCollapsedKernel.lean](../NLS/ZakharovShabat/SymmetricSignedGapCollapsedKernel.lean)
+first proves that every matrix kernel vector vanishes at collapsed gaps.
+[SymmetricSignedGapRealKernel.lean](../NLS/ZakharovShabat/SymmetricSignedGapRealKernel.lean)
+proves that the actual Dirichlet inverse and signed-gap matrix preserve
+real sequences. Complex injectivity therefore reduces to real kernel vanishing.
+
+[BoundaryRootDerivativeInverseBound.lean](../NLS/ZakharovShabat/BoundaryRootDerivativeInverseBound.lean)
+bounds inverse root derivatives using the existing cosine tail estimate and
+a finite central block.
+[SourceBoundaryNormalizedRootVariation.lean](../NLS/ZakharovShabat/SourceBoundaryNormalizedRootVariation.lean)
+transfers this bound to the actual boundary characteristic. Dividing an lp
+direction by its root derivatives preserves lp and reality, and the normalized
+entire variation takes the negative prescribed values at the actual roots.
+
+[SymmetricBoundaryRootLevels.lean](../NLS/ZakharovShabat/SymmetricBoundaryRootLevels.lean)
+identifies both endpoint discriminant values as twice the indexed parity
+sign and proves the cross-boundary root separation needed by the resolvent.
+[SymmetricSignedGapKernelVariation.lean](../NLS/ZakharovShabat/SymmetricSignedGapKernelVariation.lean)
+constructs the normalized Neumann-product variation. At a Neumann root its
+value is minus the endpoint level times the kernel coordinate. At a Dirichlet
+root its value is the endpoint level times the coordinate minus its actual
+transpose-matrix image. The convergent series follows from the Hilbert
+column pairing; collapsed pairs use the filled diagonal value two.
+
+[SourcePsiBoundarySignInterpolation.lean](../NLS/ZakharovShabat/SourcePsiBoundarySignInterpolation.lean)
+uses opposite real values to select a zero in every periodic gap, including
+collapsed gaps. The established full-product interpolation theorem forces
+the root direction to vanish.
+[SymmetricSignedGapKernelVanishing.lean](../NLS/ZakharovShabat/SymmetricSignedGapKernelVanishing.lean)
+combines these facts, without a kernel premise, to prove complex gradient
+matrix injectivity, actual real derivative bijectivity, and global openness.
+
+The generic inverse-derivative and interpolation lemmas hold for all finite
+p>1. The matrix argument and resulting signed-gap openness are Hilbert p=2
+results. This does not establish finite-gap properness, global injectivity,
+or global squared-gap spectral uniqueness. Separate covering dimension,
+exact 2014 comparison and the G.2 norm interpretation remain unfinished.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls
