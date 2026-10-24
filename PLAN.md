@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: local Dirichlet coordinates on the symmetric Hilbert slice
+## Current milestone: the actual signed-gap gradient matrix
+
+The actual signed-gap derivative in Dirichlet coordinates now has
+proved matrix entries, constructed from normalized anti-discriminant dual
+directions. The cross-boundary characteristic quotient and its filled
+value at coincident roots are included; the matrix diagonal is two at a
+collapsed gap.
+
+Its compact remainder is proved on all complex Hilbert directions.
+The ordinary transpose is bounded, its coordinate series converge
+absolutely, and it has exactly the row/column convention needed for the
+source's gradient-matrix argument. Vanishing of this transpose kernel
+would give bijectivity of the actual real signed-gap derivative; if it
+holds everywhere, the actual signed-gap map is open.
+
+The [Section 7 audit](coverage/SECTION_7.md) keeps kernel vanishing as an
+explicit remaining hypothesis. Its interpolation/residue proof and
+finite-gap properness/injectivity remain unfinished. The separate
+covering-dimension invariant, exact 2014 comparison and G.2 norm
+interpretation also remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,141 build jobs, 7,098
+public examples, and a transitive axiom audit of 40,313 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,196 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: local Dirichlet coordinates on the symmetric Hilbert slice
 
 The actual full Dirichlet displacement derivative is now proved
 invertible on symmetric complex directions at every real reflection-fixed

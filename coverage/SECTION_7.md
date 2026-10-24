@@ -582,6 +582,48 @@ No global Dirichlet inverse or global squared-gap spectral uniqueness is
 claimed. Covering dimension for the infinite isospectral torus, exact 2014
 comparison and the G.2 norm interpretation remain unresolved.
 
+## The actual signed-gap matrix and its transpose
+
+[SymmetricDirichletDualDirections.lean](../NLS/ZakharovShabat/SymmetricDirichletDualDirections.lean)
+constructs normalized anti-discriminant Hamiltonian directions and averages
+them under reflection. These are dual to the actual indexed Dirichlet root
+variations. Their Neumann variations have the actual characteristic quotient;
+at coincident Dirichlet and Neumann roots the filled variation is minus one.
+
+[SymmetricSignedGapDerivativeMatrix.lean](../NLS/ZakharovShabat/SymmetricSignedGapDerivativeMatrix.lean)
+uses the bounded inverse Dirichlet derivative to define the actual signed-gap
+derivative matrix. Its rows are output gap indices and its columns are
+Dirichlet dual directions. The exact characteristic quotient is proved,
+including diagonal value two at a collapsed gap.
+
+[CompactCoefficientComplexification.lean](../NLS/SequenceSpaces/CompactCoefficientComplexification.lean)
+transfers compactness from the real coefficient form to its complexification.
+[SymmetricSignedGapMatrixCompact.lean](../NLS/ZakharovShabat/SymmetricSignedGapMatrixCompact.lean)
+identifies the real restriction of the actual complex signed-gap derivative
+and proves that the actual matrix in Dirichlet coordinates is twice identity
+plus compact on all complex Hilbert directions.
+
+[HilbertMatrixTranspose.lean](../NLS/SequenceSpaces/HilbertMatrixTranspose.lean)
+defines the ordinary bilinear transpose without complex conjugation. Every
+transposed coordinate series converges absolutely. Transpose injectivity is
+equivalent to density of the original range.
+[HilbertMatrixTransposeFredholm.lean](../NLS/SequenceSpaces/HilbertMatrixTransposeFredholm.lean)
+then proves that an injective transpose forces bijectivity of any compact
+perturbation of a nonzero scalar identity.
+
+[SymmetricSignedGapGradientMatrix.lean](../NLS/ZakharovShabat/SymmetricSignedGapGradientMatrix.lean)
+defines the gradient matrix with Dirichlet-direction rows and gap-gradient
+columns, matching the orientation of Grebert--Guillot (2.25). The exact
+homogeneous series equations are proved. Vanishing of that matrix kernel
+would give bijectivity of the actual real signed-gap derivative, and its
+pointwise vanishing everywhere would give global openness.
+
+Kernel vanishing remains an explicit hypothesis. The interpolation/residue
+argument and finite-gap properness/injectivity are still outstanding.
+This step does not establish global squared-gap spectral uniqueness.
+The separate covering-dimension invariant, exact 2014 comparison and G.2
+norm interpretation also remain unresolved.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

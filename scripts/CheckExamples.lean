@@ -66165,3 +66165,43 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
   ext n
   rw [symmetricDirichletDerivative_apply φ hφ, hv]
   rfl
+
+/-! Actual signed-gap matrices, their transpose, and the remaining kernel criterion. -/
+
+-- Normalized anti-discriminant directions are the actual inverse Dirichlet columns.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (href : sourceSpatialReflection φ = φ) (m : ℤ) :
+    (symmetricDirichletDerivativeEquiv φ hφ href).symm (lp.single 2 m 1) =
+      symmetricDirichletDualCoordinate φ m :=
+  symmetricDirichletDerivativeEquiv_symm_single φ hφ href m
+
+-- Transposing the matrix preserves the filled diagonal value at a collapsed gap.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (href : sourceSpatialReflection φ = φ) (n : ℤ)
+    (he : canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .neumann φ n =
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n) :
+    symmetricSignedGapGradientMatrix φ hφ href (lp.single 2 n 1) n = 2 := by
+  rw [symmetricSignedGapGradientMatrix_single]
+  exact symmetricSignedGapDerivativeMatrix_collapsed_diagonal φ hφ href n he
+
+-- Twice-identity-plus-compact holds for the actual matrix on all complex directions.
+example (a : RealCoeff 2) :
+    IsCompactOperator (symmetricSignedGapDerivativeMatrix
+      (symmetricSourceCoefficients 2 a) (symmetricSourceCoefficients_realType a)
+      (congrArg Subtype.val (symmetricRealSourceCoefficients_reflection_fixed a)) -
+      (2 : ℂ) • (1 : Coeff 2 →L[ℂ] Coeff 2)) :=
+  isCompactOperator_symmetricSignedGapDerivativeMatrix_sub_two_id a
+
+-- The explicit homogeneous transpose equations suffice for global openness.
+example
+    (hkernel : ∀ (a : RealCoeff 2) (τ : Coeff 2),
+      (∀ m : ℤ, ∑' n : ℤ, τ n * symmetricSignedGapDerivativeMatrix
+        (symmetricSourceCoefficients 2 a) (symmetricSourceCoefficients_realType a)
+        (congrArg Subtype.val (symmetricRealSourceCoefficients_reflection_fixed a))
+        (lp.single 2 m 1) n = 0) → τ = 0) :
+    IsOpenMap (symmetricSourceSignedGapMap (p := 2) (by simp) (by norm_num)) := by
+  apply isOpenMap_symmetricSourceSignedGapMap_of_gradientMatrix_injective
+  intro a
+  apply (injective_iff_map_eq_zero _).mpr
+  intro τ hτ
+  exact hkernel a τ ((symmetricSignedGapGradientMatrix_eq_zero_iff _ _ _ τ).mp hτ)
