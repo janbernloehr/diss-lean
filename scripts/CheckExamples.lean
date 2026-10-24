@@ -66128,3 +66128,40 @@ example (φ : realTypeSourceSubmodule 2) (ε : ℝ) (hε : 0 < ε) :
   intro hc
   exact infinite_open_gaps_of_mem_sourceAllOpenGapRealLocus (by simp) (by norm_num) ξ hξ
     ((sourceHilbertIsospectralSet_finiteDimensional_charts_iff_finiteGap ξ).mp hc)
+
+/-! Actual local Dirichlet coordinates at every real symmetric Hilbert source. -/
+
+-- Every symmetric Dirichlet derivative has a bounded two-sided inverse.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (href : sourceSpatialReflection φ = φ) :
+    ∃ e : Coeff 2 ≃L[ℂ] Coeff 2,
+      e.toContinuousLinearMap = symmetricDirichletDerivative φ := by
+  have hb := bijective_symmetricDirichletDerivative φ hφ href
+  exact ⟨ContinuousLinearEquiv.ofBijective _ (LinearMap.ker_eq_bot.mpr hb.1)
+    (LinearMap.range_eq_top.mpr hb.2), rfl⟩
+
+-- The actual complex displacement map has an analytic inverse near every real coordinate.
+example (a : RealCoeff 2) :
+    ∃ G : Coeff 2 → Coeff 2,
+      AnalyticAt ℂ G (symmetricSourceDirichletMap (RealCoeff.complexCLM 2 a)) ∧
+      (∀ᶠ b in 𝓝 (RealCoeff.complexCLM 2 a), G (symmetricSourceDirichletMap b) = b) ∧
+      (∀ᶠ d in 𝓝 (symmetricSourceDirichletMap (RealCoeff.complexCLM 2 a)),
+        symmetricSourceDirichletMap (G d) = d) := by
+  have ha : IsRealType (CoeffPair.toMax 2
+      (complexSymmetricSourceCoefficients 2 (RealCoeff.complexCLM 2 a))) := by
+    rw [complexSymmetricSourceCoefficients_realCoeff]
+    exact symmetricSourceCoefficients_realType a
+  obtain ⟨G,hG,_,hl,hr,_⟩ := exists_symmetricSourceDirichlet_localInverse _ ha
+  exact ⟨G,hG,hl,hr⟩
+
+-- Vanishing of every actual Dirichlet root derivative detects a zero symmetric direction.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (href : sourceSpatialReflection φ = φ) (v : Coeff 2)
+    (hv : ∀ n : ℤ, (fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodOneBoundaryRoots
+      (by simp) (by norm_num) .dirichlet ψ n) φ)
+        (complexSymmetricSourceCoefficients 2 v) = 0) : v = 0 := by
+  apply (bijective_symmetricDirichletDerivative φ hφ href).1
+  rw [map_zero]
+  ext n
+  rw [symmetricDirichletDerivative_apply φ hφ, hv]
+  rfl

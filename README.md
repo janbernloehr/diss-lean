@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual infinite-gap Hilbert isospectral sets have no
-contractible neighborhoods or real normed atlas. Finite-dimensional Euclidean
-atlases exist exactly when finitely many periodic gaps are open.
+Latest step: the actual Dirichlet displacement map has a two-sided
+analytic local inverse near every real symmetric Hilbert source. Its full
+derivative on symmetric complex directions is bijective.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

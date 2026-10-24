@@ -556,6 +556,32 @@ covering-dimension invariant for the infinite product. That separate
 invariant, global squared-gap uniqueness, exact 2014 comparison and the
 G.2 norm interpretation remain unfinished.
 
+## Local Dirichlet coordinates throughout the symmetric Hilbert slice
+
+[SymmetricDirichletDerivative.lean](../NLS/ZakharovShabat/SymmetricDirichletDerivative.lean)
+proves that the full actual Dirichlet displacement derivative, restricted
+to symmetric complex Fourier directions, is bijective at every real
+reflection-fixed Hilbert source. The actual root/Floquet logarithm brackets
+give independent root perturbations. Reflection averaging preserves those
+derivatives and places the perturbations in the symmetric slice, giving
+preimages of every coordinate vector. The derivative is identity plus a
+compact operator, so dense range upgrades to bijectivity. This includes
+sources with collapsed periodic gaps.
+
+[SymmetricDirichletLocalInverse.lean](../NLS/ZakharovShabat/SymmetricDirichletLocalInverse.lean)
+applies the analytic inverse function theorem to the full coefficient-valued
+Dirichlet displacement map. Every real point of the symmetric complex
+slice has a two-sided analytic local inverse, with the inverse derivative
+identified. In particular, that actual map is injective on a complex
+neighborhood of each real symmetric Fourier coordinate.
+
+This supplies the Dirichlet-coordinate prerequisite for the global
+signed-gap argument. The signed-gap derivative also contains the Neumann
+root derivative; its kernel vanishing still needs a separate proof.
+No global Dirichlet inverse or global squared-gap spectral uniqueness is
+claimed. Covering dimension for the infinite isospectral torus, exact 2014
+comparison and the G.2 norm interpretation remain unresolved.
+
 ## The collapsed-gap locus on printed p. 46 has real codimension two
 
 The paragraph following (2.3), visually checked in the original PDF, calls

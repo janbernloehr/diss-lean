@@ -4457,3 +4457,5 @@ import NLS.FunctionalAnalysis.CircleNoncontractible
 import NLS.FunctionalAnalysis.InfiniteCircleProductLocalTopology
 import NLS.FunctionalAnalysis.ChartedContractibleNeighborhood
 import NLS.ZakharovShabat.SourceHilbertInfiniteGapTopology
+import NLS.ZakharovShabat.SymmetricDirichletDerivative
+import NLS.ZakharovShabat.SymmetricDirichletLocalInverse

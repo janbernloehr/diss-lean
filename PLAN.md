@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: local topology of infinite-gap isospectral sets
+## Current milestone: local Dirichlet coordinates on the symmetric Hilbert slice
+
+The actual full Dirichlet displacement derivative is now proved
+invertible on symmetric complex directions at every real reflection-fixed
+Hilbert source, including sources with closed gaps. The proof constructs
+independent root perturbations from the existing root/Floquet logarithm
+brackets, then uses reflection averaging and compactness.
+
+Consequently, the full Dirichlet displacement map has a two-sided analytic
+local inverse near every real symmetric Fourier coordinate. Public examples
+exhibit its bounded inverse derivative, both local inverse identities,
+and the criterion that vanishing of all Dirichlet root variations forces
+a symmetric direction to be zero.
+
+The [Section 7 audit](coverage/SECTION_7.md) records this prerequisite for
+the global signed-gap proof. Kernel vanishing for the signed-gap derivative
+and finite-gap properness/injectivity remain unproved. The separate
+covering-dimension invariant, exact 2014 comparison and G.2 norm
+interpretation also remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,134 build jobs, 7,094
+public examples, and a transitive axiom audit of 40,220 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,184 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: local topology of infinite-gap isospectral sets
 
 Actual infinite-gap Hilbert isospectral sets now have a proved local
 topological obstruction: no neighborhood of any point is contractible.
