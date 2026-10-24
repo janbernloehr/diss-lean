@@ -66633,3 +66633,48 @@ example (u : NLS.ZakharovShabat.IntervalPairL2)
     NLS.ZakharovShabat.wholeLineBoundaryForm
       (NLS.ZakharovShabat.l2WholeLineSolution u z v a) (NLS.ZakharovShabat.l2WholeLineSolution u z q a) :=
   NLS.ZakharovShabat.l2WholeLineSolution_boundaryForm_const u hu z v q a b
+
+namespace NLS.ZakharovShabat
+noncomputable section WholeLineAdjointRegularityExamples
+open MeasureTheory Set
+open scoped ContDiff
+
+example (u : IntervalPairL2) (f : WholeLineL2) :
+    f ∈ (wholeLineMinimalOperator u).adjoint.domain ↔ ∃ g : WholeLineL2, WholeLineWeakEquation u f g :=
+  mem_wholeLineMinimalOperator_adjoint_domain_iff u f
+
+example (u : IntervalPairL2) (f : (wholeLineMinimalOperator u).adjoint.domain) :
+    WholeLineWeakEquation u f ((wholeLineMinimalOperator u).adjoint f) :=
+  wholeLineMinimalOperator_adjoint_weakEquation u f
+
+example (u : IntervalPairL2) (f g : WholeLineL2) :
+    LocallyIntegrable (wholeLineWeakDerivative u f g) volume :=
+  locallyIntegrable_wholeLineWeakDerivative u f g
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f : (wholeLineMinimalOperator u).adjoint.domain) :
+    ∃ F : ℝ → ℂ × ℂ, wholeLineL2Pair f =ᵐ[volume] F ∧
+      (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+      physicalOperator (l2WholeLinePotential u) F =ᵐ[volume]
+        wholeLineL2Pair ((wholeLineMinimalOperator u).adjoint f) :=
+  wholeLineMinimalOperator_adjoint_exists_AC_representative u hu f
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (f : (wholeLineMinimalOperator (sourcePhysicalL2 φ)).adjoint.domain) :
+    ∃ F : ℝ → ℂ × ℂ, wholeLineL2Pair f =ᵐ[volume] F ∧
+      (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+      physicalOperator (l2WholeLinePotential (sourcePhysicalL2 φ)) F =ᵐ[volume]
+        wholeLineL2Pair ((wholeLineMinimalOperator (sourcePhysicalL2 φ)).adjoint f) :=
+  wholeLineMinimalOperator_adjoint_exists_AC_representative _
+    ((sourcePhysicalL2_realType_iff φ).mpr hφ) f
+
+example (f g : ℝ → ℂ) (hf : LocallyIntegrable f volume) (hg : LocallyIntegrable g volume)
+    (hw : ∀ ψ : ℝ → ℝ, ContDiff ℝ ∞ ψ → HasCompactSupport ψ →
+      (∫ t : ℝ, deriv ψ t • f t + ψ t • g t) = 0) :
+    ∃ F : ℝ → ℂ, f =ᵐ[volume] F ∧
+      (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+      ∀ᵐ t : ℝ, HasDerivAt F (g t) t :=
+  NLS.FunctionalAnalysis.exists_locally_absolutelyContinuous_of_weak_derivative f g hf hg hw
+
+end WholeLineAdjointRegularityExamples
+end NLS.ZakharovShabat

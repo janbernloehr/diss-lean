@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: whole-line absolute continuity and Green identity
+## Current milestone: whole-line weak adjoint equation and AC representatives
+
+The actual Hilbert adjoint domain is now characterized by the original
+weak physical equation with an L2 image. For real physical potentials,
+both scalar weak derivative identities retain the original opposite signs.
+Local Holder estimates make their right-hand sides locally integrable.
+
+A general Banach-valued weak-derivative theorem now yields a representative
+of every actual adjoint-domain vector that is absolutely continuous on each
+compact interval. Its original physical differential expression equals the
+actual adjoint image almost everywhere, including for original real sources.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the
+converse AC maximal-domain inclusion, local H1/core estimates, self-adjointness,
+spectrum and pure absolute continuity separate and unfinished. Exact2014
+and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,222 build jobs, 7,166
+public examples, and a transitive axiom audit of 41,173 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,359 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line absolute continuity and Green identity
 
 The actual whole-line physical solutions now satisfy the original
 integral equation between any two real times. They are absolutely

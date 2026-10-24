@@ -496,3 +496,43 @@ No global L2 membership is imposed on these physical solutions.
 These results concern the actual constructed solutions. Characterizing
 arbitrary adjoint-domain elements, proving self-adjointness, identifying
 the whole-line spectrum and proving pure absolute continuity remain open.
+
+## The actual weak adjoint equation and absolutely continuous representatives
+
+[`L2WholeLineAdjointEquation.lean`](../NLS/ZakharovShabat/L2WholeLineAdjointEquation.lean)
+characterizes the actual Hilbert adjoint domain in both directions by the
+original weak physical equation with an L2 image. That proposed image
+equals the actual adjoint image. The equation integrates the unchanged
+physical differential expression against smooth compact tests.
+
+[`L2WholeLineWeakDerivative.lean`](../NLS/ZakharovShabat/L2WholeLineWeakDerivative.lean)
+uses local L2 potential and global L2 input/image vectors to prove local
+L1 integrability of the signed derivative candidate by Holder's inequality.
+[`L2WholeLineWeakCoordinates.lean`](../NLS/ZakharovShabat/L2WholeLineWeakCoordinates.lean)
+derives both scalar distributional derivative identities, using conjugated
+coordinate tests in the actual compact smooth domain and the real-type
+potential relation. The opposite derivative signs are retained.
+
+Four general analytic prerequisites supply the missing regularity bridge.
+[`CompactSmoothPrimitive.lean`](../NLS/FunctionalAnalysis/CompactSmoothPrimitive.lean)
+constructs a compact smooth primitive of every zero-integral compact smooth
+test. [`WeakDerivativeConstant.lean`](../NLS/FunctionalAnalysis/WeakDerivativeConstant.lean)
+uses normalized bumps and the fundamental lemma to show that a locally
+integrable Banach-valued function with zero weak derivative is constant a.e.
+[`LocallyIntegrablePrimitive.lean`](../NLS/FunctionalAnalysis/LocallyIntegrablePrimitive.lean)
+proves local absolute continuity and the compact-test equation for locally
+integrable primitives. [`WeakDerivativeAbsoluteContinuity.lean`](../NLS/FunctionalAnalysis/WeakDerivativeAbsoluteContinuity.lean)
+combines these facts: a locally integrable Banach-valued weak derivative
+gives an a.e.-equal representative absolutely continuous on every compact
+real interval, with that prescribed derivative almost everywhere.
+
+[`L2WholeLineAdjointRegularity.lean`](../NLS/ZakharovShabat/L2WholeLineAdjointRegularity.lean)
+applies this theorem to every vector in the actual real physical adjoint
+domain. Its locally absolutely continuous representative realizes the
+actual adjoint image under the original signed differential expression.
+This also applies to the unchanged original real Hilbert sources.
+
+The converse from arbitrary locally AC L2 representatives with an L2
+physical differential image remains to be proved. Hence the maximal-domain
+equality, local H1/core estimates, self-adjointness, whole-line spectrum and
+pure absolute continuity are still unfinished.

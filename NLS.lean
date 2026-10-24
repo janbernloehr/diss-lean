@@ -4533,3 +4533,11 @@ import NLS.ZakharovShabat.L2WholeLinePeriodAbsoluteContinuity
 import NLS.ZakharovShabat.L2WholeLineODEIntegrability
 import NLS.ZakharovShabat.L2WholeLineIntegralEquation
 import NLS.ZakharovShabat.L2WholeLineGreenIdentity
+import NLS.FunctionalAnalysis.CompactSmoothPrimitive
+import NLS.FunctionalAnalysis.WeakDerivativeConstant
+import NLS.FunctionalAnalysis.LocallyIntegrablePrimitive
+import NLS.FunctionalAnalysis.WeakDerivativeAbsoluteContinuity
+import NLS.ZakharovShabat.L2WholeLineWeakDerivative
+import NLS.ZakharovShabat.L2WholeLineAdjointEquation
+import NLS.ZakharovShabat.L2WholeLineWeakCoordinates
+import NLS.ZakharovShabat.L2WholeLineAdjointRegularity

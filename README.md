@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual whole-line physical solutions are absolutely continuous
-on every compact interval and satisfy the original integral equation and
-Hermitian Green identity across all integer seams. Self-adjointness and
-the operator spectrum remain pending. Formalization remains in progress.
+Latest step: the actual Hilbert adjoint is characterized by the original weak
+physical equation. Every real adjoint-domain vector has a locally absolutely
+continuous representative realizing its actual adjoint image. The converse
+maximal-domain inclusion and self-adjointness remain pending. Formalization
+remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
