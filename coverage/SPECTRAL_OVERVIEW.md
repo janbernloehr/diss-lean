@@ -976,3 +976,37 @@ still required. Countable exceptional parameters and extension from compact
 inputs to all Hilbert vectors must also be handled. Pure absolute continuity
 of the physical operator remains unfinished. Exact2014 and G2 remain
 separate source questions.
+
+## Uniform physical Floquet mode-kernel estimates
+
+[`L2FloquetNonrealBasis.lean`](../NLS/ZakharovShabat/L2FloquetNonrealBasis.lean)
+uses the actual physical spectrum and cutoff criterion to exclude
+unit-modulus monodromy multipliers at every nonreal parameter. It obtains
+actual reciprocal stable and unstable multipliers and an eigenbasis.
+[`FloquetRootProjection.lean`](../NLS/ZakharovShabat/FloquetRootProjection.lean)
+identifies the original mode projection with (M-nu*Id)/(mu-nu).
+Root magnitudes are controlled by the trace, and squared root separation
+is the discriminant. [`FloquetLocalProjectionBound.lean`](../NLS/ZakharovShabat/FloquetLocalProjectionBound.lean)
+therefore bounds both root projections uniformly near any parameter
+where the discriminant is nonzero, without selecting continuous roots
+or normalizing eigenvectors.
+
+[`L2WholeLineFundamentalJoint.lean`](../NLS/ZakharovShabat/L2WholeLineFundamentalJoint.lean)
+proves joint continuity of the original full fundamental matrix and inverse
+in frequency, physical L2 potential and all real times. Signed monodromy
+powers glue at every seam, including negative times.
+[`L2WholeLineGreenIngredients.lean`](../NLS/ZakharovShabat/L2WholeLineGreenIngredients.lean)
+gives compact frequency/time bounds for both matrix directions and applies
+the local projection estimate to the actual physical monodromy.
+[`FinTwoMatrixProductBound.lean`](../NLS/FunctionalAnalysis/FinTwoMatrixProductBound.lean)
+tracks the dimension factors of the entrywise matrix norm.
+[`L2WholeLineModeKernelBound.lean`](../NLS/ZakharovShabat/L2WholeLineModeKernelBound.lean)
+combines the estimates for the actual projected fundamental kernel
+F(t)*P*F(s)^(-1). It is uniformly bounded on compact input/output time
+sets near every parameter with distinct Floquet roots, for either root order.
+
+The actual resolvent still needs to be identified with the one-sided
+Green integrals of these kernels. That identity will allow the local
+spectral-measure criterion to be applied to compact inputs. Exceptional
+parameters and extension to all vectors remain unfinished; pure absolute
+continuity is not yet proved. Exact2014 and G2 remain separate questions.

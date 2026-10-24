@@ -67331,3 +67331,47 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end LocalSpectralACExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section GreenKernelBoundsExamples
+open Matrix Module Set Filter
+open scoped Matrix.Norms.Elementwise Topology
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) :
+    ∃ (μ ν : ℂ) (b : Basis (Fin 2) ℂ (Fin 2 → ℂ)), μ*ν = 1 ∧
+      0 < ‖μ‖ ∧ ‖μ‖ < 1 ∧ 1 < ‖ν‖ ∧
+      l2Monodromy u z *ᵥ b 0 = μ • b 0 ∧ l2Monodromy u z *ᵥ b 1 = ν • b 1 :=
+  l2Monodromy_nonreal_exists_stable_unstable_eigenbasis u hu z hz
+
+example (M : Matrix (Fin 2) (Fin 2) ℂ) (μ ν : ℂ) (hne : μ ≠ ν)
+    (b : Basis (Fin 2) ℂ (Fin 2 → ℂ))
+    (hμ : M *ᵥ b 0 = μ • b 0) (hν : M *ᵥ b 1 = ν • b 1) :
+    (floquetRootProjection M μ ν).mulVecLin = floquetModeProjection b 0 :=
+  floquetRootProjection_mulVecLin M μ ν hne b hμ hν
+
+example (M : Matrix (Fin 2) (Fin 2) ℂ) (d μ ν : ℂ) (B δ : ℝ)
+    (hδ : 0 < δ) (hM : ‖M‖ ≤ B) (hsum : d = μ+ν) (hprod : μ*ν = 1)
+    (hdisc : δ^2 ≤ ‖d^2-4‖) :
+    ‖floquetRootProjection M μ ν‖ ≤ (B+‖d‖+1)/δ :=
+  norm_floquetRootProjection_le_of_discriminant_bound M d μ ν B δ hδ hM hsum hprod hdisc
+
+example : Continuous (fun qt : (ℂ × IntervalPairL2) × ℝ =>
+    (l2WholeLineFundamentalMatrix qt.1.2 qt.1.1 qt.2)⁻¹) :=
+  continuous_inv_l2WholeLineFundamentalMatrix_joint
+
+example (u : IntervalPairL2) (K : Set ℂ) (L : Set ℝ) (hK : IsCompact K) (hL : IsCompact L) :
+    ∃ C : ℝ, 0 < C ∧ ∀ z ∈ K, ∀ t ∈ L,
+      ‖l2WholeLineFundamentalMatrix u z t‖ ≤ C ∧
+      ‖(l2WholeLineFundamentalMatrix u z t)⁻¹‖ ≤ C :=
+  bounded_l2WholeLineFundamentalMatrix_and_inverse_on_compact u K L hK hL
+
+example (u : IntervalPairL2) (z₀ : ℂ) (hdisc : (l2Monodromy u z₀).trace^2-4 ≠ 0)
+    (L : Set ℝ) (hL : IsCompact L) :
+    ∃ C : ℝ, 0 < C ∧ ∀ᶠ z in 𝓝 z₀, ∀ μ ν : ℂ,
+      (l2Monodromy u z).trace = μ+ν → μ*ν = 1 →
+      ∀ t ∈ L, ∀ s ∈ L, ‖l2FloquetModeKernel u z μ ν t s‖ ≤ C :=
+  eventually_norm_l2FloquetModeKernel_le u z₀ hdisc L hL
+
+end GreenKernelBoundsExamples
+end NLS.ZakharovShabat

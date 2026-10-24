@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: the local physical spectral-measure criterion
+## Current milestone: uniform physical Floquet mode-kernel bounds
+
+The original physical Floquet mode kernels are now uniformly bounded
+on compact input/output time sets near every parameter where the two
+Floquet roots are distinct. The estimate holds for either root order.
+
+The proof expresses mode projections algebraically, controls their
+denominator by the nonzero discriminant, and combines these estimates
+with joint continuity and compact bounds for the actual full fundamental
+matrix and its inverse. Negative times and period seams are included.
+Every nonreal physical monodromy also has an actual stable/unstable basis.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+remaining identification of the actual resolvent with one-sided Green
+integrals. Applying the local spectral-measure criterion, handling the
+exceptional parameters and extending to all Hilbert vectors remain
+unfinished. Pure absolute continuity is not yet established.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,320 build jobs, 7,269
+public examples, and a transitive axiom audit of 41,687 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,579 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the local physical spectral-measure criterion
 
 A local bound on the actual physical resolvent expectation now implies
 absolute continuity of the actual real spectral measure on a smaller

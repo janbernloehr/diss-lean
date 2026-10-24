@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: a local bound on the actual physical resolvent expectation
-implies absolute continuity of its real spectral measure on a smaller
-interval. The bound remains an explicit hypothesis. Proving the physical
-Green-operator estimates and pure absolute continuity remains pending.
+Latest step: the actual physical Floquet mode kernels are uniformly
+bounded on compact time sets near parameters with distinct roots.
+The original full fundamental matrix and inverse are jointly continuous.
+Identifying the actual resolvent with Green integrals and proving pure
+absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
