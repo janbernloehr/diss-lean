@@ -536,3 +536,45 @@ The converse from arbitrary locally AC L2 representatives with an L2
 physical differential image remains to be proved. Hence the maximal-domain
 equality, local H1/core estimates, self-adjointness, whole-line spectrum and
 pure absolute continuity are still unfinished.
+
+## The self-adjoint whole-line operator and its maximal domain
+
+[`PhysicalOperatorSupport.lean`](../NLS/ZakharovShabat/PhysicalOperatorSupport.lean)
+shows that the original differential expression preserves compact support.
+[`L2WholeLineMaximalDomain.lean`](../NLS/ZakharovShabat/L2WholeLineMaximalDomain.lean)
+uses compact-test integration by parts to prove the converse to adjoint
+regularity. The actual Hilbert adjoint domain is exactly the L2 classes
+with a locally absolutely continuous representative whose original physical
+differential expression belongs to L2. That expression is the actual
+adjoint image.
+
+[`ACIntegralAtInfinity.lean`](../NLS/FunctionalAnalysis/ACIntegralAtInfinity.lean)
+proves a Banach-valued boundary theorem: an integrable locally AC function
+with an integrable prescribed a.e. derivative tends to zero at both ends
+of the real line, and the derivative has zero integral. Absolute continuity
+is retained; a.e. differentiability alone does not justify this conclusion.
+[`L2WholeLineAdjointSymmetry.lean`](../NLS/ZakharovShabat/L2WholeLineAdjointSymmetry.lean)
+applies the theorem to the original Hermitian boundary form. L2 estimates
+make that form and its derivative integrable. This proves symmetry on the
+entire actual adjoint domain for real physical potentials.
+
+[`SymmetricAdjoint.lean`](../NLS/FunctionalAnalysis/SymmetricAdjoint.lean)
+proves that actual adjoints reverse dense operator inclusion, and that a
+dense symmetric operator with a symmetric adjoint has a self-adjoint
+adjoint. [`DoubleAdjointClosure.lean`](../NLS/FunctionalAnalysis/DoubleAdjointClosure.lean)
+uses Hilbert-space orthogonal separation to identify the double adjoint
+relation with the closed graph, and hence the double adjoint operator with
+the actual graph closure.
+
+[`L2WholeLineSelfAdjoint.lean`](../NLS/ZakharovShabat/L2WholeLineSelfAdjoint.lean)
+combines these results. The original real minimal physical operator is
+essentially self-adjoint. Its graph closure equals its actual Hilbert
+adjoint and has the maximal locally AC differential domain. The original
+compact smooth tests form a core for this maximal self-adjoint operator.
+All assertions retain the unchanged signed physical expression and apply
+to the original real Hilbert sources.
+
+This establishes the operator and domain needed for the whole-line spectral
+claim on printed p.17. Resolvent construction, identification of the band
+spectrum, spectral measures and pure absolute continuity remain unfinished.
+The exact2014 comparison and G2 interval-norm question remain separate.

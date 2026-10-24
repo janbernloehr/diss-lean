@@ -4541,3 +4541,10 @@ import NLS.ZakharovShabat.L2WholeLineWeakDerivative
 import NLS.ZakharovShabat.L2WholeLineAdjointEquation
 import NLS.ZakharovShabat.L2WholeLineWeakCoordinates
 import NLS.ZakharovShabat.L2WholeLineAdjointRegularity
+import NLS.ZakharovShabat.PhysicalOperatorSupport
+import NLS.ZakharovShabat.L2WholeLineMaximalDomain
+import NLS.FunctionalAnalysis.ACIntegralAtInfinity
+import NLS.FunctionalAnalysis.SymmetricAdjoint
+import NLS.FunctionalAnalysis.DoubleAdjointClosure
+import NLS.ZakharovShabat.L2WholeLineAdjointSymmetry
+import NLS.ZakharovShabat.L2WholeLineSelfAdjoint

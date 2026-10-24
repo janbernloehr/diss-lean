@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual Hilbert adjoint is characterized by the original weak
-physical equation. Every real adjoint-domain vector has a locally absolutely
-continuous representative realizing its actual adjoint image. The converse
-maximal-domain inclusion and self-adjointness remain pending. Formalization
-remains in progress.
+Latest step: the original real whole-line operator is essentially self-adjoint.
+Its graph closure equals its actual Hilbert adjoint, with the maximal locally
+absolutely continuous differential domain and compact smooth test core.
+The band spectrum and pure absolute continuity remain pending.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

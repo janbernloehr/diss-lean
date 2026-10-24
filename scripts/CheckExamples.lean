@@ -66678,3 +66678,55 @@ example (f g : ℝ → ℂ) (hf : LocallyIntegrable f volume) (hg : LocallyInteg
 
 end WholeLineAdjointRegularityExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineSelfAdjointExamples
+open MeasureTheory
+
+-- Local absolute continuity excludes singular boundary contributions.
+example (F D : ℝ → ℂ)
+    (hac : ∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b)
+    (hF : Integrable F volume) (hD : Integrable D volume)
+    (hd : ∀ᵐ t : ℝ, HasDerivAt F (D t) t) : (∫ t : ℝ, D t) = 0 :=
+  NLS.FunctionalAnalysis.integral_eq_zero_of_locally_AC hac hF hD hd
+
+-- This characterizes the actual Hilbert adjoint domain in both directions.
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f : WholeLineL2) : f ∈ (wholeLineMinimalOperator u).adjoint.domain ↔
+      ∃ (F : ℝ → ℂ × ℂ) (g : WholeLineL2), wholeLineL2Pair f =ᵐ[volume] F ∧
+        (∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b) ∧
+        physicalOperator (l2WholeLinePotential u) F =ᵐ[volume] wholeLineL2Pair g :=
+  mem_wholeLineMinimalOperator_adjoint_domain_iff_AC u hu f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f g : WholeLineL2) (F : ℝ → ℂ × ℂ)
+    (he : wholeLineL2Pair f =ᵐ[volume] F)
+    (hac : ∀ a b : ℝ, AbsolutelyContinuousOnInterval F a b)
+    (hp : physicalOperator (l2WholeLinePotential u) F =ᵐ[volume] wholeLineL2Pair g) :
+    (wholeLineMinimalOperator u).adjoint
+      ⟨f,(wholeLineWeakEquation_of_AC_representative u hu f g F he hac hp).mem_adjoint_domain⟩ = g :=
+  wholeLineMinimalOperator_adjoint_eq_of_AC_representative u hu f g F he hac hp
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    IsSelfAdjoint (wholeLineMinimalOperator u).adjoint :=
+  wholeLineMinimalOperator_adjoint_isSelfAdjoint u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    (wholeLineMinimalOperator u).closure = (wholeLineMinimalOperator u).adjoint :=
+  wholeLineMinimalOperator_closure_eq_adjoint u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    IsSelfAdjoint (wholeLineMinimalOperator u).closure :=
+  wholeLineMinimalOperator_closure_isSelfAdjoint u hu
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    IsSelfAdjoint (wholeLineMinimalOperator (sourcePhysicalL2 φ)).closure :=
+  source_wholeLineMinimalOperator_closure_isSelfAdjoint φ hφ
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    (wholeLineMinimalOperator u).adjoint.HasCore (wholeLineMinimalOperator u).domain :=
+  wholeLineMinimalOperator_adjoint_test_core u hu
+
+end WholeLineSelfAdjointExamples
+end NLS.ZakharovShabat

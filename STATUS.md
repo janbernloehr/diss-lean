@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: whole-line weak adjoint equation and AC representatives
+## Current milestone: whole-line self-adjointness and maximal differential domain
+
+The original real whole-line minimal operator is now essentially
+self-adjoint. Its actual graph closure equals its actual Hilbert adjoint.
+The domain consists exactly of L2 classes with locally absolutely continuous
+representatives and an L2 image under the original physical expression.
+The original compact smooth test domain is a core for this operator.
+
+The proof controls the Hermitian boundary form and its derivative in L1,
+uses local absolute continuity to remove both boundary terms at infinity,
+and identifies the double adjoint with the graph closure by orthogonal
+separation. The result applies to the unchanged original real sources.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps resolvent
+construction, band-spectrum identification, spectral measures and pure
+absolute continuity unfinished. Exact2014 and G2 remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,229 build jobs, 7,174
+public examples, and a transitive axiom audit of 41,198 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,376 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line weak adjoint equation and AC representatives
 
 The actual Hilbert adjoint domain is now characterized by the original
 weak physical equation with an L2 image. For real physical potentials,
