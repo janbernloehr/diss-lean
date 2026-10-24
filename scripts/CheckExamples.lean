@@ -66762,3 +66762,55 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
 
 end WholeLineNonrealResolventExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineCutoffFrameworkExamples
+open MeasureTheory Filter
+open scoped Topology
+
+example (u : IntervalPairL2) (z : ℂ)
+    (f : ℕ → (wholeLineMinimalOperator u).closure.domain)
+    (hn : ∀ n, ‖(f n : WholeLineL2)‖ = 1)
+    (hr : Tendsto (fun n => wholeLinePencil u z (f n)) atTop (𝓝 0)) :
+    z ∈ wholeLineSpectrum u := mem_wholeLineSpectrum_of_approximate_eigenvectors u z f hn hr
+
+example (u : IntervalPairL2) (z : ℂ) (m K : ℝ) (hm : 0 < m)
+    (hf : ∀ n : ℕ, ∃ f : (wholeLineMinimalOperator u).closure.domain,
+      (n : ℝ) * m ≤ ‖(f : WholeLineL2)‖ ^ 2 ∧ ‖wholeLinePencil u z f‖ ^ 2 ≤ K) :
+    z ∈ wholeLineSpectrum u := mem_wholeLineSpectrum_of_mass_growth u z m K hm hf
+
+example (F : ℝ → ℂ × ℂ) (hF : MemLp F 2 volume) :
+    ‖wholeLineOfPair F hF‖ ^ 2 = ∫ t : ℝ, ‖WithLp.toLp 2 (F t)‖ ^ 2 :=
+  norm_wholeLineOfPair_sq F hF
+
+example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
+    0 < ∫ t in (0 : ℝ)..1, wholeLineSolutionMass u z v t :=
+  wholeLineSolution_unit_mass_pos u z v hv
+
+example (u : IntervalPairL2) (z μ : ℂ) (hμ : ‖μ‖ = 1)
+    (v : Fin 2 → ℂ) (hv : Matrix.mulVec (l2Monodromy u z) v = μ • v) (n : ℕ) :
+    (∫ t in (0 : ℝ)..(n : ℝ), wholeLineSolutionMass u z v t) =
+      (n : ℝ) * ∫ t in (0 : ℝ)..1, wholeLineSolutionMass u z v t :=
+  wholeLineSolution_mass_nat_periods u z μ hμ v hv n
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (v : Fin 2 → ℂ) (ψ : ℝ → ℂ) (hψ : ContDiff ℝ 1 ψ) (hc : HasCompactSupport ψ) :
+    wholeLineCutoff u z v ψ hψ.continuous hc ∈ (wholeLineMinimalOperator u).closure.domain :=
+  wholeLineCutoff_mem_closure_domain u hu z v ψ hψ hc
+
+example (u : IntervalPairL2) (z : ℂ) (v : Fin 2 → ℂ)
+    (ψ : ℝ → ℂ) (hψ : Continuous ψ) (hc : HasCompactSupport ψ) :
+    ‖wholeLineCutoff u z v ψ hψ hc‖ ^ 2 =
+      ∫ t : ℝ, ‖ψ t‖ ^ 2 * wholeLineSolutionMass u z v t :=
+  norm_wholeLineCutoff_sq u z v ψ hψ hc
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (v : Fin 2 → ℂ) (ψ : ℝ → ℂ) (hψ : ContDiff ℝ 1 ψ) (hc : HasCompactSupport ψ) :
+    ‖wholeLinePencil u z
+      ⟨wholeLineCutoff u z v ψ hψ.continuous hc,wholeLineCutoff_mem_closure_domain u hu z v ψ hψ hc⟩‖ ^ 2 =
+      ∫ t : ℝ, ‖deriv ψ t‖ ^ 2 * wholeLineSolutionMass u z v t :=
+  norm_wholeLinePencil_cutoff_sq u hu z v ψ hψ hc
+
+end WholeLineCutoffFrameworkExamples
+end NLS.ZakharovShabat

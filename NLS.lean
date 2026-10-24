@@ -4553,3 +4553,10 @@ import NLS.FunctionalAnalysis.ClosedPencilRange
 import NLS.FunctionalAnalysis.SelfAdjointPencilRange
 import NLS.FunctionalAnalysis.SelfAdjointNonrealResolvent
 import NLS.ZakharovShabat.L2WholeLineNonrealResolvent
+import NLS.ZakharovShabat.L2WholeLineWeylCriterion
+import NLS.ZakharovShabat.L2WholeLineWeylGrowth
+import NLS.ZakharovShabat.L2WholeLineOfPair
+import NLS.ZakharovShabat.PhysicalOperatorProductRule
+import NLS.ZakharovShabat.L2WholeLineFloquetMass
+import NLS.ZakharovShabat.L2WholeLineCutoff
+import NLS.ZakharovShabat.L2WholeLineCutoffResidual

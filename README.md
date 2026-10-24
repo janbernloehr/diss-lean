@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original whole-line spectrum is defined by bounded physical
-pencil invertibility. Real potentials have bounded inverses at every nonreal
-parameter, with norm at most 1/|Im z|; the spectrum lies on the real axis.
-The band-spectrum equality and pure absolute continuity remain pending.
+Latest step: actual whole-line cutoff vectors now satisfy exact physical
+residual and norm identities. Unit-multiplier Floquet solutions have positive
+periodic mass with linear growth, ready for the expanding-cutoff argument.
+Band membership, spectrum equality and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

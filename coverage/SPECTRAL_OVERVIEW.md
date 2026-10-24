@@ -609,3 +609,36 @@ Real gap resolvents and spectral membership of the Floquet bands, including
 endpoints and collapsed gaps, remain to be proved. Spectral measures and
 pure absolute continuity remain separate unfinished requirements. The
 exact2014 comparison and G2 interval-norm question remain separate.
+
+## Actual cutoff vectors and positive periodic Floquet mass
+
+[`L2WholeLineWeylCriterion.lean`](../NLS/ZakharovShabat/L2WholeLineWeylCriterion.lean)
+proves approximate-eigenvector criteria for the independently defined physical
+spectrum, directly from the two-sided bounded resolvent equations.
+[`L2WholeLineWeylGrowth.lean`](../NLS/ZakharovShabat/L2WholeLineWeylGrowth.lean)
+provides a version with linearly growing squared input mass and uniformly
+bounded squared residual. Both criteria use the actual closure domain.
+
+[`L2WholeLineOfPair.lean`](../NLS/ZakharovShabat/L2WholeLineOfPair.lean)
+constructs the original Hermitian L2 class from a square-integrable pair and
+identifies its squared norm with the squared fibre-norm integral.
+[`PhysicalOperatorProductRule.lean`](../NLS/ZakharovShabat/PhysicalOperatorProductRule.lean)
+proves the signed differential product rule for scalar cutoffs.
+[`L2WholeLineCutoff.lean`](../NLS/ZakharovShabat/L2WholeLineCutoff.lean)
+places every smooth compact cutoff of the original locally AC solution in
+the actual self-adjoint closure domain and computes its original image.
+
+[`L2WholeLineFloquetMass.lean`](../NLS/ZakharovShabat/L2WholeLineFloquetMass.lean)
+shows that a nonzero initial vector never vanishes. For a unit Floquet
+multiplier the squared physical fibre norm is periodic, its unit-period
+integral is positive, and its integral over n periods is exactly n times
+that positive mass.
+[`L2WholeLineCutoffResidual.lean`](../NLS/ZakharovShabat/L2WholeLineCutoffResidual.lean)
+identifies the actual pencil residual with the signed cutoff derivative.
+The squared cutoff and residual norms are exactly the mass integrals
+weighted by the squared cutoff and squared derivative, respectively.
+
+The next step is to choose expanding cutoffs and bound these integrals.
+Floquet band membership, real-gap resolvents, full spectrum equality,
+spectral measures and pure absolute continuity remain unfinished.
+Exact2014 and G2 remain separate source questions.

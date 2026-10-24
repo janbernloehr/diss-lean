@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: whole-line nonreal resolvent and real spectrum
+## Current milestone: whole-line physical cutoffs and Floquet mass
+
+The original whole-line operator now has verified spectral criteria
+using actual closure-domain vectors, including a growing-mass criterion.
+Smooth compact cutoffs of physical solutions belong to that domain, and
+their exact pencil residual is the signed cutoff derivative. Their squared
+norms are the corresponding weighted physical mass integrals.
+
+A nonzero unit-multiplier Floquet solution has positive periodic mass,
+with exact linear growth over whole periods. These results connect the
+physical propagation to the actual operator spectrum. Expanding-cutoff
+estimates, band membership, real-gap resolvents, full spectral equality,
+spectral measures and pure absolute continuity remain unfinished in the
+[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md). Exact2014 and G2
+remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,241 build jobs, 7,188
+public examples, and a transitive axiom audit of 41,274 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,406 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: whole-line nonreal resolvent and real spectrum
 
 The original whole-line spectrum is now defined through bounded
 invertibility of the physical pencil on the actual graph-closure domain.
