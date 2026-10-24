@@ -67152,3 +67152,41 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineCayleyMeasuresExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineRealMeasuresExamples
+open NLS.FunctionalAnalysis MeasureTheory
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : NullSingletonClass (wholeLineCayleySpectralMeasure u hu v) := inferInstance
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (ζ : ℂ) :
+    wholeLineCayleySpectralMeasure u hu v {x | (x : ℂ) = ζ} = 0 :=
+  wholeLineCayleySpectralMeasure_coordinate_fiber_zero u hu v ζ
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : wholeLineCayleySpectralMeasure u hu v {x | (x : ℂ) = 1} = 0 :=
+  wholeLineCayleySpectralMeasure_one_fiber_zero u hu v
+
+example (ζ : ℂ) (hζ : ζ ∈ unitary ℂ) (hne : ζ ≠ 1) :
+    ((inverseCayleyReal ζ : ℂ)-Complex.I)/((inverseCayleyReal ζ : ℂ)+Complex.I) = ζ :=
+  cayley_inverseCayleyReal ζ hζ hne
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : IsFiniteMeasure (wholeLineRealSpectralMeasure u hu v) := inferInstance
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : (wholeLineRealSpectralMeasure u hu v).real Set.univ = ‖v‖^2 :=
+  wholeLineRealSpectralMeasure_real_univ u hu v
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : NullSingletonClass (wholeLineRealSpectralMeasure u hu v) := inferInstance
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (s : Set ℝ) (hs : s.Countable) : wholeLineRealSpectralMeasure u hu v s = 0 :=
+  wholeLineRealSpectralMeasure_countable_zero u hu v s hs
+
+end WholeLineRealMeasuresExamples
+end NLS.ZakharovShabat

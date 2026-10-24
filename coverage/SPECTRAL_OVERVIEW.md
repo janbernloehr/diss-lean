@@ -864,3 +864,36 @@ These are measures on the complex Cayley spectrum. Proving they have no
 atoms, transporting them to the real line, identifying the unbounded
 operator resolvent integral, and proving pure absolute continuity remain
 unfinished. Exact2014 and G2 remain separate source questions.
+
+## Atom exclusion and real-line transport of the actual measures
+
+[`NormalOperatorPencilDense.lean`](../NLS/FunctionalAnalysis/NormalOperatorPencilDense.lean)
+proves that every scalar pencil of a bounded normal operator without
+eigenvectors has dense range.
+[`VectorSpectralMeasureAtomBound.lean`](../NLS/FunctionalAnalysis/VectorSpectralMeasureAtomBound.lean)
+bounds an actual spectral atom by the squared norm of a continuous test
+operator whose function equals one at that point.
+[`SpectralPeakFunction.lean`](../NLS/FunctionalAnalysis/SpectralPeakFunction.lean)
+constructs continuous peaks epsilon/(epsilon+norm(x-a)), and
+[`NormalSpectralPeakEstimates.lean`](../NLS/FunctionalAnalysis/NormalSpectralPeakEstimates.lean)
+proves they are contractive and epsilon-small on the original pencil range.
+[`NormalOperatorSpectralMeasureNoAtoms.lean`](../NLS/FunctionalAnalysis/NormalOperatorSpectralMeasureNoAtoms.lean)
+combines these estimates with dense range to prove that the constructed
+scalar CFC measures have no atoms.
+
+[`L2WholeLineCayleyMeasureNoAtoms.lean`](../NLS/ZakharovShabat/L2WholeLineCayleyMeasureNoAtoms.lean)
+applies this to the original physical Cayley operator. Every singleton,
+complex coordinate fiber and countable spectral subset has zero measure.
+In particular the exceptional inverse-Cayley fiber at one is null.
+[`InverseCayleyCoordinate.lean`](../NLS/FunctionalAnalysis/InverseCayleyCoordinate.lean)
+proves measurability, reality on the unit circle, and exact inversion
+away from one for the original inverse Cayley coordinate.
+[`L2WholeLineRealSpectralMeasure.lean`](../NLS/ZakharovShabat/L2WholeLineRealSpectralMeasure.lean)
+transports the actual physical CFC measures to the real line. They are
+finite, retain the original vector's squared norm as total mass, and
+have zero mass on every countable real subset.
+
+Identifying the actual unbounded operator resolvent integral remains the
+next step. Atom exclusion alone does not exclude singular continuous
+spectrum or prove pure absolute continuity. Exact2014 and G2 remain
+separate source questions.

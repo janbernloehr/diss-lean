@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: actual physical Cayley scalar measures
+## Current milestone: atomless physical real measures
+
+The actual scalar spectral measures of the physical Cayley operator
+now have no atoms. The proof uses dense ranges of the original normal
+operator pencils and continuous peak functions, together with the
+already verified CFC squared-norm identity.
+
+The exceptional point one has zero mass. The proved inverse Cayley
+coordinate now transports these measures to finite real-line measures
+with the original squared Hilbert norm as total mass. Every countable
+real subset has measure zero.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) keeps the
+unbounded operator resolvent integral and exclusion of singular continuous
+spectrum unfinished. Pure absolute continuity is not yet established.
+Exact2014 and G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,302 build jobs, 7,245
+public examples, and a transitive axiom audit of 41,603 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,531 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual physical Cayley scalar measures
 
 The original physical Cayley transform now has actual finite scalar
 spectral measures, constructed through continuous functional calculus

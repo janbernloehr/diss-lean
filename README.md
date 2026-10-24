@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual physical Cayley transform has finite scalar
-spectral measures with the correct mass, complex integral representation
-and squared-norm identity. It has no nonzero eigenvectors. Measure atom
-exclusion, real-line transport and pure absolute continuity remain pending.
+Latest step: the actual physical Cayley spectral measures have no atoms.
+Inverse Cayley transport gives finite real-line measures with the original
+total mass and zero measure on countable sets. The unbounded resolvent
+integral and pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
