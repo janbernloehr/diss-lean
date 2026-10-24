@@ -4594,3 +4594,10 @@ import NLS.ZakharovShabat.L2WholeLineNoEigenvectors
 import NLS.FunctionalAnalysis.SelfAdjointResolventIdentity
 import NLS.FunctionalAnalysis.SelfAdjointCayley
 import NLS.ZakharovShabat.L2WholeLineCayley
+import NLS.FunctionalAnalysis.SelfAdjointCayleyEigenvectors
+import NLS.ZakharovShabat.L2WholeLineCayleyEigenvectors
+import NLS.FunctionalAnalysis.VectorSpectralFunctional
+import NLS.FunctionalAnalysis.VectorSpectralMeasure
+import NLS.FunctionalAnalysis.VectorSpectralIntegral
+import NLS.FunctionalAnalysis.NormalOperatorSpectralMeasure
+import NLS.ZakharovShabat.L2WholeLineCayleySpectralMeasure

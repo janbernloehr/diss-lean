@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: the actual physical Cayley transform
+## Current milestone: actual physical Cayley scalar measures
+
+The original physical Cayley transform now has actual finite scalar
+spectral measures, constructed through continuous functional calculus
+and Riesz representation. Their total mass is the original vector's
+squared norm. Complex integration reproduces the actual vector
+functional, the squared-norm identity holds, and the coordinate moment
+recovers the Cayley operator itself.
+
+The Cayley transform also has no nonzero eigenvectors at any complex
+parameter. The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md)
+distinguishes this from the still unfinished measure atom-exclusion proof.
+The measures currently live on the complex Cayley spectrum. Transport to
+the real line, the unbounded resolvent representation and pure absolute
+continuity remain unfinished. Exact2014 and G2 remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,294 build jobs, 7,237
+public examples, and a transitive axiom audit of 41,553 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,512 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the actual physical Cayley transform
 
 The actual resolvent identity and adjoint formula now give a unitary
 Cayley transform for the self-adjoint physical whole-line closure.

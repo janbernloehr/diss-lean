@@ -67106,3 +67106,49 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineCayleyExamples
 end NLS.ZakharovShabat
+
+
+namespace NLS.ZakharovShabat
+section WholeLineCayleyMeasuresExamples
+open NLS.FunctionalAnalysis MeasureTheory
+
+example {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
+    {T : E →ₗ.[ℂ] E} (hT : IsSelfAdjoint T)
+    (hno : ∀ (z : ℂ) (y : T.domain), T y = z • (y : E) → (y : E) = 0)
+    (ζ : ℂ) (f : E) (hf : selfAdjointCayley hT f = ζ • f) : f = 0 :=
+  selfAdjointCayley_eigenvector_eq_zero hT hno ζ f hf
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (ζ : ℂ) :
+    ¬ ∃ f : WholeLineL2, f ≠ 0 ∧ wholeLineCayley u hu f = ζ • f :=
+  wholeLineCayley_no_eigenvectors u hu ζ
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : IsFiniteMeasure (wholeLineCayleySpectralMeasure u hu v) := inferInstance
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : (wholeLineCayleySpectralMeasure u hu v).real Set.univ = ‖v‖^2 :=
+  wholeLineCayleySpectralMeasure_real_univ u hu v
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (f : C(spectrum ℂ (wholeLineCayley u hu), ℂ)) :
+    ∫ x, f x ∂wholeLineCayleySpectralMeasure u hu v =
+      inner ℂ v (cfcHom (wholeLineCayley_isStarNormal u hu) f v) :=
+  integral_wholeLineCayleySpectralMeasure u hu v f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (f : C(spectrum ℂ (wholeLineCayley u hu), ℂ)) :
+    ‖cfcHom (wholeLineCayley_isStarNormal u hu) f v‖^2 =
+      ∫ x, ‖f x‖^2 ∂wholeLineCayleySpectralMeasure u hu v :=
+  norm_wholeLineCayley_cfc_sq_eq_integral u hu v f
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : ∫ x, (x : ℂ) ∂wholeLineCayleySpectralMeasure u hu v =
+      inner ℂ v (wholeLineCayley u hu v) :=
+  integral_coordinate_wholeLineCayleySpectralMeasure u hu v
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    spectrum ℂ (wholeLineCayley u hu) ⊆ unitary ℂ :=
+  wholeLineCayley_spectrum_subset_unitary u hu
+
+end WholeLineCayleyMeasuresExamples
+end NLS.ZakharovShabat

@@ -830,3 +830,37 @@ The actual scalar spectral measures have not yet been constructed.
 The spectral-set equality and absence of physical eigenvectors are
 already proved, but exclusion of singular continuous spectrum remains
 necessary for pure absolute continuity. Exact2014 and G2 remain separate questions.
+
+## Actual scalar spectral measures of the physical Cayley transform
+
+[`SelfAdjointCayleyEigenvectors.lean`](../NLS/FunctionalAnalysis/SelfAdjointCayleyEigenvectors.lean)
+transfers absence of eigenvectors from a self-adjoint partial operator to
+its actual bounded Cayley transform, using an actual domain vector supplied
+by the nonreal resolvent.
+[`L2WholeLineCayleyEigenvectors.lean`](../NLS/ZakharovShabat/L2WholeLineCayleyEigenvectors.lean)
+specializes this to the original whole-line closure and unchanged real source.
+
+[`VectorSpectralFunctional.lean`](../NLS/FunctionalAnalysis/VectorSpectralFunctional.lean)
+constructs a positive real vector functional from a star-algebra homomorphism
+into bounded Hilbert-space operators. Positivity follows from a continuous
+square root and the Hilbert adjoint.
+[`VectorSpectralMeasure.lean`](../NLS/FunctionalAnalysis/VectorSpectralMeasure.lean)
+applies Riesz representation to construct its finite scalar measure, proves
+the correct total mass, and establishes the squared-norm integral identity.
+[`VectorSpectralIntegral.lean`](../NLS/FunctionalAnalysis/VectorSpectralIntegral.lean)
+proves the full complex integral representation.
+
+[`NormalOperatorSpectralMeasure.lean`](../NLS/FunctionalAnalysis/NormalOperatorSpectralMeasure.lean)
+uses continuous functional calculus on the independently defined spectrum
+of an actual bounded normal operator. The coordinate moment recovers that
+operator itself.
+[`L2WholeLineCayleySpectralMeasure.lean`](../NLS/ZakharovShabat/L2WholeLineCayleySpectralMeasure.lean)
+constructs these measures for the original physical Cayley transform,
+with total mass equal to the original vector's squared norm, complex
+integral representation, squared-norm identity and coordinate moment.
+The actual Cayley spectrum lies on the unit circle.
+
+These are measures on the complex Cayley spectrum. Proving they have no
+atoms, transporting them to the real line, identifying the unbounded
+operator resolvent integral, and proving pure absolute continuity remain
+unfinished. Exact2014 and G2 remain separate source questions.
