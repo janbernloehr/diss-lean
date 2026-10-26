@@ -67611,3 +67611,39 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
 
 end WholeLineSourceTheoremExamples
 end NLS.ZakharovShabat
+
+section SpectralOverviewPeriodicSelfAdjointExamples
+open NLS NLS.ZakharovShabat MeasureTheory Set
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    IsSelfAdjoint (sourceUnboundedOperator (by simp) φ) :=
+  sourceUnboundedOperator_isSelfAdjoint φ hφ
+
+example (φ : CoeffPair 2) :
+    IsSelfAdjoint (physicalPeriodicOperator (periodOnePair φ)) ↔
+      IsRealType (CoeffPair.toMax 2 φ) :=
+  sourcePhysicalPeriodicOperator_isSelfAdjoint_iff φ
+
+example (φ : CoeffPair 2) (a : WeightedCoeffPair (Weight.sobolev 1) 2) :
+    sourceCircleRepresentative (physicalPeriodicOperator φ (physicalPeriodicDomainEquiv a))
+      =ᵐ[volume.restrict (Ioc 0 2)]
+      physicalOperator (physicalBase (CoeffPair.toMax 2 φ))
+        (physicalDomain (WeightedCoeffPair.toMax (Weight.sobolev 1) 2 a)) :=
+  physicalPeriodicOperator_representative φ a
+
+example (a : WeightedCoeffPair (Weight.sobolev 1) 2) :
+    sourceCircleRepresentative (physicalPeriodicDomainInclusion a) =ᵐ[volume.restrict (Ioc 0 2)]
+      physicalDomain (WeightedCoeffPair.toMax (Weight.sobolev 1) 2 a) :=
+  physicalPeriodicDomain_representative a
+
+example (φ : CoeffPair 2) (hφ : ¬IsRealType (CoeffPair.toMax 2 φ)) :
+    ¬IsSelfAdjoint (physicalPeriodicOperator (periodOnePair φ)) :=
+  fun h => hφ ((sourcePhysicalPeriodicOperator_isSelfAdjoint_iff φ).mp h)
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    (physicalPeriodicOperator φ).adjoint.domain =
+      LinearMap.range physicalPeriodicDomainInclusion.toLinearMap := by
+  rw [LinearPMap.isSelfAdjoint_def.mp (physicalPeriodicOperator_isSelfAdjoint φ hφ)]
+  rfl
+
+end SpectralOverviewPeriodicSelfAdjointExamples

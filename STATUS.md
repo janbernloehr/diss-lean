@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: the complete source spectral overview
+## Current milestone: periodic self-adjointness in the original source and physical spaces
+
+The original periodic Hilbert operator now equals its actual adjoint
+exactly when the potential is of real type. The result retains the full
+included one-derivative domain and the original component-sum norm.
+
+The same equivalence is proved on the physical period-two L2 space.
+Fourier synthesis identifies the domain and proves agreement with the
+original signed differential expression almost everywhere. It specializes
+to the original period-one source potential. The converse tests symmetry
+on two Fourier modes and recovers conjugate reflection of the coefficients.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records these
+page17-18 statements separately from spectrum reality and the whole-line
+theorems. Continue the remaining semantic source audit; exact2014 and G2
+remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,349 build jobs, 7,305
+public examples, and a transitive axiom audit of 41,814 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,655 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: the complete source spectral overview
 
 The page17 whole-line spectral statement now has a single public theorem
 on the original real Hilbert source. It combines self-adjointness of the

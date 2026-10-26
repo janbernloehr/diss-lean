@@ -1154,3 +1154,38 @@ The initial band-criterion section above is a historical checkpoint;
 its operator and spectral-measure obligations have now been discharged.
 Remaining source comparisons, exact2014 and G2 are separate from these
 page17 results. This is not a full-dissertation completeness certificate.
+
+## Periodic self-adjointness in the original Hilbert and physical spaces
+
+The opening p.17 real-type self-adjointness claim and the p.18 converse
+now have an exact adjoint formulation. The periodic realization is the
+period-two operator specified on p.18, retaining the original one-derivative
+domain and the sum of both component coefficient energies.
+
+[`ConjugatePencilSelfAdjoint.lean`](../NLS/FunctionalAnalysis/ConjugatePencilSelfAdjoint.lean)
+proves that a dense symmetric operator equals its actual Hilbert adjoint
+when its pencils at a pair of conjugate parameters are onto. The proof
+establishes equality of domains through the adjoint pencil kernel.
+[`SourceUnboundedOperator.lean`](../NLS/ZakharovShabat/SourceUnboundedOperator.lean)
+constructs the original source operator as a partial linear map whose
+domain is exactly the included one-derivative space, and proves density.
+[`SourcePeriodicSelfAdjoint.lean`](../NLS/ZakharovShabat/SourcePeriodicSelfAdjoint.lean)
+identifies coefficient duality with the actual source Hilbert inner product.
+The existing nonreal resolvents at i and -i then prove self-adjointness.
+
+[`PhysicalPeriodicSelfAdjoint.lean`](../NLS/ZakharovShabat/PhysicalPeriodicSelfAdjoint.lean)
+uses the original Fourier isometry to realize the full domain in physical
+period-two L2. Its operator equals the signed physical differential
+expression almost everywhere for every L2 potential. The actual physical
+operator is self-adjoint at real-type sources, with no assumed adjoint
+domain or smoothness of the potential.
+[`PeriodicSelfAdjointRealType.lean`](../NLS/ZakharovShabat/PeriodicSelfAdjointRealType.lean)
+proves the converse by testing symmetry on two original Fourier modes.
+Both the coefficient and physical operators are self-adjoint if and only
+if the potential has real type. The equivalence also retains the original
+period-one potential embedding, so non-real-type original potentials
+give non-self-adjoint physical operators.
+
+This is distinct from merely proving that the periodic eigenvalues are real.
+The existing whole-line results are unchanged. The remaining dissertation
+source audit, exact2014 comparison and G2 norm qualification remain separate.

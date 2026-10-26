@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: one public theorem assembles the original whole-line
-self-adjoint operator, its exact complement-of-gaps spectrum and pure
-absolute continuity. Canonical endpoint eigenfunctions have their exact
-periodic or antiperiodic sign at every index, including central eigenvalues.
-The remaining dissertation source audit is still in progress.
+Latest step: the original periodic operator is self-adjoint exactly when
+the potential has real type. This holds in the original coefficient norm
+and physical L2 space, with the full one-derivative domain and original
+differential expression. The remaining dissertation source audit continues.
+Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
