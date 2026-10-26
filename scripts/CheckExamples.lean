@@ -67424,3 +67424,52 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end ScalarGreenExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section GreenResolventExamples
+open MeasureTheory Set Filter
+open scoped Matrix.Norms.Elementwise Topology
+
+example (M : Matrix (Fin 2) (Fin 2) ℂ) (v : ℂ × ℂ) :
+    ‖wholeLineMatrixAction M v‖ ≤ 2*‖M‖*‖v‖ := norm_wholeLineMatrixAction_le M v
+
+example (v : ℂ × ℂ) : ‖(Complex.I*v.1,-Complex.I*v.2)‖ = ‖v‖ :=
+  norm_wholeLinePencilForcing_pair v
+
+example (v w : WholeLineVector) : ‖inner ℂ v w‖ ≤ 2*‖v.ofLp‖*‖w.ofLp‖ :=
+  norm_wholeLineVector_inner_le_pair v w
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) :
+    ∃ μ ν : ℂ, (l2Monodromy u z).trace = μ+ν ∧ μ*ν = 1 ∧
+      ‖μ‖ < 1 ∧ 1 < ‖ν‖ ∧ ∀ (g : WholeLineL2) (a c : ℝ),
+      (∀ᵐ t : ℝ, t ≤ a → wholeLineL2Pair g t = 0) →
+      (∀ᵐ t : ℝ, c ≤ t → wholeLineL2Pair g t = 0) →
+      wholeLineL2Pair (wholeLineNonrealResolvent u hu z hz g) =ᵐ[volume]
+        (fun t => (∫ s in a..t, wholeLineMatrixAction (l2FloquetModeKernel u z μ ν t s)
+          (Complex.I*(wholeLineL2Pair g s).1,-Complex.I*(wholeLineL2Pair g s).2))-
+        ∫ s in t..c, wholeLineMatrixAction (l2FloquetModeKernel u z ν μ t s)
+          (Complex.I*(wholeLineL2Pair g s).1,-Complex.I*(wholeLineL2Pair g s).2)) :=
+  wholeLineNonrealResolvent_exists_green_formula u hu z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z₀ : ℂ) (hdisc : (l2Monodromy u z₀).trace^2-4 ≠ 0) (a c : ℝ) :
+    ∃ D : ℝ, 0 < D ∧ ∀ᶠ z in 𝓝 z₀, ∀ hz : z.im ≠ 0, ∀ g : WholeLineL2,
+      (∀ᵐ s : ℝ, s ≤ a → wholeLineL2Pair g s = 0) →
+      (∀ᵐ s : ℝ, c ≤ s → wholeLineL2Pair g s = 0) →
+      ∀ᵐ t : ℝ, t ∈ Icc a c →
+        ‖wholeLineL2Pair (wholeLineNonrealResolvent u hu z hz g) t‖ ≤
+          D*(∫ s in a..c, ‖wholeLineL2Pair g s‖) :=
+  eventually_wholeLineNonrealResolvent_pair_bound u hu z₀ hdisc a c
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z₀ : ℂ) (hdisc : (l2Monodromy u z₀).trace^2-4 ≠ 0)
+    (g : WholeLineL2) (a c : ℝ) (hac : a ≤ c)
+    (hleft : ∀ᵐ t : ℝ, t ≤ a → wholeLineL2Pair g t = 0)
+    (hright : ∀ᵐ t : ℝ, c ≤ t → wholeLineL2Pair g t = 0) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ᶠ z in 𝓝 z₀, ∀ hz : z.im ≠ 0,
+      ‖inner ℂ g (wholeLineNonrealResolvent u hu z hz g)‖ ≤ C :=
+  eventually_norm_wholeLineNonrealResolvent_expectation_le u hu z₀ hdisc g a c hac hleft hright
+
+end GreenResolventExamples
+end NLS.ZakharovShabat

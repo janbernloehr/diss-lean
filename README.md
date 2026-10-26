@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original bounded scalar inverse has its one-sided Green
-integral formula, and the bounded Floquet inverse equals the original
-physical nonreal resolvent. Matrix kernel recombination and pure absolute
-continuity remain pending.
+Latest step: the original physical resolvent has its matrix Green formula
+and uniform compact-input expectation bounds near every parameter with
+distinct Floquet roots, including approach to the real line. Applying the
+measure criterion and completing pure absolute continuity remain pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

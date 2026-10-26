@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: scalar Green formulas and physical resolvent identification
+## Current milestone: physical Green formulas and uniform local resolvent bounds
+
+The original physical nonreal resolvent now has its one-sided matrix
+Green formula for compact forcing, using the actual stable/unstable roots,
+full fundamental matrix and original forcing signs.
+
+The formula and the previously proved kernel bounds give a uniform local
+bound on the actual resolvent and its Hermitian expectation near every
+parameter with distinct Floquet roots. The constant is independent of
+the nonzero imaginary part, so this controls approach to the real line.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains the
+remaining application of the local measure criterion, the exceptional
+repeated-root set and extension from compact inputs to all Hilbert vectors.
+Pure absolute continuity remains unfinished. Exact2014 and G2 remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,334 build jobs, 7,281
+public examples, and a transitive axiom audit of 41,729 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,613 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: scalar Green formulas and physical resolvent identification
 
 The existing bounded scalar inverse now equals its one-sided exponential
 Green integral whenever the forcing vanishes on the appropriate half-line.

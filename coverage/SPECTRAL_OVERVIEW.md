@@ -1040,3 +1040,38 @@ full-fundamental matrix kernel. Uniform compact-input resolvent bounds,
 the exceptional parameter set and extension of spectral absolute continuity
 to all vectors remain unfinished. Pure absolute continuity is not yet
 proved. Exact2014 and G2 remain separate source questions.
+
+## Actual matrix Green formula and uniform physical resolvent bounds
+
+[`L2FloquetKernelCancellation.lean`](../NLS/ZakharovShabat/L2FloquetKernelCancellation.lean)
+cancels the original periodic Floquet factors and diagonal exponential
+propagators into the projected full-fundamental matrix kernel.
+[`L2FloquetGreenKernelAction.lean`](../NLS/ZakharovShabat/L2FloquetGreenKernelAction.lean)
+identifies each root projection with its actual eigenbasis column and
+expresses both kernel actions in the original ordered pair coordinates.
+[`L2WholeLineDiagonalGreenFormula.lean`](../NLS/ZakharovShabat/L2WholeLineDiagonalGreenFormula.lean)
+combines the existing scalar inverses into the stable forward integral
+and unstable backward integral.
+
+[`L2WholeLineFloquetGreenFormula.lean`](../NLS/ZakharovShabat/L2WholeLineFloquetGreenFormula.lean)
+recombines these integrals and identifies them with the original physical
+nonreal resolvent. The formula uses the actual kernels F(t)*P*F(s)^(-1),
+the unchanged closure domain, and the original forcing signs (i*g1,-i*g2).
+[`L2WholeLineGreenFormula.lean`](../NLS/ZakharovShabat/L2WholeLineGreenFormula.lean)
+constructs the needed basis and bounds at every nonreal parameter, with
+actual reciprocal stable/unstable roots and their physical trace identity.
+
+[`L2WholeLineGreenKernelEstimate.lean`](../NLS/ZakharovShabat/L2WholeLineGreenKernelEstimate.lean)
+controls matrix action and interval integrals by the original pair norm
+and input L1 mass, retaining the dimension-two factor.
+[`L2WholeLineLocalResolventBound.lean`](../NLS/ZakharovShabat/L2WholeLineLocalResolventBound.lean)
+gives a uniform local pair bound for the actual resolvent on compact forcing.
+[`L2WholeLineResolventExpectationBound.lean`](../NLS/ZakharovShabat/L2WholeLineResolventExpectationBound.lean)
+then bounds the actual Hermitian expectation uniformly near every parameter
+with distinct Floquet roots, independently of the nonzero imaginary part.
+This includes approach to the real line.
+
+Applying the proved local spectral-measure criterion, handling the
+exceptional repeated-root set and extending from compact inputs to all
+vectors remain unfinished. Pure absolute continuity is not yet proved.
+Exact2014 and G2 remain separate source questions.
