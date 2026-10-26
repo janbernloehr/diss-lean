@@ -67510,3 +67510,47 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLineCompactSpectralACExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section WholeLinePureAbsoluteContinuityExamples
+open MeasureTheory NLS.FunctionalAnalysis
+
+example {X E : Type*} [TopologicalSpace X] [T2Space X] [MeasurableSpace X]
+    [BorelSpace X] [CompactSpace X] [NormedAddCommGroup E]
+    [InnerProductSpace ℂ E] [CompleteSpace E]
+    (Φ : C(X, ℂ) →⋆ₐ[ℂ] (E →L[ℂ] E)) (v w : E) :
+    vectorSpectralMeasure Φ (v+w) + vectorSpectralMeasure Φ (v-w) =
+      (vectorSpectralMeasure Φ v+vectorSpectralMeasure Φ v) +
+        (vectorSpectralMeasure Φ w+vectorSpectralMeasure Φ w) :=
+  vectorSpectralMeasure_parallelogram Φ v w
+
+example {X E D : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
+    (μ : E → Measure X) [∀ v, IsFiniteMeasure (μ v)]
+    (hm : ∀ v, (μ v).real Set.univ = ‖v‖^2)
+    (ha : ∀ v w, μ (v+w) ≤ (μ v+μ v)+(μ w+μ w))
+    (f : D → E) (hd : DenseRange f) (ν : Measure X)
+    (hf : ∀ d, μ (f d) ≪ ν) (v : E) : μ v ≪ ν :=
+  absolutelyContinuous_quadraticMeasure_of_denseRange μ hm ha f hd ν hf v
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v w : WholeLineL2) : wholeLineRealSpectralMeasure u hu (v+w) ≤
+      (wholeLineRealSpectralMeasure u hu v+wholeLineRealSpectralMeasure u hu v) +
+        (wholeLineRealSpectralMeasure u hu w+wholeLineRealSpectralMeasure u hu w) :=
+  wholeLineRealSpectralMeasure_add_le u hu v w
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) : wholeLineRealSpectralMeasure u hu v ≪ (volume : Measure ℝ) :=
+  wholeLineRealSpectralMeasure_absolutelyContinuous u hu v
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (s : Set ℝ) (hs : volume s = 0) :
+    wholeLineRealSpectralMeasure u hu v s = 0 :=
+  wholeLineRealSpectralMeasure_null_of_volume_null u hu v s hs
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) (s : Set ℝ) :
+    (wholeLineRealSpectralMeasure u hu v).restrict s ≪ (volume : Measure ℝ).restrict s :=
+  (wholeLineRealSpectralMeasure_absolutelyContinuous u hu v).restrict s
+
+end WholeLinePureAbsoluteContinuityExamples
+end NLS.ZakharovShabat

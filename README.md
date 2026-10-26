@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual physical scalar spectral measures of compact inputs
-are absolutely continuous on the whole real line, including at the
-countable repeated-root exceptional set. Extension from the original
-dense test domain to all Hilbert vectors remains pending.
-Formalization remains in progress.
+Latest step: the original whole-line physical operator has purely
+absolutely continuous scalar spectral measures for every real-type L2
+potential and every Hilbert vector. Its independently defined spectrum
+already equals the full closed Floquet bands.
+The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

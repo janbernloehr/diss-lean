@@ -1098,3 +1098,32 @@ No additional physical resolvent bound is assumed.
 
 Extension from this dense test domain to all Hilbert vectors remains
 unfinished in this milestone. Exact2014 and G2 remain separate source questions.
+
+## Pure absolute continuity of the original physical operator
+
+[`VectorSpectralMeasureParallelogram.lean`](../NLS/FunctionalAnalysis/VectorSpectralMeasureParallelogram.lean)
+proves regularity and the parallelogram identity for the actual CFC/Riesz
+vector measures. Consequently the measure of a vector sum is bounded by
+twice the sum of the two vector measures.
+[`QuadraticMeasureDenseAC.lean`](../NLS/FunctionalAnalysis/QuadraticMeasureDenseAC.lean)
+proves that finite quadratic vector measures with squared-norm total mass
+inherit absolute continuity from a dense range. For a null set, its mass
+is bounded by twice the squared norm of any approximation error.
+
+[`L2WholeLinePureAbsoluteContinuity.lean`](../NLS/ZakharovShabat/L2WholeLinePureAbsoluteContinuity.lean)
+transports the actual quadratic measure bound through the inverse Cayley
+coordinate and applies the original smooth compact test-domain density.
+For every real-type physical L2 potential and every whole-line Hilbert
+vector, the constructed real scalar spectral measure is absolutely
+continuous with respect to real Lebesgue measure. Every Lebesgue-null set
+therefore has zero scalar spectral mass; this excludes both atoms and
+singular continuous mass.
+
+This completes the pure absolute-continuity assertion on printed p.17
+for the original self-adjoint physical closure. The measure is the actual
+CFC/Riesz measure with its proved original resolvent integral, and the
+proof uses the actual Green kernel and the analytic countable exceptional
+set. Together with the separately proved equality of the independently
+defined spectrum and the full closed Floquet bands, this establishes the
+physical spectral overview. It does not assert completion of the entire
+dissertation. Exact2014 and G2 remain separate source questions.

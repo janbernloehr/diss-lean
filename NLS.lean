@@ -4645,3 +4645,6 @@ import NLS.ZakharovShabat.L2WholeLineCompactLocalSpectralAC
 import NLS.ZakharovShabat.L2FloquetRepeatedRoots
 import NLS.FunctionalAnalysis.RealLocalAbsoluteContinuity
 import NLS.ZakharovShabat.L2WholeLineCompactSpectralAC
+import NLS.FunctionalAnalysis.VectorSpectralMeasureParallelogram
+import NLS.FunctionalAnalysis.QuadraticMeasureDenseAC
+import NLS.ZakharovShabat.L2WholeLinePureAbsoluteContinuity

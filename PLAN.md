@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: absolute continuity for compact physical inputs
+## Current milestone: pure absolute continuity of the physical operator
+
+The original whole-line physical operator now has purely absolutely
+continuous scalar spectral measures: for every real-type physical L2
+potential and every Hilbert vector, the actual real measure is absolutely
+continuous with respect to Lebesgue measure.
+
+The proof extends the compact-input result through the original dense
+test domain. A proved parallelogram identity for the actual CFC/Riesz
+measures bounds null-set mass by the squared approximation error.
+No spectral measure, Green bound or absolute-continuity assertion is
+assumed in the final physical theorem.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records this
+completion together with the earlier independently defined spectrum
+identity. Remaining dissertation source comparisons, including exact2014
+and G2, remain separate; no whole-dissertation completeness is claimed.
+
+Validation: `./scripts/check.sh` passes with 8,341 build jobs, 7,293
+public examples, and a transitive axiom audit of 41,746 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,633 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: absolute continuity for compact physical inputs
 
 The actual scalar spectral measure of every compactly supported physical
 input is now absolutely continuous on the entire real line. This includes
