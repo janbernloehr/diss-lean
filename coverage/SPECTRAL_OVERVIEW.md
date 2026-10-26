@@ -335,14 +335,14 @@ The latter still holds at p=2; no replacement height is adopted. This
 audit does not certify the remaining chapters or unnumbered source claims.
 The formalization of the dissertation remains incomplete.
 
-## Whole-line Floquet assertion: band criterion proved, operator theorem pending
+## Initial whole-line band criterion (historical checkpoint)
 
 The unnumbered paragraph on printed p.17 identifies the spectrum of the
 periodically extended real L2 operator on the real line with the complement
 of the open periodic gaps and says that its spectrum is absolutely
-continuous. This assertion requires additional whole-line operator and
-spectral-measure foundations. The existing closed coefficient operator
-and physical periodic realization do not discharge that requirement.
+continuous. At this initial checkpoint the whole-line operator and
+spectral-measure foundations were still outstanding. The later sections
+build them and discharge the full assertion in the original source space.
 
 [`SourceFloquetBandSet.lean`](../NLS/ZakharovShabat/SourceFloquetBandSet.lean)
 defines the real complement of the union of the actual open canonical
@@ -362,11 +362,11 @@ exists exactly on the closed band set. Its propagation by the constructed
 physical fundamental matrix at nonnegative integer times is exactly the
 corresponding power of the multiplier times the same initial vector.
 
-Remaining work is to construct the densely defined operator on
-L2(R;C^2), prove self-adjointness and identify its resolvent and spectrum,
-and prove pure absolute continuity of its spectral measures. No operator
-spectrum is defined by simply declaring it to be the band set. The new
-results establish the monodromy criterion only.
+At this historical stage, construction of the whole-line operator and
+proofs of self-adjointness, the resolvent, spectrum equality and pure
+absolute continuity remained outstanding. All are discharged in the
+later sections below. The operator spectrum throughout is independently
+defined through bounded two-sided inverses.
 
 ## Physical propagation through positive and negative periods
 
@@ -1127,3 +1127,30 @@ set. Together with the separately proved equality of the independently
 defined spectrum and the full closed Floquet bands, this establishes the
 physical spectral overview. It does not assert completion of the entire
 dissertation. Exact2014 and G2 remain separate source questions.
+
+## The complete source whole-line statement and all-index eigenfunction parity
+
+[`SourceWholeLineSpectralOverview.lean`](../NLS/ZakharovShabat/SourceWholeLineSpectralOverview.lean)
+provides a single theorem for the original real Hilbert source: the actual
+physical closure is self-adjoint, its independently defined spectrum is
+exactly the complement of the union of the original canonical open gaps,
+and every actual scalar spectral measure is absolutely continuous with
+respect to real Lebesgue measure. The statement retains all endpoints and
+collapsed gaps and the actual inverse-Cayley measure construction.
+
+The adjacent p.17 assertion about every endpoint eigenfunction is now
+explicit at every canonical index.
+[`DiscriminantRootParity.lean`](../NLS/ZakharovShabat/DiscriminantRootParity.lean)
+uses the actual discriminant level and the parity decomposition to show
+that the entire generalized root space has its signed-index parity.
+This applies at both canonical real endpoints, including central indices.
+[`SourceCanonicalEigenvectorParity.lean`](../NLS/ZakharovShabat/SourceCanonicalEigenvectorParity.lean)
+transports this result to every eigenvector in the original component-sum
+one-derivative source domain. Its actual continuous Fourier components are
+one-periodic at even indices and one-antiperiodic at odd indices, for every
+finite p>1 real source. There is no high-frequency cutoff in these results.
+
+The initial band-criterion section above is a historical checkpoint;
+its operator and spectral-measure obligations have now been discharged.
+Remaining source comparisons, exact2014 and G2 are separate from these
+page17 results. This is not a full-dissertation completeness certificate.

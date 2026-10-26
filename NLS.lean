@@ -4648,3 +4648,6 @@ import NLS.ZakharovShabat.L2WholeLineCompactSpectralAC
 import NLS.FunctionalAnalysis.VectorSpectralMeasureParallelogram
 import NLS.FunctionalAnalysis.QuadraticMeasureDenseAC
 import NLS.ZakharovShabat.L2WholeLinePureAbsoluteContinuity
+import NLS.ZakharovShabat.SourceWholeLineSpectralOverview
+import NLS.ZakharovShabat.DiscriminantRootParity
+import NLS.ZakharovShabat.SourceCanonicalEigenvectorParity

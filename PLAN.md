@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: pure absolute continuity of the physical operator
+## Current milestone: the complete source spectral overview
+
+The page17 whole-line spectral statement now has a single public theorem
+on the original real Hilbert source. It combines self-adjointness of the
+actual closure, the exact complement-of-open-gaps spectral formula, and
+absolute continuity of every actual scalar spectral measure.
+
+Every original-domain eigenfunction at either canonical endpoint now also
+has its exact signed-index parity: one-periodic for even indices and
+one-antiperiodic for odd indices. The proof covers central eigenvalues and
+collapsed gaps, and applies to every finite p>1 real source.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) distinguishes
+these completed source statements from historical intermediate checkpoints.
+Continue the remaining semantic source audit; exact2014 and G2 remain
+separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,344 build jobs, 7,299
+public examples, and a transitive axiom audit of 41,760 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,642 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: pure absolute continuity of the physical operator
 
 The original whole-line physical operator now has purely absolutely
 continuous scalar spectral measures: for every real-type physical L2

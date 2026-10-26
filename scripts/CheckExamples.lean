@@ -67554,3 +67554,60 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end WholeLinePureAbsoluteContinuityExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section WholeLineSourceTheoremExamples
+open MeasureTheory Set
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    IsSelfAdjoint (wholeLineMinimalOperator (sourcePhysicalL2 φ)).closure :=
+  (source_wholeLine_spectral_overview φ hφ).1
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    wholeLineSpectrum (sourcePhysicalL2 φ) = Complex.ofReal ''
+      (⋃ n : ℤ, Ioo
+        (canonicalPeriodicLeft (by simp) (by norm_num)
+          (periodOnePotential φ) (periodOnePotential_mem φ) n).re
+        (canonicalPeriodicRight (by simp) (by norm_num)
+          (periodOnePotential φ) (periodOnePotential_mem φ) n).re)ᶜ :=
+  (source_wholeLine_spectral_overview φ hφ).2.1
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (v : WholeLineL2) :
+    wholeLineRealSpectralMeasure (sourcePhysicalL2 φ)
+      ((sourcePhysicalL2_realType_iff φ).mpr hφ) v ≪ (volume : Measure ℝ) :=
+  (source_wholeLine_spectral_overview φ hφ).2.2 v
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (v : WholeLineL2) (s : Set ℝ) (hs : volume s = 0) :
+    wholeLineRealSpectralMeasure (sourcePhysicalL2 φ)
+      ((sourcePhysicalL2_realType_iff φ).mpr hφ) v s = 0 :=
+  source_wholeLineRealSpectralMeasure_absolutelyContinuous φ hφ v hs
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (n : ℤ) (z : ℂ)
+    (hz : z = canonicalPeriodicLeft (by simp) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) (2*n))
+    (a : WeightedCoeffPair (Weight.sobolev 1) 2)
+    (ha : sourceOperator (by simp) (periodOnePair φ) a = z • sourceDomainInclusion a) :
+    Function.Periodic (fun x : ℝ => Fourier.sobolevSynthesis (by simp) a.fst
+      (x : AddCircle (2 : ℝ))) 1 ∧
+    Function.Periodic (fun x : ℝ => Fourier.sobolevSynthesis (by simp) a.snd
+      (x : AddCircle (2 : ℝ))) 1 :=
+  sourceCanonicalEndpoint_eigenfunction_periodic (by simp) (by norm_num) φ hφ
+    (2*n) (by omega) z (Or.inl hz) a ha
+
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (n : ℤ) (z : ℂ)
+    (hz : z = canonicalPeriodicRight (by simp) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) (2*n+1))
+    (a : WeightedCoeffPair (Weight.sobolev 1) 2)
+    (ha : sourceOperator (by simp) (periodOnePair φ) a = z • sourceDomainInclusion a) :
+    Function.Antiperiodic (fun x : ℝ => Fourier.sobolevSynthesis (by simp) a.fst
+      (x : AddCircle (2 : ℝ))) 1 ∧
+    Function.Antiperiodic (fun x : ℝ => Fourier.sobolevSynthesis (by simp) a.snd
+      (x : AddCircle (2 : ℝ))) 1 :=
+  sourceCanonicalEndpoint_eigenfunction_antiperiodic (by simp) (by norm_num) φ hφ
+    (2*n+1) (by omega) z (Or.inr hz) a ha
+
+end WholeLineSourceTheoremExamples
+end NLS.ZakharovShabat

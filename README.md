@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original whole-line physical operator has purely
-absolutely continuous scalar spectral measures for every real-type L2
-potential and every Hilbert vector. Its independently defined spectrum
-already equals the full closed Floquet bands.
+Latest step: one public theorem assembles the original whole-line
+self-adjoint operator, its exact complement-of-gaps spectrum and pure
+absolute continuity. Canonical endpoint eigenfunctions have their exact
+periodic or antiperiodic sign at every index, including central eigenvalues.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
