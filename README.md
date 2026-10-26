@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original physical resolvent has its matrix Green formula
-and uniform compact-input expectation bounds near every parameter with
-distinct Floquet roots, including approach to the real line. Applying the
-measure criterion and completing pure absolute continuity remain pending.
+Latest step: the actual physical scalar spectral measures of compact inputs
+are absolutely continuous on the whole real line, including at the
+countable repeated-root exceptional set. Extension from the original
+dense test domain to all Hilbert vectors remains pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

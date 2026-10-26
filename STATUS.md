@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: physical Green formulas and uniform local resolvent bounds
+## Current milestone: absolute continuity for compact physical inputs
+
+The actual scalar spectral measure of every compactly supported physical
+input is now absolutely continuous on the entire real line. This includes
+every vector in the original dense smooth compact test domain.
+
+The proof applies the established Green expectation bounds to the local
+Poisson criterion. Analyticity makes the actual repeated-root exceptional
+set countable, and the proved absence of atoms removes that set.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) retains extension
+from compact inputs to all Hilbert vectors as the next step. Exact2014 and
+G2 remain separate source questions.
+
+Validation: `./scripts/check.sh` passes with 8,338 build jobs, 7,287
+public examples, and a transitive axiom audit of 41,737 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,624 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical Green formulas and uniform local resolvent bounds
 
 The original physical nonreal resolvent now has its one-sided matrix
 Green formula for compact forcing, using the actual stable/unstable roots,

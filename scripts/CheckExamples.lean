@@ -67473,3 +67473,40 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end GreenResolventExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section WholeLineCompactSpectralACExamples
+open MeasureTheory
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (z : ℂ) (hz : z.im ≠ 0) : (l2Monodromy u z).trace ^ 2 - 4 ≠ 0 :=
+  l2Monodromy_discriminant_ne_zero_of_nonreal u hu z hz
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) :
+    {z : ℂ | (l2Monodromy u z).trace ^ 2 - 4 = 0}.Countable :=
+  countable_l2Monodromy_repeated_roots u hu
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (v : WholeLineL2) :
+    wholeLineRealSpectralMeasure u hu v {x : ℝ | (l2Monodromy u (x : ℂ)).trace ^ 2 - 4 = 0} = 0 :=
+  wholeLineRealSpectralMeasure_countable_zero u hu v _
+    (countable_l2Monodromy_real_repeated_roots u hu)
+
+example (μ ν : Measure ℝ) (E : Set ℝ) (hE : μ E = 0)
+    (h : ∀ x ∉ E, ∃ δ : ℝ, 0 < δ ∧ μ.restrict (Set.Icc (x-δ) (x+δ)) ≪ ν) : μ ≪ ν :=
+  NLS.FunctionalAnalysis.absolutelyContinuous_of_local_Icc_off_null μ ν E hE h
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (g : WholeLineL2) (a c : ℝ) (hac : a ≤ c)
+    (hl : ∀ᵐ t : ℝ, t ≤ a → wholeLineL2Pair g t = 0)
+    (hr : ∀ᵐ t : ℝ, c ≤ t → wholeLineL2Pair g t = 0) :
+    wholeLineRealSpectralMeasure u hu g ≪ (volume : Measure ℝ) :=
+  wholeLineRealSpectralMeasure_absolutelyContinuous_of_compact_input u hu g a c hac hl hr
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u))
+    (f : WholeLineTestFunction) :
+    wholeLineRealSpectralMeasure u hu (wholeLineTestInclusion f) ≪ (volume : Measure ℝ) :=
+  wholeLineRealSpectralMeasure_test_absolutelyContinuous u hu f
+
+end WholeLineCompactSpectralACExamples
+end NLS.ZakharovShabat

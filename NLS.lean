@@ -4641,3 +4641,7 @@ import NLS.ZakharovShabat.L2WholeLineGreenFormula
 import NLS.ZakharovShabat.L2WholeLineGreenKernelEstimate
 import NLS.ZakharovShabat.L2WholeLineLocalResolventBound
 import NLS.ZakharovShabat.L2WholeLineResolventExpectationBound
+import NLS.ZakharovShabat.L2WholeLineCompactLocalSpectralAC
+import NLS.ZakharovShabat.L2FloquetRepeatedRoots
+import NLS.FunctionalAnalysis.RealLocalAbsoluteContinuity
+import NLS.ZakharovShabat.L2WholeLineCompactSpectralAC

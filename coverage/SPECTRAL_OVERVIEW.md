@@ -1075,3 +1075,26 @@ Applying the proved local spectral-measure criterion, handling the
 exceptional repeated-root set and extending from compact inputs to all
 vectors remain unfinished. Pure absolute continuity is not yet proved.
 Exact2014 and G2 remain separate source questions.
+
+## Absolute continuity for compact physical inputs
+
+[`L2WholeLineCompactLocalSpectralAC.lean`](../NLS/ZakharovShabat/L2WholeLineCompactLocalSpectralAC.lean)
+applies the actual uniform Green expectation bound to the local Poisson
+criterion. Every compact-input physical scalar measure is absolutely
+continuous near each real parameter with distinct Floquet roots.
+[`L2FloquetRepeatedRoots.lean`](../NLS/ZakharovShabat/L2FloquetRepeatedRoots.lean)
+proves that the physical monodromy has distinct roots at all nonreal
+parameters. Analyticity of its discriminant squared minus four, with a
+nonzero value at i, makes the complex and real repeated-root sets countable.
+
+[`RealLocalAbsoluteContinuity.lean`](../NLS/FunctionalAnalysis/RealLocalAbsoluteContinuity.lean)
+combines local interval absolute continuity off a measure-null exceptional
+set into absolute continuity on the whole real line.
+[`L2WholeLineCompactSpectralAC.lean`](../NLS/ZakharovShabat/L2WholeLineCompactSpectralAC.lean)
+uses actual atomlessness to remove the countable exceptional set. The
+constructed physical spectral measure of every compactly supported input,
+including every original smooth compact test vector, is absolutely continuous.
+No additional physical resolvent bound is assumed.
+
+Extension from this dense test domain to all Hilbert vectors remains
+unfinished in this milestone. Exact2014 and G2 remain separate source questions.
