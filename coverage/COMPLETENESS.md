@@ -88,7 +88,12 @@ functions with exact physical H1 norms and closed-interval values. Their
 product realizes the entire original Dirichlet domain. This resolves the
 earlier missing separate scalar-map scope without claiming an independent
 audit of textbook reference [54].
-Continue through Section 4, then later sections in source order.
+The complete Section 4 passage now has a 38-group ordered assertion
+inventory covering its six printed pages, with 60 reviewed proof modules
+and 236 resolved declaration references. It preserves three local formula
+refutations, the original infinity norm, separate p=1 classical realization,
+and the inherited height and product-constant qualifications.
+Continue through Section 5, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: Lemma 4.3 on original periodic distributions
+## Current milestone: Section 4 ordered assertion inventory
+
+The complete Section 4 passage now has a 38-group ordered comparison
+covering the original physical domains, Fourier series, scalar restriction
+maps, native distribution extensions, actual spectra, Jordan multiplicities
+and intrinsic trace formulas. Three local printed formula refutations and
+all endpoint, norm and height qualifications remain explicit.
+See the [Section 4 inventory](coverage/SECTION_4.md).
+
+Validation: source-review integrity, 236 declaration references and
+documentation links pass. All Lean sources and dependency locks match
+the full check at `1e93351`: 8,446 build jobs, 7,510 examples and the
+43,246-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Continue with Section 5 in source order, comparing its auxiliary spectra
+with the original domains, reflections, norms and multiplicities.
+All [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Lemma 4.3 on original periodic distributions
 
 The signed Fourier series now converges for every original period-one
 distribution pair in its exact finite-p norm. Its signed modes have the

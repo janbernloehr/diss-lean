@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T19:38:18.957088+00:00",
-  "base_commit": "3e0458c1aeb1ff26e341ed3d9facbbd3d2ac9624",
+  "published_utc": "2026-10-27T19:41:00.662734+00:00",
+  "base_commit": "1e93351eac808c21dde3c824448111ac1cc30cd7",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 86,
-    "module_hash_checks": 1287,
-    "distinct_modules": 885
+    "review_records": 87,
+    "module_hash_checks": 1347,
+    "distinct_modules": 894
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -20565,6 +20565,1102 @@
       ],
       "declaration_inventory_count": 43246,
       "source_record_sha256": "1fd8cccc04768f7df018ba5f35c5526fd4af7227028c3a28dde1e698d341b99d"
+    },
+    "Section4AssertionInventorySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1e93351eac808c21dde3c824448111ac1cc30cd7",
+      "updated_utc": "2026-10-27T19:41:00.662734+00:00",
+      "prepared_from_sha256": "297add10ee673c298c2f3b47f32460def4aabdff24ab8a7e78eedae11f0fabb8",
+      "source_lines": [
+        [
+          1633,
+          2108
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1633,
+            1647
+          ],
+          "requirement": "The actual L2 operator and both full classical endpoint domains.",
+          "finding": "The carrier consists of actual functions on the closed interval, characterized by original H1 regularity and the two endpoint conditions. Every original domain function is represented, and every carrier element has an original representative. The inclusion into physical L2 is injective and dense. The operator on that full carrier agrees almost everywhere with the actual differential expression for every original L2 potential. Its independent resolvent definition is equivalent to a bounded two-sided inverse, and the resulting spectrum is identified with original classical eigenvalues.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.mem_classicalIntervalSubmodule_iff",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalDomainOfFunction_surjective",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalInclusion_injective",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalInclusion_denseRange",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalOperator_ofFunction",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalOperator_realization_ofFunction",
+            "NLS.ZakharovShabat.BoundaryCondition.mem_classicalResolventSet_iff",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_eq_classicalEigenvalues",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_ofFunction"
+          ],
+          "inventory_order": 1,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1649,
+            1667
+          ],
+          "requirement": "The two signed endpoint realizations and the period-two spectrum.",
+          "finding": "The plus/minus notation is compared as two separate signed endpoint problems. Each has its own actual classical domain and bounded-inverse spectrum. Their union equals the spectrum of the full physical period-two operator for the period-one potential extension. The native periodic Hilbert realization identifies the full operator graph and physical spectrum. No single linear domain formed by the union of the two signed domains is asserted. The free zero spectral parameter distinguishes the signed problems. The informal motivation about local regularity is explanatory, rather than a separately quantified theorem in this comparison.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalSignedSpectrum_union_eq_periodic",
+            "NLS.ZakharovShabat.physicalPeriodicSpectrum_eq_classicalSigned_union",
+            "NLS.ZakharovShabat.NativePeriodic.graph_hilbert_iff",
+            "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_physical",
+            "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_classicalSigned_union",
+            "NLS.ZakharovShabat.zero_mem_classicalOddResolvent_and_evenSpectrum"
+          ],
+          "inventory_order": 2,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1668,
+            1680
+          ],
+          "requirement": "The actual AKNS expression and dense full endpoint domains.",
+          "finding": "The AKNS carrier is characterized by both original interval H1 components and the selected zero component at both endpoints. The normalized coordinate map is an isometry for the physical H1 domain norms. The AKNS inclusion is injective and dense in physical L2, and its operator realizes the printed differential expression for arbitrary original square-integrable q and p. The full operator intertwining uses the corrected potential coordinates.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+            "NLS.ZakharovShabat.aknsDomainEquiv",
+            "NLS.ZakharovShabat.norm_aknsDomainOfFunction",
+            "NLS.ZakharovShabat.aknsInclusion_injective",
+            "NLS.ZakharovShabat.aknsInclusion_denseRange",
+            "NLS.ZakharovShabat.aknsL2Equiv_operator",
+            "NLS.ZakharovShabat.aknsIntervalOperator_realization"
+          ],
+          "inventory_order": 3,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1682,
+            1687
+          ],
+          "requirement": "The exact component system (1.7).",
+          "finding": "The finite-dimensional algebraic equivalence gives the two printed derivative-component equations with the signs and potential terms intact. The original-domain eigen-equation theorem transports this calculation almost everywhere for arbitrary interval H1 functions. No extra smoothness or prescribed eigenfunction is assumed.",
+          "declarations": [
+            "NLS.ZakharovShabat.aknsAction_eigen_iff",
+            "NLS.ZakharovShabat.akns_eigenEquation_iff"
+          ],
+          "inventory_order": 4,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1689,
+            1707
+          ],
+          "requirement": "Odd and even extension and the required endpoint conditions.",
+          "finding": "The actual piecewise folded functions use g(x) on the first half and the signed g(2-x) on the second. The full original AKNS domain supplies exactly the endpoint compatibility needed for the odd component. The resulting circle representatives have actual periodic H1 regularity and agree with the printed folded functions at every point of [0,2]. Dirichlet uses even/odd and Neumann odd/even. No claim that an arbitrary nonzero-trace odd extension is H1 is made.",
+          "declarations": [
+            "NLS.ZakharovShabat.aknsIntervalExtension",
+            "NLS.ZakharovShabat.aknsCircleExtension_regular",
+            "NLS.ZakharovShabat.aknsCircleExtension_reconstruct"
+          ],
+          "inventory_order": 5,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1720,
+            1736
+          ],
+          "requirement": "Both extended AKNS equations use q even and p odd.",
+          "finding": "For each endpoint condition the original almost-everywhere equation transfers to the actual folded function on [0,2]. The potential extension has the same even q and odd p in both cases, and is square integrable for all original L2 potential components. The periodic representatives and their full-interval reconstruction are supplied separately, so the equation is attached to actual physical functions.",
+          "declarations": [
+            "NLS.ZakharovShabat.akns_interval_equation_transfer",
+            "NLS.ZakharovShabat.aknsPotential_intervalExtension",
+            "NLS.ZakharovShabat.memLp_aknsPotentialExtension",
+            "NLS.ZakharovShabat.aknsCircleExtension_reconstruct"
+          ],
+          "inventory_order": 6,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1738,
+            1742
+          ],
+          "requirement": "The unitary vector map and the printed potential normalization.",
+          "finding": "The normalized vector map T and its inverse preserve the sum of component norm squares and intertwine the differential expressions. The potential must be (q+ip,q-ip), which is sqrt(2) times T(q,p). The printed equation phi=T(q,p) is formally refuted by both algebraic and physical-operator counterexamples. The comparison retains this correction; it does not certify the false normalization as a theorem.",
+          "declarations": [
+            "NLS.ZakharovShabat.aknsToZS_norm_sq",
+            "NLS.ZakharovShabat.aknsAction_intertwining",
+            "NLS.ZakharovShabat.aknsPotential_eq_sqrt_two_smul",
+            "NLS.ZakharovShabat.aknsPotential_ne_vectorMap",
+            "NLS.ZakharovShabat.aknsAction_printed_normalization_false",
+            "NLS.ZakharovShabat.physicalOperator_printed_akns_normalization_false",
+            "NLS.ZakharovShabat.aknsL2Equiv_operator"
+          ],
+          "inventory_order": 7,
+          "classification": "formally_refuted_with_proved_correction"
+        },
+        {
+          "source_lines": [
+            1744,
+            1760
+          ],
+          "requirement": "The Dirichlet signed-swap reflection formula.",
+          "finding": "The exact normalized inverse coordinate map followed by the even/odd extension and T equals the positive component-swap reflection for every original pair and every real point. The full domain additionally supplies the matching endpoint traces needed for its periodic H1 realization.",
+          "declarations": [
+            "NLS.ZakharovShabat.akns_intervalExtension_zsToAKNS",
+            "NLS.ZakharovShabat.aknsToZS_intervalExtension",
+            "NLS.ZakharovShabat.sourceClassicalCircleExtension_reconstruct"
+          ],
+          "inventory_order": 8,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1762,
+            1781
+          ],
+          "requirement": "The Neumann negative signed-swap reflection formula.",
+          "finding": "Specializing the same exact coordinate theorem to Neumann gives the negative component-swap reflection, including the correct odd/even component order. The periodic H1 representative requires precisely the original Neumann endpoint traces.",
+          "declarations": [
+            "NLS.ZakharovShabat.akns_intervalExtension_zsToAKNS",
+            "NLS.ZakharovShabat.aknsToZS_intervalExtension",
+            "NLS.ZakharovShabat.sourceClassicalCircleExtension_reconstruct"
+          ],
+          "inventory_order": 9,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1786,
+            1790
+          ],
+          "requirement": "Both parts of Lemma 4.1 on actual periodic H1 functions.",
+          "finding": "For either full original endpoint domain, an original eigen-equation produces actual continuous period-two functions with periodic H1 regularity. They agree with the signed folded function everywhere on [0,2] and solve the actual reflected physical equation almost everywhere. Both use the Dirichlet-reflected potential. For L2 potentials the coefficient theorem also identifies exactly the physical Fourier integrals, reconstruction and original-norm source equation.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma4_1",
+            "NLS.ZakharovShabat.sourceClassicalCircleExtension_regular",
+            "NLS.ZakharovShabat.sourceClassicalCircleExtension_reconstruct",
+            "NLS.ZakharovShabat.source_classical_interval_equation_transfer",
+            "NLS.ZakharovShabat.sourceDirichletPotentialCoefficients_coefficients",
+            "NLS.ZakharovShabat.sourceDirichletPotentialCoefficients_reconstruct",
+            "NLS.ZakharovShabat.sourceClassicalIntervalExtension_coefficients"
+          ],
+          "inventory_order": 10,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1793,
+            1799
+          ],
+          "requirement": "Spectral inclusion and exhaustion by the two boundary spectra.",
+          "finding": "A nonzero original eigenfunction stays nonzero under reflection and gives a genuine source eigenvector. Every original boundary eigenvalue belongs to the actual reflected source spectrum. Equality with the union of the two full original eigenvalue sets proves exhaustion, with the independent classical and periodic resolvent comparisons supplying physical spectrum identification. This group records a set equality; it does not silently promote it to an algebraic multiplicity formula. The later counting paragraphs require their own comparison.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceClassicalIntervalExtension_ne_zero",
+            "NLS.ZakharovShabat.source_classical_interval_eigenvector_transfer",
+            "NLS.ZakharovShabat.source_classical_interval_eigenvalue_mem_spectrum",
+            "NLS.ZakharovShabat.source_periodicSpectrum_eq_classicalEigenvalues_union",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_eq_classicalEigenvalues",
+            "NLS.ZakharovShabat.physicalPeriodicSpectrum_eq"
+          ],
+          "inventory_order": 11,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1809,
+            1832
+          ],
+          "requirement": "The normalized physical half-interval Fourier integrals.",
+          "finding": "Both components of the actual reflected L2 function have the printed normalized Fourier integrals. The factor one-half, reflected index and Neumann sign are explicit. The boundary amplitude is half the actual integral pairing with the physical boundary mode; the source mode is identified with its physical exponential components. All original H1 inputs are included through the more general L2 statement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIntervalExtensionCoefficients_fst",
+            "NLS.ZakharovShabat.sourceIntervalExtensionCoefficients_snd",
+            "NLS.ZakharovShabat.intervalAmplitude_eq_half_pairing",
+            "NLS.ZakharovShabat.intervalBoundaryPairing_eq_integral",
+            "NLS.ZakharovShabat.sourceBoundaryMode_physical"
+          ],
+          "inventory_order": 12,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1834,
+            1856
+          ],
+          "requirement": "The full series (1.8) and (1.9) for reflected functions.",
+          "finding": "The full integer-indexed series converges in the actual physical pair L2 space and reconstructs the reflected input almost everywhere. Both boundary signs and the normalized one-half pairing appear in the theorem. For arbitrary interval H1 input without matching endpoint conditions, the comparison uses L2 convergence; it does not assert periodic H1 or uniform convergence for a possibly discontinuous reflected function.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceEquation1_8_1_9",
+            "NLS.ZakharovShabat.sourceEquation1_8_1_9_L2",
+            "NLS.ZakharovShabat.hasSum_intervalExtension_L2",
+            "NLS.ZakharovShabat.sourceCircleSynthesis_intervalExtension"
+          ],
+          "inventory_order": 13,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1858,
+            1878
+          ],
+          "requirement": "Closed boundary spaces and their full topological direct sum.",
+          "finding": "For every real Sobolev weight and each finite exponent in the defined normed range, the original-norm boundary spaces are closed topological complements, with amplitude equivalences and the exact factor 2^(1/p). The infinity realization uses the original coupled frequencywise-sum supremum norm, with factor 2, and also has closed complementary boundary spaces. Full modal sums converge in the weighted norm for finite p and in distributions for all p, including infinity; distribution modes are the actual printed exponential waves. No infinity-norm convergence of arbitrary truncated Fourier series or product-maximum norm is substituted.",
+          "declarations": [
+            "NLS.ZakharovShabat.isClosed_sourceWeightedBoundarySubspace",
+            "NLS.ZakharovShabat.isTopCompl_sourceWeightedBoundarySubspaces",
+            "NLS.ZakharovShabat.isClosed_sourceWeightedBoundarySubspaceInfty",
+            "NLS.ZakharovShabat.isTopCompl_sourceWeightedBoundarySubspacesInfty",
+            "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv",
+            "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquivInfty",
+            "NLS.ZakharovShabat.norm_sourceWeightedBoundaryAmplitudeEquiv",
+            "NLS.ZakharovShabat.norm_sourceWeightedBoundaryAmplitudeEquivInfty",
+            "NLS.ZakharovShabat.hasSum_sourceWeightedBoundaryModes",
+            "NLS.ZakharovShabat.hasSum_sourceBoundaryDistribution",
+            "NLS.ZakharovShabat.sourceBoundaryDistributionMode_physical",
+            "NLS.ZakharovShabat.sourceBoundaryDistribution_eq_sourcePair",
+            "NLS.ZakharovShabat.sourceBoundaryDistribution_eq_sourcePairInfty"
+          ],
+          "inventory_order": 14,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1882,
+            1887
+          ],
+          "requirement": "Lemma 4.2 as an equivalence on the entire original domains.",
+          "finding": "For both endpoint conditions the extension is a continuous linear equivalence from the complete original physical interval H1 domain to the original-norm one-derivative weighted boundary space. Its application to every original function is the actual reflected Fourier coefficient sequence; its inverse acts by physical restriction on the entire closed interval. The separate focused Fourier and scalar-restriction milestones supply the subsequent proof details. Those later milestones do not replace the full-domain and original-norm comparison here.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv",
+            "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_ofFunction",
+            "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_symm_apply",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv"
+          ],
+          "inventory_order": 15,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1889,
+            1897
+          ],
+          "requirement": "Literal Hsin/Hcos series and amplitude symmetries",
+          "finding": "The modes are proved equal to the actual cos(n*pi*x) and sin(n*pi*x), with their exact exponential normalizations and all signed indices. Reflection reindexing and the existing uniformly convergent Sobolev Fourier series give unconditional uniform-norm HasSum for both full trigonometric series at every finite Banach exponent with one Fourier derivative. At p=2 their representatives have actual periodic H1 regularity. The amplitude subspaces are the kernels of reflection minus or plus identity; odd sine amplitudes have both zero endpoint traces. These are infinite series with no finite-support restriction. The new scalar carrier consists of actual functions on the closed interval. Its membership theorem is equivalent to original interval absolute continuity and square integrability of the actual derivative, with both zero endpoint traces precisely in the sine case. Every original function defines an element; its norm is exactly the square root of its ordinary Lebesgue H1 energy on [0,1]. The construction uses the established physical AKNS domain and does not impose periodicity on interval functions. Public examples represent a ramp with unequal endpoint values, reject it from the sine target, and compute its norm as sqrt(4/3). The domain carriers are actual continuous functions on the period-two circle. Membership is equivalent to a full uniformly convergent sine or cosine series with an odd or even one-derivative square-summable amplitude. Every element has actual periodic H1 regularity. The norm, constructed using the physical function/derivative Hilbert embedding, is exactly the square root of Lebesgue H1 energy on [0,2]. Unique amplitude realization is a continuous linear equivalence; explicit bounds compare the weighted amplitude norm with the physical norm. Thus the final restriction maps have physical function spaces on both sides, rather than leaving their domains as coefficient parameters. The amplitude and physical norms are equivalent, not asserted identical.",
+          "declarations": [
+            "NLS.Fourier.hasPeriodicH1Regularity_sobolevSynthesis",
+            "NLS.Fourier.hasSum_sobolevSynthesis",
+            "NLS.Fourier.intervalH1Energy_sobolevSynthesis_bounds",
+            "NLS.Fourier.norm_sobolevEnergyEmbedding",
+            "NLS.ZakharovShabat.SourceScalarIntervalH1",
+            "NLS.ZakharovShabat.SourceTrigPeriodicH1",
+            "NLS.ZakharovShabat.hasSum_sourceCosineSynthesis",
+            "NLS.ZakharovShabat.hasSum_sourceSineSynthesis",
+            "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+            "NLS.ZakharovShabat.mem_sourceCosineAmplitudeSpace",
+            "NLS.ZakharovShabat.mem_sourceCosinePeriodic_iff",
+            "NLS.ZakharovShabat.mem_sourceScalarIntervalSubmodule",
+            "NLS.ZakharovShabat.mem_sourceSineAmplitudeSpace",
+            "NLS.ZakharovShabat.mem_sourceSinePeriodic_iff",
+            "NLS.ZakharovShabat.norm_aknsDomainOfFunction",
+            "NLS.ZakharovShabat.norm_sourceScalarH1OfFunction",
+            "NLS.ZakharovShabat.norm_sourceTrigPeriodicH1",
+            "NLS.ZakharovShabat.sourceCosineMode_apply",
+            "NLS.ZakharovShabat.sourceCosineSynthesis_energy_bounds",
+            "NLS.ZakharovShabat.sourceCosineSynthesis_of_even",
+            "NLS.ZakharovShabat.sourceScalarH1OfFunction",
+            "NLS.ZakharovShabat.sourceSineMode_apply",
+            "NLS.ZakharovShabat.sourceSineSynthesis_endpoints",
+            "NLS.ZakharovShabat.sourceSineSynthesis_energy_bounds",
+            "NLS.ZakharovShabat.sourceSineSynthesis_of_odd",
+            "NLS.ZakharovShabat.sourceTrigPeriodicEquiv",
+            "NLS.ZakharovShabat.sourceTrigPeriodic_norm_bounds",
+            "NLS.ZakharovShabat.sourceTrigPeriodic_regular",
+            "NLS.ZakharovShabat.sourceTrigSynthesis_periodicH1"
+          ],
+          "inventory_order": 16,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1899,
+            1918
+          ],
+          "requirement": "Scalar restriction isomorphisms and product-domain identification",
+          "finding": "The cosine restriction maps the entire actual periodic cosine space onto all original interval H1 functions; sine restriction maps its entire periodic sine space onto all original zero-trace interval H1 functions. Both are continuous linear equivalences with continuous inverses for the exact physical H1 norms. Their apply theorems identify the action with f restricted to [0,1] at every point, including both endpoints. The proof passes through explicit amplitude restriction equivalences and the previously established physical boundary-domain correspondence. A public example extends every original zero-trace H1 function, with no periodic-derivative or additional smoothness assumption. This directly proves the assertion cited to [54], without claiming an independent audit of that textbook. The scalar product is continuously equivalent to the entire original Dirichlet AKNS domain and then to the entire original classical Dirichlet domain. Composing the actual periodic restrictions supplies the printed product-domain identity on physical functions. The apply theorem gives exactly T(f(x),g(x)) for every point of the closed interval. Surjectivity and both inverses are part of the continuous equivalence, rather than assumptions on selected inputs. No isometry of the product maximum norm with the component-sum H1 norm is claimed. The Neumann coefficient and full-domain construction from the preceding Fourier milestone remains in force.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv_apply",
+            "NLS.ZakharovShabat.sourceCosineRestrictionEquiv",
+            "NLS.ZakharovShabat.sourcePhysicalCosineRestriction",
+            "NLS.ZakharovShabat.sourcePhysicalCosineRestriction_apply",
+            "NLS.ZakharovShabat.sourcePhysicalSineRestriction",
+            "NLS.ZakharovShabat.sourcePhysicalSineRestriction_apply",
+            "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv",
+            "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv_apply",
+            "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv",
+            "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv_apply",
+            "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv",
+            "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv_apply",
+            "NLS.ZakharovShabat.sourceSineRestrictionEquiv"
+          ],
+          "inventory_order": 17,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1920,
+            1932
+          ],
+          "requirement": "The normalized forward T calculation and entire boundary-space isomorphism.",
+          "finding": "For an even cosine amplitude b and odd sine amplitude a, the actual normalized vector transform of their continuous sums equals the original boundary representative with amplitude (b-a)/sqrt(2). The coefficient equivalence is continuous, explicitly invertible and onto the entire original weighted Dirichlet boundary space. Its forward map retains raw first-frequency reflection. No isometry between the product amplitude norm and the original pair norm is claimed.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryTrigEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_forward",
+            "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv_apply"
+          ],
+          "inventory_order": 18,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1935,
+            1942
+          ],
+          "requirement": "The inverse T calculation and analogous Neumann construction.",
+          "finding": "The inverse cosine amplitude is (f_n+f_-n)/sqrt(2), and the inverse sine amplitude is (-f_n+f_-n)/sqrt(2). Both are equalities of actual coefficients, and the inverse formula holds pointwise for the full continuous representatives. The Neumann version maps onto the entire original Neumann boundary space and uses AKNS components -i times the sine representative and i times the cosine representative; these phases supply the analogous swapped parity construction. The public negative complex single-mode example tests both signs and both reflected frequencies, and an arbitrary p=3 example tests uniform convergence of the literal inverse series.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryCosineAmplitude_apply",
+            "NLS.ZakharovShabat.sourceBoundarySineAmplitude_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_inverse",
+            "NLS.ZakharovShabat.sourceBoundaryTrigNeumannSourceEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_neumann_forward"
+          ],
+          "inventory_order": 19,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1944,
+            1951
+          ],
+          "finding": "The actual smooth period-one constant (0,1) loses one derivative under both reflections for every finite Banach exponent. The normalized physical coefficients, completed extension, and original smooth-test distribution have the same obstruction. Weighted scalar order-one membership holds exactly at infinity; no bounded endpoint reflection map is asserted.",
+          "requirement": "Smooth input can lose one derivative under reflection",
+          "declarations": [
+            "NLS.ZakharovShabat.reflection_oneSided_source_regular",
+            "NLS.ZakharovShabat.sourceReflectionConstantInput_has_all_orders",
+            "NLS.ZakharovShabat.intervalExtension_oneSided_no_oneDerivative_pair",
+            "NLS.ZakharovShabat.sourceIntervalExtension_oneSided_not_oneDerivative",
+            "NLS.ZakharovShabat.sourceReflectionConstantDistribution_sobolev_one_iff"
+          ],
+          "inventory_order": 20,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1953,
+            1957
+          ],
+          "finding": "The source and target are pairs of actual smooth-test distributions on the period-one and period-two circles, with the exact finite-p component-sum norms. The target is the actual closed boundary subspace, identified by the literal signed reflection relation on normalized Fourier coefficients. The completed maps are bounded and complex analytic at every input. At p=2 they preserve the original norm exactly. Their tempered realizations coincide with the previously constructed physical extensions. No bounded p=1 or p=infinity reflection is asserted, and the auxiliary WithLp infinity product is explicitly not identified with the printed coupled infinity norm.",
+          "requirement": "Lemma 4.3 bounded analytic extension",
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePeriodicPair",
+            "NLS.ZakharovShabat.sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.mem_sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.isClosed_sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le",
+            "NLS.ZakharovShabat.analyticAt_sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_tempered",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_two"
+          ],
+          "inventory_order": 21,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1959,
+            1966
+          ],
+          "finding": "The signed coefficient map is a linear isometry equivalence on the entire native pair space. Its first component evaluates the original distribution on mode n and its second on mode -n, preserving the opposite physical directions. The norm is exactly the p-th root of the sum of both coefficient p-powers. The complete integer-indexed series converges in the original finite-p norm for every input. Each summand is identified with the actual continuous pair (a*exp(-2*pi*i*n*x), b*exp(2*pi*i*n*x)), and unit-period modes equal the even-index period-two waves pointwise. The series statement holds also at p=1, independently of the reflection restriction 1<p<infinity.",
+          "requirement": "Period-one signed Fourier representation and exact original norm",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_fst",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_snd",
+            "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical",
+            "NLS.ZakharovShabat.hasSum_sourceUnitPeriodSignedModes",
+            "NLS.ZakharovShabat.sourceUnitPeriodMode_eq_evenWave"
+          ],
+          "inventory_order": 22,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1968,
+            1975
+          ],
+          "finding": "For every physical signed mode the native output coefficients equal the actual normalized period-two integrals of its signed interval reflection. The full reflected signed series converges in the actual target norm. Agreement on these physical modes uniquely determines any continuous linear extension on the full native source space. The proved bound uses the same input exponent p. The printed FL^1 wording in the proof remains a recorded qualification; it is not used to substitute an FL^1 domain for arbitrary FL^p inputs.",
+          "requirement": "Half-pairing amplitudes and the FL1 versus FLp proof wording",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_raw",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_mode_integrals",
+            "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_unique",
+            "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le"
+          ],
+          "inventory_order": 23,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1975,
+            1976
+          ],
+          "finding": "For every original rough input the actual output coefficient at 2n is (a_plus(n)+epsilon*a_minus(n))/2, with epsilon=1 for Dirichlet and -1 for Neumann. This preserves the earlier correction of the omitted factor one half. The unit two-sided constant gives Dirichlet amplitude one and Neumann amplitude zero in the public checks. The literal printed formula without one half remains refuted, not proved.",
+          "requirement": "Printed even coefficient missing its half factor",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_even",
+            "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_even"
+          ],
+          "inventory_order": 24,
+          "classification": "formally_refuted_with_proved_correction"
+        },
+        {
+          "source_lines": [
+            1977,
+            1986
+          ],
+          "finding": "For every original rough input the full scalar series with summand (a_plus(k)-epsilon*a_minus(k))*i/(pi*(2*k-2*n-1)) has sum equal to the native output coefficient at 2n+1. The proof uses the conjugate exponent to justify the absolutely summable Hilbert kernel, then reindexes the first signed component and retains the exact normalization. This extends the corrected coefficient formula beyond finite support. The one-sided constant has coefficient -i/pi at frequency one. The printed 2i normalization remains refuted.",
+          "requirement": "Printed odd coefficient kernel and its normalization correction",
+          "declarations": [
+            "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension_odd",
+            "NLS.Fourier.summable_norm_shiftedHilbertSeries",
+            "NLS.Fourier.shiftedHilbertTransform_apply"
+          ],
+          "inventory_order": 25,
+          "classification": "formally_refuted_with_proved_correction"
+        },
+        {
+          "source_lines": [
+            1987,
+            1989
+          ],
+          "finding": "The native map is the transported established bounded interval extension, through isometries of the actual normalized distribution coefficients. Its even and odd formulas agree with the projection and shifted Hilbert transform on every input. Closed target membership, norm control, analytic dependence, convergent reconstruction and uniqueness are proved on the original spaces. This comparison reads the local Hilbert-series and bounded-extension proof bodies but does not claim a fresh independent review of every transitive proof of Appendix C.1.",
+          "requirement": "Projection plus shifted Hilbert transform and all finite strict exponent boundedness",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodicPairCoefficients",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_coefficients",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_snd",
+            "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_odd",
+            "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary",
+            "NLS.ZakharovShabat.norm_sourceIntervalExtensionToBoundary_le"
+          ],
+          "inventory_order": 26,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            1991,
+            1997
+          ],
+          "finding": "The common completed Dirichlet potential acts on the full original weighted domain. Actual restricted spectra are defined using the pencils, and their union is the full periodic spectrum. SourceBoundaryCounting supplies a common open convex connected original-input neighborhood containing the input and zero, both signs, all larger cutoffs and exhaustive localization. Central boxes have height N; the refuted printed all-exponent norm-dependent height is not reinstated. Classical p=2 reflection/eigenvalue identification is supplied by the earlier original-domain theorems.",
+          "requirement": "Actual reflected full domain, discreteness and local uniformity",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReflectedPotential",
+            "NLS.ZakharovShabat.sourceReflectedPotential_mem",
+            "NLS.ZakharovShabat.sourceLemma4_4",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_reflected",
+            "NLS.ZakharovShabat.discreteTopology_sourceBoundarySpectrum",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union",
+            "NLS.ZakharovShabat.exists_uniform_sourceBoundaryCountingData",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.spectrum_subset"
+          ],
+          "inventory_order": 27,
+          "classification": "proved_with_height_qualification"
+        },
+        {
+          "source_lines": [
+            2008,
+            2013
+          ],
+          "requirement": "Lemma 4.4 full-domain restrictions and boundedness",
+          "finding": "The full original one-derivative boundary domain maps into the same boundary base space for every Dirichlet-reflected potential, for both signs. The restricted map is continuous linear and its original-norm bound retains the finite Sobolev embedding constant and the component norm conversion. For an arbitrary original period-one potential the completed reflection requires 1<p<infinity. An already-reflected potential also admits the restriction at p=1; these are distinct hypotheses.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma4_4",
+            "NLS.ZakharovShabat.sourceOperator_mem_sourceBoundaryBaseSubspace",
+            "NLS.ZakharovShabat.sourceBoundaryOperator",
+            "NLS.ZakharovShabat.norm_sourceBoundaryOperator_le"
+          ],
+          "inventory_order": 28,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2015,
+            2017
+          ],
+          "requirement": "Free boundary-mode eigenvalue formula",
+          "finding": "Both printed unnormalized signed boundary modes belong to the full weighted domain and have free eigenvalue pi*n, including negative n. Their inclusion agrees with the actual physical wave realization at p=2. The coefficient mode identities retain the same raw coefficients for every finite exponent.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryDomainMode_mem",
+            "NLS.ZakharovShabat.sourceBoundaryDomainMode_free",
+            "NLS.ZakharovShabat.sourceBoundaryDomainMode_inclusion_two",
+            "NLS.ZakharovShabat.sourceBoundaryBaseMode_two"
+          ],
+          "inventory_order": 29,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2019,
+            2031
+          ],
+          "requirement": "Potential mode formulas, both signs and reflected index",
+          "finding": "The full potential-action series converges unconditionally in the original finite-p norm, with summand epsilon*phi_plus(k) times the mode at k-n. Dirichlet has sign plus and Neumann minus. The proof first computes the shifted reflected amplitude on each actual domain mode and then reindexes the complete amplitude expansion. No finite-support hypothesis on the potential is imposed.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryDomainMode_potential",
+            "NLS.ZakharovShabat.hasSum_sourceBoundaryBaseModes",
+            "NLS.ZakharovShabat.sourceBoundaryDomainMode_potential_series"
+          ],
+          "inventory_order": 30,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2033,
+            2033
+          ],
+          "requirement": "Young convolution inference and cited Appendix A label",
+          "finding": "The operator bound composes convolution with the continuous one-derivative embedding into l1. In Appendix A, A.7 is the named Young inequality; A.8 is the embedding plus its product consequence, so the citation can support boundedness and is not itself recorded as a mathematical refutation. The already-recorded false constant-one product estimate (A.4) is not imported: the actual bound retains the Sobolev embedding constant. The extracted Appendix passage at lines 10106-10128 was checked to resolve this distinction.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_potentialOperator_le",
+            "NLS.ZakharovShabat.norm_operator_apply_le",
+            "NLS.ZakharovShabat.norm_sourceBoundaryOperator_le"
+          ],
+          "inventory_order": 31,
+          "classification": "proved_with_cited_estimate_qualification"
+        },
+        {
+          "source_lines": [
+            2035,
+            2039
+          ],
+          "requirement": "Actual spectra of the two restricted unbounded operators",
+          "finding": "Each spectrum is the complement of bijectivity of z times the actual original domain inclusion minus the actual restricted operator. Continuous equivalences on the entire base and weighted domain identify this resolvent with the established restriction theory. The spectra are closed and discrete, finite on bounded sets, and their union equals the reflected periodic spectrum. Both restrictions use the common Dirichlet-reflected potential.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryPencil_eq",
+            "NLS.ZakharovShabat.sourceBoundaryResolventSet",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_eq",
+            "NLS.ZakharovShabat.discreteTopology_sourceBoundarySpectrum",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union"
+          ],
+          "inventory_order": 32,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2043,
+            2052
+          ],
+          "requirement": "Common neighborhood, analytic projections and constant ranks",
+          "finding": "One open convex connected neighborhood in the original input norm contains the potential and zero. Both actual boundary restrictions of the circle and rectangle integrals are analytic on it, with the same ranks and admissible contours for every cutoff above a common positive threshold. The proof pulls back and intersects the established uniform resolvent and counting neighborhoods. The boundary projection commutes with the actual admissible contour integrals. The retained central rectangle has height N; the previously refuted unrestricted printed norm-dependent height is not reinstated.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_sourceBoundaryCountingData",
+            "NLS.ZakharovShabat.sourceBoundaryProjection_commute_circleIntegral",
+            "NLS.ZakharovShabat.sourceBoundaryProjection_commute_centralIntegral",
+            "NLS.ZakharovShabat.sourceBoundaryCircleProjection_apply",
+            "NLS.ZakharovShabat.sourceBoundaryCentralProjection_apply"
+          ],
+          "inventory_order": 33,
+          "classification": "proved_with_height_qualification"
+        },
+        {
+          "source_lines": [
+            2054,
+            2059
+          ],
+          "requirement": "Weighted-domain restrictions preserve full projected ranges",
+          "finding": "Both actual contour projections take values in the original one-derivative boundary domain. Idempotence then proves that restricting their input to that domain leaves the entire range unchanged. Their ranks are therefore those of the printed weighted-domain restrictions, not merely of an auxiliary compression.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryCircleProjection_exists_domain",
+            "NLS.ZakharovShabat.sourceBoundaryCentralProjection_exists_domain",
+            "NLS.ZakharovShabat.range_sourceBoundaryCircleProjection_comp_inclusion",
+            "NLS.ZakharovShabat.range_sourceBoundaryCentralProjection_comp_inclusion",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.central_domain_rank",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_domain_rank"
+          ],
+          "inventory_order": 34,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2062,
+            2070
+          ],
+          "requirement": "Free ranks and full algebraic multiplicity counts",
+          "finding": "The free full boundary root spaces have dimension one at each signed lattice point and already stabilize at the eigenspace. Their central count is 2N+1 and the free high contour rank is one. Constancy of finite-rank projections on the connected family carries these ranks to the potential. Original root-space recursion uses the actual weighted domain at every chain step; all finite chains form the full space and its dimension is the original algebraic multiplicity. Actual contour ranks equal sums over the genuine enclosed spectra. Thus the counts retain Jordan multiplicities and give one simple eigenvalue in each high disk, with exhaustive localization in the qualified height-N box and high disks.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.algebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.BoundaryCondition.rootSpace_one_zero_eq_top",
+            "NLS.ZakharovShabat.BoundaryCondition.finrank_free_contour_boundary",
+            "NLS.ZakharovShabat.BoundaryCondition.sum_central_multiplicity_zero",
+            "NLS.ZakharovShabat.BoundaryCondition.finrank_contour_eq_on_preconnected",
+            "NLS.ZakharovShabat.sourceBoundaryRootSpace_succ",
+            "NLS.ZakharovShabat.mem_sourceBoundaryRootSpaceTop",
+            "NLS.ZakharovShabat.sourceBoundaryAlgebraicMultiplicity_eq",
+            "NLS.ZakharovShabat.sourceBoundaryCircleProjection_rank_eq_sum",
+            "NLS.ZakharovShabat.sourceBoundaryCentralProjection_rank_eq_sum",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.central_multiplicity",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_multiplicity",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_unique_simple",
+            "NLS.ZakharovShabat.SourceBoundaryCountingData.spectrum_subset"
+          ],
+          "inventory_order": 35,
+          "classification": "proved_with_height_qualification"
+        },
+        {
+          "source_lines": [
+            2072,
+            2082
+          ],
+          "requirement": "Global lexicographic boundary labels and high-index simplicity",
+          "finding": "Canonical complete sequences are globally monotone in real part and then imaginary part, exhaust the actual restriction spectra and repeat each value exactly its algebraic multiplicity. Uniqueness holds across cutoff choices. High coordinates equal the intrinsic simple branches; local stability supplies their analytic identification near arbitrary complex potentials. No global continuity or analyticity of central lexicographic coordinates through arbitrary complex collisions is inferred.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.canonicalRoots_spec",
+            "NLS.ZakharovShabat.BoundaryCondition.monotone_canonicalRoots",
+            "NLS.ZakharovShabat.BoundaryRootLabeling.ordered_unique",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity",
+            "NLS.ZakharovShabat.mem_sourceBoundarySpectrum_reflected_iff",
+            "NLS.ZakharovShabat.exists_analyticAt_distant_canonicalPeriodOneBoundaryRoots"
+          ],
+          "inventory_order": 36,
+          "classification": "proved_with_scope"
+        },
+        {
+          "source_lines": [
+            2093,
+            2097
+          ],
+          "requirement": "Lemma 4.5 analyticity including the classical p=1 realization",
+          "finding": "For 1<p<infinity both actual trace-defined high branches are analytic on one common open convex connected original-input neighborhood, contain the input and zero, and are the unique high-disk spectral values of algebraic multiplicity one. At the printed p=1 endpoint the absolutely summable coefficients synthesize an actual continuous potential. Its bounded coefficient-preserving inclusion into p=2 has the same physical interval coefficients and reflection. Pullback proves analytic branches in the original p=1 input norm and equality with the classical interval eigenvalue sets. Endpoint multiplicity is that of the original Hilbert boundary realization; no bounded reflection into period-two FL1 or FL1 spectral realization is asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma4_5",
+            "NLS.ZakharovShabat.sourceOneToHilbert_coefficients",
+            "NLS.ZakharovShabat.sourceOneToHilbert_reflected",
+            "NLS.ZakharovShabat.sourceOneBoundarySpectrum_eq_classical",
+            "NLS.ZakharovShabat.sourceLemma4_5_one"
+          ],
+          "inventory_order": 37,
+          "classification": "proved_with_endpoint_realization_qualification"
+        },
+        {
+          "source_lines": [
+            2100,
+            2108
+          ],
+          "requirement": "Actual rank-one trace formula and analytic range transport",
+          "finding": "The projector range has a bounded lift to the original weighted boundary domain representing each vector itself. Its intrinsic endomorphism acts by the actual original operator, and the printed trace is the linear-algebra trace of this endomorphism. In rank one that trace equals the unique enclosed eigenvalue. The analytic proof uses local invertible transport between varying projection ranges and trace invariance under conjugation, rather than treating varying ranges as a fixed vector space or choosing global analytic eigenvectors. Both boundary signs share the same argument.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryAmbientContourLift_mem",
+            "NLS.ZakharovShabat.sourceBoundaryAmbientContourLift_range",
+            "NLS.ZakharovShabat.sourceBoundaryContourRangeEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryContourRestriction_apply",
+            "NLS.ZakharovShabat.sourceBoundaryContourTrace_eq_trace_restriction",
+            "NLS.ZakharovShabat.sourceBoundaryContourTrace_eq_of_rank_one",
+            "NLS.ZakharovShabat.analyticAt_sourceBoundaryContourTrace",
+            "NLS.ProjectionTrace.trace_eq_compressed",
+            "NLS.ProjectionTrace.analyticAt_trace",
+            "NLS.ProjectionTransport.rangeEquivalence",
+            "NLS.ProjectionTransport.eventually_isUnit_transport",
+            "NLS.ProjectionTransport.analyticAt_compressed"
+          ],
+          "inventory_order": 38,
+          "classification": "proved_with_scope"
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma4_1.lean": "a9bece5b9a8105f07077372906c13c644a2a22e2c10468c6c340facc8f5d9760",
+        "NLS/ZakharovShabat/AKNSReflection.lean": "65b83d94b2af06e34e493679cb5b5324dd08d95ca1b30b32ce78c1cfe4b513b6",
+        "NLS/ZakharovShabat/SourceBoundaryFourier.lean": "7d2b2a14094ab06bbee492e47606bcc95aae2ab6355a59b3ac12d1190ea7ee7c",
+        "NLS/ZakharovShabat/SourceBoundarySeries.lean": "a8404f16047c56484ad9ccc3e75bf3160bec6d8a992ab625811a464ce9c35890",
+        "NLS/ZakharovShabat/SourceBoundarySpaces.lean": "fbab8dd53b3d4c65f7bb67eb4f0ff6af18f32dc98b76582096018453027b5033",
+        "NLS/ZakharovShabat/NativePeriodicHilbert.lean": "0df6c020522fdacccbb838740165267b0172382f459274b7677b0e06174b3de0",
+        "NLS/ZakharovShabat/ClassicalIntervalEigenvalues.lean": "b71b583b525b938d47d8832c9784d29c7e11bdecb6998475d52b82e7569d0a82",
+        "NLS/ZakharovShabat/ClassicalIntervalOperator.lean": "8159a66a03d7b93a08534e6f98a740bcd24c8571363714734cdf03ab0abe0724",
+        "NLS/ZakharovShabat/AKNSCoordinates.lean": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079",
+        "NLS/ZakharovShabat/PhysicalPeriodicSpectrum.lean": "f876a48c7f0991da861856877233ef955d7fff92e5a42f933e4edd92ce4dfb8d",
+        "NLS/ZakharovShabat/ClassicalIntervalSpace.lean": "1aa7070c240c6295fedd2fc906b24ba234afbc1a48de2166292fcfe9fb2a7015",
+        "NLS/ZakharovShabat/ClassicalIntervalResolvent.lean": "78d6431c687da3c0a9c0dace811d22449774ce58ba4d31c94a273abad05c0ad1",
+        "NLS/ZakharovShabat/ClassicalSignedSpectrum.lean": "40cc8ab47d75041f340b730c2ae40eb1d359f1e72d7fffc8c48361cc18019d24",
+        "NLS/ZakharovShabat/AKNSClassicalDomain.lean": "e01ea9ce1dd3cc2fc936cde9c3bc2092c986afce9581424c0763bf76644e3ee0",
+        "NLS/ZakharovShabat/AKNSIntervalOperator.lean": "f9c75c733791a4ce7ecd210eb1e8d8649d412d387687cf4d1ece2dcc76a2c6b1",
+        "NLS/ZakharovShabat/ClassicalIntervalIsomorphism.lean": "979050f18b89908c6b9d81bba4b0abe4d3b2321d7df72f5de86522ec25e4df3d",
+        "NLS/ZakharovShabat/SourceLemma4_3.lean": "0d5d69e7572e45f467017dec2c33e13bfcb9365c18b564101029af3171fdd7ae",
+        "NLS/ZakharovShabat/SourceLemma4_3Physical.lean": "d088d7973421a6615b0888a645e77b7c60ffa45fcd8600475c6db2a593f0ae3b",
+        "NLS/ZakharovShabat/SourceReflectionRegularityLoss.lean": "432c33781215bc66f8b592efae84bc66858808c52ce9fef5c44fb31ff81e4cbb",
+        "NLS/ZakharovShabat/BoundedIntervalExtension.lean": "c33fbf8b5e1c223e658dbc1e3daa5394c7f782e39788f61a42f14567deb1630c",
+        "NLS/ZakharovShabat/SourceLemma4_4.lean": "31226c4779614711f8f0eab2e793c0d175e0f6056204c6012675d05d2e3a0937",
+        "NLS/ZakharovShabat/SourceBoundarySpectra.lean": "eff37ddbc1a2a8057631257207fcab2c871a7b079b0182585ae55167e98a70a3",
+        "NLS/ZakharovShabat/SourceBoundaryCounting.lean": "2c80cd2d95e19432ee172f51256626f07b5718bf14ae4c3c1e9dd44d8251dae5",
+        "NLS/Fourier/HalfIntervalBoundedness.lean": "540ebd6e7afeccdcf6d607123341f4e01b1cfe70ec41e52d7812fb17a19ac66e",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Fourier/PeriodOneCoefficients.lean": "1d792e7e0b7676544f2f7075c6f30c36325de00bf79d516de85229db2cef12ee",
+        "NLS/Fourier/PeriodicFourierLebesgueProduct.lean": "00d066c9f606c0899da795ef94ad9ad335ca995471d313b20f0865af79711b17",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean": "17de7f4fb4fa19f4d359487e9bbbac98621d87e516952352baf5e0e733eec3d9",
+        "NLS/Fourier/PeriodicFourierLebesguePeriodDoubling.lean": "4c5a93168230cd2c707d13ae6961de4c18840c7fee29fb3791dc3c32e4c41485",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/SourceBoundaryContours.lean": "93e6a6604ecd01b2dad27534fcaf8dd950f074b0098691505a7a6378c0751347",
+        "NLS/ZakharovShabat/SourceBoundaryContourDomains.lean": "b2f95f87f18ad37b6db02f5a07ddb47840a7e4e916a82ab92672ff24205ca6fe",
+        "NLS/ZakharovShabat/SourceBoundaryRootSpaces.lean": "6b774e3092d388cb89b355f754201c4297f6a49601024986724f167065b9d541",
+        "NLS/ZakharovShabat/SourceLemma4_5.lean": "01149d2c0b864e88bb3a31f83c64ebd8ebce2ec35ce0c0392006e93d0857330c",
+        "NLS/ZakharovShabat/SourceLemma4_5Endpoint.lean": "e4acb9d531d9b84a6a34217cf7842f7ecc64fb2c4d2029d8103d783e75286405",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f",
+        "NLS/ZakharovShabat/CanonicalBoundaryRoots.lean": "c839a80bf4e1492d86567e817f7264346e6f57aac350e116b872e92735b058d2",
+        "NLS/ZakharovShabat/CanonicalBoundaryStability.lean": "3c56c7bc61f86497b1349b72f8ce45a02717c40365d4a2f3b7b2757f79214054",
+        "NLS/ZakharovShabat/BoundaryEigenvalues.lean": "b0a7f99e8e3221d18b05ab6923a4d75d8e465aa940ec99483c3df3f60bac2872",
+        "NLS/ZakharovShabat/BoundaryCounting.lean": "a1ad226901eb9b61536e292a1aa3d5cd34cc7fd11f0080fc798e0d4c591d1ccd",
+        "NLS/ZakharovShabat/FreeBoundaryMultiplicity.lean": "194804e052e2e06eee639e5b68666b544cbdce58c7b3055be25351a32d5a0e11",
+        "NLS/ZakharovShabat/Operator.lean": "484a61f1a6b12e8871f7359b0922d993af5c0c084d6e5b647ca2cdfbe53446b3",
+        "NLS/ZakharovShabat/Domain.lean": "cae9717aec0ac1c2f1c033be53b1add53249b7371e0ec6c18f3c2896cc208b36",
+        "NLS/ZakharovShabat/OrderedBoundaryUniqueness.lean": "0c85a2ef943886e23ce965fc6ef653a01b1419015bcc8889d1cffb517668995d",
+        "NLS/FunctionalAnalysis/ProjectionTrace.lean": "cb502f634d15b6e2af1eef9634db5cbb9dee86e71961c5187f6b6ef3d06fb91c",
+        "NLS/FunctionalAnalysis/ProjectionTransport.lean": "04b9e77fddf437cb5b684797a76ed078113449bcf3b48bca7f9160225c6bd1f8",
+        "NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean": "75c52ed4af19523d093bb5451fe092731598eee16f7a8991be52cd18104243e7",
+        "NLS/Fourier/HilbertSeries.lean": "95487b634c022a1a1850a9f65ba22746399103f2f338f0d7cad1c26df5c6c0f7",
+        "NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean": "6866c4524c12818298898676be3b074fe4319bf4d17c6d0136800f28fdab716b",
+        "NLS/ZakharovShabat/SourceLemma43NativeExtension.lean": "1a7fccf5172258e177b2c6ce496a649b1c682b1d979ba962863d12a17a02dd30",
+        "NLS/ZakharovShabat/SourceLemma42FourierProof.lean": "afa376ba07cb104cdfe8083a0e59148ceda4f20ed5d4481afca31aef1b8a2779",
+        "NLS/Fourier/SobolevSynthesis.lean": "39c511a1bf9dc086e15b0a196b47540f5f3ac277807bd86555da99f1fb78aec3",
+        "NLS/Fourier/SobolevIdentification.lean": "f47f25b05b031d26668a946f3bd51db795a343d53ddc000f42fd55986237e0e5",
+        "NLS/ZakharovShabat/SourceScalarIntervalH1.lean": "ce7ce1126b8a6bad6dc34c8c03f79db36e39e9f79f4319b41ed36d6e294c1c01",
+        "NLS/ZakharovShabat/SourceLemma42ScalarRestriction.lean": "c63fb888e105c9e0a4a65db7b134a9020d6a65b62acb58fd650339642577c93c",
+        "NLS/ZakharovShabat/SourceLemma42PhysicalRestriction.lean": "aaa2b1bf689556b3dc80e11d703ca8b2a368187aaa5cd29d0dfd9126b92b2515",
+        "NLS/Fourier/SobolevEnergy.lean": "064f8f928bd33f5deba6d44ae42f12cb42570355df4c275e9af556231fe192ff",
+        "NLS/Fourier/SobolevEnergyEmbedding.lean": "d867faaf337f7e781cd7a6f9b754fffb9fe24bdb4bff34e64c1fa74b36624812",
+        "NLS/ZakharovShabat/BoundaryRootOrder.lean": "d2eaa4b15e1d9471dd72a0ee3141fab5453931ed0d5576572c908aae67dd0e60",
+        "NLS/ZakharovShabat/UniformCanonicalBoundaryRoots.lean": "7adab4237d8ac1890f8e26fb7e31de7e067e3d6065fbd6181ac89eed7f0cb4e1"
+      },
+      "resolved_declarations": [
+        "NLS.Fourier.hasPeriodicH1Regularity_sobolevSynthesis",
+        "NLS.Fourier.hasSum_sobolevSynthesis",
+        "NLS.Fourier.intervalH1Energy_sobolevSynthesis_bounds",
+        "NLS.Fourier.norm_sobolevEnergyEmbedding",
+        "NLS.Fourier.shiftedHilbertTransform_apply",
+        "NLS.Fourier.summable_norm_shiftedHilbertSeries",
+        "NLS.ProjectionTrace.analyticAt_trace",
+        "NLS.ProjectionTrace.trace_eq_compressed",
+        "NLS.ProjectionTransport.analyticAt_compressed",
+        "NLS.ProjectionTransport.eventually_isUnit_transport",
+        "NLS.ProjectionTransport.rangeEquivalence",
+        "NLS.ZakharovShabat.BoundaryCondition.algebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.BoundaryCondition.canonicalRoots_spec",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalDomainOfFunction_surjective",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalInclusion_denseRange",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalInclusion_injective",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalOperator_ofFunction",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalOperator_realization_ofFunction",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_eq_classicalEigenvalues",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_ofFunction",
+        "NLS.ZakharovShabat.BoundaryCondition.finrank_contour_eq_on_preconnected",
+        "NLS.ZakharovShabat.BoundaryCondition.finrank_free_contour_boundary",
+        "NLS.ZakharovShabat.BoundaryCondition.mem_classicalIntervalSubmodule_iff",
+        "NLS.ZakharovShabat.BoundaryCondition.mem_classicalResolventSet_iff",
+        "NLS.ZakharovShabat.BoundaryCondition.monotone_canonicalRoots",
+        "NLS.ZakharovShabat.BoundaryCondition.rootSpace_one_zero_eq_top",
+        "NLS.ZakharovShabat.BoundaryCondition.sum_central_multiplicity_zero",
+        "NLS.ZakharovShabat.BoundaryRootLabeling.ordered_unique",
+        "NLS.ZakharovShabat.NativePeriodic.graph_hilbert_iff",
+        "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_classicalSigned_union",
+        "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_physical",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.central_domain_rank",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.central_multiplicity",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_domain_rank",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_multiplicity",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_unique_simple",
+        "NLS.ZakharovShabat.SourceBoundaryCountingData.spectrum_subset",
+        "NLS.ZakharovShabat.SourcePeriodicPair",
+        "NLS.ZakharovShabat.SourceScalarIntervalH1",
+        "NLS.ZakharovShabat.SourceTrigPeriodicH1",
+        "NLS.ZakharovShabat.aknsAction_eigen_iff",
+        "NLS.ZakharovShabat.aknsAction_intertwining",
+        "NLS.ZakharovShabat.aknsAction_printed_normalization_false",
+        "NLS.ZakharovShabat.aknsCircleExtension_reconstruct",
+        "NLS.ZakharovShabat.aknsCircleExtension_regular",
+        "NLS.ZakharovShabat.aknsDomainEquiv",
+        "NLS.ZakharovShabat.aknsInclusion_denseRange",
+        "NLS.ZakharovShabat.aknsInclusion_injective",
+        "NLS.ZakharovShabat.aknsIntervalExtension",
+        "NLS.ZakharovShabat.aknsIntervalOperator_realization",
+        "NLS.ZakharovShabat.aknsL2Equiv_operator",
+        "NLS.ZakharovShabat.aknsPotential_eq_sqrt_two_smul",
+        "NLS.ZakharovShabat.aknsPotential_intervalExtension",
+        "NLS.ZakharovShabat.aknsPotential_ne_vectorMap",
+        "NLS.ZakharovShabat.aknsToZS_intervalExtension",
+        "NLS.ZakharovShabat.aknsToZS_norm_sq",
+        "NLS.ZakharovShabat.akns_eigenEquation_iff",
+        "NLS.ZakharovShabat.akns_intervalExtension_zsToAKNS",
+        "NLS.ZakharovShabat.akns_interval_equation_transfer",
+        "NLS.ZakharovShabat.analyticAt_sourceBoundaryContourTrace",
+        "NLS.ZakharovShabat.analyticAt_sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity",
+        "NLS.ZakharovShabat.classicalSignedSpectrum_union_eq_periodic",
+        "NLS.ZakharovShabat.discreteTopology_sourceBoundarySpectrum",
+        "NLS.ZakharovShabat.exists_analyticAt_distant_canonicalPeriodOneBoundaryRoots",
+        "NLS.ZakharovShabat.exists_uniform_sourceBoundaryCountingData",
+        "NLS.ZakharovShabat.hasSum_intervalExtension_L2",
+        "NLS.ZakharovShabat.hasSum_sourceBoundaryBaseModes",
+        "NLS.ZakharovShabat.hasSum_sourceBoundaryDistribution",
+        "NLS.ZakharovShabat.hasSum_sourceCosineSynthesis",
+        "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension_odd",
+        "NLS.ZakharovShabat.hasSum_sourceSineSynthesis",
+        "NLS.ZakharovShabat.hasSum_sourceUnitPeriodSignedModes",
+        "NLS.ZakharovShabat.hasSum_sourceWeightedBoundaryModes",
+        "NLS.ZakharovShabat.intervalAmplitude_eq_half_pairing",
+        "NLS.ZakharovShabat.intervalBoundaryPairing_eq_integral",
+        "NLS.ZakharovShabat.intervalExtension_oneSided_no_oneDerivative_pair",
+        "NLS.ZakharovShabat.isClosed_sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.isClosed_sourceWeightedBoundarySubspace",
+        "NLS.ZakharovShabat.isClosed_sourceWeightedBoundarySubspaceInfty",
+        "NLS.ZakharovShabat.isTopCompl_sourceWeightedBoundarySubspaces",
+        "NLS.ZakharovShabat.isTopCompl_sourceWeightedBoundarySubspacesInfty",
+        "NLS.ZakharovShabat.memLp_aknsPotentialExtension",
+        "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+        "NLS.ZakharovShabat.mem_sourceBoundaryRootSpaceTop",
+        "NLS.ZakharovShabat.mem_sourceBoundarySpectrum_reflected_iff",
+        "NLS.ZakharovShabat.mem_sourceCosineAmplitudeSpace",
+        "NLS.ZakharovShabat.mem_sourceCosinePeriodic_iff",
+        "NLS.ZakharovShabat.mem_sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.mem_sourceScalarIntervalSubmodule",
+        "NLS.ZakharovShabat.mem_sourceSineAmplitudeSpace",
+        "NLS.ZakharovShabat.mem_sourceSinePeriodic_iff",
+        "NLS.ZakharovShabat.norm_aknsDomainOfFunction",
+        "NLS.ZakharovShabat.norm_operator_apply_le",
+        "NLS.ZakharovShabat.norm_potentialOperator_le",
+        "NLS.ZakharovShabat.norm_sourceBoundaryOperator_le",
+        "NLS.ZakharovShabat.norm_sourceIntervalExtensionToBoundary_le",
+        "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le",
+        "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_two",
+        "NLS.ZakharovShabat.norm_sourceScalarH1OfFunction",
+        "NLS.ZakharovShabat.norm_sourceTrigPeriodicH1",
+        "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients",
+        "NLS.ZakharovShabat.norm_sourceWeightedBoundaryAmplitudeEquiv",
+        "NLS.ZakharovShabat.norm_sourceWeightedBoundaryAmplitudeEquivInfty",
+        "NLS.ZakharovShabat.physicalOperator_printed_akns_normalization_false",
+        "NLS.ZakharovShabat.physicalPeriodicSpectrum_eq",
+        "NLS.ZakharovShabat.physicalPeriodicSpectrum_eq_classicalSigned_union",
+        "NLS.ZakharovShabat.range_sourceBoundaryCentralProjection_comp_inclusion",
+        "NLS.ZakharovShabat.range_sourceBoundaryCircleProjection_comp_inclusion",
+        "NLS.ZakharovShabat.reflection_oneSided_source_regular",
+        "NLS.ZakharovShabat.sourceBoundaryAlgebraicMultiplicity_eq",
+        "NLS.ZakharovShabat.sourceBoundaryAmbientContourLift_mem",
+        "NLS.ZakharovShabat.sourceBoundaryAmbientContourLift_range",
+        "NLS.ZakharovShabat.sourceBoundaryBaseMode_two",
+        "NLS.ZakharovShabat.sourceBoundaryCentralProjection_apply",
+        "NLS.ZakharovShabat.sourceBoundaryCentralProjection_exists_domain",
+        "NLS.ZakharovShabat.sourceBoundaryCentralProjection_rank_eq_sum",
+        "NLS.ZakharovShabat.sourceBoundaryCircleProjection_apply",
+        "NLS.ZakharovShabat.sourceBoundaryCircleProjection_exists_domain",
+        "NLS.ZakharovShabat.sourceBoundaryCircleProjection_rank_eq_sum",
+        "NLS.ZakharovShabat.sourceBoundaryContourRangeEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryContourRestriction_apply",
+        "NLS.ZakharovShabat.sourceBoundaryContourTrace_eq_of_rank_one",
+        "NLS.ZakharovShabat.sourceBoundaryContourTrace_eq_trace_restriction",
+        "NLS.ZakharovShabat.sourceBoundaryCosineAmplitude_apply",
+        "NLS.ZakharovShabat.sourceBoundaryDistributionMode_physical",
+        "NLS.ZakharovShabat.sourceBoundaryDistribution_eq_sourcePair",
+        "NLS.ZakharovShabat.sourceBoundaryDistribution_eq_sourcePairInfty",
+        "NLS.ZakharovShabat.sourceBoundaryDomainMode_free",
+        "NLS.ZakharovShabat.sourceBoundaryDomainMode_inclusion_two",
+        "NLS.ZakharovShabat.sourceBoundaryDomainMode_mem",
+        "NLS.ZakharovShabat.sourceBoundaryDomainMode_potential",
+        "NLS.ZakharovShabat.sourceBoundaryDomainMode_potential_series",
+        "NLS.ZakharovShabat.sourceBoundaryMode_physical",
+        "NLS.ZakharovShabat.sourceBoundaryOperator",
+        "NLS.ZakharovShabat.sourceBoundaryPencil_eq",
+        "NLS.ZakharovShabat.sourceBoundaryProjection_commute_centralIntegral",
+        "NLS.ZakharovShabat.sourceBoundaryProjection_commute_circleIntegral",
+        "NLS.ZakharovShabat.sourceBoundaryResolventSet",
+        "NLS.ZakharovShabat.sourceBoundaryRootSpace_succ",
+        "NLS.ZakharovShabat.sourceBoundarySineAmplitude_apply",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_eq",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_reflected",
+        "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrigEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigNeumannSourceEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_forward",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_inverse",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_neumann_forward",
+        "NLS.ZakharovShabat.sourceCircleSynthesis_intervalExtension",
+        "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv",
+        "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_ofFunction",
+        "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_symm_apply",
+        "NLS.ZakharovShabat.sourceClassicalCircleExtension_reconstruct",
+        "NLS.ZakharovShabat.sourceClassicalCircleExtension_regular",
+        "NLS.ZakharovShabat.sourceClassicalIntervalExtension_coefficients",
+        "NLS.ZakharovShabat.sourceClassicalIntervalExtension_ne_zero",
+        "NLS.ZakharovShabat.sourceCosineMode_apply",
+        "NLS.ZakharovShabat.sourceCosineRestrictionEquiv",
+        "NLS.ZakharovShabat.sourceCosineSynthesis_energy_bounds",
+        "NLS.ZakharovShabat.sourceCosineSynthesis_of_even",
+        "NLS.ZakharovShabat.sourceDirichletPotentialCoefficients_coefficients",
+        "NLS.ZakharovShabat.sourceDirichletPotentialCoefficients_reconstruct",
+        "NLS.ZakharovShabat.sourceEquation1_8_1_9",
+        "NLS.ZakharovShabat.sourceEquation1_8_1_9_L2",
+        "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_even",
+        "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_odd",
+        "NLS.ZakharovShabat.sourceIntervalExtensionCoefficients_fst",
+        "NLS.ZakharovShabat.sourceIntervalExtensionCoefficients_snd",
+        "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary",
+        "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+        "NLS.ZakharovShabat.sourceIntervalExtension_oneSided_not_oneDerivative",
+        "NLS.ZakharovShabat.sourceLemma4_1",
+        "NLS.ZakharovShabat.sourceLemma4_4",
+        "NLS.ZakharovShabat.sourceLemma4_5",
+        "NLS.ZakharovShabat.sourceLemma4_5_one",
+        "NLS.ZakharovShabat.sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_coefficients",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_even",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_mode_integrals",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_snd",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_tempered",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_unique",
+        "NLS.ZakharovShabat.sourceOneBoundarySpectrum_eq_classical",
+        "NLS.ZakharovShabat.sourceOneToHilbert_coefficients",
+        "NLS.ZakharovShabat.sourceOneToHilbert_reflected",
+        "NLS.ZakharovShabat.sourceOperator_mem_sourceBoundaryBaseSubspace",
+        "NLS.ZakharovShabat.sourcePeriodicPairCoefficients",
+        "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union",
+        "NLS.ZakharovShabat.sourcePhysicalCosineRestriction",
+        "NLS.ZakharovShabat.sourcePhysicalCosineRestriction_apply",
+        "NLS.ZakharovShabat.sourcePhysicalSineRestriction",
+        "NLS.ZakharovShabat.sourcePhysicalSineRestriction_apply",
+        "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv",
+        "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceReflectedPotential",
+        "NLS.ZakharovShabat.sourceReflectedPotential_mem",
+        "NLS.ZakharovShabat.sourceReflectionConstantDistribution_sobolev_one_iff",
+        "NLS.ZakharovShabat.sourceReflectionConstantInput_has_all_orders",
+        "NLS.ZakharovShabat.sourceScalarH1OfFunction",
+        "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv",
+        "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv_apply",
+        "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv",
+        "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceSineMode_apply",
+        "NLS.ZakharovShabat.sourceSineRestrictionEquiv",
+        "NLS.ZakharovShabat.sourceSineSynthesis_endpoints",
+        "NLS.ZakharovShabat.sourceSineSynthesis_energy_bounds",
+        "NLS.ZakharovShabat.sourceSineSynthesis_of_odd",
+        "NLS.ZakharovShabat.sourceTrigPeriodicEquiv",
+        "NLS.ZakharovShabat.sourceTrigPeriodic_norm_bounds",
+        "NLS.ZakharovShabat.sourceTrigPeriodic_regular",
+        "NLS.ZakharovShabat.sourceTrigSynthesis_periodicH1",
+        "NLS.ZakharovShabat.sourceUnitPeriodMode_eq_evenWave",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_fst",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_snd",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_raw",
+        "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv",
+        "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquivInfty",
+        "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv_apply",
+        "NLS.ZakharovShabat.source_classical_interval_eigenvalue_mem_spectrum",
+        "NLS.ZakharovShabat.source_classical_interval_eigenvector_transfer",
+        "NLS.ZakharovShabat.source_classical_interval_equation_transfer",
+        "NLS.ZakharovShabat.source_periodicSpectrum_eq_classicalEigenvalues_union",
+        "NLS.ZakharovShabat.zero_mem_classicalOddResolvent_and_evenSpectrum"
+      ],
+      "declaration_inventory_count": 43246,
+      "qualification": "The complete Section 4 passage on printed pages 28-33 has been compared in 38 ordered substantive groups, using the inspected extracted text, all six rendered pages and the recorded proof bodies. Intervening layout fragments and transitions were reconciled with adjacent assertions. The listed proof modules were read across the early, Fourier, scalar restriction, native-distribution and later preparations; their current hashes and all declaration references have been checked. This reuses those inspections rather than asserting a fresh independent audit of every transitive dependency. Three local printed formulas remain formally refuted with proved corrections: the normalized AKNS potential, the missing even half and the odd kernel constant. The FL1 proof wording, distinct infinity norm, endpoint reflection limits, separate classical p=1 eigenvalue realization, height-N counting scope and Appendix A.8 product constant retain their qualifications. Reference [54] and explanatory motivation are contextual; the scalar isomorphism itself is proved directly. This inventory covers Section 4, not the whole chapter or dissertation. The source-wide inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "validation_reuse": {
+        "full_check_commit": "1e93351eac808c21dde3c824448111ac1cc30cd7",
+        "lean_sources": {
+          "files": 4723,
+          "sha256": "4e40c83146963491f20b97eaff9e51132018504c73a89e2fa7d0eddc82b45efe"
+        },
+        "new_lean_check_run": false,
+        "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
+      },
+      "source_inventory": {
+        "section": 4,
+        "printed_pages": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "ordered_groups": 38,
+        "claims_dissertation_complete": false
+      },
+      "passage_reconciliation": {
+        "source_lines": [
+          1633,
+          2108
+        ],
+        "status": "complete_for_this_section_scope",
+        "finding": "All 38 ordered substantive groups have source comparisons. The extracted lines between them were checked: blank lines, page furniture, transitional prose and mathematical display fragments belonging to adjacent compared groups. Display fragments at 1708-1709, 1919, 1933-1934, 1943, 1990, 2007, 2034, 2042 and 2092 are interpreted with the inspected rendered pages and adjacent assertions, not treated as independent unreviewed claims. The source excerpt ends after both arguments in Lemma 4.5."
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section4ProofReview-028.png": "866382dc89595fcc8b82ba12a6b4098445269419888655f960fbd4426014f760",
+          "Section4ProofReview-029.png": "d64b9bbc7e1045a1ba4c0bee0f6e8bdbc69a90a816ea2d71bc6dca7f40eaddbe",
+          "Section4ProofReview-030.png": "ec91f0e3797506980b677b8e9d7ccd1d7b7bbf3198e254a2a9231759d2e018e8",
+          "Section4ProofReview-031.png": "5359bd711ad94c4cf785fc76d1868963e6ef8777b8009f5f481f0636b545acdd",
+          "Section4ProofReview-032.png": "7e3eff339633ba785c62b4ced4a70f44eefbf49082911dc69fe676eaa5de160d",
+          "Section4ProofReview-033.png": "7de7df67aa87f941073b2b30603b753c1622bb7e2bb1af307f913e4a26e2ca92"
+        }
+      },
+      "retained_refutations": [
+        {
+          "source_lines": [
+            1738,
+            1742
+          ],
+          "claim": "The normalized vector map T is incorrectly used as the potential map."
+        },
+        {
+          "source_lines": [
+            1975,
+            1976
+          ],
+          "claim": "The printed even extension formula omits one half."
+        },
+        {
+          "source_lines": [
+            1977,
+            1986
+          ],
+          "claim": "The printed odd coefficient kernel uses 2i instead of i/pi."
+        }
+      ],
+      "retained_external_qualifications": [
+        "Theorem 1.4 unrestricted printed norm-dependent central height remains refuted; the local proof uses height N.",
+        "Appendix A.8 constant-one estimate (A.4) remains refuted; the bounded restriction retains its Sobolev embedding constant.",
+        "The exact cited 2014 Birkhoff construction and Appendix G.2 interval norm are still unresolved."
+      ],
+      "source_record_sha256": "59046dd7b5c34cd64f6ac289123e3456b26c7fe56343dad6a5baf7bc05beefbd"
     }
   }
 }

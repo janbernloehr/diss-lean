@@ -4,6 +4,46 @@ This is a statement-by-statement audit against the original spaces and
 physical expressions on printed pages 28 onward. Existing later results do
 not by themselves certify this section or the full dissertation complete.
 
+## Complete Section 4 assertion inventory
+
+The entire passage on printed pp.28–33 has been compared in 38 ordered
+groups, with all six rendered pages inspected. The evidence record covers
+definitions, statements, displayed formulas and substantive proof steps.
+Intervening display fragments and transitions were reconciled with the
+adjacent groups.
+
+| Passage | Assessment retained by the inventory |
+| --- | --- |
+| Original domains and AKNS coordinates | Actual closed-interval H1 functions, dense physical L2 inclusion, both signed endpoint problems, and exact differential expressions. The printed potential normalization is refuted and corrected. |
+| Reflections and Lemma 4.1 | Actual folded functions, required endpoint traces, periodic H1 representatives, physical equations and spectral inclusion/exhaustion. |
+| Fourier expansions and boundary spaces | Normalized physical integrals and complete L2 sums; closed weighted complements with finite-p and distinct infinity norms. |
+| Lemma 4.2 and scalar restrictions | Full original domains, literal sine/cosine series and normalized T formulas; continuous scalar restriction inverses with physical H1 norms. |
+| Lemma 4.3 | Original native distributions, exact norms, full signed series, bounded analytic reflection for 1<p<infinity and corrected even/odd formulas on all rough inputs. Both printed coefficient constants remain refuted. |
+| Lemma 4.4 and restricted spectra | Actual full-domain invariance, convergent signed potential action and bounded restrictions; the Sobolev embedding constant is retained. |
+| Theorem 1.4 proof and labels | Actual analytic contour restrictions, domain-valued ranges, full Jordan multiplicities, common-neighborhood counts and complete ordered labels. Counts use height-N boxes. |
+| Lemma 4.5 | Intrinsic rank-one trace and local analytic range transport; p=1 uses the same continuous physical potential in the Hilbert realization. |
+
+The three local formula refutations are distinct from their proved
+corrections. The FL1 wording in Lemma 4.3's proof does not replace its
+FLp input norm. No bounded endpoint reflection or infinity-norm Fourier
+convergence is asserted. The p=1 eigenvalue conclusion retains the
+classical Hilbert realization and its multiplicity convention.
+
+The previously refuted unrestricted height in Theorem 1.4 and missing
+product constant in Appendix A.8 remain qualified. The latter still gives
+the valid embedding and boundedness inference after retaining its constant.
+The scalar restriction proof establishes the assertion cited to [54]
+directly, without independently auditing the textbook. Earlier checkpoints
+below retain their historical scopes; their pending-work wording does not
+supersede this qualified inventory.
+
+Section4AssertionInventorySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records the 38 groups,
+60 reviewed module hashes and 236 resolved declaration references.
+This inventory covers Section 4 and does not certify the entire chapter
+or dissertation. Its Lean sources match the full validation at `1e93351`;
+this documentation update does not rerun Lean.
+
 ## Signed series and Lemma 4.3 on original distributions
 
 The proof on printed p.31 now has direct interfaces on the original
