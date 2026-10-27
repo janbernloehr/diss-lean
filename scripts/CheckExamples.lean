@@ -69760,3 +69760,59 @@ example :
   exact ⟨hz,exists_sourceFreeResolventCutoff_norm_sub_lt (p := 3) (by norm_num) z hz (by norm_num)⟩
 
 end Lemma32CompactProofChecks
+
+noncomputable section
+namespace Section3SourceNeumannProofChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both components are nonzero; the l1 potential norm is exactly three.
+example :
+    let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (1 : ℂ), lp.single 1 0 (2 : ℂ))
+    let z : ℂ := 30*Complex.I
+    ∃ hz : z ∉ freeLattice,
+      ‖(sourcePotentialFromL1 (p := 1) φ).comp (sourceFreeResolventToL1 (p := 1) (by norm_num) z hz)‖ ≤ 1/2 := by
+  dsimp only
+  let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (1 : ℂ), lp.single 1 0 (2 : ℂ))
+  have hφ : ‖φ‖ = 3 := by rw [CoeffPair.norm_one_eq_sum]; norm_num [φ]
+  have him : (30*Complex.I : ℂ).im ≠ 0 := by norm_num
+  refine ⟨notMem_freeLattice_of_im_ne_zero him, ?_⟩
+  have h := norm_sourcePotentialFreeResolvent_le_height (by norm_num) φ
+    (30*Complex.I) (notMem_freeLattice_of_im_ne_zero him) him
+  norm_num [hφ] at h
+  exact h
+
+-- At the standalone p-to-l1 counterexample, every small potential composition is still small.
+example (φ : CoeffPair 2) (hφ : ‖φ‖ ≤ 1/21600) :
+    ‖(sourcePotentialFromL1 (p := 2) φ).comp (sourceFreeResolventToL1 (p := 2) (by norm_num)
+      lemma3_2CounterexampleParameter lemma3_2Counterexample_off_lattice)‖ ≤ 1/2 := by
+  exact (sourceNeumann_survives_pairCounterexample.2 φ).trans (by nlinarith)
+
+-- The lower half-plane works at the non-Hilbert exponent p=3 in the original pair norm.
+example (φ : CoeffPair 3) (hφ : ‖φ‖ ≤ 1/26) :
+    let hz : -Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+    ‖(sourcePotentialFromL1 (p := 3) φ).comp (sourceFreeResolventToL1 (p := 3) (by norm_num) (-Complex.I) hz)‖ ≤ 1/2 := by
+  dsimp only
+  have h := norm_sourcePotentialFreeResolvent_le_height (by norm_num) φ
+    (-Complex.I) (notMem_freeLattice_of_im_ne_zero (by simp)) (by simp)
+  norm_num at h
+  exact h.trans (by nlinarith)
+
+-- The series sums to the actual resolvent, with the same nonzero l1 potential.
+example :
+    let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (1 : ℂ), lp.single 1 0 (2 : ℂ))
+    let z : ℂ := 30*Complex.I
+    let hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by norm_num [z])
+    let T := (sourcePotentialFromL1 (p := 1) φ).comp (sourceFreeResolventToL1 (p := 1) (by norm_num) z hz)
+    HasSum (fun n : ℕ => sourceFreeResolvent (p := 1) (by norm_num) z hz * T^n)
+      (sourceResolvent (p := 1) (by norm_num) φ z) := by
+  dsimp only
+  let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (1 : ℂ), lp.single 1 0 (2 : ℂ))
+  have hφ : ‖φ‖ = 3 := by rw [CoeffPair.norm_one_eq_sum]; norm_num [φ]
+  have hz : 30*Complex.I ∈ sourceHeightNeumannRegion φ := by
+    change (30*Complex.I : ℂ).im ≠ 0 ∧ _
+    norm_num [hφ]
+  exact hasSum_sourceResolvent_neumann (by norm_num) φ (30*Complex.I) hz
+
+end Section3SourceNeumannProofChecks

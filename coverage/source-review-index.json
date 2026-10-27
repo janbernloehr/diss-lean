@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T17:06:44.398511+00:00",
-  "base_commit": "2002a545c8237e6e33878b37c705c985635b9625",
+  "published_utc": "2026-10-27T17:28:51.411229+00:00",
+  "base_commit": "ac10fd6e23caef4d0064ee3e125afa86c9228a76",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 76,
-    "module_hash_checks": 1065,
-    "distinct_modules": 831
+    "review_records": 77,
+    "module_hash_checks": 1072,
+    "distinct_modules": 832
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "2002a545c8237e6e33878b37c705c985635b9625",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceFreeResolventCutoff and four public examples.",
+    "base_commit": "ac10fd6e23caef4d0064ee3e125afa86c9228a76",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceNeumannProof and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8438,
-    "public_examples": 7490,
-    "transitive_NLS_declarations": 42940,
+    "build_jobs": 8439,
+    "public_examples": 7494,
+    "transitive_NLS_declarations": 42948,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4715,
-      "sha256": "7eeeb87821f74f0864503a29776d1ea74a8e038f1eca43b44707866d4592c4c4"
+      "files": 4716,
+      "sha256": "6c6c1e8453901faa038c601c78c3d46240f88b4dba433160d56264fb5d26e97d"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -17043,6 +17043,104 @@
       },
       "qualification": "The new module and four examples were read completely. The seven unchanged hash-listed modules were fully read in this and the preceding focused comparisons; their current hashes were verified. The rendered p.24 and exact extracted passage were inspected. Three focused groups cover the actual signed Fourier expansion, explicit finite-rank approximants and their operator-norm closure argument. The original pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "bb25cd5a089e2678a928858bd118e95cbd8a4a1913209930d78dad12a49a8909"
+    },
+    "Cor33NeumannProofSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "ac10fd6e23caef4d0064ee3e125afa86c9228a76",
+      "updated_utc": "2026-10-27T17:28:51.411229+00:00",
+      "source_lines": [
+        [
+          1380,
+          1390
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1380,
+            1383
+          ],
+          "requirement": "The literal potential/free-resolvent norm estimate holds in the original finite-p pair norm.",
+          "finding": "Componentwise Young and the signed scalar Holder bounds control the two off-diagonal outputs. Summing their p-powers proves the scalar-factor operator estimate in the original norm; the scalar height estimate then gives precisely the printed factor-one bound and strict smallness on the source region. This avoids applying the false standalone p-to-l1 pair estimate. At the exact p=2, z=i/10000 counterexample, the standalone norm exceeds 10800 while every potential composition is at most 10800 times the original potential norm. Examples check nonzero two-component l1 data, small p=2 potentials at that parameter, and p=3 in the lower half-plane.",
+          "declarations": [
+            "sourceFreeResolvent_fst_scalar_bound",
+            "sourceFreeResolvent_snd_scalar_bound",
+            "norm_sourcePotentialFreeResolvent_le_scalar",
+            "norm_sourcePotentialFreeResolvent_le_height",
+            "norm_sourcePotentialFreeResolvent_lt_one",
+            "sourceNeumann_survives_pairCounterexample",
+            "lemma3_2_printed_height_bound_false"
+          ]
+        },
+        {
+          "source_lines": [
+            1383,
+            1385
+          ],
+          "requirement": "The actual resolvent equals the geometric inverse formula and its operator-valued Neumann series.",
+          "finding": "The genuine source resolvent identity and the bounded geometric inverse give R_phi = R0*(1-Phi*R0)^(-1) in the original operator algebra. HasSum identifies the convergent geometric series with that actual resolvent. All potential and input spaces retain the original finite-p pair norm. The numerical region explicitly excludes zero imaginary part, where the source denominators are undefined. A nonzero two-component l1 example checks the series at z=30i.",
+          "declarations": [
+            "sourceHeightNeumannRegion",
+            "sourceHeightNeumannRegion_subset_resolventSet",
+            "sourceResolvent_comp_one_sub_potentialFreeResolvent",
+            "sourceResolvent_neumann_formula",
+            "hasSum_sourceResolvent_neumann"
+          ]
+        },
+        {
+          "source_lines": [
+            1388,
+            1390
+          ],
+          "requirement": "The compactness sentence follows from compactness of the actual free resolvent.",
+          "finding": "Precomposing the compact free resolvent by the bounded geometric inverse proves compactness of the actual source resolvent on the printed region. The free compactness input is the explicit original-norm finite-cutoff proof from Lemma 3.2(i). Existing analyticity and discreteness results in sourceCorollary3_3 remain unchanged; this focused group concerns the literal compactness inference, not a new proof of all those dependencies.",
+          "declarations": [
+            "isCompactOperator_sourceFreeResolvent_from_cutoffs",
+            "isCompactOperator_sourceResolvent_from_neumann",
+            "sourceCorollary3_3"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Section3SourceComparison-2026-10-21",
+        "Section3SetupSourceComparison-2026-10-27",
+        "Lemma32ScalarProofSourceComparison-2026-10-27",
+        "Lemma32CompactProofSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true,
+          "retained_qualification": "Compared selected public types, hypotheses and key proof bodies. SourceDoubleResolvent inspected through the composition and coefficient formulas; HeightSpectralBox inspected through its mixed-boundary definition. This is not an independent audit of every dependency or every proof line in Section 3. The existing mathematical qualifications agree; only the opening audit scope sentence is stale."
+        },
+        "Section3SetupSourceComparison-2026-10-27": {
+          "source_record_sha256": "0b5e34f523ee0b7063f69f000415dde938c6c7161a861d6d7e0c6cb7d2039374",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module was read completely; the eight unchanged hash-listed dependencies were read in the preceding focused comparisons and their current hashes rechecked. Six focused assertion groups preserve original finite-p norms, domain and quantifiers. Existing analytic approximation, relative bounds and density are reused with their proved scope. This is not an exhaustive Section 3 source assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished; previous source refutations and corrections remain separate."
+        },
+        "Lemma32ScalarProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "19ff022da8e297322ef566716967081afbaa2fa3859348228612e167f052407c",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module and six examples were read completely. All nine unchanged hash-listed modules were fully read across this and the preceding focused comparisons, and their current hashes were checked. The rendered p.24 and exact extracted passages were compared. Five focused groups cover the scalar Holder display, centered geometry, punctured series, literal height chain and strip moment. The original pair-norm correction and both endpoint proof-sentence refutations remain unchanged. This is not a complete Section 3 assertion audit or an independent review of every transitive dependency. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Lemma32CompactProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "bb25cd5a089e2678a928858bd118e95cbd8a4a1913209930d78dad12a49a8909",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module and four examples were read completely. The seven unchanged hash-listed modules were fully read in this and the preceding focused comparisons; their current hashes were verified. The rendered p.24 and exact extracted passage were inspected. Three focused groups cover the actual signed Fourier expansion, explicit finite-rank approximants and their operator-norm closure argument. The original pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceNeumannProof.lean": "7aa61cef4b22cdceb4196104fac77637898575b77dc9e12dfb04af9850243a65",
+        "NLS/ZakharovShabat/SourceLemma32ScalarProof.lean": "1cbf179eabace53f8b7b8da2f2b7e7cfa2e034b8ff6ad8f9770000009af088cb",
+        "NLS/ZakharovShabat/SourceFreeResolventCutoff.lean": "62d6570622c6323350a618e145965639fd99267c396947936f9cfef438fc2543",
+        "NLS/ZakharovShabat/SourceFreeResolventCounterexample.lean": "c0a5a26790c001eec23e099e19c8db540e938ef95288bd6402b8ab1ec7e62a13",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/SourceSection3Setup.lean": "cf73ec97860ae8f773e889e88c98d176e7e123830aae2de6bc54548ac96d374a",
+        "NLS/ZakharovShabat/SourceCorollary3_3.lean": "ee1516d443b12f92fbc059720f726b40e22f87c14d1f42b45b52378abd0bf2f4"
+      },
+      "qualification": "The new module and four examples were read completely. The six unchanged hash-listed modules were fully read in the preceding focused comparisons and their current hashes were verified. The rendered p.25 and exact extracted proof passage were inspected. Three focused groups cover the direct original-norm estimate, actual Neumann inverse and series, and compactness inference. The existing analytic and discreteness conclusions are retained with their previous proofs. The standalone pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_record_sha256": "2659d23ce1512b9d28854639cac381992827c8e3bcb0b7583d3f5e3bb0792861"
     }
   }
 }

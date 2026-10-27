@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 3.2(i)'s finite-rank compactness proof is explicit in
-the original pair norm, with the signed Fourier expansion, rank bounds
-and operator-norm convergence. Existing source corrections remain.
+Latest step: Corollary 3.3's Neumann proof now has a direct original-norm
+composition estimate, the actual convergent resolvent series, and the
+compactness argument. The standalone pair-norm correction remains.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

@@ -77,6 +77,39 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Direct Neumann proof of Corollary 3.3
+
+[SourceNeumannProof.lean](../NLS/ZakharovShabat/SourceNeumannProof.lean)
+formalizes the potential-composition estimate, inverse formula, Neumann
+series and compactness inference printed on p.25.
+
+| Source step | Public entry point | Retained scope |
+| --- | --- | --- |
+| Composition estimate | `norm_sourcePotentialFreeResolvent_le_scalar`, `norm_sourcePotentialFreeResolvent_le_height` | The exact factor-one height bound in the original finite-p pair norm, including p=1. |
+| Strict smallness | `norm_sourcePotentialFreeResolvent_lt_one` | The printed numerical region, with nonzero imaginary part so its denominators are defined. |
+| Inverse and series | `sourceResolvent_neumann_formula`, `hasSum_sourceResolvent_neumann` | The actual source resolvent equals R0 times the geometric inverse and the operator-norm sum of its Neumann series. |
+| Compactness | `isCompactOperator_sourceResolvent_from_neumann` | Follows from the explicit finite-cutoff compactness proof for R0 and the bounded geometric inverse. |
+| Pair-norm regression | `sourceNeumann_survives_pairCounterexample` | At p=2 and z=i/10000, the standalone p-to-l1 norm exceeds 10800, while every potential composition is bounded by 10800 times its potential norm. |
+
+The direct estimate applies Young's inequality to each off-diagonal
+component and sums their p-powers. It therefore proves the composition
+bound without the factor needed for the standalone map into l1 pairs.
+No additional source correction is needed for this Corollary 3.3 step.
+
+Four examples use both nonzero components at p=1 and z=30i, small
+potentials at the p=2 counterexample parameter, p=3 at z=-i, and the
+actual series for the nonzero p=1 potential. The existing analytic
+dependence and discreteness results are retained with their previous proofs.
+
+Cor33NeumannProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records three focused groups.
+All earlier source corrections and qualifications remain. This does not
+certify every assertion in Section 3.
+
+Validation passes: 8,439 build jobs, 7,494 public examples and a
+transitive axiom audit of 42,948 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Finite-rank proof of Lemma 3.2(i)
 
 [SourceFreeResolventCutoff.lean](../NLS/ZakharovShabat/SourceFreeResolventCutoff.lean)

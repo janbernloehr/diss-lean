@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Corollary 3.3 Neumann proof, p.25 | [Original-norm Neumann proof](NLS/ZakharovShabat/SourceNeumannProof.lean), [comparison](coverage/SECTION_3.md) | Factor-one potential-composition estimate, actual inverse formula and series, compactness inference, and regression preserving the standalone pair-norm correction. |
 | Lemma 3.2(i) finite-rank proof, p.24 | [Free-resolvent cutoffs](NLS/ZakharovShabat/SourceFreeResolventCutoff.lean), [comparison](coverage/SECTION_3.md) | Actual signed Fourier series, rank at most twice the cutoff cardinality, arbitrary-accuracy operator-norm approximation and compactness on original finite-p pairs. |
 | Lemma 3.2 scalar proof, p.24 | [Scalar calculations](NLS/ZakharovShabat/SourceLemma32ScalarProof.lean), [comparison](coverage/SECTION_3.md) | Actual signed component norms, convergent conjugate moments, literal centered geometry, punctured series, height chain and 4p/r strip moment. |
 | Lemma 3.4 Hölder steps, p.25 | [Hölder estimates](NLS/ZakharovShabat/SourceLemma34Holder.lean), [comparison](coverage/SECTION_3.md) | Exact far/near index sets, convergent powered sums, original scalar norm factorization, near tail and explicit p=1 radius factors. |

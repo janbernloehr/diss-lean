@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: Finite-rank proof of Lemma 3.2(i)
+## Current milestone: Direct Neumann proof of Corollary 3.3
+
+The potential/free-resolvent composition now satisfies the printed
+factor-one height bound directly in the original finite-p pair norm.
+The actual resolvent equals the geometric inverse formula and its
+convergent operator-valued Neumann series. Compactness follows from
+the free resolvent's finite-rank approximation proof.
+
+The standalone p-to-l1 pair-norm correction remains: a regression proves
+that its p=2 counterexample still satisfies the potential-composition
+bound. Four examples cover nonzero l1 data, that same small-height
+parameter, a non-Hilbert exponent in the lower half-plane, and the actual
+Neumann series. See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,439 build jobs, 7,494
+public examples, and a transitive axiom audit of 42,948 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,084 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue with the prepared uniform neighborhood bounds in Corollary 3.5,
+then the remaining projection, rank, parity, reality and trace comparisons.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Finite-rank proof of Lemma 3.2(i)
 
 The free resolvent now has the literal convergent signed Fourier expansion
 in the original pair norm. Explicit finite Fourier cutoffs have rank at

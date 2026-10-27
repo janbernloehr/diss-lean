@@ -48,6 +48,9 @@ The literal Lemma 3.2 scalar Hölder formulas, centered denominator geometry,
 punctured-series bound, height moment chain and strip moment are also proved.
 Lemma 3.2(i)'s signed Fourier expansion, explicit finite-rank cutoffs,
 rank bound and original-norm closure argument are also proved.
+The direct Corollary 3.3 composition bound, actual Neumann inverse and
+series, and compactness inference are now proved in the original norm;
+the standalone pair-norm counterexample remains valid.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive
