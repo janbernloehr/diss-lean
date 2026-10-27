@@ -3711,6 +3711,7 @@ import NLS.ZakharovShabat.SourceSection20Moments
 import NLS.ZakharovShabat.SourceSection20Frequencies
 import NLS.ZakharovShabat.SourceSection20Factors
 import NLS.ZakharovShabat.SourceSection20Original
+import NLS.ZakharovShabat.SourceFrequencyMixedIntroduction
 import NLS.ZakharovShabat.SourceFiniteGapAngleWeighted
 import NLS.ZakharovShabat.SourceFiniteGapAngleSobolev
 import NLS.ZakharovShabat.SourceFiniteGapAngleEnergy

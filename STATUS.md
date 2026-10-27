@@ -1,6 +1,34 @@
 # Implementation status
 
-## Current milestone: Ordinary frequencies and the physical mass shift
+## Current milestone: The literal mixed-frequency estimate
+
+The introductory estimate `omega-star = ell(p/2) + OnePlus` now has a
+direct theorem for every finite p>1. One complex domain contains the real
+source locus. At every point, one neighborhood and one pair of component
+maps work before choosing any finite OnePlus projection exponent.
+Both components have the required locally uniform bounds, including
+quasi-normed half-exponents below one.
+
+Two examples check simultaneous projection bounds at p=3/2 and reconstruct
+the actual ell2 frequency sequence at p=4 on a complex neighborhood.
+The stronger corrected remainder `omega-star + 2I` remains separate.
+See the [introduction audit](coverage/INTRODUCTION.md).
+
+Validation: `./scripts/check.sh` passes with 8,427 build jobs, 7,460
+public examples, and a transitive axiom audit of 42,786 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 2,945 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The [completion assessment](coverage/COMPLETENESS.md) distinguishes proved
+results, formally refuted source assertions and corrections, contextual
+claims, and unresolved identifications. Historical auxiliary-height status
+sentences are reconciled with the existing p=2 theorem and p=1024
+counterexample. Next: assess the unnumbered source assertions systematically;
+the current selected comparisons do not prove exhaustive coverage.
+The precise 2014 construction and Appendix G.2 norm interpretation remain open.
+
+## Previous milestone: Ordinary frequencies and the physical mass shift
 
 The original ordinary frequencies now satisfy the sharp limit
 `omega_n - (2*pi*n)^2 -> 4M` as the absolute signed index grows.

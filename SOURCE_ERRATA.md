@@ -2389,9 +2389,10 @@ The original extension bound is sufficient; optimality is not claimed.
 
 The actual restricted spectrum is closed, discrete, finite in bounded
 regions, and equals the classical physical auxiliary eigenvalue set at p=2.
-These results do not settle Proposition 5.2's uniform multiplicities,
-reality, or printed norm-dependent height. In particular, they introduce
-no replacement for that numerical height claim.
+These operator results alone do not supply Proposition 5.2's uniform
+multiplicities, reality, or printed norm-dependent height. The separate
+counting, reality and printed-height audits below give the current outcome;
+no replacement numerical height is adopted.
 
 
 ## Proposition 5.2 proof: auxiliary N count 2N−1 on page 35
@@ -2412,8 +2413,9 @@ is proved independently through actual physical root spaces.
 The general original counting theorem proves 2N+1 in height-N boxes.
 For real-type input any nonnegative central height gives the same cluster
 and exhaustive localization. The norm-dependent printed height for general
-complex input remains a distinct unresolved source claim here; neither
-the count correction nor the reality result silently changes that bound.
+complex input is handled separately below: the unrestricted assertion is formally refuted, while
+the p=2 formula is proved. Neither the count correction nor the reality
+result changes the printed bound.
 
 
 ## Proposition 5.2 proof: actual auxiliary contour ranks
@@ -2424,10 +2426,10 @@ dependence, and full Jordan multiplicity interpretation. Both central ranks
 are 2N+1; both high-disk ranks are one. This confirms the page-35 count
 correction without a further phase or normalization correction.
 
-These central contour theorems use rectangles of height N. They do not
-settle the separate norm-dependent height printed in Proposition 5.2 for
-general complex input. Real-type prescribed-height results and the literal
-zero-input count counterexample from the previous milestone remain valid.
+These central contour theorems use rectangles of height N. The separate
+printed-height audit below proves the p=2 assertion and refutes unrestricted
+complex-input exhaustion. Real-type prescribed-height results and the
+literal zero-input count counterexample remain valid.
 
 
 ## Proposition 5.2: unrestricted printed auxiliary height is false (page 34)

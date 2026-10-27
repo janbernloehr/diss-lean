@@ -69094,3 +69094,71 @@ example {W₀ W V : Set (CoeffPair 4)}
   exact hm ((mul_eq_zero.mp he).resolve_left (by norm_num))
 
 end IntroductionOrdinaryFrequencyChecks
+
+noncomputable section
+namespace IntroductionMixedFrequencyChecks
+open Set NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Below the Hilbert endpoint the same quasi-normed component and OnePlus
+-- component work for two distinct projection exponents on one neighborhood.
+example {W₀ W V Wa B U : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ T : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ U ∧
+      ∃ g : CoeffPair (ENNReal.ofReal (3/2)) → Coeff (ENNReal.ofReal (3/4)),
+      ∃ h : CoeffPair (ENNReal.ofReal (3/2)) → CoeffOnePlus,
+        ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ T,
+          (∀ n, A.renormalizedFrequency n ψ = g ψ n + (h ψ).1 n) ∧
+          ‖g ψ‖ ≤ C ∧
+          ‖CoeffOnePlus.toCoeff 2 (by norm_num) (by simp) (h ψ)‖ ≤ C ∧
+          ‖CoeffOnePlus.toCoeff 3 (by norm_num) (by norm_num) (h ψ)‖ ≤ C := by
+  have hf := Q.frequency_mixed_at_real φ
+  have he : ENNReal.ofReal ((ENNReal.ofReal (3/2)).toReal/2) = ENNReal.ofReal (3/4) := by norm_num
+  rw [he] at hf
+  obtain ⟨T,hT,hφ,hTU,g,h,hval,⟨C₀,hC₀,hg⟩,hh⟩ := hf
+  obtain ⟨C₂,hC₂,h₂⟩ := hh 2 (by norm_num) (by simp)
+  obtain ⟨C₃,hC₃,h₃⟩ := hh 3 (by norm_num) (by norm_num)
+  refine ⟨T,hT,hφ,hTU,g,h,C₀+C₂+C₃+1,by positivity,?_⟩
+  intro ψ hψ
+  exact ⟨hval ψ hψ,by linarith [hg ψ hψ],by linarith [h₂ ψ hψ],by linarith [h₃ ψ hψ]⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- At FL4 the locally bounded mixed pair reconstructs the actual analytic
+-- ell2 frequency sequence throughout the same complex neighborhood.
+example {W₀ W V Wa B U : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) :
+    ∃ Y : Set (CoeffPair 4), IsOpen Y ∧ realTypeSourceLocus 4 ⊆ Y ∧ Y ⊆ U ∧
+      ∀ φ ∈ Y, ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ ∈ T ∧ T ⊆ Y ∧
+        ∃ g : CoeffPair 4 → Coeff 2, ∃ h : CoeffPair 4 → CoeffOnePlus,
+          ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T,
+            A.frequencySequence 2 ψ = g ψ + CoeffOnePlus.toCoeff 2 (by norm_num) (by simp) (h ψ) ∧
+              ‖A.frequencySequence 2 ψ‖ ≤ C := by
+  have hf := Q.exists_frequency_mixed_neighborhood
+  have he : ENNReal.ofReal ((4 : ℝ≥0∞).toReal/2) = 2 := by norm_num
+  rw [he] at hf
+  obtain ⟨Y,hY,hreal,hYU,hlocal⟩ := hf
+  refine ⟨Y,hY,hreal,hYU,?_⟩
+  intro φ hφ
+  obtain ⟨T,hT,hφT,hTY,g,h,hval,⟨C₀,hC₀,hg⟩,hh⟩ := hlocal φ hφ
+  obtain ⟨C₂,hC₂,h₂⟩ := hh 2 (by norm_num) (by simp)
+  refine ⟨T,hT,hφT,hTY,g,h,C₀+C₂,add_nonneg hC₀ hC₂,?_⟩
+  intro ψ hψ
+  have hseq : A.frequencySequence 2 ψ =
+      g ψ + CoeffOnePlus.toCoeff 2 (by norm_num) (by simp) (h ψ) := by
+    ext n
+    rw [(Q.sequence 2 (by simp) (by norm_num) (by norm_num)).1 ψ (hYU (hTY hψ)) n,hval ψ hψ n]
+    rfl
+  refine ⟨hseq,?_⟩
+  rw [hseq]
+  exact (norm_add_le _ _).trans (add_le_add (hg ψ hψ) (h₂ ψ hψ))
+
+end IntroductionMixedFrequencyChecks

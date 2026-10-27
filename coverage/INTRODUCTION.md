@@ -22,6 +22,37 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Literal mixed-frequency estimate, printed p. 16
+
+[SourceFrequencyMixedIntroduction.lean](../NLS/ZakharovShabat/SourceFrequencyMixedIntroduction.lean)
+proves the displayed `omega-star = ell(p/2) + OnePlus` estimate directly
+for every finite p>1. `exists_frequency_mixed_neighborhood` constructs one
+open complex domain containing the entire real source locus, inside the
+retained original domain. At each complex point, one source neighborhood
+and two maps realize the original scalar frequency as their exact sum.
+The first map takes values in ell(p/2), with a uniform local norm bound.
+The second lies in OnePlus, with a uniform local bound for each finite
+projection exponent r>1. The neighborhood and maps precede the exponent.
+`frequency_mixed_at_real` gives the corresponding real-source interface.
+
+The half-exponent may lie below one. OnePlus means membership at every
+finite exponent above one; no ell1 endpoint or analytic structure for the
+component maps is asserted. Analyticity of the frequency itself remains
+in the existing common sequence-realization theorem. The stronger
+corrected remainder `omega-star + 2I` in `ell(p/3) + OnePlus` is separate.
+
+Two public examples exercise an ell3/4 component at source exponent 3/2,
+with simultaneous bounds on two OnePlus projections, and reconstruct the
+actual ell2 frequency at source exponent 4 on a complex neighborhood.
+The comparison `IntroductionMixedFrequencySourceComparison-2026-10-27`
+in the [source-comparison snapshot](source-review-index.json) supplements
+the preceding related-results comparison without changing its provenance.
+The [completion assessment](COMPLETENESS.md) records the remaining scope.
+
+Validation passes: 8,427 build jobs, 7,460 public examples and a
+transitive axiom audit of 42,786 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Ordinary frequencies and related results, printed pp. 15–16
 
 [SourceOrdinaryFrequencyAsymptotic.lean](../NLS/ZakharovShabat/SourceOrdinaryFrequencyAsymptotic.lean)
@@ -64,7 +95,8 @@ distinctions:
   The source sequence maps are analytic for finite r>1 with r>=p/2.
   These imply the weaker printed mixed membership: for p>2 the frequency
   lies in ell(p/2); for 1<p<=2 it lies in OnePlus. This is a consequence
-  of the retained realizations, not a new local decomposition constructor.
+  of the retained realizations. The new direct local decomposition is
+  recorded above.
 - The stronger proved common remainder is `omega-star + 2I` in
   `ell(p/3) + OnePlus`. Its two parts are chosen before the target exponent.
   The local inverse at zero and generic local inverses use finite p>2,

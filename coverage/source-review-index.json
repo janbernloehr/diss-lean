@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T11:53:11.421986+00:00",
-  "base_commit": "d861ecd854a06f2b0bc0caa76018ffa82a71acbf",
+  "published_utc": "2026-10-27T12:16:11.864117+00:00",
+  "base_commit": "6e912cd079615afb5e323456dc18ad373c9e7ee8",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 63,
-    "module_hash_checks": 950,
-    "distinct_modules": 795
+    "review_records": 64,
+    "module_hash_checks": 960,
+    "distinct_modules": 797
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d861ecd854a06f2b0bc0caa76018ffa82a71acbf",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceOrdinaryFrequencyAsymptotic, SourcePhysicalFrequencyAsymptotic and four public examples.",
+    "base_commit": "6e912cd079615afb5e323456dc18ad373c9e7ee8",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceFrequencyMixedIntroduction and two public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8426,
-    "public_examples": 7458,
-    "transitive_NLS_declarations": 42784,
+    "build_jobs": 8427,
+    "public_examples": 7460,
+    "transitive_NLS_declarations": 42786,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4703,
-      "sha256": "12abcbf283efe51f47f30ea2ff2d39a752580b6cc9ddc1cca0e9f36913e4b137"
+      "files": 4704,
+      "sha256": "1d440fceccc0b32d8ed1a86a41732674aa18f21d3663586ecd24020504c7d4e3"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -12221,6 +12221,129 @@
       "contextual_scope": "This record distinguishes the mathematical dNLS frequency claim from historical attribution and the external Korotyaev/KdV estimates. Acknowledgments and funding at736-743 are contextual, not Lean assertions. The organizational summary reuses explicitly identified earlier source comparisons.",
       "qualification": "Hash-listed modules were read completely during this assessment, its retained preparation or the immediately preceding method assessment; their current hashes were verified. Two new modules and four examples establish the sharp ordinary-frequency limit and its literal physical-energy derivative interpretation. Earlier section comparisons are reused explicitly with unchanged evidence. The weaker mixed-membership sentence is explained using existing analytic sequence realizations; no new local mixed-decomposition constructor is claimed. The exact2014 construction identification and AppendixG2 norm interpretation remain unresolved. No complete-introduction or complete-dissertation claim is made.",
       "source_record_sha256": "08ea949391a4362f4db772f0d1a7a95171162224824538f873582661f5434bad"
+    },
+    "IntroductionMixedFrequencySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6e912cd079615afb5e323456dc18ad373c9e7ee8",
+      "updated_utc": "2026-10-27T12:16:11.864117+00:00",
+      "source_lines": [
+        [
+          698,
+          703
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            698,
+            703
+          ],
+          "requirement": "The uncorrected original frequency has the literal ell(p/2)+OnePlus asymptotic, locally uniformly near real FLp sources.",
+          "finding": "For every finitep>1 and any retained original Section20 family, one open complex domain contains the entire real locus and lies in the original source domain. Every complex point in it has a source neighborhood and two maps g,h with exact equality omega-star=g+h, g inell(p/2), h inOnePlus. The neighborhood and both maps are chosen before any finite OnePlus projection exponentr>1. The half-exponent norm is uniformly bounded, and every OnePlus projection has its own uniform bound on that same neighborhood. Actual sequence coordinates are identified with the original scalar moments before the decomposition lemma is applied. Quasi-normed half-exponents below one are included. The component maps are not asserted analytic; the original frequency retains the separate analytic sequence-realization theorem.",
+          "declarations": [
+            "SourceSection20Data.exists_frequency_mixed_neighborhood",
+            "SourceSection20Data.frequency_mixed_at_real",
+            "SourceAbelianMomentAtlas.exists_frequencySequence_neighborhood",
+            "Coeff.exists_onePlus_decomposition_of_refined",
+            "onePlusSubmodule"
+          ]
+        },
+        {
+          "source_lines": [
+            698,
+            703
+          ],
+          "requirement": "Distinguish the printed mixed estimate from the stronger action correction and preserve its source interpretation.",
+          "finding": "This milestone directly constructs a common decomposition of omega-star itself. The earlier refined action remainder omega-star+2I inell(p/3)+OnePlus remains separate, with its existing common decomposition and local-inverse exponent restrictions. The new theorem does not addp1, anell1 endpoint forOnePlus, analytic component maps, or anell1 frequency inverse. Public examples use one decomposition atp3/2 with itsell3/4 component and two independent OnePlus projection bounds, and atp4 reconstruct the actual analyticell2 sequence on the entire local complex neighborhood.",
+          "declarations": [
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalFrequencyData.mixed",
+            "exists_sourceActionFrequency_asymptotic",
+            "SourceSection20Data.sequence_analytic"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27",
+        "Section20SourceComparison-2026-10-27",
+        "Section5SourceComparison-2026-10-21",
+        "Section2SourceComparison-2026-10-27",
+        "AppendixFSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27": {
+          "source_record_sha256": "08ea949391a4362f4db772f0d1a7a95171162224824538f873582661f5434bad",
+          "module_hashes_verified": true
+        },
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27": {
+          "source_record_sha256": "ef63081f90afa903e8dcdbad6b868e44daab92a64a8bb5976dfe96ebec51e6f5",
+          "module_hashes_verified": true
+        },
+        "Section18SourceComparison-2026-10-27": {
+          "source_record_sha256": "483a2acba2980ec2b3182fdf2701fc205c927f2d3a1fc1d3b1978d6b6af45c8e",
+          "module_hashes_verified": true
+        },
+        "Section20SourceComparison-2026-10-27": {
+          "source_record_sha256": "39f02d6e478af59b3c83001ccf11bb4cfc058bd51bf3030baf03b4e736122754",
+          "module_hashes_verified": true
+        },
+        "Section5SourceComparison-2026-10-21": {
+          "source_record_sha256": "171daa07c6c30a2a8cb59e5ef4425bb01d2f5c92e82d60d78e8eb337578415e2",
+          "module_hashes_verified": true
+        },
+        "Section2SourceComparison-2026-10-27": {
+          "source_record_sha256": "f2713005bdc39fdc5d0cac8be972103a0f32ae55402bdc5dd701ebd182333822",
+          "module_hashes_verified": true
+        },
+        "AppendixFSourceComparison-2026-10-27": {
+          "source_record_sha256": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+          "module_hashes_verified": true
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceFrequencyMixedIntroduction.lean": "46ae50be0df55b1b62a0524f21e0a08013f423464d90b053cbfa3460058a432e",
+        "NLS/ZakharovShabat/SourceFrequencySequenceBounds.lean": "2cacd5dbe9cd72a72183b5979b3373dd093880e1212e2732674e156df1a62005",
+        "NLS/ZakharovShabat/SourceSection20Original.lean": "9ed9a2dc3c7fb07a0a4ae68596bbfd954421fb3b39db74cfeaf9072b5b855415",
+        "NLS/ZakharovShabat/SourceSection20Domain.lean": "f6952eabd138e7105bb4eb4d4def41b38f42afa65607a089fc6aedc5b963913e",
+        "NLS/ZakharovShabat/SourceActionFrequencyAsymptotic.lean": "5a7ee1a266669f22892cbb4db2898014732b7e9429cde3d4a2398c3e3325fcca",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/ZakharovShabat/SourceAuxiliaryHeightCounterexample.lean": "7f0757168a8f156597e4fd74790afd41e3c0aa5833f2d51956552c72809ff8bc",
+        "NLS/ZakharovShabat/SourceAuxiliaryPrintedHeight.lean": "5a388d9ad4c1b13d2f36ba893e8a4cc46724c34cde05a9ec2be395a40fbeb000",
+        "NLS/SequenceSpaces/OnePlus.lean": "e472bb3015a5446e75ecf9662ab5918ac3fa826c721223565e340871a1670111",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean": "9d27ac91ed0d81aa869c7ae8cb22e9cc0497a440c772e5807501ed8ba6cbd616"
+      },
+      "rendered_source": {
+        "printed_pages": [
+          15,
+          16
+        ],
+        "images": {
+          "IntroductionMethodsCurrentReview-015.png": "a3db236d7c15f94f86acf803f01bf8e5b8142823236afc6c313c2eb262a6207e",
+          "IntroductionRelatedResultsCurrentReview-016.png": "9c19eb039b9e63ee51333947091687c7a4b9016389fcb7c8f895fa0308d047e0"
+        },
+        "inspection": "Viewed both rendered pages. Page15 says strict convexity in its historical paragraph; page16 uses the more general phrase convexity properties referring to Theorem0.2 and prints the weaker omegaStar=ell(p/2)+ell1+ formula."
+      },
+      "documentary_reconciliation": [
+        {
+          "file": "SOURCE_ERRATA.md",
+          "scope": "Proposition5.2 historical status paragraphs",
+          "finding": "The older unresolved-height wording is superseded by the explicit unrestricted-complex counterexample atp1024 and the validp2 theorem. The original norm, actual auxiliary spectrum, height-N contour counts, and absence of an adopted replacement numerical bound are preserved. Both current height modules were read completely.",
+          "declarations": [
+            "sourceAuxiliaryPrintedHeight_counterexample",
+            "not_sourceProposition5_2_printed_exhaustion",
+            "sourceProposition5_2_two"
+          ]
+        },
+        {
+          "scope": "Two ambiguous short declaration references",
+          "finding": "AppendixF uses NLS.ZakharovShabat.sourceLemmaF2 for the domain construction and the separately cited family-level theorem for the boundary formula. The Section2 pair-product paragraph uses both finite and infinity-pair namespaces, with the separate one/infinity theorem. The new completeness note supplies the fully qualified references; earlier records remain unchanged. Reference resolution is not a theorem-scope proof."
+        }
+      ],
+      "qualification": "The ten hash-listed modules were read completely in this assessment or in retained preparation and preceding source comparisons; their current hashes were verified. The two new theorems and two examples are a direct interface for the displayed mixed estimate. Historical-status cleanup follows inspected existing proofs, not new mathematical claims. Earlier source records are preserved. The source-review index explicitly covers selected unnumbered assertions and does not provide an exhaustive source-wide completion proof. The exact2014 construction and AppendixG2 norm interpretation remain unresolved.",
+      "source_record_sha256": "4404c1d5686254fee2c27c4a7d608fd16e60c65adda9dd1e1b478aee666f214b"
     }
   }
 }

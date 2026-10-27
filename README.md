@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original ordinary frequency remainder now tends to
-exactly four times physical mass: `omega_n - (2*pi*n)^2 -> 4M`, for
-all real Fourier-Lebesgue inputs with 1<p<=2. On real H1 inputs these
-frequencies are proved to be the literal action derivatives of the full
-physical energy, including infinitely many open gaps.
-See the [introduction audit](coverage/INTRODUCTION.md).
+Latest step: the introductory mixed-frequency estimate now has one
+locally bounded decomposition in `ell(p/2) + OnePlus`, on a complex domain
+containing every real source, for each finite p>1. The neighborhood and
+both components are chosen before the OnePlus projection exponent.
+See the [introduction audit](coverage/INTRODUCTION.md) and the
+[completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
