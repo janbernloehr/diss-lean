@@ -67853,3 +67853,37 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end PhysicalEndpointSpectraExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalPeriodicMultiplicityExamples
+
+example (φ : CoeffPair 2) (z : ℂ) (n : ℕ) (x : PairSpace 2) :
+    periodicPhysicalBaseEquiv x ∈ physicalPeriodicRootSpace φ z n ↔
+      x ∈ periodicRootSpace (by simp) (CoeffPair.toMax 2 φ) z n :=
+  mem_physicalPeriodicRootSpace_iff φ z n x
+
+example (φ : CoeffPair 2) (z : ℂ) :
+    FiniteDimensional ℂ (physicalPeriodicRootSpaceTop φ z) :=
+  finiteDimensional_physicalPeriodicRootSpaceTop φ z
+
+example (φ : CoeffPair 2) (z : ℂ) :
+    physicalPeriodicAlgebraicMultiplicity φ z =
+      periodicAlgebraicMultiplicity (by simp) (CoeffPair.toMax 2 φ) z :=
+  physicalPeriodicAlgebraicMultiplicity_eq φ z
+
+example (φ : CoeffPair 2) (z : ℂ) :
+    0 < physicalPeriodicAlgebraicMultiplicity φ z ↔ z ∈ physicalPeriodicSpectrum φ :=
+  physicalPeriodicAlgebraicMultiplicity_pos_iff φ z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    (∑ᶠ n : ℤ, ({physicalPeriodicLeft u n,physicalPeriodicRight u n} : Multiset ℂ).count z) =
+      physicalPeriodicAlgebraicMultiplicity (periodOnePair (sourcePhysicalL2Equiv.symm u)) z :=
+  physicalPeriodicEndpoints_count_multiplicity u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    analyticOrderAt (fun w => l2Discriminant u w ^ 2 - 4) z =
+      (physicalPeriodicAlgebraicMultiplicity (periodOnePair (sourcePhysicalL2Equiv.symm u)) z : ℕ∞) :=
+  analyticOrderAt_l2Discriminant_eq_physicalMultiplicity u z
+
+end PhysicalPeriodicMultiplicityExamples
+end NLS.ZakharovShabat

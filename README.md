@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the physical endpoint labels enumerate the actual period-two
-operator spectrum. The periodic and antiperiodic spectra are the physical
-trace levels plus/minus two; at real type, even/odd endpoint indices give
-exactly the respective spectra, with strict separation of adjacent pairs.
+Latest step: actual physical period-two Jordan chains are finite dimensional
+and exactly conjugate to the original coefficient chains. Their dimensions
+equal the physical endpoint counts and characteristic zero orders for every
+complex L2 potential. Separate signed multiplicity comparison remains pending.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

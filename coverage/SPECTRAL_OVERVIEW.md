@@ -1339,3 +1339,33 @@ spectrum and odd indices exhaust the actual antiperiodic spectrum.
 The comparison of full physical Jordan-chain dimensions with the existing
 algebraic multiplicities remains separate. Full dissertation semantic
 completion, exact2014 and G2 remain separate questions.
+
+## Actual physical root chains and algebraic multiplicities
+
+The multiplicity of the actual physical period-two operator is now defined
+as the dimension of its full generalized eigenspace. This implements the
+period-two multiplicity aspect of the opening spectral enumeration on p.17.
+[`LinearPMapRootSpace.lean`](../NLS/FunctionalAnalysis/LinearPMapRootSpace.lean)
+defines root chains by repeatedly applying the actual partial-operator
+pencil, requiring its original domain at every step. It proves transport
+of every finite level and the full increasing union under exact base and
+domain isomorphisms. Full physical root vectors lie in the actual domain.
+
+[`PhysicalPeriodicRootSpaces.lean`](../NLS/ZakharovShabat/PhysicalPeriodicRootSpaces.lean)
+defines these chains for the actual physical period-two operator. Exact
+Fourier synthesis and domain equivalence identify every finite level and
+the full generalized eigenspace with the original coefficient root space.
+The physical chains stabilize and their full space is finite dimensional
+for every complex L2 potential, without a real-type assumption.
+
+[`PhysicalPeriodicMultiplicity.lean`](../NLS/ZakharovShabat/PhysicalPeriodicMultiplicity.lean)
+defines physical algebraic multiplicity from that actual full-space
+dimension and proves equality with the existing coefficient multiplicity.
+Positivity is equivalent to the independently defined physical spectrum;
+vanishing is equivalent to actual bounded invertibility. The intrinsic
+physical endpoint labels count precisely this dimension, and the physical
+discriminant squared minus four has exactly this analytic zero order.
+Every free signed lattice point has physical algebraic multiplicity two.
+
+The separate signed physical Jordan-chain comparison remains to be made.
+Full dissertation semantic completion, exact2014 and G2 remain separate.

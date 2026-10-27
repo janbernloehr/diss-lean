@@ -4677,3 +4677,6 @@ import NLS.ZakharovShabat.ClassicalSignedEigenvalues
 import NLS.ZakharovShabat.PhysicalPeriodicSpectrum
 import NLS.ZakharovShabat.ClassicalSignedDiscriminant
 import NLS.ZakharovShabat.ClassicalSignedEndpointLabels
+import NLS.FunctionalAnalysis.LinearPMapRootSpace
+import NLS.ZakharovShabat.PhysicalPeriodicRootSpaces
+import NLS.ZakharovShabat.PhysicalPeriodicMultiplicity

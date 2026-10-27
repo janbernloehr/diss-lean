@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: physical endpoint labels and exact signed spectra
+## Current milestone: actual physical period-two root spaces and multiplicity
+
+The algebraic multiplicity of the actual physical period-two operator
+is now the dimension of its full physical Jordan-chain space. The chains
+use the actual operator pencil and require the full H1 domain at every
+step. They are finite dimensional and stabilize for every complex L2
+potential.
+
+Exact Fourier conjugacy proves equality with the original coefficient
+multiplicity. The physical endpoint labels count this dimension, and the
+physical characteristic function has precisely this analytic zero order.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+full comparison. Separate signed physical root-chain multiplicities,
+the remaining semantic source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,373 build jobs, 7,349
+public examples, and a transitive axiom audit of 42,169 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,718 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical endpoint labels and exact signed spectra
 
 The intrinsic physical endpoint labels now enumerate the actual
 bounded-inverse spectrum of the physical period-two operator. For every
