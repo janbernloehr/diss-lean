@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: all substantive assertions in the spectral overview now have
-an ordered inventory linking their exact scope to existing proofs and
-retaining the recorded source corrections. The introduction and both
-abstracts have their own consolidated assessments.
-See the [spectral overview inventory](coverage/SPECTRAL_OVERVIEW.md) and
+Latest step: two reversed p=1 inequalities in the proof of Lemma 3.2
+now have Lean counterexamples and corrected upper bounds for the actual
+free resolvent. Its exact norm at nonzero imaginary parameters is proved.
+Section 2 was reconciled with its existing full comparison.
+See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

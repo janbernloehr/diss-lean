@@ -69274,3 +69274,32 @@ example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → Delete
     hG.continuousAt.continuousWithinAt
 
 end OrdinaryFrequencyNonextensionChecks
+
+noncomputable section
+namespace Lemma32EndpointProofChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+-- A negative imaginary parameter has the same sharp actual pair norm;
+-- the proof retains the original component-sum norm at exponent one.
+example : ∃ hz : (-2 * Complex.I) ∉ freeLattice,
+    ‖sourceFreeResolventToL1 (by simp : (1 : ℝ≥0∞) ≠ ⊤) (-2 * Complex.I) hz‖ = 1/2 ∧
+      freeReciprocalSup (-2 * Complex.I) = 1/2 := by
+  refine ⟨notMem_freeLattice_of_im_ne_zero (by norm_num), ?_, ?_⟩
+  · simpa using norm_sourceFreeResolventToL1_one_pureImaginary (-2) (by norm_num)
+  · simpa using freeReciprocalSup_pureImaginary (-2) (by norm_num)
+
+-- The corrected strip bound applies on the real axis as well: the actual
+-- inverse at one half is bounded by two, without a nonzero-height premise.
+example : ∃ hz : (1/2 : ℂ) ∉ freeLattice,
+    ‖sourceFreeResolventToL1 (by simp : (1 : ℝ≥0∞) ≠ ⊤) (1/2) hz‖ ≤ 2 := by
+  have hr : (1/2 : ℝ) ≤ Real.pi/4 := by linarith [Real.one_le_pi_div_two]
+  have hs : (1/2 : ℂ) ∈ verticalStrip 0 (1/2) := by
+    constructor
+    · norm_num
+      linarith [Real.one_le_pi_div_two]
+    · norm_num
+  refine ⟨notMem_freeLattice_of_mem_verticalStrip (by norm_num) hr hs, ?_⟩
+  simpa using norm_sourceFreeResolventToL1_one_le_strip (by norm_num) hr hs
+
+end Lemma32EndpointProofChecks

@@ -32,8 +32,11 @@ priority are outside that assessment. The introduction now also has a
 37-group ordered assertion inventory, preserving its four refuted formulas
 and all earlier scope qualifications. The [complete spectral overview](SPECTRAL_OVERVIEW.md)
 now has 27 ordered groups, preserving both unrestricted height refutations
-and the complex finite-gap regularity correction. Continue with Section 2,
-then through the remaining source assertions in order.
+and the complex finite-gap regularity correction. The complete Section 2
+text has been reconciled with its existing twelve-group comparison and
+three corrections. The next step in Section 3 has proved two additional
+endpoint-inequality corrections in Lemma 3.2's proof. Continue through
+the remaining Section 3 proof assertions, then later sections in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

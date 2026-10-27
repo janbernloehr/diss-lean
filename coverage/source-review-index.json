@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T13:29:51.547690+00:00",
-  "base_commit": "fcaf5d9ef5135a04a2a3def5bebb3f8d5398de46",
+  "published_utc": "2026-10-27T14:03:29.814042+00:00",
+  "base_commit": "3787caf0adbeb807c62c2c9c85fa8464f4fcb16d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 69,
-    "module_hash_checks": 1010,
-    "distinct_modules": 806
+    "review_records": 70,
+    "module_hash_checks": 1018,
+    "distinct_modules": 809
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1795500335d37571f531ce71f5f32c1707f59548",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceOrdinaryFrequencyNonextension and two public examples.",
+    "base_commit": "3787caf0adbeb807c62c2c9c85fa8464f4fcb16d",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma32EndpointProof and two public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8430,
-    "public_examples": 7464,
-    "transitive_NLS_declarations": 42809,
+    "build_jobs": 8431,
+    "public_examples": 7466,
+    "transitive_NLS_declarations": 42820,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4707,
-      "sha256": "7bc198251f0889f8d4ad2685df1e4b2baeb5360f8fe7b2f713e9a93b92b281d2"
+      "files": 4708,
+      "sha256": "9783353f359ee4e260e9f4f81b1aacdf3dd4feeaa31782706f7996a72a422269"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -16180,6 +16180,152 @@
       },
       "qualification": "This consolidation reuses eleven qualified comparisons with their unchanged module hashes. Only the six newly hash-listed modules were reread completely in this step; it is not an independent rereview of all transitive proofs. It preserves both unrestricted printed-height refutations, the complex finite-gap regularity counterexample, the signed-domain interpretation, the local Neumann-variable typo, and all exponent restrictions. Historical priority, external KdV results and the cited Schroedinger analogy are contextual rather than independently certified. The inventory covers Section 1 only, not the whole spectral chapter or dissertation. The exact cited 2014 construction and Appendix G.2 norm interpretation remain unresolved.",
       "source_record_sha256": "49fe39ca1b88565ab97ba457ccc9121b5c64253f394c972a01fe777606b353a4"
+    },
+    "Lemma32EndpointProofSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3787caf0adbeb807c62c2c9c85fa8464f4fcb16d",
+      "updated_utc": "2026-10-27T14:03:29.814042+00:00",
+      "source_lines": [
+        [
+          1089,
+          1210
+        ],
+        [
+          1290,
+          1360
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1342,
+            1343
+          ],
+          "requirement": "The proof claims that at p=1 the reciprocal supremum is at least sqrt(2)/abs(Im lambda).",
+          "finding": "The rendered page confirms the printed greater-than-or-equal sign. The literal supremum at lambda=i is exactly one, so the lower bound sqrt(2) is false. The corrected upper bound is 1/abs(Im lambda) at every nonreal parameter; it is stronger than the upper bound obtained just by reversing the printed sign. The supremum is identified with the actual p=1 reciprocal-symbol norm.",
+          "declarations": [
+            "freeReciprocalSup",
+            "scalarFreeL1Bound_one_eq_reciprocalSup",
+            "freeReciprocalSup_le_height",
+            "freeReciprocalSup_pureImaginary",
+            "lemma3_2_proof_height_lower_bound_false"
+          ]
+        },
+        {
+          "source_lines": [
+            1359,
+            1360
+          ],
+          "requirement": "The proof claims that at p=1 the reciprocal supremum is at least 1/r throughout the punctured strip.",
+          "finding": "The rendered page again prints a lower bound. At lambda=pi*i, n=0 and r=pi/4, every stated strip hypothesis holds but the supremum is 1/pi, strictly below 4/pi. The corrected upper bound 1/r is proved at every integer strip index, for 0<r<=pi/4, including real spectral parameters. Positivity and denominator separation are retained.",
+          "declarations": [
+            "freeReciprocalSup_le_verticalStrip",
+            "freeReciprocalSup_pureImaginary",
+            "lemma3_2_proof_strip_lower_bound_false"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              1290,
+              1301
+            ],
+            [
+              1313,
+              1360
+            ]
+          ],
+          "requirement": "The corrected endpoint estimates must control the actual original-norm resolvent, not only a substitute scalar quantity.",
+          "finding": "The existing free resolvent preserves both original coefficient sequences under the component-sum norm. At p=1 its norm is bounded by 1/abs(Im lambda) off the real axis and by 1/r on the stated punctured strips. For every nonzero real y, the actual pair operator norm at lambda=i*y equals 1/abs(y), with the zero modes attaining the lower bound. Integration examples use negative height y=-2 and the real parameter one half; the latter requires no nonzero-imaginary-part assumption. These corrections are independent of the already refuted missing two-component factor for general p in Lemma 3.2(ii), and do not change the proved endpoint or strip clauses.",
+          "declarations": [
+            "sourceFreeResolventToL1",
+            "sourceFreeResolventToL1_diagonal_zero",
+            "norm_sourceFreeResolventToL1_one_le_im",
+            "norm_sourceFreeResolventToL1_one_le_strip",
+            "norm_sourceFreeResolventToL1_one_pureImaginary"
+          ]
+        }
+      ],
+      "section2_reconciliation": {
+        "source_lines": [
+          1089,
+          1210
+        ],
+        "review": "Section2SourceComparison-2026-10-27",
+        "group_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "finding": "The complete section was read in order against all twelve existing groups. They cover the scalar distribution carrier and normalized action, Banach and reflexive structure, Fourier convergence, scalar duality and pairings, signed pair basis and both norms, gradients, bracket domains and final notation. Preserve the three proved corrections: infinity norm convergence, the scalar bilinear Fourier index and arbitrary infinity-source gradient representation. The four directly reread pair-norm/distribution/Jacobi modules confirm the exact endpoint norm and signed convention; Jacobi on a single ambient domain does not assert closure of arbitrary reciprocal-Sobolev intersections. No new Section 2 implementation gap was identified by this reconciliation; it is not an independent rereview of all 31 previously checked modules."
+      },
+      "related_reviews": [
+        "Section2SourceComparison-2026-10-27",
+        "Section2NativeDualitySourceComparison-2026-10-27",
+        "Section3SourceComparison-2026-10-21"
+      ],
+      "related_evidence_hashes": {
+        "Section2SourceComparison-2026-10-27": {
+          "source_record_sha256": "f2713005bdc39fdc5d0cac8be972103a0f32ae55402bdc5dd701ebd182333822",
+          "module_hashes_verified": true,
+          "retained_qualification": "All 31 hash-listed canonical modules were read completely across the renewed Section 2 comparison, including the preceding native scalar-duality step. This record compares the twelve assertion groups spanning the section; it does not assert that the uncorrected source is true or independently reprove every transitive dependency. The three proved source corrections (infinity norm convergence, scalar bilinear Fourier index, infinity gradient representation) remain necessary. Bracket domains and endpoint hypotheses are explicit. This comparison is not a full-dissertation completion certificate."
+        },
+        "Section2NativeDualitySourceComparison-2026-10-27": {
+          "source_record_sha256": "ebfb92e746df999028fae31b788f599fcd402e801e66de216219301b7e775dc6",
+          "module_hashes_verified": true,
+          "retained_qualification": "All ten hash-listed canonical modules were read completely for this comparison, together with the new five public examples and support-document diff. The new native weighted duality theorem is a stronger public interface for the existing coefficient duality. This comparison covers the scalar carrier, Banach/reflexivity assertions, physical Fourier sums and full scalar duality; it does not certify every assertion in Section 2 or independently reprove all transitive dependencies. Infinity norm-convergence and full-gradient corrections remain; pair-gradient and Poisson qualifications in the focused Section 2 audit are unchanged."
+        },
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true,
+          "retained_qualification": "Compared selected public types, hypotheses and key proof bodies. SourceDoubleResolvent inspected through the composition and coefficient formulas; HeightSpectralBox inspected through its mixed-boundary definition. This is not an independent audit of every dependency or every proof line in Section 3. The existing mathematical qualifications agree; only the opening audit scope sentence is stale."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma32EndpointProof.lean": "90af07e0d5bf1dbebbdeadcb062eac8c648cf6e96865746416b08716460feb84",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/ResolventEstimates.lean": "97ed23430aae3494599d6b53cd96528dd05eb48da3bed195f98bcbed5e7b8232",
+        "NLS/ZakharovShabat/VerticalStrips.lean": "7fa9d3c46851397f7541307db9ee9819bc00b7e6e133d4af5c60f1c41c74400a",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/SequenceSpaces/WeightedPairNormInfty.lean": "1726d12678be808fe61c7d07890ad3aa1231dfcb6b745c60c89b3131358615f9",
+        "NLS/Fourier/PairDistributionInfty.lean": "2f365003edb0dd95bb7509ae9940c86a3e4345810b9ebdabb195bed7f9bafb89",
+        "NLS/Poisson/SourceBracketJacobi.lean": "62ae2dfc8c86b8f9b43abd1ac8e7452b4d8665784cadd899799472efe1039fbc"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          24
+        ],
+        "images": {
+          "Section3ProofCurrentReview-024.png": "60bcb9c53a28e52ad8acfa6c2babe44eed03ba7b7867ec49a9f21a6d7ac23565"
+        },
+        "inspection": "Inspected the full rendered page and confirmed both printed lower-bound signs; the extraction ranges were read in context."
+      },
+      "qualification": "All eight hash-listed modules were read completely, including the final new proof module. This proves two literal proof-sentence refutations and separate corrected bounds for the original free resolvent. It does not certify the rest of Section 3, independently reprove all transitive dependencies, or remove the existing general-p pair-norm and printed-height corrections. Section 2 is reconciled with its existing qualified comparison rather than republished as twelve new proofs. The source-wide assertion assessment, exact cited 2014 construction comparison and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declaration_references": {
+        "freeReciprocalSup": "NLS.ZakharovShabat.freeReciprocalSup",
+        "freeReciprocalSup_le_height": "NLS.ZakharovShabat.freeReciprocalSup_le_height",
+        "freeReciprocalSup_le_verticalStrip": "NLS.ZakharovShabat.freeReciprocalSup_le_verticalStrip",
+        "freeReciprocalSup_pureImaginary": "NLS.ZakharovShabat.freeReciprocalSup_pureImaginary",
+        "lemma3_2_proof_height_lower_bound_false": "NLS.ZakharovShabat.lemma3_2_proof_height_lower_bound_false",
+        "lemma3_2_proof_strip_lower_bound_false": "NLS.ZakharovShabat.lemma3_2_proof_strip_lower_bound_false",
+        "norm_sourceFreeResolventToL1_one_le_im": "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_im",
+        "norm_sourceFreeResolventToL1_one_le_strip": "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_strip",
+        "norm_sourceFreeResolventToL1_one_pureImaginary": "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_pureImaginary",
+        "scalarFreeL1Bound_one_eq_reciprocalSup": "NLS.ZakharovShabat.scalarFreeL1Bound_one_eq_reciprocalSup",
+        "sourceFreeResolventToL1": "NLS.ZakharovShabat.sourceFreeResolventToL1",
+        "sourceFreeResolventToL1_diagonal_zero": "NLS.ZakharovShabat.sourceFreeResolventToL1_diagonal_zero"
+      },
+      "source_record_sha256": "b53416f1ab6ebf977fc05c15cb386e2b5dd4660edd8e68c61d63fe7ef1f874c3"
     }
   }
 }

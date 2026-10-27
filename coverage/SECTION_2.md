@@ -15,6 +15,15 @@ corrections remain explicit: norm convergence at infinity, the scalar bilinear
 Fourier index, and gradient representation at infinity. The final notation
 conventions specialize the existing definitions to order zero and period one.
 
+The chronological source-wide pass has now reconciled the complete
+Section 2 text with those twelve groups. It retains all three corrections
+and the explicit bracket-domain restrictions; the exact finite and
+infinity pair norms and the signed distribution convention were checked
+again. This reuses the existing comparison without counting twelve new
+proofs. The reconciliation is recorded with the subsequent
+Lemma32EndpointProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json).
+
 The source defines the scalar Fourier-Lebesgue space for every real
 regularity and every exponent from one through infinity, then asserts that
 its Fourier series converges in the same norm without excluding infinity.

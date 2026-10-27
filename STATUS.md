@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: Complete spectral overview assertion inventory
+## Current milestone: Correct the endpoint proof bounds in Lemma 3.2
+
+The two p=1 reciprocal-supremum inequalities on printed p. 24 have
+reversed signs. New Lean counterexamples refute both lower bounds, while
+the corrected upper bounds control the actual original-norm resolvent.
+At lambda=i*y its operator norm is exactly 1/abs(y), for every nonzero y.
+
+Two public examples check negative imaginary height and a real parameter
+inside a punctured strip. See the [Section 3 comparison](coverage/SECTION_3.md)
+and [source discrepancies](SOURCE_ERRATA.md).
+
+Validation: `./scripts/check.sh` passes with 8,431 build jobs, 7,466
+public examples, and a transitive axiom audit of 42,820 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,022 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The complete Section 2 text was reconciled with its existing twelve-group
+comparison and three source corrections. Continue the remaining Section 3
+proof assertions in order. The exact cited 2014 construction and Appendix G.2
+norm interpretation remain unresolved; see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Complete spectral overview assertion inventory
 
 All substantive assertions in Section 1 now appear in 27 ordered groups,
 including the named statements and their surrounding definitions and

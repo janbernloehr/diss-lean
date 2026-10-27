@@ -7,6 +7,39 @@ It retains the original period-two space, its finite-exponent component-sum norm
 conditional period-one parity clauses. It is not a completeness certificate
 for Section 3 or the dissertation.
 
+## The p=1 proof inequalities on printed p. 24
+
+The two endpoint sentences in the proof of Lemma 3.2 print lower bounds
+for the reciprocal supremum. Both signs are reversed; the rendered PDF
+was checked directly.
+
+[SourceLemma32EndpointProof.lean](../NLS/ZakharovShabat/SourceLemma32EndpointProof.lean)
+defines the literal supremum over every signed Fourier index and
+identifies it with the existing p=1 reciprocal-symbol norm.
+
+| Printed assertion | Formal counterexample | Proved correction |
+| --- | --- | --- |
+| Supremum >= sqrt(2)/abs(Im lambda) | At lambda=i the supremum is 1, strictly below sqrt(2). | Supremum <= 1/abs(Im lambda) for nonzero imaginary part. |
+| Supremum >= 1/r on Vert_n(r) | At lambda=pi*i, n=0, r=pi/4, the supremum is 1/pi < 4/pi. | Supremum <= 1/r for every stated strip, including real parameters. |
+
+The same upper bounds hold for the actual p=1 free resolvent in the
+original component-sum norm. At lambda=i*y, for every nonzero real y,
+its norm equals 1/abs(y); the zero Fourier modes attain the bound.
+Public examples check y=-2 and the real parameter lambda=1/2.
+
+These proof corrections preserve the valid endpoint and strip clauses.
+They are separate from the missing pair factor in the general-p
+Lemma 3.2(ii) estimate below. The remaining Section 3 proof assertions
+still need their chronological assessment.
+
+Lemma32EndpointProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records the inspected
+source and exact declarations.
+
+Validation passes: 8,431 build jobs, 7,466 public examples and a
+transitive axiom audit of 42,820 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Operator setup
 
 `Operator.lean` defines the full one-derivative coefficient domain and the

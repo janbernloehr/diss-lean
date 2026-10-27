@@ -1,5 +1,20 @@
 # Source discrepancies
 
+## Lemma 3.2 proof, p. 24: reversed endpoint inequalities
+
+Both p=1 sentences print lower bounds for the supremum of
+1/abs(lambda-m*pi). The rendered PDF confirms both signs.
+At lambda=i the supremum is 1, refuting the printed lower bound sqrt(2).
+At lambda=pi*i in Vert_0(pi/4), it is 1/pi, refuting the printed lower
+bound 4/pi.
+
+[SourceLemma32EndpointProof.lean](NLS/ZakharovShabat/SourceLemma32EndpointProof.lean)
+proves the corrected upper bounds 1/abs(Im lambda) and 1/r, and transfers
+them to the actual original p=1 component-sum operator norm. That norm is
+exactly 1/abs(y) at lambda=i*y for nonzero y. These corrections concern
+the proof sentences; the separate general-p missing pair factor remains
+recorded below. See the [Section 3 audit](coverage/SECTION_3.md).
+
 ## Section 23, p. 105: interpreting the Abel-strip description
 
 The displayed Abel weight is indexed by the period-two Fourier frequency,
