@@ -51,6 +51,9 @@ rank bound and original-norm closure argument are also proved.
 The direct Corollary 3.3 composition bound, actual Neumann inverse and
 series, and compactness inference are now proved in the original norm;
 the standalone pair-norm counterexample remains valid.
+Corollary 3.5's squared inverse, original-norm quarter/half bounds, compact
+segment and common neighborhood for all larger exact spectral exteriors
+are also proved, with the compact analytic resolvent and spectrum enclosure.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

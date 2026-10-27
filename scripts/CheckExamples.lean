@@ -69816,3 +69816,95 @@ example :
   exact hasSum_sourceResolvent_neumann (by norm_num) φ (30*Complex.I) hz
 
 end Section3SourceNeumannProofChecks
+
+noncomputable section
+namespace Section3SourceUniformSquareChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both signed boundary modes survive at N=2 and disappear at N=3.
+example :
+    let φ : CoeffPair 3 := (CoeffPair.toMax 3).symm (lp.single 3 2 (3 : ℂ), lp.single 3 (-2) (4 : ℂ))
+    sourceFourierTailCLM 2 φ = φ ∧ sourceFourierTailCLM 3 φ = 0 := by
+  dsimp only
+  constructor <;> apply WithLp.ofLp_injective <;> apply Prod.ext <;> ext m
+  all_goals simp [sourceFourierTailCLM_apply, sourceFourierTail, lp.single_apply]
+
+-- The neighborhood uses the original sum norm seven, including its strict ball boundary.
+example :
+    let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (3 : ℂ), lp.single 1 0 (4 : ℂ))
+    φ ∈ sourceFrequencyNeighborhood 1 8 1 ∧
+      φ ∉ sourceFrequencyNeighborhood 1 7 1 := by
+  dsimp only
+  let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (3 : ℂ), lp.single 1 0 (4 : ℂ))
+  have hφ : ‖φ‖ = 7 := by rw [CoeffPair.norm_one_eq_sum]; norm_num [φ]
+  have ht : sourceFourierTail 1 φ = 0 := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    all_goals simp [sourceFourierTail, φ]
+  change φ ∈ sourceFrequencyNeighborhood 1 8 1 ∧ φ ∉ sourceFrequencyNeighborhood 1 7 1
+  norm_num [mem_sourceFrequencyNeighborhood, hφ, ht]
+
+-- Squared inversion applies to an actual perturbation whose first-power norm is at least two.
+example :
+    let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (2 : ℂ), 0)
+    let hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+    let T := (sourcePotentialFromL1 (p := 1) φ).comp (sourceFreeResolventToL1 (p := 1) (by norm_num) Complex.I hz)
+    2 ≤ ‖T‖ ∧ T^2 = 0 ∧ Complex.I ∈ sourceResolventSet (by norm_num) φ ∧
+      sourceResolvent (p := 1) (by norm_num) φ Complex.I = sourceFreeResolvent (p := 1) (by norm_num) Complex.I hz*(1+T) := by
+  dsimp only
+  let φ : CoeffPair 1 := (CoeffPair.toMax 1).symm (lp.single 1 0 (2 : ℂ), 0)
+  let hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+  let T := (sourcePotentialFromL1 (p := 1) φ).comp (sourceFreeResolventToL1 (p := 1) (by norm_num) Complex.I hz)
+  have hsq : T^2 = 0 := by
+    ext a : 1
+    rw [pow_two]
+    change T (T a) = 0
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    all_goals simp [T, φ, sourcePotentialFromL1, Coeff.convolution_apply]
+  have hn : 2 ≤ ‖T‖ := by
+    let a : CoeffPair 1 := (CoeffPair.toMax 1).symm (0,lp.single 1 0 (1 : ℂ))
+    have ha : ‖a‖ = 1 := by simp [a]
+    have he : T a = (CoeffPair.toMax 1).symm (lp.single 1 0 (-2*Complex.I),0) := by
+      apply WithLp.ofLp_injective
+      apply Prod.ext <;> ext m
+      all_goals simp [T, φ, a, sourcePotentialFromL1, Coeff.convolution_apply, lp.single_apply, Pi.single_apply, div_eq_mul_inv]
+      split_ifs <;> simp_all
+    have h := T.le_opNorm a
+    rw [he,ha,mul_one] at h
+    simpa [norm_mul] using h
+  have hsmall : ‖T^2‖ < 1 := by rw [hsq,norm_zero]; norm_num
+  refine ⟨hn,hsq,mem_sourceResolventSet_of_square_norm (by norm_num) φ Complex.I hz hsmall,?_⟩
+  rw [sourceResolvent_squared_formula (by norm_num) φ Complex.I hz hsmall,
+    SquaredNeumann.correction_eq_one_add_of_sq_eq_zero _ hsmall hsq]
+
+-- A common neighborhood controls a negative-index circle boundary at the non-Hilbert exponent.
+example (φ : CoeffPair 3) :
+    ∃ N : ℕ, ∃ U : Set (CoeffPair 3), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U,
+        let z : ℂ := -(Real.pi : ℂ)*(N+1)+(Real.pi/4 : ℝ)*Complex.I
+        ∃ hz : z ∉ freeLattice,
+          ‖((sourcePotentialFromL1 (p := 3) ψ).comp (sourceFreeResolventToL1 (p := 3) (by norm_num) z hz))^2‖ ≤ 1/2 := by
+  obtain ⟨N,U,ho,_,hc,hφ,h0,_,hsmall⟩ := exists_source_quarter_half_strips (by norm_num) φ
+  refine ⟨N,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ
+  dsimp only
+  let n : ℤ := -((N : ℤ)+1)
+  let z : ℂ := -(Real.pi : ℂ)*(N+1)+(Real.pi/4 : ℝ)*Complex.I
+  have hn : N < n.natAbs := by dsimp [n]; omega
+  have hz : z ∈ verticalStrip n (Real.pi/4) := by
+    constructor
+    · have he : z.re-Real.pi*(n : ℝ) = 0 := by
+        simp [z,n]
+        ring
+      rw [he,abs_zero]
+      positivity
+    · have he : z-(Real.pi : ℂ)*n = (Real.pi/4 : ℝ)*Complex.I := by dsimp [z,n]; push_cast; ring
+      rw [he]
+      simp [abs_of_pos Real.pi_pos]
+  exact ⟨notMem_freeLattice_of_mem_verticalStrip (by positivity) le_rfl hz,
+    hsmall ψ hψ n hn z hz⟩
+
+end Section3SourceUniformSquareChecks

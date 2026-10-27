@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Corollary 3.3's Neumann proof now has a direct original-norm
-composition estimate, the actual convergent resolvent series, and the
-compactness argument. The standalone pair-norm correction remains.
+Latest step: Corollary 3.5's original-norm proof now includes the squared
+Neumann inverse, uniform quarter/half bounds and a common connected
+neighborhood for every larger spectral cutoff. Exact source boundaries
+and all existing corrections are retained.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

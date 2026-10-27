@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: Direct Neumann proof of Corollary 3.3
+## Current milestone: Uniform squared-Neumann proof of Corollary 3.5
+
+Smallness of the squared potential/free-resolvent operator now gives the
+actual full-domain inverse and paired Neumann series in the original norm.
+Concrete Fourier-tail neighborhoods provide the printed quarter/half
+bounds, and one open convex connected neighborhood works for every larger
+cutoff in the source's exact box-and-disk exterior. The full compact
+analytic resolvent and spectrum enclosure follow. The segment from zero
+to the potential is also proved compact and contained in the neighborhood.
+
+Four examples check retained signed Fourier boundaries, the strict
+original-norm neighborhood boundary, a perturbation with norm at least
+two but square zero, and a negative-index circle boundary at p=3.
+See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,440 build jobs, 7,498
+public examples, and a transitive axiom audit of 42,983 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,092 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue with the prepared projection and parity comparisons, then
+actual ranks, discreteness, reality and trace reduction before Section 4.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Direct Neumann proof of Corollary 3.3
 
 The potential/free-resolvent composition now satisfies the printed
 factor-one height bound directly in the original finite-p pair norm.

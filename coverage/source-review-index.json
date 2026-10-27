@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T17:28:51.411229+00:00",
-  "base_commit": "ac10fd6e23caef4d0064ee3e125afa86c9228a76",
+  "published_utc": "2026-10-27T17:50:43.463619+00:00",
+  "base_commit": "61e6083e2daf979dd6810ddf58490b671c66ad12",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 77,
-    "module_hash_checks": 1072,
-    "distinct_modules": 832
+    "review_records": 78,
+    "module_hash_checks": 1086,
+    "distinct_modules": 840
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "ac10fd6e23caef4d0064ee3e125afa86c9228a76",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceNeumannProof and four public examples.",
+    "base_commit": "61e6083e2daf979dd6810ddf58490b671c66ad12",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceUniformSquareProof and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8439,
-    "public_examples": 7494,
-    "transitive_NLS_declarations": 42948,
+    "build_jobs": 8440,
+    "public_examples": 7498,
+    "transitive_NLS_declarations": 42983,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4716,
-      "sha256": "6c6c1e8453901faa038c601c78c3d46240f88b4dba433160d56264fb5d26e97d"
+      "files": 4717,
+      "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -17141,6 +17141,159 @@
       },
       "qualification": "The new module and four examples were read completely. The six unchanged hash-listed modules were fully read in the preceding focused comparisons and their current hashes were verified. The rendered p.25 and exact extracted proof passage were inspected. Three focused groups cover the direct original-norm estimate, actual Neumann inverse and series, and compactness inference. The existing analytic and discreteness conclusions are retained with their previous proofs. The standalone pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "2659d23ce1512b9d28854639cac381992827c8e3bcb0b7583d3f5e3bb0792861"
+    },
+    "Cor35UniformProofSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "61e6083e2daf979dd6810ddf58490b671c66ad12",
+      "updated_utc": "2026-10-27T17:50:43.463619+00:00",
+      "source_lines": [
+        [
+          1392,
+          1397
+        ],
+        [
+          1475,
+          1502
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1392,
+            1397
+          ],
+          "finding": "The literal (1+T)(1-T^2)^(-1) formula is used on the actual original-norm space. Full-domain pencil factorization and two-sided inversion establish the actual resolvent set, the paired even/odd operator series and compactness. A finite-mode example has norm(T)>=2 but T^2=0, so the hypothesis is strictly weaker than first-power norm smallness.",
+          "requirement": "Smallness of the square gives the literal inverse formula on the actual source domain.",
+          "declarations": [
+            "sourceSpectralPencil_factorization",
+            "mem_sourceResolventSet_of_square_norm",
+            "sourceResolvent_squared_formula",
+            "hasSum_sourceResolvent_squared",
+            "isCompactOperator_sourceResolvent_from_square"
+          ]
+        },
+        {
+          "source_lines": [
+            1486,
+            1489
+          ],
+          "finding": "The source norm square is bounded by the original potential norm times the original p-to-l1 sandwich. The valid 64*p^2 Lemma 3.4 bound and reciprocal-frequency decay give the literal quarter bound at the given potential.",
+          "requirement": "The original-norm squared estimate gives the printed quarter bound.",
+          "declarations": [
+            "norm_sourcePotentialFreeResolvent_sq_le",
+            "sourceLemma3_4",
+            "exists_uniform_sourceFrequencyNeighborhood",
+            "exists_uniform_sourcePotentialFreeResolvent_square",
+            "exists_source_quarter_half_strips"
+          ]
+        },
+        {
+          "source_lines": [
+            1492,
+            1494
+          ],
+          "finding": "A concrete full-norm ball intersected with the inverse image of a Fourier-tail ball is open and convex in the original potential topology. One sufficiently small tail controls every later tail and every positive and negative large index. The literal half bound holds throughout one neighborhood that contains the potential and zero. Boundary-tail and strict-norm examples prevent replacing the source norm or dropping retained frequencies.",
+          "requirement": "One original-topology neighborhood gives the printed uniform half bound.",
+          "declarations": [
+            "sourceFourierTailCLM",
+            "sourceFourierTailCLM_apply",
+            "sourceFourierTail_zero_potential",
+            "sourceFrequencyNeighborhood",
+            "mem_sourceFrequencyNeighborhood",
+            "isOpen_sourceFrequencyNeighborhood",
+            "convex_sourceFrequencyNeighborhood",
+            "zero_mem_sourceFrequencyNeighborhood",
+            "exists_source_quarter_half_strips"
+          ]
+        },
+        {
+          "source_lines": [
+            1494,
+            1498
+          ],
+          "finding": "A common positive integer cutoff combines the uniform height estimate with all distant strips. The exact source exterior is covered using its mixed strict/non-strict box boundaries and the open disks. Every larger cutoff works on the same neighborhood. The actual squared inverse gives resolvent membership and compactness; existing analyticity on the full resolvent set then supplies the analytic conclusion.",
+          "requirement": "One cutoff combines high imaginary parts and distant strips into the exact spectral exterior.",
+          "declarations": [
+            "exists_sourcePotentialFreeResolvent_uniform_height",
+            "exists_source_square_uniform_height_and_strips",
+            "exists_source_spectralExterior_square_bound",
+            "spectralExterior_height_or_strip",
+            "analyticOnNhd_sourceResolvent"
+          ]
+        },
+        {
+          "source_lines": [
+            1500,
+            1502
+          ],
+          "finding": "The segment [0,phi] is proved compact as a continuous image of the real unit interval. Convexity and both endpoints place it inside the same neighborhood; that neighborhood is connected. This supplies both the literal segment assertion and the stronger explicit neighborhood construction.",
+          "requirement": "The compact real segment lies in the connected neighborhood containing its endpoints.",
+          "declarations": [
+            "sourcePotentialSegment_compact_in_neighborhood"
+          ]
+        },
+        {
+          "source_lines": [
+            1475,
+            1483
+          ],
+          "finding": "The full Corollary 3.5 statement is recovered from these original-norm square bounds, including actual spectrum enclosure, compact analytic resolvent and one neighborhood for all larger cutoffs. It preserves the strict real box edge, included horizontal edge and all signed disk indices.",
+          "requirement": "The complete Corollary 3.5 conclusion follows from these original-norm bounds.",
+          "declarations": [
+            "centralSpectralBox",
+            "highSpectralDisks",
+            "spectralExterior",
+            "sourceCorollary3_5_from_square"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Section3SourceComparison-2026-10-21",
+        "Section3SetupSourceComparison-2026-10-27",
+        "Lemma32CompactProofSourceComparison-2026-10-27",
+        "Cor33NeumannProofSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true,
+          "retained_qualification": "Compared selected public types, hypotheses and key proof bodies. SourceDoubleResolvent inspected through the composition and coefficient formulas; HeightSpectralBox inspected through its mixed-boundary definition. This is not an independent audit of every dependency or every proof line in Section 3. The existing mathematical qualifications agree; only the opening audit scope sentence is stale."
+        },
+        "Section3SetupSourceComparison-2026-10-27": {
+          "source_record_sha256": "0b5e34f523ee0b7063f69f000415dde938c6c7161a861d6d7e0c6cb7d2039374",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module was read completely; the eight unchanged hash-listed dependencies were read in the preceding focused comparisons and their current hashes rechecked. Six focused assertion groups preserve original finite-p norms, domain and quantifiers. Existing analytic approximation, relative bounds and density are reused with their proved scope. This is not an exhaustive Section 3 source assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished; previous source refutations and corrections remain separate."
+        },
+        "Lemma32CompactProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "bb25cd5a089e2678a928858bd118e95cbd8a4a1913209930d78dad12a49a8909",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module and four examples were read completely. The seven unchanged hash-listed modules were fully read in this and the preceding focused comparisons; their current hashes were verified. The rendered p.24 and exact extracted passage were inspected. Three focused groups cover the actual signed Fourier expansion, explicit finite-rank approximants and their operator-norm closure argument. The original pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Cor33NeumannProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "2659d23ce1512b9d28854639cac381992827c8e3bcb0b7583d3f5e3bb0792861",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module and four examples were read completely. The six unchanged hash-listed modules were fully read in the preceding focused comparisons and their current hashes were verified. The rendered p.25 and exact extracted proof passage were inspected. Three focused groups cover the direct original-norm estimate, actual Neumann inverse and series, and compactness inference. The existing analytic and discreteness conclusions are retained with their previous proofs. The standalone pair-norm correction, endpoint refutations, printed-height qualification and Lemma 3.4 intermediate-radius refutations remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceUniformSquareProof.lean": "2aa5956db7ef269ef1ca893e885e496c8ba3d6cc72ab210d8029b84526b27b56",
+        "NLS/ZakharovShabat/SourceCorollary3_5.lean": "3172a11ea8978584619045cdae1d0d77b7d062bc80725e78dac603fec4b44be7",
+        "NLS/ZakharovShabat/SourceLemma3_4.lean": "58b4ecfc0fee71ec174f880c21837d3d3f3698c49d929be3dea9bfd6c83b0e64",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/SourceDoubleResolvent.lean": "109b6f2c166b7ffe0fde25d4ae289a452cdda3b33473924bec0c93d27bdc30dd",
+        "NLS/ZakharovShabat/SourceSection3Setup.lean": "cf73ec97860ae8f773e889e88c98d176e7e123830aae2de6bc54548ac96d374a",
+        "NLS/ZakharovShabat/SourceFreeResolventCutoff.lean": "62d6570622c6323350a618e145965639fd99267c396947936f9cfef438fc2543",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/FrequencyLocalization.lean": "97bbe85b63dcc59a68211f36e8afd0f2368efb993945f31d813f97664aa366b1",
+        "NLS/ZakharovShabat/SpectralLocalization.lean": "9e90d78af2646a256bcc07b9760e6e06ce1376c0e0c706a785b4496b455f6b57",
+        "NLS/FunctionalAnalysis/SquaredNeumann.lean": "edbdd91b372aa4681a6b11c51b6f03485100e431150adc60e8d8aa1c816e2380",
+        "NLS/ZakharovShabat/PerturbedResolvent.lean": "861caae0f248874bfa480effaacde42565eb8395a12b17eca0df6b3629596162",
+        "NLS/ZakharovShabat/DoubleResolvent.lean": "e94fe15745d6fa9c0613030afa79982fd87d386ef90eee7b818bf4451ac2cc2d",
+        "NLS/SequenceSpaces/Convolution.lean": "bfb72ea01d63f25aeee7e899a0674bf00cd909c779e7610d5627c38931746d9b"
+      },
+      "qualification": "The new module and four examples were read completely. The thirteen unchanged hash-listed modules were fully read in the preceding focused comparisons and their current hashes were verified. The rendered pp.25-26 and exact extracted passages were inspected. Six focused groups cover the squared inverse, literal quarter/half bounds, common height and strip control, compact segment and complete source exterior conclusion. The argument uses the valid main Lemma 3.4 with C_p=64*p^2; its refuted intermediate radius bounds are not used. Existing standalone pair-norm, endpoint and printed-height corrections remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_record_sha256": "d6bf107d9edeed0ab7d7a5f415f569229461133c0623c7d2870eb79460059468"
     }
   }
 }

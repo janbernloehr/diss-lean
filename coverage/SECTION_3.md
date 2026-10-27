@@ -77,6 +77,41 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Uniform squared-Neumann proof of Corollary 3.5
+
+[SourceUniformSquareProof.lean](../NLS/ZakharovShabat/SourceUniformSquareProof.lean)
+formalizes the squared inverse on p.25 and the uniform-neighborhood proof
+on p.26, using the original finite-p pair norms throughout.
+
+| Source step | Public entry point | Retained scope |
+| --- | --- | --- |
+| Full-domain inverse | `sourceSpectralPencil_factorization`, `mem_sourceResolventSet_of_square_norm` | Smallness of the actual operator square suffices; first-power norm smallness is unnecessary. |
+| Inverse and series | `sourceResolvent_squared_formula`, `hasSum_sourceResolvent_squared`, `isCompactOperator_sourceResolvent_from_square` | The actual resolvent uses (1+T)(1-T^2)^(-1); paired even/odd terms converge in operator norm, and compactness follows from R0. |
+| Uniform neighborhood | `sourceFrequencyNeighborhood`, `exists_uniform_sourceFrequencyNeighborhood`, `exists_uniform_sourcePotentialFreeResolvent_square` | A full-norm ball intersected with a Fourier-tail ball is open and convex, contains the potential and zero, and controls all sufficiently large signed indices. |
+| Printed quarter/half bounds | `exists_source_quarter_half_strips` | Quarter bound at the given potential and half bound throughout one connected neighborhood, with strict absolute-index inequality. |
+| Exact exterior | `exists_source_square_uniform_height_and_strips`, `exists_source_spectralExterior_square_bound`, `sourceCorollary3_5_from_square` | One positive cutoff and one neighborhood work for every larger cutoff, preserving the strict real box edge, included horizontal edge and open disks. |
+| Compact segment | `sourcePotentialSegment_compact_in_neighborhood` | The real segment from zero to the potential is a continuous image of the compact unit interval and is contained in the same convex neighborhood. |
+
+The source estimate uses the valid main Lemma 3.4 constant 64*p^2.
+The refuted intermediate radius bounds are not used. Existing analytic
+dependence on the full source resolvent set supplies analyticity once
+the squared inverse establishes membership in that set.
+
+Four examples distinguish the retained cutoff frequencies +2 and -2 from
+the next cutoff, test strict neighborhood membership at original l1 norm
+seven, exhibit an actual perturbation of norm at least two with square
+zero and a two-term resolvent, and control a negative-index circle
+boundary at p=3 on one common neighborhood.
+
+Cor35UniformProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records six focused groups.
+All earlier source corrections and qualifications remain. This does not
+certify every assertion in Section 3.
+
+Validation passes: 8,440 build jobs, 7,498 public examples and a
+transitive axiom audit of 42,983 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Direct Neumann proof of Corollary 3.3
 
 [SourceNeumannProof.lean](../NLS/ZakharovShabat/SourceNeumannProof.lean)
