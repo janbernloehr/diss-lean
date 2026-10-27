@@ -4656,3 +4656,8 @@ import NLS.ZakharovShabat.SourceUnboundedOperator
 import NLS.ZakharovShabat.SourcePeriodicSelfAdjoint
 import NLS.ZakharovShabat.PhysicalPeriodicSelfAdjoint
 import NLS.ZakharovShabat.PeriodicSelfAdjointRealType
+import NLS.ZakharovShabat.SourceParityOperatorDomain
+import NLS.ZakharovShabat.SourceParityUnboundedOperator
+import NLS.ZakharovShabat.SourceParitySelfAdjoint
+import NLS.ZakharovShabat.PhysicalParitySelfAdjoint
+import NLS.ZakharovShabat.ParitySelfAdjointRealType

@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: periodic self-adjointness in the original source and physical spaces
+## Current milestone: separate periodic and antiperiodic adjoint domains
+
+Each periodic and antiperiodic sector now has its own densely defined
+operator with its original one-derivative domain. For either sector,
+self-adjointness is equivalent to the potential being of real type.
+
+The equivalence holds in both the original coefficient Hilbert space
+and its actual Fourier image in physical period-two L2. The operator
+retains the signed differential expression. Its continuous domain
+representatives satisfy the corresponding unit-interval endpoint condition.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) distinguishes
+these physical parity realizations from a future standalone unit-interval
+L2/H1 domain identification. The remaining source audit, exact2014 and G2
+remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,354 build jobs, 7,313
+public examples, and a transitive axiom audit of 41,886 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,668 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: periodic self-adjointness in the original source and physical spaces
 
 The original periodic Hilbert operator now equals its actual adjoint
 exactly when the potential is of real type. The result retains the full

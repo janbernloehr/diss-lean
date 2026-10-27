@@ -1189,3 +1189,40 @@ give non-self-adjoint physical operators.
 This is distinct from merely proving that the periodic eigenvalues are real.
 The existing whole-line results are unchanged. The remaining dissertation
 source audit, exact2014 comparison and G2 norm qualification remain separate.
+
+## Separate periodic and antiperiodic adjoint domains
+
+The two signs in the p.17 boundary shorthand now have separate densely
+defined operators. Their domains are never combined as a union.
+[`SourceParityOperatorDomain.lean`](../NLS/ZakharovShabat/SourceParityOperatorDomain.lean)
+restricts the original one-derivative inclusion to each closed Fourier parity
+space and proves injectivity and density at every finite Banach exponent.
+[`SourceParityUnboundedOperator.lean`](../NLS/ZakharovShabat/SourceParityUnboundedOperator.lean)
+constructs the actual partial operator and its spectral pencil on each
+space. The full source inverse preserves the precise restricted domain
+and gives both inverse identities for an even potential.
+
+[`SourceParitySelfAdjoint.lean`](../NLS/ZakharovShabat/SourceParitySelfAdjoint.lean)
+proves equality with the Hilbert adjoint separately on each parity space
+for a real-type Hilbert potential. The proof uses the inherited inner
+product, domain density and the restricted inverses at i and -i.
+The original continuous physical domain representatives have endpoints
+f(1)=f(0) in the even sector and f(1)=-f(0) in the odd sector.
+[`PhysicalParitySelfAdjoint.lean`](../NLS/ZakharovShabat/PhysicalParitySelfAdjoint.lean)
+transports each exact domain by the original Fourier isometry into the
+physical period-two L2 parity subspace. The resulting self-adjoint operator
+agrees almost everywhere with the original signed differential expression.
+
+[`ParitySelfAdjointRealType.lean`](../NLS/ZakharovShabat/ParitySelfAdjointRealType.lean)
+proves the converse separately for either sector. Testing symmetry on
+two modes of that sector recovers every even potential coefficient; the
+odd coefficients vanish by the explicit potential hypothesis. Thus each
+source or physical parity operator is self-adjoint if and only if the
+potential has real type, including the original period-one embedding.
+
+The ambient physical spaces here are the Fourier parity subspaces of the
+period-two L2 realization. This package proves their exact adjoint domains,
+physical differential expressions and unit-interval endpoint conditions.
+It does not yet identify a standalone unit-interval L2 realization with
+the full classical H1 domain for either sign. That further comparison,
+the remaining source audit, exact2014 and G2 are recorded separately.

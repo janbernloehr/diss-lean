@@ -67647,3 +67647,52 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
   rfl
 
 end SpectralOverviewPeriodicSelfAdjointExamples
+
+/- Separate original periodic and antiperiodic domains and adjoints. -/
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (r : ℤ) :
+    DenseRange (NLS.ZakharovShabat.sourceParityDomainInclusion (p := p) r) :=
+  NLS.ZakharovShabat.sourceParityDomainInclusion_denseRange hp r
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : NLS.CoeffPair p)
+    (hφ : φ ∈ NLS.ZakharovShabat.sourceParitySubspace 0) (r : ℤ) (z : ℂ)
+    (hz : z ∈ NLS.ZakharovShabat.sourceResolventSet hp φ)
+    (a : NLS.ZakharovShabat.sourceParitySubspace (p := p) r) :
+    NLS.ZakharovShabat.sourceParitySpectralPencil hp φ hφ r z
+      (NLS.ZakharovShabat.sourceParityResolventToDomain hp φ hφ r z hz a) = a :=
+  NLS.ZakharovShabat.sourceParitySpectralPencil_resolvent hp φ hφ r z hz a
+
+example (φ : NLS.CoeffPair 2) (hφ : NLS.ZakharovShabat.IsRealType (NLS.CoeffPair.toMax 2 φ)) :
+    IsSelfAdjoint (NLS.ZakharovShabat.sourceParityUnboundedOperator (by simp)
+      (NLS.ZakharovShabat.periodOnePair φ) (NLS.ZakharovShabat.periodOnePotential_mem φ) 0) :=
+  NLS.ZakharovShabat.sourcePeriodOneParityOperator_isSelfAdjoint φ hφ 0
+
+example (φ : NLS.CoeffPair 2) (hφ : NLS.ZakharovShabat.IsRealType (NLS.CoeffPair.toMax 2 φ)) :
+    IsSelfAdjoint (NLS.ZakharovShabat.sourceParityUnboundedOperator (by simp)
+      (NLS.ZakharovShabat.periodOnePair φ) (NLS.ZakharovShabat.periodOnePotential_mem φ) 1) :=
+  NLS.ZakharovShabat.sourcePeriodOneParityOperator_isSelfAdjoint φ hφ 1
+
+example (φ : NLS.CoeffPair 2) (r : ℤ) :
+    IsSelfAdjoint (NLS.ZakharovShabat.physicalParityOperator
+      (NLS.ZakharovShabat.periodOnePair φ) (NLS.ZakharovShabat.periodOnePotential_mem φ) r) ↔
+      NLS.ZakharovShabat.IsRealType (NLS.CoeffPair.toMax 2 φ) :=
+  NLS.ZakharovShabat.sourcePhysicalParityOperator_isSelfAdjoint_iff φ r
+
+example (a : NLS.ZakharovShabat.sourceDomainParitySubspace (p := 2) 0) :
+    NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a) 1 =
+      NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a) 0 :=
+  NLS.ZakharovShabat.sourceEvenDomain_periodic_boundary a
+
+example (a : NLS.ZakharovShabat.sourceDomainParitySubspace (p := 2) 1) :
+    NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a) 1 =
+      - NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a) 0 :=
+  NLS.ZakharovShabat.sourceOddDomain_antiperiodic_boundary a
+
+example (φ : NLS.CoeffPair 2) (hφ : φ ∈ NLS.ZakharovShabat.sourceParitySubspace 0)
+    (r : ℤ) (a : NLS.ZakharovShabat.sourceDomainParitySubspace (p := 2) r) :
+    NLS.ZakharovShabat.sourceCircleRepresentative
+      (NLS.ZakharovShabat.physicalParityOperator φ hφ r
+        (NLS.ZakharovShabat.physicalParityDomainEquiv r a) : NLS.ZakharovShabat.SourceCirclePairL2)
+      =ᵐ[MeasureTheory.volume.restrict (Set.Ioc 0 2)]
+      NLS.ZakharovShabat.physicalOperator (NLS.ZakharovShabat.physicalBase (NLS.CoeffPair.toMax 2 φ))
+        (NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a.val)) :=
+  NLS.ZakharovShabat.physicalParityOperator_representative φ hφ r a

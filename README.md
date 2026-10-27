@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original periodic operator is self-adjoint exactly when
-the potential has real type. This holds in the original coefficient norm
-and physical L2 space, with the full one-derivative domain and original
-differential expression. The remaining dissertation source audit continues.
+Latest step: each periodic and antiperiodic Fourier parity operator
+is self-adjoint exactly for real-type potentials. Both the source and
+physical realizations retain their own dense one-derivative domain,
+original differential expression and signed endpoint conditions.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013
