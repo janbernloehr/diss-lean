@@ -29,6 +29,32 @@ by two separate linear domains and the union of their spectra.
 The whole-line spectrum and absolute-continuity assertion is a separate
 comparison. This record does not certify the whole chapter or dissertation.
 
+## Renewed comparison of the whole-line assertion, printed p. 17
+
+The whole-line spectrum and absolute-continuity passage now has a renewed
+comparison against thirty-five complete modules, recorded as
+`SpectralOverviewWholeLineSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). It covers every original
+real-type L2 potential, with its actual period-one physical extension.
+
+The smooth compact test operator has a self-adjoint graph closure with the
+full locally absolutely continuous differential domain. The independently
+defined bounded-inverse spectrum equals the real axis minus all original
+open periodic gaps. The proof supplies both band inclusion and gap resolvents,
+including every endpoint and collapsed gap.
+
+The scalar measures come from the actual closure's Cayley transform and
+reproduce the original nonreal resolvent by integration. Physical Green-kernel
+bounds give absolute continuity for compact inputs off a countable set of
+repeated roots. Absence of atoms removes that exceptional set, and density
+extends absolute continuity to every Hilbert vector. Both atomic and singular
+continuous spectral mass are excluded. The comparison retains the real L2
+hypothesis; it makes no corresponding claim for arbitrary complex or rougher
+Fourier-Lebesgue potentials.
+
+The later Fourier-Lebesgue operator-extension discussion remains a separate
+source comparison. The precise2014 and G2 qualifications are unchanged.
+
 ## Renewed comparison of complex potentials, printed pp. 17–18
 
 The gap definitions and the complex-potential paragraph now have a renewed

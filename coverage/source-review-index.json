@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T07:13:19.421694+00:00",
-  "base_commit": "131d64960a91cf58841c15e751759e61b5b5a42a",
+  "published_utc": "2026-10-27T07:18:22.741569+00:00",
+  "base_commit": "14908b2bdb4fa73b24b0025365dbc449a271ba10",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 52,
-    "module_hash_checks": 735,
-    "distinct_modules": 676
+    "review_records": 53,
+    "module_hash_checks": 770,
+    "distinct_modules": 711
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -10440,6 +10440,141 @@
       },
       "qualification": "All sixteen listed modules were read completely. The comparison retains actual physical functions, operator domains, bounded-inverse spectral sets, full Jordan-chain multiplicities, global ordering and the universal eigenfunction quantifier. The whole-line spectrum and absolute-continuity assertion at792-810 remains a separate comparison. This is not an independent re-proof of every transitive dependency or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
       "source_record_sha256": "9984e0f25164ce183804aab64542484c9f3e3ef77421f129c82a2f31aab71e3d"
+    },
+    "SpectralOverviewWholeLineSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T07:17:35.566137+00:00",
+      "base_commit": "14908b2bdb4fa73b24b0025365dbc449a271ba10",
+      "source_lines": [
+        792,
+        810
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            792,
+            794
+          ],
+          "requirement": "Consider the original real-type L2 potential periodically extended to the entire real line and its whole-line differential operator.",
+          "finding": "The physical potential is extended by fractional part and is exactly one-periodic. The original signed differential expression acts on smooth compact pairs in the Hermitian L2 space over real Lebesgue measure. This dense minimal partial operator has a self-adjoint graph closure equal to its actual Hilbert adjoint. The closure domain is exactly the L2 classes admitting locally absolutely continuous representatives with L2 physical image. The original compact smooth domain is a core. Thus the spectral statements concern the original closed differential realization at every real-type Hilbert potential, without assuming a self-adjoint operator or a smooth potential as additional input.",
+          "declarations": [
+            "l2WholeLinePotential",
+            "periodic_l2WholeLinePotential",
+            "wholeLineMinimalOperator",
+            "wholeLineMinimalOperator_closure_eq_adjoint",
+            "mem_wholeLineMinimalOperator_closure_domain_iff_AC",
+            "wholeLineMinimalOperator_adjoint_test_core"
+          ]
+        },
+        {
+          "source_lines": [
+            792,
+            810
+          ],
+          "requirement": "The whole-line spectrum is the real axis with the union of the original open periodic gaps removed.",
+          "finding": "The whole-line resolvent set is defined by a bounded two-sided inverse on the actual closure domain, before comparison with Floquet data. Nonreal resolvents follow from the proved self-adjointness. At a real band point, a nonzero unit-multiplier physical solution and expanding smooth cutoffs have linearly increasing mass with bounded pencil residual, excluding any bounded inverse. At a real gap point, the original stable/unstable monodromy basis and scalar exponential solvers give a bounded physical inverse. The two inclusions identify the independently defined spectrum with the complement of all original canonical open gaps, embedded into C. The result includes every endpoint and collapsed gap, with no finite-gap assumption or high-index restriction.",
+          "declarations": [
+            "wholeLineResolventSet",
+            "wholeLineSpectrum",
+            "nonreal_mem_wholeLineResolventSet",
+            "mem_wholeLineSpectrum_of_unit_floquet",
+            "source_gap_mem_wholeLineResolventSet",
+            "source_wholeLineSpectrum_eq_floquetBands",
+            "source_wholeLine_spectral_overview"
+          ]
+        },
+        {
+          "source_lines": [
+            793,
+            794
+          ],
+          "requirement": "Absolute continuity concerns the spectral measures of that same whole-line operator.",
+          "finding": "The actual Cayley transform is formed from the closure resolvent and is proved unitary. Its scalar measures come from the continuous functional calculus of this specific bounded operator, preserve squared Hilbert norm as total mass and reproduce its complex functional calculus. Inverse-Cayley transport gives real measures; the exceptional fiber at one has zero mass. For every nonreal parameter, the integral of 1/(z-t) against the transported measure equals the actual unbounded-resolvent vector expectation. The construction therefore does not substitute an arbitrary measure, an assumed spectral representation or merely Lebesgue measure on the band set.",
+          "declarations": [
+            "wholeLineCayley",
+            "normalOperatorSpectralMeasure",
+            "wholeLineCayleySpectralMeasure",
+            "integral_wholeLineCayleySpectralMeasure",
+            "wholeLineRealSpectralMeasure",
+            "wholeLineRealSpectralMeasure_real_univ",
+            "wholeLineRealSpectralMeasure_resolvent_integral"
+          ]
+        },
+        {
+          "source_lines": [
+            793,
+            794
+          ],
+          "requirement": "The actual whole-line spectrum is purely absolutely continuous.",
+          "finding": "The actual Green formula and uniformly bounded physical mode kernels give local bounds for compact-input resolvent expectations away from repeated Floquet roots. The Poisson integral identity turns these into local absolute continuity. The repeated-root set is countable; absence of physical L2 eigenvectors, including at repeated roots, excludes spectral atoms, so this exceptional set has zero actual spectral mass. Compact inputs are therefore absolutely continuous on the entire real line. The quadratic vector-measure inequality and the dense original compact smooth domain extend the result to every Hilbert vector. Hence both atomic and singular continuous spectral mass vanish for every original real-type L2 potential. The theorem retains all endpoints and collapsed gaps; it does not claim the same result for arbitrary complex potentials or distributional FLp potentials beyond L2.",
+          "declarations": [
+            "wholeLineMinimalOperator_closure_eigenvector_eq_zero",
+            "wholeLineCayleySpectralMeasure_nullSingletonClass",
+            "countable_l2Monodromy_real_repeated_roots",
+            "eventually_norm_wholeLineNonrealResolvent_expectation_le",
+            "wholeLineRealSpectralMeasure_absolutelyContinuous_of_compact_input",
+            "absolutelyContinuous_quadraticMeasure_of_denseRange",
+            "wholeLineRealSpectralMeasure_absolutelyContinuous",
+            "source_wholeLine_spectral_overview"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewComplexSourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          17
+        ],
+        "pdf_pages": [
+          17
+        ],
+        "inspection": "The previously inspected rendering is reused with unchanged source and image hashes; extraction792-810 was compared with the actual whole-line statement and its proof chain.",
+        "images": {
+          "SpectralOverviewComplexCurrentReview-017.png": "9e60a0c37156cda406f608dc1746ae59a371aae6386e45dca8cadeadbf4153bd"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceWholeLineSpectralOverview.lean": "ac8bbcbf8d25fc34121b9c214b58423adfe6fea126a743bbe066909cf815d2f8",
+        "NLS/ZakharovShabat/L2WholeLinePureAbsoluteContinuity.lean": "5026c8d28b029ed0440b8dc21f340b18cce8f2ec5464ad35e9ea3feb04b59ff8",
+        "NLS/ZakharovShabat/L2WholeLineGapResolvent.lean": "1fac984e6b3c10b9541307bc6a03654876c034826af0749386654e4f5ca739ce",
+        "NLS/ZakharovShabat/L2WholeLineMinimalOperator.lean": "6d1f1d5c2752883bf6e2a661e54810b3e03760b20ca26f5991e1008e9933c484",
+        "NLS/ZakharovShabat/L2WholeLineSelfAdjoint.lean": "cb01b97f8b39e6c498ea85b88744d6699bf52721bf40c92ca020c3ce56e353b0",
+        "NLS/ZakharovShabat/L2WholeLineNonrealResolvent.lean": "b7fa3b1bbbe9eddfb6d67000bd4e5d4b845c700affe66d98c93d1e68d674fd15",
+        "NLS/ZakharovShabat/L2WholeLineBandSpectrum.lean": "faba7d7fe1e77738ae0824268b89c957f4ae579c8806e3654c92fcf047fb5f6b",
+        "NLS/ZakharovShabat/L2WholeLineRealSpectralMeasure.lean": "b1cc13e07796b5722b19689d7bd889a20f2248bbfcc280b69fa3b5addef57697",
+        "NLS/ZakharovShabat/L2WholeLineCayleySpectralMeasure.lean": "360d53878aaac64b17bdf1b01881e44f92eda9da1ce2e0b0853262b1bad19964",
+        "NLS/ZakharovShabat/L2WholeLineSpectralResolventIntegral.lean": "1c34734f8ade5ea9744fee64d7d0ab092d4064b06e49a14a1a54cb38d906a6ab",
+        "NLS/ZakharovShabat/L2WholeLineCompactSpectralAC.lean": "d795606f9b11bafb10f339f76984fb6c23d0cbf77c58621d05bab54d201f3c53",
+        "NLS/ZakharovShabat/L2WholeLineCompactLocalSpectralAC.lean": "1b27031ec59cb3d3361b7c40bbb107def72640c1097db43b8f7bb765d65a6862",
+        "NLS/ZakharovShabat/L2WholeLineLocalSpectralAC.lean": "149b22a79ec5a8519143bd90bc65c4cb2c278efb9705812f9efce85922a85f32",
+        "NLS/ZakharovShabat/L2WholeLineLocalResolventBound.lean": "f2dbec6584034194054b3b09dfac8865bddeab58b668d5bd18e729be3cbb546c",
+        "NLS/ZakharovShabat/L2WholeLineResolventExpectationBound.lean": "5914fdaf20cc2f436cebb0aea03625747ac2e366e206558062d2511377de597c",
+        "NLS/ZakharovShabat/L2WholeLineCayley.lean": "b50edc701388af11804900bd8c1c496d541ffca5716f4fd649a03240e3a52f28",
+        "NLS/ZakharovShabat/L2WholeLineCayleyMeasureNoAtoms.lean": "50e84a0b6909d57cf8fdff4cf600614701a2f526ab4c5dbdde8cb1756b38a660",
+        "NLS/ZakharovShabat/L2FloquetRepeatedRoots.lean": "c948fd290682d0c897350fd559e36ce3c8d53988f68853aff21246b06cd36ae7",
+        "NLS/ZakharovShabat/L2WholeLineTestDomain.lean": "5832f66df307cc04af32121acfbe2a66f6df952b02fd26cb901f5a61ae4dfbb8",
+        "NLS/ZakharovShabat/L2WholeLineDifferentialEquation.lean": "469b3e5c177498944abdf25644eb650f23b354d0bc049e50c3c8f40f9db67a87",
+        "NLS/ZakharovShabat/SourceFloquetBandSet.lean": "71acb3d7f00650b5804cece65389b28977ae41b811a2b1d1de1eb5922b06178e",
+        "NLS/ZakharovShabat/L2WholeLineGreenFormula.lean": "aa03e6f4913b4c4310c50a19d15f40300d1cb99f19fbb8caf50976c880d68480",
+        "NLS/ZakharovShabat/L2WholeLineGreenKernelEstimate.lean": "836b8a0109cb41240a1205665e4a5b376ad27300050e33aa310f5bf1628f2b0f",
+        "NLS/ZakharovShabat/L2WholeLineCayleyEigenvectors.lean": "1e6d3226278f13e45df911907a9b757a3c0204152a489a1efe3146bf147fca78",
+        "NLS/ZakharovShabat/L2WholeLineNoEigenvectors.lean": "f92a8b498cf12ae2f2cfa05c9a4f91e34779542454747b53dccc4604c1e5569b",
+        "NLS/ZakharovShabat/L2WholeLineMaximalDomain.lean": "a417230cc07b74e6781fb20b189d9dc059e49094fd2050bbc5aeca7460692734",
+        "NLS/ZakharovShabat/L2WholeLinePoissonIntegral.lean": "b6171dbc35d55558eee15db217b69dfa2a66289806b3b6c60ca7e27bc6ed7188",
+        "NLS/ZakharovShabat/L2WholeLineModeKernelBound.lean": "7176321480499eb1ebaf5988babef2c97aedcefe3ff882e1e4743b9f7369299b",
+        "NLS/ZakharovShabat/L2WholeLineNoL2Solution.lean": "23c5770d29803f9a179672d512627b669298e9c7add6711b09e60e5975d00535",
+        "NLS/ZakharovShabat/L2WholeLineACUniqueness.lean": "11bf9035ec4f5152fea0763d976eb896320a6c0bdef26f76f83da78f76e26ae2",
+        "NLS/FunctionalAnalysis/QuadraticMeasureDenseAC.lean": "a1f809429c2b88463563210d8ec74b418ef6e531efa005c4d516238ba1598686",
+        "NLS/FunctionalAnalysis/RealLocalAbsoluteContinuity.lean": "f2a960c8e7179902de24baee6e065a5aae637d18dcb5998fd15f792725e912a3",
+        "NLS/FunctionalAnalysis/LocalPoissonAbsoluteContinuity.lean": "40f6eef129a3f6fd8b8a0477f9dc0713cbd424f78dcc2488f57e31e859f17b41",
+        "NLS/FunctionalAnalysis/NormalOperatorSpectralMeasure.lean": "047c65cdea585d2347d3c4ae8cf4f121dd1bc445346bc7a1c741bbd67f956772",
+        "NLS/FunctionalAnalysis/NormalOperatorSpectralMeasureNoAtoms.lean": "9f249799d239de81c36bde163b291f9965ca2f7669cdf5fad44079947b29bab3"
+      },
+      "qualification": "All thirty-five listed modules were read completely in this comparison. The inspected chain retains the original period-one potential, Hermitian whole-line L2 space, actual closure and adjoint domains, independently defined spectrum, original canonical endpoints, actual Cayley spectral measures and all-vector absolute continuity. It is not an independent re-proof of every transitive dependency or a complete comparison of the rest of the spectral chapter. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
+      "source_record_sha256": "4a3f11a812f30612158094349d17c18d792a45c4e471134fb0f2258e00698df4"
     }
   }
 }
