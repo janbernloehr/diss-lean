@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T07:07:03.699519+00:00",
-  "base_commit": "e07e414542c4526e32eb2251173bee6ca2c7762a",
+  "published_utc": "2026-10-27T07:13:19.421694+00:00",
+  "base_commit": "131d64960a91cf58841c15e751759e61b5b5a42a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 51,
-    "module_hash_checks": 719,
-    "distinct_modules": 660
+    "review_records": 52,
+    "module_hash_checks": 735,
+    "distinct_modules": 676
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -10324,6 +10324,122 @@
       },
       "qualification": "All twelve hash-listed modules were read in full and the rendered source pages were inspected. This is a focused renewed comparison of the gap definitions and complex-potential paragraph, including the necessary actual-operator and endpoint interfaces. It is not a re-proof of all transitive dependencies, a comparison of all neighboring real spectral enumeration or whole-line claims, or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
       "source_record_sha256": "37bc62e79063ef675ff4989bc86fdd8834bcbe33b63b88b661cb32143172365d"
+    },
+    "SpectralOverviewRealPeriodicSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T07:12:38.151172+00:00",
+      "base_commit": "131d64960a91cf58841c15e751759e61b5b5a42a",
+      "source_lines": [
+        753,
+        790
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            755,
+            766
+          ],
+          "requirement": "The original Hilbert-space operator is diag(i,-i) times the derivative plus the off-diagonal potential, with periodic or antiperiodic H1 domain.",
+          "finding": "The physical expression uses the actual derivatives of both components, with signs i and -i and the original potential in the off-diagonal terms. Its coefficient realization agrees almost everywhere for arbitrary L2 potentials and full H1 inputs. The prior complex-potential comparison identifies each separate classical signed domain and operator on ordinary unit-interval L2, including the actual Hilbert adjoint. The two signed spectra are combined by union; a union of the two domain subspaces is not treated as one linear operator domain. The independently defined bounded-inverse spectral sets equal the nonzero full-domain ODE eigenvalue sets and their union equals the period-two spectrum, as described later on printed p.18.",
+          "declarations": [
+            "physicalOperator",
+            "physical_operator_realization",
+            "operator_eq_smul_iff_physical",
+            "classicalSignedSpectrum_eq_eigenvalues",
+            "classicalSignedEigenvalues_union_eq_periodic"
+          ]
+        },
+        {
+          "source_lines": [
+            768,
+            781
+          ],
+          "requirement": "The combined periodic spectrum has globally lexicographically ordered pairs, with l2 displacements from n*pi, counted with algebraic multiplicity.",
+          "finding": "The previously reviewed physical endpoint specification retains both full l2 displacement sequences and global lexicographic order. The present comparison checks that its counts equal the dimension of the actual physical operator generalized eigenspace. Root chains are defined by repeated application of the actual partial-operator pencil, retaining domain membership at every step. Their full increasing union is finite dimensional and stabilizes. Exact physical/source base and domain isomorphisms transport every chain length, rather than defining physical multiplicity by the desired coefficient count. Each signed spectrum is discrete with finite bounded portions, and the full physical multiplicity is the sum of the separate signed multiplicities. These facts hold for arbitrary complex L2 potentials.",
+          "declarations": [
+            "pencilRootSpace",
+            "linearPMapRootSpaceTop",
+            "physicalPeriodicRootSpaceTop_eq_map",
+            "finiteDimensional_physicalPeriodicRootSpaceTop",
+            "physicalPeriodicEndpoints_count_multiplicity",
+            "classicalSignedRootSpaceTop_eq_map",
+            "physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum"
+          ]
+        },
+        {
+          "source_lines": [
+            782,
+            786
+          ],
+          "requirement": "For real-type potentials the spectrum is real, each endpoint pair is ordered, and adjacent pairs are strictly separated.",
+          "finding": "The actual physical endpoint labels are real. Their inherited lexicographic order gives the non-strict order within each pair. Continuity of each real canonical slot along the original real scaling path, the two-valued discriminant condition and the exact free normalization give the alternating trace levels at every integer index. Adjacent pairs therefore cannot meet. This proves strict separation globally, including central indices and collapsed gaps, and yields disjoint closed gaps at distinct indices. The self-adjointness assertion uses the actual-domain equivalences already compared in the related complex-potential review.",
+          "declarations": [
+            "canonicalDiscriminant_canonicalPeriodicSlot_of_realType",
+            "canonicalPeriodicRight_re_lt_next_left",
+            "canonicalPeriodicGaps_disjoint",
+            "physicalPeriodicEndpoints_im_eq_zero_of_realType",
+            "physicalPeriodicEndpoints_real_order"
+          ]
+        },
+        {
+          "source_lines": [
+            789,
+            790
+          ],
+          "requirement": "Every eigenfunction at an even endpoint index is one-periodic, and every eigenfunction at an odd endpoint index is one-antiperiodic.",
+          "finding": "The actual discriminant level kills the entire opposite-parity generalized eigenspace. Hence every original-domain eigenvector at either canonical real endpoint lies in the corresponding Fourier parity subspace. Actual continuous Sobolev synthesis gives the exact unit-translation identity for both physical components at every real x. The even and odd specializations prove periodicity and antiperiodicity for every eigenfunction, with no high-index cutoff and including collapsed pairs. The source statements cover all finite p>1, in particular the printed Hilbert case. Independently defined classical signed spectra are exhausted by the appropriate even or odd endpoint pairs, and those pairs count the full actual signed Jordan-chain multiplicities.",
+          "declarations": [
+            "periodicRootSpaceTop_le_parity_of_discriminant_level",
+            "sourceCanonicalEndpoint_eigenfunction_unit_translation",
+            "sourceCanonicalEndpoint_eigenfunction_periodic",
+            "sourceCanonicalEndpoint_eigenfunction_antiperiodic",
+            "classicalPeriodicSpectrum_iff_even_endpoint",
+            "classicalAntiperiodicSpectrum_iff_odd_endpoint",
+            "physicalEvenEndpoints_count_classicalPeriodicMultiplicity",
+            "physicalOddEndpoints_count_classicalAntiperiodicMultiplicity"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewComplexSourceComparison-2026-10-27"
+      ],
+      "related_scope": "The twelve-module complex-potential comparison supplies the unchanged original physical operator/domain and endpoint-specification interfaces. Their hashes remain verified. The present record reads sixteen additional modules completely. The later p.18 period-two union description at extraction847-855 motivates the interpretation of the printed plus-or-minus boundary shorthand.",
+      "rendered_source": {
+        "printed_pages": [
+          17,
+          18
+        ],
+        "pdf_pages": [
+          17,
+          18
+        ],
+        "inspection": "The rendered pages inspected for the preceding complex-potential comparison are reused with unchanged image and source hashes; the opening extraction753-790 was read again.",
+        "images": {
+          "SpectralOverviewComplexCurrentReview-017.png": "9e60a0c37156cda406f608dc1746ae59a371aae6386e45dca8cadeadbf4153bd",
+          "SpectralOverviewComplexCurrentReview-018.png": "c6af5c91e50956f88b703ccd60ae55265400cf633089bc431e2e9596c9ccafc6"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ClassicalSignedEndpointLabels.lean": "3c51878f8934c167e85dfae0535fd646455cd4dae1e6a11f061090823929fd3c",
+        "NLS/ZakharovShabat/SourceCanonicalEigenvectorParity.lean": "feecb70b5187cdb7b7b055a133853ef4c8365f66f079ce4941a9ece8f2f23283",
+        "NLS/ZakharovShabat/DiscriminantRootParity.lean": "0bbaec5a5dd24f101261bb84932795135b092dc63207682a16b6dcf1fa4e6b47",
+        "NLS/ZakharovShabat/ClassicalSignedEndpointMultiplicity.lean": "e09a522280b1bd8bc1f37ea1db880511325ff64d456026bbc08732dc83827764",
+        "NLS/ZakharovShabat/PhysicalPeriodicMultiplicity.lean": "23fd3e2715c557ae2d5e2cf9e1687edfdf936084dc47e875daf24e3779378bae",
+        "NLS/ZakharovShabat/PhysicalPeriodicRootSpaces.lean": "e21428bcd2c15369fed7075efaeae33e83102c2a7674cf21f35deeb17b106fc3",
+        "NLS/ZakharovShabat/ClassicalSignedRootSpaces.lean": "d79f5245f7f868830c1baef8645f5272f2d6e6d2659329763b7e344d3da67af7",
+        "NLS/ZakharovShabat/ClassicalSignedMultiplicity.lean": "247d0a44bd0e099e35b2adf7ba20847785c3bdbe813b69765fbd6a429c23b2ec",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean": "55ed05132943d26034a7f8f16999e7cc1de29dbad8d8b6ba4b99326422287801",
+        "NLS/ZakharovShabat/CanonicalPeriodicLevels.lean": "2f0c8d3180e0eb51427a490748f48362c4e40874600e8bbe27eacd6621c95c31",
+        "NLS/ZakharovShabat/ClassicalSignedEigenvalues.lean": "c490024c790f2f6aec93badc059cd21e4ab77956e47005e5e0f3c0eb8f29196d",
+        "NLS/ZakharovShabat/ClassicalSignedSpectrum.lean": "40cc8ab47d75041f340b730c2ae40eb1d359f1e72d7fffc8c48361cc18019d24",
+        "NLS/ZakharovShabat/ClassicalIntervalOperator.lean": "8159a66a03d7b93a08534e6f98a740bcd24c8571363714734cdf03ab0abe0724",
+        "NLS/ZakharovShabat/SourceParityRootChains.lean": "2962ba6573bad098895336c40b0515629599f4800acc4bddc2a00738c893fcf0",
+        "NLS/ZakharovShabat/PhysicalOperator.lean": "0b504c156c2d0f19637da34849686189731fa5a9b7433396c4495946af80e28e",
+        "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean": "9291bd0cfe313e4f4b30fabe16990030586931d31d901bb5e3be348c505b3747"
+      },
+      "qualification": "All sixteen listed modules were read completely. The comparison retains actual physical functions, operator domains, bounded-inverse spectral sets, full Jordan-chain multiplicities, global ordering and the universal eigenfunction quantifier. The whole-line spectrum and absolute-continuity assertion at792-810 remains a separate comparison. This is not an independent re-proof of every transitive dependency or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
+      "source_record_sha256": "9984e0f25164ce183804aab64542484c9f3e3ef77421f129c82a2f31aab71e3d"
     }
   }
 }

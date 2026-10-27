@@ -4,6 +4,31 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Renewed comparison of periodic enumeration, printed p. 17
+
+The opening operator, enumeration, real ordering and eigenfunction-parity
+assertions now have a renewed comparison against sixteen complete modules,
+recorded as `SpectralOverviewRealPeriodicSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). It uses the unchanged physical
+domain and endpoint interfaces from the complex-potential comparison below.
+
+The actual spectral sets equal the full classical ODE eigenvalue sets.
+Endpoint repetitions count the dimension of the entire physical generalized
+eigenspace, with the operator domain retained at every link of a root chain.
+Global lexicographic ordering and both full l2 displacement sequences remain
+part of the endpoint specification. For real potentials, consecutive pairs
+are strictly separated, including central indices and collapsed gaps.
+
+Every eigenfunction at either endpoint has its index's exact unit-translation
+sign in both physical components. This is an all-index statement for all
+finite p>1, including the printed Hilbert case. Even and odd physical pairs
+also count the full algebraic multiplicity of the respective classical
+signed operators. The printed plus-or-minus boundary shorthand is realized
+by two separate linear domains and the union of their spectra.
+
+The whole-line spectrum and absolute-continuity assertion is a separate
+comparison. This record does not certify the whole chapter or dissertation.
+
 ## Renewed comparison of complex potentials, printed pp. 17–18
 
 The gap definitions and the complex-potential paragraph now have a renewed
