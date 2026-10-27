@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T09:18:50.426132+00:00",
-  "base_commit": "7cf087b99f1c48468a413c5504dbd89123326f76",
+  "published_utc": "2026-10-27T10:07:02.748804+00:00",
+  "base_commit": "1565d835c90e6ac139088a8c8924aece49e8db3d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 59,
-    "module_hash_checks": 827,
-    "distinct_modules": 746
+    "review_records": 60,
+    "module_hash_checks": 862,
+    "distinct_modules": 756
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "652a3deb10d52cf6580e7540f3649a8454da69db",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativeWeightedFiniteGap and three public examples.",
+    "base_commit": "1565d835c90e6ac139088a8c8924aece49e8db3d",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativeWeightedBirkhoff, NativeWeightedBirkhoffCanonical and four public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8418,
-    "public_examples": 7442,
-    "transitive_NLS_declarations": 42667,
+    "build_jobs": 8420,
+    "public_examples": 7446,
+    "transitive_NLS_declarations": 42718,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4695,
-      "sha256": "79d8cf6db4f52f7b1c1f149cde24f04500a581f73d982a8c920fbefa3b68a8dd"
+      "files": 4697,
+      "sha256": "d793e77df2d1ce655fcd66da8870afdb2ac6a0696884a41c814c6517cd14c737"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -11221,6 +11221,202 @@
       },
       "qualification": "All eleven listed modules were read completely. The comparison verifies four repeated introductory formulas, their actual-source counterexamples and the separately stated corrected identities. It reuses the prior physical identification, original Birkhoff-family, Section19-domain and transitive proof comparisons. It does not claim to re-audit every dependency, every introductory background assertion, the low-regularity gauge transport or the cubic extension and convergence proof. Existing finite-exponent, original-domain, precise2014 and AppendixG2 qualifications remain unchanged.",
       "source_record_sha256": "196676cd67946bb121a2d689a4bd582db6d05d1cef74c360f204297fe144b5dc"
+    },
+    "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1565d835c90e6ac139088a8c8924aece49e8db3d",
+      "updated_utc": "2026-10-27T10:07:02.748804+00:00",
+      "source_lines": [
+        250,
+        323
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            250,
+            252
+          ],
+          "requirement": "The phase space is the original period-one complex Sobolev pair, with its actual real-type subspace and original norm.",
+          "finding": "Space consists of actual smooth-test distributions with weighted Fourier coefficients; coefficients is an exact complex linear isometry of the full component-sum pair norm. The real subspace is independently defined by conjugate reflection of the original test actions. Spectral weight (1+|k|/2)^t gives exactly (1+|n|)^t at the physical index k=2n. At p=2 physical realizes both components in the actual unit-interval L2 space and physical_test proves equality on every smooth test. Sobolev orders are arbitrary nonnegative reals.",
+          "declarations": [
+            "NativeWeightedPeriodic.Space",
+            "NativeWeightedPeriodic.realSpace",
+            "NativeWeightedPeriodic.coefficients",
+            "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+            "NativeWeightedPeriodic.physical_coefficients",
+            "NativeWeightedPeriodic.physical_test"
+          ]
+        },
+        {
+          "source_lines": [
+            253,
+            261
+          ],
+          "requirement": "The physical bracket is -i times the cross-gradient integral, with gradients defined by unconjugated L2 duality.",
+          "finding": "Physical bilinear pairing is integrable and separates arbitrary L2 pairs. Every continuous complex L2 cotangent has a unique physical gradient, and its cross-gradient integral equals the Fourier bivector with opposite frequencies. The new distribution pullback uses raw unit Fourier directions, whose weighted norms need not be one. poisson_physical proves absolute convergence and equality to the literal physical integral; poisson_physical_functions handles full derivatives of functionals differentiable on physical L2. This does not assert that every C1 functional on a positive-order Sobolev space has an L2 gradient.",
+          "declarations": [
+            "physicalL2_pairing_source",
+            "physicalCotangentGradient_pairing",
+            "physicalCotangentGradient_unique",
+            "physicalCotangentBivector",
+            "physicalCotangentBivector_eq_source",
+            "NativeWeightedPeriodic.modeLeft",
+            "NativeWeightedPeriodic.modeRight",
+            "NativeWeightedPeriodic.poisson_physical",
+            "NativeWeightedPeriodic.poisson_physical_functions"
+          ]
+        },
+        {
+          "source_lines": [
+            273,
+            289
+          ],
+          "requirement": "The original NLS energy gives the signed pair Hamiltonian field, preserves real type and reduces to the scalar defocusing equation.",
+          "finding": "The actual third hierarchy Hamiltonian equals the derivative-product plus quartic integral on smooth periodic inputs. Its two complex directional variations are proved by integration by parts. The (-i,+i) cross-gradient field has conjugate-pair velocities on real inputs and gives i*u_t=-u_xx+2*|u|^2*u. The physical H1 energy is separately identified with its literal scalar integral. The classical variation and pointwise PDE proofs retain their smooth periodic or differentiability hypotheses; they do not assert an H1-valued classical vector field at arbitrary H1 data. Global low-regularity solutions use the existing original all-smooth-approximation notion and constructed real-source flows.",
+          "declarations": [
+            "classicalNLSHamiltonian_three",
+            "hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "classicalNLSVectorField_real",
+            "classicalNLSVectorField_scalar",
+            "classicalNLS_equation_of_hasDerivAt",
+            "scalarSobolevEnergy_eq_integral",
+            "sourceSection22_original_flows"
+          ]
+        },
+        {
+          "source_lines": [
+            294,
+            299
+          ],
+          "requirement": "The rectangular Birkhoff map is globally bi-analytic on real L2 and on every integer Sobolev restriction, with canonical brackets 0,-delta,0.",
+          "finding": "The native map preserves every original raw coordinate and maps into the full weighted rectangular real pair with its exact norm. One original Section17 family is constructed before choosing weights, orders or inputs. For every finite p>1 and spectral weight the map is analytic and an open embedding. For 1<p<=2 and every real t>=0 the actual original-distribution Sobolev map is a homeomorphism with both directions analytic. The inverse recovers every test action. All three brackets of the full scalar complex derivatives are proved as absolutely convergent sums, including closed gaps, with their original signs. At p=2 each coordinate equals the intrinsic physical contour coordinate. There is no surjectivity claim for arbitrary weights or all p>2.",
+          "declarations": [
+            "NativeWeightedPeriodic.birkhoff",
+            "NativeWeightedPeriodic.birkhoff_norm_rpow",
+            "NativeWeightedPeriodic.birkhoff_same_distribution",
+            "NativeWeightedPeriodic.birkhoff_isOpenEmbedding",
+            "NativeWeightedPeriodic.sobolevHomeomorph",
+            "NativeWeightedPeriodic.sobolevHomeomorph_analytic",
+            "NativeWeightedPeriodic.sobolevHomeomorph_inverse_test",
+            "NativeWeightedPeriodic.exists_birkhoff_family",
+            "NativeWeightedPeriodic.complex_coordinates_fderiv",
+            "NativeWeightedPeriodic.birkhoff_canonical",
+            "NativeWeightedPeriodic.birkhoff_physical"
+          ]
+        },
+        {
+          "source_lines": [
+            301,
+            309
+          ],
+          "requirement": "The full transformed NLS energy depends only on I_n=(x_n^2+y_n^2)/2 and is real analytic on the nonnegative standard ell^(2,1) action cone.",
+          "finding": "The exact rectangular radius equals twice the original spectral action. A constructed original Hamiltonian and its retained frequency restore the full energy by adding 2*(sum I)^2 and sum (2*pi*n)^2*I_n. Both sums converge absolutely on weighted ell1. Coefficient-preserving continuous linear maps identify physical and standard order-two action topologies, with explicit norm bounds rather than an equality of these different norms. The standard full Hamiltonian is analytic on an open domain containing the entire nonnegative cone, has real values there and agrees with the physical energy at every original real H1 source, including infinite support. No unweighted-ell2 analyticity claim is made for the full energy.",
+          "declarations": [
+            "SourceBirkhoffMapComplexData.real_map_action_radius",
+            "sourceSection18_original_hamiltonian",
+            "sourceEnergyAction_summable",
+            "sourceEnergyActions_norm_comparison",
+            "sourceStandardFullActionHamiltonian_eq",
+            "SourceOriginalHamiltonianData.standard_full_action_domain",
+            "SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "SourceOriginalHamiltonianData.standard_real_full_action_values",
+            "SourceOriginalHamiltonianData.standard_full_action_physical_identity"
+          ]
+        },
+        {
+          "source_lines": [
+            311,
+            315
+          ],
+          "requirement": "Equation(0.2) gives xdot_n=-omega_n*y_n and ydot_n=omega_n*x_n, with omega_n the full action-energy derivative.",
+          "finding": "The standard weighted coordinate derivative restores the dispersion (2*pi*n)^2 and 4*sum I to the same original renormalized frequency. The literal signed oscillator equations hold along every global ordinary original solution in 1<p<=2, with frequencies constant along that solution. Separate formulas retain the renormalized flow and its frequency. Actual phase identities and uniqueness in the original solution class connect these assertions to the constructed physical solutions; the oscillator trajectories are not merely defined as the desired answer.",
+          "declarations": [
+            "SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+            "SourceSection20Data.ordinary_original_rectangular_phase",
+            "SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "SourceSection20Data.ordinary_original_frequency_conserved",
+            "SourceSection20Data.renormalized_original_rectangular_oscillators",
+            "sourceSection22_original_flows"
+          ]
+        },
+        {
+          "source_lines": [
+            317,
+            321
+          ],
+          "requirement": "The full derivative at zero is the physical Fourier transform in the stated convention, and nonlinear Parseval preserves the L2 pair norm.",
+          "finding": "The entire bounded physical derivative and the inverse derivative at zero are identified, including the reflected signed index and rectangular sqrt(2) normalization. The new native distribution map has the same intrinsic physical coordinates, and birkhoff_parseval proves exact norm equality on the original unweighted p=2 distribution pair. The general birkhoff_norm_rpow theorem describes the target weighted norm only; it does not assert nonlinear norm preservation at higher Sobolev order or preservation of pairwise distances.",
+          "declarations": [
+            "SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+            "intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+            "intrinsicPhysicalBirkhoffHomeomorph_symm_fderiv_zero",
+            "NativeWeightedPeriodic.birkhoff_physical",
+            "NativeWeightedPeriodic.birkhoff_parseval"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionOpeningSourceComparison-2026-10-27",
+        "IntroductionNormalizationSourceComparison-2026-10-27",
+        "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+        "Section2SourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          10,
+          11
+        ],
+        "pdf_pages": [
+          10,
+          11
+        ],
+        "inspection": "Inspected both page renderings, retaining conjugation bars, the -i bracket, the real-type involution, the negative canonical delta, the positive weighted action cone, equation(0.2) and the pair Parseval norm.",
+        "images": {
+          "IntroductionOpeningCurrentReview-010.png": "dda8a038e476fba3eaf8d85858dfa0d6d6d05c404d080a4145e9200c778a5626",
+          "IntroductionCorrectionsCurrentReview-011.png": "b09ce045c900ae62015187be18c138151ee18071a14dbb3c8e271100bc819725"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/NativeWeightedFiniteGap.lean": "76a3c925721289e0dfafd0af6fa503c628762b65600272dddea56d4dc9106884",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoff.lean": "f717c4e45bf222479292473f656acc9d5f5a20e5f8dac9b9c222756b4cea448e",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoffCanonical.lean": "08c1942a25f5369caeba8e70527026d5a8675694517bba87295e7802f67b308a",
+        "NLS/ZakharovShabat/SourceWeightedRealSpaces.lean": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalWeightedMap.lean": "bea5df758f3c6aa189d3fabc54fc7b0b24503d16e1332870d4cba541271f8b8f",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedRealAnalytic.lean": "5b3f4efb502d412dfd460307c0fcfe2ccffebf131179c848b14f94aeeab74667",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean": "2ca330342ac0ace4267953f6973d82e72112815f376303562ed23bb8f7b79b40",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean": "6c1c5399272d6af75fd78f1ac969df5bd45556127a28c446f1e292203079c595",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexDerivative.lean": "a74df62bee9e08088c9a79ff30d15e6804691ef7b761ba78e80270f8bf5844db",
+        "NLS/ZakharovShabat/SourceWeightedCotangent.lean": "1ca48d72708ebcf31296377a65fec4ecdb879e36a46690a78b504c33324664f6",
+        "NLS/ZakharovShabat/SourceSection17Original.lean": "68aaf622885d6516a72d3428760e4dbe78a7a6152bd451875c4f491173c39cb6",
+        "NLS/ZakharovShabat/PhysicalL2BilinearPairing.lean": "2bbc6dc0ea8df12f551f25d9708d16c1d406dadec50ac1d97a04bedaf04f0b40",
+        "NLS/ZakharovShabat/PhysicalCotangentGradient.lean": "6dc1b532244ac9271bb1f6c8e0d551611e33ee879a7b58d50f09de2c457b6416",
+        "NLS/ZakharovShabat/PhysicalPoissonBracket.lean": "d43de929a7a4924d2533a0797496ccab4f1d94bcf747f8bba3486eccf6ae97af",
+        "NLS/ZakharovShabat/SourcePhysicalRealL2.lean": "279ae9263018b21e6d0037b56a5512426e29fc9fb7156201fbac0666dba9aed9",
+        "NLS/ZakharovShabat/PhysicalBirkhoffIntrinsicProperties.lean": "242ee1f228107c19c6dc32f3909374bec7dae9633bc2d0bd765f3c70127f2d3d",
+        "NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean": "99aaa760eeea1431e5f5f20c6a9a587cdceb983427d1d7e8047ede502d96ac9e",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "a7306ddd0e52031dc727feab083c3d4d14f397340242bf3946abaf0e58095a8f",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": "0b24b5cd21ab246633be338bfe929b19ff8e51bfa948700744ac918d1270493f",
+        "NLS/ZakharovShabat/ClassicalNLSSobolevEnergy.lean": "188ea3cce1da938f1f66137629826e19441840bce7ad43e58f4b1048102d367d",
+        "NLS/ZakharovShabat/SourceBirkhoffTheorem15_2.lean": "f8616dac478090872091fecdab225be1714d7a6fb2520c589e63719834d42d42",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean": "3afae8c7bc9e64d24b76a118422bb5e44ac070bc8cd64109823011509d547679",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean": "783315cb41fda455f8d279bd0daa24de5bf84aa646d1dab09d842ea134a69dec",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianReal.lean": "9b609ad09c86ee03188e6445b05cd8c24e191c466780d886d234637fda3f3365",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianNorm.lean": "c053bb1000eb0ec6612ae76184793f02bd18d3f54992d69bdb4dbdfadd6db259",
+        "NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean": "c2500fb57041857512cb9ea8d3deb70cbb1e49c9634fca1c35ff62e91e780bd1",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean": "46bb11a67daccbb0f644f63af44893a34c687d3d8e685fcbd105125afa09fc82",
+        "NLS/ZakharovShabat/SourceSection22Original.lean": "622872ff5ddbdc4f283a0c6b9706b25e648e42278f9f1f3783afabbb486e6a62",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Poisson/RegularSourceCotangent.lean": "45073687d1c68224c88095c1b9e73067f1197eb5c901df79a1be45e80fdcb904",
+        "NLS/Poisson/WeightedRegularSourceCotangent.lean": "a5f4f5882c8602c9b5fa79c1f9f1e66866a0680ef9e4439faac4aab6994fde14",
+        "NLS/Dynamics/RectangularHamiltonianOscillators.lean": "572cb7dc9a2f4ee0814160789d961518f2b5a3524786c755fc831b4343cef571"
+      },
+      "qualification": "All 35 listed modules were read completely in this comparison. The new distribution-space bridge and four public examples retain raw coefficients, exact pair norms, full derivatives and original smooth-test identities. Existing physical contour construction, Sobolev action identification, original frequency recovery and all-smooth-approximation solution results retain their earlier transitive comparisons; this is not an independent review of every dependency. Classical gradient/PDE regularity, finite p>1, global Sobolev inverse only for p<=2, and unweighted-Hilbert-only Parseval are explicit. The introductory historical attribution is not certified. The precise 2014 construction, Appendix G.2 norm interpretation and broader source assessment remain unfinished.",
+      "source_record_sha256": "bb83e37ccea9f174effcf223c0c79bcb0d8542ecad26409be41a28b79e6fbaf4"
     }
   }
 }

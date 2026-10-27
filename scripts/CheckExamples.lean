@@ -68799,3 +68799,89 @@ example (φ : realSpace (SpectralWeight.constant 4 (by norm_num)) (3/2)) :
   linarith
 
 end NativeWeightedFiniteGapChecks
+
+noncomputable section
+namespace NativeWeightedBirkhoffChecks
+open Set NLS NLS.Fourier SmoothPeriodicTest NLS.ZakharovShabat NativeWeightedPeriodic
+open scoped ENNReal
+
+private abbrev halfWeight : SpectralWeight := sobolevWeight (1/2) (by norm_num)
+private def singleTarget : Target halfWeight 2 := WithLp.toLp 2
+  (⟨WeightedCoeff.single (sourceFrequencyWeight halfWeight) (-3) 1, by
+    apply (WeightedCoeff.mem_realSubmodule_iff _ _ _).mpr
+    intro n
+    simp only [WeightedCoeff.single_val, Pi.single_apply]
+    split_ifs <;> simp⟩, 0)
+
+-- Inverting one nonzero nonlinear coordinate produces an actual finite-gap distribution.
+example {A B C : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceSection17OriginalData (by simp) (by norm_num) A B C s) :
+    ∃ φ : realSpace halfWeight 2,
+      birkhoff D halfWeight φ = singleTarget ∧
+      φ ∈ finiteGapLocus (p := 2) (by simp) (by norm_num) halfWeight ∧
+      ∃ u v : ℝ → ℂ, AnalyticOnNhd ℝ u univ ∧ AnalyticOnNhd ℝ v univ ∧
+        Function.Periodic u 1 ∧ Function.Periodic v 1 ∧
+        ∀ n : ℤ, periodOneCoefficient u n = φ.val.fst.val (mode (-n)) ∧
+          periodOneCoefficient v n = φ.val.snd.val (mode (-n)) := by
+  let φ := (sobolevHomeomorph D le_rfl (1/2) (by norm_num)).symm singleTarget
+  have hmap : birkhoff D halfWeight φ = singleTarget :=
+    (sobolevHomeomorph D le_rfl (1/2) (by norm_num)).apply_symm_apply singleTarget
+  have hf : φ ∈ finiteGapLocus (p := 2) (by simp) (by norm_num) halfWeight := by
+    rw [birkhoff_finiteGap_iff D, hmap]
+    apply (Set.finite_singleton (-3 : ℤ)).subset
+    intro n hn
+    by_contra h
+    have hn3 : n ≠ -3 := by simpa only [Set.mem_singleton_iff] using h
+    simp [singleTarget, WeightedCoeff.single_val, Pi.single_apply, hn3] at hn
+  exact ⟨φ,hmap,hf,exists_analytic_representative (by simp) (by norm_num) halfWeight φ hf⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]
+  norm_num⟩
+
+-- A raw direction has coefficient one although its weighted norm is four.
+example :
+    (modeLeft (SpectralWeight.constant 4 (by norm_num)) (3/2) (-3)).fst.val (mode 3) = 1 ∧
+    ‖modeLeft (SpectralWeight.constant 4 (by norm_num)) (3/2) (-3)‖ = 4 := by
+  constructor
+  · change (coefficients (SpectralWeight.constant 4 (by norm_num)) (3/2)
+      (modeLeft (SpectralWeight.constant 4 (by norm_num)) (3/2) (-3))).fst.val (-3) = 1
+    rw [coefficients_modeLeft]
+    change (WeightedCoeff.single _ (-3) 1).val (-3) = 1
+    simp
+  · rw [← (coefficients (SpectralWeight.constant 4 (by norm_num)) (3/2)).norm_map,
+      coefficients_modeLeft]
+    change ‖WithLp.toLp (3/2)
+      (WeightedCoeff.single (sourceFrequencyWeight (SpectralWeight.constant 4 (by norm_num))) (-3) 1,
+        (0 : WeightedCoeff (sourceFrequencyWeight (SpectralWeight.constant 4 (by norm_num))) (3/2)))‖ = 4
+    rw [WithLp.norm_toLp_fst, WeightedCoeff.norm_single]
+    norm_num [sourceFrequencyWeight]
+
+private theorem qFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := by finiteness
+private theorem qGtOne : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)]
+  norm_num
+
+-- At a noninteger exponent a nonunit weight introduces no extra factor in the bracket.
+example {A B C : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (D : SourceSection17OriginalData qFinite qGtOne A B C s)
+    (φ : realSpace (SpectralWeight.constant 4 (by norm_num)) (3/2)) :
+    poisson (SpectralWeight.constant 4 (by norm_num))
+      (fderiv ℂ (complexX qFinite qGtOne s
+        (SpectralWeight.constant 4 (by norm_num)) (-3)) φ.val)
+      (fderiv ℂ (complexY qFinite qGtOne s
+        (SpectralWeight.constant 4 (by norm_num)) (-3)) φ.val) = -1 := by
+  simpa using (birkhoff_canonical D _ φ (-3) (-3)).2.2.2.2.1
+
+-- Recovering the original distribution also recovers its physical pairing with every test.
+example {A B C : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceSection17OriginalData (by simp) (by norm_num) A B C s)
+    (φ : realSpace halfWeight 2) (f : SmoothPeriodicTest 1) :
+    ((sobolevHomeomorph D le_rfl (1/2) (by norm_num)).symm
+      (birkhoff D halfWeight φ)).val.fst.val f =
+        ∫ x in (0 : ℝ)..1, (physical halfWeight φ).val.fst x * f x := by
+  exact (sobolevHomeomorph_inverse_test D le_rfl (1/2) (by norm_num) φ f).1.trans
+    (physical_test halfWeight φ f).1
+
+end NativeWeightedBirkhoffChecks

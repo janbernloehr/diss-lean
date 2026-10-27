@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: real finite-gap potentials now approximate original weighted
-periodic distributions in their exact norm, including every nonnegative
-fractional Sobolev order. The approximants have analytic periodic
-representatives with unchanged Fourier coefficients. See the
-[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
+Latest step: Birkhoff coordinates now act directly on original weighted
+periodic distributions. The Sobolev inverse is globally analytic for every
+nonnegative real order and 1<p<=2; the canonical brackets, physical gradient
+integral and unweighted L2 Parseval identity retain their original
+normalizations. See the [introduction audit](coverage/INTRODUCTION.md).
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

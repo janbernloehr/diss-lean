@@ -21,6 +21,61 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Birkhoff coordinates on original distributions, printed pp. 10–11
+
+[NativeWeightedBirkhoff.lean](../NLS/ZakharovShabat/NativeWeightedBirkhoff.lean)
+defines the map on the original period-one smooth-test distributions.
+The Fourier identification is an exact isometry for the weighted component-sum
+norm. Its independently defined real subspace retains conjugate reflection,
+and the rectangular target uses the same raw coordinates and weighted pair
+norm. The spectral weight `(1+|k|/2)^t` gives exactly `(1+|n|)^t` at `k=2n`.
+
+One constructed original family works before selecting any weight, order or
+input. For every finite p>1 and spectral weight, the map is analytic and an
+open embedding. For 1<p<=2 and every real t>=0, `sobolevHomeomorph` gives the
+global map and inverse, both analytic in the original norms. The inverse
+recovers every smooth-test action. Changing the weight preserves the
+coordinates of the same original distribution.
+
+At p=2 the physical L2 representatives agree with the original distributions
+on every smooth test, and the coordinates are the intrinsic physical contour
+coordinates. `birkhoff_parseval` proves exact norm preservation at unit weight.
+The weighted target norm formula does not assert higher-order norm preservation.
+Finite support of the nonlinear output is equivalent to actual spectral
+finite-gap membership.
+
+[NativeWeightedBirkhoffCanonical.lean](../NLS/ZakharovShabat/NativeWeightedBirkhoffCanonical.lean)
+identifies the full complex derivatives of the scalar coordinates on the
+original distribution carrier. All three Poisson series converge absolutely
+and give `0`, `-delta(n,m)` and `0`, including at closed gaps. Raw Fourier
+directions have coefficient one; their weighted norm need not be one.
+`poisson_physical` identifies this bracket with the literal `-i` cross-gradient
+integral for physical L2 cotangents. `poisson_physical_functions` applies to
+full derivatives of functionals differentiable on physical L2.
+
+Four public examples check a one-coordinate target at Sobolev order 1/2,
+its finite-gap analytic representative, a raw direction with norm four,
+the canonical bracket at p=3/2, and all-test physical pairing after inversion.
+
+The comparison `IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27`
+in the [source-comparison snapshot](source-review-index.json) covers seven
+assertion groups at extraction lines 250–323. It also checks the existing
+energy variations and scalar equation, the full Hamiltonian on the standard
+nonnegative ell^(2,1) action cone, the actual oscillator equations, and the
+full physical Fourier differential at zero.
+
+The gradient-integral formulation requires L2 gradients; it is not asserted
+for arbitrary C1 functionals on positive-order Sobolev spaces. Classical
+energy variations and pointwise PDE formulas retain their stated regularity.
+The global original solution statements use the existing all-smooth-approximation
+solution class. Surjectivity for arbitrary weights or all p>2 is not claimed.
+The source's historical attribution, the precise 2014 construction and the
+G.2 norm interpretation remain separate.
+
+Validation passes: 8,420 build jobs, 7,446 public examples and a
+transitive axiom audit of 42,718 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Leading Fourier term of the action sequence, printed p. 10
 
 [SourceActionFourierTaylor.lean](../NLS/ZakharovShabat/SourceActionFourierTaylor.lean)

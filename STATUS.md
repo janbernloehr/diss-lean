@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: Native weighted finite-gap approximation
+## Current milestone: Birkhoff coordinates on original distributions
+
+The Birkhoff map now acts directly on the original weighted periodic
+distributions, with unchanged raw coordinates and the exact pair norm.
+It is an analytic open embedding for every spectral weight and finite p>1.
+For every real Sobolev order t>=0 and 1<p<=2, the global inverse is analytic
+and recovers the original distribution on every smooth test.
+
+The full coordinate derivatives satisfy all three canonical brackets with
+absolute convergence. For pullbacks of physical L2 cotangents, the weighted
+Hilbert bracket agrees with the literal physical gradient integral. Physical
+contour coordinates and unweighted L2 Parseval are retained. See the [introduction audit](coverage/INTRODUCTION.md).
+
+Four examples cover a finite-gap inverse at order 1/2, raw directions whose
+weighted norm is four, the mixed bracket at p=3/2, and physical smooth-test
+pairing after inversion.
+
+Validation: `./scripts/check.sh` passes with 8,420 build jobs, 7,446
+public examples, and a transitive axiom audit of 42,718 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,906 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Next: continue the remaining source assessment, retaining the classical
+regularity assumptions and every formal source correction. The precise
+2014 construction and G.2 norm interpretation remain unresolved.
+
+## Previous milestone: Native weighted finite-gap approximation
 
 Actual real finite-gap potentials are now dense directly in the original
 weighted distribution spaces for every finite p>1. The Fourier identification
