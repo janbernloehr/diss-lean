@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T08:32:16.681845+00:00",
-  "base_commit": "de2755b6693e1277f34945cda3d0fefa43a3a3aa",
+  "published_utc": "2026-10-27T09:17:54.082700+00:00",
+  "base_commit": "652a3deb10d52cf6580e7540f3649a8454da69db",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 57,
-    "module_hash_checks": 803,
-    "distinct_modules": 734
+    "review_records": 58,
+    "module_hash_checks": 816,
+    "distinct_modules": 743
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9a5525b2315e6dabeb4e498e5dcb1c56278c9981",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes PeriodicFourierLebesguePeriodDoubling, NativePeriodOnePotential and five public examples.",
+    "base_commit": "652a3deb10d52cf6580e7540f3649a8454da69db",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativeWeightedFiniteGap and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8417,
-    "public_examples": 7439,
-    "transitive_NLS_declarations": 42615,
+    "build_jobs": 8418,
+    "public_examples": 7442,
+    "transitive_NLS_declarations": 42667,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4694,
-      "sha256": "af128e855ba3a2228bbc6240f1b20a7db050084ac64dde6e485c81b2e28b7d17"
+      "files": 4695,
+      "sha256": "79d8cf6db4f52f7b1c1f149cde24f04500a581f73d982a8c920fbefa3b68a8dd"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -10979,6 +10979,119 @@
       },
       "qualification": "The nineteen listed modules were read completely across the continuous comparison and their unchanged hashes checked. This follows the exact source-to-physical maps and quantifiers, but does not independently reprove every transitive dependency. The stronger all-p source results imply the printed p=2 enumeration. The p=2 physical interval comparison and the finite p>1 completed reflection range are retained; no p=1 bounded interval-reflection theorem is claimed. The old IntervalExtension module introduction still describes its original unfinished all-p stage; the later bounded results were checked directly. Existing Lemma4.3 normalization and Theorem1.4 height corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged.",
       "source_record_sha256": "65d71565cfaa36a2d49591b049003b21bae26e09a0400faa3178b7ea82b74a40"
+    },
+    "SpectralOverviewFiniteGapSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "652a3deb10d52cf6580e7540f3649a8454da69db",
+      "updated_utc": "2026-10-27T09:17:54.082700+00:00",
+      "source_lines": [
+        1063,
+        1070
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1063,
+            1064
+          ],
+          "requirement": "Finite-gap means that all actual indexed periodic gaps vanish outside one finite signed-index cutoff.",
+          "finding": "The original source locus uses the actual canonical periodic gaps. The native distribution locus uses precisely the same potential parameter, with both raw Fourier coefficients unchanged. Its explicit iff theorem gives one natural cutoff N>=1 beyond which every gap vanishes. Neither definition uses finite Fourier support or vanishing of a substitute target coordinate.",
+          "declarations": [
+            "sourceFiniteGapLocus",
+            "NativeWeightedPeriodic.source_fst",
+            "NativeWeightedPeriodic.source_snd",
+            "NativeWeightedPeriodic.finiteGapLocus",
+            "NativeWeightedPeriodic.mem_finiteGapLocus_iff"
+          ]
+        },
+        {
+          "source_lines": [
+            1065,
+            1066
+          ],
+          "requirement": "Finite-gap potentials have smooth and spatially real-analytic periodic representatives.",
+          "finding": "For every real-type source at every finite p>1, the physical period-one Fourier sums are smooth and spatially real analytic, retaining every literal normalized Fourier coefficient. The native weighted distribution result gives the same analytic representatives with coefficients equal to the original smooth-test action. The unqualified complex reading is false: the triangular source (1/(1+|n|),0) has the entire free periodic spectrum and only finitely many nonzero canonical gaps, but no coefficient-preserving smooth or analytic periodic representative. Its square-zero perturbation supplies an explicit two-sided inverse on the full original domain; the source is not of real type.",
+          "declarations": [
+            "sourceFiniteGap_exists_analytic_representative",
+            "periodOneCoefficient_sourceFiniteGapPhysicalPair",
+            "NativeWeightedPeriodic.exists_analytic_representative",
+            "triangularResolvent_spectralPencil",
+            "spectralPencil_triangularResolvent",
+            "roughTriangularSource_spectrum",
+            "roughTriangularSource_finite_gap",
+            "roughTriangularCoefficients_no_smooth_representative",
+            "roughTriangularCoefficients_no_analytic_representative",
+            "roughTriangularSource_not_realType"
+          ]
+        },
+        {
+          "source_lines": [
+            1066,
+            1067
+          ],
+          "requirement": "Real finite-gap potentials are dense in every nonnegative Sobolev space.",
+          "finding": "The existing weighted spectral closing approximation is transported through an exact isometry from original period-one distribution pairs to weighted coefficient pairs. Real type is independently defined by the original conjugate-reflection test coefficients; the isometry onto the weighted real coefficient space and completeness are proved. Choosing spectral weight (1+|k|/2)^s makes its value at k=2n exactly the original (1+|n|)^s weight. Density therefore holds in the full original norm for every real s>=0, including fractional orders, at p=2. Integer and H1 coefficient formulations are also checked. No equivalence of a maximum pair norm with the source component-sum norm is asserted.",
+          "declarations": [
+            "NativeWeightedPeriodic.realSpace",
+            "NativeWeightedPeriodic.realCoefficientsIsometry",
+            "NativeWeightedPeriodic.exists_finiteGap_norm_sub_lt",
+            "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+            "NativeWeightedPeriodic.dense_sobolev_finiteGapLocus",
+            "dense_sourceSobolevFiniteGapLocus",
+            "dense_sourceHigherSobolevFiniteGapLocus"
+          ]
+        },
+        {
+          "source_lines": [
+            1070,
+            1070
+          ],
+          "requirement": "Corollary1.6 uses density in the original real Fourier-Lebesgue norm for every finite p>1.",
+          "finding": "The existing source closing approximation proves density of actual real finite-gap sources in the original unweighted component-sum norm. The native distribution theorem applies to every source spectral weight and every finite p>1, so order zero gives the literal original unweighted distribution carrier and norm as well. Every native approximant has analytic periodic representatives with unchanged coefficients. There is no restriction to p>=2, integer exponents or function-valued inputs.",
+          "declarations": [
+            "exists_mem_sourceFiniteGapLocus_norm_sub_lt",
+            "dense_sourceFiniteGapLocus",
+            "exists_weightedRealSource_finiteGap_norm_sub_lt",
+            "NativeWeightedPeriodic.dense_finiteGapLocus",
+            "NativeWeightedPeriodic.exists_analytic_representative"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewSourceComparison-2026-10-21",
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "Section2SourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          21
+        ],
+        "pdf_pages": [
+          21
+        ],
+        "inspection": "Inspected the page21 rendering, including the spectral cutoff definition, unqualified complex regularity sentence, real-type Sobolev density and Corollary1.6.",
+        "images": {
+          "SpectralOverviewFiniteGapCurrentReview-021.png": "1cb26096744862f4d46bb8aa55df33a08fb5450938b948a76b61e762645275d6"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/NativeWeightedFiniteGap.lean": "76a3c925721289e0dfafd0af6fa503c628762b65600272dddea56d4dc9106884",
+        "NLS/ZakharovShabat/SourceFiniteGap.lean": "1b96958f2cf96c4ab92a326fbd97f8697238b4ebb7eb6fdbddead200cfbf6b59",
+        "NLS/ZakharovShabat/SourceFiniteGapDensity.lean": "4c15799ba720b89f450ce5554743a72e02fe5965bba678c55c4bd0d8bd8a86ac",
+        "NLS/ZakharovShabat/SourceSobolevFiniteGapDensity.lean": "36a56ce513db75debd1814d3ecbd6736e9ea1333b8af00894376b263a77cd0ed",
+        "NLS/ZakharovShabat/SourceHigherSobolevFiniteGapDensity.lean": "a5bed407f14f96567e6b3d08067248b1a2e635a603f8ac0d0edb4e466d55775c",
+        "NLS/ZakharovShabat/SourceWeightedFiniteGapDensity.lean": "48b9a1ee4a1f3328808a4acf9afa49acd7d5cd2ce208f518a073bfa5c1bc1188",
+        "NLS/ZakharovShabat/SourceFiniteGapAnalyticRealization.lean": "0b979bb792eb32fb09aae73a2a49824a53c7b12eb4a19971ffd0e53df15a56e4",
+        "NLS/ZakharovShabat/ComplexFiniteGapRegularityCounterexample.lean": "9c9ad8e31f1ddb24d8856f62a85f5574fdaa57f5fbdc566d0d74b823fbf84cfb",
+        "NLS/ZakharovShabat/SourceWeightedRealSpaces.lean": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400",
+        "NLS/ZakharovShabat/TriangularPeriodicSpectrum.lean": "fe44628b6aa3a2ccda0f713b4508cdb1872fc841a35e5336227007e9f2cb4917",
+        "NLS/ZakharovShabat/SourceFiniteGapSmoothRealization.lean": "e92759d70990fc283842659fd5d72a4de5b264128d5ee83c25ffa2ddb1f7d11c",
+        "NLS/ZakharovShabat/SourceFiniteGapClosingCriterion.lean": "941f8c907c1daf4fbf941d65abd021a088b56a1f0053fbd88ceaf55997325af6",
+        "NLS/SequenceSpaces/SpectralWeight.lean": "dab4be32929019aa11217b3463ab78475bae9444a91a049732d05295470acf10"
+      },
+      "qualification": "The thirteen listed modules were read completely, including the exact scaled Sobolev weight, raw coefficient identification, actual triangular inverse and physical representative statements. Underlying Fourier-Lebesgue distribution realization and full spectral identification retain their prior comparisons; this is not a new independent review of every transitive dependency. Density and source pair-norm claims retain finite p>1 and nonnegative Sobolev orders. The explicit original native cutoff equivalence is included. The complex regularity correction is preserved rather than silently narrowing the printed claim. The precise2014 construction, AppendixG2 norm interpretation and broader source assessment remain separate.",
+      "source_record_sha256": "25b931c6ac954db0e2f816011bd2da94751cb7e9cfe445ff7960046d91fe9728"
     }
   }
 }

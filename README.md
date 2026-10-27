@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: original period-one distribution potentials now extend to period
-two without changing their physical tempered distributions or finite Fourier
-pair norm. The image is exactly the period-one invariant potentials, and the
-native spectrum equals the established source spectrum. This includes
-nonmeasure inputs. See the [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
+Latest step: real finite-gap potentials now approximate original weighted
+periodic distributions in their exact norm, including every nonnegative
+fractional Sobolev order. The approximants have analytic periodic
+representatives with unchanged Fourier coefficients. See the
+[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

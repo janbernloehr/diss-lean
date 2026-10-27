@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: Original distribution period extension
+## Current milestone: Native weighted finite-gap approximation
+
+Actual real finite-gap potentials are now dense directly in the original
+weighted distribution spaces for every finite p>1. The Fourier identification
+preserves the exact component-sum norm and raw coefficients; approximation
+uses that norm. It includes every nonnegative real Sobolev order, with explicit cutoff equivalence and analytic
+periodic representatives of the approximants. See the
+[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
+
+Three examples check fractional Sobolev normalization and approximation, and
+a nonunit weight at p=3/2.
+
+Validation: `./scripts/check.sh` passes with 8,418 build jobs, 7,442 public
+examples, and a transitive axiom audit of 42,667 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,897 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Next: reconcile the remaining source-assessment requirements, retaining every
+formal source correction. The precise 2014 construction and G.2 norm
+interpretation remain unresolved.
+
+## Previous milestone: Original distribution period extension
 
 Original period-one Fourier-Lebesgue distributions now extend isometrically
 to period two while preserving the same physical tempered distribution.

@@ -68742,3 +68742,60 @@ example (φ : NativePeriodic.SourceSpace 3) :
   NativePeriodic.spectrum_extendPotential (by simp) φ
 
 end NativePeriodicExtensionChecks
+
+noncomputable section
+namespace NativeWeightedFiniteGapChecks
+open NLS NLS.Fourier SmoothPeriodicTest NLS.ZakharovShabat NativeWeightedPeriodic
+open scoped ENNReal
+
+-- The half-order weight at a negative source frequency uses |n|, not |2n|.
+example : sourceFrequencyWeight (sobolevWeight (1/2) (by norm_num)) (-3) = 2 := by
+  rw [sourceFrequencyWeight_sobolevWeight]
+  norm_num [Weight.sobolev_apply, ← Real.sqrt_eq_rpow]
+
+private def halfOrderWeight : SpectralWeight := sobolevWeight (1/2) (by norm_num)
+
+-- Original H^(1/2) distributions admit analytic spectral finite-gap approximation
+-- in their full norm, with every original signed Fourier coefficient retained.
+example (φ : realSpace halfOrderWeight 2) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : realSpace halfOrderWeight 2,
+      ψ ∈ finiteGapLocus (p := 2) (by simp) (by norm_num) halfOrderWeight ∧
+      ‖ψ - φ‖ < ε ∧ ∃ u v : ℝ → ℂ,
+        AnalyticOnNhd ℝ u Set.univ ∧ AnalyticOnNhd ℝ v Set.univ ∧
+        Function.Periodic u 1 ∧ Function.Periodic v 1 ∧
+        ∀ n : ℤ, periodOneCoefficient u n = ψ.val.fst.val (mode (-n)) ∧
+          periodOneCoefficient v n = ψ.val.snd.val (mode (-n)) := by
+  obtain ⟨ψ, hf, hclose⟩ := exists_finiteGap_norm_sub_lt (by simp) (by norm_num) _ φ ε hε
+  exact ⟨ψ, hf, hclose, exists_analytic_representative (by simp) (by norm_num) _ ψ hf⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]
+  norm_num⟩
+
+-- A nonunit constant weight retains its factor at a noninteger pair exponent.
+example (φ : realSpace (SpectralWeight.constant 4 (by norm_num)) (3/2)) :
+    ‖(source (SpectralWeight.constant 4 (by norm_num)) φ).val‖ = ‖φ‖ / 4 := by
+  let w := SpectralWeight.constant 4 (by norm_num)
+  have he : sourcePairWeightCoordinates w (coefficients w (3/2) φ.val) =
+      (4 : ℂ) • (source w φ).val := by
+    apply (CoeffPair.toMax (3/2)).injective
+    apply Prod.ext
+    · ext n
+      change (w (2*n) : ℂ) * (coefficients w (3/2) φ.val).fst.val n =
+        (4 : ℂ) * (source w φ).val.fst n
+      rw [coefficients_fst, source_fst]
+      rfl
+    · ext n
+      change (w (2*n) : ℂ) * (coefficients w (3/2) φ.val).snd.val n =
+        (4 : ℂ) * (source w φ).val.snd n
+      rw [coefficients_snd, source_snd]
+      rfl
+  have hn := congrArg norm he
+  rw [(sourcePairWeightCoordinates w).norm_map, (coefficients w (3/2)).norm_map,
+    norm_smul] at hn
+  norm_num at hn
+  change ‖(source w φ).val‖ = ‖φ‖ / 4
+  change ‖φ‖ = 4 * ‖(source w φ).val‖ at hn
+  linarith
+
+end NativeWeightedFiniteGapChecks

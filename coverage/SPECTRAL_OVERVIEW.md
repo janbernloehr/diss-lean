@@ -4,6 +4,50 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Finite-gap approximation on original distributions, printed p. 21
+
+[NativeWeightedFiniteGap](../NLS/ZakharovShabat/NativeWeightedFiniteGap.lean)
+now gives finite-gap approximation directly on original period-one weighted
+distribution pairs. The real-type relation is defined by the literal
+smooth-test Fourier coefficients. Its equivalence with weighted real
+coefficients is an isometry, so approximation uses the full original
+component-sum norm. Both source coefficients remain unchanged.
+
+The native finite-gap locus uses actual canonical periodic gaps, and its
+cutoff theorem states that some N>=1 bounds every signed index with a
+nonzero gap. Every approximant has spatially real-analytic, period-one
+representatives preserving all its Fourier coefficients.
+
+The result holds for every finite p>1 and every source spectral weight.
+The weight `(1+|k|/2)^s` at doubled frequency `k=2n` is exactly the original
+Sobolev weight `(1+|n|)^s`. This proves density in every original H^s norm
+for real s>=0, including fractional orders; order zero also realizes
+Corollary 1.6 on the original distribution carrier.
+[SourceWeightedFiniteGapDensity](../NLS/ZakharovShabat/SourceWeightedFiniteGapDensity.lean)
+supplies the spectral closing approximation, while
+[SourceFiniteGapAnalyticRealization](../NLS/ZakharovShabat/SourceFiniteGapAnalyticRealization.lean)
+supplies the analytic representatives. No finite Fourier-support hypothesis
+is imposed on the source or substituted for spectral finite-gap membership.
+
+The preceding unrestricted complex regularity sentence remains refuted by
+[ComplexFiniteGapRegularityCounterexample](../NLS/ZakharovShabat/ComplexFiniteGapRegularityCounterexample.lean).
+Its rough triangular potential has the actual free spectrum and is finite-gap,
+but has no smooth coefficient-preserving periodic representative. The valid
+real-type assertion and this formal counterexample are kept separate.
+
+Three integration examples check a negative frequency at Sobolev order 1/2,
+analytic approximation in the full H^(1/2) norm, and the exact factor of four
+for a nonunit constant weight at p=3/2.
+
+Validation passes: 8,418 build jobs, 7,442 public examples and a transitive
+axiom audit of 42,667 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
+Four assertion groups and thirteen complete modules are recorded as
+`SpectralOverviewFiniteGapSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). Existing source corrections,
+the precise2014 construction and G2 norm qualifications remain unchanged.
+
 ## Boundary enumeration, interlacing and reflection, printed p. 20
 
 The comparison of lines 989–1015 starts with every complex interval L2
@@ -45,7 +89,7 @@ Four assertion groups and nineteen complete modules are recorded as
 [source-review index](source-review-index.json). This comparison reuses
 the unchanged Lean snapshot validated by the period-extension milestone.
 The named theorem comparisons and all source corrections remain intact.
-The remaining overview review concerns the finite-gap background passage.
+The finite-gap background passage, left separate by this record, is compared above.
 
 ## AKNS coordinates and full boundary domains, printed pp. 19–20
 

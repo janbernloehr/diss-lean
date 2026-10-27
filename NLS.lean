@@ -4658,6 +4658,7 @@ import NLS.ZakharovShabat.NativePeriodicOperator
 import NLS.ZakharovShabat.NativePeriodicHilbert
 import NLS.Fourier.PeriodicFourierLebesguePeriodDoubling
 import NLS.ZakharovShabat.NativePeriodOnePotential
+import NLS.ZakharovShabat.NativeWeightedFiniteGap
 import NLS.ZakharovShabat.SourcePeriodicSelfAdjoint
 import NLS.ZakharovShabat.PhysicalPeriodicSelfAdjoint
 import NLS.ZakharovShabat.PeriodicSelfAdjointRealType
