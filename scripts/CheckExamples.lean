@@ -67696,3 +67696,55 @@ example (φ : NLS.CoeffPair 2) (hφ : φ ∈ NLS.ZakharovShabat.sourceParitySubs
       NLS.ZakharovShabat.physicalOperator (NLS.ZakharovShabat.physicalBase (NLS.CoeffPair.toMax 2 φ))
         (NLS.ZakharovShabat.physicalDomain (NLS.WeightedCoeffPair.toMax (NLS.Weight.sobolev 1) 2 a.val)) :=
   NLS.ZakharovShabat.physicalParityOperator_representative φ hφ r a
+
+/- Exact physical unit-interval periodic and antiperiodic realizations. -/
+example {f : ℝ → ℂ} (hf : NLS.Fourier.HasIntervalH1Regularity f) :
+    NLS.Fourier.HasIntervalH1Regularity (fun x => f (1-x)) := hf.reflect
+
+example (r : ℤ) (f : ℝ → ℂ × ℂ) (hf : NLS.ZakharovShabat.HasClassicalParityDomain r f)
+    {x : ℝ} (hx : x ∈ Set.Icc 0 1) :
+    NLS.ZakharovShabat.physicalDomain (NLS.ZakharovShabat.classicalParityExtension r f hf) x = f x :=
+  NLS.ZakharovShabat.classicalParityExtension_restrict r f hf hx
+
+example (r : ℤ) (a : NLS.ZakharovShabat.sourceParitySubspace (p := 2) r) :
+    ‖NLS.ZakharovShabat.sourceParityUnitEquiv r a‖ = ‖a‖ :=
+  (NLS.ZakharovShabat.sourceParityUnitEquiv r).norm_map a
+
+example (r : ℤ) : DenseRange (NLS.ZakharovShabat.unitParityDomainInclusion r) :=
+  NLS.ZakharovShabat.unitParityDomainInclusion_denseRange r
+
+example (f : ℝ → ℂ × ℂ) :
+    NLS.ZakharovShabat.HasClassicalParityDomain 0 f ↔
+      NLS.Fourier.HasIntervalH1Regularity (fun x => (f x).1) ∧
+      NLS.Fourier.HasIntervalH1Regularity (fun x => (f x).2) ∧ f 1 = f 0 :=
+  NLS.ZakharovShabat.hasClassicalParityDomain_zero_iff f
+
+example (f : ℝ → ℂ × ℂ) :
+    NLS.ZakharovShabat.HasClassicalParityDomain 1 f ↔
+      NLS.Fourier.HasIntervalH1Regularity (fun x => (f x).1) ∧
+      NLS.Fourier.HasIntervalH1Regularity (fun x => (f x).2) ∧ f 1 = -f 0 :=
+  NLS.ZakharovShabat.hasClassicalParityDomain_one_iff f
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) :
+    IsSelfAdjoint (NLS.ZakharovShabat.classicalSignedOperator u 0) ↔
+      NLS.ZakharovShabat.IsClassicalRealType (NLS.ZakharovShabat.intervalL2Representative u) :=
+  NLS.ZakharovShabat.classicalSignedOperator_isSelfAdjoint_iff u 0
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) :
+    IsSelfAdjoint (NLS.ZakharovShabat.classicalSignedOperator u 1) ↔
+      NLS.ZakharovShabat.IsClassicalRealType (NLS.ZakharovShabat.intervalL2Representative u) :=
+  NLS.ZakharovShabat.classicalSignedOperator_isSelfAdjoint_iff u 1
+
+example (u v : NLS.ZakharovShabat.IntervalPairL2) (r : ℤ) :
+    v ∈ (NLS.ZakharovShabat.classicalSignedOperator u r).domain ↔
+      ∃ (f : ℝ → ℂ × ℂ) (hf : NLS.ZakharovShabat.HasClassicalParityDomain r f),
+        NLS.ZakharovShabat.intervalL2OfFunction f hf.memLp = v :=
+  NLS.ZakharovShabat.classicalSignedOperator_domain_iff u v r
+
+example (u : NLS.ZakharovShabat.IntervalPairL2) (r : ℤ) (f : ℝ → ℂ × ℂ)
+    (hf : NLS.ZakharovShabat.HasClassicalParityDomain r f) :
+    NLS.ZakharovShabat.intervalL2Representative (NLS.ZakharovShabat.classicalSignedOperator u r
+      (NLS.ZakharovShabat.unitParityDomainEquiv r (NLS.ZakharovShabat.sourceClassicalParityExtension r f hf)))
+      =ᵐ[MeasureTheory.volume.restrict (Set.Ioc 0 1)]
+      NLS.ZakharovShabat.physicalOperator (NLS.ZakharovShabat.intervalL2Representative u) f :=
+  NLS.ZakharovShabat.classicalSignedOperator_representative u r f hf

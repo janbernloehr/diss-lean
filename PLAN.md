@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: separate periodic and antiperiodic adjoint domains
+## Current milestone: full classical unit-interval domains and adjoints
+
+The periodic and antiperiodic operators are now realized on the original
+unit-interval L2 space, with exactly their full classical H1 domains.
+For every L2 potential, either operator is self-adjoint if and only if
+the potential is of real type.
+
+Signed extension and restriction identify each classical domain with its
+original weighted Fourier parity domain. The physical restriction is an
+isometry onto the entire unit-interval L2 space. The resulting operator
+agrees with the original differential expression on every classical input.
+The proof assumes interval H1 regularity and does not require a global
+smooth extension.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records this
+completed domain comparison. The remaining source audit, exact2014 and G2
+remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,361 build jobs, 7,323
+public examples, and a transitive axiom audit of 41,995 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,685 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: separate periodic and antiperiodic adjoint domains
 
 Each periodic and antiperiodic sector now has its own densely defined
 operator with its original one-derivative domain. For either sector,

@@ -4661,3 +4661,10 @@ import NLS.ZakharovShabat.SourceParityUnboundedOperator
 import NLS.ZakharovShabat.SourceParitySelfAdjoint
 import NLS.ZakharovShabat.PhysicalParitySelfAdjoint
 import NLS.ZakharovShabat.ParitySelfAdjointRealType
+import NLS.Fourier.IntervalH1Reflection
+import NLS.Fourier.SignedIntervalH1Extension
+import NLS.ZakharovShabat.ClassicalParityDomain
+import NLS.ZakharovShabat.ParityIntervalL2Extension
+import NLS.ZakharovShabat.ParityIntervalL2Equiv
+import NLS.ZakharovShabat.UnitParityOperatorDomain
+import NLS.ZakharovShabat.UnitParitySelfAdjoint

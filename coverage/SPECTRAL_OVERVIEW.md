@@ -1223,6 +1223,46 @@ potential has real type, including the original period-one embedding.
 The ambient physical spaces here are the Fourier parity subspaces of the
 period-two L2 realization. This package proves their exact adjoint domains,
 physical differential expressions and unit-interval endpoint conditions.
-It does not yet identify a standalone unit-interval L2 realization with
-the full classical H1 domain for either sign. That further comparison,
-the remaining source audit, exact2014 and G2 are recorded separately.
+The full classical unit-interval package below completes the standalone
+unit-interval L2/H1 domain identification for both signs. The remaining
+source audit, exact2014 and G2 are recorded separately.
+
+## Full classical unit-interval periodic and antiperiodic operators
+
+The full classical domain comparison is now proved on ordinary unit-interval
+L2, for both signs in the printed pp.17-18 boundary shorthand.
+[`IntervalH1Reflection.lean`](../NLS/Fourier/IntervalH1Reflection.lean)
+proves reflection for every absolutely continuous interval function whose
+actual derivative is square integrable.
+[`SignedIntervalH1Extension.lean`](../NLS/Fourier/SignedIntervalH1Extension.lean)
+constructs the signed period-two extension and its actual normalized Fourier
+coefficients. Only interval H1 regularity and the matching endpoint condition
+are assumed; reconstruction includes the endpoints and the join.
+
+[`ClassicalParityDomain.lean`](../NLS/ZakharovShabat/ClassicalParityDomain.lean)
+identifies the full classical signed H1 domain with the original weighted
+Fourier parity domain in both directions. Extension and restriction are
+inverse on the closed unit interval.
+[`ParityIntervalL2Extension.lean`](../NLS/ZakharovShabat/ParityIntervalL2Extension.lean)
+extends arbitrary unit-interval L2 data into either original coefficient
+parity space, preserves the original Hilbert norm, and proves that physical
+restriction is a right inverse.
+[`ParityIntervalL2Equiv.lean`](../NLS/ZakharovShabat/ParityIntervalL2Equiv.lean)
+bundles actual physical restriction as a surjective linear isometry onto
+ordinary unit-interval L2.
+
+[`UnitParityOperatorDomain.lean`](../NLS/ZakharovShabat/UnitParityOperatorDomain.lean)
+proves density and identifies the included operator domain exactly with the
+L2 classes admitting a full classical H1 representative with the chosen
+signed endpoint condition.
+[`UnitParitySelfAdjoint.lean`](../NLS/ZakharovShabat/UnitParitySelfAdjoint.lean)
+constructs the actual physical operator for any unit-interval L2 potential.
+It agrees almost everywhere with the original differential expression on
+every classical domain representative. Equality with its actual Hilbert
+adjoint, including the domain, is equivalent to the potential being of real
+type. The periodic endpoint f(1)=f(0) and antiperiodic endpoint f(1)=-f(0)
+are explicit specializations, each defining its own operator.
+
+This completes the unit-interval L2/H1 comparison left open in the preceding
+parity package. Full dissertation semantic completion, exact2014 and G2
+remain separate questions.
