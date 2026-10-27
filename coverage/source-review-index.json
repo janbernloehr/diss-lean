@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T13:08:19.570500+00:00",
-  "base_commit": "51890a2f9150d0a4968f9b8d74cd257fa82c1072",
+  "published_utc": "2026-10-27T13:20:23.091042+00:00",
+  "base_commit": "b2a3ed62ffcf11b24e46c23fbb0057522286fd2c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,8 +18,8 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 67,
-    "module_hash_checks": 1002,
+    "review_records": 68,
+    "module_hash_checks": 1004,
     "distinct_modules": 806
   },
   "unresolved": [
@@ -12858,6 +12858,1954 @@
       },
       "qualification": "This is a consolidated assessment of the mathematical clauses in both abstracts, preserving the precise scope and unresolved qualifications of the related section reviews. All31 hash-listed modules were read completely across the retained preparation and this comparison; their current hashes and the36 declaration references were checked. The broad p>=1 spectral wording is distinguished from the source's explicit strict-p refined estimates. Novelty and historical-priority attributions are not formal mathematical assertions assessed here. This is not a full-dissertation completeness claim or an independent reproof of transitive dependencies. The exact cited2014 external construction comparison and AppendixG2 norm interpretation remain unresolved, and all formally refuted printed claims remain separate from their proved corrections.",
       "source_record_sha256": "e1fd4c264e3b64e75dc4b45cd13d4bc88d8c9f7ee2812e41cd36d33a0281c38a"
+    },
+    "IntroductionAssertionInventorySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b2a3ed62ffcf11b24e46c23fbb0057522286fd2c",
+      "updated_utc": "2026-10-27T13:20:23.091042+00:00",
+      "source_lines": [
+        [
+          1,
+          42
+        ],
+        [
+          93,
+          743
+        ],
+        [
+          8473,
+          8487
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "intro-01",
+          "source_lines": [
+            156,
+            167
+          ],
+          "requirement": "Scalar dNLS and physical motivation",
+          "classification": "definition_and_context",
+          "finding": "The literal cubic PDE is the equation of the proved scalar Hamiltonian field. Wave-envelope applications, dispersion narrative and telecommunications attribution are physical context, not additional Lean modelling claims.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                156,
+                176
+              ]
+            }
+          ],
+          "declarations": [
+            "classicalNLSHamiltonian_three",
+            "classicalNLSVectorField_scalar",
+            "hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "scalarSobolevEnergy_eq_real_integral"
+          ]
+        },
+        {
+          "id": "intro-02",
+          "source_lines": [
+            168,
+            176
+          ],
+          "requirement": "Periodic scalar Hamiltonian and energy",
+          "classification": "proved_with_scope",
+          "finding": "The unit-interval kinetic plus quartic integral and its actual variational gradients give the equation, retaining smooth or physical Sobolev hypotheses; no rough-data classical vector field is inferred.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                156,
+                176
+              ]
+            }
+          ],
+          "declarations": [
+            "classicalNLSHamiltonian_three",
+            "classicalNLSVectorField_scalar",
+            "hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "scalarSobolevEnergy_eq_real_integral"
+          ]
+        },
+        {
+          "id": "intro-03",
+          "source_lines": [
+            178,
+            181
+          ],
+          "requirement": "Isospectral evolution and commuting first integrals",
+          "classification": "proved_with_scope_and_attribution",
+          "finding": "Original global solutions conserve the actual spectrum and infinitely many commuting actions. Historical discovery attribution is contextual. Differential independence retains the open-gap restriction.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                178,
+                181
+              ]
+            },
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                178,
+                181
+              ]
+            }
+          ],
+          "declarations": [
+            "IsSmoothApproximationSolutionOn.eqOn_inter",
+            "discriminant_of_isOrdinaryNLSSolutionOn_univ",
+            "isospectral_of_isOrdinaryNLSSolutionOn_univ",
+            "linearIndependent_originalRealActionIntegral_fderiv_iff",
+            "linearIndependent_sourceComplexAction_fderiv_open_gaps",
+            "linearIndependent_sourceIndexedAction_fderiv_open_gaps",
+            "originalOrdinary_integrals_in_involution"
+          ]
+        },
+        {
+          "id": "intro-04",
+          "source_lines": [
+            182,
+            192
+          ],
+          "requirement": "Birkhoff coordinates, action energy, oscillators and recurrence",
+          "classification": "proved_with_scope_and_unresolved_identification",
+          "finding": "The original physical maps, full weighted action energy, coordinatewise oscillator equations and Bohr almost periodicity have the retained proofs and domain restrictions. Exact cited2014 identification remains unresolved; periodic/quasiperiodic/almost-periodic is not treated as a disjoint classification.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                182,
+                186
+              ]
+            },
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                185,
+                191,
+                223,
+                225
+              ]
+            },
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 5,
+              "source_lines": [
+                186,
+                191
+              ]
+            },
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 6,
+              "source_lines": [
+                191,
+                192
+              ]
+            }
+          ],
+          "declarations": [
+            "BohrAlmostPeriodic",
+            "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_domain",
+            "SourceOriginalHamiltonianData.full_action_physical_identity",
+            "SourceOriginalHamiltonianData.real_full_action_analytic",
+            "SourceSection17OriginalData.global_inverse",
+            "SourceSection20Data.ordinary_original_frequency_conserved",
+            "SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "SourceSection20Data.renormalized_original_rectangular_oscillators",
+            "bohrAlmostPeriodic_of_totallyBounded_range",
+            "exists_original_almostPeriodic_solutions",
+            "exists_original_sobolev_almostPeriodic_solutions",
+            "intrinsicPhysicalBirkhoffHomeomorph_analytic",
+            "intrinsicPhysicalBirkhoffMap_formula_of_eta",
+            "scalarNonlinearFourierHomeomorph",
+            "sourceSection17_original"
+          ]
+        },
+        {
+          "id": "intro-05",
+          "source_lines": [
+            193,
+            201
+          ],
+          "requirement": "Perturbative motivation and other integrable PDEs",
+          "classification": "motivation_and_external_work",
+          "finding": "These sentences explain the thesis purpose and refer to separate KdV work and expected applicability. They are not additional dNLS theorem specifications or a claim that every external PDE result is formalized.",
+          "evidence": [],
+          "declarations": []
+        },
+        {
+          "id": "intro-06",
+          "source_lines": [
+            211,
+            217
+          ],
+          "requirement": "Fourier differential, Parseval and tame estimates",
+          "classification": "proved_with_scope",
+          "finding": "The full normalized Fourier differential and exact scalar/pair norm distinctions are retained. The tame theorem has constants independent of each input, not a single constant for all orders. No nonlinear preservation of distances or higher Sobolev norms is inferred.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 7,
+              "source_lines": [
+                211,
+                215
+              ]
+            },
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 0,
+              "source_lines": [
+                326,
+                342
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "SourceSection23SobolevBounds",
+            "intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+            "scalarNonlinearFourier_fderiv_zero_apply",
+            "scalarNonlinearFourier_hasSum_norm_sq",
+            "scalarNonlinearFourier_norm",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "id": "intro-07",
+          "source_lines": [
+            218,
+            225
+          ],
+          "requirement": "Nekhoroshev motivation and analytic action energy",
+          "classification": "proved_with_scope_and_motivation",
+          "finding": "Finite-dimensional Nekhoroshev theory and expectations about infinite-dimensional perturbations are contextual. Full energy is analytic in native weighted summable actions; its renormalization has the local Hilbert strict-concavity/Jensen theorem.",
+          "evidence": [
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                185,
+                191,
+                223,
+                225
+              ]
+            },
+            {
+              "review": "HamiltonianStrictConcavitySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                [
+                  59,
+                  63
+                ],
+                [
+                  84,
+                  87
+                ],
+                [
+                  223,
+                  225
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex",
+            "SourceOriginalHamiltonianData.analytic",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_domain",
+            "SourceOriginalHamiltonianData.full_action_physical_identity",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.real_full_action_analytic",
+            "SourceOriginalHamiltonianData.sign",
+            "SourceOriginalHamiltonianData.source_extension",
+            "SourceOriginalHamiltonianData.strict_concavity",
+            "SourceOriginalHamiltonianData.strict_jensen"
+          ]
+        },
+        {
+          "id": "intro-08",
+          "source_lines": [
+            226,
+            244
+          ],
+          "requirement": "Frequency inverse, leading actions, Fourier-Lebesgue spaces and symmetries",
+          "classification": "proved_with_scope",
+          "finding": "The local inverse, half-exponent action map and Fourier-square leading term retain finite exponent assumptions. Original distributions, strict L2 enlargement, finite-p critical inclusion, homogeneous scaling and Galilean invariance retain the separate Fourier comparison. Internal-parameter adjustment is an interpretation of the local inverse, not a new perturbation theorem.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 3,
+              "source_lines": [
+                453,
+                473
+              ]
+            },
+            {
+              "review": "IntroductionOpeningSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 8,
+              "source_lines": [
+                234,
+                238
+              ]
+            },
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                238,
+                238
+              ]
+            },
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                239,
+                240
+              ]
+            },
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                240,
+                240
+              ]
+            },
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                240,
+                241
+              ]
+            },
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                242,
+                244
+              ]
+            }
+          ],
+          "declarations": [
+            "PeriodicFourierLebesgue.l2Isometry",
+            "PeriodicFourierLebesgue.l2Isometry_parseval_interval",
+            "PeriodicFourierLebesgue.l2Isometry_represents",
+            "SourceBirkhoffMapComplexData.actionSequence_fourier_isLittleO",
+            "SourceBirkhoffMapComplexData.actionSequence_fourier_remainder",
+            "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "SourceOriginalFrequencyData.local_open_inverse",
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalHilbertFrequencyData.realizations_all",
+            "criticalSobolevInclusion_injective",
+            "criticalSobolevInclusion_val",
+            "exists_fourierLebesgue_above_two_not_l2",
+            "exists_lineFourierLebesgue_galilean_representative",
+            "exists_sourceActionFourierTaylor",
+            "exists_sourceActionSequence_analytic",
+            "hasDerivAt_scalarNLS_dilation",
+            "homogeneousCriticalEnergy_scalarNLS_dilation",
+            "isCriticalHomogeneousSobolev_iff_fourier_density",
+            "isLineFourierLebesgue_galilean_iff",
+            "sourceFourierActionSequence_real",
+            "sourceSection16_original",
+            "sourceSection18_original_frequencies"
+          ]
+        },
+        {
+          "id": "intro-09",
+          "source_lines": [
+            250,
+            261
+          ],
+          "requirement": "Phase space, bilinear gradients and Poisson bracket",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "Original distributions and exact norms are retained. The unconjugated L2 duality and cross-gradient integral use their actual cotangent/gradient domain. Not every C1 functional on a positive-order Sobolev space is asserted to have an L2 gradient.",
+          "evidence": [
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                250,
+                252
+              ]
+            },
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                253,
+                261
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.Space",
+            "NativeWeightedPeriodic.coefficients",
+            "NativeWeightedPeriodic.modeLeft",
+            "NativeWeightedPeriodic.modeRight",
+            "NativeWeightedPeriodic.physical_coefficients",
+            "NativeWeightedPeriodic.physical_test",
+            "NativeWeightedPeriodic.poisson_physical",
+            "NativeWeightedPeriodic.poisson_physical_functions",
+            "NativeWeightedPeriodic.realSpace",
+            "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+            "physicalCotangentBivector",
+            "physicalCotangentBivector_eq_source",
+            "physicalCotangentGradient_pairing",
+            "physicalCotangentGradient_unique",
+            "physicalL2_pairing_source"
+          ]
+        },
+        {
+          "id": "intro-10",
+          "source_lines": [
+            273,
+            289
+          ],
+          "requirement": "Pair Hamiltonian, invariant real form and scalar equation",
+          "classification": "proved_with_scope",
+          "finding": "Literal energy variations and the signed cross-gradient field preserve conjugate pairs and yield the PDE. Classical identities retain regularity hypotheses; low-regularity solutions use the original smooth-approximation definition.",
+          "evidence": [
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                273,
+                289
+              ]
+            }
+          ],
+          "declarations": [
+            "classicalNLSHamiltonian_three",
+            "classicalNLSVectorField_real",
+            "classicalNLSVectorField_scalar",
+            "classicalNLS_equation_of_hasDerivAt",
+            "hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "scalarSobolevEnergy_eq_integral",
+            "sourceSection22_original_flows"
+          ]
+        },
+        {
+          "id": "intro-11",
+          "source_lines": [
+            291,
+            309
+          ],
+          "requirement": "Global canonical Sobolev maps and action energy",
+          "classification": "proved_with_scope_and_unresolved_identification",
+          "finding": "Native maps are globally bi-analytic on the Hilbert Sobolev scale, with canonical signs and indexed action radii. Full energy is analytic on an open weighted-action domain containing the nonnegative cone. Exact external2014 identification remains separate.",
+          "evidence": [
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                294,
+                299
+              ]
+            },
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                301,
+                309
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.birkhoff",
+            "NativeWeightedPeriodic.birkhoff_canonical",
+            "NativeWeightedPeriodic.birkhoff_isOpenEmbedding",
+            "NativeWeightedPeriodic.birkhoff_norm_rpow",
+            "NativeWeightedPeriodic.birkhoff_physical",
+            "NativeWeightedPeriodic.birkhoff_same_distribution",
+            "NativeWeightedPeriodic.complex_coordinates_fderiv",
+            "NativeWeightedPeriodic.exists_birkhoff_family",
+            "NativeWeightedPeriodic.sobolevHomeomorph",
+            "NativeWeightedPeriodic.sobolevHomeomorph_analytic",
+            "NativeWeightedPeriodic.sobolevHomeomorph_inverse_test",
+            "SourceBirkhoffMapComplexData.real_map_action_radius",
+            "SourceOriginalHamiltonianData.standard_full_action_domain",
+            "SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+            "SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "SourceOriginalHamiltonianData.standard_real_full_action_values",
+            "sourceEnergyAction_summable",
+            "sourceEnergyActions_norm_comparison",
+            "sourceSection18_original_hamiltonian",
+            "sourceStandardFullActionHamiltonian_eq"
+          ]
+        },
+        {
+          "id": "intro-12",
+          "source_lines": [
+            311,
+            324
+          ],
+          "requirement": "Equation0.2, Fourier differential and Parseval",
+          "classification": "proved_with_scope",
+          "finding": "Coordinatewise original-solution derivatives use the actual full action-energy frequency and its conservation. The bounded Fourier differential and unweighted Hilbert Parseval identity retain their exact normalization; no unstated full-norm time derivative is added.",
+          "evidence": [
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 5,
+              "source_lines": [
+                311,
+                315
+              ]
+            },
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 6,
+              "source_lines": [
+                317,
+                321
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.birkhoff_parseval",
+            "NativeWeightedPeriodic.birkhoff_physical",
+            "SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+            "SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+            "SourceSection20Data.ordinary_original_frequency_conserved",
+            "SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "SourceSection20Data.ordinary_original_rectangular_phase",
+            "SourceSection20Data.renormalized_original_rectangular_oscillators",
+            "intrinsicPhysicalBirkhoffHomeomorph_symm_fderiv_zero",
+            "intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+            "sourceSection22_original_flows"
+          ]
+        },
+        {
+          "id": "intro-13",
+          "source_lines": [
+            326,
+            342
+          ],
+          "requirement": "Theorem0.1",
+          "classification": "named_result_reused",
+          "finding": "One original map is fixed before all integer orders and constants before all inputs, with the exact two remainders and the retained external-construction qualification.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 0,
+              "source_lines": [
+                326,
+                342
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "SourceSection23SobolevBounds",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "id": "intro-14",
+          "source_lines": [
+            352,
+            359
+          ],
+          "requirement": "Uniform constants and highest-order linear dependence",
+          "classification": "explanation_of_proved_result",
+          "finding": "These are features of the proved inequalities: forward highest-order linearity for m>=2, reverse highest-coordinate linearity, and remainders at orders one and zero. Uniformity over all m is not claimed.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 0,
+              "source_lines": [
+                326,
+                342
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "SourceSection23SobolevBounds",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "id": "intro-15",
+          "source_lines": [
+            360,
+            398
+          ],
+          "requirement": "Taylor formulas, mass obstruction and normalization",
+          "classification": "proved_expansions_with_refuted_printed_identity",
+          "finding": "The printed full-energy Hessian -2 delta omits mass: its actual derivative is 4-2 delta, with an actual-source counterexample to the printed diagonal value. The -2 Hessian belongs to H-star. Native expansions, exact subtractions and larger-action-space continuity obstructions are proved; the latter do not supply a source-space frequency theorem.",
+          "evidence": [
+            {
+              "review": "IntroductionNormalizationSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                360,
+                398
+              ]
+            },
+            {
+              "review": "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                [
+                  372,
+                  385
+                ]
+              ]
+            },
+            {
+              "review": "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                [
+                  360,
+                  398
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalHamiltonianData.energyMassBlock_mem",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_frequency_energyMassBlock_limit",
+            "SourceOriginalHamiltonianData.full_action_frequency_eq",
+            "SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+            "SourceOriginalHamiltonianData.full_action_frequency_zero_value",
+            "SourceOriginalHamiltonianData.full_hessian_diagonal",
+            "SourceOriginalHamiltonianData.full_hessian_ne_printed",
+            "SourceOriginalHamiltonianData.hessian_zero",
+            "SourceOriginalHamiltonianData.no_continuous_full_action_frequency",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.restored_frequency_derivative",
+            "SourceOriginalHamiltonianData.single_action_physical_energy",
+            "sourceEnergyActionsToExponent_apply",
+            "sourceEnergyMassBlock_mass",
+            "sourceEnergyMassBlock_nonnegative",
+            "sourceEnergyMassBlock_tendsto",
+            "sourceFullActionFrequency",
+            "sourceFullActionHamiltonian",
+            "sourceSection18_original_hamiltonian"
+          ]
+        },
+        {
+          "id": "intro-16",
+          "source_lines": [
+            400,
+            404
+          ],
+          "requirement": "Global concavity conjecture and local achievement",
+          "classification": "conjectural_context_and_proved_local_result",
+          "finding": "Historical conjecture attribution is contextual. The stated local achievement is proved for the same H-star; global extension or global concavity is not claimed.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 1,
+              "source_lines": [
+                406,
+                417
+              ]
+            },
+            {
+              "review": "HamiltonianStrictConcavitySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                [
+                  59,
+                  63
+                ],
+                [
+                  84,
+                  87
+                ],
+                [
+                  223,
+                  225
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalHamiltonianData",
+            "SourceOriginalHamiltonianData.analytic",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.real_summable_extension",
+            "SourceOriginalHamiltonianData.sign",
+            "SourceOriginalHamiltonianData.source_extension",
+            "SourceOriginalHamiltonianData.strict_concavity",
+            "SourceOriginalHamiltonianData.strict_jensen",
+            "sourceSection18_original_hamiltonian"
+          ]
+        },
+        {
+          "id": "intro-17",
+          "source_lines": [
+            406,
+            417
+          ],
+          "requirement": "Theorem0.2",
+          "classification": "named_result_reused",
+          "finding": "The quantitative Hessian theorem and standard Jensen consequence retain one original H, its domain and every real Hilbert direction.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 1,
+              "source_lines": [
+                406,
+                417
+              ]
+            },
+            {
+              "review": "HamiltonianStrictConcavitySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                [
+                  406,
+                  417
+                ],
+                [
+                  6799,
+                  6811
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "Coeff.convex_nonnegativeLocus",
+            "Coeff.norm_real_hilbert_inclusion",
+            "Coeff.real_line_second_derivative",
+            "Coeff.strictConcaveOn_re_of_hessian_neg",
+            "Coeff.strictConcaveOn_real_hilbert_ball",
+            "RealCoeff.complexCLM_reCLM",
+            "SourceOriginalHamiltonianData",
+            "SourceOriginalHamiltonianData.concavity",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.real_summable_extension",
+            "sourceSection18_original_hamiltonian"
+          ]
+        },
+        {
+          "id": "intro-18",
+          "source_lines": [
+            419,
+            430
+          ],
+          "requirement": "Dense action domain and global question",
+          "classification": "proved_domain_and_source_open_question",
+          "finding": "Relative openness and density hold on the original domain containing nonnegative summable actions. The following global-extension/convexity wording is a question in the source, not an affirmative theorem or a claim that it remains open today.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 2,
+              "source_lines": [
+                419,
+                440
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalHamiltonianData.no_continuous_extension_all",
+            "SourceOriginalHamiltonianData.positive_domain"
+          ]
+        },
+        {
+          "id": "intro-19",
+          "source_lines": [
+            432,
+            442
+          ],
+          "requirement": "Gradient frequency and Hamiltonian nonextension",
+          "classification": "proved_with_scope_and_exposition",
+          "finding": "The actual gradient, local inverse and stronger H-star continuity obstruction retain their proved domains. Native weighted energy and dual interpretation retain the coordinate comparison. The transition introduces the following extension theorem.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 2,
+              "source_lines": [
+                419,
+                440
+              ]
+            },
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 3,
+              "source_lines": [
+                453,
+                473
+              ]
+            },
+            {
+              "review": "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                301,
+                309
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceBirkhoffMapComplexData.real_map_action_radius",
+            "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "SourceOriginalFrequencyData.local_open_inverse",
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalHamiltonianData.no_continuous_extension_all",
+            "SourceOriginalHamiltonianData.positive_domain",
+            "SourceOriginalHamiltonianData.standard_full_action_domain",
+            "SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+            "SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "SourceOriginalHamiltonianData.standard_real_full_action_values",
+            "SourceOriginalHilbertFrequencyData.realizations_all",
+            "sourceEnergyAction_summable",
+            "sourceEnergyActions_norm_comparison",
+            "sourceSection18_original_frequencies",
+            "sourceSection18_original_hamiltonian",
+            "sourceStandardFullActionHamiltonian_eq"
+          ]
+        },
+        {
+          "id": "intro-20",
+          "source_lines": [
+            453,
+            473
+          ],
+          "requirement": "Theorem0.3",
+          "classification": "named_result_reused",
+          "finding": "One Hilbert frequency and every finite p>2 action extension agree on the full nonnegative summable cone. The inverse is local; the correction has the exact p/3 or OnePlus target. Infinity is a target realization, not another action-source extension.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 3,
+              "source_lines": [
+                453,
+                473
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "SourceOriginalFrequencyData.local_open_inverse",
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalHilbertFrequencyData.realizations_all",
+            "sourceSection18_original_frequencies"
+          ]
+        },
+        {
+          "id": "intro-21",
+          "source_lines": [
+            475,
+            483
+          ],
+          "requirement": "Common dense domain and generic inverses",
+          "classification": "proved_domain_and_source_open_question",
+          "finding": "Common-domain positive-cone density, generic open inverses and local uniform estimates are proved. Relative density does not answer the source question about containing the entire larger cone.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 4,
+              "source_lines": [
+                475,
+                483
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalFrequencyData.generic_open_inverse",
+            "SourceOriginalFrequencyData.mixed",
+            "SourceOriginalFrequencyData.positive_actions_mem",
+            "SourceOriginalFrequencyData.positive_domain"
+          ]
+        },
+        {
+          "id": "intro-22",
+          "source_lines": [
+            486,
+            491
+          ],
+          "requirement": "Original Fourier-Lebesgue source spaces",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "The spaces are actual period-one distributions with the original real conjugate-pair locus. The FL4 and finite-p Birkhoff extensions retain those carriers and norms.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                486,
+                491
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.birkhoff_analytic",
+            "NativeWeightedPeriodic.coefficients",
+            "NativeWeightedPeriodic.range_actions"
+          ]
+        },
+        {
+          "id": "intro-23",
+          "source_lines": [
+            492,
+            500
+          ],
+          "requirement": "Ordinary solution-map obstruction and renormalization",
+          "classification": "proved_with_scope",
+          "finding": "The frequency shift is four times physical mass. The ordinary-flow nonextension concerns compact-time trajectories agreeing with smooth solutions, in its stated source and target ranges; it is not fixed-time discontinuity.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                492,
+                500
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_eq_action_shift",
+            "SourceSection20Data.smooth_source_nonextension_all",
+            "SourceSection20Data.smooth_source_nonextension_all_symmetric",
+            "sourceOrdinaryMass_eq_tsum",
+            "summable_sourceOrdinaryActions"
+          ]
+        },
+        {
+          "id": "intro-24",
+          "source_lines": [
+            501,
+            508
+          ],
+          "requirement": "Renormalized Hamiltonian and Wick-ordered PDE",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "Hr subtracts twice squared mass; H-star additionally subtracts kinetic weighted actions. The literal classical renormalized field and entire complex H1 energy derivative retain their different regularity scopes.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                501,
+                508
+              ]
+            },
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                501,
+                508
+              ]
+            }
+          ],
+          "declarations": [
+            "SmoothNLSData.renormalized_hamiltonian_equation",
+            "analyticAt_periodOneSobolevRenormalizedEnergy",
+            "classicalRenormalizedNLSEnergy",
+            "classicalRenormalizedNLSVectorField_real",
+            "classicalRenormalizedNLSVectorField_scalar",
+            "fderiv_periodOneSobolevMass_apply",
+            "fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals",
+            "hasDerivAt_classicalRenormalizedNLSEnergy_fst",
+            "hasDerivAt_classicalRenormalizedNLSEnergy_snd",
+            "hasFDerivAt_periodOneSobolevRenormalizedEnergy",
+            "periodOneSobolevMass_line",
+            "periodOneSobolevRenormalizedEnergy_eq_classical"
+          ]
+        },
+        {
+          "id": "intro-25",
+          "source_lines": [
+            511,
+            516
+          ],
+          "requirement": "Gauge transport and existing solution constructions",
+          "classification": "refuted_printed_phase_with_proved_correction_and_attribution",
+          "finding": "The correct phase is exp(4 i mass t); the printed phase missing four fails on an actual constant smooth datum. Lower-regularity transport has its separate proof. The cited constructions by other authors are historical attribution.",
+          "evidence": [
+            {
+              "review": "IntroductionNormalizationSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                501,
+                515
+              ]
+            },
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                511,
+                516
+              ]
+            }
+          ],
+          "declarations": [
+            "IsClassicalRenormalizedNLSTrajectory.mass_eq",
+            "SmoothNLSData.ordinary_isClassical",
+            "SmoothNLSData.ordinary_zero",
+            "SmoothNLSData.renormalized_isClassical",
+            "SmoothNLSData.renormalized_phase",
+            "SmoothNLSData.renormalized_zero",
+            "classicalNLSMass_eq_integral",
+            "original_gauge_printed_phase_counterexample"
+          ]
+        },
+        {
+          "id": "intro-26",
+          "source_lines": [
+            519,
+            524
+          ],
+          "requirement": "Mixed sums and OnePlus notation",
+          "classification": "notation_with_proved_realizations",
+          "finding": "Mixed notation requires actual component sequences. OnePlus is membership at every exponent above one; finite exponents suffice by inclusion into infinity. The frequency construction chooses one common decomposition before the projection exponent.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 5,
+              "source_lines": [
+                519,
+                524
+              ]
+            },
+            {
+              "review": "IntroductionMixedFrequencySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                698,
+                703
+              ]
+            }
+          ],
+          "declarations": [
+            "Coeff.exists_onePlus_decomposition_of_refined",
+            "SourceAbelianMomentAtlas.exists_frequencySequence_neighborhood",
+            "SourceOriginalFrequencyData",
+            "SourceSection17OriginalData.exists_frequency_asymptotic",
+            "SourceSection20Data.exists_frequency_mixed_neighborhood",
+            "SourceSection20Data.frequency_mixed_at_real",
+            "exists_sourceActionFrequency_asymptotic",
+            "onePlusSubmodule"
+          ]
+        },
+        {
+          "id": "intro-27",
+          "source_lines": [
+            527,
+            540
+          ],
+          "requirement": "Squared action estimates in the method outline",
+          "classification": "proved_estimates_and_method_explanation",
+          "finding": "One original family and common positive constants satisfy both actual weighted-action inequalities with exact normalization and exponents. The rectangular action radius connects these quantities to Birkhoff norms.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 6,
+              "source_lines": [
+                527,
+                540
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "SourceSection23SobolevBounds",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "id": "intro-28",
+          "source_lines": [
+            551,
+            569
+          ],
+          "requirement": "Higher actions and real periodic spectrum",
+          "classification": "proved_with_scope_and_attribution",
+          "finding": "The actual physical operator, real discrete spectrum, complete ordered pairs, multiplicities, ell2 displacements and original-flow conservation are retained. Historical Lax-pair attribution is not substituted for proved operator identities.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 7,
+              "source_lines": [
+                551,
+                569
+              ]
+            }
+          ],
+          "declarations": [
+            "canonicalPeriodicRight_re_lt_next_left",
+            "discriminant_of_isOrdinaryNLSSolutionOn_univ",
+            "isospectral_of_isOrdinaryNLSSolutionOn_univ",
+            "physicalPeriodicEndpoints_eq_source",
+            "physicalPeriodicEndpoints_spec"
+          ]
+        },
+        {
+          "id": "intro-29",
+          "source_lines": [
+            572,
+            603
+          ],
+          "requirement": "Higher-action asymptotics, hierarchy and trace",
+          "classification": "proved_with_scope_and_refuted_printed_index_set",
+          "finding": "Actual gap samples give the signed-cofinite asymptotic including closed gaps. Independently defined Hamiltonians retain the leading derivative energy and lower-order polynomial. The trace sums all integers; the printed positive-only sum has an actual-source refutation. Schematic comparison signs summarize estimates, not an additional uniform asymptotic equivalence.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 8,
+              "source_lines": [
+                572,
+                603
+              ]
+            },
+            {
+              "review": "IntroductionNormalizationSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                579,
+                589
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection19Data.indexedHigherAction_oddHamiltonian_trace",
+            "exists_sobolevOddHamiltonian_energy_estimates",
+            "nlsOddReducedPolynomial_order",
+            "section23_positiveIndex_trace_counterexample",
+            "sobolevOddHamiltonian_eq_classical",
+            "sobolevOddHamiltonian_real_decomposition",
+            "sourceFiniteGap_sum_higherActions_eq_hamiltonian",
+            "sourceFiniteGap_tsum_higherActions_eq_hamiltonian",
+            "sourceIndexedHigherAction_asymptotic",
+            "sourceIndexedHigherAction_exists_asymptotic_samples",
+            "sourceSobolev_tsum_higherAction_one",
+            "sourceSobolev_tsum_higherAction_three"
+          ]
+        },
+        {
+          "id": "intro-30",
+          "source_lines": [
+            604,
+            612
+          ],
+          "requirement": "H1 threshold and low/high mode method",
+          "classification": "proved_localization_and_method_explanation",
+          "finding": "Actual localization and action estimates retain the H1 threshold, signed indices and multiplicities. The procedural statement about avoiding auxiliary quantities is exposition, not a dependency-absence theorem inferred from module names.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 9,
+              "source_lines": [
+                604,
+                612
+              ]
+            }
+          ],
+          "declarations": [
+            "sourceH1_canonical_pair",
+            "sourceH1_uniform_localization",
+            "sourceSection26_action_estimate",
+            "sourceSection26_central",
+            "sourceSection26_exterior",
+            "sourceSection26_original"
+          ]
+        },
+        {
+          "id": "intro-31",
+          "source_lines": [
+            613,
+            639
+          ],
+          "requirement": "Cubic residue energy, convergence and action image",
+          "classification": "proved_construction_with_refuted_printed_sign",
+          "finding": "Actual contour moments have local gap-fourth-power bounds and an analytic FL4 sum. The coefficient is -4/3; a finite-gap source refutes the printed positive sign. The literal action image is relatively open and contains all nonnegative summable actions, without higher-cone surjectivity.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 10,
+              "source_lines": [
+                613,
+                639
+              ]
+            },
+            {
+              "review": "IntroductionNormalizationSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                613,
+                624
+              ]
+            },
+            {
+              "review": "IntroductionRealActionImageSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                635,
+                639
+              ]
+            },
+            {
+              "review": "IntroductionRealActionImageSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                635,
+                636
+              ]
+            },
+            {
+              "review": "IntroductionRealActionImageSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                638,
+                639
+              ]
+            },
+            {
+              "review": "IntroductionRealActionImageSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                635,
+                639
+              ]
+            }
+          ],
+          "declarations": [
+            "Coeff.exists_ball_real_quadraticActions_lifts",
+            "Coeff.exists_nearby_real_quadraticActions",
+            "Coeff.nonnegativeLocus_subset_closure_inter",
+            "NativeWeightedPeriodic.actions_apply",
+            "NativeWeightedPeriodic.actions_eq_birkhoff_radius",
+            "NativeWeightedPeriodic.dense_range_actions",
+            "NativeWeightedPeriodic.exists_action_image",
+            "NativeWeightedPeriodic.exists_distribution_of_summable_actions",
+            "NativeWeightedPeriodic.isOpen_range_actions",
+            "NativeWeightedPeriodic.range_actions",
+            "NativeWeightedPeriodic.source_one_eq",
+            "NativeWeightedPeriodic.source_one_surjective",
+            "NativeWeightedPeriodic.unitSourceEquiv",
+            "RealCoeff.tendsto_complex_finiteSummable",
+            "SourceBirkhoffInverseChart.actionSequence_eq",
+            "SourceBirkhoffMapComplexData.dense_range_realActionSequence",
+            "SourceBirkhoffMapComplexData.exists_ball_subset_realActionSequence_range",
+            "SourceBirkhoffMapComplexData.exists_inverseChart",
+            "SourceBirkhoffMapComplexData.exists_realAction_ball",
+            "SourceBirkhoffMapComplexData.isOpen_range_realActionSequence",
+            "SourceBirkhoffMapComplexData.realActionSequence",
+            "SourceBirkhoffMapComplexData.realActionSequence_apply",
+            "SourceBirkhoffMapComplexData.summable_mem_range_realActionSequence",
+            "SourcePrimitivePowerAtlas.circle_representation",
+            "SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity",
+            "SourcePrimitivePowerAtlas.printed_lemma21_2_sign_counterexample",
+            "SourceSection21HamiltonianData.hamiltonian_hasSum",
+            "SourceSection21HamiltonianData.physical_identity",
+            "SourceSection21HamiltonianData.proposition21_3",
+            "SourceSection21MomentData.lemma21_1",
+            "exists_hilbertSource_of_nonnegative_actions",
+            "exists_original_realAction_image",
+            "exists_sourcePrimitivePowerAtlas",
+            "exists_source_of_nonnegative_actions",
+            "sourceSection17_original"
+          ]
+        },
+        {
+          "id": "intro-32",
+          "source_lines": [
+            640,
+            648
+          ],
+          "requirement": "Second-moment frequency construction",
+          "classification": "proved_with_scope",
+          "finding": "Original second-moment normalization, absolute locally uniform convergence, sequence realizations and the common refined remainder are proved. Novelty attribution adds no mathematical specification beyond the construction.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 11,
+              "source_lines": [
+                640,
+                648
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalFrequencyData",
+            "SourceSection20Data.action_frequency_complex",
+            "SourceSection20Data.frequency_hasSum",
+            "SourceSection20Data.sequence_analytic",
+            "sourceSection20_original"
+          ]
+        },
+        {
+          "id": "intro-33",
+          "source_lines": [
+            651,
+            661
+          ],
+          "requirement": "Improved remainders and earlier NLS/KdV work",
+          "classification": "explanation_of_proved_result_and_external_work",
+          "finding": "The own-result content is the exact integer tame bound with order-one remainders, linear highest norms and remainder powers linear in m. Priority, limits of conformal methods and earlier KdV estimates concern external work and are not independently verified here.",
+          "evidence": [
+            {
+              "review": "IntroductionMainTheoremsSourceComparison-2026-10-27",
+              "field": "items",
+              "index": 0,
+              "source_lines": [
+                326,
+                342
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "SourceSection23SobolevBounds",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "id": "intro-34",
+          "source_lines": [
+            662,
+            675
+          ],
+          "requirement": "Action smoothing and the I-method analogy",
+          "classification": "proved_with_scope_and_method_context",
+          "finding": "The literal action error is analytic into weighted ell1 of order2m+1 for every positive integer m. Direct inspection of both one-smoothing modules confirms this scope, matching the positive-integer context at8473-8487. The informal phrase supplies no additional zero/fractional-order theorem. I-method history is contextual; low/high spectral estimates retain their proved scope.",
+          "evidence": [
+            {
+              "review": "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 12,
+              "source_lines": [
+                662,
+                675
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceSection17OriginalData.actionFourierRemainder_analytic",
+            "SourceSection17OriginalData.actionFourierRemainder_fourier_square",
+            "SourceSection17OriginalData.summable_actionFourier_error",
+            "sourceH1_uniform_localization"
+          ]
+        },
+        {
+          "id": "intro-35",
+          "source_lines": [
+            676,
+            682
+          ],
+          "requirement": "Hamiltonian sign and external global estimates",
+          "classification": "proved_local_properties_and_external_work",
+          "finding": "H-star has proved sign, analyticity and local negative Hessian. The cited global two-sided ell2 estimates and KdV convexity result remain external attributions. Historical question wording is not an affirmative global convexity theorem.",
+          "evidence": [
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                676,
+                682
+              ]
+            }
+          ],
+          "declarations": [
+            "SourceOriginalHamiltonianData.concavity",
+            "SourceOriginalHamiltonianData.hessian_zero",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.sign",
+            "SourceOriginalHamiltonianData.source_sign"
+          ]
+        },
+        {
+          "id": "intro-36",
+          "source_lines": [
+            683,
+            710
+          ],
+          "requirement": "Frequency asymptotics, inverse and KdV comparison",
+          "classification": "proved_frequency_results_and_external_work",
+          "finding": "The actual full-energy derivative has the sharper ordinary mass limit and all-index bound. The renormalized sequence and literal ell(p/2)+OnePlus estimate retain common analytic domains, generic inverse and exponent compatibility. KdV and priority assertions are contextual.",
+          "evidence": [
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                683,
+                686
+              ]
+            },
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                683,
+                686
+              ]
+            },
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                685,
+                703
+              ]
+            },
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 4,
+              "source_lines": [
+                702,
+                710
+              ]
+            },
+            {
+              "review": "IntroductionMixedFrequencySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                698,
+                703
+              ]
+            },
+            {
+              "review": "IntroductionMixedFrequencySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                698,
+                703
+              ]
+            }
+          ],
+          "declarations": [
+            "Coeff.exists_onePlus_decomposition_of_refined",
+            "SourceAbelianMomentAtlas.exists_frequencySequence_neighborhood",
+            "SourceOriginalFrequencyData.compact_derivative",
+            "SourceOriginalFrequencyData.derivative_zero",
+            "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "SourceOriginalFrequencyData.fredholm",
+            "SourceOriginalFrequencyData.generic_local_inverse",
+            "SourceOriginalFrequencyData.local_inverse",
+            "SourceOriginalFrequencyData.mixed",
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_frequency_eq",
+            "SourceOriginalHamiltonianData.full_action_frequency_mass_limit",
+            "SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+            "SourceOriginalHamiltonianData.full_action_frequency_physical",
+            "SourceOriginalHamiltonianData.full_action_frequency_remainder_bound",
+            "SourceOriginalHamiltonianData.full_action_physical_identity",
+            "SourceOriginalHilbertFrequencyData.realizations",
+            "SourceOriginalHilbertFrequencyData.realizations_top",
+            "SourceSection20Data.exists_frequency_mixed_neighborhood",
+            "SourceSection20Data.frequency_mixed_at_real",
+            "SourceSection20Data.ordinaryFrequency_mass_limit",
+            "SourceSection20Data.ordinaryFrequency_remainder_bound",
+            "SourceSection20Data.renormalizedFrequency_tendsto_zero",
+            "SourceSection20Data.sequence_analytic",
+            "exists_originalOrdinaryFrequency_mass_limit",
+            "exists_sourceActionFrequency_asymptotic",
+            "onePlusSubmodule",
+            "sourceFullActionFrequency",
+            "sourceOrdinaryMass_eq_tsum",
+            "sourceSection18_original_frequencies",
+            "summable_sourceOrdinaryActions"
+          ]
+        },
+        {
+          "id": "intro-37",
+          "source_lines": [
+            713,
+            735
+          ],
+          "requirement": "Chapter and appendix synopsis",
+          "classification": "organizational_summary_with_reused_proof_scope",
+          "finding": "The synopsis points to the qualified original-operator, action-angle, Birkhoff, frequency, Hamiltonian, flow and tame comparisons. Generic curvature wording refers to local concavity. Appendix and notation references are navigation and do not settle their qualifications.",
+          "evidence": [
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 5,
+              "source_lines": [
+                713,
+                720
+              ]
+            },
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 6,
+              "source_lines": [
+                721,
+                726
+              ]
+            },
+            {
+              "review": "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 7,
+              "source_lines": [
+                727,
+                735
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.birkhoff",
+            "NativeWeightedPeriodic.range_actions",
+            "SourceOriginalHamiltonianData.concavity",
+            "SourceOriginalHamiltonianData.source_extension",
+            "SourceSection20Data.sequence_analytic",
+            "sourceH1_uniform_localization",
+            "sourceSection17_original",
+            "sourceSection18_original_hamiltonian",
+            "sourceSection23_original_estimates",
+            "sourceSection26_original"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "IntroductionOpeningSourceComparison-2026-10-27",
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+        "IntroductionNormalizationSourceComparison-2026-10-27",
+        "IntroductionRealActionImageSourceComparison-2026-10-27",
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27",
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+        "IntroductionMixedFrequencySourceComparison-2026-10-27",
+        "HamiltonianStrictConcavitySourceComparison-2026-10-27",
+        "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27",
+        "Section23SourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "IntroductionMainTheoremsSourceComparison-2026-10-27": {
+          "source_record_sha256": "1b846c5958e9c5251e00afeae48ba0c407a4d73beea2d736a08725eb4f2336a9",
+          "module_hashes_verified": true,
+          "retained_qualification": "This inspection verifies the listed statement interfaces, data definitions and existence proofs against the cached source. Existing canonical full-gate evidence covers their Lean proofs. It is not an independent re-proof of every dependency or a full-dissertation completion certificate."
+        },
+        "IntroductionOpeningSourceComparison-2026-10-27": {
+          "source_record_sha256": "53a67358eda92753dcf0fc87935211a9c9de43250de69c767ac714d3f8c6b285",
+          "module_hashes_verified": true,
+          "retained_qualification": "All43 hash-listed canonical modules were read completely in the renewed opening comparison, together with the five new public examples. The comparison retains the original functions, sequence norms, Fourier normalization, action domains, solution class and exponent ranges. The action leading term is newly proved in the full half-exponent norm. Existing comparisons of the named main results and the Fourier-space background remain separate. This is not an independent re-proof of every transitive dependency, a certification of the contextual narrative, or a full-dissertation completion claim. The exact2014 Birkhoff construction and AppendixG2 norm interpretation remain explicitly unresolved."
+        },
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27": {
+          "source_record_sha256": "4b36b6fe813d6db028150044643cdcf1703d9eba1eed361631161ac5645c874f",
+          "module_hashes_verified": true,
+          "retained_qualification": "All fourteen hash-listed canonical modules were read completely for this comparison, including the actual proof bodies and their domain and normalization hypotheses. It covers only the five Fourier-space and symmetry assertion groups listed here; the preceding Birkhoff-extension claim and the wider opening background are not certified by this record. Exact critical scaling is homogeneous, and classical PDE symmetry is separate from invariance of the rough distribution class. Existing Lean validation covers the unchanged source snapshot; transitive dependencies are not independently re-proved. The precise2014 construction and G2 norm qualifications remain open."
+        },
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27": {
+          "source_record_sha256": "bb83e37ccea9f174effcf223c0c79bcb0d8542ecad26409be41a28b79e6fbaf4",
+          "module_hashes_verified": true,
+          "retained_qualification": "All 35 listed modules were read completely in this comparison. The new distribution-space bridge and four public examples retain raw coefficients, exact pair norms, full derivatives and original smooth-test identities. Existing physical contour construction, Sobolev action identification, original frequency recovery and all-smooth-approximation solution results retain their earlier transitive comparisons; this is not an independent review of every dependency. Classical gradient/PDE regularity, finite p>1, global Sobolev inverse only for p<=2, and unweighted-Hilbert-only Parseval are explicit. The introductory historical attribution is not certified. The precise 2014 construction, Appendix G.2 norm interpretation and broader source assessment remain unfinished."
+        },
+        "IntroductionNormalizationSourceComparison-2026-10-27": {
+          "source_record_sha256": "196676cd67946bb121a2d689a4bd582db6d05d1cef74c360f204297fe144b5dc",
+          "module_hashes_verified": true,
+          "retained_qualification": "All eleven listed modules were read completely. The comparison verifies four repeated introductory formulas, their actual-source counterexamples and the separately stated corrected identities. It reuses the prior physical identification, original Birkhoff-family, Section19-domain and transitive proof comparisons. It does not claim to re-audit every dependency, every introductory background assertion, the low-regularity gauge transport or the cubic extension and convergence proof. Existing finite-exponent, original-domain, precise2014 and AppendixG2 qualifications remain unchanged."
+        },
+        "IntroductionRealActionImageSourceComparison-2026-10-27": {
+          "source_record_sha256": "fae5993c92528450d3a4de7d9d34b8fe0a6501cd3258cee243c671c921282feb",
+          "module_hashes_verified": true,
+          "retained_qualification": "All14 listed modules were read completely for this comparison. Four integration examples check unconditional FL4 construction, nearby realizations with exact rectangular normalization at arbitrary gaps, full-norm density at p=3,q=3/2, and onto at p=2,q=1. The unit-weight original-distribution equivalence is used; no arbitrary weighted-space action image theorem is asserted. Relative openness and density do not imply onto for p>2. This focused comparison covers the action-image sentence at635-639, not a new independent audit of the entire derivation of Theorem0.2 or all transitive dependencies. Earlier source corrections, the remaining introductory proof-method comparison, exact2014 identification and AppendixG2 norm interpretation remain separate."
+        },
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27": {
+          "source_record_sha256": "ef63081f90afa903e8dcdbad6b868e44daab92a64a8bb5976dfe96ebec51e6f5",
+          "module_hashes_verified": true,
+          "retained_qualification": "All hash-listed modules were read completely during this introductory-method assessment or its retained preparatory reads; their current hashes were verified. Earlier physical-operator, multiplicity, distribution-carrier and named-result comparisons are explicitly reused with unchanged evidence, rather than represented as a fresh audit of all transitive dependencies. The two new modules and four public examples bridge the literal Hr energy, both classical gradients, the constructed solution and the full complex H1 derivative. Source corrections for the gauge factor, trace index set and residue sign remain. The one-smoothing comparison retains positive integer order, and the nonextension comparison retains trajectory topology. No complete-introduction or complete-dissertation claim is made. The precise 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unresolved."
+        },
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27": {
+          "source_record_sha256": "08ea949391a4362f4db772f0d1a7a95171162224824538f873582661f5434bad",
+          "module_hashes_verified": true,
+          "retained_qualification": "Hash-listed modules were read completely during this assessment, its retained preparation or the immediately preceding method assessment; their current hashes were verified. Two new modules and four examples establish the sharp ordinary-frequency limit and its literal physical-energy derivative interpretation. Earlier section comparisons are reused explicitly with unchanged evidence. The weaker mixed-membership sentence is explained using existing analytic sequence realizations; no new local mixed-decomposition constructor is claimed. The exact2014 construction identification and AppendixG2 norm interpretation remain unresolved. No complete-introduction or complete-dissertation claim is made."
+        },
+        "IntroductionMixedFrequencySourceComparison-2026-10-27": {
+          "source_record_sha256": "4404c1d5686254fee2c27c4a7d608fd16e60c65adda9dd1e1b478aee666f214b",
+          "module_hashes_verified": true,
+          "retained_qualification": "The ten hash-listed modules were read completely in this assessment or in retained preparation and preceding source comparisons; their current hashes were verified. The two new theorems and two examples are a direct interface for the displayed mixed estimate. Historical-status cleanup follows inspected existing proofs, not new mathematical claims. Earlier source records are preserved. The source-review index explicitly covers selected unnumbered assertions and does not provide an exhaustive source-wide completion proof. The exact2014 construction and AppendixG2 norm interpretation remain unresolved."
+        },
+        "HamiltonianStrictConcavitySourceComparison-2026-10-27": {
+          "source_record_sha256": "eb2379627af682fc5d906e749864b794efe8c5abd4649e8dfbd8688bdb36cdde",
+          "module_hashes_verified": true,
+          "retained_qualification": "All six hash-listed modules were read completely and their current hashes verified. This comparison covers the strict-concavity clauses of both abstracts and the indicated introductory sentences, supplementing existing comparisons of the two named theorems. It does not claim that either abstract or the whole source has been exhaustively assessed. The stronger whole-real-ball statement concerns the real part of H; the original sign theorem identifies H as real on the nonnegative cone. No global concavity or extension to every nonnegative Hilbert action is asserted. All earlier corrections, the exact 2014 construction question and Appendix G.2 norm interpretation remain unchanged."
+        },
+        "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27": {
+          "source_record_sha256": "b25b2052dc1451809b880629e7333fb153767251787e610d5c8eb8f3283d4a0b",
+          "module_hashes_verified": true,
+          "retained_qualification": "All five hash-listed modules were read completely. This comparison supplements selected abstract and introduction clauses; it does not complete the abstract or source-wide assessment. The new obstruction is in action space, for local agreement on native nonnegative weighted energy actions, and includes infinity only as a target action exponent. It adds no FLp source endpoint or source-space nonextension conclusion. All earlier source corrections, the exact cited 2014 construction question, and the Appendix G.2 norm interpretation remain unchanged."
+        },
+        "Section23SourceComparison-2026-10-27": {
+          "source_record_sha256": "1fc79469f93a83f712e7fa7a377d6f23738f7a194f9095b4ae8327b65da4b007",
+          "module_hashes_verified": true,
+          "retained_qualification": "Read the full Section23 source, focused current coverage subsections, and every public module hashed here. Also inspected the real-order constant and its positivity. This compares exact public norms, domains, family identity, quantifier order, stronger remainder coordinates and physical strip conditions; it is not a new independent review of every transitive analytic proof or external citation."
+        }
+      },
+      "contextual_exclusions": [
+        {
+          "source_lines": [
+            1,
+            42
+          ],
+          "classification": "front_matter",
+          "finding": "Title, degree, committee, acceptance, dedication and abstract heading; no mathematical theorem."
+        },
+        {
+          "source_lines": [
+            93,
+            154
+          ],
+          "classification": "navigation",
+          "finding": "Contents, running headings and introduction title; no mathematical assertions."
+        },
+        {
+          "source_lines": [
+            736,
+            743
+          ],
+          "classification": "acknowledgments",
+          "finding": "Personal acknowledgments and funding attribution; no Lean assertions."
+        }
+      ],
+      "scope_check": "Read the complete introduction at156-735 and the stated front matter, contents and acknowledgments. The37 entries follow every substantive paragraph in order; blank lines and running page furniture add no mathematical content. Classifications come from reading the source, not interval overlap or heading counts. Both abstracts have their separate published comparison.",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection23OneSmoothing.lean": "303b00937b1da6af95ec4faaa629b92a24691bfe2dc54247d04d36abac4a030e",
+        "NLS/ZakharovShabat/SourceActionFourierRemainder.lean": "c89f845a4e419867f3acf4b1a8a8c735d1624c7c01d1fec9138376098c5a20d9"
+      },
+      "resolved_declaration_references": {
+        "BohrAlmostPeriodic": "NLS.Dynamics.BohrAlmostPeriodic",
+        "Coeff.convex_nonnegativeLocus": "NLS.Coeff.convex_nonnegativeLocus",
+        "Coeff.exists_ball_real_quadraticActions_lifts": "NLS.Coeff.exists_ball_real_quadraticActions_lifts",
+        "Coeff.exists_nearby_real_quadraticActions": "NLS.Coeff.exists_nearby_real_quadraticActions",
+        "Coeff.exists_onePlus_decomposition_of_refined": "NLS.Coeff.exists_onePlus_decomposition_of_refined",
+        "Coeff.nonnegativeLocus_subset_closure_inter": "NLS.Coeff.nonnegativeLocus_subset_closure_inter",
+        "Coeff.norm_real_hilbert_inclusion": "NLS.Coeff.norm_real_hilbert_inclusion",
+        "Coeff.real_line_second_derivative": "NLS.Coeff.real_line_second_derivative",
+        "Coeff.strictConcaveOn_re_of_hessian_neg": "NLS.Coeff.strictConcaveOn_re_of_hessian_neg",
+        "Coeff.strictConcaveOn_real_hilbert_ball": "NLS.Coeff.strictConcaveOn_real_hilbert_ball",
+        "IsClassicalRenormalizedNLSTrajectory.mass_eq": "NLS.ZakharovShabat.IsClassicalRenormalizedNLSTrajectory.mass_eq",
+        "IsSmoothApproximationSolutionOn.eqOn_inter": "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn.eqOn_inter",
+        "NativeWeightedPeriodic.Space": "NLS.ZakharovShabat.NativeWeightedPeriodic.Space",
+        "NativeWeightedPeriodic.actions_apply": "NLS.ZakharovShabat.NativeWeightedPeriodic.actions_apply",
+        "NativeWeightedPeriodic.actions_eq_birkhoff_radius": "NLS.ZakharovShabat.NativeWeightedPeriodic.actions_eq_birkhoff_radius",
+        "NativeWeightedPeriodic.birkhoff": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff",
+        "NativeWeightedPeriodic.birkhoff_analytic": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_analytic",
+        "NativeWeightedPeriodic.birkhoff_canonical": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_canonical",
+        "NativeWeightedPeriodic.birkhoff_isOpenEmbedding": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_isOpenEmbedding",
+        "NativeWeightedPeriodic.birkhoff_norm_rpow": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_norm_rpow",
+        "NativeWeightedPeriodic.birkhoff_parseval": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_parseval",
+        "NativeWeightedPeriodic.birkhoff_physical": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_physical",
+        "NativeWeightedPeriodic.birkhoff_same_distribution": "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_same_distribution",
+        "NativeWeightedPeriodic.coefficients": "NLS.ZakharovShabat.NativeWeightedPeriodic.coefficients",
+        "NativeWeightedPeriodic.complex_coordinates_fderiv": "NLS.ZakharovShabat.NativeWeightedPeriodic.complex_coordinates_fderiv",
+        "NativeWeightedPeriodic.dense_range_actions": "NLS.ZakharovShabat.NativeWeightedPeriodic.dense_range_actions",
+        "NativeWeightedPeriodic.exists_action_image": "NLS.ZakharovShabat.NativeWeightedPeriodic.exists_action_image",
+        "NativeWeightedPeriodic.exists_birkhoff_family": "NLS.ZakharovShabat.NativeWeightedPeriodic.exists_birkhoff_family",
+        "NativeWeightedPeriodic.exists_distribution_of_summable_actions": "NLS.ZakharovShabat.NativeWeightedPeriodic.exists_distribution_of_summable_actions",
+        "NativeWeightedPeriodic.isOpen_range_actions": "NLS.ZakharovShabat.NativeWeightedPeriodic.isOpen_range_actions",
+        "NativeWeightedPeriodic.modeLeft": "NLS.ZakharovShabat.NativeWeightedPeriodic.modeLeft",
+        "NativeWeightedPeriodic.modeRight": "NLS.ZakharovShabat.NativeWeightedPeriodic.modeRight",
+        "NativeWeightedPeriodic.physical_coefficients": "NLS.ZakharovShabat.NativeWeightedPeriodic.physical_coefficients",
+        "NativeWeightedPeriodic.physical_test": "NLS.ZakharovShabat.NativeWeightedPeriodic.physical_test",
+        "NativeWeightedPeriodic.poisson_physical": "NLS.ZakharovShabat.NativeWeightedPeriodic.poisson_physical",
+        "NativeWeightedPeriodic.poisson_physical_functions": "NLS.ZakharovShabat.NativeWeightedPeriodic.poisson_physical_functions",
+        "NativeWeightedPeriodic.range_actions": "NLS.ZakharovShabat.NativeWeightedPeriodic.range_actions",
+        "NativeWeightedPeriodic.realSpace": "NLS.ZakharovShabat.NativeWeightedPeriodic.realSpace",
+        "NativeWeightedPeriodic.sobolevHomeomorph": "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph",
+        "NativeWeightedPeriodic.sobolevHomeomorph_analytic": "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph_analytic",
+        "NativeWeightedPeriodic.sobolevHomeomorph_inverse_test": "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph_inverse_test",
+        "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight": "NLS.ZakharovShabat.NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+        "NativeWeightedPeriodic.source_one_eq": "NLS.ZakharovShabat.NativeWeightedPeriodic.source_one_eq",
+        "NativeWeightedPeriodic.source_one_surjective": "NLS.ZakharovShabat.NativeWeightedPeriodic.source_one_surjective",
+        "NativeWeightedPeriodic.unitSourceEquiv": "NLS.ZakharovShabat.NativeWeightedPeriodic.unitSourceEquiv",
+        "PeriodicFourierLebesgue.l2Isometry": "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry",
+        "PeriodicFourierLebesgue.l2Isometry_parseval_interval": "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_parseval_interval",
+        "PeriodicFourierLebesgue.l2Isometry_represents": "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_represents",
+        "RealCoeff.complexCLM_reCLM": "NLS.RealCoeff.complexCLM_reCLM",
+        "RealCoeff.tendsto_complex_finiteSummable": "NLS.RealCoeff.tendsto_complex_finiteSummable",
+        "SmoothNLSData.ordinary_isClassical": "NLS.ZakharovShabat.SmoothNLSData.ordinary_isClassical",
+        "SmoothNLSData.ordinary_zero": "NLS.ZakharovShabat.SmoothNLSData.ordinary_zero",
+        "SmoothNLSData.renormalized_hamiltonian_equation": "NLS.ZakharovShabat.SmoothNLSData.renormalized_hamiltonian_equation",
+        "SmoothNLSData.renormalized_isClassical": "NLS.ZakharovShabat.SmoothNLSData.renormalized_isClassical",
+        "SmoothNLSData.renormalized_phase": "NLS.ZakharovShabat.SmoothNLSData.renormalized_phase",
+        "SmoothNLSData.renormalized_zero": "NLS.ZakharovShabat.SmoothNLSData.renormalized_zero",
+        "SourceAbelianMomentAtlas.exists_frequencySequence_neighborhood": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_frequencySequence_neighborhood",
+        "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex",
+        "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_eq_action_shift": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.ordinaryPhaseFrequency_eq_action_shift",
+        "SourceBirkhoffInverseChart.actionSequence_eq": "NLS.ZakharovShabat.SourceBirkhoffInverseChart.actionSequence_eq",
+        "SourceBirkhoffMapComplexData.actionSequence_fourier_isLittleO": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.actionSequence_fourier_isLittleO",
+        "SourceBirkhoffMapComplexData.actionSequence_fourier_remainder": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.actionSequence_fourier_remainder",
+        "SourceBirkhoffMapComplexData.dense_range_realActionSequence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.dense_range_realActionSequence",
+        "SourceBirkhoffMapComplexData.exists_ball_subset_realActionSequence_range": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_ball_subset_realActionSequence_range",
+        "SourceBirkhoffMapComplexData.exists_inverseChart": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_inverseChart",
+        "SourceBirkhoffMapComplexData.exists_realAction_ball": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_realAction_ball",
+        "SourceBirkhoffMapComplexData.isOpen_range_realActionSequence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isOpen_range_realActionSequence",
+        "SourceBirkhoffMapComplexData.realActionSequence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realActionSequence",
+        "SourceBirkhoffMapComplexData.realActionSequence_apply": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realActionSequence_apply",
+        "SourceBirkhoffMapComplexData.real_map_action_radius": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_action_radius",
+        "SourceBirkhoffMapComplexData.summable_mem_range_realActionSequence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.summable_mem_range_realActionSequence",
+        "SourceOriginalFrequencyData": "NLS.ZakharovShabat.SourceOriginalFrequencyData",
+        "SourceOriginalFrequencyData.compact_derivative": "NLS.ZakharovShabat.SourceOriginalFrequencyData.compact_derivative",
+        "SourceOriginalFrequencyData.derivative_zero": "NLS.ZakharovShabat.SourceOriginalFrequencyData.derivative_zero",
+        "SourceOriginalFrequencyData.eq_hilbert_on_positive": "NLS.ZakharovShabat.SourceOriginalFrequencyData.eq_hilbert_on_positive",
+        "SourceOriginalFrequencyData.fredholm": "NLS.ZakharovShabat.SourceOriginalFrequencyData.fredholm",
+        "SourceOriginalFrequencyData.generic_local_inverse": "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_local_inverse",
+        "SourceOriginalFrequencyData.generic_open_inverse": "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_open_inverse",
+        "SourceOriginalFrequencyData.local_inverse": "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_inverse",
+        "SourceOriginalFrequencyData.local_open_inverse": "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_open_inverse",
+        "SourceOriginalFrequencyData.mixed": "NLS.ZakharovShabat.SourceOriginalFrequencyData.mixed",
+        "SourceOriginalFrequencyData.positive_actions_mem": "NLS.ZakharovShabat.SourceOriginalFrequencyData.positive_actions_mem",
+        "SourceOriginalFrequencyData.positive_domain": "NLS.ZakharovShabat.SourceOriginalFrequencyData.positive_domain",
+        "SourceOriginalFrequencyData.refined": "NLS.ZakharovShabat.SourceOriginalFrequencyData.refined",
+        "SourceOriginalHamiltonianData": "NLS.ZakharovShabat.SourceOriginalHamiltonianData",
+        "SourceOriginalHamiltonianData.analytic": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.analytic",
+        "SourceOriginalHamiltonianData.concavity": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.concavity",
+        "SourceOriginalHamiltonianData.energyMassBlock_mem": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.energyMassBlock_mem",
+        "SourceOriginalHamiltonianData.full_action_coordinate_derivative": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+        "SourceOriginalHamiltonianData.full_action_domain": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_domain",
+        "SourceOriginalHamiltonianData.full_action_frequency_energyMassBlock_limit": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_energyMassBlock_limit",
+        "SourceOriginalHamiltonianData.full_action_frequency_eq": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_eq",
+        "SourceOriginalHamiltonianData.full_action_frequency_mass_limit": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_mass_limit",
+        "SourceOriginalHamiltonianData.full_action_frequency_ordinary": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+        "SourceOriginalHamiltonianData.full_action_frequency_physical": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_physical",
+        "SourceOriginalHamiltonianData.full_action_frequency_remainder_bound": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_remainder_bound",
+        "SourceOriginalHamiltonianData.full_action_frequency_zero_value": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_zero_value",
+        "SourceOriginalHamiltonianData.full_action_physical_identity": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_physical_identity",
+        "SourceOriginalHamiltonianData.full_hessian_diagonal": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_hessian_diagonal",
+        "SourceOriginalHamiltonianData.full_hessian_ne_printed": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_hessian_ne_printed",
+        "SourceOriginalHamiltonianData.hessian_zero": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.hessian_zero",
+        "SourceOriginalHamiltonianData.no_continuous_extension_all": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.no_continuous_extension_all",
+        "SourceOriginalHamiltonianData.no_continuous_full_action_frequency": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.no_continuous_full_action_frequency",
+        "SourceOriginalHamiltonianData.physical_identity": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.physical_identity",
+        "SourceOriginalHamiltonianData.positive_domain": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.positive_domain",
+        "SourceOriginalHamiltonianData.real_full_action_analytic": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_analytic",
+        "SourceOriginalHamiltonianData.real_summable_extension": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_summable_extension",
+        "SourceOriginalHamiltonianData.restored_frequency_derivative": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.restored_frequency_derivative",
+        "SourceOriginalHamiltonianData.sign": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.sign",
+        "SourceOriginalHamiltonianData.single_action_physical_energy": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.single_action_physical_energy",
+        "SourceOriginalHamiltonianData.source_extension": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_extension",
+        "SourceOriginalHamiltonianData.source_sign": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_sign",
+        "SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+        "SourceOriginalHamiltonianData.standard_full_action_domain": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_domain",
+        "SourceOriginalHamiltonianData.standard_full_action_physical_identity": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+        "SourceOriginalHamiltonianData.standard_real_full_action_analytic": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+        "SourceOriginalHamiltonianData.standard_real_full_action_values": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_values",
+        "SourceOriginalHamiltonianData.strict_concavity": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_concavity",
+        "SourceOriginalHamiltonianData.strict_jensen": "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_jensen",
+        "SourceOriginalHilbertFrequencyData.realizations": "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations",
+        "SourceOriginalHilbertFrequencyData.realizations_all": "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations_all",
+        "SourceOriginalHilbertFrequencyData.realizations_top": "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations_top",
+        "SourcePrimitivePowerAtlas.circle_representation": "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.circle_representation",
+        "SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity": "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity",
+        "SourcePrimitivePowerAtlas.printed_lemma21_2_sign_counterexample": "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.printed_lemma21_2_sign_counterexample",
+        "SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero": "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+        "SourceSection17OriginalData.actionFourierRemainder_analytic": "NLS.ZakharovShabat.SourceSection17OriginalData.actionFourierRemainder_analytic",
+        "SourceSection17OriginalData.actionFourierRemainder_fourier_square": "NLS.ZakharovShabat.SourceSection17OriginalData.actionFourierRemainder_fourier_square",
+        "SourceSection17OriginalData.exists_frequency_asymptotic": "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic",
+        "SourceSection17OriginalData.global_inverse": "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+        "SourceSection17OriginalData.section23_sobolev_bounds": "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+        "SourceSection17OriginalData.summable_actionFourier_error": "NLS.ZakharovShabat.SourceSection17OriginalData.summable_actionFourier_error",
+        "SourceSection19Data.indexedHigherAction_oddHamiltonian_trace": "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_oddHamiltonian_trace",
+        "SourceSection20Data.action_frequency_complex": "NLS.ZakharovShabat.SourceSection20Data.action_frequency_complex",
+        "SourceSection20Data.exists_frequency_mixed_neighborhood": "NLS.ZakharovShabat.SourceSection20Data.exists_frequency_mixed_neighborhood",
+        "SourceSection20Data.frequency_hasSum": "NLS.ZakharovShabat.SourceSection20Data.frequency_hasSum",
+        "SourceSection20Data.frequency_mixed_at_real": "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed_at_real",
+        "SourceSection20Data.ordinaryFrequency_mass_limit": "NLS.ZakharovShabat.SourceSection20Data.ordinaryFrequency_mass_limit",
+        "SourceSection20Data.ordinaryFrequency_remainder_bound": "NLS.ZakharovShabat.SourceSection20Data.ordinaryFrequency_remainder_bound",
+        "SourceSection20Data.ordinary_original_frequency_conserved": "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved",
+        "SourceSection20Data.ordinary_original_rectangular_oscillators": "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+        "SourceSection20Data.ordinary_original_rectangular_phase": "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_phase",
+        "SourceSection20Data.renormalizedFrequency_tendsto_zero": "NLS.ZakharovShabat.SourceSection20Data.renormalizedFrequency_tendsto_zero",
+        "SourceSection20Data.renormalized_original_rectangular_oscillators": "NLS.ZakharovShabat.SourceSection20Data.renormalized_original_rectangular_oscillators",
+        "SourceSection20Data.sequence_analytic": "NLS.ZakharovShabat.SourceSection20Data.sequence_analytic",
+        "SourceSection20Data.smooth_source_nonextension_all": "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all",
+        "SourceSection20Data.smooth_source_nonextension_all_symmetric": "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric",
+        "SourceSection21HamiltonianData.hamiltonian_hasSum": "NLS.ZakharovShabat.SourceSection21HamiltonianData.hamiltonian_hasSum",
+        "SourceSection21HamiltonianData.physical_identity": "NLS.ZakharovShabat.SourceSection21HamiltonianData.physical_identity",
+        "SourceSection21HamiltonianData.proposition21_3": "NLS.ZakharovShabat.SourceSection21HamiltonianData.proposition21_3",
+        "SourceSection21MomentData.lemma21_1": "NLS.ZakharovShabat.SourceSection21MomentData.lemma21_1",
+        "SourceSection23SobolevBounds": "NLS.ZakharovShabat.SourceSection23SobolevBounds",
+        "analyticAt_periodOneSobolevRenormalizedEnergy": "NLS.ZakharovShabat.analyticAt_periodOneSobolevRenormalizedEnergy",
+        "bohrAlmostPeriodic_of_totallyBounded_range": "NLS.Dynamics.bohrAlmostPeriodic_of_totallyBounded_range",
+        "canonicalPeriodicRight_re_lt_next_left": "NLS.ZakharovShabat.canonicalPeriodicRight_re_lt_next_left",
+        "classicalNLSHamiltonian_three": "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+        "classicalNLSMass_eq_integral": "NLS.ZakharovShabat.classicalNLSMass_eq_integral",
+        "classicalNLSVectorField_real": "NLS.ZakharovShabat.classicalNLSVectorField_real",
+        "classicalNLSVectorField_scalar": "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+        "classicalNLS_equation_of_hasDerivAt": "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt",
+        "classicalRenormalizedNLSEnergy": "NLS.ZakharovShabat.classicalRenormalizedNLSEnergy",
+        "classicalRenormalizedNLSVectorField_real": "NLS.ZakharovShabat.classicalRenormalizedNLSVectorField_real",
+        "classicalRenormalizedNLSVectorField_scalar": "NLS.ZakharovShabat.classicalRenormalizedNLSVectorField_scalar",
+        "criticalSobolevInclusion_injective": "NLS.Fourier.PeriodicFourierLebesgue.criticalSobolevInclusion_injective",
+        "criticalSobolevInclusion_val": "NLS.Fourier.PeriodicFourierLebesgue.criticalSobolevInclusion_val",
+        "discriminant_of_isOrdinaryNLSSolutionOn_univ": "NLS.ZakharovShabat.discriminant_of_isOrdinaryNLSSolutionOn_univ",
+        "exists_fourierLebesgue_above_two_not_l2": "NLS.Fourier.exists_fourierLebesgue_above_two_not_l2",
+        "exists_hilbertSource_of_nonnegative_actions": "NLS.ZakharovShabat.exists_hilbertSource_of_nonnegative_actions",
+        "exists_lineFourierLebesgue_galilean_representative": "NLS.Fourier.exists_lineFourierLebesgue_galilean_representative",
+        "exists_originalOrdinaryFrequency_mass_limit": "NLS.ZakharovShabat.exists_originalOrdinaryFrequency_mass_limit",
+        "exists_original_almostPeriodic_solutions": "NLS.ZakharovShabat.exists_original_almostPeriodic_solutions",
+        "exists_original_realAction_image": "NLS.ZakharovShabat.exists_original_realAction_image",
+        "exists_original_sobolev_almostPeriodic_solutions": "NLS.ZakharovShabat.exists_original_sobolev_almostPeriodic_solutions",
+        "exists_sobolevOddHamiltonian_energy_estimates": "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+        "exists_sourceActionFourierTaylor": "NLS.ZakharovShabat.exists_sourceActionFourierTaylor",
+        "exists_sourceActionFrequency_asymptotic": "NLS.ZakharovShabat.exists_sourceActionFrequency_asymptotic",
+        "exists_sourceActionSequence_analytic": "NLS.ZakharovShabat.exists_sourceActionSequence_analytic",
+        "exists_sourcePrimitivePowerAtlas": "NLS.ZakharovShabat.exists_sourcePrimitivePowerAtlas",
+        "exists_source_of_nonnegative_actions": "NLS.ZakharovShabat.exists_source_of_nonnegative_actions",
+        "fderiv_periodOneSobolevMass_apply": "NLS.ZakharovShabat.fderiv_periodOneSobolevMass_apply",
+        "fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals": "NLS.ZakharovShabat.fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals",
+        "hasDerivAt_classicalNLSHamiltonian_three_fst": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+        "hasDerivAt_classicalNLSHamiltonian_three_snd": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+        "hasDerivAt_classicalRenormalizedNLSEnergy_fst": "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_fst",
+        "hasDerivAt_classicalRenormalizedNLSEnergy_snd": "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_snd",
+        "hasDerivAt_scalarNLS_dilation": "NLS.ZakharovShabat.hasDerivAt_scalarNLS_dilation",
+        "hasFDerivAt_periodOneSobolevRenormalizedEnergy": "NLS.ZakharovShabat.hasFDerivAt_periodOneSobolevRenormalizedEnergy",
+        "homogeneousCriticalEnergy_scalarNLS_dilation": "NLS.Fourier.homogeneousCriticalEnergy_scalarNLS_dilation",
+        "intrinsicPhysicalBirkhoffHomeomorph_analytic": "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffHomeomorph_analytic",
+        "intrinsicPhysicalBirkhoffHomeomorph_symm_fderiv_zero": "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffHomeomorph_symm_fderiv_zero",
+        "intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates": "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+        "intrinsicPhysicalBirkhoffMap_formula_of_eta": "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_formula_of_eta",
+        "isCriticalHomogeneousSobolev_iff_fourier_density": "NLS.Fourier.isCriticalHomogeneousSobolev_iff_fourier_density",
+        "isLineFourierLebesgue_galilean_iff": "NLS.Fourier.isLineFourierLebesgue_galilean_iff",
+        "isospectral_of_isOrdinaryNLSSolutionOn_univ": "NLS.ZakharovShabat.isospectral_of_isOrdinaryNLSSolutionOn_univ",
+        "linearIndependent_originalRealActionIntegral_fderiv_iff": "NLS.ZakharovShabat.linearIndependent_originalRealActionIntegral_fderiv_iff",
+        "linearIndependent_sourceComplexAction_fderiv_open_gaps": "NLS.ZakharovShabat.linearIndependent_sourceComplexAction_fderiv_open_gaps",
+        "linearIndependent_sourceIndexedAction_fderiv_open_gaps": "NLS.ZakharovShabat.linearIndependent_sourceIndexedAction_fderiv_open_gaps",
+        "nlsOddReducedPolynomial_order": "NLS.ZakharovShabat.nlsOddReducedPolynomial_order",
+        "onePlusSubmodule": "NLS.onePlusSubmodule",
+        "originalOrdinary_integrals_in_involution": "NLS.ZakharovShabat.originalOrdinary_integrals_in_involution",
+        "original_gauge_printed_phase_counterexample": "NLS.ZakharovShabat.original_gauge_printed_phase_counterexample",
+        "periodOneSobolevMass_line": "NLS.ZakharovShabat.periodOneSobolevMass_line",
+        "periodOneSobolevRenormalizedEnergy_eq_classical": "NLS.ZakharovShabat.periodOneSobolevRenormalizedEnergy_eq_classical",
+        "physicalCotangentBivector": "NLS.ZakharovShabat.physicalCotangentBivector",
+        "physicalCotangentBivector_eq_source": "NLS.ZakharovShabat.physicalCotangentBivector_eq_source",
+        "physicalCotangentGradient_pairing": "NLS.ZakharovShabat.physicalCotangentGradient_pairing",
+        "physicalCotangentGradient_unique": "NLS.ZakharovShabat.physicalCotangentGradient_unique",
+        "physicalL2_pairing_source": "NLS.ZakharovShabat.physicalL2_pairing_source",
+        "physicalPeriodicEndpoints_eq_source": "NLS.ZakharovShabat.physicalPeriodicEndpoints_eq_source",
+        "physicalPeriodicEndpoints_spec": "NLS.ZakharovShabat.physicalPeriodicEndpoints_spec",
+        "scalarNonlinearFourierHomeomorph": "NLS.ZakharovShabat.scalarNonlinearFourierHomeomorph",
+        "scalarNonlinearFourier_fderiv_zero_apply": "NLS.ZakharovShabat.scalarNonlinearFourier_fderiv_zero_apply",
+        "scalarNonlinearFourier_hasSum_norm_sq": "NLS.ZakharovShabat.scalarNonlinearFourier_hasSum_norm_sq",
+        "scalarNonlinearFourier_norm": "NLS.ZakharovShabat.scalarNonlinearFourier_norm",
+        "scalarSobolevEnergy_eq_integral": "NLS.ZakharovShabat.scalarSobolevEnergy_eq_integral",
+        "scalarSobolevEnergy_eq_real_integral": "NLS.ZakharovShabat.scalarSobolevEnergy_eq_real_integral",
+        "section23_positiveIndex_trace_counterexample": "NLS.ZakharovShabat.section23_positiveIndex_trace_counterexample",
+        "sobolevOddHamiltonian_eq_classical": "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical",
+        "sobolevOddHamiltonian_real_decomposition": "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+        "sourceEnergyAction_summable": "NLS.ZakharovShabat.sourceEnergyAction_summable",
+        "sourceEnergyActionsToExponent_apply": "NLS.ZakharovShabat.sourceEnergyActionsToExponent_apply",
+        "sourceEnergyActions_norm_comparison": "NLS.ZakharovShabat.sourceEnergyActions_norm_comparison",
+        "sourceEnergyMassBlock_mass": "NLS.ZakharovShabat.sourceEnergyMassBlock_mass",
+        "sourceEnergyMassBlock_nonnegative": "NLS.ZakharovShabat.sourceEnergyMassBlock_nonnegative",
+        "sourceEnergyMassBlock_tendsto": "NLS.ZakharovShabat.sourceEnergyMassBlock_tendsto",
+        "sourceFiniteGap_sum_higherActions_eq_hamiltonian": "NLS.ZakharovShabat.sourceFiniteGap_sum_higherActions_eq_hamiltonian",
+        "sourceFiniteGap_tsum_higherActions_eq_hamiltonian": "NLS.ZakharovShabat.sourceFiniteGap_tsum_higherActions_eq_hamiltonian",
+        "sourceFourierActionSequence_real": "NLS.ZakharovShabat.sourceFourierActionSequence_real",
+        "sourceFullActionFrequency": "NLS.ZakharovShabat.sourceFullActionFrequency",
+        "sourceFullActionHamiltonian": "NLS.ZakharovShabat.sourceFullActionHamiltonian",
+        "sourceH1_canonical_pair": "NLS.ZakharovShabat.sourceH1_canonical_pair",
+        "sourceH1_uniform_localization": "NLS.ZakharovShabat.sourceH1_uniform_localization",
+        "sourceIndexedHigherAction_asymptotic": "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic",
+        "sourceIndexedHigherAction_exists_asymptotic_samples": "NLS.ZakharovShabat.sourceIndexedHigherAction_exists_asymptotic_samples",
+        "sourceOrdinaryMass_eq_tsum": "NLS.ZakharovShabat.sourceOrdinaryMass_eq_tsum",
+        "sourceSection16_original": "NLS.ZakharovShabat.sourceSection16_original",
+        "sourceSection17_original": "NLS.ZakharovShabat.sourceSection17_original",
+        "sourceSection18_original_frequencies": "NLS.ZakharovShabat.sourceSection18_original_frequencies",
+        "sourceSection18_original_hamiltonian": "NLS.ZakharovShabat.sourceSection18_original_hamiltonian",
+        "sourceSection20_original": "NLS.ZakharovShabat.sourceSection20_original",
+        "sourceSection22_original_flows": "NLS.ZakharovShabat.sourceSection22_original_flows",
+        "sourceSection23_original_estimates": "NLS.ZakharovShabat.sourceSection23_original_estimates",
+        "sourceSection26_action_estimate": "NLS.ZakharovShabat.sourceSection26_action_estimate",
+        "sourceSection26_central": "NLS.ZakharovShabat.sourceSection26_central",
+        "sourceSection26_exterior": "NLS.ZakharovShabat.sourceSection26_exterior",
+        "sourceSection26_original": "NLS.ZakharovShabat.sourceSection26_original",
+        "sourceSobolev_tsum_higherAction_one": "NLS.ZakharovShabat.sourceSobolev_tsum_higherAction_one",
+        "sourceSobolev_tsum_higherAction_three": "NLS.ZakharovShabat.sourceSobolev_tsum_higherAction_three",
+        "sourceStandardFullActionHamiltonian_eq": "NLS.ZakharovShabat.sourceStandardFullActionHamiltonian_eq",
+        "summable_sourceOrdinaryActions": "NLS.ZakharovShabat.summable_sourceOrdinaryActions"
+      },
+      "qualification": "This is a consolidated introduction assertion inventory, explicitly reusing prior qualified mathematical comparisons and their unchanged module hashes. Both newly hash-listed modules were read completely to settle the informal smoothing passage. It is not an independent rereview of all dependencies, a certification of physical modelling, historical priority or external KdV/Nekhoroshev/I-method claims, or a full-dissertation completeness claim. Four printed formula errors retain actual-source refutations and separate corrections. The exact cited2014 construction remains unresolved; source global questions are not claimed solved or still open today. The source-wide assessment and AppendixG2 norm interpretation remain unfinished.",
+      "source_record_sha256": "18475898ed559531656446ed11bc9a411ee2bcf69ea47808f909c258abb970fb"
     }
   }
 }

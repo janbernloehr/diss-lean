@@ -28,8 +28,10 @@ Both abstracts now have a [consolidated mathematical comparison](INTRODUCTION.md
 covering their seven paired claim groups. It retains the exact exponent and
 gap restrictions, renormalization, solution sense and norms, together with
 the unresolved external-construction qualification. Novelty and historical
-priority are outside that assessment. Continue with the remaining
-introduction and source-wide assertions in order.
+priority are outside that assessment. The introduction now also has a
+37-group ordered assertion inventory, preserving its four refuted formulas
+and all earlier scope qualifications. Continue at the spectral overview,
+then through the remaining source assertions in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

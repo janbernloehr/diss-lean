@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: all seven mathematical claim groups in both abstracts now
-have a consolidated comparison with the Lean proofs, retaining their
-precise domains, normalizations and unresolved source qualifications.
-The preceding implementation proves ordinary action-frequency nonextension
-in every ellq with q>1, including infinity.
-See the [abstract comparison](coverage/INTRODUCTION.md) and
+Latest step: the complete introduction now has an ordered assertion
+inventory linking its mathematics to the existing proofs and preserving
+source errors, domain restrictions and unresolved identifications.
+Both abstracts were assessed in the preceding step.
+See the [introduction inventory](coverage/INTRODUCTION.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

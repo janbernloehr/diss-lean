@@ -1,6 +1,27 @@
 # Implementation plan
 
-## Current milestone: Both abstracts assessed with their exact scope
+## Current milestone: Complete introduction assertion inventory
+
+The full introduction now has 37 ordered assertion groups classified
+from the source text. Mathematical entries reuse qualified proof
+comparisons; historical, physical and other-PDE attributions remain
+contextual. Four refuted printed formulas stay separate from their
+proved corrections. The informal action-smoothing statement retains its
+positive-integer scope, confirmed against the Section 23 discussion.
+
+See the [introduction inventory](coverage/INTRODUCTION.md) and
+[completion assessment](coverage/COMPLETENESS.md). Continue at the spectral
+overview. The exact cited 2014 construction and Appendix G.2 norm
+interpretation remain open.
+
+Validation: source-review integrity and all 3,000 local file links
+across 45 documents pass. The Lean source and dependency-lock snapshot
+is unchanged from the preceding verified commit: 8,430 build jobs,
+7,464 public examples, 42,809 audited NLS declarations and 21 existing
+warnings. That successful full check is reused; no Lean check was rerun
+for this documentation-only milestone.
+
+## Previous milestone: Both abstracts assessed with their exact scope
 
 All seven paired mathematical claim groups in the German and English
 abstracts now have one consolidated comparison. It records original

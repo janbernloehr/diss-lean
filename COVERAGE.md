@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Complete introduction, pp.9–16 | [Assertion inventory](coverage/INTRODUCTION.md), [source record](coverage/source-review-index.json) | 37 ordered groups distinguish proof scope, four refuted formulas, source questions and contextual material; precise external identification remains qualified. |
 | German and English abstracts | [Consolidated comparison](coverage/INTRODUCTION.md), [source record](coverage/source-review-index.json) | Seven paired mathematical claim groups, with exact domains, original objects and retained source qualifications; no whole-dissertation completeness claim. |
 | Introduction p.12 and abstract frequency normalization | [SourceOrdinaryFrequencyNonextension](NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean), [comparison](coverage/INTRODUCTION.md) | No continuous local extension of a literal full-energy action frequency in any ellq with q>1, including infinity, even on the nonnegative cone. Local agreement is required only on native weighted energy actions. |
 | Abstracts and local Hamiltonian concavity | [SourceHamiltonianStrictConcavity](NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean), [comparison](coverage/INTRODUCTION.md) | Standard strict-concavity predicate and literal Jensen inequality on one local nonnegative action cone, derived for the same original H from its quantitative Hessian bound. |

@@ -7,9 +7,10 @@ interfaces below are implemented. The mathematical opening on pp. 9–10 has
 also been compared with the original Hamiltonian, spectral conservation,
 action integrals, oscillators, almost-periodicity and nonlinear Fourier
 proofs below. The comparison retains their precise domains and solution
-notion. It does not certify the historical or physical-application narrative,
-the entire introduction or the dissertation. The precise 2014 edition
-comparison and the G.2 norm qualification remain open.
+notion. It does not certify the historical or physical-application narrative
+or the dissertation as a whole. The
+consolidated inventory below now classifies the full introduction and
+retains the precise 2014 edition and G.2 norm qualifications.
 
 The Fourier-space background on printed p. 10 now has a renewed comparison
 from `FL2 = L2` through Galilean invariance (extraction lines 238–244).
@@ -21,6 +22,35 @@ norm, and the classical regularity assumptions for PDE symmetry. Invariance
 of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
+
+## Consolidated introduction assertion inventory
+
+The complete introduction (printed pp. 9–16) has now been read as an
+ordered assertion inventory. Its 37 entries distinguish mathematical
+definitions and results, explanatory consequences, formally refuted
+printed formulas, source open questions, and contextual attributions.
+Each mathematical entry points to the exact earlier comparison and
+declarations, with its current module hashes verified.
+
+| Passage | Assessment retained by the inventory |
+| --- | --- |
+| Scalar energy, spectral integrals, coordinates and time recurrence | Original functions and solution class, actual action domains, closed-gap restrictions, and coordinatewise time derivatives. |
+| Fourier-Lebesgue background and symmetries | Original distributions and norms; finite-p critical inclusion, homogeneous scaling, and stated classical PDE regularity. |
+| Main theorems and their setup | One original family, precise gradient domains, local and generic inverses, and original integer Sobolev estimates. |
+| Four printed formulas | The full-energy Hessian omits mass; the gauge phase omits four; the trace omits nonpositive indices; the cubic residue coefficient has the wrong sign. Their counterexamples and corrections remain in the normalization comparison below. |
+| Method outline and action smoothing | Actual contour moments, common neighborhoods, real action image, and positive-integer smoothing. The informal phrase adds no zero-order or fractional-order endpoint. |
+| Related work and questions | Applications, priority, other PDEs and perturbative motivation are contextual. Source global questions are not affirmative results or claims about their present status. Exact cited 2014 identification remains unresolved. |
+
+IntroductionAssertionInventorySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records every entry and
+its referenced evidence. Title pages, contents and acknowledgments are
+classified as nonmathematical material. This consolidation reuses the
+detailed comparisons below; interval matching does not replace semantic
+assessment or independently reprove all dependencies.
+
+The mathematical introduction is now inventoried with these qualifications.
+The source-wide assessment continues at the spectral overview; the
+Appendix G.2 norm question remains open. See [completion scope](COMPLETENESS.md).
 
 ## Both abstracts: consolidated mathematical assessment
 
