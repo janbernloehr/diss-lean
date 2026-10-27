@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T07:54:17.401901+00:00",
-  "base_commit": "abf0b70ab6fb61eea42d24f987b7ad8a09ea1645",
+  "published_utc": "2026-10-27T08:24:23.028903+00:00",
+  "base_commit": "9a5525b2315e6dabeb4e498e5dcb1c56278c9981",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 54,
-    "module_hash_checks": 774,
-    "distinct_modules": 714
+    "review_records": 55,
+    "module_hash_checks": 778,
+    "distinct_modules": 717
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "abf0b70ab6fb61eea42d24f987b7ad8a09ea1645",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativePeriodicOperator, NativePeriodicHilbert and five public examples.",
+    "base_commit": "9a5525b2315e6dabeb4e498e5dcb1c56278c9981",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes PeriodicFourierLebesguePeriodDoubling, NativePeriodOnePotential and five public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8415,
-    "public_examples": 7434,
-    "transitive_NLS_declarations": 42589,
+    "build_jobs": 8417,
+    "public_examples": 7439,
+    "transitive_NLS_declarations": 42615,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4692,
-      "sha256": "0bbc45dcecba8de4490c9f27f96a20668d2616d03c838e444d89306063ebf423"
+      "files": 4694,
+      "sha256": "af128e855ba3a2228bbc6240f1b20a7db050084ac64dde6e485c81b2e28b7d17"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -10677,6 +10677,85 @@
       },
       "qualification": "The four listed modules were read completely. The native spaces use the previously inspected original-distribution Fourier-Lebesgue definitions, and Hilbert spectral identification uses the established physical operator interfaces. This is not an independent re-proof of every transitive dependency. The general period-one to period-two extension on the original distribution carrier in line862 remains a separate comparison; the present operator construction applies to every potential already on the period-two carrier, and the physical extension is identified here at p=2. The nonmeasure assertion in lines851-853 refers to the earlier Fourier-background comparison. Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualification are unchanged; no chapter-wide completeness claim is made.",
       "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2"
+    },
+    "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T08:24:23.028903+00:00",
+      "base_commit": "9a5525b2315e6dabeb4e498e5dcb1c56278c9981",
+      "source_lines": [
+        860,
+        862
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            860,
+            862
+          ],
+          "requirement": "The original period-one distribution potential is extended to the period-two circle without changing its physical distribution.",
+          "finding": "The scalar native map is a linear isometry between the original smooth-test Fourier-Lebesgue spaces of periods one and two. Its even coefficients are the original signed coefficients and its odd coefficients vanish. Reindexing the full Fourier-test series and using the exact Fourier dilation formula, including its inverse Jacobian, proves equality of the two actual tempered distributions on every Schwartz test. This covers every Banach exponent, including the scalar infinity endpoint, without a function or measure hypothesis.",
+          "declarations": [
+            "distributionSynthesis_periodDouble_eq_dilation",
+            "PeriodicFourierLebesgue.periodDouble",
+            "PeriodicFourierLebesgue.periodDouble_coefficient_even",
+            "PeriodicFourierLebesgue.periodDouble_coefficient_odd",
+            "PeriodicFourierLebesgue.periodDouble_toTempered"
+          ]
+        },
+        {
+          "source_lines": [
+            862,
+            862
+          ],
+          "requirement": "The period extension realizes exactly the period-one potentials inside the period-two space.",
+          "finding": "The entire scalar range is characterized by actual invariance of the tempered distribution under translation by one. The reverse implication uses vanishing odd coefficients and the full even-subsequence inverse. The pair map has the same exact range characterization componentwise and preserves the finite component-sum norm. It does not identify an infinity WithLp pair norm with the dissertation's different infinity pair norm.",
+          "declarations": [
+            "PeriodicFourierLebesgue.mem_range_periodDouble_iff",
+            "NativePeriodic.extendPotential_fst_toTempered",
+            "NativePeriodic.extendPotential_snd_toTempered",
+            "NativePeriodic.norm_extendPotential",
+            "NativePeriodic.mem_range_extendPotential_iff"
+          ]
+        },
+        {
+          "source_lines": [
+            860,
+            862
+          ],
+          "requirement": "The extension is the potential parameter used by the periodic operator and spectral theory.",
+          "finding": "The exact normalized source coefficient isometry sends the original pair to its period-one source sequence. Taking coefficients after the native extension gives exactly periodOnePair of that sequence. Thus the independently defined native bounded-inverse spectrum equals the established source periodic spectrum at every finite Banach exponent. Combined with the preceding native-operator comparison, the extended original potential has the full one-derivative domain and closed densely defined operator; no supplied physical representative is needed.",
+          "declarations": [
+            "NativePeriodic.sourceCoefficients",
+            "NativePeriodic.coefficients_extendPotential",
+            "NativePeriodic.spectrum_extendPotential"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          18
+        ],
+        "pdf_pages": [
+          18
+        ],
+        "inspection": "Reused the previously inspected unchanged page18 rendering and compared extraction860-862 with the native period-extension construction.",
+        "images": {
+          "SpectralOverviewComplexCurrentReview-018.png": "c6af5c91e50956f88b703ccd60ae55265400cf633089bc431e2e9596c9ccafc6"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicFourierLebesguePeriodDoubling.lean": "4c5a93168230cd2c707d13ae6961de4c18840c7fee29fb3791dc3c32e4c41485",
+        "NLS/ZakharovShabat/NativePeriodOnePotential.lean": "c4449be67d8788c6d106d7cd65911dc4c5707d25e3cd7a003d85c84a88a5fc1d",
+        "NLS/Fourier/DistributionPeriodicity.lean": "1c9c861ba11b1046bdc739b5f20f7c53389675d3e2dbef24d869aa2470f00fe9",
+        "NLS/Fourier/LineTemperedNLSScaling.lean": "30b161ae80c6c207e2c9f416dc0af2cc8009f90eb07e53664ffa931521a37fbb"
+      },
+      "qualification": "The four listed modules were read completely, including the exact Fourier scaling factor and distributional translation criterion. This resolves the line862 period-extension comparison left separate by SpectralOverviewNativePeriodicSourceComparison-2026-10-27. It does not independently reprove all transitive dependencies or certify the rest of the chapter. The native operator and physical Hilbert compatibility use the preceding reviewed modules. Scalar infinity is covered, while claims about the original pair norm and operator retain finite p. Existing Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualifications are unchanged.",
+      "source_record_sha256": "809ac11bfebbade098ffbb505f8dcb4ebbda5dbaf82c3c540eac84978b66a93b"
     }
   }
 }

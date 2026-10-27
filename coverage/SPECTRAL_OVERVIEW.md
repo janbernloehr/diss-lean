@@ -4,6 +4,36 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Original period-one distribution potentials, printed p. 18
+
+[PeriodicFourierLebesguePeriodDoubling](../NLS/Fourier/PeriodicFourierLebesguePeriodDoubling.lean)
+constructs the norm-preserving extension from original period-one distributions
+to period two. Even Fourier coefficients retain their original amplitudes and
+signed indices; odd coefficients vanish. Both realizations induce exactly the
+same tempered distribution on every Schwartz test. The full Fourier-series
+proof retains the inverse Jacobian, and applies even to nonmeasure inputs.
+
+The scalar range is exactly the distributions still invariant under translation
+by one. [NativePeriodOnePotential](../NLS/ZakharovShabat/NativePeriodOnePotential.lean)
+lifts this equivalence to potential pairs, preserving the original finite
+component-sum norm and both physical distributions. Its coefficients are exactly
+the period-one parameter already used by the spectral theory, so the entire
+native bounded-inverse spectrum agrees with the source spectrum.
+
+This resolves the period-extension point left separate in the previous operator
+comparison. The scalar results include infinity; the source pair-norm and
+closed-operator claims retain finite p. Five examples check a negative Fourier
+mode, an explicit nonmeasure input, scalar infinity, the closed operator at p=1,
+and the source spectral identification at p=3.
+Validation passes: 8,417 build jobs, 7,439 public examples and a
+transitive axiom audit of 42,615 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
+The three assertion groups and four complete modules are recorded as
+`SpectralOverviewPeriodExtensionSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). The remaining overview
+comparison and existing source qualifications are unchanged.
+
 ## The operator on original periodic distributions, printed p. 18
 
 [NativePeriodicOperator](../NLS/ZakharovShabat/NativePeriodicOperator.lean)
@@ -35,9 +65,9 @@ warnings are unchanged; the new modules and examples introduce none.
 The comparison records four assertion groups against four complete modules as
 `SpectralOverviewNativePeriodicSourceComparison-2026-10-27` in the
 [source-review index](source-review-index.json).
-The native period-one to period-two distribution extension in source line 862 remains
-to be compared separately. This step does not change the earlier Theorem1.1
-corrections or the precise2014 and G2 qualifications.
+The period-one to period-two distribution extension, left separate by this
+record, is now compared in the follow-up above. The earlier Theorem1.1
+corrections and the precise2014 and G2 qualifications are unchanged.
 
 ## Renewed comparison of periodic enumeration, printed p. 17
 

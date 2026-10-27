@@ -68695,3 +68695,50 @@ example (u : IntervalPairL2) :
   NativePeriodic.spectrum_eq_classicalSigned_union u
 
 end NativePeriodicChecks
+
+noncomputable section
+namespace NativePeriodicExtensionChecks
+open NLS NLS.Fourier SmoothPeriodicTest PeriodicFourierLebesgue NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- A negative mode keeps its amplitude, moves to the even index, and has no odd alias.
+example :
+    let u := (unweightedCoefficients (L := 1) 3).symm (lp.single 3 (-3 : ℤ) (7 : ℂ))
+    (PeriodicFourierLebesgue.periodDouble u).val (mode 6) = 7 ∧
+      (PeriodicFourierLebesgue.periodDouble u).val (mode 5) = 0 := by
+  dsimp only
+  constructor
+  · rw [show (6 : ℤ) = -(2 * (-3)) by omega, periodDouble_coefficient_even,
+      ← unweightedCoefficients_apply, LinearIsometryEquiv.apply_symm_apply]
+    simp
+  · rw [show (5 : ℤ) = -(2 * (-3) + 1) by omega, periodDouble_coefficient_odd]
+
+-- The construction preserves the actual distribution even for the explicit nonmeasure source.
+example :
+    let u : PeriodicFourierLebesgue 1 Weight.one 3 :=
+      ⟨nonMeasureDistribution, nonMeasureDistribution_mem_fourierLebesgue (by norm_num)⟩
+    (PeriodicFourierLebesgue.periodDouble u).val.toTempered = u.val.toTempered ∧
+      ¬∃ μ : MeasureTheory.ComplexMeasure (AddCircle (1 : ℝ)), Distribution.ofComplexMeasure μ = u.val := by
+  dsimp only
+  exact ⟨periodDouble_toTempered _, nonMeasureDistribution_not_measure⟩
+
+-- Scalar extension is also isometric at infinity; no pair-infinity norm claim is used.
+example (u : PeriodicFourierLebesgue 1 Weight.one ⊤) :
+    ‖PeriodicFourierLebesgue.periodDouble u‖ = ‖u‖ ∧
+      (PeriodicFourierLebesgue.periodDouble u).val.toTempered = u.val.toTempered :=
+  ⟨PeriodicFourierLebesgue.periodDouble.norm_map u, periodDouble_toTempered u⟩
+
+-- Every original period-one potential at the endpoint gives a closed native operator.
+example (φ : NativePeriodic.SourceSpace 1) :
+    (NativePeriodic.unboundedOperator (by simp) (NativePeriodic.extendPotential φ)).IsClosed ∧
+      ‖NativePeriodic.extendPotential φ‖ = ‖φ‖ :=
+  ⟨NativePeriodic.unboundedOperator_isClosed (by simp) _, NativePeriodic.norm_extendPotential φ⟩
+
+-- All original period-one FL3 distributions recover the established source spectrum.
+example (φ : NativePeriodic.SourceSpace 3) :
+    NativePeriodic.spectrum (by simp) (NativePeriodic.extendPotential φ) =
+      periodicSpectrum (by simp) (periodOnePotential (NativePeriodic.sourceCoefficients 3 φ)) :=
+  NativePeriodic.spectrum_extendPotential (by simp) φ
+
+end NativePeriodicExtensionChecks

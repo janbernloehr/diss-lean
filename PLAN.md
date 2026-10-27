@@ -1,6 +1,27 @@
 # Implementation plan
 
-## Current milestone: Closed operator on original periodic distributions
+## Current milestone: Original distribution period extension
+
+Original period-one Fourier-Lebesgue distributions now extend isometrically
+to period two while preserving the same physical tempered distribution.
+The image is exactly the period-one translation-invariant distributions.
+The potential-pair map preserves the finite component-sum norm and identifies
+the full native spectrum with the established source spectrum. See the
+[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
+
+Five examples include signed negative frequencies, an explicit nonmeasure input,
+scalar infinity, the closed operator at p=1 and the source spectrum at p=3.
+Validation: `./scripts/check.sh` passes with 8,417 build jobs, 7,439
+public examples, and a transitive axiom audit of 42,615 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,870 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Next: reconcile the remaining unnumbered spectral-overview assertions,
+starting with the original AKNS boundary domains and spectral enumeration.
+The precise 2014 construction and G.2 norm interpretation remain unresolved.
+
+## Previous milestone: Closed operator on original periodic distributions
 
 The operator now acts directly on original period-two Fourier-Lebesgue
 distributions, with the exact finite component-sum norm and full one-derivative
