@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: Rank, spectral exhaustion and reality proof comparison
+## Current milestone: Lemma 3.7 trace and analytic reduction comparison
+
+Four focused source groups now compare Lemma 3.7 and its proof:
+the intrinsic rank-two trace identities, actual domain lifts, analytic
+range transport and scalar analyticity. The formulas retain half the
+squared gap and remain valid for repeated eigenvalues and Jordan blocks.
+Eighteen fully read modules and 30 resolved declarations support the
+[Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: source-review integrity, declaration references and documentation
+links pass. The Lean sources and dependency locks are byte-identical to
+the full check at `cb7317a`: 8,440 build jobs, 7,498 examples and the
+42,983-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Reconcile the remaining ordered Section 3 assertion groups against the
+verified comparisons, then continue through Section 4 in source order.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Rank, spectral exhaustion and reality proof comparison
 
 Four focused source groups now compare the rank-two distant disks,
 central rank 4N+2 and parity counts, spectral exhaustion and the real-type

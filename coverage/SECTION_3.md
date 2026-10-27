@@ -618,6 +618,24 @@ Lemma 3.7 in the original source norms is verified below.
 
 ## Lemma 3.7: intrinsic traces and analytic symmetric eigenvalue functions
 
+The renewed proof comparison tracks the actual operator through its
+full-domain contour lift and restriction to the spectral range. The two
+trace formulas use the original midpoint and half the squared gap; their
+finite-dimensional proof permits repeated roots and nontrivial Jordan
+blocks. The explicit transport QP+(1-Q)(1-P) identifies nearby ranges,
+with analytic inverse and reduced operator, and intertwines the original
+domain action. Each fixed contour has a local transport neighborhood.
+This yields scalar analyticity throughout the common admissible
+neighborhood without requiring one transport chart for infinitely many
+contours at once.
+
+Section3TraceSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups,
+18 reviewed module hashes and 30 resolved declaration references.
+This comparison preserves the earlier qualifications and does not certify
+every assertion in Section 3. Its Lean sources match the full validation
+at `cb7317a`; this documentation update does not rerun Lean.
+
 The two printed functions are the midpoint and half the squared gap. They
 are defined from traces of the actual source operator on the actual source
 contour range. Every finite Banach exponent is included, and the formulas

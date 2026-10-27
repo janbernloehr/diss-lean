@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T17:55:37.380221+00:00",
-  "base_commit": "c736c0182b7d5327f205cf3ba2a436cc70b592c4",
+  "published_utc": "2026-10-27T17:56:16.465255+00:00",
+  "base_commit": "31b06bc82dcc1d959920fe6771d9a61677d82358",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 80,
-    "module_hash_checks": 1121,
-    "distinct_modules": 863
+    "review_records": 81,
+    "module_hash_checks": 1139,
+    "distinct_modules": 871
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -17609,6 +17609,155 @@
         "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
       },
       "source_record_sha256": "3b0126c8f88bf2d6c9e2e4b1654b326f9f4dabd5aae30c45fc19e956f24ad042"
+    },
+    "Section3TraceSourceComparison-2026-10-27": {
+      "source_lines": [
+        [
+          1592,
+          1623
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1592,
+            1599
+          ],
+          "requirement": "The midpoint and half squared gap are analytic on the source neighborhood.",
+          "finding": "The public original-norm statement gives one open convex connected neighborhood containing the potential and zero, at every sufficiently large signed index. The midpoint and half squared gap are functions of actual contour traces; algebraically counted eigenvalue pairs identify them even when the pair collides. The native period-one setting follows by the isometric parameter embedding.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma3_7",
+            "NLS.ZakharovShabat.sourceLemma3_7_periodOne",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.midpoint_squaredGap_eq_pair"
+          ]
+        },
+        {
+          "source_lines": [
+            1602,
+            1611
+          ],
+          "requirement": "The two intrinsic trace identities on the actual rank-two spectral range.",
+          "finding": "The range vectors have actual lifts into the original one-derivative domain, and the domain inclusion returns the same vector. Restricting the original operator through this lift gives an intrinsic endomorphism of the actual contour range. Its trace is the eigenvalue sum, and half that trace is the midpoint; the centered-square trace is half the squared gap. Finite-dimensional algebra uses the characteristic polynomial and Cayley-Hamilton, so repeated roots and nontrivial Jordan blocks are allowed.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceContourLift",
+            "NLS.ZakharovShabat.sourceInclusion_contourLift_range",
+            "NLS.ZakharovShabat.sourceContourRestriction",
+            "NLS.ZakharovShabat.sourceContourRestriction_apply",
+            "NLS.ZakharovShabat.sourceContourRestriction_conjugate",
+            "NLS.ZakharovShabat.sourceContour_centeredSquare_trace",
+            "NLS.ZakharovShabat.sourceContourMidpoint_squaredGap_eq_pair",
+            "NLS.FiniteSpectralTrace.charpoly_eq_pair",
+            "NLS.FiniteSpectralTrace.trace_pair",
+            "NLS.FiniteSpectralTrace.midpoint_gap_eq"
+          ]
+        },
+        {
+          "source_lines": [
+            1613,
+            1620
+          ],
+          "requirement": "Analytic range isomorphism and the exact transported operator.",
+          "finding": "The explicit transport QP+(1-Q)(1-P) equals identity at the reference projector and remains invertible nearby. It induces an actual continuous linear equivalence of the two ranges, with analytic transport, inverse and reduction. The reduced operator intertwines the original unbounded operator through the actual domain lift. Both displayed trace formulas agree on the fixed reference range. For each fixed contour the local transport neighborhood may be smaller; a common transport neighborhood for infinitely many contours is not assumed.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceContourTransport",
+            "NLS.ZakharovShabat.sourceContourRangeTransport",
+            "NLS.ZakharovShabat.sourceContourRangeTransport_apply",
+            "NLS.ZakharovShabat.sourceContourTransport_reduced_apply",
+            "NLS.ZakharovShabat.sourceInclusion_contourLift_transported",
+            "NLS.ZakharovShabat.exists_local_sourceContourReduction",
+            "NLS.ZakharovShabat.sourceContourTracePower_eq_reduced",
+            "NLS.ZakharovShabat.sourceContourMidpoint_halfSquaredGap_eq_reduced",
+            "NLS.ProjectionTransport.transport",
+            "NLS.ProjectionTransport.transport_self",
+            "NLS.ProjectionTransport.eventually_isUnit_transport"
+          ]
+        },
+        {
+          "source_lines": [
+            1623,
+            1623
+          ],
+          "requirement": "Analyticity of the intrinsic scalar trace functions.",
+          "finding": "Uniform-norm analytic inversion on the fixed compact circle gives a domain-valued analytic contour projection. The unbounded operator is applied only to this full-domain lift. On the locally fixed finite-dimensional range, continuous linear trace and polynomial operations are analytic. Agreement with intrinsic traces yields analyticity at each potential on the common admissible neighborhood.",
+          "declarations": [
+            "NLS.ZakharovShabat.analyticAt_resolventCircleIntegralToDomain",
+            "NLS.ZakharovShabat.analyticAt_sourceContourOperator",
+            "NLS.ZakharovShabat.analyticAt_sourceContourTracePower",
+            "NLS.ZakharovShabat.analyticAt_sourceContourMidpoint_and_halfSquaredGap",
+            "NLS.FiniteSpectralTrace.analyticAt_trace",
+            "NLS.FiniteSpectralTrace.analyticAt_trace_square"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ContourAnalytic.lean": "86aa781abe2e00233b7ff88fb7ea723e8e7c8a7b699a67eb3da66724c87ba862",
+        "NLS/ZakharovShabat/SourceLemma3_7.lean": "7a7301ebdcdcba0b53917b5083eaa66d914bcb7cbf7415d660aa7898d8a6baed",
+        "NLS/ZakharovShabat/SourceContourTrace.lean": "5d82487c0802f670f8752086625ca104d44d0494fedf27d1167fda555aebe686",
+        "NLS/ZakharovShabat/SourceContourReduction.lean": "ed44f008d828d585a26b77e6b917408a9dd45edf801e59756858d62523049dba",
+        "NLS/FunctionalAnalysis/ProjectionTransport.lean": "04b9e77fddf437cb5b684797a76ed078113449bcf3b48bca7f9160225c6bd1f8",
+        "NLS/FunctionalAnalysis/ProjectionTrace.lean": "cb502f634d15b6e2af1eef9634db5cbb9dee86e71961c5187f6b6ef3d06fb91c",
+        "NLS/FunctionalAnalysis/FiniteSpectralTrace.lean": "18e21eafddd65daef7a520f097b4abf3dd5209140609601e9f2735b47d424a73",
+        "NLS/ZakharovShabat/ContourTrace.lean": "7ccc447d9b69f9ba57de379345bc77477850b7bbdaa4492d8b70f2f7f3a540f1",
+        "NLS/ZakharovShabat/SymmetricEigenvalues.lean": "41e5fd148b691018dfdc4b23f6977221650556fe4184d4fc4433d836cfac4976",
+        "NLS/ZakharovShabat/SpectralReduction.lean": "1696d475773167e681e47f407a4b7822ecf0a36ecbd39fa70dd3bc9eaaec0c1e",
+        "NLS/Fourier/SourceAnalyticApproximation.lean": "2fe6c5ca6a18547caa5ceca5172c1fccd145d1422b88309d2f9fea2bd8491969",
+        "NLS/ZakharovShabat/SourcePotentialRelativeBound.lean": "5e39c58c630ed00f43d0c7d4ee70208066ad1f9095eed44b2ecd82a8073ebc04",
+        "NLS/ZakharovShabat/SourceUnboundedOperator.lean": "a2a023387ed2c696f81a39ee529ce5195a7d14b57d36e9868f7db48a5528a007",
+        "NLS/ZakharovShabat/SourceCorollary3_5.lean": "3172a11ea8978584619045cdae1d0d77b7d062bc80725e78dac603fec4b44be7",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/FrequencyLocalization.lean": "97bbe85b63dcc59a68211f36e8afd0f2368efb993945f31d813f97664aa366b1",
+        "NLS/ZakharovShabat/SpectralLocalization.lean": "9e90d78af2646a256bcc07b9760e6e06ce1376c0e0c706a785b4496b455f6b57"
+      },
+      "resolved_declarations": [
+        "NLS.FiniteSpectralTrace.analyticAt_trace",
+        "NLS.FiniteSpectralTrace.analyticAt_trace_square",
+        "NLS.FiniteSpectralTrace.charpoly_eq_pair",
+        "NLS.FiniteSpectralTrace.midpoint_gap_eq",
+        "NLS.FiniteSpectralTrace.trace_pair",
+        "NLS.ProjectionTransport.eventually_isUnit_transport",
+        "NLS.ProjectionTransport.transport",
+        "NLS.ProjectionTransport.transport_self",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.midpoint_squaredGap_eq_pair",
+        "NLS.ZakharovShabat.analyticAt_resolventCircleIntegralToDomain",
+        "NLS.ZakharovShabat.analyticAt_sourceContourMidpoint_and_halfSquaredGap",
+        "NLS.ZakharovShabat.analyticAt_sourceContourOperator",
+        "NLS.ZakharovShabat.analyticAt_sourceContourTracePower",
+        "NLS.ZakharovShabat.exists_local_sourceContourReduction",
+        "NLS.ZakharovShabat.sourceContourLift",
+        "NLS.ZakharovShabat.sourceContourMidpoint_halfSquaredGap_eq_reduced",
+        "NLS.ZakharovShabat.sourceContourMidpoint_squaredGap_eq_pair",
+        "NLS.ZakharovShabat.sourceContourRangeTransport",
+        "NLS.ZakharovShabat.sourceContourRangeTransport_apply",
+        "NLS.ZakharovShabat.sourceContourRestriction",
+        "NLS.ZakharovShabat.sourceContourRestriction_apply",
+        "NLS.ZakharovShabat.sourceContourRestriction_conjugate",
+        "NLS.ZakharovShabat.sourceContourTracePower_eq_reduced",
+        "NLS.ZakharovShabat.sourceContourTransport",
+        "NLS.ZakharovShabat.sourceContourTransport_reduced_apply",
+        "NLS.ZakharovShabat.sourceContour_centeredSquare_trace",
+        "NLS.ZakharovShabat.sourceInclusion_contourLift_range",
+        "NLS.ZakharovShabat.sourceInclusion_contourLift_transported",
+        "NLS.ZakharovShabat.sourceLemma3_7",
+        "NLS.ZakharovShabat.sourceLemma3_7_periodOne"
+      ],
+      "declaration_inventory_count": 42983,
+      "qualification": "These eighteen selected modules have been read completely during the preceding and current focused preparation. Some are earlier setup context. The exact extracted passages, current module hashes and declaration references were checked. This is a focused four-group comparison, not an exhaustive Section 3 assertion certificate or an independent review of every transitive proof. Local analytic range transport is used separately for each fixed contour; the scalar functions are analytic on the common neighborhood. Existing norm, height, radius and parity qualifications remain. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "status": "current_public_source_comparison",
+      "base_commit": "31b06bc82dcc1d959920fe6771d9a61677d82358",
+      "updated_utc": "2026-10-27T17:56:16.465255+00:00",
+      "prepared_from_sha256": "0799c9e12f8c8caa7155f2a97fd13e8956a2d06ee7bb5339299244218ae5e2b1",
+      "validation_reuse": {
+        "full_check_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+        "lean_sources": {
+          "files": 4717,
+          "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
+        },
+        "new_lean_check_run": false,
+        "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
+      },
+      "source_record_sha256": "41a3dcb123e2e111c62faed3df4f2e20300c79d574fe5bca6d5ee92b0ea58648"
     }
   }
 }

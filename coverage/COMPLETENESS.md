@@ -61,6 +61,9 @@ Four further groups compare the deformation to free contour ranks,
 algebraic and parity counts, spectral exhaustion and real-type symmetry
 on the full domain. The central height-N conclusion retains the separate
 qualification on the printed norm-dependent height.
+Lemma 3.7 and its intrinsic trace formulas, actual domain lifts, local
+analytic range transport and scalar analyticity now have four focused
+proof comparisons, including repeated roots and the exact factor one half.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

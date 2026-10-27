@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the Section 3 proof comparison now covers contour ranks,
-algebraic eigenvalue counts, spectral exhaustion and real-type spectral
-reality, preserving the separate printed-height qualification.
+Latest step: the Lemma 3.7 proof comparison now records intrinsic
+contour traces, actual domain lifts and local analytic range transport,
+including repeated eigenvalues and the exact half-squared-gap formula.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
