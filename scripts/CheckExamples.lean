@@ -67887,3 +67887,48 @@ example (u : IntervalPairL2) (z : ℂ) :
 
 end PhysicalPeriodicMultiplicityExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section ClassicalSignedMultiplicityExamples
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) (n : ℕ) :
+    classicalSignedRootSpace u r z n =
+      (sourceParityRootSpace (by simp) (periodOnePair (sourcePhysicalL2Equiv.symm u))
+        (periodOnePotential_mem _) r z n).map (sourceParityUnitEquiv r).toLinearEquiv.toLinearMap :=
+  classicalSignedRootSpace_eq_map u r z n
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) :
+    FiniteDimensional ℂ (classicalSignedRootSpaceTop u r z) :=
+  finiteDimensional_classicalSignedRootSpaceTop u r z
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) :
+    classicalSignedAlgebraicMultiplicity u r z =
+      parityAlgebraicMultiplicity (by simp) (periodOnePotential (sourcePhysicalL2Equiv.symm u)) r z :=
+  classicalSignedAlgebraicMultiplicity_eq u r z
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) :
+    0 < classicalSignedAlgebraicMultiplicity u r z ↔ z ∈ classicalSignedSpectrum u r :=
+  classicalSignedAlgebraicMultiplicity_pos_iff u r z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    physicalPeriodicAlgebraicMultiplicity (periodOnePair (sourcePhysicalL2Equiv.symm u)) z =
+      classicalSignedAlgebraicMultiplicity u 0 z + classicalSignedAlgebraicMultiplicity u 1 z :=
+  physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum u z
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (z : ℂ) :
+    (∑ᶠ n : ℤ, if n % 2 = 0 then
+      ({physicalPeriodicLeft u n,physicalPeriodicRight u n} : Multiset ℂ).count z else 0) =
+      classicalSignedAlgebraicMultiplicity u 0 z :=
+  physicalEvenEndpoints_count_classicalPeriodicMultiplicity u hu z
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (z : ℂ) :
+    (∑ᶠ n : ℤ, if n % 2 = 1 then
+      ({physicalPeriodicLeft u n,physicalPeriodicRight u n} : Multiset ℂ).count z else 0) =
+      classicalSignedAlgebraicMultiplicity u 1 z :=
+  physicalOddEndpoints_count_classicalAntiperiodicMultiplicity u hu z
+
+example (r n : ℤ) : classicalSignedAlgebraicMultiplicity 0 r ((Real.pi : ℂ)*n) =
+    if n % 2 = r % 2 then 2 else 0 := classicalSignedAlgebraicMultiplicity_zero r n
+
+end ClassicalSignedMultiplicityExamples
+end NLS.ZakharovShabat

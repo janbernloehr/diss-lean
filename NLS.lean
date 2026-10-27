@@ -4680,3 +4680,7 @@ import NLS.ZakharovShabat.ClassicalSignedEndpointLabels
 import NLS.FunctionalAnalysis.LinearPMapRootSpace
 import NLS.ZakharovShabat.PhysicalPeriodicRootSpaces
 import NLS.ZakharovShabat.PhysicalPeriodicMultiplicity
+import NLS.ZakharovShabat.SourceParityRootChains
+import NLS.ZakharovShabat.ClassicalSignedRootSpaces
+import NLS.ZakharovShabat.ClassicalSignedMultiplicity
+import NLS.ZakharovShabat.ClassicalSignedEndpointMultiplicity

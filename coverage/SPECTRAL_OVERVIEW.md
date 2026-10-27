@@ -1367,5 +1367,41 @@ physical endpoint labels count precisely this dimension, and the physical
 discriminant squared minus four has exactly this analytic zero order.
 Every free signed lattice point has physical algebraic multiplicity two.
 
-The separate signed physical Jordan-chain comparison remains to be made.
+The signed physical Jordan-chain comparison is completed in the next subsection.
 Full dissertation semantic completion, exact2014 and G2 remain separate.
+
+## Actual classical signed root chains and algebraic multiplicities
+
+[`SourceParityRootChains.lean`](../NLS/ZakharovShabat/SourceParityRootChains.lean)
+identifies each separate source parity chain with the corresponding parity
+part of the original full root chain. This holds at every finite level and
+for the full generalized eigenspace; the latter is finite dimensional and
+the chain sequence stabilizes.
+[`ClassicalSignedRootSpaces.lean`](../NLS/ZakharovShabat/ClassicalSignedRootSpaces.lean)
+defines root chains independently from the actual classical periodic and
+antiperiodic partial operators on unit-interval L2. Exact domain and base
+isomorphisms transport every level and the full union. Every intermediate
+vector satisfies the original full classical H1 domain condition.
+
+[`ClassicalSignedMultiplicity.lean`](../NLS/ZakharovShabat/ClassicalSignedMultiplicity.lean)
+defines signed algebraic multiplicity as the dimension of the actual full
+physical generalized eigenspace. It proves equality with the original
+parity root dimension, positivity exactly on the actual signed spectrum,
+and vanishing exactly on the actual resolvent set. The full physical
+period-two multiplicity is the sum of the two signed multiplicities;
+at either signed spectral point it equals that sign's multiplicity.
+These assertions hold for arbitrary complex physical L2 potentials.
+The free lattice point has multiplicity two in its parity and zero in
+the other.
+
+[`ClassicalSignedEndpointMultiplicity.lean`](../NLS/ZakharovShabat/ClassicalSignedEndpointMultiplicity.lean)
+proves that for real-type physical potentials, the even endpoint pairs
+count the full actual periodic algebraic multiplicity and the odd pairs
+count the antiperiodic multiplicity. This includes central indices and
+collapsed endpoint pairs. It completes the actual signed multiplicity
+comparison underlying the real-type enumeration on printed p.17.
+
+Even/odd indices are not asserted for all complex potentials. The separate
+globally sorted signed complex eigenvalue lists require their own source
+comparison. Full dissertation semantic completion, exact2014 and G2
+remain separate questions.

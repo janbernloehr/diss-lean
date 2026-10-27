@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: actual physical period-two root spaces and multiplicity
+## Current milestone: actual classical signed root spaces and multiplicities
+
+The actual classical periodic and antiperiodic operators now have
+independently defined full Jordan-chain spaces on their original H1
+domains. Exact conjugacy identifies every chain level and the full union
+with the original source parity root spaces. These spaces are finite
+dimensional and the chains stabilize.
+
+Their dimensions equal the original parity multiplicities and sum to the
+full physical period-two multiplicity. For real-type physical potentials,
+the even and odd endpoint pairs count the actual signed multiplicities,
+including collapsed pairs. Free lattice multiplicities have the exact sign.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+comparison and its real-type premise for endpoint indices. The global
+signed complex lists, remaining semantic audit, exact2014 and G2 remain
+separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,377 build jobs, 7,357
+public examples, and a transitive axiom audit of 42,215 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,729 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual physical period-two root spaces and multiplicity
 
 The algebraic multiplicity of the actual physical period-two operator
 is now the dimension of its full physical Jordan-chain space. The chains
