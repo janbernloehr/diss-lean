@@ -4705,3 +4705,8 @@ import NLS.ZakharovShabat.AKNSComplexification
 import NLS.ZakharovShabat.SourceSection16UniformDerivatives
 import NLS.ZakharovShabat.SourceFiniteGapBetaDecay
 import NLS.ZakharovShabat.SourceHamiltonianActionTaylor
+import NLS.Dynamics.WeightedPhaseTrajectoryAnalytic
+import NLS.ZakharovShabat.SourceSobolevInverseTrajectories
+import NLS.ZakharovShabat.SourceSobolevAnalyticPhaseLift
+import NLS.ZakharovShabat.SourceSobolevNLSAnalytic
+import NLS.ZakharovShabat.SourceSobolevAnalyticSolutions

@@ -301,3 +301,34 @@ The earlier physical H1 energy identification is retained. The printed
 full-Hessian omission of the mass contribution remains a documented source
 correction. The Sobolev-flow background and remaining semantic comparisons,
 including exact2014 and G2 qualifications, remain separate.
+
+## Analytic solution maps in every real Sobolev order, equation (4.4)
+
+[WeightedPhaseTrajectoryAnalytic.lean](../NLS/Dynamics/WeightedPhaseTrajectoryAnalytic.lean)
+constructs analytic compact-time Hamiltonian phase trajectories in the native
+weighted sequence norm. A bounded frequency correction and the actual weighted
+initial coordinates enter together. On real corrections it proves exact equality
+with the original phase rotation, including its Hamiltonian signs.
+
+[SourceSobolevInverseTrajectories.lean](../NLS/ZakharovShabat/SourceSobolevInverseTrajectories.lean)
+proves that the original global Sobolev inverse acts real analytically on whole
+compact trajectories. It applies the complex superposition inverse theorem to
+the actual weighted Birkhoff map and its invertible Jacobians along the path.
+The bounded real projection restores the original weighted source form.
+
+[SourceSobolevAnalyticPhaseLift.lean](../NLS/ZakharovShabat/SourceSobolevAnalyticPhaseLift.lean)
+combines these two ingredients. [SourceSobolevNLSAnalytic.lean](../NLS/ZakharovShabat/SourceSobolevNLSAnalytic.lean)
+then inserts the actual moment-sum frequencies, with the physical mass term for
+ordinary NLS, and identifies both original source flows coefficient by coefficient.
+
+[SourceSobolevAnalyticSolutions.lean](../NLS/ZakharovShabat/SourceSobolevAnalyticSolutions.lean)
+constructs all spectral data inside the proof. At every nonnegative real Sobolev
+order, both global solutions have analytic dependence on the initial data in the
+full uniform norm on every compact time interval. They start at the given source,
+retain Bohr almost periodicity in the stronger norm, and are unique in the original
+all-smooth-approximation solution class. The case p=2 gives the H^s assertion in
+(4.4); the construction also works for finite 1<p<=2 in the native weighted spaces.
+This is analyticity in initial data; no analyticity in time is asserted.
+
+The exact2014 external construction comparison, G2 norm qualification and
+remaining dissertation source comparisons remain separate.

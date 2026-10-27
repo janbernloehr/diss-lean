@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: Section 18 action Taylor expansion
+## Current milestone: Section 18 analytic Sobolev solution maps
+
+Both ordinary and renormalized NLS now have constructed global solution maps
+with analytic dependence on initial data in the full compact-time Sobolev norm,
+for every real order s>=0. The p=2 case proves the H^s assertion of equation (4.4).
+The same construction covers finite 1<p<=2 in the native weighted spaces.
+
+The proof uses actual weighted phase trajectories and analytic inversion on
+compact paths. It preserves raw Fourier coefficients, the Hamiltonian phase signs,
+and recurrence. Uniqueness is in the original all-smooth-approximation solution
+class. The [Section 18 audit](coverage/SECTION_18.md) records these qualifications.
+The remaining semantic source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,403 build jobs, 7,406
+public examples, and a transitive axiom audit of 42,424 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,805 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Section 18 action Taylor expansion
 
 The actual full Hamiltonian now has the printed kinetic + 2mass^2 - sum I_n^2
 expansion with an explicit cubic remainder in the standard ell^(2,1) action

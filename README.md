@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual full Hamiltonian has its printed quadratic action
-expansion with a cubic remainder in the standard weighted action norm.
-The bound covers all complex inputs in one ball of the original domain.
-The remaining dissertation source audit is still in progress.
+Latest step: both original NLS solution maps are analytic in the full
+compact-time Sobolev norm at every real nonnegative order. The construction
+preserves actual Fourier coefficients and uniqueness in the approximation
+solution class. The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

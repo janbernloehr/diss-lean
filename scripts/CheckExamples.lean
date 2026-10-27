@@ -68254,3 +68254,74 @@ example (Q : SourceOriginalHamiltonianData D T F H) :
 
 end Section18ActionTaylorExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section SobolevAnalyticFlowsExamples
+open Set Complex
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+variable {K : Type} [TopologicalSpace K] [CompactSpace K]
+
+example (hp : p ≠ ⊤) (w : Weight) (freq : ℤ → ℝ) (times : C(K, ℝ))
+    (x : Coeff ⊤ × WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p)) :
+    AnalyticAt ℝ (fun y : Coeff ⊤ × WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p) =>
+      Birkhoff.weightedAnalyticPhaseTrajectory hp w freq times y.1 y.2) x :=
+  Birkhoff.analyticAt_weightedAnalyticPhaseTrajectory hp w freq times x
+
+example (hp : p ≠ ⊤) (w : Weight) (freq : ℤ → ℝ) (times : C(K, ℝ))
+    (b : Coeff ⊤) (correction : ℤ → ℝ) (hb : ∀ n, b n = (correction n : ℂ))
+    (z : WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p)) (k : K) :
+    Birkhoff.weightedAnalyticPhaseTrajectory hp w freq times b z k =
+      Birkhoff.weightedRealPhaseFlow w (fun n => freq n+correction n) (times k) z :=
+  Birkhoff.weightedAnalyticPhaseTrajectory_apply hp w freq times b correction hb z k
+
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W P : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order) :
+    AnalyticOnNhd ℝ (D.sobolevInverseTrajectory (K := K) hp2 order horder) univ :=
+  D.analytic_sobolevInverseTrajectory hp2 order horder
+
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order) (freq : ℤ → ℝ) (times : C(K, ℝ))
+    (b : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder) → Coeff ⊤)
+    (hb : AnalyticOnNhd ℝ b univ) :
+    AnalyticOnNhd ℝ (D.correctedSobolevTrajectory hp2 order horder freq times b) univ :=
+  D.analytic_correctedSobolevTrajectory hp2 order horder freq times b hb
+
+example {Wa : Set (CoeffPair p)} (A : SourceAbelianMomentAtlas hp hp1 Wa s)
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s) (hP : IsOpen P)
+    (hr : realTypeSourceLocus p ⊆ P) (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order) (times : C(K, ℝ)) :
+    ∃ S Sstar : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder) →
+      C(K, weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder)),
+      AnalyticOnNhd ℝ S univ ∧ AnalyticOnNhd ℝ Sstar univ ∧
+      ∀ a k,
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (S a k) =
+          A.hamiltonianOrdinarySourceFlow D hp2 (originalWeightedRealSource _ a) (times k) ∧
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (Sstar a k) =
+          A.hamiltonianRenormalizedSourceFlow D hp2 (originalWeightedRealSource _ a) (times k) :=
+  A.exists_analytic_sobolevHamiltonianTrajectories hs hP hr D hp2 order horder times
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order) :
+    ∃ flow flowStar : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder) →
+      ℝ → weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder),
+      (∀ a, flow a 0 = a ∧ flowStar a 0 = a ∧
+        Dynamics.BohrAlmostPeriodic (flow a) ∧ Dynamics.BohrAlmostPeriodic (flowStar a) ∧
+        IsOrdinaryNLSSolutionOn univ (originalWeightedRealSource _ a)
+          (fun time => originalWeightedRealSource _ (flow a time)) ∧
+        IsRenormalizedNLSSolutionOn univ (originalWeightedRealSource _ a)
+          (fun time => originalWeightedRealSource _ (flowStar a time))) ∧
+      (∀ T : ℝ, ∃ S Sstar : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder) →
+        C(Icc (-T) T, weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder)),
+        AnalyticOnNhd ℝ S univ ∧ AnalyticOnNhd ℝ Sstar univ ∧
+        ∀ a time, S a time = flow a time.val ∧ Sstar a time = flowStar a time.val) ∧
+      (∀ a curve, IsOrdinaryNLSSolutionOn univ (originalWeightedRealSource _ a)
+        (fun time => originalWeightedRealSource _ (curve time)) → curve = flow a) ∧
+      (∀ a curve, IsRenormalizedNLSSolutionOn univ (originalWeightedRealSource _ a)
+        (fun time => originalWeightedRealSource _ (curve time)) → curve = flowStar a) :=
+  exists_original_sobolev_analytic_solutions hp hp1 hp2 order horder
+
+end SobolevAnalyticFlowsExamples
+end NLS.ZakharovShabat
