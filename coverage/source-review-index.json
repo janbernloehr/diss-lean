@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T13:07:48.612112+00:00",
-  "base_commit": "1795500335d37571f531ce71f5f32c1707f59548",
+  "published_utc": "2026-10-27T13:08:19.570500+00:00",
+  "base_commit": "51890a2f9150d0a4968f9b8d74cd257fa82c1072",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 66,
-    "module_hash_checks": 971,
-    "distinct_modules": 804
+    "review_records": 67,
+    "module_hash_checks": 1002,
+    "distinct_modules": 806
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -12589,6 +12589,275 @@
       },
       "qualification": "All five hash-listed modules were read completely. This comparison supplements selected abstract and introduction clauses; it does not complete the abstract or source-wide assessment. The new obstruction is in action space, for local agreement on native nonnegative weighted energy actions, and includes infinity only as a target action exponent. It adds no FLp source endpoint or source-space nonextension conclusion. All earlier source corrections, the exact cited 2014 construction question, and the Appendix G.2 norm interpretation remain unchanged.",
       "source_record_sha256": "b25b2052dc1451809b880629e7333fb153767251787e610d5c8eb8f3283d4a0b"
+    },
+    "AbstractsSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "51890a2f9150d0a4968f9b8d74cd257fa82c1072",
+      "updated_utc": "2026-10-27T13:08:19.570500+00:00",
+      "source_lines": [
+        [
+          43,
+          67
+        ],
+        [
+          71,
+          92
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            [
+              43,
+              51
+            ],
+            [
+              71,
+              78
+            ]
+          ],
+          "requirement": "Spectral theory for original periodic distributions at finite p>=1, with Fourier-dependent periodic and Dirichlet estimates.",
+          "finding": "The native operator acts on the original period-two distributions with the exact finite component-sum Fourier norm and full one-derivative domain. Its differential expression, dense closed graph, two-sided resolvent, compactness and discrete spectrum cover all finite p>=1. Period extension preserves the same physical tempered distributions and exact norm; at p=2 the entire graph agrees with the physical Hilbert operator and classical signed spectra. For p=1 boundary input, the same continuous physical potential is included coefficientwise into p=2; the boundary spectrum is the classical interval spectrum and its distant simple branches are analytic in the original p1 norm. No bounded period-two p1 reflection is asserted. The refined complete periodic and Dirichlet/auxiliary eigenvalue estimates cover finite p>1, matching the explicit ranges of Proposition6.1 and Corollary6.2. The abstract does not specify an ell1 refined estimate. The already refuted unrestricted uniform-height and printed quantitative-tail assertions retain their separate corrections.",
+          "declarations": [
+            "NativePeriodic.operator_fst_val",
+            "NativePeriodic.operator_snd_val",
+            "NativePeriodic.unboundedOperator_isClosed",
+            "NativePeriodic.discreteTopology_spectrum",
+            "NativePeriodic.spectrum_extendPotential",
+            "NativePeriodic.graph_hilbert_iff",
+            "sourceLemma4_5_one",
+            "sourceOneBoundarySpectrum_eq_classical",
+            "sourceProposition6_1_canonical_asymptotics",
+            "sourceCorollary6_2"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              51,
+              54
+            ],
+            [
+              78,
+              80
+            ]
+          ],
+          "requirement": "Extend action-angle variables from L2 to FLp, p>2, preserving canonical conjugacy.",
+          "finding": "The original indexed actions have analytic normalized factors and principal roots on one complex neighborhood of the whole real locus, with exact gap-square factorization and collapsed-gap recovery. The literal original theta has local analytic representatives off its selected closed gap. Canonical action-action brackets vanish everywhere on the real locus; angle-angle brackets require both selected gaps open; the mixed angle-action bracket requires only the angle gap open. These are the actual original coordinate families for finite p>1. The extension comparison retains the inspected physical conventions and Section14 qualification about the exact cited2014 construction. It does not assert globally analytic angles at collapsed gaps or on all complex potentials.",
+          "declarations": [
+            "sourceTheorem11_2",
+            "sourceTheorem13_1_original",
+            "sourceCorollary13_2_original"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              53,
+              54
+            ],
+            [
+              79,
+              80
+            ]
+          ],
+          "requirement": "Construct real analytic Birkhoff coordinates on FLp.",
+          "finding": "One original normalized family constructs the complex analytic sequence map and literal rectangular coordinates, with indexed-action radii also at closed gaps. For finite p>1 its real map is analytic, injective, locally analytically invertible, and has open dense image. Compatible complex domains give equality of the full sequence maps and derivatives across exponent intersections. Global target surjectivity is established for 1<p<=2; no p>2 surjectivity is inferred from the abstract. Comparison with the exact cited2014 external construction remains unresolved, separately from the proved physical formulas for the inspected2013 conventions.",
+          "declarations": [
+            "sourceSection14",
+            "SourceSection14OriginalData.real_geometry",
+            "SourceSection14OriginalData.global_inverse",
+            "SourceSection14Data.exponent"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              55,
+              57
+            ],
+            [
+              81,
+              83
+            ]
+          ],
+          "requirement": "Derive a frequency formula and an analytic FLp extension for p>2 with asymptotics.",
+          "finding": "The frequency-extension clauses are interpreted with the introduction's explicit renormalization. The original analytic action frequency on one connected action image recovers the spectral moment formula, includes all real-source actions and all nonnegative summable actions, and has the refined F+2I analytic and locally uniform mixed remainder. The exact finite-gap physical identity subtracts four times actual mass and free dispersion, with agreement across independently constructed original families at identical Fourier coefficients. The separate introductory comparison proves the literal ell(p/2)+OnePlus estimate. The ordinary full-energy action derivative has a proved continuity obstruction for every q>1 including infinity. That action-space theorem supplies no additional source-space FLp frequency nonextension claim. The abstract shorthand alone is not classified as a false literal assertion.",
+          "declarations": [
+            "SourceSection17OriginalData.exists_frequency_asymptotic",
+            "SourceOriginalFrequencyData.physical_finiteGap",
+            "SourceOriginalFrequencyData.eq_of_coefficients",
+            "SourceOriginalHamiltonianData.no_continuous_full_action_frequency"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              57,
+              63
+            ],
+            [
+              83,
+              87
+            ]
+          ],
+          "requirement": "Renormalized Hamiltonian extends real analytically to real FL4 and is strictly concave near zero in the nonnegative ell2 action cone.",
+          "finding": "The retained original H is complex analytic on one action domain containing the original real FL4 actions, and its composition with the original action map is analytic on a complex neighborhood of the whole real FL4 locus. Its physical H1 identity subtracts twice mass squared and the absolutely convergent kinetic-weighted action series. The same H is real and nonpositive on its nonnegative cone and vanishes there only at zero. One positive-radius ball yields the standard StrictConcaveOn predicate and literal strict Jensen inequalities on the nonnegative Hilbert action cone, including its closed-gap boundary. The whole real ball satisfies the statement for Re H. No global concavity on the entire positive cone is asserted; the previously recorded Section18 weighted-action normalization discrepancy remains explicit.",
+          "declarations": [
+            "sourceSection18_original_hamiltonian",
+            "SourceOriginalHamiltonianData.source_extension",
+            "SourceOriginalHamiltonianData.source_sign",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.strict_concavity",
+            "SourceOriginalHamiltonianData.strict_jensen"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              63,
+              64
+            ],
+            [
+              88,
+              89
+            ]
+          ],
+          "requirement": "Use frequencies to study the dNLS initial value problem in Birkhoff coordinates.",
+          "finding": "The initial-value comparison retains the ordinary versus renormalized distinction. Theorem18.5 gives global analytic wellposedness for the renormalized equation at 1<p<=2, local analytic wellposedness for every finite p>1, and small-data global wellposedness for p>2. The solution is continuous, has the prescribed initial value, and is the pointwise-in-time limit for every smooth initial-data approximation. Analytic dependence takes values in the uniform norm on each compact time interval. Uniqueness holds on common time domains. The separately proved ordinary classical flow nonextension outside the Hilbert locus is retained with its finite target exponent and positive compact-time interval assumptions; it is not substituted for the new scalar action-frequency obstruction.",
+          "declarations": [
+            "source_theorem18_5",
+            "IsSmoothApproximationSolutionOn",
+            "IsLocallyAnalyticallyWellposed",
+            "IsGloballyAnalyticallyWellposedOn"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              65,
+              67
+            ],
+            [
+              90,
+              92
+            ]
+          ],
+          "requirement": "Uniform tame bounds for every integer Sobolev order m>=1 in both directions.",
+          "finding": "One original Birkhoff family is selected before all integer orders m>=1. For each order, positive constants c and d are chosen before every real Hm potential and control both Birkhoff directions and the simultaneous action estimates. The highest-order norms occur linearly, with the stated lower-order powers 2m and 4m-3. The source norm is exactly the weighted sum of both Fourier component energies using (1+|2*pi*n|)^(2k). The Birkhoff norm uses the same weight on the actual rectangular coordinate pair, with exact weighted action energy and unweighted norm equality. The original physical conventions and qualified external Hilbert construction are retained from the Section23 and Section14 comparisons; no unspecified equivalent norm replaces the printed one.",
+          "declarations": [
+            "sourceSection23_original_estimates",
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "sourcePiSobolevCoordinates_norm_sq",
+            "SourceBirkhoffMapComplexData.sobolevCoordinates_norm_sq",
+            "SourceBirkhoffMapComplexData.sobolevCoordinates_zero_norm"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27",
+        "Section11SourceComparison-2026-10-27",
+        "Section13SourceComparison-2026-10-27",
+        "Section14SourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27",
+        "Section23SourceComparison-2026-10-27",
+        "Section18WeightedBackgroundSourceComparison-2026-10-27",
+        "HamiltonianStrictConcavitySourceComparison-2026-10-27",
+        "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27",
+        "IntroductionMixedFrequencySourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2",
+          "module_hashes_verified": true
+        },
+        "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27": {
+          "source_record_sha256": "809ac11bfebbade098ffbb505f8dcb4ebbda5dbaf82c3c540eac84978b66a93b",
+          "module_hashes_verified": true
+        },
+        "Section11SourceComparison-2026-10-27": {
+          "source_record_sha256": "c26e7f81c26273b4613c8ae2c99dcb73b5481671749f1a2a64e165e4c6865e5f",
+          "module_hashes_verified": true
+        },
+        "Section13SourceComparison-2026-10-27": {
+          "source_record_sha256": "ea3bced33ade57a06a83ae24cf73e5f76c25bebaf8978e3894d9373ffd39fa87",
+          "module_hashes_verified": true
+        },
+        "Section14SourceComparison-2026-10-27": {
+          "source_record_sha256": "e4357360857ddae6365779a1dd32d28b1150a950a3dc51f46c10b84dfb7f49f4",
+          "module_hashes_verified": true
+        },
+        "Section18SourceComparison-2026-10-27": {
+          "source_record_sha256": "483a2acba2980ec2b3182fdf2701fc205c927f2d3a1fc1d3b1978d6b6af45c8e",
+          "module_hashes_verified": true
+        },
+        "Section23SourceComparison-2026-10-27": {
+          "source_record_sha256": "1fc79469f93a83f712e7fa7a377d6f23738f7a194f9095b4ae8327b65da4b007",
+          "module_hashes_verified": true
+        },
+        "Section18WeightedBackgroundSourceComparison-2026-10-27": {
+          "source_record_sha256": "018f870ab6761a6cf19ad7e709bc3f1d2cfd985e1daaf0a329cf3afe5b03558d",
+          "module_hashes_verified": true
+        },
+        "HamiltonianStrictConcavitySourceComparison-2026-10-27": {
+          "source_record_sha256": "eb2379627af682fc5d906e749864b794efe8c5abd4649e8dfbd8688bdb36cdde",
+          "module_hashes_verified": true
+        },
+        "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27": {
+          "source_record_sha256": "b25b2052dc1451809b880629e7333fb153767251787e610d5c8eb8f3283d4a0b",
+          "module_hashes_verified": true
+        },
+        "IntroductionMixedFrequencySourceComparison-2026-10-27": {
+          "source_record_sha256": "4404c1d5686254fee2c27c4a7d608fd16e60c65adda9dd1e1b478aee666f214b",
+          "module_hashes_verified": true
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection14.lean": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2",
+        "NLS/ZakharovShabat/SourceSection14Original.lean": "06488c4ec9377473b49cd8a44a15466cd1fef9356df97e7fdac4c8366ab5d3ef",
+        "NLS/ZakharovShabat/SourceSection23Original.lean": "a98150495f40ebe8a16dbd2873ca9848d7d8a16dac459dc4069e0adf6522b92a",
+        "NLS/ZakharovShabat/SourceSection23Sobolev.lean": "46b90512d200e2effa0535aef8a39ba4ba2ddc842de0e09c0b41dffb0b5ae1b2",
+        "NLS/ZakharovShabat/SourceSection18Wellposedness.lean": "6322a812ac60e9f5543af95620c35344c6cf421751843c0406aaacffc694006c",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalPhysical.lean": "107f752f81e69f0d8f88df901c011ed6ada7e2a2d2f33f23e4389f194bf9e60f",
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceTheorem13_1Original.lean": "c7bd68fdad6d8a483d71a6530cca2fb47fb9a2b0ea41bf1c96ba4e3c0ee0ad49",
+        "NLS/ZakharovShabat/SourceCorollary13_2Original.lean": "693129b5b8ae348202af08978b8af29ad666529bae5b47dd065733867c97a676",
+        "NLS/ZakharovShabat/SourceOrdinaryFrequencyAsymptotic.lean": "7bc2f7d01c86987bd38bec9d6fcb24731dda563383c8eb04a61ba28baedb550e",
+        "NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean": "35403e2af2a1beb0e60323f41920d56bd57c6395a2d905b1b41fd0ea4a214c07",
+        "NLS/SequenceSpaces/ActionMassNonextension.lean": "43fb7091184a03c8524aa827e7760ad830550d267fc7c31eb51b82759600f00b",
+        "NLS/SequenceSpaces/RealActionMassNonextension.lean": "ebe3ada9e6b92dc495f623179dff2d0d0cf5c5fd2de6ace35809d79bcda2ce63",
+        "NLS/SequenceSpaces/PositiveFlatBlocks.lean": "0d37dd6167b743d82568b09da73d8a81db2692f9b66913c5f77ce7b2dcf53b03",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean": "3afae8c7bc9e64d24b76a118422bb5e44ac070bc8cd64109823011509d547679",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/AnalyticNLSWellposedness.lean": "744acafeefbab8d77a4077f66962e0ca8821f6fd873a956705785a502916c59a",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean": "f31131a74c1180235b7ccded46718f0a79e4ddd139fb53453bae8b898ce907af",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevCoordinates.lean": "58859de6cebfa4f34079d63fa4992ae3dafd2a4ff77a965d2d3d75343d2cdd7e",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/SourceCorollary3_5.lean": "3172a11ea8978584619045cdae1d0d77b7d062bc80725e78dac603fec4b44be7",
+        "NLS/ZakharovShabat/NativePeriodicOperator.lean": "bf678315551e02bb10aa6066c685705d893f363962c14bf772ae707d99637770",
+        "NLS/ZakharovShabat/SourceLemma4_5Endpoint.lean": "e4acb9d531d9b84a6a34217cf7842f7ecc64fb2c4d2029d8103d783e75286405",
+        "NLS/ZakharovShabat/SourceCorollary6_2.lean": "1fea706a442b661f2d48e1705567e26cd8b6f92b5c111d9e74bcb81f07e26eaf",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalEndpoints.lean": "b50e78a3b0c0cbb528ea0a4d7c4d0679e06b866de6af4bea77b3252ab81a2dcd",
+        "NLS/ZakharovShabat/NativePeriodicHilbert.lean": "0df6c020522fdacccbb838740165267b0172382f459274b7677b0e06174b3de0",
+        "NLS/ZakharovShabat/NativePeriodOnePotential.lean": "c4449be67d8788c6d106d7cd65911dc4c5707d25e3cd7a003d85c84a88a5fc1d",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean": "e716f1a85ffeb8d8f773c2356f9db9d9097f9fe30433e20c4dcb539aa7b84d1d"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          5
+        ],
+        "images": {
+          "SourceAbstractCurrentReview-005.png": "435e5d8162b334aa823e5019a29db70d831ee11ba0939ebcefb0b74efb9a2869"
+        },
+        "inspection": "Both language versions were read and the rendered abstract page was inspected. Seven paired mathematical claim groups cover extraction lines43-67 and71-92."
+      },
+      "qualification": "This is a consolidated assessment of the mathematical clauses in both abstracts, preserving the precise scope and unresolved qualifications of the related section reviews. All31 hash-listed modules were read completely across the retained preparation and this comparison; their current hashes and the36 declaration references were checked. The broad p>=1 spectral wording is distinguished from the source's explicit strict-p refined estimates. Novelty and historical-priority attributions are not formal mathematical assertions assessed here. This is not a full-dissertation completeness claim or an independent reproof of transitive dependencies. The exact cited2014 external construction comparison and AppendixG2 norm interpretation remain unresolved, and all formally refuted printed claims remain separate from their proved corrections.",
+      "source_record_sha256": "e1fd4c264e3b64e75dc4b45cd13d4bc88d8c9f7ee2812e41cd36d33a0281c38a"
     }
   }
 }

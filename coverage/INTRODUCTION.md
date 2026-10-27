@@ -22,6 +22,35 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Both abstracts: consolidated mathematical assessment
+
+The German and English abstracts (PDF page 5) have seven paired
+mathematical claim groups. The comparison below retains the original
+objects, domains and qualifications from the detailed section reviews.
+
+| Abstract claim | Current proof evidence and scope |
+| --- | --- |
+| Spectral theory and eigenvalue estimates | The original distribution operator has its full domain, closed graph, compact resolvent and discrete spectrum for every finite p>=1. The p=1 boundary realization uses the same continuous physical potential. Refined periodic and Dirichlet estimates use 1<p<infinity, as explicitly stated in Section 6. See [Section 3](SECTION_3.md), [Section 4](SECTION_4.md) and [Section 6](SECTION_6.md). |
+| Actions and canonical angles | The original actions extend analytically through closed gaps. Angle representatives are local off the selected closed gap; canonical brackets retain the corresponding gap conditions. See [Section 11](SECTION_11.md) and [Section 13](SECTION_13.md). |
+| Real analytic Birkhoff coordinates | The original map is analytic and injective, has local analytic inverses and open dense image for finite p>1, and agrees across exponent intersections. Global surjectivity is proved only for p<=2. The exact cited 2014 external construction remains unverified. See [Section 14](SECTION_14.md). |
+| Frequency formula, extension and asymptotics | The extended frequency is renormalized by the main text's mass and free-dispersion subtraction. The original moment formula, analytic action map and locally uniform mixed remainder are retained. The ordinary action-frequency obstruction is proved separately below; it is not a source-space FLp conclusion. See [Section 18](SECTION_18.md). |
+| Renormalized Hamiltonian and strict concavity | The same original H extends analytically to real FL4 through its action map and satisfies strict Jensen inequalities near zero in the nonnegative Hilbert action cone. Its physical identity retains the kinetic-weighted action subtraction. See the strict-concavity comparison below and [Section 18](SECTION_18.md). |
+| Initial value problem | The renormalized equation has global analytic wellposedness for 1<p<=2, local wellposedness for finite p>1, and small-data global wellposedness for p>2. Solutions use every smooth approximating sequence; analytic dependence is in the compact-time uniform norm. Ordinary-flow nonextension has its separate hypotheses. See [Section 18](SECTION_18.md). |
+| Uniform tame estimates | One original map works before all integer orders m>=1. At each order, constants are independent of the potential. Both directions retain the exact weighted Fourier and rectangular-coordinate norms and the lower-order powers. See [Section 23](SECTION_23.md). |
+
+`AbstractsSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json) records the source ranges,
+31 inspected module hashes and related qualified comparisons. The abstract's
+novelty and historical-priority wording is outside this mathematical assessment.
+The source's refined spectral estimates explicitly require p>1; its broad
+spectral-theory wording is not treated as an assertion of ell1 refined bounds.
+
+This completes the consolidated comparison of these abstract clauses with
+the stated qualifications. It does not certify the rest of the dissertation.
+All existing refutations and corrections remain separate, and the exact
+2014 construction and G.2 norm questions remain open. The next work is the
+remaining source-wide assertion assessment; see [completion scope](COMPLETENESS.md).
+
 ## Ordinary action frequency nonextension and abstract normalization
 
 [SourceOrdinaryFrequencyNonextension.lean](../NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean)
@@ -58,8 +87,8 @@ no such additional conclusion is asserted here.
 
 `OrdinaryFrequencyNonextensionSourceComparison-2026-10-27` in the
 [source-review index](source-review-index.json) records the comparison.
-The remaining abstract and source-wide assessment stays open, with all
-earlier corrections retained; see [completion scope](COMPLETENESS.md).
+The consolidated abstract assessment above retains this scope. The remaining
+source-wide assessment stays open; see [completion scope](COMPLETENESS.md).
 
 Validation passes: 8,430 build jobs, 7,464 public examples and a
 transitive axiom audit of 42,809 NLS declarations. The 21 inherited
@@ -93,8 +122,9 @@ concavity or extension to every nonnegative Hilbert action is claimed.
 
 The comparison `HamiltonianStrictConcavitySourceComparison-2026-10-27`
 in the [source-review index](source-review-index.json) covers these selected
-clauses. The other abstract claims and the rest of the source-wide assertion
-assessment remain in progress; see [completion scope](COMPLETENESS.md).
+clauses. The consolidated abstract assessment above now covers the other
+abstract claims with their qualifications. The remaining source-wide assessment
+stays open; see [completion scope](COMPLETENESS.md).
 
 Validation passes: 8,429 build jobs, 7,462 public examples and a
 transitive axiom audit of 42,792 NLS declarations. The 21 inherited

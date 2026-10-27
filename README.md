@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: ordinary full-energy action frequencies now have a proved
-obstruction to continuous extension in every ellq action space with q>1,
-including infinity. Unit-mass actions tend to zero while the actual
-frequency derivative keeps its mass shift of four.
-See the [introduction comparison](coverage/INTRODUCTION.md) and the
+Latest step: all seven mathematical claim groups in both abstracts now
+have a consolidated comparison with the Lean proofs, retaining their
+precise domains, normalizations and unresolved source qualifications.
+The preceding implementation proves ordinary action-frequency nonextension
+in every ellq with q>1, including infinity.
+See the [abstract comparison](coverage/INTRODUCTION.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

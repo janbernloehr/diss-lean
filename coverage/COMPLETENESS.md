@@ -24,12 +24,12 @@ correction. It cannot be counted as a proof of the literal printed claim.
 
 ## How the next assessment proceeds
 
-The strict-concavity clauses of both abstracts now have an explicit
-[comparison and Jensen interface](INTRODUCTION.md). Continue with their
-remaining claims, then read the introduction and remaining source assertions
-in order. The frequency clauses now also have an explicit normalization
-comparison and an ordinary action-frequency nonextension theorem there.
-These selected comparisons do not complete the abstract assessment.
+Both abstracts now have a [consolidated mathematical comparison](INTRODUCTION.md)
+covering their seven paired claim groups. It retains the exact exponent and
+gap restrictions, renormalization, solution sense and norms, together with
+the unresolved external-construction qualification. Novelty and historical
+priority are outside that assessment. Continue with the remaining
+introduction and source-wide assertions in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

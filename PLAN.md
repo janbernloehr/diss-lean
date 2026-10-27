@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: Ordinary action frequencies cannot extend continuously
+## Current milestone: Both abstracts assessed with their exact scope
+
+All seven paired mathematical claim groups in the German and English
+abstracts now have one consolidated comparison. It records original
+operators and coordinates, exponent and gap restrictions, the frequency
+renormalization, the solution notion, and the exact tame norms.
+The comparison checks 31 module hashes and 36 declaration references and
+retains the qualifications of the earlier section reviews.
+
+See the [abstract comparison](coverage/INTRODUCTION.md) and
+[completion assessment](coverage/COMPLETENESS.md). Novelty and historical
+priority are outside this mathematical assessment. The exact cited 2014
+construction, Appendix G.2 norm interpretation, and remaining source-wide
+unnumbered assertions are still open.
+
+Validation: source-review integrity and all 2,992 local file links
+across 45 documents pass. The Lean source and dependency-lock snapshot
+is unchanged from the preceding verified commit: 8,430 build jobs,
+7,464 public examples, 42,809 audited NLS declarations and 21 existing
+warnings. That successful full check is reused; no Lean check was rerun
+for this documentation-only milestone.
+
+## Previous milestone: Ordinary action frequencies cannot extend continuously
 
 The literal coordinate derivative of the full action Hamiltonian has no
 continuous local extension at zero in any action space ellq with q>1,
