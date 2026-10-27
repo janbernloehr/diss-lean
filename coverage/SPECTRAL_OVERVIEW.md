@@ -1402,6 +1402,49 @@ collapsed endpoint pairs. It completes the actual signed multiplicity
 comparison underlying the real-type enumeration on printed p.17.
 
 Even/odd indices are not asserted for all complex potentials. The separate
-globally sorted signed complex eigenvalue lists require their own source
-comparison. Full dissertation semantic completion, exact2014 and G2
+globally sorted signed complex eigenvalue lists and their source comparison
+are constructed in the next subsection. Full dissertation semantic completion, exact2014 and G2
 remain separate questions.
+
+## Independent ordered physical signed eigenvalue lists
+
+[`ClassicalSignedCharacteristicOrders.lean`](../NLS/ZakharovShabat/ClassicalSignedCharacteristicOrders.lean)
+identifies both normalized source parity products with the actual physical
+monodromy trace minus or plus two. Their analytic zero orders are exactly
+the independently defined actual classical signed Jordan-chain dimensions
+for every complex physical L2 potential.
+
+[`CentralParityOrdering.lean`](../NLS/ZakharovShabat/CentralParityOrdering.lean)
+sorts each finite central parity multiset on its own indices, retaining
+all repetitions.
+[`OrderedPeriodicParityPairs.lean`](../NLS/ZakharovShabat/OrderedPeriodicParityPairs.lean)
+sorts the distant pairs and joins the lists using their real-part separation.
+The complete source data retain every multiplicity, displacement and
+quantitative pair bound. Order is asserted within each parity; complex
+central roots of different signs need not occur in their index order.
+
+[`ClassicalSignedPairCounts.lean`](../NLS/ZakharovShabat/ClassicalSignedPairCounts.lean)
+transports these complete complex parity lists to the actual physical
+signed spectra and multiplicities. Reindexing by 2n or 2n+1 preserves each
+sign's exact full Jordan-chain count.
+[`PhysicalSignedEnumeration.lean`](../NLS/ZakharovShabat/PhysicalSignedEnumeration.lean)
+specifies and constructs the two separate physical lists using their
+actual classical spectra, algebraic multiplicities, global lexicographic
+order and l2 displacement from the corresponding signed free lattice.
+[`PhysicalSignedEnumerationUniqueness.lean`](../NLS/ZakharovShabat/PhysicalSignedEnumerationUniqueness.lean)
+proves that these independent conditions determine both lists uniquely,
+including at repeated eigenvalues.
+
+[`PhysicalSignedEnumerationComparison.lean`](../NLS/ZakharovShabat/PhysicalSignedEnumerationComparison.lean)
+proves equality with every complete source construction sorted within its
+parity. For arbitrary complex potentials, the physical signed lists equal
+the combined physical endpoints at the printed even/odd indices outside
+a finite central block. For real-type potentials, equality holds at every
+index, including central and collapsed pairs. These are the separate-list
+claims in the opening discussion of Section 7 and the real enumeration
+on printed p.17.
+
+The cutoff here is proved for each potential. A common neighborhood cutoff
+in the physical norm, the remaining semantic source audit, exact2014 and
+G2 remain separate. No continuous choice of individual complex root
+branches or whole-dissertation completeness is asserted.

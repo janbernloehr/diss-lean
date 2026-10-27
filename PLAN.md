@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: actual classical signed root spaces and multiplicities
+## Current milestone: independent physical signed eigenvalue lists
+
+The actual classical periodic and antiperiodic spectra now have separate
+physical eigenvalue lists, uniquely determined by global lexicographic
+order, signed-lattice l2 asymptotics and the full actual Jordan-chain
+multiplicities. This holds for every complex physical L2 potential.
+
+Their characteristic zero orders equal those actual multiplicities.
+The physical lists agree with the complete sorted source parity lists and,
+outside a finite central block, with the combined physical endpoints at
+the printed even/odd indices. At real-type potentials the endpoint
+agreement holds at every index, including collapsed pairs.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records this
+comparison. A common neighborhood cutoff in the physical norm, the
+remaining source audit, exact2014 and G2 remain separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,384 build jobs, 7,367
+public examples, and a transitive axiom audit of 42,291 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,746 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual classical signed root spaces and multiplicities
 
 The actual classical periodic and antiperiodic operators now have
 independently defined full Jordan-chain spaces on their original H1

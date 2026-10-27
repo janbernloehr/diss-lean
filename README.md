@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: actual classical periodic and antiperiodic Jordan-chain
-spaces are finite dimensional and exactly conjugate to source parity
-root spaces. Their dimensions split the full physical multiplicity;
-real-type even/odd endpoint pairs count the actual signed dimensions.
+Latest step: the actual classical signed spectra have uniquely determined
+physical eigenvalue lists with their full algebraic multiplicities, global
+lexicographic order and l2 asymptotics. Their characteristic zero orders and
+comparison with the source and combined endpoint lists are proved.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

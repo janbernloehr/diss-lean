@@ -67932,3 +67932,59 @@ example (r n : ℤ) : classicalSignedAlgebraicMultiplicity 0 r ((Real.pi : ℂ)*
 
 end ClassicalSignedMultiplicityExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalSignedEnumerationExamples
+open NLS.ComplexAnalysis
+
+example (u : IntervalPairL2) (z : ℂ) :
+    analyticOrderAt (fun w => l2Discriminant u w-2) z =
+      (classicalSignedAlgebraicMultiplicity u 0 z : ℕ∞) :=
+  analyticOrderAt_l2Discriminant_sub_two_eq_classicalMultiplicity u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    analyticOrderAt (fun w => l2Discriminant u w+2) z =
+      (classicalSignedAlgebraicMultiplicity u 1 z : ℕ∞) :=
+  analyticOrderAt_l2Discriminant_add_two_eq_classicalMultiplicity u z
+
+example (u : IntervalPairL2) (r : ℤ) (hr : r = 0 ∨ r = 1) :
+    ∃ ξ η : ℤ → ℂ, PhysicalSignedPairData u r ξ η :=
+  exists_physicalSignedPairData u r hr
+
+example (u : IntervalPairL2) (r : Fin 2) :
+    Memℓp (fun n => physicalSignedLeft u r n-(Real.pi : ℂ)*(2*n+(r.val : ℤ) : ℤ)) 2 ∧
+      Memℓp (fun n => physicalSignedRight u r n-(Real.pi : ℂ)*(2*n+(r.val : ℤ) : ℤ)) 2 :=
+  ⟨(physicalSignedPairs_spec u r).left_displacement,(physicalSignedPairs_spec u r).right_displacement⟩
+
+example (u : IntervalPairL2) (r : Fin 2) :
+    (∀ n, complexLexLE (physicalSignedLeft u r n) (physicalSignedRight u r n)) ∧
+      ∀ i j : ℤ, i < j → complexLexLE (physicalSignedRight u r i) (physicalSignedLeft u r j) :=
+  ⟨(physicalSignedPairs_spec u r).within,(physicalSignedPairs_spec u r).between⟩
+
+example (u : IntervalPairL2) (r : Fin 2) (z : ℂ) :
+    (∑ᶠ n : ℤ, ({physicalSignedLeft u r n,physicalSignedRight u r n} : Multiset ℂ).count z) =
+      classicalSignedAlgebraicMultiplicity u (r.val : ℤ) z :=
+  physicalSignedPairs_count_multiplicity u r z
+
+example (u : IntervalPairL2) (r : Fin 2) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u (r.val : ℤ) ↔
+      ∃ n : ℤ, physicalSignedLeft u r n = z ∨ physicalSignedRight u r n = z :=
+  physicalSignedPairs_exhaustive u r z
+
+example {u : IntervalPairL2} {r : ℤ} {ξ η a b : ℤ → ℂ}
+    (h : PhysicalSignedPairData u r ξ η) (h' : PhysicalSignedPairData u r a b) : ξ = a ∧ η = b :=
+  h.unique h'
+
+example (u : IntervalPairL2) (r : Fin 2) :
+    ∃ K : ℕ, ∀ n : ℤ, K < (2*n+(r.val : ℤ)).natAbs →
+      physicalSignedLeft u r n = physicalPeriodicLeft u (2*n+(r.val : ℤ)) ∧
+      physicalSignedRight u r n = physicalPeriodicRight u (2*n+(r.val : ℤ)) :=
+  physicalSignedPairs_eventually_eq_periodic u r
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (r : Fin 2) :
+    physicalSignedLeft u r = (fun n => physicalPeriodicLeft u (2*n+(r.val : ℤ))) ∧
+      physicalSignedRight u r = (fun n => physicalPeriodicRight u (2*n+(r.val : ℤ))) :=
+  physicalSignedPairs_eq_periodic_of_realType u hu r
+
+end PhysicalSignedEnumerationExamples
+end NLS.ZakharovShabat
