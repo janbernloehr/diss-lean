@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 3 now has direct original-norm proofs of closedness
-on the full operator domain, Young's estimate with constant one, the first
-resolvent identity, high-height smallness and the squared-potential bound.
-Both signed double-resolvent coefficient formulas are available.
+Latest step: the absolute double-sum estimate in Lemma 3.4 is proved
+for the actual signed resolvent components in the original norms,
+including p=1. The exact near/far partition and cutoff-retaining
+Fourier-tail identity are also proved.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

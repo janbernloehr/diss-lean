@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T14:54:06.676261+00:00",
-  "base_commit": "0270f08010f6b71135e5236657b9ab72d4d632f4",
+  "published_utc": "2026-10-27T15:23:46.567326+00:00",
+  "base_commit": "fda6250c56d6ec41af674907d928ead5edc6457c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 72,
-    "module_hash_checks": 1032,
-    "distinct_modules": 814
+    "review_records": 73,
+    "module_hash_checks": 1042,
+    "distinct_modules": 819
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0270f08010f6b71135e5236657b9ab72d4d632f4",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceSection3Setup and four public examples.",
+    "base_commit": "fda6250c56d6ec41af674907d928ead5edc6457c",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma34Majorization, SandwichAbsoluteSum and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8433,
-    "public_examples": 7472,
-    "transitive_NLS_declarations": 42858,
+    "build_jobs": 8435,
+    "public_examples": 7476,
+    "transitive_NLS_declarations": 42878,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4710,
-      "sha256": "d6b382b72652ada0893eab8e1ff8f055e2cc7976f5774e28e0cd57ee50aa6d60"
+      "files": 4712,
+      "sha256": "fee2001e834d16d729810c13c6f4844c2222a99e5b17b03cefd36250269d02c8"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -16575,6 +16575,132 @@
       },
       "qualification": "The new module was read completely; the eight unchanged hash-listed dependencies were read in the preceding focused comparisons and their current hashes rechecked. Six focused assertion groups preserve original finite-p norms, domain and quantifiers. Existing analytic approximation, relative bounds and density are reused with their proved scope. This is not an exhaustive Section 3 source assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished; previous source refutations and corrections remain separate.",
       "source_record_sha256": "0b5e34f523ee0b7063f69f000415dde938c6c7161a861d6d7e0c6cb7d2039374"
+    },
+    "Lemma34MajorizationSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "fda6250c56d6ec41af674907d928ead5edc6457c",
+      "updated_utc": "2026-10-27T15:23:46.567326+00:00",
+      "source_lines": [
+        [
+          1415,
+          1430
+        ],
+        [
+          1448,
+          1448
+        ],
+        [
+          1463,
+          1464
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1415,
+            1417
+          ],
+          "requirement": "For every integer m and every parameter in Vert_n(r), with 0<r<=pi/4, the printed denominator dominates r/sqrt(2)+abs(n-m).",
+          "finding": "The literal bound is proved for all signed strip centers and indices, retaining the closed strip edge and puncture boundary. The central index uses the radius condition. Noncentral indices use integer separation, the real-part strip bound and certified numerical lower bounds for pi and sqrt(2). Multiplying the resulting bounds proves the exact factor-two denominator product inequality used in the next display. A public example exercises r=pi/4 at the strip edge lambda=pi/2 and m=1,n=0.",
+          "declarations": [
+            "verticalStrip",
+            "sourceLemma34_denominator_lower",
+            "sourceLemma34_denominator_product"
+          ]
+        },
+        {
+          "source_lines": [
+            1419,
+            1424
+          ],
+          "requirement": "The literal positive double sum is well-defined and can be summed by rows for all source exponents.",
+          "finding": "A generic conjugate-exponent convolution sandwich yields absolute summability over the integer product and identifies that sum with the positive sandwich norm. The actual radius/strip reciprocal lies in the conjugate sequence space for every finite p; the p=1 endpoint uses bounded reciprocal symbols. Negating the second index gives precisely the printed plus-index numerator. The source summability theorem applies for all 0<r<=1, which includes every admissible r<=pi/4. No finite-support hypothesis is used, and an infinite reciprocal-coefficient p=3 example is included.",
+          "declarations": [
+            "Coeff.summable_sandwich_terms",
+            "Coeff.tsum_sandwich_terms",
+            "sourceLemma34_reciprocal_memlp",
+            "summable_lemma34ProofTerm",
+            "lemma34ProofTerm"
+          ]
+        },
+        {
+          "source_lines": [
+            1419,
+            1424
+          ],
+          "requirement": "The actual first resolvent component l1 norm is bounded by twice that sum; the second component has the corresponding signed formula, including p=1.",
+          "finding": "The pointwise denominator estimate first bounds every actual complex summand. Absolute convergence then justifies both the norm/row-sum comparison and the outer sum. The first component uses reflected raw potential coefficients and reflected output coordinates; the second uses reflected raw first input coefficients. Both estimates and their sum are proved for the actual sourceDoubleResolvent with the original l1 pair sum norm and original finite-p inputs. A p=1 example with raw first potential +2 and second input -1 gives the actual output bound 2/r^2 throughout the negative strip. This addresses the component/endpoint aspects of lines 1463-1464 only, not the separately false uniform far/near estimates.",
+          "declarations": [
+            "norm_lemma34_signedTerm_le",
+            "norm_le_lemma34_absolute_sum",
+            "sourceDoubleResolvent_signed_fst_apply",
+            "sourceDoubleResolvent_signed_snd_apply",
+            "norm_sourceDoubleResolvent_fst_le_absolute_sum",
+            "norm_sourceDoubleResolvent_snd_le_absolute_sum",
+            "norm_sourceDoubleResolvent_le_absolute_sums"
+          ]
+        },
+        {
+          "source_lines": [
+            1426,
+            1430
+          ],
+          "requirement": "The infinite majorant decomposes into the printed far and near index sets with their exact real half-widths.",
+          "finding": "The complement of the defined near set is proved to be the printed strict far disjunction. Both nonnegative masked series are summable, and their sum is exactly the original double series. All signed centers, including zero, retain the source half-width abs(n)/2 and its boundary convention. This uses actual summability, so the identity does not depend on Lean assigning zero to an unsummable series.",
+          "declarations": [
+            "lemma34ProofNear",
+            "not_lemma34ProofNear_iff",
+            "lemma34ProofFarSum",
+            "lemma34ProofNearSum",
+            "lemma34Proof_absolute_sum_eq_far_add_near"
+          ]
+        },
+        {
+          "source_lines": [
+            1448,
+            1448
+          ],
+          "requirement": "The near region only sees potential frequencies with abs(l+m)>=abs(n), so the potential may be replaced by its symmetric remainder.",
+          "finding": "The triangle estimate proves the literal frequency lower bound for all signed integers, including zero. It then gives an exact coefficient identity with the existing source remainder that retains the cutoff boundary, and replacement of the potential leaves the entire near subsum unchanged. A p=3 negative cutoff example retains mode -2 and computes the near sum at n=-2,r=1/2 as 4/9. The subsequent printed r^(-2/p) bound remains formally refuted by the previous review; this valid tail identity does not repair that false estimate.",
+          "declarations": [
+            "lemma34ProofNear_frequency_lower",
+            "lemma34ProofNear_tail_apply",
+            "lemma34ProofNearSum_fourierTail",
+            "Coeff.fourierTail_apply"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Lemma34ProofSourceComparison-2026-10-27",
+        "Section3SetupSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Lemma34ProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "af06f864af237690569b53f674128b465acc4f5b547b3aaca6ae1380950a03ee",
+          "module_hashes_verified": true,
+          "retained_qualification": "All five hash-listed modules were read completely. Two literal intermediate estimates are formally refuted with fixed finite-mode p=2 witnesses for every nonnegative candidate constant. The actual signed coefficient bridge and original pair norms are checked, and the main r^-2 theorem remains proved with its original quantifiers. This is not a complete Section 3 proof audit, an independent verification of every transitive dependency, or a proof of the literal false estimates. The remaining source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Section3SetupSourceComparison-2026-10-27": {
+          "source_record_sha256": "0b5e34f523ee0b7063f69f000415dde938c6c7161a861d6d7e0c6cb7d2039374",
+          "module_hashes_verified": true,
+          "retained_qualification": "The new module was read completely; the eight unchanged hash-listed dependencies were read in the preceding focused comparisons and their current hashes rechecked. Six focused assertion groups preserve original finite-p norms, domain and quantifiers. Existing analytic approximation, relative bounds and density are reused with their proved scope. This is not an exhaustive Section 3 source assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished; previous source refutations and corrections remain separate."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "53bdbf1c130907c78fd194e618329bce5bef97ea7fd77f19e70200df4b12c597",
+        "NLS/SequenceSpaces/SandwichAbsoluteSum.lean": "05a66015f465d9396c87fa2cc755e4da6db9a643ed894024979ce14f9cb10b2d",
+        "NLS/ZakharovShabat/VerticalStrips.lean": "7fa9d3c46851397f7541307db9ee9819bc00b7e6e133d4af5c60f1c41c74400a",
+        "NLS/ZakharovShabat/SourceDoubleResolvent.lean": "109b6f2c166b7ffe0fde25d4ae289a452cdda3b33473924bec0c93d27bdc30dd",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "a38555531a677d72d2e1cc820bf52760fd5835c9e5bc4464e3907c00a863150b",
+        "NLS/ZakharovShabat/SourceSection3Setup.lean": "cf73ec97860ae8f773e889e88c98d176e7e123830aae2de6bc54548ac96d374a",
+        "NLS/SequenceSpaces/ConvolutionSandwich.lean": "d86b34a9d66542afb171070310bbc0f7680cf83dbb9317c0646425ac7c14e02a",
+        "NLS/SequenceSpaces/SandwichMajorant.lean": "921ef1515ecd8d06b6116ec8937f1ef28fa5999cd904fe7e5b9c9e545b16c541",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/SequenceSpaces/Translation.lean": "e1bee4ad497c331c7a722aac78c24f66001c1a1c16d662690204c56bb3b50904"
+      },
+      "qualification": "Both new modules and the four public examples were read completely. The eight unchanged hash-listed dependencies were read across this and the preceding focused comparisons, and their current hashes were rechecked. The rendered p.25 and the exact extracted source ranges were compared. Five focused groups establish literal denominator geometry, convergent original-norm signed component majorization, the exact near/far partition and the cutoff-retaining tail identity. The later uniform far/near estimates remain refuted, while the main Lemma 3.4 remains proved separately. This is not an exhaustive Section 3 assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_record_sha256": "78be678106057464f04af7d9525fc7ab04fe72869100d20241bacbb17456d6f4"
     }
   }
 }

@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: Section 3 setup in the original norms
+## Current milestone: The absolute double sum in Lemma 3.4
+
+The literal denominator bound and its factor-two consequence are proved.
+The printed double sum now has an absolute-convergence proof for every
+finite Banach exponent, including p=1. It bounds both actual signed
+resolvent components and their original l1 pair norm.
+
+The near/far split is exact for the infinite series. The near part sees
+precisely the symmetric Fourier remainder, including its cutoff boundary.
+Four public examples check the largest admissible radius, negative signed
+modes at p=1, a negative cutoff boundary, and infinite-support p=3 data.
+See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,435 build jobs, 7,476
+public examples, and a transitive axiom audit of 42,878 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 3,052 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The two subsequent uniform subsum estimates remain formally refuted;
+the main Lemma 3.4 remains proved. Continue the remaining Section 3
+assertion inventory before later sections. Existing external interpretation
+questions remain; see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Section 3 setup in the original norms
 
 The actual unbounded source operator is now proved closed on its full
 one-derivative domain for every finite Banach exponent. New public proofs

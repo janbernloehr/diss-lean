@@ -69401,3 +69401,85 @@ example (ε : ℝ) (hε : 0 < ε) :
   exact (T.le_opNorm a).trans_lt (hmul.trans_lt hT)
 
 end Section3SetupChecks
+
+noncomputable section
+namespace Lemma34MajorizationChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+-- Largest allowed radius and a strip edge, one index away from the strip center.
+example : (Real.pi/4)/Real.sqrt 2 + 1 ≤ Real.pi/2 := by
+  have hz : ((Real.pi/2 : ℝ) : ℂ) ∈ verticalStrip 0 (Real.pi/4) := by
+    constructor <;>
+      simp only [Int.cast_zero, mul_zero, sub_zero, Complex.ofReal_re, Complex.norm_real,
+        Real.norm_eq_abs, abs_of_pos (half_pos Real.pi_pos)]
+    · exact le_rfl
+    · linarith [Real.pi_pos]
+  have h := sourceLemma34_denominator_lower (m := 1) (by positivity) le_rfl hz
+  have hn : ‖((Real.pi/2 : ℝ) : ℂ)-(Real.pi : ℂ)‖ = Real.pi/2 := by
+    rw [← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs]
+    rw [show Real.pi/2-Real.pi = -(Real.pi/2) by ring, abs_neg,
+      abs_of_pos (half_pos Real.pi_pos)]
+  simpa only [Int.cast_one, zero_sub, Int.cast_neg, abs_neg, abs_one, mul_one, hn] using h
+
+-- At p=1 the raw first potential mode +2 corresponds to the signed mode -2.
+example {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi/4) (z : ℂ)
+    (hz0 : z ∉ freeLattice) (hz : z ∈ verticalStrip (-1) r) :
+    ‖(sourceDoubleResolvent (by simp : (1 : ℝ≥0∞) ≠ ⊤)
+      (WithLp.toLp 1 ((lp.single 1 2 1 : Coeff 1),0)) z hz0
+      (WithLp.toLp 1 (0,(lp.single 1 (-1) 1 : Coeff 1)))).fst‖ ≤ 2/r^2 := by
+  have h := norm_sourceDoubleResolvent_fst_le_absolute_sum
+    (by simp : (1 : ℝ≥0∞) ≠ ⊤)
+    (WithLp.toLp 1 ((lp.single 1 2 1 : Coeff 1),0))
+    (WithLp.toLp 1 (0,(lp.single 1 (-1) 1 : Coeff 1))) z hz0 hr hrπ hz
+  have he : Coeff.reindex (Equiv.neg ℤ) (lp.single 1 2 1 : Coeff 1) = lp.single 1 (-2) 1 := by
+    ext k
+    simp [Coeff.reindex_apply, lp.single_apply, Pi.single_apply, show -k=2 ↔ k=-2 by omega]
+  change _ ≤ 2 * ∑' lm : ℤ × ℤ, lemma34ProofTerm
+    (Coeff.reindex (Equiv.neg ℤ) (lp.single 1 2 1)) (lp.single 1 (-1) 1) (-1) r lm at h
+  rw [he] at h
+  have hsum : (∑' lm : ℤ × ℤ, lemma34ProofTerm
+      (lp.single 1 (-2) 1) (lp.single 1 (-1) 1) (-1) r lm) = 1/r^2 := by
+    rw [tsum_eq_single ((-1 : ℤ),(-1 : ℤ))]
+    · norm_num [lemma34ProofTerm, pow_two]
+    · intro lm hne
+      by_cases hm : lm.2 = -1
+      · have hl : lm.1+lm.2 ≠ -2 := by
+          intro hl
+          apply hne
+          ext <;> omega
+        simp [lemma34ProofTerm, lp.single_apply, hl]
+      · simp [lemma34ProofTerm, lp.single_apply, hm]
+  rw [hsum] at h
+  simpa only [mul_one_div] using h
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The negative cutoff boundary belongs to the tail, and its near summand survives.
+example : Coeff.fourierTail 2 (lp.single 3 (-2) 1 : Coeff 3) (-2) = 1 ∧
+    lemma34ProofNearSum (lp.single 3 (-2) 1) (lp.single 3 (-1) 1) (-2) (1/2) = 4/9 := by
+  have hn : lemma34ProofNear (-2) (-1) (-1) := by norm_num [lemma34ProofNear]
+  constructor
+  · calc
+      _ = (lp.single 3 (-2) 1 : Coeff 3) (-2) := lemma34ProofNear_tail_apply _ hn
+      _ = 1 := by simp
+  · rw [lemma34ProofNearSum, tsum_eq_single ((-1 : ℤ),(-1 : ℤ))]
+    · norm_num [lemma34ProofNear, lemma34ProofTerm]
+    · intro lm hne
+      by_cases hm : lm.2 = -1
+      · have hl : lm.1+lm.2 ≠ -2 := by
+          intro hl
+          apply hne
+          ext <;> omega
+        simp [lemma34ProofTerm, lp.single_apply, hl]
+      · simp [lemma34ProofTerm, lp.single_apply, hm]
+
+-- Infinite p=3 data remain admissible: no finite-support hypothesis is used.
+example :
+    let a : Coeff 3 := WeightedCoeff.inverseWeight (Weight.sobolev 1)
+      (Weight.inverse_sobolev_one_memlp (by norm_num : (1 : ℝ≥0∞) < 3))
+    Summable (lemma34ProofTerm a a (-3) (1/2)) := by
+  dsimp only
+  exact summable_lemma34ProofTerm (by norm_num) _ _ (-3) (by norm_num) (by norm_num)
+
+end Lemma34MajorizationChecks

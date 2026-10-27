@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 3.4 absolute majorization, p.25 | [Signed majorization](NLS/ZakharovShabat/SourceLemma34Majorization.lean), [comparison](coverage/SECTION_3.md) | Literal denominator bound, convergent double sums, actual original-norm components, exact near/far partition and Fourier-tail identity; includes p=1. |
 | Section 3 operator setup, pp.23–26 | [Original-norm setup](NLS/ZakharovShabat/SourceSection3Setup.lean), [comparison](coverage/SECTION_3.md) | Closed full-domain operator, constant-one Young estimate, actual resolvent identity, uniform height decay, signed second coefficient and square bound; all source assertions use finite p. |
 | Lemma 3.4 proof, p.25 | [Radius counterexamples](NLS/ZakharovShabat/SourceLemma34Proof.lean), [comparison](coverage/SECTION_3.md) | Both intermediate subsum estimates fail uniformly in r; actual original pair operator requires r^-2 for a unit potential. The main lemma remains proved. |
 | Lemma 3.2 proof, p.24 | [Endpoint proof corrections](NLS/ZakharovShabat/SourceLemma32EndpointProof.lean), [comparison](coverage/SECTION_3.md) | Two printed lower bounds refuted; corrected height and strip upper bounds, with exact original p=1 operator norm at imaginary parameters. |

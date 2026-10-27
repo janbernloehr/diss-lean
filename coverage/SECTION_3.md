@@ -77,6 +77,38 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Absolute double-sum majorization in Lemma 3.4
+
+[SourceLemma34Majorization.lean](../NLS/ZakharovShabat/SourceLemma34Majorization.lean)
+proves the valid steps surrounding the separately refuted subsum bounds.
+[SandwichAbsoluteSum.lean](../NLS/SequenceSpaces/SandwichAbsoluteSum.lean)
+provides the underlying absolutely convergent positive double series.
+
+| Source assertion | Public entry point | Retained scope |
+| --- | --- | --- |
+| Denominator geometry, p.25 | `sourceLemma34_denominator_lower`, `sourceLemma34_denominator_product` | Literal r/sqrt(2)+abs(n-m) bound and factor two, all signed integers and 0<r<=pi/4, including boundaries. |
+| Convergence of the majorant | `summable_lemma34ProofTerm` | Every finite Banach exponent, with bounded conjugate symbols at p=1; infinite-support data allowed. |
+| Component norm estimates | `norm_sourceDoubleResolvent_fst_le_absolute_sum`, `norm_sourceDoubleResolvent_snd_le_absolute_sum` | Actual source resolvent, exact signed reflections and original scalar l1 output norms. |
+| Original pair norm | `norm_sourceDoubleResolvent_le_absolute_sums` | Sum of the two actual l1 component norms, with no maximum-norm substitution. |
+| Near/far partition | `not_lemma34ProofNear_iff`, `lemma34Proof_absolute_sum_eq_far_add_near` | Exact strict/non-strict boundary and real half-width abs(n)/2; both masked series converge. |
+| Near-region potential tail | `lemma34ProofNear_frequency_lower`, `lemma34ProofNearSum_fourierTail` | Exact symmetric remainder with abs(k)>=abs(n), including zero and negative centers. |
+
+The four examples exercise r=pi/4 at a strip edge, a reflected negative
+p=1 mode giving an actual component bound 2/r^2, a negative cutoff mode
+whose near sum is 4/9, and infinite-support reciprocal coefficients at p=3.
+
+The component and convergence arguments include the p=1 endpoint and the
+second component mentioned at the end of the proof. The later printed
+uniform far and near estimates retain their formal counterexamples.
+The main lemma's independent r^-2 estimate remains valid.
+Lemma34MajorizationSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records five focused groups;
+they do not certify every proof assertion in Section 3.
+
+Validation passes: 8,435 build jobs, 7,476 public examples and a
+transitive axiom audit of 42,878 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Direct source-norm setup and resolvent estimates
 
 [SourceSection3Setup.lean](../NLS/ZakharovShabat/SourceSection3Setup.lean)

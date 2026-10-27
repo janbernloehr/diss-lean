@@ -243,6 +243,7 @@ import NLS.SequenceSpaces.WeightedFourierTail
 import NLS.SequenceSpaces.WeightedHolderMultiplier
 import NLS.SequenceSpaces.WeightedSandwich
 import NLS.SequenceSpaces.SandwichMajorant
+import NLS.SequenceSpaces.SandwichAbsoluteSum
 import NLS.SequenceSpaces.WeightedSandwichGain
 import NLS.ZakharovShabat.ResonantWindowGeometry
 import NLS.ZakharovShabat.ComplementaryReciprocalTail
@@ -3300,6 +3301,7 @@ import NLS.ZakharovShabat.SourceCorollary3_3
 import NLS.ZakharovShabat.SourceDoubleResolvent
 import NLS.ZakharovShabat.SourceLemma3_4
 import NLS.ZakharovShabat.SourceLemma34Proof
+import NLS.ZakharovShabat.SourceLemma34Majorization
 import NLS.ZakharovShabat.SourceCorollary3_5
 import NLS.ZakharovShabat.SourceResolventContours
 import NLS.ZakharovShabat.SourceEquation1_4
