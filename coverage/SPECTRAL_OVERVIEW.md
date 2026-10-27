@@ -4,6 +4,43 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## AKNS coordinates and full boundary domains, printed pp. 19–20
+
+The renewed comparison of lines 947–987 retains the exact potential map
+`(q+ip,q-ip)` and the separate normalized vector transform
+`T=(1/sqrt(2))*[[1,i],[1,-i]]` from
+[AKNSCoordinates](../NLS/ZakharovShabat/AKNSCoordinates.lean).
+[AKNSPhysicalNorms](../NLS/ZakharovShabat/AKNSPhysicalNorms.lean) proves that
+this is a surjective complex linear isometry on the physical interval L2
+space and preserves the physical H1 norm. The page 19 normalization is
+correct; the previously recorded page 29 correction remains separate.
+
+[AKNSClassicalDomain](../NLS/ZakharovShabat/AKNSClassicalDomain.lean)
+identifies both full H1[0,1] domains in both directions. Vanishing of the
+second AKNS component at both endpoints gives equality of the transformed
+components; vanishing of the first gives opposite transformed components.
+No equality between the values at 0 and 1 is imposed. The final `f-` in the
+printed Neumann formula on page 19 is read as `g-`, the function quantified
+in that formula.
+
+[ClassicalIntervalSpace](../NLS/ZakharovShabat/ClassicalIntervalSpace.lean)
+and [ClassicalIntervalIsomorphism](../NLS/ZakharovShabat/ClassicalIntervalIsomorphism.lean)
+identify the entire interval domain and its physical norm.
+[AKNSIntervalOperator](../NLS/ZakharovShabat/AKNSIntervalOperator.lean)
+then proves density of both domains in physical L2 and intertwines both
+domain inclusions and actual differential operators. The action agrees
+almost everywhere for every domain function and arbitrary complex L2
+coefficient functions; no global smoothness assumption is used.
+
+Three assertion groups and six complete modules are recorded as
+`SpectralOverviewAKNSDomainSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). Real structure and
+complexification retain their preceding comparison. This documentation
+step reuses the unchanged Lean snapshot validated by the period-extension
+milestone below. Boundary enumeration, interlacing and the reflected-potential
+overview passage remain to be compared separately; existing source
+corrections and the precise2014 and G2 qualifications are unchanged.
+
 ## Original period-one distribution potentials, printed p. 18
 
 [PeriodicFourierLebesguePeriodDoubling](../NLS/Fourier/PeriodicFourierLebesguePeriodDoubling.lean)

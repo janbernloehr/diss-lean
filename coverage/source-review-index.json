@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T08:24:23.028903+00:00",
-  "base_commit": "9a5525b2315e6dabeb4e498e5dcb1c56278c9981",
+  "published_utc": "2026-10-27T08:25:12.783141+00:00",
+  "base_commit": "ed7449a3fc3156e89f075947450b15ed98fe4392",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 55,
-    "module_hash_checks": 778,
-    "distinct_modules": 717
+    "review_records": 56,
+    "module_hash_checks": 784,
+    "distinct_modules": 720
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -10756,6 +10756,99 @@
       },
       "qualification": "The four listed modules were read completely, including the exact Fourier scaling factor and distributional translation criterion. This resolves the line862 period-extension comparison left separate by SpectralOverviewNativePeriodicSourceComparison-2026-10-27. It does not independently reprove all transitive dependencies or certify the rest of the chapter. The native operator and physical Hilbert compatibility use the preceding reviewed modules. Scalar infinity is covered, while claims about the original pair norm and operator retain finite p. Existing Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualifications are unchanged.",
       "source_record_sha256": "809ac11bfebbade098ffbb505f8dcb4ebbda5dbaf82c3c540eac84978b66a93b"
+    },
+    "SpectralOverviewAKNSDomainSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T08:25:12.783141+00:00",
+      "base_commit": "ed7449a3fc3156e89f075947450b15ed98fe4392",
+      "source_lines": [
+        947,
+        987
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            947,
+            962
+          ],
+          "requirement": "The printed AKNS differential expression is unitarily equivalent to the Zakharov-Shabat expression for the potential (q+ip,q-ip).",
+          "finding": "The potential map is exactly (q+ip,q-ip); the separate vector map is T=(1/sqrt(2))[[1,i],[1,-i]]. The explicit inverse and exact component-sum energy identity give a surjective complex linear isometry on actual interval L2 classes. Actual interval derivative energies give the exact physical H1 norm identity as well. Thus the factor in the vector transform is not silently inserted in the potential. The normalization printed here on page19 is correct; the separately recorded page29 correction is unchanged.",
+          "declarations": [
+            "aknsPotential",
+            "aknsToZS",
+            "zsToAKNS",
+            "aknsAction_intertwining",
+            "aknsToZS_norm_sq",
+            "aknsL2Equiv",
+            "classicalIntervalNorm_aknsToZS"
+          ]
+        },
+        {
+          "source_lines": [
+            966,
+            987
+          ],
+          "requirement": "The two dense full H1[0,1] AKNS domains map onto exactly the two printed classical endpoint domains.",
+          "finding": "Both domains consist of all interval absolutely continuous functions with square-integrable actual derivatives and the indicated two endpoint values. Dirichlet means the second AKNS component vanishes at both endpoints, equivalently equality of the two transformed components. Neumann means the first AKNS component vanishes at both endpoints, equivalently opposite transformed components. The inverse transform proves both full-domain equivalences; the actual interval carrier contains every such function and imposes no additional equality between values at 0 and 1. Both inclusions into physical L2 are injective and have dense range. The f-minus(1) at the end of the printed Aneu formula is read as g-minus(1), the same function quantified at the beginning of that formula.",
+          "declarations": [
+            "HasAKNSIntervalDomain",
+            "hasClassicalIntervalDomain_aknsToZS_iff",
+            "hasAKNSIntervalDomain_zsToAKNS_iff",
+            "mem_classicalIntervalSubmodule_iff",
+            "mem_aknsIntervalSubmodule_iff",
+            "aknsDomainEquiv",
+            "aknsInclusion_injective",
+            "aknsInclusion_denseRange"
+          ]
+        },
+        {
+          "source_lines": [
+            950,
+            987
+          ],
+          "requirement": "The unitary equivalence includes the actual operator and domain inclusion, not only an algebraic matrix formula.",
+          "finding": "On every full H1 domain function, the actual derivative and potential action intertwines almost everywhere. For arbitrary complex L2 coefficient functions q and p, the domain map and physical L2 unitary commute with the domain inclusions and the strong-domain operators. The representative theorem identifies the transported action with the actual AKNS differential expression. The domain norm is independently identified with the physical H1 norm; the underlying weighted Fourier extension is only a bounded equivalence, not asserted to be an isometry.",
+          "declarations": [
+            "physicalOperator_aknsToZS",
+            "akns_eigenEquation_iff",
+            "norm_aknsDomainOfFunction",
+            "aknsL2Equiv_inclusion",
+            "aknsL2Equiv_operator",
+            "aknsInclusion_realization",
+            "aknsIntervalOperator_realization",
+            "classicalIntervalEquiv"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewAKNSRealStructureSourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          19,
+          20
+        ],
+        "pdf_pages": [
+          19,
+          20
+        ],
+        "inspection": "Inspected both newly rendered pages, including the normalized vector matrix, unnormalized potential map, both endpoint-domain formulas and the printed Aneu variable typo.",
+        "images": {
+          "SpectralOverviewAKNSDomainCurrentReview-019.png": "0b9fa4e0af7f0cb18c4491345751ec3fac4afb248e28b6185838e4b4cd2d96a8",
+          "SpectralOverviewAKNSDomainCurrentReview-020.png": "0014bdfde5f4d0e024d2182110c4b7ec19fbe9b82a643aab2c324d05c77a5d2f"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AKNSCoordinates.lean": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079",
+        "NLS/ZakharovShabat/AKNSClassicalDomain.lean": "e01ea9ce1dd3cc2fc936cde9c3bc2092c986afce9581424c0763bf76644e3ee0",
+        "NLS/ZakharovShabat/AKNSPhysicalNorms.lean": "b33e943680f57e11748f653839ca8f9cd5e14611357196429f1bf1b538843c90",
+        "NLS/ZakharovShabat/AKNSIntervalOperator.lean": "f9c75c733791a4ce7ecd210eb1e8d8649d412d387687cf4d1ece2dcc76a2c6b1",
+        "NLS/ZakharovShabat/ClassicalIntervalSpace.lean": "1aa7070c240c6295fedd2fc906b24ba234afbc1a48de2166292fcfe9fb2a7015",
+        "NLS/ZakharovShabat/ClassicalIntervalIsomorphism.lean": "979050f18b89908c6b9d81bba4b0abe4d3b2321d7df72f5de86522ec25e4df3d"
+      },
+      "qualification": "The six listed modules were read completely. Supporting definitions of interval H1 regularity, the original classical endpoint domain and the physical differential expression were checked separately, without claiming full review of their containing modules or all transitive dependencies. Real structure and complexification retain their separate prior comparison. This comparison does not cover the following boundary enumeration, interlacing or reflected-potential passage. It records the local Aneu variable typo without changing the correct page19 normalization. Existing source corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged.",
+      "source_record_sha256": "537d6a76542f634b418cc2fe13fe71ef1763274d11b8638ba9bcfa88c4002796"
     }
   }
 }
