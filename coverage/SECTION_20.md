@@ -415,3 +415,30 @@ in the constant term and does not change the coefficient extracted by
 the subsequent contour integral. Four public examples check the infinity
 target at p=4, bounded literal frequencies at p=3/2, the correct and false
 expansions at the same actual source, and the unit-momentum discrepancy.
+
+## Sobolev convergence of finite-gap opening, printed p. 93
+
+[WeightedActionOpening.lean](../NLS/SequenceSpaces/WeightedActionOpening.lean)
+constructs the native weighted one-mode line with exactly one unit of raw
+selected-coordinate amplitude. Forgetting the weight recovers the original
+unweighted line without changing its amplitude parameter.
+
+[SourceSobolevGapOpening.lean](../NLS/ZakharovShabat/SourceSobolevGapOpening.lean)
+pulls this line through the actual analytic Sobolev inverse. For every real
+order s>=0 and finite 1<p<=2, the curve is analytic in the full native weighted
+source norm and converges to its initial source at zero amplitude.
+
+[SourceFiniteGapSobolevOpening.lean](../NLS/ZakharovShabat/SourceFiniteGapSobolevOpening.lean)
+identifies its raw coefficients with the previously proved Hilbert gap-opening
+curve. Every real spectral finite-gap source admits this lift in every such
+Sobolev order. The amplitudes 1/(l+1) give concrete finite-gap approximants
+converging in the chosen Sobolev norm. They open the selected collapsed gap
+and preserve the zero/nonzero status of every other gap, so the finite set of
+open gaps is the original set together with the selected index.
+
+Taking s=1 supplies the H1 convergence ingredient in the closed-gap argument
+of Lemma 20.2. This construction preserves other actions and gap status. A separate proof
+that fixes every other numerical gap length has passed independent checks
+and is queued for its own canonical integration. The final frequency proof
+uses fixed finite gap support. The known Laurent-coefficient and diagonal-factor source
+corrections, exact2014 comparison and G2 norm qualification remain separate.

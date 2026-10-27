@@ -68325,3 +68325,68 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) (order : ℝ) (horder : 0
 
 end SobolevAnalyticFlowsExamples
 end NLS.ZakharovShabat
+
+namespace NLS.Birkhoff
+section SobolevGapOpeningExamples
+open Set
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (w : Weight) (hw : ∀ n, 1 ≤ w n)
+    (z : WithLp p (WeightedRealCoeff w p × WeightedRealCoeff w p)) (n : ℤ) (t : ℝ) :
+    WeightedRealCoeff.forgetPairWeightCLM w hw (weightedActionOpening w z n t) =
+      RealCoeff.actionOpening (WeightedRealCoeff.forgetPairWeightCLM w hw z) n t :=
+  forget_weightedActionOpening w hw z n t
+
+end SobolevGapOpeningExamples
+end NLS.Birkhoff
+
+namespace NLS.ZakharovShabat
+section SobolevGapOpeningExamples
+open Set Filter Topology
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ B W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order)
+    (a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder)) (n : ℤ) :
+    AnalyticOnNhd ℝ (D.sobolevGapOpening hp2 order horder a n) univ :=
+  D.analyticOnNhd_sobolevGapOpening hp2 order horder a n
+
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (hp2 : p ≤ 2) (order : ℝ) (horder : 0 ≤ order)
+    (a : weightedRealSourceSubmodule (p := p) (sourceSobolevSpectralWeight order horder)) (n : ℤ) :
+    Tendsto (D.sobolevGapOpening hp2 order horder a n) (𝓝 0) (𝓝 a) :=
+  D.tendsto_sobolevGapOpening_zero hp2 order horder a n
+
+end SobolevGapOpeningExamples
+section HilbertGapOpeningExamples
+open Set Filter Topology
+variable {W₀ B W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+example
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n = 0)
+    (order : ℝ) (horder : 0 ≤ order) :
+    ∃ a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+      ∃ G : ℕ → weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) a = φ ∧
+        Tendsto G atTop (𝓝 a) ∧ ∀ l : ℕ,
+          let ψ := originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (G l)
+          ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+          canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val)
+            (periodOnePotential_mem ψ.val) n ≠ 0 ∧
+          ∀ k : ℤ, k ≠ n →
+            (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val)
+              (periodOnePotential_mem ψ.val) k = 0 ↔
+             canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+              (periodOnePotential_mem φ.val) k = 0) :=
+  D.exists_finiteGap_sobolev_open_approximants φ hf n hn order horder
+
+end HilbertGapOpeningExamples
+end NLS.ZakharovShabat

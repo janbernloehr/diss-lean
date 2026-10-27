@@ -4710,3 +4710,6 @@ import NLS.ZakharovShabat.SourceSobolevInverseTrajectories
 import NLS.ZakharovShabat.SourceSobolevAnalyticPhaseLift
 import NLS.ZakharovShabat.SourceSobolevNLSAnalytic
 import NLS.ZakharovShabat.SourceSobolevAnalyticSolutions
+import NLS.SequenceSpaces.WeightedActionOpening
+import NLS.ZakharovShabat.SourceSobolevGapOpening
+import NLS.ZakharovShabat.SourceFiniteGapSobolevOpening

@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: Section 18 analytic Sobolev solution maps
+## Current milestone: Sobolev convergence of finite-gap opening
+
+The actual gap-opening curve is now analytic in every native nonnegative
+Sobolev norm. At each real spectral finite-gap source, a concrete sequence
+of finite-gap approximants converges in that norm, including H1.
+
+The selected collapsed gap opens, and every other gap retains its zero/nonzero
+status. The original Hilbert curve and its action identities are preserved
+coefficient by coefficient. A separate construction fixing every other numerical gap length has passed
+independent checks and is queued for integration. The final frequency proof
+uses fixed finite support.
+The [Section 20 audit](coverage/SECTION_20.md) records the precise comparison.
+The remaining semantic audit, exact2014 and G2 qualifications remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,406 build jobs, 7,410
+public examples, and a transitive axiom audit of 42,444 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,814 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Section 18 analytic Sobolev solution maps
 
 Both ordinary and renormalized NLS now have constructed global solution maps
 with analytic dependence on initial data in the full compact-time Sobolev norm,
