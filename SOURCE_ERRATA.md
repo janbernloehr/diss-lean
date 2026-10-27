@@ -1,5 +1,20 @@
 # Source discrepancies
 
+## Lemma 3.4 proof, p. 25: missing inverse-radius dependence
+
+The far and near subsum estimates cannot hold with constants depending
+only on p. At p=2 and n=1, fixed unit signed modes give respectively
+1/(r*(r+1)) and 1/r^2. The displayed right sides reduce to C/sqrt(r+1)
+and C/r. For every C>=0, Lean constructs an admissible radius violating
+each bound. The rendered page confirms the printed radius factors.
+
+[SourceLemma34Proof.lean](NLS/ZakharovShabat/SourceLemma34Proof.lean)
+proves the exact sums, the universal constant refutations and the signed
+coefficient bridge. A unit raw potential at mode -2 and unit second input
+at mode +1 also force the actual original pair operator norm to be at
+least 1/r^2 at lambda=pi+i*r. The main Lemma 3.4 remains proved with its
+r^-2 dependence and constant 64*p^2. See the [Section 3 audit](coverage/SECTION_3.md).
+
 ## Lemma 3.2 proof, p. 24: reversed endpoint inequalities
 
 Both p=1 sentences print lower bounds for the supremum of

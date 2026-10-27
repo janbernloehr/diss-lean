@@ -40,6 +40,43 @@ Validation passes: 8,431 build jobs, 7,466 public examples and a
 transitive axiom audit of 42,820 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Radius dependence in the proof of Lemma 3.4, printed p. 25
+
+[SourceLemma34Proof.lean](../NLS/ZakharovShabat/SourceLemma34Proof.lean)
+defines the literal near and far double sums with the printed real
+half-widths. Their displayed upper bounds cannot have constants depending
+only on p. Fixed scalar sequences at p=2 and n=1 suffice:
+
+| Subsum | Signed potential and input modes | Exact value | Printed upper bound for these unit sequences |
+| --- | --- | --- | --- |
+| Far | potential +1, input +1; only (l,m)=(0,1) contributes | 1/(r*(r+1)) | C/(r+1)^(1/2) |
+| Near | potential +2, input +1; only (l,m)=(1,1) contributes | 1/r^2 | C/r |
+
+For every C>=0, the proofs construct a radius 0<r<=pi/4 where the
+corresponding inequality fails. The near potential tail retains its
+unit norm. These are exact finite-support evaluations of the full sums.
+
+The actual first signed coefficient formula reflects the raw potential
+at -(l+m). The near example therefore uses raw potential mode -2 and
+input second mode +1, both with original pair norm one. At lambda=pi+i*r
+in Vert_1(r), its first output coefficient at -1 has norm 1/r^2. This
+also bounds the original pair operator norm from below. The public
+examples check both subsums and this operator at r=1/4.
+
+The main [Lemma 3.4 theorem](../NLS/ZakharovShabat/SourceLemma3_4.lean)
+remains valid with C_p=64*p^2. Its existing convolution-window proof
+retains r^-2 on both terms. These refutations concern the two intermediate
+proof displays; no optimality of that constant or new general scalar
+subsum upper bounds is asserted.
+
+Lemma34ProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records the precise
+source, declarations and retained qualifications.
+
+Validation passes: 8,432 build jobs, 7,468 public examples and a
+transitive axiom audit of 42,847 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Operator setup
 
 `Operator.lean` defines the full one-derivative coefficient domain and the

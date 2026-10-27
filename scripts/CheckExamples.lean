@@ -69303,3 +69303,37 @@ example : ∃ hz : (1/2 : ℂ) ∉ freeLattice,
   simpa using norm_sourceFreeResolventToL1_one_le_strip (by norm_num) hr hs
 
 end Lemma32EndpointProofChecks
+
+noncomputable section
+namespace Lemma34ProofChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+-- The literal subsums retain the resonant denominator at a permitted radius.
+example : lemma34ProofFarSum (lp.single 2 1 1) (lp.single 2 1 1) 1 (1/4) = 16/5 ∧
+    lemma34ProofNearSum (lp.single 2 2 1) (lp.single 2 1 1) 1 (1/4) = 16 := by
+  constructor
+  · norm_num [lemma34ProofFarSum_single]
+  · norm_num [lemma34ProofNearSum_single]
+
+-- The reflected raw potential and the original unit input produce an actual
+-- output coefficient of norm 16, forcing the original pair operator norm >= 16.
+example : ∃ hz : (Real.pi : ℂ) + (1/4)*Complex.I ∉ freeLattice,
+    ‖lemma34ProofPotential 2‖ = 1 ∧ ‖lemma34ProofInput‖ = 1 ∧
+      ‖(sourceDoubleResolvent (by simp : (2 : ℝ≥0∞) ≠ ⊤) (lemma34ProofPotential 2)
+        ((Real.pi : ℂ) + (1/4)*Complex.I) hz lemma34ProofInput).fst (-1)‖ = 16 ∧
+      16 ≤ ‖sourceDoubleResolvent (by simp : (2 : ℝ≥0∞) ≠ ⊤) (lemma34ProofPotential 2)
+        ((Real.pi : ℂ) + (1/4)*Complex.I) hz‖ := by
+  have hs := lemma34ProofParameter_mem_strip (r := 1/4) (by norm_num)
+  have hr : (1/4 : ℝ) ≤ Real.pi/4 := by linarith [Real.one_le_pi_div_two]
+  have hz : (Real.pi : ℂ) + (1/4)*Complex.I ∉ freeLattice := by
+    simpa using notMem_freeLattice_of_mem_verticalStrip (by norm_num) hr hs
+  refine ⟨hz, lemma34ProofPotential_norm 2, lemma34ProofInput_norm, ?_, ?_⟩
+  · have h := lemma34Proof_near_output_norm (r := 1/4) (by norm_num) (by simpa using hz)
+    norm_num at h
+    exact h
+  · have h := lemma34Proof_near_operator_lower (r := 1/4) (by norm_num) (by simpa using hz)
+    norm_num at h
+    exact h
+
+end Lemma34ProofChecks

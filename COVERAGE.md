@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 3.4 proof, p.25 | [Radius counterexamples](NLS/ZakharovShabat/SourceLemma34Proof.lean), [comparison](coverage/SECTION_3.md) | Both intermediate subsum estimates fail uniformly in r; actual original pair operator requires r^-2 for a unit potential. The main lemma remains proved. |
 | Lemma 3.2 proof, p.24 | [Endpoint proof corrections](NLS/ZakharovShabat/SourceLemma32EndpointProof.lean), [comparison](coverage/SECTION_3.md) | Two printed lower bounds refuted; corrected height and strip upper bounds, with exact original p=1 operator norm at imaginary parameters. |
 | Complete spectral overview, pp.17–21 | [Assertion inventory](coverage/SPECTRAL_OVERVIEW.md), [source record](coverage/source-review-index.json) | 27 ordered groups retain original operators, distributions, domains and quantifiers, two height refutations and the complex finite-gap correction. |
 | Complete introduction, pp.9–16 | [Assertion inventory](coverage/INTRODUCTION.md), [source record](coverage/source-review-index.json) | 37 ordered groups distinguish proof scope, four refuted formulas, source questions and contextual material; precise external identification remains qualified. |

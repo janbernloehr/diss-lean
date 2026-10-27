@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: Correct the endpoint proof bounds in Lemma 3.2
+## Current milestone: Radius dependence in the proof of Lemma 3.4
+
+Two intermediate estimates on printed p. 25 fail uniformly in the radius.
+At p=2, fixed unit Fourier modes make the far subsum 1/(r*(r+1)) and
+the near subsum 1/r^2. Lean proves that every proposed nonnegative
+constant fails at some radius 0<r<=pi/4.
+
+The signed coefficients are linked to the actual original-norm operator.
+For the near witness at lambda=pi+i*r, its norm is at least 1/r^2.
+The main lemma remains valid with the already proved constant 64*p^2;
+its proof uses the appropriate r^-2 bounds.
+See the [Section 3 comparison](coverage/SECTION_3.md) and
+[source discrepancies](SOURCE_ERRATA.md).
+
+Validation: `./scripts/check.sh` passes with 8,432 build jobs, 7,468
+public examples, and a transitive axiom audit of 42,847 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,035 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue the remaining Section 3 source comparisons in order. The full
+assertion inventory, exact cited 2014 construction and Appendix G.2 norm
+interpretation remain unfinished; see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Correct the endpoint proof bounds in Lemma 3.2
 
 The two p=1 reciprocal-supremum inequalities on printed p. 24 have
 reversed signs. New Lean counterexamples refute both lower bounds, while

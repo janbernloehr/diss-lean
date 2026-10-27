@@ -34,9 +34,11 @@ and all earlier scope qualifications. The [complete spectral overview](SPECTRAL_
 now has 27 ordered groups, preserving both unrestricted height refutations
 and the complex finite-gap regularity correction. The complete Section 2
 text has been reconciled with its existing twelve-group comparison and
-three corrections. The next step in Section 3 has proved two additional
-endpoint-inequality corrections in Lemma 3.2's proof. Continue through
-the remaining Section 3 proof assertions, then later sections in order.
+three corrections. Section 3 now also has two endpoint-inequality corrections
+in Lemma 3.2's proof and formal refutations of two radius-dependent
+intermediate estimates in Lemma 3.4's proof. The main Lemma 3.4 remains
+proved. Continue through the remaining Section 3 proof assertions, then
+later sections in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

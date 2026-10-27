@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: two reversed p=1 inequalities in the proof of Lemma 3.2
-now have Lean counterexamples and corrected upper bounds for the actual
-free resolvent. Its exact norm at nonzero imaginary parameters is proved.
-Section 2 was reconciled with its existing full comparison.
+Latest step: two radius-dependent estimates in the proof of Lemma 3.4
+now have formal counterexamples for every proposed uniform constant.
+The actual original pair operator has a matching r^-2 lower bound for
+a unit Fourier-mode potential. The main lemma's proved r^-2 estimate remains valid.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
