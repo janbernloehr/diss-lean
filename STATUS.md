@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: actual classical signed spectra and period-two equality
+## Current milestone: physical endpoint labels and exact signed spectra
+
+The intrinsic physical endpoint labels now enumerate the actual
+bounded-inverse spectrum of the physical period-two operator. For every
+complex physical L2 potential, the periodic and antiperiodic spectra are
+the distinct physical monodromy trace levels two and minus two.
+
+For real-type potentials, both endpoint sequences are real and consecutive
+pairs are strictly separated. Even indices exhaust the actual periodic
+spectrum; odd indices exhaust the actual antiperiodic spectrum. The
+statements include central indices and collapsed gaps.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+exact physical comparison. Full physical Jordan-chain multiplicity
+comparison, the remaining source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,370 build jobs, 7,343
+public examples, and a transitive axiom audit of 42,118 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,709 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: actual classical signed spectra and period-two equality
 
 The spectrum of the original period-two operator is now proved to be
 exactly the union of the periodic and antiperiodic classical unit-interval

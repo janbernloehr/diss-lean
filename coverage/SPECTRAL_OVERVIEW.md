@@ -1312,3 +1312,30 @@ is the conjugate of the original source inverse. Thus the final union
 equality holds between independently defined spectra of actual physical
 operators on both sides, and also with the literal signed ODE eigenvalue sets.
 Full dissertation semantic completion, exact2014 and G2 remain separate.
+
+## Physical endpoint labels enumerate the actual signed spectra
+
+The endpoint sequences in the opening spectral overview on printed p.17
+are now connected explicitly to the actual physical operator spectra.
+[`ClassicalSignedDiscriminant.lean`](../NLS/ZakharovShabat/ClassicalSignedDiscriminant.lean)
+proves, for every complex physical L2 potential, that the independently
+defined periodic spectrum is exactly the physical monodromy trace level
+two, and the antiperiodic spectrum is exactly level minus two. Consequently
+the two spectra are disjoint. These same trace criteria characterize
+nonzero solutions of the original ODE on the full classical signed H1
+domains. The independently defined physical period-two spectrum is
+exactly the zero set of the physical discriminant squared minus four.
+The existing intrinsic physical endpoint labels therefore exhaust that
+actual operator spectrum, retaining their lexicographic ordering, l2
+displacements, and physical analytic zero-order specification.
+
+[`ClassicalSignedEndpointLabels.lean`](../NLS/ZakharovShabat/ClassicalSignedEndpointLabels.lean)
+proves that real-type physical potentials give real endpoint labels,
+non-strict order within each pair, and strict separation of consecutive
+pairs. Every endpoint has its exact index trace level, including central
+indices and collapsed gaps. Even indices exhaust the actual periodic
+spectrum and odd indices exhaust the actual antiperiodic spectrum.
+
+The comparison of full physical Jordan-chain dimensions with the existing
+algebraic multiplicities remains separate. Full dissertation semantic
+completion, exact2014 and G2 remain separate questions.

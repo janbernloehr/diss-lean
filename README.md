@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual classical periodic and antiperiodic spectra
-have compact resolvents and are exactly the original ODE eigenvalue sets.
-Their union equals the actual physical period-two spectrum for every physical
-L2 potential. Each signed spectrum is closed and discrete.
+Latest step: the physical endpoint labels enumerate the actual period-two
+operator spectrum. The periodic and antiperiodic spectra are the physical
+trace levels plus/minus two; at real type, even/odd endpoint indices give
+exactly the respective spectra, with strict separation of adjacent pairs.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

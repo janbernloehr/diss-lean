@@ -67810,3 +67810,46 @@ example (φ : CoeffPair 2) (z : ℂ) : IsCompactOperator (physicalPeriodicResolv
 
 end ClassicalSignedSpectrumExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalEndpointSpectraExamples
+
+example (u : IntervalPairL2) :
+    PhysicalPeriodicEndpointData u (physicalPeriodicLeft u) (physicalPeriodicRight u) ∧
+    ∀ z : ℂ, z ∈ physicalPeriodicSpectrum (periodOnePair (sourcePhysicalL2Equiv.symm u)) ↔
+      ∃ n : ℤ, physicalPeriodicLeft u n = z ∨ physicalPeriodicRight u n = z :=
+  ⟨physicalPeriodicEndpoints_spec u,physicalPeriodicSpectrum_iff_endpoint u⟩
+
+example (u : IntervalPairL2) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u 0 ↔ l2Discriminant u z = 2 :=
+  mem_classicalPeriodicSpectrum_iff_discriminant u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u 1 ↔ l2Discriminant u z = -2 :=
+  mem_classicalAntiperiodicSpectrum_iff_discriminant u z
+
+example (u : IntervalPairL2) :
+    Disjoint (classicalSignedSpectrum u 0) (classicalSignedSpectrum u 1) :=
+  disjoint_classicalSignedSpectra u
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (n : ℤ) :
+    (physicalPeriodicLeft u n).im = 0 ∧ (physicalPeriodicRight u n).im = 0 :=
+  physicalPeriodicEndpoints_im_eq_zero_of_realType u hu n
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (n : ℤ) :
+    (physicalPeriodicLeft u n).re ≤ (physicalPeriodicRight u n).re ∧
+      (physicalPeriodicRight u n).re < (physicalPeriodicLeft u (n+1)).re :=
+  physicalPeriodicEndpoints_real_order u hu n
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u 0 ↔ ∃ n : ℤ, n % 2 = 0 ∧
+      (physicalPeriodicLeft u n = z ∨ physicalPeriodicRight u n = z) :=
+  classicalPeriodicSpectrum_iff_even_endpoint u hu z
+
+example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative u)) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u 1 ↔ ∃ n : ℤ, n % 2 = 1 ∧
+      (physicalPeriodicLeft u n = z ∨ physicalPeriodicRight u n = z) :=
+  classicalAntiperiodicSpectrum_iff_odd_endpoint u hu z
+
+end PhysicalEndpointSpectraExamples
+end NLS.ZakharovShabat

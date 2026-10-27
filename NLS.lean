@@ -4675,3 +4675,5 @@ import NLS.ZakharovShabat.UnitParityResolvent
 import NLS.ZakharovShabat.ClassicalSignedSpectrum
 import NLS.ZakharovShabat.ClassicalSignedEigenvalues
 import NLS.ZakharovShabat.PhysicalPeriodicSpectrum
+import NLS.ZakharovShabat.ClassicalSignedDiscriminant
+import NLS.ZakharovShabat.ClassicalSignedEndpointLabels
