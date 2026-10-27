@@ -310,6 +310,25 @@ warnings are unchanged; the new module and examples introduce none.
 
 ## Operator setup
 
+The remaining-scope comparison also connects the opening dense-domain, analytic
+approximation and arbitrarily small relative-bound assertions to their original-norm
+proofs. Relative boundedness is proved using resolvent decay and closedness
+using a bounded inverse; these establish the assertions by different arguments
+from the printed perturbation sketch. Compact-resolvent discreteness is traced
+through the reciprocal spectral transformation and finite bounded spectral
+parts. The comparison preserves the exact strip boundaries and nonzero-imaginary-part
+interpretation of the height region. It retains the restricted exponent range
+for the printed Proposition 3.1 height, the missing Lemma 3.2 pair factor,
+the uniform constant 64*p^2 in Lemma 3.4 and the valid p=1 and second-component
+modifications. The later radius refutations remain separate.
+
+Section3RemainingScopeSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records 8 focused groups,
+32 reviewed module hashes and 60 resolved declaration references.
+This comparison preserves the earlier qualifications and does not certify
+every assertion in Section 3. Its Lean sources match the full validation
+at `cb7317a`; this documentation update does not rerun Lean.
+
 `Operator.lean` defines the full one-derivative coefficient domain and the
 Zakharov–Shabat operator for every finite Banach exponent.
 `sourceUnboundedOperator_dense_domain` and `sourceUnboundedOperator_isClosed`

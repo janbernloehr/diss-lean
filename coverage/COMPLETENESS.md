@@ -64,6 +64,11 @@ qualification on the printed norm-dependent height.
 Lemma 3.7 and its intrinsic trace formulas, actual domain lifts, local
 analytic range transport and scalar analyticity now have four focused
 proof comparisons, including repeated roots and the exact factor one half.
+Eight further Section 3 passage groups now reconcile the opening operator
+setup, compact-resolvent discreteness, exact sufficient regions, quantified
+Lemma 3.4 and endpoint modifications, retaining all formal refutations.
+Relative boundedness and closedness use alternative proofs of the source
+assertions; the cited external perturbation argument is not independently audited.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

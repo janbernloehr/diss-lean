@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the Lemma 3.7 proof comparison now records intrinsic
-contour traces, actual domain lifts and local analytic range transport,
-including repeated eigenvalues and the exact half-squared-gap formula.
+Latest step: eight further Section 3 passage groups now have explicit
+source comparisons, including full-domain discreteness, exact sufficient
+regions and the retained norm, exponent and radius corrections.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

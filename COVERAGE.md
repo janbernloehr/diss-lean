@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Section 3 remaining scope, pp.23–25 | [Full operator](NLS/ZakharovShabat/SourceUnboundedOperator.lean), [resolvent](NLS/ZakharovShabat/SourceResolvent.lean), [comparison](coverage/SECTION_3.md) | Eight groups distinguish proved clauses, explicit interpretations and retained formal refutations in the original norms and full domains. |
 | Lemma 3.7 trace proof, p.27 | [Source theorem](NLS/ZakharovShabat/SourceLemma3_7.lean), [analytic reduction](NLS/ZakharovShabat/SourceContourReduction.lean), [comparison](coverage/SECTION_3.md) | Four focused groups retain actual domain action, intrinsic and transported traces, local range equivalence and common-neighborhood scalar analyticity, including collisions. |
 | Rank and reality proof, p.27 | [Source counts](NLS/ZakharovShabat/SourcePeriodicCounting.lean), [symmetry proof](NLS/ZakharovShabat/RealType.lean), [comparison](coverage/SECTION_3.md) | Four focused groups cover algebraic counts, signed parity, exact spectral exhaustion and reality at all finite exponents; height-N counts retain the distinct printed-height qualification. |
 | Equations (1.4)–(1.5) and Lemma 3.6, p.26 | [Projection package](NLS/ZakharovShabat/SourceEquation1_4.lean), [restrictions](NLS/ZakharovShabat/SourceEquation1_5.lean), [proof comparison](coverage/SECTION_3.md) | Four focused groups retain actual integrals, original norms and domains, signed parity and the native period-one topology. |

@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: Lemma 3.7 trace and analytic reduction comparison
+## Current milestone: Section 3 remaining scope comparison
+
+Eight further passage groups now compare the full operator setup, compact-resolvent
+discreteness, exact strip and Neumann regions, quantified Lemma 3.4 and
+endpoint modifications. They retain the formal refutations of the unrestricted
+printed height, missing pair factor and intermediate radius estimates.
+The [Section 3 comparison](coverage/SECTION_3.md) distinguishes valid clauses
+from those refuted bounds and records the alternative proofs of relative
+boundedness and closedness.
+
+Validation: source-review integrity, declaration references and documentation
+links pass. The Lean sources and dependency locks are byte-identical to
+the full check at `cb7317a`: 8,440 build jobs, 7,498 examples and the
+42,983-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Reconcile the complete Section 3 text with its ordered assertion inventory,
+then continue through Section 4 in source order.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Lemma 3.7 trace and analytic reduction comparison
 
 Four focused source groups now compare Lemma 3.7 and its proof:
 the intrinsic rank-two trace identities, actual domain lifts, analytic
