@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T07:18:22.741569+00:00",
-  "base_commit": "14908b2bdb4fa73b24b0025365dbc449a271ba10",
+  "published_utc": "2026-10-27T07:54:17.401901+00:00",
+  "base_commit": "abf0b70ab6fb61eea42d24f987b7ad8a09ea1645",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 53,
-    "module_hash_checks": 770,
-    "distinct_modules": 711
+    "review_records": 54,
+    "module_hash_checks": 774,
+    "distinct_modules": 714
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "fa30173af216d41fef20acc94030be8260600874",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceActionFourierTaylor and its five public examples.",
+    "base_commit": "abf0b70ab6fb61eea42d24f987b7ad8a09ea1645",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativePeriodicOperator, NativePeriodicHilbert and five public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8413,
-    "public_examples": 7429,
-    "transitive_NLS_declarations": 42514,
+    "build_jobs": 8415,
+    "public_examples": 7434,
+    "transitive_NLS_declarations": 42589,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4690,
-      "sha256": "98c418708c71d75a88a53ee9b30da253d5d51641dcca6f0d89c54f98a4f09cf1"
+      "files": 4692,
+      "sha256": "0bbc45dcecba8de4490c9f27f96a20668d2616d03c838e444d89306063ebf423"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -10575,6 +10575,108 @@
       },
       "qualification": "All thirty-five listed modules were read completely in this comparison. The inspected chain retains the original period-one potential, Hermitian whole-line L2 space, actual closure and adjoint domains, independently defined spectrum, original canonical endpoints, actual Cayley spectral measures and all-vector absolute continuity. It is not an independent re-proof of every transitive dependency or a complete comparison of the rest of the spectral chapter. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
       "source_record_sha256": "4a3f11a812f30612158094349d17c18d792a45c4e471134fb0f2258e00698df4"
+    },
+    "SpectralOverviewNativePeriodicSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T07:54:17.401901+00:00",
+      "base_commit": "abf0b70ab6fb61eea42d24f987b7ad8a09ea1645",
+      "source_lines": [
+        854,
+        863
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            858,
+            863
+          ],
+          "requirement": "The period-two operator acts on original Fourier-Lebesgue distributions with the entire one-derivative domain.",
+          "finding": "NativePeriodic.Space and Domain contain actual continuous functionals on smooth period-two tests. Their WithLp pair norms are the exact finite component-sum Fourier norms, and both coefficient maps are surjective linear isometries. The domain inclusion preserves the underlying distribution in both components. All finite Banach exponents, including one, and arbitrary period-two distribution potentials are admitted.",
+          "declarations": [
+            "NativePeriodic.Space",
+            "NativePeriodic.Domain",
+            "NativePeriodic.coefficients",
+            "NativePeriodic.domainCoefficients",
+            "NativePeriodic.norm_rpow_eq_tsum",
+            "NativePeriodic.inclusion_fst_val",
+            "NativePeriodic.inclusion_snd_val"
+          ]
+        },
+        {
+          "source_lines": [
+            860,
+            863
+          ],
+          "requirement": "The constructed operator is the original signed differential expression (1.1).",
+          "finding": "Equality holds as original distributions: the first component is i times the distributional derivative plus the first potential times the second domain component; the second has the opposite derivative sign and the opposite off-diagonal factor. The Sobolev-to-Wiener inclusion preserves the domain distribution, and the product has the absolutely convergent coefficient convolution. The proofs retain the period-two pi multiplier and all signed indices, with no smoothness or finite-support assumption.",
+          "declarations": [
+            "NativePeriodic.operator_fst_val",
+            "NativePeriodic.operator_snd_val",
+            "NativePeriodic.operator_fst_coefficient",
+            "NativePeriodic.operator_snd_coefficient",
+            "PeriodicFourierLebesgue.sobolevToWiener_val"
+          ]
+        },
+        {
+          "source_lines": [
+            860,
+            863
+          ],
+          "requirement": "The native unbounded operator is closed, and its spectrum extends the established coefficient spectral theory.",
+          "finding": "The partial linear map has exactly the image of the full one-derivative domain, and that image is dense. An actual bounded two-sided inverse into the stronger one-derivative Banach space identifies its graph with a closed equalizer in two copies of the base space. Thus base-norm convergence of inputs and outputs suffices; domain-norm convergence is not assumed. The native resolvent set is independently defined by those two inverse identities, equals the source resolvent set in both directions, and yields a compact base-space resolvent and discrete spectrum at every finite Banach exponent.",
+          "declarations": [
+            "NativePeriodic.mem_unboundedOperator_domain",
+            "NativePeriodic.unboundedOperator_dense_domain",
+            "NativePeriodic.unboundedOperator_isClosed",
+            "NativePeriodic.exists_domain_of_tendsto",
+            "NativePeriodic.resolventSet",
+            "NativePeriodic.resolventSet_eq",
+            "NativePeriodic.isCompactOperator_resolvent",
+            "NativePeriodic.discreteTopology_spectrum"
+          ]
+        },
+        {
+          "source_lines": [
+            854,
+            858
+          ],
+          "requirement": "At exponent two the period-two spectrum agrees with the original periodic and antiperiodic Hilbert spectra.",
+          "finding": "The native Hilbert realization is exactly the normalized physical L2 isometry, and both physical components induce the original distributions. It intertwines the entire native and physical operator graphs in both directions, retaining every H1 domain vector. Its bounded-inverse spectrum agrees with the physical spectrum. At an original unit-interval L2 potential, the period-one coefficient extension therefore recovers the union of the two actual classical signed spectra.",
+          "declarations": [
+            "NativePeriodic.hilbertRealization_fst_represents",
+            "NativePeriodic.hilbertRealization_snd_represents",
+            "NativePeriodic.graph_hilbert_iff",
+            "NativePeriodic.spectrum_eq_physical",
+            "NativePeriodic.spectrum_eq_classicalSigned_union"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewSourceComparison-2026-10-21"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          18
+        ],
+        "pdf_pages": [
+          18
+        ],
+        "inspection": "Reused the previously inspected rendering with unchanged source and image hashes; compared extraction854-863 with the operator and Hilbert compatibility proofs.",
+        "images": {
+          "SpectralOverviewComplexCurrentReview-018.png": "c6af5c91e50956f88b703ccd60ae55265400cf633089bc431e2e9596c9ccafc6"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/NativePeriodicOperator.lean": "bf678315551e02bb10aa6066c685705d893f363962c14bf772ae707d99637770",
+        "NLS/ZakharovShabat/NativePeriodicHilbert.lean": "0df6c020522fdacccbb838740165267b0172382f459274b7677b0e06174b3de0",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/Fourier/PeriodicSobolevEmbedding.lean": "27dcffa51b9228972a8520c78d2b4de6c0a6f97f0510a42b05cb62a7001ac2ad"
+      },
+      "qualification": "The four listed modules were read completely. The native spaces use the previously inspected original-distribution Fourier-Lebesgue definitions, and Hilbert spectral identification uses the established physical operator interfaces. This is not an independent re-proof of every transitive dependency. The general period-one to period-two extension on the original distribution carrier in line862 remains a separate comparison; the present operator construction applies to every potential already on the period-two carrier, and the physical extension is identified here at p=2. The nonmeasure assertion in lines851-853 refers to the earlier Fourier-background comparison. Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualification are unchanged; no chapter-wide completeness claim is made.",
+      "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2"
     }
   }
 }

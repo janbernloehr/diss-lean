@@ -4,6 +4,41 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## The operator on original periodic distributions, printed p. 18
+
+[NativePeriodicOperator](../NLS/ZakharovShabat/NativePeriodicOperator.lean)
+constructs the operator directly on pairs of original period-two distributions.
+For every finite p>=1, its domain is exactly the full FL^{1,p} space, its
+inclusion preserves the distributions, and its norm is the original finite
+component-sum norm. Both signed differential expressions are proved as
+distribution identities, using the coefficient-convolution product.
+
+The partial operator is densely defined and closed in the base FLp topology.
+Its independently defined bounded two-sided inverse into FL^{1,p} identifies
+the full resolvent set with the coefficient-space one; the base resolvent is
+compact and the spectrum is discrete. No smallness, smoothness or finite-support
+condition is imposed on the potential.
+
+[NativePeriodicHilbert](../NLS/ZakharovShabat/NativePeriodicHilbert.lean)
+identifies the entire graph with the original physical L2 operator at p=2.
+Both physical components represent the same distributions. For original
+period-one L2 potentials, the spectrum is the union of the actual classical
+periodic and antiperiodic spectra on the unit interval.
+
+Five public examples check unequal free-mode amplitudes and signed indices,
+an arbitrary distribution potential on a constant domain input, graph limits
+at p=1, a free resolvent at p=3, and the classical signed spectral union.
+Validation passes: 8,415 build jobs, 7,434 public examples and a
+transitive axiom audit of 42,589 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
+The comparison records four assertion groups against four complete modules as
+`SpectralOverviewNativePeriodicSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json).
+The native period-one to period-two distribution extension in source line 862 remains
+to be compared separately. This step does not change the earlier Theorem1.1
+corrections or the precise2014 and G2 qualifications.
+
 ## Renewed comparison of periodic enumeration, printed p. 17
 
 The opening operator, enumeration, real ordering and eigenfunction-parity

@@ -68631,3 +68631,67 @@ example {W₀ B W : Set (CoeffPair 3)}
 end IntroductionActionFourierTaylorExamples
 
 end IntroductionActionFourierTaylorChecks
+
+
+namespace NativePeriodicChecks
+open NLS NLS.ZakharovShabat NLS.Fourier SmoothPeriodicTest
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Opposite derivative signs, unequal amplitudes, and both signed Fourier indices.
+example :
+    let f := NativePeriodic.domainCoefficients 3 |>.symm
+      (WithLp.toLp 3 (scalarMode (-2) 3, scalarMode 3 5))
+    (NativePeriodic.operator (by simp) 0 f).fst.val (mode 2) = 6 * (Real.pi : ℂ) ∧
+      (NativePeriodic.operator (by simp) 0 f).snd.val (mode (-3)) = 15 * (Real.pi : ℂ) := by
+  dsimp only
+  constructor
+  · rw [show (2 : ℤ) = -(-2) by omega, ← NativePeriodic.coefficients_fst,
+      NativePeriodic.coefficients_operator, map_zero, LinearIsometryEquiv.apply_symm_apply]
+    change (operator (p := 3) (by simp) 0 (scalarMode (-2) 3, scalarMode 3 5)).1 (-2) = _
+    rw [operator_fst_apply]
+    norm_num [scalarMode_apply]
+    ring
+  · rw [← NativePeriodic.coefficients_snd, NativePeriodic.coefficients_operator,
+      map_zero, LinearIsometryEquiv.apply_symm_apply]
+    change (operator (p := 3) (by simp) 0 (scalarMode (-2) 3, scalarMode 3 5)).2 3 = _
+    rw [operator_snd_apply]
+    norm_num [scalarMode_apply]
+    ring
+
+-- An arbitrary original distribution is recovered by the off-diagonal constant input.
+example (φ : NativePeriodic.Space 3) :
+    (NativePeriodic.operator (by simp) φ ((NativePeriodic.domainCoefficients 3).symm
+      (WithLp.toLp 3 (scalarMode 0 1, 0)))).snd.val = φ.snd.val := by
+  apply Distribution.ext_coefficients
+  intro n
+  rw [← NativePeriodic.coefficients_snd, NativePeriodic.coefficients_operator,
+    LinearIsometryEquiv.apply_symm_apply]
+  change (operator (by simp) (CoeffPair.toMax 3 (NativePeriodic.coefficients 3 φ))
+    (scalarMode 0 1, 0)).2 n = _
+  rw [operator_snd_apply]
+  simp [scalarMode_apply, mul_ite, NativePeriodic.coefficients_snd]
+
+-- At the Banach endpoint, graph limits need only converge in the base norm.
+example (φ : NativePeriodic.Space 1) (f : ℕ → NativePeriodic.Domain 1)
+    (x y : NativePeriodic.Space 1)
+    (hx : Filter.Tendsto (fun i => NativePeriodic.inclusion (f i)) Filter.atTop (nhds x))
+    (hy : Filter.Tendsto (fun i => NativePeriodic.operator (by simp) φ (f i)) Filter.atTop (nhds y)) :
+    ∃ g : NativePeriodic.Domain 1,
+      NativePeriodic.inclusion g = x ∧ NativePeriodic.operator (by simp) φ g = y :=
+  NativePeriodic.exists_domain_of_tendsto (by simp) φ f hx hy
+
+-- The full native inverse exists at i for the free operator, at exponent three.
+example : Complex.I ∈ NativePeriodic.resolventSet (p := 3) (by simp) 0 := by
+  rw [NativePeriodic.resolventSet_eq, map_zero]
+  exact mem_sourceResolventSet_zero_of_notMem (by simp) _
+    (notMem_freeLattice_of_im_ne_zero (by simp))
+
+-- Unit-interval physical potentials recover both signed classical spectra.
+example (u : IntervalPairL2) :
+    NativePeriodic.spectrum (by simp)
+      ((NativePeriodic.coefficients 2).symm (periodOnePair (sourcePhysicalL2Equiv.symm u))) =
+      classicalSignedSpectrum u 0 ∪ classicalSignedSpectrum u 1 :=
+  NativePeriodic.spectrum_eq_classicalSigned_union u
+
+end NativePeriodicChecks

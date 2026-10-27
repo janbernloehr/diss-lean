@@ -4654,6 +4654,8 @@ import NLS.ZakharovShabat.DiscriminantRootParity
 import NLS.ZakharovShabat.SourceCanonicalEigenvectorParity
 import NLS.FunctionalAnalysis.ConjugatePencilSelfAdjoint
 import NLS.ZakharovShabat.SourceUnboundedOperator
+import NLS.ZakharovShabat.NativePeriodicOperator
+import NLS.ZakharovShabat.NativePeriodicHilbert
 import NLS.ZakharovShabat.SourcePeriodicSelfAdjoint
 import NLS.ZakharovShabat.PhysicalPeriodicSelfAdjoint
 import NLS.ZakharovShabat.PeriodicSelfAdjointRealType

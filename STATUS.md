@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: The leading Fourier term of the original actions
+## Current milestone: Closed operator on original periodic distributions
+
+The operator now acts directly on original period-two Fourier-Lebesgue
+distributions, with the exact finite component-sum norm and full one-derivative
+domain. The signed distributional formula, dense domain, closed graph,
+compact resolvent and discrete spectrum are proved for every finite p>=1.
+At p=2, the entire graph and spectrum agree with the original physical operator;
+period-one L2 potentials recover both classical boundary signs. See the
+[spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
+
+Five public examples cover signed modes, arbitrary distribution potentials,
+base-norm graph limits at p=1, the free resolvent and the Hilbert spectral union.
+Validation: `./scripts/check.sh` passes with 8,415 build jobs, 7,434
+public examples, and a transitive axiom audit of 42,589 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,862 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Next: compare the period-one to period-two extension on original distributions
+and reconcile the remaining overview assertions. The precise2014 construction,
+G.2 norm interpretation and broader source assessment remain unfinished.
+
+## Previous milestone: The leading Fourier term of the original actions
 
 The introductory action asymptotic is now proved in the full half-exponent
 sequence norm for every finite p>=2. Its quadratic term keeps the signed
