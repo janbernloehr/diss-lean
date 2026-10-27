@@ -30,7 +30,9 @@ gap restrictions, renormalization, solution sense and norms, together with
 the unresolved external-construction qualification. Novelty and historical
 priority are outside that assessment. The introduction now also has a
 37-group ordered assertion inventory, preserving its four refuted formulas
-and all earlier scope qualifications. Continue at the spectral overview,
+and all earlier scope qualifications. The [complete spectral overview](SPECTRAL_OVERVIEW.md)
+now has 27 ordered groups, preserving both unrestricted height refutations
+and the complex finite-gap regularity correction. Continue with Section 2,
 then through the remaining source assertions in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

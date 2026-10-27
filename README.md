@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the complete introduction now has an ordered assertion
-inventory linking its mathematics to the existing proofs and preserving
-source errors, domain restrictions and unresolved identifications.
-Both abstracts were assessed in the preceding step.
-See the [introduction inventory](coverage/INTRODUCTION.md) and
+Latest step: all substantive assertions in the spectral overview now have
+an ordered inventory linking their exact scope to existing proofs and
+retaining the recorded source corrections. The introduction and both
+abstracts have their own consolidated assessments.
+See the [spectral overview inventory](coverage/SPECTRAL_OVERVIEW.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

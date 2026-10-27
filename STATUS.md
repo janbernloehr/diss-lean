@@ -1,6 +1,26 @@
 # Implementation status
 
-## Current milestone: Complete introduction assertion inventory
+## Current milestone: Complete spectral overview assertion inventory
+
+All substantive assertions in Section 1 now appear in 27 ordered groups,
+including the named statements and their surrounding definitions and
+explanations. The inventory reuses the precise physical and distributional
+proof comparisons and preserves the two unrestricted height refutations
+and the complex finite-gap regularity counterexample.
+
+See the [spectral overview inventory](coverage/SPECTRAL_OVERVIEW.md) and
+[completion assessment](coverage/COMPLETENESS.md). Continue with Section 2
+and subsequent source assertions in order. The exact cited 2014 construction
+and Appendix G.2 norm interpretation remain unresolved.
+
+Validation: source-review integrity and all 3,009 local file links
+across 45 documents pass. The Lean source and dependency-lock snapshot
+is unchanged from the preceding verified commit: 8,430 build jobs,
+7,464 public examples, 42,809 audited NLS declarations and 21 existing
+warnings. That successful full check is reused; no Lean check was rerun
+for this documentation-only milestone.
+
+## Previous milestone: Complete introduction assertion inventory
 
 The full introduction now has 37 ordered assertion groups classified
 from the source text. Mathematical entries reuse qualified proof

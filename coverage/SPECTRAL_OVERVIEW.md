@@ -4,6 +4,41 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Complete Section 1 assertion inventory
+
+The entire overview on printed pp. 17–21 now has 27 ordered assertion
+groups linked to the qualified comparisons below. It retains the actual
+operators and domains, spectral multiplicities, original distributions,
+local uniformity and real-type restrictions.
+
+| Passage | Assessment retained by the inventory |
+| --- | --- |
+| Periodic and whole-line Hilbert theory | Separate signed domains, exhaustive physical multiplicities, all-index parity, and pure absolute continuity for the actual real L2 whole-line operator. |
+| Rough periodic operator | Actual nonmeasure distributions, norm-preserving period doubling and the full closed one-derivative operator for finite p>=1. Numbered estimates retain p>1. |
+| Theorems 1.1 and 1.4 | Both unrestricted printed heights are refuted. The periodic height is proved for 1<p<=4; the boundary height is proved at p=2. |
+| Periodic and boundary asymptotics | Global lexicographic labels and locally uniform full lp displacements, independently of the false unrestricted heights. |
+| AKNS and boundary problems | Exact vector normalization, full physical domains, real complexification, indexed interlacing and the common reflected potential. |
+| Finite-gap potentials | Actual spectral gap vanishing, original-norm real density and analytic representatives. Unrestricted complex regularity is refuted. |
+| Related work | External spectral analogies, KdV results and historical priority remain contextual attributions. |
+
+SpectralOverviewAssertionInventorySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) contains all source
+locations, exact earlier evidence references and resolved declarations.
+Six modules were reread in full for the nonmeasure, periodic-asymptotic
+and real-complexification assertions; the other evidence reuses the
+explicit earlier comparisons with verified hashes.
+
+The plus-or-minus boundary-domain shorthand means two separate operators,
+and the final variable in the printed Neumann domain is corrected locally.
+These interpretations and the three refuted assertions remain distinct.
+This inventory covers Section 1; it does not certify the whole chapter
+or dissertation. See the [completion assessment](COMPLETENESS.md).
+
+The implementation checkpoints later in this file record what was
+unfinished at each earlier stage. Their pending-work sentences are
+historical; the current qualified assessments are the inventory and
+focused comparisons above those checkpoints.
+
 ## Finite-gap approximation on original distributions, printed p. 21
 
 [NativeWeightedFiniteGap](../NLS/ZakharovShabat/NativeWeightedFiniteGap.lean)

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T13:20:23.091042+00:00",
-  "base_commit": "b2a3ed62ffcf11b24e46c23fbb0057522286fd2c",
+  "published_utc": "2026-10-27T13:29:51.547690+00:00",
+  "base_commit": "fcaf5d9ef5135a04a2a3def5bebb3f8d5398de46",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,8 +18,8 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 68,
-    "module_hash_checks": 1004,
+    "review_records": 69,
+    "module_hash_checks": 1010,
     "distinct_modules": 806
   },
   "unresolved": [
@@ -14806,6 +14806,1380 @@
       },
       "qualification": "This is a consolidated introduction assertion inventory, explicitly reusing prior qualified mathematical comparisons and their unchanged module hashes. Both newly hash-listed modules were read completely to settle the informal smoothing passage. It is not an independent rereview of all dependencies, a certification of physical modelling, historical priority or external KdV/Nekhoroshev/I-method claims, or a full-dissertation completeness claim. Four printed formula errors retain actual-source refutations and separate corrections. The exact cited2014 construction remains unresolved; source global questions are not claimed solved or still open today. The source-wide assessment and AppendixG2 norm interpretation remain unfinished.",
       "source_record_sha256": "18475898ed559531656446ed11bc9a411ee2bcf69ea47808f909c258abb970fb"
+    },
+    "SpectralOverviewAssertionInventorySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "fcaf5d9ef5135a04a2a3def5bebb3f8d5398de46",
+      "updated_utc": "2026-10-27T13:29:51.547690+00:00",
+      "source_lines": [
+        [
+          755,
+          1085
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "spectral-01",
+          "source_lines": [
+            755,
+            766
+          ],
+          "requirement": "Physical Hilbert operator and signed domains",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "The actual signed differential expression acts on full interval H1 domains. Periodic and antiperiodic conditions define two separate linear operators; their spectra are united. The printed plus-or-minus domain shorthand is not treated as one linear domain.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                755,
+                766
+              ]
+            }
+          ],
+          "declarations": [
+            "classicalSignedEigenvalues_union_eq_periodic",
+            "classicalSignedSpectrum_eq_eigenvalues",
+            "operator_eq_smul_iff_physical",
+            "physicalOperator",
+            "physical_operator_realization"
+          ]
+        },
+        {
+          "id": "spectral-02",
+          "source_lines": [
+            768,
+            781
+          ],
+          "requirement": "Complete complex periodic enumeration and multiplicities",
+          "classification": "proved_with_scope",
+          "finding": "Globally lexicographic endpoint pairs exhaust the independently defined physical spectrum with full algebraic multiplicities and both l2 displacements. All central and negative indices are retained.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                768,
+                781
+              ]
+            },
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                803,
+                810,
+                820,
+                824
+              ]
+            }
+          ],
+          "declarations": [
+            "PhysicalPeriodicEndpointData.unique",
+            "classicalSignedRootSpaceTop_eq_map",
+            "exists_uniform_physicalPeriodicMidpointGap",
+            "finiteDimensional_physicalPeriodicRootSpaceTop",
+            "linearPMapRootSpaceTop",
+            "pencilRootSpace",
+            "physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum",
+            "physicalPeriodicEndpoints_count_multiplicity",
+            "physicalPeriodicEndpoints_eq_source",
+            "physicalPeriodicGap_eq_zero_iff",
+            "physicalPeriodicMidpointGap_memℓ2",
+            "physicalPeriodicRootSpaceTop_eq_map",
+            "physicalPeriodicSpectrum_iff_endpoint"
+          ]
+        },
+        {
+          "id": "spectral-03",
+          "source_lines": [
+            782,
+            786
+          ],
+          "requirement": "Real type, self-adjointness and strict pair separation",
+          "classification": "proved_with_scope",
+          "finding": "Actual-domain self-adjointness is equivalent to real type. The original endpoints are real, ordered within each pair and strictly separated between adjacent pairs, including collapsed pairs.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                782,
+                786
+              ]
+            },
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                821,
+                822
+              ]
+            }
+          ],
+          "declarations": [
+            "I_mem_classicalSignedEigenvalues_union_constant",
+            "I_mem_physicalPeriodicSpectrum_constant",
+            "canonicalDiscriminant_canonicalPeriodicSlot_of_realType",
+            "canonicalPeriodicGaps_disjoint",
+            "canonicalPeriodicRight_re_lt_next_left",
+            "classicalSignedOperator_constant_one_neg_one_not_selfAdjoint",
+            "classicalSignedOperator_domain_iff",
+            "classicalSignedOperator_isSelfAdjoint_iff",
+            "physicalPeriodicEndpoints_im_eq_zero_of_realType",
+            "physicalPeriodicEndpoints_real_order",
+            "sourcePhysicalPeriodicOperator_isSelfAdjoint_iff"
+          ]
+        },
+        {
+          "id": "spectral-04",
+          "source_lines": [
+            789,
+            790
+          ],
+          "requirement": "Parity of every real endpoint eigenfunction",
+          "classification": "proved_with_scope",
+          "finding": "Every full-domain eigenfunction has the signed index parity in both physical components, at all indices and including collapsed gaps. The statement is not restricted to selected eigenvectors or high modes.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                789,
+                790
+              ]
+            }
+          ],
+          "declarations": [
+            "classicalAntiperiodicSpectrum_iff_odd_endpoint",
+            "classicalPeriodicSpectrum_iff_even_endpoint",
+            "periodicRootSpaceTop_le_parity_of_discriminant_level",
+            "physicalEvenEndpoints_count_classicalPeriodicMultiplicity",
+            "physicalOddEndpoints_count_classicalAntiperiodicMultiplicity",
+            "sourceCanonicalEndpoint_eigenfunction_antiperiodic",
+            "sourceCanonicalEndpoint_eigenfunction_periodic",
+            "sourceCanonicalEndpoint_eigenfunction_unit_translation"
+          ]
+        },
+        {
+          "id": "spectral-05",
+          "source_lines": [
+            792,
+            800
+          ],
+          "requirement": "Whole-line spectrum and pure absolute continuity",
+          "classification": "proved_with_scope",
+          "finding": "For every original real-type L2 potential, the actual self-adjoint graph closure has spectrum equal to the complement of all original open gaps. The actual spectral measures are absolutely continuous for every Hilbert vector, including endpoints and collapsed gaps. No arbitrary complex-potential or rougher-distribution whole-line assertion is added.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewWholeLineSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                792,
+                794
+              ]
+            },
+            {
+              "review": "SpectralOverviewWholeLineSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                792,
+                810
+              ]
+            },
+            {
+              "review": "SpectralOverviewWholeLineSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                793,
+                794
+              ]
+            },
+            {
+              "review": "SpectralOverviewWholeLineSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                793,
+                794
+              ]
+            }
+          ],
+          "declarations": [
+            "absolutelyContinuous_quadraticMeasure_of_denseRange",
+            "countable_l2Monodromy_real_repeated_roots",
+            "eventually_norm_wholeLineNonrealResolvent_expectation_le",
+            "integral_wholeLineCayleySpectralMeasure",
+            "l2WholeLinePotential",
+            "mem_wholeLineMinimalOperator_closure_domain_iff_AC",
+            "mem_wholeLineSpectrum_of_unit_floquet",
+            "nonreal_mem_wholeLineResolventSet",
+            "normalOperatorSpectralMeasure",
+            "periodic_l2WholeLinePotential",
+            "source_gap_mem_wholeLineResolventSet",
+            "source_wholeLineSpectrum_eq_floquetBands",
+            "source_wholeLine_spectral_overview",
+            "wholeLineCayley",
+            "wholeLineCayleySpectralMeasure",
+            "wholeLineCayleySpectralMeasure_nullSingletonClass",
+            "wholeLineMinimalOperator",
+            "wholeLineMinimalOperator_adjoint_test_core",
+            "wholeLineMinimalOperator_closure_eigenvector_eq_zero",
+            "wholeLineMinimalOperator_closure_eq_adjoint",
+            "wholeLineRealSpectralMeasure",
+            "wholeLineRealSpectralMeasure_absolutelyContinuous",
+            "wholeLineRealSpectralMeasure_absolutelyContinuous_of_compact_input",
+            "wholeLineRealSpectralMeasure_real_univ",
+            "wholeLineRealSpectralMeasure_resolvent_integral",
+            "wholeLineResolventSet",
+            "wholeLineSpectrum"
+          ]
+        },
+        {
+          "id": "spectral-06",
+          "source_lines": [
+            803,
+            810
+          ],
+          "requirement": "Gap lengths, midpoints and l2 displacements",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "The gap is the signed endpoint difference and the midpoint their arithmetic mean. The actual full gap and midpoint-displacement sequences lie in l2 with common local bounds, retaining the original physical labels.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                803,
+                810,
+                820,
+                824
+              ]
+            }
+          ],
+          "declarations": [
+            "PhysicalPeriodicEndpointData.unique",
+            "exists_uniform_physicalPeriodicMidpointGap",
+            "physicalPeriodicEndpoints_eq_source",
+            "physicalPeriodicGap_eq_zero_iff",
+            "physicalPeriodicMidpointGap_memℓ2",
+            "physicalPeriodicSpectrum_iff_endpoint"
+          ]
+        },
+        {
+          "id": "spectral-07",
+          "source_lines": [
+            820,
+            824
+          ],
+          "requirement": "Collapsed gaps and nonreal potentials",
+          "classification": "proved_with_scope_and_interpretation",
+          "finding": "Collapse means equal original endpoints. Non-real-type potentials fail self-adjointness, and explicit potentials exhibit a nonreal eigenvalue, gap and midpoint. Nonreal spectrum is possible, not required for every non-real-type potential. The Floquet qualification withdraws the preceding real-interval complement description; it does not deny the complex monodromy criterion.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                803,
+                810,
+                820,
+                824
+              ]
+            },
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                821,
+                822
+              ]
+            },
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                822,
+                824
+              ]
+            },
+            {
+              "review": "SpectralOverviewComplexSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                822,
+                824
+              ]
+            }
+          ],
+          "declarations": [
+            "I_mem_classicalSignedEigenvalues_union_constant",
+            "I_mem_physicalPeriodicSpectrum_constant",
+            "PhysicalPeriodicEndpointData.unique",
+            "classicalSignedOperator_constant_one_neg_one_not_selfAdjoint",
+            "classicalSignedOperator_domain_iff",
+            "classicalSignedOperator_isSelfAdjoint_iff",
+            "constant_one_I_spectral_re_im",
+            "exists_physical_nonreal_central_pair",
+            "exists_physical_nonreal_gap",
+            "exists_physical_nonreal_midpoint_constant",
+            "exists_uniform_physicalPeriodicMidpointGap",
+            "physicalPeriodicEndpoints_eq_source",
+            "physicalPeriodicGap_eq_zero_iff",
+            "physicalPeriodicMidpointGap_memℓ2",
+            "physicalPeriodicSpectrum_iff_endpoint",
+            "sourcePhysicalPeriodicOperator_isSelfAdjoint_iff"
+          ]
+        },
+        {
+          "id": "spectral-08",
+          "source_lines": [
+            847,
+            853
+          ],
+          "requirement": "Fourier-Lebesgue extension and genuine nonmeasure inputs",
+          "classification": "proved_with_scope_and_motivation",
+          "finding": "One original periodic distribution belongs to every p>2 and is not represented by any complex measure. Directly rereading its construction verifies this stronger claim, beyond merely failing L2 membership. The native closed-operator framework includes p=1; the numbered spectral estimates below retain the stated strict p>1 range.",
+          "evidence": [
+            {
+              "review": "IntroductionFourierBackgroundSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                239,
+                240
+              ]
+            },
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                858,
+                863
+              ]
+            },
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                860,
+                863
+              ]
+            }
+          ],
+          "declarations": [
+            "NativePeriodic.Domain",
+            "NativePeriodic.Space",
+            "NativePeriodic.coefficients",
+            "NativePeriodic.discreteTopology_spectrum",
+            "NativePeriodic.domainCoefficients",
+            "NativePeriodic.exists_domain_of_tendsto",
+            "NativePeriodic.inclusion_fst_val",
+            "NativePeriodic.inclusion_snd_val",
+            "NativePeriodic.isCompactOperator_resolvent",
+            "NativePeriodic.mem_unboundedOperator_domain",
+            "NativePeriodic.norm_rpow_eq_tsum",
+            "NativePeriodic.resolventSet",
+            "NativePeriodic.resolventSet_eq",
+            "NativePeriodic.unboundedOperator_dense_domain",
+            "NativePeriodic.unboundedOperator_isClosed",
+            "exists_fourierLebesgue_above_two_not_l2",
+            "exists_fourierLebesgue_above_two_not_measure",
+            "nonMeasureDistribution_not_measure"
+          ]
+        },
+        {
+          "id": "spectral-09",
+          "source_lines": [
+            854,
+            857
+          ],
+          "requirement": "Period-two realization of the two signed Hilbert spectra",
+          "classification": "proved_with_scope",
+          "finding": "The full native Hilbert graph agrees with the physical operator, whose spectrum is the union of the original periodic and antiperiodic spectra. Full H1 domains and every L2 potential are retained.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                854,
+                858
+              ]
+            }
+          ],
+          "declarations": [
+            "NativePeriodic.graph_hilbert_iff",
+            "NativePeriodic.hilbertRealization_fst_represents",
+            "NativePeriodic.hilbertRealization_snd_represents",
+            "NativePeriodic.spectrum_eq_classicalSigned_union",
+            "NativePeriodic.spectrum_eq_physical"
+          ]
+        },
+        {
+          "id": "spectral-10",
+          "source_lines": [
+            858,
+            863
+          ],
+          "requirement": "Original distribution extension and closed operator",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "Period doubling preserves the actual tempered distribution and original finite pair norm. The native operator has the entire one-derivative Fourier-Lebesgue domain, is densely defined and closed, and has the independently defined source resolvent and spectrum. These assertions hold for finite p>=1.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                858,
+                863
+              ]
+            },
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                860,
+                863
+              ]
+            },
+            {
+              "review": "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                860,
+                863
+              ]
+            },
+            {
+              "review": "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                860,
+                862
+              ]
+            },
+            {
+              "review": "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                862,
+                862
+              ]
+            },
+            {
+              "review": "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                860,
+                862
+              ]
+            }
+          ],
+          "declarations": [
+            "NativePeriodic.Domain",
+            "NativePeriodic.Space",
+            "NativePeriodic.coefficients",
+            "NativePeriodic.coefficients_extendPotential",
+            "NativePeriodic.discreteTopology_spectrum",
+            "NativePeriodic.domainCoefficients",
+            "NativePeriodic.exists_domain_of_tendsto",
+            "NativePeriodic.extendPotential_fst_toTempered",
+            "NativePeriodic.extendPotential_snd_toTempered",
+            "NativePeriodic.inclusion_fst_val",
+            "NativePeriodic.inclusion_snd_val",
+            "NativePeriodic.isCompactOperator_resolvent",
+            "NativePeriodic.mem_range_extendPotential_iff",
+            "NativePeriodic.mem_unboundedOperator_domain",
+            "NativePeriodic.norm_extendPotential",
+            "NativePeriodic.norm_rpow_eq_tsum",
+            "NativePeriodic.operator_fst_coefficient",
+            "NativePeriodic.operator_fst_val",
+            "NativePeriodic.operator_snd_coefficient",
+            "NativePeriodic.operator_snd_val",
+            "NativePeriodic.resolventSet",
+            "NativePeriodic.resolventSet_eq",
+            "NativePeriodic.sourceCoefficients",
+            "NativePeriodic.spectrum_extendPotential",
+            "NativePeriodic.unboundedOperator_dense_domain",
+            "NativePeriodic.unboundedOperator_isClosed",
+            "PeriodicFourierLebesgue.mem_range_periodDouble_iff",
+            "PeriodicFourierLebesgue.periodDouble",
+            "PeriodicFourierLebesgue.periodDouble_coefficient_even",
+            "PeriodicFourierLebesgue.periodDouble_coefficient_odd",
+            "PeriodicFourierLebesgue.periodDouble_toTempered",
+            "PeriodicFourierLebesgue.sobolevToWiener_val",
+            "distributionSynthesis_periodDouble_eq_dilation"
+          ]
+        },
+        {
+          "id": "spectral-11",
+          "source_lines": [
+            865,
+            884
+          ],
+          "requirement": "Theorem 1.1 counting box and parity",
+          "classification": "named_result_with_refuted_unrestricted_height",
+          "finding": "The exact printed height is proved for 1<p<=4, with common neighborhoods, algebraic counts, parity and exhaustion. An actual spectral counterexample refutes the unrestricted all-finite-p height. General finite-p counting with the separately proved height remains available; the sharp printed-height range above four is not determined.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 0,
+              "source_lines": [
+                865,
+                884
+              ]
+            }
+          ],
+          "declarations": [
+            "PeriodicCountingData",
+            "exists_source_periodicCounting_printed_height_up_to_four",
+            "not_sourceTheorem1_1_printed_exhaustion",
+            "sourcePeriodicPrintedHeight_counterexample"
+          ]
+        },
+        {
+          "id": "spectral-12",
+          "source_lines": [
+            887,
+            914
+          ],
+          "requirement": "Global ordering and bounded periodic displacements",
+          "classification": "explanation_of_proved_result",
+          "finding": "The canonical labels are globally lexicographic. Their full lp displacement bound gives an all-index O(1) bound for every finite p>1 and recovers the Hilbert l2 statement. This consequence does not depend on the false unrestricted counting-box height.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 1,
+              "source_lines": [
+                917,
+                932
+              ]
+            },
+            {
+              "review": "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                768,
+                781
+              ]
+            }
+          ],
+          "declarations": [
+            "PeriodicEndpointLabeling",
+            "classicalSignedRootSpaceTop_eq_map",
+            "finiteDimensional_physicalPeriodicRootSpaceTop",
+            "linearPMapRootSpaceTop",
+            "pencilRootSpace",
+            "physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum",
+            "physicalPeriodicEndpoints_count_multiplicity",
+            "physicalPeriodicRootSpaceTop_eq_map",
+            "sourcePeriodicEndpointEnergy_sum",
+            "sourceTheorem1_2",
+            "sourceTheorem1_2_ordered_labels"
+          ]
+        },
+        {
+          "id": "spectral-13",
+          "source_lines": [
+            917,
+            932
+          ],
+          "requirement": "Theorem 1.2 locally uniform full displacement sum",
+          "classification": "named_result_reused",
+          "finding": "One neighborhood and one positive constant bound the literal full signed-index sum for all its potentials. The source explicitly permits the constant to depend locally on the potential; a global potential-independent bound is not inferred from its word absolute. Sorted-label analyticity is not asserted.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 1,
+              "source_lines": [
+                917,
+                932
+              ]
+            }
+          ],
+          "declarations": [
+            "PeriodicEndpointLabeling",
+            "sourcePeriodicEndpointEnergy_sum",
+            "sourceTheorem1_2",
+            "sourceTheorem1_2_ordered_labels"
+          ]
+        },
+        {
+          "id": "spectral-14",
+          "source_lines": [
+            935,
+            944
+          ],
+          "requirement": "Corollary 1.3 and well-defined midpoint and gap",
+          "classification": "named_result_reused",
+          "finding": "The actual unsquared gap and midpoint displacement belong to lp at every finite p>1. Both have common local norm bounds and arbitrarily small tails beyond every later cutoff.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 2,
+              "source_lines": [
+                939,
+                944
+              ]
+            }
+          ],
+          "declarations": [
+            "sourceCorollary1_3",
+            "sourceCorollary1_3_mem"
+          ]
+        },
+        {
+          "id": "spectral-15",
+          "source_lines": [
+            947,
+            962
+          ],
+          "requirement": "Exact AKNS potential and unitary vector normalization",
+          "classification": "proved_with_scope",
+          "finding": "The potential is (q+ip,q-ip), while the separate vector transformation is the printed normalized matrix T. Full physical L2 unitary equivalence and H1 norm identities retain this distinction. The page 19 formula is correct; the separate page 29 normalization correction is not imported into it.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                947,
+                962
+              ]
+            },
+            {
+              "review": "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                950,
+                987
+              ]
+            }
+          ],
+          "declarations": [
+            "aknsAction_intertwining",
+            "aknsInclusion_realization",
+            "aknsIntervalOperator_realization",
+            "aknsL2Equiv",
+            "aknsL2Equiv_inclusion",
+            "aknsL2Equiv_operator",
+            "aknsPotential",
+            "aknsToZS",
+            "aknsToZS_norm_sq",
+            "akns_eigenEquation_iff",
+            "classicalIntervalEquiv",
+            "classicalIntervalNorm_aknsToZS",
+            "norm_aknsDomainOfFunction",
+            "physicalOperator_aknsToZS",
+            "zsToAKNS"
+          ]
+        },
+        {
+          "id": "spectral-16",
+          "source_lines": [
+            964,
+            966
+          ],
+          "requirement": "Real structure and classical complexification",
+          "classification": "proved_with_scope",
+          "finding": "Every real-type physical L2 potential has real AKNS coordinates almost everywhere. Conjugation and real/imaginary decomposition preserve both full classical endpoint domains and intertwine the actual differential action. The direct reread retains arbitrary L2 representatives and almost-everywhere identities.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewAKNSRealStructureSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                947,
+                966
+              ]
+            }
+          ],
+          "declarations": [
+            "HasAKNSIntervalDomain.conj",
+            "HasAKNSIntervalDomain.imagPart",
+            "HasAKNSIntervalDomain.realPart",
+            "aknsPhysicalOperator_decomposition",
+            "aknsPhysicalOperator_real_parts",
+            "aknsPhysicalOperator_star_of_real",
+            "aknsPotential_realType_iff",
+            "exists_real_aknsPotential_coordinates"
+          ]
+        },
+        {
+          "id": "spectral-17",
+          "source_lines": [
+            967,
+            987
+          ],
+          "requirement": "Dense boundary domains and their transformation",
+          "classification": "proved_with_scope_and_local_typo",
+          "finding": "The entire two H1 endpoint domains are densely included and transformed in both directions. No endpoint periodicity is imposed. The final f-minus in the printed Neumann domain is read as g-minus, the function quantified by that formula.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                966,
+                987
+              ]
+            },
+            {
+              "review": "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                950,
+                987
+              ]
+            }
+          ],
+          "declarations": [
+            "HasAKNSIntervalDomain",
+            "aknsDomainEquiv",
+            "aknsInclusion_denseRange",
+            "aknsInclusion_injective",
+            "aknsInclusion_realization",
+            "aknsIntervalOperator_realization",
+            "aknsL2Equiv_inclusion",
+            "aknsL2Equiv_operator",
+            "akns_eigenEquation_iff",
+            "classicalIntervalEquiv",
+            "hasAKNSIntervalDomain_zsToAKNS_iff",
+            "hasClassicalIntervalDomain_aknsToZS_iff",
+            "mem_aknsIntervalSubmodule_iff",
+            "mem_classicalIntervalSubmodule_iff",
+            "norm_aknsDomainOfFunction",
+            "physicalOperator_aknsToZS"
+          ]
+        },
+        {
+          "id": "spectral-18",
+          "source_lines": [
+            989,
+            995
+          ],
+          "requirement": "Physical Dirichlet and Neumann enumerations",
+          "classification": "proved_with_scope",
+          "finding": "Every complex interval L2 potential has complete globally lexicographic boundary labels with actual physical root-space multiplicities and full l2 displacements. No continuous representative or finite support is assumed.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewBoundarySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                989,
+                995
+              ]
+            }
+          ],
+          "declarations": [
+            "canonicalPeriodOneBoundaryRoots_exhaustive",
+            "canonicalPeriodOneBoundaryRoots_multiplicity",
+            "classicalAlgebraicMultiplicity_eq",
+            "classicalSpectrum_eq_boundarySpectrum",
+            "monotone_canonicalPeriodOneBoundaryRoots",
+            "periodOneBoundaryPotential_eq_physicalRestriction",
+            "sourcePhysicalL2Equiv",
+            "sourcePhysicalL2_apply",
+            "sourcePhysicalL2_equiv_symm",
+            "sourceTheorem1_5_mem"
+          ]
+        },
+        {
+          "id": "spectral-19",
+          "source_lines": [
+            997,
+            1000
+          ],
+          "requirement": "Real boundary spectra and indexed interlacing",
+          "classification": "proved_with_scope",
+          "finding": "Both real boundary roots lie within the original periodic gap at the same signed index. Reality, negative and central indices, and collapsed gaps are retained; the reflected boundary potential is distinguished from the original periodic potential.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewBoundarySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                997,
+                1000
+              ]
+            }
+          ],
+          "declarations": [
+            "canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap",
+            "canonicalPeriodOneBoundaryRoots_interlacing",
+            "sourceBoundarySpectrum_im_eq_zero",
+            "sourcePhysicalL2_realType_iff"
+          ]
+        },
+        {
+          "id": "spectral-20",
+          "source_lines": [
+            1003,
+            1015
+          ],
+          "requirement": "Reflected distribution potential for rough boundary spectra",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "Both ordinary boundary problems use the same Dirichlet-reflected potential. Its periodic spectrum is the union of the original two interval spectra, with multiplicities added. The bounded completed reflection applies to finite p>1 and recovers every L2 physical input. No p=1 reflection theorem or separate equality with each boundary spectrum is asserted.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewBoundarySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                1003,
+                1015
+              ]
+            }
+          ],
+          "declarations": [
+            "intervalExtension_left",
+            "intervalExtension_right",
+            "intervalPotentialCoefficients",
+            "intervalPotentialToDirichlet",
+            "periodOneBoundaryPotential",
+            "periodicAlgebraicMultiplicity_eq_classical_sum",
+            "periodicSpectrum_eq_classicalEigenvalues_union",
+            "sourceIntervalExtensionDistributionCLM",
+            "sourceIntervalExtensionDistribution_periodic",
+            "sourceIntervalExtensionL2_ofFunction",
+            "sourceLemma4_3_L2_physical",
+            "tendsto_sourceIntervalExtensionDistribution_truncate"
+          ]
+        },
+        {
+          "id": "spectral-21",
+          "source_lines": [
+            1018,
+            1034
+          ],
+          "requirement": "Theorem 1.4 boundary counting box",
+          "classification": "named_result_with_refuted_unrestricted_height",
+          "finding": "The exact printed height is proved at p=2. The unrestricted all-p box is refuted by an actual Dirichlet eigenvalue. General finite-p height-N counting, simple distant roots, reality and exhaustion remain proved. The periodic theorem range through four is not silently transferred to this boundary theorem.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 3,
+              "source_lines": [
+                1018,
+                1034
+              ]
+            }
+          ],
+          "declarations": [
+            "BoundaryCountingData",
+            "exists_uniform_sourceBoundaryLabels",
+            "sourceBoundaryPrintedHeight_counterexample",
+            "sourceBoundarySpectrum_closed_discrete",
+            "sourceBoundarySpectrum_im_eq_zero",
+            "sourceTheorem1_4_two"
+          ]
+        },
+        {
+          "id": "spectral-22",
+          "source_lines": [
+            1036,
+            1045
+          ],
+          "requirement": "Bounded boundary displacement and Fourier asymptotics",
+          "classification": "explanation_of_proved_result",
+          "finding": "The full locally bounded lp displacement sequences give simultaneous all-index O(1) bounds for both globally ordered boundary lists. The following theorem supplies the sharper lp conclusion without the false unrestricted box estimate.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewBoundarySourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                1036,
+                1045
+              ]
+            },
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 4,
+              "source_lines": [
+                1056,
+                1061
+              ]
+            }
+          ],
+          "declarations": [
+            "canonicalPeriodOneBoundaryRoots_exhaustive",
+            "exists_uniform_sourceBoundaryLabels",
+            "monotone_canonicalPeriodOneBoundaryRoots",
+            "sourceBoundaryDisplacement",
+            "sourceBoundaryDisplacement_apply",
+            "sourceTheorem1_5",
+            "sourceTheorem1_5_mem"
+          ]
+        },
+        {
+          "id": "spectral-23",
+          "source_lines": [
+            1056,
+            1061
+          ],
+          "requirement": "Theorem 1.5 locally uniform boundary lp asymptotics",
+          "classification": "named_result_reused",
+          "finding": "Both ordinary boundary displacement sequences have the full locally uniform series bound for every complex source and every finite p>1, retaining all central and negative indices.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewSourceComparison-2026-10-21",
+              "field": "items",
+              "index": 4,
+              "source_lines": [
+                1056,
+                1061
+              ]
+            }
+          ],
+          "declarations": [
+            "monotone_canonicalPeriodOneBoundaryRoots",
+            "sourceTheorem1_5",
+            "sourceTheorem1_5_mem"
+          ]
+        },
+        {
+          "id": "spectral-24",
+          "source_lines": [
+            1063,
+            1064
+          ],
+          "requirement": "Literal spectral finite-gap definition",
+          "classification": "definition_and_proved_with_scope",
+          "finding": "One integer cutoff N>=1 bounds every signed index at which the actual canonical periodic gap is nonzero. The native distribution definition retains the original Fourier coefficients and is not replaced by finite Fourier support.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 0,
+              "source_lines": [
+                1063,
+                1064
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.finiteGapLocus",
+            "NativeWeightedPeriodic.mem_finiteGapLocus_iff",
+            "NativeWeightedPeriodic.source_fst",
+            "NativeWeightedPeriodic.source_snd",
+            "sourceFiniteGapLocus"
+          ]
+        },
+        {
+          "id": "spectral-25",
+          "source_lines": [
+            1065,
+            1067
+          ],
+          "requirement": "Finite-gap regularity and real Sobolev density",
+          "classification": "refuted_complex_claim_with_proved_real_result",
+          "finding": "The unrestricted complex regularity sentence is false: a rough triangular source has the actual free spectrum but no smooth coefficient-preserving representative. Real-type finite-gap sources do have analytic representatives, and such potentials are dense in every original nonnegative Sobolev norm, including fractional orders.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 1,
+              "source_lines": [
+                1065,
+                1066
+              ]
+            },
+            {
+              "review": "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 2,
+              "source_lines": [
+                1066,
+                1067
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.dense_sobolev_finiteGapLocus",
+            "NativeWeightedPeriodic.exists_analytic_representative",
+            "NativeWeightedPeriodic.exists_finiteGap_norm_sub_lt",
+            "NativeWeightedPeriodic.realCoefficientsIsometry",
+            "NativeWeightedPeriodic.realSpace",
+            "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+            "dense_sourceHigherSobolevFiniteGapLocus",
+            "dense_sourceSobolevFiniteGapLocus",
+            "periodOneCoefficient_sourceFiniteGapPhysicalPair",
+            "roughTriangularCoefficients_no_analytic_representative",
+            "roughTriangularCoefficients_no_smooth_representative",
+            "roughTriangularSource_finite_gap",
+            "roughTriangularSource_not_realType",
+            "roughTriangularSource_spectrum",
+            "sourceFiniteGap_exists_analytic_representative",
+            "spectralPencil_triangularResolvent",
+            "triangularResolvent_spectralPencil"
+          ]
+        },
+        {
+          "id": "spectral-26",
+          "source_lines": [
+            1069,
+            1070
+          ],
+          "requirement": "Corollary 1.6 original Fourier-Lebesgue density",
+          "classification": "named_result_reused",
+          "finding": "Actual real finite-gap potentials are dense in the original distribution space and full component-sum norm at every finite p>1. Each approximant has an analytic representative with exactly that approximant's Fourier coefficients.",
+          "evidence": [
+            {
+              "review": "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+              "field": "unnumbered",
+              "index": 3,
+              "source_lines": [
+                1070,
+                1070
+              ]
+            }
+          ],
+          "declarations": [
+            "NativeWeightedPeriodic.dense_finiteGapLocus",
+            "NativeWeightedPeriodic.exists_analytic_representative",
+            "dense_sourceFiniteGapLocus",
+            "exists_mem_sourceFiniteGapLocus_norm_sub_lt",
+            "exists_weightedRealSource_finiteGap_norm_sub_lt"
+          ]
+        },
+        {
+          "id": "spectral-27",
+          "source_lines": [
+            1072,
+            1085
+          ],
+          "requirement": "Related spectral work and methodological context",
+          "classification": "external_work_and_method_context",
+          "finding": "The KdV equation, literature survey, historical absence of earlier Banach-space results, adaptation of Hilbert methods, and cited Schroedinger regularity analogy are contextual attributions to external work. They are not additional dNLS theorem specifications or claims about present research priority.",
+          "evidence": [],
+          "declarations": []
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewSourceComparison-2026-10-21",
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewWholeLineSourceComparison-2026-10-27",
+        "SpectralOverviewComplexSourceComparison-2026-10-27",
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27",
+        "SpectralOverviewAKNSRealStructureSourceComparison-2026-10-27",
+        "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+        "SpectralOverviewBoundarySourceComparison-2026-10-27",
+        "SpectralOverviewFiniteGapSourceComparison-2026-10-27",
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "SpectralOverviewSourceComparison-2026-10-21": {
+          "source_record_sha256": "2f690022ac9bd43077885533ce3d1d58c4d781070f8758854b2292af1b0a4055",
+          "module_hashes_verified": true,
+          "retained_qualification": "Statement types and cited structure fields were inspected against the source; this pass does not independently reprove every dependency or certify every unnumbered assertion in Section1."
+        },
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "9984e0f25164ce183804aab64542484c9f3e3ef77421f129c82a2f31aab71e3d",
+          "module_hashes_verified": true,
+          "retained_qualification": "All sixteen listed modules were read completely. The comparison retains actual physical functions, operator domains, bounded-inverse spectral sets, full Jordan-chain multiplicities, global ordering and the universal eigenfunction quantifier. The whole-line spectrum and absolute-continuity assertion at792-810 remains a separate comparison. This is not an independent re-proof of every transitive dependency or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved."
+        },
+        "SpectralOverviewWholeLineSourceComparison-2026-10-27": {
+          "source_record_sha256": "4a3f11a812f30612158094349d17c18d792a45c4e471134fb0f2258e00698df4",
+          "module_hashes_verified": true,
+          "retained_qualification": "All thirty-five listed modules were read completely in this comparison. The inspected chain retains the original period-one potential, Hermitian whole-line L2 space, actual closure and adjoint domains, independently defined spectrum, original canonical endpoints, actual Cayley spectral measures and all-vector absolute continuity. It is not an independent re-proof of every transitive dependency or a complete comparison of the rest of the spectral chapter. The precise2014 construction and AppendixG2 norm interpretation remain unresolved."
+        },
+        "SpectralOverviewComplexSourceComparison-2026-10-27": {
+          "source_record_sha256": "37bc62e79063ef675ff4989bc86fdd8834bcbe33b63b88b661cb32143172365d",
+          "module_hashes_verified": true,
+          "retained_qualification": "All twelve hash-listed modules were read in full and the rendered source pages were inspected. This is a focused renewed comparison of the gap definitions and complex-potential paragraph, including the necessary actual-operator and endpoint interfaces. It is not a re-proof of all transitive dependencies, a comparison of all neighboring real spectral enumeration or whole-line claims, or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved."
+        },
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2",
+          "module_hashes_verified": true,
+          "retained_qualification": "The four listed modules were read completely. The native spaces use the previously inspected original-distribution Fourier-Lebesgue definitions, and Hilbert spectral identification uses the established physical operator interfaces. This is not an independent re-proof of every transitive dependency. The general period-one to period-two extension on the original distribution carrier in line862 remains a separate comparison; the present operator construction applies to every potential already on the period-two carrier, and the physical extension is identified here at p=2. The nonmeasure assertion in lines851-853 refers to the earlier Fourier-background comparison. Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualification are unchanged; no chapter-wide completeness claim is made."
+        },
+        "SpectralOverviewPeriodExtensionSourceComparison-2026-10-27": {
+          "source_record_sha256": "809ac11bfebbade098ffbb505f8dcb4ebbda5dbaf82c3c540eac84978b66a93b",
+          "module_hashes_verified": true,
+          "retained_qualification": "The four listed modules were read completely, including the exact Fourier scaling factor and distributional translation criterion. This resolves the line862 period-extension comparison left separate by SpectralOverviewNativePeriodicSourceComparison-2026-10-27. It does not independently reprove all transitive dependencies or certify the rest of the chapter. The native operator and physical Hilbert compatibility use the preceding reviewed modules. Scalar infinity is covered, while claims about the original pair norm and operator retain finite p. Existing Theorem1.1 corrections, precise2014 construction and AppendixG2 norm qualifications are unchanged."
+        },
+        "SpectralOverviewAKNSRealStructureSourceComparison-2026-10-27": {
+          "source_record_sha256": "3191ac2718911c058a94dc782bf725d5abc04a0b9fc70f983fe3122373ee4cce",
+          "module_hashes_verified": true,
+          "retained_qualification": "Read all three complete modules, all eight public examples, actual support diff and printed947–966. Full classical H1 boundary domains, AE potential reality and exact raw coordinates are retained. The physical unitary intertwining is established by prior public modules; this records the real structure and complexification."
+        },
+        "SpectralOverviewAKNSDomainSourceComparison-2026-10-27": {
+          "source_record_sha256": "537d6a76542f634b418cc2fe13fe71ef1763274d11b8638ba9bcfa88c4002796",
+          "module_hashes_verified": true,
+          "retained_qualification": "The six listed modules were read completely. Supporting definitions of interval H1 regularity, the original classical endpoint domain and the physical differential expression were checked separately, without claiming full review of their containing modules or all transitive dependencies. Real structure and complexification retain their separate prior comparison. This comparison does not cover the following boundary enumeration, interlacing or reflected-potential passage. It records the local Aneu variable typo without changing the correct page19 normalization. Existing source corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged."
+        },
+        "SpectralOverviewBoundarySourceComparison-2026-10-27": {
+          "source_record_sha256": "65d71565cfaa36a2d49591b049003b21bae26e09a0400faa3178b7ea82b74a40",
+          "module_hashes_verified": true,
+          "retained_qualification": "The nineteen listed modules were read completely across the continuous comparison and their unchanged hashes checked. This follows the exact source-to-physical maps and quantifiers, but does not independently reprove every transitive dependency. The stronger all-p source results imply the printed p=2 enumeration. The p=2 physical interval comparison and the finite p>1 completed reflection range are retained; no p=1 bounded interval-reflection theorem is claimed. The old IntervalExtension module introduction still describes its original unfinished all-p stage; the later bounded results were checked directly. Existing Lemma4.3 normalization and Theorem1.4 height corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged."
+        },
+        "SpectralOverviewFiniteGapSourceComparison-2026-10-27": {
+          "source_record_sha256": "25b931c6ac954db0e2f816011bd2da94751cb7e9cfe445ff7960046d91fe9728",
+          "module_hashes_verified": true,
+          "retained_qualification": "The thirteen listed modules were read completely, including the exact scaled Sobolev weight, raw coefficient identification, actual triangular inverse and physical representative statements. Underlying Fourier-Lebesgue distribution realization and full spectral identification retain their prior comparisons; this is not a new independent review of every transitive dependency. Density and source pair-norm claims retain finite p>1 and nonnegative Sobolev orders. The explicit original native cutoff equivalence is included. The complex regularity correction is preserved rather than silently narrowing the printed claim. The precise2014 construction, AppendixG2 norm interpretation and broader source assessment remain separate."
+        },
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27": {
+          "source_record_sha256": "4b36b6fe813d6db028150044643cdcf1703d9eba1eed361631161ac5645c874f",
+          "module_hashes_verified": true,
+          "retained_qualification": "All fourteen hash-listed canonical modules were read completely for this comparison, including the actual proof bodies and their domain and normalization hypotheses. It covers only the five Fourier-space and symmetry assertion groups listed here; the preceding Birkhoff-extension claim and the wider opening background are not certified by this record. Exact critical scaling is homogeneous, and classical PDE symmetry is separate from invariance of the rough distribution class. Existing Lean validation covers the unchanged source snapshot; transitive dependencies are not independently re-proved. The precise2014 construction and G2 norm qualifications remain open."
+        }
+      },
+      "scope_check": "Read the complete spectral overview, extraction lines 755–1085. The 27 entries classify all substantive paragraphs and numbered statements in order. Figures illustrate the already classified order and counting assertions; blank lines and page furniture add no claims. Semantic classification is based on the source text, not interval overlap.",
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicFourierLebesgueStrictness.lean": "2aefbaa463a96a001c0dda625272d7c88763f49940662687fd88838fc4467e83",
+        "NLS/Fourier/NonMeasureFourierCounterexample.lean": "b5519e135a17213dfb0f7fa30a4e89b6a8bc44d42c844443947bb5fab4540012",
+        "NLS/ZakharovShabat/SourcePeriodicOverview.lean": "d5aee9e22082da103998e4e03f15f4b45c0a330d96a71d3dd22f95594000d3ec",
+        "NLS/ZakharovShabat/AKNSPotentialReality.lean": "5f80c26b0576c4b334bd471aafadb6787b398360fe73591c00c4160c1524facb",
+        "NLS/ZakharovShabat/AKNSConjugation.lean": "a74ee9f2fe49c0001bed8a8043674b413fa0d59f7cd5f824aa3e22c62c04082d",
+        "NLS/ZakharovShabat/AKNSComplexification.lean": "564651c53c9e0a01ec3b38896657f94851f17fa4ee16a11026beaf6bed0cdf7a"
+      },
+      "resolved_declaration_references": {
+        "BoundaryCountingData": "NLS.ZakharovShabat.BoundaryCountingData",
+        "HasAKNSIntervalDomain": "NLS.ZakharovShabat.HasAKNSIntervalDomain",
+        "HasAKNSIntervalDomain.conj": "NLS.ZakharovShabat.HasAKNSIntervalDomain.conj",
+        "HasAKNSIntervalDomain.imagPart": "NLS.ZakharovShabat.HasAKNSIntervalDomain.imagPart",
+        "HasAKNSIntervalDomain.realPart": "NLS.ZakharovShabat.HasAKNSIntervalDomain.realPart",
+        "I_mem_classicalSignedEigenvalues_union_constant": "NLS.ZakharovShabat.I_mem_classicalSignedEigenvalues_union_constant",
+        "I_mem_physicalPeriodicSpectrum_constant": "NLS.ZakharovShabat.I_mem_physicalPeriodicSpectrum_constant",
+        "NativePeriodic.Domain": "NLS.ZakharovShabat.NativePeriodic.Domain",
+        "NativePeriodic.Space": "NLS.ZakharovShabat.NativePeriodic.Space",
+        "NativePeriodic.coefficients": "NLS.ZakharovShabat.NativePeriodic.coefficients",
+        "NativePeriodic.coefficients_extendPotential": "NLS.ZakharovShabat.NativePeriodic.coefficients_extendPotential",
+        "NativePeriodic.discreteTopology_spectrum": "NLS.ZakharovShabat.NativePeriodic.discreteTopology_spectrum",
+        "NativePeriodic.domainCoefficients": "NLS.ZakharovShabat.NativePeriodic.domainCoefficients",
+        "NativePeriodic.exists_domain_of_tendsto": "NLS.ZakharovShabat.NativePeriodic.exists_domain_of_tendsto",
+        "NativePeriodic.extendPotential_fst_toTempered": "NLS.ZakharovShabat.NativePeriodic.extendPotential_fst_toTempered",
+        "NativePeriodic.extendPotential_snd_toTempered": "NLS.ZakharovShabat.NativePeriodic.extendPotential_snd_toTempered",
+        "NativePeriodic.graph_hilbert_iff": "NLS.ZakharovShabat.NativePeriodic.graph_hilbert_iff",
+        "NativePeriodic.hilbertRealization_fst_represents": "NLS.ZakharovShabat.NativePeriodic.hilbertRealization_fst_represents",
+        "NativePeriodic.hilbertRealization_snd_represents": "NLS.ZakharovShabat.NativePeriodic.hilbertRealization_snd_represents",
+        "NativePeriodic.inclusion_fst_val": "NLS.ZakharovShabat.NativePeriodic.inclusion_fst_val",
+        "NativePeriodic.inclusion_snd_val": "NLS.ZakharovShabat.NativePeriodic.inclusion_snd_val",
+        "NativePeriodic.isCompactOperator_resolvent": "NLS.ZakharovShabat.NativePeriodic.isCompactOperator_resolvent",
+        "NativePeriodic.mem_range_extendPotential_iff": "NLS.ZakharovShabat.NativePeriodic.mem_range_extendPotential_iff",
+        "NativePeriodic.mem_unboundedOperator_domain": "NLS.ZakharovShabat.NativePeriodic.mem_unboundedOperator_domain",
+        "NativePeriodic.norm_extendPotential": "NLS.ZakharovShabat.NativePeriodic.norm_extendPotential",
+        "NativePeriodic.norm_rpow_eq_tsum": "NLS.ZakharovShabat.NativePeriodic.norm_rpow_eq_tsum",
+        "NativePeriodic.operator_fst_coefficient": "NLS.ZakharovShabat.NativePeriodic.operator_fst_coefficient",
+        "NativePeriodic.operator_fst_val": "NLS.ZakharovShabat.NativePeriodic.operator_fst_val",
+        "NativePeriodic.operator_snd_coefficient": "NLS.ZakharovShabat.NativePeriodic.operator_snd_coefficient",
+        "NativePeriodic.operator_snd_val": "NLS.ZakharovShabat.NativePeriodic.operator_snd_val",
+        "NativePeriodic.resolventSet": "NLS.ZakharovShabat.NativePeriodic.resolventSet",
+        "NativePeriodic.resolventSet_eq": "NLS.ZakharovShabat.NativePeriodic.resolventSet_eq",
+        "NativePeriodic.sourceCoefficients": "NLS.ZakharovShabat.NativePeriodic.sourceCoefficients",
+        "NativePeriodic.spectrum_eq_classicalSigned_union": "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_classicalSigned_union",
+        "NativePeriodic.spectrum_eq_physical": "NLS.ZakharovShabat.NativePeriodic.spectrum_eq_physical",
+        "NativePeriodic.spectrum_extendPotential": "NLS.ZakharovShabat.NativePeriodic.spectrum_extendPotential",
+        "NativePeriodic.unboundedOperator_dense_domain": "NLS.ZakharovShabat.NativePeriodic.unboundedOperator_dense_domain",
+        "NativePeriodic.unboundedOperator_isClosed": "NLS.ZakharovShabat.NativePeriodic.unboundedOperator_isClosed",
+        "NativeWeightedPeriodic.dense_finiteGapLocus": "NLS.ZakharovShabat.NativeWeightedPeriodic.dense_finiteGapLocus",
+        "NativeWeightedPeriodic.dense_sobolev_finiteGapLocus": "NLS.ZakharovShabat.NativeWeightedPeriodic.dense_sobolev_finiteGapLocus",
+        "NativeWeightedPeriodic.exists_analytic_representative": "NLS.ZakharovShabat.NativeWeightedPeriodic.exists_analytic_representative",
+        "NativeWeightedPeriodic.exists_finiteGap_norm_sub_lt": "NLS.ZakharovShabat.NativeWeightedPeriodic.exists_finiteGap_norm_sub_lt",
+        "NativeWeightedPeriodic.finiteGapLocus": "NLS.ZakharovShabat.NativeWeightedPeriodic.finiteGapLocus",
+        "NativeWeightedPeriodic.mem_finiteGapLocus_iff": "NLS.ZakharovShabat.NativeWeightedPeriodic.mem_finiteGapLocus_iff",
+        "NativeWeightedPeriodic.realCoefficientsIsometry": "NLS.ZakharovShabat.NativeWeightedPeriodic.realCoefficientsIsometry",
+        "NativeWeightedPeriodic.realSpace": "NLS.ZakharovShabat.NativeWeightedPeriodic.realSpace",
+        "NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight": "NLS.ZakharovShabat.NativeWeightedPeriodic.sourceFrequencyWeight_sobolevWeight",
+        "NativeWeightedPeriodic.source_fst": "NLS.ZakharovShabat.NativeWeightedPeriodic.source_fst",
+        "NativeWeightedPeriodic.source_snd": "NLS.ZakharovShabat.NativeWeightedPeriodic.source_snd",
+        "PeriodicCountingData": "NLS.ZakharovShabat.PeriodicCountingData",
+        "PeriodicEndpointLabeling": "NLS.ZakharovShabat.PeriodicEndpointLabeling",
+        "PeriodicFourierLebesgue.mem_range_periodDouble_iff": "NLS.Fourier.PeriodicFourierLebesgue.mem_range_periodDouble_iff",
+        "PeriodicFourierLebesgue.periodDouble": "NLS.Fourier.PeriodicFourierLebesgue.periodDouble",
+        "PeriodicFourierLebesgue.periodDouble_coefficient_even": "NLS.Fourier.PeriodicFourierLebesgue.periodDouble_coefficient_even",
+        "PeriodicFourierLebesgue.periodDouble_coefficient_odd": "NLS.Fourier.PeriodicFourierLebesgue.periodDouble_coefficient_odd",
+        "PeriodicFourierLebesgue.periodDouble_toTempered": "NLS.Fourier.PeriodicFourierLebesgue.periodDouble_toTempered",
+        "PeriodicFourierLebesgue.sobolevToWiener_val": "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_val",
+        "PhysicalPeriodicEndpointData.unique": "NLS.ZakharovShabat.PhysicalPeriodicEndpointData.unique",
+        "absolutelyContinuous_quadraticMeasure_of_denseRange": "NLS.FunctionalAnalysis.absolutelyContinuous_quadraticMeasure_of_denseRange",
+        "aknsAction_intertwining": "NLS.ZakharovShabat.aknsAction_intertwining",
+        "aknsDomainEquiv": "NLS.ZakharovShabat.aknsDomainEquiv",
+        "aknsInclusion_denseRange": "NLS.ZakharovShabat.aknsInclusion_denseRange",
+        "aknsInclusion_injective": "NLS.ZakharovShabat.aknsInclusion_injective",
+        "aknsInclusion_realization": "NLS.ZakharovShabat.aknsInclusion_realization",
+        "aknsIntervalOperator_realization": "NLS.ZakharovShabat.aknsIntervalOperator_realization",
+        "aknsL2Equiv": "NLS.ZakharovShabat.aknsL2Equiv",
+        "aknsL2Equiv_inclusion": "NLS.ZakharovShabat.aknsL2Equiv_inclusion",
+        "aknsL2Equiv_operator": "NLS.ZakharovShabat.aknsL2Equiv_operator",
+        "aknsPhysicalOperator_decomposition": "NLS.ZakharovShabat.aknsPhysicalOperator_decomposition",
+        "aknsPhysicalOperator_real_parts": "NLS.ZakharovShabat.aknsPhysicalOperator_real_parts",
+        "aknsPhysicalOperator_star_of_real": "NLS.ZakharovShabat.aknsPhysicalOperator_star_of_real",
+        "aknsPotential": "NLS.ZakharovShabat.aknsPotential",
+        "aknsPotential_realType_iff": "NLS.ZakharovShabat.aknsPotential_realType_iff",
+        "aknsToZS": "NLS.ZakharovShabat.aknsToZS",
+        "aknsToZS_norm_sq": "NLS.ZakharovShabat.aknsToZS_norm_sq",
+        "akns_eigenEquation_iff": "NLS.ZakharovShabat.akns_eigenEquation_iff",
+        "canonicalDiscriminant_canonicalPeriodicSlot_of_realType": "NLS.ZakharovShabat.canonicalDiscriminant_canonicalPeriodicSlot_of_realType",
+        "canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap": "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap",
+        "canonicalPeriodOneBoundaryRoots_exhaustive": "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+        "canonicalPeriodOneBoundaryRoots_interlacing": "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_interlacing",
+        "canonicalPeriodOneBoundaryRoots_multiplicity": "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity",
+        "canonicalPeriodicGaps_disjoint": "NLS.ZakharovShabat.canonicalPeriodicGaps_disjoint",
+        "canonicalPeriodicRight_re_lt_next_left": "NLS.ZakharovShabat.canonicalPeriodicRight_re_lt_next_left",
+        "classicalAlgebraicMultiplicity_eq": "NLS.ZakharovShabat.BoundaryCondition.classicalAlgebraicMultiplicity_eq",
+        "classicalAntiperiodicSpectrum_iff_odd_endpoint": "NLS.ZakharovShabat.classicalAntiperiodicSpectrum_iff_odd_endpoint",
+        "classicalIntervalEquiv": "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv",
+        "classicalIntervalNorm_aknsToZS": "NLS.ZakharovShabat.classicalIntervalNorm_aknsToZS",
+        "classicalPeriodicSpectrum_iff_even_endpoint": "NLS.ZakharovShabat.classicalPeriodicSpectrum_iff_even_endpoint",
+        "classicalSignedEigenvalues_union_eq_periodic": "NLS.ZakharovShabat.classicalSignedEigenvalues_union_eq_periodic",
+        "classicalSignedOperator_constant_one_neg_one_not_selfAdjoint": "NLS.ZakharovShabat.classicalSignedOperator_constant_one_neg_one_not_selfAdjoint",
+        "classicalSignedOperator_domain_iff": "NLS.ZakharovShabat.classicalSignedOperator_domain_iff",
+        "classicalSignedOperator_isSelfAdjoint_iff": "NLS.ZakharovShabat.classicalSignedOperator_isSelfAdjoint_iff",
+        "classicalSignedRootSpaceTop_eq_map": "NLS.ZakharovShabat.classicalSignedRootSpaceTop_eq_map",
+        "classicalSignedSpectrum_eq_eigenvalues": "NLS.ZakharovShabat.classicalSignedSpectrum_eq_eigenvalues",
+        "classicalSpectrum_eq_boundarySpectrum": "NLS.ZakharovShabat.BoundaryCondition.classicalSpectrum_eq_boundarySpectrum",
+        "constant_one_I_spectral_re_im": "NLS.ZakharovShabat.constant_one_I_spectral_re_im",
+        "countable_l2Monodromy_real_repeated_roots": "NLS.ZakharovShabat.countable_l2Monodromy_real_repeated_roots",
+        "dense_sourceFiniteGapLocus": "NLS.ZakharovShabat.dense_sourceFiniteGapLocus",
+        "dense_sourceHigherSobolevFiniteGapLocus": "NLS.ZakharovShabat.dense_sourceHigherSobolevFiniteGapLocus",
+        "dense_sourceSobolevFiniteGapLocus": "NLS.ZakharovShabat.dense_sourceSobolevFiniteGapLocus",
+        "distributionSynthesis_periodDouble_eq_dilation": "NLS.Fourier.distributionSynthesis_periodDouble_eq_dilation",
+        "eventually_norm_wholeLineNonrealResolvent_expectation_le": "NLS.ZakharovShabat.eventually_norm_wholeLineNonrealResolvent_expectation_le",
+        "exists_fourierLebesgue_above_two_not_l2": "NLS.Fourier.exists_fourierLebesgue_above_two_not_l2",
+        "exists_fourierLebesgue_above_two_not_measure": "NLS.Fourier.exists_fourierLebesgue_above_two_not_measure",
+        "exists_mem_sourceFiniteGapLocus_norm_sub_lt": "NLS.ZakharovShabat.exists_mem_sourceFiniteGapLocus_norm_sub_lt",
+        "exists_physical_nonreal_central_pair": "NLS.ZakharovShabat.exists_physical_nonreal_central_pair",
+        "exists_physical_nonreal_gap": "NLS.ZakharovShabat.exists_physical_nonreal_gap",
+        "exists_physical_nonreal_midpoint_constant": "NLS.ZakharovShabat.exists_physical_nonreal_midpoint_constant",
+        "exists_real_aknsPotential_coordinates": "NLS.ZakharovShabat.exists_real_aknsPotential_coordinates",
+        "exists_source_periodicCounting_printed_height_up_to_four": "NLS.ZakharovShabat.exists_source_periodicCounting_printed_height_up_to_four",
+        "exists_uniform_physicalPeriodicMidpointGap": "NLS.ZakharovShabat.exists_uniform_physicalPeriodicMidpointGap",
+        "exists_uniform_sourceBoundaryLabels": "NLS.ZakharovShabat.exists_uniform_sourceBoundaryLabels",
+        "exists_weightedRealSource_finiteGap_norm_sub_lt": "NLS.ZakharovShabat.exists_weightedRealSource_finiteGap_norm_sub_lt",
+        "finiteDimensional_physicalPeriodicRootSpaceTop": "NLS.ZakharovShabat.finiteDimensional_physicalPeriodicRootSpaceTop",
+        "hasAKNSIntervalDomain_zsToAKNS_iff": "NLS.ZakharovShabat.hasAKNSIntervalDomain_zsToAKNS_iff",
+        "hasClassicalIntervalDomain_aknsToZS_iff": "NLS.ZakharovShabat.hasClassicalIntervalDomain_aknsToZS_iff",
+        "integral_wholeLineCayleySpectralMeasure": "NLS.ZakharovShabat.integral_wholeLineCayleySpectralMeasure",
+        "intervalExtension_left": "NLS.ZakharovShabat.BoundaryCondition.intervalExtension_left",
+        "intervalExtension_right": "NLS.ZakharovShabat.BoundaryCondition.intervalExtension_right",
+        "intervalPotentialCoefficients": "NLS.ZakharovShabat.intervalPotentialCoefficients",
+        "intervalPotentialToDirichlet": "NLS.ZakharovShabat.intervalPotentialToDirichlet",
+        "l2WholeLinePotential": "NLS.ZakharovShabat.l2WholeLinePotential",
+        "linearPMapRootSpaceTop": "NLS.FunctionalAnalysis.linearPMapRootSpaceTop",
+        "mem_aknsIntervalSubmodule_iff": "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+        "mem_classicalIntervalSubmodule_iff": "NLS.ZakharovShabat.BoundaryCondition.mem_classicalIntervalSubmodule_iff",
+        "mem_wholeLineMinimalOperator_closure_domain_iff_AC": "NLS.ZakharovShabat.mem_wholeLineMinimalOperator_closure_domain_iff_AC",
+        "mem_wholeLineSpectrum_of_unit_floquet": "NLS.ZakharovShabat.mem_wholeLineSpectrum_of_unit_floquet",
+        "monotone_canonicalPeriodOneBoundaryRoots": "NLS.ZakharovShabat.monotone_canonicalPeriodOneBoundaryRoots",
+        "nonMeasureDistribution_not_measure": "NLS.Fourier.nonMeasureDistribution_not_measure",
+        "nonreal_mem_wholeLineResolventSet": "NLS.ZakharovShabat.nonreal_mem_wholeLineResolventSet",
+        "norm_aknsDomainOfFunction": "NLS.ZakharovShabat.norm_aknsDomainOfFunction",
+        "normalOperatorSpectralMeasure": "NLS.FunctionalAnalysis.normalOperatorSpectralMeasure",
+        "not_sourceTheorem1_1_printed_exhaustion": "NLS.ZakharovShabat.not_sourceTheorem1_1_printed_exhaustion",
+        "operator_eq_smul_iff_physical": "NLS.ZakharovShabat.operator_eq_smul_iff_physical",
+        "pencilRootSpace": "NLS.FunctionalAnalysis.pencilRootSpace",
+        "periodOneBoundaryPotential": "NLS.ZakharovShabat.periodOneBoundaryPotential",
+        "periodOneBoundaryPotential_eq_physicalRestriction": "NLS.ZakharovShabat.periodOneBoundaryPotential_eq_physicalRestriction",
+        "periodOneCoefficient_sourceFiniteGapPhysicalPair": "NLS.ZakharovShabat.periodOneCoefficient_sourceFiniteGapPhysicalPair",
+        "periodicAlgebraicMultiplicity_eq_classical_sum": "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_eq_classical_sum",
+        "periodicRootSpaceTop_le_parity_of_discriminant_level": "NLS.ZakharovShabat.periodicRootSpaceTop_le_parity_of_discriminant_level",
+        "periodicSpectrum_eq_classicalEigenvalues_union": "NLS.ZakharovShabat.BoundaryCondition.periodicSpectrum_eq_classicalEigenvalues_union",
+        "periodic_l2WholeLinePotential": "NLS.ZakharovShabat.periodic_l2WholeLinePotential",
+        "physicalEvenEndpoints_count_classicalPeriodicMultiplicity": "NLS.ZakharovShabat.physicalEvenEndpoints_count_classicalPeriodicMultiplicity",
+        "physicalOddEndpoints_count_classicalAntiperiodicMultiplicity": "NLS.ZakharovShabat.physicalOddEndpoints_count_classicalAntiperiodicMultiplicity",
+        "physicalOperator": "NLS.ZakharovShabat.physicalOperator",
+        "physicalOperator_aknsToZS": "NLS.ZakharovShabat.physicalOperator_aknsToZS",
+        "physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum": "NLS.ZakharovShabat.physicalPeriodicAlgebraicMultiplicity_eq_classicalSigned_sum",
+        "physicalPeriodicEndpoints_count_multiplicity": "NLS.ZakharovShabat.physicalPeriodicEndpoints_count_multiplicity",
+        "physicalPeriodicEndpoints_eq_source": "NLS.ZakharovShabat.physicalPeriodicEndpoints_eq_source",
+        "physicalPeriodicEndpoints_im_eq_zero_of_realType": "NLS.ZakharovShabat.physicalPeriodicEndpoints_im_eq_zero_of_realType",
+        "physicalPeriodicEndpoints_real_order": "NLS.ZakharovShabat.physicalPeriodicEndpoints_real_order",
+        "physicalPeriodicGap_eq_zero_iff": "NLS.ZakharovShabat.physicalPeriodicGap_eq_zero_iff",
+        "physicalPeriodicMidpointGap_memℓ2": "NLS.ZakharovShabat.physicalPeriodicMidpointGap_memℓ2",
+        "physicalPeriodicRootSpaceTop_eq_map": "NLS.ZakharovShabat.physicalPeriodicRootSpaceTop_eq_map",
+        "physicalPeriodicSpectrum_iff_endpoint": "NLS.ZakharovShabat.physicalPeriodicSpectrum_iff_endpoint",
+        "physical_operator_realization": "NLS.ZakharovShabat.physical_operator_realization",
+        "roughTriangularCoefficients_no_analytic_representative": "NLS.ZakharovShabat.roughTriangularCoefficients_no_analytic_representative",
+        "roughTriangularCoefficients_no_smooth_representative": "NLS.ZakharovShabat.roughTriangularCoefficients_no_smooth_representative",
+        "roughTriangularSource_finite_gap": "NLS.ZakharovShabat.roughTriangularSource_finite_gap",
+        "roughTriangularSource_not_realType": "NLS.ZakharovShabat.roughTriangularSource_not_realType",
+        "roughTriangularSource_spectrum": "NLS.ZakharovShabat.roughTriangularSource_spectrum",
+        "sourceBoundaryDisplacement": "NLS.ZakharovShabat.sourceBoundaryDisplacement",
+        "sourceBoundaryDisplacement_apply": "NLS.ZakharovShabat.sourceBoundaryDisplacement_apply",
+        "sourceBoundaryPrintedHeight_counterexample": "NLS.ZakharovShabat.sourceBoundaryPrintedHeight_counterexample",
+        "sourceBoundarySpectrum_closed_discrete": "NLS.ZakharovShabat.sourceBoundarySpectrum_closed_discrete",
+        "sourceBoundarySpectrum_im_eq_zero": "NLS.ZakharovShabat.sourceBoundarySpectrum_im_eq_zero",
+        "sourceCanonicalEndpoint_eigenfunction_antiperiodic": "NLS.ZakharovShabat.sourceCanonicalEndpoint_eigenfunction_antiperiodic",
+        "sourceCanonicalEndpoint_eigenfunction_periodic": "NLS.ZakharovShabat.sourceCanonicalEndpoint_eigenfunction_periodic",
+        "sourceCanonicalEndpoint_eigenfunction_unit_translation": "NLS.ZakharovShabat.sourceCanonicalEndpoint_eigenfunction_unit_translation",
+        "sourceCorollary1_3": "NLS.ZakharovShabat.sourceCorollary1_3",
+        "sourceCorollary1_3_mem": "NLS.ZakharovShabat.sourceCorollary1_3_mem",
+        "sourceFiniteGapLocus": "NLS.ZakharovShabat.sourceFiniteGapLocus",
+        "sourceFiniteGap_exists_analytic_representative": "NLS.ZakharovShabat.sourceFiniteGap_exists_analytic_representative",
+        "sourceIntervalExtensionDistributionCLM": "NLS.ZakharovShabat.sourceIntervalExtensionDistributionCLM",
+        "sourceIntervalExtensionDistribution_periodic": "NLS.ZakharovShabat.sourceIntervalExtensionDistribution_periodic",
+        "sourceIntervalExtensionL2_ofFunction": "NLS.ZakharovShabat.sourceIntervalExtensionL2_ofFunction",
+        "sourceLemma4_3_L2_physical": "NLS.ZakharovShabat.sourceLemma4_3_L2_physical",
+        "sourcePeriodicEndpointEnergy_sum": "NLS.ZakharovShabat.sourcePeriodicEndpointEnergy_sum",
+        "sourcePeriodicPrintedHeight_counterexample": "NLS.ZakharovShabat.sourcePeriodicPrintedHeight_counterexample",
+        "sourcePhysicalL2Equiv": "NLS.ZakharovShabat.sourcePhysicalL2Equiv",
+        "sourcePhysicalL2_apply": "NLS.ZakharovShabat.sourcePhysicalL2_apply",
+        "sourcePhysicalL2_equiv_symm": "NLS.ZakharovShabat.sourcePhysicalL2_equiv_symm",
+        "sourcePhysicalL2_realType_iff": "NLS.ZakharovShabat.sourcePhysicalL2_realType_iff",
+        "sourcePhysicalPeriodicOperator_isSelfAdjoint_iff": "NLS.ZakharovShabat.sourcePhysicalPeriodicOperator_isSelfAdjoint_iff",
+        "sourceTheorem1_2": "NLS.ZakharovShabat.sourceTheorem1_2",
+        "sourceTheorem1_2_ordered_labels": "NLS.ZakharovShabat.sourceTheorem1_2_ordered_labels",
+        "sourceTheorem1_4_two": "NLS.ZakharovShabat.sourceTheorem1_4_two",
+        "sourceTheorem1_5": "NLS.ZakharovShabat.sourceTheorem1_5",
+        "sourceTheorem1_5_mem": "NLS.ZakharovShabat.sourceTheorem1_5_mem",
+        "source_gap_mem_wholeLineResolventSet": "NLS.ZakharovShabat.source_gap_mem_wholeLineResolventSet",
+        "source_wholeLineSpectrum_eq_floquetBands": "NLS.ZakharovShabat.source_wholeLineSpectrum_eq_floquetBands",
+        "source_wholeLine_spectral_overview": "NLS.ZakharovShabat.source_wholeLine_spectral_overview",
+        "spectralPencil_triangularResolvent": "NLS.ZakharovShabat.spectralPencil_triangularResolvent",
+        "tendsto_sourceIntervalExtensionDistribution_truncate": "NLS.ZakharovShabat.tendsto_sourceIntervalExtensionDistribution_truncate",
+        "triangularResolvent_spectralPencil": "NLS.ZakharovShabat.triangularResolvent_spectralPencil",
+        "wholeLineCayley": "NLS.ZakharovShabat.wholeLineCayley",
+        "wholeLineCayleySpectralMeasure": "NLS.ZakharovShabat.wholeLineCayleySpectralMeasure",
+        "wholeLineCayleySpectralMeasure_nullSingletonClass": "NLS.ZakharovShabat.wholeLineCayleySpectralMeasure_nullSingletonClass",
+        "wholeLineMinimalOperator": "NLS.ZakharovShabat.wholeLineMinimalOperator",
+        "wholeLineMinimalOperator_adjoint_test_core": "NLS.ZakharovShabat.wholeLineMinimalOperator_adjoint_test_core",
+        "wholeLineMinimalOperator_closure_eigenvector_eq_zero": "NLS.ZakharovShabat.wholeLineMinimalOperator_closure_eigenvector_eq_zero",
+        "wholeLineMinimalOperator_closure_eq_adjoint": "NLS.ZakharovShabat.wholeLineMinimalOperator_closure_eq_adjoint",
+        "wholeLineRealSpectralMeasure": "NLS.ZakharovShabat.wholeLineRealSpectralMeasure",
+        "wholeLineRealSpectralMeasure_absolutelyContinuous": "NLS.ZakharovShabat.wholeLineRealSpectralMeasure_absolutelyContinuous",
+        "wholeLineRealSpectralMeasure_absolutelyContinuous_of_compact_input": "NLS.ZakharovShabat.wholeLineRealSpectralMeasure_absolutelyContinuous_of_compact_input",
+        "wholeLineRealSpectralMeasure_real_univ": "NLS.ZakharovShabat.wholeLineRealSpectralMeasure_real_univ",
+        "wholeLineRealSpectralMeasure_resolvent_integral": "NLS.ZakharovShabat.wholeLineRealSpectralMeasure_resolvent_integral",
+        "wholeLineResolventSet": "NLS.ZakharovShabat.wholeLineResolventSet",
+        "wholeLineSpectrum": "NLS.ZakharovShabat.wholeLineSpectrum",
+        "zsToAKNS": "NLS.ZakharovShabat.zsToAKNS"
+      },
+      "qualification": "This consolidation reuses eleven qualified comparisons with their unchanged module hashes. Only the six newly hash-listed modules were reread completely in this step; it is not an independent rereview of all transitive proofs. It preserves both unrestricted printed-height refutations, the complex finite-gap regularity counterexample, the signed-domain interpretation, the local Neumann-variable typo, and all exponent restrictions. Historical priority, external KdV results and the cited Schroedinger analogy are contextual rather than independently certified. The inventory covers Section 1 only, not the whole spectral chapter or dissertation. The exact cited 2014 construction and Appendix G.2 norm interpretation remain unresolved.",
+      "source_record_sha256": "49fe39ca1b88565ab97ba457ccc9121b5c64253f394c972a01fe777606b353a4"
     }
   }
 }
