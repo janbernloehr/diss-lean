@@ -4,6 +4,29 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Renewed comparison of complex potentials, printed pp. 17–18
+
+The gap definitions and the complex-potential paragraph now have a renewed
+comparison against twelve complete Lean modules, recorded as
+`SpectralOverviewComplexSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). The gap is the signed endpoint
+difference, and the midpoint is the arithmetic mean; both retain the actual
+physical spectral labels and their full l2 asymptotics.
+
+The original physical operator is self-adjoint exactly for real-type
+potentials, with the full adjoint domain. The two unit-interval boundary
+conditions define separate operators, whose spectra are combined by union.
+The potential `(1,-1)` supplies the actual nonreal eigenvalue `i`. Arbitrarily
+small potentials `(r,-r)` supply the gap `2ir`, and `(1,i)` supplies a nonreal
+midpoint. The nonreal-spectrum assertion is existential; it does not say that
+every potential outside the real locus has nonreal eigenvalues.
+
+This comparison reads the source's Floquet qualification as withdrawing the
+preceding description by complements of real open intervals. The reviewed complex proofs still use
+exact monodromy trace criteria. This comparison makes no assertion about
+general complex whole-line bands, the neighboring real enumeration and
+absolute-continuity claims, or the entire chapter.
+
 ## Theorem 1.1: printed height proved through four; all-exponent assertion refuted
 
 Source: dissertation, printed p. 18 (statement), especially clauses (ii)

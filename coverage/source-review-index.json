@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T07:05:55.806812+00:00",
-  "base_commit": "fa30173af216d41fef20acc94030be8260600874",
+  "published_utc": "2026-10-27T07:07:03.699519+00:00",
+  "base_commit": "e07e414542c4526e32eb2251173bee6ca2c7762a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 50,
-    "module_hash_checks": 707,
-    "distinct_modules": 649
+    "review_records": 51,
+    "module_hash_checks": 719,
+    "distinct_modules": 660
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -10223,6 +10223,107 @@
       },
       "qualification": "All43 hash-listed canonical modules were read completely in the renewed opening comparison, together with the five new public examples. The comparison retains the original functions, sequence norms, Fourier normalization, action domains, solution class and exponent ranges. The action leading term is newly proved in the full half-exponent norm. Existing comparisons of the named main results and the Fourier-space background remain separate. This is not an independent re-proof of every transitive dependency, a certification of the contextual narrative, or a full-dissertation completion claim. The exact2014 Birkhoff construction and AppendixG2 norm interpretation remain explicitly unresolved.",
       "source_record_sha256": "53a67358eda92753dcf0fc87935211a9c9de43250de69c767ac714d3f8c6b285"
+    },
+    "SpectralOverviewComplexSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T07:02:09.886824+00:00",
+      "base_commit": "fa30173af216d41fef20acc94030be8260600874",
+      "source_lines": [
+        803,
+        824
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            803,
+            810,
+            820,
+            824
+          ],
+          "requirement": "The original complex endpoint pairs define gap lengths and midpoints; a gap collapses exactly when its endpoints coincide.",
+          "finding": "The physical endpoint data are specified by lexicographic order, full l2 displacements and the analytic zero orders of the actual physical discriminant. Uniqueness identifies them with the source endpoints, and the actual bounded-inverse spectrum is precisely exhausted by these endpoints. The midpoint is their arithmetic mean and the gap is right minus left, with no absolute value. The physical gap vanishes exactly for equal endpoints. Both the full gap and midpoint-displacement sequences lie in l2, with common local bounds and arbitrarily small tails on one physical L2 neighborhood. These statements include complex potentials and all central indices.",
+          "declarations": [
+            "PhysicalPeriodicEndpointData.unique",
+            "physicalPeriodicEndpoints_eq_source",
+            "physicalPeriodicSpectrum_iff_endpoint",
+            "physicalPeriodicMidpointGap_memℓ2",
+            "exists_uniform_physicalPeriodicMidpointGap",
+            "physicalPeriodicGap_eq_zero_iff"
+          ]
+        },
+        {
+          "source_lines": [
+            821,
+            822
+          ],
+          "requirement": "A potential that is not of real type gives a non-self-adjoint operator; nonreal eigenvalues can occur.",
+          "finding": "The actual period-two physical operator and each separate full classical unit-interval signed operator are self-adjoint if and only if the original potential is of real type. Equality includes the actual Hilbert-adjoint domain. Periodic and antiperiodic H1 endpoint conditions define separate operators; their spectra are combined by union. For the original constant physical potential (1,-1), i belongs to the independently defined bounded-inverse spectrum and is a full-domain signed ODE eigenvalue. Both signed operators of that witness fail self-adjointness. This is an existence assertion, not a claim that every non-real-type potential has nonreal spectrum.",
+          "declarations": [
+            "sourcePhysicalPeriodicOperator_isSelfAdjoint_iff",
+            "classicalSignedOperator_isSelfAdjoint_iff",
+            "classicalSignedOperator_domain_iff",
+            "I_mem_physicalPeriodicSpectrum_constant",
+            "I_mem_classicalSignedEigenvalues_union_constant",
+            "classicalSignedOperator_constant_one_neg_one_not_selfAdjoint"
+          ]
+        },
+        {
+          "source_lines": [
+            822,
+            824
+          ],
+          "requirement": "The original complex gaps may have nonzero imaginary part.",
+          "finding": "Every physical L2 neighborhood of zero contains an actual constant potential (r,-r), r>0, whose lexicographically selected central endpoints are exactly (-ir,ir). Its gap is 2ir, its midpoint is zero, and its gap has nonzero imaginary part. The proof transports the original isolated spectral pair and ordering through the physical Fourier isometry. The result is not inferred merely from the fact that the codomain is complex.",
+          "declarations": [
+            "exists_physical_nonreal_central_pair",
+            "exists_physical_nonreal_gap"
+          ]
+        },
+        {
+          "source_lines": [
+            822,
+            824
+          ],
+          "requirement": "The original complex midpoints may also have nonzero imaginary part.",
+          "finding": "For the literal constant physical potential (1,i), every actual spectral point satisfies 2*Re(z)*Im(z)=1. The full l2 endpoint asymptotics place both members of a sufficiently positive-index pair in the right half-plane. Both imaginary parts are then positive, so their actual arithmetic midpoint is nonreal. The constant-spectrum characterization retains its nonzero first-amplitude hypothesis, which both explicit witnesses satisfy.",
+          "declarations": [
+            "constant_one_I_spectral_re_im",
+            "exists_physical_nonreal_midpoint_constant"
+          ]
+        }
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          17,
+          18
+        ],
+        "pdf_pages": [
+          17,
+          18
+        ],
+        "images": {
+          "SpectralOverviewComplexCurrentReview-017.png": "9e60a0c37156cda406f608dc1746ae59a371aae6386e45dca8cadeadbf4153bd",
+          "SpectralOverviewComplexCurrentReview-018.png": "c6af5c91e50956f88b703ccd60ae55265400cf633089bc431e2e9596c9ccafc6"
+        }
+      },
+      "source_interpretation": "The statement that complex gaps are no longer characterized by Floquet theory is read as withdrawing the preceding real-line complement-of-real-open-intervals description. This comparison makes no assertion that Floquet or monodromy methods cease to apply for complex coefficients: the reviewed proofs themselves retain exact physical monodromy trace criteria. General complex whole-line bands are outside this record.",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/PhysicalConstantPeriodicSpectrum.lean": "19af9ec465481e623c232fc622ec4cbaeb9ec93183f7365bdd9aeaed1a64f5ad",
+        "NLS/ZakharovShabat/PhysicalPeriodicMidpointGap.lean": "0a0a580705f8fd6664b3c03383cb600ce780a280cc9d81ae9a0886da83b60099",
+        "NLS/ZakharovShabat/PhysicalNonrealGap.lean": "ef025cb36be8329ac570822f649785cfc2c0ba5438110b3f323ddbc047a7f8bf",
+        "NLS/ZakharovShabat/PhysicalNonrealMidpoint.lean": "285a3d7127153321286e4169cb977cfec08f48a0ee2bd1613b7da03a94db6e6b",
+        "NLS/ZakharovShabat/PeriodicSelfAdjointRealType.lean": "c4cc8dc9b50866364a64339b53b9c820afb8ba94b22e971c33e5c9eabefb5426",
+        "NLS/ZakharovShabat/SourceConstantPeriodicSpectrum.lean": "fcb8cd39b0c3eaa01b62dab272ec9aa42cda25b08f8cfa7a4406ffce794b8262",
+        "NLS/ZakharovShabat/UnitParitySelfAdjoint.lean": "2810afd569c771206b18030761aa5e7db3ee63d1fa7c49261055256685eb3062",
+        "NLS/ZakharovShabat/PhysicalPeriodicSpectrum.lean": "f876a48c7f0991da861856877233ef955d7fff92e5a42f933e4edd92ce4dfb8d",
+        "NLS/ZakharovShabat/PhysicalPeriodicEndpoints.lean": "4afcc20e1d8f44772f83d942aba1614ba05cd461198286f8a616da4ca1d7109f",
+        "NLS/ZakharovShabat/ClassicalSignedDiscriminant.lean": "76e3de1c8af96aad869c8b2606c2eb4bdb88c7a22aec25997109c79a0d9c7777",
+        "NLS/ZakharovShabat/PhysicalPeriodicSelfAdjoint.lean": "890fb9c071db9d2d33cbeae1082f04bf22f7ca71012fca858eb1dc03fa273230",
+        "NLS/ZakharovShabat/SourcePeriodicOverview.lean": "d5aee9e22082da103998e4e03f15f4b45c0a330d96a71d3dd22f95594000d3ec"
+      },
+      "qualification": "All twelve hash-listed modules were read in full and the rendered source pages were inspected. This is a focused renewed comparison of the gap definitions and complex-potential paragraph, including the necessary actual-operator and endpoint interfaces. It is not a re-proof of all transitive dependencies, a comparison of all neighboring real spectral enumeration or whole-line claims, or a full-dissertation completion claim. The precise2014 construction and AppendixG2 norm interpretation remain unresolved.",
+      "source_record_sha256": "37bc62e79063ef675ff4989bc86fdd8834bcbe33b63b88b661cb32143172365d"
     }
   }
 }
