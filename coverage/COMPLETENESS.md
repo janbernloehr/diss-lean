@@ -69,8 +69,11 @@ setup, compact-resolvent discreteness, exact sufficient regions, quantified
 Lemma 3.4 and endpoint modifications, retaining all formal refutations.
 Relative boundedness and closedness use alternative proofs of the source
 assertions; the cited external perturbation argument is not independently audited.
-Continue through the remaining Section 3 proof assertions, then later
-sections in order.
+The complete Section 3 text now has a 38-group ordered assertion inventory,
+checked against all five rendered pages. It preserves six formally refuted
+printed bounds, valid clauses and corrections, explicit interpretations,
+and contextual citations. Each group links its exact prior proof evidence.
+Continue through Section 4, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

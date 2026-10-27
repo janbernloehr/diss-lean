@@ -7,6 +7,41 @@ It retains the original period-two space, its finite-exponent component-sum norm
 conditional period-one parity clauses. It is not a completeness certificate
 for Section 3 or the dissertation.
 
+## Complete Section 3 assertion inventory
+
+The entire Section 3 text on printed pp.23–27 was read in order and all
+five rendered pages were inspected. The 38 ordered groups in the evidence
+record distinguish proved assertions, definitions, formal refutations,
+explicit interpretations and contextual citations. Each group points to
+its precise earlier comparison groups and resolved Lean declarations.
+
+| Passage | Assessment retained by the inventory |
+| --- | --- |
+| Operator setup | Actual dense one-derivative domain, physical analytic approximation and infinitesimal relative bound; closedness and relative boundedness use alternative proofs. |
+| Proposition 3.1 | Full printed package for 1<=p<=4; unrestricted printed height refuted. Height-N counts, discreteness and reality remain valid for every finite p. |
+| Lemma 3.2 and Corollary 3.3 | Actual finite-rank compactness proof, scalar Holder estimates and direct Neumann inverse. Missing pair factor and both endpoint sign errors remain refuted. |
+| Lemma 3.4 | Main bound with one constant 64*p^2, exact signed component sums and Holder steps; both intermediate uniform-radius estimates remain refuted. |
+| Corollary 3.5 and projections | Original-norm square bounds, one neighborhood for all larger exact exteriors, compact segment and actual analytic contour integrals. |
+| Parity, ranks and reality | Native period-one parameter topology, full-domain invariance, algebraic counts and real-type pairings at all finite exponents. |
+| Lemma 3.7 | Intrinsic rank-two traces, full-domain lifts and local analytic transport for each fixed contour, including repeated roots. |
+
+The high-height prose uses the operator-norm or unit-ball reading, and
+height formulas use nonzero imaginary part so their denominators are
+finite. Large-parameter decay is used on the stated admissible strips
+and exterior. The period-one hypothesis in Lemma 3.6 and fixed-contour
+locality in Lemma 3.7 are retained. The two references to Kato and the
+printed proof labels are contextual. Earlier implementation checkpoints
+below remain historical; their pending-work sentences do not supersede
+this qualified inventory.
+
+Section3AssertionInventorySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records 38 ordered assertion groups,
+88 reviewed module hashes and 299 resolved declaration references.
+This inventory covers Section 3 and preserves the qualifications of its
+earlier evidence; it does not certify the whole chapter or dissertation.
+Its Lean sources match the full validation
+at `cb7317a`; this documentation update does not rerun Lean.
+
 ## The p=1 proof inequalities on printed p. 24
 
 The two endpoint sentences in the proof of Lemma 3.2 print lower bounds

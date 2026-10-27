@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: eight further Section 3 passage groups now have explicit
-source comparisons, including full-domain discreteness, exact sufficient
-regions and the retained norm, exponent and radius corrections.
+Latest step: Section 3 now has a 38-group ordered assertion inventory
+covering its complete text and proof displays, with six retained formal
+refutations and explicit scope qualifications.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

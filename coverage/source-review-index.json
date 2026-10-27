@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T18:04:33.717771+00:00",
-  "base_commit": "4d065fc1734adb5cb686cdfefa5ae41801b930b5",
+  "published_utc": "2026-10-27T18:08:44.101140+00:00",
+  "base_commit": "1bbca042eee8f00141ae13215e7aea27c3676334",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,8 +18,8 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 82,
-    "module_hash_checks": 1171,
+    "review_records": 83,
+    "module_hash_checks": 1259,
     "distinct_modules": 872
   },
   "unresolved": [
@@ -18057,6 +18057,2057 @@
         "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
       },
       "source_record_sha256": "fcfeb7ec2874cab432f03136bb317c321728dfa02c01985381ebf5e0ecac3d00"
+    },
+    "Section3AssertionInventorySourceComparison-2026-10-27": {
+      "source_lines": [
+        [
+          1219,
+          1623
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "inventory_order": 1,
+          "source_lines": [
+            1219,
+            1238
+          ],
+          "requirement": "Full operator, dense domain, analytic approximation and infinitesimal relative bound",
+          "classification": "proved_assertions_with_alternative_proofs",
+          "finding": "The full operator has the dense one-derivative domain in the original finite-p pair norm. Analytic decomposition preserves the physical distribution and has an arbitrarily small remainder. Infinitesimal relative boundedness and closedness are proved using resolvent decay and a genuine bounded inverse, respectively; the cited perturbation proof is contextual.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1219,
+                1238
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Fourier.distributionSynthesis_ofFinsupp_eq_integral",
+            "NLS.Fourier.exists_source_analytic_decomposition",
+            "NLS.ZakharovShabat.exists_source_potential_relative_bound",
+            "NLS.ZakharovShabat.exists_uniform_source_potential_relative_bound",
+            "NLS.ZakharovShabat.mem_sourceUnboundedOperator_domain",
+            "NLS.ZakharovShabat.sourceUnboundedDomainEquiv",
+            "NLS.ZakharovShabat.sourceUnboundedOperator",
+            "NLS.ZakharovShabat.sourceUnboundedOperator_dense_domain",
+            "NLS.ZakharovShabat.sourceUnboundedOperator_isClosed"
+          ]
+        },
+        {
+          "inventory_order": 2,
+          "source_lines": [
+            1238,
+            1240
+          ],
+          "requirement": "Compact resolvent and discrete spectrum plan",
+          "classification": "proved_with_scope",
+          "finding": "A genuine compact resolvent exists for each potential. Reciprocal spectral mapping makes bounded spectral parts finite and yields discreteness with actual domain eigenvectors. Geometric finiteness here is separate from algebraic contour multiplicities.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1238,
+                1240
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.discreteTopology_sourceResolventSet_compl",
+            "NLS.ZakharovShabat.finiteDimensional_periodicEigenspace",
+            "NLS.ZakharovShabat.finite_periodicSpectrum_inter_closedBall",
+            "NLS.ZakharovShabat.isCompactOperator_sourceResolvent",
+            "NLS.ZakharovShabat.mem_periodicSpectrum_iff_exists_eigenvector",
+            "NLS.ZakharovShabat.mem_periodicSpectrum_iff_resolvent_spectrum",
+            "NLS.ZakharovShabat.sourceHeightNeumannRegion_nonempty",
+            "NLS.ZakharovShabat.sourceHeightNeumannRegion_subset_resolventSet",
+            "NLS.ZakharovShabat.sourceResolventSet_eq",
+            "NLS.ZakharovShabat.sourceResolventToDomain_sourceSpectralPencil",
+            "NLS.ZakharovShabat.sourceSpectralPencil_sourceResolventToDomain"
+          ]
+        },
+        {
+          "inventory_order": 3,
+          "source_lines": [
+            1243,
+            1263
+          ],
+          "requirement": "Proposition 3.1 and its printed-height qualification",
+          "classification": "mixed_proved_and_formally_refuted",
+          "finding": "All printed Proposition 3.1 clauses hold on one common original-topology neighborhood for 1<=p<=4, with algebraic and conditional parity counts. The unrestricted norm-dependent height is formally refuted by period-one examples at large finite exponents. Height-N localization and counting, discreteness and real-type reality remain valid for every finite p.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1243,
+                1263
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1557,
+                1566
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1567,
+                1575
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1577,
+                1578
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1580,
+                1587
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.pairing_convolution_conj",
+            "NLS.Coeff.summable_convolution_pairing",
+            "NLS.Coeff.summable_norm_pairing",
+            "NLS.ConjugatedRanges.rangeEquiv",
+            "NLS.ConjugatedRanges.rangeInfEquiv",
+            "NLS.ProjectionRank.finrank_eq_of_norm_sub_lt_one",
+            "NLS.ProjectionRank.finrank_eq_on_preconnected",
+            "NLS.ZakharovShabat.IsRealType",
+            "NLS.ZakharovShabat.Proposition3_1Data",
+            "NLS.ZakharovShabat.Proposition3_1Data.disk_eigenvector_unit_translation",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.central_multiplicity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_parity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_unit_translation",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_multiplicity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.exterior_resolvent",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.mem_spectrum_iff_central_or_disk",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.spectrum_subset",
+            "NLS.ZakharovShabat.card_centralParityIndices",
+            "NLS.ZakharovShabat.centralCircle_spectral_selection",
+            "NLS.ZakharovShabat.closedCentralRectangle_subset_centralCircleBall",
+            "NLS.ZakharovShabat.domainPairing_freeOperator_conj",
+            "NLS.ZakharovShabat.domainPairing_inclusion_re_pos",
+            "NLS.ZakharovShabat.domainPairing_potentialOperator_conj",
+            "NLS.ZakharovShabat.eigenvalue_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.exists_proposition3_1_up_to_four",
+            "NLS.ZakharovShabat.exists_uniform_central_multiplicity",
+            "NLS.ZakharovShabat.exists_uniform_central_parity_ranks",
+            "NLS.ZakharovShabat.exists_uniform_disk_multiplicity_two",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodOneCountingData",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodicCountingData",
+            "NLS.ZakharovShabat.finrank_contour_eq_on_preconnected",
+            "NLS.ZakharovShabat.finrank_range_centralParityProjection_zero",
+            "NLS.ZakharovShabat.finrank_range_sourceCentralRectangleIntegral",
+            "NLS.ZakharovShabat.finrank_range_sourceParityCentralProjection",
+            "NLS.ZakharovShabat.not_proposition3_1_all_p",
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top",
+            "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.proposition3_1_discreteness_and_reality",
+            "NLS.ZakharovShabat.proposition3_1_printed_height_counterexample",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType"
+          ]
+        },
+        {
+          "inventory_order": 4,
+          "source_lines": [
+            1265,
+            1268
+          ],
+          "requirement": "Actual free/perturbed resolvent identity",
+          "classification": "proved_with_scope",
+          "finding": "The actual resolvents obey R_phi*(1-Phi*R0)=R0 whenever both inverses exist. No smallness condition replaces the full inverse hypothesis.",
+          "evidence": [
+            {
+              "review": "Section3SetupSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1265,
+                1268
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResolvent_comp_one_sub_potentialFreeResolvent",
+            "NLS.ZakharovShabat.toMax_sourcePotentialFreeResolvent_apply"
+          ]
+        },
+        {
+          "inventory_order": 5,
+          "source_lines": [
+            1270,
+            1275
+          ],
+          "requirement": "Young estimate (1.3) and high-height smallness",
+          "classification": "proved_with_explicit_interpretation",
+          "finding": "Young's inequality (1.3) has constant one in the original pair norms. The large-height sentence is read as an operator-norm or unit-ball assertion; a vector bound independent of arbitrary input scaling is not asserted. The norm-product formulation also avoids dividing by the norm of a zero potential.",
+          "evidence": [
+            {
+              "review": "Section3SetupSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1270,
+                1273
+              ]
+            },
+            {
+              "review": "Section3SetupSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1275,
+                1275
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceFreeResolventToL1_uniform_small",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+            "NLS.ZakharovShabat.norm_sourcePotentialFromL1_apply_le",
+            "NLS.ZakharovShabat.norm_sourcePotentialFromL1_le",
+            "NLS.ZakharovShabat.sourceEquation1_3"
+          ]
+        },
+        {
+          "inventory_order": 6,
+          "source_lines": [
+            1276,
+            1279
+          ],
+          "requirement": "Punctured vertical-strip definition",
+          "classification": "definition_and_proved_geometry",
+          "finding": "The signed-center vertical strip includes its two vertical edges and the omitted disk's circle boundary. For 0<r<=pi/4 it contains no free lattice point.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1276,
+                1279
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.neg_mem_verticalStrip",
+            "NLS.ZakharovShabat.notMem_freeLattice_of_mem_verticalStrip",
+            "NLS.ZakharovShabat.sphere_subset_verticalStrip",
+            "NLS.ZakharovShabat.verticalStrip",
+            "NLS.ZakharovShabat.verticalStrip_denominator_lower"
+          ]
+        },
+        {
+          "inventory_order": 7,
+          "source_lines": [
+            1290,
+            1301
+          ],
+          "requirement": "Lemma 3.2 and original pair-norm correction",
+          "classification": "mixed_proved_and_formally_refuted",
+          "finding": "Lemma 3.2(i) and (iii) hold in the original norms. Part (ii) is false for the two-component norm at p=2; the corrected height estimate has factor 2^(1-1/p). Finite height denominators require nonzero imaginary part. The separate endpoint sign refutations remain visible.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1290,
+                1301
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent",
+            "NLS.ZakharovShabat.lemma3_2Counterexample_input_norm",
+            "NLS.ZakharovShabat.lemma3_2Counterexample_output_norm",
+            "NLS.ZakharovShabat.lemma3_2Counterexample_printed_rhs",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
+            "NLS.ZakharovShabat.not_lemma3_2_ii_original_norms"
+          ]
+        },
+        {
+          "inventory_order": 8,
+          "source_lines": [
+            1303,
+            1312
+          ],
+          "requirement": "Actual diagonal free inverse and operator-norm finite-rank approximation",
+          "classification": "proved_with_scope",
+          "finding": "The signed Fourier expansion converges to the actual free inverse. Explicit finite-rank cutoffs converge in original operator norm, using both integer tails, and closure of compact operators proves part (i). The argument includes p=1.",
+          "evidence": [
+            {
+              "review": "Lemma32CompactProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1303,
+                1308
+              ]
+            },
+            {
+              "review": "Lemma32CompactProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1310,
+                1311
+              ]
+            },
+            {
+              "review": "Lemma32CompactProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1311,
+                1312
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.norm_multiplier_cutoff_error_le",
+            "NLS.Coeff.tendsto_multiplier_cutoff",
+            "NLS.ZakharovShabat.exists_sourceFreeResolventCutoff_norm_sub_lt",
+            "NLS.ZakharovShabat.finiteDimensional_sourceFreeResolventCutoff",
+            "NLS.ZakharovShabat.finrank_sourceFreeResolventCutoff_le",
+            "NLS.ZakharovShabat.freePencil_freeResolventToDomain",
+            "NLS.ZakharovShabat.freeResolventToDomain_freePencil",
+            "NLS.ZakharovShabat.freeResolvent_eq_prodMap",
+            "NLS.ZakharovShabat.hasSum_sourceFreeResolvent_signed",
+            "NLS.ZakharovShabat.inverseSymbol_tails",
+            "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolventCutoff",
+            "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent_from_cutoffs",
+            "NLS.ZakharovShabat.sourceFreeResolventCutoff",
+            "NLS.ZakharovShabat.sourceFreeResolventCutoff_fst",
+            "NLS.ZakharovShabat.sourceFreeResolventCutoff_snd",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1_one",
+            "NLS.ZakharovShabat.sourceFreeResolvent_fst_apply",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_apply",
+            "NLS.ZakharovShabat.tendsto_scalarResolvent_cutoff",
+            "NLS.ZakharovShabat.tendsto_sourceFreeResolventCutoff"
+          ]
+        },
+        {
+          "inventory_order": 9,
+          "source_lines": [
+            1313,
+            1324
+          ],
+          "requirement": "Component Holder inequality and p=1 endpoint",
+          "classification": "proved_with_scope",
+          "finding": "Each actual signed component has the literal absolute sum and Holder estimate with the conjugate reciprocal moment. The p=1 modification uses the reciprocal supremum. Combining components retains the pair-norm qualification.",
+          "evidence": [
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1313,
+                1323
+              ]
+            },
+            {
+              "review": "Lemma32EndpointProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                [
+                  1290,
+                  1301
+                ],
+                [
+                  1313,
+                  1360
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.norm_reindex",
+            "NLS.ZakharovShabat.norm_scalarResolventToL1_le",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_im",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_strip",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_pureImaginary",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_moment",
+            "NLS.ZakharovShabat.scalarResolventToL1_norm_sum",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1_diagonal_zero",
+            "NLS.ZakharovShabat.sourceFreeResolvent_fst_le_moment",
+            "NLS.ZakharovShabat.sourceFreeResolvent_fst_norm_sum",
+            "NLS.ZakharovShabat.sourceFreeResolvent_fst_scalar_bound",
+            "NLS.ZakharovShabat.sourceFreeResolvent_signed_fst",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_le_moment",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_norm_sum",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_scalar",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_scalar_bound",
+            "NLS.ZakharovShabat.summable_scalarFreeL1Bound_moment"
+          ]
+        },
+        {
+          "inventory_order": 10,
+          "source_lines": [
+            1325,
+            1329
+          ],
+          "requirement": "Centered denominator geometry",
+          "classification": "proved_with_scope",
+          "finding": "A nearest integer center and the closed half-strip width give both sqrt(2) denominator comparisons, for every signed Fourier index including the central mode and edge equality.",
+          "evidence": [
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1325,
+                1329
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.centered_denominator_sqrt_two",
+            "NLS.ZakharovShabat.centered_real_gap_sqrt_two",
+            "NLS.ZakharovShabat.complex_norm_ge_l1_div_sqrt_two",
+            "NLS.ZakharovShabat.exists_centered_real_part"
+          ]
+        },
+        {
+          "inventory_order": 11,
+          "source_lines": [
+            1330,
+            1340
+          ],
+          "requirement": "Appendix B.1 sum and height bound",
+          "classification": "proved_with_scope",
+          "finding": "Integer translation gives the punctured Appendix B.1 series bound, then summability and the exact central term prove both displayed height-moment comparisons for finite p>1 and nonzero imaginary part. These are scalar bounds.",
+          "evidence": [
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1330,
+                1333
+              ]
+            },
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1335,
+                1340
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.CoeffPair.componentNormSum_le",
+            "NLS.ReciprocalSeries.summable_int_shifted_rpow",
+            "NLS.ReciprocalSeries.tsum_int_shifted_rpow_le_integral",
+            "NLS.ZakharovShabat.height_moment_numerical",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+            "NLS.ZakharovShabat.punctured_centered_reciprocal_sum",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_height_moment",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_height_moment_chain"
+          ]
+        },
+        {
+          "inventory_order": 12,
+          "source_lines": [
+            1342,
+            1343
+          ],
+          "requirement": "Reversed p=1 height inequality",
+          "classification": "formally_refuted_with_proved_correction",
+          "finding": "The printed p=1 height lower bound is false: at lambda=i the literal reciprocal supremum is 1<sqrt(2). The proved upper bound is 1/abs(Im lambda) for nonzero imaginary part.",
+          "evidence": [
+            {
+              "review": "Lemma32EndpointProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1342,
+                1343
+              ]
+            },
+            {
+              "review": "Lemma32EndpointProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                [
+                  1290,
+                  1301
+                ],
+                [
+                  1313,
+                  1360
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.freeReciprocalSup",
+            "NLS.ZakharovShabat.freeReciprocalSup_le_height",
+            "NLS.ZakharovShabat.freeReciprocalSup_pureImaginary",
+            "NLS.ZakharovShabat.lemma3_2_proof_height_lower_bound_false",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_im",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_strip",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_pureImaginary",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_one_eq_reciprocalSup",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1_diagonal_zero"
+          ]
+        },
+        {
+          "inventory_order": 13,
+          "source_lines": [
+            1344,
+            1347
+          ],
+          "requirement": "Strip denominator geometry",
+          "classification": "proved_with_scope",
+          "finding": "The literal strip denominator lower bound r/sqrt(2)+abs(n-m) holds under the stated radius and strip conditions. The repeated proof label (ii) is an editorial label, not an additional clause.",
+          "evidence": [
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1344,
+                1357
+              ]
+            },
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1415,
+                1417
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_le_verticalStrip",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_moment_le_verticalStrip",
+            "NLS.ZakharovShabat.sourceLemma34_denominator_lower",
+            "NLS.ZakharovShabat.sourceLemma34_denominator_product",
+            "NLS.ZakharovShabat.verticalStrip"
+          ]
+        },
+        {
+          "inventory_order": 14,
+          "source_lines": [
+            1350,
+            1357
+          ],
+          "requirement": "Component reciprocal Holder norm in strips",
+          "classification": "proved_with_scope",
+          "finding": "The actual scalar conjugate reciprocal moment is at most 4p/r for finite p>1 on the punctured strips, including real spectral parameters. The stronger Sobolev estimate supplies the bound.",
+          "evidence": [
+            {
+              "review": "Lemma32ScalarProofSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1344,
+                1357
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_le_verticalStrip",
+            "NLS.ZakharovShabat.scalarFreeL1Bound_moment_le_verticalStrip",
+            "NLS.ZakharovShabat.sourceLemma34_denominator_lower"
+          ]
+        },
+        {
+          "inventory_order": 15,
+          "source_lines": [
+            1359,
+            1360
+          ],
+          "requirement": "Reversed p=1 strip inequality",
+          "classification": "formally_refuted_with_proved_correction",
+          "finding": "The printed p=1 strip lower bound is false at lambda=pi*i, n=0, r=pi/4. The corrected upper bound 1/r holds on every stated strip and controls the actual original-norm endpoint resolvent.",
+          "evidence": [
+            {
+              "review": "Lemma32EndpointProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1359,
+                1360
+              ]
+            },
+            {
+              "review": "Lemma32EndpointProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                [
+                  1290,
+                  1301
+                ],
+                [
+                  1313,
+                  1360
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.freeReciprocalSup_le_verticalStrip",
+            "NLS.ZakharovShabat.freeReciprocalSup_pureImaginary",
+            "NLS.ZakharovShabat.lemma3_2_proof_strip_lower_bound_false",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_im",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_strip",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_pureImaginary",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1",
+            "NLS.ZakharovShabat.sourceFreeResolventToL1_diagonal_zero"
+          ]
+        },
+        {
+          "inventory_order": 16,
+          "source_lines": [
+            1363,
+            1370
+          ],
+          "requirement": "Corollary 3.3 exact sufficient region",
+          "classification": "proved_with_explicit_interpretation",
+          "finding": "Corollary 3.3 uses the displayed strict numerical region with nonzero imaginary part. It is open and nonempty, and the actual compact analytic inverse has both full-domain inverse identities and discrete spectrum.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 6,
+              "source_lines": [
+                1363,
+                1370
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+            "NLS.ZakharovShabat.exists_uniform_sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.hasSum_sourceResolvent_neumann",
+            "NLS.ZakharovShabat.isOpen_sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_le_height",
+            "NLS.ZakharovShabat.sourceCorollary3_3",
+            "NLS.ZakharovShabat.sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.sourceResolvent_neumann_formula"
+          ]
+        },
+        {
+          "inventory_order": 17,
+          "source_lines": [
+            1380,
+            1390
+          ],
+          "requirement": "Neumann inverse, analyticity and compactness",
+          "classification": "proved_with_scope",
+          "finding": "The direct componentwise argument proves the printed factor-one bound for Phi*R0 despite the false standalone pair estimate. The actual inverse equals the Neumann formula and its operator-norm series. Compactness follows from the compact free inverse; analyticity is on the genuine resolvent set.",
+          "evidence": [
+            {
+              "review": "Cor33NeumannProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1380,
+                1383
+              ]
+            },
+            {
+              "review": "Cor33NeumannProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1383,
+                1385
+              ]
+            },
+            {
+              "review": "Cor33NeumannProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1388,
+                1390
+              ]
+            },
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 6,
+              "source_lines": [
+                1363,
+                1370
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+            "NLS.ZakharovShabat.exists_uniform_sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.hasSum_sourceResolvent_neumann",
+            "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent_from_cutoffs",
+            "NLS.ZakharovShabat.isCompactOperator_sourceResolvent_from_neumann",
+            "NLS.ZakharovShabat.isOpen_sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.lemma3_2_printed_height_bound_false",
+            "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_le_height",
+            "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_le_scalar",
+            "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_lt_one",
+            "NLS.ZakharovShabat.sourceCorollary3_3",
+            "NLS.ZakharovShabat.sourceFreeResolvent_fst_scalar_bound",
+            "NLS.ZakharovShabat.sourceFreeResolvent_snd_scalar_bound",
+            "NLS.ZakharovShabat.sourceHeightNeumannRegion",
+            "NLS.ZakharovShabat.sourceHeightNeumannRegion_subset_resolventSet",
+            "NLS.ZakharovShabat.sourceNeumann_survives_pairCounterexample",
+            "NLS.ZakharovShabat.sourceResolvent_comp_one_sub_potentialFreeResolvent",
+            "NLS.ZakharovShabat.sourceResolvent_neumann_formula"
+          ]
+        },
+        {
+          "inventory_order": 18,
+          "source_lines": [
+            1392,
+            1397
+          ],
+          "requirement": "Squared Neumann factorization",
+          "classification": "proved_with_explicit_interpretation",
+          "finding": "Smallness of the square gives the actual inverse (1+T)*(1-T^2)^(-1), its paired series and compactness on the full domain. The introductory large-parameter aim is implemented on the admissible strips and exterior in Lemma 3.4 and Corollary 3.5; no unrestricted decay arbitrarily close to free poles is asserted.",
+          "evidence": [
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1392,
+                1397
+              ]
+            },
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1494,
+                1498
+              ]
+            },
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 7,
+              "source_lines": [
+                1400,
+                1405
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+            "NLS.ZakharovShabat.exists_sourceDoubleResolvent_small",
+            "NLS.ZakharovShabat.exists_sourcePotentialFreeResolvent_uniform_height",
+            "NLS.ZakharovShabat.exists_source_spectralExterior_square_bound",
+            "NLS.ZakharovShabat.exists_source_square_uniform_height_and_strips",
+            "NLS.ZakharovShabat.hasSum_sourceResolvent_squared",
+            "NLS.ZakharovShabat.isCompactOperator_sourceResolvent_from_square",
+            "NLS.ZakharovShabat.mem_sourceResolventSet_of_square_norm",
+            "NLS.ZakharovShabat.sourceLemma3_4",
+            "NLS.ZakharovShabat.sourceResolvent_squared_formula",
+            "NLS.ZakharovShabat.sourceSpectralPencil_factorization",
+            "NLS.ZakharovShabat.spectralExterior_height_or_strip",
+            "NLS.ZakharovShabat.tendsto_sourceDoubleResolventBound_zero"
+          ]
+        },
+        {
+          "inventory_order": 19,
+          "source_lines": [
+            1400,
+            1405
+          ],
+          "requirement": "Lemma 3.4 with constant quantified before radius and potential",
+          "classification": "proved_with_scope",
+          "finding": "The main Lemma 3.4 chooses C=64*p^2 before all potentials, indices, radii and spectral parameters, with r^(-2) on both terms and the exact cutoff-retaining tail. Its high-index conclusion is uniform on the admissible strips. This valid theorem is distinct from the refuted intermediate displays.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 7,
+              "source_lines": [
+                1400,
+                1405
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceDoubleResolvent_small",
+            "NLS.ZakharovShabat.sourceLemma3_4",
+            "NLS.ZakharovShabat.tendsto_sourceDoubleResolventBound_zero"
+          ]
+        },
+        {
+          "inventory_order": 20,
+          "source_lines": [
+            1407,
+            1413
+          ],
+          "requirement": "Actual signed double-resolvent coefficient formula",
+          "classification": "proved_with_scope",
+          "finding": "Both actual double-resolvent components have the printed signed coefficient formulas with the necessary integer reflections. The formulas are convergent series for the original operators.",
+          "evidence": [
+            {
+              "review": "Section3SetupSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1407,
+                1413
+              ]
+            },
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1419,
+                1424
+              ]
+            },
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1419,
+                1424
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.summable_sandwich_terms",
+            "NLS.Coeff.tsum_sandwich_terms",
+            "NLS.ZakharovShabat.lemma34ProofTerm",
+            "NLS.ZakharovShabat.norm_le_lemma34_absolute_sum",
+            "NLS.ZakharovShabat.norm_lemma34_signedTerm_le",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_fst_le_absolute_sum",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_absolute_sums",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_snd_le_absolute_sum",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_eq_comp",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_signed_fst_apply",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_signed_snd_apply",
+            "NLS.ZakharovShabat.sourceLemma34_reciprocal_memlp",
+            "NLS.ZakharovShabat.summable_lemma34ProofTerm"
+          ]
+        },
+        {
+          "inventory_order": 21,
+          "source_lines": [
+            1415,
+            1424
+          ],
+          "requirement": "Denominator geometry and absolute double sum",
+          "classification": "proved_with_scope",
+          "finding": "Literal denominator geometry gives the factor-two absolute double-sum majorization. The full sums are absolutely convergent for every finite p, including p=1; both actual components and arbitrary infinite-support inputs are covered.",
+          "evidence": [
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1415,
+                1417
+              ]
+            },
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1419,
+                1424
+              ]
+            },
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1419,
+                1424
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.summable_sandwich_terms",
+            "NLS.Coeff.tsum_sandwich_terms",
+            "NLS.ZakharovShabat.lemma34ProofTerm",
+            "NLS.ZakharovShabat.norm_le_lemma34_absolute_sum",
+            "NLS.ZakharovShabat.norm_lemma34_signedTerm_le",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_fst_le_absolute_sum",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_absolute_sums",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_snd_le_absolute_sum",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_signed_fst_apply",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_signed_snd_apply",
+            "NLS.ZakharovShabat.sourceLemma34_denominator_lower",
+            "NLS.ZakharovShabat.sourceLemma34_denominator_product",
+            "NLS.ZakharovShabat.sourceLemma34_reciprocal_memlp",
+            "NLS.ZakharovShabat.summable_lemma34ProofTerm",
+            "NLS.ZakharovShabat.verticalStrip"
+          ]
+        },
+        {
+          "inventory_order": 22,
+          "source_lines": [
+            1426,
+            1430
+          ],
+          "requirement": "Far and near splitting sets",
+          "classification": "definition_and_proved_partition",
+          "finding": "The near/far sets are exact complements with the printed real half-widths and boundary equality in the near part. Absolute convergence justifies splitting the full sum.",
+          "evidence": [
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1426,
+                1430
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.lemma34ProofFarSum",
+            "NLS.ZakharovShabat.lemma34ProofNear",
+            "NLS.ZakharovShabat.lemma34ProofNearSum",
+            "NLS.ZakharovShabat.lemma34Proof_absolute_sum_eq_far_add_near",
+            "NLS.ZakharovShabat.not_lemma34ProofNear_iff"
+          ]
+        },
+        {
+          "inventory_order": 23,
+          "source_lines": [
+            1432,
+            1446
+          ],
+          "requirement": "Far subsum Holder bound and missing radius dependence candidate",
+          "classification": "mixed_proved_and_formally_refuted",
+          "finding": "The far Holder display and the exact numerator norm factorization are proved. Its following uniform bound C_p/(r+abs(n))^(1/p) is false: fixed p=2, n=1 unit modes give 1/[r*(r+1)], exceeding every proposed radius-independent constant at a suitable admissible radius.",
+          "evidence": [
+            {
+              "review": "Lemma34HolderSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1432,
+                1442
+              ]
+            },
+            {
+              "review": "Lemma34HolderSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1435,
+                1442
+              ]
+            },
+            {
+              "review": "Lemma34ProofSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1426,
+                1446
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.lemma34Holder_weight_eq",
+            "NLS.ZakharovShabat.lemma34MaskedNumeratorMoment_le",
+            "NLS.ZakharovShabat.lemma34NumeratorMoment_eq",
+            "NLS.ZakharovShabat.lemma34ProofFarSum",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_le_holder",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_single",
+            "NLS.ZakharovShabat.lemma34ProofNear",
+            "NLS.ZakharovShabat.lemma34ProofTerm",
+            "NLS.ZakharovShabat.lemma34_masked_holder",
+            "NLS.ZakharovShabat.lemma34_masked_holder_norm",
+            "NLS.ZakharovShabat.lemma3_4_proof_far_bound_false",
+            "NLS.ZakharovShabat.sourceLemma34_reciprocal_memlp",
+            "NLS.ZakharovShabat.summable_lemma34NumeratorMoment"
+          ]
+        },
+        {
+          "inventory_order": 24,
+          "source_lines": [
+            1448,
+            1461
+          ],
+          "requirement": "Near subsum and printed radius exponent candidate",
+          "classification": "mixed_proved_and_formally_refuted",
+          "finding": "The near-frequency lower bound, exact tail replacement and Holder display are proved. The following all-p uniform bound C_p/r^(2/p) is false: at p=2 and n=1 the exact unit-mode sum is 1/r^2 with tail norm one. The actual double-resolvent coefficient realizes the same lower bound.",
+          "evidence": [
+            {
+              "review": "Lemma34MajorizationSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1448,
+                1448
+              ]
+            },
+            {
+              "review": "Lemma34HolderSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1448,
+                1457
+              ]
+            },
+            {
+              "review": "Lemma34ProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1448,
+                1464
+              ]
+            },
+            {
+              "review": "Lemma34ProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                [
+                  1400,
+                  1424
+                ],
+                [
+                  1463,
+                  1464
+                ]
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.fourierTail_apply",
+            "NLS.Coeff.norm_convolutionSandwich_le_split_of_bounds",
+            "NLS.ZakharovShabat.lemma34ProofInput",
+            "NLS.ZakharovShabat.lemma34ProofInput_norm",
+            "NLS.ZakharovShabat.lemma34ProofNear",
+            "NLS.ZakharovShabat.lemma34ProofNearSum",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_fourierTail",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_le_holder_tail",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_single",
+            "NLS.ZakharovShabat.lemma34ProofNear_frequency_lower",
+            "NLS.ZakharovShabat.lemma34ProofNear_tail_apply",
+            "NLS.ZakharovShabat.lemma34ProofNear_tail_norm",
+            "NLS.ZakharovShabat.lemma34ProofParameter_mem_strip",
+            "NLS.ZakharovShabat.lemma34ProofPotential",
+            "NLS.ZakharovShabat.lemma34ProofPotential_norm",
+            "NLS.ZakharovShabat.lemma34ProofPotential_signed",
+            "NLS.ZakharovShabat.lemma34Proof_near_operator_lower",
+            "NLS.ZakharovShabat.lemma34Proof_near_output",
+            "NLS.ZakharovShabat.lemma34Proof_near_output_norm",
+            "NLS.ZakharovShabat.lemma34_masked_holder",
+            "NLS.ZakharovShabat.lemma3_4_proof_near_bound_false",
+            "NLS.ZakharovShabat.norm_doubleResolvent_le_frequency_split",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_verticalStrip",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_signed_fst_apply",
+            "NLS.ZakharovShabat.sourceLemma3_4"
+          ]
+        },
+        {
+          "inventory_order": 25,
+          "source_lines": [
+            1463,
+            1464
+          ],
+          "requirement": "Endpoint and second-component modifications",
+          "classification": "proved_modifications_with_retained_refutations",
+          "finding": "The p=1 endpoint estimates retain the near factor 1/r^2 and far factor 2/[r*(r+abs(n))]. Signed majorizations transfer them to both components. These modifications do not reinstate the preceding false uniform all-p displays.",
+          "evidence": [
+            {
+              "review": "Section3RemainingScopeSourceComparison-2026-10-27",
+              "group": 8,
+              "source_lines": [
+                1463,
+                1464
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.lemma34MaskedSum_le_one",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_le_one",
+            "NLS.ZakharovShabat.lemma34ProofFar_weight_le",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_le_one",
+            "NLS.ZakharovShabat.lemma3_4_proof_far_bound_false",
+            "NLS.ZakharovShabat.lemma3_4_proof_near_bound_false",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_fst_le_absolute_sum",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_absolute_sums",
+            "NLS.ZakharovShabat.norm_sourceDoubleResolvent_snd_le_absolute_sum"
+          ]
+        },
+        {
+          "inventory_order": 26,
+          "source_lines": [
+            1475,
+            1483
+          ],
+          "requirement": "Corollary 3.5 using height N",
+          "classification": "proved_with_scope",
+          "finding": "Corollary 3.5 has one neighborhood and positive cutoff, valid for every larger cutoff, with actual compact analytic resolvent and spectrum enclosure. Its height is N, and it retains the strict real box edges, included horizontal edges and open high disks.",
+          "evidence": [
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 6,
+              "source_lines": [
+                1475,
+                1483
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.centralSpectralBox",
+            "NLS.ZakharovShabat.highSpectralDisks",
+            "NLS.ZakharovShabat.sourceCorollary3_5_from_square",
+            "NLS.ZakharovShabat.spectralExterior"
+          ]
+        },
+        {
+          "inventory_order": 27,
+          "source_lines": [
+            1486,
+            1498
+          ],
+          "requirement": "Common-neighborhood squared-resolvent smallness and exterior union",
+          "classification": "proved_with_scope",
+          "finding": "The original square estimate gives the printed quarter bound at the potential. A full-norm and Fourier-tail neighborhood gives the half bound for every distant signed index. One enlarged cutoff combines these strips with the uniform height region to cover the exact exterior.",
+          "evidence": [
+            {
+              "review": "Section3SetupSourceComparison-2026-10-27",
+              "group": 6,
+              "source_lines": [
+                1486,
+                1489
+              ]
+            },
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1486,
+                1489
+              ]
+            },
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1492,
+                1494
+              ]
+            },
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1494,
+                1498
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+            "NLS.ZakharovShabat.convex_sourceFrequencyNeighborhood",
+            "NLS.ZakharovShabat.exists_sourcePotentialFreeResolvent_uniform_height",
+            "NLS.ZakharovShabat.exists_source_quarter_half_strips",
+            "NLS.ZakharovShabat.exists_source_spectralExterior_square_bound",
+            "NLS.ZakharovShabat.exists_source_square_uniform_height_and_strips",
+            "NLS.ZakharovShabat.exists_uniform_sourceFrequencyNeighborhood",
+            "NLS.ZakharovShabat.exists_uniform_sourcePotentialFreeResolvent_square",
+            "NLS.ZakharovShabat.isOpen_sourceFrequencyNeighborhood",
+            "NLS.ZakharovShabat.mem_sourceFrequencyNeighborhood",
+            "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_sq_le",
+            "NLS.ZakharovShabat.norm_sourcePotentialFromL1_le",
+            "NLS.ZakharovShabat.sourceDoubleResolvent_eq_comp",
+            "NLS.ZakharovShabat.sourceFourierTailCLM",
+            "NLS.ZakharovShabat.sourceFourierTailCLM_apply",
+            "NLS.ZakharovShabat.sourceFourierTail_zero_potential",
+            "NLS.ZakharovShabat.sourceFrequencyNeighborhood",
+            "NLS.ZakharovShabat.sourceLemma3_4",
+            "NLS.ZakharovShabat.spectralExterior_height_or_strip",
+            "NLS.ZakharovShabat.zero_mem_sourceFrequencyNeighborhood"
+          ]
+        },
+        {
+          "inventory_order": 28,
+          "source_lines": [
+            1500,
+            1502
+          ],
+          "requirement": "Connected neighborhood containing zero",
+          "classification": "proved_with_scope",
+          "finding": "The real segment [0,phi] is compact. The explicitly constructed open convex neighborhood contains it, is connected and contains both endpoints while preserving one uniform cutoff.",
+          "evidence": [
+            {
+              "review": "Cor35UniformProofSourceComparison-2026-10-27",
+              "group": 5,
+              "source_lines": [
+                1500,
+                1502
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePotentialSegment_compact_in_neighborhood"
+          ]
+        },
+        {
+          "inventory_order": 29,
+          "source_lines": [
+            1504,
+            1510
+          ],
+          "requirement": "Equation (1.4) actual analytic Cauchy-Riesz projections",
+          "classification": "definition_and_proved_analyticity",
+          "finding": "Equation (1.4) defines the actual normalized circle and oriented rectangle integrals. Uniform-norm analytic inversion on compact contours and bounded integration give analytic finite-rank projections on the common neighborhood.",
+          "evidence": [
+            {
+              "review": "Section3ProjectionParitySourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1504,
+                1510
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.CircleIntegral.integrationCLM",
+            "NLS.CircleIntegral.integrationCLM_eq",
+            "NLS.CircleIntegral.norm_integrationCLM_le",
+            "NLS.ZakharovShabat.analyticAt_resolventCircleIntegral",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceCentralRectangleIntegral",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceResolventCircleIntegral",
+            "NLS.ZakharovShabat.isOpen_resolventCircleDomain",
+            "NLS.ZakharovShabat.sourceEquation1_4",
+            "NLS.ZakharovShabat.sourceResolventCircleIntegral",
+            "NLS.ZakharovShabat.sourceResolventCircleIntegral_eq_conj",
+            "NLS.ZakharovShabat.sourceResolventRectangleIntegral",
+            "NLS.ZakharovShabat.sourceResolventRectangleIntegral_eq_conj"
+          ]
+        },
+        {
+          "inventory_order": 30,
+          "source_lines": [
+            1511,
+            1523
+          ],
+          "requirement": "Closed parity subspaces, direct sum and native period-one identification",
+          "classification": "definition_and_proved_identification",
+          "finding": "The literal signed parity subspaces are closed complementary ranges. Period doubling and halving identify the whole even base space isometrically with period-one data. No weighted-domain isometry is inferred.",
+          "evidence": [
+            {
+              "review": "Section3ProjectionParitySourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1511,
+                1523
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.isClosed_sourceParitySubspace",
+            "NLS.ZakharovShabat.isCompl_sourceParitySubspaces",
+            "NLS.ZakharovShabat.isTopCompl_sourceParitySubspaces",
+            "NLS.ZakharovShabat.mem_sourceParitySubspace_one_iff",
+            "NLS.ZakharovShabat.mem_sourceParitySubspace_zero_iff",
+            "NLS.ZakharovShabat.norm_sourceParityProjection_apply_le",
+            "NLS.ZakharovShabat.periodOnePotential_physical_coefficients",
+            "NLS.ZakharovShabat.sourcePeriodOneEquiv"
+          ]
+        },
+        {
+          "inventory_order": 31,
+          "source_lines": [
+            1526,
+            1527
+          ],
+          "requirement": "Lemma 3.6 conditional invariance",
+          "classification": "proved_with_scope",
+          "finding": "Lemma 3.6 retains the period-one potential hypothesis made explicit in its proof. The existing odd-support counterexample shows why that hypothesis cannot be omitted; this is a scope qualification, not a newly refuted source assertion.",
+          "evidence": [
+            {
+              "review": "Section3ProjectionParitySourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1526,
+                1535
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.freeOperator_domainParityProjection",
+            "NLS.ZakharovShabat.lemma3_6_even_support_needed",
+            "NLS.ZakharovShabat.potentialOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceLemma3_6",
+            "NLS.ZakharovShabat.sourceOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceParityProjection_commute_resolvent"
+          ]
+        },
+        {
+          "inventory_order": 32,
+          "source_lines": [
+            1529,
+            1535
+          ],
+          "requirement": "Free and potential parity preservation on the full domain",
+          "classification": "proved_with_scope",
+          "finding": "Both the free multiplier and actual potential convolution preserve signed parity on the full one-derivative domain for period-one potentials. The corresponding resolvents commute with parity.",
+          "evidence": [
+            {
+              "review": "Section3ProjectionParitySourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1526,
+                1535
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.freeOperator_domainParityProjection",
+            "NLS.ZakharovShabat.lemma3_6_even_support_needed",
+            "NLS.ZakharovShabat.potentialOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceLemma3_6",
+            "NLS.ZakharovShabat.sourceOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceParityProjection_commute_resolvent"
+          ]
+        },
+        {
+          "inventory_order": 33,
+          "source_lines": [
+            1538,
+            1547
+          ],
+          "requirement": "Equation (1.5) analytic parity restrictions",
+          "classification": "definition_and_proved_analyticity",
+          "finding": "Equation (1.5) uses actual typed restrictions to the parity subspaces. Their finite ranks and analyticity hold on an open neighborhood in the native period-one potential topology.",
+          "evidence": [
+            {
+              "review": "Section3ProjectionParitySourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1538,
+                1547
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticAt_sourceParityCompression",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceParityCompression",
+            "NLS.ZakharovShabat.mem_range_sourceParityCompression_iff",
+            "NLS.ZakharovShabat.sourceEquation1_5",
+            "NLS.ZakharovShabat.sourceParityCentralProjection_apply",
+            "NLS.ZakharovShabat.sourceParityCircleProjection_apply",
+            "NLS.ZakharovShabat.sourceParityCompression_apply"
+          ]
+        },
+        {
+          "inventory_order": 34,
+          "source_lines": [
+            1557,
+            1578
+          ],
+          "requirement": "Constancy of projection dimensions, counts, parity and exhaustion",
+          "classification": "proved_with_height_qualification",
+          "finding": "Continuous finite-rank projections have locally constant rank, and connected deformation to zero yields two roots per high disk and 4N+2 centrally, counted algebraically. Conditional parity ranks are 2N+2 and 2N. The actual exterior gives exhaustion. These proofs use the height-N box from p.26 and do not establish the false unrestricted printed norm-dependent height.",
+          "evidence": [
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1557,
+                1566
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1567,
+                1575
+              ]
+            },
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1577,
+                1578
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ConjugatedRanges.rangeEquiv",
+            "NLS.ConjugatedRanges.rangeInfEquiv",
+            "NLS.ProjectionRank.finrank_eq_of_norm_sub_lt_one",
+            "NLS.ProjectionRank.finrank_eq_on_preconnected",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.central_multiplicity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_parity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_unit_translation",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_multiplicity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.exterior_resolvent",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.mem_spectrum_iff_central_or_disk",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.spectrum_subset",
+            "NLS.ZakharovShabat.card_centralParityIndices",
+            "NLS.ZakharovShabat.centralCircle_spectral_selection",
+            "NLS.ZakharovShabat.closedCentralRectangle_subset_centralCircleBall",
+            "NLS.ZakharovShabat.exists_uniform_central_multiplicity",
+            "NLS.ZakharovShabat.exists_uniform_central_parity_ranks",
+            "NLS.ZakharovShabat.exists_uniform_disk_multiplicity_two",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodOneCountingData",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodicCountingData",
+            "NLS.ZakharovShabat.finrank_contour_eq_on_preconnected",
+            "NLS.ZakharovShabat.finrank_range_centralParityProjection_zero",
+            "NLS.ZakharovShabat.finrank_range_sourceCentralRectangleIntegral",
+            "NLS.ZakharovShabat.finrank_range_sourceParityCentralProjection",
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top"
+          ]
+        },
+        {
+          "inventory_order": 35,
+          "source_lines": [
+            1580,
+            1587
+          ],
+          "requirement": "Actual real-type pairing symmetry and spectral reality",
+          "classification": "proved_with_scope",
+          "finding": "Real type includes coefficient reflection and conjugation. Full-domain l1 embedding and absolutely convergent convolution pairings prove the displayed potential symmetry at every finite exponent. Positivity on nonzero eigenvectors gives reality of the full actual spectrum.",
+          "evidence": [
+            {
+              "review": "Section3RankRealitySourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1580,
+                1587
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.Coeff.pairing_convolution_conj",
+            "NLS.Coeff.summable_convolution_pairing",
+            "NLS.Coeff.summable_norm_pairing",
+            "NLS.ZakharovShabat.IsRealType",
+            "NLS.ZakharovShabat.domainPairing_freeOperator_conj",
+            "NLS.ZakharovShabat.domainPairing_inclusion_re_pos",
+            "NLS.ZakharovShabat.domainPairing_potentialOperator_conj",
+            "NLS.ZakharovShabat.eigenvalue_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType"
+          ]
+        },
+        {
+          "inventory_order": 36,
+          "source_lines": [
+            1592,
+            1599
+          ],
+          "requirement": "Lemma 3.7 analytic midpoint and squared gap",
+          "classification": "proved_with_scope",
+          "finding": "Lemma 3.7 gives analytic midpoint and half squared gap on one common neighborhood for all sufficiently large signed indices. Actual algebraic eigenvalue pairs agree with the intrinsic contour traces, including collisions.",
+          "evidence": [
+            {
+              "review": "Section3TraceSourceComparison-2026-10-27",
+              "group": 1,
+              "source_lines": [
+                1592,
+                1599
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.midpoint_squaredGap_eq_pair",
+            "NLS.ZakharovShabat.sourceLemma3_7",
+            "NLS.ZakharovShabat.sourceLemma3_7_periodOne"
+          ]
+        },
+        {
+          "inventory_order": 37,
+          "source_lines": [
+            1602,
+            1611
+          ],
+          "requirement": "Actual finite-rank trace formulas and generalized eigenspaces",
+          "classification": "proved_with_scope",
+          "finding": "The actual rank-two spectral range lifts into the full domain and carries the restricted original operator. Half its trace is the midpoint; the centered-square trace is half the squared gap. Characteristic-polynomial algebra includes repeated roots and nontrivial Jordan blocks.",
+          "evidence": [
+            {
+              "review": "Section3TraceSourceComparison-2026-10-27",
+              "group": 2,
+              "source_lines": [
+                1602,
+                1611
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.FiniteSpectralTrace.charpoly_eq_pair",
+            "NLS.FiniteSpectralTrace.midpoint_gap_eq",
+            "NLS.FiniteSpectralTrace.trace_pair",
+            "NLS.ZakharovShabat.sourceContourLift",
+            "NLS.ZakharovShabat.sourceContourMidpoint_squaredGap_eq_pair",
+            "NLS.ZakharovShabat.sourceContourRestriction",
+            "NLS.ZakharovShabat.sourceContourRestriction_apply",
+            "NLS.ZakharovShabat.sourceContourRestriction_conjugate",
+            "NLS.ZakharovShabat.sourceContour_centeredSquare_trace",
+            "NLS.ZakharovShabat.sourceInclusion_contourLift_range"
+          ]
+        },
+        {
+          "inventory_order": 38,
+          "source_lines": [
+            1613,
+            1623
+          ],
+          "requirement": "Analytic local range isomorphism and transported trace formulas",
+          "classification": "proved_with_scope",
+          "finding": "For each fixed contour the explicit local transport is an analytic range equivalence with analytic inverse and reduced operator. Its traces equal the intrinsic formulas. Continuous finite-dimensional trace and polynomial operations give scalar analyticity throughout the common admissible neighborhood. A single transport chart for infinitely many contours is not required; the external Kato citation is contextual.",
+          "evidence": [
+            {
+              "review": "Section3TraceSourceComparison-2026-10-27",
+              "group": 3,
+              "source_lines": [
+                1613,
+                1620
+              ]
+            },
+            {
+              "review": "Section3TraceSourceComparison-2026-10-27",
+              "group": 4,
+              "source_lines": [
+                1623,
+                1623
+              ]
+            }
+          ],
+          "declarations": [
+            "NLS.FiniteSpectralTrace.analyticAt_trace",
+            "NLS.FiniteSpectralTrace.analyticAt_trace_square",
+            "NLS.ProjectionTransport.eventually_isUnit_transport",
+            "NLS.ProjectionTransport.transport",
+            "NLS.ProjectionTransport.transport_self",
+            "NLS.ZakharovShabat.analyticAt_resolventCircleIntegralToDomain",
+            "NLS.ZakharovShabat.analyticAt_sourceContourMidpoint_and_halfSquaredGap",
+            "NLS.ZakharovShabat.analyticAt_sourceContourOperator",
+            "NLS.ZakharovShabat.analyticAt_sourceContourTracePower",
+            "NLS.ZakharovShabat.exists_local_sourceContourReduction",
+            "NLS.ZakharovShabat.sourceContourMidpoint_halfSquaredGap_eq_reduced",
+            "NLS.ZakharovShabat.sourceContourRangeTransport",
+            "NLS.ZakharovShabat.sourceContourRangeTransport_apply",
+            "NLS.ZakharovShabat.sourceContourTracePower_eq_reduced",
+            "NLS.ZakharovShabat.sourceContourTransport",
+            "NLS.ZakharovShabat.sourceContourTransport_reduced_apply",
+            "NLS.ZakharovShabat.sourceInclusion_contourLift_transported"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceCorollary3_3.lean": "ee1516d443b12f92fbc059720f726b40e22f87c14d1f42b45b52378abd0bf2f4",
+        "NLS/ZakharovShabat/SourceLemma3_4.lean": "58b4ecfc0fee71ec174f880c21837d3d3f3698c49d929be3dea9bfd6c83b0e64",
+        "NLS/ZakharovShabat/Proposition3_1.lean": "c3030ee49f893c95067faef65e3f50c05b5faf2613e93f6d60b3753756fc1890",
+        "NLS/ZakharovShabat/SourcePotentialRelativeBound.lean": "5e39c58c630ed00f43d0c7d4ee70208066ad1f9095eed44b2ecd82a8073ebc04",
+        "NLS/Fourier/SourceAnalyticApproximation.lean": "2fe6c5ca6a18547caa5ceca5172c1fccd145d1422b88309d2f9fea2bd8491969",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/SourceUnboundedOperator.lean": "a2a023387ed2c696f81a39ee529ce5195a7d14b57d36e9868f7db48a5528a007",
+        "NLS/ZakharovShabat/PeriodicSpectrum.lean": "49538b96a06339ca0c1f48f68954c48c7b52c04f47cc67ddee93fce149a2e6b1",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/SourceFreeResolventCounterexample.lean": "c0a5a26790c001eec23e099e19c8db540e938ef95288bd6402b8ab1ec7e62a13",
+        "NLS/ZakharovShabat/VerticalStrips.lean": "7fa9d3c46851397f7541307db9ee9819bc00b7e6e133d4af5c60f1c41c74400a",
+        "NLS/ZakharovShabat/SourceSection3Setup.lean": "cf73ec97860ae8f773e889e88c98d176e7e123830aae2de6bc54548ac96d374a",
+        "NLS/ZakharovShabat/SourceLemma34Holder.lean": "57fce7c9a0197b5c6c729441be83a8abc9af22176b213a56d7332f82e842f19b",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "53bdbf1c130907c78fd194e618329bce5bef97ea7fd77f19e70200df4b12c597",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "a38555531a677d72d2e1cc820bf52760fd5835c9e5bc4464e3907c00a863150b",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/SequenceSpaces/HolderEmbedding.lean": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e",
+        "NLS/SequenceSpaces/SandwichAbsoluteSum.lean": "05a66015f465d9396c87fa2cc755e4da6db9a643ed894024979ce14f9cb10b2d",
+        "NLS/ZakharovShabat/SourceDoubleResolvent.lean": "109b6f2c166b7ffe0fde25d4ae289a452cdda3b33473924bec0c93d27bdc30dd",
+        "NLS/SequenceSpaces/ConvolutionSandwich.lean": "d86b34a9d66542afb171070310bbc0f7680cf83dbb9317c0646425ac7c14e02a",
+        "NLS/SequenceSpaces/SandwichMajorant.lean": "921ef1515ecd8d06b6116ec8937f1ef28fa5999cd904fe7e5b9c9e545b16c541",
+        "NLS/SequenceSpaces/Translation.lean": "e1bee4ad497c331c7a722aac78c24f66001c1a1c16d662690204c56bb3b50904",
+        "NLS/ZakharovShabat/DoubleResolventEstimates.lean": "0019f1c1873d7d95ad3c99389eef1c11431f284b978ab0450e41c0d8bd9c312d",
+        "NLS/ZakharovShabat/SourceLemma32EndpointProof.lean": "90af07e0d5bf1dbebbdeadcb062eac8c648cf6e96865746416b08716460feb84",
+        "NLS/ZakharovShabat/ResolventEstimates.lean": "97ed23430aae3494599d6b53cd96528dd05eb48da3bed195f98bcbed5e7b8232",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/SequenceSpaces/WeightedPairNormInfty.lean": "1726d12678be808fe61c7d07890ad3aa1231dfcb6b745c60c89b3131358615f9",
+        "NLS/Fourier/PairDistributionInfty.lean": "2f365003edb0dd95bb7509ae9940c86a3e4345810b9ebdabb195bed7f9bafb89",
+        "NLS/Poisson/SourceBracketJacobi.lean": "62ae2dfc8c86b8f9b43abd1ac8e7452b4d8665784cadd899799472efe1039fbc",
+        "NLS/ZakharovShabat/SourceNeumannProof.lean": "7aa61cef4b22cdceb4196104fac77637898575b77dc9e12dfb04af9850243a65",
+        "NLS/ZakharovShabat/SourceLemma32ScalarProof.lean": "1cbf179eabace53f8b7b8da2f2b7e7cfa2e034b8ff6ad8f9770000009af088cb",
+        "NLS/ZakharovShabat/SourceFreeResolventCutoff.lean": "62d6570622c6323350a618e145965639fd99267c396947936f9cfef438fc2543",
+        "NLS/ZakharovShabat/SourceContourRanks.lean": "05c566e27015e0a8f7cdef75e96dc1efb803853b0fac472533d71beb8063bd3c",
+        "NLS/ZakharovShabat/RealType.lean": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709",
+        "NLS/ZakharovShabat/PeriodicSelfAdjointRealType.lean": "c4cc8dc9b50866364a64339b53b9c820afb8ba94b22e971c33e5c9eabefb5426",
+        "NLS/ZakharovShabat/SourceRealTypeIdentity.lean": "502502ba886ec51774b245d3c6922e1a7aeaf1b2facd7b600d0abd3c13198a06",
+        "NLS/ZakharovShabat/SourceRealTypeProjection.lean": "0df550f7292e28b5d0089352488c322cd178585de86d29913bf2464bfc254c1b",
+        "NLS/ZakharovShabat/SourceEquation1_4.lean": "29d0baf5765f59a363bea224d33d0965d08b649d9bca4056ac998b337cc52b81",
+        "NLS/ZakharovShabat/SourceEquation1_5.lean": "ef8fb9699a6eb422861deb7c49d737da430cc9e78a37aba749647d273a066e41",
+        "NLS/ZakharovShabat/SpectralProjections.lean": "40f85b0d5120f767a12fb896140df03b35fcf938e2b2e595cf22c563ec07d022",
+        "NLS/ZakharovShabat/ContourProjection.lean": "6c933ba9dee60c20d58c5c7558435724932d4010441d051aed8008a2003cee6c",
+        "NLS/ZakharovShabat/CentralRectangleProjection.lean": "e9ec0dae3812c1c50ad6a5a2457e71cc95c36d29b1c1041b36096abb0b5418b5",
+        "NLS/ZakharovShabat/SourcePeriodicCounting.lean": "1d2ef4ef9652369695b9d40200a8f9e12099c7c62b38a73de31c6e7e80b13020",
+        "NLS/ZakharovShabat/DiskMultiplicity.lean": "d31a6c8d937ff0d4b9ae9bc4d1168cd599cb779acf4973da0e5d89e4ece9d027",
+        "NLS/ZakharovShabat/PeriodicCounting.lean": "a26a681c54f1adf208291578cdd42b931253a9e00bad1c03e2c0ab7b7afaa348",
+        "NLS/ZakharovShabat/ParityContourMultiplicity.lean": "e6817ca0e02fbfaf9fe282c93d280838e55131061e0e0951d3d1d5299f8a0116",
+        "NLS/ZakharovShabat/FreeMultiplicity.lean": "1f1e88d9ffd33b1714a149cfa759baeb214e5f684ebcf37c0798561fdf421638",
+        "NLS/ZakharovShabat/CentralDeformation.lean": "dba10bd07bfd3d11d8c6708c69bc5d2ca17df0c32359cca3a6bc3b4a94872d7d",
+        "NLS/ZakharovShabat/CentralParity.lean": "acd4f6088c7099112a4b60cdc2a79e47896fba752c1d90e429ba1e30da5a4ad5",
+        "NLS/FunctionalAnalysis/ProjectionRank.lean": "c9e498ac3f9136f1797be1c6eed341c228e0e5f083f4fb04f47a97c8dd1f2e60",
+        "NLS/SequenceSpaces/Pairing.lean": "411338575caadfb8d1731cf83412195aa30896a26a2b33d1e557f7c368fcb4b5",
+        "NLS/SequenceSpaces/Embedding.lean": "f10d399a5facbbcaf2c98a6d8ebfa68e6bfecf9ada49727b8f48b0026ddea086",
+        "NLS/SequenceSpaces/PairComponentHolder.lean": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4",
+        "NLS/ZakharovShabat/ContourAnalytic.lean": "86aa781abe2e00233b7ff88fb7ea723e8e7c8a7b699a67eb3da66724c87ba862",
+        "NLS/FunctionalAnalysis/CircleIntegrationMap.lean": "1ab6d9902633be2d602a3b7d2cc00c82ad6b1230caf8284299a12c62d6212146",
+        "NLS/FunctionalAnalysis/ConjugatedRanges.lean": "d7dd8ae4b9726237ba1714cfec364e273973c683de236b08bba16d9dfaf11f6c",
+        "NLS/ZakharovShabat/FreeResolvent.lean": "34ead666e3ad023947bdb8cb65661f6d5c0a2bd900a78c51862b26b14b9bcf31",
+        "NLS/ZakharovShabat/FreeResolventCompact.lean": "7d60164d4847345cc9d5067bb96f8f950988d4c9465493ab6d8730162ff4283f",
+        "NLS/SequenceSpaces/Compact.lean": "928b78c60136e22cadefe7c3791fcc649052218fe2e0118c44d60c09ea89c578",
+        "NLS/SequenceSpaces/Truncation.lean": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074",
+        "NLS/SequenceSpaces/Multiplier.lean": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36",
+        "NLS/ZakharovShabat/HeightResolvent.lean": "b0b255477f00dcda56a7db72bdc92c8af53d9db1be3b9d5f523a078f7c70d94c",
+        "NLS/SequenceSpaces/ReciprocalSeries.lean": "401c16b943dfbc4c51629a3baff79b6cea19a1d38324b2f5d5532f9dfd2a7768",
+        "NLS/SequenceSpaces/SobolevConstant.lean": "8bb7baba2cb9ecba9b0390862775ea73da4f72cec3c51ef8824a5d24e0044373",
+        "NLS/ZakharovShabat/SourceUniformSquareProof.lean": "2aa5956db7ef269ef1ca893e885e496c8ba3d6cc72ab210d8029b84526b27b56",
+        "NLS/ZakharovShabat/SourceCorollary3_5.lean": "3172a11ea8978584619045cdae1d0d77b7d062bc80725e78dac603fec4b44be7",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/FrequencyLocalization.lean": "97bbe85b63dcc59a68211f36e8afd0f2368efb993945f31d813f97664aa366b1",
+        "NLS/ZakharovShabat/SpectralLocalization.lean": "9e90d78af2646a256bcc07b9760e6e06ce1376c0e0c706a785b4496b455f6b57",
+        "NLS/FunctionalAnalysis/SquaredNeumann.lean": "edbdd91b372aa4681a6b11c51b6f03485100e431150adc60e8d8aa1c816e2380",
+        "NLS/ZakharovShabat/PerturbedResolvent.lean": "861caae0f248874bfa480effaacde42565eb8395a12b17eca0df6b3629596162",
+        "NLS/ZakharovShabat/DoubleResolvent.lean": "e94fe15745d6fa9c0613030afa79982fd87d386ef90eee7b818bf4451ac2cc2d",
+        "NLS/SequenceSpaces/Convolution.lean": "bfb72ea01d63f25aeee7e899a0674bf00cd909c779e7610d5627c38931746d9b",
+        "NLS/ZakharovShabat/SourceLemma3_6.lean": "6ca67f12c3826096980fd369c692708ced3f54e789d4c3f725490fa3ba033cbd",
+        "NLS/ZakharovShabat/SourceParity.lean": "523ef8ca9582a9adad5bed7c4429edaac99afb68f1501a5e20327da00b22b913",
+        "NLS/ZakharovShabat/SourceParityRestriction.lean": "373cf6f7c74fdcf87889041ab353a2924337f311b033fe6b841ef3c790474c70",
+        "NLS/ZakharovShabat/SourceResolventContours.lean": "29c47466eef799ef11fc96ad2eb94582973c104bc2973fb8ab1eae565e17c256",
+        "NLS/ZakharovShabat/PeriodOneEmbedding.lean": "60761ac490ec2b1bc3d77ff845ecf29908b36a8b9e53aefb4b8d5d2683ed855a",
+        "NLS/ZakharovShabat/PeriodicParity.lean": "f3cbe50af6a08bce0196127eb09d4d1505591fec083f6259cc1f3d63a1b9c9ea",
+        "NLS/ZakharovShabat/SourceLemma3_7.lean": "7a7301ebdcdcba0b53917b5083eaa66d914bcb7cbf7415d660aa7898d8a6baed",
+        "NLS/ZakharovShabat/SourceContourTrace.lean": "5d82487c0802f670f8752086625ca104d44d0494fedf27d1167fda555aebe686",
+        "NLS/ZakharovShabat/SourceContourReduction.lean": "ed44f008d828d585a26b77e6b917408a9dd45edf801e59756858d62523049dba",
+        "NLS/FunctionalAnalysis/ProjectionTransport.lean": "04b9e77fddf437cb5b684797a76ed078113449bcf3b48bca7f9160225c6bd1f8",
+        "NLS/FunctionalAnalysis/ProjectionTrace.lean": "cb502f634d15b6e2af1eef9634db5cbb9dee86e71961c5187f6b6ef3d06fb91c",
+        "NLS/FunctionalAnalysis/FiniteSpectralTrace.lean": "18e21eafddd65daef7a520f097b4abf3dd5209140609601e9f2735b47d424a73",
+        "NLS/ZakharovShabat/ContourTrace.lean": "7ccc447d9b69f9ba57de379345bc77477850b7bbdaa4492d8b70f2f7f3a540f1",
+        "NLS/ZakharovShabat/SymmetricEigenvalues.lean": "41e5fd148b691018dfdc4b23f6977221650556fe4184d4fc4433d836cfac4976",
+        "NLS/ZakharovShabat/SpectralReduction.lean": "1696d475773167e681e47f407a4b7822ecf0a36ecbd39fa70dd3bc9eaaec0c1e"
+      },
+      "resolved_declarations": [
+        "NLS.CircleIntegral.integrationCLM",
+        "NLS.CircleIntegral.integrationCLM_eq",
+        "NLS.CircleIntegral.norm_integrationCLM_le",
+        "NLS.Coeff.fourierTail_apply",
+        "NLS.Coeff.norm_convolutionSandwich_le_split_of_bounds",
+        "NLS.Coeff.norm_multiplier_cutoff_error_le",
+        "NLS.Coeff.norm_reindex",
+        "NLS.Coeff.pairing_convolution_conj",
+        "NLS.Coeff.summable_convolution_pairing",
+        "NLS.Coeff.summable_norm_pairing",
+        "NLS.Coeff.summable_sandwich_terms",
+        "NLS.Coeff.tendsto_multiplier_cutoff",
+        "NLS.Coeff.tsum_sandwich_terms",
+        "NLS.CoeffPair.componentNormSum_le",
+        "NLS.ConjugatedRanges.rangeEquiv",
+        "NLS.ConjugatedRanges.rangeInfEquiv",
+        "NLS.FiniteSpectralTrace.analyticAt_trace",
+        "NLS.FiniteSpectralTrace.analyticAt_trace_square",
+        "NLS.FiniteSpectralTrace.charpoly_eq_pair",
+        "NLS.FiniteSpectralTrace.midpoint_gap_eq",
+        "NLS.FiniteSpectralTrace.trace_pair",
+        "NLS.Fourier.distributionSynthesis_ofFinsupp_eq_integral",
+        "NLS.Fourier.exists_source_analytic_decomposition",
+        "NLS.ProjectionRank.finrank_eq_of_norm_sub_lt_one",
+        "NLS.ProjectionRank.finrank_eq_on_preconnected",
+        "NLS.ProjectionTransport.eventually_isUnit_transport",
+        "NLS.ProjectionTransport.transport",
+        "NLS.ProjectionTransport.transport_self",
+        "NLS.ReciprocalSeries.summable_int_shifted_rpow",
+        "NLS.ReciprocalSeries.tsum_int_shifted_rpow_le_integral",
+        "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul",
+        "NLS.ZakharovShabat.IsRealType",
+        "NLS.ZakharovShabat.Proposition3_1Data",
+        "NLS.ZakharovShabat.Proposition3_1Data.disk_eigenvector_unit_translation",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.central_multiplicity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_parity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_unit_translation",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_multiplicity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.exterior_resolvent",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.mem_spectrum_iff_central_or_disk",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.midpoint_squaredGap_eq_pair",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.spectrum_subset",
+        "NLS.ZakharovShabat.analyticAt_resolventCircleIntegral",
+        "NLS.ZakharovShabat.analyticAt_resolventCircleIntegralToDomain",
+        "NLS.ZakharovShabat.analyticAt_sourceContourMidpoint_and_halfSquaredGap",
+        "NLS.ZakharovShabat.analyticAt_sourceContourOperator",
+        "NLS.ZakharovShabat.analyticAt_sourceContourTracePower",
+        "NLS.ZakharovShabat.analyticAt_sourceParityCompression",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+        "NLS.ZakharovShabat.card_centralParityIndices",
+        "NLS.ZakharovShabat.centered_denominator_sqrt_two",
+        "NLS.ZakharovShabat.centered_real_gap_sqrt_two",
+        "NLS.ZakharovShabat.centralCircle_spectral_selection",
+        "NLS.ZakharovShabat.centralSpectralBox",
+        "NLS.ZakharovShabat.closedCentralRectangle_subset_centralCircleBall",
+        "NLS.ZakharovShabat.complex_norm_ge_l1_div_sqrt_two",
+        "NLS.ZakharovShabat.convex_sourceFrequencyNeighborhood",
+        "NLS.ZakharovShabat.discreteTopology_sourceResolventSet_compl",
+        "NLS.ZakharovShabat.domainPairing_freeOperator_conj",
+        "NLS.ZakharovShabat.domainPairing_inclusion_re_pos",
+        "NLS.ZakharovShabat.domainPairing_potentialOperator_conj",
+        "NLS.ZakharovShabat.eigenvalue_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.exists_centered_real_part",
+        "NLS.ZakharovShabat.exists_local_sourceContourReduction",
+        "NLS.ZakharovShabat.exists_proposition3_1_up_to_four",
+        "NLS.ZakharovShabat.exists_sourceDoubleResolvent_small",
+        "NLS.ZakharovShabat.exists_sourceFreeResolventCutoff_norm_sub_lt",
+        "NLS.ZakharovShabat.exists_sourceFreeResolventToL1_uniform_small",
+        "NLS.ZakharovShabat.exists_sourcePotentialFreeResolvent_uniform_height",
+        "NLS.ZakharovShabat.exists_source_potential_relative_bound",
+        "NLS.ZakharovShabat.exists_source_quarter_half_strips",
+        "NLS.ZakharovShabat.exists_source_spectralExterior_square_bound",
+        "NLS.ZakharovShabat.exists_source_square_uniform_height_and_strips",
+        "NLS.ZakharovShabat.exists_uniform_central_multiplicity",
+        "NLS.ZakharovShabat.exists_uniform_central_parity_ranks",
+        "NLS.ZakharovShabat.exists_uniform_disk_multiplicity_two",
+        "NLS.ZakharovShabat.exists_uniform_sourceFrequencyNeighborhood",
+        "NLS.ZakharovShabat.exists_uniform_sourceHeightNeumannRegion",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodOneCountingData",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodicCountingData",
+        "NLS.ZakharovShabat.exists_uniform_sourcePotentialFreeResolvent_square",
+        "NLS.ZakharovShabat.exists_uniform_source_potential_relative_bound",
+        "NLS.ZakharovShabat.finiteDimensional_periodicEigenspace",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceCentralRectangleIntegral",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceParityCompression",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceResolventCircleIntegral",
+        "NLS.ZakharovShabat.finiteDimensional_sourceFreeResolventCutoff",
+        "NLS.ZakharovShabat.finite_periodicSpectrum_inter_closedBall",
+        "NLS.ZakharovShabat.finrank_contour_eq_on_preconnected",
+        "NLS.ZakharovShabat.finrank_range_centralParityProjection_zero",
+        "NLS.ZakharovShabat.finrank_range_sourceCentralRectangleIntegral",
+        "NLS.ZakharovShabat.finrank_range_sourceParityCentralProjection",
+        "NLS.ZakharovShabat.finrank_sourceFreeResolventCutoff_le",
+        "NLS.ZakharovShabat.freeOperator_domainParityProjection",
+        "NLS.ZakharovShabat.freePencil_freeResolventToDomain",
+        "NLS.ZakharovShabat.freeReciprocalSup",
+        "NLS.ZakharovShabat.freeReciprocalSup_le_height",
+        "NLS.ZakharovShabat.freeReciprocalSup_le_verticalStrip",
+        "NLS.ZakharovShabat.freeReciprocalSup_pureImaginary",
+        "NLS.ZakharovShabat.freeResolventToDomain_freePencil",
+        "NLS.ZakharovShabat.freeResolvent_eq_prodMap",
+        "NLS.ZakharovShabat.hasSum_sourceFreeResolvent_signed",
+        "NLS.ZakharovShabat.hasSum_sourceResolvent_neumann",
+        "NLS.ZakharovShabat.hasSum_sourceResolvent_squared",
+        "NLS.ZakharovShabat.height_moment_numerical",
+        "NLS.ZakharovShabat.highSpectralDisks",
+        "NLS.ZakharovShabat.inverseSymbol_tails",
+        "NLS.ZakharovShabat.isClosed_sourceParitySubspace",
+        "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent",
+        "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolventCutoff",
+        "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent_from_cutoffs",
+        "NLS.ZakharovShabat.isCompactOperator_sourceResolvent",
+        "NLS.ZakharovShabat.isCompactOperator_sourceResolvent_from_neumann",
+        "NLS.ZakharovShabat.isCompactOperator_sourceResolvent_from_square",
+        "NLS.ZakharovShabat.isCompl_sourceParitySubspaces",
+        "NLS.ZakharovShabat.isOpen_resolventCircleDomain",
+        "NLS.ZakharovShabat.isOpen_sourceFrequencyNeighborhood",
+        "NLS.ZakharovShabat.isOpen_sourceHeightNeumannRegion",
+        "NLS.ZakharovShabat.isTopCompl_sourceParitySubspaces",
+        "NLS.ZakharovShabat.lemma34Holder_weight_eq",
+        "NLS.ZakharovShabat.lemma34MaskedNumeratorMoment_le",
+        "NLS.ZakharovShabat.lemma34MaskedSum_le_one",
+        "NLS.ZakharovShabat.lemma34NumeratorMoment_eq",
+        "NLS.ZakharovShabat.lemma34ProofFarSum",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_le_holder",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_le_one",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_single",
+        "NLS.ZakharovShabat.lemma34ProofFar_weight_le",
+        "NLS.ZakharovShabat.lemma34ProofInput",
+        "NLS.ZakharovShabat.lemma34ProofInput_norm",
+        "NLS.ZakharovShabat.lemma34ProofNear",
+        "NLS.ZakharovShabat.lemma34ProofNearSum",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_fourierTail",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_le_holder_tail",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_le_one",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_single",
+        "NLS.ZakharovShabat.lemma34ProofNear_frequency_lower",
+        "NLS.ZakharovShabat.lemma34ProofNear_tail_apply",
+        "NLS.ZakharovShabat.lemma34ProofNear_tail_norm",
+        "NLS.ZakharovShabat.lemma34ProofParameter_mem_strip",
+        "NLS.ZakharovShabat.lemma34ProofPotential",
+        "NLS.ZakharovShabat.lemma34ProofPotential_norm",
+        "NLS.ZakharovShabat.lemma34ProofPotential_signed",
+        "NLS.ZakharovShabat.lemma34ProofTerm",
+        "NLS.ZakharovShabat.lemma34Proof_absolute_sum_eq_far_add_near",
+        "NLS.ZakharovShabat.lemma34Proof_near_operator_lower",
+        "NLS.ZakharovShabat.lemma34Proof_near_output",
+        "NLS.ZakharovShabat.lemma34Proof_near_output_norm",
+        "NLS.ZakharovShabat.lemma34_masked_holder",
+        "NLS.ZakharovShabat.lemma34_masked_holder_norm",
+        "NLS.ZakharovShabat.lemma3_2Counterexample_input_norm",
+        "NLS.ZakharovShabat.lemma3_2Counterexample_output_norm",
+        "NLS.ZakharovShabat.lemma3_2Counterexample_printed_rhs",
+        "NLS.ZakharovShabat.lemma3_2_printed_height_bound_false",
+        "NLS.ZakharovShabat.lemma3_2_proof_height_lower_bound_false",
+        "NLS.ZakharovShabat.lemma3_2_proof_strip_lower_bound_false",
+        "NLS.ZakharovShabat.lemma3_4_proof_far_bound_false",
+        "NLS.ZakharovShabat.lemma3_4_proof_near_bound_false",
+        "NLS.ZakharovShabat.lemma3_6_even_support_needed",
+        "NLS.ZakharovShabat.mem_periodicSpectrum_iff_exists_eigenvector",
+        "NLS.ZakharovShabat.mem_periodicSpectrum_iff_resolvent_spectrum",
+        "NLS.ZakharovShabat.mem_range_sourceParityCompression_iff",
+        "NLS.ZakharovShabat.mem_sourceFrequencyNeighborhood",
+        "NLS.ZakharovShabat.mem_sourceParitySubspace_one_iff",
+        "NLS.ZakharovShabat.mem_sourceParitySubspace_zero_iff",
+        "NLS.ZakharovShabat.mem_sourceResolventSet_of_square_norm",
+        "NLS.ZakharovShabat.mem_sourceUnboundedOperator_domain",
+        "NLS.ZakharovShabat.neg_mem_verticalStrip",
+        "NLS.ZakharovShabat.norm_doubleResolvent_le_frequency_split",
+        "NLS.ZakharovShabat.norm_le_lemma34_absolute_sum",
+        "NLS.ZakharovShabat.norm_lemma34_signedTerm_le",
+        "NLS.ZakharovShabat.norm_scalarResolventToL1_le",
+        "NLS.ZakharovShabat.norm_sourceDoubleResolvent_fst_le_absolute_sum",
+        "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_absolute_sums",
+        "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_verticalStrip",
+        "NLS.ZakharovShabat.norm_sourceDoubleResolvent_snd_le_absolute_sum",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_im",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_strip",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_pureImaginary",
+        "NLS.ZakharovShabat.norm_sourceParityProjection_apply_le",
+        "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_le_height",
+        "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_le_scalar",
+        "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_lt_one",
+        "NLS.ZakharovShabat.norm_sourcePotentialFreeResolvent_sq_le",
+        "NLS.ZakharovShabat.norm_sourcePotentialFromL1_apply_le",
+        "NLS.ZakharovShabat.norm_sourcePotentialFromL1_le",
+        "NLS.ZakharovShabat.notMem_freeLattice_of_mem_verticalStrip",
+        "NLS.ZakharovShabat.not_lemma34ProofNear_iff",
+        "NLS.ZakharovShabat.not_lemma3_2_ii_original_norms",
+        "NLS.ZakharovShabat.not_proposition3_1_all_p",
+        "NLS.ZakharovShabat.periodOnePotential_physical_coefficients",
+        "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+        "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top",
+        "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.potentialOperator_domainParityProjection",
+        "NLS.ZakharovShabat.proposition3_1_discreteness_and_reality",
+        "NLS.ZakharovShabat.proposition3_1_printed_height_counterexample",
+        "NLS.ZakharovShabat.punctured_centered_reciprocal_sum",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_height_moment",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_height_moment_chain",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_le_verticalStrip",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_moment",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_moment_le_verticalStrip",
+        "NLS.ZakharovShabat.scalarFreeL1Bound_one_eq_reciprocalSup",
+        "NLS.ZakharovShabat.scalarResolventToL1_norm_sum",
+        "NLS.ZakharovShabat.sourceContourLift",
+        "NLS.ZakharovShabat.sourceContourMidpoint_halfSquaredGap_eq_reduced",
+        "NLS.ZakharovShabat.sourceContourMidpoint_squaredGap_eq_pair",
+        "NLS.ZakharovShabat.sourceContourRangeTransport",
+        "NLS.ZakharovShabat.sourceContourRangeTransport_apply",
+        "NLS.ZakharovShabat.sourceContourRestriction",
+        "NLS.ZakharovShabat.sourceContourRestriction_apply",
+        "NLS.ZakharovShabat.sourceContourRestriction_conjugate",
+        "NLS.ZakharovShabat.sourceContourTracePower_eq_reduced",
+        "NLS.ZakharovShabat.sourceContourTransport",
+        "NLS.ZakharovShabat.sourceContourTransport_reduced_apply",
+        "NLS.ZakharovShabat.sourceContour_centeredSquare_trace",
+        "NLS.ZakharovShabat.sourceCorollary3_3",
+        "NLS.ZakharovShabat.sourceCorollary3_5_from_square",
+        "NLS.ZakharovShabat.sourceDoubleResolvent_eq_comp",
+        "NLS.ZakharovShabat.sourceDoubleResolvent_signed_fst_apply",
+        "NLS.ZakharovShabat.sourceDoubleResolvent_signed_snd_apply",
+        "NLS.ZakharovShabat.sourceEquation1_3",
+        "NLS.ZakharovShabat.sourceEquation1_4",
+        "NLS.ZakharovShabat.sourceEquation1_5",
+        "NLS.ZakharovShabat.sourceFourierTailCLM",
+        "NLS.ZakharovShabat.sourceFourierTailCLM_apply",
+        "NLS.ZakharovShabat.sourceFourierTail_zero_potential",
+        "NLS.ZakharovShabat.sourceFreeResolventCutoff",
+        "NLS.ZakharovShabat.sourceFreeResolventCutoff_fst",
+        "NLS.ZakharovShabat.sourceFreeResolventCutoff_snd",
+        "NLS.ZakharovShabat.sourceFreeResolventToL1",
+        "NLS.ZakharovShabat.sourceFreeResolventToL1_diagonal_zero",
+        "NLS.ZakharovShabat.sourceFreeResolventToL1_one",
+        "NLS.ZakharovShabat.sourceFreeResolvent_fst_apply",
+        "NLS.ZakharovShabat.sourceFreeResolvent_fst_le_moment",
+        "NLS.ZakharovShabat.sourceFreeResolvent_fst_norm_sum",
+        "NLS.ZakharovShabat.sourceFreeResolvent_fst_scalar_bound",
+        "NLS.ZakharovShabat.sourceFreeResolvent_signed_fst",
+        "NLS.ZakharovShabat.sourceFreeResolvent_snd_apply",
+        "NLS.ZakharovShabat.sourceFreeResolvent_snd_le_moment",
+        "NLS.ZakharovShabat.sourceFreeResolvent_snd_norm_sum",
+        "NLS.ZakharovShabat.sourceFreeResolvent_snd_scalar",
+        "NLS.ZakharovShabat.sourceFreeResolvent_snd_scalar_bound",
+        "NLS.ZakharovShabat.sourceFrequencyNeighborhood",
+        "NLS.ZakharovShabat.sourceHeightNeumannRegion",
+        "NLS.ZakharovShabat.sourceHeightNeumannRegion_nonempty",
+        "NLS.ZakharovShabat.sourceHeightNeumannRegion_subset_resolventSet",
+        "NLS.ZakharovShabat.sourceInclusion_contourLift_range",
+        "NLS.ZakharovShabat.sourceInclusion_contourLift_transported",
+        "NLS.ZakharovShabat.sourceLemma34_denominator_lower",
+        "NLS.ZakharovShabat.sourceLemma34_denominator_product",
+        "NLS.ZakharovShabat.sourceLemma34_reciprocal_memlp",
+        "NLS.ZakharovShabat.sourceLemma3_4",
+        "NLS.ZakharovShabat.sourceLemma3_6",
+        "NLS.ZakharovShabat.sourceLemma3_7",
+        "NLS.ZakharovShabat.sourceLemma3_7_periodOne",
+        "NLS.ZakharovShabat.sourceNeumann_survives_pairCounterexample",
+        "NLS.ZakharovShabat.sourceOperator_domainParityProjection",
+        "NLS.ZakharovShabat.sourceParityCentralProjection_apply",
+        "NLS.ZakharovShabat.sourceParityCircleProjection_apply",
+        "NLS.ZakharovShabat.sourceParityCompression_apply",
+        "NLS.ZakharovShabat.sourceParityProjection_commute_resolvent",
+        "NLS.ZakharovShabat.sourcePeriodOneEquiv",
+        "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourcePotentialSegment_compact_in_neighborhood",
+        "NLS.ZakharovShabat.sourceResolventCircleIntegral",
+        "NLS.ZakharovShabat.sourceResolventCircleIntegral_eq_conj",
+        "NLS.ZakharovShabat.sourceResolventRectangleIntegral",
+        "NLS.ZakharovShabat.sourceResolventRectangleIntegral_eq_conj",
+        "NLS.ZakharovShabat.sourceResolventSet_eq",
+        "NLS.ZakharovShabat.sourceResolventToDomain_sourceSpectralPencil",
+        "NLS.ZakharovShabat.sourceResolvent_comp_one_sub_potentialFreeResolvent",
+        "NLS.ZakharovShabat.sourceResolvent_neumann_formula",
+        "NLS.ZakharovShabat.sourceResolvent_squared_formula",
+        "NLS.ZakharovShabat.sourceSpectralPencil_factorization",
+        "NLS.ZakharovShabat.sourceSpectralPencil_sourceResolventToDomain",
+        "NLS.ZakharovShabat.sourceUnboundedDomainEquiv",
+        "NLS.ZakharovShabat.sourceUnboundedOperator",
+        "NLS.ZakharovShabat.sourceUnboundedOperator_dense_domain",
+        "NLS.ZakharovShabat.sourceUnboundedOperator_isClosed",
+        "NLS.ZakharovShabat.spectralExterior",
+        "NLS.ZakharovShabat.spectralExterior_height_or_strip",
+        "NLS.ZakharovShabat.sphere_subset_verticalStrip",
+        "NLS.ZakharovShabat.summable_lemma34NumeratorMoment",
+        "NLS.ZakharovShabat.summable_lemma34ProofTerm",
+        "NLS.ZakharovShabat.summable_scalarFreeL1Bound_moment",
+        "NLS.ZakharovShabat.tendsto_scalarResolvent_cutoff",
+        "NLS.ZakharovShabat.tendsto_sourceDoubleResolventBound_zero",
+        "NLS.ZakharovShabat.tendsto_sourceFreeResolventCutoff",
+        "NLS.ZakharovShabat.toMax_sourcePotentialFreeResolvent_apply",
+        "NLS.ZakharovShabat.verticalStrip",
+        "NLS.ZakharovShabat.verticalStrip_denominator_lower",
+        "NLS.ZakharovShabat.zero_mem_sourceFrequencyNeighborhood"
+      ],
+      "declaration_inventory_count": 42983,
+      "qualification": "The complete Section 3 extraction, lines 1219-1623, was read in order and all five rendered pages 23-27 were inspected. These 38 ordered assertion groups reconcile its definitions, statements, displays and proof assertions with the specific published comparisons referenced in each group. Six already-refuted printed bounds remain distinct from proved clauses and corrections. Explicit interpretations retain the unit-ball reading of the high-height prose, finite denominators, admissible-strip large-parameter scope, period-one parity hypothesis and local fixed-contour transport. Cited external texts and editorial labels are contextual. The referenced focused comparisons and their qualifications are reused after current hash and declaration checks; this is not a new independent review of every transitive dependency. The inventory covers this section and does not certify the chapter or dissertation. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_inventory": {
+        "section": 3,
+        "printed_pages": [
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "ordered_groups": 38,
+        "evidence_reviews": [
+          "Cor33NeumannProofSourceComparison-2026-10-27",
+          "Cor35UniformProofSourceComparison-2026-10-27",
+          "Lemma32CompactProofSourceComparison-2026-10-27",
+          "Lemma32EndpointProofSourceComparison-2026-10-27",
+          "Lemma32ScalarProofSourceComparison-2026-10-27",
+          "Lemma34HolderSourceComparison-2026-10-27",
+          "Lemma34MajorizationSourceComparison-2026-10-27",
+          "Lemma34ProofSourceComparison-2026-10-27",
+          "Section3ProjectionParitySourceComparison-2026-10-27",
+          "Section3RankRealitySourceComparison-2026-10-27",
+          "Section3RemainingScopeSourceComparison-2026-10-27",
+          "Section3SetupSourceComparison-2026-10-27",
+          "Section3TraceSourceComparison-2026-10-27"
+        ],
+        "claims_dissertation_complete": false
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section3InventoryReview-023.png": "49fc48e6e7091eb9440895629d19c53f1f9053f53511bfccc5a8bf2b1112e3b0",
+          "Section3ProofCurrentReview-024.png": "60bcb9c53a28e52ad8acfa6c2babe44eed03ba7b7867ec49a9f21a6d7ac23565",
+          "Section3ProofNextReview-025.png": "9b5ae7f71f8a21e0f1b0fe7996eae6e484e40f316bf70c18fbf3787325a69ca4",
+          "Section3UniformProofReview-026.png": "4f0d5cead50b5dca2c5bc53fb8487a6e03df84ead6780363252d12d845dba058",
+          "Section3InventoryReview-027.png": "67724cf2b1dbef8fef9baafa7879ba8697ecebed6806a1d779b9f1af4d080353"
+        }
+      },
+      "contextual_attributions": [
+        {
+          "source_lines": [
+            1237,
+            1238
+          ],
+          "finding": "The general perturbation theorem in [40, Chapter IV, section 1] is a cited external source; the current proof establishes closedness directly."
+        },
+        {
+          "source_lines": [
+            1557,
+            1557
+          ],
+          "finding": "The rendered page labels the proof Proposition 1.1; its local clauses and height-N box are assessed explicitly, without changing the printed label."
+        },
+        {
+          "source_lines": [
+            1613,
+            1614
+          ],
+          "finding": "The range-transport citation to [40, Remark 4.4] is context; the explicit local construction is proved here."
+        }
+      ],
+      "retained_refutations": [
+        {
+          "source_lines": [
+            1243,
+            1263
+          ],
+          "claim": "Unrestricted printed norm-dependent height"
+        },
+        {
+          "source_lines": [
+            1293,
+            1296
+          ],
+          "claim": "Factor-one p-to-l1 pair height estimate"
+        },
+        {
+          "source_lines": [
+            1342,
+            1343
+          ],
+          "claim": "p=1 height lower bound"
+        },
+        {
+          "source_lines": [
+            1359,
+            1360
+          ],
+          "claim": "p=1 strip lower bound"
+        },
+        {
+          "source_lines": [
+            1444,
+            1446
+          ],
+          "claim": "Uniform far radius estimate"
+        },
+        {
+          "source_lines": [
+            1459,
+            1461
+          ],
+          "claim": "Uniform near radius exponent"
+        }
+      ],
+      "status": "current_public_source_comparison",
+      "base_commit": "1bbca042eee8f00141ae13215e7aea27c3676334",
+      "updated_utc": "2026-10-27T18:08:44.101140+00:00",
+      "prepared_from_sha256": "dc899f92cfbe66b59dbead7c6efc991281bce96998de01bda2c4c279d503d751",
+      "validation_reuse": {
+        "full_check_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+        "lean_sources": {
+          "files": 4717,
+          "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
+        },
+        "new_lean_check_run": false,
+        "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
+      },
+      "source_record_sha256": "ee840efb8fd2929afa4c47077a894ec21d023a7f09505cd612b3c85cc6862b32"
     }
   }
 }

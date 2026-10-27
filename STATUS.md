@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: Section 3 remaining scope comparison
+## Current milestone: Section 3 ordered assertion inventory
+
+The complete Section 3 text and all five rendered pages now have a
+38-group ordered assertion inventory. Each group links its actual proof
+evidence and retains its original objects, norms, domains and quantifiers.
+Six previously refuted printed bounds remain separate from valid results
+and corrections. The [Section 3 inventory](coverage/SECTION_3.md) also
+records the explicit interpretations and contextual external citations.
+
+Validation: source-review integrity, declaration references and documentation
+links pass. The Lean sources and dependency locks are byte-identical to
+the full check at `cb7317a`: 8,440 build jobs, 7,498 examples and the
+42,983-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Continue with Section 4 in source order, comparing its substantive
+assertions with the existing proofs and preserving all recorded corrections.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Section 3 remaining scope comparison
 
 Eight further passage groups now compare the full operator setup, compact-resolvent
 discreteness, exact strip and Neumann regions, quantified Lemma 3.4 and
