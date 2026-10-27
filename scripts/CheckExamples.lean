@@ -68221,3 +68221,36 @@ example (D : SourceAngularEtaLocalCommonDomainData hp hp1 W₀ W s)
 
 end Section16ProofEstimatesExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section18ActionTaylorExamples
+open Set Filter Topology Asymptotics
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+variable {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    (fun a : Coeff 2 => H a + Coeff.dualPairing a a)
+      =O[𝓝 0] (fun a => ‖a‖^3) := Q.action_cubic_remainder
+
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    (fun a : WeightedCoeff (Weight.sobolev 2) 1 =>
+      sourceStandardFullActionHamiltonian H a -
+        ((∑' n : ℤ, (2*(Real.pi:ℂ)*n)^2*a.val n) +
+          2*(∑' n : ℤ, a.val n)^2 - ∑' n : ℤ, (a.val n)^2))
+      =O[𝓝 0] (fun a => ‖a‖^3) := Q.standard_full_action_cubic_remainder
+
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, 0 < C ∧
+      Metric.ball (0 : WeightedCoeff (Weight.sobolev 2) 1) r ⊆ sourceStandardFullActionDomain T ∧
+      ∀ a : WeightedCoeff (Weight.sobolev 2) 1, ‖a‖ < r →
+        ‖sourceStandardFullActionHamiltonian H a -
+          ((∑' n : ℤ, (2*(Real.pi:ℂ)*n)^2*a.val n) +
+            2*(∑' n : ℤ, a.val n)^2 - ∑' n : ℤ, (a.val n)^2)‖ ≤ C*‖a‖^3 := Q.standard_full_action_expansion_bound
+
+end Section18ActionTaylorExamples
+end NLS.ZakharovShabat

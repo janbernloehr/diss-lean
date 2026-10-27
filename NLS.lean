@@ -4704,3 +4704,4 @@ import NLS.ZakharovShabat.AKNSConjugation
 import NLS.ZakharovShabat.AKNSComplexification
 import NLS.ZakharovShabat.SourceSection16UniformDerivatives
 import NLS.ZakharovShabat.SourceFiniteGapBetaDecay
+import NLS.ZakharovShabat.SourceHamiltonianActionTaylor

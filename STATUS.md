@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: Section 16 derivative bounds and beta decay
+## Current milestone: Section 18 action Taylor expansion
+
+The actual full Hamiltonian now has the printed kinetic + 2mass^2 - sum I_n^2
+expansion with an explicit cubic remainder in the standard ell^(2,1) action
+norm. One positive ball in the original complex domain and one constant
+control the error for every input there, including infinite-support actions.
+
+The proof uses the actual Hstar Hessian and analytic Taylor expansion,
+then restores the mass and kinetic terms. The [Section 18 audit](coverage/SECTION_18.md)
+records the exact norm and the existing full-Hessian correction.
+The remaining semantic source audit, Sobolev-flow background, exact2014
+and G2 qualifications remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,398 build jobs, 7,400
+public examples, and a transitive axiom audit of 42,402 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,792 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Section 16 derivative bounds and beta decay
 
 Section 16's normalization, beta correction and gap-weighted coordinates
 now have explicit locally uniform bounds on their actual derivatives

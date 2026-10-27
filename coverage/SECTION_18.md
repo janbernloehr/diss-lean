@@ -279,3 +279,25 @@ precise 2014 construction comparison remains unverified.
 The [Section 22 endpoint follow-up](SECTION_22.md) proves the physical
 nonextension statement for the infinity target using the mass gauge and
 local renormalized solutions. The source exponent remains finite.
+
+## The full action expansion with a cubic remainder, printed p. 83
+
+[SourceHamiltonianActionTaylor.lean](../NLS/ZakharovShabat/SourceHamiltonianActionTaylor.lean)
+proves the displayed full Hamiltonian expansion with a precise remainder:
+kinetic energy plus twice the square of total action, minus the sum of
+action squares, plus O(norm(I)^3). The norm is the native standard
+ell^(2,1) action norm with weight (1+abs(n))^2. The result holds for complex
+inputs, including infinite support, and hence also for real positive actions.
+One positive ball lies inside the original action domain, and one positive
+constant bounds the remainder for every input in that ball.
+
+The proof first identifies the actual Hilbert Hamiltonian Hstar's quadratic
+term using its full Frechet Hessian and its vanishing value and gradient.
+The analytic power series gives a cubic remainder. The coefficient-preserving
+bounded inclusion then transfers this estimate to standard weighted actions,
+and the exact physical mass and kinetic terms are restored.
+
+The earlier physical H1 energy identification is retained. The printed
+full-Hessian omission of the mass contribution remains a documented source
+correction. The Sobolev-flow background and remaining semantic comparisons,
+including exact2014 and G2 qualifications, remain separate.

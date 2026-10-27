@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 16's actual normalization, beta and gap-weighted
-coordinate derivatives have locally uniform bounds over all signed indices.
-The original beta correction has O(1/n) decay at every real finite-gap source.
+Latest step: the actual full Hamiltonian has its printed quadratic action
+expansion with a cubic remainder in the standard weighted action norm.
+The bound covers all complex inputs in one ball of the original domain.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
