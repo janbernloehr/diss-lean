@@ -1505,3 +1505,35 @@ has a nonreal spectrum is made.
 This is a source-specific witness and exact constant-potential comparison.
 The remaining semantic source audit, exact2014 and G2 qualifications
 remain separate.
+
+## Physical midpoint and gap asymptotics, including nonreal gaps
+
+[`PhysicalPeriodicMidpointGap.lean`](../NLS/ZakharovShabat/PhysicalPeriodicMidpointGap.lean)
+defines the midpoint and gap directly from the independently specified
+physical periodic endpoint labels. Their exact comparison with the
+original source sequences is proved. For every complex physical L2
+potential, the midpoint displacement from n*pi and the full gap sequence
+belong to l2, including the central indices.
+
+The local uniformity in Corollary 1.3 is retained in the physical L2
+topology: for each positive tolerance, one open neighborhood gives a
+common norm bound for both sequences and one cutoff beyond which both
+l2 truncation errors are below that tolerance at every larger cutoff. This statement
+requires neither real type nor continuous individual complex labels.
+A gap vanishes exactly when its two physical endpoint labels coincide.
+
+[`PhysicalNonrealGap.lean`](../NLS/ZakharovShabat/PhysicalNonrealGap.lean)
+gives an explicit form of the p.18 complex-gap assertion. Every physical
+L2 neighborhood of zero contains a constant potential (r,-r), with r>0,
+whose actual central endpoints are exactly (-i*r,i*r). Its ordered gap
+is 2*i*r, with nonzero imaginary part, and its midpoint is zero. The proof
+uses actual isolated spectral pairs and their lexicographic ordering.
+
+[`PhysicalNonrealMidpoint.lean`](../NLS/ZakharovShabat/PhysicalNonrealMidpoint.lean)
+adds an explicit nonreal midpoint for the constant potential (1,i).
+Every actual spectral point satisfies 2*Re(z)*Im(z)=1. Square-summable
+endpoint displacements place a pair in the right half-plane, where both
+imaginary parts are positive; hence its actual midpoint is nonreal.
+
+The remaining semantic source audit, exact2014 comparison and G2 norm
+qualification remain separate.

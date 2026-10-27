@@ -68075,3 +68075,54 @@ example (r : ℤ) :
 
 end PhysicalNonrealSpectrumExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalGapGeometryExamples
+open Set Filter Topology
+
+example (u : IntervalPairL2) :
+    Memℓp (fun n => physicalPeriodicMidpoint u n-(Real.pi : ℂ)*n) 2 ∧
+      Memℓp (physicalPeriodicGap u) 2 := physicalPeriodicMidpointGap_memℓ2 u
+
+example (u : IntervalPairL2) (n : ℤ) :
+    physicalPeriodicGap u n = 0 ↔ physicalPeriodicLeft u n = physicalPeriodicRight u n :=
+  physicalPeriodicGap_eq_zero_iff u n
+
+example (u : IntervalPairL2) :
+    physicalPeriodicMidpointDisplacement u =
+      sourcePeriodicMidpointDisplacement (by simp) (by norm_num) (sourcePhysicalL2Equiv.symm u) :=
+  physicalPeriodicMidpointDisplacement_eq_source u
+
+example (u : IntervalPairL2) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set IntervalPairL2, IsOpen U ∧ u ∈ U ∧
+      ∃ R : ℝ, 0 < R ∧ ∀ v ∈ U,
+        ‖physicalPeriodicMidpointDisplacement v‖ ≤ R ∧
+        ‖physicalPeriodicGapDisplacement v‖ ≤ R ∧
+        ∀ M : ℕ, N ≤ M →
+          ‖physicalPeriodicMidpointDisplacement v -
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (physicalPeriodicMidpointDisplacement v)‖ ≤ ε ∧
+          ‖physicalPeriodicGapDisplacement v -
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (physicalPeriodicGapDisplacement v)‖ ≤ ε :=
+  exists_uniform_physicalPeriodicMidpointGap u hε
+
+example (V : Set IntervalPairL2) (hV : V ∈ 𝓝 (0 : IntervalPairL2)) :
+    ∃ r : ℝ, 0 < r ∧ sourcePhysicalL2 (sourceConstantPotential (p := 2) (r : ℂ) (-r)) ∈ V ∧
+      physicalPeriodicLeft (sourcePhysicalL2 (sourceConstantPotential (p := 2) (r : ℂ) (-r))) 0 = -(Complex.I*r) ∧
+      physicalPeriodicRight (sourcePhysicalL2 (sourceConstantPotential (p := 2) (r : ℂ) (-r))) 0 = Complex.I*r :=
+  exists_physical_nonreal_central_pair V hV
+
+example (V : Set IntervalPairL2) (hV : V ∈ 𝓝 (0 : IntervalPairL2)) :
+    ∃ u ∈ V, ∃ r : ℝ, 0 < r ∧ physicalPeriodicGap u 0 = 2*Complex.I*r ∧
+      physicalPeriodicMidpoint u 0 = 0 ∧ (physicalPeriodicGap u 0).im ≠ 0 :=
+  exists_physical_nonreal_gap V hV
+
+example (u : IntervalPairL2) :
+    ∃ n : ℤ, 0 < (physicalPeriodicLeft u n).re ∧ 0 < (physicalPeriodicRight u n).re :=
+  exists_physicalPeriodicEndpoints_re_pos u
+
+example : ∃ n : ℤ, (physicalPeriodicMidpoint
+    (sourcePhysicalL2 (sourceConstantPotential (p := 2) 1 Complex.I)) n).im ≠ 0 :=
+  exists_physical_nonreal_midpoint_constant
+
+end PhysicalGapGeometryExamples
+end NLS.ZakharovShabat

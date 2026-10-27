@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the concrete physical potential (1,-1) has the nonreal
-eigenvalue i, with full classical signed domains and the actual operator
-spectrum. Both signed realizations fail self-adjointness.
+Latest step: physical periodic midpoint and gap sequences have locally
+uniform square-summable tails. Arbitrarily small constant physical
+potentials exhibit an explicit nonreal central gap.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

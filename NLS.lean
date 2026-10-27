@@ -4696,3 +4696,6 @@ import NLS.ZakharovShabat.PhysicalSignedUniformCircleCounts
 import NLS.ZakharovShabat.PhysicalSignedUniformEnumeration
 import NLS.ZakharovShabat.PhysicalSignedSpectralOverview
 import NLS.ZakharovShabat.PhysicalConstantPeriodicSpectrum
+import NLS.ZakharovShabat.PhysicalPeriodicMidpointGap
+import NLS.ZakharovShabat.PhysicalNonrealGap
+import NLS.ZakharovShabat.PhysicalNonrealMidpoint

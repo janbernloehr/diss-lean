@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: an explicit nonreal physical spectrum
+## Current milestone: physical midpoint and gap asymptotics
+
+The actual physical periodic midpoint displacement and gap sequence
+are square summable for every complex L2 potential. For each positive
+tail tolerance, one common physical neighborhood supplies uniform norm
+bounds and tails below that tolerance for both sequences at every
+sufficiently large cutoff.
+
+Every physical L2 neighborhood of zero also contains a constant potential
+(r,-r), r>0, whose exact central endpoints are (-i*r,i*r). Its gap is
+2*i*r and its midpoint is zero. This gives explicit nonreal gaps in the
+original physical setting. The constant potential (1,i) also has a nonreal
+physical midpoint.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+source comparison. Remaining source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,392 build jobs, 7,385
+public examples, and a transitive axiom audit of 42,348 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,771 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: an explicit nonreal physical spectrum
 
 The original physical constant potential (1,-1) has i as an actual
 classical signed ODE eigenvalue, so its combined periodic spectrum is
