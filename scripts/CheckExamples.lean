@@ -68568,3 +68568,66 @@ example (s : ℝ) (f g : SmoothPeriodicTest L) :
 
 end Section2NativeDualityExamples
 end NLS.Fourier.PeriodicFourierLebesgue
+
+
+namespace IntroductionActionFourierTaylorChecks
+
+open NLS NLS.ZakharovShabat Set Filter Topology Asymptotics
+open scoped ENNReal
+
+section IntroductionActionFourierTaylorExamples
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
+
+-- The real-source leading term retains the signed physical Fourier index.
+example (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    sourceFourierActionSequence (q := q) φ.val n = (‖φ.val.fst (-n)‖^2 : ℝ) :=
+  sourceFourierActionSequence_real φ n
+
+-- The asymptotic estimate is in the full half-exponent norm, at all finite inputs.
+example {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ B W : Set (CoeffPair p)}
+    {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) :
+    (fun φ => sourceActionSequence (q := q) hp hp1 s φ - sourceFourierActionSequence φ)
+      =o[𝓝 (0 : CoeffPair p)] (fun φ => ‖φ‖^2) :=
+  D.actionSequence_fourier_isLittleO
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+-- FL4 supplies actual spectral actions and the expansion without a supplied atlas.
+example : ∃ A : CoeffPair 4 → Coeff 2, ∃ W : Set (CoeffPair 4),
+    IsOpen W ∧ realTypeSourceLocus 4 ⊆ W ∧ AnalyticOnNhd ℂ A W ∧
+    (∀ φ ∈ W, ∀ n, A φ n = sourceComplexAction (by simp) (by norm_num) n φ) ∧
+    (fun φ => A φ - sourceFourierActionSequence φ)
+      =o[𝓝 (0 : CoeffPair 4)] (fun φ => ‖φ‖^2) :=
+  exists_sourceActionFourierTaylor (by simp) (by norm_num)
+
+-- Opposite signed indices, rather than equal indices, give the nonzero term.
+example : sourceFourierActionSequence (q := 2)
+    (WithLp.toLp 4 (lp.single 4 (-3 : ℤ) (2 : ℂ), lp.single 4 (3 : ℤ) (5 : ℂ))) 3 = 10 := by
+  norm_num [sourceFourierActionSequence_apply, lp.single_apply]
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  apply (ENNReal.le_div_iff_mul_le (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderTriple 3 (3/2) :=
+  Coeff.holderTriple_half 3
+
+-- The remainder also uses the actual noninteger target exponent 3/2.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (ε : ℝ) (hε : 0 < ε) :
+    ∃ δ > 0, Metric.ball (0 : CoeffPair 3) δ ⊆ W ∧
+      ∀ φ : CoeffPair 3, ‖φ‖ < δ →
+        ‖sourceActionSequence (q := 3/2) (by simp) (by norm_num) s φ - sourceFourierActionSequence φ‖ ≤
+          ε * ‖φ‖^2 :=
+  D.actionSequence_fourier_remainder ε hε
+
+end IntroductionActionFourierTaylorExamples
+
+end IntroductionActionFourierTaylorChecks

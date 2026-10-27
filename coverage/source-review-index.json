@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T06:37:24.623921+00:00",
-  "base_commit": "001f7cd91d59cfacfa9316f7d35bf0cacc20e98f",
+  "published_utc": "2026-10-27T07:05:55.806812+00:00",
+  "base_commit": "fa30173af216d41fef20acc94030be8260600874",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 49,
-    "module_hash_checks": 664,
-    "distinct_modules": 617
+    "review_records": 50,
+    "module_hash_checks": 707,
+    "distinct_modules": 649
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d76afc695337cf70e3e330a4889042e3d6dfb67c",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes PeriodicSobolevDuality and its public examples.",
+    "base_commit": "fa30173af216d41fef20acc94030be8260600874",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceActionFourierTaylor and its five public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8412,
-    "public_examples": 7424,
-    "transitive_NLS_declarations": 42491,
+    "build_jobs": 8413,
+    "public_examples": 7429,
+    "transitive_NLS_declarations": 42514,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4689,
-      "sha256": "3d7b879aa02ec1e82c25a192909f20ceecc78d53f3a1040df9a48aa85fa3129d"
+      "files": 4690,
+      "sha256": "98c418708c71d75a88a53ee9b30da253d5d51641dcca6f0d89c54f98a4f09cf1"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -10013,6 +10013,216 @@
       },
       "qualification": "All fourteen hash-listed canonical modules were read completely for this comparison, including the actual proof bodies and their domain and normalization hypotheses. It covers only the five Fourier-space and symmetry assertion groups listed here; the preceding Birkhoff-extension claim and the wider opening background are not certified by this record. Exact critical scaling is homogeneous, and classical PDE symmetry is separate from invariance of the rough distribution class. Existing Lean validation covers the unchanged source snapshot; transitive dependencies are not independently re-proved. The precise2014 construction and G2 norm qualifications remain open.",
       "source_record_sha256": "4b36b6fe813d6db028150044643cdcf1703d9eba1eed361631161ac5645c874f"
+    },
+    "IntroductionOpeningSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T06:53:40.649355+00:00",
+      "base_commit": "fa30173af216d41fef20acc94030be8260600874",
+      "source_lines": [
+        154,
+        238
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            156,
+            176
+          ],
+          "requirement": "The periodic scalar dNLS equation is the Hamiltonian equation for the unit-period kinetic plus quartic energy.",
+          "finding": "The actual third hierarchy Hamiltonian is identified with the integral of a prime times b prime plus a squared times b squared. Actual directional derivatives and periodic integration by parts give both variational gradients. The cross-component signs (-i,+i) preserve the conjugate real form and give precisely i*u_t=-u_xx+2*abs(u)^2*u. The scalar Sobolev realization has the literal unit-interval real energy integral. First-variation proofs retain their smooth periodic hypotheses; this is not an assertion of a bounded L2 vector field for arbitrary rough inputs.",
+          "declarations": [
+            "classicalNLSHamiltonian_three",
+            "hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "scalarSobolevEnergy_eq_real_integral",
+            "classicalNLSVectorField_scalar"
+          ]
+        },
+        {
+          "source_lines": [
+            178,
+            181
+          ],
+          "requirement": "The original NLS evolution is isospectral and has infinitely many commuting first integrals.",
+          "finding": "Every original global ordinary or renormalized solution for 1<p<=2 conserves each original spectral action. Equality of these actions gives the actual periodic isospectral set, including algebraic multiplicities, and equality of the whole normalized discriminant. One-mode original sources separate the infinitely many action functions; their actual regular cotangents commute under the physical Poisson pairing. The solution notion quantifies over every convergent sequence of smooth initial data and has a proved uniqueness theorem; no abstract unrelated phase curve is substituted.",
+          "declarations": [
+            "isospectral_of_isOrdinaryNLSSolutionOn_univ",
+            "discriminant_of_isOrdinaryNLSSolutionOn_univ",
+            "originalOrdinary_integrals_in_involution",
+            "IsSmoothApproximationSolutionOn.eqOn_inter"
+          ]
+        },
+        {
+          "source_lines": [
+            178,
+            181
+          ],
+          "requirement": "The independence assertion implicit in integrable action coordinates must retain collapsed-gap behavior.",
+          "finding": "The real and complex differentials of the actual actions indexed by open gaps are independent at every finite p>1. The proof uses the original action-angle cotangent pairing, and local germ agreement transfers the assertion to the indexed contour actions. A real action differential vanishes exactly at a collapsed gap. Independence of the entire differential family therefore holds exactly when every gap is open. This supplements the printed first-integral assertion without claiming differential independence at closed gaps.",
+          "declarations": [
+            "linearIndependent_sourceComplexAction_fderiv_open_gaps",
+            "linearIndependent_sourceIndexedAction_fderiv_open_gaps",
+            "linearIndependent_originalRealActionIntegral_fderiv_iff"
+          ]
+        },
+        {
+          "source_lines": [
+            182,
+            186
+          ],
+          "requirement": "A globally defined nonlinear Birkhoff map gives the original rectangular action coordinates.",
+          "finding": "The original family is constructed, is locally analytically invertible and globally injective for every finite p>1, and is onto for 1<p<=2. The intrinsic physical L2 map and inverse are globally real analytic; their formulas use actual spectral actions and physical angular integrals, including collapsed gaps. The normalized scalar map also has a constructed global analytic inverse on every complex l2 input. The action-radius identity is exactly (x_n squared+y_n squared)/2. The independently inspected physical convention is retained, while exact comparison to the cited 2014 book remains unresolved.",
+          "declarations": [
+            "sourceSection17_original",
+            "SourceSection17OriginalData.global_inverse",
+            "intrinsicPhysicalBirkhoffMap_formula_of_eta",
+            "intrinsicPhysicalBirkhoffHomeomorph_analytic",
+            "scalarNonlinearFourierHomeomorph"
+          ]
+        },
+        {
+          "source_lines": [
+            185,
+            191,
+            223,
+            225
+          ],
+          "requirement": "The full Hamiltonian is real analytic in weighted actions alone, and ordinary frequencies are its action derivatives.",
+          "finding": "The named full action Hamiltonian restores the kinetic action sum and twice mass squared to the same renormalized Hamiltonian. Its complex domain is open and contains every nonnegative weighted summable action; the real restriction is real analytic and has the same values on that cone. Every original real H1 source supplies its actual weighted actions and recovers the physical energy, including infinite-gap inputs. Its literal coordinate derivative is the original renormalized frequency plus four times mass plus (2*pi*n)^2. The original frequency data recovers the actual spectral frequency; the ordinary phase-frequency definition has those same terms. There is no claim that the full unrenormalized energy is defined on all unweighted l1 or all L2 sources.",
+          "declarations": [
+            "SourceOriginalHamiltonianData.full_action_domain",
+            "SourceOriginalHamiltonianData.real_full_action_analytic",
+            "SourceOriginalHamiltonianData.full_action_physical_identity",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex"
+          ]
+        },
+        {
+          "source_lines": [
+            186,
+            191
+          ],
+          "requirement": "The literal rectangular oscillator equations hold, and actions and frequencies remain constant along original solutions.",
+          "finding": "Every original global solution is identified with its Hamiltonian-oriented phase trajectory. The actual rectangular coordinates satisfy x_n prime=-omega_n*y_n and y_n prime=omega_n*x_n at every time. Ordinary and renormalized frequencies are conserved on those same original solutions. Arbitrary unbounded frequency sequences and infinite-gap sources are allowed; only coordinatewise time derivatives, rather than an unstated full-norm time derivative, are asserted.",
+          "declarations": [
+            "SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "SourceSection20Data.ordinary_original_frequency_conserved",
+            "SourceSection20Data.renormalized_original_rectangular_oscillators"
+          ]
+        },
+        {
+          "source_lines": [
+            191,
+            192
+          ],
+          "requirement": "Spatially periodic original solutions are almost periodic in time in the source topology.",
+          "finding": "A finite net for a totally bounded isometric orbit gives relatively dense shifts with an error uniform over all real times. Both Birkhoff components have common shifts, and compactness permits transport through the actual continuous inverse. Every original global ordinary and renormalized solution for 1<p<=2 is Bohr almost periodic in the full source norm. The native Sobolev lift proves the same at every nonnegative real order while preserving raw coefficients and the original solution. Periodic and quasiperiodic solutions also satisfy this recurrence; no disjoint classification or claim about unspecified weak-solution classes is inferred.",
+          "declarations": [
+            "BohrAlmostPeriodic",
+            "bohrAlmostPeriodic_of_totallyBounded_range",
+            "exists_original_almostPeriodic_solutions",
+            "exists_original_sobolev_almostPeriodic_solutions"
+          ]
+        },
+        {
+          "source_lines": [
+            211,
+            215
+          ],
+          "requirement": "The Birkhoff derivative at zero is the Fourier transform and nonlinear Parseval preserves the scalar physical L2 norm.",
+          "finding": "The complete bounded differential, rather than just mode evaluations, is identified with the explicitly normalized signed Fourier map. For scalar input the normalized complex coefficient is (x-i*y)/sqrt(2); its differential is minus the physical Fourier coefficient at -n. The pair (u,conjugate u) has squared norm twice the scalar squared norm. The normalized scalar nonlinear coefficients have the exact original scalar norm and a convergent squared-modulus sum equal to it squared. The raw rectangular pair retains the pair norm, and the nonlinear map is not claimed to preserve pairwise distances.",
+          "declarations": [
+            "intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+            "scalarNonlinearFourier_fderiv_zero_apply",
+            "scalarNonlinearFourier_norm",
+            "scalarNonlinearFourier_hasSum_norm_sq"
+          ]
+        },
+        {
+          "source_lines": [
+            234,
+            238
+          ],
+          "requirement": "The leading actions are squared Fourier coefficients; actions on FLp lie in ell(p/2), and the Birkhoff map extends analytically to FL4.",
+          "finding": "The existing original complex Birkhoff extension is analytic near the entire real locus for every finite p>1. The half-exponent action sequence is analytic and its coordinates equal the original spectral actions. The new SourceActionFourierTaylor proof gives the exact leading sequence phi.fst(-n)*phi.snd(n), with a remainder little-o of the squared original source norm in the full ell(p/2) norm for every finite p>=2. On the real source this is the squared physical Fourier modulus. One positive radius controls the entire error sequence inside the original domain. The existence theorem constructs the action sequence without a supplied family, and public examples include FL4, the noninteger half exponent3/2, and the signed index convention. No finite support is assumed.",
+          "declarations": [
+            "exists_sourceActionSequence_analytic",
+            "sourceSection16_original",
+            "sourceFourierActionSequence_real",
+            "SourceBirkhoffMapComplexData.actionSequence_fourier_isLittleO",
+            "SourceBirkhoffMapComplexData.actionSequence_fourier_remainder",
+            "exists_sourceActionFourierTaylor"
+          ]
+        }
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          9,
+          10
+        ],
+        "pdf_pages": [
+          9,
+          10
+        ],
+        "images": {
+          "IntroductionOpeningCurrentReview-009.png": "0635ace94a15830b9518e1fd89c154509887a4933c711811321a8229ea741d44",
+          "IntroductionOpeningCurrentReview-010.png": "dda8a038e476fba3eaf8d85858dfa0d6d6d05c404d080a4145e9200c778a5626"
+        }
+      },
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "IntroductionFourierBackgroundSourceComparison-2026-10-27"
+      ],
+      "related_scope": "The main-result previews at215-233 refer to the already recorded comparisons of Theorems0.1-0.3 and their qualifications. The Fourier-space background beginning later on238 through244 is covered by the separate Fourier-background comparison. These records are not replaced.",
+      "contextual_scope": "Lines160-167 and193-201 contain physical applications, motivation and historical context; lines178-183 include historical attribution; lines218-222 and226-233 include perturbation-theory motivation. This record does not turn those empirical, bibliographic or prospective statements into Lean mathematical theorems, nor certify results about other PDEs that the dissertation says are outside its chosen dNLS scope.",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "a7306ddd0e52031dc727feab083c3d4d14f397340242bf3946abaf0e58095a8f",
+        "NLS/ZakharovShabat/ClassicalNLSSobolevEnergy.lean": "188ea3cce1da938f1f66137629826e19441840bce7ad43e58f4b1048102d367d",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": "0b24b5cd21ab246633be338bfe929b19ff8e51bfa948700744ac918d1270493f",
+        "NLS/ZakharovShabat/SourceSection17Original.lean": "68aaf622885d6516a72d3428760e4dbe78a7a6152bd451875c4f491173c39cb6",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/PhysicalBirkhoffIntrinsicProperties.lean": "242ee1f228107c19c6dc32f3909374bec7dae9633bc2d0bd765f3c70127f2d3d",
+        "NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean": "99aaa760eeea1431e5f5f20c6a9a587cdceb983427d1d7e8047ede502d96ac9e",
+        "NLS/ZakharovShabat/SourceOriginalSpectralConservation.lean": "5162b84e6e62b907dd41c450164a3a7c46c2d82c4f7cdcbb92a51714b418e436",
+        "NLS/ZakharovShabat/SourceOriginalActionIntegrals.lean": "10ce6aa5e2fcd7b0bd5f2099662cb2d1f172592cc2df51089546a84b29c6c6fe",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean": "46bb11a67daccbb0f644f63af44893a34c687d3d8e685fcbd105125afa09fc82",
+        "NLS/Dynamics/RectangularHamiltonianOscillators.lean": "572cb7dc9a2f4ee0814160789d961518f2b5a3524786c755fc831b4343cef571",
+        "NLS/ZakharovShabat/SourceActionDifferentialIndependence.lean": "ad718b295a9951603a2ec2e3e7efc7a33dcb2a58167812678809571d19ecebd2",
+        "NLS/ZakharovShabat/SourceRealActionDifferentialIndependence.lean": "2e838195e0a95b585d89e21f0b8d7caf87ed82549a88f33949f31f97b512a5e3",
+        "NLS/Dynamics/BohrAlmostPeriodic.lean": "6b861c9e4c253927437fb77330e41e382e894d7ef5be4bf65dec1e094314e8e8",
+        "NLS/Dynamics/PhaseAlmostPeriodic.lean": "dc4b95af5f940174d329db7d3299f6420d374756b758da6670485b24ed56e70f",
+        "NLS/ZakharovShabat/SourceFlowAlmostPeriodic.lean": "7e04624ef7e24444b221fad1625b3d8fd3137ea4e5c6b72246d10dfdb8c00bab",
+        "NLS/ZakharovShabat/SourceOriginalAlmostPeriodic.lean": "6e7ea31ee08f78f0cd76aae0b496476349e32bb0e041d998d6e95e064757d4c7",
+        "NLS/ZakharovShabat/SourceSobolevAlmostPeriodic.lean": "0f55b3d8c6c16a0c48915a4c58800a4e027b3d635d1b180e4e46596090243d2b",
+        "NLS/ZakharovShabat/ScalarNonlinearParseval.lean": "dd54b62484c33b739b78a92df5b8199a9c24a06424b09a277b056738560c0f57",
+        "NLS/ZakharovShabat/ScalarNonlinearLinearization.lean": "cc606c02d8494f62a56c8c0b8c49ee45d3efcbf95fc43269329090035f6a01fe",
+        "NLS/ZakharovShabat/ScalarNonlinearInverse.lean": "899c09141ebb25c07db46144c922937eeaba0e4c21097784daec21d89e747026",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean": "783315cb41fda455f8d279bd0daa24de5bf84aa646d1dab09d842ea134a69dec",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean": "3afae8c7bc9e64d24b76a118422bb5e44ac070bc8cd64109823011509d547679",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianReal.lean": "9b609ad09c86ee03188e6445b05cd8c24e191c466780d886d234637fda3f3365",
+        "NLS/ZakharovShabat/SourceActionSequenceExponent.lean": "966e3cbffb9c6e24a5659ca7b511fa3da8e58991b050a52b4772bd5de0441a3a",
+        "NLS/ZakharovShabat/SourceHilbertActionSequence.lean": "6704bbe6247c8bba502ea3b024dabf0601b7dae4af6052b554de3194ddfc42d3",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean": "f31131a74c1180235b7ccded46718f0a79e4ddd139fb53453bae8b898ce907af",
+        "NLS/ZakharovShabat/SourceBirkhoffFourier.lean": "1189dc22390de01255d16296463fa5d30e1fc91978859b76e40696ad669f1c94",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean": "ef5c9cf757c18c94a8464f5da571aea3a7869c30ec2a3f0414b6152e44d25d88",
+        "NLS/ZakharovShabat/SourceSobolevPhaseFlow.lean": "8a45b47dd5be456feaaa5095f8787ff03b3b9c5154ab0d46a75431f9e289b735",
+        "NLS/SequenceSpaces/WeightedPhaseAlmostPeriodic.lean": "b5db964947531d689c766c6a371c9bac260a69d084abdd51e775106e09a65990",
+        "NLS/Dynamics/WeightedRealPhaseFlow.lean": "ac3a342890860d27f7e71b809d93756bb639e9ccd93eb199f01bb63ddd31ad8f",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalRestriction.lean": "cb6d55ae09118eda2ce2c09cfd6e168f399bcbded2fca20331a1d9fbfb5f6995",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalPhysical.lean": "107f752f81e69f0d8f88df901c011ed6ada7e2a2d2f33f23e4389f194bf9e60f",
+        "NLS/ZakharovShabat/SourceActionFourierTaylor.lean": "b637e45b1fef82cf6c0cc45c41b14fa70422fd7d28e7ba40d3a4a2dcc6dcd686",
+        "NLS/SequenceSpaces/DoublingProduct.lean": "3396fd55dda572946db95de35e650016b1613c6e439aa75b20f1f416ab6bae3c",
+        "NLS/SequenceSpaces/QuadraticActionsExponent.lean": "76a47fb843df4fdc9c770cb367b3a4cdd59a774219eae4a0c891d758681be81a",
+        "NLS/ZakharovShabat/SourceOrdinaryPhaseTrajectory.lean": "59a50e43b67ee2b1d0792fe9f016d1d02bad74e406ce5c5bb2014af123a155a7",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean": "3c3a97d189eee0c38170f4fedb2a441a95329b416b000ae7f3cc1fa78f8c220f",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/ZakharovShabat/SourceSection16Original.lean": "6f16e8d22651929cc998858d87c3067871c9eef49d2c3a3ce2a18b0757281799"
+      },
+      "qualification": "All43 hash-listed canonical modules were read completely in the renewed opening comparison, together with the five new public examples. The comparison retains the original functions, sequence norms, Fourier normalization, action domains, solution class and exponent ranges. The action leading term is newly proved in the full half-exponent norm. Existing comparisons of the named main results and the Fourier-space background remain separate. This is not an independent re-proof of every transitive dependency, a certification of the contextual narrative, or a full-dissertation completion claim. The exact2014 Birkhoff construction and AppendixG2 norm interpretation remain explicitly unresolved.",
+      "source_record_sha256": "53a67358eda92753dcf0fc87935211a9c9de43250de69c767ac714d3f8c6b285"
     }
   }
 }

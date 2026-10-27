@@ -2,13 +2,13 @@
 
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
-interfaces below are implemented. The wider introductory background on
-pp. 9–10 remains a separate audit, apart from the original spectral
-conservation, action integrals, oscillators, almost-periodicity, critical
-Sobolev inclusion, complete critical homogeneous space, dilation, and full
-distributional Galilean results documented below. This document does not
-certify the entire introduction or dissertation. The precise 2014 edition comparison
-and the G.2 norm qualification also remain open.
+interfaces below are implemented. The mathematical opening on pp. 9–10 has
+also been compared with the original Hamiltonian, spectral conservation,
+action integrals, oscillators, almost-periodicity and nonlinear Fourier
+proofs below. The comparison retains their precise domains and solution
+notion. It does not certify the historical or physical-application narrative,
+the entire introduction or the dissertation. The precise 2014 edition
+comparison and the G.2 norm qualification remain open.
 
 The Fourier-space background on printed p. 10 now has a renewed comparison
 from `FL2 = L2` through Galilean invariance (extraction lines 238–244).
@@ -19,7 +19,33 @@ on the critical periodic inclusion, homogeneous scaling of the critical
 norm, and the classical regularity assumptions for PDE symmetry. Invariance
 of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
-before `FL2 = L2` or the remaining opening background.
+before `FL2 = L2`; that claim is included in the opening comparison below.
+
+## Leading Fourier term of the action sequence, printed p. 10
+
+[SourceActionFourierTaylor.lean](../NLS/ZakharovShabat/SourceActionFourierTaylor.lean)
+makes the first-order action assertion explicit in the full sequence norm.
+For every finite p>=2, with q=p/2, the original action sequence satisfies
+`I(phi) = Q(phi) + o(norm(phi)^2)` in ellq near zero. The source norm is the
+original lp pair norm. The leading coefficient is
+`Q(phi)_n = phi.fst(-n) * phi.snd(n)`, hence the squared physical Fourier
+modulus on the real source. The reflected index follows the signed basis.
+
+`actionSequence_fourier_remainder` gives one positive radius for the whole
+sequence error, inside the original analytic domain, for any requested
+positive error factor. `exists_sourceActionFourierTaylor` constructs the
+analytic action sequence and its exact original spectral coordinates without
+assuming a Birkhoff family. No finite-support hypothesis is imposed.
+Public examples check the general theorem, the FL4-to-ell2 construction,
+the FL3-to-ell(3/2) remainder, and the physical index convention.
+
+The opening comparison, including this assertion, is recorded as
+`IntroductionOpeningSourceComparison-2026-10-27` in the
+[source-comparison snapshot](source-review-index.json). The physical PDE
+formulas use their stated classical regularity. Global conservation and
+recurrence use the original solution definition by all smooth approximations,
+for 1<p<=2, including L2; Sobolev recurrence retains every nonnegative real
+order. The normal-form Hamiltonian retains its weighted action domain.
 
 ## Scalar Fourier differential at zero, printed p. 10
 

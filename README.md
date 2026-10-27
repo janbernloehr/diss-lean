@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the renewed Section 2 comparison now includes pair gradients
-and Poisson pairing, with all three source corrections retained. The
-introduction's Fourier-space background, critical scaling and Galilean
-invariance also have a recorded comparison against the existing Lean proofs.
-The preceding implementation supplies full scalar duality directly on the
-original periodic distribution spaces, including the p=1 endpoint.
+Latest step: the original action sequence now has a proved quadratic Fourier
+leading term, with error o(norm(source)^2) in the full ell(p/2) norm for every
+finite p>=2. On real sources the leading coefficients are squared physical
+Fourier moduli. The opening introduction comparison retains the Hamiltonian,
+conservation, oscillator and recurrence hypotheses of the existing proofs.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

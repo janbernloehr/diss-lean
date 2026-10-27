@@ -2430,6 +2430,7 @@ import NLS.SequenceSpaces.QuadraticActionsExponent
 import NLS.SequenceSpaces.RefinedOnePlusDecomposition
 import NLS.SequenceSpaces.LocallyBoundedRealization
 import NLS.ZakharovShabat.SourceActionSequenceExponent
+import NLS.ZakharovShabat.SourceActionFourierTaylor
 import NLS.ZakharovShabat.SourceActionGapCorrection
 import NLS.ZakharovShabat.SourceActionFrequencyCorrection
 import NLS.ZakharovShabat.SourceActionFrequencyAsymptotic

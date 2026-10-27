@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: Section 2 and introductory Fourier-space comparisons
+## Current milestone: The leading Fourier term of the original actions
+
+The introductory action asymptotic is now proved in the full half-exponent
+sequence norm for every finite p>=2. Its quadratic term keeps the signed
+physical Fourier indices and becomes the squared modulus on real sources.
+For each positive error factor, one source ball controls the whole sequence
+remainder and stays inside the original analytic domain. See the
+[introduction audit](coverage/INTRODUCTION.md).
+
+Five public examples cover the general statement, construction on FL4,
+the noninteger target exponent 3/2, and the physical index convention.
+The opening source comparison also checks the existing Hamiltonian,
+conservation, oscillator and recurrence proofs with their original scope.
+The precise 2014 construction and G.2 norm interpretation remain unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,413 build jobs, 7,429
+public examples, and a transitive axiom audit of 42,514 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 2,850 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+## Previous milestone: Section 2 and introductory Fourier-space comparisons
 
 The renewed [Section 2 comparison](coverage/SECTION_2.md) covers twelve
 assertion groups, including full pair gradients and the physical Poisson
