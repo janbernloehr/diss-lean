@@ -69551,3 +69551,101 @@ example :
   exact h
 
 end Lemma34HolderChecks
+
+noncomputable section
+namespace Lemma32ScalarProofChecks
+open NLS NLS.ZakharovShabat Complex
+open scoped ENNReal
+
+-- The closed half-strip boundary and a negative off-center frequency.
+example : 1+1/Real.sqrt 2 ≤ ‖((Real.pi/2 : ℝ) : ℂ)+Complex.I+(Real.pi : ℂ)‖ := by
+  have h := centered_denominator_sqrt_two
+    (z := ((Real.pi/2 : ℝ) : ℂ)+Complex.I) (n := 0) (m := -1)
+    (by simp [abs_of_nonneg (by positivity : 0 ≤ Real.pi/2)])
+  simpa using h
+
+-- Reindexing the puncture to a negative center retains the constant.
+example : (∑' m : ℤ, if m = -3 then (0 : ℝ) else
+    1/(2+|((m-(-3) : ℤ) : ℝ)|)^(2 : ℝ)) ≤ 2 := by
+  have h := punctured_centered_reciprocal_sum Real.HolderConjugate.two_two
+    (by norm_num : (0 : ℝ) < 2) (-3)
+  norm_num at h ⊢
+  exact h
+
+-- Both signed components resonate at the same negative spectral center.
+example :
+    let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+    let hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+    let a : CoeffPair 2 := (CoeffPair.toMax 2).symm
+      (lp.single 2 2 (3 : ℂ), lp.single 2 (-2) (4 : ℂ))
+    ‖sourceFreeResolventToL1 (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz a‖ = 7 := by
+  dsimp only
+  let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+  let hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+  let a : CoeffPair 2 := (CoeffPair.toMax 2).symm
+    (lp.single 2 2 (3 : ℂ), lp.single 2 (-2) (4 : ℂ))
+  have he : sourceFreeResolventToL1 (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz a =
+      (CoeffPair.toMax 1).symm (lp.single 1 2 (-3*Complex.I), lp.single 1 (-2) (-4*Complex.I)) := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    · change (sourceFreeResolventToL1 _ z hz a).fst m = (lp.single 1 2 (-3*Complex.I) : Coeff 1) m
+      rw [sourceFreeResolventToL1_fst_apply]
+      by_cases hm : m = 2
+      · subst m
+        norm_num [a,z,lp.single_apply]
+        rw [show -(2*(Real.pi : ℂ))+Complex.I+(Real.pi : ℂ)*2 = Complex.I by ring]
+        simp [div_eq_mul_inv]
+      · simp [a,lp.single_apply,hm]
+    · change (sourceFreeResolventToL1 _ z hz a).snd m = (lp.single 1 (-2) (-4*Complex.I) : Coeff 1) m
+      rw [sourceFreeResolventToL1_snd_apply]
+      by_cases hm : m = -2
+      · subst m
+        norm_num [a,z,lp.single_apply]
+        rw [show -(2*(Real.pi : ℂ))+Complex.I+(Real.pi : ℂ)*2 = Complex.I by ring]
+        simp [div_eq_mul_inv]
+      · simp [a,lp.single_apply,hm]
+  change ‖sourceFreeResolventToL1 (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz a‖ = _
+  rw [he,CoeffPair.norm_one_eq_sum]
+  norm_num [norm_mul]
+
+-- The actual infinite reciprocal series satisfies the printed height bound.
+example : (∑' m : ℤ, 1/‖Complex.I-(Real.pi : ℂ)*m‖^(2 : ℝ))^(1/(2 : ℝ)) ≤ 9 := by
+  have hz := notMem_freeLattice_of_im_ne_zero (z := Complex.I) (by simp)
+  have h := scalarFreeL1Bound_height_moment_chain (p := 2) (by norm_num)
+    (by norm_num) Complex.I hz (by simp)
+  have hq : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.unique 2 _ 2
+  have ht := h.1.trans h.2
+  rw [scalarFreeL1Bound_moment (by norm_num) (by norm_num)] at ht
+  norm_num [hq] at ht ⊢
+  exact ht
+
+-- Unequal conjugates exercise the non-Hilbert numerical exponent calculation.
+example : (6/(1/Real.sqrt 2)^(1/(2 : ℝ))+1)^(2/(3 : ℝ)) ≤ 13 := by
+  have hpq : (3 : ℝ).HolderConjugate (3/2) :=
+    { inv_add_inv_eq_inv := by norm_num, left_pos := by norm_num, right_pos := by norm_num }
+  have h := height_moment_numerical hpq (by norm_num : (0 : ℝ) < 1)
+  norm_num at h ⊢
+  exact h
+
+-- The literal scalar strip display also works at a negative center.
+example : (∑' m : ℤ, 1/‖(-3*(Real.pi : ℂ)+Complex.I)-(Real.pi : ℂ)*m‖^(2 : ℝ))^(1/(2 : ℝ)) ≤ 16 := by
+  let z : ℂ := -3*(Real.pi : ℂ)+Complex.I
+  have hz0 : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+  have hz : z ∈ verticalStrip (-3) (1/2) := by
+    constructor
+    · change |z.re-Real.pi*(-3 : ℤ)| ≤ Real.pi/2
+      norm_num [z]
+      rw [show -(3*Real.pi)+Real.pi*3 = 0 by ring, abs_zero]
+      positivity
+    · have he : z-(Real.pi : ℂ)*(-3 : ℤ) = Complex.I := by dsimp [z]; push_cast; ring
+      change (1/2 : ℝ) ≤ ‖z-(Real.pi : ℂ)*(-3 : ℤ)‖
+      rw [he]
+      norm_num
+  have h := scalarFreeL1Bound_moment_le_verticalStrip (p := 2) (by norm_num)
+    (by norm_num) z hz0 (by norm_num : (0 : ℝ) < 1/2)
+    (by linarith [Real.pi_gt_three] : (1/2 : ℝ) ≤ Real.pi/4) hz
+  have hq : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.unique 2 _ 2
+  norm_num [hq,z] at h ⊢
+  exact h
+
+end Lemma32ScalarProofChecks

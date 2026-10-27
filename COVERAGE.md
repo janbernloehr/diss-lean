@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 3.2 scalar proof, p.24 | [Scalar calculations](NLS/ZakharovShabat/SourceLemma32ScalarProof.lean), [comparison](coverage/SECTION_3.md) | Actual signed component norms, convergent conjugate moments, literal centered geometry, punctured series, height chain and 4p/r strip moment. |
 | Lemma 3.4 Hölder steps, p.25 | [Hölder estimates](NLS/ZakharovShabat/SourceLemma34Holder.lean), [comparison](coverage/SECTION_3.md) | Exact far/near index sets, convergent powered sums, original scalar norm factorization, near tail and explicit p=1 radius factors. |
 | Lemma 3.4 absolute majorization, p.25 | [Signed majorization](NLS/ZakharovShabat/SourceLemma34Majorization.lean), [comparison](coverage/SECTION_3.md) | Literal denominator bound, convergent double sums, actual original-norm components, exact near/far partition and Fourier-tail identity; includes p=1. |
 | Section 3 operator setup, pp.23–26 | [Original-norm setup](NLS/ZakharovShabat/SourceSection3Setup.lean), [comparison](coverage/SECTION_3.md) | Closed full-domain operator, constant-one Young estimate, actual resolvent identity, uniform height decay, signed second coefficient and square bound; all source assertions use finite p. |

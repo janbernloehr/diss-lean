@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T15:53:22.724751+00:00",
-  "base_commit": "3f362e792d238d5b6b5f3afd67452d0a111af183",
+  "published_utc": "2026-10-27T16:39:02.872267+00:00",
+  "base_commit": "d84840dd324fd3433f54c1ed654a82e300e1655a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 74,
-    "module_hash_checks": 1047,
-    "distinct_modules": 821
+    "review_records": 75,
+    "module_hash_checks": 1057,
+    "distinct_modules": 825
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "3f362e792d238d5b6b5f3afd67452d0a111af183",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma34Holder and four public examples.",
+    "base_commit": "d84840dd324fd3433f54c1ed654a82e300e1655a",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma32ScalarProof and six public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8436,
-    "public_examples": 7480,
-    "transitive_NLS_declarations": 42890,
+    "build_jobs": 8437,
+    "public_examples": 7486,
+    "transitive_NLS_declarations": 42911,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4713,
-      "sha256": "96e83e00b0b07f0d41760874a7835c102fe46a9cd36e4a6284d1e487d7b68092"
+      "files": 4714,
+      "sha256": "565b212068033fe9f3b36d904372039b14c41e5c2cb617a630d7d0ac651a1579"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -16808,6 +16808,139 @@
       },
       "qualification": "The new module, all four examples and HolderEmbedding were read completely; the three other unchanged hash-listed modules were fully read in this and the preceding focused comparisons and their current hashes rechecked. The rendered p.25 and exact extracted ranges were compared. Four focused groups cover the literal Holder displays, scalar moment factorization, near-tail reduction and explicit p=1 modifications. The later all-p uniform radius simplifications remain formally refuted; the independently proved main Lemma 3.4 remains valid. This does not certify every Section 3 assertion or every transitive dependency. The source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "8f0285252c411aff1df28643d2b58fdae67bdbefe1796b2f38c211a725202f72"
+    },
+    "Lemma32ScalarProofSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "d84840dd324fd3433f54c1ed654a82e300e1655a",
+      "updated_utc": "2026-10-27T16:39:02.872267+00:00",
+      "source_lines": [
+        [
+          1313,
+          1340
+        ],
+        [
+          1344,
+          1357
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1313,
+            1323
+          ],
+          "requirement": "The actual signed scalar components have the displayed absolute sums and conjugate-moment Holder bounds.",
+          "finding": "The first raw component is reflected by the integer negation isometry, giving exactly the source signed denominator; the second component already has that denominator. Their l1 norms are the literal absolute sums, with the original scalar input norms. For finite p>1 the reciprocal q-series is explicitly summable and its q-root equals the actual reciprocal-symbol norm. The component Holder inequalities are then stated with that exact moment. The scalar identities and norm bounds also cover p=1, with its separate supremum estimate retained. An exact two-component example at the negative center -2*pi gives output l1 norm 7 from raw modes +2 and -2 with amplitudes 3 and 4.",
+          "declarations": [
+            "sourceFreeResolvent_signed_fst",
+            "sourceFreeResolvent_snd_scalar",
+            "scalarResolventToL1_norm_sum",
+            "sourceFreeResolvent_fst_norm_sum",
+            "sourceFreeResolvent_snd_norm_sum",
+            "sourceFreeResolvent_fst_scalar_bound",
+            "sourceFreeResolvent_snd_scalar_bound",
+            "summable_scalarFreeL1Bound_moment",
+            "scalarFreeL1Bound_moment",
+            "sourceFreeResolvent_fst_le_moment",
+            "sourceFreeResolvent_snd_le_moment",
+            "norm_scalarResolventToL1_le",
+            "norm_reindex"
+          ]
+        },
+        {
+          "source_lines": [
+            1325,
+            1329
+          ],
+          "requirement": "The centered denominator satisfies both literal sqrt(2) lower bounds, including the central mode and half-strip boundary.",
+          "finding": "The Euclidean norm dominates the sum of absolute real and imaginary parts divided by sqrt(2). The closed half-width pi/2 and the integer gap imply the exact sqrt(2) real-part separation. Combining these gives abs(n-m)+abs(Im z)/sqrt(2), for every signed pair of indices including m=n. The existing centered-frequency existence theorem supplies the chosen n. A boundary example at Re z=pi/2 and m=-1 exercises the noncentral case.",
+          "declarations": [
+            "complex_norm_ge_l1_div_sqrt_two",
+            "centered_real_gap_sqrt_two",
+            "centered_denominator_sqrt_two",
+            "exists_centered_real_part"
+          ]
+        },
+        {
+          "source_lines": [
+            1330,
+            1333
+          ],
+          "requirement": "The punctured reciprocal series has the exact stated bound 2p/alpha^(q-1).",
+          "finding": "An explicit integer translation reduces the puncture at n to zero. The bilateral integral comparison gives 2/(q-1)*alpha^(1-q), and real Holder conjugacy implies the printed coefficient 2p. The statement covers every positive alpha and every signed center. The example alpha=2, p=q=2 and n=-3 checks the bound 2.",
+          "declarations": [
+            "punctured_centered_reciprocal_sum",
+            "tsum_int_shifted_rpow_le_integral",
+            "summable_int_shifted_rpow"
+          ]
+        },
+        {
+          "source_lines": [
+            1335,
+            1340
+          ],
+          "requirement": "Both numerical scalar height comparisons have the exact printed intermediate moment and final constants.",
+          "finding": "The reciprocal moment is compared termwise with a summable punctured series plus the central term 1/abs(Im z)^q. The centered denominator uses alpha=abs(Im z)/sqrt(2). The real-exponent numerical argument proves that the resulting q-root is at most 4p/abs(Im z)^(1/p)+1/abs(Im z). A public conjunction retains both displayed inequalities. Im z is explicitly nonzero. Examples check the actual infinite reciprocal moment at z=i, p=2 against 9 and the unequal conjugates p=3, q=3/2 at height one against 13. Combining the original two components still requires the existing l1Factor(p); no factor-one pair-operator claim is restored.",
+          "declarations": [
+            "scalarFreeL1Bound_height_moment",
+            "height_moment_numerical",
+            "scalarFreeL1Bound_height_moment_chain",
+            "norm_sourceFreeResolventToL1_le_height",
+            "componentNormSum_le"
+          ]
+        },
+        {
+          "source_lines": [
+            1344,
+            1357
+          ],
+          "requirement": "The strip denominator and the scalar conjugate moment retain the source radius, strip and constant four.",
+          "finding": "The previously verified sourceLemma34_denominator_lower is exactly the same r/sqrt(2)+abs(n-m) inequality printed here, with 0<r<=pi/4. The new moment theorem exposes the actual conjugate-power series and proves its displayed 4p/r bound. It uses the existing Sobolev reciprocal estimate and the stronger 2p/r scalar bound; it does not assume nonzero imaginary part. A negative-center example with radius 1/2 checks the bound 16 at p=2. The separate p=1 lower-bound sentence remains refuted by the earlier endpoint review.",
+          "declarations": [
+            "sourceLemma34_denominator_lower",
+            "scalarFreeL1Bound_moment_le_verticalStrip",
+            "scalarFreeL1Bound_le_verticalStrip",
+            "sobolevEmbeddingConstant_le_two_mul"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Section3SourceComparison-2026-10-21",
+        "Lemma32EndpointProofSourceComparison-2026-10-27",
+        "Lemma34MajorizationSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true,
+          "retained_qualification": "Compared selected public types, hypotheses and key proof bodies. SourceDoubleResolvent inspected through the composition and coefficient formulas; HeightSpectralBox inspected through its mixed-boundary definition. This is not an independent audit of every dependency or every proof line in Section 3. The existing mathematical qualifications agree; only the opening audit scope sentence is stale."
+        },
+        "Lemma32EndpointProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "b53416f1ab6ebf977fc05c15cb386e2b5dd4660edd8e68c61d63fe7ef1f874c3",
+          "module_hashes_verified": true,
+          "retained_qualification": "All eight hash-listed modules were read completely, including the final new proof module. This proves two literal proof-sentence refutations and separate corrected bounds for the original free resolvent. It does not certify the rest of Section 3, independently reprove all transitive dependencies, or remove the existing general-p pair-norm and printed-height corrections. Section 2 is reconciled with its existing qualified comparison rather than republished as twelve new proofs. The source-wide assertion assessment, exact cited 2014 construction comparison and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Lemma34MajorizationSourceComparison-2026-10-27": {
+          "source_record_sha256": "78be678106057464f04af7d9525fc7ab04fe72869100d20241bacbb17456d6f4",
+          "module_hashes_verified": true,
+          "retained_qualification": "Both new modules and the four public examples were read completely. The eight unchanged hash-listed dependencies were read across this and the preceding focused comparisons, and their current hashes were rechecked. The rendered p.25 and the exact extracted source ranges were compared. Five focused groups establish literal denominator geometry, convergent original-norm signed component majorization, the exact near/far partition and the cutoff-retaining tail identity. The later uniform far/near estimates remain refuted, while the main Lemma 3.4 remains proved separately. This is not an exhaustive Section 3 assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma32ScalarProof.lean": "1cbf179eabace53f8b7b8da2f2b7e7cfa2e034b8ff6ad8f9770000009af088cb",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/ResolventEstimates.lean": "97ed23430aae3494599d6b53cd96528dd05eb48da3bed195f98bcbed5e7b8232",
+        "NLS/ZakharovShabat/HeightResolvent.lean": "b0b255477f00dcda56a7db72bdc92c8af53d9db1be3b9d5f523a078f7c70d94c",
+        "NLS/ZakharovShabat/VerticalStrips.lean": "7fa9d3c46851397f7541307db9ee9819bc00b7e6e133d4af5c60f1c41c74400a",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "53bdbf1c130907c78fd194e618329bce5bef97ea7fd77f19e70200df4b12c597",
+        "NLS/SequenceSpaces/Translation.lean": "e1bee4ad497c331c7a722aac78c24f66001c1a1c16d662690204c56bb3b50904",
+        "NLS/SequenceSpaces/ReciprocalSeries.lean": "401c16b943dfbc4c51629a3baff79b6cea19a1d38324b2f5d5532f9dfd2a7768",
+        "NLS/SequenceSpaces/SobolevConstant.lean": "8bb7baba2cb9ecba9b0390862775ea73da4f72cec3c51ef8824a5d24e0044373",
+        "NLS/SequenceSpaces/PairComponentHolder.lean": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4"
+      },
+      "qualification": "The new module and six examples were read completely. All nine unchanged hash-listed modules were fully read across this and the preceding focused comparisons, and their current hashes were checked. The rendered p.24 and exact extracted passages were compared. Five focused groups cover the scalar Holder display, centered geometry, punctured series, literal height chain and strip moment. The original pair-norm correction and both endpoint proof-sentence refutations remain unchanged. This is not a complete Section 3 assertion audit or an independent review of every transitive dependency. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_record_sha256": "19ff022da8e297322ef566716967081afbaa2fa3859348228612e167f052407c"
     }
   }
 }

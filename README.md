@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: both Hölder displays in Lemma 3.4 are proved, with exact
-scalar norm factorization and the cutoff-retaining near tail. Explicit
-p=1 bounds retain the necessary radius dependence.
-See the [Section 3 comparison](coverage/SECTION_3.md) and
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: the literal scalar calculations in Lemma 3.2 are proved,
+including the signed component Hölder formulas, sqrt(2) denominator bound,
+height moment chain and scalar strip estimate. Existing pair-norm and
+endpoint corrections remain. See the [Section 3 comparison](coverage/SECTION_3.md)
+and [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

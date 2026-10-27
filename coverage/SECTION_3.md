@@ -77,6 +77,40 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Scalar calculations in the proof of Lemma 3.2
+
+[SourceLemma32ScalarProof.lean](../NLS/ZakharovShabat/SourceLemma32ScalarProof.lean)
+proves the displayed scalar estimates on p.24 using the actual signed
+components and their original norms.
+
+| Source step | Public entry point | Retained scope |
+| --- | --- | --- |
+| Signed component formulas and exact l1 sums | `sourceFreeResolvent_signed_fst`, `sourceFreeResolvent_snd_scalar`, `sourceFreeResolvent_fst_norm_sum`, `sourceFreeResolvent_snd_norm_sum` | First raw frequency is reflected; second is unchanged. Every finite p, including one. |
+| Literal Hölder display | `summable_scalarFreeL1Bound_moment`, `scalarFreeL1Bound_moment`, `sourceFreeResolvent_fst_le_moment`, `sourceFreeResolvent_snd_le_moment` | Finite p>1, z outside the free lattice; the powered series converges. |
+| Centered denominator geometry | `complex_norm_ge_l1_div_sqrt_two`, `centered_real_gap_sqrt_two`, `centered_denominator_sqrt_two` | Exact sqrt(2) constants, closed half-width pi/2, every signed pair of indices. |
+| Punctured reciprocal series | `punctured_centered_reciprocal_sum` | Exact 2p/alpha^(q-1), positive alpha and arbitrary signed center. |
+| Both scalar height comparisons | `scalarFreeL1Bound_height_moment`, `height_moment_numerical`, `scalarFreeL1Bound_height_moment_chain` | Exact intermediate moment and 4p/abs(Im z)^(1/p)+1/abs(Im z); nonzero imaginary part. |
+| Scalar strip display | `scalarFreeL1Bound_moment_le_verticalStrip` | Exact 4p/r, 0<r<=pi/4; no nonzero-imaginary-part hypothesis. |
+
+The existing `sourceLemma34_denominator_lower` also supplies the identical
+strip denominator inequality printed in this passage. The strip moment
+proof uses the established stronger scalar estimate 2p/r.
+The six examples check a half-strip boundary, a puncture at -3, the exact
+output l1 norm 7 of two signed modes at -2*pi+i, the infinite reciprocal
+moment at i against 9, unequal conjugates 3 and 3/2, and a negative strip
+center with bound 16.
+
+The scalar height calculation does not remove the factor
+`CoeffPair.l1Factor p` when combining the two original components.
+Both reversed endpoint lower bounds remain formally refuted.
+Lemma32ScalarProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records five focused groups;
+these do not certify every assertion in Section 3.
+
+Validation passes: 8,437 build jobs, 7,486 public examples and a
+transitive axiom audit of 42,911 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Hölder displays and endpoint estimates in Lemma 3.4
 
 [SourceLemma34Holder.lean](../NLS/ZakharovShabat/SourceLemma34Holder.lean)

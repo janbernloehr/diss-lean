@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: Hölder estimates in Lemma 3.4
+## Current milestone: Scalar calculations in Lemma 3.2
+
+The source's signed component identities and Hölder displays now use the
+actual free resolvent, convergent reciprocal moments and original scalar norms.
+The exact sqrt(2) centered denominator bound and punctured-series estimate
+give both printed scalar height inequalities. The strip moment is bounded
+by the printed 4p/r, including real spectral parameters outside the disks.
+
+Six examples cover the half-strip boundary, a translated puncture, an exact
+two-component output norm, the infinite reciprocal series, unequal conjugates,
+and a negative strip center. See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,437 build jobs, 7,486
+public examples, and a transitive axiom audit of 42,911 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,068 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The established original pair-norm correction and endpoint counterexamples
+remain. Continue the remaining Section 3 assertion inventory; the external
+interpretation questions remain in [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Hölder estimates in Lemma 3.4
 
 The two literal Hölder displays are proved for every finite p>1, with
 convergence of their powered sums and the exact printed index sets.
