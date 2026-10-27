@@ -27,7 +27,9 @@ correction. It cannot be counted as a proof of the literal printed claim.
 The strict-concavity clauses of both abstracts now have an explicit
 [comparison and Jensen interface](INTRODUCTION.md). Continue with their
 remaining claims, then read the introduction and remaining source assertions
-in order. This selected comparison does not complete the abstract assessment.
+in order. The frequency clauses now also have an explicit normalization
+comparison and an ordinary action-frequency nonextension theorem there.
+These selected comparisons do not complete the abstract assessment.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

@@ -128,6 +128,19 @@ compatibility proves equality across independently chosen atlases and
 exponents. This milestone does not infer physical agreement from an
 arbitrary coordinate flow.
 
+## Ordinary action frequency obstruction
+
+[SourceOrdinaryFrequencyNonextension.lean](../NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean)
+uses the actual full-energy derivative for the retained original H.
+Native nonnegative unit-mass blocks tend to zero in every ellq with q>1,
+including infinity, but their fixed-mode ordinary frequency tends to its
+zero value plus four. `Q.no_continuous_full_action_frequency` rules out a
+continuous local extension even relative to the nonnegative action cone.
+It assumes agreement only on native nonnegative weighted energy actions.
+The renormalized frequency extensions above retain their existing scope.
+See the [abstract and introduction comparison](INTRODUCTION.md) for the
+normalization and the distinction from a source-space statement.
+
 ## One original Hamiltonian and its nonextension
 
 [`SourceHamiltonianOriginal.lean`](../NLS/ZakharovShabat/SourceHamiltonianOriginal.lean)

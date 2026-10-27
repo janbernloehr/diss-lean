@@ -69230,3 +69230,47 @@ example (Q : SourceOriginalHamiltonianData D T F H) :
   linarith
 
 end HamiltonianStrictConcavityChecks
+
+noncomputable section
+namespace OrdinaryFrequencyNonextensionChecks
+open Set Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+local instance : Fact ((1:ℝ≥0∞) ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Construct the original Hamiltonian, then exhibit a nonzero mass shift
+-- while its actual native action blocks converge in a fractional exponent.
+example : ∃ H : Coeff 2 → ℂ, ∃ a : ℕ → SourceEnergyActions,
+    (∀ N, sourceEnergyActionMass (a N) = 1 ∧
+      a N ∈ WeightedCoeff.nonnegativeLocus sourceEnergyActionWeight.toWeight 1) ∧
+    Tendsto (fun N => sourceEnergyActionsToExponent (ENNReal.ofReal (3/2)) (a N)) atTop (𝓝 0) ∧
+    sourceFullActionFrequency H 0 0 = 0 ∧
+    Tendsto (fun N => sourceFullActionFrequency H (a N) 0) atTop (𝓝 4) := by
+  obtain ⟨W₀,W,V,s,D,T,F,H,Q⟩ := sourceSection18_original_hamiltonian
+  refine ⟨H,sourceEnergyMassBlock,fun N =>
+    ⟨sourceEnergyMassBlock_mass N,sourceEnergyMassBlock_nonnegative N⟩,
+    sourceEnergyMassBlock_tendsto _ (by norm_num),?_,?_⟩
+  · simpa only [Int.cast_zero,mul_zero,zero_pow (by norm_num : (2:ℕ) ≠ 0)] using
+      Q.full_action_frequency_zero_value 0
+  · simpa only [Int.cast_zero,mul_zero,zero_pow (by norm_num : (2:ℕ) ≠ 0),add_zero] using
+      Q.full_action_frequency_energyMassBlock_limit 0
+
+-- Infinity is an actual target exponent. Even real differentiability at
+-- zero is impossible for a locally agreeing scalar full-energy frequency.
+example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+    (Q : SourceOriginalHamiltonianData D T F H) (n : ℤ) :
+    ¬ ∃ G : Coeff ⊤ → ℂ, ∃ U : Set (Coeff ⊤), U ∈ 𝓝 (0:Coeff ⊤) ∧
+      DifferentiableAt ℝ G 0 ∧
+      ∀ a ∈ WeightedCoeff.nonnegativeLocus sourceEnergyActionWeight.toWeight 1,
+        sourceEnergyActionsToExponent ⊤ a ∈ U →
+        G (sourceEnergyActionsToExponent ⊤ a) = sourceFullActionFrequency H a n := by
+  rintro ⟨G,U,hU,hG,hagree⟩
+  exact Q.no_continuous_full_action_frequency ⊤ (by simp) n G U hU hagree
+    hG.continuousAt.continuousWithinAt
+
+end OrdinaryFrequencyNonextensionChecks

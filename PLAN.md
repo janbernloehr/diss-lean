@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: Strict Jensen inequalities for the original Hamiltonian
+## Current milestone: Ordinary action frequencies cannot extend continuously
+
+The literal coordinate derivative of the full action Hamiltonian has no
+continuous local extension at zero in any action space ellq with q>1,
+including infinity. Native nonnegative unit-mass blocks converge to zero
+in each such norm, while their ordinary frequency retains a shift of four.
+The proof uses the same original Hamiltonian and its actual derivative.
+
+Two public examples construct the original Hamiltonian and its obstructing
+sequence at q=3/2, and rule out real differentiability at the infinity
+endpoint. See the [introduction comparison](coverage/INTRODUCTION.md) and
+[Section 18](coverage/SECTION_18.md).
+
+Validation: `./scripts/check.sh` passes with 8,430 build jobs, 7,464
+public examples, and a transitive axiom audit of 42,809 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 2,974 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The abstract frequency-extension clauses are read with the main text's
+explicit renormalization. This action-space theorem supplies no additional
+source-space FLp nonextension claim. The remaining abstract and source-wide
+assessment, exact 2014 construction comparison and Appendix G.2 norm
+interpretation remain open; see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Strict Jensen inequalities for the original Hamiltonian
 
 The retained negative-Hessian estimate now yields the standard strict-concavity
 predicate for the same original action Hamiltonian. One positive-radius ball

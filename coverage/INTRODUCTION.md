@@ -22,6 +22,49 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Ordinary action frequency nonextension and abstract normalization
+
+[SourceOrdinaryFrequencyNonextension.lean](../NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean)
+proves the action-space obstruction behind the introduction's mass
+subtraction (printed p. 12). `sourceEnergyMassBlock` is a finite block in
+the native weighted energy action space: its total action is exactly one
+and every coordinate is nonnegative. `sourceEnergyActionsToExponent`
+preserves its coordinates in every larger action exponent.
+`sourceEnergyMassBlock_tendsto` proves convergence to zero for every q>1,
+including infinity.
+
+For any retained `SourceOriginalHamiltonianData`, every block lies in the
+original action domain. `Q.full_action_frequency_energyMassBlock_limit`
+shows that the literal full-energy coordinate derivative at mode n tends
+to `4 + (2*pi*n)^2` along these blocks. At zero it equals `(2*pi*n)^2`.
+`Q.no_continuous_full_action_frequency` therefore rules out continuity at
+zero, even relative to the nonnegative cone, for any scalar map agreeing
+locally with the actual derivative on native nonnegative energy actions.
+The argument applies to each signed mode and the same original H.
+
+Two public examples construct the original H and exhibit the mode-zero
+limit four at q=3/2, and rule out real differentiability at q=infinity.
+The derivative and full-energy normalization come from
+[SourcePhysicalFrequencyAsymptotic.lean](../NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean)
+and [SourceWeightedActionHamiltonianDerivative.lean](../NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean).
+
+The frequency-extension clauses in both abstracts (PDF page 5) are read
+with the introduction's explicit normalization: the analytically extended
+frequency has free dispersion and four times total action removed.
+The abstract shorthand alone is not treated as a new false source claim.
+This theorem is an action-space obstruction. Transferring it to original
+Fourier-Lebesgue source spaces requires a separate coordinate argument;
+no such additional conclusion is asserted here.
+
+`OrdinaryFrequencyNonextensionSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json) records the comparison.
+The remaining abstract and source-wide assessment stays open, with all
+earlier corrections retained; see [completion scope](COMPLETENESS.md).
+
+Validation passes: 8,430 build jobs, 7,464 public examples and a
+transitive axiom audit of 42,809 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Abstracts: literal strict concavity near zero
 
 [SourceHamiltonianStrictConcavity.lean](../NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean)

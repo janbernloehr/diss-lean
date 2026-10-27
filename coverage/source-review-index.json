@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T12:42:18.979766+00:00",
-  "base_commit": "f3718a3e568061c01c27fdedd46c165c557a38bb",
+  "published_utc": "2026-10-27T13:07:48.612112+00:00",
+  "base_commit": "1795500335d37571f531ce71f5f32c1707f59548",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 65,
-    "module_hash_checks": 966,
-    "distinct_modules": 802
+    "review_records": 66,
+    "module_hash_checks": 971,
+    "distinct_modules": 804
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "f3718a3e568061c01c27fdedd46c165c557a38bb",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes HilbertStrictConcavity, SourceHamiltonianStrictConcavity and two public examples.",
+    "base_commit": "1795500335d37571f531ce71f5f32c1707f59548",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceOrdinaryFrequencyNonextension and two public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8429,
-    "public_examples": 7462,
-    "transitive_NLS_declarations": 42792,
+    "build_jobs": 8430,
+    "public_examples": 7464,
+    "transitive_NLS_declarations": 42809,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4706,
-      "sha256": "5ca4597318f3340795066aae0e72e07b06ebddd405d43ff194982672a45f9511"
+      "files": 4707,
+      "sha256": "7bc198251f0889f8d4ad2685df1e4b2baeb5360f8fe7b2f713e9a93b92b281d2"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -12460,6 +12460,135 @@
         }
       },
       "source_record_sha256": "eb2379627af682fc5d906e749864b794efe8c5abd4649e8dfbd8688bdb36cdde"
+    },
+    "OrdinaryFrequencyNonextensionSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1795500335d37571f531ce71f5f32c1707f59548",
+      "updated_utc": "2026-10-27T13:07:48.612112+00:00",
+      "source_lines": [
+        [
+          55,
+          57
+        ],
+        [
+          81,
+          83
+        ],
+        [
+          226,
+          233
+        ],
+        [
+          360,
+          398
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            [
+              372,
+              385
+            ]
+          ],
+          "requirement": "The total-action term obstructs extension to larger action exponents and motivates subtracting four times mass and free dispersion.",
+          "finding": "The new theorem makes this obstruction explicit for the literal coordinate derivative of the full action energy. Native weighted finite blocks have total action exactly one, belong to the nonnegative energy cone, and their unchanged coordinates tend to zero in every ellq with q>1, including infinity. For any retained original Hamiltonian H, every block lies in its original action domain. At a fixed mode n, the actual full-energy derivative tends to 4+(2*pi*n)^2 along these blocks but equals (2*pi*n)^2 at zero. No scalar map agreeing locally on native nonnegative energy actions can be continuous at zero, even relative to the nonnegative ellq cone. This strengthens the already proved total-mass obstruction without replacing H or its derivative with a formal frequency formula.",
+          "declarations": [
+            "sourceEnergyMassBlock_mass",
+            "sourceEnergyMassBlock_nonnegative",
+            "sourceEnergyActionsToExponent_apply",
+            "sourceEnergyMassBlock_tendsto",
+            "SourceOriginalHamiltonianData.energyMassBlock_mem",
+            "SourceOriginalHamiltonianData.full_action_frequency_zero_value",
+            "SourceOriginalHamiltonianData.full_action_frequency_energyMassBlock_limit",
+            "SourceOriginalHamiltonianData.no_continuous_full_action_frequency"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              360,
+              398
+            ]
+          ],
+          "requirement": "The obstruction must refer to the original full Hamiltonian and its literal action derivative, with the source mass and dispersion normalization.",
+          "finding": "sourceFullActionHamiltonian restores 2*mass^2 and the absolutely convergent kinetic action sum to the retained original renormalized H. sourceFullActionFrequency is defined by deriv along a native weighted single-coordinate direction. The proved derivative identity gives F_n+4*mass+(2*pi*n)^2 on the original domain, and the existing physical theorem identifies it with ordinary frequencies at every real H1 source. The new nonextension proof uses these derivatives on native energy blocks. One regression example constructs the original H unconditionally and exhibits the limit 4 at mode zero in action exponent 3/2; the other rules out real differentiability of a locally agreeing scalar map at the infinity endpoint. The previously recorded discrepancy in the printed full-Hamiltonian Hessian at zero remains unchanged.",
+          "declarations": [
+            "sourceFullActionHamiltonian",
+            "sourceFullActionFrequency",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_frequency_eq",
+            "SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+            "sourceSection18_original_hamiltonian"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              55,
+              57
+            ],
+            [
+              81,
+              83
+            ],
+            [
+              226,
+              233
+            ],
+            [
+              379,
+              398
+            ]
+          ],
+          "requirement": "Interpret the frequency-extension clauses of both abstracts with the normalization specified in the main text.",
+          "finding": "The abstract refers briefly to analytic extension of the frequencies. The introduction explicitly states the renormalized action map and subtracts free dispersion and four times total action. The existing analytic extension and mixed asymptotic comparisons apply to that renormalized map. The new action-space obstruction explains why the ordinary full-energy derivative must be distinguished. The abstract shorthand alone is not classified as a new false literal assertion. This theorem does not establish a source-space FLp nonextension theorem; such a statement needs a separate original-coordinate bridge.",
+          "declarations": [
+            "SourceOriginalHamiltonianData.full_action_frequency_eq",
+            "SourceOriginalHamiltonianData.no_continuous_full_action_frequency"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27",
+        "Section18WeightedBackgroundSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "IntroductionMainTheoremsSourceComparison-2026-10-27": {
+          "source_record_sha256": "1b846c5958e9c5251e00afeae48ba0c407a4d73beea2d736a08725eb4f2336a9",
+          "module_hashes_verified": true
+        },
+        "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27": {
+          "source_record_sha256": "08ea949391a4362f4db772f0d1a7a95171162224824538f873582661f5434bad",
+          "module_hashes_verified": true
+        },
+        "Section18WeightedBackgroundSourceComparison-2026-10-27": {
+          "source_record_sha256": "018f870ab6761a6cf19ad7e709bc3f1d2cfd985e1daaf0a329cf3afe5b03558d",
+          "module_hashes_verified": true
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean": "e716f1a85ffeb8d8f773c2356f9db9d9097f9fe30433e20c4dcb539aa7b84d1d",
+        "NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean": "35403e2af2a1beb0e60323f41920d56bd57c6395a2d905b1b41fd0ea4a214c07",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean": "3afae8c7bc9e64d24b76a118422bb5e44ac070bc8cd64109823011509d547679",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/SequenceSpaces/ActionMassNonextension.lean": "43fb7091184a03c8524aa827e7760ad830550d267fc7c31eb51b82759600f00b"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          5,
+          12
+        ],
+        "images": {
+          "SourceAbstractCurrentReview-005.png": "435e5d8162b334aa823e5019a29db70d831ee11ba0939ebcefb0b74efb9a2869",
+          "IntroductionCorrectionsCurrentReview-012.png": "c38dce95c0a198c13ea7c1d68b71d32d1a75e0440540a769cf3e5cde0753f96d"
+        },
+        "inspection": "Both abstracts and the introductory frequency and Hamiltonian normalization were viewed in the retained rendered pages; the exact extracted source ranges were reread for this comparison."
+      },
+      "qualification": "All five hash-listed modules were read completely. This comparison supplements selected abstract and introduction clauses; it does not complete the abstract or source-wide assessment. The new obstruction is in action space, for local agreement on native nonnegative weighted energy actions, and includes infinity only as a target action exponent. It adds no FLp source endpoint or source-space nonextension conclusion. All earlier source corrections, the exact cited 2014 construction question, and the Appendix G.2 norm interpretation remain unchanged.",
+      "source_record_sha256": "b25b2052dc1451809b880629e7333fb153767251787e610d5c8eb8f3283d4a0b"
     }
   }
 }

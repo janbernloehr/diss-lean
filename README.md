@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original action Hamiltonian now satisfies literal strict
-Jensen inequalities near zero, including boundary points of the nonnegative
-action cone. The proof derives the standard strict-concavity predicate from
-the retained Hessian estimate for that same Hamiltonian.
+Latest step: ordinary full-energy action frequencies now have a proved
+obstruction to continuous extension in every ellq action space with q>1,
+including infinity. Unit-mass actions tend to zero while the actual
+frequency derivative keeps its mass shift of four.
 See the [introduction comparison](coverage/INTRODUCTION.md) and the
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
