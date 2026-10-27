@@ -24,6 +24,12 @@ correction. It cannot be counted as a proof of the literal printed claim.
 
 ## How the next assessment proceeds
 
+Lemma 4.3 now also has a direct map on the original periodic distribution
+pairs with their exact finite-p norms. The full signed source and reflected
+series converge, the physical modes determine the map uniquely, and both
+corrected coefficient formulas hold for every rough input with 1<p<infinity.
+The endpoint and normalization qualifications remain unchanged.
+
 Both abstracts now have a [consolidated mathematical comparison](INTRODUCTION.md)
 covering their seven paired claim groups. It retains the exact exponent and
 gap restrictions, renormalization, solution sense and norms, together with

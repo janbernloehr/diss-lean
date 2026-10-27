@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T19:04:59.878069+00:00",
-  "base_commit": "c9177048ff66849fd48be31d113c4a20c7e7a5a3",
+  "published_utc": "2026-10-27T19:38:18.957088+00:00",
+  "base_commit": "3e0458c1aeb1ff26e341ed3d9facbbd3d2ac9624",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 85,
-    "module_hash_checks": 1275,
-    "distinct_modules": 880
+    "review_records": 86,
+    "module_hash_checks": 1287,
+    "distinct_modules": 885
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c9177048ff66849fd48be31d113c4a20c7e7a5a3",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes the three scalar/physical Lemma 4.2 restriction modules and four public examples.",
+    "base_commit": "3e0458c1aeb1ff26e341ed3d9facbbd3d2ac9624",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes the two native-distribution Lemma 4.3 modules and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8444,
-    "public_examples": 7506,
-    "transitive_NLS_declarations": 43202,
+    "build_jobs": 8446,
+    "public_examples": 7510,
+    "transitive_NLS_declarations": 43246,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4721,
-      "sha256": "8b9bde737a8e596a9dffbb1ccf558479226c88095f2576976c752b7e84f9b500"
+      "files": 4723,
+      "sha256": "4e40c83146963491f20b97eaff9e51132018504c73a89e2fa7d0eddc82b45efe"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -20396,6 +20396,175 @@
       ],
       "declaration_inventory_count": 43202,
       "source_record_sha256": "9a455390431e5f731c211fb198323d9e61f20d62d6fd24b73d3dcddc4a5ce448"
+    },
+    "Section4SignedNativeSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3e0458c1aeb1ff26e341ed3d9facbbd3d2ac9624",
+      "updated_utc": "2026-10-27T19:38:18.957088+00:00",
+      "source_lines": [
+        [
+          1953,
+          1989
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1953,
+            1957
+          ],
+          "requirement": "Lemma 4.3: bounded analytic reflection maps between the original Fourier-Lebesgue distribution spaces for 1<p<infinity.",
+          "finding": "The source and target are pairs of actual smooth-test distributions on the period-one and period-two circles, with the exact finite-p component-sum norms. The target is the actual closed boundary subspace, identified by the literal signed reflection relation on normalized Fourier coefficients. The completed maps are bounded and complex analytic at every input. At p=2 they preserve the original norm exactly. Their tempered realizations coincide with the previously constructed physical extensions. No bounded p=1 or p=infinity reflection is asserted, and the auxiliary WithLp infinity product is explicitly not identified with the printed coupled infinity norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePeriodicPair",
+            "NLS.ZakharovShabat.sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.mem_sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.isClosed_sourceNativeBoundarySubmodule",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le",
+            "NLS.ZakharovShabat.analyticAt_sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_tempered",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_two"
+          ]
+        },
+        {
+          "source_lines": [
+            1959,
+            1966
+          ],
+          "requirement": "Every original period-one input has the full signed Fourier expansion and the printed component-sum norm.",
+          "finding": "The signed coefficient map is a linear isometry equivalence on the entire native pair space. Its first component evaluates the original distribution on mode n and its second on mode -n, preserving the opposite physical directions. The norm is exactly the p-th root of the sum of both coefficient p-powers. The complete integer-indexed series converges in the original finite-p norm for every input. Each summand is identified with the actual continuous pair (a*exp(-2*pi*i*n*x), b*exp(2*pi*i*n*x)), and unit-period modes equal the even-index period-two waves pointwise. The series statement holds also at p=1, independently of the reflection restriction 1<p<infinity.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_fst",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_snd",
+            "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical",
+            "NLS.ZakharovShabat.hasSum_sourceUnitPeriodSignedModes",
+            "NLS.ZakharovShabat.sourceUnitPeriodMode_eq_evenWave"
+          ]
+        },
+        {
+          "source_lines": [
+            1968,
+            1975
+          ],
+          "requirement": "The normalized half-pairing coefficients and reconstructed boundary extension, including the norm used in the boundedness argument.",
+          "finding": "For every physical signed mode the native output coefficients equal the actual normalized period-two integrals of its signed interval reflection. The full reflected signed series converges in the actual target norm. Agreement on these physical modes uniquely determines any continuous linear extension on the full native source space. The proved bound uses the same input exponent p. The printed FL^1 wording in the proof remains a recorded qualification; it is not used to substitute an FL^1 domain for arbitrary FL^p inputs.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_raw",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_mode_integrals",
+            "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_unique",
+            "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+            "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le"
+          ]
+        },
+        {
+          "source_lines": [
+            1975,
+            1976
+          ],
+          "requirement": "The printed even coefficient formula.",
+          "finding": "For every original rough input the actual output coefficient at 2n is (a_plus(n)+epsilon*a_minus(n))/2, with epsilon=1 for Dirichlet and -1 for Neumann. This preserves the earlier correction of the omitted factor one half. The unit two-sided constant gives Dirichlet amplitude one and Neumann amplitude zero in the public checks. The literal printed formula without one half remains refuted, not proved.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_even",
+            "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_even"
+          ]
+        },
+        {
+          "source_lines": [
+            1977,
+            1986
+          ],
+          "requirement": "The printed full odd coefficient kernel.",
+          "finding": "For every original rough input the full scalar series with summand (a_plus(k)-epsilon*a_minus(k))*i/(pi*(2*k-2*n-1)) has sum equal to the native output coefficient at 2n+1. The proof uses the conjugate exponent to justify the absolutely summable Hilbert kernel, then reindexes the first signed component and retains the exact normalization. This extends the corrected coefficient formula beyond finite support. The one-sided constant has coefficient -i/pi at frequency one. The printed 2i normalization remains refuted.",
+          "declarations": [
+            "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension_odd",
+            "NLS.Fourier.summable_norm_shiftedHilbertSeries",
+            "NLS.Fourier.shiftedHilbertTransform_apply"
+          ]
+        },
+        {
+          "source_lines": [
+            1987,
+            1989
+          ],
+          "requirement": "Projection and discrete Hilbert transform yield boundedness on the full finite-p spaces.",
+          "finding": "The native map is the transported established bounded interval extension, through isometries of the actual normalized distribution coefficients. Its even and odd formulas agree with the projection and shifted Hilbert transform on every input. Closed target membership, norm control, analytic dependence, convergent reconstruction and uniqueness are proved on the original spaces. This comparison reads the local Hilbert-series and bounded-extension proof bodies but does not claim a fresh independent review of every transitive proof of Appendix C.1.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodicPairCoefficients",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_coefficients",
+            "NLS.ZakharovShabat.sourceNativeIntervalExtension_snd",
+            "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_odd",
+            "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary",
+            "NLS.ZakharovShabat.norm_sourceIntervalExtensionToBoundary_le"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean": "6866c4524c12818298898676be3b074fe4319bf4d17c6d0136800f28fdab716b",
+        "NLS/ZakharovShabat/SourceLemma43NativeExtension.lean": "1a7fccf5172258e177b2c6ce496a649b1c682b1d979ba962863d12a17a02dd30",
+        "NLS/ZakharovShabat/SourceLemma4_3.lean": "0d5d69e7572e45f467017dec2c33e13bfcb9365c18b564101029af3171fdd7ae",
+        "NLS/ZakharovShabat/SourceLemma4_4.lean": "31226c4779614711f8f0eab2e793c0d175e0f6056204c6012675d05d2e3a0937",
+        "NLS/ZakharovShabat/SourceBoundarySpaces.lean": "fbab8dd53b3d4c65f7bb67eb4f0ff6af18f32dc98b76582096018453027b5033",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean": "17de7f4fb4fa19f4d359487e9bbbac98621d87e516952352baf5e0e733eec3d9",
+        "NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean": "75c52ed4af19523d093bb5451fe092731598eee16f7a8991be52cd18104243e7",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/Fourier/HalfIntervalBoundedness.lean": "540ebd6e7afeccdcf6d607123341f4e01b1cfe70ec41e52d7812fb17a19ac66e",
+        "NLS/Fourier/HilbertSeries.lean": "95487b634c022a1a1850a9f65ba22746399103f2f338f0d7cad1c26df5c6c0f7",
+        "NLS/ZakharovShabat/BoundedIntervalExtension.lean": "c33fbf8b5e1c223e658dbc1e3daa5394c7f782e39788f61a42f14567deb1630c"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          31
+        ],
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section4ProofReview-031.png": "5359bd711ad94c4cf785fc76d1868963e6ef8777b8009f5f481f0636b545acdd"
+        }
+      },
+      "qualification": "The two new modules, four integration examples and ten supporting modules were read completely, and the extracted passage and rendered printed page 31 were compared. The comparison proves Lemma 4.3 and its signed-series formulas directly on the full original finite-p distribution spaces using the established bounded coefficient extension. It retains all source corrections, including the missing even factor one half, the odd i/pi normalization and the FL^1 proof wording. It neither claims endpoint reflection boundedness nor replaces the coupled infinity norm by a product maximum. Earlier review records remain historical evidence with their original scopes; not every transitive dependency is independently re-audited. The source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.Fourier.shiftedHilbertTransform_apply",
+        "NLS.Fourier.summable_norm_shiftedHilbertSeries",
+        "NLS.ZakharovShabat.SourcePeriodicPair",
+        "NLS.ZakharovShabat.analyticAt_sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.hasSum_sourceNativeIntervalExtension_odd",
+        "NLS.ZakharovShabat.hasSum_sourceUnitPeriodSignedModes",
+        "NLS.ZakharovShabat.isClosed_sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.mem_sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.norm_sourceIntervalExtensionToBoundary_le",
+        "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_le",
+        "NLS.ZakharovShabat.norm_sourceNativeIntervalExtension_two",
+        "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients",
+        "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_even",
+        "NLS.ZakharovShabat.sourceIntervalAmplitudeCLM_odd",
+        "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary",
+        "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+        "NLS.ZakharovShabat.sourceNativeBoundarySubmodule",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_coefficients",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_even",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_mode_integrals",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_snd",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_tempered",
+        "NLS.ZakharovShabat.sourceNativeIntervalExtension_unique",
+        "NLS.ZakharovShabat.sourcePeriodicPairCoefficients",
+        "NLS.ZakharovShabat.sourceUnitPeriodMode_eq_evenWave",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_fst",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedCoefficients_snd",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_raw"
+      ],
+      "declaration_inventory_count": 43246,
+      "source_record_sha256": "1fd8cccc04768f7df018ba5f35c5526fd4af7227028c3a28dde1e698d341b99d"
     }
   }
 }

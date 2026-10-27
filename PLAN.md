@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: Lemma 4.2 physical scalar restrictions
+## Current milestone: Lemma 4.3 on original periodic distributions
+
+The signed Fourier series now converges for every original period-one
+distribution pair in its exact finite-p norm. Its signed modes have the
+printed physical exponential values and opposite component directions.
+For 1<p<infinity, reflection is a bounded analytic map into the actual
+closed period-two boundary space, uniquely determined by its physical modes.
+
+Both corrected coefficient formulas hold for every rough input: the even
+term retains one half, and the full odd series retains i/pi. The native
+and tempered realizations agree, and the map is isometric at p=2.
+Four examples check negative modes, both boundary signs, the odd constant
+coefficient and arbitrary Hilbert-space energy.
+See the [Section 4 comparison](coverage/SECTION_4.md).
+
+Validation: `./scripts/check.sh` passes with 8,446 build jobs, 7,510
+public examples, and a transitive axiom audit of 43,246 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 3,159 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue the ordered Section 4 assertion comparison while retaining all
+source corrections. The [completion assessment](coverage/COMPLETENESS.md)
+remains qualified.
+
+## Previous milestone: Lemma 4.2 physical scalar restrictions
 
 The printed sine and cosine restrictions now act on actual periodic
 functions with the physical H1 norm. They are continuous linear

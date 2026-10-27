@@ -70032,3 +70032,57 @@ example (f : ℝ → ℂ) (hf : HasIntervalH1Regularity f) (h0 : f 0 = 0) (h1 : 
 
 end
 end Section4ScalarRestrictionChecks
+
+namespace Section4SignedNativeChecks
+open NLS NLS.Fourier NLS.Fourier.SmoothPeriodicTest NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A negative signed frequency keeps opposite physical directions in the two components.
+example :
+    (sourceUnitPeriodSignedMode (p := 3) (-2) 2 Complex.I).fst.val =
+      Distribution.ofContinuous ((2 : ℂ) • (fourier 2 : C(AddCircle (1 : ℝ), ℂ))) ∧
+    (sourceUnitPeriodSignedMode (p := 3) (-2) 2 Complex.I).snd.val =
+      Distribution.ofContinuous (Complex.I • (fourier (-2) : C(AddCircle (1 : ℝ), ℂ))) := by
+  simpa using sourceUnitPeriodSignedMode_physical (p := 3) (-2) 2 Complex.I
+
+-- The same two-sided unit input has Dirichlet amplitude one and Neumann amplitude zero.
+example :
+    (sourceNativeIntervalExtension .dirichlet (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode 0 1 1)).val.snd.val (mode 0) = 1 ∧
+    (sourceNativeIntervalExtension .neumann (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode 0 1 1)).val.snd.val (mode 0) = 0 := by
+  have hd := sourceNativeIntervalExtension_even .dirichlet (p := 3) (by norm_num) (by simp)
+    (sourceUnitPeriodSignedMode 0 1 1) 0
+  have hn := sourceNativeIntervalExtension_even .neumann (p := 3) (by norm_num) (by simp)
+    (sourceUnitPeriodSignedMode 0 1 1) 0
+  constructor
+  · simpa [sourceUnitPeriodSignedMode, BoundaryCondition.extensionSign, lp.single_apply] using hd
+  · simpa [sourceUnitPeriodSignedMode, BoundaryCondition.extensionSign, lp.single_apply] using hn
+
+-- The one-sided unit input retains the exact -i/pi coefficient at odd frequency one.
+example :
+    (sourceNativeIntervalExtension .dirichlet (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode 0 0 1)).val.snd.val (mode (-1)) = -Complex.I / Real.pi := by
+  rw [sourceNativeIntervalExtension_snd, sourceUnitPeriodSignedMode_raw,
+    sourceIntervalAmplitudeCLM_finite]
+  have hf : BoundaryCondition.periodOnePair
+      (sourceSignedFinitePair (Finsupp.single 0 0, Finsupp.single 0 1)) =
+      (fun _ : ℝ => ((0 : ℂ),1)) := by
+    funext x
+    simp [sourceSignedFinitePair, BoundaryCondition.periodOnePair, polynomial]
+  rw [hf]
+  simpa using BoundaryCondition.intervalAmplitude_oneSided_odd .dirichlet 0
+
+-- An arbitrary Hilbert input retains its original combined Fourier energy after reflection.
+example (b : BoundaryCondition) (u : SourcePeriodicPair 1 2) :
+    ‖sourceNativeIntervalExtension b (by norm_num) (by simp) u‖ ^ 2 =
+      ∑' n : ℤ, (‖u.fst.val (mode n)‖ ^ 2 + ‖u.snd.val (mode (-n))‖ ^ 2) := by
+  rw [norm_sourceNativeIntervalExtension_two, ← sourceUnitPeriodSignedCoefficients.norm_map u]
+  have h := CoeffPair.norm_rpow_eq_tsum (p := 2) (by simp) (sourceUnitPeriodSignedCoefficients u)
+  simpa only [ENNReal.toReal_ofNat, Real.rpow_two, sourceUnitPeriodSignedCoefficients_fst,
+    sourceUnitPeriodSignedCoefficients_snd] using h
+
+end
+end Section4SignedNativeChecks

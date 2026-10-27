@@ -4,6 +4,42 @@ This is a statement-by-statement audit against the original spaces and
 physical expressions on printed pages 28 onward. Existing later results do
 not by themselves certify this section or the full dissertation complete.
 
+## Signed series and Lemma 4.3 on original distributions
+
+The proof on printed p.31 now has direct interfaces on the original
+periodic smooth-test distributions with the exact finite-p component-sum norm.
+
+| Source assertion | Entry point | Exact scope |
+| --- | --- | --- |
+| Original signed coefficients and norm | [SourcePeriodOneSignedSeries.lean](../NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean), `sourceUnitPeriodSignedCoefficients`, `norm_sourceUnitPeriodSignedCoefficients` | Linear isometry equivalence; opposite signed directions and the exact sum of both coefficient energies. |
+| Full signed expansion | `hasSum_sourceUnitPeriodSignedModes`, `sourceUnitPeriodSignedMode_physical` | Every native finite-p input, norm convergence of the entire integer-indexed series, and actual physical exponential modes. |
+| Actual boundary space and analytic reflection | [SourceLemma43NativeExtension.lean](../NLS/ZakharovShabat/SourceLemma43NativeExtension.lean), `sourceNativeIntervalExtension`, `analyticAt_sourceNativeIntervalExtension` | Closed native period-two boundary space; bounded and analytic for 1<p<infinity. |
+| Physical-mode agreement and uniqueness | `sourceNativeIntervalExtension_mode_integrals`, `sourceNativeIntervalExtension_unique` | Normalized physical integrals on every signed mode determine the entire continuous extension. |
+| Full reflected expansion | `hasSum_sourceNativeIntervalExtension`, `sourceNativeIntervalExtension_tempered` | Convergence in the actual target norm and equality with the established tempered realization. |
+| Corrected even formula | `sourceNativeIntervalExtension_even` | Half of the signed component sum for every rough input. |
+| Corrected odd formula | `hasSum_sourceNativeIntervalExtension_odd` | Full series with kernel i/(pi*(2k-2n-1)), for every rough input. |
+| Original Hilbert norm | `norm_sourceNativeIntervalExtension_two` | Exact preservation of the original norm at p=2. |
+
+The missing even factor one half, the printed odd 2i normalization and
+the FL^1 wording retain their earlier corrections or qualifications. The
+full signed source expansion also holds at p=1; the bounded reflection
+theorem requires 1<p<infinity. No endpoint reflection bound is claimed.
+The auxiliary WithLp product at infinity is not the source's coupled norm.
+
+Four examples check a negative signed mode, the Dirichlet and Neumann
+constant amplitudes, the odd coefficient -i/pi, and exact Fourier energy
+for arbitrary Hilbert inputs.
+
+Section4SignedNativeSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records six focused groups.
+The local series and extension proof bodies were compared; this does not
+claim a fresh audit of every transitive Hilbert-transform theorem.
+Section 4 and the dissertation-wide assertion inventory remain unfinished.
+
+Validation passes: 8,446 build jobs, 7,510 public examples and a
+transitive axiom audit of 43,246 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Physical scalar restrictions in Lemma 4.2
 
 The scalar restriction assertions on printed pp.30–31 now have explicit

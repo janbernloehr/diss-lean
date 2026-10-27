@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 4.3 signed expansion and native reflection, p.31 | [Signed series](NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean), [native extension](NLS/ZakharovShabat/SourceLemma43NativeExtension.lean), [comparison](coverage/SECTION_4.md) | Original distribution spaces and exact finite-p norms; full convergent series, physical-mode uniqueness and corrected coefficients for every rough input. |
 | Lemma 4.2 scalar restrictions, pp.30–31 | [Physical restrictions](NLS/ZakharovShabat/SourceLemma42PhysicalRestriction.lean), [comparison](coverage/SECTION_4.md) | Actual periodic and interval functions, exact physical H1 norms, continuous inverses and full product-domain identity. |
 | Lemma 4.2 Fourier proof, pp.30–31 | [Trigonometric proof](NLS/ZakharovShabat/SourceLemma42FourierProof.lean), [comparison](coverage/SECTION_4.md) | Uniform full series, exact signed AKNS coefficients, both original boundary spaces and full physical classical-domain isomorphisms. |
 | Complete Section 3 assertion inventory, pp.23–27 | [Ordered comparison](coverage/SECTION_3.md), [evidence index](coverage/source-review-index.json) | 38 ordered groups retain original norms and domains, six refuted printed bounds, proved corrections, conditional parity and local transport scope. |
