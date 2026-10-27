@@ -77,6 +77,37 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Finite-rank proof of Lemma 3.2(i)
+
+[SourceFreeResolventCutoff.lean](../NLS/ZakharovShabat/SourceFreeResolventCutoff.lean)
+exposes the Fourier-series and finite-rank closure argument printed on p.24.
+All input and output spaces use the original finite-p pair norm, including
+l1 as stated in the dissertation.
+
+| Source step | Public entry point | Retained scope |
+| --- | --- | --- |
+| Actual signed Fourier expansion | `sourceFreeResolvent_fst_apply`, `sourceFreeResolvent_snd_apply`, `hasSum_sourceFreeResolvent_signed` | A convergent series with common signed denominator z-pi*m; the first raw frequency is -m. |
+| Explicit finite-rank operators | `sourceFreeResolventCutoff`, `finiteDimensional_sourceFreeResolventCutoff`, `finrank_sourceFreeResolventCutoff_le` | Arbitrary finite sets of raw frequencies; the range injects into two finite coefficient lists and has dimension at most 2*card(s). |
+| Operator-norm closure | `tendsto_sourceFreeResolventCutoff`, `exists_sourceFreeResolventCutoff_norm_sub_lt` | One approximation for every positive tolerance; every z outside the free lattice, including real z. |
+| Compactness | `isCompactOperator_sourceFreeResolventCutoff`, `isCompactOperator_sourceFreeResolvent_from_cutoffs` | Compact finite-rank approximants converge to the actual original-norm free resolvent. |
+
+The convergence proof uses the uniform reciprocal-symbol tails in both
+integer directions and continuous conjugation between equivalent norms.
+It does not identify the original pair norm with the auxiliary maximum norm.
+The four examples check output l1 norm seven after deleting nonzero modes,
+output norm three from an asymmetric cutoff of two resonant signed modes,
+a negative-center signed series at p=3, and an approximation of error
+less than 1/100 at the real point pi/2.
+
+Lemma32CompactProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records three focused groups.
+The pair-norm correction in part (ii) and the endpoint counterexamples remain.
+This does not certify every assertion in Section 3.
+
+Validation passes: 8,438 build jobs, 7,490 public examples and a
+transitive axiom audit of 42,940 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Scalar calculations in the proof of Lemma 3.2
 
 [SourceLemma32ScalarProof.lean](../NLS/ZakharovShabat/SourceLemma32ScalarProof.lean)

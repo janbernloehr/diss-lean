@@ -69649,3 +69649,114 @@ example : (∑' m : ℤ, 1/‖(-3*(Real.pi : ℂ)+Complex.I)-(Real.pi : ℂ)*m�
   exact h
 
 end Lemma32ScalarProofChecks
+
+noncomputable section
+namespace Lemma32CompactProofChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The l1 cutoff keeps both zero modes and discards nonzero modes of either sign.
+example :
+    let hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+    let a : CoeffPair 1 := (CoeffPair.toMax 1).symm
+      (lp.single 1 0 (3 : ℂ)+lp.single 1 1 5,lp.single 1 0 (4 : ℂ)+lp.single 1 (-1) 12)
+    ‖sourceFreeResolventCutoff (by norm_num) Complex.I hz {0} a‖ = 7 := by
+  dsimp only
+  let hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+  let a : CoeffPair 1 := (CoeffPair.toMax 1).symm
+    (lp.single 1 0 (3 : ℂ)+lp.single 1 1 5,lp.single 1 0 (4 : ℂ)+lp.single 1 (-1) 12)
+  have he : sourceFreeResolventCutoff (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) Complex.I hz {0} a =
+      (CoeffPair.toMax 1).symm (lp.single 1 0 (-3*Complex.I),lp.single 1 0 (-4*Complex.I)) := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    · change (sourceFreeResolventCutoff _ Complex.I hz {0} a).fst m = _
+      rw [sourceFreeResolventCutoff_fst]
+      by_cases hm : m=0 <;> simp [a,lp.single_apply,hm,div_eq_mul_inv]
+    · change (sourceFreeResolventCutoff _ Complex.I hz {0} a).snd m = _
+      rw [sourceFreeResolventCutoff_snd]
+      by_cases hm : m=0 <;> simp [a,lp.single_apply,hm,div_eq_mul_inv]
+  change ‖sourceFreeResolventCutoff (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) Complex.I hz {0} a‖ = _
+  rw [he,CoeffPair.norm_one_eq_sum]
+  norm_num [norm_mul]
+
+-- An asymmetric raw cutoff separates two modes with the same signed free eigenvalue.
+example :
+    let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+    let hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+    let a : CoeffPair 2 := (CoeffPair.toMax 2).symm
+      (lp.single 2 2 (3 : ℂ),lp.single 2 (-2) (4 : ℂ))
+    ‖sourceFreeResolventCutoff (by norm_num) z hz {2} a‖ = 3 := by
+  dsimp only
+  let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+  let hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+  let a : CoeffPair 2 := (CoeffPair.toMax 2).symm
+    (lp.single 2 2 (3 : ℂ),lp.single 2 (-2) (4 : ℂ))
+  have he : sourceFreeResolventCutoff (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz {2} a =
+      (CoeffPair.toMax 2).symm (lp.single 2 2 (-3*Complex.I),0) := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    · change (sourceFreeResolventCutoff _ z hz {2} a).fst m = _
+      rw [sourceFreeResolventCutoff_fst]
+      by_cases hm : m=2
+      · subst m
+        norm_num [a,z,lp.single_apply]
+        rw [show -(2*(Real.pi : ℂ))+Complex.I+(Real.pi : ℂ)*2 = Complex.I by ring]
+        simp [div_eq_mul_inv]
+      · simp [lp.single_apply,hm]
+    · change (sourceFreeResolventCutoff _ z hz {2} a).snd m = 0
+      rw [sourceFreeResolventCutoff_snd]
+      by_cases hm : m=2 <;> simp [a,lp.single_apply,hm]
+  change ‖sourceFreeResolventCutoff (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz {2} a‖ = _
+  rw [he]
+  norm_num [norm_mul]
+
+-- The signed series has the correct negative center at a non-Hilbert exponent.
+example :
+    let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+    let a : CoeffPair 3 := (CoeffPair.toMax 3).symm (0,lp.single 3 (-2) (4 : ℂ))
+    HasSum (fun m : ℤ => (CoeffPair.toMax 3).symm
+      (lp.single 3 (-m) (a.fst (-m)/(z-(Real.pi : ℂ)*m)),
+        lp.single 3 m (a.snd m/(z-(Real.pi : ℂ)*m))))
+      ((CoeffPair.toMax 3).symm (0,lp.single 3 (-2) (-4*Complex.I))) := by
+  dsimp only
+  let z : ℂ := -2*(Real.pi : ℂ)+Complex.I
+  let a : CoeffPair 3 := (CoeffPair.toMax 3).symm (0,lp.single 3 (-2) (4 : ℂ))
+  have hz : z ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp [z])
+  have he : sourceFreeResolvent (by norm_num : (3 : ℝ≥0∞) ≠ ⊤) z hz a =
+      (CoeffPair.toMax 3).symm (0,lp.single 3 (-2) (-4*Complex.I)) := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext <;> ext m
+    · change (sourceFreeResolvent _ z hz a).fst m = 0
+      simp [a]
+    · change (sourceFreeResolvent _ z hz a).snd m = _
+      rw [sourceFreeResolvent_snd_apply]
+      by_cases hm : m = -2
+      · subst m
+        norm_num [a,z,lp.single_apply]
+        rw [show -(2*(Real.pi : ℂ))+Complex.I+(Real.pi : ℂ)*2 = Complex.I by ring]
+        simp [div_eq_mul_inv]
+      · simp [a,lp.single_apply,hm]
+  rw [← he]
+  exact hasSum_sourceFreeResolvent_signed (by norm_num) z hz a
+
+-- Approximation also works on the real axis between free eigenvalues.
+example :
+    let z : ℂ := (Real.pi/2 : ℝ)
+    ∃ hz : z ∉ freeLattice, ∃ s : Finset ℤ,
+      Module.finrank ℂ (sourceFreeResolventCutoff (p := 3) (by norm_num) z hz s).range ≤ 2*s.card ∧
+      ‖sourceFreeResolventCutoff (p := 3) (by norm_num) z hz s-
+        sourceFreeResolvent (by norm_num) z hz‖ < 1/100 := by
+  dsimp only
+  let z : ℂ := (Real.pi/2 : ℝ)
+  have hzstrip : z ∈ verticalStrip 0 (Real.pi/4) := by
+    constructor
+    · simp [z,abs_of_pos (by positivity : 0 < Real.pi/2)]
+    · simp only [Int.cast_zero,mul_zero,sub_zero]
+      have he : ‖z‖ = Real.pi/2 := by simp [z,Real.pi_pos.le]
+      rw [he]
+      linarith [Real.pi_pos]
+  let hz := notMem_freeLattice_of_mem_verticalStrip (by positivity : 0 < Real.pi/4) le_rfl hzstrip
+  exact ⟨hz,exists_sourceFreeResolventCutoff_norm_sub_lt (p := 3) (by norm_num) z hz (by norm_num)⟩
+
+end Lemma32CompactProofChecks

@@ -3294,6 +3294,7 @@ import NLS.ZakharovShabat.PeriodTwoPrintedHeightCounting
 import NLS.ZakharovShabat.Proposition3_1
 import NLS.SequenceSpaces.PairComponentHolder
 import NLS.ZakharovShabat.SourceFreeResolvent
+import NLS.ZakharovShabat.SourceFreeResolventCutoff
 import NLS.ZakharovShabat.SourceFreeResolventCounterexample
 import NLS.ZakharovShabat.SourceLemma32ScalarProof
 import NLS.ZakharovShabat.SourceLemma32EndpointProof

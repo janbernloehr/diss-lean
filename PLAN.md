@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: Scalar calculations in Lemma 3.2
+## Current milestone: Finite-rank proof of Lemma 3.2(i)
+
+The free resolvent now has the literal convergent signed Fourier expansion
+in the original pair norm. Explicit finite Fourier cutoffs have rank at
+most twice the number of retained raw frequencies and converge in operator
+norm. Their compactness and the limit argument give the source proof on
+l1, and extend it to every finite exponent.
+
+Four examples check omitted positive and negative frequencies, an
+asymmetric cutoff at a shared signed eigenvalue, a non-Hilbert signed
+series, and approximation at the real spectral parameter pi/2.
+See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,438 build jobs, 7,490
+public examples, and a transitive axiom audit of 42,940 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,076 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue with the prepared original-norm Neumann estimates and series in
+Corollary 3.3, then the uniform neighborhood bounds in Corollary 3.5.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Scalar calculations in Lemma 3.2
 
 The source's signed component identities and Hölder displays now use the
 actual free resolvent, convergent reciprocal moments and original scalar norms.
