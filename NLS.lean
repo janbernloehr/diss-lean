@@ -4713,3 +4713,4 @@ import NLS.ZakharovShabat.SourceSobolevAnalyticSolutions
 import NLS.SequenceSpaces.WeightedActionOpening
 import NLS.ZakharovShabat.SourceSobolevGapOpening
 import NLS.ZakharovShabat.SourceFiniteGapSobolevOpening
+import NLS.ZakharovShabat.SourceFrequencyActionTaylor

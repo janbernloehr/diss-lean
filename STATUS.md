@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: Sobolev convergence of finite-gap opening
+## Current milestone: Section 18 frequency Taylor expansion
+
+Equation (4.3) now holds for the literal derivatives of the full Hamiltonian,
+with a quadratic remainder in the full Hilbert sequence norm. One positive
+radius and constant control every complex action and every signed index,
+including infinite-support actions, in the original action domain.
+
+The standard weighted input norm, physical mass term and dispersion are
+retained. The [Section 18 audit](coverage/SECTION_18.md) records the precise
+statement and the existing full-Hessian correction. The remaining semantic
+source audit and its explicit qualifications remain in progress.
+
+Validation: `./scripts/check.sh` passes with 8,407 build jobs, 7,414
+public examples, and a transitive axiom audit of 42,449 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,819 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Sobolev convergence of finite-gap opening
 
 The actual gap-opening curve is now analytic in every native nonnegative
 Sobolev norm. At each real spectral finite-gap source, a concrete sequence

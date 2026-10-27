@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual finite-gap opening curve is analytic in every
-nonnegative Sobolev norm. Concrete approximants converge in H1, open the
-selected gap, and preserve all other gap statuses. A separate exact numerical
-gap-length construction is queued; the source audit is still in progress.
+Latest step: equation (4.3) holds for the actual full-Hamiltonian
+frequencies, with one quadratic sequence-norm remainder bound for all signed
+indices and all complex actions in a ball of the original weighted domain.
+The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

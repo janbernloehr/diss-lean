@@ -332,3 +332,25 @@ This is analyticity in initial data; no analyticity in time is asserted.
 
 The exact2014 external construction comparison, G2 norm qualification and
 remaining dissertation source comparisons remain separate.
+
+## The frequency expansion with a quadratic remainder, equation (4.3)
+
+[SourceFrequencyActionTaylor.lean](../NLS/ZakharovShabat/SourceFrequencyActionTaylor.lean)
+proves the displayed frequency expansion for the literal coordinate derivatives
+of the full Hamiltonian: (2*pi*n)^2 + 4*sum(I) - 2*I_n + R_n.
+One radius and one positive constant are chosen before every complex input
+and every signed index. The whole Hilbert remainder satisfies
+norm(R) <= C*norm(I)^2, using the standard ell^(2,1) input norm.
+This includes infinite-support actions and gives a uniform coordinate bound.
+The ball lies inside the original full-Hamiltonian domain.
+
+The proof first uses the actual renormalized frequency's analyticity and
+derivative -2 times the identity. This gives a quadratic sequence-norm
+remainder for every finite source exponent p>2 and action exponent q=p/2.
+The bounded coefficient-preserving inclusion transfers the estimate to the
+standard weighted action space. The exact coordinate derivative identity
+then restores physical mass and dispersion.
+
+The full-Hessian mass correction already recorded above remains in force.
+The exact2014 external comparison and other explicitly qualified source
+assertions remain separate.

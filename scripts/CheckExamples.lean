@@ -68390,3 +68390,49 @@ example
 
 end HilbertGapOpeningExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section18FrequencyTaylorExamples
+open Set Filter Topology Asymptotics
+open scoped ENNReal
+namespace SourceOriginalFrequencyData
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W V : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+  {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+  {U : Set (Coeff q)} {F : Coeff q → Coeff q}
+
+example (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p) :
+    (fun a : Coeff q => F a + (2 : ℂ) • a) =O[𝓝 0] (fun a => ‖a‖^2) := E.action_quadratic_remainder hp2
+
+example (E : SourceOriginalFrequencyData D U F) (hp2 : 2 < p) :
+    ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, 0 < C ∧ Metric.ball (0 : Coeff q) r ⊆ U ∧
+      ∀ a : Coeff q, ‖a‖ < r → ‖F a + (2 : ℂ) • a‖ ≤ C*‖a‖^2 := E.action_quadratic_remainder_bound hp2
+
+end SourceOriginalFrequencyData
+namespace SourceOriginalHamiltonianData
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+variable {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    (fun a : WeightedCoeff (Weight.sobolev 2) 1 =>
+      F (sourceStandardActionsToHilbert a) + (2 : ℂ) • sourceStandardActionsToHilbert a)
+      =O[𝓝 0] (fun a => ‖a‖^2) := Q.standard_frequency_quadratic_remainder
+
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    ∃ r : ℝ, 0 < r ∧ ∃ C : ℝ, 0 < C ∧
+      Metric.ball (0 : WeightedCoeff (Weight.sobolev 2) 1) r ⊆ sourceStandardFullActionDomain T ∧
+      ∀ a : WeightedCoeff (Weight.sobolev 2) 1, ‖a‖ < r →
+        ∃ R : Coeff 2, ‖R‖ ≤ C*‖a‖^2 ∧ ∀ n : ℤ,
+          deriv (fun z : ℂ => sourceStandardFullActionHamiltonian H
+            (a + z • WeightedCoeff.single (Weight.sobolev 2) n 1)) 0 =
+            (2*(Real.pi:ℂ)*n)^2 + 4*(∑' k : ℤ, a.val k) - 2*a.val n + R n := Q.standard_full_frequency_expansion_bound
+
+end SourceOriginalHamiltonianData
+end Section18FrequencyTaylorExamples
+end NLS.ZakharovShabat
