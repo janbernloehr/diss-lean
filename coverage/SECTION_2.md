@@ -99,6 +99,31 @@ periodic representatives at every positive period. Reflexivity here is
 proved through the canonical map, rather than an unrelated bijection with
 the double dual. No endpoint reflexivity claim is made.
 
+## Duality on the original distribution spaces
+
+[`PeriodicSobolevDuality.lean`](../NLS/Fourier/PeriodicSobolevDuality.lean)
+packages the full scalar duality directly on `FourierLebesgueSpace L s p`,
+whose elements are continuous functionals on the original smooth periodic
+tests. For every positive period, real order and finite source exponent,
+`sobolevDualIsometry` identifies its entire continuous dual with
+`FourierLebesgueSpace L (-s) q`, with exact operator-norm equality.
+`existsUnique_sobolevRepresentative` states uniqueness among actual
+periodic distributions and includes the p=1, q=infinity endpoint.
+
+The absolutely convergent formula uses opposite Fourier indices.
+`sobolevDualIsometry_ofSmooth` identifies evaluation on a smooth input
+with the representative's original distributional action; the two-smooth-input
+identity gives exactly `(1/L) * integral(g*f)`. Public examples also check
+negative fractional order and the singular point-evaluation representative
+at p=1. The source-infinity full-dual obstruction remains unchanged.
+
+The underlying original-distribution carrier, coefficient isometry,
+completeness, canonical double-dual surjectivity and physical Fourier
+polynomial identification were rechecked in this comparison. Completeness
+covers every Banach exponent; reflexivity retains 1<p<infinity. These
+statements use the coefficient norm on actual distributions, rather than
+assuming completeness in the distribution topology.
+
 ## Full pair gradients and the infinity-source obstruction
 
 The finite-source gradient claim now preserves the original pair norms

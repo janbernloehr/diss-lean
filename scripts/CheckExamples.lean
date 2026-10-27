@@ -68517,3 +68517,54 @@ example
 end SourceBirkhoffMapComplexData
 end Section20ExactGapOpeningExamples
 end NLS.ZakharovShabat
+
+
+noncomputable section
+open scoped ENNReal
+namespace NLS.Fourier.PeriodicFourierLebesgue
+open SmoothPeriodicTest
+section Section2NativeDualityExamples
+variable {L : ℝ} [Fact (0 < L)]
+
+-- The whole p=1 dual, with the exact original distribution norm.
+example (s : ℝ) (F : FourierLebesgueSpace L s 1 →L[ℂ] ℂ) :
+    ∃! v : FourierLebesgueSpace L (-s) ⊤,
+      (∀ u : FourierLebesgueSpace L s 1,
+        F u = ∑' n : ℤ, u.val (mode (-n)) * v.val (mode n)) ∧ ‖v‖ = ‖F‖ :=
+  existsUnique_sobolevRepresentative s (by simp) F
+
+-- Arbitrary conjugate exponents and real orders retain the opposite index.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (s : ℝ) (hp : p ≠ ⊤) (v : FourierLebesgueSpace L (-s) q)
+    (u : FourierLebesgueSpace L s p) :
+    sobolevDualIsometry s hp v u = ∑' n : ℤ, u.val (mode (-n)) * v.val (mode n) :=
+  sobolevDualIsometry_apply s hp v u
+
+-- Negative fractional order, with no restriction on the positive physical period.
+example (v : FourierLebesgueSpace L (-(-3 / 2 : ℝ)) 2) :
+    ‖sobolevDualIsometry (p := 2) (-3 / 2) (by norm_num) v‖ = ‖v‖ :=
+  LinearIsometryEquiv.norm_map _ _
+
+-- The p=1 dual includes point evaluation, an actual singular distribution.
+example (f : SmoothPeriodicTest L) :
+    sobolevDualIsometry (p := 1) (q := ⊤) 0 (by simp)
+      (inverseWeightDistribution (Weight.sobolev (-0)) (Weight.hasTemperedInverse_sobolev (-0)))
+      (ofSmooth 0 1 f) = f 0 := by
+  rw [sobolevDualIsometry_ofSmooth]
+  have h : (inverseWeightDistribution (L := L) (Weight.sobolev (-0))
+      (Weight.hasTemperedInverse_sobolev (-0))).val = Distribution.evaluation 0 := by
+    apply Distribution.ext_coefficients
+    intro n
+    rw [inverseWeightDistribution_coefficient, Distribution.evaluation_zero_coefficient]
+    simp
+  rw [h]
+  rfl
+
+-- The normalized physical action holds even at the conjugate infinity endpoint.
+example (s : ℝ) (f g : SmoothPeriodicTest L) :
+    sobolevDualIsometry (p := 1) s (by simp) (ofSmooth (-s) ⊤ g) (ofSmooth s 1 f) =
+      (L : ℂ)⁻¹ * ∫ x in (0 : ℝ)..L, g x * f x :=
+  sobolevDualIsometry_ofSmooth_ofSmooth s (by simp) f g
+
+end Section2NativeDualityExamples
+end NLS.Fourier.PeriodicFourierLebesgue

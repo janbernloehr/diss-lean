@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: Exact gap-length approximation in Sobolev norms
+## Current milestone: Sobolev duality on original periodic distributions
+
+Section 2's scalar duality now has an API on the actual smooth-test
+distribution spaces for every real order and positive period. The entire
+continuous dual at every finite source exponent has a unique opposite-order
+distribution representative, with exact operator-norm equality.
+
+The physical formula reverses one Fourier index. Smooth inputs give the
+original distributional action and the normalized 1/L integral. Five public
+examples include p=1 with a singular point-evaluation representative and
+negative fractional order. See the [Section 2 audit](coverage/SECTION_2.md).
+The remaining source assessment and the exact2014 and G.2 qualifications
+remain open.
+
+Validation: `./scripts/check.sh` passes with 8,412 build jobs, 7,424
+public examples, and a transitive axiom audit of 42,491 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 2,837 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+## Previous milestone: Exact gap-length approximation in Sobolev norms
 
 The exact approximation used in Lemma 20.2 is now constructed: at every real
 finite-gap Hilbert source, a selected collapsed gap opens while every other

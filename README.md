@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal one-gap approximation in Lemma 20.2 is proved.
-Every other numerical gap length stays fixed, and explicit finite-gap
-approximants converge in H1 and every chosen nonnegative Sobolev norm.
+Latest step: Section 2 scalar duality now acts directly on the original
+periodic distribution spaces at every real Sobolev order and positive period.
+It preserves the exact operator norm and normalized physical action,
+including the p=1 endpoint.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

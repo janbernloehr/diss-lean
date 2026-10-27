@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T05:47:00.673414+00:00",
-  "base_commit": "98db4145fde4d00546d4d1e39be35ba1dfd4a265",
+  "published_utc": "2026-10-27T06:22:37.481768+00:00",
+  "base_commit": "d76afc695337cf70e3e330a4889042e3d6dfb67c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 46,
-    "module_hash_checks": 609,
-    "distinct_modules": 577
+    "review_records": 47,
+    "module_hash_checks": 619,
+    "distinct_modules": 583
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,18 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "checked_commit": "8b133becc12b17b5a7b3b5a4fa30cbb7fa0275f1",
+    "base_commit": "d76afc695337cf70e3e330a4889042e3d6dfb67c",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes PeriodicSobolevDuality and its public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8411,
-    "public_examples": 7419,
-    "transitive_NLS_declarations": 42461,
+    "build_jobs": 8412,
+    "public_examples": 7424,
+    "transitive_NLS_declarations": 42491,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4688,
-      "sha256": "2b78e0d3980624792c65153587afcecb1906949c7be8aa050f9632409f9df88b"
+      "files": 4689,
+      "sha256": "3d7b879aa02ec1e82c25a192909f20ceecc78d53f3a1040df9a48aa85fa3129d"
     },
-    "qualification": "Historical successful Lean validation for the recorded source snapshot; the integrity command does not run Lean or independently prove source completeness."
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -9628,6 +9629,91 @@
       },
       "qualification": "All 34 hash-listed canonical modules were read completely across the renewed review, together with final public examples and canonical support diffs. The comparison retains original functions, domains, norms and quantifier order. It does not independently reprove every transitive dependency. The precise2014 external-construction comparison and AppendixG2 norm interpretation remain explicitly qualified.",
       "source_record_sha256": "969608925d0dacc78e4857f3d3409e5cb5f0f63ff466699afafeb761ca338fd1"
+    },
+    "Section2NativeDualitySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T06:07:02.988094+00:00",
+      "base_commit": "d76afc695337cf70e3e330a4889042e3d6dfb67c",
+      "source_lines": [
+        1089,
+        1144
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1089,
+            1102
+          ],
+          "requirement": "Actual periodic smooth-test distributions with normalized Fourier coefficients and the exact (1+abs(n))^s coefficient norm form a Banach space at every real order, positive period and Banach exponent.",
+          "declarations": [
+            "FourierLebesgueSpace",
+            "PeriodicFourierLebesgue.coefficientsIsometry",
+            "PeriodicFourierLebesgue.sobolev_complete",
+            "SmoothPeriodicTest.Distribution.ofL1_apply"
+          ],
+          "finding": "Read the original-distribution carrier, injective and surjective coefficient map, induced norm and completeness construction. Sobolev inverse weights are tempered at every real order. Locally integrable data acts by the normalized interval integral; the coefficient norm, rather than the inherited distribution topology, is the Banach norm."
+        },
+        {
+          "source_lines": [
+            1102,
+            1108
+          ],
+          "requirement": "Reflexivity for 1<p<infinity and identification of finite Fourier sums with physical Fourier polynomials.",
+          "declarations": [
+            "PeriodicFourierLebesgue.bidual_surjective",
+            "PeriodicFourierLebesgue.truncate_eq_ofContinuous",
+            "PeriodicFourierLebesgue.tendsto_truncate",
+            "PeriodicFourierLebesgue.tendsto_truncate_top_iff",
+            "PeriodicFourierLebesgue.norm_inverseWeightDistribution_sub_truncate"
+          ],
+          "finding": "Canonical double-dual surjectivity is transported through the original coefficient isometry. Truncations equal normalized integration against actual continuous Fourier polynomials. Finite-source norm convergence and the weighted-c0 infinity criterion preserve the original norm. The existing infinity counterexample has error exactly one at every finite cutoff, at every positive period."
+        },
+        {
+          "source_lines": [
+            1108,
+            1111
+          ],
+          "requirement": "The full continuous scalar dual at finite p is the opposite-order space at the conjugate exponent, including p=1.",
+          "declarations": [
+            "PeriodicFourierLebesgue.sobolevDualIsometry",
+            "PeriodicFourierLebesgue.norm_sobolevDualEquiv",
+            "PeriodicFourierLebesgue.existsUnique_sobolevRepresentative"
+          ],
+          "finding": "The new isometry is defined between the actual original distribution spaces and the entire continuous dual. It is constructed from the proved full weighted coefficient duality and the coefficient isometries. The exact operator norm and uniqueness on the whole native domain are proved, with no finite-support, Hilbert, or smooth-source premise."
+        },
+        {
+          "source_lines": [
+            1095,
+            1100,
+            1133,
+            1144
+          ],
+          "requirement": "The physical unconjugated duality extends normalized distributional action.",
+          "declarations": [
+            "PeriodicFourierLebesgue.sobolevDualIsometry_apply",
+            "PeriodicFourierLebesgue.sobolevDualIsometry_summable",
+            "PeriodicFourierLebesgue.ofSmooth",
+            "PeriodicFourierLebesgue.sobolevDualIsometry_ofSmooth",
+            "PeriodicFourierLebesgue.sobolevDualIsometry_ofSmooth_ofSmooth"
+          ],
+          "finding": "The formula uses opposite physical Fourier indices and is absolutely convergent. Smooth inputs are constructed as normalized integral distributions at every order. Their dual evaluation is exactly the representative's original smooth-test action; two smooth inputs give (1/L) times the integral of g*f. The previously recorded printed same-index scalar bilinear error remains corrected."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicSobolevDuality.lean": "01e3b03b26c1deebdcb49cc882d4cb93a37fa8ac022fd8058582fcbbf4330e58",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean": "17de7f4fb4fa19f4d359487e9bbbac98621d87e516952352baf5e0e733eec3d9",
+        "NLS/Fourier/PeriodicFourierLebesgueDuality.lean": "d343b7c224fd64fa9fec4469d76d4cf477d30dfa0adbf9056cd05859645b5841",
+        "NLS/Fourier/PeriodicDistributionPhysicalOrderZero.lean": "a6ed9d1af0039ba490e004f590648fdd578033c50d2985402abcbf4823d3c263",
+        "NLS/SequenceSpaces/SobolevFullDuality.lean": "ff858c1ed47a9b6e91c5c266030b2ccf2ff8d17419938da54695318a42ddf647",
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/SequenceSpaces/Reflexivity.lean": "1b64db52f5e1ac64af1bcde6693345ba2fb93e204662bf0efda603a943386d2c",
+        "NLS/Fourier/ArbitraryPeriodDistributionPairing.lean": "5bb80d714627cc68fa6947732a82d277e7cebebe42a72c4f897fad0c52aa787f",
+        "NLS/Fourier/PeriodicL1Distribution.lean": "7b52cda684b3bec9c507530b0be3d8a11532c4dfc31314356f1dc398eee4d089"
+      },
+      "qualification": "All ten hash-listed canonical modules were read completely for this comparison, together with the new five public examples and support-document diff. The new native weighted duality theorem is a stronger public interface for the existing coefficient duality. This comparison covers the scalar carrier, Banach/reflexivity assertions, physical Fourier sums and full scalar duality; it does not certify every assertion in Section 2 or independently reprove all transitive dependencies. Infinity norm-convergence and full-gradient corrections remain; pair-gradient and Poisson qualifications in the focused Section 2 audit are unchanged.",
+      "source_record_sha256": "ebfb92e746df999028fae31b788f599fcd402e801e66de216219301b7e775dc6"
     }
   }
 }
