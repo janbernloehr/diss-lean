@@ -4691,3 +4691,7 @@ import NLS.ZakharovShabat.ClassicalSignedPairCounts
 import NLS.ZakharovShabat.PhysicalSignedEnumeration
 import NLS.ZakharovShabat.PhysicalSignedEnumerationUniqueness
 import NLS.ZakharovShabat.PhysicalSignedEnumerationComparison
+import NLS.ZakharovShabat.ClassicalSignedCircleCounts
+import NLS.ZakharovShabat.PhysicalSignedUniformCircleCounts
+import NLS.ZakharovShabat.PhysicalSignedUniformEnumeration
+import NLS.ZakharovShabat.PhysicalSignedSpectralOverview

@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual classical signed spectra have uniquely determined
-physical eigenvalue lists with their full algebraic multiplicities, global
-lexicographic order and l2 asymptotics. Their characteristic zero orders and
-comparison with the source and combined endpoint lists are proved.
+Latest step: Section 7's literal signed circle counts and distant parity
+assignment hold on one common physical L2 neighborhood. Counts retain the
+actual periodic/antiperiodic Jordan-chain dimensions, and the separate
+signed eigenvalue lists agree with the distant combined endpoint labels.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: independent physical signed eigenvalue lists
+## Current milestone: locally uniform physical signed counts
+
+Section 7's locally uniform signed spectral statement is proved on the
+actual physical L2 space. One open convex neighborhood supplies every
+sufficiently large circle of radius (2N+1/2)pi, with exactly 4N+2 periodic
+and 4N antiperiodic eigenvalues counted by their full physical Jordan-chain
+dimensions. Both signed spectra avoid the circle boundary.
+
+On that same neighborhood the separate physical signed lists agree with
+the combined endpoint labels at indices 2n and 2n+1 for |n|>N. In particular,
+the distant combined labels have the printed periodic/antiperiodic parity,
+including for complex potentials. No continuous choice of complex roots
+is required.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+literal circular geometry and the common cutoff. The remaining semantic
+source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,388 build jobs, 7,373
+public examples, and a transitive axiom audit of 42,314 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,757 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: independent physical signed eigenvalue lists
 
 The actual classical periodic and antiperiodic spectra now have separate
 physical eigenvalue lists, uniquely determined by global lexicographic

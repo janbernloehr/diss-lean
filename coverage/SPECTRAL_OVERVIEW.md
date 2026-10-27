@@ -1444,7 +1444,42 @@ index, including central and collapsed pairs. These are the separate-list
 claims in the opening discussion of Section 7 and the real enumeration
 on printed p.17.
 
-The cutoff here is proved for each potential. A common neighborhood cutoff
-in the physical norm, the remaining semantic source audit, exact2014 and
-G2 remain separate. No continuous choice of individual complex root
-branches or whole-dissertation completeness is asserted.
+The package below strengthens this pointwise cutoff to one common
+physical neighborhood and proves the literal circular signed counts.
+The remaining semantic source audit, exact2014 and G2 remain separate.
+No continuous choice of complex root branches is asserted.
+
+## Locally uniform physical signed counts on the literal circle
+
+[`ClassicalSignedCircleCounts.lean`](../NLS/ZakharovShabat/ClassicalSignedCircleCounts.lean)
+defines finite disk intersections of the actual classical signed spectra.
+The sum of their full physical Jordan-chain dimensions agrees with the
+original coefficient parity count on that same disk.
+
+[`PhysicalSignedUniformCircleCounts.lean`](../NLS/ZakharovShabat/PhysicalSignedUniformCircleCounts.lean)
+pulls the uniform coefficient neighborhoods back through the exact physical
+L2 Fourier isometry and period-one map. On one open convex neighborhood,
+every sufficiently large circle of radius (2N+1/2)pi avoids both signed
+spectra and contains exactly 4N+2 periodic and 4N antiperiodic eigenvalues,
+counted with their actual algebraic multiplicities. The existing spectral
+circle/rectangle equality proves the circular selection; the statement
+retains the literal circle in Section 7, printed p.47.
+
+[`PhysicalSignedUniformEnumeration.lean`](../NLS/ZakharovShabat/PhysicalSignedUniformEnumeration.lean)
+compares complete ordered endpoint pairs at a common construction cutoff.
+The independent signed physical lists equal the combined physical labels
+at indices 2n and 2n+1 whenever |n| exceeds one locally uniform cutoff.
+This does not require continuity of individual complex roots or a local
+bound on an arbitrarily chosen canonical cutoff.
+
+[`PhysicalSignedSpectralOverview.lean`](../NLS/ZakharovShabat/PhysicalSignedSpectralOverview.lean)
+combines the exact circular counts, simultaneous boundary exclusion,
+independent-list equality and distant parity membership on one common
+physical L2 neighborhood. Both signs and every larger cutoff work there.
+The neighborhood is open and convex and contains the given potential
+and zero. These statements hold for arbitrary complex L2 potentials.
+
+This completes the locally uniform signed-counting and distant-parity
+claims in the opening of Section 7. The remaining semantic source audit,
+exact2014 and G2 qualifications are unchanged; whole-dissertation
+completion is not asserted.

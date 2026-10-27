@@ -67988,3 +67988,64 @@ example (u : IntervalPairL2) (hu : IsClassicalRealType (intervalL2Representative
 
 end PhysicalSignedEnumerationExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalSignedUniformCountingExamples
+open Metric Set
+
+example (u : IntervalPairL2) (r : ℤ) (c z : ℂ) (R : ℝ) :
+    z ∈ enclosedClassicalSignedSpectrum u r c R ↔
+      z ∈ classicalSignedSpectrum u r ∧ z ∈ ball c R :=
+  mem_enclosedClassicalSignedSpectrum u r c z R
+
+example (u : IntervalPairL2) (r : ℤ) (c : ℂ) (R : ℝ) :
+    (∑ z ∈ enclosedClassicalSignedSpectrum u r c R, classicalSignedAlgebraicMultiplicity u r z) =
+      ∑ z ∈ enclosedPeriodicSpectrum (by simp)
+        (periodOnePotential (sourcePhysicalL2Equiv.symm u)) c R,
+        parityAlgebraicMultiplicity (by simp)
+          (periodOnePotential (sourcePhysicalL2Equiv.symm u)) r z :=
+  sum_enclosedClassicalSignedSpectrum_eq u r c R
+
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∃ U : Set IntervalPairL2,
+      IsOpen U ∧ Convex ℝ U ∧ u ∈ U ∧ 0 ∈ U ∧
+      ∀ v ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ r : ℤ,
+        sphere (0 : ℂ) ((2*(N : ℝ)+1/2)*Real.pi) ⊆ classicalSignedResolventSet v r ∧
+        (∑ z ∈ enclosedClassicalSignedSpectrum v r 0 ((2*(N : ℝ)+1/2)*Real.pi),
+          classicalSignedAlgebraicMultiplicity v r z) =
+          if r % 2 = 0 then 4*N+2 else 4*N :=
+  exists_uniform_physicalSignedCircleCounts u
+
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set IntervalPairL2,
+      IsOpen U ∧ Convex ℝ U ∧ u ∈ U ∧ 0 ∈ U ∧
+      ∀ v ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ r : Fin 2, ∀ n : ℤ, N < n.natAbs →
+        physicalSignedLeft v r n = physicalPeriodicLeft v (2*n+(r.val : ℤ)) ∧
+        physicalSignedRight v r n = physicalPeriodicRight v (2*n+(r.val : ℤ)) :=
+  exists_uniform_physicalSignedPairs_eq_periodic u
+
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      (∑ z ∈ enclosedClassicalSignedSpectrum u 0 0 ((2*(N : ℝ)+1/2)*Real.pi),
+        classicalSignedAlgebraicMultiplicity u 0 z) = 4*N+2 ∧
+      (∑ z ∈ enclosedClassicalSignedSpectrum u 1 0 ((2*(N : ℝ)+1/2)*Real.pi),
+        classicalSignedAlgebraicMultiplicity u 1 z) = 4*N := by
+  obtain ⟨N₀,hN₀,U,_,_,hu,_,hU⟩ := exists_uniform_physicalSignedSpectralOverview u
+  exact ⟨N₀,hN₀,fun N hN => ⟨(hU u hu N hN).2.1,(hU u hu N hN).2.2.1⟩⟩
+
+example (u : IntervalPairL2) :
+    ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs →
+      physicalPeriodicLeft u (2*n) ∈ classicalSignedSpectrum u 0 ∧
+      physicalPeriodicRight u (2*n) ∈ classicalSignedSpectrum u 0 ∧
+      physicalPeriodicLeft u (2*n+1) ∈ classicalSignedSpectrum u 1 ∧
+      physicalPeriodicRight u (2*n+1) ∈ classicalSignedSpectrum u 1 := by
+  obtain ⟨N,_,U,_,_,hu,_,hU⟩ := exists_uniform_physicalSignedSpectralOverview u
+  refine ⟨N,?_⟩
+  intro n hn
+  have h0 := ((hU u hu N le_rfl).2.2.2 0 n hn).2.2
+  have h1 := ((hU u hu N le_rfl).2.2.2 1 n hn).2.2
+  simpa only [Fin.val_zero,Fin.val_one,Int.natCast_zero,Int.natCast_one,add_zero] using
+    And.intro h0.1 (And.intro h0.2 h1)
+
+end PhysicalSignedUniformCountingExamples
+end NLS.ZakharovShabat
