@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: full classical unit-interval domains and adjoints
+## Current milestone: actual classical signed spectra and period-two equality
+
+The spectrum of the original period-two operator is now proved to be
+exactly the union of the periodic and antiperiodic classical unit-interval
+spectra, for every physical L2 potential.
+
+Each physical spectrum is defined by failure of an actual bounded inverse
+on its full classical H1 domain. The complete sector inverses are compact,
+and every spectral point is an eigenvalue of the original differential
+equation. Each signed spectrum is closed and discrete, has finite bounded
+portions, and is characterized by the original algebraic parity multiplicity.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+exact source comparison and a free-potential example distinguishing the
+two resolvent sets. The remaining source audit, exact2014 and G2 remain
+separate questions.
+
+Validation: `./scripts/check.sh` passes with 8,368 build jobs, 7,335
+public examples, and a transitive axiom audit of 42,102 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,702 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: full classical unit-interval domains and adjoints
 
 The periodic and antiperiodic operators are now realized on the original
 unit-interval L2 space, with exactly their full classical H1 domains.

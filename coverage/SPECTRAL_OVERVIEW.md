@@ -1266,3 +1266,49 @@ are explicit specializations, each defining its own operator.
 This completes the unit-interval L2/H1 comparison left open in the preceding
 parity package. Full dissertation semantic completion, exact2014 and G2
 remain separate questions.
+
+## Actual classical signed spectra and their period-two union
+
+The spectrum comparison on printed pp.17-18 and p.29 is now proved using
+the full classical unit-interval domains and independently defined
+bounded-inverse resolvent sets.
+[`SourceParityResolventSet.lean`](../NLS/ZakharovShabat/SourceParityResolventSet.lean)
+defines each sector resolvent using its own pencil bijectivity. Its inverse
+exists in the original weighted norm at every sector resolvent parameter,
+including parameters singular in the opposite sector. For every finite
+Banach exponent, the full period-two pencil is invertible exactly when
+both separate parity pencils are invertible.
+
+[`SourceParityCompactResolvent.lean`](../NLS/ZakharovShabat/SourceParityCompactResolvent.lean)
+proves compactness of every complete sector inverse and uses the Fredholm
+alternative to identify its spectral points with nonzero original-domain
+kernel vectors.
+[`SourceParitySpectralGeometry.lean`](../NLS/ZakharovShabat/SourceParitySpectralGeometry.lean)
+proves openness of the resolvent, closedness and discreteness of the
+spectrum, finite bounded portions, and equivalence with positivity of
+the original algebraic parity multiplicity.
+
+[`UnitParityResolvent.lean`](../NLS/ZakharovShabat/UnitParityResolvent.lean)
+defines physical resolvent membership by an actual bounded two-sided
+inverse on the included full classical domain. Exact pencil intertwining
+identifies all admissible parameters and transports the compact inverse.
+[`ClassicalSignedSpectrum.lean`](../NLS/ZakharovShabat/ClassicalSignedSpectrum.lean)
+proves, for every actual physical L2 potential, that the union of the
+periodic and antiperiodic spectra is precisely the original period-two
+spectrum. Each signed spectrum retains its closedness, discreteness,
+finite bounded portions and original parity multiplicity characterization.
+At zero potential, zero belongs to the physical odd resolvent and the
+physical even spectrum, so the separate resolvent sets are distinguished.
+
+[`ClassicalSignedEigenvalues.lean`](../NLS/ZakharovShabat/ClassicalSignedEigenvalues.lean)
+identifies the independently defined physical spectrum with the literal
+differential-equation eigenvalues on all full classical signed H1 inputs.
+No continuous or residual signed spectrum remains. The two signs each
+retain their own linear operator domain; their spectra are combined by union.
+[`PhysicalPeriodicSpectrum.lean`](../NLS/ZakharovShabat/PhysicalPeriodicSpectrum.lean)
+defines the spectrum of the actual physical period-two partial operator
+by bounded invertibility on its full domain. Its inverse is compact and
+is the conjugate of the original source inverse. Thus the final union
+equality holds between independently defined spectra of actual physical
+operators on both sides, and also with the literal signed ODE eigenvalue sets.
+Full dissertation semantic completion, exact2014 and G2 remain separate.

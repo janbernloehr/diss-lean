@@ -67748,3 +67748,65 @@ example (u : NLS.ZakharovShabat.IntervalPairL2) (r : ℤ) (f : ℝ → ℂ × �
       =ᵐ[MeasureTheory.volume.restrict (Set.Ioc 0 1)]
       NLS.ZakharovShabat.physicalOperator (NLS.ZakharovShabat.intervalL2Representative u) f :=
   NLS.ZakharovShabat.classicalSignedOperator_representative u r f hf
+
+namespace NLS.ZakharovShabat
+section ClassicalSignedSpectrumExamples
+open Set MeasureTheory NLS.FunctionalAnalysis
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hφ : φ ∈ sourceParitySubspace 0) :
+    (sourceResolventSet hp φ)ᶜ = sourceParitySpectrum hp φ hφ 0 ∪ sourceParitySpectrum hp φ hφ 1 :=
+  sourceSpectrum_eq_parity_union hp φ hφ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hφ : φ ∈ sourceParitySubspace 0) (r : ℤ) (z : ℂ)
+    (hz : z ∈ sourceParityResolventSet hp φ hφ r) :
+    IsCompactOperator (sourceParityFullResolvent hp φ hφ r z hz) :=
+  isCompactOperator_sourceParityFullResolvent hp φ hφ r z hz
+
+example : (0 : ℂ) ∈ classicalSignedResolventSet 0 1 ∧ (0 : ℂ) ∈ classicalSignedSpectrum 0 0 :=
+  zero_mem_classicalOddResolvent_and_evenSpectrum
+
+example (φ : CoeffPair 2) (hφ : φ ∈ sourceParitySubspace 0) (r : ℤ) (z : ℂ)
+    (hz : z ∈ sourceParityResolventSet (by simp) φ hφ r) (f : IntervalPairL2) :
+    linearPMapPencil (unitParityOperator φ hφ r) z (unitParityFullResolventToDomain φ hφ r z hz f) = f :=
+  unitParityPencil_fullResolvent φ hφ r z hz f
+
+example (u : IntervalPairL2) :
+    classicalSignedSpectrum u 0 ∪ classicalSignedSpectrum u 1 =
+      periodicSpectrum (by simp) (periodOnePotential (sourcePhysicalL2Equiv.symm u)) :=
+  classicalSignedSpectrum_union_eq_periodic u
+
+example (u : IntervalPairL2) (r : ℤ) : DiscreteTopology (classicalSignedSpectrum u r) :=
+  discreteTopology_classicalSignedSpectrum u r
+
+example (u : IntervalPairL2) (r : ℤ) {K : Set ℂ} (hK : Bornology.IsBounded K) :
+    Set.Finite (classicalSignedSpectrum u r ∩ K) :=
+  finite_classicalSignedSpectrum_inter_of_isBounded u r hK
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) :
+    z ∈ classicalSignedSpectrum u r ↔
+      0 < parityAlgebraicMultiplicity (by simp) (periodOnePotential (sourcePhysicalL2Equiv.symm u)) r z :=
+  mem_classicalSignedSpectrum_iff_multiplicity_pos u r z
+
+example (u : IntervalPairL2) (r : ℤ) :
+    classicalSignedSpectrum u r = classicalSignedEigenvalues u r :=
+  classicalSignedSpectrum_eq_eigenvalues u r
+
+example (u : IntervalPairL2) (r : ℤ) (z : ℂ) (f : ℝ → ℂ × ℂ)
+    (hf : HasClassicalParityDomain r f) :
+    classicalSignedOperator u r (unitParityDomainEquiv r (sourceClassicalParityExtension r f hf)) =
+      z • intervalL2OfFunction f hf.memLp ↔
+      physicalOperator (intervalL2Representative u) f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x) :=
+  classicalSignedOperator_classical_eigenvalue_iff u r z f hf
+
+example (u : IntervalPairL2) :
+    physicalPeriodicSpectrum (periodOnePair (sourcePhysicalL2Equiv.symm u)) =
+      classicalSignedSpectrum u 0 ∪ classicalSignedSpectrum u 1 :=
+  physicalPeriodicSpectrum_eq_classicalSigned_union u
+
+example (φ : CoeffPair 2) (z : ℂ) : IsCompactOperator (physicalPeriodicResolvent φ z) :=
+  isCompactOperator_physicalPeriodicResolvent φ z
+
+end ClassicalSignedSpectrumExamples
+end NLS.ZakharovShabat

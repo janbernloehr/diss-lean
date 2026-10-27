@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the original unit-interval periodic and antiperiodic
-operators now have exactly their full classical H1 domains. For every
-physical L2 potential, either operator is self-adjoint exactly for real
-type and agrees with the original differential expression.
+Latest step: the actual classical periodic and antiperiodic spectra
+have compact resolvents and are exactly the original ODE eigenvalue sets.
+Their union equals the actual physical period-two spectrum for every physical
+L2 potential. Each signed spectrum is closed and discrete.
 Formalization remains in progress.
 
 The physical formula comparison is complete for the inspected 2013

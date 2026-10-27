@@ -4668,3 +4668,10 @@ import NLS.ZakharovShabat.ParityIntervalL2Extension
 import NLS.ZakharovShabat.ParityIntervalL2Equiv
 import NLS.ZakharovShabat.UnitParityOperatorDomain
 import NLS.ZakharovShabat.UnitParitySelfAdjoint
+import NLS.ZakharovShabat.SourceParityResolventSet
+import NLS.ZakharovShabat.SourceParityCompactResolvent
+import NLS.ZakharovShabat.SourceParitySpectralGeometry
+import NLS.ZakharovShabat.UnitParityResolvent
+import NLS.ZakharovShabat.ClassicalSignedSpectrum
+import NLS.ZakharovShabat.ClassicalSignedEigenvalues
+import NLS.ZakharovShabat.PhysicalPeriodicSpectrum
