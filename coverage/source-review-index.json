@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T17:54:00.599896+00:00",
-  "base_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+  "published_utc": "2026-10-27T17:55:37.380221+00:00",
+  "base_commit": "c736c0182b7d5327f205cf3ba2a436cc70b592c4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 79,
-    "module_hash_checks": 1096,
-    "distinct_modules": 847
+    "review_records": 80,
+    "module_hash_checks": 1121,
+    "distinct_modules": 863
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -17441,6 +17441,174 @@
         "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
       },
       "source_record_sha256": "9421d2ab82f61d0bfd0d0578bf65cc638c6b9034316e2bda54247e5a07424307"
+    },
+    "Section3RankRealitySourceComparison-2026-10-27": {
+      "source_lines": [
+        [
+          1557,
+          1587
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1557,
+            1566
+          ],
+          "requirement": "Distant-circle rank two and its parity classification.",
+          "finding": "Norm-continuous finite-rank idempotents have locally constant rank because projections at distance less than one inject into each other on their ranges. Preconnectedness extends this rank to zero. The full free root space consists of exactly the two signed free modes, including at index zero, so this counts algebraic multiplicity. For even potentials, the actual circle range lies in the parity of its signed index; full-domain eigenvectors and their physical unit translations inherit that parity.",
+          "declarations": [
+            "NLS.ProjectionRank.finrank_eq_of_norm_sub_lt_one",
+            "NLS.ProjectionRank.finrank_eq_on_preconnected",
+            "NLS.ZakharovShabat.finrank_contour_eq_on_preconnected",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top",
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.exists_uniform_disk_multiplicity_two",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_multiplicity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_parity",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_unit_translation"
+          ]
+        },
+        {
+          "source_lines": [
+            1567,
+            1575
+          ],
+          "requirement": "Central rank 4N+2 and the two stated parity ranks.",
+          "finding": "The actual source rectangle is identified with the central algebraic spectral projector, then its rank is transferred by a linear range equivalence. A sufficiently large comparison circle and spectral localization select the same central spectrum; the same-index circle is not assumed to contain rectangle corners. Deformation to zero gives 4N+2. Counting the signed free frequencies in each residue class gives 2N+2 for the cutoff parity and 2N for the other. Typed restrictions have the ranks of ambient range intersections. These boxes have height N, as on p.26; the separate printed norm-dependent-height qualification remains.",
+          "declarations": [
+            "NLS.ConjugatedRanges.rangeEquiv",
+            "NLS.ConjugatedRanges.rangeInfEquiv",
+            "NLS.ZakharovShabat.finrank_range_sourceCentralRectangleIntegral",
+            "NLS.ZakharovShabat.finrank_range_sourceParityCentralProjection",
+            "NLS.ZakharovShabat.closedCentralRectangle_subset_centralCircleBall",
+            "NLS.ZakharovShabat.centralCircle_spectral_selection",
+            "NLS.ZakharovShabat.exists_uniform_central_multiplicity",
+            "NLS.ZakharovShabat.card_centralParityIndices",
+            "NLS.ZakharovShabat.finrank_range_centralParityProjection_zero",
+            "NLS.ZakharovShabat.exists_uniform_central_parity_ranks",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.central_multiplicity",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodOneCountingData"
+          ]
+        },
+        {
+          "source_lines": [
+            1577,
+            1578
+          ],
+          "requirement": "No additional periodic spectral values outside the central box and distant disks.",
+          "finding": "The exact exterior lies in the actual source resolvent set, including its mixed boundaries. The actual spectrum is contained in the central box and signed high disks. The counting data furthermore locate every spectral value in the central cluster or one unique distant disk; no assumption that the spectrum is exhausted by a chosen finite family is introduced.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.exterior_resolvent",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.spectrum_subset",
+            "NLS.ZakharovShabat.SourcePeriodicCountingData.mem_spectrum_iff_central_or_disk",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodicCountingData"
+          ]
+        },
+        {
+          "source_lines": [
+            1580,
+            1587
+          ],
+          "requirement": "Conjugate-reflection symmetry and reality at every finite exponent.",
+          "finding": "Real type uses conjugation and frequency reflection, not pointwise conjugation without reflection. Full one-derivative domain coefficients embed into l1 for every finite exponent. Absolutely convergent coefficient pairings and product-index convolution sums justify the adjoint identity. The free symbols are real; a nonzero domain vector has strictly positive pairing energy, giving real eigenvalues. Compact-resolvent spectral equivalence extends this to the entire original-norm periodic spectrum. The Hilbert self-adjointness result is additional context and does not restrict the exponent of this proof.",
+          "declarations": [
+            "NLS.Coeff.summable_norm_pairing",
+            "NLS.Coeff.summable_convolution_pairing",
+            "NLS.Coeff.pairing_convolution_conj",
+            "NLS.ZakharovShabat.IsRealType",
+            "NLS.ZakharovShabat.domainPairing_freeOperator_conj",
+            "NLS.ZakharovShabat.domainPairing_potentialOperator_conj",
+            "NLS.ZakharovShabat.domainPairing_inclusion_re_pos",
+            "NLS.ZakharovShabat.eigenvalue_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceContourRanks.lean": "05c566e27015e0a8f7cdef75e96dc1efb803853b0fac472533d71beb8063bd3c",
+        "NLS/ZakharovShabat/Proposition3_1.lean": "c3030ee49f893c95067faef65e3f50c05b5faf2613e93f6d60b3753756fc1890",
+        "NLS/ZakharovShabat/RealType.lean": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709",
+        "NLS/ZakharovShabat/PeriodicSelfAdjointRealType.lean": "c4cc8dc9b50866364a64339b53b9c820afb8ba94b22e971c33e5c9eabefb5426",
+        "NLS/ZakharovShabat/SourceRealTypeIdentity.lean": "502502ba886ec51774b245d3c6922e1a7aeaf1b2facd7b600d0abd3c13198a06",
+        "NLS/ZakharovShabat/SourceRealTypeProjection.lean": "0df550f7292e28b5d0089352488c322cd178585de86d29913bf2464bfc254c1b",
+        "NLS/ZakharovShabat/SourceEquation1_4.lean": "29d0baf5765f59a363bea224d33d0965d08b649d9bca4056ac998b337cc52b81",
+        "NLS/ZakharovShabat/SourceEquation1_5.lean": "ef8fb9699a6eb422861deb7c49d737da430cc9e78a37aba749647d273a066e41",
+        "NLS/ZakharovShabat/SpectralProjections.lean": "40f85b0d5120f767a12fb896140df03b35fcf938e2b2e595cf22c563ec07d022",
+        "NLS/ZakharovShabat/ContourProjection.lean": "6c933ba9dee60c20d58c5c7558435724932d4010441d051aed8008a2003cee6c",
+        "NLS/ZakharovShabat/CentralRectangleProjection.lean": "e9ec0dae3812c1c50ad6a5a2457e71cc95c36d29b1c1041b36096abb0b5418b5",
+        "NLS/ZakharovShabat/SourcePeriodicCounting.lean": "1d2ef4ef9652369695b9d40200a8f9e12099c7c62b38a73de31c6e7e80b13020",
+        "NLS/ZakharovShabat/DiskMultiplicity.lean": "d31a6c8d937ff0d4b9ae9bc4d1168cd599cb779acf4973da0e5d89e4ece9d027",
+        "NLS/ZakharovShabat/PeriodicCounting.lean": "a26a681c54f1adf208291578cdd42b931253a9e00bad1c03e2c0ab7b7afaa348",
+        "NLS/ZakharovShabat/ParityContourMultiplicity.lean": "e6817ca0e02fbfaf9fe282c93d280838e55131061e0e0951d3d1d5299f8a0116",
+        "NLS/ZakharovShabat/FreeMultiplicity.lean": "1f1e88d9ffd33b1714a149cfa759baeb214e5f684ebcf37c0798561fdf421638",
+        "NLS/ZakharovShabat/CentralDeformation.lean": "dba10bd07bfd3d11d8c6708c69bc5d2ca17df0c32359cca3a6bc3b4a94872d7d",
+        "NLS/ZakharovShabat/CentralParity.lean": "acd4f6088c7099112a4b60cdc2a79e47896fba752c1d90e429ba1e30da5a4ad5",
+        "NLS/FunctionalAnalysis/ProjectionRank.lean": "c9e498ac3f9136f1797be1c6eed341c228e0e5f083f4fb04f47a97c8dd1f2e60",
+        "NLS/SequenceSpaces/Pairing.lean": "411338575caadfb8d1731cf83412195aa30896a26a2b33d1e557f7c368fcb4b5",
+        "NLS/SequenceSpaces/Embedding.lean": "f10d399a5facbbcaf2c98a6d8ebfa68e6bfecf9ada49727b8f48b0026ddea086",
+        "NLS/SequenceSpaces/PairComponentHolder.lean": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4",
+        "NLS/ZakharovShabat/ContourAnalytic.lean": "86aa781abe2e00233b7ff88fb7ea723e8e7c8a7b699a67eb3da66724c87ba862",
+        "NLS/FunctionalAnalysis/CircleIntegrationMap.lean": "1ab6d9902633be2d602a3b7d2cc00c82ad6b1230caf8284299a12c62d6212146",
+        "NLS/FunctionalAnalysis/ConjugatedRanges.lean": "d7dd8ae4b9726237ba1714cfec364e273973c683de236b08bba16d9dfaf11f6c"
+      },
+      "resolved_declarations": [
+        "NLS.Coeff.pairing_convolution_conj",
+        "NLS.Coeff.summable_convolution_pairing",
+        "NLS.Coeff.summable_norm_pairing",
+        "NLS.ConjugatedRanges.rangeEquiv",
+        "NLS.ConjugatedRanges.rangeInfEquiv",
+        "NLS.ProjectionRank.finrank_eq_of_norm_sub_lt_one",
+        "NLS.ProjectionRank.finrank_eq_on_preconnected",
+        "NLS.ZakharovShabat.IsRealType",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.central_multiplicity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_parity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_eigenvector_unit_translation",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.disk_multiplicity",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.exterior_resolvent",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.mem_spectrum_iff_central_or_disk",
+        "NLS.ZakharovShabat.SourcePeriodicCountingData.spectrum_subset",
+        "NLS.ZakharovShabat.card_centralParityIndices",
+        "NLS.ZakharovShabat.centralCircle_spectral_selection",
+        "NLS.ZakharovShabat.closedCentralRectangle_subset_centralCircleBall",
+        "NLS.ZakharovShabat.domainPairing_freeOperator_conj",
+        "NLS.ZakharovShabat.domainPairing_inclusion_re_pos",
+        "NLS.ZakharovShabat.domainPairing_potentialOperator_conj",
+        "NLS.ZakharovShabat.eigenvalue_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.exists_uniform_central_multiplicity",
+        "NLS.ZakharovShabat.exists_uniform_central_parity_ranks",
+        "NLS.ZakharovShabat.exists_uniform_disk_multiplicity_two",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodOneCountingData",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodicCountingData",
+        "NLS.ZakharovShabat.finrank_contour_eq_on_preconnected",
+        "NLS.ZakharovShabat.finrank_range_centralParityProjection_zero",
+        "NLS.ZakharovShabat.finrank_range_sourceCentralRectangleIntegral",
+        "NLS.ZakharovShabat.finrank_range_sourceParityCentralProjection",
+        "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+        "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top",
+        "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType"
+      ],
+      "declaration_inventory_count": 42983,
+      "qualification": "These twenty-five selected modules have been read completely during the preceding and current focused preparation. The cited extracted passage was inspected, and module hashes and declaration references were verified. SourceRealTypeIdentity and SourceRealTypeProjection are later-context reads. This comparison does not independently certify every transitive proof or exhaust the Section 3 assertion audit. The height-N central counting conclusion holds at all finite exponents; the separate printed norm-dependent height remains proved only through p=4 and refuted at sufficiently large p. All earlier norm, endpoint, radius and parity qualifications remain. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "status": "current_public_source_comparison",
+      "base_commit": "c736c0182b7d5327f205cf3ba2a436cc70b592c4",
+      "updated_utc": "2026-10-27T17:55:37.380221+00:00",
+      "prepared_from_sha256": "8e2c8a9916ae473494c1284cb83cfd156a779e9ac488c13a2117c5d86aa08582",
+      "validation_reuse": {
+        "full_check_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+        "lean_sources": {
+          "files": 4717,
+          "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
+        },
+        "new_lean_check_run": false,
+        "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
+      },
+      "source_record_sha256": "3b0126c8f88bf2d6c9e2e4b1654b326f9f4dabd5aae30c45fc19e956f24ad042"
     }
   }
 }

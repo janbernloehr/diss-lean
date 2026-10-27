@@ -57,6 +57,10 @@ are also proved, with the compact analytic resolvent and spectrum enclosure.
 Four focused proof groups now also compare the actual Cauchy–Riesz
 projections, parity decomposition, full-domain invariance and analytic
 period-one restrictions in equations (1.4)–(1.5) and Lemma 3.6.
+Four further groups compare the deformation to free contour ranks,
+algebraic and parity counts, spectral exhaustion and real-type symmetry
+on the full domain. The central height-N conclusion retains the separate
+qualification on the printed norm-dependent height.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

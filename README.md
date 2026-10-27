@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the source comparison now records the proofs of analytic
-Cauchy–Riesz projections, parity decomposition and period-one restrictions
-in equations (1.4)–(1.5) and Lemma 3.6.
+Latest step: the Section 3 proof comparison now covers contour ranks,
+algebraic eigenvalue counts, spectral exhaustion and real-type spectral
+reality, preserving the separate printed-height qualification.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Rank and reality proof, p.27 | [Source counts](NLS/ZakharovShabat/SourcePeriodicCounting.lean), [symmetry proof](NLS/ZakharovShabat/RealType.lean), [comparison](coverage/SECTION_3.md) | Four focused groups cover algebraic counts, signed parity, exact spectral exhaustion and reality at all finite exponents; height-N counts retain the distinct printed-height qualification. |
 | Equations (1.4)–(1.5) and Lemma 3.6, p.26 | [Projection package](NLS/ZakharovShabat/SourceEquation1_4.lean), [restrictions](NLS/ZakharovShabat/SourceEquation1_5.lean), [proof comparison](coverage/SECTION_3.md) | Four focused groups retain actual integrals, original norms and domains, signed parity and the native period-one topology. |
 | Corollary 3.5 uniform proof, pp.25-26 | [Original-norm square proof](NLS/ZakharovShabat/SourceUniformSquareProof.lean), [comparison](coverage/SECTION_3.md) | Actual squared inverse and series, quarter/half bounds, compact segment, and one connected neighborhood for every larger exact spectral exterior. |
 | Corollary 3.3 Neumann proof, p.25 | [Original-norm Neumann proof](NLS/ZakharovShabat/SourceNeumannProof.lean), [comparison](coverage/SECTION_3.md) | Factor-one potential-composition estimate, actual inverse formula and series, compactness inference, and regression preserving the standalone pair-norm correction. |

@@ -564,6 +564,26 @@ The rank calculations following equation (1.5) are verified below.
 
 ## Rank calculations and periodic counts following equation (1.5)
 
+The renewed comparison follows the deformation argument and its free
+normalization. Finite-rank projections less than one apart in operator
+norm have equal rank; connectedness transports the rank to zero. The
+full free generalized eigenspace has exactly two signed modes. Central
+counts use a sufficiently large comparison circle and exact spectral
+selection, with every signed free index included in the parity count.
+The resulting totals count algebraic multiplicity, including collisions.
+The real-type argument uses conjugate frequency reflection and absolutely
+convergent coefficient pairings on the full one-derivative domain. Positive
+energy gives real eigenvalues, and compact-resolvent spectral equivalence
+gives reality of the entire spectrum at every finite exponent. The
+height-N result remains separate from the printed norm-dependent height.
+
+Section3RankRealitySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups,
+25 reviewed module hashes and 36 resolved declaration references.
+This comparison preserves the earlier qualifications and does not certify
+every assertion in Section 3. Its Lean sources match the full validation
+at `cb7317a`; this documentation update does not rerun Lean.
+
 Printed page 27 obtains the central and distant-disk counts from contour
 ranks, then gives parity, exhaustion, and reality conclusions. The actual
 source integrals and typed restrictions now have those ranks at every

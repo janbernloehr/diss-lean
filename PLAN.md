@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: Projection and parity proof comparison
+## Current milestone: Rank, spectral exhaustion and reality proof comparison
+
+Four focused source groups now compare the rank-two distant disks,
+central rank 4N+2 and parity counts, spectral exhaustion and the real-type
+symmetry argument. Counts use algebraic multiplicity and the actual
+original-norm contour ranges. The reality proof covers every finite
+exponent through absolutely convergent coefficient pairings. Twenty-five
+fully read modules and 36 resolved declarations support the
+[Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: source-review integrity, declaration references and documentation
+links pass. The Lean sources and dependency locks are byte-identical to
+the full check at `cb7317a`: 8,440 build jobs, 7,498 examples and the
+42,983-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Continue with the prepared local trace reduction comparison, then reconcile
+the remaining ordered Section 3 assertion groups before moving to Section 4.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Projection and parity proof comparison
 
 Four focused source groups now connect equations (1.4)–(1.5) and Lemma 3.6
 to the actual contour integrals, closed complementary parity subspaces,
