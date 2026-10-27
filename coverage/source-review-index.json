@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T14:30:44.640806+00:00",
-  "base_commit": "e7035f706b1268cdd1a9e81dd14d8f7fef5ca856",
+  "published_utc": "2026-10-27T14:54:06.676261+00:00",
+  "base_commit": "0270f08010f6b71135e5236657b9ab72d4d632f4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 71,
-    "module_hash_checks": 1023,
-    "distinct_modules": 812
+    "review_records": 72,
+    "module_hash_checks": 1032,
+    "distinct_modules": 814
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e7035f706b1268cdd1a9e81dd14d8f7fef5ca856",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma34Proof and two public examples.",
+    "base_commit": "0270f08010f6b71135e5236657b9ab72d4d632f4",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceSection3Setup and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8432,
-    "public_examples": 7468,
-    "transitive_NLS_declarations": 42847,
+    "build_jobs": 8433,
+    "public_examples": 7472,
+    "transitive_NLS_declarations": 42858,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4709,
-      "sha256": "fdc25828824d2f8659ea53e27eec80a71199b61666184592589e0ce579030671"
+      "files": 4710,
+      "sha256": "d6b382b72652ada0893eab8e1ff8f055e2cc7976f5774e28e0cd57ee50aa6d60"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -16433,6 +16433,148 @@
       },
       "qualification": "All five hash-listed modules were read completely. Two literal intermediate estimates are formally refuted with fixed finite-mode p=2 witnesses for every nonnegative candidate constant. The actual signed coefficient bridge and original pair norms are checked, and the main r^-2 theorem remains proved with its original quantifiers. This is not a complete Section 3 proof audit, an independent verification of every transitive dependency, or a proof of the literal false estimates. The remaining source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "af06f864af237690569b53f674128b465acc4f5b547b3aaca6ae1380950a03ee"
+    },
+    "Section3SetupSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "0270f08010f6b71135e5236657b9ab72d4d632f4",
+      "updated_utc": "2026-10-27T14:54:06.676261+00:00",
+      "source_lines": [
+        [
+          1229,
+          1238
+        ],
+        [
+          1265,
+          1275
+        ],
+        [
+          1407,
+          1413
+        ],
+        [
+          1486,
+          1494
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1229,
+            1238
+          ],
+          "requirement": "The operator is densely defined and closed on the full original one-derivative domain; analytic approximation and arbitrarily small relative bounds justify the setup.",
+          "finding": "The actual sourceUnboundedOperator has precisely the image of the original weighted one-derivative pair as its domain, independently of the potential. Existing source density, physical analytic decomposition and infinitesimal relative-bound theorems are retained. The new source-native graph membership and inverse characterization prove closedness directly in the original base norm for all 1<=p<infinity, with no smallness or parity restriction. The proof uses an actual bounded spectral inverse, rather than asserting that continuity on the stronger domain alone implies closedness. The p=3 integration example assumes only convergence of included vectors and operator images in the base norm.",
+          "declarations": [
+            "sourceUnboundedOperator",
+            "mem_sourceUnboundedOperator_domain",
+            "sourceUnboundedOperator_dense_domain",
+            "mem_sourceUnboundedOperator_graph",
+            "mem_sourceUnboundedOperator_graph_iff_inverse",
+            "sourceUnboundedOperator_isClosed",
+            "exists_source_analytic_decomposition",
+            "exists_source_potential_relative_bound"
+          ]
+        },
+        {
+          "source_lines": [
+            1265,
+            1268
+          ],
+          "requirement": "The actual resolvents satisfy R_phi (I-Phi R_0)=R_0.",
+          "finding": "Proved for the original-norm operators at every parameter in the free and perturbed resolvent sets. The coefficient-preserving identity for Phi R0 is explicit. No Neumann smallness condition is added, and both inverse domains are retained.",
+          "declarations": [
+            "toMax_sourcePotentialFreeResolvent_apply",
+            "sourceResolvent_comp_one_sub_potentialFreeResolvent"
+          ]
+        },
+        {
+          "source_lines": [
+            1270,
+            1273
+          ],
+          "requirement": "Young estimate (1.3) has constant one in the original potential p norm and output p norm, with the original l1 norm of R0 f.",
+          "finding": "The original pair norm is bounded through its two single-component summands, followed by scalar Young and the exact l1 component sum. This proves the actual potential multiplier bound, its operator norm bound and equation (1.3), with no norm-conversion factor. An original-norm p=3 example attains the constant one. The abstract multiplier theorem also elaborates for legacy CoeffPair infinity (maximum pair norm); this is explicitly not an assertion about the distinct original source infinity norm. All source resolvent claims here are finite-p.",
+          "declarations": [
+            "norm_sourcePotentialFromL1_apply_le",
+            "norm_sourcePotentialFromL1_le",
+            "sourceEquation1_3"
+          ]
+        },
+        {
+          "source_lines": [
+            1275,
+            1275
+          ],
+          "requirement": "Large imaginary height makes the free inverse sufficiently small for the Neumann argument.",
+          "finding": "For every positive epsilon, one positive height works for every spectral parameter in both half-planes and bounds the actual original p-to-one operator norm by epsilon. It uses the already corrected height estimate with the pair factor. The p=1 public example derives the corresponding bound simultaneously for every input of norm at most one. The source prose suppresses the input normalization; this comparison records the operator-norm/unit-ball reading and does not assert a bound independent of arbitrary input scaling, nor adopt it as a newly refuted formula.",
+          "declarations": [
+            "exists_sourceFreeResolventToL1_uniform_small",
+            "norm_sourceFreeResolventToL1_le_height"
+          ]
+        },
+        {
+          "source_lines": [
+            1407,
+            1413
+          ],
+          "requirement": "The displayed double-resolvent formula uses the signed Fourier conventions in both components.",
+          "finding": "The new second-component identity reindexes the actual convergent coefficient sum through integer negation, giving phi.snd(l+m)*f.fst(-m) over the two printed denominators. Together with the previously proved first signed coefficient identity this retains the raw-to-signed reflections of both components. An endpoint p=1 example uses raw input mode -1 and second potential mode +2 to obtain exactly 1/(lambda-pi)^2 at output +1.",
+          "declarations": [
+            "sourceDoubleResolvent_signed_fst_apply",
+            "sourceDoubleResolvent_signed_snd_apply",
+            "sourceDoubleResolvent_eq_comp"
+          ]
+        },
+        {
+          "source_lines": [
+            1486,
+            1489
+          ],
+          "requirement": "The squared potential/free-resolvent operator is bounded by the original potential norm times the original double-resolvent norm.",
+          "finding": "The exact composition identity (Phi R0)^2=Phi(R0 Phi R0), together with the constant-one original potential multiplier estimate, proves the printed norm comparison at every off-lattice parameter and every finite Banach exponent. The current result is this inequality; the uniform cutoff and common-neighborhood conclusions continue to use the separately existing Corollary 3.5 proof.",
+          "declarations": [
+            "norm_sourcePotentialFreeResolvent_sq_le",
+            "norm_sourcePotentialFromL1_le",
+            "sourceDoubleResolvent_eq_comp"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Section3SourceComparison-2026-10-21",
+        "Lemma32EndpointProofSourceComparison-2026-10-27",
+        "Lemma34ProofSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true,
+          "retained_qualification": "Compared selected public types, hypotheses and key proof bodies. SourceDoubleResolvent inspected through the composition and coefficient formulas; HeightSpectralBox inspected through its mixed-boundary definition. This is not an independent audit of every dependency or every proof line in Section 3. The existing mathematical qualifications agree; only the opening audit scope sentence is stale."
+        },
+        "Lemma32EndpointProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "b53416f1ab6ebf977fc05c15cb386e2b5dd4660edd8e68c61d63fe7ef1f874c3",
+          "module_hashes_verified": true,
+          "retained_qualification": "All eight hash-listed modules were read completely, including the final new proof module. This proves two literal proof-sentence refutations and separate corrected bounds for the original free resolvent. It does not certify the rest of Section 3, independently reprove all transitive dependencies, or remove the existing general-p pair-norm and printed-height corrections. Section 2 is reconciled with its existing qualified comparison rather than republished as twelve new proofs. The source-wide assertion assessment, exact cited 2014 construction comparison and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Lemma34ProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "af06f864af237690569b53f674128b465acc4f5b547b3aaca6ae1380950a03ee",
+          "module_hashes_verified": true,
+          "retained_qualification": "All five hash-listed modules were read completely. Two literal intermediate estimates are formally refuted with fixed finite-mode p=2 witnesses for every nonnegative candidate constant. The actual signed coefficient bridge and original pair norms are checked, and the main r^-2 theorem remains proved with its original quantifiers. This is not a complete Section 3 proof audit, an independent verification of every transitive dependency, or a proof of the literal false estimates. The remaining source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection3Setup.lean": "cf73ec97860ae8f773e889e88c98d176e7e123830aae2de6bc54548ac96d374a",
+        "NLS/ZakharovShabat/SourceUnboundedOperator.lean": "a2a023387ed2c696f81a39ee529ce5195a7d14b57d36e9868f7db48a5528a007",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/SourceCorollary3_3.lean": "ee1516d443b12f92fbc059720f726b40e22f87c14d1f42b45b52378abd0bf2f4",
+        "NLS/ZakharovShabat/SourceDoubleResolvent.lean": "109b6f2c166b7ffe0fde25d4ae289a452cdda3b33473924bec0c93d27bdc30dd",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/SourcePotentialRelativeBound.lean": "5e39c58c630ed00f43d0c7d4ee70208066ad1f9095eed44b2ecd82a8073ebc04",
+        "NLS/Fourier/SourceAnalyticApproximation.lean": "2fe6c5ca6a18547caa5ceca5172c1fccd145d1422b88309d2f9fea2bd8491969",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "a38555531a677d72d2e1cc820bf52760fd5835c9e5bc4464e3907c00a863150b"
+      },
+      "qualification": "The new module was read completely; the eight unchanged hash-listed dependencies were read in the preceding focused comparisons and their current hashes rechecked. Six focused assertion groups preserve original finite-p norms, domain and quantifiers. Existing analytic approximation, relative bounds and density are reused with their proved scope. This is not an exhaustive Section 3 source assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished; previous source refutations and corrections remain separate.",
+      "source_record_sha256": "0b5e34f523ee0b7063f69f000415dde938c6c7161a861d6d7e0c6cb7d2039374"
     }
   }
 }

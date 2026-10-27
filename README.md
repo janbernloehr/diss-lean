@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: two radius-dependent estimates in the proof of Lemma 3.4
-now have formal counterexamples for every proposed uniform constant.
-The actual original pair operator has a matching r^-2 lower bound for
-a unit Fourier-mode potential. The main lemma's proved r^-2 estimate remains valid.
+Latest step: Section 3 now has direct original-norm proofs of closedness
+on the full operator domain, Young's estimate with constant one, the first
+resolvent identity, high-height smallness and the squared-potential bound.
+Both signed double-resolvent coefficient formulas are available.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

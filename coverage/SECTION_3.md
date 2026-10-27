@@ -77,14 +77,50 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Direct source-norm setup and resolvent estimates
+
+[SourceSection3Setup.lean](../NLS/ZakharovShabat/SourceSection3Setup.lean)
+adds direct statements on the original source operators and norms:
+
+| Source assertion | Public entry point | Retained scope |
+| --- | --- | --- |
+| Closed, densely defined operator, p.23 | `sourceUnboundedOperator_isClosed`, existing `sourceUnboundedOperator_dense_domain` | Every finite Banach exponent and arbitrary period-two potential; actual full one-derivative domain. |
+| Actual graph | `mem_sourceUnboundedOperator_graph`, `mem_sourceUnboundedOperator_graph_iff_inverse` | Included domain vector and its image, characterized by a bounded inverse in the base norm. |
+| First resolvent identity, p.23 | `sourceResolvent_comp_one_sub_potentialFreeResolvent` | Both actual inverse assumptions; no smallness requirement. |
+| Young inequality (1.3) | `norm_sourcePotentialFromL1_apply_le`, `sourceEquation1_3` | Constant one in the original finite p and l1 pair norms. |
+| High-height smallness | `exists_sourceFreeResolventToL1_uniform_small` | One height for both half-planes and all parameters, in the original p-to-one operator norm. |
+| Second signed coefficient, p.25 | `sourceDoubleResolvent_signed_snd_apply` | Exact integer reflection of the input first component. |
+| Square estimate, p.26 | `norm_sourcePotentialFreeResolvent_sq_le` | Original potential norm times original double-resolvent norm, without conversion factors. |
+
+The existing physical analytic approximation and infinitesimal relative
+bounds remain available. Closedness uses an actual bounded spectral
+inverse; it does not follow merely from continuity on the stronger domain.
+The p=3 graph-limit example assumes convergence only in the base norm.
+
+The high-height sentence in the source is read as an operator-norm or
+unit-ball statement. No bound independent of arbitrary input scaling is
+asserted. The public p=1 example makes the unit-ball quantifier explicit.
+The general Young helper also works for the legacy maximum infinity pair
+norm; that additional instance is not the distinct original infinity norm.
+
+Other examples attain the constant-one Young bound at p=3 and recover
+the exact second coefficient 1/(lambda-pi)^2 from reflected endpoint modes.
+Section3SetupSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records six focused groups;
+it does not certify every assertion in the section.
+
+Validation passes: 8,433 build jobs, 7,472 public examples and a
+transitive axiom audit of 42,858 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Operator setup
 
 `Operator.lean` defines the full one-derivative coefficient domain and the
 Zakharov–Shabat operator for every finite Banach exponent.
-`domainInclusion_denseRange` proves density, and
-`NLS.ZakharovShabat.unboundedOperator_isClosed` in `ClosedOperator.lean`
-proves closedness without
-restricting the potential size. Both components use scalar Fourier modes;
+`sourceUnboundedOperator_dense_domain` and `sourceUnboundedOperator_isClosed`
+now state density and closedness directly in the original source norm,
+without restricting the potential size. The corresponding maximum-coordinate
+closedness theorem remains in `ClosedOperator.lean`. Both components use scalar Fourier modes;
 the first component is reflected relative to the signed convention in
 (1.2). Index reflection preserves the source coefficient norm.
 

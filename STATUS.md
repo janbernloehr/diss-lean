@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: Radius dependence in the proof of Lemma 3.4
+## Current milestone: Section 3 setup in the original norms
+
+The actual unbounded source operator is now proved closed on its full
+one-derivative domain for every finite Banach exponent. New public proofs
+also give Young's equation (1.3) with constant one, the first resolvent
+identity, uniform operator-norm decay at large imaginary height, and
+the squared-potential estimate used in Corollary 3.5.
+
+The second signed Fourier coefficient formula is explicit. Four public
+examples check sharpness at p=3, graph limits in the base norm, the
+reflected endpoint coefficient, and high-height control of the p=1 unit ball.
+See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,433 build jobs, 7,472
+public examples, and a transitive axiom audit of 42,858 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,043 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The remaining Section 3 assertion inventory and later sections still need
+assessment. All previous source corrections and unresolved external
+interpretations remain; see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: Radius dependence in the proof of Lemma 3.4
 
 Two intermediate estimates on printed p. 25 fail uniformly in the radius.
 At p=2, fixed unit Fourier modes make the far subsum 1/(r*(r+1)) and

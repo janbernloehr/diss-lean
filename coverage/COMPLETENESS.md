@@ -37,8 +37,10 @@ text has been reconciled with its existing twelve-group comparison and
 three corrections. Section 3 now also has two endpoint-inequality corrections
 in Lemma 3.2's proof and formal refutations of two radius-dependent
 intermediate estimates in Lemma 3.4's proof. The main Lemma 3.4 remains
-proved. Continue through the remaining Section 3 proof assertions, then
-later sections in order.
+proved. Direct original-norm setup proofs now also cover closedness,
+equation (1.3), the first resolvent identity, height decay and the square
+estimate, with both signed coefficient formulas. Continue through the
+remaining Section 3 proof assertions, then later sections in order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

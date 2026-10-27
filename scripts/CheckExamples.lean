@@ -69337,3 +69337,67 @@ example : ∃ hz : (Real.pi : ℂ) + (1/4)*Complex.I ∉ freeLattice,
     exact h
 
 end Lemma34ProofChecks
+
+noncomputable section
+namespace Section3SetupChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Constant one in the original pair Young bound is attained at p=3.
+example : ∃ (φ : CoeffPair 3) (a : CoeffPair 1),
+    ‖φ‖ = 1 ∧ ‖a‖ = 1 ∧ ‖sourcePotentialFromL1 φ a‖ = ‖φ‖*‖a‖ := by
+  let φ : CoeffPair 3 := WithLp.toLp 3 ((lp.single 3 7 1 : Coeff 3),0)
+  let a : CoeffPair 1 := WithLp.toLp 1 (0,(lp.single 1 0 1 : Coeff 1))
+  have he : sourcePotentialFromL1 φ a = φ := by
+    apply WithLp.ofLp_injective
+    apply Prod.ext
+    · change Coeff.convolution (lp.single 3 7 1) (lp.single 1 0 1) = _
+      ext j
+      simp [Coeff.convolution_single_right,φ]
+    · change Coeff.convolution (0 : Coeff 3) (0 : Coeff 1) = 0
+      ext j
+      simp [Coeff.convolution_apply]
+  refine ⟨φ,a,by simp [φ],by simp [a],?_⟩
+  rw [he]
+  simp [a]
+
+-- Only base-space convergence is assumed, not convergence in the stronger domain norm.
+example (φ : CoeffPair 3) (f : ℕ → WeightedCoeffPair (Weight.sobolev 1) 3)
+    (x y : CoeffPair 3)
+    (hx : Tendsto (fun k => sourceDomainInclusion (f k)) atTop (𝓝 x))
+    (hy : Tendsto (fun k => sourceOperator (by simp) φ (f k)) atTop (𝓝 y)) :
+    ∃ a : WeightedCoeffPair (Weight.sobolev 1) 3,
+      sourceDomainInclusion a = x ∧ sourceOperator (by simp) φ a = y := by
+  apply (mem_sourceUnboundedOperator_graph (by simp) φ x y).mp
+  apply (sourceUnboundedOperator_isClosed (by simp) φ).mem_of_tendsto (hx.prodMk_nhds hy)
+  exact Eventually.of_forall fun k =>
+    (mem_sourceUnboundedOperator_graph (by simp) φ _ _).mpr ⟨f k,rfl,rfl⟩
+
+-- The signed second formula sees raw input mode -1 and potential mode +2.
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    (sourceDoubleResolvent (by simp : (1 : ℝ≥0∞) ≠ ⊤)
+      (WithLp.toLp 1 (0,(lp.single 1 2 1 : Coeff 1))) z hz
+      (WithLp.toLp 1 ((lp.single 1 (-1) 1 : Coeff 1),0))).snd 1 =
+        1/(z-(Real.pi : ℂ))^2 := by
+  rw [sourceDoubleResolvent_signed_snd_apply,tsum_eq_single (1 : ℤ)]
+  · norm_num [pow_two]
+  · intro m hm
+    have hneg : -m ≠ (-1 : ℤ) := by omega
+    simp [lp.single_apply,Pi.single_apply,hneg]
+
+-- High-height smallness controls the whole original p=1 unit ball in both half-planes.
+example (ε : ℝ) (hε : 0 < ε) :
+    ∃ H : ℝ, 0 < H ∧ ∀ z : ℂ, H ≤ |z.im| → ∀ hz : z ∉ freeLattice,
+      ∀ a : CoeffPair 1, ‖a‖ ≤ 1 →
+        ‖sourceFreeResolventToL1 (by simp : (1 : ℝ≥0∞) ≠ ⊤) z hz a‖ < ε := by
+  obtain ⟨H,hH,h⟩ := exists_sourceFreeResolventToL1_uniform_small
+    (by simp : (1 : ℝ≥0∞) ≠ ⊤) ε hε
+  refine ⟨H,hH,?_⟩
+  intro z hz hz0 a ha
+  let T : CoeffPair 1 →L[ℂ] CoeffPair 1 := sourceFreeResolventToL1 (by simp) z hz0
+  have hT : ‖T‖ < ε := h z hz hz0
+  have hmul : ‖T‖*‖a‖ ≤ ‖T‖ := mul_le_of_le_one_right (norm_nonneg T) ha
+  exact (T.le_opNorm a).trans_lt (hmul.trans_lt hT)
+
+end Section3SetupChecks
