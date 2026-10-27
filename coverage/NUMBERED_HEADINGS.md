@@ -13,6 +13,31 @@ proved, or account for every unnumbered assertion, displayed formula and
 proof sentence. The focused audits record the implemented domains,
 corrections and remaining qualifications; a heading match is not a proof.
 
+The [source-comparison snapshot](source-review-index.json) now publishes the
+recorded comparisons for these headings, together with selected unnumbered
+assertions, declaration references, review qualifications, and module hashes.
+It contains 46 review records and 609 module-hash entries covering 577 distinct
+modules. The exact 2014 reference comparison and Appendix G.2 interval-norm
+interpretation remain unresolved. No completeness percentage is inferred.
+
+From the repository root, check the snapshot with:
+
+```sh
+python3 scripts/check_source_reviews.py
+```
+
+An optional `--source-text /path/to/diss.txt` also checks the exact cached
+extraction hash and heading positions. The checker performs no downloads.
+It detects missing comparisons, changed source locations, and changed reviewed
+modules, Lean sources, or dependency-lock snapshots. It does not check the truth
+of a review's prose or rerun Lean. The recorded successful `./scripts/check.sh` result belongs
+to the identified source snapshot; run that command for fresh proof validation.
+
+When source files change, review the affected comparisons and dependencies,
+run the relevant Lean validation, and update the snapshot with that evidence.
+Changing a hash alone is not a semantic review. The unresolved qualifications
+and the limited scope of unnumbered comparisons must remain explicit.
+
 ## Candidate labels without a dissertation heading
 
 | Candidate label | Extraction line | Classification |

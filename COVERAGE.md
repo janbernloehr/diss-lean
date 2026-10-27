@@ -18,6 +18,11 @@ The [reviewed numbered-heading index](coverage/NUMBERED_HEADINGS.md)
 distinguishes actual statements, numbered remarks and reference-only labels.
 Its counts describe source locations, not proved coverage.
 
+The [source-comparison snapshot](coverage/source-review-index.json) publishes
+the recorded statement comparisons, qualifications and reviewed module hashes.
+`python3 scripts/check_source_reviews.py` checks its integrity and source snapshot;
+it does not certify semantic completeness or replace Lean proof validation.
+
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
 | Section20 proof of Lemma20.2: exact gap-length approximation | [SymmetricExactGapOpening](NLS/ZakharovShabat/SymmetricExactGapOpening.lean), [SourceExactGapOpening](NLS/ZakharovShabat/SourceExactGapOpening.lean), [SourceFiniteGapCurveSobolev](NLS/ZakharovShabat/SourceFiniteGapCurveSobolev.lean), [SourceExactGapOpeningSobolev](NLS/ZakharovShabat/SourceExactGapOpeningSobolev.lean), [audit](coverage/SECTION_20.md) | Selected gap opens, all other numerical gap lengths remain fixed, and explicit finite-gap approximants converge in H1 and every nonnegative real Sobolev norm through the original source. |
