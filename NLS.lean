@@ -2667,6 +2667,7 @@ import NLS.ZakharovShabat.SourceRenormalizedImageTrajectories
 import NLS.ZakharovShabat.SourceRenormalizedLocalExistence
 import NLS.ZakharovShabat.SourceOrdinaryMass
 import NLS.ZakharovShabat.SourceOrdinaryPhaseTrajectory
+import NLS.ZakharovShabat.SourceOrdinaryFrequencyAsymptotic
 import NLS.ZakharovShabat.SourceOrdinaryFlow
 import NLS.ZakharovShabat.SourceOrdinaryFlowTrajectories
 import NLS.ZakharovShabat.SourceOrdinaryPhaseAnalytic
@@ -4289,6 +4290,7 @@ import NLS.ZakharovShabat.SourceWeightedActionHamiltonianPhysical
 import NLS.ZakharovShabat.SourceWeightedActionHamiltonianReal
 import NLS.ZakharovShabat.SourceWeightedActionHamiltonianNorm
 import NLS.ZakharovShabat.SourceWeightedActionHamiltonianDerivative
+import NLS.ZakharovShabat.SourcePhysicalFrequencyAsymptotic
 import NLS.ZakharovShabat.SourceStandardActionHamiltonian
 import NLS.SequenceSpaces.ActionMassNonextension
 import NLS.SequenceSpaces.RealActionMassNonextension

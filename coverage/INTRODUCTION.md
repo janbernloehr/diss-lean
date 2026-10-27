@@ -1,7 +1,8 @@
 # Introduction: the three main theorems and their qualifications
 
 This audit covers the three main results, their analytic setup on printed
-pp. 10–13, and the method-of-proof outline on pp. 13–15. The main-results
+pp. 10–13, the method-of-proof outline on pp. 13–15, and the dNLS
+frequency discussion and organizational synopsis on pp. 15–16. The main-results
 interfaces below are implemented. The mathematical opening on pp. 9–10 has
 also been compared with the original Hamiltonian, spectral conservation,
 action integrals, oscillators, almost-periodicity and nonlinear Fourier
@@ -20,6 +21,66 @@ norm, and the classical regularity assumptions for PDE symmetry. Invariance
 of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
+
+## Ordinary frequencies and related results, printed pp. 15–16
+
+[SourceOrdinaryFrequencyAsymptotic.lean](../NLS/ZakharovShabat/SourceOrdinaryFrequencyAsymptotic.lean)
+proves `omega_n - (2*pi*n)^2 -> 4M` along the cofinite integer filter,
+so both signed ends are covered. It applies to every real source with
+1<p<=2. The original renormalized moment coefficients are identified
+with an actual ell2 sequence before coordinate decay is used. An explicit
+bound holds at every index; its constant may depend on the source.
+One original family is constructed before quantifying over all inputs.
+The mass is the physical Hilbert mass and the absolutely convergent sum
+of original actions. No p=1 endpoint is added.
+
+[SourcePhysicalFrequencyAsymptotic.lean](../NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean)
+defines the frequency as the literal derivative of the full action energy
+along a weighted single-coordinate direction. The actual derivative
+exists on the complex action domain. Every real H1 source has its native
+weighted summable actions in that domain, with no finite-gap restriction.
+The derivative equals the ordinary phase frequency from any retained
+original Hilbert moment family. Its remainder tends to four times the
+physical Sobolev mass, and the full action energy recovers the physical
+Sobolev Hamiltonian.
+
+Four public examples check the noninteger source exponent 3/2, express
+the limit through the full original action sum, combine physical energy
+recovery with the literal derivative limit, and rule out a zero limit
+when the physical mass is nonzero.
+
+The comparison `IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27`
+in the [source-comparison snapshot](source-review-index.json) records
+eight assertion groups at extraction lines 676–735. It preserves these
+distinctions:
+
+- H-star is nonpositive and locally concave. Its negative Hessian is
+  distinct from the Hessian after the physical mass term is restored.
+  The historical phrase about strict convexity is not an additional
+  affirmative theorem. The external global two-sided estimates and KdV
+  results are outside this source comparison.
+- The Hilbert frequency has one common summable-action domain and analytic
+  realizations in all ellr for r>1, including infinity separately.
+  The source sequence maps are analytic for finite r>1 with r>=p/2.
+  These imply the weaker printed mixed membership: for p>2 the frequency
+  lies in ell(p/2); for 1<p<=2 it lies in OnePlus. This is a consequence
+  of the retained realizations, not a new local decomposition constructor.
+- The stronger proved common remainder is `omega-star + 2I` in
+  `ell(p/3) + OnePlus`. Its two parts are chosen before the target exponent.
+  The local inverse at zero and generic local inverses use finite p>2,
+  q=p/2; no inverse on ell1 is inferred from the Hilbert realizations.
+- The chapter synopsis reuses the recorded original-distribution,
+  spectral, action-angle, Birkhoff, residue, dynamics and high-regularity
+  comparisons with unchanged evidence. Their source corrections remain.
+  The appendix and notation descriptions do not certify completeness.
+
+The precise 2014 construction identification and Appendix G.2 norm
+interpretation remain unresolved. The next assessment will reconcile
+all accumulated comparisons and their qualifications.
+
+Validation passes: 8,426 build jobs, 7,458 public examples and a
+transitive axiom audit of 42,784 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
 
 ## Renormalized energy and method of proof, printed pp. 13–15
 
@@ -73,8 +134,8 @@ The corrected gauge factor four, all-integer trace sum, and negative
 cubic-residue coefficient remain in force. The actual action image is
 covered separately below. Bibliographic priority, external solution
 identifications, the I-method narrative and other PDE comparisons are
-not mathematical theorems established by this record. The remaining
-related-results discussion from extraction line 676 onward is separate.
+not mathematical theorems established by this record. The related-results
+discussion from extraction line 676 onward is compared separately above.
 
 Validation passes: 8,424 build jobs, 7,454 public examples and a
 transitive axiom audit of 42,772 NLS declarations. The 21 inherited

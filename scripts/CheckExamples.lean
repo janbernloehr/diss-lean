@@ -69017,3 +69017,80 @@ example (a b h k : ScalarDomain 2)
   fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals a b h k ha hb hh hk
 
 end IntroductionRenormalizedEnergyChecks
+
+noncomputable section
+namespace IntroductionOrdinaryFrequencyChecks
+open Set Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]
+  norm_num⟩
+
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem halfOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem halfTwo : (3/2 : ℝ≥0∞) ≤ 2 :=
+  (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr (by norm_num)
+
+-- One family works for all sources at the noninteger exponent 3/2.
+example : ∃ W₀ W V : Set (CoeffPair (3/2)),
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ D : SourceSection17OriginalData halfFinite halfOne W₀ W V s,
+    ∃ Wa : Set (CoeffPair (3/2)),
+    ∃ A : SourceAbelianMomentAtlas halfFinite halfOne Wa s,
+    ∃ B U : Set (CoeffPair (3/2)), SourceSection20Data D A B U ∧
+      ∀ φ : realTypeSourceSubmodule (3/2),
+        Tendsto (fun n : ℤ => A.ordinaryPhaseFrequency halfTwo φ n - (2*Real.pi*n)^2)
+          cofinite (𝓝 (4*sourceOrdinaryMass halfTwo φ)) ∧
+        ∃ C : ℝ, 0 < C ∧ ∀ n : ℤ,
+          |A.ordinaryPhaseFrequency halfTwo φ n - (2*Real.pi*n)^2| ≤ C :=
+  exists_originalOrdinaryFrequency_mass_limit (p := 3/2) halfFinite halfOne halfTwo
+
+-- The shift is four times the entire action sum, without a finite-gap assumption.
+example {W₀ W V Wa B U : Set (CoeffPair 2)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 2) :
+    Tendsto (fun n : ℤ => A.ordinaryPhaseFrequency le_rfl φ n - (2*Real.pi*n)^2)
+      cofinite (𝓝 (4*∑' n : ℤ, (sourceComplexAction (by simp) (by norm_num) n φ.val).re)) := by
+  simpa only [sourceOrdinaryMass_eq_tsum (p := 2) (by simp) (by norm_num)] using
+    Q.ordinaryFrequency_mass_limit le_rfl φ
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+-- The same full action energy recovers the physical H1 energy and its frequency limit.
+example {W₀ W V : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+    (E : SourceOriginalHamiltonianData D T F H) (a : realTypeSobolevSourceLocus) :
+    sourceFullActionHamiltonian H (sourceSobolevEnergyActions a) = periodOneSobolevHamiltonian a.val ∧
+      Tendsto (fun n : ℤ =>
+        deriv (fun z : ℂ => sourceFullActionHamiltonian H
+          (sourceSobolevEnergyActions a +
+            z • WeightedCoeff.single sourceEnergyActionWeight.toWeight n 1)) 0 -
+          (2*(Real.pi : ℂ)*n)^2)
+        cofinite (𝓝 (4*periodOneSobolevMass a.val)) :=
+  ⟨E.full_action_physical_identity a, E.full_action_frequency_mass_limit a⟩
+
+-- Nonzero physical mass rules out an incorrect zero remainder limit.
+example {W₀ W V : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+    (E : SourceOriginalHamiltonianData D T F H) (a : realTypeSobolevSourceLocus)
+    (hm : periodOneSobolevMass a.val ≠ 0) :
+    ¬ Tendsto (fun n : ℤ => sourceFullActionFrequency H (sourceSobolevEnergyActions a) n -
+      (2*(Real.pi : ℂ)*n)^2) cofinite (𝓝 0) := by
+  intro hz
+  have he := tendsto_nhds_unique (E.full_action_frequency_mass_limit a) hz
+  exact hm ((mul_eq_zero.mp he).resolve_left (by norm_num))
+
+end IntroductionOrdinaryFrequencyChecks

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal renormalized energy `Hr = H3 - 2 H1^2` now
-has proved physical gradients and generates the constructed smooth
-renormalized NLS solution. It is entire on the full complex H1 space,
-with derivative `dH - 4 M dM`. The introductory proof-method comparison
-retains the established spectral and sequence-space qualifications.
+Latest step: the original ordinary frequency remainder now tends to
+exactly four times physical mass: `omega_n - (2*pi*n)^2 -> 4M`, for
+all real Fourier-Lebesgue inputs with 1<p<=2. On real H1 inputs these
+frequencies are proved to be the literal action derivatives of the full
+physical energy, including infinitely many open gaps.
 See the [introduction audit](coverage/INTRODUCTION.md).
 The remaining dissertation source audit is still in progress.
 

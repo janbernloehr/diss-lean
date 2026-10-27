@@ -1,6 +1,35 @@
 # Implementation status
 
-## Current milestone: The renormalized physical energy
+## Current milestone: Ordinary frequencies and the physical mass shift
+
+The original ordinary frequencies now satisfy the sharp limit
+`omega_n - (2*pi*n)^2 -> 4M` as the absolute signed index grows.
+This holds for every real Fourier-Lebesgue source with 1<p<=2, with an
+explicit bound for every index and one original family chosen before
+all inputs. The mass is the physical mass, equivalently the full action sum.
+
+On every real H1 source, the frequency is also the literal coordinate
+derivative of the full physical energy in native weighted action space.
+This includes infinitely many open gaps and agrees with independently
+constructed original Hilbert phase frequencies. Four examples cover a
+noninteger exponent, the full action sum, physical energy recovery, and
+the failure of a zero remainder limit at nonzero mass.
+See the [introduction audit](coverage/INTRODUCTION.md).
+
+Validation: `./scripts/check.sh` passes with 8,426 build jobs, 7,458
+public examples, and a transitive axiom audit of 42,784 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,930 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The related-results and chapter-organization comparison now retains the
+precise analytic and local-inverse exponent ranges, local concavity of
+H-star, and all earlier source corrections. Historical Korotyaev estimates
+and KdV comparisons are not newly proved. Next: reconcile the accumulated
+source comparisons into a final scope assessment, retaining the unresolved
+2014 construction identification and Appendix G.2 norm interpretation.
+
+## Previous milestone: The renormalized physical energy
 
 The literal energy `Hr = H3 - 2 H1^2` now has both proved classical
 variational gradients. Its Hamiltonian field gives equation (0.4), with

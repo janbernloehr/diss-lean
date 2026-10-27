@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T11:26:05.928388+00:00",
-  "base_commit": "dcb3ebe278ce9409d175d74d25f6a593ce2b11e2",
+  "published_utc": "2026-10-27T11:53:11.421986+00:00",
+  "base_commit": "d861ecd854a06f2b0bc0caa76018ffa82a71acbf",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 62,
-    "module_hash_checks": 925,
-    "distinct_modules": 784
+    "review_records": 63,
+    "module_hash_checks": 950,
+    "distinct_modules": 795
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "dcb3ebe278ce9409d175d74d25f6a593ce2b11e2",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes ClassicalRenormalizedEnergyVariation, SobolevRenormalizedEnergy and four public examples.",
+    "base_commit": "d861ecd854a06f2b0bc0caa76018ffa82a71acbf",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceOrdinaryFrequencyAsymptotic, SourcePhysicalFrequencyAsymptotic and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8424,
-    "public_examples": 7454,
-    "transitive_NLS_declarations": 42772,
+    "build_jobs": 8426,
+    "public_examples": 7458,
+    "transitive_NLS_declarations": 42784,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4701,
-      "sha256": "57354f7c824554b9993429242f455f48a3c8391f6cc43943aadc27527828805a"
+      "files": 4703,
+      "sha256": "12abcbf283efe51f47f30ea2ff2d39a752580b6cc9ddc1cca0e9f36913e4b137"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -11890,6 +11890,337 @@
       "contextual_scope": "Historical attribution, novelty, the external Christ and Grunrock-Herr construction identification, comparisons with other PDEs and the I-method narrative are contextual references. They are not Lean theorem claims in this record. Lines 651-661 contain related-work comparisons; the remaining related-results narrative from 676 onward is reserved for the next source assessment.",
       "qualification": "All hash-listed modules were read completely during this introductory-method assessment or its retained preparatory reads; their current hashes were verified. Earlier physical-operator, multiplicity, distribution-carrier and named-result comparisons are explicitly reused with unchanged evidence, rather than represented as a fresh audit of all transitive dependencies. The two new modules and four public examples bridge the literal Hr energy, both classical gradients, the constructed solution and the full complex H1 derivative. Source corrections for the gauge factor, trace index set and residue sign remain. The one-smoothing comparison retains positive integer order, and the nonextension comparison retains trajectory topology. No complete-introduction or complete-dissertation claim is made. The precise 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unresolved.",
       "source_record_sha256": "ef63081f90afa903e8dcdbad6b868e44daab92a64a8bb5976dfe96ebec51e6f5"
+    },
+    "IntroductionOrdinaryFrequencyRelatedSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "d861ecd854a06f2b0bc0caa76018ffa82a71acbf",
+      "updated_utc": "2026-10-27T11:53:11.421986+00:00",
+      "source_lines": [
+        [
+          676,
+          735
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            676,
+            682
+          ],
+          "requirement": "The related-work paragraph describes nonpositivity, continuity, two-sided estimates and the historical question of strict convexity.",
+          "finding": "The retained original H-star is analytic on its complex action neighborhood, real and nonpositive on its nonnegative cone, and vanishes only at zero. Its Hessian at zero is -2 times the Hilbert pairing, and its real Hessian is locally bounded above by minus the squared norm. Thus the proved local property is concavity. The words strict convexity occur in the historical description of an external question; this comparison does not turn them into a new affirmative theorem. Global two-sided ell2 estimates attributed to Korotyaev and the KdV assertions are not independently established here. Restoring twice squared mass changes the full physical Hamiltonian; its Hessian must not be substituted for H-star.",
+          "declarations": [
+            "SourceOriginalHamiltonianData.sign",
+            "SourceOriginalHamiltonianData.source_sign",
+            "SourceOriginalHamiltonianData.hessian_zero",
+            "SourceOriginalHamiltonianData.concavity",
+            "SourceOriginalHamiltonianData.physical_identity"
+          ]
+        },
+        {
+          "source_lines": [
+            683,
+            686
+          ],
+          "requirement": "At real H1 sources the ordinary frequencies have free quadratic dispersion plus an O(1) remainder.",
+          "finding": "The new source theorem proves the sharper signed-cofinite limit omega_n-(2*pi*n)^2 -> 4M at every real FLp source with1<p<=2. Its renormalized frequency is the original moment coefficient, identified with a finite-exponent sequence before using coordinate decay. There is an explicit bound at every integer index. The unconditional theorem constructs one original family before all sources; the positive bound may depend on the source. Mass is the actual physical Hilbert mass and the absolutely convergent original action sum. The theorem neither adds p=1 nor assumes finite gap.",
+          "declarations": [
+            "SourceSection20Data.renormalizedFrequency_tendsto_zero",
+            "SourceSection20Data.ordinaryFrequency_mass_limit",
+            "SourceSection20Data.ordinaryFrequency_remainder_bound",
+            "exists_originalOrdinaryFrequency_mass_limit",
+            "sourceOrdinaryMass_eq_tsum",
+            "summable_sourceOrdinaryActions"
+          ]
+        },
+        {
+          "source_lines": [
+            683,
+            686
+          ],
+          "requirement": "The ordinary frequency must also be the derivative of the physical Hamiltonian in its original action coordinates.",
+          "finding": "The new sourceFullActionFrequency is literally deriv of the full action energy along a native weighted single-coordinate direction. On the valid complex action domain it equals the retained original frequency plus4M and free dispersion. Every real H1 source has native weighted summable actions in that domain, including sources with infinitely many open gaps. The derivative agrees with any independently retained original Hilbert moment family, and its remainder tends to4 times periodOneSobolevMass. The same full action energy equals periodOneSobolevHamiltonian. This identification uses existence of actual derivatives, rather than a total deriv fallback outside the domain.",
+          "declarations": [
+            "sourceFullActionFrequency",
+            "SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "SourceOriginalHamiltonianData.full_action_frequency_eq",
+            "SourceOriginalHamiltonianData.full_action_frequency_physical",
+            "SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+            "SourceOriginalHamiltonianData.full_action_frequency_mass_limit",
+            "SourceOriginalHamiltonianData.full_action_frequency_remainder_bound",
+            "SourceOriginalHamiltonianData.full_action_physical_identity"
+          ]
+        },
+        {
+          "source_lines": [
+            685,
+            703
+          ],
+          "requirement": "The Hilbert frequency has an ell2 continuous realization and an analytic extension; the displayed weaker frequency estimate uses ell(p/2)+OnePlus.",
+          "finding": "The original Hilbert action frequency has one common summable-action domain with analytic realizations in every finite ellr forr>1, and a compatible ell-infinity realization. Original source frequency realizations are analytic on one common source domain for finite r>1,r>=p/2. Forp>2 this includes r=p/2, so the weaker displayed mixed membership has zero OnePlus part. For1<p<=2 these realizations give membership in every finite ellr,r>1, which is the OnePlus condition; no ell1 endpoint is asserted. These are consequences of the retained sequence-realization statements, not a new locally bounded mixed-decomposition theorem in this milestone. The stronger proved common decomposition concerns omega-star+2I, with an ell(p/3) part and one OnePlus part, chosen before the target exponent. It is not the displayed uncorrected expression.",
+          "declarations": [
+            "SourceSection20Data.sequence_analytic",
+            "SourceOriginalHilbertFrequencyData.realizations",
+            "SourceOriginalHilbertFrequencyData.realizations_top",
+            "SourceOriginalFrequencyData.refined",
+            "SourceOriginalFrequencyData.mixed",
+            "exists_sourceActionFrequency_asymptotic"
+          ]
+        },
+        {
+          "source_lines": [
+            702,
+            710
+          ],
+          "requirement": "The renormalized action-frequency map is analytic and locally invertible at zero; generic invertibility and KdV comparisons must retain their scope.",
+          "finding": "For finite p>2 and q=p/2, the same constructed original action-frequency map carrying the refined estimate has derivative-2Id at zero, both analytic inverse germs, and inverse derivative-1/2Id. Its corrected derivative is compact throughout its connected action domain; Fredholm index zero and analytic local inverses hold on an open dense subset. All higher-exponent families agree with the common Hilbert frequency on the full nonnegative summable cone. No local inverse on ell1 is inferred from the Hilbert all-r realizations. The KdV statements describe other work and are outside this dNLS comparison.",
+          "declarations": [
+            "SourceOriginalFrequencyData.derivative_zero",
+            "SourceOriginalFrequencyData.local_inverse",
+            "SourceOriginalFrequencyData.compact_derivative",
+            "SourceOriginalFrequencyData.fredholm",
+            "SourceOriginalFrequencyData.generic_local_inverse",
+            "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "sourceSection18_original_frequencies"
+          ]
+        },
+        {
+          "source_lines": [
+            713,
+            720
+          ],
+          "requirement": "The organization paragraph repeats the original distribution operator, spectral extension, actions, angles and Birkhoff construction.",
+          "finding": "This paragraph is mapped to the retained Section3-17 and native-periodic comparisons, including the original distribution carrier, domains, full multiplicities, Fourier asymptotics, original contour actions and canonical coordinates. The native Birkhoff map retains raw coordinates and pair norms on the original smooth-test distributions. Source corrections and restrictions in those comparisons are retained. Their hashes are verified, but this organizational synopsis does not constitute a fresh audit of every transitive dependency, and does not identify the construction with the exact external2014 edition.",
+          "declarations": [
+            "sourceSection17_original",
+            "NativeWeightedPeriodic.birkhoff",
+            "NativeWeightedPeriodic.range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            721,
+            726
+          ],
+          "requirement": "Chapter4 provides the frequency and H-star formulas, the stated curvature property, and the renormalized initial-value problem.",
+          "finding": "The retained Section18/20/21 comparisons use actual original contour moments with convergence and analytic sequence realizations on common neighborhoods. H-star extends analytically on the real FL4 source locus and has local negative Hessian in action coordinates. The generic wording convexity properties on this page refers to that locally concave Theorem0.2 result, without asserting positive Hessian. The Section22 comparison supplies the actual original renormalized global flow and its qualified solution and continuity claims. The negative cubic residue sign, mass-phase factor four and trajectory-topology qualifications remain.",
+          "declarations": [
+            "SourceSection20Data.sequence_analytic",
+            "SourceOriginalHamiltonianData.source_extension",
+            "SourceOriginalHamiltonianData.concavity",
+            "sourceSection18_original_hamiltonian"
+          ]
+        },
+        {
+          "source_lines": [
+            727,
+            735
+          ],
+          "requirement": "High-regularity spectrum localization and action estimates imply Theorem0.1; the appendices and notation list are described.",
+          "finding": "The unchanged Sections23-28 comparisons retain a localization threshold controlled by the literal H1 norm, all signed indices and multiplicities, independently defined physical odd Hamiltonians, absolutely convergent traces and quantitative two-sided squared action-norm estimates with their lower-order errors. The displayed first-order comparison is an outline of those estimates, not a replacement by asymptotic equivalence with omitted hypotheses or constants. The all-integer trace and positive Hamiltonian sign corrections remain. The reference to appendices and notation is navigational; it does not resolve AppendixG2 or certify completeness by section count.",
+          "declarations": [
+            "sourceH1_uniform_localization",
+            "sourceSection23_original_estimates",
+            "sourceSection26_original"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "Section3SourceComparison-2026-10-21",
+        "Section4SourceComparison-2026-10-21",
+        "Section5SourceComparison-2026-10-21",
+        "Section6FinalStatementSourceComparison-2026-10-27",
+        "Section7CurrentSourceComparison-2026-10-27",
+        "Section8SourceComparison-2026-10-27",
+        "Section9SourceComparison-2026-10-27",
+        "Section10SourceComparison-2026-10-27",
+        "Section11SourceComparison-2026-10-27",
+        "Section12NamedSourceComparison-2026-10-27",
+        "Section13SourceComparison-2026-10-27",
+        "Section14SourceComparison-2026-10-27",
+        "Section15SourceComparison-2026-10-27",
+        "Section16SourceComparison-2026-10-27",
+        "Section17SourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27",
+        "Section20SourceComparison-2026-10-27",
+        "Section21SourceComparison-2026-10-27",
+        "Section22SourceComparison-2026-10-27",
+        "Section23SourceComparison-2026-10-27",
+        "Section25SourceComparison-2026-10-27",
+        "Section26SourceComparison-2026-10-27",
+        "Section27SourceComparison-2026-10-27",
+        "Section28SourceComparison-2026-10-27",
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "IntroductionNormalizationSourceComparison-2026-10-27",
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+        "IntroductionRealActionImageSourceComparison-2026-10-27",
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "IntroductionMainTheoremsSourceComparison-2026-10-27": {
+          "source_record_sha256": "1b846c5958e9c5251e00afeae48ba0c407a4d73beea2d736a08725eb4f2336a9",
+          "module_hashes_verified": true
+        },
+        "Section3SourceComparison-2026-10-21": {
+          "source_record_sha256": "1fe1a23b8e7821d1978ef4d25e5e1d0cc1d655b53126771d4d52030a824f9803",
+          "module_hashes_verified": true
+        },
+        "Section4SourceComparison-2026-10-21": {
+          "source_record_sha256": "ce1145935f5e170c05267e0c0e69df374ee8950f1c92fac03a49f20ca21c68e8",
+          "module_hashes_verified": true
+        },
+        "Section5SourceComparison-2026-10-21": {
+          "source_record_sha256": "171daa07c6c30a2a8cb59e5ef4425bb01d2f5c92e82d60d78e8eb337578415e2",
+          "module_hashes_verified": true
+        },
+        "Section6FinalStatementSourceComparison-2026-10-27": {
+          "source_record_sha256": "1733f7c6a77d000d612dd6a2040546eeff5aa7cca693ca9ced968e5e1e7c6d61",
+          "module_hashes_verified": true
+        },
+        "Section7CurrentSourceComparison-2026-10-27": {
+          "source_record_sha256": "ff3d54cdafb793fc324ba265b4d5f7610ccac96185ee57f157da40108a2f4cae",
+          "module_hashes_verified": true
+        },
+        "Section8SourceComparison-2026-10-27": {
+          "source_record_sha256": "dbf6c9cbffd748e536f03c4ff8bf87941303dc483bcb1a29ccbba916116343b5",
+          "module_hashes_verified": true
+        },
+        "Section9SourceComparison-2026-10-27": {
+          "source_record_sha256": "da77704338493763ed577d639152cebe06b14b0f918b575944fa73673527cb75",
+          "module_hashes_verified": true
+        },
+        "Section10SourceComparison-2026-10-27": {
+          "source_record_sha256": "8a977cdd903c15a3b6777396e2952e7a0983fb00688b81cc710dc53cc1294c44",
+          "module_hashes_verified": true
+        },
+        "Section11SourceComparison-2026-10-27": {
+          "source_record_sha256": "c26e7f81c26273b4613c8ae2c99dcb73b5481671749f1a2a64e165e4c6865e5f",
+          "module_hashes_verified": true
+        },
+        "Section12NamedSourceComparison-2026-10-27": {
+          "source_record_sha256": "81a319e710c27948bd6e23cfcfd2f6206bffb63dd4752c07d234215a6e5f356e",
+          "module_hashes_verified": true
+        },
+        "Section13SourceComparison-2026-10-27": {
+          "source_record_sha256": "ea3bced33ade57a06a83ae24cf73e5f76c25bebaf8978e3894d9373ffd39fa87",
+          "module_hashes_verified": true
+        },
+        "Section14SourceComparison-2026-10-27": {
+          "source_record_sha256": "e4357360857ddae6365779a1dd32d28b1150a950a3dc51f46c10b84dfb7f49f4",
+          "module_hashes_verified": true
+        },
+        "Section15SourceComparison-2026-10-27": {
+          "source_record_sha256": "7e103fb3ca5a81e3896db38f5d37d3a6f314e047c01ba8d8ba34d56db412a0d2",
+          "module_hashes_verified": true
+        },
+        "Section16SourceComparison-2026-10-27": {
+          "source_record_sha256": "bbea3b4bc2bd79f8b03104f607799dbc85912812685be8463f532bdefeee8bbd",
+          "module_hashes_verified": true
+        },
+        "Section17SourceComparison-2026-10-27": {
+          "source_record_sha256": "a3c0e9cbca0059369e09052410b185d54b417e91c55736f9e70a5a2864a24597",
+          "module_hashes_verified": true
+        },
+        "Section18SourceComparison-2026-10-27": {
+          "source_record_sha256": "483a2acba2980ec2b3182fdf2701fc205c927f2d3a1fc1d3b1978d6b6af45c8e",
+          "module_hashes_verified": true
+        },
+        "Section20SourceComparison-2026-10-27": {
+          "source_record_sha256": "39f02d6e478af59b3c83001ccf11bb4cfc058bd51bf3030baf03b4e736122754",
+          "module_hashes_verified": true
+        },
+        "Section21SourceComparison-2026-10-27": {
+          "source_record_sha256": "087a2ecff9feb2d3f691dc30459442341f4665b3fb5aad2fc0a23115860e2801",
+          "module_hashes_verified": true
+        },
+        "Section22SourceComparison-2026-10-27": {
+          "source_record_sha256": "a9285bd4b629924591e23ffe171322b76180f60947e441351453a37a8c8a7ea2",
+          "module_hashes_verified": true
+        },
+        "Section23SourceComparison-2026-10-27": {
+          "source_record_sha256": "1fc79469f93a83f712e7fa7a377d6f23738f7a194f9095b4ae8327b65da4b007",
+          "module_hashes_verified": true
+        },
+        "Section25SourceComparison-2026-10-27": {
+          "source_record_sha256": "15947c1820834b4ec88f7b4a6b9e610f2a0c5eb9e1cef04fee2d3301e2066f78",
+          "module_hashes_verified": true
+        },
+        "Section26SourceComparison-2026-10-27": {
+          "source_record_sha256": "ea5a9131f5f985baa5d6ad42ef65ee0166d137dc7ea1b96ce31280ece617c12a",
+          "module_hashes_verified": true
+        },
+        "Section27SourceComparison-2026-10-27": {
+          "source_record_sha256": "5c9191041ef18b0b9291c981aa340aa2ee4c1209313c20929611e87f700d747d",
+          "module_hashes_verified": true
+        },
+        "Section28SourceComparison-2026-10-27": {
+          "source_record_sha256": "5bd5fd617fbb581cb7a7db1e27427218aa50ed19e598ab6a6d9e5cc5245caaf3",
+          "module_hashes_verified": true
+        },
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2",
+          "module_hashes_verified": true
+        },
+        "IntroductionNormalizationSourceComparison-2026-10-27": {
+          "source_record_sha256": "196676cd67946bb121a2d689a4bd582db6d05d1cef74c360f204297fe144b5dc",
+          "module_hashes_verified": true
+        },
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27": {
+          "source_record_sha256": "bb83e37ccea9f174effcf223c0c79bcb0d8542ecad26409be41a28b79e6fbaf4",
+          "module_hashes_verified": true
+        },
+        "IntroductionRealActionImageSourceComparison-2026-10-27": {
+          "source_record_sha256": "fae5993c92528450d3a4de7d9d34b8fe0a6501cd3258cee243c671c921282feb",
+          "module_hashes_verified": true
+        },
+        "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27": {
+          "source_record_sha256": "ef63081f90afa903e8dcdbad6b868e44daab92a64a8bb5976dfe96ebec51e6f5",
+          "module_hashes_verified": true
+        }
+      },
+      "rendered_source": {
+        "printed_pages": [
+          15,
+          16
+        ],
+        "images": {
+          "IntroductionMethodsCurrentReview-015.png": "a3db236d7c15f94f86acf803f01bf8e5b8142823236afc6c313c2eb262a6207e",
+          "IntroductionRelatedResultsCurrentReview-016.png": "9c19eb039b9e63ee51333947091687c7a4b9016389fcb7c8f895fa0308d047e0"
+        },
+        "inspection": "Viewed both rendered pages. Page15 says strict convexity in its historical paragraph; page16 uses the more general phrase convexity properties referring to Theorem0.2 and prints the weaker omegaStar=ell(p/2)+ell1+ formula."
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourceHamiltonianActionConcavity.lean": "3d3c7c4eada3348ffdb6f4181e4faaa342863da0abc843b81d4e5b266b76ae78",
+        "NLS/ZakharovShabat/SourceSection18HamiltonianCorrection.lean": "75945b47f83c625df04a1fda87de6c884aa3277cbd4a8c118dba26fff1b754f1",
+        "NLS/ZakharovShabat/SourceActionFrequencyAsymptotic.lean": "5a7ee1a266669f22892cbb4db2898014732b7e9429cde3d4a2398c3e3325fcca",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalInverse.lean": "8278de5103689e1b01768aed3c12d4cd5ef37ad9c00de0345143ac5fd5e37dd1",
+        "NLS/ZakharovShabat/SourceFrequencyLocalInverse.lean": "f41153029e1541ee68edae809debebda64db088f08e43ff514703316fa298643",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbert.lean": "116260ef422acccd5299bf524734ff3e16309854700795b15a45515874869e08",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbertTop.lean": "196f4c70aac3cb357fad8fe144341f1a3136c0492686c6cd1126e0260c698119",
+        "NLS/ZakharovShabat/SourceOrdinaryFlow.lean": "a8788973aecd52c697e86b2f6dcfc1d00c8a6f85616c0de74d57970658a5e03c",
+        "NLS/ZakharovShabat/SourceFrequencySequenceBounds.lean": "2cacd5dbe9cd72a72183b5979b3373dd093880e1212e2732674e156df1a62005",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalPhysical.lean": "107f752f81e69f0d8f88df901c011ed6ada7e2a2d2f33f23e4389f194bf9e60f",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean": "e946e2913586faf92c6c9f7c3183a59f73fc6b9e294403857640c15b6975ae67",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean": "783315cb41fda455f8d279bd0daa24de5bf84aa646d1dab09d842ea134a69dec",
+        "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean": "442a9d5117daf5de594d40fa88dc06ef002439132849b3cdc1068a34954b7d23",
+        "NLS/ZakharovShabat/SourceHilbertActionTrace.lean": "5cc2d8abd32276f26e50776f946830ef84be8173578020c0e7e8c36871e17cd6",
+        "NLS/ZakharovShabat/SourceMassActionDifferential.lean": "666c7af967b3cb3f85d6cecb493c033b6535cc8a7067f27ca9d270ae8b83cc1e",
+        "NLS/ZakharovShabat/SourceOrdinaryFrequencyAsymptotic.lean": "7bc2f7d01c86987bd38bec9d6fcb24731dda563383c8eb04a61ba28baedb550e",
+        "NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean": "35403e2af2a1beb0e60323f41920d56bd57c6395a2d905b1b41fd0ea4a214c07",
+        "NLS/ZakharovShabat/SourceSection20Original.lean": "9ed9a2dc3c7fb07a0a4ae68596bbfd954421fb3b39db74cfeaf9072b5b855415",
+        "NLS/ZakharovShabat/SourceSection20Frequencies.lean": "d4d8d75a91faeb825d6ab1cc88bd70908425f72d237dafcaba52fd7f0a82fe53",
+        "NLS/ZakharovShabat/SourceSection20Domain.lean": "f6952eabd138e7105bb4eb4d4def41b38f42afa65607a089fc6aedc5b963913e",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/SequenceSpaces/PairExponentIdentity.lean": "9962c3aefa22a525567cecc9f6c43930cdf101f0b62ca2c729e53cd30c30d554",
+        "NLS/SequenceSpaces/ShiftedHolderDecay.lean": "40622952d8b9af822c354e65a11dd1ca19c782d1ed110d6d991d2d39e992f48c"
+      },
+      "contextual_scope": "This record distinguishes the mathematical dNLS frequency claim from historical attribution and the external Korotyaev/KdV estimates. Acknowledgments and funding at736-743 are contextual, not Lean assertions. The organizational summary reuses explicitly identified earlier source comparisons.",
+      "qualification": "Hash-listed modules were read completely during this assessment, its retained preparation or the immediately preceding method assessment; their current hashes were verified. Two new modules and four examples establish the sharp ordinary-frequency limit and its literal physical-energy derivative interpretation. Earlier section comparisons are reused explicitly with unchanged evidence. The weaker mixed-membership sentence is explained using existing analytic sequence realizations; no new local mixed-decomposition constructor is claimed. The exact2014 construction identification and AppendixG2 norm interpretation remain unresolved. No complete-introduction or complete-dissertation claim is made.",
+      "source_record_sha256": "08ea949391a4362f4db772f0d1a7a95171162224824538f873582661f5434bad"
     }
   }
 }
