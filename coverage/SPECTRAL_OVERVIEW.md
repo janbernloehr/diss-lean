@@ -1483,3 +1483,25 @@ This completes the locally uniform signed-counting and distant-parity
 claims in the opening of Section 7. The remaining semantic source audit,
 exact2014 and G2 qualifications are unchanged; whole-dissertation
 completion is not asserted.
+
+## An explicit nonreal eigenvalue of the actual physical operator
+
+The p.18 statement that the spectrum can be nonreal for complex potentials
+now has an explicit witness in the actual physical realization.
+[`PhysicalConstantPeriodicSpectrum.lean`](../NLS/ZakharovShabat/PhysicalConstantPeriodicSpectrum.lean)
+proves that the physical representative of the source constant potential
+is the constant pair (a,b) almost everywhere. For a nonzero first amplitude,
+the actual period-two bounded-inverse spectrum, and the union of the two
+actual signed spectra, satisfy exactly z^2=(pi*k)^2+a*b for some integer k.
+
+For the concrete physical potential (1,-1), i belongs to that actual
+spectrum and to the union of the full classical signed ODE eigenvalue
+sets. Its imaginary part is nonzero. The potential fails the physical
+real-type condition, and each of its two signed realizations fails
+self-adjointness. Thus the general complex case really admits nonreal
+physical eigenvalues. No assertion that every non-real-type potential
+has a nonreal spectrum is made.
+
+This is a source-specific witness and exact constant-potential comparison.
+The remaining semantic source audit, exact2014 and G2 qualifications
+remain separate.

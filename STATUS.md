@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: locally uniform physical signed counts
+## Current milestone: an explicit nonreal physical spectrum
+
+The original physical constant potential (1,-1) has i as an actual
+classical signed ODE eigenvalue, so its combined periodic spectrum is
+not real. Both signed physical realizations fail self-adjointness.
+This makes the p.18 complex-spectrum assertion explicit.
+
+More generally, for a nonzero first constant amplitude, the actual
+bounded-inverse spectrum satisfies the exact equation
+z^2=(pi*k)^2+a*b for an integer k. The physical representative is proved
+to equal the constant pair almost everywhere.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+scope. The remaining semantic source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,389 build jobs, 7,377
+public examples, and a transitive axiom audit of 42,323 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,762 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: locally uniform physical signed counts
 
 Section 7's locally uniform signed spectral statement is proved on the
 actual physical L2 space. One open convex neighborhood supplies every

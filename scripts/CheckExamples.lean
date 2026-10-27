@@ -68049,3 +68049,29 @@ example (u : IntervalPairL2) :
 
 end PhysicalSignedUniformCountingExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section PhysicalNonrealSpectrumExamples
+open Set MeasureTheory
+
+example (a b : ℂ) :
+    intervalL2Representative (sourcePhysicalL2 (sourceConstantPotential (p := 2) a b))
+      =ᵐ[volume.restrict (Ioc 0 1)] (fun _ : ℝ => (a,b)) :=
+  sourcePhysicalL2_constant_representative a b
+
+example (a b z : ℂ) (ha : a ≠ 0) :
+    z ∈ physicalPeriodicSpectrum (periodOnePair (sourceConstantPotential (p := 2) a b)) ↔
+      ∃ k : ℤ, z^2 = ((Real.pi : ℂ)*k)^2+a*b :=
+  mem_physicalPeriodicSpectrum_constant_iff a b z ha
+
+example : ∃ (u : IntervalPairL2) (z : ℂ), z.im ≠ 0 ∧
+    z ∈ classicalSignedEigenvalues u 0 ∪ classicalSignedEigenvalues u 1 :=
+  exists_nonreal_classicalSignedEigenvalue
+
+example (r : ℤ) :
+    ¬ IsSelfAdjoint (classicalSignedOperator
+      (sourcePhysicalL2 (sourceConstantPotential (p := 2) 1 (-1))) r) :=
+  classicalSignedOperator_constant_one_neg_one_not_selfAdjoint r
+
+end PhysicalNonrealSpectrumExamples
+end NLS.ZakharovShabat

@@ -4695,3 +4695,4 @@ import NLS.ZakharovShabat.ClassicalSignedCircleCounts
 import NLS.ZakharovShabat.PhysicalSignedUniformCircleCounts
 import NLS.ZakharovShabat.PhysicalSignedUniformEnumeration
 import NLS.ZakharovShabat.PhysicalSignedSpectralOverview
+import NLS.ZakharovShabat.PhysicalConstantPeriodicSpectrum

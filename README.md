@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 7's literal signed circle counts and distant parity
-assignment hold on one common physical L2 neighborhood. Counts retain the
-actual periodic/antiperiodic Jordan-chain dimensions, and the separate
-signed eigenvalue lists agree with the distant combined endpoint labels.
+Latest step: the concrete physical potential (1,-1) has the nonreal
+eigenvalue i, with full classical signed domains and the actual operator
+spectrum. Both signed realizations fail self-adjointness.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
