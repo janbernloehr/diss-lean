@@ -42,6 +42,8 @@ equation (1.3), the first resolvent identity, height decay and the square
 estimate, with both signed coefficient formulas. Literal denominator geometry,
 absolute double-sum majorization for the actual components, the near/far
 partition and the cutoff-retaining Fourier-tail identity are also proved.
+The literal Hölder displays, exact scalar norm factorization and explicit
+p=1 near/far radius bounds are now proved as well.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

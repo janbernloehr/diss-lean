@@ -77,6 +77,36 @@ Validation passes: 8,432 build jobs, 7,468 public examples and a
 transitive axiom audit of 42,847 NLS declarations. The 21 inherited
 warnings are unchanged; the new module and examples introduce none.
 
+## Hölder displays and endpoint estimates in Lemma 3.4
+
+[SourceLemma34Holder.lean](../NLS/ZakharovShabat/SourceLemma34Holder.lean)
+proves the two first Hölder displays before their separately refuted
+uniform radius simplifications.
+
+| Source step | Public entry point | Retained scope |
+| --- | --- | --- |
+| Literal denominator powers | `lemma34Holder_weight_eq` | The reciprocal product power is exactly the printed product of powered denominators. |
+| Selected-set Hölder inequality | `lemma34_masked_holder` | Finite p>1, 0<r<=1, arbitrary integer-pair subsets; both powered sums are summable. |
+| Numerator reduction | `summable_lemma34NumeratorMoment`, `lemma34NumeratorMoment_eq`, `lemma34MaskedNumeratorMoment_le` | Full moment equals the product of original scalar norm powers; selected roots are bounded with constant one, for all finite p>=1. |
+| Far display | `lemma34ProofFarSum_le_holder` | Exact strict far disjunction and its reciprocal moment. |
+| Near display and tail | `lemma34ProofNearSum_le_holder_tail` | Exact closed near set and symmetric remainder retaining abs(k)=abs(n). |
+| Endpoint modification | `lemma34MaskedSum_le_one`, `lemma34ProofNearSum_le_one`, `lemma34ProofFarSum_le_one` | Original l1 norms; near factor 1/r^2 and far factor 2/(r*(r+abs(n))), including zero and negative centers. |
+
+The examples check a cubic numerator moment of 216, the fixed p=2 far
+witness against the valid Hölder bound, a negative p=1 near mode attaining
+4 at r=1/2, and an infinite-support l1 far bound with coefficient 8/7.
+The previous actual signed-component majorizations apply to these scalar
+bounds. The general-p radius-free far estimate and r^(-2/p) near estimate
+retain their existing counterexamples. No new source refutation is claimed.
+
+Lemma34HolderSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups.
+They do not certify every proof assertion in Section 3.
+
+Validation passes: 8,436 build jobs, 7,480 public examples and a
+transitive axiom audit of 42,890 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Absolute double-sum majorization in Lemma 3.4
 
 [SourceLemma34Majorization.lean](../NLS/ZakharovShabat/SourceLemma34Majorization.lean)

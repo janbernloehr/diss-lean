@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: The absolute double sum in Lemma 3.4
+## Current milestone: Hölder estimates in Lemma 3.4
+
+The two literal Hölder displays are proved for every finite p>1, with
+convergence of their powered sums and the exact printed index sets.
+The full numerator moment factors into the original scalar norm powers;
+every selected moment has the norm product as a bound with constant one.
+The near estimate retains the symmetric potential remainder and its boundary.
+
+At p=1, explicit bounds retain the radius factors: 1/r^2 for the near
+sum and 2/(r*(r+abs(n))) for the far sum, multiplied by the appropriate
+original scalar norms. Four examples cover a cubic moment, the earlier
+far witness, a sharp negative near mode, and infinite-support l1 data.
+See the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: `./scripts/check.sh` passes with 8,436 build jobs, 7,480
+public examples, and a transitive axiom audit of 42,890 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,060 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The two later all-p uniform subsum estimates remain formally refuted;
+the main Lemma 3.4 remains proved. Continue the remaining Section 3
+assertion inventory. Existing external interpretation questions remain;
+see [completion scope](coverage/COMPLETENESS.md).
+
+## Previous milestone: The absolute double sum in Lemma 3.4
 
 The literal denominator bound and its factor-two consequence are proved.
 The printed double sum now has an absolute-convergence proof for every

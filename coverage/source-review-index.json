@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T15:23:46.567326+00:00",
-  "base_commit": "fda6250c56d6ec41af674907d928ead5edc6457c",
+  "published_utc": "2026-10-27T15:53:22.724751+00:00",
+  "base_commit": "3f362e792d238d5b6b5f3afd67452d0a111af183",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 73,
-    "module_hash_checks": 1042,
-    "distinct_modules": 819
+    "review_records": 74,
+    "module_hash_checks": 1047,
+    "distinct_modules": 821
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "fda6250c56d6ec41af674907d928ead5edc6457c",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma34Majorization, SandwichAbsoluteSum and four public examples.",
+    "base_commit": "3f362e792d238d5b6b5f3afd67452d0a111af183",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma34Holder and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8435,
-    "public_examples": 7476,
-    "transitive_NLS_declarations": 42878,
+    "build_jobs": 8436,
+    "public_examples": 7480,
+    "transitive_NLS_declarations": 42890,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4712,
-      "sha256": "fee2001e834d16d729810c13c6f4844c2222a99e5b17b03cefd36250269d02c8"
+      "files": 4713,
+      "sha256": "96e83e00b0b07f0d41760874a7835c102fe46a9cd36e4a6284d1e487d7b68092"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -16701,6 +16701,113 @@
       },
       "qualification": "Both new modules and the four public examples were read completely. The eight unchanged hash-listed dependencies were read across this and the preceding focused comparisons, and their current hashes were rechecked. The rendered p.25 and the exact extracted source ranges were compared. Five focused groups establish literal denominator geometry, convergent original-norm signed component majorization, the exact near/far partition and the cutoff-retaining tail identity. The later uniform far/near estimates remain refuted, while the main Lemma 3.4 remains proved separately. This is not an exhaustive Section 3 assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "78be678106057464f04af7d9525fc7ab04fe72869100d20241bacbb17456d6f4"
+    },
+    "Lemma34HolderSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3f362e792d238d5b6b5f3afd67452d0a111af183",
+      "updated_utc": "2026-10-27T15:53:22.724751+00:00",
+      "source_lines": [
+        [
+          1432,
+          1442
+        ],
+        [
+          1448,
+          1457
+        ],
+        [
+          1463,
+          1464
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1432,
+            1442
+          ],
+          "requirement": "The first far-sum display is Holder with conjugate exponents, on exactly the printed far set, before the subsequent radius simplification.",
+          "finding": "The arbitrary selected-set inequality is proved for every finite 1<p and 0<r<=1, hence every source radius 0<r<=pi/4. Both powered sums are proved summable before applying Holder. A public algebraic identity identifies the compact reciprocal power with the product of powered denominators in the source. Specializing to the complement of the exact near set gives the printed far Holder bound. The fixed p=2 far witness satisfies this bound; its failure of the next radius-free bound remains separately recorded.",
+          "declarations": [
+            "lemma34Holder_weight_eq",
+            "lemma34_masked_holder",
+            "lemma34ProofFarSum_le_holder",
+            "sourceLemma34_reciprocal_memlp",
+            "lemma34ProofFarSum",
+            "lemma34ProofFarSum_single"
+          ]
+        },
+        {
+          "source_lines": [
+            1435,
+            1442
+          ],
+          "requirement": "The selected numerator p-moment has p-th root at most the product of the original scalar lp norms.",
+          "finding": "The integer shear (l,m)->(l+m,m) is an explicit bijection. The full nonnegative product moment is summable and factors exactly into the two scalar p-norm powers for every finite p>=1. Every selected numerator moment is then bounded with constant one. This does not replace the original scalar norms or require finite support. The cubic single-mode example checks the full moment equals 216 with negative potential frequency.",
+          "declarations": [
+            "summable_lemma34NumeratorMoment",
+            "lemma34NumeratorMoment_eq",
+            "lemma34MaskedNumeratorMoment_le",
+            "lemma34_masked_holder_norm"
+          ]
+        },
+        {
+          "source_lines": [
+            1448,
+            1457
+          ],
+          "requirement": "The near Holder display uses the exact near set and its numerator may be replaced by the cutoff-retaining symmetric potential remainder.",
+          "finding": "The arbitrary selected-set Holder theorem applies unchanged to the near set. The previously proved exact Fourier-tail identity then yields a bound by the near reciprocal moment times the original tail norm and input norm. All signed centers, including zero, retain the source real half-width and cutoff boundary. This proves the first near display and its numerator reduction; it does not assert the later false uniform r^(-2/p) estimate for general p.",
+          "declarations": [
+            "lemma34_masked_holder",
+            "lemma34ProofNearSum_le_holder_tail",
+            "lemma34ProofNearSum_fourierTail",
+            "lemma34ProofNear"
+          ]
+        },
+        {
+          "source_lines": [
+            1463,
+            1464
+          ],
+          "requirement": "The endpoint p=1 requires a supremum weight bound rather than a finite conjugate-power sum.",
+          "finding": "A selected-set endpoint theorem uses a pointwise reciprocal bound C and the exact original l1 norm product. On the near set this gives r^(-2) times the cutoff-retaining tail norm and input norm. On the far set the pointwise denominator estimate gives 2/[r*(r+abs(n))] times the two scalar norms. The estimates hold for 0<r<=1, all signed centers and infinite-support inputs. A negative near unit mode at r=1/2 attains the sharp value 4; an infinite-support inverse-quadratic sequence at n=-3 satisfies the far bound with coefficient 8/7. These are explicit endpoint modifications, not claims that the refuted all-p uniform subsum estimates hold. The previous signed-component majorization transfers these scalar estimates to either actual component.",
+          "declarations": [
+            "lemma34MaskedSum_le_one",
+            "lemma34ProofNearSum_le_one",
+            "lemma34ProofFar_weight_le",
+            "lemma34ProofFarSum_le_one",
+            "norm_sourceDoubleResolvent_fst_le_absolute_sum",
+            "norm_sourceDoubleResolvent_snd_le_absolute_sum"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Lemma34MajorizationSourceComparison-2026-10-27",
+        "Lemma34ProofSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "Lemma34MajorizationSourceComparison-2026-10-27": {
+          "source_record_sha256": "78be678106057464f04af7d9525fc7ab04fe72869100d20241bacbb17456d6f4",
+          "module_hashes_verified": true,
+          "retained_qualification": "Both new modules and the four public examples were read completely. The eight unchanged hash-listed dependencies were read across this and the preceding focused comparisons, and their current hashes were rechecked. The rendered p.25 and the exact extracted source ranges were compared. Five focused groups establish literal denominator geometry, convergent original-norm signed component majorization, the exact near/far partition and the cutoff-retaining tail identity. The later uniform far/near estimates remain refuted, while the main Lemma 3.4 remains proved separately. This is not an exhaustive Section 3 assessment or an independent audit of every transitive proof. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        },
+        "Lemma34ProofSourceComparison-2026-10-27": {
+          "source_record_sha256": "af06f864af237690569b53f674128b465acc4f5b547b3aaca6ae1380950a03ee",
+          "module_hashes_verified": true,
+          "retained_qualification": "All five hash-listed modules were read completely. Two literal intermediate estimates are formally refuted with fixed finite-mode p=2 witnesses for every nonnegative candidate constant. The actual signed coefficient bridge and original pair norms are checked, and the main r^-2 theorem remains proved with its original quantifiers. This is not a complete Section 3 proof audit, an independent verification of every transitive dependency, or a proof of the literal false estimates. The remaining source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished."
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma34Holder.lean": "57fce7c9a0197b5c6c729441be83a8abc9af22176b213a56d7332f82e842f19b",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "53bdbf1c130907c78fd194e618329bce5bef97ea7fd77f19e70200df4b12c597",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "a38555531a677d72d2e1cc820bf52760fd5835c9e5bc4464e3907c00a863150b",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/SequenceSpaces/HolderEmbedding.lean": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e"
+      },
+      "qualification": "The new module, all four examples and HolderEmbedding were read completely; the three other unchanged hash-listed modules were fully read in this and the preceding focused comparisons and their current hashes rechecked. The rendered p.25 and exact extracted ranges were compared. Four focused groups cover the literal Holder displays, scalar moment factorization, near-tail reduction and explicit p=1 modifications. The later all-p uniform radius simplifications remain formally refuted; the independently proved main Lemma 3.4 remains valid. This does not certify every Section 3 assertion or every transitive dependency. The source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "source_record_sha256": "8f0285252c411aff1df28643d2b58fdae67bdbefe1796b2f38c211a725202f72"
     }
   }
 }

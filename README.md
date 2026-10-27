@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the absolute double-sum estimate in Lemma 3.4 is proved
-for the actual signed resolvent components in the original norms,
-including p=1. The exact near/far partition and cutoff-retaining
-Fourier-tail identity are also proved.
+Latest step: both Hölder displays in Lemma 3.4 are proved, with exact
+scalar norm factorization and the cutoff-retaining near tail. Explicit
+p=1 bounds retain the necessary radius dependence.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

@@ -3302,6 +3302,7 @@ import NLS.ZakharovShabat.SourceDoubleResolvent
 import NLS.ZakharovShabat.SourceLemma3_4
 import NLS.ZakharovShabat.SourceLemma34Proof
 import NLS.ZakharovShabat.SourceLemma34Majorization
+import NLS.ZakharovShabat.SourceLemma34Holder
 import NLS.ZakharovShabat.SourceCorollary3_5
 import NLS.ZakharovShabat.SourceResolventContours
 import NLS.ZakharovShabat.SourceEquation1_4

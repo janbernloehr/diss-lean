@@ -69483,3 +69483,71 @@ example :
   exact summable_lemma34ProofTerm (by norm_num) _ _ (-3) (by norm_num) (by norm_num)
 
 end Lemma34MajorizationChecks
+
+noncomputable section
+namespace Lemma34HolderChecks
+open NLS NLS.ZakharovShabat Classical
+open scoped ENNReal
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The shear of the two integer indices preserves the entire cubic moment.
+example : (∑' lm : ℤ × ℤ,
+    (‖(lp.single 3 (-2) (3 : ℂ) : Coeff 3) (lm.1+lm.2)‖ *
+      ‖(lp.single 3 1 (2 : ℂ) : Coeff 3) lm.2‖)^(3 : ℝ)) = 216 := by
+  have h := lemma34NumeratorMoment_eq (by norm_num : (3 : ℝ≥0∞) ≠ ⊤)
+    (lp.single 3 (-2) (3 : ℂ)) (lp.single 3 1 (2 : ℂ))
+  norm_num at h ⊢
+  exact h
+
+-- The earlier far witness satisfies the literal Holder bound at p=2.
+example {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
+    1/((r+1)*r) ≤
+      (∑' lm : ℤ × ℤ, if ¬ lemma34ProofNear 1 lm.1 lm.2 then
+        (((r+|((1-lm.1 : ℤ) : ℝ)|)*(r+|((1-lm.2 : ℤ) : ℝ)|))⁻¹)^(2 : ℝ)
+        else 0)^(1/(2 : ℝ)) := by
+  have h := lemma34ProofFarSum_le_holder (by norm_num : (2 : ℝ≥0∞) ≠ ⊤)
+    (by norm_num : (1 : ℝ≥0∞) < 2) (lp.single 2 1 1) (lp.single 2 1 1) 1 hr hr1
+  rw [lemma34ProofFarSum_single] at h
+  have hq : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.unique 2 _ 2
+  have hn : ‖(lp.single 2 1 1 : Coeff 2)‖ = 1 := by simp
+  simpa only [hq, ENNReal.toReal_ofNat, hn, mul_one] using h
+
+-- At the p=1 endpoint a negative signed near mode attains the corrected bound.
+example : lemma34ProofNearSum (lp.single 1 (-2) 1) (lp.single 1 (-1) 1) (-1) (1/2) = 4 ∧
+    lemma34ProofNearSum (lp.single 1 (-2) 1) (lp.single 1 (-1) 1) (-1) (1/2) ≤ 4 := by
+  constructor
+  · rw [lemma34ProofNearSum, tsum_eq_single ((-1 : ℤ),(-1 : ℤ))]
+    · norm_num [lemma34ProofNear, lemma34ProofTerm]
+    · intro lm hne
+      by_cases hm : lm.2 = -1
+      · have hl : lm.1+lm.2 ≠ -2 := by
+          intro hl
+          apply hne
+          ext <;> omega
+        simp [lemma34ProofTerm, lp.single_apply, hl]
+      · simp [lemma34ProofTerm, lp.single_apply, hm]
+  · have h := lemma34ProofNearSum_le_one (lp.single 1 (-2) 1) (lp.single 1 (-1) 1)
+      (-1) (by norm_num : (0 : ℝ) < 1/2) (by norm_num : (1/2 : ℝ) ≤ 1)
+    norm_num [Coeff.fourierTail_single] at h
+    exact h
+
+-- Infinite-support l1 sequences satisfy the far estimate at a negative center.
+example :
+    let a : Coeff 1 := WeightedCoeff.inverseWeight (Weight.sobolev 2)
+      (Weight.inverse_sobolev_memlp (by norm_num : 0 < (1 : ℝ≥0∞).toReal)
+        (by norm_num : 1 < (2 : ℝ)*(1 : ℝ≥0∞).toReal))
+    lemma34ProofFarSum a a (-3) (1/2) ≤ (8/7) * (‖a‖*‖a‖) := by
+  dsimp only
+  have h := lemma34ProofFarSum_le_one
+    (WeightedCoeff.inverseWeight (Weight.sobolev 2)
+      (Weight.inverse_sobolev_memlp (by norm_num : 0 < (1 : ℝ≥0∞).toReal)
+        (by norm_num : 1 < (2 : ℝ)*(1 : ℝ≥0∞).toReal)))
+    (WeightedCoeff.inverseWeight (Weight.sobolev 2)
+      (Weight.inverse_sobolev_memlp (by norm_num : 0 < (1 : ℝ≥0∞).toReal)
+        (by norm_num : 1 < (2 : ℝ)*(1 : ℝ≥0∞).toReal)))
+    (-3) (by norm_num : (0 : ℝ) < 1/2) (by norm_num : (1/2 : ℝ) ≤ 1)
+  norm_num at h ⊢
+  exact h
+
+end Lemma34HolderChecks
