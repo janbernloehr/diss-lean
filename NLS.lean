@@ -4661,6 +4661,8 @@ import NLS.ZakharovShabat.NativePeriodOnePotential
 import NLS.ZakharovShabat.NativeWeightedFiniteGap
 import NLS.ZakharovShabat.NativeWeightedBirkhoff
 import NLS.ZakharovShabat.NativeWeightedBirkhoffCanonical
+import NLS.ZakharovShabat.SourceRealActionImage
+import NLS.ZakharovShabat.NativeRealActionImage
 import NLS.ZakharovShabat.SourcePeriodicSelfAdjoint
 import NLS.ZakharovShabat.PhysicalPeriodicSelfAdjoint
 import NLS.ZakharovShabat.PeriodicSelfAdjointRealType

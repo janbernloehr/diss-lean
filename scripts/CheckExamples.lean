@@ -68885,3 +68885,79 @@ example {A B C : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCo
     (physical_test halfWeight φ f).1
 
 end NativeWeightedBirkhoffChecks
+
+noncomputable section
+namespace IntroductionRealActionImageChecks
+open Set NLS NLS.Fourier NLS.ZakharovShabat NativeWeightedPeriodic
+open scoped ENNReal
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 :=
+  (ENNReal.holderTriple_iff _ _ _).mpr (by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num [ENNReal.toReal_add])
+
+-- Construct one FL4 family before prescribing any nonnegative summable actions.
+example : ∃ W₀ B W : Set (CoeffPair 4),
+    ∃ s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n,
+    ∃ D : SourceSection17OriginalData (by simp) (by norm_num) W₀ B W s,
+      IsOpen (range (actions (q := 2) D)) ∧
+      ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∃ φ : realSpace SpectralWeight.one 4,
+        ∀ n, sourceComplexAction (by simp) (by norm_num) n
+          (source SpectralWeight.one φ).val = (b n : ℂ) := by
+  obtain ⟨W₀, B, W, s, D, ho, _, hall⟩ :=
+    exists_action_image (p := 4) (q := 2) (by simp) (by norm_num) (by norm_num)
+  refine ⟨W₀, B, W, s, D, ho, ?_⟩
+  intro b hb
+  obtain ⟨φ, hφ⟩ := hall b hb
+  refine ⟨φ, fun n => ?_⟩
+  have h := congrArg (fun a : Coeff 2 => a n) hφ
+  simpa only [actions_apply, Coeff.exponentInclusion_apply, RealCoeff.complexCLM_apply] using h
+
+-- A relative ball around any actual FL4 action has original distribution preimages,
+-- with the exact rectangular normalization; no open-gap hypothesis is used.
+example {W₀ B W : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ B W s)
+    (φ : realSpace SpectralWeight.one 4) :
+    ∃ r > 0, ∀ a : Coeff.nonnegativeLocus 2,
+      dist a (actions D φ) < r → ∃ ψ : realSpace SpectralWeight.one 4,
+        ∀ n, a.val n = ((birkhoff D SpectralWeight.one ψ).fst.val.val n ^ 2 +
+          (birkhoff D SpectralWeight.one ψ).snd.val.val n ^ 2) / 2 := by
+  obtain ⟨r, hr, hball⟩ := Metric.isOpen_iff.mp (isOpen_range_actions (q := 2) D)
+    (actions D φ) (mem_range_self φ)
+  refine ⟨r, hr, ?_⟩
+  intro a ha
+  obtain ⟨ψ, hψ⟩ := hball ha
+  exact ⟨ψ, fun n => hψ ▸ actions_eq_birkhoff_radius D ψ n⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  rw [ENNReal.le_div_iff_mul_le (by norm_num) (by norm_num)]
+  norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderTriple 3 (3/2) := Coeff.holderTriple_half 3
+
+-- Density is in the full noninteger half-exponent norm of the nonnegative cone.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ B W s)
+    (a : Coeff.nonnegativeLocus (3/2)) (ε : ℝ) (hε : 0 < ε) :
+    ∃ φ : realSpace SpectralWeight.one 3, ‖(actions D φ).val - a.val‖ < ε := by
+  obtain ⟨b, hb, φ, rfl⟩ := Metric.dense_iff.mp
+    (dense_range_actions (q := 3/2) D (by norm_num)) a ε hε
+  exact ⟨φ, by simpa only [Metric.mem_ball, Subtype.dist_eq, dist_eq_norm] using hb⟩
+
+-- At p=2 the whole target cone is summable, giving actual surjectivity.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceSection17OriginalData (by simp) (by norm_num) W₀ B W s) :
+    Function.Surjective (actions (q := 1) D) := by
+  intro a
+  obtain ⟨φ, hφ⟩ := exists_distribution_of_summable_actions (q := 1) D le_rfl
+    (Coeff.reCLM 1 a.val) (fun n => (a.property n).2)
+  refine ⟨φ, Subtype.ext ?_⟩
+  have ha := RealCoeff.complexCLM_reCLM 1 a.val (fun n => (a.property n).1)
+  rw [ha] at hφ
+  exact hφ.trans (by ext n; rfl)
+
+end IntroductionRealActionImageChecks

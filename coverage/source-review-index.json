@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T10:07:02.748804+00:00",
-  "base_commit": "1565d835c90e6ac139088a8c8924aece49e8db3d",
+  "published_utc": "2026-10-27T10:36:59.814741+00:00",
+  "base_commit": "8f7df5996a1687ec63a3e009996c76c9b0d01c76",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 60,
-    "module_hash_checks": 862,
-    "distinct_modules": 756
+    "review_records": 61,
+    "module_hash_checks": 876,
+    "distinct_modules": 765
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1565d835c90e6ac139088a8c8924aece49e8db3d",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes NativeWeightedBirkhoff, NativeWeightedBirkhoffCanonical and four public examples.",
+    "base_commit": "8f7df5996a1687ec63a3e009996c76c9b0d01c76",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceRealActionImage, NativeRealActionImage and four public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8420,
-    "public_examples": 7446,
-    "transitive_NLS_declarations": 42718,
+    "build_jobs": 8422,
+    "public_examples": 7450,
+    "transitive_NLS_declarations": 42742,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4697,
-      "sha256": "d793e77df2d1ce655fcd66da8870afdb2ac6a0696884a41c814c6517cd14c737"
+      "files": 4699,
+      "sha256": "1686689e3fbadbc2cc6a2a2a12702de9c01fb2eec417587745dd42ef7963c91b"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -11417,6 +11417,120 @@
       },
       "qualification": "All 35 listed modules were read completely in this comparison. The new distribution-space bridge and four public examples retain raw coefficients, exact pair norms, full derivatives and original smooth-test identities. Existing physical contour construction, Sobolev action identification, original frequency recovery and all-smooth-approximation solution results retain their earlier transitive comparisons; this is not an independent review of every dependency. Classical gradient/PDE regularity, finite p>1, global Sobolev inverse only for p<=2, and unweighted-Hilbert-only Parseval are explicit. The introductory historical attribution is not certified. The precise 2014 construction, Appendix G.2 norm interpretation and broader source assessment remain unfinished.",
       "source_record_sha256": "bb83e37ccea9f174effcf223c0c79bcb0d8542ecad26409be41a28b79e6fbaf4"
+    },
+    "IntroductionRealActionImageSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "8f7df5996a1687ec63a3e009996c76c9b0d01c76",
+      "updated_utc": "2026-10-27T10:36:59.814741+00:00",
+      "source_lines": [
+        635,
+        639
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            635,
+            639
+          ],
+          "requirement": "The actions of the original real FL4 space form a subset of the nonnegative ell2 cone.",
+          "finding": "The map is defined by the actual original spectral actions on the full real source space. A continuous real linear equivalence identifies the original unit-weight smooth-test distribution carrier with that entire source space. The native map uses exactly the original source coefficients and has exactly the same range. Its coordinates equal half the squared rectangular Birkhoff radius, including closed gaps.",
+          "declarations": [
+            "SourceBirkhoffMapComplexData.realActionSequence",
+            "SourceBirkhoffMapComplexData.realActionSequence_apply",
+            "NativeWeightedPeriodic.unitSourceEquiv",
+            "NativeWeightedPeriodic.source_one_eq",
+            "NativeWeightedPeriodic.source_one_surjective",
+            "NativeWeightedPeriodic.actions_apply",
+            "NativeWeightedPeriodic.actions_eq_birkhoff_radius",
+            "NativeWeightedPeriodic.range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            635,
+            636
+          ],
+          "requirement": "That actual real action image is open relative to the nonnegative ell2 cone.",
+          "finding": "A real-compatible original complex inverse chart is constructed at each real source. Quantitative radial lifting gives real rectangular lifts of every nearby nonnegative action, uniformly at zero coordinates. The chart inverse returns an actual real source with exactly that whole action sequence. Thus every point of the actual range contains a relative metric ball. The new theorem proves openness of the literal range, while the earlier connected complex action-domain theorem alone supplied an auxiliary domain. The proof works for finite p with Banach half exponent q and p.HolderTriple p q; p=4,q=2 is checked explicitly.",
+          "declarations": [
+            "Coeff.exists_nearby_real_quadraticActions",
+            "Coeff.exists_ball_real_quadraticActions_lifts",
+            "SourceBirkhoffMapComplexData.exists_inverseChart",
+            "SourceBirkhoffMapComplexData.exists_realAction_ball",
+            "SourceBirkhoffInverseChart.actionSequence_eq",
+            "SourceBirkhoffMapComplexData.exists_ball_subset_realActionSequence_range",
+            "SourceBirkhoffMapComplexData.isOpen_range_realActionSequence",
+            "NativeWeightedPeriodic.isOpen_range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            638,
+            639
+          ],
+          "requirement": "The action image contains every nonnegative summable sequence.",
+          "finding": "The actual global Hilbert inverse realizes the real square-root rectangular prescription. Exponent compatibility preserves the same original spectral actions when included in every finite p>=2 source. The unit-weight equivalence then supplies an original distribution preimage. Arbitrary infinite support and infinite zero sets are allowed. Finite nonnegative truncations converge in each finite half-exponent norm, giving density of the actual image in the whole nonnegative cone. At p=2,q=1 the public example deduces surjectivity onto the entire cone.",
+          "declarations": [
+            "exists_hilbertSource_of_nonnegative_actions",
+            "exists_source_of_nonnegative_actions",
+            "SourceBirkhoffMapComplexData.summable_mem_range_realActionSequence",
+            "RealCoeff.tendsto_complex_finiteSummable",
+            "Coeff.nonnegativeLocus_subset_closure_inter",
+            "SourceBirkhoffMapComplexData.dense_range_realActionSequence",
+            "NativeWeightedPeriodic.exists_distribution_of_summable_actions",
+            "NativeWeightedPeriodic.dense_range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            635,
+            639
+          ],
+          "requirement": "The assertion holds for the constructed original Birkhoff family without assuming its desired action-image properties.",
+          "finding": "Both public existence theorems first construct a single original Section17 family, then prove its relative openness, density and realization of all nonnegative summable prescriptions. The FL4 integration example retains this quantifier order and identifies every prescribed original spectral action. The image theorem does not require Birkhoff surjectivity above p=2 or assert that every nonnegative ell^(p/2) target is realized there.",
+          "declarations": [
+            "sourceSection17_original",
+            "exists_original_realAction_image",
+            "NativeWeightedPeriodic.exists_action_image"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "Section17SourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27",
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          15
+        ],
+        "pdf_pages": [
+          15
+        ],
+        "inspection": "Inspected the rendered first paragraph on printed page15: the actual FL4 real action image is open in ell2_+ and contains ell1_+. The topology is relative to the positive cone.",
+        "images": {
+          "IntroductionMethodsCurrentReview-015.png": "a3db236d7c15f94f86acf803f01bf8e5b8142823236afc6c313c2eb262a6207e"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceRealActionImage.lean": "072c9a390bbc10014488c5a7ad46206628dfce00a8f84e1fb3cee7a67b741e6e",
+        "NLS/ZakharovShabat/NativeRealActionImage.lean": "7b1c999ff62a9169d23cf3ca90603938829ab5c8cba474f366ead5a429041f2d",
+        "NLS/ZakharovShabat/SourceRealActionLifting.lean": "b1da58f5971bba22345bf960c92916d450900220f52ca6f59e69a065e6381f01",
+        "NLS/ZakharovShabat/SourceBirkhoffInverseChart.lean": "1499b108d12568ffac312266754cf3c49a5bde34b5ff1b7b9aed62d71decb86c",
+        "NLS/ZakharovShabat/SourcePositiveActionRealization.lean": "6ad1a4c37b420659dd0d4936a41cff316d222970495135164175356abc2856a3",
+        "NLS/ZakharovShabat/SourceOriginalActionImage.lean": "8956e6a6ccebc6785bd779f8703bb4747918036efeabda55d8b1a3bf493d01c1",
+        "NLS/ZakharovShabat/SourceSection17Original.lean": "68aaf622885d6516a72d3428760e4dbe78a7a6152bd451875c4f491173c39cb6",
+        "NLS/ZakharovShabat/SourceWeightedRealSpaces.lean": "313e6736928f2ff0fce7f6fa3daf046186b61da484bcc316c6e19d1014e2f400",
+        "NLS/ZakharovShabat/NativeWeightedFiniteGap.lean": "76a3c925721289e0dfafd0af6fa503c628762b65600272dddea56d4dc9106884",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoff.lean": "f717c4e45bf222479292473f656acc9d5f5a20e5f8dac9b9c222756b4cea448e",
+        "NLS/SequenceSpaces/RealActionLifting.lean": "67e9bebd923a2e48311ffbbd3382bb01cd13167486e85cd35e6c79bb17d33871",
+        "NLS/SequenceSpaces/NonnegativeActionDensity.lean": "7649431f24984a7e877605508ff0d471837c17c999cbcea06f559b719cd2f03c",
+        "NLS/SequenceSpaces/RealSummableApproximation.lean": "ce89b653b909041c6f416393fd31958ad223112fc6146c27b2241b2bd2256a16",
+        "NLS/SequenceSpaces/TailSquareDescentAnalyticLine.lean": "50a8e2b69020531b09b7f131139840e5403eea7c576b1d290f33c855d8c2614b"
+      },
+      "qualification": "All14 listed modules were read completely for this comparison. Four integration examples check unconditional FL4 construction, nearby realizations with exact rectangular normalization at arbitrary gaps, full-norm density at p=3,q=3/2, and onto at p=2,q=1. The unit-weight original-distribution equivalence is used; no arbitrary weighted-space action image theorem is asserted. Relative openness and density do not imply onto for p>2. This focused comparison covers the action-image sentence at635-639, not a new independent audit of the entire derivation of Theorem0.2 or all transitive dependencies. Earlier source corrections, the remaining introductory proof-method comparison, exact2014 identification and AppendixG2 norm interpretation remain separate.",
+      "source_record_sha256": "fae5993c92528450d3a4de7d9d34b8fe0a6501cd3258cee243c671c921282feb"
     }
   }
 }

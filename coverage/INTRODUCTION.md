@@ -21,6 +21,48 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## The actual real action image, printed p. 15
+
+[SourceRealActionImage.lean](../NLS/ZakharovShabat/SourceRealActionImage.lean)
+defines the actual original spectral action map into the nonnegative
+half-exponent cone. Each image point has a relative metric ball entirely
+inside the image. The proof combines real radial lifting with a constructed
+original inverse chart, including at closed gaps and infinite zero sets.
+
+For finite p>=2 and q=p/2, the image contains every nonnegative summable
+sequence: the Hilbert inverse realizes the square-root prescription, and
+exponent inclusion preserves all original actions. Nonnegative finite
+truncations give density in the full ell^q cone. The p=4,q=2 specialization
+is exactly the action-image assertion in the first paragraph of page 15.
+
+[NativeRealActionImage.lean](../NLS/ZakharovShabat/NativeRealActionImage.lean)
+identifies the unit-weight original smooth-test distribution space with the
+entire source space. `range_actions` proves exact equality of their actual
+action images, and `actions_eq_birkhoff_radius` retains the factor one-half
+in the rectangular formula. `exists_action_image` constructs one original
+family before asserting openness, density and realization of every
+nonnegative summable sequence.
+
+Openness is relative to the nonnegative cone. The earlier construction of
+an open connected complex action domain is a separate assertion. The new
+result concerns the literal real action range, without claiming it is the
+whole cone for p>2 or extending the result to arbitrary weighted spaces.
+
+Four public examples check the unconditional FL4 construction, original
+distribution preimages throughout a relative action ball with the exact
+rectangular normalization, density in the noninteger ell^(3/2) norm, and
+surjectivity onto the nonnegative ell1 cone at the Hilbert endpoint.
+
+The comparison `IntroductionRealActionImageSourceComparison-2026-10-27`
+in the [source-comparison snapshot](source-review-index.json) records four
+assertion groups at extraction lines 635–639. It covers this action-image
+sentence; the full Hamiltonian argument and remaining introductory method
+discussion retain their separate proof evidence and source corrections.
+
+Validation passes: 8,422 build jobs, 7,450 public examples and a
+transitive axiom audit of 42,742 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Birkhoff coordinates on original distributions, printed pp. 10–11
 
 [NativeWeightedBirkhoff.lean](../NLS/ZakharovShabat/NativeWeightedBirkhoff.lean)

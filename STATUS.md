@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: Birkhoff coordinates on original distributions
+## Current milestone: The actual real action image
+
+The original real Fourier-Lebesgue distribution space now has an explicit
+action-image theorem. For finite p>=2, with half exponent q=p/2, its actual
+image is open relative to the nonnegative ell^q cone, contains every
+nonnegative summable action sequence, and is dense in that cone.
+The actions retain the normalization `(x_n^2+y_n^2)/2`.
+
+The p=4 case proves the introductory action-image assertion on printed
+page 15. A single original family is constructed before any action input.
+Four examples check this construction, a relative action ball including
+closed gaps, density at p=3 and q=3/2, and surjectivity at p=2 and q=1.
+See the [introduction audit](coverage/INTRODUCTION.md).
+
+Validation: `./scripts/check.sh` passes with 8,422 build jobs, 7,450
+public examples, and a transitive axiom audit of 42,742 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,914 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Next: continue the introductory proof-method comparison. All recorded
+source corrections remain; the precise 2014 construction and Appendix G.2
+norm interpretation are still unresolved. Surjectivity for p>2 is not claimed.
+
+## Previous milestone: Birkhoff coordinates on original distributions
 
 The Birkhoff map now acts directly on the original weighted periodic
 distributions, with unchanged raw coordinates and the exact pair norm.
