@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T08:25:12.783141+00:00",
-  "base_commit": "ed7449a3fc3156e89f075947450b15ed98fe4392",
+  "published_utc": "2026-10-27T08:32:16.681845+00:00",
+  "base_commit": "de2755b6693e1277f34945cda3d0fefa43a3a3aa",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 56,
-    "module_hash_checks": 784,
-    "distinct_modules": 720
+    "review_records": 57,
+    "module_hash_checks": 803,
+    "distinct_modules": 734
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -10849,6 +10849,136 @@
       },
       "qualification": "The six listed modules were read completely. Supporting definitions of interval H1 regularity, the original classical endpoint domain and the physical differential expression were checked separately, without claiming full review of their containing modules or all transitive dependencies. Real structure and complexification retain their separate prior comparison. This comparison does not cover the following boundary enumeration, interlacing or reflected-potential passage. It records the local Aneu variable typo without changing the correct page19 normalization. Existing source corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged.",
       "source_record_sha256": "537d6a76542f634b418cc2fe13fe71ef1763274d11b8638ba9bcfa88c4002796"
+    },
+    "SpectralOverviewBoundarySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "de2755b6693e1277f34945cda3d0fefa43a3a3aa",
+      "updated_utc": "2026-10-27T08:32:16.681845+00:00",
+      "source_lines": [
+        [
+          989,
+          1015
+        ],
+        [
+          1036,
+          1045
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            989,
+            995
+          ],
+          "requirement": "Every complex L2 interval potential has globally lexicographically ordered bi-infinite Dirichlet and Neumann eigenvalue sequences with full l2 displacements.",
+          "finding": "The exact physical source isometry is onto every interval L2 class and its inverse is given by the actual normalized unit-period Fourier integrals. The completed source potential equals the physical Dirichlet-reflected potential for every such class, without a continuous-representative hypothesis. The independently defined full physical pencil spectrum and its independently defined physical root-space multiplicities equal the corresponding coefficient spectrum and multiplicities. The canonical source roots therefore exhaust both physical spectra with the right repetitions, global lexicographic order and full l2 displacement membership, including central and negative indices. No smallness or reality premise is imposed.",
+          "declarations": [
+            "sourcePhysicalL2Equiv",
+            "sourcePhysicalL2_equiv_symm",
+            "periodOneBoundaryPotential_eq_physicalRestriction",
+            "sourcePhysicalL2_apply",
+            "classicalSpectrum_eq_boundarySpectrum",
+            "classicalAlgebraicMultiplicity_eq",
+            "canonicalPeriodOneBoundaryRoots_exhaustive",
+            "canonicalPeriodOneBoundaryRoots_multiplicity",
+            "monotone_canonicalPeriodOneBoundaryRoots",
+            "sourceTheorem1_5_mem"
+          ]
+        },
+        {
+          "source_lines": [
+            997,
+            1000
+          ],
+          "requirement": "For real-type physical L2 potentials, both boundary sequences are real and lie between the original periodic endpoints at the same signed index.",
+          "finding": "The physical a.e. conjugation relation is equivalent in both directions to source real type. Both complete boundary spectra are real. Finite real Fourier approximation and continuity of the actual indexed roots and endpoints prove simultaneous interlacing for every real source, retaining the original periodic potential and the distinct reflected boundary potential. This includes collapsed gaps and all signed indices. The original physical periodic endpoint identification remains the preceding reviewed comparison.",
+          "declarations": [
+            "sourcePhysicalL2_realType_iff",
+            "sourceBoundarySpectrum_im_eq_zero",
+            "canonicalPeriodOneBoundaryRoots_interlacing",
+            "canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap"
+          ]
+        },
+        {
+          "source_lines": [
+            1003,
+            1015
+          ],
+          "requirement": "Reflected period-two distribution potentials define the ordinary rough boundary spectra and recover the original classical problems at p=2.",
+          "finding": "Both ordinary boundary problems use the SAME Dirichlet reflection of the potential. Its actual normalized Fourier coefficients and physical synthesis are identified for every L2 input; the extension leaves the unit interval unchanged and swaps and reflects the two components on the second half. The reflected periodic spectrum is the UNION of the two original interval spectra, and its algebraic multiplicity is their sum. For every finite p>1, the completed map is bounded and complex linear in the original source norm and produces actual period-two tempered distributions as limits of physical finite inputs. The original H1 endpoint domains impose no additional periodicity. This is distinct from period doubling of an already period-one distribution and from the Neumann potential extension used by auxiliary problems.",
+          "declarations": [
+            "periodOneBoundaryPotential",
+            "intervalPotentialCoefficients",
+            "intervalPotentialToDirichlet",
+            "intervalExtension_left",
+            "intervalExtension_right",
+            "sourceIntervalExtensionL2_ofFunction",
+            "sourceLemma4_3_L2_physical",
+            "sourceIntervalExtensionDistributionCLM",
+            "tendsto_sourceIntervalExtensionDistribution_truncate",
+            "sourceIntervalExtensionDistribution_periodic",
+            "periodicSpectrum_eq_classicalEigenvalues_union",
+            "periodicAlgebraicMultiplicity_eq_classical_sum"
+          ]
+        },
+        {
+          "source_lines": [
+            1036,
+            1045
+          ],
+          "requirement": "Both ordinary rough boundary spectra admit global lexicographic labels whose displacement is O(1).",
+          "finding": "For every finite p>1 the literal displacement is a Coeff p sequence. The source theorem bounds both complete sequence norms on one neighborhood, and the usual lp coordinate bound therefore bounds all signed-index displacements simultaneously. Global ordering and exhaustion retain all central indices. This consequence does not use the false unrestricted printed height in Theorem1.4 and does not assert analyticity or continuity of globally sorted labels at arbitrary complex sources.",
+          "declarations": [
+            "sourceBoundaryDisplacement",
+            "sourceBoundaryDisplacement_apply",
+            "exists_uniform_sourceBoundaryLabels",
+            "monotone_canonicalPeriodOneBoundaryRoots",
+            "canonicalPeriodOneBoundaryRoots_exhaustive"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "SpectralOverviewAKNSDomainSourceComparison-2026-10-27",
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+        "Section4SourceComparison-2026-10-21",
+        "Section9SourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          20
+        ],
+        "pdf_pages": [
+          20
+        ],
+        "inspection": "Re-inspected page20, including both globally ordered sequences, same-index real interlacing, the rough reflected-potential passage and the O(1) conclusion after Theorem1.4. The reflected periodic spectrum means the union of the two ordinary spectra.",
+        "images": {
+          "SpectralOverviewAKNSDomainCurrentReview-020.png": "0014bdfde5f4d0e024d2182110c4b7ec19fbe9b82a643aab2c324d05c77a5d2f"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/BoundarySpectrum.lean": "43f43567ace7af96f855a98c2cc3fcd2131c4f28fa5b0bdfe70866bd0619cba5",
+        "NLS/ZakharovShabat/ClassicalBoundaryInterlacing.lean": "65198eb8442d823a0d60b9583d6f276b26dd124a1b647e1285f8d42f7b5851ae",
+        "NLS/ZakharovShabat/PeriodOneBoundaryInterlacing.lean": "bd55f20c0af20a9d6e94923c1d5506535d7893869e6fb67276c17264ca4e2e91",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f",
+        "NLS/ZakharovShabat/ClassicalIntervalEigenvalues.lean": "b71b583b525b938d47d8832c9784d29c7e11bdecb6998475d52b82e7569d0a82",
+        "NLS/ZakharovShabat/ClassicalIntervalResolvent.lean": "78d6431c687da3c0a9c0dace811d22449774ce58ba4d31c94a273abad05c0ad1",
+        "NLS/ZakharovShabat/SourceBoundaryOverview.lean": "e797d71de5a23f455e376c785497c83e2a27b5f1669e07e1cde9d887e3ce2dd5",
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean": "208489701add7cc8653c972cd400e0c3ffc48c317c3c289637ad4a5599f0dff6",
+        "NLS/ZakharovShabat/SourceLemma4_3Physical.lean": "d088d7973421a6615b0888a645e77b7c60ffa45fcd8600475c6db2a593f0ae3b",
+        "NLS/ZakharovShabat/SourceBoundaryFourier.lean": "7d2b2a14094ab06bbee492e47606bcc95aae2ab6355a59b3ac12d1190ea7ee7c",
+        "NLS/ZakharovShabat/SourceLemma4_3.lean": "0d5d69e7572e45f467017dec2c33e13bfcb9365c18b564101029af3171fdd7ae",
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryRealization.lean": "1226589ba4a8247bc001505312481e645167774350b4241d9120522037a7a499",
+        "NLS/ZakharovShabat/ClassicalIntervalMultiplicity.lean": "4e919b716cda0e7e07eb41cbd510160644e670d1e76a46323deb69e9be0237a3",
+        "NLS/ZakharovShabat/SourcePhysicalL2.lean": "2a7d3e577a471e48b22ecdfabf7ed22fac8746114ab48cafd533a037497e1233",
+        "NLS/ZakharovShabat/SourcePhysicalRealL2.lean": "279ae9263018b21e6d0037b56a5512426e29fc9fb7156201fbac0666dba9aed9",
+        "NLS/ZakharovShabat/PeriodOneBoundaryAsymptotics.lean": "453de4285c4451d7f52ce942603c9b8bf18e6796560fbb45d2d02fc64c330946",
+        "NLS/ZakharovShabat/PhysicalPotentialExtension.lean": "0dda30701e5c2d9ace8286814bb6a2ec1533ecc81551da1eb846b0ac66451e43",
+        "NLS/ZakharovShabat/IntervalExtension.lean": "f3b8045529b16bb176fa4854ee830ee5d55af0e22aa1190e9528fd38f76b0dc7",
+        "NLS/ZakharovShabat/SourceBoundaryDisplacementAnalytic.lean": "48bc8209982e6ba5e233ddb2f8fe9e04ca6966765dab2aee1e0209151a437767"
+      },
+      "qualification": "The nineteen listed modules were read completely across the continuous comparison and their unchanged hashes checked. This follows the exact source-to-physical maps and quantifiers, but does not independently reprove every transitive dependency. The stronger all-p source results imply the printed p=2 enumeration. The p=2 physical interval comparison and the finite p>1 completed reflection range are retained; no p=1 bounded interval-reflection theorem is claimed. The old IntervalExtension module introduction still describes its original unfinished all-p stage; the later bounded results were checked directly. Existing Lemma4.3 normalization and Theorem1.4 height corrections, the precise2014 construction and AppendixG2 norm qualifications remain unchanged.",
+      "source_record_sha256": "65d71565cfaa36a2d49591b049003b21bae26e09a0400faa3178b7ea82b74a40"
     }
   }
 }

@@ -4,6 +4,49 @@ Source: dissertation Section 1, printed pp. 17–21, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
+## Boundary enumeration, interlacing and reflection, printed p. 20
+
+The comparison of lines 989–1015 starts with every complex interval L2
+potential. [SourcePhysicalL2Equiv](../NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean)
+is onto, with the actual unit-period Fourier integrals as its inverse.
+[ContinuousSourceBoundaryRealization](../NLS/ZakharovShabat/ContinuousSourceBoundaryRealization.lean)
+identifies the completed source potential with the physical reflected
+potential for every L2 class, despite the narrower module title.
+[ClassicalIntervalResolvent](../NLS/ZakharovShabat/ClassicalIntervalResolvent.lean)
+and [ClassicalIntervalMultiplicity](../NLS/ZakharovShabat/ClassicalIntervalMultiplicity.lean)
+then identify the independently defined physical spectrum and full
+root-space multiplicities.
+
+[CanonicalPeriodOneBoundaryRoots](../NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean)
+and [SourceBoundaryOverview](../NLS/ZakharovShabat/SourceBoundaryOverview.lean)
+provide exhaustive global lexicographic labels, correct repetitions and
+full l2 displacements for these physical problems. For every finite p>1,
+the same source results bound the full displacement sequence norm locally,
+which also gives the printed O(1) conclusion in lines 1036–1045. This does
+not require Theorem 1.4's false unrestricted printed height.
+[PeriodOneBoundaryInterlacing](../NLS/ZakharovShabat/PeriodOneBoundaryInterlacing.lean)
+places both real boundary roots between the original periodic endpoints
+at the same signed index, including collapsed gaps. Physical a.e. real
+type and source real type are equivalent.
+
+Both ordinary boundary problems use the same Dirichlet-reflected potential.
+[SourceLemma4_3](../NLS/ZakharovShabat/SourceLemma4_3.lean) constructs its
+bounded distributional extension for finite p>1, and
+[SourceLemma4_3Physical](../NLS/ZakharovShabat/SourceLemma4_3Physical.lean)
+identifies its actual physical reflection for every L2 input.
+[ClassicalIntervalEigenvalues](../NLS/ZakharovShabat/ClassicalIntervalEigenvalues.lean)
+proves that the reflected periodic spectrum is the union of the two
+original spectra; their multiplicities add. The original H1 domains need
+no extra endpoint periodicity. The Neumann potential extension used for
+auxiliary problems is separate, as is the period doubling described below.
+
+Four assertion groups and nineteen complete modules are recorded as
+`SpectralOverviewBoundarySourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json). This comparison reuses
+the unchanged Lean snapshot validated by the period-extension milestone.
+The named theorem comparisons and all source corrections remain intact.
+The remaining overview review concerns the finite-gap background passage.
+
 ## AKNS coordinates and full boundary domains, printed pp. 19–20
 
 The renewed comparison of lines 947–987 retains the exact potential map
@@ -37,9 +80,9 @@ Three assertion groups and six complete modules are recorded as
 [source-review index](source-review-index.json). Real structure and
 complexification retain their preceding comparison. This documentation
 step reuses the unchanged Lean snapshot validated by the period-extension
-milestone below. Boundary enumeration, interlacing and the reflected-potential
-overview passage remain to be compared separately; existing source
-corrections and the precise2014 and G2 qualifications are unchanged.
+milestone below. The boundary enumeration, interlacing and reflected-potential
+passage, left separate by this record, is compared in the follow-up above.
+Existing source corrections and the precise2014 and G2 qualifications are unchanged.
 
 ## Original period-one distribution potentials, printed p. 18
 

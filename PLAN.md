@@ -14,14 +14,15 @@ scalar infinity, the closed operator at p=1 and the source spectrum at p=3.
 Validation: `./scripts/check.sh` passes with 8,417 build jobs, 7,439
 public examples, and a transitive axiom audit of 42,615 NLS declarations.
 The build retains 21 existing warnings; the new modules and examples introduce none.
-Documentation checks cover 2,877 file links across 44 documents.
+Documentation checks cover 2,888 file links across 44 documents.
 The source-review integrity check retains all earlier qualifications.
 
-The AKNS coordinate and full boundary-domain comparison is now recorded
-in the spectral overview audit, including exact physical norms and density.
-Next: reconcile boundary enumeration, interlacing and the reflected-potential
-overview passage. The precise 2014 construction and G.2 norm interpretation
-remain unresolved.
+The AKNS domains and boundary enumeration, interlacing and reflected-potential
+comparisons are now recorded in the spectral overview audit. They retain the
+full physical L2 scope and original multiplicities.
+Next: compare the finite-gap background passage and reconcile the remaining
+source-assessment requirements. The precise 2014 construction and G.2 norm
+interpretation remain unresolved.
 
 ## Previous milestone: Closed operator on original periodic distributions
 
