@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: The actual real action image
+## Current milestone: The renormalized physical energy
+
+The literal energy `Hr = H3 - 2 H1^2` now has both proved classical
+variational gradients. Its Hamiltonian field gives equation (0.4), with
+mass correction `-4 (integral |v|^2) v`, and the constructed smooth
+renormalized solution follows that field.
+
+On the full complex H1 pair space the energy is entire and its bounded
+Fréchet derivative is `dH - 4 M dM`, including nonsmooth inputs.
+On smooth representatives it agrees with the classical energy and both
+gradient integrals. Four examples check the constant-data normalization,
+the constructed solution, simultaneous H1 variations and smooth gradients.
+See the [introduction audit](coverage/INTRODUCTION.md).
+
+Validation: `./scripts/check.sh` passes with 8,424 build jobs, 7,454
+public examples, and a transitive axiom audit of 42,772 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,922 file links across 44 documents.
+The source-review integrity check retains all earlier qualifications.
+
+The introductory method comparison now records the mass shift, sequence
+notation, action estimates, spectral ingredients, residue formulas and
+positive-integer action smoothing, preserving their domains and source
+corrections. Next: assess the remaining related-results discussion from
+extraction line 676 onward. The precise 2014 construction and Appendix G.2
+norm interpretation remain unresolved.
+
+## Previous milestone: The actual real action image
 
 The original real Fourier-Lebesgue distribution space now has an explicit
 action-image theorem. For finite p>=2, with half exponent q=p/2, its actual

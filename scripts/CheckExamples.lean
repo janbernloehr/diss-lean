@@ -68961,3 +68961,59 @@ example {W₀ B W : Set (CoeffPair 2)}
   exact hφ.trans (by ext n; rfl)
 
 end IntroductionRealActionImageChecks
+
+
+noncomputable section
+namespace IntroductionRenormalizedEnergyChecks
+open Set Complex MeasureTheory NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ContDiff ComplexConjugate
+
+-- A nonzero constant datum distinguishes the factor four and the Poisson signs.
+example (x : ℝ) :
+    (classicalRenormalizedNLSVectorField (fun _ => 2) (fun _ => 2)).1 x = 16*Complex.I ∧
+    (classicalRenormalizedNLSVectorField (fun _ => 2) (fun _ => 2)).2 x = -16*Complex.I := by
+  norm_num [classicalRenormalizedNLSVectorField, classicalRenormalizedNLSEnergyGradient,
+    classicalNLSEnergyGradient, classicalNLSHamiltonian_one, deriv_const']
+  ring
+
+-- The actual constructed smooth solution obeys (0.4) with its current physical mass.
+example (f : SmoothNLSData) (time x : ℝ) :
+    Complex.I*deriv f.renormalized time (x : AddCircle (2 : ℝ)) =
+      -deriv (deriv (fun y : ℝ => f.renormalized time (y : AddCircle (2 : ℝ)))) x +
+        2*(‖f.renormalized time (x : AddCircle (2 : ℝ))‖^2 : ℝ)*
+          f.renormalized time (x : AddCircle (2 : ℝ)) -
+        4*((∫ y in (0 : ℝ)..1, ‖f.renormalized time (y : AddCircle (2 : ℝ))‖^2 : ℝ) : ℂ)*
+          f.renormalized time (x : AddCircle (2 : ℝ)) := by
+  rw [f.renormalized_hamiltonian_equation time x]
+  exact classicalRenormalizedNLSVectorField_scalar _ x
+
+-- The full derivative can be used along simultaneous variations of arbitrary H1 pairs.
+example (a b h k : ScalarDomain 2) :
+    HasDerivAt (fun z : ℂ => periodOneSobolevRenormalizedEnergy (a+z • h,b+z • k))
+      (fderiv ℂ periodOneSobolevHamiltonian (a,b) (h,k) -
+        4*periodOneSobolevMass (a,b)*(periodOneSobolevMass (h,b)+periodOneSobolevMass (a,k))) 0 := by
+  have hl : HasDerivAt (fun z : ℂ => (a,b)+z • (h,k)) (h,k) 0 := by
+    simpa using ((hasDerivAt_id (0 : ℂ)).smul_const (h,k)).const_add (a,b)
+  have hd := (show HasFDerivAt periodOneSobolevRenormalizedEnergy
+    (fderiv ℂ periodOneSobolevRenormalizedEnergy (a,b)) ((a,b)+(0 : ℂ) • (h,k)) from by
+      simpa using (analyticAt_periodOneSobolevRenormalizedEnergy (a,b)).differentiableAt.hasFDerivAt).comp_hasDerivAt 0 hl
+  simpa only [fderiv_periodOneSobolevRenormalizedEnergy_apply] using! hd
+
+-- On smooth representatives the full derivative includes both mass-corrected gradients.
+example (a b h k : ScalarDomain 2)
+    (ha : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis a (x : AddCircle (2 : ℝ))))
+    (hb : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis b (x : AddCircle (2 : ℝ))))
+    (hh : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis h (x : AddCircle (2 : ℝ))))
+    (hk : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis k (x : AddCircle (2 : ℝ)))) :
+    fderiv ℂ periodOneSobolevRenormalizedEnergy (a,b) (h,k) =
+      (∫ x in (0 : ℝ)..1, periodOneSobolevSynthesis h (x : AddCircle (2 : ℝ)) *
+        (classicalRenormalizedNLSEnergyGradient
+          (fun y : ℝ => periodOneSobolevSynthesis a (y : AddCircle (2 : ℝ)))
+          (fun y : ℝ => periodOneSobolevSynthesis b (y : AddCircle (2 : ℝ)))).1 x) +
+      (∫ x in (0 : ℝ)..1, periodOneSobolevSynthesis k (x : AddCircle (2 : ℝ)) *
+        (classicalRenormalizedNLSEnergyGradient
+          (fun y : ℝ => periodOneSobolevSynthesis a (y : AddCircle (2 : ℝ)))
+          (fun y : ℝ => periodOneSobolevSynthesis b (y : AddCircle (2 : ℝ)))).2 x) :=
+  fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals a b h k ha hb hh hk
+
+end IntroductionRenormalizedEnergyChecks

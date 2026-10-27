@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual spectral-action image of the original real
-Fourier-Lebesgue distribution space, for finite p>=2, is relatively open
-and dense in the nonnegative half-exponent cone and contains every nonnegative summable
-sequence. This includes the FL4 assertion on printed page 15.
+Latest step: the literal renormalized energy `Hr = H3 - 2 H1^2` now
+has proved physical gradients and generates the constructed smooth
+renormalized NLS solution. It is entire on the full complex H1 space,
+with derivative `dH - 4 M dM`. The introductory proof-method comparison
+retains the established spectral and sequence-space qualifications.
 See the [introduction audit](coverage/INTRODUCTION.md).
 The remaining dissertation source audit is still in progress.
 

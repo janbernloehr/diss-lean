@@ -21,6 +21,65 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Renormalized energy and method of proof, printed pp. 13–15
+
+[ClassicalRenormalizedEnergyVariation.lean](../NLS/ZakharovShabat/ClassicalRenormalizedEnergyVariation.lean)
+defines the literal physical `Hr = H3 - 2 H1^2`. Both complex directional
+derivatives are proved from the hierarchy integrals on smooth periodic
+pairs. Their gradients are the ordinary energy gradients minus
+`(4 H1 b, 4 H1 a)`. The cross-component Poisson signs give the physical
+renormalized vector field, preserve the conjugate-pair real form, and
+produce precisely equation (0.4), including its actual mass integral.
+`SmoothNLSData.renormalized_hamiltonian_equation` connects this field to
+the constructed global smooth solution.
+
+[SobolevRenormalizedEnergy.lean](../NLS/ZakharovShabat/SobolevRenormalizedEnergy.lean)
+proves that the energy is entire on the full complex H1 pair space. Its
+bounded Fréchet derivative is `dH - 4 M dM`, and the mass derivative in
+an arbitrary H1 direction `(h,k)` is `M(h,b) + M(a,k)`. On smooth
+representatives the full derivative equals the sum of the two physical
+gradient integrals. Spatial second derivatives in this representation
+retain smoothness assumptions; no bounded H1-to-H1 vector field for
+arbitrary rough inputs is asserted. `Hr` retains dispersion, while the
+previous residue Hamiltonian `H-star` subtracts dispersion as well.
+
+Four public examples check both Poisson signs at constant amplitude two,
+the physical PDE for the constructed solution, simultaneous variations
+at arbitrary H1 pairs, and the full smooth gradient formula.
+
+The comparison `IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27`
+in the [source-comparison snapshot](source-review-index.json) records
+13 assertion groups at extraction lines 486–648 and 662–675. It connects
+the introductory outline to the existing original-source proofs:
+
+- The ordinary frequency has mass shift `4M`; the nonextension result
+  uses compact-time trajectory topology and all target exponents q>=1.
+- OnePlus is the intersection of finite ellr spaces for r>1, and mixed
+  estimates choose a common decomposition before the refined exponent.
+- The squared action estimates retain exponents `4m` and `4m-3`, common
+  constants and one original Birkhoff family.
+- Physical spectral labels preserve full multiplicities, real ordering,
+  l2 displacements and isospectral evolution. Higher-action asymptotics
+  include closed gaps, and the physical odd Hamiltonians are defined
+  independently of the actions.
+- The localization threshold depends on the literal H1 norm. Central and
+  exterior estimates yield the action bounds. Cubic and second-moment
+  sums retain their actual domains, convergence and coefficients.
+- The action minus the reflected squared Fourier modulus gains one
+  summable weight at positive integer Sobolev orders. This comparison
+  does not extend that statement to order zero or fractional orders.
+
+The corrected gauge factor four, all-integer trace sum, and negative
+cubic-residue coefficient remain in force. The actual action image is
+covered separately below. Bibliographic priority, external solution
+identifications, the I-method narrative and other PDE comparisons are
+not mathematical theorems established by this record. The remaining
+related-results discussion from extraction line 676 onward is separate.
+
+Validation passes: 8,424 build jobs, 7,454 public examples and a
+transitive axiom audit of 42,772 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## The actual real action image, printed p. 15
 
 [SourceRealActionImage.lean](../NLS/ZakharovShabat/SourceRealActionImage.lean)

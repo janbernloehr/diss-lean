@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T10:36:59.814741+00:00",
-  "base_commit": "8f7df5996a1687ec63a3e009996c76c9b0d01c76",
+  "published_utc": "2026-10-27T11:26:05.928388+00:00",
+  "base_commit": "dcb3ebe278ce9409d175d74d25f6a593ce2b11e2",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 61,
-    "module_hash_checks": 876,
-    "distinct_modules": 765
+    "review_records": 62,
+    "module_hash_checks": 925,
+    "distinct_modules": 784
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "8f7df5996a1687ec63a3e009996c76c9b0d01c76",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceRealActionImage, NativeRealActionImage and four public examples.",
-    "command": "./scripts/check.sh",
-    "build_jobs": 8422,
-    "public_examples": 7450,
-    "transitive_NLS_declarations": 42742,
+    "base_commit": "dcb3ebe278ce9409d175d74d25f6a593ce2b11e2",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes ClassicalRenormalizedEnergyVariation, SobolevRenormalizedEnergy and four public examples.",
+    "command": "bash -x ./scripts/check.sh",
+    "build_jobs": 8424,
+    "public_examples": 7454,
+    "transitive_NLS_declarations": 42772,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4699,
-      "sha256": "1686689e3fbadbc2cc6a2a2a12702de9c01fb2eec417587745dd42ef7963c91b"
+      "files": 4701,
+      "sha256": "57354f7c824554b9993429242f455f48a3c8391f6cc43943aadc27527828805a"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -11531,6 +11531,365 @@
       },
       "qualification": "All14 listed modules were read completely for this comparison. Four integration examples check unconditional FL4 construction, nearby realizations with exact rectangular normalization at arbitrary gaps, full-norm density at p=3,q=3/2, and onto at p=2,q=1. The unit-weight original-distribution equivalence is used; no arbitrary weighted-space action image theorem is asserted. Relative openness and density do not imply onto for p>2. This focused comparison covers the action-image sentence at635-639, not a new independent audit of the entire derivation of Theorem0.2 or all transitive dependencies. Earlier source corrections, the remaining introductory proof-method comparison, exact2014 identification and AppendixG2 norm interpretation remain separate.",
       "source_record_sha256": "fae5993c92528450d3a4de7d9d34b8fe0a6501cd3258cee243c671c921282feb"
+    },
+    "IntroductionRenormalizedEnergyMethodsSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "dcb3ebe278ce9409d175d74d25f6a593ce2b11e2",
+      "updated_utc": "2026-10-27T11:26:05.928388+00:00",
+      "source_lines": [
+        [
+          486,
+          648
+        ],
+        [
+          662,
+          675
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            486,
+            491
+          ],
+          "requirement": "The analytic extension concerns original period-one Fourier-Lebesgue distributions.",
+          "finding": "The preceding original-distribution comparison supplies the actual smooth-test carrier, its surjective coefficient isometry, and the analytic Birkhoff map for every finite p>1. The real action image at p=4 is the literal original-distribution range, as proved in the immediately preceding milestone. These comparisons are reused with their hashes unchanged; no unrelated coefficient subset replaces the original source space.",
+          "declarations": [
+            "NativeWeightedPeriodic.coefficients",
+            "NativeWeightedPeriodic.birkhoff_analytic",
+            "NativeWeightedPeriodic.range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            492,
+            500
+          ],
+          "requirement": "The ordinary frequency contains four times the mass; its non-Hilbert solution map does not continuously extend from smooth data.",
+          "finding": "For 1<p<=2 the physical mass is the absolutely convergent sum of original actions, and the ordinary frequency is the renormalized phase frequency plus four times that mass. For finite p>2, the nonextension theorem applies at every source outside l2 to any trajectory-valued extension agreeing with all smooth classical solutions, for every target q>=1 including infinity. The topology is the compact-time trajectory norm; this comparison does not turn it into a fixed-time discontinuity statement.",
+          "declarations": [
+            "sourceOrdinaryMass_eq_tsum",
+            "summable_sourceOrdinaryActions",
+            "SourceAbelianMomentAtlas.ordinaryPhaseFrequency_eq_action_shift",
+            "SourceSection20Data.smooth_source_nonextension_all",
+            "SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ]
+        },
+        {
+          "source_lines": [
+            501,
+            508
+          ],
+          "requirement": "Hr=H3-2H1^2 generates the printed Hamiltonian pair equation and scalar equation (0.4).",
+          "finding": "The new classical energy uses the literal hierarchy integrals. Complex directional derivatives in each field give gradH3 minus (4H1*b,4H1*a) on every smooth periodic pair. Applying the cross-component signs (-i,+i) preserves the conjugate-pair real form and gives i*v_t=-v_xx+2|v|^2*v-4*(integral |v|^2)*v. The actual constructed global solution follows this Hamiltonian field. This is distinct from H-star, which additionally subtracts the weighted action dispersion sum.",
+          "declarations": [
+            "classicalRenormalizedNLSEnergy",
+            "hasDerivAt_classicalRenormalizedNLSEnergy_fst",
+            "hasDerivAt_classicalRenormalizedNLSEnergy_snd",
+            "classicalRenormalizedNLSVectorField_real",
+            "classicalRenormalizedNLSVectorField_scalar",
+            "SmoothNLSData.renormalized_hamiltonian_equation"
+          ]
+        },
+        {
+          "source_lines": [
+            501,
+            508
+          ],
+          "requirement": "The renormalized energy has a genuine bounded derivative on its physical Sobolev energy space.",
+          "finding": "The new energy is entire on the full complex H1 pair space. Its full Frechet derivative is dH-4M*dM at arbitrary, possibly nonsmooth inputs. The mass derivative in direction (h,k) is M(h,b)+M(a,k), with no smoothness or finite-support premise. On smooth representatives the Banach energy equals the classical hierarchy expression, and its full derivative is the sum of the integrals against both proved variational gradients. Smoothness is retained for the spatial second-derivative representation; no bounded H1-to-H1 Hamiltonian vector field is asserted for rough data.",
+          "declarations": [
+            "analyticAt_periodOneSobolevRenormalizedEnergy",
+            "hasFDerivAt_periodOneSobolevRenormalizedEnergy",
+            "periodOneSobolevMass_line",
+            "fderiv_periodOneSobolevMass_apply",
+            "periodOneSobolevRenormalizedEnergy_eq_classical",
+            "fderiv_periodOneSobolevRenormalizedEnergy_eq_integrals"
+          ]
+        },
+        {
+          "source_lines": [
+            511,
+            516
+          ],
+          "requirement": "Mass conservation transports ordinary and renormalized solutions by a scalar phase.",
+          "finding": "The literal physical mass integral is conserved along classical solutions; the constructed smooth solutions have the prescribed initial value and obey the corrected phase exp(4 i M t). The printed missing factor four is already refuted by an actual constant datum. The new Hamiltonian theorem uses that same solution and its own physical mass, not a supplied solution premise. Lower-regularity transport and solution uniqueness retain the separate Section18/22 scope. The claim identifying these constructions with the cited external solution constructions is not newly established here.",
+          "declarations": [
+            "classicalNLSMass_eq_integral",
+            "IsClassicalRenormalizedNLSTrajectory.mass_eq",
+            "SmoothNLSData.ordinary_isClassical",
+            "SmoothNLSData.renormalized_isClassical",
+            "SmoothNLSData.renormalized_phase",
+            "original_gauge_printed_phase_counterexample"
+          ]
+        },
+        {
+          "source_lines": [
+            519,
+            524
+          ],
+          "requirement": "Mixed sequence notation means an actual sum decomposition, and ell1+ means membership at every exponent greater than one.",
+          "finding": "OnePlus is the intersection of all finite ellr with r>1. The estimate for the correction omegaStar+2I chooses common sequences g and h before the refined target exponent; g is in ell(p/3) and h in OnePlus. It retains one common neighborhood and locally uniform bounds. Thus separate exponent-dependent decompositions are not substituted for the printed notation.",
+          "declarations": [
+            "onePlusSubmodule",
+            "SourceOriginalFrequencyData",
+            "SourceSection17OriginalData.exists_frequency_asymptotic",
+            "exists_sourceActionFrequency_asymptotic"
+          ]
+        },
+        {
+          "source_lines": [
+            527,
+            540
+          ],
+          "requirement": "Theorem0.1 follows from the two squared action-norm estimates with H1 remainders.",
+          "finding": "One original Birkhoff family is fixed before all integer orders and inputs. For each positive integer m, common positive constants precede every real Hm source. The upper action estimate keeps exponent 4m in the H1 remainder; the converse keeps exponent 4m-3 in the weighted action remainder. The actual squared rectangular radius identifies these action quantities with the Birkhoff norm, with the existing factor-one-half and physical Fourier weights.",
+          "declarations": [
+            "SourceSection23SobolevBounds",
+            "SourceSection17OriginalData.section23_sobolev_bounds",
+            "sourceSection23_original_estimates"
+          ]
+        },
+        {
+          "source_lines": [
+            551,
+            569
+          ],
+          "requirement": "The original operator has real discrete periodic spectrum at real L2 potentials, with full multiplicities, ordered pairs, l2 displacements and isospectral evolution.",
+          "finding": "The physical endpoint specification uses the actual monodromy discriminant, global order and both full l2 displacement sequences. Its labels agree with the source labels. The prior physical-spectrum comparison identifies their counts with full generalized-eigenspace dimensions, and proves the actual bounded-inverse spectrum is discrete. Adjacent real pairs are strictly separated, including central and collapsed gaps. Every original global ordinary solution for 1<p<=2 preserves the actions, hence the original periodic spectrum, algebraic multiplicities and discriminant. The physical differential expression and signed domains are reused from the unchanged spectral-overview comparison. This records the spectral assertions, without treating the historical Lax-pair attribution as an additional newly proved identity.",
+          "declarations": [
+            "physicalPeriodicEndpoints_spec",
+            "physicalPeriodicEndpoints_eq_source",
+            "canonicalPeriodicRight_re_lt_next_left",
+            "isospectral_of_isOrdinaryNLSSolutionOn_univ",
+            "discriminant_of_isOrdinaryNLSSolutionOn_univ"
+          ]
+        },
+        {
+          "source_lines": [
+            572,
+            603
+          ],
+          "requirement": "Higher actions have the odd-level asymptotic, trace identity and a Hamiltonian with leading derivative energy plus a lower-order polynomial.",
+          "finding": "The cofinite signed-index asymptotic is formulated by actual mean-value samples in each gap; it includes closed gaps without dividing by the action. Code power 2m corresponds to printed level 2m+1. The odd Hamiltonian is independently defined using the physical leading derivative pairing plus a reduced differential polynomial in jets through order m-1, on the entire Hm space. Its real leading term is the exact derivative L2 norm squared, and absorption estimates control the remainder. The trace sums over all integer indices with positive factor 4^m. The printed positive-index sum is retained as a formally refuted source error.",
+          "declarations": [
+            "sourceIndexedHigherAction_exists_asymptotic_samples",
+            "sourceIndexedHigherAction_asymptotic",
+            "nlsOddReducedPolynomial_order",
+            "sobolevOddHamiltonian_eq_classical",
+            "sobolevOddHamiltonian_real_decomposition",
+            "exists_sobolevOddHamiltonian_energy_estimates",
+            "section23_positiveIndex_trace_counterexample"
+          ]
+        },
+        {
+          "source_lines": [
+            604,
+            612
+          ],
+          "requirement": "A threshold depending only on the H1 norm separates the controlled distant spectrum from a central error.",
+          "finding": "The localization theorem uses the literal physical H1 pair norm P and explicit threshold 8P^2<=1+|n|. It controls both actual endpoints for every complex H1 source and preserves multiplicities; the complement is in an explicit box. Exterior and central higher-action estimates, the full trace and the independent Hamiltonian remainder bounds give the squared action estimates. The positive Hamiltonian sign is retained: the alternating sign in printed Lemma26.2 has its own actual-source counterexample. The procedural comparison does not infer that a library dependency is absent merely from module names.",
+          "declarations": [
+            "sourceH1_uniform_localization",
+            "sourceH1_canonical_pair",
+            "sourceSection26_exterior",
+            "sourceSection26_central",
+            "sourceSection26_action_estimate",
+            "sourceSection26_original"
+          ]
+        },
+        {
+          "source_lines": [
+            613,
+            639
+          ],
+          "requirement": "Cubic primitive moments yield the renormalized residue Hamiltonian and an analytic FL4 sum, then the action-image argument applies.",
+          "finding": "The moments retain the actual discriminant, canonical primitive and original contours on a common complex domain. All-index local bounds are of gap length to power m+1; at cubic power this gives absolute and locally uniform summability for p=4. The coefficient is -4/3, with the printed +4/3 already refuted. The sum is real analytic on the full real FL4 locus and agrees with H-star on physical H1 sources. The separately completed actual action-image theorem proves relative openness and inclusion of the nonnegative summable cone. It does not prove onto above the Hilbert endpoint.",
+          "declarations": [
+            "SourceSection21MomentData.lemma21_1",
+            "SourceSection21HamiltonianData.hamiltonian_hasSum",
+            "SourceSection21HamiltonianData.proposition21_3",
+            "SourceSection21HamiltonianData.physical_identity",
+            "NativeWeightedPeriodic.isOpen_range_actions"
+          ]
+        },
+        {
+          "source_lines": [
+            640,
+            648
+          ],
+          "requirement": "Second primitive moments yield analytic renormalized frequencies and their refined sequence asymptotics.",
+          "finding": "The actual second-moment sum carries the coefficient -4/(2*pi), with absolute and locally uniform convergence on a common original complex domain. The full frequency sequence is analytic into every finite target r>1 with r>=p/2. The frequency correction is literally omegaStar+2I on the same action domain, with the shared mixed decomposition and locally uniform bounds. One original package is constructed without assuming the desired moment estimates.",
+          "declarations": [
+            "SourceSection20Data.frequency_hasSum",
+            "SourceSection20Data.sequence_analytic",
+            "SourceSection20Data.action_frequency_complex",
+            "SourceOriginalFrequencyData",
+            "sourceSection20_original"
+          ]
+        },
+        {
+          "source_lines": [
+            662,
+            675
+          ],
+          "requirement": "The action differs from the squared Fourier modulus by a one-smoothing remainder, and the norm proof separates low and high modes.",
+          "finding": "For every positive integer Sobolev order m, the literal action error is real analytic into weighted ell1 of order 2m+1, and its coordinates are I_n minus the squared modulus of the reflected physical Fourier coefficient at -n. The proof uses the actual Birkhoff one-smoothing remainder and an absolutely summable weighted product, retaining the factor one-half in rectangular coordinates. This is the inspected positive-integer statement; the introductory informal phrase alone does not establish the m=0 endpoint or arbitrary fractional orders. The low/high mode discussion refers to the explicit localization and action estimates above; historical claims about the I-method and other PDEs are not formalized by this comparison.",
+          "declarations": [
+            "SourceSection17OriginalData.actionFourierRemainder_analytic",
+            "SourceSection17OriginalData.actionFourierRemainder_fourier_square",
+            "SourceSection17OriginalData.summable_actionFourier_error",
+            "sourceH1_uniform_localization"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "Section20SourceComparison-2026-10-27",
+        "Section21SourceComparison-2026-10-27",
+        "Section22SourceComparison-2026-10-27",
+        "Section23SourceComparison-2026-10-27",
+        "Section25SourceComparison-2026-10-27",
+        "Section26SourceComparison-2026-10-27",
+        "IntroductionOpeningSourceComparison-2026-10-27",
+        "SpectralOverviewComplexSourceComparison-2026-10-27",
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27",
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27",
+        "IntroductionNormalizationSourceComparison-2026-10-27",
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27",
+        "IntroductionRealActionImageSourceComparison-2026-10-27"
+      ],
+      "related_evidence_hashes": {
+        "IntroductionMainTheoremsSourceComparison-2026-10-27": {
+          "source_record_sha256": "1b846c5958e9c5251e00afeae48ba0c407a4d73beea2d736a08725eb4f2336a9",
+          "module_hashes_verified": true
+        },
+        "Section20SourceComparison-2026-10-27": {
+          "source_record_sha256": "39f02d6e478af59b3c83001ccf11bb4cfc058bd51bf3030baf03b4e736122754",
+          "module_hashes_verified": true
+        },
+        "Section21SourceComparison-2026-10-27": {
+          "source_record_sha256": "087a2ecff9feb2d3f691dc30459442341f4665b3fb5aad2fc0a23115860e2801",
+          "module_hashes_verified": true
+        },
+        "Section22SourceComparison-2026-10-27": {
+          "source_record_sha256": "a9285bd4b629924591e23ffe171322b76180f60947e441351453a37a8c8a7ea2",
+          "module_hashes_verified": true
+        },
+        "Section23SourceComparison-2026-10-27": {
+          "source_record_sha256": "1fc79469f93a83f712e7fa7a377d6f23738f7a194f9095b4ae8327b65da4b007",
+          "module_hashes_verified": true
+        },
+        "Section25SourceComparison-2026-10-27": {
+          "source_record_sha256": "15947c1820834b4ec88f7b4a6b9e610f2a0c5eb9e1cef04fee2d3301e2066f78",
+          "module_hashes_verified": true
+        },
+        "Section26SourceComparison-2026-10-27": {
+          "source_record_sha256": "ea5a9131f5f985baa5d6ad42ef65ee0166d137dc7ea1b96ce31280ece617c12a",
+          "module_hashes_verified": true
+        },
+        "IntroductionOpeningSourceComparison-2026-10-27": {
+          "source_record_sha256": "53a67358eda92753dcf0fc87935211a9c9de43250de69c767ac714d3f8c6b285",
+          "module_hashes_verified": true
+        },
+        "SpectralOverviewComplexSourceComparison-2026-10-27": {
+          "source_record_sha256": "37bc62e79063ef675ff4989bc86fdd8834bcbe33b63b88b661cb32143172365d",
+          "module_hashes_verified": true
+        },
+        "SpectralOverviewRealPeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "9984e0f25164ce183804aab64542484c9f3e3ef77421f129c82a2f31aab71e3d",
+          "module_hashes_verified": true
+        },
+        "SpectralOverviewNativePeriodicSourceComparison-2026-10-27": {
+          "source_record_sha256": "842a54d48a558887ea83f7c89e6cfc414baa7014bb4a1b34de2c514c5997aac2",
+          "module_hashes_verified": true
+        },
+        "IntroductionNormalizationSourceComparison-2026-10-27": {
+          "source_record_sha256": "196676cd67946bb121a2d689a4bd582db6d05d1cef74c360f204297fe144b5dc",
+          "module_hashes_verified": true
+        },
+        "IntroductionHamiltonianCoordinatesSourceComparison-2026-10-27": {
+          "source_record_sha256": "bb83e37ccea9f174effcf223c0c79bcb0d8542ecad26409be41a28b79e6fbaf4",
+          "module_hashes_verified": true
+        },
+        "IntroductionRealActionImageSourceComparison-2026-10-27": {
+          "source_record_sha256": "fae5993c92528450d3a4de7d9d34b8fe0a6501cd3258cee243c671c921282feb",
+          "module_hashes_verified": true
+        }
+      },
+      "rendered_source": {
+        "printed_pages": [
+          13,
+          14,
+          15
+        ],
+        "pdf_pages": [
+          13,
+          14,
+          15
+        ],
+        "inspection": "Previously inspected all three rendered pages; checked the literal renormalized pair and scalar equations, method outline, coefficients and sequence notation against the newline-indexed extraction.",
+        "images": {
+          "IntroductionMethodsCurrentReview-013.png": "23519e8ba4617a6760f9c9608aedee28c928df2b2a10b6eb47f3723baf649fab",
+          "IntroductionMethodsCurrentReview-014.png": "bf760a11b76dd50c149bc6f5444f50eaf94bf721810f8db6b0e1f75ae097fab0",
+          "IntroductionMethodsCurrentReview-015.png": "a3db236d7c15f94f86acf803f01bf8e5b8142823236afc6c313c2eb262a6207e"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean": "952d351d05ab5cdcd1a849e8ead619f2cd8e907584eb742f7623d5f9f7b31450",
+        "NLS/ZakharovShabat/SourceSection23Sobolev.lean": "46b90512d200e2effa0535aef8a39ba4ba2ddc842de0e09c0b41dffb0b5ae1b2",
+        "NLS/ZakharovShabat/SourceSection23Original.lean": "a98150495f40ebe8a16dbd2873ca9848d7d8a16dac459dc4069e0adf6522b92a",
+        "NLS/ZakharovShabat/SourceSection25Localization.lean": "c5b19d7ed7bc313b59c7fdc70d373c2b7f338082375de27b7d9d0556c4dd0733",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean": "87d5874740112bae058627577484af379cb9964b5c18860c312c5a41fde4313d",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean": "c656302f1c03029fb6a727a69c4cdb8d813cd1983cc9191c333e2843f652952b",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean": "d1025a6dac6dc595d422f65e8bbfec8efbba3e2bfbba2967f7dbc6b500edd29f",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17",
+        "NLS/ZakharovShabat/SourceSection26Original.lean": "03ae2b6d6b986bfdb37b9c44553d4f12eed8647ea1184dabda2066bf92d08515",
+        "NLS/ZakharovShabat/SourceSection26Actions.lean": "84495a81a1b7337d04180b446c21744fa0e8f9512931a443392f34ad3acc099f",
+        "NLS/ZakharovShabat/SourceSection26Sum.lean": "007618a2d67b5fe663dc5b01380c205eda9b5020cdf2c896698834ca55a23c50",
+        "NLS/ZakharovShabat/SourceSection20Frequencies.lean": "d4d8d75a91faeb825d6ab1cc88bd70908425f72d237dafcaba52fd7f0a82fe53",
+        "NLS/ZakharovShabat/SourceSection20Moments.lean": "a6b75945ee8dbcf756c5ab36fd7694a39319b59aecad0cfbb0e279974d2eb8b2",
+        "NLS/ZakharovShabat/SourceSection21Moments.lean": "b1581e84f06e87f73d68958a970fd479c89a2add49671da23a5b9b657f99e4ce",
+        "NLS/ZakharovShabat/SourceSection21Hamiltonian.lean": "8afe1f69d9823026a7e2867527622fd7feebfdd1f65f0eca035994c1c186d6de",
+        "NLS/ZakharovShabat/SourceActionFourierRemainder.lean": "c89f845a4e419867f3acf4b1a8a8c735d1624c7c01d1fec9138376098c5a20d9",
+        "NLS/ZakharovShabat/SourceSection22Nonextension.lean": "42265ad6c0092590ad1617bf9fd57ba58151e3144f6be6b8f2ab9f3dcb5aded4",
+        "NLS/ZakharovShabat/SourceSection22NonextensionAll.lean": "1dea7b385005f1115707c60a3fd88a122e2a52a85cb0baf581b695adf3fa4442",
+        "NLS/ZakharovShabat/SourceSection20Domain.lean": "f6952eabd138e7105bb4eb4d4def41b38f42afa65607a089fc6aedc5b963913e",
+        "NLS/SequenceSpaces/WeightedHilbertProduct.lean": "7ce918b85d484af5600683894bec94b1a85c383ea994c4a967e133dfde6371e6",
+        "NLS/SequenceSpaces/OnePlus.lean": "e472bb3015a5446e75ecf9662ab5918ac3fa826c721223565e340871a1670111",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/ZakharovShabat/SourceActionFrequencyAsymptotic.lean": "5a7ee1a266669f22892cbb4db2898014732b7e9429cde3d4a2398c3e3325fcca",
+        "NLS/ZakharovShabat/SourceFrequencyActionSpaceCorrection.lean": "981ad97091ae55e87df31a476e162fd180fc2ade85315fbf2acdff6ea7309282",
+        "NLS/ZakharovShabat/SourceOrdinaryMassShift.lean": "9056ad7c6383f5c0ba0886027a399fcded0a6067d5de61c8ae3ad8f08ba318d0",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean": "e946e2913586faf92c6c9f7c3183a59f73fc6b9e294403857640c15b6975ae67",
+        "NLS/ZakharovShabat/SourceSection18GaugeCorrection.lean": "19dc9ab6916d94479b390dafce84cacf5b0ec34835b53183effd81582486f43d",
+        "NLS/ZakharovShabat/SourceSection23TraceCorrections.lean": "30061ddb5dc37ae11ad40199507f38dca5f0c03a9dcd252e09c7554ffd38eda3",
+        "NLS/ZakharovShabat/SourceSection21SignCorrections.lean": "51e52c73180c48368045d6dcc894bbe08a74be9de91b5e7de2b712668029bccf",
+        "NLS/ZakharovShabat/SourceSection20Original.lean": "9ed9a2dc3c7fb07a0a4ae68596bbfd954421fb3b39db74cfeaf9072b5b855415",
+        "NLS/ZakharovShabat/SourceRenormalizedHamiltonianDifferential.lean": "406d19f5a6c1c23bbd73fff55b69bad5ad05d19ae9877f2ec1885eb74b4d5f5a",
+        "NLS/ZakharovShabat/SourceFiniteGapRenormalizedHamiltonian.lean": "7afc004f902424c5e745a5524512b9325c97e10fc2d690ef7f52e1be496d8a8b",
+        "NLS/ZakharovShabat/ClassicalRenormalizedNLSGauge.lean": "483d5abd7c9455486b3949aa732c75a98dda9818ce0bde4fbe731a8ea52bf327",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "a7306ddd0e52031dc727feab083c3d4d14f397340242bf3946abaf0e58095a8f",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": "0b24b5cd21ab246633be338bfe929b19ff8e51bfa948700744ac918d1270493f",
+        "NLS/ZakharovShabat/SourceSection22Higher.lean": "67f32b0bc2afc30e133af27fcab25bdf3f4d19b53a9088494a12fc9a61b7d069",
+        "NLS/ZakharovShabat/ClassicalRenormalizedEnergyVariation.lean": "ff122b5388643a76537d10ba1246540f098d17f81aed5483b7f2e1ef2b019723",
+        "NLS/ZakharovShabat/SobolevRenormalizedEnergy.lean": "0e9fb9d8d8493b601611badb7f606f015571de243ab4ffbf83471cb1cac43c40",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/SmoothNLSData.lean": "8a972daa1507ad18eeda71f81f9c17c7fe9748c7affe91764836a9735f0e3f90",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f",
+        "NLS/ZakharovShabat/PeriodOneSobolevEnergyVariation.lean": "74f4b5d96be81252be09986b0c3247fe68e271b312648e253c1194123f5441e5",
+        "NLS/ZakharovShabat/SobolevHamiltonianConservation.lean": "f5a4711dafcea3a95fcef84fec4f63b2c510d7e26c36d6cac2c8e8a5fa9702f7",
+        "NLS/ZakharovShabat/ClassicalNLSMass.lean": "e5fd81ced19ea561dae08a9d2c4384782e064c3bde70dba7658fbbc8e589504c",
+        "NLS/ZakharovShabat/PhysicalSignedSpectralOverview.lean": "95cdae378cf6e59aa6c0624aa74fe3b7ec690f6a3af175ba022a797efbb4f794",
+        "NLS/ZakharovShabat/SourceOriginalSpectralConservation.lean": "5162b84e6e62b907dd41c450164a3a7c46c2d82c4f7cdcbb92a51714b418e436",
+        "NLS/ZakharovShabat/PhysicalPeriodicEndpoints.lean": "4afcc20e1d8f44772f83d942aba1614ba05cd461198286f8a616da4ca1d7109f",
+        "NLS/ZakharovShabat/SourcePeriodicOverview.lean": "d5aee9e22082da103998e4e03f15f4b45c0a330d96a71d3dd22f95594000d3ec",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean": "55ed05132943d26034a7f8f16999e7cc1de29dbad8d8b6ba4b99326422287801"
+      },
+      "contextual_scope": "Historical attribution, novelty, the external Christ and Grunrock-Herr construction identification, comparisons with other PDEs and the I-method narrative are contextual references. They are not Lean theorem claims in this record. Lines 651-661 contain related-work comparisons; the remaining related-results narrative from 676 onward is reserved for the next source assessment.",
+      "qualification": "All hash-listed modules were read completely during this introductory-method assessment or its retained preparatory reads; their current hashes were verified. Earlier physical-operator, multiplicity, distribution-carrier and named-result comparisons are explicitly reused with unchanged evidence, rather than represented as a fresh audit of all transitive dependencies. The two new modules and four public examples bridge the literal Hr energy, both classical gradients, the constructed solution and the full complex H1 derivative. Source corrections for the gauge factor, trace index set and residue sign remain. The one-smoothing comparison retains positive integer order, and the nonextension comparison retains trajectory topology. No complete-introduction or complete-dissertation claim is made. The precise 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unresolved.",
+      "source_record_sha256": "ef63081f90afa903e8dcdbad6b868e44daab92a64a8bb5976dfe96ebec51e6f5"
     }
   }
 }
