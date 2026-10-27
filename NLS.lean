@@ -4702,3 +4702,5 @@ import NLS.ZakharovShabat.PhysicalNonrealMidpoint
 import NLS.ZakharovShabat.AKNSPotentialReality
 import NLS.ZakharovShabat.AKNSConjugation
 import NLS.ZakharovShabat.AKNSComplexification
+import NLS.ZakharovShabat.SourceSection16UniformDerivatives
+import NLS.ZakharovShabat.SourceFiniteGapBetaDecay

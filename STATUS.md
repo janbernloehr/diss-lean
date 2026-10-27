@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: real AKNS coordinates and classical complexification
+## Current milestone: Section 16 derivative bounds and beta decay
+
+Section 16's normalization, beta correction and gap-weighted coordinates
+now have explicit locally uniform bounds on their actual derivatives
+and physical conjugate gradients, at every finite source exponent p>1.
+One source neighborhood and constant precede all signed spectral indices.
+
+At every real spectral finite-gap source, the original beta correction
+has the printed O(1/n) decay with one cutoff for both index directions.
+The proof uses finite spectral gap support and the original beta terms.
+
+The [Section 16 audit](coverage/SECTION_16.md) records the domains and
+quantifiers. The remaining semantic source audit, exact2014 and G2
+qualifications remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,397 build jobs, 7,397
+public examples, and a transitive axiom audit of 42,398 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,787 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: real AKNS coordinates and classical complexification
 
 Every real-type physical L2 potential now has explicit real AKNS
 coordinates q,p in L2, with exact reconstruction. The inverse potential

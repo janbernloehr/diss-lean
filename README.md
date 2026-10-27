@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: real-type physical L2 potentials have exact real AKNS
-coordinates. Conjugation and real/imaginary decomposition preserve the
-full classical boundary domains and the actual differential action.
+Latest step: Section 16's actual normalization, beta and gap-weighted
+coordinate derivatives have locally uniform bounds over all signed indices.
+The original beta correction has O(1/n) decay at every real finite-gap source.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

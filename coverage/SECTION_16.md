@@ -166,3 +166,35 @@ and derive uniform coordinate-tail decay and a bound on the literal
 fourth-power sum. The previous proof of (3.3), the corrected positive
 product convention, and all existing original-family results remain in
 place. The precise 2014 construction comparison is still unverified.
+
+## Uniform derivative bounds and finite-gap beta decay, printed pp. 76–77
+
+The separate Cauchy estimates used in the proof of Lemma 16.2 are now
+explicit in [SourceSection16UniformDerivatives.lean](../NLS/ZakharovShabat/SourceSection16UniformDerivatives.lean).
+For the actual normalized action root, beta correction and gap-weighted
+eta coordinates, one complex source neighborhood and constant bound
+every full Frechet derivative, uniformly over all signed indices.
+The same neighborhood bounds the physical Holder-conjugate gradients
+in the full pair norm. The estimates hold for every finite p>1.
+
+The root estimate is near each real-type source. The beta and eta
+estimates hold at every point of their original complex domains, and
+for each fixed eta parameter in the closed unit disk (in particular either
+sign), the neighborhood and constant precede all signed indices.
+Nested-ball Cauchy estimates are applied to the actual local scalar bounds; no uniform bound over an
+arbitrary source norm ball is asserted. All central indices are retained.
+
+[SourceFiniteGapBetaDecay.lean](../NLS/ZakharovShabat/SourceFiniteGapBetaDecay.lean)
+proves the printed beta_n=O(1/n) directly at every real spectral finite-gap
+source, for every finite p>1. Outside one symmetric cutoff, the actual
+beta correction has norm at most K/abs(n). The constant and cutoff precede
+both positive and negative indices. The proof uses the finite set of
+open gaps and the original reciprocal estimate for the actual beta
+terms. It assumes neither finite Fourier support nor an H1 representative.
+
+The existing proof of Lemma 16.2 also uses the exact vanishing of the
+gap-weighted coordinate at a real collapsed gap: its product rule removes
+the normalization and beta derivative terms there. The new separate
+bounds verify the additional estimates in the source proof narrative.
+The documented Section16 sign corrections and exact2014/G2 qualifications
+remain unchanged; the remaining semantic source audit is still in progress.

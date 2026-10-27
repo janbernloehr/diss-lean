@@ -68177,3 +68177,47 @@ example (q p : ℝ → ℝ) (g : ℝ → ℝ × ℝ) (x : ℝ) :
 
 end AKNSRealStructureExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section16ProofEstimatesExamples
+open Set
+open scoped ENNReal
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ W : Set (CoeffPair p)}
+  {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+example (D : SourceAngularEtaLocalCommonDomainData hp hp1 W₀ W s)
+    (hq : q ≠ ⊤) (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+        ‖fderiv ℂ (sourceAngularBetaCorrection hp hp1 n s) ψ‖ ≤ C ∧
+        ‖CoeffPair.conjugateGradient hp hq
+          (fderiv ℂ (sourceAngularBetaCorrection hp hp1 n s) ψ)‖ ≤ 2*C :=
+  D.betaCorrection_gradient_local_bound hq φ hφ
+
+example (H : SourceLemma12_12Data hp hp1 W₀ W s)
+    (hq : q ≠ ⊤) (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+        ‖fderiv ℂ (sourceGapWeightedEtaCoordinate hp hp1 n s (-1)) ψ‖ ≤ C ∧
+        ‖CoeffPair.conjugateGradient hp hq
+          (fderiv ℂ (sourceGapWeightedEtaCoordinate hp hp1 n s (-1)) ψ)‖ ≤ 2*C :=
+  H.gapWeighted_gradient_local_bound hq φ hφ (-1) (by simp)
+
+example (hq : q ≠ ⊤) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+        ‖fderiv ℂ (sourceNormalizedActionRoot hp hp1 n) ψ‖ ≤ C ∧
+        ‖CoeffPair.conjugateGradient hp hq
+          (fderiv ℂ (sourceNormalizedActionRoot hp hp1 n) ψ)‖ ≤ 2*C :=
+  sourceNormalizedActionRoot_gradient_local_bound hp hp1 hq φ hφ
+
+example (D : SourceAngularEtaLocalCommonDomainData hp hp1 W₀ W s)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ W)
+    (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ N : ℕ, ∃ K : ℝ, 0 ≤ K ∧ ∀ n : ℤ, N < n.natAbs →
+      ‖sourceAngularBetaCorrection hp hp1 n s φ.val‖ ≤ K / |(n : ℝ)| :=
+  D.betaCorrection_finiteGap_inverse_index_bound φ hφ hf
+
+end Section16ProofEstimatesExamples
+end NLS.ZakharovShabat
