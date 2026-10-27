@@ -4,6 +4,40 @@ This is a statement-by-statement audit against the original spaces and
 physical expressions on printed pages 28 onward. Existing later results do
 not by themselves certify this section or the full dissertation complete.
 
+## Physical scalar restrictions in Lemma 4.2
+
+The scalar restriction assertions on printed pp.30–31 now have explicit
+continuous linear equivalences on actual functions, with physical H1 norms.
+
+| Source object or assertion | Entry point | Exact scope |
+| --- | --- | --- |
+| Original H1 and zero-trace H1 | [SourceScalarIntervalH1.lean](../NLS/ZakharovShabat/SourceScalarIntervalH1.lean), `mem_sourceScalarIntervalSubmodule` | Actual functions on [0,1], with no periodicity condition; both zero traces only in the sine case. |
+| Physical interval norm | `norm_sourceScalarH1OfFunction` | Square root of ordinary Lebesgue function plus actual derivative energy. |
+| Amplitude restriction and product | [SourceLemma42ScalarRestriction.lean](../NLS/ZakharovShabat/SourceLemma42ScalarRestriction.lean) | Full even/odd weighted amplitude spaces, continuous inverses and exact closed-interval values. |
+| Actual periodic sine/cosine spaces | [SourceLemma42PhysicalRestriction.lean](../NLS/ZakharovShabat/SourceLemma42PhysicalRestriction.lean), `mem_sourceCosinePeriodic_iff`, `mem_sourceSinePeriodic_iff` | Actual continuous periodic functions represented by the full signed series; every element has classical H1 regularity. |
+| Physical periodic norm | `norm_sourceTrigPeriodicH1`, `sourceTrigPeriodic_norm_bounds` | Exact Lebesgue H1 norm on [0,2], with explicit bounds against the amplitude norm. |
+| Printed scalar restrictions | `sourcePhysicalCosineRestriction`, `sourcePhysicalSineRestriction` and their `_apply` theorems | Continuous linear equivalences onto the full scalar interval spaces; action is literal restriction at every closed-interval point. |
+| Product identity through T | `sourcePhysicalTrigClassicalEquiv`, `sourcePhysicalTrigClassicalEquiv_apply` | Entire original Dirichlet domain and exact normalized pointwise transform. |
+
+This supplies the separate R_cos and R_sin maps absent from the preceding
+Fourier milestone. It proves the asserted isomorphisms directly using the
+established boundary restriction and Sobolev energy results; it does not
+claim a separate review of textbook reference [54]. The physical norms
+retain their period lengths. Neither the amplitude norm nor the product
+maximum norm is asserted identical to the corresponding physical norm.
+
+Four examples check a ramp with unequal endpoint values, its exclusion
+from the sine target, its exact norm sqrt(4/3), and periodic sine extension
+of every original zero-trace H1 function without extra smoothness.
+
+Section4ScalarRestrictionSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups.
+Section 4 and the dissertation-wide assertion inventory remain unfinished.
+
+Validation passes: 8,444 build jobs, 7,506 public examples and a
+transitive axiom audit of 43,202 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Sine/cosine calculations in the proof of Lemma 4.2
 
 [SourceLemma42FourierProof.lean](../NLS/ZakharovShabat/SourceLemma42FourierProof.lean)
@@ -20,10 +54,10 @@ exposes the literal Fourier calculations on printed pp.30–31.
 | Full classical domains | `sourceBoundaryTrigClassicalEquiv`, `sourceBoundaryTrigNeumannClassicalEquiv` and their `_apply` theorems | Continuous equivalences onto both actual closed-interval H1 domains, preserving every physical value including endpoints. |
 
 The last step composes with the previously proved physical restriction
-maps. It proves the product-domain conclusion without introducing separate
-new scalar R_sin and R_cos equivalence objects or independently auditing
-reference [54]. No finite-support input or extra endpoint periodicity is
-assumed. The product amplitude norm is not asserted to be isometric to
+maps. That milestone proved the product-domain conclusion; the subsequent
+physical scalar restriction construction above supplies the separate
+R_sin and R_cos equivalences. Reference [54] is not independently audited.
+No finite-support input or extra endpoint periodicity is assumed. The product amplitude norm is not asserted to be isometric to
 the original pair norm. The existing AKNS potential-normalization and
 Lemma 4.3 coefficient corrections remain unchanged.
 

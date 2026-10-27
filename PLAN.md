@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: Lemma 4.2 sine/cosine Fourier proof
+## Current milestone: Lemma 4.2 physical scalar restrictions
+
+The printed sine and cosine restrictions now act on actual periodic
+functions with the physical H1 norm. They are continuous linear
+equivalences onto the entire original interval H1 spaces, with both zero
+endpoint traces required in the sine case. Their values agree with
+ordinary restriction at every point of the closed interval.
+
+Exact norm formulas retain ordinary Lebesgue function and derivative
+energies on [0,2] and [0,1]. The product equivalence realizes the normalized
+AKNS transform onto the full original Dirichlet domain. Four integration
+examples check unequal endpoint values, exclusion from the sine target,
+the ramp's physical norm and arbitrary zero-trace H1 extension.
+See the [Section 4 comparison](coverage/SECTION_4.md).
+
+Validation: `./scripts/check.sh` passes with 8,444 build jobs, 7,506
+public examples, and a transitive axiom audit of 43,202 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 3,149 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue the ordered Section 4 assertion comparison while retaining all
+source corrections. The [completion assessment](coverage/COMPLETENESS.md)
+remains qualified.
+
+## Previous milestone: Lemma 4.2 sine/cosine Fourier proof
 
 The literal cosine and sine series now converge in the uniform norm,
 with their actual trigonometric modes and signed coefficients. Explicit

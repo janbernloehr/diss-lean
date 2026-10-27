@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T18:39:33.161496+00:00",
-  "base_commit": "f61f23abb1261edc50570f5e2058bac261b896e9",
+  "published_utc": "2026-10-27T19:04:59.878069+00:00",
+  "base_commit": "c9177048ff66849fd48be31d113c4a20c7e7a5a3",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 84,
-    "module_hash_checks": 1265,
-    "distinct_modules": 875
+    "review_records": 85,
+    "module_hash_checks": 1275,
+    "distinct_modules": 880
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "f61f23abb1261edc50570f5e2058bac261b896e9",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma42FourierProof and four public examples.",
+    "base_commit": "c9177048ff66849fd48be31d113c4a20c7e7a5a3",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes the three scalar/physical Lemma 4.2 restriction modules and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8441,
-    "public_examples": 7502,
-    "transitive_NLS_declarations": 43038,
+    "build_jobs": 8444,
+    "public_examples": 7506,
+    "transitive_NLS_declarations": 43202,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4718,
-      "sha256": "21448c6d59e70ac00030711dc8fec431f8232a598f8ac1a54180172515562604"
+      "files": 4721,
+      "sha256": "8b9bde737a8e596a9dffbb1ccf558479226c88095f2576976c752b7e84f9b500"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -20250,6 +20250,152 @@
       ],
       "declaration_inventory_count": 43038,
       "source_record_sha256": "6b49d5c989f0e1d3aa4acf5beeda271f22750e22e9f547806d686fc6b566ff8d"
+    },
+    "Section4ScalarRestrictionSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "c9177048ff66849fd48be31d113c4a20c7e7a5a3",
+      "updated_utc": "2026-10-27T19:04:59.878069+00:00",
+      "source_lines": [
+        [
+          1889,
+          1918
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1889,
+            1889
+          ],
+          "requirement": "The full original scalar H1 and zero-trace H1 factors of the AKNS domain.",
+          "finding": "The new scalar carrier consists of actual functions on the closed interval. Its membership theorem is equivalent to original interval absolute continuity and square integrability of the actual derivative, with both zero endpoint traces precisely in the sine case. Every original function defines an element; its norm is exactly the square root of its ordinary Lebesgue H1 energy on [0,1]. The construction uses the established physical AKNS domain and does not impose periodicity on interval functions. Public examples represent a ramp with unequal endpoint values, reject it from the sine target, and compute its norm as sqrt(4/3).",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceScalarIntervalH1",
+            "NLS.ZakharovShabat.mem_sourceScalarIntervalSubmodule",
+            "NLS.ZakharovShabat.sourceScalarH1OfFunction",
+            "NLS.ZakharovShabat.norm_sourceScalarH1OfFunction",
+            "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+            "NLS.ZakharovShabat.norm_aknsDomainOfFunction"
+          ]
+        },
+        {
+          "source_lines": [
+            1889,
+            1897
+          ],
+          "requirement": "The actual periodic sine and cosine function spaces and their physical H1 topology.",
+          "finding": "The domain carriers are actual continuous functions on the period-two circle. Membership is equivalent to a full uniformly convergent sine or cosine series with an odd or even one-derivative square-summable amplitude. Every element has actual periodic H1 regularity. The norm, constructed using the physical function/derivative Hilbert embedding, is exactly the square root of Lebesgue H1 energy on [0,2]. Unique amplitude realization is a continuous linear equivalence; explicit bounds compare the weighted amplitude norm with the physical norm. Thus the final restriction maps have physical function spaces on both sides, rather than leaving their domains as coefficient parameters. The amplitude and physical norms are equivalent, not asserted identical.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTrigPeriodicH1",
+            "NLS.ZakharovShabat.mem_sourceCosinePeriodic_iff",
+            "NLS.ZakharovShabat.mem_sourceSinePeriodic_iff",
+            "NLS.ZakharovShabat.sourceTrigPeriodic_regular",
+            "NLS.ZakharovShabat.norm_sourceTrigPeriodicH1",
+            "NLS.ZakharovShabat.sourceTrigPeriodic_norm_bounds",
+            "NLS.ZakharovShabat.sourceTrigPeriodicEquiv",
+            "NLS.ZakharovShabat.sourceCosineSynthesis_energy_bounds",
+            "NLS.ZakharovShabat.sourceSineSynthesis_energy_bounds",
+            "NLS.Fourier.norm_sobolevEnergyEmbedding",
+            "NLS.Fourier.intervalH1Energy_sobolevSynthesis_bounds"
+          ]
+        },
+        {
+          "source_lines": [
+            1899,
+            1915
+          ],
+          "requirement": "The printed R_cos and R_sin are continuous linear isomorphisms acting by physical restriction.",
+          "finding": "The cosine restriction maps the entire actual periodic cosine space onto all original interval H1 functions; sine restriction maps its entire periodic sine space onto all original zero-trace interval H1 functions. Both are continuous linear equivalences with continuous inverses for the exact physical H1 norms. Their apply theorems identify the action with f restricted to [0,1] at every point, including both endpoints. The proof passes through explicit amplitude restriction equivalences and the previously established physical boundary-domain correspondence. A public example extends every original zero-trace H1 function, with no periodic-derivative or additional smoothness assumption. This directly proves the assertion cited to [54], without claiming an independent audit of that textbook.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCosineRestrictionEquiv",
+            "NLS.ZakharovShabat.sourceSineRestrictionEquiv",
+            "NLS.ZakharovShabat.sourcePhysicalCosineRestriction",
+            "NLS.ZakharovShabat.sourcePhysicalSineRestriction",
+            "NLS.ZakharovShabat.sourcePhysicalCosineRestriction_apply",
+            "NLS.ZakharovShabat.sourcePhysicalSineRestriction_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv_apply",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv"
+          ]
+        },
+        {
+          "source_lines": [
+            1915,
+            1918
+          ],
+          "requirement": "The full product-domain identity through R_cos, R_sin and the normalized T.",
+          "finding": "The scalar product is continuously equivalent to the entire original Dirichlet AKNS domain and then to the entire original classical Dirichlet domain. Composing the actual periodic restrictions supplies the printed product-domain identity on physical functions. The apply theorem gives exactly T(f(x),g(x)) for every point of the closed interval. Surjectivity and both inverses are part of the continuous equivalence, rather than assumptions on selected inputs. No isometry of the product maximum norm with the component-sum H1 norm is claimed. The Neumann coefficient and full-domain construction from the preceding Fourier milestone remains in force.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv",
+            "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv_apply",
+            "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv",
+            "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv_apply",
+            "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv",
+            "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv_apply"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceScalarIntervalH1.lean": "ce7ce1126b8a6bad6dc34c8c03f79db36e39e9f79f4319b41ed36d6e294c1c01",
+        "NLS/ZakharovShabat/SourceLemma42ScalarRestriction.lean": "c63fb888e105c9e0a4a65db7b134a9020d6a65b62acb58fd650339642577c93c",
+        "NLS/ZakharovShabat/SourceLemma42PhysicalRestriction.lean": "aaa2b1bf689556b3dc80e11d703ca8b2a368187aaa5cd29d0dfd9126b92b2515",
+        "NLS/ZakharovShabat/SourceLemma42FourierProof.lean": "afa376ba07cb104cdfe8083a0e59148ceda4f20ed5d4481afca31aef1b8a2779",
+        "NLS/ZakharovShabat/AKNSIntervalOperator.lean": "f9c75c733791a4ce7ecd210eb1e8d8649d412d387687cf4d1ece2dcc76a2c6b1",
+        "NLS/ZakharovShabat/AKNSClassicalDomain.lean": "e01ea9ce1dd3cc2fc936cde9c3bc2092c986afce9581424c0763bf76644e3ee0",
+        "NLS/ZakharovShabat/ClassicalIntervalIsomorphism.lean": "979050f18b89908c6b9d81bba4b0abe4d3b2321d7df72f5de86522ec25e4df3d",
+        "NLS/Fourier/SobolevIdentification.lean": "f47f25b05b031d26668a946f3bd51db795a343d53ddc000f42fd55986237e0e5",
+        "NLS/Fourier/SobolevEnergy.lean": "064f8f928bd33f5deba6d44ae42f12cb42570355df4c275e9af556231fe192ff",
+        "NLS/Fourier/SobolevEnergyEmbedding.lean": "d867faaf337f7e781cd7a6f9b754fffb9fe24bdb4bff34e64c1fa74b36624812"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          30,
+          31
+        ],
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section4ProofReview-030.png": "ec91f0e3797506980b677b8e9d7ccd1d7b7bbf3198e254a2a9231759d2e018e8",
+          "Section4ProofReview-031.png": "5359bd711ad94c4cf785fc76d1868963e6ef8777b8009f5f481f0636b545acdd"
+        }
+      },
+      "qualification": "The three new modules, four integration examples and seven supporting modules were read completely, and the extracted passage and rendered source pages 30-31 were compared. This directly proves the scalar restriction assertions on actual physical function spaces and the product identity; it resolves the lack of separate scalar restriction maps recorded in the earlier Fourier comparison. It reuses the established physical boundary restriction and Sobolev energy theorems, and does not independently audit every transitive dependency or reference [54] itself. Earlier review records remain historical evidence with their original scopes. All existing AKNS normalization corrections, Lemma 4.3 coefficient corrections, endpoint-exponent and spectral-height qualifications remain. The source-wide assertion inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation are still unfinished.",
+      "resolved_declarations": [
+        "NLS.Fourier.intervalH1Energy_sobolevSynthesis_bounds",
+        "NLS.Fourier.norm_sobolevEnergyEmbedding",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv",
+        "NLS.ZakharovShabat.SourceScalarIntervalH1",
+        "NLS.ZakharovShabat.SourceTrigPeriodicH1",
+        "NLS.ZakharovShabat.mem_aknsIntervalSubmodule_iff",
+        "NLS.ZakharovShabat.mem_sourceCosinePeriodic_iff",
+        "NLS.ZakharovShabat.mem_sourceScalarIntervalSubmodule",
+        "NLS.ZakharovShabat.mem_sourceSinePeriodic_iff",
+        "NLS.ZakharovShabat.norm_aknsDomainOfFunction",
+        "NLS.ZakharovShabat.norm_sourceScalarH1OfFunction",
+        "NLS.ZakharovShabat.norm_sourceTrigPeriodicH1",
+        "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigAKNSEquiv_apply",
+        "NLS.ZakharovShabat.sourceCosineRestrictionEquiv",
+        "NLS.ZakharovShabat.sourceCosineSynthesis_energy_bounds",
+        "NLS.ZakharovShabat.sourcePhysicalCosineRestriction",
+        "NLS.ZakharovShabat.sourcePhysicalCosineRestriction_apply",
+        "NLS.ZakharovShabat.sourcePhysicalSineRestriction",
+        "NLS.ZakharovShabat.sourcePhysicalSineRestriction_apply",
+        "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv",
+        "NLS.ZakharovShabat.sourcePhysicalTrigClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceScalarH1OfFunction",
+        "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv",
+        "NLS.ZakharovShabat.sourceScalarProductAKNSEquiv_apply",
+        "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv",
+        "NLS.ZakharovShabat.sourceScalarProductClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceSineRestrictionEquiv",
+        "NLS.ZakharovShabat.sourceSineSynthesis_energy_bounds",
+        "NLS.ZakharovShabat.sourceTrigPeriodicEquiv",
+        "NLS.ZakharovShabat.sourceTrigPeriodic_norm_bounds",
+        "NLS.ZakharovShabat.sourceTrigPeriodic_regular"
+      ],
+      "declaration_inventory_count": 43202,
+      "source_record_sha256": "9a455390431e5f731c211fb198323d9e61f20d62d6fd24b73d3dcddc4a5ce448"
     }
   }
 }

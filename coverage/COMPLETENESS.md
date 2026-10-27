@@ -76,8 +76,12 @@ and contextual citations. Each group links its exact prior proof evidence.
 Section 4 now also has literal sine/cosine Fourier-series proofs for
 Lemma 4.2, exact AKNS coefficient formulas, and continuous equivalences
 onto both full classical boundary domains via the established physical
-restriction maps. Its scalar restriction statements retain their separate
-comparison scope.
+restriction maps. The scalar R_cos and R_sin statements now also have
+explicit continuous linear equivalences on actual periodic and interval
+functions with exact physical H1 norms and closed-interval values. Their
+product realizes the entire original Dirichlet domain. This resolves the
+earlier missing separate scalar-map scope without claiming an independent
+audit of textbook reference [54].
 Continue through Section 4, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

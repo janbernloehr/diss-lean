@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 4.2's sine/cosine Fourier proof now has actual uniformly
-convergent series, exact normalized coefficient formulas and continuous
-isomorphisms onto both full classical boundary domains.
+Latest step: Lemma 4.2's scalar sine and cosine restrictions now have
+continuous inverses on actual functions with exact physical H1 norms,
+including all required endpoint values and the full product-domain identity.
 See the [Section 4 comparison](coverage/SECTION_4.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

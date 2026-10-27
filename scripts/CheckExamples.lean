@@ -69973,3 +69973,62 @@ example (a : WeightedCoeff (Weight.sobolev 1) 3) :
       hasSum_sourceSineSynthesis (by norm_num) (sourceBoundarySineAmplitude a).val
 
 end Section4FourierProofChecks
+
+namespace Section4ScalarRestrictionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+noncomputable section
+
+private theorem ramp_regular : HasIntervalH1Regularity (fun x : ℝ => (x : ℂ)) := by
+  constructor
+  · exact Complex.ofRealCLM.contDiff.contDiffOn.absolutelyContinuousOnInterval
+  · have hd : deriv (fun x : ℝ => (x : ℂ)) = fun _ => 1 := by
+      funext x
+      exact Complex.ofRealCLM.hasDerivAt.deriv
+    rw [hd]
+    exact memLp_const 1
+
+-- A ramp has unequal endpoint values but still has the full cosine representation.
+example : ∃ b : sourceCosineAmplitudeSpace (p := 2),
+    ∀ x : Icc (0 : ℝ) 1,
+      sourceCosineSynthesis (by simp) b.val (x.val : AddCircle (2 : ℝ)) = (x.val : ℂ) := by
+  let f := sourceScalarH1OfFunction false (fun x : ℝ => (x : ℂ)) ramp_regular (by simp)
+  refine ⟨sourceCosineRestrictionEquiv.symm f, fun x => ?_⟩
+  rw [← sourceCosineRestrictionEquiv_apply, sourceCosineRestrictionEquiv.apply_symm_apply]
+  rfl
+
+-- The same ramp is excluded from the sine target because its right trace is nonzero.
+example : (fun x : Icc (0 : ℝ) 1 => (x.val : ℂ)) ∉ sourceScalarIntervalSubmodule true := by
+  intro h
+  obtain ⟨g,_,he,hg⟩ := (mem_sourceScalarIntervalSubmodule true _).mp h
+  have hx := hg ⟨1,by norm_num⟩
+  have hz := (he rfl).2
+  norm_num [hz] at hx
+
+-- The scalar norm retains the actual derivative energy as well as the function energy.
+example :
+    ‖sourceScalarH1OfFunction false (fun x : ℝ => (x : ℂ)) ramp_regular (by simp)‖ =
+      Real.sqrt (4/3) := by
+  rw [norm_sourceScalarH1OfFunction]
+  have hd : deriv (fun x : ℝ => (x : ℂ)) = fun _ => 1 := by
+    funext x
+    exact Complex.ofRealCLM.hasDerivAt.deriv
+  have he : intervalH1Energy (fun x : ℝ => (x : ℂ)) 0 1 = 4/3 := by
+    simp [intervalH1Energy, hd, Complex.norm_real, Real.norm_eq_abs, sq_abs, integral_pow]
+    norm_num
+  rw [he]
+
+-- Every original zero-trace H1 function has an actual periodic sine extension,
+-- without assuming a periodic derivative or smoothness at the endpoints.
+example (f : ℝ → ℂ) (hf : HasIntervalH1Regularity f) (h0 : f 0 = 0) (h1 : f 1 = 0) :
+    ∃ F : SourceTrigPeriodicH1 true, HasPeriodicH1Regularity F.val ∧
+      ∀ x : Icc (0 : ℝ) 1, F.val (x.val : AddCircle (2 : ℝ)) = f x.val := by
+  let u := sourceScalarH1OfFunction true f hf (fun _ => ⟨h0,h1⟩)
+  let F := sourcePhysicalSineRestriction.symm u
+  refine ⟨F,sourceTrigPeriodic_regular true F,fun x => ?_⟩
+  rw [← sourcePhysicalSineRestriction_apply]
+  change (sourcePhysicalSineRestriction (sourcePhysicalSineRestriction.symm u)).val x = _
+  rw [sourcePhysicalSineRestriction.apply_symm_apply]
+  rfl
+
+end
+end Section4ScalarRestrictionChecks
