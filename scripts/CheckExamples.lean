@@ -69908,3 +69908,68 @@ example (φ : CoeffPair 3) :
     hsmall ψ hψ n hn z hz⟩
 
 end Section3SourceUniformSquareChecks
+
+section Section4FourierProofChecks
+open NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Negative frequency fixes the actual sine sign at a nontrivial physical point.
+example :
+    sourceCosineMode (-1) ((1/2 : ℝ) : AddCircle (2 : ℝ)) = 0 ∧
+      sourceSineMode (-1) ((1/2 : ℝ) : AddCircle (2 : ℝ)) = -1 := by
+  rw [sourceCosineMode_apply, sourceSineMode_apply]
+  have he : Real.pi * (-1 : ℤ) * (1/2 : ℝ) = -(Real.pi/2) := by push_cast; ring
+  rw [he]
+  norm_num
+
+-- A single negative complex mode becomes an even cosine pair and an odd sine pair.
+example :
+    let a : WeightedCoeff (Weight.sobolev 1) 2 := scalarMode (-3) (1+Complex.I)
+    (sourceBoundaryCosineAmplitude a).val.val (-3) = aknsScale*(1+Complex.I) ∧
+    (sourceBoundaryCosineAmplitude a).val.val 3 = aknsScale*(1+Complex.I) ∧
+    (sourceBoundarySineAmplitude a).val.val (-3) = -aknsScale*(1+Complex.I) ∧
+    (sourceBoundarySineAmplitude a).val.val 3 = aknsScale*(1+Complex.I) := by
+  dsimp only
+  simp only [sourceBoundaryCosineAmplitude_apply, sourceBoundarySineAmplitude_apply,
+    scalarMode_apply]
+  norm_num
+  ring
+
+-- Both entire classical domains have the actual cosine/sine representation at every closed-interval point.
+example (k : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : BoundaryCondition.HasClassicalIntervalDomain k f) :
+    ∃ b : sourceCosineAmplitudeSpace (p := 2), ∃ a : sourceSineAmplitudeSpace (p := 2),
+      ∀ x : Set.Icc (0 : ℝ) 1,
+        (match k with
+          | .dirichlet => aknsToZS
+              (sourceCosineSynthesis (by simp) b.val (x.val : AddCircle (2 : ℝ)),
+               sourceSineSynthesis (by simp) a.val (x.val : AddCircle (2 : ℝ)))
+          | .neumann => aknsToZS
+              (-Complex.I*sourceSineSynthesis (by simp) a.val (x.val : AddCircle (2 : ℝ)),
+               Complex.I*sourceCosineSynthesis (by simp) b.val (x.val : AddCircle (2 : ℝ)))) = f x.val := by
+  cases k
+  · let u := BoundaryCondition.classicalDomainOfFunction .dirichlet f hf
+    obtain ⟨⟨b,a⟩,h⟩ := sourceBoundaryTrigClassicalEquiv.surjective u
+    refine ⟨b,a,fun x => ?_⟩
+    rw [← sourceBoundaryTrigClassicalEquiv_apply, h]
+    rfl
+  · let u := BoundaryCondition.classicalDomainOfFunction .neumann f hf
+    obtain ⟨⟨b,a⟩,h⟩ := sourceBoundaryTrigNeumannClassicalEquiv.surjective u
+    refine ⟨b,a,fun x => ?_⟩
+    rw [← sourceBoundaryTrigNeumannClassicalEquiv_apply, h]
+    rfl
+
+-- The literal inverse series also converges uniformly at a non-Hilbert exponent, for arbitrary data.
+example (a : WeightedCoeff (Weight.sobolev 1) 3) :
+    HasSum (fun n : ℤ => (aknsScale*(a.val n+a.val (-n))) • sourceCosineMode n)
+      (sourceCosineSynthesis (by norm_num) (sourceBoundaryCosineAmplitude a).val) ∧
+    HasSum (fun n : ℤ => (aknsScale*(-a.val n+a.val (-n))) • sourceSineMode n)
+      (sourceSineSynthesis (by norm_num) (sourceBoundarySineAmplitude a).val) := by
+  constructor
+  · simpa only [sourceBoundaryCosineAmplitude_apply] using
+      hasSum_sourceCosineSynthesis (by norm_num) (sourceBoundaryCosineAmplitude a).val
+  · simpa only [sourceBoundarySineAmplitude_apply] using
+      hasSum_sourceSineSynthesis (by norm_num) (sourceBoundarySineAmplitude a).val
+
+end Section4FourierProofChecks

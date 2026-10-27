@@ -73,6 +73,11 @@ The complete Section 3 text now has a 38-group ordered assertion inventory,
 checked against all five rendered pages. It preserves six formally refuted
 printed bounds, valid clauses and corrections, explicit interpretations,
 and contextual citations. Each group links its exact prior proof evidence.
+Section 4 now also has literal sine/cosine Fourier-series proofs for
+Lemma 4.2, exact AKNS coefficient formulas, and continuous equivalences
+onto both full classical boundary domains via the established physical
+restriction maps. Its scalar restriction statements retain their separate
+comparison scope.
 Continue through Section 4, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

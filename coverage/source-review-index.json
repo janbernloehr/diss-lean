@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T18:08:44.101140+00:00",
-  "base_commit": "1bbca042eee8f00141ae13215e7aea27c3676334",
+  "published_utc": "2026-10-27T18:39:33.161496+00:00",
+  "base_commit": "f61f23abb1261edc50570f5e2058bac261b896e9",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 83,
-    "module_hash_checks": 1259,
-    "distinct_modules": 872
+    "review_records": 84,
+    "module_hash_checks": 1265,
+    "distinct_modules": 875
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "61e6083e2daf979dd6810ddf58490b671c66ad12",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceUniformSquareProof and four public examples.",
+    "base_commit": "f61f23abb1261edc50570f5e2058bac261b896e9",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceLemma42FourierProof and four public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8440,
-    "public_examples": 7498,
-    "transitive_NLS_declarations": 42983,
+    "build_jobs": 8441,
+    "public_examples": 7502,
+    "transitive_NLS_declarations": 43038,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4717,
-      "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
+      "files": 4718,
+      "sha256": "21448c6d59e70ac00030711dc8fec431f8232a598f8ac1a54180172515562604"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -20108,6 +20108,148 @@
         "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
       },
       "source_record_sha256": "ee840efb8fd2929afa4c47077a894ec21d023a7f09505cd612b3c85cc6862b32"
+    },
+    "Section4FourierProofSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "f61f23abb1261edc50570f5e2058bac261b896e9",
+      "updated_utc": "2026-10-27T18:39:33.161496+00:00",
+      "source_lines": [
+        [
+          1882,
+          1942
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1889,
+            1897
+          ],
+          "requirement": "The literal cosine and sine series with even and odd amplitudes.",
+          "finding": "The modes are proved equal to the actual cos(n*pi*x) and sin(n*pi*x), with their exact exponential normalizations and all signed indices. Reflection reindexing and the existing uniformly convergent Sobolev Fourier series give unconditional uniform-norm HasSum for both full trigonometric series at every finite Banach exponent with one Fourier derivative. At p=2 their representatives have actual periodic H1 regularity. The amplitude subspaces are the kernels of reflection minus or plus identity; odd sine amplitudes have both zero endpoint traces. These are infinite series with no finite-support restriction.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCosineMode_apply",
+            "NLS.ZakharovShabat.sourceSineMode_apply",
+            "NLS.ZakharovShabat.hasSum_sourceCosineSynthesis",
+            "NLS.ZakharovShabat.hasSum_sourceSineSynthesis",
+            "NLS.ZakharovShabat.mem_sourceCosineAmplitudeSpace",
+            "NLS.ZakharovShabat.mem_sourceSineAmplitudeSpace",
+            "NLS.ZakharovShabat.sourceCosineSynthesis_of_even",
+            "NLS.ZakharovShabat.sourceSineSynthesis_of_odd",
+            "NLS.ZakharovShabat.sourceTrigSynthesis_periodicH1",
+            "NLS.ZakharovShabat.sourceSineSynthesis_endpoints",
+            "NLS.Fourier.hasSum_sobolevSynthesis",
+            "NLS.Fourier.hasPeriodicH1Regularity_sobolevSynthesis"
+          ]
+        },
+        {
+          "source_lines": [
+            1920,
+            1932
+          ],
+          "requirement": "The normalized forward T calculation and entire boundary-space isomorphism.",
+          "finding": "For an even cosine amplitude b and odd sine amplitude a, the actual normalized vector transform of their continuous sums equals the original boundary representative with amplitude (b-a)/sqrt(2). The coefficient equivalence is continuous, explicitly invertible and onto the entire original weighted Dirichlet boundary space. Its forward map retains raw first-frequency reflection. No isometry between the product amplitude norm and the original pair norm is claimed.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryTrigEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_forward",
+            "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv_apply"
+          ]
+        },
+        {
+          "source_lines": [
+            1935,
+            1942
+          ],
+          "requirement": "The inverse T calculation and analogous Neumann construction.",
+          "finding": "The inverse cosine amplitude is (f_n+f_-n)/sqrt(2), and the inverse sine amplitude is (-f_n+f_-n)/sqrt(2). Both are equalities of actual coefficients, and the inverse formula holds pointwise for the full continuous representatives. The Neumann version maps onto the entire original Neumann boundary space and uses AKNS components -i times the sine representative and i times the cosine representative; these phases supply the analogous swapped parity construction. The public negative complex single-mode example tests both signs and both reflected frequencies, and an arbitrary p=3 example tests uniform convergence of the literal inverse series.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryCosineAmplitude_apply",
+            "NLS.ZakharovShabat.sourceBoundarySineAmplitude_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_inverse",
+            "NLS.ZakharovShabat.sourceBoundaryTrigNeumannSourceEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrig_neumann_forward"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              1882,
+              1918
+            ],
+            [
+              1942,
+              1942
+            ]
+          ],
+          "requirement": "Connection to the full original classical domains and their physical restrictions.",
+          "finding": "Composing the new Fourier coordinate isomorphisms with the established original-norm classical extension/restriction equivalences gives continuous isomorphisms onto both full classical H1 boundary domains. Their values agree with the actual transformed sine/cosine functions at every point of the closed interval, including both endpoints. A public example represents every original domain function for either boundary condition, with no extra smoothness or periodicity hypothesis. This establishes the product-domain conclusion through the existing physical restriction theorem; it does not supply separate new scalar R_sin and R_cos equivalence objects or independently audit the cited external text [54].",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryTrigClassicalEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigClassicalEquiv_apply",
+            "NLS.ZakharovShabat.sourceBoundaryTrigNeumannClassicalEquiv",
+            "NLS.ZakharovShabat.sourceBoundaryTrigNeumannClassicalEquiv_apply",
+            "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv",
+            "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_symm_apply",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma42FourierProof.lean": "afa376ba07cb104cdfe8083a0e59148ceda4f20ed5d4481afca31aef1b8a2779",
+        "NLS/ZakharovShabat/SourceBoundarySpaces.lean": "fbab8dd53b3d4c65f7bb67eb4f0ff6af18f32dc98b76582096018453027b5033",
+        "NLS/ZakharovShabat/ClassicalIntervalIsomorphism.lean": "979050f18b89908c6b9d81bba4b0abe4d3b2321d7df72f5de86522ec25e4df3d",
+        "NLS/Fourier/SobolevSynthesis.lean": "39c511a1bf9dc086e15b0a196b47540f5f3ac277807bd86555da99f1fb78aec3",
+        "NLS/Fourier/SobolevIdentification.lean": "f47f25b05b031d26668a946f3bd51db795a343d53ddc000f42fd55986237e0e5",
+        "NLS/ZakharovShabat/AKNSCoordinates.lean": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          30,
+          31
+        ],
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section4ProofReview-030.png": "ec91f0e3797506980b677b8e9d7ccd1d7b7bbf3198e254a2a9231759d2e018e8",
+          "Section4ProofReview-031.png": "5359bd711ad94c4cf785fc76d1868963e6ef8777b8009f5f481f0636b545acdd"
+        }
+      },
+      "qualification": "The new module, its four integration examples and five supporting modules were read completely. The full Section 4 extraction was read for navigation, and rendered pp.30-31 were inspected for this focused comparison. The new proofs establish the literal trigonometric series, normalized coefficient formulas, continuous boundary-space equivalences and full classical-domain product conclusions. They reuse the established physical H1 restriction theorem and do not independently prove the external scalar restriction isomorphism citation or every transitive dependency. The named Lemma 4.2 was already proved; this adds detailed proof assertions rather than claiming a new proof of the entire section. All existing Section 4 normalization corrections, p=1 realization qualification, printed-height refutations, exact cited 2014 construction and Appendix G.2 interpretation qualifications remain in force. Section 4 and the source-wide assertion inventory are still unfinished.",
+      "resolved_declarations": [
+        "NLS.Fourier.hasPeriodicH1Regularity_sobolevSynthesis",
+        "NLS.Fourier.hasSum_sobolevSynthesis",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalIntervalEquiv",
+        "NLS.ZakharovShabat.hasSum_sourceCosineSynthesis",
+        "NLS.ZakharovShabat.hasSum_sourceSineSynthesis",
+        "NLS.ZakharovShabat.mem_sourceCosineAmplitudeSpace",
+        "NLS.ZakharovShabat.mem_sourceSineAmplitudeSpace",
+        "NLS.ZakharovShabat.sourceBoundaryCosineAmplitude_apply",
+        "NLS.ZakharovShabat.sourceBoundarySineAmplitude_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrigClassicalEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrigEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigNeumannClassicalEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigNeumannClassicalEquiv_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrigNeumannSourceEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv",
+        "NLS.ZakharovShabat.sourceBoundaryTrigSourceEquiv_apply",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_forward",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_inverse",
+        "NLS.ZakharovShabat.sourceBoundaryTrig_neumann_forward",
+        "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv",
+        "NLS.ZakharovShabat.sourceClassicalBoundaryEquiv_symm_apply",
+        "NLS.ZakharovShabat.sourceCosineMode_apply",
+        "NLS.ZakharovShabat.sourceCosineSynthesis_of_even",
+        "NLS.ZakharovShabat.sourceSineMode_apply",
+        "NLS.ZakharovShabat.sourceSineSynthesis_endpoints",
+        "NLS.ZakharovShabat.sourceSineSynthesis_of_odd",
+        "NLS.ZakharovShabat.sourceTrigSynthesis_periodicH1",
+        "NLS.ZakharovShabat.sourceWeightedBoundaryAmplitudeEquiv_apply"
+      ],
+      "declaration_inventory_count": 43038,
+      "source_record_sha256": "6b49d5c989f0e1d3aa4acf5beeda271f22750e22e9f547806d686fc6b566ff8d"
     }
   }
 }

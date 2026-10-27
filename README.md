@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 3 now has a 38-group ordered assertion inventory
-covering its complete text and proof displays, with six retained formal
-refutations and explicit scope qualifications.
-See the [Section 3 comparison](coverage/SECTION_3.md) and
+Latest step: Lemma 4.2's sine/cosine Fourier proof now has actual uniformly
+convergent series, exact normalized coefficient formulas and continuous
+isomorphisms onto both full classical boundary domains.
+See the [Section 4 comparison](coverage/SECTION_4.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

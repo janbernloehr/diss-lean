@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: Section 3 ordered assertion inventory
+## Current milestone: Lemma 4.2 sine/cosine Fourier proof
+
+The literal cosine and sine series now converge in the uniform norm,
+with their actual trigonometric modes and signed coefficients. Explicit
+continuous equivalences prove the normalized AKNS forward and inverse
+formulas and identify both full original boundary spaces. Composing with
+the established physical restriction maps identifies both entire classical
+H1 boundary domains, including the actual values at both endpoints.
+
+Four integration examples check a negative sine mode, the reflected signs
+of a complex input, arbitrary classical functions under either boundary
+condition and uniform inverse-series convergence at p=3.
+See the [Section 4 comparison](coverage/SECTION_4.md).
+
+Validation: `./scripts/check.sh` passes with 8,441 build jobs, 7,502
+public examples, and a transitive axiom audit of 43,038 NLS declarations.
+The build retains 21 existing warnings; the new module and examples introduce none.
+Documentation checks cover 3,139 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+Continue the ordered Section 4 assertion comparison, including its scalar
+restriction statements, while retaining all existing source corrections.
+The [completion assessment](coverage/COMPLETENESS.md) remains qualified.
+
+## Previous milestone: Section 3 ordered assertion inventory
 
 The complete Section 3 text and all five rendered pages now have a
 38-group ordered assertion inventory. Each group links its actual proof

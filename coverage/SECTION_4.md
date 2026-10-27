@@ -4,6 +4,42 @@ This is a statement-by-statement audit against the original spaces and
 physical expressions on printed pages 28 onward. Existing later results do
 not by themselves certify this section or the full dissertation complete.
 
+## Sine/cosine calculations in the proof of Lemma 4.2
+
+[SourceLemma42FourierProof.lean](../NLS/ZakharovShabat/SourceLemma42FourierProof.lean)
+exposes the literal Fourier calculations on printed pp.30–31.
+
+| Source step | Entry point | Scope |
+| --- | --- | --- |
+| Actual trigonometric modes | `sourceCosineMode_apply`, `sourceSineMode_apply` | Exact cos(n*pi*x) and sin(n*pi*x), including negative indices. |
+| Full convergent series | `hasSum_sourceCosineSynthesis`, `hasSum_sourceSineSynthesis` | Unconditional uniform-norm convergence for all finite p with one Fourier derivative. |
+| Classical regularity and endpoints | `sourceTrigSynthesis_periodicH1`, `sourceSineSynthesis_endpoints` | Actual periodic H1 at p=2; both zero traces for odd sine amplitudes. |
+| Continuous coordinate equivalence | `sourceBoundaryTrigEquiv`, `sourceBoundaryTrigSourceEquiv` | The entire even/odd amplitude product and original Dirichlet boundary space. |
+| Literal T and inverse | `sourceBoundaryTrig_forward`, `sourceBoundaryTrig_inverse`, `sourceBoundaryCosineAmplitude_apply`, `sourceBoundarySineAmplitude_apply` | Forward amplitude (b-a)/sqrt(2), inverse amplitudes (f_n+f_-n)/sqrt(2) and (-f_n+f_-n)/sqrt(2), with pointwise physical identification. |
+| Neumann analogue | `sourceBoundaryTrigNeumannSourceEquiv`, `sourceBoundaryTrig_neumann_forward` | Entire original Neumann space, with the exact swapped sine/cosine phases. |
+| Full classical domains | `sourceBoundaryTrigClassicalEquiv`, `sourceBoundaryTrigNeumannClassicalEquiv` and their `_apply` theorems | Continuous equivalences onto both actual closed-interval H1 domains, preserving every physical value including endpoints. |
+
+The last step composes with the previously proved physical restriction
+maps. It proves the product-domain conclusion without introducing separate
+new scalar R_sin and R_cos equivalence objects or independently auditing
+reference [54]. No finite-support input or extra endpoint periodicity is
+assumed. The product amplitude norm is not asserted to be isometric to
+the original pair norm. The existing AKNS potential-normalization and
+Lemma 4.3 coefficient corrections remain unchanged.
+
+Four integration examples check a negative-frequency sine value, both
+reflected coefficients of a complex single mode, representation of every
+original classical-domain function for either boundary condition, and
+uniform convergence of the inverse series at p=3.
+
+Section4FourierProofSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups.
+This does not certify every assertion in Section 4.
+
+Validation passes: 8,441 build jobs, 7,502 public examples and a
+transitive axiom audit of 43,038 NLS declarations. The 21 inherited
+warnings are unchanged; the new module and examples introduce none.
+
 ## Equations (1.6)–(1.7) and the AKNS coordinates (pages 28–29)
 
 All coordinates and potentials may be complex. The original scalar H¹

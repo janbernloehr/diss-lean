@@ -4669,6 +4669,7 @@ import NLS.ZakharovShabat.SourceUnboundedOperator
 import NLS.ZakharovShabat.SourceSection3Setup
 import NLS.ZakharovShabat.SourceNeumannProof
 import NLS.ZakharovShabat.SourceUniformSquareProof
+import NLS.ZakharovShabat.SourceLemma42FourierProof
 import NLS.ZakharovShabat.NativePeriodicOperator
 import NLS.ZakharovShabat.NativePeriodicHilbert
 import NLS.Fourier.PeriodicFourierLebesguePeriodDoubling
