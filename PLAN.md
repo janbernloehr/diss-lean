@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: Section 18 frequency Taylor expansion
+## Current milestone: Exact gap-length approximation in Sobolev norms
+
+The exact approximation used in Lemma 20.2 is now constructed: at every real
+finite-gap Hilbert source, a selected collapsed gap opens while every other
+numerical gap length stays fixed. Explicit approximants converge in H1, and
+in every chosen nonnegative real Sobolev order.
+
+The construction uses actual signed-gap inversion, finite isospectral rotations
+and a continuous Sobolev lift preserving raw coefficients. The
+[Section 20 audit](coverage/SECTION_20.md) distinguishes this curve from the
+earlier action-preserving amplitude line. The remaining semantic source audit
+and its explicit qualifications remain in progress.
+
+Validation: `./scripts/check.sh` passes with 8,411 build jobs, 7,419
+public examples, and a transitive axiom audit of 42,461 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,830 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: Section 18 frequency Taylor expansion
 
 Equation (4.3) now holds for the literal derivatives of the full Hamiltonian,
 with a quadratic remainder in the full Hilbert sequence norm. One positive

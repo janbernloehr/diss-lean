@@ -437,8 +437,39 @@ and preserve the zero/nonzero status of every other gap, so the finite set of
 open gaps is the original set together with the selected index.
 
 Taking s=1 supplies the H1 convergence ingredient in the closed-gap argument
-of Lemma 20.2. This construction preserves other actions and gap status. A separate proof
-that fixes every other numerical gap length has passed independent checks
-and is queued for its own canonical integration. The final frequency proof
-uses fixed finite gap support. The known Laurent-coefficient and diagonal-factor source
+of Lemma 20.2. This construction preserves other actions and gap status. The separate
+construction below fixes every other numerical gap length. The final frequency
+proof uses fixed finite gap support. The known Laurent-coefficient and diagonal-factor source
 corrections, exact2014 comparison and G2 norm qualification remain separate.
+
+## Exact numerical gap-length approximation in H1, printed p. 93
+
+[SymmetricExactGapOpening.lean](../NLS/ZakharovShabat/SymmetricExactGapOpening.lean)
+inverts the actual signed-gap map over each fixed finite output support.
+Varying one signed output coordinate gives a continuous symmetric finite-gap
+curve with selected gap length abs(t) and every other numerical gap length fixed.
+
+[SourceExactGapOpening.lean](../NLS/ZakharovShabat/SourceExactGapOpening.lean)
+transports this curve through every real finite-gap Hilbert source. A symmetric
+isospectral representative supplies its starting point; finitely many fixed
+Birkhoff rotations move that point back to the original source. These rotations
+preserve every action and hence the actual full spectrum at each parameter.
+
+[SourceFiniteGapCurveSobolev.lean](../NLS/ZakharovShabat/SourceFiniteGapCurveSobolev.lean)
+proves a general continuity upgrade: any Hilbert-continuous source curve whose
+open gaps lie in one fixed finite set has a continuous lift at every nonnegative
+real Sobolev order. Finite raw Birkhoff blocks are inserted in the native weighted
+target, then the original Sobolev inverse recovers exactly the source coefficients.
+
+[SourceExactGapOpeningSobolev.lean](../NLS/ZakharovShabat/SourceExactGapOpeningSobolev.lean)
+applies this upgrade to the exact gap-length curve. The explicit amplitudes
+1/(l+1) yield finite-gap approximants converging in the chosen Sobolev norm,
+with the selected gap open and all other numerical gap lengths unchanged.
+Taking order one proves the literal H1 approximation in the proof of Lemma 20.2.
+The common finite support is the original open-gap set together with the selected index.
+
+This resolves the previously unverified numerical-gap equality by a separate
+construction. The earlier amplitude-line proof still preserves other actions;
+these two constructions need not coincide. Continuity of the new curve is proved;
+analyticity in its parameter is not asserted. The known Laurent-sign and diagonal
+auxiliary-factor corrections, exact2014 and G2 qualifications remain separate.

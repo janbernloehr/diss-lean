@@ -68436,3 +68436,84 @@ example (Q : SourceOriginalHamiltonianData D T F H) :
 end SourceOriginalHamiltonianData
 end Section18FrequencyTaylorExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section Section20ExactGapOpeningExamples
+open Set Filter Topology
+example
+    (a : RealCoeff 2) (S : Finset ℤ)
+    (ha : symmetricSourceSignedGapMap (by simp) (by norm_num) a ∈ finiteSignedGapOutputSpace S)
+    (n : ℤ) (hn : n ∈ S)
+    (hzero : symmetricSourceSignedGapMap (by simp) (by norm_num) a n = 0) :
+    ∃ c : ℝ → RealCoeff 2, Continuous c ∧ c 0 = a ∧ ∀ t : ℝ,
+      symmetricRealSourceCoefficients 2 (c t) ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      (∀ k : ℤ, canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential (symmetricSourceCoefficients 2 (c t))) (periodOnePotential_mem _) k =
+        if k = n then ((|t| : ℝ) : ℂ) else canonicalPeriodicGap (by simp) (by norm_num)
+          (periodOnePotential (symmetricSourceCoefficients 2 a)) (periodOnePotential_mem _) k) := exists_symmetric_exact_gap_opening a S ha n hn hzero
+
+namespace SourceBirkhoffMapComplexData
+variable {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+
+example
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n = 0) :
+    ∃ γ : ℝ → realTypeSourceSubmodule 2, Continuous γ ∧ γ 0 = φ ∧ ∀ t : ℝ,
+      γ t ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧ ∀ k : ℤ,
+      canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential (γ t).val) (periodOnePotential_mem _) k =
+        if k = n then ((|t| : ℝ) : ℂ) else canonicalPeriodicGap (by simp) (by norm_num)
+          (periodOnePotential φ.val) (periodOnePotential_mem _) k := D.exists_finiteGap_exact_gap_opening φ hf n hn
+
+example
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    {X : Type*} [TopologicalSpace X] (γ : X → realTypeSourceSubmodule 2) (hγ : Continuous γ)
+    (S : Finset ℤ)
+    (hS : ∀ x k, k ∉ S → canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (γ x).val) (periodOnePotential_mem _) k = 0)
+    (order : ℝ) (horder : 0 ≤ order) :
+    ∃ F : X → weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+      Continuous F ∧ ∀ x,
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (F x) = γ x := D.exists_continuous_sobolev_lift_of_finite_gap_support γ hγ S hS order horder
+
+example
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n = 0)
+    (order : ℝ) (horder : 0 ≤ order) :
+    ∃ a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+      ∃ G : ℝ → weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) a = φ ∧
+        Continuous G ∧ G 0 = a ∧ ∀ t : ℝ,
+          let ψ := originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (G t)
+          ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧ ∀ k : ℤ,
+            canonicalPeriodicGap (by simp) (by norm_num)
+              (periodOnePotential ψ.val) (periodOnePotential_mem _) k =
+              if k = n then ((|t| : ℝ) : ℂ) else canonicalPeriodicGap (by simp) (by norm_num)
+                (periodOnePotential φ.val) (periodOnePotential_mem _) k := D.exists_finiteGap_exact_sobolev_opening φ hf n hn order horder
+
+example
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem _) n = 0)
+    (order : ℝ) (horder : 0 ≤ order) :
+    ∃ a : weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+      ∃ G : ℕ → weightedRealSourceSubmodule (p := 2) (sourceSobolevSpectralWeight order horder),
+        originalWeightedRealSource (sourceSobolevSpectralWeight order horder) a = φ ∧
+        Tendsto G atTop (𝓝 a) ∧ ∀ l : ℕ,
+          let ψ := originalWeightedRealSource (sourceSobolevSpectralWeight order horder) (G l)
+          ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+          canonicalPeriodicGap (by simp) (by norm_num)
+            (periodOnePotential ψ.val) (periodOnePotential_mem _) n ≠ 0 ∧
+          ∀ k : ℤ, k ≠ n → canonicalPeriodicGap (by simp) (by norm_num)
+            (periodOnePotential ψ.val) (periodOnePotential_mem _) k =
+            canonicalPeriodicGap (by simp) (by norm_num)
+              (periodOnePotential φ.val) (periodOnePotential_mem _) k := D.exists_finiteGap_exact_sobolev_approximants φ hf n hn order horder
+
+end SourceBirkhoffMapComplexData
+end Section20ExactGapOpeningExamples
+end NLS.ZakharovShabat

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: equation (4.3) holds for the actual full-Hamiltonian
-frequencies, with one quadratic sequence-norm remainder bound for all signed
-indices and all complex actions in a ball of the original weighted domain.
+Latest step: the literal one-gap approximation in Lemma 20.2 is proved.
+Every other numerical gap length stays fixed, and explicit finite-gap
+approximants converge in H1 and every chosen nonnegative Sobolev norm.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
