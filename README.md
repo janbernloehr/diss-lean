@@ -44,7 +44,14 @@ See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the Appendix I audit](coverage/APPENDIX_I.md), and
 [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
-The library currently proves sequence-space foundations, the full discrete
+## Implementation history
+
+The entries below record successive implementation steps. Their validation
+counts and statements about remaining work describe the state at that step;
+later proofs may supersede them. Use the status and focused coverage audits
+linked above for current results and qualifications.
+
+The library proves sequence-space foundations, the full discrete
 Young convolution inequality, the finite positive-exponent mixed
 three-sequence inequality, and the
 canonical periodic-distribution product (Appendices B.2, B.3, and A.7). It also
