@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T17:50:43.463619+00:00",
-  "base_commit": "61e6083e2daf979dd6810ddf58490b671c66ad12",
+  "published_utc": "2026-10-27T17:54:00.599896+00:00",
+  "base_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 78,
-    "module_hash_checks": 1086,
-    "distinct_modules": 840
+    "review_records": 79,
+    "module_hash_checks": 1096,
+    "distinct_modules": 847
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -17294,6 +17294,153 @@
       },
       "qualification": "The new module and four examples were read completely. The thirteen unchanged hash-listed modules were fully read in the preceding focused comparisons and their current hashes were verified. The rendered pp.25-26 and exact extracted passages were inspected. Six focused groups cover the squared inverse, literal quarter/half bounds, common height and strip control, compact segment and complete source exterior conclusion. The argument uses the valid main Lemma 3.4 with C_p=64*p^2; its refuted intermediate radius bounds are not used. Existing standalone pair-norm, endpoint and printed-height corrections remain unchanged. This is not an exhaustive Section 3 assertion audit or an independent verification of all transitive dependencies. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
       "source_record_sha256": "d6bf107d9edeed0ab7d7a5f415f569229461133c0623c7d2870eb79460059468"
+    },
+    "Section3ProjectionParitySourceComparison-2026-10-27": {
+      "source_lines": [
+        [
+          1504,
+          1547
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1504,
+            1510
+          ],
+          "finding": "The definitions are the actual normalized original-norm circle integral and the four oriented rectangle edges. Equality with conjugated auxiliary integrals follows by commuting bounded maps with the integrals on admissible contours. One open convex connected neighborhood contains the potential and zero and works simultaneously for all larger central cutoffs and distant circles. The projectors are analytic, idempotent, compact and finite-rank; compact idempotent ranges are identified with the nonzero-eigenvalue eigenspace. Pointwise invertibility on the compact circle gives a unit in the continuous-function Banach algebra. Affine pencil dependence and analytic inversion give uniform-norm analytic resolvents; bounded normalized integration gives operator-norm analytic projections. The domain-valued variant also proves analyticity in the full one-derivative domain norm. No assumption of a common pointwise Neumann radius replaces the compact-circle argument.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResolventCircleIntegral",
+            "NLS.ZakharovShabat.sourceResolventRectangleIntegral",
+            "NLS.ZakharovShabat.sourceResolventCircleIntegral_eq_conj",
+            "NLS.ZakharovShabat.sourceResolventRectangleIntegral_eq_conj",
+            "NLS.ZakharovShabat.sourceEquation1_4",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceResolventCircleIntegral",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceCentralRectangleIntegral",
+            "NLS.ZakharovShabat.isOpen_resolventCircleDomain",
+            "NLS.ZakharovShabat.analyticAt_resolventCircleIntegral",
+            "NLS.CircleIntegral.integrationCLM",
+            "NLS.CircleIntegral.integrationCLM_eq",
+            "NLS.CircleIntegral.norm_integrationCLM_le"
+          ],
+          "requirement": "Actual analytic Cauchy–Riesz circle and rectangle projections in the source norm."
+        },
+        {
+          "source_lines": [
+            1511,
+            1523
+          ],
+          "finding": "Both literal parity conditions include all signed integer frequencies. The original-norm parity masks are contractive and their closed ranges form algebraic and topological complements. Frequency doubling is a genuine base-space isometry onto the entire even subspace, inverted by frequency halving. At p=1 its coefficients agree with the actual normalized Fourier integrals of period-one components. No weighted-domain isometry is asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceParitySubspace_zero_iff",
+            "NLS.ZakharovShabat.mem_sourceParitySubspace_one_iff",
+            "NLS.ZakharovShabat.isClosed_sourceParitySubspace",
+            "NLS.ZakharovShabat.norm_sourceParityProjection_apply_le",
+            "NLS.ZakharovShabat.isCompl_sourceParitySubspaces",
+            "NLS.ZakharovShabat.isTopCompl_sourceParitySubspaces",
+            "NLS.ZakharovShabat.sourcePeriodOneEquiv",
+            "NLS.ZakharovShabat.periodOnePotential_physical_coefficients"
+          ],
+          "requirement": "Literal closed parity subspaces, complementary decomposition and canonical period-one identification."
+        },
+        {
+          "source_lines": [
+            1526,
+            1535
+          ],
+          "finding": "The free Fourier multiplier and actual potential convolution preserve parity on the full one-derivative domain when the potential has even support. The canonical period-one embedding supplies that hypothesis; inversion then yields resolvent commutation. The existing odd-potential counterexample proves the hypothesis cannot be removed. This retains the earlier source qualification rather than introducing a new erratum.",
+          "declarations": [
+            "NLS.ZakharovShabat.freeOperator_domainParityProjection",
+            "NLS.ZakharovShabat.potentialOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceOperator_domainParityProjection",
+            "NLS.ZakharovShabat.sourceLemma3_6",
+            "NLS.ZakharovShabat.sourceParityProjection_commute_resolvent",
+            "NLS.ZakharovShabat.lemma3_6_even_support_needed"
+          ],
+          "requirement": "Free and potential terms preserve parity on the full domain for period-one potentials."
+        },
+        {
+          "source_lines": [
+            1538,
+            1547
+          ],
+          "finding": "The restricted projectors are typed bounded endomorphisms of the parity subspaces. Compression equals restriction when the operator commutes with parity; the range is the ambient projector range intersected with the parity subspace. Idempotence, finite rank and analyticity are proved. The common neighborhood is pulled back through the period-one embedding and is open in the native period-one potential topology, simultaneously for both parities and all larger cutoffs. No ambient open-neighborhood claim for the even subspace is substituted.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceParityCompression_apply",
+            "NLS.ZakharovShabat.mem_range_sourceParityCompression_iff",
+            "NLS.ZakharovShabat.finiteDimensional_range_sourceParityCompression",
+            "NLS.ZakharovShabat.analyticAt_sourceParityCompression",
+            "NLS.ZakharovShabat.sourceParityCircleProjection_apply",
+            "NLS.ZakharovShabat.sourceParityCentralProjection_apply",
+            "NLS.ZakharovShabat.sourceEquation1_5"
+          ],
+          "requirement": "Actual restricted analytic projectors in the native period-one potential topology."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceEquation1_4.lean": "29d0baf5765f59a363bea224d33d0965d08b649d9bca4056ac998b337cc52b81",
+        "NLS/ZakharovShabat/SourceEquation1_5.lean": "ef8fb9699a6eb422861deb7c49d737da430cc9e78a37aba749647d273a066e41",
+        "NLS/ZakharovShabat/SourceLemma3_6.lean": "6ca67f12c3826096980fd369c692708ced3f54e789d4c3f725490fa3ba033cbd",
+        "NLS/ZakharovShabat/SourceParity.lean": "523ef8ca9582a9adad5bed7c4429edaac99afb68f1501a5e20327da00b22b913",
+        "NLS/ZakharovShabat/SourceParityRestriction.lean": "373cf6f7c74fdcf87889041ab353a2924337f311b033fe6b841ef3c790474c70",
+        "NLS/ZakharovShabat/SourceResolventContours.lean": "29c47466eef799ef11fc96ad2eb94582973c104bc2973fb8ab1eae565e17c256",
+        "NLS/ZakharovShabat/PeriodOneEmbedding.lean": "60761ac490ec2b1bc3d77ff845ecf29908b36a8b9e53aefb4b8d5d2683ed855a",
+        "NLS/ZakharovShabat/PeriodicParity.lean": "f3cbe50af6a08bce0196127eb09d4d1505591fec083f6259cc1f3d63a1b9c9ea",
+        "NLS/ZakharovShabat/ContourAnalytic.lean": "86aa781abe2e00233b7ff88fb7ea723e8e7c8a7b699a67eb3da66724c87ba862",
+        "NLS/FunctionalAnalysis/CircleIntegrationMap.lean": "1ab6d9902633be2d602a3b7d2cc00c82ad6b1230caf8284299a12c62d6212146"
+      },
+      "resolved_declarations": [
+        "NLS.CircleIntegral.integrationCLM",
+        "NLS.CircleIntegral.integrationCLM_eq",
+        "NLS.CircleIntegral.norm_integrationCLM_le",
+        "NLS.ZakharovShabat.analyticAt_resolventCircleIntegral",
+        "NLS.ZakharovShabat.analyticAt_sourceParityCompression",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceCentralRectangleIntegral",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceParityCompression",
+        "NLS.ZakharovShabat.finiteDimensional_range_sourceResolventCircleIntegral",
+        "NLS.ZakharovShabat.freeOperator_domainParityProjection",
+        "NLS.ZakharovShabat.isClosed_sourceParitySubspace",
+        "NLS.ZakharovShabat.isCompl_sourceParitySubspaces",
+        "NLS.ZakharovShabat.isOpen_resolventCircleDomain",
+        "NLS.ZakharovShabat.isTopCompl_sourceParitySubspaces",
+        "NLS.ZakharovShabat.lemma3_6_even_support_needed",
+        "NLS.ZakharovShabat.mem_range_sourceParityCompression_iff",
+        "NLS.ZakharovShabat.mem_sourceParitySubspace_one_iff",
+        "NLS.ZakharovShabat.mem_sourceParitySubspace_zero_iff",
+        "NLS.ZakharovShabat.norm_sourceParityProjection_apply_le",
+        "NLS.ZakharovShabat.periodOnePotential_physical_coefficients",
+        "NLS.ZakharovShabat.potentialOperator_domainParityProjection",
+        "NLS.ZakharovShabat.sourceEquation1_4",
+        "NLS.ZakharovShabat.sourceEquation1_5",
+        "NLS.ZakharovShabat.sourceLemma3_6",
+        "NLS.ZakharovShabat.sourceOperator_domainParityProjection",
+        "NLS.ZakharovShabat.sourceParityCentralProjection_apply",
+        "NLS.ZakharovShabat.sourceParityCircleProjection_apply",
+        "NLS.ZakharovShabat.sourceParityCompression_apply",
+        "NLS.ZakharovShabat.sourceParityProjection_commute_resolvent",
+        "NLS.ZakharovShabat.sourcePeriodOneEquiv",
+        "NLS.ZakharovShabat.sourceResolventCircleIntegral",
+        "NLS.ZakharovShabat.sourceResolventCircleIntegral_eq_conj",
+        "NLS.ZakharovShabat.sourceResolventRectangleIntegral",
+        "NLS.ZakharovShabat.sourceResolventRectangleIntegral_eq_conj"
+      ],
+      "declaration_inventory_count": 42983,
+      "qualification": "These ten modules and the cited extracted source passages were read completely. The current module hashes and declaration references were checked. The rendered source page 26 was inspected in the preceding preparation. This is a focused comparison of four passage groups, not an exhaustive assertion audit or an independent review of every transitive dependency. The period-one hypothesis is retained; the existing odd-support counterexample is not a new source refutation. Base-space period doubling is isometric; no weighted-domain isometry is asserted. Openness of restricted-projector parameters is in the native period-one topology. All existing norm, height and radius qualifications remain. The source-wide inventory, exact cited 2014 construction identification and Appendix G.2 norm interpretation remain unfinished.",
+      "status": "current_public_source_comparison",
+      "base_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+      "updated_utc": "2026-10-27T17:54:00.599896+00:00",
+      "prepared_from_sha256": "e8ad49ed8f4271aceebb168f3a0c5f501258023aa758030b2d91c1eef789ef7f",
+      "validation_reuse": {
+        "full_check_commit": "cb7317a3532ea985e8e33a81f454c94b9fd7e360",
+        "lean_sources": {
+          "files": 4717,
+          "sha256": "7892424e5b49a1f9f6db4f0a052c2097cb4c2ce30d829e192779959555bc84a5"
+        },
+        "new_lean_check_run": false,
+        "reason": "Only documentation and review records change; all Lean sources and dependency locks match the observed successful full check."
+      },
+      "source_record_sha256": "9421d2ab82f61d0bfd0d0578bf65cc638c6b9034316e2bda54247e5a07424307"
     }
   }
 }

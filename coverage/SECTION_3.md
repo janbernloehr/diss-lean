@@ -456,6 +456,25 @@ height-and-strips result, rather than exterior inclusion alone.
 
 ## Equation (1.4): actual Cauchy-Riesz projectors
 
+The renewed proof comparison covers equation (1.4), the intervening parity
+definitions and Lemma 3.6, and equation (1.5). On each fixed compact circle,
+pointwise pencil invertibility gives a unit in the Banach algebra of
+continuous operator-valued functions. Analytic inversion in the uniform
+norm and bounded normalized integration give analytic actual projections.
+The signed parity masks are closed topological complements; frequency
+doubling is an isometry of the base space onto the entire even subspace.
+The operator proof retains the full one-derivative domain and period-one
+potential hypothesis. Restricted-projector openness is in the native
+period-one potential topology. The existing odd-potential counterexample
+confirms the necessity of that hypothesis; it is not a source erratum.
+
+Section3ProjectionParitySourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused groups,
+10 reviewed module hashes and 33 resolved declaration references.
+This comparison preserves the earlier qualifications and does not certify
+every assertion in Section 3. Its Lean sources match the full validation
+at `cb7317a`; this documentation update does not rerun Lean.
+
 The normalized integrals use the actual original-norm resolvent as their
 integrand. The central rectangle retains all four boundary edges, and the
 distant circles have radius pi/4 and positive orientation. Every finite

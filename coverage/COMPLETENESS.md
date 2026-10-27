@@ -54,6 +54,9 @@ the standalone pair-norm counterexample remains valid.
 Corollary 3.5's squared inverse, original-norm quarter/half bounds, compact
 segment and common neighborhood for all larger exact spectral exteriors
 are also proved, with the compact analytic resolvent and spectrum enclosure.
+Four focused proof groups now also compare the actual Cauchy–Riesz
+projections, parity decomposition, full-domain invariance and analytic
+period-one restrictions in equations (1.4)–(1.5) and Lemma 3.6.
 Continue through the remaining Section 3 proof assertions, then later
 sections in order.
 Classify each substantive

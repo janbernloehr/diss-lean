@@ -5,10 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Corollary 3.5's original-norm proof now includes the squared
-Neumann inverse, uniform quarter/half bounds and a common connected
-neighborhood for every larger spectral cutoff. Exact source boundaries
-and all existing corrections are retained.
+Latest step: the source comparison now records the proofs of analytic
+Cauchy–Riesz projections, parity decomposition and period-one restrictions
+in equations (1.4)–(1.5) and Lemma 3.6.
 See the [Section 3 comparison](coverage/SECTION_3.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

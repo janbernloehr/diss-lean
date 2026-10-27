@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Current milestone: Uniform squared-Neumann proof of Corollary 3.5
+## Current milestone: Projection and parity proof comparison
+
+Four focused source groups now connect equations (1.4)–(1.5) and Lemma 3.6
+to the actual contour integrals, closed complementary parity subspaces,
+full-domain invariance and analytic restrictions in period-one coordinates.
+The comparison also checks analytic inversion on a compact circle and
+bounded integration. Ten fully read modules and 33 resolved declarations
+support the [Section 3 comparison](coverage/SECTION_3.md).
+
+Validation: source-review integrity, declaration references and documentation
+links pass. The Lean sources and dependency locks are byte-identical to
+the full check at `cb7317a`: 8,440 build jobs, 7,498 examples and the
+42,983-declaration axiom audit. This documentation step reuses that
+validation; it does not report a new Lean run. The 21 existing warnings remain.
+
+Continue with the prepared rank, spectral exhaustion and reality comparison,
+then local trace reduction and the remaining Section 3 assertion inventory.
+All existing source corrections and [completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Uniform squared-Neumann proof of Corollary 3.5
 
 Smallness of the squared potential/free-resolvent operator now gives the
 actual full-domain inverse and paired Neumann series in the original norm.
