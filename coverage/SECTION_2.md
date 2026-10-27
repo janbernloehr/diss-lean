@@ -5,6 +5,16 @@ checked against the rendered source. The maps below identify proved scope
 and endpoint corrections. The bracket results below retain their explicit domain restrictions;
 this file is not a completeness certificate for the dissertation.
 
+The renewed comparison covers the definitions and assertions throughout
+Section 2, including the signed pair basis, both pair norms, full finite-source
+gradients, and the physical Poisson formula. Its twelve assertion groups and
+31 reviewed module hashes are recorded as
+`Section2SourceComparison-2026-10-27` in the
+[source-comparison snapshot](source-review-index.json). The three source
+corrections remain explicit: norm convergence at infinity, the scalar bilinear
+Fourier index, and gradient representation at infinity. The final notation
+conventions specialize the existing definitions to order zero and period one.
+
 The source defines the scalar Fourier-Lebesgue space for every real
 regularity and every exponent from one through infinity, then asserts that
 its Fourier series converges in the same norm without excluding infinity.
@@ -223,8 +233,11 @@ r=infinity has the existing maximum pair norm; agreement of its finite
 restrictions does not establish full gradient representation in the source's
 distinct infinity pair norm. The original endpoint obstruction is unchanged.
 
-Jacobi is proved on the single order-zero Hilbert domain. No closure theorem
-for arbitrary nested brackets on reciprocal Sobolev intersections is claimed.
+The weighted `zeroOrderBracket_jacobi` theorem uses a single order-zero
+Hilbert domain. The existing `sourceBracket_jacobi` also covers source
+exponents p>=2; its infinity case uses the legacy maximum pair norm.
+Neither result asserts closure of arbitrary nested brackets on reciprocal
+Sobolev intersections with the source's norms.
 The page-22 automatic-regularity assertion only supplies a pairing when the
 two gradient domains are dual; the proved positive assertion and its endpoint
 restriction are recorded above.

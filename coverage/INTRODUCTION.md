@@ -10,6 +10,17 @@ distributional Galilean results documented below. This document does not
 certify the entire introduction or dissertation. The precise 2014 edition comparison
 and the G.2 norm qualification also remain open.
 
+The Fourier-space background on printed p. 10 now has a renewed comparison
+from `FL2 = L2` through Galilean invariance (extraction lines 238–244).
+`IntroductionFourierBackgroundSourceComparison-2026-10-27` in the
+[source-comparison snapshot](source-review-index.json) records five assertion
+groups and 14 reviewed module hashes. It retains the finite-p restriction
+on the critical periodic inclusion, homogeneous scaling of the critical
+norm, and the classical regularity assumptions for PDE symmetry. Invariance
+of the actual distributional Fourier-Lebesgue class is proved separately.
+This comparison does not cover the Birkhoff-extension sentence immediately
+before `FL2 = L2` or the remaining opening background.
+
 ## Scalar Fourier differential at zero, printed p. 10
 
 [ScalarNonlinearLinearization.lean](../NLS/ZakharovShabat/ScalarNonlinearLinearization.lean)

@@ -5,10 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 2 scalar duality now acts directly on the original
-periodic distribution spaces at every real Sobolev order and positive period.
-It preserves the exact operator norm and normalized physical action,
-including the p=1 endpoint.
+Latest step: the renewed Section 2 comparison now includes pair gradients
+and Poisson pairing, with all three source corrections retained. The
+introduction's Fourier-space background, critical scaling and Galilean
+invariance also have a recorded comparison against the existing Lean proofs.
+The preceding implementation supplies full scalar duality directly on the
+original periodic distribution spaces, including the p=1 endpoint.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

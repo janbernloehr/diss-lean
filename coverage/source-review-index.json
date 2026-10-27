@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T06:22:37.481768+00:00",
-  "base_commit": "d76afc695337cf70e3e330a4889042e3d6dfb67c",
+  "published_utc": "2026-10-27T06:37:24.623921+00:00",
+  "base_commit": "001f7cd91d59cfacfa9316f7d35bf0cacc20e98f",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 47,
-    "module_hash_checks": 619,
-    "distinct_modules": 583
+    "review_records": 49,
+    "module_hash_checks": 664,
+    "distinct_modules": 617
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -9714,6 +9714,305 @@
       },
       "qualification": "All ten hash-listed canonical modules were read completely for this comparison, together with the new five public examples and support-document diff. The new native weighted duality theorem is a stronger public interface for the existing coefficient duality. This comparison covers the scalar carrier, Banach/reflexivity assertions, physical Fourier sums and full scalar duality; it does not certify every assertion in Section 2 or independently reprove all transitive dependencies. Infinity norm-convergence and full-gradient corrections remain; pair-gradient and Poisson qualifications in the focused Section 2 audit are unchanged.",
       "source_record_sha256": "ebfb92e746df999028fae31b788f599fcd402e801e66de216219301b7e775dc6"
+    },
+    "Section2SourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T06:37:24.623921+00:00",
+      "base_commit": "001f7cd91d59cfacfa9316f7d35bf0cacc20e98f",
+      "source_lines": [
+        1089,
+        1210
+      ],
+      "rendered_source": {
+        "pdf_pages": [
+          21,
+          22
+        ],
+        "printed_pages": [
+          21,
+          22
+        ],
+        "images": {
+          "Section2CurrentReview-021.png": "1cb5aca05e40180eeff81ba234f823d173f9127478c42b5992e622b88a239e6f",
+          "Section2CurrentReview-022.png": "47294deb4b8068925771ad9d4280baa81c50c313fb2c1a30af935125f432d87a"
+        },
+        "finding": "Both rendered pages were inspected, including conjugation bars, signed basis, infinity sum norm and the physical J matrix."
+      },
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            1089,
+            1096
+          ],
+          "requirement": "Original periodic distributions, smooth periodic tests, Fourier extraction and weighted scalar norm at every positive period and real order.",
+          "finding": "The native carrier consists of continuous linear functionals on the original smooth periodic tests. Its coefficient map is an isometry onto the weighted sequence space. Fourier extraction uses the negative physical wave and every real Sobolev weight has tempered inverse.",
+          "declarations": [
+            "FourierLebesgueSpace",
+            "PeriodicFourierLebesgue.coefficientsIsometry"
+          ]
+        },
+        {
+          "source_lines": [
+            1095,
+            1101
+          ],
+          "requirement": "Normalized action of locally integrable data on smooth periodic tests.",
+          "finding": "Interval integrability suffices for the normalized 1/L integral action, actual distributional synthesis and uniqueness. Locally integrable periodic inputs restrict to this construction without an L2 premise.",
+          "declarations": [
+            "SmoothPeriodicTest.Distribution.ofL1_apply",
+            "locallyIntegrable_periodic_smooth_action",
+            "existsUnique_periodicL1Distribution"
+          ]
+        },
+        {
+          "source_lines": [
+            1101,
+            1103
+          ],
+          "requirement": "Banach completeness at all Banach exponents and reflexivity for 1<p<infinity.",
+          "finding": "Completeness uses the exact coefficient norm on the original distribution carrier. Reflexivity is surjectivity of the canonical map into the continuous double dual, transported through that coefficient isometry; it is not a claim about completeness in the distribution topology.",
+          "declarations": [
+            "PeriodicFourierLebesgue.sobolev_complete",
+            "PeriodicFourierLebesgue.bidual_surjective"
+          ]
+        },
+        {
+          "source_lines": [
+            1103,
+            1108
+          ],
+          "requirement": "Fourier series representation and the printed unrestricted norm-convergence assertion.",
+          "finding": "Finite sums are identified with actual continuous Fourier-polynomial distributions. Norm convergence holds at every finite Banach exponent. At infinity the exact criterion is weighted c0; inverse-weight coefficients give error one for every finite cutoff, including on actual original distributions. The same sums still converge distributionally. The printed unrestricted norm claim is therefore corrected.",
+          "declarations": [
+            "PeriodicFourierLebesgue.truncate_eq_ofContinuous",
+            "PeriodicFourierLebesgue.tendsto_truncate_top_iff",
+            "sourceSectionTwo_infinity_counterexample"
+          ]
+        },
+        {
+          "source_lines": [
+            1108,
+            1111
+          ],
+          "requirement": "The whole scalar continuous dual for finite source exponent, including p=1.",
+          "finding": "The opposite-order, conjugate-exponent space of original distributions is linearly isometric to the entire continuous dual. Representation and uniqueness hold on the full original domain, with exact operator norm and no finite-support or smooth-source restriction.",
+          "declarations": [
+            "PeriodicFourierLebesgue.sobolevDualIsometry",
+            "PeriodicFourierLebesgue.existsUnique_sobolevRepresentative"
+          ]
+        },
+        {
+          "source_lines": [
+            1110,
+            1131
+          ],
+          "requirement": "Sesquilinear dual product and its normalized L2 integral interpretation.",
+          "finding": "The same-index sum conjugates the second coefficient and is absolutely convergent at all conjugate Banach pairs, including endpoints. It equals the normalized physical integral for L2 inputs at every positive period. The finite-source full Riesz representative is conjugate linear in the functional.",
+          "declarations": [
+            "sobolevSesquilinearPairing_apply",
+            "sobolevSesquilinearPairing_eq_intervalIntegral",
+            "sobolevSesquilinearRiesz"
+          ]
+        },
+        {
+          "source_lines": [
+            1134,
+            1144
+          ],
+          "requirement": "Unconjugated physical pairing, distributional action and the relation to physical conjugation.",
+          "finding": "Physical bilinear action uses opposite Fourier indices. The printed same-index scalar sum is refuted by a smooth period-one wave whose printed sum is one and physical integral is zero. With the correction, physical conjugation gives the stated relation to the sesquilinear product, and every smooth periodic test recovers the original distributional action.",
+          "declarations": [
+            "sourceSectionTwo_printed_bilinear_pairing_false",
+            "sobolevSesquilinearPairing_conjugation",
+            "PeriodicFourierLebesgue.sobolevDualIsometry_ofSmooth"
+          ]
+        },
+        {
+          "source_lines": [
+            1146,
+            1166
+          ],
+          "requirement": "Signed pair Fourier basis and the exact finite and infinity pair norms.",
+          "finding": "The first signed component reverses the physical Fourier index; the second preserves it. Finite pair norms use the sum of component p-powers. The infinity pair norm is the supremum of the frequencywise sum of magnitudes, implemented by WeightedCoeffPairInfty. It is not silently replaced with the maximum product norm. The two formulations have their own Banach structures and distributional realizations.",
+          "declarations": []
+        },
+        {
+          "source_lines": [
+            1169,
+            1181
+          ],
+          "requirement": "Pair sesquilinear product and the real product obtained using physical conjugation.",
+          "finding": "The pair product is the sum of the two scalar products with the signed-to-physical reflection retained. Finite conjugate inputs and both one/infinity endpoints have absolute convergence and boundedness in their actual norms. The real product uses physical conjugation, hence the corrected opposite-index scalar bilinear formula.",
+          "declarations": [
+            "sobolevSesquilinearPairing_physical",
+            "sobolevSesquilinearOneInfinity_physical"
+          ]
+        },
+        {
+          "source_lines": [
+            1183,
+            1193
+          ],
+          "requirement": "Unique gradient representing the complete differential on every direction.",
+          "finding": "All finite source exponents have full pair-gradient representation, uniqueness and analyticity in the opposite-order conjugate space. The p=1 target uses the printed infinity pair norm; its comparison bound is two, not a false isometry assertion. At source infinity an everywhere-analytic functional has no l1 gradient, at every real order and in the original infinity pair norm. The paragraph needs the finite-source restriction or a supplied representative.",
+          "declarations": [
+            "existsUnique_sobolevFiniteGradient",
+            "existsUnique_sobolevOneGradient",
+            "exists_analytic_sobolev_pair_without_gradient"
+          ]
+        },
+        {
+          "source_lines": [
+            1195,
+            1205
+          ],
+          "requirement": "The -i times J physical bracket and automatic pairing regularity for opposite-order conjugate source spaces.",
+          "finding": "The actual physical J and -i sign are retained. With both conjugate source exponents finite, full gradients define an absolutely convergent bracket on the whole common-state intersection, and analytic ambient functionals give an analytic bracket there. Endpoint pairing is proved for supplied gradient representatives in the original one/infinity norms; arbitrary infinity-source functionals do not automatically supply them. The source does not explicitly assert closure under arbitrary nested brackets on these intersections.",
+          "declarations": [
+            "commonSobolevBracket_physical",
+            "analyticOnNhd_commonSobolevBracket",
+            "oneInfinityBivector_physical"
+          ]
+        },
+        {
+          "source_lines": [
+            1206,
+            1210
+          ],
+          "requirement": "Zero-order and unit-period notation conventions.",
+          "finding": "The existing weighted scalar and pair definitions specialize to order zero and period one. This last paragraph introduces abbreviations rather than an extra existence or regularity assertion.",
+          "declarations": []
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicSobolevDuality.lean": "01e3b03b26c1deebdcb49cc882d4cb93a37fa8ac022fd8058582fcbbf4330e58",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean": "17de7f4fb4fa19f4d359487e9bbbac98621d87e516952352baf5e0e733eec3d9",
+        "NLS/Fourier/PeriodicFourierLebesgueDuality.lean": "d343b7c224fd64fa9fec4469d76d4cf477d30dfa0adbf9056cd05859645b5841",
+        "NLS/Fourier/PeriodicDistributionPhysicalOrderZero.lean": "a6ed9d1af0039ba490e004f590648fdd578033c50d2985402abcbf4823d3c263",
+        "NLS/SequenceSpaces/SobolevFullDuality.lean": "ff858c1ed47a9b6e91c5c266030b2ccf2ff8d17419938da54695318a42ddf647",
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/SequenceSpaces/Reflexivity.lean": "1b64db52f5e1ac64af1bcde6693345ba2fb93e204662bf0efda603a943386d2c",
+        "NLS/Fourier/ArbitraryPeriodDistributionPairing.lean": "5bb80d714627cc68fa6947732a82d277e7cebebe42a72c4f897fad0c52aa787f",
+        "NLS/Fourier/PeriodicL1Distribution.lean": "7b52cda684b3bec9c507530b0be3d8a11532c4dfc31314356f1dc398eee4d089",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/SequenceSpaces/WeightedPairNormInfty.lean": "1726d12678be808fe61c7d07890ad3aa1231dfcb6b745c60c89b3131358615f9",
+        "NLS/Fourier/PairDistributionInfty.lean": "2f365003edb0dd95bb7509ae9940c86a3e4345810b9ebdabb195bed7f9bafb89",
+        "NLS/SequenceSpaces/SobolevPairSesquilinear.lean": "47b5e3bafd31f211239f96b3aa3793bd6f7e2b3f1952b6f946efb607c6d23627",
+        "NLS/SequenceSpaces/SobolevSesquilinearPairing.lean": "b3cb65f0e978b4160d026ee03fdf574c9503016e45bcbb7deb1fa961dc81c7b8",
+        "NLS/Fourier/SobolevSesquilinearDistributionPairing.lean": "f8e89436825e11950778826080eca890b2b126ad65a5d4935fe454a069d1c5de",
+        "NLS/Poisson/SobolevCommonState.lean": "480435451f4d06f86c4c3e022df7d00890362bf33dbd31c60c89f9b84859bed5",
+        "NLS/Poisson/SobolevCommonBracket.lean": "8bc4b27219ed668bee0db592e8eee1275876ad98e20936ca0c551a12acef5c4b",
+        "NLS/SequenceSpaces/SobolevPairGradient.lean": "a8a7a1c8c529155ab85cef36c87e275a7570337f639a02c0ca90b36a7c510255",
+        "NLS/SequenceSpaces/SobolevInfinityDuality.lean": "8a21a4632551ee7b12c94775bf0a8674fa6016ba22cad881c8f93d2834456fc3",
+        "NLS/SequenceSpaces/SobolevPairCotangent.lean": "2368c866319f110e6904316d28cb9ae552bf63b8a86368a5959035085a8bb757",
+        "NLS/Poisson/ConjugateSobolevBracket.lean": "24e16ba7a52e5e970a43d882a64f3ffcbbdfaf0daa7785c532af687a6c6c71fe",
+        "NLS/Poisson/SobolevEndpointBivector.lean": "08d794d24524647285c13f1fc39eaa27297b2b837a52455c1f7771de2345441d",
+        "NLS/SequenceSpaces/SobolevSesquilinearDuality.lean": "d6cf7952822de989b8bcac5e15e3f6f285831087a07508c765690026d0a787d7",
+        "NLS/Poisson/SobolevBivector.lean": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49",
+        "NLS/Fourier/SourceSectionTwoPairingAudit.lean": "84095ffd2bbce62a5e8a53551adb0aae6f125831fccd84468a4c7cd9ffa22f49",
+        "NLS/SequenceSpaces/InfinityDuality.lean": "51d4656afdfc465354a9c472944e57857467bed9a8e49d94af050772427ee3b8",
+        "NLS/Fourier/SourceSectionTwoConvergence.lean": "0e638bfe70fd78043ebdad4a3c5b10b8c9f3bebad9975281145dee897ba13bbb",
+        "NLS/Poisson/SourceBracketJacobi.lean": "62ae2dfc8c86b8f9b43abd1ac8e7452b4d8665784cadd899799472efe1039fbc",
+        "NLS/SequenceSpaces/SobolevScalarGradient.lean": "3290513c4e4eeeba43b1bde405899ce1990a42c0badddee285a5670fda6fa731",
+        "NLS/SequenceSpaces/SobolevBilinearPairing.lean": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b"
+      },
+      "supplementary_scope": "SourceBracketJacobi was also read: sourceBracket_jacobi covers p>=2 on its order-zero legacy source space; at infinity that space has the maximum pair norm. This is not a claim about arbitrary reciprocal Sobolev intersections or the distinct printed infinity pair norm.",
+      "qualification": "All 31 hash-listed canonical modules were read completely across the renewed Section 2 comparison, including the preceding native scalar-duality step. This record compares the twelve assertion groups spanning the section; it does not assert that the uncorrected source is true or independently reprove every transitive dependency. The three proved source corrections (infinity norm convergence, scalar bilinear Fourier index, infinity gradient representation) remain necessary. Bracket domains and endpoint hypotheses are explicit. This comparison is not a full-dissertation completion certificate.",
+      "source_record_sha256": "f2713005bdc39fdc5d0cac8be972103a0f32ae55402bdc5dd701ebd182333822"
+    },
+    "IntroductionFourierBackgroundSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "updated_utc": "2026-10-27T06:37:24.623921+00:00",
+      "base_commit": "001f7cd91d59cfacfa9316f7d35bf0cacc20e98f",
+      "source_lines": [
+        238,
+        244
+      ],
+      "source_scope": "Printed p.10, beginning with FL2=L2 after the Birkhoff-extension sentence on extraction line238, and ending with the Galilean display on line244.",
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            238,
+            238
+          ],
+          "requirement": "The periodic FL2 space is the original L2 space.",
+          "finding": "The native Fourier-Lebesgue space is linearly isometric to L2 on the actual quotient circle with normalized Haar measure. Its representative induces the same original distribution, and Parseval retains the exact 1/L interval factor for every positive period. The comparison begins after the Birkhoff-extension sentence on this line.",
+          "declarations": [
+            "PeriodicFourierLebesgue.l2Isometry",
+            "PeriodicFourierLebesgue.l2Isometry_represents",
+            "PeriodicFourierLebesgue.l2Isometry_parseval_interval"
+          ]
+        },
+        {
+          "source_lines": [
+            239,
+            240
+          ],
+          "requirement": "For p>2 the periodic Fourier-Lebesgue spaces contain distributions beyond L2.",
+          "finding": "One actual nonmeasure periodic distribution belongs simultaneously to every p>2, including infinity, and is not FL2. Actual L2-induced distributions have order zero, whereas the witness has nonzero distributional order. This proves strictness on the original carrier, not only a failed sequence-norm inequality.",
+          "declarations": [
+            "exists_fourierLebesgue_above_two_not_l2"
+          ]
+        },
+        {
+          "source_lines": [
+            240,
+            240
+          ],
+          "requirement": "Continuous inclusion FLp into H^(-1/2) for every finite real p>2.",
+          "finding": "The coefficient multiplier uses Holder exponent (1/2-1/p)^(-1)>2. The resulting bounded linear inclusion is injective, preserves every raw coefficient and has exactly the same original distribution as its input, at every positive period. The printed finite-p restriction is retained.",
+          "declarations": [
+            "criticalSobolevInclusion_val",
+            "criticalSobolevInclusion_injective"
+          ]
+        },
+        {
+          "source_lines": [
+            240,
+            241
+          ],
+          "requirement": "NLS dilation has critical Sobolev regularity -1/2.",
+          "finding": "The physical map lambda*u(lambda^2*t,lambda*x) preserves the classical NLS equation under the stated differentiability assumptions. Its full-line Fourier density scales by inverse frequency dilation; the homogeneous squared energy scales by lambda^(2s+1). At s=-1/2 a complete L2(|xi| dxi) model embeds continuously and injectively into actual tempered distributions, has exactly the finite critical Fourier-density characterization, and physical scaling is a surjective linear isometry. Exact invariance is homogeneous; no exact inhomogeneous Hs norm isometry is inferred.",
+          "declarations": [
+            "hasDerivAt_scalarNLS_dilation",
+            "homogeneousCriticalEnergy_scalarNLS_dilation",
+            "isCriticalHomogeneousSobolev_iff_fourier_density"
+          ]
+        },
+        {
+          "source_lines": [
+            242,
+            244
+          ],
+          "requirement": "Full-line Fourier-Lebesgue invariance under the literal Galilean symmetry.",
+          "finding": "The literal phase exp(i*(nu*x-nu^2*t)) and moving-frame shift x-2*nu*t preserve the classical PDE. Separate theorems implement this action on actual tempered distributions and prove Fourier covariance with the correct 2*pi frequency shift. Having an actual Lp Fourier representative is preserved in both directions for every Banach p including infinity; the unique representative retains its norm. No physical-space integrability premise or rough-data PDE well-posedness claim is added.",
+          "declarations": [
+            "exists_lineFourierLebesgue_galilean_representative",
+            "isLineFourierLebesgue_galilean_iff"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean": "75c52ed4af19523d093bb5451fe092731598eee16f7a8991be52cd18104243e7",
+        "NLS/Fourier/PeriodicFourierLebesgueStrictness.lean": "2aefbaa463a96a001c0dda625272d7c88763f49940662687fd88838fc4467e83",
+        "NLS/Fourier/PeriodicCriticalSobolevInclusion.lean": "d617ab3d16a06ef1ca544b9a66d1555a3a94488907d6852a0cbc5073a8ca878a",
+        "NLS/SequenceSpaces/CriticalSobolevInclusion.lean": "b99a8ee8c2e07cc4615ecd998cf2ee5386d281aa73008b65bd0a55eccf6eddc4",
+        "NLS/Fourier/HomogeneousNLSScaling.lean": "92bf0aef1b1357b448615936ef7cac626eddd69d5aff477d5a8bb6020a652477",
+        "NLS/Fourier/LineTemperedNLSScaling.lean": "30b161ae80c6c207e2c9f416dc0af2cc8009f90eb07e53664ffa931521a37fbb",
+        "NLS/Fourier/CriticalFrequencyMeasure.lean": "8d4a3033b3e20b21fa02318c986e5930f38f04dffa439fdd9c6b073464b60acc",
+        "NLS/Fourier/CriticalHomogeneousSobolev.lean": "381ba2869da89115aa7f5665bfccd98246d15567104fad84cb0741b4d6fad201",
+        "NLS/Fourier/CriticalHomogeneousCharacterization.lean": "7daf541cb825461eb14d9ba6aab716f57acb8f79d902b39fe9f42f0bf9140d38",
+        "NLS/Fourier/LineGalileanFourier.lean": "1d56393295838974dedcbb648d7f7672fad02386c4b2a8ca25b0131d41878794",
+        "NLS/Fourier/LineTemperedGalilean.lean": "84734ec8ef1e42f1eb47e1545c82633fec10f154dad96e17db401e96d4156134",
+        "NLS/Fourier/LineFourierLebesgueGalilean.lean": "2c3f41de830976397d8097317874a43d9ebb7d694585386f59472ea0f1b00709",
+        "NLS/ZakharovShabat/ScalarNLSScaling.lean": "fc6e891c9ae0ba1596791e8bb48ded9956c5fd4e2ea2ecf892d392b82957ff6a",
+        "NLS/ZakharovShabat/ScalarNLSGalilean.lean": "6ff91173b7beba8a3d0e6ee0dfe5488d26ca8a07fdc8a6616a9f5128984fda37"
+      },
+      "qualification": "All fourteen hash-listed canonical modules were read completely for this comparison, including the actual proof bodies and their domain and normalization hypotheses. It covers only the five Fourier-space and symmetry assertion groups listed here; the preceding Birkhoff-extension claim and the wider opening background are not certified by this record. Exact critical scaling is homogeneous, and classical PDE symmetry is separate from invariance of the rough distribution class. Existing Lean validation covers the unchanged source snapshot; transitive dependencies are not independently re-proved. The precise2014 construction and G2 norm qualifications remain open.",
+      "source_record_sha256": "4b36b6fe813d6db028150044643cdcf1703d9eba1eed361631161ac5645c874f"
     }
   }
 }

@@ -10,7 +10,8 @@ then-current limitations. Current appendix comparisons are in
 [Appendix D](coverage/APPENDIX_D.md), [Appendix E](coverage/APPENDIX_E.md),
 [Appendix F](coverage/APPENDIX_F.md), [Appendix G](coverage/APPENDIX_G.md),
 [Appendix H](coverage/APPENDIX_H.md), and [Appendix I](coverage/APPENDIX_I.md).
-They supersede the historical appendix entries below. The focused Section 2 convergence and scalar-pairing audit is in
+They supersede the historical appendix entries below. The renewed Section 2
+comparison of definitions, convergence, duality, gradients and Poisson pairing is in
 [`coverage/SECTION_2.md`](coverage/SECTION_2.md). The spectral overview link below and the final
 dyadic-counterexample entry record the current status of Theorem 1.1.
 

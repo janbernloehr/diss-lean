@@ -1893,8 +1893,10 @@ actual source counterexample, not merely a defect in a coefficient model.
 The valid alternatives are norm convergence at finite exponents; norm
 convergence for weighted c0 inputs at infinity; or distributional convergence
 at every Banach exponent. The last is already proved on the full real Sobolev
-scale and remains unchanged. See `coverage/SECTION_2.md` for the precise scope;
-the remaining Section 2 duality and gradient assertions are still being audited.
+scale and remains unchanged. The renewed [Section 2 comparison](coverage/SECTION_2.md)
+also records full scalar duality and pair-gradient representation at finite
+source exponents. The full-gradient obstruction at infinity remains, as
+does the scalar bilinear-index correction below.
 
 ## Section 2: missing frequency reversal in scalar bilinear duality
 

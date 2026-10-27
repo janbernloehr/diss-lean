@@ -1,6 +1,23 @@
 # Implementation status
 
-## Current milestone: Sobolev duality on original periodic distributions
+## Current milestone: Section 2 and introductory Fourier-space comparisons
+
+The renewed [Section 2 comparison](coverage/SECTION_2.md) covers twelve
+assertion groups, including full pair gradients and the physical Poisson
+formula. It retains the three source corrections and the actual infinity
+pair norm. The [introductory Fourier-space comparison](coverage/INTRODUCTION.md)
+covers FL2=L2, distributions beyond L2, the finite-p critical inclusion,
+homogeneous critical scaling and Galilean invariance.
+
+This step records comparisons against existing proofs; it changes no Lean
+source or dependency lock. The exact previously validated snapshot still has
+8,412 build jobs, 7,424 public examples and 42,491 audited NLS declarations.
+The source-review integrity checker passes with 49 reviews and 664 module
+hash checks. These counts are provenance, not completion percentages.
+The wider opening background, precise 2014 construction and G.2 norm
+interpretation remain part of the unfinished source assessment.
+
+## Previous milestone: Sobolev duality on original periodic distributions
 
 Section 2's scalar duality now has an API on the actual smooth-test
 distribution spaces for every real order and positive period. The entire
