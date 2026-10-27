@@ -3695,6 +3695,7 @@ import NLS.ZakharovShabat.SourceFrequencyOriginalHilbert
 import NLS.ZakharovShabat.SourceFrequencyOriginalPhysical
 import NLS.ZakharovShabat.SourceFrequencyOriginalRestriction
 import NLS.ZakharovShabat.SourceHamiltonianOriginal
+import NLS.ZakharovShabat.SourceHamiltonianStrictConcavity
 import NLS.ZakharovShabat.SourceHamiltonianOriginalNonextension
 import NLS.ZakharovShabat.SourceSection18Wellposedness
 import NLS.ZakharovShabat.SourceSection18GaugeCorrection

@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: The literal mixed-frequency estimate
+## Current milestone: Strict Jensen inequalities for the original Hamiltonian
+
+The retained negative-Hessian estimate now yields the standard strict-concavity
+predicate for the same original action Hamiltonian. One positive-radius ball
+works both for all real action directions (using the real part of H) and for
+the nonnegative cone, where H is real-valued. The literal strict Jensen
+inequality includes boundary points and arbitrary infinite sets of zero actions.
+
+Two public examples combine strict concavity with the existing sign theorem:
+the midpoint from zero has value strictly between H(x)/2 and zero, and
+opposite nonzero real actions satisfy Re H(x) + Re H(-x) < 0.
+See the [introduction comparison](coverage/INTRODUCTION.md) and
+[Section 18](coverage/SECTION_18.md).
+
+Validation: `./scripts/check.sh` passes with 8,429 build jobs, 7,462
+public examples, and a transitive axiom audit of 42,792 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,959 file links across 45 documents.
+The source-review integrity check retains all earlier qualifications.
+
+This covers the strict-concavity clauses in both abstracts. Their other
+claims still need systematic assessment, followed by the remaining
+unnumbered source assertions. The [completion assessment](coverage/COMPLETENESS.md)
+preserves the exact 2014 construction and Appendix G.2 norm questions.
+
+## Previous milestone: The literal mixed-frequency estimate
 
 The introductory estimate `omega-star = ell(p/2) + OnePlus` now has a
 direct theorem for every finite p>1. One complex domain contains the real

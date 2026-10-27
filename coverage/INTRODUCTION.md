@@ -22,6 +22,41 @@ of the actual distributional Fourier-Lebesgue class is proved separately.
 This comparison does not cover the Birkhoff-extension sentence immediately
 before `FL2 = L2`; that claim is included in the opening comparison below.
 
+## Abstracts: literal strict concavity near zero
+
+[SourceHamiltonianStrictConcavity.lean](../NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean)
+proves the strict-concavity clauses in both abstracts (PDF page 5) and the
+introductory summary. For any retained `SourceOriginalHamiltonianData`,
+`Q.strict_concavity` chooses one positive radius with its complex ball inside
+T. The real part of H is `StrictConcaveOn` on that ball's real locus and on
+its nonnegative cone. The existing `Q.sign` identifies H as real-valued on
+the cone. `Q.strict_jensen` spells out the strict inequality for any two
+distinct nonnegative actions and any convex parameter strictly between zero
+and one, with the radius chosen before those actions and parameters.
+
+[HilbertStrictConcavity.lean](../NLS/SequenceSpaces/HilbertStrictConcavity.lean)
+identifies the real second derivative along affine segments with the complex
+Hessian, applies the one-dimensional concavity criterion, and specializes it
+to the Hilbert bound. Theorems 0.2 and 18.3 already state strict concavity in
+this quantitative Hessian sense. This adds the standard Jensen interface;
+it does not correct or replace their existing proofs.
+
+The zero endpoint, zero action coordinates and infinite closed-gap sets are
+allowed. Two public examples combine the new result with the original sign
+and zero-value identities. They bound H(x/2) strictly between H(x)/2 and zero
+for nonzero nonnegative x, and show Re H(x) + Re H(-x) < 0 for nonzero real x.
+The whole-real-ball statement concerns the real part of H. No global
+concavity or extension to every nonnegative Hilbert action is claimed.
+
+The comparison `HamiltonianStrictConcavitySourceComparison-2026-10-27`
+in the [source-review index](source-review-index.json) covers these selected
+clauses. The other abstract claims and the rest of the source-wide assertion
+assessment remain in progress; see [completion scope](COMPLETENESS.md).
+
+Validation passes: 8,429 build jobs, 7,462 public examples and a
+transitive axiom audit of 42,792 NLS declarations. The 21 inherited
+warnings are unchanged; the new modules and examples introduce none.
+
 ## Literal mixed-frequency estimate, printed p. 16
 
 [SourceFrequencyMixedIntroduction.lean](../NLS/ZakharovShabat/SourceFrequencyMixedIntroduction.lean)
@@ -623,6 +658,8 @@ throughout T. `Q.hessian_zero` is minus twice the unconjugated Hilbert
 pairing. `Q.concavity` supplies one positive-radius ball in T on which the
 real Hessian is bounded above by minus the squared ell^2 norm in every real
 direction. This proves the quantitative local concavity in Theorem 0.2.
+The literal `StrictConcaveOn` and strict Jensen consequences for this same H
+are proved in the abstract comparison above.
 
 `Q.real_summable_extension` and `Q.positive_domain` in
 [`SourceOriginalActionDomains.lean`](../NLS/ZakharovShabat/SourceOriginalActionDomains.lean)

@@ -69162,3 +69162,71 @@ example {W₀ W V Wa B U : Set (CoeffPair 4)}
   exact (norm_add_le _ _).trans (add_le_add (hg ψ hψ) (h₂ ψ hψ))
 
 end IntroductionMixedFrequencyChecks
+
+noncomputable section
+namespace HamiltonianStrictConcavityChecks
+open Set Metric NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+variable {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {T : Set (Coeff 2)} {F : Coeff 2 → Coeff 2} {H : Coeff 2 → ℂ}
+
+-- The zero endpoint and all closed-gap boundary points are included.
+-- Strict Jensen and the retained sign theorem bound the midpoint on both sides.
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    ∃ r : ℝ, 0 < r ∧ ∀ x ∈ Coeff.nonnegativeLocus 2, ‖x‖ < r → x ≠ 0 →
+      (H x).re/2 < (H ((1/2:ℝ) • x)).re ∧ (H ((1/2:ℝ) • x)).re < 0 := by
+  obtain ⟨r,hr,hball,_,hc⟩ := Q.strict_concavity
+  have hz : (0:Coeff 2) ∈ ball 0 r ∩ Coeff.nonnegativeLocus 2 :=
+    ⟨mem_ball_self hr,Coeff.zero_mem_nonnegativeLocus 2⟩
+  have hzero : H 0 = 0 := (Q.sign 0 (hball hz.1) hz.2).2.2.mpr rfl
+  refine ⟨r,hr,?_⟩
+  intro x hx hxr hne
+  have hxm : x ∈ ball (0:Coeff 2) r ∩ Coeff.nonnegativeLocus 2 :=
+    ⟨mem_ball_zero_iff.mpr hxr,hx⟩
+  have hm : (1/2:ℝ) • x ∈ ball (0:Coeff 2) r ∩ Coeff.nonnegativeLocus 2 := by
+    simpa only [smul_zero,zero_add] using hc.1 hz hxm
+      (by norm_num : (0:ℝ) ≤ 1/2) (by norm_num : (0:ℝ) ≤ 1/2) (by norm_num)
+  have hi := hc.2 hz hxm (Ne.symm hne)
+    (by norm_num : (0:ℝ) < 1/2) (by norm_num : (0:ℝ) < 1/2) (by norm_num)
+  have hi' : (H x).re/2 < (H ((1/2:ℝ) • x)).re := by
+    simpa only [hzero,Complex.zero_re,smul_zero,zero_add,smul_eq_mul,one_div,div_eq_mul_inv,mul_comm,zero_mul,zero_add,one_mul] using hi
+  have hs := Q.sign _ (hball hm.1) hm.2
+  refine ⟨hi',lt_of_le_of_ne hs.1 ?_⟩
+  intro he
+  have hv : H ((1/2:ℝ) • x) = 0 := Complex.ext he hs.2.1
+  exact hne ((smul_eq_zero.mp (hs.2.2.mp hv)).resolve_left (by norm_num))
+
+-- The real-ball interface also applies to opposite signed actions,
+-- which do not both belong to the nonnegative cone.
+example (Q : SourceOriginalHamiltonianData D T F H) :
+    ∃ r : ℝ, 0 < r ∧ ∀ x ∈ Coeff.realLocus 2, ‖x‖ < r → x ≠ 0 →
+      (H x).re + (H (-x)).re < 0 := by
+  obtain ⟨r,hr,hball,hc,_⟩ := Q.strict_concavity
+  have hzero : H 0 = 0 :=
+    (Q.sign 0 (hball (mem_ball_self hr)) (Coeff.zero_mem_nonnegativeLocus 2)).2.2.mpr rfl
+  refine ⟨r,hr,?_⟩
+  intro x hx hxr hne
+  have hxm : x ∈ ball (0:Coeff 2) r ∩ Coeff.realLocus 2 :=
+    ⟨mem_ball_zero_iff.mpr hxr,hx⟩
+  have hnx : -x ∈ ball (0:Coeff 2) r ∩ Coeff.realLocus 2 := by
+    refine ⟨mem_ball_zero_iff.mpr (by simpa only [norm_neg] using hxr),?_⟩
+    intro n
+    change (-x n).im = 0
+    simp only [Complex.neg_im,hx n,neg_zero]
+  have hdistinct : x ≠ -x := by
+    intro he
+    have ht : (2:ℂ) • x = 0 := by
+      rw [two_smul]
+      exact (congrArg (fun z => z+x) he).trans (neg_add_cancel x)
+    exact hne ((smul_eq_zero.mp ht).resolve_left (by norm_num))
+  have hi := hc.2 hxm hnx hdistinct
+    (by norm_num : (0:ℝ) < 1/2) (by norm_num : (0:ℝ) < 1/2) (by norm_num)
+  simp only [smul_neg,add_neg_cancel,hzero,Complex.zero_re,smul_eq_mul] at hi
+  linarith
+
+end HamiltonianStrictConcavityChecks

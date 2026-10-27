@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the introductory mixed-frequency estimate now has one
-locally bounded decomposition in `ell(p/2) + OnePlus`, on a complex domain
-containing every real source, for each finite p>1. The neighborhood and
-both components are chosen before the OnePlus projection exponent.
-See the [introduction audit](coverage/INTRODUCTION.md) and the
+Latest step: the original action Hamiltonian now satisfies literal strict
+Jensen inequalities near zero, including boundary points of the nonnegative
+action cone. The proof derives the standard strict-concavity predicate from
+the retained Hessian estimate for that same Hamiltonian.
+See the [introduction comparison](coverage/INTRODUCTION.md) and the
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

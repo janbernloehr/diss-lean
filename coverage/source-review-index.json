@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T12:16:11.864117+00:00",
-  "base_commit": "6e912cd079615afb5e323456dc18ad373c9e7ee8",
+  "published_utc": "2026-10-27T12:42:18.979766+00:00",
+  "base_commit": "f3718a3e568061c01c27fdedd46c165c557a38bb",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 64,
-    "module_hash_checks": 960,
-    "distinct_modules": 797
+    "review_records": 65,
+    "module_hash_checks": 966,
+    "distinct_modules": 802
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6e912cd079615afb5e323456dc18ad373c9e7ee8",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes SourceFrequencyMixedIntroduction and two public examples.",
+    "base_commit": "f3718a3e568061c01c27fdedd46c165c557a38bb",
+    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes HilbertStrictConcavity, SourceHamiltonianStrictConcavity and two public examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8427,
-    "public_examples": 7460,
-    "transitive_NLS_declarations": 42786,
+    "build_jobs": 8429,
+    "public_examples": 7462,
+    "transitive_NLS_declarations": 42792,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4704,
-      "sha256": "1d440fceccc0b32d8ed1a86a41732674aa18f21d3663586ecd24020504c7d4e3"
+      "files": 4706,
+      "sha256": "5ca4597318f3340795066aae0e72e07b06ebddd405d43ff194982672a45f9511"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
   },
@@ -12344,6 +12344,122 @@
       ],
       "qualification": "The ten hash-listed modules were read completely in this assessment or in retained preparation and preceding source comparisons; their current hashes were verified. The two new theorems and two examples are a direct interface for the displayed mixed estimate. Historical-status cleanup follows inspected existing proofs, not new mathematical claims. Earlier source records are preserved. The source-review index explicitly covers selected unnumbered assertions and does not provide an exhaustive source-wide completion proof. The exact2014 construction and AppendixG2 norm interpretation remain unresolved.",
       "source_record_sha256": "4404c1d5686254fee2c27c4a7d608fd16e60c65adda9dd1e1b478aee666f214b"
+    },
+    "HamiltonianStrictConcavitySourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "f3718a3e568061c01c27fdedd46c165c557a38bb",
+      "updated_utc": "2026-10-27T12:42:18.979766+00:00",
+      "source_lines": [
+        [
+          59,
+          63
+        ],
+        [
+          84,
+          87
+        ],
+        [
+          223,
+          225
+        ],
+        [
+          406,
+          417
+        ],
+        [
+          6799,
+          6811
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            [
+              59,
+              63
+            ],
+            [
+              84,
+              87
+            ],
+            [
+              223,
+              225
+            ]
+          ],
+          "requirement": "The renormalized Hamiltonian, expressed in actions, is real analytic and strictly concave near zero in the nonnegative Hilbert action cone.",
+          "finding": "For any retained SourceOriginalHamiltonianData, the same complex analytic H has a positive-radius complex ball inside its original domain. Its real part is StrictConcaveOn on the entire real part of that ball, and on the intersection with the nonnegative action cone. On the latter set the retained sign theorem proves that H has zero imaginary part, so this is the literal strict concavity of the real-valued Hamiltonian. The strict Jensen interface permits every pair of distinct actions and every parameter strictly between zero and one, with a single radius chosen first. Zero coordinates and infinitely many closed gaps are included. Analyticity and original source/physical identification remain the properties of the retained H, with the weighted action subtraction unchanged.",
+          "declarations": [
+            "SourceOriginalHamiltonianData.strict_concavity",
+            "SourceOriginalHamiltonianData.strict_jensen",
+            "SourceOriginalHamiltonianData.analytic",
+            "SourceOriginalHamiltonianData.sign",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.source_extension"
+          ]
+        },
+        {
+          "source_lines": [
+            [
+              406,
+              417
+            ],
+            [
+              6799,
+              6811
+            ]
+          ],
+          "requirement": "Relate the printed quantitative Hessian definition of strict concavity to the standard Jensen predicate without changing the Hamiltonian or its domain.",
+          "finding": "Theorems 0.2 and 18.3 explicitly define their local concavity statement through the real-direction Hessian upper bound by minus the squared Hilbert norm. That bound was already retained in Q.concavity. The new proof identifies the second real derivative along affine segments with the complex Hessian, applies the one-dimensional strict-concavity criterion, and specializes the result to the real Hilbert ball. Restriction gives the nonnegative cone theorem for the same radius and H. This is a proved consequence and a stronger public interface, not a correction of the earlier theorem or source. Two public examples combine it with the original sign and zero-value identities: the midpoint from zero lies strictly between H(x)/2 and zero for a nonzero nonnegative action, while opposite nonzero signed real actions satisfy Re H(x)+Re H(-x)<0.",
+          "declarations": [
+            "Coeff.real_line_second_derivative",
+            "Coeff.strictConcaveOn_re_of_hessian_neg",
+            "Coeff.strictConcaveOn_real_hilbert_ball",
+            "Coeff.norm_real_hilbert_inclusion",
+            "RealCoeff.complexCLM_reCLM",
+            "Coeff.convex_nonnegativeLocus",
+            "SourceOriginalHamiltonianData.concavity"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27"
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/HilbertStrictConcavity.lean": "fac6d86b0ee310739d71c0a978deeddfb68d7e52ed05ff5d7f8ae658c35f0fdd",
+        "NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean": "49c11d0e95184ef2f86d4764700c25bb532fb16efce8832abfe956c0c8d05b54",
+        "NLS/SequenceSpaces/HilbertScalarConcavity.lean": "d623d35a1fa896f77f8872fd84f3de6e2302740e63fd96314207a46997d81b28",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/SequenceSpaces/RealCoeff.lean": "c8eed7f2f37d4ab7934024af98b627fb18d140010e03500fcaec98accde48dec",
+        "NLS/SequenceSpaces/NonnegativeActions.lean": "db3ab0c0a94f1743919b790de52ef02f13e06a96720dc9b21ed90b09c0e27af5"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          5,
+          12,
+          85
+        ],
+        "images": {
+          "SourceAbstractCurrentReview-005.png": "435e5d8162b334aa823e5019a29db70d831ee11ba0939ebcefb0b74efb9a2869",
+          "IntroductionCorrectionsCurrentReview-012.png": "c38dce95c0a198c13ea7c1d68b71d32d1a75e0440540a769cf3e5cde0753f96d",
+          "HamiltonianStrictConcavityCurrentReview-085.png": "b15372ab876c6a2a26c7680290bcc481d99dca6f7fb46eb2a8873cf416f938b8"
+        },
+        "inspection": "Viewed both abstracts, Theorem 0.2 and Theorem 18.3. The abstract wording gives strict concavity on the nonnegative cone; both named statements specify the negative-Hessian meaning. No global-concavity assertion is inferred."
+      },
+      "qualification": "All six hash-listed modules were read completely and their current hashes verified. This comparison covers the strict-concavity clauses of both abstracts and the indicated introductory sentences, supplementing existing comparisons of the two named theorems. It does not claim that either abstract or the whole source has been exhaustively assessed. The stronger whole-real-ball statement concerns the real part of H; the original sign theorem identifies H as real on the nonnegative cone. No global concavity or extension to every nonnegative Hilbert action is asserted. All earlier corrections, the exact 2014 construction question and Appendix G.2 norm interpretation remain unchanged.",
+      "related_evidence_hashes": {
+        "Section18SourceComparison-2026-10-27": {
+          "source_record_sha256": "483a2acba2980ec2b3182fdf2701fc205c927f2d3a1fc1d3b1978d6b6af45c8e",
+          "module_hashes_verified": true
+        },
+        "IntroductionMainTheoremsSourceComparison-2026-10-27": {
+          "source_record_sha256": "1b846c5958e9c5251e00afeae48ba0c407a4d73beea2d736a08725eb4f2336a9",
+          "module_hashes_verified": true
+        }
+      },
+      "source_record_sha256": "eb2379627af682fc5d906e749864b794efe8c5abd4649e8dfbd8688bdb36cdde"
     }
   }
 }

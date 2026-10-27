@@ -152,6 +152,7 @@ Thus all four inverse and Fredholm conclusions remain available for F.
 | Theorem 18.3(ii), action extension and sign | `Q.analytic`, `Q.sign` | One open connected complex ℓ² domain T, nonpositive and zero only at zero on its nonnegative cone |
 | Same frequency gradient | `Q.gradient_eq`, `Q.frequency` | F=∇H* throughout T, retaining the complete original frequency package |
 | Origin Hessian and local concavity | `Q.hessian_zero`, `Q.concavity` | Hessian −2 times unconjugated Hilbert pairing at zero; one positive ball in T with d²H*(J,J)≤−‖J‖₂² for every real direction J |
+| Standard strict concavity and Jensen inequality | `Q.strict_concavity`, `Q.strict_jensen` in [SourceHamiltonianStrictConcavity](../NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean) | Derived from the same Hessian bound on one local real ball and its nonnegative cone; includes closed-gap boundary points. |
 | Remark 18.4 | `Q.no_continuous_extension_all` | No continuous, hence no C¹, extension at zero relative to the nonnegative ℓ^q cone for every q>2, including infinity |
 
 Here Q denotes `SourceOriginalHamiltonianData`. The unconditional
