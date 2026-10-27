@@ -475,6 +475,21 @@ an arbitrary coordinate flow with a physical solution.
 
 ## Normalization corrections
 
+Four repeated formulas on printed pp. 12–14 now have a direct source
+comparison: the full Hamiltonian Hessian, the mass gauge, the restriction
+of the higher-action trace to positive indices, and the positive cubic
+residue coefficient. The last two are detailed in the method-of-proof
+outline below. The comparison checks actual physical source witnesses
+and the separately proved corrected identities, including construction
+of the Hamiltonian data, classical solutions and contour moments.
+
+`IntroductionNormalizationSourceComparison-2026-10-27` in the
+[source-review index](source-review-index.json) records the four assertion
+groups and eleven completely read modules. It retains the original domains,
+finite-exponent restrictions and earlier source qualifications. This review
+reuses the unchanged Lean snapshot from the native weighted finite-gap
+milestone; it adds no new claim of complete introductory coverage.
+
 The introduction's printed full-Hamiltonian Hessian −2 delta(n,m) omits
 the contribution of twice squared mass. The correct full frequency
 derivative is 4−2 delta(n,m). The original-family theorem

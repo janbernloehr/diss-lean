@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T09:17:54.082700+00:00",
-  "base_commit": "652a3deb10d52cf6580e7540f3649a8454da69db",
+  "published_utc": "2026-10-27T09:18:50.426132+00:00",
+  "base_commit": "7cf087b99f1c48468a413c5504dbd89123326f76",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 58,
-    "module_hash_checks": 816,
-    "distinct_modules": 743
+    "review_records": 59,
+    "module_hash_checks": 827,
+    "distinct_modules": 746
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -11092,6 +11092,135 @@
       },
       "qualification": "The thirteen listed modules were read completely, including the exact scaled Sobolev weight, raw coefficient identification, actual triangular inverse and physical representative statements. Underlying Fourier-Lebesgue distribution realization and full spectral identification retain their prior comparisons; this is not a new independent review of every transitive dependency. Density and source pair-norm claims retain finite p>1 and nonnegative Sobolev orders. The explicit original native cutoff equivalence is included. The complex regularity correction is preserved rather than silently narrowing the printed claim. The precise2014 construction, AppendixG2 norm interpretation and broader source assessment remain separate.",
       "source_record_sha256": "25b931c6ac954db0e2f816011bd2da94751cb7e9cfe445ff7960046d91fe9728"
+    },
+    "IntroductionNormalizationSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7cf087b99f1c48468a413c5504dbd89123326f76",
+      "updated_utc": "2026-10-27T09:18:50.426132+00:00",
+      "source_lines": [
+        [
+          360,
+          398
+        ],
+        [
+          501,
+          515
+        ],
+        [
+          579,
+          589
+        ],
+        [
+          613,
+          624
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            360,
+            398
+          ],
+          "requirement": "The full action Hamiltonian has the printed zero-action Hessian and the stated mass and dispersion subtractions.",
+          "finding": "The full-Hamiltonian Hessian printed as -2 delta(n,m) omits the squared-mass contribution. The restored frequency has derivative 4-2 delta(n,m). Every nonnegative point on an action axis is realized by an actual real H1 source; the full physical energy on that axis has second derivative +2 at zero, giving a direct counterexample to the printed diagonal -2. The -2 bilinear Hessian is retained for H-star. The original Hamiltonian data and their existence are checked, including the physical energy minus both mass-square and weighted-action terms.",
+          "declarations": [
+            "sourceSection18_original_hamiltonian",
+            "SourceOriginalHamiltonianData.hessian_zero",
+            "SourceOriginalHamiltonianData.physical_identity",
+            "SourceOriginalHamiltonianData.restored_frequency_derivative",
+            "SourceOriginalHamiltonianData.single_action_physical_energy",
+            "SourceOriginalHamiltonianData.full_hessian_diagonal",
+            "SourceOriginalHamiltonianData.full_hessian_ne_printed"
+          ]
+        },
+        {
+          "source_lines": [
+            501,
+            515
+          ],
+          "requirement": "The ordinary and renormalized physical equations are related by the printed scalar phase.",
+          "finding": "For every constructed smooth period-one datum the correct phase is exp(4 i mass t), with mass equal to the normalized unit-interval integral of the squared modulus. The smooth-data structure constructs actual global classical ordinary and renormalized solutions with the prescribed initial value. A literal constant datum of mass one makes the printed exp(i t) phase fail the actual renormalized PDE. This comparison checks the classical formula and its counterexample; lower-regularity solution transport retains the separate Section18/22 comparisons.",
+          "declarations": [
+            "SmoothNLSData.ordinary_isClassical",
+            "SmoothNLSData.renormalized_isClassical",
+            "SmoothNLSData.ordinary_zero",
+            "SmoothNLSData.renormalized_zero",
+            "SmoothNLSData.renormalized_phase",
+            "original_gauge_printed_phase_counterexample"
+          ]
+        },
+        {
+          "source_lines": [
+            579,
+            589
+          ],
+          "requirement": "The higher-action trace sums over the printed positive indices and equals H_(2m+1)/4^m.",
+          "finding": "The positive-index restriction is false. A real H1 source with only I_0=1 has every positive-index higher-action sum zero and physical energy at least one, refuting the printed formula already at m=1. The corrected sum runs over all integer indices. The all-order finite-gap trace comes from outer-contour decomposition and independently defined physical differential Hamiltonians; density and analytic continuation give the odd trace with positive factor 4^m on the original complex H^m domain. The mass and energy specialization is checked on every real H1 source.",
+          "declarations": [
+            "section23_positiveIndex_trace_counterexample",
+            "sourceFiniteGap_sum_higherActions_eq_hamiltonian",
+            "sourceFiniteGap_tsum_higherActions_eq_hamiltonian",
+            "sourceSobolev_tsum_higherAction_one",
+            "sourceSobolev_tsum_higherAction_three",
+            "SourceSection19Data.indexedHigherAction_oddHamiltonian_trace"
+          ]
+        },
+        {
+          "source_lines": [
+            613,
+            624
+          ],
+          "requirement": "The cubic residue formula for the corrected Hamiltonian has the printed coefficient +4/3.",
+          "finding": "The coefficient is -4/3 with the original contour and primitive conventions. The global moments are glued from compatible original circle integrals; their atlas is constructed for all finite p>1. The finite-gap Hamiltonian identity subtracts the original weighted action sum and twice squared physical mass and has the negative cubic coefficient. An actual real unit-action finite-gap source has a strictly positive cubic moment, refuting +4/3. The extension and locally uniform sum bounds remain covered by the Section21 comparison; this targeted comparison does not independently re-audit them.",
+          "declarations": [
+            "exists_sourcePrimitivePowerAtlas",
+            "SourcePrimitivePowerAtlas.circle_representation",
+            "SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity",
+            "SourcePrimitivePowerAtlas.printed_lemma21_2_sign_counterexample"
+          ]
+        }
+      ],
+      "related_reviews": [
+        "IntroductionMainTheoremsSourceComparison-2026-10-27",
+        "Section18SourceComparison-2026-10-27",
+        "Section21SourceComparison-2026-10-27",
+        "Section23SourceComparison-2026-10-27",
+        "Section24SourceComparison-2026-10-27"
+      ],
+      "rendered_source": {
+        "printed_pages": [
+          12,
+          13,
+          14
+        ],
+        "pdf_pages": [
+          12,
+          13,
+          14
+        ],
+        "inspection": "Inspected the rendered Hessian and subtraction formulas, the gauge following (0.4), the positive-index trace and the positive cubic coefficient. These are literal printed assertions, not extraction artifacts.",
+        "images": {
+          "IntroductionCorrectionsCurrentReview-012.png": "c38dce95c0a198c13ea7c1d68b71d32d1a75e0440540a769cf3e5cde0753f96d",
+          "IntroductionCorrectionsCurrentReview-013.png": "aa8093cfe3ab599da601e6e1e4138dd99096680de1693902081ca5b1919cc257",
+          "IntroductionCorrectionsCurrentReview-014.png": "8bb3400e5b533b75bcaf7893fb42e9f5314e94a351104e1fd1f3902fd8eb16e5"
+        }
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection18HamiltonianCorrection.lean": "75945b47f83c625df04a1fda87de6c884aa3277cbd4a8c118dba26fff1b754f1",
+        "NLS/ZakharovShabat/SourceSection18GaugeCorrection.lean": "19dc9ab6916d94479b390dafce84cacf5b0ec34835b53183effd81582486f43d",
+        "NLS/ZakharovShabat/SourceSection23TraceCorrections.lean": "30061ddb5dc37ae11ad40199507f38dca5f0c03a9dcd252e09c7554ffd38eda3",
+        "NLS/ZakharovShabat/SourceSection21SignCorrections.lean": "51e52c73180c48368045d6dcc894bbe08a74be9de91b5e7de2b712668029bccf",
+        "NLS/ZakharovShabat/SmoothNLSData.lean": "8a972daa1507ad18eeda71f81f9c17c7fe9748c7affe91764836a9735f0e3f90",
+        "NLS/ZakharovShabat/SourcePrimitivePowerHamiltonian.lean": "1f161a13ee687a49fd83f85babfe2ee23ec8e509d1e6f982cb5f657db42c9a94",
+        "NLS/ZakharovShabat/SourceSobolevHigherActionTrace.lean": "85df7516619e60222fe12253ee8db31b239bf20b282dc2d8aef3677b919f13bc",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionTrace.lean": "4356df390863fead1a780299a0c616df1d5cb48f20d277dca3f2805cfdc7cc57",
+        "NLS/ZakharovShabat/SourceFiniteGapHigherActionTrace.lean": "6f782558f16988df1e24706bd77f50b433558ba7ea7d4b44b84f2544021a80b2",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourcePrimitivePowerAtlas.lean": "5bfc8bed61097d590f65b6bff3ab978da1128ffe65eea80b97bec2d3f36eba04"
+      },
+      "qualification": "All eleven listed modules were read completely. The comparison verifies four repeated introductory formulas, their actual-source counterexamples and the separately stated corrected identities. It reuses the prior physical identification, original Birkhoff-family, Section19-domain and transitive proof comparisons. It does not claim to re-audit every dependency, every introductory background assertion, the low-regularity gauge transport or the cubic extension and convergence proof. Existing finite-exponent, original-domain, precise2014 and AppendixG2 qualifications remain unchanged.",
+      "source_record_sha256": "196676cd67946bb121a2d689a4bd582db6d05d1cef74c360f204297fe144b5dc"
     }
   }
 }
