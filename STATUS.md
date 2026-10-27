@@ -1,6 +1,28 @@
 # Implementation status
 
-## Current milestone: physical midpoint and gap asymptotics
+## Current milestone: real AKNS coordinates and classical complexification
+
+Every real-type physical L2 potential now has explicit real AKNS
+coordinates q,p in L2, with exact reconstruction. The inverse potential
+map has its printed unnormalized form, distinct from the unitary vector map.
+
+Conjugation, real parts and imaginary parts preserve each full classical
+AKNS boundary domain. The actual differential expression commutes with
+conjugation for real coefficients and decomposes into the actions on the
+real and imaginary domain functions. Those component actions are real
+for real potentials.
+
+The [spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) records the
+p.19 complexification statement. The page29 normalization correction,
+remaining semantic source audit, exact2014 and G2 remain separate.
+
+Validation: `./scripts/check.sh` passes with 8,395 build jobs, 7,393
+public examples, and a transitive axiom audit of 42,391 NLS declarations.
+The build retains 21 existing warnings; the new modules and examples introduce none.
+Documentation checks cover 2,780 file links across 44 documents.
+The 156 candidate source labels are a navigation inventory, not a completeness claim.
+
+## Previous milestone: physical midpoint and gap asymptotics
 
 The actual physical periodic midpoint displacement and gap sequence
 are square summable for every complex L2 potential. For each positive

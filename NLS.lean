@@ -4699,3 +4699,6 @@ import NLS.ZakharovShabat.PhysicalConstantPeriodicSpectrum
 import NLS.ZakharovShabat.PhysicalPeriodicMidpointGap
 import NLS.ZakharovShabat.PhysicalNonrealGap
 import NLS.ZakharovShabat.PhysicalNonrealMidpoint
+import NLS.ZakharovShabat.AKNSPotentialReality
+import NLS.ZakharovShabat.AKNSConjugation
+import NLS.ZakharovShabat.AKNSComplexification

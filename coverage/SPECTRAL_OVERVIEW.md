@@ -1537,3 +1537,32 @@ imaginary parts are positive; hence its actual midpoint is nonreal.
 
 The remaining semantic source audit, exact2014 comparison and G2 norm
 qualification remain separate.
+
+## Real AKNS coordinates and the original classical complexification
+
+The printed p.19 real-coordinate assertion is explicit in
+[`AKNSPotentialReality.lean`](../NLS/ZakharovShabat/AKNSPotentialReality.lean).
+The potential map (q+i*p,q-i*p) has its exact unnormalized inverse.
+A conjugate pair corresponds exactly to real q and p, pointwise and almost
+everywhere. Every real-type physical L2 potential is reconstructed from
+two real L2 functions. This keeps the potential coordinates distinct from
+the normalized unitary vector map T.
+
+[`AKNSConjugation.lean`](../NLS/ZakharovShabat/AKNSConjugation.lean)
+proves that complex conjugation preserves the full interval H1 class and
+each original AKNS endpoint domain. The actual derivative expression
+commutes with conjugation for almost-everywhere real coefficients. Real
+coefficient functions and real input functions have real operator outputs.
+
+[`AKNSComplexification.lean`](../NLS/ZakharovShabat/AKNSComplexification.lean)
+shows that the real and imaginary parts of any original domain function
+remain in the same endpoint domain and reconstruct that function exactly.
+The actual physical operator decomposes into their two actions, almost
+everywhere; for real potentials both component actions have real outputs.
+Together with the existing physical unitary conjugation, this establishes
+the real complexification statement on the full classical domains.
+No global smooth extension or representative condition at null sets is
+imposed on the L2 potential.
+
+The page29 potential-normalization correction remains in force. The
+remaining semantic source audit, exact2014 and G2 remain separate.

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: physical periodic midpoint and gap sequences have locally
-uniform square-summable tails. Arbitrarily small constant physical
-potentials exhibit an explicit nonreal central gap.
+Latest step: real-type physical L2 potentials have exact real AKNS
+coordinates. Conjugation and real/imaginary decomposition preserve the
+full classical boundary domains and the actual differential action.
 The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013

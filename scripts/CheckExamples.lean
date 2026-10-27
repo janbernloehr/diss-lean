@@ -68126,3 +68126,54 @@ example : ∃ n : ℤ, (physicalPeriodicMidpoint
 
 end PhysicalGapGeometryExamples
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+section AKNSRealStructureExamples
+open MeasureTheory Set
+open scoped ComplexConjugate
+
+example (q p : ℂ) :
+    (aknsPotential q p).2 = conj (aknsPotential q p).1 ↔ q.im = 0 ∧ p.im = 0 :=
+  aknsPotential_realType_iff q p
+
+example {φ : ℝ → ℂ × ℂ} (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)))
+    (hr : IsClassicalRealType φ) :
+    ∃ q p : ℝ → ℝ,
+      MemLp (fun x => (q x : ℂ)) 2 (volume.restrict (Ioc 0 1)) ∧
+      MemLp (fun x => (p x : ℂ)) 2 (volume.restrict (Ioc 0 1)) ∧
+      φ =ᵐ[volume.restrict (Ioc 0 1)] (fun x => aknsPotential (q x) (p x)) :=
+  exists_real_aknsPotential_coordinates hφ hr
+
+example {f : ℝ → ℂ} (hf : NLS.Fourier.HasIntervalH1Regularity f) :
+    NLS.Fourier.HasIntervalH1Regularity (fun x => star (f x)) := hf.conj
+
+example {b : BoundaryCondition} {g : ℝ → ℂ × ℂ} (hg : HasAKNSIntervalDomain b g) :
+    HasAKNSIntervalDomain b (fun x => star (g x)) := hg.conj
+
+example (q p : ℝ → ℂ)
+    (hq : ∀ᵐ x ∂volume.restrict (Ioc 0 1), (q x).im = 0)
+    (hp : ∀ᵐ x ∂volume.restrict (Ioc 0 1), (p x).im = 0) (g : ℝ → ℂ × ℂ) :
+    aknsPhysicalOperator q p (fun x => star (g x))
+      =ᵐ[volume.restrict (Ioc 0 1)] (fun x => star (aknsPhysicalOperator q p g x)) :=
+  aknsPhysicalOperator_star_of_real q p hq hp g
+
+example {b : BoundaryCondition} {g : ℝ → ℂ × ℂ} (hg : HasAKNSIntervalDomain b g) :
+    HasAKNSIntervalDomain b (fun x => aknsRealVector (g x)) ∧
+      HasAKNSIntervalDomain b (fun x => aknsImagVector (g x)) := ⟨hg.realPart,hg.imagPart⟩
+
+example {b : BoundaryCondition} {g : ℝ → ℂ × ℂ} (hg : HasAKNSIntervalDomain b g)
+    (q p : ℝ → ℂ) :
+    aknsPhysicalOperator q p g =ᵐ[volume.restrict (Ioc 0 1)]
+      (fun x => aknsPhysicalOperator q p (fun t => aknsRealVector (g t)) x+
+        Complex.I • aknsPhysicalOperator q p (fun t => aknsImagVector (g t)) x) :=
+  (aknsPhysicalOperator_decomposition hg q p).2.2.2
+
+example (q p : ℝ → ℝ) (g : ℝ → ℝ × ℝ) (x : ℝ) :
+    star (aknsPhysicalOperator (fun t => (q t : ℂ)) (fun t => (p t : ℂ))
+      (fun t => (((g t).1 : ℂ), ((g t).2 : ℂ))) x) =
+    aknsPhysicalOperator (fun t => (q t : ℂ)) (fun t => (p t : ℂ))
+      (fun t => (((g t).1 : ℂ), ((g t).2 : ℂ))) x :=
+  aknsPhysicalOperator_real q p g x
+
+end AKNSRealStructureExamples
+end NLS.ZakharovShabat
