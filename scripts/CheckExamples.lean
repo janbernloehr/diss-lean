@@ -70664,3 +70664,50 @@ example {hp : p ≠ ⊤} {φ : CoeffPair p} {n : ℤ}
   exact lt_irrefl _
 
 end Section6RootProofChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+namespace Section6CubicTailChecks
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Reflection of the coefficient label does not move the background cubic term to -n.
+example (s z : ℂ) (hz : z ∈ resonantStrip (-3)) :
+    let φ := twoModeResonantPotential (p := 4) SpectralWeight.one 3 s
+    (weightedPotentialInverse (by simp) SpectralWeight.one φ (-3) z hz
+      (weightedPotentialInverse (by simp) SpectralWeight.one φ (-3) z hz
+        (weightedResonantSource (by simp) SpectralWeight.one φ (-3) 1))).fst.val 3 = 0 := by
+  simpa using twoModeResonantPotential_cubic_negative (p := 4) (by simp)
+    SpectralWeight.one 3 (-3) (by norm_num) (by norm_num) s z hz
+
+-- The whole-strip supremum is strictly larger than the free-center value.
+example : ‖(1 : ℂ)^3/((Real.pi : ℂ)*3)^2‖ <
+    sSup ((fun z : ℂ => ‖(1 : ℂ)^3/z^2‖) '' resonantStrip 3) := by
+  rw [resonantCubic_strip_sup 3 (by norm_num)]
+  simp only [norm_one,one_pow,norm_div,norm_pow,norm_mul,Complex.norm_real,
+    Real.norm_of_nonneg Real.pi_pos.le]
+  norm_num
+  rw [← one_div,← one_div]
+  apply div_lt_div_of_pos_left (by norm_num) (sq_pos_of_pos (by positivity))
+  nlinarith [Real.pi_pos, sq_pos_of_pos Real.pi_pos]
+
+-- The added resonant modes carry cubic amplitude in the original period-two input.
+example (s : ℝ) :
+    (sourceCubicTailFamily 3 s).fst (-6) = ((s^3/(Real.pi*3)^2 : ℝ) : ℂ) ∧
+    (sourceCubicTailFamily 3 s).snd 6 = ((s^3/(Real.pi*3)^2 : ℝ) : ℂ) := by
+  rw [sourceCubicTailFamily_fst 3 (by norm_num),sourceCubicTailFamily_snd 3 (by norm_num)]
+  norm_num [sourceCubicTailScale,div_eq_mul_inv]
+
+-- Both actual coefficient error tails vanish together after cubic normalization.
+example (n : ℤ) (N : ℕ) (hN : 0 < N) :
+    Tendsto (fun s : ℝ =>
+      (resonantCubicFourthErrorSum SpectralWeight.one
+        (unitWeightedPairEquiv (sourceCubicTailFamily n s)) N true +
+       resonantCubicFourthErrorSum SpectralWeight.one
+        (unitWeightedPairEquiv (sourceCubicTailFamily n s)) N false)/s^12)
+      (𝓝[>] (0 : ℝ)) (𝓝 0) := by
+  simpa only [add_zero,add_div] using
+    (sourceCubicTailFamily_normalized_tail_tendsto n N hN true).add
+      (sourceCubicTailFamily_normalized_tail_tendsto n N hN false)
+
+end Section6CubicTailChecks

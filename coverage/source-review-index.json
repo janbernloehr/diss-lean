@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T19:16:35.783545+00:00",
-  "base_commit": "7c7e312ff5dcc65792189b845f71314b9fa1f338",
+  "published_utc": "2026-10-28T19:54:49.369258+00:00",
+  "base_commit": "8408da7bcca07d32498bf195b16463a45f6f7a58",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 99,
-    "module_hash_checks": 1607,
-    "distinct_modules": 1031
+    "review_records": 100,
+    "module_hash_checks": 1619,
+    "distinct_modules": 1037
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "7c7e312ff5dcc65792189b845f71314b9fa1f338",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal two-step Rouche proof, exact exterior separation, simple diagonal root, actual determinant counts and multiplicities, pointwise root bounds, Cauchy gap estimate, canonical period-two identification, corrected displacement sums on one neighborhood and three integration examples.",
+    "base_commit": "8408da7bcca07d32498bf195b16463a45f6f7a58",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes exact two-mode cubic coefficients, actual full-strip p-power error tails, normalized fourth-power convergence, an original real-type three-mode family and four integration examples. S6-047 remains unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8470,
-    "public_examples": 7540,
-    "transitive_NLS_declarations": 43792,
+    "build_jobs": 8475,
+    "public_examples": 7544,
+    "transitive_NLS_declarations": 43891,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4747,
-      "sha256": "aa4cc0265c3437b18e8ee0c336f7985f55b5e425c0e6ec9a34599c5ffa635630"
+      "files": 4752,
+      "sha256": "79a63b2095d212d38e992c2d903af6ebbb7ecd63db898e629c327965a3f8c3b1"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -24514,6 +24514,129 @@
       ],
       "declaration_inventory_count": 43792,
       "source_record_sha256": "79475f41b2b2d165ea1247b3ae61a9265bece6e1ddee0c06490a46c4f87314d5"
+    },
+    "Section6CubicTailSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "8408da7bcca07d32498bf195b16463a45f6f7a58",
+      "updated_utc": "2026-10-28T19:54:49.369258+00:00",
+      "source_lines": [
+        [
+          3272,
+          3293
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-047",
+          "source_lines": [
+            3272,
+            3293
+          ],
+          "requirement": "Supporting cubic and infinite-tail estimates for the unresolved final weighted gap sum",
+          "status": "partial",
+          "ordered_status": "pending",
+          "reviewed_claims": [
+            "For a two-mode background and every signed tail index abs(m)>=n>0, both actual cubic operator terms equal s^3/z^2 at m=n and zero elsewhere. The full closed-strip supremum is norm(s)^3/[pi*(n-1/2)]^2, attained at the left real boundary.",
+            "Subtracting the leading Fourier term and the potential's own cubic operator term leaves an actual coefficient error bounded by the shifted square norm times the literal summable regional majorant. The shifted square is at most 2*weightedDoubleConstant*norm(phi)^2 on every full strip.",
+            "For each finite 1<p<infinity, each coefficient direction and each cutoff N>=1, the genuine weighted full-strip error suprema have a summable signed p-power tail bounded by K_p*norm(phi)^(5p), under the displayed smallness assumption. Boundedness of each image is proved before the supremum estimate.",
+            "For p=4 and a family with norm at most B*s, the actual infinite fourth-power error sum divided by s^12 is bounded by K_4*B^20*s^8 and tends to zero as s approaches zero from above.",
+            "The original period-two family has first modes 0,-n,-2n and second modes 0,n,2n with amplitudes s,s,s^3/(pi*n)^2 for n>0. It is real type, has a linear norm bound, satisfies the common smallness condition for small positive s, enters every original open neighborhood of zero, and has the normalized error-tail limit in both directions.",
+            "The scalar inequality 2+2*(n/(n-1/2))^8<16 holds for every integer n>=3. It is only a prospective limiting comparison, not a theorem about the actual gaps or the final source sum."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.resonantCubic_evenVector_error",
+            "NLS.ZakharovShabat.resonantCubic_scaled_series_bound",
+            "NLS.ZakharovShabat.resonantCubic_positive_error",
+            "NLS.ZakharovShabat.resonantCubic_negative_error",
+            "NLS.ZakharovShabat.resonantCubic_square_bound",
+            "NLS.ZakharovShabat.twoModeResonantPotential_cubic_positive",
+            "NLS.ZakharovShabat.twoModeResonantPotential_cubic_negative",
+            "NLS.ZakharovShabat.resonantCubic_strip_isGreatest",
+            "NLS.ZakharovShabat.resonantCubic_strip_sup",
+            "NLS.ZakharovShabat.resonantCubic_limit_ratio_lt",
+            "NLS.ZakharovShabat.resonantCubicTermFunction",
+            "NLS.ZakharovShabat.resonantCubicErrorFunction",
+            "NLS.ZakharovShabat.resonantCubicErrorSup",
+            "NLS.ZakharovShabat.resonantCubicErrorSup_bounds",
+            "NLS.ZakharovShabat.resonantCubic_scaled_dominated_tail",
+            "NLS.ZakharovShabat.resonantCubicMajorant_sum_le",
+            "NLS.ZakharovShabat.resonantCubicTailConstant",
+            "NLS.ZakharovShabat.resonantCubicErrorSup_tail",
+            "NLS.ZakharovShabat.resonantCubicFourthErrorSum",
+            "NLS.ZakharovShabat.resonantCubicFourthErrorSum_normalized_le",
+            "NLS.ZakharovShabat.resonantCubicFourthErrorSum_normalized_tendsto",
+            "NLS.ZakharovShabat.sourceCubicTailFamily",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_fst",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_snd",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_realType",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_norm_le",
+            "NLS.ZakharovShabat.weightedCubicTailFamily_eventually_controlled",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_normalized_tail_tendsto",
+            "NLS.ZakharovShabat.sourceCubicTailFamily_eventually_mem"
+          ],
+          "qualification": "These results control the remainder after the family's own cubic term. The cubic change caused by its resonant perturbation and the actual counted-root gap asymptotics still need proof. Neither the scalar comparison nor numerical samples refute the final infinite summed inequality. S6-047 remains pending; the twenty-three reviewed and twenty-four pending ordered groups are unchanged."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/WeightedEvenApproximation.lean": "83903b8b893ed18cae5c644261dcfe04711a8d6c1f79288408cadd58fa493aab",
+        "NLS/ZakharovShabat/OffDiagonalProofBounds.lean": "4b2cb5cb11313175249da9a7e497a45d975bdd86e51de32babae9a3f24961da0",
+        "NLS/ZakharovShabat/WeightedSquareEstimate.lean": "db292d04d99cb5452b995e6825925d185ef13602e67c0b3ce745f51701dc1136",
+        "NLS/ZakharovShabat/ResonantSeriesApproximation.lean": "c64f06a10e99c5323d2e68ae96b8e2aa43e9789b0f7f047cd46e2a8d5d816f1a",
+        "NLS/ZakharovShabat/OffDiagonalSeries.lean": "3b2eebfffe2b1e642928c91dea939d2313588c74f6a1a3635fd5a274d7e41c50",
+        "NLS/ZakharovShabat/CubicResonantPotential.lean": "33bbc076c9cbb2c622822f5354c08811302168b253075b4f7716d3a5859d5209",
+        "NLS/ZakharovShabat/SourceLemma6_8OffDiagonalProof.lean": "cb5a6c4b2d94ab402f545c4756323f45ed508b577cc821eba681851f2216bd05",
+        "NLS/ZakharovShabat/ResonantCubicRemainder.lean": "e33874921b5bfa7f4d38624b76d3fb11e827f4aba0d463775784d273b2091758",
+        "NLS/ZakharovShabat/ResonantTwoModeCubic.lean": "82e780bd4080705abec4f32d79e94bcfd712ee23f6e0f8652b49f60491d6fb28",
+        "NLS/ZakharovShabat/ResonantCubicTail.lean": "c5783793b48c82216e9cd474f7b120c1a775b414de9238b15c2d642bfa9ecb64",
+        "NLS/ZakharovShabat/ResonantCubicFourthTail.lean": "8a41a96b42e2e1032f63edc0ec4684c2453f1366e6f921eb25f9a873093e8e7c",
+        "NLS/ZakharovShabat/SourceCubicTailFamily.lean": "a88ec8328a93d402a2c22295a1e8b8a83822fe5120104d8e63be2a9b46ad58e6"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          44
+        ],
+        "images": {
+          "Section6ProofReview-044.png": "9c461b73312ec584566578a463f3cc87fd1a8c09be05b4852d14469bd0fea33d"
+        }
+      },
+      "qualification": "Partial supporting work for S6-047, not resolution of its final inequality. Five new module bodies were read; seven dependency bodies were hash-revalidated against prior preparation and review, for 12 recorded modules. The final p.44 sum, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. All earlier corrections and review records are preserved.",
+      "ordered_inventory_sha256": "81f666b54b7f81e94d8ae44ca8fef55caa00f775bd8640f37b63147b44b96dfe",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.resonantCubicErrorFunction",
+        "NLS.ZakharovShabat.resonantCubicErrorSup",
+        "NLS.ZakharovShabat.resonantCubicErrorSup_bounds",
+        "NLS.ZakharovShabat.resonantCubicErrorSup_tail",
+        "NLS.ZakharovShabat.resonantCubicFourthErrorSum",
+        "NLS.ZakharovShabat.resonantCubicFourthErrorSum_normalized_le",
+        "NLS.ZakharovShabat.resonantCubicFourthErrorSum_normalized_tendsto",
+        "NLS.ZakharovShabat.resonantCubicMajorant_sum_le",
+        "NLS.ZakharovShabat.resonantCubicTailConstant",
+        "NLS.ZakharovShabat.resonantCubicTermFunction",
+        "NLS.ZakharovShabat.resonantCubic_evenVector_error",
+        "NLS.ZakharovShabat.resonantCubic_limit_ratio_lt",
+        "NLS.ZakharovShabat.resonantCubic_negative_error",
+        "NLS.ZakharovShabat.resonantCubic_positive_error",
+        "NLS.ZakharovShabat.resonantCubic_scaled_dominated_tail",
+        "NLS.ZakharovShabat.resonantCubic_scaled_series_bound",
+        "NLS.ZakharovShabat.resonantCubic_square_bound",
+        "NLS.ZakharovShabat.resonantCubic_strip_isGreatest",
+        "NLS.ZakharovShabat.resonantCubic_strip_sup",
+        "NLS.ZakharovShabat.sourceCubicTailFamily",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_eventually_mem",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_fst",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_norm_le",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_normalized_tail_tendsto",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_realType",
+        "NLS.ZakharovShabat.sourceCubicTailFamily_snd",
+        "NLS.ZakharovShabat.twoModeResonantPotential_cubic_negative",
+        "NLS.ZakharovShabat.twoModeResonantPotential_cubic_positive",
+        "NLS.ZakharovShabat.weightedCubicTailFamily_eventually_controlled"
+      ],
+      "declaration_inventory_count": 43891,
+      "source_record_sha256": "c0d9695947abf6a6723c63044fa4dd37f94da04c6db4cb0b90a0bf8b635fe9f8"
     }
   }
 }

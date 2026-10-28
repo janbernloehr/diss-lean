@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.9 now has its literal two-step Rouche proof, exact
-multiplicities, pointwise root estimates and canonical period-two pair
-identification on one common neighborhood. Corrected displacement sums retain
-the leading Fourier tail. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
-records twenty-three reviewed passage groups and the remaining source audit.
+Latest step: exact cubic coefficients and summable full-strip remainder tails,
+including a vanishing normalized fourth-power tail for an original real-type
+three-mode family. This supplies estimates for the final p.44 weighted gap sum,
+which remains unresolved. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
+still records twenty-three reviewed and twenty-four pending passage groups.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
-The remaining dissertation source audit is still in progress.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

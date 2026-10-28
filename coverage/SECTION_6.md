@@ -5,6 +5,43 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Supporting cubic estimates for the final p.44 sum
+
+[ResonantTwoModeCubic.lean](../NLS/ZakharovShabat/ResonantTwoModeCubic.lean)
+computes both actual cubic operator terms for a background with modes 0 and
+plus/minus n. Among all signed indices abs(m)>=n>0, only m=n survives, with
+value s^3/z^2. Its full closed-strip supremum is norm(s)^3/[pi*(n-1/2)]^2,
+attained at the left real boundary. The scalar strict comparison needed by
+the proposed limiting argument holds for every n>=3.
+
+[ResonantCubicRemainder.lean](../NLS/ZakharovShabat/ResonantCubicRemainder.lean)
+retains the small shifted-square factor in the actual error after cubic
+subtraction. [ResonantCubicTail.lean](../NLS/ZakharovShabat/ResonantCubicTail.lean)
+proves boundedness on whole strips, summability of the signed p-power tail
+and the bound K_p*norm(phi)^(5p), for finite p>1 and every cutoff N>=1 under
+the explicit half-contraction smallness condition. This uses genuine suprema
+and infinite sums.
+
+[ResonantCubicFourthTail.lean](../NLS/ZakharovShabat/ResonantCubicFourthTail.lean)
+gives the normalized bound K_4*B^20*s^8 for a family bounded by B*s.
+[SourceCubicTailFamily.lean](../NLS/ZakharovShabat/SourceCubicTailFamily.lean)
+defines the original period-two family with first modes 0,-n,-2n and second
+modes 0,n,2n, with amplitudes s,s,s^3/(pi*n)^2 for n>0. It is real type,
+eventually lies in any original open neighborhood of zero and satisfies
+the normalized infinite error-tail limit for both coefficient directions.
+
+Validation: `./scripts/check.sh` passes with 8,475 build jobs, 7,544
+public examples and a transitive axiom audit of 43,891 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The error subtracts the family's own cubic term. A comparison of that term
+with the two-mode background and an asymptotic formula for the actual counted
+root gap remain necessary. S6-047 stays pending, as recorded in the partial
+Section6CubicTailSourceComparison-2026-10-28 entry of the
+[source-review index](source-review-index.json). The final 1/2^p inequality
+is neither proved nor refuted by these supporting estimates.
+
 ## Lemma 6.9: the literal root proof and corrected sums
 
 [ResonantProofRoots.lean](../NLS/ZakharovShabat/ResonantProofRoots.lean)

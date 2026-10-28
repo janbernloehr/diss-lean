@@ -320,6 +320,24 @@ This row matches the spectral-pair identification and its transfer mechanism; it
 
 Public evidence: `SourceResonantRootPair.toEndpoints`, `sourceLemma6_9_proof_canonical`, `sourceLemma6_9_proof`, `sourceProposition6_1_canonical_asymptotics`, `PeriodicEndpointPair.multiset_eq`, `sourceResonantRoot_displacementTail_eq`, `SourceResonantRootPair.of_periodic`, `mem_periodicSpectrum_iff_weightedDeterminant_zero`.
 
+## S6-047 supporting progress; row remains pending
+
+Supporting work now computes the background cubic terms on every signed
+tail strip and proves summability of the full-strip higher error with order
+norm(phi)^(5p). An original real-type three-mode family has a vanishing
+normalized p=4 error tail and enters any neighborhood of zero. These are
+estimates for the final sum, not a resolution: the cubic perturbation and
+actual counted-root gap limits remain. The ordered counts are unchanged.
+
+Public evidence: `twoModeResonantPotential_cubic_positive`,
+`twoModeResonantPotential_cubic_negative`, `resonantCubic_strip_sup`,
+`resonantCubicErrorSup_tail`, `resonantCubicFourthErrorSum_normalized_tendsto`,
+`sourceCubicTailFamily_realType`, `sourceCubicTailFamily_eventually_mem`,
+`sourceCubicTailFamily_normalized_tail_tendsto`.
+The partial Section6CubicTailSourceComparison-2026-10-28 record is in the
+[source-review index](source-review-index.json). No additional ordered group
+is classified as reviewed by this milestone.
+
 ## Remaining work
 
 Reconcile the other 24 passage groups: S6-001 through S6-023 and S6-047.

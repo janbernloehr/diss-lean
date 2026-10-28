@@ -14,6 +14,10 @@ proves the refutation and corrected original counted-root gap bound,
 including its common-neighborhood scope. The final 1/2^p summed inequality
 on the same page remains a separate unresolved assertion; the failure of
 this intermediate comparison does not refute that final display.
+The [cubic-tail estimates](NLS/ZakharovShabat/ResonantCubicTail.lean) and
+[original three-mode family](NLS/ZakharovShabat/SourceCubicTailFamily.lean)
+now give rigorous infinite remainder control. They do not yet supply the
+perturbed cubic or actual spectral-gap limits needed to decide the final sum.
 See the [Section 6 comparison](coverage/SECTION_6.md).
 
 ## Lemma 3.4 proof, p. 25: missing inverse-radius dependence

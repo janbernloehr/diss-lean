@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: the root proof of Lemma 6.9
+## Current milestone: cubic coefficients and full-strip error tails
+
+The actual cubic terms of the two-mode background are now computed at every
+signed tail index. Their full-strip supremum is attained at the left real
+boundary. After subtracting the leading coefficient and each potential's own
+cubic term, the remaining p-power supremum tail is summable and bounded by
+K_p*norm(phi)^(5p), for every finite p>1 and cutoff N>=1 under explicit smallness.
+
+For p=4, a family with norm at most B*s has normalized error sum bounded by
+K_4*B^20*s^8, hence tending to zero. The original period-two three-mode family
+is real type, has a linear norm bound and enters every open neighborhood of zero.
+Four integration examples cover the negative tail index, the strict difference
+between the strip supremum and center value, the resonant Fourier amplitudes,
+and convergence of both coefficient error tails together.
+
+Validation: `./scripts/check.sh` passes with 8,475 build jobs, 7,544
+public examples and a transitive axiom audit of 43,891 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+This is supporting work for S6-047. The final weighted gap sum remains
+unresolved: the perturbed cubic-term comparison and actual counted-root gap
+asymptotics still need proof. The ordered ledger remains at twenty-three
+reviewed and twenty-four pending groups. The other completion qualifications
+remain open.
+
+## Previous milestone: the root proof of Lemma 6.9
 
 The literal Rouche argument now counts one zero of the diagonal residual,
 two of its square and two of the actual determinant, with multiplicities.

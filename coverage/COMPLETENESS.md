@@ -135,6 +135,12 @@ Twenty-four groups still need ordered reconciliation: S6-001 through S6-023
 and S6-047. The final weighted gap sum with 1/2^p on the left remains unresolved;
 its numerical candidate is not proof. This is not a completion percentage or
 a substitute for the source-wide assertion inventory.
+Supporting work now computes the background cubic terms on every signed
+tail strip and proves summability of the full-strip higher error with order
+norm(phi)^(5p). An original real-type three-mode family has a vanishing
+normalized p=4 error tail and enters any neighborhood of zero. These are
+estimates for the final sum, not a resolution: the cubic perturbation and
+actual counted-root gap limits remain. The ordered counts are unchanged.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
