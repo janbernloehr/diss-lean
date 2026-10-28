@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal Lemma 6.4 Fourier series and Holder–Young proof
-are formalized in the original norms. All 47 groups in the
-[ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) are reconciled,
-retaining nine corrections and the stated interpretation. The broader
-source comparison continues with Section 7. See the
-[Section 6 comparison](coverage/SECTION_6.md) and
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: Section 7 now has direct isospectral partition and physical NLS
+invariance theorems, the literal locally uniform periodic product, and the
+canonical-root sign. The [ordered Section 7 ledger](coverage/SECTION_7_ASSERTIONS.md)
+records ten matched passages, one partial passage and ten pending passages.
+The Dirichlet-motion clause remains open. All 47 groups in the
+[Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) retain their reviewed
+scope and corrections. See the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

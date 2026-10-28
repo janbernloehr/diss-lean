@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T23:11:12.845793+00:00",
-  "base_commit": "cf4f80cfb24952dde1c665c59ad83aa7afa02f06",
+  "published_utc": "2026-10-28T23:41:07.149757+00:00",
+  "base_commit": "46582e5aba4fe9369e72f39cd091546e30048c0b",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 106,
-    "module_hash_checks": 1740,
-    "distinct_modules": 1077
+    "review_records": 107,
+    "module_hash_checks": 1780,
+    "distinct_modules": 1108
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "cf4f80cfb24952dde1c665c59ad83aa7afa02f06",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal weighted l1 reciprocal Fourier series, original-domain coefficients, exact Holder display and Young p-power steps for Lemma 6.4, plus three integration examples. S6-016 through S6-023 are reconciled, completing all 47 ordered Section 6 groups with their scope qualifications and corrections; the broader dissertation audit remains incomplete.",
+    "base_commit": "46582e5aba4fe9369e72f39cd091546e30048c0b",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the original isospectral partition, physical ordinary NLS invariance, literal locally uniform Section 7 periodic product, canonical-root sign and two integration examples. The opening comparison records ten matched passages and one partial passage. Physical NLS Dirichlet motion remains unresolved in S7-002; ten later ordered groups and the broader dissertation audit remain unfinished.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8497,
-    "public_examples": 7564,
-    "transitive_NLS_declarations": 44193,
+    "build_jobs": 8499,
+    "public_examples": 7566,
+    "transitive_NLS_declarations": 44205,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4774,
-      "sha256": "fa7cb84ea4e4ee4605fe2c4fc9be5b6f216b20833de55d8738b7ecdb599d00b0"
+      "files": 4776,
+      "sha256": "de17515b74c602fa26b72b9c5d304672f32c802827c3b9cc20a7b559e643a03e"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -26090,6 +26090,400 @@
       ],
       "declaration_inventory_count": 44193,
       "source_record_sha256": "baec4aed79452fce933efef71a4fae23250b33ea9f29264335c5ee9cdc208ef7"
+    },
+    "Section7OpeningSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "46582e5aba4fe9369e72f39cd091546e30048c0b",
+      "updated_utc": "2026-10-28T23:41:07.149757+00:00",
+      "source_lines": [
+        [
+          3305,
+          3312
+        ],
+        [
+          3312,
+          3316
+        ],
+        [
+          3318,
+          3319
+        ],
+        [
+          3319,
+          3321
+        ],
+        [
+          3322,
+          3325
+        ],
+        [
+          3326,
+          3331
+        ],
+        [
+          3333,
+          3344
+        ],
+        [
+          3346,
+          3352
+        ],
+        [
+          3362,
+          3371
+        ],
+        [
+          3374,
+          3375
+        ],
+        [
+          3376,
+          3379
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S7-001",
+          "source_lines": [
+            3305,
+            3312
+          ],
+          "requirement": "Lax conservation and invariant isospectral sets",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The full original periodic spectrum, with all algebraic multiplicities, is conserved along every global ordinary physical NLS solution on the real Hilbert source space.",
+            "The actual isospectral sets cover the real source space, and any two are equal or disjoint. The class of a solution is exactly its initial class at every time."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIsospectralSet_eq_or_disjoint",
+            "NLS.ZakharovShabat.iUnion_sourceIsospectralSet",
+            "NLS.ZakharovShabat.sourceIsospectralSet_of_isOrdinaryNLSSolutionOn_univ",
+            "NLS.ZakharovShabat.mem_sourceIsospectralSet_of_isOrdinaryNLSSolutionOn_univ_iff",
+            "NLS.ZakharovShabat.isospectral_of_isOrdinaryNLSSolutionOn_univ"
+          ],
+          "qualification": "The conservation conclusion is proved through the physical solution and uniqueness theorems. The cited Lax-pair derivation is contextual and is not independently reconstructed. Partition statements hold for finite p>=1; physical solution invariance is asserted for 1<p<=2, including the source Hilbert case."
+        },
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Actual Dirichlet eigenvalues and sheet signs",
+          "status": "partial",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Each actual Hilbert isospectral set is homeomorphic to the product of its signed Dirichlet gap sheets. The base coordinate is the original Dirichlet eigenvalue, and the sign is its actual anti-discriminant sign.",
+            "Every allowable full signed data family determines a unique source in that isospectral set. The two sheet branches are glued at the endpoints, where the sign is zero.",
+            "The additional assertion of nonconservation under physical NLS, and its rough description of signs as directions of NLS motion, remain outside this completed comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph",
+            "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_base",
+            "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_sign",
+            "NLS.ZakharovShabat.existsUnique_isospectral_source_with_signed_dirichletData",
+            "NLS.ZakharovShabat.sourceSignedDirichletSheet_sign_zero_iff_endpoint",
+            "NLS.ZakharovShabat.isQuotientMap_sourceSignedDirichletSheet_branches"
+          ],
+          "qualification": "The parameterization uses the original Hilbert topology and includes infinitely many open gaps and endpoint data. Indexed spectral flows are not being identified with ordinary physical NLS time. The dynamical clause remains unresolved, so this passage is partial."
+        },
+        {
+          "ordered_group": "S7-003",
+          "source_lines": [
+            3318,
+            3319
+          ],
+          "requirement": "Compact connected tori, exact dimension and generic infinitely many gaps",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original Hilbert isospectral set is compact and connected and is homeomorphic to a product of circles indexed by its noncollapsed gaps.",
+            "Its covering dimension equals the number of open gaps, including infinity. Infinite dimension holds on a residual set of real Hilbert sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceHilbertIsospectralSet_compact_connected",
+            "NLS.ZakharovShabat.sourceHilbertIsospectralSet_homeomorphic_circles",
+            "NLS.ZakharovShabat.sourceHilbertIsospectralSet_coveringDimension_eq_gapCount",
+            "NLS.ZakharovShabat.eventually_residual_sourceHilbertIsospectralSet_infinite_coveringDimension"
+          ],
+          "qualification": "Dimension is the proved numerical covering dimension in the original Hilbert topology. Generic means residual. This is not a comparison with the exact construction of the cited 2014 edition."
+        },
+        {
+          "ordered_group": "S7-004",
+          "source_lines": [
+            3319,
+            3321
+          ],
+          "requirement": "Squared gaps determine the periodic spectrum",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Equality of the complete indexed sequences of squared periodic gaps for two real Hilbert sources implies equality of their full original periodic spectra and all algebraic multiplicities."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.source_isospectral_of_squared_gaps"
+          ],
+          "qualification": "The global Hilbert theorem has no assumed injectivity premise and no finite-gap restriction. No corresponding surjectivity claim at p>2 is inferred."
+        },
+        {
+          "ordered_group": "S7-005",
+          "source_lines": [
+            3322,
+            3325
+          ],
+          "requirement": "Action radii and Dirichlet angles",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original action factors as its actual squared gap times a differentiable normalized factor on a neighborhood of each real source. The factor is real and strictly positive at every real source, including collapsed gaps.",
+            "The real rectangular Birkhoff coordinates satisfy x_n^2+y_n^2=2 I_n. Their sine/cosine action-angle expression uses the original signed Dirichlet eta and beta data."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_differentiableOn",
+            "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_action_radius",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.real_rectangular_formula_of_eta"
+          ],
+          "qualification": "The informal squared-radius description has the exact factor two in rectangular coordinates. Angles require the selected gap to be open; the action-radius identity includes collapsed gaps. The literal path formula is reserved for S7-012. The exact cited 2014 construction remains a separate comparison."
+        },
+        {
+          "ordered_group": "S7-006",
+          "source_lines": [
+            3326,
+            3331
+          ],
+          "requirement": "Classical fundamental solution and discriminant trace",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original L2 fundamental solution has identity initial matrix and uniquely solves the integral equation; it satisfies the physical differential equation almost everywhere and recovers the classical solution for continuous inputs.",
+            "The discriminant is the trace of its time-one monodromy. It agrees with the canonical source discriminant and is jointly analytic in the spectral parameter and physical L2 potential."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2FundamentalMatrix_zero",
+            "NLS.ZakharovShabat.l2SolutionCurve_eq_integral",
+            "NLS.ZakharovShabat.l2SolutionCurve_unique_integral",
+            "NLS.ZakharovShabat.ae_physicalOperator_l2SolutionCurve",
+            "NLS.ZakharovShabat.l2FundamentalMatrix_of_continuous",
+            "NLS.ZakharovShabat.canonicalDiscriminant_eq_l2_source",
+            "NLS.ZakharovShabat.analyticOnNhd_l2Discriminant_joint"
+          ],
+          "qualification": "The source is the unit-period coefficient pair with its physical L2 realization. For L2 input the differential equation is asserted almost everywhere; a pointwise equation for arbitrary representatives is not required."
+        },
+        {
+          "ordered_group": "S7-007",
+          "source_lines": [
+            3333,
+            3344
+          ],
+          "requirement": "Periodic zeros and normalized product (2.1)",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original periodic spectrum is exactly the zero set of the entire physical trace expression Delta^2-4.",
+            "The literal symmetric endpoint products in (2.1) converge locally uniformly on the whole complex plane to that expression, with leading factor -4 and denominator pi_n^2, where pi_0=1 and pi_n=n*pi otherwise."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2Discriminant_sq_eq_four_iff",
+            "NLS.ZakharovShabat.sourceSection7_periodic_product",
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product",
+            "NLS.ZakharovShabat.canonicalPeriodicProduct_eq_l2Discriminant"
+          ],
+          "qualification": "The product uses the actual indexed endpoints and includes spectral zeros and multiple zeros. Symmetric finite cutoffs specify the infinite product. No nonvanishing restriction is introduced."
+        },
+        {
+          "ordered_group": "S7-008",
+          "source_lines": [
+            3346,
+            3352
+          ],
+          "requirement": "Arnold action formula (2.2)",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical indexed action equals the actual contour integral of z*Delta-prime divided by the canonical root, with the exact factor 1/pi.",
+            "A positive isolating circle exists for every real Hilbert source and index, including collapsed gaps; the general circuit formula retains the winding-one and isolation assumptions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.physicalIndexedAction_eq_circuit",
+            "NLS.ZakharovShabat.physicalIndexedAction_eq_circle",
+            "NLS.ZakharovShabat.exists_physicalIndexedAction_circle",
+            "NLS.ZakharovShabat.physicalActionContour_eq"
+          ],
+          "qualification": "Circuits are piecewise C1, lie inside one original isolating disc away from its selected closed gap, and have winding one around its midpoint. The formula uses the original physical trace and canonical root, not a renamed model integral."
+        },
+        {
+          "ordered_group": "S7-009",
+          "source_lines": [
+            3362,
+            3371
+          ],
+          "requirement": "Contour orientation, canonical root domain and sign",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The canonical root is analytic off the union of all closed periodic gap segments and its square is the canonical discriminant squared minus four.",
+            "On the nonempty real band strictly between the right endpoint of gap zero and the left endpoint of gap one, i times the root is real and strictly positive."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRootDomain",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four",
+            "NLS.ZakharovShabat.sourceRealBand_nonempty",
+            "NLS.ZakharovShabat.sourceSection7_canonical_root_sign"
+          ],
+          "qualification": "The sign is the displayed strict-band convention, with no value on a removed cut asserted. Counterclockwise orientation is the winding-one condition in S7-008. These facts hold for every finite p>1, hence in the Hilbert case."
+        },
+        {
+          "ordered_group": "S7-010",
+          "source_lines": [
+            3374,
+            3375
+          ],
+          "requirement": "One common analytic action neighborhood",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "There is one open complex neighborhood containing the entire real source locus on which every indexed original action is analytic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceAction_common_analytic_neighborhood"
+          ],
+          "qualification": "The same neighborhood works for all indices; it is not an intersection with separate action domains. The theorem holds at each finite p>1, including p=2."
+        },
+        {
+          "ordered_group": "S7-011",
+          "source_lines": [
+            3376,
+            3379
+          ],
+          "requirement": "Classical anti-discriminant",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical anti-discriminant is the sum of the two off-diagonal entries of the actual time-one fundamental matrix.",
+            "It agrees with the source anti-discriminant candidate and the continuous classical formula, and is jointly analytic in the spectral parameter and physical L2 input."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2AntiDiscriminant",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+            "NLS.ZakharovShabat.l2AntiDiscriminant_of_continuous",
+            "NLS.ZakharovShabat.analyticOnNhd_l2AntiDiscriminant_joint"
+          ],
+          "qualification": "Anti-trace means the off-diagonal sum. It is not the difference of the diagonal entries."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceOriginalSpectralConservation.lean": "5162b84e6e62b907dd41c450164a3a7c46c2d82c4f7cdcbb92a51714b418e436",
+        "NLS/ZakharovShabat/SourceSignedDirichletParametrization.lean": "f339ea4b56922db02d3a501774faf5c406e2b50f8a9ada9a187f05045f5df1f4",
+        "NLS/ZakharovShabat/SourceHilbertExactCoveringDimension.lean": "f3276b2ac457a0347317ab8f8fbd7129ea8ed57a447a355382a14f0447ccf991",
+        "NLS/ZakharovShabat/SymmetricSignedGapGlobalInjectivity.lean": "8afd44bd7fded384c8e319adc122ab000c464ac49fef77a26fac114a17e3c8c8",
+        "NLS/ZakharovShabat/SourceTheorem7_1.lean": "fa15c35062b5b79e42746ead73768d7d7621dbcb5f822229de7c8ed62de4f003",
+        "NLS/ZakharovShabat/SourceHilbertIsospectralConnected.lean": "f8b61787295706bc21e6d44520818745113066ee2c3dcf3a3b981fc122c1a5a1",
+        "NLS/ZakharovShabat/SourceHilbertIsospectralTorus.lean": "1af3d2a7abc10d05045c715e53747d9ea8e025be57bf8ae678b843489cb68f0e",
+        "NLS/ZakharovShabat/SourceDirichletSignData.lean": "15565c1bc1afda3e6c7e6880a9976eb419f84a21a4a570b91944c2fa6bb604fb",
+        "NLS/ZakharovShabat/SourceIsospectralSet.lean": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62",
+        "NLS/ZakharovShabat/SourceBirkhoffRealActionAngle.lean": "2c1deb23ac4fb92ebad7b05bdaeba755f8a02442945242611e97e99479d7ae03",
+        "NLS/ZakharovShabat/L2Discriminant.lean": "42514d6ca26aa2e2f9a0db827e460f7a644d642a17d4943b0dbcd928f4bb0e4c",
+        "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993",
+        "NLS/ZakharovShabat/L2PeriodicFundamental.lean": "4b7d3e8a93f4889563ae84a237532ae72a0fff097a5af36464fc3775253fc1d0",
+        "NLS/ZakharovShabat/L2FundamentalInitialValue.lean": "0179aefbe399dafd87a00095988e9c6425f2f5528c2424a59e0babf836a434fd",
+        "NLS/ZakharovShabat/SourcePhysicalActions.lean": "84616d90adf0acdab97615db2305367471c002ce860821919870bd49b962783a",
+        "NLS/ZakharovShabat/SourceDiscriminantExtension.lean": "63d4f45ee6f97c43f8798b45b7f2f35ab20bff54a671959b37ff6bccf2199698",
+        "NLS/ZakharovShabat/SourceCanonicalRootRealBand.lean": "830363bd509f45f35131558723b6ec7ed6df602a195736f63cf09790ae73f58b",
+        "NLS/ZakharovShabat/SourceCanonicalRootNormalization.lean": "6af4f41984bb9526fca4f56bb4d1821c4f53c201124df44e0aa082a798e61d9a",
+        "NLS/ZakharovShabat/SourceActionCommonNeighborhood.lean": "7fe1bc010ef6ae5016794b737aed2fed0c63be83991c092704aa3f8ce865e629",
+        "NLS/ZakharovShabat/CanonicalPeriodicProduct.lean": "eeded37ed0b55acbb8650ec7742bc2fb76e8acbd230dc44240a0ff7458c87313",
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f",
+        "NLS/ZakharovShabat/SourceActionTorus.lean": "61cebcf83f64448a83a5e14c4153f125beabbbd3e1d251b54f547387155df7fa",
+        "NLS/ZakharovShabat/L2SourceCharacteristics.lean": "88e6bf52198981199515ee50ca1f8d70068da29edc271ad1c2c12f310b8b6468",
+        "NLS/ZakharovShabat/L2SeparatedCharacteristics.lean": "7b42c5e5ca32a608581383a73bdb63ac95aec782be9dee1b2e2d1a5baab654ee",
+        "NLS/ZakharovShabat/SourceThetaSpectralPhase.lean": "dc47b6e2edaf60bf1dfeeba09a1ac892098916cfcaa62b7bbb8167bcf04d8f66",
+        "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54",
+        "NLS/ZakharovShabat/SourceRealBandGeometry.lean": "7b05c09dd67fa7eec7df1b787be9238f08eaea8e4bd4cd90600be7164df3fe54",
+        "NLS/ZakharovShabat/EntireSpectralPairProducts.lean": "f896de045d23e90397829efbb74d000eb8f5ab4c8a4dd5c7e11b877def0d8ef9",
+        "NLS/ZakharovShabat/SourceBirkhoffTheorem15_2.lean": "f8616dac478090872091fecdab225be1714d7a6fb2520c589e63719834d42d42",
+        "NLS/ZakharovShabat/SourceDirichletRealSheetCoordinates.lean": "e72cc65a3d6fedce082f6afc90158202f0feba132afeb0a29ebdcb956a46982c",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexExtension.lean": "79c2d1b90a43db3e6d3f23133f1ed5421410fed9e13136876d01a73f50e7b882",
+        "NLS/ZakharovShabat/L2HermitianOperatorBound.lean": "25d62ba5df5f4890e2ba872fdca2dfc31cacd6a628da19fcdc670a778e1555f3",
+        "NLS/ZakharovShabat/L2SolutionDifferentialEquation.lean": "d35c28414f0e20e2505d47fba6ccd0c7b0b8f0a6db09ba79e7e564c9c469886c",
+        "NLS/ZakharovShabat/L2FundamentalAnalytic.lean": "9856a815638682fa09617eeb8f66918122dc1362d2baf922ef2ac60c13d1ff9d",
+        "NLS/ZakharovShabat/L2VolterraEquation.lean": "4c70c36764eb45fd502b7bc1e3b08cdc078a3ff07cc6d171e897f8bc95ca333c",
+        "NLS/ZakharovShabat/L2VolterraInverse.lean": "689b4eb7edf566a97347c702c273ccd1b80c7dd506c7533541908337ecfcba30",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedReal.lean": "b714de4c6c7dc0e80cd34b4ed99a1f46bc677a42e8079fab6514035e89c1964a",
+        "NLS/ZakharovShabat/SourceIsospectralPartition.lean": "f2c7585c95d29f2e003ab49fb84aea88d7e0fcf135543de7c80428c3cf2d75cf",
+        "NLS/ZakharovShabat/SourceSection7ClassicalOverview.lean": "ffa84f8da7ce1cc31b82b80fd66df05e9e7aaac1a8ef61cf15db10f07c190d7e"
+      },
+      "ordered_inventory": "coverage/SECTION_7_ASSERTIONS.md",
+      "ordered_inventory_sha256": "38e1635508129468cde42803f61646290a5e8313227d0317bbced5531278937d",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          45,
+          46,
+          47
+        ],
+        "images": {
+          "work/Section7OrderedReview-045.png": "7138431a7e4339274003766dcee4759703f6de882a328881e1a1943ab4e10749",
+          "work/Section7OrderedReview-046.png": "519eea9ea5e543866c5e96cb0c152353df7857d89516c7f7a866fb59656ee890",
+          "work/Section7OrderedReview-047.png": "c4edd5ef94597d539c2ae36cc16c61fe3a9cb078fc449cc7a514528a78fb9740"
+        }
+      },
+      "qualification": "Opening Section 7 comparison, S7-001 through S7-011: ten matched passages and one partial passage. Actual unit-period Hilbert sources, physical spectra and multiplicities, original monodromy, literal product normalization, contour integrals and root sign are retained. S7-002 is partial because physical NLS nonconservation of Dirichlet eigenvalues and the rough direction-of-motion interpretation remain unresolved; indexed spectral flows do not discharge that clause. The Lax-pair explanation is contextual, with conservation proved by physical solution uniqueness. The ten later ordered groups remain pending. This is not a source-wide or transitive semantic completion certificate. The exact cited 2014 construction and Appendix G.2 norm interpretation remain open; no new counterexample is added.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_action_radius",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.real_rectangular_formula_of_eta",
+        "NLS.ZakharovShabat.ae_physicalOperator_l2SolutionCurve",
+        "NLS.ZakharovShabat.analyticOnNhd_l2AntiDiscriminant_joint",
+        "NLS.ZakharovShabat.analyticOnNhd_l2Discriminant_joint",
+        "NLS.ZakharovShabat.canonicalDiscriminant_eq_l2_source",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product",
+        "NLS.ZakharovShabat.canonicalPeriodicProduct_eq_l2Discriminant",
+        "NLS.ZakharovShabat.eventually_residual_sourceHilbertIsospectralSet_infinite_coveringDimension",
+        "NLS.ZakharovShabat.existsUnique_isospectral_source_with_signed_dirichletData",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_differentiableOn",
+        "NLS.ZakharovShabat.exists_physicalIndexedAction_circle",
+        "NLS.ZakharovShabat.exists_sourceAction_common_analytic_neighborhood",
+        "NLS.ZakharovShabat.iUnion_sourceIsospectralSet",
+        "NLS.ZakharovShabat.isQuotientMap_sourceSignedDirichletSheet_branches",
+        "NLS.ZakharovShabat.isospectral_of_isOrdinaryNLSSolutionOn_univ",
+        "NLS.ZakharovShabat.l2AntiDiscriminant",
+        "NLS.ZakharovShabat.l2AntiDiscriminant_of_continuous",
+        "NLS.ZakharovShabat.l2Discriminant_sq_eq_four_iff",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_of_continuous",
+        "NLS.ZakharovShabat.l2FundamentalMatrix_zero",
+        "NLS.ZakharovShabat.l2SolutionCurve_eq_integral",
+        "NLS.ZakharovShabat.l2SolutionCurve_unique_integral",
+        "NLS.ZakharovShabat.mem_sourceIsospectralSet_of_isOrdinaryNLSSolutionOn_univ_iff",
+        "NLS.ZakharovShabat.physicalActionContour_eq",
+        "NLS.ZakharovShabat.physicalIndexedAction_eq_circle",
+        "NLS.ZakharovShabat.physicalIndexedAction_eq_circuit",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+        "NLS.ZakharovShabat.sourceCanonicalRootDomain",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four",
+        "NLS.ZakharovShabat.sourceHilbertIsospectralSet_compact_connected",
+        "NLS.ZakharovShabat.sourceHilbertIsospectralSet_coveringDimension_eq_gapCount",
+        "NLS.ZakharovShabat.sourceHilbertIsospectralSet_homeomorphic_circles",
+        "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph",
+        "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_base",
+        "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_sign",
+        "NLS.ZakharovShabat.sourceIsospectralSet_eq_or_disjoint",
+        "NLS.ZakharovShabat.sourceIsospectralSet_of_isOrdinaryNLSSolutionOn_univ",
+        "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+        "NLS.ZakharovShabat.sourceRealBand_nonempty",
+        "NLS.ZakharovShabat.sourceSection7_canonical_root_sign",
+        "NLS.ZakharovShabat.sourceSection7_periodic_product",
+        "NLS.ZakharovShabat.sourceSignedDirichletSheet_sign_zero_iff_endpoint",
+        "NLS.ZakharovShabat.source_isospectral_of_squared_gaps"
+      ],
+      "declaration_inventory_count": 44205,
+      "source_record_sha256": "a82ebd1638797f9730c074c6b827d65c4838a6a22718d2c7eee87d31709bf5ce"
     }
   }
 }

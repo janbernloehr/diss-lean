@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: the remaining Section 6 proof passages
+## Current milestone: the Section 7 opening
+
+The original periodic isospectral classes now have direct partition and
+physical NLS invariance theorems. The displayed Section 7 endpoint product
+converges locally uniformly on the entire complex plane, with the exact -4
+normalization and squared pi_n denominator. The canonical root has the
+printed positive-i sign between gaps zero and one.
+
+The opening source comparison also reconciles the existing Hilbert torus,
+covering-dimension, gap-uniqueness, action-radius, fundamental-solution,
+Arnold-integral, common-neighborhood and anti-discriminant proofs.
+
+Validation: `./scripts/check.sh` passes with 8,499 build jobs, 7,566
+public examples and a transitive axiom audit of 44,205 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 7 ledger](coverage/SECTION_7_ASSERTIONS.md) has ten
+matched groups, one partial group and ten pending groups. S7-002 retains
+the unresolved claim about Dirichlet eigenvalues moving under physical NLS;
+its full signed parametrization is proved. The source-wide inventory,
+exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation
+remain unfinished. Constant corrections use proved valid replacements;
+no additional counterexample has been added.
+
+Earlier milestone entries retain their historical validation and limitations.
+
+## Previous milestone: the remaining Section 6 proof passages
 
 The literal reciprocal Fourier series in Lemma 6.4 now converges in the
 original weighted l1 pair norm, with unchanged original-domain coefficients.

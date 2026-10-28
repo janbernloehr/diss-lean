@@ -13,6 +13,44 @@ Fourier coefficient space, represented by `CoeffPair p` with the original
 component-sum norm. The spectral realization uses `periodOnePotential`.
 This differs from Section 6's arbitrary period-two input theorem.
 
+## Ordered opening comparison
+
+The original periodic isospectral classes now have direct partition and
+physical NLS invariance theorems. The displayed Section 7 endpoint product
+converges locally uniformly on the entire complex plane, with the exact -4
+normalization and squared pi_n denominator. The canonical root has the
+printed positive-i sign between gaps zero and one.
+
+The opening source comparison also reconciles the existing Hilbert torus,
+covering-dimension, gap-uniqueness, action-radius, fundamental-solution,
+Arnold-integral, common-neighborhood and anti-discriminant proofs.
+
+Validation: `./scripts/check.sh` passes with 8,499 build jobs, 7,566
+public examples and a transitive axiom audit of 44,205 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md) has ten
+matched groups, one partial group and ten pending groups. S7-002 retains
+the unresolved claim about Dirichlet eigenvalues moving under physical NLS;
+its full signed parametrization is proved. The source-wide inventory,
+exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation
+remain unfinished. Constant corrections use proved valid replacements;
+no additional counterexample has been added.
+
+[SourceIsospectralPartition.lean](../NLS/ZakharovShabat/SourceIsospectralPartition.lean)
+uses the actual ordinary physical solution conservation theorem.
+[SourceSection7ClassicalOverview.lean](../NLS/ZakharovShabat/SourceSection7ClassicalOverview.lean)
+states the displayed product and strict-band root sign directly, including
+product convergence at spectral zeros. The two examples combine gap uniqueness
+with physical invariance and specialize the product limit at a spectral zero.
+
+Section7OpeningSourceComparison-2026-10-29 in the
+[source-review index](source-review-index.json) records S7-001 through S7-011.
+The cited Lax-pair derivation is contextual; conservation is proved by the
+physical solution and uniqueness results. Indexed spectral flows are not
+substituted for NLS time in the unresolved Dirichlet-motion clause.
+
 ## Theorem 7.1(i): one common action neighborhood
 
 | Assertion | Entry point | Scope |

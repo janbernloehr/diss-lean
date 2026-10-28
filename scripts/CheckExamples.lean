@@ -71006,3 +71006,43 @@ example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
     sourceLemma65Proof_corrected_chain (by simp) w φ f n z hz
 
 end Section6RemainingProofExamples
+
+
+
+noncomputable section
+open Set Filter Topology Complex
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section7OpeningExamples
+
+-- Equal initial squared gaps identify the full invariant class of an actual physical solution.
+example (φ ψ : realTypeSourceSubmodule 2) (γ : ℝ → realTypeSourceSubmodule 2)
+    (hγ : IsOrdinaryNLSSolutionOn univ φ γ) (time : ℝ)
+    (hgaps : ∀ n,
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n)^2 =
+      (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val)
+        (periodOnePotential_mem ψ.val) n)^2) :
+    sourceIsospectralSet (by simp) (γ time) = sourceIsospectralSet (by simp) ψ := by
+  exact (sourceIsospectralSet_of_isOrdinaryNLSSolutionOn_univ
+    (by simp) (by norm_num) (le_refl 2) hγ time).trans
+      (sourceIsospectralSet_eq_of_mem (by simp)
+        (source_isospectral_of_squared_gaps φ ψ hgaps)).symm
+
+-- Literal product convergence includes every spectral zero, including multiple zeros.
+example (φ : CoeffPair 2) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) (periodOnePotential φ)) :
+    Tendsto (fun N : ℕ =>
+      -4 * ∏ n ∈ Finset.Icc (-(N : ℤ)) (N : ℤ),
+        ((canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ)
+          (periodOnePotential_mem φ) n-z) *
+         (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+          (periodOnePotential_mem φ) n-z)) / (singleSpectralDenominator n)^2)
+      atTop (𝓝 0) := by
+  have ht := (sourceSection7_periodic_product φ).tendsto_at (mem_univ z)
+  have he := (l2Discriminant_sq_eq_four_iff (periodOnePotential φ)
+    (periodOnePotential_mem φ) z).mpr hz
+  change (l2Discriminant (sourcePhysicalL2 φ) z)^2 = 4 at he
+  simpa only [he,sub_self] using ht
+
+end Section7OpeningExamples

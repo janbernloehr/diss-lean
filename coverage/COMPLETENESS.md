@@ -130,6 +130,15 @@ transitive semantic audit of all dependencies. Counts are navigation, not a
 completion percentage. Constant corrections need a proved valid replacement;
 additional counterexamples are not required. Continue with Section 7, then
 later sections in source order.
+
+The [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md) now has ten matched
+passages, one partial passage and ten pending passages. Direct partition,
+physical NLS invariance, literal product and root-sign theorems support the
+opening comparison. The signed Dirichlet parametrization is proved, while
+the additional physical NLS motion clause in S7-002 remains unresolved.
+Existing focused proofs of later Section 7 statements remain available;
+they still need reconciliation in this ordered pass.
+
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
 contextual or outside-work attribution, or unresolved. Retain existing refutations. Each

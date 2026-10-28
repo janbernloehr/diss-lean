@@ -4773,3 +4773,5 @@ import NLS.ZakharovShabat.SourcePeriodicBoundedLabels
 import NLS.ZakharovShabat.SourcePQTopology
 import NLS.ZakharovShabat.SourceQTransformation
 import NLS.ZakharovShabat.SourceLemma6_4Proof
+import NLS.ZakharovShabat.SourceIsospectralPartition
+import NLS.ZakharovShabat.SourceSection7ClassicalOverview
