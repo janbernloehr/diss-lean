@@ -121,17 +121,18 @@ One explicit constant also gives the corrected final Young budget; the
 printed equality remains refuted. The full Section 6 inventory and final
 p.44 summed constant are still open.
 The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now explicitly
-reconciles eleven consecutive passage groups (S6-024–S6-034). Eight are
-matched, two retain source corrections, and the operator-adjoint argument
-retains an explicit derivative-domain bilinear interpretation. Direct
-transpose identities cover every potential Neumann term and the full
-corrected potential. The scalar series have geometric errors, jointly
-analytic terms, original-power identities and full-strip uniform convergence,
-with a weighted-norm signed Fourier expansion for the even vector. The local
-off-diagonal counterexamples and corrected quantitative budgets are preserved.
-The other thirty-six groups still need ordered reconciliation, including the
-detailed regional power-sum proof. This is not a completion percentage or
-a substitute for the source-wide assertion inventory.
+reconciles fourteen consecutive passage groups (S6-024–S6-037). Eleven are
+matched, two retain source corrections, and the adjoint argument retains an
+explicit derivative-domain bilinear interpretation. Direct transpose identities,
+uniform scalar series and their signed Fourier expansion are joined by the
+literal diagonal proof: actual series, unweighted Holder factor, full-strip
+suprema, exact near/far partition and both regional power-sum regimes.
+Recombination gives the original pair/half-cutoff budget with an explicit
+non-optimal constant; the sharper existing estimate remains available.
+The local off-diagonal counterexamples and corrections are preserved.
+Thirty-three groups still need ordered reconciliation, including the detailed
+off-diagonal argument. This is not a completion percentage or a substitute
+for the source-wide assertion inventory.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

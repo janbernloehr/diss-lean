@@ -6,7 +6,7 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current ledger covers S6-024 through S6-034 (printed pp.39–41).
+The current ledger covers S6-024 through S6-037 (printed pp.39–42).
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** retains a refuted printed claim alongside its valid replacement.
 **Interpreted** makes an operator-domain interpretation explicit rather than
@@ -15,8 +15,9 @@ claiming a literal formalization of the source's adjoint notation.
 The extraction positions are newline-based and tied to SHA-256
 `64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619`.
 The source PDF and inspected page hashes, module snapshots and declaration
-references are recorded in Section6TransposeSourceComparison-2026-10-28
-and Section6UniformSeriesSourceComparison-2026-10-28 in the
+references are recorded in Section6TransposeSourceComparison-2026-10-28,
+Section6UniformSeriesSourceComparison-2026-10-28 and
+Section6DiagonalSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json). The
 [completion qualifications](COMPLETENESS.md) remain in force.
 
@@ -56,9 +57,9 @@ and Section6UniformSeriesSourceComparison-2026-10-28 in the
 | S6-032 | 2883–2888 | Actual suprema on closed unbounded strips | matched |
 | S6-033 | 2891–2915 | Lemma 6.8 analytic scope and printed bounds | corrected |
 | S6-034 | 2917–2933 | Uniform series and corrected potential vector | matched |
-| S6-035 | 2935–2941 | Actual diagonal coefficient sum | pending |
-| S6-036 | 2952–2970 | Diagonal Holder estimate | pending |
-| S6-037 | 2972–3036 | Diagonal near/far power sums in both exponent ranges | pending |
+| S6-035 | 2935–2941 | Actual diagonal coefficient sum | matched |
+| S6-036 | 2952–2970 | Diagonal Holder estimate | matched |
+| S6-037 | 2972–3036 | Diagonal near/far power sums in both exponent ranges | matched |
 | S6-038 | 3037–3058 | Off-diagonal double sum and inserted weight factor | pending |
 | S6-039 | 3060–3096 | Three index regions and (1.16) | pending |
 | S6-040 | 3097–3147 | High-exponent off-diagonal sum estimates | pending |
@@ -167,7 +168,7 @@ A real-valued sSup alone is not evidence of boundedness. The cited bounded-image
 
 Public evidence: `sourceLemma6_8_analytic`, `sourceResonantFunctions_eq`, `analyticAt_sourceCorrectionEntryFunction`, `sourceDiagonalTailBudget`, `sourceDiagonalTailBudget_weightedInput`, `sourceOffDiagonalTailBudget`, `sourceOffDiagonalTailBudget_unit`, `sourceCoefficientPowerTail`, `SourceCoefficientTailEstimates`, `sourceLemma6_8_summability`, `sourceLemma6_8_quantitative`, `sourceLemma6_8_unweighted`, `exists_uniform_diagonalSummability`, `exists_uniform_offDiagonalSummability`, `sourceCubicPotential_remainder_center`, `sourceCubicPotential_remainder_norm`, `not_sourceLemma6_8_unpowered_sum`, `not_sourceLemma6_8_printed_sum`, `sourceReverseCubicPotential_remainder_center`, `sourceReverseCubicPotential_remainder_norm_sq`, `not_sourceLemma6_8_positive_component_sum`.
 
-The counterexamples refute the locally uniform statements with common cutoffs. Their potentials may depend on the chosen index; they do not prove failure beyond every individual cutoff for one fixed potential. The literal printed off-diagonal display is not marked proved. This row compares the statement and existing proof-consistent interfaces; the detailed regional power-sum proof is still pending in S6-037 through S6-041.
+The counterexamples refute the locally uniform statements with common cutoffs. Their potentials may depend on the chosen index; they do not prove failure beyond every individual cutoff for one fixed potential. The literal printed off-diagonal display is not marked proved. This row compares the statement and existing proof-consistent interfaces; the diagonal regional proof is reconciled below; the off-diagonal proof still requires S6-038 through S6-041.
 
 ### S6-034: Uniform series and corrected potential vector
 
@@ -183,12 +184,47 @@ Public evidence: `weighted_resonantCoordinate_le_shifted`, `shiftedPairNorm_squa
 
 The analytic and convergence claims cover all finite p>=1. The quantitative power-tail estimates retain 1<p<infinity. Analyticity at boundary points comes from the actual open operator-inverse extension; uniform convergence only on a closed strip is not used alone to infer analyticity across its boundary. The error bounds hold also for m=0 and at free centers whenever their stated half-contraction holds.
 
+### S6-035: Actual diagonal coefficient sum
+
+- The actual original diagonal coefficient equals the signed Fourier sum of phi_second(n+m)/(lambda-pi*m) times the first component of the actual even vector at -m. The resonant term m=n is explicitly removed.
+- The signed sum is absolutely convergent. Its physical-coordinate version is obtained by an actual frequency reflection, not a replacement scalar model.
+- These identities hold for every finite p>=1 and every signed strip, including free centers, under the stated actual square contraction.
+
+Public evidence: `sourceResonantA_signed_series`, `summable_sourceResonantA_signed_series`, `sourceResonantA_physical_series`, `sourceEquation1_14`, `sourceResonantEvenVector`, `sourceResonantFunctions_eq`, `weightedResonantA_eq_tsum`, `summable_weightedResonantA_terms`.
+
+The source coefficient and even vector are the existing original differential-operator realizations. The theorem does not define the coefficient to be the desired scalar series. The p=1 endpoint is a series statement; the following conjugate-moment estimates require p>1.
+
+### S6-036: Diagonal Holder estimate
+
+- Holder bounds the actual diagonal by the norm of the first component of the actual even vector times the displayed reciprocal conjugate moment.
+- Unit-weight isometry and half-contraction bound the whole original even vector by twice the unweighted first potential component. Weighted/unit inverse compatibility supplies this smaller norm for weighted inputs.
+- Raising the pointwise bound gives exactly the factor 2^p, the distinguished unweighted component to power p and the reciprocal moment to power p/q.
+- One open convex neighborhood containing the potential and zero, with one distant-strip cutoff, gives bounded actual images, nonnegative genuine full-strip suprema and the same p-power Holder bound.
+- For every larger cutoff, both full signed outer tails are summable and their sums satisfy the displayed Holder comparison.
+
+Public evidence: `sourceResonantA_signed_holder`, `norm_sourceResonantEvenVector_one_le`, `sourceResonantA_signed_holder_half`, `diagonalHolder_power_le`, `sourceResonantA_signed_holder_power`, `exists_uniform_sourceDiagonalHolder`, `exists_uniform_sourceDiagonalHolder_sum`, `forgetPairWeight_resonantEvenVector`, `norm_forget_evenVector_one_le_unweighted`, `norm_tsum_complementaryRow_le`, `norm_complementaryRowEnvelope_eq`, `exists_uniform_resonantDiagonalBound`, `exists_uniform_sourceResonantFunctions_weightedInput`, `summable_diagonalMomentPowerTail`.
+
+The preceding weighted norm inequality alone does not yield the smaller unweighted factor printed in the second display. The proof uses the unit-weight inverse and its compatibility instead. The full-strip supremum is justified by boundedness; the spectral parameter dependence of the even vector is retained before taking that supremum. All quantitative assertions require 1<p<infinity.
+
+### S6-037: Diagonal near/far power sums in both exponent ranges
+
+- The literal inner moment is absolutely convergent and splits exactly into far |m-n|>=|n|/2 and near |m-n|<|n|/2 terms. The removed zero denominator contributes zero because q>0.
+- Genuine coefficient rows identify each literal regional moment with the q-th norm power and its p/q power with the p-th norm power. The integer cutoff is ceil(|n|/2), including the equality case and odd cutoffs.
+- Every distant far row is dominated by the fixed reciprocal kernel tail at ceil(N/2). Every near row sees only potential frequencies of magnitude at least N, retaining the tail boundary.
+- Powered Young gives both exact regional kernel budgets. Contractive exponent inclusion proves the displayed concave p/q step when p<=q; the conjugate identities identify the two exponent regimes.
+- One positive exponent-only regional constant gives far decay N^(-1) for p>=2 and N^(-(p-1)) for 1<p<=2, and the near bound by the p-power of the actual potential tail. All outer regional sums are summable.
+- Recombining the actual regions and the original Holder sum proves the diagonal estimate first with unweighted distinguished components and the full cutoff, then with the printed original pair norm and floor(N/2) tail. One neighborhood works for every larger cutoff.
+
+Public evidence: `diagonalFarRow`, `diagonalNearRow`, `diagonalFarRow_apply`, `diagonalNearRow_apply`, `diagonalFarRow_add_near`, `diagonal_near_potential_tail`, `norm_diagonalFarRow_le`, `norm_diagonalNearRow_le`, `norm_diagonalHalfKernel_le`, `diagonalRow_power_sum_le`, `diagonalFarRow_sum_le`, `diagonalNearRow_sum_le`, `diagonalFarMoment`, `diagonalNearMoment`, `diagonalFarMoment_eq`, `diagonalNearMoment_eq`, `diagonalFarMoment_power_eq`, `diagonalNearMoment_power_eq`, `summable_diagonalMoment`, `diagonalMoment_split`, `diagonal_far_region_iff`, `diagonalFarMoment_sum_le_kernel`, `diagonalNearMoment_sum_le_kernel`, `diagonalFarMoment_concave_le`, `diagonalNearMoment_concave_le`, `diagonalRegionConstant`, `diagonalRegionConstant_pos`, `diagonalRegion_decay_power`, `diagonalMoment_region_bounds`, `diagonal_conjugate_regimes`, `diagonalFarMoment_sum_ge_two`, `diagonalFarMoment_sum_le_two`, `diagonalMomentPowerTail`, `diagonalMomentPower_eq`, `summable_diagonalMomentPowerTail`, `diagonalMomentPowerTail_sum_le`, `diagonalSummationConstant`, `diagonalProofConstant`, `diagonalProofConstant_pos`, `exists_uniform_sourceDiagonalProofBound`, `diagonalProof_component_budget_le_pair`, `sourceLemma6_8_diagonal_proof`.
+
+The displayed inequalities use a weak far cutoff and a strict near cutoff; the preceding prose uses > for the far region. The formal partition follows the displayed inequalities and explicitly retains equality. The new diagonalProofConstant is an admissible, non-optimal exponent-only constant, equal to 2^p times the existing sharper diagonalSummationConstant. The sharper result is preserved. This completes the diagonal proof passage, not the off-diagonal proof or final p.44 summed inequality.
+
 ## Remaining work
 
-Reconcile the other 36 passage groups, including the earlier groups already
-covered by focused reviews. Next in this forward pass are the diagonal
-coefficient sum, Hölder estimate and regional power-sum proof assertions
-of Lemma 6.8. The final p.44 inequality with
+Reconcile the other 33 passage groups, including the earlier groups already
+covered by focused reviews. Next in this forward pass are the off-diagonal
+series, Holder estimate and regional power sums in Lemma 6.8.
+The final p.44 inequality with
 1/2^p on its left side remains unresolved; the corrected larger-constant
 bound and the refuted preceding middle comparison are separate results.
 This ledger does not replace the source-wide inventory or the remaining

@@ -70478,3 +70478,65 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end Section6UniformSeriesChecks
+
+namespace Section6DiagonalProofChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3/2:ℝ≥0∞).HolderConjugate 3 :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem halfAboveOne : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem halfFinite : (3/2:ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2:ℝ≥0∞)) := ⟨halfAboveOne.le⟩
+
+-- At negative outer frequency -4, the mode m=-6 lies exactly on the half-radius boundary.
+example : diagonalFarMoment (3/2) (lp.single 3 (-10) (2:ℂ)) (-4) = 1 ∧
+    diagonalNearMoment (3/2) (lp.single 3 (-10) (2:ℂ)) (-4) = 0 := by
+  constructor
+  · unfold diagonalFarMoment
+    rw [tsum_eq_single (-6)]
+    · norm_num [lp.single_apply]
+    · intro m hm
+      have he : -4+m ≠ -10 := by omega
+      simp only [lp.single_apply,Pi.single_apply,if_neg he,norm_zero,zero_div]
+      norm_num
+  · unfold diagonalNearMoment
+    trans ∑' _ : ℤ, (0:ℝ)
+    · apply tsum_congr
+      intro m
+      by_cases hm : m = -6
+      · subst m; norm_num
+      · have he : -4+m ≠ -10 := by omega
+        simp only [lp.single_apply,Pi.single_apply,if_neg he,norm_zero,zero_div]
+        norm_num
+    · simp
+
+-- The lower exponent range gives the actual square-root decay in the cutoff.
+example (a : Coeff (3/2)) (N : ℕ) (hN : 0 < N) :
+    (∑' n : ℤ, if N ≤ n.natAbs then (diagonalFarMoment 3 a n)^((1:ℝ)/2) else 0) ≤
+      diagonalRegionConstant (3/2)*‖a‖^((3:ℝ)/2)/(N : ℝ)^((1:ℝ)/2) := by
+  have h := diagonalFarMoment_sum_le_two (p := (3/2:ℝ≥0∞))
+    halfFinite halfAboveOne (by norm_num) a N hN
+  have hq : (3/2:ℝ≥0∞).conjExponent = 3 := ENNReal.HolderConjugate.conjExponent_eq
+  norm_num [hq] at h ⊢
+  exact h
+
+-- Vanishing of the distinguished original component forces every distant diagonal supremum to vanish.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, (sourceWeightedPeriodTwoInput w ψ).fst = 0 → ∀ n : ℤ, N ≤ n.natAbs →
+        sourceResonantDiagonalSup (by norm_num) (sourceWeightedPeriodTwoInput w ψ) n = 0 := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hb⟩ := exists_uniform_sourceDiagonalHolder (by norm_num) (by norm_num) w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ hzero n hn
+  have h := hb ψ hψ n hn
+  have hu := h.2.2.1
+  simp only [hzero,norm_zero,mul_zero,zero_mul] at hu
+  exact le_antisymm hu h.2.1
+
+end
+end Section6DiagonalProofChecks

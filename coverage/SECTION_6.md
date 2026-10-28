@@ -5,6 +5,49 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.8(i): the literal diagonal proof
+
+[SourceLemma6_8DiagonalProof.lean](../NLS/ZakharovShabat/SourceLemma6_8DiagonalProof.lean)
+identifies the actual diagonal with the absolutely convergent sum of
+`phi_second(n+m)/(lambda-pi*m) * u_first(-m)`, excluding m=n. The series
+holds for finite p>=1 under the stated square contraction. For 1<p<infinity,
+under half-contraction the original even vector has norm at most twice the
+unweighted first potential component. Unit-weight inverse compatibility justifies that sharper factor;
+the preceding weighted inequality alone is not used to infer it.
+
+`exists_uniform_sourceDiagonalHolder` supplies bounded actual images and the
+literal p-power Holder bound for their full-strip suprema.
+`exists_uniform_sourceDiagonalHolder_sum` compares two convergent full signed
+outer sums on one neighborhood, for every cutoff beyond a common threshold.
+
+[DiagonalProofRegions.lean](../NLS/ZakharovShabat/DiagonalProofRegions.lean)
+uses the exact displayed regions: far `|m-n| >= |n|/2`, near
+`|m-n| < |n|/2`. The initial source prose uses a strict far inequality;
+the formal partition follows the displays and includes the boundary in far.
+The q-th powers of the row norms equal the literal source moments. Their split is an
+identity between convergent sums; the zero denominator contributes zero.
+The near-region potential tail retains its boundary at N, and the far kernel
+uses ceil(N/2), including odd cutoffs.
+
+[DiagonalProofPowerSums.lean](../NLS/ZakharovShabat/DiagonalProofPowerSums.lean)
+provides the powered-Young budgets and the concave-exponent step. It proves
+N^(-1) far decay for p>=2 and N^(-(p-1)) for 1<p<=2. The near estimate uses
+the actual potential-tail p-power in both regimes. Every outer regional sum
+is summable. Recombination gives `sourceLemma6_8_diagonal_proof`, with the
+original unweighted pair norm and floor(N/2) tail. Its explicit
+`diagonalProofConstant` is 2^p times the existing sharper
+`diagonalSummationConstant`; the old result is unchanged.
+
+The [ordered ledger](SECTION_6_ASSERTIONS.md) reconciles S6-035 through S6-037.
+Section6DiagonalSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records the exact evidence.
+The ordered off-diagonal review and final p.44 summed inequality remain open.
+
+Validation: `./scripts/check.sh` passes with 8,461 build jobs, 7,531
+public examples and a transitive axiom audit of 43,596 NLS declarations.
+The 21 inherited warnings are unchanged; the three new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.8: full-strip uniform convergence of the original scalar series
 
 [ResonantSeriesApproximation.lean](../NLS/ZakharovShabat/ResonantSeriesApproximation.lean)
@@ -41,7 +84,8 @@ The [ordered ledger](SECTION_6_ASSERTIONS.md) now reconciles S6-033 and S6-034.
 The first retains the two existing local refutations of the printed
 quantitative off-diagonal display; it records the p-power/full-pair replacement
 without claiming a counterexample for one fixed potential beyond every
-individual cutoff. The detailed regional power-sum proof remains to be reviewed.
+individual cutoff. The diagonal regional proof is now reconciled above;
+the off-diagonal proof remains ahead.
 Section6UniformSeriesSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records the exact evidence.
 

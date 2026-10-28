@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T16:55:13.042204+00:00",
-  "base_commit": "5478e23590476d257d544be5df2240be9a9b5eae",
+  "published_utc": "2026-10-28T17:42:09.896912+00:00",
+  "base_commit": "5988769665f006ff7432938906f69c2fe1729f0e",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 96,
-    "module_hash_checks": 1502,
-    "distinct_modules": 964
+    "review_records": 97,
+    "module_hash_checks": 1527,
+    "distinct_modules": 978
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "5478e23590476d257d544be5df2240be9a9b5eae",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes actual scalar parity terms, geometric weighted errors, original operator-power agreement, term analyticity, full-strip uniform convergence, signed Fourier HasSum and two integration examples.",
+    "base_commit": "5988769665f006ff7432938906f69c2fe1729f0e",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal original diagonal series, unweighted Holder factor, genuine full-strip suprema, exact near/far moments and regional power sums, both exponent regimes, the original pair/half-cutoff budget and three integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8458,
-    "public_examples": 7528,
-    "transitive_NLS_declarations": 43507,
+    "build_jobs": 8461,
+    "public_examples": 7531,
+    "transitive_NLS_declarations": 43596,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4735,
-      "sha256": "401a32c6cd741454ee7b2f960b86e6abe0b8d71669113c66d1925063c07bd1ef"
+      "files": 4738,
+      "sha256": "f0b387b25ef44ee1de35ac9f26fa76da16a23fac0f6c2a28ead74385ffd1f3f9"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -23668,6 +23668,248 @@
       ],
       "declaration_inventory_count": 43507,
       "source_record_sha256": "e307d3072f30dc3d5f6fd6ba05e954fbf5676cb5450c4d9a8b90ff8d371dacc9"
+    },
+    "Section6DiagonalSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5988769665f006ff7432938906f69c2fe1729f0e",
+      "updated_utc": "2026-10-28T17:42:09.896912+00:00",
+      "source_lines": [
+        [
+          2935,
+          3036
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-035",
+          "source_lines": [
+            2935,
+            2941
+          ],
+          "requirement": "Actual diagonal coefficient sum",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual original diagonal coefficient equals the signed Fourier sum of phi_second(n+m)/(lambda-pi*m) times the first component of the actual even vector at -m. The resonant term m=n is explicitly removed.",
+            "The signed sum is absolutely convergent. Its physical-coordinate version is obtained by an actual frequency reflection, not a replacement scalar model.",
+            "These identities hold for every finite p>=1 and every signed strip, including free centers, under the stated actual square contraction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResonantA_signed_series",
+            "NLS.ZakharovShabat.summable_sourceResonantA_signed_series",
+            "NLS.ZakharovShabat.sourceResonantA_physical_series",
+            "NLS.ZakharovShabat.sourceEquation1_14",
+            "NLS.ZakharovShabat.sourceResonantEvenVector",
+            "NLS.ZakharovShabat.sourceResonantFunctions_eq",
+            "NLS.ZakharovShabat.weightedResonantA_eq_tsum",
+            "NLS.ZakharovShabat.summable_weightedResonantA_terms"
+          ],
+          "qualification": "The source coefficient and even vector are the existing original differential-operator realizations. The theorem does not define the coefficient to be the desired scalar series. The p=1 endpoint is a series statement; the following conjugate-moment estimates require p>1."
+        },
+        {
+          "ordered_group": "S6-036",
+          "source_lines": [
+            2952,
+            2970
+          ],
+          "requirement": "Diagonal Holder estimate",
+          "status": "matched",
+          "reviewed_claims": [
+            "Holder bounds the actual diagonal by the norm of the first component of the actual even vector times the displayed reciprocal conjugate moment.",
+            "Unit-weight isometry and half-contraction bound the whole original even vector by twice the unweighted first potential component. Weighted/unit inverse compatibility supplies this smaller norm for weighted inputs.",
+            "Raising the pointwise bound gives exactly the factor 2^p, the distinguished unweighted component to power p and the reciprocal moment to power p/q.",
+            "One open convex neighborhood containing the potential and zero, with one distant-strip cutoff, gives bounded actual images, nonnegative genuine full-strip suprema and the same p-power Holder bound.",
+            "For every larger cutoff, both full signed outer tails are summable and their sums satisfy the displayed Holder comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResonantA_signed_holder",
+            "NLS.ZakharovShabat.norm_sourceResonantEvenVector_one_le",
+            "NLS.ZakharovShabat.sourceResonantA_signed_holder_half",
+            "NLS.ZakharovShabat.diagonalHolder_power_le",
+            "NLS.ZakharovShabat.sourceResonantA_signed_holder_power",
+            "NLS.ZakharovShabat.exists_uniform_sourceDiagonalHolder",
+            "NLS.ZakharovShabat.exists_uniform_sourceDiagonalHolder_sum",
+            "NLS.ZakharovShabat.forgetPairWeight_resonantEvenVector",
+            "NLS.ZakharovShabat.norm_forget_evenVector_one_le_unweighted",
+            "NLS.ZakharovShabat.norm_tsum_complementaryRow_le",
+            "NLS.ZakharovShabat.norm_complementaryRowEnvelope_eq",
+            "NLS.ZakharovShabat.exists_uniform_resonantDiagonalBound",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantFunctions_weightedInput",
+            "NLS.ZakharovShabat.summable_diagonalMomentPowerTail"
+          ],
+          "qualification": "The preceding weighted norm inequality alone does not yield the smaller unweighted factor printed in the second display. The proof uses the unit-weight inverse and its compatibility instead. The full-strip supremum is justified by boundedness; the spectral parameter dependence of the even vector is retained before taking that supremum. All quantitative assertions require 1<p<infinity."
+        },
+        {
+          "ordered_group": "S6-037",
+          "source_lines": [
+            2972,
+            3036
+          ],
+          "requirement": "Diagonal near/far power sums in both exponent ranges",
+          "status": "matched",
+          "reviewed_claims": [
+            "The literal inner moment is absolutely convergent and splits exactly into far |m-n|>=|n|/2 and near |m-n|<|n|/2 terms. The removed zero denominator contributes zero because q>0.",
+            "Genuine coefficient rows identify each literal regional moment with the q-th norm power and its p/q power with the p-th norm power. The integer cutoff is ceil(|n|/2), including the equality case and odd cutoffs.",
+            "Every distant far row is dominated by the fixed reciprocal kernel tail at ceil(N/2). Every near row sees only potential frequencies of magnitude at least N, retaining the tail boundary.",
+            "Powered Young gives both exact regional kernel budgets. Contractive exponent inclusion proves the displayed concave p/q step when p<=q; the conjugate identities identify the two exponent regimes.",
+            "One positive exponent-only regional constant gives far decay N^(-1) for p>=2 and N^(-(p-1)) for 1<p<=2, and the near bound by the p-power of the actual potential tail. All outer regional sums are summable.",
+            "Recombining the actual regions and the original Holder sum proves the diagonal estimate first with unweighted distinguished components and the full cutoff, then with the printed original pair norm and floor(N/2) tail. One neighborhood works for every larger cutoff."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.diagonalFarRow",
+            "NLS.ZakharovShabat.diagonalNearRow",
+            "NLS.ZakharovShabat.diagonalFarRow_apply",
+            "NLS.ZakharovShabat.diagonalNearRow_apply",
+            "NLS.ZakharovShabat.diagonalFarRow_add_near",
+            "NLS.ZakharovShabat.diagonal_near_potential_tail",
+            "NLS.ZakharovShabat.norm_diagonalFarRow_le",
+            "NLS.ZakharovShabat.norm_diagonalNearRow_le",
+            "NLS.ZakharovShabat.norm_diagonalHalfKernel_le",
+            "NLS.ZakharovShabat.diagonalRow_power_sum_le",
+            "NLS.ZakharovShabat.diagonalFarRow_sum_le",
+            "NLS.ZakharovShabat.diagonalNearRow_sum_le",
+            "NLS.ZakharovShabat.diagonalFarMoment",
+            "NLS.ZakharovShabat.diagonalNearMoment",
+            "NLS.ZakharovShabat.diagonalFarMoment_eq",
+            "NLS.ZakharovShabat.diagonalNearMoment_eq",
+            "NLS.ZakharovShabat.diagonalFarMoment_power_eq",
+            "NLS.ZakharovShabat.diagonalNearMoment_power_eq",
+            "NLS.ZakharovShabat.summable_diagonalMoment",
+            "NLS.ZakharovShabat.diagonalMoment_split",
+            "NLS.ZakharovShabat.diagonal_far_region_iff",
+            "NLS.ZakharovShabat.diagonalFarMoment_sum_le_kernel",
+            "NLS.ZakharovShabat.diagonalNearMoment_sum_le_kernel",
+            "NLS.ZakharovShabat.diagonalFarMoment_concave_le",
+            "NLS.ZakharovShabat.diagonalNearMoment_concave_le",
+            "NLS.ZakharovShabat.diagonalRegionConstant",
+            "NLS.ZakharovShabat.diagonalRegionConstant_pos",
+            "NLS.ZakharovShabat.diagonalRegion_decay_power",
+            "NLS.ZakharovShabat.diagonalMoment_region_bounds",
+            "NLS.ZakharovShabat.diagonal_conjugate_regimes",
+            "NLS.ZakharovShabat.diagonalFarMoment_sum_ge_two",
+            "NLS.ZakharovShabat.diagonalFarMoment_sum_le_two",
+            "NLS.ZakharovShabat.diagonalMomentPowerTail",
+            "NLS.ZakharovShabat.diagonalMomentPower_eq",
+            "NLS.ZakharovShabat.summable_diagonalMomentPowerTail",
+            "NLS.ZakharovShabat.diagonalMomentPowerTail_sum_le",
+            "NLS.ZakharovShabat.diagonalProofConstant",
+            "NLS.ZakharovShabat.diagonalProofConstant_pos",
+            "NLS.ZakharovShabat.exists_uniform_sourceDiagonalProofBound",
+            "NLS.ZakharovShabat.diagonalProof_component_budget_le_pair",
+            "NLS.ZakharovShabat.sourceLemma6_8_diagonal_proof",
+            "NLS.ZakharovShabat.diagonalSummationConstant"
+          ],
+          "qualification": "The displayed inequalities use a weak far cutoff and a strict near cutoff; the preceding prose uses > for the far region. The formal partition follows the displayed inequalities and explicitly retains equality. The new diagonalProofConstant is an admissible, non-optimal exponent-only constant, equal to 2^p times the existing sharper diagonalSummationConstant. The sharper result is preserved. This completes the diagonal proof passage, not the off-diagonal proof or final p.44 summed inequality."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/DiagonalProofRegions.lean": "f9eeaeea9406ef0f4c96c3cf0db9592491042f845561a055825526ff0b4f59f3",
+        "NLS/ZakharovShabat/DiagonalProofPowerSums.lean": "08bee264869ef4c4e654d53be25d1d34fca2d27caaff5280baf66895d493bf35",
+        "NLS/ZakharovShabat/SourceLemma6_8DiagonalProof.lean": "52aaf21e5bb0d3b9773bf7212745c7abf05870b9ff4df5f33e5ea0deba22de02",
+        "NLS/ZakharovShabat/ResonantDiagonalEstimate.lean": "d37122137925415e76fb4d5ed584b0482b4863a68a0aa4498b1633becd185974",
+        "NLS/ZakharovShabat/UnweightedEvenCorrection.lean": "e74ceab8f9ab9d8b2303377d8ec4f44718fcabf4f6ef54f40a3e6d897c9a653d",
+        "NLS/ZakharovShabat/ComplementaryRowEstimate.lean": "cbf50f5446b681279c2ec19400c0090c7a5dff6ac93df36b68893e5f5eb036ec",
+        "NLS/ZakharovShabat/ReciprocalRowSummation.lean": "9b88015a0bd570ce627b41ce0c934042e8a990e5215285b6cb23ca35e4297ea8",
+        "NLS/ZakharovShabat/DiagonalSummationExponent.lean": "9a89bb9d832b3749d7c46d1bab32eddb61cb8d71de0b0bd83ea4eaa06da6dd24",
+        "NLS/ZakharovShabat/SourceResonantParity.lean": "8823bd69448f550a8620e065e39cccc1e7d2a67decf7b77d03070a88a446f827",
+        "NLS/ZakharovShabat/SourceResonantCoefficients.lean": "fd3d56720693f3f75b03f5fff50a2cfe352063f3b5cbecc9d01e496c6a8a04bb",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/SourceResonantSup.lean": "334152d460373a9a6ae712cce94f84c0866f7b674e49c403e436fdbcc0dada84",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/SourceLemma6_8.lean": "3558d831b089a25c63755e0b2f92b34e43615c50140dc8c643e0bea0242cd5eb",
+        "NLS/SequenceSpaces/PowerYoung.lean": "2321fe290f86e14bf3b09e58b6f3ca35e47edc4d2c39ef1736a5a0296ec04cf6",
+        "NLS/SequenceSpaces/PowerCoefficients.lean": "399ecd240c2ee1f9f2b667b86c2b42370c69a2add771b67b83164dedec5514cc",
+        "NLS/SequenceSpaces/ConvolutionRows.lean": "33b7fbfdb5b62daf521763d1daef9194c244d48220cc7ed0f4ba285d6c9ed44e",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/SequenceSpaces/Truncation.lean": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074",
+        "NLS/SequenceSpaces/ExponentEmbedding.lean": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10",
+        "NLS/SequenceSpaces/PuncturedLatticeTail.lean": "925ca53ef54765ed986340eba4c3fe3c07b9a4f84c49500273a1b23056e8f19f",
+        "NLS/SequenceSpaces/ReciprocalNorm.lean": "f8757ec64d037a9d11def7a84e46f8f753cb12fa952b3d59aec203e6ca848861",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "293d6b7218f45fe21ba7178d5fe33c4c77cdf0e1567de46c0df8875fbcdbf6ed",
+        "NLS/SequenceSpaces/YoungConvolution.lean": "d86a6eeda24b38ba1892a63efc3426c239ad66d49f6ea73ffcb340527469e722",
+        "NLS/ZakharovShabat/DiagonalTailPower.lean": "4603f8490b55fd67294fcc4ff4192f945e3fe59b732737187a3be6e4a7ea6d48"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          41,
+          42
+        ],
+        "images": {
+          "Section6ProofReview-041.png": "b33633d75663339c15d2e55e22bbd4849470fb6cfc29d6853c5173599ab0f1a7",
+          "Section6ProofReview-042.png": "dfd6f8b9f075640107a46dd53e9df8711ff2fa37bedd9dd4b6f47081a4c38f0c"
+        }
+      },
+      "qualification": "Three more ordered passages are reconciled: the actual signed diagonal series, the full-strip Holder comparison and all four regional power-sum estimates. Twenty-five module bodies were read or revalidated from the preceding preparation and source review. This does not certify every transitive dependency or the remaining thirty-three passage groups. The off-diagonal proof, final p.44 sum, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. Existing corrections, sharper estimates and earlier review records are preserved.",
+      "ordered_inventory_sha256": "736133e6cf104b0e24cec8088b6bc35270f156e554b5a580c7c9b6cbdeddbef2",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.diagonalFarMoment",
+        "NLS.ZakharovShabat.diagonalFarMoment_concave_le",
+        "NLS.ZakharovShabat.diagonalFarMoment_eq",
+        "NLS.ZakharovShabat.diagonalFarMoment_power_eq",
+        "NLS.ZakharovShabat.diagonalFarMoment_sum_ge_two",
+        "NLS.ZakharovShabat.diagonalFarMoment_sum_le_kernel",
+        "NLS.ZakharovShabat.diagonalFarMoment_sum_le_two",
+        "NLS.ZakharovShabat.diagonalFarRow",
+        "NLS.ZakharovShabat.diagonalFarRow_add_near",
+        "NLS.ZakharovShabat.diagonalFarRow_apply",
+        "NLS.ZakharovShabat.diagonalFarRow_sum_le",
+        "NLS.ZakharovShabat.diagonalHolder_power_le",
+        "NLS.ZakharovShabat.diagonalMomentPowerTail",
+        "NLS.ZakharovShabat.diagonalMomentPowerTail_sum_le",
+        "NLS.ZakharovShabat.diagonalMomentPower_eq",
+        "NLS.ZakharovShabat.diagonalMoment_region_bounds",
+        "NLS.ZakharovShabat.diagonalMoment_split",
+        "NLS.ZakharovShabat.diagonalNearMoment",
+        "NLS.ZakharovShabat.diagonalNearMoment_concave_le",
+        "NLS.ZakharovShabat.diagonalNearMoment_eq",
+        "NLS.ZakharovShabat.diagonalNearMoment_power_eq",
+        "NLS.ZakharovShabat.diagonalNearMoment_sum_le_kernel",
+        "NLS.ZakharovShabat.diagonalNearRow",
+        "NLS.ZakharovShabat.diagonalNearRow_apply",
+        "NLS.ZakharovShabat.diagonalNearRow_sum_le",
+        "NLS.ZakharovShabat.diagonalProofConstant",
+        "NLS.ZakharovShabat.diagonalProofConstant_pos",
+        "NLS.ZakharovShabat.diagonalProof_component_budget_le_pair",
+        "NLS.ZakharovShabat.diagonalRegionConstant",
+        "NLS.ZakharovShabat.diagonalRegionConstant_pos",
+        "NLS.ZakharovShabat.diagonalRegion_decay_power",
+        "NLS.ZakharovShabat.diagonalRow_power_sum_le",
+        "NLS.ZakharovShabat.diagonalSummationConstant",
+        "NLS.ZakharovShabat.diagonal_conjugate_regimes",
+        "NLS.ZakharovShabat.diagonal_far_region_iff",
+        "NLS.ZakharovShabat.diagonal_near_potential_tail",
+        "NLS.ZakharovShabat.exists_uniform_resonantDiagonalBound",
+        "NLS.ZakharovShabat.exists_uniform_sourceDiagonalHolder",
+        "NLS.ZakharovShabat.exists_uniform_sourceDiagonalHolder_sum",
+        "NLS.ZakharovShabat.exists_uniform_sourceDiagonalProofBound",
+        "NLS.ZakharovShabat.exists_uniform_sourceResonantFunctions_weightedInput",
+        "NLS.ZakharovShabat.forgetPairWeight_resonantEvenVector",
+        "NLS.ZakharovShabat.norm_complementaryRowEnvelope_eq",
+        "NLS.ZakharovShabat.norm_diagonalFarRow_le",
+        "NLS.ZakharovShabat.norm_diagonalHalfKernel_le",
+        "NLS.ZakharovShabat.norm_diagonalNearRow_le",
+        "NLS.ZakharovShabat.norm_forget_evenVector_one_le_unweighted",
+        "NLS.ZakharovShabat.norm_sourceResonantEvenVector_one_le",
+        "NLS.ZakharovShabat.norm_tsum_complementaryRow_le",
+        "NLS.ZakharovShabat.sourceEquation1_14",
+        "NLS.ZakharovShabat.sourceLemma6_8_diagonal_proof",
+        "NLS.ZakharovShabat.sourceResonantA_physical_series",
+        "NLS.ZakharovShabat.sourceResonantA_signed_holder",
+        "NLS.ZakharovShabat.sourceResonantA_signed_holder_half",
+        "NLS.ZakharovShabat.sourceResonantA_signed_holder_power",
+        "NLS.ZakharovShabat.sourceResonantA_signed_series",
+        "NLS.ZakharovShabat.sourceResonantEvenVector",
+        "NLS.ZakharovShabat.sourceResonantFunctions_eq",
+        "NLS.ZakharovShabat.summable_diagonalMoment",
+        "NLS.ZakharovShabat.summable_diagonalMomentPowerTail",
+        "NLS.ZakharovShabat.summable_sourceResonantA_signed_series",
+        "NLS.ZakharovShabat.summable_weightedResonantA_terms",
+        "NLS.ZakharovShabat.weightedResonantA_eq_tsum"
+      ],
+      "declaration_inventory_count": 43596,
+      "source_record_sha256": "b384d3dcacf2f9d6600a86ab63436c626231ef91b6910839f4aac34ce3ff6419"
     }
   }
 }

@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: uniform scalar series in Lemma 6.8
+## Current milestone: the diagonal proof of Lemma 6.8
+
+The original diagonal now has its literal signed Fourier series and absolute
+convergence. Holder's inequality retains the actual even vector and its
+unweighted distinguished-component bound. The resulting p-power estimate
+holds for genuine suprema over the full closed strips, with summable outer tails.
+
+The exact near/far partition retains equality in the far region. Powered Young
+and the explicit concavity step give N^(-1) decay for p>=2 and N^(-(p-1))
+for 1<p<=2, with the retained-boundary potential tail in the near region.
+Recombination proves the original pair-norm, half-cutoff diagonal estimate.
+The explicit proof constant is non-optimal; the existing sharper bound remains.
+
+Integration checks cover a negative-index half-radius boundary, p=3/2
+square-root decay, and a vanishing distinguished potential component.
+The [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) now reconciles
+S6-024 through S6-037; thirty-three groups remain pending.
+
+Validation: `./scripts/check.sh` passes with 8,461 build jobs, 7,531
+public examples and a transitive axiom audit of 43,596 NLS declarations.
+The 21 inherited warnings are unchanged; the three new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: the off-diagonal series, Holder bound and regional power sums.
+The final p.44 sum and the broader
+[completion qualifications](coverage/COMPLETENESS.md) remain open.
+
+## Previous milestone: uniform scalar series in Lemma 6.8
 
 The original diagonal and off-diagonal series now have explicit geometric
 partial-sum errors on the full closed strips. The off-diagonal estimates retain
