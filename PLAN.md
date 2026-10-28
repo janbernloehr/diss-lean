@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: direct transpose symmetry in Lemma 6.7
+## Current milestone: uniform scalar series in Lemma 6.8
+
+The original diagonal and off-diagonal series now have explicit geometric
+partial-sum errors on the full closed strips. The off-diagonal estimates retain
+w(2n); the diagonal estimate keeps the required reversal of the signed shift.
+One truncation length works for all three series, nearby potentials and all
+distant signed indices. Every term is jointly analytic, and finite sums are
+identified with the actual original operator powers. These results include p=1.
+
+The signed Fourier expansion of the corrected vector also converges in its
+actual weighted norm. Integration examples check a literal T² term at the
+p=1 free center and one common truncation across the distant negative strips
+at p=3.
+
+The [ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) now reconciles
+S6-024 through S6-034. It preserves the two local counterexamples to the
+printed off-diagonal bound and the valid p-power/full-pair replacement.
+Thirty-six groups still require ordered reconciliation.
+
+Validation: `./scripts/check.sh` passes with 8,458 build jobs, 7,528
+public examples and a transitive axiom audit of 43,507 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: the diagonal coefficient sum, Hölder estimate and regional power sums
+in Lemma 6.8. The final p.44 summed constant and the broader
+[completion qualifications](coverage/COMPLETENESS.md) remain open.
+
+## Previous milestone: direct transpose symmetry in Lemma 6.7
 
 The complementary inverse, every potential Neumann term and the full corrected
 potential now have transpose identities on the actual derivative-domain tests,

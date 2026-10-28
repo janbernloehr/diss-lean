@@ -70423,3 +70423,58 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end Section6DirectTransposeChecks
+
+namespace Section6UniformSeriesChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- At the p=1 free center, one literal T^2 term approximates the original positive remainder.
+example (φ : CoeffPair 1)
+    (hh : ‖(sourcePotentialInverse (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0)).comp
+      (sourcePotentialInverse (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0))‖ ≤ 1/2) :
+    let T := sourcePotentialInverse (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0)
+    ‖sourceResonantBPlusFunction (by simp) φ 0 0 - φ.snd 0 -
+      (T (T (sourceResonantPotentialVector (by simp) φ 0 0))).snd 0‖ ≤ (1/2:ℝ)*‖φ.snd‖ := by
+  have hh' : ‖weightedPotentialSquareInShift (by simp) SpectralWeight.one (unitWeightedPairEquiv φ)
+      0 0 (by simpa using center_mem_resonantStrip 0)‖ ≤ 1/2 := by
+    rwa [sourcePotentialInverse_square_norm] at hh
+  have h := hh'.trans_lt (by norm_num : (1/2:ℝ) < 1)
+  have he := weightedResonantBPlus_partialSum_error (by simp) SpectralWeight.one (unitWeightedPairEquiv φ)
+    0 0 (by simpa using center_mem_resonantStrip 0) h hh' 1
+  have hpartial := sourceResonantParityPartialSumFunction_eq (by simp) φ 0 2 1 1 0 0
+    (by simpa using center_mem_resonantStrip 0)
+  have hfunction := (sourceResonantFunctions_eq (by simp) φ 0 0
+    (by simpa using center_mem_resonantStrip 0) h).2.1
+  change sourceResonantBPlusFunction (by simp) φ 0 0 = weightedResonantBPlus _ _ _ _ _ _ _ at hfunction
+  rw [← hfunction,← weightedResonantParityPartialSumFunction_eq (by simp) SpectralWeight.one
+    (unitWeightedPairEquiv φ) 0 2 1 1 0 0 (by simpa using center_mem_resonantStrip 0)] at he
+  change _ * ‖_ - sourceResonantParityPartialSumFunction (by simp) φ 0 2 1 1 0 0‖ ≤ _ at he
+  rw [hpartial] at he
+  simpa [pow_two,mul_apply_eq_comp,unitWeightedPairEquiv_snd,(sourceUnitWeighted_component_norms φ).2] using he
+
+local instance section6UniformSeriesFactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- One truncation works on all distant negative strips, with the original negative Fourier sign.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ε : ℝ, 0 < ε → ∃ M : ℕ, ∀ m : ℕ, M ≤ m →
+        ∀ ψ ∈ U, ∀ n : ℤ, n ≤ -(N : ℤ) → ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+          let η := sourceWeightedPeriodTwoInput w ψ
+          let T := sourcePotentialInverse (by norm_num) η n z hz
+          w (2*n) * ‖sourceResonantBMinusFunction (by norm_num) η n z - η.fst (-(2*n)) -
+            ∑ k ∈ Finset.range m, (T (T (((T^2)^k) (sourceResonantPotentialVector (by norm_num) η n 1)))).fst (-n)‖ < ε := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hb⟩ := exists_uniform_sourceResonantParitySeries (by norm_num) w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ε hε
+  obtain ⟨M,hM⟩ := hb ε hε
+  refine ⟨M,?_⟩
+  intro m hm ψ hψ n hn z hz
+  have he := (hM m hm ψ hψ n (by omega) z hz).2.2
+  rw [sourceResonantParityPartialSumFunction_eq (by norm_num) (sourceWeightedPeriodTwoInput w ψ)
+    n 2 m 0 1 z hz] at he
+  simpa [pow_two,mul_apply_eq_comp] using he
+
+end
+end Section6UniformSeriesChecks

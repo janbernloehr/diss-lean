@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T16:18:42.879978+00:00",
-  "base_commit": "ad598b124875ed800000c4fb7d36d24d2bf9c70d",
+  "published_utc": "2026-10-28T16:55:13.042204+00:00",
+  "base_commit": "5478e23590476d257d544be5df2240be9a9b5eae",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 95,
-    "module_hash_checks": 1479,
-    "distinct_modules": 954
+    "review_records": 96,
+    "module_hash_checks": 1502,
+    "distinct_modules": 964
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "ad598b124875ed800000c4fb7d36d24d2bf9c70d",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes direct complementary-inverse, Neumann-term and full corrected-potential transpose identities on actual original derivative-domain tests, plus two integration examples.",
+    "base_commit": "5478e23590476d257d544be5df2240be9a9b5eae",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes actual scalar parity terms, geometric weighted errors, original operator-power agreement, term analyticity, full-strip uniform convergence, signed Fourier HasSum and two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8456,
-    "public_examples": 7526,
-    "transitive_NLS_declarations": 43460,
+    "build_jobs": 8458,
+    "public_examples": 7528,
+    "transitive_NLS_declarations": 43507,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4733,
-      "sha256": "d7b6653f1e0d2a7a293337c0e428aa38f9b8f110895d3f1a75b8ae7574bafe63"
+      "files": 4735,
+      "sha256": "401a32c6cd741454ee7b2f960b86e6abe0b8d71669113c66d1925063c07bd1ef"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -23462,6 +23462,212 @@
       ],
       "declaration_inventory_count": 43460,
       "source_record_sha256": "ecb954d9e13ac62e82babce4dac8471fdf4b183f17f423047b7df42b949192ac"
+    },
+    "Section6UniformSeriesSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5478e23590476d257d544be5df2240be9a9b5eae",
+      "updated_utc": "2026-10-28T16:55:13.042204+00:00",
+      "source_lines": [
+        [
+          2891,
+          2933
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-033",
+          "source_lines": [
+            2891,
+            2915
+          ],
+          "requirement": "Lemma 6.8 analytic scope and printed bounds",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The actual original coefficients have jointly analytic extensions on neighborhoods of every distant full closed strip. One potential neighborhood and one cutoff work together; this analytic assertion extends to p=1.",
+            "For 1<p<infinity, the diagonal p-power sum has the stated original unweighted pair norm, exponent min(1,p-1), and retained-boundary Fourier tail. The current interface uses floor(N/2); previously published full-cutoff and ceiling-half variants retain their recorded scopes.",
+            "The proof-consistent off-diagonal estimate sums p-powers of the actual weighted strip suprema, uses the full inner weighted pair norm, and retains the distinguished component to power p. The full signed tail is summable for every larger cutoff on one common neighborhood.",
+            "The literal display omits the left-hand p-powers and uses the positive component inside the budget. Existing original p=2 cubic witnesses refute the locally uniform unpowered budget near zero; independent reversed cubic witnesses refute the component budget near (1,0) even with the left powers restored."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_8_analytic",
+            "NLS.ZakharovShabat.sourceResonantFunctions_eq",
+            "NLS.ZakharovShabat.analyticAt_sourceCorrectionEntryFunction",
+            "NLS.ZakharovShabat.sourceDiagonalTailBudget",
+            "NLS.ZakharovShabat.sourceDiagonalTailBudget_weightedInput",
+            "NLS.ZakharovShabat.sourceOffDiagonalTailBudget",
+            "NLS.ZakharovShabat.sourceOffDiagonalTailBudget_unit",
+            "NLS.ZakharovShabat.sourceCoefficientPowerTail",
+            "NLS.ZakharovShabat.SourceCoefficientTailEstimates",
+            "NLS.ZakharovShabat.sourceLemma6_8_summability",
+            "NLS.ZakharovShabat.sourceLemma6_8_quantitative",
+            "NLS.ZakharovShabat.sourceLemma6_8_unweighted",
+            "NLS.ZakharovShabat.exists_uniform_diagonalSummability",
+            "NLS.ZakharovShabat.exists_uniform_offDiagonalSummability",
+            "NLS.ZakharovShabat.sourceCubicPotential_remainder_center",
+            "NLS.ZakharovShabat.sourceCubicPotential_remainder_norm",
+            "NLS.ZakharovShabat.not_sourceLemma6_8_unpowered_sum",
+            "NLS.ZakharovShabat.not_sourceLemma6_8_printed_sum",
+            "NLS.ZakharovShabat.sourceReverseCubicPotential_remainder_center",
+            "NLS.ZakharovShabat.sourceReverseCubicPotential_remainder_norm_sq",
+            "NLS.ZakharovShabat.not_sourceLemma6_8_positive_component_sum"
+          ],
+          "qualification": "The counterexamples refute the locally uniform statements with common cutoffs. Their potentials may depend on the chosen index; they do not prove failure beyond every individual cutoff for one fixed potential. The literal printed off-diagonal display is not marked proved. This row compares the statement and existing proof-consistent interfaces; the detailed regional power-sum proof is still pending in S6-037 through S6-041."
+        },
+        {
+          "ordered_group": "S6-034",
+          "source_lines": [
+            2917,
+            2933
+          ],
+          "requirement": "Uniform series and corrected potential vector",
+          "status": "matched",
+          "reviewed_claims": [
+            "Every scalar parity term is built from the actual T_n powers and the actual resonant potential source. Its total extension is jointly analytic in potential and lambda near each point of the full closed strip, without a contraction hypothesis.",
+            "The finite sums coincide exactly with the original source operator-power coefficients. Their physical extraction is first component at -n and second component at n; the leading remainder frequencies remain -2n and 2n.",
+            "Under shifted half-contraction, the m-term diagonal error is at most 2*c_p*norm(phi)*norm(phi_first)*2^(-m), where c_p is the Lemma 6.4 complementaryConstant. A single reversal of the signed shift is retained.",
+            "The weighted positive and negative remainder errors are at most 2^(-m) times the respective distinguished component norms. The factor w(2n) is retained; the bound uses the actual conjugated-square norm, not a replacement full-space contraction assumption.",
+            "One open convex neighborhood containing phi and zero and one distant-index cutoff give geometric rates and one epsilon truncation length for all three series, every nearby potential, both signs of the index and every point of each unbounded closed strip. The resulting TendstoUniformlyOn theorems use the original coefficient functions.",
+            "The corrected even vector is the actual inverse applied to Phi e_n. Its shifted norm is at most twice the opposite component norm. Its finite even approximants have geometric shifted-norm error.",
+            "The displayed Fourier expansion of this vector is justified by a full weighted-norm HasSum of its two physical mode sequences: first at -k and second at k. The generic mode theorem applies to the actual corrected vector at every finite p>=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.weighted_resonantCoordinate_le_shifted",
+            "NLS.ZakharovShabat.shiftedPairNorm_square_le_opNorm",
+            "NLS.ZakharovShabat.weightedResonantParityPartialSum",
+            "NLS.ZakharovShabat.weightedResonantParityPartialSum_eq",
+            "NLS.ZakharovShabat.weightedResonantA_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonant_even_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBPlus_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBMinus_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantParityTermFunction",
+            "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction",
+            "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction_eq",
+            "NLS.ZakharovShabat.analyticAt_weightedResonantParityTermFunction",
+            "NLS.ZakharovShabat.analyticAt_weightedResonantParityPartialSumFunction",
+            "NLS.ZakharovShabat.exists_uniform_resonantParitySeries_rate",
+            "NLS.ZakharovShabat.weightedMode_hasSum",
+            "NLS.ZakharovShabat.weightedSignedPairMode_hasSum",
+            "NLS.ZakharovShabat.forgetPairWeight_potentialInverse_pow",
+            "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction_forget",
+            "NLS.ZakharovShabat.sourceResonantParityTermFunction",
+            "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction",
+            "NLS.ZakharovShabat.sourceResonantParityTermFunction_eq",
+            "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction_eq",
+            "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction_weightedInput",
+            "NLS.ZakharovShabat.analyticAt_sourceResonantParityTermFunction",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantParitySeries_rate",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantParitySeries",
+            "NLS.ZakharovShabat.sourceLemma6_8_uniform_series",
+            "NLS.ZakharovShabat.weightedResonantEvenVector",
+            "NLS.ZakharovShabat.sourceResonantEvenVector",
+            "NLS.ZakharovShabat.sourceResonantEvenVector_hasSum",
+            "NLS.ZakharovShabat.shiftedPairNorm_evenCorrection_le_two",
+            "NLS.ZakharovShabat.shiftedPairNorm_source_one",
+            "NLS.ZakharovShabat.shiftedPairNorm_evenVector_one_le",
+            "NLS.ZakharovShabat.exists_uniform_resonantEvenBounds",
+            "NLS.ZakharovShabat.exists_uniform_resonantEvenApproximation"
+          ],
+          "qualification": "The analytic and convergence claims cover all finite p>=1. The quantitative power-tail estimates retain 1<p<infinity. Analyticity at boundary points comes from the actual open operator-inverse extension; uniform convergence only on a closed strip is not used alone to infer analyticity across its boundary. The error bounds hold also for m=0 and at free centers whenever their stated half-contraction holds."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ResonantSeriesApproximation.lean": "c64f06a10e99c5323d2e68ae96b8e2aa43e9789b0f7f047cd46e2a8d5d816f1a",
+        "NLS/ZakharovShabat/SourceLemma6_8UniformSeries.lean": "8cd67964fbbdc3ac06a559eeccadb00d9d2e2fd338470139cbfad2601c158a3a",
+        "NLS/ZakharovShabat/ResonantEvenBounds.lean": "8217b7c1b0db0cd101d3e9f1f506c1ccbcd683a11574848ce834aa6791963fe8",
+        "NLS/ZakharovShabat/WeightedEvenApproximation.lean": "83903b8b893ed18cae5c644261dcfe04711a8d6c1f79288408cadd58fa493aab",
+        "NLS/ZakharovShabat/ResonantSourceNorm.lean": "5d0a2dbae7fdd5a68f1058f6fdc40e16c36df8dd66e8269732b1cf5fb039edfe",
+        "NLS/ZakharovShabat/ResonantCoefficientSeries.lean": "768bdea0c87430b225a64614564dab80059dc73a27b4f9696be5bcac7b06e02a",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean": "27290e984879c5ad4afa9a3c06cb830faee6d2883648f67e41e1268355192ccb",
+        "NLS/ZakharovShabat/SourceResonantParity.lean": "8823bd69448f550a8620e065e39cccc1e7d2a67decf7b77d03070a88a446f827",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/ResonantAnalytic.lean": "f458ed946b78665a7906309317ec5f701dc517edb4eaccb14bb5d943f581a4c2",
+        "NLS/ZakharovShabat/WeightedPotentialAnalytic.lean": "1a966ba6d4ee12f4f22fdc2f7c422d63fdff55089061317ec4016d100038f000",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean": "e68558a5a4055e6cb4bfb674d7b0bc9388b2e937a54834b0e822bd985ce80189",
+        "NLS/ZakharovShabat/WeightedCorrection.lean": "caab7453c3a730157749e792e7d1d220541abbf99494cba53f056bd92c20ce90",
+        "NLS/ZakharovShabat/WeightedContraction.lean": "234b36e95b2575991dbee99b3cbad45cac787c24a7fef5411d502707b3bc2a31",
+        "NLS/ZakharovShabat/UnweightedEvenCorrection.lean": "e74ceab8f9ab9d8b2303377d8ec4f44718fcabf4f6ef54f40a3e6d897c9a653d",
+        "NLS/ZakharovShabat/SourceResonantCoefficients.lean": "fd3d56720693f3f75b03f5fff50a2cfe352063f3b5cbecc9d01e496c6a8a04bb",
+        "NLS/ZakharovShabat/SourceLemma6_8.lean": "3558d831b089a25c63755e0b2f92b34e43615c50140dc8c643e0bea0242cd5eb",
+        "NLS/ZakharovShabat/SourceLemma6_8Counterexample.lean": "154cb6c386b206d327ef3e8d318dd7c21ef6eedd8a6fda1a58c1b3045b1acc60",
+        "NLS/ZakharovShabat/SourceLemma6_8ComponentCounterexample.lean": "580cdebb8782b4c4ce1114a95dce8d4c74928cd755b3a61c71f2ca0de67cef5e",
+        "NLS/ZakharovShabat/DiagonalSummability.lean": "1dc3e81f11fa08f48bf8eea023d13c1d951dccb5a209422f341b2782a71e0836",
+        "NLS/ZakharovShabat/OffDiagonalSummability.lean": "3a89c72e2242d55ba47669306ab9c294befb8c5294cf343e3faf926ba0b53590",
+        "NLS/ZakharovShabat/SourceCubicResonantPotential.lean": "f8f14a7a999ec74375079c59c93ab86783df59480b89d2ac3a7cb2fdf9a5d18a",
+        "NLS/ZakharovShabat/SourceReverseCubicPotential.lean": "27bae1ae311e9e112a78bd265451edd151bcd8caba9a5fedc9040f002add485c"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          41
+        ],
+        "images": {
+          "Section6ProofReview-041.png": "b33633d75663339c15d2e55e22bbd4849470fb6cfc29d6853c5173599ab0f1a7"
+        }
+      },
+      "qualification": "Two further ordered passage groups are reconciled: the analytic and quantitative statement retains both previously established local off-diagonal refutations and the proof-consistent replacement, while the uniform-series proof now has explicit actual scalar rates, analytic terms, original operator powers and a signed Fourier HasSum. Twenty-three module bodies were reviewed or revalidated from the immediately preceding preparation. This does not certify every transitive proof or the remaining thirty-six groups. The detailed regional power sums, final p.44 summed constant, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. All previous corrections and reviews are preserved.",
+      "ordered_inventory_sha256": "85e01e81c0e85e0dcb676df56ec6fb64fb732dacd314f4453542d2d431e22a48",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCoefficientTailEstimates",
+        "NLS.ZakharovShabat.analyticAt_sourceCorrectionEntryFunction",
+        "NLS.ZakharovShabat.analyticAt_sourceResonantParityTermFunction",
+        "NLS.ZakharovShabat.analyticAt_weightedResonantParityPartialSumFunction",
+        "NLS.ZakharovShabat.analyticAt_weightedResonantParityTermFunction",
+        "NLS.ZakharovShabat.exists_uniform_diagonalSummability",
+        "NLS.ZakharovShabat.exists_uniform_offDiagonalSummability",
+        "NLS.ZakharovShabat.exists_uniform_resonantEvenApproximation",
+        "NLS.ZakharovShabat.exists_uniform_resonantEvenBounds",
+        "NLS.ZakharovShabat.exists_uniform_resonantParitySeries_rate",
+        "NLS.ZakharovShabat.exists_uniform_sourceResonantParitySeries",
+        "NLS.ZakharovShabat.exists_uniform_sourceResonantParitySeries_rate",
+        "NLS.ZakharovShabat.forgetPairWeight_potentialInverse_pow",
+        "NLS.ZakharovShabat.not_sourceLemma6_8_positive_component_sum",
+        "NLS.ZakharovShabat.not_sourceLemma6_8_printed_sum",
+        "NLS.ZakharovShabat.not_sourceLemma6_8_unpowered_sum",
+        "NLS.ZakharovShabat.shiftedPairNorm_evenCorrection_le_two",
+        "NLS.ZakharovShabat.shiftedPairNorm_evenVector_one_le",
+        "NLS.ZakharovShabat.shiftedPairNorm_source_one",
+        "NLS.ZakharovShabat.shiftedPairNorm_square_le_opNorm",
+        "NLS.ZakharovShabat.sourceCoefficientPowerTail",
+        "NLS.ZakharovShabat.sourceCubicPotential_remainder_center",
+        "NLS.ZakharovShabat.sourceCubicPotential_remainder_norm",
+        "NLS.ZakharovShabat.sourceDiagonalTailBudget",
+        "NLS.ZakharovShabat.sourceDiagonalTailBudget_weightedInput",
+        "NLS.ZakharovShabat.sourceLemma6_8_analytic",
+        "NLS.ZakharovShabat.sourceLemma6_8_quantitative",
+        "NLS.ZakharovShabat.sourceLemma6_8_summability",
+        "NLS.ZakharovShabat.sourceLemma6_8_uniform_series",
+        "NLS.ZakharovShabat.sourceLemma6_8_unweighted",
+        "NLS.ZakharovShabat.sourceOffDiagonalTailBudget",
+        "NLS.ZakharovShabat.sourceOffDiagonalTailBudget_unit",
+        "NLS.ZakharovShabat.sourceResonantEvenVector",
+        "NLS.ZakharovShabat.sourceResonantEvenVector_hasSum",
+        "NLS.ZakharovShabat.sourceResonantFunctions_eq",
+        "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction",
+        "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction_eq",
+        "NLS.ZakharovShabat.sourceResonantParityPartialSumFunction_weightedInput",
+        "NLS.ZakharovShabat.sourceResonantParityTermFunction",
+        "NLS.ZakharovShabat.sourceResonantParityTermFunction_eq",
+        "NLS.ZakharovShabat.sourceReverseCubicPotential_remainder_center",
+        "NLS.ZakharovShabat.sourceReverseCubicPotential_remainder_norm_sq",
+        "NLS.ZakharovShabat.weightedMode_hasSum",
+        "NLS.ZakharovShabat.weightedResonantA_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantBMinus_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantBPlus_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantEvenVector",
+        "NLS.ZakharovShabat.weightedResonantParityPartialSum",
+        "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction",
+        "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction_eq",
+        "NLS.ZakharovShabat.weightedResonantParityPartialSumFunction_forget",
+        "NLS.ZakharovShabat.weightedResonantParityPartialSum_eq",
+        "NLS.ZakharovShabat.weightedResonantParityTermFunction",
+        "NLS.ZakharovShabat.weightedResonant_even_partialSum_error",
+        "NLS.ZakharovShabat.weightedSignedPairMode_hasSum",
+        "NLS.ZakharovShabat.weighted_resonantCoordinate_le_shifted"
+      ],
+      "declaration_inventory_count": 43507,
+      "source_record_sha256": "e307d3072f30dc3d5f6fd6ba05e954fbf5676cb5450c4d9a8b90ff8d371dacc9"
     }
   }
 }

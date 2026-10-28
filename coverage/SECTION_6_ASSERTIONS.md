@@ -6,7 +6,7 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current review covers S6-024 through S6-032 (printed pp.39–41).
+The current ledger covers S6-024 through S6-034 (printed pp.39–41).
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** retains a refuted printed claim alongside its valid replacement.
 **Interpreted** makes an operator-domain interpretation explicit rather than
@@ -15,8 +15,9 @@ claiming a literal formalization of the source's adjoint notation.
 The extraction positions are newline-based and tied to SHA-256
 `64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619`.
 The source PDF and inspected page hashes, module snapshots and declaration
-references are recorded in Section6TransposeSourceComparison-2026-10-28 in
-the [source-review index](source-review-index.json). The
+references are recorded in Section6TransposeSourceComparison-2026-10-28
+and Section6UniformSeriesSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json). The
 [completion qualifications](COMPLETENESS.md) remain in force.
 
 | ID | Extraction lines | Passage | Status |
@@ -53,8 +54,8 @@ the [source-review index](source-review-index.json). The
 | S6-030 | 2799–2853 | Reality identities using the stated type assumption | matched |
 | S6-031 | 2856–2880 | Matrix form and full parity series (1.14)-(1.15) | matched |
 | S6-032 | 2883–2888 | Actual suprema on closed unbounded strips | matched |
-| S6-033 | 2891–2915 | Lemma 6.8 analytic scope and printed bounds | pending |
-| S6-034 | 2917–2933 | Uniform series and corrected potential vector | pending |
+| S6-033 | 2891–2915 | Lemma 6.8 analytic scope and printed bounds | corrected |
+| S6-034 | 2917–2933 | Uniform series and corrected potential vector | matched |
 | S6-035 | 2935–2941 | Actual diagonal coefficient sum | pending |
 | S6-036 | 2952–2970 | Diagonal Holder estimate | pending |
 | S6-037 | 2972–3036 | Diagonal near/far power sums in both exponent ranges | pending |
@@ -157,11 +158,37 @@ Public evidence: `sourceResonantDiagonalSup`, `sourceResonantBMinusSup`, `source
 
 A real-valued sSup alone is not evidence of boundedness. The cited bounded-image theorem supplies that evidence for the actual coefficient functions.
 
+### S6-033: Lemma 6.8 analytic scope and printed bounds
+
+- The actual original coefficients have jointly analytic extensions on neighborhoods of every distant full closed strip. One potential neighborhood and one cutoff work together; this analytic assertion extends to p=1.
+- For 1<p<infinity, the diagonal p-power sum has the stated original unweighted pair norm, exponent min(1,p-1), and retained-boundary Fourier tail. The current interface uses floor(N/2); previously published full-cutoff and ceiling-half variants retain their recorded scopes.
+- The proof-consistent off-diagonal estimate sums p-powers of the actual weighted strip suprema, uses the full inner weighted pair norm, and retains the distinguished component to power p. The full signed tail is summable for every larger cutoff on one common neighborhood.
+- The literal display omits the left-hand p-powers and uses the positive component inside the budget. Existing original p=2 cubic witnesses refute the locally uniform unpowered budget near zero; independent reversed cubic witnesses refute the component budget near (1,0) even with the left powers restored.
+
+Public evidence: `sourceLemma6_8_analytic`, `sourceResonantFunctions_eq`, `analyticAt_sourceCorrectionEntryFunction`, `sourceDiagonalTailBudget`, `sourceDiagonalTailBudget_weightedInput`, `sourceOffDiagonalTailBudget`, `sourceOffDiagonalTailBudget_unit`, `sourceCoefficientPowerTail`, `SourceCoefficientTailEstimates`, `sourceLemma6_8_summability`, `sourceLemma6_8_quantitative`, `sourceLemma6_8_unweighted`, `exists_uniform_diagonalSummability`, `exists_uniform_offDiagonalSummability`, `sourceCubicPotential_remainder_center`, `sourceCubicPotential_remainder_norm`, `not_sourceLemma6_8_unpowered_sum`, `not_sourceLemma6_8_printed_sum`, `sourceReverseCubicPotential_remainder_center`, `sourceReverseCubicPotential_remainder_norm_sq`, `not_sourceLemma6_8_positive_component_sum`.
+
+The counterexamples refute the locally uniform statements with common cutoffs. Their potentials may depend on the chosen index; they do not prove failure beyond every individual cutoff for one fixed potential. The literal printed off-diagonal display is not marked proved. This row compares the statement and existing proof-consistent interfaces; the detailed regional power-sum proof is still pending in S6-037 through S6-041.
+
+### S6-034: Uniform series and corrected potential vector
+
+- Every scalar parity term is built from the actual T_n powers and the actual resonant potential source. Its total extension is jointly analytic in potential and lambda near each point of the full closed strip, without a contraction hypothesis.
+- The finite sums coincide exactly with the original source operator-power coefficients. Their physical extraction is first component at -n and second component at n; the leading remainder frequencies remain -2n and 2n.
+- Under shifted half-contraction, the m-term diagonal error is at most 2*c_p*norm(phi)*norm(phi_first)*2^(-m), where c_p is the Lemma 6.4 complementaryConstant. A single reversal of the signed shift is retained.
+- The weighted positive and negative remainder errors are at most 2^(-m) times the respective distinguished component norms. The factor w(2n) is retained; the bound uses the actual conjugated-square norm, not a replacement full-space contraction assumption.
+- One open convex neighborhood containing phi and zero and one distant-index cutoff give geometric rates and one epsilon truncation length for all three series, every nearby potential, both signs of the index and every point of each unbounded closed strip. The resulting TendstoUniformlyOn theorems use the original coefficient functions.
+- The corrected even vector is the actual inverse applied to Phi e_n. Its shifted norm is at most twice the opposite component norm. Its finite even approximants have geometric shifted-norm error.
+- The displayed Fourier expansion of this vector is justified by a full weighted-norm HasSum of its two physical mode sequences: first at -k and second at k. The generic mode theorem applies to the actual corrected vector at every finite p>=1.
+
+Public evidence: `weighted_resonantCoordinate_le_shifted`, `shiftedPairNorm_square_le_opNorm`, `weightedResonantParityPartialSum`, `weightedResonantParityPartialSum_eq`, `weightedResonantA_partialSum_error`, `weightedResonant_even_partialSum_error`, `weightedResonantBPlus_partialSum_error`, `weightedResonantBMinus_partialSum_error`, `weightedResonantParityTermFunction`, `weightedResonantParityPartialSumFunction`, `weightedResonantParityPartialSumFunction_eq`, `analyticAt_weightedResonantParityTermFunction`, `analyticAt_weightedResonantParityPartialSumFunction`, `exists_uniform_resonantParitySeries_rate`, `weightedMode_hasSum`, `weightedSignedPairMode_hasSum`, `forgetPairWeight_potentialInverse_pow`, `weightedResonantParityPartialSumFunction_forget`, `sourceResonantParityTermFunction`, `sourceResonantParityPartialSumFunction`, `sourceResonantParityTermFunction_eq`, `sourceResonantParityPartialSumFunction_eq`, `sourceResonantParityPartialSumFunction_weightedInput`, `analyticAt_sourceResonantParityTermFunction`, `exists_uniform_sourceResonantParitySeries_rate`, `exists_uniform_sourceResonantParitySeries`, `sourceLemma6_8_uniform_series`, `weightedResonantEvenVector`, `sourceResonantEvenVector`, `sourceResonantEvenVector_hasSum`, `shiftedPairNorm_evenCorrection_le_two`, `shiftedPairNorm_source_one`, `shiftedPairNorm_evenVector_one_le`, `exists_uniform_resonantEvenBounds`, `exists_uniform_resonantEvenApproximation`.
+
+The analytic and convergence claims cover all finite p>=1. The quantitative power-tail estimates retain 1<p<infinity. Analyticity at boundary points comes from the actual open operator-inverse extension; uniform convergence only on a closed strip is not used alone to infer analyticity across its boundary. The error bounds hold also for m=0 and at free centers whenever their stated half-contraction holds.
+
 ## Remaining work
 
-Reconcile the other 38 passage groups, including the earlier groups already
-covered by focused reviews. Next in this forward pass are the analytic and
-power-sum proof assertions of Lemma 6.8. The final p.44 inequality with
+Reconcile the other 36 passage groups, including the earlier groups already
+covered by focused reviews. Next in this forward pass are the diagonal
+coefficient sum, Hölder estimate and regional power-sum proof assertions
+of Lemma 6.8. The final p.44 inequality with
 1/2^p on its left side remains unresolved; the corrected larger-constant
 bound and the refuted preceding middle comparison are separate results.
 This ledger does not replace the source-wide inventory or the remaining

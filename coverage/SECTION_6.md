@@ -5,6 +5,51 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.8: full-strip uniform convergence of the original scalar series
+
+[ResonantSeriesApproximation.lean](../NLS/ZakharovShabat/ResonantSeriesApproximation.lean)
+and [SourceLemma6_8UniformSeries.lean](../NLS/ZakharovShabat/SourceLemma6_8UniformSeries.lean)
+complete the uniform-series argument at the start of the proof on p.41.
+The finite sums contain the actual T_n powers and actual resonant sources.
+Their coefficient extraction retains both physical signs; they agree with the
+original source operator sums on the entire closed strip.
+
+For m terms and shifted square norm at most one half, the diagonal error is
+at most `2*c_p*‖φ‖*‖φ.fst‖*2^(-m)`, where c_p is the Lemma 6.4 constant.
+The positive and negative off-diagonal errors, multiplied by w(2n), are at
+most `2^(-m)*‖φ.snd‖` and `2^(-m)*‖φ.fst‖`, respectively. The diagonal proof
+reverses the shift once. The off-diagonal proof uses the actual conjugated
+square and preserves its one-half norm bound.
+
+`exists_uniform_sourceResonantParitySeries_rate` gives local geometric rates.
+`exists_uniform_sourceResonantParitySeries` chooses one epsilon truncation
+length for all three series, all potentials in the neighborhood and all
+sufficiently distant signed strips. `sourceLemma6_8_uniform_series` expresses
+the conclusion with `TendstoUniformlyOn` on the full products of the potential
+neighborhood and closed strip. Every scalar term and finite weighted sum is
+jointly analytic before imposing contraction. The actual coefficient extensions
+already supply analyticity near boundary points; convergence on the closed
+strip alone is not used to infer that stronger conclusion.
+
+`weightedMode_hasSum` and `weightedSignedPairMode_hasSum` also justify the
+Fourier expansion of the corrected even vector in the actual weighted norm.
+The first component uses the -k mode and the second uses k, matching the
+printed basis order. The results include p=1 and free centers under the stated
+contraction. The quantitative power-tail estimates still require 1<p<infinity.
+
+The [ordered ledger](SECTION_6_ASSERTIONS.md) now reconciles S6-033 and S6-034.
+The first retains the two existing local refutations of the printed
+quantitative off-diagonal display; it records the p-power/full-pair replacement
+without claiming a counterexample for one fixed potential beyond every
+individual cutoff. The detailed regional power-sum proof remains to be reviewed.
+Section6UniformSeriesSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records the exact evidence.
+
+Validation: `./scripts/check.sh` passes with 8,458 build jobs, 7,528
+public examples and a transitive axiom audit of 43,507 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.7: direct transpose identities and ordered source review
 
 [SourceLemma6_7ProofTranspose.lean](../NLS/ZakharovShabat/SourceLemma6_7ProofTranspose.lean)
