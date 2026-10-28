@@ -2,12 +2,13 @@
 
 This ledger follows the 47 passage groups located in the cached extraction of
 [the dissertation](https://janbernloehr.de/Download/fs16/diss.pdf). It is a
-navigation inventory with a partial assertion-level review, not a completion
-percentage. A **pending** row can already have proved results in earlier
-reviews; its whole passage has not yet been reconciled in this ledger.
+navigation inventory with an assertion-level review of the listed passages.
+Each classification retains its proof references and scope qualifications;
+the count is not a dissertation completion percentage.
 
-The current ledger covers S6-001 through S6-015 and S6-024 through S6-047
-(printed pp.35–37 and pp.39–44): 39 reviewed groups and eight pending groups.
+All 47 groups, S6-001 through S6-047 (printed pp.35–44), are reconciled:
+37 matched, nine corrected and one interpreted. Their scope qualifications
+remain part of the comparison; the broader dissertation audit is unfinished.
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** records a formula or constant adjustment with a proved valid replacement.
 Existing refutations are retained; additional refutations are not required.
@@ -42,14 +43,14 @@ Section6RootSourceComparison-2026-10-28 in the
 | S6-013 | 2442–2448 | Id-T formulation | matched |
 | S6-014 | 2449–2474 | Exact opposite component shifts | matched |
 | S6-015 | 2476–2486 | Lemma 6.4 all finite Banach exponents | matched |
-| S6-016 | 2488–2525 | Full reciprocal series, shifted Holder and Young proof | pending |
-| S6-017 | 2528–2534 | Square decay and Neumann inversion | pending |
-| S6-018 | 2544–2555 | Lemma 6.5 and exact retained-boundary tail | pending |
-| S6-019 | 2558–2578 | Actual double inverse and full double coefficients | pending |
-| S6-020 | 2580–2584 | Near/far partition | pending |
-| S6-021 | 2586–2605 | Far weighted Holder estimate | pending |
-| S6-022 | 2606–2629 | Near geometry, weight gain and tail estimate | pending |
-| S6-023 | 2631–2661 | Component recombination and printed final equality | pending |
+| S6-016 | 2488–2525 | Full reciprocal series, shifted Holder and Young proof | matched |
+| S6-017 | 2528–2534 | Square decay and Neumann inversion | matched |
+| S6-018 | 2544–2555 | Lemma 6.5 and exact retained-boundary tail | matched |
+| S6-019 | 2558–2578 | Actual double inverse and full double coefficients | matched |
+| S6-020 | 2580–2584 | Near/far partition | matched |
+| S6-021 | 2586–2605 | Far weighted Holder estimate | matched |
+| S6-022 | 2606–2629 | Near geometry, weight gain and tail estimate | matched |
+| S6-023 | 2631–2661 | Component recombination and printed final equality | corrected |
 | S6-024 | 2663–2684 | Common half-contraction and compatible Neumann inverses | matched |
 | S6-025 | 2686–2694 | Reduced map and Lemma 6.6 | matched |
 | S6-026 | 2696–2715 | Full original-domain reconstruction and converse | matched |
@@ -235,6 +236,88 @@ This reconciles the statement of Lemma 6.4. Its detailed Fourier-series, Holder 
 
 Section6PQAssertionsSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records these seven passages.
+
+### S6-016: Full reciprocal series, shifted Holder and Young proof
+
+- The weighted l1 representative of A_inverse Q has unchanged actual derivative-domain coefficients. Its full signed Fourier series converges with the literal denominator z-m*pi and the exclusion m!=n.
+- Each scalar shifted norm is the exact absolutely weighted reciprocal sum. Holder bounds it by the conjugate punctured-lattice norm times the input shifted norm; for p>1 that lattice norm is the displayed reciprocal power sum.
+- Young bounds the actual T output power by the two scalar l1 powers. Holder recombines these with exactly the opposite input shift and the original full pair norm.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma64Vector_original_coefficients`, `NLS.ZakharovShabat.sourceLemma64Vector_original_hasSum`, `NLS.ZakharovShabat.sourceLemma64Proof_shifted_sum`, `NLS.ZakharovShabat.sourceLemma64Proof_holder_display`, `NLS.ZakharovShabat.sourceLemma64Proof_young_power`, `NLS.ZakharovShabat.sourceLemma64Proof_holder_power`, `NLS.ZakharovShabat.sourceLemma6_4_one`, `NLS.ZakharovShabat.sourceLemma6_4_two`.
+
+The literal finite conjugate-power formula is restricted to p>1; the general Holder map and the separately proved constant-one estimate cover p=1. Fourier HasSum convergence is in the original weighted l1 norm with identification of original-domain coefficients.
+
+### S6-017: Square decay and Neumann inversion
+
+- Two opposite-shift applications restore the input shift. The squared operator in that shifted norm is bounded for every finite Banach exponent.
+- For every positive epsilon, one potential neighborhood and one cutoff bound the squared norm by epsilon uniformly throughout all distant closed strips.
+- The squared Neumann series converges as a series of operators on the original weighted space. Its factorization supplies both inverse identities for Id-T and the unique actual-domain Q solution.
+
+Public evidence: `NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_le`, `NLS.ZakharovShabat.exists_uniform_complementarySquare_bound`, `NLS.ZakharovShabat.weightedEvenCorrection_hasSum`, `NLS.ZakharovShabat.weightedCorrection_formula`, `NLS.ZakharovShabat.weightedCorrection_left`, `NLS.ZakharovShabat.weightedCorrection_right`, `NLS.ZakharovShabat.exists_uniform_unique_weightedQSolution`.
+
+Smallness is imposed on the shifted square; no unsupported smallness assumption on T itself is introduced.
+
+### S6-018: Lemma 6.5 and exact retained-boundary tail
+
+- For every source weight, every finite p>=1 and every point of each full closed strip, the induced shifted square norm has the displayed original-norm budget with an exponent-only constant.
+- The potential remainder retains exactly |k|>=|n|, including the boundary, and its term is divided by w(n). The bracket in this estimate is 1+|n|.
+- The conjugated operator norm is characterized by its action on all inputs in the exact source shifted pair norm.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma6_5`, `NLS.ZakharovShabat.sourceSquareNorm_le_iff`, `NLS.ZakharovShabat.weightedPairFourierTail_fst`, `NLS.ZakharovShabat.weightedPairFourierTail_snd`, `NLS.ZakharovShabat.weightedSquareBound_eq_source`.
+
+The constant is an explicit valid choice, without an optimality claim. The pi-scaled Sobolev example uses a different argument of the same bracket and does not change this integer-index decay.
+
+### S6-019: Actual double inverse and full double coefficients
+
+- The vector is the actual A_inverse Q Phi A_inverse Q f on the original derivative domain. Both signed coefficient series retain the two excluded indices and both complex denominators.
+- The full double Fourier series converges absolutely in the original weighted l1 space. Its representative has exactly the original-domain coefficients.
+- The literal weighted distance-denominator majorant is jointly summable and bounds both scalar components with their original opposite shifts.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma65Proof_original_restricted`, `NLS.ZakharovShabat.sourceLemma65Vector_summable`, `NLS.ZakharovShabat.sourceLemma65Vector_original_coefficients`, `NLS.ZakharovShabat.sourceLemma65Vector_original_restricted_hasSum`, `NLS.ZakharovShabat.sourceLemma65ProofTerm_summable`, `NLS.ZakharovShabat.sourceLemma65Proof_original_majorants`.
+
+No stronger absolute convergence in the derivative-domain norm is asserted. The formulas hold at the free center because the resonant denominators are excluded.
+
+### S6-020: Near/far partition
+
+- The far region uses a strict half-radius inequality in at least one of the two distances; the near region uses both weak inequalities.
+- They partition the admissible nonresonant index pairs, and the full convergent majorant splits into their two subsums.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma65ProofNear`, `NLS.ZakharovShabat.sourceLemma65ProofFar`, `NLS.ZakharovShabat.sourceLemma65ProofFar_iff`, `NLS.ZakharovShabat.sourceLemma65ProofTerm_split`.
+
+The printed complement is taken inside k,l!=n. Boundary points belong to the near region.
+
+### S6-021: Far weighted Holder estimate
+
+- Submultiplicativity gives the exact source shifted weight comparison. The selected Holder display retains both its reciprocal moment and weighted numerator moment.
+- The full numerator moment factors into the original scalar norms. The selected far reciprocal moment is bounded by two one-factor tails, giving the printed half-bracket decay.
+- The p=1 endpoint uses a uniform reciprocal bound, and the zero strip is included. One explicit positive exponent-only proof constant supplies the estimate.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma65Proof_submultiplicative`, `NLS.ZakharovShabat.sourceLemma65Proof_far_holder`, `NLS.ZakharovShabat.sourceLemma65ProofNumerator_moment`, `NLS.ZakharovShabat.sourceLemma65Moment_far_le`, `NLS.ZakharovShabat.sourceLemma65Moment_far_bracket`, `NLS.ZakharovShabat.sourceLemma65Moment_far_all`, `NLS.ZakharovShabat.sourceLemma65ProofConstant`.
+
+The chosen Lemma 6.5 proof constant is enlarged. It does not replace the separately proved c_2=2 in Lemma 6.4.
+
+### S6-022: Near geometry, weight gain and tail estimate
+
+- Opposite near windows force the potential frequency into the retained-boundary tail. The relevant output and input distance bounds give the source weight gain by monotonicity.
+- The near Holder display retains 1/w(n) and its selected numerator moment. Replacing the potential by its exact remainder leaves the entire near subsum unchanged.
+- The near estimate uses the same exponent-only proof constant, including p=1, and reflection supplies the other physical orientation.
+
+Public evidence: `NLS.ZakharovShabat.resonantWindows_tail`, `NLS.ZakharovShabat.resonantWindows_output_distance`, `NLS.ZakharovShabat.resonantWindow_input_distance`, `NLS.ZakharovShabat.sourceLemma65ProofNear_weight`, `NLS.ZakharovShabat.sourceLemma65ProofNear_tail`, `NLS.ZakharovShabat.sourceLemma65Proof_near_holder`, `NLS.ZakharovShabat.sourceLemma65Proof_near_tail_eq`, `NLS.ZakharovShabat.sourceLemma65Moment_near_all`, `NLS.ZakharovShabat.sourceLemma65Proof_true_reflection`.
+
+All half-radius equalities and the tail boundary are retained; the source weight need not satisfy w(0)=1.
+
+### S6-023: Component recombination and printed final equality
+
+- The near and far estimates combine with exactly the factor 2^(1/p), the original scalar norms, both opposite input shifts and the exact potential remainder.
+- One positive exponent-only constant c_p=sqrt(D_p) realizes the proof estimates, with c_p squared equal to the existing double-inverse constant.
+- The final Young display is a proved chain of two inequalities in the original shifted pair norm. The printed second equality is replaced by the valid upper bound.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma65Moment_half_to_full`, `NLS.ZakharovShabat.sourceLemma65Moment_recombine`, `NLS.ZakharovShabat.sourceLemma65Moment_recombine_true`, `NLS.ZakharovShabat.sourceLemma65Moment_original_bounds`, `NLS.ZakharovShabat.sourceLemma65ProofConstant_pos`, `NLS.ZakharovShabat.sourceLemma65ProofConstant_sq`, `NLS.ZakharovShabat.sourceLemma65Proof_corrected_chain`.
+
+Retain the established correction and historical review. No additional refutation is needed or added. The main Lemma 6.5 estimate remains valid.
+
+Section6RemainingProofSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records these eight passages.
 
 ### S6-024: Common half-contraction and compatible Neumann inverses
 
@@ -503,7 +586,7 @@ supporting results; they are not needed for the corrected-constant proof.
 
 ## Remaining work
 
-Reconcile the remaining eight passage groups, S6-016 through S6-023, using their
-existing focused reviews and current public proofs. Then continue through
-the dissertation in source order. The source-wide inventory, exact cited
-Birkhoff construction and Appendix G.2 interpretation remain unfinished.
+Continue with Section 7 and then the later sections in source order.
+The source-wide inventory, exact cited Birkhoff construction and Appendix
+G.2 interpretation remain unfinished. Preserve each reviewed group's exact
+scope and corrections when using this ledger in the overall assessment.

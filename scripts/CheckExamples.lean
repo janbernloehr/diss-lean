@@ -70942,3 +70942,67 @@ example (w : SpectralWeight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
     norm_complementaryFreeInverse_le (by simp) w.toWeight n z hz f⟩
 
 end Section6PQAssertionsChecks
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section6Lemma64ProofExample
+local instance : Fact ((1 : ℝ≥0∞) ≤ 2) := ⟨by norm_num⟩
+
+-- The exact reciprocal series and both proof steps retain the Hilbert constant two.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 2)
+    (i n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    let g := sourceLemma64Vector_original (by simp) w f n z hz
+    HasSum (fun k : ℤ => if k = n then 0 else
+      resonantSynthesis (p := 1) w.toWeight k
+        ![f.fst.val (-k)/(z-(Real.pi:ℂ)*k),f.snd.val k/(z-(Real.pi:ℂ)*k)]) g ∧
+    w.shiftedPairNorm i (weightedPotentialInverse (by simp) w φ n z hz f)^2 ≤
+      ‖φ‖^2 * (w.shiftedNorm (-i) g.snd^2 + w.shiftedNorm i g.fst^2) ∧
+    ‖φ‖^2 * (w.shiftedNorm (-i) g.snd^2 + w.shiftedNorm i g.fst^2) ≤
+      4*‖φ‖^2*w.shiftedPairNorm (-i) f^2 := by
+  refine ⟨sourceLemma64Vector_original_hasSum (by simp) w f n z hz,?_,?_⟩
+  · simpa only [ENNReal.toReal_ofNat,Real.rpow_two] using
+      sourceLemma64Proof_young_power (by simp) w φ f i n z hz
+  · simpa only [ENNReal.toReal_ofNat,Real.rpow_two,Coeff.complementaryConstant_two,
+      show (2:ℝ)^2 = 4 by norm_num] using
+      sourceLemma64Proof_holder_power (by simp) w φ f i n z hz
+
+end Section6Lemma64ProofExample
+
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section6RemainingProofExamples
+
+-- Both resonant punctures are retained at the free center of a negative strip, including p=1.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) :
+    HasSum (fun kl : ℤ × ℤ => if kl.1 = -2 ∨ kl.2 = -2 then 0 else
+      (WeightedCoeffPair.toMax w.toWeight 1).symm
+        (weightedMode (p := 1) w.toWeight (-kl.1)
+          (φ.fst.val (-(kl.1+kl.2))*f.snd.val kl.2 /
+            (((Real.pi:ℂ)*(-2)-(Real.pi:ℂ)*kl.1)*((Real.pi:ℂ)*(-2)-(Real.pi:ℂ)*kl.2))),
+         weightedMode (p := 1) w.toWeight kl.1
+          (φ.snd.val (kl.1+kl.2)*f.fst.val (-kl.2) /
+            (((Real.pi:ℂ)*(-2)-(Real.pi:ℂ)*kl.1)*((Real.pi:ℂ)*(-2)-(Real.pi:ℂ)*kl.2)))))
+      (sourceLemma65Vector_original (by simp) w φ f (-2) ((Real.pi:ℂ)*(-2))
+        (by simpa using center_mem_resonantStrip (-2))) := by
+  exact sourceLemma65Vector_original_restricted_hasSum (by simp) w φ f (-2)
+    ((Real.pi:ℂ)*(-2)) (by simpa using center_mem_resonantStrip (-2))
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The same chosen exponent-only constant bounds the two Young steps at a non-Hilbert exponent.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    w.shiftedPairNorm n (weightedPotentialInverse (by simp) w φ n z hz
+      (weightedPotentialInverse (by simp) w φ n z hz f))^3 ≤
+        sourceLemma65YoungMajorant (by simp) w φ n z hz f ∧
+    sourceLemma65YoungMajorant (by simp) w φ n z hz f ≤
+      sourceLemma65PrintedProofBudget (sourceLemma65ProofConstant (p := 3) (by simp)) w φ n f := by
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_ofNat] using
+    sourceLemma65Proof_corrected_chain (by simp) w φ f n z hz
+
+end Section6RemainingProofExamples

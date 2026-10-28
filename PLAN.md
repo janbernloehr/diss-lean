@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: the original P/Q topology and equation
+## Current milestone: the remaining Section 6 proof passages
+
+The literal reciprocal Fourier series in Lemma 6.4 now converges in the
+original weighted l1 pair norm, with unchanged original-domain coefficients.
+The exact scalar reciprocal sums, conjugate-lattice Holder estimate and
+Young p-power step retain the opposite shifts and the full pair norm.
+The general Holder map includes p=1; the finite conjugate moment formula
+requires p>1. The Hilbert constant remains two.
+
+The remaining Lemma 6.5 passages are reconciled with their existing proofs:
+the actual double series, retained-boundary Fourier tail, near/far partition,
+selected reciprocal moments and both component estimates. The final display
+uses the proved chain of inequalities and the explicit exponent-only constant.
+No additional counterexample is added.
+
+Validation: `./scripts/check.sh` passes with 8,497 build jobs, 7,564
+public examples and a transitive axiom audit of 44,193 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+All 47 groups in the ordered Section 6 ledger are now reconciled: 37 matched,
+nine corrected and one interpreted. These classifications retain their exact
+scope and are not a dissertation completion certificate. Continue with
+Section 7. The source-wide assertion inventory, exact cited 2014 Birkhoff
+construction and Appendix G.2 norm interpretation remain unfinished.
+
+Earlier milestone entries below retain their historical validation and limitations.
+
+## Previous milestone: the original P/Q topology and equation
 
 The original P/Q decomposition now uses the literal two-mode resonant span
 and the closed span of all other signed Fourier modes. Their ranges agree

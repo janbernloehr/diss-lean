@@ -4772,3 +4772,4 @@ import NLS.SequenceSpaces.PiSobolevEquivalence
 import NLS.ZakharovShabat.SourcePeriodicBoundedLabels
 import NLS.ZakharovShabat.SourcePQTopology
 import NLS.ZakharovShabat.SourceQTransformation
+import NLS.ZakharovShabat.SourceLemma6_4Proof

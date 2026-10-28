@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T22:47:57.052698+00:00",
-  "base_commit": "868cf0ae69353aac4da9ff4b5f2c68c5db348593",
+  "published_utc": "2026-10-28T23:11:12.845793+00:00",
+  "base_commit": "cf4f80cfb24952dde1c665c59ad83aa7afa02f06",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 105,
-    "module_hash_checks": 1721,
-    "distinct_modules": 1076
+    "review_records": 106,
+    "module_hash_checks": 1740,
+    "distinct_modules": 1077
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "868cf0ae69353aac4da9ff4b5f2c68c5db348593",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes literal closed P/Q Fourier spans and topological decomposition for every finite Banach exponent, the original-domain transformed complementary equation and original free-resolvent compatibility, plus three integration examples. S6-009 through S6-015 are reconciled; the broader dissertation audit remains incomplete.",
+    "base_commit": "cf4f80cfb24952dde1c665c59ad83aa7afa02f06",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal weighted l1 reciprocal Fourier series, original-domain coefficients, exact Holder display and Young p-power steps for Lemma 6.4, plus three integration examples. S6-016 through S6-023 are reconciled, completing all 47 ordered Section 6 groups with their scope qualifications and corrections; the broader dissertation audit remains incomplete.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8496,
-    "public_examples": 7561,
-    "transitive_NLS_declarations": 44182,
+    "build_jobs": 8497,
+    "public_examples": 7564,
+    "transitive_NLS_declarations": 44193,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4773,
-      "sha256": "4f821c7a66683a7305b87391ddd518a935acb6f85783f281068f6bcca0ade0be"
+      "files": 4774,
+      "sha256": "fa7cb84ea4e4ee4605fe2c4fc9be5b6f216b20833de55d8738b7ecdb599d00b0"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -25758,6 +25758,338 @@
       ],
       "declaration_inventory_count": 44182,
       "source_record_sha256": "4c2bee39196b417d50f01b533721e02e70878b5e94945fbb6514c168b4edcf5d"
+    },
+    "Section6RemainingProofSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "cf4f80cfb24952dde1c665c59ad83aa7afa02f06",
+      "updated_utc": "2026-10-28T23:11:12.845793+00:00",
+      "source_lines": [
+        [
+          2488,
+          2525
+        ],
+        [
+          2528,
+          2534
+        ],
+        [
+          2544,
+          2555
+        ],
+        [
+          2558,
+          2578
+        ],
+        [
+          2580,
+          2584
+        ],
+        [
+          2586,
+          2605
+        ],
+        [
+          2606,
+          2629
+        ],
+        [
+          2631,
+          2661
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-016",
+          "source_lines": [
+            2488,
+            2525
+          ],
+          "requirement": "Full reciprocal series, shifted Holder and Young proof",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The weighted l1 representative of A_inverse Q has unchanged actual derivative-domain coefficients. Its full signed Fourier series converges with the literal denominator z-m*pi and the exclusion m!=n.",
+            "Each scalar shifted norm is the exact absolutely weighted reciprocal sum. Holder bounds it by the conjugate punctured-lattice norm times the input shifted norm; for p>1 that lattice norm is the displayed reciprocal power sum.",
+            "Young bounds the actual T output power by the two scalar l1 powers. Holder recombines these with exactly the opposite input shift and the original full pair norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma64Vector_original_coefficients",
+            "NLS.ZakharovShabat.sourceLemma64Vector_original_hasSum",
+            "NLS.ZakharovShabat.sourceLemma64Proof_shifted_sum",
+            "NLS.ZakharovShabat.sourceLemma64Proof_holder_display",
+            "NLS.ZakharovShabat.sourceLemma64Proof_young_power",
+            "NLS.ZakharovShabat.sourceLemma64Proof_holder_power",
+            "NLS.ZakharovShabat.sourceLemma6_4_one",
+            "NLS.ZakharovShabat.sourceLemma6_4_two"
+          ],
+          "qualification": "The literal finite conjugate-power formula is restricted to p>1; the general Holder map and the separately proved constant-one estimate cover p=1. Fourier HasSum convergence is in the original weighted l1 norm with identification of original-domain coefficients."
+        },
+        {
+          "ordered_group": "S6-017",
+          "source_lines": [
+            2528,
+            2534
+          ],
+          "requirement": "Square decay and Neumann inversion",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Two opposite-shift applications restore the input shift. The squared operator in that shifted norm is bounded for every finite Banach exponent.",
+            "For every positive epsilon, one potential neighborhood and one cutoff bound the squared norm by epsilon uniformly throughout all distant closed strips.",
+            "The squared Neumann series converges as a series of operators on the original weighted space. Its factorization supplies both inverse identities for Id-T and the unique actual-domain Q solution."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_le",
+            "NLS.ZakharovShabat.exists_uniform_complementarySquare_bound",
+            "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+            "NLS.ZakharovShabat.weightedCorrection_formula",
+            "NLS.ZakharovShabat.weightedCorrection_left",
+            "NLS.ZakharovShabat.weightedCorrection_right",
+            "NLS.ZakharovShabat.exists_uniform_unique_weightedQSolution"
+          ],
+          "qualification": "Smallness is imposed on the shifted square; no unsupported smallness assumption on T itself is introduced."
+        },
+        {
+          "ordered_group": "S6-018",
+          "source_lines": [
+            2544,
+            2555
+          ],
+          "requirement": "Lemma 6.5 and exact retained-boundary tail",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every source weight, every finite p>=1 and every point of each full closed strip, the induced shifted square norm has the displayed original-norm budget with an exponent-only constant.",
+            "The potential remainder retains exactly |k|>=|n|, including the boundary, and its term is divided by w(n). The bracket in this estimate is 1+|n|.",
+            "The conjugated operator norm is characterized by its action on all inputs in the exact source shifted pair norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_5",
+            "NLS.ZakharovShabat.sourceSquareNorm_le_iff",
+            "NLS.ZakharovShabat.weightedPairFourierTail_fst",
+            "NLS.ZakharovShabat.weightedPairFourierTail_snd",
+            "NLS.ZakharovShabat.weightedSquareBound_eq_source"
+          ],
+          "qualification": "The constant is an explicit valid choice, without an optimality claim. The pi-scaled Sobolev example uses a different argument of the same bracket and does not change this integer-index decay."
+        },
+        {
+          "ordered_group": "S6-019",
+          "source_lines": [
+            2558,
+            2578
+          ],
+          "requirement": "Actual double inverse and full double coefficients",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The vector is the actual A_inverse Q Phi A_inverse Q f on the original derivative domain. Both signed coefficient series retain the two excluded indices and both complex denominators.",
+            "The full double Fourier series converges absolutely in the original weighted l1 space. Its representative has exactly the original-domain coefficients.",
+            "The literal weighted distance-denominator majorant is jointly summable and bounds both scalar components with their original opposite shifts."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Proof_original_restricted",
+            "NLS.ZakharovShabat.sourceLemma65Vector_summable",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_coefficients",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_restricted_hasSum",
+            "NLS.ZakharovShabat.sourceLemma65ProofTerm_summable",
+            "NLS.ZakharovShabat.sourceLemma65Proof_original_majorants"
+          ],
+          "qualification": "No stronger absolute convergence in the derivative-domain norm is asserted. The formulas hold at the free center because the resonant denominators are excluded."
+        },
+        {
+          "ordered_group": "S6-020",
+          "source_lines": [
+            2580,
+            2584
+          ],
+          "requirement": "Near/far partition",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The far region uses a strict half-radius inequality in at least one of the two distances; the near region uses both weak inequalities.",
+            "They partition the admissible nonresonant index pairs, and the full convergent majorant splits into their two subsums."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65ProofNear",
+            "NLS.ZakharovShabat.sourceLemma65ProofFar",
+            "NLS.ZakharovShabat.sourceLemma65ProofFar_iff",
+            "NLS.ZakharovShabat.sourceLemma65ProofTerm_split"
+          ],
+          "qualification": "The printed complement is taken inside k,l!=n. Boundary points belong to the near region."
+        },
+        {
+          "ordered_group": "S6-021",
+          "source_lines": [
+            2586,
+            2605
+          ],
+          "requirement": "Far weighted Holder estimate",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Submultiplicativity gives the exact source shifted weight comparison. The selected Holder display retains both its reciprocal moment and weighted numerator moment.",
+            "The full numerator moment factors into the original scalar norms. The selected far reciprocal moment is bounded by two one-factor tails, giving the printed half-bracket decay.",
+            "The p=1 endpoint uses a uniform reciprocal bound, and the zero strip is included. One explicit positive exponent-only proof constant supplies the estimate."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Proof_submultiplicative",
+            "NLS.ZakharovShabat.sourceLemma65Proof_far_holder",
+            "NLS.ZakharovShabat.sourceLemma65ProofNumerator_moment",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_le",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_bracket",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_all",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant"
+          ],
+          "qualification": "The chosen Lemma 6.5 proof constant is enlarged. It does not replace the separately proved c_2=2 in Lemma 6.4."
+        },
+        {
+          "ordered_group": "S6-022",
+          "source_lines": [
+            2606,
+            2629
+          ],
+          "requirement": "Near geometry, weight gain and tail estimate",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Opposite near windows force the potential frequency into the retained-boundary tail. The relevant output and input distance bounds give the source weight gain by monotonicity.",
+            "The near Holder display retains 1/w(n) and its selected numerator moment. Replacing the potential by its exact remainder leaves the entire near subsum unchanged.",
+            "The near estimate uses the same exponent-only proof constant, including p=1, and reflection supplies the other physical orientation."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.resonantWindows_tail",
+            "NLS.ZakharovShabat.resonantWindows_output_distance",
+            "NLS.ZakharovShabat.resonantWindow_input_distance",
+            "NLS.ZakharovShabat.sourceLemma65ProofNear_weight",
+            "NLS.ZakharovShabat.sourceLemma65ProofNear_tail",
+            "NLS.ZakharovShabat.sourceLemma65Proof_near_holder",
+            "NLS.ZakharovShabat.sourceLemma65Proof_near_tail_eq",
+            "NLS.ZakharovShabat.sourceLemma65Moment_near_all",
+            "NLS.ZakharovShabat.sourceLemma65Proof_true_reflection"
+          ],
+          "qualification": "All half-radius equalities and the tail boundary are retained; the source weight need not satisfy w(0)=1."
+        },
+        {
+          "ordered_group": "S6-023",
+          "source_lines": [
+            2631,
+            2661
+          ],
+          "requirement": "Component recombination and printed final equality",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The near and far estimates combine with exactly the factor 2^(1/p), the original scalar norms, both opposite input shifts and the exact potential remainder.",
+            "One positive exponent-only constant c_p=sqrt(D_p) realizes the proof estimates, with c_p squared equal to the existing double-inverse constant.",
+            "The final Young display is a proved chain of two inequalities in the original shifted pair norm. The printed second equality is replaced by the valid upper bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Moment_half_to_full",
+            "NLS.ZakharovShabat.sourceLemma65Moment_recombine",
+            "NLS.ZakharovShabat.sourceLemma65Moment_recombine_true",
+            "NLS.ZakharovShabat.sourceLemma65Moment_original_bounds",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant_pos",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant_sq",
+            "NLS.ZakharovShabat.sourceLemma65Proof_corrected_chain"
+          ],
+          "qualification": "Retain the established correction and historical review. No additional refutation is needed or added. The main Lemma 6.5 estimate remains valid."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_5ProofSeries.lean": "05780663d100fccccee5e9ef3979f73cd20a1fab030129c47adb03aaddfb27f4",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofExpansion.lean": "5167501f8d15699fbd25ba7e022537238088c60f281c4f5c318c96ce096e2413",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofMoments.lean": "4f53e174d711d2ae918724273e7717cc4ea6136cba73abb331d984635fed7090",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean": "f0cadd4dcd5c6b120e636146186262b7625a6986abf10da2afcdb19da664476f",
+        "NLS/ZakharovShabat/SourceLemma6_5.lean": "38dfce5a69a3a65ac93a10637414e9854abf31e2f14d4c64554bce8d559b9fca",
+        "NLS/ZakharovShabat/WeightedContraction.lean": "234b36e95b2575991dbee99b3cbad45cac787c24a7fef5411d502707b3bc2a31",
+        "NLS/ZakharovShabat/WeightedCorrection.lean": "caab7453c3a730157749e792e7d1d220541abbf99494cba53f056bd92c20ce90",
+        "NLS/ZakharovShabat/ResonantWindowGeometry.lean": "a3dfadd1ada1ad9dd1039c76a72169cf3683578f9495e7cbded1e731b37a4b57",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean": "e68558a5a4055e6cb4bfb674d7b0bc9388b2e937a54834b0e822bd985ce80189",
+        "NLS/ZakharovShabat/ComplementaryL1.lean": "e6f3ee57eeaa8b8340ba6548635590ec4dee1048c7f231f9e951ed9724527046",
+        "NLS/ZakharovShabat/ComplementaryShiftedNorm.lean": "39175c5588fd51fc6773cc74e0107ab568b5fcf6d2be15e2c73d1b28c6a7abab",
+        "NLS/ZakharovShabat/WeightedSquareEstimate.lean": "db292d04d99cb5452b995e6825925d185ef13602e67c0b3ce745f51701dc1136",
+        "NLS/SequenceSpaces/WeightedFourierTail.lean": "f5b4534d4850b765b7b3d319729fee4441f50500b7361900a72dd8e2201cdde9",
+        "NLS/SequenceSpaces/CompactPuncturedKernel.lean": "e344d40f1aa94b39e037d059614b8a683332ee99a17f36994cecfe7dfc56c911",
+        "NLS/ZakharovShabat/SourcePQTopology.lean": "ea863d35c70459890420634071b2664e3ba69049a62c5716c05037b2720dfd1e",
+        "NLS/ZakharovShabat/SourceLemma6_4.lean": "388b9e23d5417aaa440a6ff8fb4ecba5704af2124616599fa6b09fcd83b7c36a",
+        "NLS/ZakharovShabat/WeightedQEquation.lean": "3abdf8d3d40a2a2247f97835839f0259216dedf4c5afbca3fa883e581d69f8c6",
+        "NLS/SequenceSpaces/PuncturedLattice.lean": "dd7910dc04ab5f23fc841db7aa6f0b063b821970b0e03e48a54b2df1cdad03a2",
+        "NLS/ZakharovShabat/SourceLemma6_4Proof.lean": "c1ff5f3f09920b082a9faf1792e807211714bf265c33a7a1146223ce8fa74fd7"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "ordered_inventory_sha256": "a4526b4dae4137f1245748b62be91d10ca20fd3a78026fb60037c18d52720c63",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          37,
+          38,
+          39
+        ],
+        "images": {
+          "Section6ProofReview-037.png": "8cd6112d9bb785228184244b9a45361e1b8d4797e0d7e4c31157129c830871cf",
+          "Section6ProofReview-038.png": "8543fbdab3dec65515f32e846c110e617f7673dd24e3c1ebb8d3af245ee52f4a",
+          "Section6ProofReview-039.png": "42c556f38be28145bfa4d5f0bbe7795f98f95787298b93d3e13126d81ceda4ad"
+        }
+      },
+      "qualification": "Printed pp.37-39 and the reciprocal-series, Holder, near/far and Young displays were inspected. The new literal single-series interface and existing detailed double-series proofs reconcile S6-016 through S6-023, retaining the endpoint, exact shifts, tail boundary, free centers and original domain coefficients. The final printed equality is a corrected inequality. No further counterexamples are added. All 47 ordered Section 6 groups are reconciled, with their exact scope and corrections; this is not a source-wide or transitive semantic completion certificate. The exact cited 2014 Birkhoff construction and Appendix G.2 interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.exists_uniform_complementarySquare_bound",
+        "NLS.ZakharovShabat.exists_uniform_unique_weightedQSolution",
+        "NLS.ZakharovShabat.resonantWindow_input_distance",
+        "NLS.ZakharovShabat.resonantWindows_output_distance",
+        "NLS.ZakharovShabat.resonantWindows_tail",
+        "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_le",
+        "NLS.ZakharovShabat.sourceLemma64Proof_holder_display",
+        "NLS.ZakharovShabat.sourceLemma64Proof_holder_power",
+        "NLS.ZakharovShabat.sourceLemma64Proof_shifted_sum",
+        "NLS.ZakharovShabat.sourceLemma64Proof_young_power",
+        "NLS.ZakharovShabat.sourceLemma64Vector_original_coefficients",
+        "NLS.ZakharovShabat.sourceLemma64Vector_original_hasSum",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_all",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_bracket",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_le",
+        "NLS.ZakharovShabat.sourceLemma65Moment_half_to_full",
+        "NLS.ZakharovShabat.sourceLemma65Moment_near_all",
+        "NLS.ZakharovShabat.sourceLemma65Moment_original_bounds",
+        "NLS.ZakharovShabat.sourceLemma65Moment_recombine",
+        "NLS.ZakharovShabat.sourceLemma65Moment_recombine_true",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant_pos",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant_sq",
+        "NLS.ZakharovShabat.sourceLemma65ProofFar",
+        "NLS.ZakharovShabat.sourceLemma65ProofFar_iff",
+        "NLS.ZakharovShabat.sourceLemma65ProofNear",
+        "NLS.ZakharovShabat.sourceLemma65ProofNear_tail",
+        "NLS.ZakharovShabat.sourceLemma65ProofNear_weight",
+        "NLS.ZakharovShabat.sourceLemma65ProofNumerator_moment",
+        "NLS.ZakharovShabat.sourceLemma65ProofTerm_split",
+        "NLS.ZakharovShabat.sourceLemma65ProofTerm_summable",
+        "NLS.ZakharovShabat.sourceLemma65Proof_corrected_chain",
+        "NLS.ZakharovShabat.sourceLemma65Proof_far_holder",
+        "NLS.ZakharovShabat.sourceLemma65Proof_near_holder",
+        "NLS.ZakharovShabat.sourceLemma65Proof_near_tail_eq",
+        "NLS.ZakharovShabat.sourceLemma65Proof_original_majorants",
+        "NLS.ZakharovShabat.sourceLemma65Proof_original_restricted",
+        "NLS.ZakharovShabat.sourceLemma65Proof_submultiplicative",
+        "NLS.ZakharovShabat.sourceLemma65Proof_true_reflection",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_coefficients",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_restricted_hasSum",
+        "NLS.ZakharovShabat.sourceLemma65Vector_summable",
+        "NLS.ZakharovShabat.sourceLemma6_4_one",
+        "NLS.ZakharovShabat.sourceLemma6_4_two",
+        "NLS.ZakharovShabat.sourceLemma6_5",
+        "NLS.ZakharovShabat.sourceSquareNorm_le_iff",
+        "NLS.ZakharovShabat.weightedCorrection_formula",
+        "NLS.ZakharovShabat.weightedCorrection_left",
+        "NLS.ZakharovShabat.weightedCorrection_right",
+        "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+        "NLS.ZakharovShabat.weightedPairFourierTail_fst",
+        "NLS.ZakharovShabat.weightedPairFourierTail_snd",
+        "NLS.ZakharovShabat.weightedSquareBound_eq_source"
+      ],
+      "declaration_inventory_count": 44193,
+      "source_record_sha256": "baec4aed79452fce933efef71a4fae23250b33ea9f29264335c5ee9cdc208ef7"
     }
   }
 }

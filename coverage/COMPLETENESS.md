@@ -117,19 +117,19 @@ cutoff for every larger cutoff. The original weighted pair norm and additive
 leading Fourier tail remain in the Lemma 6.8 budget. This supplies a valid
 corrected constant without requiring a refutation of the printed factor.
 
-The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now reconciles 39
-passage groups, S6-001 through S6-015 and S6-024 through S6-047: 30 matched,
-eight corrected and one interpreted. The literal closed P/Q spans and
-topological decomposition include p=1. The transformed Q equation retains
-the actual derivative domain, and the original free-resolvent identification
-retains its exclusion of the free lattice. The initial labels, exact Sobolev
-normalization and earlier corrected quantitative budgets remain.
+The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now reconciles all
+47 passage groups: 37 matched, nine corrected and one interpreted. The literal
+single reciprocal Fourier series and Holder–Young proof retain the original
+weighted l1 representative, domain coefficients, opposite shifts and Hilbert
+constant two. The double-series proof retains the exact remainder, selected
+near/far moments and the corrected final inequality. Earlier spectral,
+normalization and quantitative-budget qualifications remain in force.
 
-Eight groups still need ordered reconciliation, S6-016 through S6-023.
-These counts are navigation, not a completion percentage or a substitute for
-the source-wide assertion inventory. Constant corrections may be recorded
-with a proved valid replacement; additional counterexamples are not required.
-Continue through Section 6, then later sections in source order.
+This completes that ordered comparison, not the source-wide inventory or a
+transitive semantic audit of all dependencies. Counts are navigation, not a
+completion percentage. Constant corrections need a proved valid replacement;
+additional counterexamples are not required. Continue with Section 7, then
+later sections in source order.
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
 contextual or outside-work attribution, or unresolved. Retain existing refutations. Each

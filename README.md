@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal closed Fourier spans now form the original P/Q
-topological decomposition, including p=1. The transformed complementary
-equation and its agreement with the original free resolvent are proved.
-The [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) has 39 reviewed and
-eight pending groups, retaining the corrected quantitative budgets.
-See the [Section 6 comparison](coverage/SECTION_6.md) and
+Latest step: the literal Lemma 6.4 Fourier series and Holder–Young proof
+are formalized in the original norms. All 47 groups in the
+[ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) are reconciled,
+retaining nine corrections and the stated interpretation. The broader
+source comparison continues with Section 7. See the
+[Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
