@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: cubic coefficients and full-strip error tails
+## Current milestone: the actual coefficient sum on p.44
+
+For the original three-mode family, the full right-hand side of the final
+p.44 display divided by s^12 now has the proved limit 2*r^4+2*C^4, where
+r=1/(pi*n)^2 and C=1/[pi*(n-1/2)]^2. This uses p=4, unit weight and cutoff
+N=abs(n), for each fixed n>0. The sum retains the physical Fourier signs,
+both original whole-strip remainder suprema and the entire signed tails.
+For every n>=3 its limit is strictly below 16*r^4.
+
+The proof expands the cubic perturbation exactly, proves its finite outer
+support and vanishing normalized infinite tail, and combines it with the
+higher Neumann error. Summability is established before separating the
+printed sums. Four integration examples check the support hypothesis,
+the upper support boundary, the expanded n=3 sum and the eventual strict bound.
+
+Validation: `./scripts/check.sh` passes with 8,484 build jobs, 7,548
+public examples and a transitive axiom audit of 44,034 NLS declarations.
+The 21 inherited warnings are unchanged; the nine new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The actual counted-root gap asymptotics remain to be proved. This milestone
+does not decide the final weighted gap inequality: S6-047 stays pending, with
+twenty-three reviewed and twenty-four pending groups in the ordered ledger.
+The other completion qualifications remain open.
+
+## Previous milestone: cubic coefficients and full-strip error tails
 
 The actual cubic terms of the two-mode background are now computed at every
 signed tail index. Their full-strip supremum is attained at the left real
@@ -21,9 +46,9 @@ The 21 inherited warnings are unchanged; the five new modules and examples intro
 The source-review integrity and documentation-link checks also pass.
 
 This is supporting work for S6-047. The final weighted gap sum remains
-unresolved: the perturbed cubic-term comparison and actual counted-root gap
-asymptotics still need proof. The ordered ledger remains at twenty-three
-reviewed and twenty-four pending groups. The other completion qualifications
+unresolved. At that milestone the cubic perturbation and counted-root limits
+were missing; the current milestone above resolves the coefficient side.
+The ordered ledger remains at twenty-three reviewed and twenty-four pending groups. The other completion qualifications
 remain open.
 
 ## Previous milestone: the root proof of Lemma 6.9

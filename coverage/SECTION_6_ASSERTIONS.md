@@ -322,21 +322,27 @@ Public evidence: `SourceResonantRootPair.toEndpoints`, `sourceLemma6_9_proof_can
 
 ## S6-047 supporting progress; row remains pending
 
-Supporting work now computes the background cubic terms on every signed
-tail strip and proves summability of the full-strip higher error with order
-norm(phi)^(5p). An original real-type three-mode family has a vanishing
-normalized p=4 error tail and enters any neighborhood of zero. These are
-estimates for the final sum, not a resolution: the cubic perturbation and
-actual counted-root gap limits remain. The ordered counts are unchanged.
+The original three-mode family now has the exact normalized limit
+2*r^4+2*C^4 for the entire coefficient-side sum on p.44, where
+r=1/(pi*n)^2 and C=1/[pi*(n-1/2)]^2. This retains both actual whole-strip
+suprema and signed infinite tails, with p=4, unit weight and cutoff abs(n).
+The cubic perturbation and higher error tails are controlled rigorously;
+the limit is strictly below 16*r^4 for n>=3. The actual counted-root gap
+asymptotics are still missing, so the final inequality remains unresolved.
+The ordered counts are unchanged.
 
-Public evidence: `twoModeResonantPotential_cubic_positive`,
-`twoModeResonantPotential_cubic_negative`, `resonantCubic_strip_sup`,
-`resonantCubicErrorSup_tail`, `resonantCubicFourthErrorSum_normalized_tendsto`,
-`sourceCubicTailFamily_realType`, `sourceCubicTailFamily_eventually_mem`,
-`sourceCubicTailFamily_normalized_tail_tendsto`.
-The partial Section6CubicTailSourceComparison-2026-10-28 record is in the
+Public evidence: `resonantCubic_polynomial`, `resonantCubicPerturbation_norm_le`,
+`resonantCubicPerturbationSup_outside`,
+`resonantCubicPerturbationSup_sum_normalized_tendsto`,
+`fourthPowerSum_tendsto_single`, `sourceCubicCombinedError_pointwise`,
+`sourceCubicCombinedError_tail_tendsto`,
+`sourceCubicRemainderSup_sum_normalized_tendsto`,
+`sourceCubicPrintedRightSum_normalized_tendsto`,
+`sourceCubicPrintedRightSum_limit_lt`.
+The partial Section6CubicTailSourceComparison-2026-10-28 and
+Section6CubicPerturbationSourceComparison-2026-10-28 records are in the
 [source-review index](source-review-index.json). No additional ordered group
-is classified as reviewed by this milestone.
+is classified as reviewed by these supporting milestones.
 
 ## Remaining work
 

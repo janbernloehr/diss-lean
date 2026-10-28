@@ -5,7 +5,46 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
-## Supporting cubic estimates for the final p.44 sum
+## The exact coefficient-side limit of the final p.44 sum
+
+[ResonantCubicPerturbation.lean](../NLS/ZakharovShabat/ResonantCubicPerturbation.lean)
+expands the actual cubic term of s*A+s^3*B into degrees 3,5,7,9 and bounds
+its change by O(norm(s)^5) on whole closed strips.
+[ResonantCubicSupport.lean](../NLS/ZakharovShabat/ResonantCubicSupport.lean)
+proves that both cubic directions have outer support in [-n,2n] when the
+physical inputs have support in [-2n,0] and [0,2n].
+[ResonantCubicPerturbationTail.lean](../NLS/ZakharovShabat/ResonantCubicPerturbationTail.lean)
+then gives summability and the vanishing normalized infinite perturbation tail.
+This finite support concerns the cubic term, not the full coefficient remainder.
+
+[ResonantCubicBackground.lean](../NLS/ZakharovShabat/ResonantCubicBackground.lean)
+connects the scaled background and controls differences of actual strip suprema.
+[SourceCubicCoefficientError.lean](../NLS/ZakharovShabat/SourceCubicCoefficientError.lean)
+and [its tail estimates](../NLS/ZakharovShabat/SourceCubicCoefficientErrorTail.lean)
+combine the cubic perturbation with the higher Neumann error in original
+period-two coordinates. A [fourth-power concentration theorem](../NLS/SequenceSpaces/FourthPowerSingleLimit.lean)
+proves convergence of the entire sum after establishing summability.
+
+[SourceCubicCoefficientLimit.lean](../NLS/ZakharovShabat/SourceCubicCoefficientLimit.lean)
+gives the limit C^4 for each original remainder-supremum tail divided by s^12,
+where C=1/[pi*(n-1/2)]^2. Each leading Fourier tail has normalized value r^4,
+where r=1/(pi*n)^2. These statements use p=4, unit weight, fixed n>0 and
+cutoff N=abs(n). [SourceCubicPrintedSumLimit.lean](../NLS/ZakharovShabat/SourceCubicPrintedSumLimit.lean)
+identifies the literal grouped source sum using proved summability. Its exact
+normalized limit is 2*r^4+2*C^4, strictly below 16*r^4 for every n>=3.
+
+Validation: `./scripts/check.sh` passes with 8,484 build jobs, 7,548
+public examples and a transitive axiom audit of 44,034 NLS declarations.
+The 21 inherited warnings are unchanged; the nine new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The actual counted-root gap asymptotics remain open. Neither a proof nor a
+counterexample to the final 1/2^p weighted gap inequality follows yet.
+S6-047 remains pending; no additional ordered group is classified as reviewed.
+The partial Section6CubicPerturbationSourceComparison-2026-10-28 record is in
+the [source-review index](source-review-index.json).
+
+## Earlier supporting cubic estimates for the final p.44 sum
 
 [ResonantTwoModeCubic.lean](../NLS/ZakharovShabat/ResonantTwoModeCubic.lean)
 computes both actual cubic operator terms for a background with modes 0 and
@@ -35,9 +74,10 @@ public examples and a transitive axiom audit of 43,891 NLS declarations.
 The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
 The source-review integrity and documentation-link checks also pass.
 
-The error subtracts the family's own cubic term. A comparison of that term
-with the two-mode background and an asymptotic formula for the actual counted
-root gap remain necessary. S6-047 stays pending, as recorded in the partial
+The error in this earlier milestone subtracts the family's own cubic term.
+The current milestone above supplies the cubic comparison and actual full
+coefficient-sum limit. The actual counted-root gap limit remains necessary.
+S6-047 stays pending, as recorded in the partial
 Section6CubicTailSourceComparison-2026-10-28 entry of the
 [source-review index](source-review-index.json). The final 1/2^p inequality
 is neither proved nor refuted by these supporting estimates.

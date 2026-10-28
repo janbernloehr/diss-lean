@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: exact cubic coefficients and summable full-strip remainder tails,
-including a vanishing normalized fourth-power tail for an original real-type
-three-mode family. This supplies estimates for the final p.44 weighted gap sum,
-which remains unresolved. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
-still records twenty-three reviewed and twenty-four pending passage groups.
+Latest step: the exact normalized limit of the actual full coefficient sum
+on p.44, including both original whole-strip suprema and infinite signed tails.
+The actual counted-root gap asymptotics remain open, so the final weighted gap
+inequality is still unresolved. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
+remains at twenty-three reviewed and twenty-four pending passage groups.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 

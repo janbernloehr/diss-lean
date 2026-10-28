@@ -70711,3 +70711,50 @@ example (n : ℤ) (N : ℕ) (hN : 0 < N) :
       (sourceCubicTailFamily_normalized_tail_tendsto n N hN false)
 
 end Section6CubicTailChecks
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+namespace Section6CubicPerturbationChecks
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- A negative target cannot be silently admitted by the physical support lemma.
+example : ¬ CubicFourierSupport SpectralWeight.one (-1)
+    (singleResonantPotential (p := 4) SpectralWeight.one (-1) 1 1) := by
+  intro h
+  have hz := h.1 2 (by norm_num)
+  norm_num [singleResonantPotential_fst] at hz
+
+-- Both cubic directions vanish on the first strip beyond the upper support boundary.
+example (s : ℝ) (positive : Bool) : sourceCubicPerturbationSup 3 s 7 positive = 0 := by
+  cases positive <;> exact resonantCubicPerturbationSup_outside (by simp)
+    SpectralWeight.one (sourceCubicBackgroundProfile 3) (sourceCubicResonantProfile 3)
+    3 7 (s : ℂ) _ _
+    (twoModeResonantPotential_cubicSupport SpectralWeight.one 3 (by norm_num) 1)
+    (singleResonantPotential_cubicSupport SpectralWeight.one 3 (by norm_num) _ _)
+    (by decide) (by norm_num)
+
+-- The complete original grouped sum retains both signs and the closed cutoff boundary.
+example : Tendsto (fun s : ℝ =>
+    ((∑' m : ℤ, if 3 ≤ m.natAbs then
+      ‖(sourceCubicTailFamily 3 s).fst (-(2*m))‖^4+
+        ‖(sourceCubicTailFamily 3 s).snd (2*m)‖^4 else 0)+
+     (∑' m : ℤ, if 3 ≤ m.natAbs then
+      (sourceResonantBMinusSup (by simp) SpectralWeight.one (sourceCubicTailFamily 3 s) m)^4+
+        (sourceResonantBPlusSup (by simp) SpectralWeight.one (sourceCubicTailFamily 3 s) m)^4 else 0))/s^12)
+    (𝓝[>] (0 : ℝ))
+    (𝓝 (2*(1/(Real.pi*3)^2)^4+2*(1/(Real.pi*(3-1/2))^2)^4)) := by
+  simpa only [sourceCubicPrintedRightSum,sourceCubicTailScale,sourceCubicBackgroundScale,
+    show (3 : ℤ).natAbs = 3 from rfl,Int.cast_ofNat] using
+    sourceCubicPrintedRightSum_normalized_tendsto 3 (by norm_num)
+
+-- The strict limiting comparison transfers to the actual entire source right-hand side.
+example (n : ℤ) (hn : 3 ≤ n) : ∀ᶠ s : ℝ in 𝓝[>] (0 : ℝ),
+    sourceCubicPrintedRightSum n s < 16*(sourceCubicTailScale n)^4*s^12 := by
+  have ht := (sourceCubicPrintedRightSum_normalized_tendsto n (by omega)).eventually_lt_const
+    (sourceCubicPrintedRightSum_limit_lt n hn)
+  filter_upwards [ht,self_mem_nhdsWithin] with s hs hspos
+  exact (div_lt_iff₀ (pow_pos hspos 12)).mp hs
+
+end Section6CubicPerturbationChecks
