@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T20:10:53.193538+00:00",
-  "base_commit": "7f2a65c615a90e398b41ea414e374538fe6f0dbd",
+  "published_utc": "2026-10-28T13:04:33.229168+00:00",
+  "base_commit": "e6a28c5e4a111c49d6e5e188f0516f624f886d10",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 88,
-    "module_hash_checks": 1355,
-    "distinct_modules": 897
+    "review_records": 89,
+    "module_hash_checks": 1398,
+    "distinct_modules": 911
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "7f2a65c615a90e398b41ea414e374538fe6f0dbd",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the native auxiliary distribution module and three integration examples.",
+    "base_commit": "e6a28c5e4a111c49d6e5e188f0516f624f886d10",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the shared exterior-neighborhood theorem and one integration example.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8447,
-    "public_examples": 7513,
-    "transitive_NLS_declarations": 43270,
+    "build_jobs": 8448,
+    "public_examples": 7514,
+    "transitive_NLS_declarations": 43281,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4724,
-      "sha256": "568ccba6aff16c1d68b2cb1869503ae08725bc070a951d34abfd98d57bc754b3"
+      "files": 4725,
+      "sha256": "c8e4cfa8df92157ab1c8776aedcbc3644bcf4f644e95e3f3de120e1f19338372"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -21799,6 +21799,567 @@
       ],
       "declaration_inventory_count": 43270,
       "source_record_sha256": "e95f82aec5d754a0c9017bcb08f0686e8d0704de99947d87becf87ffef297379"
+    },
+    "Section5AssertionInventorySourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e6a28c5e4a111c49d6e5e188f0516f624f886d10",
+      "updated_utc": "2026-10-28T13:04:33.229168+00:00",
+      "prepared_from_sha256": "7651a647dd90e435a081d8d5c1beb46a3614073129ae80c81d845d5b61a412b5",
+      "source_lines": [
+        [
+          2111,
+          2277
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "inventory_order": 1,
+          "source_lines": [
+            2113,
+            2124
+          ],
+          "requirement": "Actual L2 operator and both full physical auxiliary endpoint domains",
+          "assessment": "proved_original_physical_domains",
+          "finding": "The two domains consist of actual H1 functions with the exact endpoint equations at both 0 and 1. The unbounded operator on physical L2 has precisely those included classes as its domain and the original differential expression as its value. Its domain is dense and its graph closed. The physical H1 norm and weighted Fourier norm are continuously equivalent, not asserted identical.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.HasClassicalAuxiliaryDomain",
+            "NLS.ZakharovShabat.BoundaryCondition.ClassicalAuxiliaryDomain",
+            "NLS.ZakharovShabat.BoundaryCondition.mem_classicalAuxiliarySubmodule_iff",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryOperator_ofFunction",
+            "NLS.ZakharovShabat.BoundaryCondition.mem_classicalAuxiliaryUnboundedOperator_domain_iff_original",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_apply_ofFunction",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_dense_domain",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_isClosed"
+          ]
+        },
+        {
+          "inventory_order": 2,
+          "source_lines": [
+            2126,
+            2148
+          ],
+          "requirement": "Phase-twisted signed interval extensions on the original spaces",
+          "assessment": "proved_native_reflection_verified_committed_and_pushed",
+          "finding": "The actual reflected functions have second-half values epsilon*(-i*f_plus(2-x),i*f_minus(2-x)). For 1<p<infinity the new continuous native distribution extension agrees with their normalized Fourier integrals on all physical signed modes, has a full norm-convergent signed-input series, and is uniquely determined by those modes. Arbitrary physical L2 input is identified by actual interval Fourier coefficients and reconstructs the reflection almost everywhere.",
+          "declarations": [
+            "NLS.ZakharovShabat.BoundaryCondition.auxiliaryIntervalExtension_left",
+            "NLS.ZakharovShabat.BoundaryCondition.auxiliaryIntervalExtension_right",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_mode_integrals",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_unique",
+            "NLS.ZakharovShabat.hasSum_sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_physical"
+          ]
+        },
+        {
+          "inventory_order": 3,
+          "source_lines": [
+            2150,
+            2154
+          ],
+          "requirement": "Both parts of Lemma 5.1 with the common Neumann-reflected potential",
+          "assessment": "proved_both_physical_equations",
+          "finding": "Both auxiliary signs use the same ordinary Neumann-reflected potential. The actual extension has periodic H1 regularity and solves the physical differential equation almost everywhere on the whole period. The direct physical equation-transfer theorem requires the original endpoint H1 domain and original eigen-equation; the coefficient/spectral realization separately assumes L2 potential. Original nonzero eigenfunctions remain nonzero.",
+          "declarations": [
+            "NLS.ZakharovShabat.physical_auxiliary_interval_equation_transfer",
+            "NLS.ZakharovShabat.sourceLemma5_1",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_regular",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_reconstruct",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_restrict",
+            "NLS.ZakharovShabat.source_classical_auxiliary_equation_transfer",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryExtension_ne_zero",
+            "NLS.ZakharovShabat.source_classical_auxiliary_eigenvalue_mem_spectrum"
+          ]
+        },
+        {
+          "inventory_order": 4,
+          "source_lines": [
+            2157,
+            2169
+          ],
+          "requirement": "Actual component Fourier integrals and corrected D-star mode in (1.11)",
+          "assessment": "printed_mode_refuted_corrected_full_series_proved",
+          "finding": "The raw component Fourier integrals and half-pairing normalization are retained. The second line of (1.11) incorrectly uses the ordinary Dirichlet mode; its failure is proved on a constant auxiliary zero-mode input. The corrected auxiliary-mode series converges in the original coefficient and normalized physical L2 norms and reconstructs the actual reflected function. The new native even formula retains both i and one half on arbitrary rough input.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAuxiliaryIntervalExtensionCoefficients_integrals",
+            "NLS.ZakharovShabat.sourceAuxiliaryIntervalExtensionCoefficients_raw",
+            "NLS.ZakharovShabat.intervalAuxiliaryBoundaryPairing",
+            "NLS.ZakharovShabat.sourceEquation1_11_1_12_coefficients",
+            "NLS.ZakharovShabat.sourceEquation1_11_1_12_L2",
+            "NLS.ZakharovShabat.sourceEquation1_11_printed_ordinary_mode_false",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_even"
+          ]
+        },
+        {
+          "inventory_order": 5,
+          "source_lines": [
+            2180,
+            2189
+          ],
+          "requirement": "Full auxiliary N-star series (1.12)",
+          "assessment": "proved_full_auxiliary_neumann_series",
+          "finding": "Equation (1.12) uses the N-star modes (-wave(-n),i*wave(n)) with exactly half the physical pairing. The same full L2 sum theorem handles both signs. At arbitrary Sobolev order, the coefficient-mode series converges in the original finite-p norm and the physical distributional series holds also at infinity; norm convergence at infinity is not asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.physicalAuxiliaryBoundaryMode",
+            "NLS.ZakharovShabat.sourceEquation1_11_1_12",
+            "NLS.ZakharovShabat.sourceAuxiliaryBoundaryMode_physical",
+            "NLS.ZakharovShabat.hasSum_sourceWeightedAuxiliaryModes",
+            "NLS.ZakharovShabat.hasSum_sourceAuxiliaryDistribution",
+            "NLS.ZakharovShabat.sourceAuxiliaryDistributionMode_physical"
+          ]
+        },
+        {
+          "inventory_order": 6,
+          "source_lines": [
+            2191,
+            2208
+          ],
+          "requirement": "Weighted auxiliary spaces, closedness and corrected complementary summands",
+          "assessment": "printed_repeated_summand_refuted_complements_proved",
+          "finding": "Every real Sobolev order has closed complementary D-star and N-star subspaces, with the original finite-p component-sum norm and separate coupled infinity norm. The actual norm factors are 2^(1/p) and 2 respectively. Every vector has its unique amplitude expansion. The printed D-star plus D-star complement is refuted by a nonzero zero mode; the corrected D-star/N-star direct sum is topological.",
+          "declarations": [
+            "NLS.ZakharovShabat.isClosed_sourceWeightedAuxiliarySubspace",
+            "NLS.ZakharovShabat.isClosed_sourceWeightedAuxiliarySubspaceInfty",
+            "NLS.ZakharovShabat.isTopCompl_sourceWeightedAuxiliarySubspaces",
+            "NLS.ZakharovShabat.isTopCompl_sourceWeightedAuxiliarySubspacesInfty",
+            "NLS.ZakharovShabat.norm_sourceWeightedAuxiliaryAmplitudeEquiv",
+            "NLS.ZakharovShabat.norm_sourceWeightedAuxiliaryAmplitudeEquivInfty",
+            "NLS.ZakharovShabat.existsUnique_sourceWeightedAuxiliaryExpansion",
+            "NLS.ZakharovShabat.existsUnique_sourceWeightedAuxiliaryInftyExpansion",
+            "NLS.ZakharovShabat.not_isCompl_sourceWeightedAuxiliaryDirichlet_self",
+            "NLS.ZakharovShabat.not_isCompl_sourceWeightedAuxiliaryDirichletInfty_self"
+          ]
+        },
+        {
+          "inventory_order": 7,
+          "source_lines": [
+            2210,
+            2213
+          ],
+          "requirement": "Full physical H1 extension/restriction isomorphisms",
+          "assessment": "proved_full_physical_h1_equivalence",
+          "finding": "The forward map takes every original endpoint H1 function to its actual reflected Fourier coefficients. The inverse restricts the continuous Sobolev representative at every point of the closed unit interval. Both directions are continuous in the physical H1 and original weighted coefficient norms; norm equality is not substituted for this equivalence.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv_ofFunction",
+            "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv_symm_apply",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryIntervalEquiv",
+            "NLS.ZakharovShabat.BoundaryCondition.norm_classicalAuxiliaryIntervalEquiv_le",
+            "NLS.ZakharovShabat.BoundaryCondition.norm_classicalAuxiliaryIntervalEquiv_symm_le"
+          ]
+        },
+        {
+          "inventory_order": 8,
+          "source_lines": [
+            2214,
+            2218
+          ],
+          "requirement": "Bounded finite-strict-exponent extensions and full operator invariance",
+          "assessment": "proved_bounded_extensions_and_original_domain_invariance",
+          "finding": "The native reflection is bounded and analytic for exactly 1<p<infinity, with the ordinary extension bound and exact p=2 isometry. Its tempered realization agrees with the established completed map. On the entire original one-derivative auxiliary domain, the actual operator at the common Neumann-reflected potential lands in the corresponding auxiliary base subspace. The endpoint obstruction for p=1 remains explicit.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_le",
+            "NLS.ZakharovShabat.analyticAt_sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_two",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_tempered",
+            "NLS.ZakharovShabat.sourceOperator_mem_auxiliarySourceSpace",
+            "NLS.ZakharovShabat.sourceAuxiliaryReflectedPotential_invariant",
+            "NLS.ZakharovShabat.sourceAuxiliaryOperator",
+            "NLS.ZakharovShabat.BoundaryCondition.not_memlp_auxiliaryIntervalExtension_oneSided"
+          ]
+        },
+        {
+          "inventory_order": 9,
+          "source_lines": [
+            2219,
+            2226
+          ],
+          "requirement": "Actual spectra of the two auxiliary unbounded restrictions",
+          "assessment": "proved_actual_restricted_spectra",
+          "finding": "The spectrum is independently defined as failure of bijectivity of the actual domain-to-base pencil, with original inclusion and operator. Norm-changing domain/base equivalences identify the resolvent and spectrum with the coefficient theory. For arbitrary physical L2 potential it agrees with the actual physical unbounded spectrum and original endpoint eigenvalues.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAuxiliaryPencil",
+            "NLS.ZakharovShabat.sourceAuxiliaryResolventSet",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum",
+            "NLS.ZakharovShabat.sourceAuxiliaryResolventSet_eq",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_eq",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_eq_classical",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_reflected_ofFunction",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliarySpectrum_eq_eigenvalues",
+            "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliarySpectrum_eq_auxiliarySpectrum"
+          ]
+        },
+        {
+          "inventory_order": 10,
+          "source_lines": [
+            2228,
+            2230
+          ],
+          "requirement": "Proposition 5.2 discreteness and common local input topology",
+          "assessment": "proved_discreteness_and_uniform_input_neighborhood",
+          "finding": "Both actual spectra are closed and discrete, finite in bounded sets. There is one open convex connected original-input neighborhood containing the potential and zero, a positive cutoff, and simultaneous counts for both signs and every larger cutoff. This assertion uses the actual original input topology. The numerical height is separately qualified.",
+          "declarations": [
+            "NLS.ZakharovShabat.isClosed_sourceAuxiliarySpectrum",
+            "NLS.ZakharovShabat.discreteTopology_sourceAuxiliarySpectrum",
+            "NLS.ZakharovShabat.finite_sourceAuxiliarySpectrum_inter",
+            "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryCountingData",
+            "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryContourData"
+          ]
+        },
+        {
+          "inventory_order": 11,
+          "source_lines": [
+            2232,
+            2234
+          ],
+          "requirement": "One simple auxiliary eigenvalue per high disk for both signs",
+          "assessment": "proved_actual_high_disk_simplicity",
+          "finding": "Each open quarter-pi disk with |n|>N contains exactly one actual auxiliary spectral point, for either sign, with algebraic multiplicity one. Multiplicity is the dimension of the full original Jordan root space, with original-domain membership at every recursion step; physical multiplicities coincide at p=2.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.disk_unique_simple",
+            "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity",
+            "NLS.ZakharovShabat.mem_sourceAuxiliaryRootSpace_succ",
+            "NLS.ZakharovShabat.mem_sourceAuxiliaryRootSpaceTop",
+            "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity_eq",
+            "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity_eq_classical"
+          ]
+        },
+        {
+          "inventory_order": 12,
+          "source_lines": [
+            2236,
+            2238
+          ],
+          "requirement": "Full central algebraic counts and literal norm-dependent height qualification",
+          "assessment": "height_qualified_central_counts",
+          "finding": "Both signs have central algebraic count 2N+1 in proved height-N boxes. The literal norm-dependent height and corresponding counts hold at p=2 on one common original-input neighborhood; real-type inputs admit any nonnegative height. The universal printed theorem is not recovered at arbitrary complex p. The explicit counterexample refutes unrestricted exhaustion; no separate unsupported refutation of item (ii) alone is inferred.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.central_multiplicity",
+            "NLS.ZakharovShabat.sourceProposition5_2_two",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_abs_im_lt_printed_height_two",
+            "NLS.ZakharovShabat.sourceAuxiliaryHeightSpectrum_eq_central_of_bound",
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.central_height_multiplicity_of_realType"
+          ]
+        },
+        {
+          "inventory_order": 13,
+          "source_lines": [
+            2240,
+            2240
+          ],
+          "requirement": "Spectral exhaustion and refuted unrestricted printed height",
+          "assessment": "printed_unrestricted_exhaustion_refuted",
+          "finding": "The actual auxiliary D-star spectrum has a finite-Fourier counterexample for every natural P>=1024: the original input norm is at most 3/32, while i*2^P lies outside every printed-height box and every high quarter-pi disk, independently of cutoff. This refutes the literal all-exponent exhaustion claim. Height-N exhaustion and the separate p=2 and real-type conclusions remain valid; no replacement numerical bound is adopted.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sourceAuxiliaryHeightCounterexample_le",
+            "NLS.ZakharovShabat.sourceAuxiliaryPrintedHeight_counterexample",
+            "NLS.ZakharovShabat.not_sourceProposition5_2_printed_exhaustion",
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset",
+            "NLS.ZakharovShabat.sourceProposition5_2_two",
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset_height_of_realType"
+          ]
+        },
+        {
+          "inventory_order": 14,
+          "source_lines": [
+            2242,
+            2242
+          ],
+          "requirement": "Reality of both spectra for real-type input",
+          "assessment": "proved_real_type_reality",
+          "finding": "The common completed Neumann reflection preserves the actual real-type relation. The full operator symmetry and actual nonzero eigenvector characterization imply that every spectral value of either auxiliary restriction is real. This conclusion is independent of the printed numerical-height defect.",
+          "declarations": [
+            "NLS.ZakharovShabat.isRealType_sourceAuxiliaryReflectedPotential",
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourceAuxiliaryReflectedSpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.BoundaryCondition.auxiliarySpectrum_im_eq_zero_of_realType"
+          ]
+        },
+        {
+          "inventory_order": 15,
+          "source_lines": [
+            2244,
+            2253
+          ],
+          "requirement": "Common connected neighborhood containing zero, analytic resolvent/projections and invariant auxiliary ranges",
+          "assessment": "proved_analytic_contours_with_height_qualification",
+          "finding": "Phase conjugation preserves the actual ambient resolvent, including its domain-valued inverse. The actual normalized circle and four-edge rectangle integrals commute with the auxiliary complementary projections; their restrictions are analytic finite-rank idempotents and their ranges are the auxiliary parts of the ambient ranges. The new combined theorem supplies one open convex connected neighborhood of the original input and zero on which, simultaneously for every larger cutoff, the full ambient exterior lies in the actual resolvent set and both auxiliary projection families are analytic with their counted ranks. Analyticity in the spectral parameter and full ambient spectral enclosure follow on this same neighborhood. The boxes have height N; the unrestricted printed norm-dependent height is not asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_resolventSet_auxiliaryPotential_iff",
+            "NLS.ZakharovShabat.resolventToDomain_auxiliaryPhase",
+            "NLS.ZakharovShabat.resolvent_auxiliaryPhase_conj",
+            "NLS.ZakharovShabat.resolventCircleIntegral_auxiliaryPhase_conj",
+            "NLS.ZakharovShabat.resolventRectangleIntegral_auxiliaryPhase_conj",
+            "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_apply",
+            "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_apply",
+            "NLS.ZakharovShabat.sourceAuxiliaryCompressionRangeEquiv",
+            "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryContourData",
+            "NLS.ZakharovShabat.sourceEquation1_4",
+            "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+            "NLS.ZakharovShabat.sourceResolventCircleIntegral_apply",
+            "NLS.ZakharovShabat.sourceResolventRectangleIntegral_apply",
+            "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData",
+            "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData.analytic_exterior",
+            "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData.ambient_spectrum_subset",
+            "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryExteriorContourData",
+            "NLS.ZakharovShabat.sourceCorollary3_5_all_larger"
+          ]
+        },
+        {
+          "inventory_order": 16,
+          "source_lines": [
+            2254,
+            2261
+          ],
+          "requirement": "Actual free contour ranks, including the printed weighted-domain restrictions",
+          "assessment": "proved_actual_free_ranks_and_domain_restrictions",
+          "finding": "The uniform contour theorem includes zero input and gives central rank 2N+1 and high-disk rank one for both signs. Every projected vector lifts to the original one-derivative auxiliary domain. Restricting the projector input to that domain leaves the entire range unchanged, so the printed weighted-domain ranks have the same values. The comparison proves these rank claims via the established phase and full-root-space equivalences; it does not merely assign abstract dimensions.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_exists_domain",
+            "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_exists_domain",
+            "NLS.ZakharovShabat.range_sourceAuxiliaryCircleProjection_comp_inclusion",
+            "NLS.ZakharovShabat.range_sourceAuxiliaryCentralProjection_comp_inclusion",
+            "NLS.ZakharovShabat.SourceAuxiliaryContourData.central_rank",
+            "NLS.ZakharovShabat.SourceAuxiliaryContourData.disk_rank",
+            "NLS.ZakharovShabat.SourceAuxiliaryContourData.central_domain_rank",
+            "NLS.ZakharovShabat.SourceAuxiliaryContourData.disk_domain_rank"
+          ]
+        },
+        {
+          "inventory_order": 17,
+          "source_lines": [
+            2272,
+            2274
+          ],
+          "requirement": "Algebraic counts and final false 2N-1 Neumann count",
+          "assessment": "printed_neumann_count_refuted_corrected_counts_proved",
+          "finding": "Ranks equal sums of full original Jordan multiplicities over actual spectral clusters. The final 2N-1 N-star count is false: zero input in its literal printed height-one box has count 2N+1 for all sufficiently large cutoffs. This refutation is separate from the general numerical-height counterexample and from the corrected high-disk simplicity statement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_rank_eq_sum",
+            "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_rank_eq_sum",
+            "NLS.ZakharovShabat.SourceAuxiliaryCountingData.neumann_count_ne_printed",
+            "NLS.ZakharovShabat.exists_sourceAuxiliaryZero_printedBox_count"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ClassicalAuxiliaryPhase.lean": "73676a3820d9e1683f292aabc91c7a91abf6086d58c189d88261487bf85f0a5b",
+        "NLS/ZakharovShabat/ClassicalAuxiliarySpace.lean": "80e35dd68305af676102d99143dafd6c4b05ef109b781d21f06133c034bf8dc0",
+        "NLS/ZakharovShabat/AuxiliaryPhysicalL2.lean": "9d898db50cf9a8e724bb7441fe287a28a37c733308c36f3436ca5e1c9b4331cf",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryOperator.lean": "a3900c91244e64b29fee186e3b48ac46d04a7609c57ed46f90a247960588569c",
+        "NLS/ZakharovShabat/SourceLemma5_1.lean": "286d3e3ef4ad97618ff897823cad90841eca5bcda328d68200cadfbd95c9547d",
+        "NLS/ZakharovShabat/SourceAuxiliaryExtension.lean": "5ac5ca6d02d1a746ab0935476192edbb5ddd05a4687aa76b57087d99493daaa3",
+        "NLS/ZakharovShabat/SourceAuxiliaryExtensionPhysical.lean": "74d6a46438135be79cd304f2c8844b18feb7f96a51a9ee1fd546adea3d860ee9",
+        "NLS/ZakharovShabat/SourceAuxiliarySpaces.lean": "4e2756a63075c7c71d99b5423ec6bf2259e9ccb6f7ebfa92176afc646ad6d25e",
+        "NLS/ZakharovShabat/SourceAuxiliaryBoundaryFourier.lean": "c0ac96d6ea9ff7e5f1abd58336469bc7efaeffae9cef86e068709e3eca6d5d2d",
+        "NLS/ZakharovShabat/SourceAuxiliarySeries.lean": "d621c8293686b9cddd14842f995e1f6d3a7655825968c904600a96abd5123b45",
+        "NLS/ZakharovShabat/SourceAuxiliaryOperators.lean": "3e4012761ecf9841baa00330ff69fc97d9b06b9cb195df935f7c1f4f880e35d1",
+        "NLS/ZakharovShabat/SourceAuxiliarySpectra.lean": "ebf10379b2405cf4a43f89fa49381f3a47bed58eb7f7aa1550c5a4f5f6891889",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryResolvent.lean": "2c39d0186cc5030e3e7856bfb16cc59f6383fab4d2a807d18534f21dbbccc316",
+        "NLS/ZakharovShabat/ClassicalAuxiliarySpectrum.lean": "3708488eb49ecc5541b7bb6f490823ff5763bf8b5d264a2b19810c219a2cf4fe",
+        "NLS/ZakharovShabat/SourceAuxiliaryCounting.lean": "028125ed959ea909143a1546a8a1fc5c7ad0f26bfdcb6c32ab7fae38ae20b254",
+        "NLS/ZakharovShabat/SourceAuxiliaryReality.lean": "66a9cf3d60ffd460386e38bffabf5a3d8aaa1dee05e2284534d0a6ed227e5492",
+        "NLS/ZakharovShabat/SourceAuxiliaryPrintedHeight.lean": "5a388d9ad4c1b13d2f36ba893e8a4cc46724c34cde05a9ec2be395a40fbeb000",
+        "NLS/ZakharovShabat/SourceAuxiliaryRootSpaces.lean": "198d25c6e2a64d94f08b308ade21d48b0cd53b9684172b6f15d8b5072d30ed4e",
+        "NLS/ZakharovShabat/SourceAuxiliaryPhysicalMultiplicity.lean": "db3eec4539784dc895646f65c825fa66e3f0b5876249cff94d0b1a4158c9b21c",
+        "NLS/ZakharovShabat/SourceAuxiliaryContourRanks.lean": "a3d4c78015217505a81127daac8c9b569784f7f6caf65488e1c4831d74c02874",
+        "NLS/ZakharovShabat/SourceAuxiliaryContourDomains.lean": "2eff64f5db020aaa0a2fb1bd4c9a781f9e5b2d8bb52767f532c94e98f09adff0",
+        "NLS/ZakharovShabat/SourceAuxiliaryContours.lean": "a914e69d003eabbb9cb98662b9044d6522d5b62afabb43dc743bbc1e83704c44",
+        "NLS/ZakharovShabat/SourceAuxiliaryContourCounting.lean": "f9215b37d933ead2098c05fcd816072fd4f195edb3ad67648bcfec1dc7bab876",
+        "NLS/ZakharovShabat/SourceAuxiliaryHeightClusters.lean": "59fb79b86429457fa1fdb11a3c2003cd2123a34a19374782a18120a601e8ad46",
+        "NLS/ZakharovShabat/SourceAuxiliaryPotentialPhase.lean": "ab40b15d5c9fa47053c190cbf67a4a299518284e9fc13da9ee646b7dcef173c0",
+        "NLS/ZakharovShabat/SourceAuxiliaryHeightCounterexample.lean": "7f0757168a8f156597e4fd74790afd41e3c0aa5833f2d51956552c72809ff8bc",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryMultiplicity.lean": "e0153bfe89a8bc5ae20d47753fe2ed8b353fc2af4c71a3437ed717887ae34bdc",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryExtension.lean": "07f6ce3334298a432bedf93ac0e3941377f42c25ae6efa5fbd1755cc059a8674",
+        "NLS/ZakharovShabat/AuxiliaryCounting.lean": "3de1f5dbe3d08e6433f0466457a65d36205b35d288b12202c17d0de267325fbc",
+        "NLS/ZakharovShabat/AuxiliaryReality.lean": "d70281c43585f2eccf3161fc7c688e515ac136a0fbef7f31568c4bcd9da92166",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryRootSpaces.lean": "6ff02d7d2b91a14bd6bfd90495345399fc9d50fd3e6ecd127b39f4de8d65761d",
+        "NLS/ZakharovShabat/BoundedAuxiliaryExtension.lean": "064a35d762708310837682987553d15742b0e2d50519d602e4372114a2be43f5",
+        "NLS/ZakharovShabat/AuxiliaryContourPhase.lean": "8802ff14ffa22138f59bc31018ef2a048533efc7c9ae258d9b16315e83518c6b",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryClosed.lean": "62863c433e51bf1534a3c779cdd687cc296710a187ce780816738e23e9a52210",
+        "NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean": "92b7edf38a764f177c0063ee742c36f6c695b8c0b813fef496a2e3b91cf2f4d1",
+        "NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean": "6866c4524c12818298898676be3b074fe4319bf4d17c6d0136800f28fdab716b",
+        "NLS/ZakharovShabat/SourceLemma43NativeExtension.lean": "1a7fccf5172258e177b2c6ce496a649b1c682b1d979ba962863d12a17a02dd30",
+        "NLS/ZakharovShabat/AuxiliarySourceExtension.lean": "329cb0fc413f50e4229b0dda9da3344b5da3644def2eaf1fb6abedb6235cd2f5",
+        "NLS/ZakharovShabat/SourceEquation1_4.lean": "29d0baf5765f59a363bea224d33d0965d08b649d9bca4056ac998b337cc52b81",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/SourceResolventContours.lean": "29c47466eef799ef11fc96ad2eb94582973c104bc2973fb8ab1eae565e17c256",
+        "NLS/ZakharovShabat/SourceCorollary3_5.lean": "3172a11ea8978584619045cdae1d0d77b7d062bc80725e78dac603fec4b44be7",
+        "NLS/ZakharovShabat/SourceAuxiliaryExteriorContours.lean": "aab13b757e668765f70d9bd4d78d6f31101ba70a95e5fde4a08b8ca54b96ae2f"
+      },
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.BoundaryCondition.ClassicalAuxiliaryDomain",
+        "NLS.ZakharovShabat.BoundaryCondition.HasClassicalAuxiliaryDomain",
+        "NLS.ZakharovShabat.BoundaryCondition.auxiliaryIntervalExtension_left",
+        "NLS.ZakharovShabat.BoundaryCondition.auxiliaryIntervalExtension_right",
+        "NLS.ZakharovShabat.BoundaryCondition.auxiliarySpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryIntervalEquiv",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryOperator_ofFunction",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliarySpectrum_eq_auxiliarySpectrum",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliarySpectrum_eq_eigenvalues",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_apply_ofFunction",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_dense_domain",
+        "NLS.ZakharovShabat.BoundaryCondition.classicalAuxiliaryUnboundedOperator_isClosed",
+        "NLS.ZakharovShabat.BoundaryCondition.mem_classicalAuxiliarySubmodule_iff",
+        "NLS.ZakharovShabat.BoundaryCondition.mem_classicalAuxiliaryUnboundedOperator_domain_iff_original",
+        "NLS.ZakharovShabat.BoundaryCondition.norm_classicalAuxiliaryIntervalEquiv_le",
+        "NLS.ZakharovShabat.BoundaryCondition.norm_classicalAuxiliaryIntervalEquiv_symm_le",
+        "NLS.ZakharovShabat.BoundaryCondition.not_memlp_auxiliaryIntervalExtension_oneSided",
+        "NLS.ZakharovShabat.SourceAuxiliaryContourData.central_domain_rank",
+        "NLS.ZakharovShabat.SourceAuxiliaryContourData.central_rank",
+        "NLS.ZakharovShabat.SourceAuxiliaryContourData.disk_domain_rank",
+        "NLS.ZakharovShabat.SourceAuxiliaryContourData.disk_rank",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.central_height_multiplicity_of_realType",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.central_multiplicity",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.disk_unique_simple",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.neumann_count_ne_printed",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset",
+        "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset_height_of_realType",
+        "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData",
+        "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData.ambient_spectrum_subset",
+        "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData.analytic_exterior",
+        "NLS.ZakharovShabat.analyticAt_sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceResolvent",
+        "NLS.ZakharovShabat.discreteTopology_sourceAuxiliarySpectrum",
+        "NLS.ZakharovShabat.existsUnique_sourceWeightedAuxiliaryExpansion",
+        "NLS.ZakharovShabat.existsUnique_sourceWeightedAuxiliaryInftyExpansion",
+        "NLS.ZakharovShabat.exists_sourceAuxiliaryZero_printedBox_count",
+        "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryContourData",
+        "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryCountingData",
+        "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryExteriorContourData",
+        "NLS.ZakharovShabat.finite_sourceAuxiliarySpectrum_inter",
+        "NLS.ZakharovShabat.hasSum_sourceAuxiliaryDistribution",
+        "NLS.ZakharovShabat.hasSum_sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.hasSum_sourceWeightedAuxiliaryModes",
+        "NLS.ZakharovShabat.intervalAuxiliaryBoundaryPairing",
+        "NLS.ZakharovShabat.isClosed_sourceAuxiliarySpectrum",
+        "NLS.ZakharovShabat.isClosed_sourceWeightedAuxiliarySubspace",
+        "NLS.ZakharovShabat.isClosed_sourceWeightedAuxiliarySubspaceInfty",
+        "NLS.ZakharovShabat.isRealType_sourceAuxiliaryReflectedPotential",
+        "NLS.ZakharovShabat.isTopCompl_sourceWeightedAuxiliarySubspaces",
+        "NLS.ZakharovShabat.isTopCompl_sourceWeightedAuxiliarySubspacesInfty",
+        "NLS.ZakharovShabat.mem_resolventSet_auxiliaryPotential_iff",
+        "NLS.ZakharovShabat.mem_sourceAuxiliaryRootSpaceTop",
+        "NLS.ZakharovShabat.mem_sourceAuxiliaryRootSpace_succ",
+        "NLS.ZakharovShabat.norm_sourceAuxiliaryHeightCounterexample_le",
+        "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_le",
+        "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_two",
+        "NLS.ZakharovShabat.norm_sourceWeightedAuxiliaryAmplitudeEquiv",
+        "NLS.ZakharovShabat.norm_sourceWeightedAuxiliaryAmplitudeEquivInfty",
+        "NLS.ZakharovShabat.not_isCompl_sourceWeightedAuxiliaryDirichletInfty_self",
+        "NLS.ZakharovShabat.not_isCompl_sourceWeightedAuxiliaryDirichlet_self",
+        "NLS.ZakharovShabat.not_sourceProposition5_2_printed_exhaustion",
+        "NLS.ZakharovShabat.physicalAuxiliaryBoundaryMode",
+        "NLS.ZakharovShabat.physical_auxiliary_interval_equation_transfer",
+        "NLS.ZakharovShabat.range_sourceAuxiliaryCentralProjection_comp_inclusion",
+        "NLS.ZakharovShabat.range_sourceAuxiliaryCircleProjection_comp_inclusion",
+        "NLS.ZakharovShabat.resolventCircleIntegral_auxiliaryPhase_conj",
+        "NLS.ZakharovShabat.resolventRectangleIntegral_auxiliaryPhase_conj",
+        "NLS.ZakharovShabat.resolventToDomain_auxiliaryPhase",
+        "NLS.ZakharovShabat.resolvent_auxiliaryPhase_conj",
+        "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity",
+        "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity_eq",
+        "NLS.ZakharovShabat.sourceAuxiliaryAlgebraicMultiplicity_eq_classical",
+        "NLS.ZakharovShabat.sourceAuxiliaryBoundaryMode_physical",
+        "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_apply",
+        "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_exists_domain",
+        "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_rank_eq_sum",
+        "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_apply",
+        "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_exists_domain",
+        "NLS.ZakharovShabat.sourceAuxiliaryCircleProjection_rank_eq_sum",
+        "NLS.ZakharovShabat.sourceAuxiliaryCompressionRangeEquiv",
+        "NLS.ZakharovShabat.sourceAuxiliaryDistributionMode_physical",
+        "NLS.ZakharovShabat.sourceAuxiliaryHeightSpectrum_eq_central_of_bound",
+        "NLS.ZakharovShabat.sourceAuxiliaryIntervalExtensionCoefficients_integrals",
+        "NLS.ZakharovShabat.sourceAuxiliaryIntervalExtensionCoefficients_raw",
+        "NLS.ZakharovShabat.sourceAuxiliaryOperator",
+        "NLS.ZakharovShabat.sourceAuxiliaryPencil",
+        "NLS.ZakharovShabat.sourceAuxiliaryPrintedHeight_counterexample",
+        "NLS.ZakharovShabat.sourceAuxiliaryReflectedPotential_invariant",
+        "NLS.ZakharovShabat.sourceAuxiliaryReflectedSpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceAuxiliaryResolventSet",
+        "NLS.ZakharovShabat.sourceAuxiliaryResolventSet_eq",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_abs_im_lt_printed_height_two",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_eq",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_eq_classical",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_reflected_ofFunction",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv_ofFunction",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryBoundaryEquiv_symm_apply",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_reconstruct",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_regular",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryCircleExtension_restrict",
+        "NLS.ZakharovShabat.sourceClassicalAuxiliaryExtension_ne_zero",
+        "NLS.ZakharovShabat.sourceCorollary3_5_all_larger",
+        "NLS.ZakharovShabat.sourceEquation1_11_1_12",
+        "NLS.ZakharovShabat.sourceEquation1_11_1_12_L2",
+        "NLS.ZakharovShabat.sourceEquation1_11_1_12_coefficients",
+        "NLS.ZakharovShabat.sourceEquation1_11_printed_ordinary_mode_false",
+        "NLS.ZakharovShabat.sourceEquation1_4",
+        "NLS.ZakharovShabat.sourceLemma5_1",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_even",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_mode_integrals",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_tempered",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_physical",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_unique",
+        "NLS.ZakharovShabat.sourceOperator_mem_auxiliarySourceSpace",
+        "NLS.ZakharovShabat.sourceProposition5_2_two",
+        "NLS.ZakharovShabat.sourceResolventCircleIntegral_apply",
+        "NLS.ZakharovShabat.sourceResolventRectangleIntegral_apply",
+        "NLS.ZakharovShabat.source_classical_auxiliary_eigenvalue_mem_spectrum",
+        "NLS.ZakharovShabat.source_classical_auxiliary_equation_transfer"
+      ],
+      "qualification": "The entire Section 5 passage on printed pages 33-35 has been compared in 17 ordered substantive groups, using the extracted text, all three inspected rendered pages and 43 recorded proof-module bodies. Display fragments and layout lines were reconciled with the adjacent groups. This reuses the recorded local inspections and prior proof evidence, rather than claiming a fresh independent audit of every transitive Section 3 or Section 4 dependency. Four printed claims retain their formal refutations: the ordinary Dirichlet mode in (1.11), the repeated D-star complement, unrestricted norm-height exhaustion, and the final 2N-1 Neumann count. The unrestricted exhaustion counterexample does not establish an independent refutation of the central-count clause alone. Height-N counting, the literal p=2 height result and real-type variants retain their separate scopes. The finite-p and coupled infinity norms, physical H1 norm equivalence, endpoint limitations, finite-p norm series versus infinity distributional series, actual unbounded spectra and original Jordan-chain domains are explicit. This inventory covers Section 5, not the dissertation. The source-wide ordered inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "source_inventory": {
+        "section": 5,
+        "printed_pages": [
+          33,
+          34,
+          35
+        ],
+        "ordered_groups": 17,
+        "claims_dissertation_complete": false
+      },
+      "passage_reconciliation": {
+        "full_source_lines": [
+          2111,
+          2277
+        ],
+        "text_read_completely": true,
+        "rendered_pages_inspected": [
+          33,
+          34,
+          35
+        ],
+        "contextual_lines": [
+          2111
+        ],
+        "layout_lines": [
+          2174,
+          2175,
+          2266,
+          2267
+        ],
+        "display_fragment_lines": {
+          "2227": "The superscript p is part of the Proposition 5.2 opening at 2228."
+        },
+        "remaining_nonblank_substantive_lines_outside_groups": [],
+        "qualification": "The later-section running header on printed page 35 is layout; Section 5 final count is still in scope. The bound clause and operator-invariance clause share line 2217. The focused native review treats the former only; the ordered comparison separately includes full operator invariance."
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section5ProofReview-033.png": "5078c8f17c54a1a20066fa6c3b58deafb4420a1732bd947329dd576b419d1a23",
+          "Section5ProofReview-034.png": "885429d86b93e0d53301684d7336edb477f2e639dd47bd26902bd5f65c96e114",
+          "Section5ProofReview-035.png": "3ff894e75de2d312551b375c6f18df99b9c527fd59ba45613907e6ba429262fe"
+        }
+      },
+      "declaration_inventory_count": 43281,
+      "source_record_sha256": "d33459f848574d949922b25a180c8d400982d02ef5fa8aa6f71716a5da43965a"
     }
   }
 }

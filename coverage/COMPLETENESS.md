@@ -95,9 +95,13 @@ refutations, the original infinity norm, separate p=1 classical realization,
 and the inherited height and product-constant qualifications.
 Section 5 now also has native auxiliary distribution maps with exact
 finite-p norms, physical Fourier identification, full signed-input series,
-uniqueness and p=2 isometry. This is a focused interface milestone;
-the 17-group ordered Section 5 inventory remains in progress.
-Continue through Section 5, then later sections in source order.
+uniqueness and p=2 isometry. Its complete passage now has a 17-group
+ordered assertion inventory covering printed pp.33–35, with 43 reviewed
+module bodies. A combined theorem supplies one neighborhood for the
+full exterior resolvent and both auxiliary projection families at every
+larger cutoff. All four printed refutations, finite/infinite-norm distinctions
+and general height-N versus literal p=2 height qualifications remain.
+Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
 correction, contextual or outside-work attribution, or unresolved. Each

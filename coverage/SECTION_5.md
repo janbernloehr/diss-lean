@@ -4,6 +4,58 @@ This is a statement-by-statement audit against the original physical domains,
 reflections and norms, beginning on printed page 33. Existing later results
 alone do not certify the section or the dissertation complete.
 
+## Complete Section 5 assertion inventory
+
+The entire passage on printed pp.33–35 has been compared in 17 ordered
+groups, with all three rendered pages inspected. Definitions, displayed
+formulas, named statements and substantive proof steps are included.
+Intervening display fragments and layout lines are accounted for separately.
+
+| Passage | Assessment retained by the inventory |
+| --- | --- |
+| Original auxiliary problems | Actual physical L2 operators with full endpoint H1 domains, dense domain and closed graph. |
+| Reflections and Lemma 5.1 | Both signed physical extensions use the same Neumann-reflected potential; native maps preserve actual Fourier coefficients and full signed-series limits. |
+| Equations (1.11)–(1.12) | Normalized physical integrals and complete auxiliary-mode reconstruction. The ordinary Dirichlet mode in (1.11) is refuted and replaced by the auxiliary mode. |
+| Weighted spaces | Closed complementary D-star and N-star spaces at every real order, exact finite-p norms and the separate coupled infinity norm. The repeated D-star summand is refuted. |
+| Physical isomorphisms and operator invariance | Full original H1 restriction/extension maps, continuously equivalent physical norms, bounded reflection for 1<p<infinity and invariance on the entire one-derivative domain. |
+| Actual spectra and multiplicities | Independently defined unbounded restrictions, full original Jordan chains and agreement with physical L2 multiplicities. |
+| Proposition 5.2 | Discreteness, both high-disk simple eigenvalues, central algebraic counts and reality. General counts use height-N boxes; the literal p=2 height and real-type variants retain their separate scopes. |
+| Exterior resolvent and contour proof | One original-input neighborhood containing the input and zero supports the full ambient exterior and both analytic projection families, with actual domain-restricted ranks at every larger cutoff. |
+| Final counting sentence | Ranks agree with sums of actual Jordan multiplicities. The printed 2N-1 Neumann count is refuted even at zero input in its literal height-one box. |
+
+The fourth correction concerns unrestricted norm-dependent-height
+exhaustion: finite Fourier counterexamples exist for every natural
+exponent P≥1024, with original input norm at most 3/32. This refutes the
+universal exhaustion claim; it does not independently refute the central-count
+clause alone. No replacement numerical height is silently adopted.
+
+Finite-p series converge in norm; at infinity the full series assertion
+is distributional. The physical H1 norm is continuously equivalent to
+the weighted coefficient norm. No endpoint bounded reflection or
+identification of the auxiliary WithLp infinity product with the source's
+coupled norm is asserted.
+
+[SourceAuxiliaryExteriorContours.lean](../NLS/ZakharovShabat/SourceAuxiliaryExteriorContours.lean)
+adds `exists_uniform_sourceAuxiliaryExteriorContourData`. It intersects
+the existing contour neighborhood with the pullback of the full exterior
+neighborhood and takes the larger cutoff. Its data imply analyticity in
+the spectral parameter and enclosure of the full ambient spectrum on
+that same neighborhood. A p=3 integration example checks this together
+with both actual domain-restricted central and high-disk ranks.
+
+Section5AssertionInventorySourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records 17 groups,
+43 reviewed module hashes and 123 resolved references.
+The listed local inspections and prior evidence are reused with their
+scopes; this is not a new independent audit of every earlier dependency.
+Historical checkpoints below do not supersede this qualified inventory.
+The whole-dissertation inventory and external qualifications remain open.
+
+Validation: `./scripts/check.sh` passes with 8,448 build jobs, 7,514
+public examples and a transitive axiom audit of 43,281 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and example introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Auxiliary reflection on original periodic distributions
 
 [SourceAuxiliaryNativeExtension.lean](../NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean)

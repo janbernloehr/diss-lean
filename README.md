@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 5's auxiliary reflections now act on the original
-periodic distributions, with exact finite-p norms, full signed-series
-convergence, physical Fourier agreement and uniqueness. They are isometric
-at p=2. See the [Section 5 comparison](coverage/SECTION_5.md) and
+Latest step: Section 5 now has one neighborhood for the full exterior
+resolvent and both auxiliary contour families at every larger cutoff,
+plus a complete 17-group ordered assertion comparison. The four source
+corrections and separate norm and height qualifications remain explicit.
+See the [Section 5 inventory](coverage/SECTION_5.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

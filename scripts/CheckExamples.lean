@@ -70127,3 +70127,36 @@ example (b : BoundaryCondition) (u : SourcePeriodicPair 1 2) :
 
 end
 end Section5NativeChecks
+
+namespace Section5ExteriorChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At a non-Hilbert exponent, one neighborhood supports the full ambient
+-- exclusion and both actual domain-restricted projection ranks at every cutoff.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ U,
+        let V := sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ
+        AnalyticOnNhd ℂ (sourceResolvent (by simp) V) (spectralExterior N (Real.pi/4)) ∧
+        (sourceResolventSet (by simp) V)ᶜ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi/4) ∧
+        ∀ b : BoundaryCondition,
+          Module.finrank ℂ ((sourceAuxiliaryCentralProjection b (by simp) V N).comp
+            (sourceAuxiliaryInclusion b)).range = 2*N+1 ∧
+          ∀ n : ℤ, N < n.natAbs →
+            Module.finrank ℂ ((sourceAuxiliaryCircleProjection b (by simp) V
+              ((Real.pi : ℂ)*n) (Real.pi/4)).comp (sourceAuxiliaryInclusion b)).range = 1 := by
+  obtain ⟨N₀,U,_,ho,_,hc,hφ,h0,h⟩ :=
+    exists_uniform_sourceAuxiliaryExteriorContourData (by norm_num) (by simp) φ
+  refine ⟨N₀,U,ho,hc,hφ,h0,?_⟩
+  intro N hN ψ hψ
+  have hd := (h N hN).2.2 ψ hψ
+  refine ⟨hd.analytic_exterior,hd.ambient_spectrum_subset,?_⟩
+  intro b
+  exact ⟨hd.toSourceAuxiliaryContourData.central_domain_rank b,
+    fun n hn => hd.toSourceAuxiliaryContourData.disk_domain_rank b n hn⟩
+
+end
+end Section5ExteriorChecks

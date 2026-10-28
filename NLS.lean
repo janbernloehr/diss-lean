@@ -3360,6 +3360,7 @@ import NLS.ZakharovShabat.SourceAuxiliaryContours
 import NLS.ZakharovShabat.SourceAuxiliaryContourDomains
 import NLS.ZakharovShabat.SourceAuxiliaryContourRanks
 import NLS.ZakharovShabat.SourceAuxiliaryContourCounting
+import NLS.ZakharovShabat.SourceAuxiliaryExteriorContours
 import NLS.ZakharovShabat.SourceAuxiliaryPotentialPhase
 import NLS.ZakharovShabat.SourceAuxiliaryPrintedHeight
 import NLS.ZakharovShabat.SourceAuxiliaryHeightCounterexample

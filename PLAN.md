@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: Section 5 reflection on original distributions
+## Current milestone: Section 5 common neighborhood and ordered inventory
+
+One original-input neighborhood now supports the full exterior resolvent,
+both analytic auxiliary projection families and their algebraic counts,
+simultaneously at every larger cutoff. The boxes have height N; the
+unrestricted printed norm-dependent height remains refuted.
+
+The complete Section 5 passage has a 17-group ordered comparison covering
+actual physical domains, native reflections, full series, restricted spectra
+and original Jordan multiplicities. All four source corrections remain explicit.
+See the [Section 5 inventory](coverage/SECTION_5.md).
+
+Validation: `./scripts/check.sh` passes with 8,448 build jobs, 7,514
+public examples and a transitive axiom audit of 43,281 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and example introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Continue with Section 6 in source order. All
+[completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Section 5 reflection on original distributions
 
 Both auxiliary reflections now act directly on the original period-one
 and period-two distribution spaces. The target is the actual closed
