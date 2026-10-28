@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.5 now has the full vector-valued Fourier expansion,
-direct reciprocal-moment estimates, and one explicit constant for the
-near/far bounds and corrected Young inequality.
+Latest step: Lemma 6.7 now has direct transpose identities for every
+Neumann term and the full corrected potential, including p=1. An
+[ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md) records the
+reviewed source passages and remaining work.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

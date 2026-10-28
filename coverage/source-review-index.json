@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T15:47:07.459479+00:00",
-  "base_commit": "3fbf02155896d922a86792acdf7738d69313f59a",
+  "published_utc": "2026-10-28T16:18:42.879978+00:00",
+  "base_commit": "ad598b124875ed800000c4fb7d36d24d2bf9c70d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 94,
-    "module_hash_checks": 1449,
-    "distinct_modules": 939
+    "review_records": 95,
+    "module_hash_checks": 1479,
+    "distinct_modules": 954
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "3fbf02155896d922a86792acdf7738d69313f59a",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the full signed Fourier HasSum, direct selected reciprocal-moment bounds, one shared proof constant, exact recombination, corrected Young budget and two integration examples.",
+    "base_commit": "ad598b124875ed800000c4fb7d36d24d2bf9c70d",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes direct complementary-inverse, Neumann-term and full corrected-potential transpose identities on actual original derivative-domain tests, plus two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8455,
-    "public_examples": 7524,
-    "transitive_NLS_declarations": 43447,
+    "build_jobs": 8456,
+    "public_examples": 7526,
+    "transitive_NLS_declarations": 43460,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4732,
-      "sha256": "6a9ff8cdbe41d7d824b1539c9ab1a994b4d0affd051c7657b8c839163e6b13da"
+      "files": 4733,
+      "sha256": "d7b6653f1e0d2a7a293337c0e428aa38f9b8f110895d3f1a75b8ae7574bafe63"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -23076,6 +23076,392 @@
       ],
       "declaration_inventory_count": 43447,
       "source_record_sha256": "13efb720593b5ac88d7c0aa196b63813007043f25f433b0aa9d3e803d00be080"
+    },
+    "Section6TransposeSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "ad598b124875ed800000c4fb7d36d24d2bf9c70d",
+      "updated_utc": "2026-10-28T16:18:42.879978+00:00",
+      "source_lines": [
+        [
+          2663,
+          2888
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-024",
+          "source_lines": [
+            2663,
+            2684
+          ],
+          "requirement": "Common half-contraction and compatible Neumann inverses",
+          "status": "matched",
+          "reviewed_claims": [
+            "One open convex potential neighborhood and one cutoff N>=1 give both printed half-contractions on every distant closed strip. The proof controls one Fourier tail on the neighborhood, uses tail monotonicity, and transports the unit-weight norm isometrically to the original component-sum space.",
+            "The squared Neumann factorization is a two-sided inverse; its even series converges in the original operator norm. The weighted and original inverses agree on every weighted input.",
+            "The actual derivative-domain Q solution is unique and satisfies Phi v=T_hat T Phi u. The inverse expansion and commutation give both product orders in Id+T_hat T=T_hat.",
+            "Substitution of weightedQSolution_total_potential into sourceWeightedPencil_add_zero_iff_PQ gives the displayed P equation A u=P T_hat Phi u. This is a composition of the cited identities, with the original resonant/complementary conditions retained."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_5_uniform_half",
+            "NLS.ZakharovShabat.sourcePotentialInverse_square_norm",
+            "NLS.ZakharovShabat.exists_uniform_weightedFrequencyNeighborhood",
+            "NLS.ZakharovShabat.sourceComplementaryCorrection_formula",
+            "NLS.ZakharovShabat.sourceComplementaryCorrection_even_hasSum",
+            "NLS.ZakharovShabat.sourceComplementaryCorrection_left",
+            "NLS.ZakharovShabat.sourceComplementaryCorrection_right",
+            "NLS.ZakharovShabat.sourceComplementaryCorrection_weightedInput",
+            "NLS.ZakharovShabat.exists_uniform_sourceComplementaryCorrection",
+            "NLS.ZakharovShabat.sourceQSolution_potential",
+            "NLS.ZakharovShabat.sourceQSolution_unique",
+            "NLS.ZakharovShabat.weightedCorrection_expand",
+            "NLS.ZakharovShabat.weightedCorrection_commute",
+            "NLS.ZakharovShabat.weightedQSolution_total_potential",
+            "NLS.ZakharovShabat.sourceWeightedPencil_add_zero_iff_PQ"
+          ],
+          "qualification": ""
+        },
+        {
+          "ordered_group": "S6-025",
+          "source_lines": [
+            2686,
+            2694
+          ],
+          "requirement": "Reduced map and Lemma 6.6",
+          "status": "matched",
+          "reviewed_claims": [
+            "The resonant map is the free diagonal minus the corrected potential, with actual synthesis and coefficient extraction.",
+            "Its matrix determinant vanishes exactly at a noninvertible original source pencil, equivalently at an original periodic eigenvalue. The source domain is covered by an equivalence, not only an inclusion.",
+            "One neighborhood and cutoff make the criterion uniform on all distant closed strips, including p=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantMap",
+            "NLS.ZakharovShabat.weightedResonantMatrix",
+            "NLS.ZakharovShabat.sourceUnitDomainEquiv",
+            "NLS.ZakharovShabat.sourceLemma6_6",
+            "NLS.ZakharovShabat.sourceLemma6_6_eigenvector",
+            "NLS.ZakharovShabat.sourceLemma6_6_uniform"
+          ],
+          "qualification": ""
+        },
+        {
+          "ordered_group": "S6-026",
+          "source_lines": [
+            2696,
+            2715
+          ],
+          "requirement": "Full original-domain reconstruction and converse",
+          "status": "matched",
+          "reviewed_claims": [
+            "The constructed v is the actual domain-valued complementary free inverse of the corrected potential. It belongs to the complementary derivative domain and solves the Q equation.",
+            "The full reconstruction has the prescribed two resonant amplitudes. Its differential residual is exactly the synthesized matrix residual.",
+            "Nonzero resonant data reconstruct a nonzero vector; every original eigenvector is recovered. Thus both directions of the source proof retain the nonzero requirement."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.weightedQSolution",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_nonresonant",
+            "NLS.ZakharovShabat.weightedQSolution_potential",
+            "NLS.ZakharovShabat.weightedQSolution_equation",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_eq",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_coordinates",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_ne_zero_iff",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_residual",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_kernel_iff",
+            "NLS.ZakharovShabat.sourceResonantReconstruction_of_eigenvector"
+          ],
+          "qualification": ""
+        },
+        {
+          "ordered_group": "S6-027",
+          "source_lines": [
+            2725,
+            2754
+          ],
+          "requirement": "Actual matrix entries and printed basis order",
+          "status": "matched",
+          "reviewed_claims": [
+            "Matrix entries are evaluations of the actual original corrected potential on the two resonant domain modes.",
+            "The printed (plus,minus) basis reverses the library physical (minus,plus) order. Reversing both indices gives exactly the displayed off-diagonal signs and leaves the determinant unchanged.",
+            "The scalar determinant formula and its connection to the original periodic spectrum use these same entries."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorrectionMatrix_entry",
+            "NLS.ZakharovShabat.sourcePrintedResonantMatrix_form",
+            "NLS.ZakharovShabat.sourcePrintedResonantMatrix_det",
+            "NLS.ZakharovShabat.sourceResonantMatrix_det_formula",
+            "NLS.ZakharovShabat.sourceSpectrum_iff_resonantScalarEquation"
+          ],
+          "qualification": "The mathematical matrix assertions are compared. The historical attribution to references [37,18] is not independently checked here."
+        },
+        {
+          "ordered_group": "S6-028",
+          "source_lines": [
+            2755,
+            2764
+          ],
+          "requirement": "Lemma 6.7 and required reality hypothesis",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The two diagonal entries agree for arbitrary complex potentials at every finite Banach exponent.",
+            "The printed unconditional parameter-conjugation identity for a_n is false. The single fixed original potential (1,i) gives a_n(n*pi)=i/(2*pi*n) and violates it beyond every proposed cutoff, while satisfying half-contraction.",
+            "The corrected statement assumes phi*=epsilon*phi, epsilon^2=1, for both the diagonal and signed off-diagonal conjugation conclusions. One common local cutoff supplies the conditions at z and conjugate(z)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_7_i",
+            "NLS.ZakharovShabat.sourceResonantA_constant_center",
+            "NLS.ZakharovShabat.exists_large_nonreal_sourceResonantA",
+            "NLS.ZakharovShabat.not_sourceLemma6_7_printed_diagonal",
+            "NLS.ZakharovShabat.sourceHasRealitySign_iff_coeff",
+            "NLS.ZakharovShabat.sourceLemma6_7_ii",
+            "NLS.ZakharovShabat.sourceLemma6_7_uniform"
+          ],
+          "qualification": "Corrected means a formal refutation and a separately scoped valid replacement; the printed unconditional statement is not marked proved."
+        },
+        {
+          "ordered_group": "S6-029",
+          "source_lines": [
+            2766,
+            2796
+          ],
+          "requirement": "Equal diagonals via transposition/conjugation",
+          "status": "interpreted",
+          "reviewed_claims": [
+            "The original cross-component unconjugated Fourier pairing is defined on a base coefficient vector and a derivative-domain test; its formula preserves the actual raw coefficients.",
+            "Q transfers to the derivative-domain test. The actual punctured complementary inverse R=A^-1 Q is transpose symmetric, including at the free center. Potential multiplication is symmetric on two derivative-domain tests.",
+            "Transposing T=Phi R reverses the two factors. Induction gives the full identity for every T^j Phi before any small-square assumption.",
+            "When the shifted square is small, the full corrected potential is transpose symmetric on arbitrary derivative-domain tests. The proof cancels the equal R terms in the potential symmetry identity for f+R Hf and g+R Hg, where H=T_hat Phi.",
+            "The original-source theorem uses the actual source correction and potential difference. The p=3 negative-strip integration example derives equality of the actual matrix diagonals directly from this full identity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGreenPairing",
+            "NLS.ZakharovShabat.sourceGreenPairing_apply",
+            "NLS.ZakharovShabat.sourceGreenPairing_unitInput",
+            "NLS.ZakharovShabat.weightedGreenPairing_complementaryProjection",
+            "NLS.ZakharovShabat.weightedGreenPairing_complementaryInverse_symm",
+            "NLS.ZakharovShabat.weightedGreenPairing_potential_symm",
+            "NLS.ZakharovShabat.weightedGreenPairing_potentialInverse_transfer",
+            "NLS.ZakharovShabat.weightedGreenPairing_powerPotential_symm",
+            "NLS.ZakharovShabat.weightedGreenPairing_add_right",
+            "NLS.ZakharovShabat.weightedGreenPairing_correctedPotential_symm",
+            "NLS.ZakharovShabat.sourceCorrectedPotential_transpose"
+          ],
+          "qualification": "The source adjoint notation is implemented as its bilinear transpose identity on stated domains. No Hilbert adjoint on a general l^p space, bounded potential on the entire base space, or full free inverse at a resonant center is asserted. This domain interpretation remains explicit, rather than being counted as a literal formalization of every adjoint symbol."
+        },
+        {
+          "ordered_group": "S6-030",
+          "source_lines": [
+            2799,
+            2853
+          ],
+          "requirement": "Reality identities using the stated type assumption",
+          "status": "matched",
+          "reviewed_claims": [
+            "The proof explicitly assumes phi*=epsilon*phi. Physical conjugation reverses Fourier indices and exchanges components with the stated sign.",
+            "The potential, domain-valued complementary inverse and T intertwine at conjugate spectral parameters. Uniqueness of the inverse transfers this to the full correction.",
+            "Extraction on the two resonant modes gives the diagonal and signed off-diagonal parameter-conjugation identities. Both signs are covered; the type condition is retained throughout."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePotentialStar_fst",
+            "NLS.ZakharovShabat.sourcePotentialStar_snd",
+            "NLS.ZakharovShabat.sourceHasRealitySign_iff_coeff",
+            "NLS.ZakharovShabat.weightedConjugation_domainPotential",
+            "NLS.ZakharovShabat.weightedConjugation_domainInverse",
+            "NLS.ZakharovShabat.weightedConjugation_potentialInverse",
+            "NLS.ZakharovShabat.weightedConjugation_correction",
+            "NLS.ZakharovShabat.weightedConjugation_correctedSynthesis",
+            "NLS.ZakharovShabat.weightedResonantA_conj",
+            "NLS.ZakharovShabat.weightedResonantBPlus_conj",
+            "NLS.ZakharovShabat.sourceLemma6_7_ii"
+          ],
+          "qualification": "The formal proof uses signed conjugation and inverse uniqueness in place of manipulating Hilbert adjoints. It proves the displayed coefficient identities under the hypothesis used in the source proof."
+        },
+        {
+          "ordered_group": "S6-031",
+          "source_lines": [
+            2856,
+            2880
+          ],
+          "requirement": "Matrix form and full parity series (1.14)-(1.15)",
+          "status": "matched",
+          "reviewed_claims": [
+            "The displayed common-diagonal matrix has the printed basis order.",
+            "Even terms of the diagonal and odd terms of each off-diagonal vanish individually, before any contraction condition.",
+            "The even vector is the convergent sum of actual original operator powers. Continuous extraction yields the odd diagonal series and strictly positive even remainder series.",
+            "Equations (1.14) and (1.15) retain the actual original T and the leading raw coefficients: second component at 2n, first component at -2n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePrintedResonantMatrix_form",
+            "NLS.ZakharovShabat.sourceResonantEvenVector_hasSum",
+            "NLS.ZakharovShabat.sourceResonantA_even_term_zero",
+            "NLS.ZakharovShabat.sourceResonantBPlus_odd_term_zero",
+            "NLS.ZakharovShabat.sourceResonantBMinus_odd_term_zero",
+            "NLS.ZakharovShabat.sourceResonantA_hasSum",
+            "NLS.ZakharovShabat.sourceResonantBPlus_remainder_hasSum",
+            "NLS.ZakharovShabat.sourceResonantBMinus_remainder_hasSum",
+            "NLS.ZakharovShabat.sourceEquation1_14",
+            "NLS.ZakharovShabat.sourceEquation1_15_plus",
+            "NLS.ZakharovShabat.sourceEquation1_15_minus"
+          ],
+          "qualification": ""
+        },
+        {
+          "ordered_group": "S6-032",
+          "source_lines": [
+            2883,
+            2888
+          ],
+          "requirement": "Actual suprema on closed unbounded strips",
+          "status": "matched",
+          "reviewed_claims": [
+            "The source coefficient suprema are suprema of their actual images on the full closed unbounded strip, not only bounds for sampled values.",
+            "Uniform bounds establish bounded-above images, nonnegative suprema and pointwise domination. The quantitative uniform theorem uses 1<p<infinity, as in the following Lemma 6.8.",
+            "Equality of the original and weighted coefficient functions on the whole common correction strip gives equality of the actual supremum sets and values."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResonantDiagonalSup",
+            "NLS.ZakharovShabat.sourceResonantBMinusSup",
+            "NLS.ZakharovShabat.sourceResonantBPlusSup",
+            "NLS.ZakharovShabat.sourceCoefficientStripBounds_of_bound",
+            "NLS.ZakharovShabat.exists_uniform_sourceCoefficientStripBounds",
+            "NLS.ZakharovShabat.sourceResonantSup_eq_weighted",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantSup_eq"
+          ],
+          "qualification": "A real-valued sSup alone is not evidence of boundedness. The cited bounded-image theorem supplies that evidence for the actual coefficient functions."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_5.lean": "38dfce5a69a3a65ac93a10637414e9854abf31e2f14d4c64554bce8d559b9fca",
+        "NLS/ZakharovShabat/SourceComplementaryCorrection.lean": "0747813e300cd2b89b0477da8ef979da484e21f0823cb73e3acbf1d1b697e2d0",
+        "NLS/ZakharovShabat/WeightedContraction.lean": "234b36e95b2575991dbee99b3cbad45cac787c24a7fef5411d502707b3bc2a31",
+        "NLS/ZakharovShabat/WeightedCorrection.lean": "caab7453c3a730157749e792e7d1d220541abbf99494cba53f056bd92c20ce90",
+        "NLS/ZakharovShabat/SourceQEquation.lean": "0682a4c2c6cc98eb8b5bbd8a2e81a5ca1b4b781bbc59aebcbaf7dfac0759b70e",
+        "NLS/ZakharovShabat/WeightedQEquation.lean": "3abdf8d3d40a2a2247f97835839f0259216dedf4c5afbca3fa883e581d69f8c6",
+        "NLS/ZakharovShabat/SourceLemma6_6.lean": "9901c19d5fea04f3f5f2a78c602ba2dadf79532267a0cd99c11eb54970a1209d",
+        "NLS/ZakharovShabat/WeightedResonantReduction.lean": "22035a0ee24b6e3cc43d7ba2246748cc6fc876263d9bb4d9f1f2a30d0adf4a5c",
+        "NLS/FunctionalAnalysis/SquaredNeumann.lean": "edbdd91b372aa4681a6b11c51b6f03485100e431150adc60e8d8aa1c816e2380",
+        "NLS/FunctionalAnalysis/ConjugatedSquaredNeumann.lean": "feaa99437d7044b4341451a2b0f46cf15413f49cfb298f13c02641e94dac4e57",
+        "NLS/ZakharovShabat/SourcePQSplitting.lean": "3146015429a77b70f80d9a1662da06f5d61be579a6ac65f713fd1032a27e207f",
+        "NLS/ZakharovShabat/SourceLemma6_7ProofTranspose.lean": "2a9353a71b62b71735c68c9cb1456e8293ecdba1032ac50fc6899ab90d37d2dc",
+        "NLS/ZakharovShabat/SourceResonantMatrix.lean": "25c695a8043f202997a6dc95ebb857e1c362276599c0b777902428bfaa8735db",
+        "NLS/ZakharovShabat/SourceResonantCoefficients.lean": "fd3d56720693f3f75b03f5fff50a2cfe352063f3b5cbecc9d01e496c6a8a04bb",
+        "NLS/ZakharovShabat/SourceLemma6_7.lean": "b622e8e9b2fa434befff6ad188919b6a5bdfe27de183cf8002be4ccd591deea1",
+        "NLS/ZakharovShabat/SourceLemma6_7Counterexample.lean": "4b9fd9266a7672504f6aa741c7fa97cab542a4ff629a1c93926c4e4eb4631588",
+        "NLS/ZakharovShabat/ResonantDiagonalSymmetry.lean": "736881c712d4c841e09ba5470bbf789a90850bb498de02a325095f55204df036",
+        "NLS/ZakharovShabat/BilinearGreen.lean": "9cac1551f476b4cacf5d1fa0dc72c4f4f2010a7c8e488693dbe3266957239956",
+        "NLS/ZakharovShabat/ResonantConjugation.lean": "b9c5e3b226be20e3319437847bc130bb7da188ba1ff6c924dc888404f2776237",
+        "NLS/ZakharovShabat/ConjugateCorrection.lean": "90dbf16e544dbb7b31de3ab21946d2236c131e4bf6d0982969c10cb0077060ac",
+        "NLS/ZakharovShabat/ConjugateComplementary.lean": "8921792887e48777b4dca7287cd9c377188539dbbe792c9fb5dd7c3805549488",
+        "NLS/ZakharovShabat/SourceResonantParity.lean": "8823bd69448f550a8620e065e39cccc1e7d2a67decf7b77d03070a88a446f827",
+        "NLS/ZakharovShabat/ResonantCoefficientSeries.lean": "768bdea0c87430b225a64614564dab80059dc73a27b4f9696be5bcac7b06e02a",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean": "27290e984879c5ad4afa9a3c06cb830faee6d2883648f67e41e1268355192ccb",
+        "NLS/ZakharovShabat/SourceResonantSup.lean": "334152d460373a9a6ae712cce94f84c0866f7b674e49c403e436fdbcc0dada84",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/ResonantRealityCounterexample.lean": "3241767eb4ab234910bdfbc0f324c7f57ef6b8a149da55b53779f63fb11f0e35",
+        "NLS/ZakharovShabat/WeightedDomainPotential.lean": "b1be71f9b2b360674f0449dac327f2f98f9a6624def9bc295a46966b4f1d7eed",
+        "NLS/ZakharovShabat/ComplementaryFreeInverse.lean": "80a4047f476909c714e7d61f676f57421eac8e6c97e0b770aea64875a58c9416",
+        "NLS/SequenceSpaces/ReflectedTestSymmetry.lean": "12ba5cc32c36d36b1b7f4c22b19f17b81cf5560db200b5481b1a4d49647764bd"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          39,
+          40,
+          41
+        ],
+        "images": {
+          "Section6ProofReview-039.png": "42c556f38be28145bfa4d5f0bbe7795f98f95787298b93d3e13126d81ceda4ad",
+          "Section6ProofReview-040.png": "5f66ef1fcbe827af14c18a0760102212f28e2fe6410793c85b3e4c9bd2591180",
+          "Section6ProofReview-041.png": "b33633d75663339c15d2e55e22bbd4849470fb6cfc29d6853c5173599ab0f1a7"
+        }
+      },
+      "qualification": "Nine consecutive passage groups (S6-024 through S6-032) are reconciled against the source and the listed thirty module bodies. Seven are matched, the missing reality hypothesis is corrected with a formal counterexample, and the adjoint passage is explicitly interpreted on the actual bilinear-test domains. This does not certify every transitive proof, complete the remaining thirty-eight navigation groups, or establish dissertation completeness. The final p.44 summed constant, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. Previous source corrections and immutable reviews are preserved.",
+      "ordered_inventory_sha256": "eea08880c7e4fdeefc120c072292e47f13e597b2dfefcdbb1c8042f9c787e80c",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_nonresonant",
+        "NLS.ZakharovShabat.exists_large_nonreal_sourceResonantA",
+        "NLS.ZakharovShabat.exists_uniform_sourceCoefficientStripBounds",
+        "NLS.ZakharovShabat.exists_uniform_sourceComplementaryCorrection",
+        "NLS.ZakharovShabat.exists_uniform_sourceResonantSup_eq",
+        "NLS.ZakharovShabat.exists_uniform_weightedFrequencyNeighborhood",
+        "NLS.ZakharovShabat.not_sourceLemma6_7_printed_diagonal",
+        "NLS.ZakharovShabat.sourceCoefficientStripBounds_of_bound",
+        "NLS.ZakharovShabat.sourceComplementaryCorrection_even_hasSum",
+        "NLS.ZakharovShabat.sourceComplementaryCorrection_formula",
+        "NLS.ZakharovShabat.sourceComplementaryCorrection_left",
+        "NLS.ZakharovShabat.sourceComplementaryCorrection_right",
+        "NLS.ZakharovShabat.sourceComplementaryCorrection_weightedInput",
+        "NLS.ZakharovShabat.sourceCorrectedPotential_transpose",
+        "NLS.ZakharovShabat.sourceCorrectionMatrix_entry",
+        "NLS.ZakharovShabat.sourceEquation1_14",
+        "NLS.ZakharovShabat.sourceEquation1_15_minus",
+        "NLS.ZakharovShabat.sourceEquation1_15_plus",
+        "NLS.ZakharovShabat.sourceGreenPairing",
+        "NLS.ZakharovShabat.sourceGreenPairing_apply",
+        "NLS.ZakharovShabat.sourceGreenPairing_unitInput",
+        "NLS.ZakharovShabat.sourceHasRealitySign_iff_coeff",
+        "NLS.ZakharovShabat.sourceLemma6_5_uniform_half",
+        "NLS.ZakharovShabat.sourceLemma6_6",
+        "NLS.ZakharovShabat.sourceLemma6_6_eigenvector",
+        "NLS.ZakharovShabat.sourceLemma6_6_uniform",
+        "NLS.ZakharovShabat.sourceLemma6_7_i",
+        "NLS.ZakharovShabat.sourceLemma6_7_ii",
+        "NLS.ZakharovShabat.sourceLemma6_7_uniform",
+        "NLS.ZakharovShabat.sourcePotentialInverse_square_norm",
+        "NLS.ZakharovShabat.sourcePotentialStar_fst",
+        "NLS.ZakharovShabat.sourcePotentialStar_snd",
+        "NLS.ZakharovShabat.sourcePrintedResonantMatrix_det",
+        "NLS.ZakharovShabat.sourcePrintedResonantMatrix_form",
+        "NLS.ZakharovShabat.sourceQSolution_potential",
+        "NLS.ZakharovShabat.sourceQSolution_unique",
+        "NLS.ZakharovShabat.sourceResonantA_constant_center",
+        "NLS.ZakharovShabat.sourceResonantA_even_term_zero",
+        "NLS.ZakharovShabat.sourceResonantA_hasSum",
+        "NLS.ZakharovShabat.sourceResonantBMinusSup",
+        "NLS.ZakharovShabat.sourceResonantBMinus_odd_term_zero",
+        "NLS.ZakharovShabat.sourceResonantBMinus_remainder_hasSum",
+        "NLS.ZakharovShabat.sourceResonantBPlusSup",
+        "NLS.ZakharovShabat.sourceResonantBPlus_odd_term_zero",
+        "NLS.ZakharovShabat.sourceResonantBPlus_remainder_hasSum",
+        "NLS.ZakharovShabat.sourceResonantDiagonalSup",
+        "NLS.ZakharovShabat.sourceResonantEvenVector_hasSum",
+        "NLS.ZakharovShabat.sourceResonantMatrix_det_formula",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_coordinates",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_eq",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_kernel_iff",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_ne_zero_iff",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_of_eigenvector",
+        "NLS.ZakharovShabat.sourceResonantReconstruction_residual",
+        "NLS.ZakharovShabat.sourceResonantSup_eq_weighted",
+        "NLS.ZakharovShabat.sourceSpectrum_iff_resonantScalarEquation",
+        "NLS.ZakharovShabat.sourceUnitDomainEquiv",
+        "NLS.ZakharovShabat.sourceWeightedPencil_add_zero_iff_PQ",
+        "NLS.ZakharovShabat.weightedConjugation_correctedSynthesis",
+        "NLS.ZakharovShabat.weightedConjugation_correction",
+        "NLS.ZakharovShabat.weightedConjugation_domainInverse",
+        "NLS.ZakharovShabat.weightedConjugation_domainPotential",
+        "NLS.ZakharovShabat.weightedConjugation_potentialInverse",
+        "NLS.ZakharovShabat.weightedCorrection_commute",
+        "NLS.ZakharovShabat.weightedCorrection_expand",
+        "NLS.ZakharovShabat.weightedGreenPairing_add_right",
+        "NLS.ZakharovShabat.weightedGreenPairing_complementaryInverse_symm",
+        "NLS.ZakharovShabat.weightedGreenPairing_complementaryProjection",
+        "NLS.ZakharovShabat.weightedGreenPairing_correctedPotential_symm",
+        "NLS.ZakharovShabat.weightedGreenPairing_potentialInverse_transfer",
+        "NLS.ZakharovShabat.weightedGreenPairing_potential_symm",
+        "NLS.ZakharovShabat.weightedGreenPairing_powerPotential_symm",
+        "NLS.ZakharovShabat.weightedQSolution",
+        "NLS.ZakharovShabat.weightedQSolution_equation",
+        "NLS.ZakharovShabat.weightedQSolution_potential",
+        "NLS.ZakharovShabat.weightedQSolution_total_potential",
+        "NLS.ZakharovShabat.weightedResonantA_conj",
+        "NLS.ZakharovShabat.weightedResonantBPlus_conj",
+        "NLS.ZakharovShabat.weightedResonantMap",
+        "NLS.ZakharovShabat.weightedResonantMatrix"
+      ],
+      "declaration_inventory_count": 43460,
+      "source_record_sha256": "ecb954d9e13ac62e82babce4dac8471fdf4b183f17f423047b7df42b949192ac"
     }
   }
 }

@@ -120,6 +120,13 @@ moment constants for p>1, the endpoint and exact 2^(1/p) recombination.
 One explicit constant also gives the corrected final Young budget; the
 printed equality remains refuted. The full Section 6 inventory and final
 p.44 summed constant are still open.
+The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now explicitly
+reconciles nine consecutive passage groups (S6-024–S6-032). Seven are matched,
+the reality statement is corrected, and the operator-adjoint argument retains
+an explicit derivative-domain bilinear interpretation. New direct transpose
+identities cover every potential Neumann term and the full corrected potential.
+The other 38 groups still need ordered reconciliation; the ledger is not a
+completion percentage or a substitute for the source-wide assertion inventory.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

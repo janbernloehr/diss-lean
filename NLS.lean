@@ -4759,3 +4759,4 @@ import NLS.Fourier.PeriodicSobolevDuality
 import NLS.ZakharovShabat.SourceGapProofPower
 import NLS.ZakharovShabat.SourceLemma6_5ProofSeries
 import NLS.ZakharovShabat.SourceLemma6_5ProofMoments
+import NLS.ZakharovShabat.SourceLemma6_7ProofTranspose

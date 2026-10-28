@@ -70386,3 +70386,40 @@ example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
 
 end
 end Section6ExpansionMomentChecks
+
+namespace Section6DirectTransposeChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The original corrected potential has the literal Fourier transpose at the p=1 free center.
+example (φ : CoeffPair 1)
+    (h : ‖(sourcePotentialInverse (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0)).comp
+      (sourcePotentialInverse (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0))‖ < 1)
+    (f g : WeightedCoeffPair (Weight.sobolev 1) 1) :
+    let H := fun u => sourceComplementaryCorrection (by simp) φ 0 0
+      (by simpa using center_mem_resonantStrip 0) h
+      (sourceOperator (by simp) φ u-sourceOperator (by simp) 0 u)
+    (∑' k : ℤ, (H f).fst k*g.snd.val (-k)) + (∑' k : ℤ, (H f).snd k*g.fst.val (-k)) =
+    (∑' k : ℤ, (H g).fst k*f.snd.val (-k)) + (∑' k : ℤ, (H g).snd k*f.fst.val (-k)) := by
+  have he := sourceCorrectedPotential_transpose
+    (by simp) φ 0 0 (by simpa using center_mem_resonantStrip 0) h f g
+  rw [sourceGreenPairing_apply,sourceGreenPairing_apply] at he
+  exact he
+
+local instance section6TransposeFactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At a non-Hilbert exponent, the full transpose identity recovers equal actual matrix diagonals.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (z : ℂ) (hz : z ∈ resonantStrip (-3))
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ (-3) z hz‖ < 1) :
+    weightedCorrectionMatrix (by norm_num) w φ (-3) z hz h 0 0 =
+      weightedCorrectionMatrix (by norm_num) w φ (-3) z hz h 1 1 := by
+  have he := weightedGreenPairing_correctedPotential_symm (by norm_num) w φ (-3) z hz h
+    (resonantSynthesis w.toWeight.oneDerivative (-3) (Pi.single 0 1))
+    (resonantSynthesis w.toWeight.oneDerivative (-3) (Pi.single 1 1))
+  simpa [weightedGreenPairing_apply,weightedCorrectionMatrix,resonantCoordinates_zero,
+    resonantCoordinates_one,mul_ite,neg_eq_iff_eq_neg] using he
+
+end
+end Section6DirectTransposeChecks

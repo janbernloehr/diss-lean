@@ -5,6 +5,52 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.7: direct transpose identities and ordered source review
+
+[SourceLemma6_7ProofTranspose.lean](../NLS/ZakharovShabat/SourceLemma6_7ProofTranspose.lean)
+formalizes the operator symmetry used before the diagonal coefficients are
+compared on p.40. Its pairing is the unconjugated cross-component Fourier sum
+on a base vector and an actual derivative-domain test. One derivative supplies
+the l1 test required at every finite p≥1.
+
+`weightedGreenPairing_complementaryProjection` transfers Q to the test.
+`weightedGreenPairing_complementaryInverse_symm` gives the transpose identity
+for the actual punctured inverse R=A⁻¹Q, including free centers.
+`weightedGreenPairing_potentialInverse_transfer` reverses the factors in T=Phi R;
+induction gives `weightedGreenPairing_powerPotential_symm` for every T^j Phi.
+These assertions require no contraction assumption.
+
+`weightedGreenPairing_correctedPotential_symm` proves the full corrected
+potential identity when the shifted square is small. It uses potential
+symmetry on f+R Hf and g+R Hg and cancels the equal R terms, with H=T_hat Phi.
+`sourceCorrectedPotential_transpose` transports the result to the actual
+original source correction and potential. `sourceGreenPairing_apply` identifies
+its two literal Fourier sums. No reality condition is needed.
+
+This is an explicit bilinear interpretation of the source's adjoint argument.
+It does not assert a Hilbert adjoint on a general l^p space, a bounded
+potential on the whole base space, or a full free inverse at a resonant center.
+The p=3 integration example derives equality of the actual matrix diagonals
+from this identity; the p=1 example checks the original Fourier formula.
+
+The [ordered assertion ledger](SECTION_6_ASSERTIONS.md) reconciles S6-024
+through S6-032 against thirty reviewed module bodies: common contraction,
+P/Q reduction, full eigenvector reconstruction, matrix order, the corrected
+reality statement, transpose symmetry, signed conjugation, parity series and
+actual strip suprema. Seven rows are matched, one is corrected, and one retains
+the domain interpretation. The other 38 rows remain pending ordered review,
+even where earlier focused comparisons already exist.
+
+Section6TransposeSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records the exact claims,
+public declarations and snapshots. Earlier reviews and all outstanding
+completion qualifications are preserved.
+
+Validation: `./scripts/check.sh` passes with 8,456 build jobs, 7,526
+public examples and a transitive axiom audit of 43,460 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.5: full Fourier convergence and the reciprocal-moment constants
 
 [SourceLemma6_5ProofExpansion.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofExpansion.lean)

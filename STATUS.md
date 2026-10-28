@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: completing the Lemma 6.5 proof interfaces
+## Current milestone: direct transpose symmetry in Lemma 6.7
+
+The complementary inverse, every potential Neumann term and the full corrected
+potential now have transpose identities on the actual derivative-domain tests,
+for every finite p≥1 and arbitrary complex potentials. The original-source
+pairing is exactly the two reflected Fourier sums. The p=1 free-center example
+checks that formula; the p=3 negative-strip example obtains equal matrix
+diagonals directly from the full identity.
+
+The new [ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) reconciles
+nine consecutive passages through the parity series and actual strip suprema.
+It retains the missing reality hypothesis and makes the domain interpretation
+of the adjoint notation explicit. Thirty-eight navigation groups still require
+ordered reconciliation; this is not a completion percentage.
+
+Validation: `./scripts/check.sh` passes with 8,456 build jobs, 7,526
+public examples and a transitive axiom audit of 43,460 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: the analytic and power-sum proof assertions of Lemma 6.8. Preserve the
+unresolved final p.44 summed constant and all
+[completion qualifications](coverage/COMPLETENESS.md).
+
+## Previous milestone: completing the Lemma 6.5 proof interfaces
 
 The full signed double Fourier series now converges in the original
 weighted l1 pair norm and represents the actual original-domain vector.
