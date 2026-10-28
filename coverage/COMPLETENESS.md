@@ -143,6 +143,10 @@ The cubic perturbation and higher error tails are controlled rigorously;
 the limit is strictly below 16*r^4 for n>=3. The actual counted-root gap
 asymptotics are still missing, so the final inequality remains unresolved.
 The ordered counts are unchanged.
+The actual moving diagonal center and determinant are now controlled too:
+the center is eventually real, has O(s^2) displacement, and the determinant
+at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2 for every fixed complex t.
+This does not yet select the two actual roots or give the required gap comparison.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

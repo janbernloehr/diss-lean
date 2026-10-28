@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the exact normalized limit of the actual full coefficient sum
-on p.44, including both original whole-strip suprema and infinite signed tails.
-The actual counted-root gap asymptotics remain open, so the final weighted gap
-inequality is still unresolved. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
-remains at twenty-three reviewed and twenty-four pending passage groups.
-See the [Section 6 comparison](coverage/SECTION_6.md) and
+Latest step: the actual determinant limit at cubic distances from its moving
+diagonal center, with original coefficient limits, quadratic diagonal bounds
+and eventual reality of the same center. Locating and identifying the actual
+spectral roots is next; the final p.44 inequality remains unresolved.
+The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md) remains at
+twenty-three reviewed and twenty-four pending groups. See the
+[Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

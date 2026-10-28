@@ -19,6 +19,9 @@ is now proved for the original three-mode family at p=4, unit weight and
 cutoff abs(n). Both whole-strip remainder suprema and the entire infinite
 tails are retained. The actual spectral-gap limit still needs proof before
 this family can decide the final summed inequality.
+The [moving-center determinant limit](NLS/ZakharovShabat/SourceCubicMovingDeterminant.lean)
+is also proved. Actual root localization and the resulting spectral-gap
+comparison are still needed; no additional source discrepancy is asserted.
 See the [Section 6 comparison](coverage/SECTION_6.md).
 
 ## Lemma 3.4 proof, p. 25: missing inverse-radius dependence

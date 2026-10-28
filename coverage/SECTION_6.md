@@ -5,6 +5,47 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## The actual determinant near its moving diagonal center
+
+The original three-mode family now has actual coefficient and determinant
+limits at its moving diagonal center. For each fixed n>0 and complex t, the
+determinant at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2, with
+r=1/(pi*n)^2. Both original off-diagonal coefficients divided by s^3 tend
+to 2*r at any moving strip parameter tending to pi*n.
+
+The original diagonal has a quadratic norm bound for every finite Banach
+exponent, including p=1. Cauchy's estimate gives a derivative bound that
+vanishes with the amplitude. The same actual center solves the diagonal
+equation, is eventually real and has displacement O(s^2) from pi*n.
+
+[SourceCubicMovingCoefficient.lean](../NLS/ZakharovShabat/SourceCubicMovingCoefficient.lean)
+controls the normalized actual remainder and both original coefficients along
+moving spectral parameters. [SourceDiagonalSmallBound.lean](../NLS/ZakharovShabat/SourceDiagonalSmallBound.lean)
+proves the quadratic original-norm bound and general Cauchy estimates.
+[SourceCubicSmallDiagonal.lean](../NLS/ZakharovShabat/SourceCubicSmallDiagonal.lean)
+specializes these bounds to the family on whole strips and refined disks.
+[SourceCubicMovingCenter.lean](../NLS/ZakharovShabat/SourceCubicMovingCenter.lean)
+uses the existing actual center, its equation and uniqueness to prove the
+sharp displacement, convergence and eventual reality.
+[SourceCubicMovingDeterminant.lean](../NLS/ZakharovShabat/SourceCubicMovingDeterminant.lean)
+then proves the normalized residual and determinant limits for every fixed
+complex cubic displacement. This is still a pointwise limit in t, not a
+claim of uniform convergence on a contour or a completed root-selection proof.
+
+Validation: `./scripts/check.sh` passes with 8,489 build jobs, 7,552
+public examples and a transitive axiom audit of 44,099 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The actual counted roots still need localization and identification with the
+original canonical periodic pair. The final p.44 inequality remains unresolved;
+S6-047 stays pending and the ordered ledger remains at twenty-three reviewed
+and twenty-four pending groups. The broader completion qualifications remain.
+
+The partial Section6MovingCenterSourceComparison-2026-10-28 record is in the
+[source-review index](source-review-index.json). The original period-two
+potential and the locally uniform cutoff requirement remain unchanged.
+
 ## The exact coefficient-side limit of the final p.44 sum
 
 [ResonantCubicPerturbation.lean](../NLS/ZakharovShabat/ResonantCubicPerturbation.lean)

@@ -344,6 +344,20 @@ Section6CubicPerturbationSourceComparison-2026-10-28 records are in the
 [source-review index](source-review-index.json). No additional ordered group
 is classified as reviewed by these supporting milestones.
 
+The actual moving diagonal center and determinant are now controlled too:
+the center is eventually real, has O(s^2) displacement, and the determinant
+at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2 for every fixed complex t.
+This does not yet select the two actual roots or give the required gap comparison.
+
+Additional public evidence: `sourceCubicMovingCoefficient_tendsto`,
+`norm_sourceResonantA_le_norm_sq`, `sourceCubicDiagonal_deriv_le`,
+`sourceCubicDiagonalCenter_eventually`, `sourceCubicDiagonalCenter_tendsto`,
+`sourceCubicDiagonalCenter_real_eventually`, `sourceCubicDiagonalResidual_tendsto`,
+`sourceCubicDeterminant_scaled_tendsto`.
+The partial Section6MovingCenterSourceComparison-2026-10-28 record in the
+[source-review index](source-review-index.json) adds supporting evidence only;
+S6-047 and the ordered counts are unchanged.
+
 ## Remaining work
 
 Reconcile the other 24 passage groups: S6-001 through S6-023 and S6-047.

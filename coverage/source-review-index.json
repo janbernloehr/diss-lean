@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T20:43:43.501901+00:00",
-  "base_commit": "9d39fa2f35279dfc594a4426fbf3ffff0a999b3d",
+  "published_utc": "2026-10-28T21:09:57.219779+00:00",
+  "base_commit": "24a74c4a82b9585683548c4ee20a781cac5318ee",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 101,
-    "module_hash_checks": 1640,
-    "distinct_modules": 1047
+    "review_records": 102,
+    "module_hash_checks": 1659,
+    "distinct_modules": 1054
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9d39fa2f35279dfc594a4426fbf3ffff0a999b3d",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the cubic perturbation, its actual full-strip infinite error tail, the exact normalized limit of the entire original coefficient-side sum and four integration examples. S6-047 remains unresolved.",
+    "base_commit": "24a74c4a82b9585683548c4ee20a781cac5318ee",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes actual moving coefficient limits, quadratic original diagonal bounds, the real moving center and the normalized actual determinant limit and four integration examples. S6-047 remains unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8484,
-    "public_examples": 7548,
-    "transitive_NLS_declarations": 44034,
+    "build_jobs": 8489,
+    "public_examples": 7552,
+    "transitive_NLS_declarations": 44099,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4761,
-      "sha256": "67b1dd4f5fe56263fd376ea7acec39283985b1e0d829e656958287fba262ea46"
+      "files": 4766,
+      "sha256": "7613ad457341c9e6ff5956ab45f247ea3b5a681eb88ee2e9560e4ca745c65ace"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -24870,6 +24870,138 @@
       ],
       "declaration_inventory_count": 44034,
       "source_record_sha256": "2a32194abfb57700cb750bf0124e1f57945577fadb733a5a9d3f2fa6d8848ee8"
+    },
+    "Section6MovingCenterSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "24a74c4a82b9585683548c4ee20a781cac5318ee",
+      "updated_utc": "2026-10-28T21:09:57.219779+00:00",
+      "source_lines": [
+        [
+          3272,
+          3293
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-047",
+          "source_lines": [
+            3272,
+            3293
+          ],
+          "requirement": "Actual moving-center determinant asymptotics supporting the final weighted gap sum",
+          "status": "partial",
+          "ordered_status": "pending",
+          "reviewed_claims": [
+            "For fixed n>0, the combined target-strip error divided by s^3 tends to zero, proved from the actual infinite fourth-power error sum. At every moving spectral parameter eventually in the target strip and tending to pi*n, both original off-diagonal coefficients divided by s^3 tend to 2*r, r=1/(pi*n)^2.",
+            "For every finite Banach exponent including p=1, the actual original diagonal under half-contraction is bounded by an exponent-only constant times the square of the original component-sum norm. An arbitrary full-strip majorant B gives the Cauchy derivative and Lipschitz constant B/(pi/4) on the refined disk.",
+            "For the original three-mode family, the actual diagonal and its derivative are O(s^2), with explicit constants. The existing named diagonal center is eventually in the refined disk, solves the actual original diagonal equation, has O(s^2) displacement from pi*n, and tends to pi*n.",
+            "Physical real-type symmetry makes this same selected center real for all sufficiently small positive amplitudes when n>0. The proof uses actual conjugation identities and uniqueness, without replacing the center by a prescribed real point.",
+            "For every fixed complex displacement t, the point center(s)+s^3*t eventually lies in the refined disk. Its actual diagonal residual divided by s^3 tends to t, and its actual original determinant divided by s^6 tends to t^2-(2*r)^2.",
+            "Four integration examples retain the p=1 endpoint, a non-real displacement, simultaneous reality and sharp displacement for the same center, and eventual nonvanishing of the actual determinant at the diagonal center."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCubicCombinedError_normalized_tendsto",
+            "NLS.ZakharovShabat.sourceCubicMovingRemainderError_tendsto",
+            "NLS.ZakharovShabat.sourceCubicMovingRemainder_tendsto",
+            "NLS.ZakharovShabat.sourceCubicCoefficient",
+            "NLS.ZakharovShabat.sourceCubicCoefficient_split",
+            "NLS.ZakharovShabat.sourceCubicMovingCoefficient_tendsto",
+            "NLS.ZakharovShabat.sourceDiagonalNormConstant",
+            "NLS.ZakharovShabat.sourceDiagonalNormConstant_nonneg",
+            "NLS.ZakharovShabat.norm_sourceResonantA_le_norm_sq",
+            "NLS.ZakharovShabat.norm_deriv_le_on_refined_disk_of_bound",
+            "NLS.ZakharovShabat.norm_diagonal_sub_le_on_refined_disk_of_bound",
+            "NLS.ZakharovShabat.sourceCubicDiagonalBound",
+            "NLS.ZakharovShabat.sourceCubicDiagonal_norm_le",
+            "NLS.ZakharovShabat.sourceCubicDiagonal_analytic",
+            "NLS.ZakharovShabat.sourceCubicDiagonal_deriv_le",
+            "NLS.ZakharovShabat.sourceCubicDiagonal_eq",
+            "NLS.ZakharovShabat.sourceCubicDiagonalCenter",
+            "NLS.ZakharovShabat.sourceCubicDiagonalBound_tendsto",
+            "NLS.ZakharovShabat.sourceCubicDiagonalCenter_properties",
+            "NLS.ZakharovShabat.sourceCubicDiagonalCenter_eventually",
+            "NLS.ZakharovShabat.sourceCubicDiagonalCenter_tendsto",
+            "NLS.ZakharovShabat.weightedCubicTailFamily_realSign",
+            "NLS.ZakharovShabat.sourceCubicDiagonal_conj",
+            "NLS.ZakharovShabat.sourceCubicDiagonalCenter_real_eventually",
+            "NLS.ZakharovShabat.sourceCubicShiftedCenter",
+            "NLS.ZakharovShabat.sourceCubicShiftedCenter_tendsto",
+            "NLS.ZakharovShabat.sourceCubicShiftedCenter_eventually_disk",
+            "NLS.ZakharovShabat.sourceCubicDiagonalShiftError_tendsto",
+            "NLS.ZakharovShabat.sourceCubicDiagonalResidual_tendsto",
+            "NLS.ZakharovShabat.sourceCubicDeterminant_scaled_tendsto"
+          ],
+          "qualification": "These are actual coefficient and determinant limits, not yet a selection of spectral roots. The two counted roots still need localization and identification with the original canonical pair to obtain a sharp gap bound or limit. The final p.44 inequality remains unresolved; S6-047 stays pending and the ordered counts remain 23 reviewed and 24 pending."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceCubicPrintedSumLimit.lean": "770fe9b5b9ddd936c6b3af2607051ea82b63e9c6e941f50c63674c7e87157782",
+        "NLS/ZakharovShabat/SourceCubicCoefficientLimit.lean": "290fa04e04f02bca15545130b997233b919de906e33eddccebfd96051d73c23e",
+        "NLS/ZakharovShabat/SourceCubicCoefficientError.lean": "faf35dfb4ca59b267982ad8beb831be2675678d17d1db4808982a89b7a4fdb8f",
+        "NLS/ZakharovShabat/SourceCubicCoefficientErrorTail.lean": "3ea653f3725997989855f372bef1965ca0acd1e0723e9488e1a2ff167f95bac9",
+        "NLS/ZakharovShabat/SourceCubicTailFamily.lean": "a88ec8328a93d402a2c22295a1e8b8a83822fe5120104d8e63be2a9b46ad58e6",
+        "NLS/ZakharovShabat/SourceLemma6_8DiagonalProof.lean": "52aaf21e5bb0d3b9773bf7212745c7abf05870b9ff4df5f33e5ea0deba22de02",
+        "NLS/ZakharovShabat/ComplementaryRowEstimate.lean": "cbf50f5446b681279c2ec19400c0090c7a5dff6ac93df36b68893e5f5eb036ec",
+        "NLS/ZakharovShabat/ResonantDiagonalCenter.lean": "d4ee73ec6e7a825bb8b3ffc4afc334f74e68e086977b61ba7d9564f0d8e50048",
+        "NLS/ZakharovShabat/ResonantCauchyGap.lean": "816b75af2eefc3b0c48b8637e15669e6be69e1a1b4e7848f23c00ba2e9b5b7fc",
+        "NLS/ZakharovShabat/WeightedResonantDiagonalCenter.lean": "f3c47210b857a857b809bb495f160d032757dea67b2a0c833e6bc67d2aa66ac6",
+        "NLS/ZakharovShabat/SourceLemma6_7.lean": "b622e8e9b2fa434befff6ad188919b6a5bdfe27de183cf8002be4ccd591deea1",
+        "NLS/ZakharovShabat/ResonantConjugation.lean": "b9c5e3b226be20e3319437847bc130bb7da188ba1ff6c924dc888404f2776237",
+        "NLS/ZakharovShabat/SourceResonantDeterminant.lean": "2efa76e55b73dd2298e610723a222506927672ad0d42878d64a0510be8561927",
+        "NLS/ZakharovShabat/SourceLemma6_9.lean": "ee0e0a406fd500fba9d8e982c9c41e622e48d7479762d99fcf41605488e8f6de",
+        "NLS/ZakharovShabat/SourceCubicMovingCoefficient.lean": "0401711609f58bf8b65326263e1732c5ec3e0c6914b8d6a3bd16c2caf132f0e6",
+        "NLS/ZakharovShabat/SourceDiagonalSmallBound.lean": "8906e40610dc116bbdbc46be8310c30680c29c411066fae14b80b04a37aa42e7",
+        "NLS/ZakharovShabat/SourceCubicSmallDiagonal.lean": "67a955e2308593b6497a0d3289306df3058ef54cdf6b4dbb4298937766470b69",
+        "NLS/ZakharovShabat/SourceCubicMovingCenter.lean": "481afd2cf9d1f757cb3861dfb163c707cdfc022576a45f9ecad8add0cf45467c",
+        "NLS/ZakharovShabat/SourceCubicMovingDeterminant.lean": "5e1a0a1b435151b1921b0f4062cd94961de4ad93f52b037c3b1a25dea241e94d"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          44
+        ],
+        "images": {
+          "Section6ProofReview-044.png": "9c461b73312ec584566578a463f3cc87fd1a8c09be05b4852d14469bd0fea33d"
+        }
+      },
+      "qualification": "Partial supporting work for S6-047. Five new module bodies were inspected and fourteen dependency snapshots were revalidated against the preceding proof preparation. The actual counted-root comparison and final p.44 inequality, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. All earlier reviews and corrections are preserved.",
+      "ordered_inventory_sha256": "adf1a0bd6aaab96da830fe58b18aed3f84acc8352435538f2beec61c9770ac3c",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.norm_deriv_le_on_refined_disk_of_bound",
+        "NLS.ZakharovShabat.norm_diagonal_sub_le_on_refined_disk_of_bound",
+        "NLS.ZakharovShabat.norm_sourceResonantA_le_norm_sq",
+        "NLS.ZakharovShabat.sourceCubicCoefficient",
+        "NLS.ZakharovShabat.sourceCubicCoefficient_split",
+        "NLS.ZakharovShabat.sourceCubicCombinedError_normalized_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDeterminant_scaled_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDiagonalBound",
+        "NLS.ZakharovShabat.sourceCubicDiagonalBound_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDiagonalCenter",
+        "NLS.ZakharovShabat.sourceCubicDiagonalCenter_eventually",
+        "NLS.ZakharovShabat.sourceCubicDiagonalCenter_properties",
+        "NLS.ZakharovShabat.sourceCubicDiagonalCenter_real_eventually",
+        "NLS.ZakharovShabat.sourceCubicDiagonalCenter_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDiagonalResidual_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDiagonalShiftError_tendsto",
+        "NLS.ZakharovShabat.sourceCubicDiagonal_analytic",
+        "NLS.ZakharovShabat.sourceCubicDiagonal_conj",
+        "NLS.ZakharovShabat.sourceCubicDiagonal_deriv_le",
+        "NLS.ZakharovShabat.sourceCubicDiagonal_eq",
+        "NLS.ZakharovShabat.sourceCubicDiagonal_norm_le",
+        "NLS.ZakharovShabat.sourceCubicMovingCoefficient_tendsto",
+        "NLS.ZakharovShabat.sourceCubicMovingRemainderError_tendsto",
+        "NLS.ZakharovShabat.sourceCubicMovingRemainder_tendsto",
+        "NLS.ZakharovShabat.sourceCubicShiftedCenter",
+        "NLS.ZakharovShabat.sourceCubicShiftedCenter_eventually_disk",
+        "NLS.ZakharovShabat.sourceCubicShiftedCenter_tendsto",
+        "NLS.ZakharovShabat.sourceDiagonalNormConstant",
+        "NLS.ZakharovShabat.sourceDiagonalNormConstant_nonneg",
+        "NLS.ZakharovShabat.weightedCubicTailFamily_realSign"
+      ],
+      "declaration_inventory_count": 44099,
+      "source_record_sha256": "45877c64210974901cff78966fe17d2347ec11041db612ba09920d7875eeb210"
     }
   }
 }

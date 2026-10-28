@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: the actual coefficient sum on p.44
+## Current milestone: the actual moving-center determinant
+
+The original three-mode family now has actual coefficient and determinant
+limits at its moving diagonal center. For each fixed n>0 and complex t, the
+determinant at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2, with
+r=1/(pi*n)^2. Both original off-diagonal coefficients divided by s^3 tend
+to 2*r at any moving strip parameter tending to pi*n.
+
+The original diagonal has a quadratic norm bound for every finite Banach
+exponent, including p=1. Cauchy's estimate gives a derivative bound that
+vanishes with the amplitude. The same actual center solves the diagonal
+equation, is eventually real and has displacement O(s^2) from pi*n.
+
+Validation: `./scripts/check.sh` passes with 8,489 build jobs, 7,552
+public examples and a transitive axiom audit of 44,099 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The actual counted roots still need localization and identification with the
+original canonical periodic pair. The final p.44 inequality remains unresolved;
+S6-047 stays pending and the ordered ledger remains at twenty-three reviewed
+and twenty-four pending groups. The broader completion qualifications remain.
+
+## Previous milestone: the actual coefficient sum on p.44
 
 For the original three-mode family, the full right-hand side of the final
 p.44 display divided by s^12 now has the proved limit 2*r^4+2*C^4, where

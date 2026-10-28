@@ -70758,3 +70758,53 @@ example (n : ℤ) (hn : 3 ≤ n) : ∀ᶠ s : ℝ in 𝓝[>] (0 : ℝ),
   exact (div_lt_iff₀ (pow_pos hspos 12)).mp hs
 
 end Section6CubicPerturbationChecks
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+namespace Section6MovingCenterChecks
+
+-- The quadratic original-norm estimate includes the p=1 endpoint with conjugate exponent infinity.
+example (φ : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hh : ‖weightedPotentialSquareInShift (by simp) SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ ≤ 1/2) :
+    ‖sourceResonantAFunction (by simp) φ n z‖ ≤
+      (2*Coeff.complementaryConstant 1 (by simp))*‖φ‖^2 := by
+  apply (norm_sourceResonantA_le_norm_sq (by simp) φ n z hz hh).trans
+  exact mul_le_mul_of_nonneg_right
+    (mul_le_mul_of_nonneg_left (Coeff.norm_puncturedLattice_le_complementaryConstant (p := 1) (by simp))
+      (by norm_num)) (sq_nonneg _)
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The limiting determinant also covers non-real displacements from the real moving center.
+example (n : ℤ) (hn : 0 < n) :
+    Tendsto (fun s : ℝ => sourceResonantDeterminantFunction (by simp) (sourceCubicTailFamily n s) n
+      (sourceCubicDiagonalCenter n s+(s : ℂ)^3*Complex.I)/(s : ℂ)^6)
+      (𝓝[>] (0 : ℝ)) (𝓝 (-1-(2*(sourceCubicTailScale n : ℂ))^2)) := by
+  simpa only [sourceCubicShiftedCenter,Complex.I_sq] using
+    sourceCubicDeterminant_scaled_tendsto n hn Complex.I
+
+-- Reality and the sharper displacement bound hold together for the same selected center.
+example : ∀ᶠ s in 𝓝[>] (0 : ℝ),
+    (sourceCubicDiagonalCenter 3 s).im = 0 ∧
+    ‖sourceCubicDiagonalCenter 3 s-(Real.pi : ℂ)*3‖ ≤ sourceCubicDiagonalBound 3*s^2 := by
+  filter_upwards [sourceCubicDiagonalCenter_real_eventually 3 (by norm_num),
+    sourceCubicDiagonalCenter_eventually 3] with s hr hc
+  exact ⟨hr,hc.2.2⟩
+
+-- The diagonal center itself is not a determinant root at sufficiently small positive amplitude.
+example (n : ℤ) (hn : 0 < n) : ∀ᶠ s in 𝓝[>] (0 : ℝ),
+    sourceResonantDeterminantFunction (by simp) (sourceCubicTailFamily n s) n
+      (sourceCubicDiagonalCenter n s) ≠ 0 := by
+  have hn0 : (n : ℝ) ≠ 0 := by exact_mod_cast hn.ne'
+  have hr : (sourceCubicTailScale n : ℂ) ≠ 0 := by
+    exact_mod_cast (one_div_ne_zero (pow_ne_zero 2 (mul_ne_zero Real.pi_ne_zero hn0)))
+  have ht := (sourceCubicDeterminant_scaled_tendsto n hn 0).eventually_ne
+    (show (0 : ℂ)^2-(2*(sourceCubicTailScale n : ℂ))^2 ≠ 0 by
+      simpa using neg_ne_zero.mpr (pow_ne_zero 2 (mul_ne_zero (by norm_num : (2 : ℂ) ≠ 0) hr)))
+  filter_upwards [ht] with s hs
+  simp only [sourceCubicShiftedCenter,mul_zero,add_zero] at hs
+  exact (div_ne_zero_iff.mp hs).1
+
+end Section6MovingCenterChecks
