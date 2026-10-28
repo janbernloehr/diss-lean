@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Current milestone: correcting the p.44 power comparison
+## Current milestone: the literal p.38 double-inverse estimates
+
+Both original components now have the literal coefficient series and
+convergent weighted distance-denominator majorants. The exact near/far
+partition, selected Hölder moments, signed shifts and boundary-inclusive
+Fourier remainder are proved. The p=1 endpoint has explicit far decay
+and a recombined norm estimate. See the [Section 6 comparison](coverage/SECTION_6.md).
+
+Validation: `./scripts/check.sh` passes with 8,453 build jobs, 7,522
+public examples and a transitive axiom audit of 43,409 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: give the displayed Fourier expansion a vector-valued `HasSum`
+interface and compare the selected reciprocal-moment constants for p>1.
+The final p.44 summed gap constant and the full 47-group Section 6
+inventory remain open. Preserve the [completion qualifications](coverage/COMPLETENESS.md).
+
+## Previous milestone: correcting the p.44 power comparison
 
 The proof of Propositions 6.1 and 6.3 uses an invalid intermediate power
 comparison. Actual arbitrarily small p=4 potentials give 36*t^4 on its

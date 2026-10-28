@@ -70290,3 +70290,49 @@ example (ε : ℝ) (hε : 0 < ε) :
 
 end
 end Section6GapProofPowerChecks
+
+namespace Section6LiteralSandwichChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+open Classical
+
+-- The endpoint norm estimate and literal coefficients belong to the same original-domain g.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) (k : ℤ) :
+    let z := (Real.pi : ℂ)*(-4 : ℤ)
+    let hz := center_mem_resonantStrip (-4)
+    let t := weightedPotentialInverse (by simp) w φ (-4) z hz f
+    let g := sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight (-4) z hz t)
+    g.snd.val k = (∑' l : ℤ, if k = -4 ∨ l = -4 then 0 else
+      φ.snd.val (k+l)*f.fst.val (-l) / ((z-(Real.pi:ℂ)*k)*(z-(Real.pi:ℂ)*l))) ∧
+    w.shiftedNorm 4 (complementaryScalarL1 (by simp) w.toWeight (-4) z hz false t.snd) ≤
+      ((2/5:ℝ)*‖φ.snd‖ + ‖WeightedCoeff.fourierTail w.toWeight 4 φ.snd‖/w (-4))*
+        w.shiftedNorm 4 f.fst := by
+  refine ⟨(sourceLemma65Proof_original_restricted (by simp) w φ f (-4) _ _ k).2,?_⟩
+  have he : complementaryScalarL1 (by simp) w.toWeight (-4) _ (center_mem_resonantStrip (-4)) false
+      (weightedPotentialInverse (by simp) w φ (-4) _ (center_mem_resonantStrip (-4)) f).snd =
+      complementarySandwich (by simp) w φ.snd (-4) _ (center_mem_resonantStrip (-4)) false f.fst := by
+    apply Subtype.ext
+    funext j
+    simp [complementaryScalarL1_apply,complementarySandwich_apply,SpectralWeight.convolution_apply]
+  rw [he]
+  have h := sourceLemma65Proof_endpoint w φ.snd f.fst (-4) _ (center_mem_resonantStrip (-4))
+  norm_num at h ⊢
+  exact h
+
+local instance section6LiteralSandwichFactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- A negative half-radius boundary belongs to near, and its potential mode is retained.
+example (w : SpectralWeight) (φ f : WeightedCoeff w.toWeight 3) :
+    sourceLemma65ProofNear (-4) (-2) (-2) ∧ ¬ sourceLemma65ProofFar (-4) (-2) (-2) ∧
+    (WeightedCoeff.fourierTail w.toWeight 4 φ).val (-4) = φ.val (-4) ∧
+    (∑' kl, if sourceLemma65ProofNear (-4) kl.1 kl.2 then sourceLemma65ProofTerm w φ f (-4) kl else 0) ≤
+      (1/w (-4)) * (∑' kl, if sourceLemma65ProofNear (-4) kl.1 kl.2 then
+        (sourceLemma65ProofReciprocal (-4) kl)^(3:ℝ≥0∞).conjExponent.toReal else 0)^(1/(3:ℝ≥0∞).conjExponent.toReal) *
+        (‖WeightedCoeff.fourierTail w.toWeight 4 φ‖*w.shiftedNorm 4 f) := by
+  have hnear : sourceLemma65ProofNear (-4) (-2) (-2) := by norm_num [sourceLemma65ProofNear]
+  refine ⟨hnear,by norm_num [sourceLemma65ProofFar],?_,?_⟩
+  · exact sourceLemma65ProofNear_tail w φ hnear
+  · simpa using sourceLemma65Proof_near_holder_tail (by norm_num) (by norm_num) w φ f (-4)
+
+end
+end Section6LiteralSandwichChecks

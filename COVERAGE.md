@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 6.5 proof, p.38 | [Literal series and Hölder estimates](NLS/ZakharovShabat/SourceLemma6_5ProofSeries.lean), [absolute weighted sums](NLS/SequenceSpaces/WeightedSandwichAbsoluteSum.lean) | Original component formulas, joint convergence, exact near/far partition, selected moments and explicit p=1 decay. Vector HasSum and general-p scalar moment constants remain separate checks. |
 | Propositions 6.1/6.3 proof, p.44 | [Power comparison](NLS/ZakharovShabat/SourceGapProofPower.lean), [comparison](coverage/SECTION_6.md) | Actual p=4 counterexample beyond every common local cutoff; corrected full-strip comparison and original counted root gap bound. Final summed constant unresolved. |
 | Lemma 6.8 proof, p.42 | [Proof series](NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean), [comparison](coverage/SECTION_6.md) | Correct output weight, original operator and analytic coefficients, absolutely convergent joint sum, and counterexamples beyond every locally uniform cutoff. |
 | Lemma 6.5 proof, pp.38–39 | [Proof display](NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean), [comparison](coverage/SECTION_6.md) | Actual Young majorant, full original-domain identity, refuted equality and valid two-inequality chain for every finite Banach exponent and source weight. |

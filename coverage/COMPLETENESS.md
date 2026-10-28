@@ -112,6 +112,10 @@ Four additional groups compare the p.44 intermediate power inequality:
 actual p=4 witnesses refute its printed factor, and the corrected estimate
 holds for original counted roots on one common neighborhood and cutoff.
 The final 1/2^p summed inequality and the 47-group Section 6 inventory remain open.
+Six additional p.38 groups now have literal component series, joint weighted
+majorization, exact near/far regions, selected Hölder moments and explicit
+p=1 estimates. The vector-valued Fourier HasSum interface and direct
+p>1 reciprocal-moment constants remain separate checks.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

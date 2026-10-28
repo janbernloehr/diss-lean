@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the intermediate p.44 power comparison has a formal
-actual-coefficient counterexample and a corrected bound for the original
-counted spectral roots. The final summed constant remains under review.
+Latest step: the p.38 double-inverse proof now has literal component
+series, convergent weighted majorants, exact near/far Hölder estimates
+and an explicit p=1 endpoint bound.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

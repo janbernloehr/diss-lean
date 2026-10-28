@@ -5,6 +5,54 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.5: the literal double-inverse series and Hölder steps
+
+[SourceLemma6_5ProofSeries.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofSeries.lean)
+and [WeightedSandwichAbsoluteSum.lean](../NLS/SequenceSpaces/WeightedSandwichAbsoluteSum.lean)
+formalize the component series and estimates on printed p.38, extraction
+lines 2558–2629. They use the actual original-domain vector
+`g = A⁻¹ Q Φ A⁻¹ Q f`, every signed index, every point of its closed strip,
+and every finite Banach exponent.
+
+| Assertion | Public entry point | Scope |
+| --- | --- | --- |
+| Both original coefficient formulas | `sourceLemma65Proof_original_coefficients`, `sourceLemma65Proof_original_restricted` | Both exclusions and both original complex denominators; first physical component reflected, second input reflected. Free strip centers included. |
+| Joint weighted absolute convergence | `SpectralWeight.sandwich_weighted_sum`, `SpectralWeight.shiftedNorm_sandwich_le_sum` | Full product-index sum, constant-one norm bound and actual shifted weighted l1 output; includes the conjugate endpoint. |
+| Literal distance majorization | `sourceLemma65ProofTerm_summable`, `sourceLemma65Proof_original_majorants` | Convergent full sum controls both actual components in their original signed shifts. |
+| Exact admissible partition | `sourceLemma65ProofNear_iff`, `sourceLemma65ProofFar_iff`, `sourceLemma65ProofTerm_split` | Closed half-radius near set, strict far set, both resonant indices excluded. |
+| Near weight and exact remainder | `sourceLemma65ProofNear_weight`, `sourceLemma65Proof_near_tail_eq` | The factor 1/w(n), with every Fourier-tail boundary frequency retained. |
+| Selected Hölder estimates | `sourceLemma65Proof_far_holder`, `sourceLemma65Proof_near_holder` | Finite p>1, exact restricted reciprocal moments and weighted numerator powers. |
+| Original scalar norms | `sourceLemma65ProofNumerator_moment`, `sourceLemma65Proof_far_holder_norm`, `sourceLemma65Proof_near_holder_tail` | Exact full numerator factorization and selected-moment bounds, with the original input shift. |
+| Explicit endpoint | `sourceLemma65Proof_far_one`, `sourceLemma65Proof_near_one`, `sourceLemma65Proof_endpoint` | p=1; far factor 2/(1+abs(n)), near tail divided by w(n), and their actual output norm bound. |
+
+The printed far numerator is summed over all pairs. The selected-numerator
+version above is stronger; the norm-product estimate and exact full-moment
+factorization recover the printed bound before its scalar reciprocal
+simplification. The near numerator remains restricted as printed.
+The complement relation between the two index sets is relative to
+nonresonant pairs. Neither a resonant pair nor a half-radius boundary is
+silently placed in the wrong region.
+
+One integration example combines the original-domain coefficient formula
+and the p=1 norm bound at the free center of strip −4. The other checks
+the negative boundary n=−4, k=l=−2, its retained potential coefficient,
+and the p=3 near estimate.
+
+This step proves coordinate series and joint absolute scalar summability.
+A vector-valued `HasSum` interface for the displayed Fourier expansion
+remains to be supplied. The direct comparison of the selected reciprocal
+moments with the printed general-p constants c_p²/⟨n/2⟩^(1/p) and c_p²
+also remains open; the existing operator norm estimate is already proved.
+Section6SandwichSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records six focused groups
+and nine reviewed module hashes. The earlier p.39, p.42 and p.44 corrections
+and the unresolved final p.44 summed constant retain their qualifications.
+
+Validation: `./scripts/check.sh` passes with 8,453 build jobs, 7,522
+public examples and a transitive axiom audit of 43,409 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Propositions 6.1 and 6.3: correcting the proof's power comparison
 
 [SourceGapProofPower.lean](../NLS/ZakharovShabat/SourceGapProofPower.lean)
