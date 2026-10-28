@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T13:04:33.229168+00:00",
-  "base_commit": "e6a28c5e4a111c49d6e5e188f0516f624f886d10",
+  "published_utc": "2026-10-28T13:30:39.533010+00:00",
+  "base_commit": "9a8055b2053b6f2e7d64ed8b78c04cf8557e4df7",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 89,
-    "module_hash_checks": 1398,
-    "distinct_modules": 911
+    "review_records": 90,
+    "module_hash_checks": 1408,
+    "distinct_modules": 917
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e6a28c5e4a111c49d6e5e188f0516f624f886d10",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the shared exterior-neighborhood theorem and one integration example.",
+    "base_commit": "9a8055b2053b6f2e7d64ed8b78c04cf8557e4df7",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the full-exponent proof-display correction and two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8448,
-    "public_examples": 7514,
-    "transitive_NLS_declarations": 43281,
+    "build_jobs": 8449,
+    "public_examples": 7516,
+    "transitive_NLS_declarations": 43292,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4725,
-      "sha256": "c8e4cfa8df92157ab1c8776aedcbc3644bcf4f644e95e3f3de120e1f19338372"
+      "files": 4726,
+      "sha256": "82b9d0a09467b7a1c9480a74e678d085ef068c333434896512ba82d4b7011913"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -22360,6 +22360,118 @@
       },
       "declaration_inventory_count": 43281,
       "source_record_sha256": "d33459f848574d949922b25a180c8d400982d02ef5fa8aa6f71716a5da43965a"
+    },
+    "Section6ProofEqualitySourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "9a8055b2053b6f2e7d64ed8b78c04cf8557e4df7",
+      "updated_utc": "2026-10-28T13:30:39.533010+00:00",
+      "source_lines": [
+        [
+          2558,
+          2571
+        ],
+        [
+          2631,
+          2661
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            2558,
+            2571
+          ],
+          "requirement": "Actual original-domain vector g = A-inverse Q Phi A-inverse Q f.",
+          "finding": "The two weighted L1 quantities in the majorant have exactly the raw Fourier coefficients of the original one-derivative-domain vector g. Applying the original differential operator at the potential minus its zero-potential value gives the actual T_n squared output after the coefficient-preserving weighted inclusion. Both physical frequency directions are retained.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant",
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant_domain_coefficients",
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant_domain_operator",
+            "NLS.ZakharovShabat.sourceLemma6_4_operator"
+          ]
+        },
+        {
+          "source_lines": [
+            2651,
+            2655
+          ],
+          "requirement": "First Young inequality in the final proof display.",
+          "finding": "For every finite Banach exponent, every source weight, every signed strip index and every point of the full closed strip, the p-power of the actual squared operator output in its n-shifted norm is at most the printed intermediate Young majorant. This follows from the exact component-sum norm and the two original weighted convolution bounds.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65_square_le_young",
+            "NLS.ZakharovShabat.sourceShiftedNorm_formula"
+          ]
+        },
+        {
+          "source_lines": [
+            2656,
+            2661
+          ],
+          "requirement": "Printed equality from the intermediate majorant to the positive input-norm expression.",
+          "finding": "The equality is formally refuted on the full input space of the lemma. Every nonzero resonant input is killed by the complementary inverse, so its actual intermediate majorant is zero. For every positive proposed c_p, nonzero potential, source weight and finite Banach exponent, the literal right side 2*c_p^(2p)*norm(phi)^p*(norm(phi)/<n>^(1/p)+norm(R_n phi)/w_n)^p*shiftedNorm(f)^p is strictly positive. No universal equality can hold even in one fixed strip. This concerns the intermediate equality sign, not the main upper-bound assertion.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65PrintedProofBudget",
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant_resonant",
+            "NLS.ZakharovShabat.sourceLemma65_printed_equality_strict",
+            "NLS.ZakharovShabat.not_sourceLemma65_printed_proof_equality"
+          ]
+        },
+        {
+          "source_lines": [
+            2631,
+            2661
+          ],
+          "requirement": "Valid replacement inequality with the original tail and shift.",
+          "finding": "The actual Young majorant is bounded by the p-power of the established Lemma 6.5 budget times the p-power of the original shifted input norm. The constant is the existing exponent-only weightedDoubleConstant; the exact retained-boundary R_|n| tail and divisor w_n remain. Together with the first inequality this supplies the complete valid proof chain for every 1<=p<infinity, without weight-zero normalization, puncturing the free center, or a new smallness condition. No sharpness or equality of optimal constants is asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant_le",
+            "NLS.ZakharovShabat.weightedSquareBound_eq_source",
+            "NLS.ZakharovShabat.sourceLemma6_5"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean": "f0cadd4dcd5c6b120e636146186262b7625a6986abf10da2afcdb19da664476f",
+        "NLS/ZakharovShabat/SourceLemma6_5.lean": "38dfce5a69a3a65ac93a10637414e9854abf31e2f14d4c64554bce8d559b9fca",
+        "NLS/ZakharovShabat/SourceLemma6_4.lean": "388b9e23d5417aaa440a6ff8fb4ecba5704af2124616599fa6b09fcd83b7c36a",
+        "NLS/ZakharovShabat/SourcePQSplitting.lean": "3146015429a77b70f80d9a1662da06f5d61be579a6ac65f713fd1032a27e207f",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean": "e68558a5a4055e6cb4bfb674d7b0bc9388b2e937a54834b0e822bd985ce80189",
+        "NLS/ZakharovShabat/WeightedSquareEstimate.lean": "db292d04d99cb5452b995e6825925d185ef13602e67c0b3ce745f51701dc1136",
+        "NLS/ZakharovShabat/ComplementaryDoubleEstimate.lean": "79e75e7d2161351803dc3e3d0b125cef4532c2d87763f8741ec7e1644148d890",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean": "11ef442791c63ba60700c57e7c3a82366a60255e0e2544d8708b42da113c9d44",
+        "NLS/ZakharovShabat/ComplementaryL1.lean": "e6f3ee57eeaa8b8340ba6548635590ec4dee1048c7f231f9e951ed9724527046",
+        "NLS/ZakharovShabat/SourceWeightedPencil.lean": "8b3be0f7712dd418e05b029a907fde12cacb8956063d05ccff733d46f7579da8"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          38,
+          39
+        ],
+        "images": {
+          "Section6ProofReview-038.png": "8543fbdab3dec65515f32e846c110e617f7673dd24e3c1ebb8d3af245ee52f4a",
+          "Section6ProofReview-039.png": "42c556f38be28145bfa4d5f0bbe7795f98f95787298b93d3e13126d81ceda4ad"
+        }
+      },
+      "qualification": "Focused comparison of four proof assertions, with ten local module bodies and the inspected rendered pages 38-39. The new results cover every finite Banach exponent, arbitrary source weights and full closed strips. The literal equality is refuted separately from the proved main Lemma 6.5 estimate, whose statement needs no correction. This does not certify the complete Lemma 6.5 proof passage, all 47 Section 6 navigation groups, every transitive inequality proof, or the dissertation. Other candidate literal displays remain pending comparison. All earlier quantitative-budget refutations, the source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation retain their scopes.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.not_sourceLemma65_printed_proof_equality",
+        "NLS.ZakharovShabat.sourceLemma65PrintedProofBudget",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant_domain_coefficients",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant_domain_operator",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant_le",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant_resonant",
+        "NLS.ZakharovShabat.sourceLemma65_printed_equality_strict",
+        "NLS.ZakharovShabat.sourceLemma65_square_le_young",
+        "NLS.ZakharovShabat.sourceLemma6_4_operator",
+        "NLS.ZakharovShabat.sourceLemma6_5",
+        "NLS.ZakharovShabat.sourceShiftedNorm_formula",
+        "NLS.ZakharovShabat.weightedSquareBound_eq_source"
+      ],
+      "declaration_inventory_count": 43292,
+      "source_record_sha256": "df9f0abe8baeda3a1ec4c92c81560daaf954a6d6e5602409e15d0e6e38de3453"
     }
   }
 }

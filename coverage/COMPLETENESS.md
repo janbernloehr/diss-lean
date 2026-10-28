@@ -101,6 +101,10 @@ module bodies. A combined theorem supplies one neighborhood for the
 full exterior resolvent and both auxiliary projection families at every
 larger cutoff. All four printed refutations, finite/infinite-norm distinctions
 and general height-N versus literal p=2 height qualifications remain.
+Section 6 now also has a formal refutation of the final equality in the
+Lemma 6.5 proof, together with the valid original-domain inequality chain
+for every finite Banach exponent. The main lemma remains valid. This is a
+four-group focused comparison; the 47-group ordered inventory remains open.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

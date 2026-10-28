@@ -3379,6 +3379,7 @@ import NLS.ZakharovShabat.SourceWeightedPencil
 import NLS.ZakharovShabat.SourcePQSplitting
 import NLS.ZakharovShabat.SourceLemma6_4
 import NLS.ZakharovShabat.SourceLemma6_5
+import NLS.ZakharovShabat.SourceLemma6_5ProofDisplay
 import NLS.ZakharovShabat.SourceComplementaryCorrection
 import NLS.ZakharovShabat.SourceQEquation
 import NLS.ZakharovShabat.SourceLemma6_6

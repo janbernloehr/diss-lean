@@ -5,6 +5,40 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.5: correcting the final equality in the proof
+
+[SourceLemma6_5ProofDisplay.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean)
+formalizes the intermediate Young majorant on printed p.39 and its relation
+to the original vector g=A⁻¹QΦA⁻¹Qf.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original-domain identification | `sourceLemma65YoungMajorant_domain_coefficients`, `sourceLemma65YoungMajorant_domain_operator` | Exact raw components and original differential potential action; both signed shifts. |
+| First inequality | `sourceLemma65_square_le_young` | The actual squared-operator output's p-power is bounded by the intermediate Young expression. |
+| Corrected second inequality | `sourceLemma65YoungMajorant_le` | The majorant is at most the established Lemma 6.5 bound's p-power times the shifted input norm's p-power. |
+| Literal printed expression | `sourceLemma65PrintedProofBudget` | Retains 2*c_p^(2p), the exact tail cutoff, weight divisor and shifted input norm. |
+| Strict witness | `sourceLemma65_printed_equality_strict` | Every positive c_p and nonzero potential: a nonzero resonant input gives zero majorant and a strictly positive printed expression. |
+| Equality refuted | `not_sourceLemma65_printed_proof_equality` | No equality for all inputs in even one fixed strip. |
+
+All these results allow every 1≤p<infinity, every source weight and every
+point of every closed strip, including its free center and negative indices.
+There is no extra normalization w(0)=1 or smallness condition. The valid
+replacement uses the established exponent-only constant, without claiming
+an optimal constant. Lemma 6.5's main upper-bound statement is unchanged;
+the error is the equality sign in the proof's last display.
+
+Two integration examples check p=1 with constant weight two and strip −3,
+and the complete valid inequality chain plus original-domain realization
+at p=3. Section6ProofEqualitySourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records four focused
+groups and ten reviewed module hashes. The 47-group Section 6 inventory
+remains in progress.
+
+Validation: `./scripts/check.sh` passes with 8,449 build jobs, 7,516
+public examples and a transitive axiom audit of 43,292 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Proposition 6.1: original norm and actual spectrum
 
 | Assertion | Entry point | Scope |
@@ -377,7 +411,8 @@ by its bound on every input measured in the source's n-shifted pair norm.
 The range is every 1≤p<∞. The tail retains |k|≥|n|, including equality;
 there is no half-cutoff in this lemma. The estimate applies to every signed
 n and the entire closed U_n, including λ=nπ, for the original source weight
-class. It requires no w_0=1 normalization. No source correction is needed.
+class. It requires no w_0=1 normalization. No correction to the main lemma statement is needed. The final equality
+in its proof has the separate correction recorded above.
 
 | Assertion | Entry point | Scope |
 | --- | --- | --- |

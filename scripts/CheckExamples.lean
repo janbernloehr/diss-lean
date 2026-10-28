@@ -70160,3 +70160,52 @@ example (φ : CoeffPair 3) :
 
 end
 end Section5ExteriorChecks
+
+namespace Section6ProofEqualityChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- A genuine endpoint witness with non-normalized weight and a negative strip.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    let c : Fin 2 → ℂ := Pi.single 0 1
+    let φ : WeightedCoeffPair w.toWeight 1 := resonantSynthesis w.toWeight 0 c
+    let f : WeightedCoeffPair w.toWeight 1 := resonantSynthesis w.toWeight (-3) c
+    sourceLemma65YoungMajorant (by simp) w φ (-3) ((Real.pi : ℂ)*(-3 : ℤ))
+        (center_mem_resonantStrip (-3)) f = 0 ∧
+      0 < sourceLemma65PrintedProofBudget 2 w φ (-3) f := by
+  dsimp only
+  let w := SpectralWeight.constant 2 (by norm_num)
+  let c : Fin 2 → ℂ := Pi.single 0 1
+  have hc : c ≠ 0 := by
+    intro h
+    have hh := congrFun h 0
+    norm_num [c] at hh
+  have hφ : resonantSynthesis (p := 1) w.toWeight 0 c ≠ 0 := by
+    intro h
+    apply hc
+    simpa using congrArg (resonantCoordinates w.toWeight 0) h
+  refine ⟨sourceLemma65YoungMajorant_resonant (by simp) w _ _ _ _ _,?_⟩
+  have h := sourceLemma65_printed_equality_strict (by simp) 2 (by norm_num) w _ hφ
+    (-3) ((Real.pi : ℂ)*(-3 : ℤ)) (center_mem_resonantStrip (-3)) c hc
+  simpa only [sourceLemma65YoungMajorant_resonant] using h
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- The corrected complete chain and its original differential-domain realization.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    let t := weightedPotentialInverse (by simp) w φ n z hz f
+    let g := sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight n z hz t)
+    w.shiftedPairNorm n (weightedPotentialInverse (by simp) w φ n z hz t)^3 ≤
+        sourceLemma65YoungMajorant (by simp) w φ n z hz f ∧
+      sourceLemma65YoungMajorant (by simp) w φ n z hz f ≤
+        (weightedSquareBound (by simp) w φ n)^3 * w.shiftedPairNorm n f ^ 3 ∧
+      sourceWeightedPeriodTwoInput w (weightedPotentialInverse (by simp) w φ n z hz t) =
+        sourceOperator (by simp) (sourceWeightedPeriodTwoInput w φ) g - sourceOperator (by simp) 0 g := by
+  refine ⟨?_,?_,sourceLemma65YoungMajorant_domain_operator (by simp) w φ n z hz f⟩
+  · simpa using sourceLemma65_square_le_young (by simp) w φ n z hz f
+  · simpa using sourceLemma65YoungMajorant_le (by simp) w φ n z hz f
+
+end
+end Section6ProofEqualityChecks

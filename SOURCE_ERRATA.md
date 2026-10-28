@@ -2492,6 +2492,24 @@ No replacement numerical height is adopted, and the optimal exponent range
 for the printed formula is not asserted. This failure is distinct from
 the final 2N−1 count typo on page 35.
 
+## Lemma 6.5 proof: equality should be an upper bound (page 39)
+
+The last display in the proof replaces the actual intermediate Young
+majorant by an equal positive norm expression. This equality is false on
+the full input space of the lemma. A nonzero resonant input is killed by
+Q_n, so T_n f and g=A⁻¹QΦA⁻¹Qf vanish. For every positive c_p and nonzero
+potential, the displayed right side remains strictly positive.
+
+`sourceLemma65_printed_equality_strict` and
+`not_sourceLemma65_printed_proof_equality` prove this for every finite
+Banach exponent, every source weight and every point of each closed strip.
+The same module proves the valid pair of inequalities via the actual
+Young majorant, with the original shifted norms, tail and weight divisor.
+Its vector g has the exact original-domain coefficients and differential
+potential action. The sufficient constant is the established exponent-only
+constant; no sharpness claim is made. The main Lemma 6.5 statement remains
+proved and requires no correction.
+
 ## Proposition 6.1 and Lemma 6.9: the printed displacement budget fails locally at zero
 
 Source: printed pages 35 and 43. At p=2 the printed right-hand side is

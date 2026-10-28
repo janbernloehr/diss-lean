@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: Section 5 common neighborhood and ordered inventory
+## Current milestone: Lemma 6.5 proof inequality
+
+The final equality in Lemma 6.5's proof is now formally refuted: a nonzero
+resonant input gives zero on the left and a positive printed expression on
+the right. The valid chain of upper bounds is proved for every finite
+Banach exponent, including p=1, with the exact shifted weighted norms,
+retained-boundary tail and actual original differential-domain vector.
+The main Lemma 6.5 statement remains valid.
+See the [Section 6 comparison](coverage/SECTION_6.md).
+
+Validation: `./scripts/check.sh` passes with 8,449 build jobs, 7,516
+public examples and a transitive axiom audit of 43,292 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Continue the 47-group Section 6 comparison. The
+[completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Section 5 common neighborhood and ordered inventory
 
 One original-input neighborhood now supports the full exterior resolvent,
 both analytic auxiliary projection families and their algebraic counts,
