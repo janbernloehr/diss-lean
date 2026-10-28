@@ -111,46 +111,27 @@ cutoff counterexample and both simultaneous half-contraction bounds.
 Four additional groups compare the p.44 intermediate power inequality:
 actual p=4 witnesses refute its printed factor, and the corrected estimate
 holds for original counted roots on one common neighborhood and cutoff.
-The final 1/2^p summed inequality and the 47-group Section 6 inventory remain open.
-Six additional p.38 groups now have literal component series, joint weighted
-majorization, exact near/far regions, selected Hölder moments and explicit
-p=1 estimates. Five further groups now supply the vector-valued Fourier
-HasSum in the original weighted l1 pair norm, direct selected reciprocal
-moment constants for p>1, the endpoint and exact 2^(1/p) recombination.
-One explicit constant also gives the corrected final Young budget; the
-printed equality remains refuted. The full Section 6 inventory and final
-p.44 summed constant are still open.
-The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now explicitly
-reconciles twenty-three consecutive passage groups (S6-024–S6-046). Seventeen
-are matched, five retain source corrections, and the adjoint argument retains
-an explicit derivative-domain bilinear interpretation. The diagonal and
-off-diagonal proofs retain their literal series, actual Holder tests,
-convergent regional moments and both exponent ranges. Their exact regions
-and full-cutoff tails remain intact. Lemma 6.9 now includes the literal two-step
-Rouche counts, exact exterior separation, unique simple diagonal zero,
-pointwise factorization, Cauchy gap bound and raw period-two canonical pair
-identification, together with corrected displacement sums on one neighborhood.
-Earlier constants and qualified counterexamples remain available.
-Twenty-four groups still need ordered reconciliation: S6-001 through S6-023
-and S6-047. The final weighted gap sum with 1/2^p on the left remains unresolved;
-its numerical candidate is not proof. This is not a completion percentage or
-a substitute for the source-wide assertion inventory.
-The original three-mode family now has the exact normalized limit
-2*r^4+2*C^4 for the entire coefficient-side sum on p.44, where
-r=1/(pi*n)^2 and C=1/[pi*(n-1/2)]^2. This retains both actual whole-strip
-suprema and signed infinite tails, with p=4, unit weight and cutoff abs(n).
-The cubic perturbation and higher error tails are controlled rigorously;
-the limit is strictly below 16*r^4 for n>=3. The actual counted-root gap
-asymptotics are still missing, so the final inequality remains unresolved.
-The ordered counts are unchanged.
-The actual moving diagonal center and determinant are now controlled too:
-the center is eventually real, has O(s^2) displacement, and the determinant
-at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2 for every fixed complex t.
-This does not yet select the two actual roots or give the required gap comparison.
+The final weighted gap sum is now proved with C_p=2^(3*p-2), preserving the
+actual original canonical pair, full signed coefficient sums and common local
+cutoff for every larger cutoff. The original weighted pair norm and additive
+leading Fourier tail remain in the Lemma 6.8 budget. This supplies a valid
+corrected constant without requiring a refutation of the printed factor.
+
+The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) reconciles twenty-four
+passage groups, S6-024 through S6-047: seventeen matched, six corrected and one
+interpreted. The literal series, Holder tests, regional power moments,
+Rouche counts, Cauchy estimate and multiplicity-preserving canonical pair
+identification remain intact. Earlier corrections and supporting coefficient
+and moving-center asymptotics are preserved.
+
+Twenty-three groups still need ordered reconciliation, S6-001 through S6-023.
+These counts are navigation, not a completion percentage or a substitute for
+the source-wide assertion inventory. Constant corrections may be recorded
+with a proved valid replacement; additional counterexamples are not required.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
-claim as proved with exact scope, formally refuted with a separately stated
-correction, contextual or outside-work attribution, or unresolved. Each
+claim as proved with exact scope, corrected with a proved valid replacement,
+contextual or outside-work attribution, or unresolved. Retain existing refutations. Each
 classification needs the source location and its actual proof evidence.
 A range inventory is navigation for this review, not a semantic validator.
 Previous selected comparisons can be reused with their stated scope and

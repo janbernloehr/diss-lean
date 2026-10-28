@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T21:09:57.219779+00:00",
-  "base_commit": "24a74c4a82b9585683548c4ee20a781cac5318ee",
+  "published_utc": "2026-10-28T21:48:54.906234+00:00",
+  "base_commit": "0950640a2bf03171f37dd9ad7eb8ef788be8b59c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 102,
-    "module_hash_checks": 1659,
-    "distinct_modules": 1054
+    "review_records": 103,
+    "module_hash_checks": 1672,
+    "distinct_modules": 1060
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "24a74c4a82b9585683548c4ee20a781cac5318ee",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes actual moving coefficient limits, quadratic original diagonal bounds, the real moving center and the normalized actual determinant limit and four integration examples. S6-047 remains unresolved.",
+    "base_commit": "0950640a2bf03171f37dd9ad7eb8ef788be8b59c",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected original weighted coefficient-sum inequality, its canonical spectral pair, common cutoff and Lemma 6.8 budget, plus three integration examples. S6-047 is corrected; the broader dissertation audit remains incomplete.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8489,
-    "public_examples": 7552,
-    "transitive_NLS_declarations": 44099,
+    "build_jobs": 8491,
+    "public_examples": 7555,
+    "transitive_NLS_declarations": 44118,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4766,
-      "sha256": "7613ad457341c9e6ff5956ab45f247ea3b5a681eb88ee2e9560e4ca745c65ace"
+      "files": 4768,
+      "sha256": "4ebc7aa5cfc3f7c786e312a1cb3bcd3a787e057d01af4d3f1bded3583eedfaa4"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -25002,6 +25002,105 @@
       ],
       "declaration_inventory_count": 44099,
       "source_record_sha256": "45877c64210974901cff78966fe17d2347ec11041db612ba09920d7875eeb210"
+    },
+    "Section6CorrectedGapSumSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "0950640a2bf03171f37dd9ad7eb8ef788be8b59c",
+      "updated_utc": "2026-10-28T21:48:54.906234+00:00",
+      "source_lines": [
+        [
+          3272,
+          3293
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-047",
+          "source_lines": [
+            3272,
+            3293
+          ],
+          "requirement": "The final original weighted gap and coefficient-sum inference with a valid corrected constant",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The valid positive exponent-only constant is C_p=2^(3*p.toReal-2); no optimality or new refutation of the printed factor is asserted.",
+            "For every finite Banach exponent including p=1, a controlled actual original counted root pair obeys the weighted four-term power bound. Repeated roots and complex original inputs are allowed.",
+            "The leading terms retain the first component at -2*n and second at 2*n. The remainders are actual full-strip source functions; their suprema include the constant mode weight.",
+            "Convergent grouped leading and remainder sums dominate the actual canonical weighted gap sum, with the full signed cutoff and its boundary retained.",
+            "For every source weight and 1<p<infinity, a single open convex neighborhood containing the input and zero has one cutoff valid for every larger cutoff. The counted source pair retains the canonical gap norm and the established spectral multiplicities.",
+            "Lemma 6.8 bounds the coefficient-side sum by the corrected rootGapBudget in the original weighted pair norm, retaining the additive leading tail and floor(N/2). The reciprocal-constant form is also proved on the original unweighted space.",
+            "Three public examples check the conditional p=1 estimate, the p=4 constant 1024 on an original neighborhood, and the full canonical gap budget for the nontrivial constant weight 2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.rootGapSummationConstant_pos",
+            "NLS.ZakharovShabat.rootGapSummationConstant_eq_rpow",
+            "NLS.ZakharovShabat.sourceGapLeadingPowerTail",
+            "NLS.ZakharovShabat.sourceGapRemainderPowerTail",
+            "NLS.ZakharovShabat.sourceCanonicalWeightedGapPowerTail",
+            "NLS.ZakharovShabat.sourceGapLeadingPowerTail_weightedInput",
+            "NLS.ZakharovShabat.sourceGapRemainderPowerTail_eq",
+            "NLS.ZakharovShabat.sourceResonantRootPair_gap_le_four_terms",
+            "NLS.ZakharovShabat.sourceCanonicalGapSum_le_coefficients",
+            "NLS.ZakharovShabat.sourceGapCoefficientSums_le_budget",
+            "NLS.ZakharovShabat.exists_uniform_sourceCanonicalGapPair",
+            "NLS.ZakharovShabat.sourceUniformLinearPullback",
+            "NLS.ZakharovShabat.exists_uniform_sourceWeightedCanonicalGapPair",
+            "NLS.ZakharovShabat.exists_uniform_sourceGapCoefficientData",
+            "NLS.ZakharovShabat.sourceProposition6_3_coefficient_sum_corrected",
+            "NLS.ZakharovShabat.sourceProposition6_3_coefficient_sum_unweighted"
+          ],
+          "qualification": "S6-047 is corrected with a proved valid replacement constant, as requested by the user. The printed factor is not asserted and no additional counterexample is integrated. The ordered ledger has 24 reviewed groups (17 matched, 6 corrected, 1 interpreted) and 23 pending groups."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_9ProofRoots.lean": "edd187a483605f5a46890c774cdd88120cebf9a615b4b37f4a893f6ad5a8e6c2",
+        "NLS/ZakharovShabat/SourceLemma6_9.lean": "ee0e0a406fd500fba9d8e982c9c41e622e48d7479762d99fcf41605488e8f6de",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalMidpointGap.lean": "de263ec591225bbd3180aeb8fe3d314f1c0ba4b9b71a3baac60505de821f3758",
+        "NLS/ZakharovShabat/SourceLemma6_8.lean": "3558d831b089a25c63755e0b2f92b34e43615c50140dc8c643e0bea0242cd5eb",
+        "NLS/ZakharovShabat/SourceResonantSup.lean": "334152d460373a9a6ae712cce94f84c0866f7b674e49c403e436fdbcc0dada84",
+        "NLS/ZakharovShabat/SourceWeightedGapAsymptotics.lean": "0d18bad6765f2aab8664e56f677331685e2e2ef819ab432ff992a3d1acd58d33",
+        "NLS/ZakharovShabat/ResonantGapMajorant.lean": "975cbdf4a387ec5f999c305fd7cdefdabc4197875b64f9d1357a78cbb75cfac8",
+        "NLS/ZakharovShabat/ResonantLeadingPowerTail.lean": "16d18e635189a6d5d80c608073380435648320181915e1c7517e30c15e1b0137",
+        "NLS/ZakharovShabat/UniformGapMajorant.lean": "c1b0957b2d523676480c28316abda878d87431ece26f0541c51213f2c0a96cc8",
+        "NLS/ZakharovShabat/SourceGapProofPower.lean": "3f6028617c692bb2fb39310e2be0e848867e4f2a16ec14e4a598c46b395a30a0",
+        "NLS/ZakharovShabat/SourcePeriodTwoDisplacement.lean": "f0d1624ebfafac406a832c90d82bd39b7955a1e90e4994209a9ef47bc6dcd070",
+        "NLS/ZakharovShabat/SourceGapCoefficientMajorant.lean": "690eb690126573ebef3b71390a014e02572affd019b879a6b455c5d766ee2d0f",
+        "NLS/ZakharovShabat/SourceGapSumCorrected.lean": "a3c72a98217358c1dac6cd7a4aa94dfd5910536e189ff3549a4b10f5c3c1d9eb"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "ordered_inventory_sha256": "0c4d55993bc57412dcf3d04af6e454042036172a9544e0ef6c7aa7c58352630e",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          44
+        ],
+        "images": {
+          "Section6ProofReview-044.png": "9c461b73312ec584566578a463f3cc87fd1a8c09be05b4852d14469bd0fea33d"
+        }
+      },
+      "qualification": "The physical p.44 display was inspected. Two new modules and eleven dependency modules support the corrected sum for the original period-two canonical spectral pair. Earlier corrections and review records are preserved. The source-wide inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.exists_uniform_sourceCanonicalGapPair",
+        "NLS.ZakharovShabat.exists_uniform_sourceGapCoefficientData",
+        "NLS.ZakharovShabat.exists_uniform_sourceWeightedCanonicalGapPair",
+        "NLS.ZakharovShabat.rootGapSummationConstant_eq_rpow",
+        "NLS.ZakharovShabat.rootGapSummationConstant_pos",
+        "NLS.ZakharovShabat.sourceCanonicalGapSum_le_coefficients",
+        "NLS.ZakharovShabat.sourceCanonicalWeightedGapPowerTail",
+        "NLS.ZakharovShabat.sourceGapCoefficientSums_le_budget",
+        "NLS.ZakharovShabat.sourceGapLeadingPowerTail",
+        "NLS.ZakharovShabat.sourceGapLeadingPowerTail_weightedInput",
+        "NLS.ZakharovShabat.sourceGapRemainderPowerTail",
+        "NLS.ZakharovShabat.sourceGapRemainderPowerTail_eq",
+        "NLS.ZakharovShabat.sourceProposition6_3_coefficient_sum_corrected",
+        "NLS.ZakharovShabat.sourceProposition6_3_coefficient_sum_unweighted",
+        "NLS.ZakharovShabat.sourceResonantRootPair_gap_le_four_terms",
+        "NLS.ZakharovShabat.sourceUniformLinearPullback"
+      ],
+      "declaration_inventory_count": 44118,
+      "source_record_sha256": "9ec4755207096514040defbecf85dd327a967d6a0d0b061898882fc3473538a3"
     }
   }
 }

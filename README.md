@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual determinant limit at cubic distances from its moving
-diagonal center, with original coefficient limits, quadratic diagonal bounds
-and eventual reality of the same center. Locating and identifying the actual
-spectral roots is next; the final p.44 inequality remains unresolved.
-The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md) remains at
-twenty-three reviewed and twenty-four pending groups. See the
+Latest step: the final weighted gap sum on p.44 with the corrected constant
+C_p = 2^(3*p-2), actual canonical spectral gaps and convergent full coefficient
+tails. One local cutoff works for all larger cutoffs. The
+[ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) now has twenty-four
+reviewed and twenty-three pending passage groups. See the
 [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 

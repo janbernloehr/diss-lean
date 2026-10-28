@@ -5,6 +5,48 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## The final gap sum with a corrected constant
+
+The final weighted gap-sum inference on p.44 is now proved with the valid
+constant C_p = 2^(3*p-2). The sum of actual canonical gap powers is at most
+C_p times the two leading Fourier-coefficient sums plus the two actual
+whole-strip remainder sums. Both grouped coefficient sums and the gap sum
+converge; all signed indices and the cutoff boundary are retained.
+
+For every 1<p<infinity and every source weight, one open convex neighborhood
+containing the input and zero supplies a cutoff valid for every larger cutoff.
+The canonical gap comes from the original period-two spectral pair, including
+multiplicities. Lemma 6.8 then supplies the corrected budget in the original
+weighted pair norm, retaining the additive leading tail and floor(N/2).
+
+The constant is deliberately nonoptimal. This step supplies the corrected
+estimate; it does not assert necessity of this constant or add a refutation
+of the printed 1/2^p factor.
+
+[SourceGapCoefficientMajorant.lean](../NLS/ZakharovShabat/SourceGapCoefficientMajorant.lean)
+defines the literal grouped leading and remainder tails and the canonical gap
+tail. Its four-term estimate includes p=1 when the counted pair and strip bounds
+are supplied. [SourceGapSumCorrected.lean](../NLS/ZakharovShabat/SourceGapSumCorrected.lean)
+proves summability, the common-neighborhood comparison, its Lemma 6.8 budget,
+and the reciprocal-constant form on an original unweighted neighborhood.
+
+Validation: `./scripts/check.sh` passes with 8,491 build jobs, 7,555
+public examples and a transitive axiom audit of 44,118 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+S6-047 is classified as corrected. The ordered ledger now has twenty-four
+reviewed groups (seventeen matched, six corrected, one interpreted) and
+twenty-three pending groups, S6-001 through S6-023. Reconcile those earlier
+groups next, then continue through the dissertation. The source-wide assertion
+inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm
+interpretation remain unfinished.
+
+Section6CorrectedGapSumSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records this correction.
+The earlier milestones below describe their evidence and remaining work at
+the time; the corrected estimate above supersedes their pending-sum status.
+
 ## The actual determinant near its moving diagonal center
 
 The original three-mode family now has actual coefficient and determinant

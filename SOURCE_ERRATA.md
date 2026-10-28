@@ -1,5 +1,19 @@
 # Source discrepancies
 
+## Propositions 6.1/6.3 proof, p.44: corrected final summation constant
+
+The final summed estimate is implemented with C_p=2^(3*p-2): the full signed
+canonical gap sum is at most C_p times the grouped leading and remainder sums.
+Equivalently, its left-side factor is 1/C_p. This is an explicit valid constant,
+without a claim of optimality or a new refutation of the printed factor.
+
+[SourceGapCoefficientMajorant.lean](NLS/ZakharovShabat/SourceGapCoefficientMajorant.lean)
+and [SourceGapSumCorrected.lean](NLS/ZakharovShabat/SourceGapSumCorrected.lean)
+retain the actual original canonical pair, all weights, full-strip suprema,
+convergent signed sums and one local cutoff for all larger cutoffs. The corrected
+Lemma 6.8 budget keeps the additive leading Fourier tail. See the
+[Section 6 comparison](coverage/SECTION_6.md).
+
 ## Propositions 6.1/6.3 proof, p.44: the intermediate power factor
 
 The middle comparison uses 3^(p/2) where the valid scalar comparison
@@ -11,18 +25,9 @@ neighborhood of zero beyond every common cutoff.
 
 [SourceGapProofPower.lean](NLS/ZakharovShabat/SourceGapProofPower.lean)
 proves the refutation and corrected original counted-root gap bound,
-including its common-neighborhood scope. The final 1/2^p summed inequality
-on the same page remains a separate unresolved assertion; the failure of
-this intermediate comparison does not refute that final display.
-The [actual coefficient-side limit](NLS/ZakharovShabat/SourceCubicPrintedSumLimit.lean)
-is now proved for the original three-mode family at p=4, unit weight and
-cutoff abs(n). Both whole-strip remainder suprema and the entire infinite
-tails are retained. The actual spectral-gap limit still needs proof before
-this family can decide the final summed inequality.
-The [moving-center determinant limit](NLS/ZakharovShabat/SourceCubicMovingDeterminant.lean)
-is also proved. Actual root localization and the resulting spectral-gap
-comparison are still needed; no additional source discrepancy is asserted.
-See the [Section 6 comparison](coverage/SECTION_6.md).
+including its common-neighborhood scope. The subsequent summed estimate is
+now handled with the corrected constant above. The earlier coefficient-side
+and moving-center asymptotic modules remain available as supporting results.
 
 ## Lemma 3.4 proof, p. 25: missing inverse-radius dependence
 

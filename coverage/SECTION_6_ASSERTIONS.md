@@ -6,9 +6,10 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current ledger covers S6-024 through S6-046 (printed pp.39–44).
+The current ledger covers S6-024 through S6-047 (printed pp.39–44).
 **Matched** records the mathematical assertions and their exact scope.
-**Corrected** retains a refuted printed claim alongside its valid replacement.
+**Corrected** records a formula or constant adjustment with a proved valid replacement.
+Existing refutations are retained; additional refutations are not required.
 **Interpreted** makes an operator-domain interpretation explicit rather than
 claiming a literal formalization of the source's adjoint notation.
 
@@ -71,7 +72,7 @@ Section6RootSourceComparison-2026-10-28 in the
 | S6-044 | 3217–3232 | Uniform strip bounds, Rouche counts and no exterior roots | matched |
 | S6-045 | 3233–3259 | Branch-free root estimate, Cauchy derivative and gap | corrected |
 | S6-046 | 3261–3270 | Identification with actual periodic pairs | matched |
-| S6-047 | 3272–3293 | Final weighted gap estimate and source constants | pending |
+| S6-047 | 3272–3293 | Final weighted gap estimate and source constants | corrected |
 
 ## Reviewed assertions
 
@@ -316,54 +317,33 @@ Public evidence: `resonantProof_root_factorization`, `resonantProof_root_alterna
 - One common original open convex neighborhood and threshold identify the determinant-root multiset with the raw period-two canonical endpoint multiset. The norm of their difference equals the canonical gap norm, also when the roots coincide.
 - The same chosen roots admit the corrected signed and positive-index displacement estimates at every larger cutoff. Label invariance of the signed sum transports the established budget onto the pair selected for the canonical identification.
 
-This row matches the spectral-pair identification and its transfer mechanism; its quantitative consequence uses the corrected budget from S6-043 and does not reinstate the false literal budget. It applies to arbitrary raw period-two input, with no period-one embedding, reality, distinctness or continuous-label-choice assumption. The final weighted-gap inference belongs to the still-pending S6-047.
+This row matches the spectral-pair identification and its transfer mechanism; its quantitative consequence uses the corrected budget from S6-043 and does not reinstate the false literal budget. It applies to arbitrary raw period-two input, with no period-one embedding, reality, distinctness or continuous-label-choice assumption. The final weighted-gap inference is now supplied by corrected row S6-047.
 
 Public evidence: `SourceResonantRootPair.toEndpoints`, `sourceLemma6_9_proof_canonical`, `sourceLemma6_9_proof`, `sourceProposition6_1_canonical_asymptotics`, `PeriodicEndpointPair.multiset_eq`, `sourceResonantRoot_displacementTail_eq`, `SourceResonantRootPair.of_periodic`, `mem_periodicSpectrum_iff_weightedDeterminant_zero`.
 
-## S6-047 supporting progress; row remains pending
+### S6-047: Final weighted gap estimate and source constants
 
-The original three-mode family now has the exact normalized limit
-2*r^4+2*C^4 for the entire coefficient-side sum on p.44, where
-r=1/(pi*n)^2 and C=1/[pi*(n-1/2)]^2. This retains both actual whole-strip
-suprema and signed infinite tails, with p=4, unit weight and cutoff abs(n).
-The cubic perturbation and higher error tails are controlled rigorously;
-the limit is strictly below 16*r^4 for n>=3. The actual counted-root gap
-asymptotics are still missing, so the final inequality remains unresolved.
-The ordered counts are unchanged.
+- The counted original periodic pair gives the weighted p-power gap bound with C_p=2^(3*p-2). The leading physical coefficients are the first component at -2*n and the second at 2*n. Both remainders use the actual functions on the whole strip; their suprema include w(2*n).
+- The grouped leading and remainder tails are summable. The actual canonical gap tail is dominated by their sum times C_p, for every signed index with abs(n)>=N, including the cutoff boundary. No reality or distinct-root assumption is introduced.
+- For every source weight and 1<p<infinity, one open convex weighted neighborhood containing the input and zero supplies a cutoff valid for all larger cutoffs. The original canonical gap norm agrees with the counted source pair, retaining the established algebraic multiplicities.
+- Lemma 6.8 bounds the coefficient-side sum by the corrected rootGapBudget, in the original weighted pair norm with the additive leading Fourier tail and floor(N/2). The original unweighted space also has the reciprocal-constant form with 1/C_p on the left.
+- The constant is deliberately nonoptimal. The passage is classified as corrected on the strength of this valid replacement; no new refutation of the printed constant is required or asserted. All previous source corrections remain in force.
 
-Public evidence: `resonantCubic_polynomial`, `resonantCubicPerturbation_norm_le`,
-`resonantCubicPerturbationSup_outside`,
-`resonantCubicPerturbationSup_sum_normalized_tendsto`,
-`fourthPowerSum_tendsto_single`, `sourceCubicCombinedError_pointwise`,
-`sourceCubicCombinedError_tail_tendsto`,
-`sourceCubicRemainderSup_sum_normalized_tendsto`,
-`sourceCubicPrintedRightSum_normalized_tendsto`,
-`sourceCubicPrintedRightSum_limit_lt`.
-The partial Section6CubicTailSourceComparison-2026-10-28 and
-Section6CubicPerturbationSourceComparison-2026-10-28 records are in the
-[source-review index](source-review-index.json). No additional ordered group
-is classified as reviewed by these supporting milestones.
+Public evidence: `rootGapSummationConstant_eq_rpow`, `sourceGapLeadingPowerTail`,
+`sourceGapRemainderPowerTail`, `sourceCanonicalWeightedGapPowerTail`,
+`sourceResonantRootPair_gap_le_four_terms`, `sourceCanonicalGapSum_le_coefficients`,
+`sourceGapCoefficientSums_le_budget`, `exists_uniform_sourceGapCoefficientData`,
+`sourceProposition6_3_coefficient_sum_corrected`,
+`sourceProposition6_3_coefficient_sum_unweighted`.
 
-The actual moving diagonal center and determinant are now controlled too:
-the center is eventually real, has O(s^2) displacement, and the determinant
-at center(s)+s^3*t divided by s^6 tends to t^2-(2*r)^2 for every fixed complex t.
-This does not yet select the two actual roots or give the required gap comparison.
-
-Additional public evidence: `sourceCubicMovingCoefficient_tendsto`,
-`norm_sourceResonantA_le_norm_sq`, `sourceCubicDiagonal_deriv_le`,
-`sourceCubicDiagonalCenter_eventually`, `sourceCubicDiagonalCenter_tendsto`,
-`sourceCubicDiagonalCenter_real_eventually`, `sourceCubicDiagonalResidual_tendsto`,
-`sourceCubicDeterminant_scaled_tendsto`.
-The partial Section6MovingCenterSourceComparison-2026-10-28 record in the
-[source-review index](source-review-index.json) adds supporting evidence only;
-S6-047 and the ordered counts are unchanged.
+Section6CorrectedGapSumSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records this correction.
+The earlier coefficient-side and moving-center asymptotic modules remain
+supporting results; they are not needed for the corrected-constant proof.
 
 ## Remaining work
 
-Reconcile the other 24 passage groups: S6-001 through S6-023 and S6-047.
-The earlier groups already have focused reviews, but still need ordered
-reconciliation. Next in this forward pass is the final p.44 weighted gap sum.
-Its 1/2^p left-side factor remains unresolved; the corrected larger-constant
-bound and the refuted preceding middle comparison are separate results.
-This ledger does not replace the source-wide inventory or the remaining
-Birkhoff-construction and Appendix G.2 checks.
+Reconcile the other 23 passage groups, S6-001 through S6-023, using their
+existing focused reviews and current public proofs. Then continue through
+the dissertation in source order. The source-wide inventory, exact cited
+Birkhoff construction and Appendix G.2 interpretation remain unfinished.

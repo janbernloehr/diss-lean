@@ -70808,3 +70808,53 @@ example (n : ℤ) (hn : 0 < n) : ∀ᶠ s in 𝓝[>] (0 : ℝ),
   exact (div_ne_zero_iff.mp hs).1
 
 end Section6MovingCenterChecks
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+namespace Section6CorrectedGapSumChecks
+
+-- The conditional original-pair estimate includes p=1 and repeated roots.
+example (φ : CoeffPair 1) (n : ℤ) (x y : ℂ)
+    (hr : SourceResonantRootPair (by simp) φ n x y)
+    (hc : SourceCoefficientStripBounds (by simp) SpectralWeight.one φ n) :
+    ‖x-y‖ ≤ 2*(‖φ.fst (-(2*n))‖+‖φ.snd (2*n)‖+
+      sourceResonantBMinusSup (by simp) SpectralWeight.one φ n+
+      sourceResonantBPlusSup (by simp) SpectralWeight.one φ n) := by
+  simpa [rootGapSummationConstant] using
+    sourceResonantRootPair_gap_le_four_terms (by simp) SpectralWeight.one φ n x y hr hc
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- At p=4 the reciprocal constant is 1/1024 on an original source neighborhood.
+example (φ : CoeffPair 4) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 4), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        (∑' n : ℤ, sourceCanonicalWeightedGapPowerTail (by simp) (by norm_num) SpectralWeight.one ψ N n)/1024 ≤
+          (∑' n : ℤ, sourceGapLeadingPowerTail SpectralWeight.one ψ N n)+
+            (∑' n : ℤ, sourceGapRemainderPowerTail (by simp) SpectralWeight.one ψ N n) := by
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,h⟩ := sourceProposition6_3_coefficient_sum_unweighted (by simp) (by norm_num) φ
+  refine ⟨N₀,hN₀,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ N hN
+  have hC : rootGapSummationConstant 4 = 1024 := by norm_num [rootGapSummationConstant]
+  simpa only [hC] using (h ψ hψ N hN).2.2.2
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 2) := ⟨by norm_num⟩
+
+-- A nontrivial weight retains the full tail and the budget at every larger cutoff.
+example (φ : WeightedCoeffPair (SpectralWeight.constant 2 one_le_two).toWeight 2) :
+    let w := SpectralWeight.constant 2 one_le_two
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 2),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (sourceCanonicalWeightedGapPowerTail (by simp) (by norm_num) w (sourceWeightedPeriodTwoInput w ψ) N) ∧
+        (∑' n : ℤ, sourceCanonicalWeightedGapPowerTail (by simp) (by norm_num) w (sourceWeightedPeriodTwoInput w ψ) N n) ≤
+          rootGapBudget w ψ N := by
+  dsimp only
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,h⟩ := sourceProposition6_3_coefficient_sum_corrected (by simp) (by norm_num)
+    (SpectralWeight.constant 2 one_le_two) φ
+  refine ⟨N₀,hN₀,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ N hN
+  exact ⟨(h ψ hψ N hN).2.2.1,(h ψ hψ N hN).2.2.2.1.trans (h ψ hψ N hN).2.2.2.2⟩
+
+end Section6CorrectedGapSumChecks
