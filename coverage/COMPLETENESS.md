@@ -121,17 +121,20 @@ One explicit constant also gives the corrected final Young budget; the
 printed equality remains refuted. The full Section 6 inventory and final
 p.44 summed constant are still open.
 The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now explicitly
-reconciles eighteen consecutive passage groups (S6-024–S6-041). Fourteen are
-matched, three retain source corrections, and the adjoint argument retains an
-explicit derivative-domain bilinear interpretation. The diagonal and off-diagonal
-proofs now retain their literal series, actual Holder tests, convergent regional
-moments and both exponent ranges. The off-diagonal far sets overlap and its near
-set retains equality. Recombination yields original full-strip coefficient
-suprema and weighted pair/full-cutoff power tails, with explicit exponent-only
-constants. Earlier constants and qualified counterexamples remain available.
-Twenty-nine groups still need ordered reconciliation, including the determinant
-and Lemma 6.9 proof. This is not a completion percentage or a substitute for
-the source-wide assertion inventory.
+reconciles twenty-three consecutive passage groups (S6-024–S6-046). Seventeen
+are matched, five retain source corrections, and the adjoint argument retains
+an explicit derivative-domain bilinear interpretation. The diagonal and
+off-diagonal proofs retain their literal series, actual Holder tests,
+convergent regional moments and both exponent ranges. Their exact regions
+and full-cutoff tails remain intact. Lemma 6.9 now includes the literal two-step
+Rouche counts, exact exterior separation, unique simple diagonal zero,
+pointwise factorization, Cauchy gap bound and raw period-two canonical pair
+identification, together with corrected displacement sums on one neighborhood.
+Earlier constants and qualified counterexamples remain available.
+Twenty-four groups still need ordered reconciliation: S6-001 through S6-023
+and S6-047. The final weighted gap sum with 1/2^p on the left remains unresolved;
+its numerical candidate is not proof. This is not a completion percentage or
+a substitute for the source-wide assertion inventory.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

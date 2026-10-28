@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.8's off-diagonal proof now uses its literal weighted
-Holder sums, exact overlapping far regions and retained-boundary near region.
-Both exponent ranges lead to convergent tails of the original full-strip
-suprema. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
-retains the source corrections and remaining review.
+Latest step: Lemma 6.9 now has its literal two-step Rouche proof, exact
+multiplicities, pointwise root estimates and canonical period-two pair
+identification on one common neighborhood. Corrected displacement sums retain
+the leading Fourier tail. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
+records twenty-three reviewed passage groups and the remaining source audit.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

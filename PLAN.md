@@ -1,6 +1,36 @@
 # Implementation plan
 
-## Current milestone: the off-diagonal proof of Lemma 6.8
+## Current milestone: the root proof of Lemma 6.9
+
+The literal Rouche argument now counts one zero of the diagonal residual,
+two of its square and two of the actual determinant, with multiplicities.
+The diagonal zero is simple, the strip exterior has exact separation pi/4,
+and the determinant has no zeros there, including on the refined boundary.
+
+Pointwise factorization and residual estimates require no analytic square-root
+branch. Cauchy's derivative bound 1/8 gives the intermediate gap inequality
+and the factor-six squared-gap bound for the actual full-strip product supremum.
+One common original neighborhood identifies the counted roots with the raw
+period-two canonical pair and carries corrected signed, positive-pair and
+literally duplicated-positive-label displacement sums.
+
+Three integration examples cover imaginary square roots, the zero potential's
+double root and the exact refined boundary at either sign of the index.
+The [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) now reconciles
+S6-024 through S6-046: seventeen matched, five corrected and one interpreted;
+twenty-four groups remain pending. The repeated labels and missing leading
+tail in the printed proof remain explicit corrections.
+
+Validation: `./scripts/check.sh` passes with 8,470 build jobs, 7,540
+public examples and a transitive axiom audit of 43,792 NLS declarations.
+The 21 inherited warnings are unchanged; the four new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: S6-047, the final p.44 weighted gap sum, which remains unresolved.
+The earlier S6-001 through S6-023 passages still need ordered reconciliation,
+and the broader [completion qualifications](coverage/COMPLETENESS.md) remain open.
+
+## Previous milestone: the off-diagonal proof of Lemma 6.8
 
 The literal far-k and far-l regions now use the strict half-radius and may
 overlap. Their weak near complement includes equality. Jointly convergent

@@ -6,7 +6,7 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current ledger covers S6-024 through S6-041 (printed pp.39–43).
+The current ledger covers S6-024 through S6-046 (printed pp.39–44).
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** retains a refuted printed claim alongside its valid replacement.
 **Interpreted** makes an operator-domain interpretation explicit rather than
@@ -17,8 +17,9 @@ The extraction positions are newline-based and tied to SHA-256
 The source PDF and inspected page hashes, module snapshots and declaration
 references are recorded in Section6TransposeSourceComparison-2026-10-28,
 Section6UniformSeriesSourceComparison-2026-10-28,
-Section6DiagonalSourceComparison-2026-10-28 and
-Section6OffDiagonalSourceComparison-2026-10-28 in the
+Section6DiagonalSourceComparison-2026-10-28,
+Section6OffDiagonalSourceComparison-2026-10-28 and
+Section6RootSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json). The
 [completion qualifications](COMPLETENESS.md) remain in force.
 
@@ -65,11 +66,11 @@ Section6OffDiagonalSourceComparison-2026-10-28 in the
 | S6-039 | 3060–3096 | Three index regions and (1.16) | matched |
 | S6-040 | 3097–3147 | High-exponent off-diagonal sum estimates | matched |
 | S6-041 | 3149–3174 | Low-exponent off-diagonal sum estimates | matched |
-| S6-042 | 3176–3183 | Actual determinant and Rouche preparation | pending |
-| S6-043 | 3185–3207 | Lemma 6.9 roots, gap and literal duplicated positive sum | pending |
-| S6-044 | 3217–3232 | Uniform strip bounds, Rouche counts and no exterior roots | pending |
-| S6-045 | 3233–3259 | Branch-free root estimate, Cauchy derivative and gap | pending |
-| S6-046 | 3261–3270 | Identification with actual periodic pairs | pending |
+| S6-042 | 3176–3183 | Actual determinant and Rouche preparation | matched |
+| S6-043 | 3185–3207 | Lemma 6.9 roots, gap and literal duplicated positive sum | corrected |
+| S6-044 | 3217–3232 | Uniform strip bounds, Rouche counts and no exterior roots | matched |
+| S6-045 | 3233–3259 | Branch-free root estimate, Cauchy derivative and gap | corrected |
+| S6-046 | 3261–3270 | Identification with actual periodic pairs | matched |
 | S6-047 | 3272–3293 | Final weighted gap estimate and source constants | pending |
 
 ## Reviewed assertions
@@ -266,13 +267,65 @@ Public evidence: `offDiagonalProofMoment_concave_le`, `offDiagonalProofMoment_po
 
 The quantitative moment and power-tail assertions require 1<p<infinity. The p=1 series identity and convergence are separate earlier results. Completing this proof passage does not resolve the final p.44 summed eigenvalue inequality.
 
+### S6-042: Actual determinant and Rouche preparation
+
+- The scalar determinant is exactly (lambda-pi*n-a)^2-bPlus*bMinus and equals the actual reduced matrix determinant in both physical and printed basis orders on the original contraction domain.
+- It is jointly analytic in the original component-sum potential space and spectral parameter. One open convex neighborhood containing the potential and zero and one distant cutoff support this statement on every full closed strip.
+- Under the same strip control, the determinant differs from the centered square by strictly less than the modulus of that square on the exact pi/4 boundary.
+
+The closeness is a boundary comparison sufficient for Rouche, not an unqualified estimate at the free center where the centered square vanishes. The actual correction domain and original norm are retained.
+
+Public evidence: `sourceResonantDeterminantFunction`, `sourceResonantDeterminantFunction_eq_det`, `sourceResonantDeterminantFunction_eq_printed_det`, `analyticAt_sourceResonantDeterminantFunction`, `exists_uniform_sourceResonantDeterminant_control`, `SourceResonantStripControl.quadratic_comparison`.
+
+### S6-043: Lemma 6.9 roots, gap and literal duplicated positive sum
+
+- Every sufficiently distant signed strip has exactly two roots with analytic multiplicity. They lie in the open pi/4 disk, exhaust the original periodic spectrum there, and retain its actual algebraic multiplicities, including a double root.
+- The square of the root gap is at most six times the genuine full-strip supremum of the actual off-diagonal product. A common original open convex neighborhood and one cutoff support the root and gap statements.
+- The printed positive-index sum repeats the first root label. Existing original p=2 witnesses refute both the signed two-root budget and the literal duplicated-positive-root budget on every neighborhood of zero with a common cutoff; choosing different root labels does not repair them.
+- The corrected signed and positive two-root sums converge and retain an additive leading Fourier tail outside the nonlinear potential-norm factors. The literal duplicated-positive-root sum is bounded by twice that corrected budget, with the same chosen roots, neighborhood and all larger cutoffs.
+
+The missing leading tail is a substantive correction; the duplicated label is separately retained rather than silently changed. The refutations concern the locally uniform assertion at zero, not every potential-specific eventual estimate. Finite 1<p<infinity and the original component-sum norm are preserved.
+
+Public evidence: `SourceResonantRootPair`, `SourceResonantRootPair.zero_count`, `sourceLemma6_9`, `SourceLemma69Proof`, `sourceLemma6_9_proof`, `not_sourceLemma6_9_printed_pair_sum`, `not_sourceLemma6_9_printed_duplicated_positive_sum`, `sourceLemma6_9_corrected_positive`, `sourcePositiveDisplacementPowerTail_self_summable_and_le`, `sourcePeriodTwoDisplacementBudget`, `rootDisplacementBudget`.
+
+### S6-044: Uniform strip bounds, Rouche counts and no exterior roots
+
+- Both leading signed Fourier coefficients are bounded by the full pair tail at 2*abs(n), with equality at the retained boundary allowed. Each full coefficient is bounded by that tail plus its actual remainder.
+- One common original neighborhood and cutoff provide the literal diagonal pi/32 and off-diagonal pi/16 bounds. The sum of the actual diagonal supremum and the square root of the actual product supremum is strictly less than the exterior infimum, exactly pi/4 and attained on the refined boundary.
+- The literal first Rouche comparison gives one zero for h=lambda-pi*n-a. The analytic zero count of a power multiplies by its exponent, so h squared has two zeros; the second strict comparison transfers this count to the determinant.
+- The diagonal zero is unique and simple on the whole strip. Finiteness and nonvanishing on the boundary justify the use of analytic orders. The determinant has no root in the strip outside the open refined disk, including its boundary.
+
+The source R_(2n) shorthand is interpreted as the symmetric Fourier cutoff 2*abs(n) for signed indices. Suprema are actual bounded full-strip images. A natural-order count of one alone is not used to infer simplicity without the additional analyticity, finiteness and nonvanishing conditions.
+
+Public evidence: `sourceResonantLeading_le_fullTail`, `sourceResonant_fullCoefficient_le_tail_add`, `exists_uniform_sourceResonantDeterminant_control`, `SourceResonantStripControl.product_bounds`, `resonantProof_exterior_isLeast`, `resonantProof_exterior_inf`, `SourceResonantStripControl.sup_separation`, `resonantProof_boundary_comparisons`, `analyticZeroCount_pow`, `resonantProof_two_step_rouche`, `resonantProof_unique_simple_diagonal`, `SourceResonantStripControl.two_step_rouche`, `sourceLemma6_9_proof_roots`.
+
+### S6-045: Branch-free root estimate, Cauchy derivative and gap
+
+- For any pointwise square root of bPlus*bMinus, the determinant factors and a zero satisfies either sign of the root equation. Its residual modulus is exactly the real square root of the product norm. No globally analytic square-root branch is assumed.
+- The pointwise p-power displacement estimate explicitly retains both signed leading Fourier coefficients and both remainders. Summation yields the corrected budget, not the printed estimate that omits the additive leading tail.
+- A pi/4 closed ball about every refined-disk point stays in the strip. Cauchy gives the actual diagonal derivative bound 1/8, and the complex mean-value inequality gives the corresponding Lipschitz estimate.
+- The actual gap obeys norm(x-y)<=norm(x-y)/8+2*sqrt(productSup), hence its square is at most six times productSup. The rendered first line of the source intermediate gap display repeats xiPlus on the left; the proved inequality uses xiPlus-xiMinus as required by the next line and conclusion.
+
+The pointwise square-root notation is sufficient for the source argument; it does not assert analytic factor functions on the whole strip. The repeated left-hand label is a typographical correction, while the claimed printed displacement-sum consequence needs the substantive leading-tail correction already refuted in S6-043.
+
+Public evidence: `resonantProof_root_factorization`, `resonantProof_root_alternatives`, `resonantProof_root_modulus`, `sourceResonantRoot_displacement_rpow_le`, `resonantRoot_displacement_rpow_le`, `exists_uniform_resonantDisplacementMajorant`, `sourceLemma6_9_proof`, `closedBall_refined_point_subset_strip`, `norm_deriv_le_on_refined_disk`, `norm_diagonal_sub_le_on_refined_disk`, `SourceResonantStripControl.deriv_bound`, `SourceResonantStripControl.gap_linear`, `norm_gap_sq_le_of_residual_bounds`, `SourceResonantStripControl.proof_roots`.
+
+### S6-046: Identification with actual periodic pairs
+
+- The counted determinant roots identify the complete original periodic spectral pair on each distant strip. The bridge carries algebraic multiplicity, using the independent spectral count rather than inferring multiplicity from equal zero sets.
+- One common original open convex neighborhood and threshold identify the determinant-root multiset with the raw period-two canonical endpoint multiset. The norm of their difference equals the canonical gap norm, also when the roots coincide.
+- The same chosen roots admit the corrected signed and positive-index displacement estimates at every larger cutoff. Label invariance of the signed sum transports the established budget onto the pair selected for the canonical identification.
+
+This row matches the spectral-pair identification and its transfer mechanism; its quantitative consequence uses the corrected budget from S6-043 and does not reinstate the false literal budget. It applies to arbitrary raw period-two input, with no period-one embedding, reality, distinctness or continuous-label-choice assumption. The final weighted-gap inference belongs to the still-pending S6-047.
+
+Public evidence: `SourceResonantRootPair.toEndpoints`, `sourceLemma6_9_proof_canonical`, `sourceLemma6_9_proof`, `sourceProposition6_1_canonical_asymptotics`, `PeriodicEndpointPair.multiset_eq`, `sourceResonantRoot_displacementTail_eq`, `SourceResonantRootPair.of_periodic`, `mem_periodicSpectrum_iff_weightedDeterminant_zero`.
+
 ## Remaining work
 
-Reconcile the other 29 passage groups, including the earlier groups already
-covered by focused reviews. Next in this forward pass are the actual determinant,
-Rouche root counts, branch-free root/gap estimates and Lemma 6.9.
-The final p.44 inequality with
-1/2^p on its left side remains unresolved; the corrected larger-constant
+Reconcile the other 24 passage groups: S6-001 through S6-023 and S6-047.
+The earlier groups already have focused reviews, but still need ordered
+reconciliation. Next in this forward pass is the final p.44 weighted gap sum.
+Its 1/2^p left-side factor remains unresolved; the corrected larger-constant
 bound and the refuted preceding middle comparison are separate results.
 This ledger does not replace the source-wide inventory or the remaining
 Birkhoff-construction and Appendix G.2 checks.

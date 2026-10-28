@@ -5,6 +5,53 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.9: the literal root proof and corrected sums
+
+[ResonantProofRoots.lean](../NLS/ZakharovShabat/ResonantProofRoots.lean)
+follows the source's two Rouche comparisons: first one zero of
+h=lambda-pi*n-a, then two of h squared and the determinant.
+[ZeroCountPowers.lean](../NLS/ComplexAnalysis/ZeroCountPowers.lean)
+provides the power-count identity. Analyticity, finite zeros and nonvanishing
+on the boundary establish a unique simple diagonal root. No determinant
+zero lies outside the open refined disk in the strip.
+
+[SourceLemma6_9ProofRoots.lean](../NLS/ZakharovShabat/SourceLemma6_9ProofRoots.lean)
+transports these statements to the actual original coefficient functions.
+The root pair retains both scalar zero orders and periodic algebraic
+multiplicities. Its multiset equals the raw period-two canonical endpoint
+pair on one common original open convex neighborhood, with the same gap norm.
+Repeated roots and arbitrary complex period-two potentials are included.
+
+[SourceLemma6_9ProofEstimates.lean](../NLS/ZakharovShabat/SourceLemma6_9ProofEstimates.lean)
+proves the exact exterior infimum pi/4, its attainment, and strict separation
+by the actual full-strip suprema. The coefficient-tail bound retains the
+boundary at 2*abs(n). Pointwise factorization and residual norms require
+no globally analytic square-root branch. The actual gap satisfies
+norm(x-y)<=norm(x-y)/8+2*sqrt(productSup); Cauchy's 1/8 bound also gives
+the factor-six squared-gap estimate.
+
+The combined `sourceLemma6_9_proof` gives one neighborhood, cutoff and
+chosen root pair for the counts, canonical identification and corrected
+convergent displacement sums at every larger cutoff. The signed and positive
+pair sums use the additive-leading-tail budget; the literal duplicated
+positive label uses twice that budget. Existing local p=2 counterexamples
+to the printed budget remain unchanged. The rendered intermediate gap display
+also repeats the first label on its left; the proved bound uses the intended
+difference of the two roots.
+
+The [ordered ledger](SECTION_6_ASSERTIONS.md) reconciles S6-042 through S6-046
+in Section6RootSourceComparison-2026-10-28 of the
+[source-review index](source-review-index.json). S6-043 and S6-045 retain
+the printed displacement-sum correction; S6-046 matches the periodic-pair
+identification and transfers the corrected estimate. S6-047, containing the
+final weighted sum with 1/2^p on the left, remains pending. Its preceding
+middle inequality is separately refuted; that does not resolve the final sum.
+
+Validation: `./scripts/check.sh` passes with 8,470 build jobs, 7,540
+public examples and a transitive axiom audit of 43,792 NLS declarations.
+The 21 inherited warnings are unchanged; the four new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.8(ii): the literal off-diagonal proof
 
 [OffDiagonalProofRegions.lean](../NLS/ZakharovShabat/OffDiagonalProofRegions.lean)
@@ -46,7 +93,7 @@ Section6OffDiagonalSourceComparison-2026-10-28 in the
 weight correction and its local/common-cutoff counterexample scope. The final
 bound follows the p-power/full-pair display on p.43; it does not assert the
 refuted unpowered or positive-component-only p.41 display.
-The determinant and Lemma 6.9 passages remain ahead, and the final p.44 sum
+The determinant and Lemma 6.9 passages are reconciled above; the final p.44 sum
 remains unresolved.
 
 Validation: `./scripts/check.sh` passes with 8,466 build jobs, 7,537

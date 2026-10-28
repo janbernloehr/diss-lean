@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T18:46:06.079238+00:00",
-  "base_commit": "0f99c102be3b249c592bd32dcd20af341b444ed1",
+  "published_utc": "2026-10-28T19:16:35.783545+00:00",
+  "base_commit": "7c7e312ff5dcc65792189b845f71314b9fa1f338",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 98,
-    "module_hash_checks": 1567,
-    "distinct_modules": 1001
+    "review_records": 99,
+    "module_hash_checks": 1607,
+    "distinct_modules": 1031
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0f99c102be3b249c592bd32dcd20af341b444ed1",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal off-diagonal regions and weighted Holder sums, overlap and exact boundaries, convergent moments and both exponent regimes, the original full-strip remainders, full-cutoff weighted pair budgets and six integration examples.",
+    "base_commit": "7c7e312ff5dcc65792189b845f71314b9fa1f338",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal two-step Rouche proof, exact exterior separation, simple diagonal root, actual determinant counts and multiplicities, pointwise root bounds, Cauchy gap estimate, canonical period-two identification, corrected displacement sums on one neighborhood and three integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8466,
-    "public_examples": 7537,
-    "transitive_NLS_declarations": 43746,
+    "build_jobs": 8470,
+    "public_examples": 7540,
+    "transitive_NLS_declarations": 43792,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4743,
-      "sha256": "4b6143e4caab668f4cb4dfa5238dd917abd3117e647f37e5bbc44d3231f1c1fb"
+      "files": 4747,
+      "sha256": "aa4cc0265c3437b18e8ee0c336f7985f55b5e425c0e6ec9a34599c5ffa635630"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -24251,6 +24251,269 @@
       ],
       "declaration_inventory_count": 43746,
       "source_record_sha256": "ca80cbeafccaee1af9b07f1b8f1d0f71d671eddd14a2930df791deeda00d2bd4"
+    },
+    "Section6RootSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7c7e312ff5dcc65792189b845f71314b9fa1f338",
+      "updated_utc": "2026-10-28T19:16:35.783545+00:00",
+      "source_lines": [
+        [
+          3176,
+          3270
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-042",
+          "source_lines": [
+            3176,
+            3183
+          ],
+          "requirement": "Actual determinant and Rouche preparation",
+          "status": "matched",
+          "reviewed_claims": [
+            "The scalar determinant is exactly (lambda-pi*n-a)^2-bPlus*bMinus and equals the actual reduced matrix determinant in both physical and printed basis orders on the original contraction domain.",
+            "It is jointly analytic in the original component-sum potential space and spectral parameter. One open convex neighborhood containing the potential and zero and one distant cutoff support this statement on every full closed strip.",
+            "Under the same strip control, the determinant differs from the centered square by strictly less than the modulus of that square on the exact pi/4 boundary."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResonantDeterminantFunction",
+            "NLS.ZakharovShabat.sourceResonantDeterminantFunction_eq_det",
+            "NLS.ZakharovShabat.sourceResonantDeterminantFunction_eq_printed_det",
+            "NLS.ZakharovShabat.analyticAt_sourceResonantDeterminantFunction",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantDeterminant_control",
+            "NLS.ZakharovShabat.SourceResonantStripControl.quadratic_comparison"
+          ],
+          "qualification": "The closeness is a boundary comparison sufficient for Rouche, not an unqualified estimate at the free center where the centered square vanishes. The actual correction domain and original norm are retained."
+        },
+        {
+          "ordered_group": "S6-043",
+          "source_lines": [
+            3185,
+            3207
+          ],
+          "requirement": "Lemma 6.9 roots, gap and literal duplicated positive sum",
+          "status": "corrected",
+          "reviewed_claims": [
+            "Every sufficiently distant signed strip has exactly two roots with analytic multiplicity. They lie in the open pi/4 disk, exhaust the original periodic spectrum there, and retain its actual algebraic multiplicities, including a double root.",
+            "The square of the root gap is at most six times the genuine full-strip supremum of the actual off-diagonal product. A common original open convex neighborhood and one cutoff support the root and gap statements.",
+            "The printed positive-index sum repeats the first root label. Existing original p=2 witnesses refute both the signed two-root budget and the literal duplicated-positive-root budget on every neighborhood of zero with a common cutoff; choosing different root labels does not repair them.",
+            "The corrected signed and positive two-root sums converge and retain an additive leading Fourier tail outside the nonlinear potential-norm factors. The literal duplicated-positive-root sum is bounded by twice that corrected budget, with the same chosen roots, neighborhood and all larger cutoffs."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceResonantRootPair",
+            "NLS.ZakharovShabat.SourceResonantRootPair.zero_count",
+            "NLS.ZakharovShabat.sourceLemma6_9",
+            "NLS.ZakharovShabat.SourceLemma69Proof",
+            "NLS.ZakharovShabat.sourceLemma6_9_proof",
+            "NLS.ZakharovShabat.not_sourceLemma6_9_printed_pair_sum",
+            "NLS.ZakharovShabat.not_sourceLemma6_9_printed_duplicated_positive_sum",
+            "NLS.ZakharovShabat.sourceLemma6_9_corrected_positive",
+            "NLS.ZakharovShabat.sourcePositiveDisplacementPowerTail_self_summable_and_le",
+            "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget",
+            "NLS.ZakharovShabat.rootDisplacementBudget"
+          ],
+          "qualification": "The missing leading tail is a substantive correction; the duplicated label is separately retained rather than silently changed. The refutations concern the locally uniform assertion at zero, not every potential-specific eventual estimate. Finite 1<p<infinity and the original component-sum norm are preserved."
+        },
+        {
+          "ordered_group": "S6-044",
+          "source_lines": [
+            3217,
+            3232
+          ],
+          "requirement": "Uniform strip bounds, Rouche counts and no exterior roots",
+          "status": "matched",
+          "reviewed_claims": [
+            "Both leading signed Fourier coefficients are bounded by the full pair tail at 2*abs(n), with equality at the retained boundary allowed. Each full coefficient is bounded by that tail plus its actual remainder.",
+            "One common original neighborhood and cutoff provide the literal diagonal pi/32 and off-diagonal pi/16 bounds. The sum of the actual diagonal supremum and the square root of the actual product supremum is strictly less than the exterior infimum, exactly pi/4 and attained on the refined boundary.",
+            "The literal first Rouche comparison gives one zero for h=lambda-pi*n-a. The analytic zero count of a power multiplies by its exponent, so h squared has two zeros; the second strict comparison transfers this count to the determinant.",
+            "The diagonal zero is unique and simple on the whole strip. Finiteness and nonvanishing on the boundary justify the use of analytic orders. The determinant has no root in the strip outside the open refined disk, including its boundary."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceResonantLeading_le_fullTail",
+            "NLS.ZakharovShabat.sourceResonant_fullCoefficient_le_tail_add",
+            "NLS.ZakharovShabat.exists_uniform_sourceResonantDeterminant_control",
+            "NLS.ZakharovShabat.SourceResonantStripControl.product_bounds",
+            "NLS.ZakharovShabat.resonantProof_exterior_isLeast",
+            "NLS.ZakharovShabat.resonantProof_exterior_inf",
+            "NLS.ZakharovShabat.SourceResonantStripControl.sup_separation",
+            "NLS.ZakharovShabat.resonantProof_boundary_comparisons",
+            "NLS.ComplexAnalysis.analyticZeroCount_pow",
+            "NLS.ZakharovShabat.resonantProof_two_step_rouche",
+            "NLS.ZakharovShabat.resonantProof_unique_simple_diagonal",
+            "NLS.ZakharovShabat.SourceResonantStripControl.two_step_rouche",
+            "NLS.ZakharovShabat.sourceLemma6_9_proof_roots"
+          ],
+          "qualification": "The source R_(2n) shorthand is interpreted as the symmetric Fourier cutoff 2*abs(n) for signed indices. Suprema are actual bounded full-strip images. A natural-order count of one alone is not used to infer simplicity without the additional analyticity, finiteness and nonvanishing conditions."
+        },
+        {
+          "ordered_group": "S6-045",
+          "source_lines": [
+            3233,
+            3259
+          ],
+          "requirement": "Branch-free root estimate, Cauchy derivative and gap",
+          "status": "corrected",
+          "reviewed_claims": [
+            "For any pointwise square root of bPlus*bMinus, the determinant factors and a zero satisfies either sign of the root equation. Its residual modulus is exactly the real square root of the product norm. No globally analytic square-root branch is assumed.",
+            "The pointwise p-power displacement estimate explicitly retains both signed leading Fourier coefficients and both remainders. Summation yields the corrected budget, not the printed estimate that omits the additive leading tail.",
+            "A pi/4 closed ball about every refined-disk point stays in the strip. Cauchy gives the actual diagonal derivative bound 1/8, and the complex mean-value inequality gives the corresponding Lipschitz estimate.",
+            "The actual gap obeys norm(x-y)<=norm(x-y)/8+2*sqrt(productSup), hence its square is at most six times productSup. The rendered first line of the source intermediate gap display repeats xiPlus on the left; the proved inequality uses xiPlus-xiMinus as required by the next line and conclusion."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.resonantProof_root_factorization",
+            "NLS.ZakharovShabat.resonantProof_root_alternatives",
+            "NLS.ZakharovShabat.resonantProof_root_modulus",
+            "NLS.ZakharovShabat.sourceResonantRoot_displacement_rpow_le",
+            "NLS.ZakharovShabat.resonantRoot_displacement_rpow_le",
+            "NLS.ZakharovShabat.exists_uniform_resonantDisplacementMajorant",
+            "NLS.ZakharovShabat.sourceLemma6_9_proof",
+            "NLS.ZakharovShabat.closedBall_refined_point_subset_strip",
+            "NLS.ZakharovShabat.norm_deriv_le_on_refined_disk",
+            "NLS.ZakharovShabat.norm_diagonal_sub_le_on_refined_disk",
+            "NLS.ZakharovShabat.SourceResonantStripControl.deriv_bound",
+            "NLS.ZakharovShabat.SourceResonantStripControl.gap_linear",
+            "NLS.ZakharovShabat.norm_gap_sq_le_of_residual_bounds",
+            "NLS.ZakharovShabat.SourceResonantStripControl.proof_roots"
+          ],
+          "qualification": "The pointwise square-root notation is sufficient for the source argument; it does not assert analytic factor functions on the whole strip. The repeated left-hand label is a typographical correction, while the claimed printed displacement-sum consequence needs the substantive leading-tail correction already refuted in S6-043."
+        },
+        {
+          "ordered_group": "S6-046",
+          "source_lines": [
+            3261,
+            3270
+          ],
+          "requirement": "Identification with actual periodic pairs",
+          "status": "matched",
+          "reviewed_claims": [
+            "The counted determinant roots identify the complete original periodic spectral pair on each distant strip. The bridge carries algebraic multiplicity, using the independent spectral count rather than inferring multiplicity from equal zero sets.",
+            "One common original open convex neighborhood and threshold identify the determinant-root multiset with the raw period-two canonical endpoint multiset. The norm of their difference equals the canonical gap norm, also when the roots coincide.",
+            "The same chosen roots admit the corrected signed and positive-index displacement estimates at every larger cutoff. Label invariance of the signed sum transports the established budget onto the pair selected for the canonical identification."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceResonantRootPair.toEndpoints",
+            "NLS.ZakharovShabat.sourceLemma6_9_proof_canonical",
+            "NLS.ZakharovShabat.sourceLemma6_9_proof",
+            "NLS.ZakharovShabat.sourceProposition6_1_canonical_asymptotics",
+            "NLS.ZakharovShabat.PeriodicEndpointPair.multiset_eq",
+            "NLS.ZakharovShabat.sourceResonantRoot_displacementTail_eq",
+            "NLS.ZakharovShabat.SourceResonantRootPair.of_periodic",
+            "NLS.ZakharovShabat.mem_periodicSpectrum_iff_weightedDeterminant_zero"
+          ],
+          "qualification": "This row matches the spectral-pair identification and its transfer mechanism; its quantitative consequence uses the corrected budget from S6-043 and does not reinstate the false literal budget. It applies to arbitrary raw period-two input, with no period-one embedding, reality, distinctness or continuous-label-choice assumption. The final weighted-gap inference belongs to the still-pending S6-047."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceResonantDeterminant.lean": "2efa76e55b73dd2298e610723a222506927672ad0d42878d64a0510be8561927",
+        "NLS/ZakharovShabat/ResonantRootGap.lean": "3fb02ab7412dd7ac33ae9fbd63ea689ed3a0f44c5148dc5645f1a1c7031905ee",
+        "NLS/ZakharovShabat/ResonantCauchyGap.lean": "816b75af2eefc3b0c48b8637e15669e6be69e1a1b4e7848f23c00ba2e9b5b7fc",
+        "NLS/ZakharovShabat/ResonantDeterminantLocalization.lean": "8e10fddd82a39a7d2ea486549e71bae603ce8fd3063d8dcc39a196c44a62ffd2",
+        "NLS/ZakharovShabat/ResonantZeroCount.lean": "b707da645ff71dfcc97114ad4c45874f963b4cd49cb064e690a79a9e49e1f644",
+        "NLS/ZakharovShabat/ResonantDeterminantBounds.lean": "3c7412a3ab4307242209fd8ca378aeb64c25b0b3cd80daef1bba64bc30b50c38",
+        "NLS/ZakharovShabat/SourceLemma6_9.lean": "ee0e0a406fd500fba9d8e982c9c41e622e48d7479762d99fcf41605488e8f6de",
+        "NLS/ZakharovShabat/SourceLemma6_9PositiveCorrected.lean": "caac1fbacdd665a3501caefbed38df0f8327aa998fab4462c73f948e73579aa6",
+        "NLS/ZakharovShabat/SourceLemma6_9LiteralSum.lean": "b70ad6bd4123be3fc015a3f2ed69e02dbd1c8a95eb5b284d1ed9b95f43905f18",
+        "NLS/ComplexAnalysis/ZeroCountComparison.lean": "b90f85ad451c55424f9c1f20b1a4c8c8c7f1aeabd16f2549ab51275597d52aa0",
+        "NLS/ComplexAnalysis/AnalyticZeroCount.lean": "e561f68398c9f7fd92c66facd4cda7ab38b7373f43491d3968cc3db20194543c",
+        "NLS/ComplexAnalysis/Rouche.lean": "f1178a82592f7f1a7b06b8729403ee1b8d9fb3033fca9c84bba839b499b3a8f8",
+        "NLS/ZakharovShabat/RootDisplacementBudget.lean": "0aeec13f9088e786666e2b13cfbd7243eacabee8b59c2ea26eb1f8b3b531d362",
+        "NLS/ZakharovShabat/RootDisplacementSourceAudit.lean": "ae92afe8e6c37ed0702e92f82818aea4bf41f91113208f47730000166fd9df2f",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalMidpointGap.lean": "de263ec591225bbd3180aeb8fe3d314f1c0ba4b9b71a3baac60505de821f3758",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalEndpoints.lean": "b50e78a3b0c0cbb528ea0a4d7c4d0679e06b866de6af4bea77b3252ab81a2dcd",
+        "NLS/ZakharovShabat/RootDisplacementPower.lean": "094d47cebbb4e410b584876a5d49029b84f7f1d268aa672c9e04e27b0ca23dcb",
+        "NLS/ComplexAnalysis/SimpleAnalyticZero.lean": "7fde79ae05963eb5dc46b93520c96260c763f9ce20ebedb3ed430d4ea72f511a",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/PeriodicRootSequence.lean": "0f1c9e476fe07c2c6299083a13f6142e19e2c76a53708dc9494e67e34cb171a8",
+        "NLS/ZakharovShabat/PeriodicEndpointLabeling.lean": "e2d91a270865ed1a34823dcb4614a5eec309d3cf7c030f8ef743eb70e868be3f",
+        "NLS/ZakharovShabat/SpectralRootPair.lean": "f211ead8f47bfef969d1846db4c64b1663babecf5ffb64f425d6a5187882c6fb",
+        "NLS/ZakharovShabat/PeriodicEndpointCutoffGrowth.lean": "2a0226209519803c6fdeee037308fd30002ae0c38beb5b7c5f41de43b31c7836",
+        "NLS/ZakharovShabat/ResonantDeterminantAnalytic.lean": "7f5f8dcb4b7e774310bb0cf6a357439ff0f2e7a784b991aceaecb1f4fdef89d8",
+        "NLS/ComplexAnalysis/ZeroCountPowers.lean": "17e16169710f00bbe48e74abdbf5151d16a5f5466cfc035dd9a3b421c903ff88",
+        "NLS/ZakharovShabat/ResonantProofRoots.lean": "c1a48f8aa5a155df9ab556785c81be5a1275a8dadb01e13709cb53b64aeed6e0",
+        "NLS/ZakharovShabat/SourceLemma6_9ProofRoots.lean": "edd187a483605f5a46890c774cdd88120cebf9a615b4b37f4a893f6ad5a8e6c2",
+        "NLS/ZakharovShabat/SourceLemma6_9ProofEstimates.lean": "c605964f87eb8e19ddbff209fe4aec77cd724900a91e6f1a9dec3bb2434be18d",
+        "NLS/ZakharovShabat/UniformDisplacementMajorant.lean": "a6ca0ec3d9a874bfcd9b7414ca2bf9c5852258179665d0cf599b9ae9259af300",
+        "NLS/ZakharovShabat/ResonantRoots.lean": "79f5e86c2a3fad6f39460263f6fc8e68f0b9e590df0e4a8a281e40824f3ffa1c",
+        "NLS/ZakharovShabat/UnweightedResonantDeterminant.lean": "93a96c180e6d44ffad54db772de2fb153b493bb0f7f07b93ebea60943d84d253",
+        "NLS/ZakharovShabat/SourceLemma6_9Counterexample.lean": "4be53e3c003928c7f446ebdbdf5251443d83c8df8641a77f51faf063bdf0f6ec",
+        "NLS/ZakharovShabat/SourcePeriodTwoDisplacementCounterexample.lean": "3e51fd9d49a0cb7220b4b431a74a5a14e95e04b72535c29c75c297c422777399",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/SourcePeriodTwoDisplacement.lean": "f0d1624ebfafac406a832c90d82bd39b7955a1e90e4994209a9ef47bc6dcd070",
+        "NLS/ZakharovShabat/SourcePositiveDisplacementTail.lean": "1cfc3169283108bfbf34bf5c8af1d592727b9d8a198a8862507d3896dcfb1a4b",
+        "NLS/ZakharovShabat/RootDisplacementSequence.lean": "d82fd354c5aeb01259739580aed63fd6cbf5c53e04a7fac426e25019e584690a",
+        "NLS/ZakharovShabat/ResonantSupSmallness.lean": "52a2abb3966e0125e8dca74940179dc15a9d25f6d5c3e16a43c840b295ee29b5",
+        "NLS/ZakharovShabat/ResonantCoefficientSmallness.lean": "12f3db677c361d5b126350b96702006769679c3cd4ee10e64d9485e90fe12dda",
+        "NLS/ZakharovShabat/SourceResonantSup.lean": "334152d460373a9a6ae712cce94f84c0866f7b674e49c403e436fdbcc0dada84"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          43,
+          44
+        ],
+        "images": {
+          "Section6ProofReview-043.png": "83ef941a1646c035d68f1cf110838d7e989ffadcdd893ccd56f82c340bf1d56b",
+          "Section6ProofReview-044.png": "9c461b73312ec584566578a463f3cc87fd1a8c09be05b4852d14469bd0fea33d"
+        }
+      },
+      "qualification": "Five ordered passages are reconciled, with three matched and two corrected: actual determinant, Lemma 6.9, literal two-step Rouche counts, pointwise root/Cauchy bounds and original canonical periodic pairs. 40 module bodies were read or hash-revalidated from preceding preparation and source review. This does not certify every transitive dependency or the remaining twenty-four ordered passage groups. The final p.44 sum with 1/2^p on the left, the source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. All earlier corrections, constants and review records are preserved.",
+      "ordered_inventory_sha256": "261a708cffd06530f8802d26798ca91d370f5667b302c1200d46a642a57112f6",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.analyticZeroCount_pow",
+        "NLS.ZakharovShabat.PeriodicEndpointPair.multiset_eq",
+        "NLS.ZakharovShabat.SourceLemma69Proof",
+        "NLS.ZakharovShabat.SourceResonantRootPair",
+        "NLS.ZakharovShabat.SourceResonantRootPair.of_periodic",
+        "NLS.ZakharovShabat.SourceResonantRootPair.toEndpoints",
+        "NLS.ZakharovShabat.SourceResonantRootPair.zero_count",
+        "NLS.ZakharovShabat.SourceResonantStripControl.deriv_bound",
+        "NLS.ZakharovShabat.SourceResonantStripControl.gap_linear",
+        "NLS.ZakharovShabat.SourceResonantStripControl.product_bounds",
+        "NLS.ZakharovShabat.SourceResonantStripControl.proof_roots",
+        "NLS.ZakharovShabat.SourceResonantStripControl.quadratic_comparison",
+        "NLS.ZakharovShabat.SourceResonantStripControl.sup_separation",
+        "NLS.ZakharovShabat.SourceResonantStripControl.two_step_rouche",
+        "NLS.ZakharovShabat.analyticAt_sourceResonantDeterminantFunction",
+        "NLS.ZakharovShabat.closedBall_refined_point_subset_strip",
+        "NLS.ZakharovShabat.exists_uniform_resonantDisplacementMajorant",
+        "NLS.ZakharovShabat.exists_uniform_sourceResonantDeterminant_control",
+        "NLS.ZakharovShabat.mem_periodicSpectrum_iff_weightedDeterminant_zero",
+        "NLS.ZakharovShabat.norm_deriv_le_on_refined_disk",
+        "NLS.ZakharovShabat.norm_diagonal_sub_le_on_refined_disk",
+        "NLS.ZakharovShabat.norm_gap_sq_le_of_residual_bounds",
+        "NLS.ZakharovShabat.not_sourceLemma6_9_printed_duplicated_positive_sum",
+        "NLS.ZakharovShabat.not_sourceLemma6_9_printed_pair_sum",
+        "NLS.ZakharovShabat.resonantProof_boundary_comparisons",
+        "NLS.ZakharovShabat.resonantProof_exterior_inf",
+        "NLS.ZakharovShabat.resonantProof_exterior_isLeast",
+        "NLS.ZakharovShabat.resonantProof_root_alternatives",
+        "NLS.ZakharovShabat.resonantProof_root_factorization",
+        "NLS.ZakharovShabat.resonantProof_root_modulus",
+        "NLS.ZakharovShabat.resonantProof_two_step_rouche",
+        "NLS.ZakharovShabat.resonantProof_unique_simple_diagonal",
+        "NLS.ZakharovShabat.resonantRoot_displacement_rpow_le",
+        "NLS.ZakharovShabat.rootDisplacementBudget",
+        "NLS.ZakharovShabat.sourceLemma6_9",
+        "NLS.ZakharovShabat.sourceLemma6_9_corrected_positive",
+        "NLS.ZakharovShabat.sourceLemma6_9_proof",
+        "NLS.ZakharovShabat.sourceLemma6_9_proof_canonical",
+        "NLS.ZakharovShabat.sourceLemma6_9_proof_roots",
+        "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget",
+        "NLS.ZakharovShabat.sourcePositiveDisplacementPowerTail_self_summable_and_le",
+        "NLS.ZakharovShabat.sourceProposition6_1_canonical_asymptotics",
+        "NLS.ZakharovShabat.sourceResonantDeterminantFunction",
+        "NLS.ZakharovShabat.sourceResonantDeterminantFunction_eq_det",
+        "NLS.ZakharovShabat.sourceResonantDeterminantFunction_eq_printed_det",
+        "NLS.ZakharovShabat.sourceResonantLeading_le_fullTail",
+        "NLS.ZakharovShabat.sourceResonantRoot_displacementTail_eq",
+        "NLS.ZakharovShabat.sourceResonantRoot_displacement_rpow_le",
+        "NLS.ZakharovShabat.sourceResonant_fullCoefficient_le_tail_add"
+      ],
+      "declaration_inventory_count": 43792,
+      "source_record_sha256": "79475f41b2b2d165ea1247b3ae61a9265bece6e1ddee0c06490a46c4f87314d5"
     }
   }
 }

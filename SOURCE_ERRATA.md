@@ -2549,7 +2549,7 @@ separate from the prior main Lemma 6.8 quantitative-budget refutations.
 
 ## Proposition 6.1 and Lemma 6.9: the printed displacement budget fails locally at zero
 
-Source: printed pages 35 and 43. At p=2 the printed right-hand side is
+Source: printed pages 35 and 43–44. At p=2 the printed right-hand side is
 
 ```
 C (‖φ‖²/N + ‖R_(N/2) φ‖²)(1+‖φ‖²)‖φ‖².
@@ -2594,6 +2594,15 @@ it does not change the counterexample to the printed quantitative estimate.
 `not_sourceLemma6_9_printed_pair_sum` negates the Hilbert budget for the
 full signed sum of both labels satisfying `SourceResonantRootPair`. These
 are actual original determinant roots with exact scalar analytic orders.
+
+The first line of the intermediate gap display on printed p.44 also has
+`|ξ⁺ₙ−ξ⁺ₙ|` on its left. The following line and conclusion require
+`|ξ⁺ₙ−ξ⁻ₙ|`. This repeated label makes that first line trivial rather than
+false; [SourceLemma6_9ProofEstimates.lean](NLS/ZakharovShabat/SourceLemma6_9ProofEstimates.lean)
+proves the intended gap inequality directly, using Cauchy's derivative bound
+and the actual full-strip product supremum. Pointwise square-root notation
+suffices; no globally analytic square-root branch is claimed.
+
 The page-43 display literally sums over n≥N and repeats the ξ⁺ displacement
 twice. Its exact formulation is now refuted by
 `not_sourceLemma6_9_printed_duplicated_positive_sum` in

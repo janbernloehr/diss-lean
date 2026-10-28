@@ -70630,3 +70630,37 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end Section6OffDiagonalProofChecks
+
+noncomputable section
+open NLS NLS.ComplexAnalysis NLS.ZakharovShabat
+open scoped ENNReal
+namespace Section6RootProofChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- The pointwise factorization allows complex roots of a negative product.
+example (q : ℂ) : q^2+1 = 0 ↔ q = Complex.I ∨ q = -Complex.I := by
+  simpa only [sub_zero,one_mul,sub_neg_eq_add,zero_add,zero_sub] using
+    resonantProof_root_alternatives q 0 1 (-1) Complex.I (by simp)
+
+-- At the zero potential, the original scalar root has multiplicity two.
+example (hp : p ≠ ⊤) (n : ℤ) :
+    analyticOrderAt (sourceResonantDeterminantFunction hp (0 : CoeffPair p) n)
+      ((Real.pi : ℂ)*n) = 2 := by
+  have he : sourceResonantDeterminantFunction hp (0 : CoeffPair p) n =
+      fun z => (z-(Real.pi : ℂ)*n)^2 := funext (sourceResonantDeterminantFunction_zero hp n)
+  rw [he]
+  exact analyticOrderAt_centeredMonomial
+
+-- The exact boundary of the open refined disk is excluded, at either sign of n.
+example {hp : p ≠ ⊤} {φ : CoeffPair p} {n : ℤ}
+    (hc : SourceResonantStripControl hp φ n) (z : ℂ)
+    (hz : z ∈ Metric.sphere ((Real.pi : ℂ)*n) (Real.pi/4)) :
+    sourceResonantDeterminantFunction hp φ n z ≠ 0 := by
+  apply (SourceResonantStripControl.proof_roots hc).no_exterior_roots z
+    (closedBall_subset_resonantStrip n (by linarith [Real.pi_pos])
+      (Metric.sphere_subset_closedBall hz))
+  change ¬dist z ((Real.pi : ℂ)*n) < Real.pi/4
+  rw [Metric.mem_sphere.mp hz]
+  exact lt_irrefl _
+
+end Section6RootProofChecks
