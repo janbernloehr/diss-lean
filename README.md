@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: complete periodic labels with bounded displacement including
-p=1, and an explicit coefficient-preserving equivalence for the source Sobolev
-weight with norm factors 1 and π^s. The first eight Section 6 passages are
-reconciled; the [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) has 32 reviewed
-and 15 pending groups. The earlier corrected quantitative budgets remain.
+Latest step: the literal closed Fourier spans now form the original P/Q
+topological decomposition, including p=1. The transformed complementary
+equation and its agreement with the original free resolvent are proved.
+The [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) has 39 reviewed and
+eight pending groups, retaining the corrected quantitative budgets.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 

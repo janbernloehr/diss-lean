@@ -70900,3 +70900,45 @@ example (a : WeightedCoeffPair (Weight.sobolev 1) 2) :
     SpectralWeight.piSobolevPairEquiv_norm_rpow_eq_tsum (by simp) 1 zero_le_one a
 
 end Section6InitialAssertionsChecks
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+namespace Section6PQAssertionsChecks
+
+-- At p=1, the literal Fourier spans give a unique decomposition of every weighted input.
+example (w : Weight) (n : ℤ) (f : WeightedCoeffPair w 1) :
+    ∃! uv : sourceResonantModeSpan (p := 1) w n ×
+      (sourceNonresonantModeSpan (p := 1) w n).topologicalClosure,
+        uv.1.val+uv.2.val = f :=
+  Submodule.existsUnique_add_of_isCompl_prod (sourcePQ_isTopCompl (by simp) w n).isCompl f
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The original source eigenvalue equation implies the transformed Q equation at p=3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (n : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) (u v : WeightedDomain w.toWeight 3)
+    (hu : resonantProjection w.toWeight.oneDerivative n u = u)
+    (hv : complementaryProjection w.toWeight.oneDerivative n v = v)
+    (he : sourceSpectralPencil (by simp) (sourceWeightedPeriodTwoInput w φ) z
+      (sourceWeightedDomainInput w (u+v)) = 0) :
+    weightedDomainPotential (by simp) w φ v -
+      weightedPotentialInverse (by simp) w φ n z hz (weightedDomainPotential (by simp) w φ v) =
+        weightedPotentialInverse (by simp) w φ n z hz (weightedDomainPotential (by simp) w φ u) := by
+  exact sourceQEquation_transformed (by simp) w φ n z hz u v hv
+    ((sourceWeightedPencil_add_zero_iff_PQ (by simp) w φ n z u v hu hv).mp he).2
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 2) := ⟨by norm_num⟩
+
+-- The original free resolvent agrees with the weighted inverse, whose strip bound is one.
+example (w : SpectralWeight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hz0 : z ∉ freeLattice) (f : WeightedCoeffPair w.toWeight 2) :
+    let g := complementaryFreeInverse w.toWeight n z hz f
+    sourceFreeResolvent (by simp) z hz0
+      (sourceWeightedPeriodTwoInput w (complementaryProjection w.toWeight n f)) =
+        sourceWeightedPeriodTwoInput w g ∧ ‖g‖ ≤ ‖f‖ :=
+  ⟨sourceFreeResolvent_complementary (by simp) w n z hz hz0 f,
+    norm_complementaryFreeInverse_le (by simp) w.toWeight n z hz f⟩
+
+end Section6PQAssertionsChecks

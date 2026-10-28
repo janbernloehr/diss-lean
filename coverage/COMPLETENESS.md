@@ -117,14 +117,15 @@ cutoff for every larger cutoff. The original weighted pair norm and additive
 leading Fourier tail remain in the Lemma 6.8 budget. This supplies a valid
 corrected constant without requiring a refutation of the printed factor.
 
-The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now reconciles 32
-passage groups, S6-001 through S6-008 and S6-024 through S6-047: 23 matched,
-eight corrected and one interpreted. The initial complete bounded labels now
-include p=1. The exact source Sobolev weight is identified by a coefficient-
-preserving equivalence with norm factors 1 and π^s. The original spectral,
-reflection, multiplicity and quantitative-budget qualifications remain.
+The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now reconciles 39
+passage groups, S6-001 through S6-015 and S6-024 through S6-047: 30 matched,
+eight corrected and one interpreted. The literal closed P/Q spans and
+topological decomposition include p=1. The transformed Q equation retains
+the actual derivative domain, and the original free-resolvent identification
+retains its exclusion of the free lattice. The initial labels, exact Sobolev
+normalization and earlier corrected quantitative budgets remain.
 
-Fifteen groups still need ordered reconciliation, S6-009 through S6-023.
+Eight groups still need ordered reconciliation, S6-016 through S6-023.
 These counts are navigation, not a completion percentage or a substitute for
 the source-wide assertion inventory. Constant corrections may be recorded
 with a proved valid replacement; additional counterexamples are not required.

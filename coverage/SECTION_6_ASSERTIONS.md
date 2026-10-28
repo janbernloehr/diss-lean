@@ -6,8 +6,8 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current ledger covers S6-001 through S6-008 and S6-024 through S6-047
-(printed pp.35–36 and pp.39–44): 32 reviewed groups and 15 pending groups.
+The current ledger covers S6-001 through S6-015 and S6-024 through S6-047
+(printed pp.35–37 and pp.39–44): 39 reviewed groups and eight pending groups.
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** records a formula or constant adjustment with a proved valid replacement.
 Existing refutations are retained; additional refutations are not required.
@@ -35,13 +35,13 @@ Section6RootSourceComparison-2026-10-28 in the
 | S6-006 | 2331–2336 | Canonical midpoint and gap asymptotics | matched |
 | S6-007 | 2339–2368 | Source weights, original weighted norm and Sobolev examples | matched |
 | S6-008 | 2370–2384 | Proposition 6.3 literal positive-index gap budget | corrected |
-| S6-009 | 2387–2398 | Lyapunov-Schmidt attribution and free modes | pending |
-| S6-010 | 2399–2409 | Closed strips and P/Q topological decomposition | pending |
-| S6-011 | 2410–2421 | Free multiplier, actual potential and projected equations | pending |
-| S6-012 | 2422–2432 | Complementary inverse geometry and transformed Q equation | pending |
-| S6-013 | 2442–2448 | Id-T formulation | pending |
-| S6-014 | 2449–2474 | Exact opposite component shifts | pending |
-| S6-015 | 2476–2486 | Lemma 6.4 all finite Banach exponents | pending |
+| S6-009 | 2387–2398 | Lyapunov-Schmidt attribution and free modes | matched |
+| S6-010 | 2399–2409 | Closed strips and P/Q topological decomposition | matched |
+| S6-011 | 2410–2421 | Free multiplier, actual potential and projected equations | matched |
+| S6-012 | 2422–2432 | Complementary inverse geometry and transformed Q equation | matched |
+| S6-013 | 2442–2448 | Id-T formulation | matched |
+| S6-014 | 2449–2474 | Exact opposite component shifts | matched |
+| S6-015 | 2476–2486 | Lemma 6.4 all finite Banach exponents | matched |
 | S6-016 | 2488–2525 | Full reciprocal series, shifted Holder and Young proof | pending |
 | S6-017 | 2528–2534 | Square decay and Neumann inversion | pending |
 | S6-018 | 2544–2555 | Lemma 6.5 and exact retained-boundary tail | pending |
@@ -161,6 +161,80 @@ The printed multiplicative budget is replaced by its established valid correctio
 
 Section6InitialAssertionsSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records these eight passages.
+
+### S6-009: Lyapunov-Schmidt attribution and free modes
+
+- Each free periodic eigenvalue n*pi has algebraic multiplicity two. Its generalized root space equals the ordinary two-mode space.
+- The signed modes have first physical frequency -n and second physical frequency n. Weighted resonant synthesis retains their raw amplitudes and the free-pencil multiplier z-n*pi.
+
+Public evidence: `NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero`, `NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range`, `NLS.ZakharovShabat.sourceSignedFourierMode`, `NLS.ZakharovShabat.resonantSynthesis_fst`, `NLS.ZakharovShabat.resonantSynthesis_snd`, `NLS.ZakharovShabat.pencil_resonantSynthesis`.
+
+The historical attribution is contextual. Expected closeness of perturbed eigenfunctions motivates the splitting; it is not treated as a quantified eigenfunction theorem.
+
+### S6-010: Closed strips and P/Q topological decomposition
+
+- The strip is the full closed set |Re(z)-n*pi|<=pi/2, including its center and boundary.
+- The resonant space is the literal span of two individual signed modes, has complex dimension two and equals the P projection range.
+- For every finite Banach exponent and every positive weight, the closure of the span of the nonresonant individual modes equals the coordinate kernel and Q projection range.
+- These literal spaces are topological complements in the original weighted pair norm. The full signed Fourier series converges in that norm.
+
+Public evidence: `NLS.ZakharovShabat.resonantStrip`, `NLS.ZakharovShabat.sourceResonantModeSpan`, `NLS.ZakharovShabat.sourceNonresonantModeSpan`, `NLS.ZakharovShabat.sourceResonantModeSpan_finrank`, `NLS.ZakharovShabat.resonantProjection_range_eq_sourceSpan`, `NLS.ZakharovShabat.sourceNonresonantModeSpan_closure_eq_ker`, `NLS.ZakharovShabat.complementaryProjection_range_eq_sourceClosedSpan`, `NLS.ZakharovShabat.sourcePQ_isTopCompl`, `NLS.ZakharovShabat.sourceSignedFourierModes_hasSum`.
+
+The closure in the printed Q definition is retained. The density and topological decomposition statements require finite p; no density claim is made at p=infinity.
+
+### S6-011: Free multiplier, actual potential and projected equations
+
+- The weighted free pencil is the original pencil at zero potential. The off-diagonal convolution map is the potential part of the original source operator.
+- The free multiplier preserves the resonant and complementary spaces on the actual weighted derivative domain.
+- The original eigenvalue equation is equivalent to its P and Q equations on that domain. The split formulation uses resonant u, complementary v and f=u+v.
+
+Public evidence: `NLS.ZakharovShabat.sourceWeightedPencil_eq`, `NLS.ZakharovShabat.sourceWeightedDomainPotential_eq`, `NLS.ZakharovShabat.pencil_resonantSynthesis`, `NLS.ZakharovShabat.weightedFreePencil_resonantProjection`, `NLS.ZakharovShabat.pencil_complementaryProjection`, `NLS.ZakharovShabat.sourceWeightedPencil_zero_iff_PQ`, `NLS.ZakharovShabat.sourceWeightedPencil_add_zero_iff_PQ`.
+
+The differential equations retain their actual derivative-domain hypotheses; the potential is not asserted to act boundedly on the base space alone.
+
+### S6-012: Complementary inverse geometry and transformed Q equation
+
+- On the full closed strip, m!=n implies |z-m*pi|>=|n-m|>=1. The complementary inverse has base-space norm at most one uniformly over the strip.
+- The inverse takes values in the actual weighted derivative domain, has complementary range, satisfies both inverse identities there and is unique.
+- Away from the free lattice, the original free resolvent applied to Qf equals the coefficient-preserving inclusion of the weighted complementary inverse.
+- The actual Q equation implies Phi(v)=T(Phi(u+v)), and hence its Id-T rearrangement.
+
+Public evidence: `NLS.ZakharovShabat.resonantStrip_denominator_lower`, `NLS.ZakharovShabat.resonantStrip_denominator_one_le`, `NLS.ZakharovShabat.norm_complementaryFreeInverse_le`, `NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse`, `NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil`, `NLS.ZakharovShabat.complementaryFreeDomainInverse_unique`, `NLS.ZakharovShabat.sourceFreeResolvent_complementary`, `NLS.ZakharovShabat.sourceQEquation_transformed`.
+
+The uniform bound is in the base-space norm. The derivative-domain bound depends on z. The original free-resolvent comparison excludes the free lattice; the complementary inverse itself includes the strip center.
+
+### S6-013: Id-T formulation
+
+- The actual T=Phi*A_inverse*Q is identified with the original source operator.
+- The complementary-domain Q equation gives (Id-T)Phi(v)=T*Phi(u) without smallness, high-frequency or reality assumptions.
+- Under the established square-norm condition, the inverse reconstructs a unique complementary domain vector solving the original Q equation, with the printed corrected-potential identity.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma6_4_operator`, `NLS.ZakharovShabat.sourceQEquation_transformed`, `NLS.ZakharovShabat.weightedQSolution`, `NLS.ZakharovShabat.weightedQSolution_nonresonant`, `NLS.ZakharovShabat.weightedQSolution_potential_source`, `NLS.ZakharovShabat.weightedQSolution_equation`, `NLS.ZakharovShabat.weightedQSolution_unique`.
+
+The transformed equation is a forward implication for a given v. Reconstruction uses the actual inverse and domain-valued solution; no converse is inferred merely by cancelling the potential map.
+
+### S6-014: Exact opposite component shifts
+
+- Scalar modulation shifts the actual Fourier coefficients, and its norm equals the scalar shifted norm with the full weighted coefficient power sum.
+- Pair modulation uses physical shift -i in the first component and +i in the second. Reindexing the first component by -k gives w(k+i)^p times the sum of the two signed coefficient powers.
+- Both directions of shifted norm comparison retain factor w(i), without an additional pair-norm factor.
+
+Public evidence: `NLS.SpectralWeight.modulation_apply`, `NLS.SpectralWeight.norm_modulation`, `NLS.SpectralWeight.shiftedNorm_rpow_eq_tsum`, `NLS.SpectralWeight.pairModulation`, `NLS.SpectralWeight.shiftedPairNorm_rpow`, `NLS.ZakharovShabat.sourceShiftedNorm_formula`, `NLS.SpectralWeight.shiftedPairNorm_le`, `NLS.SpectralWeight.norm_le_shiftedPairNorm`.
+
+Finite-p formulas include p=1 and retain the original component-sum power norm. The source reference for shifted norms is contextual.
+
+### S6-015: Lemma 6.4 all finite Banach exponents
+
+- For every source weight, finite p>=1, n, z in the full closed strip and integer shift i, the actual T map satisfies the opposite-shift bound with an exponent-only constant.
+- At p=2 the literal printed constant two is retained. At p=1 the proved bound has constant one.
+- T annihilates the resonant modes and is the actual original potential composed with the complementary domain inverse.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma6_4`, `NLS.ZakharovShabat.sourceLemma6_4_two`, `NLS.ZakharovShabat.sourceLemma6_4_one`, `NLS.ZakharovShabat.sourceLemma6_4_operator`, `NLS.ZakharovShabat.sourceLemma6_4_resonant_zero`.
+
+This reconciles the statement of Lemma 6.4. Its detailed Fourier-series, Holder and Young proof passage is S6-016. Enlarged constants for Lemma 6.5 do not replace c_2=2 here.
+
+Section6PQAssertionsSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records these seven passages.
 
 ### S6-024: Common half-contraction and compatible Neumann inverses
 
@@ -429,7 +503,7 @@ supporting results; they are not needed for the corrected-constant proof.
 
 ## Remaining work
 
-Reconcile the remaining 15 passage groups, S6-009 through S6-023, using their
+Reconcile the remaining eight passage groups, S6-016 through S6-023, using their
 existing focused reviews and current public proofs. Then continue through
 the dissertation in source order. The source-wide inventory, exact cited
 Birkhoff construction and Appendix G.2 interpretation remain unfinished.

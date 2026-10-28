@@ -1,6 +1,35 @@
 # Implementation status
 
-## Current milestone: initial Section 6 labels and Sobolev norms
+## Current milestone: the original P/Q topology and equation
+
+The original P/Q decomposition now uses the literal two-mode resonant span
+and the closed span of all other signed Fourier modes. Their ranges agree
+with the actual projections and form a topological direct sum for every
+finite Banach exponent, including p=1.
+
+The original-domain Q equation directly gives (Id-T)Phi(v)=T*Phi(u).
+Away from the free lattice, the original free resolvent on Q agrees with
+the weighted complementary inverse. Its base-space bound is uniform over
+the full closed strip; its derivative-domain bound may depend on z.
+
+Seven further passages, S6-009 through S6-015, are reconciled. The review
+retains the exact opposite shifts, Lemma 6.4's constant two at p=2 and the
+proved constant one at p=1. No new counterexample is added.
+
+Validation: `./scripts/check.sh` passes with 8,496 build jobs, 7,561
+public examples and a transitive axiom audit of 44,182 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The ordered ledger now has 39 reviewed groups: 30 matched, eight corrected
+and one interpreted. Eight groups remain pending, S6-016 through S6-023:
+the detailed Lemma 6.4 proof and the square/inverse estimates in Lemma 6.5.
+The source-wide assertion inventory, exact cited 2014 Birkhoff construction
+and Appendix G.2 norm interpretation remain unfinished.
+
+Earlier milestone entries below retain their historical validation and limitations.
+
+## Previous milestone: initial Section 6 labels and Sobolev norms
 
 The initial eight Section 6 passages are now reconciled. Complete actual
 periodic labels have displacement less than π/4 outside a common local cutoff

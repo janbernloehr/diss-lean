@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T22:22:16.192879+00:00",
-  "base_commit": "9d02f2425fefadba48badb13302e7afd435bc9b2",
+  "published_utc": "2026-10-28T22:47:57.052698+00:00",
+  "base_commit": "868cf0ae69353aac4da9ff4b5f2c68c5db348593",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 104,
-    "module_hash_checks": 1702,
-    "distinct_modules": 1069
+    "review_records": 105,
+    "module_hash_checks": 1721,
+    "distinct_modules": 1076
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9d02f2425fefadba48badb13302e7afd435bc9b2",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes complete original periodic labels with bounded displacement for every finite Banach exponent and coefficient-preserving weight/Sobolev equivalences with exact norms, plus three integration examples. S6-001 through S6-008 are reconciled; the broader dissertation audit remains incomplete.",
+    "base_commit": "868cf0ae69353aac4da9ff4b5f2c68c5db348593",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes literal closed P/Q Fourier spans and topological decomposition for every finite Banach exponent, the original-domain transformed complementary equation and original free-resolvent compatibility, plus three integration examples. S6-009 through S6-015 are reconciled; the broader dissertation audit remains incomplete.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8494,
-    "public_examples": 7558,
-    "transitive_NLS_declarations": 44165,
+    "build_jobs": 8496,
+    "public_examples": 7561,
+    "transitive_NLS_declarations": 44182,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4771,
-      "sha256": "0686fd5cba32901c4c837e5f82afb48a3ac730467822758a01358cf54d892349"
+      "files": 4773,
+      "sha256": "4f821c7a66683a7305b87391ddd518a935acb6f85783f281068f6bcca0ade0be"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -25457,6 +25457,307 @@
       ],
       "declaration_inventory_count": 44165,
       "source_record_sha256": "afef48d480d4141a31c4845e92077152ccb6bdd651c3c294a1c281b214845621"
+    },
+    "Section6PQAssertionsSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "868cf0ae69353aac4da9ff4b5f2c68c5db348593",
+      "updated_utc": "2026-10-28T22:47:57.052698+00:00",
+      "source_lines": [
+        [
+          2387,
+          2398
+        ],
+        [
+          2399,
+          2409
+        ],
+        [
+          2410,
+          2421
+        ],
+        [
+          2422,
+          2432
+        ],
+        [
+          2442,
+          2448
+        ],
+        [
+          2449,
+          2474
+        ],
+        [
+          2476,
+          2486
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-009",
+          "source_lines": [
+            2387,
+            2398
+          ],
+          "requirement": "Lyapunov-Schmidt attribution and free modes",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Each free periodic eigenvalue n*pi has algebraic multiplicity two. Its generalized root space equals the ordinary two-mode space.",
+            "The signed modes have first physical frequency -n and second physical frequency n. Weighted resonant synthesis retains their raw amplitudes and the free-pencil multiplier z-n*pi."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.sourceSignedFourierMode",
+            "NLS.ZakharovShabat.resonantSynthesis_fst",
+            "NLS.ZakharovShabat.resonantSynthesis_snd",
+            "NLS.ZakharovShabat.pencil_resonantSynthesis"
+          ],
+          "qualification": "The historical attribution is contextual. Expected closeness of perturbed eigenfunctions motivates the splitting; it is not treated as a quantified eigenfunction theorem."
+        },
+        {
+          "ordered_group": "S6-010",
+          "source_lines": [
+            2399,
+            2409
+          ],
+          "requirement": "Closed strips and P/Q topological decomposition",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The strip is the full closed set |Re(z)-n*pi|<=pi/2, including its center and boundary.",
+            "The resonant space is the literal span of two individual signed modes, has complex dimension two and equals the P projection range.",
+            "For every finite Banach exponent and every positive weight, the closure of the span of the nonresonant individual modes equals the coordinate kernel and Q projection range.",
+            "These literal spaces are topological complements in the original weighted pair norm. The full signed Fourier series converges in that norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip",
+            "NLS.ZakharovShabat.sourceResonantModeSpan",
+            "NLS.ZakharovShabat.sourceNonresonantModeSpan",
+            "NLS.ZakharovShabat.sourceResonantModeSpan_finrank",
+            "NLS.ZakharovShabat.resonantProjection_range_eq_sourceSpan",
+            "NLS.ZakharovShabat.sourceNonresonantModeSpan_closure_eq_ker",
+            "NLS.ZakharovShabat.complementaryProjection_range_eq_sourceClosedSpan",
+            "NLS.ZakharovShabat.sourcePQ_isTopCompl",
+            "NLS.ZakharovShabat.sourceSignedFourierModes_hasSum"
+          ],
+          "qualification": "The closure in the printed Q definition is retained. The density and topological decomposition statements require finite p; no density claim is made at p=infinity."
+        },
+        {
+          "ordered_group": "S6-011",
+          "source_lines": [
+            2410,
+            2421
+          ],
+          "requirement": "Free multiplier, actual potential and projected equations",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The weighted free pencil is the original pencil at zero potential. The off-diagonal convolution map is the potential part of the original source operator.",
+            "The free multiplier preserves the resonant and complementary spaces on the actual weighted derivative domain.",
+            "The original eigenvalue equation is equivalent to its P and Q equations on that domain. The split formulation uses resonant u, complementary v and f=u+v."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceWeightedPencil_eq",
+            "NLS.ZakharovShabat.sourceWeightedDomainPotential_eq",
+            "NLS.ZakharovShabat.pencil_resonantSynthesis",
+            "NLS.ZakharovShabat.weightedFreePencil_resonantProjection",
+            "NLS.ZakharovShabat.pencil_complementaryProjection",
+            "NLS.ZakharovShabat.sourceWeightedPencil_zero_iff_PQ",
+            "NLS.ZakharovShabat.sourceWeightedPencil_add_zero_iff_PQ"
+          ],
+          "qualification": "The differential equations retain their actual derivative-domain hypotheses; the potential is not asserted to act boundedly on the base space alone."
+        },
+        {
+          "ordered_group": "S6-012",
+          "source_lines": [
+            2422,
+            2432
+          ],
+          "requirement": "Complementary inverse geometry and transformed Q equation",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On the full closed strip, m!=n implies |z-m*pi|>=|n-m|>=1. The complementary inverse has base-space norm at most one uniformly over the strip.",
+            "The inverse takes values in the actual weighted derivative domain, has complementary range, satisfies both inverse identities there and is unique.",
+            "Away from the free lattice, the original free resolvent applied to Qf equals the coefficient-preserving inclusion of the weighted complementary inverse.",
+            "The actual Q equation implies Phi(v)=T(Phi(u+v)), and hence its Id-T rearrangement."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip_denominator_lower",
+            "NLS.ZakharovShabat.resonantStrip_denominator_one_le",
+            "NLS.ZakharovShabat.norm_complementaryFreeInverse_le",
+            "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_unique",
+            "NLS.ZakharovShabat.sourceFreeResolvent_complementary",
+            "NLS.ZakharovShabat.sourceQEquation_transformed"
+          ],
+          "qualification": "The uniform bound is in the base-space norm. The derivative-domain bound depends on z. The original free-resolvent comparison excludes the free lattice; the complementary inverse itself includes the strip center."
+        },
+        {
+          "ordered_group": "S6-013",
+          "source_lines": [
+            2442,
+            2448
+          ],
+          "requirement": "Id-T formulation",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual T=Phi*A_inverse*Q is identified with the original source operator.",
+            "The complementary-domain Q equation gives (Id-T)Phi(v)=T*Phi(u) without smallness, high-frequency or reality assumptions.",
+            "Under the established square-norm condition, the inverse reconstructs a unique complementary domain vector solving the original Q equation, with the printed corrected-potential identity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_4_operator",
+            "NLS.ZakharovShabat.sourceQEquation_transformed",
+            "NLS.ZakharovShabat.weightedQSolution",
+            "NLS.ZakharovShabat.weightedQSolution_nonresonant",
+            "NLS.ZakharovShabat.weightedQSolution_potential_source",
+            "NLS.ZakharovShabat.weightedQSolution_equation",
+            "NLS.ZakharovShabat.weightedQSolution_unique"
+          ],
+          "qualification": "The transformed equation is a forward implication for a given v. Reconstruction uses the actual inverse and domain-valued solution; no converse is inferred merely by cancelling the potential map."
+        },
+        {
+          "ordered_group": "S6-014",
+          "source_lines": [
+            2449,
+            2474
+          ],
+          "requirement": "Exact opposite component shifts",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Scalar modulation shifts the actual Fourier coefficients, and its norm equals the scalar shifted norm with the full weighted coefficient power sum.",
+            "Pair modulation uses physical shift -i in the first component and +i in the second. Reindexing the first component by -k gives w(k+i)^p times the sum of the two signed coefficient powers.",
+            "Both directions of shifted norm comparison retain factor w(i), without an additional pair-norm factor."
+          ],
+          "declarations": [
+            "NLS.SpectralWeight.modulation_apply",
+            "NLS.SpectralWeight.norm_modulation",
+            "NLS.SpectralWeight.shiftedNorm_rpow_eq_tsum",
+            "NLS.SpectralWeight.pairModulation",
+            "NLS.SpectralWeight.shiftedPairNorm_rpow",
+            "NLS.ZakharovShabat.sourceShiftedNorm_formula",
+            "NLS.SpectralWeight.shiftedPairNorm_le",
+            "NLS.SpectralWeight.norm_le_shiftedPairNorm"
+          ],
+          "qualification": "Finite-p formulas include p=1 and retain the original component-sum power norm. The source reference for shifted norms is contextual."
+        },
+        {
+          "ordered_group": "S6-015",
+          "source_lines": [
+            2476,
+            2486
+          ],
+          "requirement": "Lemma 6.4 all finite Banach exponents",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every source weight, finite p>=1, n, z in the full closed strip and integer shift i, the actual T map satisfies the opposite-shift bound with an exponent-only constant.",
+            "At p=2 the literal printed constant two is retained. At p=1 the proved bound has constant one.",
+            "T annihilates the resonant modes and is the actual original potential composed with the complementary domain inverse."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma6_4",
+            "NLS.ZakharovShabat.sourceLemma6_4_two",
+            "NLS.ZakharovShabat.sourceLemma6_4_one",
+            "NLS.ZakharovShabat.sourceLemma6_4_operator",
+            "NLS.ZakharovShabat.sourceLemma6_4_resonant_zero"
+          ],
+          "qualification": "This reconciles the statement of Lemma 6.4. Its detailed Fourier-series, Holder and Young proof passage is S6-016. Enlarged constants for Lemma 6.5 do not replace c_2=2 here."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePQSplitting.lean": "3146015429a77b70f80d9a1662da06f5d61be579a6ac65f713fd1032a27e207f",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean": "11ef442791c63ba60700c57e7c3a82366a60255e0e2544d8708b42da113c9d44",
+        "NLS/ZakharovShabat/WeightedResonance.lean": "33cf04ca8e07bc13a55b9757b8d29a24bb4e42b11b3e417728d32bc4781aebe3",
+        "NLS/ZakharovShabat/ComplementaryStrip.lean": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92",
+        "NLS/ZakharovShabat/ComplementaryFreeInverse.lean": "80a4047f476909c714e7d61f676f57421eac8e6c97e0b770aea64875a58c9416",
+        "NLS/ZakharovShabat/WeightedQEquation.lean": "3abdf8d3d40a2a2247f97835839f0259216dedf4c5afbca3fa883e581d69f8c6",
+        "NLS/ZakharovShabat/SourceLemma6_4.lean": "388b9e23d5417aaa440a6ff8fb4ecba5704af2124616599fa6b09fcd83b7c36a",
+        "NLS/ZakharovShabat/FreeMultiplicity.lean": "1f1e88d9ffd33b1714a149cfa759baeb214e5f684ebcf37c0798561fdf421638",
+        "NLS/ZakharovShabat/ComplementaryShiftedNorm.lean": "39175c5588fd51fc6773cc74e0107ab568b5fcf6d2be15e2c73d1b28c6a7abab",
+        "NLS/ZakharovShabat/ComplementaryL1.lean": "e6f3ee57eeaa8b8340ba6548635590ec4dee1048c7f231f9e951ed9724527046",
+        "NLS/SequenceSpaces/ShiftedWeight.lean": "c6dfa0f977394291fc53c591e27b57ebc5e9f23d223ccd764962ee5ea545fac0",
+        "NLS/SequenceSpaces/ShiftedPairNorm.lean": "ecf9b0b92a2dd6bd0df52be5a50ed4b1db1796492eeda6c4fe787d4b6462fb0d",
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/ZakharovShabat/SourceWeightedPencil.lean": "8b3be0f7712dd418e05b029a907fde12cacb8956063d05ccff733d46f7579da8",
+        "NLS/ZakharovShabat/WeightedDomainPotential.lean": "b1be71f9b2b360674f0449dac327f2f98f9a6624def9bc295a46966b4f1d7eed",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/ResonantSeriesApproximation.lean": "c64f06a10e99c5323d2e68ae96b8e2aa43e9789b0f7f047cd46e2a8d5d816f1a",
+        "NLS/ZakharovShabat/SourcePQTopology.lean": "ea863d35c70459890420634071b2664e3ba69049a62c5716c05037b2720dfd1e",
+        "NLS/ZakharovShabat/SourceQTransformation.lean": "034d32b4d8e8b082c05a27c745f85b60ea97d33c8378e8c47d18e36f42d63ce4"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "ordered_inventory_sha256": "dddd8ce1ce09fb0b4f4d400221660b09fa16a4bb86f5affbe17beb8fd99e3ddd",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          36,
+          37
+        ],
+        "images": {
+          "Section6Page36.png": "2439ec3d043a5849b7c24111be634c77036221d3735310f8dd3334770d8e6c25",
+          "Section6ProofReview-037.png": "8cd6112d9bb785228184244b9a45361e1b8d4797e0d7e4c31157129c830871cf"
+        }
+      },
+      "qualification": "Printed pp.36-37 and the closed-span notation were inspected. These seven groups identify literal modes, spans, domain operators, free inverse and shifted norms. Finite-p density, free-lattice exclusion for R0, base-space uniform bounds and inverse-based reconstruction retain their scope. Lemma 6.4 keeps c_2=2 and the proved c_1=1. No further counterexamples are added. The source-wide inventory, exact cited 2014 Birkhoff construction and Appendix G.2 interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.SpectralWeight.modulation_apply",
+        "NLS.SpectralWeight.norm_le_shiftedPairNorm",
+        "NLS.SpectralWeight.norm_modulation",
+        "NLS.SpectralWeight.pairModulation",
+        "NLS.SpectralWeight.shiftedNorm_rpow_eq_tsum",
+        "NLS.SpectralWeight.shiftedPairNorm_le",
+        "NLS.SpectralWeight.shiftedPairNorm_rpow",
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_unique",
+        "NLS.ZakharovShabat.complementaryProjection_range_eq_sourceClosedSpan",
+        "NLS.ZakharovShabat.norm_complementaryFreeInverse_le",
+        "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+        "NLS.ZakharovShabat.pencil_complementaryProjection",
+        "NLS.ZakharovShabat.pencil_resonantSynthesis",
+        "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+        "NLS.ZakharovShabat.resonantProjection_range_eq_sourceSpan",
+        "NLS.ZakharovShabat.resonantStrip",
+        "NLS.ZakharovShabat.resonantStrip_denominator_lower",
+        "NLS.ZakharovShabat.resonantStrip_denominator_one_le",
+        "NLS.ZakharovShabat.resonantSynthesis_fst",
+        "NLS.ZakharovShabat.resonantSynthesis_snd",
+        "NLS.ZakharovShabat.sourceFreeResolvent_complementary",
+        "NLS.ZakharovShabat.sourceLemma6_4",
+        "NLS.ZakharovShabat.sourceLemma6_4_one",
+        "NLS.ZakharovShabat.sourceLemma6_4_operator",
+        "NLS.ZakharovShabat.sourceLemma6_4_resonant_zero",
+        "NLS.ZakharovShabat.sourceLemma6_4_two",
+        "NLS.ZakharovShabat.sourceNonresonantModeSpan",
+        "NLS.ZakharovShabat.sourceNonresonantModeSpan_closure_eq_ker",
+        "NLS.ZakharovShabat.sourcePQ_isTopCompl",
+        "NLS.ZakharovShabat.sourceQEquation_transformed",
+        "NLS.ZakharovShabat.sourceResonantModeSpan",
+        "NLS.ZakharovShabat.sourceResonantModeSpan_finrank",
+        "NLS.ZakharovShabat.sourceShiftedNorm_formula",
+        "NLS.ZakharovShabat.sourceSignedFourierMode",
+        "NLS.ZakharovShabat.sourceSignedFourierModes_hasSum",
+        "NLS.ZakharovShabat.sourceWeightedDomainPotential_eq",
+        "NLS.ZakharovShabat.sourceWeightedPencil_add_zero_iff_PQ",
+        "NLS.ZakharovShabat.sourceWeightedPencil_eq",
+        "NLS.ZakharovShabat.sourceWeightedPencil_zero_iff_PQ",
+        "NLS.ZakharovShabat.weightedFreePencil_resonantProjection",
+        "NLS.ZakharovShabat.weightedQSolution",
+        "NLS.ZakharovShabat.weightedQSolution_equation",
+        "NLS.ZakharovShabat.weightedQSolution_nonresonant",
+        "NLS.ZakharovShabat.weightedQSolution_potential_source",
+        "NLS.ZakharovShabat.weightedQSolution_unique"
+      ],
+      "declaration_inventory_count": 44182,
+      "source_record_sha256": "4c2bee39196b417d50f01b533721e02e70878b5e94945fbb6514c168b4edcf5d"
     }
   }
 }

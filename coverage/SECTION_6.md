@@ -5,6 +5,45 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Original P/Q spans, topology and complementary equation
+
+The original P/Q decomposition now uses the literal two-mode resonant span
+and the closed span of all other signed Fourier modes. Their ranges agree
+with the actual projections and form a topological direct sum for every
+finite Banach exponent, including p=1.
+
+The original-domain Q equation directly gives (Id-T)Phi(v)=T*Phi(u).
+Away from the free lattice, the original free resolvent on Q agrees with
+the weighted complementary inverse. Its base-space bound is uniform over
+the full closed strip; its derivative-domain bound may depend on z.
+
+Seven further passages, S6-009 through S6-015, are reconciled. The review
+retains the exact opposite shifts, Lemma 6.4's constant two at p=2 and the
+proved constant one at p=1. No new counterexample is added.
+
+[SourcePQTopology.lean](../NLS/ZakharovShabat/SourcePQTopology.lean)
+identifies the literal spans, projection ranges, dimension and topological
+direct sum in the original weighted pair norm.
+[SourceQTransformation.lean](../NLS/ZakharovShabat/SourceQTransformation.lean)
+derives the original-domain transformed Q equation and identifies its free
+inverse with the original resolvent away from the free lattice.
+
+Validation: `./scripts/check.sh` passes with 8,496 build jobs, 7,561
+public examples and a transitive axiom audit of 44,182 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The ordered ledger now has 39 reviewed groups: 30 matched, eight corrected
+and one interpreted. Eight groups remain pending, S6-016 through S6-023:
+the detailed Lemma 6.4 proof and the square/inverse estimates in Lemma 6.5.
+The source-wide assertion inventory, exact cited 2014 Birkhoff construction
+and Appendix G.2 norm interpretation remain unfinished.
+
+Section6PQAssertionsSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records these seven passages.
+Reconstruction uses the established inverse and actual domain-valued
+solution; the proof does not cancel the potential map to infer a converse.
+
 ## Initial labels, source weights and Sobolev normalization
 
 The initial eight Section 6 passages are now reconciled. Complete actual
