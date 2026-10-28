@@ -5,6 +5,48 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Initial labels, source weights and Sobolev normalization
+
+The initial eight Section 6 passages are now reconciled. Complete actual
+periodic labels have displacement less than π/4 outside a common local cutoff
+for every finite Banach exponent, including p=1. The central root multiset,
+distant algebraic multiplicities and exact source-spectrum exhaustion are retained.
+
+The source Sobolev normalization (1+|nπ|)^s is now explicitly equivalent to
+(1+|n|)^s without changing Fourier coefficients. For s>=0, the original
+pair norms have factors 1 and π^s, with the exact full signed power-sum formula.
+
+The review also reconciles canonical local asymptotics, reflection, all four
+boundary sequences, midpoint and gap asymptotics, and the source weight class.
+Propositions 6.1 and 6.3 retain their proved corrected quantitative budgets,
+including the additive leading Fourier tail. No new counterexample is added.
+
+[SourcePeriodicBoundedLabels.lean](../NLS/ZakharovShabat/SourcePeriodicBoundedLabels.lean)
+supplies complete bounded labels without requiring p>1.
+[WeightComparison.lean](../NLS/SequenceSpaces/WeightComparison.lean) supplies
+coefficient-preserving continuous equivalences for comparable weights.
+[PiSobolevEquivalence.lean](../NLS/SequenceSpaces/PiSobolevEquivalence.lean)
+gives the explicit source Sobolev norm comparisons and exact Fourier formula.
+
+Validation: `./scripts/check.sh` passes with 8,494 build jobs, 7,558
+public examples and a transitive axiom audit of 44,165 NLS declarations.
+The 21 inherited warnings are unchanged; the three new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The ordered ledger now has 32 reviewed groups: 23 matched, eight corrected
+and one interpreted. Fifteen groups remain pending, S6-009 through S6-023.
+Continue with the free modes and P/Q decomposition. The source-wide assertion
+inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm
+interpretation remain unfinished.
+
+Section6InitialAssertionsSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records S6-001 through S6-008.
+The p=1 result asserts bounded displacement; summable canonical displacement
+remains a 1<p<infinity result. The boundary comparison retains physical
+finite-input/L2 identification and bounded completion for general rough inputs.
+
+Earlier milestone entries below retain their historical validation and limitations.
+
 ## The final gap sum with a corrected constant
 
 The final weighted gap-sum inference on p.44 is now proved with the valid

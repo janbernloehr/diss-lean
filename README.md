@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the final weighted gap sum on p.44 with the corrected constant
-C_p = 2^(3*p-2), actual canonical spectral gaps and convergent full coefficient
-tails. One local cutoff works for all larger cutoffs. The
-[ordered Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) now has twenty-four
-reviewed and twenty-three pending passage groups. See the
-[Section 6 comparison](coverage/SECTION_6.md) and
+Latest step: complete periodic labels with bounded displacement including
+p=1, and an explicit coefficient-preserving equivalence for the source Sobolev
+weight with norm factors 1 and π^s. The first eight Section 6 passages are
+reconciled; the [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) has 32 reviewed
+and 15 pending groups. The earlier corrected quantitative budgets remain.
+See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

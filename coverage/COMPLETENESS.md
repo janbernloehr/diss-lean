@@ -117,14 +117,14 @@ cutoff for every larger cutoff. The original weighted pair norm and additive
 leading Fourier tail remain in the Lemma 6.8 budget. This supplies a valid
 corrected constant without requiring a refutation of the printed factor.
 
-The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) reconciles twenty-four
-passage groups, S6-024 through S6-047: seventeen matched, six corrected and one
-interpreted. The literal series, Holder tests, regional power moments,
-Rouche counts, Cauchy estimate and multiplicity-preserving canonical pair
-identification remain intact. Earlier corrections and supporting coefficient
-and moving-center asymptotics are preserved.
+The [ordered Section 6 ledger](SECTION_6_ASSERTIONS.md) now reconciles 32
+passage groups, S6-001 through S6-008 and S6-024 through S6-047: 23 matched,
+eight corrected and one interpreted. The initial complete bounded labels now
+include p=1. The exact source Sobolev weight is identified by a coefficient-
+preserving equivalence with norm factors 1 and π^s. The original spectral,
+reflection, multiplicity and quantitative-budget qualifications remain.
 
-Twenty-three groups still need ordered reconciliation, S6-001 through S6-023.
+Fifteen groups still need ordered reconciliation, S6-009 through S6-023.
 These counts are navigation, not a completion percentage or a substitute for
 the source-wide assertion inventory. Constant corrections may be recorded
 with a proved valid replacement; additional counterexamples are not required.

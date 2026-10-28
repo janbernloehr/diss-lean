@@ -6,7 +6,8 @@ navigation inventory with a partial assertion-level review, not a completion
 percentage. A **pending** row can already have proved results in earlier
 reviews; its whole passage has not yet been reconciled in this ledger.
 
-The current ledger covers S6-024 through S6-047 (printed pp.39–44).
+The current ledger covers S6-001 through S6-008 and S6-024 through S6-047
+(printed pp.35–36 and pp.39–44): 32 reviewed groups and 15 pending groups.
 **Matched** records the mathematical assertions and their exact scope.
 **Corrected** records a formula or constant adjustment with a proved valid replacement.
 Existing refutations are retained; additional refutations are not required.
@@ -26,14 +27,14 @@ Section6RootSourceComparison-2026-10-28 in the
 
 | ID | Extraction lines | Passage | Status |
 | --- | --- | --- | --- |
-| S6-001 | 2280–2285 | Initial spectral sequence and O(1) statement | pending |
-| S6-002 | 2287–2292 | Proposition 6.1 qualitative local asymptotics | pending |
-| S6-003 | 2294–2309 | Proposition 6.1 literal positive-index quantitative budget | pending |
-| S6-004 | 2312–2316 | Reflection argument for interval eigenvalues | pending |
-| S6-005 | 2318–2328 | Corollary 6.2 on arbitrary period-two input | pending |
-| S6-006 | 2331–2336 | Canonical midpoint and gap asymptotics | pending |
-| S6-007 | 2339–2368 | Source weights, original weighted norm and Sobolev examples | pending |
-| S6-008 | 2370–2384 | Proposition 6.3 literal positive-index gap budget | pending |
+| S6-001 | 2280–2285 | Initial spectral sequence and O(1) statement | matched |
+| S6-002 | 2287–2292 | Proposition 6.1 qualitative local asymptotics | matched |
+| S6-003 | 2294–2309 | Proposition 6.1 literal positive-index quantitative budget | corrected |
+| S6-004 | 2312–2316 | Reflection argument for interval eigenvalues | matched |
+| S6-005 | 2318–2328 | Corollary 6.2 on arbitrary period-two input | matched |
+| S6-006 | 2331–2336 | Canonical midpoint and gap asymptotics | matched |
+| S6-007 | 2339–2368 | Source weights, original weighted norm and Sobolev examples | matched |
+| S6-008 | 2370–2384 | Proposition 6.3 literal positive-index gap budget | corrected |
 | S6-009 | 2387–2398 | Lyapunov-Schmidt attribution and free modes | pending |
 | S6-010 | 2399–2409 | Closed strips and P/Q topological decomposition | pending |
 | S6-011 | 2410–2421 | Free multiplier, actual potential and projected equations | pending |
@@ -75,6 +76,91 @@ Section6RootSourceComparison-2026-10-28 in the
 | S6-047 | 3272–3293 | Final weighted gap estimate and source constants | corrected |
 
 ## Reviewed assertions
+
+### S6-001: Initial spectral sequence and O(1) statement
+
+- For every finite Banach exponent p>=1, the complement of the original source-pencil resolvent set is closed and discrete.
+- SourcePeriodicBoundedLabeling splices the complete central root multiset with the actual two eigenvalues in every distant radius-pi/4 disk. Its central and distant data retain algebraic multiplicities, including a repeated root of multiplicity two.
+- The two sequences exhaust exactly the original period-two spectrum, and both displacements from n*pi have norm less than pi/4 for abs(n)>N. This gives the stated O(1) asymptotics, including p=1.
+- One open convex original-input neighborhood containing the potential and zero admits such labels at every larger cutoff.
+
+Public evidence: `NLS.ZakharovShabat.isOpen_sourceResolventSet`, `NLS.ZakharovShabat.discreteTopology_sourceResolventSet_compl`, `NLS.ZakharovShabat.SourcePeriodicBoundedLabeling`, `NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.exhaustive`, `NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.displacement_lt`, `NLS.ZakharovShabat.exists_sourcePeriodicBoundedLabeling`, `NLS.ZakharovShabat.exists_uniform_sourcePeriodicBoundedLabeling`.
+
+The p=1 assertion is bounded displacement and exact spectral enumeration. No p=1 summable displacement, unique ordered labeling, or individual-label continuity is asserted.
+
+### S6-002: Proposition 6.1 qualitative local asymptotics
+
+- For 1<p<infinity, fixed globally ordered complete canonical endpoints enumerate the actual raw period-two spectrum with full algebraic multiplicities.
+- Both complete displacement sequences belong to ell-p. Given epsilon>0, one original open convex neighborhood containing the input and zero and one cutoff make the full signed joint power tail less than epsilon for every larger cutoff.
+- The canonical sequences are independent of the chosen admissible central cutoff; no even-support or frequency-doubling assumption is introduced.
+
+Public evidence: `NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_spec`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_exhaustive`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_global_multiplicity`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_memℓp`, `NLS.ZakharovShabat.sourceProposition6_1_canonical_asymptotics`.
+
+Local asymptotics concern the fixed canonical sequences and their tails. Individual complex labels are not asserted to be continuous.
+
+### S6-003: Proposition 6.1 literal positive-index quantitative budget
+
+- The actual complete canonical labels satisfy summable positive-index power tails on the literal n>=K range, including its boundary.
+- One original neighborhood and cutoff give both the full-Fourier-cutoff and ceiling-half corrected budgets for every K>N0. Increasing the threshold by one gives the source convention K>=N0.
+- The valid budgets retain the additive leading Fourier tail and the original component-sum norm. The multiplicative printed budget is not asserted.
+
+Public evidence: `NLS.ZakharovShabat.sourceProposition6_1_canonical_fullCutoff`, `NLS.ZakharovShabat.sourceProposition6_1_canonical_positive_cutoffs`, `NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_fullCutoff`, `NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_ceilingHalf`.
+
+This reconciles the already proved replacement and preserves the earlier source review. No additional refutation is required.
+
+### S6-004: Reflection argument for interval eigenvalues
+
+- The original completed interval extension is bounded and complex linear for 1<p<infinity. Its finite-input coefficients are the actual normalized Fourier integrals of signed reflection, and finite truncations converge in the original norm.
+- The periodic spectrum of a reflected potential is exactly the union of the two actual original boundary spectra. Complete boundary labels exhaust those spectra and preserve their full Jordan multiplicities.
+- For arbitrary period-two inputs, bounded restriction to the unit interval precedes reflection. Restriction is physically identified on finite Fourier inputs for all 1<p<infinity and on arbitrary L2 inputs; its completed maps apply to general Fourier-Lebesgue inputs.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma4_3`, `NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals`, `NLS.ZakharovShabat.tendsto_sourceIntervalExtension_truncate`, `NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union`, `NLS.ZakharovShabat.mem_sourceBoundarySpectrum_reflected_iff`, `NLS.ZakharovShabat.sourceBoundaryAlgebraicMultiplicity_eq`, `NLS.ZakharovShabat.sourcePeriodTwoRestriction_ofFunction`, `NLS.ZakharovShabat.sourcePeriodTwoRestriction_reflection`, `NLS.Fourier.periodTwoToUnit_finite_integral`.
+
+The bounded completion carries rough inputs. This passage reuses the corrected Section 4 normalization and does not assert pointwise reflection for arbitrary distributions.
+
+### S6-005: Corollary 6.2 on arbitrary period-two input
+
+- All four ordinary and auxiliary boundary sequences are defined on arbitrary original period-two inputs by restriction followed by the corresponding reflection and phase maps.
+- They exhaust the actual original restricted spectra and their repetitions equal the full Jordan algebraic multiplicities.
+- For 1<p<infinity, one open convex original-input neighborhood containing the potential and zero and one positive constant bound all four complete displacement power sums, including central indices. All four displacement sequences belong to ell-p.
+
+Public evidence: `NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots`, `NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots`, `NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_exhaustive`, `NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_exhaustive`, `NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_multiplicity`, `NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_multiplicity`, `NLS.ZakharovShabat.sourceCorollary6_2`, `NLS.ZakharovShabat.sourceCorollary6_2_mem`.
+
+The physical finite-input/L2 and rough-input completion qualifications from S6-004 remain in force. No even-support assumption is made.
+
+### S6-006: Canonical midpoint and gap asymptotics
+
+- The midpoint is the average of the actual complete canonical endpoints, and the gap is right endpoint minus left endpoint, at every integer index.
+- The complete midpoint displacement and gap both belong to ell-p for 1<p<infinity. Their joint power tails are locally uniformly small on one original neighborhood for all sufficiently large cutoffs.
+- At distant indices their midpoint and squared gap agree with the intrinsic contour invariants. No such contour identity is asserted for the arbitrary central cluster.
+
+Public evidence: `NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpoint`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalGap`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_memℓp`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_asymptotics`, `NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_eq_contours`.
+
+The statement applies to the complete canonical sequences; the contour comparison retains its distant-index restriction.
+
+### S6-007: Source weights, original weighted norm and Sobolev examples
+
+- SpectralWeight imposes the literal lower bound one, symmetry, submultiplicativity and monotonicity in the nonnegative integer index. Normalized does not add w(0)=1; constant weights above one remain allowed.
+- The original weighted pair norm has exactly the combined full signed coefficient p-power sum, not a maximum of the two component norms.
+- The source bracket is 1+|n*pi|. For every s>=0 its s-th power is a source weight. The coefficient-preserving Sobolev equivalence has norm factors 1 and pi^s, and its inverse preserves every coefficient too.
+- The pi-scaled pair norm to power p is exactly the sum of (1+|n*pi|)^(s*p) times the two raw coefficient p-powers. Generic comparable weights also give coefficient-preserving scalar and pair continuous linear equivalences.
+
+Public evidence: `NLS.SpectralWeight`, `NLS.SpectralWeight.constant`, `NLS.SpectralWeight.piSobolev`, `NLS.WeightedCoeffPair.norm_rpow_eq_tsum`, `NLS.WeightComparison.equiv`, `NLS.WeightComparison.pairEquiv`, `NLS.WeightComparison.norm_pairEquiv_le`, `NLS.WeightComparison.norm_pairEquiv_symm_le`, `NLS.SpectralWeight.piSobolevPairEquiv`, `NLS.SpectralWeight.piSobolevPairEquiv_fst`, `NLS.SpectralWeight.piSobolevPairEquiv_snd`, `NLS.SpectralWeight.piSobolevPairEquiv_symm_fst`, `NLS.SpectralWeight.piSobolevPairEquiv_symm_snd`, `NLS.SpectralWeight.piSobolevPairEquiv_norm_bounds`, `NLS.SpectralWeight.piSobolevPairEquiv_norm_rpow_eq_tsum`.
+
+The finite-p norm and power-sum formulas include p=1; the generic continuous equivalences also allow the infinity exponent. The references to introductions [28,29] are contextual attributions.
+
+### S6-008: Proposition 6.3 literal positive-index gap budget
+
+- For every source weight and 1<p<infinity, the actual canonical gaps retain the weight w(2*n) and literal positive-index range n>=K.
+- One open convex weighted neighborhood containing the potential and zero supports summability, full-cutoff and ceiling-half corrected budgets, and locally small tails for every K>N0. Increasing the threshold by one gives the source K>=N0 convention.
+- The complete canonical gap has weighted ell-p membership, including the finite central contribution. The corrected budgets retain the additive leading Fourier tail and original weighted pair norm.
+
+Public evidence: `NLS.ZakharovShabat.sourceCanonicalWeightedGapTails_eq`, `NLS.ZakharovShabat.sourceProposition6_3_canonical_signed`, `NLS.ZakharovShabat.sourceProposition6_3_canonical_positive`, `NLS.ZakharovShabat.sourceProposition6_3_canonical_gap_mem`, `NLS.ZakharovShabat.rootGapBudget_fullCutoff`, `NLS.ZakharovShabat.rootGapBudget_ceilingHalf`.
+
+The printed multiplicative budget is replaced by its established valid correction. Existing refutations remain historical evidence; this step adds none.
+
+Section6InitialAssertionsSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records these eight passages.
 
 ### S6-024: Common half-contraction and compatible Neumann inverses
 
@@ -343,7 +429,7 @@ supporting results; they are not needed for the corrected-constant proof.
 
 ## Remaining work
 
-Reconcile the other 23 passage groups, S6-001 through S6-023, using their
+Reconcile the remaining 15 passage groups, S6-009 through S6-023, using their
 existing focused reviews and current public proofs. Then continue through
 the dissertation in source order. The source-wide inventory, exact cited
 Birkhoff construction and Appendix G.2 interpretation remain unfinished.

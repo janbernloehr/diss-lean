@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T21:48:54.906234+00:00",
-  "base_commit": "0950640a2bf03171f37dd9ad7eb8ef788be8b59c",
+  "published_utc": "2026-10-28T22:22:16.192879+00:00",
+  "base_commit": "9d02f2425fefadba48badb13302e7afd435bc9b2",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 103,
-    "module_hash_checks": 1672,
-    "distinct_modules": 1060
+    "review_records": 104,
+    "module_hash_checks": 1702,
+    "distinct_modules": 1069
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0950640a2bf03171f37dd9ad7eb8ef788be8b59c",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected original weighted coefficient-sum inequality, its canonical spectral pair, common cutoff and Lemma 6.8 budget, plus three integration examples. S6-047 is corrected; the broader dissertation audit remains incomplete.",
+    "base_commit": "9d02f2425fefadba48badb13302e7afd435bc9b2",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes complete original periodic labels with bounded displacement for every finite Banach exponent and coefficient-preserving weight/Sobolev equivalences with exact norms, plus three integration examples. S6-001 through S6-008 are reconciled; the broader dissertation audit remains incomplete.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8491,
-    "public_examples": 7555,
-    "transitive_NLS_declarations": 44118,
+    "build_jobs": 8494,
+    "public_examples": 7558,
+    "transitive_NLS_declarations": 44165,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4768,
-      "sha256": "4ebc7aa5cfc3f7c786e312a1cb3bcd3a787e057d01af4d3f1bded3583eedfaa4"
+      "files": 4771,
+      "sha256": "0686fd5cba32901c4c837e5f82afb48a3ac730467822758a01358cf54d892349"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -25101,6 +25101,362 @@
       ],
       "declaration_inventory_count": 44118,
       "source_record_sha256": "9ec4755207096514040defbecf85dd327a967d6a0d0b061898882fc3473538a3"
+    },
+    "Section6InitialAssertionsSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "9d02f2425fefadba48badb13302e7afd435bc9b2",
+      "updated_utc": "2026-10-28T22:22:16.192879+00:00",
+      "source_lines": [
+        [
+          2280,
+          2285
+        ],
+        [
+          2287,
+          2292
+        ],
+        [
+          2294,
+          2309
+        ],
+        [
+          2312,
+          2316
+        ],
+        [
+          2318,
+          2328
+        ],
+        [
+          2331,
+          2336
+        ],
+        [
+          2339,
+          2368
+        ],
+        [
+          2370,
+          2384
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S6-001",
+          "source_lines": [
+            2280,
+            2285
+          ],
+          "requirement": "Initial spectral sequence and O(1) statement",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every finite Banach exponent p>=1, the complement of the original source-pencil resolvent set is closed and discrete.",
+            "SourcePeriodicBoundedLabeling splices the complete central root multiset with the actual two eigenvalues in every distant radius-pi/4 disk. Its central and distant data retain algebraic multiplicities, including a repeated root of multiplicity two.",
+            "The two sequences exhaust exactly the original period-two spectrum, and both displacements from n*pi have norm less than pi/4 for abs(n)>N. This gives the stated O(1) asymptotics, including p=1.",
+            "One open convex original-input neighborhood containing the potential and zero admits such labels at every larger cutoff."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.isOpen_sourceResolventSet",
+            "NLS.ZakharovShabat.discreteTopology_sourceResolventSet_compl",
+            "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling",
+            "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.exhaustive",
+            "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.displacement_lt",
+            "NLS.ZakharovShabat.exists_sourcePeriodicBoundedLabeling",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodicBoundedLabeling"
+          ],
+          "qualification": "The p=1 assertion is bounded displacement and exact spectral enumeration. No p=1 summable displacement, unique ordered labeling, or individual-label continuity is asserted."
+        },
+        {
+          "ordered_group": "S6-002",
+          "source_lines": [
+            2287,
+            2292
+          ],
+          "requirement": "Proposition 6.1 qualitative local asymptotics",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<p<infinity, fixed globally ordered complete canonical endpoints enumerate the actual raw period-two spectrum with full algebraic multiplicities.",
+            "Both complete displacement sequences belong to ell-p. Given epsilon>0, one original open convex neighborhood containing the input and zero and one cutoff make the full signed joint power tail less than epsilon for every larger cutoff.",
+            "The canonical sequences are independent of the chosen admissible central cutoff; no even-support or frequency-doubling assumption is introduced."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_spec",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_exhaustive",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_global_multiplicity",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_memℓp",
+            "NLS.ZakharovShabat.sourceProposition6_1_canonical_asymptotics"
+          ],
+          "qualification": "Local asymptotics concern the fixed canonical sequences and their tails. Individual complex labels are not asserted to be continuous."
+        },
+        {
+          "ordered_group": "S6-003",
+          "source_lines": [
+            2294,
+            2309
+          ],
+          "requirement": "Proposition 6.1 literal positive-index quantitative budget",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual complete canonical labels satisfy summable positive-index power tails on the literal n>=K range, including its boundary.",
+            "One original neighborhood and cutoff give both the full-Fourier-cutoff and ceiling-half corrected budgets for every K>N0. Increasing the threshold by one gives the source convention K>=N0.",
+            "The valid budgets retain the additive leading Fourier tail and the original component-sum norm. The multiplicative printed budget is not asserted."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceProposition6_1_canonical_fullCutoff",
+            "NLS.ZakharovShabat.sourceProposition6_1_canonical_positive_cutoffs",
+            "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_fullCutoff",
+            "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_ceilingHalf"
+          ],
+          "qualification": "This reconciles the already proved replacement and preserves the earlier source review. No additional refutation is required."
+        },
+        {
+          "ordered_group": "S6-004",
+          "source_lines": [
+            2312,
+            2316
+          ],
+          "requirement": "Reflection argument for interval eigenvalues",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original completed interval extension is bounded and complex linear for 1<p<infinity. Its finite-input coefficients are the actual normalized Fourier integrals of signed reflection, and finite truncations converge in the original norm.",
+            "The periodic spectrum of a reflected potential is exactly the union of the two actual original boundary spectra. Complete boundary labels exhaust those spectra and preserve their full Jordan multiplicities.",
+            "For arbitrary period-two inputs, bounded restriction to the unit interval precedes reflection. Restriction is physically identified on finite Fourier inputs for all 1<p<infinity and on arbitrary L2 inputs; its completed maps apply to general Fourier-Lebesgue inputs."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma4_3",
+            "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+            "NLS.ZakharovShabat.tendsto_sourceIntervalExtension_truncate",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union",
+            "NLS.ZakharovShabat.mem_sourceBoundarySpectrum_reflected_iff",
+            "NLS.ZakharovShabat.sourceBoundaryAlgebraicMultiplicity_eq",
+            "NLS.ZakharovShabat.sourcePeriodTwoRestriction_ofFunction",
+            "NLS.ZakharovShabat.sourcePeriodTwoRestriction_reflection",
+            "NLS.Fourier.periodTwoToUnit_finite_integral"
+          ],
+          "qualification": "The bounded completion carries rough inputs. This passage reuses the corrected Section 4 normalization and does not assert pointwise reflection for arbitrary distributions."
+        },
+        {
+          "ordered_group": "S6-005",
+          "source_lines": [
+            2318,
+            2328
+          ],
+          "requirement": "Corollary 6.2 on arbitrary period-two input",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "All four ordinary and auxiliary boundary sequences are defined on arbitrary original period-two inputs by restriction followed by the corresponding reflection and phase maps.",
+            "They exhaust the actual original restricted spectra and their repetitions equal the full Jordan algebraic multiplicities.",
+            "For 1<p<infinity, one open convex original-input neighborhood containing the potential and zero and one positive constant bound all four complete displacement power sums, including central indices. All four displacement sequences belong to ell-p."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots",
+            "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots",
+            "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_exhaustive",
+            "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_exhaustive",
+            "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_multiplicity",
+            "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_multiplicity",
+            "NLS.ZakharovShabat.sourceCorollary6_2",
+            "NLS.ZakharovShabat.sourceCorollary6_2_mem"
+          ],
+          "qualification": "The physical finite-input/L2 and rough-input completion qualifications from S6-004 remain in force. No even-support assumption is made."
+        },
+        {
+          "ordered_group": "S6-006",
+          "source_lines": [
+            2331,
+            2336
+          ],
+          "requirement": "Canonical midpoint and gap asymptotics",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The midpoint is the average of the actual complete canonical endpoints, and the gap is right endpoint minus left endpoint, at every integer index.",
+            "The complete midpoint displacement and gap both belong to ell-p for 1<p<infinity. Their joint power tails are locally uniformly small on one original neighborhood for all sufficiently large cutoffs.",
+            "At distant indices their midpoint and squared gap agree with the intrinsic contour invariants. No such contour identity is asserted for the arbitrary central cluster."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpoint",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalGap",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_memℓp",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_asymptotics",
+            "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_eq_contours"
+          ],
+          "qualification": "The statement applies to the complete canonical sequences; the contour comparison retains its distant-index restriction."
+        },
+        {
+          "ordered_group": "S6-007",
+          "source_lines": [
+            2339,
+            2368
+          ],
+          "requirement": "Source weights, original weighted norm and Sobolev examples",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "SpectralWeight imposes the literal lower bound one, symmetry, submultiplicativity and monotonicity in the nonnegative integer index. Normalized does not add w(0)=1; constant weights above one remain allowed.",
+            "The original weighted pair norm has exactly the combined full signed coefficient p-power sum, not a maximum of the two component norms.",
+            "The source bracket is 1+|n*pi|. For every s>=0 its s-th power is a source weight. The coefficient-preserving Sobolev equivalence has norm factors 1 and pi^s, and its inverse preserves every coefficient too.",
+            "The pi-scaled pair norm to power p is exactly the sum of (1+|n*pi|)^(s*p) times the two raw coefficient p-powers. Generic comparable weights also give coefficient-preserving scalar and pair continuous linear equivalences."
+          ],
+          "declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.constant",
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.WeightedCoeffPair.norm_rpow_eq_tsum",
+            "NLS.WeightComparison.equiv",
+            "NLS.WeightComparison.pairEquiv",
+            "NLS.WeightComparison.norm_pairEquiv_le",
+            "NLS.WeightComparison.norm_pairEquiv_symm_le",
+            "NLS.SpectralWeight.piSobolevPairEquiv",
+            "NLS.SpectralWeight.piSobolevPairEquiv_fst",
+            "NLS.SpectralWeight.piSobolevPairEquiv_snd",
+            "NLS.SpectralWeight.piSobolevPairEquiv_symm_fst",
+            "NLS.SpectralWeight.piSobolevPairEquiv_symm_snd",
+            "NLS.SpectralWeight.piSobolevPairEquiv_norm_bounds",
+            "NLS.SpectralWeight.piSobolevPairEquiv_norm_rpow_eq_tsum"
+          ],
+          "qualification": "The finite-p norm and power-sum formulas include p=1; the generic continuous equivalences also allow the infinity exponent. The references to introductions [28,29] are contextual attributions."
+        },
+        {
+          "ordered_group": "S6-008",
+          "source_lines": [
+            2370,
+            2384
+          ],
+          "requirement": "Proposition 6.3 literal positive-index gap budget",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every source weight and 1<p<infinity, the actual canonical gaps retain the weight w(2*n) and literal positive-index range n>=K.",
+            "One open convex weighted neighborhood containing the potential and zero supports summability, full-cutoff and ceiling-half corrected budgets, and locally small tails for every K>N0. Increasing the threshold by one gives the source K>=N0 convention.",
+            "The complete canonical gap has weighted ell-p membership, including the finite central contribution. The corrected budgets retain the additive leading Fourier tail and original weighted pair norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalWeightedGapTails_eq",
+            "NLS.ZakharovShabat.sourceProposition6_3_canonical_signed",
+            "NLS.ZakharovShabat.sourceProposition6_3_canonical_positive",
+            "NLS.ZakharovShabat.sourceProposition6_3_canonical_gap_mem",
+            "NLS.ZakharovShabat.rootGapBudget_fullCutoff",
+            "NLS.ZakharovShabat.rootGapBudget_ceilingHalf"
+          ],
+          "qualification": "The printed multiplicative budget is replaced by its established valid correction. Existing refutations remain historical evidence; this step adds none."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalEndpoints.lean": "b50e78a3b0c0cbb528ea0a4d7c4d0679e06b866de6af4bea77b3252ab81a2dcd",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalCutoffs.lean": "b35e6f66d87ff8e12e3607ec9eca7ee032bceaf4680d3ea3038ed6b97b952ff7",
+        "NLS/ZakharovShabat/SourceCorollary6_2.lean": "1fea706a442b661f2d48e1705567e26cd8b6f92b5c111d9e74bcb81f07e26eaf",
+        "NLS/ZakharovShabat/SourcePeriodTwoRestriction.lean": "547a160f798cd03dc08441db2e066b2f809b171368e269132b2b26849788c174",
+        "NLS/ZakharovShabat/SourcePeriodTwoCanonicalMidpointGap.lean": "de263ec591225bbd3180aeb8fe3d314f1c0ba4b9b71a3baac60505de821f3758",
+        "NLS/ZakharovShabat/SourceCanonicalWeightedGapTails.lean": "3346120459f9296db878e2894a276ac75305712f42d03a862186ead0e6ec9e0e",
+        "NLS/ZakharovShabat/SourceCeilingCutoffEstimates.lean": "2c39b66b1f059d65cf5d6f5735e156514ea4e643dd45d0f99a4b18dfc8710cc2",
+        "NLS/ZakharovShabat/SourceFullCutoffEstimates.lean": "c1dafdc8466eba4b0f7634c9506bc018a252880614dbca2c5b5768f90a87efdd",
+        "NLS/ZakharovShabat/SourcePeriodicCounting.lean": "1d2ef4ef9652369695b9d40200a8f9e12099c7c62b38a73de31c6e7e80b13020",
+        "NLS/SequenceSpaces/SpectralWeight.lean": "dab4be32929019aa11217b3463ab78475bae9444a91a049732d05295470acf10",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/SourceResolvent.lean": "0df9d72caa432cef0ffca0eda8ef49fa032ec4dde3864686c67c37d15b8d0c9f",
+        "NLS/ZakharovShabat/CentralPeriodicOrdering.lean": "9b03b12466d9dfe17bcfbb72d9ef2b761d45270fcd2412f42bd7270f33ab087f",
+        "NLS/ZakharovShabat/SourcePeriodTwoCompleteLabels.lean": "906502646d02193fec54a6edf12d1a07dba10951c3c688cb963fbbc358938468",
+        "NLS/ZakharovShabat/PeriodicEndpointLabeling.lean": "e2d91a270865ed1a34823dcb4614a5eec309d3cf7c030f8ef743eb70e868be3f",
+        "NLS/ZakharovShabat/PeriodicEndpointGlobalMultiplicity.lean": "334a2228be4e8294cb19fdd04fcf7d8bb0f9ee12e7103d76fdef15025f1af6cd",
+        "NLS/ZakharovShabat/SourcePeriodTwoOrderedLabels.lean": "855922dd44be513625352b6bd96ff7a3f62b638ffdc5792d3dedd52db51d25df",
+        "NLS/ZakharovShabat/SourceLemma4_3.lean": "0d5d69e7572e45f467017dec2c33e13bfcb9365c18b564101029af3171fdd7ae",
+        "NLS/ZakharovShabat/SourceLemma4_3Physical.lean": "d088d7973421a6615b0888a645e77b7c60ffa45fcd8600475c6db2a593f0ae3b",
+        "NLS/ZakharovShabat/SourceBoundaryOverview.lean": "e797d71de5a23f455e376c785497c83e2a27b5f1669e07e1cde9d887e3ce2dd5",
+        "NLS/ZakharovShabat/SourceBoundarySpectra.lean": "eff37ddbc1a2a8057631257207fcab2c871a7b079b0182585ae55167e98a70a3",
+        "NLS/ZakharovShabat/SourceBoundaryRootSpaces.lean": "6b774e3092d388cb89b355f754201c4297f6a49601024986724f167065b9d541",
+        "NLS/Fourier/PeriodTwoRestriction.lean": "21bfd684a375e0e6035d8e649a722bd49c5db2284d8fc3b67ae04a7d32e956e8",
+        "NLS/Fourier/PeriodTwoRestrictionIntegrals.lean": "0685ffa71119304af78407b0b8c877d96d597a23f95036b71ebc683cf93f846e",
+        "NLS/Fourier/PeriodTwoRestrictionL2.lean": "e4eee5cf3773d4cba98ff1dee8ad12e3f88a16d7fbd315325809115b60e6b3e3",
+        "NLS/SequenceSpaces/WeightedMultiplier.lean": "f3c9c977eff213926904f5db8b27bf03b7b85b47fcba5eb1baa4973beee52807",
+        "NLS/SequenceSpaces/WeightedPairMap.lean": "4615d3045f333e0f6bd8b529991f8d3dbab813e61d166b71cbca2a86bd4e98ab",
+        "NLS/ZakharovShabat/SourcePeriodicBoundedLabels.lean": "d74aa0d9a231621b10a01826401b9450c578da412dc1e8ce49487e2ba41ef32a",
+        "NLS/SequenceSpaces/WeightComparison.lean": "07353ce0d1b388a1e9f339ba95200d059be32fdfc27bb19aafddcaaabe555546",
+        "NLS/SequenceSpaces/PiSobolevEquivalence.lean": "3a44d876bc28f7ec57d42cd8bbb975ccf89994c9fa3b2812d21c36097cb10ffd"
+      },
+      "ordered_inventory": "coverage/SECTION_6_ASSERTIONS.md",
+      "ordered_inventory_sha256": "84040951c70e9679fb24bb07ea1b3e6b1b526abf2139efbca25e6c9d91517e1f",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          35,
+          36
+        ],
+        "images": {
+          "Section6Page35.png": "f9a3d6c311ab38c64eac1f3c291d30edc9c4aa8c41b665c774daffed30017017",
+          "Section6Page36.png": "2439ec3d043a5849b7c24111be634c77036221d3735310f8dd3334770d8e6c25"
+        }
+      },
+      "qualification": "The physical pp.35-36 and the source bracket convention were inspected. Existing focused reviews are retained; the initial eight groups are reconciled against the actual original-period-two objects and proved budgets. New interfaces supply all-finite-exponent bounded labels and the exact Sobolev normalization. No further counterexample proof is added. The remaining source-wide inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.Fourier.periodTwoToUnit_finite_integral",
+        "NLS.SpectralWeight",
+        "NLS.SpectralWeight.constant",
+        "NLS.SpectralWeight.piSobolev",
+        "NLS.SpectralWeight.piSobolevPairEquiv",
+        "NLS.SpectralWeight.piSobolevPairEquiv_fst",
+        "NLS.SpectralWeight.piSobolevPairEquiv_norm_bounds",
+        "NLS.SpectralWeight.piSobolevPairEquiv_norm_rpow_eq_tsum",
+        "NLS.SpectralWeight.piSobolevPairEquiv_snd",
+        "NLS.SpectralWeight.piSobolevPairEquiv_symm_fst",
+        "NLS.SpectralWeight.piSobolevPairEquiv_symm_snd",
+        "NLS.WeightComparison.equiv",
+        "NLS.WeightComparison.norm_pairEquiv_le",
+        "NLS.WeightComparison.norm_pairEquiv_symm_le",
+        "NLS.WeightComparison.pairEquiv",
+        "NLS.WeightedCoeffPair.norm_rpow_eq_tsum",
+        "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling",
+        "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.displacement_lt",
+        "NLS.ZakharovShabat.SourcePeriodicBoundedLabeling.exhaustive",
+        "NLS.ZakharovShabat.discreteTopology_sourceResolventSet_compl",
+        "NLS.ZakharovShabat.exists_sourcePeriodicBoundedLabeling",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodicBoundedLabeling",
+        "NLS.ZakharovShabat.isOpen_sourceResolventSet",
+        "NLS.ZakharovShabat.mem_sourceBoundarySpectrum_reflected_iff",
+        "NLS.ZakharovShabat.rootGapBudget_ceilingHalf",
+        "NLS.ZakharovShabat.rootGapBudget_fullCutoff",
+        "NLS.ZakharovShabat.sourceBoundaryAlgebraicMultiplicity_eq",
+        "NLS.ZakharovShabat.sourceCanonicalWeightedGapTails_eq",
+        "NLS.ZakharovShabat.sourceCorollary6_2",
+        "NLS.ZakharovShabat.sourceCorollary6_2_mem",
+        "NLS.ZakharovShabat.sourceIntervalExtensionToBoundary_finite_integrals",
+        "NLS.ZakharovShabat.sourceLemma4_3",
+        "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots",
+        "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_exhaustive",
+        "NLS.ZakharovShabat.sourcePeriodTwoAuxiliaryRoots_multiplicity",
+        "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots",
+        "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_exhaustive",
+        "NLS.ZakharovShabat.sourcePeriodTwoBoundaryRoots_multiplicity",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_exhaustive",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_global_multiplicity",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_memℓp",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalEndpoints_spec",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalGap",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpoint",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_asymptotics",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_eq_contours",
+        "NLS.ZakharovShabat.sourcePeriodTwoCanonicalMidpointGap_memℓp",
+        "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_ceilingHalf",
+        "NLS.ZakharovShabat.sourcePeriodTwoDisplacementBudget_fullCutoff",
+        "NLS.ZakharovShabat.sourcePeriodTwoRestriction_ofFunction",
+        "NLS.ZakharovShabat.sourcePeriodTwoRestriction_reflection",
+        "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union",
+        "NLS.ZakharovShabat.sourceProposition6_1_canonical_asymptotics",
+        "NLS.ZakharovShabat.sourceProposition6_1_canonical_fullCutoff",
+        "NLS.ZakharovShabat.sourceProposition6_1_canonical_positive_cutoffs",
+        "NLS.ZakharovShabat.sourceProposition6_3_canonical_gap_mem",
+        "NLS.ZakharovShabat.sourceProposition6_3_canonical_positive",
+        "NLS.ZakharovShabat.sourceProposition6_3_canonical_signed",
+        "NLS.ZakharovShabat.tendsto_sourceIntervalExtension_truncate"
+      ],
+      "declaration_inventory_count": 44165,
+      "source_record_sha256": "afef48d480d4141a31c4845e92077152ccb6bdd651c3c294a1c281b214845621"
     }
   }
 }

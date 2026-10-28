@@ -70858,3 +70858,45 @@ example (φ : WeightedCoeffPair (SpectralWeight.constant 2 one_le_two).toWeight 
   exact ⟨(h ψ hψ N hN).2.2.1,(h ψ hψ N hN).2.2.2.1.trans (h ψ hψ N hN).2.2.2.2⟩
 
 end Section6CorrectedGapSumChecks
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+namespace Section6InitialAssertionsChecks
+
+-- The p=1 endpoint has complete actual labels with an explicit common distant bound.
+example (φ : CoeffPair 1) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∃ U : Set (CoeffPair 1), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → ∃ ξ η : ℤ → ℂ,
+        SourcePeriodicBoundedLabeling (by simp) ψ N ξ η ∧
+        (∀ z : ℂ, z ∉ sourceResolventSet (by simp) ψ ↔ ∃ n : ℤ, ξ n = z ∨ η n = z) ∧
+        ∀ n : ℤ, N < n.natAbs →
+          ‖ξ n-(Real.pi : ℂ)*n‖ < Real.pi/4 ∧ ‖η n-(Real.pi : ℂ)*n‖ < Real.pi/4 := by
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,h⟩ := exists_uniform_sourcePeriodicBoundedLabeling (by simp) φ
+  refine ⟨N₀,hN₀,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ N hN
+  obtain ⟨ξ,η,he⟩ := h ψ hψ N hN
+  exact ⟨ξ,η,he,he.exhaustive,he.displacement_lt⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- A non-Hilbert exponent retains both coefficients and the explicit Sobolev norm factors.
+example (s : ℝ) (hs : 0 ≤ s) (a : WeightedCoeffPair (Weight.sobolev s) 3) (n : ℤ) :
+    let b := SpectralWeight.piSobolevPairEquiv s hs a
+    b.fst.val n = a.fst.val n ∧ b.snd.val n = a.snd.val n ∧
+      ‖a‖ ≤ ‖b‖ ∧ ‖b‖ ≤ Real.pi^s*‖a‖ := by
+  exact ⟨SpectralWeight.piSobolevPairEquiv_fst s hs a n,
+    SpectralWeight.piSobolevPairEquiv_snd s hs a n,
+    SpectralWeight.piSobolevPairEquiv_norm_bounds (by simp) s hs a⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 2) := ⟨by norm_num⟩
+
+-- At order one, the original Hilbert pair energy has exactly the source bracket squared.
+example (a : WeightedCoeffPair (Weight.sobolev 1) 2) :
+    ‖SpectralWeight.piSobolevPairEquiv 1 zero_le_one a‖^2 =
+      ∑' n : ℤ, (1+|(n : ℝ)*Real.pi|)^2 * (‖a.fst.val n‖^2+‖a.snd.val n‖^2) := by
+  simpa only [ENNReal.toReal_ofNat,one_mul,Real.rpow_two] using
+    SpectralWeight.piSobolevPairEquiv_norm_rpow_eq_tsum (by simp) 1 zero_le_one a
+
+end Section6InitialAssertionsChecks
