@@ -108,7 +108,10 @@ four-group focused comparison; the 47-group ordered inventory remains open.
 Four further focused groups now cover the p.42 proof-series weight,
 original-source joint sum and analytic coefficient, with a locally uniform
 cutoff counterexample and both simultaneous half-contraction bounds.
-The 47-group Section 6 inventory and the p.44 comparison remain open.
+Four additional groups compare the p.44 intermediate power inequality:
+actual p=4 witnesses refute its printed factor, and the corrected estimate
+holds for original counted roots on one common neighborhood and cutoff.
+The final 1/2^p summed inequality and the 47-group Section 6 inventory remain open.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

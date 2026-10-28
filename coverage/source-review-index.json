@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T13:58:03.715661+00:00",
-  "base_commit": "2091dba5870425e38372f9e0a9106c4214a1dfbe",
+  "published_utc": "2026-10-28T14:29:08.920331+00:00",
+  "base_commit": "adf724511666fecc7d1c42bbd599587c0ac73cad",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 91,
-    "module_hash_checks": 1422,
-    "distinct_modules": 925
+    "review_records": 92,
+    "module_hash_checks": 1429,
+    "distinct_modules": 928
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "2091dba5870425e38372f9e0a9106c4214a1dfbe",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected proof-series weight, local-cutoff refutation and two integration examples.",
+    "base_commit": "adf724511666fecc7d1c42bbd599587c0ac73cad",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected p.44 power comparison, actual coefficient refutation, original counted-root bounds and two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8450,
-    "public_examples": 7518,
-    "transitive_NLS_declarations": 43328,
+    "build_jobs": 8451,
+    "public_examples": 7520,
+    "transitive_NLS_declarations": 43350,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4727,
-      "sha256": "26e911eec38606bdc0a8a059d4869ae8f8e1dbf8dd5a9bdc5b3f6bb18c854a26"
+      "files": 4728,
+      "sha256": "9d2d0e456fa37c6eba550ec94eb19759f4e6ab4f86e70a99d760b67eb513ead1"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -22601,6 +22601,127 @@
       ],
       "declaration_inventory_count": 43328,
       "source_record_sha256": "31ae5ecdcee08f772355fde19eca512b5382c73f6a9650f552f1095cec05b47c"
+    },
+    "Section6GapPowerSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "adf724511666fecc7d1c42bbd599587c0ac73cad",
+      "updated_utc": "2026-10-28T14:29:08.920331+00:00",
+      "source_lines": [
+        [
+          3264,
+          3279
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            3274,
+            3279
+          ],
+          "requirement": "The second power comparison for the actual full-strip coefficient suprema.",
+          "finding": "At p=4, equal nonzero constant off-diagonal coefficients t give 36*t^4 on the left and 18*t^4 on the printed right. The balanced single-resonant original potential has exactly these actual analytic coefficients throughout its full strip. Its diagonal coefficient is zero. The full squared-operator norm is at most one half, and amplitudes can be arbitrarily small and below pi/16. Thus all original numerical strip controls can hold simultaneously.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapProofPotential",
+            "NLS.ZakharovShabat.sourceGapProof_single_smul",
+            "NLS.ZakharovShabat.sourceGapProof_actual_coefficients",
+            "NLS.ZakharovShabat.sourceGapProof_stripSup_const",
+            "NLS.ZakharovShabat.sourceGapProof_printed_scalar_failure",
+            "NLS.ZakharovShabat.sourceGapProof_exists_small_witness",
+            "NLS.ZakharovShabat.correction_singleResonantSource",
+            "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_le_coarse"
+          ]
+        },
+        {
+          "source_lines": [
+            3264,
+            3279
+          ],
+          "requirement": "Compatibility of the refutation with a locally uniform common cutoff.",
+          "finding": "Every open original p=4 neighborhood of zero and every proposed common cutoff admit a positive-index witness satisfying the full-strip half-contraction and the strict reversed comparison. The amplitude and mode may depend on the neighborhood and cutoff. The separate small-witness theorem allows every signed index, including negative strips. No single fixed potential with infinitely many failing indices is asserted.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapProof_failure_near_zero",
+            "NLS.ZakharovShabat.sourceGapProof_exists_small_witness",
+            "NLS.ZakharovShabat.sourceGapProof_printed_scalar_failure"
+          ]
+        },
+        {
+          "source_lines": [
+            3274,
+            3279
+          ],
+          "requirement": "A valid replacement for the scalar and full-strip supremum comparison.",
+          "finding": "For every nonnegative real exponent P, nonnegative x,y,s with s<=x*y obey 6^(P/2)*s^(P/2) <= (6^(P/2)/2)*(x^P+y^P). The full-strip supremum version proves boundedness, nonnegativity and the product-supremum bound from the individual bounded norm images. This comparison does not replace the full strip by a finite or compact sample.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapProof_correct_scalar",
+            "NLS.ZakharovShabat.sourceGapProof_correct_full_suprema",
+            "NLS.ZakharovShabat.sourceGapProof_correct_gap",
+            "NLS.ZakharovShabat.weightedStripSup",
+            "NLS.ZakharovShabat.weightedStripSup_bounds"
+          ]
+        },
+        {
+          "source_lines": [
+            3264,
+            3279
+          ],
+          "requirement": "The corrected estimate for original counted spectral roots and common neighborhoods.",
+          "finding": "Every original SourceResonantRootPair on a controlled strip satisfies the corrected p-power bound, including repeated roots and the p=1 conditional endpoint. For each finite p>1 and original input, one open convex neighborhood containing both input and zero and one signed cutoff supply actual counted root sequences and this bound. The root-pair structure retains original determinant zeros, actual spectrum and algebraic multiplicities; its factor-six square bound is converted directly. The later final 1/2^p summed display at lines 3284-3290 remains unresolved and is not refuted by the middle-comparison failure.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapProof_source_roots",
+            "NLS.ZakharovShabat.sourceGapProof_uniform_source_roots",
+            "NLS.ZakharovShabat.SourceResonantRootPair",
+            "NLS.ZakharovShabat.SourceResonantRootPair.zero_count",
+            "NLS.ZakharovShabat.SourceResonantStripControl",
+            "NLS.ZakharovShabat.sourceResonantBProductSup",
+            "NLS.ZakharovShabat.sourceLemma6_9"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceGapProofPower.lean": "3f6028617c692bb2fb39310e2be0e848867e4f2a16ec14e4a598c46b395a30a0",
+        "NLS/ZakharovShabat/SingleResonantPotential.lean": "e7629066fba8bcf4ddbfe0e95d32597da4f918b0f2b7bfb18f122d2e96320c79",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/SourceResonantDeterminant.lean": "2efa76e55b73dd2298e610723a222506927672ad0d42878d64a0510be8561927",
+        "NLS/ZakharovShabat/SourceLemma6_9.lean": "ee0e0a406fd500fba9d8e982c9c41e622e48d7479762d99fcf41605488e8f6de",
+        "NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean": "35935d6c75951993ff89551d28d5c230e60377e95fa39744706921cb1c75a496",
+        "NLS/ZakharovShabat/OffDiagonalSup.lean": "24c4558d7b9be90ba71c844e674c11f1b2c546e7df9ae66a6418f5cc62c15654"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          44
+        ],
+        "images": {
+          "Section6ProofReview-044.png": "9c461b73312ec584566578a463f3cc87fd1a8c09be05b4852d14469bd0fea33d"
+        }
+      },
+      "qualification": "Four focused assertions compare the p.44 middle power inequality and its correction, with seven reviewed module bodies. The refutation uses actual original coefficients, full strips and arbitrarily small p=4 witnesses beyond every common local cutoff. The corrected bound retains original counted roots and common neighborhoods. This does not establish or refute the later final summed constant, certify all 47 Section 6 groups, audit every transitive proof, or certify the dissertation. The source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceResonantRootPair",
+        "NLS.ZakharovShabat.SourceResonantRootPair.zero_count",
+        "NLS.ZakharovShabat.SourceResonantStripControl",
+        "NLS.ZakharovShabat.correction_singleResonantSource",
+        "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_le_coarse",
+        "NLS.ZakharovShabat.sourceGapProofPotential",
+        "NLS.ZakharovShabat.sourceGapProof_actual_coefficients",
+        "NLS.ZakharovShabat.sourceGapProof_correct_full_suprema",
+        "NLS.ZakharovShabat.sourceGapProof_correct_gap",
+        "NLS.ZakharovShabat.sourceGapProof_correct_scalar",
+        "NLS.ZakharovShabat.sourceGapProof_exists_small_witness",
+        "NLS.ZakharovShabat.sourceGapProof_failure_near_zero",
+        "NLS.ZakharovShabat.sourceGapProof_printed_scalar_failure",
+        "NLS.ZakharovShabat.sourceGapProof_single_smul",
+        "NLS.ZakharovShabat.sourceGapProof_source_roots",
+        "NLS.ZakharovShabat.sourceGapProof_stripSup_const",
+        "NLS.ZakharovShabat.sourceGapProof_uniform_source_roots",
+        "NLS.ZakharovShabat.sourceLemma6_9",
+        "NLS.ZakharovShabat.sourceResonantBProductSup",
+        "NLS.ZakharovShabat.weightedStripSup",
+        "NLS.ZakharovShabat.weightedStripSup_bounds"
+      ],
+      "declaration_inventory_count": 43350,
+      "source_record_sha256": "6216f4bef69ead28b735eeaa88f13569d5e453b72c5ac446fcaf880eaf74d09a"
     }
   }
 }

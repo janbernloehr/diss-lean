@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.8's off-diagonal proof series now has the corrected
-weight, a fully convergent original-source identity and an actual-coefficient
-refutation of the printed equality, including its locally uniform cutoff scope.
+Latest step: the intermediate p.44 power comparison has a formal
+actual-coefficient counterexample and a corrected bound for the original
+counted spectral roots. The final summed constant remains under review.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

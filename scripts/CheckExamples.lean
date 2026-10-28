@@ -70251,3 +70251,42 @@ example :
 
 end
 end Section6ProofSeriesChecks
+
+namespace Section6GapProofPowerChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- At p=1 the original counted pair still has multiplicity two and the corrected linear bound.
+example (φ : CoeffPair 1) (n : ℤ) (x y : ℂ)
+    (hc : SourceResonantStripControl (by simp) φ n)
+    (hr : SourceResonantRootPair (by simp) φ n x y) :
+    NLS.ComplexAnalysis.analyticZeroCount
+        (sourceResonantDeterminantFunction (by simp) φ n) (resonantStrip n) = 2 ∧
+    ‖x-y‖ ≤ ((6:ℝ)^(1/2:ℝ)/2) *
+      (weightedStripSup SpectralWeight.one n (sourceResonantBPlusFunction (by simp) φ n) +
+       weightedStripSup SpectralWeight.one n (sourceResonantBMinusFunction (by simp) φ n)) := by
+  exact ⟨hr.zero_count,by simpa using sourceGapProof_source_roots (by simp) φ n x y hc hr⟩
+
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- Arbitrarily small witnesses on a negative strip satisfy all original strip controls.
+example (ε : ℝ) (hε : 0 < ε) :
+    ∃ t : ℝ, 0 < t ∧ ‖sourceGapProofPotential (-3) t‖ < ε ∧
+      SourceResonantStripControl (by norm_num) (sourceGapProofPotential (-3) t) (-3) ∧
+      (let bp := sourceResonantBPlusFunction (by norm_num) (sourceGapProofPotential (-3) t) (-3)
+       let bm := sourceResonantBMinusFunction (by norm_num) (sourceGapProofPotential (-3) t) (-3)
+       (3:ℝ)^(4/2:ℝ) * ((weightedStripSup SpectralWeight.one (-3) bp)^4 +
+         (weightedStripSup SpectralWeight.one (-3) bm)^4) <
+       (6:ℝ)^(4/2:ℝ) * (weightedStripSup SpectralWeight.one (-3) (fun z => bp z*bm z))^(4/2:ℝ)) := by
+  obtain ⟨t,ht,htπ,hnorm,hsmall⟩ := sourceGapProof_exists_small_witness (-3) ε hε
+  have hlt := fun z hz => (hsmall z hz).trans_lt (by norm_num : (1/2:ℝ) < 1)
+  have hcoeff := fun z hz => sourceGapProof_actual_coefficients (-3) t z hz (hlt z hz)
+  refine ⟨t,ht,hnorm,?_,sourceGapProof_printed_scalar_failure (-3) t ht hlt⟩
+  refine ⟨?_,?_,?_,?_⟩
+  · simpa [sourceGapProofPotential] using hsmall
+  · intro z hz; rw [(hcoeff z hz).1,norm_zero]; positivity
+  · intro z hz; rw [(hcoeff z hz).2.2,Complex.norm_real,Real.norm_of_nonneg ht.le]; exact htπ.le
+  · intro z hz; rw [(hcoeff z hz).2.1,Complex.norm_real,Real.norm_of_nonneg ht.le]; exact htπ.le
+
+end
+end Section6GapProofPowerChecks

@@ -1,5 +1,21 @@
 # Source discrepancies
 
+## Propositions 6.1/6.3 proof, p.44: the intermediate power factor
+
+The middle comparison uses 3^(p/2) where the valid scalar comparison
+uses 6^(p/2)/2. At p=4, arbitrarily small balanced resonant potentials
+have actual full-strip coefficients b₊=b₋=t and a=0. The printed sides
+are 36*t^4 and 18*t^4, respectively. These witnesses satisfy the full-strip
+half-contraction and original coefficient bounds, and exist in every
+neighborhood of zero beyond every common cutoff.
+
+[SourceGapProofPower.lean](NLS/ZakharovShabat/SourceGapProofPower.lean)
+proves the refutation and corrected original counted-root gap bound,
+including its common-neighborhood scope. The final 1/2^p summed inequality
+on the same page remains a separate unresolved assertion; the failure of
+this intermediate comparison does not refute that final display.
+See the [Section 6 comparison](coverage/SECTION_6.md).
+
 ## Lemma 3.4 proof, p. 25: missing inverse-radius dependence
 
 The far and near subsum estimates cannot hold with constants depending

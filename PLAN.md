@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Current milestone: Lemma 6.8 proof-series weight
+## Current milestone: correcting the p.44 power comparison
+
+The proof of Propositions 6.1 and 6.3 uses an invalid intermediate power
+comparison. Actual arbitrarily small p=4 potentials give 36*t^4 on its
+left and 18*t^4 on its right, beyond every common local cutoff.
+The replacement factor 6^(p/2)/2 now bounds the original counted spectral
+root gaps on one common open convex neighborhood and signed cutoff.
+See the [Section 6 comparison](coverage/SECTION_6.md).
+
+Validation: `./scripts/check.sh` passes with 8,451 build jobs, 7,520
+public examples and a transitive axiom audit of 43,350 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The final 1/2^p summed inequality on p.44 remains a separate open check.
+Continue the 47-group Section 6 comparison and preserve the
+[completion qualifications](coverage/COMPLETENESS.md).
+
+## Previous milestone: Lemma 6.8 proof-series weight
 
 The p.42 double series equals w(2n) times the unweighted off-diagonal
 remainder. The printed equality puts that weight on only one side.

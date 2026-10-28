@@ -4756,3 +4756,4 @@ import NLS.ZakharovShabat.SourceExactGapOpening
 import NLS.ZakharovShabat.SourceFiniteGapCurveSobolev
 import NLS.ZakharovShabat.SourceExactGapOpeningSobolev
 import NLS.Fourier.PeriodicSobolevDuality
+import NLS.ZakharovShabat.SourceGapProofPower

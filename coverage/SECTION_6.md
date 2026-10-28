@@ -5,6 +5,49 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Propositions 6.1 and 6.3: correcting the proof's power comparison
+
+[SourceGapProofPower.lean](../NLS/ZakharovShabat/SourceGapProofPower.lean)
+compares the intermediate inequality on printed p.44, lines 3274–3279
+of the source extraction. Write B₊ and B₋ for the full-strip suprema
+of the two actual off-diagonal coefficients, and S for the full-strip
+supremum of their product. The valid comparison is
+
+    6^(p/2) S^(p/2) ≤ (6^(p/2)/2) (B₊^p + B₋^p).
+
+The printed factor 3^(p/2) is too small at p=4. A balanced resonant
+potential has actual coefficients a=0 and b₊=b₋=t throughout its strip.
+For t>0, the printed left side is 36*t^4 and its right side is 18*t^4.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual coefficients and exact suprema | `sourceGapProof_actual_coefficients`, `sourceGapProof_stripSup_const` | The original analytic functions on the entire closed, unbounded strip. |
+| Admissible arbitrarily small witnesses | `sourceGapProof_exists_small_witness` | Every signed index, t<pi/16, every prescribed norm radius, and squared-operator norm at most 1/2 throughout the strip. |
+| Locally uniform cutoff refutation | `sourceGapProof_failure_near_zero` | Every open original p=4 neighborhood of zero and every common cutoff admit a positive-index witness. |
+| Correct scalar and supremum estimates | `sourceGapProof_correct_scalar`, `sourceGapProof_correct_full_suprema` | Every nonnegative real exponent; bounded full-strip norm images supply the product comparison. |
+| Correct original root estimate | `sourceGapProof_source_roots` | Every controlled original counted spectral pair, including repeated roots; finite p≥1. |
+| Common neighborhood and root existence | `sourceGapProof_uniform_source_roots` | Finite p>1; one open convex neighborhood containing the input and zero, one signed cutoff, and actual counted root sequences. |
+
+The counterexample potential may depend on the cutoff. It does not assert
+infinitely many failures for one fixed potential. The first integration
+example combines the conditional p=1 estimate with the full zero count.
+The second constructs arbitrarily small witnesses on strip −3 satisfying
+all original strip controls and the strict reversed power comparison.
+
+This is a correction to the middle comparison only. The triangle inequality
+on the next line is valid with any chosen Fourier coefficient; its index
+must be aligned with the following sum. The final 1/2^p summed inequality
+in lines 3284–3290 remains unresolved. Its failure does not follow from
+this counterexample, and existing larger-constant gap bounds remain valid.
+Section6GapPowerSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records four focused groups
+and seven reviewed module hashes. The 47-group Section 6 inventory remains open.
+
+Validation: `./scripts/check.sh` passes with 8,451 build jobs, 7,520
+public examples and a transitive axiom audit of 43,350 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.8: correcting the weight in the off-diagonal proof series
 
 [SourceLemma6_8ProofSeries.lean](../NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean)
