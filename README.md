@@ -5,9 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 6.8's diagonal estimate now follows its literal signed
-series, full-strip Holder bound and exact near/far power sums in both
-exponent ranges. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
+Latest step: Lemma 6.8's off-diagonal proof now uses its literal weighted
+Holder sums, exact overlapping far regions and retained-boundary near region.
+Both exponent ranges lead to convergent tails of the original full-strip
+suprema. The [ordered assertion ledger](coverage/SECTION_6_ASSERTIONS.md)
 retains the source corrections and remaining review.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).

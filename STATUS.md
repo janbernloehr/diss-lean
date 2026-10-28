@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: the diagonal proof of Lemma 6.8
+## Current milestone: the off-diagonal proof of Lemma 6.8
+
+The literal far-k and far-l regions now use the strict half-radius and may
+overlap. Their weak near complement includes equality. Jointly convergent
+regional moments equal genuine nested sequence norm powers, with the exact
+floor(abs(n)/2)+1 cutoff and both resonant indices excluded.
+
+Equation (1.16) now has its literal physical weighted sum and actual shifted
+input norm. The near case retains both full-cutoff potential tails. Powered
+Young and an explicit comparison of convergent concave-exponent sums prove
+both decay regimes. Recombination gives the original weighted coefficient
+functions, bounded full-strip images and convergent p-power supremum tails,
+locally uniformly for every larger cutoff and with the full pair Fourier tail.
+
+Six integration examples cover overlapping far sets, a negative equality
+boundary, an actual boundary moment, an odd cutoff, p=3/2 decay and the
+correct distinguished component for both original coefficient labels.
+The [ordered ledger](coverage/SECTION_6_ASSERTIONS.md) now reconciles
+S6-024 through S6-041: fourteen matched, three corrected and one interpreted;
+twenty-nine groups remain pending. The misplaced p.42 weight and the false
+p.41 quantitative displays retain their earlier qualified corrections.
+
+Validation: `./scripts/check.sh` passes with 8,466 build jobs, 7,537
+public examples and a transitive axiom audit of 43,746 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: the determinant and Lemma 6.9 proof passages. The final p.44 sum and the
+broader [completion qualifications](coverage/COMPLETENESS.md) remain open.
+
+## Previous milestone: the diagonal proof of Lemma 6.8
 
 The original diagonal now has its literal signed Fourier series and absolute
 convergence. Holder's inequality retains the actual even vector and its

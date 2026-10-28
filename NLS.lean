@@ -4762,3 +4762,4 @@ import NLS.ZakharovShabat.SourceLemma6_5ProofMoments
 import NLS.ZakharovShabat.SourceLemma6_7ProofTranspose
 import NLS.ZakharovShabat.SourceLemma6_8UniformSeries
 import NLS.ZakharovShabat.SourceLemma6_8DiagonalProof
+import NLS.ZakharovShabat.SourceLemma6_8OffDiagonalProof

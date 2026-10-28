@@ -5,6 +5,55 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.8(ii): the literal off-diagonal proof
+
+[OffDiagonalProofRegions.lean](../NLS/ZakharovShabat/OffDiagonalProofRegions.lean)
+formalizes the source strict far-k and far-l regions and their weak near
+complement. The far regions overlap; the positive regional sums give an
+upper bound. The exact cutoff is floor(abs(n)/2)+1, including odd and negative
+frequencies. Both resonant indices are explicitly removed. Each regional
+moment converges jointly and equals the q-th power of a genuine nested row norm.
+
+[OffDiagonalProofHolder.lean](../NLS/ZakharovShabat/OffDiagonalProofHolder.lean)
+proves `sourceEquation1_16` for the literal physical weighted summand and its
+actual shifted input norm. The near case retains the outer potential tail
+at N for abs(n)>=N. Taking N=abs(n) gives a stronger tail than the source
+half-tail; the summed bound retains the common full cutoff N. Both potential
+frequencies retain their boundary. The weighted actual double
+series is bounded by these three positive tests without a disjointness assumption.
+
+[OffDiagonalProofPowerSums.lean](../NLS/ZakharovShabat/OffDiagonalProofPowerSums.lean)
+gives the exact two-kernel Young budgets and convergent outer sums. Each far
+sum decays as N^(-1) at p>=2 and N^(-(p-1)) at 1<p<=2. The near bound uses
+the p-power of the actual potential tail. The low-exponent comparison is
+explicitly between convergent outer sums; the two far estimates combine
+with twice their common regional constant.
+
+[OffDiagonalProofBounds.lean](../NLS/ZakharovShabat/OffDiagonalProofBounds.lean)
+recombines the literal regional moments and both potential factors.
+[SourceLemma6_8OffDiagonalProof.lean](../NLS/ZakharovShabat/SourceLemma6_8OffDiagonalProof.lean)
+applies the bound to the actual even vectors and original analytic coefficient
+functions. One open convex neighborhood containing the potential and zero,
+with one threshold, gives bounded full-strip images and both convergent weighted
+supremum p-power tails at every larger cutoff. The final pair bound retains
+the full Fourier tail at N and exchanges the distinguished component correctly.
+The new exponent-only constant is explicit and not claimed optimal;
+earlier constants and valid estimates remain available.
+
+The [ordered ledger](SECTION_6_ASSERTIONS.md) reconciles S6-038 through S6-041.
+Section6OffDiagonalSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) preserves the misplaced p.42
+weight correction and its local/common-cutoff counterexample scope. The final
+bound follows the p-power/full-pair display on p.43; it does not assert the
+refuted unpowered or positive-component-only p.41 display.
+The determinant and Lemma 6.9 passages remain ahead, and the final p.44 sum
+remains unresolved.
+
+Validation: `./scripts/check.sh` passes with 8,466 build jobs, 7,537
+public examples and a transitive axiom audit of 43,746 NLS declarations.
+The 21 inherited warnings are unchanged; the five new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.8(i): the literal diagonal proof
 
 [SourceLemma6_8DiagonalProof.lean](../NLS/ZakharovShabat/SourceLemma6_8DiagonalProof.lean)
@@ -41,7 +90,7 @@ original unweighted pair norm and floor(N/2) tail. Its explicit
 The [ordered ledger](SECTION_6_ASSERTIONS.md) reconciles S6-035 through S6-037.
 Section6DiagonalSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records the exact evidence.
-The ordered off-diagonal review and final p.44 summed inequality remain open.
+The ordered off-diagonal review is reconciled above; the final p.44 summed inequality remains open.
 
 Validation: `./scripts/check.sh` passes with 8,461 build jobs, 7,531
 public examples and a transitive axiom audit of 43,596 NLS declarations.
@@ -85,7 +134,7 @@ The first retains the two existing local refutations of the printed
 quantitative off-diagonal display; it records the p-power/full-pair replacement
 without claiming a counterexample for one fixed potential beyond every
 individual cutoff. The diagonal regional proof is now reconciled above;
-the off-diagonal proof remains ahead.
+the off-diagonal proof is also reconciled above.
 Section6UniformSeriesSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records the exact evidence.
 
