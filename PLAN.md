@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: Section 4 ordered assertion inventory
+## Current milestone: Section 5 reflection on original distributions
+
+Both auxiliary reflections now act directly on the original period-one
+and period-two distribution spaces. The target is the actual closed
+auxiliary boundary space, with the exact finite-p norm and Fourier phase.
+For 1<p<infinity the maps are bounded and analytic, are determined uniquely
+by their physical signed modes, and preserve the full signed-series limit.
+At p=2 they are isometric and recover the actual physical reflection.
+See the [Section 5 comparison](coverage/SECTION_5.md).
+
+Validation: `./scripts/check.sh` passes with 8,447 build jobs, 7,513
+public examples and a transitive axiom audit of 43,270 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Continue the 17-group ordered Section 5 comparison, including the actual
+restricted spectra and algebraic multiplicities. The four known Section 5
+source corrections and all [completion qualifications](coverage/COMPLETENESS.md)
+remain explicit.
+
+## Previous milestone: Section 4 ordered assertion inventory
 
 The complete Section 4 passage now has a 38-group ordered comparison
 covering the original physical domains, Fourier series, scalar restriction

@@ -4,6 +4,41 @@ This is a statement-by-statement audit against the original physical domains,
 reflections and norms, beginning on printed page 33. Existing later results
 alone do not certify the section or the dissertation complete.
 
+## Auxiliary reflection on original periodic distributions
+
+[SourceAuxiliaryNativeExtension.lean](../NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean)
+connects the completed auxiliary reflection to native smooth-test
+distributions at the actual periods one and two.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual auxiliary boundary space | `sourceNativeAuxiliarySubmodule`, `mem_sourceNativeAuxiliarySubmodule`, `isClosed_sourceNativeAuxiliarySubmodule` | Closed native target with the literal phase and reversed-frequency condition. |
+| Completed reflection | `sourceNativeAuxiliaryExtension`, `norm_sourceNativeAuxiliaryExtension_le`, `analyticAt_sourceNativeAuxiliaryExtension` | Both signs, 1<p<infinity, exact finite-p source norms and the established ordinary reflection bound. |
+| Physical-mode identification | `sourceNativeAuxiliaryExtension_mode_integrals`, `sourceNativeAuxiliaryExtension_unique` | Actual normalized reflected Fourier integrals determine the full continuous map. |
+| Full signed-input series | `hasSum_sourceNativeAuxiliaryExtension` | Every rough native input, convergence in the actual auxiliary target norm. |
+| Fourier phase and normalization | `sourceNativeAuxiliaryExtension_fourier`, `sourceNativeAuxiliaryExtension_even` | The even positive coefficient is (a_plus+i*epsilon*a_minus)/2. |
+| Existing realizations | `sourceNativeAuxiliaryExtension_raw`, `sourceNativeAuxiliaryExtension_tempered` | Equality with the zero-weight coefficient target and the tempered distribution pair. |
+| Full physical L2 input | `sourceNativeAuxiliaryExtension_two_ofFunction`, `sourceNativeAuxiliaryExtension_two_physical` | Original interval Fourier data give the actual phase-twisted reflection almost everywhere. |
+| Hilbert norm | `norm_sourceNativeAuxiliaryExtension_two` | Exact norm preservation at p=2 for arbitrary native input. |
+
+Three integration examples check the constant (1,i) under both signs,
+a negative-frequency Neumann input and preservation of the complete
+Fourier energy. The full signed-input expansion is distinct from the
+auxiliary-mode output expansion in (1.11)–(1.12); the latter is retained
+through the existing physical L2 coefficient-identification theorems.
+
+No endpoint boundedness or identification of the auxiliary WithLp infinity
+product with the printed coupled infinity norm is asserted. The four
+existing Section 5 source corrections remain explicit below.
+Section5NativeSourceComparison-2026-10-27 in the
+[source-review index](source-review-index.json) records four focused
+comparisons. The 17-group ordered inventory remains in progress.
+
+Validation: `./scripts/check.sh` passes with 8,447 build jobs, 7,513
+public examples and a transitive axiom audit of 43,270 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Original auxiliary domains and operators: equation (1.10)
 
 | Source assertion | Entry point | Scope |

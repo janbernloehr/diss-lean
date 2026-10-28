@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 4 now has a 38-group ordered assertion inventory,
-retaining original domains, norms and multiplicities, three local formula
-refutations, and the separate endpoint and height qualifications.
-See the [Section 4 comparison](coverage/SECTION_4.md) and
+Latest step: Section 5's auxiliary reflections now act on the original
+periodic distributions, with exact finite-p norms, full signed-series
+convergence, physical Fourier agreement and uniqueness. They are isometric
+at p=2. See the [Section 5 comparison](coverage/SECTION_5.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.
 

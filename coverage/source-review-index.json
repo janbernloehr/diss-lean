@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-27T19:41:00.662734+00:00",
-  "base_commit": "1e93351eac808c21dde3c824448111ac1cc30cd7",
+  "published_utc": "2026-10-27T20:10:53.193538+00:00",
+  "base_commit": "7f2a65c615a90e398b41ea414e374538fe6f0dbd",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 87,
-    "module_hash_checks": 1347,
-    "distinct_modules": 894
+    "review_records": 88,
+    "module_hash_checks": 1355,
+    "distinct_modules": 897
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,19 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "3e0458c1aeb1ff26e341ed3d9facbbd3d2ac9624",
-    "validated_state": "Working tree atop base_commit, identified exactly by lean_sources; includes the two native-distribution Lemma 4.3 modules and four public examples.",
+    "base_commit": "7f2a65c615a90e398b41ea414e374538fe6f0dbd",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the native auxiliary distribution module and three integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8446,
-    "public_examples": 7510,
-    "transitive_NLS_declarations": 43246,
+    "build_jobs": 8447,
+    "public_examples": 7513,
+    "transitive_NLS_declarations": 43270,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4723,
-      "sha256": "4e40c83146963491f20b97eaff9e51132018504c73a89e2fa7d0eddc82b45efe"
+      "files": 4724,
+      "sha256": "568ccba6aff16c1d68b2cb1869503ae08725bc070a951d34abfd98d57bc754b3"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. The integrity checker does not run Lean or independently certify semantic completeness."
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -21661,6 +21661,144 @@
         "The exact cited 2014 Birkhoff construction and Appendix G.2 interval norm are still unresolved."
       ],
       "source_record_sha256": "59046dd7b5c34cd64f6ac289123e3456b26c7fe56343dad6a5baf7bc05beefbd"
+    },
+    "Section5NativeSourceComparison-2026-10-27": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7f2a65c615a90e398b41ea414e374538fe6f0dbd",
+      "updated_utc": "2026-10-27T20:10:53.193538+00:00",
+      "source_lines": [
+        [
+          2126,
+          2148
+        ],
+        [
+          2157,
+          2208
+        ],
+        [
+          2214,
+          2217
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            2126,
+            2148
+          ],
+          "requirement": "Auxiliary reflection between the original period-one and period-two Fourier-Lebesgue distribution spaces.",
+          "finding": "The source and target are actual smooth-test distributions at their physical periods. The target is the closed auxiliary submodule characterized by the literal normalized Fourier relation f_minus(n)=-i*epsilon*f_plus(-n). On every signed physical mode, the native map gives the normalized integrals of the existing phase-twisted folded reflection. Its full signed-input expansion converges in the target norm, and agreement on those physical modes determines any continuous linear extension uniquely.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePeriodicPair",
+            "NLS.ZakharovShabat.sourceNativeAuxiliarySubmodule",
+            "NLS.ZakharovShabat.mem_sourceNativeAuxiliarySubmodule",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_mode_integrals",
+            "NLS.ZakharovShabat.hasSum_sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_unique",
+            "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical"
+          ]
+        },
+        {
+          "source_lines": [
+            2157,
+            2189
+          ],
+          "requirement": "Normalized auxiliary Fourier coefficients and physical reconstruction in (1.11)-(1.12).",
+          "finding": "Native output coefficients equal the previously established auxiliary amplitudes, retaining the boundary sign, frequency reversal and i phase. For arbitrary rough inputs the even positive-component coefficient is (a_plus(n)+i*epsilon*a_minus(n))/2. At p=2 the native input obtained from the full physical interval Fourier coefficients gives the established reflected coefficients and its L2 synthesis equals the actual reflected function almost everywhere. Existing full auxiliary-mode L2 sums remain applicable via this equality. The native full signed-input series is stated separately from the auxiliary-mode output expansion. The ordinary Dirichlet mode in the second line of (1.11) remains formally refuted; the corrected auxiliary mode and the original half normalization are retained.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_fourier",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_even",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_ofFunction",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_physical",
+            "NLS.ZakharovShabat.sourceEquation1_11_1_12_coefficients",
+            "NLS.ZakharovShabat.sourceEquation1_11_1_12_L2",
+            "NLS.ZakharovShabat.sourceEquation1_11_printed_ordinary_mode_false"
+          ]
+        },
+        {
+          "source_lines": [
+            2191,
+            2208
+          ],
+          "requirement": "Closed auxiliary targets in the original norm, including the zero-order native distribution realization.",
+          "finding": "The native zero-order submodule is the inverse image of the existing closed auxiliary coefficient space under an isometry. Its membership theorem uses the actual distribution action on normalized smooth Fourier tests. The raw-coordinate theorem identifies the output with the existing zero-weight original-norm auxiliary target. The earlier all-order weighted spaces and their complementary D-star/N-star decomposition remain unchanged. The repeated D-star summand in print retains its earlier correction; this focused milestone does not re-audit the entire weighted series proof.",
+          "declarations": [
+            "NLS.ZakharovShabat.isClosed_sourceNativeAuxiliarySubmodule",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_raw",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_coefficients",
+            "NLS.ZakharovShabat.sourceWeightedAuxiliarySubspace",
+            "NLS.ZakharovShabat.isCompl_sourceWeightedAuxiliarySubspaces"
+          ]
+        },
+        {
+          "source_lines": [
+            2214,
+            2217
+          ],
+          "requirement": "The bounded-extension clause on lines 2214-2217, for the full original spaces with 1<p<infinity.",
+          "finding": "Both native maps are continuous complex-linear and analytic everywhere with the established ordinary interval-extension bound in the exact finite-p source norm. At p=2 the norm is preserved exactly. The native and tempered realizations agree on all rough inputs by periodic-distribution uniqueness and their actual Fourier coefficients. No bounded endpoint map is asserted, and the auxiliary WithLp infinity product is not identified with the dissertation coupled infinity norm. Operator invariance, spectra and multiplicities belong to the remaining ordered Section 5 comparison.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_le",
+            "NLS.ZakharovShabat.analyticAt_sourceNativeAuxiliaryExtension",
+            "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_two",
+            "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_tempered",
+            "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean": "92b7edf38a764f177c0063ee742c36f6c695b8c0b813fef496a2e3b91cf2f4d1",
+        "NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean": "6866c4524c12818298898676be3b074fe4319bf4d17c6d0136800f28fdab716b",
+        "NLS/ZakharovShabat/SourceLemma43NativeExtension.lean": "1a7fccf5172258e177b2c6ce496a649b1c682b1d979ba962863d12a17a02dd30",
+        "NLS/ZakharovShabat/SourceAuxiliaryExtension.lean": "5ac5ca6d02d1a746ab0935476192edbb5ddd05a4687aa76b57087d99493daaa3",
+        "NLS/ZakharovShabat/SourceAuxiliaryExtensionPhysical.lean": "74d6a46438135be79cd304f2c8844b18feb7f96a51a9ee1fd546adea3d860ee9",
+        "NLS/ZakharovShabat/SourceAuxiliarySpaces.lean": "4e2756a63075c7c71d99b5423ec6bf2259e9ccb6f7ebfa92176afc646ad6d25e",
+        "NLS/ZakharovShabat/SourceAuxiliaryBoundaryFourier.lean": "c0ac96d6ea9ff7e5f1abd58336469bc7efaeffae9cef86e068709e3eca6d5d2d",
+        "NLS/ZakharovShabat/AuxiliarySourceExtension.lean": "329cb0fc413f50e4229b0dda9da3344b5da3644def2eaf1fb6abedb6235cd2f5"
+      },
+      "rendered_source": {
+        "pdf_pages": [
+          33,
+          34
+        ],
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "images": {
+          "Section5ProofReview-033.png": "5078c8f17c54a1a20066fa6c3b58deafb4420a1732bd947329dd576b419d1a23",
+          "Section5ProofReview-034.png": "885429d86b93e0d53301684d7336edb477f2e639dd47bd26902bd5f65c96e114"
+        }
+      },
+      "qualification": "This focused comparison reads the new native auxiliary module and seven supporting module bodies, compares the extracted source passages and inspected rendered pages 33-34, and verifies the original periods, finite-p norms, physical Fourier coefficients and full signed-input reconstruction. It does not claim a fresh independent audit of every transitive bounded-extension proof, the entire Section 5 ordered inventory, or the dissertation. The ordinary-mode typo in (1.11), repeated D-star summand, unrestricted printed-height refutation and final 2N-1 count refutation retain their prior scopes. The source-wide ordered inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourcePeriodicPair",
+        "NLS.ZakharovShabat.analyticAt_sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.hasSum_sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.isClosed_sourceNativeAuxiliarySubmodule",
+        "NLS.ZakharovShabat.isCompl_sourceWeightedAuxiliarySubspaces",
+        "NLS.ZakharovShabat.mem_sourceNativeAuxiliarySubmodule",
+        "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_le",
+        "NLS.ZakharovShabat.norm_sourceNativeAuxiliaryExtension_two",
+        "NLS.ZakharovShabat.norm_sourceUnitPeriodSignedCoefficients",
+        "NLS.ZakharovShabat.sourceEquation1_11_1_12_L2",
+        "NLS.ZakharovShabat.sourceEquation1_11_1_12_coefficients",
+        "NLS.ZakharovShabat.sourceEquation1_11_printed_ordinary_mode_false",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_coefficients",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_even",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_fourier",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_mode_integrals",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_raw",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_tempered",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_ofFunction",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_two_physical",
+        "NLS.ZakharovShabat.sourceNativeAuxiliaryExtension_unique",
+        "NLS.ZakharovShabat.sourceNativeAuxiliarySubmodule",
+        "NLS.ZakharovShabat.sourceUnitPeriodSignedMode_physical",
+        "NLS.ZakharovShabat.sourceWeightedAuxiliarySubspace"
+      ],
+      "declaration_inventory_count": 43270,
+      "source_record_sha256": "e95f82aec5d754a0c9017bcb08f0686e8d0704de99947d87becf87ffef297379"
     }
   }
 }

@@ -93,6 +93,10 @@ inventory covering its six printed pages, with 60 reviewed proof modules
 and 236 resolved declaration references. It preserves three local formula
 refutations, the original infinity norm, separate p=1 classical realization,
 and the inherited height and product-constant qualifications.
+Section 5 now also has native auxiliary distribution maps with exact
+finite-p norms, physical Fourier identification, full signed-input series,
+uniqueness and p=2 isometry. This is a focused interface milestone;
+the 17-group ordered Section 5 inventory remains in progress.
 Continue through Section 5, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

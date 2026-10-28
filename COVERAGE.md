@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Section 5 auxiliary reflections, pp.33–34 | [Native extension](NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean), [comparison](coverage/SECTION_5.md) | Original periodic distributions, closed auxiliary targets, exact finite-p norm, bounded analytic reflection, full signed-input series and physical L2 agreement. |
 | Complete Section 4 assertion inventory, pp.28–33 | [Ordered comparison](coverage/SECTION_4.md), [evidence index](coverage/source-review-index.json) | 38 ordered groups retain physical domains, full series, native extensions, original algebraic multiplicities, three local formula refutations and endpoint/height qualifications. |
 | Lemma 4.3 signed expansion and native reflection, p.31 | [Signed series](NLS/ZakharovShabat/SourcePeriodOneSignedSeries.lean), [native extension](NLS/ZakharovShabat/SourceLemma43NativeExtension.lean), [comparison](coverage/SECTION_4.md) | Original distribution spaces and exact finite-p norms; full convergent series, physical-mode uniqueness and corrected coefficients for every rough input. |
 | Lemma 4.2 scalar restrictions, pp.30–31 | [Physical restrictions](NLS/ZakharovShabat/SourceLemma42PhysicalRestriction.lean), [comparison](coverage/SECTION_4.md) | Actual periodic and interval functions, exact physical H1 norms, continuous inverses and full product-domain identity. |

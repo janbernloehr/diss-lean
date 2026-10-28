@@ -70086,3 +70086,44 @@ example (b : BoundaryCondition) (u : SourcePeriodicPair 1 2) :
 
 end
 end Section4SignedNativeChecks
+
+namespace Section5NativeChecks
+open NLS NLS.Fourier NLS.Fourier.SmoothPeriodicTest NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The auxiliary constant (1,i) survives the D-star reflection and cancels in N-star.
+example :
+    (sourceNativeAuxiliaryExtension .dirichlet (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode 0 1 Complex.I)).val.snd.val (mode 0) = Complex.I ∧
+    (sourceNativeAuxiliaryExtension .neumann (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode 0 1 Complex.I)).val.snd.val (mode 0) = 0 := by
+  have hd := sourceNativeAuxiliaryExtension_even .dirichlet (p := 3) (by norm_num) (by simp)
+    (sourceUnitPeriodSignedMode 0 1 Complex.I) 0
+  have hn := sourceNativeAuxiliaryExtension_even .neumann (p := 3) (by norm_num) (by simp)
+    (sourceUnitPeriodSignedMode 0 1 Complex.I) 0
+  constructor
+  · simpa [sourceUnitPeriodSignedMode, BoundaryCondition.extensionSign, lp.single_apply] using hd
+  · simpa [sourceUnitPeriodSignedMode, BoundaryCondition.extensionSign, lp.single_apply] using hn
+
+-- A negative input frequency retains its sign, its auxiliary phase and the factor one half.
+example :
+    (sourceNativeAuxiliaryExtension .neumann (p := 3) (by norm_num) (by simp)
+      (sourceUnitPeriodSignedMode (-2) 2 0)).val.snd.val (mode 4) = -Complex.I := by
+  have h := sourceNativeAuxiliaryExtension_even .neumann (p := 3) (by norm_num) (by simp)
+    (sourceUnitPeriodSignedMode (-2) 2 0) (-2)
+  simpa [sourceUnitPeriodSignedMode, BoundaryCondition.extensionSign, lp.single_apply,
+    neg_div, mul_div_assoc] using h
+
+-- Arbitrary Hilbert input retains both components' full Fourier energy under either sign.
+example (b : BoundaryCondition) (u : SourcePeriodicPair 1 2) :
+    ‖sourceNativeAuxiliaryExtension b (by norm_num) (by simp) u‖ ^ 2 =
+      ∑' n : ℤ, (‖u.fst.val (mode n)‖ ^ 2 + ‖u.snd.val (mode (-n))‖ ^ 2) := by
+  rw [norm_sourceNativeAuxiliaryExtension_two, ← sourceUnitPeriodSignedCoefficients.norm_map u]
+  have h := CoeffPair.norm_rpow_eq_tsum (p := 2) (by simp) (sourceUnitPeriodSignedCoefficients u)
+  simpa only [ENNReal.toReal_ofNat, Real.rpow_two, sourceUnitPeriodSignedCoefficients_fst,
+    sourceUnitPeriodSignedCoefficients_snd] using h
+
+end
+end Section5NativeChecks

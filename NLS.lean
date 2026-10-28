@@ -3347,6 +3347,7 @@ import NLS.ZakharovShabat.SourceAuxiliarySpaces
 import NLS.ZakharovShabat.SourceAuxiliarySeries
 import NLS.ZakharovShabat.SourceAuxiliaryExtension
 import NLS.ZakharovShabat.SourceAuxiliaryExtensionPhysical
+import NLS.ZakharovShabat.SourceAuxiliaryNativeExtension
 import NLS.ZakharovShabat.SourceAuxiliaryOperators
 import NLS.ZakharovShabat.SourceAuxiliarySpectra
 import NLS.ZakharovShabat.SourceAuxiliaryRootSpaces
