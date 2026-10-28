@@ -70209,3 +70209,45 @@ example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
 
 end
 end Section6ProofEqualityChecks
+
+namespace Section6ProofSeriesChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The p=1 endpoint retains the full joint sum and the original operator coefficient.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ < 1) :
+    HasSum (fun lk : ℤ × ℤ => φ.fst.val (-(n+lk.1)) * φ.snd.val (lk.1+lk.2) *
+      complementarySymbol n z lk.1 * complementarySymbol n z lk.2 *
+      (weightedResonantEvenVector (by simp) w φ n z hz h 1).fst.val (-lk.2))
+      ((sourcePotentialInverse (by simp) (sourceWeightedPeriodTwoInput w φ) n z hz
+        (sourcePotentialInverse (by simp) (sourceWeightedPeriodTwoInput w φ) n z hz
+          (sourceWeightedPeriodTwoInput w (weightedResonantEvenVector (by simp) w φ n z hz h 1)))).fst (-n)) := by
+  rw [← sourceLemma68_offDiagonal_original]
+  exact sourceLemma68_offDiagonal_hasSum (by simp) w φ n z hz h
+
+-- An actual analytic coefficient violates the literal sum on a negative strip,
+-- while the exact norm and both half-contractions are simultaneously available.
+example :
+    ‖sourceLemma68ProofPotential (-3)‖^2 = 1/1250 ∧
+    (∀ z : ℂ, ∀ hz : z ∈ resonantStrip (-3),
+      ‖weightedPotentialSquareInShift (by norm_num) sourceLemma68ProofWeight
+        (sourceLemma68ProofPotential (-3)) (-3) z hz‖ ≤ 1/2 ∧
+      ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one
+        (sourceLemma68ProofWeight.forgetPairWeight (sourceLemma68ProofPotential (-3))) (-3) z hz‖ ≤ 1/2) ∧
+    sourceResonantBMinusFunction (by norm_num)
+      (sourceWeightedPeriodTwoInput sourceLemma68ProofWeight (sourceLemma68ProofPotential (-3)))
+      (-3) ((Real.pi : ℂ)*(-3 : ℤ)) -
+      (sourceLemma68ProofPotential (-3)).fst.val 6 ≠
+    sourceLemma68PrintedOffDiagonalSeries (by norm_num) sourceLemma68ProofWeight
+      (sourceLemma68ProofPotential (-3)) (-3) ((Real.pi : ℂ)*(-3 : ℤ))
+      (center_mem_resonantStrip (-3)) (sourceLemma68ProofPotential_square_lt_one (-3) _ _) := by
+  refine ⟨norm_sourceLemma68ProofPotential_sq (-3),?_,?_⟩
+  · intro z hz
+    exact sourceLemma68ProofFamily_square_half (-3) (1/100) (by norm_num) z hz
+  · simpa using sourceLemma68_printed_series_source_counterexample (-3) (by norm_num)
+
+end
+end Section6ProofSeriesChecks

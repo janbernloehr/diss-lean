@@ -5,6 +5,44 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.8: correcting the weight in the off-diagonal proof series
+
+[SourceLemma6_8ProofSeries.lean](../NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean)
+compares the displayed equality on printed p.42. Its right side is
+w(2n) times the unweighted remainder b_n⁻−φ⁻_(2n). The extra weight must
+be removed there, or included on the left as well.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Literal denominators and indices | `sourceLemma68PrintedOffDiagonalSeries_restricted` | Exactly the two exclusions l≠n, k≠n and both λ−π-index denominators; the physical first-component signs remain reflected. |
+| Correct weight and exceptional equality | `sourceLemma68PrintedOffDiagonalSeries_eq`, `sourceLemma68_printed_series_equality_iff` | The printed equality holds precisely if w(2n)=1 or the remainder is zero. |
+| Original operator and full sum | `sourceLemma68_offDiagonal_original`, `sourceLemma68_offDiagonal_summable_norm`, `sourceLemma68_offDiagonal_hasSum` | Actual original-source second iterate, absolute joint convergence and product-index sum, for every finite p≥1 and source weight on the small-square domain. |
+| Concrete original analytic coefficient | `sourceLemma68_printed_series_source_counterexample` | Constant weight two, amplitudes 1/100, every nonzero signed strip center; the exact weighted norm squared is 1/1250. |
+| Simultaneous full-strip bounds | `sourceLemma68ProofFamily_square_half` | Both weighted and unit-weight squared operators are at most 1/2 for variable second amplitude of norm at most 1/100. |
+| Locally uniform cutoff refutation | `sourceLemma68_printed_series_not_locally_uniform` | Every open neighborhood of one fixed constant background and every proposed cutoff admit an actual positive-index counterexample. |
+
+The fixed background has first constant amplitude 1/100 and zero second
+component. Perturbing its second component at frequency −2n gives exact
+norm and distance formulas, a nonzero cubic remainder, and agreement with
+the original analytic coefficient. The witness can depend on the cutoff;
+this does not assert failure at infinitely many indices for one fixed potential.
+The subsequent valid weighted Hölder estimate remains available through
+`weighted_norm_tsum_offDiagonal_le` and
+`weightedResonantBMinus_remainder_le`. The separate earlier corrections to
+Lemma 6.8's main quantitative bounds retain their stated scopes.
+
+Two integration examples connect the full joint sum to the original
+operator at p=1, and combine the original analytic counterexample on strip
+−3 with its exact norm and both full-strip half-bounds.
+Section6OffDiagonalWeightSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records four focused groups
+and fourteen reviewed module hashes. The 47-group inventory remains open.
+
+Validation: `./scripts/check.sh` passes with 8,450 build jobs, 7,518
+public examples and a transitive axiom audit of 43,328 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.5: correcting the final equality in the proof
 
 [SourceLemma6_5ProofDisplay.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean)

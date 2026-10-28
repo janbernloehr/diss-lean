@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T13:30:39.533010+00:00",
-  "base_commit": "9a8055b2053b6f2e7d64ed8b78c04cf8557e4df7",
+  "published_utc": "2026-10-28T13:58:03.715661+00:00",
+  "base_commit": "2091dba5870425e38372f9e0a9106c4214a1dfbe",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 90,
-    "module_hash_checks": 1408,
-    "distinct_modules": 917
+    "review_records": 91,
+    "module_hash_checks": 1422,
+    "distinct_modules": 925
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9a8055b2053b6f2e7d64ed8b78c04cf8557e4df7",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the full-exponent proof-display correction and two integration examples.",
+    "base_commit": "2091dba5870425e38372f9e0a9106c4214a1dfbe",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected proof-series weight, local-cutoff refutation and two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8449,
-    "public_examples": 7516,
-    "transitive_NLS_declarations": 43292,
+    "build_jobs": 8450,
+    "public_examples": 7518,
+    "transitive_NLS_declarations": 43328,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4726,
-      "sha256": "82b9d0a09467b7a1c9480a74e678d085ef068c333434896512ba82d4b7011913"
+      "files": 4727,
+      "sha256": "26e911eec38606bdc0a8a059d4869ae8f8e1dbf8dd5a9bdc5b3f6bb18c854a26"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -22472,6 +22472,135 @@
       ],
       "declaration_inventory_count": 43292,
       "source_record_sha256": "df9f0abe8baeda3a1ec4c92c81560daaf954a6d6e5602409e15d0e6e38de3453"
+    },
+    "Section6OffDiagonalWeightSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "2091dba5870425e38372f9e0a9106c4214a1dfbe",
+      "updated_utc": "2026-10-28T13:58:03.715661+00:00",
+      "source_lines": [
+        [
+          3038,
+          3058
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            3038,
+            3047
+          ],
+          "requirement": "Actual original coefficient and the full off-diagonal double series.",
+          "finding": "The negative remainder is the original-source second-iterate coefficient of the actual even Neumann vector. The physical signs are first potential at -(n+l), second at l+k and vector at -k. The unweighted double series equals that remainder for every finite Banach exponent, source weight, signed strip and full closed-strip point on the weighted small-square domain.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma68_offDiagonal_original",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_eq_tsum",
+            "NLS.ZakharovShabat.sourceLemma68_offDiagonal_hasSum"
+          ]
+        },
+        {
+          "source_lines": [
+            3041,
+            3047
+          ],
+          "requirement": "Literal weight inserted on only the right side of the displayed equality.",
+          "finding": "The literal right side is formalized with exactly w(2n), both nonresonant index restrictions and both printed denominators. It equals w(2n) times the actual unweighted remainder. Consequently the printed equality holds exactly when w(2n)=1 or the remainder vanishes. Removing the extra right-side weight, or weighting the left side too, supplies the valid identity. This statement covers all finite Banach exponents, including p=1.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries",
+            "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries_restricted",
+            "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries_eq",
+            "NLS.ZakharovShabat.sourceLemma68_printed_series_equality_iff"
+          ]
+        },
+        {
+          "source_lines": [
+            3038,
+            3047
+          ],
+          "requirement": "A genuine original-coefficient counterexample, compatible with local cutoff quantifiers.",
+          "finding": "At p=2 and constant weight two, the explicit two-mode family has first amplitude 1/100 and second amplitude b at -2n. Its weighted and unit-weight squared operators are at most one half on the entire closed strip whenever norm(b)<=1/100. The actual original analytic negative coefficient has nonzero remainder at each nonzero center when b is nonzero. Every open neighborhood of the fixed background (first constant amplitude 1/100, second component zero) and every proposed common cutoff admit such a positive-index counterexample. This is a locally uniform family refutation, not a claim that one fixed potential fails at infinitely many indices. The separate fixed-amplitude family also covers negative centers.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma68ProofWeight",
+            "NLS.ZakharovShabat.sourceLemma68ProofPotential",
+            "NLS.ZakharovShabat.norm_sourceLemma68ProofPotential_sq",
+            "NLS.ZakharovShabat.sourceLemma68ProofFamily_norm_sq",
+            "NLS.ZakharovShabat.sourceLemma68ProofFamily_distance_sq",
+            "NLS.ZakharovShabat.sourceLemma68ProofFamily_square_half",
+            "NLS.ZakharovShabat.sourceLemma68ProofFamily_counterexample",
+            "NLS.ZakharovShabat.sourceLemma68_printed_series_not_locally_uniform",
+            "NLS.ZakharovShabat.sourceLemma68_printed_series_source_counterexample",
+            "NLS.ZakharovShabat.reverseCubicPotential_bminus_center",
+            "NLS.ZakharovShabat.sourceCorrectionEntryFunction_weightedInput"
+          ]
+        },
+        {
+          "source_lines": [
+            3041,
+            3058
+          ],
+          "requirement": "Joint absolute convergence and the valid subsequent weighted estimate.",
+          "finding": "The original unweighted terms are jointly absolutely summable, and the product-index HasSum yields the actual remainder; no finite truncation replaces the source series. Submultiplicativity transfers the output weight to the two potential factors and shifted input. The established weighted two-index Holder estimate retains their exact norms and double reciprocal row, independent of the erroneous extra factor in the preceding unweighted equality.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma68_offDiagonal_summable_norm",
+            "NLS.ZakharovShabat.sourceLemma68_offDiagonal_hasSum",
+            "NLS.ZakharovShabat.weighted_norm_tsum_offDiagonal_le",
+            "NLS.ZakharovShabat.norm_weightedOffDiagonalTerm_le",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_le"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean": "35935d6c75951993ff89551d28d5c230e60377e95fa39744706921cb1c75a496",
+        "NLS/ZakharovShabat/OffDiagonalSeries.lean": "3b2eebfffe2b1e642928c91dea939d2313588c74f6a1a3635fd5a274d7e41c50",
+        "NLS/ZakharovShabat/OffDiagonalHolder.lean": "2c9077af9c454b706e6ae0e6d22c922065e0c7c624a3cd4a3c0eb57def3ada10",
+        "NLS/ZakharovShabat/WeightedDoubleRow.lean": "4c27fb53e593945e57ca7e6135214c7abe4b2eda266a30b1d425cebe6fefc433",
+        "NLS/ZakharovShabat/ReverseCubicResonantPotential.lean": "9009fd18e9e4b43c3a143f76cc3b9db3508a23f22fab630b2215ff1b51a11a06",
+        "NLS/ZakharovShabat/SingleResonantPotential.lean": "e7629066fba8bcf4ddbfe0e95d32597da4f918b0f2b7bfb18f122d2e96320c79",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean": "e68558a5a4055e6cb4bfb674d7b0bc9388b2e937a54834b0e822bd985ce80189",
+        "NLS/ZakharovShabat/WeightedSquareEstimate.lean": "db292d04d99cb5452b995e6825925d185ef13602e67c0b3ce745f51701dc1136",
+        "NLS/ZakharovShabat/SourceResonantAnalytic.lean": "4f7787c9712cc8f77d188f021be758e0a1ca73c0b17da9c767d0756df06c56f3",
+        "NLS/ZakharovShabat/SourceResonantCoefficients.lean": "fd3d56720693f3f75b03f5fff50a2cfe352063f3b5cbecc9d01e496c6a8a04bb",
+        "NLS/ZakharovShabat/SourceResonantParity.lean": "8823bd69448f550a8620e065e39cccc1e7d2a67decf7b77d03070a88a446f827",
+        "NLS/ZakharovShabat/UnweightedEvenCorrection.lean": "e74ceab8f9ab9d8b2303377d8ec4f44718fcabf4f6ef54f40a3e6d897c9a653d",
+        "NLS/ZakharovShabat/UnweightedComplementary.lean": "cf9520cfd87c84ebe87fc65917100f806c383d527b6a4033b872b94a4de6a7aa",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean": "11ef442791c63ba60700c57e7c3a82366a60255e0e2544d8708b42da113c9d44"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          42
+        ],
+        "images": {
+          "Section6ProofReview-042.png": "dfd6f8b9f075640107a46dd53e9df8711ff2fa37bedd9dd4b6f47081a4c38f0c"
+        }
+      },
+      "qualification": "Four focused proof assertions on p.42, with fourteen locally reviewed module bodies. Exact physical signs, the full joint sum, p=1, original analytic coefficients, simultaneous contraction domains and local common-cutoff scope are retained. The extra-weight equality is formally refuted separately from the prior main Lemma 6.8 budget corrections. No single-potential infinitely-many-indices refutation is asserted. This does not certify all 47 Section 6 groups, every transitive inequality proof, or the dissertation. The p.44 comparison, source-wide assertion inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.norm_sourceLemma68ProofPotential_sq",
+        "NLS.ZakharovShabat.norm_weightedOffDiagonalTerm_le",
+        "NLS.ZakharovShabat.reverseCubicPotential_bminus_center",
+        "NLS.ZakharovShabat.sourceCorrectionEntryFunction_weightedInput",
+        "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries",
+        "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries_eq",
+        "NLS.ZakharovShabat.sourceLemma68PrintedOffDiagonalSeries_restricted",
+        "NLS.ZakharovShabat.sourceLemma68ProofFamily_counterexample",
+        "NLS.ZakharovShabat.sourceLemma68ProofFamily_distance_sq",
+        "NLS.ZakharovShabat.sourceLemma68ProofFamily_norm_sq",
+        "NLS.ZakharovShabat.sourceLemma68ProofFamily_square_half",
+        "NLS.ZakharovShabat.sourceLemma68ProofPotential",
+        "NLS.ZakharovShabat.sourceLemma68ProofWeight",
+        "NLS.ZakharovShabat.sourceLemma68_offDiagonal_hasSum",
+        "NLS.ZakharovShabat.sourceLemma68_offDiagonal_original",
+        "NLS.ZakharovShabat.sourceLemma68_offDiagonal_summable_norm",
+        "NLS.ZakharovShabat.sourceLemma68_printed_series_equality_iff",
+        "NLS.ZakharovShabat.sourceLemma68_printed_series_not_locally_uniform",
+        "NLS.ZakharovShabat.sourceLemma68_printed_series_source_counterexample",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder_eq_tsum",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder_le",
+        "NLS.ZakharovShabat.weighted_norm_tsum_offDiagonal_le"
+      ],
+      "declaration_inventory_count": 43328,
+      "source_record_sha256": "31ae5ecdcee08f772355fde19eca512b5382c73f6a9650f552f1095cec05b47c"
     }
   }
 }

@@ -2510,6 +2510,27 @@ potential action. The sufficient constant is the established exponent-only
 constant; no sharpness claim is made. The main Lemma 6.5 statement remains
 proved and requires no correction.
 
+## Lemma 6.8 proof: an extra weight in the double series (page 42)
+
+The printed equality identifies the unweighted negative remainder with a
+double Fourier sum containing w(2n). The correct unweighted sum has no
+such factor; equivalently, the left side must be multiplied by w(2n).
+`sourceLemma68PrintedOffDiagonalSeries_restricted` retains the exact
+printed denominators and excluded indices, and
+`sourceLemma68_printed_series_equality_iff` proves that the literal equality
+holds exactly when that weight is one or the remainder vanishes.
+
+The correction uses the actual original-source operator and an absolutely
+convergent joint series, for all finite Banach exponents. At p=2, constant
+weight two and an explicit two-mode potential give a nonzero remainder
+for the original analytic coefficient. Both weighted and unit-weight
+squared operators are at most one half on the full strip. The theorem
+`sourceLemma68_printed_series_not_locally_uniform` supplies counterexamples
+in every open neighborhood of a fixed small constant background beyond
+every proposed common cutoff. Its potentials depend on the cutoff; a
+single-potential infinite-index claim is not made. This correction is
+separate from the prior main Lemma 6.8 quantitative-budget refutations.
+
 ## Proposition 6.1 and Lemma 6.9: the printed displacement budget fails locally at zero
 
 Source: printed pages 35 and 43. At p=2 the printed right-hand side is

@@ -5,9 +5,9 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the final equality in Lemma 6.5's proof is formally refuted,
-and the valid inequality chain is proved for every finite Banach exponent
-on the original weighted spaces. The main lemma remains valid.
+Latest step: Lemma 6.8's off-diagonal proof series now has the corrected
+weight, a fully convergent original-source identity and an actual-coefficient
+refutation of the printed equality, including its locally uniform cutoff scope.
 See the [Section 6 comparison](coverage/SECTION_6.md) and
 [completion assessment](coverage/COMPLETENESS.md).
 The remaining dissertation source audit is still in progress.

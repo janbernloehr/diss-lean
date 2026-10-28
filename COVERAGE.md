@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Lemma 6.8 proof, p.42 | [Proof series](NLS/ZakharovShabat/SourceLemma6_8ProofSeries.lean), [comparison](coverage/SECTION_6.md) | Correct output weight, original operator and analytic coefficients, absolutely convergent joint sum, and counterexamples beyond every locally uniform cutoff. |
 | Lemma 6.5 proof, pp.38–39 | [Proof display](NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean), [comparison](coverage/SECTION_6.md) | Actual Young majorant, full original-domain identity, refuted equality and valid two-inequality chain for every finite Banach exponent and source weight. |
 | Complete Section 5 assertion inventory, pp.33–35 | [Ordered comparison](coverage/SECTION_5.md), [common neighborhood](NLS/ZakharovShabat/SourceAuxiliaryExteriorContours.lean) | 17 ordered groups retain actual physical domains, native reflections, full series, original Jordan multiplicities, four source corrections and height-qualified common-neighborhood quantifiers. |
 | Section 5 auxiliary reflections, pp.33–34 | [Native extension](NLS/ZakharovShabat/SourceAuxiliaryNativeExtension.lean), [comparison](coverage/SECTION_5.md) | Original periodic distributions, closed auxiliary targets, exact finite-p norm, bounded analytic reflection, full signed-input series and physical L2 agreement. |

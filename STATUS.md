@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: Lemma 6.5 proof inequality
+## Current milestone: Lemma 6.8 proof-series weight
+
+The p.42 double series equals w(2n) times the unweighted off-diagonal
+remainder. The printed equality puts that weight on only one side.
+The corrected identity now has joint absolute convergence and exact
+original-source operator agreement for every finite Banach exponent.
+An actual-coefficient counterexample persists in every neighborhood of
+one fixed background and beyond every common cutoff. Both weighted and
+unit-weight squared operators remain at most one half on the full strip.
+See the [Section 6 comparison](coverage/SECTION_6.md).
+
+Validation: `./scripts/check.sh` passes with 8,450 build jobs, 7,518
+public examples and a transitive axiom audit of 43,328 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Continue the 47-group Section 6 comparison. The
+[completion qualifications](coverage/COMPLETENESS.md) remain.
+
+## Previous milestone: Lemma 6.5 proof inequality
 
 The final equality in Lemma 6.5's proof is now formally refuted: a nonzero
 resonant input gives zero on the left and a positive printed expression on

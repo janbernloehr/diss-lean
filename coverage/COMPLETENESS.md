@@ -105,6 +105,10 @@ Section 6 now also has a formal refutation of the final equality in the
 Lemma 6.5 proof, together with the valid original-domain inequality chain
 for every finite Banach exponent. The main lemma remains valid. This is a
 four-group focused comparison; the 47-group ordered inventory remains open.
+Four further focused groups now cover the p.42 proof-series weight,
+original-source joint sum and analytic coefficient, with a locally uniform
+cutoff counterexample and both simultaneous half-contraction bounds.
+The 47-group Section 6 inventory and the p.44 comparison remain open.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated
