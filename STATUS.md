@@ -1,6 +1,25 @@
 # Implementation status
 
-## Current milestone: the literal p.38 double-inverse estimates
+## Current milestone: completing the Lemma 6.5 proof interfaces
+
+The full signed double Fourier series now converges in the original
+weighted l1 pair norm and represents the actual original-domain vector.
+Direct bounds for the selected reciprocal moments give both near/far
+estimates and their exact 2^(1/p) recombination, including p=1 and the
+zero strip. One explicit exponent-only constant also gives the corrected
+final Young inequality. See the [Section 6 comparison](coverage/SECTION_6.md).
+
+Validation: `./scripts/check.sh` passes with 8,455 build jobs, 7,524
+public examples and a transitive axiom audit of 43,447 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next: continue the ordered Section 6 comparison through the common-cutoff
+and P/Q-reduction assertions. The final p.44 summed gap constant and the
+full 47-group inventory remain open. Preserve the
+[completion qualifications](coverage/COMPLETENESS.md).
+
+## Previous milestone: the literal p.38 double-inverse estimates
 
 Both original components now have the literal coefficient series and
 convergent weighted distance-denominator majorants. The exact near/far

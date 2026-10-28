@@ -70336,3 +70336,53 @@ example (w : SpectralWeight) (φ f : WeightedCoeff w.toWeight 3) :
 
 end
 end Section6LiteralSandwichChecks
+
+namespace Section6ExpansionMomentChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+open Classical
+
+-- At the free zero center, the full l1 Fourier sum represents the original derivative-domain g.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) :
+    let G := sourceLemma65Vector_original (by simp) w φ f 0 0 (by simpa using center_mem_resonantStrip 0)
+    HasSum (fun kl : ℤ × ℤ => if kl.1 = 0 ∨ kl.2 = 0 then 0 else
+      (WeightedCoeffPair.toMax w.toWeight 1).symm
+        (weightedMode (p := 1) w.toWeight (-kl.1)
+          (φ.fst.val (-(kl.1+kl.2))*f.snd.val kl.2 /
+            ((-(Real.pi:ℂ)*kl.1)*(-(Real.pi:ℂ)*kl.2))),
+         weightedMode (p := 1) w.toWeight kl.1
+          (φ.snd.val (kl.1+kl.2)*f.fst.val (-kl.2) /
+            ((-(Real.pi:ℂ)*kl.1)*(-(Real.pi:ℂ)*kl.2))))) G ∧
+    (∀ k, let t := weightedPotentialInverse (by simp) w φ 0 0 (by simpa using center_mem_resonantStrip 0) f
+          let g := sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight 0 0
+            (by simpa using center_mem_resonantStrip 0) t)
+          G.fst.val k = g.fst.val k ∧ G.snd.val k = g.snd.val k) := by
+  constructor
+  · simpa only [zero_sub,neg_mul] using sourceLemma65Vector_original_restricted_hasSum
+      (by simp) w φ f 0 0 (by simpa using center_mem_resonantStrip 0)
+  · intro k
+    exact sourceLemma65Vector_original_coefficients (by simp) w φ f 0 0
+      (by simpa using center_mem_resonantStrip 0) k
+
+local instance section6ExpansionFactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- The negative odd strip uses the exact half-bracket, together with the corrected original norm chain.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3)
+    (z : ℂ) (hz : z ∈ resonantStrip (-3)) :
+    (∑' kl, if sourceLemma65ProofFar (-3) kl.1 kl.2 then
+      (sourceLemma65ProofReciprocal (-3) kl)^(3:ℝ≥0∞).conjExponent.toReal else 0)^(1/(3:ℝ≥0∞).conjExponent.toReal) ≤
+      sourceLemma65ProofConstant (p := 3) (by norm_num)^2*(5/2:ℝ)^(-(1/3:ℝ)) ∧
+    w.shiftedPairNorm (-3) (weightedPotentialInverse (by norm_num) w φ (-3) z hz
+      (weightedPotentialInverse (by norm_num) w φ (-3) z hz f))^3 ≤
+      sourceLemma65PrintedProofBudget (sourceLemma65ProofConstant (p := 3) (by norm_num)) w φ (-3) f := by
+  constructor
+  · rw [sourceLemma65ProofConstant_sq]
+    have h := sourceLemma65Moment_far_bracket (p := 3) (by norm_num) (by norm_num) (-3)
+    norm_num at h ⊢
+    exact h
+  · obtain ⟨h1,h2⟩ := sourceLemma65Proof_corrected_chain (by norm_num) w φ f (-3) z hz
+    have h := h1.trans h2
+    simpa using h
+
+end
+end Section6ExpansionMomentChecks

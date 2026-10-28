@@ -114,8 +114,12 @@ holds for original counted roots on one common neighborhood and cutoff.
 The final 1/2^p summed inequality and the 47-group Section 6 inventory remain open.
 Six additional p.38 groups now have literal component series, joint weighted
 majorization, exact near/far regions, selected Hölder moments and explicit
-p=1 estimates. The vector-valued Fourier HasSum interface and direct
-p>1 reciprocal-moment constants remain separate checks.
+p=1 estimates. Five further groups now supply the vector-valued Fourier
+HasSum in the original weighted l1 pair norm, direct selected reciprocal
+moment constants for p>1, the endpoint and exact 2^(1/p) recombination.
+One explicit constant also gives the corrected final Young budget; the
+printed equality remains refuted. The full Section 6 inventory and final
+p.44 summed constant are still open.
 Continue through Section 6, then later sections in source order.
 Classify each substantive
 claim as proved with exact scope, formally refuted with a separately stated

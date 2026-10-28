@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T15:12:01.481143+00:00",
-  "base_commit": "191ed65f3ac7a5dad4972aa01d0e30fd868b9985",
+  "published_utc": "2026-10-28T15:47:07.459479+00:00",
+  "base_commit": "3fbf02155896d922a86792acdf7738d69313f59a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 93,
-    "module_hash_checks": 1438,
-    "distinct_modules": 933
+    "review_records": 94,
+    "module_hash_checks": 1449,
+    "distinct_modules": 939
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "191ed65f3ac7a5dad4972aa01d0e30fd868b9985",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the p.38 literal double-inverse component series, joint weighted majorization, exact regions, selected Holder moments, explicit p=1 endpoint and two integration examples.",
+    "base_commit": "3fbf02155896d922a86792acdf7738d69313f59a",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the full signed Fourier HasSum, direct selected reciprocal-moment bounds, one shared proof constant, exact recombination, corrected Young budget and two integration examples.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8453,
-    "public_examples": 7522,
-    "transitive_NLS_declarations": 43409,
+    "build_jobs": 8455,
+    "public_examples": 7524,
+    "transitive_NLS_declarations": 43447,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4730,
-      "sha256": "53f942abbce35f6ccc31aae8f5ae689c9a434e8f276625db0ed842f47bc0b093"
+      "files": 4732,
+      "sha256": "6a9ff8cdbe41d7d824b1539c9ab1a994b4d0affd051c7657b8c839163e6b13da"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -22909,6 +22909,173 @@
       ],
       "declaration_inventory_count": 43409,
       "source_record_sha256": "8d45e567a1bc4122a906b7d52cdd28250651019f2485146e224f35e0cbd9c0ec"
+    },
+    "Section6ExpansionSourceComparison-2026-10-28": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3fbf02155896d922a86792acdf7738d69313f59a",
+      "updated_utc": "2026-10-28T15:47:07.459479+00:00",
+      "source_lines": [
+        [
+          2558,
+          2661
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            2558,
+            2571
+          ],
+          "requirement": "The displayed full signed double Fourier expansion of the actual g.",
+          "finding": "The full product-index Fourier series has a HasSum in the original weighted l1 pair norm. Raw mode norms are exact, and the positive-oriented vector terms have jointly summable norms; reflection gives the other physical component. The target representative has exactly both raw coefficient functions of the actual original derivative-domain g=A^-1 Q Phi A^-1 Q f. A second HasSum retains both literal denominators and both resonant exclusions. Every finite p>=1, signed center and point of the closed strip is included. This proves the topology needed for the subsequent weighted l1 estimates; it does not claim joint absolute convergence in the stronger derivative-domain norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Vector_mode_norm",
+            "NLS.ZakharovShabat.sourceLemma65Vector_summable",
+            "NLS.ZakharovShabat.sourceLemma65Vector_hasSum",
+            "NLS.ZakharovShabat.sourceLemma65Vector_reflection_mode",
+            "NLS.ZakharovShabat.sourceLemma65Vector_hasSum_true",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_coefficients",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_components",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_hasSum",
+            "NLS.ZakharovShabat.sourceLemma65Vector_original_restricted_hasSum"
+          ]
+        },
+        {
+          "source_lines": [
+            2586,
+            2605
+          ],
+          "requirement": "The selected far reciprocal moment and its half-bracket decay.",
+          "finding": "The exact strict far indicator is dominated by the sum of outside-first-window and outside-second-window product moments. Their sums factor, and taking the q-th root yields at most 2 times the full lattice norm times its one-factor window-tail norm. The centered punctured reciprocal tail is bounded by 16*p*|n|^(-1/p), so the selected moment has direct decay. Nonzero radii are then compared with the exact half-radius bracket. The zero strip uses the full selected-moment bound. These are scalar moment estimates for the literal region, not an inference from an operator norm estimate.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_le",
+            "NLS.ZakharovShabat.sourceLemma65Moment_lattice_tail",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_decay",
+            "NLS.ZakharovShabat.sourceLemma65Moment_half_bracket",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_bracket",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far",
+            "NLS.ZakharovShabat.sourceLemma65Moment_far_all"
+          ]
+        },
+        {
+          "source_lines": [
+            2613,
+            2629
+          ],
+          "requirement": "The selected near moment, exact tail and inverse weight.",
+          "finding": "Every selected q-moment is bounded by the squared conjugate-lattice constant, by exact factorization of the full moment and nonnegative restriction. The near Holder estimate retains the exact boundary-inclusive remainder and 1/w(n). Its scalar norm bound and the far bound extend to p=1 using the already proved conjugate-infinity estimates; no q.toReal=0 power is used to fake that endpoint.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Moment_selected_le",
+            "NLS.ZakharovShabat.sourceLemma65Moment_near",
+            "NLS.ZakharovShabat.sourceLemma65Moment_near_all",
+            "NLS.ZakharovShabat.sourceLemma65Proof_near_one",
+            "NLS.ZakharovShabat.sourceLemma65Proof_far_one"
+          ]
+        },
+        {
+          "source_lines": [
+            2586,
+            2649
+          ],
+          "requirement": "One constant and the exact 2^(1/p) recombination for both original components.",
+          "finding": "Choose c_p=sqrt(D_p), where D_p is the existing weightedDoubleConstant, depending only on p. It is positive and its square equals D_p. This one choice supplies both source subsum bounds for every finite p>=1 and every signed center. The half-to-full bracket comparison has exactly 2^(1/p), and both physical component estimates hold with the original opposite input shifts and unchanged tail norms. This is an explicit enlarged choice for Lemma 6.5, not a claim of optimality or a replacement of the separately proved c_2=2 choice in Lemma 6.4.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Moment_budget_four",
+            "NLS.ZakharovShabat.sourceLemma65Moment_half_to_full",
+            "NLS.ZakharovShabat.sourceLemma65Moment_recombine",
+            "NLS.ZakharovShabat.sourceLemma65Moment_recombine_true",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant_sq",
+            "NLS.ZakharovShabat.sourceLemma65ProofConstant_pos",
+            "NLS.ZakharovShabat.sourceLemma65Moment_original_bounds"
+          ]
+        },
+        {
+          "source_lines": [
+            2651,
+            2661
+          ],
+          "requirement": "The corrected final Young display with that same chosen constant.",
+          "finding": "The actual shifted p-power square is bounded by the actual Young majorant, which is bounded by the printed budget using the same c_p=sqrt(D_p). The second inequality follows algebraically from the existing stronger original-norm square budget. The previously refuted printed equality remains false and is not relabeled as proved. This closes the remaining explicit constant comparison for this proof passage while retaining that correction.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma65Proof_young_budget",
+            "NLS.ZakharovShabat.sourceLemma65Proof_corrected_chain",
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant",
+            "NLS.ZakharovShabat.sourceLemma65PrintedProofBudget",
+            "NLS.ZakharovShabat.sourceLemma65_square_le_young",
+            "NLS.ZakharovShabat.sourceLemma65YoungMajorant_le",
+            "NLS.ZakharovShabat.sourceLemma65_printed_equality_strict"
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma6_5ProofExpansion.lean": "5167501f8d15699fbd25ba7e022537238088c60f281c4f5c318c96ce096e2413",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofMoments.lean": "4f53e174d711d2ae918724273e7717cc4ea6136cba73abb331d984635fed7090",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofSeries.lean": "05780663d100fccccee5e9ef3979f73cd20a1fab030129c47adb03aaddfb27f4",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "293d6b7218f45fe21ba7178d5fe33c4c77cdf0e1567de46c0df8875fbcdbf6ed",
+        "NLS/SequenceSpaces/ReciprocalNorm.lean": "f8757ec64d037a9d11def7a84e46f8f753cb12fa952b3d59aec203e6ca848861",
+        "NLS/SequenceSpaces/PuncturedLattice.lean": "dd7910dc04ab5f23fc841db7aa6f0b063b821970b0e03e48a54b2df1cdad03a2",
+        "NLS/SequenceSpaces/SpectralReflectionTail.lean": "31c8c7fcf2d948be7aeb61a8e9fe46c3595b7a05bf1c11e43a11d769c7d7e4cd",
+        "NLS/ZakharovShabat/SourceLemma6_5ProofDisplay.lean": "f0cadd4dcd5c6b120e636146186262b7625a6986abf10da2afcdb19da664476f",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean": "11ef442791c63ba60700c57e7c3a82366a60255e0e2544d8708b42da113c9d44",
+        "NLS/ZakharovShabat/ComplementaryDoubleEstimate.lean": "79e75e7d2161351803dc3e3d0b125cef4532c2d87763f8741ec7e1644148d890",
+        "NLS/ZakharovShabat/SourceWeightedPencil.lean": "8b3be0f7712dd418e05b029a907fde12cacb8956063d05ccff733d46f7579da8"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          38,
+          39
+        ],
+        "images": {
+          "Section6ProofReview-038.png": "8543fbdab3dec65515f32e846c110e617f7673dd24e3c1ebb8d3af245ee52f4a",
+          "Section6ProofReview-039.png": "42c556f38be28145bfa4d5f0bbe7795f98f95787298b93d3e13126d81ceda4ad"
+        }
+      },
+      "qualification": "Five focused groups complete the previously pending vector HasSum and direct selected reciprocal-moment interfaces in the pp.38-39 Lemma 6.5 proof, with an explicit shared exponent-only constant and the corrected final Young inequality. Eleven module bodies were reviewed. Convergence is in the original weighted l1 pair norm, with coefficientwise identification of the actual original-domain vector; stronger derivative-domain absolute convergence is not claimed. The chosen Lemma 6.5 constant is enlarged and does not replace Lemma 6.4 c_2=2. Earlier immutable review records describe their earlier scope; these specific pending interfaces are now supplied. The printed p.39 equality, p.42 missing weight and p.44 middle power comparison retain their corrections. The final p.44 summed constant, full 47-group Section 6 inventory, source-wide inventory, exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation remain unfinished. This is not a transitive semantic audit or dissertation completion certificate.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.sourceLemma65Moment_budget_four",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_all",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_bracket",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_decay",
+        "NLS.ZakharovShabat.sourceLemma65Moment_far_le",
+        "NLS.ZakharovShabat.sourceLemma65Moment_half_bracket",
+        "NLS.ZakharovShabat.sourceLemma65Moment_half_to_full",
+        "NLS.ZakharovShabat.sourceLemma65Moment_lattice_tail",
+        "NLS.ZakharovShabat.sourceLemma65Moment_near",
+        "NLS.ZakharovShabat.sourceLemma65Moment_near_all",
+        "NLS.ZakharovShabat.sourceLemma65Moment_original_bounds",
+        "NLS.ZakharovShabat.sourceLemma65Moment_recombine",
+        "NLS.ZakharovShabat.sourceLemma65Moment_recombine_true",
+        "NLS.ZakharovShabat.sourceLemma65Moment_selected_le",
+        "NLS.ZakharovShabat.sourceLemma65PrintedProofBudget",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant_pos",
+        "NLS.ZakharovShabat.sourceLemma65ProofConstant_sq",
+        "NLS.ZakharovShabat.sourceLemma65Proof_corrected_chain",
+        "NLS.ZakharovShabat.sourceLemma65Proof_far_one",
+        "NLS.ZakharovShabat.sourceLemma65Proof_near_one",
+        "NLS.ZakharovShabat.sourceLemma65Proof_young_budget",
+        "NLS.ZakharovShabat.sourceLemma65Vector_hasSum",
+        "NLS.ZakharovShabat.sourceLemma65Vector_hasSum_true",
+        "NLS.ZakharovShabat.sourceLemma65Vector_mode_norm",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_coefficients",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_components",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_hasSum",
+        "NLS.ZakharovShabat.sourceLemma65Vector_original_restricted_hasSum",
+        "NLS.ZakharovShabat.sourceLemma65Vector_reflection_mode",
+        "NLS.ZakharovShabat.sourceLemma65Vector_summable",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant",
+        "NLS.ZakharovShabat.sourceLemma65YoungMajorant_le",
+        "NLS.ZakharovShabat.sourceLemma65_printed_equality_strict",
+        "NLS.ZakharovShabat.sourceLemma65_square_le_young"
+      ],
+      "declaration_inventory_count": 43447,
+      "source_record_sha256": "13efb720593b5ac88d7c0aa196b63813007043f25f433b0aa9d3e803d00be080"
     }
   }
 }

@@ -5,6 +5,53 @@ is the full period-two coefficient space, with the original component-sum
 norm. The existing period-one embeddings do not by themselves establish this
 statement for arbitrary period-two input.
 
+## Lemma 6.5: full Fourier convergence and the reciprocal-moment constants
+
+[SourceLemma6_5ProofExpansion.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofExpansion.lean)
+and [SourceLemma6_5ProofMoments.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofMoments.lean)
+supply the remaining interfaces in the proof on pp.38–39, extraction
+lines 2558–2661. The earlier literal component and Hölder results now
+connect to a full vector-valued Fourier sum and direct scalar moment bounds.
+
+| Assertion | Public entry point | Scope |
+| --- | --- | --- |
+| Full signed Fourier expansion | `sourceLemma65Vector_original_hasSum`, `sourceLemma65Vector_original_restricted_hasSum` | Product-index HasSum in the original weighted l1 pair norm, with both literal denominators and resonant exclusions. |
+| Original-domain identification | `sourceLemma65Vector_original_coefficients`, `sourceLemma65Vector_original_components` | The limit has precisely both raw components of the actual g=A⁻¹ Q Φ A⁻¹ Q f. |
+| Far reciprocal moment | `sourceLemma65Moment_far_le`, `sourceLemma65Moment_lattice_tail`, `sourceLemma65Moment_far_bracket` | Exact strict-far region, two one-factor tails and the printed half-radius bracket; zero center included. |
+| Near reciprocal moment | `sourceLemma65Moment_selected_le`, `sourceLemma65Moment_near_all` | Full-moment factorization, nonnegative restriction, exact Fourier tail and inverse weight. |
+| Endpoint and shared constant | `sourceLemma65Moment_far_all`, `sourceLemma65ProofConstant_pos`, `sourceLemma65ProofConstant_sq` | One positive exponent-only c_p; finite p≥1, using the supremum estimate at p=1. |
+| Both recombined component estimates | `sourceLemma65Moment_half_to_full`, `sourceLemma65Moment_original_bounds` | Exact factor 2^(1/p), original signed shifts, symmetric tail boundary and every closed strip. |
+| Corrected final Young display | `sourceLemma65Proof_young_budget`, `sourceLemma65Proof_corrected_chain` | The actual square is bounded by the Young majorant, then by the printed budget with that same constant. |
+
+The explicit choice is c_p = sqrt(D_p), where D_p is the existing
+`weightedDoubleConstant`. It is an enlarged constant for this Lemma 6.5
+proof; it does not replace the separately proved choice c₂=2 in Lemma 6.4.
+The near/far scalar estimates are derived directly from their selected
+reciprocal moments. The final Young-budget comparison uses the existing
+stronger square budget and algebra with c_p²=D_p.
+
+Fourier convergence is asserted in the weighted l1 pair norm used in the
+proof. The representative agrees coefficientwise with the actual original
+derivative-domain vector; no stronger derivative-domain absolute convergence
+is asserted. The p.39 equality remains formally refuted. Its correct
+replacement is the chain of two inequalities above.
+
+The first integration example checks the full literal series and original
+domain identification at the free zero center with p=1. The second checks
+the exact half-bracket at the negative odd strip −3 with p=3 and links it
+to the corrected original shifted-norm estimate.
+
+Section6ExpansionSourceComparison-2026-10-28 in the
+[source-review index](source-review-index.json) records five focused groups
+and eleven reviewed module hashes. It supplies the interfaces left open in
+the previous milestone's historical record. The full 47-group inventory,
+the final p.44 summed constant and the other completion qualifications remain open.
+
+Validation: `./scripts/check.sh` passes with 8,455 build jobs, 7,524
+public examples and a transitive axiom audit of 43,447 NLS declarations.
+The 21 inherited warnings are unchanged; the two new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
 ## Lemma 6.5: the literal double-inverse series and Hölder steps
 
 [SourceLemma6_5ProofSeries.lean](../NLS/ZakharovShabat/SourceLemma6_5ProofSeries.lean)
@@ -38,11 +85,10 @@ and the p=1 norm bound at the free center of strip −4. The other checks
 the negative boundary n=−4, k=l=−2, its retained potential coefficient,
 and the p=3 near estimate.
 
-This step proves coordinate series and joint absolute scalar summability.
-A vector-valued `HasSum` interface for the displayed Fourier expansion
-remains to be supplied. The direct comparison of the selected reciprocal
-moments with the printed general-p constants c_p²/⟨n/2⟩^(1/p) and c_p²
-also remains open; the existing operator norm estimate is already proved.
+This earlier step proves coordinate series and joint absolute scalar summability.
+The expansion/moment milestone above now supplies the vector-valued `HasSum`
+and direct comparisons with c_p²/⟨n/2⟩^(1/p) and c_p², using one explicit
+exponent-only constant. The existing operator norm estimate remains valid.
 Section6SandwichSourceComparison-2026-10-28 in the
 [source-review index](source-review-index.json) records six focused groups
 and nine reviewed module hashes. The earlier p.39, p.42 and p.44 corrections
