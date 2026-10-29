@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 8 now proves the exact full-exterior sine bound with
-constant four and the literal filled sinc integral. All 36 groups in the
-[ordered ledger](coverage/SECTION_8_ASSERTIONS.md) have been compared:
-28 matched and eight corrected, including the neighboring-band index and
-midpoint sign. The [completion assessment](coverage/COMPLETENESS.md) retains
-Section 7's partial clauses and the wider qualifications.
+Latest step: Section 9 now constructs local analytic branches through simple
+boundary roots at arbitrary complex sources. All fifteen groups in its
+[ordered ledger](coverage/SECTION_9_ASSERTIONS.md) are compared: twelve matched
+and three corrected, with the same auxiliary-label correction applied to
+three source passages. The [completion assessment](coverage/COMPLETENESS.md)
+retains Section 7's partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

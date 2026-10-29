@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T01:07:30.291004+00:00",
-  "base_commit": "b899e0999fd2418dfa67e6b23acda8e5da0784f6",
+  "published_utc": "2026-10-29T01:32:24.371823+00:00",
+  "base_commit": "8171c98cde0543074e08526bdd2d6e986a62baff",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 110,
-    "module_hash_checks": 1913,
-    "distinct_modules": 1207
+    "review_records": 111,
+    "module_hash_checks": 1938,
+    "distinct_modules": 1220
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b899e0999fd2418dfa67e6b23acda8e5da0784f6",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes eight exact Section 8 sine lemmas and two integration examples. The ordered Section 8 ledger now compares all 36 groups with 28 matches and eight proved corrections. The exact exterior constant four resolves the earlier partial group; the remaining proof displays retain root multiplicities, complex perturbations, critical-product normalization and collapsed-gap estimates. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "8171c98cde0543074e08526bdd2d6e986a62baff",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes three Section 9 local analytic branch theorems and two integration examples. All fifteen ordered Section 9 groups are compared, with twelve matches and three corrected occurrences of the existing auxiliary-label discrepancy. Arbitrary complex simple roots, exact physical normalization, actual spectra and multiplicities, and full locally uniform lp sample bounds are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8504,
-    "public_examples": 7572,
-    "transitive_NLS_declarations": 44234,
+    "build_jobs": 8505,
+    "public_examples": 7574,
+    "transitive_NLS_declarations": 44237,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4781,
-      "sha256": "090ec2f999a26000cc702a8f3d2e5261650bf15987fc94c66343acc21ef84b86"
+      "files": 4782,
+      "sha256": "0d9a7cb79f776425d1209d2eeb17c5284de19550ed0bd26997aeb362bfe4de0f"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -28178,6 +28178,539 @@
       ],
       "declaration_inventory_count": 44234,
       "source_record_sha256": "d716dbfc50ad4316d5ff5e04ffeefe426201dd13e737a6337041426cd59a1748"
+    },
+    "Section9OrderedSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "8171c98cde0543074e08526bdd2d6e986a62baff",
+      "updated_utc": "2026-10-29T01:32:24.371823+00:00",
+      "source_lines": [
+        [
+          3950,
+          3966
+        ],
+        [
+          3968,
+          3978
+        ],
+        [
+          3980,
+          3983
+        ],
+        [
+          3994,
+          4010
+        ],
+        [
+          4012,
+          4017
+        ],
+        [
+          4019,
+          4023
+        ],
+        [
+          4026,
+          4031
+        ],
+        [
+          4034,
+          4046
+        ],
+        [
+          4048,
+          4051
+        ],
+        [
+          4055,
+          4058
+        ],
+        [
+          4061,
+          4063
+        ],
+        [
+          4065,
+          4068
+        ],
+        [
+          4078,
+          4081
+        ],
+        [
+          4082,
+          4085
+        ],
+        [
+          4086,
+          4093
+        ]
+      ],
+      "additional_source_lines": [
+        [
+          2113,
+          2125
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S9-001",
+          "source_lines": [
+            3950,
+            3966
+          ],
+          "requirement": "Ordinary Dirichlet physical monodromy, zeros and the literal negative product.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The ordinary Dirichlet characteristic is the literal physical monodromy expression (m4+m3-m2-m1)/(2i) for every Hilbert source.",
+            "Its zeros are exactly the actual interval Dirichlet spectrum, with analytic zero order equal to algebraic multiplicity. The canonical symmetric product has prefactor -1 and denominator pi_0=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2SeparatedCharacteristic",
+            "NLS.ZakharovShabat.periodOneBoundaryCharacteristic_eq_l2",
+            "NLS.ZakharovShabat.l2SeparatedCharacteristic_source_eq_zero_iff",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_iff_l2_endpoint",
+            "NLS.ZakharovShabat.analyticOrderAt_l2SeparatedCharacteristic_source",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.product"
+          ],
+          "qualification": "Physical agreement is proved by finite Fourier density and continuity, without a continuous-representative hypothesis. The entire function is normalized, not just its zero set. Every central and repeated root is retained."
+        },
+        {
+          "ordered_group": "S9-002",
+          "source_lines": [
+            3968,
+            3978
+          ],
+          "requirement": "Ordinary Neumann physical monodromy, zeros and the literal negative product.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The ordinary Neumann characteristic is the literal monodromy expression (m4-m3+m2-m1)/(2i), with the opposite separated endpoint sign.",
+            "The same actual-spectrum, multiplicity and negative-product statements hold for the complete Neumann root sequence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2SeparatedCharacteristic",
+            "NLS.ZakharovShabat.l2SeparatedCharacteristic_eq_zero_iff",
+            "NLS.ZakharovShabat.periodOneBoundaryCharacteristic_eq_l2",
+            "NLS.ZakharovShabat.analyticOrderAt_l2SeparatedCharacteristic_source",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.product"
+          ],
+          "qualification": "The common BoundaryCondition argument is instantiated with neumann. This preserves the physical endpoint domain and the exceptional zero-mode denominator."
+        },
+        {
+          "ordered_group": "S9-003",
+          "source_lines": [
+            3980,
+            3983
+          ],
+          "requirement": "Extension from Hilbert sources using asymptotic spectral products.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The normalized boundary products extend to every finite source exponent p>1. They agree with the physical Hilbert characteristics in the appropriate exponent-inclusion direction.",
+            "Agreement on finite Fourier sources uniquely determines the continuous extension for each spectral parameter."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBoundaryCharacteristic_eq_l2_of_two_le",
+            "NLS.ZakharovShabat.sourceBoundaryCharacteristic_eq_l2_of_le_two",
+            "NLS.ZakharovShabat.sourceBoundaryCharacteristic_unique_continuous",
+            "NLS.ZakharovShabat.BoundaryCondition.tendstoLocallyUniformlyOn_canonicalProduct"
+          ],
+          "qualification": "Above two this is extension from Hilbert sources; below two it is restriction along the inclusion into the Hilbert space. No assertion that all Hilbert sources belong to a stronger source space is made."
+        },
+        {
+          "ordered_group": "S9-004",
+          "source_lines": [
+            3994,
+            4010
+          ],
+          "requirement": "Lemma 9.1(i): joint analyticity, exact ordinary products and spectra.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Both actual ordinary characteristic functions are jointly analytic in the spectral parameter and original complex source.",
+            "Their literal symmetric root products converge locally uniformly on the whole spectral plane at each fixed source, and their zeros and analytic orders are exactly the actual spectra and algebraic multiplicities."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma9_1_data",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.analytic",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.product",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.spectrum",
+            "NLS.ZakharovShabat.SourceLemma9_1Data.multiplicity",
+            "NLS.ZakharovShabat.localUniformAnalyticApproximation_boundaryCharacteristic",
+            "NLS.ZakharovShabat.analyticOnNhd_periodOneBoundaryCharacteristic_joint"
+          ],
+          "qualification": "Joint analyticity is proved by uniform approximation with intrinsic central polynomials on actual Banach neighborhoods, then composition with the original interval extension. This does not assert joint local uniformity for lexicographically labeled finite cutoffs."
+        },
+        {
+          "ordered_group": "S9-005",
+          "source_lines": [
+            4012,
+            4017
+          ],
+          "requirement": "Lemma 9.1(ii): continuity at each real-type base.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Each ordinary signed boundary coordinate is continuous at every real-type source under arbitrary complex source perturbations.",
+            "The implementation also proves continuity in the full lp displacement norm and one source neighborhood controlling all signed coordinates of both ordinary sequences."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma9_1_real",
+            "NLS.ZakharovShabat.SourceLemma9_1RealData.continuous",
+            "NLS.ZakharovShabat.SourceLemma9_1RealData.norm_continuity",
+            "NLS.ZakharovShabat.SourceLemma9_1RealData.exists_uniform_coordinate_neighborhood",
+            "NLS.ZakharovShabat.exists_sourceBoundaryDisplacement_analytic_common_domain"
+          ],
+          "qualification": "The coordinate result includes the finite central block. No global continuity of lexicographic labels at arbitrary complex bases is assumed."
+        },
+        {
+          "ordered_group": "S9-006",
+          "source_lines": [
+            4019,
+            4023
+          ],
+          "requirement": "Lemma 9.1(iii): ordinary Dirichlet and Neumann roots in their indexed periodic gaps.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At real-type sources both ordinary roots at index n lie in the original closed periodic gap n, with strict separation from the neighboring gaps.",
+            "The endpoints may coincide. In a collapsed gap either boundary root equals the common endpoint."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_mem_gap",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_interlacing_chain",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap",
+            "NLS.ZakharovShabat.SourceLemma9_1RealData.real"
+          ],
+          "qualification": "The chain is lambda_(n-1)^+ < lambda_n^- <= mu_n,nu_n <= lambda_n^+ < lambda_(n+1)^-. It places no ordering between mu_n and nu_n and covers every integer index."
+        },
+        {
+          "ordered_group": "S9-007",
+          "source_lines": [
+            4026,
+            4031
+          ],
+          "requirement": "Proof of Lemma 9.1: analytic products, Rouche continuity and transported signed discriminant levels.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Joint analytic approximation supplies the product argument omitted in the source. Stable Rouche prefix and suffix counts and imaginary-part confinement give the real-base coordinate continuity.",
+            "The indexed gap inequalities are transferred from real finite Fourier approximants using continuity. The signed discriminant level at either boundary root follows on that original indexed gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.localUniformAnalyticApproximation_boundaryCharacteristic",
+            "NLS.ZakharovShabat.continuousAt_canonicalBoundaryRoots_re_of_realType",
+            "NLS.ZakharovShabat.continuousAt_canonicalBoundaryRoots_of_realType",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_mem_gap_finite",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_mem_gap",
+            "NLS.ZakharovShabat.signed_discriminant_periodOneBoundaryRoot_ge_two"
+          ],
+          "qualification": "The proof retains the original gap index through approximation; the unsigned or signed superlevel condition alone would not identify it. The continuity proof permits complex perturbations and counts multiplicities."
+        },
+        {
+          "ordered_group": "S9-008",
+          "source_lines": [
+            4034,
+            4046
+          ],
+          "requirement": "Auxiliary analogues and the two physical monodromy displays.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Both actual auxiliary characteristics have the same joint analyticity, literal negative products, exact spectra and zero multiplicities. At real-type sources their coordinates are continuous and lie in the same original indexed periodic gaps.",
+            "The physical monodromy display with +i(m3+m2) is the actual Neumann* characteristic; the display with -i(m3+m2) is the actual Dirichlet* characteristic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma9_1_auxiliary",
+            "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryData.product",
+            "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryData.multiplicity",
+            "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryRealData.interlacing",
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_sourcePhase",
+            "NLS.ZakharovShabat.sourceAuxiliaryCharacteristic_eq_l2_monodromy",
+            "NLS.ZakharovShabat.sourceLemma9_1_printed_starredDirichlet",
+            "NLS.ZakharovShabat.sourceLemma9_1_printed_starredNeumann"
+          ],
+          "qualification": "The correction preserves the endpoint-domain labels defined on printed p.33. Phase conjugation preserves periodic spectrum and multiplicities; ordered spectral-data uniqueness preserves the gap indices. The existing positive normalization identities are reused; no new counterexample or refutation is added."
+        },
+        {
+          "ordered_group": "S9-009",
+          "source_lines": [
+            4048,
+            4051
+          ],
+          "requirement": "Anti-discriminant as the monodromy off-diagonal sum and auxiliary difference.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The anti-discriminant is the actual physical monodromy off-diagonal sum m2+m3.",
+            "With the original endpoint-domain labels its auxiliary expression is actual Neumann* minus actual Dirichlet*. This is the difference of the printed plus and minus monodromy expressions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.l2AntiDiscriminant",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+            "NLS.ZakharovShabat.classicalAntiDiscriminant_eq_auxiliary_sub",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products"
+          ],
+          "qualification": "This is the same auxiliary-label correction as S9-008, applied to the difference formula. The printed algebra is valid if its symbols denote the printed expressions, while the domain-consistent symbolic difference is N*-D*."
+        },
+        {
+          "ordered_group": "S9-010",
+          "source_lines": [
+            4055,
+            4058
+          ],
+          "requirement": "Lemma 9.2(i): analytic extension of the anti-discriminant.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The normalized anti-discriminant is jointly analytic on the entire original complex source space at every finite p>1.",
+            "Physical Hilbert agreement in both exponent directions and finite Fourier uniqueness fix the exact function."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma9_2Data.analytic",
+            "NLS.ZakharovShabat.sourceLemma9_2",
+            "NLS.ZakharovShabat.sourceAntiDiscriminant_eq_l2_of_two_le",
+            "NLS.ZakharovShabat.sourceAntiDiscriminant_eq_l2_of_le_two",
+            "NLS.ZakharovShabat.sourceAntiDiscriminant_unique_joint_continuous"
+          ],
+          "qualification": "The legacy name sourceAntiDiscriminantCandidate denotes the proved normalized extension. Equality is literal, not only equality of squares or zeros."
+        },
+        {
+          "ordered_group": "S9-011",
+          "source_lines": [
+            4061,
+            4063
+          ],
+          "requirement": "Lemma 9.2(ii): discriminant identity at simple Dirichlet roots.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every actual ordinary Dirichlet zero, Delta(z)^2-4 equals delta(z)^2.",
+            "The identity is also instantiated at every canonical signed Dirichlet coordinate."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma9_2_identity",
+            "NLS.ZakharovShabat.SourceLemma9_2Data.identity",
+            "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_at_canonicalDirichletRoot"
+          ],
+          "qualification": "The implementation strengthens the source simple-eigenvalue assertion to all zeros, including multiple zeros, by substituting into the global characteristic identity."
+        },
+        {
+          "ordered_group": "S9-012",
+          "source_lines": [
+            4065,
+            4068
+          ],
+          "requirement": "Lemma 9.2(iii): locally uniform full value and derivative sample sequences in lp.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The full actual value and derivative sample sequences delta(mu_n) and deltaPrime(mu_n) are lp elements.",
+            "At each arbitrary complex source one open neighborhood and one finite norm bound control both complete sequences for every nearby source."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantSamples",
+            "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantDerivativeSamples",
+            "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantSamples_apply",
+            "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantDerivativeSamples_apply",
+            "NLS.ZakharovShabat.SourceLemma9_2Data.value_norm",
+            "NLS.ZakharovShabat.SourceLemma9_2Data.derivative_norm",
+            "NLS.ZakharovShabat.sourceLemma9_2"
+          ],
+          "qualification": "These are the actual canonical samples, including all central indices. The full-sample neighborhood is not required to be convex or contain zero; neither condition is stated in the source."
+        },
+        {
+          "ordered_group": "S9-013",
+          "source_lines": [
+            4078,
+            4081
+          ],
+          "requirement": "Proof of analytic extension by the auxiliary difference.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Subtracting the two jointly analytic actual auxiliary characteristics gives the analytic anti-discriminant on the original source domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate",
+            "NLS.ZakharovShabat.analyticOnNhd_sourceAntiDiscriminantCandidate_joint",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products"
+          ],
+          "qualification": "This proof uses actual N*-D*, consistently with S9-008 and S9-009. The three corrected groups record one existing label discrepancy at its three occurrences, not three independent errors."
+        },
+        {
+          "ordered_group": "S9-014",
+          "source_lines": [
+            4082,
+            4085
+          ],
+          "requirement": "Proof of the Dirichlet identity by Hilbert agreement, simple-root branches and density.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Any simple ordinary characteristic zero at an arbitrary complex original source now constructs an analytic local branch, with no preselected continuous root map. The characteristic derivative remains nonzero on its open neighborhood.",
+            "Actual restricted-operator algebraic multiplicity one gives a local analytic eigenvalue branch retaining that multiplicity. On the Dirichlet branch the exact discriminant identity holds throughout the neighborhood.",
+            "Separately, the global identity Delta^2-4=delta^2-4*chiD*chiN extends from finite Fourier inputs by density and joint continuity, yielding the identity even at multiple zeros."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_analytic_sourceBoundary_zero",
+            "NLS.ZakharovShabat.exists_local_analytic_sourceBoundary_eigenvalue",
+            "NLS.ZakharovShabat.sourceLemma9_2_local_analytic_branch",
+            "NLS.ComplexAnalysis.exists_analytic_implicitBanachRoot",
+            "NLS.ZakharovShabat.deriv_periodOneBoundaryCharacteristic_ne_zero_of_multiplicity_one",
+            "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_finite_of_exponent",
+            "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four"
+          ],
+          "qualification": "The new branch theorem supplies the source implicit-function intermediate statement. It does not identify the branch with a globally lexicographic coordinate at complex sources. The identity itself uses a stronger global proof and needs no simplicity assumption."
+        },
+        {
+          "ordered_group": "S9-015",
+          "source_lines": [
+            4086,
+            4093
+          ],
+          "requirement": "Auxiliary sine errors, lp disk majorants and the Cauchy derivative estimate.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The two auxiliary free-sine errors have common locally uniform lp majorants on half-pi disks. Their difference cancels the free sine, and the derivative difference cancels the free cosine.",
+            "Cauchy estimates on quarter-pi disks supply the explicit factor 4/pi with the same majorant chosen before the spectral samples.",
+            "Tail Dirichlet roots lie in their free disks. A common bounded spectral box and compact-parameter bounds control the central roots and both sampled quantities, giving full locally uniform lp bounds."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_auxiliaryCharacteristic_disc_majorants",
+            "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_disc_majorants",
+            "NLS.ZakharovShabat.exists_uniform_sampled_sourceAntiDiscriminant",
+            "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_at_dirichlet_tail",
+            "NLS.ZakharovShabat.exists_local_uniform_sourceAntiDiscriminant_on_ball",
+            "NLS.ZakharovShabat.exists_local_uniform_sampled_sourceAntiDiscriminant_at_dirichletRoots",
+            "NLS.ZakharovShabat.SourceLemma9_2Data.disc_majorant"
+          ],
+          "qualification": "The majorant is selected before the samples; no sampler continuity is assumed. The finite central estimate is essential because central roots need not lie in their corresponding free disks. It does not assume continuity of central complex labels."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma9_1.lean": "7ea4c22f96aef677723d561aa49afade594cf508d4c428b7a1c216b99d0d31af",
+        "NLS/ZakharovShabat/SourceLemma9_1Auxiliary.lean": "8f4b878e6918e2bdebe51a3ffaf1079b817921b5a1e3c896e41331e5d2576c67",
+        "NLS/ZakharovShabat/SourceLemma9_2.lean": "7a5e91e8a98a5c11cd4d9ba97c2e55cc950bf74a67ff005107077b54ec67526c",
+        "NLS/ZakharovShabat/SourceAuxiliaryCharacteristicNormalization.lean": "5eaa06a982321c00dc4e84b8220b203956fb0fd8fdffbcd995757b733c89cdf3",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantCentralLp.lean": "4615e921f8f64b00185632977a8edf5088be0335fdfe86393e9a3e1bdd1d4405",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantDiscLp.lean": "62a7c8343346c9f21694882795b6f92912ccae73426a5850b3614682d0fc9c43",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryAnalytic.lean": "73930d94145fec343bbdda96df87493ef45217acff1352b36606cfc9126ab088",
+        "NLS/ZakharovShabat/BoundarySimpleBranchAnalytic.lean": "7de8eecd56012695a9432aa659d5955e859890619da3f140df839cefe37b307e",
+        "NLS/ZakharovShabat/PeriodOneBoundaryInterlacing.lean": "bd55f20c0af20a9d6e94923c1d5506535d7893869e6fb67276c17264ca4e2e91",
+        "NLS/ZakharovShabat/L2SourceCharacteristics.lean": "88e6bf52198981199515ee50ca1f8d70068da29edc271ad1c2c12f310b8b6468",
+        "NLS/ZakharovShabat/L2SeparatedCharacteristics.lean": "7b42c5e5ca32a608581383a73bdb63ac95aec782be9dee1b2e2d1a5baab654ee",
+        "NLS/ComplexAnalysis/AnalyticImplicitBanachRoot.lean": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7",
+        "NLS/ComplexAnalysis/AnalyticImplicitRoot.lean": "c2d1d9eae5186698af3c0066f7d509ffb1556efd72f4d4f8b6df76bbb7552aeb",
+        "NLS/ZakharovShabat/SourceSection9SimpleBranches.lean": "879267c0394fdf43230b8a875a90adbfce49b1fc4bfdcc1a1f975d162c001c22",
+        "NLS/ZakharovShabat/SourceBoundarySimpleNeighborhood.lean": "db906d19d79ec8aa3bb9a27b05bc6f122b54a97b2cb813167916a00653c8645b",
+        "NLS/ZakharovShabat/BoundaryCharacteristicAnalytic.lean": "9796d5323cc32ba5a8c00f4da5865b70e176fb46811102e316536ac5f6a79f8b",
+        "NLS/ZakharovShabat/CanonicalBoundaryRoots.lean": "c839a80bf4e1492d86567e817f7264346e6f57aac350e116b872e92735b058d2",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004",
+        "NLS/ZakharovShabat/FiniteSourceInterlacing.lean": "b9b265697d59bcf4b86889dd5f9a2b1c91183ce9e480b44ec1f20837018892e5",
+        "NLS/ZakharovShabat/AuxiliaryPeriodOneBoundaryInterlacing.lean": "39027cc7dff32ad6044c95edbf6d4a40c4bb180cda7062d48d19b0f7ff412d3c",
+        "NLS/ZakharovShabat/PeriodOneBoundaryCharacteristic.lean": "27a0673b964b4769cf4b2646c69b09709e7db265e356302f0790193b83b5d011",
+        "NLS/ZakharovShabat/CanonicalBoundaryContinuity.lean": "63f95f04541490d42fbe52d425eff18128ef865a2cd0bd2b125e8091ac2fdac4",
+        "NLS/ZakharovShabat/SourceBoundaryDisplacementAnalytic.lean": "48bc8209982e6ba5e233ddb2f8fe9e04ca6966765dab2aee1e0209151a437767",
+        "NLS/ZakharovShabat/ClassicalAuxiliaryCharacteristics.lean": "4a28a83280c4d1de6ce81645ff34193d87de8c6cd9b473b3e55b800140b8cbdb"
+      },
+      "ordered_inventory": "coverage/SECTION_9_ASSERTIONS.md",
+      "ordered_inventory_sha256": "94f8d8cefb4d9dac8d060be7925f13e198205c583ba345af8c8f04d5e28f1c68",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          52,
+          53,
+          54
+        ],
+        "images": {
+          "work/tmp/pdfs/diss-page-52.png": "ed6ffcb6b04bd472f5797e65214dc35973343d316bbdc5c843f11cc7cfc111bc",
+          "work/tmp/pdfs/diss-page-53.png": "6b0cdd197444810566ec4290442808ad4d313e8ffd6d283742f6bdbde287f379",
+          "work/tmp/pdfs/section9-next-054.png": "da01ac3c29cb30ad2d87cabc0570d02f0f6e2e0cf17539904f54a536e3267cf1"
+        }
+      },
+      "qualification": "All fifteen Section 9 groups are compared: twelve matched and three corrected. The three corrections apply the existing auxiliary endpoint-label discrepancy to its characteristic display, anti-discriminant difference and analytic proof. The literal simple-root local analytic construction is now proved at arbitrary complex sources. Exact product normalizations, original source norms, both Hilbert inclusion directions, actual spectra and multiplicities, all signed indices and full local lp sample bounds are retained. No additional refutation is added. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved. This is not a completeness certificate.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.exists_analytic_implicitBanachRoot",
+        "NLS.ZakharovShabat.BoundaryCondition.tendstoLocallyUniformlyOn_canonicalProduct",
+        "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryData.multiplicity",
+        "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryData.product",
+        "NLS.ZakharovShabat.SourceLemma9_1AuxiliaryRealData.interlacing",
+        "NLS.ZakharovShabat.SourceLemma9_1Data.analytic",
+        "NLS.ZakharovShabat.SourceLemma9_1Data.multiplicity",
+        "NLS.ZakharovShabat.SourceLemma9_1Data.product",
+        "NLS.ZakharovShabat.SourceLemma9_1Data.spectrum",
+        "NLS.ZakharovShabat.SourceLemma9_1RealData.continuous",
+        "NLS.ZakharovShabat.SourceLemma9_1RealData.exists_uniform_coordinate_neighborhood",
+        "NLS.ZakharovShabat.SourceLemma9_1RealData.norm_continuity",
+        "NLS.ZakharovShabat.SourceLemma9_1RealData.real",
+        "NLS.ZakharovShabat.SourceLemma9_2Data.analytic",
+        "NLS.ZakharovShabat.SourceLemma9_2Data.derivative_norm",
+        "NLS.ZakharovShabat.SourceLemma9_2Data.disc_majorant",
+        "NLS.ZakharovShabat.SourceLemma9_2Data.identity",
+        "NLS.ZakharovShabat.SourceLemma9_2Data.value_norm",
+        "NLS.ZakharovShabat.analyticOnNhd_periodOneBoundaryCharacteristic_joint",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceAntiDiscriminantCandidate_joint",
+        "NLS.ZakharovShabat.analyticOrderAt_l2SeparatedCharacteristic_source",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_interlacing_chain",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_mem_gap",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_mem_gap_finite",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_sourcePhase",
+        "NLS.ZakharovShabat.classicalAntiDiscriminant_eq_auxiliary_sub",
+        "NLS.ZakharovShabat.continuousAt_canonicalBoundaryRoots_of_realType",
+        "NLS.ZakharovShabat.continuousAt_canonicalBoundaryRoots_re_of_realType",
+        "NLS.ZakharovShabat.deriv_periodOneBoundaryCharacteristic_ne_zero_of_multiplicity_one",
+        "NLS.ZakharovShabat.exists_local_analytic_sourceBoundary_eigenvalue",
+        "NLS.ZakharovShabat.exists_local_analytic_sourceBoundary_zero",
+        "NLS.ZakharovShabat.exists_local_uniform_sampled_sourceAntiDiscriminant_at_dirichletRoots",
+        "NLS.ZakharovShabat.exists_local_uniform_sourceAntiDiscriminant_on_ball",
+        "NLS.ZakharovShabat.exists_sourceBoundaryDisplacement_analytic_common_domain",
+        "NLS.ZakharovShabat.exists_uniform_auxiliaryCharacteristic_disc_majorants",
+        "NLS.ZakharovShabat.exists_uniform_sampled_sourceAntiDiscriminant",
+        "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_at_dirichlet_tail",
+        "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_disc_majorants",
+        "NLS.ZakharovShabat.l2AntiDiscriminant",
+        "NLS.ZakharovShabat.l2SeparatedCharacteristic",
+        "NLS.ZakharovShabat.l2SeparatedCharacteristic_eq_zero_iff",
+        "NLS.ZakharovShabat.l2SeparatedCharacteristic_source_eq_zero_iff",
+        "NLS.ZakharovShabat.localUniformAnalyticApproximation_boundaryCharacteristic",
+        "NLS.ZakharovShabat.periodOneBoundaryCharacteristic_eq_l2",
+        "NLS.ZakharovShabat.signed_discriminant_periodOneBoundaryRoot_ge_two",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products",
+        "NLS.ZakharovShabat.sourceAntiDiscriminant_eq_l2_of_le_two",
+        "NLS.ZakharovShabat.sourceAntiDiscriminant_eq_l2_of_two_le",
+        "NLS.ZakharovShabat.sourceAntiDiscriminant_unique_joint_continuous",
+        "NLS.ZakharovShabat.sourceAuxiliaryCharacteristic_eq_l2_monodromy",
+        "NLS.ZakharovShabat.sourceBoundaryCharacteristic_eq_l2_of_le_two",
+        "NLS.ZakharovShabat.sourceBoundaryCharacteristic_eq_l2_of_two_le",
+        "NLS.ZakharovShabat.sourceBoundaryCharacteristic_unique_continuous",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_iff_l2_endpoint",
+        "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantDerivativeSamples",
+        "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantDerivativeSamples_apply",
+        "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantSamples",
+        "NLS.ZakharovShabat.sourceDirichletAntiDiscriminantSamples_apply",
+        "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four",
+        "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_at_canonicalDirichletRoot",
+        "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_finite_of_exponent",
+        "NLS.ZakharovShabat.sourceLemma9_1_auxiliary",
+        "NLS.ZakharovShabat.sourceLemma9_1_data",
+        "NLS.ZakharovShabat.sourceLemma9_1_printed_starredDirichlet",
+        "NLS.ZakharovShabat.sourceLemma9_1_printed_starredNeumann",
+        "NLS.ZakharovShabat.sourceLemma9_1_real",
+        "NLS.ZakharovShabat.sourceLemma9_2",
+        "NLS.ZakharovShabat.sourceLemma9_2_identity",
+        "NLS.ZakharovShabat.sourceLemma9_2_local_analytic_branch"
+      ],
+      "declaration_inventory_count": 44237,
+      "source_record_sha256": "752cb3bca251d545537a3f162ff1ae65766df6b1c9cf8f6de5a5b3356fdcd2fe"
     }
   }
 }

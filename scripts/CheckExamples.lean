@@ -71183,3 +71183,50 @@ example (n : ℤ) :
   exact deriv_freeSineQuotient_sq_center n
 
 end Section8SineExamples
+
+
+noncomputable section
+open Set Complex
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section9SimpleBranchExamples
+
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨one_lt_half.le⟩
+
+-- The free zero mode extends through genuinely complex sources below exponent two.
+example : ∃ μ : CoeffPair (3/2) → ℂ, ∃ U : Set (CoeffPair (3/2)),
+    IsOpen U ∧ 0 ∈ U ∧ μ 0 = 0 ∧ AnalyticOnNhd ℂ μ U ∧
+    ∀ ψ ∈ U, μ ψ ∈ BoundaryCondition.neumann.spectrum half_ne_top
+      (periodOneBoundaryPotential half_ne_top one_lt_half ψ).val
+      (periodOneBoundaryPotential half_ne_top one_lt_half ψ).property := by
+  have hf : periodOneBoundaryCharacteristic half_ne_top one_lt_half .neumann (0 : CoeffPair (3/2)) = sin :=
+    funext (periodOneBoundaryCharacteristic_zero half_ne_top one_lt_half .neumann)
+  obtain ⟨μ,U,hU,h0,hμ,han,hzero⟩ := exists_local_analytic_sourceBoundary_zero
+    half_ne_top one_lt_half .neumann 0 0 (by rw [hf]; simp)
+      (by rw [hf]; simp [Complex.deriv_sin])
+  exact ⟨μ,U,hU,h0,hμ,han,fun ψ hψ =>
+    (periodOneBoundaryCharacteristic_eq_zero_iff half_ne_top one_lt_half .neumann ψ (μ ψ)).mp (hzero ψ hψ).1⟩
+
+-- Composing the constructed root with the anti-discriminant gives an analytic square root
+-- of the moving shifted discriminant, at an arbitrary complex simple Dirichlet zero.
+example (φ : CoeffPair (3/2)) (z : ℂ)
+    (hz : periodOneBoundaryCharacteristic half_ne_top one_lt_half .dirichlet φ z = 0)
+    (hs : deriv (periodOneBoundaryCharacteristic half_ne_top one_lt_half .dirichlet φ) z ≠ 0) :
+    ∃ μ d : CoeffPair (3/2) → ℂ, ∃ U : Set (CoeffPair (3/2)),
+      IsOpen U ∧ φ ∈ U ∧ μ φ = z ∧ AnalyticOnNhd ℂ μ U ∧ AnalyticOnNhd ℂ d U ∧
+      ∀ ψ ∈ U, (canonicalDiscriminant half_ne_top (periodOnePotential ψ) (μ ψ))^2-4 = (d ψ)^2 := by
+  obtain ⟨μ,U,hU,hφ,hμ,han,hzero⟩ := sourceLemma9_2_local_analytic_branch half_ne_top one_lt_half φ z hz hs
+  refine ⟨μ,fun ψ => sourceAntiDiscriminantCandidate half_ne_top one_lt_half ψ (μ ψ),
+    U,hU,hφ,hμ,han,?_,fun ψ hψ => (hzero ψ hψ).2⟩
+  intro ψ hψ
+  exact (analyticOnNhd_sourceAntiDiscriminantCandidate_joint half_ne_top one_lt_half
+    (μ ψ,ψ) (mem_univ _)).comp (f := fun χ : CoeffPair (3/2) => (μ χ,χ))
+      ((han ψ hψ).prod analyticAt_id)
+
+end Section9SimpleBranchExamples

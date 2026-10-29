@@ -1,5 +1,30 @@
 # Section 9: ordinary and auxiliary characteristic functions
 
+## Ordered comparison and constructed local branches
+
+The Section 9 implicit-function step now constructs a local analytic branch
+through any simple ordinary boundary root at an arbitrary complex source.
+It starts from the zero and its nonzero spectral derivative, retains simplicity
+on an open neighborhood, and also accepts actual algebraic multiplicity one.
+The Dirichlet branch carries the exact discriminant identity throughout that
+neighborhood. Three positive theorems and two integration examples are added.
+
+Validation: `./scripts/check.sh` passes with 8,505 build jobs, 7,574
+public examples and a transitive axiom audit of 44,237 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+All fifteen groups in the [ordered Section 9 ledger](SECTION_9_ASSERTIONS.md)
+have been compared: twelve matched and three corrected. Those three groups
+apply the same existing auxiliary D*/N* label correction to its characteristic
+display, anti-discriminant difference and analytic proof. Physical normalization,
+actual spectra and multiplicities, indexed real interlacing and full locally
+uniform lp sample bounds are retained. No additional refutations are added.
+
+Continue with Section 10 in source order. Section 7's physical NLS Dirichlet
+motion and unrestricted psi uniqueness, the source-wide inventory, exact
+cited 2014 construction and Appendix G.2 norm interpretation remain open.
+
 Lemma 9.1 and the following auxiliary assertions appear on printed p. 53.
 The PDF page was visually inspected. All source statements below use
 `CoeffPair p` with the original component-sum norm, for every finite
@@ -149,6 +174,28 @@ sources to every original source by density and joint continuity.
 Substitution at a Dirichlet zero removes the product term. The proof
 therefore needs no simplicity assumption, locally analytic root branch,
 or continuity of the lexicographic labels at complex base points.
+
+## The local analytic branch in the proof of Lemma 9.2
+
+[SourceSection9SimpleBranches.lean](../NLS/ZakharovShabat/SourceSection9SimpleBranches.lean)
+now supplies the literal implicit-function intermediate assertion.
+`exists_local_analytic_sourceBoundary_zero` constructs a branch from a zero
+with nonzero spectral derivative at any complex original source. It gives
+an open neighborhood on which the branch is analytic, remains a characteristic
+zero and has nonzero spectral derivative. No continuous selection is input.
+
+`exists_local_analytic_sourceBoundary_eigenvalue` starts from the actual
+restricted operator's spectrum and algebraic multiplicity one, and preserves
+both spectral membership and multiplicity one nearby.
+`sourceLemma9_2_local_analytic_branch` gives the Dirichlet discriminant identity
+on the constructed branch's neighborhood. This supplies the printed local
+branch argument alongside the stronger existing global identity proof.
+
+These local branches are not identified with globally lexicographic labels
+at arbitrary complex sources. The two integration examples at p=3/2 construct
+a Neumann branch through the free zero mode and compose a complex Dirichlet
+branch with the anti-discriminant to obtain an analytic square root of the
+moving shifted discriminant.
 
 ## Lemma 9.2(iii): actual full sampled sequences
 

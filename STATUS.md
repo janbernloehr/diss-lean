@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: Section 8 sine estimates and remaining comparison
+## Current milestone: Section 9 analytic branches and ordered comparison
+
+The Section 9 implicit-function step now constructs a local analytic branch
+through any simple ordinary boundary root at an arbitrary complex source.
+It starts from the zero and its nonzero spectral derivative, retains simplicity
+on an open neighborhood, and also accepts actual algebraic multiplicity one.
+The Dirichlet branch carries the exact discriminant identity throughout that
+neighborhood. Three positive theorems and two integration examples are added.
+
+Validation: `./scripts/check.sh` passes with 8,505 build jobs, 7,574
+public examples and a transitive axiom audit of 44,237 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+All fifteen groups in the [ordered Section 9 ledger](coverage/SECTION_9_ASSERTIONS.md)
+have been compared: twelve matched and three corrected. Those three groups
+apply the same existing auxiliary D*/N* label correction to its characteristic
+display, anti-discriminant difference and analytic proof. Physical normalization,
+actual spectra and multiplicities, indexed real interlacing and full locally
+uniform lp sample bounds are retained. No additional refutations are added.
+
+Continue with Section 10 in source order. Section 7's physical NLS Dirichlet
+motion and unrestricted psi uniqueness, the source-wide inventory, exact
+cited 2014 construction and Appendix G.2 norm interpretation remain open.
+
+Earlier milestone entries retain their historical validation and limitations.
+
+## Previous milestone: Section 8 sine estimates and remaining comparison
 
 The exact Section 8 exterior estimate now has constant four throughout the
 original domain, including the lower horizontal strip. The filled sinc has

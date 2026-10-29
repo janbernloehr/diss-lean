@@ -147,9 +147,16 @@ constant resolves its previous partial group. The literal sinc integral,
 root-count and continuity proofs, critical product and squared-gap offset
 are reconciled with the source, retaining full multiplicities and collapsed
 gaps. The neighboring-band endpoint is corrected to n+1 and the midpoint
-factorization uses -4. No additional constant refutation was added. Continue
-with Section 9; this section-level result does not settle the broader
-source inventory or Section 7's two unresolved clauses.
+factorization uses -4. No additional constant refutation was added. This
+section-level result does not settle the broader source inventory or
+Section 7's two unresolved clauses.
+
+The [ordered Section 9 ledger](SECTION_9_ASSERTIONS.md) compares all fifteen
+groups: twelve matched and three corrected occurrences of the existing
+auxiliary-label discrepancy. The missing local implicit-function construction
+is now proved at arbitrary complex simple boundary roots, including actual
+operator simplicity. Full sample bounds retain the central block. Continue
+with Section 10; the Section 7 and broader qualifications above remain open.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
