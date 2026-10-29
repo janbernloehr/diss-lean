@@ -71327,3 +71327,69 @@ example {V : Set (CoeffPair (3/2))} {D : ℤ → Set ℂ} {C : ℝ}
   exact (he χ hχ).symm.trans (halgebra χ)
 
 end Section10PowerContourExamples
+
+open NLS NLS.ZakharovShabat
+open scoped ENNReal unitInterval
+
+namespace Section10RefinedProductExamples
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem product_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem product_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨product_one_lt_half.le⟩
+
+-- The actual paired factor combines the linear and quadratic expansions,
+-- including the quasi-normed exponents 3/4 and 3/8.
+example (ψ : CoeffPair (3/2)) (z : ℂ) :
+    ∃ L : Coeff (3/2), ∃ R : Coeff (3/4), ∃ A : Coeff ⊤,
+      ∃ B : Coeff (3/4), ∃ C : Coeff (3/8), ∀ k : ℤ, k ≠ 0 →
+      (sourceStandardRoot product_half_ne_top product_one_lt_half ψ k z/((Real.pi : ℂ)*k))*
+        (sourceStandardRoot product_half_ne_top product_one_lt_half ψ (-k) z/(-((Real.pi : ℂ)*k)))-1 =
+      L k/(k : ℂ)+(R k+A k)/(k : ℂ)^2+B k/(k : ℂ)^3+C k/(k : ℂ)^4 := by
+  have hlin := exists_sourceStandardRoot_paired_error_coefficients
+    product_half_ne_top product_one_lt_half ψ z
+  have hcross := exists_sourceStandardRoot_cross_error_coefficients
+    product_half_ne_top product_one_lt_half ψ z
+  have h2 : (3/2 : ℝ≥0∞)/2 = 3/4 := by
+    simp only [div_eq_mul_inv,mul_assoc]
+    congr 1
+    rw [← ENNReal.mul_inv (a := 2) (b := 2) (by simp) (by simp)]
+    norm_num
+  have h4 : (3/2 : ℝ≥0∞)/4 = 3/8 := by
+    simp only [div_eq_mul_inv,mul_assoc]
+    congr 1
+    rw [← ENNReal.mul_inv (a := 2) (b := 4) (by simp) (by simp)]
+    norm_num
+  rw [h2] at hlin
+  rw [h2,h4] at hcross
+  obtain ⟨L,R,hL⟩ := hlin
+  obtain ⟨A,B,C,hC⟩ := hcross
+  refine ⟨L,R,A,B,C,?_⟩
+  intro k hk
+  rw [sourceStandardRoot_pair_factor]
+  linear_combination hL k hk + hC k hk
+
+-- At the free source all quadratic remainders vanish, while the actual
+-- +/-2 block at z=i retains its nonzero, positive quadratic excess.
+example :
+    (∀ k : ℤ, sourceStandardRootQuadraticRemainder product_half_ne_top
+      product_one_lt_half (0 : CoeffPair (3/2)) Complex.I k = 0) ∧
+    sourceStandardRootPairedFactor product_half_ne_top product_one_lt_half
+      (0 : CoeffPair (3/2)) Complex.I 1-1 = (1 : ℂ)/(4*(Real.pi : ℂ)^2) := by
+  constructor
+  · intro k
+    have hg : canonicalPeriodicGap product_half_ne_top product_one_lt_half
+        (periodOnePotential (0 : CoeffPair (3/2))) (periodOnePotential_mem 0) k = 0 := by
+      simpa only [map_zero] using canonicalPeriodicGap_zero product_half_ne_top product_one_lt_half k
+    simp only [sourceStandardRootQuadraticRemainder,sourceStandardRootSqrtCorrection,
+      standardRootSqrtCorrection,hg,zero_pow (by decide : (2 : ℕ) ≠ 0),zero_div,
+      sub_zero,Complex.sqrt_one,sub_self,mul_zero,ite_self]
+  · simp only [sourceStandardRootPairedFactor,sourceStandardRoot_zero_source]
+    norm_num
+    have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+    field_simp
+    linear_combination -4*Complex.I_sq
+
+end Section10RefinedProductExamples

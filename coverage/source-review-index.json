@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T02:37:22.613532+00:00",
-  "base_commit": "392775f59099568fac4bf7c15b768be908d1bcd6",
+  "published_utc": "2026-10-29T03:09:18.948522+00:00",
+  "base_commit": "237d1380d9cfaf856d5d0641a920839930f163d4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 113,
-    "module_hash_checks": 1993,
-    "distinct_modules": 1266
+    "review_records": 114,
+    "module_hash_checks": 2013,
+    "distinct_modules": 1282
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "392775f59099568fac4bf7c15b768be908d1bcd6",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 392775f and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 22 of 52 ordered Section 10 groups are compared: 19 matched and three corrected occurrences, with thirty groups pending. Wider unresolved qualifications are retained.",
+    "base_commit": "237d1380d9cfaf856d5d0641a920839930f163d4",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes nine positive refined product-error theorems in one module and two integration examples. The first 28 of 52 ordered Section 10 groups are compared: 24 matched and four corrected occurrences. Twenty-four groups remain pending. Actual half- and quarter-exponent coefficients, uniform tail cutoff, symmetric product normalization, unchanged domains and literal unordered quotient product are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8508,
-    "public_examples": 7576,
-    "transitive_NLS_declarations": 44255,
+    "build_jobs": 8509,
+    "public_examples": 7578,
+    "transitive_NLS_declarations": 44286,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4785,
-      "sha256": "c0b5f8215c2822fb8f56ec98635c5ebb9d1d6dd75efbeb1591dd1b427b4f6a4b"
+      "files": 4786,
+      "sha256": "0e56718d57274b5cdc3c17e3bb885ec17d053ef97cba2183383419393537c8c8"
     },
-    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
-    "validation_reused_from_commit": "392775f59099568fac4bf7c15b768be908d1bcd6"
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -29513,6 +29512,289 @@
       "declaration_inventory_count": 44255,
       "validation_reused_from_commit": "392775f59099568fac4bf7c15b768be908d1bcd6",
       "source_record_sha256": "d1cb9362df61fad5a9ce89597cd3d07c174fb640452e0c3ff0cadae041e51570"
+    },
+    "Section10DeletedProductsSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "237d1380d9cfaf856d5d0641a920839930f163d4",
+      "updated_utc": "2026-10-29T03:09:18.948522+00:00",
+      "source_lines": [
+        [
+          4336,
+          4343
+        ],
+        [
+          4345,
+          4355
+        ],
+        [
+          4356,
+          4364
+        ],
+        [
+          4366,
+          4371
+        ],
+        [
+          4373,
+          4385
+        ],
+        [
+          4389,
+          4399
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-023",
+          "source_lines": [
+            4336,
+            4343
+          ],
+          "requirement": "Lemma 10.5: deleted standard-root product, analyticity and nonvanishing.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal symmetric cutoff is (1/pi_n) times the product of w_m/pi_m over [-N,N] with n erased, including pi_0=1 and cutoffs below |n|.",
+            "The limiting product is analytic and nonzero on the complement of every unomitted actual closed gap. Joint analyticity holds on the moving-gap complement and on the printed fixed closed-disk complement.",
+            "Any supplied Lemma 10.3 common domain, local source neighborhood, disk family and isolation constant are retained for every signed omitted index. The whole omitted disk is included."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedProduct",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct_eq_paired",
+            "NLS.ZakharovShabat.tendsto_sourceStandardRootOmittedPartialProduct",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedDomain_eq_compl_iUnion",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_ne_zero",
+            "NLS.ZakharovShabat.SourceLemma10_3Data.omittedProducts",
+            "NLS.ZakharovShabat.SourceLemma10_3Data.omittedClosedFixed",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.disk_subset_omittedDomain"
+          ],
+          "qualification": "The rendered formula has a closure bar over U_m. Convergence of the standard-root product uses the displayed positive/negative pairing; no unordered absolute convergence of individual factors is asserted. Collapsed gaps and central indices remain included."
+        },
+        {
+          "ordered_group": "S10-024",
+          "source_lines": [
+            4345,
+            4355
+          ],
+          "requirement": "Product proof: definition of a_k and its midpoint-plus-square-root decomposition.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For k nonzero, a_k is exactly w_k/(pi*k)-1, with the midpoint displacement, free spectral term and principal-square-root correction separated algebraically.",
+            "Each individual error is bounded on every compact subset avoiding its actual gap. Pairing k and -k cancels the free spectral terms."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceStandardRootRelativeError",
+            "NLS.ZakharovShabat.sourceStandardRootRelativeError_eq",
+            "NLS.ZakharovShabat.standardRootRelativeError_eq",
+            "NLS.ZakharovShabat.exists_bound_sourceStandardRootRelativeError_on_compact",
+            "NLS.ZakharovShabat.sourceStandardRootRelativeError_pair",
+            "NLS.ZakharovShabat.sourceStandardRoot_pair_factor"
+          ],
+          "qualification": "The compact bound is now exposed as a theorem for every original complex source. The coefficient identities hold at every nonzero index; algebraic totalization does not enlarge the claimed analytic domain."
+        },
+        {
+          "ordered_group": "S10-025",
+          "source_lines": [
+            4356,
+            4364
+          ],
+          "requirement": "Uniform compact-tail bound on the square-root correction.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Rationalizing the principal square root gives |sqrt(1-q)-1| <= |q| and the exact correction bound |gamma_k^2|/(4*|pi*k|*|tau_k-z|).",
+            "The actual coefficient Q_k=k^2 times the square-root correction obeys |Q_k| <= |gamma_k^2|/(2*pi^2) once the index dominates the midpoint displacement and spectral radius.",
+            "One source neighborhood and cutoff give this actual-gap bound simultaneously for all nearby sources and every spectral parameter in a prescribed bounded region. Hence compact spectral sets are covered."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sqrt_one_sub_sub_one_le",
+            "NLS.ZakharovShabat.norm_standardRootSqrtCorrection_le",
+            "NLS.ZakharovShabat.free_midpoint_separation",
+            "NLS.ZakharovShabat.sourceStandardRootQuadraticRemainder",
+            "NLS.ZakharovShabat.norm_sourceStandardRootQuadraticRemainder_tail_le",
+            "NLS.ZakharovShabat.exists_uniform_sourceStandardRootQuadraticRemainder_tail_le",
+            "NLS.ZakharovShabat.exists_uniform_sourceStandardRootSqrtCorrection_majorant"
+          ],
+          "qualification": "The explicit constant 1/(2*pi^2) retains the actual gap instead of replacing it by a sequence supremum. The bound implies the source estimate and applies to both signs of the index. The cutoff is chosen before the nearby source, spectral point and index."
+        },
+        {
+          "ordered_group": "S10-026",
+          "source_lines": [
+            4366,
+            4371
+          ],
+          "requirement": "Paired first-order sum a_k+a_-k.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual quadratic remainder sequence belongs to l(p/2), including when p/2 is below one; finite central coefficients are retained.",
+            "The paired linear error equals the literal midpoint-displacement difference divided by pi*k plus (Q_k+Q_-k)/k^2.",
+            "There are actual coefficients L in lp and R in l(p/2) with a_k+a_-k=L_k/k+R_k/k^2, and the sum can also be written as one lp coefficient divided by k."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.memℓp_sourceStandardRootQuadraticRemainder",
+            "NLS.ZakharovShabat.sourceStandardRootRelativeError_eq_quadraticRemainder",
+            "NLS.ZakharovShabat.sourceStandardRootRelativeError_pair_eq_quadraticRemainder",
+            "NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_coefficients",
+            "NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_lp",
+            "NLS.ZakharovShabat.sourcePeriodicSquaredGapSequence",
+            "NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedMidpointCorrection",
+            "NLS.ZakharovShabat.summable_norm_sourceStandardRootSqrtCorrection"
+          ],
+          "qualification": "These are the displayed refined sequence classes, not only an l1 consequence. The sequence memberships are stated at each source and spectral point. Local uniform convergence is supplied separately by the common tail bounds; no uniform norm bound for the full refined coefficient families is claimed here."
+        },
+        {
+          "ordered_group": "S10-027",
+          "source_lines": [
+            4373,
+            4385
+          ],
+          "requirement": "Paired quadratic error and absolute convergence of the paired product.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Correct the isolated proof index a_k*a_-m to a_k*a_-k, as used by the following paired product.",
+            "The cross term is exactly A_k/k^2+B_k/k^3+C_k/k^4 with A bounded, B in l(p/2), and C in l(p/4), including exponents below one.",
+            "The linear and cross contributions give absolutely summable paired deviations. Literal symmetric products converge locally uniformly, with a common vanishing bound on arbitrary finite tail subsets for nearby sources and bounded spectral parameters.",
+            "Deleting any signed index changes only finitely many factors. Analytic finite cutoffs and their locally uniform limit prove joint analyticity on the same common domain; nonzero factors and summable deviations prove nonvanishing."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceStandardRoot_cross_error_coefficients",
+            "NLS.ZakharovShabat.sourceStandardRootRelativeErrorCoeff",
+            "NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff",
+            "NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff_apply_of_ne",
+            "NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedFactor_sub_one",
+            "NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootPairedFactor_tails",
+            "NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootOmittedPairedFactor_tails",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedPairedFactor_eq_of_ne",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric",
+            "NLS.ZakharovShabat.SourceLemma10_3Data.omittedCompact",
+            "NLS.ZakharovShabat.SourceLemma10_3Data.omittedSpectralCompact"
+          ],
+          "qualification": "The existing proof-index correction is reused positively. Absolute convergence is for paired blocks. The earlier l2/Holder route proves summability, while the new theorem additionally supplies the literal l(p/2) and l(p/4) coefficients. The same source domain and fixed local family are preserved."
+        },
+        {
+          "ordered_group": "S10-028",
+          "source_lines": [
+            4389,
+            4399
+          ],
+          "requirement": "Corollary 10.6: analytic deleted quotient product.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The displacement parameter is exactly the full affine space sigma_m=pi*m+a_m with a in lp, without ordering, distinctness or smallness restrictions.",
+            "The literal quotient product has summable individual deviations and an unordered product equal to the quotient of the separately normalized deleted products. Their pi_n and pi_m factors cancel even at early cutoffs.",
+            "The quotient is jointly analytic in the spectral variable, every displacement sequence and the source on the printed closed-disk domain. The same W,V,D,c are retained, and the moving-gap domain and entire selected disk are also covered.",
+            "Literal cutoffs converge locally uniformly in all three variables, including numerator zeros and collisions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_displacedRoots_iff_memℓp",
+            "NLS.ZakharovShabat.sourceSingleRootQuotientPartialProduct_eq_div",
+            "NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotientFactor_sub_one",
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.quotients",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.quotientTprodClosedFixed",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.quotientLocallyUniform",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.quotientCompact",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.quotientDisk"
+          ],
+          "qualification": "The rendered corollary removes the closed U_m. The quotient, unlike its separate standard-root denominator product, has an unconditional individual-factor product. The product identity and analyticity are asserted on the natural nonzero-denominator domain; numerator nonvanishing is not required."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "d3b6f74ffa5f9df69f2fa2617a56e093af74b7270803a30faca854233ea30b0c",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_5.lean": "2c6ac54dc5af2b2c8951eddfc5050a43b04172719781338c3471574f554ee12c",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean": "d92a53a2ed4b3299577f9eafe276df92cb9e5898ce9606e32b40a705bc6ea1e4",
+        "NLS/ZakharovShabat/SourceStandardRootProductFactors.lean": "39fd54e2c7a5b8afc51fdeb339302e2d6835363ab6a44544a2ec4dba79786498",
+        "NLS/ZakharovShabat/SourceStandardRootPairedProduct.lean": "8db9983155e51f297b5870da72432ce944d77ce4fbfd0a3071eea88326204ecd",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedFinite.lean": "ef9d0c9de279f1f245a18e7f06eefc00b18f096433eac19bb87eddba4c41d4e9",
+        "NLS/ZakharovShabat/SourceStandardRootSqrtRemainder.lean": "382f716e590483573c49476d43084409e9c710e4748951b296216b534ef2b89e",
+        "NLS/ZakharovShabat/SourceStandardRootMidpointProduct.lean": "1a1112f8376093c395856a184c4b3fc64529c6d48a10a1f1ae98958a88f67fa4",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedCommonDomain.lean": "7a88afca05a99104f5c872dff216a2c01ee7c2d9223a4f95833b3cc2a696d55b",
+        "NLS/ZakharovShabat/SourceStandardRootPairedProductJointUniform.lean": "e135cf6a2d1678554f02d14972953a1c928ad5b3e20e2cc2eda0f07cca379479",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedJointAnalytic.lean": "0086691aec15ff1df5d54ed4a9f6fb9f67f5ab2d49b2b14d278c8dcb1dc83ead",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedProduct.lean": "b5a9f4693531493db5517c97fa81b0b043bf6328420be48761ef1be732fec026",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean": "5c15019528fe196d6f2095e1677255f4a11d33ba37fa72d403e89ff590258f39",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientCommonDomain.lean": "0660a804744e419db2bbc62358e15c760522b170bd1959ad82385a66495b1cf5",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientNormalization.lean": "8f6acbfdd8afaff7b091ef97d37e7d1bedc3ad742725fc1a5cec6200022c9d48",
+        "NLS/ZakharovShabat/SourceStandardRootRefinedErrors.lean": "ca13f00fdfdfd159e69cbed2825326e4df5b5fc579da116ea0ae158c00fbf3f4",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean": "d3cc9cf08f3aa4ff329169e37e21b9bcc4762afeb7bf9abb4694f06f3c4c9fa6",
+        "NLS/ZakharovShabat/SourceLemma10_2Sequences.lean": "c817f5142be67f1067581a3e9e7554862214a24cc327603deda3ed7d70fe0bc1",
+        "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean": "641481efa3d7d4fbda54acf566f36902fe8499b17c645547a87151276e5c0857",
+        "NLS/SequenceSpaces/QuasiHolderProduct.lean": "e11f4061042b19ac8261830aa135f8428c522285ee03d307122fca0364702d7f"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          57
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-057.png": "8c022207f38034df66fdecf6b2922553a955686209a5222fcca69282044c3677"
+        }
+      },
+      "qualification": "The first 28 of 52 ordered Section 10 groups are compared: 24 matched and four corrected occurrences. The refined quadratic remainder, paired linear coefficients and cross-term coefficients are now proved with their actual l(p/2) and l(p/4) exponents, including below one. Lemma 10.5 retains symmetric pairing, literal normalization, local uniform convergence and unchanged analytic domains. Corollary 10.6 covers the entire displacement space and its literal unordered quotient product. The existing a_-m to a_-k proof-index correction is reused; no additional refutation is added. Twenty-four groups remain pending, beginning with equation (2.13). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.disk_subset_omittedDomain",
+        "NLS.ZakharovShabat.SourceLemma10_3Data.omittedClosedFixed",
+        "NLS.ZakharovShabat.SourceLemma10_3Data.omittedCompact",
+        "NLS.ZakharovShabat.SourceLemma10_3Data.omittedProducts",
+        "NLS.ZakharovShabat.SourceLemma10_3Data.omittedSpectralCompact",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.quotientCompact",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.quotientDisk",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.quotientLocallyUniform",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.quotientTprodClosedFixed",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.quotients",
+        "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct",
+        "NLS.ZakharovShabat.exists_bound_sourceStandardRootRelativeError_on_compact",
+        "NLS.ZakharovShabat.exists_displacedRoots_iff_memℓp",
+        "NLS.ZakharovShabat.exists_sourceStandardRoot_cross_error_coefficients",
+        "NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_coefficients",
+        "NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_lp",
+        "NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootOmittedPairedFactor_tails",
+        "NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootPairedFactor_tails",
+        "NLS.ZakharovShabat.exists_uniform_sourceStandardRootQuadraticRemainder_tail_le",
+        "NLS.ZakharovShabat.exists_uniform_sourceStandardRootSqrtCorrection_majorant",
+        "NLS.ZakharovShabat.free_midpoint_separation",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.memℓp_sourceStandardRootQuadraticRemainder",
+        "NLS.ZakharovShabat.norm_sourceStandardRootQuadraticRemainder_tail_le",
+        "NLS.ZakharovShabat.norm_sqrt_one_sub_sub_one_le",
+        "NLS.ZakharovShabat.norm_standardRootSqrtCorrection_le",
+        "NLS.ZakharovShabat.sourcePeriodicSquaredGapSequence",
+        "NLS.ZakharovShabat.sourceSingleRootQuotientPartialProduct_eq_div",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedDomain_eq_compl_iUnion",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedPairedFactor_eq_of_ne",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct_eq_paired",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_ne_zero",
+        "NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff",
+        "NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff_apply_of_ne",
+        "NLS.ZakharovShabat.sourceStandardRootQuadraticRemainder",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeError",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeErrorCoeff",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeError_eq",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeError_eq_quadraticRemainder",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeError_pair",
+        "NLS.ZakharovShabat.sourceStandardRootRelativeError_pair_eq_quadraticRemainder",
+        "NLS.ZakharovShabat.sourceStandardRoot_pair_factor",
+        "NLS.ZakharovShabat.standardRootRelativeError_eq",
+        "NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotientFactor_sub_one",
+        "NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedFactor_sub_one",
+        "NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedMidpointCorrection",
+        "NLS.ZakharovShabat.summable_norm_sourceStandardRootSqrtCorrection",
+        "NLS.ZakharovShabat.tendsto_sourceStandardRootOmittedPartialProduct"
+      ],
+      "declaration_inventory_count": 44286,
+      "source_record_sha256": "adc473cadd5e35b82aca5738158e4c48841698c1708ae37bb5675a61b3ce5e6c"
     }
   }
 }

@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the Section 10 source comparison now reaches Lemma 10.4.
-Its [ordered ledger](coverage/SECTION_10_ASSERTIONS.md) compares 22 of 52 groups:
-19 matched and three corrected occurrences. The standard-root signs, domains,
-general contour integrals and endpoint estimate with sharp constant one agree
-with the existing proofs after correcting the denominator to the selected root.
-Thirty groups remain pending. This documentation step reuses the unchanged
-Lean validation from commit `392775f`. The
+Latest step: Section 10 now proves the refined l(p/2) and l(p/4) coefficients
+in Lemma 10.5's paired product errors, including exponents below one. The
+[ordered comparison](coverage/SECTION_10_ASSERTIONS.md) reaches Corollary 10.6:
+28 of 52 groups compared, with 24 matched and four corrected occurrences.
+Exact normalization, local uniform convergence and the full root-displacement
+space are retained. Twenty-four groups remain pending. The
 [completion assessment](coverage/COMPLETENESS.md) retains Section 7's partial
 clauses and the wider qualifications.
 

@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: Section 10 standard roots and endpoint estimates
+## Current milestone: Section 10 refined product errors and quotient comparison
+
+The Lemma 10.5 factor proof now retains the actual quadratic remainder
+Q_k=k^2 times the square-root correction, with Q in l(p/2). Pairing k and -k
+cancels the free spectral term. The paired linear error has the exact
+lp/k+l(p/2)/k^2 form and also a single lp/k representation. The cross term
+has bounded/k^2+l(p/2)/k^3+l(p/4)/k^4 coefficients, including exponents below one.
+
+One source neighborhood and cutoff give the actual-gap bound
+|Q_k| <= |gamma_k^2|/(2*pi^2) uniformly on each bounded spectral region.
+Individual factor errors are bounded on compact subsets of their gap
+complement. One module adds nine positive theorems. Two integration examples
+at p=3/2 combine the refined terms in the actual paired factor and check
+vanishing free remainders with the positive +/-2 block excess at z=i.
+
+Validation: `./scripts/check.sh` passes with 8,509 build jobs, 7,578
+public examples and a transitive axiom audit of 44,286 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now compares
+28 of 52 groups: 24 matched and four corrected occurrences. The existing
+proof-index correction a_-m to a_-k is applied to the cross term. Lemma 10.5
+retains the exact symmetric normalization, locally uniform paired convergence,
+nonvanishing and unchanged source domains. Corollary 10.6 retains all lp root
+displacements, including collisions, and its literal unordered quotient
+product on the printed closed-disk domain. No additional refutation is added.
+
+Twenty-four groups remain pending, beginning with S10-029 and equation (2.13).
+Section 7 physical NLS Dirichlet motion and unrestricted psi uniqueness,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and the
+broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 10 standard roots and endpoint estimates
 
 The ordered comparison now includes the standard-root definition, Lemma 10.3,
 its boundary values and Lemma 10.4. The first 22 of 52 groups are compared:

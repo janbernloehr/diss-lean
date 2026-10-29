@@ -159,15 +159,14 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-22 of 52 groups: 19 matched and three corrected occurrences. These comprise
-the real-type-domain correction and two occurrences of the selected-root
-denominator correction in Lemma 10.4 and its proof. The power-sum contour,
-standard-root domains, general contours, actual side limits and endpoint
-estimate with sharp constant one are reconciled. This documentation step
-reuses the unchanged validated Lean snapshot from commit `392775f`.
-Thirty later groups remain pending, starting with deleted products and
-Lemma 10.5. Existing named theorem audits do not by themselves settle those
-remaining passages.
+28 of 52 groups: 24 matched and four corrected occurrences, through
+Corollary 10.6. The refined quadratic remainder and paired error coefficients
+are proved in their literal l(p/2) and l(p/4) spaces. The deleted standard-root
+product retains symmetric pairing and the quotient has an unordered product
+on its stated domain, with all lp displacements allowed. The existing proof
+index a_-m is corrected to a_-k. Twenty-four groups remain pending, starting
+with equation (2.13) and the canonical root. Existing named theorem audits do
+not by themselves settle those remaining passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

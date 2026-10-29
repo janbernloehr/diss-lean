@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 22 of 52 ordered Section 10 groups are compared: 19 matched and three corrected occurrences. The existing real-type-domain correction is joined by the selected-root denominator correction in Lemma 10.4 and its proof. Standard-root domains, exact separation bounds, general piecewise C1 contours, side limits and the sharp endpoint constant one are retained. Thirty later groups remain pending, beginning with deleted products. This documentation-only step reuses the verified unchanged Lean and dependency snapshot from commit 392775f. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first 28 of 52 ordered Section 10 groups are compared: 24 matched and four corrected occurrences. The refined quadratic remainder, paired linear coefficients and cross-term coefficients are now proved with their actual l(p/2) and l(p/4) exponents, including below one. Lemma 10.5 retains symmetric pairing, literal normalization, local uniform convergence and unchanged analytic domains. Corollary 10.6 covers the entire displacement space and its literal unordered quotient product. The existing a_-m to a_-k proof-index correction is reused; no additional refutation is added. Twenty-four groups remain pending, beginning with equation (2.13). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 22
-groups, through the proof of Lemma 10.4 on p.56, have been compared.
-The remaining thirty groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 28
+groups, through Corollary 10.6 on p.57, have been compared.
+The remaining 24 groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -37,12 +37,12 @@ inspected to preserve figures, signs and closure bars. See
 | S10-020 | 4294–4303 | Figure 2.3: signs of the standard root around a real gap. | matched |
 | S10-021 | 4306–4312 | Lemma 10.4: uniform endpoint side-integral estimate. | corrected |
 | S10-022 | 4314–4323 | Parametrization proof of Lemma 10.4 and arcsine integral. | corrected |
-| S10-023 | 4336–4343 | Lemma 10.5: deleted standard-root product, analyticity and nonvanishing. | pending |
-| S10-024 | 4345–4355 | Product proof: definition of a_k and its midpoint-plus-square-root decomposition. | pending |
-| S10-025 | 4356–4364 | Uniform compact-tail bound on the square-root correction. | pending |
-| S10-026 | 4366–4371 | Paired first-order sum a_k+a_-k. | pending |
-| S10-027 | 4373–4385 | Paired quadratic error and absolute convergence of the paired product. | pending |
-| S10-028 | 4389–4399 | Corollary 10.6: analytic deleted quotient product. | pending |
+| S10-023 | 4336–4343 | Lemma 10.5: deleted standard-root product, analyticity and nonvanishing. | matched |
+| S10-024 | 4345–4355 | Product proof: definition of a_k and its midpoint-plus-square-root decomposition. | matched |
+| S10-025 | 4356–4364 | Uniform compact-tail bound on the square-root correction. | matched |
+| S10-026 | 4366–4371 | Paired first-order sum a_k+a_-k. | matched |
+| S10-027 | 4373–4385 | Paired quadratic error and absolute convergence of the paired product. | corrected |
+| S10-028 | 4389–4399 | Corollary 10.6: analytic deleted quotient product. | matched |
 | S10-029 | 4401–4413 | Discriminant square identity and canonical root (2.13). | pending |
 | S10-030 | 4423–4427 | Lemma 10.7: spectral and joint canonical-root analyticity. | pending |
 | S10-031 | 4429–4438 | Collapsed canonical roots and opposite side values (2.14). | pending |
@@ -270,6 +270,67 @@ Public evidence: `NLS.ZakharovShabat.sourceStandardRootSideIntegral_eq_weighted`
 
 The printed denominator w_m is corrected to w_n in this proof occurrence as well. The double-truncation theorem uses a common epsilon at both endpoints. Independently varying two-parameter limits are not claimed. Endpoint values in Lean do not determine the improper integral.
 
+## S10-023: Lemma 10.5: deleted standard-root product, analyticity and nonvanishing.
+
+- The literal symmetric cutoff is (1/pi_n) times the product of w_m/pi_m over [-N,N] with n erased, including pi_0=1 and cutoffs below |n|.
+- The limiting product is analytic and nonzero on the complement of every unomitted actual closed gap. Joint analyticity holds on the moving-gap complement and on the printed fixed closed-disk complement.
+- Any supplied Lemma 10.3 common domain, local source neighborhood, disk family and isolation constant are retained for every signed omitted index. The whole omitted disk is included.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct`, `NLS.ZakharovShabat.sourceStandardRootOmittedProduct`, `NLS.ZakharovShabat.sourceStandardRootOmittedPartialProduct_eq_paired`, `NLS.ZakharovShabat.tendsto_sourceStandardRootOmittedPartialProduct`, `NLS.ZakharovShabat.sourceStandardRootOmittedDomain_eq_compl_iUnion`, `NLS.ZakharovShabat.sourceStandardRootOmittedProduct_ne_zero`, `NLS.ZakharovShabat.SourceLemma10_3Data.omittedProducts`, `NLS.ZakharovShabat.SourceLemma10_3Data.omittedClosedFixed`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.disk_subset_omittedDomain`.
+
+The rendered formula has a closure bar over U_m. Convergence of the standard-root product uses the displayed positive/negative pairing; no unordered absolute convergence of individual factors is asserted. Collapsed gaps and central indices remain included.
+
+## S10-024: Product proof: definition of a_k and its midpoint-plus-square-root decomposition.
+
+- For k nonzero, a_k is exactly w_k/(pi*k)-1, with the midpoint displacement, free spectral term and principal-square-root correction separated algebraically.
+- Each individual error is bounded on every compact subset avoiding its actual gap. Pairing k and -k cancels the free spectral terms.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRootRelativeError`, `NLS.ZakharovShabat.sourceStandardRootRelativeError_eq`, `NLS.ZakharovShabat.standardRootRelativeError_eq`, `NLS.ZakharovShabat.exists_bound_sourceStandardRootRelativeError_on_compact`, `NLS.ZakharovShabat.sourceStandardRootRelativeError_pair`, `NLS.ZakharovShabat.sourceStandardRoot_pair_factor`.
+
+The compact bound is now exposed as a theorem for every original complex source. The coefficient identities hold at every nonzero index; algebraic totalization does not enlarge the claimed analytic domain.
+
+## S10-025: Uniform compact-tail bound on the square-root correction.
+
+- Rationalizing the principal square root gives |sqrt(1-q)-1| <= |q| and the exact correction bound |gamma_k^2|/(4*|pi*k|*|tau_k-z|).
+- The actual coefficient Q_k=k^2 times the square-root correction obeys |Q_k| <= |gamma_k^2|/(2*pi^2) once the index dominates the midpoint displacement and spectral radius.
+- One source neighborhood and cutoff give this actual-gap bound simultaneously for all nearby sources and every spectral parameter in a prescribed bounded region. Hence compact spectral sets are covered.
+
+Public evidence: `NLS.ZakharovShabat.norm_sqrt_one_sub_sub_one_le`, `NLS.ZakharovShabat.norm_standardRootSqrtCorrection_le`, `NLS.ZakharovShabat.free_midpoint_separation`, `NLS.ZakharovShabat.sourceStandardRootQuadraticRemainder`, `NLS.ZakharovShabat.norm_sourceStandardRootQuadraticRemainder_tail_le`, `NLS.ZakharovShabat.exists_uniform_sourceStandardRootQuadraticRemainder_tail_le`, `NLS.ZakharovShabat.exists_uniform_sourceStandardRootSqrtCorrection_majorant`.
+
+The explicit constant 1/(2*pi^2) retains the actual gap instead of replacing it by a sequence supremum. The bound implies the source estimate and applies to both signs of the index. The cutoff is chosen before the nearby source, spectral point and index.
+
+## S10-026: Paired first-order sum a_k+a_-k.
+
+- The actual quadratic remainder sequence belongs to l(p/2), including when p/2 is below one; finite central coefficients are retained.
+- The paired linear error equals the literal midpoint-displacement difference divided by pi*k plus (Q_k+Q_-k)/k^2.
+- There are actual coefficients L in lp and R in l(p/2) with a_k+a_-k=L_k/k+R_k/k^2, and the sum can also be written as one lp coefficient divided by k.
+
+Public evidence: `NLS.ZakharovShabat.memℓp_sourceStandardRootQuadraticRemainder`, `NLS.ZakharovShabat.sourceStandardRootRelativeError_eq_quadraticRemainder`, `NLS.ZakharovShabat.sourceStandardRootRelativeError_pair_eq_quadraticRemainder`, `NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_coefficients`, `NLS.ZakharovShabat.exists_sourceStandardRoot_paired_error_lp`, `NLS.ZakharovShabat.sourcePeriodicSquaredGapSequence`, `NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedMidpointCorrection`, `NLS.ZakharovShabat.summable_norm_sourceStandardRootSqrtCorrection`.
+
+These are the displayed refined sequence classes, not only an l1 consequence. The sequence memberships are stated at each source and spectral point. Local uniform convergence is supplied separately by the common tail bounds; no uniform norm bound for the full refined coefficient families is claimed here.
+
+## S10-027: Paired quadratic error and absolute convergence of the paired product.
+
+- Correct the isolated proof index a_k*a_-m to a_k*a_-k, as used by the following paired product.
+- The cross term is exactly A_k/k^2+B_k/k^3+C_k/k^4 with A bounded, B in l(p/2), and C in l(p/4), including exponents below one.
+- The linear and cross contributions give absolutely summable paired deviations. Literal symmetric products converge locally uniformly, with a common vanishing bound on arbitrary finite tail subsets for nearby sources and bounded spectral parameters.
+- Deleting any signed index changes only finitely many factors. Analytic finite cutoffs and their locally uniform limit prove joint analyticity on the same common domain; nonzero factors and summable deviations prove nonvanishing.
+
+Public evidence: `NLS.ZakharovShabat.exists_sourceStandardRoot_cross_error_coefficients`, `NLS.ZakharovShabat.sourceStandardRootRelativeErrorCoeff`, `NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff`, `NLS.ZakharovShabat.sourceStandardRootPairExcessCoeff_apply_of_ne`, `NLS.ZakharovShabat.summable_norm_sourceStandardRootPairedFactor_sub_one`, `NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootPairedFactor_tails`, `NLS.ZakharovShabat.exists_uniform_absolute_sourceStandardRootOmittedPairedFactor_tails`, `NLS.ZakharovShabat.sourceStandardRootOmittedPairedFactor_eq_of_ne`, `NLS.ZakharovShabat.sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric`, `NLS.ZakharovShabat.SourceLemma10_3Data.omittedCompact`, `NLS.ZakharovShabat.SourceLemma10_3Data.omittedSpectralCompact`.
+
+The existing proof-index correction is reused positively. Absolute convergence is for paired blocks. The earlier l2/Holder route proves summability, while the new theorem additionally supplies the literal l(p/2) and l(p/4) coefficients. The same source domain and fixed local family are preserved.
+
+## S10-028: Corollary 10.6: analytic deleted quotient product.
+
+- The displacement parameter is exactly the full affine space sigma_m=pi*m+a_m with a in lp, without ordering, distinctness or smallness restrictions.
+- The literal quotient product has summable individual deviations and an unordered product equal to the quotient of the separately normalized deleted products. Their pi_n and pi_m factors cancel even at early cutoffs.
+- The quotient is jointly analytic in the spectral variable, every displacement sequence and the source on the printed closed-disk domain. The same W,V,D,c are retained, and the moving-gap domain and entire selected disk are also covered.
+- Literal cutoffs converge locally uniformly in all three variables, including numerator zeros and collisions.
+
+Public evidence: `NLS.ZakharovShabat.exists_displacedRoots_iff_memℓp`, `NLS.ZakharovShabat.sourceSingleRootQuotientPartialProduct_eq_div`, `NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotientFactor_sub_one`, `NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype`, `NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct`, `NLS.ZakharovShabat.SourceLemma10_5Data.quotients`, `NLS.ZakharovShabat.SourceLemma10_5Data.quotientTprodClosedFixed`, `NLS.ZakharovShabat.SourceLemma10_5Data.quotientLocallyUniform`, `NLS.ZakharovShabat.SourceLemma10_5Data.quotientCompact`, `NLS.ZakharovShabat.SourceLemma10_5Data.quotientDisk`.
+
+The rendered corollary removes the closed U_m. The quotient, unlike its separate standard-root denominator product, has an unconditional individual-factor product. The product identity and analyticity are asserted on the natural nonzero-denominator domain; numerator nonvanishing is not required.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -277,5 +338,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-023, deleted standard-root products and Lemma 10.5.
+Continue with S10-029, equation (2.13) and the canonical root.
 The remaining Section 10 groups and wider unresolved qualifications remain.
