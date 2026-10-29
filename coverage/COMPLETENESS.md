@@ -155,8 +155,16 @@ The [ordered Section 9 ledger](SECTION_9_ASSERTIONS.md) compares all fifteen
 groups: twelve matched and three corrected occurrences of the existing
 auxiliary-label discrepancy. The missing local implicit-function construction
 is now proved at arbitrary complex simple boundary roots, including actual
-operator simplicity. Full sample bounds retain the central block. Continue
-with Section 10; the Section 7 and broader qualifications above remain open.
+operator simplicity. Full sample bounds retain the central block. The
+Section 7 and broader qualifications above remain open.
+
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
+twelve of 52 groups: eleven matched and one corrected real-type-domain
+occurrence. The literal power-sum contour, multiplicity accounting and
+direct analytic source dependence are now proved on every original common
+isolating family. Forty later groups remain pending ordered comparison,
+starting with the standard-root definition and Lemma 10.3. Existing named
+theorem audits do not by themselves settle those remaining passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

@@ -4781,3 +4781,6 @@ import NLS.ZakharovShabat.SourceSection7RoughInput
 import NLS.ZakharovShabat.SourceSection8ParityDeterminants
 import NLS.ZakharovShabat.SourceSection8SineEstimates
 import NLS.ZakharovShabat.SourceSection9SimpleBranches
+import NLS.ComplexAnalysis.WeightedArgumentPrinciple
+import NLS.ZakharovShabat.SourceSection10PowerContours
+import NLS.ZakharovShabat.SourceSection10PowerContourAnalytic

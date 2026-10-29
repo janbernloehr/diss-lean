@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T01:32:24.371823+00:00",
-  "base_commit": "8171c98cde0543074e08526bdd2d6e986a62baff",
+  "published_utc": "2026-10-29T02:28:52.300887+00:00",
+  "base_commit": "cfef7ad8483a2d314cc7e904d0f5c6180aa97672",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 111,
-    "module_hash_checks": 1938,
-    "distinct_modules": 1220
+    "review_records": 112,
+    "module_hash_checks": 1970,
+    "distinct_modules": 1246
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "8171c98cde0543074e08526bdd2d6e986a62baff",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes three Section 9 local analytic branch theorems and two integration examples. All fifteen ordered Section 9 groups are compared, with twelve matches and three corrected occurrences of the existing auxiliary-label discrepancy. Arbitrary complex simple roots, exact physical normalization, actual spectra and multiplicities, and full locally uniform lp sample bounds are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "cfef7ad8483a2d314cc7e904d0f5c6180aa97672",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes three modules with eight Section 10 power-contour theorems and two integration examples. The first twelve of fifty-two ordered Section 10 groups are compared: eleven matched and one corrected real-type-domain occurrence. Forty groups remain pending. Exact scalar contour normalization, actual spectral multiplicities including collapsed pairs, original disk families and direct analytic source dependence are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8505,
-    "public_examples": 7574,
-    "transitive_NLS_declarations": 44237,
+    "build_jobs": 8508,
+    "public_examples": 7576,
+    "transitive_NLS_declarations": 44255,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4782,
-      "sha256": "0d9a7cb79f776425d1209d2eeb17c5284de19550ed0bd26997aeb362bfe4de0f"
+      "files": 4785,
+      "sha256": "c0b5f8215c2822fb8f56ec98635c5ebb9d1d6dd75efbeb1591dd1b427b4f6a4b"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -28711,6 +28711,440 @@
       ],
       "declaration_inventory_count": 44237,
       "source_record_sha256": "752cb3bca251d545537a3f162ff1ae65766df6b1c9cf8f6de5a5b3356fdcd2fe"
+    },
+    "Section10PowerContoursSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "cfef7ad8483a2d314cc7e904d0f5c6180aa97672",
+      "updated_utc": "2026-10-29T02:28:52.300887+00:00",
+      "source_lines": [
+        [
+          4098,
+          4113
+        ],
+        [
+          4116,
+          4122
+        ],
+        [
+          4125,
+          4127
+        ],
+        [
+          4129,
+          4147
+        ],
+        [
+          4155,
+          4167
+        ],
+        [
+          4169,
+          4171
+        ],
+        [
+          4171,
+          4174
+        ],
+        [
+          4176,
+          4183
+        ],
+        [
+          4185,
+          4197
+        ],
+        [
+          4199,
+          4204
+        ],
+        [
+          4207,
+          4222
+        ],
+        [
+          4223,
+          4230
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-001",
+          "source_lines": [
+            4098,
+            4113
+          ],
+          "requirement": "Definition of isolating disks and all three conditions, including literal set distance (2.7).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A common family contains every full periodic gap segment and all five indexed spectral coordinates, including the ordinary Dirichlet, Neumann and critical roots.",
+            "One constant c>=1 supplies both literal infimum-distance bounds at index scale; all sufficiently distant disks equal the free quarter-pi disks."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.tail",
+            "NLS.ZakharovShabat.spectralSetDistance_isGLB"
+          ],
+          "qualification": "The set distance is proved to be the greatest lower bound of pointwise distances between nonempty disks. The pointwise bounds are stronger than the printed set-distance assertion. Every signed index and the finite central block are included."
+        },
+        {
+          "ordered_group": "S10-002",
+          "source_lines": [
+            4116,
+            4122
+          ],
+          "requirement": "Lemma 10.1: an open connected almost-real source domain and common local disk families.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Lemma 10.1 constructs an open connected neighborhood of the entire real-type source locus, with a common real-centered disk family on an open connected neighborhood of each of its points.",
+            "The source proof starts from the real-type locus; this is the proved replacement for the complex-type subscript in the printed statement."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_1",
+            "NLS.ZakharovShabat.exists_local_source_quantitative_isolating_discs",
+            "NLS.ZakharovShabat.isConnected_realTypeSourceLocus"
+          ],
+          "qualification": "This reuses the positive corrected-domain construction. No new counterexample or refutation is added. The local parameters may be complex, while the locus around which the common domain is built is real type."
+        },
+        {
+          "ordered_group": "S10-003",
+          "source_lines": [
+            4125,
+            4127
+          ],
+          "requirement": "Convention for the local source neighborhood V_phi.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The local source neighborhood is chosen once and all sources in it share the same disks and the same distance constant.",
+            "Restriction to a smaller source neighborhood retains that disk family. The new power-contour package preserves any existing Lemma 10.2 domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.mono",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.isolation",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.exists_power_sum_contours"
+          ],
+          "qualification": "The neighborhood and circle family are chosen before the nearby source, signed index and power. No independently chosen circle for each nearby source is substituted."
+        },
+        {
+          "ordered_group": "S10-004",
+          "source_lines": [
+            4129,
+            4147
+          ],
+          "requirement": "Proof of Lemma 10.1: uniform tail, finite central disks and union of local neighborhoods.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Uniform distant localization for all five coordinates combines with continuity at the real base and finitely many central disks on one source neighborhood.",
+            "Mixed central-tail separation and a positive central margin yield all-index quantitative separation. Connected source balls and their union through the connected real-type locus give the local and global connectedness."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_source_tail_isolation",
+            "NLS.ZakharovShabat.exists_local_sourceClusterDiscs_finite_block_bounded",
+            "NLS.ZakharovShabat.exists_local_source_pairwise_disjoint_isolating_discs",
+            "NLS.ZakharovShabat.source_shrunk_isolating_pointwise_separation",
+            "NLS.ZakharovShabat.exists_source_shrunk_isolating_pointwise_comparison",
+            "NLS.ZakharovShabat.exists_local_source_quantitative_isolating_discs",
+            "NLS.ZakharovShabat.sourceLemma10_1"
+          ],
+          "qualification": "The implementation halves central margins before taking infimum distances; pairwise disjoint open disks alone would be insufficient. A global lattice-offset bound and the positive margin give a single index-comparison constant. The free tail remains unchanged."
+        },
+        {
+          "ordered_group": "S10-005",
+          "source_lines": [
+            4155,
+            4167
+          ],
+          "requirement": "Figure 2.2: gap and boundary/critical coordinates inside disjoint real-centered disks.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The diagram is represented by containment of the full gap segment and all boundary and critical coordinates in a real-centered disk.",
+            "Distinct disks are disjoint with positive quantitative separation, also when a nearby complex source tilts its gap segment."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSpectralCluster",
+            "NLS.ZakharovShabat.sourcePeriodicSegment",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.discs",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.disjoint"
+          ],
+          "qualification": "The real-centered property belongs to the disks, not to every perturbed endpoint. Convexity of each disk retains the entire complex gap segment, including collapsed gaps."
+        },
+        {
+          "ordered_group": "S10-006",
+          "source_lines": [
+            4169,
+            4171
+          ],
+          "requirement": "Simplicity and analyticity of all ordinary boundary and critical roots on the almost-real domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On one common open connected neighborhood of the real-type locus, every ordinary boundary coordinate and every critical coordinate is analytic and simple.",
+            "Simplicity means algebraic multiplicity one for the actual restricted ordinary boundary operator and analytic order one for the discriminant derivative at its critical root."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.critical",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary_multiplicity",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.critical_order",
+            "NLS.ZakharovShabat.exists_sourceSimpleSpectralDomain_within",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.simplicity"
+          ],
+          "qualification": "Finite central analyticity neighborhoods and a common tail neighborhood are combined before taking a connected component. The component contains the entire connected real-type locus and stays inside the prescribed preceding domain. No central or signed index is excluded."
+        },
+        {
+          "ordered_group": "S10-007",
+          "source_lines": [
+            4171,
+            4174
+          ],
+          "requirement": "Periodic label discontinuity versus analytic symmetric expressions.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Individual lexicographic periodic endpoint labels need not be continuous on the common almost-real domain, while the symmetric coordinates remain analytic.",
+            "Existing central-pair discontinuity witnesses persist inside any source neighborhood of zero and therefore on the same Lemma 10.2 domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourcePeriodicLabels_not_continuousWithinAt",
+            "NLS.ZakharovShabat.sourceLemma10_2_with_discontinuous_labels",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.midpoint",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.squared_gap"
+          ],
+          "qualification": "The existing witnesses are reused without new refutation work. The assertion is existence of discontinuities, not discontinuity at zero, at every source or at every index. The new contour analyticity proof does not assume endpoint-label analyticity."
+        },
+        {
+          "ordered_group": "S10-008",
+          "source_lines": [
+            4176,
+            4183
+          ],
+          "requirement": "Lemma 10.2(i): all positive periodic power sums are analytic.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every indexed two-root power sum is complex analytic on the same common source domain, for every natural power including zero.",
+            "The new fixed-circle formulas and their direct analytic dependence supply the literal scalar-contour route in addition to the existing symmetric recurrence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_2Data.power_sums",
+            "NLS.ZakharovShabat.symmetricPairPowerSum_eq",
+            "NLS.ZakharovShabat.analyticAt_symmetricPairPowerSum",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.power_sum_contour",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.analyticOnNhd_power_sum_contour",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.exists_power_sum_contours"
+          ],
+          "qualification": "Complex analyticity strengthens the printed real analyticity. Repeated endpoints contribute twice; central and negative indices use the original disks, with no simplicity premise for the periodic pair."
+        },
+        {
+          "ordered_group": "S10-009",
+          "source_lines": [
+            4185,
+            4197
+          ],
+          "requirement": "Lemma 10.2(ii): analytic midpoint/squared gap and local lp/l(p/2) asymptotics.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual midpoint and squared gap are analytic at each signed index on the same common domain. Their full displacement sequences lie in lp and l(p/2), respectively.",
+            "Near every source, one neighborhood and cutoff control both complete sequence norms and all subsequent tails. The squared-gap quasi-norm and each truncated tail quasi-norm equal the corresponding unsquared-gap norm squared."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_2Data.midpoint",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.squared_gap",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.uniform_sequences",
+            "NLS.ZakharovShabat.sourcePeriodicMidpointDisplacement_apply",
+            "NLS.ZakharovShabat.sourcePeriodicSquaredGapSequence",
+            "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapSequence",
+            "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapSequence_tail",
+            "NLS.ZakharovShabat.exists_uniform_sourceLemma10_2_sequences"
+          ],
+          "qualification": "The half exponent is literal, including below one. The neighborhood may depend on the target tail tolerance, but is chosen before every nearby source and every larger cutoff. Bounded norms alone are not used as a substitute for uniformly small tails."
+        },
+        {
+          "ordered_group": "S10-010",
+          "source_lines": [
+            4199,
+            4204
+          ],
+          "requirement": "Lemma 10.2(iii): joint analytic pair factor and exact polynomial identity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The exact pair factor equals (midpoint-z)^2-gap^2/4 at every complex spectral point and every source.",
+            "That factor is jointly analytic on the product of the full spectral plane with the same common source domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.joint_factor"
+          ],
+          "qualification": "The factor 1/4 and the original orientation of the gap are retained. The identity includes both endpoints and all collapsed gaps without dividing by the gap."
+        },
+        {
+          "ordered_group": "S10-011",
+          "source_lines": [
+            4207,
+            4222
+          ],
+          "requirement": "Argument-principle proof for power sums using the literal discriminant contour integral.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The weighted scalar argument principle integrates an analytic weight times the logarithmic derivative to 2*pi*i times the sum of its values at zeros weighted by analytic order.",
+            "For the actual periodic characteristic Delta^2-4, original algebraic multiplicities equal the two indexed endpoint-slot counts on every original isolating disk.",
+            "The literal normalized circle integral of (2*Delta*DeltaPrime/(Delta^2-4))*z^k is exactly the endpoint power sum. The boundary is nonzero throughout the original source neighborhood.",
+            "Joint analytic integration proves analyticity of that fixed-circle expression directly. One common neighborhood and family work for all indices and powers on an unchanged existing Lemma 10.2 domain."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.circleIntegral_weighted_logDerivPrincipalParts",
+            "NLS.ComplexAnalysis.circleIntegral_weighted_logDeriv_eq_sum",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodicMultiplicity_eq_pair_count",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.weighted_discriminant_contour",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.power_sum_contour",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.discriminant_nonzero_on_sphere",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.analyticOnNhd_power_sum_contour",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.exists_power_sum_contours",
+            "NLS.ZakharovShabat.analyticOrderAt_canonicalDiscriminant_sq_sub_four",
+            "NLS.ComplexAnalysis.analyticOnNhd_circleIntegral_of_jointAnalytic"
+          ],
+          "qualification": "This supplies the displayed contour identity, not merely the final analytic power-sum assertion. The positive circle orientation, 1/(2*pi*i) normalization, factor 2 in the numerator, full central block and multiplicity two at a collapsed pair are explicit. No continuity or analyticity of individually ordered endpoints is assumed."
+        },
+        {
+          "ordered_group": "S10-012",
+          "source_lines": [
+            4223,
+            4230
+          ],
+          "requirement": "Midpoint/squared-gap algebra and joint pair-factor proof.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The midpoint and squared gap are recovered from the first two symmetric moments; the quadratic factor is then a polynomial in these symmetric coordinates and the spectral parameter.",
+            "The existing contour-trace construction, exact pair algebra and full original sequence estimates justify the remaining proof steps, including collisions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIsolatingContour_midpoint_squaredGap_eq_pair",
+            "NLS.ZakharovShabat.analyticAt_canonicalPeriodicMidpoint_squaredGap_of_sourceIsolating",
+            "NLS.ZakharovShabat.symmetricPairPowerSum_eq",
+            "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.joint_factor",
+            "NLS.ZakharovShabat.exists_uniform_sourceLemma10_2_sequences"
+          ],
+          "qualification": "The midpoint is (left+right)/2 and the squared gap is 2*(left^2+right^2)-(left+right)^2. The independent new scalar power-contour proof agrees with these expressions and preserves all sequence estimates and the same common domain."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "8166f0858c07b3543a49062ac22c9e4714e4da809ed8307df1f18733559f6b52",
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean": "4a47419fa8b3c1571f886c27525ecde81d53ed2c882de074a0ebfb76e5b809d6",
+        "NLS/ComplexAnalysis/ArgumentPrinciple.lean": "37ee610cb35399a30319998fe71f62bbde715c1d7e0cffa0c42e640bee3e9592",
+        "NLS/ComplexAnalysis/FinitePoleRemoval.lean": "a808320a4aa770759d484db7915941863057860a57ceefc893d6a558cb238762",
+        "NLS/ComplexAnalysis/ParametricCircleIntegral.lean": "649f3ce837ea47a6443bddaf97058e1337106b1fee5117645542574dd5fd0180",
+        "NLS/ComplexAnalysis/ParametricCircleIntegralHigher.lean": "507648a6dc1423d8cc4d64be50cec61ff26822bcc6af7866030279bb9ca9d91b",
+        "NLS/ComplexAnalysis/JointSpectralDerivative.lean": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+        "NLS/ZakharovShabat/SourceSection10PowerContours.lean": "8b13e0af84ad5948c00bb7bed39674ceea9fb0c9c83e78e2d41afac499a3f245",
+        "NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean": "143e3a031360f4a0870e3492980341a98029c11f9fc029d42b93c72d6b05469a",
+        "NLS/ZakharovShabat/SourceLemma10_1.lean": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816",
+        "NLS/ZakharovShabat/SourceLemma10_2.lean": "b57121a1d820225062aacd65ece8dc7406dcebd963f72c3e73106a6c650907b5",
+        "NLS/ZakharovShabat/SourceSimpleSpectralDomain.lean": "4a30751215d7053b2454923f3030e647ac47e81a680403fbf3ab6132c8bbaae2",
+        "NLS/ZakharovShabat/SourceAlmostRealLabelDiscontinuity.lean": "63ae7d30ad55b91c95504b321b859669ff772bfd5685d0040bb8ecda02456f48",
+        "NLS/ZakharovShabat/SourceLemma10_2Sequences.lean": "c817f5142be67f1067581a3e9e7554862214a24cc327603deda3ed7d70fe0bc1",
+        "NLS/ZakharovShabat/SourcePeriodicPowerSums.lean": "728ef5fa68bdf9aabceaa8f955126aee8f219b050658091e20dc5d8feeb03b1a",
+        "NLS/ZakharovShabat/SourcePeriodicQuadratic.lean": "90f162eaaebe1d464b5e97edb667d86314a98006f534931c80fd0d4f5085b7c0",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean": "8c7075ed20b486bdc4d92627d5303d6f8dabcea22fb6f5a58fc13923ed2baeb9",
+        "NLS/ZakharovShabat/SourceIsolatingContourGeometry.lean": "59678183b20853f751283ddcb84e52262773752cca8bdc3d952546a9ab699609",
+        "NLS/ZakharovShabat/SourceIsolatingMultiplicity.lean": "7c47b54c66e91dcc30e535827cddedb0692ac0bf18ad2f05e69acd8b9c50835c",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean": "fae74521d284620df5e4dd15e84c4a7d11584724fdcd61dd505af97b239c5b17",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean": "a9d5daec0f419f69e7657ae85cadb225cc95754df17104e21176dfefecdd3511",
+        "NLS/ZakharovShabat/SourceGlobalIsolation.lean": "aa4b97740ff659848bb77f952920d6233babf616232baa854fd80c3d5e180f98",
+        "NLS/ZakharovShabat/SourceIsolatingDiscDistance.lean": "e9f4a776df453940260ef804cf152f8e3567f9707bb8cdf190fd177b1b3ba435",
+        "NLS/ZakharovShabat/SpectralSetDistance.lean": "0fbbb93ffb08f6b0f26d2821b63438d54fa606a990e0364b67c73efb039d8b62",
+        "NLS/ZakharovShabat/SourceRealTypeConvex.lean": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2",
+        "NLS/ZakharovShabat/SourceAllIndexDisjointIsolation.lean": "7930a12fcd669a6a87d0d05984a15f43917458a3236ec27fdcf27b278dd200b4",
+        "NLS/ZakharovShabat/SourceAllIndexIsolation.lean": "c70b4111b5f945f5c5af7448eef58a111fe1c303b0f41110671f4878b6cc2069",
+        "NLS/ZakharovShabat/SourceTailIsolation.lean": "dfaa78da8bb11f0ab6126524a6c4736b1fb1a54d66eec0d75b29158d6f5e080b",
+        "NLS/ZakharovShabat/SourceClusterDiscsLocal.lean": "4d1cdc4999e93bb523ebf94b741b2468bcd64bd2161d988a870e4b059cb33f45",
+        "NLS/ZakharovShabat/SourceSpectralClusters.lean": "15631b6b1474aefae15db1d0fc356daff7a89194075d8b8b05aa3c2cb45f2b79",
+        "NLS/ZakharovShabat/SourcePeriodicMidpointAsymptotics.lean": "ad2145f5bef5bbbc71f5f557090d7c817feeaef59ed12b2ec90b0cc39fd97ba2",
+        "NLS/ZakharovShabat/SourceSquaredGapNorm.lean": "33fd9f4260c395b8b550b8e3a2662385ac7f1fb7f55684ae641f56acdd177bb9",
+        "NLS/ZakharovShabat/SourcePeriodicGapTails.lean": "5b4bb4209434fb49a849946fb909cca4064f1320d0e289f532be5cd4076e72bc"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          54,
+          55
+        ],
+        "images": {
+          "work/tmp/pdfs/section9-next-054.png": "da01ac3c29cb30ad2d87cabc0570d02f0f6e2e0cf17539904f54a536e3267cf1",
+          "work/tmp/pdfs/section10-next-055.png": "52213f1307e286a1698bb05673a6c3c4a4f6f85bfc9f961728c65e165c4b8308"
+        }
+      },
+      "qualification": "The first twelve of fifty-two ordered Section 10 groups are compared: eleven matched and one corrected real-type-domain occurrence. The literal power-sum contour and its direct analytic source dependence are newly proved for every original isolating family, including central indices and collapsed pairs. Forty later groups remain pending ordered comparison. Existing named theorem audits are not a replacement for that work. No new refutation is added. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.analyticOnNhd_circleIntegral_of_jointAnalytic",
+        "NLS.ComplexAnalysis.circleIntegral_weighted_logDerivPrincipalParts",
+        "NLS.ComplexAnalysis.circleIntegral_weighted_logDeriv_eq_sum",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.analyticOnNhd_power_sum_contour",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.cluster",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.discriminant_nonzero_on_sphere",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.discs",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.disjoint",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.mono",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodicMultiplicity_eq_pair_count",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.power_sum_contour",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.set_distance",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.tail",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.weighted_discriminant_contour",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.exists_power_sum_contours",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.isolation",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.joint_factor",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.midpoint",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.power_sums",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.simplicity",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.squared_gap",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.uniform_sequences",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary_multiplicity",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.critical",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.critical_order",
+        "NLS.ZakharovShabat.analyticAt_canonicalPeriodicMidpoint_squaredGap_of_sourceIsolating",
+        "NLS.ZakharovShabat.analyticAt_symmetricPairPowerSum",
+        "NLS.ZakharovShabat.analyticOrderAt_canonicalDiscriminant_sq_sub_four",
+        "NLS.ZakharovShabat.exists_local_sourceClusterDiscs_finite_block_bounded",
+        "NLS.ZakharovShabat.exists_local_source_pairwise_disjoint_isolating_discs",
+        "NLS.ZakharovShabat.exists_local_source_quantitative_isolating_discs",
+        "NLS.ZakharovShabat.exists_sourcePeriodicLabels_not_continuousWithinAt",
+        "NLS.ZakharovShabat.exists_sourceSimpleSpectralDomain_within",
+        "NLS.ZakharovShabat.exists_source_shrunk_isolating_pointwise_comparison",
+        "NLS.ZakharovShabat.exists_uniform_sourceLemma10_2_sequences",
+        "NLS.ZakharovShabat.exists_uniform_source_tail_isolation",
+        "NLS.ZakharovShabat.isConnected_realTypeSourceLocus",
+        "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapSequence",
+        "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapSequence_tail",
+        "NLS.ZakharovShabat.sourceIsolatingContour_midpoint_squaredGap_eq_pair",
+        "NLS.ZakharovShabat.sourceLemma10_1",
+        "NLS.ZakharovShabat.sourceLemma10_2_with_discontinuous_labels",
+        "NLS.ZakharovShabat.sourcePeriodicMidpointDisplacement_apply",
+        "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+        "NLS.ZakharovShabat.sourcePeriodicSegment",
+        "NLS.ZakharovShabat.sourcePeriodicSquaredGapSequence",
+        "NLS.ZakharovShabat.sourceSpectralCluster",
+        "NLS.ZakharovShabat.source_shrunk_isolating_pointwise_separation",
+        "NLS.ZakharovShabat.spectralSetDistance_isGLB",
+        "NLS.ZakharovShabat.symmetricPairPowerSum_eq"
+      ],
+      "declaration_inventory_count": 44255,
+      "source_record_sha256": "443ac0ff75ffda3a4775082ee07d86fb6fc5c17bd9dd01785c494c7c36706cd9"
     }
   }
 }

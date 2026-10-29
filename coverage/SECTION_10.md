@@ -1,5 +1,56 @@
 # Section 10: potentials of almost real type
 
+## Ordered comparison through Lemma 10.2
+
+The literal scalar contour in Lemma 10.2 now recovers every periodic
+endpoint power sum, with the exact factor 2*Delta*DeltaPrime and normalization
+1/(2*pi*i). A weighted argument principle counts analytic orders, which are
+identified with the actual algebraic multiplicities of the isolated endpoint
+pair. Collapsed gaps contribute twice. Every original isolating family is
+supported, including central and negative indices.
+
+Joint analytic integration proves analytic source dependence directly. One
+fixed family of circles works for all nearby sources, indices and powers;
+any existing Lemma 10.2 common domain is retained. Three modules add eight
+positive theorems. Two integration examples at p=3/2 recover the signed
+cotangent moments at -pi and the analytic cubic moment in midpoint/gap form.
+
+Validation: `./scripts/check.sh` passes with 8,508 build jobs, 7,576
+public examples and a transitive axiom audit of 44,255 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The first twelve groups in the [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md)
+are compared: eleven matched and one corrected. The correction reuses the
+real-type source locus in Lemma 10.1; no new refutation is added. Common-domain
+simplicity, exact disk separation and full lp/l(p/2) sequence estimates retain
+their original scope. Forty later Section 10 groups remain pending comparison.
+
+Continue with S10-013, the standard root and Lemma 10.3. Section 7's physical
+NLS Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and broader source inventory
+remain unresolved.
+
+The [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean)
+removes the finite logarithmic principal parts, multiplies the analytic
+remainder by an analytic weight and applies Cauchy's theorem. Each pole
+contributes its weight times its analytic order. The
+[actual contour formulas](../NLS/ZakharovShabat/SourceSection10PowerContours.lean)
+identify those orders with the two canonical endpoint slots using the
+original algebraic multiplicity enumeration. No periodic simplicity
+assumption is needed.
+
+The [analytic contour package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
+proves nonvanishing on each original circle throughout the chosen source
+neighborhood. The integrand is jointly analytic on its nonzero-denominator
+domain. Fixed-circle analytic integration then gives the source analyticity
+in the displayed proof, independently of endpoint-label analyticity.
+`SourceLemma10_2Data.exists_power_sum_contours` retains any existing common
+domain and chooses the local family before all indices and powers.
+
+The following named-statement entries retain their historical audit scope;
+they do not discharge the forty ordered groups still pending below.
+
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.

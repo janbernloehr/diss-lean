@@ -71230,3 +71230,100 @@ example (φ : CoeffPair (3/2)) (z : ℂ)
       ((han ψ hψ).prod analyticAt_id)
 
 end Section9SimpleBranchExamples
+
+
+noncomputable section
+open Set Metric Complex Filter Topology
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section10PowerContourExamples
+
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨one_lt_half.le⟩
+
+-- A negative free double eigenvalue gives its exact signed moments,
+-- including the multiplicity two at k=0, on a constructed original circle.
+example : ∃ c r : ℝ, 0 < r ∧ (-(Real.pi : ℂ)) ∈ ball (c : ℂ) r ∧
+    ∀ k : ℕ, (2*Real.pi*Complex.I : ℂ)⁻¹ * (∮ z in C((c : ℂ),r), (2*cos z/sin z)*z^k) =
+      2*(-(Real.pi : ℂ))^k := by
+  obtain ⟨W,_,_,hreal,H⟩ := sourceLemma10_2 half_ne_top one_lt_half
+  have h0W : (0 : CoeffPair (3/2)) ∈ W := hreal (by simp [realTypeSourceLocus])
+  obtain ⟨V,hV,_,h0V,_,D,C,a,r,hD,hcont⟩ := H.exists_power_sum_contours 0 h0W
+  obtain ⟨hr,hdisc,hne,hpower⟩ := hcont (-1)
+  have hcenter := hD.cluster 0 h0V (-1) (Or.inl rfl)
+  rw [hdisc] at hcenter
+  have hcenter' : (-(Real.pi : ℂ)) ∈ ball (a (-1) : ℂ) (r (-1)) := by
+    simpa only [map_zero,canonicalPeriodicLeft_zero,Int.cast_neg,Int.cast_one,mul_neg,mul_one] using hcenter
+  refine ⟨a (-1),r (-1),hr,hcenter',?_⟩
+  intro k
+  have he := (hpower k).2 0 h0V
+  have hΔ : canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2))) =
+      (fun z : ℂ => 2*cos z) := by
+    funext z
+    rw [map_zero,canonicalDiscriminant_zero_finite]
+    rfl
+  have hkernel (z : ℂ) (hz : z ∈ sphere (a (-1) : ℂ) (r (-1))) :
+      (2*canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2))) z*
+        deriv (canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2)))) z /
+        ((canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2))) z)^2-4)) =
+        2*cos z/sin z := by
+    have hd : deriv (fun z : ℂ => 2*cos z) z = -2*sin z := by
+      convert ((Complex.hasDerivAt_cos z).const_mul 2).deriv using 1
+      ring
+    have ht : (2*cos z)^2-4 = -4*(sin z)^2 := by
+      linear_combination (4 : ℂ)*(Complex.sin_sq_add_cos_sq z)
+    have hn := hne 0 h0V z hz
+    rw [hΔ,ht] at hn
+    have hs : sin z ≠ 0 := by intro h; apply hn; rw [h]; ring
+    rw [hΔ,hd,ht]
+    field_simp
+    ring
+  have hi : (∮ z in C((a (-1) : ℂ),r (-1)),
+      (2*canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2))) z*
+        deriv (canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2)))) z /
+        ((canonicalDiscriminant half_ne_top (periodOnePotential (0 : CoeffPair (3/2))) z)^2-4))*z^k) =
+        ∮ z in C((a (-1) : ℂ),r (-1)), (2*cos z/sin z)*z^k := by
+    apply circleIntegral.integral_congr hr.le
+    intro z hz
+    dsimp only
+    rw [hkernel z hz]
+  rw [hi] at he
+  simpa only [map_zero,canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero,Int.cast_neg,Int.cast_one,mul_neg,mul_one,two_mul] using he.symm
+
+-- The cubic contour gives an analytic expression in the midpoint and
+-- squared gap, without any analyticity assumption on the two labels.
+example {V : Set (CoeffPair (3/2))} {D : ℤ → Set ℂ} {C : ℝ}
+    (H : SourceIsolatingNeighborhoods half_ne_top one_lt_half V D C)
+    (hV : IsOpen V) (n : ℤ) (c : ℂ) (r : ℝ) (hr : 0 < r) (hD : D n = ball c r) :
+    let M := fun ψ : CoeffPair (3/2) =>
+      2*(canonicalPeriodicMidpoint half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^3+
+        (3/2 : ℂ)*canonicalPeriodicMidpoint half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n*
+          (canonicalPeriodicGap half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2
+    AnalyticOnNhd ℂ M V ∧ ∀ ψ ∈ V,
+      (2*Real.pi*Complex.I : ℂ)⁻¹ * (∮ z in C(c,r),
+        (2*canonicalDiscriminant half_ne_top (periodOnePotential ψ) z*
+          deriv (canonicalDiscriminant half_ne_top (periodOnePotential ψ)) z /
+          ((canonicalDiscriminant half_ne_top (periodOnePotential ψ) z)^2-4))*z^3) = M ψ := by
+  dsimp only
+  have he (ψ : CoeffPair (3/2)) (hψ : ψ ∈ V) := H.power_sum_contour ψ hψ n c r hr hD 3
+  have hc := H.analyticOnNhd_power_sum_contour hV n c r hr hD 3
+  have halgebra (ψ : CoeffPair (3/2)) :
+      (canonicalPeriodicLeft half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^3+
+        (canonicalPeriodicRight half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^3 =
+      2*(canonicalPeriodicMidpoint half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^3+
+        (3/2 : ℂ)*canonicalPeriodicMidpoint half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n*
+          (canonicalPeriodicGap half_ne_top one_lt_half (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 := by
+    unfold canonicalPeriodicMidpoint canonicalPeriodicGap
+    ring
+  refine ⟨?_,fun ψ hψ => (he ψ hψ).symm.trans (halgebra ψ)⟩
+  intro ψ hψ
+  apply (hc ψ hψ).congr
+  filter_upwards [hV.mem_nhds hψ] with χ hχ
+  exact (he χ hχ).symm.trans (halgebra χ)
+
+end Section10PowerContourExamples
