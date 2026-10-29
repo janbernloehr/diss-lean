@@ -71147,3 +71147,39 @@ example (φ : CoeffPair (3/2)) (z : ℂ) :
     (eventually_atTop.2 ⟨K,fun M hM => (hd M hM z).1⟩)
 
 end Section8DeterminantExamples
+
+
+noncomputable section
+open Complex
+open NLS.ZakharovShabat
+namespace Section8SineExamples
+
+-- The explicit exterior constant converts an additive derivative error into a quotient error.
+example (z d : ℂ) {ε : ℝ} (hε : 0 ≤ ε)
+    (hz : ∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖)
+    (hd : ‖d+2*sin z‖ ≤ ε*Real.exp |z.im|) :
+    ‖d/(-2*sin z)-1‖ ≤ 2*ε := by
+  have hs : 0 < ‖sin z‖ := lt_of_lt_of_le (by norm_num : (0 : ℝ) < 1/2)
+    (section8_half_le_norm_sin hz)
+  have hsn : sin z ≠ 0 := norm_pos_iff.mp hs
+  have he : d/(-2*sin z)-1 = (d+2*sin z)/(-2*sin z) := by
+    field_simp
+    ring
+  rw [he,norm_div,norm_mul,norm_neg,Complex.norm_ofNat]
+  apply (div_le_iff₀ (by positivity : 0 < 2*‖sin z‖)).mpr
+  calc
+    ‖d+2*sin z‖ ≤ ε*Real.exp |z.im| := hd
+    _ ≤ ε*(4*‖sin z‖) := mul_le_mul_of_nonneg_left (section8_exp_abs_im_le_four_norm_sin hz) hε
+    _ = (2*ε)*(2*‖sin z‖) := by ring
+
+-- The literal integral has the same vanishing center derivative as the filled squared quotient.
+example (n : ℤ) :
+    deriv (fun z : ℂ => (∫ s : ℝ in 0..1, cos ((s : ℂ)*(z-(Real.pi : ℂ)*n)))^2)
+      ((Real.pi : ℂ)*n) = 0 := by
+  have he : (fun z : ℂ => (freeSineQuotient n z)^2) =
+      fun z => (∫ s : ℝ in 0..1, cos ((s : ℂ)*(z-(Real.pi : ℂ)*n)))^2 :=
+    funext (section8_freeSineQuotient_sq_integral n)
+  rw [← he]
+  exact deriv_freeSineQuotient_sq_center n
+
+end Section8SineExamples

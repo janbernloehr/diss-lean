@@ -4779,3 +4779,4 @@ import NLS.ZakharovShabat.SourceSection7PsiProduct
 import NLS.ZakharovShabat.SourceSection7AngleFormula
 import NLS.ZakharovShabat.SourceSection7RoughInput
 import NLS.ZakharovShabat.SourceSection8ParityDeterminants
+import NLS.ZakharovShabat.SourceSection8SineEstimates

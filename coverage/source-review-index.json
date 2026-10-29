@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T00:45:36.060002+00:00",
-  "base_commit": "16a161568a7085c3918864227808f0117ecf7e4c",
+  "published_utc": "2026-10-29T01:07:30.291004+00:00",
+  "base_commit": "b899e0999fd2418dfa67e6b23acda8e5da0784f6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 109,
-    "module_hash_checks": 1863,
-    "distinct_modules": 1167
+    "review_records": 110,
+    "module_hash_checks": 1913,
+    "distinct_modules": 1207
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "16a161568a7085c3918864227808f0117ecf7e4c",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes corrected original Section 8 finite determinants, constructed ordered parity roots on a common source neighborhood, whole-plane product limits and two integration examples. The first fifteen ordered Section 8 groups have eight matches, six corrections and one partial quantitative sine-bound refinement. Twenty-one later groups await ordered comparison. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, broader source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "b899e0999fd2418dfa67e6b23acda8e5da0784f6",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes eight exact Section 8 sine lemmas and two integration examples. The ordered Section 8 ledger now compares all 36 groups with 28 matches and eight proved corrections. The exact exterior constant four resolves the earlier partial group; the remaining proof displays retain root multiplicities, complex perturbations, critical-product normalization and collapsed-gap estimates. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8503,
-    "public_examples": 7570,
-    "transitive_NLS_declarations": 44226,
+    "build_jobs": 8504,
+    "public_examples": 7572,
+    "transitive_NLS_declarations": 44234,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4780,
-      "sha256": "3cd9c0373097de133947e2d23c95597a1f5c029fc091007227d0e1d395a08c0d"
+      "files": 4781,
+      "sha256": "090ec2f999a26000cc702a8f3d2e5261650bf15987fc94c66343acc21ef84b86"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -27404,6 +27404,780 @@
       ],
       "declaration_inventory_count": 44226,
       "source_record_sha256": "6fe5d5c2e9e14e331038b09c092bb2fab9a09fdc715ecc86697030bca04191a0"
+    },
+    "Section8RemainingSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b899e0999fd2418dfa67e6b23acda8e5da0784f6",
+      "updated_utc": "2026-10-29T01:07:30.291004+00:00",
+      "source_lines": [
+        [
+          3670,
+          3673
+        ],
+        [
+          3678,
+          3701
+        ],
+        [
+          3705,
+          3713
+        ],
+        [
+          3714,
+          3718
+        ],
+        [
+          3720,
+          3744
+        ],
+        [
+          3745,
+          3766
+        ],
+        [
+          3768,
+          3781
+        ],
+        [
+          3784,
+          3787
+        ],
+        [
+          3790,
+          3797
+        ],
+        [
+          3798,
+          3803
+        ],
+        [
+          3805,
+          3807
+        ],
+        [
+          3814,
+          3823
+        ],
+        [
+          3828,
+          3840
+        ],
+        [
+          3843,
+          3854
+        ],
+        [
+          3855,
+          3865
+        ],
+        [
+          3867,
+          3868
+        ],
+        [
+          3870,
+          3877
+        ],
+        [
+          3880,
+          3883
+        ],
+        [
+          3886,
+          3893
+        ],
+        [
+          3904,
+          3913
+        ],
+        [
+          3915,
+          3927
+        ],
+        [
+          3929,
+          3945
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S8-014",
+          "source_lines": [
+            3670,
+            3673
+          ],
+          "requirement": "Cauchy derivative estimate and exterior sine bound",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Cauchy estimates give the derivative error on the original exterior. The exact intermediate bound norm(cos(z)/sin(z)) <= exp(abs(Im(z)))/norm(sin(z)) <= 4 now holds throughout that exterior, including its lower horizontal strip.",
+            "The positive proof obtains norm(sin(z)) >= 1/2 outside all quarter-pi free discs and combines this with the exponential difference bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.section8_norm_sin_sq",
+            "NLS.ZakharovShabat.section8_centered_sine_lower",
+            "NLS.ZakharovShabat.section8_half_le_norm_sin",
+            "NLS.ZakharovShabat.section8_exp_abs_im_le_four_norm_sin",
+            "NLS.ZakharovShabat.section8_exterior_sine_quotient",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_error_exp",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_div_free"
+          ],
+          "qualification": "This resolves the quantitative refinement left partial by the preceding review. The integration example turns an additive error epsilon*exp(abs(Im(z))) into a quotient error at most 2*epsilon. No assertion that the printed constant is false is needed."
+        },
+        {
+          "ordered_group": "S8-016",
+          "source_lines": [
+            3678,
+            3701
+          ],
+          "requirement": "Complex lexicographic discontinuity and Figure 2.1",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "In every original source neighborhood of zero there is a constant complex source at which both actual central periodic endpoint labels are discontinuous.",
+            "A continuous source curve makes two simple central roots cross a vertical line, changing the lexicographic choice as in Figure 2.1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceConstantCrossing",
+            "NLS.ZakharovShabat.continuous_sourceConstantCrossing",
+            "NLS.ZakharovShabat.orderedEndpoint_vertical_crossing_neg",
+            "NLS.ZakharovShabat.orderedEndpoint_vertical_crossing_zero",
+            "NLS.ZakharovShabat.exists_sourcePeriodicLabels_not_continuousAt"
+          ],
+          "qualification": "The existing witness theorem is reused. The source warning is existential for general complex potentials; it does not assert discontinuity at every complex source or at zero itself."
+        },
+        {
+          "ordered_group": "S8-017",
+          "source_lines": [
+            3705,
+            3713
+          ],
+          "requirement": "Lemma 8.2(i): endpoint continuity at real bases under complex perturbations",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every real-type original source, both ordered periodic endpoint maps are continuous at every signed index under arbitrary complex source perturbations.",
+            "The implementation also proves continuity of both full lp displacement sequences and one neighborhood controlling all coordinate changes."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_2",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.continuous_left",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.continuous_right",
+            "NLS.ZakharovShabat.continuousAt_sourcePeriodicEndpointDisplacements_of_realType",
+            "NLS.ZakharovShabat.exists_uniform_sourcePeriodicEndpoint_neighborhood"
+          ],
+          "qualification": "No root simplicity, noncollapsed-gap or real-perturbation restriction is imposed. The full sequence-norm conclusion is stronger than the printed coordinatewise statement."
+        },
+        {
+          "ordered_group": "S8-018",
+          "source_lines": [
+            3714,
+            3718
+          ],
+          "requirement": "Lemma 8.2(ii): strict separation of successive real gap pairs",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each real-type source, the endpoints within a gap are weakly ordered and successive gaps are strictly separated at every integer index."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_2",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.interlacing",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.disjoint_gaps"
+          ],
+          "qualification": "The within-gap inequality permits coincident endpoints. The strict inequalities between distinct gaps include central indices and remain valid when either neighboring gap collapses."
+        },
+        {
+          "ordered_group": "S8-019",
+          "source_lines": [
+            3720,
+            3744
+          ],
+          "requirement": "Local endpoint discs, Rouche counts and ordered endpoint identification",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Joint continuity gives locally uniform periodic products and stable analytic counts on every spectral-free circle near the source. Compact root confinement keeps nearby roots inside neighborhoods of the old spectrum.",
+            "Stable prefix and suffix counts in real-diameter discs bound the real part of each ordered slot. Imaginary-part confinement then gives complex coordinate continuity even at repeated endpoint values."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_periodicProduct_family",
+            "NLS.ZakharovShabat.eventually_periodicProduct_count_eq",
+            "NLS.ZakharovShabat.eventually_periodicSpectrum_mem_open",
+            "NLS.ZakharovShabat.eventually_canonicalPeriodicSlot_re_le_of_barrier",
+            "NLS.ZakharovShabat.eventually_le_canonicalPeriodicSlot_re_of_barrier",
+            "NLS.ZakharovShabat.continuousAt_canonicalPeriodicSlot_im_of_realType",
+            "NLS.ZakharovShabat.continuousAt_canonicalPeriodicSlot_of_realType"
+          ],
+          "qualification": "The formal proof uses real-diameter barriers to implement the source small-disc ordering argument. Counts are analytic multiplicities, not just the number of distinct root values. The continuous original embedding pulls the neighborhood back to the source norm."
+        },
+        {
+          "ordered_group": "S8-020",
+          "source_lines": [
+            3745,
+            3766
+          ],
+          "requirement": "Real order, signed levels (2.5) and distinct gaps",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The real ordered endpoints have the signed discriminant level (-1)^n*Delta=2 for every positive, zero and negative index.",
+            "Adjacent pairs have opposite levels, yielding strict separation; lexicographic order reduces to the real order at real-type sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePeriodicEndpoints_signed_discriminant",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.real_endpoints",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.interlacing"
+          ],
+          "qualification": "The signed level identity retains integer powers and the original source potential. Both restriction below exponent two and extension above it have already been justified in the discriminant compatibility comparison."
+        },
+        {
+          "ordered_group": "S8-021",
+          "source_lines": [
+            3768,
+            3781
+          ],
+          "requirement": "Closed-gap definition and exact discriminant superlevel characterization",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The closed source gaps are exactly the real points where norm(Delta) is at least two; their interiors are exactly the points where it is greater than two.",
+            "On gap n the signed value (-1)^n*Delta is at least two, with a strict inequality in every nonempty gap interior. Equality in modulus occurs exactly at an endpoint."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealPeriodicGap",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.closed_gaps",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.open_gaps",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.endpoint_set",
+            "NLS.ZakharovShabat.SourceLemma8_2Data.existsUnique_gap",
+            "NLS.ZakharovShabat.signed_discriminant_ge_two_on_canonicalGap",
+            "NLS.ZakharovShabat.signed_discriminant_gt_two_on_canonicalGap_interior"
+          ],
+          "qualification": "The product-sign and level-continuity proof supplies the superlevel characterization directly. Collapsed gaps are included as singletons and each superlevel point belongs to exactly one gap."
+        },
+        {
+          "ordered_group": "S8-022",
+          "source_lines": [
+            3784,
+            3787
+          ],
+          "requirement": "Lemma 8.3: local uniform critical-root counts, exhaustion and reality",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "One open convex original neighborhood and positive cutoff give exactly one simple critical root in each distant quarter-pi disc, exactly 2K+1 central roots for every larger cutoff K, and exhaustion of all roots.",
+            "The distant and central boundaries are zero-free; central labels retain analytic multiplicity. At real-type sources every critical root is real."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_3",
+            "NLS.ZakharovShabat.SourceLemma8_3Data.central_roots",
+            "NLS.ZakharovShabat.SourceLemma8_3Data.central_multiplicity",
+            "NLS.ZakharovShabat.SourceLemma8_3Data.central_box_selection",
+            "NLS.ZakharovShabat.SourceLemma8_3Data.central_box_count",
+            "NLS.ZakharovShabat.discriminant_critical_im_eq_zero_of_realType"
+          ],
+          "qualification": "The central circle used in the printed proof and the earlier height-K central box select the same critical roots after increasing the cutoff. Reality is supported by the real-rooted full-product derivative argument, not merely conjugation symmetry."
+        },
+        {
+          "ordered_group": "S8-023",
+          "source_lines": [
+            3790,
+            3797
+          ],
+          "requirement": "Rouche proof for distant and central critical-root counts",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The locally uniform exterior derivative ratio supplies a strict Rouche inequality with tolerance one half on all sufficiently distant free circles and all sufficiently large central circles.",
+            "The free derivative counts transfer as one and 2K+1, with boundary nonvanishing. Exterior nonvanishing and the free-disc geometry exclude any further critical roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_rouche",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_critical_counts",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_critical_distribution",
+            "NLS.ZakharovShabat.exists_discriminant_critical_counts"
+          ],
+          "qualification": "The same source neighborhood and cutoff work for every larger central circle, including both signed distant tails. Exhaustion is proved, rather than inferred from a single central count."
+        },
+        {
+          "ordered_group": "S8-024",
+          "source_lines": [
+            3798,
+            3803
+          ],
+          "requirement": "Real critical roots and extrema in all real gaps",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The band to the right of gap n is (lambda_n^+,lambda_(n+1)^-). It is nonempty, and the discriminant real part has square strictly below four there.",
+            "Each real gap contains a critical point: Rolle supplies one in an open gap and endpoint multiplicity covers a collapsed gap. Distinct gap witnesses saturate the central critical multiset and identify the canonical indexed roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealBand",
+            "NLS.ZakharovShabat.sourceRealBand_nonempty",
+            "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four",
+            "NLS.ZakharovShabat.exists_critical_between_canonicalPeriodicEndpoints",
+            "NLS.ZakharovShabat.canonicalPeriodicLeft_critical_of_eq_right",
+            "NLS.ZakharovShabat.realGapCriticalPoint_centralRoots_eq",
+            "NLS.ZakharovShabat.canonicalCriticalPoints_eq_realGapCriticalPoint",
+            "NLS.ZakharovShabat.sourceLemma8_5_real"
+          ],
+          "qualification": "Printed p.50 gives the right-hand band endpoint with index n-1; the proved replacement uses n+1. The square bound is stronger than the needed signed upper bound. This is a positive correction, with no additional refutation theorem."
+        },
+        {
+          "ordered_group": "S8-025",
+          "source_lines": [
+            3805,
+            3807
+          ],
+          "requirement": "Locally uniform bounded critical-root displacement",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The complete canonical critical sequence has a locally uniform bound on its displacement from pi*n, over all signed indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_critical_displacements",
+            "NLS.ZakharovShabat.sourceLemma8_5",
+            "NLS.ZakharovShabat.SourceLemma8_5Data.displacement"
+          ],
+          "qualification": "The later proved full lp displacement bound implies the displayed O(1) estimate by the coordinate norm bound. Central roots are included through a bounded finite head, and the same source neighborhood controls all indices."
+        },
+        {
+          "ordered_group": "S8-026",
+          "source_lines": [
+            3814,
+            3823
+          ],
+          "requirement": "Lemma 8.4: sampled l-p errors and Cauchy derivative estimate",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every sampler in the quarter-pi free discs, the actual trace and derivative errors form lp sequences with one locally uniform norm bound.",
+            "One majorant on the half-pi discs gives the trace estimate; Cauchy on the quarter-pi discs gives the derivative factor 4/pi."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_4",
+            "NLS.ZakharovShabat.SourceLemma8_4Data.disc_majorants",
+            "NLS.ZakharovShabat.SourceLemma8_4Data.sampled_norms",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_disc_majorants",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_value_derivative_majorants",
+            "NLS.ZakharovShabat.exists_uniform_sampled_discriminant_errors"
+          ],
+          "qualification": "The majorant is selected before the spectral sampling points. No continuity of the sampler or of the complex endpoint labels is assumed. Closed quarter-pi discs are covered, including their centers."
+        },
+        {
+          "ordered_group": "S8-027",
+          "source_lines": [
+            3828,
+            3840
+          ],
+          "requirement": "Lemma 8.5: ordered critical labels, literal derivative product and real-base continuity",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual critical roots admit a complete lexicographic enumeration with exact multiplicities and locally uniformly bounded lp displacement.",
+            "The literal symmetric product with prefactor two and pi_0=1 converges locally uniformly on the whole spectral plane to the derivative. Each coordinate is continuous at real-type sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_5",
+            "NLS.ZakharovShabat.sourceLemma8_5_data",
+            "NLS.ZakharovShabat.SourceLemma8_5Data.product",
+            "NLS.ZakharovShabat.sourceLemma8_5_real",
+            "NLS.ZakharovShabat.exists_uniform_ordered_critical_products"
+          ],
+          "qualification": "Sorting changes only a finite central block and preserves the distant labels. The norm estimate includes that entire central block; no globally continuous labeling at arbitrary complex sources is assumed."
+        },
+        {
+          "ordered_group": "S8-028",
+          "source_lines": [
+            3843,
+            3854
+          ],
+          "requirement": "Critical-root displacement from sampled derivative errors and the sine bound",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At a distant critical root the sampled derivative-error estimate bounds sin(lambda_n^bullet). The inverse sine estimate on its free disc then bounds lambda_n^bullet-pi*n by an lp majorant.",
+            "A bounded finite central replacement produces a full lp displacement sequence with a common neighborhood norm bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_critical_displacement_le",
+            "NLS.ZakharovShabat.exists_criticalDisplacementCoeff_le",
+            "NLS.ZakharovShabat.exists_uniform_critical_displacements"
+          ],
+          "qualification": "The printed intermediate assertion is sin(lambda_n^bullet) in lp, not lambda_n^bullet itself. The exact free derivative factor -2 is retained in the bound and absorbed only into the final lp coefficient."
+        },
+        {
+          "ordered_group": "S8-029",
+          "source_lines": [
+            3855,
+            3865
+          ],
+          "requirement": "Entire critical product, removable quotient and asymptotic identification",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The normalized entire critical product has the same finite analytic zero orders as the discriminant derivative, so their quotient extends across all common zeros.",
+            "The quotient tends to one on the free-disc exterior. Maximum modulus yields a global bound, and Liouville plus an escaping exterior sequence makes the quotient identically one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.CriticalPointLabeling.analyticOnNhd_quotient",
+            "NLS.ZakharovShabat.CriticalPointLabeling.tendsto_quotient_of_separated",
+            "NLS.ZakharovShabat.CriticalPointLabeling.isBounded_quotient",
+            "NLS.ZakharovShabat.CriticalPointLabeling.quotient_eq_one",
+            "NLS.ZakharovShabat.CriticalPointLabeling.product_eq_derivative",
+            "NLS.ZakharovShabat.CriticalPointLabeling.tendstoLocallyUniformlyOn_derivative_product"
+          ],
+          "qualification": "The proof explicitly bridges the exterior asymptotic to the whole plane. Root-set equality alone is not used to infer removability; central repeated roots retain their full analytic orders."
+        },
+        {
+          "ordered_group": "S8-030",
+          "source_lines": [
+            3867,
+            3868
+          ],
+          "requirement": "Rouche continuity of critical labels",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Locally uniform derivative dependence preserves critical counts on each zero-free circle. Ordered prefix and suffix barriers and imaginary-part confinement give coordinate continuity at real-type sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_discriminant_derivative_family",
+            "NLS.ZakharovShabat.eventually_discriminant_critical_count_eq",
+            "NLS.ZakharovShabat.eventually_canonicalCriticalPoints_re_le_of_barrier",
+            "NLS.ZakharovShabat.eventually_le_canonicalCriticalPoints_re_of_barrier",
+            "NLS.ZakharovShabat.continuousAt_canonicalCriticalPoints_of_realType",
+            "NLS.ZakharovShabat.analyticAt_sourceCanonicalCriticalPoint_of_realType"
+          ],
+          "qualification": "The proof parallels the periodic-endpoint count argument under arbitrary complex perturbations. At real type every critical root is simple, so the implementation also obtains local coordinate analyticity."
+        },
+        {
+          "ordered_group": "S8-031",
+          "source_lines": [
+            3870,
+            3877
+          ],
+          "requirement": "Unique strict gap extrema, including collapsed gaps",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every canonical critical root of a real source lies in its indexed closed gap and is the unique critical point there.",
+            "All such critical roots are simple zeros of the derivative and hence strict real local extrema, including collapsed gaps. There are no other real local extrema."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalCriticalPoints_mem_canonicalPeriodicGap",
+            "NLS.ZakharovShabat.analyticOrderAt_discriminant_critical_eq_one_of_realType",
+            "NLS.ZakharovShabat.discriminant_second_derivative_ne_zero_at_critical_of_realType",
+            "NLS.ZakharovShabat.discriminant_critical_strict_local_extremum",
+            "NLS.ZakharovShabat.existsUnique_localExtremum_in_canonicalPeriodicGap",
+            "NLS.ZakharovShabat.isLocalExtr_real_discriminant_iff_canonical",
+            "NLS.ZakharovShabat.sourceLemma8_5_real"
+          ],
+          "qualification": "Strictness is expressed on a punctured real neighborhood, so it remains meaningful at a singleton gap. The proof combines exact global multiplicities, central count saturation, the second-derivative test and Fermat's theorem."
+        },
+        {
+          "ordered_group": "S8-032",
+          "source_lines": [
+            3880,
+            3883
+          ],
+          "requirement": "Lemma 8.6: locally uniform squared-gap critical offset",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "One open convex original neighborhood and one positive cutoff give the actual critical midpoint offset as the squared gap times an lp coefficient sequence with a uniform norm bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma8_6",
+            "NLS.ZakharovShabat.sourceCriticalGapTailCoefficient_apply",
+            "NLS.ZakharovShabat.SourceLemma8_6Data.offset",
+            "NLS.ZakharovShabat.SourceLemma8_6Data.norm_offset_le",
+            "NLS.ZakharovShabat.SourceLemma8_6Data.collapsed_gap"
+          ],
+          "qualification": "The statement is for arbitrary complex sources at every finite p>1. It includes all sufficiently distant signed indices and collapsed gaps; the finite central extension of the coefficient is zero."
+        },
+        {
+          "ordered_group": "S8-033",
+          "source_lines": [
+            3886,
+            3893
+          ],
+          "requirement": "Deleted product and corrected midpoint factorization",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The deleted endpoint product has the literal outer factor 1/pi_n^2 and omits exactly the nth pair; its cutoffs converge locally uniformly on the whole plane.",
+            "With that normalization the exact midpoint factorization is Delta^2-4=-4*((tau_n-z)^2-gamma_n^2/4)*Delta_n(z)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDeletedPeriodicProduct_formula",
+            "NLS.ZakharovShabat.sourceDiscriminant_midpoint_factorization",
+            "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul"
+          ],
+          "qualification": "The positive correction is the prefactor -4. The normalization includes pi_0=1, the removed index, coincident endpoints and evaluations at removed roots. Historical refutations are left unchanged; none is added."
+        },
+        {
+          "ordered_group": "S8-034",
+          "source_lines": [
+            3904,
+            3913
+          ],
+          "requirement": "Uniform deleted-product estimate and evaluation at the critical root",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The deleted product differs from the squared filled free sine quotient by a locally uniformly bounded lp majorant on every half-pi disc.",
+            "At the actual distant critical roots, the deleted-product value minus one and its derivative have bounded lp tail representatives on one common source neighborhood."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_canonicalDeletedPairError_majorants",
+            "NLS.ZakharovShabat.exists_uniform_sampled_canonicalDeletedPairErrors",
+            "NLS.ZakharovShabat.exists_uniform_deletedProduct_critical_coefficients",
+            "NLS.ZakharovShabat.memℓp_canonicalDeletedCriticalValueError",
+            "NLS.ZakharovShabat.memℓp_canonicalDeletedCriticalDerivative"
+          ],
+          "qualification": "The critical displacements and centered sine-quotient estimates control evaluation at moving roots. Central indices are filled by finite modification for full lp membership; local tail norm bounds are asserted on a common cutoff."
+        },
+        {
+          "ordered_group": "S8-035",
+          "source_lines": [
+            3915,
+            3927
+          ],
+          "requirement": "Cauchy derivative control and integral sinc identity",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Cauchy converts the deleted-product value majorant on half-pi discs into a derivative majorant with factor 4/pi on quarter-pi discs.",
+            "The filled sinc equals the integral from zero to one of cos(s*z), including at z=0. After translation and squaring, its value error and derivative are O(z-pi*n) uniformly on fixed-radius free discs."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_canonicalDeletedPairError_majorants",
+            "NLS.ZakharovShabat.section8_freeSineQuotient_zero_integral",
+            "NLS.ZakharovShabat.section8_freeSineQuotient_sq_integral",
+            "NLS.ZakharovShabat.deriv_freeSineQuotient_sq_center",
+            "NLS.ZakharovShabat.exists_freeSquaredSine_displacement_bounds"
+          ],
+          "qualification": "The new integral identity supplies the literal source display at its removable center. The derivative estimate is proved through entire increment bounds and the vanishing center derivative; the integration example verifies this for the literal squared integral."
+        },
+        {
+          "ordered_group": "S8-036",
+          "source_lines": [
+            3929,
+            3945
+          ],
+          "requirement": "Differentiated factorization, nonzero tail denominator and squared-gap conclusion",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Differentiating the corrected factorization at a critical point gives 2*a*G(c)+(a^2-gamma^2/4)*Gprime(c)=0. Thus B*a=gamma^2*Gprime(c)/4 for B=2*G(c)+a*Gprime(c).",
+            "The coefficient error B-2 has locally bounded lp tail representatives. Independent uniform smallness estimates give norm(B)>=1 on a common tail, so a=gamma^2*Gprime(c)/(4*B) with locally bounded lp coefficients."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.discriminant_critical_midpoint_identity",
+            "NLS.ZakharovShabat.canonicalCriticalOffsetCoefficient_identity",
+            "NLS.ZakharovShabat.exists_uniform_criticalOffsetCoefficient_error",
+            "NLS.ZakharovShabat.exists_uniform_small_deletedProduct_critical_values",
+            "NLS.ZakharovShabat.exists_uniform_small_criticalOffsetCoefficient_error",
+            "NLS.ZakharovShabat.exists_uniform_criticalOffsetCoefficient_lower_bound",
+            "NLS.ZakharovShabat.canonicalCriticalMidpointOffset_eq_gap_sq_mul_quotient",
+            "NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp",
+            "NLS.ZakharovShabat.SourceLemma8_6Data.denominator_ne_zero"
+          ],
+          "qualification": "The common factor -4 cancels from the zero differentiated equation. Dividing the coefficient equation by two gives the printed normalized (1+lp) form. Uniform nonvanishing is proved separately from bounded lp norms, and only B is divided by, never the gap."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma8_3.lean": "cffe75f896f079d4341c5b01941edd18fb0b4d6b084a4d3f0a024f8ab003b8fb",
+        "NLS/ZakharovShabat/SourceLemma8_4.lean": "c6b42e51f342797c0553d720a2370041aec6a6e4e697b07e6997afdbd297d5b6",
+        "NLS/ZakharovShabat/SourceLemma8_5.lean": "6c51bfd1dd639840f534a1ffc6f83da1761843a14a6fa7f16c25a96684275624",
+        "NLS/ZakharovShabat/SourceLemma8_6.lean": "81b6362906ae7cb7a610a712557a4e4c15aa891900b31389a4d4be3934b34658",
+        "NLS/ZakharovShabat/CriticalMidpointGapSquared.lean": "9487933f646d509a5cc1222b2d7c57a456883824df8c4159e38d20a8f738cbec",
+        "NLS/ZakharovShabat/CriticalMidpointOffset.lean": "a0ce50d1772d711c406d976395a73299a13f0158f1b0a334c158c5621936aa44",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficientLowerBound.lean": "32dd69ac485debab0a2585c8234d4596e68db612042bfd070cb75d5fe1e849d0",
+        "NLS/ZakharovShabat/DeletedProductCriticalValues.lean": "e5dcdf9ecd1ebee57b850feafa3376ac11855c91be93b0e935ed6fbdfb7ca793",
+        "NLS/ComplexAnalysis/QuadraticCriticalIdentity.lean": "7820feec94871e0fba7a1ff2b3b755df9d0452ba9513c88adac4eb0fb7f56520",
+        "NLS/ZakharovShabat/FreeSquaredSineBounds.lean": "1bad9c7789fff902c0e21c806fbe944d8999bdfcfda167eeab337971ed2852c6",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficient.lean": "8dd71f06e01b164c812af94f6dea414eacd6c5ba8ca9b2884f8b66e870d34a08",
+        "NLS/ZakharovShabat/CanonicalDeletedProductLp.lean": "cb16d6cfcb3c525dab47b71cf06a5db255410450a2eea45b1f921da7d4c2ec73",
+        "NLS/ZakharovShabat/UniformSmallCriticalValues.lean": "52c8f3f96e51a0c0ba837cdcae5699985479546d8356fa768b500d2972658b2f",
+        "NLS/ZakharovShabat/FreeSineQuotientAnalytic.lean": "48e3c8f6f34e270c0b0ba52f001dc2a11220eeb8d93a4f610ef7c3619df111de",
+        "NLS/ZakharovShabat/FreeSineQuotient.lean": "018019aca581e8023c899a5c04f3cf88a1035d066999b7027f787cd7a2fa10f8",
+        "NLS/ZakharovShabat/SourceLemma8_2.lean": "c63bdbed8a921521d23201d1ca25dabcea2d78f09eb2251f67d0653b5783bef5",
+        "NLS/ZakharovShabat/SourcePeriodicEndpointContinuity.lean": "e205afeab520f55e6b36d4fe0ca041d64c2d4093942a1aa34f292457ed788d50",
+        "NLS/ZakharovShabat/SourcePeriodicLabelDiscontinuity.lean": "ef431bd4fafb102c21f463db88c2b4fd9bcb7c6ecfa92ce0a2ffbf14154d81c4",
+        "NLS/ZakharovShabat/CriticalProductQuotient.lean": "e6f0729083489e6dad5620eb9defc285945faebc9124fb84f5234195c9dc4477",
+        "NLS/ZakharovShabat/DiscriminantDerivativeProduct.lean": "20cc4df4b55b669044d5e78df4760b7ecc3f0f7af39257359d4ceb08dba34662",
+        "NLS/ZakharovShabat/OrderedCriticalProducts.lean": "8997a43ee2eec74316c4e607ab361e9fc4f8a015984206b4567ad10421811b18",
+        "NLS/ZakharovShabat/CanonicalPeriodicContinuity.lean": "cd9d42ae4cd92f4e4421dcfb28ad060573a35d52d716adb4f776d4e46999d74b",
+        "NLS/ZakharovShabat/RealGapCharacterization.lean": "4d5ff17369afc34aadbfc9e6b33d282610ab5bcd86c1a460f5d858d5fa939658",
+        "NLS/ZakharovShabat/DiscriminantCriticalCounts.lean": "482e248db5fe213617d436eb52eb55604e384fe9968efc2faa60494a3e0dbff9",
+        "NLS/ZakharovShabat/UniformCriticalCounts.lean": "4656b554adc2405e5243ef8389a2155dbb21827c8e2a1e85db143f29dd0c21b9",
+        "NLS/ZakharovShabat/PeriodicEndpointRealBarriers.lean": "c640997e5b484e76f4e9e5d090a1beb6e8b9b2ed1c522cd06de0fd805bb0a51e",
+        "NLS/ZakharovShabat/CanonicalCriticalContinuity.lean": "1bfb0d90bb41f45ac6c6005153be8a65601217599550de5b27d87ae7354857b2",
+        "NLS/ZakharovShabat/RealGapCriticalPoints.lean": "7dc86a588d4d6650f9ac842e086a1ca6832ba36550831f2cee32062b5177f18c",
+        "NLS/ZakharovShabat/RealDiscriminantExtrema.lean": "cbd990bab2822baf183dcf4c1d274c1f5e7356bd35cc057dfc6a3331f4c12f11",
+        "NLS/ZakharovShabat/CanonicalPeriodicStability.lean": "e45719994066dbcf39ce58b569fe597cf737e0cabbf4852843523e9fbd848f8b",
+        "NLS/ZakharovShabat/RealCriticalSimplicity.lean": "d8eb7740f0ccf668a62f7c4716bd9c2c724689f92fe98c8ed14a26ad3532fa88",
+        "NLS/ZakharovShabat/RealGapCriticalIdentification.lean": "128b68c3053062beb1a61f72a51ae31de5a020d68128b4f07d8e5e15f6ffba11",
+        "NLS/ZakharovShabat/UniformCriticalDisplacements.lean": "c33db621d40362a943d724fcbd4a98b721ac6d637ff1fa2887c7c1f00db83086",
+        "NLS/ZakharovShabat/CriticalDisplacementBound.lean": "9a9b6a13c3581ce650742351b9bb8bae7beddf2165365f7fac5d5d7bf07d98ab",
+        "NLS/ZakharovShabat/SampledDiscriminantLp.lean": "072c51ff94cd08f188e37dfcb2501c170161ce1f3e0dabfc3b229346530c0d29",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapCritical.lean": "abc2a337470655f122dcf184af62b8170ab8cd38a30edb708c8aa2e1f975b9eb",
+        "NLS/ZakharovShabat/PeriodicProductFamilyLimits.lean": "8992a84573246d2c23ebd0ed38982c4375a85a9520d9890e8ab116664a73cc1b",
+        "NLS/ZakharovShabat/CanonicalCriticalRealBounds.lean": "c8d7f0a194862a8273742dc97c314051799c2967b42611901fc43ff6a45e26fe",
+        "NLS/ZakharovShabat/SourceCriticalPointsAnalytic.lean": "35b9369707052d56ed6d870de5fbb1f5e7563c2288b2c150ebb78e9e6b68408b",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementContinuity.lean": "4a762396bc54a3de542fe2dd60990001ffd7c3c2ae75c4a856fb19ddb797cde8",
+        "NLS/ZakharovShabat/RealDiscriminantCritical.lean": "4952d370cc07a613b635b2c72fb522919290645ec40b33e5251b1b96f8771b70",
+        "NLS/ZakharovShabat/RealGapDiscriminantLevels.lean": "0a2d6bd92336aa2e264f094bda3e322e76e6c5219464421e5be1a8f30795ec4e",
+        "NLS/ZakharovShabat/DiscriminantFamilyLimits.lean": "8be77f926a9d2d11eb239f3e8f66ee110642d3efc539430c7d72c58b728a6340",
+        "NLS/ZakharovShabat/SourceCanonicalRootRealBand.lean": "830363bd509f45f35131558723b6ec7ed6df602a195736f63cf09790ae73f58b",
+        "NLS/ZakharovShabat/SourceRealBandGeometry.lean": "7b05c09dd67fa7eec7df1b787be9238f08eaea8e4bd4cd90600be7164df3fe54",
+        "NLS/ZakharovShabat/SourceSection8SineEstimates.lean": "ed9c04237d3dedbd64ca108cad93619efb22b13583189d220262e0dfcefc8203",
+        "NLS/ZakharovShabat/LocallyUniformDiscriminantAsymptotics.lean": "1e955834644356eaeee9eca28323b07ff921d8a2446c75eb71b77d757ce20c6a",
+        "NLS/ZakharovShabat/FreeSineExteriorBounds.lean": "919c6f8488d71aa1a6e13ef7c927988c42411b42884c7f2c28809c267a181a5e",
+        "NLS/ZakharovShabat/DiscriminantDerivativeRatio.lean": "30c57393b375a216c5d56adf7f9352ef31ae6d882624134ceef0958480c86ba1"
+      },
+      "ordered_inventory": "coverage/SECTION_8_ASSERTIONS.md",
+      "ordered_inventory_sha256": "dcb52b73044911b8b8b6d21496ec7eab6cb40496d3ee1d6745993db69ecd8de5",
+      "supersedes_ordered_groups": [
+        "S8-014"
+      ],
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          49,
+          50,
+          51,
+          52
+        ],
+        "images": {
+          "work/tmp/pdfs/section8-next-050.png": "8b7d0f070b683ec9433f5c9f8ea7d0b8b8614dc7d4881722e20f3c485458e1c9",
+          "work/tmp/pdfs/section8-next-051.png": "9ec9b25aba97612eb03e367cc6bfeeabd272bf419b0df4186e7ad90202279316",
+          "work/tmp/pdfs/diss-page-52.png": "ed6ffcb6b04bd472f5797e65214dc35973343d316bbdc5c843f11cc7cfc111bc",
+          "work/tmp/pdfs/diss-page-49.png": "be11fe4bcdf8e998b423b71e2ab40d8c1797c2854e3a7285b7a5fbbffd5d7f21"
+        }
+      },
+      "qualification": "This comparison resolves S8-014 with the exact constant four and compares S8-016 through S8-036 with nineteen matches and two positive corrections. Together with the preceding retained comparison, the current ordered Section 8 ledger has 28 matched groups and eight corrected groups, with none partial or pending. The original finite-p source norm, common-neighborhood quantifiers, full analytic multiplicities, arbitrary complex perturbations, all signed indices and collapsed gaps are retained. The neighboring-band endpoint is n+1 and the midpoint prefactor is -4. No new constant refutation is added. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the source-wide inventory remain unresolved. This is not a completeness certificate.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.CriticalPointLabeling.analyticOnNhd_quotient",
+        "NLS.ZakharovShabat.CriticalPointLabeling.isBounded_quotient",
+        "NLS.ZakharovShabat.CriticalPointLabeling.product_eq_derivative",
+        "NLS.ZakharovShabat.CriticalPointLabeling.quotient_eq_one",
+        "NLS.ZakharovShabat.CriticalPointLabeling.tendstoLocallyUniformlyOn_derivative_product",
+        "NLS.ZakharovShabat.CriticalPointLabeling.tendsto_quotient_of_separated",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.closed_gaps",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.continuous_left",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.continuous_right",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.disjoint_gaps",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.endpoint_set",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.existsUnique_gap",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.interlacing",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.open_gaps",
+        "NLS.ZakharovShabat.SourceLemma8_2Data.real_endpoints",
+        "NLS.ZakharovShabat.SourceLemma8_3Data.central_box_count",
+        "NLS.ZakharovShabat.SourceLemma8_3Data.central_box_selection",
+        "NLS.ZakharovShabat.SourceLemma8_3Data.central_multiplicity",
+        "NLS.ZakharovShabat.SourceLemma8_3Data.central_roots",
+        "NLS.ZakharovShabat.SourceLemma8_4Data.disc_majorants",
+        "NLS.ZakharovShabat.SourceLemma8_4Data.sampled_norms",
+        "NLS.ZakharovShabat.SourceLemma8_5Data.displacement",
+        "NLS.ZakharovShabat.SourceLemma8_5Data.product",
+        "NLS.ZakharovShabat.SourceLemma8_6Data.collapsed_gap",
+        "NLS.ZakharovShabat.SourceLemma8_6Data.denominator_ne_zero",
+        "NLS.ZakharovShabat.SourceLemma8_6Data.norm_offset_le",
+        "NLS.ZakharovShabat.SourceLemma8_6Data.offset",
+        "NLS.ZakharovShabat.analyticAt_sourceCanonicalCriticalPoint_of_realType",
+        "NLS.ZakharovShabat.analyticOrderAt_discriminant_critical_eq_one_of_realType",
+        "NLS.ZakharovShabat.canonicalCriticalMidpointOffset_eq_gap_sq_mul_quotient",
+        "NLS.ZakharovShabat.canonicalCriticalOffsetCoefficient_identity",
+        "NLS.ZakharovShabat.canonicalCriticalPoints_eq_realGapCriticalPoint",
+        "NLS.ZakharovShabat.canonicalCriticalPoints_mem_canonicalPeriodicGap",
+        "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul",
+        "NLS.ZakharovShabat.canonicalPeriodicLeft_critical_of_eq_right",
+        "NLS.ZakharovShabat.continuousAt_canonicalCriticalPoints_of_realType",
+        "NLS.ZakharovShabat.continuousAt_canonicalPeriodicSlot_im_of_realType",
+        "NLS.ZakharovShabat.continuousAt_canonicalPeriodicSlot_of_realType",
+        "NLS.ZakharovShabat.continuousAt_sourcePeriodicEndpointDisplacements_of_realType",
+        "NLS.ZakharovShabat.continuous_sourceConstantCrossing",
+        "NLS.ZakharovShabat.deriv_freeSineQuotient_sq_center",
+        "NLS.ZakharovShabat.discriminant_critical_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.discriminant_critical_midpoint_identity",
+        "NLS.ZakharovShabat.discriminant_critical_strict_local_extremum",
+        "NLS.ZakharovShabat.discriminant_second_derivative_ne_zero_at_critical_of_realType",
+        "NLS.ZakharovShabat.eventually_canonicalCriticalPoints_re_le_of_barrier",
+        "NLS.ZakharovShabat.eventually_canonicalPeriodicSlot_re_le_of_barrier",
+        "NLS.ZakharovShabat.eventually_discriminant_critical_count_eq",
+        "NLS.ZakharovShabat.eventually_le_canonicalCriticalPoints_re_of_barrier",
+        "NLS.ZakharovShabat.eventually_le_canonicalPeriodicSlot_re_of_barrier",
+        "NLS.ZakharovShabat.eventually_periodicProduct_count_eq",
+        "NLS.ZakharovShabat.eventually_periodicSpectrum_mem_open",
+        "NLS.ZakharovShabat.existsUnique_localExtremum_in_canonicalPeriodicGap",
+        "NLS.ZakharovShabat.exists_criticalDisplacementCoeff_le",
+        "NLS.ZakharovShabat.exists_critical_between_canonicalPeriodicEndpoints",
+        "NLS.ZakharovShabat.exists_discriminant_critical_counts",
+        "NLS.ZakharovShabat.exists_freeSquaredSine_displacement_bounds",
+        "NLS.ZakharovShabat.exists_sourcePeriodicLabels_not_continuousAt",
+        "NLS.ZakharovShabat.exists_uniform_canonicalDeletedPairError_majorants",
+        "NLS.ZakharovShabat.exists_uniform_criticalOffsetCoefficient_error",
+        "NLS.ZakharovShabat.exists_uniform_criticalOffsetCoefficient_lower_bound",
+        "NLS.ZakharovShabat.exists_uniform_critical_displacements",
+        "NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp",
+        "NLS.ZakharovShabat.exists_uniform_deletedProduct_critical_coefficients",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_critical_counts",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_critical_distribution",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_div_free",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_error_exp",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_rouche",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_disc_majorants",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_value_derivative_majorants",
+        "NLS.ZakharovShabat.exists_uniform_ordered_critical_products",
+        "NLS.ZakharovShabat.exists_uniform_sampled_canonicalDeletedPairErrors",
+        "NLS.ZakharovShabat.exists_uniform_sampled_discriminant_errors",
+        "NLS.ZakharovShabat.exists_uniform_small_criticalOffsetCoefficient_error",
+        "NLS.ZakharovShabat.exists_uniform_small_deletedProduct_critical_values",
+        "NLS.ZakharovShabat.exists_uniform_sourcePeriodicEndpoint_neighborhood",
+        "NLS.ZakharovShabat.isLocalExtr_real_discriminant_iff_canonical",
+        "NLS.ZakharovShabat.memℓp_canonicalDeletedCriticalDerivative",
+        "NLS.ZakharovShabat.memℓp_canonicalDeletedCriticalValueError",
+        "NLS.ZakharovShabat.norm_critical_displacement_le",
+        "NLS.ZakharovShabat.orderedEndpoint_vertical_crossing_neg",
+        "NLS.ZakharovShabat.orderedEndpoint_vertical_crossing_zero",
+        "NLS.ZakharovShabat.realGapCriticalPoint_centralRoots_eq",
+        "NLS.ZakharovShabat.section8_centered_sine_lower",
+        "NLS.ZakharovShabat.section8_exp_abs_im_le_four_norm_sin",
+        "NLS.ZakharovShabat.section8_exterior_sine_quotient",
+        "NLS.ZakharovShabat.section8_freeSineQuotient_sq_integral",
+        "NLS.ZakharovShabat.section8_freeSineQuotient_zero_integral",
+        "NLS.ZakharovShabat.section8_half_le_norm_sin",
+        "NLS.ZakharovShabat.section8_norm_sin_sq",
+        "NLS.ZakharovShabat.signed_discriminant_ge_two_on_canonicalGap",
+        "NLS.ZakharovShabat.signed_discriminant_gt_two_on_canonicalGap_interior",
+        "NLS.ZakharovShabat.sourceConstantCrossing",
+        "NLS.ZakharovShabat.sourceCriticalGapTailCoefficient_apply",
+        "NLS.ZakharovShabat.sourceDeletedPeriodicProduct_formula",
+        "NLS.ZakharovShabat.sourceDiscriminant_midpoint_factorization",
+        "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four",
+        "NLS.ZakharovShabat.sourceLemma8_2",
+        "NLS.ZakharovShabat.sourceLemma8_3",
+        "NLS.ZakharovShabat.sourceLemma8_4",
+        "NLS.ZakharovShabat.sourceLemma8_5",
+        "NLS.ZakharovShabat.sourceLemma8_5_data",
+        "NLS.ZakharovShabat.sourceLemma8_5_real",
+        "NLS.ZakharovShabat.sourceLemma8_6",
+        "NLS.ZakharovShabat.sourcePeriodicEndpoints_signed_discriminant",
+        "NLS.ZakharovShabat.sourceRealBand",
+        "NLS.ZakharovShabat.sourceRealBand_nonempty",
+        "NLS.ZakharovShabat.sourceRealPeriodicGap",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_discriminant_derivative_family",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_periodicProduct_family"
+      ],
+      "declaration_inventory_count": 44234,
+      "source_record_sha256": "d716dbfc50ad4316d5ff5e04ffeefe426201dd13e737a6337041426cd59a1748"
     }
   }
 }

@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 8 now constructs separately ordered parity roots and
-corrected finite determinant formulas on a common original-source neighborhood.
-The prefactors are -1 and 4, with the doubled circle index and odd boundary pair
-retained. Fifteen groups in the [ordered ledger](coverage/SECTION_8_ASSERTIONS.md)
-are compared; the intermediate lower-strip sine constant and 21 later groups
-remain open in this review. The [completion assessment](coverage/COMPLETENESS.md)
-retains Section 7's partial clauses and the wider qualifications.
+Latest step: Section 8 now proves the exact full-exterior sine bound with
+constant four and the literal filled sinc integral. All 36 groups in the
+[ordered ledger](coverage/SECTION_8_ASSERTIONS.md) have been compared:
+28 matched and eight corrected, including the neighboring-band index and
+midpoint sign. The [completion assessment](coverage/COMPLETENESS.md) retains
+Section 7's partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

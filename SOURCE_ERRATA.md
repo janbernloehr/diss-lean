@@ -844,6 +844,22 @@ analyticity, real-type continuity, and interlacing assertions hold for
 both actual auxiliary spectra and are proved in `SourceLemma9_1Auxiliary.lean`.
 This correction does not change the valid endpoint signs in Lemma 5.1.
 
+## Lemma 8.3 proof: the band to the right uses the next gap
+
+On printed p.50, the interval following gap n is written with right endpoint
+lambda_(n-1)^-. The intended neighboring band is
+(lambda_n^+, lambda_(n+1)^-).
+
+[SourceRealBandGeometry.lean](NLS/ZakharovShabat/SourceRealBandGeometry.lean)
+defines this interval and proves it is nonempty for every real-type source,
+including when a neighboring gap is collapsed.
+`sourceDiscriminant_realBand_sq_lt_four` in
+[SourceCanonicalRootRealBand.lean](NLS/ZakharovShabat/SourceCanonicalRootRealBand.lean)
+proves that the discriminant real part has square less than four there.
+This supplies the required signed upper bound. The existing gap-critical
+counting and strict-extremum theorems give the remainder of the argument.
+See S8-024 in the [ordered Section 8 ledger](coverage/SECTION_8_ASSERTIONS.md).
+
 ## Lemma 8.6: sign of the midpoint factorization
 
 Source: [dissertation, printed pp. 51–52](https://janbernloehr.de/Download/fs16/diss.pdf#page=51),

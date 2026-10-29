@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: Section 8 ordered roots and finite determinants
+## Current milestone: Section 8 sine estimates and remaining comparison
+
+The exact Section 8 exterior estimate now has constant four throughout the
+original domain, including the lower horizontal strip. The filled sinc has
+its literal cosine-integral representation at every point, including the
+removable center. Eight positive lemmas and two integration examples connect
+these formulas to derivative-quotient control and the centered squared-sinc
+derivative.
+
+Validation: `./scripts/check.sh` passes with 8,504 build jobs, 7,572
+public examples and a transitive axiom audit of 44,234 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+All 36 groups in the [ordered Section 8 ledger](coverage/SECTION_8_ASSERTIONS.md) have been compared:
+28 matched and eight corrected. The earlier partial sine-bound refinement
+is resolved. The remaining comparison includes root-count stability, real-gap
+geometry, critical products, strict extrema and squared-gap midpoint offsets.
+The neighboring-band endpoint uses n+1, and the midpoint factorization uses
+-4. These corrections have positive proofs; no additional refutations were
+added.
+
+Continue with Section 9 in source order. Section 7's physical NLS Dirichlet
+motion and unrestricted psi uniqueness, the source-wide inventory, exact
+cited 2014 construction and Appendix G.2 norm interpretation remain open.
+
+Earlier milestone entries retain their historical validation and limitations.
+
+## Previous milestone: Section 8 ordered roots and finite determinants
 
 The corrected Section 8 finite products now have a direct original-source
 determinant interface. It constructs one open convex neighborhood, a common
