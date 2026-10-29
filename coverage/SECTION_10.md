@@ -1,6 +1,49 @@
 # Section 10: potentials of almost real type
 
-## Ordered comparison through Corollary 10.6
+## Ordered comparison through Lemma 10.7 and Figure 2.4
+
+The ordered comparison now includes the canonical root in equation (2.13),
+Lemma 10.7, equation (2.14) and Figure 2.4. The first 32 of 52 groups are
+compared: 28 matched and four corrected occurrences. These four new groups
+match the existing proofs.
+
+The literal symmetric product retains the factor 2*i and pi_0=1. Its square
+is the discriminant radicand off all gaps, and its free value at pi/2 is -2*i.
+The same common source domain and original closed-disk complement support
+joint analyticity and locally uniform convergence. A collapsed gap admits
+the fixed-source analytic continuation 2*i*(tau_n-z)*f_n on the entire
+selected disk, with a simple zero. On noncollapsed gaps, the two continuous
+side values are opposite and vanish at both endpoints. Figure 2.4's real
+gap signs and imaginary band signs hold for every signed index.
+
+This step changes documentation and source-comparison records only. The Lean
+sources and dependency lock exactly match commit `115ebf6`, whose completed
+`./scripts/check.sh` run passed 8,509 build jobs, 7,578 public examples and the
+transitive axiom audit of 44,286 NLS declarations, with 21 inherited warnings.
+That validation is reused; no new full build is claimed. The current module
+hashes, declaration references, source-review integrity and documentation
+links are checked separately.
+
+Twenty groups remain pending in the [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md),
+beginning with S10-033 and Lemma 10.8. Section 7's physical NLS Dirichlet motion
+and unrestricted psi uniqueness, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and the broader source inventory remain
+unresolved.
+
+The [product construction](../NLS/ZakharovShabat/SourceCanonicalRootProduct.lean)
+and [unchanged-domain package](../NLS/ZakharovShabat/SourceLemma10_7.lean)
+retain the preceding quotient theorem. The
+[boundary data](../NLS/ZakharovShabat/SourceCanonicalRootBoundaryDomain.lean)
+cover oriented side approaches for complex sources and the closed gap
+parameter interval. The [normalization and signs](../NLS/ZakharovShabat/SourceCanonicalRootNormalization.lean)
+include the central and negative indices. Strict gap signs concern the
+interior of a noncollapsed real gap; the figure specifies phases, not unit
+magnitudes. Collapsed continuation is at a fixed source, without claiming
+a joint continuation through nearby reopened gaps.
+
+Earlier milestone entries retain their historical scope.
+
+## Previous comparison milestone: through Corollary 10.6
 
 The Lemma 10.5 factor proof now retains the actual quadratic remainder
 Q_k=k^2 times the square-root correction, with Q in l(p/2). Pairing k and -k
@@ -126,7 +169,7 @@ in the displayed proof, independently of endpoint-label analyticity.
 domain and chooses the local family before all indices and powers.
 
 The following named-statement entries retain their historical audit scope;
-they do not discharge the 24 ordered groups still pending.
+they do not discharge the twenty ordered groups still pending.
 
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in

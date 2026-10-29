@@ -159,14 +159,14 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-28 of 52 groups: 24 matched and four corrected occurrences, through
-Corollary 10.6. The refined quadratic remainder and paired error coefficients
-are proved in their literal l(p/2) and l(p/4) spaces. The deleted standard-root
-product retains symmetric pairing and the quotient has an unordered product
-on its stated domain, with all lp displacements allowed. The existing proof
-index a_-m is corrected to a_-k. Twenty-four groups remain pending, starting
-with equation (2.13) and the canonical root. Existing named theorem audits do
-not by themselves settle those remaining passages.
+32 of 52 groups: 28 matched and four corrected occurrences, through
+Lemma 10.7 and Figure 2.4. The canonical root retains the literal symmetric
+product with factor 2*i, its discriminant square identity off the gaps,
+the unchanged joint analytic domain, fixed-source collapsed continuation,
+and opposite side values. The figure's gap and band signs cover all integer
+indices. These four new comparisons match existing proofs and introduce
+no new correction. Twenty groups remain pending, starting with Lemma 10.8.
+Existing named theorem audits do not by themselves settle those passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 28 of 52 ordered Section 10 groups are compared: 24 matched and four corrected occurrences. The refined quadratic remainder, paired linear coefficients and cross-term coefficients are now proved with their actual l(p/2) and l(p/4) exponents, including below one. Lemma 10.5 retains symmetric pairing, literal normalization, local uniform convergence and unchanged analytic domains. Corollary 10.6 covers the entire displacement space and its literal unordered quotient product. The existing a_-m to a_-k proof-index correction is reused; no additional refutation is added. Twenty-four groups remain pending, beginning with equation (2.13). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first 32 of 52 ordered Section 10 groups are compared: 28 matched and four corrected occurrences. Equation (2.13), Lemma 10.7, the collapsed-gap continuation and opposite side values in (2.14), and Figure 2.4 retain their exact normalization, domains and signed-index scope. The four new groups match the existing proofs; no new correction or refutation is added. Twenty groups remain pending, starting with Lemma 10.8. This documentation-only step reuses the unchanged successful Lean and dependency snapshot from commit 115ebf6. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 28
-groups, through Corollary 10.6 on p.57, have been compared.
-The remaining 24 groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 32
+groups, through Figure 2.4 on p.58, have been compared.
+The remaining twenty groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -43,10 +43,10 @@ inspected to preserve figures, signs and closure bars. See
 | S10-026 | 4366–4371 | Paired first-order sum a_k+a_-k. | matched |
 | S10-027 | 4373–4385 | Paired quadratic error and absolute convergence of the paired product. | corrected |
 | S10-028 | 4389–4399 | Corollary 10.6: analytic deleted quotient product. | matched |
-| S10-029 | 4401–4413 | Discriminant square identity and canonical root (2.13). | pending |
-| S10-030 | 4423–4427 | Lemma 10.7: spectral and joint canonical-root analyticity. | pending |
-| S10-031 | 4429–4438 | Collapsed canonical roots and opposite side values (2.14). | pending |
-| S10-032 | 4441–4449 | Figure 2.4: canonical-root signs on and around real gaps. | pending |
+| S10-029 | 4401–4413 | Discriminant square identity and canonical root (2.13). | matched |
+| S10-030 | 4423–4427 | Lemma 10.7: spectral and joint canonical-root analyticity. | matched |
+| S10-031 | 4429–4438 | Collapsed canonical roots and opposite side values (2.14). | matched |
+| S10-032 | 4441–4449 | Figure 2.4: canonical-root signs on and around real gaps. | matched |
 | S10-033 | 4454–4460 | Lemma 10.8: full-disk quotient supremum decomposition and local topology. | pending |
 | S10-034 | 4462–4468 | Free-sine consequence of Lemma 10.8. | pending |
 | S10-035 | 4470–4476 | Separation estimate for the squared half-gap correction. | pending |
@@ -331,6 +331,45 @@ Public evidence: `NLS.ZakharovShabat.exists_displacedRoots_iff_memℓp`, `NLS.Za
 
 The rendered corollary removes the closed U_m. The quotient, unlike its separate standard-root denominator product, has an unconditional individual-factor product. The product identity and analyticity are asserted on the natural nonzero-denominator domain; numerator nonvanishing is not required.
 
+## S10-029: Discriminant square identity and canonical root (2.13).
+
+- The full canonical root is the limit of literal symmetric products with factor 2*i and pi_0=1; restoring any omitted signed index gives exactly 2*i*w_n*f_n.
+- On the complement of all actual closed gaps its square is the actual discriminant squared minus four, and consequently Delta^2-4=-4*w_n^2*f_n^2.
+
+Public evidence: `NLS.ZakharovShabat.sourceCanonicalRootPartialProduct`, `NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct`, `NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted`, `NLS.ZakharovShabat.sourceCanonicalRootPartialProduct_sq_eq_spectralPairPartialProduct`, `NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four`, `NLS.ZakharovShabat.sourceCanonicalRoot_zero_source_halfPi`.
+
+The radicand square identity is asserted off all gaps; the product factorization itself is totalized and valid everywhere. Boundary-square identities are proved separately on selected gap sides. The free value at pi/2 is -2*i, fixing the branch sign. Symmetric pairing is retained.
+
+## S10-030: Lemma 10.7: spectral and joint canonical-root analyticity.
+
+- Spectral analyticity holds on the complement of the actual full gap union at every original complex source.
+- Joint analyticity and local uniform convergence hold on the open moving-gap domain over the same W. The printed complement of the union of closed fixed disks uses exactly the previous V,D,c.
+- Corollary 10.6 is retained without a further shrinking or replacement of its common source domain.
+
+Public evidence: `NLS.ZakharovShabat.sourceCanonicalRootDomain_eq_compl_iUnion`, `NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalJoint`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalClosedFixed`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalLocallyUniform`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCompact`, `NLS.ZakharovShabat.SourceCorollary10_6Data.canonicalRoots`.
+
+The closure bar over U_m is present on rendered p.58. The canonical domain is proved open as the intersection of the omitted-zero and omitted-one domains. No analyticity of individually ordered endpoints is assumed.
+
+## S10-031: Collapsed canonical roots and opposite side values (2.14).
+
+- At a collapsed gap the canonical root is exactly 2*i*(tau_n-z)*f_n and is analytic throughout the original selected disk.
+- At a noncollapsed gap, actual approaches from either oriented open side tend to opposite boundary values. These values are continuous on the closed coordinate interval and both vanish at the endpoints.
+- The side values square to the discriminant radicand; the original isolation data discharge avoidance of every other gap. The assertions apply at complex sources on the same W.
+
+Public evidence: `NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd_of_zeroGap`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsedDisk`, `NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_upper_side`, `NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_lower_side`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalGapPoint_mem`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryLimits`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundary_continuous`, `NLS.ZakharovShabat.sourceCanonicalRootBoundary_endpoints`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryData`, `NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsed_simple_zero`.
+
+Collapsed analyticity is a fixed-source assertion, as printed; it does not claim a joint extension through nearby reopened gaps. Noncollapsed side approaches are oriented by the complex half-gap. Endpoints have value zero; strict nonzero signs concern the interior.
+
+## S10-032: Figure 2.4: canonical-root signs on and around real gaps.
+
+- For every real-type source and every signed index, upper/lower gap values have real signs +(-1)^n and -(-1)^n.
+- On the adjacent open bands the canonical root is purely imaginary, with signs +i*(-1)^n before the gap and -i*(-1)^n after it.
+- The parity applies to negative and central indices, and the adjacent bands remain nonempty when a neighboring gap collapses.
+
+Public evidence: `NLS.ZakharovShabat.sourceCanonicalRoot_figure_gap_signs`, `NLS.ZakharovShabat.sourceCanonicalRoot_figure_band_signs`, `NLS.ZakharovShabat.sourceCanonicalRootGapUpperValue_signed_re_pos`, `NLS.ZakharovShabat.sourceStandardRootOmittedProduct_signed_re_pos_on_realGap_closedGap`, `NLS.ZakharovShabat.sourceCanonicalRoot_realBand_sign`, `NLS.ZakharovShabat.sourceRealBand`, `NLS.ZakharovShabat.sourceRealBand_nonempty`.
+
+Figure 2.4 displays phases, not unit magnitudes. Gap sign assertions require a noncollapsed real gap and interior parameter. Adjacent-band signs use the actual bands between consecutive indexed endpoints, with the implementation proving (-1)^|n|=(-1)^n.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -338,5 +377,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-029, equation (2.13) and the canonical root.
+Continue with S10-033, Lemma 10.8 and the original-disk asymptotic estimates.
 The remaining Section 10 groups and wider unresolved qualifications remain.

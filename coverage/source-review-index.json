@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T03:09:18.948522+00:00",
-  "base_commit": "237d1380d9cfaf856d5d0641a920839930f163d4",
+  "published_utc": "2026-10-29T03:13:36.284830+00:00",
+  "base_commit": "115ebf6c9ce03d21b858693771834b6da6ddc63e",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 114,
-    "module_hash_checks": 2013,
-    "distinct_modules": 1282
+    "review_records": 115,
+    "module_hash_checks": 2025,
+    "distinct_modules": 1288
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "237d1380d9cfaf856d5d0641a920839930f163d4",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes nine positive refined product-error theorems in one module and two integration examples. The first 28 of 52 ordered Section 10 groups are compared: 24 matched and four corrected occurrences. Twenty-four groups remain pending. Actual half- and quarter-exponent coefficients, uniform tail cutoff, symmetric product normalization, unchanged domains and literal unordered quotient product are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "115ebf6c9ce03d21b858693771834b6da6ddc63e",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 115ebf6 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 32 of 52 ordered Section 10 groups are compared: 28 matched and four corrected occurrences, with twenty groups pending. Wider qualifications are retained.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8509,
     "public_examples": 7578,
@@ -40,7 +40,8 @@
       "files": 4786,
       "sha256": "0e56718d57274b5cdc3c17e3bb885ec17d053ef97cba2183383419393537c8c8"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
+    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
+    "validation_reused_from_commit": "115ebf6c9ce03d21b858693771834b6da6ddc63e"
   },
   "named_statements": [
     {
@@ -29795,6 +29796,196 @@
       ],
       "declaration_inventory_count": 44286,
       "source_record_sha256": "adc473cadd5e35b82aca5738158e4c48841698c1708ae37bb5675a61b3ce5e6c"
+    },
+    "Section10CanonicalRootsSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "115ebf6c9ce03d21b858693771834b6da6ddc63e",
+      "updated_utc": "2026-10-29T03:13:36.284830+00:00",
+      "source_lines": [
+        [
+          4401,
+          4413
+        ],
+        [
+          4423,
+          4427
+        ],
+        [
+          4429,
+          4438
+        ],
+        [
+          4441,
+          4449
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-029",
+          "source_lines": [
+            4401,
+            4413
+          ],
+          "requirement": "Discriminant square identity and canonical root (2.13).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The full canonical root is the limit of literal symmetric products with factor 2*i and pi_0=1; restoring any omitted signed index gives exactly 2*i*w_n*f_n.",
+            "On the complement of all actual closed gaps its square is the actual discriminant squared minus four, and consequently Delta^2-4=-4*w_n^2*f_n^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRootPartialProduct",
+            "NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted",
+            "NLS.ZakharovShabat.sourceCanonicalRootPartialProduct_sq_eq_spectralPairPartialProduct",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_zero_source_halfPi"
+          ],
+          "qualification": "The radicand square identity is asserted off all gaps; the product factorization itself is totalized and valid everywhere. Boundary-square identities are proved separately on selected gap sides. The free value at pi/2 is -2*i, fixing the branch sign. Symmetric pairing is retained."
+        },
+        {
+          "ordered_group": "S10-030",
+          "source_lines": [
+            4423,
+            4427
+          ],
+          "requirement": "Lemma 10.7: spectral and joint canonical-root analyticity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Spectral analyticity holds on the complement of the actual full gap union at every original complex source.",
+            "Joint analyticity and local uniform convergence hold on the open moving-gap domain over the same W. The printed complement of the union of closed fixed disks uses exactly the previous V,D,c.",
+            "Corollary 10.6 is retained without a further shrinking or replacement of its common source domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRootDomain_eq_compl_iUnion",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalJoint",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalClosedFixed",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalLocallyUniform",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCompact",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.canonicalRoots"
+          ],
+          "qualification": "The closure bar over U_m is present on rendered p.58. The canonical domain is proved open as the intersection of the omitted-zero and omitted-one domains. No analyticity of individually ordered endpoints is assumed."
+        },
+        {
+          "ordered_group": "S10-031",
+          "source_lines": [
+            4429,
+            4438
+          ],
+          "requirement": "Collapsed canonical roots and opposite side values (2.14).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At a collapsed gap the canonical root is exactly 2*i*(tau_n-z)*f_n and is analytic throughout the original selected disk.",
+            "At a noncollapsed gap, actual approaches from either oriented open side tend to opposite boundary values. These values are continuous on the closed coordinate interval and both vanish at the endpoints.",
+            "The side values square to the discriminant radicand; the original isolation data discharge avoidance of every other gap. The assertions apply at complex sources on the same W."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd_of_zeroGap",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsedDisk",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_upper_side",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_lower_side",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalGapPoint_mem",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryLimits",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundary_continuous",
+            "NLS.ZakharovShabat.sourceCanonicalRootBoundary_endpoints",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryData",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsed_simple_zero"
+          ],
+          "qualification": "Collapsed analyticity is a fixed-source assertion, as printed; it does not claim a joint extension through nearby reopened gaps. Noncollapsed side approaches are oriented by the complex half-gap. Endpoints have value zero; strict nonzero signs concern the interior."
+        },
+        {
+          "ordered_group": "S10-032",
+          "source_lines": [
+            4441,
+            4449
+          ],
+          "requirement": "Figure 2.4: canonical-root signs on and around real gaps.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every real-type source and every signed index, upper/lower gap values have real signs +(-1)^n and -(-1)^n.",
+            "On the adjacent open bands the canonical root is purely imaginary, with signs +i*(-1)^n before the gap and -i*(-1)^n after it.",
+            "The parity applies to negative and central indices, and the adjacent bands remain nonempty when a neighboring gap collapses."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRoot_figure_gap_signs",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_figure_band_signs",
+            "NLS.ZakharovShabat.sourceCanonicalRootGapUpperValue_signed_re_pos",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_signed_re_pos_on_realGap_closedGap",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_realBand_sign",
+            "NLS.ZakharovShabat.sourceRealBand",
+            "NLS.ZakharovShabat.sourceRealBand_nonempty"
+          ],
+          "qualification": "Figure 2.4 displays phases, not unit magnitudes. Gap sign assertions require a noncollapsed real gap and interior parameter. Adjacent-band signs use the actual bands between consecutive indexed endpoints, with the implementation proving (-1)^|n|=(-1)^n."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "4eac87dc37c02a909591094b45b9cd467d112c27153d0f7f6e8be1996f9b9993",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f",
+        "NLS/ZakharovShabat/SourceLemma10_7.lean": "0fe09260262b8b67a6b5930ba8c415afc2e3ba78dae7b893771a2a9b767fd831",
+        "NLS/ZakharovShabat/SourceCanonicalRootNormalization.lean": "6af4f41984bb9526fca4f56bb4d1821c4f53c201124df44e0aa082a798e61d9a",
+        "NLS/ZakharovShabat/SourceCanonicalRootGapSides.lean": "7718f7a511ad899907e963be4e2955ea5fdce76cc3b342bb5f4e18878256be52",
+        "NLS/ZakharovShabat/SourceCanonicalRootCommonDomain.lean": "cdeef98799ee9b66ee7f04ff64800df42e1152761b5e72cf0eaec365e974b494",
+        "NLS/ZakharovShabat/SourceCanonicalRootBoundaryDomain.lean": "f5ff742ff0d2ab34dc98fa2718a8579d0a108e6d154d0539cbd9616d1b8f6a7a",
+        "NLS/ZakharovShabat/SourceCanonicalRootJointAnalytic.lean": "7fc8ea716b94acaf3f72ba4486ab4c83427bfbbd13e8fd3cca325d3b0cc55d78",
+        "NLS/ZakharovShabat/SourceCanonicalRootUpperParitySign.lean": "ca467c0e9479996a0a574f42167172355e66a56337b647eb523287c05f96ce23",
+        "NLS/ZakharovShabat/SourceCanonicalRootRealBand.lean": "830363bd509f45f35131558723b6ec7ed6df602a195736f63cf09790ae73f58b",
+        "NLS/ZakharovShabat/SourceCanonicalRootGapSideSquare.lean": "8ac97046680dc6b2665d1c4fbb063a31ce0ce4895dcb9dead143ca0c2915bb22",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedParitySign.lean": "8e0f3ae821cc519e86338a77a0f7c34c779d37738b483ff9f1f4adde89e18c2d",
+        "NLS/ZakharovShabat/SourceRealBandGeometry.lean": "7b05c09dd67fa7eec7df1b787be9238f08eaea8e4bd4cd90600be7164df3fe54"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          57,
+          58
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-057.png": "8c022207f38034df66fdecf6b2922553a955686209a5222fcca69282044c3677",
+          "work/tmp/pdfs/section10-next-058.png": "fd35f87e44e53f806d39fcb379dc7c6ddc58dff86e6e4203494a6d5c37afc45a"
+        }
+      },
+      "qualification": "The first 32 of 52 ordered Section 10 groups are compared: 28 matched and four corrected occurrences. Equation (2.13), Lemma 10.7, the collapsed-gap continuation and opposite side values in (2.14), and Figure 2.4 retain their exact normalization, domains and signed-index scope. The four new groups match the existing proofs; no new correction or refutation is added. Twenty groups remain pending, starting with Lemma 10.8. This documentation-only step reuses the unchanged successful Lean and dependency snapshot from commit 115ebf6. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.canonicalRoots",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryData",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryLimits",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundary_continuous",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalClosedFixed",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsedDisk",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCollapsed_simple_zero",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalCompact",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalGapPoint_mem",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalJoint",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalLocallyUniform",
+        "NLS.ZakharovShabat.sourceCanonicalRootBoundary_endpoints",
+        "NLS.ZakharovShabat.sourceCanonicalRootDomain_eq_compl_iUnion",
+        "NLS.ZakharovShabat.sourceCanonicalRootGapUpperValue_signed_re_pos",
+        "NLS.ZakharovShabat.sourceCanonicalRootPartialProduct",
+        "NLS.ZakharovShabat.sourceCanonicalRootPartialProduct_sq_eq_spectralPairPartialProduct",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd_of_zeroGap",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_figure_band_signs",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_figure_gap_signs",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_realBand_sign",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_lower_side",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_tendsto_gap_upper_side",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_zero_source_halfPi",
+        "NLS.ZakharovShabat.sourceRealBand",
+        "NLS.ZakharovShabat.sourceRealBand_nonempty",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_signed_re_pos_on_realGap_closedGap",
+        "NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct"
+      ],
+      "declaration_inventory_count": 44286,
+      "validation_reused_from_commit": "115ebf6c9ce03d21b858693771834b6da6ddc63e",
+      "source_record_sha256": "801ab61e284d74bb1ed1f9c2a0f20f1d10a0bc5a90f42fe298eec0512528dcda"
     }
   }
 }
