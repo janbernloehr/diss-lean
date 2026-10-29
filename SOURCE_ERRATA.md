@@ -2795,6 +2795,19 @@ perturbation violating all its individual cutoffs. The full pair norm is a
 proved sufficient replacement; no uniquely necessary replacement or optimal
 constant is asserted.
 
+## Lemma 10.8: near/far gap norm and the scalar constant (pages 58–59)
+
+In the near/far split, use ||gamma||p squared and the corresponding lp
+tail norm squared. The l(p/2) class belongs to gamma squared, rather than
+to gamma itself. The [positive proof bounds](NLS/ZakharovShabat/SourceLemma10_8ProofBounds.lean)
+give the far estimate c^2*||gamma||p^2/|n|^2 and the stronger near estimate
+(c^2/4)*||R_floor(|n|/2) gamma||p^2. The supplied disk constant is retained.
+
+The printed inverse-square-root constant one on |x|<=1/2 is proved
+directly. The earlier constant-two theorem is a valid weaker estimate;
+it does not indicate a discrepancy in that printed scalar bound.
+These additions are positive proofs and introduce no new refutation.
+
 ## Lemma 10.8: original-topology local uniformity fails in general (pages 58–59)
 
 The printed uniformity assertion on ℓp × V_φ is formally false at p=4,

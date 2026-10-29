@@ -71393,3 +71393,61 @@ example :
     linear_combination -4*Complex.I_sq
 
 end Section10RefinedProductExamples
+
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+namespace Section10AsymptoticProofExamples
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem asymptotic_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem asymptotic_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨asymptotic_one_lt_half.le⟩
+
+-- The boundary radius permits a non-real radicand, and the near/far split
+-- retains a genuine tail at a negative omitted index.
+example (g : Coeff (3/2)) :
+    ‖(Complex.sqrt (1-Complex.I/2))⁻¹-1‖ ≤ (1/2 : ℝ) ∧
+    ‖g 0‖^2/64 ≤ ‖g‖^2/16 ∧
+    ‖g (-7)‖^2 ≤ ‖g-Coeff.truncate (Finset.Icc (-4) 4) g‖^2 := by
+  refine ⟨?_,?_,?_⟩
+  · have hh : ‖Complex.I/2‖ = (1/2 : ℝ) := by norm_num
+    simpa only [hh] using norm_inv_sqrt_one_sub_sub_one_le_one (Complex.I/2) hh.le
+  · have h := gapCoefficient_far_bound g 2 0 (-8) (by norm_num) (by norm_num)
+    norm_num at h
+    nlinarith
+  · have h := gapCoefficient_near_bound g 2 (-7) (-8) (by norm_num) (by norm_num)
+    norm_num at h
+    nlinarith
+
+-- The literal unordered inverse-square-root product and its disk supremum
+-- are identified together at the quasi-Banach exponent 3/4.
+example {U : Set (Coeff (3/2) × CoeffPair (3/2))} {D : ℤ → Set ℂ}
+    {c R H M : ℝ} {N K : ℕ}
+    (h : SourceQuotientDiscEstimates asymptotic_half_ne_top asymptotic_one_lt_half
+      U D c R H M N K) :
+    ∃ L : ℝ, 0 ≤ L ∧ ∀ t ∈ U, ∃ E : Coeff (3/4), ‖E‖ ≤ L ∧
+      (∀ n : ℤ, ∀ z ∈ D n,
+        HasProd (fun m : {m : ℤ // m ≠ n} =>
+          (Complex.sqrt (1-sourceSingleRootGapRadicand asymptotic_half_ne_top
+            asymptotic_one_lt_half t.2 m z))⁻¹)
+          (sourceSingleRootQuotientJointProduct asymptotic_half_ne_top asymptotic_one_lt_half n
+            (z,(sourcePeriodicMidpointDisplacement asymptotic_half_ne_top asymptotic_one_lt_half t.2,t.2)))) ∧
+      (∀ n : ℤ, K ≤ n.natAbs → E n =
+        ((sSup ((fun z => ‖(∏' m : {m : ℤ // m ≠ n},
+          (Complex.sqrt (1-sourceSingleRootGapRadicand asymptotic_half_ne_top
+            asymptotic_one_lt_half t.2 m z))⁻¹)-1‖) '' D n) : ℝ) : ℂ)) := by
+  have hexp : ENNReal.ofReal ((3/2 : ℝ≥0∞).toReal/2) = (3/4 : ℝ≥0∞) := by
+    norm_num [ENNReal.toReal_div]
+    rw [ENNReal.ofReal_div_of_pos (by norm_num : (0:ℝ)<4)]
+    norm_num
+  obtain ⟨L,hL,hbound⟩ := h.inverseSqrtGapSup
+  rw [hexp] at hbound
+  refine ⟨L,hL,?_⟩
+  intro t ht
+  obtain ⟨E,hE,he,_⟩ := hbound t ht
+  exact ⟨E,hE,fun n z hz => hasProd_sourceInverseSqrtGapCorrection
+    asymptotic_half_ne_top asymptotic_one_lt_half t.2 z n (h.domain t ht n z hz),he⟩
+
+end Section10AsymptoticProofExamples

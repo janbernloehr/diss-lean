@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md)
-now reaches the canonical root, Lemma 10.7 and Figure 2.4. It covers 32 of
-52 groups: 28 matched and four corrected occurrences. The exact product
-normalization, unchanged analytic domains, collapsed gaps and signs at all
-integer indices are retained. Twenty groups remain pending. This step
-documents the existing verified proofs. The
+Latest step: eight positive proofs expose Lemma 10.8's constant-one
+inverse-square-root estimate, corrected lp near/far gap bounds, and the
+literal product supremum at exponent p/2. The
+[ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md) now covers
+40 of 52 groups: 33 matched and seven corrected occurrences. The original
+disks, refined free-sine consequence and topology qualifications are retained.
+Twelve groups remain pending. The
 [completion assessment](coverage/COMPLETENESS.md) retains Section 7's partial
 clauses and the wider qualifications.
 

@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Section 10 canonical-root comparison
+## Current milestone: Lemma 10.8 proof estimates and source comparison
+
+Eight positive theorems in two modules expose the literal proof estimates
+in Lemma 10.8. The principal inverse-square-root estimate holds with the
+printed constant one on the closed complex half-unit ball. Its finite
+product bound is exp(sum |x_m|)-1. The near/far gap bounds use the original
+lp norm of the unsquared gaps, with the factor one quarter retained in the
+near term. The original disks keep their supplied separation constant.
+
+The literal unordered inverse-square-root product is identified through
+the actual midpoint numerator. Its disk supremum on the common tail has
+one uniformly bounded l(p/2) coefficient, including exponents below one.
+The tail coefficient is zero on the finite head; the full quotient theorem
+separately retains every original central disk. Two integration examples
+check a complex radicand of norm one half, negative-index near/far bounds,
+and the actual product and supremum together at exponent 3/4.
+
+Validation: `./scripts/check.sh` passes with 8,511 build jobs, 7,580
+public examples and a transitive axiom audit of 44,300 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now compares
+40 of 52 groups: 33 matched and seven corrected occurrences. The free-sine
+consequence retains its stronger l(p/2)+l(1+) decomposition. The existing
+arbitrary-numerator topology correction remains: original lp local
+uniformity for q>=p, and explicit bounded lq offset families for q<p.
+The near/far proof uses the corrected lp gap norm. No new refutation is added.
+
+Twelve groups remain pending, beginning with S10-041 and Remark 10.9.
+Section 7's physical NLS Dirichlet motion and unrestricted psi uniqueness,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and
+the broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 10 canonical-root comparison
 
 The ordered comparison now includes the canonical root in equation (2.13),
 Lemma 10.7, equation (2.14) and Figure 2.4. The first 32 of 52 groups are

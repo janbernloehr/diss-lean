@@ -159,14 +159,16 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-32 of 52 groups: 28 matched and four corrected occurrences, through
-Lemma 10.7 and Figure 2.4. The canonical root retains the literal symmetric
-product with factor 2*i, its discriminant square identity off the gaps,
-the unchanged joint analytic domain, fixed-source collapsed continuation,
-and opposite side values. The figure's gap and band signs cover all integer
-indices. These four new comparisons match existing proofs and introduce
-no new correction. Twenty groups remain pending, starting with Lemma 10.8.
-Existing named theorem audits do not by themselves settle those passages.
+40 of 52 groups: 33 matched and seven corrected occurrences, through
+Lemma 10.8's proof. Eight positive theorems retain the original-disk
+separation constant, the corrected lp near/far gap norms, the printed
+constant-one inverse-square-root bound and the literal product supremum
+at exponent p/2. The full quotient includes central disks and fixed
+sequence decompositions; the free-sine consequence has its stronger
+l(p/2)+l(1+) result. The existing arbitrary-numerator topology correction
+is recorded in the statement and proof. Twelve groups remain pending,
+starting with Remark 10.9. Existing named theorem audits do not by
+themselves settle those passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

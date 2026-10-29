@@ -3446,8 +3446,10 @@ import NLS.ZakharovShabat.SourceCanonicalRootNormalization
 import NLS.ZakharovShabat.SourceLemma10_7
 import NLS.ZakharovShabat.SourceQuotientClosedDiscs
 import NLS.ZakharovShabat.SourceQuotientAsymptoticGeometry
+import NLS.ZakharovShabat.SourceLemma10_8ProofBounds
 import NLS.ZakharovShabat.SourceQuotientAllDiscMajorants
 import NLS.ZakharovShabat.SourceQuotientDiscSupDecomposition
+import NLS.ZakharovShabat.SourceGapCorrectionProductEstimate
 import NLS.ZakharovShabat.SourceQuotientOriginalTopology
 import NLS.ZakharovShabat.SourceLemma10_8Estimates
 import NLS.ZakharovShabat.SourceQuotientDiscNormalization

@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 32 of 52 ordered Section 10 groups are compared: 28 matched and four corrected occurrences. Equation (2.13), Lemma 10.7, the collapsed-gap continuation and opposite side values in (2.14), and Figure 2.4 retain their exact normalization, domains and signed-index scope. The four new groups match the existing proofs; no new correction or refutation is added. Twenty groups remain pending, starting with Lemma 10.8. This documentation-only step reuses the unchanged successful Lean and dependency snapshot from commit 115ebf6. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 40 of 52 ordered Section 10 groups are compared: 33 matched and seven corrected occurrences. Lemma 10.8 retains the literal full-disk supremum, exact sequence classes and refined free-sine consequence. Eight positive proofs add the original-disk quarter-gap estimate, corrected lp near/far bounds, the printed scalar constant one, and the actual inverse-square-root product supremum at exponent p/2. The existing arbitrary-numerator topology correction is retained in both statement and proof. No new refutation is added. Twelve groups remain pending, beginning with Remark 10.9. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 32
-groups, through Figure 2.4 on p.58, have been compared.
-The remaining twenty groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 40
+groups, through the proof of Lemma 10.8 on p.59, have been compared.
+The remaining twelve groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -47,14 +47,14 @@ inspected to preserve figures, signs and closure bars. See
 | S10-030 | 4423–4427 | Lemma 10.7: spectral and joint canonical-root analyticity. | matched |
 | S10-031 | 4429–4438 | Collapsed canonical roots and opposite side values (2.14). | matched |
 | S10-032 | 4441–4449 | Figure 2.4: canonical-root signs on and around real gaps. | matched |
-| S10-033 | 4454–4460 | Lemma 10.8: full-disk quotient supremum decomposition and local topology. | pending |
-| S10-034 | 4462–4468 | Free-sine consequence of Lemma 10.8. | pending |
-| S10-035 | 4470–4476 | Separation estimate for the squared half-gap correction. | pending |
-| S10-036 | 4477–4487 | Uniform smallness split into far and near frequency differences. | pending |
-| S10-037 | 4489–4509 | Product factorization and estimate of the shifted-root factor. | pending |
-| S10-038 | 4518–4526 | Inverse-square-root estimate for each small factor. | pending |
-| S10-039 | 4527–4535 | Convolution estimate and reconstruction of the second product error. | pending |
-| S10-040 | 4537–4538 | Local uniformity assertion in the Lemma 10.8 proof. | pending |
+| S10-033 | 4454–4460 | Lemma 10.8: full-disk quotient supremum decomposition and local topology. | corrected |
+| S10-034 | 4462–4468 | Free-sine consequence of Lemma 10.8. | matched |
+| S10-035 | 4470–4476 | Separation estimate for the squared half-gap correction. | matched |
+| S10-036 | 4477–4487 | Uniform smallness split into far and near frequency differences. | corrected |
+| S10-037 | 4489–4509 | Product factorization and estimate of the shifted-root factor. | matched |
+| S10-038 | 4518–4526 | Inverse-square-root estimate for each small factor. | matched |
+| S10-039 | 4527–4535 | Convolution estimate and reconstruction of the second product error. | matched |
+| S10-040 | 4537–4538 | Local uniformity assertion in the Lemma 10.8 proof. | corrected |
 | S10-041 | 4540–4550 | Remark 10.9: corrected leading term and p/2 optimality. | pending |
 | S10-042 | 4552–4563 | Lemma 10.10: full-index squared-gap critical offset. | pending |
 | S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | pending |
@@ -370,6 +370,86 @@ Public evidence: `NLS.ZakharovShabat.sourceCanonicalRoot_figure_gap_signs`, `NLS
 
 Figure 2.4 displays phases, not unit magnitudes. Gap sign assertions require a noncollapsed real gap and interior parameter. Adjacent-band signs use the actual bands between consecutive indexed endpoints, with the implementation proving (-1)^|n|=(-1)^n.
 
+## S10-033: Lemma 10.8: full-disk quotient supremum decomposition and local topology.
+
+- The error is the literal finite least upper bound of the unordered quotient product minus one over every original disk, including the central disks.
+- For 1<q<infinity it has an exact lq+l(p/2) decomposition. For q=1 there is one fixed l(p/2)+l(1+) pair, chosen before every projection exponent. A zero third component gives the displayed three-term class.
+- The same common source domain and original disk family are chosen before numerator displacements and target exponents. Estimates are uniform on explicitly bounded lq offset families.
+- Correct the unrestricted local-uniformity assertion: q>=p, including infinity, retains the original lp topology; for q<p retain an explicit bound on the stronger lq offset norm.
+
+Public evidence: `NLS.ZakharovShabat.sourceQuotientDiscSup`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.sup_bddAbove`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.norm_le_sup`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.sup_le`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_one`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_originalTopology`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.product_eq`, `NLS.ZakharovShabat.SourceLemma10_7Data.quotientEstimates`.
+
+The existing topology correction is retained without adding a refutation. Membership at a fixed parameter is distinct from a locally uniform norm bound. The endpoint l(1+) summand is one actual sequence, not a separate choice for each exponent.
+
+## S10-034: Free-sine consequence of Lemma 10.8.
+
+- The free numerator gives the literal filled sine quotient divided by the same omitted standard-root product on every original disk.
+- The actual midpoint displacement has locally uniform refined bounds. They produce one l(p/2)+l(1+) supremum decomposition, with the two summands chosen before all l(1+) projection exponents.
+- Taking the lq component to be zero supplies the printed consequence for every q>=1. The local source neighborhood is chosen before those exponents.
+
+Public evidence: `NLS.ZakharovShabat.sourceQuotientDiscSup_free_eq`, `NLS.ZakharovShabat.sourceFreeSineQuotient_eq_printed`, `NLS.ZakharovShabat.exists_uniform_sourcePeriodicMidpoint_refined`, `NLS.ZakharovShabat.exists_uniform_sourcePeriodicMidpoint_decomposition`, `NLS.ZakharovShabat.SourceFreeSineSupDecomposition`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.freeSineSupDecomposition_refined`, `NLS.ZakharovShabat.SourceLemma10_8Estimates.freeSine_refined`, `NLS.ZakharovShabat.sourceLemma10_8_freeSine_refined`.
+
+At the removable free center the sine quotient uses its filled value; the literal division formula is asserted away from that center. The free-numerator result does not inherit the arbitrary-numerator topology issue. No l1 midpoint claim is made when p<=2.
+
+## S10-035: Separation estimate for the squared half-gap correction.
+
+- Every original isolating disk satisfies the literal squared-gap radicand bound |gamma_m|^2/(4*|tau_m-z|^2) <= c^2*|gamma_m|^2/(4*|m-n|^2).
+- The same supplied separation constant c and disk family work for all sources in the given neighborhood and all distinct signed indices.
+
+Public evidence: `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_separation`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gapRadicand_le_index`, `NLS.ZakharovShabat.sourceSingleRootGapRadicand`, `NLS.ZakharovShabat.sourceSingleRootGapRadicand_le_reciprocal_row`.
+
+The new original-disk theorem retains the factor one quarter and needs no real-type restriction on the varying source. The midpoint is in its own closed gap, so the original isolation data provide the denominator separation.
+
+## S10-036: Uniform smallness split into far and near frequency differences.
+
+- Use the lp norm of the unsquared gap sequence in the displayed near/far estimates. Equivalently, the squared gaps lie in l(p/2); an l(p/2) norm of the unsquared gaps is not assumed.
+- When |m-n|>=|n|/2 and n is nonzero, c^2*|gamma_m|^2/(4*|m-n|^2) <= c^2*||gamma||p^2/|n|^2.
+- When m differs from n and |m-n|<|n|/2, the same term is at most (c^2/4)*||R_floor(|n|/2) gamma||p^2. The actual truncated sequence retains both signs of the index.
+- Actual lp gap tails are uniformly small on one source neighborhood. The full reciprocal-square row is uniformly small for all sufficiently distant omitted indices, hence every individual radicand is at most one half.
+
+Public evidence: `NLS.ZakharovShabat.gapCoefficient_far_bound`, `NLS.ZakharovShabat.gapCoefficient_near_bound`, `NLS.ZakharovShabat.sourcePeriodicSquaredGapPowerTail_sum`, `NLS.ZakharovShabat.exists_uniform_small_sourcePeriodicGapDisplacement`, `NLS.ZakharovShabat.exists_uniform_sourceSquaredGapPhysicalRows_lt`, `NLS.ZakharovShabat.exists_uniform_sourceSquaredGapPhysicalRows_half_unit`, `NLS.ZakharovShabat.sourceSingleRootGapRadicand_le_reciprocal_row`.
+
+This is a positive norm correction. The new near estimate is stronger by its retained factor one quarter. Uniform smallness uses the already proved common tail control and the full-row argument, not bounded lp norms alone. The finite cutoff may be enlarged to exclude n=0.
+
+## S10-037: Product factorization and estimate of the shifted-root factor.
+
+- Each quotient factor equals its midpoint quotient times the inverse principal-square-root correction, and the same identity holds at every finite symmetric cutoff.
+- The infinite midpoint product is an actual unordered product. Its signed reciprocal row and quadratic product remainder give the lq disk supremum for finite q>1 and every finite exponent above one when q=1.
+- The full quotient majorants preserve each original central disk using a separate compact bound, and retain explicit dependence on the lq midpoint offset norm.
+
+Public evidence: `NLS.ZakharovShabat.singleRootQuotient_factor`, `NLS.ZakharovShabat.sourceSingleRootQuotientPartialProduct_factor`, `NLS.ZakharovShabat.sourceMidpointProductRow`, `NLS.ZakharovShabat.sourceMidpointProductRow_eq_signed_add_remainder`, `NLS.ZakharovShabat.exists_sourceMidpointProductRows`, `NLS.ZakharovShabat.exists_sourceMidpointProductDiscSup`, `NLS.ZakharovShabat.exists_sourceMidpointProductDiscSup_one`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants_one`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.fillHead`, `NLS.ZakharovShabat.SourceCorollary10_6Data.finiteClosedDiscBound`.
+
+The coefficient bound is pointwise for each admissible offset, and uniform on bounded offset families. The source topology correction is recorded in S10-033 and S10-040. Auxiliary empty central disks are used only for tail adapters; the final quotient retains the original nonempty central disks.
+
+## S10-038: Inverse-square-root estimate for each small factor.
+
+- The printed scalar estimate |(sqrt(1-x))^-1-1| <= |x| holds for every complex x with |x|<=1/2, including the boundary.
+- Its finite product estimate is exp(sum |x_m|)-1, with the literal constant one. Combined with the original-disk radicand estimate and uniform smallness, it supplies the displayed half-unit correction bound.
+
+Public evidence: `NLS.ZakharovShabat.norm_inv_sqrt_one_sub_sub_one_le_one`, `NLS.ZakharovShabat.norm_prod_inv_sqrt_one_sub_sub_one_le_sum`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gapRadicand_le_index`, `NLS.ZakharovShabat.exists_uniform_sourceSquaredGapPhysicalRows_half_unit`.
+
+The existing constant-two theorem is a valid weaker bound. It does not establish a discrepancy in the printed constant one. The new positive proof establishes the printed estimate directly and leaves the older compatible API unchanged.
+
+## S10-039: Convolution estimate and reconstruction of the second product error.
+
+- The actual squared-gap reciprocal row belongs to l(p/2). Powered Young and nonnegative subadditivity cover p>=2 and 1<p<2, respectively.
+- Choosing the actual midpoints as numerator roots identifies the literal unordered product of inverse-square-root corrections on the omitted-gap domain.
+- On every distant original disk, the literal product error has one uniformly bounded half-exponent majorant. Its actual least-upper-bound sequence is in l(p/2), including exponents below one, with a common source-neighborhood norm bound.
+
+Public evidence: `NLS.ZakharovShabat.sourcePeriodicSquaredGapCoeff`, `NLS.ZakharovShabat.exists_sourceSquaredGapReciprocalRows`, `NLS.ZakharovShabat.sourceSquaredGapReciprocalTerm_reindex`, `NLS.ZakharovShabat.exists_sourceSquaredGapPhysicalRows`, `NLS.ZakharovShabat.hasProd_sourceInverseSqrtGapCorrection`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.inverseSqrtGapMajorant`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.inverseSqrtGapSup`, `NLS.ZakharovShabat.norm_sourceSingleRootQuotientJointProduct_sub_midpoint_le_of_small_row`.
+
+The pure correction supremum is a tail coefficient: indices below the common cutoff are filled with zero. This is the large-index assertion in the proof. The full quotient statement separately includes all central disks. The p/2 coefficient is expressed by the equivalent ENNReal.ofReal(p.toReal/2).
+
+## S10-040: Local uniformity assertion in the Lemma 10.8 proof.
+
+- All disk geometry, actual gap tails and reciprocal-square correction bounds are uniform on a common neighborhood of each complex source in the same W.
+- The midpoint-product factor retains the explicit lq offset bound. Thus the arbitrary-numerator proof is locally uniform in the original lp topology for q>=p, and uniform on bounded lq offset families for q<p.
+- The free-sine specialization is locally uniform in the original source topology through its independent refined midpoint estimate.
+
+Public evidence: `NLS.ZakharovShabat.SourceCorollary10_6Data.quotientDiscEstimates`, `NLS.ZakharovShabat.SourceLemma10_7Data.quotientEstimates`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants_one`, `NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_originalTopology`, `NLS.ZakharovShabat.exists_uniform_sourceSquaredGapPhysicalRows_half_unit`, `NLS.ZakharovShabat.sourceLemma10_8_freeSine_refined`.
+
+This proof occurrence carries the same existing topology correction as the statement. No new refutation is introduced, and the independent free-numerator consequence remains matched.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -377,5 +457,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-033, Lemma 10.8 and the original-disk asymptotic estimates.
+Continue with S10-041, Remark 10.9 and the refined product expansion.
 The remaining Section 10 groups and wider unresolved qualifications remain.
