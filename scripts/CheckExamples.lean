@@ -71103,3 +71103,47 @@ example {W₀ W : Set (CoeffPair (3/2))}
     linear_combination 2*Complex.I*hk
 
 end Section7RemainingExamples
+
+
+
+noncomputable section
+open Set Filter Topology
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section8DeterminantExamples
+
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨one_lt_half.le⟩
+
+-- The same constructed parity labels give the exact difference of the two limits.
+example (φ : CoeffPair (3/2)) :
+    ∃ ξ η : ℤ → ℂ, ∀ z : ℂ,
+      Tendsto (fun M : ℕ => oddSpectralPairCutoff ξ η z M-evenSpectralPairCutoff ξ η z M)
+        atTop (𝓝 4) := by
+  obtain ⟨_,_,_,_,_,hφ,_,h⟩ :=
+    exists_source_section8_ordered_determinant_products half_ne_top one_lt_half φ
+  obtain ⟨ξ,η,_,_,_,hf,hg,_⟩ := h φ hφ
+  refine ⟨ξ,η,?_⟩
+  intro z
+  have he : (canonicalDiscriminant half_ne_top (periodOnePotential φ) z+2) -
+      (canonicalDiscriminant half_ne_top (periodOnePotential φ) z-2) = (4 : ℂ) := by ring
+  simpa only [he] using (hg.tendsto_at (mem_univ z)).sub (hf.tendsto_at (mem_univ z))
+
+-- The actual contour determinants converge to the source discriminant minus two.
+example (φ : CoeffPair (3/2)) (z : ℂ) :
+    Tendsto (fun M : ℕ =>
+      -parityContourDeterminant half_ne_top (periodOnePotential φ) 0
+        (centralCircleRadius (2*M)) 0 z / centralParityNormalization (2*M) 0)
+      atTop (𝓝 (canonicalDiscriminant half_ne_top (periodOnePotential φ) z-2)) := by
+  obtain ⟨K,_,_,_,_,hφ,_,h⟩ :=
+    exists_source_section8_ordered_determinant_products half_ne_top one_lt_half φ
+  obtain ⟨ξ,η,_,_,_,hf,_,hd⟩ := h φ hφ
+  exact (hf.tendsto_at (mem_univ z)).congr'
+    (eventually_atTop.2 ⟨K,fun M hM => (hd M hM z).1⟩)
+
+end Section8DeterminantExamples

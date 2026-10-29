@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: the remaining Section 7 formulas
+## Current milestone: Section 8 ordered roots and finite determinants
+
+The corrected Section 8 finite products now have a direct original-source
+determinant interface. It constructs one open convex neighborhood, a common
+cutoff and separately ordered actual parity roots with full multiplicities.
+The even determinant has prefactor -1 at circle index 2M; the odd formula
+has prefactor 4 and retains its extra positive boundary pair. Both literal
+products converge locally uniformly to the corresponding discriminant levels.
+
+Validation: `./scripts/check.sh` passes with 8,503 build jobs, 7,570
+public examples and a transitive axiom audit of 44,226 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The first fifteen groups in the [ordered Section 8 ledger](coverage/SECTION_8_ASSERTIONS.md)
+are compared: eight matched, six corrected and one partial. S8-014 retains
+the exact lower-strip sine constant; the derivative asymptotic is proved.
+The remaining 21 groups await ordered comparison. Section 7's physical NLS
+Dirichlet motion and unrestricted psi uniqueness, the source-wide inventory,
+exact cited 2014 construction and Appendix G.2 norm interpretation remain open.
+Corrected constants are proved directly, without additional refutations.
+
+Earlier milestone entries retain their historical validation and limitations.
+
+## Previous milestone: the remaining Section 7 formulas
 
 The corrected psi product now has a direct convergence theorem with pi_m
 in each retained denominator and the outer factor -2/pi_n. The literal angle

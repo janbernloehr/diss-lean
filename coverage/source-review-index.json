@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T00:14:10.786806+00:00",
-  "base_commit": "e5a981e65d3a25599e8f99bfb9963c2ecc2ae9c4",
+  "published_utc": "2026-10-29T00:45:36.060002+00:00",
+  "base_commit": "16a161568a7085c3918864227808f0117ecf7e4c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 108,
-    "module_hash_checks": 1826,
-    "distinct_modules": 1138
+    "review_records": 109,
+    "module_hash_checks": 1863,
+    "distinct_modules": 1167
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e5a981e65d3a25599e8f99bfb9963c2ecc2ae9c4",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected literal psi product, constructed original angle path sum, real-source non-measure obstruction and two integration examples. The ten remaining Section 7 groups are compared with eight matches, one correction and one partial. The full ordered ledger has eighteen matches, one correction and two partial groups. Physical NLS Dirichlet motion and unrestricted psi characterization remain unresolved, as do the broader source-wide audit and external-construction qualifications.",
+    "base_commit": "16a161568a7085c3918864227808f0117ecf7e4c",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes corrected original Section 8 finite determinants, constructed ordered parity roots on a common source neighborhood, whole-plane product limits and two integration examples. The first fifteen ordered Section 8 groups have eight matches, six corrections and one partial quantitative sine-bound refinement. Twenty-one later groups await ordered comparison. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, broader source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8502,
-    "public_examples": 7568,
-    "transitive_NLS_declarations": 44209,
+    "build_jobs": 8503,
+    "public_examples": 7570,
+    "transitive_NLS_declarations": 44226,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4779,
-      "sha256": "18df45e6b4da3df05332026b1c461cfbbb1e58adfeb135edbe26a9d90d5a9ad8"
+      "files": 4780,
+      "sha256": "3cd9c0373097de133947e2d23c95597a1f5c029fc091007227d0e1d395a08c0d"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -26891,6 +26891,519 @@
       ],
       "declaration_inventory_count": 44209,
       "source_record_sha256": "a0be2b6ff3dbb6476c881fc0e5c05f877a080d4f7fafaf54c62351fee569e2e4"
+    },
+    "Section8DeterminantSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "16a161568a7085c3918864227808f0117ecf7e4c",
+      "updated_utc": "2026-10-29T00:45:36.060002+00:00",
+      "source_lines": [
+        [
+          3474,
+          3488
+        ],
+        [
+          3490,
+          3498
+        ],
+        [
+          3498,
+          3526
+        ],
+        [
+          3535,
+          3547
+        ],
+        [
+          3550,
+          3561
+        ],
+        [
+          3563,
+          3581
+        ],
+        [
+          3583,
+          3586
+        ],
+        [
+          3588,
+          3599
+        ],
+        [
+          3601,
+          3608
+        ],
+        [
+          3610,
+          3621
+        ],
+        [
+          3632,
+          3651
+        ],
+        [
+          3653,
+          3667
+        ],
+        [
+          3669,
+          3669
+        ],
+        [
+          3670,
+          3673
+        ],
+        [
+          3674,
+          3676
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S8-001",
+          "source_lines": [
+            3474,
+            3488
+          ],
+          "requirement": "Discriminant extension, classical full product and parity levels",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The source discriminant is jointly analytic and agrees with the physical Hilbert monodromy trace. Its squared value minus four has the literal full endpoint product with prefactor -4.",
+            "The levels two and minus two are exactly the original even and odd parity spectra. For real sources the canonical endpoints have their index-prescribed signed levels."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_two_le",
+            "NLS.ZakharovShabat.sourceDiscriminant_ordered_product",
+            "NLS.ZakharovShabat.canonicalDiscriminant_parity_levels_finite",
+            "NLS.ZakharovShabat.parityAlgebraicMultiplicity_pos_iff",
+            "NLS.ZakharovShabat.sourcePeriodicEndpoints_signed_discriminant"
+          ],
+          "qualification": "The source period-one embedding retains the original operator domain and source norm. The opening roadmap for subsequent estimates and continuity is assessed in the later passage groups, not counted as a separate completed result here."
+        },
+        {
+          "ordered_group": "S8-002",
+          "source_lines": [
+            3490,
+            3498
+          ],
+          "requirement": "Complex parity labels, local central parity counts and distant identification",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Intersecting the uniform circle and parity-count neighborhoods gives, for all sufficiently large M, exactly 4M+2 even-sector and 4M odd-sector eigenvalues inside radius (2M+1/2)*pi, counted with original algebraic multiplicity.",
+            "Distant counted pairs lie in their index parity. Separately ordering the two parity sequences preserves the distant pair multisets and actual central counts."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_centralCircle",
+            "NLS.ZakharovShabat.exists_uniform_central_parity_multiplicity_sums",
+            "NLS.ZakharovShabat.CompletePeriodicParityPairs.distant_root",
+            "NLS.ZakharovShabat.CompletePeriodicParityPairs.exists_parity_ordered",
+            "NLS.ZakharovShabat.exists_uniform_source_section8_ordered_pairs"
+          ],
+          "qualification": "The common neighborhood is obtained by intersection and pullback along the continuous linear source embedding. Central parity lists are constructed independently; taking alternating slots of the globally sorted complex full spectrum is not assumed. No separate counterexample is added to this explanatory ordering warning."
+        },
+        {
+          "ordered_group": "S8-003",
+          "source_lines": [
+            3498,
+            3526
+          ],
+          "requirement": "Lexicographically ordered actual parity sequences and Hilbert displacements",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Actual parity sequences can be sorted within each pair and between every two same-parity indices, without a real-type premise. Their displacements belong to l2 at Hilbert exponent.",
+            "Reindexing by 2n and 2n+1 gives the two displayed source lattices. Beyond both cutoffs, ordered-pair uniqueness identifies these slots with the corresponding globally ordered distant endpoints."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.CompletePeriodicParityPairs.exists_parity_ordered",
+            "NLS.ZakharovShabat.exists_ordered_completePeriodicParityPairs",
+            "NLS.ZakharovShabat.memℓp_parityRescale",
+            "NLS.ZakharovShabat.PeriodicEndpointPair.ordered_unique",
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_spec"
+          ],
+          "qualification": "CompletePeriodicParityPairs retains central multisets and all distant multiplicities. The last identification uses the maximum of the chosen parity and canonical cutoffs. It does not assert a central cross-parity ordering or analytic individual root labels."
+        },
+        {
+          "ordered_group": "S8-004",
+          "source_lines": [
+            3535,
+            3547
+          ],
+          "requirement": "Equation (2.4) with corrected parity prefactors",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The symmetric even product has prefactor -1 and limit Delta-2; the symmetric odd product has prefactor 4 and limit Delta+2. Both converge locally uniformly on the whole spectral plane."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_source_section8_ordered_determinant_products",
+            "NLS.ZakharovShabat.evenSpectralPairCutoff",
+            "NLS.ZakharovShabat.oddSpectralPairCutoff",
+            "NLS.ZakharovShabat.centralParityNormalization_ne_zero"
+          ],
+          "qualification": "These are the positive corrected formulas for (2.4), including pi_0=1. The new implementation adds no refutation of the printed constants."
+        },
+        {
+          "ordered_group": "S8-005",
+          "source_lines": [
+            3550,
+            3561
+          ],
+          "requirement": "Finite-p counted parity sequences and extension definition",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each finite p>1, one original open convex neighborhood supplies ordered actual parity lists with lp displacements at every sufficiently large cutoff.",
+            "The corrected even product plus two defines the source discriminant; the odd product gives the same value after subtracting two."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_source_section8_ordered_pairs",
+            "NLS.ZakharovShabat.exists_source_section8_ordered_determinant_products",
+            "NLS.ZakharovShabat.canonicalDiscriminant",
+            "NLS.ZakharovShabat.canonicalDiscriminant_eq_odd_sub_two_finite"
+          ],
+          "qualification": "The reference to (2.4) uses the correction recorded in S8-004. Hilbert agreement is an extension above two and a restriction below two. The assertion does not include p=1 or infinity."
+        },
+        {
+          "ordered_group": "S8-006",
+          "source_lines": [
+            3563,
+            3581
+          ],
+          "requirement": "Lemma 8.1(i): parity product joint analyticity",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Both corrected products are jointly complex analytic in the spectral parameter and the original potential, including at root collisions.",
+            "The printed scalar rescalings are analytic as well; analyticity alone is independent of their normalization."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_canonicalParityProduct_periodOne",
+            "NLS.ZakharovShabat.SourceLemma8_1Data.parity_analytic",
+            "NLS.ZakharovShabat.SourceLemma8_1Data.printed_analytic",
+            "NLS.ZakharovShabat.sourceLemma8_1"
+          ],
+          "qualification": "The proof uses intrinsic symmetric polynomials and local uniform analytic approximation. It does not assume analytic eigenvalue coordinates. Compatibility with the trace uses the corrected constants in the next group."
+        },
+        {
+          "ordered_group": "S8-007",
+          "source_lines": [
+            3583,
+            3586
+          ],
+          "requirement": "Lemma 8.1(ii): corrected compatibility and unique extension",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "With prefactors -1 and 4, Delta=f+2=g-2 on the entire finite-p source domain.",
+            "Agreement with the classical discriminant on finite Fourier inputs uniquely determines the jointly continuous extension, hence the analytic extension."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma8_1Data.compatibility",
+            "NLS.ZakharovShabat.sourceDiscriminant_unique_joint_continuous",
+            "NLS.ZakharovShabat.sourceDiscriminant_finite_eq_classical",
+            "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_le_two",
+            "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_two_le"
+          ],
+          "qualification": "The original norms and exponent inclusions are retained. The normalization correction is necessary for the shifted identities. No additional incompatibility proof is introduced."
+        },
+        {
+          "ordered_group": "S8-008",
+          "source_lines": [
+            3588,
+            3599
+          ],
+          "requirement": "Lemma 8.1(iii): uniform exterior trace and derivative asymptotics",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every tolerance, one original open convex neighborhood and positive threshold control the additive trace error and additive derivative error by epsilon*exp(abs(Im z)) throughout the original exterior.",
+            "The derivative quotient by -2*sin(z) converges uniformly to one there. The trace quotient is proved where 2*cos(z) has an explicit positive lower bound relative to exp(abs(Im z))."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_sourceDiscriminant_exterior",
+            "NLS.ZakharovShabat.exists_uniform_sourceDiscriminant_cosine_quotient"
+          ],
+          "qualification": "The full exterior is unchanged for the additive trace estimate and sine quotient. The cosine quotient retains its denominator condition; it is not asserted uniformly across cosine zeros. Existing positive corrections are reused."
+        },
+        {
+          "ordered_group": "S8-009",
+          "source_lines": [
+            3601,
+            3608
+          ],
+          "requirement": "Lemma 8.1(iv): full product and periodic zero set",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Delta squared minus four is the product of the corrected parity factors and the full symmetric endpoint product with prefactor -4.",
+            "Its zero set is exactly the original periodic spectrum, and its analytic zero order is the original algebraic multiplicity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDiscriminant_ordered_product",
+            "NLS.ZakharovShabat.canonicalParityProducts_mul",
+            "NLS.ZakharovShabat.canonicalPeriodic_eq_discriminant_sq_sub_four_finite",
+            "NLS.ZakharovShabat.canonicalDiscriminant_sq_eq_four_iff_finite",
+            "NLS.ZakharovShabat.analyticOrderAt_canonicalDiscriminant_sq_sub_four"
+          ],
+          "qualification": "Both printed scalar rescalings cancel in their product, so this full-product normalization is unchanged. Coincident roots and central algebraic multiplicities are retained."
+        },
+        {
+          "ordered_group": "S8-010",
+          "source_lines": [
+            3610,
+            3621
+          ],
+          "requirement": "Finite even products, locally uniform convergence and trace asymptotic chain",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite even cutoffs equal the normalized intrinsic central even polynomials at index 2M. These converge jointly locally uniformly to the corrected even product.",
+            "The ratio of the even product to 2*cos(z)-2 tends to one on the original exterior, locally uniformly in the potential. The resulting trace estimate is the additive estimate of S8-008."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.CompletePeriodicParityPairs.cutoffs_eq_normalizedParity",
+            "NLS.ZakharovShabat.exists_uniform_canonicalParityProducts_weighted",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_canonicalParityProduct_joint",
+            "NLS.ZakharovShabat.exists_uniform_exterior_canonicalProducts",
+            "NLS.ZakharovShabat.exists_uniform_sourceDiscriminant_exterior"
+          ],
+          "qualification": "The finite even product already has prefactor -1. Its limit is the corrected f. The last printed asymptotic-chain step is replaced by the proved additive trace estimate or by a cosine quotient with the stated denominator bound."
+        },
+        {
+          "ordered_group": "S8-011",
+          "source_lines": [
+            3632,
+            3651
+          ],
+          "requirement": "Original parity projection, finite rank and corrected determinant cutoff",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The original resolvent contour projection restricted to a Fourier parity is analytic and has finite-dimensional range; its domain lift retains the original unbounded operator.",
+            "Every sufficiently large even cutoff equals minus the actual even contour determinant divided by its normalization at circle index 2M. The odd cutoff has factor 4 and retains its positive boundary pair 2M+1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.parityContourProjection",
+            "NLS.ZakharovShabat.analyticAt_parityContourProjection",
+            "NLS.ZakharovShabat.finiteDimensional_range_parityContourProjection",
+            "NLS.ZakharovShabat.contourLift_parityProjection",
+            "NLS.ZakharovShabat.reducedParityContourOperator_self_apply",
+            "NLS.ZakharovShabat.CompletePeriodicParityPairs.section8_cutoffs_eq_contourDeterminants",
+            "NLS.ZakharovShabat.exists_source_section8_cutoff_determinants",
+            "NLS.ZakharovShabat.exists_source_section8_ordered_determinant_products"
+          ],
+          "qualification": "The circle radius is (2M+1/2)*pi for a product over even modes through 2M. Both the negative even prefactor and the doubled circle index are explicit. Callers of the source existence theorem supply neither contour admissibility nor hypothetical root sequences; both are constructed."
+        },
+        {
+          "ordered_group": "S8-012",
+          "source_lines": [
+            3653,
+            3667
+          ],
+          "requirement": "Analytic projection transport, conjugated determinant and limit analyticity",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Local analytic projection transport conjugates the actual parity reduction to an operator on a fixed original finite-dimensional range, preserving the determinant.",
+            "The corrected normalized central parity polynomials are jointly analytic on a common neighborhood for all large cutoffs. Their locally uniform limit is jointly analytic on the full source domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.reducedParityContourOperator_conjugate",
+            "NLS.ZakharovShabat.parityContourDeterminant_eq_reduced",
+            "NLS.ZakharovShabat.analyticAt_reducedParityContourOperator",
+            "NLS.ZakharovShabat.analyticAt_parityContourDeterminant",
+            "NLS.ZakharovShabat.exists_uniform_analytic_normalizedCentralParityPolynomials",
+            "NLS.ZakharovShabat.localUniformAnalyticApproximation_canonicalParityProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_canonicalParityProduct_periodOne"
+          ],
+          "qualification": "The conjugated displayed even determinant keeps the same negative prefactor as S8-011. Transport is used locally for each fixed cutoff and point; the proof of common-neighborhood analyticity does not require one global trivialization for every cutoff. The odd intrinsic approximants remove the boundary factor only in the limit."
+        },
+        {
+          "ordered_group": "S8-013",
+          "source_lines": [
+            3669,
+            3669
+          ],
+          "requirement": "Compatibility by Hilbert agreement and source-norm density",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Hilbert compatibility transfers below two by exact exponent inclusion, and above two by continuity on the dense Hilbert image. Finite Fourier density supplies uniqueness in the original source norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalParity_shifted_eq_finite",
+            "NLS.ZakharovShabat.sourceDiscriminant_unique_continuous",
+            "NLS.ZakharovShabat.sourceDiscriminant_unique_joint_continuous"
+          ],
+          "qualification": "This is compatibility of the corrected products. Below two the direction is restriction to the stronger source space, not density of all Hilbert inputs in it."
+        },
+        {
+          "ordered_group": "S8-014",
+          "source_lines": [
+            3670,
+            3673
+          ],
+          "requirement": "Cauchy derivative estimate and exterior sine bound",
+          "status": "partial",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Cauchy estimates on smaller exterior discs give the derivative error on the same original exterior. A positive uniform bound on exp(abs(Im z))/abs(sin z) converts it into the required sine quotient.",
+            "The implemented reciprocal-sine theorem supplies a finite constant depending only on the excluded-disc radius. Its explicit constant 4 is proved for abs(Im z)>=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_error_exp",
+            "NLS.ZakharovShabat.exists_bound_exp_im_div_sin_of_separated",
+            "NLS.ZakharovShabat.exp_abs_im_le_four_norm_sin",
+            "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_div_free"
+          ],
+          "qualification": "The complete derivative conclusion is proved, but the literal intermediate constant 4 throughout the lower horizontal strip has not been established by this comparison. This is a remaining quantitative refinement, not a claim that the printed bound is false. No refutation is requested or added."
+        },
+        {
+          "ordered_group": "S8-015",
+          "source_lines": [
+            3674,
+            3676
+          ],
+          "requirement": "Full product factorization and actual algebraic multiplicities",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The intrinsic parity factors multiply to the original full canonical product. Each parity factor has precisely its original algebraic zero orders; the full order is the original periodic algebraic multiplicity.",
+            "The determinant reduction retains the original generalized root chains, so multiplicity is not inferred only from a set-level root equality."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalParityProduct_spec",
+            "NLS.ZakharovShabat.canonicalParityProducts_mul",
+            "NLS.ZakharovShabat.parityContourDeterminant_eq_prod",
+            "NLS.ZakharovShabat.reducedParityContourOperator_rootMultiplicity",
+            "NLS.ZakharovShabat.analyticOrderAt_canonicalDiscriminant_sq_sub_four"
+          ],
+          "qualification": "The source product argument is implemented through exact finite multiplicities and the canonical entire products. All spectral points, including repeated central roots, are covered."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection8ParityDeterminants.lean": "149db4e62aacf93759031232a1016f4d7e07f79b89c45fb3906ff71e1183e500",
+        "NLS/ZakharovShabat/OrderedPeriodicParityPairs.lean": "b62441a875b900ce9a67e3e3ab91105ad2b54fba9d062dcb298507603c31c647",
+        "NLS/ZakharovShabat/CompletePeriodicParityPairs.lean": "81a5a24d44cc77f998dca527a2541c1f88bc0c1a3f257a05b0b38a14bcd5b094",
+        "NLS/ZakharovShabat/SourceDiscriminantProductFormula.lean": "e64b053311192ef8c0146c63597ba7778f36f5f9df03fb67ad706d6c8c20e545",
+        "NLS/ZakharovShabat/SourceLemma8_1.lean": "e2d389971920cc8b8387d16333420766244de487b4fa69b224808d9bd79b872f",
+        "NLS/ZakharovShabat/SourceLemma8_2.lean": "c63bdbed8a921521d23201d1ca25dabcea2d78f09eb2251f67d0653b5783bef5",
+        "NLS/ZakharovShabat/SourceDiscriminantExtension.lean": "63d4f45ee6f97c43f8798b45b7f2f35ab20bff54a671959b37ff6bccf2199698",
+        "NLS/ZakharovShabat/SourceDiscriminantExterior.lean": "62b3b8c21fed66eaaeb91c3fc46c50f55e7cb223737d900d8693c06183784b48",
+        "NLS/ZakharovShabat/ParitySpectralCutoffs.lean": "5a33466e1737c3c02e84f353e362dfd5234ddf2689d247e79b3ffcda88ed47f1",
+        "NLS/ZakharovShabat/ParityLiteralCutoffs.lean": "b23a283cfc3b48c438f5d673615b03cdc6a64eb5fe344e040c29b093e7bb1daa",
+        "NLS/ZakharovShabat/CentralParityPolynomialAnalytic.lean": "94b8cbc417b97af7bda5765f243d09ed6bc2bc58a4c3052de6b30c6135a90fd3",
+        "NLS/ZakharovShabat/CanonicalParityProductsUniform.lean": "85c9ce33cfc27d86be16a85cf1ace2924bfa2fbfd5f713cc326f7ade663aec6e",
+        "NLS/ZakharovShabat/CanonicalParityProductsAnalytic.lean": "c4cf1650772050ffafc6e5b6b7dcb4ac529e9d92789784b4309d2d339b70f1cb",
+        "NLS/ZakharovShabat/CanonicalParityProducts.lean": "ff020fa822db1129d7a059dda36bce3c7b137f76611621735359a332b29cb1e6",
+        "NLS/ZakharovShabat/ParityContourReduction.lean": "2c46951d466741d5ad179b08399b9c97771b695e5c5fdb75eaf61bdfac1371b3",
+        "NLS/ZakharovShabat/ParityContourDeterminant.lean": "6a0e15d40dc5df05de0b597d2824565596c772514b98991f79d83cbce2fd8f2d",
+        "NLS/ZakharovShabat/ParityContourMultiplicity.lean": "e6817ca0e02fbfaf9fe282c93d280838e55131061e0e0951d3d1d5299f8a0116",
+        "NLS/ZakharovShabat/ParityClusterMultiplicity.lean": "c96db177c48c935ed35bf0e22d0272fc0292673038692258209ceb46feeda48d",
+        "NLS/ZakharovShabat/ParityRootMultiplicity.lean": "94ca0e1146a074c57c4e95fd7c8aad7c0a22681c2c62003f1837d1ef3c090513",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean": "fae74521d284620df5e4dd15e84c4a7d11584724fdcd61dd505af97b239c5b17",
+        "NLS/ZakharovShabat/FiniteParityCompatibility.lean": "9c28952d957a04d6ba07578d71ce1379f4d95b6559089cf722c02cc7fcda764d",
+        "NLS/ZakharovShabat/LocallyUniformDiscriminantAsymptotics.lean": "1e955834644356eaeee9eca28323b07ff921d8a2446c75eb71b77d757ce20c6a",
+        "NLS/ZakharovShabat/FreeSineExteriorBounds.lean": "919c6f8488d71aa1a6e13ef7c927988c42411b42884c7f2c28809c267a181a5e",
+        "NLS/ZakharovShabat/DiscriminantDerivativeRatio.lean": "30c57393b375a216c5d56adf7f9352ef31ae6d882624134ceef0958480c86ba1",
+        "NLS/ZakharovShabat/LocallyUniformExteriorProducts.lean": "babb262cbe2eaa1f581c87c79edc7f41603864073710ced138c39800a072cacc",
+        "NLS/ZakharovShabat/CentralParityPolynomialsUniform.lean": "4049fade2d8b42b549b47951f0a3d2e04747e4aefd5dd797223b2d4fe41d588f",
+        "NLS/ZakharovShabat/CentralDeformation.lean": "dba10bd07bfd3d11d8c6708c69bc5d2ca17df0c32359cca3a6bc3b4a94872d7d",
+        "NLS/ZakharovShabat/CompleteParitySpectrum.lean": "7394633bd1167f46e9b2327233412b6b6e6ce3b0c77c64eb5a6d2f5141bfacc4",
+        "NLS/ZakharovShabat/OrderedPeriodicUniqueness.lean": "7208d14810d19aca1dd4f93690fb0fe2d095f565fd77bb86d80a7b7dd50d6123",
+        "NLS/ZakharovShabat/PeriodicEndpointOrder.lean": "5d0717441fb84b9f4d2dd8bf0475e4441f9817660f228f19751fadd768a82e43",
+        "NLS/ZakharovShabat/PeriodicEndpointPairOrdering.lean": "77d600c26a94ce3814a06de580faa7d494302b4f93d4a64eb173c756e21ca036",
+        "NLS/ZakharovShabat/PeriodicEndpointLabeling.lean": "e2d91a270865ed1a34823dcb4614a5eec309d3cf7c030f8ef743eb70e868be3f",
+        "NLS/ZakharovShabat/ParityCentralCutoffGrowth.lean": "d35fcb01e8545f28c56090e589baab5c477443f8b5b81b810239df68b914ae9e",
+        "NLS/ZakharovShabat/CanonicalParityClassicalSpectrum.lean": "51afbf041124da82b53be033cc1095812fb7aa6eda0b8a8b3a62b11222d9f53f",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean": "a9d5daec0f419f69e7657ae85cadb225cc95754df17104e21176dfefecdd3511",
+        "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54"
+      },
+      "ordered_inventory": "coverage/SECTION_8_ASSERTIONS.md",
+      "ordered_inventory_sha256": "048c02ddd888bfdea9d01370f726be3eb29ab1d010205d2a4acda2b185c7f216",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          47,
+          48,
+          49
+        ],
+        "images": {
+          "work/Section7OrderedReview-047.png": "c4edd5ef94597d539c2ae36cc16c61fe3a9cb078fc449cc7a514528a78fb9740",
+          "work/diss-page48.png": "1590ade80fd9c341a103055946425ee5f4b336d23ac95ef4226cd93974623f68",
+          "work/tmp/pdfs/diss-page-49.png": "be11fe4bcdf8e998b423b71e2ab40d8c1797c2854e3a7285b7a5fbbffd5d7f21"
+        }
+      },
+      "qualification": "First fifteen ordered Section 8 passage groups: eight matched, six corrected, one partial. The original source norms, actual roots, full algebraic multiplicities, contour domains, complex parity sorting and common-neighborhood quantifiers are retained. Corrected prefactors -1 and 4, doubled contour index and odd boundary pair are proved directly; no additional refutation is added. S8-014 retains the exact constant 4 in the lower strip, while its derivative conclusion is proved with a finite radius-dependent bound. Remaining ordered groups, Section 7 partial clauses, exact cited 2014 construction, Appendix G.2 interpretation and source-wide inventory remain unfinished. This is not a completeness certificate.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.CompletePeriodicParityPairs.cutoffs_eq_normalizedParity",
+        "NLS.ZakharovShabat.CompletePeriodicParityPairs.distant_root",
+        "NLS.ZakharovShabat.CompletePeriodicParityPairs.exists_parity_ordered",
+        "NLS.ZakharovShabat.CompletePeriodicParityPairs.section8_cutoffs_eq_contourDeterminants",
+        "NLS.ZakharovShabat.PeriodicEndpointPair.ordered_unique",
+        "NLS.ZakharovShabat.SourceLemma8_1Data.compatibility",
+        "NLS.ZakharovShabat.SourceLemma8_1Data.parity_analytic",
+        "NLS.ZakharovShabat.SourceLemma8_1Data.printed_analytic",
+        "NLS.ZakharovShabat.analyticAt_parityContourDeterminant",
+        "NLS.ZakharovShabat.analyticAt_parityContourProjection",
+        "NLS.ZakharovShabat.analyticAt_reducedParityContourOperator",
+        "NLS.ZakharovShabat.analyticOnNhd_canonicalParityProduct_periodOne",
+        "NLS.ZakharovShabat.analyticOrderAt_canonicalDiscriminant_sq_sub_four",
+        "NLS.ZakharovShabat.canonicalDiscriminant",
+        "NLS.ZakharovShabat.canonicalDiscriminant_eq_odd_sub_two_finite",
+        "NLS.ZakharovShabat.canonicalDiscriminant_parity_levels_finite",
+        "NLS.ZakharovShabat.canonicalDiscriminant_sq_eq_four_iff_finite",
+        "NLS.ZakharovShabat.canonicalParityProduct_spec",
+        "NLS.ZakharovShabat.canonicalParityProducts_mul",
+        "NLS.ZakharovShabat.canonicalParity_shifted_eq_finite",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_spec",
+        "NLS.ZakharovShabat.canonicalPeriodic_eq_discriminant_sq_sub_four_finite",
+        "NLS.ZakharovShabat.centralParityNormalization_ne_zero",
+        "NLS.ZakharovShabat.contourLift_parityProjection",
+        "NLS.ZakharovShabat.evenSpectralPairCutoff",
+        "NLS.ZakharovShabat.exists_bound_exp_im_div_sin_of_separated",
+        "NLS.ZakharovShabat.exists_ordered_completePeriodicParityPairs",
+        "NLS.ZakharovShabat.exists_source_section8_cutoff_determinants",
+        "NLS.ZakharovShabat.exists_source_section8_ordered_determinant_products",
+        "NLS.ZakharovShabat.exists_uniform_analytic_normalizedCentralParityPolynomials",
+        "NLS.ZakharovShabat.exists_uniform_canonicalParityProducts_weighted",
+        "NLS.ZakharovShabat.exists_uniform_centralCircle",
+        "NLS.ZakharovShabat.exists_uniform_central_parity_multiplicity_sums",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_div_free",
+        "NLS.ZakharovShabat.exists_uniform_discriminant_derivative_error_exp",
+        "NLS.ZakharovShabat.exists_uniform_exterior_canonicalProducts",
+        "NLS.ZakharovShabat.exists_uniform_sourceDiscriminant_cosine_quotient",
+        "NLS.ZakharovShabat.exists_uniform_sourceDiscriminant_exterior",
+        "NLS.ZakharovShabat.exists_uniform_source_section8_ordered_pairs",
+        "NLS.ZakharovShabat.exp_abs_im_le_four_norm_sin",
+        "NLS.ZakharovShabat.finiteDimensional_range_parityContourProjection",
+        "NLS.ZakharovShabat.localUniformAnalyticApproximation_canonicalParityProduct",
+        "NLS.ZakharovShabat.memℓp_parityRescale",
+        "NLS.ZakharovShabat.oddSpectralPairCutoff",
+        "NLS.ZakharovShabat.parityAlgebraicMultiplicity_pos_iff",
+        "NLS.ZakharovShabat.parityContourDeterminant_eq_prod",
+        "NLS.ZakharovShabat.parityContourDeterminant_eq_reduced",
+        "NLS.ZakharovShabat.parityContourProjection",
+        "NLS.ZakharovShabat.reducedParityContourOperator_conjugate",
+        "NLS.ZakharovShabat.reducedParityContourOperator_rootMultiplicity",
+        "NLS.ZakharovShabat.reducedParityContourOperator_self_apply",
+        "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_le_two",
+        "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_two_le",
+        "NLS.ZakharovShabat.sourceDiscriminant_finite_eq_classical",
+        "NLS.ZakharovShabat.sourceDiscriminant_ordered_product",
+        "NLS.ZakharovShabat.sourceDiscriminant_unique_continuous",
+        "NLS.ZakharovShabat.sourceDiscriminant_unique_joint_continuous",
+        "NLS.ZakharovShabat.sourceLemma8_1",
+        "NLS.ZakharovShabat.sourcePeriodicEndpoints_signed_discriminant",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_canonicalParityProduct_joint"
+      ],
+      "declaration_inventory_count": 44226,
+      "source_record_sha256": "6fe5d5c2e9e14e331038b09c092bb2fab9a09fdc715ecc86697030bca04191a0"
     }
   }
 }

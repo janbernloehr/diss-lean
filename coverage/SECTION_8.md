@@ -6,6 +6,40 @@ with its original component-sum norm and physical period-one realization
 The source PDF was visually inspected; the prefactor and denominator
 issues are recorded in [SOURCE_ERRATA.md](../SOURCE_ERRATA.md).
 
+## Ordered opening and finite determinants
+
+The corrected Section 8 finite products now have a direct original-source
+determinant interface. It constructs one open convex neighborhood, a common
+cutoff and separately ordered actual parity roots with full multiplicities.
+The even determinant has prefactor -1 at circle index 2M; the odd formula
+has prefactor 4 and retains its extra positive boundary pair. Both literal
+products converge locally uniformly to the corresponding discriminant levels.
+
+Validation: `./scripts/check.sh` passes with 8,503 build jobs, 7,570
+public examples and a transitive axiom audit of 44,226 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The first fifteen groups in the [ordered Section 8 ledger](SECTION_8_ASSERTIONS.md)
+are compared: eight matched, six corrected and one partial. S8-014 retains
+the exact lower-strip sine constant; the derivative asymptotic is proved.
+The remaining 21 groups await ordered comparison. Section 7's physical NLS
+Dirichlet motion and unrestricted psi uniqueness, the source-wide inventory,
+exact cited 2014 construction and Appendix G.2 norm interpretation remain open.
+Corrected constants are proved directly, without additional refutations.
+
+[SourceSection8ParityDeterminants.lean](../NLS/ZakharovShabat/SourceSection8ParityDeterminants.lean)
+combines actual counted roots, separate lexicographic ordering, common source
+geometry, exact finite determinants and whole-plane convergence. The source
+existence theorem constructs the resolvent contours and roots internally.
+The odd finite formula retains the pair indexed by 2M+1. The examples at
+p=3/2 derive the difference four between the limiting products and convergence
+of the original even contour determinants to Delta-2.
+
+The existing named-statement audits below retain their proof scope. Historical
+constant refutations remain available; this milestone adds positive corrections
+only. The ordered review does not infer source-wide completeness from them.
+
 ## Lemma 8.1(i): literal products and joint analyticity
 
 | Assertion | Entry point | Scope |

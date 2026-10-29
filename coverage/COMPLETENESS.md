@@ -141,6 +141,15 @@ Its corrected product and exact periods are proved. The corrected real
 codimension in S7-014 is two. These remaining clauses prevent treating
 Section 7 as fully resolved.
 
+The [ordered Section 8 ledger](SECTION_8_ASSERTIONS.md) now compares its
+first fifteen groups: eight matched, six corrected and one partial. The
+new original-source interface constructs ordered parity roots, a common
+neighborhood and cutoff, corrected actual contour determinants and their
+locally uniform limits. S8-014 retains the exact lower-strip sine constant,
+while its derivative conclusion is proved. The remaining 21 groups await
+ordered comparison; their existing named-statement audits retain their scope.
+No additional constant refutation was added.
+
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
 contextual or outside-work attribution, or unresolved. Retain existing refutations. Each
