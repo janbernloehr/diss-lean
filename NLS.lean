@@ -4775,3 +4775,6 @@ import NLS.ZakharovShabat.SourceQTransformation
 import NLS.ZakharovShabat.SourceLemma6_4Proof
 import NLS.ZakharovShabat.SourceIsospectralPartition
 import NLS.ZakharovShabat.SourceSection7ClassicalOverview
+import NLS.ZakharovShabat.SourceSection7PsiProduct
+import NLS.ZakharovShabat.SourceSection7AngleFormula
+import NLS.ZakharovShabat.SourceSection7RoughInput

@@ -13,6 +13,47 @@ Fourier coefficient space, represented by `CoeffPair p` with the original
 component-sum norm. The spectral realization uses `periodOnePotential`.
 This differs from Section 6's arbitrary period-two input theorem.
 
+## Remaining formulas and ordered comparison
+
+The corrected psi product now has a direct convergence theorem with pi_m
+in each retained denominator and the outer factor -2/pi_n. The literal angle
+formula now constructs all original circles, paths, terminal root signs and
+integrability, with absolute convergence of the off-diagonal series and
+agreement modulo 2*pi. A direct real-source theorem also places the existing
+non-measure obstruction in the dissertation's actual real phase space.
+
+Validation: `./scripts/check.sh` passes with 8,502 build jobs, 7,568
+public examples and a transitive axiom audit of 44,209 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+All 21 groups in the [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md)
+have been compared: eighteen matched, one corrected and two partial.
+S7-002 retains physical NLS Dirichlet motion; S7-013 retains unrestricted
+psi-function uniqueness. Its product correction and exact periods are proved.
+The corrected real codimension is two. The source-wide inventory, exact cited
+2014 construction and Appendix G.2 norm interpretation remain unfinished.
+No new counterexample to a printed constant has been added.
+
+The [psi product](../NLS/ZakharovShabat/SourceSection7PsiProduct.lean) converges
+at every spectral point with pi_0=1. The [angle theorem](../NLS/ZakharovShabat/SourceSection7AngleFormula.lean)
+uses the unchanged original domain and only requires the selected angle gap
+to be open; other gaps may be collapsed. Its paths and root signs are
+constructed, including terminals where the anti-discriminant is zero.
+The [rough-source theorem](../NLS/ZakharovShabat/SourceSection7RoughInput.lean)
+reuses the existing non-measure distribution and constructs its real pair.
+The two integration examples at p=3/2 check the retained zero-mode product
+and the real angle phase obtained from the literal integral sum.
+
+The exact period normalization and placed real-root uniqueness are proved.
+The overview's characterization of all entire psi products with l2 root
+displacements still needs a uniqueness theorem without those placement and
+reality premises. Theorem 7.1's constructed family and canonical relations
+retain their existing proofs and exact open-gap domains.
+
+The following opening entry retains its earlier validation counts and
+then-current review scope; the ordered ledger above is current.
+
 ## Ordered opening comparison
 
 The original periodic isospectral classes now have direct partition and

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-28T23:41:07.149757+00:00",
-  "base_commit": "46582e5aba4fe9369e72f39cd091546e30048c0b",
+  "published_utc": "2026-10-29T00:14:10.786806+00:00",
+  "base_commit": "e5a981e65d3a25599e8f99bfb9963c2ecc2ae9c4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 107,
-    "module_hash_checks": 1780,
-    "distinct_modules": 1108
+    "review_records": 108,
+    "module_hash_checks": 1826,
+    "distinct_modules": 1138
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "46582e5aba4fe9369e72f39cd091546e30048c0b",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the original isospectral partition, physical ordinary NLS invariance, literal locally uniform Section 7 periodic product, canonical-root sign and two integration examples. The opening comparison records ten matched passages and one partial passage. Physical NLS Dirichlet motion remains unresolved in S7-002; ten later ordered groups and the broader dissertation audit remain unfinished.",
+    "base_commit": "e5a981e65d3a25599e8f99bfb9963c2ecc2ae9c4",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the corrected literal psi product, constructed original angle path sum, real-source non-measure obstruction and two integration examples. The ten remaining Section 7 groups are compared with eight matches, one correction and one partial. The full ordered ledger has eighteen matches, one correction and two partial groups. Physical NLS Dirichlet motion and unrestricted psi characterization remain unresolved, as do the broader source-wide audit and external-construction qualifications.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8499,
-    "public_examples": 7566,
-    "transitive_NLS_declarations": 44205,
+    "build_jobs": 8502,
+    "public_examples": 7568,
+    "transitive_NLS_declarations": 44209,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4776,
-      "sha256": "de17515b74c602fa26b72b9c5d304672f32c802827c3b9cc20a7b559e643a03e"
+      "files": 4779,
+      "sha256": "18df45e6b4da3df05332026b1c461cfbbb1e58adfeb135edbe26a9d90d5a9ad8"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -26484,6 +26484,413 @@
       ],
       "declaration_inventory_count": 44205,
       "source_record_sha256": "a82ebd1638797f9730c074c6b827d65c4838a6a22718d2c7eee87d31709bf5ce"
+    },
+    "Section7RemainingSourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e5a981e65d3a25599e8f99bfb9963c2ecc2ae9c4",
+      "updated_utc": "2026-10-29T00:14:10.786806+00:00",
+      "source_lines": [
+        [
+          3381,
+          3396
+        ],
+        [
+          3397,
+          3410
+        ],
+        [
+          3412,
+          3415
+        ],
+        [
+          3416,
+          3418
+        ],
+        [
+          3420,
+          3426
+        ],
+        [
+          3428,
+          3432
+        ],
+        [
+          3433,
+          3438
+        ],
+        [
+          3450,
+          3455
+        ],
+        [
+          3458,
+          3459
+        ],
+        [
+          3461,
+          3468
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S7-012",
+          "source_lines": [
+            3381,
+            3396
+          ],
+          "requirement": "Angle formula (2.3), admissible paths and terminal root sign",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On the unchanged original complex domain, with only the selected gap required to be open, there exist original isolating circles and C1 paths from each left endpoint to its actual Dirichlet eigenvalue.",
+            "Every selected numerator integral is integrable. The continued root at each terminal equals the actual anti-discriminant, including zero terminal values. The off-diagonal integrals form an absolutely convergent series.",
+            "The literal diagonal integral plus that series differs from the original angle by an integer multiple of 2*pi. Normalized integrable diagonal choices have the same angle class; the off-diagonal values are independent of admissible integrable choices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum_of_circles",
+            "NLS.ZakharovShabat.sourceSection13OriginalDomain",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_integral_choice_period",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_im_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_pathIntegral_eq_value",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain"
+          ],
+          "qualification": "All geometry and integrability are constructed for the existence formula. Comparison of arbitrary supplied paths retains the stated admissibility and integrability hypotheses (including the quadratic model integrand for diagonal path comparisons); no claim is made that every C1 path is automatically integrable. Off-diagonal gaps may be collapsed. Real sources give real angles, and analytic representatives are local modulo pi."
+        },
+        {
+          "ordered_group": "S7-013",
+          "source_lines": [
+            3397,
+            3410
+          ],
+          "requirement": "Psi product, asymptotics and period normalization",
+          "status": "partial",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The corrected literal symmetric psi product converges at every spectral point, retaining -2/pi_n outside the product and using pi_m for each retained factor, with pi_0=1.",
+            "The actual psi candidate is entire. At p=2 the constructed deleted root displacements belong to l2; the simultaneous family has exact Kronecker periods with factor 1/(2*pi) on every admissible original winding-one circuit.",
+            "The real root sequence solving the original equation is unique within the original real placement domain. An unrestricted characterization among all entire products with l2 displacements has not been established by this comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection7_psi_product",
+            "NLS.ZakharovShabat.analyticOnNhd_sourcePsiCandidate",
+            "NLS.ZakharovShabat.sourceTheorem12_1",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_unique",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.existsUnique_originalRealSolution"
+          ],
+          "qualification": "The printed repeated denominator pi_n is corrected to pi_m by a positive convergence theorem; no additional refutation is added. Existing uniqueness requires real roots placed in assigned original isolating discs, which are then proved to lie in the gaps. That premise is not explicit in the overview characterization, so its unrestricted uniqueness clause remains unresolved and this group is partial."
+        },
+        {
+          "ordered_group": "S7-014",
+          "source_lines": [
+            3412,
+            3415
+          ],
+          "requirement": "Angle conventions and the collapsed-gap locus",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual real angle is defined modulo 2*pi on its open-gap locus, with local analytic representatives modulo pi.",
+            "The actual real Hilbert squared-gap zero set has a global analytic chart onto a closed coordinate plane of real codimension two. Its tangent space is the kernel of a surjective two-coordinate differential and equals the space of velocities of curves in the zero set."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative",
+            "NLS.ZakharovShabat.physicalClosedGap_global_chart",
+            "NLS.ZakharovShabat.physicalGapCoordinates_fderiv_surjective",
+            "NLS.ZakharovShabat.physicalSquaredGap_zero_iff_closed",
+            "NLS.ZakharovShabat.mem_physicalClosedGapTangent_iff_curve",
+            "NLS.ZakharovShabat.physicalClosedGapTangent_codimension_two"
+          ],
+          "qualification": "The corrected real codimension is two. The original physical Hilbert space and squared-gap locus are retained; no complex codimension claim is inferred. Existing positive geometry supplies this comparison without a new counterexample."
+        },
+        {
+          "ordered_group": "S7-015",
+          "source_lines": [
+            3416,
+            3418
+          ],
+          "requirement": "Hilbert canonical Poisson relations",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At the Hilbert exponent, the actual action derivatives commute; the angle/action bracket is the Kronecker delta and the angle/angle bracket vanishes on exactly the stated open-gap domains."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem7_1",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.corollary13_2_regular",
+            "NLS.ZakharovShabat.sourceAction_fourier_bracket_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaTheta_fourier_bracket_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_fourier_bracket_eq_kronecker"
+          ],
+          "qualification": "Specialize the finite-p theorem to p=2. The Fourier brackets are absolutely convergent pairings of actual derivatives, with frequency reversal and physical sign -i. Only gaps belonging to angle variables must be open; action gaps may be collapsed."
+        },
+        {
+          "ordered_group": "S7-016",
+          "source_lines": [
+            3420,
+            3426
+          ],
+          "requirement": "Rough Fourier-Lebesgue input and non-measure assertion",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every finite p>2, there is an actual real Fourier-Lebesgue source pair whose first original unit-period distribution is not represented by any complex measure.",
+            "The second component is the conjugate reflection of the first component coefficients, so the obstruction lies in the dissertation real source space."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_real_source_first_component_not_measure"
+          ],
+          "qualification": "The theorem reuses the existing non-measure distribution and supplies its real source pair. The sentence about standard ODE theory is motivation: no impossibility of every possible generalized fundamental-solution theory is asserted."
+        },
+        {
+          "ordered_group": "S7-017",
+          "source_lines": [
+            3428,
+            3432
+          ],
+          "requirement": "Entire product extension and agreement with classical discriminant",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The corrected even spectral product plus two defines the actual source discriminant, jointly entire in the spectral parameter and finite-p source pair for p>1.",
+            "Above two it agrees with the physical Hilbert monodromy trace along the Hilbert inclusion; below two it is the restriction to the stronger source space. Classical finite Fourier agreement uniquely determines the jointly continuous extension."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalDiscriminant",
+            "NLS.ZakharovShabat.analyticOnNhd_canonicalDiscriminant_periodOne",
+            "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_two_le",
+            "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_le_two",
+            "NLS.ZakharovShabat.sourceDiscriminant_finite_eq_classical",
+            "NLS.ZakharovShabat.sourceDiscriminant_unique_joint_continuous"
+          ],
+          "qualification": "The normalization is the already corrected parity product. The discriminant is not obtained by arbitrarily choosing a square root of the full product. All source norms and the direction of each exponent inclusion are retained."
+        },
+        {
+          "ordered_group": "S7-018",
+          "source_lines": [
+            3433,
+            3438
+          ],
+          "requirement": "Extended roots, actions, psi, anti-discriminant and density transfer",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The canonical root is the limit of the actual root products and is analytic off the original cuts. The original contour action construction extends to every finite p>1 on a common complex neighborhood.",
+            "The normalized psi family and actual anti-discriminant are constructed; the latter is the difference of the two auxiliary characteristic products and agrees with the classical anti-trace at Hilbert inputs. The angle is the constructed path sum in S7-012.",
+            "The canonical relations hold for every finite p>1. Angle commutation above two follows through finite Fourier real sources and norm density; below two it follows by restriction of the actual regular cotangents."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+            "NLS.ZakharovShabat.exists_sourceAction_common_analytic_neighborhood",
+            "NLS.ZakharovShabat.sourceTheorem12_1",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products",
+            "NLS.ZakharovShabat.analyticOnNhd_sourceAntiDiscriminantCandidate_joint",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_two_le",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_bivector_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.corollary13_2_regular"
+          ],
+          "qualification": "This matches the mathematical construction and transfer claims, not a textual comparison with the exact cited 2014 procedure, which remains open. The separate unrestricted psi-characterization clause in S7-013 is not discharged here. Finite Fourier support in the density proof does not mean finitely many open gaps."
+        },
+        {
+          "ordered_group": "S7-019",
+          "source_lines": [
+            3450,
+            3455
+          ],
+          "requirement": "Theorem 7.1 common neighborhood and analytic actions",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each finite p>1 there is one open complex neighborhood containing the entire real source locus on which every indexed action is complex analytic, and hence real analytic.",
+            "The same constructed neighborhood also supports the open-gap angle phases and local representatives."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem7_1",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.actions_analytic",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.real_subset",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.local_angles"
+          ],
+          "qualification": "The neighborhood is common to all indices. No restriction to a bounded source set, finite number of indices or finite-gap sources is introduced."
+        },
+        {
+          "ordered_group": "S7-020",
+          "source_lines": [
+            3458,
+            3459
+          ],
+          "requirement": "Theorem 7.1 real mod-2pi angles and mod-pi extension",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On the real open-gap locus, the actual angle is a Real.Angle class, with a unit-modulus exp(i*theta) phase. Its square is the complex analytic exp(2*i*theta) phase.",
+            "At every point of the complex open-gap domain there is a local analytic representative, real on real sources, whose differential is the actual angular differential."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.real_angle_phase",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.angle_phase_analytic",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.local_angles",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_phase",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative"
+          ],
+          "qualification": "The source wording is interpreted with its explicit modular conventions: real angles modulo 2*pi and complex analytic continuation modulo pi. No globally single-valued real representative or angle at a collapsed selected gap is claimed."
+        },
+        {
+          "ordered_group": "S7-021",
+          "source_lines": [
+            3461,
+            3468
+          ],
+          "requirement": "Theorem 7.1 exact canonical relations and domains",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "All three canonical identities hold for the same constructed family at every finite p>1 on precisely their source domains.",
+            "The brackets have literal absolutely convergent Fourier formulas using the actual action and angle differentials, frequency reversal and the factor -i. Action/action requires no open gap, angle/action requires only the angle gap, and angle/angle requires both angle gaps."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem7_1",
+            "NLS.ZakharovShabat.SourceTheorem7_1Data.canonical",
+            "NLS.ZakharovShabat.sourceAction_pairing_summable_norm",
+            "NLS.ZakharovShabat.sourceAction_fourier_bracket_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaTheta_pairing_summable_norm",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaTheta_fourier_bracket_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_pairing_summable_norm",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_fourier_bracket_eq_kronecker"
+          ],
+          "qualification": "The actual regular cotangents identify these formulas with the source bracket above two and extend the literal convergent pairing below two. The range is strictly 1<p<infinity."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceAngularOriginalTheta.lean": "d067767e0b6097c4bbe4de67a002c098a5de09b89b610e6d65721f34460e0fc3",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaSeries.lean": "5c570e94c66ac480a049aee375fe2de671b02d823714ad54f130e3a6856d7e3b",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean": "fcea4ed8662e0ee979cffc454778c9d83c899cd2c0c3137b58cc892ada268090",
+        "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean": "a9d5daec0f419f69e7657ae85cadb225cc95754df17104e21176dfefecdd3511",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc",
+        "NLS/ZakharovShabat/SourceLemma12_12.lean": "b8458ae50266ccbd4d96ef724b4a54c37530a8ff72f56387108c1f526dde6df6",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean": "4dddcbf934b281c625186d4ec1a53e9568e4cd7f32e9bb2e158a95c70fc46c6c",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealSolution.lean": "1d0702703ba16b391d7da61dbd4142486ae5bda259f7b3693a0c22fa237efe93",
+        "NLS/ZakharovShabat/PhysicalPsiFamily.lean": "4b1f5c68615415111617511a0054f524649e96c5d140fd1521bd23f0a96777dd",
+        "NLS/ZakharovShabat/SourcePsiOriginalSolutionGap.lean": "2b897735007cd9ed6c57a32bbd643185e192ce50fd94b0b560a247c7be06183f",
+        "NLS/ZakharovShabat/SourceSection13OriginalDomain.lean": "d662989c21034c832b87874785004ec3b008a474b37a2f8189d86b2845753224",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean": "f3e0c5e54bf94039714a8103e1ab16eba40c58d7a91fce66ff26432dc5385ce0",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaValues.lean": "23a35ea4fca85ea0b29af6df9e3b0eb9e15f05ba7f4a626de7bb5791fe9d7c5d",
+        "NLS/ZakharovShabat/SourceRealTypeBanachSpace.lean": "328ccffa4d14b289604510c85d23d326ee500ad867c150b90468bb801a27b025",
+        "NLS/ZakharovShabat/SourceTheorem7_1.lean": "fa15c35062b5b79e42746ead73768d7d7621dbcb5f822229de7c8ed62de4f003",
+        "NLS/ZakharovShabat/SourceTheorem12_1.lean": "c036faa392a52eb853aff8fac711d8a2c01eeae64505b4dcb16207decbc24a3f",
+        "NLS/ZakharovShabat/SourceDiscriminantExtension.lean": "63d4f45ee6f97c43f8798b45b7f2f35ab20bff54a671959b37ff6bccf2199698",
+        "NLS/ZakharovShabat/PhysicalClosedGapGeometry.lean": "f7d2f481872e0ef0ea8078f926999f841ffa41cb11bb65f4a74ecae62de5af9a",
+        "NLS/ZakharovShabat/SourcePsiOriginalNormalization.lean": "3959d3860435c8db76781fabc9727a959eb9d41482e661a6de2e7d656367dd26",
+        "NLS/ZakharovShabat/SourcePsiOriginalPeriods.lean": "8df0aeeb4e7f530b57a91b854d9226239058aa50143b1b6f3f0a2339e5638abb",
+        "NLS/ZakharovShabat/SourcePsiCandidate.lean": "e1557015a2fc310df4054fe456dc8ff5fa7ca245d943fbbbe8bb0f0fb5e6c456",
+        "NLS/ZakharovShabat/SourceAngularRegularFourier.lean": "22739611b40bb304eb4f13ce369c73ecc6c834c423cc808d23cac2f9cca432e9",
+        "NLS/ZakharovShabat/SourceCorollary13_2Regular.lean": "f3ecd0912a6afcced0de46ff80b739fcee19ba3883cba9d0eb7ab26846e15314",
+        "NLS/ZakharovShabat/SourceAngularThetaThetaExponent.lean": "d9ecc3cbe5e68125fc414b7de2d624f234a0e471c84cf72b3d6300b435b16f07",
+        "NLS/ZakharovShabat/SourceActionRegularPoisson.lean": "505d0827e5b7d90ab0df81ae442269014be709e5407fba9dba4f619643159ec2",
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f",
+        "NLS/ZakharovShabat/SourceActionCommonNeighborhood.lean": "7fe1bc010ef6ae5016794b737aed2fed0c63be83991c092704aa3f8ce865e629",
+        "NLS/ZakharovShabat/L2SourceCharacteristics.lean": "88e6bf52198981199515ee50ca1f8d70068da29edc271ad1c2c12f310b8b6468",
+        "NLS/ZakharovShabat/SourceThetaSpectralPhase.lean": "dc47b6e2edaf60bf1dfeeba09a1ac892098916cfcaa62b7bbb8167bcf04d8f66",
+        "NLS/ZakharovShabat/SourceAngularTransversePathIntegrability.lean": "0a886ab2fda4fae4a4dafb8b3d0cad8ea47972ba7b2947af2dfe5df1ba6e7451",
+        "NLS/ZakharovShabat/SourceAngularBranchEtaSpectralPath.lean": "4b43b1f1f0b452d912e7ec03df88086442f6d6ad7d3e1768a6a7f3c5c5c06d43",
+        "NLS/ZakharovShabat/SourceAngularAdmissiblePathConstruction.lean": "935c231678511c2f556db07c13bdf9147abb72fe23d6a9089facf2cdc06c357e",
+        "NLS/ZakharovShabat/SourceAngularOriginalEndpointIntegrals.lean": "3b465595500dc1a5ae76d2baf6868e3f79a84986021204c37b0fb04231d9dce0",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaComparison.lean": "f4fa740b99f6b7848446e2e59879f1260e1a3d38eee4ce8ef1be6b562f66b6d8",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean": "f31131a74c1180235b7ccded46718f0a79e4ddd139fb53453bae8b898ce907af",
+        "NLS/ZakharovShabat/SourceFiniteGapClassicalNLS.lean": "575497b1f65d8795a7cc00cc255f20327d3a09d522971730cf445328e3b724ad",
+        "NLS/ZakharovShabat/SourceAngularBetaTheorem13_1Series.lean": "0aa84942f88baf4e017a5ca9bb188faf0f14e89e5b2163dcbbed20b0775128e4",
+        "NLS/ZakharovShabat/SourceAngularBetaSeriesAnalytic.lean": "8d51b4c6da12c7a76cd335ce8efab7b238cbae3372a0a6497b88a2dd1ed70b5c",
+        "NLS/Fourier/NonMeasureFourierCounterexample.lean": "b5519e135a17213dfb0f7fa30a4e89b6a8bc44d42c844443947bb5fab4540012",
+        "NLS/SequenceSpaces/ConjugateReflection.lean": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101",
+        "NLS/ZakharovShabat/PhysicalClosedGapTangents.lean": "dfb720a6ed5faad877f17f0727062770dfd2b9555bb6517eb9cb49b55a63dac9",
+        "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df",
+        "NLS/ZakharovShabat/SourceSection7AngleFormula.lean": "46eb63609969e1b718e8234b56f965bb6a5dbfe51f95de3073896cc4603542d6",
+        "NLS/ZakharovShabat/SourceSection7RoughInput.lean": "b72776e22b39c3b6ccfb99e74cd5d8c7a0b29ba9b03682a56e2e159edf17fa25"
+      },
+      "partial_module_read_ranges": {
+        "NLS/ZakharovShabat/PhysicalClosedGapTangents.lean": [
+          1,
+          105
+        ]
+      },
+      "ordered_inventory": "coverage/SECTION_7_ASSERTIONS.md",
+      "ordered_inventory_sha256": "f62964d9c52adf1f410a4abdc337463805d7d458160f2e66eab5a84ee42b1cbc",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          45,
+          46,
+          47
+        ],
+        "images": {
+          "work/Section7OrderedReview-045.png": "7138431a7e4339274003766dcee4759703f6de882a328881e1a1943ab4e10749",
+          "work/Section7OrderedReview-046.png": "519eea9ea5e543866c5e96cb0c152353df7857d89516c7f7a866fb59656ee890",
+          "work/Section7OrderedReview-047.png": "c4edd5ef94597d539c2ae36cc16c61fe3a9cb078fc449cc7a514528a78fb9740"
+        }
+      },
+      "qualification": "Remaining Section 7 comparison S7-012 through S7-021: eight matched, one corrected, one partial. The full ordered ledger has eighteen matched groups, one corrected and two partial. Corrected psi product, actual original normalized paths and absolutely convergent angle sum, actual real rough-source obstruction, common neighborhoods and canonical relations retain their exact norms, domains and finite exponent range. S7-013 remains partial because existing uniqueness assumes placed real roots; its unrestricted entire-function characterization is unresolved. S7-002 physical NLS motion remains unresolved from the opening review. The exact cited 2014 construction, Appendix G.2 interpretation and source-wide inventory remain unfinished. No extra constant refutations were added. This is not a semantic completeness certificate.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.corollary13_2_regular",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_fourier_bracket_eq_kronecker",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_pairing_summable_norm",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_bivector_eq_zero",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_two_le",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaTheta_fourier_bracket_eq_zero",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaTheta_pairing_summable_norm",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_pathIntegral_eq_value",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum_of_circles",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_im_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_integral_choice_period",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_phase",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.existsUnique_originalRealSolution",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_unique",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.actions_analytic",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.angle_phase_analytic",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.canonical",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.local_angles",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.real_angle_phase",
+        "NLS.ZakharovShabat.SourceTheorem7_1Data.real_subset",
+        "NLS.ZakharovShabat.analyticOnNhd_canonicalDiscriminant_periodOne",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceAntiDiscriminantCandidate_joint",
+        "NLS.ZakharovShabat.analyticOnNhd_sourcePsiCandidate",
+        "NLS.ZakharovShabat.canonicalDiscriminant",
+        "NLS.ZakharovShabat.exists_real_source_first_component_not_measure",
+        "NLS.ZakharovShabat.exists_sourceAction_common_analytic_neighborhood",
+        "NLS.ZakharovShabat.mem_physicalClosedGapTangent_iff_curve",
+        "NLS.ZakharovShabat.physicalClosedGapTangent_codimension_two",
+        "NLS.ZakharovShabat.physicalClosedGap_global_chart",
+        "NLS.ZakharovShabat.physicalGapCoordinates_fderiv_surjective",
+        "NLS.ZakharovShabat.physicalSquaredGap_zero_iff_closed",
+        "NLS.ZakharovShabat.sourceAction_fourier_bracket_eq_zero",
+        "NLS.ZakharovShabat.sourceAction_pairing_summable_norm",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd",
+        "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_le_two",
+        "NLS.ZakharovShabat.sourceDiscriminant_eq_l2_of_two_le",
+        "NLS.ZakharovShabat.sourceDiscriminant_finite_eq_classical",
+        "NLS.ZakharovShabat.sourceDiscriminant_unique_joint_continuous",
+        "NLS.ZakharovShabat.sourceSection13OriginalDomain",
+        "NLS.ZakharovShabat.sourceSection7_psi_product",
+        "NLS.ZakharovShabat.sourceTheorem12_1",
+        "NLS.ZakharovShabat.sourceTheorem7_1",
+        "NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct"
+      ],
+      "declaration_inventory_count": 44209,
+      "source_record_sha256": "a0be2b6ff3dbb6476c881fc0e5c05f877a080d4f7fafaf54c62351fee569e2e4"
     }
   }
 }

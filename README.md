@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 7 now has direct isospectral partition and physical NLS
-invariance theorems, the literal locally uniform periodic product, and the
-canonical-root sign. The [ordered Section 7 ledger](coverage/SECTION_7_ASSERTIONS.md)
-records ten matched passages, one partial passage and ten pending passages.
-The Dirichlet-motion clause remains open. All 47 groups in the
-[Section 6 ledger](coverage/SECTION_6_ASSERTIONS.md) retain their reviewed
-scope and corrections. See the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: Section 7 now has a direct corrected psi product, a constructed
+and absolutely convergent angle path sum, and a real rough-source theorem.
+All 21 groups in the [ordered ledger](coverage/SECTION_7_ASSERTIONS.md) have
+been compared: eighteen matched, one corrected and two partial. Physical NLS
+Dirichlet motion and unrestricted psi-function uniqueness remain open.
+The [completion assessment](coverage/COMPLETENESS.md) records the wider scope.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

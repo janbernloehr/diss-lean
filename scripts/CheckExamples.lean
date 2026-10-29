@@ -71046,3 +71046,60 @@ example (φ : CoeffPair 2) (z : ℂ)
   simpa only [he,sub_self] using ht
 
 end Section7OpeningExamples
+
+
+
+noncomputable section
+open Set Filter Topology Complex
+open scoped ENNReal
+open NLS NLS.ZakharovShabat
+namespace Section7RemainingExamples
+
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨one_lt_half.le⟩
+
+-- The corrected product retains the zero-mode factor when the omitted index is one.
+example (a : Coeff (3/2)) :
+    Tendsto (fun N : ℕ =>
+      (-2 / singleSpectralDenominator 1) *
+        ∏ m ∈ (Finset.Icc (-(N : ℤ)) (N : ℤ)).erase 1,
+          (displacedRoots a m-displacedRoots a 0)/singleSpectralDenominator m)
+      atTop (𝓝 0) := by
+  have h := sourceSection7_psi_product half_ne_top one_lt_half 1 a (displacedRoots a 0)
+  simpa only [sourcePsiCandidate_other_root half_ne_top one_lt_half 1 0 (by decide) a] using h
+
+-- Constructed literal integrals give the real analytic angle phase below exponent two.
+example {W₀ W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (H : SourceLemma12_12Data half_ne_top one_lt_half W₀ W s)
+    (ψ : realTypeSourceSubmodule (3/2)) (hψ : ψ.val ∈ W) (n : ℤ)
+    (hg : canonicalPeriodicGap half_ne_top one_lt_half (periodOnePotential ψ.val)
+      (periodOnePotential_mem ψ.val) n ≠ 0) :
+    ∃ Q : ℤ → ℂ × CoeffPair (3/2) → ℂ,
+    ∃ γ : (m : ℤ) → Path
+      (canonicalPeriodicLeft half_ne_top one_lt_half (periodOnePotential ψ.val)
+        (periodOnePotential_mem ψ.val) m)
+      (canonicalPeriodOneBoundaryRoots half_ne_top one_lt_half .dirichlet ψ.val m),
+      let v := sourceAngularPathIntegral n s (Q n) ψ.val (γ n) +
+        ∑' m : ℤ, if m = n then 0 else sourceAngularPathIntegral n s (Q m) ψ.val (γ m)
+      Summable (fun m : ℤ => ‖if m = n then 0 else sourceAngularPathIntegral n s (Q m) ψ.val (γ m)‖) ∧
+      v.im = 0 ∧ Complex.exp (2*Complex.I*v) =
+        sourceAngularThetaAnalyticPhase half_ne_top one_lt_half n s ψ.val := by
+  obtain ⟨P,Q,γ,_,hs,k,hk⟩ := H.section7_exists_angle_path_sum ψ.val hψ n hg
+  refine ⟨Q,γ,hs,?_,?_⟩
+  · have him := congrArg Complex.im hk
+    simpa only [Complex.sub_im,Complex.mul_im,Complex.intCast_im,Complex.ofReal_im,
+      Complex.natCast_im, show (2 : ℂ).im = 0 by rfl, mul_zero,zero_mul,add_zero,zero_add,H.theta_original_im_eq_zero ψ.val hψ ψ.property n hg,
+      sub_zero] using him
+  · rw [← H.theta_original_phase ψ.val hψ n hg]
+    apply Complex.exp_eq_exp_iff_exists_int.mpr
+    refine ⟨2*k,?_⟩
+    push_cast
+    linear_combination 2*Complex.I*hk
+
+end Section7RemainingExamples

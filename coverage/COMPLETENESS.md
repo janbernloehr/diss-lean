@@ -131,13 +131,15 @@ completion percentage. Constant corrections need a proved valid replacement;
 additional counterexamples are not required. Continue with Section 7, then
 later sections in source order.
 
-The [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md) now has ten matched
-passages, one partial passage and ten pending passages. Direct partition,
-physical NLS invariance, literal product and root-sign theorems support the
-opening comparison. The signed Dirichlet parametrization is proved, while
-the additional physical NLS motion clause in S7-002 remains unresolved.
-Existing focused proofs of later Section 7 statements remain available;
-they still need reconciliation in this ordered pass.
+All 21 groups in the [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md)
+have now been compared: eighteen matched, one corrected and two partial.
+The corrected product, constructed angle path sum and actual real rough
+source have direct interfaces. S7-002 retains the physical NLS motion clause;
+S7-013 retains uniqueness of psi among all stated entire products without
+the real-root placement premises of the existing uniqueness theorem.
+Its corrected product and exact periods are proved. The corrected real
+codimension in S7-014 is two. These remaining clauses prevent treating
+Section 7 as fully resolved.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
