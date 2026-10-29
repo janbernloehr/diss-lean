@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first twelve of fifty-two ordered Section 10 groups are compared: eleven matched and one corrected real-type-domain occurrence. The literal power-sum contour and its direct analytic source dependence are newly proved for every original isolating family, including central indices and collapsed pairs. Forty later groups remain pending ordered comparison. Existing named theorem audits are not a replacement for that work. No new refutation is added. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first 22 of 52 ordered Section 10 groups are compared: 19 matched and three corrected occurrences. The existing real-type-domain correction is joined by the selected-root denominator correction in Lemma 10.4 and its proof. Standard-root domains, exact separation bounds, general piecewise C1 contours, side limits and the sharp endpoint constant one are retained. Thirty later groups remain pending, beginning with deleted products. This documentation-only step reuses the verified unchanged Lean and dependency snapshot from commit 392775f. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first twelve
-groups, through the proof of Lemma 10.2 on p.55, have been compared.
-The remaining forty groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 22
+groups, through the proof of Lemma 10.4 on p.56, have been compared.
+The remaining thirty groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -27,16 +27,16 @@ inspected to preserve figures, signs and closure bars. See
 | S10-010 | 4199–4204 | Lemma 10.2(iii): joint analytic pair factor and exact polynomial identity. | matched |
 | S10-011 | 4207–4222 | Argument-principle proof for power sums using the literal discriminant contour integral. | matched |
 | S10-012 | 4223–4230 | Midpoint/squared-gap algebra and joint pair-factor proof. | matched |
-| S10-013 | 4241–4251 | Principal square root and standard-root definition (2.9). | pending |
-| S10-014 | 4254–4255 | Lemma 10.3: spectral and joint analyticity. | pending |
-| S10-015 | 4256–4259 | Lemma 10.3: two-sided root magnitude estimate (2.10). | pending |
-| S10-016 | 4260–4267 | Lemma 10.3: normalized contour integral -Kronecker delta. | pending |
-| S10-017 | 4269–4276 | Proof of slit condition, root magnitude and contour identity. | pending |
-| S10-018 | 4278–4279 | Collapsed standard root extends analytically through the whole disk. | pending |
-| S10-019 | 4280–4291 | Side parametrization and opposite standard-root traces (2.11–2.12). | pending |
-| S10-020 | 4294–4303 | Figure 2.3: signs of the standard root around a real gap. | pending |
-| S10-021 | 4306–4312 | Lemma 10.4: uniform endpoint side-integral estimate. | pending |
-| S10-022 | 4314–4323 | Parametrization proof of Lemma 10.4 and arcsine integral. | pending |
+| S10-013 | 4241–4251 | Principal square root and standard-root definition (2.9). | matched |
+| S10-014 | 4254–4255 | Lemma 10.3: spectral and joint analyticity. | matched |
+| S10-015 | 4256–4259 | Lemma 10.3: two-sided root magnitude estimate (2.10). | matched |
+| S10-016 | 4260–4267 | Lemma 10.3: normalized contour integral -Kronecker delta. | matched |
+| S10-017 | 4269–4276 | Proof of slit condition, root magnitude and contour identity. | matched |
+| S10-018 | 4278–4279 | Collapsed standard root extends analytically through the whole disk. | matched |
+| S10-019 | 4280–4291 | Side parametrization and opposite standard-root traces (2.11–2.12). | matched |
+| S10-020 | 4294–4303 | Figure 2.3: signs of the standard root around a real gap. | matched |
+| S10-021 | 4306–4312 | Lemma 10.4: uniform endpoint side-integral estimate. | corrected |
+| S10-022 | 4314–4323 | Parametrization proof of Lemma 10.4 and arcsine integral. | corrected |
 | S10-023 | 4336–4343 | Lemma 10.5: deleted standard-root product, analyticity and nonvanishing. | pending |
 | S10-024 | 4345–4355 | Product proof: definition of a_k and its midpoint-plus-square-root decomposition. | pending |
 | S10-025 | 4356–4364 | Uniform compact-tail bound on the square-root correction. | pending |
@@ -178,12 +178,104 @@ Public evidence: `NLS.ZakharovShabat.sourceIsolatingContour_midpoint_squaredGap_
 
 The midpoint is (left+right)/2 and the squared gap is 2*(left^2+right^2)-(left+right)^2. The independent new scalar power-contour proof agrees with these expressions and preserves all sequence estimates and the same common domain.
 
-The new [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
+## S10-013: Principal square root and standard-root definition (2.9).
+
+- The standard root is exactly (tau-z)*principalSqrt(1-gap^2/(4*(tau-z)^2)), off the actual closed endpoint segment.
+- Squaring gives the actual endpoint factor. At zero source the value is pi*n-z, including n=0.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot`, `NLS.ZakharovShabat.normalizedStandardRoot`, `NLS.ZakharovShabat.sourceStandardRoot_sq_of_not_mem_segment`, `NLS.ZakharovShabat.sourceStandardRoot_radicand_mem_slitPlane`, `NLS.ZakharovShabat.sourceStandardRoot_zero_source`.
+
+The root is totalized in Lean, but the noncollapsed quadratic identity is used only off the closed gap; its midpoint is excluded. The collapsed formula is valid on the entire plane.
+
+## S10-014: Lemma 10.3: spectral and joint analyticity.
+
+- Spectral analyticity holds off the actual moving closed gap at every original complex source.
+- Any existing Lemma 10.2 domain is retained unchanged. Joint analyticity holds on the moving-gap complement and outside each fixed local disk.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot_analyticOnNhd`, `NLS.ZakharovShabat.SourceLemma10_2Data.standardRoot_joint`, `NLS.ZakharovShabat.SourceLemma10_2Data.standardRoot_local`, `NLS.ZakharovShabat.SourceLemma10_2Data.standardRoots`, `NLS.ZakharovShabat.SourceLemma10_3Data.neighborhoods`.
+
+Rendered p.56 has a closure bar over U_n. The implementation proves the stronger complement-of-open-disk statement, including its boundary. The neighborhood and disk family precede all nearby sources and indices.
+
+## S10-015: Lemma 10.3: two-sided root magnitude estimate (2.10).
+
+- One c>=1 gives c^-1*|m-n| <= |w_n| <= c*|m-n| for all m!=n and all points in the original D_m.
+- The exact root norm squared is the product of the two endpoint distances; the same isolation constant is preserved.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot_norm_sq`, `NLS.ZakharovShabat.sourceStandardRoot_norm_bounds_of_endpoint_bounds`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.standardRoot_bounds`, `NLS.ZakharovShabat.SourceStandardRootNeighborhoods.bounds`.
+
+All central and negative indices are included. Gap containment and disjoint disks discharge the branch exclusion; no large-index restriction or enlarged constant occurs.
+
+## S10-016: Lemma 10.3: normalized contour integral -Kronecker delta.
+
+- The normalized integral of 1/w_n on every finite piecewise C1 loop in D_m avoiding G_m and winding once around its midpoint is minus the Kronecker delta.
+- The integral is the finite sum of actual path integrals, with normalization (2*pi*i)^-1 and the usual reciprocal-pole winding integral.
+
+Public evidence: `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.standardRoot_piecewiseIntegral_indexed`, `NLS.ZakharovShabat.SourceStandardRootNeighborhoods.contours`, `NLS.ZakharovShabat.normalized_sourceStandardRoot_inv_piecewiseIntegral_eq_neg_winding`, `NLS.ComplexAnalysis.PiecewiseC1Loop.integral`, `NLS.ComplexAnalysis.PiecewiseC1Loop.windingIntegral`, `NLS.ComplexAnalysis.PiecewiseC1Loop.windingIntegral_circle`.
+
+Corners and self-intersections are allowed. Positive orientation is winding one, not an assumption about the target root integral. On a different disk the inverse root has a primitive.
+
+## S10-017: Proof of slit condition, root magnitude and contour identity.
+
+- The radicand avoids the nonpositive real axis off the endpoint segment, and its principal square root yields the exact magnitude estimate.
+- With g=gap^2, the single-valued correction F=-log(1+sqrt(1-g/(4*(tau-z)^2))) satisfies F_prime=1/w+1/(z-tau). Its integral telescopes on the closed chain.
+
+Public evidence: `NLS.ComplexAnalysis.gap_radicand_mem_slitPlane`, `NLS.ComplexAnalysis.real_abs_ge_one_of_one_sub_sq_not_mem_slitPlane`, `NLS.ZakharovShabat.sourceStandardRoot_norm_sq`, `NLS.ZakharovShabat.hasDerivAt_standardRootLogCorrection`, `NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive`, `NLS.ZakharovShabat.sourceStandardRoot_inv_piecewiseIntegral_eq_neg_midpoint_pole`.
+
+The contour result is proved directly for every finite exponent p>1, which supplies the source conclusion without importing its cited p=2 continuity argument. The principal logarithm is valid because 1+sqrt has positive real part.
+
+## S10-018: Collapsed standard root extends analytically through the whole disk.
+
+- If the actual gap is zero, w_n=tau_n-z everywhere and is entire, including the midpoint.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap`, `NLS.ZakharovShabat.sourceStandardRoot_analyticOnNhd_of_zeroGap`.
+
+The implementation proves entire analyticity, strengthening the source assertion on U_n and including the midpoint excluded by the complement-of-gap theorem.
+
+## S10-019: Side parametrization and opposite standard-root traces (2.11–2.12).
+
+- The affine coordinate tau+(gamma/2)*t parametrizes the actual gap, with endpoints t=-1 and t=1.
+- Actual arbitrary approaches from the open upper and lower sides have traces -i*(gamma/2)*sqrt(1-t^2) and +i*(gamma/2)*sqrt(1-t^2), respectively.
+- The traces are continuous in the closed coordinate interval, including the midpoint and both endpoints.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot_gapSegment_eq_periodicSegment`, `NLS.ZakharovShabat.sourceStandardRoot_gap_left_endpoint`, `NLS.ZakharovShabat.sourceStandardRoot_gap_right_endpoint`, `NLS.ZakharovShabat.standardRootGapUpperSide`, `NLS.ZakharovShabat.standardRootGapLowerSide`, `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_upper_side`, `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_lower_side`, `NLS.ZakharovShabat.sourceStandardRootSideTrace_continuous`.
+
+The sides are oriented by the complex half-gap, not by the ambient imaginary coordinate when the gap is tilted. Opposite values at endpoints both equal zero. No analyticity of individual ordered endpoint labels is assumed.
+
+## S10-020: Figure 2.3: signs of the standard root around a real gap.
+
+- For an ordered real gap the root is positive to its left and negative to its right, with zero imaginary part on both exterior rays.
+- The upper side is negative imaginary and the lower side is positive imaginary on the interior, as shown in Figure 2.3.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRoot_re_pos_of_real_lt_left`, `NLS.ZakharovShabat.sourceStandardRoot_re_neg_of_real_gt_right`, `NLS.ZakharovShabat.sourceStandardRoot_im_eq_zero_of_real_exterior`, `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_upper_side`, `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_lower_side`.
+
+The figure is a sign diagram, not a claim that root magnitudes equal one. For noncollapsed real-type sources the ordered half-gap and interior real square root are positive.
+
+## S10-021: Lemma 10.4: uniform endpoint side-integral estimate.
+
+- Use the selected root w_n along G_n in Lemma 10.4.
+- For continuous f on the actual noncollapsed gap, one attained maximum bounds every stopping point on both sides. The literal real supremum is bounded by the data supremum.
+- The constant is exactly one, attained for constant data.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma10_4`, `NLS.ZakharovShabat.sourceLemma10_4_sup`, `NLS.ZakharovShabat.sourceLemma10_4_const_sharp`, `NLS.ZakharovShabat.sourceStandardRoot_tendsto_sideTrace`, `NLS.ZakharovShabat.sourceStandardRootSideIntegrand_intervalIntegrable`.
+
+The printed denominator w_m is corrected to the selected root w_n. The existing positive theorem applies to every original complex source, without assuming an off-gap extension of f.
+
+## S10-022: Parametrization proof of Lemma 10.4 and arcsine integral.
+
+- The affine half-gap Jacobian divided by the selected-root side trace gives the signed factor +i on the upper side and -i on the lower side.
+- Cosine substitution proves genuine integrability of the inverse-square-root endpoint weight and its total mass pi.
+- The side integral agrees with its improper truncations; constant data have normalized full-side values +i*c and -i*c.
+
+Public evidence: `NLS.ZakharovShabat.sourceStandardRootSideIntegral_eq_weighted`, `NLS.ZakharovShabat.gap_weighted_integral_eq_cos`, `NLS.ZakharovShabat.gap_weighted_intervalIntegrable`, `NLS.ZakharovShabat.sourceStandardRootSideIntegral_tendsto`, `NLS.ZakharovShabat.sourceStandardRootSideIntegral_double_trunc_tendsto`, `NLS.ZakharovShabat.sourceStandardRootSideIntegral_const_full`, `NLS.ComplexAnalysis.integral_div_sqrt_one_sub_sq_eq_cosine`.
+
+The printed denominator w_m is corrected to w_n in this proof occurrence as well. The double-truncation theorem uses a common epsilon at both endpoints. Independently varying two-parameter limits are not claimed. Endpoint values in Lean do not determine the improper integral.
+
+The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
 contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-013, the standard-root definition and Lemma 10.3.
+Continue with S10-023, deleted standard-root products and Lemma 10.5.
 The remaining Section 10 groups and wider unresolved qualifications remain.

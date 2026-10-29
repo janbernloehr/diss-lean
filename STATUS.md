@@ -1,6 +1,35 @@
 # Implementation status
 
-## Current milestone: Section 10 power contours and initial comparison
+## Current milestone: Section 10 standard roots and endpoint estimates
+
+The ordered comparison now includes the standard-root definition, Lemma 10.3,
+its boundary values and Lemma 10.4. The first 22 of 52 groups are compared:
+19 matched and three corrected occurrences. Two of the corrections replace
+the printed denominator w_m with the selected root w_n in Lemma 10.4 and its
+proof; the earlier real-type-domain correction remains.
+
+The reviewed proofs retain the same common source domain, the exact isolation
+constant, every signed index and general finite piecewise C1 contours with
+winding one. Side traces include both endpoints. The endpoint estimate uses
+the sharp constant one for continuous data on the gap, with genuine integrability
+and improper limits. The double truncation uses one common epsilon.
+
+This step changes documentation and source-comparison records only. The Lean
+sources and dependency lock exactly match commit `392775f`, whose completed
+`./scripts/check.sh` run passed 8,508 build jobs, 7,576 public examples and the
+transitive axiom audit of 44,255 NLS declarations, with 21 inherited warnings.
+That validation is reused; no new full build is claimed. Current source-review
+integrity, resolved declaration references and documentation links are checked.
+
+Thirty groups remain pending in the [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md).
+Continue with S10-023, deleted standard-root products and Lemma 10.5.
+Section 7's physical NLS Dirichlet motion and unrestricted psi uniqueness,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and the
+broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 10 power contours and initial comparison
 
 The literal scalar contour in Lemma 10.2 now recovers every periodic
 endpoint power sum, with the exact factor 2*Delta*DeltaPrime and normalization

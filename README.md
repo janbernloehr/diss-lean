@@ -5,11 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 10 now proves the exact periodic power-sum contour
-formula and its analytic source dependence on the original common domain,
-including collapsed gaps. Its [ordered ledger](coverage/SECTION_10_ASSERTIONS.md)
-compares the first twelve of 52 groups: eleven matched and one corrected
-real-type-domain occurrence. Forty groups remain pending. The
+Latest step: the Section 10 source comparison now reaches Lemma 10.4.
+Its [ordered ledger](coverage/SECTION_10_ASSERTIONS.md) compares 22 of 52 groups:
+19 matched and three corrected occurrences. The standard-root signs, domains,
+general contour integrals and endpoint estimate with sharp constant one agree
+with the existing proofs after correcting the denominator to the selected root.
+Thirty groups remain pending. This documentation step reuses the unchanged
+Lean validation from commit `392775f`. The
 [completion assessment](coverage/COMPLETENESS.md) retains Section 7's partial
 clauses and the wider qualifications.
 
