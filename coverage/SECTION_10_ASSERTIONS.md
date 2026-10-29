@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 40 of 52 ordered Section 10 groups are compared: 33 matched and seven corrected occurrences. Lemma 10.8 retains the literal full-disk supremum, exact sequence classes and refined free-sine consequence. Eight positive proofs add the original-disk quarter-gap estimate, corrected lp near/far bounds, the printed scalar constant one, and the actual inverse-square-root product supremum at exponent p/2. The existing arbitrary-numerator topology correction is retained in both statement and proof. No new refutation is added. Twelve groups remain pending, beginning with Remark 10.9. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 41 of 52 ordered Section 10 groups are compared: 33 matched and eight corrected occurrences, through Remark 10.9. Its corrected leading term retains coefficient one eighth and the moving midpoint denominator, with a literal full-disk l(p/4) supremum remainder. The general p/2 optimality assertion is proved for actual real sources arbitrarily near zero. This documentation-only step reuses existing positive formulas and optimality proofs; no new refutation is added. Eleven groups remain pending, beginning with Lemma 10.10. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 40
-groups, through the proof of Lemma 10.8 on p.59, have been compared.
-The remaining twelve groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 41
+groups, through Remark 10.9 on p.59, have been compared.
+The remaining eleven groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -55,7 +55,7 @@ inspected to preserve figures, signs and closure bars. See
 | S10-038 | 4518–4526 | Inverse-square-root estimate for each small factor. | matched |
 | S10-039 | 4527–4535 | Convolution estimate and reconstruction of the second product error. | matched |
 | S10-040 | 4537–4538 | Local uniformity assertion in the Lemma 10.8 proof. | corrected |
-| S10-041 | 4540–4550 | Remark 10.9: corrected leading term and p/2 optimality. | pending |
+| S10-041 | 4540–4550 | Remark 10.9: corrected leading term and p/2 optimality. | corrected |
 | S10-042 | 4552–4563 | Lemma 10.10: full-index squared-gap critical offset. | pending |
 | S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | pending |
 | S10-044 | 4581–4589 | Derivative-to-canonical-root product (2.15). | pending |
@@ -450,6 +450,17 @@ Public evidence: `NLS.ZakharovShabat.SourceCorollary10_6Data.quotientDiscEstimat
 
 This proof occurrence carries the same existing topology correction as the statement. No new refutation is introduced, and the independent free-numerator consequence remains matched.
 
+## S10-041: Remark 10.9: corrected leading term and p/2 optimality.
+
+- For midpoint numerator roots, the exact signed linear term is sum_(m!=n) gamma_m^2/[8*(tau_m-z)^2]. Retain both the coefficient one eighth and the moving spectral midpoint denominator.
+- The literal supremum of the remainder over each original disk is an l(p/4) sequence, locally uniformly in the original source topology for every finite p>1. All central disks, collapsed gaps and exponents below one are included.
+- The general half exponent is optimal: for every finite p>2, every r<p/2 and every open source neighborhood of zero, one actual real source and one original isolating family give squared gaps, the signed lattice row and the quotient supremum in l(p/2) but outside lr.
+- The witness is constructed using the actual inverse Birkhoff chart inside the prescribed neighborhood, retaining reality and the exact spectral action identity. An intermediate exponent covers r<=1, including r=0.
+
+Public evidence: `NLS.ZakharovShabat.SourceBirkhoffInverseChart.action_eq`, `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.birkhoff_map_zero`, `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_inverseChart`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_inverse_sqrt_bound`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_quotient_product`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_radicand_bound`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_taylor_majorant_of_row`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.uniform_midpoint_taylor_sup`, `NLS.ZakharovShabat.SourceLemma10_8Estimates.midpoint_taylor`, `NLS.ZakharovShabat.inv_sqrt_one_sub_taylor`, `NLS.ZakharovShabat.norm_inv_sqrt_one_sub_taylor_le`, `NLS.ZakharovShabat.norm_tprod_inv_sqrt_taylor_le`, `NLS.ZakharovShabat.sourceMidpointQuotient`, `NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm`, `NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm_eq`, `NLS.ZakharovShabat.sourceRemark10_9_exactTaylor`, `NLS.ZakharovShabat.sourceRemark10_9_halfExponent_optimal`.
+
+The corrected moving-denominator expansion is stronger than the printed sum of remainder classes. Optimality concerns the general exponent; the witness may depend on r, and no failure of stronger regularity for every potential is asserted. The original disk family is retained for each constructed witness. The existing exact cited 2014-construction qualification remains unresolved globally. This comparison reuses existing proofs and adds no new refutation.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -457,5 +468,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-041, Remark 10.9 and the refined product expansion.
+Continue with S10-042 and S10-043, Lemma 10.10 and its full-index critical offset.
 The remaining Section 10 groups and wider unresolved qualifications remain.

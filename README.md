@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: eight positive proofs expose Lemma 10.8's constant-one
-inverse-square-root estimate, corrected lp near/far gap bounds, and the
-literal product supremum at exponent p/2. The
-[ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md) now covers
-40 of 52 groups: 33 matched and seven corrected occurrences. The original
-disks, refined free-sine consequence and topology qualifications are retained.
-Twelve groups remain pending. The
-[completion assessment](coverage/COMPLETENESS.md) retains Section 7's partial
-clauses and the wider qualifications.
+Latest step: the [ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md)
+now includes Remark 10.9's corrected moving-midpoint Taylor term, with
+coefficient one eighth and an l(p/4) full-disk supremum remainder. The
+general p/2 optimality assertion is proved for actual real sources.
+The ledger covers 41 of 52 groups: 33 matched and eight corrected
+occurrences; eleven remain pending. This step records existing proofs.
+The [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
+partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

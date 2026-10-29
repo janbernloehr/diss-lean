@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Lemma 10.8 proof estimates and source comparison
+## Current milestone: Remark 10.9 corrected expansion and optimality comparison
+
+Remark 10.9's ordered comparison now records the corrected signed term
+
+    sum_(m!=n) gamma_m^2/[8*(tau_m-z)^2].
+
+The actual supremum of the remainder over each original disk belongs to
+l(p/4), locally uniformly in the original source topology for every finite
+p>1. The coefficient one eighth and the moving midpoint denominator are
+retained. This includes the central disks, collapsed gaps and exponents
+below one, and supplies a stronger remainder than the printed sum of classes.
+
+The existing optimality theorem covers every finite p>2 and every r<p/2.
+In any open source neighborhood of zero, one actual real source and one
+original isolating family make the squared gaps, signed lattice row and
+literal quotient supremum belong to l(p/2) and fail membership in lr.
+The witness may depend on r; the assertion is about the general exponent.
+The actual inverse chart preserves the prescribed neighborhood, reality
+and spectral actions. No new refutation is added.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock exactly match commit `91abb08`, whose completed
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused; the module hashes, declaration
+references, source-review integrity and documentation links are checked
+for this publication.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+41 of 52 groups: 33 matched and eight corrected occurrences. Eleven remain
+pending, beginning with S10-042 and Lemma 10.10. Section 7's physical NLS
+Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and the broader source
+inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Lemma 10.8 proof estimates and source comparison
 
 Eight positive theorems in two modules expose the literal proof estimates
 in Lemma 10.8. The principal inverse-square-root estimate holds with the

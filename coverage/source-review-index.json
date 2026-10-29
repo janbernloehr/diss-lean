@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T03:48:45.028334+00:00",
-  "base_commit": "90df946aeb4611576dd53ca97c17d8a921de433a",
+  "published_utc": "2026-10-29T03:52:58.210135+00:00",
+  "base_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 116,
-    "module_hash_checks": 2046,
-    "distinct_modules": 1303
+    "review_records": 117,
+    "module_hash_checks": 2060,
+    "distinct_modules": 1314
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "90df946aeb4611576dd53ca97c17d8a921de433a",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes eight positive Lemma 10.8 proof-estimate theorems in two modules and two integration examples. The first 40 of 52 ordered Section 10 groups are compared: 33 matched and seven corrected occurrences. Twelve groups remain pending. The printed scalar constant one, corrected lp near/far norms, original disks and literal half-exponent correction-product supremum are retained, together with the existing arbitrary-numerator topology correction. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 41 of 52 ordered Section 10 groups are compared: 33 matched and eight corrected occurrences, with eleven pending. Remark 10.9 retains the corrected moving-denominator expansion and general half-exponent optimality. Wider qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8511,
     "public_examples": 7580,
@@ -40,7 +40,8 @@
       "files": 4788,
       "sha256": "28ba7ef718e5deca076012025aca079714ca1cfdedb7b52a87e1f6df51344f44"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
+    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
+    "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3"
   },
   "named_statements": [
     {
@@ -30319,6 +30320,106 @@
       ],
       "declaration_inventory_count": 44300,
       "source_record_sha256": "e6158445702025786627d98e374cfaa6b07072c12918dac928f8e4e90d9c0cb1"
+    },
+    "Section10Remark10_9SourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "updated_utc": "2026-10-29T03:52:58.210135+00:00",
+      "source_lines": [
+        [
+          4540,
+          4550
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-041",
+          "source_lines": [
+            4540,
+            4550
+          ],
+          "requirement": "Remark 10.9: corrected leading term and p/2 optimality.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffInverseChart.action_eq",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.birkhoff_map_zero",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_inverseChart",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_inverse_sqrt_bound",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_quotient_product",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_radicand_bound",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_taylor_majorant_of_row",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.uniform_midpoint_taylor_sup",
+            "NLS.ZakharovShabat.SourceLemma10_8Estimates.midpoint_taylor",
+            "NLS.ZakharovShabat.inv_sqrt_one_sub_taylor",
+            "NLS.ZakharovShabat.norm_inv_sqrt_one_sub_taylor_le",
+            "NLS.ZakharovShabat.norm_tprod_inv_sqrt_taylor_le",
+            "NLS.ZakharovShabat.sourceMidpointQuotient",
+            "NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm",
+            "NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm_eq",
+            "NLS.ZakharovShabat.sourceRemark10_9_exactTaylor",
+            "NLS.ZakharovShabat.sourceRemark10_9_halfExponent_optimal"
+          ],
+          "reviewed_claims": [
+            "For midpoint numerator roots, the exact signed linear term is sum_(m!=n) gamma_m^2/[8*(tau_m-z)^2]. Retain both the coefficient one eighth and the moving spectral midpoint denominator.",
+            "The literal supremum of the remainder over each original disk is an l(p/4) sequence, locally uniformly in the original source topology for every finite p>1. All central disks, collapsed gaps and exponents below one are included.",
+            "The general half exponent is optimal: for every finite p>2, every r<p/2 and every open source neighborhood of zero, one actual real source and one original isolating family give squared gaps, the signed lattice row and the quotient supremum in l(p/2) but outside lr.",
+            "The witness is constructed using the actual inverse Birkhoff chart inside the prescribed neighborhood, retaining reality and the exact spectral action identity. An intermediate exponent covers r<=1, including r=0."
+          ],
+          "qualification": "The corrected moving-denominator expansion is stronger than the printed sum of remainder classes. Optimality concerns the general exponent; the witness may depend on r, and no failure of stronger regularity for every potential is asserted. The original disk family is retained for each constructed witness. The existing exact cited 2014-construction qualification remains unresolved globally. This comparison reuses existing proofs and adds no new refutation."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "0045f7391d4553981bdcff741213436059f531fa027ab9fa3a778b0a589fe120",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/InverseSqrtProductTaylor.lean": "64d69e320be3a49489f41462f86353ecf8fad8857a499030cb484e6817d505f1",
+        "NLS/ZakharovShabat/SourceMidpointQuotientTaylorGeometry.lean": "d68208749e35844e894a1dabea23ac9a9c143013094477e952c33037b476b283",
+        "NLS/ZakharovShabat/SourceMidpointQuotientTaylorMajorant.lean": "80019a4d33960cb2545313ca871cfaf8e8aeeac991df79fb30c5daa77eb48543",
+        "NLS/ZakharovShabat/SourceRemark10_9Taylor.lean": "edab255fff53370406d1838428000d999514106318398d21589f9762a4789460",
+        "NLS/ZakharovShabat/SourceRemark10_9Optimality.lean": "db31b8087a48b919e4618fc932e83ddceb418c5642bce964b1c0406664a0d2e0",
+        "NLS/ZakharovShabat/SourceMidpointQuotientSharpness.lean": "0694e5a29d8b67776b61504bff2ae23e4ff4b7746ce975a95010ce1d998146fd",
+        "NLS/ZakharovShabat/SourceMidpointQuotientSup.lean": "5cc97306c6415c3ea0c6e1175d272a773036e9c0ef0ca1ad7f03c4c820104cee",
+        "NLS/ZakharovShabat/SourceMidpointTaylorLowerBound.lean": "7a9263b381343844a837bbc214192c37fb56e20529c1306b808755b0d17d1c01",
+        "NLS/ZakharovShabat/SourceSquaredGapSharpness.lean": "b337c74757263b02de2e404023004d5486ac46e9e2d9e48fe6f0d8687d233104",
+        "NLS/SequenceSpaces/StrictSquaredExponentWitness.lean": "ab8652d6c6ece1aa08bef3671ed943adfdb72bbe38f2abec1955cb04e7a8574d",
+        "NLS/ZakharovShabat/SourceSquaredGapRowLowerBound.lean": "caf3c1fcfdce9e942ce8e5755d4de97a1841136759d8dbce325bd93ddae54e53",
+        "NLS/ZakharovShabat/SourceRemark10_9LatticeTerm.lean": "39bd32f67466d7628637165a314349c8e4d900dfdda956d15f1d050a3b02bd2a",
+        "NLS/ZakharovShabat/SourceBirkhoffInverseChart.lean": "1499b108d12568ffac312266754cf3c49a5bde34b5ff1b7b9aed62d71decb86c",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean": "ef5c9cf757c18c94a8464f5da571aea3a7869c30ec2a3f0414b6152e44d25d88"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          59
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-059.png": "ae6339797c96159261149a2b67c1a101fe29f48d0f63c11e6f87cbb905da5387"
+        }
+      },
+      "qualification": "The first 41 of 52 ordered Section 10 groups are compared: 33 matched and eight corrected occurrences, through Remark 10.9. Its corrected leading term retains coefficient one eighth and the moving midpoint denominator, with a literal full-disk l(p/4) supremum remainder. The general p/2 optimality assertion is proved for actual real sources arbitrarily near zero. This documentation-only step reuses existing positive formulas and optimality proofs; no new refutation is added. Eleven groups remain pending, beginning with Lemma 10.10. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceBirkhoffInverseChart.action_eq",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.birkhoff_map_zero",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_inverseChart",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_inverse_sqrt_bound",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_quotient_product",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_radicand_bound",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.midpoint_taylor_majorant_of_row",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.uniform_midpoint_taylor_sup",
+        "NLS.ZakharovShabat.SourceLemma10_8Estimates.midpoint_taylor",
+        "NLS.ZakharovShabat.inv_sqrt_one_sub_taylor",
+        "NLS.ZakharovShabat.norm_inv_sqrt_one_sub_taylor_le",
+        "NLS.ZakharovShabat.norm_tprod_inv_sqrt_taylor_le",
+        "NLS.ZakharovShabat.sourceMidpointQuotient",
+        "NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm",
+        "NLS.ZakharovShabat.sourceMidpointQuotientLinearTerm_eq",
+        "NLS.ZakharovShabat.sourceRemark10_9_exactTaylor",
+        "NLS.ZakharovShabat.sourceRemark10_9_halfExponent_optimal"
+      ],
+      "declaration_inventory_count": 44300,
+      "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "source_record_sha256": "b1e5dd2418fcfcdd2c613f921bf7e1cb6fcbfdf9768333a6bff353a856fd90b3"
     }
   }
 }
