@@ -1,6 +1,51 @@
 # Section 10: potentials of almost real type
 
-## Ordered comparison through Remark 10.9
+## Ordered comparison through Lemma 10.10
+
+Lemma 10.10 and its proof now match the existing public implementation.
+For every finite p>1, the exact identity at every signed index is
+
+    critical_n = midpoint_n + gap_n^2 * sourceCriticalGapQuotient(psi)_n.
+
+This is one actual lp coefficient sequence, defined by the deleted-product
+derivative quotient. Its denominator is nonzero on the unchanged common W,
+including at collapsed complex gaps. Each coordinate is complex analytic.
+Near every source in W, one open connected neighborhood and one positive
+bound control the full coefficient norm and the literal p-power sum.
+
+The proof combines the existing Lemma 8.6 tail with a uniformly bounded
+finite central block. Disjoint original disks identify a collapsed gap's
+critical point with its midpoint. The analytic quotient supplies the central
+bound without dividing by the gap. Both source passages are matched; no
+new correction or refutation is added.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) now covers
+43 of 52 groups: 35 matched and eight corrected occurrences. Nine remain
+pending, beginning with equation (2.15). Section 7's physical NLS Dirichlet
+motion and unrestricted psi uniqueness, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and the broader source inventory remain
+unresolved.
+
+The [common-domain theorem](../NLS/ZakharovShabat/SourceLemma10_10.lean)
+retains all preceding Section 10 data. The
+[isolation argument](../NLS/ZakharovShabat/SourceCriticalGapCommonIsolation.lean)
+and [analytic coefficient](../NLS/ZakharovShabat/SourceCriticalGapCommonAnalytic.lean)
+cover every central index and complex source in W. The
+[tail theorem](../NLS/ZakharovShabat/CriticalMidpointGapSquared.lean)
+provides the actual coefficient outside a common finite block.
+The source's citation to [23, Lemma 12.11] is replaced here by this proved
+central argument; its external proof is not independently compared.
+
+Earlier milestone entries retain their historical scope.
+
+## Previous comparison milestone: through Remark 10.9
 
 Remark 10.9's ordered comparison now records the corrected signed term
 
@@ -265,7 +310,7 @@ in the displayed proof, independently of endpoint-label analyticity.
 domain and chooses the local family before all indices and powers.
 
 The following named-statement entries retain their historical audit scope;
-they do not discharge the eleven ordered groups still pending.
+they do not discharge the nine ordered groups still pending.
 
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in

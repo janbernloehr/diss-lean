@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 41 of 52 ordered Section 10 groups are compared: 33 matched and eight corrected occurrences, through Remark 10.9. Its corrected leading term retains coefficient one eighth and the moving midpoint denominator, with a literal full-disk l(p/4) supremum remainder. The general p/2 optimality assertion is proved for actual real sources arbitrarily near zero. This documentation-only step reuses existing positive formulas and optimality proofs; no new refutation is added. Eleven groups remain pending, beginning with Lemma 10.10. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 43 of 52 ordered Section 10 groups are compared: 35 matched and eight corrected occurrences, through Lemma 10.10 and its proof. The same actual lp coefficient gives every critical-root offset as squared gap times coefficient, including collapsed central gaps. Coordinate analyticity and locally uniform full norms and power sums hold on the unchanged common domain. Both new passages match existing proofs. Nine groups remain pending, beginning with equation (2.15). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 41
-groups, through Remark 10.9 on p.59, have been compared.
-The remaining eleven groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 43
+groups, through Lemma 10.10 and its proof on p.59, have been compared.
+The remaining nine groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -56,8 +56,8 @@ inspected to preserve figures, signs and closure bars. See
 | S10-039 | 4527–4535 | Convolution estimate and reconstruction of the second product error. | matched |
 | S10-040 | 4537–4538 | Local uniformity assertion in the Lemma 10.8 proof. | corrected |
 | S10-041 | 4540–4550 | Remark 10.9: corrected leading term and p/2 optimality. | corrected |
-| S10-042 | 4552–4563 | Lemma 10.10: full-index squared-gap critical offset. | pending |
-| S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | pending |
+| S10-042 | 4552–4563 | Lemma 10.10: full-index squared-gap critical offset. | matched |
+| S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | matched |
 | S10-044 | 4581–4589 | Derivative-to-canonical-root product (2.15). | pending |
 | S10-045 | 4591–4596 | Quotient analytic domains and admissible-path definition. | pending |
 | S10-046 | 4606–4616 | Figure 2.5: multiple admissible endpoint paths. | pending |
@@ -461,6 +461,27 @@ Public evidence: `NLS.ZakharovShabat.SourceBirkhoffInverseChart.action_eq`, `NLS
 
 The corrected moving-denominator expansion is stronger than the printed sum of remainder classes. Optimality concerns the general exponent; the witness may depend on r, and no failure of stronger regularity for every potential is asserted. The original disk family is retained for each constructed witness. The existing exact cited 2014-construction qualification remains unresolved globally. This comparison reuses existing proofs and adds no new refutation.
 
+## S10-042: Lemma 10.10: full-index squared-gap critical offset.
+
+- For every finite p>1, each indexed critical root is exactly its actual midpoint plus the squared gap times sourceCriticalGapQuotient. The same coefficient sequence belongs to lp, with no discarded central indices.
+- On the unchanged open connected common W, every coefficient coordinate is complex analytic. Near every source in W, one open connected V and one positive K bound the full lp norm for all nearby complex sources.
+- The literal sum over all signed indices of |a_n|^p is locally uniformly bounded. At every collapsed gap, including central complex gaps, the critical root equals the midpoint.
+
+Public evidence: `NLS.ZakharovShabat.SourceLemma10_10Data`, `NLS.ZakharovShabat.SourceLemma10_10Data.exact_offset`, `NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform`, `NLS.ZakharovShabat.SourceLemma10_10Data.analytic`, `NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform_powerSum`, `NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero`, `NLS.ZakharovShabat.SourceLemma10_8Estimates.criticalOffsets`, `NLS.ZakharovShabat.sourceLemma10_10`, `NLS.ZakharovShabat.sourceCriticalGapQuotient`.
+
+The same actual coefficient sequence supplies the exact identity and local bounds. It is defined independently of the estimate neighborhood; the public theorem is stronger than the displayed inequality. The p exponent is finite and strictly above one. The common domain W is preserved, while V may be shrunk to obtain its bound.
+
+## S10-043: Proof of Lemma 10.10: combine tail estimates and finite central divisibility.
+
+- The existing Lemma 8.6 tail supplies the actual derivative quotient with one uniform lp bound outside a common finite index block. Its coefficient denominator is nonzero on that tail.
+- On every original isolating family the deleted product is nonzero at the indexed critical point. At a collapsed gap, spectral exhaustiveness and disjoint disks identify that root with the common endpoint; at an open gap, the quadratic identity supplies the nonzero coefficient.
+- The quotient uses the deleted-product derivative divided by four times the nonzero offset coefficient. Its coordinate analyticity gives one local bound for a finite central block. Finite replacement combines that block with the tail bound on a common source neighborhood.
+- The resulting estimate holds near every complex source in the same W and retains all preceding Section 10 data. No division by the possibly zero gap is used.
+
+Public evidence: `NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp`, `NLS.ZakharovShabat.memℓp_canonicalCriticalGapQuotient`, `NLS.ZakharovShabat.exists_local_sourceCriticalMidpointGapSquaredTail`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoint_eq_of_collapsedGap`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalOffsetCoefficient_ne_zero`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoints_midpoint_gap_sq`, `NLS.ZakharovShabat.canonicalCriticalOffsetCoefficient_ne_zero_of_gap_and_product`, `NLS.ZakharovShabat.canonicalCriticalMidpointOffset_eq_gap_sq_mul_quotient`, `NLS.ZakharovShabat.SourceLemma10_5Data.analyticAt_criticalGapQuotient`, `NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient_finiteBlock`, `NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient`.
+
+The finite central argument is supplied by the proved analytic deleted-product quotient and isolation geometry. It proves the mathematical step cited to [23, Lemma 12.11] without claiming an independent comparison of that external proof. The exact cited 2014-construction qualification remains unresolved globally.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -468,5 +489,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-042 and S10-043, Lemma 10.10 and its full-index critical offset.
+Continue with S10-044 and S10-045, equation (2.15), its analytic domains and admissible paths.
 The remaining Section 10 groups and wider unresolved qualifications remain.

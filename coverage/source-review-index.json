@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T03:52:58.210135+00:00",
-  "base_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+  "published_utc": "2026-10-29T04:00:43.695492+00:00",
+  "base_commit": "6d203c9c9cf07507b29fa95d457f6ad74f4129a1",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 117,
-    "module_hash_checks": 2060,
-    "distinct_modules": 1314
+    "review_records": 118,
+    "module_hash_checks": 2068,
+    "distinct_modules": 1319
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 41 of 52 ordered Section 10 groups are compared: 33 matched and eight corrected occurrences, with eleven pending. Remark 10.9 retains the corrected moving-denominator expansion and general half-exponent optimality. Wider qualifications remain.",
+    "base_commit": "6d203c9c9cf07507b29fa95d457f6ad74f4129a1",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 43 of 52 ordered Section 10 groups are compared: 35 matched and eight corrected occurrences, with nine pending. Lemma 10.10 and its proof retain the actual all-index coefficient, unchanged common domain, analytic coordinates and locally uniform full norm and power-sum bounds. Wider qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8511,
     "public_examples": 7580,
@@ -30420,6 +30420,128 @@
       "declaration_inventory_count": 44300,
       "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
       "source_record_sha256": "b1e5dd2418fcfcdd2c613f921bf7e1cb6fcbfdf9768333a6bff353a856fd90b3"
+    },
+    "Section10Lemma10_10SourceComparison-2026-10-29": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6d203c9c9cf07507b29fa95d457f6ad74f4129a1",
+      "updated_utc": "2026-10-29T04:00:43.695492+00:00",
+      "source_lines": [
+        [
+          4552,
+          4563
+        ],
+        [
+          4565,
+          4579
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-042",
+          "source_lines": [
+            4552,
+            4563
+          ],
+          "requirement": "Lemma 10.10: full-index squared-gap critical offset.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_10Data",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.exact_offset",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.analytic",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform_powerSum",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero",
+            "NLS.ZakharovShabat.SourceLemma10_8Estimates.criticalOffsets",
+            "NLS.ZakharovShabat.sourceLemma10_10",
+            "NLS.ZakharovShabat.sourceCriticalGapQuotient"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1, each indexed critical root is exactly its actual midpoint plus the squared gap times sourceCriticalGapQuotient. The same coefficient sequence belongs to lp, with no discarded central indices.",
+            "On the unchanged open connected common W, every coefficient coordinate is complex analytic. Near every source in W, one open connected V and one positive K bound the full lp norm for all nearby complex sources.",
+            "The literal sum over all signed indices of |a_n|^p is locally uniformly bounded. At every collapsed gap, including central complex gaps, the critical root equals the midpoint."
+          ],
+          "qualification": "The same actual coefficient sequence supplies the exact identity and local bounds. It is defined independently of the estimate neighborhood; the public theorem is stronger than the displayed inequality. The p exponent is finite and strictly above one. The common domain W is preserved, while V may be shrunk to obtain its bound."
+        },
+        {
+          "ordered_group": "S10-043",
+          "source_lines": [
+            4565,
+            4579
+          ],
+          "requirement": "Proof of Lemma 10.10: combine tail estimates and finite central divisibility.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp",
+            "NLS.ZakharovShabat.memℓp_canonicalCriticalGapQuotient",
+            "NLS.ZakharovShabat.exists_local_sourceCriticalMidpointGapSquaredTail",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoint_eq_of_collapsedGap",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalOffsetCoefficient_ne_zero",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoints_midpoint_gap_sq",
+            "NLS.ZakharovShabat.canonicalCriticalOffsetCoefficient_ne_zero_of_gap_and_product",
+            "NLS.ZakharovShabat.canonicalCriticalMidpointOffset_eq_gap_sq_mul_quotient",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.analyticAt_criticalGapQuotient",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient_finiteBlock",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient"
+          ],
+          "reviewed_claims": [
+            "The existing Lemma 8.6 tail supplies the actual derivative quotient with one uniform lp bound outside a common finite index block. Its coefficient denominator is nonzero on that tail.",
+            "On every original isolating family the deleted product is nonzero at the indexed critical point. At a collapsed gap, spectral exhaustiveness and disjoint disks identify that root with the common endpoint; at an open gap, the quadratic identity supplies the nonzero coefficient.",
+            "The quotient uses the deleted-product derivative divided by four times the nonzero offset coefficient. Its coordinate analyticity gives one local bound for a finite central block. Finite replacement combines that block with the tail bound on a common source neighborhood.",
+            "The resulting estimate holds near every complex source in the same W and retains all preceding Section 10 data. No division by the possibly zero gap is used."
+          ],
+          "qualification": "The finite central argument is supplied by the proved analytic deleted-product quotient and isolation geometry. It proves the mathematical step cited to [23, Lemma 12.11] without claiming an independent comparison of that external proof. The exact cited 2014-construction qualification remains unresolved globally."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "408f323ad0c5bf7b4bc7f4b9200be9458e0e2610cba80a801269a3e32cf2f8b9",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ZakharovShabat/SourceCriticalGapCommonIsolation.lean": "90bd27b95c7ab39ea8106065c73bffff0cb23758efad4693e71837547bbc6a6a",
+        "NLS/ZakharovShabat/SourceCriticalGapCommonAnalytic.lean": "766750ed57730157da26d09f33fe570381b935a66ef60c14ba0f057335692897",
+        "NLS/ZakharovShabat/SourceCriticalGapQuotientUniform.lean": "70a54088869c7ad6799557592aa3db55c7e187ccbf69a4636e561e2964aac68c",
+        "NLS/ZakharovShabat/SourceCriticalMidpointGapSquaredTail.lean": "29bed35d83ab802664299a26c1e2d806064ffafaa125ada83dcdfa01ef30a3ea",
+        "NLS/ZakharovShabat/CriticalMidpointGapSquared.lean": "9487933f646d509a5cc1222b2d7c57a456883824df8c4159e38d20a8f738cbec",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficientLowerBound.lean": "32dd69ac485debab0a2585c8234d4596e68db612042bfd070cb75d5fe1e849d0",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficientOpenGap.lean": "e4c74a3d926e18fa4d39e27f912df1095b0e41a9aece51304b2efdb23e6dd2c9"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          59
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-059.png": "ae6339797c96159261149a2b67c1a101fe29f48d0f63c11e6f87cbb905da5387"
+        }
+      },
+      "qualification": "The first 43 of 52 ordered Section 10 groups are compared: 35 matched and eight corrected occurrences, through Lemma 10.10 and its proof. The same actual lp coefficient gives every critical-root offset as squared gap times coefficient, including collapsed central gaps. Coordinate analyticity and locally uniform full norms and power sums hold on the unchanged common domain. Both new passages match existing proofs. Nine groups remain pending, beginning with equation (2.15). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalOffsetCoefficient_ne_zero",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoint_eq_of_collapsedGap",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.criticalPoints_midpoint_gap_sq",
+        "NLS.ZakharovShabat.SourceLemma10_10Data",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.analytic",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.exact_offset",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform_powerSum",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.analyticAt_criticalGapQuotient",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.uniform_criticalGapQuotient_finiteBlock",
+        "NLS.ZakharovShabat.SourceLemma10_8Estimates.criticalOffsets",
+        "NLS.ZakharovShabat.canonicalCriticalMidpointOffset_eq_gap_sq_mul_quotient",
+        "NLS.ZakharovShabat.canonicalCriticalOffsetCoefficient_ne_zero_of_gap_and_product",
+        "NLS.ZakharovShabat.exists_local_sourceCriticalMidpointGapSquaredTail",
+        "NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp",
+        "NLS.ZakharovShabat.memℓp_canonicalCriticalGapQuotient",
+        "NLS.ZakharovShabat.sourceCriticalGapQuotient",
+        "NLS.ZakharovShabat.sourceLemma10_10"
+      ],
+      "declaration_inventory_count": 44300,
+      "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "source_record_sha256": "69e206b9ebf96049a7b51fc71c9ff5138f99435ccdd4488b57e14ce3768e4b27"
     }
   }
 }

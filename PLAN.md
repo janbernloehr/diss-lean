@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: Remark 10.9 corrected expansion and optimality comparison
+## Current milestone: Lemma 10.10 full-index coefficient comparison
+
+Lemma 10.10 and its proof now match the existing public implementation.
+For every finite p>1, the exact identity at every signed index is
+
+    critical_n = midpoint_n + gap_n^2 * sourceCriticalGapQuotient(psi)_n.
+
+This is one actual lp coefficient sequence, defined by the deleted-product
+derivative quotient. Its denominator is nonzero on the unchanged common W,
+including at collapsed complex gaps. Each coordinate is complex analytic.
+Near every source in W, one open connected neighborhood and one positive
+bound control the full coefficient norm and the literal p-power sum.
+
+The proof combines the existing Lemma 8.6 tail with a uniformly bounded
+finite central block. Disjoint original disks identify a collapsed gap's
+critical point with its midpoint. The analytic quotient supplies the central
+bound without dividing by the gap. Both source passages are matched; no
+new correction or refutation is added.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+43 of 52 groups: 35 matched and eight corrected occurrences. Nine remain
+pending, beginning with equation (2.15). Section 7's physical NLS Dirichlet
+motion and unrestricted psi uniqueness, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and the broader source inventory remain
+unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Remark 10.9 corrected expansion and optimality comparison
 
 Remark 10.9's ordered comparison now records the corrected signed term
 

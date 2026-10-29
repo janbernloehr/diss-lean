@@ -159,15 +159,14 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-41 of 52 groups: 33 matched and eight corrected occurrences, through
-Remark 10.9. The exact leading term has coefficient one eighth and the
-moving midpoint denominator; its literal original-disk supremum remainder
-is l(p/4), locally uniformly for finite p>1. For finite p>2, the general p/2 optimality
-assertion has actual real-source witnesses in every open neighborhood
-of zero for every r<p/2. The witness may depend on r. This comparison
-reuses existing proofs and adds no new refutation. Eleven groups remain
-pending, starting with Lemma 10.10. Existing named theorem audits do not
-by themselves settle those passages.
+43 of 52 groups: 35 matched and eight corrected occurrences, through
+Lemma 10.10 and its proof. For every finite p>1, one actual lp coefficient
+gives the exact squared-gap critical offset at all signed indices. The
+unchanged common W retains coordinate analyticity and locally uniform
+full norms and power sums, including collapsed central complex gaps.
+Both new passages match existing proofs. Nine groups remain pending,
+starting with equation (2.15). Existing named theorem audits do not by
+themselves settle those passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
