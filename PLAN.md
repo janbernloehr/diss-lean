@@ -1,6 +1,37 @@
 # Implementation plan
 
-## Current milestone: original-domain uniform gap and action estimates
+## Current milestone: Section 11 tail convergence and final comparison
+
+Section 11 now has an explicit positive proof of the normalized-action and
+principal-root tail limits. For each tolerance and real source, one complex
+neighborhood and signed cutoff control both errors. This is Mathlib's precise
+locally uniform convergence statement; both limits are uniform on every
+compact real source set. The proof uses norm continuity of the sequence-valued
+deviation and decay at the base source.
+
+The result applies to four times the actual filled indexed quotient. At a
+collapsed gap this is chi_n(tau_n); the filled quotient itself is
+chi_n(tau_n)/4. The squared identity xi_n^2=chi_n(tau_n) is retained.
+The existing positivity, common complex neighborhood, root analyticity,
+nonvanishing, sequence expansions and free value complete the final passage.
+
+The [ordered Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) now compares
+all 22 groups: twenty matched and two corrected occurrences. No new correction
+or refutation is needed in this step.
+
+Full validation passed: 8,519 build jobs, 7,591 public examples and
+44,370 transitively audited NLS declarations, with 21 inherited warnings.
+The new module and examples add no warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next is the ordered Section 12 comparison, starting with the literal psi
+product and Theorem 12.1. Section 7's physical NLS Dirichlet motion and
+unrestricted psi characterization, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: original-domain uniform gap and action estimates
 
 The literal gap-supremum and normalized-action expansions match the source
 on the original complex domain. The actual critical-midpoint offset is a

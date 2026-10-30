@@ -1,13 +1,12 @@
 # Section 11 ordered assertion comparison
 
-Twenty-one of 22 ordered Section 11 groups are compared: nineteen matched and two corrected occurrences. The literal gap-supremum and normalized-action expansions match on the original complex domain, with locally bounded half-exponent coefficients and fixed genuine one-plus summands. The actual critical offset supplies the stronger bound needed by Lemma 10.8. One group remains pending: the final positivity, uniform tail and principal-root claims. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+All 22 ordered Section 11 groups are compared: twenty matched and two corrected occurrences. The final positivity and principal-root conclusions match, with an explicit positive proof of the tail limit. Locally uniform convergence uses the precise Mathlib quantifiers: the positive tolerance precedes the source neighborhood and signed cutoff. Convergence is also uniform on every compact real source set. The exact factor four, filled collapsed value and squared identity xi_n^2=chi_n(tau_n) are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first twenty-one
+the reviewed source extraction; form feeds do not add lines. All twenty-two
 groups have been compared to the statements and proofs identified below.
-The remaining entries provide navigation for further semantic comparison.
-Existing named-theorem audits retain their own scope; they do not automatically
-settle every intermediate display or proof assertion in these pending entries.
+Existing named-theorem audits retain their own scope; the ordered comparison
+separately addresses the intermediate displays and proof assertions.
 
 All compared claims use the original finite-p source spaces with 1<p<infinity.
 The original open connected W0 contains the entire real-type locus. Theorem 11.2
@@ -38,7 +37,7 @@ interpreting contour integrals.
 | S11-019 | 62 | 4885–4889 | Continuous removal across Z_n, analytic collapsed value and analytic extension. | matched |
 | S11-020 | 62 | 4890–4895 | Full-domain locally uniform literal gap-supremum estimate for chi_n minus one. | matched |
 | S11-021 | 62 | 4897–4906 | Locally uniform t_n estimate and normalized-action expansion from weighted moments. | matched |
-| S11-022 | 62 | 4908–4917 | Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims. | pending |
+| S11-022 | 62 | 4908–4917 | Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims. | matched |
 
 ## Compared opening claims
 
@@ -702,5 +701,63 @@ sources and dependency locks match the full validation at `d3b3ff7`:
 declarations, with 21 inherited warnings. Source-review integrity and
 documentation-link checks pass for the new records.
 
-Continue with S11-022: real-locus positivity, the locally uniform tail limit,
-the collapsed square-root identity and the remaining common-neighborhood claims.
+The final subsection below compares positivity, the locally uniform tail limit,
+and the remaining principal-root conclusions.
+
+## Final positivity, tail limit and principal roots
+
+### S11-022: Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims.
+
+- The normalized real action is real-valued, continuous and nonzero on the connected real-type locus. The free value is 1/4, hence every normalized real action is positive, including collapsed gaps. The existing all-index complex-neighborhood lower bound uses norm continuity of the sequence deviation, a small tail at the base source and a finite positive central minimum.
+- For each finite p>1, real base source and positive tolerance epsilon, one complex open neighborhood and one signed cutoff make both absolute errors |4F_n-1| and |xi_n-1| smaller than epsilon for every nearby source and every |n| beyond the cutoff. The proof uses the p-valued continuous deviation, base-coordinate decay at epsilon/2 and the contractive coordinate bound on the sequence-norm difference. The same error bound for the principal root follows from |sqrt(z)-1|<=|z-1| with constant one.
+- The tolerance precedes the neighborhood: forall epsilon>0 forall real phi exists complex V containing phi exists N forall psi in V forall |n|>=N. This is exactly Mathlib TendstoLocallyUniformlyOn on the real locus, with signed-index filter comap Int.natAbs atTop. The local convergence gives uniform convergence on every compact real source set. No claim of convergence uniform on one fixed infinite-dimensional neighborhood for all tolerances is made.
+- Equation2_19 compatibility identifies F with the actual filled indexed quotient on the same common W, without changing values at collapse. The new normalized_real_positive_and_tail declaration supplies positivity and locally uniform convergence for 4 times that actual filled quotient. Off the zero-gap locus it is 4I_n/gamma_n^2; at collapse its value is chi_n(tau_n).
+- The printed collapsed root identity has a square: xi_n^2=chi_n(tau_n). Equation2_19.normalizedRoot_sq_eq_chi_of_gap_zero proves this for the actual principal root and complex collapsed gaps on W. It follows from xi_n^2=4F_n and the exact collapsed factor chi_n(tau_n)/4.
+- One open W contained in the previous W0 contains the full real locus and carries all-index complex analytic normalized factors and principal roots. The local finite intersections and one tail neighborhood supply positive real-part lower bounds for all indices. Principal roots are analytic on the slit plane, are nonzero, are positive real on real sources, and have free value one. The fixed genuine half-exponent plus one-plus root decomposition retains its already compared scope.
+- The new positive continuity proof gives the final tail assertion directly; the coarse product-tail majorant is not asserted to tend to zero uniformly on a fixed neighborhood. No new correction or refutation is needed for this passage. Existing source qualifications and historical corrections remain.
+
+Public declarations:
+
+- `NLS.Coeff.exists_cutoff_norm_apply_lt`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.normalizedRoot_sq_eq_chi_of_gap_zero`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_theorem11_2`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.normalized_real_positive_and_tail`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_continuousMap`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedAction_and_root_tail_lt`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition`
+- `NLS.ZakharovShabat.norm_sqrt_sub_one_le`
+- `NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType`
+- `NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_collapsed`
+- `NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_quotient`
+- `NLS.ZakharovShabat.sourceTheorem11_2`
+- `NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedAction`
+- `NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedActionRoot`
+- `NLS.ZakharovShabat.tendstoUniformlyOn_sourceNormalizedAction_and_root_of_isCompact`
+
+Matched with explicit tolerance-dependent local uniformity and uniform convergence on compact real source sets. The neighborhood for an arbitrarily small tail error may depend on that error. The common complex domain for positivity, analyticity and the sequence expansions remains fixed as stated in Theorem 11.2. No stronger all-tolerances convergence on one fixed neighborhood is asserted, and no new correction or refutation is added.
+
+The [explicit tail convergence proof](../NLS/ZakharovShabat/SourceNormalizedActionTailConvergence.lean)
+combines [sequence continuity](../NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceContinuity.lean)
+with [coordinate decay](../NLS/SequenceSpaces/CoefficientDecay.lean).
+The [common-domain theorem](../NLS/ZakharovShabat/SourceTheorem11_2.lean)
+and [collapsed-value bridge](../NLS/ZakharovShabat/SourceEquation2_19.lean)
+retain the original objects and square-root normalization.
+The comparison records 37 inspected module bodies and 24 resolved declarations.
+
+Full validation passed: 8,519 build jobs, 7,591 public examples and
+44,370 transitively audited NLS declarations, with 21 inherited warnings.
+The new module and examples add no warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+All 22 ordered Section 11 groups are now compared. Continue with the ordered
+Section 12 inventory, beginning with the literal psi product, common circuits
+and Theorem 12.1. Wider dissertation qualifications remain.

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [original-domain uniform gap and action estimates](NLS/ZakharovShabat/SourceSection11OriginalEstimates.lean)
-are compared with their literal supremum, actual critical offset and fixed
-lp/2 plus l(1+) summands. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md)
-has nineteen matched groups, two corrected and one pending. Next are the final
-positivity, uniform tail and principal-root claims. The
+Latest step: [normalized-action and principal-root tails](NLS/ZakharovShabat/SourceNormalizedActionTailConvergence.lean)
+now converge locally uniformly, and uniformly on compact real source sets.
+The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) compares all 22 groups:
+twenty matched and two corrected. The factor four and squared collapsed-root
+identity are retained. Next is the ordered Section 12 comparison. The
 [completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T12:13:55.801581+00:00",
-  "base_commit": "22a05f98d36f8862a49664b3ca8fa33b0efa70a3",
+  "published_utc": "2026-10-30T12:47:43.555114+00:00",
+  "base_commit": "b1d0c83eda38966c14aedbc43ba15fa6c816e979",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 133,
-    "module_hash_checks": 2340,
-    "distinct_modules": 1446
+    "review_records": 134,
+    "module_hash_checks": 2377,
+    "distinct_modules": 1448
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "22a05f98d36f8862a49664b3ca8fa33b0efa70a3",
-    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step compares the original-domain uniform gap and action estimates, retaining the actual supremum, stronger critical-offset bound and fixed genuine one-plus summands. Twenty-one Section 11 groups are compared: nineteen matched, two corrected and one pending. Wider unresolved qualifications remain.",
-    "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8518,
-    "public_examples": 7587,
-    "transitive_NLS_declarations": 44364,
+    "base_commit": "b1d0c83eda38966c14aedbc43ba15fa6c816e979",
+    "validated_state": "New tail-convergence module and four public examples, with the complete ordered Section 11 comparison. Full gate 53499 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "command": "./scripts/check.sh",
+    "build_jobs": 8519,
+    "public_examples": 7591,
+    "transitive_NLS_declarations": 44370,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4795,
-      "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
+      "files": 4796,
+      "sha256": "598d368501f16dda355fb2926d9171816598c10a9ebb8648c85eb14a279a670d"
     },
-    "qualification": "The exact Lean sources and dependency locks are unchanged from the observed successful full gate. Source-review integrity is checked for the new documentation and review records. This does not independently certify semantic completeness.",
-    "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260"
+    "qualification": "Current full build, public examples and transitive axiom audit passed; source-review integrity checks recorded evidence and do not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -32802,6 +32801,197 @@
       },
       "ordered_inventory_sha256": "06af7a5e82e62b5318136519f94677752bec0de15ac432465300b3b8c1307b00",
       "source_record_sha256": "9efb775c487b804a457bd92433844ae3025a77d1a250d0f95b11b11e5f979dd1"
+    },
+    "Section11RootClosureSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b1d0c83eda38966c14aedbc43ba15fa6c816e979",
+      "updated_utc": "2026-10-30T12:47:43.555114+00:00",
+      "source_lines": [
+        [
+          4908,
+          4917
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-022",
+          "source_lines": [
+            4908,
+            4917
+          ],
+          "requirement": "Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Coeff.exists_cutoff_norm_apply_lt",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalizedRoot_sq_eq_chi_of_gap_zero",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_theorem11_2",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_real_positive_and_tail",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_continuousMap",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_and_root_tail_lt",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition",
+            "NLS.ZakharovShabat.norm_sqrt_sub_one_le",
+            "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+            "NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_collapsed",
+            "NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_quotient",
+            "NLS.ZakharovShabat.sourceTheorem11_2",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedAction",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedActionRoot",
+            "NLS.ZakharovShabat.tendstoUniformlyOn_sourceNormalizedAction_and_root_of_isCompact"
+          ],
+          "reviewed_claims": [
+            "The normalized real action is real-valued, continuous and nonzero on the connected real-type locus. The free value is 1/4, hence every normalized real action is positive, including collapsed gaps. The existing all-index complex-neighborhood lower bound uses norm continuity of the sequence deviation, a small tail at the base source and a finite positive central minimum.",
+            "For each finite p>1, real base source and positive tolerance epsilon, one complex open neighborhood and one signed cutoff make both absolute errors |4F_n-1| and |xi_n-1| smaller than epsilon for every nearby source and every |n| beyond the cutoff. The proof uses the p-valued continuous deviation, base-coordinate decay at epsilon/2 and the contractive coordinate bound on the sequence-norm difference. The same error bound for the principal root follows from |sqrt(z)-1|<=|z-1| with constant one.",
+            "The tolerance precedes the neighborhood: forall epsilon>0 forall real phi exists complex V containing phi exists N forall psi in V forall |n|>=N. This is exactly Mathlib TendstoLocallyUniformlyOn on the real locus, with signed-index filter comap Int.natAbs atTop. The local convergence gives uniform convergence on every compact real source set. No claim of convergence uniform on one fixed infinite-dimensional neighborhood for all tolerances is made.",
+            "Equation2_19 compatibility identifies F with the actual filled indexed quotient on the same common W, without changing values at collapse. The new normalized_real_positive_and_tail declaration supplies positivity and locally uniform convergence for 4 times that actual filled quotient. Off the zero-gap locus it is 4I_n/gamma_n^2; at collapse its value is chi_n(tau_n).",
+            "The printed collapsed root identity has a square: xi_n^2=chi_n(tau_n). Equation2_19.normalizedRoot_sq_eq_chi_of_gap_zero proves this for the actual principal root and complex collapsed gaps on W. It follows from xi_n^2=4F_n and the exact collapsed factor chi_n(tau_n)/4.",
+            "One open W contained in the previous W0 contains the full real locus and carries all-index complex analytic normalized factors and principal roots. The local finite intersections and one tail neighborhood supply positive real-part lower bounds for all indices. Principal roots are analytic on the slit plane, are nonzero, are positive real on real sources, and have free value one. The fixed genuine half-exponent plus one-plus root decomposition retains its already compared scope.",
+            "The new positive continuity proof gives the final tail assertion directly; the coarse product-tail majorant is not asserted to tend to zero uniformly on a fixed neighborhood. No new correction or refutation is needed for this passage. Existing source qualifications and historical corrections remain."
+          ],
+          "qualification": "Matched with explicit tolerance-dependent local uniformity and uniform convergence on compact real source sets. The neighborhood for an arbitrarily small tail error may depend on that error. The common complex domain for positivity, analyticity and the sequence expansions remains fixed as stated in Theorem 11.2. No stronger all-tolerances convergence on one fixed neighborhood is asserted, and no new correction or refutation is added."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean": "cd29404bb2f4ffcb5988b549ece37674d3bd4a9c1ea2c241646e86375db12d61",
+        "NLS/ZakharovShabat/SourceIndexedActionCommonCharts.lean": "58a03d9adf93fb242414aea0ec70ef2616cd6078afdb4f63db67120c6a1e8561",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootAnalytic.lean": "c00d35db777312a151d3c446d4cd32e36ac9d8b3ff653d20ee5ee649c4431dd6",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlusDecomposition.lean": "93aaa718d5747e1bba40a8ebcf92c5bdad5a282339f402f9552908867499f980",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexExtension.lean": "79c2d1b90a43db3e6d3f23133f1ed5421410fed9e13136876d01a73f50e7b882",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean": "337097cb7aa9ea6b05a58d364d3120848a553ccb35d377e1c6867509415a2254",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlusTopology.lean": "741c7ad1ec757e4bab758a93dd093abf65e98b597ac267b0f60b6d2ad502ec14",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceDerivative.lean": "356429a3de341c9f16abd4ae24f35d6f685526152f2790853fb32201e2a419c2",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlus.lean": "d5b20559d1983e41244330e60651ebaf16fef4536bc2e89c18a397ea4d22c83d",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformPositive.lean": "5f779b4d5ff99ceb7af925fd93b9793ff5a60d953a52ba6d9445720c007f70da",
+        "NLS/ZakharovShabat/SourceNormalizedActionHolomorphicCommonExponentDomain.lean": "668c8904d211ecac3e5922190605b790037ea88fc4bf88fe0af2e6e573f22801",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceContinuity.lean": "e44e34618ca4376b9976e4083052362a0b476df5fcf8d3d7633ae7730bf340aa",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexAllCoordinates.lean": "416a1219c43efe028c094efc792520a1c68f4228ff3798b2a1a20d22bed19bf2",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootCommonExponentDomain.lean": "02fd68ecdd18a69e96c29b2fb19151115810afabd7c51dfd06aea5a1a812508c",
+        "NLS/ZakharovShabat/SourceNormalizedActionCommonExponentDomain.lean": "199c8ab13c5ec2dae1a38e85c549136108c885051e2c659185e5e1611312a6e8",
+        "NLS/ZakharovShabat/SourceNormalizedActionFree.lean": "cdc0e6ac8e1847058f0f7a5795cca2eaf8f5daf8c731caad14b68b78451fff87",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceSpace.lean": "84ad44dd18ec03024300ecb53e7e9bd2dee8db0417e8ecfda9a9a0137ace08bd",
+        "NLS/SequenceSpaces/OnePlus.lean": "e472bb3015a5446e75ecf9662ab5918ac3fa826c721223565e340871a1670111",
+        "NLS/SequenceSpaces/OnePlusTopology.lean": "76620ef6f21599ba60b381a6c214f5cf6131a79908c9a2e5a8d572b89a4584c3",
+        "NLS/ZakharovShabat/SourceNormalizedActionFactorCommonExponentDomain.lean": "f50292d0646d95d73df549e04940cb2cf968330270320acb9529e99219962ed9",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformSequenceMajorants.lean": "68367cef14ff55a853ea23191a8cfc856c27f5dea59109e3b3dc60bac77eadc2",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedReal.lean": "b714de4c6c7dc0e80cd34b4ed99a1f46bc677a42e8079fab6514035e89c1964a",
+        "NLS/ZakharovShabat/SourceDistantNormalizedActionCircleIntegrandAnalytic.lean": "c03aaa679eae6b5bf8fdf6d6747aa8df8968fbeb465867d29dd4b3c82ad821ea",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedCircleValue.lean": "9625f6abff6e86ef926ced9094248b69debe7a5aacb541d26e8ba8148ba01bca",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedNonzero.lean": "2b2b0036847c04711ef7732ca3e587f32f2b65e1b1b0d6eaf79674ebf3c334d5",
+        "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleMajorants.lean": "4e561150113097fa97701bbe2a90c346ccfde552764af049052147357ec9c2ce",
+        "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleComplexAgreement.lean": "02cdd88cd3c89a3f72ddfa01230a5dedeef9b339ba03fce90182f8b3c755bbea",
+        "NLS/ZakharovShabat/SourceNormalizedActionCircleAnalytic.lean": "03e9bb544a0277fd7a6d2dd1a2fb8ddcb87b9d28eba46e6a7de4330dcb2a9fd2",
+        "NLS/ZakharovShabat/SourceNormalizedActionGlued.lean": "b9677f2b9f5a0f316ddd34c5ec9a30687d6e8c82146e598fa4b9054194fe9ef4",
+        "NLS/ZakharovShabat/SourceNormalizedActionFactorDiscMajorants.lean": "a06c580471bfb2d459acdd2ee469e105ae48ded30f163f8dab3dfd2ec776d53d",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientCommonExponentDomain.lean": "bb1b57f2a9c8775d590b67b96f67869f5abe35e656678adc8291b256ffd8e549",
+        "NLS/ZakharovShabat/SourceEquation2_19.lean": "83f79c32cf86cc42cf5eca1f24f43d37e2d56b1662446e172b684e75409dddeb",
+        "NLS/SequenceSpaces/CoefficientDecay.lean": "c6106c7e636f4de9b16afcf9e7125c96f942265547053ecc08b116a4b08ecd34",
+        "NLS/ZakharovShabat/SourceStandardRootProductFactors.lean": "39fd54e2c7a5b8afc51fdeb339302e2d6835363ab6a44544a2ec4dba79786498",
+        "NLS/ZakharovShabat/SourceNormalizedActionTailConvergence.lean": "90770a360df71a3172d96524daee47f1baf58eedcb4530d6464b00c574f62f3b"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "record": "work/Section11NormalizedActionsSourceComparison-2026-10-30.json",
+        "modules": [
+          "NLS/ZakharovShabat/SourceTheorem11_2.lean",
+          "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean",
+          "NLS/ZakharovShabat/SourceIndexedActionCommonCharts.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionRootAnalytic.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionOnePlusDecomposition.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexExtension.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionOnePlusTopology.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceDerivative.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionOnePlus.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformPositive.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionHolomorphicCommonExponentDomain.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceContinuity.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexAllCoordinates.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionRootCommonExponentDomain.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCommonExponentDomain.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionFree.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceSpace.lean",
+          "NLS/SequenceSpaces/OnePlus.lean",
+          "NLS/SequenceSpaces/OnePlusTopology.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionFactorCommonExponentDomain.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformSequenceMajorants.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCollapsedReal.lean",
+          "NLS/ZakharovShabat/SourceDistantNormalizedActionCircleIntegrandAnalytic.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCollapsedCircleValue.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCollapsedNonzero.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleMajorants.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleComplexAgreement.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionCircleAnalytic.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionGlued.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionFactorDiscMajorants.lean",
+          "NLS/ZakharovShabat/SourceSingleRootQuotientCommonExponentDomain.lean"
+        ],
+        "hashes_reverified": true
+      },
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_cutoff_norm_apply_lt",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalizedRoot_sq_eq_chi_of_gap_zero",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_theorem11_2",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_real_positive_and_tail",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_continuousMap",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_and_root_tail_lt",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition",
+        "NLS.ZakharovShabat.norm_sqrt_sub_one_le",
+        "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+        "NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_collapsed",
+        "NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_quotient",
+        "NLS.ZakharovShabat.sourceTheorem11_2",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedAction",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_sourceNormalizedActionRoot",
+        "NLS.ZakharovShabat.tendstoUniformlyOn_sourceNormalizedAction_and_root_of_isCompact"
+      ],
+      "declaration_inventory_count": 44370,
+      "qualification": "All 22 ordered Section 11 groups are compared: twenty matched and two corrected occurrences. The final positivity and principal-root conclusions match, with an explicit positive proof of the tail limit. Locally uniform convergence uses the precise Mathlib quantifiers: the positive tolerance precedes the source neighborhood and signed cutoff. Convergence is also uniform on every compact real source set. The exact factor four, filled collapsed value and squared identity xi_n^2=chi_n(tau_n) are retained. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4796,
+        "sha256": "598d368501f16dda355fb2926d9171816598c10a9ebb8648c85eb14a279a670d"
+      },
+      "full_gate": {
+        "session": 53499,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section11RootClosureVerifiedFullCheck.log",
+        "log_sha256": "dcd9fa6d918d43de0868f170b4c9a914ec15432c28dcdc258af1a027af309825"
+      },
+      "convergence_convention": "Mathlib TendstoLocallyUniformlyOn with filter comap Int.natAbs atTop; for each tolerance and real base point choose a neighborhood and cutoff. Uniform convergence on every compact real source set follows.",
+      "ordered_inventory_sha256": "b932673b312ff921922869ce496a24e738781f4bd79026a84bf477f867cb7a2f",
+      "source_record_sha256": "8f2cc554c92019d605e0f9025b91479b5cea97bdd8ac893051d225832165093d"
     }
   }
 }

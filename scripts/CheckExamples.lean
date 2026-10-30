@@ -71674,3 +71674,45 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
     Tendsto (fun k => F (z k,χ k)) atTop (𝓝 (F (a,ψ))))
 
 end Section11ClosedCollarExamples
+
+section Section11TailConvergenceExamples
+open NLS.ZakharovShabat Set Filter Topology
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both tails use one cutoff on a complex neighborhood, including the p/2<1 range.
+example (φ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hφ : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) φ))
+    {ε : ℝ} (hε : 0 < ε) :
+    ∃ V : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen V ∧ φ ∈ V ∧ ∃ N : ℕ,
+      ∀ ψ ∈ V, ∀ n : ℤ, N ≤ n.natAbs →
+        ‖4 * sourceNormalizedActionComplexExtension (by norm_num) (by norm_num) n ψ - 1‖ < ε ∧
+        ‖sourceNormalizedActionRoot (by norm_num) (by norm_num) n ψ - 1‖ < ε :=
+  exists_local_sourceNormalizedAction_and_root_tail_lt (by norm_num) (by norm_num) φ hφ hε
+
+-- Uniformity holds on each compact real set also above the Hilbert exponent.
+example {K : Set (CoeffPair 4)} (hK : IsCompact K) (hreal : K ⊆ realTypeSourceLocus 4) :
+    TendstoUniformlyOn
+      (fun n ψ => sourceNormalizedActionRoot (by norm_num) (by norm_num) n ψ)
+      (fun _ => (1 : ℂ)) (Filter.comap Int.natAbs atTop) K :=
+  (tendstoUniformlyOn_sourceNormalizedAction_and_root_of_isCompact
+    (by norm_num) (by norm_num) hK hreal).2
+
+-- The public source interface uses the actual filled indexed action.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W₀)
+    (Hn : SourceTheorem11_2Data hp hp1 W₀ W) (hr : realTypeSourceLocus p ⊆ W) :
+    TendstoLocallyUniformlyOn
+      (fun n ψ => 4 * sourceNormalizedIndexedAction hp hp1 n ψ)
+      (fun _ => (1 : ℂ)) (Filter.comap Int.natAbs atTop) (realTypeSourceLocus p) :=
+  (H.normalized_real_positive_and_tail Hn hr).2
+
+-- Positive and negative tails share the same exact normalization at the free source.
+example (n : ℤ) :
+    4 * sourceNormalizedIndexedAction (by norm_num) (by norm_num) n (0 : CoeffPair 4) = 1 ∧
+    sourceNormalizedActionRoot (by norm_num) (by norm_num) (-n) (0 : CoeffPair 4) = 1 := by
+  simp [sourceNormalizedIndexedAction_zero_source,sourceNormalizedActionRoot,
+    sourceNormalizedActionComplexExtension_zero_source]
+
+end Section11TailConvergenceExamples
