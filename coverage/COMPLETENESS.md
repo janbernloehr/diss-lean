@@ -211,8 +211,20 @@ Native weighted proofs cover the positive-smoothness extension. The proof
 outline records the actual local-inverse, finite-gap, Fredholm and flow
 arguments. The exact 2014 [23] comparison remains unresolved, and the
 historical open-problem and heuristic remarks are not promoted to theorems.
-Next is the ordered comparison of Section 15, Analyticity. Later Chapter 3
-arguments and the wider dissertation qualifications remain to be reviewed.
+Later Chapter 3 arguments and the wider dissertation qualifications remain
+to be reviewed.
+
+The [ordered Section 15 ledger](SECTION_15_ASSERTIONS.md) now compares all
+fifteen passage groups: twelve matched and three with explicit corrections
+or a sufficient estimate replacement. The opening sine difference and
+exactly-one-nonzero classification at complex collapsed gaps are retained.
+The sequence-analyticity argument uses the proved local beta bound and
+rectangular constant; it does not certify fixed-neighborhood uniform beta
+decay. Lemma 15.1 retains the original angular W, while equation (3.2) and
+Theorem 15.2 use the common Chapter 3 V. The canonical identities use the
+actual coordinate derivatives at all real sources and finite p>1. Existing
+proofs supply these results, with no new refutation. The exact external
+edition comparison remains unresolved. Next is Section 16, Jacobian.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

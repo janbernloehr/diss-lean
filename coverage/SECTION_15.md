@@ -1,5 +1,37 @@
 # Section 15 original-coordinate audit
 
+## Ordered comparison and precise local bounds
+
+All fifteen Section 15 passage groups are now compared: twelve matched
+and three with explicit corrections or a sufficient estimate replacement.
+
+The opening exponential y formula retains the corrected difference.
+At a collapsed complex gap outside its midpoint, exactly one signed
+coordinate is nonzero. The analytic sequence proof uses a locally uniform
+beta bound and the proven rectangular constant 2*A*Cz*exp(B); it does not
+require a uniform little-o rate on a fixed neighborhood.
+
+Lemma 15.1 holds at every complex point of the unchanged angular W,
+with one neighborhood and constant for all indices and both signs.
+Equation (3.2) and Theorem 15.2 hold on the common Chapter 3 domain V
+inside W, containing the entire real locus. Lemma 15.3 uses actual
+coordinate derivatives at every real source, including collapsed gaps
+and exponents below two. Direct annular extensions and internal analytic
+and canonical proofs supply the results; the cited external proof routes
+are not independently certified.
+
+This step freshly inspected 25 module bodies, reused 13 earlier full
+readings at identical hashes and resolved 51 declarations. Existing Lean
+proofs supply the results; no theorem, definition, example or refutation
+was added. See the [ordered Section 15 ledger](SECTION_15_ASSERTIONS.md).
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `399faae`. The completed full check on that snapshot passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Next is Section 16, Jacobian. The exact 2014 [23] comparison and wider
+qualifications remain in the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
 Source: printed pp. 74–75, the gap-weighted coordinates, Lemma 15.1,
 equation (3.2), Theorem 15.2, and Lemma 15.3. The root family is the same
 family retained from Lemma 12.12 and the original Section 13 integrals.

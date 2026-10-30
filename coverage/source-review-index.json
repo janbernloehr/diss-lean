@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T20:06:43.602114+00:00",
-  "base_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
+  "published_utc": "2026-10-30T20:17:59.638435+00:00",
+  "base_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 153,
-    "module_hash_checks": 3224,
-    "distinct_modules": 1785
+    "review_records": 154,
+    "module_hash_checks": 3262,
+    "distinct_modules": 1793
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
-    "validated_state": "Documentation-only ordered Section 14 overview comparison. All eighteen groups are classified with the domain restriction, exact-edition gap and contextual remarks explicit. The Lean and dependency-lock snapshot is unchanged; successful full gate 21942 is reused, not rerun.",
+    "base_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
+    "validated_state": "Documentation-only ordered Section 15 comparison. All fifteen groups are classified with the sine difference, signed collapsed-gap values, sufficient bounds and common domain explicit. The Lean and dependency-lock snapshot is unchanged; successful full gate 21942 is reused, not rerun.",
     "command": "./scripts/check.sh",
     "build_jobs": 8557,
     "public_examples": 7631,
@@ -41,7 +41,7 @@
       "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
     },
     "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99"
+    "validation_reused_from_commit": "399faae5364dae027a4ff044fd846dda071b1a52"
   },
   "named_statements": [
     {
@@ -38664,6 +38664,584 @@
         "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
       },
       "source_record_sha256": "346e9ddb9e4763d942d3e947d77641e0cc6c961d30af5d6dd98676f2628e85fd"
+    },
+    "Section15OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
+      "updated_utc": "2026-10-30T20:17:59.638435+00:00",
+      "source_lines": [
+        [
+          6014,
+          6018
+        ],
+        [
+          6019,
+          6020
+        ],
+        [
+          6022,
+          6024
+        ],
+        [
+          6026,
+          6026
+        ],
+        [
+          6027,
+          6034
+        ],
+        [
+          6035,
+          6039
+        ],
+        [
+          6041,
+          6042
+        ],
+        [
+          6042,
+          6045
+        ],
+        [
+          6055,
+          6059
+        ],
+        [
+          6061,
+          6067
+        ],
+        [
+          6070,
+          6074
+        ],
+        [
+          6076,
+          6083
+        ],
+        [
+          6085,
+          6092
+        ],
+        [
+          6094,
+          6101
+        ],
+        [
+          6103,
+          6106
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S15-001",
+          "source_lines": [
+            6014,
+            6018
+          ],
+          "printed_page": 74,
+          "requirement": "Opening exponential coordinates with the corrected sine difference.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffXY_original_formula",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_2"
+          ],
+          "reviewed_claims": [
+            "The original cosine and positive sine orientation give a sum in x and a difference in y, with denominators sqrt(8) and i*sqrt(8), respectively.",
+            "The existing exact original-phase formula and equation (3.2) retain that difference. The opening printed plus in y is replaced directly; no new sign counterexample is added."
+          ],
+          "qualification": "This retains the established correction and the same integral-defined phase. The exponential phase formula is used off the selected collapsed-gap locus."
+        },
+        {
+          "ordered_group": "S15-002",
+          "source_lines": [
+            6019,
+            6020
+          ],
+          "printed_page": 74,
+          "requirement": "Analytic action roots and beta corrections on the common domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_series",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain"
+          ],
+          "reviewed_claims": [
+            "The principal normalized-action root is analytic on the Section 11 common action domain, including its collapsed gaps. The original beta correction is analytic throughout the retained angular W.",
+            "Their intersection supports the rectangular scalar formulas; the full sequence map uses the Chapter 3 neighborhood V inside W established in the Section 14 comparison."
+          ],
+          "qualification": "Throughout this ledger W denotes the retained angular domain and V the constructed common Birkhoff domain. Both contain the entire real locus. No equality with an arbitrarily fixed earlier W is asserted."
+        },
+        {
+          "ordered_group": "S15-003",
+          "source_lines": [
+            6022,
+            6024
+          ],
+          "printed_page": 74,
+          "requirement": "The literal two gap-weighted original phases.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_plus",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed"
+          ],
+          "reviewed_claims": [
+            "On W away from the selected closed gap, both constructed coordinates equal gamma_n*exp(plus_or_minus i*eta_n) for the actual original eta integral.",
+            "The endpoint normalization fixes the positive phase exactly, and the product identity fixes the negative phase. This is an equality of complex values, not just agreement modulo pi."
+          ],
+          "qualification": "At collapsed gaps the analytic coordinate formula supplies the value; no angle value or division by the gap is required there."
+        },
+        {
+          "ordered_group": "S15-004",
+          "source_lines": [
+            6026,
+            6026
+          ],
+          "printed_page": 74,
+          "requirement": "Discontinuities of the indexed gap and original eta phase.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_gap_eta_phase_discontinuity",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_gap_eta_phase_not_continuousOn"
+          ],
+          "reviewed_claims": [
+            "The existing positive source assertion gives open central-gap potentials arbitrarily close to zero where both the labeled gap and exp(i*eta) fail to be continuous within the original open-gap domain.",
+            "Continuity of the phase modulo 2*pi would imply continuity of its exponential, so the exhibited exponential discontinuity supplies the stated phase discontinuity."
+          ],
+          "qualification": "This is an existential discontinuity statement. It asserts neither discontinuity at zero nor discontinuity at every source or every index. The existing proof is reused; no new witness or refutation is added."
+        },
+        {
+          "ordered_group": "S15-005",
+          "source_lines": [
+            6027,
+            6034
+          ],
+          "printed_page": 74,
+          "requirement": "Local analytic unordered endpoints and open-gap analyticity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceAnalyticHalfGap",
+            "NLS.ZakharovShabat.sourcePeriodicEndpoint_pair_eq_of_halfGap_sq",
+            "NLS.ComplexAnalysis.exists_local_analytic_squareRoot",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic"
+          ],
+          "reviewed_claims": [
+            "At any complex source with nonzero selected gap, an analytic square root of the squared half-gap has the prescribed base value. Adding and subtracting it from the analytic midpoint gives analytic local endpoints with the exact unordered pair of canonical endpoints.",
+            "The original weighted phases agree with the analytic annular coordinate formulas. These formulas prove the claimed open-gap analyticity and also extend across the collapsed locus."
+          ],
+          "qualification": "Local analytic endpoints need not agree with one global canonical labeling. The required result is proved internally; this does not certify the exact external [23] Lemma 16.1 text."
+        },
+        {
+          "ordered_group": "S15-006",
+          "source_lines": [
+            6035,
+            6039
+          ],
+          "printed_page": 74,
+          "requirement": "Limits at complex collapsed gaps and their signed nonvanishing.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_phase_limit",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_collapsed_pair_zero_iff",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_collapsed_pair_exactly_one_nonzero",
+            "NLS.ZakharovShabat.sourceGapWeightedEtaCoordinate_mul"
+          ],
+          "reviewed_claims": [
+            "The original phases converge to their analytic extension along every converging net eventually in W with nonzero selected gap, hence along the sequences in the source.",
+            "At a collapsed gap, both signed values vanish exactly when the Dirichlet root equals the midpoint. If it lies outside the collapsed segment, exactly one signed value is nonzero and the other is zero.",
+            "This is the positive replacement for the unqualified nonzero-limit wording. The exact identity z_plus*z_minus=gamma^2 remains valid through collapse."
+          ],
+          "qualification": "The review does not select a sign globally or construct another potential witnessing the correction. The existing positive classification suffices."
+        },
+        {
+          "ordered_group": "S15-007",
+          "source_lines": [
+            6041,
+            6042
+          ],
+          "printed_page": 74,
+          "requirement": "The outside-gap locus is open and has no real sources.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDirichletOutsideGap",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.dirichletOutsideGap_original_open",
+            "NLS.ZakharovShabat.disjoint_sourceDirichletOutsideGap_realType",
+            "NLS.ZakharovShabat.exists_joint_neighborhood_avoids_sourcePeriodicSegment"
+          ],
+          "reviewed_claims": [
+            "F_n is the subset of W where the actual Dirichlet root avoids its actual periodic segment. Analytic symmetric gap data and the analytic Dirichlet root make this subset open in the full complex source space.",
+            "Real interlacing places the Dirichlet root inside the segment at every real source, so F_n is disjoint from the entire real locus."
+          ],
+          "qualification": "Line 6042 also starts the estimate reviewed in S15-008; this is an intentional overlap of source ranges."
+        },
+        {
+          "ordered_group": "S15-008",
+          "source_lines": [
+            6042,
+            6045
+          ],
+          "printed_page": 74,
+          "requirement": "Local uniform spectral bounds and continuity through collapse.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.norm_etaRemainder_le_of_chart_bound",
+            "NLS.ZakharovShabat.norm_sourceGapWeightedEtaCoordinate_le_of_remainder_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_tail_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_uniform_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic"
+          ],
+          "reviewed_claims": [
+            "The annular remainder bound is 3*r*(pi*rho^2*M/(rho-r)^3). A bound B for that remainder gives |z_sigma| <= 4*exp(B)*(|gamma|+|mu-tau|) for every |sigma|<=1.",
+            "Uniform tail charts use fixed radii r=pi/16, R=pi/8, rho=3*pi/32 and the original diagonal numerator bound. Intersecting finitely many remaining charts gives one neighborhood and one positive constant for all signed indices.",
+            "The directly analytic formulas are continuous across every complex collapsed gap. They retain the original phase values wherever the gap is open."
+          ],
+          "qualification": "All estimates hold near every complex point of W, not only near real sources. The published constants are the proven sufficient constants; no optimality or new refutation is claimed."
+        },
+        {
+          "ordered_group": "S15-009",
+          "source_lines": [
+            6055,
+            6059
+          ],
+          "printed_page": 75,
+          "requirement": "Analytic extension across the collapsed locus.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.analyticOnNhd_dirichletEtaSineNumerator",
+            "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.analyticOnNhd_gapWeightedEtaCoordinate",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic"
+          ],
+          "reviewed_claims": [
+            "The omitted-root product is nonzero at the Dirichlet terminal. Dividing the actual anti-discriminant by twice that product gives the analytic sine numerator without a half-gap denominator.",
+            "Together with the analytic normalized remainder this gives an analytic coordinate on the whole chart. Its restrictions to collapsed-gap analytic curves are therefore analytic as well."
+          ],
+          "qualification": "The implementation proves a full neighborhood extension directly. It does not reproduce the source's weak-analytic-removability route or independently certify [23] Lemma A.6."
+        },
+        {
+          "ordered_group": "S15-010",
+          "source_lines": [
+            6061,
+            6067
+          ],
+          "printed_page": 75,
+          "requirement": "Lemma 15.1 with a common neighborhood and index-uniform estimate.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_uniform_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_local_sequence",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.gap_sequence_analytic"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1 and every complex point of the original W, one open source neighborhood and one constant bound both signs for all n. The local spectral estimate includes collapsed gaps and endpoint terminals.",
+            "The actual gap and Dirichlet-midpoint displacement sequences are in lp and locally bounded. The estimate therefore gives actual lp-valued weighted phase sequences, their exact scalar evaluations and locally uniform sequence norm bounds.",
+            "Bounded coordinatewise analyticity proves that these sequences are Banach-valued analytic throughout the unchanged angular W."
+          ],
+          "qualification": "The original scalar lemma is matched, and the existing sequence theorem supplies the stronger realization needed later. The norm bound is also uniform over all complex sigma with |sigma|<=1."
+        },
+        {
+          "ordered_group": "S15-011",
+          "source_lines": [
+            6070,
+            6074
+          ],
+          "printed_page": 75,
+          "requirement": "Equation (3.2) for the actual sequence entries.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_2",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_sequence_apply"
+          ],
+          "reviewed_claims": [
+            "On the common V the actual Birkhoff sequence entries equal xi/sqrt(8) times the sum of z_plus*exp(i*beta) and z_minus*exp(-i*beta), and xi/(i*sqrt(8)) times their difference.",
+            "The equality is valid at every index, including complex collapsed gaps. Sequence membership is proved, so the total sequence constructors never select their zero fallback on the stated domains."
+          ],
+          "qualification": "The Chapter 3 common-domain restriction from S14-004 is retained. The z sequences themselves still exist on the larger angular W."
+        },
+        {
+          "ordered_group": "S15-012",
+          "source_lines": [
+            6076,
+            6083
+          ],
+          "printed_page": 75,
+          "requirement": "Precise local bounds sufficient for Banach-valued analyticity.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.locally_uniform",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRootDeviation_continuousMap",
+            "NLS.ZakharovShabat.exists_local_uniform_sourceNormalizedActionRoot_bound",
+            "NLS.ZakharovShabat.sourceAngularBetaCorrection_decay_of_bound",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_uniform_betaCorrection_bound",
+            "NLS.ZakharovShabat.norm_sourceBirkhoffXY_le",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_birkhoffSequence_analytic",
+            "NLS.ZakharovShabat.sourceBirkhoffSequence_analytic_of_uniform_bound",
+            "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise"
+          ],
+          "reviewed_claims": [
+            "The normalized-root error has the genuine locally uniform lp/2 plus l(1+) decomposition from Theorem 11.2. Taking the one-plus exponent equal to p and using lp/2 inclusion in lp supplies xi-1 in lp. The local root-sequence construction gives a uniform scalar root bound A near every real source.",
+            "The original beta correction tends to zero as |n| tends to infinity at each fixed potential. The sequence-analyticity proof uses the separately proved bound |beta_n(psi)|<=B on one neighborhood for all n; it does not require a uniform little-o rate on that neighborhood.",
+            "With the gap-coordinate constant Cz, the exact sufficient bound for each rectangular coordinate is 2*A*Cz*exp(B)*(|gamma_n|+|mu_n-tau_n|). Local lp norm bounds for the two spectral sequences give a common bound for the full rectangular pair.",
+            "The proved bounded-coordinate analytic criterion then gives full Banach-valued analyticity. Taking the union of these complex neighborhoods of real sources gives the working V."
+          ],
+          "qualification": "The estimate passage is replaced by the precise sufficient bounds. Fixed-potential beta decay is not promoted to a fixed-neighborhood uniform decay assertion, and the latter is not certified or refuted here. The needed analytic criterion is proved internally, without an external [23] Theorem A.4 axiom."
+        },
+        {
+          "ordered_group": "S15-013",
+          "source_lines": [
+            6085,
+            6092
+          ],
+          "printed_page": 75,
+          "requirement": "Theorem 15.2 for the full real map and its complex extension.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection15_original",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.theorem15_2",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_complex_inclusion"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1, the actual map from the complete real source space to the pair of real lp spaces is real analytic.",
+            "It extends to the actual complex lp-pair-valued map on V, an open neighborhood of the entire real source locus. Complex inclusion of the real output equals the full complex output, not just each component after taking real parts."
+          ],
+          "qualification": "Matched with the established Chapter 3 domain convention V inside the earlier W. This does not assert a full Birkhoff sequence extension to every point of an arbitrarily fixed angular domain."
+        },
+        {
+          "ordered_group": "S15-014",
+          "source_lines": [
+            6094,
+            6101
+          ],
+          "printed_page": 75,
+          "requirement": "Lemma 15.3 for every real source, exponent and signed index pair.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.lemma15_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fderiv_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mixed_fourier_canonical",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceBracket_canonical"
+          ],
+          "reviewed_claims": [
+            "The actual sequence coordinate derivatives have regular Fourier representatives at every real source, including all collapsed gaps. Their pairings are xx=0, xy=-Kronecker and yy=0 for every pair of signed indices.",
+            "The mixed bracket is the literal absolutely convergent Fourier sum with frequency reversal and factor -i. For p>=2 it equals the continuous physical source bracket on full cotangents; for 1<p<2 the regular representatives retain that same pairing."
+          ],
+          "qualification": "No unspecified closed-gap angle or bracket on arbitrary nonregular cotangents below two is assumed."
+        },
+        {
+          "ordered_group": "S15-015",
+          "source_lines": [
+            6103,
+            6106
+          ],
+          "printed_page": 75,
+          "requirement": "Canonical identities by continuity and exponent restriction.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.birkhoff_sourceBracket_canonical",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical_of_le",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma15_3"
+          ],
+          "reviewed_claims": [
+            "For p>=2 the continuous bilinear source bivector applied to the analytic coordinate derivatives gives continuous brackets. The action-angle identities on the dense simultaneous open-gap locus extend them to all real sources.",
+            "Below two, the full coordinate derivatives restrict from the Hilbert exponent with identical regular Fourier coefficients and hence identical pairings. The resulting scalar bracket values are constant on the entire real source space, so they are real analytic.",
+            "The implementation proves the needed canonical identities internally. It uses open-gap density directly at exponents at least two rather than taking the exact external Hilbert theorem as a premise."
+          ],
+          "qualification": "The mathematical conclusion and continuity/restriction mechanism are supplied. The proof route differs from the cited [23] Theorem 18.8 shortcut; the exact external edition comparison remains unresolved."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection15Original.lean": "a648c235ae8cd4a710829d7514830c43670228b50d57d6ce593d79fbce3ea357",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound.lean": "8a942632841ac042488b758a7866e9680df72ca9ffce92392d41faa7a7c3e3cd",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean": "45857554bb80ddacee0da4e6d1eab5f7b0a2793561c574b042c438ea92df7f34",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean": "485225d8432e487e04c080329a375d1e7648d788a664ac6a119f32c3b69cc5d5",
+        "NLS/ZakharovShabat/SourceAnalyticHalfGap.lean": "76730013083fcb8cf6603e9f9f32fb313f33006ad47c51b95d0e3c10b44a1439",
+        "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean": "2603a04dd457dd9de3d41e69a77d52aa85144773ff045a98a64141d8a834c4d4",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaBound.lean": "88475eb8a18160224937ef7edaa76149a22162a3fd428fdbbb3adac8e3bf5021",
+        "NLS/ZakharovShabat/SourceBirkhoffCoordinateBound.lean": "d908535de8a5378be0335c0fea98f3d75b7edf54d5adf7d748eb172425f53a66",
+        "NLS/ZakharovShabat/SourceAngularBetaCorrectionBound.lean": "46ca4c698e620b8266ba959848c87c81a37acd92663d70cfbd094e975cbfc9df",
+        "NLS/ZakharovShabat/SourceOriginalGapEtaDiscontinuity.lean": "0362d82405930c24d592b7edaa54b5c70c8f02e3111a0b9f5017f79a48a6402a",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean": "337097cb7aa9ea6b05a58d364d3120848a553ccb35d377e1c6867509415a2254",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean": "cd29404bb2f4ffcb5988b549ece37674d3bd4a9c1ea2c241646e86375db12d61",
+        "NLS/ZakharovShabat/SourceGapWeightedEta.lean": "957bb8b7a5164f5a6b1aa3bab9c35851ad31e108d1b865c06036e9319d1e3080",
+        "NLS/ZakharovShabat/SourceAngularEtaRemainderBound.lean": "e6feb28511ba4015ecd1b073fb3106259da73a2edc2099738ff2e90e81942196",
+        "NLS/ZakharovShabat/SourceStandardRootPairedJointDomain.lean": "11e03c4fe898ad98f9c7aa1f733b8bd8e31f0a1bf40ee67086b91fbc1cbb562b",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma15_3.lean": "d83103d163b380392d0d5693567d4f24f864cc11ca77fe66dc62f2d79ca96be6",
+        "NLS/ZakharovShabat/SourceBirkhoffTheorem15_2.lean": "f8616dac478090872091fecdab225be1714d7a6fb2520c589e63719834d42d42",
+        "NLS/ZakharovShabat/SourceBirkhoffCanonicalAllExponents.lean": "8fab3018ac891467288163a10aae4b1c434f0998723c1e6d4fdbaeae1e15aca5",
+        "NLS/ZakharovShabat/SourceBirkhoffClosedGapPoisson.lean": "1967035751855a72548d73b41a5b1603a535ef65d048b5e0bce088626809a1d7",
+        "NLS/ZakharovShabat/SourceBirkhoffSequenceLocal.lean": "0a70d92edda09a99a506a27f6b3c472a271ad654593f81589d11ccb7bab0cb43",
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceAngularBetaDecay.lean": "9dc0b05feba8892d78dbea9e1bf556a04ec732b2aeeed152451f0dbc70de9b2c",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaSeries.lean": "5c570e94c66ac480a049aee375fe2de671b02d823714ad54f130e3a6856d7e3b",
+        "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean": "18aa042a371dafdb55bd13c5eea593f914a2c527c0e69befdeeef42bd8861511",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalFormula.lean": "3ab26708a03ed5b14c0be4b09798a3d6b841cbedebfa9a8de51829936d0e30b2",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalDomain.lean": "973701a23a023a9d0446de9097dfec4da9a4acf4191e3bb094ede5b8ebe8be68",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalMap.lean": "313cba611de27a0ac85dfe08ae3d750e2463ca2bc350a10e690cb75f2ee45191",
+        "NLS/ZakharovShabat/SourceSection14.lean": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2",
+        "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+        "NLS/ZakharovShabat/SourceBirkhoffSequence.lean": "0dc408336d6ae29ae9cfc453aa17a3032cfd20b916335c79fba50c592cb19a06",
+        "NLS/ZakharovShabat/SourceBirkhoffMapAnalytic.lean": "7f95798184cb5ea3b6ea543807eabef205b4e8a44f044edb52c8bd11543b4f59",
+        "NLS/ZakharovShabat/SourceAngularOriginalAnnulus.lean": "5c25f58b012b834d79bbfe6a7af67fbf70a8c4bc17944ad5b79974d85cc4e163",
+        "NLS/ZakharovShabat/SourceAngularOriginalAnnulusTail.lean": "dc559fc636aa60377cd6107c08800d6d4889c1f78f74634fe80ac060fd878eb1",
+        "NLS/ZakharovShabat/SourceAngularBetaTheorem13_1Series.lean": "0aa84942f88baf4e017a5ca9bb188faf0f14e89e5b2163dcbbed20b0775128e4",
+        "NLS/ZakharovShabat/SourceAngularBetaSeries.lean": "85334f962c9f2a6d4ee5b40296362ffe56c40c44d40f9797e7674fbef30b9db9",
+        "NLS/ZakharovShabat/SourceAngularBetaSeriesAnalytic.lean": "8d51b4c6da12c7a76cd335ce8efab7b238cbae3372a0a6497b88a2dd1ed70b5c"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection15Original.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean",
+        "NLS/ZakharovShabat/SourceAnalyticHalfGap.lean",
+        "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaBound.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffCoordinateBound.lean",
+        "NLS/ZakharovShabat/SourceAngularBetaCorrectionBound.lean",
+        "NLS/ZakharovShabat/SourceOriginalGapEtaDiscontinuity.lean",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEta.lean",
+        "NLS/ZakharovShabat/SourceAngularEtaRemainderBound.lean",
+        "NLS/ZakharovShabat/SourceStandardRootPairedJointDomain.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma15_3.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffTheorem15_2.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffCanonicalAllExponents.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffClosedGapPoisson.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffSequenceLocal.lean",
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean",
+        "NLS/ZakharovShabat/SourceAngularBetaDecay.lean",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaSeries.lean",
+        "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean"
+      ],
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section14OrderedSourceComparison-2026-10-30.json",
+          "sha256": "346e9ddb9e4763d942d3e947d77641e0cc6c961d30af5d6dd98676f2628e85fd",
+          "modules": [
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean",
+            "NLS/ZakharovShabat/SourceBirkhoffOriginalFormula.lean",
+            "NLS/ZakharovShabat/SourceBirkhoffOriginalDomain.lean",
+            "NLS/ZakharovShabat/SourceBirkhoffOriginalMap.lean",
+            "NLS/ZakharovShabat/SourceSection14.lean",
+            "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean",
+            "NLS/ZakharovShabat/SourceBirkhoffSequence.lean",
+            "NLS/ZakharovShabat/SourceBirkhoffMapAnalytic.lean"
+          ]
+        },
+        {
+          "file": "work/Section13OrderedSourceComparison-2026-10-30.json",
+          "sha256": "96f82b6970c571023d774568c97b5e9be0890199413c9ee2a2f5807cb372a0c8",
+          "modules": [
+            "NLS/ZakharovShabat/SourceAngularOriginalAnnulus.lean",
+            "NLS/ZakharovShabat/SourceAngularOriginalAnnulusTail.lean",
+            "NLS/ZakharovShabat/SourceAngularBetaTheorem13_1Series.lean",
+            "NLS/ZakharovShabat/SourceAngularBetaSeries.lean",
+            "NLS/ZakharovShabat/SourceAngularBetaSeriesAnalytic.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_15_ASSERTIONS.md",
+      "ordered_inventory_sha256": "5a1be9e9e9eddee1373f32cfaf359451b23c404ab02751b70e2ccc46d2baa072",
+      "resolved_declarations": [
+        "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise",
+        "NLS.ComplexAnalysis.exists_local_analytic_squareRoot",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical_of_le",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_birkhoffSequence_analytic",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_uniform_betaCorrection_bound",
+        "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.analyticOnNhd_dirichletEtaSineNumerator",
+        "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.analyticOnNhd_gapWeightedEtaCoordinate",
+        "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.norm_etaRemainder_le_of_chart_bound",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.birkhoff_sourceBracket_canonical",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fderiv_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma15_3",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mixed_fourier_canonical",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_complex_inclusion",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceBracket_canonical",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_series",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffXY_original_formula",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.dirichletOutsideGap_original_open",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_gap_eta_phase_discontinuity",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_plus",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_collapsed_pair_exactly_one_nonzero",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_collapsed_pair_zero_iff",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_local_sequence",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_phase_limit",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_sequence_apply",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_tail_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_uniform_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_gap_eta_phase_not_continuousOn",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_2",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.gap_sequence_analytic",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.lemma15_3",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.theorem15_2",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.locally_uniform",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_analytic",
+        "NLS.ZakharovShabat.disjoint_sourceDirichletOutsideGap_realType",
+        "NLS.ZakharovShabat.exists_joint_neighborhood_avoids_sourcePeriodicSegment",
+        "NLS.ZakharovShabat.exists_local_sourceAnalyticHalfGap",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRootDeviation_continuousMap",
+        "NLS.ZakharovShabat.exists_local_uniform_sourceNormalizedActionRoot_bound",
+        "NLS.ZakharovShabat.norm_sourceBirkhoffXY_le",
+        "NLS.ZakharovShabat.norm_sourceGapWeightedEtaCoordinate_le_of_remainder_bound",
+        "NLS.ZakharovShabat.sourceAngularBetaCorrection_decay_of_bound",
+        "NLS.ZakharovShabat.sourceBirkhoffSequence_analytic_of_uniform_bound",
+        "NLS.ZakharovShabat.sourceDirichletOutsideGap",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaCoordinate_mul",
+        "NLS.ZakharovShabat.sourcePeriodicEndpoint_pair_eq_of_halfGap_sq",
+        "NLS.ZakharovShabat.sourceSection15_original"
+      ],
+      "declaration_inventory_count": 44598,
+      "qualification": "All fifteen Section 15 passage groups are classified: twelve matched and three with explicit corrections or a sufficient estimate replacement. The corrected opening sine difference is retained. At a complex collapsed gap outside its midpoint exactly one signed coordinate is nonzero. The Banach-analyticity argument uses a locally uniform beta bound; fixed-potential beta decay is not promoted to a uniform little-o rate on a fixed neighborhood. Lemma 15.1 holds throughout the unchanged angular W. Equation (3.2) and Theorem 15.2 use the common Chapter 3 domain V inside W containing the full real locus. Lemma 15.3 retains the actual regular coordinate derivatives at all real sources and finite p>1. Direct annular extensions and internal analytic/canonical proofs supply the results without independently certifying the cited [23] lemmas. This completes the ordered Section 15 comparison, not the exact 2014 external-edition comparison or the dissertation. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, Appendix G.2 norm interpretation and the broader source inventory retain their qualifications. No new refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          74,
+          75
+        ],
+        "images": {
+          "work/tmp/pdfs/section14-074.png": "52b8013cc990111ca38d8712eeaef7fd4a652cc76541800e13b47de3da92e5f7",
+          "work/tmp/pdfs/section15-075.png": "260c0ebf19714b5dd2f1ae286eff8879f68ccd6b43e55f177963a7b4e844830b"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4834,
+        "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      },
+      "validation_reused_from_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
+      "full_gate": {
+        "session": 21942,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexNeighborhoodFullCheck-2.log",
+        "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
+      },
+      "source_record_sha256": "bdc323231f6b26688df5cbe724a1878e1547c06f480214e407a5e9064c2c49a1"
     }
   }
 }
