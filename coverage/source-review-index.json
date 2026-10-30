@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T17:47:25.502037+00:00",
-  "base_commit": "af8f2add921a987696ece4ffee6aad9ef3fe0980",
+  "published_utc": "2026-10-30T18:27:07.942546+00:00",
+  "base_commit": "62eaa1b8639dd5c3cd5df5b649f10c946710d1a6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 146,
-    "module_hash_checks": 2861,
-    "distinct_modules": 1659
+    "review_records": 147,
+    "module_hash_checks": 2938,
+    "distinct_modules": 1679
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "af8f2add921a987696ece4ffee6aad9ef3fe0980",
-    "validated_state": "Fifteen positive proofs, three public examples and ordered comparison of the diagonal estimates in Lemma 12.10. Full gate 14090 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "62eaa1b8639dd5c3cd5df5b649f10c946710d1a6",
+    "validated_state": "Nineteen positive proofs, one definition, four public examples and ordered comparison of the off-diagonal estimates and norm-limit conclusions in Lemma 12.10. Full gate 42351 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8541,
-    "public_examples": 7618,
-    "transitive_NLS_declarations": 44520,
+    "build_jobs": 8547,
+    "public_examples": 7622,
+    "transitive_NLS_declarations": 44554,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4818,
-      "sha256": "ae9fc253b65fd8905d2d3b89d59c001dce4019ba69a6618f1b83554136557245"
+      "files": 4824,
+      "sha256": "8fe8b29eba5ed2bf73d362c9a26063a1eac0a6ccc19f4a2fc43d393e21fb2c1f"
     },
     "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
@@ -35923,6 +35923,355 @@
       },
       "ordered_inventory_sha256": "782d6d39df7c172c7b262972d4b28c96a625bcd570492e011a6c1124f5b08c83",
       "source_record_sha256": "923363d5f466f4b763d4554e787eceb8c93f795da2a146df5e6d63e2f9820ed9"
+    },
+    "Section12OffDiagonalEstimatesSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "62eaa1b8639dd5c3cd5df5b649f10c946710d1a6",
+      "updated_utc": "2026-10-30T18:27:07.942546+00:00",
+      "source_lines": [
+        [
+          5504,
+          5513
+        ],
+        [
+          5524,
+          5532
+        ],
+        [
+          5534,
+          5551
+        ],
+        [
+          5554,
+          5564
+        ],
+        [
+          5566,
+          5585
+        ],
+        [
+          5587,
+          5592
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-044",
+          "source_lines": [
+            5504,
+            5513
+          ],
+          "requirement": "Exact off-diagonal split into the omitted row and retained rows.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_apply_same",
+            "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonalDifference_norm_rpow"
+          ],
+          "reviewed_claims": [
+            "The off-diagonal part K-n of the full original Jacobian has zero omitted output row. For every input h, the p-th power of norm((K-star-K-n)h) is exactly |(K-star h)_n|^p plus the sum over retained output rows.",
+            "The equality is for the actual bounded original operators and all signed omitted indices; no matrix estimate is substituted for the operator itself."
+          ],
+          "qualification": "The norm decomposition matches exactly. Its algebraic form also holds for complex inputs, with finite 1<p<infinity."
+        },
+        {
+          "ordered_group": "S12-045",
+          "source_lines": [
+            5524,
+            5532
+          ],
+          "requirement": "Positive Holder estimate for the distinguished row.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_row_bound"
+          ],
+          "reviewed_claims": [
+            "For conjugate exponents p and q, one B_r in lp is chosen before n and h, and |(K-star h)_n| <= |B_r_n|*Cq*norm(h), where Cq is the norm in lq of the punctured reciprocal integer lattice.",
+            "The proof bounds the absolute row kernel in lq and applies Holder to its dual pairing with h. Raising to p yields a summable coefficient |B_r_n|^p*Cq^p, which tends to zero as |n| grows."
+          ],
+          "qualification": "Use this positive absolute-kernel estimate in place of the printed factorization through a signed reciprocal sum. The distinguished-row decay conclusion is retained; no refutation is added."
+        },
+        {
+          "ordered_group": "S12-046",
+          "source_lines": [
+            5534,
+            5551
+          ],
+          "requirement": "Exact retained-row split and explicit power-triangle constant.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_single_same",
+            "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_split",
+            "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_rpow_le",
+            "NLS.Coeff.norm_add_rpow_le_two_mul"
+          ],
+          "reviewed_claims": [
+            "The omitted input column of K-n also vanishes. Deleting output coordinate n splits (K-star-K-n)h exactly into the error applied to the retained input and the omitted-input column of K-star.",
+            "The p-th power of the retained-output norm is at most 2^(p-1) times the sum of the p-th powers of these two actual terms. This supplies an explicit constant for the printed implicit inequality I+II.",
+            "The normalized original contour differences identify the retained-input term. The unit complex phase in the printed I numerator does not change its absolute p-th power; the exact operator contour normalization is kept."
+          ],
+          "qualification": "The two-term split and implicit inequality match. The explicit positive factor is 2^(p-1); no claim that the printed implicit constant is incorrect is needed."
+        },
+        {
+          "ordered_group": "S12-047",
+          "source_lines": [
+            5554,
+            5564
+          ],
+          "requirement": "Distinguished-column norm bound with vanishing output tails.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_column_head_tail",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_movingColumn_bound",
+            "NLS.Coeff.norm_le_reciprocal_column_head_tail"
+          ],
+          "reviewed_claims": [
+            "One B_c in lp bounds every column. For n nonzero and 2*K<=|n|, norm(K-star(single_n 1)) <= (2/|n|)*norm(B_c)+norm(B_c-truncate_K(B_c)), where truncate_K keeps output indices in [-K,K].",
+            "For arbitrary h, the same right-hand side times norm(h) bounds K-star(single_n h_n), with no extra constant. Output-coordinate deletion is a contraction, so its p-th power bounds term II.",
+            "First choose K to make the actual lp output tail small, then increase |n| to control the finite head. The head and tail factors are 2 and 1."
+          ],
+          "qualification": "Use the column lp norm and output-index tail in place of the printed supremum and moving-difference cutoff. This positive replacement preserves the vanishing of term II for the original placed roots, including complex roots at a real-type source."
+        },
+        {
+          "ordered_group": "S12-048",
+          "source_lines": [
+            5566,
+            5585
+          ],
+          "requirement": "Double inverse-spacing contour bound and retained-operator tail estimate.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_contour",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_bound",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_majorant",
+            "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference",
+            "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_entry",
+            "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_diagonal",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRetainedOffDiagonalDifference_head_tail",
+            "NLS.Coeff.norm_operator_le_doubleReciprocal_head_tail"
+          ],
+          "reviewed_claims": [
+            "Every retained off-diagonal difference is the original (i/pi)-normalized contour of (indexRatio-1)*(sigma_m-z)*q_m(z)/(sigma_k-z), divided by the standard root. The literal auxiliary product is -q_m, retaining the source normalization.",
+            "If |indexRatio-1|<=K0/|n-m| and |q_m|<=L, the entry norm is at most (2*c*K0*L)*(|a_m|+|M_m|+|G_m|)/(|n-m|*|k-m|). The factor 2 comes from the normalized gap period, also for collapsed gaps and complex analytic numerators.",
+            "The original uniform ratio bound and local quotient-error bound supply one actual B_i in lp before n,m,k. The retained error operator deletes input and output n, has zero diagonal and has precisely the actual retained entry differences.",
+            "Absolute Holder bounds give norm(T-i)<=Cq*((2/|n|)*norm(B_i)+norm(B_i-truncate_K(B_i))) whenever n is nonzero and 2*K<=|n|. The fixed lp majorant and its output tail make this norm tend to zero."
+          ],
+          "qualification": "The joint inverse-spacing conclusion is retained with explicit constants. The row summation uses an absolute Holder estimate instead of the printed signed-sum factorization. The original contour, finite-p spaces and placement domain are preserved without a new refutation."
+        },
+        {
+          "ordered_group": "S12-049",
+          "source_lines": [
+            5587,
+            5592
+          ],
+          "requirement": "Operator-norm limit, precise joint local uniformity, continuity and real bounded inverse.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_head_tail",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_tendsto",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_local_Lipschitz",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_local_Lipschitz",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_continuousOn",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendstoLocallyUniformlyOn",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoLocallyUniformlyOn",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoUniformlyOn_compact",
+            "NLS.ZakharovShabat.sourceLemma12_10_normLimit",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_realKernel_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_bijective",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_bijective",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitRealEquiv"
+          ],
+          "reviewed_claims": [
+            "The three contributions give norm(K-star-K-n) <= Cq*(|B_r_n|+(2/|n|)*norm(B_i)+tail_K(B_i))+(2/|n|)*norm(B_c)+tail_K(B_c), with all three lp majorants chosen before n and K. Together with the diagonal limit this gives Q-n -> Q-star in operator norm at every original real placed-root input, as n escapes in either direction.",
+            "One joint analytic chart bound controls every Q-n by the root/source distance; finite head charts and a common escaping-tail chart give a single local Lipschitz constant. Passing the estimate to the coordinatewise limit gives a joint local Lipschitz bound and continuity of Q-star on the original domain.",
+            "Local uniformity has explicit tolerance-dependent quantifiers: for each point and epsilon>0 choose a neighborhood and an index threshold so the error is below epsilon throughout that neighborhood for later indices. One can take radius min(r,r-prime,epsilon/(3*(L+L-prime+1))). This implies uniform operator-norm convergence on every compact subset of the joint original real Omega.",
+            "The original limit action equals the full entire-product variation contour. A real kernel direction gives a zero in every real spectral gap, including collapsed gaps. Interpolation by the corresponding simple-zero product forces the variation to vanish; original-disk root separation then recovers the zero direction. Real entries give complex injectivity, and the compact correction to 2*Id gives bijectivity.",
+            "The real restriction intertwines with complex inclusion. Conjugation and uniqueness make the complex preimage of real data real, proving bijectivity on RealCoeff p. The Banach inverse theorem gives a continuous real linear equivalence whose forward map is the actual real Q-star."
+          ],
+          "qualification": "The pointwise norm limit, continuity and bounded invertibility conclusions are retained on the full original real root-placement domain, without requiring roots to lie in their gaps. Local uniformity is the tolerance-dependent statement and uniformity on compact subsets; uniform convergence on one fixed ambient open neighborhood is not asserted. Existing historical qualifications are preserved."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePsiOriginalNormLimit.lean": "58d9f90b32fbcd6e554e26095a41fb613399254503e810bf24ab199409b69a4e",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianDiagonal.lean": "dc10cbc948d07ba0d106931e331fc3015efad2a615731631c244093070aeedd0",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianOffDiagonal.lean": "9a58583643256cdd690619777d82a6803d8d55feaaa086fa1dd690ac0c752440",
+        "NLS/ZakharovShabat/SourcePsiJacobianDiagonalNormLimit.lean": "9031fb2cd80a2c9a2dd973f79d7b6e17c0e034d67968c3fdd32e2e2ac504dbe6",
+        "NLS/ZakharovShabat/SourcePsiJacobianEscapingDiagonalTail.lean": "fb359fe3e1ff31a3d2bb9110b0a55f6fac016735695a1708debe4fdacba8f043",
+        "NLS/ZakharovShabat/SourcePsiJacobianColumnNormLimit.lean": "26ff43ef7a0f35f6a251ea583bd3b60fb7e9d0687f9943f419c3b77ca0b8bbee",
+        "NLS/SequenceSpaces/OperatorDiagonal.lean": "1b19ef7ab9026b87b275660915a6c3fee001e2996fec403191f69c26ecbde682",
+        "NLS/SequenceSpaces/OperatorDiagonalConvergence.lean": "ed6cda0c5c8dd5c899f30169f26fc7f99c1fb6d05887a1b692e341e4f7ee40be",
+        "NLS/SequenceSpaces/ReciprocalMatrixConvergence.lean": "bb7650e98377db183c77d20549c1fca6e11d0da2b2c0f0f189c8bd34b8e55b41",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianComparison.lean": "63c24dfc457abd014745106f7c20a32b6c31428ccc3aac1cdc99ba1e6eeec7cd",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitEntries.lean": "0c41a5f38a2eddf362fe956d742167114b2c7792173774023328ae56abd91e89",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitDiagonal.lean": "01594fcf62894dc68a9a5ed036d39ee3560a967327bad130a5e8e111b338c7d1",
+        "NLS/ZakharovShabat/SourcePsiOriginalIndexRatio.lean": "7b8e3f083bf1b09e8c7a7bbd8eec701a397806a505a73bb333011631b3339318",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianScalarLimit.lean": "bb82b56800f8240df17126a1afe43196bafa0f75a1779aabb9c72db75f02987a",
+        "NLS/SequenceSpaces/FiniteOutputReciprocalTail.lean": "575faa37a899df7672ab84deec8066eb21a63704e9e5c7b0c42ca48752e40436",
+        "NLS/SequenceSpaces/FullReciprocalMatrixTail.lean": "2fa11b43b0ab5a181f6dfaa17bc9a9aea9c50478bd5d02ed9249ef3b9ac5e484",
+        "NLS/SequenceSpaces/FiniteBlockOperatorConvergence.lean": "63307a45947ef00b74d904dd797763a4bc6b7e895ef86cf66167edff0658823e",
+        "NLS/SequenceSpaces/CompactPuncturedKernel.lean": "e344d40f1aa94b39e037d059614b8a683332ee99a17f36994cecfe7dfc56c911",
+        "NLS/SequenceSpaces/CompactRowMajorant.lean": "7b3536548b151d52b4a9efb06152fe04b22793465c01f6772e9062c765d369e5",
+        "NLS/ZakharovShabat/SourcePsiOriginalNormUniformity.lean": "b3abafbb56aff83e17097a4ca5765d3a5e0c4367588826fc47685ed91452e654",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianContour.lean": "cd285edd56ae5f95af1fd32529977125e7ae409d5fabeeafcc52bf8eaa03b898",
+        "NLS/ZakharovShabat/SourcePsiOriginalRatioEstimate.lean": "91e84c10e63f11d0e68a30c72fd50719f6ae2e36aa7246e69030d43bc97f7e91",
+        "NLS/ZakharovShabat/SourcePsiOriginalZetaRegular.lean": "9d0728dde29800e6b4e83a9f5f4c8681e37be9d7ad462bfb142c9e1c814ce096",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianNonzero.lean": "05b47e86192083d6035a75646ba2edf4d095935fde75719b7340166d78eb50e2",
+        "NLS/ZakharovShabat/SourceLemma12_3.lean": "6ba37076ffe3d9d06bfdf91b4ed26a9a4d4dfb7612dd63c6e4ac11ba31c3adb7",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitContinuity.lean": "96bff49d60f0b2a3d098a1e0da7b726cb1d9a23698506bcb7942163efc049054",
+        "NLS/ZakharovShabat/SourcePsiOriginalInverseLimit.lean": "5edca29fb802cf9fc33fe6986765b9e1f43ea8e616736098d1dc1a2a57752987",
+        "NLS/ZakharovShabat/SourcePsiAllIndexJacobianCharts.lean": "a3f234ebe9a36bb8fdd577501503dccc591956c1720199976e54aad392506703",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitInjectivity.lean": "073b6c8ef759d8b8b8ae2bc7e12f94519199711e3e128a1da04c077820762f92",
+        "NLS/ZakharovShabat/SourceStandardRootOriginalLocalPeriod.lean": "fb988f3638599d55ea0efe3d0656f09c6326d106bc1ab5caf877369bbbbc6d97",
+        "NLS/ZakharovShabat/SourcePsiGapFactorization.lean": "e3d60fbbde3bc8495c9849a52baebd2f0c221c6899924ccb805d8853a81abfd6",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientError.lean": "7526ac752c17288c3ab6ed3bd499f82a7f1aa2536eb4b5ab4e89702c3fc00ccd",
+        "NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean": "1024c5d877618f18c7205c9a677a4b97c387490829298991ddbc6e046e809d49",
+        "NLS/ZakharovShabat/SourcePsiOriginalDiagonalDifference.lean": "2f1a699935ca35c8f314c5f9409fd51af354e9831c5608a817b2a933cea21f71",
+        "NLS/ZakharovShabat/SourcePsiOriginalDiagonalConvergence.lean": "821949b2e3c62cb2aaf286aabcaa92e160b8aec88f44350f40883fba1d55b5bd",
+        "NLS/ZakharovShabat/SourcePsiQuotientUniformRootVariation.lean": "1ec0537bc9d317172a883143ec4fa43977067e0dc236acb58290c4643e13d4a4",
+        "NLS/ZakharovShabat/SourcePsiJacobianUniformDiagonalTail.lean": "25ae4de6175b44d162d1c0f5b4aee1968c2cf98428c1fa463fce386a054ea526",
+        "NLS/ZakharovShabat/SourcePsiGapProductCompact.lean": "3785b9107feedfe8b1463f20b253ace7c5e24a831946543e644e7956dca87534",
+        "NLS/ZakharovShabat/SourcePsiJacobianCollapsedDiagonal.lean": "7f3f0590eaa54a99af728fb103892740216b5c0f68f3636d24f137f64afa36b3",
+        "NLS/ZakharovShabat/SourcePsiJacobianDiagonalAsymptotic.lean": "29167f75ca66a17e3d73447900c012ee70a3496344a7bf62c8804b70980120bc",
+        "NLS/ZakharovShabat/SourcePsiJacobianDiagonalTail.lean": "62692748ee3ff8832c70211380ead9a34f48c1c10b3291593572d25a1a1d0f5d",
+        "NLS/ZakharovShabat/SourcePsiGlobalHeadDiscBound.lean": "e9cd808f96878b1328a383c296492aa9ce50a8fcb71bfac930710d1c2e38d0bf",
+        "NLS/ZakharovShabat/SourcePsiJacobianDiagonalMeanValue.lean": "32c233ca9d025ebb35e431297238d471db916110377cca4ad0138e917e018a14",
+        "NLS/ZakharovShabat/SourcePsiNearFreeCollapsedGap.lean": "ada9d7c3b71b52bcef087ca6c78583775d90878c34c73c805bbfff3a3ef44e78",
+        "NLS/ZakharovShabat/SourcePsiGlobalScalarAnalytic.lean": "ef2f561c9c782503c82d1a73707b41ee7136cc6f5c9b775bf56b1e38123d14c4",
+        "NLS/ZakharovShabat/SourcePsiQuotientUniformHeadDisc.lean": "6f3f9c607f3ed1ea4ffac0409ed3a5f46fa9acfbbd5804cf2dce822bd2ea9394",
+        "NLS/ZakharovShabat/SourcePsiDiagonalVariationNoAvoid.lean": "4c943016a01edf1783df941d214b222b7d50091f564b59c4c7af12f405187a22",
+        "NLS/ZakharovShabat/SourcePsiJacobianSourceVariation.lean": "1d47014c700d1d148906733e41e3bd50e871fb1a710b14422ec1bc8f5d55bed0",
+        "NLS/ZakharovShabat/SourcePsiFullProductInterpolation.lean": "23ebe4657d05d240ac6627897cf27db27e7ce1189193415b5959efe33bf2781d",
+        "NLS/ZakharovShabat/SourcePsiFullProductGapZeros.lean": "f32bc0f16372ca9f764ff57a0e124251c3ef3173046172545902015d6fdce13a",
+        "NLS/SequenceSpaces/NormPower.lean": "c76480e3a9c5ef28d5ecee0af276b95aa0dd2fe52d7a10d9309b93771706bda4",
+        "NLS/SequenceSpaces/DoubleReciprocalHeadTail.lean": "0785a8c2cf908d90c90b6e1d51f2ccb864f473fa812f63efb5b23f2c2c8dd8df",
+        "NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalSplit.lean": "a55bea63c5398f4e41c95900745ebb32746b2c96ef4776f014841188c761054b",
+        "NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalDifference.lean": "9d3e003e539ddabfd81b0b5ecc7ca01cd928eb4b6a096b5f3ce13096c4bad244",
+        "NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalEstimates.lean": "fc1d3897ce1f919f24d245c3dad9181137bcced97f5de1508ec4445defc3b4f6",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitRealInverse.lean": "48d711cd85fd81b8a39e229c22a4a33fd88960e7761527dab2d0dc15bb385b4b",
+        "NLS/ZakharovShabat/SourcePsiFullProductVariation.lean": "62dd3dd1af19dea484d9d62aabd0fbe62daa4cda5b51ca8b8ca38065fde84652",
+        "NLS/ZakharovShabat/SourcePsiFullProductResolventExterior.lean": "633fcdceb21ab03d34a573953b14effe0a0961231fe61d93bca2536de7193834",
+        "NLS/ZakharovShabat/SourcePsiLimitOperatorContour.lean": "88ad99f78a5781207fea38ad3cbd72f14c54016d5056c3ab5599720cba096e98",
+        "NLS/ZakharovShabat/SourceEntireGapContourZeros.lean": "ea0c422b54406cc87ae68a71209f86eea22ec0fe23618237a79df745df7d0d95",
+        "NLS/ZakharovShabat/SourcePsiFullProductContourVariation.lean": "96ad976d02510c96fe95724c29d58715a5256049a64c3c467517aa8aae863741",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitReal.lean": "d73515650dc01eadb6f32694dbf765d76008fa56fa93224e85b9a6a969d7ec73",
+        "NLS/SequenceSpaces/RealOperator.lean": "e86874c42d92488c7b8485f3a9c738e09b02bb236f6a3eaeb9a08ea7f42d992d",
+        "NLS/SequenceSpaces/RealCoeff.lean": "c8eed7f2f37d4ab7934024af98b627fb18d140010e03500fcaec98accde48dec",
+        "NLS/ZakharovShabat/SourceEquation2_29.lean": "3b4b4e80c4f30200948422f61c5b34c47eedf91b3d2ba9231705092d4ac5f344",
+        "NLS/ZakharovShabat/SourcePsiCommonJacobianCharts.lean": "deb2a498b10c569ab8e6ed080300bbcd0da948dc34c03cf69ea662961c3e7040",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitOperator.lean": "5efd4619ed4a26c5e75e09b1d769f053cb296e1c5203c6cab4fe5ad05c7f5ad2",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitCanonical.lean": "4327ece4fa1c9b84c2bd6986b0df1880c735c5c97c14e53cbe8fc0b473c1d318",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean": "5c15019528fe196d6f2095e1677255f4a11d33ba37fa72d403e89ff590258f39",
+        "NLS/SequenceSpaces/DeletedOperatorExtension.lean": "9aed48b9e4d55721e89086fe05b0d614be1b655e9a9fafce5bc60be10981c462",
+        "NLS/SequenceSpaces/OperatorBasisExt.lean": "3d6495e89ef8dbd44373f9e70423867a3d3600889061679c0e53fa4fe9ea32cc",
+        "NLS/ZakharovShabat/SingleSpectralProductRatioExterior.lean": "f33956302e20772c3e6d45f802e4c525032d314afcdc7122f83b89def719bd3e",
+        "NLS/ZakharovShabat/SourcePsiCandidateVariationRealAxis.lean": "b7501feb36aec9053778cc4942f11cef533da36b1fbb02aea171fa968df631bb",
+        "NLS/ZakharovShabat/SourcePsiRootResolventExterior.lean": "ad9c6c2c6481bbd5cd78eaf78aa5d5569084294f82494ae7c1c7cd69dc01f18d",
+        "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean": "dba36d669d9576dab485505fb7dae12e270f0bcb120f4984cec6f908d4aaf6c4",
+        "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean": "1fd983178d0a9e8478e854bf4c269f7e6b09e1656ac30883236a8b8d16f1aff4",
+        "NLS/ZakharovShabat/SourcePsiSelectedKernelGapZeroSequence.lean": "8f80e12047339f0942358ae335e9d3caa85ff84673071b7f9e8f58ec11a2bf4d"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section12ComplexExtensionSourceComparison-2026-10-30.json",
+          "sha256": "5cb34575128c0794c405083550b5c7d5159079ce3a2f322c9fb895e759f6ec21",
+          "modules": [
+            "NLS/ZakharovShabat/SourceEquation2_29.lean",
+            "NLS/ZakharovShabat/SourcePsiCommonJacobianCharts.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalLimitOperator.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalLimitCanonical.lean",
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean",
+            "NLS/SequenceSpaces/DeletedOperatorExtension.lean",
+            "NLS/SequenceSpaces/OperatorBasisExt.lean"
+          ]
+        },
+        {
+          "file": "work/Section12InjectivitySourceComparison-2026-10-30.json",
+          "sha256": "9bfdd7a1ac0aa395cc3807a0da5082e35253da4a7e5e30a6a70977451565155e",
+          "modules": [
+            "NLS/ZakharovShabat/SingleSpectralProductRatioExterior.lean",
+            "NLS/ZakharovShabat/SourcePsiCandidateVariationRealAxis.lean",
+            "NLS/ZakharovShabat/SourcePsiRootResolventExterior.lean",
+            "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean",
+            "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean"
+          ]
+        },
+        {
+          "file": "work/Section12GlobalSolutionSourceComparison-2026-10-30.json",
+          "sha256": "2b2acb9a86c30a51a0f5af514c31d5d464281b48cb9fa4f1a3972131f9ac07cb",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiSelectedKernelGapZeroSequence.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.norm_add_rpow_le_two_mul",
+        "NLS.Coeff.norm_le_reciprocal_column_head_tail",
+        "NLS.Coeff.norm_operator_le_doubleReciprocal_head_tail",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitRealEquiv",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_local_Lipschitz",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_head_tail",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_tendsto",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendstoLocallyUniformlyOn",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_bound",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_contour",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_majorant",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_bijective",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_continuousOn",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_local_Lipschitz",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_column_head_tail",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_movingColumn_bound",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_row_bound",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_realKernel_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_bijective",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoLocallyUniformlyOn",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoUniformlyOn_compact",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRetainedOffDiagonalDifference_head_tail",
+        "NLS.ZakharovShabat.sourceLemma12_10_normLimit",
+        "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference",
+        "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_diagonal",
+        "NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_entry",
+        "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonalDifference_norm_rpow",
+        "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_apply_same",
+        "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_rpow_le",
+        "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_split",
+        "NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_single_same"
+      ],
+      "declaration_inventory_count": 44554,
+      "qualification": "The first forty-nine of 67 ordered Section 12 groups are compared: thirty-nine matched, ten with estimate, scope or gap-reference corrections, and 18 pending. The off-diagonal part of Lemma 12.10 now has exact norm and retained-row splits, the explicit power factor 2^(p-1), normalized contour bounds with factor 2*c*K0*L, and positive absolute Holder and output-tail estimates. These retain the actual operator-norm limit on the original real placed-root domain. Joint local uniformity uses tolerance-dependent neighborhoods and implies uniform convergence on compact subsets; continuity and a bounded inverse on real lp are retained. The common complex extension, original placement, exact contour normalization and diagonal value 2 remain. Earlier corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Compact gap-box inverse bounds, the joint-root-variable estimate, later operator-limit quantifier and sine-product sign qualifications remain in subsequent groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          68,
+          69
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-069.png": "ac20f3efba6f4ebf4d2673b394c88ba5c6d265e41bd2757e829fe7e434647851",
+          "work/tmp/pdfs/section12-next-068.png": "b1da7bd174e061b8f0c34e4643592d16a4ca68bcf2debc7979a863ba12cf3464"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4824,
+        "sha256": "8fe8b29eba5ed2bf73d362c9a26063a1eac0a6ccc19f4a2fc43d393e21fb2c1f"
+      },
+      "full_gate": {
+        "session": 42351,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12OffDiagonalEstimatesFullCheck-1.log",
+        "log_sha256": "4b7de64bbc187dfee9c29b8441f2a009b875193ca323205814e445f4483e8d7b"
+      },
+      "ordered_inventory_sha256": "07312b6074c2e44471045e9681d18d84b69f995a70c8811fc8a754158e0459da",
+      "source_record_sha256": "21ab66dd496eb929fdd15af0a5a252093fde29d33fa17741e839c87c8743f922"
     }
   }
 }

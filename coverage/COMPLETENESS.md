@@ -179,13 +179,14 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Thirty-seven match and six have estimate, scope or gap-reference corrections.
-The diagonal proof of Lemma 12.10 now includes the exact norm split, separate
-contour bounds with factor 2*c*L and a corrected output-index tail estimate.
-The actual diagonal operators converge in norm at each original real
-placed-root input. The remaining 24 groups start with the off-diagonal
-estimates and precise local-uniformity quantifiers; earlier corrections
-retain their scope.
+Thirty-nine match and ten have estimate, scope or gap-reference corrections.
+The off-diagonal proof of Lemma 12.10 now includes exact decompositions,
+explicit power and contour constants, and positive absolute Holder and
+output-tail bounds. The operator-norm limit, tolerance-dependent joint
+local uniformity, compact-subset uniformity, continuity and bounded real
+inverse are compared on the original domain. The remaining 18 groups
+start with compact gap-box inverse bounds and joint root/source variation;
+earlier corrections retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

@@ -1,5 +1,50 @@
 # Source discrepancies
 
+## Lemma 12.10 proof, pp.68–69: off-diagonal constants and tails
+
+Write Cq for the lq norm of the punctured reciprocal integer lattice,
+where q is conjugate to p. Write truncate_K for output cutoff to [-K,K],
+and tail_K(B)=norm(B-truncate_K(B)). For every original placed-root input
+at a real-type source, choose fixed B_r, B_i and B_c in lp before n and K.
+For n nonzero and 2*K<=abs(n), the actual off-diagonal operators satisfy
+
+    norm(Kstar-Kn) <= Cq*(abs(B_r_n) + (2/abs(n))*norm(B_i) + tail_K(B_i))
+                     + (2/abs(n))*norm(B_c) + tail_K(B_c).
+
+The omitted-row bound is abs(B_r_n)*Cq*norm(h). The retained-input
+operator has bound Cq*((2/abs(n))*norm(B_i)+tail_K(B_i)). The omitted-input
+column has bound ((2/abs(n))*norm(B_c)+tail_K(B_c))*norm(h).
+These use absolute Holder estimates and the actual column lp norm.
+They replace the signed-sum factorizations, column supremum and
+moving-difference tail cutoff with positive estimates whose tails vanish.
+
+The retained-output p-th power split has explicit factor 2^(p-1),
+making the printed implicit constant explicit. If the multiplier error
+is bounded by K0/abs(n-m) and the analytic quotient by L, the actual
+retained-entry contour bound is
+
+    abs(Jn_mk-Qstar_mk) <= (2*c*K0*L)*(abs(a_m)+abs(M_m)+abs(G_m))
+                          / (abs(n-m)*abs(k-m)).
+
+The contour normalization, diagonal constant 2 and norm-limit conclusion
+are retained. The power estimate and the head/tail constants are positive
+bounds; no optimality claim or new refutation is added.
+
+For the joint real root/source domain, local uniformity means: for each
+point and each positive tolerance, choose a neighborhood and an index
+threshold that give that error bound throughout the neighborhood.
+The neighborhood may depend on the tolerance. This yields uniform
+operator-norm convergence on every compact subset. Continuity of the
+limit and its bounded inverse on real lp hold throughout the original
+real placement domain. A fixed ambient open neighborhood of uniform
+convergence is not claimed.
+
+See the [actual error estimate](NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalEstimates.lean),
+[contour constants](NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalDifference.lean),
+[local uniformity](NLS/ZakharovShabat/SourcePsiOriginalNormUniformity.lean),
+[bounded real inverse](NLS/ZakharovShabat/SourcePsiOriginalLimitRealInverse.lean)
+and [ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Lemma 12.10 proof, p.68: diagonal output-index tail
 
 Write M for the midpoint displacement, G for the gap sequence, and

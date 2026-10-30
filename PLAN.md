@@ -1,6 +1,37 @@
 # Implementation plan
 
-## Current milestone: diagonal operator-norm estimates
+## Current milestone: off-diagonal norm estimates and real inverse
+
+The off-diagonal part of Lemma 12.10 now has exact norm and retained-row
+splits, with the explicit power-triangle factor 2^(p-1). Its actual contour
+errors retain both inverse spacings and the positive factor 2*c*K0*L.
+
+Absolute Holder estimates and output-index lp tails control the omitted
+row, omitted-input column and retained error operator. The finite-head
+and tail factors are 2 and 1. Together with the diagonal result these
+estimates retain operator-norm convergence on the original real domain.
+
+Joint local uniformity has tolerance-dependent neighborhoods and gives
+uniform convergence on compact subsets. The limit is continuous and
+has a bounded inverse on real lp at each original real placed-root input.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+thirty-nine matched groups, ten with estimate, scope or gap-reference
+corrections and 18 pending. No new refutations were added.
+
+Full validation passed: 8,547 build jobs, 7,622 public examples and
+44,554 transitively audited NLS declarations, with 21 inherited warnings.
+The nineteen new proofs, one operator definition and four focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next are the compact gap-box inverse bounds and joint root/source
+variation estimates. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: diagonal operator-norm estimates
 
 The diagonal part of Lemma 12.10 now has an exact p-th power norm split
 and a moving diagonal bound with constant one. Its two normalized contour

@@ -72165,3 +72165,88 @@ example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
     hb (-10) (by decide) 3 (by decide)
 
 end Section12DiagonalEstimatesExamples
+
+section Section12OffDiagonalEstimatesExamples
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 2) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The fourth-power two-term estimate has explicit factor eight.
+example (x y : Coeff 4) : ‖x+y‖^4 ≤ 8*(‖x‖^4+‖y‖^4) := by
+  simpa only [show (4:ℝ≥0∞).toReal = 4 by norm_num,
+    show (4:ℝ)-1 = 3 by norm_num,Real.rpow_ofNat,show (2:ℝ)^3 = 8 by norm_num] using
+    Coeff.norm_add_rpow_le_two_mul (p := 4) (by norm_num) x y
+
+-- The two index spacings are retained even when the omitted index is negative.
+example {W V : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (φ : CoeffPair 4) (hφW : φ ∈ W) (hφV : φ ∈ V)
+    (hφ : IsRealType (CoeffPair.toMax 4 φ))
+    (a : Coeff 4) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (K L : ℝ) (hK : 0 ≤ K)
+    (hratio : ∀ z ∈ D 0, ‖sourcePsiOriginalIndexRatio (-4) 0 a z-1‖ ≤ K/4)
+    (hq : ∀ z ∈ D 0, ‖sourceSingleRootQuotientJointProduct (by norm_num) (by norm_num) 0 (z,(a,φ))‖ ≤ L) :
+    ‖sourcePsiOriginalJacobianEntry (by norm_num) (by norm_num) (-4) 0 2 a φ-
+      (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) a φ (lp.single 4 2 1)) 0‖ ≤
+      (c*K*L/4)*(‖a 0‖+‖sourcePeriodicMidpointDisplacement (by norm_num) (by norm_num) φ 0‖+
+        ‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) φ 0‖) := by
+  have h := H.originalJacobian_offDiagonalDifference_bound hD φ hφW hφV hφ a ha
+    (-4) 0 2 (by decide) (by decide) (by decide) K L hK
+    (by simpa only [show ‖(((-4:ℤ)-0:ℤ):ℂ)‖ = 4 by norm_num] using hratio) hq
+  rw [show ‖(((-4:ℤ)-0:ℤ):ℂ)‖ = 4 by norm_num,
+    show ‖(((2:ℤ)-0:ℤ):ℂ)‖ = 2 by norm_num] at h
+  convert h using 1
+  ring
+
+-- On l2 the actual lattice norm is at most two; n=-12 and K=4 give head factor 1/6.
+example {W V : Set (CoeffPair 2)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W) (hW : IsOpen W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c) (hV : IsOpen V)
+    (φ : CoeffPair 2) (hφW : φ ∈ W) (hφV : φ ∈ V)
+    (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (a : Coeff 2) (ha : a ∈ sourcePsiOriginalRootPlacement D) :
+    ∃ Br Bi Bc : Coeff 2,
+      ‖Coeff.operatorOffDiagonal (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) a φ)-
+        Coeff.operatorOffDiagonal (sourcePsiOriginalFullRootJacobian (by norm_num) (by norm_num) (-12) a φ)‖ ≤
+        2*(‖Br (-12)‖+(1/6)*‖Bi‖+‖Bi-Coeff.truncate (Finset.Icc (-4) 4) Bi‖)+
+        (1/6)*‖Bc‖+‖Bc-Coeff.truncate (Finset.Icc (-4) 4) Bc‖ := by
+  obtain ⟨Br,Bi,Bc,hb⟩ := H.originalFullRootJacobian_offDiagonal_head_tail (q := 2) hW hD hV φ hφW hφV hφ a ha
+  refine ⟨Br,Bi,Bc,?_⟩
+  have h := hb (-12) (by decide) 4 (by decide)
+  simp only [show Int.natAbs (-12) = 12 by decide,Nat.cast_ofNat,
+    show (2:ℝ)/12 = 1/6 by norm_num] at h
+  have hc := Coeff.norm_puncturedLattice_two_le
+  calc
+    _ ≤ (‖Br (-12)‖+(1/6)*‖Bi‖+‖Bi-Coeff.truncate (Finset.Icc (-4) 4) Bi‖)*
+          ‖Coeff.puncturedLattice 2 (by norm_num)‖+
+          (1/6)*‖Bc‖+‖Bc-Coeff.truncate (Finset.Icc (-4) 4) Bc‖ := h
+    _ ≤ (‖Br (-12)‖+(1/6)*‖Bi‖+‖Bi-Coeff.truncate (Finset.Icc (-4) 4) Bi‖)*2+
+          (1/6)*‖Bc‖+‖Bc-Coeff.truncate (Finset.Icc (-4) 4) Bc‖ := by gcongr
+    _ = _ := by ring
+
+-- At a nonintegral exponent the inverse acts on real sequences and has both inverse identities.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_4Data ENNReal.ofReal_ne_top (by norm_num) W) (hW : IsOpen W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V D c) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (hφW : (φ:CoeffPair (ENNReal.ofReal (3/2))) ∈ W)
+    (hφV : (φ:CoeffPair (ENNReal.ofReal (3/2))) ∈ V)
+    (a : RealCoeff (ENNReal.ofReal (3/2)))
+    (ha : RealCoeff.complexCLM (ENNReal.ofReal (3/2)) a ∈ sourcePsiOriginalRootPlacement D) :
+    ∃ R : RealCoeff (ENNReal.ofReal (3/2)) →L[ℝ] RealCoeff (ENNReal.ofReal (3/2)),
+      (∀ h, R (sourcePsiOriginalLimitRealOperator ENNReal.ofReal_ne_top (by norm_num) a φ h) = h ∧
+        sourcePsiOriginalLimitRealOperator ENNReal.ofReal_ne_top (by norm_num) a φ (R h) = h) ∧
+      ∀ h, ‖R h‖ ≤ ‖R‖*‖h‖ := by
+  obtain ⟨e,he⟩ := H.exists_originalLimitRealEquiv hW hD hV φ hφW hφV a ha
+  refine ⟨e.symm.toContinuousLinearMap,?_,fun h => e.symm.toContinuousLinearMap.le_opNorm h⟩
+  intro h
+  rw [← he]
+  simp
+
+end Section12OffDiagonalEstimatesExamples

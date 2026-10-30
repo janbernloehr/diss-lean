@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first forty-three of 67 ordered Section 12 groups are compared: thirty-seven matched, six with estimate, scope or gap-reference corrections, and 24 pending. The diagonal part of Lemma 12.10 now has an exact norm split, separate contour errors with explicit factor 2*c*L, and a positive output-index tail estimate with head/tail constants 2 and 1. The diagonal operators converge in norm at every original real placed-root input, in both index directions. The common complex extension, original placement, exact contour normalization and diagonal value 2 are retained. Earlier corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Detailed off-diagonal estimates, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain in subsequent groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first forty-nine of 67 ordered Section 12 groups are compared: thirty-nine matched, ten with estimate, scope or gap-reference corrections, and 18 pending. The off-diagonal part of Lemma 12.10 now has exact norm and retained-row splits, the explicit power factor 2^(p-1), normalized contour bounds with factor 2*c*K0*L, and positive absolute Holder and output-tail estimates. These retain the actual operator-norm limit on the original real placed-root domain. Joint local uniformity uses tolerance-dependent neighborhoods and implies uniform convergence on compact subsets; continuity and a bounded inverse on real lp are retained. The common complex extension, original placement, exact contour normalization and diagonal value 2 remain. Earlier corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Compact gap-box inverse bounds, the joint-root-variable estimate, later operator-limit quantifier and sine-product sign qualifications remain in subsequent groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-forty-three groups have the semantic comparisons below. Earlier named-theorem
+forty-nine groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -56,12 +56,12 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-041 | 68 | 5456–5472 | Diagonal difference formula and the distinguished moving diagonal term. | matched |
 | S12-042 | 68 | 5475–5483 | Two contour terms from the multiplier difference and their local bounds. | matched |
 | S12-043 | 68 | 5484–5504 | Near/far diagonal operator-norm convergence estimate. | corrected |
-| S12-044 | 68 | 5504–5513 | Off-diagonal difference split into distinguished row and remaining rows. | pending |
-| S12-045 | 69 | 5524–5532 | Distinguished-row Holder bound. | pending |
-| S12-046 | 69 | 5534–5551 | Remaining-row split into terms I and II. | pending |
-| S12-047 | 69 | 5554–5564 | Term II: distinguished-column near/far estimate. | pending |
-| S12-048 | 69 | 5566–5585 | Term I: joint inverse-spacing bound and lp tail estimate. | pending |
-| S12-049 | 69 | 5587–5592 | Operator-norm convergence, precise local uniformity, continuity and invertibility of Q-star. | pending |
+| S12-044 | 68 | 5504–5513 | Off-diagonal difference split into distinguished row and remaining rows. | matched |
+| S12-045 | 69 | 5524–5532 | Distinguished-row Holder bound. | corrected |
+| S12-046 | 69 | 5534–5551 | Remaining-row split into terms I and II. | matched |
+| S12-047 | 69 | 5554–5564 | Term II: distinguished-column near/far estimate. | corrected |
+| S12-048 | 69 | 5566–5585 | Term I: joint inverse-spacing bound and lp tail estimate. | corrected |
+| S12-049 | 69 | 5587–5592 | Operator-norm convergence, precise local uniformity, continuity and invertibility of Q-star. | corrected |
 | S12-050 | 69 | 5593–5601 | Compact gap box and common inverse bounds for Q-star and all deleted Jacobians. | pending |
 | S12-051 | 69 | 5602–5609 | Cauchy derivative estimate near the source times gap box; source and independent-root variables. | pending |
 | S12-052 | 70 | 5619–5633 | Neumann inverse bound, uniformity in the deleted index and common simply connected root-admissible domain. | pending |
@@ -1124,4 +1124,122 @@ The fifteen new proofs and three focused examples add no warnings.
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-044: the off-diagonal operator-norm estimates.
+The next subsection compares the off-diagonal estimates and precise norm-limit conclusions.
+
+## Off-diagonal estimates and norm-limit conclusions in Lemma 12.10
+
+### S12-044: Exact off-diagonal split into the omitted row and retained rows.
+
+- The off-diagonal part K-n of the full original Jacobian has zero omitted output row. For every input h, the p-th power of norm((K-star-K-n)h) is exactly |(K-star h)_n|^p plus the sum over retained output rows.
+- The equality is for the actual bounded original operators and all signed omitted indices; no matrix estimate is substituted for the operator itself.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_apply_same`
+- `NLS.ZakharovShabat.sourcePsiOriginal_offDiagonalDifference_norm_rpow`
+
+The norm decomposition matches exactly. Its algebraic form also holds for complex inputs, with finite 1<p<infinity.
+
+### S12-045: Positive Holder estimate for the distinguished row.
+
+- For conjugate exponents p and q, one B_r in lp is chosen before n and h, and |(K-star h)_n| <= |B_r_n|*Cq*norm(h), where Cq is the norm in lq of the punctured reciprocal integer lattice.
+- The proof bounds the absolute row kernel in lq and applies Holder to its dual pairing with h. Raising to p yields a summable coefficient |B_r_n|^p*Cq^p, which tends to zero as |n| grows.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_row_bound`
+
+Use this positive absolute-kernel estimate in place of the printed factorization through a signed reciprocal sum. The distinguished-row decay conclusion is retained; no refutation is added.
+
+### S12-046: Exact retained-row split and explicit power-triangle constant.
+
+- The omitted input column of K-n also vanishes. Deleting output coordinate n splits (K-star-K-n)h exactly into the error applied to the retained input and the omitted-input column of K-star.
+- The p-th power of the retained-output norm is at most 2^(p-1) times the sum of the p-th powers of these two actual terms. This supplies an explicit constant for the printed implicit inequality I+II.
+- The normalized original contour differences identify the retained-input term. The unit complex phase in the printed I numerator does not change its absolute p-th power; the exact operator contour normalization is kept.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_single_same`
+- `NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_split`
+- `NLS.ZakharovShabat.sourcePsiOriginal_offDiagonal_remainingRows_rpow_le`
+- `NLS.Coeff.norm_add_rpow_le_two_mul`
+
+The two-term split and implicit inequality match. The explicit positive factor is 2^(p-1); no claim that the printed implicit constant is incorrect is needed.
+
+### S12-047: Distinguished-column norm bound with vanishing output tails.
+
+- One B_c in lp bounds every column. For n nonzero and 2*K<=|n|, norm(K-star(single_n 1)) <= (2/|n|)*norm(B_c)+norm(B_c-truncate_K(B_c)), where truncate_K keeps output indices in [-K,K].
+- For arbitrary h, the same right-hand side times norm(h) bounds K-star(single_n h_n), with no extra constant. Output-coordinate deletion is a contraction, so its p-th power bounds term II.
+- First choose K to make the actual lp output tail small, then increase |n| to control the finite head. The head and tail factors are 2 and 1.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_column_head_tail`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_movingColumn_bound`
+- `NLS.Coeff.norm_le_reciprocal_column_head_tail`
+
+Use the column lp norm and output-index tail in place of the printed supremum and moving-difference cutoff. This positive replacement preserves the vanishing of term II for the original placed roots, including complex roots at a real-type source.
+
+### S12-048: Double inverse-spacing contour bound and retained-operator tail estimate.
+
+- Every retained off-diagonal difference is the original (i/pi)-normalized contour of (indexRatio-1)*(sigma_m-z)*q_m(z)/(sigma_k-z), divided by the standard root. The literal auxiliary product is -q_m, retaining the source normalization.
+- If |indexRatio-1|<=K0/|n-m| and |q_m|<=L, the entry norm is at most (2*c*K0*L)*(|a_m|+|M_m|+|G_m|)/(|n-m|*|k-m|). The factor 2 comes from the normalized gap period, also for collapsed gaps and complex analytic numerators.
+- The original uniform ratio bound and local quotient-error bound supply one actual B_i in lp before n,m,k. The retained error operator deletes input and output n, has zero diagonal and has precisely the actual retained entry differences.
+- Absolute Holder bounds give norm(T-i)<=Cq*((2/|n|)*norm(B_i)+norm(B_i-truncate_K(B_i))) whenever n is nonzero and 2*K<=|n|. The fixed lp majorant and its output tail make this norm tend to zero.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_contour`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonalDifference_majorant`
+- `NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference`
+- `NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_entry`
+- `NLS.ZakharovShabat.sourcePsiOriginalRetainedOffDiagonalDifference_diagonal`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRetainedOffDiagonalDifference_head_tail`
+- `NLS.Coeff.norm_operator_le_doubleReciprocal_head_tail`
+
+The joint inverse-spacing conclusion is retained with explicit constants. The row summation uses an absolute Holder estimate instead of the printed signed-sum factorization. The original contour, finite-p spaces and placement domain are preserved without a new refutation.
+
+### S12-049: Operator-norm limit, precise joint local uniformity, continuity and real bounded inverse.
+
+- The three contributions give norm(K-star-K-n) <= Cq*(|B_r_n|+(2/|n|)*norm(B_i)+tail_K(B_i))+(2/|n|)*norm(B_c)+tail_K(B_c), with all three lp majorants chosen before n and K. Together with the diagonal limit this gives Q-n -> Q-star in operator norm at every original real placed-root input, as n escapes in either direction.
+- One joint analytic chart bound controls every Q-n by the root/source distance; finite head charts and a common escaping-tail chart give a single local Lipschitz constant. Passing the estimate to the coordinatewise limit gives a joint local Lipschitz bound and continuity of Q-star on the original domain.
+- Local uniformity has explicit tolerance-dependent quantifiers: for each point and epsilon>0 choose a neighborhood and an index threshold so the error is below epsilon throughout that neighborhood for later indices. One can take radius min(r,r-prime,epsilon/(3*(L+L-prime+1))). This implies uniform operator-norm convergence on every compact subset of the joint original real Omega.
+- The original limit action equals the full entire-product variation contour. A real kernel direction gives a zero in every real spectral gap, including collapsed gaps. Interpolation by the corresponding simple-zero product forces the variation to vanish; original-disk root separation then recovers the zero direction. Real entries give complex injectivity, and the compact correction to 2*Id gives bijectivity.
+- The real restriction intertwines with complex inclusion. Conjugation and uniqueness make the complex preimage of real data real, proving bijectivity on RealCoeff p. The Banach inverse theorem gives a continuous real linear equivalence whose forward map is the actual real Q-star.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_head_tail`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_offDiagonal_tendsto`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_local_Lipschitz`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_local_Lipschitz`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_continuousOn`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendstoLocallyUniformlyOn`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoLocallyUniformlyOn`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalOmega_tendstoUniformlyOn_compact`
+- `NLS.ZakharovShabat.sourceLemma12_10_normLimit`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_realKernel_eq_zero`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_bijective`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_bijective`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitRealEquiv`
+
+The pointwise norm limit, continuity and bounded invertibility conclusions are retained on the full original real root-placement domain, without requiring roots to lie in their gaps. Local uniformity is the tolerance-dependent statement and uniformity on compact subsets; uniform convergence on one fixed ambient open neighborhood is not asserted. Existing historical qualifications are preserved.
+
+The [actual off-diagonal estimates](../NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalEstimates.lean)
+combine the original [contour differences](../NLS/ZakharovShabat/SourcePsiOriginalOffDiagonalDifference.lean)
+with [two reciprocal-spacing bounds](../NLS/SequenceSpaces/DoubleReciprocalHeadTail.lean).
+The [joint local-uniformity theorem](../NLS/ZakharovShabat/SourcePsiOriginalNormUniformity.lean)
+states its quantifiers explicitly; the [real inverse](../NLS/ZakharovShabat/SourcePsiOriginalLimitRealInverse.lean)
+acts on the original real sequence space.
+See the positive replacements in the [source discrepancy notes](../SOURCE_ERRATA.md).
+This comparison records 77 inspected or reused module bodies and 32 resolved declarations.
+
+Full validation passed: 8,547 build jobs, 7,622 public examples and
+44,554 transitively audited NLS declarations, with 21 inherited warnings.
+The nineteen new proofs, one operator definition and four focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-050: compact gap-box inverse bounds, then joint root/source variation.

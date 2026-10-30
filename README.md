@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [diagonal estimates for Lemma 12.10](coverage/SECTION_12_ASSERTIONS.md)
-now have exact norm and contour identities, explicit constants, and a
-positive output-index tail bound proving diagonal operator-norm convergence.
-The ordered ledger has thirty-seven matched groups, six with corrections
-and 24 pending. Next are the off-diagonal estimates; wider qualifications
-remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [off-diagonal estimates for Lemma 12.10](coverage/SECTION_12_ASSERTIONS.md)
+now have exact decompositions, explicit constants and positive Holder and
+output-tail bounds. The precise joint local-uniformity statement and bounded
+real inverse are compared on the original domain. The ordered ledger has
+thirty-nine matched groups, ten with corrections and 18 pending. Next are
+compact gap-box inverse bounds; wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
