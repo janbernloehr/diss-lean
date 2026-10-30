@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T14:02:32.691675+00:00",
-  "base_commit": "3d4ac67feccd9e46b51c2fdd3bdad4d3089976c5",
+  "published_utc": "2026-10-30T14:30:27.817505+00:00",
+  "base_commit": "5c49990d0e7950a1e93efdf77c8fb1278ca3ad8d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 138,
-    "module_hash_checks": 2445,
-    "distinct_modules": 1484
+    "review_records": 139,
+    "module_hash_checks": 2460,
+    "distinct_modules": 1491
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "3d4ac67feccd9e46b51c2fdd3bdad4d3089976c5",
-    "validated_state": "New literal-index complex and real analyticity, exact retained-index power sums, unchanged uniform constants, three public examples and ordered comparison of Lemma 12.4. Full gate 98687 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "5c49990d0e7950a1e93efdf77c8fb1278ca3ad8d",
+    "validated_state": "Four auxiliary product and spacing proofs, two public examples and ordered comparison of equations (2.24)–(2.26). Full gate 84469 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8522,
-    "public_examples": 7598,
-    "transitive_NLS_declarations": 44404,
+    "build_jobs": 8523,
+    "public_examples": 7600,
+    "transitive_NLS_declarations": 44409,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4799,
-      "sha256": "919a6575c0c5bb3a73deb646c809f796a005a849673b3f4cf152c18837bff42b"
+      "files": 4800,
+      "sha256": "6cfb3b11e470326bd979dbf501f3579f3cb8dcea46bb1702bf1941f1c470f5ef"
     },
     "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
@@ -33622,6 +33622,215 @@
       },
       "ordered_inventory_sha256": "32852c7643fbf69562722e46abc7f429260c71e54fa0e9560e5d7daac57e979d",
       "source_record_sha256": "ac7019a9ea0232c300d1464ded62bbe7643cabf92f65044d63e5cb8c901a76f0"
+    },
+    "Section12AuxiliaryProductsSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5c49990d0e7950a1e93efdf77c8fb1278ca3ad8d",
+      "updated_utc": "2026-10-30T14:30:27.817505+00:00",
+      "source_lines": [
+        [
+          5064,
+          5078
+        ],
+        [
+          5080,
+          5087
+        ],
+        [
+          5089,
+          5095
+        ],
+        [
+          5097,
+          5110
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-010",
+          "source_lines": [
+            5064,
+            5078
+          ],
+          "requirement": "Equation (2.24): selected-root factor and literal complementary product.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiZeta",
+            "NLS.ZakharovShabat.sourcePsiZeta_eq_product",
+            "NLS.ZakharovShabat.hasProd_sourcePsiDoubleOmitted_subtype",
+            "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta",
+            "NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotient_error",
+            "NLS.ZakharovShabat.sourcePsiZeta_congr"
+          ],
+          "reviewed_claims": [
+            "Equation (2.24) and its literal complementary product have exactly the printed factors: the selected numerator root divided by w_m, multiplied by i/w_n and the product omitting both n and m. The canonical-root normalization supplies precisely i; no extra pi or two factor remains.",
+            "Individual quotient deviations from one are absolutely summable for arbitrary complex lp root inputs. The unconditional product agrees with the symmetric finite-product limit, so both deleted factors can be extracted without division by a numerator root. The factorization therefore includes coincident and zero numerator factors.",
+            "The equality holds on the whole canonical-root domain and needs no retained-root placement. The adjacent source notation sigma_k in U_k is retained only as an explicit admissibility condition when used, not as a consequence of arbitrary lp membership. The full input domain of Lemma 12.4 is preserved."
+          ],
+          "qualification": "The displayed product identities match with their exact constants. Corrected scope makes the parenthetical root-placement condition explicit: arbitrary lp inputs are allowed, and their retained roots are not assumed to belong to the fixed isolating disks. This clarification uses the proved unrestricted product identity and adds no refutation."
+        },
+        {
+          "ordered_group": "S12-011",
+          "source_lines": [
+            5080,
+            5087
+          ],
+          "requirement": "Equation (2.25): auxiliary all-root product and relation to the deleted complementary product.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product",
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+            "NLS.ZakharovShabat.sourcePsiGapRegularFactor_eq_zeta",
+            "NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient",
+            "NLS.ZakharovShabat.sourcePsiZeta_mul_filled_root"
+          ],
+          "reviewed_claims": [
+            "The single auxiliary product in (2.25) is minus the literal product over k different from m. Its numerator and standard-root normalizations cancel in every finite product, and the convergent limit is the negative analytic single-root quotient.",
+            "The relation between the two auxiliary products retains the exact factor (1/i)/(sigma_n-lambda). The new direct formula is proved wherever this denominator is nonzero, on the natural omitted-gap domain.",
+            "The new cross-multiplied identity (sigma_n-lambda)*zeta_m^n=i*Q_m holds even at sigma_n=lambda. The double-omitted product supplies the regular extension there, and the single quotient vanishes at that root."
+          ],
+          "qualification": "Matched with the natural domain of the printed reciprocal expression. The positive cross-multiplied version also covers its removable numerator-root singularity; it does not assert the reciprocal formula at a zero denominator."
+        },
+        {
+          "ordered_group": "S12-012",
+          "source_lines": [
+            5089,
+            5095
+          ],
+          "requirement": "Root completion and locally uniform full-disk lp estimate for the auxiliary product.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiFillDeletedRoot",
+            "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+            "NLS.ZakharovShabat.sourcePsiFillDeletedRoot_apply_other",
+            "NLS.ZakharovShabat.sourcePsiZeta_fillDeletedRoot",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.local_allDisk_quotient_errorBound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.local_filled_allDisk_quotient_errorBound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.local_replaced_allDisk_quotient_errorBound",
+            "NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_originalTopology",
+            "NLS.Coeff.exists_compact_single_insertions"
+          ],
+          "reviewed_claims": [
+            "The unused root may be chosen inside its own isolating disk. Filling it changes only one coefficient, keeps the sequence in lp and leaves the numerator and double-omitted regular factor unchanged. Choosing the base-source midpoint supplies such a fill simultaneously for every omitted index.",
+            "The error of the single auxiliary product from -1 is controlled by the actual supremum of |Q_m-1| on every original disk. These suprema are coordinates of an lp sequence whose norm is locally bounded jointly in the source and arbitrary full root input.",
+            "The original-topology decomposition supplies one lp and one p/2 contribution. Contractive exponent inclusion and the two-majorant theorem give the required lp bound even when p/2 is below one. Compact single-coordinate insertions and contractive deletion make the bounds uniform in the filled index.",
+            "The choices of a neighborhood and the norm bound precede every deleted index. No refined-exponent estimate on a stronger root topology is inferred from this q=p application of the earlier quotient estimates."
+          ],
+          "qualification": "The chosen unused-root placement and the original-topology lp estimate match. The root completion is a positive choice at the omitted coordinate; the unnecessary blanket retained-root placement next to (2.24) is handled separately in S12-010."
+        },
+        {
+          "ordered_group": "S12-013",
+          "source_lines": [
+            5097,
+            5110
+          ],
+          "requirement": "Uniform inverse-spacing expansion and equation (2.26).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsi_forwardIndexRatio_error_bound",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.forwardIndexRatio_locally_uniform",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_uniform_lattice_bound",
+            "NLS.ZakharovShabat.sourcePsi_indexRatio_error_bound",
+            "NLS.ZakharovShabat.sourcePsiZetaReciprocalTerm",
+            "NLS.ZakharovShabat.sourcePsiZetaSequenceTerm",
+            "NLS.ZakharovShabat.sourcePsi_zeta_decomposition",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_originalAsymptotic"
+          ],
+          "reviewed_claims": [
+            "The new direct expansion bounds |(xi-lambda)/(n-m)-pi| by (A+B)/|n-m| when lambda and xi have lattice displacements bounded by A and B. It requires n different from m and no separation between the two points.",
+            "On the unit ball about any full lp root input, one bound A+norm(a0)+1 works for every signed n,m and every point of the original mth disk. This is the locally uniform forward expansion printed before (2.26), with unchanged leading constant pi.",
+            "For inversion, the unused root is completed by the fixed base midpoint in its own original disk. The original separation estimate gives |(n-m)/(xi-lambda)-1/pi| at most ((A+B)/pi*c)/|n-m|, with constants independent of both indices.",
+            "The weighted literal product has an exact decomposition into i/pi, the reciprocal-distance term and a sequence term. On one open original root/source neighborhood, a single K bounds the reciprocal term and a single C bounds the lp majorants of the sequence term, before any deleted index is chosen."
+          ],
+          "qualification": "The direct spacing expansion and equation (2.26) match, including their signs, constants, full-disk scope and uniformity in the deleted index. The chosen fill and separation are explicit for the reciprocal estimate; the forward estimate allows arbitrary lp roots."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb",
+        "NLS/ZakharovShabat/SourcePsiOriginalZetaAsymptotic.lean": "93442bb58b73319856d1059c8e86743aa7c8b701dea1d260062d25579664bccc",
+        "NLS/ZakharovShabat/SourcePsiOriginalRatioEstimate.lean": "91e84c10e63f11d0e68a30c72fd50719f6ae2e36aa7246e69030d43bc97f7e91",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientError.lean": "7526ac752c17288c3ab6ed3bd499f82a7f1aa2536eb4b5ab4e89702c3fc00ccd",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/SourcePsiFilledRegularFactor.lean": "4d9f45ce95b95674ede3586612cf6021f3b934ef629c3405fe5ae5d13a9a9691",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientBound.lean": "51ace66e5a7c62b570ecdecadb9162f260b9faeea295a6278907e8a69837247b",
+        "NLS/ZakharovShabat/SourcePsiGapFactorization.lean": "e3d60fbbde3bc8495c9849a52baebd2f0c221c6899924ccb805d8853a81abfd6",
+        "NLS/ZakharovShabat/SourcePsiDeletedRootFill.lean": "7906fa5a8daac90b623d7a794aa53b096cdf2a2a5e2e3c293c91cd13156e7c7c",
+        "NLS/ZakharovShabat/SourceQuotientOriginalTopology.lean": "2961c4a22f6633a8bfdf75c44d17f946877e6b11e9f70a7b93f68c8e4e9f8dcb",
+        "NLS/SequenceSpaces/SingleCoordinateCompact.lean": "20f7470c05b157ec6c6b73b564cee45a7948478dd42eafa85b48aa9de5809752",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean": "5c15019528fe196d6f2095e1677255f4a11d33ba37fa72d403e89ff590258f39",
+        "NLS/ZakharovShabat/SourceQuotientDiscSupDecomposition.lean": "3781b7e97ec28051d9a4169849d922da30d475b772585597350e423e852eee17",
+        "NLS/SequenceSpaces/TwoExponentMajorant.lean": "77050b73244560265f119b394a224ca7f34f90621d284a09bfb831830ca77563",
+        "NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean": "e80036fc2992b9f120b82020897c35bb35fdbeb2a237fa006cbebe061eb6eecd"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "file": "work/Section11UniformEstimatesSourceComparison-2026-10-30.json",
+        "sha256": "9efb775c487b804a457bd92433844ae3025a77d1a250d0f95b11b11e5f979dd1",
+        "modules": [
+          "NLS/ZakharovShabat/SourceQuotientDiscSupDecomposition.lean",
+          "NLS/SequenceSpaces/TwoExponentMajorant.lean"
+        ]
+      },
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_compact_single_insertions",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.local_allDisk_quotient_errorBound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.local_filled_allDisk_quotient_errorBound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.local_replaced_allDisk_quotient_errorBound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_originalAsymptotic",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_uniform_lattice_bound",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.forwardIndexRatio_locally_uniform",
+        "NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_originalTopology",
+        "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+        "NLS.ZakharovShabat.hasProd_sourcePsiDoubleOmitted_subtype",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta",
+        "NLS.ZakharovShabat.sourcePsiFillDeletedRoot",
+        "NLS.ZakharovShabat.sourcePsiFillDeletedRoot_apply_other",
+        "NLS.ZakharovShabat.sourcePsiGapRegularFactor_eq_zeta",
+        "NLS.ZakharovShabat.sourcePsiZeta",
+        "NLS.ZakharovShabat.sourcePsiZetaReciprocalTerm",
+        "NLS.ZakharovShabat.sourcePsiZetaSequenceTerm",
+        "NLS.ZakharovShabat.sourcePsiZeta_congr",
+        "NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient",
+        "NLS.ZakharovShabat.sourcePsiZeta_eq_product",
+        "NLS.ZakharovShabat.sourcePsiZeta_fillDeletedRoot",
+        "NLS.ZakharovShabat.sourcePsiZeta_mul_filled_root",
+        "NLS.ZakharovShabat.sourcePsi_forwardIndexRatio_error_bound",
+        "NLS.ZakharovShabat.sourcePsi_indexRatio_error_bound",
+        "NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product",
+        "NLS.ZakharovShabat.sourcePsi_zeta_decomposition",
+        "NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotient_error"
+      ],
+      "declaration_inventory_count": 44409,
+      "qualification": "The first thirteen of 67 ordered Section 12 groups are compared: ten matched, three with corrected admissibility scope, and 54 pending. Equations (2.24)–(2.26) retain their exact signs and constants. Root placement next to (2.24) is an explicit condition when needed; the literal product identities and Lemma 12.4 still allow arbitrary complex lp root inputs. The unused root can be chosen in its own disk, and one local bound works before all deleted indices. Lemmas 12.2–12.3 retain their contour-admissibility correction. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          64
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-064.png": "d81efda27239c3e0ad41507f4cbd1447dd635bec1a73f56531e15a6a8f66844c"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4800,
+        "sha256": "6cfb3b11e470326bd979dbf501f3579f3cb8dcea46bb1702bf1941f1c470f5ef"
+      },
+      "full_gate": {
+        "session": 84469,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12AuxiliaryProductsFullCheck-1.log",
+        "log_sha256": "a580af46e7a7350ac097a190e7c088caef0805deead99a823d6b15d513dbdfcd"
+      },
+      "ordered_inventory_sha256": "b701cd89f26cffa0b93e6bc8a44a443267797a0f6907c6615d6dfc440268eb8b",
+      "source_record_sha256": "43a4f3542e491e12d034cc72b3f4844e04f9807544e3f22c454a8fd438d458f0"
     }
   }
 }

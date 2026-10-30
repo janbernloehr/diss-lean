@@ -1,5 +1,17 @@
 # Source discrepancies
 
+## Equation (2.24), p.64: explicit root-placement scope
+
+The parenthetical condition sigma_k in U_k is an additional admissibility
+condition when needed. The literal product identity holds for arbitrary
+complex lp root inputs, as required by Lemma 12.4. For the reciprocal
+estimate, the unused root can be chosen inside its own disk without
+changing the deleted product. The numerical constants are unchanged.
+
+See the [literal product](NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean),
+[auxiliary identities](NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean) and
+[ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Propositions 6.1/6.3 proof, p.44: corrected final summation constant
 
 The final summed estimate is implemented with C_p=2^(3*p-2): the full signed

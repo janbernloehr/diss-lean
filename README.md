@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [literal-index equation](NLS/ZakharovShabat/SourcePsiDeletedIndexAnalytic.lean)
-has full-domain complex and real analyticity, exact power sums and locally
-uniform bounds with unchanged constants. The [Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md)
-has seven matched groups, two with corrected contour scope and 58 pending.
-Next are equations (2.24)–(2.26); wider qualifications remain in the
+Latest step: [auxiliary product identities](NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean)
+and uniform spacing bounds prove the exact factors in (2.24)–(2.26).
+The [Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) has ten matched groups,
+three with corrected admissibility scope and 54 pending. Root placement is
+explicit where needed; the product identities retain arbitrary lp inputs.
+Next is equation (2.27); wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

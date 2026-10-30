@@ -179,11 +179,11 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Seven match and two retain the existing contour-admissibility correction.
-Lemma 12.4 now has a direct literal-index analytic interface on the full
-original domain, with exact retained-index power sums and one local bound
-chosen before all deleted indices. The numerical constants are unchanged.
-The remaining 58 groups start with equations (2.24)–(2.26); earlier focused
+Ten match and three have corrected admissibility scope. The auxiliary
+product formulas and uniform spacing estimates retain their exact signs
+and constants. Root placement next to (2.24) is explicit when used, while
+the literal product identities and Lemma 12.4 allow arbitrary lp inputs.
+The remaining 54 groups start with equation (2.27); earlier focused
 comparisons and wider qualifications retain their scope.
 
 Classify each substantive

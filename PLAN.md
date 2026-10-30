@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: literal-index analyticity and uniform power sums
+## Current milestone: auxiliary products and spacing estimates
+
+The auxiliary product formulas (2.24)–(2.26) now have direct public
+identities with their exact signs and constants. Cross multiplication
+extends the single-product relation to a zero of the inserted root factor.
+The direct spacing error is at most (A+B)/|n-m|; one local bound works
+before every pair of signed indices and every original disk.
+
+The root-placement notation next to (2.24) is an explicit admissibility
+condition when used. Arbitrary lp root inputs remain allowed in the
+literal identities and Lemma 12.4. The unused root can be chosen inside
+its own disk for the reciprocal estimate. No new refutation was added.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+ten matched groups, three with corrected admissibility scope and 54 pending.
+
+Full validation passed: 8,523 build jobs, 7,600 public examples and
+44,409 transitively audited NLS declarations, with 21 inherited warnings.
+The four new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are equation (2.27), full-domain coordinate analyticity and the actual
+equation-index supremum sequence. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: literal-index analyticity and uniform power sums
 
 The literal retained-index equation now has complex and real analyticity
 on the entire original source domain and every lp root input. An exact

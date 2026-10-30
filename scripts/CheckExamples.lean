@@ -71805,3 +71805,31 @@ example {W : Set (CoeffPair 4)}
     (f := fun b : DeletedIndexCoeff 4 (-2) => (ψ,b)) (analyticAt_const.prod analyticAt_id)
 
 end Section12DeletedIndexAnalyticExamples
+
+section Section12AuxiliaryProductExamples
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Signed index spacing gives the explicit denominator five with unchanged leading pi.
+example (δ ε : ℂ) :
+    ‖(((Real.pi:ℂ)*(-3)+δ)-((Real.pi:ℂ)*2+ε))/(-5:ℂ)-(Real.pi:ℂ)‖ ≤
+      (‖ε‖+‖δ‖)/5 := by
+  have h := sourcePsi_forwardIndexRatio_error_bound (-3) 2 (by decide)
+    ((Real.pi:ℂ)*(-3)+δ) ((Real.pi:ℂ)*2+ε) ‖ε‖ ‖δ‖ (by simp) (by simp)
+  norm_num at h ⊢
+  exact h
+
+-- At the inserted root the single quotient vanishes; no division by that root is required.
+example (ψ : CoeffPair (ENNReal.ofReal (3/2)))
+    (a : Coeff (ENNReal.ofReal (3/2)))
+    (hz : displacedRoots a (-2) ∈ sourceStandardRootOmittedDomain ENNReal.ofReal_ne_top
+      (by norm_num) ψ 3) :
+    sourceSingleRootQuotientJointProduct ENNReal.ofReal_ne_top (by norm_num) 3
+      (displacedRoots a (-2),(a,ψ)) = 0 := by
+  have h := sourcePsiZeta_mul_filled_root (p := ENNReal.ofReal (3/2))
+    ENNReal.ofReal_ne_top (by norm_num) (-2) 3 (by decide) a ψ (displacedRoots a (-2)) hz
+  simp only [sub_self,zero_mul] at h
+  exact (mul_eq_zero.mp h.symm).resolve_left Complex.I_ne_zero
+
+end Section12AuxiliaryProductExamples

@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first nine of 67 ordered Section 12 groups are compared: seven matched, two with corrected contour-admissibility scope, and 58 pending. Lemma 12.4 retains the entire original source domain and arbitrary complex root inputs. The literal retained-index equation is jointly complex and real analytic, with exact power sums and the same local bounds chosen before all deleted indices. Lemmas 12.2-12.3 retain their existing admissibility correction and unchanged numerical constants. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first thirteen of 67 ordered Section 12 groups are compared: ten matched, three with corrected admissibility scope, and 54 pending. Equations (2.24)–(2.26) retain their exact signs and constants. Root placement next to (2.24) is an explicit condition when needed; the literal product identities and Lemma 12.4 still allow arbitrary complex lp root inputs. The unused root can be chosen in its own disk, and one local bound works before all deleted indices. Lemmas 12.2–12.3 retain their contour-admissibility correction. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-nine groups have the semantic comparisons below. Earlier named-theorem
+thirteen groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -22,10 +22,10 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-007 | 64 | 5006–5021 | Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap. | corrected |
 | S12-008 | 64 | 5025–5042 | Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants. | corrected |
 | S12-009 | 64 | 5044–5061 | Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index. | matched |
-| S12-010 | 64 | 5064–5078 | Equation (2.24): selected-root factor and literal complementary product. | pending |
-| S12-011 | 64 | 5080–5087 | Equation (2.25): auxiliary all-root product and relation to the deleted complementary product. | pending |
-| S12-012 | 64 | 5089–5095 | Root completion and locally uniform full-disk lp estimate for the auxiliary product. | pending |
-| S12-013 | 64 | 5097–5110 | Uniform inverse-spacing expansion and equation (2.26). | pending |
+| S12-010 | 64 | 5064–5078 | Equation (2.24): selected-root factor and literal complementary product. | corrected |
+| S12-011 | 64 | 5080–5087 | Equation (2.25): auxiliary all-root product and relation to the deleted complementary product. | matched |
+| S12-012 | 64 | 5089–5095 | Root completion and locally uniform full-disk lp estimate for the auxiliary product. | matched |
+| S12-013 | 64 | 5097–5110 | Uniform inverse-spacing expansion and equation (2.26). | matched |
 | S12-014 | 65 | 5120–5127 | Equation (2.27): the selected-gap form of the scalar equation. | pending |
 | S12-015 | 65 | 5129–5139 | Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain. | pending |
 | S12-016 | 65 | 5140–5159 | Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity. | pending |
@@ -342,5 +342,97 @@ The new module and three focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-010 through S12-013: the auxiliary products and
-the inverse-spacing expansion in equations (2.24)–(2.26).
+The next subsection compares the auxiliary products and spacing estimates.
+
+## Auxiliary products and uniform spacing estimates
+
+### S12-010: Equation (2.24): selected-root factor and literal complementary product.
+
+- Equation (2.24) and its literal complementary product have exactly the printed factors: the selected numerator root divided by w_m, multiplied by i/w_n and the product omitting both n and m. The canonical-root normalization supplies precisely i; no extra pi or two factor remains.
+- Individual quotient deviations from one are absolutely summable for arbitrary complex lp root inputs. The unconditional product agrees with the symmetric finite-product limit, so both deleted factors can be extracted without division by a numerator root. The factorization therefore includes coincident and zero numerator factors.
+- The equality holds on the whole canonical-root domain and needs no retained-root placement. The adjacent source notation sigma_k in U_k is retained only as an explicit admissibility condition when used, not as a consequence of arbitrary lp membership. The full input domain of Lemma 12.4 is preserved.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiZeta`
+- `NLS.ZakharovShabat.sourcePsiZeta_eq_product`
+- `NLS.ZakharovShabat.hasProd_sourcePsiDoubleOmitted_subtype`
+- `NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta`
+- `NLS.ZakharovShabat.summable_norm_sourceSingleRootQuotient_error`
+- `NLS.ZakharovShabat.sourcePsiZeta_congr`
+
+The displayed product identities match with their exact constants. Corrected scope makes the parenthetical root-placement condition explicit: arbitrary lp inputs are allowed, and their retained roots are not assumed to belong to the fixed isolating disks. This clarification uses the proved unrestricted product identity and adds no refutation.
+
+### S12-011: Equation (2.25): auxiliary all-root product and relation to the deleted complementary product.
+
+- The single auxiliary product in (2.25) is minus the literal product over k different from m. Its numerator and standard-root normalizations cancel in every finite product, and the convergent limit is the negative analytic single-root quotient.
+- The relation between the two auxiliary products retains the exact factor (1/i)/(sigma_n-lambda). The new direct formula is proved wherever this denominator is nonzero, on the natural omitted-gap domain.
+- The new cross-multiplied identity (sigma_n-lambda)*zeta_m^n=i*Q_m holds even at sigma_n=lambda. The double-omitted product supplies the regular extension there, and the single quotient vanishes at that root.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product`
+- `NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype`
+- `NLS.ZakharovShabat.sourcePsiGapRegularFactor_eq_zeta`
+- `NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient`
+- `NLS.ZakharovShabat.sourcePsiZeta_mul_filled_root`
+
+Matched with the natural domain of the printed reciprocal expression. The positive cross-multiplied version also covers its removable numerator-root singularity; it does not assert the reciprocal formula at a zero denominator.
+
+### S12-012: Root completion and locally uniform full-disk lp estimate for the auxiliary product.
+
+- The unused root may be chosen inside its own isolating disk. Filling it changes only one coefficient, keeps the sequence in lp and leaves the numerator and double-omitted regular factor unchanged. Choosing the base-source midpoint supplies such a fill simultaneously for every omitted index.
+- The error of the single auxiliary product from -1 is controlled by the actual supremum of |Q_m-1| on every original disk. These suprema are coordinates of an lp sequence whose norm is locally bounded jointly in the source and arbitrary full root input.
+- The original-topology decomposition supplies one lp and one p/2 contribution. Contractive exponent inclusion and the two-majorant theorem give the required lp bound even when p/2 is below one. Compact single-coordinate insertions and contractive deletion make the bounds uniform in the filled index.
+- The choices of a neighborhood and the norm bound precede every deleted index. No refined-exponent estimate on a stronger root topology is inferred from this q=p application of the earlier quotient estimates.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiFillDeletedRoot`
+- `NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same`
+- `NLS.ZakharovShabat.sourcePsiFillDeletedRoot_apply_other`
+- `NLS.ZakharovShabat.sourcePsiZeta_fillDeletedRoot`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.local_allDisk_quotient_errorBound`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.local_filled_allDisk_quotient_errorBound`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.local_replaced_allDisk_quotient_errorBound`
+- `NLS.ZakharovShabat.SourceQuotientDiscEstimates.supDecomposition_originalTopology`
+- `NLS.Coeff.exists_compact_single_insertions`
+
+The chosen unused-root placement and the original-topology lp estimate match. The root completion is a positive choice at the omitted coordinate; the unnecessary blanket retained-root placement next to (2.24) is handled separately in S12-010.
+
+### S12-013: Uniform inverse-spacing expansion and equation (2.26).
+
+- The new direct expansion bounds |(xi-lambda)/(n-m)-pi| by (A+B)/|n-m| when lambda and xi have lattice displacements bounded by A and B. It requires n different from m and no separation between the two points.
+- On the unit ball about any full lp root input, one bound A+norm(a0)+1 works for every signed n,m and every point of the original mth disk. This is the locally uniform forward expansion printed before (2.26), with unchanged leading constant pi.
+- For inversion, the unused root is completed by the fixed base midpoint in its own original disk. The original separation estimate gives |(n-m)/(xi-lambda)-1/pi| at most ((A+B)/pi*c)/|n-m|, with constants independent of both indices.
+- The weighted literal product has an exact decomposition into i/pi, the reciprocal-distance term and a sequence term. On one open original root/source neighborhood, a single K bounds the reciprocal term and a single C bounds the lp majorants of the sequence term, before any deleted index is chosen.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsi_forwardIndexRatio_error_bound`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.forwardIndexRatio_locally_uniform`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_uniform_lattice_bound`
+- `NLS.ZakharovShabat.sourcePsi_indexRatio_error_bound`
+- `NLS.ZakharovShabat.sourcePsiZetaReciprocalTerm`
+- `NLS.ZakharovShabat.sourcePsiZetaSequenceTerm`
+- `NLS.ZakharovShabat.sourcePsi_zeta_decomposition`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_originalAsymptotic`
+
+The direct spacing expansion and equation (2.26) match, including their signs, constants, full-disk scope and uniformity in the deleted index. The chosen fill and separation are explicit for the reciprocal estimate; the forward estimate allows arbitrary lp roots.
+
+The [auxiliary identities](../NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean)
+expose the exact single-product relation and direct spacing bound.
+The [literal double-omitted product](../NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean)
+and [original-disk asymptotic](../NLS/ZakharovShabat/SourcePsiOriginalZetaAsymptotic.lean)
+supply the full-domain factorization and uniform sequence estimate.
+The [scope clarification](../SOURCE_ERRATA.md) preserves arbitrary root inputs.
+This comparison records 15 inspected or reused module bodies and 28 resolved declarations.
+
+Full validation passed: 8,523 build jobs, 7,600 public examples and
+44,409 transitively audited NLS declarations, with 21 inherited warnings.
+The four new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-014 through S12-016: equation (2.27), full-domain
+coordinate analyticity and the actual equation-index supremum sequence.
