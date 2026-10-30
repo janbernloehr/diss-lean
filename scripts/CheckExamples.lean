@@ -71942,3 +71942,39 @@ example {W : Set (CoeffPair 4)}
   H.deletedIndexRootJacobian_entry ψ hψ (-2) a ⟨-3,by decide⟩ ⟨2,by decide⟩
 
 end Section12JacobianExamples
+
+section Section12CompactExamples
+open NLS NLS.Coeff NLS.ZakharovShabat Set Complex Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The mixed row sum has the literal non-Hilbert exponents p=3/2 and q=3.
+example (M : ℤ → ℤ → ℂ) (b : Coeff (ENNReal.ofReal (3/2)))
+    (hdiag : ∀ m, M m m = 0)
+    (hoff : ∀ m k, k ≠ m → ‖M m k‖ ≤ ‖b m‖/|((k-m:ℤ):ℝ)|) :
+    Summable (fun m : ℤ => (∑' k : ℤ, ‖M m k‖ ^ (3:ℕ)) ^ (1/2:ℝ)) := by
+  have h := summable_mixedRowPower_of_reciprocal_bound (p := ENNReal.ofReal (3/2))
+    (q := 3) ENNReal.ofReal_ne_top (by norm_num) (by norm_num) M b hdiag hoff
+  norm_num at h
+  exact h
+
+-- Including the omitted integer in a finite cutoff leaves retained coordinates unchanged.
+example {W V : Set (CoeffPair 4)}
+    (H : SourceLemma12_6Data (by norm_num) (by norm_num) W)
+    {discs : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V discs c) (hV : IsOpen V)
+    (t : realTypeSourceSubmodule 4 × RealCoeff 4) (htW : (t.1:CoeffPair 4) ∈ W)
+    (htΩ : t ∈ sourcePsiOriginalOmega V discs) (b : DeletedIndexCoeff 4 (-2)) :
+    let T := Coeff.deletedJacobianOffDiagonal (-2)
+      (sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) (-2)
+        (Coeff.deleteCoordinateTo (-2) (RealCoeff.complexCLM 4 t.2)) t.1)
+    let e := (DeletedCoeff.indexEquiv (p := 4) (by norm_num) (-2)).toContinuousLinearEquiv
+    let C := e.arrowCongr e
+    C (Coeff.deletedOutputCutoff (-2) T {-2,3}) b ⟨3,by decide⟩ = C T b ⟨3,by decide⟩ := by
+  have h := (H.deletedIndexFiniteRankApproximation hD hV t htW htΩ (-2)).2.2
+    {-2,3} b ⟨3,by decide⟩
+  simpa only [Finset.mem_insert,Finset.mem_singleton,or_true,if_true] using h
+
+end Section12CompactExamples

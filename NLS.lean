@@ -26,6 +26,7 @@ import NLS.SequenceSpaces.CompactLpMultiplier
 import NLS.SequenceSpaces.CompactRowMajorant
 import NLS.SequenceSpaces.CompactTailRowMajorant
 import NLS.SequenceSpaces.CompactPuncturedKernel
+import NLS.SequenceSpaces.ReciprocalMixedRowPower
 import NLS.SequenceSpaces.DeletedDiagonal
 import NLS.SequenceSpaces.DeletedJacobianDecomposition
 import NLS.SequenceSpaces.DeletedJacobianSymbol
@@ -3601,6 +3602,8 @@ import NLS.SequenceSpaces.DeletedFiniteRankApproximation
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianDecomposition
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianFiniteRank
 import NLS.ZakharovShabat.SourceLemma12_6
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianMixedRowPower
+import NLS.ZakharovShabat.SourcePsiDeletedIndexCompact
 import NLS.ZakharovShabat.SourcePsiOriginalKernelContour
 import NLS.ZakharovShabat.SourcePsiOriginalGapInterpolation
 import NLS.ZakharovShabat.SourcePsiOriginalOuterCircles

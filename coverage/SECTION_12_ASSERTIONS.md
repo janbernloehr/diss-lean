@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first twenty-two of 67 ordered Section 12 groups are compared: eighteen matched, four with scope or gap-reference corrections, and 45 pending. Lemma 12.5 retains the actual bounded Jacobian on the original open real domain, exact literal-index operator norms and matrix entries, the retained-root derivative and zero set of the literal zeta, and common diagonal/off-diagonal bounds before all omitted indices. The diagonal mean-value proof uses the selected gap G_m containing mu; its factor -2*pi*i and leading value 2 are retained. Earlier contour and root-placement clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first twenty-five of 67 ordered Section 12 groups are compared: twenty-one matched, four with scope or gap-reference corrections, and 42 pending. Lemma 12.6 retains the actual original-domain Jacobian as an invertible diagonal plus its compact off-diagonal remainder. The literal mixed row-power expression is summable, and finite output cutoffs converge in operator norm. Direct retained-index interfaces preserve the diagonal inverse and exact cutoff coordinates. Earlier contour, root-placement and selected-gap clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-twenty-two groups have the semantic comparisons below. Earlier named-theorem
+twenty-five groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -35,9 +35,9 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-020 | 65 | 5202–5218 | Derivative of the literal complementary product and off-diagonal contour formula. | matched |
 | S12-021 | 66 | 5226–5239 | Off-diagonal inverse-spacing bound and diagonal contour formula. | matched |
 | S12-022 | 66 | 5240–5253 | Diagonal mean-value asymptotic and nonvanishing via root placement. | corrected |
-| S12-023 | 66 | 5256–5261 | Lemma 12.6: invertible diagonal plus compact remainder. | pending |
-| S12-024 | 66 | 5264–5275 | Diagonal tail limit two, explicit inverse and off-diagonal matrix remainder. | pending |
-| S12-025 | 66 | 5277–5288 | Mixed row-sum estimate and finite-rank norm approximation proving compactness. | pending |
+| S12-023 | 66 | 5256–5261 | Lemma 12.6: invertible diagonal plus compact remainder. | matched |
+| S12-024 | 66 | 5264–5275 | Diagonal tail limit two, explicit inverse and off-diagonal matrix remainder. | matched |
+| S12-025 | 66 | 5277–5288 | Mixed row-sum estimate and finite-rank norm approximation proving compactness. | matched |
 | S12-026 | 66 | 5292–5292 | Lemma 12.7: injectivity of the deleted-space Jacobian. | pending |
 | S12-027 | 66 | 5295–5306 | Kernel derivative numerator is entire and has zero off-diagonal periods. | pending |
 | S12-028 | 66 | 5308–5318 | Real gap zeros and exterior-circle logarithmic derivative expansion. | pending |
@@ -652,5 +652,86 @@ The nine new proofs and three focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-023 through S12-025: the invertible diagonal,
-compact remainder and finite-rank approximation in Lemma 12.6.
+The next subsection compares the decomposition and proof of Lemma 12.6.
+
+## The diagonal and compact remainder in Lemma 12.6
+
+### S12-023: Lemma 12.6: invertible diagonal plus compact remainder.
+
+- At each point of the original open real root-placement domain and for every omitted index, the actual bounded Jacobian is a diagonal continuous linear equivalence plus a compact operator. The original source neighborhood and all preceding Lemma 12.5 data are retained.
+- The diagonal and its inverse have exact coordinate formulas: multiply by the actual diagonal matrix entry and its reciprocal, respectively. The compact part is the canonical subtraction of that diagonal from the original bounded Jacobian.
+- Conjugating by the exact deleted-index equivalence gives the same decomposition on the literal retained-index spaces. Compactness is preserved by the two bounded compositions, and restriction/zero extension preserves both coordinate formulas.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_6Data`
+- `NLS.ZakharovShabat.SourceLemma12_5Data.lemma12_6`
+- `NLS.ZakharovShabat.sourceLemma12_6`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.diagonal_plus_compact_with_inverse`
+- `NLS.ZakharovShabat.SourceLemma12_6Data.deletedIndexDecomposition`
+
+The original-domain diagonal-plus-compact statement matches, including an explicit inverse on the literal retained-index spaces.
+
+### S12-024: Diagonal tail limit two, explicit inverse and off-diagonal matrix remainder.
+
+- For each fixed omitted index, the reciprocal-distance error tends to zero as the row index escapes on either signed tail. The lp error also tends to zero. Their sum gives an actual epsilon cutoff and the filter limit of the diagonal entries to 2.
+- The tail is bounded away from zero. Taking a positive minimum with the finitely many nonzero retained head values gives one strictly positive lower bound on all retained diagonal entries. The bounded reciprocal symbol defines the actual continuous inverse.
+- The diagonal symbol is bounded by the norm of the actual operator. Subtraction gives a bounded remainder with zero diagonal and unchanged off-diagonal entries; deleted row and column coefficients vanish. Thus the Lemma 12.5 reciprocal estimates apply to its actual matrix.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiOriginalJacobian_diagonalSymbol_eq_entry`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.diagonal_tail`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.diagonal_tendsto_two`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.diagonal_lowerBound`
+- `NLS.Coeff.exists_deletedSymbol_uniformLowerBound`
+- `NLS.Coeff.inverseDeletedSymbol`
+- `NLS.Coeff.deletedMultiplierEquivOfLowerBound`
+- `NLS.Coeff.deletedJacobian_eq_diagonal_add_offDiagonal`
+- `NLS.Coeff.deletedJacobianOffDiagonal_diagonal`
+- `NLS.Coeff.deletedJacobianOffDiagonal_entry_other`
+
+The two-sided diagonal limit is for fixed n, exactly as needed by Lemma 12.6. The inverse includes every retained finite-head entry and the remainder is the actual operator subtraction.
+
+### S12-025: Mixed row-sum estimate and finite-rank norm approximation proving compactness.
+
+- The literal mixed row-power expression is summable. A reciprocal majorant constructs each actual matrix row in the finite conjugate lp space; its norm is bounded by the output majorant times the norm of the translated punctured reciprocal lattice. Raising that norm to p gives exactly the displayed inner q-power sum raised to p/q, and a common lp majorant controls the outer sum.
+- For 1<p<infinity the conjugate exponent also lies strictly between 1 and infinity. The generic mixed-power proof applies to the actual off-diagonal Jacobian, including its zero deleted row and column. The source schematic lp and l1 terms are represented by positive summable majorants.
+- Hölder duality and convergence of finite matrix sums identify every output coordinate with its actual conjugate-space row pairing. A single lp row majorant therefore bounds the entire operator on all inputs.
+- The actual finite output cutoffs have finite-dimensional range. Their operator-norm error is bounded by the lp tail norm of the common row majorant, which tends to zero. Hence the remainder is compact.
+- The same finite cutoffs, conjugated to literal retained indices, still have finite-dimensional range and converge in operator norm. Their exact coordinate formula keeps a retained index precisely when it belongs to the finite set; including the omitted integer in that set has no effect.
+
+Public declarations:
+
+- `NLS.Coeff.summable_mixedRowPower_of_reciprocal_bound`
+- `NLS.Coeff.exists_deletedOperator_rowKernel_of_reciprocalEntries`
+- `NLS.Coeff.exists_deletedOperator_rowMajorant_of_reciprocalEntries`
+- `NLS.Coeff.finiteDimensional_range_deletedOutputCutoff`
+- `NLS.Coeff.norm_deletedOutputCutoff_sub_le`
+- `NLS.Coeff.tendsto_deletedOutputCutoff_of_rowMajorant`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.offDiagonal_mixedRowPower`
+- `NLS.ZakharovShabat.SourceLemma12_6Data.mixedRowPower`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.offDiagonal_finiteRankApproximation`
+- `NLS.ZakharovShabat.SourceLemma12_6Data.finiteRankApproximation`
+- `NLS.ZakharovShabat.SourceLemma12_6Data.deletedIndexFiniteRankApproximation`
+
+The mixed double-power summability and uniform finite-rank approximation match for the actual matrix and operator, with direct literal-index interfaces.
+
+The [mixed row-power theorem](../NLS/SequenceSpaces/ReciprocalMixedRowPower.lean)
+proves the literal nested-power summability for any matrix with a reciprocal bound.
+Its [Jacobian specialization](../NLS/ZakharovShabat/SourcePsiOriginalJacobianMixedRowPower.lean)
+uses the actual off-diagonal operator on the original real domain.
+The [retained-index decomposition](../NLS/ZakharovShabat/SourcePsiDeletedIndexCompact.lean)
+has an explicit diagonal inverse and finite output cutoffs converging in operator norm.
+The [original Lemma 12.6](../NLS/ZakharovShabat/SourceLemma12_6.lean)
+preserves the original source neighborhood and preceding Lemma 12.5 data.
+This comparison records 36 inspected or reused module bodies and 26 resolved declarations.
+
+Full validation passed: 8,533 build jobs, 7,609 public examples and
+44,442 transitively audited NLS declarations, with 21 inherited warnings.
+The five new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-026 through S12-031: injectivity, entire interpolation
+and the bounded inverse in Lemma 12.7 and Corollary 12.8.

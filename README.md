@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Lemma 12.5](coverage/SECTION_12_ASSERTIONS.md) now has
-literal-index Jacobian transport, exact product derivatives and zeros,
-and common diagonal/off-diagonal bounds. The mean-value proof uses the
-selected gap G_m and retains its constants. The ordered ledger has
-eighteen matched groups, four with scope or gap-reference corrections
-and 45 pending. Next is Lemma 12.6; wider qualifications remain in the
+Latest step: [Lemma 12.6](coverage/SECTION_12_ASSERTIONS.md) now has
+literal mixed row-power summability and retained-index interfaces for
+the diagonal inverse, compact remainder and finite-rank norm approximation.
+The ordered ledger has twenty-one matched groups, four with scope or
+gap-reference corrections and 42 pending. Next are Lemma 12.7 and
+Corollary 12.8; wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

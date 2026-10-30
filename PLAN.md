@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: the Jacobian and Lemma 12.5
+## Current milestone: the compact decomposition in Lemma 12.6
+
+Lemma 12.6 now exposes the literal mixed row-power summability of the
+actual off-diagonal Jacobian. On the retained-index spaces, the actual
+derivative is an invertible diagonal plus a compact operator, with exact
+coordinate formulas for the diagonal and its reciprocal.
+
+Finite output cutoffs have finite-dimensional range and converge in
+operator norm. Their coordinate formula keeps exactly the chosen retained
+indices, even when the finite set also includes the omitted integer.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+twenty-one matched groups, four with scope or gap-reference corrections
+and 42 pending. No further constant correction is needed for this step.
+
+Full validation passed: 8,533 build jobs, 7,609 public examples and
+44,442 transitively audited NLS declarations, with 21 inherited warnings.
+The five new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are injectivity and the bounded inverse in Lemma 12.7 and
+Corollary 12.8. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: the Jacobian and Lemma 12.5
 
 Lemma 12.5 now has direct public interfaces for the actual Jacobian on
 the literal retained-index spaces, with the exact original operator norm
