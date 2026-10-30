@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T12:47:43.555114+00:00",
-  "base_commit": "b1d0c83eda38966c14aedbc43ba15fa6c816e979",
+  "published_utc": "2026-10-30T12:56:28.472391+00:00",
+  "base_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 134,
-    "module_hash_checks": 2377,
-    "distinct_modules": 1448
+    "review_records": 135,
+    "module_hash_checks": 2400,
+    "distinct_modules": 1462
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b1d0c83eda38966c14aedbc43ba15fa6c816e979",
-    "validated_state": "New tail-convergence module and four public examples, with the complete ordered Section 11 comparison. Full gate 53499 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
+    "validated_state": "Exact unchanged Lean sources and dependency locks from full gate 53499 at 1924ecd112a5f879d688eadbfde592dfd60ba88f. Documentation adds the Section 12 ordered inventory: four matched mathematical groups and 63 pending. Existing qualifications and all earlier review records are unchanged.",
     "command": "./scripts/check.sh",
     "build_jobs": 8519,
     "public_examples": 7591,
@@ -40,7 +40,8 @@
       "files": 4796,
       "sha256": "598d368501f16dda355fb2926d9171816598c10a9ebb8648c85eb14a279a670d"
     },
-    "qualification": "Current full build, public examples and transitive axiom audit passed; source-review integrity checks recorded evidence and do not independently certify semantic completeness."
+    "qualification": "Current full build, public examples and transitive axiom audit passed; source-review integrity checks recorded evidence and do not independently certify semantic completeness.",
+    "validation_reused_from_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f"
   },
   "named_statements": [
     {
@@ -32992,6 +32993,211 @@
       "convergence_convention": "Mathlib TendstoLocallyUniformlyOn with filter comap Int.natAbs atTop; for each tolerance and real base point choose a neighborhood and cutoff. Uniform convergence on every compact real source set follows.",
       "ordered_inventory_sha256": "b932673b312ff921922869ce496a24e738781f4bd79026a84bf477f867cb7a2f",
       "source_record_sha256": "8f2cc554c92019d605e0f9025b91479b5cea97bdd8ac893051d225832165093d"
+    },
+    "Section12OpeningSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
+      "updated_utc": "2026-10-30T12:56:28.472391+00:00",
+      "source_lines": [
+        [
+          4929,
+          4944
+        ],
+        [
+          4946,
+          4952
+        ],
+        [
+          4954,
+          4965
+        ],
+        [
+          4967,
+          4975
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-001",
+          "source_lines": [
+            4929,
+            4944
+          ],
+          "requirement": "Common psi neighborhood, literal product (2.20), lattice displacements and desired normalized periods.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem12_1",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.psiFunctions",
+            "NLS.ZakharovShabat.tendsto_sourcePsiCandidate_literalProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.entire",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.period"
+          ],
+          "reviewed_claims": [
+            "One open W inside the original W0 contains the whole real-type locus and supports every deleted-index root family. The previous Section 11 data remain on W0. The construction actually supplies simply connected W.",
+            "The numerator is the limit of the literal symmetric products with prefactor -2/pi_n and factors (sigma_k^n-lambda)/pi_k for k!=n; pi_0=1. Each root displacement belongs to the original complex lp space.",
+            "Uniform convergence on compact spectral sets and bounded displacement families gives a jointly analytic deleted product. Substitution of the actual analytic roots gives an entire function of lambda.",
+            "The actual normalized periods equal the Kronecker delta for all signed m,n, with precisely 1/(2pi) multiplying the contour integral."
+          ],
+          "qualification": "The opening announces the construction proved in Theorem 12.1. Literal symmetric products, original source spaces, common domain and normalization match. No constant correction is needed here."
+        },
+        {
+          "ordered_group": "S12-002",
+          "source_lines": [
+            4946,
+            4952
+          ],
+          "requirement": "Adaptation of the cited construction; common original circuits and collars, joint standard-root analyticity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+            "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+            "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar_open",
+            "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+            "NLS.ZakharovShabat.SourceLemma10_3Data.joint"
+          ],
+          "reviewed_claims": [
+            "At every complex source in the original domain, one smaller source neighborhood supports all selected counterclockwise circles and fixed open collars inside the given original isolating disks.",
+            "Each circle winds once around its selected gap, including a collapsed gap. The closure of its smaller open collar lies inside the original disk minus the moving gap for every source in the same neighborhood.",
+            "Lemma 10.3 supplies joint analyticity of the actual standard root on the moving-gap complement. Restricting this domain by the closed-collar containment gives joint analyticity on the full collar times the common source neighborhood."
+          ],
+          "qualification": "Matched refers to the mathematical contour and analyticity assertions. The introductory attribution to [23, Section 14] is contextual and is not independently certified by this comparison; the exact cited-edition qualification remains. Standard finite piecewise C1 contour regularity is explicit."
+        },
+        {
+          "ordered_group": "S12-003",
+          "source_lines": [
+            4954,
+            4965
+          ],
+          "requirement": "Theorem 12.1: one neighborhood, entire functions and exact Kronecker periods (2.21).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTheorem12_1Data",
+            "NLS.ZakharovShabat.sourceTheorem12_1",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.psiFunctions",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.numerator_joint",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit_winding",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.periodCircle_orthogonality",
+            "NLS.ZakharovShabat.sourcePsi_orthogonality_on_isolating_ball"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1, one open neighborhood W of the whole real-type locus inside W0 admits the entire family of literal products (2.20). All m,n and sources in W are quantified after this single domain and family.",
+            "Exact real canonical-root periods extend to the whole real-centered complex source ball by analyticity and the real-form identity theorem. Compatible local root branches glue into one global family.",
+            "Transport from the assigned period circles gives the same Kronecker values for every original isolating family. The winding theorem gives delta_nm times the winding; for winding one the literal raw-integral normalization is 1/(2pi)."
+          ],
+          "qualification": "The theorem statement and equation (2.21) match, including every signed index and complex collapsed gaps. This comparison checks the existing construction supporting the statement; it does not mark its later printed proof passages as compared."
+        },
+        {
+          "ordered_group": "S12-004",
+          "source_lines": [
+            4967,
+            4975
+          ],
+          "requirement": "Theorem 12.1: analytic roots, squared-gap lp offsets uniform in the deleted index, real gap placement and free values.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.root_analytic",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_analytic",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.locally_uniform_offsets",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_bounds",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.root_zero",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas.locally_uniform_squared_gap_offsets",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_squared_gap_offsets",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_tail_squared_offset_majorant",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound",
+            "NLS.ZakharovShabat.SourcePsiUniformComplexBranchFamily.eq_sourcePsiGapRoot_of_real"
+          ],
+          "reviewed_claims": [
+            "Every retained root is complex analytic, hence real analytic, on the same W. On real sources the branches agree with the canonical gap solution, so each retained root lies between its actual periodic endpoints; at zero the root equals k*pi.",
+            "For every complex source in W there are one open neighborhood V and one positive C such that, for every nearby source and every deleted n, a full coefficient a in lp has a_n=0, norm at most C and sigma_m^n=tau_m+gamma_m^2*a_m for every m!=n.",
+            "The actual tail offsets have an lp majorant with norm independent of n. Finitely many head coordinates have a common quadratic-gap bound: nonzero base gaps stay separated from zero, while collapsed base gaps use the actual contour zero and a fixed interior circle.",
+            "Patching the finite head and lp tail gives a bound of card(head)*C_head+C_tail. Literal division by squared gaps, with zero-gap cases handled by the bound itself, produces the exact lp factorization. The squared-gap atlas retains these bounds on its common complex domain."
+          ],
+          "qualification": "The squared-gap order, full lp norm bound and quantifier order match, including complex collapse. No analyticity of an individually ordered complex endpoint is required. The statement does not assert an analytic choice of the quotient coefficients a."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceTheorem12_1.lean": "c036faa392a52eb853aff8fac711d8a2c01eeae64505b4dcb16207decbc24a3f",
+        "NLS/ZakharovShabat/SourceTheorem12_1Functions.lean": "2867920ef43b1956b37d7b1442edead7fe9a33e7630d78ed5a5546581af04c25",
+        "NLS/ZakharovShabat/SourcePsiSquaredGapComplexRootAtlas.lean": "be65965aa560f10bbf39ecfab68893816686f6d312879c1e1ea7c3d6f0b20b0e",
+        "NLS/ZakharovShabat/SourcePsiOriginalPeriods.lean": "8df0aeeb4e7f530b57a91b854d9226239058aa50143b1b6f3f0a2339e5638abb",
+        "NLS/ZakharovShabat/SourcePsiComplexRootAtlas.lean": "a2a62bbdffdbc206a6dac832282c9d5c631ab941831b91860095ff4284db1ebe",
+        "NLS/ZakharovShabat/SourcePsiComplexRootDomain.lean": "d23f95cf69ec9a4b6c1f42195be4bdf6e146515dd1767522872d257010b82cb2",
+        "NLS/ZakharovShabat/SourcePsiComplexBranchCompatibility.lean": "de7d9ad5bc9a0b2459ef7d5d9a0d258cc817da931737acefd8111c8a068e7f3e",
+        "NLS/ZakharovShabat/SourcePsiCandidate.lean": "e1557015a2fc310df4054fe456dc8ff5fa7ca245d943fbbbe8bb0f0fb5e6c456",
+        "NLS/ZakharovShabat/SourcePsiIsolatingComplexNormalization.lean": "6c8b9811f8a9c11f4ad13e2868d11d2209c12108212b83f3467538f427f9d8ea",
+        "NLS/ZakharovShabat/SourcePsiUniformSquaredGapOffsets.lean": "4cb4a450211ba0eded9bbb0a81d8ff011667444d8a078b57bb0315ccaa58e0d1",
+        "NLS/ZakharovShabat/SourcePsiMidpointBoundComplexRootAtlas.lean": "7a75e0166d27e99129034b49fe704f163907564812c0b8bf2e406f18589aa524",
+        "NLS/ZakharovShabat/SourcePsiUniformComplexBranchRealAgreement.lean": "937e81a058e8d72c4380e03a09f85e92f8442cf8f845054798599936043fda93",
+        "NLS/ZakharovShabat/SourcePsiRealNormalization.lean": "e12277ec953822f9b2bb68cc1899eacf92924f3abb148dea666fbe1a8a9ee657",
+        "NLS/ZakharovShabat/SourceLemma10_3.lean": "f04723cfb48f733c70c6f052a28b84e73e23c2e247b69a5050e119e046b4e0a7",
+        "NLS/ZakharovShabat/SourcePsiUniformComplexBranches.lean": "8292971f46a565b7555978b56b366ef36a014f1c40dc262c1ff09c43521ff02b",
+        "NLS/ZakharovShabat/SourcePsiUniformEquationTube.lean": "98c8a607ce8c15cc2fb9641d9a7120377c652209737dd476ee2c36f93e561bba",
+        "NLS/ZakharovShabat/SourceSection11Contours.lean": "fdea3098f268e548809a545fd05961ef59a42f4208fdfb497310bc37ea0c0be6",
+        "NLS/ZakharovShabat/SourceActionContourCollarClosure.lean": "b2d2b3161c01abeb97f11ad863ff6ade0bb45bfd85c5b586f44b0a086855d969",
+        "NLS/ZakharovShabat/SourceActionContourFamily.lean": "d06c03950afafd55bf2897ad22d66f14486425095302172024c654d920d71860",
+        "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean": "641481efa3d7d4fbda54acf566f36902fe8499b17c645547a87151276e5c0857",
+        "NLS/ZakharovShabat/SingleSpectralProducts.lean": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52",
+        "NLS/ZakharovShabat/SourcePsiActualTailRootOffset.lean": "0ca1eb06b7d0332305caf377bf2b8510f62eb54ffd05b20378734517651c2437",
+        "NLS/ZakharovShabat/SourcePsiFiniteHeadRootOffset.lean": "bd1d2f859be441c4051bd0719f242d6c4b5695bb5d34829b8f405a8801da30f4"
+      },
+      "reviewed_modules_read_in_full": true,
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+        "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar_open",
+        "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+        "NLS.ZakharovShabat.SourceLemma10_3Data.joint",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_tail_squared_offset_majorant",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_squared_gap_offsets",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.periodCircle_orthogonality",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas.locally_uniform_squared_gap_offsets",
+        "NLS.ZakharovShabat.SourcePsiUniformComplexBranchFamily.eq_sourcePsiGapRoot_of_real",
+        "NLS.ZakharovShabat.SourceSection11OriginalEstimates.psiFunctions",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.circuit_winding",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.entire",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.locally_uniform_offsets",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.numerator_joint",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.period",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.root_analytic",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_analytic",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_bounds",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.root_zero",
+        "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct",
+        "NLS.ZakharovShabat.sourcePsi_orthogonality_on_isolating_ball",
+        "NLS.ZakharovShabat.sourceTheorem12_1",
+        "NLS.ZakharovShabat.tendsto_sourcePsiCandidate_literalProduct"
+      ],
+      "declaration_inventory_count": 44370,
+      "qualification": "The first four of 67 ordered Section 12 groups are compared: four matched mathematical groups and 63 pending. The common neighborhood, literal -2/pi_n product, 1/(2pi) Kronecker periods, analytic roots and locally uniform all-index squared-gap lp bounds match. The opening cited-construction attribution is contextual, not independently verified. Later printed proof assertions remain pending, preserving existing contour-admissibility, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          63
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-opening-063.png": "76a88a3142600e0a968d02ffb040786b459aca8d77df27c9a21c97b3a278c1a8"
+        }
+      },
+      "validation_reused_from_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
+      "validation_lean_sources": {
+        "files": 4796,
+        "sha256": "598d368501f16dda355fb2926d9171816598c10a9ebb8648c85eb14a279a670d"
+      },
+      "ordered_inventory_sha256": "900a68f17d4718447625a4bf5c262dade0733d0513eb107ba679c346e48fad99",
+      "source_record_sha256": "c8411dc30a4e7cac0e9d89df08cae11dd82558dc2633b6d785536324e27ea235"
     }
   }
 }

@@ -174,9 +174,16 @@ neighborhood and signed cutoff. This is Mathlib's locally uniform convergence
 statement and also gives uniform convergence on every compact real source set.
 The actual filled indexed quotient is strictly positive on the real locus;
 the factor four, squared collapsed-root identity and common-domain principal-root
-conclusions are retained. The ordered Section 12 comparison is next. Earlier
+conclusions are retained. The ordered Section 12 comparison follows below. Earlier
 corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
+The first four mathematical groups match: the common neighborhood, literal
+product, exact Kronecker periods, analytic roots and uniform squared-gap lp
+bounds, including collapse. The cited-construction attribution is contextual;
+63 later groups remain pending, starting with equations (2.22)–(2.23).
+The earlier focused Section 12 comparisons and their qualifications remain.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

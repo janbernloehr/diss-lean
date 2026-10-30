@@ -1,5 +1,33 @@
 # Section 12: psi-functions
 
+## Ordered comparison: opening and Theorem 12.1
+
+The opening of Section 12 and the full statement of Theorem 12.1 now have
+ordered source comparisons. One common complex neighborhood supports the
+literal product with prefactor -2/pi_n and exact 1/(2pi) Kronecker periods.
+The retained roots are analytic, lie in the actual gaps on real sources and
+equal k*pi at zero. Their squared-gap lp bounds use one local neighborhood
+and constant before all deleted indices, including collapsed gaps.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) contains
+67 groups: the first four mathematical groups match; 63 remain pending.
+The introductory cited-construction attribution is outside this comparison.
+Existing later comparisons and corrections retain their scope.
+
+This step changes documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `1924ecd`:
+8,519 build jobs, 7,591 public examples and 44,370 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Next are the deleted coefficient spaces and equations (2.22)–(2.23).
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved. Correct constants with positive proofs;
+no new refutations are required.
+
+## Earlier focused implementation assessment
+
 This audit begins with printed p. 63 of the dissertation. Theorem 12.1,
 including the entire product (2.20) and the normalized periods (2.21), is
 proved on one common neighborhood inside the original Section 11 source

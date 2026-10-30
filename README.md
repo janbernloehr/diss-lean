@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [normalized-action and principal-root tails](NLS/ZakharovShabat/SourceNormalizedActionTailConvergence.lean)
-now converge locally uniformly, and uniformly on compact real source sets.
-The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) compares all 22 groups:
-twenty matched and two corrected. The factor four and squared collapsed-root
-identity are retained. Next is the ordered Section 12 comparison. The
-[completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
+Latest step: the [ordered Section 12 comparison](coverage/SECTION_12_ASSERTIONS.md)
+matches the opening and full statement of Theorem 12.1: one common domain,
+the literal -2/pi_n product, 1/(2pi) periods and uniform squared-gap root bounds.
+Four of 67 groups are compared; 63 remain pending, starting with equations
+(2.22)–(2.23). The [completion assessment](coverage/COMPLETENESS.md)
+retains the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
