@@ -1,10 +1,10 @@
 # Section 20 ordered assertion comparison
 
-The positive p/4 action-gap remainder closes S20-052. The Section20 ledger now has 56 groups: 45 matched, eight corrected or scope-clarified, one partial auxiliary assertion and two contextual. The new proofs use the actual complex action, actual squared gaps and normalized-action factorization, on a common connected complex neighborhood inside any prescribed open neighborhood of the real locus. All real sources and all signed indices remain, including collapsed gaps. The mixed sequence pair is fixed before every OnePlus projection exponent, with locally uniform bounds and literal p/4 quasi-norms. S20-030 still needs the full-U_k refined auxiliary estimate beyond the actual-gap and pi/8 tail-disc bounds. All earlier direct constant corrections, original action-image scope and alternate convolution-proof qualifications remain. No new refutation is added; wider qualifications remain unresolved.
+The positive full original-disk auxiliary proof closes S20-030. The Section20 ordered ledger now has 56 groups: 46 matched, eight corrected or scope-clarified and two contextual, with no partial or pending groups in this ledger. The refinement covers every original open isolating disk, including the full open pi/4 tails and all finite central disks. A fixed ell(p/2) plus OnePlus decomposition of the actual supremum has locally uniform complex-source bounds, uniform in the deleted index. A common connected neighborhood can be restricted inside the original Section20 domain while retaining all real sources and the unchanged roots. All earlier constant corrections, action-image scope and alternate convolution-proof qualifications remain. The whole dissertation remains incomplete; this local ledger is not a source-wide completeness certificate. No new refutations are added.
 
 Source: printed pp. 91–96, text lines 7448–7960. Line numbers count newline
-characters and preserve form feeds. The preceding comparison inspected all six
-rendered pages; their unchanged hashes were revalidated for this proof step.
+characters and preserve form feeds. The original review inspected all six
+rendered pages. This follow-up rechecked p. 94 and the unchanged source hashes.
 
 | Group | Text lines | Source passage | Status |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ rendered pages; their unchanged hashes were revalidated for this proof step.
 | S20-027 | 7649–7655 | Lemma 20.3: diagonal and off-diagonal mixed estimates. | matched |
 | S20-028 | 7656–7666 | Uniform row coefficient power-sum bounds. | matched |
 | S20-029 | 7668–7676 | Collapse reduction and two-sided contour shrinking. | matched |
-| S20-030 | 7677–7681 | Refined auxiliary factor and its leading constant. | partial |
+| S20-030 | 7677–7681 | Refined auxiliary factor and its leading constant. | matched |
 | S20-031 | 7682–7684 | Squared-primitive gap error. | matched |
 | S20-032 | 7686–7692 | Combine the two expansions in the off-diagonal moment. | corrected |
 | S20-033 | 7694–7699 | Selected-gap maxima and the resulting remainder bound. | corrected |
@@ -383,15 +383,27 @@ Both boundary sides and collapsed gaps are included. The cosine form removes the
 
 ### S20-030: Refined auxiliary factor and its leading constant.
 
-- The actual scaled auxiliary factor is chi=pi*(n-k)*sourcePsiGapRegularFactor, with leading value i. Refined, locally bounded row majorants hold on every actual G_k, uniformly in n. Tail bounds also hold on the closed free-centered disk of radius pi/8.
+- The actual auxiliary factor chi=pi*(n-k)*sourcePsiGapRegularFactor has leading value i. Refined row majorants now hold on every prescribed original open isolating disk U_k for k distinct from n, including all finite central disks and the full open tail disks of radius pi/4. The source neighborhood and tail threshold precede all exponents and deleted indices.
+- The actual disk supremum of norm(chi-i), set to zero on the omitted diagonal, has a fixed ell(p/2) plus OnePlus decomposition. Its two maps precede all OnePlus projection exponents, and their norm bounds are locally uniform in the complex source and uniform in the deleted index.
+- A connected open neighborhood containing the entire real locus can be chosen inside any prescribed original open source domain. At each complex point it has a local isolating family and the full-disk mixed bound for the unchanged original analytic roots. The Section20 API example restricts inside its actual constructed domain.
+- The public p=3/2, n=-3 example divides the chi error by pi, giving the printed leading constant i/pi for (n-k)*zeta_k^n. It does not introduce a different constant or alter the later direct contour corrections.
 
 Public declarations:
 
 - `NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor`
 - `NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_actualGap_majorants`
 - `NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_chi_tail_majorants`
+- `NLS.ZakharovShabat.exists_local_sourcePeriodicMidpoint_quarter_lattice_separation`
+- `NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_refinedFullDiscTailMajorant_of_quotient`
+- `NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_fullDisc_chi_tail_majorants`
+- `NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_refined_chi_errorBound`
+- `NLS.ZakharovShabat.sourcePsiChiDiscSup`
+- `NLS.ZakharovShabat.sourcePsiChiDiscSup_bounds`
+- `NLS.ZakharovShabat.SourcePsiFullDiscChiMixedBound`
+- `NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_chi_sup_mixed`
+- `NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_allDisk_chi_mixed_neighborhood`
 
-Partial auxiliary scope: the printed expansion is stated throughout U_k, whose tail radius is pi/4. The inspected chi-tail proof supplies radius pi/8 and the actual-gap proof supplies G_k. A direct positive full-U_k upgrade remains to be linked or proved. The moment estimates need only G_k and are already proved.
+The full original OPEN U_k scope is now proved directly. Only the denominator geometry uses a closed pi/4 disk; no quotient or chi bound on its boundary is asserted. The prescribed-disk local theorem is centered at any real source, and the common neighborhood theorem supplies local bounds at every complex point of a real-locus-preserving restriction of the original domain. The fixed mixed supremum bound expresses uniform sequence control on the whole disk; no Banach analyticity of the supremum or of subunit exponent spaces is asserted.
 
 ### S20-031: Squared-primitive gap error.
 
@@ -687,17 +699,16 @@ Invertibility holds on an open dense subset of the same connected action-image d
 
 The [original package](../NLS/ZakharovShabat/SourceSection20Original.lean)
 retains the original normalized roots, canonical primitive and physical frequency.
-The [positive moment estimate](../NLS/ZakharovShabat/SourceAbelianMomentSecondError.lean)
-already contains the corrected contour constants. The new
-[quarter-exponent remainder](../NLS/ZakharovShabat/SourceActionGapQuarter.lean)
-proves the stronger action-gap display on p. 96 directly.
+The [full-disc proof](../NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean) closes S20-030;
+the [quarter-exponent remainder](../NLS/ZakharovShabat/SourceActionGapQuarter.lean)
+already closes S20-052. The corrected contour constants are retained in the
+[positive moment estimate](../NLS/ZakharovShabat/SourceAbelianMomentSecondError.lean).
 
-The initial comparison inspected 72 complete module bodies and the positive
-factor excerpt, and resolved 99 declaration references. This follow-up inspected
-the new module and seven direct support modules; the updated ledger resolves
-102 declarations. A fresh reading of every transitive dependency is not claimed.
+This follow-up read the new module and eleven support/interface module bodies.
+The updated ledger resolves 111 public declarations. Earlier reviews retain their
+recorded inspection scope; a fresh reading of every transitive dependency is not claimed.
 No new refutations were added.
 
-The complete ./scripts/check.sh passed: 8,561 build jobs, 7,644 public examples and a transitive axiom audit of 44,618 NLS declarations. The check includes the new module and four new API examples, with 21 inherited warnings and zero new warnings. The examples cover the exact p=8 endpoint target, a p/4 exponent below one, restriction inside a prescribed source domain, and a source exponent below two at a negative gap index. Source-review hashes, declaration references and local documentation links are checked separately. These checks do not certify complete formalization.
+The complete ./scripts/check.sh passed: 8,562 build jobs, 7,648 public examples and a transitive axiom audit of 44,637 NLS declarations. Seven positive theorems, two definitions and four new API examples pass with 21 inherited warnings and zero new warnings. The examples cover the full pi/4 tail, every supplied central disk, restriction inside the actual Section20 domain and the printed i/pi normalization at p=3/2 and n=-3. The source-review hashes, declaration references and local documentation links are also checked. These checks do not certify complete formalization.
 
-Next: prove the full-disc auxiliary bound S20-030, then continue to Section 21.
+Next: the ordered assertion comparison for Section 21.

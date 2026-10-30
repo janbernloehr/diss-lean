@@ -1,5 +1,33 @@
 # Section 20: original moments and renormalized frequencies
 
+## Positive full-disc auxiliary estimate
+
+The auxiliary estimate on p. 94 now holds on every full original open
+isolating disk in [SourcePsiRefinedFullDisc.lean](../NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean).
+This includes the finite central disks and the full pi/4 tail disks.
+
+The actual disk supremum has a fixed `ell(p/2) + ell(1+)` decomposition,
+chosen before all auxiliary exponents. Its norms are locally uniform in
+the complex source and uniform in the deleted index. A common connected
+neighborhood can be chosen inside the original Section 20 domain while
+retaining every real source and the original analytic roots. The leading
+constant remains `i/pi` in the printed normalization.
+
+Seven positive theorems and four API examples close S20-030. The
+[Section 20 ledger](SECTION_20_ASSERTIONS.md) now records 46 matched
+groups, eight corrections or scope clarifications and two contextual
+groups, with no partial or pending groups in that ledger. The p/4
+action-gap remainder, earlier constant corrections and original
+action-image scope remain intact. No new refutation is added.
+
+The complete ./scripts/check.sh passed: 8,562 build jobs, 7,648 public examples and a transitive axiom audit of 44,637 NLS declarations. Seven positive theorems, two definitions and four new API examples pass with 21 inherited warnings and zero new warnings. The examples cover the full pi/4 tail, every supplied central disk, restriction inside the actual Section20 domain and the printed i/pi normalization at p=3/2 and n=-3. The source-review hashes, declaration references and local documentation links are also checked. These checks do not certify complete formalization.
+
+Next: the ordered assertion comparison for Section 21. The dissertation
+remains incomplete; wider qualifications are retained in the
+[completion assessment](COMPLETENESS.md).
+
+The earlier entries record the intermediate gaps before their positive proofs.
+
 ## Positive quarter-exponent remainder
 
 The stronger action-gap remainder on p. 96 is now proved in

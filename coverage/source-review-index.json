@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T22:51:22.352976+00:00",
-  "base_commit": "c26255d4178df293ca157f9351cc283db8835a8e",
+  "published_utc": "2026-10-30T23:45:43.145333+00:00",
+  "base_commit": "28449a05a07c8506402c8f0c012ac617b1363e5e",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,35 +18,34 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 161,
-    "module_hash_checks": 3544,
-    "distinct_modules": 1916
+    "review_records": 162,
+    "module_hash_checks": 3556,
+    "distinct_modules": 1918
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
     "Appendix G.2 does not specify the arbitrary-time interval H1 norm. The usual unnormalized integral norm gives a formal counterexample; the unit-interval consequence and a corrected estimate are proved. The intended norm still needs clarification.",
-    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage.",
-    "Section20 auxiliary assertion S20-030 (the refined auxiliary estimate on full U_k) remains to be directly linked or proved. The actual-gap estimate used in the main moment bounds is proved. S20-052, the stronger p/4 action-gap remainder, is now proved directly."
+    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c26255d4178df293ca157f9351cc283db8835a8e",
-    "validated_state": "Fresh full check after the positive p/4 action-gap proof. S20-052 is closed; S20-030 remains explicit.",
+    "base_commit": "28449a05a07c8506402c8f0c012ac617b1363e5e",
+    "validated_state": "Fresh full check after the positive full original-disk auxiliary proof. S20-030 and S20-052 are closed in the Section20 ledger.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8561,
-    "public_examples": 7644,
-    "transitive_NLS_declarations": 44618,
+    "build_jobs": 8562,
+    "public_examples": 7648,
+    "transitive_NLS_declarations": 44637,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 74193,
+    "gate_session": 21848,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4838,
-      "sha256": "6e0384d0c62be9fe78ac2f77eb82b976f923c20483e04a36ef6a270d9d0ab29b"
+      "files": 4839,
+      "sha256": "c45678b0c10c92cc41f9d1805c04533fd320a79dd7fbe762b4ab3a41b7275bdc"
     },
-    "full_gate_log_sha256": "a0cb65b93fd6b47f5175347c0fec30d7ee6b325162b4d198e3197aec348a058e",
-    "qualification": "The full Lean build, public examples and transitive axiom audit pass on this exact snapshot. Source qualifications remain; checks and group counts do not certify complete formalization.",
-    "full_gate_log": "work/Section20ActionGapQuarterFullCheck.log"
+    "full_gate_log_sha256": "2df27efda9824739677b566e5f91dd5701c964fa7fd1a5d0e4e66589a7a0619d",
+    "qualification": "The full Lean build, public examples and transitive axiom audit pass on this exact snapshot. Earlier corrections and broader source qualifications remain; counts do not certify complete formalization.",
+    "full_gate_log": "work/Section20FullDiscFullCheck2.log"
   },
   "named_statements": [
     {
@@ -47603,6 +47602,1263 @@
         "log_sha256": "a0cb65b93fd6b47f5175347c0fec30d7ee6b325162b4d198e3197aec348a058e"
       },
       "source_record_sha256": "eb03ae983b7d338bea6e03d0e21abda394e7a54801046eea7dd4d51c46bd5edf"
+    },
+    "Section20FullDiscSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "28449a05a07c8506402c8f0c012ac617b1363e5e",
+      "updated_utc": "2026-10-30T23:45:43.145333+00:00",
+      "source_lines": [
+        [
+          7677,
+          7681
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S20-030",
+          "source_lines": [
+            7677,
+            7681
+          ],
+          "requirement": "Refined auxiliary factor and its leading constant.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual auxiliary factor chi=pi*(n-k)*sourcePsiGapRegularFactor has leading value i. Refined row majorants now hold on every prescribed original open isolating disk U_k for k distinct from n, including all finite central disks and the full open tail disks of radius pi/4. The source neighborhood and tail threshold precede all exponents and deleted indices.",
+            "The actual disk supremum of norm(chi-i), set to zero on the omitted diagonal, has a fixed ell(p/2) plus OnePlus decomposition. Its two maps precede all OnePlus projection exponents, and their norm bounds are locally uniform in the complex source and uniform in the deleted index.",
+            "A connected open neighborhood containing the entire real locus can be chosen inside any prescribed original open source domain. At each complex point it has a local isolating family and the full-disk mixed bound for the unchanged original analytic roots. The Section20 API example restricts inside its actual constructed domain.",
+            "The public p=3/2, n=-3 example divides the chi error by pi, giving the printed leading constant i/pi for (n-k)*zeta_k^n. It does not introduce a different constant or alter the later direct contour corrections."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_actualGap_majorants",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_chi_tail_majorants",
+            "NLS.ZakharovShabat.exists_local_sourcePeriodicMidpoint_quarter_lattice_separation",
+            "NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_refinedFullDiscTailMajorant_of_quotient",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_fullDisc_chi_tail_majorants",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_refined_chi_errorBound",
+            "NLS.ZakharovShabat.sourcePsiChiDiscSup",
+            "NLS.ZakharovShabat.sourcePsiChiDiscSup_bounds",
+            "NLS.ZakharovShabat.SourcePsiFullDiscChiMixedBound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_chi_sup_mixed",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_allDisk_chi_mixed_neighborhood"
+          ],
+          "qualification": "The full original OPEN U_k scope is now proved directly. Only the denominator geometry uses a closed pi/4 disk; no quotient or chi bound on its boundary is asserted. The prescribed-disk local theorem is centered at any real source, and the common neighborhood theorem supplies local bounds at every complex point of a real-locus-preserving restriction of the original domain. The fixed mixed supremum bound expresses uniform sequence control on the whole disk; no Banach analyticity of the supremum or of subunit exponent spaces is asserted."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S20-001",
+          "source_lines": [
+            7448,
+            7452
+          ],
+          "requirement": "Source and action interpretations of the frequency.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "Source/action interpretations agree on every real source and on a common connected complex neighborhood by Q.action_frequency_complex. The higher-p action domain is the original action image containing all real actions and the embedded nonnegative ell1 cone; no proof of the entire nonnegative ell(p/2) cone is asserted. The Section 18 scope qualification is preserved."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.action_frequency",
+            "NLS.ZakharovShabat.SourceSection20Data.action_frequency_complex",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData"
+          ],
+          "qualification": "Retain the Section 18 action-image qualification. The opening claim of a neighborhood of the entire nonnegative ell^(p/2) cone is not asserted. The complex source/action identity is on a common connected neighborhood containing all real sources."
+        },
+        {
+          "ordered_group": "S20-002",
+          "source_lines": [
+            7462,
+            7470
+          ],
+          "requirement": "Physical angle-energy bracket on the complex H1 open-gap domain.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual physical full H1 directional energy bracket is proved on the entire original complex open-gap domain. The domain is open and connected; finite-gap H1 density supplies real germs and real-form uniqueness continues the identity. The same U is chosen before all indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.sobolev_energy_bracket_complex",
+            "NLS.ZakharovShabat.SourceSection20Data.sobolev_energy_bivector_complex",
+            "NLS.ZakharovShabat.SourceSection20Data.isConnected_sobolev_openGapDomain"
+          ],
+          "qualification": "The bracket uses the full H1 energy derivative. Any representing L2 cotangent gives the bivector identity; no theorem asserting such a cotangent at every H1 point is needed or claimed."
+        },
+        {
+          "ordered_group": "S20-003",
+          "source_lines": [
+            7471,
+            7484
+          ],
+          "requirement": "Actual moment definition and retained roots and primitive.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Raw positively oriented F_k^m*psi_n/canonicalRoot circle integral; numerator n independent of selected integration gap k. Atlas gluing is justified on complex overlaps from actual real contour comparison; ambient primitive neighborhoods are independent. Q.moment_contours retains its own Section19 primitive."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianMomentCircle",
+            "NLS.ZakharovShabat.SourceSection20Data.moment_contours"
+          ],
+          "qualification": "These are raw positively oriented contour integrals. Numerator index n, selected gap k and order m are independent; the retained original roots and Section 19 primitive are used."
+        },
+        {
+          "ordered_group": "S20-004",
+          "source_lines": [
+            7486,
+            7491
+          ],
+          "requirement": "Diagonal and off-diagonal factors in equation (4.9).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Rendered equation (4.9) has regular zeta_n in its diagonal factor, correctly. The existing diagonal_factor and offDiagonal_factor retain that normalization. No diagonal-symbol erratum is warranted."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.diagonal_factor",
+            "NLS.ZakharovShabat.SourceSection20Data.offDiagonal_factor"
+          ],
+          "qualification": "The rendered diagonal factor in (4.9) already uses the regular zeta_n. Its symbol needs no correction."
+        },
+        {
+          "ordered_group": "S20-005",
+          "source_lines": [
+            7493,
+            7493
+          ],
+          "requirement": "Analytic domains of the regular and auxiliary factors.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "Q.zeta_analytic proves regular negative product analytic on the omitted-gap domain. Q.auxiliary_analytic restricts that domain by excluding tau_n. On an isolating selected disk use k!=n. No new pole counterexample is needed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.zeta_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.auxiliary_analytic"
+          ],
+          "qualification": "Restrict the auxiliary analyticity assertion by excluding tau_n. On a selected isolating disk the auxiliary assertion uses k distinct from n; the regular zeta remains analytic across its selected gap."
+        },
+        {
+          "ordered_group": "S20-006",
+          "source_lines": [
+            7495,
+            7499
+          ],
+          "requirement": "Deleted product and auxiliary quotient in equation (4.10).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Q.zeta_product is actual HasProd over m!=k with negative result. unused root sigma_n^n is filled by tau_n. Q.auxiliary_eq_zeta identifies printed quotient with actual double-omitted product on its permitted domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.zeta_product",
+            "NLS.ZakharovShabat.SourceSection20Data.auxiliary_eq_zeta"
+          ],
+          "qualification": "The negative-product normalization and the midpoint filling of the unused root are literal. The auxiliary quotient identity uses k distinct from n."
+        },
+        {
+          "ordered_group": "S20-007",
+          "source_lines": [
+            7502,
+            7503
+          ],
+          "requirement": "Lemma 20.1(i): zero-order normalization.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Order zero is exactly 2*pi*Kronecker delta from normalized psi periods, without an extra imaginary unit."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.lemma20_1"
+          ],
+          "qualification": "The normalization is 2*pi, with no extra imaginary unit."
+        },
+        {
+          "ordered_group": "S20-008",
+          "source_lines": [
+            7505,
+            7506
+          ],
+          "requirement": "Lemma 20.1(ii): moment analyticity.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Fixed-circle joint analyticity, composition with actual normalized roots and compatible real-centered charts gives analytic moments, including zero order, on a common domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.lemma20_1",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.analytic_moment"
+          ],
+          "qualification": "Includes order zero and closed gaps on the same source domain."
+        },
+        {
+          "ordered_group": "S20-009",
+          "source_lines": [
+            7509,
+            7510
+          ],
+          "requirement": "Lemma 20.1(iii): odd moments vanish.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "One F_k cancels the selected root, even powers use the analytic square continuation; Cauchy gives every odd moment zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.lemma20_1",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.moment_odd"
+          ],
+          "qualification": "Analytic cancellation and Cauchy integration prove every odd order."
+        },
+        {
+          "ordered_group": "S20-010",
+          "source_lines": [
+            7512,
+            7513
+          ],
+          "requirement": "Lemma 20.1(iv): positive moments vanish on collapsed gaps.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At collapse, standard root is midpoint-z. The regular extension cancels the remaining root for every positive order and every numerator n, including diagonal."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.lemma20_1",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.moment_succ_of_collapsed"
+          ],
+          "qualification": "Includes every numerator index, with no off-diagonal restriction."
+        },
+        {
+          "ordered_group": "S20-011",
+          "source_lines": [
+            7516,
+            7516
+          ],
+          "requirement": "Proof of zero-order normalization.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The zero-order integral is exactly 2*pi*Kronecker delta. Actual real orthogonality extends to complex sources by real-form uniqueness; the local chart constructor chooses one source ball and one family of circles before all indices and orders."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianMomentCircle_zero",
+            "NLS.ZakharovShabat.SourcePsiNormalizedComplexExtension.exists_momentCircle_zero_periods",
+            "NLS.ZakharovShabat.exists_sourceAbelianMoment_localCharts"
+          ],
+          "qualification": "No period normalization is assumed as an unproved extra hypothesis."
+        },
+        {
+          "ordered_group": "S20-012",
+          "source_lines": [
+            7517,
+            7524
+          ],
+          "requirement": "Fixed circuits and joint analytic moment integrands.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "AnalyticAt fixed circle follows from compactness of the circle in the joint domain; same local circle family all n,k,m is in the atlas representation."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticAt_sourceAbelianMomentCircle_of_contour_domain",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.circle_representation"
+          ],
+          "qualification": "Local circles may depend on the real center and selected gap, but the source neighborhood is chosen before all n,k,m."
+        },
+        {
+          "ordered_group": "S20-013",
+          "source_lines": [
+            7525,
+            7532
+          ],
+          "requirement": "Odd-quotient continuation and contour vanishing.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceAbelianMomentCancellation.momentIntegrand_odd_eq_regular plus CircleVanishing.momentCircle_odd_eq_zero proves the analytic odd quotient and Cauchy vanishing."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentIntegrand_odd_eq_regular",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentCircle_odd_eq_zero"
+          ],
+          "qualification": "The odd quotient extends analytically across the selected gap, using the analytic square and one root cancellation."
+        },
+        {
+          "ordered_group": "S20-014",
+          "source_lines": [
+            7533,
+            7538
+          ],
+          "requirement": "Collapsed off-diagonal continuation.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "CircleVanishing.momentCircle_succ_eq_zero_of_collapsed proves all numerator indices in a uniform regular-extension argument, so no special off-diagonal premise is needed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentCircle_succ_eq_zero_of_collapsed"
+          ],
+          "qualification": "A uniform regular-extension argument replaces the separate printed off-diagonal argument."
+        },
+        {
+          "ordered_group": "S20-015",
+          "source_lines": [
+            7539,
+            7543
+          ],
+          "requirement": "Collapsed diagonal residue and endpoint zero.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "All positive-order moments vanish at a collapsed selected gap, including the diagonal case. Analytic regular cancellation supplies the positive proof for every order."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentCircle_succ_eq_zero_of_collapsed",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.moment_succ_of_collapsed"
+          ],
+          "qualification": "In the collapsed diagonal sentence use moment order 2l and F_n^(2l). The all-positive-order theorem replaces the isolated residue computation."
+        },
+        {
+          "ordered_group": "S20-016",
+          "source_lines": [
+            7554,
+            7559
+          ],
+          "requirement": "Lemma 20.2: physical renormalized frequency equals the second-moment sum.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The physical open frequency is minus the actual H3 action-reduction derivative; the closed frequency is its physical second amplitude derivative at action=t^2/2. Both equal -4/(2*pi) times the actual second-moment sum after mass and free dispersion. Exponent compatibility is packaged by Q.physical_frequency."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.physical_frequency",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapOpenFrequency",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapClosedFrequency"
+          ],
+          "qualification": "The physical frequency is independently defined from derivatives of the actual H3. The closed-gap definition uses the second amplitude derivative when the action is t^2/2."
+        },
+        {
+          "ordered_group": "S20-017",
+          "source_lines": [
+            7561,
+            7567
+          ],
+          "requirement": "Finite-gap cubic Laurent expansion.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "SourceSection19Data.cube_isBigO gives the actual finite-gap primitive cubic with physical Hamiltonians and constant -3*i*H2/4. This directly corrects the copied p.93 constant."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.cube_isBigO"
+          ],
+          "qualification": "Correct the copied constant on p.93 to -3*i*H2/4. The existing positive cubic expansion supplies it directly; no new refutation is added."
+        },
+        {
+          "ordered_group": "S20-018",
+          "source_lines": [
+            7569,
+            7574
+          ],
+          "requirement": "Physical renormalized energy contour identity.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceFullAbelianCubicContourPoisson.exists_cubicContour_eq_physical gives H3-2H1^2 using actual Hamiltonians and retained primitive. The contour is (8/(6*pi))*integral(F0^3). SourceFiniteGapOpenFrequency uses local equality before differentiation."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.exists_cubicContour_eq_physical",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapOpenFrequency_eq_cubicContour_bracket"
+          ],
+          "qualification": "The contour coefficient is 8/(6*pi). Local equality with the physical renormalized energy is established before differentiation."
+        },
+        {
+          "ordered_group": "S20-019",
+          "source_lines": [
+            7576,
+            7584
+          ],
+          "requirement": "Differentiate the cubic contour in the physical angle direction.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "theta_power_circle_eq moves the actual source bivector through the integral using joint analyticity. theta_cubicContour_eq_quadratic fixes the exact -4/(2*pi) normalization."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_power_circle_eq",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_cubicContour_eq_quadratic"
+          ],
+          "qualification": "The resulting quadratic contour coefficient is exactly -4/(2*pi)."
+        },
+        {
+          "ordered_group": "S20-020",
+          "source_lines": [
+            7586,
+            7593
+          ],
+          "requirement": "Discriminant-angle bracket and frequency contour.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceFullAbelianAnglePoisson.thetaFullPrimitive_eq uses the exact primitive source differential and thetaDiscriminant_eq to give -1/2 times the actual psi/canonicalRoot. Antisymmetry matches printed2{Delta,theta_n}=psi_n; power chain rule gives the cubic bracket."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaFullPrimitive_eq",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaFullPrimitive_pow_eq"
+          ],
+          "qualification": "The primitive derivative is -psi_n/(2*canonicalRoot); antisymmetry gives the printed discriminant-angle order."
+        },
+        {
+          "ordered_group": "S20-021",
+          "source_lines": [
+            7595,
+            7607
+          ],
+          "requirement": "Deform the outer contour to finitely many open gaps.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_finiteGap_contour_decomposition fills all closed gaps of the actual psi quotient, decomposes an outer circle with finite holes, and identifies each hole integral with the atlas circle. Threshold precedes numerator index, primitive index and order."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_contour_decomposition"
+          ],
+          "qualification": "Closed gaps are filled analytically. The enclosing cutoff is chosen before all numerator and primitive indices and orders."
+        },
+        {
+          "ordered_group": "S20-022",
+          "source_lines": [
+            7609,
+            7618
+          ],
+          "requirement": "Index shift, odd vanishing and free dispersion.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "sourceAbelianMomentCircle_quadratic_shift expands F0=Fk-i*k*pi, odd order vanishes and order0 gives2*pi*delta. quadratic_contour_sum_renormalization yields the exact (2*n*pi)^2 free correction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianMomentCircle_quadratic_shift",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.quadratic_contour_sum_renormalization"
+          ],
+          "qualification": "The index shift is F_0=F_k-i*k*pi. Its zero-order term gives exactly (2*n*pi)^2."
+        },
+        {
+          "ordered_group": "S20-023",
+          "source_lines": [
+            7620,
+            7622
+          ],
+          "requirement": "Vanishing outside finite gap support.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "positive_moment_hasSum_of_gap_support and exists_finiteGap_moment_sums use the same finite actual open-gap set for every positive order and numerator n. Printed undefined S should be the defined A."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.positive_moment_hasSum_of_gap_support",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_moment_sums"
+          ],
+          "qualification": "Replace the undefined finite-support label S by the already defined A."
+        },
+        {
+          "ordered_group": "S20-024",
+          "source_lines": [
+            7623,
+            7627
+          ],
+          "requirement": "H1 finite-gap approximation with exact other numerical gaps fixed.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_finiteGap_exact_sobolev_approximants is the literal result for all nonnegative Sobolev orders: selected gap opens, every other numerical gap length equals its original value, convergence in chosen norm. sigma=1 gives H1. Uses exact gap-opening and continuous Sobolev lift; not claimed analytic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_exact_sobolev_approximants",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_exact_sobolev_opening"
+          ],
+          "qualification": "The theorem preserves every other numerical gap length exactly. It proves a continuous Sobolev lift and does not claim an analytic gap-opening curve."
+        },
+        {
+          "ordered_group": "S20-025",
+          "source_lines": [
+            7629,
+            7635
+          ],
+          "requirement": "Finite-sum and physical-frequency continuity at a collapsed selected gap.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "finiteGapClosedFrequency_eq_limit_and_moments uses an inverse-natural amplitude sequence with fixed finite gap support. Analytic physical H3 plus amplitude derivative limit gives the closed physical frequency. This proof uses the action-opening curve, while exact numerical-gap opening is a separate source assertion."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapClosedFrequency_eq_limit_and_moments",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.positive_moment_sum_tendsto_of_eventually_fixed_gap_support"
+          ],
+          "qualification": "The physical limit proof uses a fixed-support action-opening curve. The stronger exact numerical-gap approximation is separately proved in S20-024; the two constructions are not conflated."
+        },
+        {
+          "ordered_group": "S20-026",
+          "source_lines": [
+            7637,
+            7638
+          ],
+          "requirement": "Transition to moment decay estimates.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "Narrative transition from physical frequency formula to moment estimates; contextual."
+          ],
+          "declarations": [],
+          "qualification": "Narrative transition; no additional mathematical assertion."
+        },
+        {
+          "ordered_group": "S20-027",
+          "source_lines": [
+            7649,
+            7655
+          ],
+          "requirement": "Lemma 20.3: diagonal and off-diagonal mixed estimates.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_lemma20_3_refined has actual exponent-independent diagonal and cubic coefficients on a common connected source neighborhood. SourceSecondMomentMixed strengthens to fixed g+hOnePlus sequences before auxiliary q, preserving literal p/2 quasi-norms."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma20_3_refined",
+            "NLS.ZakharovShabat.SourceSecondMomentMixedData"
+          ],
+          "qualification": "The decomposition retains fixed sequence summands before the auxiliary exponent and includes the literal p/2 quasi-norm when p/2 is below one."
+        },
+        {
+          "ordered_group": "S20-028",
+          "source_lines": [
+            7656,
+            7666
+          ],
+          "requirement": "Uniform row coefficient power-sum bounds.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceSecondMomentMixedData.row_power_sum and exists_lemma20_3_offDiagonal_power_sum provide actual r-power sum bounds uniform in n; deleted diagonal coefficient equals zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSecondMomentMixedData.row_power_sum",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma20_3_offDiagonal_power_sum"
+          ],
+          "qualification": "The diagonal deleted coefficient is zero; power sums are uniform in the row index."
+        },
+        {
+          "ordered_group": "S20-029",
+          "source_lines": [
+            7668,
+            7676
+          ],
+          "requirement": "Collapse reduction and two-sided contour shrinking.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "real_second_moment_eq_gapSide gives the full two-sided shrinking and treats collapsed gaps by exact zero. real_even_moment_eq_cosineIntegral uses regular numerator to remove endpoint singularities. Error-domain cosine identities extend to complex sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_second_moment_eq_gapSide",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_even_moment_eq_cosineIntegral"
+          ],
+          "qualification": "Both boundary sides and collapsed gaps are included. The cosine form removes the endpoint singularities and extends to the complex source domain."
+        },
+        {
+          "ordered_group": "S20-030",
+          "source_lines": [
+            7677,
+            7681
+          ],
+          "requirement": "Refined auxiliary factor and its leading constant.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual auxiliary factor chi=pi*(n-k)*sourcePsiGapRegularFactor has leading value i. Refined row majorants now hold on every prescribed original open isolating disk U_k for k distinct from n, including all finite central disks and the full open tail disks of radius pi/4. The source neighborhood and tail threshold precede all exponents and deleted indices.",
+            "The actual disk supremum of norm(chi-i), set to zero on the omitted diagonal, has a fixed ell(p/2) plus OnePlus decomposition. Its two maps precede all OnePlus projection exponents, and their norm bounds are locally uniform in the complex source and uniform in the deleted index.",
+            "A connected open neighborhood containing the entire real locus can be chosen inside any prescribed original open source domain. At each complex point it has a local isolating family and the full-disk mixed bound for the unchanged original analytic roots. The Section20 API example restricts inside its actual constructed domain.",
+            "The public p=3/2, n=-3 example divides the chi error by pi, giving the printed leading constant i/pi for (n-k)*zeta_k^n. It does not introduce a different constant or alter the later direct contour corrections."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_actualGap_majorants",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_chi_tail_majorants",
+            "NLS.ZakharovShabat.exists_local_sourcePeriodicMidpoint_quarter_lattice_separation",
+            "NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_refinedFullDiscTailMajorant_of_quotient",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_fullDisc_chi_tail_majorants",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_refined_chi_errorBound",
+            "NLS.ZakharovShabat.sourcePsiChiDiscSup",
+            "NLS.ZakharovShabat.sourcePsiChiDiscSup_bounds",
+            "NLS.ZakharovShabat.SourcePsiFullDiscChiMixedBound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_chi_sup_mixed",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_allDisk_chi_mixed_neighborhood"
+          ],
+          "qualification": "The full original OPEN U_k scope is now proved directly. Only the denominator geometry uses a closed pi/4 disk; no quotient or chi bound on its boundary is asserted. The prescribed-disk local theorem is centered at any real source, and the common neighborhood theorem supplies local bounds at every complex point of a real-locus-preserving restriction of the original domain. The fixed mixed supremum bound expresses uniform sequence control on the whole disk; no Banach analyticity of the supremum or of subunit exponent spaces is asserted."
+        },
+        {
+          "ordered_group": "S20-031",
+          "source_lines": [
+            7682,
+            7684
+          ],
+          "requirement": "Squared-primitive gap error.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_local_refined_square_gap_majorants transfers F_k^2+selectedPolynomial error between actual primitive neighborhoods and bounds it by |gamma_k|^2 times a locally bounded refined sequence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_local_refined_square_gap_majorants"
+          ],
+          "qualification": "The bound includes the full squared gap factor and is locally uniform before the target exponent is chosen."
+        },
+        {
+          "ordered_group": "S20-032",
+          "source_lines": [
+            7686,
+            7692
+          ],
+          "requirement": "Combine the two expansions in the off-diagonal moment.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "offDiagonal_error_bound combines the actual square and chi factors retaining pi*(n-k). It proves |(n-k)*Omega_nk^2 - gamma_k^2*(sigma_k^n-tau_k)/4| <= 2|gamma_k|^3 L*(E*(F+1)+F/4). This supplies the positive corrected normalization, without a refutation."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.offDiagonal_error_bound"
+          ],
+          "qualification": "Retain i/pi when combining the auxiliary and squared-primitive expansions; the next shrunk-contour coefficient is -2*i/pi. Replace the printed i/pi^2 and -2*i/pi^2 accordingly. The positive error estimate retains pi*(n-k) and the leading gamma_k^2*(sigma_k^n-tau_k)/4."
+        },
+        {
+          "ordered_group": "S20-033",
+          "source_lines": [
+            7694,
+            7699
+          ],
+          "requirement": "Selected-gap maxima and the resulting remainder bound.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "All source numerator and polynomial estimates use the actual selected segment G_k. real_even_moment_max_bound attains the maximum there; norm_model_error_le retains normalized contour operator norm1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_even_moment_max_bound",
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.norm_model_error_le"
+          ],
+          "qualification": "Take the numerator maximum over G_k, the selected integration gap, rather than G_n. The preceding contour normalization is -2*i/pi."
+        },
+        {
+          "ordered_group": "S20-034",
+          "source_lines": [
+            7700,
+            7712
+          ],
+          "requirement": "Exact lower-side standard-root and odd weighted integrals.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "gapSideBoundaryIntegral_quadratic and centered_quadratic give exact side-dependent semicircle and zero odd integral, at arbitrary complex half-gap including collapse. gapSideBoundaryIntegral_shifted_quadratic retains only sigma-tau."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.gapSideBoundaryIntegral_quadratic",
+            "NLS.ZakharovShabat.gapSideBoundaryIntegral_centered_quadratic",
+            "NLS.ZakharovShabat.gapSideBoundaryIntegral_shifted_quadratic"
+          ],
+          "qualification": "The exact side signs, semicircle factor and vanishing odd integral include collapsed gaps."
+        },
+        {
+          "ordered_group": "S20-035",
+          "source_lines": [
+            7713,
+            7719
+          ],
+          "requirement": "Normalized-root offset in the polynomial gap integral.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The normalized-root offset sigma_k^n-tau_k is the only contribution to the polynomial gap integral. The cosine model has coefficient pi*gamma_k^2/4; division by the pi*(n-k) factor gives the leading off-diagonal term gamma_k^2*(sigma_k^n-tau_k)/4."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapCosineMean_shifted_model",
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.offDiagonal_error_bound"
+          ],
+          "qualification": "This is a normalized-root offset, not a critical-point offset. The corrected contour factors agree with S20-032."
+        },
+        {
+          "ordered_group": "S20-036",
+          "source_lines": [
+            7720,
+            7724
+          ],
+          "requirement": "Conclude the cubic off-diagonal mixed error.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_local_offDiagonal_secondMoment_majorants combines the actual squared-gap offsets, square errors and chi errors. The gap-offset product is embedded at r>=p/2; bounds uniform in n and neighborhoods chosen before r."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.exists_local_offDiagonal_secondMoment_majorants"
+          ],
+          "qualification": "The local neighborhood is chosen before the refined target exponent; row bounds are uniform in n."
+        },
+        {
+          "ordered_group": "S20-037",
+          "source_lines": [
+            7725,
+            7733
+          ],
+          "requirement": "Diagonal factorization and regular-product expansion.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The diagonal regular numerator equals i times the single-root quotient, with the unused root filled by its midpoint. The regular zeta is the negative quotient. The refined quotient-tail estimate holds on the full source isolating disks U_n, with a common tail cutoff before all allowed exponents."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceMomentRegularNumerator_diagonal",
+            "NLS.ZakharovShabat.SourceSection20Data.diagonal_factor",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_quotient_tail_majorants"
+          ],
+          "qualification": "The asymptotic is a large-index assertion on the full tail disks. The actual-gap majorants additionally handle finite central indices for the subsequent moment bounds. No change to the diagonal regular zeta symbol is needed."
+        },
+        {
+          "ordered_group": "S20-038",
+          "source_lines": [
+            7734,
+            7757
+          ],
+          "requirement": "Diagonal integral and pi/4 gap-squared coefficient.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "sourceGapCosineMean_diagonal_model gives exact pi*gamma^2/4; diagonal_coefficient_bound retains the entire squared gap including collapse. Actual diagonal coefficient =4*(Omega-pi*gamma^2/4)/gamma^2, and its refined lp norm is locally uniform."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapCosineMean_diagonal_model",
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.diagonal_coefficient_bound",
+            "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.exists_local_diagonal_secondMoment_coefficients"
+          ],
+          "qualification": "The leading coefficient is pi/4. The full gap-squared factor is retained, including at collapse."
+        },
+        {
+          "ordered_group": "S20-039",
+          "source_lines": [
+            7767,
+            7770
+          ],
+          "requirement": "Moment decay motivates analytic frequency extension.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "Narrative transition from moment decay to the analytic frequency extension; contextual."
+          ],
+          "declarations": [],
+          "qualification": "Narrative transition; no additional mathematical assertion."
+        },
+        {
+          "ordered_group": "S20-040",
+          "source_lines": [
+            7772,
+            7781
+          ],
+          "requirement": "Theorem 20.4: absolutely and locally uniformly convergent frequency series.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_theorem20_4 combines absolute convergence, analytic complex and real scalar maps, locally uniform symmetric partial sums, physical finite-gap values and analytic uniqueness. One source neighborhood chosen before n; rate not uniform over n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_theorem20_4",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_hasSum",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_uniform"
+          ],
+          "qualification": "The same local source neighborhood is chosen before n. The convergence rate can depend on n; no rate uniform over numerator indices is asserted."
+        },
+        {
+          "ordered_group": "S20-041",
+          "source_lines": [
+            7783,
+            7796
+          ],
+          "requirement": "Proof of scalar moment-series convergence and analyticity.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_secondMoment_series uses uniform p-row norms, bounded gaps and reciprocal Holder kernel, explicitly bounds diagonal, and proves absolute/uniform convergence. No restriction p<3 in scalar convergence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_secondMoment_series",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_renormalizedFrequency"
+          ],
+          "qualification": "Scalar convergence holds for every finite p>1; it is not restricted to p<3."
+        },
+        {
+          "ordered_group": "S20-042",
+          "source_lines": [
+            7797,
+            7803
+          ],
+          "requirement": "Agreement on real finite-gap sources and unique continuation.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "renormalizedFrequency_eq_physical_finiteGap_all_exponents transfers actual moments and physical mass through a coefficient-preserving Hilbert representative. eqOn_of_analytic_of_sourceFiniteGap identifies extensions on the connected source domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.renormalizedFrequency_eq_physical_finiteGap_all_exponents",
+            "NLS.ZakharovShabat.SourceSection20Data.unique_frequency"
+          ],
+          "qualification": "Actual moment and physical Hamiltonian coefficients are transported to a Hilbert representative. Finite-gap density and analytic uniqueness give the same frequency on the retained connected domain."
+        },
+        {
+          "ordered_group": "S20-043",
+          "source_lines": [
+            7807,
+            7811
+          ],
+          "requirement": "Definition of the frequency sequence map.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "frequencySequence is ofFunctionOrZero of actual scalar moment frequencies; frequencySequence_bound_of_correction proves membership and every coefficient equality, ruling out fallback on the stated domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencySequence",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencySequence_bound_of_correction"
+          ],
+          "qualification": "The implementation proves sequence-space membership and every coefficient identity; its total-function fallback is not used on the domain."
+        },
+        {
+          "ordered_group": "S20-044",
+          "source_lines": [
+            7814,
+            7816
+          ],
+          "requirement": "Theorem 20.5(i): all targets above one on the Hilbert source domain.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_sourceFrequency_theorem20_5 proves all finite permitted target exponents; SourceSection20FrequencyTop adds infinity on exactly the same U via actual lp coefficient inclusion."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceFrequency_theorem20_5",
+            "NLS.ZakharovShabat.SourceSection20Data.sequence_analytic_all"
+          ],
+          "qualification": "The infinity target is included on exactly the same U via the proved coefficient-preserving inclusion."
+        },
+        {
+          "ordered_group": "S20-045",
+          "source_lines": [
+            7818,
+            7827
+          ],
+          "requirement": "Theorem 20.5(ii): higher source exponents and refined frequency remainder.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_sourceFrequency_theorem20_5 gives refined actual frequencyCorrection at r>=p/3 and mixed remainder with literal quasi-norm below1. Q.frequency_mixed strengthens to fixed g plus OnePlus h before all auxiliary q."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceFrequency_theorem20_5",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed"
+          ],
+          "qualification": "The refined p/3 bound and the fixed OnePlus decomposition are retained, including literal quasi-norm exponents below one."
+        },
+        {
+          "ordered_group": "S20-046",
+          "source_lines": [
+            7829,
+            7846
+          ],
+          "requirement": "Uniform row norms at the permitted auxiliary exponent.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceSecondMomentMixedData.refined and row_power_sum include r=p/2 for p>2 and all finite r>1 for p=2. A single local source set is chosen before r, with row bounds uniform in n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSecondMomentMixedData.refined",
+            "NLS.ZakharovShabat.SourceSecondMomentMixedData.row_power_sum"
+          ],
+          "qualification": "Includes r=p/2 for p>2 and all finite r>1 for p=2, with one source neighborhood before r."
+        },
+        {
+          "ordered_group": "S20-047",
+          "source_lines": [
+            7847,
+            7854
+          ],
+          "requirement": "Holder and Young estimate for s at least the conjugate exponent.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "UniformHolderConvolution constructs one output majorant using powered Young and Holder. UniformReciprocalMajorant chooses min(output exponent, conjugate row exponent) and supplies the exact punctured-lattice norm. Covers the large-output branch by common argument."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_uniform_holder_convolution_majorant",
+            "NLS.Coeff.exists_uniform_reciprocal_majorant"
+          ],
+          "qualification": "An internal Holder/powered-Young majorant with the minimum of output and conjugate exponents supplies this branch. The proof does not assume an interchange of two uncontrolled infinite sums."
+        },
+        {
+          "ordered_group": "S20-048",
+          "source_lines": [
+            7856,
+            7866
+          ],
+          "requirement": "Subadditive power estimate for smaller s.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The same min-exponent convolution argument covers the smaller output exponent via contractive inner-exponent inclusion. This replaces the printed standalone subadditive-power derivation; the individual display is not separately claimed formalized."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_uniform_reciprocal_majorant",
+            "NLS.Coeff.exists_reciprocal_rowSum_coefficients"
+          ],
+          "qualification": "The same minimum-exponent argument proves the required small-output-exponent bound by contractive inclusion. It replaces the printed standalone subadditive-power derivation; that individual display is not separately claimed formalized."
+        },
+        {
+          "ordered_group": "S20-049",
+          "source_lines": [
+            7868,
+            7873
+          ],
+          "requirement": "Fixed mixed sequence decomposition of the off-diagonal sum.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "exists_reciprocal_rowSum_coefficients bounds actual offdiagonal sums in each finite allowed target with absolute convergence. exists_refined_frequencyCorrection_coefficients retains all cubic weights and the diagonal correction; Q.frequency_mixed gives one fixed OnePlus decomposition before all q."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_reciprocal_rowSum_coefficients",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_refined_frequencyCorrection_coefficients",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed"
+          ],
+          "qualification": "The off-diagonal sums are absolutely convergent, and the fixed mixed decomposition is chosen before all auxiliary q."
+        },
+        {
+          "ordered_group": "S20-050",
+          "source_lines": [
+            7875,
+            7884
+          ],
+          "requirement": "Diagonal summability and the final frequency correction.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "frequencyCorrection=omegaStar+gamma^2/2. Its exact diagonal/offdiagonal decomposition follows by isolating the diagonal of the absolutely convergent sum; actual triple-product bounds give refined p/3. frequencySequence_bound_of_correction subtracts gamma^2/2 and proves the p/2 target with all coefficients."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencyCorrection",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_refined_frequencyCorrection_coefficients",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencySequence_bound_of_correction"
+          ],
+          "qualification": "The exact correction is omegaStar+gamma^2/2. Isolating the diagonal in the absolutely convergent sum and actual product bounds give the stated exponents."
+        },
+        {
+          "ordered_group": "S20-051",
+          "source_lines": [
+            7894,
+            7905
+          ],
+          "requirement": "Proof of Theorem 18.1: analytic descent to the original action image.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Actual bounded local frequency maps glue on a union of action balls centered at real-source actions. The open action image contains every real-source action and the embedded nonnegative ell1 cone; each complex action in that image has a source preimage. The fixed cover supports all permitted frequency and correction targets."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceFrequency_boundedActionSpace_maps",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic"
+          ],
+          "qualification": "This matches the p.96 neighborhood of the nonnegative ell1 cone. It does not enlarge the action image to the entire nonnegative ell^(p/2) cone mentioned on p.91."
+        },
+        {
+          "ordered_group": "S20-052",
+          "source_lines": [
+            7906,
+            7917
+          ],
+          "requirement": "Action-gap comparison gives equation (4.12).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual action-gap correction has locally uniform sequence bounds at every finite r>1 with r>=p/4. For p>2, multiply the p/2 normalized-action deviation by the actual squared-gap sequence; the Holder product and contractive inclusion allow intermediate exponents below one. For p<=2, the established bound already gives every r>1.",
+            "A connected open neighborhood inside any prescribed open neighborhood of the real locus contains every real source. At each complex source point, one smaller neighborhood carries a fixed ell^(p/4) plus OnePlus decomposition of gamma_n^2/4-I_n, with uniform bounds before the auxiliary exponent and for all signed indices, including collapsed gaps.",
+            "Equation (4.12) retains the independently proved identity omegaStar+2I = frequencyCorrection+2*(I-gamma^2/4) and its fixed p/3 plus OnePlus remainder."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.actionFrequencyCorrection_eq",
+            "NLS.ZakharovShabat.exists_local_sourceActionGapCorrection",
+            "NLS.ZakharovShabat.exists_sourceActionFrequency_asymptotic",
+            "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds",
+            "NLS.ZakharovShabat.exists_local_sourceActionGapQuarter",
+            "NLS.ZakharovShabat.exists_sourceActionGapQuarter_neighborhood",
+            "NLS.ZakharovShabat.exists_sourceActionGapQuarter_mixed"
+          ],
+          "qualification": "The displayed stronger p/4 action-gap remainder is now proved directly. The common source neighborhood may be restricted inside the original Section20 domain while preserving all real sources. The result asserts locally uniform membership and norm bounds, with fixed summands before all OnePlus exponents; it does not assert Banach analyticity at quasi-norm exponents below one."
+        },
+        {
+          "ordered_group": "S20-053",
+          "source_lines": [
+            7920,
+            7937
+          ],
+          "requirement": "Proof of Corollary 18.2(i): Taylor derivative and local inverse.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "sourceFrequency_fderiv_zero derives -2Id using the actual single-action opening limit and finite Fourier basis density. SourceOriginalFrequencyData.action_quadratic_remainder upgrades analyticity to O(normI^2) sequence error. local_inverse gives both analytic inverse identities and derivative(-2)^-1Id."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceFrequency_fderiv_zero",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.action_quadratic_remainder",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_inverse"
+          ],
+          "qualification": "The derivative is -2 times the identity. The sequence Taylor remainder is O(norm(I)^2), uniformly in the output index, and the inverse has both analytic inverse identities."
+        },
+        {
+          "ordered_group": "S20-054",
+          "source_lines": [
+            7938,
+            7950
+          ],
+          "requirement": "Corrected derivative factors through a stronger target and is compact.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceOriginalFrequencyData.compact_derivative chooses a strict refined target r<q=p/2 from its proved analytic correction; CompactActionDerivative factors through the derivative into ellr and applies Pitt. It does not claim that the plain inclusion ellr->ellq itself is compact."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.compact_derivative",
+            "NLS.Coeff.isCompactOperator_actionCorrection_fderiv"
+          ],
+          "qualification": "Compactness follows by factoring the correction derivative through a stricter exponent and applying Pitt. The plain inclusion between the two sequence spaces is not asserted compact."
+        },
+        {
+          "ordered_group": "S20-055",
+          "source_lines": [
+            7951,
+            7952
+          ],
+          "requirement": "Fredholm index-zero consequence.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "SourceOriginalFrequencyData.fredholm uses the compact corrected derivative, i.e. Corollary 18.2(ii), and the -2 scalar shift. Kernel and cokernel have equal finite dimension. Printed reference to item(i) should be(ii)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.fredholm"
+          ],
+          "qualification": "The Fredholm argument uses compactness from item (ii) of Corollary 18.2. Correct the printed reference to item (i) accordingly."
+        },
+        {
+          "ordered_group": "S20-056",
+          "source_lines": [
+            7953,
+            7960
+          ],
+          "requirement": "Generic local inverse on the connected action domain.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "SourceOriginalFrequencyData.generic_local_inverse uses analytic compact perturbation of -2Id on the unchanged connected action domain and invertibility at zero. Open dense invertible locus has actual two-sided analytic local inverses. Action-domain scope remains qualified."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_local_inverse"
+          ],
+          "qualification": "Invertibility holds on an open dense subset of the same connected action-image domain. Both sides of the analytic local inverse are proved."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean": "8a3beafb88c7f6cd141306101566ddfea58bfe401c2429d2269afe9752f1b427",
+        "NLS/ZakharovShabat/SourcePsiMidpointDenominator.lean": "add9a91c94a13e2b8c776c904ae35385c9281b46959e0541408773f4ba9f78a1",
+        "NLS/ZakharovShabat/SourcePsiRefinedChiTail.lean": "e20ea99a9fc11c91143d577feb810a7e96c5827ec4e47297ce56b02d21a703f3",
+        "NLS/ZakharovShabat/SourcePsiRefinedQuotientTail.lean": "311274f73481800a5ef1dcfa03f1ff2f1c9cf687520fec1ed7bd34523063e784",
+        "NLS/ZakharovShabat/SourcePsiMidpointFilledFactorMajorant.lean": "0c5b5ee34e30dc58ad44c4f71298b8ca9b861416c89c035d89a3c1fcbddfc3d5",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean": "4dddcbf934b281c625186d4ec1a53e9568e4cd7f32e9bb2e158a95c70fc46c6c",
+        "NLS/ZakharovShabat/SourcePsiOriginalChiMajorant.lean": "3afcf1890700d95eeb2dd5e4efc820f8403b97b4d1741716df4ecebbddf92958",
+        "NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean": "7db57cb8f41a36fa619e8cdf8fb6c1c35d3f3a0b95178960d22f91685b42739f",
+        "NLS/ZakharovShabat/SourceLemma10_1.lean": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816",
+        "NLS/ZakharovShabat/SourceSection20Original.lean": "9ed9a2dc3c7fb07a0a4ae68596bbfd954421fb3b39db74cfeaf9072b5b855415",
+        "NLS/SequenceSpaces/FiniteModification.lean": "8c44887737226036ca641d08fb4d389d79c89143a4183f2a8b24e7392fddfd7b",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean": "9d27ac91ed0d81aa869c7ae8cb22e9cc0497a440c772e5807501ed8ba6cbd616"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean",
+        "NLS/ZakharovShabat/SourcePsiMidpointDenominator.lean",
+        "NLS/ZakharovShabat/SourcePsiRefinedChiTail.lean",
+        "NLS/ZakharovShabat/SourcePsiRefinedQuotientTail.lean",
+        "NLS/ZakharovShabat/SourcePsiMidpointFilledFactorMajorant.lean",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean",
+        "NLS/ZakharovShabat/SourcePsiOriginalChiMajorant.lean",
+        "NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean",
+        "NLS/ZakharovShabat/SourceLemma10_1.lean",
+        "NLS/ZakharovShabat/SourceSection20Original.lean",
+        "NLS/SequenceSpaces/FiniteModification.lean",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_20_ASSERTIONS.md",
+      "ordered_inventory_sha256": "af2c744c5e9b8a345928fbe28ca870b8291be27086a16994d57261525b19f4ee",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_reciprocal_rowSum_coefficients",
+        "NLS.Coeff.exists_uniform_holder_convolution_majorant",
+        "NLS.Coeff.exists_uniform_reciprocal_majorant",
+        "NLS.Coeff.isCompactOperator_actionCorrection_fderiv",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.actionFrequencyCorrection_eq",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.analytic_moment",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.circle_representation",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_renormalizedFrequency",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_contour_decomposition",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_moment_sums",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma20_3_offDiagonal_power_sum",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma20_3_refined",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_local_refined_square_gap_majorants",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_refined_frequencyCorrection_coefficients",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_secondMoment_series",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_theorem20_4",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencyCorrection",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencySequence",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.frequencySequence_bound_of_correction",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.moment_odd",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.moment_succ_of_collapsed",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.positive_moment_hasSum_of_gap_support",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.positive_moment_sum_tendsto_of_eventually_fixed_gap_support",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.quadratic_contour_sum_renormalization",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_even_moment_eq_cosineIntegral",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_even_moment_max_bound",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.real_second_moment_eq_gapSide",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.renormalizedFrequency_eq_physical_finiteGap_all_exponents",
+        "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.diagonal_coefficient_bound",
+        "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.exists_local_diagonal_secondMoment_coefficients",
+        "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.exists_local_offDiagonal_secondMoment_majorants",
+        "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.norm_model_error_le",
+        "NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.offDiagonal_error_bound",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaFullPrimitive_eq",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaFullPrimitive_pow_eq",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_cubicContour_eq_quadratic",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_power_circle_eq",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_exact_sobolev_approximants",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_exact_sobolev_opening",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapClosedFrequency",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapClosedFrequency_eq_limit_and_moments",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapOpenFrequency",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapOpenFrequency_eq_cubicContour_bracket",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.exists_cubicContour_eq_physical",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentCircle_odd_eq_zero",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentCircle_succ_eq_zero_of_collapsed",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.momentIntegrand_odd_eq_regular",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_allDisk_chi_mixed_neighborhood",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_chi_sup_mixed",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_allDisk_refined_chi_errorBound",
+        "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.action_quadratic_remainder",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.compact_derivative",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.fredholm",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_local_inverse",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_inverse",
+        "NLS.ZakharovShabat.SourcePsiFullDiscChiMixedBound",
+        "NLS.ZakharovShabat.SourcePsiNormalizedComplexExtension.exists_momentCircle_zero_periods",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_actualGap_majorants",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_chi_tail_majorants",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_fullDisc_chi_tail_majorants",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_refined_quotient_tail_majorants",
+        "NLS.ZakharovShabat.SourceSecondMomentMixedData",
+        "NLS.ZakharovShabat.SourceSecondMomentMixedData.refined",
+        "NLS.ZakharovShabat.SourceSecondMomentMixedData.row_power_sum",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic",
+        "NLS.ZakharovShabat.SourceSection19Data.cube_isBigO",
+        "NLS.ZakharovShabat.SourceSection20Data.action_frequency",
+        "NLS.ZakharovShabat.SourceSection20Data.action_frequency_complex",
+        "NLS.ZakharovShabat.SourceSection20Data.auxiliary_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.auxiliary_eq_zeta",
+        "NLS.ZakharovShabat.SourceSection20Data.diagonal_factor",
+        "NLS.ZakharovShabat.SourceSection20Data.frequency_hasSum",
+        "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed",
+        "NLS.ZakharovShabat.SourceSection20Data.frequency_uniform",
+        "NLS.ZakharovShabat.SourceSection20Data.isConnected_sobolev_openGapDomain",
+        "NLS.ZakharovShabat.SourceSection20Data.lemma20_1",
+        "NLS.ZakharovShabat.SourceSection20Data.moment_contours",
+        "NLS.ZakharovShabat.SourceSection20Data.offDiagonal_factor",
+        "NLS.ZakharovShabat.SourceSection20Data.physical_frequency",
+        "NLS.ZakharovShabat.SourceSection20Data.sequence_analytic_all",
+        "NLS.ZakharovShabat.SourceSection20Data.sobolev_energy_bivector_complex",
+        "NLS.ZakharovShabat.SourceSection20Data.sobolev_energy_bracket_complex",
+        "NLS.ZakharovShabat.SourceSection20Data.unique_frequency",
+        "NLS.ZakharovShabat.SourceSection20Data.zeta_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.zeta_product",
+        "NLS.ZakharovShabat.analyticAt_sourceAbelianMomentCircle_of_contour_domain",
+        "NLS.ZakharovShabat.exists_local_sourceActionGapCorrection",
+        "NLS.ZakharovShabat.exists_local_sourceActionGapQuarter",
+        "NLS.ZakharovShabat.exists_local_sourcePeriodicMidpoint_quarter_lattice_separation",
+        "NLS.ZakharovShabat.exists_sourceAbelianMoment_localCharts",
+        "NLS.ZakharovShabat.exists_sourceActionFrequency_asymptotic",
+        "NLS.ZakharovShabat.exists_sourceActionGapQuarter_mixed",
+        "NLS.ZakharovShabat.exists_sourceActionGapQuarter_neighborhood",
+        "NLS.ZakharovShabat.exists_sourceFrequency_boundedActionSpace_maps",
+        "NLS.ZakharovShabat.exists_sourceFrequency_theorem20_5",
+        "NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_refinedFullDiscTailMajorant_of_quotient",
+        "NLS.ZakharovShabat.gapSideBoundaryIntegral_centered_quadratic",
+        "NLS.ZakharovShabat.gapSideBoundaryIntegral_quadratic",
+        "NLS.ZakharovShabat.gapSideBoundaryIntegral_shifted_quadratic",
+        "NLS.ZakharovShabat.sourceAbelianMomentCircle",
+        "NLS.ZakharovShabat.sourceAbelianMomentCircle_quadratic_shift",
+        "NLS.ZakharovShabat.sourceAbelianMomentCircle_zero",
+        "NLS.ZakharovShabat.sourceFrequency_fderiv_zero",
+        "NLS.ZakharovShabat.sourceGapCosineMean_diagonal_model",
+        "NLS.ZakharovShabat.sourceGapCosineMean_shifted_model",
+        "NLS.ZakharovShabat.sourceMomentRegularNumerator_diagonal",
+        "NLS.ZakharovShabat.sourcePsiChiDiscSup",
+        "NLS.ZakharovShabat.sourcePsiChiDiscSup_bounds",
+        "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor"
+      ],
+      "declaration_inventory_count": 44637,
+      "qualification": "The positive full original-disk auxiliary proof closes S20-030. The Section20 ordered ledger now has 56 groups: 46 matched, eight corrected or scope-clarified and two contextual, with no partial or pending groups in this ledger. The refinement covers every original open isolating disk, including the full open pi/4 tails and all finite central disks. A fixed ell(p/2) plus OnePlus decomposition of the actual supremum has locally uniform complex-source bounds, uniform in the deleted index. A common connected neighborhood can be restricted inside the original Section20 domain while retaining all real sources and the unchanged roots. All earlier constant corrections, action-image scope and alternate convolution-proof qualifications remain. The whole dissertation remains incomplete; this local ledger is not a source-wide completeness certificate. No new refutations are added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "images": {
+          "work/tmp/pdfs/section20-091.png": "ff3a229973051490a00d48f54525acbe06e07ab585f718d86392b8a704990bf3",
+          "work/tmp/pdfs/section20-092.png": "de287a7a45ab3df1fecc6c1d82abcde76f169e23c51d51b8f722ed56ef651f65",
+          "work/tmp/pdfs/section20-093.png": "3e93d41fb099fdc62c361deb998b97739c11eea59fa9074b2407f7bd759a083e",
+          "work/tmp/pdfs/section20-094.png": "266929b6a4b3766a0ddbaa2d997416db84997db7e8d51a0b3a9a22cd93cf12a5",
+          "work/tmp/pdfs/section20-095.png": "ff52ed4935e4b62884ae5315c61ce3d3cfa14e30ea13350dcd803e194c82ee1e",
+          "work/tmp/pdfs/section20-096.png": "59cff440725d1d9f517d779a782fa695e34a009bba9170ca408cf649c824f003"
+        }
+      },
+      "rendered_page_rechecked": "work/tmp/pdfs/section20-094.png",
+      "preceding_review_hash": "eb03ae983b7d338bea6e03d0e21abda394e7a54801046eea7dd4d51c46bd5edf",
+      "validation_lean_sources": {
+        "files": 4839,
+        "sha256": "c45678b0c10c92cc41f9d1805c04533fd320a79dd7fbe762b4ab3a41b7275bdc"
+      },
+      "new_definitions": 2,
+      "positive_theorems_integrated": 7,
+      "new_public_examples": 4,
+      "full_gate": {
+        "session": 21848,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section20FullDiscFullCheck2.log",
+        "log_sha256": "2df27efda9824739677b566e5f91dd5701c964fa7fd1a5d0e4e66589a7a0619d"
+      },
+      "source_record_sha256": "cdc0d70aae61fc938a07c62fc165bbfe7b4ccc4f680da3fb6a4e5569625d0e03"
     }
   }
 }

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [p/4 action-gap remainder](NLS/ZakharovShabat/SourceActionGapQuarter.lean)
-is now proved for the actual complex actions, with fixed mixed sequences,
-locally uniform bounds and all signed and collapsed gaps. Three positive
-theorems and four API examples pass the full build and axiom audit.
-This closes S20-052; the full-disc auxiliary estimate S20-030 is next.
+Latest step: the [full original-disk auxiliary estimate](NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean)
+now has fixed mixed-sequence bounds, uniform in the deleted index and
+locally uniform on a common complex neighborhood. Seven positive theorems
+and four API examples pass the full build and axiom audit. This closes
+S20-030, the last partial group in the Section 20 ledger. Section 21 is next.
 No new refutations were added. Wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 

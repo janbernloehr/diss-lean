@@ -72565,3 +72565,68 @@ example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)))
   exact ⟨b,he (-3),hb⟩
 
 end Section20ActionGapQuarterExamples
+
+section Section20FullDiscExamples
+open NLS NLS.ZakharovShabat Set Metric Complex
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The tail estimate uses the full open pi/4 disk, with an ell2 bound at p=4.
+example {V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (H : SourcePsiSquaredGapComplexExtension (by norm_num) (by norm_num) V s)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧ ∃ K : ℕ,
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : NLS.Coeff 2, ‖B‖ ≤ C ∧
+        ∀ k : ℤ, K ≤ k.natAbs → k ≠ n → ∀ z ∈ ball ((Real.pi:ℂ)*k) (Real.pi/4),
+          ‖sourcePsiMidpointFilledRegularFactor (by norm_num) (by norm_num) n k (s n ψ) ψ z-Complex.I‖ ≤ ‖B k‖ := by
+  obtain ⟨T,hT,hφT,hTV,K,hb⟩ := H.exists_local_refined_fullDisc_chi_tail_majorants φ hφ
+  exact ⟨T,hT,hφT,hTV,K,hb 2 (by norm_num) (by norm_num) (by norm_num)⟩
+
+-- Every supplied central disk is included, at arbitrary signed deleted indices.
+example {W₀ W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (H : SourceLemma12_12Data (by norm_num) (by norm_num) W₀ W s)
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule 4) (hφW : φ.val ∈ W) (hφV : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ W ∩ V ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : NLS.Coeff 2, ‖B‖ ≤ C ∧
+        ∀ k : ℤ, k ≠ n → ∀ z ∈ D k,
+          ‖sourcePsiMidpointFilledRegularFactor (by norm_num) (by norm_num) n k (s n ψ) ψ z-Complex.I‖ ≤ ‖B k‖ := by
+  obtain ⟨T,hT,hφT,hTV,hb⟩ := H.original_allDisk_refined_chi_errorBound hD hV φ hφW hφV
+  exact ⟨T,hT,hφT,hTV,hb 2 (by norm_num) (by norm_num) (by norm_num)⟩
+
+-- Restriction inside the actual Section 20 domain retains all original roots.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+    {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U) :
+    ∃ U' : Set (CoeffPair p), IsOpen U' ∧ IsConnected U' ∧ realTypeSourceLocus p ⊆ U' ∧ U' ⊆ U ∧
+      ∀ ψ ∈ U', ∃ T : Set (CoeffPair p), IsOpen T ∧ ψ ∈ T ∧ T ⊆ U' ∧
+        ∃ E : ℤ → Set ℂ, ∃ c : ℝ, SourceIsolatingNeighborhoods hp hp1 T E c ∧
+          SourcePsiFullDiscChiMixedBound hp hp1 T E s := by
+  obtain ⟨U',hU,hUc,hreal,hUW,hlocal⟩ := D.previous.exists_original_allDisk_chi_mixed_neighborhood
+    (D.complex.real_subset.trans D.complex.source_subset) U Q.source_open Q.real_subset
+  exact ⟨U',hU,hUc,hreal,fun _ h => (hUW h).2,hlocal⟩
+
+-- At p=3/2 the fixed decomposition includes the literal subunit exponent;
+-- the supremum also bounds the printed unscaled error with leading i/pi.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+example {T : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))} {D : ℤ → Set ℂ}
+    {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n}
+    (h : SourcePsiFullDiscChiMixedBound (by norm_num) (by norm_num) T D s)
+    (ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) (hψ : ψ ∈ T)
+    (k : ℤ) (hk : k ≠ -3) (z : ℂ) (hz : z ∈ D k) :
+    ‖(((-3-k : ℤ):ℂ)*sourcePsiGapRegularFactor (by norm_num) (by norm_num) (-3) k
+      (sourcePsiFillDeletedRoot (-3) (s (-3) ψ) (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ (-3))) ψ z)-
+        Complex.I/(Real.pi:ℂ)‖ ≤ sourcePsiChiDiscSup (by norm_num) (by norm_num) D s ψ (-3) k/Real.pi := by
+  obtain ⟨a,b,he,hpoint,ha,hb⟩ := h
+  have hbound := hpoint ψ hψ (-3) k hk z hz
+  have hpi : (Real.pi:ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr Real.pi_ne_zero
+  have hid : (((-3-k : ℤ):ℂ)*sourcePsiGapRegularFactor (by norm_num) (by norm_num) (-3) k
+      (sourcePsiFillDeletedRoot (-3) (s (-3) ψ) (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ (-3))) ψ z)-Complex.I/(Real.pi:ℂ) =
+        (sourcePsiMidpointFilledRegularFactor (by norm_num) (by norm_num) (-3) k (s (-3) ψ) ψ z-Complex.I)/(Real.pi:ℂ) := by
+    unfold sourcePsiMidpointFilledRegularFactor
+    field_simp
+  rw [hid,norm_div,Complex.norm_real,Real.norm_of_nonneg Real.pi_pos.le]
+  exact div_le_div_of_nonneg_right hbound Real.pi_pos.le
+
+end Section20FullDiscExamples
