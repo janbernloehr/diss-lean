@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-The first three of 22 ordered Section 11 groups match: simultaneous common contours and collars, the actual action with coefficient 1/pi in equation (2.16), and joint analyticity with winding-one contour and isolating-family independence. A supplied local source neighborhood may shrink; the global W and original disks are retained. All signed indices and complex or collapsed gaps are included. Nineteen later groups remain pending in this ordered comparison. Section 10 retains 44 matched and eight corrected groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first six of 22 ordered Section 11 groups match: common contours and the action definition, the full assertions of Lemma 11.1, and its analyticity, gradient and complex collapsed-gap proof passage. The exact -1/pi Frechet formula holds for every original winding-one piecewise C1 circuit at every complex source in the retained W. Real nonnegativity and the exact zero-gap criterion follow from the actual arcosh integral proof. Sixteen later groups remain pending, beginning with the displayed real-gap calculation and the pointwise sign sentence. The direct differentiation proof replaces the cited Hilbert-extension route; the external citation is not independently audited. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first three
+the reviewed source extraction; form feeds do not add lines. The first six
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -18,9 +18,9 @@ finite piecewise C1 regularity is explicit when interpreting contour integrals.
 | S11-001 | 61 | 4737–4741 | One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars. | matched |
 | S11-002 | 61 | 4743–4748 | Definition (2.16): the literal action integral with coefficient 1/pi and spectral weight lambda. | matched |
 | S11-003 | 61 | 4750–4752 | Joint analyticity on each collar and independence of both circuit and original isolating family. | matched |
-| S11-004 | 61 | 4754–4761 | Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17). | pending |
-| S11-005 | 61 | 4762–4763 | Lemma 11.1: real nonnegativity and equivalence of zero action with a collapsed gap. | pending |
-| S11-006 | 61 | 4766–4768 | Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing. | pending |
+| S11-004 | 61 | 4754–4761 | Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17). | matched |
+| S11-005 | 61 | 4762–4763 | Lemma 11.1: real nonnegativity and equivalence of zero action with a collapsed gap. | matched |
+| S11-006 | 61 | 4766–4768 | Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing. | matched |
 | S11-007 | 61 | 4769–4782 | Real-source recentering at the critical point and the literal positive-root gap integral. | pending |
 | S11-008 | 61 | 4782–4784 | Pointwise sign of the recentered integrand and strict positivity of its integral. | pending |
 | S11-009 | 61 | 4786–4790 | Definition of Z_n as the squared-gap zero locus in the original common domain. | pending |
@@ -96,7 +96,86 @@ Public declarations:
 
 Repeated or reversed contours retain their winding factor; the printed action independence is the winding-one specialization. Standard finite piecewise C1 contour regularity is explicit.
 
-## Proof evidence and validation
+## Lemma 11.1 statements and initial proof
+
+### S11-004: Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17).
+
+- Every indexed action is complex analytic throughout the unchanged open common W for every finite p>1 and signed index. Local simultaneous fixed circles represent the same indexed function in an actual neighborhood of every complex source.
+- Equation (2.17) has the exact coefficient -1/pi and no spectral weight: the complex Frechet derivative applied to every original CoeffPair p direction is the actual contour integral of the discriminant variation divided by the canonical root.
+- The formula holds on every admissible winding-one finite piecewise C1 circuit in every original isolating family, including non-real sources and collapsed gaps. The local isolation neighborhood is open and contains the evaluation source; no replacement of W is made.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_16Data.actionGradients`
+- `NLS.ZakharovShabat.SourceEquation2_16Data.circuit_gradient`
+- `NLS.ZakharovShabat.SourceEquation2_16Data.original_circle_gradient`
+- `NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedAction`
+- `NLS.ZakharovShabat.sourceLemma11_1`
+
+The gradient is expressed as the continuous complex Frechet derivative evaluated on every original source direction. The proof establishes that functional identity for all finite p>1 directly; it does not independently audit the cited Hilbert-space theorem.
+
+### S11-005: Lemma 11.1: real nonnegativity and equivalence of zero action with a collapsed gap.
+
+- On the entire real-type source locus, the indexed action equals the independently defined real action. Its imaginary part is zero, its real part is nonnegative, and the action vanishes exactly when the actual canonical gap is zero.
+- Open real gaps have strictly positive action for every signed index, including the central gap. The discriminant derivative and upper-root parity factors cancel; the weighted upper boundary integral is the negative arcosh area, and the enclosing-circle orientation gives the positive factor 2/pi.
+- The arcosh profile is continuous up to its zero endpoint values and strictly positive in an open gap. Its derivative is interval-integrable through the branch points: the radicand factors as the endpoint-distance product times a positive continuous deleted product.
+- Integration by parts proves the strict integral sign. Circle independence transfers it from small midpoint circles to the indexed action; collapsed-gap analytic continuation gives the complementary zero case.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma11_1Data.action_pos_of_real_gap_ne_zero`
+- `NLS.ZakharovShabat.exists_sourceActionCircle_positive_real_on_small_realGapCircles`
+- `NLS.ZakharovShabat.intervalIntegrable_realGapHalfDiscriminant_arcosh_deriv`
+- `NLS.ZakharovShabat.realGap_weighted_arcosh_integral_eq_and_neg`
+- `NLS.ZakharovShabat.sourceActionCircle_nonneg_and_eq_zero_iff_gap_zero_on_midpointCircle`
+- `NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all`
+- `NLS.ZakharovShabat.sourceIndexedAction_eq_sourceRealAction`
+- `NLS.ZakharovShabat.sourceIndexedAction_nonneg_and_eq_zero_iff_gap_zero`
+- `NLS.ZakharovShabat.sourceRealAction_nonneg_and_eq_zero_iff_gap_zero`
+
+This compares the lemma statement and its actual integral proof. It does not classify the subsequent literal real-gap display or its pointwise strict-positivity sentence, which remain in S11-007 and S11-008. The strict action result does not depend on that sentence.
+
+### S11-006: Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing.
+
+- Joint analyticity of the literal weighted integrand on a fixed collar permits differentiation under its circle integral. Local equality of the indexed action and the circle action identifies their full Frechet derivatives.
+- Differentiating the canonical-root square identity gives its source and spectral derivatives. Commutation of the mixed discriminant derivatives gives D_source(Delta prime/Q)=d_spectral(D_source Delta/Q). Spectral integration by parts supplies the negative sign in (2.17).
+- The variation divided by the canonical root is analytic on each original closed disk minus the selected gap. The outer-circle winding formula extends the derivative identity to every original winding-one piecewise C1 circuit.
+- At a complex collapsed gap the continued critical-root quotient is analytic throughout the original disk. Multiplication by the spectral coordinate preserves analyticity; Cauchy on an interior circle gives zero action. Agreement with the literal quotient is used only on that circle, away from the gap.
+
+Public declarations:
+
+- `NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_outerCircleIntegral_mul_winding_of_starConvex_cut`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.circleIntegral_criticalRatio_sourceFDeriv_eq_neg_variation`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.criticalRatio_source_fderiv_eq_spectral`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.fderiv_actionCircle_eq_gradient_integral`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.root_joint_fderiv`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.root_source_fderiv`
+- `NLS.ZakharovShabat.SourceEquation2_15Data.root_spectral_deriv`
+- `NLS.ZakharovShabat.SourceEquation2_16Data.circuit_gradient`
+- `NLS.ZakharovShabat.SourceEquation2_16Data.indexedAction_zero_of_gap_zero`
+- `NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk`
+- `NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedAction`
+- `NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantVariation_div_root`
+- `NLS.ZakharovShabat.circleIntegral_mul_deriv_sourceDiscriminantVariation_div_root_eq_neg`
+
+The same-domain differentiation proof replaces the printed citation-and-extension route and covers 1<p<infinity, without asserting an independent verification of reference [23, Theorem 13.1]. Analyticity at a collapsed root means the removable continuation, not a claim that totalized pointwise division is analytic there.
+
+The [full lemma package](../NLS/ZakharovShabat/SourceLemma11_1.lean),
+[indexed gradients](../NLS/ZakharovShabat/SourceIndexedActionGradient.lean),
+[common-domain differentiation](../NLS/ZakharovShabat/SourceActionCommonGradient.lean)
+and [real action properties](../NLS/ZakharovShabat/SourceRealAction.lean)
+retain the original functions and domains. The [all-index positivity proof](../NLS/ZakharovShabat/SourceActionAllGapPositive.lean)
+uses the [weighted arcosh identity](../NLS/ZakharovShabat/RealGapWeightedArcoshIntegral.lean)
+and its [endpoint integrability](../NLS/ZakharovShabat/RealGapArcoshIntegrability.lean).
+The new comparison records 24 fully inspected modules. The Lean and dependency
+snapshot is unchanged from the successful full gate at `7692c09`, so that
+validation is reused; current source-review integrity and documentation links pass.
+
+Continue with the displayed real-gap calculation S11-007 and the pointwise
+sign argument S11-008. The [historical critical-point correction](SECTION_11.md#the-critical-point-zero-in-the-proof-of-lemma-111)
+is retained. No new refutation is needed.
+
+## Opening comparison evidence and validation
 
 The [common contour package](../NLS/ZakharovShabat/SourceSection11Contours.lean)
 retains Lemma 10.11. The [contour family](../NLS/ZakharovShabat/SourceActionContourFamily.lean)
@@ -119,8 +198,7 @@ audit of 44,339 NLS declarations, with 21 inherited warnings. Current module
 hashes, declaration references, review integrity and documentation links
 have been checked. These checks do not certify source-wide completeness.
 
-Continue with Lemma 11.1, beginning with action analyticity and the gradient
-formula in S11-004. Preserve the [existing Section 11 audit](SECTION_11.md)
+The opening comparison above is retained with its original evidence. Preserve the [existing Section 11 audit](SECTION_11.md)
 and all wider qualifications in the [completion assessment](COMPLETENESS.md).
 Correct constants with proved valid replacements; additional refutations
 are not required.

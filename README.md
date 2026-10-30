@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 11 opening comparison](coverage/SECTION_11_ASSERTIONS.md)
-checks common contours and collars, the exact `1/pi` action definition and
-independence of winding-one circuits in the original isolating disks.
-Three of 22 ordered Section 11 groups are matched; nineteen remain pending.
+Latest step: the [Lemma 11.1 comparison](coverage/SECTION_11_ASSERTIONS.md)
+checks action analyticity, the exact `-1/pi` gradient formula, complex
+collapsed-gap vanishing and the real zero-gap criterion. Six of 22 ordered
+Section 11 groups are matched; sixteen remain pending. The next comparison
+covers the literal real-gap calculation and its pointwise sign argument.
 Section 10 retains all 52 compared groups: 44 matched and eight corrected.
-Next is Lemma 11.1's analyticity and gradient formula. The
-[completion assessment](coverage/COMPLETENESS.md) retains Section 7's
+The [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
 partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013

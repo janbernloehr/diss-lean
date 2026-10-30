@@ -1,6 +1,43 @@
 # Section 11: actions
 
-## Ordered comparison: common contours and action definition
+## Ordered comparison through Lemma 11.1 statements and initial proof
+
+The full statements of Lemma 11.1 and its initial proof passage now match
+the existing Lean proofs. The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md)
+has six matched groups and sixteen pending, through S11-006.
+
+Every indexed action is analytic on the unchanged common W. Its complex
+Frechet derivative, applied to every original source direction, is the
+negative normalized discriminant-variation integral in (2.17), with the exact
+coefficient -1/pi. The formula holds for every original winding-one finite
+piecewise C1 circuit, at complex sources and with collapsed gaps included.
+Differentiating the root square identity, commuting mixed derivatives and
+integrating by parts proves this directly for all finite p>1. The external
+Hilbert-space citation is not independently audited.
+
+At a complex collapsed gap the removable quotient is analytic throughout
+the original disk, and Cauchy's theorem gives zero action. On the entire real
+locus the actions are real and nonnegative, vanishing exactly at zero gaps.
+Strict positivity for an open real gap follows from a positive arcosh area;
+the proof includes endpoint integrability and all signed indices. It does
+not rely on the subsequent pointwise strict-positivity sentence.
+
+This step changes documentation only and inspects 24 proof modules. The
+exact Lean and dependency snapshot is unchanged from `7692c09`, whose full
+validation passed 8,514 build jobs, 7,584 public examples and the transitive
+axiom audit of 44,339 NLS declarations, with 21 inherited warnings. That
+validation is reused. Current source-review integrity, declaration references,
+module hashes and documentation links are checked.
+
+Next are S11-007 and S11-008: the literal real-gap display and its corrected
+pointwise sign argument. The existing critical-point correction is retained;
+no new refutation is needed. Section 7's physical NLS Dirichlet motion and
+unrestricted psi characterization, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and broader source inventory remain open.
+
+Earlier entries retain their historical scope.
+
+## Previous ordered milestone: common contours and action definition
 
 The opening Section 11 claims now have an ordered comparison with the
 existing Lean proofs: simultaneous common contours and collars, the literal
@@ -38,7 +75,7 @@ interpretation and the broader source inventory remain unresolved.
 ## Existing theorem and formula audit
 
 The following audit retains its established scope. Its named results do not
-by themselves discharge the nineteen pending ordered groups.
+by themselves discharge the sixteen pending ordered groups.
 
 This audit begins with printed p. 61 of the dissertation. The contour
 construction, equation (2.16), and independence of general admissible

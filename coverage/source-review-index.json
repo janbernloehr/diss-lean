@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T10:21:40.217546+00:00",
-  "base_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
+  "published_utc": "2026-10-30T10:29:54.589598+00:00",
+  "base_commit": "9fbfda5443969c8cc5b58d8b7e593a2e59370eff",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 125,
-    "module_hash_checks": 2170,
-    "distinct_modules": 1367
+    "review_records": 126,
+    "module_hash_checks": 2194,
+    "distinct_modules": 1386
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 7692c09 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first three of 22 ordered Section 11 groups match: simultaneous common contours and collars, the actual action with coefficient 1/pi in equation (2.16), and joint analyticity with winding-one contour and isolating-family independence. A supplied local source neighborhood may shrink; the global W and original disks are retained. All signed indices and complex or collapsed gaps are included. Nineteen later groups remain pending in this ordered comparison. Section 10 retains 44 matched and eight corrected groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+    "base_commit": "9fbfda5443969c8cc5b58d8b7e593a2e59370eff",
+    "validated_state": "Documentation-only update; the exact Lean sources and dependency lock remain identical to commit 7692c09. Its successful full validation is reused, not rerun. The first six of 22 ordered Section 11 groups match: common contours and the action definition, the full assertions of Lemma 11.1, and its analyticity, gradient and complex collapsed-gap proof passage. The exact -1/pi Frechet formula holds for every original winding-one piecewise C1 circuit at every complex source in the retained W. Real nonnegativity and the exact zero-gap criterion follow from the actual arcosh integral proof. Sixteen later groups remain pending, beginning with the displayed real-gap calculation and the pointwise sign sentence. The direct differentiation proof replaces the cited Hilbert-extension route; the external citation is not independently audited. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8514,
     "public_examples": 7584,
@@ -31496,6 +31496,180 @@
       "declaration_inventory_count": 44339,
       "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
       "source_record_sha256": "e71ab4fe71d1248c2a77973e4732d3d36ed8337a0574b6ad3116f2420b8b54f4"
+    },
+    "Section11LemmaSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "9fbfda5443969c8cc5b58d8b7e593a2e59370eff",
+      "updated_utc": "2026-10-30T10:29:54.589598+00:00",
+      "source_lines": [
+        [
+          4754,
+          4761
+        ],
+        [
+          4762,
+          4763
+        ],
+        [
+          4766,
+          4768
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-004",
+          "source_lines": [
+            4754,
+            4761
+          ],
+          "requirement": "Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_16Data.actionGradients",
+            "NLS.ZakharovShabat.SourceEquation2_16Data.circuit_gradient",
+            "NLS.ZakharovShabat.SourceEquation2_16Data.original_circle_gradient",
+            "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedAction",
+            "NLS.ZakharovShabat.sourceLemma11_1"
+          ],
+          "reviewed_claims": [
+            "Every indexed action is complex analytic throughout the unchanged open common W for every finite p>1 and signed index. Local simultaneous fixed circles represent the same indexed function in an actual neighborhood of every complex source.",
+            "Equation (2.17) has the exact coefficient -1/pi and no spectral weight: the complex Frechet derivative applied to every original CoeffPair p direction is the actual contour integral of the discriminant variation divided by the canonical root.",
+            "The formula holds on every admissible winding-one finite piecewise C1 circuit in every original isolating family, including non-real sources and collapsed gaps. The local isolation neighborhood is open and contains the evaluation source; no replacement of W is made."
+          ],
+          "qualification": "The gradient is expressed as the continuous complex Frechet derivative evaluated on every original source direction. The proof establishes that functional identity for all finite p>1 directly; it does not independently audit the cited Hilbert-space theorem."
+        },
+        {
+          "ordered_group": "S11-005",
+          "source_lines": [
+            4762,
+            4763
+          ],
+          "requirement": "Lemma 11.1: real nonnegativity and equivalence of zero action with a collapsed gap.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.action_pos_of_real_gap_ne_zero",
+            "NLS.ZakharovShabat.exists_sourceActionCircle_positive_real_on_small_realGapCircles",
+            "NLS.ZakharovShabat.intervalIntegrable_realGapHalfDiscriminant_arcosh_deriv",
+            "NLS.ZakharovShabat.realGap_weighted_arcosh_integral_eq_and_neg",
+            "NLS.ZakharovShabat.sourceActionCircle_nonneg_and_eq_zero_iff_gap_zero_on_midpointCircle",
+            "NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all",
+            "NLS.ZakharovShabat.sourceIndexedAction_eq_sourceRealAction",
+            "NLS.ZakharovShabat.sourceIndexedAction_nonneg_and_eq_zero_iff_gap_zero",
+            "NLS.ZakharovShabat.sourceRealAction_nonneg_and_eq_zero_iff_gap_zero"
+          ],
+          "reviewed_claims": [
+            "On the entire real-type source locus, the indexed action equals the independently defined real action. Its imaginary part is zero, its real part is nonnegative, and the action vanishes exactly when the actual canonical gap is zero.",
+            "Open real gaps have strictly positive action for every signed index, including the central gap. The discriminant derivative and upper-root parity factors cancel; the weighted upper boundary integral is the negative arcosh area, and the enclosing-circle orientation gives the positive factor 2/pi.",
+            "The arcosh profile is continuous up to its zero endpoint values and strictly positive in an open gap. Its derivative is interval-integrable through the branch points: the radicand factors as the endpoint-distance product times a positive continuous deleted product.",
+            "Integration by parts proves the strict integral sign. Circle independence transfers it from small midpoint circles to the indexed action; collapsed-gap analytic continuation gives the complementary zero case."
+          ],
+          "qualification": "This compares the lemma statement and its actual integral proof. It does not classify the subsequent literal real-gap display or its pointwise strict-positivity sentence, which remain in S11-007 and S11-008. The strict action result does not depend on that sentence."
+        },
+        {
+          "ordered_group": "S11-006",
+          "source_lines": [
+            4766,
+            4768
+          ],
+          "requirement": "Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_outerCircleIntegral_mul_winding_of_starConvex_cut",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.circleIntegral_criticalRatio_sourceFDeriv_eq_neg_variation",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.criticalRatio_source_fderiv_eq_spectral",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.fderiv_actionCircle_eq_gradient_integral",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.root_joint_fderiv",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.root_source_fderiv",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.root_spectral_deriv",
+            "NLS.ZakharovShabat.SourceEquation2_16Data.circuit_gradient",
+            "NLS.ZakharovShabat.SourceEquation2_16Data.indexedAction_zero_of_gap_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk",
+            "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedAction",
+            "NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantVariation_div_root",
+            "NLS.ZakharovShabat.circleIntegral_mul_deriv_sourceDiscriminantVariation_div_root_eq_neg"
+          ],
+          "reviewed_claims": [
+            "Joint analyticity of the literal weighted integrand on a fixed collar permits differentiation under its circle integral. Local equality of the indexed action and the circle action identifies their full Frechet derivatives.",
+            "Differentiating the canonical-root square identity gives its source and spectral derivatives. Commutation of the mixed discriminant derivatives gives D_source(Delta prime/Q)=d_spectral(D_source Delta/Q). Spectral integration by parts supplies the negative sign in (2.17).",
+            "The variation divided by the canonical root is analytic on each original closed disk minus the selected gap. The outer-circle winding formula extends the derivative identity to every original winding-one piecewise C1 circuit.",
+            "At a complex collapsed gap the continued critical-root quotient is analytic throughout the original disk. Multiplication by the spectral coordinate preserves analyticity; Cauchy on an interior circle gives zero action. Agreement with the literal quotient is used only on that circle, away from the gap."
+          ],
+          "qualification": "The same-domain differentiation proof replaces the printed citation-and-extension route and covers 1<p<infinity, without asserting an independent verification of reference [23, Theorem 13.1]. Analyticity at a collapsed root means the removable continuation, not a claim that totalized pointwise division is analytic there."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "ordered_inventory_sha256": "c0c7ac378259d2acdcc668f5591e3b7af58c7ed786dca9232fb9dfeca636b2b2",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma11_1.lean": "6d670fd953a323f2bcc37ca7a03e856c706d0e644b146dc161b50909a780b6fa",
+        "NLS/ZakharovShabat/SourceIndexedActionGradient.lean": "aae44da84386e6666a7c3150478612063afb39655b4c5c2cd6a4284339d024e8",
+        "NLS/ZakharovShabat/SourceIndexedActionAnalytic.lean": "531523b34ea9dd2d66e5824eebd8630b465b03ed7ad8c25a4d429d89ffdba33c",
+        "NLS/ZakharovShabat/SourceActionCommonGradient.lean": "c89adc765de53ec67e45a82895e290295174c2bc200ba63a10c28e024dcfffad",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonFDeriv.lean": "870a9790bed39add135d14258b4161829ba8bd15be512ae14bf2001d575710bb",
+        "NLS/ZakharovShabat/SourceCanonicalRootCommonFDeriv.lean": "7d3192c31c31e82605c267a6e75a6f9d521a25dd61fb913a66dcced66de0dcc3",
+        "NLS/ZakharovShabat/SourceDiscriminantVariationCircle.lean": "43076c18e865108b6d68c9e3e64df3983db0e33a77157c0ac23cd10f967e8a03",
+        "NLS/ZakharovShabat/SourceLemma10_11i.lean": "a3df0a8df954d51bf5a5f78f9fa19c0c73e265df410b5449276df9e0128f38b4",
+        "NLS/ZakharovShabat/SourceSection11Contours.lean": "fdea3098f268e548809a545fd05961ef59a42f4208fdfb497310bc37ea0c0be6",
+        "NLS/ZakharovShabat/SourceEquation2_16.lean": "518cb513158f0e60ef2e1de3883e0883330db02129d3bd2ed0f2cb85697413de",
+        "NLS/ZakharovShabat/SourceRealAction.lean": "58709bd92b3eba801a486f8f8bec206e0c501acedf1d5f38b2d8264dc80480bc",
+        "NLS/ZakharovShabat/SourceRealActionRealCenteredCircle.lean": "6ce5d9cc9d7bdf6ed788cc8182411f3bafd50fc94b4783dcbc490c08618287b1",
+        "NLS/ZakharovShabat/SourceActionMidpointCircleExistence.lean": "62e3555352584448c35fec5e167b753f7d83dde0bb1f484ddb58b70b428fc541",
+        "NLS/ZakharovShabat/SourceActionMidpointCircleCharacterization.lean": "4d045afe2cd04e82f017c1a049a4ff7157923ad6e1e98f4fe555fbfd883b33ae",
+        "NLS/ZakharovShabat/SourceActionAllGapPositive.lean": "f13a5dc79fd7ba67b9084b1733cff9b496bb0fb8b324c50db50bcd916b77ec15",
+        "NLS/ZakharovShabat/SourceDiscriminantDerivativeParity.lean": "627e0db31a4e8949aaa6169415b3f6cbdbdfe6561a81bde7c20e098b5bc1a10e",
+        "NLS/ZakharovShabat/SourceActionMidpointCircleValue.lean": "92738cd017d9cafe5c32166d430933b8fe4bf8ed0883c71cb3bd7ea09d32477f",
+        "NLS/ZakharovShabat/SourceActionGapSideIntegral.lean": "e9e8b87cceaa33f1e24b6459ce798f45a4b2902b20f370e9fd312af6d2ebf239",
+        "NLS/ZakharovShabat/SourceActionBoundaryGapSide.lean": "b8908f04bd4436d67af1193ef23ed414f8f33729a502c0c5203b0ab40dabd2ad",
+        "NLS/ZakharovShabat/RealGapWeightedArcoshIntegral.lean": "c2bb9c376779916495b9f4810878dba200d8afc8b1e4122a550e75a7cf0b34cf",
+        "NLS/ZakharovShabat/RealGapArcoshIntegrability.lean": "854777e0ab78f654b48e4045486b32cb64812c7b7078646e47a5575fb46c1124",
+        "NLS/ZakharovShabat/RealGapCanonicalRootWeightedIntegral.lean": "dfb0f19e22efc2cde6d09ac8ee6d644c0665e8933c487ec4834c2130d0f74b0f",
+        "NLS/ComplexAnalysis/ArcoshGapIntegral.lean": "9dcaf5ceaf7bc4048f3cb63186840cf4e8ce2171c4a433d0381201e26c4956d5",
+        "NLS/ComplexAnalysis/PiecewiseContourOuterPeriod.lean": "763aa73ee472ed7270b74f4c1217cde57dd683b0f3ad37a72c1a315622e81c7b"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          61
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-061.png": "069737e39c17d7b6805f6c6c7db0e05f4e38f22d12a6023c94b6ce5afea64b03"
+        }
+      },
+      "qualification": "The first six of 22 ordered Section 11 groups match: common contours and the action definition, the full assertions of Lemma 11.1, and its analyticity, gradient and complex collapsed-gap proof passage. The exact -1/pi Frechet formula holds for every original winding-one piecewise C1 circuit at every complex source in the retained W. Real nonnegativity and the exact zero-gap criterion follow from the actual arcosh integral proof. Sixteen later groups remain pending, beginning with the displayed real-gap calculation and the pointwise sign sentence. The direct differentiation proof replaces the cited Hilbert-extension route; the external citation is not independently audited. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_outerCircleIntegral_mul_winding_of_starConvex_cut",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.circleIntegral_criticalRatio_sourceFDeriv_eq_neg_variation",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.criticalRatio_source_fderiv_eq_spectral",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.fderiv_actionCircle_eq_gradient_integral",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.root_joint_fderiv",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.root_source_fderiv",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.root_spectral_deriv",
+        "NLS.ZakharovShabat.SourceEquation2_16Data.actionGradients",
+        "NLS.ZakharovShabat.SourceEquation2_16Data.circuit_gradient",
+        "NLS.ZakharovShabat.SourceEquation2_16Data.indexedAction_zero_of_gap_zero",
+        "NLS.ZakharovShabat.SourceEquation2_16Data.original_circle_gradient",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.action_pos_of_real_gap_ne_zero",
+        "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedAction",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantVariation_div_root",
+        "NLS.ZakharovShabat.circleIntegral_mul_deriv_sourceDiscriminantVariation_div_root_eq_neg",
+        "NLS.ZakharovShabat.exists_sourceActionCircle_positive_real_on_small_realGapCircles",
+        "NLS.ZakharovShabat.intervalIntegrable_realGapHalfDiscriminant_arcosh_deriv",
+        "NLS.ZakharovShabat.realGap_weighted_arcosh_integral_eq_and_neg",
+        "NLS.ZakharovShabat.sourceActionCircle_nonneg_and_eq_zero_iff_gap_zero_on_midpointCircle",
+        "NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all",
+        "NLS.ZakharovShabat.sourceIndexedAction_eq_sourceRealAction",
+        "NLS.ZakharovShabat.sourceIndexedAction_nonneg_and_eq_zero_iff_gap_zero",
+        "NLS.ZakharovShabat.sourceLemma11_1",
+        "NLS.ZakharovShabat.sourceRealAction_nonneg_and_eq_zero_iff_gap_zero"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44339,
+      "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
+      "source_record_sha256": "f5c0ad5d317685455662e9cc805994c80049e17bd19fab7c9644f115e9b3cca6"
     }
   }
 }
