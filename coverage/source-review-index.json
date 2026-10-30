@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T11:33:45.077988+00:00",
-  "base_commit": "5b82d79a8d154989db77e9ef842a94f51099f98c",
+  "published_utc": "2026-10-30T11:38:01.502910+00:00",
+  "base_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 128,
-    "module_hash_checks": 2232,
-    "distinct_modules": 1396
+    "review_records": 129,
+    "module_hash_checks": 2265,
+    "distinct_modules": 1418
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "5b82d79a8d154989db77e9ef842a94f51099f98c",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the smaller fixed contour collars, closure containment in every original cut disk and canonical-root domain, joint analyticity on the collar closures, and one boundary-limit integration example. Eleven ordered Section 11 groups are compared: ten matched and one corrected; eleven pending. The new comparison supplements the printed closure requirement in S11-001 and compares Z_n, Figure 2.6 and the common extension introduction. The original W0 and disks are retained; normalized actions use one smaller common W. Section 10 remains 44 matched and eight corrected. Wider unresolved qualifications remain.",
+    "base_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step only adds the ordered comparison of the full Theorem 11.2 statement and updates documentation. Thirteen ordered Section 11 groups are compared: twelve matched, one corrected and nine pending. All wider unresolved qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8518,
     "public_examples": 7587,
@@ -40,7 +40,8 @@
       "files": 4795,
       "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
+    "qualification": "The exact Lean sources and dependency locks are unchanged from the observed successful full gate. Source-review integrity is checked for the new documentation and review records. This does not independently certify semantic completeness.",
+    "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260"
   },
   "named_statements": [
     {
@@ -32000,6 +32001,170 @@
       "reviewed_modules_read_in_full": true,
       "declaration_inventory_count": 44364,
       "source_record_sha256": "f20be7cd095675102fdba3d80084a8ec9a677e2a86301526baf5b6d305db8bbd"
+    },
+    "Section11NormalizedActionsSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+      "updated_utc": "2026-10-30T11:38:01.502910+00:00",
+      "source_lines": [
+        [
+          4824,
+          4832
+        ],
+        [
+          4833,
+          4842
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-012",
+          "source_lines": [
+            4824,
+            4832
+          ],
+          "requirement": "Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+            "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.asymptotics",
+            "NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.analytic",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.locally_uniform",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_allExponents",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_continuous",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition",
+            "NLS.ZakharovShabat.sourceTheorem11_2"
+          ],
+          "reviewed_claims": [
+            "For each finite p>1, one open complex W contained in the preceding W0 contains the entire real-type source locus. The normalized action factors are complex analytic for every signed index, including at complex collapsed gaps.",
+            "Off Z_n the factor F_n is exactly the indexed action divided by the squared canonical gap. The displayed normalization is 4F_n=1+GA_n+BA_n, with no extra sign or index-dependent factor.",
+            "At every complex point of W, one open neighborhood admits fixed remainder maps GA and BA before the index and target exponent are chosen. GA belongs to ell-(p/2), BA belongs to the genuine intersection of all finite ell-q spaces q>1, and their stated norm or quasi-norm bounds are uniform on that neighborhood.",
+            "For 1<p<=2, the half-exponent component is zero and the full deviation is the fixed one-plus sequence. For p>2, the full deviation belongs to ell-(p/2) and the one-plus component is zero. Only the bounds of finite-exponent one-plus projections may depend on q.",
+            "The common W is a union of open sets carrying all-index local data. Near each real source, these local data are constructed by a finite intersection of common action charts, analytic factor and root neighborhoods, the positivity neighborhood and the sequence-majorant neighborhood. This supplies local uniformity at every complex point of W."
+          ],
+          "qualification": "The full Theorem 11.2 action statement matches, with the original finite-p source space and one smaller common W. The original W0 remains the domain of Lemma 11.1 and Z_n. Connectedness of the smaller W is not asserted or required. The later intermediate proof passages remain separately pending."
+        },
+        {
+          "ordered_group": "S11-013",
+          "source_lines": [
+            4833,
+            4842
+          ],
+          "requirement": "Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.asymptotics",
+            "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.positive",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_analytic",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRootDeviation_allExponents",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic",
+            "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+            "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_zero_source",
+            "NLS.ZakharovShabat.sourceNormalizedActionRoot"
+          ],
+          "reviewed_claims": [
+            "The real part of F_n is positive and has a common positive lower bound for every signed index and every source in one neighborhood of each point of W. The local-data proof divides the bound for Re(4F_n) by four.",
+            "The positive bound is proved using norm continuity of one finite-exponent sequence realization: a distant tail stays close to one and a finite central block retains a positive minimum. Real collapsed-gap positivity uses reality, continuity and nonvanishing on the connected real-type locus, anchored at the free value 1/4.",
+            "The root is the principal complex square root xi_n=sqrt(4F_n). Positive real part places its argument in the analytic slit-plane domain. Its exact square is 4F_n, so positivity implies nonvanishing; on real sources it is the positive real square root.",
+            "Each root is complex analytic on the same W, hence real analytic. The local uniform package gives xi_n=1+GR_n+BR_n with the same fixed-sequence and common-neighborhood quantifiers as the action expansion.",
+            "At the zero source the proved factor is F_n=1/4 and the principal root is exactly one for every signed index, including n=0."
+          ],
+          "qualification": "The positivity, principal branch, real analyticity, nonvanishing, locally uniform root expansion and free value all match the printed statement. Uniform means local in the source but simultaneous in all indices. No additional source correction or refutation is introduced; subsequent proof displays retain their separate pending statuses."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean": "cd29404bb2f4ffcb5988b549ece37674d3bd4a9c1ea2c241646e86375db12d61",
+        "NLS/ZakharovShabat/SourceIndexedActionCommonCharts.lean": "58a03d9adf93fb242414aea0ec70ef2616cd6078afdb4f63db67120c6a1e8561",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootAnalytic.lean": "c00d35db777312a151d3c446d4cd32e36ac9d8b3ff653d20ee5ee649c4431dd6",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlusDecomposition.lean": "93aaa718d5747e1bba40a8ebcf92c5bdad5a282339f402f9552908867499f980",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexExtension.lean": "79c2d1b90a43db3e6d3f23133f1ed5421410fed9e13136876d01a73f50e7b882",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean": "337097cb7aa9ea6b05a58d364d3120848a553ccb35d377e1c6867509415a2254",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlusTopology.lean": "741c7ad1ec757e4bab758a93dd093abf65e98b597ac267b0f60b6d2ad502ec14",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceDerivative.lean": "356429a3de341c9f16abd4ae24f35d6f685526152f2790853fb32201e2a419c2",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlus.lean": "d5b20559d1983e41244330e60651ebaf16fef4536bc2e89c18a397ea4d22c83d",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformPositive.lean": "5f779b4d5ff99ceb7af925fd93b9793ff5a60d953a52ba6d9445720c007f70da",
+        "NLS/ZakharovShabat/SourceNormalizedActionHolomorphicCommonExponentDomain.lean": "668c8904d211ecac3e5922190605b790037ea88fc4bf88fe0af2e6e573f22801",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceContinuity.lean": "e44e34618ca4376b9976e4083052362a0b476df5fcf8d3d7633ae7730bf340aa",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexAllCoordinates.lean": "416a1219c43efe028c094efc792520a1c68f4228ff3798b2a1a20d22bed19bf2",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootCommonExponentDomain.lean": "02fd68ecdd18a69e96c29b2fb19151115810afabd7c51dfd06aea5a1a812508c",
+        "NLS/ZakharovShabat/SourceNormalizedActionCommonExponentDomain.lean": "199c8ab13c5ec2dae1a38e85c549136108c885051e2c659185e5e1611312a6e8",
+        "NLS/ZakharovShabat/SourceNormalizedActionFree.lean": "cdc0e6ac8e1847058f0f7a5795cca2eaf8f5daf8c731caad14b68b78451fff87",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexSequenceSpace.lean": "84ad44dd18ec03024300ecb53e7e9bd2dee8db0417e8ecfda9a9a0137ace08bd",
+        "NLS/SequenceSpaces/OnePlus.lean": "e472bb3015a5446e75ecf9662ab5918ac3fa826c721223565e340871a1670111",
+        "NLS/SequenceSpaces/OnePlusTopology.lean": "76620ef6f21599ba60b381a6c214f5cf6131a79908c9a2e5a8d572b89a4584c3",
+        "NLS/ZakharovShabat/SourceNormalizedActionFactorCommonExponentDomain.lean": "f50292d0646d95d73df549e04940cb2cf968330270320acb9529e99219962ed9",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexUniformSequenceMajorants.lean": "68367cef14ff55a853ea23191a8cfc856c27f5dea59109e3b3dc60bac77eadc2",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedReal.lean": "b714de4c6c7dc0e80cd34b4ed99a1f46bc677a42e8079fab6514035e89c1964a",
+        "NLS/ZakharovShabat/SourceDistantNormalizedActionCircleIntegrandAnalytic.lean": "c03aaa679eae6b5bf8fdf6d6747aa8df8968fbeb465867d29dd4b3c82ad821ea",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedCircleValue.lean": "9625f6abff6e86ef926ced9094248b69debe7a5aacb541d26e8ba8148ba01bca",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedNonzero.lean": "2b2b0036847c04711ef7732ca3e587f32f2b65e1b1b0d6eaf79674ebf3c334d5",
+        "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleMajorants.lean": "4e561150113097fa97701bbe2a90c346ccfde552764af049052147357ec9c2ce",
+        "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleComplexAgreement.lean": "02cdd88cd3c89a3f72ddfa01230a5dedeef9b339ba03fce90182f8b3c755bbea",
+        "NLS/ZakharovShabat/SourceNormalizedActionCircleAnalytic.lean": "03e9bb544a0277fd7a6d2dd1a2fb8ddcb87b9d28eba46e6a7de4330dcb2a9fd2",
+        "NLS/ZakharovShabat/SourceNormalizedActionGlued.lean": "b9677f2b9f5a0f316ddd34c5ec9a30687d6e8c82146e598fa4b9054194fe9ef4",
+        "NLS/ZakharovShabat/SourceNormalizedActionFactorDiscMajorants.lean": "a06c580471bfb2d459acdd2ee469e105ae48ded30f163f8dab3dfd2ec776d53d",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientCommonExponentDomain.lean": "bb1b57f2a9c8775d590b67b96f67869f5abe35e656678adc8291b256ffd8e549"
+      },
+      "reviewed_modules_read_in_full": true,
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+        "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.asymptotics",
+        "NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.positive",
+        "NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.analytic",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.locally_uniform",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_analytic",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_allExponents",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRootDeviation_allExponents",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_continuous",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition",
+        "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType",
+        "NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_zero_source",
+        "NLS.ZakharovShabat.sourceNormalizedActionRoot",
+        "NLS.ZakharovShabat.sourceTheorem11_2"
+      ],
+      "declaration_inventory_count": 44364,
+      "qualification": "Thirteen of 22 ordered Section 11 groups are compared: twelve matched and one corrected occurrence. The full Theorem 11.2 statement matches: one common normalized-action domain, the exact factor four, locally uniform half-exponent plus genuine one-plus remainders, positive real-part lower bounds, analytic nonvanishing principal roots and free value one. Nine intermediate proof groups remain pending, starting with equation (2.18). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15"
+        }
+      },
+      "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+      "validation_lean_sources": {
+        "files": 4795,
+        "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
+      },
+      "ordered_inventory_sha256": "4808fd44458f9a5fb60e09fbe0e0232dc465588f68ffc352cbd733186f9877e3",
+      "source_record_sha256": "4ee7dd957d873742df376b1b37baf984052b150c7ee0a418210fa22cc7531ea4"
     }
   }
 }

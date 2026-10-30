@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [contour collar closures](NLS/ZakharovShabat/SourceActionContourCollarClosure.lean)
-now stay inside the original cut disks, as the printed overline requires.
-The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) also compares the
-zero-gap locus and common analytic-extension introduction: ten matched groups,
-one corrected and eleven pending. Next is Theorem 11.2. The
-[completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
+Latest step: the [Theorem 11.2 statement](NLS/ZakharovShabat/SourceTheorem11_2.lean)
+matches the source, including the common domain, locally uniform sequence
+remainders and analytic principal roots with free value one. The
+[Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has twelve matched groups,
+one corrected and nine pending. Next is the proof's factorization (2.18).
+The [completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

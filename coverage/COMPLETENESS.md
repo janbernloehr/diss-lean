@@ -167,14 +167,14 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
-The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares eleven
-of 22 groups: ten matched and one corrected occurrence. The literal Z_n,
-Figure 2.6 and analytic-zero-locus and extension introduction match. A new
-collar construction also proves the closure containment omitted from the
-earlier opening comparison, retaining the same circles and original disks.
-Z_n remains on the original W0; all normalized actions extend on one smaller
-open W containing the entire real locus. Eleven groups remain pending,
-beginning with Theorem 11.2. Existing corrections and all wider qualifications
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares thirteen
+of 22 groups: twelve matched and one corrected occurrence. The full Theorem 11.2
+statement matches: one common complex neighborhood, the exact factor four,
+locally uniform half-exponent plus genuine one-plus remainders, positive real
+parts, analytic nonvanishing principal roots and free value one. The neighborhood
+and remainder maps precede the varying target exponent. Nine intermediate proof
+groups remain pending, beginning with equation (2.18). The original W0, zero-gap
+loci, collar-closure proofs, existing corrections and all wider qualifications
 remain; these comparisons do not certify source-wide completeness.
 
 Classify each substantive

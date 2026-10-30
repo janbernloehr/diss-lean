@@ -1,6 +1,38 @@
 # Implementation plan
 
-## Current milestone: zero-gap locus and contour collar closures
+## Current milestone: Theorem 11.2 statement comparison
+
+The full statement of Theorem 11.2 now matches the existing Lean proofs.
+One open complex W contains the entire real-type locus and supports every
+normalized action and principal root. Off the zero-gap locus,
+F_n=I_n/(gap_n^2). Its analytic extension satisfies 4F_n=1 plus the two
+sequence remainders, and xi_n=sqrt(4F_n). Every free factor is 1/4 and
+every free root is 1.
+
+Local uniformity is explicit at every complex point of W. The neighborhood
+and the half-exponent and genuine one-plus remainder sequences are fixed
+before the index and target exponent vary. The real parts of all F_n share
+a positive local lower bound, and all roots are analytic and nonvanishing.
+
+The [ordered Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) now has
+thirteen compared groups: twelve matched and one corrected; nine remain pending.
+The original W0 and zero-gap loci are retained, while the smaller W is open
+and contains the entire real locus. The theorem does not require W to be connected.
+
+This step updates documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next are equation (2.18) and the recentered squared-critical action integral.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: zero-gap locus and contour collar closures
 
 The next three Section 11 passages now match the existing proofs: the literal
 zero-gap locus Z_n, Figure 2.6, and the analytic-zero-locus and normalized-action

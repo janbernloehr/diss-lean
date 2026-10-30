@@ -1,17 +1,19 @@
 # Section 11 ordered assertion comparison
 
-Eleven of 22 ordered Section 11 groups are compared: ten matched and one corrected occurrence. The literal zero-gap locus, Figure 2.6 and the analytic-zero-locus and common-extension introduction now match. A supplemental proof fills the previously omitted closure condition in S11-001: smaller fixed collars have their closures inside the original cut disks, uniformly on the same source neighborhood. Z_n is defined on the original W0; the common normalized-action neighborhood W may shrink while containing the entire real-type locus. Eleven later groups remain pending, starting with Theorem 11.2. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Thirteen of 22 ordered Section 11 groups are compared: twelve matched and one corrected occurrence. The full Theorem 11.2 statement matches: one common normalized-action domain, the exact factor four, locally uniform half-exponent plus genuine one-plus remainders, positive real-part lower bounds, analytic nonvanishing principal roots and free value one. Nine intermediate proof groups remain pending, starting with equation (2.18). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first eleven
+the reviewed source extraction; form feeds do not add lines. The first thirteen
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
 settle every intermediate display or proof assertion in these pending entries.
 
 All compared claims use the original finite-p source spaces with 1<p<infinity.
-The common open connected W contains the entire real-type locus. Standard
-finite piecewise C1 regularity is explicit when interpreting contour integrals.
+The original open connected W0 contains the entire real-type locus. Theorem 11.2
+uses one smaller open W still containing that locus; connectedness of this W
+is not required. Standard finite piecewise C1 regularity is explicit when
+interpreting contour integrals.
 
 | Group | Printed page | Source lines | Assertion | Status |
 | --- | --- | --- | --- | --- |
@@ -26,8 +28,8 @@ finite piecewise C1 regularity is explicit when interpreting contour integrals.
 | S11-009 | 61 | 4786–4790 | Definition of Z_n as the squared-gap zero locus in the original common domain. | matched |
 | S11-010 | 61 | 4795–4805 | Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks. | matched |
 | S11-011 | 62 | 4816–4822 | Analytic subvariety Z_n and the normalized-action extension problem. | matched |
-| S11-012 | 62 | 4824–4832 | Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion. | pending |
-| S11-013 | 62 | 4833–4842 | Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one. | pending |
+| S11-012 | 62 | 4824–4832 | Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion. | matched |
+| S11-013 | 62 | 4833–4842 | Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one. | matched |
 | S11-014 | 62 | 4844–4853 | Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain. | pending |
 | S11-015 | 62 | 4855–4859 | Recentered action integral with coefficient i/pi and the squared critical factor. | pending |
 | S11-016 | 62 | 4860–4869 | Complex gap-side parametrization and the actual weighted integral for the action. | pending |
@@ -333,9 +335,7 @@ public examples and 44,364 transitively audited NLS declarations, with
 21 inherited warnings and no new warnings. Source-review integrity and
 documentation-link checks also pass.
 
-Continue with Theorem 11.2, S11-012 and S11-013. The sequence expansions,
-positive real-part bounds and principal-root claims still require their
-ordered comparison. All [wider qualifications](COMPLETENESS.md) remain.
+The following subsection compares the full Theorem 11.2 statement.
 
 ## Opening comparison evidence and validation
 
@@ -364,3 +364,72 @@ The opening comparison above is retained with its original evidence. Preserve th
 and all wider qualifications in the [completion assessment](COMPLETENESS.md).
 Correct constants with proved valid replacements; additional refutations
 are not required.
+
+## Theorem 11.2: normalized actions and principal roots
+
+### S11-012: Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion.
+
+- For each finite p>1, one open complex W contained in the preceding W0 contains the entire real-type source locus. The normalized action factors are complex analytic for every signed index, including at complex collapsed gaps.
+- Off Z_n the factor F_n is exactly the indexed action divided by the squared canonical gap. The displayed normalization is 4F_n=1+GA_n+BA_n, with no extra sign or index-dependent factor.
+- At every complex point of W, one open neighborhood admits fixed remainder maps GA and BA before the index and target exponent are chosen. GA belongs to ell-(p/2), BA belongs to the genuine intersection of all finite ell-q spaces q>1, and their stated norm or quasi-norm bounds are uniform on that neighborhood.
+- For 1<p<=2, the half-exponent component is zero and the full deviation is the fixed one-plus sequence. For p>2, the full deviation belongs to ell-(p/2) and the one-plus component is zero. Only the bounds of finite-exponent one-plus projections may depend on q.
+- The common W is a union of open sets carrying all-index local data. Near each real source, these local data are constructed by a finite intersection of common action charts, analytic factor and root neighborhoods, the positivity neighborhood and the sequence-majorant neighborhood. This supplies local uniformity at every complex point of W.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions`
+- `NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.asymptotics`
+- `NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.analytic`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.locally_uniform`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionDeviation_allExponents`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_continuous`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedAction_onePlus_decomposition`
+- `NLS.ZakharovShabat.sourceTheorem11_2`
+
+The full Theorem 11.2 action statement matches, with the original finite-p source space and one smaller common W. The original W0 remains the domain of Lemma 11.1 and Z_n. Connectedness of the smaller W is not asserted or required. The later intermediate proof passages remain separately pending.
+
+### S11-013: Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one.
+
+- The real part of F_n is positive and has a common positive lower bound for every signed index and every source in one neighborhood of each point of W. The local-data proof divides the bound for Re(4F_n) by four.
+- The positive bound is proved using norm continuity of one finite-exponent sequence realization: a distant tail stays close to one and a finite central block retains a positive minimum. Real collapsed-gap positivity uses reality, continuity and nonvanishing on the connected real-type locus, anchored at the free value 1/4.
+- The root is the principal complex square root xi_n=sqrt(4F_n). Positive real part places its argument in the analytic slit-plane domain. Its exact square is 4F_n, so positivity implies nonvanishing; on real sources it is the positive real square root.
+- Each root is complex analytic on the same W, hence real analytic. The local uniform package gives xi_n=1+GR_n+BR_n with the same fixed-sequence and common-neighborhood quantifiers as the action expansion.
+- At the zero source the proved factor is F_n=1/4 and the principal root is exactly one for every signed index, including n=0.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.asymptotics`
+- `NLS.ZakharovShabat.SourceNormalizedActionUniformBounds.positive`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.re_pos`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_analytic`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_ne_zero`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_real_positive`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.root_zero`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionComplexExtension_uniform_re_pos`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionRootDeviation_allExponents`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedActionRoot_allIndices_analytic`
+- `NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_re_pos_of_realType`
+- `NLS.ZakharovShabat.sourceNormalizedActionComplexExtension_zero_source`
+- `NLS.ZakharovShabat.sourceNormalizedActionRoot`
+
+The positivity, principal branch, real analyticity, nonvanishing, locally uniform root expansion and free value all match the printed statement. Uniform means local in the source but simultaneous in all indices. No additional source correction or refutation is introduced; subsequent proof displays retain their separate pending statuses.
+
+The [full theorem](../NLS/ZakharovShabat/SourceTheorem11_2.lean) assembles the
+[local uniform data](../NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean),
+[literal sequence decomposition](../NLS/ZakharovShabat/SourceNormalizedActionOnePlusDecomposition.lean)
+and [analytic principal roots](../NLS/ZakharovShabat/SourceNormalizedActionRootAnalytic.lean).
+The comparison records 33 inspected module bodies and 24 resolved declarations.
+
+This step changes documentation and comparison records only. The Lean sources
+and dependency locks match the fully validated snapshot at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Continue with S11-014, the literal deleted-product factorization (2.18), and
+S11-015, the recentered squared-critical action integral. Their exact constants,
+domains and source hypotheses still require comparison in source order.
