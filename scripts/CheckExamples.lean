@@ -72057,3 +72057,48 @@ example {W : Set (CoeffPair 4)}
   simpa only [sourcePsiOriginalRootReal_zero,norm_zero] using h.norm
 
 end Section12GlobalSolutionExamples
+
+section Section12ComplexExtensionExamples
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Every omitted index uses the same complex domain and has zero free value.
+example {W₀ : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceProposition12_9Data ENNReal.ofReal_ne_top (by norm_num) W₀)
+    (hW₀ : IsOpen W₀) (hR : realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W₀) :
+    ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsSimplyConnected W ∧
+      (0 : CoeffPair (ENNReal.ofReal (3/2))) ∈ W ∧ W ⊆ W₀ ∧
+      ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedIndexCoeff (ENNReal.ofReal (3/2)) n,
+        ∀ n : ℤ, AnalyticOnNhd ℂ (s n) W ∧ s n 0 = 0 ∧
+          ∀ ψ ∈ W, sourcePsiDeletedIndexEquation ENNReal.ofReal_ne_top (by norm_num) n ψ (s n ψ) = 0 := by
+  obtain ⟨W,hW,hconn,hRW,hsub,s,hana,heq,hreal,_⟩ := H.exists_deletedIndex_complex_extension hW₀ hR
+  have hzero : (0 : CoeffPair (ENNReal.ofReal (3/2))) ∈ W :=
+    hRW (0 : realTypeSourceSubmodule (ENNReal.ofReal (3/2))).property
+  refine ⟨W,hW,hconn,hzero,hsub,s,?_⟩
+  intro n
+  refine ⟨hana n,?_,fun ψ hψ => heq ψ hψ n⟩
+  simpa only [Submodule.coe_zero,sourcePsiOriginalRootReal_zero,map_zero] using hreal n 0
+
+-- The real limit operator gives the exact complex output of a difference of real inputs.
+example {W V : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (φ : realTypeSourceSubmodule 4) (hφW : (φ:CoeffPair 4) ∈ W)
+    (hφV : (φ:CoeffPair 4) ∈ V)
+    (a : RealCoeff 4) (ha : RealCoeff.complexCLM 4 a ∈ sourcePsiOriginalRootPlacement D)
+    (h g : RealCoeff 4) :
+    (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) (RealCoeff.complexCLM 4 a) φ
+      (RealCoeff.complexCLM 4 h-RealCoeff.complexCLM 4 g)) (-2) =
+        ((sourcePsiOriginalLimitRealOperator (by norm_num) (by norm_num) a φ h (-2):ℝ):ℂ)-
+        ((sourcePsiOriginalLimitRealOperator (by norm_num) (by norm_num) a φ g (-2):ℝ):ℂ) := by
+  have hh := congrArg (fun b : Coeff 4 => b (-2))
+    (H.originalLimitRealOperator_complex hD φ hφW hφV a ha h)
+  have hg := congrArg (fun b : Coeff 4 => b (-2))
+    (H.originalLimitRealOperator_complex hD φ hφW hφV a ha g)
+  simpa only [map_sub,lp.coeFn_sub,Pi.sub_apply,RealCoeff.complexCLM_apply] using
+    congrArg₂ (fun z w : ℂ => z-w) hh.symm hg.symm
+
+end Section12ComplexExtensionExamples

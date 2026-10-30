@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T16:40:35.469985+00:00",
-  "base_commit": "48616004e9552d9efd7e1e8dd5c413e7b718b04b",
+  "published_utc": "2026-10-30T17:05:31.416237+00:00",
+  "base_commit": "35024f421a82d5f9b63a9f8d1e5ce6d25d4539df",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 144,
-    "module_hash_checks": 2736,
-    "distinct_modules": 1614
+    "review_records": 145,
+    "module_hash_checks": 2802,
+    "distinct_modules": 1639
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "48616004e9552d9efd7e1e8dd5c413e7b718b04b",
-    "validated_state": "One positive retained-index local branch proof, two public examples and ordered comparison of Proposition 12.9. Full gate 81988 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "35024f421a82d5f9b63a9f8d1e5ce6d25d4539df",
+    "validated_state": "Seven positive proofs, one bounded real operator, two public examples and ordered comparison of the common extension and limiting operator in Lemma 12.10. Full gate 81807 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8536,
-    "public_examples": 7613,
-    "transitive_NLS_declarations": 44460,
+    "build_jobs": 8538,
+    "public_examples": 7615,
+    "transitive_NLS_declarations": 44473,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4813,
-      "sha256": "ae59eedf774d4cbb994117e64553c7583ec9587a05c5f70af569f04cb98d7ac8"
+      "files": 4815,
+      "sha256": "1125e8ebbf315f7bad8a970d8f7e4b45fc247740eb3001d7590be91b4a2b4646"
     },
     "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
@@ -35361,6 +35361,317 @@
       },
       "ordered_inventory_sha256": "eafac90ef99353db39401df756a656336873accb13e1c38397fddccbc2e703f4",
       "source_record_sha256": "2b2acb9a86c30a51a0f5af514c31d5d464281b48cb9fa4f1a3972131f9ac07cb"
+    },
+    "Section12ComplexExtensionSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "35024f421a82d5f9b63a9f8d1e5ce6d25d4539df",
+      "updated_utc": "2026-10-30T17:05:31.416237+00:00",
+      "source_lines": [
+        [
+          5407,
+          5414
+        ],
+        [
+          5417,
+          5431
+        ],
+        [
+          5433,
+          5446
+        ],
+        [
+          5448,
+          5454
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-037",
+          "source_lines": [
+            5407,
+            5414
+          ],
+          "requirement": "Lemma 12.10: extension of every branch to one common complex source neighborhood with original root placement.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_10Data",
+            "NLS.ZakharovShabat.SourceProposition12_9Data.lemma12_10",
+            "NLS.ZakharovShabat.sourceLemma12_10",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_equation",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_real_agreement",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_original_placement",
+            "NLS.ZakharovShabat.SourceProposition12_9Data.exists_deletedIndex_complex_extension"
+          ],
+          "reviewed_claims": [
+            "All actual Proposition 12.9 root maps extend to one open simply connected complex neighborhood containing the entire real source locus and lying inside the unchanged preceding source domain. The domain is chosen before every omitted index.",
+            "Each extension solves the actual original sequence equation and agrees exactly with its canonical real solution. The new literal retained-index interfaces preserve these properties by the exact coefficient isometry.",
+            "Uniform analytic equation and inverse bounds give common positive branch radii. Branches agree on overlapping real-centered balls by real agreement and the complex identity principle. The atlas domain contracts to its real projection and then to zero, proving simple connectivity.",
+            "Compactness of the real gap-root product gives a margin inside any supplied original disk family. Uniform branch stability then puts all retained roots into those same disks on one smaller source ball, independently of both indices. Restricting the source neighborhood preserves the disks and their comparison constant."
+          ],
+          "qualification": "The common extension and root-placement statement match. Supplied disks are retained while their source neighborhood may be restricted, as made explicit by original_assignment. The later printed inverse-bound proof passages retain their own pending comparison status."
+        },
+        {
+          "ordered_group": "S12-038",
+          "source_lines": [
+            5417,
+            5431
+          ],
+          "requirement": "Jacobian contour formula and exact multiplier expansion (2.28).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_contour",
+            "NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient",
+            "NLS.ZakharovShabat.sourcePsiOriginalIndexRatio_sub_one",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_bound",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_tail"
+          ],
+          "reviewed_claims": [
+            "The actual original Jacobian entry is the contour integral of the retained root ratio times (n-m), the double-omitted auxiliary factor and the reciprocal selected standard root. Original disk placement supplies contour avoidance for every retained input direction.",
+            "The double-omitted factor is (1/i)/(sigma_n-z) times the negative single auxiliary product from (2.25). Rewriting pi*(n-m)/(sigma_n-z) therefore gives exactly the printed factor 1/(i*pi), with no change of sign or normalization.",
+            "The literal multiplier equals one plus ((n*pi-sigma_n)+(z-m*pi))/(sigma_n-z). Uniform lattice bounds and original disk separation bound its error by K/abs(n-m), with K independent of the indices, root input and point in the original row disk.",
+            "For each fixed row and every positive tolerance, one tail cutoff works for all root inputs placed in the original disks and all points of that disk, as the omitted index escapes in either direction."
+          ],
+          "qualification": "The contour identity and (2.28) match with their exact constants. The opening uniform-inverse sentence announces the later argument; its detailed estimates are compared in subsequent groups."
+        },
+        {
+          "ordered_group": "S12-039",
+          "source_lines": [
+            5433,
+            5446
+          ],
+          "requirement": "Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_tendsto",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_entry",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_meanValue",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_lp",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_locally_bounded",
+            "NLS.ZakharovShabat.SourceEquation2_29Data",
+            "NLS.ZakharovShabat.SourceProposition12_9Data.equation2_29"
+          ],
+          "reviewed_claims": [
+            "For each fixed row and column, the actual Jacobian entries converge to the literal Q-star contour entry in both directions of the omitted index. Deleted-coordinate norm convergence, joint quotient continuity and uniform rational-multiplier convergence justify passing the limit through each compact contour.",
+            "The limiting integral is defined for every pair of integer indices. The intrinsic operator has those entries on every supplied original circle; uniqueness of coordinate limits makes the definition independent of contour choices.",
+            "On the original real placed-root domain, each diagonal entry is twice the single analytic quotient at an actual point in the corresponding gap. Disjoint original disks make this value nonzero, including collapsed gaps, and a locally bounded lp quotient-error sequence gives the exact form 2 plus lp.",
+            "Multiplying an off-diagonal entry by its signed index difference gives the actual original equation coordinate divided by pi. A common lp equation majorant therefore bounds all columns in each row by B_m/abs(m-r). The local bounds use the original joint root/source topology."
+          ],
+          "qualification": "The scalar limit and both parts of (2.29) match. The negative single auxiliary product accounts for the printed contour sign; the diagonal leading value stays 2. Scalar convergence alone is not used to assert operator-norm convergence."
+        },
+        {
+          "ordered_group": "S12-040",
+          "source_lines": [
+            5448,
+            5454
+          ],
+          "requirement": "Bounded full-space operator and diagonal-two extension of deleted Jacobians.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitOperator",
+            "NLS.ZakharovShabat.sourcePsiOriginalFullRootJacobian",
+            "NLS.Coeff.deletedJacobianExtension",
+            "NLS.Coeff.deletedOperatorExtension_apply_same",
+            "NLS.Coeff.deletedOperatorExtension_single_same",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_preserves_real",
+            "NLS.ZakharovShabat.sourcePsiOriginalLimitRealOperator",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_complex",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto"
+          ],
+          "reviewed_claims": [
+            "A common analytic chart gives an eventual bound on the norms of the full Jacobians. Their basis-entry limits define a bounded operator by taking finite linear combinations, using lp lower semicontinuity and extending from dense finite-support inputs. The constructed operator has exactly the contour matrix.",
+            "Real original inputs give real matrix entries. Conjugation equivariance extends this to all real coefficient vectors. The new bounded operator on real lp has complex inclusion exactly equal to the intrinsic complex limiting operator, with no loss of matrix information.",
+            "Every deleted Jacobian extends to the full lp space by placing 2 on its omitted diagonal and zero in the remaining entries of that row and column. Its retained block is the actual original derivative, identified with every valid selected-contour derivative.",
+            "The operator-norm convergence announced at the end of the passage holds at each fixed original real placed-root input in both index directions. Its existing proof combines the diagonal and off-diagonal norm limits. The later detailed estimates and local-uniformity quantifiers are left to their own ordered groups."
+          ],
+          "qualification": "The bounded real operator and diagonal-two extensions match. The announced norm-limit theorem is reused with its fixed-input scope; this group does not claim convergence uniformly on one fixed ambient neighborhood."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma12_10.lean": "14057d49cdb27ad7de1c2d8d18b43a63c4806e45976097b037ae753a91f6f842",
+        "NLS/ZakharovShabat/SourceLemma12_10InverseBounds.lean": "86406ad424bb7352e8f05ca0743f2297e62ce49a8167a65fe976ced5dbdf31d6",
+        "NLS/ZakharovShabat/SourcePsiOriginalAtlasPlacement.lean": "a791c93901817739145009af90a0173188fe9a1f783e6bf141340e232c55589a",
+        "NLS/ZakharovShabat/SourcePsiJacobianFullMatrix.lean": "2815297fd022958ce572cc499a6b8df74d9831034c2b000cef0fa67e4d1abb94",
+        "NLS/ZakharovShabat/SourcePsiOriginalIndexRatio.lean": "7b8e3f083bf1b09e8c7a7bbd8eec701a397806a505a73bb333011631b3339318",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianComparison.lean": "63c24dfc457abd014745106f7c20a32b6c31428ccc3aac1cdc99ba1e6eeec7cd",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitOperator.lean": "5efd4619ed4a26c5e75e09b1d769f053cb296e1c5203c6cab4fe5ad05c7f5ad2",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianScalarLimit.lean": "bb82b56800f8240df17126a1afe43196bafa0f75a1779aabb9c72db75f02987a",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitDiagonal.lean": "01594fcf62894dc68a9a5ed036d39ee3560a967327bad130a5e8e111b338c7d1",
+        "NLS/ZakharovShabat/SourcePsiUniformComplexBranches.lean": "8292971f46a565b7555978b56b366ef36a014f1c40dc262c1ff09c43521ff02b",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitEntries.lean": "0c41a5f38a2eddf362fe956d742167114b2c7792173774023328ae56abd91e89",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianContour.lean": "cd285edd56ae5f95af1fd32529977125e7ae409d5fabeeafcc52bf8eaa03b898",
+        "NLS/ZakharovShabat/SourcePsiLimitScalarJacobianEntry.lean": "7fe0ede6400a00cb44ebfb2412d6b26acde1a1e6b34754c27bc380c5587d3725",
+        "NLS/ZakharovShabat/SourcePsiOriginalRatioEstimate.lean": "91e84c10e63f11d0e68a30c72fd50719f6ae2e36aa7246e69030d43bc97f7e91",
+        "NLS/ZakharovShabat/SourcePsiUniformFilledBranchStability.lean": "3f4143adff9bc28e9ad0f0d49574656b7fb8a22eae4f8af681fce5c3e817b833",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitCanonical.lean": "4327ece4fa1c9b84c2bd6986b0df1880c735c5c97c14e53cbe8fc0b473c1d318",
+        "NLS/ZakharovShabat/SourcePsiUniformEquationEstimates.lean": "c4b21d049faa940e6c63d1c60675f7de812c965959dbb4d4b8b3b11d2bd873ce",
+        "NLS/ComplexAnalysis/QuantitativeTriangularDerivative.lean": "621ab28ce7b2cf06d7ef3865d62bc6660b0e375d1f08175a40e74f148c26cbf6",
+        "NLS/ComplexAnalysis/QuantitativeAnalyticInverse.lean": "685b3d90679f785d11af04591a900760e982f21a09bc67ce6fc5f5075807f3fa",
+        "NLS/SequenceSpaces/BoundedMatrixLimitPointwise.lean": "a67fd5c2519c092c16edf10747bbaf0bf4533e01460f86851ccc2b0355718f44",
+        "NLS/SequenceSpaces/OperatorBasisExt.lean": "3d6495e89ef8dbd44373f9e70423867a3d3600889061679c0e53fa4fe9ea32cc",
+        "NLS/ZakharovShabat/SourceTheorem12_1.lean": "c036faa392a52eb853aff8fac711d8a2c01eeae64505b4dcb16207decbc24a3f",
+        "NLS/ZakharovShabat/SourcePsiSquaredGapComplexRootAtlas.lean": "be65965aa560f10bbf39ecfab68893816686f6d312879c1e1ea7c3d6f0b20b0e",
+        "NLS/ZakharovShabat/SourcePsiComplexRootAtlas.lean": "a2a62bbdffdbc206a6dac832282c9d5c631ab941831b91860095ff4284db1ebe",
+        "NLS/ZakharovShabat/SourcePsiComplexRootDomain.lean": "d23f95cf69ec9a4b6c1f42195be4bdf6e146515dd1767522872d257010b82cb2",
+        "NLS/ZakharovShabat/SourcePsiComplexBranchCompatibility.lean": "de7d9ad5bc9a0b2459ef7d5d9a0d258cc817da931737acefd8111c8a068e7f3e",
+        "NLS/ZakharovShabat/SourcePsiIsolatingComplexNormalization.lean": "6c8b9811f8a9c11f4ad13e2868d11d2209c12108212b83f3467538f427f9d8ea",
+        "NLS/ZakharovShabat/SourcePsiUniformComplexBranchRealAgreement.lean": "937e81a058e8d72c4380e03a09f85e92f8442cf8f845054798599936043fda93",
+        "NLS/ZakharovShabat/SourcePsiUniformEquationTube.lean": "98c8a607ce8c15cc2fb9641d9a7120377c652209737dd476ee2c36f93e561bba",
+        "NLS/SequenceSpaces/BoundedMatrixLimit.lean": "ef3d4ba4300682caa74abf18037cdea4b19c0295c8c9dd40798782a9ebde2b31",
+        "NLS/SequenceSpaces/DeletedOperatorExtension.lean": "9aed48b9e4d55721e89086fe05b0d614be1b655e9a9fafce5bc60be10981c462",
+        "NLS/ZakharovShabat/SourcePsiCommonJacobianCharts.lean": "deb2a498b10c569ab8e6ed080300bbcd0da948dc34c03cf69ea662961c3e7040",
+        "NLS/ZakharovShabat/SourceEquation2_29.lean": "3b4b4e80c4f30200948422f61c5b34c47eedf91b3d2ba9231705092d4ac5f344",
+        "NLS/SequenceSpaces/DeletedCoordinateAtInfinity.lean": "3f04253c54ceb7f35c45603a23cefe56788b99428f3c59fd421d463dc9a65355",
+        "NLS/ZakharovShabat/SourcePsiLimitIntegrandUniform.lean": "2fe9e516040dfc3f9fcddb5b8e05527c1edc1cc4284135ec7d6cf14836d1cb0c",
+        "NLS/ZakharovShabat/SourcePsiLimitQuotientUniform.lean": "cfd3d8e3b9f61bbe3b9f57816df7fcfe100ba6c19a52c8befc070171be79f68b",
+        "NLS/ZakharovShabat/SourcePsiLimitRatioUniform.lean": "377c8fcb6fe57414016d9b067dca67565ce243867966773bedc76d53c650d117",
+        "NLS/SequenceSpaces/RealOperator.lean": "e86874c42d92488c7b8485f3a9c738e09b02bb236f6a3eaeb9a08ea7f42d992d",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitInjectivity.lean": "073b6c8ef759d8b8b8ae2bc7e12f94519199711e3e128a1da04c077820762f92",
+        "NLS/ComplexAnalysis/BanachTaylorBounds.lean": "e75db211483525ebd1e8b3cd673015782257db2ba25a3597db30c5d4b0ebaa90",
+        "NLS/ZakharovShabat/SourcePsiJacobianGapFactorization.lean": "ead6cb9b1f809621063e1f2c73ba019f2f33666269ddc06303f1aa64d666940d",
+        "NLS/SequenceSpaces/RealCoeff.lean": "c8eed7f2f37d4ab7934024af98b627fb18d140010e03500fcaec98accde48dec",
+        "NLS/ComplexAnalysis/BanachHolomorphicC1.lean": "ae512dcbf24195d4a8029eb047c5329d836bf74489a2b0a7096194d06900f08f",
+        "NLS/ZakharovShabat/SourcePsiJacobianFullExtension.lean": "f2fd2105c77720ec2228ccab530a45e13fa3a642313b799007208d37bc84b92c",
+        "NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean": "e80036fc2992b9f120b82020897c35bb35fdbeb2a237fa006cbebe061eb6eecd",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexComplexExtension.lean": "39463386a7be2ababcbbe50b2aa15c8fd12ae92125de835a19afed46bc0fb211",
+        "NLS/ZakharovShabat/SourcePsiOriginalLimitReal.lean": "d73515650dc01eadb6f32694dbf765d76008fa56fa93224e85b9a6a969d7ec73",
+        "NLS/ZakharovShabat/SourcePsiOriginalOmega.lean": "f074367e3113da047b9c3b3d6f62a36be10384828ef8958bf3e1a663c8fc7534",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobian.lean": "138b12ca855d1fa52a56c31e3f52ca881480242a630b1a7980b8572aac553785",
+        "NLS/ZakharovShabat/SourcePsiCoordinateVariation.lean": "26cdd2e94812a14a7d693a2ab2c6f65792fa568734c9f30ca6cf68cbba465b54",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean": "5c15019528fe196d6f2095e1677255f4a11d33ba37fa72d403e89ff590258f39",
+        "NLS/ZakharovShabat/SourcePsiDeletedProductNonzero.lean": "94a81faf32416bb7082fe9f9b64ab8f5ccfd10c5d9a82d87c12309545fa86ec7",
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb",
+        "NLS/ZakharovShabat/SourcePsiOriginalZetaRegular.lean": "9d0728dde29800e6b4e83a9f5f4c8681e37be9d7ad462bfb142c9e1c814ce096",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientError.lean": "7526ac752c17288c3ab6ed3bd499f82a7f1aa2536eb4b5ab4e89702c3fc00ccd",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquationSup.lean": "e36dee6cd413bed3f87c45234f8f9cf28a3b43cc278248617162bbf55d5b6a6f",
+        "NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound.lean": "ce5876e8af216e1dc8e7d2dda5ad7ea8de83fb9d22de86a1dfe1466483504bc9",
+        "NLS/ZakharovShabat/SourcePsiGapFactorization.lean": "e3d60fbbde3bc8495c9849a52baebd2f0c221c6899924ccb805d8853a81abfd6",
+        "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean": "94753c776853f3fe675c4e496250d13db8b692edad5620ffdb33093e6d3c75cf",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean": "cedfb323a53f4a1197aa0d9e4faa2980d4be93cbd1f66d50b5052d945e162714",
+        "NLS/ZakharovShabat/SourcePsiGlobalEquationAnalytic.lean": "6ff0ae656e5b88d2498aa67a3560ccfbb902872916bfbe552e2bf02b620cb36f",
+        "NLS/ZakharovShabat/SourcePsiGlobalEquationSequenceBound.lean": "d917873569f1cfc088be2239fa675bebf59a0304597964088c9a67a45f36954b",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealEquation.lean": "89bf6a4c21e141874c61626f2cf2b87ebfe53865da21591ddedbe77b718d91fb",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealRoot.lean": "28f6c18a43df5d5bf03c9d42789c566c8dd232d223757af935cff60c3651342f",
+        "NLS/ZakharovShabat/SourceProposition12_9.lean": "6d821f90d49dbaa57bde83174c602119bfdb0b13213c2d994c7c429f234fdfa4",
+        "NLS/ZakharovShabat/SourcePsiOriginalNormLimit.lean": "58d9f90b32fbcd6e554e26095a41fb613399254503e810bf24ab199409b69a4e"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section12OpeningSourceComparison-2026-10-30.json",
+          "sha256": "c8411dc30a4e7cac0e9d89df08cae11dd82558dc2633b6d785536324e27ea235",
+          "modules": [
+            "NLS/ZakharovShabat/SourceTheorem12_1.lean",
+            "NLS/ZakharovShabat/SourcePsiSquaredGapComplexRootAtlas.lean",
+            "NLS/ZakharovShabat/SourcePsiComplexRootAtlas.lean",
+            "NLS/ZakharovShabat/SourcePsiComplexRootDomain.lean",
+            "NLS/ZakharovShabat/SourcePsiComplexBranchCompatibility.lean",
+            "NLS/ZakharovShabat/SourcePsiIsolatingComplexNormalization.lean",
+            "NLS/ZakharovShabat/SourcePsiUniformComplexBranchRealAgreement.lean",
+            "NLS/ZakharovShabat/SourcePsiUniformEquationTube.lean"
+          ]
+        },
+        {
+          "file": "work/Section12JacobianSourceComparison-2026-10-30.json",
+          "sha256": "709c0e35002e742b3f6fb65f19cfa0a29852501520572a6c95c962297b33aead",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiOriginalOmega.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalJacobian.lean",
+            "NLS/ZakharovShabat/SourcePsiCoordinateVariation.lean",
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean",
+            "NLS/ZakharovShabat/SourcePsiDeletedProductNonzero.lean",
+            "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalZetaRegular.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalQuotientError.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalEquationSup.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound.lean",
+            "NLS/ZakharovShabat/SourcePsiGapFactorization.lean",
+            "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean",
+            "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean"
+          ]
+        },
+        {
+          "file": "work/Section12GlobalSolutionSourceComparison-2026-10-30.json",
+          "sha256": "2b2acb9a86c30a51a0f5af514c31d5d464281b48cb9fa4f1a3972131f9ac07cb",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiGlobalEquationAnalytic.lean",
+            "NLS/ZakharovShabat/SourcePsiGlobalEquationSequenceBound.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalRealEquation.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalRealRoot.lean",
+            "NLS/ZakharovShabat/SourceProposition12_9.lean"
+          ]
+        },
+        {
+          "file": "work/Section12OperatorLimitSourceComparison-2026-10-27.json",
+          "sha256": "ddfa5ad0cab46c2f600b032b0f6e3e8bdc15cdf9382c4d28c1a26a08e8341518",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiOriginalNormLimit.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.deletedJacobianExtension",
+        "NLS.Coeff.deletedOperatorExtension_apply_same",
+        "NLS.Coeff.deletedOperatorExtension_single_same",
+        "NLS.ZakharovShabat.SourceEquation2_29Data",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_bound",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_tail",
+        "NLS.ZakharovShabat.SourceLemma12_10Data",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_equation",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_original_placement",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_real_agreement",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitOperator",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_contour",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_tendsto",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_lp",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_meanValue",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_entry",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_locally_bounded",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_preserves_real",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_complex",
+        "NLS.ZakharovShabat.SourceProposition12_9Data.equation2_29",
+        "NLS.ZakharovShabat.SourceProposition12_9Data.exists_deletedIndex_complex_extension",
+        "NLS.ZakharovShabat.SourceProposition12_9Data.lemma12_10",
+        "NLS.ZakharovShabat.sourceLemma12_10",
+        "NLS.ZakharovShabat.sourcePsiOriginalFullRootJacobian",
+        "NLS.ZakharovShabat.sourcePsiOriginalIndexRatio_sub_one",
+        "NLS.ZakharovShabat.sourcePsiOriginalLimitRealOperator",
+        "NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient"
+      ],
+      "declaration_inventory_count": 44473,
+      "qualification": "The first forty of 67 ordered Section 12 groups are compared: thirty-five matched, five with estimate, scope or gap-reference corrections, and 27 pending. Lemma 12.10 provides one common simply connected complex extension of all actual real root branches, with literal retained-index interfaces preserving the equation, real agreement and original disk placement. The exact contour multiplier, all-index limit matrix and bounded real lp operator retain their normalization and diagonal value 2. The announced operator-norm limit holds at fixed original real placed-root inputs; its detailed estimates and local-uniformity quantifiers remain in subsequent groups. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          68
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-068.png": "b1da7bd174e061b8f0c34e4643592d16a4ca68bcf2debc7979a863ba12cf3464"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4815,
+        "sha256": "1125e8ebbf315f7bad8a970d8f7e4b45fc247740eb3001d7590be91b4a2b4646"
+      },
+      "full_gate": {
+        "session": 81807,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexExtensionFullCheck-1.log",
+        "log_sha256": "e13781963aa24b09a3883d21e82574b16fcfb2f53370e9c5ed7ba84a86a7a0ca"
+      },
+      "ordered_inventory_sha256": "517abfd0e727ffa6187be39d15151962ebb572fb4aefa6a9593899ea17ff7827",
+      "source_record_sha256": "5cb34575128c0794c405083550b5c7d5159079ce3a2f322c9fb895e759f6ec21"
     }
   }
 }

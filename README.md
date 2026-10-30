@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Proposition 12.9](coverage/SECTION_12_ASSERTIONS.md) now has
-a literal retained-index local analytic branch, with the global real
-solution, uniqueness, gap placement and strong lp continuation compared.
-The ordered ledger has thirty-one matched groups, five with corrections
-and 31 pending. Next is Lemma 12.10; wider qualifications remain in the
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: [Lemma 12.10](coverage/SECTION_12_ASSERTIONS.md) now has
+a common complex extension on literal retained indices and a bounded
+real lp limit operator with exact complex-inclusion compatibility.
+The contour normalization and diagonal value 2 are unchanged. The ordered
+ledger has thirty-five matched groups, five with corrections and 27 pending.
+Next are the detailed operator-norm estimates; wider qualifications remain
+in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

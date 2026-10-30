@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first thirty-six of 67 ordered Section 12 groups are compared: thirty-one matched, five with estimate, scope or gap-reference corrections, and 31 pending. Proposition 12.9 provides the unique global real analytic solution of the actual equation, original-domain graph and assigned real gap placement. The local implicit branch also has a literal retained-index interface. Strong lp compactness, contour-independent limits and pointwise uniqueness justify continuation; the implementation uses clopen solvability and multiplicity on the connected real source locus. The free value is zero. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first forty of 67 ordered Section 12 groups are compared: thirty-five matched, five with estimate, scope or gap-reference corrections, and 27 pending. Lemma 12.10 provides one common simply connected complex extension of all actual real root branches, with literal retained-index interfaces preserving the equation, real agreement and original disk placement. The exact contour multiplier, all-index limit matrix and bounded real lp operator retain their normalization and diagonal value 2. The announced operator-norm limit holds at fixed original real placed-root inputs; its detailed estimates and local-uniformity quantifiers remain in subsequent groups. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-thirty-six groups have the semantic comparisons below. Earlier named-theorem
+forty groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -49,10 +49,10 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-034 | 67 | 5376–5380 | Local implicit solution and the continuation setup. | matched |
 | S12-035 | 67 | 5381–5391 | Limit of source/root sequences, gap compactness and global continuation on the simply connected real locus. | matched |
 | S12-036 | 67 | 5393–5395 | Free source solution and uniqueness from collapsed free gaps. | matched |
-| S12-037 | 68 | 5407–5414 | Lemma 12.10: extension of every branch to one common complex source neighborhood with original root placement. | pending |
-| S12-038 | 68 | 5417–5431 | Jacobian contour formula and exact multiplier expansion (2.28). | pending |
-| S12-039 | 68 | 5433–5446 | Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29). | pending |
-| S12-040 | 68 | 5448–5454 | Bounded full-space operator and diagonal-two extension of deleted Jacobians. | pending |
+| S12-037 | 68 | 5407–5414 | Lemma 12.10: extension of every branch to one common complex source neighborhood with original root placement. | matched |
+| S12-038 | 68 | 5417–5431 | Jacobian contour formula and exact multiplier expansion (2.28). | matched |
+| S12-039 | 68 | 5433–5446 | Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29). | matched |
+| S12-040 | 68 | 5448–5454 | Bounded full-space operator and diagonal-two extension of deleted Jacobians. | matched |
 | S12-041 | 68 | 5456–5472 | Diagonal difference formula and the distinguished moving diagonal term. | pending |
 | S12-042 | 68 | 5475–5483 | Two contour terms from the multiplier difference and their local bounds. | pending |
 | S12-043 | 68 | 5484–5504 | Near/far diagonal operator-norm convergence estimate. | pending |
@@ -961,4 +961,99 @@ The new retained-index branch proof and two focused examples add no warnings.
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-037: Lemma 12.10 and the common complex extension.
+The next subsection compares the common complex extension and limiting operator.
+
+## Common complex extension and limiting operator in Lemma 12.10
+
+### S12-037: Lemma 12.10: extension of every branch to one common complex source neighborhood with original root placement.
+
+- All actual Proposition 12.9 root maps extend to one open simply connected complex neighborhood containing the entire real source locus and lying inside the unchanged preceding source domain. The domain is chosen before every omitted index.
+- Each extension solves the actual original sequence equation and agrees exactly with its canonical real solution. The new literal retained-index interfaces preserve these properties by the exact coefficient isometry.
+- Uniform analytic equation and inverse bounds give common positive branch radii. Branches agree on overlapping real-centered balls by real agreement and the complex identity principle. The atlas domain contracts to its real projection and then to zero, proving simple connectivity.
+- Compactness of the real gap-root product gives a margin inside any supplied original disk family. Uniform branch stability then puts all retained roots into those same disks on one smaller source ball, independently of both indices. Restricting the source neighborhood preserves the disks and their comparison constant.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_10Data`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.lemma12_10`
+- `NLS.ZakharovShabat.sourceLemma12_10`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_analytic`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_equation`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_real_agreement`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.deletedIndex_original_placement`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.exists_deletedIndex_complex_extension`
+
+The common extension and root-placement statement match. Supplied disks are retained while their source neighborhood may be restricted, as made explicit by original_assignment. The later printed inverse-bound proof passages retain their own pending comparison status.
+
+### S12-038: Jacobian contour formula and exact multiplier expansion (2.28).
+
+- The actual original Jacobian entry is the contour integral of the retained root ratio times (n-m), the double-omitted auxiliary factor and the reciprocal selected standard root. Original disk placement supplies contour avoidance for every retained input direction.
+- The double-omitted factor is (1/i)/(sigma_n-z) times the negative single auxiliary product from (2.25). Rewriting pi*(n-m)/(sigma_n-z) therefore gives exactly the printed factor 1/(i*pi), with no change of sign or normalization.
+- The literal multiplier equals one plus ((n*pi-sigma_n)+(z-m*pi))/(sigma_n-z). Uniform lattice bounds and original disk separation bound its error by K/abs(n-m), with K independent of the indices, root input and point in the original row disk.
+- For each fixed row and every positive tolerance, one tail cutoff works for all root inputs placed in the original disks and all points of that disk, as the omitted index escapes in either direction.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_contour`
+- `NLS.ZakharovShabat.sourcePsiZeta_eq_negative_single_quotient`
+- `NLS.ZakharovShabat.sourcePsiOriginalIndexRatio_sub_one`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_bound`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_uniform_tail`
+
+The contour identity and (2.28) match with their exact constants. The opening uniform-inverse sentence announces the later argument; its detailed estimates are compared in subsequent groups.
+
+### S12-039: Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29).
+
+- For each fixed row and column, the actual Jacobian entries converge to the literal Q-star contour entry in both directions of the omitted index. Deleted-coordinate norm convergence, joint quotient continuity and uniform rational-multiplier convergence justify passing the limit through each compact contour.
+- The limiting integral is defined for every pair of integer indices. The intrinsic operator has those entries on every supplied original circle; uniqueness of coordinate limits makes the definition independent of contour choices.
+- On the original real placed-root domain, each diagonal entry is twice the single analytic quotient at an actual point in the corresponding gap. Disjoint original disks make this value nonzero, including collapsed gaps, and a locally bounded lp quotient-error sequence gives the exact form 2 plus lp.
+- Multiplying an off-diagonal entry by its signed index difference gives the actual original equation coordinate divided by pi. A common lp equation majorant therefore bounds all columns in each row by B_m/abs(m-r). The local bounds use the original joint root/source topology.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_tendsto`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_entry`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_meanValue`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_lp`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_offDiagonal_locally_bounded`
+- `NLS.ZakharovShabat.SourceEquation2_29Data`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.equation2_29`
+
+The scalar limit and both parts of (2.29) match. The negative single auxiliary product accounts for the printed contour sign; the diagonal leading value stays 2. Scalar convergence alone is not used to assert operator-norm convergence.
+
+### S12-040: Bounded full-space operator and diagonal-two extension of deleted Jacobians.
+
+- A common analytic chart gives an eventual bound on the norms of the full Jacobians. Their basis-entry limits define a bounded operator by taking finite linear combinations, using lp lower semicontinuity and extending from dense finite-support inputs. The constructed operator has exactly the contour matrix.
+- Real original inputs give real matrix entries. Conjugation equivariance extends this to all real coefficient vectors. The new bounded operator on real lp has complex inclusion exactly equal to the intrinsic complex limiting operator, with no loss of matrix information.
+- Every deleted Jacobian extends to the full lp space by placing 2 on its omitted diagonal and zero in the remaining entries of that row and column. Its retained block is the actual original derivative, identified with every valid selected-contour derivative.
+- The operator-norm convergence announced at the end of the passage holds at each fixed original real placed-root input in both index directions. Its existing proof combines the diagonal and off-diagonal norm limits. The later detailed estimates and local-uniformity quantifiers are left to their own ordered groups.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.exists_originalLimitOperator`
+- `NLS.ZakharovShabat.sourcePsiOriginalFullRootJacobian`
+- `NLS.Coeff.deletedJacobianExtension`
+- `NLS.Coeff.deletedOperatorExtension_apply_same`
+- `NLS.Coeff.deletedOperatorExtension_single_same`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_preserves_real`
+- `NLS.ZakharovShabat.sourcePsiOriginalLimitRealOperator`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_complex`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_tendsto`
+
+The bounded real operator and diagonal-two extensions match. The announced norm-limit theorem is reused with its fixed-input scope; this group does not claim convergence uniformly on one fixed ambient neighborhood.
+
+The [common retained-index extension](../NLS/ZakharovShabat/SourcePsiDeletedIndexComplexExtension.lean)
+uses one simply connected domain and original placement radii for all indices.
+The [bounded real limit operator](../NLS/ZakharovShabat/SourcePsiOriginalLimitReal.lean)
+has exact complex-inclusion compatibility, and [equation (2.29)](../NLS/ZakharovShabat/SourceEquation2_29.lean)
+retains the actual diagonal and off-diagonal bounds.
+This comparison records 66 inspected or reused module bodies and 30 resolved declarations.
+
+Full validation passed: 8,538 build jobs, 7,615 public examples and
+44,473 transitively audited NLS declarations, with 21 inherited warnings.
+The seven new proofs, bounded real operator and two focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-041: the diagonal and off-diagonal operator-norm estimates.

@@ -1,6 +1,33 @@
 # Implementation plan
 
-## Current milestone: global real solutions in Proposition 12.9
+## Current milestone: common complex extension and limiting operator
+
+Lemma 12.10 now has literal retained-index interfaces for all branches
+on one common simply connected complex domain. They preserve the actual
+equation, canonical real values and original disk placement.
+
+The limiting Jacobian now also acts directly on real lp sequences, with
+exact compatibility under complex inclusion. The source comparison covers
+the contour multiplier, all-index limit matrix and diagonal-two extension.
+The printed contour sign and leading constant 2 are retained.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+thirty-five matched groups, five with estimate, scope or gap-reference
+corrections and 27 pending. No further constant correction is needed
+for this step.
+
+Full validation passed: 8,538 build jobs, 7,615 public examples and
+44,473 transitively audited NLS declarations, with 21 inherited warnings.
+The seven new proofs, bounded real operator and two focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next are the detailed diagonal and off-diagonal operator-norm estimates.
+Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: global real solutions in Proposition 12.9
 
 Proposition 12.9 now has a direct literal retained-index interface for
 the local analytic branch through every originally placed real solution.

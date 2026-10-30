@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Thirty-one match and five have estimate, scope or gap-reference corrections.
-Proposition 12.9 retains the actual equation and original placement, with
-a unique global real analytic solution, strong lp continuation and the
-zero free-source value. A direct local branch uses literal retained indices.
-The remaining 31 groups start with Lemma 12.10; earlier corrections
-retain their scope.
+Thirty-five match and five have estimate, scope or gap-reference corrections.
+Lemma 12.10 retains one common complex extension with original placement,
+now exposed on literal retained indices. The exact contour multiplier,
+all-index limit matrix and bounded real operator preserve the diagonal value 2.
+The remaining 27 groups start with the detailed operator-norm estimates;
+earlier corrections retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
