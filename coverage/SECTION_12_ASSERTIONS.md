@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first fifty-three of 67 ordered Section 12 groups are compared: forty-two matched, eleven with estimate, scope or gap-reference corrections, and 14 pending. The exact Neumann hypothesis norm(Q-inverse composed with deltaQ)<=1/2 gives inverse norm at most 2*norm(Q-inverse). The entire original real root-placement domain now has one open simply connected complex neighborhood inside the supplied original isolating families, with locally uniform inverse bounds for every signed full and deleted Jacobian. The construction contracts the real domain through the actual midpoint section and thickens it using the nonexpansive joint real projection. All original root maps continue to one open simply connected source domain inside the unchanged preceding domain, with the original equations, exact real agreement and placement in the supplied disks after restricting only their source neighborhoods. Earlier estimate corrections retain their scope; no new refutations are added. The diagonal period proof, individual sine-product signs and later root-offset estimates remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first fifty-nine of 67 ordered Section 12 groups are compared: forty-seven matched, twelve with estimate, scope, gap-reference or sign corrections, and eight pending. The assembled entire family retains analytic roots, original placement and off-diagonal zero periods. On the unchanged common complex domain, finite original-circle decomposition and the uniform exterior limit prove the exact diagonal period 2*pi. With pi_0=1, both individual products are asymptotic to minus sine; their signs cancel and the literal full quotient tends to one. This positive correction reuses existing proofs and adds no refutations. Earlier corrections retain their scope. The final eight root-offset passages remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-fifty-three groups have the semantic comparisons below. Earlier named-theorem
+fifty-nine groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -66,12 +66,12 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-051 | 69 | 5602–5609 | Cauchy derivative estimate near the source times gap box; source and independent-root variables. | corrected |
 | S12-052 | 70 | 5619–5633 | Neumann inverse bound, uniformity in the deleted index and common simply connected root-admissible domain. | matched |
 | S12-053 | 70 | 5635–5644 | Uniform implicit continuation to one simply connected source neighborhood with root placement. | matched |
-| S12-054 | 70 | 5646–5649 | Assembled entire family and off-diagonal period equations. | pending |
-| S12-055 | 70 | 5651–5658 | Lemma 12.11: exact diagonal period 2pi. | pending |
-| S12-056 | 70 | 5660–5675 | Finite contour decomposition to a large exterior circle and completion by the midpoint root. | pending |
-| S12-057 | 70 | 5677–5681 | Literal full-product quotient formula for the diagonal integrand. | pending |
-| S12-058 | 70 | 5683–5697 | Individual sine-product asymptotics and cancellation in their quotient. | pending |
-| S12-059 | 70 | 5700–5705 | Exterior integral limit and exact diagonal period 2pi. | pending |
+| S12-054 | 70 | 5646–5649 | Assembled entire family and off-diagonal period equations. | matched |
+| S12-055 | 70 | 5651–5658 | Lemma 12.11: exact diagonal period 2pi. | matched |
+| S12-056 | 70 | 5660–5675 | Finite contour decomposition to a large exterior circle and completion by the midpoint root. | matched |
+| S12-057 | 70 | 5677–5681 | Literal full-product quotient formula for the diagonal integrand. | matched |
+| S12-058 | 70 | 5683–5697 | Individual sine-product asymptotics and cancellation in their quotient. | corrected |
+| S12-059 | 70 | 5700–5705 | Exterior integral limit and exact diagonal period 2pi. | matched |
 | S12-060 | 71 | 5707–5738 | Lemma 12.12: squared-gap lp root offsets on the unchanged complex domain, uniform in the deleted index. | pending |
 | S12-061 | 71 | 5740–5753 | Equation (2.30), auxiliary chi definition (2.31), and midpoint completion. | pending |
 | S12-062 | 71 | 5754–5767 | Full-disk chi asymptotic (2.32), actual coefficient power sums and Taylor expansion at the midpoint. | pending |
@@ -1377,4 +1377,117 @@ The eighteen new proofs, two definitions and five focused examples add no warnin
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-054: the entire family and diagonal period normalization in Lemma 12.11.
+The next comparison supplies the entire-family and diagonal-period proof passages.
+
+## Entire family and diagonal period normalization in Lemma 12.11
+
+### S12-054: The assembled entire family, analytic roots, original placement and off-diagonal periods.
+
+- For every source in the same W and every signed omitted index, substituting the actual branch into the candidate gives an entire spectral function. Each retained displaced root is a zero, including possible numerator collisions. The branches are complex analytic, hence real analytic, and composition gives joint analyticity of the numerator.
+- The retained atlas covers all of W by its source balls. On every such ball, all branch roots lie in the assigned isolating disks. For any supplied original disk family near a real source, original_assignment retains those disks after restricting only its source neighborhood, as already compared in S12-053.
+- The actual original sequence equation equals zero. Its m-th scalar coordinate is (n-m)*2*pi times the normalized period; for m different from n this multiplier is nonzero, giving zero on every original period circle. The original circle-to-circuit winding identity then gives zero on each admissible original circuit.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.differentiable_sourcePsiCandidate`
+- `NLS.ZakharovShabat.sourcePsiCandidate_other_root`
+- `NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_analytic`
+- `NLS.ZakharovShabat.SourceTheorem12_1Data.numerator_joint`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.global_placement`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_retained_contour_zero`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiCircuit_eq_mul_winding`
+
+The entire-family and off-diagonal-period assertions match on the unchanged W. The proof uses analyticity, placement and equation fields of the existing Lemma 12.10 package; no later diagonal-period assumption is used to derive the retained contour zeros.
+
+### S12-055: Lemma 12.11: the exact diagonal period on the same complex domain.
+
+- The original diagonal circle integral equals positive 2*pi for every source in W, every signed n and every original period circle, at every finite exponent strictly above one.
+- Every admissible piecewise C1 loop in the original cut disk with winding one has the same raw period. The data package retains exactly the preceding Lemma 12.10 family and domains, together with the eventual large-circle identity.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_10Data.lemma12_11`
+- `NLS.ZakharovShabat.sourceLemma12_11`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circle`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit`
+
+The named result matches without changing W, the root maps, the original circles or their orientation. Both individual product signs are corrected in the separate proof passage S12-058; the diagonal value remains 2*pi.
+
+### S12-056: Finite contour decomposition and insertion of the moving midpoint root.
+
+- Inside each supplied original isolating disk, actual nested circles enclose its entire moving gap and leave a disjoint analytic collar. The exact free tail and the finite central head imply that every sufficiently large half-integer circle encloses precisely the gaps with absolute index at most its cutoff.
+- The finite-hole Cauchy theorem applies to the actual quotient, analytic on the closed perforated disk. Inductively filling holes subtracts their periods and preserves disjoint periods. Thus the outer integral is the finite sum of the inner integrals; all retained terms vanish and the omitted term remains.
+- Original contour comparison identifies this inner term with any supplied original diagonal period circle. The equality holds at every sufficiently large cutoff, not merely in the limit. Circle-to-circuit winding comparison gives the corresponding identity for the printed winding-one cycle.
+- The omitted root is filled by its moving periodic midpoint through a single-coordinate lp modification. All retained roots and the numerator are unchanged. The filled sequence remains in lp; the midpoint belongs to the omitted gap.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.nonempty_originalCircleFamily`
+- `NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_finite_geometry`
+- `NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_decomposition`
+- `NLS.ZakharovShabat.SourcePsiFiniteGapCircleGeometry.eq_omitted_of_retained_zero`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.eventually_original_raw_outer_eq`
+- `NLS.ZakharovShabat.sourcePsiFillDeletedRoot`
+- `NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same`
+- `NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_other`
+
+The finite decomposition and midpoint completion match for general complex sources, including collapsed gaps. The contour cutoff may depend on the source, omitted index and original family; uniformity in these parameters is not claimed by this fixed-source passage.
+
+### S12-057: The literal full standard-root quotient and midpoint pole formula.
+
+- Restoring the omitted factor in the absolutely convergent quotient product gives the literal unconditional full product over all signed integers. Its value equals (sigma_n-z) times the actual integrand divided by i.
+- After the omitted coordinate is filled by tau_n, the actual quotient equals i/(tau_n-z) times the full product of (sigma_m-z)/w_m(z). This holds throughout the complement of all closed spectral gaps: the midpoint lies in the omitted gap, so its pole denominator cannot vanish there.
+- The identity uses the actual canonical root defined by the symmetric standard-root cutoffs with factor 2*i and pi_0=1. It requires no numerator nonvanishing assumption and includes collisions of retained numerator roots.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiFullRatio_hasProd`
+- `NLS.ZakharovShabat.sourcePsiFullRatio_eq_exterior`
+- `NLS.ZakharovShabat.sourcePsiContourIntegrand_midpoint_fullProduct`
+- `NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted`
+
+The displayed product identity matches literally on its natural gap-complement domain. The quotient has an unconditional product even though the separately normalized standard-root product uses symmetric pairing.
+
+### S12-058: Corrected individual sine asymptotics and their unchanged quotient limit.
+
+- With pi_0=1, each individual product is -(1+o(1))*sin(z), uniformly on the complete half-integer circles. The numerator product is entireSingleSpectralProduct/2; the standard-root product is sourceCanonicalRoot/(2*i). Their ratios to sin(z) tend to minus one.
+- For the actual denominator, finite canonical-root products factor into the midpoint product and the principal-square-root gap corrections. Absolute convergence identifies this factorization with the selected canonical root. The free resolvent turns the lp midpoint displacements and gaps into absolutely summable relative errors tending to zero. The absolute radicand sum therefore tends to zero, and the correction product tends to one.
+- Both free-normalized product ratios tend uniformly to one, so their quotient tends uniformly to one. Restoring the omitted midpoint root therefore yields precisely the full quotient asymptotic needed in the source.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.eventually_centralCircle_sourcePsiNumerator_sine_sign`
+- `NLS.ZakharovShabat.eventually_centralCircle_sourceStandardProduct_sine_sign`
+- `NLS.ZakharovShabat.eventually_centralCircle_sourcePsiFullRatio_close`
+- `NLS.ZakharovShabat.sourceCanonicalRoot_eq_midpoint_mul_correction`
+- `NLS.ZakharovShabat.standardRootGapCorrection_exterior_limit`
+
+Correct both printed positive-sine factors to negative-sine factors. Their signs cancel, preserving the quotient limit and diagonal normalization. Reuse the existing positive convergence theorems; add no new refutation and do not rely on the historical error-two theorem.
+
+### S12-059: The uniform exterior integral limit and exact diagonal period.
+
+- The elementary integrand i/(tau_n-z) has positively oriented circle integral 2*pi once its pole lies inside. Uniform relative error gives pointwise absolute error at most delta/(R/2) for R at least 2*abs(tau_n)+1. Multiplying by circle length gives error at most 4*pi*delta; choosing delta=epsilon/(8*pi) proves convergence of the actual raw outer integral to 2*pi.
+- Every sufficiently large circle is in the complement of every actual gap, so the quotient is continuous there and the contour estimate applies. No interchange of a merely pointwise limit with growing contour length is assumed.
+- The exact eventual outer/diagonal identity makes the outer integrals eventually constant at the diagonal period. Uniqueness of limits gives normalized period one and raw period 2*pi. Original winding comparison yields 2*pi times winding for arbitrary admissible circuits, hence the printed value for winding one.
+
+Public declarations:
+
+- `NLS.ComplexAnalysis.circleIntegral_I_div_sub_eq_two_pi`
+- `NLS.ComplexAnalysis.tendsto_circleIntegral_of_pole_relative_error`
+- `NLS.ZakharovShabat.tendsto_centralCircle_sourcePsi_raw_integral`
+- `NLS.ZakharovShabat.tendsto_centralCircle_sourcePsiContour`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_contour_one`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit_winding`
+
+The final limit and exact diagonal period match. The proof keeps all normalization factors and orientations, and uses the corrected S12-058 signs only through their unchanged quotient.
+
+The [original normalization proof](../NLS/ZakharovShabat/SourcePsiOriginalNormalization.lean)
+and [finite contour geometry](../NLS/ZakharovShabat/SourcePsiOriginalFiniteGeometry.lean)
+retain the original family and domain. The [literal product and corrected signs](../NLS/ZakharovShabat/SourcePsiOriginalOuterProduct.lean)
+supply the [uniform exterior limit](../NLS/ZakharovShabat/SourcePsiExteriorNormalization.lean).
+This comparison records 32 inspected or reused module bodies and 35 resolved declarations.
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `6162cee`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Continue with S12-060: Lemma 12.12 and the squared-gap root offsets.

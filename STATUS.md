@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: global complex neighborhoods and implicit continuation
+## Current milestone: diagonal period normalization and corrected sine signs
+
+The entire family has analytic roots, original disk placement and zero
+off-diagonal periods on its common complex domain. The diagonal period is
+exactly positive 2*pi on that same domain and for the same root family.
+
+Nested circles inside the original isolating disks give a finite contour
+decomposition at every sufficiently large outer cutoff. The retained
+periods vanish, leaving the diagonal period. The uniform exterior quotient
+limit then fixes its value. The result covers every signed index and every
+admissible original winding-one circuit.
+
+With pi_0=1, correct both individual product asymptotics to minus sine.
+Their signs cancel, so the quotient limit remains one and the period
+remains 2*pi. Existing positive convergence proofs supply this correction;
+no new refutation, theorem or example was added in this step.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+forty-seven matched groups, twelve with corrections and eight pending.
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `6162cee`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Next is Lemma 12.12 and its squared-gap lp root offsets. Wider qualifications
+remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: global complex neighborhoods and implicit continuation
 
 The entire original real root-placement domain now has one open simply
 connected complex neighborhood inside its original isolating families.

@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [global complex neighborhoods and implicit continuation](coverage/SECTION_12_ASSERTIONS.md)
-now preserve the entire original real placement domain and supplied disks.
-The exact Neumann composition-norm criterion retains the factor two.
-All signed root branches share one simply connected source domain.
-The ordered ledger has forty-two matched groups, eleven with corrections
-and 14 pending. Next is the diagonal period proof; wider qualifications
-remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: [diagonal period normalization](coverage/SECTION_12_ASSERTIONS.md)
+retains the exact value 2*pi on the unchanged common complex domain.
+Both individual product asymptotics use minus sine; their quotient still
+tends to one. Existing positive proofs supply the correction. The ordered
+ledger has forty-seven matched groups, twelve with corrections and eight
+pending. Next are squared-gap root offsets; wider qualifications remain
+in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

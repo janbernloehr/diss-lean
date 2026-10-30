@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T19:36:19.117423+00:00",
-  "base_commit": "3d451eb9ded82bb2a3508800bf02c1c732542d84",
+  "published_utc": "2026-10-30T19:37:08.634747+00:00",
+  "base_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 149,
-    "module_hash_checks": 3061,
-    "distinct_modules": 1710
+    "review_records": 150,
+    "module_hash_checks": 3093,
+    "distinct_modules": 1721
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "3d451eb9ded82bb2a3508800bf02c1c732542d84",
-    "validated_state": "Eighteen positive proofs, two definitions, five public examples and ordered comparison of the exact Neumann criterion, global joint inverse neighborhood and common implicit continuation in Lemma 12.10. Full gate 21942 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
+    "validated_state": "Documentation-only comparison of S12-054–059. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. Forty-seven Section 12 groups match, twelve are corrected and eight remain pending.",
     "command": "./scripts/check.sh",
     "build_jobs": 8557,
     "public_examples": 7631,
@@ -40,7 +40,8 @@
       "files": 4834,
       "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
     },
-    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
+    "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
+    "validation_reused_from_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718"
   },
   "named_statements": [
     {
@@ -36762,6 +36763,320 @@
       },
       "ordered_inventory_sha256": "0fbbe54fd80a93351f9e4cc64d2c71206534b9bd99973262252ce70395c6eae7",
       "source_record_sha256": "c199029c1383a22fd4768de08238847c09c08c5b6bd30b7d00459da0883ae3fa"
+    },
+    "Section12DiagonalPeriodSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
+      "updated_utc": "2026-10-30T19:37:08.634747+00:00",
+      "source_lines": [
+        [
+          5646,
+          5649
+        ],
+        [
+          5651,
+          5658
+        ],
+        [
+          5660,
+          5675
+        ],
+        [
+          5677,
+          5681
+        ],
+        [
+          5683,
+          5697
+        ],
+        [
+          5700,
+          5705
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-054",
+          "source_lines": [
+            5646,
+            5649
+          ],
+          "requirement": "The assembled entire family, analytic roots, original placement and off-diagonal periods.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.differentiable_sourcePsiCandidate",
+            "NLS.ZakharovShabat.sourcePsiCandidate_other_root",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_analytic",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.numerator_joint",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.global_placement",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_retained_contour_zero",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiCircuit_eq_mul_winding"
+          ],
+          "reviewed_claims": [
+            "For every source in the same W and every signed omitted index, substituting the actual branch into the candidate gives an entire spectral function. Each retained displaced root is a zero, including possible numerator collisions. The branches are complex analytic, hence real analytic, and composition gives joint analyticity of the numerator.",
+            "The retained atlas covers all of W by its source balls. On every such ball, all branch roots lie in the assigned isolating disks. For any supplied original disk family near a real source, original_assignment retains those disks after restricting only its source neighborhood, as already compared in S12-053.",
+            "The actual original sequence equation equals zero. Its m-th scalar coordinate is (n-m)*2*pi times the normalized period; for m different from n this multiplier is nonzero, giving zero on every original period circle. The original circle-to-circuit winding identity then gives zero on each admissible original circuit."
+          ],
+          "qualification": "The entire-family and off-diagonal-period assertions match on the unchanged W. The proof uses analyticity, placement and equation fields of the existing Lemma 12.10 package; no later diagonal-period assumption is used to derive the retained contour zeros."
+        },
+        {
+          "ordered_group": "S12-055",
+          "source_lines": [
+            5651,
+            5658
+          ],
+          "requirement": "Lemma 12.11: the exact diagonal period on the same complex domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_10Data.lemma12_11",
+            "NLS.ZakharovShabat.sourceLemma12_11",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circle",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit"
+          ],
+          "reviewed_claims": [
+            "The original diagonal circle integral equals positive 2*pi for every source in W, every signed n and every original period circle, at every finite exponent strictly above one.",
+            "Every admissible piecewise C1 loop in the original cut disk with winding one has the same raw period. The data package retains exactly the preceding Lemma 12.10 family and domains, together with the eventual large-circle identity."
+          ],
+          "qualification": "The named result matches without changing W, the root maps, the original circles or their orientation. Both individual product signs are corrected in the separate proof passage S12-058; the diagonal value remains 2*pi."
+        },
+        {
+          "ordered_group": "S12-056",
+          "source_lines": [
+            5660,
+            5675
+          ],
+          "requirement": "Finite contour decomposition and insertion of the moving midpoint root.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.nonempty_originalCircleFamily",
+            "NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_finite_geometry",
+            "NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_decomposition",
+            "NLS.ZakharovShabat.SourcePsiFiniteGapCircleGeometry.eq_omitted_of_retained_zero",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.eventually_original_raw_outer_eq",
+            "NLS.ZakharovShabat.sourcePsiFillDeletedRoot",
+            "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+            "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_other"
+          ],
+          "reviewed_claims": [
+            "Inside each supplied original isolating disk, actual nested circles enclose its entire moving gap and leave a disjoint analytic collar. The exact free tail and the finite central head imply that every sufficiently large half-integer circle encloses precisely the gaps with absolute index at most its cutoff.",
+            "The finite-hole Cauchy theorem applies to the actual quotient, analytic on the closed perforated disk. Inductively filling holes subtracts their periods and preserves disjoint periods. Thus the outer integral is the finite sum of the inner integrals; all retained terms vanish and the omitted term remains.",
+            "Original contour comparison identifies this inner term with any supplied original diagonal period circle. The equality holds at every sufficiently large cutoff, not merely in the limit. Circle-to-circuit winding comparison gives the corresponding identity for the printed winding-one cycle.",
+            "The omitted root is filled by its moving periodic midpoint through a single-coordinate lp modification. All retained roots and the numerator are unchanged. The filled sequence remains in lp; the midpoint belongs to the omitted gap."
+          ],
+          "qualification": "The finite decomposition and midpoint completion match for general complex sources, including collapsed gaps. The contour cutoff may depend on the source, omitted index and original family; uniformity in these parameters is not claimed by this fixed-source passage."
+        },
+        {
+          "ordered_group": "S12-057",
+          "source_lines": [
+            5677,
+            5681
+          ],
+          "requirement": "The literal full standard-root quotient and midpoint pole formula.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiFullRatio_hasProd",
+            "NLS.ZakharovShabat.sourcePsiFullRatio_eq_exterior",
+            "NLS.ZakharovShabat.sourcePsiContourIntegrand_midpoint_fullProduct",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted"
+          ],
+          "reviewed_claims": [
+            "Restoring the omitted factor in the absolutely convergent quotient product gives the literal unconditional full product over all signed integers. Its value equals (sigma_n-z) times the actual integrand divided by i.",
+            "After the omitted coordinate is filled by tau_n, the actual quotient equals i/(tau_n-z) times the full product of (sigma_m-z)/w_m(z). This holds throughout the complement of all closed spectral gaps: the midpoint lies in the omitted gap, so its pole denominator cannot vanish there.",
+            "The identity uses the actual canonical root defined by the symmetric standard-root cutoffs with factor 2*i and pi_0=1. It requires no numerator nonvanishing assumption and includes collisions of retained numerator roots."
+          ],
+          "qualification": "The displayed product identity matches literally on its natural gap-complement domain. The quotient has an unconditional product even though the separately normalized standard-root product uses symmetric pairing."
+        },
+        {
+          "ordered_group": "S12-058",
+          "source_lines": [
+            5683,
+            5697
+          ],
+          "requirement": "Corrected individual sine asymptotics and their unchanged quotient limit.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.eventually_centralCircle_sourcePsiNumerator_sine_sign",
+            "NLS.ZakharovShabat.eventually_centralCircle_sourceStandardProduct_sine_sign",
+            "NLS.ZakharovShabat.eventually_centralCircle_sourcePsiFullRatio_close",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_midpoint_mul_correction",
+            "NLS.ZakharovShabat.standardRootGapCorrection_exterior_limit"
+          ],
+          "reviewed_claims": [
+            "With pi_0=1, each individual product is -(1+o(1))*sin(z), uniformly on the complete half-integer circles. The numerator product is entireSingleSpectralProduct/2; the standard-root product is sourceCanonicalRoot/(2*i). Their ratios to sin(z) tend to minus one.",
+            "For the actual denominator, finite canonical-root products factor into the midpoint product and the principal-square-root gap corrections. Absolute convergence identifies this factorization with the selected canonical root. The free resolvent turns the lp midpoint displacements and gaps into absolutely summable relative errors tending to zero. The absolute radicand sum therefore tends to zero, and the correction product tends to one.",
+            "Both free-normalized product ratios tend uniformly to one, so their quotient tends uniformly to one. Restoring the omitted midpoint root therefore yields precisely the full quotient asymptotic needed in the source."
+          ],
+          "qualification": "Correct both printed positive-sine factors to negative-sine factors. Their signs cancel, preserving the quotient limit and diagonal normalization. Reuse the existing positive convergence theorems; add no new refutation and do not rely on the historical error-two theorem."
+        },
+        {
+          "ordered_group": "S12-059",
+          "source_lines": [
+            5700,
+            5705
+          ],
+          "requirement": "The uniform exterior integral limit and exact diagonal period.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.circleIntegral_I_div_sub_eq_two_pi",
+            "NLS.ComplexAnalysis.tendsto_circleIntegral_of_pole_relative_error",
+            "NLS.ZakharovShabat.tendsto_centralCircle_sourcePsi_raw_integral",
+            "NLS.ZakharovShabat.tendsto_centralCircle_sourcePsiContour",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_contour_one",
+            "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit_winding"
+          ],
+          "reviewed_claims": [
+            "The elementary integrand i/(tau_n-z) has positively oriented circle integral 2*pi once its pole lies inside. Uniform relative error gives pointwise absolute error at most delta/(R/2) for R at least 2*abs(tau_n)+1. Multiplying by circle length gives error at most 4*pi*delta; choosing delta=epsilon/(8*pi) proves convergence of the actual raw outer integral to 2*pi.",
+            "Every sufficiently large circle is in the complement of every actual gap, so the quotient is continuous there and the contour estimate applies. No interchange of a merely pointwise limit with growing contour length is assumed.",
+            "The exact eventual outer/diagonal identity makes the outer integrals eventually constant at the diagonal period. Uniqueness of limits gives normalized period one and raw period 2*pi. Original winding comparison yields 2*pi times winding for arbitrary admissible circuits, hence the printed value for winding one."
+          ],
+          "qualification": "The final limit and exact diagonal period match. The proof keeps all normalization factors and orientations, and uses the corrected S12-058 signs only through their unchanged quotient."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma12_11.lean": "60bb7a8e3986dc35edb377e65e1216af6c46c7b5a951e4c0a64074f813a37f2a",
+        "NLS/ZakharovShabat/SourcePsiOriginalNormalization.lean": "3959d3860435c8db76781fabc9727a959eb9d41482e661a6de2e7d656367dd26",
+        "NLS/ZakharovShabat/SourcePsiOriginalOuterProduct.lean": "b0293a1e155254e378c2d23d284b56fb1b728fdebc41af3a6a1d83abe1c3765e",
+        "NLS/ZakharovShabat/SourceTheorem12_1Functions.lean": "2867920ef43b1956b37d7b1442edead7fe9a33e7630d78ed5a5546581af04c25",
+        "NLS/ZakharovShabat/SourcePsiExteriorNormalization.lean": "648fdb892e120ce8dcb0b4384bdb24087ad376ac3509d589b49c0a35efdfa6d7",
+        "NLS/ZakharovShabat/SourcePsiOriginalFiniteGeometry.lean": "40315cd831058e914f0e262b488ab47583fee2ce3d8c3604244799556cafbc49",
+        "NLS/ZakharovShabat/SourceCanonicalRootExterior.lean": "d5e7e74a11a94d3364f53d0f513e2337cedc36f45b2bf07fdb63c14bd3813f1c",
+        "NLS/ZakharovShabat/StandardRootGapCorrectionExterior.lean": "02ccd32743119c3545f5c16f6f782d305f26b38080a7d36c525dd4ff5c42a980",
+        "NLS/ZakharovShabat/SourceGapInterpolationOuterCircles.lean": "ef1df7126daed2d9396e3909fc85244efe70df74fbdbffc1acba4597bebd9afc",
+        "NLS/ZakharovShabat/SourcePsiIsolatingFiniteGeometry.lean": "e748c7bdc6ea671fd3431d6335369e59c78077444dfc34a5cd9498efd60d972f",
+        "NLS/ZakharovShabat/SourcePsiFiniteContourDecomposition.lean": "158550481a741d5f9c29fa11f1ac7e7144f64c72749d1612b56d180894e0a8fa",
+        "NLS/ZakharovShabat/SourcePsiDeletedRootFill.lean": "7906fa5a8daac90b623d7a794aa53b096cdf2a2a5e2e3c293c91cd13156e7c7c",
+        "NLS/ZakharovShabat/SourcePsiOriginalPeriods.lean": "8df0aeeb4e7f530b57a91b854d9226239058aa50143b1b6f3f0a2339e5638abb",
+        "NLS/ZakharovShabat/SourceLemma12_10.lean": "14057d49cdb27ad7de1c2d8d18b43a63c4806e45976097b037ae753a91f6f842",
+        "NLS/ZakharovShabat/SourcePsiOriginalAtlasPlacement.lean": "a791c93901817739145009af90a0173188fe9a1f783e6bf141340e232c55589a",
+        "NLS/ZakharovShabat/SourcePsiCandidate.lean": "e1557015a2fc310df4054fe456dc8ff5fa7ca245d943fbbbe8bb0f0fb5e6c456",
+        "NLS/ZakharovShabat/SourcePsiIsolatingComplexRootAtlas.lean": "b79b3ff59d757fc959ed0e6e4ab933ff603c65f847138875606e2247b5784032",
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedProduct.lean": "b5a9f4693531493db5517c97fa81b0b043bf6328420be48761ef1be732fec026",
+        "NLS/ZakharovShabat/SourceStandardRootPairedProduct.lean": "8db9983155e51f297b5870da72432ce944d77ce4fbfd0a3071eea88326204ecd",
+        "NLS/ComplexAnalysis/CircleIntegralExteriorNormalization.lean": "740cf201fec18d499ebbf161c8c31e34e60bb02b6cc2d1253bb1aca2a09e8d41",
+        "NLS/ComplexAnalysis/FiniteCircleHoleDecomposition.lean": "4a030cd22babeca56d3ffa5d920e6259feb3ac174286fe98684ae9afb6bff1e6",
+        "NLS/ComplexAnalysis/CircleHoleRemoval.lean": "084eed7e5de0193cd9ba5f4991a4a36c29da509a107e283cc3f30c6276b2da01",
+        "NLS/ComplexAnalysis/CircleCauchyTransformPeriods.lean": "1e247e5c8588050e68ebd26b7a7648f563b9576352a3fca0c61c8ee095c6d79b",
+        "NLS/ZakharovShabat/RelativeProductsExteriorLimit.lean": "09c2af43c17470ade652d4020ece7a85211ae6cc50b230ad7e4b8fa15d096b01",
+        "NLS/ZakharovShabat/SingleSpectralProductsExterior.lean": "b8210a7014229bdac434cabe5ed8c94e45dded0821db93cea11b4c992af4bba9",
+        "NLS/ZakharovShabat/SourcePsiEquationContourHomotopy.lean": "9a85310e9353f50d61e0fa8aac77807257151be89ba0cb8d78c514a33dd88aad",
+        "NLS/ZakharovShabat/SourceStandardRootProductFactors.lean": "39fd54e2c7a5b8afc51fdeb339302e2d6835363ab6a44544a2ec4dba79786498",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean": "5c15019528fe196d6f2095e1677255f4a11d33ba37fa72d403e89ff590258f39",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section12InjectivitySourceComparison-2026-10-30.json",
+          "sha256": "9bfdd7a1ac0aa395cc3807a0da5082e35253da4a7e5e30a6a70977451565155e",
+          "modules": [
+            "NLS/ZakharovShabat/RelativeProductsExteriorLimit.lean",
+            "NLS/ZakharovShabat/SingleSpectralProductsExterior.lean"
+          ]
+        },
+        {
+          "file": "work/Section12GlobalSolutionSourceComparison-2026-10-30.json",
+          "sha256": "2b2acb9a86c30a51a0f5af514c31d5d464281b48cb9fa4f1a3972131f9ac07cb",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiEquationContourHomotopy.lean"
+          ]
+        },
+        {
+          "file": "work/Section11RootClosureSourceComparison-2026-10-30.json",
+          "sha256": "8f2cc554c92019d605e0f9025b91479b5cea97bdd8ac893051d225832165093d",
+          "modules": [
+            "NLS/ZakharovShabat/SourceStandardRootProductFactors.lean"
+          ]
+        },
+        {
+          "file": "work/Section12AuxiliaryProductsSourceComparison-2026-10-30.json",
+          "sha256": "43a4f3542e491e12d034cc72b3f4844e04f9807544e3f22c454a8fd438d458f0",
+          "modules": [
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean",
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAnalytic.lean"
+          ]
+        },
+        {
+          "file": "work/Section10PeriodContinuationSourceComparison-2026-10-30.json",
+          "sha256": "0dbed1e909a98b176aa397928b3ae881dc5ae34011d9e920be44db30d93ddfc2",
+          "modules": [
+            "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "ordered_inventory_sha256": "a01d21f706587288d4f6599300c54f6dbc7ebe88fc4f03b72f111adbd7a104c7",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.circleIntegral_I_div_sub_eq_two_pi",
+        "NLS.ComplexAnalysis.tendsto_circleIntegral_of_pole_relative_error",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiCircuit_eq_mul_winding",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.nonempty_originalCircleFamily",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.eventually_original_raw_outer_eq",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.lemma12_11",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_contour_one",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circle",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit_winding",
+        "NLS.ZakharovShabat.SourceLemma12_10Data.original_retained_contour_zero",
+        "NLS.ZakharovShabat.SourcePsiFiniteGapCircleGeometry.eq_omitted_of_retained_zero",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.global_placement",
+        "NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_decomposition",
+        "NLS.ZakharovShabat.SourcePsiOriginalCircleFamily.eventually_finite_geometry",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.numerator_joint",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.root_real_analytic",
+        "NLS.ZakharovShabat.differentiable_sourcePsiCandidate",
+        "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_other",
+        "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+        "NLS.ZakharovShabat.eventually_centralCircle_sourcePsiFullRatio_close",
+        "NLS.ZakharovShabat.eventually_centralCircle_sourcePsiNumerator_sine_sign",
+        "NLS.ZakharovShabat.eventually_centralCircle_sourceStandardProduct_sine_sign",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_midpoint_mul_correction",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted",
+        "NLS.ZakharovShabat.sourceLemma12_11",
+        "NLS.ZakharovShabat.sourcePsiCandidate_other_root",
+        "NLS.ZakharovShabat.sourcePsiContourIntegrand_midpoint_fullProduct",
+        "NLS.ZakharovShabat.sourcePsiFillDeletedRoot",
+        "NLS.ZakharovShabat.sourcePsiFullRatio_eq_exterior",
+        "NLS.ZakharovShabat.sourcePsiFullRatio_hasProd",
+        "NLS.ZakharovShabat.standardRootGapCorrection_exterior_limit",
+        "NLS.ZakharovShabat.tendsto_centralCircle_sourcePsiContour",
+        "NLS.ZakharovShabat.tendsto_centralCircle_sourcePsi_raw_integral"
+      ],
+      "declaration_inventory_count": 44598,
+      "qualification": "The first fifty-nine of 67 ordered Section 12 groups are compared: forty-seven matched, twelve with estimate, scope, gap-reference or sign corrections, and eight pending. The assembled entire family retains analytic roots, original placement and off-diagonal zero periods. On the unchanged common complex domain, finite original-circle decomposition and the uniform exterior limit prove the exact diagonal period 2*pi. With pi_0=1, both individual products are asymptotic to minus sine; their signs cancel and the literal full quotient tends to one. This positive correction reuses existing proofs and adds no refutations. Earlier corrections retain their scope. The final eight root-offset passages remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          70
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-070.png": "c306bb9ac966adc96bde8bc03026f04b65cb0ab6e4821fd658e9eddebdead33d"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4834,
+        "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      },
+      "validation_reused_from_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
+      "full_gate": {
+        "session": 21942,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexNeighborhoodFullCheck-2.log",
+        "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
+      },
+      "source_record_sha256": "e8f18fcbda66d37f11a7babfd9370f0e2d52927b6cf097a2a07bf596ce37ff7f"
     }
   }
 }

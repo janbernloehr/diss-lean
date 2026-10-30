@@ -179,15 +179,14 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Forty-two match and eleven have estimate, scope or gap-reference corrections.
-The global joint inverse neighborhood now contains the entire original
-real root-placement domain and stays inside the supplied isolating
-families. Its inverse bounds are locally uniform and common to all signed
-indices. The exact Neumann composition-norm criterion retains factor two.
-All original root maps share one simply connected source domain, with
-the original equations, real agreement and disk placement. The remaining
-14 groups start with the assembled entire family and diagonal period
-normalization. Earlier corrections retain their scope.
+Forty-seven match and twelve have estimate, scope, gap-reference or sign
+corrections. The entire family and exact diagonal normalization retain
+the same complex domain, original placement and all signed indices.
+Both individual products are asymptotic to minus sine; their quotient
+still tends to one and the period remains positive 2*pi. Existing positive
+proofs supply these six new comparisons. The eight remaining groups concern
+Lemma 12.12 and the squared-gap root offsets. Earlier corrections and wider
+qualifications retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
