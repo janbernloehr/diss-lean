@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-The first six mathematical groups match. The literal deleted-index lp spaces
-now have an exact linear isometry to the existing model; the full equation
-preserves its norms, signed contour coordinates and zero solutions. Both
-equations (2.22)–(2.23) retain their exact constants. The cited-construction
-attribution remains contextual; 61 later groups remain pending, starting
-with Lemmas 12.2–12.3. Earlier focused comparisons and qualifications remain.
+Six match; two use the existing corrected contour-admissibility scope for
+Lemmas 12.2–12.3. Positive local contours exist in every analytic gap
+neighborhood, and filled-disk analyticity covers original circuits. The
+printed constants and negative mean-value sign are unchanged. No new
+refutation is added. The remaining 59 groups start with Lemma 12.4;
+earlier focused comparisons and qualifications retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

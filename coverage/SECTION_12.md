@@ -1,6 +1,34 @@
 # Section 12: psi-functions
 
-## Ordered comparison: deleted spaces and equations (2.22)–(2.23)
+## Ordered comparison: Lemmas 12.2–12.3
+
+Lemmas 12.2 and 12.3 now have an ordered comparison with explicit
+contour admissibility. Every analytic neighborhood of a gap admits a suitable
+local contour. For an original circuit, analyticity near the filled isolating
+disk is a sufficient condition. These positive formulations retain the
+existing domain qualification.
+
+The standard-root bound keeps the exact coefficient 1/(2pi); the real
+mean-value identity keeps 1/(2pi*i) and its negative sign. The zero-functional
+implication follows by dividing by the analytic nonvanishing omitted root
+product. Both open and collapsed gaps are covered. No new refutation is added.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) now has
+six matched groups, two with corrected contour scope and 59 pending.
+
+This step changes documentation and comparison records only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `de1bf3e`:
+8,521 build jobs, 7,595 public examples and 44,399 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and local
+documentation-link checks pass for the new records.
+
+Next is Lemma 12.4: full-domain analyticity and locally uniform power-sum
+bounds for the sequence-valued equation. Wider qualifications remain in the
+[completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous ordered milestone: deleted spaces and equations (2.22)–(2.23)
 
 Equation (2.22) now has a public interface on the dissertation's literal
 lp spaces indexed by the integers other than n. An explicit complex linear

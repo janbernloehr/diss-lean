@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [literal deleted-index equation](NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean)
-uses an [exact sequence-space isometry](NLS/SequenceSpaces/DeletedCoordinateEquiv.lean)
-and preserves the contour coordinates, norms and solutions of (2.22).
-The [Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) has six matched
-groups and 61 pending. Next are Lemmas 12.2–12.3. The
-[completion assessment](coverage/COMPLETENESS.md) retains wider qualifications.
+Latest step: [Lemmas 12.2–12.3](coverage/SECTION_12_ASSERTIONS.md)
+are compared with explicit contour admissibility and unchanged constants.
+Positive local-contour constructions cover arbitrary analytic gap neighborhoods.
+Section 12 has six matched groups, two with corrected contour scope and 59 pending.
+Next is Lemma 12.4; the [completion assessment](coverage/COMPLETENESS.md)
+retains wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

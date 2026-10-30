@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T13:28:51.285991+00:00",
-  "base_commit": "b17c18f6217f51d8a1bd5f904b668d446f44460c",
+  "published_utc": "2026-10-30T13:31:35.557639+00:00",
+  "base_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 136,
-    "module_hash_checks": 2415,
-    "distinct_modules": 1472
+    "review_records": 137,
+    "module_hash_checks": 2431,
+    "distinct_modules": 1477
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b17c18f6217f51d8a1bd5f904b668d446f44460c",
-    "validated_state": "New exact deleted-index isometry and equation transport, four public examples and ordered comparison of (2.22)-(2.23). Full gate 89324 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
+    "validated_state": "Documentation-only ordered comparison of Lemmas 12.2-12.3 with positive admissible contours. Exact Lean/dependency snapshot verified unchanged from the successful full gate at de1bf3e0a9160bc226b47d783afbb5245656dd21.",
     "command": "./scripts/check.sh",
     "build_jobs": 8521,
     "public_examples": 7595,
@@ -40,7 +40,8 @@
       "files": 4798,
       "sha256": "ef36a877899c63cc87443ab245e63575a17ceadaadd19d792440697298c64323"
     },
-    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
+    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness.",
+    "validation_reused_from_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21"
   },
   "named_statements": [
     {
@@ -33355,6 +33356,151 @@
       },
       "ordered_inventory_sha256": "aef46719f71acd58a3e3a3eba5bc059e55e4eb8516b12cffd7177f87ae366fda",
       "source_record_sha256": "1001c0350587bf8d8553bb7206e71b179cf1d30db6c18e5fa78524f89ac6dea9"
+    },
+    "Section12LocalContoursSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
+      "updated_utc": "2026-10-30T13:31:35.557639+00:00",
+      "source_lines": [
+        [
+          5006,
+          5021
+        ],
+        [
+          5025,
+          5042
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-007",
+          "source_lines": [
+            5006,
+            5021
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "requirement": "Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_2_local",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional_on",
+            "NLS.ZakharovShabat.sourceLocalNumerator_zero_at_collapsedGap",
+            "NLS.ZakharovShabat.exists_sourceLocalNumerator_zero_on_openGap",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_analyticOnNhd_spectral",
+            "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_im_eq_zero_on_realAxis",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted"
+          ],
+          "reviewed_claims": [
+            "For finite p>1, a real source and m!=n, every numerator holomorphic near the filled original disk and real on its selected gap has a gap zero if its actual gap functional vanishes. Every original finite piecewise C1 circuit of nonzero winding is allowed, including reversed circuits.",
+            "Every arbitrary open analytic neighborhood of the selected gap also admits a winding-one adapted contour inside that region and the original disk, avoiding every periodic gap. For this contour, zero functional implies a numerator zero on the actual gap.",
+            "Dividing by the analytic nonvanishing omitted standard-root product retains reality on the real gap. The exact canonical-root factorization introduces 2i; the nonzero n-m multiplier reduces the hypothesis to the zero standard-root period. Its real mean value gives the zero. At collapse, the Cauchy formula gives the midpoint zero without requiring numerator reality."
+          ],
+          "qualification": "Corrected scope records the existing contour-admissibility condition. The original-loop conclusion uses a filled-disk analytic numerator, or the contour is chosen within the supplied analytic gap neighborhood. This does not prove the implication for an arbitrary fixed loop merely sharing an open analytic region with the gap. The cited identical-proof attribution is contextual. No new refutation is added."
+        },
+        {
+          "ordered_group": "S12-008",
+          "source_lines": [
+            5025,
+            5042
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "requirement": "Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma12_3_of_period",
+            "NLS.ZakharovShabat.sourceLemma12_3_local",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circuit",
+            "NLS.ZakharovShabat.exists_sourceStandardRoot_local_ellipse_estimates",
+            "NLS.ZakharovShabat.exists_sourceStandardRoot_local_period",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.standardRoot_local_circuit_period",
+            "NLS.ZakharovShabat.norm_standardRoot_gap_period_le",
+            "NLS.ZakharovShabat.standardRoot_gap_period_real_mean_value",
+            "NLS.ZakharovShabat.normalizedStandardRoot_joukowski_derivative_div",
+            "NLS.ZakharovShabat.exists_standardRootEllipse_local_period"
+          ],
+          "reviewed_claims": [
+            "The norm of 1/(2pi) times the raw standard-root period is bounded by an attained maximum of the numerator norm on the gap. The factor is exactly one, and it holds for complex open and collapsed gaps.",
+            "When the numerator is real on the gap, 1/(2pi*i) times the raw period equals minus its value at some point of the gap. This retains the printed negative sign and imaginary normalization.",
+            "For a nonzero complex half-gap, the Joukowski derivative divided by the actual standard root is -1/u. Small ellipses stay in any given analytic gap neighborhood. Annular Cauchy invariance and the radius-one limit give the raw period -2pi*i times the cosine gap average; small Cauchy circles cover collapse.",
+            "Every original winding-one circuit has these conclusions when the numerator is analytic near its filled original disk. An arbitrary analytic gap neighborhood admits adapted winding-one contours with the conclusions; the attained maximum can be chosen before all sufficiently small ellipse radii."
+          ],
+          "qualification": "Corrected scope retains the existing numerator-domain qualification: contour deformation must remain within the analytic region. Filled-disk analyticity and the explicitly constructed local contours provide positive sufficient formulations. The printed constants and sign need no change. The historical erratum remains as recorded; no new refutation is added."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma12_3.lean": "6ba37076ffe3d9d06bfdf91b4ed26a9a4d4dfb7612dd63c6e4ac11ba31c3adb7",
+        "NLS/ZakharovShabat/SourceLemma12_2LocalContours.lean": "025c9f4ac1dfb597630a93d7799a31b02c5a5f80a263c97358c388d33268f85d",
+        "NLS/ZakharovShabat/SourceGapFunctionalZeros.lean": "7d143521d611cbb9249f3d518de7ff065df903f906ecdd4adb92e82fbb1bab86",
+        "NLS/ZakharovShabat/SourceStandardRootLocalContours.lean": "2e5f1c8540e1b88a3d547c92ace146a052a13d805d898e977e658921b9d26918",
+        "NLS/ZakharovShabat/SourceStandardRootOriginalLocalPeriod.lean": "fb988f3638599d55ea0efe3d0656f09c6326d106bc1ab5caf877369bbbbc6d97",
+        "NLS/ZakharovShabat/SourceStandardRootLocalEllipseEstimates.lean": "4447fdf990dddf19c1f43f5df0f2452fe57f4bea895ab7a13ed087e0f8bf25b0",
+        "NLS/ZakharovShabat/SourceStandardRootLocalEllipses.lean": "76d996553c80fb17f2769bdbed1f886dc93ec35964ebba4d545a9177f22a6499",
+        "NLS/ZakharovShabat/SourceStandardRootEllipsePeriod.lean": "007e4e27b52263b732c05c7885b731323d0feb5253e8fef88ca9f9c47e5987f2",
+        "NLS/ZakharovShabat/SourceStandardRootJoukowski.lean": "3309b2beb2e79478292d15178df809457968ec799b4d901f2d6b3b8b06c98ad9",
+        "NLS/ZakharovShabat/SourceStandardRootEllipseGeometry.lean": "528e1142c65ecee8b1e513dbc9ef5f2e73133ca2702472058506124ef7ed9a8a",
+        "NLS/ZakharovShabat/SourceStandardRootEllipsePath.lean": "51eeeee0a99ff4ef32bda04d379731ce29e56626b891608e254d6ffc58d2376c",
+        "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean": "1fd983178d0a9e8478e854bf4c269f7e6b09e1656ac30883236a8b8d16f1aff4",
+        "NLS/ZakharovShabat/SourceStandardRootWeightedLocalRealMeanValue.lean": "f782cfb8cd9a6905850705c58df3e5ef5c969e56044689a477b68024ed5ae1b0",
+        "NLS/ZakharovShabat/SourceStandardRootOmittedJointAnalytic.lean": "0086691aec15ff1df5d54ed4a9f6fb9f67f5ab2d49b2b14d278c8dcb1dc83ead",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedReal.lean": "b714de4c6c7dc0e80cd34b4ed99a1f46bc677a42e8079fab6514035e89c1964a",
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f"
+      },
+      "reviewed_modules_read_in_full": true,
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "ordered_inventory_sha256": "3c0e72e1203ed728e7345e2a1ffd258e07d858a3508d2394baa38c172e92fea6",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_2_local",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circuit",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional_on",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.standardRoot_local_circuit_period",
+        "NLS.ZakharovShabat.exists_sourceLocalNumerator_zero_on_openGap",
+        "NLS.ZakharovShabat.exists_sourceStandardRoot_local_ellipse_estimates",
+        "NLS.ZakharovShabat.exists_sourceStandardRoot_local_period",
+        "NLS.ZakharovShabat.exists_standardRootEllipse_local_period",
+        "NLS.ZakharovShabat.norm_standardRoot_gap_period_le",
+        "NLS.ZakharovShabat.normalizedStandardRoot_joukowski_derivative_div",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted",
+        "NLS.ZakharovShabat.sourceLemma12_3_local",
+        "NLS.ZakharovShabat.sourceLemma12_3_of_period",
+        "NLS.ZakharovShabat.sourceLocalNumerator_zero_at_collapsedGap",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_analyticOnNhd_spectral",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_im_eq_zero_on_realAxis",
+        "NLS.ZakharovShabat.standardRoot_gap_period_real_mean_value"
+      ],
+      "declaration_inventory_count": 44399,
+      "qualification": "The first eight of 67 ordered Section 12 groups are compared: six matched, two with corrected contour-admissibility scope, and 59 pending. Lemmas 12.2 and 12.3 use positive contour constructions in every analytic gap neighborhood, or original circuits with a numerator analytic near the filled isolating disk. The constants 1/(2pi), 1/(2pi*i) and the negative mean-value sign are unchanged. No new refutation is added. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "existing_erratum": {
+        "file": "outputs/dnls/SOURCE_ERRATA.md",
+        "heading": "Lemma 12.3: the numerator's analytic domain must allow the contour deformation",
+        "sha256": "22a78e886c587c546221ac65ad69e7b93b6f6d7bee78d1761990fe777eaf0992"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          64
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-064.png": "d81efda27239c3e0ad41507f4cbd1447dd635bec1a73f56531e15a6a8f66844c"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4798,
+        "sha256": "ef36a877899c63cc87443ab245e63575a17ceadaadd19d792440697298c64323"
+      },
+      "full_gate": {
+        "session": 89324,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12FunctionalSetupFullCheck-1.log",
+        "log_sha256": "534f97aeaadcb3d7b7f37c7cd6276f8b8fe88ff87738b9e2210b20c34ac68776"
+      },
+      "validation_reused_from_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
+      "source_record_sha256": "124c192a14602494bc32a00e9ff1fd7706a13b0b214d39bb6323d6f867e3cc58"
     }
   }
 }

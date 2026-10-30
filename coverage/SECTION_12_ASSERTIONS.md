@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first six of 67 ordered Section 12 groups are compared: six matched mathematical groups and 61 pending. The deleted input and output spaces now have an explicit exact linear isometry to lp on the retained integers. The actual functional preserves its full norm, signed n-m contour coordinates and zero solutions under this identification. Equations (2.22)-(2.23) retain the raw integral and -2/pi_n product normalization. The opening cited-construction attribution remains contextual. Later contour-admissibility, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first eight of 67 ordered Section 12 groups are compared: six matched, two with corrected contour-admissibility scope, and 59 pending. Lemmas 12.2 and 12.3 use positive contour constructions in every analytic gap neighborhood, or original circuits with a numerator analytic near the filled isolating disk. The constants 1/(2pi), 1/(2pi*i) and the negative mean-value sign are unchanged. No new refutation is added. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-six groups have the semantic comparisons below. Earlier named-theorem
+eight groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -19,8 +19,8 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-004 | 63 | 4967–4975 | Theorem 12.1: analytic roots, squared-gap lp offsets uniform in the deleted index, real gap placement and free values. | matched |
 | S12-005 | 63 | 4978–4989 | Deleted complex coefficient spaces and the functional equation F^n=0. | matched |
 | S12-006 | 63 | 4991–5004 | Exact scalar functional and numerator in equations (2.22) and (2.23). | matched |
-| S12-007 | 64 | 5006–5021 | Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap. | pending |
-| S12-008 | 64 | 5025–5042 | Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants. | pending |
+| S12-007 | 64 | 5006–5021 | Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap. | corrected |
+| S12-008 | 64 | 5025–5042 | Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants. | corrected |
 | S12-009 | 64 | 5044–5061 | Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index. | pending |
 | S12-010 | 64 | 5064–5078 | Equation (2.24): selected-root factor and literal complementary product. | pending |
 | S12-011 | 64 | 5080–5087 | Equation (2.25): auxiliary all-root product and relation to the deleted complementary product. | pending |
@@ -236,5 +236,63 @@ Both new modules and the four focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-007 and S12-008: the local numerator zero implication and
-the standard-root contour estimate, retaining explicit contour admissibility.
+The next subsection compares both local-numerator lemmas.
+
+## Local numerator lemmas with admissible contours
+
+### S12-007: Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap.
+
+- For finite p>1, a real source and m!=n, every numerator holomorphic near the filled original disk and real on its selected gap has a gap zero if its actual gap functional vanishes. Every original finite piecewise C1 circuit of nonzero winding is allowed, including reversed circuits.
+- Every arbitrary open analytic neighborhood of the selected gap also admits a winding-one adapted contour inside that region and the original disk, avoiding every periodic gap. For this contour, zero functional implies a numerator zero on the actual gap.
+- Dividing by the analytic nonvanishing omitted standard-root product retains reality on the real gap. The exact canonical-root factorization introduces 2i; the nonzero n-m multiplier reduces the hypothesis to the zero standard-root period. Its real mean value gives the zero. At collapse, the Cauchy formula gives the midpoint zero without requiring numerator reality.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_2_local`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.localNumerator_zero_of_functional_on`
+- `NLS.ZakharovShabat.sourceLocalNumerator_zero_at_collapsedGap`
+- `NLS.ZakharovShabat.exists_sourceLocalNumerator_zero_on_openGap`
+- `NLS.ZakharovShabat.sourceStandardRootOmittedProduct_analyticOnNhd_spectral`
+- `NLS.ZakharovShabat.sourceStandardRootOmittedProduct_im_eq_zero_on_realAxis`
+- `NLS.ZakharovShabat.sourceCanonicalRoot_eq_omitted`
+
+Corrected scope records the existing contour-admissibility condition. The original-loop conclusion uses a filled-disk analytic numerator, or the contour is chosen within the supplied analytic gap neighborhood. This does not prove the implication for an arbitrary fixed loop merely sharing an open analytic region with the gap. The cited identical-proof attribution is contextual. No new refutation is added.
+
+### S12-008: Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants.
+
+- The norm of 1/(2pi) times the raw standard-root period is bounded by an attained maximum of the numerator norm on the gap. The factor is exactly one, and it holds for complex open and collapsed gaps.
+- When the numerator is real on the gap, 1/(2pi*i) times the raw period equals minus its value at some point of the gap. This retains the printed negative sign and imaginary normalization.
+- For a nonzero complex half-gap, the Joukowski derivative divided by the actual standard root is -1/u. Small ellipses stay in any given analytic gap neighborhood. Annular Cauchy invariance and the radius-one limit give the raw period -2pi*i times the cosine gap average; small Cauchy circles cover collapse.
+- Every original winding-one circuit has these conclusions when the numerator is analytic near its filled original disk. An arbitrary analytic gap neighborhood admits adapted winding-one contours with the conclusions; the attained maximum can be chosen before all sufficiently small ellipse radii.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourceLemma12_3_of_period`
+- `NLS.ZakharovShabat.sourceLemma12_3_local`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circuit`
+- `NLS.ZakharovShabat.exists_sourceStandardRoot_local_ellipse_estimates`
+- `NLS.ZakharovShabat.exists_sourceStandardRoot_local_period`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.standardRoot_local_circuit_period`
+- `NLS.ZakharovShabat.norm_standardRoot_gap_period_le`
+- `NLS.ZakharovShabat.standardRoot_gap_period_real_mean_value`
+- `NLS.ZakharovShabat.normalizedStandardRoot_joukowski_derivative_div`
+- `NLS.ZakharovShabat.exists_standardRootEllipse_local_period`
+
+Corrected scope retains the existing numerator-domain qualification: contour deformation must remain within the analytic region. Filled-disk analyticity and the explicitly constructed local contours provide positive sufficient formulations. The printed constants and sign need no change. The historical erratum remains as recorded; no new refutation is added.
+
+The [local zero implication](../NLS/ZakharovShabat/SourceLemma12_2LocalContours.lean)
+and [contour estimates](../NLS/ZakharovShabat/SourceLemma12_3.lean) use the
+[constructed local contours](../NLS/ZakharovShabat/SourceStandardRootLocalContours.lean).
+The existing [source erratum](../SOURCE_ERRATA.md) retains its historical scope.
+This comparison records 16 inspected positive-proof module bodies and 19 resolved declarations.
+
+This step changes documentation and comparison records only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `de1bf3e`:
+8,521 build jobs, 7,595 public examples and 44,399 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and local
+documentation-link checks pass for the new records.
+
+Continue with S12-009: full-domain analyticity and the locally uniform
+power-sum bound of Lemma 12.4.
