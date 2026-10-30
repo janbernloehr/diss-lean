@@ -187,8 +187,20 @@ substitutions give the literal squared-gap factorization and uniform
 p-power bounds. The review distinguishes the independent atlas
 construction from the original-disk proof replay that reuses it.
 Earlier corrections and wider qualifications retain their scope.
-Next is the ordered comparison of Section 13, Angles. This closes
-Section 12's ledger, not the dissertation-wide semantic audit.
+This closes Section 12's ledger, not the dissertation-wide semantic audit.
+
+The [ordered Section 13 ledger](SECTION_13_ASSERTIONS.md) has fourteen
+groups, all matched against the original-domain proofs. The review checks
+the actual angular integrals, analytic representatives, uniform beta
+bound, convergent beta series and the three canonical brackets for every
+finite p>1. It preserves the interior-C1 improper-path convention, the
+open-gap domain of each angle, convergence for each fixed index on a
+common neighborhood, and pointwise index decay. The canonical brackets
+use actual differentials with absolutely convergent Fourier pairings;
+exponent compatibility explicitly includes the range below two.
+Existing proofs suffice, with no new correction or refutation. The exact
+cited edition of [23] remains unaudited. Next is the ordered comparison
+of Section 14, Overview; the wider qualifications below remain in force.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

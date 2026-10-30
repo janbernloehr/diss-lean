@@ -1,5 +1,36 @@
 # Section 13 original-domain audit
 
+## Ordered comparison of definitions, angles and canonical brackets
+
+All fourteen ordered passage groups in Section 13, Angles, now have
+comparisons against the existing original-domain proofs. The literal eta
+and beta endpoint integrals, Theorem 13.1 and all three canonical brackets
+of Corollary 13.2 retain the Section 12 domain for every finite p>1.
+
+The review records independent improper endpoint limits for admissible
+interior-C1 paths, periodic terminals and collapsed beta gaps. Eta and
+theta retain their own open-gap domains. The beta bound is locally uniform
+in both indices; series convergence is locally uniform for each fixed
+index on a common neighborhood, and index decay is pointwise in the source.
+The actual action and local angle derivatives give the canonical Fourier
+pairings with precisely the stated open-gap hypotheses. Approximation
+above two and coefficient-preserving restriction below two supply the
+exponent range, including the case left implicit in the printed proof.
+
+The comparison freshly inspected 46 module bodies and resolved 76 public
+declarations. Existing positive proofs cover all fourteen groups; no new
+Lean theorem, definition, example, constant correction or refutation was
+needed. Attribution to the exact cited edition of [23] remains unaudited.
+
+See the [ordered Section 13 ledger](SECTION_13_ASSERTIONS.md).
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `b05a5f2`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Next is the ordered comparison of Section 14, Overview. Wider qualifications
+remain in the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
 Source: printed p. 72 of the dissertation. This audit distinguishes the
 literal angle definitions and their original common domain from earlier
 library packages that construct other neighborhoods. Historical angle

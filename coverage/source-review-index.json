@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T19:46:55.160699+00:00",
-  "base_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
+  "published_utc": "2026-10-30T19:57:37.982089+00:00",
+  "base_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 151,
-    "module_hash_checks": 3129,
-    "distinct_modules": 1738
+    "review_records": 152,
+    "module_hash_checks": 3175,
+    "distinct_modules": 1760
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
-    "validated_state": "Documentation-only comparison of S12-060–067. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. All 67 Section 12 groups are compared: fifty-five matched and twelve corrected.",
+    "base_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
+    "validated_state": "Documentation-only comparison of all fourteen Section 13 groups. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. All fourteen groups match with explicit domain and quantifier scope.",
     "command": "./scripts/check.sh",
     "build_jobs": 8557,
     "public_examples": 7631,
@@ -41,7 +41,7 @@
       "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
     },
     "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e"
+    "validation_reused_from_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a"
   },
   "named_statements": [
     {
@@ -37454,6 +37454,574 @@
         "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
       },
       "source_record_sha256": "97163af8e684fe3d68783b7a5876de4de78e4614ff78cb27a4ae6547eaa59b60"
+    },
+    "Section13OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
+      "updated_utc": "2026-10-30T19:57:37.982089+00:00",
+      "source_lines": [
+        [
+          5825,
+          5834
+        ],
+        [
+          5836,
+          5843
+        ],
+        [
+          5844,
+          5851
+        ],
+        [
+          5852,
+          5861
+        ],
+        [
+          5863,
+          5866
+        ],
+        [
+          5867,
+          5877
+        ],
+        [
+          5879,
+          5879
+        ],
+        [
+          5881,
+          5886
+        ],
+        [
+          5888,
+          5895
+        ],
+        [
+          5896,
+          5898
+        ],
+        [
+          5900,
+          5902
+        ],
+        [
+          5903,
+          5904
+        ],
+        [
+          5905,
+          5906
+        ],
+        [
+          5908,
+          5909
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S13-001",
+          "source_lines": [
+            5825,
+            5834
+          ],
+          "printed_page": 72,
+          "requirement": "The same common psi domain and the literal angle sum.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection13OriginalDomain",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.angular_extension",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_disks",
+            "NLS.ZakharovShabat.sourceAngularOriginalTheta",
+            "NLS.ZakharovShabat.sourceAngularOriginalTheta_eq_series"
+          ],
+          "reviewed_claims": [
+            "The integration interface uses the exact W and root maps retained from Lemma 12.12. W is open, simply connected and contains the entire real-type source locus for every finite p greater than one. No replacement root family or further global intersection is introduced.",
+            "Every complex source has a common smaller source neighborhood with original isolating disks containing all periodic segments and their actual Dirichlet terminals. The original numerator is used in each angular integrand.",
+            "Theta_n is literally the chosen eta_n plus the sum of the off-diagonal beta terms. Its asserted domain excludes the nth closed-gap locus Z_n; the sum and the eta class are justified in the subsequent passages."
+          ],
+          "qualification": "The objects and domain match. The attribution to [23, Section 15] is contextual; this comparison does not independently certify the exact cited edition."
+        },
+        {
+          "ordered_group": "S13-002",
+          "source_lines": [
+            5836,
+            5843
+          ],
+          "printed_page": 72,
+          "requirement": "Eta as an actual endpoint integral modulo 2*pi.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAngularIntegrand",
+            "NLS.ZakharovShabat.sourceAngularOriginalEtaIntegralValues",
+            "NLS.ZakharovShabat.sourceAngularOriginalEta",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_integral_values_nonempty",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_integral_mem",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_exists_improper_integral",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_improperIntegral_spec"
+          ],
+          "reviewed_claims": [
+            "The integrand is exactly the Section 12 psi numerator divided by the continued square root of the actual discriminant squared minus four. Its initial point is the actual left periodic endpoint and its terminal is the actual Dirichlet root.",
+            "At every complex open gap, a normalized integrable path exists. Choosing one of its values defines eta; the fallback zero branch in the total definition is never used on this proved domain.",
+            "Every admissible path in the stated interior-C1 class has an improper integral obtained by independent limits of both endpoint cutoffs. Its limit differs from the chosen eta by an integer multiple of 2*pi, also across different original disks."
+          ],
+          "qualification": "The literal integral and its 2*pi class match on W minus Z_n. The regularity convention is a continuous path and continuous root continuation with C1 parameterization on the open interval. Absolute integrability is constructed for chosen paths and is not asserted for every admissible path."
+        },
+        {
+          "ordered_group": "S13-003",
+          "source_lines": [
+            5844,
+            5851
+          ],
+          "printed_page": 72,
+          "requirement": "Off-diagonal beta endpoint integrals throughout W.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_value_unique",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_mem_values",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_dirichlet_integral_path",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_exists_improper_integral",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_improper_limit",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_improperIntegral_eq_value"
+          ],
+          "reviewed_claims": [
+            "For every m different from n and every complex source in W, the normalized primitive definition has exactly one beta value. The construction includes both collapsed periodic gaps and periodic Dirichlet terminals.",
+            "One constructed continuously differentiable path in an original disk realizes every off-diagonal numerator. Its actual endpoint integral equals beta, and its independently truncated integrals converge to that value.",
+            "Every other normalized admissible interior-C1 path has the same improper limit. No caller-supplied integrability, primitive or limiting value is used in this comparison."
+          ],
+          "qualification": "The full-domain beta definition matches, including collapsed complex gaps. Off-diagonal beta is single-valued; it is not merely specified modulo a period."
+        },
+        {
+          "ordered_group": "S13-004",
+          "source_lines": [
+            5852,
+            5861
+          ],
+          "printed_page": 72,
+          "requirement": "Admissible paths and the prescribed terminal square-root sign.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData",
+            "NLS.ZakharovShabat.sourceAngularAdmissiblePathRootData_of_continuousOn",
+            "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData.exists_fixed_sign",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_dirichlet_integral_path",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_dirichlet_common_integral_path"
+          ],
+          "reviewed_claims": [
+            "The path interior lies inside the supplied isolating disk and outside the selected periodic segment. The continued root is continuous on the closed path and its square is the actual spectral radicand at every parameter value.",
+            "At a nonperiodic Dirichlet terminal, the root equals the actual anti-discriminant delta(mu_m). The constructed path supplies this normalization rather than asking the caller to assume its existence.",
+            "On the path interior, any such continuation has one fixed sign relative to the canonical root. Different disks are compared through a common transverse path in their open convex intersection; the disks need not be nested."
+          ],
+          "qualification": "The admissibility and sign convention match. As in the existing original-domain interfaces, singular endpoint integrals are treated as improper limits for interior-C1 paths; no C1 regularity at the endpoints is required for the arbitrary-path result."
+        },
+        {
+          "ordered_group": "S13-005",
+          "source_lines": [
+            5863,
+            5866
+          ],
+          "printed_page": 72,
+          "requirement": "Periodic terminals: beta is zero and eta is unaffected modulo 2*pi.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_endpoint_primitive",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_periodic_terminal_improper_limit",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_common_improper_remainder",
+            "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData.improper_model_integral_periods",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_admissible_improper_limit"
+          ],
+          "reviewed_claims": [
+            "The off-diagonal primitive has the same limit at both periodic endpoints. Therefore its path integral is zero on either continued sheet, including when the selected gap collapses.",
+            "For diagonal eta at an open gap, the normalized remainder has zero endpoint value. The model integral is determined modulo 2*pi by its terminal root value. At either periodic terminal that root is zero on both sheets, so no terminal sign prescription is needed.",
+            "These are actual improper-limit conclusions. The beta proof uses the normalized zero periods; the eta remainder subtracts the model with exactly the normalized diagonal period."
+          ],
+          "qualification": "The printed endpoint alternatives match. Eta retains its own open-gap domain, while beta also covers a collapsed selected gap."
+        },
+        {
+          "ordered_group": "S13-006",
+          "source_lines": [
+            5867,
+            5877
+          ],
+          "printed_page": 72,
+          "requirement": "Theorem 13.1(i): beta analyticity and the uniform reciprocal-index estimate.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem13_1_original_beta",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_annulus_chart",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_annulus_tail",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_uniform_selected_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_uniform_bound",
+            "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.norm_beta_le_of_midpointFilledRegularFactor_bound"
+          ],
+          "reviewed_claims": [
+            "Each off-diagonal beta is complex analytic, hence real analytic, on all of the unchanged W. Cauchy reconstruction on original annuli uses analytic symmetric spectral data and the actual Dirichlet terminal; it does not require analytic ordered periodic endpoints or division by a vanishing gap.",
+            "For every complex base source, one open neighborhood and one positive C are chosen before all nearby sources and all n,m. The literal estimate is norm(beta_m^n)<=C*(norm(gamma_m)+norm(mu_m-tau_m))/abs(n-m).",
+            "On a selected annulus, the coefficient is rho^2*(A+rho)*M/(rho-r)^3. The tail uses fixed r=pi/16, R=pi/8 and rho=3*pi/32. A finite intersection and a sum of the remaining selected constants give one bound for all pairs."
+          ],
+          "qualification": "The analytic assertion, numerator weight, reciprocal index and local uniformity match. No constant correction is needed. The referenced external proof is not separately audited."
+        },
+        {
+          "ordered_group": "S13-007",
+          "source_lines": [
+            5879,
+            5879
+          ],
+          "printed_page": 72,
+          "requirement": "Theorem 13.1(ii): eta has real analytic representatives modulo pi.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem13_1_original_eta",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_analytic_chart",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_phase_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_pathIntegral_phase",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_value_local_representative"
+          ],
+          "reviewed_claims": [
+            "On W minus Z_n the single-valued phase exp(2*i*eta_n) is nonzero and complex analytic. Original annular charts supply local analytic representatives at every complex source with its selected gap open.",
+            "Every actual normalized integral agrees with such a representative modulo an integer multiple of pi. The representatives and the actual chosen integral are real at real-type sources.",
+            "The 2*pi ambiguity between actual path integrals is retained separately from the pi ambiguity used for analytic charts; the proof does not conflate these two statements."
+          ],
+          "qualification": "The modulo-pi analytic extension matches on its exact open-gap domain. No global single-valued analytic branch of eta is claimed."
+        },
+        {
+          "ordered_group": "S13-008",
+          "source_lines": [
+            5881,
+            5886
+          ],
+          "printed_page": 72,
+          "requirement": "Theorem 13.1(iii): local uniform beta-series convergence, analyticity and decay.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAngularBetaSeriesTerm",
+            "NLS.ZakharovShabat.sourceAngularBetaCorrection",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_series",
+            "NLS.ZakharovShabat.summable_norm_sourceAngularBetaSeriesTerm_of_bound",
+            "NLS.ZakharovShabat.exists_local_uniform_sourceAngularBetaSeries_of_bound",
+            "NLS.ZakharovShabat.sourceAngularBetaSeriesAnalyticData_of_uniform_bound",
+            "NLS.ZakharovShabat.sourceAngularBetaCorrection_decay_of_bound"
+          ],
+          "reviewed_claims": [
+            "The diagonal summand is explicitly zero. Holder pairs the actual lp gap and Dirichlet-minus-midpoint sequences with the shifted punctured reciprocal lattice in the conjugate exponent. The literal beta series is absolutely summable.",
+            "Near every complex source, one open neighborhood works for every n. For each fixed n, symmetric finite sums converge uniformly on that neighborhood to the actual beta correction. The convergence rate is not asserted to be uniform in n.",
+            "The analytic finite sums and Banach-space holomorphic limit argument give a complex analytic correction on W. Shifted Holder decay makes both the absolute sum and the correction tend to zero as abs(n) tends to infinity, at each source."
+          ],
+          "qualification": "The series and o(1) assertions match. The source states local uniform convergence in the source variable and pointwise signed-index decay; no stronger uniform-in-n convergence rate or locally uniform decay is inferred."
+        },
+        {
+          "ordered_group": "S13-009",
+          "source_lines": [
+            5888,
+            5895
+          ],
+          "printed_page": 72,
+          "requirement": "Theorem 13.1(iv): the literal real theta sum and its analytic extension.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAngularOriginalTheta_eq_series",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_integral_choice_period",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_im_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_phase",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_differential_representative",
+            "NLS.ZakharovShabat.sourceTheorem13_1_original"
+          ],
+          "reviewed_claims": [
+            "Theta_n is exactly eta_n plus the absolutely convergent beta correction. Changing the normalized eta integral changes theta by an integer multiple of 2*pi.",
+            "At real-type sources where the nth gap is open, eta and all beta terms are real, so the literal theta value is real. Adding the analytic correction to an eta chart gives an analytic theta representative modulo pi.",
+            "The actual Frechet derivative of each local theta representative is the branch-independent logarithmic phase differential used in the Poisson brackets."
+          ],
+          "qualification": "The assertion matches on the angle domain specified at the start of Section 13. The printed real-locus wording is read on that existing domain, excluding Z_n; no angle value at its own collapsed gap is asserted."
+        },
+        {
+          "ordered_group": "S13-010",
+          "source_lines": [
+            5896,
+            5898
+          ],
+          "printed_page": 72,
+          "requirement": "Assembly of Liouville coordinates and transition to canonicity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain",
+            "NLS.ZakharovShabat.sourceTheorem13_1_original",
+            "NLS.ZakharovShabat.sourceCorollary13_2_original"
+          ],
+          "reviewed_claims": [
+            "The complete angular interface is constructed with W in all three domain slots and the same Section 12 family. It contains the original beta values, estimates and series, eta charts, theta phases and reality properties.",
+            "Together with the retained original actions, these are the action-angle objects whose canonical relations follow. This sentence summarizes their assembly on the stated open-gap angle domains; global rectangular Birkhoff coordinates are the subject of Section 14."
+          ],
+          "qualification": "Matched as an assembly of the preceding mathematical objects. It does not claim simultaneous angle values on closed gaps, a global angle chart, or completion of the later Birkhoff construction."
+        },
+        {
+          "ordered_group": "S13-011",
+          "source_lines": [
+            5900,
+            5902
+          ],
+          "printed_page": 72,
+          "requirement": "Corollary 13.2: action-action brackets vanish on the full real locus.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.originalActionCotangent",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.action_original_fderiv_eq_complexAction",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_corollary13_2",
+            "NLS.ZakharovShabat.sourceActionRegularCotangent_bivector_eq_zero",
+            "NLS.Poisson.RegularSourceCotangent.bivector_eq_tsum",
+            "NLS.Poisson.RegularSourceCotangent.summable_norm"
+          ],
+          "reviewed_claims": [
+            "The regular action cotangent has the actual indexed action derivative as its underlying functional. Equality of complex germs with the previously constructed action identifies the complete derivative.",
+            "Action variations are contour integrals of regular discriminant variations. Discriminant commutation and bilinear contour integration give zero action-action pairing for all signed n,m and all real-type sources at every finite p greater than one.",
+            "The pairing is the absolutely convergent Fourier sum with reversed frequency and sign -i. Its square-summable coefficient witness is uniquely determined by the cotangent. Neither action gap is required to be open."
+          ],
+          "qualification": "The zero bracket and its full real domain match, including closed gaps and exponents below two."
+        },
+        {
+          "ordered_group": "S13-012",
+          "source_lines": [
+            5903,
+            5904
+          ],
+          "printed_page": 72,
+          "requirement": "Corollary 13.2: angle-angle brackets vanish when both angle gaps are open.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_regularCotangent_representative",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_corollary13_2",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_bivector_eq_zero",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_realType",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_two_le"
+          ],
+          "reviewed_claims": [
+            "Each regular angle cotangent is the actual derivative of a local representative of the literal original theta sum. The Fourier pairing is independent of the representative and of the coefficient witness.",
+            "The Hilbert angle-angle identity is obtained from the proved finite-gap identity and density within the joint open-gap domain. Exponent compatibility and real Fourier approximation transfer it above two; restriction of the same regular coefficients transfers it below two.",
+            "Both selected angle gaps must be open, exactly excluding Z_n union Z_m. The statement applies to every signed index pair and every finite p greater than one."
+          ],
+          "qualification": "The angle-angle identity matches with precisely its two open-gap hypotheses. The earlier physical NLS Dirichlet-motion obligation in Section 7 is not declared resolved by this spectral bracket comparison."
+        },
+        {
+          "ordered_group": "S13-013",
+          "source_lines": [
+            5905,
+            5906
+          ],
+          "printed_page": 72,
+          "requirement": "Corollary 13.2: the mixed bracket is the Kronecker delta.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_corollary13_2",
+            "NLS.ZakharovShabat.sourceCorollary13_2_original",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaActionRegular_bivector_eq_kronecker",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_eq_kronecker",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.psi_period_on_realCentered_action_chart"
+          ],
+          "reviewed_claims": [
+            "At exponents at least two, the actual full terminal-kernel sum converges both to the theta-action bracket and to the normalized psi period on a real-centered action circle. Contour comparison identifies that period with the exact Kronecker delta.",
+            "Below two, action and angle differential compatibility preserves the complete regular coefficient pairs and their Fourier pairing. The same identity therefore holds for all finite p greater than one.",
+            "Only the angle gap n is required to be open. The action index m may have a collapsed gap; the original indexed action derivative is still the one used in the bracket."
+          ],
+          "qualification": "The mixed bracket, normalization and exact domain match. No extra open-gap condition is imposed on the action."
+        },
+        {
+          "ordered_group": "S13-014",
+          "source_lines": [
+            5908,
+            5909
+          ],
+          "printed_page": 72,
+          "requirement": "The Hilbert case, continuity above two and compatibility below two.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_sourceSymmetricTruncate",
+            "NLS.ZakharovShabat.eq_of_continuousOn_of_finite_realType",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_finite_realType",
+            "NLS.ZakharovShabat.exists_realHilbertSource_of_finite_support",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_exponent",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_coefficients_exponent",
+            "NLS.ZakharovShabat.fderiv_sourceComplexAction_exponent",
+            "NLS.ZakharovShabat.sourceActionRegularCotangent_coefficients_exponent",
+            "NLS.Poisson.RegularSourceCotangent.bivector_restrict"
+          ],
+          "reviewed_claims": [
+            "Symmetric Fourier truncations preserve real type and converge in the actual finite-p source norm. Since the required nonzero-gap loci are open, the truncations eventually stay in the same bracket domain. The analytic angle-angle bracket is continuous there, so its finite-Fourier zero identity passes to the limit.",
+            "Each finite Fourier source above two is the inclusion of a real Hilbert source. Exponent-compatible phase germs identify their complete angle derivatives; the actual action germs are compatible as well.",
+            "For 1<p<2, inclusion into the Hilbert source space preserves the physical spectral data. The actual derivatives restrict from the Hilbert derivatives, with the same square-summable coefficient pairs, so the absolutely convergent brackets agree. This supplies the case left implicit by the printed proof.",
+            "The formalization also gives direct contour proofs of the action-action and mixed identities, rather than relying on the cited Hilbert theorem as an axiom."
+          ],
+          "qualification": "The mathematical continuity argument matches, with the below-two compatibility made explicit. The bibliographic attribution to [23, Section 18] is not an independent verification of that edition. No correction or new refutation is needed here."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceTheorem13_1Original.lean": "c7bd68fdad6d8a483d71a6530cca2fb47fb9a2b0ea41bf1c96ba4e3c0ee0ad49",
+        "NLS/ZakharovShabat/SourceCorollary13_2Original.lean": "693129b5b8ae348202af08978b8af29ad666529bae5b47dd065733867c97a676",
+        "NLS/ZakharovShabat/SourceSection13OriginalDomain.lean": "d662989c21034c832b87874785004ec3b008a474b37a2f8189d86b2845753224",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaImproper.lean": "6019abfac06e639fc2c55b3cda64e512efc6b3fd049e3116580aba32f45b30f7",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaImproper.lean": "0082e59adffcb66917296c08b2ba3780eca5a88c046dd763891276f38fb4ba54",
+        "NLS/ZakharovShabat/SourceTheorem13_1OriginalBeta.lean": "3a908f1000226b7383ba80bef9b954f53b014e81e36b58c846018bb7fe24a886",
+        "NLS/ZakharovShabat/SourceTheorem13_1OriginalEta.lean": "a4bcfde6125f867c2ba87976dae61c39ebec36651a1b3fafa8e431358fb8ba4b",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaSeries.lean": "5c570e94c66ac480a049aee375fe2de671b02d823714ad54f130e3a6856d7e3b",
+        "NLS/ZakharovShabat/SourceAngularOriginalTheta.lean": "d067767e0b6097c4bbe4de67a002c098a5de09b89b610e6d65721f34460e0fc3",
+        "NLS/ZakharovShabat/SourceAngularOriginalCanonicalDifferentials.lean": "8f75d19faa5a357c7ff9feb20a7feec456e0da4b2429d6a4e2a64e751d1e9c21",
+        "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+        "NLS/ZakharovShabat/SourceCorollary13_2Regular.lean": "f3ecd0912a6afcced0de46ff80b739fcee19ba3883cba9d0eb7ab26846e15314",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaBound.lean": "c5ad91f9f0353353f50ffb867de5fa6f49efcba7e095d120f1887349b26c6a6b",
+        "NLS/ZakharovShabat/SourceAngularBetaTheorem13_1Series.lean": "0aa84942f88baf4e017a5ca9bb188faf0f14e89e5b2163dcbbed20b0775128e4",
+        "NLS/ZakharovShabat/SourceAngularAdmissiblePathRoot.lean": "6c0f16ce221d933b39460bdd8c27544fe1af409aada7340db92372d27b62be18",
+        "NLS/ZakharovShabat/SourceAngularOriginalEndpointIntegrals.lean": "3b465595500dc1a5ae76d2baf6868e3f79a84986021204c37b0fb04231d9dce0",
+        "NLS/ZakharovShabat/SourceAngularBetaSeriesAnalytic.lean": "8d51b4c6da12c7a76cd335ce8efab7b238cbae3372a0a6497b88a2dd1ed70b5c",
+        "NLS/ZakharovShabat/SourceAngularBetaDecay.lean": "9dc0b05feba8892d78dbea9e1bf556a04ec732b2aeeed152451f0dbc70de9b2c",
+        "NLS/ZakharovShabat/SourceAngularThetaThetaExponent.lean": "d9ecc3cbe5e68125fc414b7de2d624f234a0e471c84cf72b3d6300b435b16f07",
+        "NLS/ZakharovShabat/SourceActionRegularPoisson.lean": "505d0827e5b7d90ab0df81ae442269014be709e5407fba9dba4f619643159ec2",
+        "NLS/ZakharovShabat/SourceAngularThetaActionCanonical.lean": "1e1c38a3421d3abeb8dafdac6dbe857027a94d1d00171a3dccce72ea611bc020",
+        "NLS/ZakharovShabat/SourceAngularBetaSeries.lean": "85334f962c9f2a6d4ee5b40296362ffe56c40c44d40f9797e7674fbef30b9db9",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaSelectedBound.lean": "a7952ae44f5ef02e3d64863c5198d793d409cf57fb7d69777c38d0a227dc0375",
+        "NLS/ZakharovShabat/SourceAngularOriginalBetaValues.lean": "23a35ea4fca85ea0b29af6df9e3b0eb9e15f05ba7f4a626de7bb5791fe9d7c5d",
+        "NLS/ZakharovShabat/SourceAngularOriginalAnnulus.lean": "5c25f58b012b834d79bbfe6a7af67fbf70a8c4bc17944ad5b79974d85cc4e163",
+        "NLS/ZakharovShabat/SourceAngularOriginalAnnulusTail.lean": "dc559fc636aa60377cd6107c08800d6d4889c1f78f74634fe80ac060fd878eb1",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaAnalytic.lean": "c5479e1b2a7bb45dc045389e2da35c7c048396f30e49f490d9221aa91c18997c",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean": "f3e0c5e54bf94039714a8103e1ab16eba40c58d7a91fce66ff26432dc5385ce0",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean": "fcea4ed8662e0ee979cffc454778c9d83c899cd2c0c3137b58cc892ada268090",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder.lean": "ac8fe04b02f26d3c8c7a72a6e31d71c167cc9ce91a5fff1b32e9b73c5099af31",
+        "NLS/ZakharovShabat/SourceAngularOriginalPrimitives.lean": "503fa52fb4a8af9c5bf4a53ce479f25d002f49310d00991c8bf69d03f240c429",
+        "NLS/ZakharovShabat/SourceAngularOriginalEtaComparison.lean": "f4fa740b99f6b7848446e2e59879f1260e1a3d38eee4ce8ef1be6b562f66b6d8",
+        "NLS/ZakharovShabat/SourceAngularEtaImproperModel.lean": "83c385d370671dfd4c9e2eb8efb8f300d9b3033d4228f1f6f83ba92c79374d43",
+        "NLS/ZakharovShabat/SourceAngularBetaImproperPath.lean": "f9e5cb92e3f7a9bb10e24ceb2a0f199308a3aacd31be3ccd63ab5847850c70d8",
+        "NLS/ZakharovShabat/SourceAngularThetaPoisson.lean": "c9e3ac65f1a8e171e7886bd3f6bf23381b197eb8aa52116dd8f1a73221a067c2",
+        "NLS/ZakharovShabat/SourceAngularThetaThetaHilbert.lean": "09737bff22cae012674f1e35be89c6e0be9930f21d1a093117697466c95ae050",
+        "NLS/ZakharovShabat/SourceAngularOriginalCollapsedPrimitive.lean": "c74122e9713aefc3a4b60b5b00c0f42f1a79d9da1c24a190b203b1858eea0524",
+        "NLS/ZakharovShabat/SourceAngularBetaRegularFactorBound.lean": "b3942b9cf16dec3318036d1fbeefd12b77ba57e57e8cdc8b144f308f9c51d825",
+        "NLS/ZakharovShabat/SourceAngularIntegrand.lean": "e0a9f70f4803268536e799ebf9884bac5fac12c379ca87fa7a6070dc0b38216a",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean": "4dddcbf934b281c625186d4ec1a53e9568e4cd7f32e9bb2e158a95c70fc46c6c",
+        "NLS/ZakharovShabat/SourceAngularThetaRegularCotangent.lean": "b8eaef5715feb0368e310a399ef0bc4d67b9df1f11ed180a2e18360f45b6094a",
+        "NLS/ZakharovShabat/SourceActionExponentDifferential.lean": "16df149d803d70a8fde41636933014c6d37f8b7c0450e1913b5f14fdd7ebf47f",
+        "NLS/ZakharovShabat/SourceAngularThetaExponent.lean": "cde1005228d79f0207532b82ab98083dfdf3529f5be3f8d5bc1452588d94dbd8",
+        "NLS/ZakharovShabat/SourceRealTypeFiniteApproximation.lean": "c983c9d56f6dcae6f67142f5c6a28490d03d7f42d2669d609a4f2b67d4c646e5",
+        "NLS/Poisson/RegularSourceCotangent.lean": "45073687d1c68224c88095c1b9e73067f1197eb5c901df79a1be45e80fdcb904",
+        "NLS/Poisson/SourceFiniteBracketTransfer.lean": "6f33b97d904f5cf842c5810baca24ec16cf99b96955f7dc26438571e1dd07f81"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [],
+      "ordered_inventory": "coverage/SECTION_13_ASSERTIONS.md",
+      "ordered_inventory_sha256": "94dd4592000a4550d94d8189995e755da71719e638fdeca0d2a7c7e1f1894476",
+      "resolved_declarations": [
+        "NLS.Poisson.RegularSourceCotangent.bivector_eq_tsum",
+        "NLS.Poisson.RegularSourceCotangent.bivector_restrict",
+        "NLS.Poisson.RegularSourceCotangent.summable_norm",
+        "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData",
+        "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData.exists_fixed_sign",
+        "NLS.ZakharovShabat.SourceAngularAdmissiblePathRootData.improper_model_integral_periods",
+        "NLS.ZakharovShabat.SourceAngularJointAnnulusChartData.norm_beta_le_of_midpointFilledRegularFactor_bound",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.psi_period_on_realCentered_action_chart",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaActionRegular_bivector_eq_kronecker",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaAction_eq_kronecker",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_exponent",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_bivector_eq_zero",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_coefficients_exponent",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_finite_realType",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_realType",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_two_le",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.action_original_fderiv_eq_complexAction",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.angular_extension",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_annulus_chart",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_annulus_tail",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_disks",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.angular_original_endpoint_primitive",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_exists_improper_integral",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_improperIntegral_eq_value",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_improper_limit",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_mem_values",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_periodic_terminal_improper_limit",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_series",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_uniform_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_uniform_selected_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_value_unique",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_admissible_improper_limit",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_analytic_chart",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_common_improper_remainder",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_exists_improper_integral",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_improperIntegral_spec",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_integral_mem",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_integral_values_nonempty",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_pathIntegral_phase",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_phase_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.eta_original_value_local_representative",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.originalActionCotangent",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_corollary13_2",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_dirichlet_common_integral_path",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_dirichlet_integral_path",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_im_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_integral_choice_period",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_differential_representative",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_local_representative",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_phase",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.theta_original_regularCotangent_representative",
+        "NLS.ZakharovShabat.eq_of_continuousOn_of_finite_realType",
+        "NLS.ZakharovShabat.exists_local_uniform_sourceAngularBetaSeries_of_bound",
+        "NLS.ZakharovShabat.exists_realHilbertSource_of_finite_support",
+        "NLS.ZakharovShabat.fderiv_sourceComplexAction_exponent",
+        "NLS.ZakharovShabat.sourceActionRegularCotangent_bivector_eq_zero",
+        "NLS.ZakharovShabat.sourceActionRegularCotangent_coefficients_exponent",
+        "NLS.ZakharovShabat.sourceAngularAdmissiblePathRootData_of_continuousOn",
+        "NLS.ZakharovShabat.sourceAngularBetaCorrection",
+        "NLS.ZakharovShabat.sourceAngularBetaCorrection_decay_of_bound",
+        "NLS.ZakharovShabat.sourceAngularBetaSeriesAnalyticData_of_uniform_bound",
+        "NLS.ZakharovShabat.sourceAngularBetaSeriesTerm",
+        "NLS.ZakharovShabat.sourceAngularIntegrand",
+        "NLS.ZakharovShabat.sourceAngularOriginalEta",
+        "NLS.ZakharovShabat.sourceAngularOriginalEtaIntegralValues",
+        "NLS.ZakharovShabat.sourceAngularOriginalTheta",
+        "NLS.ZakharovShabat.sourceAngularOriginalTheta_eq_series",
+        "NLS.ZakharovShabat.sourceCorollary13_2_original",
+        "NLS.ZakharovShabat.sourceSection13OriginalDomain",
+        "NLS.ZakharovShabat.sourceTheorem13_1_original",
+        "NLS.ZakharovShabat.sourceTheorem13_1_original_beta",
+        "NLS.ZakharovShabat.sourceTheorem13_1_original_eta",
+        "NLS.ZakharovShabat.summable_norm_sourceAngularBetaSeriesTerm_of_bound",
+        "NLS.ZakharovShabat.tendsto_sourceSymmetricTruncate"
+      ],
+      "declaration_inventory_count": 44598,
+      "qualification": "All fourteen ordered Section 13 passage groups match the existing positive proofs on the retained Section 12 domain, for every finite p greater than one. Arbitrary-path integrals use continuous paths and root continuations with C1 parameterization on the open interval and independent improper limits at both endpoints. Chosen paths are integrable; absolute integrability is not asserted for every admissible path. Beta covers collapsed complex gaps; eta and theta exclude their own closed-gap locus. Series convergence is locally uniform for each fixed index on a common neighborhood; index decay is pointwise in the source. The three canonical brackets use the actual original action and local angle derivatives with their stated open-gap hypotheses. Hilbert approximation above two and coefficient-preserving restriction below two cover all finite p greater than one. The exact cited edition of [23] remains unaudited. This completes the ordered Section 13 comparison, not the dissertation-wide semantic audit: Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 Birkhoff construction, Appendix G.2 norm interpretation and the broader source inventory retain their qualifications.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          72
+        ],
+        "images": {
+          "work/tmp/pdfs/section13-072.png": "c1b56feef9f89f64f02c0de7713266ddd66b9e9688341a8ab627123743a98a9a"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4834,
+        "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      },
+      "validation_reused_from_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
+      "full_gate": {
+        "session": 21942,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexNeighborhoodFullCheck-2.log",
+        "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
+      },
+      "source_record_sha256": "96f82b6970c571023d774568c97b5e9be0890199413c9ee2a2f5807cb372a0c8"
     }
   }
 }
