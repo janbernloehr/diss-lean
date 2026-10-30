@@ -485,6 +485,43 @@ All three witnesses are implemented in
 See [the Section 21 audit](coverage/SECTION_21.md) for the common original
 moment, source-Hamiltonian, action-gradient, and concavity package.
 
+## Section 20: off-diagonal contour constants and selected indices
+
+On p. 94 the auxiliary expansion starts with `i/pi`. Keep that same
+coefficient when combining it with the squared-primitive expansion;
+replace the later `i/pi^2` by `i/pi` and `-2*i/pi^2` by `-2*i/pi`.
+The shrunk contour is over G_k, so its numerator maximum is also over G_k.
+
+The existing positive theorem
+`SourceAbelianMomentErrorDomain.offDiagonal_error_bound` retains the exact
+scale `pi*(n-k)` and proves
+
+```text
+|(n-k)*Omega_nk^2 - gamma_k^2*(sigma_k^n-tau_k)/4|
+  <= 2*|gamma_k|^3*L*(E*(F+1)+F/4).
+```
+
+Here `Omega_nk^2` denotes the moment of order two. On G_k, L bounds
+`|sigma_k^n-z|/|gamma_k|`, E bounds the squared-primitive error divided
+by `|gamma_k|^2`, and F bounds the scaled auxiliary error `|chi-i|`.
+The theorem uses multiplied inequalities, which also include collapsed gaps. This is a positive corrected estimate;
+no new refutation or optimality claim is added.
+
+The ordered comparison also makes these direct notation fixes:
+
+- In the collapsed diagonal sentence on p. 92, use moment order 2l and
+  the selected primitive F_n raised to that order.
+- In the p. 93 finite-support sentence, replace the undefined S by A.
+- In the p. 96 Fredholm argument, cite item (ii), the compactness result,
+  of Corollary 18.2.
+
+The existing correction of the copied cubic constant to `-3*i*H2/4`
+and the auxiliary analyticity restriction remain in effect. The rendered
+diagonal factor in (4.9) already uses the regular zeta_n and needs no
+symbol correction. The action-image scope remains as recorded for
+Section 18. See the [ordered comparison](coverage/SECTION_20_ASSERTIONS.md)
+for the two remaining positive intermediate estimates.
+
 ## Section 19: the gap estimate retains π and the canonical normalization
 
 On p. 91, retain norms and the factor π in the gap-integral estimate.

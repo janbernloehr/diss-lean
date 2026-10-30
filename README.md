@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 19's real calculations](NLS/ZakharovShabat/SourceSection19RealCalculation.lean)
-now prove the positive closed-gap companion minimum and strict closed-band
-monotonicity, closing both auxiliary gaps in the
-[ordered comparison](coverage/SECTION_19_ASSERTIONS.md). Five new positive
-theorems and five API examples pass the full build and axiom audit. The
-corrected π bound is preserved; no new refutations were added. Next is
-Section 20. Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [ordered Section 20 comparison](coverage/SECTION_20_ASSERTIONS.md)
+records the corrected off-diagonal contour constants and selected-gap
+indices using existing positive proofs. All 56 passage groups are
+classified, with two positive intermediate estimates still explicit.
+The main moment and frequency theorems are already proved. This step
+changes documentation only and adds no refutations. Next are those two
+estimates, then Section 21. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

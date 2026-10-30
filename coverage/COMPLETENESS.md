@@ -24,6 +24,20 @@ correction. It cannot be counted as a proof of the literal printed claim.
 
 ## How the next assessment proceeds
 
+The [ordered Section 20 ledger](SECTION_20_ASSERTIONS.md) now classifies
+56 groups on pp. 91–96: 44 matched, eight corrected or clarified, two
+partial intermediate assertions and two contextual groups. Existing
+positive proofs supply the corrected off-diagonal contour constants,
+selected-gap bounds and the main physical moment and frequency results.
+
+S20-030 still needs the auxiliary estimate on the full isolating disk U_k,
+beyond the proved actual-gap and smaller tail-disc bounds. S20-052 still
+needs a direct link or proof of the stronger p/4 action-gap remainder;
+the p/3 estimate needed for (4.12) is already proved. The action-image
+scope and the alternative minimum-exponent convolution proof are explicit.
+Next: reconcile these two positive estimates before Section 21. No new
+refutation is added.
+
 Lemma 4.3 now also has a direct map on the original periodic distribution
 pairs with their exact finite-p norms. The full signed source and reflected
 series converge, the physical modes determine the map uniquely, and both
@@ -289,7 +303,8 @@ partial or pending under this comparison's stated scope.
 The physical Laurent proof uses internal WKB asymptotics, a local sinh
 inverse estimate and half-integer sampling. Individual principal-arcsine
 displays and the external [23] convention footnote are not separately
-claimed formalized. Next is the ordered Section 20 comparison.
+claimed formalized. The subsequent Section 20 comparison and its two
+remaining positive intermediate estimates are recorded above.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

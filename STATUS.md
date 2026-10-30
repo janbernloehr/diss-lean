@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: Section 19 real-gap minimum and band monotonicity
+## Current milestone: ordered Section 20 frequency comparison
+
+The [ordered Section 20 ledger](coverage/SECTION_20_ASSERTIONS.md) classifies
+56 passage groups on pp. 91–96: 44 matched, eight corrected or clarified,
+two partial intermediate assertions and two contextual groups.
+
+The main moment and frequency theorems are already proved: actual contour
+moments, all-order vanishing at collapsed gaps, the physical H1 bracket,
+the second-moment frequency formula, mixed sequence estimates, analytic
+frequency maps including the infinity target, and the inverse/Fredholm
+consequences on the original action image.
+
+The off-diagonal proof retains `i/pi` and `-2*i/pi`, and the numerator
+maximum is over the selected integration gap G_k. The cubic constant is
+`-3*i*H2/4`. Existing positive Lean proofs already use these constants.
+The comparison also records the auxiliary-domain restriction, collapsed
+moment indices, finite-support label and compactness reference. The
+regular diagonal zeta symbol in (4.9) is already correct.
+
+Two positive intermediate assertions remain explicit: the auxiliary
+estimate throughout U_k (S20-030), and the stronger p/4 action-gap
+remainder (S20-052). The actual-gap estimate and p/3 remainder used in the
+main theorems are already proved. The action-image qualification is
+preserved: every real-source action and the nonnegative ell1 cone are
+included, without asserting the whole nonnegative ell^(p/2) cone.
+
+The review inspected 72 complete module bodies, the positive excerpt of
+the factor module, and 99 public declaration references. It adds no Lean
+code or refutations.
+
+This documentation-only step reuses the successful full check from commit 42c1d69 on the exact unchanged Lean and dependency-lock snapshot: 8,560 build jobs, 7,640 public examples and 44,615 transitively audited NLS declarations, with 21 inherited warnings and zero new warnings. No new full build is claimed. Current module hashes, declaration references, source-review integrity and local documentation links are checked separately. These checks do not certify mathematical completeness.
+
+Next: prove or link the two positive intermediate assertions, then proceed
+to Section 21. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 19 real-gap minimum and band monotonicity
 
 The two remaining positive auxiliary assertions in the
 [Section 19 ledger](coverage/SECTION_19_ASSERTIONS.md) are now proved in
