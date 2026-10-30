@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Lemma 12.7 and Corollary 12.8](coverage/SECTION_12_ASSERTIONS.md)
-now have retained-index injectivity and inverse interfaces, plus explicit
-uniform outer-circle bounds tending to zero. The sine identity is unchanged.
-The ordered ledger has twenty-six matched groups, five with corrections
-and 36 pending. Next is Proposition 12.9; wider qualifications remain in the
+Latest step: [Proposition 12.9](coverage/SECTION_12_ASSERTIONS.md) now has
+a literal retained-index local analytic branch, with the global real
+solution, uniqueness, gap placement and strong lp continuation compared.
+The ordered ledger has thirty-one matched groups, five with corrections
+and 31 pending. Next is Lemma 12.10; wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

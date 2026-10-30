@@ -1,6 +1,33 @@
 # Section 12: psi-functions
 
-## Ordered comparison: injectivity and the bounded inverse
+## Ordered comparison: global real solutions in Proposition 12.9
+
+Proposition 12.9 now has a direct literal retained-index interface for
+the local analytic branch through every originally placed real solution.
+It preserves the initial root input and the actual sequence equation.
+
+The source comparison covers global real analyticity and uniqueness,
+original-domain graph placement, strong lp convergence, continuation
+and the zero free-source value. Uniform coefficient tails make the
+compactness step explicit; local uniqueness fixes the global branch.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) now has
+thirty-one matched groups, five with estimate, scope or gap-reference
+corrections and 31 pending. No further constant correction is needed
+for this step.
+
+Full validation passed: 8,536 build jobs, 7,613 public examples and
+44,460 transitively audited NLS declarations, with 21 inherited warnings.
+The new retained-index branch proof and two focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next is Lemma 12.10 and the common complex extension. Wider
+qualifications remain in the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous ordered milestone: injectivity and the bounded inverse
 
 Lemma 12.7 and Corollary 12.8 now have direct retained-index interfaces
 for injectivity and a continuous inverse equal to the actual root derivative.

@@ -72018,3 +72018,42 @@ example {W V : Set (CoeffPair 4)}
   exact e.injective (hh.trans (e.apply_symm_apply b).symm)
 
 end Section12InjectivityExamples
+
+section Section12GlobalSolutionExamples
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- A placed real zero extends to a complex analytic retained-index branch.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_7Data ENNReal.ofReal_ne_top (by norm_num) W)
+    {discs : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V discs c)
+    (hV : IsOpen V)
+    (t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)))
+    (htW : (t.1:CoeffPair (ENNReal.ofReal (3/2))) ∈ W)
+    (htΩ : t ∈ sourcePsiOriginalOmega V discs)
+    (hz : sourcePsiDeletedIndexEquation ENNReal.ofReal_ne_top (by norm_num) (-2) t.1
+      (DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top (-2)
+        (Coeff.deleteCoordinateTo (-2) (RealCoeff.complexCLM _ t.2))) = 0) :
+    ∃ s : CoeffPair (ENNReal.ofReal (3/2)) → DeletedIndexCoeff (ENNReal.ofReal (3/2)) (-2),
+      AnalyticAt ℂ s (t.1:CoeffPair (ENNReal.ofReal (3/2))) ∧
+      s t.1 = DeletedCoeff.indexEquiv ENNReal.ofReal_ne_top (-2)
+        (Coeff.deleteCoordinateTo (-2) (RealCoeff.complexCLM _ t.2)) ∧
+      ∀ᶠ ψ in 𝓝 (t.1:CoeffPair (ENNReal.ofReal (3/2))),
+        sourcePsiDeletedIndexEquation ENNReal.ofReal_ne_top (by norm_num) (-2) ψ (s ψ) = 0 :=
+  H.deletedIndexEquation_local_analytic_branch hD hV t htW htΩ (-2) hz
+
+-- Sources tending to zero force their placed solutions to converge in the full norm.
+example {W : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    (hR : realTypeSourceLocus 4 ⊆ W)
+    (ψ : ℕ → realTypeSourceSubmodule 4) (hψ : Tendsto ψ atTop (𝓝 0))
+    (a : ℕ → RealDeletedCoeff 4 (-2))
+    (ha : ∀ k, SourcePsiOriginalRealSolution (by norm_num) (by norm_num) (-2) (ψ k) (a k)) :
+    Tendsto (fun k => ‖a k‖) atTop (𝓝 0) := by
+  have h := H.originalRealSolution_tendsto hR (-2) 0 ψ hψ a ha
+  simpa only [sourcePsiOriginalRootReal_zero,norm_zero] using h.norm
+
+end Section12GlobalSolutionExamples

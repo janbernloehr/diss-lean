@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first thirty-one of 67 ordered Section 12 groups are compared: twenty-six matched, five with estimate, scope or gap-reference corrections, and 36 pending. Lemma 12.7 and Corollary 12.8 retain the actual original-domain Jacobian, prove its complex injectivity and identify continuous complex and real inverses. Direct retained-index interfaces preserve the actual derivative. The outer-circle estimate has explicit positive constants and a uniform radial head bound; both terms tend to zero. The exact sine identity is unchanged. Earlier contour, root-placement and selected-gap clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first thirty-six of 67 ordered Section 12 groups are compared: thirty-one matched, five with estimate, scope or gap-reference corrections, and 31 pending. Proposition 12.9 provides the unique global real analytic solution of the actual equation, original-domain graph and assigned real gap placement. The local implicit branch also has a literal retained-index interface. Strong lp compactness, contour-independent limits and pointwise uniqueness justify continuation; the implementation uses clopen solvability and multiplicity on the connected real source locus. The free value is zero. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-thirty-one groups have the semantic comparisons below. Earlier named-theorem
+thirty-six groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -44,11 +44,11 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-029 | 67 | 5325–5335 | Sine product identity for the entire interpolation numerator. | matched |
 | S12-030 | 67 | 5336–5350 | Exterior product asymptotic, Holder tail estimate, interpolation and vanishing of the kernel vector. | corrected |
 | S12-031 | 67 | 5352–5356 | Corollary 12.8: Fredholm alternative gives a bounded linear isomorphism. | matched |
-| S12-032 | 67 | 5358–5367 | Proposition 12.9: unique global real analytic solution and real gap placement. | pending |
-| S12-033 | 67 | 5370–5375 | Every admissible solution root lies in its assigned gap. | pending |
-| S12-034 | 67 | 5376–5380 | Local implicit solution and the continuation setup. | pending |
-| S12-035 | 67 | 5381–5391 | Limit of source/root sequences, gap compactness and global continuation on the simply connected real locus. | pending |
-| S12-036 | 67 | 5393–5395 | Free source solution and uniqueness from collapsed free gaps. | pending |
+| S12-032 | 67 | 5358–5367 | Proposition 12.9: unique global real analytic solution and real gap placement. | matched |
+| S12-033 | 67 | 5370–5375 | Every admissible solution root lies in its assigned gap. | matched |
+| S12-034 | 67 | 5376–5380 | Local implicit solution and the continuation setup. | matched |
+| S12-035 | 67 | 5381–5391 | Limit of source/root sequences, gap compactness and global continuation on the simply connected real locus. | matched |
+| S12-036 | 67 | 5393–5395 | Free source solution and uniqueness from collapsed free gaps. | matched |
 | S12-037 | 68 | 5407–5414 | Lemma 12.10: extension of every branch to one common complex source neighborhood with original root placement. | pending |
 | S12-038 | 68 | 5417–5431 | Jacobian contour formula and exact multiplier expansion (2.28). | pending |
 | S12-039 | 68 | 5433–5446 | Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29). | pending |
@@ -862,4 +862,103 @@ The eight new proofs and two focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-032: Proposition 12.9 and the local implicit solutions.
+The next subsection compares Proposition 12.9 and its continuation proof.
+
+## Global real solutions in Proposition 12.9
+
+### S12-032: Proposition 12.9: unique global real analytic solution and real gap placement.
+
+- For every finite p strictly above one and every omitted index, the actual equation has a unique global real analytic solution on the real source Banach space. The same open connected complex neighborhood and preceding Jacobian isomorphism data are retained.
+- The solution predicate includes the actual sequence equation and membership in an original deleted placement domain. The canonical graph lies in every supplied original disk family over its admissible real sources, and every retained root lies in its actual periodic gap.
+- The real deleted coefficient space embeds exactly into the complex deleted space. Its placement domain is the projection of the original full real domain, with the missing coordinate filled by the real center of its assigned disk.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceProposition12_9Data`
+- `NLS.ZakharovShabat.SourceCorollary12_8Data.proposition12_9`
+- `NLS.ZakharovShabat.sourceProposition12_9`
+- `NLS.ZakharovShabat.SourcePsiOriginalRealSolution`
+- `NLS.ZakharovShabat.sourcePsiOriginalRootReal`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.mem_originalDeletedOmega_iff`
+
+The global solution, uniqueness, original-domain graph and assigned gap placement match the proposition for all finite p > 1.
+
+### S12-033: Every admissible solution root lies in its assigned gap.
+
+- The actual real equation zero transports to the complex equation and then to each original scalar period with its nonzero n-m factor.
+- For an open real gap, the real mean-value contour formula gives a numerator zero in that gap. At a collapsed gap, the Cauchy formula gives the same conclusion.
+- The entire candidate has exactly its retained displaced roots as zeros. The assigned disjoint disks identify the gap zero with the correspondingly indexed root, so originally placed solutions satisfy all retained gap conditions.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_mem_gap`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_gapSolution`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_unique`
+
+Gap placement matches, including collapsed gaps. The exact product zero set and disjoint placement make the root identification explicit.
+
+### S12-034: Local implicit solution and the continuation setup.
+
+- Joint analyticity of the actual equation and bijectivity of its actual root derivative give a complex analytic local zero branch with its prescribed initial value.
+- On the real source submodule, the canonical real analytic solution and pointwise uniqueness provide a branch through every originally placed real solution. The branch graph remains in the same original domain near its base point.
+- The new literal retained-index interface transports the branch through the exact coefficient isometry. It preserves the full original root input before omission, the initial value and the actual sequence equation zero on a neighborhood.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_joint_analytic`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.originalEquation_local_analytic_branch`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_local_real_branch`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.deletedIndexEquation_local_analytic_branch`
+
+The local implicit extension matches; the public retained-index theorem exposes the same branch in the source indexing convention.
+
+### S12-035: Limit of source/root sequences, gap compactness and global continuation on the simply connected real locus.
+
+- The actual periodic endpoints vary continuously along converging real sources. Their locally uniform lp tails bound the tails of every gap-contained root choice, with a common bound for all omitted indices. Finite-rank truncation compactness yields a strongly convergent lp subsequence.
+- Continuous endpoints retain the limiting gap placement. Contour invariance transfers the varying admissible contour equations to one fixed local chart before continuity passes the zero equation to the limit.
+- Solvability is nonempty and relatively open and closed in the connected real source locus. The set of sources admitting two distinct solutions is also relatively open and closed: if two limiting roots coincide, local uniqueness in their common chart forces the nearby roots to coincide. Free-source uniqueness therefore gives global pointwise uniqueness.
+- Local complex analytic implicit branches restrict to a globally real analytic canonical solution. Every sequence of originally placed solutions over convergent sources then converges in the full real lp norm by pointwise uniqueness and continuity of this map.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.exists_uniform_small_deletedGapRoots_tails_allIndices`
+- `NLS.Coeff.exists_tendsto_subseq_of_bounded_uniform_tails`
+- `NLS.ZakharovShabat.exists_tendsto_subseq_deletedGapRoots_of_source_tendsto`
+- `NLS.ZakharovShabat.deletedGapRoots_mem_segments_of_tendsto`
+- `NLS.ZakharovShabat.exists_limit_sourcePsi_gap_solution`
+- `NLS.ZakharovShabat.sourcePsiGapSolvable_of_realType`
+- `NLS.ZakharovShabat.SourcePsiGapSolution.unique_of_realType`
+- `NLS.ZakharovShabat.existsUnique_analytic_sourcePsiGapRoot`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_tendsto`
+
+The continuation and global uniqueness conclusions match. The implementation supplies strong lp compactness explicitly and uses clopen solvability and multiplicity instead of a separate monodromy argument. The real Banach source space is also simply connected, as checked through the pinned mathlib instance.
+
+### S12-036: Free source solution and uniqueness from collapsed free gaps.
+
+- At the free source, the actual selected contour equation at the zero coefficient sequence vanishes by its exact Cauchy and orthogonality formula.
+- Every free periodic gap is the singleton containing its free center. Assigned placement and the exact numerator zero set force all retained coefficients of any solution to vanish, even for complex root inputs.
+- The canonical original real solution consequently has value zero at the free source, fixing the unique global analytic map.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiSelectedEquationSequence_zero_of_isolating_contours`
+- `NLS.ZakharovShabat.sourcePsi_freeEquation_unique_of_isolating_contours`
+- `NLS.ZakharovShabat.SourcePsiGapSolution.eq_zero_at_free`
+- `NLS.ZakharovShabat.sourcePsiOriginalRootReal_zero`
+
+The free solution and its uniqueness match, with their normalization and collapsed-gap argument retained.
+
+The [retained-index implicit branch](../NLS/ZakharovShabat/SourcePsiDeletedIndexImplicit.lean)
+preserves the actual equation and its initial value.
+The [original global solutions](../NLS/ZakharovShabat/SourcePsiOriginalRealSolution.lean)
+include full norm convergence, and [Proposition 12.9](../NLS/ZakharovShabat/SourceProposition12_9.lean)
+retains the original domains and preceding data.
+This comparison records 84 inspected or reused module bodies and 26 resolved declarations.
+
+Full validation passed: 8,536 build jobs, 7,613 public examples and
+44,460 transitively audited NLS declarations, with 21 inherited warnings.
+The new retained-index branch proof and two focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-037: Lemma 12.10 and the common complex extension.

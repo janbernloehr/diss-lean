@@ -3621,6 +3621,7 @@ import NLS.ZakharovShabat.SourcePsiOriginalRealRoot
 import NLS.ZakharovShabat.SourcePsiOriginalSolutionGap
 import NLS.ZakharovShabat.SourcePsiOriginalRealSolution
 import NLS.ZakharovShabat.SourcePsiOriginalImplicit
+import NLS.ZakharovShabat.SourcePsiDeletedIndexImplicit
 import NLS.ZakharovShabat.SourceProposition12_9
 import NLS.ZakharovShabat.SourcePsiOriginalIndexRatio
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianComparison

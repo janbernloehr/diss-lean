@@ -179,11 +179,11 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Twenty-six match and five have estimate, scope or gap-reference corrections.
-Lemma 12.7 and Corollary 12.8 retain the original real-domain Jacobian and
-prove injectivity and continuous complex and real inverses. The explicit
-outer-circle bound tends uniformly to zero; the sine identity is unchanged.
-The remaining 36 groups start with Proposition 12.9; earlier corrections
+Thirty-one match and five have estimate, scope or gap-reference corrections.
+Proposition 12.9 retains the actual equation and original placement, with
+a unique global real analytic solution, strong lp continuation and the
+zero free-source value. A direct local branch uses literal retained indices.
+The remaining 31 groups start with Lemma 12.10; earlier corrections
 retain their scope.
 
 Classify each substantive

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T16:16:09.604764+00:00",
-  "base_commit": "f3c67e226bd19739b80493ad57d921eda9289544",
+  "published_utc": "2026-10-30T16:40:35.469985+00:00",
+  "base_commit": "48616004e9552d9efd7e1e8dd5c413e7b718b04b",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 143,
-    "module_hash_checks": 2652,
-    "distinct_modules": 1566
+    "review_records": 144,
+    "module_hash_checks": 2736,
+    "distinct_modules": 1614
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "f3c67e226bd19739b80493ad57d921eda9289544",
-    "validated_state": "Eight positive circle-estimate and retained-index inverse proofs, two public examples and ordered comparison of Lemma 12.7 and Corollary 12.8. Full gate 76262 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "48616004e9552d9efd7e1e8dd5c413e7b718b04b",
+    "validated_state": "One positive retained-index local branch proof, two public examples and ordered comparison of Proposition 12.9. Full gate 81988 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8535,
-    "public_examples": 7611,
-    "transitive_NLS_declarations": 44458,
+    "build_jobs": 8536,
+    "public_examples": 7613,
+    "transitive_NLS_declarations": 44460,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4812,
-      "sha256": "51accc70a87ee5c4dfbb70dd58b03ffd3f13d3061e6cbd053e7c98e7b8a85da4"
+      "files": 4813,
+      "sha256": "ae59eedf774d4cbb994117e64553c7583ec9587a05c5f70af569f04cb98d7ac8"
     },
     "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
@@ -35008,6 +35008,359 @@
       },
       "ordered_inventory_sha256": "87a0b849fcd523d61e60d08262e2880fae41c0be180c1245d9957d0d933fd370",
       "source_record_sha256": "9bfdd7a1ac0aa395cc3807a0da5082e35253da4a7e5e30a6a70977451565155e"
+    },
+    "Section12GlobalSolutionSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "48616004e9552d9efd7e1e8dd5c413e7b718b04b",
+      "updated_utc": "2026-10-30T16:40:35.469985+00:00",
+      "source_lines": [
+        [
+          5358,
+          5367
+        ],
+        [
+          5370,
+          5375
+        ],
+        [
+          5376,
+          5380
+        ],
+        [
+          5381,
+          5391
+        ],
+        [
+          5393,
+          5395
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-032",
+          "source_lines": [
+            5358,
+            5367
+          ],
+          "requirement": "Proposition 12.9: unique global real analytic solution and real gap placement.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceProposition12_9Data",
+            "NLS.ZakharovShabat.SourceCorollary12_8Data.proposition12_9",
+            "NLS.ZakharovShabat.sourceProposition12_9",
+            "NLS.ZakharovShabat.SourcePsiOriginalRealSolution",
+            "NLS.ZakharovShabat.sourcePsiOriginalRootReal",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.mem_originalDeletedOmega_iff"
+          ],
+          "reviewed_claims": [
+            "For every finite p strictly above one and every omitted index, the actual equation has a unique global real analytic solution on the real source Banach space. The same open connected complex neighborhood and preceding Jacobian isomorphism data are retained.",
+            "The solution predicate includes the actual sequence equation and membership in an original deleted placement domain. The canonical graph lies in every supplied original disk family over its admissible real sources, and every retained root lies in its actual periodic gap.",
+            "The real deleted coefficient space embeds exactly into the complex deleted space. Its placement domain is the projection of the original full real domain, with the missing coordinate filled by the real center of its assigned disk."
+          ],
+          "qualification": "The global solution, uniqueness, original-domain graph and assigned gap placement match the proposition for all finite p > 1."
+        },
+        {
+          "ordered_group": "S12-033",
+          "source_lines": [
+            5370,
+            5375
+          ],
+          "requirement": "Every admissible solution root lies in its assigned gap.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_mem_gap",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_gapSolution",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_unique"
+          ],
+          "reviewed_claims": [
+            "The actual real equation zero transports to the complex equation and then to each original scalar period with its nonzero n-m factor.",
+            "For an open real gap, the real mean-value contour formula gives a numerator zero in that gap. At a collapsed gap, the Cauchy formula gives the same conclusion.",
+            "The entire candidate has exactly its retained displaced roots as zeros. The assigned disjoint disks identify the gap zero with the correspondingly indexed root, so originally placed solutions satisfy all retained gap conditions."
+          ],
+          "qualification": "Gap placement matches, including collapsed gaps. The exact product zero set and disjoint placement make the root identification explicit."
+        },
+        {
+          "ordered_group": "S12-034",
+          "source_lines": [
+            5376,
+            5380
+          ],
+          "requirement": "Local implicit solution and the continuation setup.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_joint_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_7Data.originalEquation_local_analytic_branch",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_local_real_branch",
+            "NLS.ZakharovShabat.SourceLemma12_7Data.deletedIndexEquation_local_analytic_branch"
+          ],
+          "reviewed_claims": [
+            "Joint analyticity of the actual equation and bijectivity of its actual root derivative give a complex analytic local zero branch with its prescribed initial value.",
+            "On the real source submodule, the canonical real analytic solution and pointwise uniqueness provide a branch through every originally placed real solution. The branch graph remains in the same original domain near its base point.",
+            "The new literal retained-index interface transports the branch through the exact coefficient isometry. It preserves the full original root input before omission, the initial value and the actual sequence equation zero on a neighborhood."
+          ],
+          "qualification": "The local implicit extension matches; the public retained-index theorem exposes the same branch in the source indexing convention."
+        },
+        {
+          "ordered_group": "S12-035",
+          "source_lines": [
+            5381,
+            5391
+          ],
+          "requirement": "Limit of source/root sequences, gap compactness and global continuation on the simply connected real locus.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_small_deletedGapRoots_tails_allIndices",
+            "NLS.Coeff.exists_tendsto_subseq_of_bounded_uniform_tails",
+            "NLS.ZakharovShabat.exists_tendsto_subseq_deletedGapRoots_of_source_tendsto",
+            "NLS.ZakharovShabat.deletedGapRoots_mem_segments_of_tendsto",
+            "NLS.ZakharovShabat.exists_limit_sourcePsi_gap_solution",
+            "NLS.ZakharovShabat.sourcePsiGapSolvable_of_realType",
+            "NLS.ZakharovShabat.SourcePsiGapSolution.unique_of_realType",
+            "NLS.ZakharovShabat.existsUnique_analytic_sourcePsiGapRoot",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_tendsto"
+          ],
+          "reviewed_claims": [
+            "The actual periodic endpoints vary continuously along converging real sources. Their locally uniform lp tails bound the tails of every gap-contained root choice, with a common bound for all omitted indices. Finite-rank truncation compactness yields a strongly convergent lp subsequence.",
+            "Continuous endpoints retain the limiting gap placement. Contour invariance transfers the varying admissible contour equations to one fixed local chart before continuity passes the zero equation to the limit.",
+            "Solvability is nonempty and relatively open and closed in the connected real source locus. The set of sources admitting two distinct solutions is also relatively open and closed: if two limiting roots coincide, local uniqueness in their common chart forces the nearby roots to coincide. Free-source uniqueness therefore gives global pointwise uniqueness.",
+            "Local complex analytic implicit branches restrict to a globally real analytic canonical solution. Every sequence of originally placed solutions over convergent sources then converges in the full real lp norm by pointwise uniqueness and continuity of this map."
+          ],
+          "qualification": "The continuation and global uniqueness conclusions match. The implementation supplies strong lp compactness explicitly and uses clopen solvability and multiplicity instead of a separate monodromy argument. The real Banach source space is also simply connected, as checked through the pinned mathlib instance."
+        },
+        {
+          "ordered_group": "S12-036",
+          "source_lines": [
+            5393,
+            5395
+          ],
+          "requirement": "Free source solution and uniqueness from collapsed free gaps.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiSelectedEquationSequence_zero_of_isolating_contours",
+            "NLS.ZakharovShabat.sourcePsi_freeEquation_unique_of_isolating_contours",
+            "NLS.ZakharovShabat.SourcePsiGapSolution.eq_zero_at_free",
+            "NLS.ZakharovShabat.sourcePsiOriginalRootReal_zero"
+          ],
+          "reviewed_claims": [
+            "At the free source, the actual selected contour equation at the zero coefficient sequence vanishes by its exact Cauchy and orthogonality formula.",
+            "Every free periodic gap is the singleton containing its free center. Assigned placement and the exact numerator zero set force all retained coefficients of any solution to vanish, even for complex root inputs.",
+            "The canonical original real solution consequently has value zero at the free source, fixing the unique global analytic map."
+          ],
+          "qualification": "The free solution and its uniqueness match, with their normalization and collapsed-gap argument retained."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceProposition12_9.lean": "6d821f90d49dbaa57bde83174c602119bfdb0b13213c2d994c7c429f234fdfa4",
+        "NLS/ZakharovShabat/SourcePsiOriginalImplicit.lean": "8d0d640ab5ff730b97ebee99802394e3ff66a1c85551a06f6bafd741689efaa2",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealSolution.lean": "1d0702703ba16b391d7da61dbd4142486ae5bda259f7b3693a0c22fa237efe93",
+        "NLS/ZakharovShabat/SourcePsiOriginalSolutionGap.lean": "2b897735007cd9ed6c57a32bbd643185e192ce50fd94b0b560a247c7be06183f",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexReal.lean": "d89a8d35f226265c3ca857068510574e003a79fb9847b7a487ffed978507e17c",
+        "NLS/ZakharovShabat/SourcePsiFreeInitialSolution.lean": "b5e1ee0e7ed06194ea6fab4f1ffded9e4b71bac9f5c5211ee98cad301e1aefa2",
+        "NLS/ZakharovShabat/SourcePsiFreeUniqueness.lean": "5f0258f2ece12c31aa2032c83476cdddcafc827311366d4374c26ecce5a14a94",
+        "NLS/ZakharovShabat/SourcePsiFreeRealBranch.lean": "1f4962553f37317eb5e2224d6aedd22836ad34fc0bb41c7a3efff20f501317c4",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealRoot.lean": "28f6c18a43df5d5bf03c9d42789c566c8dd232d223757af935cff60c3651342f",
+        "NLS/ZakharovShabat/SourcePsiGapSolvability.lean": "07632ffb766661da0cbe1ff9bd41b6b3babcff19fdbec6f17fe391413978871f",
+        "NLS/ZakharovShabat/SourcePsiGapRootSubsequence.lean": "e6c831505260ab3a37b16d2a37617709faa164ee206fdba48ab4a2d861716e0b",
+        "NLS/ZakharovShabat/SourcePsiGapRootTailBound.lean": "482b0c063bd08323eae315dc5bf2b771752b881c4702c78449b62caddf1a1f04",
+        "NLS/ZakharovShabat/SourcePsiGapRootLimitPlacement.lean": "ead520ff7f63990b36f80a8eb437343a548b69f9378619ef508c3703df04723f",
+        "NLS/ZakharovShabat/SourcePsiGapRootMap.lean": "6b3c918a14df181877fea212690125d40334bf9dcb220af82a275d22c415cef7",
+        "NLS/ZakharovShabat/SourcePsiGapMultiplicity.lean": "39e8ed119fd15ba5b32cdb81c6c16ce5d9c83e0cd17a77a6f8906a5d3f200110",
+        "NLS/ZakharovShabat/SourcePsiGapGlobalExistence.lean": "5e69450f3987a03566f087e1ed501f519ba692b6ed5d7efb55f493649f418b4a",
+        "NLS/SequenceSpaces/UniformTailCompactness.lean": "3ce711fd2c3b956d83c8b1a676b539f1983319ebf781036f235a6c56988fa961",
+        "NLS/ZakharovShabat/SourcePsiGapSolutionLimit.lean": "0716caa1285e48b99566bc68899428f99ef4443beef925b5dbd7051b7293f7ac",
+        "NLS/ZakharovShabat/SourcePsiGapRootAnalyticReduction.lean": "0ea115a27e0aaa73155e5fd50865adc9ffb5c9347bfbb026a651f438cfb3d251",
+        "NLS/ZakharovShabat/SourcePsiGapRootAnalyticExistence.lean": "36acef5f931096f5682ddcc1316dff3620725146de06bd24081a619ab126ca6d",
+        "NLS/ZakharovShabat/SourcePsiLocalJacobianBijectivity.lean": "4eaabc54ccffe15b289d159cc5fa1a77ad57802a9a948ec2186ff33deaefb9e1",
+        "NLS/ZakharovShabat/SourcePsiGapRootDerivative.lean": "b87cbdef6a7b1bc94cd64260581612c7e805ea139b84babe5a135ba4b25f9d82",
+        "NLS/ZakharovShabat/SourcePsiC1ImplicitStep.lean": "7ca408adaeb3566d326bdaaa7acd9e1841e5604ea6e9b78d1341059bebb378fe",
+        "NLS/ZakharovShabat/SourcePsiRealContourComparison.lean": "0b9e488e929692727a4950e96f781df300a1cb74b46a69c6b820420d103cf4a4",
+        "NLS/ZakharovShabat/SourcePsiConjugateRootEquivariance.lean": "ca1abf7257d808dbc2d3c79bd762b7d78032e87623ca989e514c3d41b47aafab",
+        "NLS/ComplexAnalysis/BanachC1ImplicitRoot.lean": "c600de1cc263dd82eefd9073cf151f2bfc133a9b96b79b69ba4a8425db555447",
+        "NLS/ComplexAnalysis/AnalyticImplicitBanachRoot.lean": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7",
+        "NLS/ZakharovShabat/SourcePsiAnalyticImplicitStep.lean": "643f6bab15e2556c8ba6bb30609b2d3e751c2153941f130d92d6f833408a0028",
+        "NLS/ZakharovShabat/SourcePsiSelectedJacobianInjectivity.lean": "2787d3b1c28d6fbd93772d4c7aaa636fc1382202daa32016d2769d7ed7703c27",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexImplicit.lean": "dea3c7ba5e48384131ed26801842a2d809b005d38702111fe7883283c2e87c54",
+        "NLS/ZakharovShabat/SourcePsiOriginalDeletedOmega.lean": "59d030e16eca8e8de49d7aadce6dcfc0b576f5e3f66e1c80fe16fde393a6d425",
+        "NLS/ZakharovShabat/SourcePsiSelectedJacobianIsolatingDiagonal.lean": "19986402d3b50666105d6e33d21cfb777323b419b5694bda6c5412787d7b509f",
+        "NLS/ZakharovShabat/SourcePsiSelectedKernelGapZeroSequence.lean": "8f80e12047339f0942358ae335e9d3caa85ff84673071b7f9e8f58ec11a2bf4d",
+        "NLS/ZakharovShabat/SourcePsiFilledInterpolationUniqueness.lean": "3b97e3a3aceefe512b9c319c67cf995222b945f30aae5eb9d3a79d57dcd1e5de",
+        "NLS/ZakharovShabat/SourcePsiEquationContourHomotopy.lean": "9a85310e9353f50d61e0fa8aac77807257151be89ba0cb8d78c514a33dd88aad",
+        "NLS/ZakharovShabat/SourcePsiEquationChartCompatibility.lean": "be1c5d516aa206b971b13c2d2225ffdfc44ac70fde46c663ee86e1640fbcecf0",
+        "NLS/ZakharovShabat/SourcePsiEquationAllGapZero.lean": "b25cb40d4d4356758d63ef684dac5e8afec4af0043c3904d853b0df4bd303838",
+        "NLS/ZakharovShabat/CanonicalPeriodicDisplacementBounds.lean": "4733966214ac29f9662d0ba8f7aeda612abc7bd97d0a268f5526f6c238490769",
+        "NLS/ZakharovShabat/RestoredSpectralPairs.lean": "d58aab71ce9dcd67c58bc54424ee3c87e60d093878fab7ce89cd8cdb967541ba",
+        "NLS/SequenceSpaces/PairedTailBounds.lean": "34f4958aa5b948230126bce8bc4c9f7f8c2b13467f415010a43c292d1044968c",
+        "NLS/ZakharovShabat/SourcePsiGlobalEquationTaylorTruncation.lean": "50feecf31a9a2b2dc8bfb361cd23ca1300c6701bb6d0a1c2f8e9c0abcbcf43f9",
+        "NLS/ZakharovShabat/SourceRealTypeConvex.lean": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2",
+        "NLS/ZakharovShabat/SourcePsiSelectedJacobianDiagonalCompact.lean": "77f1f70581b5583f57c8746f2425a7bb379e25315ef6619f88c8c8e74a696cc1",
+        "NLS/ZakharovShabat/SourcePsiVariationOpenGapZero.lean": "2dbafde2b9507da47ca9eaf1770796785ab2a31d043715f45c4035c5d2b47bd8",
+        "NLS/ZakharovShabat/SourcePsiVariationCollapsedGapZero.lean": "eb65df3c2af3fac35f3b623289dc0d5c1c0a5d6cdc7cc90af850ef8231432de7",
+        "NLS/ZakharovShabat/SourcePsiSelectedJacobianKernelRealImag.lean": "9d73e46ebb63aa36e6c1e82f0a74fdbec81604f18a9f6f0903dc6d0df077fa0d",
+        "NLS/ZakharovShabat/SmallCompleteDisplacements.lean": "440c058444e29a171dffe4f08facb3645108096cbc9dcd577d9127a1ef2afbb0",
+        "NLS/ZakharovShabat/SourcePsiGlobalEquationAnalytic.lean": "6ff0ae656e5b88d2498aa67a3560ccfbb902872916bfbe552e2bf02b620cb36f",
+        "NLS/ZakharovShabat/SourcePsiIsolatingRootSeparation.lean": "aaca155944af8f27ece5e42108f81340b02d257be00952fbf49b06cb6d400860",
+        "NLS/ZakharovShabat/SourcePsiRegularFactorIsolatingDisc.lean": "4770e45206f6c79444682b211cae6ded5d9520d7b788856c5128dfcf4ba6de1d",
+        "NLS/ZakharovShabat/SourcePsiEquationCollapsedGapZero.lean": "1b0a277209c49c53f3cc39e0245b6e7c4abac2555d89b75f8cd8e58a272a3d1a",
+        "NLS/ZakharovShabat/SourcePsiSelectedJacobianKernelContour.lean": "a6e36d96d15cca7032eda0067131232346e851486d15bebd7e2b33713c18d5f4",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioContourHomotopy.lean": "a609bf3bdd9d555075faeaea66b48a4ffa7216887b0b11cf4393c7a258ef9c05",
+        "NLS/ZakharovShabat/SourcePsiGlobalEquationSequenceBound.lean": "d917873569f1cfc088be2239fa675bebf59a0304597964088c9a67a45f36954b",
+        "NLS/ZakharovShabat/SourcePsiEquationOpenGapZero.lean": "b9337af39f91ffcc4da20836a1399ee5dc1e5ffa1fe7520068791a149abbf8ab",
+        "NLS/ZakharovShabat/SourceLemma12_7.lean": "4f8eb0c8f82e953644377378dc0d7bafc596a108aa2c8b161ff1ce4600e52823",
+        "NLS/ZakharovShabat/SourceCorollary12_8.lean": "86b5a83d496d74676b70ecbaea3c240c91d93acc7040f59c96c6a94cc17c756f",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobianInverse.lean": "d3a5f34ae4861852088d896952ffbc57855133d82f5f4ff16cc9b1c9fc77afcc",
+        "NLS/ZakharovShabat/SourcePsiOriginalRealEquation.lean": "89bf6a4c21e141874c61626f2cf2b87ebfe53865da21591ddedbe77b718d91fb",
+        "NLS/SequenceSpaces/DeletedRealEquiv.lean": "7088c0f56ed8ba8c2aa3404eb0405426154d554e9bf383944dcbc341afd4bab3",
+        "NLS/SequenceSpaces/DeletedRealOperator.lean": "0ef8d3afd1720a040ff00d024cf1b038871d3ba59d2369f2c45458a69fee7960",
+        "NLS/SequenceSpaces/DeletedRealInverse.lean": "18190caa6a7d3d489849339645742ee1ec6d75f282dfc1f94794049e94076ed2",
+        "NLS/ZakharovShabat/SourceRealTypeBanachSpace.lean": "328ccffa4d14b289604510c85d23d326ee500ad867c150b90468bb801a27b025",
+        "NLS/SequenceSpaces/CompactIdentityFredholm.lean": "4c831b49d98271417965bc5e58f4d3840b6fa43df41d8229f29c87aa7711167c",
+        "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean": "dba36d669d9576dab485505fb7dae12e270f0bcb120f4984cec6f908d4aaf6c4",
+        "NLS/ZakharovShabat/SourcePsiCandidate.lean": "e1557015a2fc310df4054fe456dc8ff5fa7ca245d943fbbbe8bb0f0fb5e6c456",
+        "NLS/ZakharovShabat/SourcePsiDeletedProductNonzero.lean": "94a81faf32416bb7082fe9f9b64ab8f5ccfd10c5d9a82d87c12309545fa86ec7",
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb",
+        "NLS/ZakharovShabat/SourcePsiCandidateContourVariation.lean": "c77c052e9b3fe1334c4cb2767109bdcdea039af1a1469948d2f2128d1ff9f9f1",
+        "NLS/ZakharovShabat/SourcePsiContourAnalytic.lean": "417c337345525907491c35a1c09f0ed23c8e6b37a515d02dba74cc1faf658d1c",
+        "NLS/SequenceSpaces/RealCoeff.lean": "c8eed7f2f37d4ab7934024af98b627fb18d140010e03500fcaec98accde48dec",
+        "NLS/SequenceSpaces/Truncation.lean": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074",
+        "NLS/SequenceSpaces/DeletedCoordinate.lean": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632",
+        "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean": "94753c776853f3fe675c4e496250d13db8b692edad5620ffdb33093e6d3c75cf",
+        "NLS/ZakharovShabat/SourcePsiOriginalOmega.lean": "f074367e3113da047b9c3b3d6f62a36be10384828ef8958bf3e1a663c8fc7534",
+        "NLS/ZakharovShabat/SourcePsiOriginalJacobian.lean": "138b12ca855d1fa52a56c31e3f52ca881480242a630b1a7980b8572aac553785",
+        "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean": "1fd983178d0a9e8478e854bf4c269f7e6b09e1656ac30883236a8b8d16f1aff4",
+        "NLS/SequenceSpaces/DeletedJacobianCompactRemainder.lean": "ac39bddd9781905859abc49fb92edadc4992cc471c18c94aba0a21fbb46267ec",
+        "NLS/SequenceSpaces/DeletedJacobianInvertibleDiagonal.lean": "37023ad7a400879121fa6805d5c6f9dc4d98ad940c23e6c53c5ea409d4314db6",
+        "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean": "cedfb323a53f4a1197aa0d9e4faa2980d4be93cbd1f66d50b5052d945e162714",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquation.lean": "023b617909d062d071f0b8ca9dac94f468749961418f99612b564d1d9b25992b",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquationAnalytic.lean": "c7b3f054fdff730a99ecc72deda230075ef38adcc4c70838a3b9292a591d6783",
+        "NLS/ZakharovShabat/PeriodOneBoundaryInterlacing.lean": "bd55f20c0af20a9d6e94923c1d5506535d7893869e6fb67276c17264ca4e2e91"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section12InjectivitySourceComparison-2026-10-30.json",
+          "sha256": "9bfdd7a1ac0aa395cc3807a0da5082e35253da4a7e5e30a6a70977451565155e",
+          "modules": [
+            "NLS/ZakharovShabat/SourceLemma12_7.lean",
+            "NLS/ZakharovShabat/SourceCorollary12_8.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalJacobianInverse.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalRealEquation.lean",
+            "NLS/SequenceSpaces/DeletedRealEquiv.lean",
+            "NLS/SequenceSpaces/DeletedRealOperator.lean",
+            "NLS/SequenceSpaces/DeletedRealInverse.lean",
+            "NLS/ZakharovShabat/SourceRealTypeBanachSpace.lean",
+            "NLS/SequenceSpaces/CompactIdentityFredholm.lean",
+            "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean",
+            "NLS/ZakharovShabat/SourcePsiCandidate.lean",
+            "NLS/ZakharovShabat/SourcePsiDeletedProductNonzero.lean",
+            "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean",
+            "NLS/ZakharovShabat/SourcePsiCandidateContourVariation.lean",
+            "NLS/ZakharovShabat/SourcePsiContourAnalytic.lean",
+            "NLS/SequenceSpaces/RealCoeff.lean",
+            "NLS/SequenceSpaces/Truncation.lean",
+            "NLS/SequenceSpaces/DeletedCoordinate.lean",
+            "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalOmega.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalJacobian.lean",
+            "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean"
+          ]
+        },
+        {
+          "file": "work/Section12CompactSourceComparison-2026-10-30.json",
+          "sha256": "c42e10890c487641d33b6eb05a0334d6fe8db5a46713caff1ee091c243196441",
+          "modules": [
+            "NLS/SequenceSpaces/DeletedJacobianCompactRemainder.lean",
+            "NLS/SequenceSpaces/DeletedJacobianInvertibleDiagonal.lean"
+          ]
+        },
+        {
+          "file": "work/Section12EquationProofSourceComparison-2026-10-30.json",
+          "sha256": "fb5e39f22d4e25af74d13e2101dba9ba1609fdc02e21cf7df38feb663b1756f2",
+          "modules": [
+            "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean",
+            "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalEquation.lean",
+            "NLS/ZakharovShabat/SourcePsiOriginalEquationAnalytic.lean"
+          ]
+        },
+        {
+          "file": "work/Section9OrderedSourceComparison-2026-10-29.json",
+          "sha256": "752cb3bca251d545537a3f162ff1ae65766df6b1c9cf8f6de5a5b3356fdcd2fe",
+          "modules": [
+            "NLS/ZakharovShabat/PeriodOneBoundaryInterlacing.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_tendsto_subseq_of_bounded_uniform_tails",
+        "NLS.ZakharovShabat.SourceCorollary12_8Data.proposition12_9",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.mem_originalDeletedOmega_iff",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_joint_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_local_real_branch",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_gapSolution",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_mem_gap",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealEquation_zero_unique",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_tendsto",
+        "NLS.ZakharovShabat.SourceLemma12_7Data.deletedIndexEquation_local_analytic_branch",
+        "NLS.ZakharovShabat.SourceLemma12_7Data.originalEquation_local_analytic_branch",
+        "NLS.ZakharovShabat.SourceProposition12_9Data",
+        "NLS.ZakharovShabat.SourcePsiGapSolution.eq_zero_at_free",
+        "NLS.ZakharovShabat.SourcePsiGapSolution.unique_of_realType",
+        "NLS.ZakharovShabat.SourcePsiOriginalRealSolution",
+        "NLS.ZakharovShabat.deletedGapRoots_mem_segments_of_tendsto",
+        "NLS.ZakharovShabat.existsUnique_analytic_sourcePsiGapRoot",
+        "NLS.ZakharovShabat.exists_limit_sourcePsi_gap_solution",
+        "NLS.ZakharovShabat.exists_tendsto_subseq_deletedGapRoots_of_source_tendsto",
+        "NLS.ZakharovShabat.exists_uniform_small_deletedGapRoots_tails_allIndices",
+        "NLS.ZakharovShabat.sourceProposition12_9",
+        "NLS.ZakharovShabat.sourcePsiGapSolvable_of_realType",
+        "NLS.ZakharovShabat.sourcePsiOriginalRootReal",
+        "NLS.ZakharovShabat.sourcePsiOriginalRootReal_zero",
+        "NLS.ZakharovShabat.sourcePsiSelectedEquationSequence_zero_of_isolating_contours",
+        "NLS.ZakharovShabat.sourcePsi_freeEquation_unique_of_isolating_contours"
+      ],
+      "declaration_inventory_count": 44460,
+      "qualification": "The first thirty-six of 67 ordered Section 12 groups are compared: thirty-one matched, five with estimate, scope or gap-reference corrections, and 31 pending. Proposition 12.9 provides the unique global real analytic solution of the actual equation, original-domain graph and assigned real gap placement. The local implicit branch also has a literal retained-index interface. Strong lp compactness, contour-independent limits and pointwise uniqueness justify continuation; the implementation uses clopen solvability and multiplicity on the connected real source locus. The free value is zero. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          67
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-067.png": "ac235dc3df467632b872f0aebfccb8f850898f2a01dc4f7f1dfb11cf7fda6227"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4813,
+        "sha256": "ae59eedf774d4cbb994117e64553c7583ec9587a05c5f70af569f04cb98d7ac8"
+      },
+      "additional_instance_validation": {
+        "file": "work/Section12GlobalSolutionReviewDeclarationInventory.lean",
+        "session": 36117,
+        "exit": 0,
+        "exit_observed": true,
+        "assertion": "SimplyConnectedSpace (realTypeSourceSubmodule p) for every p with Fact (1 <= p).",
+        "mathlib_support": [
+          "Mathlib/Analysis/Convex/Contractible.lean",
+          "Mathlib/AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean"
+        ]
+      },
+      "full_gate": {
+        "session": 81988,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12GlobalSolutionFullCheck-1.log",
+        "log_sha256": "2dc606ba13cf6fa68ecceca1ff7d65f80a75f384f2fbbb53f4517e887c96c503"
+      },
+      "ordered_inventory_sha256": "eafac90ef99353db39401df756a656336873accb13e1c38397fddccbc2e703f4",
+      "source_record_sha256": "2b2acb9a86c30a51a0f5af514c31d5d464281b48cb9fa4f1a3972131f9ac07cb"
     }
   }
 }
