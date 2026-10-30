@@ -71978,3 +71978,43 @@ example {W V : Set (CoeffPair 4)}
   simpa only [Finset.mem_insert,Finset.mem_singleton,or_true,if_true] using h
 
 end Section12CompactExamples
+
+section Section12InjectivityExamples
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- A complex kernel direction vanishes on a non-Hilbert retained-index space.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_7Data ENNReal.ofReal_ne_top (by norm_num) W)
+    {discs : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V discs c)
+    (t : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)))
+    (htW : (t.1:CoeffPair (ENNReal.ofReal (3/2))) ∈ W)
+    (htΩ : t ∈ sourcePsiOriginalOmega V discs)
+    (h : DeletedIndexCoeff (ENNReal.ofReal (3/2)) (-2))
+    (hker : sourcePsiDeletedIndexRootJacobian ENNReal.ofReal_ne_top (by norm_num) (-2) t.1
+      (DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top (-2)
+        (Coeff.deleteCoordinateTo (-2) (RealCoeff.complexCLM _ t.2))) h = 0) : h = 0 := by
+  apply H.deletedIndexInjective hD t htW htΩ (-2)
+  simpa only [map_zero] using hker
+
+-- The actual derivative solves every retained-index right hand side uniquely.
+example {W V : Set (CoeffPair 4)}
+    (H : SourceCorollary12_8Data (by norm_num) (by norm_num) W)
+    {discs : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V discs c) (hV : IsOpen V)
+    (t : realTypeSourceSubmodule 4 × RealCoeff 4) (htW : (t.1:CoeffPair 4) ∈ W)
+    (htΩ : t ∈ sourcePsiOriginalOmega V discs) (b : DeletedIndexCoeff 4 (-2)) :
+    ∃! h : DeletedIndexCoeff 4 (-2),
+      sourcePsiDeletedIndexRootJacobian (by norm_num) (by norm_num) (-2) t.1
+        (DeletedCoeff.indexEquiv (p := 4) (by norm_num) (-2)
+          (Coeff.deleteCoordinateTo (-2) (RealCoeff.complexCLM 4 t.2))) h = b := by
+  obtain ⟨e,he⟩ := H.deletedIndexIsomorphism hD hV t htW htΩ (-2)
+  rw [← he]
+  refine ⟨e.symm b,e.apply_symm_apply b,?_⟩
+  intro h hh
+  exact e.injective (hh.trans (e.apply_symm_apply b).symm)
+
+end Section12InjectivityExamples

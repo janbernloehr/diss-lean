@@ -1,5 +1,25 @@
 # Source discrepancies
 
+## Lemma 12.7 proof, p.67: uniform radial estimate
+
+Use the cutoff |m|<=floor(nu/2) on the circle of radius pi*nu+pi/2.
+Its free denominators are at least pi*(nu+1)/2 and it has at most nu+1
+terms. For conjugate exponent q>1, their inverse q-norm is at most
+(2/pi)*(nu+1)^(1/q-1). The actual-root comparison has factor two.
+
+Consequently the absolute root-resolvent sum is bounded, on every
+sufficiently large whole circle, by
+
+    (8*C_p/pi)*norm(h-truncate(h)) + (4/pi)*norm(h)*(nu+1)^(1/q-1).
+
+Both terms tend to zero. This positive uniform bound replaces the
+printed signed-distance and finite-head estimates and preserves the
+interpolation conclusion. The exact sine identity and its factor 2
+remain unchanged. No optimality claim or new refutation is needed.
+
+See the [positive estimates](NLS/ZakharovShabat/SourcePsiRootResolventHeadTail.lean)
+and [ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Lemma 12.5 proof, p.66: the selected gap
 
 The mean-value point mu belongs to G_m. The concluding nonvanishing

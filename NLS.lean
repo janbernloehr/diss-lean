@@ -1541,6 +1541,7 @@ import NLS.ZakharovShabat.SourceGapInterpolationOuterCircles
 import NLS.ZakharovShabat.SourcePsiVariationCutoffFormula
 import NLS.ZakharovShabat.SourcePsiVariationCutoffResolvent
 import NLS.ZakharovShabat.SourcePsiRootResolventExterior
+import NLS.ZakharovShabat.SourcePsiRootResolventHeadTail
 import NLS.ZakharovShabat.SourcePsiFullProductResolventExterior
 import NLS.ZakharovShabat.SingleSpectralProductRatioExterior
 import NLS.ZakharovShabat.SourcePsiFullProductInterpolation
@@ -3614,6 +3615,7 @@ import NLS.SequenceSpaces.DeletedRealInverse
 import NLS.ZakharovShabat.SourcePsiOriginalRealEquation
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianInverse
 import NLS.ZakharovShabat.SourceCorollary12_8
+import NLS.ZakharovShabat.SourcePsiDeletedIndexInverse
 import NLS.ZakharovShabat.SourcePsiOriginalDeletedOmega
 import NLS.ZakharovShabat.SourcePsiOriginalRealRoot
 import NLS.ZakharovShabat.SourcePsiOriginalSolutionGap

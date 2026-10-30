@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Twenty-one match and four have scope or gap-reference corrections.
-Lemma 12.6 retains the original real-domain Jacobian, its invertible
-diagonal and compact off-diagonal remainder. The literal mixed row-power
-sum is finite. Retained-index interfaces expose the diagonal inverse
-and finite output cutoffs converging in operator norm. The remaining
-42 groups start with Lemma 12.7; earlier corrections retain their scope.
+Twenty-six match and five have estimate, scope or gap-reference corrections.
+Lemma 12.7 and Corollary 12.8 retain the original real-domain Jacobian and
+prove injectivity and continuous complex and real inverses. The explicit
+outer-circle bound tends uniformly to zero; the sine identity is unchanged.
+The remaining 36 groups start with Proposition 12.9; earlier corrections
+retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

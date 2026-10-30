@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first twenty-five of 67 ordered Section 12 groups are compared: twenty-one matched, four with scope or gap-reference corrections, and 42 pending. Lemma 12.6 retains the actual original-domain Jacobian as an invertible diagonal plus its compact off-diagonal remainder. The literal mixed row-power expression is summable, and finite output cutoffs converge in operator norm. Direct retained-index interfaces preserve the diagonal inverse and exact cutoff coordinates. Earlier contour, root-placement and selected-gap clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first thirty-one of 67 ordered Section 12 groups are compared: twenty-six matched, five with estimate, scope or gap-reference corrections, and 36 pending. Lemma 12.7 and Corollary 12.8 retain the actual original-domain Jacobian, prove its complex injectivity and identify continuous complex and real inverses. Direct retained-index interfaces preserve the actual derivative. The outer-circle estimate has explicit positive constants and a uniform radial head bound; both terms tend to zero. The exact sine identity is unchanged. Earlier contour, root-placement and selected-gap clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-twenty-five groups have the semantic comparisons below. Earlier named-theorem
+thirty-one groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -38,12 +38,12 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-023 | 66 | 5256–5261 | Lemma 12.6: invertible diagonal plus compact remainder. | matched |
 | S12-024 | 66 | 5264–5275 | Diagonal tail limit two, explicit inverse and off-diagonal matrix remainder. | matched |
 | S12-025 | 66 | 5277–5288 | Mixed row-sum estimate and finite-rank norm approximation proving compactness. | matched |
-| S12-026 | 66 | 5292–5292 | Lemma 12.7: injectivity of the deleted-space Jacobian. | pending |
-| S12-027 | 66 | 5295–5306 | Kernel derivative numerator is entire and has zero off-diagonal periods. | pending |
-| S12-028 | 66 | 5308–5318 | Real gap zeros and exterior-circle logarithmic derivative expansion. | pending |
-| S12-029 | 67 | 5325–5335 | Sine product identity for the entire interpolation numerator. | pending |
-| S12-030 | 67 | 5336–5350 | Exterior product asymptotic, Holder tail estimate, interpolation and vanishing of the kernel vector. | pending |
-| S12-031 | 67 | 5352–5356 | Corollary 12.8: Fredholm alternative gives a bounded linear isomorphism. | pending |
+| S12-026 | 66 | 5292–5292 | Lemma 12.7: injectivity of the deleted-space Jacobian. | matched |
+| S12-027 | 66 | 5295–5306 | Kernel derivative numerator is entire and has zero off-diagonal periods. | matched |
+| S12-028 | 66 | 5308–5318 | Real gap zeros and exterior-circle logarithmic derivative expansion. | matched |
+| S12-029 | 67 | 5325–5335 | Sine product identity for the entire interpolation numerator. | matched |
+| S12-030 | 67 | 5336–5350 | Exterior product asymptotic, Holder tail estimate, interpolation and vanishing of the kernel vector. | corrected |
+| S12-031 | 67 | 5352–5356 | Corollary 12.8: Fredholm alternative gives a bounded linear isomorphism. | matched |
 | S12-032 | 67 | 5358–5367 | Proposition 12.9: unique global real analytic solution and real gap placement. | pending |
 | S12-033 | 67 | 5370–5375 | Every admissible solution root lies in its assigned gap. | pending |
 | S12-034 | 67 | 5376–5380 | Local implicit solution and the continuation setup. | pending |
@@ -733,5 +733,133 @@ The five new proofs and two focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-026 through S12-031: injectivity, entire interpolation
-and the bounded inverse in Lemma 12.7 and Corollary 12.8.
+The next subsection compares injectivity and the bounded inverse.
+
+## Injectivity and the bounded inverse in Lemma 12.7 and Corollary 12.8
+
+### S12-026: Lemma 12.7: injectivity of the deleted-space Jacobian.
+
+- At every original real root-placement point and every omitted index, the actual bounded root Jacobian is injective for every finite exponent strictly above one. The same open connected source neighborhood and all preceding decomposition data are retained.
+- The proof covers complex kernel vectors: real matrix entries send their real and imaginary parts to zero separately; the real gap-zero argument then kills both parts.
+- The literal retained-index derivative is exactly conjugate to the original derivative by the deleted-index isometry. Its injectivity therefore preserves the full original root input before omission.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_7Data`
+- `NLS.ZakharovShabat.SourceLemma12_6Data.lemma12_7`
+- `NLS.ZakharovShabat.sourceLemma12_7`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRootJacobian_injective`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.deletedIndexInjective`
+
+The original-domain injectivity statement matches, with a direct interface on the literal retained-index space.
+
+### S12-027: Kernel derivative numerator is entire and has zero off-diagonal periods.
+
+- Joint analyticity of the actual entire candidate makes its root-direction derivative entire in the spectral parameter. It equals the derivative along the full coefficient line, with the omitted direction coordinate zero.
+- Every actual Jacobian row has its unconditional sum against a deleted coefficient vector. Differentiation of the original contour functional gives exactly the signed factor n-m times the contour integral of the entire variation divided by the canonical root.
+- A zero kernel output and m different from n cancel the nonzero signed factor. Thus the entire variation has zero period on every retained original contour.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiCandidateVariation`
+- `NLS.ZakharovShabat.analyticOnNhd_sourcePsiCandidateVariation`
+- `NLS.ZakharovShabat.sourcePsiCandidateVariation_eq_line_deriv`
+- `NLS.ZakharovShabat.hasSum_sourcePsiOriginalJacobianRow`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRootJacobian_apply_variation_contour`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalKernel_variation_contour_zero`
+
+The entire numerator and its zero-period identity match the displayed kernel equation, including its normalization.
+
+### S12-028: Real gap zeros and exterior-circle logarithmic derivative expansion.
+
+- For real source roots and a real direction, the entire variation is real on the real axis. The local-numerator form of Lemma 12.2 then supplies a zero in every retained real gap, including a collapsed gap. Its analyticity requirement holds because this numerator is entire.
+- Original isolating disks are disjoint. A finite-head radius and the common small tail disks give one cutoff after which every half-integer-radius circle avoids every original disk and every original root.
+- The logarithmic derivative identity is proved first for the literal finite product. Locally uniform convergence of the analytic coefficient-line products gives convergence of their derivatives. Absolute summability of the actual-root resolvent identifies its symmetric cutoff limit and yields the displayed infinite identity.
+- Real and imaginary kernel splitting supplies the real-direction hypothesis before using the gap-zero argument.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiCandidateVariation_im_eq_zero_of_real_data`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealKernel_gapZero`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalKernel_realImag`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.eventually_centralCircle_avoids_originalDiscs`
+- `NLS.ZakharovShabat.deriv_sourcePsiCandidate_cutoff_eq_mul_resolvent`
+- `NLS.ZakharovShabat.sourcePsiCandidateVariation_eq_mul_resolventLimit`
+- `NLS.ZakharovShabat.exists_threshold_sourcePsiCandidateVariation_resolvent_small`
+
+Gap zeros and the actual product-variation identity match; reality is justified before the gap argument.
+
+### S12-029: Sine product identity for the entire interpolation numerator.
+
+- The exact identity is f_n(z)*(sigma_n-z)/(2*sin(z)) equal to the relative product over all integer roots. The minus sign in the full free product -2*sin(z) cancels the candidate normalization.
+- Multiplying the actual root-resolvent identity by the omitted-root factor gives exactly the printed variation quotient. The omitted direction term is zero, so the full sum is the retained sum.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiCandidate_mul_omitted_div_sin`
+- `NLS.ZakharovShabat.sourcePsiVariation_div_sin_eq_resolvent_mul_product`
+
+The displayed sine identity matches without any sign or constant correction. Later individual-product asymptotics are a separate comparison.
+
+### S12-030: Exterior product asymptotic, Holder tail estimate, interpolation and vanishing of the kernel vector.
+
+- The relative product tends to one uniformly on the full expanding circles. A positive Holder split bounds the free resolvent by the coefficient tail norm plus the finite inverse-denominator q-power sum, where q is the finite conjugate exponent.
+- For the cutoff |m|<=floor(nu/2), every free denominator on the circle is at least pi*(nu+1)/2 and the number of terms is at most nu+1. The finite q-norm is therefore at most (2/pi)*(nu+1)^(1/q-1).
+- One exterior threshold gives the actual-root denominator comparison with factor two. With lattice separation pi/4, the actual absolute resolvent sum is at most (8*C_p/pi)*norm(h-truncate(h))+(4/pi)*norm(h)*(nu+1)^(1/q-1). Both terms tend to zero. The threshold is independent of the direction and cutoff, and the bound holds around each entire sufficiently large circle.
+- Gap sample displacements lie in lp by the endpoint displacement and gap-length majorants. Inserting the unused root is a finite coordinate change. Disjoint original disks make these interpolation roots distinct, giving an entire product with exactly those simple zeros.
+- The ratio of the two root products is bounded by four outside one threshold. Together with the arbitrarily small actual-root resolvent this bounds the interpolation quotient. Filling its simple common zeros gives an entire quotient; the maximum-modulus argument on expanding circles forces the numerator to vanish. Continuity removes the unused root factor.
+- At a retained simple original root the entire variation equals minus the direction coordinate times the nonzero spectral derivative. Its vanishing therefore recovers every coefficient, completing the real and then complex kernel argument.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.eventually_centralCircle_sourcePsiRelativeProduct_close`
+- `NLS.ZakharovShabat.norm_freeResolvent_le_head_tail`
+- `NLS.ZakharovShabat.exists_threshold_actualRootResolvent_head_tail`
+- `NLS.ZakharovShabat.centralCircle_halfCutoff_inversePower_le`
+- `NLS.ZakharovShabat.tendsto_halfCutoff_inversePower_bound`
+- `NLS.ZakharovShabat.eventually_centralCircle_actualRootResolvent_halfCutoff_bound`
+- `NLS.ZakharovShabat.tendsto_actualRootResolvent_halfCutoff_bound`
+- `NLS.ZakharovShabat.eventually_centralCircle_sourcePsiVariation_div_sin_small`
+- `NLS.ZakharovShabat.memℓp_sourcePeriodicSegment_samples_off_index`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.originalGapInterpolationProduct`
+- `NLS.ZakharovShabat.sourcePsi_interpolationNumerator_eq_zero_of_simpleGapZeros`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.originalVariation_zero_of_gapZeros`
+- `NLS.ZakharovShabat.sourcePsiCandidateVariation_at_retained_root`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalKernel_eq_zero`
+
+The printed signed-distance and finite-head estimates are replaced by the explicit uniform radial bound above. The product asymptotic, interpolation and injectivity conclusions are preserved. This is a positive correction; no new refutation is added.
+
+### S12-031: Corollary 12.8: Fredholm alternative gives a bounded linear isomorphism.
+
+- The original diagonal-plus-compact decomposition is reduced to D*(1-T), with T=-D inverse composed with the compact remainder. Injectivity excludes eigenvalue one; the compact-operator Fredholm alternative supplies surjectivity.
+- The Banach inverse theorem gives a continuous inverse to the actual complex Jacobian. Conjugation commutes with the real-entry operator and hence its inverse, so real inputs have real inverse images. Restriction gives a continuous real equivalence exactly equal to the actual real derivative, compatible with complex inclusion.
+- Conjugating the complex equivalence by the deleted-index isometry gives a continuous linear equivalence exactly equal to the derivative on the literal retained-index spaces. The source neighborhood, full real root input and original root-placement domain remain unchanged.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceCorollary12_8Data`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.corollary12_8`
+- `NLS.ZakharovShabat.sourceCorollary12_8`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.originalJacobian_bijective`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.originalJacobianEquiv`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.originalJacobianRealEquiv_toCLM`
+- `NLS.ZakharovShabat.SourceLemma12_7Data.originalJacobianRealEquiv_complex`
+- `NLS.ZakharovShabat.SourceCorollary12_8Data.deletedIndexIsomorphism`
+
+Both the real and complex isomorphisms match. The inverse bound is at each fixed source point and omitted index; no uniform-in-index bound is asserted.
+
+The [explicit circle estimates](../NLS/ZakharovShabat/SourcePsiRootResolventHeadTail.lean)
+give the positive uniform replacement and its zero limit.
+The [retained-index inverse](../NLS/ZakharovShabat/SourcePsiDeletedIndexInverse.lean)
+equals the actual derivative under the exact index equivalence.
+The [original injectivity theorem](../NLS/ZakharovShabat/SourceLemma12_7.lean)
+and [isomorphism](../NLS/ZakharovShabat/SourceCorollary12_8.lean) retain the source domain.
+This comparison records 70 inspected or reused module bodies and 42 resolved declarations.
+
+Full validation passed: 8,535 build jobs, 7,611 public examples and
+44,458 transitively audited NLS declarations, with 21 inherited warnings.
+The eight new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-032: Proposition 12.9 and the local implicit solutions.

@@ -1,6 +1,33 @@
 # Section 12: psi-functions
 
-## Ordered comparison: the compact decomposition in Lemma 12.6
+## Ordered comparison: injectivity and the bounded inverse
+
+Lemma 12.7 and Corollary 12.8 now have direct retained-index interfaces
+for injectivity and a continuous inverse equal to the actual root derivative.
+The source comparison covers the entire variation, gap zeros, interpolation,
+complex kernel splitting and the compatible real inverse.
+
+The outer-circle estimate uses explicit constants 8*C_p/pi and 4/pi.
+A moving half-radius cutoff gives a bound uniform around each entire circle;
+both its coefficient-tail and finite-head terms tend to zero. The exact
+sine identity retains its sign and factor. No new refutation is added.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) now has
+twenty-six matched groups, five with estimate, scope or gap-reference
+corrections and 36 pending.
+
+Full validation passed: 8,535 build jobs, 7,611 public examples and
+44,458 transitively audited NLS declarations, with 21 inherited warnings.
+The eight new proofs and two focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next is Proposition 12.9 and its local implicit solutions. Wider
+qualifications remain in the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous ordered milestone: the compact decomposition in Lemma 12.6
 
 Lemma 12.6 now exposes the literal mixed row-power summability of the
 actual off-diagonal Jacobian. On the retained-index spaces, the actual
