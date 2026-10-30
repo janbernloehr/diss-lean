@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: auxiliary products and spacing estimates
+## Current milestone: the contour proof of Lemma 12.4
+
+The proof of Lemma 12.4 now has direct interfaces for its exact raw
+contour formula, joint auxiliary-product analyticity and attained gap
+maximum. The latter keeps the factor 2*pi*c*C. The midpoint maximum is
+exactly half the gap norm, including complex and collapsed gaps.
+
+The literal-index equation is real for every real retained input, with
+no root-placement premise. The full original source domain, actual
+equation-index supremum sequence and common local lp bounds are retained.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+fourteen matched groups, three with corrected admissibility scope and 50 pending.
+
+Full validation passed: 8,527 build jobs, 7,604 public examples and
+44,423 transitively audited NLS declarations, with 21 inherited warnings.
+The seven new proofs and four focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are the original real domain, its actual Jacobian and the estimates
+of Lemma 12.5. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: auxiliary products and spacing estimates
 
 The auxiliary product formulas (2.24)–(2.26) now have direct public
 identities with their exact signs and constants. Cross multiplication

@@ -3579,6 +3579,10 @@ import NLS.ZakharovShabat.SourcePsiOriginalQuotientError
 import NLS.ZakharovShabat.SourcePsiOriginalRatioEstimate
 import NLS.ZakharovShabat.SourcePsiOriginalZetaAsymptotic
 import NLS.ZakharovShabat.SourcePsiAuxiliaryIdentities
+import NLS.ZakharovShabat.SourcePsiZetaContour
+import NLS.ZakharovShabat.SourcePsiZetaJointAnalytic
+import NLS.ZakharovShabat.SourcePsiGapMaximum
+import NLS.ZakharovShabat.SourcePsiDeletedIndexReal
 import NLS.ZakharovShabat.SourceEquation2_26
 import NLS.ZakharovShabat.SourcePsiOriginalEquationSup
 import NLS.SequenceSpaces.ThreeSequenceMajorant

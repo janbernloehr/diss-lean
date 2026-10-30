@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first thirteen of 67 ordered Section 12 groups are compared: ten matched, three with corrected admissibility scope, and 54 pending. Equations (2.24)–(2.26) retain their exact signs and constants. Root placement next to (2.24) is an explicit condition when needed; the literal product identities and Lemma 12.4 still allow arbitrary complex lp root inputs. The unused root can be chosen in its own disk, and one local bound works before all deleted indices. Lemmas 12.2–12.3 retain their contour-admissibility correction. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first seventeen of 67 ordered Section 12 groups are compared: fourteen matched, three with corrected admissibility scope, and 50 pending. The proof of Lemma 12.4 retains the exact signed contour formula (2.27), the attained gap maximum with raw factor 2*pi, full-domain joint analyticity, the actual equation-index supremum sequence and real values for arbitrary real retained inputs. The midpoint maximum equals half the gap norm, including complex and collapsed gaps. The earlier contour and root-placement clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-thirteen groups have the semantic comparisons below. Earlier named-theorem
+seventeen groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -26,10 +26,10 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-011 | 64 | 5080–5087 | Equation (2.25): auxiliary all-root product and relation to the deleted complementary product. | matched |
 | S12-012 | 64 | 5089–5095 | Root completion and locally uniform full-disk lp estimate for the auxiliary product. | matched |
 | S12-013 | 64 | 5097–5110 | Uniform inverse-spacing expansion and equation (2.26). | matched |
-| S12-014 | 65 | 5120–5127 | Equation (2.27): the selected-gap form of the scalar equation. | pending |
-| S12-015 | 65 | 5129–5139 | Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain. | pending |
-| S12-016 | 65 | 5140–5159 | Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity. | pending |
-| S12-017 | 65 | 5161–5171 | Reality of the scalar equation for real sources and root inputs. | pending |
+| S12-014 | 65 | 5120–5127 | Equation (2.27): the selected-gap form of the scalar equation. | matched |
+| S12-015 | 65 | 5129–5139 | Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain. | matched |
+| S12-016 | 65 | 5140–5159 | Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity. | matched |
+| S12-017 | 65 | 5161–5171 | Reality of the scalar equation for real sources and root inputs. | matched |
 | S12-018 | 65 | 5173–5187 | Original real domain Omega, admissible root placement and the bounded Jacobian matrix. | pending |
 | S12-019 | 65 | 5189–5200 | Lemma 12.5: real nonzero diagonals and uniform diagonal/off-diagonal asymptotics. | pending |
 | S12-020 | 65 | 5202–5218 | Derivative of the literal complementary product and off-diagonal contour formula. | pending |
@@ -434,5 +434,108 @@ The four new proofs and two focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-014 through S12-016: equation (2.27), full-domain
-coordinate analyticity and the actual equation-index supremum sequence.
+The next subsection compares the proof of Lemma 12.4.
+
+## Contour estimates, full-domain analyticity and real values
+
+### S12-014: Equation (2.27): the selected-gap form of the scalar equation.
+
+- The exact scalar equation equals the signed factor n-m times the raw circle integral of (sigma_m-lambda)/w_m times the literal double-omitted zeta. The normalization in the scalar definition cancels exactly; no extra 2*pi or imaginary factor remains.
+- The pointwise factorization holds on the original canonical-root domain without any restriction excluding numerator-root zeros. Integrating it over any admissible circle gives (2.27) for arbitrary lp root inputs.
+- A direct literal-index theorem identifies every retained coordinate of the actual source-first equation with that contour expression on every original period circle. The input is extended by zero through the exact deleted-space isometry.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_zeta_circleIntegral`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_eq_zeta_circleIntegral`
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral`
+- `NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply`
+
+The exact (2.27) formula matches on every original period circle, with the original signed n-m factor and no numerator-root avoidance hypothesis.
+
+### S12-015: Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain.
+
+- One local source neighborhood supports all original circles with fixed open collars; even each collar closure stays inside the original disk away from its moving gap. The standard root is jointly analytic there from the analytic symmetric spectral data and never vanishes outside its gap.
+- The new literal-zeta theorem is jointly analytic on the entire natural omitted-m domain for arbitrary complex source and root inputs. Locally choose the unused root at lambda0+1, express the quotient using an affine continuous linear filling map, and use independence of the unused coordinate. This covers numerator-root collisions without a real-type or root-placement restriction.
+- The canonical quotient integrand is jointly analytic on its full moving-gap complement. Compactness of a fixed circle provides a common parameter neighborhood for parametric integration, so every scalar coordinate is analytic at each complex parameter point.
+- Every original circle computes the same actual sequence coordinate. The local coordinate proofs therefore apply throughout the unchanged original source domain and every deleted lp root input.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures`
+- `NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk`
+- `NLS.ZakharovShabat.sourceStandardRoot_joint_analyticAt_of_symmetric`
+- `NLS.ZakharovShabat.sourceStandardRoot_ne_zero_off_segment`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_joint_analytic`
+- `NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_analyticOnNhd`
+- `NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic`
+
+Matched on the full original source-product domain. The new joint-zeta interface avoids the unnecessary real-type and placement restrictions of the older spectral-only regularity lemma; no printed assertion is refuted.
+
+### S12-016: Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity.
+
+- The new maximum theorem bounds the raw coordinate by 2*pi*c*C times the attained maximum of |sigma_m-lambda| on the actual complex gap. It uses the admissible original circle, an unused root filled inside its own disk, and a uniform single-quotient bound on the selected disk.
+- The maximum of the distance from the actual midpoint is exactly half the gap norm, attained at an endpoint even for a complex or collapsed gap. The root distance is then bounded by the input displacement, midpoint displacement and gap displacement sequences.
+- Compact single-coordinate replacement supplies one local quotient bound before all omitted indices. The positive sum of three coefficient-magnitude sequences gives a single lp majorant for all F_m^n at a common full root input, with deletion of n before evaluation.
+- The printed supremum over n different from m is constructed literally as an sSup, not replaced by separate norm bounds. Each supremum is nonnegative and bounded by the same coefficient majorant. Coordinate domination puts the resulting supremum sequence in lp with one locally bounded norm.
+- Local boundedness and scalar coordinate analyticity give an actual lp-valued Banach power series. The source-first literal-index equation retains the original W, all root inputs and the identical local bound chosen before every omitted index.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_bound_of_gap_bound`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_gap_maximum`
+- `NLS.ZakharovShabat.sourcePeriodicSegment_midpoint_maximum`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_coordinate_bound`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_commonMajorant`
+- `NLS.ZakharovShabat.sourcePsiOriginalEquationIndexSup`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalEquation_indexSup`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform`
+- `NLS.Coeff.exists_common_majorant_of_three`
+- `NLS.exists_coordinateNormSup`
+- `NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise`
+
+Matched with an explicit common ambient lp input when comparing different deleted spaces. Both the actual coordinatewise supremum and the gap maximum are retained; the raw contour normalization is 2*pi. The admissibility clarification in Lemma 12.3 remains in force.
+
+### S12-017: Reality of the scalar equation for real sources and root inputs.
+
+- For real-type sources, the standard root obeys Schwarz reflection off its real gap, hence is real on the real axis there. With real numerator roots, the single quotient has zero imaginary part on the real selected gap. The printed single auxiliary product is its negative, so its sign does not change this reality statement.
+- The source reciprocal formula is used only where its unused-root denominator is nonzero. The earlier positive root completion can choose that unused root in its own real disk. The actual equation reality proof covers all real lp root inputs by reflection of the original contour, with no blanket root-placement requirement.
+- The entire numerator commutes with conjugation, while the canonical root changes sign because its normalization contains 2i. Thus the integrand is anti-conjugate. Reflection reverses the orientation of the real-centered original circle, cancelling that sign and making the raw contour integral real. The real signed n-m factor preserves reality.
+- The new literal-index theorem transports this conclusion through zero extension and restriction. Every real retained input extends to real full coefficients, including zero at the omitted index. The actual source-first output coordinates therefore have zero imaginary part on the whole original real locus.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourceStandardRoot_conj_of_realType`
+- `NLS.ZakharovShabat.sourceSingleRootQuotientJointProduct_im_eq_zero_of_real_roots`
+- `NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product`
+- `NLS.ZakharovShabat.sourcePsiCandidate_conj_of_real_roots`
+- `NLS.ZakharovShabat.sourceCanonicalRoot_conj_of_realType`
+- `NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_conj_of_real_data`
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_im_eq_zero_of_realCenteredCircle`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_real`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real`
+- `NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj`
+
+Matched for arbitrary real retained lp inputs and every real-type source in the original W. The proof retains the source signs and raw contour normalization; no new root-placement restriction or refutation is introduced.
+
+The [literal contour formula](../NLS/ZakharovShabat/SourcePsiZetaContour.lean)
+and [joint auxiliary-product analyticity](../NLS/ZakharovShabat/SourcePsiZetaJointAnalytic.lean)
+retain arbitrary root inputs on the original source domain.
+The [attained gap maximum](../NLS/ZakharovShabat/SourcePsiGapMaximum.lean)
+keeps the exact raw contour normalization and half-gap midpoint bound.
+The [literal real-value theorem](../NLS/ZakharovShabat/SourcePsiDeletedIndexReal.lean)
+applies to every real retained input, without a placement premise.
+This comparison records 36 inspected or reused module bodies and 36 resolved declarations.
+
+Full validation passed: 8,527 build jobs, 7,604 public examples and
+44,423 transitively audited NLS declarations, with 21 inherited warnings.
+The seven new proofs and four focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-018 through S12-022: the original real domain,
+Jacobian matrix entries and the estimates of Lemma 12.5.

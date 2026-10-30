@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T14:30:27.817505+00:00",
-  "base_commit": "5c49990d0e7950a1e93efdf77c8fb1278ca3ad8d",
+  "published_utc": "2026-10-30T14:57:12.969409+00:00",
+  "base_commit": "4026315dd7a55322cdad63df4ede70c4db05c418",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 139,
-    "module_hash_checks": 2460,
-    "distinct_modules": 1491
+    "review_records": 140,
+    "module_hash_checks": 2496,
+    "distinct_modules": 1501
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "5c49990d0e7950a1e93efdf77c8fb1278ca3ad8d",
-    "validated_state": "Four auxiliary product and spacing proofs, two public examples and ordered comparison of equations (2.24)–(2.26). Full gate 84469 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
+    "base_commit": "4026315dd7a55322cdad63df4ede70c4db05c418",
+    "validated_state": "Seven contour, analytic, gap-maximum and real-value proofs, four public examples and ordered comparison of the proof of Lemma 12.4. Full gate 31521 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8523,
-    "public_examples": 7600,
-    "transitive_NLS_declarations": 44409,
+    "build_jobs": 8527,
+    "public_examples": 7604,
+    "transitive_NLS_declarations": 44423,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4800,
-      "sha256": "6cfb3b11e470326bd979dbf501f3579f3cb8dcea46bb1702bf1941f1c470f5ef"
+      "files": 4804,
+      "sha256": "09178f1304c0e5b0b8a58effe10117d06a5367ebb82583983ee0cd9137ab40cd"
     },
     "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
@@ -33831,6 +33831,267 @@
       },
       "ordered_inventory_sha256": "b701cd89f26cffa0b93e6bc8a44a443267797a0f6907c6615d6dfc440268eb8b",
       "source_record_sha256": "43a4f3542e491e12d034cc72b3f4844e04f9807544e3f22c454a8fd438d458f0"
+    },
+    "Section12EquationProofSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4026315dd7a55322cdad63df4ede70c4db05c418",
+      "updated_utc": "2026-10-30T14:57:12.969409+00:00",
+      "source_lines": [
+        [
+          5120,
+          5127
+        ],
+        [
+          5129,
+          5139
+        ],
+        [
+          5140,
+          5159
+        ],
+        [
+          5161,
+          5171
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-014",
+          "source_lines": [
+            5120,
+            5127
+          ],
+          "requirement": "Equation (2.27): the selected-gap form of the scalar equation.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_zeta_circleIntegral",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_eq_zeta_circleIntegral",
+            "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral",
+            "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply"
+          ],
+          "reviewed_claims": [
+            "The exact scalar equation equals the signed factor n-m times the raw circle integral of (sigma_m-lambda)/w_m times the literal double-omitted zeta. The normalization in the scalar definition cancels exactly; no extra 2*pi or imaginary factor remains.",
+            "The pointwise factorization holds on the original canonical-root domain without any restriction excluding numerator-root zeros. Integrating it over any admissible circle gives (2.27) for arbitrary lp root inputs.",
+            "A direct literal-index theorem identifies every retained coordinate of the actual source-first equation with that contour expression on every original period circle. The input is extended by zero through the exact deleted-space isometry."
+          ],
+          "qualification": "The exact (2.27) formula matches on every original period circle, with the original signed n-m factor and no numerator-root avoidance hypothesis."
+        },
+        {
+          "ordered_group": "S12-015",
+          "source_lines": [
+            5129,
+            5139
+          ],
+          "requirement": "Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+            "NLS.ZakharovShabat.sourceStandardRoot_joint_analyticAt_of_symmetric",
+            "NLS.ZakharovShabat.sourceStandardRoot_ne_zero_off_segment",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_joint_analytic",
+            "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_analyticOnNhd",
+            "NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic"
+          ],
+          "reviewed_claims": [
+            "One local source neighborhood supports all original circles with fixed open collars; even each collar closure stays inside the original disk away from its moving gap. The standard root is jointly analytic there from the analytic symmetric spectral data and never vanishes outside its gap.",
+            "The new literal-zeta theorem is jointly analytic on the entire natural omitted-m domain for arbitrary complex source and root inputs. Locally choose the unused root at lambda0+1, express the quotient using an affine continuous linear filling map, and use independence of the unused coordinate. This covers numerator-root collisions without a real-type or root-placement restriction.",
+            "The canonical quotient integrand is jointly analytic on its full moving-gap complement. Compactness of a fixed circle provides a common parameter neighborhood for parametric integration, so every scalar coordinate is analytic at each complex parameter point.",
+            "Every original circle computes the same actual sequence coordinate. The local coordinate proofs therefore apply throughout the unchanged original source domain and every deleted lp root input."
+          ],
+          "qualification": "Matched on the full original source-product domain. The new joint-zeta interface avoids the unnecessary real-type and placement restrictions of the older spectral-only regularity lemma; no printed assertion is refuted."
+        },
+        {
+          "ordered_group": "S12-016",
+          "source_lines": [
+            5140,
+            5159
+          ],
+          "requirement": "Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_bound_of_gap_bound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_gap_maximum",
+            "NLS.ZakharovShabat.sourcePeriodicSegment_midpoint_maximum",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_coordinate_bound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_commonMajorant",
+            "NLS.ZakharovShabat.sourcePsiOriginalEquationIndexSup",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.originalEquation_indexSup",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform",
+            "NLS.Coeff.exists_common_majorant_of_three",
+            "NLS.exists_coordinateNormSup",
+            "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise"
+          ],
+          "reviewed_claims": [
+            "The new maximum theorem bounds the raw coordinate by 2*pi*c*C times the attained maximum of |sigma_m-lambda| on the actual complex gap. It uses the admissible original circle, an unused root filled inside its own disk, and a uniform single-quotient bound on the selected disk.",
+            "The maximum of the distance from the actual midpoint is exactly half the gap norm, attained at an endpoint even for a complex or collapsed gap. The root distance is then bounded by the input displacement, midpoint displacement and gap displacement sequences.",
+            "Compact single-coordinate replacement supplies one local quotient bound before all omitted indices. The positive sum of three coefficient-magnitude sequences gives a single lp majorant for all F_m^n at a common full root input, with deletion of n before evaluation.",
+            "The printed supremum over n different from m is constructed literally as an sSup, not replaced by separate norm bounds. Each supremum is nonnegative and bounded by the same coefficient majorant. Coordinate domination puts the resulting supremum sequence in lp with one locally bounded norm.",
+            "Local boundedness and scalar coordinate analyticity give an actual lp-valued Banach power series. The source-first literal-index equation retains the original W, all root inputs and the identical local bound chosen before every omitted index."
+          ],
+          "qualification": "Matched with an explicit common ambient lp input when comparing different deleted spaces. Both the actual coordinatewise supremum and the gap maximum are retained; the raw contour normalization is 2*pi. The admissibility clarification in Lemma 12.3 remains in force."
+        },
+        {
+          "ordered_group": "S12-017",
+          "source_lines": [
+            5161,
+            5171
+          ],
+          "requirement": "Reality of the scalar equation for real sources and root inputs.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceStandardRoot_conj_of_realType",
+            "NLS.ZakharovShabat.sourceSingleRootQuotientJointProduct_im_eq_zero_of_real_roots",
+            "NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product",
+            "NLS.ZakharovShabat.sourcePsiCandidate_conj_of_real_roots",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_conj_of_realType",
+            "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_conj_of_real_data",
+            "NLS.ZakharovShabat.sourcePsiEquationCoordinate_im_eq_zero_of_realCenteredCircle",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_real",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real",
+            "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj"
+          ],
+          "reviewed_claims": [
+            "For real-type sources, the standard root obeys Schwarz reflection off its real gap, hence is real on the real axis there. With real numerator roots, the single quotient has zero imaginary part on the real selected gap. The printed single auxiliary product is its negative, so its sign does not change this reality statement.",
+            "The source reciprocal formula is used only where its unused-root denominator is nonzero. The earlier positive root completion can choose that unused root in its own real disk. The actual equation reality proof covers all real lp root inputs by reflection of the original contour, with no blanket root-placement requirement.",
+            "The entire numerator commutes with conjugation, while the canonical root changes sign because its normalization contains 2i. Thus the integrand is anti-conjugate. Reflection reverses the orientation of the real-centered original circle, cancelling that sign and making the raw contour integral real. The real signed n-m factor preserves reality.",
+            "The new literal-index theorem transports this conclusion through zero extension and restriction. Every real retained input extends to real full coefficients, including zero at the omitted index. The actual source-first output coordinates therefore have zero imaginary part on the whole original real locus."
+          ],
+          "qualification": "Matched for arbitrary real retained lp inputs and every real-type source in the original W. The proof retains the source signs and raw contour normalization; no new root-placement restriction or refutation is introduced."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound.lean": "ce5876e8af216e1dc8e7d2dda5ad7ea8de83fb9d22de86a1dfe1466483504bc9",
+        "NLS/ZakharovShabat/SourcePsiOriginalSequenceBound.lean": "17ae291d01851af2c2776780f110786113c551d1bcd50323ab418b6a87410e37",
+        "NLS/ZakharovShabat/SourcePsiOriginalZetaRegular.lean": "9d0728dde29800e6b4e83a9f5f4c8681e37be9d7ad462bfb142c9e1c814ce096",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquationSup.lean": "e36dee6cd413bed3f87c45234f8f9cf28a3b43cc278248617162bbf55d5b6a6f",
+        "NLS/SequenceSpaces/DeletedCoordinate.lean": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632",
+        "NLS/SequenceSpaces/ThreeSequenceMajorant.lean": "b85b06ed6817ecdbf0c2823c01697cdcc93725242dd8b8aaab0ad2352f2de139",
+        "NLS/SequenceSpaces/CoordinateNormSup.lean": "53911143b9e544e72e403140b29c82ef369ed1f9646c723f7162894d3026ba6e",
+        "NLS/SequenceSpaces/SandwichMajorant.lean": "921ef1515ecd8d06b6116ec8937f1ef28fa5999cd904fe7e5b9c9e545b16c541",
+        "NLS/ZakharovShabat/SourceActionContourCollarClosure.lean": "b2d2b3161c01abeb97f11ad863ff6ade0bb45bfd85c5b586f44b0a086855d969",
+        "NLS/ZakharovShabat/SourcePsiComplexContourAnalytic.lean": "cd623d404fdc067739569a739bcc85fb151f3b3eb3b988453ed8d4d6e688e2c6",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquation.lean": "023b617909d062d071f0b8ca9dac94f468749961418f99612b564d1d9b25992b",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquationAnalytic.lean": "c7b3f054fdff730a99ecc72deda230075ef38adcc4c70838a3b9292a591d6783",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean": "d3cc9cf08f3aa4ff329169e37e21b9bcc4762afeb7bf9abb4694f06f3c4c9fa6",
+        "NLS/ZakharovShabat/SourceStandardRootJointAnalytic.lean": "1d141e9a1faac921bf10cb6bacf08cf63c6aaea1dad9dcad35fad833eb7280a1",
+        "NLS/ZakharovShabat/SourceStandardRootContourBasic.lean": "968084c96c42914b30fc955c312983ff20beb395066c1321d157d6117c80e512",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean": "d92a53a2ed4b3299577f9eafe276df92cb9e5898ce9606e32b40a705bc6ea1e4",
+        "NLS/ZakharovShabat/SourcePsiContourAnalytic.lean": "417c337345525907491c35a1c09f0ed23c8e6b37a515d02dba74cc1faf658d1c",
+        "NLS/ZakharovShabat/SourceLemma12_3.lean": "6ba37076ffe3d9d06bfdf91b4ed26a9a4d4dfb7612dd63c6e4ac11ba31c3adb7",
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab",
+        "NLS/SequenceSpaces/BoundedCoordinateTaylorAssembly.lean": "a78c105e3e0d02aa044ae6f3dca69736bbc71df1849e42d9edbe699d46ac0dee",
+        "NLS/SequenceSpaces/BoundedCoordinateTaylor.lean": "7337be3a5a5f9421c9d0eacdeb849c80e43ae6c1032c99fb2950389e3596ce31",
+        "NLS/ComplexAnalysis/BanachTaylorBoundsOn.lean": "be38ee3a9dee070ff8d51bfe22c9623836a8005cb4edb0454b59abe520f8d5e6",
+        "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean": "94753c776853f3fe675c4e496250d13db8b692edad5620ffdb33093e6d3c75cf",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean": "cedfb323a53f4a1197aa0d9e4faa2980d4be93cbd1f66d50b5052d945e162714",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexAnalytic.lean": "6eb00b0ce80c3336b277057d06f0bd315d9838a26c3cf67c3d646ace78206f26",
+        "NLS/ZakharovShabat/SourceLemma12_4.lean": "ebe1aeff869525a6cccffa7b1bd4fb305b3b09d4d0ee2155bbde5ead6002931d",
+        "NLS/ZakharovShabat/SourcePsiContourConjugation.lean": "64631797c060f528067890dca73cec89c58bc7c15d251cfb97710f8664fe869f",
+        "NLS/ZakharovShabat/SourcePsiRealGapQuotient.lean": "a9a5f40226c5c55b4463f5ee18bd6db9864844a2ef8c3da66c137ca031a786dd",
+        "NLS/ComplexAnalysis/RealCircleIntegralReflection.lean": "ddbf6f6c2a440e9515b6eb5a0209dd388db7bb18ad6c91ec1cb405c7b7872b0a",
+        "NLS/ZakharovShabat/SourceStandardRootConjugation.lean": "8c9b2d8e0f5549a92dd467557fdc4ccc6f28e26ae0c4094276903730f6bc2e4d",
+        "NLS/ZakharovShabat/SourcePsiZetaContour.lean": "2e5f9af0c6f3201298d2b89db46cd736abc94462a8c94efb410b870b77fd4ac0",
+        "NLS/ZakharovShabat/SourcePsiZetaJointAnalytic.lean": "073b52646af7367fe96f3afce3cfa3f168c33d8363733ac5a41f2e96ba4fa294",
+        "NLS/ZakharovShabat/SourcePsiGapMaximum.lean": "ee935e2244c25a6d0bf5a7796bc8f9a611b77a83c97db5a65315477580c2c7a7",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexReal.lean": "d89a8d35f226265c3ca857068510574e003a79fb9847b7a487ffed978507e17c",
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "file": "work/Section12EquationAnalyticSourceComparison-2026-10-30.json",
+        "sha256": "ac7019a9ea0232c300d1464ded62bbe7643cabf92f65044d63e5cb8c901a76f0",
+        "modules": [
+          "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean",
+          "NLS/SequenceSpaces/BoundedCoordinateTaylorAssembly.lean",
+          "NLS/SequenceSpaces/BoundedCoordinateTaylor.lean",
+          "NLS/ComplexAnalysis/BanachTaylorBoundsOn.lean",
+          "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean",
+          "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean",
+          "NLS/ZakharovShabat/SourcePsiDeletedIndexAnalytic.lean",
+          "NLS/ZakharovShabat/SourceLemma12_4.lean"
+        ]
+      },
+      "reused_auxiliary_comparison": {
+        "file": "work/Section12AuxiliaryProductsSourceComparison-2026-10-30.json",
+        "sha256": "43a4f3542e491e12d034cc72b3f4844e04f9807544e3f22c454a8fd438d458f0",
+        "modules": [
+          "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean"
+        ]
+      },
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise",
+        "NLS.Coeff.exists_common_majorant_of_three",
+        "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_commonMajorant",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_coordinate_bound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_real",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_bound_of_gap_bound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.original_coordinate_gap_maximum",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.zeta_joint_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_eq_zeta_circleIntegral",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.originalEquation_indexSup",
+        "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures",
+        "NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_conj_of_realType",
+        "NLS.ZakharovShabat.sourcePeriodicSegment_midpoint_maximum",
+        "NLS.ZakharovShabat.sourcePsiCandidate_conj_of_real_roots",
+        "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_analyticOnNhd",
+        "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_conj_of_real_data",
+        "NLS.ZakharovShabat.sourcePsiContourIntegrandJoint_eq_zeta",
+        "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral",
+        "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_zeta_circleIntegral",
+        "NLS.ZakharovShabat.sourcePsiEquationCoordinate_im_eq_zero_of_realCenteredCircle",
+        "NLS.ZakharovShabat.sourcePsiOriginalEquationIndexSup",
+        "NLS.ZakharovShabat.sourcePsi_zetaSingle_eq_product",
+        "NLS.ZakharovShabat.sourceSingleRootQuotientJointProduct_im_eq_zero_of_real_roots",
+        "NLS.ZakharovShabat.sourceStandardRoot_conj_of_realType",
+        "NLS.ZakharovShabat.sourceStandardRoot_joint_analyticAt_of_symmetric",
+        "NLS.ZakharovShabat.sourceStandardRoot_ne_zero_off_segment",
+        "NLS.exists_coordinateNormSup"
+      ],
+      "declaration_inventory_count": 44423,
+      "qualification": "The first seventeen of 67 ordered Section 12 groups are compared: fourteen matched, three with corrected admissibility scope, and 50 pending. The proof of Lemma 12.4 retains the exact signed contour formula (2.27), the attained gap maximum with raw factor 2*pi, full-domain joint analyticity, the actual equation-index supremum sequence and real values for arbitrary real retained inputs. The midpoint maximum equals half the gap norm, including complex and collapsed gaps. The earlier contour and root-placement clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          65
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-065.png": "ebc6afa86c7fdb93c53372569f465ad6600d45710e7969b11de8d541209761fa"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4804,
+        "sha256": "09178f1304c0e5b0b8a58effe10117d06a5367ebb82583983ee0cd9137ab40cd"
+      },
+      "full_gate": {
+        "session": 31521,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12EquationProofFullCheck-1.log",
+        "log_sha256": "2559a2e19c4c6b4f79fb8715c745716df0f46c2352122140bc2dd376c2009e1d"
+      },
+      "ordered_inventory_sha256": "31ad6b20710c795e3662e4aa964c278cdd8413528f82bcdeeb58217042b2da2f",
+      "source_record_sha256": "fb5e39f22d4e25af74d13e2101dba9ba1609fdc02e21cf7df38feb663b1756f2"
     }
   }
 }

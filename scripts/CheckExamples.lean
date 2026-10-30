@@ -71833,3 +71833,70 @@ example (ψ : CoeffPair (ENNReal.ofReal (3/2)))
   exact (mul_eq_zero.mp h.symm).resolve_left Complex.I_ne_zero
 
 end Section12AuxiliaryProductExamples
+
+section Section12EquationProofExamples
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The literal zeta remains jointly analytic at a collision with the unused numerator root.
+example {W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceCorollary10_6Data ENNReal.ofReal_ne_top (by norm_num) W)
+    (a : Coeff (ENNReal.ofReal (3/2))) (ψ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hψ : ψ ∈ W)
+    (hz : displacedRoots a (-2) ∈ sourceStandardRootOmittedDomain ENNReal.ofReal_ne_top
+      (by norm_num) ψ 3) :
+    AnalyticAt ℂ
+      (fun q : ℂ × (Coeff (ENNReal.ofReal (3/2)) × CoeffPair (ENNReal.ofReal (3/2))) =>
+        sourcePsiZeta ENNReal.ofReal_ne_top (by norm_num) (-2) 3 q.2.1 q.2.2 q.1)
+      (displacedRoots a (-2),(a,ψ)) :=
+  H.zeta_joint_analytic (-2) 3 (by decide) _ ⟨hψ,hz⟩
+
+-- The literal selected-gap formula preserves the negative raw index factor.
+example (a : Coeff 4) (ψ : CoeffPair 4) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain (by norm_num) (by norm_num) ψ) :
+    sourcePsiEquationCoordinate (by norm_num) (by norm_num) (-2) 3 a ψ c R =
+      (-5:ℂ) * (∮ z in C(c,R),
+        ((displacedRoots a 3-z)/sourceStandardRoot (by norm_num) (by norm_num) ψ 3 z) *
+          sourcePsiZeta (by norm_num) (by norm_num) (-2) 3 a ψ z) := by
+  have h := sourcePsiEquationCoordinate_eq_zeta_circleIntegral
+    (p := 4) (by norm_num) (by norm_num) (-2) 3 (by decide) a ψ c R hR hcircle
+  norm_num at h ⊢
+  exact h
+
+-- The attained midpoint maximum is zero on a collapsed complex gap.
+example (ψ : CoeffPair 4)
+    (hgap : sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ (-3) = 0) :
+    ∃ z ∈ sourcePeriodicSegment (by norm_num) (by norm_num) ψ (-3),
+      IsMaxOn (fun w => ‖sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ (-3)-w‖)
+        (sourcePeriodicSegment (by norm_num) (by norm_num) ψ (-3)) z ∧
+      ‖sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ (-3)-z‖ = 0 := by
+  obtain ⟨z,hz,hm,he⟩ := sourcePeriodicSegment_midpoint_maximum
+    (p := 4) (by norm_num) (by norm_num) ψ (-3)
+  exact ⟨z,hz,hm,by simpa only [hgap,norm_zero,zero_div] using he⟩
+
+end Section12EquationProofExamples
+
+section Section12RealityExamples
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- A real retained coefficient can be arbitrary in size; no disk-placement premise is needed.
+example {W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_4Data ENNReal.ofReal_ne_top (by norm_num) W)
+    (ψ : CoeffPair (ENNReal.ofReal (3/2))) (hψ : ψ ∈ W)
+    (hreal : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) ψ)) (c : ℝ) :
+    (sourcePsiDeletedIndexEquation ENNReal.ofReal_ne_top (by norm_num) (-2) ψ
+      (lp.single (ENNReal.ofReal (3/2)) (⟨3,by decide⟩ : {m : ℤ // m ≠ -2}) (c:ℂ))
+        ⟨3,by decide⟩).im = 0 := by
+  apply H.deletedIndexEquation_real ψ hψ hreal (-2) _ ?_
+  intro k
+  by_cases hk : k = (⟨3,by decide⟩ : {m : ℤ // m ≠ -2})
+  · subst k
+    simp
+  · rw [lp.single_apply_ne _ _ _ hk]
+    rfl
+
+end Section12RealityExamples

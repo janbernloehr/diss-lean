@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [auxiliary product identities](NLS/ZakharovShabat/SourcePsiAuxiliaryIdentities.lean)
-and uniform spacing bounds prove the exact factors in (2.24)–(2.26).
-The [Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) has ten matched groups,
-three with corrected admissibility scope and 54 pending. Root placement is
-explicit where needed; the product identities retain arbitrary lp inputs.
-Next is equation (2.27); wider qualifications remain in the
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [contour proof of Lemma 12.4](coverage/SECTION_12_ASSERTIONS.md)
+now has exact gap maxima, full-domain joint analyticity and real-valued
+literal-index equations, retaining all signs and constants. The ordered
+ledger has fourteen matched groups, three with corrected admissibility
+scope and 50 pending. Next is Lemma 12.5; wider qualifications remain in
+the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

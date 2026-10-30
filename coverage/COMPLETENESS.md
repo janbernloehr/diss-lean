@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Ten match and three have corrected admissibility scope. The auxiliary
-product formulas and uniform spacing estimates retain their exact signs
-and constants. Root placement next to (2.24) is explicit when used, while
-the literal product identities and Lemma 12.4 allow arbitrary lp inputs.
-The remaining 54 groups start with equation (2.27); earlier focused
-comparisons and wider qualifications retain their scope.
+Fourteen match and three have corrected admissibility scope. The proof
+of Lemma 12.4 retains the exact raw contour formula and attained gap
+maximum, full-domain analyticity, the actual equation-index supremum
+and real values for arbitrary real retained inputs. The midpoint maximum
+is exactly half the gap norm. The remaining 50 groups start with the
+original Jacobian and Lemma 12.5; earlier corrections retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
