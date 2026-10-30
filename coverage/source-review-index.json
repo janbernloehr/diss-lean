@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T21:14:18.574470+00:00",
-  "base_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
+  "published_utc": "2026-10-30T21:27:47.422820+00:00",
+  "base_commit": "3275ef061c0d7c58b21185f4e5c95a498da7ed78",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 156,
-    "module_hash_checks": 3370,
-    "distinct_modules": 1842
+    "review_records": 157,
+    "module_hash_checks": 3422,
+    "distinct_modules": 1853
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
-    "validated_state": "Documentation-only ordered Section17 comparison: 31 groups classified with explicit corrections and the external 2014 comparison retained. Lean sources and dependency locks are unchanged; successful full gate 6799 is reused, not rerun.",
+    "base_commit": "3275ef061c0d7c58b21185f4e5c95a498da7ed78",
+    "validated_state": "Documentation-only ordered Section18 comparison: 39 groups classified with direct corrections, exact domains and original solution meaning. Lean sources and dependency locks are unchanged; successful full gate 6799 is reused, not rerun.",
     "command": "./scripts/check.sh",
     "build_jobs": 8559,
     "public_examples": 7635,
@@ -41247,6 +41247,1227 @@
         "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
       },
       "source_record_sha256": "bb568c2dcb77453e3f9a9c5c3b43b1418411ebaea06ee1b1a2a37cb17a5fa4bf"
+    },
+    "Section18OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3275ef061c0d7c58b21185f4e5c95a498da7ed78",
+      "updated_utc": "2026-10-30T21:27:47.422820+00:00",
+      "source_lines": [
+        [
+          6643,
+          6653
+        ],
+        [
+          6655,
+          6659
+        ],
+        [
+          6662,
+          6670
+        ],
+        [
+          6671,
+          6678
+        ],
+        [
+          6680,
+          6682
+        ],
+        [
+          6684,
+          6687
+        ],
+        [
+          6697,
+          6699
+        ],
+        [
+          6701,
+          6707
+        ],
+        [
+          6710,
+          6715
+        ],
+        [
+          6717,
+          6722
+        ],
+        [
+          6725,
+          6735
+        ],
+        [
+          6737,
+          6756
+        ],
+        [
+          6759,
+          6763
+        ],
+        [
+          6765,
+          6767
+        ],
+        [
+          6769,
+          6769
+        ],
+        [
+          6771,
+          6771
+        ],
+        [
+          6773,
+          6773
+        ],
+        [
+          6776,
+          6785
+        ],
+        [
+          6796,
+          6797
+        ],
+        [
+          6799,
+          6811
+        ],
+        [
+          6814,
+          6819
+        ],
+        [
+          6822,
+          6830
+        ],
+        [
+          6831,
+          6838
+        ],
+        [
+          6841,
+          6851
+        ],
+        [
+          6853,
+          6856
+        ],
+        [
+          6858,
+          6863
+        ],
+        [
+          6873,
+          6879
+        ],
+        [
+          6882,
+          6883
+        ],
+        [
+          6885,
+          6894
+        ],
+        [
+          6896,
+          6905
+        ],
+        [
+          6908,
+          6909
+        ],
+        [
+          6911,
+          6912
+        ],
+        [
+          6914,
+          6915
+        ],
+        [
+          6917,
+          6919
+        ],
+        [
+          6921,
+          6926
+        ],
+        [
+          6929,
+          6938
+        ],
+        [
+          6948,
+          6953
+        ],
+        [
+          6954,
+          6965
+        ],
+        [
+          6966,
+          6974
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S18-001",
+          "source_lines": [
+            6643,
+            6653
+          ],
+          "requirement": "Hamiltonian integral and complex NLS system (4.1).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The period-one H1 energy equals the literal integral of the kinetic and quartic terms. On smooth periodic complex pairs, its two directional derivatives are integration against the actual variational gradients.",
+            "The cross-component Hamiltonian field is (-i times the second gradient, +i times the first gradient), giving the matrix convention in (4.1)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+            "NLS.ZakharovShabat.classicalNLSVectorField"
+          ],
+          "qualification": "The integral energy is defined on H1; pointwise Hamiltonian PDE identities use smooth periodic fields. No pointwise derivative is asserted for arbitrary L2 data.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-002",
+          "source_lines": [
+            6655,
+            6659
+          ],
+          "requirement": "Real-type scalar dNLS equation (4.2).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The Hamiltonian field preserves the conjugate-pair real form. Multiplication of its first component by i gives -u_xx + 2|u|^2 u."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSVectorField_real",
+            "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+            "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt"
+          ],
+          "qualification": "The subsequent rough solutions use the explicit smooth-approximation definition, rather than imposing a classical PDE on distributions.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-003",
+          "source_lines": [
+            6662,
+            6670
+          ],
+          "requirement": "Sobolev canonical analytic Birkhoff diffeomorphism and weighted actions.",
+          "ordered_status": "partial",
+          "status": "partial",
+          "reviewed_claims": [
+            "The actual weighted Birkhoff map has a global real analytic inverse at every nonnegative real Sobolev order in the range 1<p<=2, hence at p=2 and every printed integer order.",
+            "Canonical brackets retain the physical factor -i and the rectangular sign convention. Weighted spectral actions are summable at every positive integer Sobolev order; the Hilbert case supplies summable actions at order zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph_analytic",
+            "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_canonical",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_on_Hm",
+            "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.real_actions_mem"
+          ],
+          "qualification": "The mathematics is proved internally. Identification with the exact cited 2014 construction [23] remains qualified as in S17-007; inspecting the earlier 2013 manuscript does not close that external comparison.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-004",
+          "source_lines": [
+            6671,
+            6678
+          ],
+          "requirement": "Full Hamiltonian analyticity, action dependence and Taylor expansion.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The physical energy is analytic on the full complex H1 pair space and is recovered by the same action-only Hamiltonian on every real H1 source.",
+            "In the standard weighted ell^(2,1) action norm, H equals the weighted linear sum plus 2(sum I)^2 minus sum I_n^2, with one uniform cubic remainder bound near zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticAt_periodOneSobolevHamiltonian",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_expansion_bound"
+          ],
+          "qualification": "The bound includes complex infinite-support inputs in one ball. The attribution to [51] is historical; this comparison checks the internal expansion, not that external proof.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-005",
+          "source_lines": [
+            6680,
+            6682
+          ],
+          "requirement": "Full Hamiltonian origin derivatives with the mass correction.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "At zero the full energy frequency is (2 pi n)^2. Restoring the mass term gives the full Hessian 4-2 delta_nm.",
+            "The Hessian -2 delta_nm belongs to H*, whose gradient is the renormalized nonlinear frequency."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.map_zero",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.restored_frequency_derivative",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.hessian_zero"
+          ],
+          "qualification": "Use the positive corrected derivative formula directly. Historical refutation proofs are unchanged and no new one is added.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-006",
+          "source_lines": [
+            6684,
+            6687
+          ],
+          "requirement": "Frequency Taylor expansion (4.3).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Literal coordinate derivatives of the full Hamiltonian equal dispersion + 4 sum I - 2 I_n + R_n.",
+            "A single Hilbert remainder sequence satisfies ||R||<=C||I||^2 in the standard weighted action norm, with radius and constant chosen before the action and spectral index."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_frequency_expansion_bound"
+          ],
+          "qualification": "This is the uniform sequence form of (4.3), retaining the corrected full-Hessian mass term.",
+          "printed_page": 83
+        },
+        {
+          "ordered_group": "S18-007",
+          "source_lines": [
+            6697,
+            6699
+          ],
+          "requirement": "Rectangular Birkhoff equations and rotation signs.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Every global ordinary solution in the original approximation class has rectangular coordinates satisfying xdot_n=-omega_n y_n and ydot_n=omega_n x_n.",
+            "These frequencies remain constant along that same solution."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved"
+          ],
+          "qualification": "The source overview is in the Hilbert/Sobolev range, contained in the proved 1<p<=2 range. The physical Hamiltonian time orientation is used.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-008",
+          "source_lines": [
+            6701,
+            6707
+          ],
+          "requirement": "Renormalized nonlinear frequency normalization.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The full action derivative restores exactly 4 times total action and the free dispersion to the same retained frequency F.",
+            "On actual real finite-gap potentials, the original action map recovers the independently constructed physical frequency with those terms subtracted."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.physical_finiteGap",
+            "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.physical_finiteGap"
+          ],
+          "qualification": "The finite-gap physical normalization and the action-space derivative identity have their separate stated domains.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-009",
+          "source_lines": [
+            6710,
+            6715
+          ],
+          "requirement": "Hamiltonian H* including the weighted linear subtraction.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "H* equals physical H minus 2 mass squared minus the literal absolutely convergent weighted action series on every real H1 source.",
+            "On the common connected action domain, the retained original frequency is exactly the gradient of this same H*."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.physical_identity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.gradient_eq"
+          ],
+          "qualification": "Both subtractions are retained. H-2mass^2 alone is the renormalized PDE Hamiltonian Hr.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-010",
+          "source_lines": [
+            6717,
+            6722
+          ],
+          "requirement": "Renormalized frequency expansion at zero.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The same frequency vanishes at zero, has derivative -2Id, and has a quadratic remainder in the full action norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.map_zero",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.derivative_zero",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.action_quadratic_remainder_bound"
+          ],
+          "qualification": "For every finite p>2 the action exponent is p/2; the neighborhood and bound are uniform over all coordinates.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-011",
+          "source_lines": [
+            6725,
+            6735
+          ],
+          "requirement": "Original action-image domain and analytic neighborhood.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The action domain is open and connected, contains all original real-source actions and the entire nonnegative summable cone, and is an actual action image.",
+            "More precisely U is the image of an open source neighborhood Y containing the real locus with Y contained in the original complex domain V."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.exists_connected_action_image",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.source_image",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.positive_actions_mem"
+          ],
+          "qualification": "The justified image statement uses a restricted source neighborhood. It does not identify U with the image of the entire previously chosen V. The stronger target realizations below imply the prior weaker weighted-frequency regularity.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-012",
+          "source_lines": [
+            6737,
+            6756
+          ],
+          "requirement": "Theorem 18.1: one frequency, all target exponents and mixed remainder.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "One original Hilbert frequency has real and complex analytic realizations into every ell^r target with r>1, including infinity, on the same action domain.",
+            "For each finite p>2 an original family gives one analytic F on ell^(p/2) extending those nonnegative summable-action values. Its correction F+2I has one locally uniform ell^(p/3)+ell^(1+) decomposition chosen before all projection exponents."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection18_original_frequencies",
+            "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations_all",
+            "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.memℓp_all",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.eq_hilbert_on_positive",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.refined",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.mixed",
+            "NLS.ZakharovShabat.exists_sourceFrequency_actionSpace_asymptotic"
+          ],
+          "qualification": "The literal p/3 component is retained when it is below one. Infinity is a frequency target, not an extension to all bounded action inputs. The domain has the restriction stated in S18-011.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-013",
+          "source_lines": [
+            6759,
+            6763
+          ],
+          "requirement": "Motivation for applications to perturbations.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The passage motivates perturbative applications of the following frequency inverse results."
+          ],
+          "declarations": [],
+          "qualification": "Possible applications are not a separate mathematical theorem or a proved perturbation result.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-014",
+          "source_lines": [
+            6765,
+            6767
+          ],
+          "requirement": "Corollary 18.2(i): local analytic inverse at zero.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The same frequency is a bijection between actual open neighborhoods of zero with an analytic inverse throughout its image. Its inverse derivative at zero is -1/2 Id."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_open_inverse",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_inverse"
+          ],
+          "qualification": "The source neighborhood lies in the original action domain; global injectivity of the frequency is not asserted.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-015",
+          "source_lines": [
+            6769,
+            6769
+          ],
+          "requirement": "Corollary 18.2(ii): compact derivative correction.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At every complex action in the same domain, dF+2Id is compact, by factoring the refined derivative through a stronger Banach sequence space and applying Pitt compactness."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.compact_derivative"
+          ],
+          "qualification": "A finite exponent strictly between one and p/2 and at least p/3 is selected; no Banach structure is imposed on ell^(p/3) below one.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-016",
+          "source_lines": [
+            6771,
+            6771
+          ],
+          "requirement": "Corollary 18.2(iii): Fredholm index zero.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Every derivative is Fredholm with equal finite kernel and cokernel dimensions, giving index zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.fredholm"
+          ],
+          "qualification": "This is a statement throughout the original connected action domain, for each finite p>2.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-017",
+          "source_lines": [
+            6773,
+            6773
+          ],
+          "requirement": "Corollary 18.2(iv): generic local analytic inverse.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "There is one open subset dense in the original domain where every point has an analytic inverse branch between open sets, with the inverse derivative equal to the inverse Jacobian."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_open_inverse",
+            "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_local_inverse"
+          ],
+          "qualification": "Analytic Fredholm density uses connectedness and invertibility at zero. Inverse neighborhoods may depend on the point.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-018",
+          "source_lines": [
+            6776,
+            6785
+          ],
+          "requirement": "Corrected H* definition and local concavity claim.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The H* preceding Theorem 18.3 includes the weighted linear action subtraction, as in the earlier displayed definition.",
+            "The same Hamiltonian has an analytic FL4 extension and strict concavity on one neighborhood of zero in the real Hilbert action space."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.physical_identity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_extension",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_concavity"
+          ],
+          "qualification": "The conjecture attribution is historical. The internal theorem proves local concavity; it does not assert global concavity on the entire positive Hilbert cone.",
+          "printed_page": 84
+        },
+        {
+          "ordered_group": "S18-019",
+          "source_lines": [
+            6796,
+            6797
+          ],
+          "requirement": "Theorem 18.3(i): FL4 extension, sign and zero set.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual original H* is analytic on an open complex FL4 neighborhood containing the full real locus. On real sources it is real, nonpositive, and zero exactly at the zero source."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection18_original_hamiltonian",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_extension",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_sign"
+          ],
+          "qualification": "The constructor retains the same original family, action frequency and physical H1 identity.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-020",
+          "source_lines": [
+            6799,
+            6811
+          ],
+          "requirement": "Theorem 18.3(ii): action extension, sign and local Hessian bound.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "One open connected Hilbert action domain carries the same analytic Hamiltonian, with nonpositive real values and zero only at zero on its nonnegative part.",
+            "The Hessian at zero is -2 times the bilinear Hilbert pairing. On one positive-radius ball it obeys Re d2H*(J,J)<=-||J||^2 for every real Hilbert direction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.sign",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.hessian_zero",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.concavity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_jensen",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.positive_domain"
+          ],
+          "qualification": "The positive domain is relatively open and dense; it is not replaced by the whole nonnegative Hilbert cone. Closed-gap boundary points are included in the local strict Jensen conclusion.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-021",
+          "source_lines": [
+            6814,
+            6819
+          ],
+          "requirement": "Remark 18.4: no C1 extension above action exponent two.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The same H* has no continuous, hence no C1, extension near zero relative to the nonnegative ell^q cone for any q>2, including infinity.",
+            "The proof integrates the local Hessian bound and uses finite nonnegative blocks; the infinity endpoint follows by coefficient-preserving inclusion."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.quadratic_bound",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.no_continuous_extension_all"
+          ],
+          "qualification": "This proves the source nonextension assertion by a stronger continuity obstruction. It is not an additional refutation of a printed constant.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-022",
+          "source_lines": [
+            6822,
+            6830
+          ],
+          "requirement": "Global Sobolev solutions and analytic trajectory map (4.4).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Constructed ordinary and renormalized global solutions have real analytic trajectory maps in the uniform Sobolev norm on each compact time interval, for every real regularity s>=0.",
+            "At p=2 this gives the Sobolev assertion (4.4). Uniqueness holds in the stated original all-smooth-approximation class."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_original_sobolev_analytic_solutions",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_sobolevHamiltonianTrajectories"
+          ],
+          "qualification": "The attribution to [7] is historical and is not an external proof comparison. Analyticity is in the initial datum with values in the trajectory space; no analyticity in time or uniqueness among arbitrary distributional solutions is inferred.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-023",
+          "source_lines": [
+            6831,
+            6838
+          ],
+          "requirement": "Ordinary frequency obstruction and renormalized frequency.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The renormalized PDE frequency is the ordinary frequency minus four times the physical mass H1, equivalently dispersion plus omega*.",
+            "The announced ordinary-flow continuity obstruction is proved for the actual smooth solution map in S18-035."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.phaseFrequency_complex",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ],
+          "qualification": "Read the isolated S1 in this display as the mass H1, consistent with the preceding expansion and the following Hamiltonian. This is a notation correction; no new refutation is added.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-024",
+          "source_lines": [
+            6841,
+            6851
+          ],
+          "requirement": "Renormalized Hamiltonian and Wick-ordered PDE (4.5).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The literal renormalized energy is H-2H1^2. Both variational gradients include the factor four in the mass term.",
+            "Its real-type Hamiltonian field gives -v_xx+2|v|^2v-4(integral |v|^2)v, and the constructed smooth trajectories satisfy that actual Hamiltonian equation."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.classicalRenormalizedNLSEnergy",
+            "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_fst",
+            "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_snd",
+            "NLS.ZakharovShabat.classicalRenormalizedNLSVectorField_scalar",
+            "NLS.ZakharovShabat.SmoothNLSData.renormalized_hamiltonian_equation"
+          ],
+          "qualification": "Hr retains dispersion; H* subtracts it. The classical differential equation and the rough approximation solution class are distinguished.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-025",
+          "source_lines": [
+            6853,
+            6856
+          ],
+          "requirement": "Conserved mass and corrected gauge conversion.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The positive gauge phase is exp(4 i mass t), where mass is the squared L2 norm. The inverse phase recovers the ordinary solution.",
+            "Physical mass conservation and the gauge identity hold for the actual full source flows in 1<p<=2, hence for the Sobolev solutions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SmoothNLSData.renormalized_phase",
+            "NLS.ZakharovShabat.IsClassicalRenormalizedNLSTrajectory.ungauge",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.hamiltonianOrdinarySourceFlow_mass",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.hamiltonianRenormalizedSourceFlow_gauge"
+          ],
+          "qualification": "The factor four and the square are retained directly. Historical constant-datum witnesses are unchanged.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-026",
+          "source_lines": [
+            6858,
+            6863
+          ],
+          "requirement": "Analytic Sobolev trajectories and local higher-exponent extension.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Both Sobolev trajectory maps are analytic for every compact time interval. At higher finite source exponents the renormalized map has a local analytic extension at every datum."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_original_sobolev_analytic_solutions",
+            "NLS.ZakharovShabat.renormalizedNLS_locallyAnalyticallyWellposed_of_two_le"
+          ],
+          "qualification": "The extension sentence is interpreted with the immediately following local definition and Theorem 18.5(ii). It does not supply a global map on all higher-exponent sources for every prescribed time horizon.",
+          "printed_page": 85
+        },
+        {
+          "ordered_group": "S18-027",
+          "source_lines": [
+            6873,
+            6879
+          ],
+          "requirement": "Original all-smooth-approximation solution definition.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "A solution is continuous on its time domain, starts at the prescribed datum, and is the pointwise source-norm limit of the actual classical trajectories for every convergent sequence of smooth initial data.",
+            "The smooth classical trajectories are constructed and satisfy the renormalized PDE with their own initial mass."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn",
+            "NLS.ZakharovShabat.IsRenormalizedNLSSolutionOn",
+            "NLS.ZakharovShabat.SmoothNLSData.renormalized_isClassical",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.renormalizedImageFlow_isSolution"
+          ],
+          "qualification": "The general domain formulation requires zero in the domain and includes the printed open intervals and compact intervals used for wellposedness. Convergence is quantified over all smooth approximations.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-028",
+          "source_lines": [
+            6882,
+            6883
+          ],
+          "requirement": "Uniqueness in the stated solution class.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Smooth density and uniqueness of limits imply that two solutions with the same initial datum agree on the intersection of their time domains."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn.eqOn_inter",
+            "NLS.ZakharovShabat.SourceSection18WellposednessData.unique"
+          ],
+          "qualification": "Uniqueness is precisely in the original approximation solution class.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-029",
+          "source_lines": [
+            6885,
+            6894
+          ],
+          "requirement": "Definition of local analytic wellposedness.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Local analytic wellposedness supplies a single positive time and an open neighborhood for each datum, solutions for every datum in that neighborhood, and a real analytic map into continuous trajectories with the uniform norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.IsLocallyAnalyticallyWellposed"
+          ],
+          "qualification": "The neighborhood and time are chosen before the neighboring datum, exactly as required by (a) and (b).",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-030",
+          "source_lines": [
+            6896,
+            6905
+          ],
+          "requirement": "Definition of global analytic wellposedness.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Global analytic wellposedness on an open initial-data set supplies one trajectory for all real times for each datum, with analytic compact-time restriction maps for every positive horizon."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.IsGloballyAnalyticallyWellposedOn"
+          ],
+          "qualification": "The underlying global trajectories are chosen before the time horizon, as required by (a prime) and (b prime).",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-031",
+          "source_lines": [
+            6908,
+            6909
+          ],
+          "requirement": "Transition to Fourier Lebesgue applications.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The passage introduces the Fourier Lebesgue applications of the preceding frequency theorem."
+          ],
+          "declarations": [],
+          "qualification": "This transition adds no mathematical hypothesis or separate result.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-032",
+          "source_lines": [
+            6911,
+            6912
+          ],
+          "requirement": "Theorem 18.5(i): global wellposedness for 1<p<=2.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Renormalized NLS is globally real analytically wellposed on the whole source space for every finite 1<p<=2, in the original solution sense."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.source_theorem18_5",
+            "NLS.ZakharovShabat.SourceSection18WellposednessData.global",
+            "NLS.ZakharovShabat.renormalizedNLS_globallyAnalyticallyWellposed"
+          ],
+          "qualification": "The spectral families and smooth solution construction are internal to the theorem; they are not additional premises.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-033",
+          "source_lines": [
+            6914,
+            6915
+          ],
+          "requirement": "Theorem 18.5(ii): local wellposedness for 2<p<infinity.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "For every finite p>2, renormalized NLS is locally real analytically wellposed at every source, with analytic dependence in the complete compact trajectory norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection18WellposednessData.local_wellposed",
+            "NLS.ZakharovShabat.renormalizedNLS_locallyAnalyticallyWellposed"
+          ],
+          "qualification": "The general implementation also covers finite 1<p<=2; the printed higher-exponent range is included.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-034",
+          "source_lines": [
+            6917,
+            6919
+          ],
+          "requirement": "Theorem 18.5(iii): small-data global wellposedness above two.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "For every finite p>2 there is an open neighborhood of zero containing a positive source-norm ball where renormalized NLS is globally real analytically wellposed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection18WellposednessData.small_global",
+            "NLS.ZakharovShabat.exists_small_global_analytic_renormalizedNLSSolutions"
+          ],
+          "qualification": "The neighborhood is constructed from the invariant coordinate-image region, and the same trajectories exist for all real times.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-035",
+          "source_lines": [
+            6921,
+            6926
+          ],
+          "requirement": "Theorem 18.5(iv): ordinary solution-map nonextension.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At every FLp source outside L2 with finite p>2, no map agreeing with all actual smooth ordinary solutions can be continuous into compact-time FLq trajectories.",
+            "The original package covers finite q>=p; the retained-family theorem includes infinity and even every q>=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection18WellposednessData.ordinary_nonextension",
+            "NLS.ZakharovShabat.smoothClassicalNLS_theorem18_5_iv",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ],
+          "qualification": "The input exponent remains finite. Agreement is with constructed physical classical solutions, not arbitrary coordinate rotations.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-036",
+          "source_lines": [
+            6929,
+            6938
+          ],
+          "requirement": "Historical related wellposedness and weak-continuity results.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The passage surveys historical weak discontinuity, renormalized weak continuity, nonuniform continuity and real-line mapping results attributed to other authors."
+          ],
+          "declarations": [],
+          "qualification": "These cited external results are recorded as historical context, not claimed as formalized or independently checked by this ordered review. The survey continues on page 87.",
+          "printed_page": 86
+        },
+        {
+          "ordered_group": "S18-037",
+          "source_lines": [
+            6948,
+            6953
+          ],
+          "requirement": "Historical announcements, open question and probabilistic results.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The continuation records an announcement, real-line weak-solution bounds, a then-open torus question and probabilistic wellposedness results."
+          ],
+          "declarations": [],
+          "qualification": "Open status and literature priority are reported only as statements in the 2016 dissertation, not as current research status. No independent external-source comparison is claimed.",
+          "printed_page": 87
+        },
+        {
+          "ordered_group": "S18-038",
+          "source_lines": [
+            6954,
+            6965
+          ],
+          "requirement": "Historical Fourier Lebesgue existence and uniqueness classes.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The passage compares earlier Fourier Lebesgue constructions, continuity, solution methods and their distinct uniqueness classes."
+          ],
+          "declarations": [],
+          "qualification": "These are historical attributions. The internal uniqueness theorem below uses the dissertation approximation class and does not subsume every external solution notion.",
+          "printed_page": 87
+        },
+        {
+          "ordered_group": "S18-039",
+          "source_lines": [
+            6966,
+            6974
+          ],
+          "requirement": "Contributions: analyticity, small global solutions and original-class uniqueness.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The implemented conclusions supply analytic initial-data dependence, small-data global solutions and uniqueness in the original all-smooth-approximation class.",
+            "The phase characterization uses the actual original coordinates; the ordinary solution map fails continuity at every higher-exponent source outside L2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.source_theorem18_5",
+            "NLS.ZakharovShabat.sourceSection22_original",
+            "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn.eqOn_inter",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ],
+          "qualification": "The sentence about one continuous solution is read in the solution sense defined on page 86 and characterized in Remark 22.3. It is not a claim of uniqueness among arbitrary distributional solutions; novelty is contextual.",
+          "printed_page": 87
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbert.lean": "116260ef422acccd5299bf524734ff3e16309854700795b15a45515874869e08",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+        "NLS/ZakharovShabat/SourceSection18Wellposedness.lean": "6322a812ac60e9f5543af95620c35344c6cf421751843c0406aaacffc694006c",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalInverse.lean": "8278de5103689e1b01768aed3c12d4cd5ef37ad9c00de0345143ac5fd5e37dd1",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbertTop.lean": "196f4c70aac3cb357fad8fe144341f1a3136c0492686c6cd1126e0260c698119",
+        "NLS/ZakharovShabat/SourceFrequencyOpenInverse.lean": "327e3a5a79707e6a78386edddb0c20430e418e9cad6987ae5354bc31db5ab516",
+        "NLS/ZakharovShabat/SourceOriginalActionDomains.lean": "f6c29119235ea286d0a224989985c3d5dabd4c7927472352988af44f8d35f492",
+        "NLS/ZakharovShabat/SourceHamiltonianActionTaylor.lean": "1c320b1caf970f77dc3aed7c75ac2fa1bc310b7db2c6eaeb9631e3640b242be2",
+        "NLS/ZakharovShabat/SourceFrequencyActionTaylor.lean": "7876e2612be2f7d38d4c0fb6c1fe60317da13e98e2e3c096e63e41fe0ff10601",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/SourceOriginalActionImage.lean": "8956e6a6ccebc6785bd779f8703bb4747918036efeabda55d8b1a3bf493d01c1",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalRestriction.lean": "cb6d55ae09118eda2ce2c09cfd6e168f399bcbded2fca20331a1d9fbfb5f6995",
+        "NLS/ZakharovShabat/SourceHamiltonianActionConcavity.lean": "3d3c7c4eada3348ffdb6f4181e4faaa342863da0abc843b81d4e5b266b76ae78",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginalNonextension.lean": "390e683ae4ee11e5a0d162f1d92b9895bca7596e999e7c53a74485bb20124045",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginalNonextensionTop.lean": "bdfc6d5887759e55713b400a393f10d8f816781117de8e12b3a46b42254130bc",
+        "NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean": "49c11d0e95184ef2f86d4764700c25bb532fb16efce8832abfe956c0c8d05b54",
+        "NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean": "c2500fb57041857512cb9ea8d3deb70cbb1e49c9634fca1c35ff62e91e780bd1",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean": "783315cb41fda455f8d279bd0daa24de5bf84aa646d1dab09d842ea134a69dec",
+        "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean": "442a9d5117daf5de594d40fa88dc06ef002439132849b3cdc1068a34954b7d23",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean": "46bb11a67daccbb0f644f63af44893a34c687d3d8e685fcbd105125afa09fc82",
+        "NLS/ZakharovShabat/SourceSobolevAnalyticSolutions.lean": "6f62c0a98bef3728a83cb93afcb69e917bd3cff870b7c75828563b2d4d1313d4",
+        "NLS/ZakharovShabat/SourceSobolevNLSAnalytic.lean": "b43d43fd0f1ed6ea43a8fd6d6e5ccaba31429cd5f3fd62808071a546d5f4ed0b",
+        "NLS/ZakharovShabat/HigherExponentAnalyticNLSSolutions.lean": "6af5e3753b56b3a6fdfd0198e4e97cc78d2d4699ad7a9ec856be0ef8f5c1c0bf",
+        "NLS/ZakharovShabat/SmoothClassicalNLSNonextension.lean": "c602d83f3028df7a77e9c60f840c4cadd96cdb9bb606d606c04c77eb29ab1f7d",
+        "NLS/ZakharovShabat/GlobalAnalyticNLSSolutions.lean": "a0aaac6dc5309326bead4062486fe09426c38a360b10d99311c5ee05a2a0cad3",
+        "NLS/ZakharovShabat/AnalyticNLSWellposedness.lean": "744acafeefbab8d77a4077f66962e0ca8821f6fd873a956705785a502916c59a",
+        "NLS/ZakharovShabat/SourceSmoothApproximationSolutions.lean": "7fde2c751835a073eea2eccb5fe0db93f3414ccbd5623e24235ab3bde36b90ee",
+        "NLS/ZakharovShabat/SourceSection22NonextensionAll.lean": "1dea7b385005f1115707c60a3fd88a122e2a52a85cb0baf581b695adf3fa4442",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": "0b24b5cd21ab246633be338bfe929b19ff8e51bfa948700744ac918d1270493f",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "a7306ddd0e52031dc727feab083c3d4d14f397340242bf3946abaf0e58095a8f",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean": "f31131a74c1180235b7ccded46718f0a79e4ddd139fb53453bae8b898ce907af",
+        "NLS/ZakharovShabat/SmoothNLSData.lean": "8a972daa1507ad18eeda71f81f9c17c7fe9748c7affe91764836a9735f0e3f90",
+        "NLS/ZakharovShabat/ClassicalRenormalizedEnergyVariation.lean": "ff122b5388643a76537d10ba1246540f098d17f81aed5483b7f2e1ef2b019723",
+        "NLS/ZakharovShabat/ClassicalRenormalizedNLSGauge.lean": "483d5abd7c9455486b3949aa732c75a98dda9818ce0bde4fbe731a8ea52bf327",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean": "2ca330342ac0ace4267953f6973d82e72112815f376303562ed23bb8f7b79b40",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalPhysical.lean": "107f752f81e69f0d8f88df901c011ed6ada7e2a2d2f33f23e4389f194bf9e60f",
+        "NLS/ZakharovShabat/SourceSobolevActionAnalytic.lean": "947c8c9bc28993a9de3c375065cff48cec3436849786fba96044b34c912b5b93",
+        "NLS/ZakharovShabat/SourceSection22Original.lean": "622872ff5ddbdc4f283a0c6b9706b25e648e42278f9f1f3783afabbb486e6a62",
+        "NLS/ZakharovShabat/SourceFrequencyActionSpaceAsymptotic.lean": "2740f4e6f534f59296a2651bc491ff0ef5727344d36feab9112d68a98675a910",
+        "NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean": "500b75a60034eac35c329b357f14fe2f624d09b04203307300c134a18be2f872",
+        "NLS/ZakharovShabat/SourceHamiltonianOrdinaryFlow.lean": "7e1769ba7bc9dde49a647f36b188e1846e387e19fe96ce0e40abd084249fa3cc",
+        "NLS/ZakharovShabat/GlobalClassicalRenormalizedNLS.lean": "18177f9d65d2e158b758add8a5b6401355fb573e0a6d53be4324fb8153fc4000",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoffCanonical.lean": "08c1942a25f5369caeba8e70527026d5a8675694517bba87295e7802f67b308a",
+        "NLS/ZakharovShabat/SourceH1WeightedActionSequence.lean": "00ed17818b34cc00caa969971d9e84ed2a40d8f2c978916f8163835e64c225e9",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f",
+        "NLS/ZakharovShabat/SourceSobolevAnalyticPhaseLift.lean": "4dd86d51d1f74c4cdbc135d94722e930b85ed1cea03512de32c711333a1c374d",
+        "NLS/ZakharovShabat/SourceSobolevInverseTrajectories.lean": "ca07626e1902c2197555caa135ff96271221fe657b5eba194c14f644d24ca3ac",
+        "NLS/ZakharovShabat/SourceRenormalizedOrdinaryGauge.lean": "73b776c67dd6293fadcef9a8da22a465a9e53480330ff5a7a7d89fc9e0c646a8",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoff.lean": "f717c4e45bf222479292473f656acc9d5f5a20e5f8dac9b9c222756b4cea448e",
+        "NLS/ZakharovShabat/SourceOrdinaryPhaseTrajectory.lean": "59a50e43b67ee2b1d0792fe9f016d1d02bad74e406ce5c5bb2014af123a155a7",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean": "6eaafaa9ad3be71f1fe5bf6c9bfd3baf61cf637ddd2dc8c1ff59f561272dc1bd"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbert.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean",
+        "NLS/ZakharovShabat/SourceSection18Wellposedness.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalInverse.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalHilbertTop.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOpenInverse.lean",
+        "NLS/ZakharovShabat/SourceOriginalActionDomains.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianActionTaylor.lean",
+        "NLS/ZakharovShabat/SourceFrequencyActionTaylor.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean",
+        "NLS/ZakharovShabat/SourceOriginalActionImage.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalRestriction.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianActionConcavity.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginalNonextension.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianOriginalNonextensionTop.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianStrictConcavity.lean",
+        "NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean",
+        "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean",
+        "NLS/ZakharovShabat/SourceSobolevAnalyticSolutions.lean",
+        "NLS/ZakharovShabat/SourceSobolevNLSAnalytic.lean",
+        "NLS/ZakharovShabat/HigherExponentAnalyticNLSSolutions.lean",
+        "NLS/ZakharovShabat/SmoothClassicalNLSNonextension.lean",
+        "NLS/ZakharovShabat/GlobalAnalyticNLSSolutions.lean",
+        "NLS/ZakharovShabat/AnalyticNLSWellposedness.lean",
+        "NLS/ZakharovShabat/SourceSmoothApproximationSolutions.lean",
+        "NLS/ZakharovShabat/SourceSection22NonextensionAll.lean",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean",
+        "NLS/ZakharovShabat/SmoothNLSData.lean",
+        "NLS/ZakharovShabat/ClassicalRenormalizedEnergyVariation.lean",
+        "NLS/ZakharovShabat/ClassicalRenormalizedNLSGauge.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean",
+        "NLS/ZakharovShabat/SourceFrequencyOriginalPhysical.lean",
+        "NLS/ZakharovShabat/SourceSobolevActionAnalytic.lean",
+        "NLS/ZakharovShabat/SourceSection22Original.lean",
+        "NLS/ZakharovShabat/SourceFrequencyActionSpaceAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianOrdinaryFlow.lean",
+        "NLS/ZakharovShabat/GlobalClassicalRenormalizedNLS.lean",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoffCanonical.lean",
+        "NLS/ZakharovShabat/SourceH1WeightedActionSequence.lean",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceSobolevAnalyticPhaseLift.lean",
+        "NLS/ZakharovShabat/SourceSobolevInverseTrajectories.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedOrdinaryGauge.lean",
+        "NLS/ZakharovShabat/NativeWeightedBirkhoff.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryPhaseTrajectory.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean"
+      ],
+      "reviewed_source_excerpts": [
+        {
+          "file": "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+          "source_lines": [
+            107,
+            123
+          ],
+          "module_sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+          "excerpt_sha256": "38274eb04c204ad538f0be45b41f15f0a18da4527a434e39f2df6346ab2c5be6"
+        },
+        {
+          "file": "NLS/ZakharovShabat/SourceSection18HamiltonianCorrection.lean",
+          "source_lines": [
+            84,
+            100
+          ],
+          "module_sha256": "75945b47f83c625df04a1fda87de6c884aa3277cbd4a8c118dba26fff1b754f1",
+          "excerpt_sha256": "1a88f3a4b78e5245fc7743bc6ef4b48b8374e6529dfc20a58165f7b6a196920d"
+        },
+        {
+          "file": "NLS/ZakharovShabat/SourceSection18GaugeCorrection.lean",
+          "source_lines": [
+            14,
+            26
+          ],
+          "module_sha256": "19dc9ab6916d94479b390dafce84cacf5b0ec34835b53183effd81582486f43d",
+          "excerpt_sha256": "e271fd622fe564e4c5683f920dbde5c47634aa27ee215885eb808d5f6c1973d1"
+        },
+        {
+          "file": "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean",
+          "source_lines": [
+            21,
+            33
+          ],
+          "module_sha256": "3c3a97d189eee0c38170f4fedb2a441a95329b416b000ae7f3cc1fa78f8c220f",
+          "excerpt_sha256": "113cbd8a6f8ea07670e4b3ca2080885744dba8427e9f6419f6b646c4154beacc"
+        }
+      ],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/SECTION_18_ASSERTIONS.md",
+      "ordered_inventory_sha256": "0b075c76d7e6bcf6cabbbf06320657df9dd0147b37bfd2dfc95b570eef72d652",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.IsClassicalRenormalizedNLSTrajectory.ungauge",
+        "NLS.ZakharovShabat.IsGloballyAnalyticallyWellposedOn",
+        "NLS.ZakharovShabat.IsLocallyAnalyticallyWellposed",
+        "NLS.ZakharovShabat.IsRenormalizedNLSSolutionOn",
+        "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn",
+        "NLS.ZakharovShabat.IsSmoothApproximationSolutionOn.eqOn_inter",
+        "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_canonical",
+        "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph_analytic",
+        "NLS.ZakharovShabat.SmoothNLSData.renormalized_hamiltonian_equation",
+        "NLS.ZakharovShabat.SmoothNLSData.renormalized_isClassical",
+        "NLS.ZakharovShabat.SmoothNLSData.renormalized_phase",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_sobolevHamiltonianTrajectories",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.hamiltonianOrdinarySourceFlow_mass",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.hamiltonianRenormalizedSourceFlow_gauge",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.phaseFrequency_complex",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.renormalizedImageFlow_isSolution",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.action_quadratic_remainder_bound",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.compact_derivative",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.derivative_zero",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.eq_hilbert_on_positive",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.fredholm",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_local_inverse",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.generic_open_inverse",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_inverse",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_open_inverse",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.map_zero",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.mixed",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.physical_finiteGap",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.positive_actions_mem",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.refined",
+        "NLS.ZakharovShabat.SourceOriginalFrequencyData.source_image",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.concavity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.gradient_eq",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.hessian_zero",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.no_continuous_extension_all",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.physical_identity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.positive_domain",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.quadratic_bound",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.restored_frequency_derivative",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.sign",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_extension",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.source_sign",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_coordinate_derivative",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_expansion_bound",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_frequency_expansion_bound",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_concavity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.strict_jensen",
+        "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.memℓp_all",
+        "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.physical_finiteGap",
+        "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.real_actions_mem",
+        "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations_all",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.exists_connected_action_image",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic",
+        "NLS.ZakharovShabat.SourceSection18WellposednessData.global",
+        "NLS.ZakharovShabat.SourceSection18WellposednessData.local_wellposed",
+        "NLS.ZakharovShabat.SourceSection18WellposednessData.ordinary_nonextension",
+        "NLS.ZakharovShabat.SourceSection18WellposednessData.small_global",
+        "NLS.ZakharovShabat.SourceSection18WellposednessData.unique",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+        "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric",
+        "NLS.ZakharovShabat.analyticAt_periodOneSobolevHamiltonian",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+        "NLS.ZakharovShabat.classicalNLSVectorField",
+        "NLS.ZakharovShabat.classicalNLSVectorField_real",
+        "NLS.ZakharovShabat.classicalNLSVectorField_scalar",
+        "NLS.ZakharovShabat.classicalNLS_equation_of_hasDerivAt",
+        "NLS.ZakharovShabat.classicalRenormalizedNLSEnergy",
+        "NLS.ZakharovShabat.classicalRenormalizedNLSVectorField_scalar",
+        "NLS.ZakharovShabat.exists_original_sobolev_analytic_solutions",
+        "NLS.ZakharovShabat.exists_small_global_analytic_renormalizedNLSSolutions",
+        "NLS.ZakharovShabat.exists_sourceFrequency_actionSpace_asymptotic",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_fst",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_three_snd",
+        "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_fst",
+        "NLS.ZakharovShabat.hasDerivAt_classicalRenormalizedNLSEnergy_snd",
+        "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+        "NLS.ZakharovShabat.renormalizedNLS_globallyAnalyticallyWellposed",
+        "NLS.ZakharovShabat.renormalizedNLS_locallyAnalyticallyWellposed",
+        "NLS.ZakharovShabat.renormalizedNLS_locallyAnalyticallyWellposed_of_two_le",
+        "NLS.ZakharovShabat.smoothClassicalNLS_theorem18_5_iv",
+        "NLS.ZakharovShabat.sourceSection18_original_frequencies",
+        "NLS.ZakharovShabat.sourceSection18_original_hamiltonian",
+        "NLS.ZakharovShabat.sourceSection22_original",
+        "NLS.ZakharovShabat.sourceWeightedAction_summable_on_Hm",
+        "NLS.ZakharovShabat.source_theorem18_5"
+      ],
+      "declaration_inventory_count": 44604,
+      "qualification": "All 39 ordered Section 18 passage groups are classified: 28 matched, five corrected, one partial external-edition comparison and five contextual groups. The original Hamiltonian and frequency retain a common connected action domain, actual physical recovery, Taylor remainders, inverse and Fredholm conclusions, sign and local concavity. The corrected full Hessian is 4-2 delta_nm, H* includes both mass-square and weighted linear subtractions, and the gauge is exp(4 i mass t). The isolated S1 denotes H1. The action-image assertion uses an open source neighborhood inside the original complex domain. Wellposedness retains finite source exponents, the all-smooth-approximation solution class and compact-time uniform norms. The exact cited 2014 construction comparison remains qualified in S18-003. Literature attributions and the then-open question are historical, not independently verified results or claims about current research status. No new Lean code or refutation is added. Wider dissertation qualifications remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          83,
+          84,
+          85,
+          86,
+          87
+        ],
+        "images": {
+          "work/tmp/pdfs/section18-083.png": "1a12f8cb4ca228529d1eb84047f023ea5eeba152af4a2dbec7d48e7a640f1ae7",
+          "work/tmp/pdfs/section18-084.png": "592cf74ab792942e62245a0ddf85e0bf6278d9e159b46a9d0460c62d7094c955",
+          "work/tmp/pdfs/section18-085.png": "296e181633367a2582f207ed622ca050c69c97e9298ba262463df41bbebd148d",
+          "work/tmp/pdfs/section18-086.png": "6a6f1ecb908b5b43a87b1cad4e7fcc1547acb2856a1f66b23733c88a814f292f",
+          "work/tmp/pdfs/section18-087.png": "5edf4d9de6a857a6cb925f08486fe71c8092cf745ca7537cc1bac96d894f63d7"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4836,
+        "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
+      },
+      "validation_reused_from_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
+      "full_gate": {
+        "session": 6799,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section16GradientAndProductsFullCheck-2.log",
+        "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
+      },
+      "source_record_sha256": "d72824d23767d290da949f1348c863a06fd55a42ba58b743848a16ba090ad811"
     }
   }
 }

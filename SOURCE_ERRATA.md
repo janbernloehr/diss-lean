@@ -485,6 +485,22 @@ All three witnesses are implemented in
 See [the Section 21 audit](coverage/SECTION_21.md) for the common original
 moment, source-Hamiltonian, action-gradient, and concavity package.
 
+## Section 18: action-image neighborhood and mass notation
+
+The action-image assertion on p. 84 is implemented with an open source
+neighborhood Y inside the original complex domain V, containing the entire
+real locus. Its action image U is open and connected and contains all
+nonnegative summable actions. The existing
+`SourceSection17OriginalData.exists_connected_action_image` proves this
+precise restriction; no equality with the image of the entire V is assumed.
+
+In the renormalized-frequency display on p. 85, the isolated S₁ is read as
+the mass H₁: ωʳ=ω−4H₁=(2πn)²+ω*. The existing
+`SourceAbelianMomentAtlas.ordinaryPhaseFrequency_complex` and
+`SourceAbelianMomentAtlas.phaseFrequency_complex` retain that normalization.
+These direct clarifications add no refutation. See the
+[ordered comparison](coverage/SECTION_18_ASSERTIONS.md), S18-011 and S18-023.
+
 ## Section 18: the full Hamiltonian Hessian includes the mass-square term
 
 The expansion on printed p. 83 includes 2H₁², but the next display gives

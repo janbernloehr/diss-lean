@@ -253,8 +253,24 @@ Corrected canonical labels, selected indices, factor two, the matching
 
 S17-007 remains partial only for the exact cited 2014 [23] construction
 comparison; the internal Hilbert inverse is proved. The attribution to
-[36] is recorded as contextual. No new refutation is added. Next is
-Section 18, Overview of frequencies, convexity and wellposedness.
+[36] is recorded as contextual. No new refutation is added.
+
+The [ordered Section 18 ledger](SECTION_18_ASSERTIONS.md) classifies all
+39 groups on pp. 83–87: 28 matched, five corrected, one partial external
+comparison and five contextual groups. The same original Hamiltonian and
+frequency retain their common action domain, physical normalization,
+uniform Taylor remainders, inverse and Fredholm results, sign and local
+concavity. Corrected full-Hessian, subtraction and gauge formulas are
+retained directly, together with the restricted action-image neighborhood
+and the mass notation H₁.
+
+The solution results use all smooth approximations and compact-time uniform
+norms: global for 1<p≤2, local for finite p>2, and small-data global above
+two. Sobolev analytic dependence holds for every real nonnegative order.
+The external 2014 comparison remains partial in S18-003, and the historical
+literature discussion is not counted as independently verified mathematics
+or current research status. No new refutation is added. Next is Section 19,
+The abelian integral F.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

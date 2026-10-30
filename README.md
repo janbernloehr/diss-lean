@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 17 comparison](coverage/SECTION_17_ASSERTIONS.md)
-classifies 31 passage groups, retaining the corrected constants, enumeration
-cutoff, canonical labels and inward angle flow. The actual map is locally
-invertible and globally injective for all finite p>1, and onto for p<=2.
-The exact cited 2014 construction comparison remains qualified. Next is
-Section 18, Frequencies, convexity and wellposedness. Wider qualifications
-remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [ordered Section 18 comparison](coverage/SECTION_18_ASSERTIONS.md)
+classifies all 39 passage groups, retaining the corrected Hamiltonian
+Hessian, subtractions and gauge, the common action domain, and the original
+solution definition and time ranges. Existing proofs supply the results;
+this step changes documentation only. The exact cited 2014 construction
+comparison remains qualified. Next is Section 19, The abelian integral F.
+Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

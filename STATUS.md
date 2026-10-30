@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: ordered Section 17 diffeomorphism comparison
+## Current milestone: ordered Section 18 frequency and wellposedness comparison
+
+The [ordered Section 18 ledger](coverage/SECTION_18_ASSERTIONS.md) classifies
+all 39 passage groups on pp. 83–87: 28 matched, five corrected, one partial
+external comparison and five contextual groups.
+
+The existing proofs retain one original frequency and its Hamiltonian on
+a common connected action domain. The full energy has a cubic remainder;
+its frequencies have a quadratic sequence-norm remainder, with common
+bounds before the action and index are chosen. Local inverse branches,
+compact corrected derivatives, Fredholm index zero, and generic analytic
+inverses use the same frequency. The same H* has the stated sign, zero set,
+local Hessian bound and strict concavity.
+
+The corrected formulas are the full Hessian 4−2δₙₘ, the complete subtraction
+H*=H−2H₁²−∑(2πn)²Iₙ, and the gauge exp(4 i ‖u₀‖₂² t). The isolated S₁ in
+the renormalized-frequency display denotes H₁. The action domain is the
+image of an open neighborhood inside the original complex source domain.
+These corrections use existing positive proofs; no new refutation is added.
+
+Both Sobolev solution maps are analytic into compact-time trajectories
+for every real regularity s≥0. Renormalized Fourier Lebesgue solutions are
+global for 1<p≤2, local for finite p>2, and global near zero above two.
+Uniqueness uses the original all-smooth-approximation definition. The
+ordinary-flow nonextension includes the infinity target. Source exponents
+remain finite, and the higher-exponent local result is not a global result
+for all data.
+
+The review inspected 52 full module bodies and four positive excerpts,
+and resolved 91 declarations. The exact 2014 [23] construction comparison
+remains partial in S18-003. Literature claims and the then-open question
+are recorded as historical context, not as current research status.
+
+This documentation-only step reuses the successful full check from commit c8cbe87 on the exact unchanged Lean and dependency-lock snapshot: 8,559 build jobs, 7,635 public examples and the transitive axiom audit of 44,604 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and local documentation links are checked separately. These integrity checks do not certify mathematical completeness.
+
+Next is Section 19, The abelian integral F. Wider qualifications remain
+in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 17 diffeomorphism comparison
 
 The [ordered Section 17 ledger](coverage/SECTION_17_ASSERTIONS.md) classifies
 all 31 passage groups: 21 matched, eight corrected, one partial external
