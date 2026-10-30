@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T20:17:59.638435+00:00",
-  "base_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
+  "published_utc": "2026-10-30T21:05:32.179477+00:00",
+  "base_commit": "e4f11628ec8e99a163805196cbb296f6e031cabf",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 154,
-    "module_hash_checks": 3262,
-    "distinct_modules": 1793
+    "review_records": 155,
+    "module_hash_checks": 3312,
+    "distinct_modules": 1809
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,23 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "399faae5364dae027a4ff044fd846dda071b1a52",
-    "validated_state": "Documentation-only ordered Section 15 comparison. All fifteen groups are classified with the sine difference, signed collapsed-gap values, sufficient bounds and common domain explicit. The Lean and dependency-lock snapshot is unchanged; successful full gate 21942 is reused, not rerun.",
+    "base_commit": "e4f11628ec8e99a163805196cbb296f6e031cabf",
+    "validated_state": "Fresh validation of four positive Section 16 gradient and own-index product estimates and four public examples. All 27 ordered groups are compared: 20 matched and seven corrected.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8557,
-    "public_examples": 7631,
-    "transitive_NLS_declarations": 44598,
+    "build_jobs": 8559,
+    "public_examples": 7635,
+    "transitive_NLS_declarations": 44604,
     "existing_warnings": 21,
+    "new_warnings": 0,
+    "gate_session": 6799,
     "gate_exit": 0,
+    "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4834,
-      "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      "files": 4836,
+      "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
     },
-    "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "399faae5364dae027a4ff044fd846dda071b1a52"
+    "full_gate_log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16",
+    "qualification": "The full Lean check and axiom audit passed on this exact snapshot. Review-integrity checks verify recorded evidence, not mathematical completeness."
   },
   "named_statements": [
     {
@@ -39242,6 +39245,933 @@
         "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
       },
       "source_record_sha256": "bdc323231f6b26688df5cbe724a1878e1547c06f480214e407a5e9064c2c49a1"
+    },
+    "Section16OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e4f11628ec8e99a163805196cbb296f6e031cabf",
+      "updated_utc": "2026-10-30T21:05:32.179477+00:00",
+      "source_lines": [
+        [
+          6111,
+          6118
+        ],
+        [
+          6120,
+          6130
+        ],
+        [
+          6131,
+          6137
+        ],
+        [
+          6147,
+          6159
+        ],
+        [
+          6161,
+          6165
+        ],
+        [
+          6167,
+          6172
+        ],
+        [
+          6174,
+          6179
+        ],
+        [
+          6181,
+          6186
+        ],
+        [
+          6188,
+          6190
+        ],
+        [
+          6191,
+          6198
+        ],
+        [
+          6200,
+          6203
+        ],
+        [
+          6205,
+          6208
+        ],
+        [
+          6211,
+          6214
+        ],
+        [
+          6216,
+          6223
+        ],
+        [
+          6226,
+          6240
+        ],
+        [
+          6250,
+          6258
+        ],
+        [
+          6260,
+          6263
+        ],
+        [
+          6264,
+          6269
+        ],
+        [
+          6270,
+          6274
+        ],
+        [
+          6276,
+          6283
+        ],
+        [
+          6284,
+          6289
+        ],
+        [
+          6290,
+          6297
+        ],
+        [
+          6300,
+          6303
+        ],
+        [
+          6305,
+          6311
+        ],
+        [
+          6312,
+          6320
+        ],
+        [
+          6322,
+          6337
+        ],
+        [
+          6339,
+          6343
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S16-001",
+          "source_lines": [
+            6111,
+            6118
+          ],
+          "printed_page": 75,
+          "requirement": "Analyticity of the actual operator-valued Jacobian.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffJacobian",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_analytic",
+            "NLS.ZakharovShabat.sourceSection16_original"
+          ],
+          "reviewed_claims": [
+            "The Jacobian is the full complex Frechet derivative of the actual lp-pair-valued Birkhoff map. Differentiating its Banach-valued analyticity gives analytic dependence in bounded-operator norm."
+          ],
+          "qualification": "The working Chapter 3 domain is the constructed V inside the earlier angular W, as recorded in S14-004. This common restriction contains the whole real source locus."
+        },
+        {
+          "ordered_group": "S16-002",
+          "source_lines": [
+            6120,
+            6130
+          ],
+          "printed_page": 75,
+          "requirement": "Physical conjugate gradients represent the entire Jacobian.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.jacobian_gradients",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_coordinates",
+            "NLS.CoeffPair.dualPairing_conjugateGradient"
+          ],
+          "reviewed_claims": [
+            "Every bounded coordinate differential has an actual pair of Holder-conjugate Fourier sequences. Frequency reversal gives the physical gradient convention for the unconjugated bilinear variation formula.",
+            "The pairing with every complex input vector equals the corresponding actual Jacobian coordinate at every point of V. The conjugate exponent is finite because 1<p<infinity."
+          ],
+          "qualification": "The phrase L2-gradient denotes this extension of the physical bilinear gradient convention; literal square-integrable representatives are not asserted at arbitrary complex sources for every p."
+        },
+        {
+          "ordered_group": "S16-003",
+          "source_lines": [
+            6131,
+            6137
+          ],
+          "printed_page": 75,
+          "requirement": "The signed free Fourier modes and period convention.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffFreeXGradient",
+            "NLS.ZakharovShabat.sourceBirkhoffFreeYGradient",
+            "NLS.ZakharovShabat.conjugateGradient_sourceGapWeightedEtaFreeCotangent"
+          ],
+          "reviewed_claims": [
+            "In the period-one coefficient convention the physical e_plus at -2n is the second component at -n, and e_minus at -2n is the first component at n. The period-two realization doubles these frequencies.",
+            "The explicit free gradients and their recovered coefficients use these same component placements and signs for positive, central and negative indices."
+          ],
+          "qualification": "The factor two belongs to the physical period-two indexing, not to the period-one sequence index."
+        },
+        {
+          "ordered_group": "S16-004",
+          "source_lines": [
+            6147,
+            6159
+          ],
+          "printed_page": 76,
+          "requirement": "The free rectangular gradients and exact Fourier Jacobian.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.conjugateGradient_sourceBirkhoffFreeCotangents",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffXY_fderiv_zero",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_zero",
+            "NLS.ZakharovShabat.sourceBirkhoffFourierEquiv"
+          ],
+          "reviewed_claims": [
+            "The free x gradient is minus the sum of the two physical modes divided by sqrt(2). The free y gradient is minus their difference divided by i*sqrt(2), expressed in the component order of the preceding row.",
+            "At zero the actual full derivative equals the explicitly invertible Fourier map for every finite p>1. The Hilbert calculation extends by restriction below two and finite Fourier-support density above two."
+          ],
+          "qualification": "The mathematical free formula is proved internally. The exact [23] Theorem 17.2 text is not independently certified."
+        },
+        {
+          "ordered_group": "S16-005",
+          "source_lines": [
+            6161,
+            6165
+          ],
+          "printed_page": 76,
+          "requirement": "Lemma 16.1 in the full physical conjugate pair norm.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.lemma16_1",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_lemma16_1"
+          ],
+          "reviewed_claims": [
+            "At every real spectral finite-gap source, both signed original gap-sequence gradient errors have Holder-conjugate pair norms in outer lp. The plus coordinate has free gradient -2 in the second component at -n; the minus coordinate has -2 in the first component at n.",
+            "The proof includes all signed indices and every finite p>1. The finite set of open gaps is included by finite modification."
+          ],
+          "qualification": "Finite-gap means finitely many open canonical spectral gaps, with no finite Fourier-support assumption or supplied H1 regularity premise."
+        },
+        {
+          "ordered_group": "S16-006",
+          "source_lines": [
+            6167,
+            6172
+          ],
+          "printed_page": 76,
+          "requirement": "Equation (3.3) at real collapsed gaps.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_3",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_fderiv_closed",
+            "NLS.ZakharovShabat.sourceGapWeightedEtaClosedCotangent"
+          ],
+          "reviewed_claims": [
+            "The actual derivative includes both the fixed-source anti-discriminant derivative and its spectral derivative multiplied by the moving Dirichlet-root derivative.",
+            "Both moving-terminal terms carry the same sign. The delta(mu_n) times auxiliary-derivative term is zero at real collapsed gaps; this vanishing is proved from the actual spectral identity."
+          ],
+          "qualification": "The grouping of the printed plus/minus sign in (3.3) is correct. The equation uses the corrected auxiliary from S16-007; no discrepancy is assigned to the grouping."
+        },
+        {
+          "ordered_group": "S16-007",
+          "source_lines": [
+            6174,
+            6179
+          ],
+          "printed_page": 76,
+          "requirement": "The positive quotient product and its analytic auxiliary.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapWeightedEtaAuxiliary",
+            "NLS.ZakharovShabat.sourceGapWeightedEtaAuxiliary_eq_quotient",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.auxiliary_eq_real_quotient",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.auxiliary_analytic"
+          ],
+          "reviewed_claims": [
+            "With A the deleted single spectral product and P the omitted standard-root product, the positive quotient product is Q=A/P and the actual psi numerator is -2*A. Consequently phi=Q/psi=-1/(2*P).",
+            "The corrected positive product removes the printed leading minus. The auxiliary extends analytically throughout the original angular W because P is analytic and nonzero at the Dirichlet terminal.",
+            "The literal quotient equals this extension at every real source, where the psi numerator is nonzero. At a general complex point the quotient identification explicitly assumes that numerator is nonzero."
+          ],
+          "qualification": "The existing sign correction is retained directly. No new witness or refutation is added, and no global nonvanishing claim for the complex psi numerator is inferred."
+        },
+        {
+          "ordered_group": "S16-008",
+          "source_lines": [
+            6181,
+            6186
+          ],
+          "printed_page": 76,
+          "requirement": "Finite-gap regularity and existence of conjugate gradients.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceFiniteGap_mem_all_sobolev",
+            "NLS.ZakharovShabat.sourceFiniteGap_mem_H1",
+            "NLS.ZakharovShabat.sourceFiniteGap_exists_physical_hilbert_domain_below_two",
+            "NLS.CoeffPair.conjugateGradient"
+          ],
+          "reviewed_claims": [
+            "The spectral finite-gap condition bootstraps the original source to every nonnegative Sobolev weight and therefore to an actual H1 realization. This is derived from the original coefficients.",
+            "The gradients are obtained from full complex differentials on an open neighborhood of the real source. Merely asserting real scalar analyticity would not substitute for this complex differential representation."
+          ],
+          "qualification": "Above and below the Hilbert exponent the realization and restriction arguments retain the same physical coefficients."
+        },
+        {
+          "ordered_group": "S16-009",
+          "source_lines": [
+            6188,
+            6190
+          ],
+          "printed_page": 76,
+          "requirement": "The two G.7 estimates used in Lemma 16.1.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_source_spectral_gradients_sobolev_memlp",
+            "NLS.ZakharovShabat.memlp_source_midpoint_fderiv_below_two",
+            "NLS.ZakharovShabat.memlp_source_dirichlet_fderiv_error_below_two",
+            "NLS.CoeffPair.memlp_conjugateGradient"
+          ],
+          "reviewed_claims": [
+            "The actual midpoint derivatives form an outer lp sequence, and the actual Dirichlet derivatives differ from the free half-sum functional by an outer lp sequence.",
+            "The H1 realization supplies the required hypothesis. Independent Hilbert estimates with the requested outer exponent, followed by bounded restriction, cover p<2. Bounded conjugate-gradient recovery gives the physical pair norms."
+          ],
+          "qualification": "The free modes are those displayed in Section 16. Earlier qualifications on literal Appendix G displays remain in their own comparison records."
+        },
+        {
+          "ordered_group": "S16-010",
+          "source_lines": [
+            6191,
+            6198
+          ],
+          "printed_page": 76,
+          "requirement": "Anti-discriminant samples and the moving-root derivative term.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.memℓp_sourceAntiDiscriminant_at_dirichletRoots",
+            "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_at_dirichlet_tail",
+            "NLS.ZakharovShabat.memlp_sourceGapWeightedEtaClosedCotangent_of_gradient_estimates"
+          ],
+          "reviewed_claims": [
+            "Both delta(mu_n) and its spectral derivative at the actual Dirichlet roots belong to lp. A common source neighborhood and cutoff give a tail majorant, and finite modification retains all central samples.",
+            "The Dirichlet derivative error is lp and its free functional has a common bound, so the full Dirichlet derivatives are uniformly bounded in n. Multiplication by the lp spectral derivative therefore gives an lp sequence of moving-root cotangents."
+          ],
+          "qualification": "This conclusion holds with the actual roots and source norm. It does not require an estimate uniform over an arbitrary source norm ball."
+        },
+        {
+          "ordered_group": "S16-011",
+          "source_lines": [
+            6200,
+            6203
+          ],
+          "printed_page": 76,
+          "requirement": "The G.6 anti-discriminant gradient error.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.memlp_source_antiDiscriminantCotangent_boundary_error",
+            "NLS.ZakharovShabat.memlp_source_antiDiscriminantCotangent_error_below_two",
+            "NLS.ZakharovShabat.memlp_source_antiDiscriminant_conjugate_boundary_error"
+          ],
+          "reviewed_claims": [
+            "At the actual Dirichlet roots, subtracting the free anti-discriminant cotangent gives an outer lp sequence. Multiplication by i identifies the displayed signed cosine times the physical mode difference.",
+            "Physical H1 estimates cover p>=2, and exact derivative restriction from independently summable Hilbert cotangents covers 1<p<2."
+          ],
+          "qualification": "The spectral variable is held fixed for this cotangent. The separate moving-root contribution is retained in S16-010 and equation (3.3)."
+        },
+        {
+          "ordered_group": "S16-012",
+          "source_lines": [
+            6205,
+            6208
+          ],
+          "printed_page": 76,
+          "requirement": "Separate own-index product asymptotics and the resulting auxiliary error.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_ownIndex_quotient_error_memlp",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_ownIndex_psi_error_memlp",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_shared_actualGap_quotient_majorant",
+            "NLS.ZakharovShabat.memlp_sourceStandardRootOmittedProduct_boundary_sub_free",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.dirichlet_omitted_normalized_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_remainder_analytic"
+          ],
+          "reviewed_claims": [
+            "Two new positive theorems establish Q_n(mu_n)-1 in lp and psi_n(mu_n)+2*cos(pi*n) in lp for the actual original root family, at every real source and every finite p>1. All signed indices, the central head and collapsed gaps are included; no finite-gap hypothesis is needed.",
+            "The shared actual-gap majorant is chosen before both the deleted index and the sampled gap index. Real Dirichlet interlacing permits sampling on the diagonal n=k. Filling the deleted coordinate with its midpoint leaves the deleted numerator unchanged.",
+            "The signed omitted product P differs from cos(pi*n) by an lp sequence and is bounded. The exact identity psi=-2*Q*P then gives the second error as -2*((Q-1)*P+(P-cos(pi*n))). This avoids exchanging the quantifiers in the weaker fixed-family estimates.",
+            "The needed auxiliary conclusion 2*phi_n+cos(pi*n) in lp is already proved directly as a full Banach-analytic sequence on the unchanged complex W. The original preconnected-domain argument fixes and propagates the omitted-product parity branch."
+          ],
+          "qualification": "The positive Q convention from S16-007 is retained. The two separate product estimates are proved for all real sources, a stronger scope than the finite-gap source used here. The full-complex local uniformity and analyticity in the next source sentence concern the auxiliary and are supplied by its separate original-domain theorem. No new refutation is added."
+        },
+        {
+          "ordered_group": "S16-013",
+          "source_lines": [
+            6211,
+            6214
+          ],
+          "printed_page": 76,
+          "requirement": "Uniform auxiliary gradients and the delta times gradient term.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_error_local_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_gradient_local_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_gradient_represents",
+            "NLS.memlp_smul_of_bounded_vector"
+          ],
+          "reviewed_claims": [
+            "One original-source neighborhood bounds the complete auxiliary error sequence. Nested-ball Cauchy estimates then bound every actual auxiliary Frechet derivative by C and every physical conjugate gradient by 2*C, uniformly in n.",
+            "The lp anti-discriminant samples multiplied by these bounded gradients form an lp sequence. At the real closed gaps used by (3.3) the anti-discriminant sample is exactly zero."
+          ],
+          "qualification": "The local bound is valid at every complex point of the original W; the gradient pairing represents the full actual differential."
+        },
+        {
+          "ordered_group": "S16-014",
+          "source_lines": [
+            6216,
+            6223
+          ],
+          "printed_page": 76,
+          "requirement": "The auxiliary-weighted anti-discriminant error.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapWeightedEtaClosedCotangent_sub_free",
+            "NLS.ZakharovShabat.memlp_sourceGapWeightedEtaClosedCotangent_of_gradient_estimates",
+            "NLS.memlp_smul_of_bounded_scalar",
+            "NLS.memlp_smul_of_bounded_vector"
+          ],
+          "reviewed_claims": [
+            "The auxiliary is bounded because its signed normalization error is lp. Multiplying it by the G.6 error and the moving-root error therefore preserves lp summability.",
+            "The exact closed-cotangent decomposition also retains the auxiliary normalization error multiplied by the bounded free anti-discriminant cotangent. This accounts for the leading signed mode in the next display."
+          ],
+          "qualification": "The estimates use bounded scalar/vector products in the actual operator norm and then the bounded physical gradient map; no isometric identification of these two norms is assumed."
+        },
+        {
+          "ordered_group": "S16-015",
+          "source_lines": [
+            6226,
+            6240
+          ],
+          "printed_page": 76,
+          "requirement": "Combining the errors and including the finite open-gap head.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_fderiv_finiteGap_tail",
+            "NLS.ZakharovShabat.memlp_sourceGapWeightedEtaClosedCotangent_finiteGap_all_exponents",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.memlp_gapWeightedEta_fderiv_sub_free_finiteGap_all_exponents",
+            "NLS.ZakharovShabat.conjugateGradient_sourceGapWeightedEtaFreeCotangent"
+          ],
+          "reviewed_claims": [
+            "Outside the finite set of open gaps the actual eta derivative equals the exact closed-gap expression. Its error from the signed free functional is lp by the three preceding estimates.",
+            "Finite modification supplies the full sequence, including each open gap. Recovering the physical coefficients gives exactly the two -2 free modes in Lemma 16.1, which feed the rectangular estimate."
+          ],
+          "qualification": "The tail equality is simultaneous in all signed indices and sign parameters. All finite p>1 are retained."
+        },
+        {
+          "ordered_group": "S16-016",
+          "source_lines": [
+            6250,
+            6258
+          ],
+          "printed_page": 77,
+          "requirement": "Lemma 16.2 for the actual rectangular coordinate gradients.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.lemma16_2",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoff_lemma16_2"
+          ],
+          "reviewed_claims": [
+            "At every real spectral finite-gap source the actual x and y sequence-coordinate gradients differ from their explicit free gradients by outer lp sequences in the full Holder-conjugate pair norm.",
+            "The theorem identifies the scalar and actual sequence derivatives on a neighborhood and covers every finite p>1."
+          ],
+          "qualification": "No additional Sobolev or open-gap premise is supplied by the caller."
+        },
+        {
+          "ordered_group": "S16-017",
+          "source_lines": [
+            6260,
+            6263
+          ],
+          "printed_page": 77,
+          "requirement": "The rectangular formula used in the product rule.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_2",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffXY_fderiv_eq_weighted"
+          ],
+          "reviewed_claims": [
+            "The original sequence entries have the sum in x and difference in y, with their exact sqrt(8) and i*sqrt(8) denominators.",
+            "The actual rectangular derivatives are the same normalized sum and difference of the signed weighted derivatives."
+          ],
+          "qualification": "These identities retain the common Chapter 3 domain and the original root family."
+        },
+        {
+          "ordered_group": "S16-018",
+          "source_lines": [
+            6264,
+            6269
+          ],
+          "printed_page": 77,
+          "requirement": "Root error, finite-gap beta decay, vanishing tail and Cauchy bounds.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.memlp_sourceNormalizedActionRoot_sub_one",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.betaCorrection_finiteGap_inverse_index_bound",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffWeighted_fderiv_closed",
+            "NLS.ZakharovShabat.sourceNormalizedActionRoot_gradient_local_bound",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.betaCorrection_gradient_local_bound",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_gradient_local_bound"
+          ],
+          "reviewed_claims": [
+            "The actual xi-1 sequence is lp at every real source. At a real finite-gap source the beta series has only finitely many nonzero gap-index terms; the reciprocal estimate gives |beta_n|<=K/|n| outside one symmetric cutoff.",
+            "Real interlacing makes the eta coordinates zero at every collapsed gap, hence outside a finite set. The product rule there removes both the normalization and beta derivative terms exactly.",
+            "Separate Cauchy estimates give uniform-in-n bounds for all three full derivatives and their physical gradients. The root bound holds near each real source; beta and eta bounds hold at every point of their original complex domains."
+          ],
+          "qualification": "For each fixed eta sign the neighborhood and constant precede all n; a finite intersection handles both signs. The beta decay is for the fixed finite-gap source, not uniform over an arbitrary neighborhood of finite-gap sources."
+        },
+        {
+          "ordered_group": "S16-019",
+          "source_lines": [
+            6270,
+            6274
+          ],
+          "printed_page": 77,
+          "requirement": "The two intermediate rectangular gradient estimates, with y corrected.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.memlp_birkhoffXY_fderiv_sub_eta_finiteGap",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.gradient_reduction_finiteGap"
+          ],
+          "reviewed_claims": [
+            "The new direct theorems prove that dx minus (dz_plus+dz_minus)/sqrt(8), and dy minus (dz_plus-dz_minus)/(i*sqrt(8)), have outer lp source-operator norms.",
+            "The original-family interface gives the same estimates for physical Holder-conjugate gradients of actual sequence entries, with all signed indices and the finite open-gap head included.",
+            "The proof subtracts the normalized eta free-mode errors from the rectangular free-mode errors. Exact cancellation retains both denominators and the sine orientation."
+          ],
+          "qualification": "The printed unscripted z in the second expression is replaced directly by y. Two positive theorems and public examples at p=3/2 and p=4 are added; no refutation is added."
+        },
+        {
+          "ordered_group": "S16-020",
+          "source_lines": [
+            6276,
+            6283
+          ],
+          "printed_page": 77,
+          "requirement": "Normalization by the exact free Fourier inverse.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian",
+            "NLS.ZakharovShabat.sourceBirkhoffFourierEquiv",
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian_sub_id"
+          ],
+          "reviewed_claims": [
+            "A_phi is exactly the bounded free Fourier inverse composed with the actual Jacobian. Its difference from identity equals that inverse composed with the actual Fourier remainder."
+          ],
+          "qualification": "The inverse is a bounded linear equivalence for every finite p>1. No general-p isometry is assumed."
+        },
+        {
+          "ordered_group": "S16-021",
+          "source_lines": [
+            6284,
+            6289
+          ],
+          "printed_page": 77,
+          "requirement": "Unconditional inverse Fourier reconstruction with the corrected sign.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffFourierInverse_single",
+            "NLS.ZakharovShabat.sourceBirkhoffFourierInverse_hasSum"
+          ],
+          "reviewed_claims": [
+            "The inverse of two single output modes at -n is a*d_plus_n minus b*d_minus_n. Mapping the unconditional lp coordinate series through the bounded inverse proves the full reconstruction in the original source norm."
+          ],
+          "qualification": "The printed positive y-gradient term is replaced by a negative term. Existing historical sign evidence is preserved without adding a new witness."
+        },
+        {
+          "ordered_group": "S16-022",
+          "source_lines": [
+            6290,
+            6297
+          ],
+          "printed_page": 77,
+          "requirement": "Equation (3.4) for every complex source and input vector.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedJacobian_hasSum",
+            "NLS.ZakharovShabat.SourceSection16OriginalData.jacobian_gradients"
+          ],
+          "reviewed_claims": [
+            "Substituting the exact coordinate derivatives into the corrected inverse Fourier series gives A_phi h as the sum of dx_{-n}(h)*d_plus_n minus dy_{-n}(h)*d_minus_n.",
+            "The series converges unconditionally in the original source norm at every complex point of V and for every complex input vector. The preceding gradient representation gives the physical pairing interpretation."
+          ],
+          "qualification": "The corrected negative y term and frequency reversal are retained."
+        },
+        {
+          "ordered_group": "S16-023",
+          "source_lines": [
+            6300,
+            6303
+          ],
+          "printed_page": 77,
+          "requirement": "Lemma 16.3: isomorphism equivalence and analytic compact perturbation.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.lemma16_3",
+            "NLS.ZakharovShabat.sourceBirkhoffJacobian_isomorphism_iff_normalized",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedJacobian_real_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id"
+          ],
+          "reviewed_claims": [
+            "Composition with the explicit Fourier equivalence transports bounded linear isomorphisms in both directions between the Jacobian and A_phi.",
+            "A_phi varies real analytically on the complete real source space and differs from identity by a compact operator at every real source and every finite p>1."
+          ],
+          "qualification": "The isomorphism equivalence is not by itself an invertibility proof; the later Section 17 argument supplies invertibility."
+        },
+        {
+          "ordered_group": "S16-024",
+          "source_lines": [
+            6305,
+            6311
+          ],
+          "printed_page": 77,
+          "requirement": "The normalized remainder series.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian_sub_id",
+            "NLS.ZakharovShabat.sourceBirkhoffFourierInverse_hasSum",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_coordinates"
+          ],
+          "reviewed_claims": [
+            "Apply the corrected inverse Fourier series to (d_phi Omega-d_0 Omega)h. The two coefficients are the actual rectangular derivative errors, and the y-gradient basis term carries a minus sign."
+          ],
+          "qualification": "The operator equality is exact. The source series is interpreted with the corrected reconstruction sign."
+        },
+        {
+          "ordered_group": "S16-025",
+          "source_lines": [
+            6312,
+            6320
+          ],
+          "printed_page": 77,
+          "requirement": "Literal finite-rank gradient-basis cutoffs.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff",
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_apply",
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_finiteDimensional"
+          ],
+          "reviewed_claims": [
+            "The cutoff truncates both actual Fourier-remainder outputs and applies the bounded inverse. Its exact finite sum uses the corrected negative y-gradient term.",
+            "The range lies in the span of the reconstructed x and y coordinate modes in the finite index set. Finite dimensionality proves that the operator has finite rank."
+          ],
+          "qualification": "Reindexing n to -n identifies the literal symmetric cutoffs in the source. The construction also permits arbitrary finite index sets."
+        },
+        {
+          "ordered_group": "S16-026",
+          "source_lines": [
+            6322,
+            6337
+          ],
+          "printed_page": 77,
+          "requirement": "A sufficient original-norm tail bound with its reconstruction constant.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_error_le",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_jacobianRemainder_rowMajorants_finiteGap",
+            "NLS.Coeff.norm_pairOutputCutoff_sub_le"
+          ],
+          "reviewed_claims": [
+            "The valid operator-norm bound is ||FourierInverse|| times the maximum of the two lp majorant tail norms. These majorants are constructed from the actual rectangular derivative errors at the finite-gap source.",
+            "It follows by coordinate/operator norm bounds, the output product norm, and bounded reconstruction into the genuine source p-norm. This supplies the required vanishing estimate without the printed coefficient-to-source isometry equality."
+          ],
+          "qualification": "The existing correction retains the necessary multiplicative operator norm. No new proof that the printed equality is wrong is added."
+        },
+        {
+          "ordered_group": "S16-027",
+          "source_lines": [
+            6339,
+            6343
+          ],
+          "printed_page": 77,
+          "requirement": "Operator-norm convergence and compactness at every real source.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedCutoff_tendsto",
+            "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedCutoff_symmetric_tendsto",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_finiteGap",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_jacobianRemainder_real",
+            "NLS.ZakharovShabat.dense_sourceFiniteGapLocus",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_real"
+          ],
+          "reviewed_claims": [
+            "Finite-exponent lp tails tend to zero, so the actual finite-rank cutoffs converge in operator norm at every real finite-gap source, including along the symmetric integer cutoffs.",
+            "Finite-gap sources are proved dense in the original source norm. Continuity of the actual Jacobian and closedness of the compact operators extend compactness to all real sources; bounded Fourier inversion gives the statement for A_phi-identity."
+          ],
+          "qualification": "Analytic dependence supplies continuity, but density and norm-closedness are the additional ingredients needed for this conclusion."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection16Original.lean": "6f16e8d22651929cc998858d87c3067871c9eef49d2c3a3ce2a18b0757281799",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalJacobian.lean": "78e1a55efc7caa8fdb9b18952f9e1192c11792b69c93ca6d0cf1c6af980688e9",
+        "NLS/ZakharovShabat/SourceBirkhoffFourierSeries.lean": "c903361c38e74670643c43d0401cd02e4aaa670c895ba38f430cc9454b171a04",
+        "NLS/ZakharovShabat/SourceBirkhoffNormalizedCutoff.lean": "65500a014decba545cbcc62a6bf1734622541a6b1972143de2cdf7d571837fa7",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaAuxiliary.lean": "ec6e1d8ae573e87694f2c61778fd6bbe12a9c1264efb0c8c6882731e22d5a281",
+        "NLS/ZakharovShabat/SourceAuxiliaryUniformAsymptotics.lean": "6c7c8090826ade711edf0657bb2514593c4e5235479670045cde3994a1daad6e",
+        "NLS/ZakharovShabat/SourceAuxiliaryUniformGradient.lean": "b2e7ba3350ff0c6918523ade5804a1b18f693386185d9a610b2def739c039db1",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaLemma16_1.lean": "40b074a2569f763d492c49ccee93fdcaa29b7a097ff2f7e8b2b6b54d84361d75",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaAllExponentSummability.lean": "f5e97ccd3789ba9dfce5c36f56dfc6229a433247b9fad0604283c3b289e53cee",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaFiniteGapSummability.lean": "8a1f7004dc94bb9408bc571d926a2fbbdb4b83d25d5d2cb9a6ff5774148c9813",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaClosedSummability.lean": "af5a2e6f6478bfecbe73bf918221819bbd566482ad16b376372ce1b750072634",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_2.lean": "28701bb34cb44fcdbf047dd2b4f9807a85ba68cdef3f1225d72452ba2f7d2dc2",
+        "NLS/ZakharovShabat/SourceBirkhoffRectangularGradientSummability.lean": "41aa700939cc59709afc0e8eda3711a3dd3791eab55b4b08da7455b264cd9de8",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedGradientSummability.lean": "c0c8825889df3b51391bfc16d8901f39caf20202fc8ad4eff56fc739aa7c8424",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteGapFactors.lean": "e758e2960ddcfa64bbdb58b00b1c0243b5ec8a7a12a9385dcc5959b795531eb9",
+        "NLS/ZakharovShabat/SourceSection16UniformDerivatives.lean": "247e0eafc67df151c3eacd17c0e845949af6dda28297cfed3d67e1a4c4a58c94",
+        "NLS/ZakharovShabat/SourceFiniteGapBetaDecay.lean": "e99ca21efa901acc34858f6a4fa4f79436ea6953cf8976ed7b6ff524d71185b8",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobian.lean": "81e260f1437d00e2ca9bb4fc48bf0649abe51e95869d6d4397d70b06768fd376",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_3.lean": "502fd21ed4db02e2c4a3e2412366a8b3d83cf69e1efcc6b1fac518e01e549cfa",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianCompact.lean": "0aa28a70da276af357e49b6884161b284931f1ae5356df830a33cc4f65d2bc11",
+        "NLS/ZakharovShabat/SourceBirkhoffFreeDifferential.lean": "426373e1cd9bf9f738bb8128a0915f40904c3be15471986519ce7621673ce54d",
+        "NLS/ZakharovShabat/SourceFiniteGapDensity.lean": "4c15799ba720b89f450ce5554743a72e02fe5965bba678c55c4bd0d8bd8a86ac",
+        "NLS/ZakharovShabat/SourceBirkhoffFourierEquivalence.lean": "3ba7172682d7fb12cf163457d4f37d608617b3e6f54122bf836ac541c53693bc",
+        "NLS/ZakharovShabat/SourceFiniteGapRegularity.lean": "237fe721adfd0977d81c4e32120a115227a2a61fea2e2665c6074ee2b2e92735",
+        "NLS/ZakharovShabat/SourceFiniteGapSobolev.lean": "d275a6221fe817c3cc2673820b496c0bfe92698e2c34762f252e17ad94097ca4",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaFiniteGapDifferential.lean": "45acd83aed83d573d742e43b73018403796d1711184e7f2f6bad872761aad8ee",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantDiscLp.lean": "62a7c8343346c9f21694882795b6f92912ccae73426a5850b3614682d0fc9c43",
+        "NLS/ZakharovShabat/SourceDirichletOmittedNormalizedAnalytic.lean": "8b89457df8896def5485b6ff160ff3a75415f319b55330b1d821bcff216aac36",
+        "NLS/ZakharovShabat/SourceSpectralGradientSobolevSummability.lean": "9655f405d9c678aec3651a5066f7878496040927d50cdbca26eb160220f7d18f",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantSobolevSummability.lean": "83f274b0af5aa16459bc1a2e5aafe1f389c52beb15911ef6c06fcec8bad80fcb",
+        "NLS/ZakharovShabat/SourceGradientExponentRestriction.lean": "5bf4215870860711e9f5af63684293fa7bc2c4fe1304dffbb3639b15818252d6",
+        "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean": "2603a04dd457dd9de3d41e69a77d52aa85144773ff045a98a64141d8a834c4d4",
+        "NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean": "7db57cb8f41a36fa619e8cdf8fb6c1c35d3f3a0b95178960d22f91685b42739f",
+        "NLS/ZakharovShabat/SourceLemmaD8.lean": "a0d21eafcfe62b13ad278b29edb9bcf1822ceab7896b27b2cf432b55cd3ab5ca",
+        "NLS/ZakharovShabat/SourceBirkhoffFourier.lean": "1189dc22390de01255d16296463fa5d30e1fc91978859b76e40696ad669f1c94",
+        "NLS/ZakharovShabat/SourceBirkhoffGradientReduction.lean": "0fefc3bc3ccfcccde27187d5ae973d4b4e921abe8048e118dd62bc92b1b22ff5",
+        "NLS/ZakharovShabat/SourceFreeSpectralDifferentials.lean": "b1f5bfad1f1df40607eea533f060c60b7255c777a4859d2290793d1a3a3053b1",
+        "NLS/SequenceSpaces/PairOutputCutoff.lean": "f8824142f17cefc2d9f3301da9005f355cb0b58e99a8614834dce39935030c66",
+        "NLS/SequenceSpaces/SourceConjugateGradient.lean": "05dd768d40406c2ab7867e9b74ef76abf036d4b2c415a0e57e6cd0ac5b0b973c",
+        "NLS/SequenceSpaces/BoundedScalarProducts.lean": "813037776ec6bfd5f06aa158551aad4b7ec29f36dcf863e26fa988fa6073dda0",
+        "NLS/ZakharovShabat/SourceSection15Original.lean": "a648c235ae8cd4a710829d7514830c43670228b50d57d6ce593d79fbce3ea357",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean": "45857554bb80ddacee0da4e6d1eab5f7b0a2793561c574b042c438ea92df7f34",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean": "337097cb7aa9ea6b05a58d364d3120848a553ccb35d377e1c6867509415a2254",
+        "NLS/ZakharovShabat/SourceMidpointProductSharedMajorant.lean": "4171becd537703df60bffd44beb4cc50676300e75a9225d65e897a1893a141d8",
+        "NLS/ZakharovShabat/SourcePsiSharedQuotientTail.lean": "520b902469bbcb2cee7c854402af4798aaeb434895376942239e2b7fbdef66f3",
+        "NLS/ZakharovShabat/SourcePsiSharedActualGapMajorant.lean": "d7875c362b18666ea67f8693da656df6e97fcbaef5bf4c8267836faa63d54673",
+        "NLS/ZakharovShabat/SourcePsiOriginalRootFamily.lean": "89f015a2ef047ca51cee0bd169549f2d3ea5fef3103cdf5dd4f8972771a3d7eb",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean": "4dddcbf934b281c625186d4ec1a53e9568e4cd7f32e9bb2e158a95c70fc46c6c",
+        "NLS/ZakharovShabat/SourceOmittedProductBoundaryNormalization.lean": "ffe0b69ebcc75c0318fe06cb5533e344d9422c9d913389476d362e2f0dcd68cf",
+        "NLS/ZakharovShabat/SourcePsiOwnIndexAsymptotics.lean": "95e3ef21210c7e98a403c8b121491cf2ae98f3c5514f02fdeadba2af752c3ad6"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection16Original.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalJacobian.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFourierSeries.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffNormalizedCutoff.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaAuxiliary.lean",
+        "NLS/ZakharovShabat/SourceAuxiliaryUniformAsymptotics.lean",
+        "NLS/ZakharovShabat/SourceAuxiliaryUniformGradient.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaLemma16_1.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaAllExponentSummability.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaFiniteGapSummability.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaClosedSummability.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_2.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffRectangularGradientSummability.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedGradientSummability.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteGapFactors.lean",
+        "NLS/ZakharovShabat/SourceSection16UniformDerivatives.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapBetaDecay.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobian.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_3.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianCompact.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFreeDifferential.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapDensity.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFourierEquivalence.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapRegularity.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapSobolev.lean",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaFiniteGapDifferential.lean",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantDiscLp.lean",
+        "NLS/ZakharovShabat/SourceDirichletOmittedNormalizedAnalytic.lean",
+        "NLS/ZakharovShabat/SourceSpectralGradientSobolevSummability.lean",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantSobolevSummability.lean",
+        "NLS/ZakharovShabat/SourceGradientExponentRestriction.lean",
+        "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean",
+        "NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean",
+        "NLS/ZakharovShabat/SourceLemmaD8.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFourier.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffGradientReduction.lean",
+        "NLS/ZakharovShabat/SourceFreeSpectralDifferentials.lean",
+        "NLS/SequenceSpaces/PairOutputCutoff.lean",
+        "NLS/SequenceSpaces/SourceConjugateGradient.lean",
+        "NLS/SequenceSpaces/BoundedScalarProducts.lean",
+        "NLS/ZakharovShabat/SourceMidpointProductSharedMajorant.lean",
+        "NLS/ZakharovShabat/SourcePsiSharedQuotientTail.lean",
+        "NLS/ZakharovShabat/SourcePsiSharedActualGapMajorant.lean",
+        "NLS/ZakharovShabat/SourcePsiOriginalRootFamily.lean",
+        "NLS/ZakharovShabat/SourceAngularOriginalDomain.lean",
+        "NLS/ZakharovShabat/SourceOmittedProductBoundaryNormalization.lean",
+        "NLS/ZakharovShabat/SourcePsiOwnIndexAsymptotics.lean"
+      ],
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section15OrderedSourceComparison-2026-10-30.json",
+          "sha256": "bdc323231f6b26688df5cbe724a1878e1547c06f480214e407a5e9064c2c49a1",
+          "modules": [
+            "NLS/ZakharovShabat/SourceSection15Original.lean",
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean",
+            "NLS/ZakharovShabat/SourceNormalizedActionRootSequenceSpace.lean"
+          ]
+        }
+      ],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/SECTION_16_ASSERTIONS.md",
+      "ordered_inventory_sha256": "77d30568acc5770412fb709b9118fa7495f272632e1d8f50253365cbf48aad25",
+      "resolved_declarations": [
+        "NLS.Coeff.norm_pairOutputCutoff_sub_le",
+        "NLS.CoeffPair.conjugateGradient",
+        "NLS.CoeffPair.dualPairing_conjugateGradient",
+        "NLS.CoeffPair.memlp_conjugateGradient",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.betaCorrection_finiteGap_inverse_index_bound",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.betaCorrection_gradient_local_bound",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffWeighted_fderiv_closed",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffXY_fderiv_eq_weighted",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoffXY_fderiv_zero",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.birkhoff_lemma16_2",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_fderiv_closed",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_fderiv_finiteGap_tail",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.gapWeightedEta_lemma16_1",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.memlp_birkhoffXY_fderiv_sub_eta_finiteGap",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.memlp_gapWeightedEta_fderiv_sub_free_finiteGap_all_exponents",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_jacobianRemainder_real",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_jacobianRemainder_rowMajorants_finiteGap",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_finiteGap",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_real",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_zero",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedJacobian_real_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_error_local_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_gradient_local_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_gradient_represents",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.auxiliary_remainder_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.dirichlet_omitted_normalized_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_gradient_local_bound",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_ownIndex_psi_error_memlp",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_ownIndex_quotient_error_memlp",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexExtension.exists_local_shared_actualGap_quotient_majorant",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.auxiliary_analytic",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.auxiliary_eq_real_quotient",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_2",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.equation3_3",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.gradient_reduction_finiteGap",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.lemma16_1",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.lemma16_2",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedCutoff_symmetric_tendsto",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedCutoff_tendsto",
+        "NLS.ZakharovShabat.SourceSection15OriginalData.normalizedJacobian_hasSum",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.jacobian_gradients",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.lemma16_3",
+        "NLS.ZakharovShabat.conjugateGradient_sourceBirkhoffFreeCotangents",
+        "NLS.ZakharovShabat.conjugateGradient_sourceGapWeightedEtaFreeCotangent",
+        "NLS.ZakharovShabat.dense_sourceFiniteGapLocus",
+        "NLS.ZakharovShabat.exists_global_source_spectral_gradients_sobolev_memlp",
+        "NLS.ZakharovShabat.exists_uniform_sourceAntiDiscriminant_at_dirichlet_tail",
+        "NLS.ZakharovShabat.memlp_sourceGapWeightedEtaClosedCotangent_finiteGap_all_exponents",
+        "NLS.ZakharovShabat.memlp_sourceGapWeightedEtaClosedCotangent_of_gradient_estimates",
+        "NLS.ZakharovShabat.memlp_sourceNormalizedActionRoot_sub_one",
+        "NLS.ZakharovShabat.memlp_sourceStandardRootOmittedProduct_boundary_sub_free",
+        "NLS.ZakharovShabat.memlp_source_antiDiscriminantCotangent_boundary_error",
+        "NLS.ZakharovShabat.memlp_source_antiDiscriminantCotangent_error_below_two",
+        "NLS.ZakharovShabat.memlp_source_antiDiscriminant_conjugate_boundary_error",
+        "NLS.ZakharovShabat.memlp_source_dirichlet_fderiv_error_below_two",
+        "NLS.ZakharovShabat.memlp_source_midpoint_fderiv_below_two",
+        "NLS.ZakharovShabat.memℓp_sourceAntiDiscriminant_at_dirichletRoots",
+        "NLS.ZakharovShabat.sourceBirkhoffFourierEquiv",
+        "NLS.ZakharovShabat.sourceBirkhoffFourierInverse_hasSum",
+        "NLS.ZakharovShabat.sourceBirkhoffFourierInverse_single",
+        "NLS.ZakharovShabat.sourceBirkhoffFreeXGradient",
+        "NLS.ZakharovShabat.sourceBirkhoffFreeYGradient",
+        "NLS.ZakharovShabat.sourceBirkhoffJacobian",
+        "NLS.ZakharovShabat.sourceBirkhoffJacobian_isomorphism_iff_normalized",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_apply",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_error_le",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobianCutoff_finiteDimensional",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian_sub_id",
+        "NLS.ZakharovShabat.sourceFiniteGap_exists_physical_hilbert_domain_below_two",
+        "NLS.ZakharovShabat.sourceFiniteGap_mem_H1",
+        "NLS.ZakharovShabat.sourceFiniteGap_mem_all_sobolev",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaAuxiliary",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaAuxiliary_eq_quotient",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaClosedCotangent",
+        "NLS.ZakharovShabat.sourceGapWeightedEtaClosedCotangent_sub_free",
+        "NLS.ZakharovShabat.sourceNormalizedActionRoot_gradient_local_bound",
+        "NLS.ZakharovShabat.sourceSection16_original",
+        "NLS.memlp_smul_of_bounded_scalar",
+        "NLS.memlp_smul_of_bounded_vector"
+      ],
+      "declaration_inventory_count": 44604,
+      "qualification": "All 27 ordered Section 16 passage groups are compared: 20 matched and seven corrected. Two new positive theorems prove the intermediate rectangular gradient estimates in the source operator norm and in physical Holder-conjugate pair norms for actual sequence entries. They retain all real spectral finite-gap sources, all signed indices and every finite p>1, with y in the second expression. The positive quotient-product convention, negative y term in Fourier reconstruction and bounded inverse norm in the cutoff estimate are retained directly. Two further positive theorems prove the separate own-index quotient-product and psi-numerator asymptotics for the original n-dependent root family at every real source, without a finite-gap hypothesis. One common majorant is chosen before the deleted and sampled indices. The auxiliary asymptotic retains its separate Banach-analytic lp sequence proof on the unchanged complex W. The full Birkhoff map and its actual Jacobian retain the compatible V inside W containing the entire real locus. The exact cited 2014 edition, earlier source qualifications and the wider dissertation inventory remain unresolved. No new refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          75,
+          76,
+          77
+        ],
+        "images": {
+          "work/tmp/pdfs/section15-075.png": "260c0ebf19714b5dd2f1ae286eff8879f68ccd6b43e55f177963a7b4e844830b",
+          "work/tmp/pdfs/section16-076.png": "7b3aa232617439d915a36c979769dba6504a88102cf0d8c5f1945f95f9d34781",
+          "work/tmp/pdfs/section16-077.png": "ce6fa4674ed6239cb8d032e62e2fd532efd859077818b307a46ff5bfe6d4e9ab"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4836,
+        "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
+      },
+      "full_gate": {
+        "session": 6799,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section16GradientAndProductsFullCheck-2.log",
+        "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
+      },
+      "source_record_sha256": "901c49ddb940274fd3605e213bee5718fa78b5f75ad9335c4a94d617dfcad653"
     }
   }
 }

@@ -4833,3 +4833,5 @@ import NLS.ComplexAnalysis.SingleCriticalPointSign
 import NLS.ZakharovShabat.SourceActionIntegrandSign
 import NLS.ZakharovShabat.SourceLemma11_1RealCalculation
 import NLS.ZakharovShabat.SourceActionContourCollarClosure
+import NLS.ZakharovShabat.SourceBirkhoffGradientReduction
+import NLS.ZakharovShabat.SourcePsiOwnIndexAsymptotics

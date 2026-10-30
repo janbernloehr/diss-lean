@@ -224,7 +224,23 @@ decay. Lemma 15.1 retains the original angular W, while equation (3.2) and
 Theorem 15.2 use the common Chapter 3 V. The canonical identities use the
 actual coordinate derivatives at all real sources and finite p>1. Existing
 proofs supply these results, with no new refutation. The exact external
-edition comparison remains unresolved. Next is Section 16, Jacobian.
+edition comparison remains unresolved.
+
+The [ordered Section 16 ledger](SECTION_16_ASSERTIONS.md) now records
+all 27 groups: 20 matched and seven corrected. Two new positive
+theorems establish the intermediate x/y gradient estimates of Lemma 16.2
+in source operator norms and physical Holder-conjugate pair norms for
+actual sequence entries, at every real finite-gap source and finite p>1.
+The corrected product sign, Fourier reconstruction sign and bounded
+inverse norm in the cutoff estimate are retained directly.
+
+Two further positive theorems prove the separate quotient-product and psi
+numerator asymptotics at their own Dirichlet roots for every real source.
+The common actual-gap majorant is chosen before both indices, so diagonal
+sampling retains lp summability for the original n-dependent root family.
+The full-complex auxiliary estimate retains its separate proof on W.
+This completes the ordered Section 16 comparison with explicit corrections;
+it does not resolve the wider dissertation qualifications. Next is Section 17.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

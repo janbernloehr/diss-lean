@@ -72377,3 +72377,81 @@ example : ∃ R : ℂ →L[ℂ] ℂ,
     ContinuousLinearMap.norm_id,mul_one,show (2:ℝ)*(1/2) = 1 by norm_num] using hR
 
 end Section12ComplexNeighborhoodExamples
+
+section Section16GradientReductionExamples
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem gradient_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem gradient_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨gradient_one_lt_half.le⟩
+
+-- Below two, the actual x-coordinate error has a summable 3/2 power
+-- of its physical l3 gradient norm, including the finite open-gap head.
+example {W₀ W V : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (D : SourceSection15OriginalData gradient_half_ne_top gradient_one_lt_half W₀ W V s)
+    (φ : realTypeSourceSubmodule (3/2))
+    (hfinite : φ ∈ sourceFiniteGapLocus gradient_half_ne_top gradient_one_lt_half) :
+    let g := CoeffPair.conjugateGradient gradient_half_ne_top (q := 3) (by norm_num)
+    let Z := fun sign n => g (fderiv ℂ
+      (fun ψ => sourceGapWeightedEtaSequence gradient_half_ne_top gradient_one_lt_half s sign ψ n) φ.val)
+    Summable (fun n : ℤ =>
+      ‖g (fderiv ℂ (fun ψ => (sourceBirkhoffMap gradient_half_ne_top gradient_one_lt_half s ψ).1 n) φ.val) -
+        (Real.sqrt 8 : ℂ)⁻¹ • (Z 1 n + Z (-1) n)‖ ^ (3/2 : ℝ)) := by
+  have h := (D.gradient_reduction_finiteGap (q := 3) (by norm_num) φ hfinite).1
+  have hs := (memℓp_gen_iff (p := (3/2 : ℝ≥0∞)) (by norm_num : 0 < (3/2 : ℝ≥0∞).toReal)).mp h
+  simpa only [norm_norm, ENNReal.toReal_div, ENNReal.toReal_ofNat] using hs
+
+-- At p=4 the corrected y estimate gives a literal convergent fourth-power
+-- sum of full derivative errors, not just scalar directional convergence.
+example {W₀ W V : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (D : SourceSection15OriginalData (by norm_num) (by norm_num) W₀ W V s)
+    (φ : realTypeSourceSubmodule 4)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    Summable (fun n : ℤ =>
+      ‖fderiv ℂ (sourceBirkhoffY (by norm_num) (by norm_num) n s) φ.val -
+        ((Real.sqrt 8 : ℂ)*Complex.I)⁻¹ •
+          (fderiv ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s 1) φ.val -
+            fderiv ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s (-1)) φ.val)‖ ^ (4 : ℕ)) := by
+  have h := (D.complex.angular.memlp_birkhoffXY_fderiv_sub_eta_finiteGap V
+    D.complex.source_open D.complex.source_subset φ (D.complex.real_subset φ.property) hfinite).2
+  simpa only [ENNReal.toReal_ofNat, Real.rpow_ofNat] using
+    (memℓp_gen_iff (p := 4) (by norm_num : 0 < (4 : ℝ≥0∞).toReal)).mp h
+
+
+-- The varying root family has one summable own-index quotient error at
+-- p=3/2, with no finite-gap assumption on the real source.
+example {W₀ W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (H : SourceLemma12_12Data gradient_half_ne_top gradient_one_lt_half W₀ W s)
+    (φ : realTypeSourceSubmodule (3/2)) :
+    Summable (fun n : ℤ =>
+      ‖sourceSingleRootQuotientJointProduct gradient_half_ne_top gradient_one_lt_half n
+        (canonicalPeriodOneBoundaryRoots gradient_half_ne_top gradient_one_lt_half .dirichlet φ.val n,
+          ((s n φ.val : Coeff (3/2)),φ.val))-1‖ ^ (3/2 : ℝ)) := by
+  have h := H.original_ownIndex_quotient_error_memlp φ
+  simpa only [ENNReal.toReal_div, ENNReal.toReal_ofNat] using
+    (memℓp_gen_iff (p := (3/2 : ℝ≥0∞)) (by norm_num : 0 < (3/2 : ℝ≥0∞).toReal)).mp h
+
+-- The separate psi numerator has its signed cosine asymptotic at every
+-- real source, with the original n-dependent roots and all signed indices.
+example {W₀ W : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (H : SourceLemma12_12Data (by norm_num) (by norm_num) W₀ W s)
+    (φ : realTypeSourceSubmodule 4) :
+    Summable (fun n : ℤ =>
+      ‖sourcePsiCandidate n
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n,
+          (s n φ.val : Coeff 4))+2*Complex.cos ((Real.pi:ℂ)*n)‖ ^ (4 : ℕ)) := by
+  have h := H.original_ownIndex_psi_error_memlp φ
+  simpa only [ENNReal.toReal_ofNat, Real.rpow_ofNat] using
+    (memℓp_gen_iff (p := 4) (by norm_num : 0 < (4 : ℝ≥0∞).toReal)).mp h
+
+end Section16GradientReductionExamples

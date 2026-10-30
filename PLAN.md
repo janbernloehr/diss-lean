@@ -1,6 +1,39 @@
 # Implementation plan
 
-## Current milestone: ordered Section 15 analyticity comparison
+## Current milestone: Section 16 gradients, products and ordered comparison
+
+Two new positive theorems prove the intermediate estimates in Lemma 16.2:
+the x derivative differs from the normalized sum of the two eta derivatives
+by an lp sequence, and the y derivative differs from their normalized
+difference by an lp sequence. The results hold in the full source operator
+norm and for physical Holder-conjugate gradients of actual sequence entries,
+at every real spectral finite-gap source and every finite p>1.
+
+The [ordered Section 16 ledger](coverage/SECTION_16_ASSERTIONS.md) records
+all 27 passage groups: 20 matched and seven corrected. It retains
+the positive quotient product, corrected y formula, negative y term in
+Fourier reconstruction and the bounded inverse norm in the cutoff estimate.
+No new proof refuting a printed formula is added.
+
+Two further positive theorems establish the separate own-index product
+asymptotics in S16-012, for the original root family varying with n.
+They hold at every real source, without a finite-gap hypothesis. A shared
+majorant is chosen before both indices; real Dirichlet interlacing permits
+diagonal sampling, and the signed omitted product recovers the psi estimate.
+The auxiliary's complex local uniformity and Banach analyticity retain
+their separate proof on the original W.
+
+This step freshly inspected 47 module bodies, reused three full readings
+at identical hashes and resolved 84 declarations.
+
+The fresh full check passed 8,559 build jobs, all 7,635 public examples and the transitive axiom audit of 44,604 NLS declarations. It reported 21 inherited warnings and no new warnings. Four new examples exercise the gradient and product estimates at p=3/2 and p=4, including ambient interval notation. Source hashes, declaration references, review integrity and documentation links are checked separately; those checks do not certify mathematical completeness.
+
+Next is Section 17, Diffeomorphism property. The exact 2014 [23] comparison and wider
+qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 15 analyticity comparison
 
 All fifteen Section 15 passage groups are now compared: twelve matched
 and three with explicit corrections or a sufficient estimate replacement.

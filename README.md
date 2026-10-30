@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 15 analyticity comparison](coverage/SECTION_15_ASSERTIONS.md)
-covers fifteen passage groups, retaining the corrected sine difference,
-the precise signed behavior at collapsed gaps and the sufficient local
-bounds for sequence analyticity. Lemma 15.1 keeps the original angular
-domain; Theorem 15.2 uses the common Chapter 3 neighborhood. Next is
-Section 16, Jacobian. Wider qualifications remain in the
+Latest step: two [intermediate gradient estimates](NLS/ZakharovShabat/SourceBirkhoffGradientReduction.lean)
+complete the corrected x/y formulas in the proof of Lemma 16.2, and two
+[own-index product estimates](NLS/ZakharovShabat/SourcePsiOwnIndexAsymptotics.lean)
+establish the separate asymptotics for every real source. The
+[ordered Section 16 comparison](coverage/SECTION_16_ASSERTIONS.md) records
+27 groups: 20 matched and seven corrected. Next is Section 17,
+Diffeomorphism property. Wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
