@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T11:38:01.502910+00:00",
-  "base_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+  "published_utc": "2026-10-30T11:45:24.389230+00:00",
+  "base_commit": "da655cbed3a5fe621384864e0e9d7ae7b9610096",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 129,
-    "module_hash_checks": 2265,
-    "distinct_modules": 1418
+    "review_records": 130,
+    "module_hash_checks": 2281,
+    "distinct_modules": 1420
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
-    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step only adds the ordered comparison of the full Theorem 11.2 statement and updates documentation. Thirteen ordered Section 11 groups are compared: twelve matched, one corrected and nine pending. All wider unresolved qualifications remain.",
+    "base_commit": "da655cbed3a5fe621384864e0e9d7ae7b9610096",
+    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step adds the ordered comparison of equation (2.18) and the recentered action integral. Fifteen Section 11 groups are compared: thirteen matched, two corrected and seven pending. The existing fixed-domain disk-index correction is recorded at this source occurrence; wider unresolved qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8518,
     "public_examples": 7587,
@@ -32165,6 +32165,148 @@
       },
       "ordered_inventory_sha256": "4808fd44458f9a5fb60e09fbe0e0232dc465588f68ffc352cbd733186f9877e3",
       "source_record_sha256": "4ee7dd957d873742df376b1b37baf984052b150c7ee0a418210fa22cc7531ea4"
+    },
+    "Section11FactorizationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "da655cbed3a5fe621384864e0e9d7ae7b9610096",
+      "updated_utc": "2026-10-30T11:45:24.389230+00:00",
+      "source_lines": [
+        [
+          4844,
+          4853
+        ],
+        [
+          4855,
+          4859
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-014",
+          "source_lines": [
+            4844,
+            4853
+          ],
+          "requirement": "Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.disk",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.factorization",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.fixed",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.joint",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.actionChi",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+            "NLS.ZakharovShabat.sourceActionChi",
+            "NLS.ZakharovShabat.sourceActionChi_eq_quotient",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+            "NLS.ZakharovShabat.sourceEquation2_18"
+          ],
+          "reviewed_claims": [
+            "The function chi_n is the literal unordered product of (critical_m-lambda)/w_m(lambda) over exactly the signed indices m!=n. Absolute summability of the individual factor errors identifies it with the existing analytic quotient, including at coinciding numerator roots and numerator zeros.",
+            "The actual discriminant-derivative/canonical-root quotient equals -i times (critical_n-lambda)/w_n(lambda) times chi_n. The proof separates entire numerator and canonical-root products and divides only by nonzero standard-root denominators, retaining zeros of the selected critical numerator.",
+            "The full critical displacement is an analytic ell-p-valued map on the original W0. Substitution into the jointly analytic quotient of Corollary 10.6 proves joint analyticity of chi_n on the complement of all other moving gaps, without shrinking W0.",
+            "The rendered sentence has closure(U_n) under the union over m!=n. The corrected fixed domain uses the other closed disks closure(U_m). The existing positive fixed-domain theorem proves this for every original isolating family on V contained in W0, and the selected-disk theorem proves joint analyticity on U_n times V.",
+            "The domain-index correction is the existing SOURCE_ERRATA.md entry. The factorization, literal product, exact -i normalization, original source neighborhood and original disks are retained."
+          ],
+          "qualification": "Corrected occurrence: replace the fixed subscript n inside the union over m!=n by m. The product and factorization match as printed. The existing positive proofs supply the corrected fixed domain and the stronger moving-gap domain, including the selected disk. This comparison adds no refutation and leaves the historical erratum unchanged."
+        },
+        {
+          "ordered_group": "S11-015",
+          "source_lines": [
+            4855,
+            4859
+          ],
+          "requirement": "Recentered action integral with coefficient i/pi and the squared critical factor.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_16Data.circuit",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_chi_circuit",
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_congr"
+          ],
+          "reviewed_claims": [
+            "The actual indexed action equals i/pi times the integral of (critical_n-lambda)^2/w_n(lambda) times the literal chi_n. The coefficient, squared numerator, standard-root branch and contour orientation match the printed display.",
+            "The identity holds for every finite piecewise C1 circuit contained in an original isolating disk minus its selected gap, with winding one about the actual midpoint. It uses the original complex source domain and every signed index, including complex collapsed gaps.",
+            "The unweighted discriminant-derivative/canonical-root integral vanishes on every such closed contour. A zero period propagates from a real-source germ throughout the connected original domain; the resulting primitive on the full original cut disk supplies the contour statement.",
+            "Subtracting the actual critical point from the spectral weight therefore leaves the action unchanged. Equation (2.18) then changes (lambda-critical_n) times the quotient into i times the squared critical numerator divided by w_n and multiplied by chi_n. Linearity and contour congruence complete the literal integral identity."
+          ],
+          "qualification": "The recentered contour formula matches on the unchanged original domain, with its exact i/pi constant. Winding-one finite piecewise C1 regularity is explicit; no real-source or open-gap restriction is imposed. The later gap parametrization and equation (2.19) remain separately pending."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceEquation2_18.lean": "98e191290f164a686969bbfe74e706bf5975070e69171efbe28f45cf2e6da3df",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceActionChiContour.lean": "221841ddf6c05c92507e97c55abbe2ba7d380235feeb1a745a99395dc41e7990",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementCommonAnalytic.lean": "ed03330f0249dc9297e9941da4275d18a11a55722b5fa900460e58fda684f876",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean": "ccf1d3942e8880d2916e83bb706abda313d654260ad7cd454bc9a91188f508ce",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioProduct.lean": "f3e359bc472fd8f7a81269eca54c8dbfc7161bae4ab4963a99f6fa775aa49e7c",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean": "d92a53a2ed4b3299577f9eafe276df92cb9e5898ce9606e32b40a705bc6ea1e4",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioFactorization.lean": "ca94dc6ab5ed607a8470179da0108aa5734595154d561d1a250e33394169cb65",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/SourceCriticalRootOriginalDiscPrimitive.lean": "2575e67fbf6fa910d55ac95018cbe4e2b756c79e6c2513478d5b4f8df0724bbc",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientCommonDomain.lean": "0660a804744e419db2bbc62358e15c760522b170bd1959ad82385a66495b1cf5",
+        "NLS/ZakharovShabat/SourceLemma11_1.lean": "6d670fd953a323f2bcc37ca7a03e856c706d0e644b146dc161b50909a780b6fa",
+        "NLS/ZakharovShabat/SourceEquation2_16.lean": "518cb513158f0e60ef2e1de3883e0883330db02129d3bd2ed0f2cb85697413de",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean": "1e562c8eb11de2a0d77b7226686f862dc2d79fd039bfbae9185920cffc408357",
+        "NLS/ZakharovShabat/SourceActionPiecewiseContour.lean": "01ec2db90ea86d29d943adfd68762972c09dab495d5c23dc1cc084f60bc1b736",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean": "f430fe6a6a78fbbbe02b98741e57cbe839821458a9aa91199bb7583d130916a9"
+      },
+      "reviewed_modules_read_in_full": true,
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_congr",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint",
+        "NLS.ZakharovShabat.SourceEquation2_16Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.disk",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.factorization",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.fixed",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.joint",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.actionChi",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_chi_circuit",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.sourceActionChi",
+        "NLS.ZakharovShabat.sourceActionChi_eq_quotient",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+        "NLS.ZakharovShabat.sourceEquation2_18"
+      ],
+      "declaration_inventory_count": 44364,
+      "qualification": "Fifteen of 22 ordered Section 11 groups are compared: thirteen matched and two corrected occurrences. Equation (2.18) retains its literal deleted product and exact -i factor; its fixed-domain disk index is corrected from n to the union index m using the existing positive proof. The following squared-critical contour formula matches with coefficient i/pi, on the original complex domain and including collapsed gaps. Seven proof groups remain pending, starting with the complex gap parametrization and equation (2.19). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15",
+          "work/tmp/pdfs/section11-factorization-domain.png": "668f1e57985e5f95e88d400b1493116cb9421591a870962653cddda7a7ef6c68"
+        }
+      },
+      "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+      "validation_lean_sources": {
+        "files": 4795,
+        "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
+      },
+      "ordered_inventory_sha256": "e26a8afd857bc6b12a81e99b4b0eeb7b0e46050d696cf5038b66a1f5adb436ea",
+      "source_record_sha256": "0046f91ed2a3eb0514a391ccae18135458c375a0c765a149fe9bfe12393a9eb6"
     }
   }
 }

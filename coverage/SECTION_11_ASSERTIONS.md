@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-Thirteen of 22 ordered Section 11 groups are compared: twelve matched and one corrected occurrence. The full Theorem 11.2 statement matches: one common normalized-action domain, the exact factor four, locally uniform half-exponent plus genuine one-plus remainders, positive real-part lower bounds, analytic nonvanishing principal roots and free value one. Nine intermediate proof groups remain pending, starting with equation (2.18). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Fifteen of 22 ordered Section 11 groups are compared: thirteen matched and two corrected occurrences. Equation (2.18) retains its literal deleted product and exact -i factor; its fixed-domain disk index is corrected from n to the union index m using the existing positive proof. The following squared-critical contour formula matches with coefficient i/pi, on the original complex domain and including collapsed gaps. Seven proof groups remain pending, starting with the complex gap parametrization and equation (2.19). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first thirteen
+the reviewed source extraction; form feeds do not add lines. The first fifteen
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -30,8 +30,8 @@ interpreting contour integrals.
 | S11-011 | 62 | 4816–4822 | Analytic subvariety Z_n and the normalized-action extension problem. | matched |
 | S11-012 | 62 | 4824–4832 | Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion. | matched |
 | S11-013 | 62 | 4833–4842 | Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one. | matched |
-| S11-014 | 62 | 4844–4853 | Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain. | pending |
-| S11-015 | 62 | 4855–4859 | Recentered action integral with coefficient i/pi and the squared critical factor. | pending |
+| S11-014 | 62 | 4844–4853 | Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain. | corrected |
+| S11-015 | 62 | 4855–4859 | Recentered action integral with coefficient i/pi and the squared critical factor. | matched |
 | S11-016 | 62 | 4860–4869 | Complex gap-side parametrization and the actual weighted integral for the action. | pending |
 | S11-017 | 62 | 4870–4876 | Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n. | pending |
 | S11-018 | 62 | 4878–4884 | Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2. | pending |
@@ -430,6 +430,68 @@ and dependency locks match the fully validated snapshot at `d3b3ff7`:
 declarations, with 21 inherited warnings. Source-review integrity and
 documentation-link checks pass for the new records.
 
-Continue with S11-014, the literal deleted-product factorization (2.18), and
-S11-015, the recentered squared-critical action integral. Their exact constants,
-domains and source hypotheses still require comparison in source order.
+The following subsection compares equation (2.18) and its recentered action integral.
+
+## Equation (2.18) and the recentered action integral
+
+### S11-014: Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain.
+
+- The function chi_n is the literal unordered product of (critical_m-lambda)/w_m(lambda) over exactly the signed indices m!=n. Absolute summability of the individual factor errors identifies it with the existing analytic quotient, including at coinciding numerator roots and numerator zeros.
+- The actual discriminant-derivative/canonical-root quotient equals -i times (critical_n-lambda)/w_n(lambda) times chi_n. The proof separates entire numerator and canonical-root products and divides only by nonzero standard-root denominators, retaining zeros of the selected critical numerator.
+- The full critical displacement is an analytic ell-p-valued map on the original W0. Substitution into the jointly analytic quotient of Corollary 10.6 proves joint analyticity of chi_n on the complement of all other moving gaps, without shrinking W0.
+- The rendered sentence has closure(U_n) under the union over m!=n. The corrected fixed domain uses the other closed disks closure(U_m). The existing positive fixed-domain theorem proves this for every original isolating family on V contained in W0, and the selected-disk theorem proves joint analyticity on U_n times V.
+- The domain-index correction is the existing SOURCE_ERRATA.md entry. The factorization, literal product, exact -i normalization, original source neighborhood and original disks are retained.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.disk`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.factorization`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.fixed`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.joint`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.actionChi`
+- `NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic`
+- `NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype`
+- `NLS.ZakharovShabat.sourceActionChi`
+- `NLS.ZakharovShabat.sourceActionChi_eq_quotient`
+- `NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi`
+- `NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi`
+- `NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension`
+- `NLS.ZakharovShabat.sourceEquation2_18`
+
+Corrected occurrence: replace the fixed subscript n inside the union over m!=n by m. The product and factorization match as printed. The existing positive proofs supply the corrected fixed domain and the stronger moving-gap domain, including the selected disk. This comparison adds no refutation and leaves the historical erratum unchanged.
+
+### S11-015: Recentered action integral with coefficient i/pi and the squared critical factor.
+
+- The actual indexed action equals i/pi times the integral of (critical_n-lambda)^2/w_n(lambda) times the literal chi_n. The coefficient, squared numerator, standard-root branch and contour orientation match the printed display.
+- The identity holds for every finite piecewise C1 circuit contained in an original isolating disk minus its selected gap, with winding one about the actual midpoint. It uses the original complex source domain and every signed index, including complex collapsed gaps.
+- The unweighted discriminant-derivative/canonical-root integral vanishes on every such closed contour. A zero period propagates from a real-source germ throughout the connected original domain; the resulting primitive on the full original cut disk supplies the contour statement.
+- Subtracting the actual critical point from the spectral weight therefore leaves the action unchanged. Equation (2.18) then changes (lambda-critical_n) times the quotient into i times the squared critical numerator divided by w_n and multiplied by chi_n. Linearity and contour congruence complete the literal integral identity.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_16Data.circuit`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.circuit`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit`
+- `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_chi_circuit`
+- `NLS.ComplexAnalysis.PiecewiseC1Loop.integral_congr`
+
+The recentered contour formula matches on the unchanged original domain, with its exact i/pi constant. Winding-one finite piecewise C1 regularity is explicit; no real-source or open-gap restriction is imposed. The later gap parametrization and equation (2.19) remain separately pending.
+
+The [literal product](../NLS/ZakharovShabat/SourceActionChi.lean),
+[contour proof](../NLS/ZakharovShabat/SourceActionChiContour.lean) and
+[common-domain package](../NLS/ZakharovShabat/SourceEquation2_18.lean)
+supply these assertions. The [existing domain-index erratum](../SOURCE_ERRATA.md#equation-218-the-omitted-disk-domain-uses-the-union-index)
+is retained. The comparison records 16 inspected module bodies and 22 resolved declarations.
+
+This step changes documentation and comparison records only. The exact Lean
+sources and dependency locks match the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Continue with S11-016 and S11-017: the complex gap-side parametrization,
+the weighted action integral and the normalized identity (2.19).

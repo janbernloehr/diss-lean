@@ -1,6 +1,37 @@
 # Implementation plan
 
-## Current milestone: Theorem 11.2 statement comparison
+## Current milestone: equation (2.18) and recentered action
+
+Equation (2.18) and the following action integral now have ordered source
+comparisons. The literal product omits exactly the selected index, and the
+quotient factorization has the printed factor -i. The source's fixed-domain
+union is corrected to use the other closed disks U_m, as already recorded
+in [SOURCE_ERRATA.md](SOURCE_ERRATA.md). The existing positive proof retains
+the original source domain and disks.
+
+The recentered action is exactly i/pi times the squared-critical integral
+with that literal product. The proof applies to every winding-one finite
+piecewise C1 circuit in the original cut disk, for complex sources and
+collapsed gaps. The vanishing unweighted period justifies recentering.
+
+The [ordered Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) now has
+fifteen compared groups: thirteen matched and two corrected; seven remain pending.
+The new corrected occurrence is the already documented disk-index typo.
+
+This step updates documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next are the complex gap parametrization and normalized-action identity (2.19).
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Theorem 11.2 statement comparison
 
 The full statement of Theorem 11.2 now matches the existing Lean proofs.
 One open complex W contains the entire real-type locus and supports every
