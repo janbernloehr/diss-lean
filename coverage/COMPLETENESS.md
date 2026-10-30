@@ -167,15 +167,14 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
-The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares fifteen
-of 22 groups: thirteen matched and two corrected occurrences. Equation (2.18)
-retains its literal deleted product and exact -i normalization; its fixed domain
-uses the other closed disks indexed by m, as the existing erratum requires.
-The recentered action formula matches with coefficient i/pi on the original
-complex domain, including collapsed gaps. Seven proof groups remain pending,
-beginning with the complex gap parametrization and equation (2.19). Earlier
-comparisons, corrections and all wider qualifications remain; these comparisons
-do not certify source-wide completeness.
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares seventeen
+of 22 groups: fifteen matched and two corrected occurrences. The complex gap-side
+values, shrinking contours, weighted action integral and equation (2.19) match
+with their exact 2/pi and factor-four constants. The original complex domain,
+endpoint integrability and off-zero-gap normalization condition are retained.
+Five proof groups remain pending, beginning with the collapsed limit and analytic
+extension. Earlier comparisons, corrections and all wider qualifications remain;
+these comparisons do not certify source-wide completeness.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

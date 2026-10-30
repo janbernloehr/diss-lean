@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-Fifteen of 22 ordered Section 11 groups are compared: thirteen matched and two corrected occurrences. Equation (2.18) retains its literal deleted product and exact -i factor; its fixed-domain disk index is corrected from n to the union index m using the existing positive proof. The following squared-critical contour formula matches with coefficient i/pi, on the original complex domain and including collapsed gaps. Seven proof groups remain pending, starting with the complex gap parametrization and equation (2.19). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Seventeen of 22 ordered Section 11 groups are compared: fifteen matched and two corrected occurrences. The complex gap-side values, shrinking contours, weighted action integral and equation (2.19) match, including the exact 2/pi and factor-four constants. The original complex domain and off-zero-gap normalization condition are retained. Five proof groups remain pending, starting with the collapsed limit and analytic extension. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first fifteen
+the reviewed source extraction; form feeds do not add lines. The first seventeen
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -32,8 +32,8 @@ interpreting contour integrals.
 | S11-013 | 62 | 4833–4842 | Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one. | matched |
 | S11-014 | 62 | 4844–4853 | Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain. | corrected |
 | S11-015 | 62 | 4855–4859 | Recentered action integral with coefficient i/pi and the squared critical factor. | matched |
-| S11-016 | 62 | 4860–4869 | Complex gap-side parametrization and the actual weighted integral for the action. | pending |
-| S11-017 | 62 | 4870–4876 | Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n. | pending |
+| S11-016 | 62 | 4860–4869 | Complex gap-side parametrization and the actual weighted integral for the action. | matched |
+| S11-017 | 62 | 4870–4876 | Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n. | matched |
 | S11-018 | 62 | 4878–4884 | Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2. | pending |
 | S11-019 | 62 | 4885–4889 | Continuous removal across Z_n, analytic collapsed value and analytic extension. | pending |
 | S11-020 | 62 | 4890–4895 | Full-domain locally uniform literal gap-supremum estimate for chi_n minus one. | pending |
@@ -493,5 +493,71 @@ sources and dependency locks match the full validation at `d3b3ff7`:
 declarations, with 21 inherited warnings. Source-review integrity and
 documentation-link checks pass for the new records.
 
-Continue with S11-016 and S11-017: the complex gap-side parametrization,
-the weighted action integral and the normalized identity (2.19).
+The following subsection compares the complex gap integral and equation (2.19).
+
+## Complex gap integral and equation (2.19)
+
+### S11-016: Complex gap-side parametrization and the actual weighted integral for the action.
+
+- With tau_n the actual midpoint and delta_n=gamma_n/2, lambda_t=tau_n+delta_n*t. The literal unnormalized identity is I_n=(2/pi) times the integral from -1 to 1 of (critical_n-tau_n-delta_n*t)^2*chi_n(lambda_t)/sqrt(1-t^2).
+- The literal complex gap side values are minus/plus i times half-gap times the positive real square root of 1-t^2. The side convention is the sign of Im((z-midpoint)/halfGap); arbitrary within-side approaches include both endpoints and the midpoint.
+- The generic Joukowski ellipse period theorem proves actual contour contraction for arbitrary complex midpoint and nonzero half-gap in any prescribed open gap neighborhood. One R>1 works for every 1<r<=R. Its exact Jacobian/root is -2*pi*i, the annulus proof makes averages independent of r, and compact uniform convergence identifies the limiting cosine gap average.
+- For the printed action passage, take U to be the original selected disk and f(z)=(critical-z)^2*chi(z). Joint chi analyticity restricted to that disk gives the analytic numerator, the actual source ellipses have winding one, and SourceEquation2_18Data.circuit identifies each ellipse integral with the actual action. This explicitly supports shrinking independently of analytic continuation of the final weighted formula.
+- SourceActionChiCosine proves the actual action formula on the original connected W0 using an analytic symmetric cosine mean and real-form uniqueness. Its real-source agreement, including the collapsed case, and the exact chi=i*oldExtension conversion have been compared. The mean needs analytic midpoint and squared gap, without analytic ordered endpoints.
+- ComplexArcsineIntegral proves the literal arccos substitution and endpoint integrability for continuous numerators. The resulting actual weighted-gap formula has coefficient 2/pi; no real-source restriction or domain shrink is imposed, and the unnormalized identity also holds at collapsed gaps.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean_real`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chi_gapIntegral`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chiCosineMean_analytic`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_continuous`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_weighted_integrable`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.circuit`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.disk`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.joint`
+- `NLS.ZakharovShabat.exists_local_eqOn_of_eqOn_realType`
+- `NLS.ZakharovShabat.exists_standardRootEllipse_local_period`
+- `NLS.ZakharovShabat.sourceStandardRootEllipseLoop_winding`
+- `NLS.ZakharovShabat.sourceStandardRoot_eq_normalized_halfGap`
+- `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_lower_side`
+- `NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_upper_side`
+- `NLS.ZakharovShabat.standardRootEllipseLoop_weighted_integral`
+- `NLS.ZakharovShabat.standardRootEllipseMap_deriv_div_root`
+- `NLS.ZakharovShabat.standardRootEllipse_average_tendsto`
+- `NLS.ComplexAnalysis.integral_div_sqrt_one_sub_sq_eq_cosine`
+- `NLS.ComplexAnalysis.intervalIntegrable_div_sqrt_one_sub_sq`
+
+Matched for every signed index and complex source in the original domain. The direct ellipse contraction is instantiated in the original disk using the preceding circuit formula; the final weighted identity also has its own analytic-continuation proof. No new constant correction or refutation is needed.
+
+### S11-017: Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n.
+
+- The coordinate is literally t_n=(critical_n-tau_n)/(gamma_n/2). Lemma 10.10 gives t_n=2*gamma_n*B_n with the actual critical-offset coefficient, also in the totalized collapsed case.
+- Off the actual zero-gap locus, equation (2.19) is 4*I_n/gamma_n^2=(2/pi) times the integral from -1 to 1 of (t_n-t)^2*chi_n(tau_n+gamma_n*t/2)/sqrt(1-t^2). Dividing the preceding formula by the nonzero half-gap squared gives the exact factor four.
+- The normalized integrand is genuinely interval integrable by continuity of its numerator and integrability of the arcsine weight. The original complex domain is unchanged. The filled quotient and its analytic extension at zero gaps are separate assertions.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_18Data.actionCriticalCoordinate_eq_gap_mul`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_weighted_integrable`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.normalizedAction_eq_chi_gapIntegral`
+- `NLS.ZakharovShabat.sourceActionCriticalCoordinate`
+
+Matched with the exact factor four, coefficient 2/pi and denominator gamma_n/2 in t_n. S11-018 and S11-019 retain the pending collapsed-limit and analytic-removal comparisons.
+
+The [complex boundary values](../NLS/ZakharovShabat/SourceStandardRootGapSideSourceJoint.lean),
+[ellipse contraction](../NLS/ZakharovShabat/SourceStandardRootEllipsePeriod.lean),
+[actual winding](../NLS/ZakharovShabat/SourceStandardRootLocalEllipses.lean),
+[cosine representation](../NLS/ZakharovShabat/SourceActionChiCosine.lean) and
+[weighted formulas](../NLS/ZakharovShabat/SourceActionChiGapIntegral.lean)
+supply these assertions. The comparison records 22 inspected module bodies and 23 resolved declarations.
+
+This step changes documentation and comparison records only. The exact Lean
+sources and dependency locks match the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Continue with S11-018 and S11-019: the collapsed normalized-action limit
+and analytic extension across the zero-gap locus.

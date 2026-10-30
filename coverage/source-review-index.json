@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T11:45:24.389230+00:00",
-  "base_commit": "da655cbed3a5fe621384864e0e9d7ae7b9610096",
+  "published_utc": "2026-10-30T11:59:27.965624+00:00",
+  "base_commit": "35e7c8d3c55c55c00bc4513586a7efce43fc51ce",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 130,
-    "module_hash_checks": 2281,
-    "distinct_modules": 1420
+    "review_records": 131,
+    "module_hash_checks": 2303,
+    "distinct_modules": 1435
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "da655cbed3a5fe621384864e0e9d7ae7b9610096",
-    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step adds the ordered comparison of equation (2.18) and the recentered action integral. Fifteen Section 11 groups are compared: thirteen matched, two corrected and seven pending. The existing fixed-domain disk-index correction is recorded at this source occurrence; wider unresolved qualifications remain.",
+    "base_commit": "35e7c8d3c55c55c00bc4513586a7efce43fc51ce",
+    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step compares the complex gap integral and equation (2.19), including direct ellipse contraction and exact constants. Seventeen Section 11 groups are compared: fifteen matched, two corrected and five pending. Wider unresolved qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8518,
     "public_examples": 7587,
@@ -32307,6 +32307,165 @@
       },
       "ordered_inventory_sha256": "e26a8afd857bc6b12a81e99b4b0eeb7b0e46050d696cf5038b66a1f5adb436ea",
       "source_record_sha256": "0046f91ed2a3eb0514a391ccae18135458c375a0c765a149fe9bfe12393a9eb6"
+    },
+    "Section11GapIntegralSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "35e7c8d3c55c55c00bc4513586a7efce43fc51ce",
+      "updated_utc": "2026-10-30T11:59:27.965624+00:00",
+      "source_lines": [
+        [
+          4860,
+          4869
+        ],
+        [
+          4870,
+          4876
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-016",
+          "source_lines": [
+            4860,
+            4869
+          ],
+          "requirement": "Complex gap-side parametrization and the actual weighted integral for the action.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean_real",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chi_gapIntegral",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chiCosineMean_analytic",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_continuous",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_weighted_integrable",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.disk",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.joint",
+            "NLS.ZakharovShabat.exists_local_eqOn_of_eqOn_realType",
+            "NLS.ZakharovShabat.exists_standardRootEllipse_local_period",
+            "NLS.ZakharovShabat.sourceStandardRootEllipseLoop_winding",
+            "NLS.ZakharovShabat.sourceStandardRoot_eq_normalized_halfGap",
+            "NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_lower_side",
+            "NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_upper_side",
+            "NLS.ZakharovShabat.standardRootEllipseLoop_weighted_integral",
+            "NLS.ZakharovShabat.standardRootEllipseMap_deriv_div_root",
+            "NLS.ZakharovShabat.standardRootEllipse_average_tendsto",
+            "NLS.ComplexAnalysis.integral_div_sqrt_one_sub_sq_eq_cosine",
+            "NLS.ComplexAnalysis.intervalIntegrable_div_sqrt_one_sub_sq"
+          ],
+          "reviewed_claims": [
+            "With tau_n the actual midpoint and delta_n=gamma_n/2, lambda_t=tau_n+delta_n*t. The literal unnormalized identity is I_n=(2/pi) times the integral from -1 to 1 of (critical_n-tau_n-delta_n*t)^2*chi_n(lambda_t)/sqrt(1-t^2).",
+            "The literal complex gap side values are minus/plus i times half-gap times the positive real square root of 1-t^2. The side convention is the sign of Im((z-midpoint)/halfGap); arbitrary within-side approaches include both endpoints and the midpoint.",
+            "The generic Joukowski ellipse period theorem proves actual contour contraction for arbitrary complex midpoint and nonzero half-gap in any prescribed open gap neighborhood. One R>1 works for every 1<r<=R. Its exact Jacobian/root is -2*pi*i, the annulus proof makes averages independent of r, and compact uniform convergence identifies the limiting cosine gap average.",
+            "For the printed action passage, take U to be the original selected disk and f(z)=(critical-z)^2*chi(z). Joint chi analyticity restricted to that disk gives the analytic numerator, the actual source ellipses have winding one, and SourceEquation2_18Data.circuit identifies each ellipse integral with the actual action. This explicitly supports shrinking independently of analytic continuation of the final weighted formula.",
+            "SourceActionChiCosine proves the actual action formula on the original connected W0 using an analytic symmetric cosine mean and real-form uniqueness. Its real-source agreement, including the collapsed case, and the exact chi=i*oldExtension conversion have been compared. The mean needs analytic midpoint and squared gap, without analytic ordered endpoints.",
+            "ComplexArcsineIntegral proves the literal arccos substitution and endpoint integrability for continuous numerators. The resulting actual weighted-gap formula has coefficient 2/pi; no real-source restriction or domain shrink is imposed, and the unnormalized identity also holds at collapsed gaps."
+          ],
+          "qualification": "Matched for every signed index and complex source in the original domain. The direct ellipse contraction is instantiated in the original disk using the preceding circuit formula; the final weighted identity also has its own analytic-continuation proof. No new constant correction or refutation is needed."
+        },
+        {
+          "ordered_group": "S11-017",
+          "source_lines": [
+            4870,
+            4876
+          ],
+          "requirement": "Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_18Data.actionCriticalCoordinate_eq_gap_mul",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_weighted_integrable",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.normalizedAction_eq_chi_gapIntegral",
+            "NLS.ZakharovShabat.sourceActionCriticalCoordinate"
+          ],
+          "reviewed_claims": [
+            "The coordinate is literally t_n=(critical_n-tau_n)/(gamma_n/2). Lemma 10.10 gives t_n=2*gamma_n*B_n with the actual critical-offset coefficient, also in the totalized collapsed case.",
+            "Off the actual zero-gap locus, equation (2.19) is 4*I_n/gamma_n^2=(2/pi) times the integral from -1 to 1 of (t_n-t)^2*chi_n(tau_n+gamma_n*t/2)/sqrt(1-t^2). Dividing the preceding formula by the nonzero half-gap squared gives the exact factor four.",
+            "The normalized integrand is genuinely interval integrable by continuity of its numerator and integrability of the arcsine weight. The original complex domain is unchanged. The filled quotient and its analytic extension at zero gaps are separate assertions."
+          ],
+          "qualification": "Matched with the exact factor four, coefficient 2/pi and denominator gamma_n/2 in t_n. S11-018 and S11-019 retain the pending collapsed-limit and analytic-removal comparisons."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/ComplexArcsineIntegral.lean": "59807ef207311188c1ad768f45f09ea2892321ad7459a226bec05bee206ae47b",
+        "NLS/ComplexAnalysis/ParametricCosineMean.lean": "29f59a6a0f608ff5d41610e7a8916143f77d13abdea17ab9eaeb9b3c50002bcd",
+        "NLS/ComplexAnalysis/ParametricCosineMeanLocal.lean": "9657ee44fddea6e6b86ebdfd3367a4ff8e7b8030f4338b6d29b1a349b1d46d61",
+        "NLS/ComplexAnalysis/ParametricCosineMeanSegment.lean": "b70224c5ca8bba359d2f67432779e2112e815c97f1dc07aca5977016786decd0",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceActionChiContour.lean": "221841ddf6c05c92507e97c55abbe2ba7d380235feeb1a745a99395dc41e7990",
+        "NLS/ZakharovShabat/SourceActionChiCosine.lean": "559ac2cdd4f1f70a2e1504e4da6ef765c204bbed9bd5c64fd220b38f8f935117",
+        "NLS/ZakharovShabat/SourceActionChiGapIntegral.lean": "5e4fc6012e31d73f131242a1dc3e8f8239902f00e82e194a909c192d14c51173",
+        "NLS/ZakharovShabat/SourceEquation2_18.lean": "98e191290f164a686969bbfe74e706bf5975070e69171efbe28f45cf2e6da3df",
+        "NLS/ZakharovShabat/SourceGapCosineMeanAnalytic.lean": "a6dddb4ebc31ee8a77eb9e5905607b5740a36559298505cee30d3874c82b75a2",
+        "NLS/ZakharovShabat/SourceGapCosineMeanDomain.lean": "967a958a5f36c6534087fb10343610831cc2385713996bc48f17e4be3e3ad354",
+        "NLS/ZakharovShabat/SourceNormalizedActionModel.lean": "9ac3655571146558c90733c4be04ee9641343edf251341c6eaf180b531b02f85",
+        "NLS/ZakharovShabat/SourceRealActionLocalOverlap.lean": "743041dea02450e2d0436efd8fb91d30cfd437ddfd4295bceca8e1f8e93ae8fc",
+        "NLS/ZakharovShabat/SourceStandardRootEllipseGeometry.lean": "528e1142c65ecee8b1e513dbc9ef5f2e73133ca2702472058506124ef7ed9a8a",
+        "NLS/ZakharovShabat/SourceStandardRootEllipsePath.lean": "51eeeee0a99ff4ef32bda04d379731ce29e56626b891608e254d6ffc58d2376c",
+        "NLS/ZakharovShabat/SourceStandardRootEllipsePeriod.lean": "007e4e27b52263b732c05c7885b731323d0feb5253e8fef88ca9f9c47e5987f2",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideComplex.lean": "7687de642a0e6f4d977307e031a06a462d025ca51cff981bb3f8abe05e98027a",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideJoint.lean": "c400c20ed29b424f62c1793a24fd72322bc721aa45fc384c1504d929b6243098",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideSource.lean": "204acdbd18043cce84fdb7ae7febdf7df0812fe7e2225b18d274c7f24f57c70d",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideSourceJoint.lean": "25bf1df2d31fd601e94a6a65eb23f5d060cbf43d0d8442e46469503746910e93",
+        "NLS/ZakharovShabat/SourceStandardRootJoukowski.lean": "3309b2beb2e79478292d15178df809457968ec799b4d901f2d6b3b8b06c98ad9",
+        "NLS/ZakharovShabat/SourceStandardRootLocalEllipses.lean": "76d996553c80fb17f2769bdbed1f886dc93ec35964ebba4d545a9177f22a6499"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "record": "work/Section11FactorizationSourceComparison-2026-10-30.json",
+        "modules": [
+          "NLS/ZakharovShabat/SourceActionChi.lean",
+          "NLS/ZakharovShabat/SourceActionChiContour.lean",
+          "NLS/ZakharovShabat/SourceEquation2_18.lean"
+        ],
+        "hashes_reverified": true
+      },
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.integral_div_sqrt_one_sub_sq_eq_cosine",
+        "NLS.ComplexAnalysis.intervalIntegrable_div_sqrt_one_sub_sq",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.actionCriticalCoordinate_eq_gap_mul",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chiCosineMean_real",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.action_eq_chi_gapIntegral",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chiCosineMean_analytic",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_continuous",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chi_gap_weighted_integrable",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.disk",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.joint",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.normalizedAction_eq_chi_gapIntegral",
+        "NLS.ZakharovShabat.exists_local_eqOn_of_eqOn_realType",
+        "NLS.ZakharovShabat.exists_standardRootEllipse_local_period",
+        "NLS.ZakharovShabat.sourceActionCriticalCoordinate",
+        "NLS.ZakharovShabat.sourceStandardRootEllipseLoop_winding",
+        "NLS.ZakharovShabat.sourceStandardRoot_eq_normalized_halfGap",
+        "NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_lower_side",
+        "NLS.ZakharovShabat.sourceStandardRoot_tendsto_gap_upper_side",
+        "NLS.ZakharovShabat.standardRootEllipseLoop_weighted_integral",
+        "NLS.ZakharovShabat.standardRootEllipseMap_deriv_div_root",
+        "NLS.ZakharovShabat.standardRootEllipse_average_tendsto"
+      ],
+      "declaration_inventory_count": 44364,
+      "qualification": "Seventeen of 22 ordered Section 11 groups are compared: fifteen matched and two corrected occurrences. The complex gap-side values, shrinking contours, weighted action integral and equation (2.19) match, including the exact 2/pi and factor-four constants. The original complex domain and off-zero-gap normalization condition are retained. Five proof groups remain pending, starting with the collapsed limit and analytic extension. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15"
+        }
+      },
+      "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+      "validation_lean_sources": {
+        "files": 4795,
+        "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
+      },
+      "ordered_inventory_sha256": "63840bc8b5d15b6d21e5516ecc221619e9c4f42e5cf5be7a6d40ccb52d3f7647",
+      "source_record_sha256": "206f5998a2a4ab79a95d07ab0bbfd98e9a586ab8bb5904093b05b4ed92b5a259"
     }
   }
 }

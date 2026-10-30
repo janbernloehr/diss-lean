@@ -1,6 +1,36 @@
 # Section 11: actions
 
-## Ordered comparison through equation (2.18) and recentered action
+## Ordered comparison through the complex gap integral and equation (2.19)
+
+The complex gap-side values, contour contraction and weighted action
+integral match the source. Winding-one ellipses contract inside the original
+disk; their exact root-weighted Jacobian and limiting cosine average justify
+the shrinking step. The action formula has coefficient 2/pi and its
+arcsine-weighted integrand is integrable at both endpoints.
+
+Equation (2.19) retains the literal 4I_n/gamma_n^2 normalization and
+t_n=(critical_n-tau_n)/(gamma_n/2), off the zero-gap locus. The formulas
+hold on the original complex domain. The unnormalized identity also holds
+at collapsed gaps; the normalized extension is compared next.
+
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now has
+seventeen compared groups: fifteen matched and two corrected; five remain pending.
+This step requires no additional constant correction.
+
+This step updates documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next are the collapsed normalized-action limit and analytic removal across Z_n.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope.
+
+## Previous ordered milestone: equation (2.18) and recentered action
 
 Equation (2.18) and the following action integral now have ordered source
 comparisons. The literal product omits exactly the selected index, and the

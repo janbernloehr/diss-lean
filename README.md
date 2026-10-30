@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [equation (2.18) and the recentered action integral](NLS/ZakharovShabat/SourceEquation2_18.lean)
-are compared with their exact -i and i/pi factors and the existing disk-index
-correction. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has thirteen
-matched groups, two corrected and seven pending. Next is the complex gap
-parametrization and equation (2.19). The
-[completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
+Latest step: the [complex gap integral and equation (2.19)](NLS/ZakharovShabat/SourceActionChiGapIntegral.lean)
+are compared with their exact 2/pi and factor-four constants, complex gap-side
+values, contour contraction and endpoint integrability. The
+[Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has fifteen matched groups,
+two corrected and five pending. Next are the collapsed limit and analytic
+extension. The [completion assessment](coverage/COMPLETENESS.md) retains the
+wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
