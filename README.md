@@ -6,13 +6,13 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 Latest step: the [ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md)
-now includes equation (2.15), its analytic domains and admissible paths.
-The full product retains the factor -i, the original closed-disk domain
-and the common W. Admissibility allows gaps only at path endpoints.
-The ledger covers 45 of 52 groups: 37 matched and eight corrected
-occurrences; seven remain pending. This step records existing proofs.
-The [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
-partial clauses and the wider qualifications.
+now includes Figure 2.5 and Lemma 10.11(i). The path class allows loops
+and self-intersections. One analytic extension covers all collapsed gaps
+on the unchanged common domain, including infinitely many collapsed gaps.
+The ledger covers 47 of 52 groups: 39 matched and eight corrected
+occurrences; five remain pending. This step records existing definitions
+and proofs. The [completion assessment](coverage/COMPLETENESS.md) retains
+Section 7's partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T08:16:47.048541+00:00",
-  "base_commit": "0014279343363eebf8038782637facc13525c4fb",
+  "published_utc": "2026-10-30T08:29:05.714905+00:00",
+  "base_commit": "7026d746ff4e03fbc0fdc30fda4c9c929473bbdf",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 119,
-    "module_hash_checks": 2075,
-    "distinct_modules": 1323
+    "review_records": 120,
+    "module_hash_checks": 2081,
+    "distinct_modules": 1327
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0014279343363eebf8038782637facc13525c4fb",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 45 of 52 ordered Section 10 groups are compared: 37 matched and eight corrected occurrences, with seven pending. Equation (2.15) retains the exact -i normalization and full unordered product, unchanged common domain and original closed-disk analytic domains. Admissibility keeps the exact continuous-path endpoint convention. Wider qualifications remain.",
+    "base_commit": "7026d746ff4e03fbc0fdc30fda4c9c929473bbdf",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 47 of 52 ordered Section 10 groups are compared: 39 matched and eight corrected occurrences, with five pending. Figure 2.5 illustrates the unrestricted admissible path class. Lemma 10.11(i) retains one analytic extension across all collapsed gaps on the unchanged common domain. Wider qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8511,
     "public_examples": 7580,
@@ -30662,6 +30662,132 @@
       "declaration_inventory_count": 44300,
       "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
       "source_record_sha256": "df9ea4887d2faa65e6f99de07c2721ec9d575a200cb66d89bee54c5a8bfef2e5"
+    },
+    "Section10ContinuationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7026d746ff4e03fbc0fdc30fda4c9c929473bbdf",
+      "updated_utc": "2026-10-30T08:29:05.714905+00:00",
+      "source_lines": [
+        [
+          4606,
+          4616
+        ],
+        [
+          4619,
+          4626
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-046",
+          "source_lines": [
+            4606,
+            4616
+          ],
+          "requirement": "Figure 2.5: multiple admissible endpoint paths.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAdmissiblePath",
+            "NLS.ZakharovShabat.sourceAdmissiblePath_iff",
+            "NLS.ZakharovShabat.SourceAdmissiblePiecewisePath",
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path",
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.PiecesInside",
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.VerticesInside"
+          ],
+          "reviewed_claims": [
+            "The two drawn paths share the periodic endpoints and avoid the gap in their interiors. The lower path has a self-intersection and a loop, so admissibility must not require an injective path.",
+            "SourceAdmissiblePath imposes only avoidance of every indexed gap at strictly interior parameters. It has no simplicity, injectivity, straightness or half-plane premise.",
+            "The finite piecewise interior-C1 path class permits arbitrary intermediate vertices and pieces, including corners, repeated points and loops. Its source admissibility checks both piece interiors and genuine interior vertices."
+          ],
+          "qualification": "Figure 2.5 is compared as an illustration of the admissible path class. The source supplies no parametrizations of its two drawn curves; this row does not claim a reconstruction or an existence theorem for those specific shapes. The later zero-integral assertion is a separate pending comparison."
+        },
+        {
+          "ordered_group": "S10-047",
+          "source_lines": [
+            4619,
+            4626
+          ],
+          "requirement": "Lemma 10.11(i): extension through every collapsed gap.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceOpenGapComplement",
+            "NLS.ZakharovShabat.mem_sourceOpenGapComplement_cases",
+            "NLS.ZakharovShabat.sourceCriticalRootRegularizedFactor",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioContinued",
+            "NLS.ZakharovShabat.summable_norm_sourceCriticalRootRegularizedFactor_sub_one",
+            "NLS.ZakharovShabat.multipliable_sourceCriticalRootRegularizedFactor",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension",
+            "NLS.ZakharovShabat.sourceOpenGapComplement_eq_compl_iUnion",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.openGapComplement_eq_union",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.isOpen_openGapComplement",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.continued_analytic_openGapComplement",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.collapsedContinuation",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.exists_analytic_extension",
+            "NLS.ZakharovShabat.sourceLemma10_11i"
+          ],
+          "reviewed_claims": [
+            "One function, -i times the unconditional product with every collapsed factor filled by one, extends the actual discriminant derivative divided by the canonical root.",
+            "For every complex source in the unchanged common W and every finite p>1, the extension is analytic on the complement of the union of all noncollapsed gap segments and agrees with the actual quotient off all gaps.",
+            "The enlarged domain is an open union of the original cut complement and the omitted domains of every collapsed index. The single function agrees with the omitted analytic product on each of these domains, including every original collapsed disk.",
+            "All signed indices, the central gap and infinitely many collapsed gaps are included. Absolute summability of the regularized factor errors proves that the displayed product converges unconditionally."
+          ],
+          "qualification": "The analytically continued function is distinct from totalized division at a collapsed endpoint; agreement with the raw quotient is asserted on its original gap complement. The construction retains W and all original disks. Part (ii) and the separate displayed proof passages remain pending in the ordered review."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "b82119ed0c2ca6ed0fc3114c206c71ef51963f46a03885458efddafef1e374e9",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean": "d85ec3e747162698acc063da4b1e2fde69f748e72797ef962eb64f95f43a52d3",
+        "NLS/ComplexAnalysis/PiecewiseImproperPathIntegral.lean": "b06c6c0dd3f5d79ed9672445e5b8a23ab04a2f6006b4b953914ce06906714c8f",
+        "NLS/ZakharovShabat/SourceOpenGapComplement.lean": "9d6b80be0b9db431c99b8190c4a026e0d59e90fef6660bd07ccc7aa4199dbaa3",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioRegularizedProduct.lean": "d6d6d2dd688ddf0564b1a8786bf4a0dc41356c4d91c404e7e32f79d3cfe82fae",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioOpenGapDomain.lean": "e78185e352eb753072e8b7951376f2fa16566be47c6aba941c1801a8af1bf796",
+        "NLS/ZakharovShabat/SourceLemma10_11i.lean": "a3df0a8df954d51bf5a5f78f9fa19c0c73e265df410b5449276df9e0128f38b4"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          60
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-060.png": "4895fb49a68006fb8059b56a25c62ac84925ee23c088747523143d8b92fb84b6"
+        }
+      },
+      "qualification": "The first 47 of 52 ordered Section 10 groups are compared: 39 matched and eight corrected occurrences, through Figure 2.5 and Lemma 10.11(i). The figure is compared as an illustration of the unrestricted admissible path class. A single unconditional product supplies the analytic continuation across every collapsed gap on the unchanged common domain, including all original collapsed disks and infinitely many collapsed gaps. Both new groups match existing definitions and proofs. Five groups remain pending: the integral assertions of part (ii) and the separate proof passages. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path",
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.PiecesInside",
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.VerticesInside",
+        "NLS.ZakharovShabat.SourceAdmissiblePath",
+        "NLS.ZakharovShabat.SourceAdmissiblePiecewisePath",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.collapsedContinuation",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.continued_analytic_openGapComplement",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.isOpen_openGapComplement",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.openGapComplement_eq_union",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.exists_analytic_extension",
+        "NLS.ZakharovShabat.mem_sourceOpenGapComplement_cases",
+        "NLS.ZakharovShabat.multipliable_sourceCriticalRootRegularizedFactor",
+        "NLS.ZakharovShabat.sourceAdmissiblePath_iff",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioContinued",
+        "NLS.ZakharovShabat.sourceCriticalRootRegularizedFactor",
+        "NLS.ZakharovShabat.sourceLemma10_11i",
+        "NLS.ZakharovShabat.sourceOpenGapComplement",
+        "NLS.ZakharovShabat.sourceOpenGapComplement_eq_compl_iUnion",
+        "NLS.ZakharovShabat.summable_norm_sourceCriticalRootRegularizedFactor_sub_one"
+      ],
+      "declaration_inventory_count": 44300,
+      "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "source_record_sha256": "8c046a4da2ccdee3234ad4ba6554b3073defc1d38ba0a5bd27dbfd572c420093"
     }
   }
 }

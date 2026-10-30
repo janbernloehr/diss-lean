@@ -1,6 +1,54 @@
 # Section 10: potentials of almost real type
 
-## Ordered comparison through equation (2.15) and admissibility
+## Ordered comparison through Lemma 10.11(i)
+
+Figure 2.5 and Lemma 10.11(i) now match the existing implementation.
+The figure illustrates the scope of admissibility: paths may loop and
+intersect themselves. Continuous paths have only the interior gap-avoidance
+condition; the piecewise class also checks interior corner vertices.
+The source gives no parametrizations of the two drawn curves, so this
+comparison concerns the illustrated path class, not reconstruction of
+those specific shapes.
+
+For every complex source in the unchanged common W and every finite p>1,
+one normalized product extends the actual critical-root quotient:
+
+    continuedRatio(z,psi) = -i * product_m regularizedFactor_m(z,psi),
+    regularizedFactor_m = 1 if gap_m=0, and (critical_m-z)/w_m(z) otherwise.
+
+The factor errors are absolutely summable and the product is unconditional.
+This function is analytic on the complement of all noncollapsed gap
+segments and equals the actual quotient off all gaps. On each collapsed
+index's omitted domain it equals the omitted analytic product. Consequently
+it is analytic throughout every original collapsed disk, including central
+and complex gaps; infinitely many collapsed gaps are allowed. The raw
+quotient is not used to define values at collapsed endpoints.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) now covers
+47 of 52 groups: 39 matched and eight corrected occurrences. Five remain
+pending: Lemma 10.11(ii) and its separate proof passages. Section 7's physical
+NLS Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and the broader source
+inventory remain unresolved.
+
+The [admissibility definition](../NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean)
+and [piecewise path class](../NLS/ComplexAnalysis/PiecewiseImproperPathIntegral.lean)
+retain the scope illustrated in Figure 2.5. The [regularized product](../NLS/ZakharovShabat/SourceCriticalRootRatioRegularizedProduct.lean)
+and its [open-domain proof](../NLS/ZakharovShabat/SourceCriticalRootRatioOpenGapDomain.lean)
+feed the [part (i) package](../NLS/ZakharovShabat/SourceLemma10_11i.lean).
+The integral assertions and separate proof displays remain pending in the
+ordered comparison.
+
+Earlier milestone entries retain their historical scope.
+
+## Previous comparison milestone: through equation (2.15) and admissibility
 
 Equation (2.15) and the following analytic-domain and path-definition
 passage now match the existing public implementation. The exact identity is
@@ -354,7 +402,7 @@ in the displayed proof, independently of endpoint-label analyticity.
 domain and chooses the local family before all indices and powers.
 
 The following named-statement entries retain their historical audit scope;
-they do not discharge the seven ordered groups still pending.
+they do not discharge the five ordered groups still pending.
 
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in

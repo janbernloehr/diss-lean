@@ -159,14 +159,14 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-45 of 52 groups: 37 matched and eight corrected occurrences, through
-equation (2.15), its analytic domains and admissibility. The full unordered
-product has the exact factor -i; the moving-gap and original closed-disk
-domains retain the common W. Admissibility is exactly gap avoidance at
-interior points of an arbitrary continuous path. Both new passages match
-existing proofs. Seven groups remain pending, starting with Figure 2.5
-and Lemma 10.11. Existing named theorem audits do not by themselves settle
-those passages.
+47 of 52 groups: 39 matched and eight corrected occurrences, through
+Figure 2.5 and Lemma 10.11(i). The figure illustrates the admissible path
+class, which allows loops and self-intersections. A single unconditional
+product extends the quotient across every collapsed gap on the unchanged
+common W, including all original collapsed disks. Both new passages match
+existing definitions and proofs. Five groups remain pending: part (ii)
+and the separate proof passages. Existing named theorem audits do not by
+themselves settle those passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

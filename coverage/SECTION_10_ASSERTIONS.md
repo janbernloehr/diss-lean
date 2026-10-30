@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 45 of 52 ordered Section 10 groups are compared: 37 matched and eight corrected occurrences, through equation (2.15), its analytic domains and the admissible-path definition. The full unordered critical-root product retains the factor -i, every signed index and the unchanged common domain. The original closed-disk complement and continuous-path endpoint convention are preserved. Both new groups match existing proofs. Seven groups remain pending, beginning with Figure 2.5 and Lemma 10.11. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 47 of 52 ordered Section 10 groups are compared: 39 matched and eight corrected occurrences, through Figure 2.5 and Lemma 10.11(i). The figure is compared as an illustration of the unrestricted admissible path class. A single unconditional product supplies the analytic continuation across every collapsed gap on the unchanged common domain, including all original collapsed disks and infinitely many collapsed gaps. Both new groups match existing definitions and proofs. Five groups remain pending: the integral assertions of part (ii) and the separate proof passages. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 45
-groups, through equation (2.15) and admissibility on p.59, have been compared.
-The remaining seven groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 47
+groups, through Figure 2.5 and Lemma 10.11(i) on p.60, have been compared.
+The remaining five groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -60,8 +60,8 @@ inspected to preserve figures, signs and closure bars. See
 | S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | matched |
 | S10-044 | 4581–4589 | Derivative-to-canonical-root product (2.15). | matched |
 | S10-045 | 4591–4596 | Quotient analytic domains and admissible-path definition. | matched |
-| S10-046 | 4606–4616 | Figure 2.5: multiple admissible endpoint paths. | pending |
-| S10-047 | 4619–4626 | Lemma 10.11(i): extension through every collapsed gap. | pending |
+| S10-046 | 4606–4616 | Figure 2.5: multiple admissible endpoint paths. | matched |
+| S10-047 | 4619–4626 | Lemma 10.11(i): extension through every collapsed gap. | matched |
 | S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | pending |
 | S10-049 | 4644–4657 | Collapsed-factor cancellation proof. | pending |
 | S10-050 | 4659–4678 | Real-locus period calculation via side deformation and arcosh. | pending |
@@ -502,6 +502,27 @@ Public evidence: `NLS.ZakharovShabat.sourceCriticalRootRatioJoint`, `NLS.Zakharo
 
 The geometric definition applies to arbitrary continuous Path values. Smoothness and integrability belong to the later integral statements and are not built into admissibility. This comparison does not yet discharge Lemma 10.11 or Figure 2.5.
 
+## S10-046: Figure 2.5: multiple admissible endpoint paths.
+
+- The two drawn paths share the periodic endpoints and avoid the gap in their interiors. The lower path has a self-intersection and a loop, so admissibility must not require an injective path.
+- SourceAdmissiblePath imposes only avoidance of every indexed gap at strictly interior parameters. It has no simplicity, injectivity, straightness or half-plane premise.
+- The finite piecewise interior-C1 path class permits arbitrary intermediate vertices and pieces, including corners, repeated points and loops. Its source admissibility checks both piece interiors and genuine interior vertices.
+
+Public evidence: `NLS.ZakharovShabat.SourceAdmissiblePath`, `NLS.ZakharovShabat.sourceAdmissiblePath_iff`, `NLS.ZakharovShabat.SourceAdmissiblePiecewisePath`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.PiecesInside`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.VerticesInside`.
+
+Figure 2.5 is compared as an illustration of the admissible path class. The source supplies no parametrizations of its two drawn curves; this row does not claim a reconstruction or an existence theorem for those specific shapes. The later zero-integral assertion is a separate pending comparison.
+
+## S10-047: Lemma 10.11(i): extension through every collapsed gap.
+
+- One function, -i times the unconditional product with every collapsed factor filled by one, extends the actual discriminant derivative divided by the canonical root.
+- For every complex source in the unchanged common W and every finite p>1, the extension is analytic on the complement of the union of all noncollapsed gap segments and agrees with the actual quotient off all gaps.
+- The enlarged domain is an open union of the original cut complement and the omitted domains of every collapsed index. The single function agrees with the omitted analytic product on each of these domains, including every original collapsed disk.
+- All signed indices, the central gap and infinitely many collapsed gaps are included. Absolute summability of the regularized factor errors proves that the displayed product converges unconditionally.
+
+Public evidence: `NLS.ZakharovShabat.sourceOpenGapComplement`, `NLS.ZakharovShabat.mem_sourceOpenGapComplement_cases`, `NLS.ZakharovShabat.sourceCriticalRootRegularizedFactor`, `NLS.ZakharovShabat.sourceCriticalRootRatioContinued`, `NLS.ZakharovShabat.summable_norm_sourceCriticalRootRegularizedFactor_sub_one`, `NLS.ZakharovShabat.multipliable_sourceCriticalRootRegularizedFactor`, `NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension`, `NLS.ZakharovShabat.sourceOpenGapComplement_eq_compl_iUnion`, `NLS.ZakharovShabat.SourceEquation2_15Data.openGapComplement_eq_union`, `NLS.ZakharovShabat.SourceEquation2_15Data.isOpen_openGapComplement`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_analytic_openGapComplement`, `NLS.ZakharovShabat.SourceEquation2_15Data.collapsedContinuation`, `NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk`, `NLS.ZakharovShabat.SourceLemma10_11iData.exists_analytic_extension`, `NLS.ZakharovShabat.sourceLemma10_11i`.
+
+The analytically continued function is distinct from totalized division at a collapsed endpoint; agreement with the raw quotient is asserted on its original gap complement. The construction retains W and all original disks. Part (ii) and the separate displayed proof passages remain pending in the ordered review.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -509,5 +530,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-046, Figure 2.5 and the admissible endpoint paths, then Lemma 10.11.
+Continue with S10-048, the integral assertions of Lemma 10.11(ii), followed by its proof passages.
 The remaining Section 10 groups and wider unresolved qualifications remain.
