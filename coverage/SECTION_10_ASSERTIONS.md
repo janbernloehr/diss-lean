@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 50 of 52 ordered Section 10 groups are compared: 42 matched and eight corrected occurrences, through the real-locus calculation in Lemma 10.11(ii). The literal parity-weighted positive-square-root kernel has a proved -2 arcosh partial-integral formula, endpoint integrability and the complete original-circle calculation. The original disks and unchanged common W are retained. The printed sign and coefficient match; no new correction or refutation is added. Two proof groups remain pending: continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 51 of 52 ordered Section 10 groups are compared: 43 matched and eight corrected occurrences, through continuation of periods in Lemma 10.11(ii). The real-form zero germ propagates over the unchanged connected W, every original circle has zero period, and every piecewise C1 closed contour in an original cut disk has zero actual integral. The proof route uses a circle-independent period and connected analytic uniqueness; no auxiliary neighborhood shrink replaces W or the original disks. One proof group remains pending: the final complex side-integral and endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 50
-groups, through the real-locus calculation in Lemma 10.11(ii) on p.60, have been compared.
-The remaining two groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 51
+groups, through continuation of periods in Lemma 10.11(ii) on p.60, have been compared.
+The remaining group is a navigation entry pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -65,7 +65,7 @@ inspected to preserve figures, signs and closure bars. See
 | S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | matched |
 | S10-049 | 4644–4657 | Collapsed-factor cancellation proof. | matched |
 | S10-050 | 4659–4678 | Real-locus period calculation via side deformation and arcosh. | matched |
-| S10-051 | 4679–4689 | Analytic continuation of periods and Cauchy deformation on the common domain. | pending |
+| S10-051 | 4679–4689 | Analytic continuation of periods and Cauchy deformation on the common domain. | matched |
 | S10-052 | 4691–4726 | Arbitrary complex endpoint paths from opposite side traces and zero periods. | pending |
 
 ## S10-001: Definition of isolating disks and all three conditions, including literal set distance (2.7).
@@ -510,7 +510,7 @@ The geometric definition applies to arbitrary continuous Path values. Smoothness
 
 Public evidence: `NLS.ZakharovShabat.SourceAdmissiblePath`, `NLS.ZakharovShabat.sourceAdmissiblePath_iff`, `NLS.ZakharovShabat.SourceAdmissiblePiecewisePath`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.PiecesInside`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.VerticesInside`.
 
-Figure 2.5 is compared as an illustration of the admissible path class. The source supplies no parametrizations of its two drawn curves; this row does not claim a reconstruction or an existence theorem for those specific shapes. The later zero-integral assertion is a separate pending comparison.
+Figure 2.5 is compared as an illustration of the admissible path class. The source supplies no parametrizations of its two drawn curves; this row does not claim a reconstruction or an existence theorem for those specific shapes. The later zero-integral assertion is compared separately in S10-048.
 
 ## S10-047: Lemma 10.11(i): extension through every collapsed gap.
 
@@ -521,7 +521,7 @@ Figure 2.5 is compared as an illustration of the admissible path class. The sour
 
 Public evidence: `NLS.ZakharovShabat.sourceOpenGapComplement`, `NLS.ZakharovShabat.mem_sourceOpenGapComplement_cases`, `NLS.ZakharovShabat.sourceCriticalRootRegularizedFactor`, `NLS.ZakharovShabat.sourceCriticalRootRatioContinued`, `NLS.ZakharovShabat.summable_norm_sourceCriticalRootRegularizedFactor_sub_one`, `NLS.ZakharovShabat.multipliable_sourceCriticalRootRegularizedFactor`, `NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension`, `NLS.ZakharovShabat.sourceOpenGapComplement_eq_compl_iUnion`, `NLS.ZakharovShabat.SourceEquation2_15Data.openGapComplement_eq_union`, `NLS.ZakharovShabat.SourceEquation2_15Data.isOpen_openGapComplement`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_analytic_openGapComplement`, `NLS.ZakharovShabat.SourceEquation2_15Data.collapsedContinuation`, `NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk`, `NLS.ZakharovShabat.SourceLemma10_11iData.exists_analytic_extension`, `NLS.ZakharovShabat.sourceLemma10_11i`.
 
-The analytically continued function is distinct from totalized division at a collapsed endpoint; agreement with the raw quotient is asserted on its original gap complement. The construction retains W and all original disks. Part (ii) and the separate displayed proof passages remain pending in the ordered review.
+The analytically continued function is distinct from totalized division at a collapsed endpoint; agreement with the raw quotient is asserted on its original gap complement. The construction retains W and all original disks. Part (ii) and its proof passages are compared separately in S10-048 through S10-052; only S10-052 remains pending.
 
 ## S10-048: Lemma 10.11(ii): zero endpoint-path integrals and closed periods.
 
@@ -559,7 +559,22 @@ Cancellation is performed where the selected linear factor is nonzero. At its ze
 
 Public evidence: `NLS.ComplexAnalysis.stadiumCircleLoop_curveIntegral_eq_neg_circleIntegral`, `NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodCircle`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_realCalculation`, `NLS.ZakharovShabat.discriminant_derivative_eq_signed_two_realGapHalfDiscriminant_deriv`, `NLS.ZakharovShabat.exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero`, `NLS.ZakharovShabat.exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral`, `NLS.ZakharovShabat.realGapCanonicalRootUpperValue_eq_signed_two_sqrt`, `NLS.ZakharovShabat.realGapHalfDiscriminant_arcosh_gap_data`, `NLS.ZakharovShabat.realGapHalfDiscriminant_eq_signed`, `NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType`, `NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_lower`, `NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_upper`, `NLS.ZakharovShabat.sourceCriticalRootRatio_lower_cosineBoundaryIntegral_eq_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_realCenteredCircleIntegral_eq_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_eq`, `NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_tendsto_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_upper_cosineBoundaryIntegral_eq_zero`, `NLS.ZakharovShabat.sourceLemma10_11CirclePeriods`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_lower`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_intervalIntegrable`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_twice_partialIntegral`, `NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec`, `NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh`, `NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable`, `NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh`.
 
-The printed parity and coefficient -2 match. The direct literal partial-integral identity is new; the full original-circle chain reuses existing period vanishing. The existing stadium deformation has the opposite orientation to the standard positive circle, with the sign recorded explicitly. This comparison is restricted to S10-050; the following full-domain propagation and final complex side-trace proof passages remain pending.
+The printed parity and coefficient -2 match. The direct literal partial-integral identity is new; the full original-circle chain reuses existing period vanishing. The existing stadium deformation has the opposite orientation to the standard positive circle, with the sign recorded explicitly. This comparison is restricted to S10-050; full-domain propagation is compared in S10-051, and the final complex side-trace proof passage S10-052 remains pending.
+
+## S10-051: Analytic continuation of periods and Cauchy deformation on the common domain.
+
+- Every original isolating circle computes the same actual indexed period, including circles from different families without a nesting hypothesis. Its definition is an actual circle integral.
+- The period is analytic on the entire retained open W. Locally, its original fixed boundary circle represents it throughout the original source neighborhood; joint holomorphy permits differentiation under the circle integral.
+- At a real base, open real gaps have zero period by the boundary calculation, and collapsed gaps by analytic removability and Cauchy. The norm-controlled real-form identity principle gives an open zero germ around the real base. This auxiliary neighborhood may shrink.
+- Analytic uniqueness on the original connected W propagates the zero germ to every complex source in W. No original disk, radius or public source domain is replaced. The all-domain theorem accepts any real base; the public package uses the zero source, which belongs to the retained real-type locus.
+- The conclusion applies to every original local source neighborhood contained in W and to every selected original boundary circle. The implementation uses a circle-independent global period and connected continuation instead of replaying the printed union-of-real-base-neighborhoods argument. This proves the same full-domain conclusion.
+- Zero periods yield a primitive on the entire original disk minus its selected gap. An auxiliary inner circle constructs an annular primitive, then radial continuation covers the original cut disk without decreasing its outer radius.
+- Every finite piecewise C1 closed contour in that original cut disk has zero actual integral by telescoping primitive differences. This includes the printed circuits around the gap and permits corners, self-intersections and repeated traversal; no prescribed winding or homotopy is required.
+- The construction retains all preceding part (i) data and works for every finite p>1, all signed indices, and open, collapsed or complex gaps. The final complex side-integral display and arbitrary endpoint-path proof passage S10-052 remain pending.
+
+Public evidence: `NLS.ComplexAnalysis.DifferentiableOn.eventually_eq_zero_of_real_form`, `NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive`, `NLS.ComplexAnalysis.differentiableAt_circleIntegral_of_jointAnalytic`, `NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period`, `NLS.ComplexAnalysis.hasFDerivAt_circleIntegral_of_jointDifferentiable`, `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.integral_eq`, `NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period`, `NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero`, `NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive`, `NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods`, `NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_circleIntegral_zero_of_zeroGap`, `NLS.ZakharovShabat.exists_local_sourceCriticalRootRatio_circleIntegral_zero_on_givenCircle`, `NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle`, `NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType`, `NLS.ZakharovShabat.sourceEquation2_15`, `NLS.ZakharovShabat.sourceLemma10_11CirclePeriods`, `NLS.ZakharovShabat.sourceLemma10_11i`.
+
+The full-domain and closed-circuit conclusions match. The proof route is explicit: the real-form identity principle gives an auxiliary local zero germ; connected analytic uniqueness extends the circle-independent period across the unchanged W. Thus the local shrink is not substituted for the public domain. A primitive proves the ordinary piecewise C1 closed-contour conclusion on the entire original cut disk. This does not classify the final complex side-trace display in S10-052.
 
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
@@ -568,5 +583,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-051, continuation of periods on the common domain, followed by the final complex endpoint-path proof passage.
+Continue with S10-052, the final complex side-integral and endpoint-path proof passage.
 The remaining Section 10 groups and wider unresolved qualifications remain.

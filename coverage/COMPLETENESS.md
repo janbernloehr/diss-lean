@@ -159,13 +159,14 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-50 of 52 groups: 42 matched and eight corrected occurrences, through the
-real-locus calculation in Lemma 10.11(ii). The literal kernel has the
-printed -2 arcosh partial-integral formula, endpoint integrability and the
-complete original-circle calculation, retaining all original disks and W.
-The printed sign and coefficient match. Two proof groups remain pending:
-continuation of periods and the final complex endpoint-path argument.
-Existing named theorem audits do not by themselves settle those passages.
+51 of 52 groups: 43 matched and eight corrected occurrences, through the
+period-continuation passage in Lemma 10.11(ii). A local real-form zero germ
+propagates across the unchanged connected W. Every original circle and
+every piecewise C1 closed contour in an original cut disk has zero actual
+integral. The proof uses connected analytic uniqueness to retain the full
+domain despite an auxiliary local shrink. The final complex side-integral
+and endpoint-path proof passage remains pending; existing named theorem
+audits do not by themselves settle its intermediate displays.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

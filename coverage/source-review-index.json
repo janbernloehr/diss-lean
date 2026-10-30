@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T09:13:22.674553+00:00",
-  "base_commit": "776e140704e6cbca243dcb096300aaf18b26eff3",
+  "published_utc": "2026-10-30T09:18:31.436308+00:00",
+  "base_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 122,
-    "module_hash_checks": 2122,
-    "distinct_modules": 1350
+    "review_records": 123,
+    "module_hash_checks": 2136,
+    "distinct_modules": 1353
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "776e140704e6cbca243dcb096300aaf18b26eff3",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal Lemma 10.11 real-gap kernel, six public theorems and two integration examples. The printed parity and -2 arcosh coefficient hold on partial intervals; endpoint integrability and the complete original-circle calculation retain every original disk and the unchanged common W. The first 50 of 52 ordered Section 10 groups are compared: 42 matched and eight corrected occurrences. The full-domain period argument and final complex endpoint-path proof passage remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit a3af8df and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 51 of 52 ordered Section 10 groups are compared: 43 matched and eight corrected occurrences. The local real-form zero germ propagates over the unchanged connected W, every original circle has zero period, and every piecewise C1 closed contour in an original cut disk has zero actual integral. The final complex side-integral and endpoint-path proof passage remains pending, together with all wider qualifications.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8512,
     "public_examples": 7582,
@@ -40,7 +40,8 @@
       "files": 4789,
       "sha256": "5726490ec3f6a4304d6a52075b673fc32dd96763d8880a6465987ab8bb205adb"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
+    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
+    "validation_reused_from_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794"
   },
   "named_statements": [
     {
@@ -31092,6 +31093,117 @@
       "reviewed_modules_read_in_full": true,
       "declaration_inventory_count": 44318,
       "source_record_sha256": "e24fb4373c6848ccd83ad8f56563c95b756eb6371756ec0722dc8564e6fba066"
+    },
+    "Section10PeriodContinuationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
+      "updated_utc": "2026-10-30T09:18:31.436308+00:00",
+      "source_lines": [
+        [
+          4679,
+          4689
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-051",
+          "source_lines": [
+            4679,
+            4689
+          ],
+          "requirement": "Analytic continuation of periods and Cauchy deformation on the common domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.DifferentiableOn.eventually_eq_zero_of_real_form",
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive",
+            "NLS.ComplexAnalysis.differentiableAt_circleIntegral_of_jointAnalytic",
+            "NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period",
+            "NLS.ComplexAnalysis.hasFDerivAt_circleIntegral_of_jointDifferentiable",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.integral_eq",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods",
+            "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_circleIntegral_zero_of_zeroGap",
+            "NLS.ZakharovShabat.exists_local_sourceCriticalRootRatio_circleIntegral_zero_on_givenCircle",
+            "NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourceEquation2_15",
+            "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+            "NLS.ZakharovShabat.sourceLemma10_11i"
+          ],
+          "reviewed_claims": [
+            "Every original isolating circle computes the same actual indexed period, including circles from different families without a nesting hypothesis. Its definition is an actual circle integral.",
+            "The period is analytic on the entire retained open W. Locally, its original fixed boundary circle represents it throughout the original source neighborhood; joint holomorphy permits differentiation under the circle integral.",
+            "At a real base, open real gaps have zero period by the boundary calculation, and collapsed gaps by analytic removability and Cauchy. The norm-controlled real-form identity principle gives an open zero germ around the real base. This auxiliary neighborhood may shrink.",
+            "Analytic uniqueness on the original connected W propagates the zero germ to every complex source in W. No original disk, radius or public source domain is replaced. The all-domain theorem accepts any real base; the public package uses the zero source, which belongs to the retained real-type locus.",
+            "The conclusion applies to every original local source neighborhood contained in W and to every selected original boundary circle. The implementation uses a circle-independent global period and connected continuation instead of replaying the printed union-of-real-base-neighborhoods argument. This proves the same full-domain conclusion.",
+            "Zero periods yield a primitive on the entire original disk minus its selected gap. An auxiliary inner circle constructs an annular primitive, then radial continuation covers the original cut disk without decreasing its outer radius.",
+            "Every finite piecewise C1 closed contour in that original cut disk has zero actual integral by telescoping primitive differences. This includes the printed circuits around the gap and permits corners, self-intersections and repeated traversal; no prescribed winding or homotopy is required.",
+            "The construction retains all preceding part (i) data and works for every finite p>1, all signed indices, and open, collapsed or complex gaps. The final complex side-integral display and arbitrary endpoint-path proof passage S10-052 remain pending."
+          ],
+          "qualification": "The full-domain and closed-circuit conclusions match. The proof route is explicit: the real-form identity principle gives an auxiliary local zero germ; connected analytic uniqueness extends the circle-independent period across the unchanged W. Thus the local shrink is not substituted for the public domain. A primitive proves the ordinary piecewise C1 closed-contour conclusion on the entire original cut disk. This does not classify the final complex side-trace display in S10-052."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "87f04c42239fd302c4db954a1fadb5fb2939bcdbe68dcef7cc474ec073b22f5a",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriod.lean": "4ba298999b75a8f4b974f742999f473ae8395488d0e6097bd3cbbcfb2605785c",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean": "1e562c8eb11de2a0d77b7226686f862dc2d79fd039bfbae9185920cffc408357",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioAnyCircleZero.lean": "3b1e5d3e4e8305d4fbed3782de8f471d6b518131118533081581d010b9da6a54",
+        "NLS/ZakharovShabat/SourceCriticalRootOriginalDiscPrimitive.lean": "2575e67fbf6fa910d55ac95018cbe4e2b756c79e6c2513478d5b4f8df0724bbc",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCollapsedContour.lean": "76dde02df9dc10b4ff2173fb089399b1e904e781d2141e9fef8bd2e77016d850",
+        "NLS/ZakharovShabat/SourceEquation2_15.lean": "113f237e965cc1e6fc981a9aeecd1940bb78e682215beb2486a36d78247ed54c",
+        "NLS/ZakharovShabat/SourceLemma10_11i.lean": "a3df0a8df954d51bf5a5f78f9fa19c0c73e265df410b5449276df9e0128f38b4",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioEnclosingCircleVanishing.lean": "e878d2c7a02d9aca5da1eefef4458aa208d7c8be2ec35c7d02d60f0a27853aba",
+        "NLS/ComplexAnalysis/RealFormIdentity.lean": "b097b7daa40dac7bc212d202bad93068edde795d516ffc6f9fce540787bcba48",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0",
+        "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean": "cb1b5a46815816dab3a8a4bc333f977ef854198a6ec4014e3ba50ee28c953ea6",
+        "NLS/ComplexAnalysis/HolomorphicCircleIntegral.lean": "f8952d0a8640a05f1eea98627bb8b808580cd523195633622a8b36d43916cce3",
+        "NLS/ComplexAnalysis/ParametricCircleIntegral.lean": "649f3ce837ea47a6443bddaf97058e1337106b1fee5117645542574dd5fd0180"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          60
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-060.png": "4895fb49a68006fb8059b56a25c62ac84925ee23c088747523143d8b92fb84b6"
+        }
+      },
+      "qualification": "The first 51 of 52 ordered Section 10 groups are compared: 43 matched and eight corrected occurrences, through continuation of periods in Lemma 10.11(ii). The real-form zero germ propagates over the unchanged connected W, every original circle has zero period, and every piecewise C1 closed contour in an original cut disk has zero actual integral. The proof route uses a circle-independent period and connected analytic uniqueness; no auxiliary neighborhood shrink replaces W or the original disks. One proof group remains pending: the final complex side-integral and endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.DifferentiableOn.eventually_eq_zero_of_real_form",
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive",
+        "NLS.ComplexAnalysis.differentiableAt_circleIntegral_of_jointAnalytic",
+        "NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period",
+        "NLS.ComplexAnalysis.hasFDerivAt_circleIntegral_of_jointDifferentiable",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.integral_eq",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods",
+        "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_circleIntegral_zero_of_zeroGap",
+        "NLS.ZakharovShabat.exists_local_sourceCriticalRootRatio_circleIntegral_zero_on_givenCircle",
+        "NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceEquation2_15",
+        "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+        "NLS.ZakharovShabat.sourceLemma10_11i"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44318,
+      "validation_reused_from_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
+      "source_record_sha256": "0dbed1e909a98b176aa397928b3ae881dc5ae34011d9e920be44db30d93ddfc2"
     }
   }
 }

@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [literal real-gap calculation](NLS/ZakharovShabat/SourceLemma10_11RealCalculation.lean)
-proves Lemma 10.11's parity sign and -2 arcosh formula for partial gap
-integrals, then assembles the full calculation on every original circle.
-The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) covers
-50 of 52 groups: 42 matched and eight corrected occurrences; two proof
-groups remain pending. The [completion assessment](coverage/COMPLETENESS.md)
-retains Section 7's partial clauses and the wider qualifications.
+Latest step: the [period-continuation comparison](coverage/SECTION_10_ASSERTIONS.md)
+checks Lemma 10.11's zero periods on the unchanged common domain and all
+piecewise closed contours in the original cut disks. The local real-form
+argument and global connected continuation are distinguished explicitly.
+The ledger covers 51 of 52 groups: 43 matched and eight corrected
+occurrences; the final complex endpoint-path proof passage remains pending.
+The [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
+partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

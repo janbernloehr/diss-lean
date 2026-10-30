@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: Lemma 10.11 real-gap calculation
+## Current milestone: Lemma 10.11 period-continuation comparison
+
+The continuation-of-periods passage in Lemma 10.11(ii) now matches the
+existing proofs, with the local and global domains distinguished explicitly.
+
+Every original isolating circle represents one actual indexed period.
+Differentiation under a fixed circle integral makes that period analytic
+on the entire retained open W. At a real base, the open-gap calculation
+and collapsed-gap removability give zero periods on the real locus.
+The real-form identity principle then supplies an open zero germ.
+
+An auxiliary neighborhood may shrink while producing that germ. Connected
+analytic uniqueness extends the circle-independent period to zero on the
+whole original W. Every original boundary circle therefore has zero period
+at every complex source in W. This proves the source's full-domain
+conclusion using global connected continuation rather than replaying its
+union-of-real-base-neighborhoods argument. The original disks, radii and
+all preceding part (i) data are retained.
+
+A primitive on each entire original disk minus its selected gap gives zero
+actual integral for every finite piecewise C1 closed contour there. This
+covers the printed circuits around the gap, including corners, repeated
+traversals and self-intersections. The result needs no prescribed winding
+number or homotopy, and includes complex and collapsed gaps.
+
+This step changes documentation and source-comparison records only. The
+Lean and dependency snapshot is unchanged from commit `a3af8df`, whose full
+`./scripts/check.sh` run passed 8,512 build jobs, 7,582 public examples and
+the transitive axiom audit of 44,318 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+51 of 52 groups: 43 matched and eight corrected occurrences. The final
+complex side-integral and endpoint-path proof passage remains pending.
+Section 7's physical NLS Dirichlet motion and unrestricted psi uniqueness,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and the
+broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Lemma 10.11 real-gap calculation
 
 The real-locus calculation in Lemma 10.11(ii) now has a direct public
 formula for the printed kernel: (-1)^(n+1) times the discriminant derivative
