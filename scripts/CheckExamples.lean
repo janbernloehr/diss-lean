@@ -71900,3 +71900,45 @@ example {W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
     rfl
 
 end Section12RealityExamples
+
+section Section12JacobianExamples
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The retained-root derivative remains valid at a collision with the unused root.
+example (a : Coeff (ENNReal.ofReal (3/2))) (ψ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hz : displacedRoots a (-2) ∈ sourceStandardRootOmittedDomain ENNReal.ofReal_ne_top
+      (by norm_num) ψ 3)
+    (hsep : displacedRoots a (-2) ≠ displacedRoots a (-4)) :
+    HasDerivAt (fun t : ℂ => sourcePsiZeta ENNReal.ofReal_ne_top (by norm_num) (-2) 3
+      (a+lp.single (ENNReal.ofReal (3/2)) (-4) t) ψ (displacedRoots a (-2)))
+      (sourcePsiZeta ENNReal.ofReal_ne_top (by norm_num) (-2) 3 a ψ (displacedRoots a (-2)) /
+        (displacedRoots a (-4)-displacedRoots a (-2))) 0 :=
+  hasDerivAt_sourcePsiZeta_variation (p := ENNReal.ofReal (3/2))
+    ENNReal.ofReal_ne_top (by norm_num) (-2) 3 (-4) (by decide) (by decide) (by decide)
+      a ψ _ hz hsep
+
+-- Inserting a retained root at the spectral point gives a zero of the literal product.
+example (a : Coeff 4) (ψ : CoeffPair 4) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain (by norm_num) (by norm_num) ψ 3) :
+    sourcePsiZeta (by norm_num) (by norm_num) (-2) 3
+      (a+lp.single 4 (-4) (z-displacedRoots a (-4))) ψ z = 0 := by
+  apply (sourcePsiZeta_eq_zero_iff (p := 4) (by norm_num) (by norm_num) (-2) 3
+    (by decide) _ ψ z hz).mpr
+  refine ⟨-4,by decide,by decide,?_⟩
+  simp only [displacedRoots,lp.coeFn_add,Pi.add_apply,lp.single_apply_self]
+  ring
+
+-- Retained row and column coordinates agree across both realizations at signed indices.
+example {W : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair 4) (hψ : ψ ∈ W) (a : DeletedIndexCoeff 4 (-2)) :
+    sourcePsiDeletedIndexRootJacobian (by norm_num) (by norm_num) (-2) ψ a
+      (lp.single 4 (⟨2,by decide⟩ : {k : ℤ // k ≠ -2}) 1) ⟨-3,by decide⟩ =
+      sourcePsiOriginalJacobianEntry (by norm_num) (by norm_num) (-2) (-3) 2
+        ((DeletedCoeff.indexEquiv (by norm_num) (-2)).symm a : Coeff 4) ψ :=
+  H.deletedIndexRootJacobian_entry ψ hψ (-2) a ⟨-3,by decide⟩ ⟨2,by decide⟩
+
+end Section12JacobianExamples

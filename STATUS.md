@@ -1,6 +1,34 @@
 # Implementation status
 
-## Current milestone: the contour proof of Lemma 12.4
+## Current milestone: the Jacobian and Lemma 12.5
+
+Lemma 12.5 now has direct public interfaces for the actual Jacobian on
+the literal retained-index spaces, with the exact original operator norm
+and every retained matrix entry. The auxiliary product has the printed
+retained-root derivative and precisely the retained numerator zeros.
+
+The original open real domain and common local bounds are retained. The
+diagonal mean-value proof uses G_m, which contains its point mu, and keeps
+the factor -2*pi*i and leading value 2. This is a positive replacement of
+the printed concluding gap reference.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+eighteen matched groups, four with scope or gap-reference corrections
+and 45 pending.
+
+Full validation passed: 8,530 build jobs, 7,607 public examples and
+44,437 transitively audited NLS declarations, with 21 inherited warnings.
+The nine new proofs and three focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are the invertible diagonal, compact remainder and finite-rank
+approximation in Lemma 12.6. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: the contour proof of Lemma 12.4
 
 The proof of Lemma 12.4 now has direct interfaces for its exact raw
 contour formula, joint auxiliary-product analyticity and attained gap

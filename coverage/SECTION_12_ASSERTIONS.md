@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first seventeen of 67 ordered Section 12 groups are compared: fourteen matched, three with corrected admissibility scope, and 50 pending. The proof of Lemma 12.4 retains the exact signed contour formula (2.27), the attained gap maximum with raw factor 2*pi, full-domain joint analyticity, the actual equation-index supremum sequence and real values for arbitrary real retained inputs. The midpoint maximum equals half the gap norm, including complex and collapsed gaps. The earlier contour and root-placement clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first twenty-two of 67 ordered Section 12 groups are compared: eighteen matched, four with scope or gap-reference corrections, and 45 pending. Lemma 12.5 retains the actual bounded Jacobian on the original open real domain, exact literal-index operator norms and matrix entries, the retained-root derivative and zero set of the literal zeta, and common diagonal/off-diagonal bounds before all omitted indices. The diagonal mean-value proof uses the selected gap G_m containing mu; its factor -2*pi*i and leading value 2 are retained. Earlier contour and root-placement clarifications remain. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-seventeen groups have the semantic comparisons below. Earlier named-theorem
+twenty-two groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -30,11 +30,11 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-015 | 65 | 5129–5139 | Fixed collar, nonvanishing standard root and coordinate analyticity on the full source-product domain. | matched |
 | S12-016 | 65 | 5140–5159 | Gap supremum estimate, actual equation-index supremum sequence, locally bounded lp map and analyticity. | matched |
 | S12-017 | 65 | 5161–5171 | Reality of the scalar equation for real sources and root inputs. | matched |
-| S12-018 | 65 | 5173–5187 | Original real domain Omega, admissible root placement and the bounded Jacobian matrix. | pending |
-| S12-019 | 65 | 5189–5200 | Lemma 12.5: real nonzero diagonals and uniform diagonal/off-diagonal asymptotics. | pending |
-| S12-020 | 65 | 5202–5218 | Derivative of the literal complementary product and off-diagonal contour formula. | pending |
-| S12-021 | 66 | 5226–5239 | Off-diagonal inverse-spacing bound and diagonal contour formula. | pending |
-| S12-022 | 66 | 5240–5253 | Diagonal mean-value asymptotic and nonvanishing via root placement. | pending |
+| S12-018 | 65 | 5173–5187 | Original real domain Omega, admissible root placement and the bounded Jacobian matrix. | matched |
+| S12-019 | 65 | 5189–5200 | Lemma 12.5: real nonzero diagonals and uniform diagonal/off-diagonal asymptotics. | matched |
+| S12-020 | 65 | 5202–5218 | Derivative of the literal complementary product and off-diagonal contour formula. | matched |
+| S12-021 | 66 | 5226–5239 | Off-diagonal inverse-spacing bound and diagonal contour formula. | matched |
+| S12-022 | 66 | 5240–5253 | Diagonal mean-value asymptotic and nonvanishing via root placement. | corrected |
 | S12-023 | 66 | 5256–5261 | Lemma 12.6: invertible diagonal plus compact remainder. | pending |
 | S12-024 | 66 | 5264–5275 | Diagonal tail limit two, explicit inverse and off-diagonal matrix remainder. | pending |
 | S12-025 | 66 | 5277–5288 | Mixed row-sum estimate and finite-rank norm approximation proving compactness. | pending |
@@ -537,5 +537,120 @@ The seven new proofs and four focused examples add no warnings. No admitted
 proofs, additional axioms or heartbeat overrides were introduced. Source-review
 integrity and documentation-link checks pass for the new records.
 
-Continue with S12-018 through S12-022: the original real domain,
-Jacobian matrix entries and the estimates of Lemma 12.5.
+The next subsection compares the Jacobian and Lemma 12.5.
+
+## The actual Jacobian and Lemma 12.5
+
+### S12-018: Original real domain Omega, admissible root placement and the bounded Jacobian matrix.
+
+- The full original root-placement domain specifies every root before any omitted index. Its restriction to the actual real source Banach space and real lp space is open: finitely many root coordinates have individual margins, while coefficient decay and the original pi/4 tail disks give one pi/8 margin for all remaining coordinates.
+- The bounded operator is the Frechet root derivative of the original analytic equation. Every matrix coefficient is its coordinate-vector evaluation and the scalar derivative along the corresponding root line. Boundedness and convergence of finite lp truncations give the convergent infinite-matrix representation.
+- The derivative on literal retained-index lp is conjugate by the exact index isometry. Its operator norm and each retained matrix coefficient equal those of the closed zero-coordinate realization. Neither transport changes the original source domain.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiOriginalRootPlacement`
+- `NLS.ZakharovShabat.sourcePsiOriginalOmega`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.isOpen_originalOmega`
+- `NLS.ZakharovShabat.sourcePsiOriginalRootJacobian`
+- `NLS.ZakharovShabat.sourcePsiOriginalJacobianEntry`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalRootJacobian_hasFDerivAt`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_hasDerivAt`
+- `NLS.ZakharovShabat.sourcePsiDeletedIndexRootJacobian`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexRootJacobian_hasFDerivAt`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexRootJacobian_eq`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.norm_deletedIndexRootJacobian`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexRootJacobian_entry`
+- `NLS.Coeff.tendsto_deletedOperator_matrixSum`
+
+The open real domain, actual bounded derivative and matrix representation match, with direct interfaces on the literal deleted-index spaces.
+
+### S12-019: Lemma 12.5: real nonzero diagonals and uniform diagonal/off-diagonal asymptotics.
+
+- Every actual matrix entry is real on the full real source/root domain, by differentiating real coordinate lines. Every retained diagonal is nonzero.
+- The diagonal is exactly 2 plus a reciprocal-index-distance error and an lp sequence. A single neighborhood and nonnegative constants precede every omitted index. Both error bounds retain their 2*pi scaling from the raw contour normalization.
+- For off-diagonal entries, one lp sequence is the actual weighted row supremum over all equation indices and all distinct columns. Its norm is locally bounded; division by the nonzero integer distance yields the printed reciprocal-distance form.
+- The two bounds are assembled on a common open neighborhood of the full real source/root pair. Their constants are combined by addition, preserving nonnegativity and uniformity before the omitted index. The original source neighborhood remains open, connected and contains every real source.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds`
+- `NLS.ZakharovShabat.SourcePsiOriginalJacobianBounds.offDiagonal_div_bound`
+- `NLS.ZakharovShabat.SourceLemma12_5Data`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.lemma12_5`
+- `NLS.ZakharovShabat.sourceLemma12_5`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_real`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonal_decomposition`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonal_rowSup`
+
+The Lemma 12.5 statement matches with the original real-domain topology, exact leading diagonal 2 and simultaneous uniform bounds.
+
+### S12-020: Derivative of the literal complementary product and off-diagonal contour formula.
+
+- Moving a retained root gives an exact affine formula for the single quotient and then for the literal double-omitted zeta. Filling the unused coordinate at lambda+1 proves the formula even if lambda coincides with the original unused numerator root.
+- The derivative is precisely zeta/(sigma_r-lambda) where that moved-root denominator is nonzero and lambda lies in the natural omitted-m spectral domain. The two omitted root coordinates are excluded from the variation.
+- Original root placement makes each moved root avoid the original contour. The finite-product variation passes to the entire-product limit, and continuous contour kernels justify the exact affine integral formula. Uniqueness identifies it with the actual bounded Jacobian coefficient.
+- The resulting integrand is (sigma_m-lambda)/(sigma_r-lambda) times (n-m)*zeta/w_m. Factoring the constant n-m recovers the printed off-diagonal contour formula, with its original sign.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourceSingleRootQuotient_variation`
+- `NLS.ZakharovShabat.sourcePsiZeta_variation`
+- `NLS.ZakharovShabat.hasDerivAt_sourcePsiZeta_variation`
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_variation`
+- `NLS.ZakharovShabat.hasDerivAt_sourcePsiEquationCoordinate_rootVariation`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_contour`
+
+The retained-root derivative and off-diagonal contour formula match; the direct zeta derivative includes collisions with the unused numerator root.
+
+### S12-021: Off-diagonal inverse-spacing bound and diagonal contour formula.
+
+- Weighted original-disk separation bounds the denominator on the selected gap. Lemma 12.3 and the uniform weighted-zeta bound give 2*pi*c*L times the sum of the root, midpoint and gap displacement norms for the weighted off-diagonal coefficient.
+- The three displacement sequences have common local lp norm bounds. Their scaled magnitude sum is a single majorant before both equation index and column. Taking the literal coordinate supremum preserves lp membership and that norm bound, including all finite-head coordinates.
+- For a diagonal entry, the own root lies strictly inside the selected disk and avoids its circle. Its numerator/denominator factor cancels on that circle, leaving exactly the raw integral of (n-m)*zeta/w_m.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonal_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonal_commonMajorant`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_offDiagonal_rowSup`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_diagonal_contour`
+
+The inverse-spacing estimate and diagonal contour identity match, with the raw 2*pi normalization explicit and a common majorant for all omitted indices and columns.
+
+### S12-022: Diagonal mean-value asymptotic and nonvanishing via root placement.
+
+- The rotated weighted zeta is analytic near the selected disk and real on its real gap. Lemma 12.3 supplies an actual point mu in G_m and the exact identity Q_mm=-2*pi*i*(n-m)*zeta(mu), also when the gap collapses.
+- Inserting the decomposition (2.26) gives the exact leading value (-2*pi*i)*(i/pi)=2. The reciprocal and lp error bounds each multiply by 2*pi, and evaluating them at the mean-value points preserves their common disk majorants.
+- On the natural omitted-m spectral domain, zeta vanishes exactly at retained numerator roots. Absolute summability of the factor errors proves a nonzero product when all retained factors are nonzero; a retained zero factor gives the converse.
+- Root placement separates all retained roots from the selected G_m. Thus zeta(mu) is nonzero at the actual mean-value point, and the other scalar factors are nonzero for m unequal to n.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_diagonal_meanValue`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonal_decomposition`
+- `NLS.ZakharovShabat.sourcePsiZeta_ne_zero_of_off_retained`
+- `NLS.ZakharovShabat.sourcePsiZeta_eq_zero_iff`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.originalZeta_ne_zero_on_gap`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobianEntry_diagonal_ne_zero`
+
+The positive nonvanishing argument uses G_m, which contains the mean-value point mu. This replaces the printed concluding gap reference G_n with the selected-gap statement needed by the proof; the diagonal identity and constants are retained.
+
+The [literal-index Jacobian](../NLS/ZakharovShabat/SourcePsiDeletedIndexJacobian.lean)
+preserves the exact operator norm and each retained matrix entry.
+The [root derivative](../NLS/ZakharovShabat/SourcePsiZetaVariation.lean)
+includes collisions with the unused root, and the
+[zero-set theorem](../NLS/ZakharovShabat/SourcePsiZetaZeros.lean)
+identifies exactly the retained numerator roots on the natural spectral domain.
+The [original Lemma 12.5](../NLS/ZakharovShabat/SourceLemma12_5.lean)
+retains the common real-domain neighborhood and bounds before all omitted indices.
+This comparison records 50 inspected or reused module bodies and 35 resolved declarations.
+
+Full validation passed: 8,530 build jobs, 7,607 public examples and
+44,437 transitively audited NLS declarations, with 21 inherited warnings.
+The nine new proofs and three focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-023 through S12-025: the invertible diagonal,
+compact remainder and finite-rank approximation in Lemma 12.6.

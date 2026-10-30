@@ -3581,12 +3581,15 @@ import NLS.ZakharovShabat.SourcePsiOriginalZetaAsymptotic
 import NLS.ZakharovShabat.SourcePsiAuxiliaryIdentities
 import NLS.ZakharovShabat.SourcePsiZetaContour
 import NLS.ZakharovShabat.SourcePsiZetaJointAnalytic
+import NLS.ZakharovShabat.SourcePsiZetaVariation
+import NLS.ZakharovShabat.SourcePsiZetaZeros
 import NLS.ZakharovShabat.SourcePsiGapMaximum
 import NLS.ZakharovShabat.SourcePsiDeletedIndexReal
 import NLS.ZakharovShabat.SourceEquation2_26
 import NLS.ZakharovShabat.SourcePsiOriginalEquationSup
 import NLS.SequenceSpaces.ThreeSequenceMajorant
 import NLS.ZakharovShabat.SourcePsiOriginalJacobian
+import NLS.ZakharovShabat.SourcePsiDeletedIndexJacobian
 import NLS.ZakharovShabat.SourcePsiOriginalOmega
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianContour
 import NLS.ZakharovShabat.SourcePsiOriginalZetaRegular

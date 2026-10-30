@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Fourteen match and three have corrected admissibility scope. The proof
-of Lemma 12.4 retains the exact raw contour formula and attained gap
-maximum, full-domain analyticity, the actual equation-index supremum
-and real values for arbitrary real retained inputs. The midpoint maximum
-is exactly half the gap norm. The remaining 50 groups start with the
-original Jacobian and Lemma 12.5; earlier corrections retain their scope.
+Eighteen match and four have scope or gap-reference corrections.
+Lemma 12.5 retains the original real-domain Jacobian and simultaneous
+diagonal/off-diagonal bounds. Literal-index transport preserves its norm
+and entries; the product derivative and exact zero set are exposed. The
+mean-value nonvanishing proof uses the selected G_m. The remaining
+45 groups start with Lemma 12.6; earlier corrections retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

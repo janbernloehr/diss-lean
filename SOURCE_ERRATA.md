@@ -1,5 +1,16 @@
 # Source discrepancies
 
+## Lemma 12.5 proof, p.66: the selected gap
+
+The mean-value point mu belongs to G_m. The concluding nonvanishing
+argument therefore uses G_m in place of the printed G_n reference.
+Root placement separates all retained numerator roots from that gap,
+so zeta(mu) is nonzero. The factor -2*pi*i and leading diagonal 2 remain.
+
+See the [positive diagonal proof](NLS/ZakharovShabat/SourcePsiOriginalJacobianNonzero.lean),
+[exact product zeros](NLS/ZakharovShabat/SourcePsiZetaZeros.lean) and
+[ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Equation (2.24), p.64: explicit root-placement scope
 
 The parenthetical condition sigma_k in U_k is an additional admissibility

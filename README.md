@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [contour proof of Lemma 12.4](coverage/SECTION_12_ASSERTIONS.md)
-now has exact gap maxima, full-domain joint analyticity and real-valued
-literal-index equations, retaining all signs and constants. The ordered
-ledger has fourteen matched groups, three with corrected admissibility
-scope and 50 pending. Next is Lemma 12.5; wider qualifications remain in
-the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: [Lemma 12.5](coverage/SECTION_12_ASSERTIONS.md) now has
+literal-index Jacobian transport, exact product derivatives and zeros,
+and common diagonal/off-diagonal bounds. The mean-value proof uses the
+selected gap G_m and retains its constants. The ordered ledger has
+eighteen matched groups, four with scope or gap-reference corrections
+and 45 pending. Next is Lemma 12.6; wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
