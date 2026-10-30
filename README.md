@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [complex gap integral and equation (2.19)](NLS/ZakharovShabat/SourceActionChiGapIntegral.lean)
-are compared with their exact 2/pi and factor-four constants, complex gap-side
-values, contour contraction and endpoint integrability. The
-[Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has fifteen matched groups,
-two corrected and five pending. Next are the collapsed limit and analytic
-extension. The [completion assessment](coverage/COMPLETENESS.md) retains the
-wider qualifications.
+Latest step: the [collapsed normalized-action limit and analytic extension](NLS/ZakharovShabat/SourceNormalizedIndexedActionCommon.lean)
+are compared on the original complex domain, with the exact filled value
+chi_n(tau_n)/4. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has
+seventeen matched groups, two corrected and three pending. Next are the uniform
+estimates and final root claims. The [completion assessment](coverage/COMPLETENESS.md)
+retains the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-Seventeen of 22 ordered Section 11 groups are compared: fifteen matched and two corrected occurrences. The complex gap-side values, shrinking contours, weighted action integral and equation (2.19) match, including the exact 2/pi and factor-four constants. The original complex domain and off-zero-gap normalization condition are retained. Five proof groups remain pending, starting with the collapsed limit and analytic extension. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Nineteen of 22 ordered Section 11 groups are compared: seventeen matched and two corrected occurrences. The local t_n=O(gamma_n) estimate, exact factor-four collapsed limit and analytic removal match on the original complex domain. The filled value of I_n/gamma_n^2 is chi_n(tau_n)/4, proved by an analytic rationalized circle candidate. Three proof groups remain pending, starting with the uniform gap-supremum estimate. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first seventeen
+the reviewed source extraction; form feeds do not add lines. The first nineteen
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -34,8 +34,8 @@ interpreting contour integrals.
 | S11-015 | 62 | 4855–4859 | Recentered action integral with coefficient i/pi and the squared critical factor. | matched |
 | S11-016 | 62 | 4860–4869 | Complex gap-side parametrization and the actual weighted integral for the action. | matched |
 | S11-017 | 62 | 4870–4876 | Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n. | matched |
-| S11-018 | 62 | 4878–4884 | Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2. | pending |
-| S11-019 | 62 | 4885–4889 | Continuous removal across Z_n, analytic collapsed value and analytic extension. | pending |
+| S11-018 | 62 | 4878–4884 | Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2. | matched |
+| S11-019 | 62 | 4885–4889 | Continuous removal across Z_n, analytic collapsed value and analytic extension. | matched |
 | S11-020 | 62 | 4890–4895 | Full-domain locally uniform literal gap-supremum estimate for chi_n minus one. | pending |
 | S11-021 | 62 | 4897–4906 | Locally uniform t_n estimate and normalized-action expansion from weighted moments. | pending |
 | S11-022 | 62 | 4908–4917 | Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims. | pending |
@@ -559,5 +559,70 @@ sources and dependency locks match the full validation at `d3b3ff7`:
 declarations, with 21 inherited warnings. Source-review integrity and
 documentation-link checks pass for the new records.
 
-Continue with S11-018 and S11-019: the collapsed normalized-action limit
-and analytic extension across the zero-gap locus.
+The following subsection compares the collapsed limit and analytic extension.
+
+## Collapsed normalized-action limit and analytic extension
+
+### S11-018: Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2.
+
+- The exact t_n=2*gamma_n*B_n identity and Lemma 10.10 locally_uniform give one neighborhood V and K>0 with |t_n(psi)|<=2*K*|gamma_n(psi)| for every psi in V and every signed n, using the standard coordinate bound by the lp norm. This supplies the printed local O(gamma_n) statement, including the totalized zero value at collapse.
+- The arccos substitution identifies the arcsine second moment with the cosine second moment. integral_shifted_cos_sq_complex at u=0 gives pi/2, hence the printed (2/pi) integral of t^2/sqrt(1-t^2) times the fixed midpoint value is exactly that midpoint value. Endpoint integrability is supplied separately.
+- The filled indexed quotient is the literal I_n/gamma_n^2 off the zero-gap locus and chi_n(tau_n)/4 on it. The factor-four limit at each collapsed phi in W is chi_n(phi,tau_n(phi)) along arbitrary complex approaches in W outside the selected zero-gap set.
+- The limit theorem follows from continuity of the independently constructed analytic circle extension. The printed scalar integral is separately evaluated by the verified arcsine substitution and second moment.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_18Data.actionCriticalCoordinate_eq_gap_mul`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.normalizedAction_tendsto_collapsed`
+- `NLS.ZakharovShabat.SourceLemma10_10Data.locally_uniform`
+- `NLS.ZakharovShabat.integral_shifted_cos_sq_complex`
+- `NLS.ComplexAnalysis.integral_div_sqrt_one_sub_sq_eq_cosine`
+- `NLS.ComplexAnalysis.intervalIntegrable_div_sqrt_one_sub_sq`
+
+Matched with the exact factor four and midpoint value. The local small-gap estimate follows with constant 2*K from the actual locally bounded lp coefficient. The limit is taken at a collapsed source within the original W, with approaches outside the actual zero-gap locus.
+
+### S11-019: Continuous removal across Z_n, analytic collapsed value and analytic extension.
+
+- The filled indexed quotient is the literal I_n/gamma_n^2 off the zero-gap locus and chi_n(tau_n)/4 on it. The factor-four limit at each collapsed phi in W is chi_n(phi,tau_n(phi)) along arbitrary complex approaches in W outside the selected zero-gap set.
+- The rationalized kernel K=(d/(4*(d+w))+2*d*B+q*B^2)/w, with d=tau-z and q=gamma^2, divides only by spectral denominators. The root and d+w are nonzero on the original local contours, including at collapse. Analytic midpoint, squared gap, B and deleted extension give joint analyticity over the full original W.
+- The algebraic recentered-integrand identity splits off a holomorphic term and factors the actual action through q times the circle candidate. At q=0, K=-(1/8)/(z-tau)+2*B; Cauchy gives candidate i*E(tau)/4=chi(tau)/4 since E=-i*chi. This proves exact agreement of the filled function with each original local circle candidate without gap division at zero.
+- The jointly analytic parameter-integral theorem gives Banach analyticity of each candidate on its full local source neighborhood. At every point of original W the preceding contour package supplies such a neighborhood, so agreement proves analyticity of the filled quotient on W. Continuity then yields the collapsed limit; the proof does not use the limit to establish the kernel.
+- The analytic midpoint and joint chi map compose to prove analytic chi_n(tau_n) on the same W. This constructive contour proof supplies the source removal conclusion without invoking the uninspected cited book theorem A.6. The later uniform sequence estimates and principal-root closure are still pending.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceActionContourFamily.analytic_normalizedActionCircleCandidate`
+- `NLS.ZakharovShabat.SourceActionContourFamily.normalizedIndexedAction_eq_circleCandidate`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.criticalRatioExtension_joint`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.indexedAction_eq_gap_sq_mul_normalized`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.normalizedIndexedAction_analytic`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.normalizedKernel_joint`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.midpointChi_analytic`
+- `NLS.ZakharovShabat.normalizedActionCircleKernel_identity`
+- `NLS.ZakharovShabat.normalizedActionCircleKernel_zeroGap`
+- `NLS.ZakharovShabat.normalizedActionCircleQuotient_zeroGap`
+- `NLS.ZakharovShabat.normalizedActionCircle_integral_factor`
+- `NLS.ZakharovShabat.normalizedStandardRoot_add_ne_zero`
+- `NLS.ZakharovShabat.sourceActionCircle_eq_squaredGap_mul_kernel`
+- `NLS.ZakharovShabat.sourceNormalizedActionCircleCandidate_eq_collapsedCandidate_of_gap_zero`
+- `NLS.ZakharovShabat.sourceNormalizedIndexedAction`
+- `NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_collapsed`
+- `NLS.ZakharovShabat.sourceNormalizedIndexedAction_eq_quotient`
+- `NLS.ComplexAnalysis.analyticOnNhd_circleIntegral_of_jointAnalytic`
+
+Matched on the original common domain, including non-real collapsed gaps and every signed index. The extension fills I_n/gamma_n^2 by chi_n(tau_n)/4 and is both continuous and analytic there. The constructive rationalized-contour proof replaces the source citation to Theorem A.6; this does not certify that cited external theorem or the wider 2014 construction.
+
+The [original-domain kernel](../NLS/ZakharovShabat/SourceNormalizedActionCommonKernel.lean),
+[collapsed circle value](../NLS/ZakharovShabat/SourceNormalizedActionCollapsedCircleValue.lean),
+[filled indexed quotient](../NLS/ZakharovShabat/SourceNormalizedIndexedActionCommon.lean) and
+[equation (2.19) package](../NLS/ZakharovShabat/SourceEquation2_19.lean)
+supply these assertions. The comparison records 12 inspected module bodies and 24 resolved declarations.
+
+This step changes documentation and comparison records only. The exact Lean
+sources and dependency locks match the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Continue with S11-020 and S11-021: the literal gap-supremum estimate,
+locally uniform critical-coordinate bounds and the weighted-moment expansion.

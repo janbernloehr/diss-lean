@@ -1,6 +1,37 @@
 # Section 11: actions
 
-## Ordered comparison through the complex gap integral and equation (2.19)
+## Ordered comparison through the collapsed limit and analytic extension
+
+The collapsed limit and analytic extension match the source on the original
+complex domain. The exact identity t_n=2*gamma_n*B_n and the local lp bound
+for B give the required small-gap estimate. The arcsine second moment is
+pi/2, so the factor-four normalized limit is exactly chi_n(tau_n).
+
+The filled quotient I_n/gamma_n^2 equals chi_n(tau_n)/4 at collapse.
+A rationalized contour kernel has no gap denominator, stays analytic on
+the original local circles, and gives this exact value by Cauchy's formula.
+Agreement with that candidate proves analyticity through every complex
+collapsed gap; continuity then yields the stated limit. This constructive
+proof supplies the removal conclusion without relying on the cited book theorem.
+
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now has
+nineteen compared groups: seventeen matched and two corrected; three remain pending.
+No additional constant correction is needed in these two passages.
+
+This step updates documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next are the original-domain uniform estimates and the final root claims.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope.
+
+## Previous ordered milestone: complex gap integral and equation (2.19)
 
 The complex gap-side values, contour contraction and weighted action
 integral match the source. Winding-one ellipses contract inside the original
