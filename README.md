@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [complex-gap calculation](NLS/ZakharovShabat/SourceLemma10_11ComplexCalculation.lean)
-proves Lemma 10.11's actual boundary integrals, endpoint integrability and
-signed doubled-circle formula for complex sources. The
-[ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
-all 52 groups: 44 matched and eight corrected occurrences. The
+Latest step: the [Section 11 opening comparison](coverage/SECTION_11_ASSERTIONS.md)
+checks common contours and collars, the exact `1/pi` action definition and
+independence of winding-one circuits in the original isolating disks.
+Three of 22 ordered Section 11 groups are matched; nineteen remain pending.
+Section 10 retains all 52 compared groups: 44 matched and eight corrected.
+Next is Lemma 11.1's analyticity and gradient formula. The
 [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
-partial clauses and the wider qualifications. Next is the ordered
-comparison of Section 11's action construction.
+partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

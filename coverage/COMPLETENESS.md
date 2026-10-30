@@ -167,6 +167,15 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now lists all
+22 groups and compares the opening three: common contours and collars,
+the exact 1/pi action definition, and joint analyticity with winding-one
+contour and isolating-family independence. A local source neighborhood may
+shrink while W and all original disks are retained. Complex and collapsed
+gaps and all signed indices are included. Nineteen later groups remain
+pending in this ordered comparison, beginning with Lemma 11.1. The existing
+named-theorem audit does not automatically classify those proof passages.
+
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
 contextual or outside-work attribution, or unresolved. Retain existing refutations. Each

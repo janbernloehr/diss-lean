@@ -1,5 +1,45 @@
 # Section 11: actions
 
+## Ordered comparison: common contours and action definition
+
+The opening Section 11 claims now have an ordered comparison with the
+existing Lean proofs: simultaneous common contours and collars, the literal
+action definition (2.16), and joint analyticity with contour and isolating-family
+independence. The [ordered ledger](SECTION_11_ASSERTIONS.md) lists
+all 22 passage groups; three are matched and nineteen remain pending.
+
+At every complex source in the retained W, one local source neighborhood
+supports all signed indices simultaneously. A supplied local neighborhood
+may shrink to choose those contours, while W and every original isolating
+disk remain unchanged. Fixed annular collars avoid the moving gaps, and the
+counterclockwise circles have winding one, including for collapsed gaps.
+
+The action is the actual integral of lambda times Delta prime divided by
+the canonical root, with the exact coefficient 1/pi. Every finite piecewise
+C1 closed contour in an original cut disk computes the indexed action times
+its winding integral. Winding-one contours therefore give the same action,
+even across different original isolating families whose disks are not nested.
+The period proof uses a primitive of the zero-period remainder on the entire
+cut disk; it requires neither a prescribed homotopy nor a real-source assumption.
+
+This step changes documentation and source-comparison records only. The
+Lean and dependency snapshot is unchanged from commit `7692c09`, whose full
+`./scripts/check.sh` passed 8,514 build jobs, 7,584 public examples and the
+transitive axiom audit of 44,339 NLS declarations, with 21 inherited warnings.
+That validation is reused. Current module hashes, declaration references,
+source-review integrity and documentation links are checked.
+
+Next is Lemma 11.1, starting with its analytic action and gradient assertion.
+Section 10 retains its completed ordered comparison: 44 matched and eight
+corrected groups. Section 7's physical NLS Dirichlet motion and unrestricted
+psi characterization, the exact cited 2014 construction, Appendix G.2 norm
+interpretation and the broader source inventory remain unresolved.
+
+## Existing theorem and formula audit
+
+The following audit retains its established scope. Its named results do not
+by themselves discharge the nineteen pending ordered groups.
+
 This audit begins with printed p. 61 of the dissertation. The contour
 construction, equation (2.16), and independence of general admissible
 counterclockwise piecewise C¹ circuits are proved on the unchanged common

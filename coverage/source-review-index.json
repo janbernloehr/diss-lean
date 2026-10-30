@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T10:14:04.729669+00:00",
-  "base_commit": "4e4c8b490525ed1c77aaaacb6a016172e035c8dd",
+  "published_utc": "2026-10-30T10:21:40.217546+00:00",
+  "base_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 124,
-    "module_hash_checks": 2155,
-    "distinct_modules": 1357
+    "review_records": 125,
+    "module_hash_checks": 2170,
+    "distinct_modules": 1367
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "4e4c8b490525ed1c77aaaacb6a016172e035c8dd",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the general cosine-integral vanishing theorem, literal complex canonical-root side kernels, endpoint integrability, pointwise orientation and original-circle formula, with two public integration examples. All 52 ordered Section 10 groups are compared: 44 matched and eight corrected occurrences. Every original disk and the unchanged common W are retained, including independently truncated admissible piecewise endpoint integrals. Continue in source order with Section 11. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
+    "base_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 7692c09 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first three of 22 ordered Section 11 groups match: simultaneous common contours and collars, the actual action with coefficient 1/pi in equation (2.16), and joint analyticity with winding-one contour and isolating-family independence. A supplied local source neighborhood may shrink; the global W and original disks are retained. All signed indices and complex or collapsed gaps are included. Nineteen later groups remain pending in this ordered comparison. Section 10 retains 44 matched and eight corrected groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8514,
     "public_examples": 7584,
@@ -40,7 +40,8 @@
       "files": 4791,
       "sha256": "da81553c11f2a8234c9500bb979d345fe26e49dbfcac9bc928ea763975bfc5b4"
     },
-    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
+    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
+    "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8"
   },
   "named_statements": [
     {
@@ -31341,6 +31342,160 @@
       "reviewed_modules_read_in_full": true,
       "declaration_inventory_count": 44339,
       "source_record_sha256": "137d11b8a9965a9386e415f535f537ad5d7d6a87ea348b0dba8fd1fec646c593"
+    },
+    "Section11OpeningSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
+      "updated_utc": "2026-10-30T10:21:40.217546+00:00",
+      "source_lines": [
+        [
+          4737,
+          4741
+        ],
+        [
+          4743,
+          4748
+        ],
+        [
+          4750,
+          4752
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-001",
+          "source_lines": [
+            4737,
+            4741
+          ],
+          "requirement": "One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceActionContourFamily.closedBall_subset_original",
+            "NLS.ZakharovShabat.SourceActionContourFamily.collar_open",
+            "NLS.ZakharovShabat.SourceActionContourFamily.collar_subset_cutDisk",
+            "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_collar",
+            "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+            "NLS.ZakharovShabat.SourceLemma10_11Data.actionContours",
+            "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods",
+            "NLS.ZakharovShabat.sourceSection11Contours"
+          ],
+          "reviewed_claims": [
+            "For any complex source in the unchanged W and any original isolating family on an open V within W, the contour package supplies one open connected U containing that source and contained in V, chosen before all signed indices and nearby sources.",
+            "The original disk D_n is unchanged. Three positive nested radii give a common gap enclosure, a counterclockwise integration circle and the original disk. The fixed annular collar contains the circle, is open, and lies in D_n minus the moving gap for every source in U.",
+            "The selected circle has actual winding integral one about every gap point, including collapsed gaps. All distant signed indices use the free center n*pi and radii pi/8, 3*pi/16, pi/4 with one common cutoff.",
+            "Finitely many central gap-enclosure neighborhoods intersect one uniform-tail neighborhood. Complex stability uses openness of the joint gap complement, compactness of the sphere, continuity of the symmetric midpoint and connectedness of the gap; it does not assert continuity of ordered complex endpoints."
+          ],
+          "qualification": "The printed local source neighborhood is chosen to support the common contours. The construction may shrink a supplied V to U while retaining global W and every original disk. It does not claim that arbitrary already-fixed V supports an interior common circle without this local refinement."
+        },
+        {
+          "ordered_group": "S11-002",
+          "source_lines": [
+            4743,
+            4748
+          ],
+          "requirement": "Definition (2.16): the literal action integral with coefficient 1/pi and spectral weight lambda.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.action_eq",
+            "NLS.ZakharovShabat.SourceSection11ContourData.defineActions",
+            "NLS.ZakharovShabat.sourceActionContour",
+            "NLS.ZakharovShabat.sourceEquation2_16",
+            "NLS.ZakharovShabat.sourceIndexedAction",
+            "NLS.ZakharovShabat.sourceIndexedAction_eq_circle"
+          ],
+          "reviewed_claims": [
+            "The action is an actual integral of lambda*Delta prime/canonicalRoot with the exact factor 1/pi, with no extra imaginary normalization.",
+            "The indexed action chooses one original isolating circle and is proved equal to every such circle. The Section 11 inner circles, strictly inside the original disks, compute this same function.",
+            "The arbitrary default of the choice-based indexed definition outside sources admitting isolating circles is not used on W, where the common contour package supplies one at every source and index."
+          ],
+          "qualification": "The literal contour and piecewise-path integrals are defined independently of the indexed action; equality is a theorem. Keep counterclockwise winding one explicit."
+        },
+        {
+          "ordered_group": "S11-003",
+          "source_lines": [
+            4750,
+            4752
+          ],
+          "requirement": "Joint analyticity on each collar and independence of both circuit and original isolating family.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceActionContourFamily.analytic_actionCircle",
+            "NLS.ZakharovShabat.SourceActionContourFamily.analytic_integrand_on_collar",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.actionContour_eq_mul_winding",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+            "NLS.ZakharovShabat.sourceActionContour",
+            "NLS.ZakharovShabat.sourceActionContour_eq_of_original_circuits"
+          ],
+          "reviewed_claims": [
+            "The source equation (2.15) package proves the weighted integrand jointly analytic on the full moving-gap complement; each fixed collar times its common local source neighborhood lies in this domain.",
+            "The normalized actual integral of every piecewise C1 closed contour in an original cut disk is the indexed action times the actual winding integral about the selected midpoint.",
+            "For winding-one circuits the action is therefore independent of the chosen contour and of the original isolating family, even when the two original disks are not nested.",
+            "The contour-period proof subtracts a reciprocal pole carrying the circle period, constructs a primitive of the zero-period remainder on the whole cut disk, and integrates the pole by its winding. Neither a supplied homotopy nor an open-gap or real-source assumption is required."
+          ],
+          "qualification": "Repeated or reversed contours retain their winding factor; the printed action independence is the winding-one specialization. Standard finite piecewise C1 contour regularity is explicit."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "ordered_inventory_sha256": "a7b19f0467accd75bdeaf481cf2d8442909202094a4e6fca1b1b42d933bdefbe",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection11Contours.lean": "fdea3098f268e548809a545fd05961ef59a42f4208fdfb497310bc37ea0c0be6",
+        "NLS/ZakharovShabat/SourceActionContourFamily.lean": "d06c03950afafd55bf2897ad22d66f14486425095302172024c654d920d71860",
+        "NLS/ZakharovShabat/SourceIndexedAction.lean": "d386d40ac3dcb7730e5cd532033ef906303704d16a562352896e78a1dbfddeca",
+        "NLS/ZakharovShabat/SourceActionPiecewiseContour.lean": "01ec2db90ea86d29d943adfd68762972c09dab495d5c23dc1cc084f60bc1b736",
+        "NLS/ZakharovShabat/SourcePeriodicSegmentComplexStability.lean": "7bb35d8a53fb11a31e9847386c920dc1379babb15c96660eadaba38d6f433112",
+        "NLS/ZakharovShabat/SourceNormalizedActionUniformTailCircles.lean": "64e89aa2b53a394c1b5cf84266bf1122249b6d6dd65151aa227564aa89a89231",
+        "NLS/ZakharovShabat/SourceActionContourHomotopy.lean": "4435cc94d8df8e60a266bcbf95b8698d9911ee2b994560efb031ba1c063691ab",
+        "NLS/ZakharovShabat/SourceActionCircleAnalytic.lean": "907cf47db829e92af8292ef7c925a5cb344f71698c377f651e9a815e9fb7f882",
+        "NLS/ZakharovShabat/SourceActionCircle.lean": "8be9b550e2b98e0f36ec781f7df57fbade937132f3c37c8dc41c2fe33324bcd0",
+        "NLS/ComplexAnalysis/PiecewiseContourPeriod.lean": "9c7090820c2ddd88213b7774a9aabafe385cecd403a45730c3de64ae16cf8427",
+        "NLS/ComplexAnalysis/ConnectedSetInBall.lean": "941756999109092af2c1a5c1820cdd560d25bd29b72cc53b9a438b4ca88c7976",
+        "NLS/ComplexAnalysis/SegmentIsolatingCircles.lean": "cc4d3ad9066cba37e29b4371c3f48e61484b33b74e40bfc8e1d63f70aed7e259",
+        "NLS/ZakharovShabat/SourceEquation2_16.lean": "518cb513158f0e60ef2e1de3883e0883330db02129d3bd2ed0f2cb85697413de",
+        "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean": "cb1b5a46815816dab3a8a4bc333f977ef854198a6ec4014e3ba50ee28c953ea6",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          61
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-061.png": "069737e39c17d7b6805f6c6c7db0e05f4e38f22d12a6023c94b6ce5afea64b03"
+        }
+      },
+      "qualification": "The first three of 22 ordered Section 11 groups match: simultaneous common contours and collars, the actual action with coefficient 1/pi in equation (2.16), and joint analyticity with winding-one contour and isolating-family independence. A supplied local source neighborhood may shrink; the global W and original disks are retained. All signed indices and complex or collapsed gaps are included. Nineteen later groups remain pending in this ordered comparison. Section 10 retains 44 matched and eight corrected groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceActionContourFamily.analytic_actionCircle",
+        "NLS.ZakharovShabat.SourceActionContourFamily.analytic_integrand_on_collar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closedBall_subset_original",
+        "NLS.ZakharovShabat.SourceActionContourFamily.collar_open",
+        "NLS.ZakharovShabat.SourceActionContourFamily.collar_subset_cutDisk",
+        "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_collar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.action_eq",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.actionContour_eq_mul_winding",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+        "NLS.ZakharovShabat.SourceLemma10_11Data.actionContours",
+        "NLS.ZakharovShabat.SourceSection11ContourData.defineActions",
+        "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods",
+        "NLS.ZakharovShabat.sourceActionContour",
+        "NLS.ZakharovShabat.sourceActionContour_eq_of_original_circuits",
+        "NLS.ZakharovShabat.sourceEquation2_16",
+        "NLS.ZakharovShabat.sourceIndexedAction",
+        "NLS.ZakharovShabat.sourceIndexedAction_eq_circle",
+        "NLS.ZakharovShabat.sourceSection11Contours"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44339,
+      "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
+      "source_record_sha256": "e71ab4fe71d1248c2a77973e4732d3d36ed8337a0574b6ad3116f2420b8b54f4"
     }
   }
 }
