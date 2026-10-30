@@ -485,6 +485,43 @@ All three witnesses are implemented in
 See [the Section 21 audit](coverage/SECTION_21.md) for the common original
 moment, source-Hamiltonian, action-gradient, and concavity package.
 
+## Section 19: the gap estimate retains π and the canonical normalization
+
+On p. 91, retain norms and the factor π in the gap-integral estimate.
+If D bounds `|lambda_n^bullet-z|` and E bounds `|chi_n(z)-1|` on the closed
+gap, the existing positive theorem
+`SourceFullAbelianUniformCauchyFamily.gapBoundary_sub_root_norm_le_of_factor_error`
+proves, on both sides including their endpoints,
+
+```text
+|F_n-i*w_n| ≤ π*(D*E+|lambda_n^bullet-tau_n|).
+```
+
+The normalized standard-root integral estimate divides by π before
+bounding by the numerator maximum. The unnormalized integral therefore
+retains π. The complete comparison above also includes the critical-point
+offset, and its fixed factor is absorbed into the mixed sequence majorants
+in Lemma 19.4. This is a sufficient proved bound, with no optimality claim
+and no added refutation.
+
+The same source comparison makes these direct notation and scope fixes:
+
+- In (4.6), use the critical point `lambda_m^bullet` in each numerator.
+- In the fixed-exterior domain on p. 87, the union indexed by m uses U_m.
+- In the logarithm paragraph on p. 88, use the selected index n consistently.
+  The signed Floquet multiplier is `(-1)^n*(Delta+R)/2`, where R is the
+  canonical root; local normalized logarithms justify the actual derivative.
+- In the normalization paragraph on p. 89, keep the denominator R. On a
+  real band it includes the phase `-i*(-1)^n` multiplying `sqrt(4-Delta^2)`.
+- The collapsed selected-gap value is `F_n(lambda_n)=0`; the zero-index
+  primitive F has value `-i*pi*n` there.
+- The derivative of w_k is used off G_k in the p. 91 sentence.
+- The finite-gap meromorphic assertion concerns infinity and the exterior
+  Laurent expansion; it is not a global continuation through open cuts.
+
+See the [ordered Section 19 comparison](coverage/SECTION_19_ASSERTIONS.md).
+The existing positive proofs already implement these normalizations.
+
 ## Section 18: action-image neighborhood and mass notation
 
 The action-image assertion on p. 84 is implemented with an open source

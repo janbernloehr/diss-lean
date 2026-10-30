@@ -269,8 +269,24 @@ norms: global for 1<p≤2, local for finite p>2, and small-data global above
 two. Sobolev analytic dependence holds for every real nonnegative order.
 The external 2014 comparison remains partial in S18-003, and the historical
 literature discussion is not counted as independently verified mathematics
-or current research status. No new refutation is added. Next is Section 19,
-The abelian integral F.
+or current research status. No new refutation is added.
+
+The [ordered Section 19 ledger](SECTION_19_ASSERTIONS.md) classifies all
+48 groups on pp. 87–91: 33 matched, eight corrected or clarified, two partial
+auxiliary assertions and five contextual groups. The main abelian-integral,
+physical Laurent, cubic and mixed-gap statements are already proved for
+the same canonical primitive on a common original source domain. The
+positive gap bound retains π, and the source normalization and index
+corrections are recorded directly, without new refutations.
+
+S19-015 still needs the direct positive companion minimum over the closed
+real gap; S19-032 still needs the direct strict monotonicity of the signed
+discriminant on a closed real band. The established main conclusions use
+other proofs and do not assume these auxiliary assertions. The physical
+Laurent proof uses internal WKB asymptotics, a local sinh inverse estimate
+and half-integer sampling; individual principal-arcsine displays and the
+external [23] convention footnote are not separately claimed formalized.
+Next: reconcile the two positive auxiliary statements before Section 20.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

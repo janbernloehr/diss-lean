@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: ordered Section 18 frequency and wellposedness comparison
+## Current milestone: ordered Section 19 abelian-integral comparison
+
+The [ordered Section 19 ledger](coverage/SECTION_19_ASSERTIONS.md) classifies
+48 passage groups on pp. 87–91: 33 matched, eight corrected or clarified,
+two partial auxiliary assertions and five contextual groups.
+
+The main abelian-integral statements are already proved on one common
+original source domain: actual improper endpoint integrals, joint and
+filled spectral analyticity, exact endpoint normalization, both boundary
+profiles, the analytic square, physical Hamiltonian Laurent coefficients,
+the cubic expansion and the mixed gap-error supremum.
+
+The corrected positive estimate is
+`sup |F_n-i*w_n| ≤ π*(D*E+|lambda_n^bullet-tau_n|)`, where D bounds the
+critical-point distance over the gap and E bounds the deleted-product
+error. Existing Lean proofs already retain π. The comparison also restores
+the critical-point bullet in (4.6), the canonical root in the normalization
+integral, F_n in the collapsed-gap sentence, and consistent selected
+indices. Meromorphic behavior is asserted at infinity. No new refutation
+or Lean code is added.
+
+The Laurent proof uses internal WKB asymptotics and a uniform local sinh
+inverse estimate at half-integer samples. This replaces the printed
+principal-arcsine proof steps. The direct positive companion minimum
+(S19-015) and strict signed-discriminant monotonicity on a closed band
+(S19-032) remain to be reconciled; the main theorems do not assume them.
+The review inspected 37 complete module bodies and resolved 76 declarations.
+
+This documentation-only step reuses the successful full check from commit c8cbe87 on the exact unchanged Lean and dependency-lock snapshot: 8,559 build jobs, 7,635 public examples and 44,604 transitively audited NLS declarations, with 21 inherited warnings and zero new warnings. No new full build is claimed. Current module hashes, declaration references, source-review integrity and local documentation links are checked separately; these checks do not certify mathematical completeness.
+
+Next: reconcile those two positive auxiliary assertions, then proceed to
+Section 20. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 18 frequency and wellposedness comparison
 
 The [ordered Section 18 ledger](coverage/SECTION_18_ASSERTIONS.md) classifies
 all 39 passage groups on pp. 83–87: 28 matched, five corrected, one partial

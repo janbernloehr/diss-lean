@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 18 comparison](coverage/SECTION_18_ASSERTIONS.md)
-classifies all 39 passage groups, retaining the corrected Hamiltonian
-Hessian, subtractions and gauge, the common action domain, and the original
-solution definition and time ranges. Existing proofs supply the results;
-this step changes documentation only. The exact cited 2014 construction
-comparison remains qualified. Next is Section 19, The abelian integral F.
+Latest step: the [ordered Section 19 comparison](coverage/SECTION_19_ASSERTIONS.md)
+records the corrected π gap bound and canonical normalization using existing
+positive proofs. All 48 passage groups are classified; two auxiliary proof
+details remain explicit. The main abelian-integral, Laurent and mixed-gap
+theorems are already proved. This step changes documentation only and adds
+no refutations. Next are the two positive auxiliary statements, then Section 20.
 Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
