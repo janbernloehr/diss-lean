@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Lemma 10.10 full-index coefficient comparison
+## Current milestone: Equation (2.15) and admissible-path comparison
+
+Equation (2.15) and the following analytic-domain and path-definition
+passage now match the existing public implementation. The exact identity is
+
+    Delta'(z,psi)/canonicalRoot(z,psi)
+      = -i * product_m ((critical_m(psi)-z)/w_m(z,psi)).
+
+The full product is an unordered HasProd with absolutely summable individual
+factor errors. Literal symmetric cutoffs converge to the same quotient.
+The normalization holds off all gaps, including when a critical numerator
+factor is zero. The preceding common source domain W is retained.
+
+Spectral analyticity holds off the full gap union. Joint analyticity holds
+on the moving-gap domain and on the original fixed complement of the union
+of closed disks, times the original source neighborhood. Admissibility is
+exactly avoidance of every gap at every interior point of a continuous path;
+its endpoints may meet gaps. Smoothness and integrability are separate
+requirements of later integral statements.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+45 of 52 groups: 37 matched and eight corrected occurrences. Seven remain
+pending, beginning with Figure 2.5 and Lemma 10.11. Section 7's physical NLS
+Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and the broader source
+inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Lemma 10.10 full-index coefficient comparison
 
 Lemma 10.10 and its proof now match the existing public implementation.
 For every finite p>1, the exact identity at every signed index is

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-29T04:00:43.695492+00:00",
-  "base_commit": "6d203c9c9cf07507b29fa95d457f6ad74f4129a1",
+  "published_utc": "2026-10-30T08:16:47.048541+00:00",
+  "base_commit": "0014279343363eebf8038782637facc13525c4fb",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 118,
-    "module_hash_checks": 2068,
-    "distinct_modules": 1319
+    "review_records": 119,
+    "module_hash_checks": 2075,
+    "distinct_modules": 1323
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6d203c9c9cf07507b29fa95d457f6ad74f4129a1",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 43 of 52 ordered Section 10 groups are compared: 35 matched and eight corrected occurrences, with nine pending. Lemma 10.10 and its proof retain the actual all-index coefficient, unchanged common domain, analytic coordinates and locally uniform full norm and power-sum bounds. Wider qualifications remain.",
+    "base_commit": "0014279343363eebf8038782637facc13525c4fb",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 45 of 52 ordered Section 10 groups are compared: 37 matched and eight corrected occurrences, with seven pending. Equation (2.15) retains the exact -i normalization and full unordered product, unchanged common domain and original closed-disk analytic domains. Admissibility keeps the exact continuous-path endpoint convention. Wider qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8511,
     "public_examples": 7580,
@@ -30542,6 +30542,126 @@
       "declaration_inventory_count": 44300,
       "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
       "source_record_sha256": "69e206b9ebf96049a7b51fc71c9ff5138f99435ccdd4488b57e14ce3768e4b27"
+    },
+    "Section10CriticalRatioSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "0014279343363eebf8038782637facc13525c4fb",
+      "updated_utc": "2026-10-30T08:16:47.048541+00:00",
+      "source_lines": [
+        [
+          4581,
+          4589
+        ],
+        [
+          4591,
+          4596
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-044",
+          "source_lines": [
+            4581,
+            4589
+          ],
+          "requirement": "Derivative-to-canonical-root product (2.15).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.displacedRoots_canonicalCriticalDisplacement",
+            "NLS.ZakharovShabat.summable_norm_sourceCriticalRootRatio_factor_sub_one",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_symmetricProducts",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+            "NLS.ZakharovShabat.sourceEquation2_15",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.criticalRootProduct"
+          ],
+          "reviewed_claims": [
+            "The actual discriminant derivative divided by the canonical root equals -i times the full product of (critical_m-z)/w_m(z), over every signed index, off all periodic gap segments.",
+            "Individual factor deviations from one are absolutely summable. The full product is an unordered HasProd, and literal symmetric cutoff products converge to the same normalized quotient.",
+            "Inserting one selected factor into the omitted product retains the exact normalization even if a numerator factor is zero. The product theorem strengthens the preceding Lemma 10.10 package on the unchanged common W."
+          ],
+          "qualification": "The normalized quotient identity is asserted off the full gap union. Absolute summability also holds for the totalized factors at other spectral points, but no quotient identity on a removed gap is inferred. The argument never divides by a critical numerator factor."
+        },
+        {
+          "ordered_group": "S10-045",
+          "source_lines": [
+            4591,
+            4596
+          ],
+          "requirement": "Quotient analytic domains and admissible-path definition.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootRatioJoint",
+            "NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantDerivative_joint",
+            "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioJoint",
+            "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralJoint",
+            "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioSpectral",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDiskComplement_subset_rootJoint",
+            "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioClosedFixed",
+            "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralClosedFixed",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.neighborhoods",
+            "NLS.ZakharovShabat.SourceAdmissiblePath",
+            "NLS.ZakharovShabat.sourceAdmissiblePath_iff"
+          ],
+          "reviewed_claims": [
+            "For every source in W, the quotient is spectrally analytic on the complement of the union of all actual periodic gaps. It and the literal product are jointly analytic on the open moving-gap domain over that same W.",
+            "For every original local neighborhood V contained in W and its supplied disk family D, both functions are jointly analytic on the complement of the union of closures of D_m, times V. The printed closure bars and original neighborhoods are retained.",
+            "For any continuous complex path with arbitrary endpoints, admissibility means exactly that every strictly interior parameter avoids every periodic gap. Endpoints may belong to gaps. This definition requires no differentiability, integrability, disk-containment or half-plane premise."
+          ],
+          "qualification": "The geometric definition applies to arbitrary continuous Path values. Smoothness and integrability belong to the later integral statements and are not built into admissibility. This comparison does not yet discharge Lemma 10.11 or Figure 2.5."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "6aae568b3f62d37415e0c95d2cc788599e5a9623592a464fd273cd23cb5a0fd6",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceEquation2_15.lean": "113f237e965cc1e6fc981a9aeecd1940bb78e682215beb2486a36d78247ed54c",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioProduct.lean": "f3e359bc472fd8f7a81269eca54c8dbfc7161bae4ab4963a99f6fa775aa49e7c",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean": "ccf1d3942e8880d2916e83bb706abda313d654260ad7cd454bc9a91188f508ce",
+        "NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean": "d85ec3e747162698acc063da4b1e2fde69f748e72797ef962eb64f95f43a52d3",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioFactorization.lean": "ca94dc6ab5ed607a8470179da0108aa5734595154d561d1a250e33394169cb65",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioJointAnalytic.lean": "bc449c84c4c16c2d00ca363185c29304ab5f36ab851048a6840530c5b84c7160",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          59
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-059.png": "ae6339797c96159261149a2b67c1a101fe29f48d0f63c11e6f87cbb905da5387"
+        }
+      },
+      "qualification": "The first 45 of 52 ordered Section 10 groups are compared: 37 matched and eight corrected occurrences, through equation (2.15), its analytic domains and the admissible-path definition. The full unordered critical-root product retains the factor -i, every signed index and the unchanged common domain. The original closed-disk complement and continuous-path endpoint convention are preserved. Both new groups match existing proofs. Seven groups remain pending, beginning with Figure 2.5 and Lemma 10.11. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceAdmissiblePath",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.neighborhoods",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDiskComplement_subset_rootJoint",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.criticalRootProduct",
+        "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioClosedFixed",
+        "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioJoint",
+        "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralClosedFixed",
+        "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralJoint",
+        "NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioSpectral",
+        "NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantDerivative_joint",
+        "NLS.ZakharovShabat.displacedRoots_canonicalCriticalDisplacement",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.sourceAdmissiblePath_iff",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioJoint",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_symmetricProducts",
+        "NLS.ZakharovShabat.sourceEquation2_15",
+        "NLS.ZakharovShabat.summable_norm_sourceCriticalRootRatio_factor_sub_one"
+      ],
+      "declaration_inventory_count": 44300,
+      "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "source_record_sha256": "df9ea4887d2faa65e6f99de07c2721ec9d575a200cb66d89bee54c5a8bfef2e5"
     }
   }
 }

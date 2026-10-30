@@ -1,6 +1,50 @@
 # Section 10: potentials of almost real type
 
-## Ordered comparison through Lemma 10.10
+## Ordered comparison through equation (2.15) and admissibility
+
+Equation (2.15) and the following analytic-domain and path-definition
+passage now match the existing public implementation. The exact identity is
+
+    Delta'(z,psi)/canonicalRoot(z,psi)
+      = -i * product_m ((critical_m(psi)-z)/w_m(z,psi)).
+
+The full product is an unordered HasProd with absolutely summable individual
+factor errors. Literal symmetric cutoffs converge to the same quotient.
+The normalization holds off all gaps, including when a critical numerator
+factor is zero. The preceding common source domain W is retained.
+
+Spectral analyticity holds off the full gap union. Joint analyticity holds
+on the moving-gap domain and on the original fixed complement of the union
+of closed disks, times the original source neighborhood. Admissibility is
+exactly avoidance of every gap at every interior point of a continuous path;
+its endpoints may meet gaps. Smoothness and integrability are separate
+requirements of later integral statements.
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) now covers
+45 of 52 groups: 37 matched and eight corrected occurrences. Seven remain
+pending, beginning with Figure 2.5 and Lemma 10.11. Section 7's physical NLS
+Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and the broader source
+inventory remain unresolved.
+
+The [literal product](../NLS/ZakharovShabat/SourceCriticalRootRatioProduct.lean)
+and [analytic-domain theorems](../NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean)
+feed the [unchanged-domain package](../NLS/ZakharovShabat/SourceEquation2_15.lean).
+The [admissibility definition](../NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean)
+and its equivalence theorem apply to arbitrary continuous paths. No
+half-plane or disk-containment restriction enters that definition.
+The later endpoint integral claims remain pending in the ordered comparison.
+
+Earlier milestone entries retain their historical scope.
+
+## Previous comparison milestone: through Lemma 10.10
 
 Lemma 10.10 and its proof now match the existing public implementation.
 For every finite p>1, the exact identity at every signed index is
@@ -310,7 +354,7 @@ in the displayed proof, independently of endpoint-label analyticity.
 domain and chooses the local family before all indices and powers.
 
 The following named-statement entries retain their historical audit scope;
-they do not discharge the nine ordered groups still pending.
+they do not discharge the seven ordered groups still pending.
 
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in

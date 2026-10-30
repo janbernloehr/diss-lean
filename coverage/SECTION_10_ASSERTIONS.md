@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 43 of 52 ordered Section 10 groups are compared: 35 matched and eight corrected occurrences, through Lemma 10.10 and its proof. The same actual lp coefficient gives every critical-root offset as squared gap times coefficient, including collapsed central gaps. Coordinate analyticity and locally uniform full norms and power sums hold on the unchanged common domain. Both new passages match existing proofs. Nine groups remain pending, beginning with equation (2.15). Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 45 of 52 ordered Section 10 groups are compared: 37 matched and eight corrected occurrences, through equation (2.15), its analytic domains and the admissible-path definition. The full unordered critical-root product retains the factor -i, every signed index and the unchanged common domain. The original closed-disk complement and continuous-path endpoint convention are preserved. Both new groups match existing proofs. Seven groups remain pending, beginning with Figure 2.5 and Lemma 10.11. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 43
-groups, through Lemma 10.10 and its proof on p.59, have been compared.
-The remaining nine groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 45
+groups, through equation (2.15) and admissibility on p.59, have been compared.
+The remaining seven groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -58,8 +58,8 @@ inspected to preserve figures, signs and closure bars. See
 | S10-041 | 4540–4550 | Remark 10.9: corrected leading term and p/2 optimality. | corrected |
 | S10-042 | 4552–4563 | Lemma 10.10: full-index squared-gap critical offset. | matched |
 | S10-043 | 4565–4579 | Proof of Lemma 10.10: combine tail estimates and finite central divisibility. | matched |
-| S10-044 | 4581–4589 | Derivative-to-canonical-root product (2.15). | pending |
-| S10-045 | 4591–4596 | Quotient analytic domains and admissible-path definition. | pending |
+| S10-044 | 4581–4589 | Derivative-to-canonical-root product (2.15). | matched |
+| S10-045 | 4591–4596 | Quotient analytic domains and admissible-path definition. | matched |
 | S10-046 | 4606–4616 | Figure 2.5: multiple admissible endpoint paths. | pending |
 | S10-047 | 4619–4626 | Lemma 10.11(i): extension through every collapsed gap. | pending |
 | S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | pending |
@@ -482,6 +482,26 @@ Public evidence: `NLS.ZakharovShabat.exists_uniform_critical_midpoint_gap_sq_lp`
 
 The finite central argument is supplied by the proved analytic deleted-product quotient and isolation geometry. It proves the mathematical step cited to [23, Lemma 12.11] without claiming an independent comparison of that external proof. The exact cited 2014-construction qualification remains unresolved globally.
 
+## S10-044: Derivative-to-canonical-root product (2.15).
+
+- The actual discriminant derivative divided by the canonical root equals -i times the full product of (critical_m-z)/w_m(z), over every signed index, off all periodic gap segments.
+- Individual factor deviations from one are absolutely summable. The full product is an unordered HasProd, and literal symmetric cutoff products converge to the same normalized quotient.
+- Inserting one selected factor into the omitted product retains the exact normalization even if a numerator factor is zero. The product theorem strengthens the preceding Lemma 10.10 package on the unchanged common W.
+
+Public evidence: `NLS.ZakharovShabat.displacedRoots_canonicalCriticalDisplacement`, `NLS.ZakharovShabat.summable_norm_sourceCriticalRootRatio_factor_sub_one`, `NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd`, `NLS.ZakharovShabat.sourceCriticalRootRatio_product`, `NLS.ZakharovShabat.sourceCriticalRootRatio_symmetricProducts`, `NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension`, `NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype`, `NLS.ZakharovShabat.sourceEquation2_15`, `NLS.ZakharovShabat.SourceLemma10_10Data.criticalRootProduct`.
+
+The normalized quotient identity is asserted off the full gap union. Absolute summability also holds for the totalized factors at other spectral points, but no quotient identity on a removed gap is inferred. The argument never divides by a critical numerator factor.
+
+## S10-045: Quotient analytic domains and admissible-path definition.
+
+- For every source in W, the quotient is spectrally analytic on the complement of the union of all actual periodic gaps. It and the literal product are jointly analytic on the open moving-gap domain over that same W.
+- For every original local neighborhood V contained in W and its supplied disk family D, both functions are jointly analytic on the complement of the union of closures of D_m, times V. The printed closure bars and original neighborhoods are retained.
+- For any continuous complex path with arbitrary endpoints, admissibility means exactly that every strictly interior parameter avoids every periodic gap. Endpoints may belong to gaps. This definition requires no differentiability, integrability, disk-containment or half-plane premise.
+
+Public evidence: `NLS.ZakharovShabat.sourceCriticalRootRatioJoint`, `NLS.ZakharovShabat.analyticOnNhd_sourceDiscriminantDerivative_joint`, `NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioJoint`, `NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralJoint`, `NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioSpectral`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDiskComplement_subset_rootJoint`, `NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioClosedFixed`, `NLS.ZakharovShabat.SourceLemma10_7Data.criticalRatioLiteralClosedFixed`, `NLS.ZakharovShabat.SourceEquation2_15Data.neighborhoods`, `NLS.ZakharovShabat.SourceAdmissiblePath`, `NLS.ZakharovShabat.sourceAdmissiblePath_iff`.
+
+The geometric definition applies to arbitrary continuous Path values. Smoothness and integrability belong to the later integral statements and are not built into admissibility. This comparison does not yet discharge Lemma 10.11 or Figure 2.5.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -489,5 +509,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-044 and S10-045, equation (2.15), its analytic domains and admissible paths.
+Continue with S10-046, Figure 2.5 and the admissible endpoint paths, then Lemma 10.11.
 The remaining Section 10 groups and wider unresolved qualifications remain.
