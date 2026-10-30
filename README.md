@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [full original-disk auxiliary estimate](NLS/ZakharovShabat/SourcePsiRefinedFullDisc.lean)
-now has fixed mixed-sequence bounds, uniform in the deleted index and
-locally uniform on a common complex neighborhood. Seven positive theorems
-and four API examples pass the full build and axiom audit. This closes
-S20-030, the last partial group in the Section 20 ledger. Section 21 is next.
-No new refutations were added. Wider qualifications remain in the
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [ordered Section 21 comparison](coverage/SECTION_21_ASSERTIONS.md)
+records 27 matched groups, five corrections and two contextual groups.
+It retains the original Hamiltonian, moments, domains, frequency and
+Hessian. The opening dummy index is corrected directly; no new refutation
+is added. The unchanged Lean snapshot retains its full successful checks.
+Section 22 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

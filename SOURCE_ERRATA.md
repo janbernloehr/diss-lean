@@ -3286,3 +3286,14 @@ display. H.1 and H.2 themselves need no change: the existential polynomial
 p_(2m) in H.2 can include the scalar, and the implemented reduction already
 does so. This is separate from the sign correction in Lemma 26.2 and from
 the now-resolved endpoint proof gap in Lemma 27.2.
+
+## Section 21 opening Hamiltonian sum: dummy index (page 96)
+
+The opening definition sums over `m` while its summand uses `n`.
+Use `n` consistently in the summation and summand. The actual physical
+correction already uses the bound index in
+[SourceSobolevPhysicalCorrection.lean](NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean)
+and its absolutely convergent weighted action sum. This is a direct
+notation correction; no additional refutation is needed. The existing
+cubic coefficient and sign corrections are unchanged. See the
+[ordered Section 21 comparison](coverage/SECTION_21_ASSERTIONS.md).

@@ -34,7 +34,15 @@ OnePlus supremum bound, locally uniform in the complex source and uniform
 in the deleted index. A common connected neighborhood can be restricted
 inside the original source domain while preserving all real sources.
 
-The next step is the ordered assertion comparison for Section 21.
+The [ordered Section 21 ledger](SECTION_21_ASSERTIONS.md) now compares
+34 groups on pp. 96–98: 27 matched, five corrected and two contextual,
+with no partial or pending groups in that ledger. It retains exact
+primitive-power moments, the H1 physical correction and FL4 extension,
+common domains, convergence, the action gradient and complex bilinear
+Hessian. The opening dummy index is normalized directly; existing sign
+and cube-constant corrections remain. No new proof or refutation is added.
+
+The next step is the ordered assertion comparison for Section 22.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

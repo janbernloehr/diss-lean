@@ -1,5 +1,31 @@
 # Section 21: original moments and Hamiltonian
 
+## Ordered source comparison
+
+The [ordered Section 21 comparison](SECTION_21_ASSERTIONS.md)
+now covers all 34 groups on pp. 96–98: 27 matched, five corrected and two
+contextual. No partial or pending groups remain in this local ledger.
+
+The comparison retains the actual primitive-power contours, the physical
+H1 correction and its FL4 extension, the common complex source domain,
+and moment bounds uniform in every signed index and natural order.
+It follows the cubic sum through absolute and locally uniform convergence
+to the original action frequency, bilinear Hessian and local concavity.
+
+The opening sum's dummy index is corrected directly. The existing negative
+cubic coefficient, imaginary cube constant and two nonpositive sign
+corrections remain explicit. Thirty complete module reads and 46 public
+declaration references support the comparison. No new proof or refutation
+is added, and historical refutations remain unchanged.
+
+The unchanged Lean snapshot reuses the successful full check at commit eda8d52513f52ce75d07b099cc67b1d3986d4523: 8,562 build jobs, 7,648 public examples and the transitive axiom audit of 44,637 NLS declarations, with 21 inherited warnings and zero new. This step changes only source-comparison documentation and its integrity record. Source hashes, all 46 declaration references, the current review index and local documentation links are checked again. These checks do not certify complete formalization.
+
+Next: Section 22. The original action-image domain and wider
+[completion qualifications](COMPLETENESS.md) remain; these
+ledger counts do not certify the whole dissertation.
+
+The earlier entries below describe the original implementations and historical corrections.
+
 This audit covers printed pp. 96–98, including Lemmas 21.1–21.2,
 Proposition 21.3, and the proof of Theorem 18.3 at the end of the section.
 The public constructors are
