@@ -1,6 +1,33 @@
 # Section 12: psi-functions
 
-## Ordered comparison: Lemmas 12.2–12.3
+## Ordered comparison: Lemma 12.4
+
+The literal retained-index equation now has complex and real analyticity
+on the entire original source domain and every lp root input. An exact
+power-sum identity connects the source's retained-index sum to the existing
+zero-at-n model. No domain shrink or root-placement condition is introduced.
+
+One ambient root/source neighborhood and one bound work before all deleted
+indices. The norm-preserving sequence isometry transports the norm and
+strict power-sum bounds with exactly the same constants. The underlying
+positive estimate uses C^p+1 for strictness.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) now has
+seven matched groups, two with corrected contour scope and 58 pending.
+
+Full validation passed: 8,522 build jobs, 7,598 public examples and
+44,404 transitively audited NLS declarations, with 21 inherited warnings.
+The new module and three focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are equations (2.24)–(2.26), including the literal auxiliary products
+and the uniform inverse-spacing expansion. Wider qualifications remain in
+the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous ordered milestone: Lemmas 12.2–12.3
 
 Lemmas 12.2 and 12.3 now have an ordered comparison with explicit
 contour admissibility. Every analytic neighborhood of a gap admits a suitable

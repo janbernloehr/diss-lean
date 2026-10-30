@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first eight of 67 ordered Section 12 groups are compared: six matched, two with corrected contour-admissibility scope, and 59 pending. Lemmas 12.2 and 12.3 use positive contour constructions in every analytic gap neighborhood, or original circuits with a numerator analytic near the filled isolating disk. The constants 1/(2pi), 1/(2pi*i) and the negative mean-value sign are unchanged. No new refutation is added. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first nine of 67 ordered Section 12 groups are compared: seven matched, two with corrected contour-admissibility scope, and 58 pending. Lemma 12.4 retains the entire original source domain and arbitrary complex root inputs. The literal retained-index equation is jointly complex and real analytic, with exact power sums and the same local bounds chosen before all deleted indices. Lemmas 12.2-12.3 retain their existing admissibility correction and unchanged numerical constants. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-eight groups have the semantic comparisons below. Earlier named-theorem
+nine groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -21,7 +21,7 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-006 | 63 | 4991–5004 | Exact scalar functional and numerator in equations (2.22) and (2.23). | matched |
 | S12-007 | 64 | 5006–5021 | Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap. | corrected |
 | S12-008 | 64 | 5025–5042 | Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants. | corrected |
-| S12-009 | 64 | 5044–5061 | Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index. | pending |
+| S12-009 | 64 | 5044–5061 | Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index. | matched |
 | S12-010 | 64 | 5064–5078 | Equation (2.24): selected-root factor and literal complementary product. | pending |
 | S12-011 | 64 | 5080–5087 | Equation (2.25): auxiliary all-root product and relation to the deleted complementary product. | pending |
 | S12-012 | 64 | 5089–5095 | Root completion and locally uniform full-disk lp estimate for the auxiliary product. | pending |
@@ -294,5 +294,53 @@ source and dependency-lock snapshot matches the full validation at `de1bf3e`:
 declarations, with 21 inherited warnings. Source-review integrity and local
 documentation-link checks pass for the new records.
 
-Continue with S12-009: full-domain analyticity and the locally uniform
-power-sum bound of Lemma 12.4.
+The next subsection compares the statement of Lemma 12.4.
+
+## Full-domain analyticity and uniform power sums
+
+### S12-009: Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index.
+
+- For each finite p>1, the existing Section 11 data supply an actual sequence-valued equation on the entire unchanged original source domain W and every deleted lp input. Its coordinates are the original contour integrals, and existence of that sequence excludes the total definition's zero fallback throughout W.
+- At each complex source, fixed original circles in the moving gap complement give joint analytic scalar coordinates. The local lp norm bound promotes them to Banach-space analyticity through actual multilinear Taylor coefficients. Finite coordinate truncations have common coefficient bound (4e/R)^k M; their limits produce a Taylor series of positive radius R/(4e).
+- The new literal-index interface is jointly complex analytic, hence real analytic, in the printed source-first parameter order on W times the whole retained-index lp space. Composing the input and output with the exact continuous linear isometry does not shrink W or restrict root inputs.
+- For every source in W and every ambient root input there are one open root/source neighborhood and one nonnegative norm bound chosen before all deleted indices. The literal-index theorem uses zero extension into this common ambient space and keeps the identical bound for every n.
+- The power sum over the literal retained indices equals the original full-index power sum exactly. The latter is the pth power of the norm because the omitted coordinate is zero. The strict estimate uses a positive bound C^p+1, and the literal-index transport preserves that bound and the same neighborhood. No factor is lost or enlarged.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_4Data`
+- `NLS.ZakharovShabat.sourceLemma12_4`
+- `NLS.ZakharovShabat.SourceSection11OriginalEstimates.lemma12_4`
+- `NLS.ZakharovShabat.sourcePsiDeletedIndexEquation`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real_analytic`
+- `NLS.ZakharovShabat.sum_rpow_sourcePsiDeletedIndexEquation`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_power_sum`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformNorm`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformPowerSum`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.original_equation_uniformNorm`
+- `NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain`
+- `NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise`
+- `NLS.Coeff.exists_uniform_truncate_taylor_bound`
+- `NLS.ComplexAnalysis.norm_complexTaylorSeries_le_on`
+
+The statement of Lemma 12.4 matches on the whole original domain. Uniformity over varying deleted spaces is made explicit using their norm-preserving zero extensions into one ambient lp space. This is a joint source/root-variable statement. The subsequent displayed products and intermediate proof estimates remain separate pending ordered groups.
+
+The [literal-index analytic interface](../NLS/ZakharovShabat/SourcePsiDeletedIndexAnalytic.lean)
+transports the [whole-domain theorem package](../NLS/ZakharovShabat/SourceLemma12_4.lean).
+The [actual original equation](../NLS/ZakharovShabat/SourcePsiOriginalEquation.lean)
+and [coordinate Taylor construction](../NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean)
+supply its sequence membership, analyticity and uniform bounds.
+This comparison records 14 inspected or reused module bodies and 18 resolved declarations.
+
+Full validation passed: 8,522 build jobs, 7,598 public examples and
+44,404 transitively audited NLS declarations, with 21 inherited warnings.
+The new module and three focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-010 through S12-013: the auxiliary products and
+the inverse-spacing expansion in equations (2.24)–(2.26).

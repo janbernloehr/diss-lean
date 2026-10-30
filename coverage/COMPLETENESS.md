@@ -179,12 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Six match; two use the existing corrected contour-admissibility scope for
-Lemmas 12.2–12.3. Positive local contours exist in every analytic gap
-neighborhood, and filled-disk analyticity covers original circuits. The
-printed constants and negative mean-value sign are unchanged. No new
-refutation is added. The remaining 59 groups start with Lemma 12.4;
-earlier focused comparisons and qualifications retain their scope.
+Seven match and two retain the existing contour-admissibility correction.
+Lemma 12.4 now has a direct literal-index analytic interface on the full
+original domain, with exact retained-index power sums and one local bound
+chosen before all deleted indices. The numerical constants are unchanged.
+The remaining 58 groups start with equations (2.24)–(2.26); earlier focused
+comparisons and wider qualifications retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

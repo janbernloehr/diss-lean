@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T13:31:35.557639+00:00",
-  "base_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
+  "published_utc": "2026-10-30T14:02:32.691675+00:00",
+  "base_commit": "3d4ac67feccd9e46b51c2fdd3bdad4d3089976c5",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 137,
-    "module_hash_checks": 2431,
-    "distinct_modules": 1477
+    "review_records": 138,
+    "module_hash_checks": 2445,
+    "distinct_modules": 1484
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
-    "validated_state": "Documentation-only ordered comparison of Lemmas 12.2-12.3 with positive admissible contours. Exact Lean/dependency snapshot verified unchanged from the successful full gate at de1bf3e0a9160bc226b47d783afbb5245656dd21.",
+    "base_commit": "3d4ac67feccd9e46b51c2fdd3bdad4d3089976c5",
+    "validated_state": "New literal-index complex and real analyticity, exact retained-index power sums, unchanged uniform constants, three public examples and ordered comparison of Lemma 12.4. Full gate 98687 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8521,
-    "public_examples": 7595,
-    "transitive_NLS_declarations": 44399,
+    "build_jobs": 8522,
+    "public_examples": 7598,
+    "transitive_NLS_declarations": 44404,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4798,
-      "sha256": "ef36a877899c63cc87443ab245e63575a17ceadaadd19d792440697298c64323"
+      "files": 4799,
+      "sha256": "919a6575c0c5bb3a73deb646c809f796a005a849673b3f4cf152c18837bff42b"
     },
-    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21"
+    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
   "named_statements": [
     {
@@ -33501,6 +33500,128 @@
       },
       "validation_reused_from_commit": "de1bf3e0a9160bc226b47d783afbb5245656dd21",
       "source_record_sha256": "124c192a14602494bc32a00e9ff1fd7706a13b0b214d39bb6323d6f867e3cc58"
+    },
+    "Section12EquationAnalyticSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "3d4ac67feccd9e46b51c2fdd3bdad4d3089976c5",
+      "updated_utc": "2026-10-30T14:02:32.691675+00:00",
+      "source_lines": [
+        [
+          5044,
+          5061
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-009",
+          "source_lines": [
+            5044,
+            5061
+          ],
+          "requirement": "Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_4Data",
+            "NLS.ZakharovShabat.sourceLemma12_4",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.lemma12_4",
+            "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real_analytic",
+            "NLS.ZakharovShabat.sum_rpow_sourcePsiDeletedIndexEquation",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_power_sum",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformNorm",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformPowerSum",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.original_equation_uniformNorm",
+            "NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain",
+            "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise",
+            "NLS.Coeff.exists_uniform_truncate_taylor_bound",
+            "NLS.ComplexAnalysis.norm_complexTaylorSeries_le_on"
+          ],
+          "reviewed_claims": [
+            "For each finite p>1, the existing Section 11 data supply an actual sequence-valued equation on the entire unchanged original source domain W and every deleted lp input. Its coordinates are the original contour integrals, and existence of that sequence excludes the total definition's zero fallback throughout W.",
+            "At each complex source, fixed original circles in the moving gap complement give joint analytic scalar coordinates. The local lp norm bound promotes them to Banach-space analyticity through actual multilinear Taylor coefficients. Finite coordinate truncations have common coefficient bound (4e/R)^k M; their limits produce a Taylor series of positive radius R/(4e).",
+            "The new literal-index interface is jointly complex analytic, hence real analytic, in the printed source-first parameter order on W times the whole retained-index lp space. Composing the input and output with the exact continuous linear isometry does not shrink W or restrict root inputs.",
+            "For every source in W and every ambient root input there are one open root/source neighborhood and one nonnegative norm bound chosen before all deleted indices. The literal-index theorem uses zero extension into this common ambient space and keeps the identical bound for every n.",
+            "The power sum over the literal retained indices equals the original full-index power sum exactly. The latter is the pth power of the norm because the omitted coordinate is zero. The strict estimate uses a positive bound C^p+1, and the literal-index transport preserves that bound and the same neighborhood. No factor is lost or enlarged."
+          ],
+          "qualification": "The statement of Lemma 12.4 matches on the whole original domain. Uniformity over varying deleted spaces is made explicit using their norm-preserving zero extensions into one ambient lp space. This is a joint source/root-variable statement. The subsequent displayed products and intermediate proof estimates remain separate pending ordered groups."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma12_4.lean": "ebe1aeff869525a6cccffa7b1bd4fb305b3b09d4d0ee2155bbde5ead6002931d",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquation.lean": "023b617909d062d071f0b8ca9dac94f468749961418f99612b564d1d9b25992b",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquationAnalytic.lean": "c7b3f054fdff730a99ecc72deda230075ef38adcc4c70838a3b9292a591d6783",
+        "NLS/ZakharovShabat/SourcePsiOriginalSequenceBound.lean": "17ae291d01851af2c2776780f110786113c551d1bcd50323ab418b6a87410e37",
+        "NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound.lean": "ce5876e8af216e1dc8e7d2dda5ad7ea8de83fb9d22de86a1dfe1466483504bc9",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientBound.lean": "51ace66e5a7c62b570ecdecadb9162f260b9faeea295a6278907e8a69837247b",
+        "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab",
+        "NLS/ZakharovShabat/SourcePsiComplexContourAnalytic.lean": "cd623d404fdc067739569a739bcc85fb151f3b3eb3b988453ed8d4d6e688e2c6",
+        "NLS/SequenceSpaces/BoundedCoordinateTaylorAssembly.lean": "a78c105e3e0d02aa044ae6f3dca69736bbc71df1849e42d9edbe699d46ac0dee",
+        "NLS/SequenceSpaces/BoundedCoordinateTaylor.lean": "7337be3a5a5f9421c9d0eacdeb849c80e43ae6c1032c99fb2950389e3596ce31",
+        "NLS/ComplexAnalysis/BanachTaylorBoundsOn.lean": "be38ee3a9dee070ff8d51bfe22c9623836a8005cb4edb0454b59abe520f8d5e6",
+        "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean": "94753c776853f3fe675c4e496250d13db8b692edad5620ffdb33093e6d3c75cf",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean": "cedfb323a53f4a1197aa0d9e4faa2980d4be93cbd1f66d50b5052d945e162714",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexAnalytic.lean": "6eb00b0ce80c3336b277057d06f0bd315d9838a26c3cf67c3d646ace78206f26"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "file": "work/Section12FunctionalSetupSourceComparison-2026-10-30.json",
+        "sha256": "1001c0350587bf8d8553bb7206e71b179cf1d30db6c18e5fa78524f89ac6dea9",
+        "modules": [
+          "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean",
+          "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean"
+        ]
+      },
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise",
+        "NLS.Coeff.exists_uniform_truncate_taylor_bound",
+        "NLS.ComplexAnalysis.norm_complexTaylorSeries_le_on",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_analytic_sourceFirst",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformNorm",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_uniformPowerSum",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.original_equation_uniformNorm",
+        "NLS.ZakharovShabat.SourceLemma12_4Data",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_locally_uniform",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_power_sum",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_real_analytic",
+        "NLS.ZakharovShabat.SourceSection11OriginalEstimates.lemma12_4",
+        "NLS.ZakharovShabat.analyticAt_sourcePsiEquationCoordinate_of_contour_domain",
+        "NLS.ZakharovShabat.sourceLemma12_4",
+        "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation",
+        "NLS.ZakharovShabat.sum_rpow_sourcePsiDeletedIndexEquation"
+      ],
+      "declaration_inventory_count": 44404,
+      "qualification": "The first nine of 67 ordered Section 12 groups are compared: seven matched, two with corrected contour-admissibility scope, and 58 pending. Lemma 12.4 retains the entire original source domain and arbitrary complex root inputs. The literal retained-index equation is jointly complex and real analytic, with exact power sums and the same local bounds chosen before all deleted indices. Lemmas 12.2-12.3 retain their existing admissibility correction and unchanged numerical constants. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          64
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-064.png": "d81efda27239c3e0ad41507f4cbd1447dd635bec1a73f56531e15a6a8f66844c"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4799,
+        "sha256": "919a6575c0c5bb3a73deb646c809f796a005a849673b3f4cf152c18837bff42b"
+      },
+      "full_gate": {
+        "session": 98687,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12EquationAnalyticFullCheck-1.log",
+        "log_sha256": "29e54240c65cef5d1b588242adb6677b9b31e34e02dc4593dbd11eea14696ae8"
+      },
+      "ordered_inventory_sha256": "32852c7643fbf69562722e46abc7f429260c71e54fa0e9560e5d7daac57e979d",
+      "source_record_sha256": "ac7019a9ea0232c300d1464ded62bbe7643cabf92f65044d63e5cb8c901a76f0"
     }
   }
 }

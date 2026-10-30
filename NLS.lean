@@ -3573,6 +3573,7 @@ import NLS.ZakharovShabat.SourcePsiOriginalEquation
 import NLS.ZakharovShabat.SourcePsiOriginalEquationAnalytic
 import NLS.ZakharovShabat.SourceLemma12_4
 import NLS.ZakharovShabat.SourcePsiDeletedIndexEquation
+import NLS.ZakharovShabat.SourcePsiDeletedIndexAnalytic
 import NLS.ZakharovShabat.SourcePsiDoubleOmittedProduct
 import NLS.ZakharovShabat.SourcePsiOriginalQuotientError
 import NLS.ZakharovShabat.SourcePsiOriginalRatioEstimate

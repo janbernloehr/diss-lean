@@ -71759,3 +71759,49 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   H.deletedIndexEquation_zero hW₀ ψ hψ n
 
 end Section12DeletedIndexExamples
+
+section Section12DeletedIndexAnalyticExamples
+open NLS.ZakharovShabat Set Complex
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The existing construction supplies one source domain for every literal-index analytic map.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∀ n : ℤ,
+        AnalyticOnNhd ℂ
+          (fun t : CoeffPair p × DeletedIndexCoeff p n => sourcePsiDeletedIndexEquation hp hp1 n t.1 t.2)
+          (W ×ˢ univ) ∧
+        AnalyticOnNhd ℝ
+          (fun t : CoeffPair p × DeletedIndexCoeff p n => sourcePsiDeletedIndexEquation hp hp1 n t.1 t.2)
+          (W ×ˢ univ) := by
+  obtain ⟨W,ho,hc,hr,H⟩ := sourceLemma12_4 hp hp1
+  exact ⟨W,ho,hc,hr,fun n =>
+    ⟨H.deletedIndexEquation_analytic n,H.deletedIndexEquation_real_analytic n⟩⟩
+
+-- Fractional powers and a negative deleted index retain the exact full equation norm.
+example (ψ : CoeffPair (ENNReal.ofReal (3/2)))
+    (a : DeletedIndexCoeff (ENNReal.ofReal (3/2)) (-3)) :
+    (∑' m : {m : ℤ // m ≠ -3},
+      ‖sourcePsiDeletedIndexEquation ENNReal.ofReal_ne_top (by norm_num) (-3) ψ a m‖^(3/2 : ℝ)) =
+      ‖sourcePsiOriginalEquation ENNReal.ofReal_ne_top (by norm_num) (-3)
+        ((DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top (-3)).symm a) ψ‖^(3/2 : ℝ) := by
+  have h := sum_rpow_sourcePsiDeletedIndexEquation (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top
+    (by norm_num) (-3) ψ a
+  rw [← lp.norm_rpow_eq_tsum (by norm_num : 0 < (ENNReal.ofReal (3/2)).toReal)
+    (sourcePsiOriginalEquation ENNReal.ofReal_ne_top (by norm_num) (-3)
+      ((DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top (-3)).symm a) ψ : Coeff (ENNReal.ofReal (3/2)))] at h
+  simpa only [ENNReal.toReal_ofReal (by norm_num : (0 : ℝ) ≤ 3/2),Submodule.coe_norm] using h
+
+-- Arbitrary root inputs remain real analytic after fixing a complex source in the original domain.
+example {W : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair 4) (hψ : ψ ∈ W) :
+    AnalyticOnNhd ℝ
+      (fun a : DeletedIndexCoeff 4 (-2) => sourcePsiDeletedIndexEquation (by norm_num) (by norm_num) (-2) ψ a)
+      univ := by
+  intro a _
+  exact (H.deletedIndexEquation_real_analytic (-2) (ψ,a) ⟨hψ,mem_univ _⟩).comp
+    (f := fun b : DeletedIndexCoeff 4 (-2) => (ψ,b)) (analyticAt_const.prod analyticAt_id)
+
+end Section12DeletedIndexAnalyticExamples
