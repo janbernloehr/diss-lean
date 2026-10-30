@@ -1,6 +1,37 @@
 # Implementation plan
 
-## Current milestone: collapsed normalized-action limit and extension
+## Current milestone: original-domain uniform gap and action estimates
+
+The literal gap-supremum and normalized-action expansions match the source
+on the original complex domain. The actual critical-midpoint offset is a
+locally bounded half-exponent coefficient, so it supplies the stronger
+bounded-offset hypothesis required by the corrected Lemma 10.8 estimates.
+Every original disk and signed index is retained, including the central block.
+
+One neighborhood supports both estimates. Four fixed summand functions give
+the two lp/2 plus genuine l(1+) decompositions before choosing any index or
+one-plus exponent. The critical-coordinate bound and weighted-moment error
+hold through complex collapse and for 1<p<2, using half-exponent quasi-norms.
+The exact cosine moment remains 1+2*t_n^2.
+
+The [ordered Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) now has
+twenty-one compared groups: nineteen matched and two corrected; one remains pending.
+No additional constant correction is needed in these two passages.
+
+This step updates documentation and source comparisons only. The exact Lean
+source and dependency-lock snapshot matches the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the updated records.
+
+Next are the final real-locus positivity, uniform tail and principal-root claims.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: collapsed normalized-action limit and extension
 
 The collapsed limit and analytic extension match the source on the original
 complex domain. The exact identity t_n=2*gamma_n*B_n and the local lp bound

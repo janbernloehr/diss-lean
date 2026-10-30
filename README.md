@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [collapsed normalized-action limit and analytic extension](NLS/ZakharovShabat/SourceNormalizedIndexedActionCommon.lean)
-are compared on the original complex domain, with the exact filled value
-chi_n(tau_n)/4. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md) has
-seventeen matched groups, two corrected and three pending. Next are the uniform
-estimates and final root claims. The [completion assessment](coverage/COMPLETENESS.md)
-retains the wider qualifications.
+Latest step: the [original-domain uniform gap and action estimates](NLS/ZakharovShabat/SourceSection11OriginalEstimates.lean)
+are compared with their literal supremum, actual critical offset and fixed
+lp/2 plus l(1+) summands. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md)
+has nineteen matched groups, two corrected and one pending. Next are the final
+positivity, uniform tail and principal-root claims. The
+[completion assessment](coverage/COMPLETENESS.md) retains the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

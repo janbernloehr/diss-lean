@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-Nineteen of 22 ordered Section 11 groups are compared: seventeen matched and two corrected occurrences. The local t_n=O(gamma_n) estimate, exact factor-four collapsed limit and analytic removal match on the original complex domain. The filled value of I_n/gamma_n^2 is chi_n(tau_n)/4, proved by an analytic rationalized circle candidate. Three proof groups remain pending, starting with the uniform gap-supremum estimate. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Twenty-one of 22 ordered Section 11 groups are compared: nineteen matched and two corrected occurrences. The literal gap-supremum and normalized-action expansions match on the original complex domain, with locally bounded half-exponent coefficients and fixed genuine one-plus summands. The actual critical offset supplies the stronger bound needed by Lemma 10.8. One group remains pending: the final positivity, uniform tail and principal-root claims. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first nineteen
+the reviewed source extraction; form feeds do not add lines. The first twenty-one
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -36,8 +36,8 @@ interpreting contour integrals.
 | S11-017 | 62 | 4870–4876 | Equation (2.19): normalized-action formula and the critical-to-midpoint coordinate t_n. | matched |
 | S11-018 | 62 | 4878–4884 | Small-gap estimate t_n=O(gap) and the exact collapsed limit of 4I_n/gap^2. | matched |
 | S11-019 | 62 | 4885–4889 | Continuous removal across Z_n, analytic collapsed value and analytic extension. | matched |
-| S11-020 | 62 | 4890–4895 | Full-domain locally uniform literal gap-supremum estimate for chi_n minus one. | pending |
-| S11-021 | 62 | 4897–4906 | Locally uniform t_n estimate and normalized-action expansion from weighted moments. | pending |
+| S11-020 | 62 | 4890–4895 | Full-domain locally uniform literal gap-supremum estimate for chi_n minus one. | matched |
+| S11-021 | 62 | 4897–4906 | Locally uniform t_n estimate and normalized-action expansion from weighted moments. | matched |
 | S11-022 | 62 | 4908–4917 | Real-locus positivity and tail limit, collapsed xi identity and the remaining common-neighborhood claims. | pending |
 
 ## Compared opening claims
@@ -624,5 +624,83 @@ sources and dependency locks match the full validation at `d3b3ff7`:
 declarations, with 21 inherited warnings. Source-review integrity and
 documentation-link checks pass for the new records.
 
-Continue with S11-020 and S11-021: the literal gap-supremum estimate,
-locally uniform critical-coordinate bounds and the weighted-moment expansion.
+The following subsection compares the original-domain uniform estimates.
+
+## Original-domain uniform gap and action estimates
+
+### S11-020: Full-domain locally uniform literal gap-supremum estimate for chi_n minus one.
+
+- The error epsilon_n is the literal supremum of |chi_n(lambda)-1| on the entire actual complex gap. Compactness and continuity make it finite and nonnegative. At a collapsed gap it equals |chi_n(tau_n)-1|, and at the free source it is zero.
+- The actual critical-midpoint offset is gamma_n^2*B_n. It is an lp/2 coefficient with norm at most norm(B)*norm(gamma)^2. Local bounds for the actual B and gap sequences give an explicit stronger offset bound before choosing a refined exponent; this supplies the hypothesis needed by the corrected Lemma 10.8 estimates.
+- The full critical displacement is analytic into lp on the original W. Pulling back one joint quotient-estimate neighborhood along its graph gives an open source neighborhood at each complex point of W. Every original isolating disk is retained; compact bounds fill the finite central block, and the same geometric data work for every refined exponent.
+- For every finite r>1 with r>=p/2, the same neighborhood gives a bounded lr coefficient equal to the actual gap supremum at every signed index. Contractive inclusion of the bounded half-exponent offset supplies the majorant hypothesis. The literal chi/quotient equality and inclusion of the actual gap in its original disk transfer the all-disk pointwise bounds to the supremum.
+- The refined bounds produce one pair of functions A into lp/2 and B into the genuine intersection l(1+), chosen before any projection exponent. When p/2>1, use the lr bound at r=p/2 for A and set B=0; when p/2<=1, set A=0 and use the actual sequence for B. Each finite r>1 projection of that same B is uniformly bounded on the same neighborhood.
+- The previously recorded arbitrary-numerator topology correction is respected through the explicit locally bounded stronger critical offset. This specialization proves the printed gap-supremum claim on the original source topology; no additional correction or refutation is required.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.finiteClosedDiscBound`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.quotientDiscEstimates`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_bddAbove`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_decomposition`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined_on`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.norm_chi_sub_one_le_gapSup`
+- `NLS.ZakharovShabat.SourceQuotientDiscEstimates.fillHead`
+- `NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants`
+- `NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic`
+- `NLS.ZakharovShabat.norm_sourceCriticalHalfGapOffset_le`
+- `NLS.ZakharovShabat.sourceActionChiGapSup`
+- `NLS.ZakharovShabat.sourceActionChiGapSup_of_gap_zero`
+- `NLS.ZakharovShabat.sourceActionChiGapSup_zero_source`
+- `NLS.ZakharovShabat.sourceCriticalHalfGapOffset`
+- `NLS.Coeff.norm_quasiExponentInclusion_le`
+- `NLS.Coeff.exists_onePlus_decomposition_of_refined`
+
+Matched with the literal gap supremum and original source topology. The stronger actual critical offset supplies the bounded-offset hypothesis required by the existing Lemma 10.8 correction. The neighborhood is chosen before all signed indices and refined exponents, and one genuine one-plus summand works for every finite projection.
+
+### S11-021: Locally uniform t_n estimate and normalized-action expansion from weighted moments.
+
+- The literal coordinate t_n=2*gamma_n*B_n is an actual lp/2 coefficient, with norm at most 2*norm(gamma)*norm(B). The scalar Holder estimate and bounded multipliers remain valid for 1<p<2, with their positive half-exponent quasi-norms. The bound is locally uniform on the original W.
+- The filled indexed quotient has the exact cosine model at every complex source, including collapsed gaps where t_n=0. Its principal moment is 1+2*t_n^2. The complementary error is at most 2*(|t_n|+1)^2*epsilon_n.
+- Consequently |4*F_n-1| is at most 8*|gamma_n|^2*|B_n|^2+2*(2*|gamma_n|*|B_n|+1)^2*epsilon_n. On a neighborhood where the lp norms of gamma and B are bounded by G and B0, this is dominated by 8*B0^2*|gamma_n|^2+L*epsilon_n, with L=2*(2*G*B0+1)^2.
+- If the actual epsilon sequence has lr norm at most Q, the same neighborhood supplies an lr coefficient equal to 4*F_n-1 with norm at most L*Q+8*B0^2*G^2, for every finite r>1 with r>=p/2. The two-majorant theorem uses cutoff zero here, so it controls all signed indices and the exact sequence.
+- One intersection of the source neighborhoods gives both supremum and action refined estimates. The final package then chooses four functions Gchi, GA into lp/2 and Bchi, BA into l(1+) before the index and one-plus exponent. Their exact sums are epsilon_n and 4*F_n-1; the half-exponent norms and each finite one-plus projection are uniformly bounded there.
+- Off the zero-gap locus F_n is the literal I_n/gamma_n^2, proving the printed normalized-action expansion. The filled formula also covers complex collapse. The final real-locus positivity, locally uniform tail limit and principal-root claims in S11-022 remain separate; a uniform sequence-norm bound alone is not used to infer a uniform tail limit.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_halfExponent`
+- `NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_locally_uniform`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.norm_normalized_sub_one_le`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_cosineModel`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.normalized_refined_of_bounds`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.originalEstimates`
+- `NLS.ZakharovShabat.SourceEquation2_19Data.uniform_refined`
+- `NLS.ZakharovShabat.SourceSection11OriginalEstimates.locally_uniform`
+- `NLS.ZakharovShabat.SourceSection11UniformAsymptotics`
+- `NLS.ZakharovShabat.norm_normalizedActionCosineModel_sub_le`
+- `NLS.ZakharovShabat.norm_sourceCriticalGapLinearOffset_le`
+- `NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapCoeff_le_sq`
+- `NLS.ZakharovShabat.normalizedActionCosineModel_eq_one_add_error`
+- `NLS.ZakharovShabat.normalizedActionCosineModel_one`
+- `NLS.Coeff.norm_quasiHolderProduct_le`
+- `NLS.Coeff.exists_tailCoeff_of_twoSequenceMajorants`
+- `NLS.Coeff.exists_onePlus_decomposition_of_refined`
+
+Matched on the original complex domain, including the half-exponent quasi-norm range. The normalized quotient has its exact factor four off zero gaps, and the filled model also covers collapse. Both decompositions use fixed summand functions and the same local neighborhood; S11-022 retains the separate positivity, uniform tail and principal-root comparison.
+
+The [gap-supremum bounds](../NLS/ZakharovShabat/SourceActionChiUniform.lean),
+[action bounds](../NLS/ZakharovShabat/SourceNormalizedIndexedActionUniform.lean),
+[fixed one-plus decomposition](../NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean) and
+[common-domain package](../NLS/ZakharovShabat/SourceSection11OriginalEstimates.lean)
+supply these assertions. The comparison records 25 inspected module bodies and 33 resolved declarations.
+
+This step changes documentation and comparison records only. The exact Lean
+sources and dependency locks match the full validation at `d3b3ff7`:
+8,518 build jobs, 7,587 public examples and 44,364 transitively audited NLS
+declarations, with 21 inherited warnings. Source-review integrity and
+documentation-link checks pass for the new records.
+
+Continue with S11-022: real-locus positivity, the locally uniform tail limit,
+the collapsed square-root identity and the remaining common-neighborhood claims.

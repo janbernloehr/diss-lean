@@ -167,14 +167,14 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
-The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares nineteen
-of 22 groups: seventeen matched and two corrected occurrences. The local small-gap
-estimate, factor-four collapsed limit and analytic extension match on the original
-complex domain. The filled quotient takes the exact value chi_n(tau_n)/4, proved
-by the analytic rationalized contour construction. Three proof groups remain
-pending: the uniform estimates and final root claims. Earlier comparisons,
-corrections and all wider qualifications remain; these comparisons do not certify
-source-wide completeness or the external theorem cited for removal.
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares twenty-one
+of 22 groups: nineteen matched and two corrected occurrences. The literal gap
+supremum and normalized-action expansions match on the original complex domain.
+The actual critical offset meets the stronger bound needed by Lemma 10.8, and
+one neighborhood supports fixed lp/2 plus genuine l(1+) summands for both errors.
+One group remains pending: the final positivity, uniform tail and principal-root
+claims. Earlier comparisons, corrections and all wider qualifications remain;
+these comparisons do not certify source-wide completeness.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

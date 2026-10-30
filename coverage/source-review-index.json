@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T12:05:47.916772+00:00",
-  "base_commit": "d00db5a9df2ea361cbc940cfeade7109ec54d7f7",
+  "published_utc": "2026-10-30T12:13:55.801581+00:00",
+  "base_commit": "22a05f98d36f8862a49664b3ca8fa33b0efa70a3",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 132,
-    "module_hash_checks": 2315,
-    "distinct_modules": 1437
+    "review_records": 133,
+    "module_hash_checks": 2340,
+    "distinct_modules": 1446
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d00db5a9df2ea361cbc940cfeade7109ec54d7f7",
-    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step compares the collapsed normalized-action limit and analytic extension with the exact quarter-filled value on the original complex domain. Nineteen Section 11 groups are compared: seventeen matched, two corrected and three pending. Wider unresolved qualifications remain.",
+    "base_commit": "22a05f98d36f8862a49664b3ca8fa33b0efa70a3",
+    "validated_state": "Unchanged Lean source and dependency-lock snapshot from d3b3ff7b28b5c96676cfac785ce3b538d0e7a260. This step compares the original-domain uniform gap and action estimates, retaining the actual supremum, stronger critical-offset bound and fixed genuine one-plus summands. Twenty-one Section 11 groups are compared: nineteen matched, two corrected and one pending. Wider unresolved qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8518,
     "public_examples": 7587,
@@ -32616,6 +32616,192 @@
       },
       "ordered_inventory_sha256": "17b39ba7b8624d6b6ff5bd598907f593c405f3e52f17da38188176b58048b8fb",
       "source_record_sha256": "5b516c8f36ed1f72104373cca19489236531ba7e444fb69b9f1d31befcf39904"
+    },
+    "Section11UniformEstimatesSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "22a05f98d36f8862a49664b3ca8fa33b0efa70a3",
+      "updated_utc": "2026-10-30T12:13:55.801581+00:00",
+      "source_lines": [
+        [
+          4890,
+          4895
+        ],
+        [
+          4897,
+          4906
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-020",
+          "source_lines": [
+            4890,
+            4895
+          ],
+          "requirement": "Full-domain locally uniform literal gap-supremum estimate for chi_n minus one.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.finiteClosedDiscBound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.quotientDiscEstimates",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_bddAbove",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_decomposition",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined_on",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.norm_chi_sub_one_le_gapSup",
+            "NLS.ZakharovShabat.SourceQuotientDiscEstimates.fillHead",
+            "NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+            "NLS.ZakharovShabat.norm_sourceCriticalHalfGapOffset_le",
+            "NLS.ZakharovShabat.sourceActionChiGapSup",
+            "NLS.ZakharovShabat.sourceActionChiGapSup_of_gap_zero",
+            "NLS.ZakharovShabat.sourceActionChiGapSup_zero_source",
+            "NLS.ZakharovShabat.sourceCriticalHalfGapOffset",
+            "NLS.Coeff.norm_quasiExponentInclusion_le",
+            "NLS.Coeff.exists_onePlus_decomposition_of_refined"
+          ],
+          "reviewed_claims": [
+            "The error epsilon_n is the literal supremum of |chi_n(lambda)-1| on the entire actual complex gap. Compactness and continuity make it finite and nonnegative. At a collapsed gap it equals |chi_n(tau_n)-1|, and at the free source it is zero.",
+            "The actual critical-midpoint offset is gamma_n^2*B_n. It is an lp/2 coefficient with norm at most norm(B)*norm(gamma)^2. Local bounds for the actual B and gap sequences give an explicit stronger offset bound before choosing a refined exponent; this supplies the hypothesis needed by the corrected Lemma 10.8 estimates.",
+            "The full critical displacement is analytic into lp on the original W. Pulling back one joint quotient-estimate neighborhood along its graph gives an open source neighborhood at each complex point of W. Every original isolating disk is retained; compact bounds fill the finite central block, and the same geometric data work for every refined exponent.",
+            "For every finite r>1 with r>=p/2, the same neighborhood gives a bounded lr coefficient equal to the actual gap supremum at every signed index. Contractive inclusion of the bounded half-exponent offset supplies the majorant hypothesis. The literal chi/quotient equality and inclusion of the actual gap in its original disk transfer the all-disk pointwise bounds to the supremum.",
+            "The refined bounds produce one pair of functions A into lp/2 and B into the genuine intersection l(1+), chosen before any projection exponent. When p/2>1, use the lr bound at r=p/2 for A and set B=0; when p/2<=1, set A=0 and use the actual sequence for B. Each finite r>1 projection of that same B is uniformly bounded on the same neighborhood.",
+            "The previously recorded arbitrary-numerator topology correction is respected through the explicit locally bounded stronger critical offset. This specialization proves the printed gap-supremum claim on the original source topology; no additional correction or refutation is required."
+          ],
+          "qualification": "Matched with the literal gap supremum and original source topology. The stronger actual critical offset supplies the bounded-offset hypothesis required by the existing Lemma 10.8 correction. The neighborhood is chosen before all signed indices and refined exponents, and one genuine one-plus summand works for every finite projection."
+        },
+        {
+          "ordered_group": "S11-021",
+          "source_lines": [
+            4897,
+            4906
+          ],
+          "requirement": "Locally uniform t_n estimate and normalized-action expansion from weighted moments.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_halfExponent",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_locally_uniform",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.norm_normalized_sub_one_le",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_cosineModel",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_refined_of_bounds",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.originalEstimates",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.uniform_refined",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.locally_uniform",
+            "NLS.ZakharovShabat.SourceSection11UniformAsymptotics",
+            "NLS.ZakharovShabat.norm_normalizedActionCosineModel_sub_le",
+            "NLS.ZakharovShabat.norm_sourceCriticalGapLinearOffset_le",
+            "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapCoeff_le_sq",
+            "NLS.ZakharovShabat.normalizedActionCosineModel_eq_one_add_error",
+            "NLS.ZakharovShabat.normalizedActionCosineModel_one",
+            "NLS.Coeff.norm_quasiHolderProduct_le",
+            "NLS.Coeff.exists_tailCoeff_of_twoSequenceMajorants",
+            "NLS.Coeff.exists_onePlus_decomposition_of_refined"
+          ],
+          "reviewed_claims": [
+            "The literal coordinate t_n=2*gamma_n*B_n is an actual lp/2 coefficient, with norm at most 2*norm(gamma)*norm(B). The scalar Holder estimate and bounded multipliers remain valid for 1<p<2, with their positive half-exponent quasi-norms. The bound is locally uniform on the original W.",
+            "The filled indexed quotient has the exact cosine model at every complex source, including collapsed gaps where t_n=0. Its principal moment is 1+2*t_n^2. The complementary error is at most 2*(|t_n|+1)^2*epsilon_n.",
+            "Consequently |4*F_n-1| is at most 8*|gamma_n|^2*|B_n|^2+2*(2*|gamma_n|*|B_n|+1)^2*epsilon_n. On a neighborhood where the lp norms of gamma and B are bounded by G and B0, this is dominated by 8*B0^2*|gamma_n|^2+L*epsilon_n, with L=2*(2*G*B0+1)^2.",
+            "If the actual epsilon sequence has lr norm at most Q, the same neighborhood supplies an lr coefficient equal to 4*F_n-1 with norm at most L*Q+8*B0^2*G^2, for every finite r>1 with r>=p/2. The two-majorant theorem uses cutoff zero here, so it controls all signed indices and the exact sequence.",
+            "One intersection of the source neighborhoods gives both supremum and action refined estimates. The final package then chooses four functions Gchi, GA into lp/2 and Bchi, BA into l(1+) before the index and one-plus exponent. Their exact sums are epsilon_n and 4*F_n-1; the half-exponent norms and each finite one-plus projection are uniformly bounded there.",
+            "Off the zero-gap locus F_n is the literal I_n/gamma_n^2, proving the printed normalized-action expansion. The filled formula also covers complex collapse. The final real-locus positivity, locally uniform tail limit and principal-root claims in S11-022 remain separate; a uniform sequence-norm bound alone is not used to infer a uniform tail limit."
+          ],
+          "qualification": "Matched on the original complex domain, including the half-exponent quasi-norm range. The normalized quotient has its exact factor four off zero gaps, and the filled model also covers collapse. Both decompositions use fixed summand functions and the same local neighborhood; S11-022 retains the separate positivity, uniform tail and principal-root comparison."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/OnePlus.lean": "e472bb3015a5446e75ecf9662ab5918ac3fa826c721223565e340871a1670111",
+        "NLS/SequenceSpaces/QuasiExponentEmbedding.lean": "4bbafff622c462413d00e882c0d2fda6390093633288ba9811c1056913404a69",
+        "NLS/SequenceSpaces/QuasiHolderProduct.lean": "e11f4061042b19ac8261830aa135f8428c522285ee03d307122fca0364702d7f",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean": "9d27ac91ed0d81aa869c7ae8cb22e9cc0497a440c772e5807501ed8ba6cbd616",
+        "NLS/SequenceSpaces/TwoExponentDecomposition.lean": "5671ca5c7a977e4bef12de735d83f85481892cb14ab1f3e4188fceaed3993027",
+        "NLS/SequenceSpaces/TwoExponentMajorant.lean": "77050b73244560265f119b394a224ca7f34f90621d284a09bfb831830ca77563",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceActionChiGapIntegral.lean": "5e4fc6012e31d73f131242a1dc3e8f8239902f00e82e194a909c192d14c51173",
+        "NLS/ZakharovShabat/SourceActionChiGapSup.lean": "d199d58af89af7b154343469f3b256783e054f6fb6ed53c83ca0a5bb625e57e5",
+        "NLS/ZakharovShabat/SourceActionChiUniform.lean": "38d02bdfab9709056c0e7a7d3b7771168ee2edb4b3f57cd2f785346a2bc22e5b",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementCommonAnalytic.lean": "ed03330f0249dc9297e9941da4275d18a11a55722b5fa900460e58fda684f876",
+        "NLS/ZakharovShabat/SourceCriticalHalfExponentOffsets.lean": "3ca4c80549a5aa6cc9ff5ec2acd05f340e5f3dad02747106f9875744cef1edc6",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ZakharovShabat/SourceNormalizedActionEstimate.lean": "7e6ce4984a07660faebebb01dcb9dc9f4e55cdf7af924bfa1de015ddd2f3de6b",
+        "NLS/ZakharovShabat/SourceNormalizedActionModel.lean": "9ac3655571146558c90733c4be04ee9641343edf251341c6eaf180b531b02f85",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionEstimate.lean": "3c1da84e93a9aabc5b3a0e8710f25688ca14d00c156e4383fbe49c893dd74f64",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionUniform.lean": "af1c5e83a8d46e2ad4c0030d37f3e1fdf147b8d0d252a211490be77f045a3024",
+        "NLS/ZakharovShabat/SourcePeriodicGapTails.lean": "5b4bb4209434fb49a849946fb909cca4064f1320d0e289f532be5cd4076e72bc",
+        "NLS/ZakharovShabat/SourceQuotientAllDiscMajorants.lean": "48e6b6d26a22955d4fd935d5085c72fb41e540c362b9f5766c09719b40494ab4",
+        "NLS/ZakharovShabat/SourceQuotientAsymptoticGeometry.lean": "744df316eca8e74aac09f76b6b11bac722cc499fa9076758b3875633e09d64cc",
+        "NLS/ZakharovShabat/SourceQuotientClosedDiscs.lean": "88b282c0bdb7e4f93895e854f395b29131ae77bf621b63b1dac138ff3871a074",
+        "NLS/ZakharovShabat/SourceQuotientDiscSupDecomposition.lean": "3781b7e97ec28051d9a4169849d922da30d475b772585597350e423e852eee17",
+        "NLS/ZakharovShabat/SourceSection11OriginalEstimates.lean": "d2a2646337d78609decf84dfa7d042e978c212b2db0714d72fde605178bb1c4c",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAsymptoticDiscSup.lean": "797de5eb4de59b7aa86b2d6c1bd77a7ccaf25692de8a9e486d40badb82e0edd1",
+        "NLS/ZakharovShabat/SourceSquaredGapNorm.lean": "33fd9f4260c395b8b550b8e3a2662385ac7f1fb7f55684ae641f56acdd177bb9"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "record": "work/Section11CollapsedExtensionSourceComparison-2026-10-30.json",
+        "modules": [
+          "NLS/ZakharovShabat/SourceLemma10_10.lean",
+          "NLS/ZakharovShabat/SourceActionChiGapIntegral.lean",
+          "NLS/ZakharovShabat/SourceNormalizedActionModel.lean",
+          "NLS/ZakharovShabat/SourceActionChi.lean"
+        ],
+        "hashes_reverified": true
+      },
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_onePlus_decomposition_of_refined",
+        "NLS.Coeff.exists_tailCoeff_of_twoSequenceMajorants",
+        "NLS.Coeff.norm_quasiExponentInclusion_le",
+        "NLS.Coeff.norm_quasiHolderProduct_le",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.finiteClosedDiscBound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.quotientDiscEstimates",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_bddAbove",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_decomposition",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.chiGapSup_refined_on",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_halfExponent",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.criticalCoordinate_locally_uniform",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.norm_chi_sub_one_le_gapSup",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.norm_normalized_sub_one_le",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_eq_cosineModel",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_refined_of_bounds",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.originalEstimates",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.uniform_refined",
+        "NLS.ZakharovShabat.SourceQuotientDiscEstimates.fillHead",
+        "NLS.ZakharovShabat.SourceQuotientDiscEstimates.majorants",
+        "NLS.ZakharovShabat.SourceSection11OriginalEstimates.locally_uniform",
+        "NLS.ZakharovShabat.SourceSection11UniformAsymptotics",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+        "NLS.ZakharovShabat.norm_normalizedActionCosineModel_sub_le",
+        "NLS.ZakharovShabat.norm_sourceCriticalGapLinearOffset_le",
+        "NLS.ZakharovShabat.norm_sourceCriticalHalfGapOffset_le",
+        "NLS.ZakharovShabat.norm_sourcePeriodicSquaredGapCoeff_le_sq",
+        "NLS.ZakharovShabat.normalizedActionCosineModel_eq_one_add_error",
+        "NLS.ZakharovShabat.normalizedActionCosineModel_one",
+        "NLS.ZakharovShabat.sourceActionChiGapSup",
+        "NLS.ZakharovShabat.sourceActionChiGapSup_of_gap_zero",
+        "NLS.ZakharovShabat.sourceActionChiGapSup_zero_source",
+        "NLS.ZakharovShabat.sourceCriticalHalfGapOffset"
+      ],
+      "declaration_inventory_count": 44364,
+      "qualification": "Twenty-one of 22 ordered Section 11 groups are compared: nineteen matched and two corrected occurrences. The literal gap-supremum and normalized-action expansions match on the original complex domain, with locally bounded half-exponent coefficients and fixed genuine one-plus summands. The actual critical offset supplies the stronger bound needed by Lemma 10.8. One group remains pending: the final positivity, uniform tail and principal-root claims. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15"
+        }
+      },
+      "validation_reused_from_commit": "d3b3ff7b28b5c96676cfac785ce3b538d0e7a260",
+      "validation_lean_sources": {
+        "files": 4795,
+        "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
+      },
+      "ordered_inventory_sha256": "06af7a5e82e62b5318136519f94677752bec0de15ac432465300b3b8c1307b00",
+      "source_record_sha256": "9efb775c487b804a457bd92433844ae3025a77d1a250d0f95b11b11e5f979dd1"
     }
   }
 }
