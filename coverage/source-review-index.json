@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T19:37:08.634747+00:00",
-  "base_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
+  "published_utc": "2026-10-30T19:46:55.160699+00:00",
+  "base_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 150,
-    "module_hash_checks": 3093,
-    "distinct_modules": 1721
+    "review_records": 151,
+    "module_hash_checks": 3129,
+    "distinct_modules": 1738
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718",
-    "validated_state": "Documentation-only comparison of S12-054–059. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. Forty-seven Section 12 groups match, twelve are corrected and eight remain pending.",
+    "base_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
+    "validated_state": "Documentation-only comparison of S12-060–067. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. All 67 Section 12 groups are compared: fifty-five matched and twelve corrected.",
     "command": "./scripts/check.sh",
     "build_jobs": 8557,
     "public_examples": 7631,
@@ -41,7 +41,7 @@
       "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
     },
     "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "6162cee88a9421325b9fa3dee4a70e0f62059718"
+    "validation_reused_from_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e"
   },
   "named_statements": [
     {
@@ -37077,6 +37077,383 @@
         "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
       },
       "source_record_sha256": "e8f18fcbda66d37f11a7babfd9370f0e2d52927b6cf097a2a07bf596ce37ff7f"
+    },
+    "Section12RootOffsetsSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
+      "updated_utc": "2026-10-30T19:46:55.160699+00:00",
+      "source_lines": [
+        [
+          5707,
+          5738
+        ],
+        [
+          5740,
+          5753
+        ],
+        [
+          5754,
+          5767
+        ],
+        [
+          5769,
+          5783
+        ],
+        [
+          5785,
+          5791
+        ],
+        [
+          5792,
+          5798
+        ],
+        [
+          5799,
+          5804
+        ],
+        [
+          5805,
+          5813
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-060",
+          "source_lines": [
+            5707,
+            5738
+          ],
+          "requirement": "Lemma 12.12: squared-gap offsets and literal power sums on the unchanged domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.lemma12_12",
+            "NLS.ZakharovShabat.sourceLemma12_12",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.collapsed_root_eq_midpoint",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_squared_gap_offsets",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_tail_squared_offset_majorant",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound",
+            "NLS.ZakharovShabat.nonempty_sourcePsiSquaredGapComplexRootAtlas",
+            "NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas.locally_uniform_squared_gap_offsets"
+          ],
+          "reviewed_claims": [
+            "For every finite p greater than one and every complex source in the same W as Lemmas 12.10 and 12.11, one open U contained in W and one positive constant are chosen before all nearby sources and all omitted indices n. An actual coefficient sequence alpha in lp then gives sigma_m^n=tau_m+gamma_m^2*alpha_m for every m, with alpha_n=0 after filling the omitted root by tau_n.",
+            "The coefficient p-power series is summable and its literal sum is bounded by that common constant. The conversion uses the exact identity between the p-th power of the lp norm and the sum of coefficient p-th powers. A zero complex gap forces the root to equal its midpoint; division never imposes a nonzero-gap assumption.",
+            "The atlas establishes the estimate independently before choosing its final common domain. Actual zero periods and the reciprocal-root correction give a tail lp majorant with multiplier 192/(pi*c0). A finite head uses continuity when the reference gap is nonzero and the actual normalized contour estimate when it collapses. Patching gives norm bound card(head)*C_head+C_tail. Source radii are restricted during atlas construction; the resulting same W and branches are retained thereafter."
+          ],
+          "qualification": "The assertion matches with the full local-in-W and uniform-in-n quantifiers. The original-disk proof replay later uses compactness obtained from these independently constructed atlas offsets; it is not claimed as an independent first derivation. No analyticity of the quotient coefficients is asserted."
+        },
+        {
+          "ordered_group": "S12-061",
+          "source_lines": [
+            5740,
+            5753
+          ],
+          "requirement": "The zero-period equation, literal chi product and midpoint completion.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_zero_period",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_analytic",
+            "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_eq_literal_product",
+            "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_zero_period",
+            "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_assigned_contour_zero"
+          ],
+          "reviewed_claims": [
+            "For m different from n, the actual retained period gives the zero integral (2.30) on every original selected circle. Multiplication by pi*(n-m) preserves zero. The deleted coordinate is filled by the actual moving midpoint tau_n.",
+            "The factor equals pi*(n-m)/(i*(tau_n-lambda)) times the literal auxiliary product zeta_m. The minus sign in zeta_m agrees with (2.25); it makes chi approach i. The original disk excludes every other periodic segment, so tau_n-lambda does not vanish there.",
+            "The actual single-root quotient is analytic on the omitted-gap domain. Choosing the original disk as the period circle disk yields analyticity of chi on all of that disk, including the selected gap and its midpoint. The retained contour-zero proof uses the original equations, not a squared-gap asymptotic premise."
+          ],
+          "qualification": "Equations (2.30) and (2.31), the midpoint fill and full original-disk analyticity match. All indices remain signed, and the selected index m differs from n."
+        },
+        {
+          "ordered_group": "S12-062",
+          "source_lines": [
+            5754,
+            5767
+          ],
+          "requirement": "Full original-disk chi estimates, literal suprema and the midpoint expansion.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_midpointRatio_bounds",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_chi_errorBound",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_quotient_errorBound",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_rootFamily_compact",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_graph_radius",
+            "NLS.exists_coordinateNormSup",
+            "NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_tailMajorant_of_quotient",
+            "NLS.ZakharovShabat.exists_local_sourcePsiMidpointFilledRegularFactor_uniformBoundedBallTailMajorant"
+          ],
+          "reviewed_claims": [
+            "On every full original disk D_m, the midpoint ratio is bounded by pi*c and its deviation from one by K/abs(n-m). Combining it with the quotient-error majorant B gives E=(pi*c)*magnitude(B)+K*magnitude(shift_n(puncturedLattice)). Its norm is at most pi*c*C+K*norm(puncturedLattice), independently of n.",
+            "To recover the printed actual supremum coefficients, apply exists_coordinateNormSup to D_m and F_m(z)=chi_m^n(z)-i for m different from n, with F_n identically zero. Each original disk is nonempty. The resulting coefficient equals the literal disk supremum and has norm at most the majorant norm; lp.norm_rpow_eq_tsum gives the uniform p-power sum. This uses the general public supremum theorem rather than a separate chi-specific declaration.",
+            "The removable divided difference b_m^n=dslope(chi_m^n,tau_m) satisfies chi(lambda)=chi(tau_m)+(lambda-tau_m)*b(lambda), including lambda=tau_m. Analyticity supplies the removable derivative value.",
+            "The original full-disk quotient bound uses compactness of the filled family and uniform graph continuity near each complex source. That compactness reuses the independent atlas squared-gap estimate described in S12-060. The bounded-input tail majorant used to build the atlas itself depends only on branch norm bounds, quotient estimates and the translated reciprocal lattice."
+          ],
+          "qualification": "The full-disk estimates and actual supremum interpretation match. The original replay has a different dependency order from the printed proof; it does not establish the atlas estimate for the first time. The generic supremum and lp norm identities supply the literal coefficient-power statement."
+        },
+        {
+          "ordered_group": "S12-063",
+          "source_lines": [
+            5769,
+            5783
+          ],
+          "requirement": "A common contour margin, the Cauchy bound and the exact first moment.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+            "NLS.ZakharovShabat.SourceActionContourFamily.uniform_outer_margin",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_errorBound",
+            "NLS.ZakharovShabat.deriv_sourceStandardRoot_off_segment",
+            "NLS.ZakharovShabat.circleIntegral_sourceStandardRoot_centered_inv_eq_zero",
+            "NLS.ZakharovShabat.circleIntegral_affine_div_sourceStandardRoot",
+            "NLS.exists_coordinateNormSup"
+          ],
+          "reviewed_claims": [
+            "The simultaneous original contour family has one positive radial margin delta: take the minimum of pi/16 and the finitely many head margins. Outside that head the radii and outer disks have the exact fixed free-tail values. Thus the circles stay a common positive distance from the original disk boundaries.",
+            "Cauchy bounds the derivative by 2*E_m/delta on the whole filled inner disk. The convex mean-value inequality bounds the removable divided difference by the same value, including its derivative value at the midpoint. Scaling the majorant by 2/delta keeps it in lp with one local norm bound for all n. The coordinate supremum theorem on the nonempty circles gives the literal contour-supremum sequence as well.",
+            "Off the selected segment, differentiating the squared-root identity gives w_prime=(lambda-tau_m)/w. Integrating this actual derivative around the circle makes the centered first moment zero. The affine moment is exactly -2*pi*i*(sigma_m^n-tau_m); multiplying by 1/(2*pi*i) gives tau_m-sigma_m^n."
+          ],
+          "qualification": "The uniform collar, Cauchy estimate and moment sign match. The first-moment argument only needs the standard root along the enclosing contour, not analyticity across its internal cut."
+        },
+        {
+          "ordered_group": "S12-064",
+          "source_lines": [
+            5785,
+            5791
+          ],
+          "requirement": "Equation (2.33): the exact midpoint root-offset integral identity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_identity",
+            "NLS.ZakharovShabat.sourceStandardRoot_zero_period_centered_factor",
+            "NLS.ZakharovShabat.sourceStandardRoot_zero_period_dslope_identity"
+          ],
+          "reviewed_claims": [
+            "Insert the removable divided-difference expansion into the actual zero period and use the affine moment. The result is (2*pi*i)*(sigma_m^n-tau_m)*chi_m^n(tau_m) equal to the integral of ((sigma_m^n-lambda)*(lambda-tau_m)/w_m(lambda))*b_m^n(lambda).",
+            "Dividing by the nonzero scalar 2*pi*i gives precisely (2.33), including its sign. The theorem applies to every original period circle and the unchanged original family at every complex point in W."
+          ],
+          "qualification": "The exact identity matches, including its complex scalar, orientation and collapsed-gap cases. No estimate or asymptotic equality is substituted for the integral identity."
+        },
+        {
+          "ordered_group": "S12-065",
+          "source_lines": [
+            5792,
+            5798
+          ],
+          "requirement": "One positive midpoint lower bound for all retained indices.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_midpoint_lower_bound",
+            "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_midpoint_lowerBound_of_quotient",
+            "NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_finiteHead_lowerBound_near_gapProduct",
+            "NLS.ZakharovShabat.exists_sourcePsiQuotient_uniformSmallTail_near_gapProduct",
+            "NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_uniform_lowerBound_near_gapProduct",
+            "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_midpoint_factor_lowerBound",
+            "NLS.ZakharovShabat.nonempty_sourcePsiMidpointBoundComplexRootAtlas",
+            "NLS.ZakharovShabat.SourcePsiMidpointBoundComplexRootAtlas.locally_uniform_midpoint_lower_bounds"
+          ],
+          "reviewed_claims": [
+            "If all midpoint displacements have norm at most D, then abs(tau_n-tau_m) is at most (pi+2*D)*abs(n-m). Consequently the chi midpoint factor is bounded below by pi/(pi+2*D) times the regular quotient norm.",
+            "The regular quotient tends uniformly to one in the tail near the whole compact real gap-root product, by a finite cover and a common joint Schwarz bound. Its tail norm is therefore at least one half. For the remaining finitely many indices, continuity and nonvanishing on that compact product give one positive lower bound; disjoint real segments ensure nonvanishing.",
+            "Uniform filled-branch stability places all omitted-index branches near that compact product. A common lower bound therefore works before choosing n or m. Restricting the construction atlas once retains this bound on a chart around every complex point of its final W, and original_midpoint_lower_bound exports it on exactly the domain of Lemma 12.11."
+          ],
+          "qualification": "The uniform positive lower bound matches. The proof supplies compactness and a uniform tail, rather than inferring a uniform infimum solely from individual nonzero values. Only local source neighborhoods are used after W has been fixed."
+        },
+        {
+          "ordered_group": "S12-066",
+          "source_lines": [
+            5799,
+            5804
+          ],
+          "requirement": "Equation (2.34): the attained gap maximum and half-gap inequality.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_gap_bound",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_inequalities",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle"
+          ],
+          "reviewed_claims": [
+            "The original gap is compact, so abs(sigma_m^n-lambda) attains its maximum at an actual point xi in the complex segment. The analytic numerator in (2.33) satisfies the corrected Lemma 12.3 domain hypothesis on the filled original disk.",
+            "With dslope majorant B_m and positive midpoint lower bound c0, the exact bound is abs(sigma_m^n-tau_m) <= abs(sigma_m^n-xi)*abs(gamma_m)*abs(B_m)/(2*c0). The factor one half comes from abs(xi-tau_m)<=abs(gamma_m)/2.",
+            "The triangle inequality bounds the maximum by abs(sigma_m^n-tau_m)+abs(gamma_m)/2. Absorbing 1/(2*c0) into the lp majorant gives both inequalities of (2.34), with a common local majorant norm L/(2*c0), for all omitted indices."
+          ],
+          "qualification": "Both inequalities match, including complex and collapsed gaps. The sufficient analytic-domain correction already recorded for Lemma 12.3 is satisfied here; no new constant correction or refutation is required."
+        },
+        {
+          "ordered_group": "S12-067",
+          "source_lines": [
+            5805,
+            5813
+          ],
+          "requirement": "The two substitutions and exact linear-gap and squared-gap factorizations.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_uniform_bound",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.original_two_stage_offsets",
+            "NLS.exists_coeff_weight_quotient",
+            "NLS.exists_coeff_squared_weight_quotient",
+            "NLS.ZakharovShabat.SourceLemma12_11Data.lemma12_12",
+            "NLS.ZakharovShabat.norm_normalizedStandardRoot_inv_sub_zeroGap_inv_le_of_separation",
+            "NLS.ZakharovShabat.norm_sourceStandardRoot_zero_period_offset_le"
+          ],
+          "reviewed_claims": [
+            "A common analytic branch norm bound and a common midpoint displacement norm give abs(sigma_m^n-tau_m)<=A on one neighborhood. A common gap norm G and equation (2.34) then give abs(offset_m)<=T*abs(gamma_m)*abs(B_m), where T=A+G/2 and norm(B)<=L.",
+            "Reinsertion and abs(B_m)<=L give abs(offset_m)<=K*abs(gamma_m)^2*abs(B_m), with K=T*L+1/2. The exact linear and squared weight quotient theorems produce beta and alpha in lp, both zero at n, with exact factorizations even when a gap vanishes.",
+            "C=max(T*L,K*L)+1 is a positive bound for both coefficient norms. C^p bounds the literal p-power sum. The common source neighborhood is the intersection of three open neighborhoods inside W, chosen before all nearby sources and all n.",
+            "The independent construction used earlier has a direct quadratic estimate from the reciprocal-root correction abs(w_inverse-(tau-lambda)_inverse)<=abs(gamma)^2/(2*sep^3). This construction supplies the initial squared-gap atlas; the two original-disk substitutions above provide the printed proof replay on its unchanged final domain."
+          ],
+          "qualification": "The final linear-gap and squared-gap conclusions match with explicit positive constants and the full quantifier order. This closes the 67-group ordered Section 12 comparison, retaining all twelve earlier corrections and the wider dissertation qualifications."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma12_12.lean": "b8458ae50266ccbd4d96ef724b4a54c37530a8ff72f56387108c1f526dde6df6",
+        "NLS/ZakharovShabat/SourcePsiOriginalChi.lean": "79b432924348a437b64a446eca5ad98afb8413557a811e9e8b6727817e78d10e",
+        "NLS/ZakharovShabat/SourcePsiOriginalRootBootstrap.lean": "52038327b2ff9b4cb55cf83845db2f08106407b6f62a320f4de7bfe6a1763639",
+        "NLS/ZakharovShabat/SourcePsiOriginalChiMajorant.lean": "3afcf1890700d95eeb2dd5e4efc820f8403b97b4d1741716df4ecebbddf92958",
+        "NLS/ZakharovShabat/SourcePsiOriginalChiCauchy.lean": "b23fd790c72edc2e6dc15eaafbed22e6f08119ecff62fdd053e7c654e2c22bcf",
+        "NLS/ZakharovShabat/SourcePsiOriginalRootOffset.lean": "4349e90b7be56e274f32251a6f2a4e394809cc7d12bd599c6552c9e10c528f7d",
+        "NLS/ZakharovShabat/SourcePsiOriginalFamilyQuotient.lean": "7db57cb8f41a36fa619e8cdf8fb6c1c35d3f3a0b95178960d22f91685b42739f",
+        "NLS/ZakharovShabat/SourcePsiMidpointBoundComplexRootAtlas.lean": "7a75e0166d27e99129034b49fe704f163907564812c0b8bf2e406f18589aa524",
+        "NLS/ZakharovShabat/SourcePsiOriginalRootFamily.lean": "89f015a2ef047ca51cee0bd169549f2d3ea5fef3103cdf5dd4f8972771a3d7eb",
+        "NLS/ZakharovShabat/SourcePsiUniformMidpointLowerBound.lean": "2193be00dec9e4caa166678d3d827b05e439b9ac1f18a8f085b9ce2e530bfac1",
+        "NLS/ZakharovShabat/SourceStandardRootFirstMoment.lean": "07bf833891fe7eb1caca3e29f9f4f97834ab1dee7a0f4ecae5b4e601d9d01dd6",
+        "NLS/ZakharovShabat/SourceStandardRootZeroPeriodOffset.lean": "6d81621995cb0c453b0e864b2b70f961ca7b66d43dd6e5c60a37e97f80e8ef5a",
+        "NLS/ZakharovShabat/SourcePsiSquaredGapComplexRootAtlas.lean": "be65965aa560f10bbf39ecfab68893816686f6d312879c1e1ea7c3d6f0b20b0e",
+        "NLS/ZakharovShabat/SourcePsiLemma12_12.lean": "36f8cc6231fbe5e3383ffb7a0c32c8000703f74801821ae9d20e0c5fb0a22464",
+        "NLS/ZakharovShabat/SourcePsiFiniteHeadMidpointLowerBound.lean": "9abf18117ff5bcfe737b1b2c907ebeeb4f3899bdbb4cf3d78a341af09a35c2fa",
+        "NLS/ZakharovShabat/SourcePsiQuotientUniformGapProductTail.lean": "fe78b18ddc7056c9b83f418a595803e7b1bd6b113f6d8dbaeddf404e8f015161",
+        "NLS/ZakharovShabat/SourcePsiUniformSquaredGapOffsets.lean": "4cb4a450211ba0eded9bbb0a81d8ff011667444d8a078b57bb0315ccaa58e0d1",
+        "NLS/ZakharovShabat/SourcePsiQuadraticRootOffset.lean": "cdbf3708744c50884cec013b87b996db710d357be5d3861a49dad588cda04511",
+        "NLS/SequenceSpaces/WeightQuotient.lean": "a2b5641344c656bbebd7c2f5d6df5cc9bd3159841c2a00ea073452abf20b72c0",
+        "NLS/ZakharovShabat/SourcePsiActualTailRootOffset.lean": "0ca1eb06b7d0332305caf377bf2b8510f62eb54ffd05b20378734517651c2437",
+        "NLS/ZakharovShabat/SourcePsiFiniteHeadRootOffset.lean": "bd1d2f859be441c4051bd0719f242d6c4b5695bb5d34829b8f405a8801da30f4",
+        "NLS/ZakharovShabat/SourcePsiBranchFactorMajorant.lean": "e8e3d764cfbbc4fbec107e1a02e33f072470b3e9b6b18e8f2907478f836560ad",
+        "NLS/ZakharovShabat/SourcePsiMidpointQuotientFiniteHeadLowerBound.lean": "c857041f75248e5323689e4717bda6cf4da2609dbfe16ad4d20258e9539d6e22",
+        "NLS/ZakharovShabat/SourcePsiQuotientUniformJointVariation.lean": "a00771260a92673a90ff91807b087368a467b8b937c6f133be64e233a0a0ac82",
+        "NLS/ZakharovShabat/SourcePsiMidpointNormalizedOffset.lean": "7b04dcb288ea3d39556b2ca53b8d5900e0a0867c5dea07a07d293178179dbc95",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientError.lean": "7526ac752c17288c3ab6ed3bd499f82a7f1aa2536eb4b5ab4e89702c3fc00ccd",
+        "NLS/ZakharovShabat/SourceStandardRootQuadraticOffset.lean": "8921f0c9ff9a36b3442c90fa6c5b94d1b4d023e6e22f3c29008e0b2678801af4",
+        "NLS/ZakharovShabat/SourcePsiMidpointFilledFactorMajorant.lean": "0c5b5ee34e30dc58ad44c4f71298b8ca9b861416c89c035d89a3c1fcbddfc3d5",
+        "NLS/ZakharovShabat/SourcePsiQuotientQuantitativeDisc.lean": "7f922b1086c19a814033bb61f27a31f99b1355b41e50be91cd778d6032258636",
+        "NLS/ZakharovShabat/SourcePsiLocalAssignedContourZero.lean": "f29375f2913409accb6437fd912e4ea306ffb3c370e3de2bdc2cf82546675076",
+        "NLS/ZakharovShabat/SourceStandardRootInverseCorrection.lean": "cb3785723d91cf13ef00e3d6b2870760545fd4915ecea49ac7916441ba14740f",
+        "NLS/SequenceSpaces/SquaredWeightQuotient.lean": "50315bd1dbe63491a11bf264dfc52817bfaae05ce0e12e8ae66a0848023b6c13",
+        "NLS/SequenceSpaces/CoordinateNormSup.lean": "53911143b9e544e72e403140b29c82ef369ed1f9646c723f7162894d3026ba6e",
+        "NLS/ZakharovShabat/SourceActionContourFamily.lean": "d06c03950afafd55bf2897ad22d66f14486425095302172024c654d920d71860",
+        "NLS/ZakharovShabat/SourceLemma12_3.lean": "6ba37076ffe3d9d06bfdf91b4ed26a9a4d4dfb7612dd63c6e4ac11ba31c3adb7",
+        "NLS/ZakharovShabat/SourcePsiUniformFilledBranchStability.lean": "3f4143adff9bc28e9ad0f0d49574656b7fb8a22eae4f8af681fce5c3e817b833"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [
+        {
+          "file": "work/Section12OpeningSourceComparison-2026-10-30.json",
+          "sha256": "c8411dc30a4e7cac0e9d89df08cae11dd82558dc2633b6d785536324e27ea235",
+          "modules": [
+            "NLS/ZakharovShabat/SourceActionContourFamily.lean"
+          ]
+        },
+        {
+          "file": "work/Section12LocalContoursSourceComparison-2026-10-30.json",
+          "sha256": "124c192a14602494bc32a00e9ff1fd7706a13b0b214d39bb6323d6f867e3cc58",
+          "modules": [
+            "NLS/ZakharovShabat/SourceLemma12_3.lean"
+          ]
+        },
+        {
+          "file": "work/Section12ComplexNeighborhoodSourceComparison-2026-10-30.json",
+          "sha256": "c199029c1383a22fd4768de08238847c09c08c5b6bd30b7d00459da0883ae3fa",
+          "modules": [
+            "NLS/ZakharovShabat/SourcePsiUniformFilledBranchStability.lean"
+          ]
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "ordered_inventory_sha256": "83b8350743a4fbae5ada791e6a2b1da67affcaecdd651fa68a84834e69fa9598",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceActionContourFamily.uniform_outer_margin",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_midpointRatio_bounds",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.lemma12_12",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_chi_errorBound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_quotient_errorBound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_errorBound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_identity",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_zero_period",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_graph_radius",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_rootFamily_compact",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_midpoint_lower_bound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_gap_bound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_inequalities",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_uniform_bound",
+        "NLS.ZakharovShabat.SourceLemma12_11Data.original_two_stage_offsets",
+        "NLS.ZakharovShabat.SourceLemma12_12Data",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.collapsed_root_eq_midpoint",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_assigned_contour_zero",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_tail_squared_offset_majorant",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_midpoint_factor_lowerBound",
+        "NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_squared_gap_offsets",
+        "NLS.ZakharovShabat.SourcePsiMidpointBoundComplexRootAtlas.locally_uniform_midpoint_lower_bounds",
+        "NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas.locally_uniform_squared_gap_offsets",
+        "NLS.ZakharovShabat.circleIntegral_affine_div_sourceStandardRoot",
+        "NLS.ZakharovShabat.circleIntegral_sourceStandardRoot_centered_inv_eq_zero",
+        "NLS.ZakharovShabat.deriv_sourceStandardRoot_off_segment",
+        "NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same",
+        "NLS.ZakharovShabat.exists_local_sourcePsiMidpointFilledRegularFactor_uniformBoundedBallTailMajorant",
+        "NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_tailMajorant_of_quotient",
+        "NLS.ZakharovShabat.exists_sourcePsiQuotient_uniformSmallTail_near_gapProduct",
+        "NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_finiteHead_lowerBound_near_gapProduct",
+        "NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_uniform_lowerBound_near_gapProduct",
+        "NLS.ZakharovShabat.nonempty_sourcePsiMidpointBoundComplexRootAtlas",
+        "NLS.ZakharovShabat.nonempty_sourcePsiSquaredGapComplexRootAtlas",
+        "NLS.ZakharovShabat.norm_normalizedStandardRoot_inv_sub_zeroGap_inv_le_of_separation",
+        "NLS.ZakharovShabat.norm_sourceStandardRoot_zero_period_offset_le",
+        "NLS.ZakharovShabat.sourceLemma12_12",
+        "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_eq_literal_product",
+        "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_midpoint_lowerBound_of_quotient",
+        "NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_zero_period",
+        "NLS.ZakharovShabat.sourceStandardRoot_zero_period_centered_factor",
+        "NLS.ZakharovShabat.sourceStandardRoot_zero_period_dslope_identity",
+        "NLS.exists_coeff_squared_weight_quotient",
+        "NLS.exists_coeff_weight_quotient",
+        "NLS.exists_coordinateNormSup"
+      ],
+      "declaration_inventory_count": 44598,
+      "qualification": "All 67 ordered Section 12 groups are compared: fifty-five matched and twelve with estimate, scope, gap-reference or sign corrections. The final eight groups establish the squared-gap lp offsets, literal coefficient power sums, original-disk chi estimates, uniform midpoint lower bounds and both substitutions on the unchanged common complex domain. The independent atlas construction is distinguished from the later original-disk proof replay, whose compactness input reuses that construction. Collapsed gaps and all signed indices are included. Earlier corrections retain their scope. This completes the ordered Section 12 comparison, not the dissertation-wide semantic audit. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          71
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-next-071.png": "9a398248f6bfa6463ba160a64e1899ccc51f6887f856fb1ae75defbb2dfce452"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4834,
+        "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      },
+      "validation_reused_from_commit": "62cce362dd78e0c2bb44d963974e0ba12ae5c26e",
+      "full_gate": {
+        "session": 21942,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexNeighborhoodFullCheck-2.log",
+        "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
+      },
+      "source_record_sha256": "97163af8e684fe3d68783b7a5876de4de78e4614ff78cb27a4ae6547eaa59b60"
     }
   }
 }

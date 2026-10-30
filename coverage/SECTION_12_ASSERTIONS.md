@@ -1,11 +1,10 @@
 # Section 12 ordered assertion comparison
 
-The first fifty-nine of 67 ordered Section 12 groups are compared: forty-seven matched, twelve with estimate, scope, gap-reference or sign corrections, and eight pending. The assembled entire family retains analytic roots, original placement and off-diagonal zero periods. On the unchanged common complex domain, finite original-circle decomposition and the uniform exterior limit prove the exact diagonal period 2*pi. With pi_0=1, both individual products are asymptotic to minus sine; their signs cancel and the literal full quotient tends to one. This positive correction reuses existing proofs and adds no refutations. Earlier corrections retain their scope. The final eight root-offset passages remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+All 67 ordered Section 12 groups are compared: fifty-five matched and twelve with estimate, scope, gap-reference or sign corrections. The final eight groups establish the squared-gap lp offsets, literal coefficient power sums, original-disk chi estimates, uniform midpoint lower bounds and both substitutions on the unchanged common complex domain. The independent atlas construction is distinguished from the later original-disk proof replay, whose compactness input reuses that construction. Collapsed gaps and all signed indices are included. Earlier corrections retain their scope. This completes the ordered Section 12 comparison, not the dissertation-wide semantic audit. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
-range and rendered pages have been inspected for navigation. Only the first
-fifty-nine groups have the semantic comparisons below. Earlier named-theorem
+range and rendered pages have been inspected for navigation. All 67 groups now have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -72,14 +71,14 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-057 | 70 | 5677–5681 | Literal full-product quotient formula for the diagonal integrand. | matched |
 | S12-058 | 70 | 5683–5697 | Individual sine-product asymptotics and cancellation in their quotient. | corrected |
 | S12-059 | 70 | 5700–5705 | Exterior integral limit and exact diagonal period 2pi. | matched |
-| S12-060 | 71 | 5707–5738 | Lemma 12.12: squared-gap lp root offsets on the unchanged complex domain, uniform in the deleted index. | pending |
-| S12-061 | 71 | 5740–5753 | Equation (2.30), auxiliary chi definition (2.31), and midpoint completion. | pending |
-| S12-062 | 71 | 5754–5767 | Full-disk chi asymptotic (2.32), actual coefficient power sums and Taylor expansion at the midpoint. | pending |
-| S12-063 | 71 | 5769–5783 | Uniform contour margin, Cauchy remainder bound and exact first-moment integral. | pending |
-| S12-064 | 71 | 5785–5791 | Equation (2.33): exact root-offset integral identity. | pending |
-| S12-065 | 71 | 5792–5798 | Common nonzero midpoint bound for the auxiliary chi values. | pending |
-| S12-066 | 71 | 5799–5804 | Equation (2.34): gap-supremum inequality for root displacements. | pending |
-| S12-067 | 71 | 5805–5813 | First linear-gap substitution and second squared-gap substitution, locally uniformly in the common domain. | pending |
+| S12-060 | 71 | 5707–5738 | Lemma 12.12: squared-gap lp root offsets on the unchanged complex domain, uniform in the deleted index. | matched |
+| S12-061 | 71 | 5740–5753 | Equation (2.30), auxiliary chi definition (2.31), and midpoint completion. | matched |
+| S12-062 | 71 | 5754–5767 | Full-disk chi asymptotic (2.32), actual coefficient power sums and Taylor expansion at the midpoint. | matched |
+| S12-063 | 71 | 5769–5783 | Uniform contour margin, Cauchy remainder bound and exact first-moment integral. | matched |
+| S12-064 | 71 | 5785–5791 | Equation (2.33): exact root-offset integral identity. | matched |
+| S12-065 | 71 | 5792–5798 | Common nonzero midpoint bound for the auxiliary chi values. | matched |
+| S12-066 | 71 | 5799–5804 | Equation (2.34): gap-supremum inequality for root displacements. | matched |
+| S12-067 | 71 | 5805–5813 | First linear-gap substitution and second squared-gap substitution, locally uniformly in the common domain. | matched |
 
 ## Compared opening and Theorem 12.1
 
@@ -1490,4 +1489,157 @@ This comparison records 32 inspected or reused module bodies and 35 resolved dec
 
 This documentation-only step reuses the exact Lean and dependency snapshot of commit `6162cee`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
 
-Continue with S12-060: Lemma 12.12 and the squared-gap root offsets.
+The following comparison supplies the final squared-gap root-offset passages.
+
+## Squared-gap root offsets and the proof of Lemma 12.12
+
+### S12-060: Lemma 12.12: squared-gap offsets and literal power sums on the unchanged domain.
+
+- For every finite p greater than one and every complex source in the same W as Lemmas 12.10 and 12.11, one open U contained in W and one positive constant are chosen before all nearby sources and all omitted indices n. An actual coefficient sequence alpha in lp then gives sigma_m^n=tau_m+gamma_m^2*alpha_m for every m, with alpha_n=0 after filling the omitted root by tau_n.
+- The coefficient p-power series is summable and its literal sum is bounded by that common constant. The conversion uses the exact identity between the p-th power of the lp norm and the sum of coefficient p-th powers. A zero complex gap forces the root to equal its midpoint; division never imposes a nonzero-gap assumption.
+- The atlas establishes the estimate independently before choosing its final common domain. Actual zero periods and the reciprocal-root correction give a tail lp majorant with multiplier 192/(pi*c0). A finite head uses continuity when the reference gap is nonzero and the actual normalized contour estimate when it collapses. Patching gives norm bound card(head)*C_head+C_tail. Source radii are restricted during atlas construction; the resulting same W and branches are retained thereafter.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_12Data`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.lemma12_12`
+- `NLS.ZakharovShabat.sourceLemma12_12`
+- `NLS.ZakharovShabat.SourceLemma12_12Data.collapsed_root_eq_midpoint`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_squared_gap_offsets`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_tail_squared_offset_majorant`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound`
+- `NLS.ZakharovShabat.nonempty_sourcePsiSquaredGapComplexRootAtlas`
+- `NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas.locally_uniform_squared_gap_offsets`
+
+The assertion matches with the full local-in-W and uniform-in-n quantifiers. The original-disk proof replay later uses compactness obtained from these independently constructed atlas offsets; it is not claimed as an independent first derivation. No analyticity of the quotient coefficients is asserted.
+
+### S12-061: The zero-period equation, literal chi product and midpoint completion.
+
+- For m different from n, the actual retained period gives the zero integral (2.30) on every original selected circle. Multiplication by pi*(n-m) preserves zero. The deleted coordinate is filled by the actual moving midpoint tau_n.
+- The factor equals pi*(n-m)/(i*(tau_n-lambda)) times the literal auxiliary product zeta_m. The minus sign in zeta_m agrees with (2.25); it makes chi approach i. The original disk excludes every other periodic segment, so tau_n-lambda does not vanish there.
+- The actual single-root quotient is analytic on the omitted-gap domain. Choosing the original disk as the period circle disk yields analyticity of chi on all of that disk, including the selected gap and its midpoint. The retained contour-zero proof uses the original equations, not a squared-gap asymptotic premise.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_zero_period`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_analytic`
+- `NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_eq_literal_product`
+- `NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_zero_period`
+- `NLS.ZakharovShabat.displacedRoots_sourcePsiFillDeletedRoot_same`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_assigned_contour_zero`
+
+Equations (2.30) and (2.31), the midpoint fill and full original-disk analyticity match. All indices remain signed, and the selected index m differs from n.
+
+### S12-062: Full original-disk chi estimates, literal suprema and the midpoint expansion.
+
+- On every full original disk D_m, the midpoint ratio is bounded by pi*c and its deviation from one by K/abs(n-m). Combining it with the quotient-error majorant B gives E=(pi*c)*magnitude(B)+K*magnitude(shift_n(puncturedLattice)). Its norm is at most pi*c*C+K*norm(puncturedLattice), independently of n.
+- To recover the printed actual supremum coefficients, apply exists_coordinateNormSup to D_m and F_m(z)=chi_m^n(z)-i for m different from n, with F_n identically zero. Each original disk is nonempty. The resulting coefficient equals the literal disk supremum and has norm at most the majorant norm; lp.norm_rpow_eq_tsum gives the uniform p-power sum. This uses the general public supremum theorem rather than a separate chi-specific declaration.
+- The removable divided difference b_m^n=dslope(chi_m^n,tau_m) satisfies chi(lambda)=chi(tau_m)+(lambda-tau_m)*b(lambda), including lambda=tau_m. Analyticity supplies the removable derivative value.
+- The original full-disk quotient bound uses compactness of the filled family and uniform graph continuity near each complex source. That compactness reuses the independent atlas squared-gap estimate described in S12-060. The bounded-input tail majorant used to build the atlas itself depends only on branch norm bounds, quotient estimates and the translated reciprocal lattice.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_midpointRatio_bounds`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_chi_errorBound`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_allDisk_quotient_errorBound`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_rootFamily_compact`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_filled_graph_radius`
+- `NLS.exists_coordinateNormSup`
+- `NLS.ZakharovShabat.exists_sourcePsiMidpointFilledRegularFactor_tailMajorant_of_quotient`
+- `NLS.ZakharovShabat.exists_local_sourcePsiMidpointFilledRegularFactor_uniformBoundedBallTailMajorant`
+
+The full-disk estimates and actual supremum interpretation match. The original replay has a different dependency order from the printed proof; it does not establish the atlas estimate for the first time. The generic supremum and lp norm identities supply the literal coefficient-power statement.
+
+### S12-063: A common contour margin, the Cauchy bound and the exact first moment.
+
+- The simultaneous original contour family has one positive radial margin delta: take the minimum of pi/16 and the finitely many head margins. Outside that head the radii and outer disks have the exact fixed free-tail values. Thus the circles stay a common positive distance from the original disk boundaries.
+- Cauchy bounds the derivative by 2*E_m/delta on the whole filled inner disk. The convex mean-value inequality bounds the removable divided difference by the same value, including its derivative value at the midpoint. Scaling the majorant by 2/delta keeps it in lp with one local norm bound for all n. The coordinate supremum theorem on the nonempty circles gives the literal contour-supremum sequence as well.
+- Off the selected segment, differentiating the squared-root identity gives w_prime=(lambda-tau_m)/w. Integrating this actual derivative around the circle makes the centered first moment zero. The affine moment is exactly -2*pi*i*(sigma_m^n-tau_m); multiplying by 1/(2*pi*i) gives tau_m-sigma_m^n.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceEquation2_15Data.original_contourFamily`
+- `NLS.ZakharovShabat.SourceActionContourFamily.uniform_outer_margin`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_errorBound`
+- `NLS.ZakharovShabat.deriv_sourceStandardRoot_off_segment`
+- `NLS.ZakharovShabat.circleIntegral_sourceStandardRoot_centered_inv_eq_zero`
+- `NLS.ZakharovShabat.circleIntegral_affine_div_sourceStandardRoot`
+- `NLS.exists_coordinateNormSup`
+
+The uniform collar, Cauchy estimate and moment sign match. The first-moment argument only needs the standard root along the enclosing contour, not analyticity across its internal cut.
+
+### S12-064: Equation (2.33): the exact midpoint root-offset integral identity.
+
+- Insert the removable divided-difference expansion into the actual zero period and use the affine moment. The result is (2*pi*i)*(sigma_m^n-tau_m)*chi_m^n(tau_m) equal to the integral of ((sigma_m^n-lambda)*(lambda-tau_m)/w_m(lambda))*b_m^n(lambda).
+- Dividing by the nonzero scalar 2*pi*i gives precisely (2.33), including its sign. The theorem applies to every original period circle and the unchanged original family at every complex point in W.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_chi_dslope_identity`
+- `NLS.ZakharovShabat.sourceStandardRoot_zero_period_centered_factor`
+- `NLS.ZakharovShabat.sourceStandardRoot_zero_period_dslope_identity`
+
+The exact identity matches, including its complex scalar, orientation and collapsed-gap cases. No estimate or asymptotic equality is substituted for the integral identity.
+
+### S12-065: One positive midpoint lower bound for all retained indices.
+
+- If all midpoint displacements have norm at most D, then abs(tau_n-tau_m) is at most (pi+2*D)*abs(n-m). Consequently the chi midpoint factor is bounded below by pi/(pi+2*D) times the regular quotient norm.
+- The regular quotient tends uniformly to one in the tail near the whole compact real gap-root product, by a finite cover and a common joint Schwarz bound. Its tail norm is therefore at least one half. For the remaining finitely many indices, continuity and nonvanishing on that compact product give one positive lower bound; disjoint real segments ensure nonvanishing.
+- Uniform filled-branch stability places all omitted-index branches near that compact product. A common lower bound therefore works before choosing n or m. Restricting the construction atlas once retains this bound on a chart around every complex point of its final W, and original_midpoint_lower_bound exports it on exactly the domain of Lemma 12.11.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_midpoint_lower_bound`
+- `NLS.ZakharovShabat.sourcePsiMidpointFilledRegularFactor_midpoint_lowerBound_of_quotient`
+- `NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_finiteHead_lowerBound_near_gapProduct`
+- `NLS.ZakharovShabat.exists_sourcePsiQuotient_uniformSmallTail_near_gapProduct`
+- `NLS.ZakharovShabat.exists_sourcePsi_midpointQuotient_uniform_lowerBound_near_gapProduct`
+- `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas.exists_local_uniform_midpoint_factor_lowerBound`
+- `NLS.ZakharovShabat.nonempty_sourcePsiMidpointBoundComplexRootAtlas`
+- `NLS.ZakharovShabat.SourcePsiMidpointBoundComplexRootAtlas.locally_uniform_midpoint_lower_bounds`
+
+The uniform positive lower bound matches. The proof supplies compactness and a uniform tail, rather than inferring a uniform infimum solely from individual nonzero values. Only local source neighborhoods are used after W has been fixed.
+
+### S12-066: Equation (2.34): the attained gap maximum and half-gap inequality.
+
+- The original gap is compact, so abs(sigma_m^n-lambda) attains its maximum at an actual point xi in the complex segment. The analytic numerator in (2.33) satisfies the corrected Lemma 12.3 domain hypothesis on the filled original disk.
+- With dslope majorant B_m and positive midpoint lower bound c0, the exact bound is abs(sigma_m^n-tau_m) <= abs(sigma_m^n-xi)*abs(gamma_m)*abs(B_m)/(2*c0). The factor one half comes from abs(xi-tau_m)<=abs(gamma_m)/2.
+- The triangle inequality bounds the maximum by abs(sigma_m^n-tau_m)+abs(gamma_m)/2. Absorbing 1/(2*c0) into the lp majorant gives both inequalities of (2.34), with a common local majorant norm L/(2*c0), for all omitted indices.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_gap_bound`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_inequalities`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.lemma12_3_circle`
+
+Both inequalities match, including complex and collapsed gaps. The sufficient analytic-domain correction already recorded for Lemma 12.3 is satisfied here; no new constant correction or refutation is required.
+
+### S12-067: The two substitutions and exact linear-gap and squared-gap factorizations.
+
+- A common analytic branch norm bound and a common midpoint displacement norm give abs(sigma_m^n-tau_m)<=A on one neighborhood. A common gap norm G and equation (2.34) then give abs(offset_m)<=T*abs(gamma_m)*abs(B_m), where T=A+G/2 and norm(B)<=L.
+- Reinsertion and abs(B_m)<=L give abs(offset_m)<=K*abs(gamma_m)^2*abs(B_m), with K=T*L+1/2. The exact linear and squared weight quotient theorems produce beta and alpha in lp, both zero at n, with exact factorizations even when a gap vanishes.
+- C=max(T*L,K*L)+1 is a positive bound for both coefficient norms. C^p bounds the literal p-power sum. The common source neighborhood is the intersection of three open neighborhoods inside W, chosen before all nearby sources and all n.
+- The independent construction used earlier has a direct quadratic estimate from the reciprocal-root correction abs(w_inverse-(tau-lambda)_inverse)<=abs(gamma)^2/(2*sep^3). This construction supplies the initial squared-gap atlas; the two original-disk substitutions above provide the printed proof replay on its unchanged final domain.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_root_offset_uniform_bound`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.original_two_stage_offsets`
+- `NLS.exists_coeff_weight_quotient`
+- `NLS.exists_coeff_squared_weight_quotient`
+- `NLS.ZakharovShabat.SourceLemma12_11Data.lemma12_12`
+- `NLS.ZakharovShabat.norm_normalizedStandardRoot_inv_sub_zeroGap_inv_le_of_separation`
+- `NLS.ZakharovShabat.norm_sourceStandardRoot_zero_period_offset_le`
+
+The final linear-gap and squared-gap conclusions match with explicit positive constants and the full quantifier order. This closes the 67-group ordered Section 12 comparison, retaining all twelve earlier corrections and the wider dissertation qualifications.
+
+The [original bootstrap](../NLS/ZakharovShabat/SourcePsiOriginalRootBootstrap.lean)
+and [Lemma 12.12 interface](../NLS/ZakharovShabat/SourceLemma12_12.lean) retain the same domain and branches.
+The [independent head/tail construction](../NLS/ZakharovShabat/SourcePsiUniformSquaredGapOffsets.lean)
+precedes the [original full-disk majorants](../NLS/ZakharovShabat/SourcePsiOriginalChiMajorant.lean).
+The [general supremum theorem](../NLS/SequenceSpaces/CoordinateNormSup.lean) supplies the literal coefficient suprema.
+This comparison records 36 inspected or reused module bodies and 49 resolved declarations.
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `62cce36`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Continue in source order with Section 13, Angles.

@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [diagonal period normalization](coverage/SECTION_12_ASSERTIONS.md)
-retains the exact value 2*pi on the unchanged common complex domain.
-Both individual product asymptotics use minus sine; their quotient still
-tends to one. Existing positive proofs supply the correction. The ordered
-ledger has forty-seven matched groups, twelve with corrections and eight
-pending. Next are squared-gap root offsets; wider qualifications remain
-in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: [Lemma 12.12 and squared-gap root offsets](coverage/SECTION_12_ASSERTIONS.md)
+complete the ordered Section 12 comparison: fifty-five matched groups and
+twelve with corrections. The exact root factorization and common p-power
+bounds include collapsed gaps on the unchanged complex domain. Existing
+proofs cover this step, with the independent construction and later proof
+replay distinguished explicitly. Next is Section 13, Angles; wider
+qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

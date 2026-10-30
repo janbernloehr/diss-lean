@@ -1,6 +1,37 @@
 # Implementation status
 
-## Current milestone: diagonal period normalization and corrected sine signs
+## Current milestone: squared-gap root offsets and completed Section 12 comparison
+
+All 67 groups in the ordered Section 12 comparison are now assessed:
+fifty-five matched and twelve with corrections. The final eight cover
+Lemma 12.12 and its proof on the unchanged common complex domain.
+
+The actual roots have the factorization sigma_m^n=tau_m+gamma_m^2*alpha_m,
+including collapsed complex gaps. One positive coefficient p-power bound
+works for all omitted indices on a neighborhood of every complex source.
+The comparison checks the original-disk chi suprema, Cauchy collar,
+first-moment sign, common midpoint lower bound and both substitutions.
+
+The independent construction combines a finite head with an lp tail bound
+derived from zero periods and the reciprocal-root correction. The later
+original-disk replay uses compactness from that already established
+construction. The review records this dependency order explicitly.
+
+Existing positive proofs and the general coordinate-supremum theorem cover
+the source assertions. No new Lean theorem, example or refutation was added.
+Earlier corrected constants and signs retain their scope.
+
+See the [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md).
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `62cce36`. Its completed full check passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Next is the ordered comparison of Section 13, Angles. Completing this
+section's ledger does not certify the whole dissertation; wider
+qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: diagonal period normalization and corrected sine signs
 
 The entire family has analytic roots, original disk placement and zero
 off-diagonal periods on its common complex domain. The diagonal period is

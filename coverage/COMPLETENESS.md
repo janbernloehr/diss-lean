@@ -178,15 +178,17 @@ conclusions are retained. The ordered Section 12 comparison follows below. Earli
 corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
-The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Forty-seven match and twelve have estimate, scope, gap-reference or sign
-corrections. The entire family and exact diagonal normalization retain
-the same complex domain, original placement and all signed indices.
-Both individual products are asymptotic to minus sine; their quotient
-still tends to one and the period remains positive 2*pi. Existing positive
-proofs supply these six new comparisons. The eight remaining groups concern
-Lemma 12.12 and the squared-gap root offsets. Earlier corrections and wider
-qualifications retain their scope.
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups,
+all now compared: fifty-five matched and twelve with estimate, scope,
+gap-reference or sign corrections. Lemma 12.12 retains the unchanged
+common complex domain, all signed omitted indices and collapsed gaps.
+Its original-disk estimates, actual coefficient suprema and both
+substitutions give the literal squared-gap factorization and uniform
+p-power bounds. The review distinguishes the independent atlas
+construction from the original-disk proof replay that reuses it.
+Earlier corrections and wider qualifications retain their scope.
+Next is the ordered comparison of Section 13, Angles. This closes
+Section 12's ledger, not the dissertation-wide semantic audit.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
