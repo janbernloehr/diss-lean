@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-The first six of 22 ordered Section 11 groups match: common contours and the action definition, the full assertions of Lemma 11.1, and its analyticity, gradient and complex collapsed-gap proof passage. The exact -1/pi Frechet formula holds for every original winding-one piecewise C1 circuit at every complex source in the retained W. Real nonnegativity and the exact zero-gap criterion follow from the actual arcosh integral proof. Sixteen later groups remain pending, beginning with the displayed real-gap calculation and the pointwise sign sentence. The direct differentiation proof replaces the cited Hilbert-extension route; the external citation is not independently audited. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Eight of 22 ordered Section 11 groups are compared: seven matched and one corrected occurrence, through the complete real-gap calculation in Lemma 11.1. The actual original-circuit and real-integral formulas have the exact 1/pi and 2/pi factors. The numerator is nonnegative on the closed gap; the integrand is positive in the interior except for its unique critical-point zero, and its integral is strictly positive on open gaps. Fourteen later groups remain pending, beginning with the squared-gap zero locus Z_n. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first six
+the reviewed source extraction; form feeds do not add lines. The first eight
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -21,8 +21,8 @@ finite piecewise C1 regularity is explicit when interpreting contour integrals.
 | S11-004 | 61 | 4754–4761 | Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17). | matched |
 | S11-005 | 61 | 4762–4763 | Lemma 11.1: real nonnegativity and equivalence of zero action with a collapsed gap. | matched |
 | S11-006 | 61 | 4766–4768 | Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing. | matched |
-| S11-007 | 61 | 4769–4782 | Real-source recentering at the critical point and the literal positive-root gap integral. | pending |
-| S11-008 | 61 | 4782–4784 | Pointwise sign of the recentered integrand and strict positivity of its integral. | pending |
+| S11-007 | 61 | 4769–4782 | Real-source recentering at the critical point and the literal positive-root gap integral. | matched |
+| S11-008 | 61 | 4782–4784 | Pointwise sign of the recentered integrand and strict positivity of its integral. | corrected |
 | S11-009 | 61 | 4786–4790 | Definition of Z_n as the squared-gap zero locus in the original common domain. | pending |
 | S11-010 | 61 | 4795–4805 | Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks. | pending |
 | S11-011 | 62 | 4816–4822 | Analytic subvariety Z_n and the normalized-action extension problem. | pending |
@@ -167,13 +167,80 @@ and [real action properties](../NLS/ZakharovShabat/SourceRealAction.lean)
 retain the original functions and domains. The [all-index positivity proof](../NLS/ZakharovShabat/SourceActionAllGapPositive.lean)
 uses the [weighted arcosh identity](../NLS/ZakharovShabat/RealGapWeightedArcoshIntegral.lean)
 and its [endpoint integrability](../NLS/ZakharovShabat/RealGapArcoshIntegrability.lean).
-The new comparison records 24 fully inspected modules. The Lean and dependency
-snapshot is unchanged from the successful full gate at `7692c09`, so that
-validation is reused; current source-review integrity and documentation links pass.
+That statement comparison recorded 24 fully inspected modules. At that
+documentation-only milestone, the Lean and dependency snapshot was unchanged
+from the successful full gate at `7692c09`, so that validation was reused.
 
-Continue with the displayed real-gap calculation S11-007 and the pointwise
-sign argument S11-008. The [historical critical-point correction](SECTION_11.md#the-critical-point-zero-in-the-proof-of-lemma-111)
+The next subsection compares the displayed real-gap calculation and its
+corrected pointwise sign argument. The [historical critical-point correction](SECTION_11.md#the-critical-point-zero-in-the-proof-of-lemma-111)
 is retained. No new refutation is needed.
+
+## Literal real-gap calculation and corrected pointwise signs
+
+### S11-007: Real-source recentering at the critical point and the literal positive-root gap integral.
+
+- The indexed action equals 1/pi times the actual integral of (lambda-critical_n)*Delta prime/canonicalRoot on every original winding-one finite piecewise C1 circuit. More generally any complex recentering constant is allowed, since the unweighted period vanishes. This retains the original disks and common W, including complex and collapsed gaps.
+- For real sources the same action equals 2/pi times the literal real gap integral. Its integrand retains the integer power (-1)^(n+1), the real critical coordinate, the actual discriminant derivative and the positive square root of Delta squared minus four. The statement covers all finite p>1 and every signed index.
+- Casting that real integrand to Complex gives (x-critical_n.re) times the previously proved Section 10 real kernel. That kernel is minus the actual upper canonical boundary quotient in the gap interior, fixing the orientation and sign before integration.
+- The actual weighted upper boundary integral equals the negative arcosh area for any real recentering constant. The shrinking-stadium and small-circle identity gives the action as -2/pi times the upper boundary integral. Together with circle independence, this fixes the exact 2/pi coefficient for the original indexed action.
+- The literal real integrand is interval-integrable through both branch points, by the integrable boundary kernel times a continuous affine factor. At a collapsed gap the endpoint integral has zero length and agrees with the zero action. No assumed endpoint-integrability premise is introduced.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_recentered_circuit`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.originalCircuit_realCalculation`
+- `NLS.ZakharovShabat.sourceIndexedAction_eq_recenteredRealIntegral`
+- `NLS.ZakharovShabat.sourceIndexedAction_eq_realGapArcoshIntegral`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_cast`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_eq_halfDiscriminant`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_intervalIntegrable`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_eq_arcosh`
+- `NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper`
+- `NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all`
+- `NLS.ZakharovShabat.exists_sourceActionCircle_eq_upperBoundaryIntegral`
+
+The proof identifies actual contour, side and real interval integrals, with their exact normalizations. It reuses the established shrinking-stadium identity through a small midpoint circle and circle independence; it does not postulate a deformation of each supplied piecewise circuit. The source open-gap formula is also proved in the collapsed zero-length case.
+
+### S11-008: Pointwise sign of the recentered integrand and strict positivity of its integral.
+
+- The displayed numerator is nonnegative on the entire closed real gap, including both endpoints and collapsed gaps. For an open gap, positivity of the denominator transfers interior quotient nonnegativity to the numerator, and continuity extends it to the endpoints.
+- The corrected quotient statement is nonnegativity throughout the gap interior, strict positivity away from the canonical critical coordinate, and zero exactly at that coordinate. The denominator is strictly positive there, so this exception is an ordinary interior zero.
+- A general mean-value and intermediate-value argument gives positive derivative before the unique interior critical point and negative derivative after it, for a function above its equal endpoint values. The actual signed half-discriminant satisfies those hypotheses, including continuity of its derivative and uniqueness of its critical point.
+- The literal real integral is strictly positive on every open real gap. Its equality to the positive arcosh area gives the integral sign independently of the pointwise exception. Multiplication by 2/pi retains strict positivity of the actual action.
+- The historical refutation of the everywhere-strict pointwise sentence is preserved. The new work proves the corrected sign statements and the literal integral identity; it adds no refutation.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourceRecenteredRealActionNumerator_nonneg`
+- `NLS.ZakharovShabat.sourceRealGapHalfDiscriminant_deriv_signs`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_pos`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_nonneg_and_eq_zero_iff`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_pos`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_at_critical`
+- `NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_denominator_pos`
+- `NLS.ZakharovShabat.canonicalCriticalPoints_between_of_open_gap`
+- `NLS.ZakharovShabat.critical_eq_canonicalCriticalPoints_of_mem_gap`
+- `NLS.ComplexAnalysis.derivative_signs_of_unique_critical`
+
+Corrected occurrence: exclude the canonical critical coordinate from the printed pointwise strict-positivity assertion. The closed-gap numerator inequality, real action positivity and exact zero-gap criterion remain valid. Existing historical evidence in SourceActionIntegrandCriticalZero.lean and SOURCE_ERRATA.md is unchanged; the added theorems are positive results.
+
+The [general derivative-sign theorem](../NLS/ComplexAnalysis/SingleCriticalPointSign.lean)
+is applied to the actual discriminant in the [corrected integrand signs](../NLS/ZakharovShabat/SourceActionIntegrandSign.lean).
+The [literal real calculation](../NLS/ZakharovShabat/SourceLemma11_1RealCalculation.lean)
+connects the indexed action, original circuits, the positive-root real integral
+and the arcosh area. The comparison inspects 22 module bodies.
+
+Two integration examples construct an actual open real gap at index -1 with
+positive integrand values on both sides of its critical zero, and verify the
+literal original-circuit formula at p=3/2, including its integer parity and
+relative factor two. The full validation passes: 8,517 build jobs, 7,586
+public examples and 44,355 transitively audited NLS declarations, with
+21 inherited warnings and no new warnings. Source-review integrity and
+documentation-link checks also pass.
+
+Continue with S11-009, the literal squared-gap zero locus Z_n, followed by
+the contour figure and analytic-zero-locus passage. Existing corrections and
+the [wider completion qualifications](COMPLETENESS.md) remain in force.
 
 ## Opening comparison evidence and validation
 
@@ -191,12 +258,12 @@ and [actual finite piecewise C1 integrals](../NLS/ComplexAnalysis/PiecewiseC1Loo
 The source review records fifteen inspected module bodies and twenty resolved
 declaration references in the [public comparison snapshot](source-review-index.json).
 
-This comparison changes documentation only. The exact Lean and dependency
-snapshot is unchanged from commit `7692c09`; its successful full validation
-is reused: 8,514 build jobs, 7,584 public examples and a transitive axiom
-audit of 44,339 NLS declarations, with 21 inherited warnings. Current module
-hashes, declaration references, review integrity and documentation links
-have been checked. These checks do not certify source-wide completeness.
+That opening comparison changed documentation only. Its Lean and dependency
+snapshot was unchanged from commit `7692c09`; the successful full validation
+was reused: 8,514 build jobs, 7,584 public examples and a transitive axiom
+audit of 44,339 NLS declarations, with 21 inherited warnings. Module hashes,
+declaration references, review integrity and documentation links were checked
+at that milestone. These checks do not certify source-wide completeness.
 
 The opening comparison above is retained with its original evidence. Preserve the [existing Section 11 audit](SECTION_11.md)
 and all wider qualifications in the [completion assessment](COMPLETENESS.md).

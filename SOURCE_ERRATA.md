@@ -153,6 +153,14 @@ positivity of the action in Lemma 11.1 remains proved by the existing
 arcosh integral argument; this correction concerns the intervening
 pointwise sentence. See the [Section 11 audit](coverage/SECTION_11.md).
 
+The corrected pointwise statement is now proved in
+[SourceActionIntegrandSign.lean](NLS/ZakharovShabat/SourceActionIntegrandSign.lean):
+the numerator is nonnegative on the closed gap, and the integrand is positive
+in the interior except at its unique critical-point zero. The
+[literal integral formula](NLS/ZakharovShabat/SourceLemma11_1RealCalculation.lean)
+has coefficient 2/pi and a strictly positive integral on every open real gap.
+These are positive proofs; no additional refutation is introduced.
+
 ## Section 7: the real collapsed-gap locus has codimension two
 
 The paragraph after (2.3) on printed p. 46 calls the squared-gap zero set

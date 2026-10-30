@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Lemma 11.1 comparison](coverage/SECTION_11_ASSERTIONS.md)
-checks action analyticity, the exact `-1/pi` gradient formula, complex
-collapsed-gap vanishing and the real zero-gap criterion. Six of 22 ordered
-Section 11 groups are matched; sixteen remain pending. The next comparison
-covers the literal real-gap calculation and its pointwise sign argument.
-Section 10 retains all 52 compared groups: 44 matched and eight corrected.
-The [completion assessment](coverage/COMPLETENESS.md) retains Section 7's
-partial clauses and the wider qualifications.
+Latest step: the [literal real-gap action formula](NLS/ZakharovShabat/SourceLemma11_1RealCalculation.lean)
+and [corrected integrand signs](NLS/ZakharovShabat/SourceActionIntegrandSign.lean)
+prove the exact `2/pi` coefficient, endpoint integrability and strict positivity
+away from the critical-point zero. The [Section 11 ledger](coverage/SECTION_11_ASSERTIONS.md)
+has eight compared groups: seven matched and one corrected; fourteen remain
+pending. Next is the squared-gap zero locus. The
+[completion assessment](coverage/COMPLETENESS.md) retains Section 7's partial
+clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

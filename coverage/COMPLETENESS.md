@@ -167,17 +167,16 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
-The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares the
-first six of 22 groups: the opening action construction, all assertions of
-Lemma 11.1, and its analyticity, gradient and collapsed-gap proof passage.
-The exact -1/pi Frechet formula holds on all original winding-one circuits
-throughout the retained W. Real nonnegativity and the zero-gap criterion
-use the actual arcosh integral proof with endpoint integrability. The direct
-differentiation proof covers all finite p>1; the cited external theorem is
-not independently audited. Sixteen groups remain pending, beginning with
-the literal real-gap calculation and pointwise sign argument. The existing
-critical-point correction and all wider qualifications remain. Named results
-alone do not classify the pending intermediate assertions.
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares eight
+of 22 groups: seven matched and one corrected occurrence. The full action
+and gradient statements are retained. The literal real-gap calculation now
+has exact 1/pi and 2/pi formulas on the original circuits and a proved
+endpoint-integrable real kernel. Its numerator is nonnegative on the closed
+gap, while the integrand is positive in the interior except for its unique
+critical-point zero. The actual integral remains strictly positive on open
+gaps. The new results are positive proofs; the historical strictness refutation
+is unchanged. Fourteen groups remain pending, beginning with Z_n, the contour
+figure and the analytic-zero-locus passage. All wider qualifications remain.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

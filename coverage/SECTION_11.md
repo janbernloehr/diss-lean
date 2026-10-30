@@ -1,6 +1,42 @@
 # Section 11: actions
 
-## Ordered comparison through Lemma 11.1 statements and initial proof
+## Ordered comparison through the Lemma 11.1 real-gap calculation
+
+The displayed real-gap calculation in Lemma 11.1 now has direct proofs for
+the actual indexed action and every original winding-one piecewise C1 circuit.
+The recentered contour formula retains 1/pi; the literal real-gap integral
+retains 2/pi, the signed integer parity, the actual critical coordinate and
+the positive real square root. Endpoint integrability is proved, and the
+collapsed zero-length case is included.
+
+The source's numerator inequality now holds on the whole closed real gap.
+The corrected integrand statement is nonnegativity in the interior, with
+strict positivity away from the unique critical coordinate and zero exactly
+there. A mean-value and intermediate-value argument proves the derivative
+signs on both sides. The literal integral equals the positive arcosh area,
+so its strict positivity on an open gap is retained. These additions are
+positive proofs; the historical pointwise refutation is unchanged.
+
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares
+eight of 22 groups: seven matched and one corrected occurrence. Fourteen
+groups remain pending, beginning with the squared-gap zero locus Z_n.
+The common W, original disks, all signed indices and all finite p>1 are retained.
+
+Validation: `./scripts/check.sh` passes with 8,517 build jobs, 7,586
+public examples and a transitive axiom audit of 44,355 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The examples construct an actual open real gap at index -1 and check
+positive values on both sides of its critical zero, then check the literal
+original-circuit formula at p=3/2 with the exact relative factor two.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and the
+broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope.
+
+## Previous ordered milestone: Lemma 11.1 statements and initial proof
 
 The full statements of Lemma 11.1 and its initial proof passage now match
 the existing Lean proofs. The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md)
@@ -75,7 +111,7 @@ interpretation and the broader source inventory remain unresolved.
 ## Existing theorem and formula audit
 
 The following audit retains its established scope. Its named results do not
-by themselves discharge the sixteen pending ordered groups.
+by themselves discharge the fourteen pending ordered groups.
 
 This audit begins with printed p. 61 of the dissertation. The contour
 construction, equation (2.16), and independence of general admissible
@@ -593,6 +629,11 @@ not require the false pointwise assertion.
 
 Two public examples construct an actual Hilbert real-source witness at
 any signed index, using the proved density of open gaps, and retain the
-action conclusion for all finite p>1. This step does not separately prove
-pointwise positivity away from the critical coordinate; the action
-theorem and its integral proof remain unchanged.
+action conclusion for all finite p>1. That historical step did not separately
+prove positivity away from the critical coordinate. The new
+[integrand-sign module](../NLS/ZakharovShabat/SourceActionIntegrandSign.lean)
+now proves this corrected strictness, the exact interior zero criterion and
+nonnegativity of the numerator on the entire closed gap. The
+[literal calculation](../NLS/ZakharovShabat/SourceLemma11_1RealCalculation.lean)
+also proves the 2/pi real-integral formula and strict positivity of that
+actual integral. The historical refutation remains unchanged.

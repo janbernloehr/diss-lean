@@ -71556,3 +71556,87 @@ example {W V : Set (CoeffPair (3/2))}
   simpa only [sourceLemma10_11ComplexSideKernel,ite_true] using hc.1.trans hc.2.1
 
 end Section10ComplexCalculationExamples
+
+
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex MeasureTheory intervalIntegral
+open scoped ENNReal unitInterval
+namespace Section11RealCalculationExamples
+
+-- An actual real source at index -1 has positive integrand values on both
+-- sides of its critical zero and a strictly positive literal gap integral.
+example : ∃ ψ : CoeffPair 2, IsRealType (CoeffPair.toMax 2 ψ) ∧
+    let a := (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re
+    let b := (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re
+    let c := (canonicalCriticalPoints (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re
+    let F := sourceRecenteredRealActionIntegrand (by simp) (by norm_num) ψ (-1)
+    ∃ x ∈ Ioo a c, ∃ y ∈ Ioo c b,
+      0 < F x ∧ F c = 0 ∧ 0 < F y ∧ 0 < ∫ t in a..b, F t := by
+  obtain ⟨ψ,hψ⟩ := (dense_sourceOpenGapRealLocus (p := 2) (by simp) (by norm_num) (-1)).nonempty
+  have hreal := isRealType_periodOnePotential ψ.val ψ.property
+  have hle := re_le_of_complexLexLE
+    ((canonicalPeriodicEndpoints_spec (p := 2) (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val)).2.1 (-1))
+  have hopen :
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re <
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re := by
+    apply lt_of_le_of_ne hle
+    intro he
+    apply hψ
+    apply sub_eq_zero.mpr
+    apply Complex.ext
+    · exact he.symm
+    · obtain ⟨hl,hr⟩ := canonicalPeriodicEndpoints_im_eq_zero_of_realType (by simp) (by norm_num)
+        (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) hreal (-1)
+      exact hr.trans hl.symm
+  have hc := canonicalCriticalPoints_between_of_open_gap (by simp) (by norm_num)
+    (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) hreal (-1) hopen
+  let a := (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re
+  let b := (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re
+  let c := (canonicalCriticalPoints (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re
+  change a < c ∧ c < b at hc
+  have hx : (a+c)/2 ∈ Ioo a c := ⟨by linarith [hc.1],by linarith [hc.1]⟩
+  have hy : (c+b)/2 ∈ Ioo c b := ⟨by linarith [hc.2],by linarith [hc.2]⟩
+  refine ⟨ψ.val,ψ.property,(a+c)/2,hx,(c+b)/2,hy,?_,?_,?_,?_⟩
+  · exact sourceRecenteredRealActionIntegrand_pos (by simp) (by norm_num) ψ.val ψ.property (-1) _
+      ⟨hx.1,hx.2.trans hc.2⟩ hx.2.ne
+  · exact sourceRecenteredRealActionIntegrand_at_critical (by simp) (by norm_num) ψ.val (-1)
+  · exact sourceRecenteredRealActionIntegrand_pos (by simp) (by norm_num) ψ.val ψ.property (-1) _
+      ⟨hc.1.trans hy.1,hy.2⟩ hy.1.ne'
+  · exact sourceRecenteredRealActionIntegrand_integral_pos (by simp) (by norm_num) ψ.val ψ.property (-1) hopen
+
+private theorem fractional_finite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem fractional_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨fractional_gt_one.le⟩
+
+-- At p=3/2 the negative index's integer parity is +1. The original
+-- circuit and the literal real integral have the exact relative factor two.
+example {W V : Set (CoeffPair (3/2))}
+    (H : SourceLemma11_1Data fractional_finite fractional_gt_one W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods fractional_finite fractional_gt_one V D c)
+    (ψ : CoeffPair (3/2)) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+    (hreal : IsRealType (CoeffPair.toMax (3/2) ψ))
+    (Γ : NLS.ComplexAnalysis.PiecewiseC1Loop)
+    (hΓ : Γ.Inside (D (-1) \ sourcePeriodicSegment fractional_finite fractional_gt_one ψ (-1)))
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint fractional_finite fractional_gt_one
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)) = 1) :
+    (Real.pi : ℂ)⁻¹*Γ.integral (fun z =>
+      (z-canonicalCriticalPoints fractional_finite fractional_gt_one
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1))*
+        deriv (canonicalDiscriminant fractional_finite (periodOnePotential ψ)) z /
+          sourceCanonicalRoot fractional_finite fractional_gt_one ψ z) =
+      (2/(Real.pi : ℂ))*((∫ x in
+        (canonicalPeriodicLeft fractional_finite fractional_gt_one
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re..
+        (canonicalPeriodicRight fractional_finite fractional_gt_one
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re,
+        (x-(canonicalCriticalPoints fractional_finite fractional_gt_one
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re)*
+          (deriv (canonicalDiscriminant fractional_finite (periodOnePotential ψ)) x).re /
+            Real.sqrt ((canonicalDiscriminant fractional_finite (periodOnePotential ψ) x).re^2-4) : ℝ) : ℂ) := by
+  have he := (H.originalCircuit_realCalculation hD ψ hψW hψV hreal (-1) Γ hΓ hw).2
+  simpa only [sourceRecenteredRealActionIntegrand,neg_add_cancel,zpow_zero,one_mul] using he
+
+end Section11RealCalculationExamples

@@ -4790,3 +4790,6 @@ import NLS.ZakharovShabat.SourceSection10PowerContourAnalytic
 import NLS.ZakharovShabat.SourceLemma10_11RealCalculation
 import NLS.ComplexAnalysis.CosineGapIntegralZero
 import NLS.ZakharovShabat.SourceLemma10_11ComplexCalculation
+import NLS.ComplexAnalysis.SingleCriticalPointSign
+import NLS.ZakharovShabat.SourceActionIntegrandSign
+import NLS.ZakharovShabat.SourceLemma11_1RealCalculation

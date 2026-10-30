@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T10:29:54.589598+00:00",
-  "base_commit": "9fbfda5443969c8cc5b58d8b7e593a2e59370eff",
+  "published_utc": "2026-10-30T11:06:12.250446+00:00",
+  "base_commit": "fc62dfcf83bccf9b253c94c81250cb1b550f75cb",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 126,
-    "module_hash_checks": 2194,
-    "distinct_modules": 1386
+    "review_records": 127,
+    "module_hash_checks": 2216,
+    "distinct_modules": 1391
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9fbfda5443969c8cc5b58d8b7e593a2e59370eff",
-    "validated_state": "Documentation-only update; the exact Lean sources and dependency lock remain identical to commit 7692c09. Its successful full validation is reused, not rerun. The first six of 22 ordered Section 11 groups match: common contours and the action definition, the full assertions of Lemma 11.1, and its analyticity, gradient and complex collapsed-gap proof passage. The exact -1/pi Frechet formula holds for every original winding-one piecewise C1 circuit at every complex source in the retained W. Real nonnegativity and the exact zero-gap criterion follow from the actual arcosh integral proof. Sixteen later groups remain pending, beginning with the displayed real-gap calculation and the pointwise sign sentence. The direct differentiation proof replaces the cited Hilbert-extension route; the external citation is not independently audited. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+    "base_commit": "fc62dfcf83bccf9b253c94c81250cb1b550f75cb",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the general derivative-sign theorem, literal real action kernel signs and endpoint integrability, exact original-circuit and real-integral formulas, and two integration examples. Eight ordered Section 11 groups are compared: seven matched and one corrected; fourteen pending. The original W and disks are retained. Section 10 remains 44 matched and eight corrected. The wider unresolved source qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8514,
-    "public_examples": 7584,
-    "transitive_NLS_declarations": 44339,
+    "build_jobs": 8517,
+    "public_examples": 7586,
+    "transitive_NLS_declarations": 44355,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4791,
-      "sha256": "da81553c11f2a8234c9500bb979d345fe26e49dbfcac9bc928ea763975bfc5b4"
+      "files": 4794,
+      "sha256": "483c3288f1f170195092d37b15de33f0026202a2f06164f2d8c5314e4186ddba"
     },
-    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
-    "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8"
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -31670,6 +31669,147 @@
       "declaration_inventory_count": 44339,
       "validation_reused_from_commit": "7692c092f59bf2bb83920630feb66e2d64cb0fc8",
       "source_record_sha256": "f5c0ad5d317685455662e9cc805994c80049e17bd19fab7c9644f115e9b3cca6"
+    },
+    "Section11RealCalculationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "fc62dfcf83bccf9b253c94c81250cb1b550f75cb",
+      "updated_utc": "2026-10-30T11:06:12.250446+00:00",
+      "source_lines": [
+        [
+          4769,
+          4782
+        ],
+        [
+          4782,
+          4784
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-007",
+          "source_lines": [
+            4769,
+            4782
+          ],
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Real-source recentering at the critical point and the literal positive-root gap integral.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_recentered_circuit",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.originalCircuit_realCalculation",
+            "NLS.ZakharovShabat.sourceIndexedAction_eq_recenteredRealIntegral",
+            "NLS.ZakharovShabat.sourceIndexedAction_eq_realGapArcoshIntegral",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_cast",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_eq_halfDiscriminant",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_intervalIntegrable",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_eq_arcosh",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper",
+            "NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all",
+            "NLS.ZakharovShabat.exists_sourceActionCircle_eq_upperBoundaryIntegral"
+          ],
+          "reviewed_claims": [
+            "The indexed action equals 1/pi times the actual integral of (lambda-critical_n)*Delta prime/canonicalRoot on every original winding-one finite piecewise C1 circuit. More generally any complex recentering constant is allowed, since the unweighted period vanishes. This retains the original disks and common W, including complex and collapsed gaps.",
+            "For real sources the same action equals 2/pi times the literal real gap integral. Its integrand retains the integer power (-1)^(n+1), the real critical coordinate, the actual discriminant derivative and the positive square root of Delta squared minus four. The statement covers all finite p>1 and every signed index.",
+            "Casting that real integrand to Complex gives (x-critical_n.re) times the previously proved Section 10 real kernel. That kernel is minus the actual upper canonical boundary quotient in the gap interior, fixing the orientation and sign before integration.",
+            "The actual weighted upper boundary integral equals the negative arcosh area for any real recentering constant. The shrinking-stadium and small-circle identity gives the action as -2/pi times the upper boundary integral. Together with circle independence, this fixes the exact 2/pi coefficient for the original indexed action.",
+            "The literal real integrand is interval-integrable through both branch points, by the integrable boundary kernel times a continuous affine factor. At a collapsed gap the endpoint integral has zero length and agrees with the zero action. No assumed endpoint-integrability premise is introduced."
+          ],
+          "qualification": "The proof identifies actual contour, side and real interval integrals, with their exact normalizations. It reuses the established shrinking-stadium identity through a small midpoint circle and circle independence; it does not postulate a deformation of each supplied piecewise circuit. The source open-gap formula is also proved in the collapsed zero-length case."
+        },
+        {
+          "ordered_group": "S11-008",
+          "source_lines": [
+            4782,
+            4784
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "requirement": "Pointwise sign of the recentered integrand and strict positivity of its integral.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRecenteredRealActionNumerator_nonneg",
+            "NLS.ZakharovShabat.sourceRealGapHalfDiscriminant_deriv_signs",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_pos",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_nonneg_and_eq_zero_iff",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_pos",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_at_critical",
+            "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_denominator_pos",
+            "NLS.ZakharovShabat.canonicalCriticalPoints_between_of_open_gap",
+            "NLS.ZakharovShabat.critical_eq_canonicalCriticalPoints_of_mem_gap",
+            "NLS.ComplexAnalysis.derivative_signs_of_unique_critical"
+          ],
+          "reviewed_claims": [
+            "The displayed numerator is nonnegative on the entire closed real gap, including both endpoints and collapsed gaps. For an open gap, positivity of the denominator transfers interior quotient nonnegativity to the numerator, and continuity extends it to the endpoints.",
+            "The corrected quotient statement is nonnegativity throughout the gap interior, strict positivity away from the canonical critical coordinate, and zero exactly at that coordinate. The denominator is strictly positive there, so this exception is an ordinary interior zero.",
+            "A general mean-value and intermediate-value argument gives positive derivative before the unique interior critical point and negative derivative after it, for a function above its equal endpoint values. The actual signed half-discriminant satisfies those hypotheses, including continuity of its derivative and uniqueness of its critical point.",
+            "The literal real integral is strictly positive on every open real gap. Its equality to the positive arcosh area gives the integral sign independently of the pointwise exception. Multiplication by 2/pi retains strict positivity of the actual action.",
+            "The historical refutation of the everywhere-strict pointwise sentence is preserved. The new work proves the corrected sign statements and the literal integral identity; it adds no refutation."
+          ],
+          "qualification": "Corrected occurrence: exclude the canonical critical coordinate from the printed pointwise strict-positivity assertion. The closed-gap numerator inequality, real action positivity and exact zero-gap criterion remain valid. Existing historical evidence in SourceActionIntegrandCriticalZero.lean and SOURCE_ERRATA.md is unchanged; the added theorems are positive results."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "ordered_inventory_sha256": "89767e74f8504c970d70a20d25edee6a6ad302c6ad97bb6ce9c89d968a0bc93a",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_11RealCalculation.lean": "a0ff9024620817631d2340d714e04fcaf771029cecb07ce28c02af04fc8a1ce2",
+        "NLS/ZakharovShabat/SourceActionIntegrandCriticalZero.lean": "24490df8b72f9388ebe0248a53fad46021694051d380e9a8df5df1f4a2b8a142",
+        "NLS/ZakharovShabat/SourceActionAllGapPositive.lean": "f13a5dc79fd7ba67b9084b1733cff9b496bb0fb8b324c50db50bcd916b77ec15",
+        "NLS/ZakharovShabat/SourceActionMidpointCircleValue.lean": "92738cd017d9cafe5c32166d430933b8fe4bf8ed0883c71cb3bd7ea09d32477f",
+        "NLS/ZakharovShabat/SourceActionGapSideIntegral.lean": "e9e8b87cceaa33f1e24b6459ce798f45a4b2902b20f370e9fd312af6d2ebf239",
+        "NLS/ZakharovShabat/SourceActionBoundaryGapSide.lean": "b8908f04bd4436d67af1193ef23ed414f8f33729a502c0c5203b0ab40dabd2ad",
+        "NLS/ZakharovShabat/SourceRealAction.lean": "58709bd92b3eba801a486f8f8bec206e0c501acedf1d5f38b2d8264dc80480bc",
+        "NLS/ZakharovShabat/SourceIndexedActionAnalytic.lean": "531523b34ea9dd2d66e5824eebd8630b465b03ed7ad8c25a4d429d89ffdba33c",
+        "NLS/ZakharovShabat/SourceRealActionRealCenteredCircle.lean": "6ce5d9cc9d7bdf6ed788cc8182411f3bafd50fc94b4783dcbc490c08618287b1",
+        "NLS/ZakharovShabat/SourceDiscriminantDerivativeParity.lean": "627e0db31a4e8949aaa6169415b3f6cbdbdfe6561a81bde7c20e098b5bc1a10e",
+        "NLS/ZakharovShabat/RealGapArcoshIntegrability.lean": "854777e0ab78f654b48e4045486b32cb64812c7b7078646e47a5575fb46c1124",
+        "NLS/ZakharovShabat/RealGapWeightedArcoshIntegral.lean": "c2bb9c376779916495b9f4810878dba200d8afc8b1e4122a550e75a7cf0b34cf",
+        "NLS/ZakharovShabat/CanonicalCriticalInterlacing.lean": "2ca8349c0714eaadeebdb83803ece80344141926e29e4076c51514346a3e330d",
+        "NLS/ZakharovShabat/SourceLemma11_1.lean": "6d670fd953a323f2bcc37ca7a03e856c706d0e644b146dc161b50909a780b6fa",
+        "NLS/ComplexAnalysis/ArcoshGapIntegral.lean": "9dcaf5ceaf7bc4048f3cb63186840cf4e8ce2171c4a433d0381201e26c4956d5",
+        "NLS/ComplexAnalysis/SingleCriticalPointSign.lean": "aa9dceb3beea45468665a466b2b46a318f7aa25b725c24b0474ca501705a63ee",
+        "NLS/ZakharovShabat/SourceActionIntegrandSign.lean": "cb69458d7d351b0d59b5f13875bb9f729b3ceb276fda9c66da57e0814d98e07c",
+        "NLS/ZakharovShabat/SourceLemma11_1RealCalculation.lean": "baccfa85ab10167ca65b7a141e2bd53e26081741d514af8a722998e879a96f03",
+        "NLS/ZakharovShabat/SourceRealGapArcoshPrimitive.lean": "a519770f28e88e041c7eb89300d342ef9bcb93d6b5d9d567c85198de74f39114",
+        "NLS/ZakharovShabat/RealGapArcoshIntegral.lean": "8dfb1aed7f1cccfe63ab5007cf633b35d28e63ce88b7d2f535a0a0251d1d5876",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean": "f430fe6a6a78fbbbe02b98741e57cbe839821458a9aa91199bb7583d130916a9",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          61
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-061.png": "069737e39c17d7b6805f6c6c7db0e05f4e38f22d12a6023c94b6ce5afea64b03"
+        }
+      },
+      "qualification": "Eight of 22 ordered Section 11 groups are compared: seven matched and one corrected occurrence, through the complete real-gap calculation in Lemma 11.1. The actual original-circuit and real-integral formulas have the exact 1/pi and 2/pi factors. The numerator is nonnegative on the closed gap; the integrand is positive in the interior except for its unique critical-point zero, and its integral is strictly positive on open gaps. Fourteen later groups remain pending, beginning with the squared-gap zero locus Z_n. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "reviewed_modules_read_in_full": true,
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.derivative_signs_of_unique_critical",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.action_eq_recentered_circuit",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.originalCircuit_realCalculation",
+        "NLS.ZakharovShabat.canonicalCriticalPoints_between_of_open_gap",
+        "NLS.ZakharovShabat.critical_eq_canonicalCriticalPoints_of_mem_gap",
+        "NLS.ZakharovShabat.exists_sourceActionCircle_eq_upperBoundaryIntegral",
+        "NLS.ZakharovShabat.sourceAction_upper_cosineBoundaryIntegral_eq_neg_arcosh_all",
+        "NLS.ZakharovShabat.sourceIndexedAction_eq_realGapArcoshIntegral",
+        "NLS.ZakharovShabat.sourceIndexedAction_eq_recenteredRealIntegral",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper",
+        "NLS.ZakharovShabat.sourceRealGapHalfDiscriminant_deriv_signs",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_at_critical",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_cast",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_denominator_pos",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_eq_halfDiscriminant",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_eq_arcosh",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_integral_pos",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_intervalIntegrable",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_nonneg_and_eq_zero_iff",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionIntegrand_pos",
+        "NLS.ZakharovShabat.sourceRecenteredRealActionNumerator_nonneg"
+      ],
+      "declaration_inventory_count": 44355,
+      "source_record_sha256": "646cda70952768aa7955f5a5c2e020293d7a8fab5e7915c5b2feda4bec005a90"
     }
   }
 }
