@@ -158,15 +158,14 @@ is now proved at arbitrary complex simple boundary roots, including actual
 operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
-The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-51 of 52 groups: 43 matched and eight corrected occurrences, through the
-period-continuation passage in Lemma 10.11(ii). A local real-form zero germ
-propagates across the unchanged connected W. Every original circle and
-every piecewise C1 closed contour in an original cut disk has zero actual
-integral. The proof uses connected analytic uniqueness to retain the full
-domain despite an auxiliary local shrink. The final complex side-integral
-and endpoint-path proof passage remains pending; existing named theorem
-audits do not by themselves settle its intermediate displays.
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares all
+52 groups: 44 matched and eight corrected occurrences. The final complex
+boundary integrals, endpoint integrability and signed doubled-circle formula
+retain every original disk and the common W. Actual improper endpoint-path
+integrals use independent truncation, including finite piecewise paths and
+collapsed endpoints. This completes that section's ordered comparison;
+continue in source order with Section 11's action construction. It does not
+settle the wider unresolved clauses or certify dissertation completeness.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

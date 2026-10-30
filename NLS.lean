@@ -4788,3 +4788,5 @@ import NLS.ComplexAnalysis.WeightedArgumentPrinciple
 import NLS.ZakharovShabat.SourceSection10PowerContours
 import NLS.ZakharovShabat.SourceSection10PowerContourAnalytic
 import NLS.ZakharovShabat.SourceLemma10_11RealCalculation
+import NLS.ComplexAnalysis.CosineGapIntegralZero
+import NLS.ZakharovShabat.SourceLemma10_11ComplexCalculation

@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: Lemma 10.11 period-continuation comparison
+## Current milestone: Lemma 10.11 complex-gap calculation
+
+The final complex-gap calculation in Lemma 10.11 now has literal boundary
+integrals of the discriminant derivative divided by the full canonical root.
+A new general cosine-integral lemma and the primitive on the whole original
+cut disk prove that both side integrals vanish for arbitrary complex sources.
+The kernels include the complex half-gap Jacobian and are integrable through
+both endpoints. The original common W and every original disk are retained.
+
+The upper kernel is pointwise the negative lower kernel. Forward on the
+lower/right side and backward on the upper/left side therefore gives twice
+the lower integral, or minus twice the upper integral. The complete displayed
+original-circle formula follows using the already proved zero periods.
+This is a primitive-based proof of the source calculation; no new general
+shrinking-contour theorem for arbitrary numerators is claimed.
+
+The existing full relative endpoint limits also evaluate actual improper
+integrals along arbitrary admissible finite piecewise interior C1 paths.
+The two endpoint cutoffs tend independently. Corners, repeated traversals,
+self-intersections and collapsed endpoints are included. At a collapsed gap,
+the affine boundary formula uses the zero-length convention, while analytic
+removability supplies the arbitrary endpoint-path conclusion.
+
+Two integration examples check a vertical complex gap with nonzero partial
+side integrals +1 and -1, and an arbitrary original negative-index circle
+at p=3/2 with endpoint integrability and no real-type assumption. The printed
+sign and factor two match. This step adds only positive proofs.
+
+Validation: `./scripts/check.sh` passes with 8,514 build jobs, 7,584
+public examples and a transitive axiom audit of 44,339 NLS declarations.
+The 21 inherited warnings are unchanged; the new modules and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+all 52 groups: 44 matched and eight corrected occurrences. Continue with
+Section 11's common contours and action definition (2.16). Section 7's
+physical NLS Dirichlet motion and unrestricted psi uniqueness, the exact
+cited 2014 construction, Appendix G.2 norm interpretation and the broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Lemma 10.11 period-continuation comparison
 
 The continuation-of-periods passage in Lemma 10.11(ii) now matches the
 existing proofs, with the local and global domains distinguished explicitly.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T09:18:31.436308+00:00",
-  "base_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
+  "published_utc": "2026-10-30T10:14:04.729669+00:00",
+  "base_commit": "4e4c8b490525ed1c77aaaacb6a016172e035c8dd",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 123,
-    "module_hash_checks": 2136,
-    "distinct_modules": 1353
+    "review_records": 124,
+    "module_hash_checks": 2155,
+    "distinct_modules": 1357
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit a3af8df and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 51 of 52 ordered Section 10 groups are compared: 43 matched and eight corrected occurrences. The local real-form zero germ propagates over the unchanged connected W, every original circle has zero period, and every piecewise C1 closed contour in an original cut disk has zero actual integral. The final complex side-integral and endpoint-path proof passage remains pending, together with all wider qualifications.",
+    "base_commit": "4e4c8b490525ed1c77aaaacb6a016172e035c8dd",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the general cosine-integral vanishing theorem, literal complex canonical-root side kernels, endpoint integrability, pointwise orientation and original-circle formula, with two public integration examples. All 52 ordered Section 10 groups are compared: 44 matched and eight corrected occurrences. Every original disk and the unchanged common W are retained, including independently truncated admissible piecewise endpoint integrals. Continue in source order with Section 11. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8512,
-    "public_examples": 7582,
-    "transitive_NLS_declarations": 44318,
+    "build_jobs": 8514,
+    "public_examples": 7584,
+    "transitive_NLS_declarations": 44339,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4789,
-      "sha256": "5726490ec3f6a4304d6a52075b673fc32dd96763d8880a6465987ab8bb205adb"
+      "files": 4791,
+      "sha256": "da81553c11f2a8234c9500bb979d345fe26e49dbfcac9bc928ea763975bfc5b4"
     },
-    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
-    "validation_reused_from_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794"
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -31204,6 +31203,144 @@
       "declaration_inventory_count": 44318,
       "validation_reused_from_commit": "a3af8dfb5a9a46026b1e834967e66e1a9a6e7794",
       "source_record_sha256": "0dbed1e909a98b176aa397928b3ae881dc5ae34011d9e920be44db30d93ddfc2"
+    },
+    "Section10ComplexSideCalculationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4e4c8b490525ed1c77aaaacb6a016172e035c8dd",
+      "updated_utc": "2026-10-30T10:14:04.729669+00:00",
+      "source_lines": [
+        [
+          4691,
+          4726
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-052",
+          "source_lines": [
+            4691,
+            4726
+          ],
+          "requirement": "Arbitrary complex endpoint paths from opposite side traces and zero periods.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.tendsto_truncatedIntegral_eq_zero_of_common_boundary",
+            "NLS.ComplexAnalysis.cosineRootCoefficient_neg",
+            "NLS.ComplexAnalysis.cosineRootCoefficient_sq",
+            "NLS.ComplexAnalysis.exists_cosine_gap_primitive_chart",
+            "NLS.ComplexAnalysis.integral_cosineGapPoint_eq_zero_of_primitive",
+            "NLS.ComplexAnalysis.tendsto_truncatedPathIntegral_of_primitive_boundary",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexGapSidePathIntegral_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexSideIntegral_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexSideKernel_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_common_endpoint_limit",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_cosineIntegral_eq_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_curveIntegral_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPiecewisePath_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.exists_cutDisc_primitive",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_complexCalculation",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_common_endpoint_primitive",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryLimits",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundary_nonzero",
+            "NLS.ZakharovShabat.discriminant_derivative_div_canonicalRootGapLowerValue_eq_selectedFactor",
+            "NLS.ZakharovShabat.discriminant_derivative_div_canonicalRootGapUpperValue_eq_selectedFactor",
+            "NLS.ZakharovShabat.gapSideBoundaryIntegral_eq_primitive",
+            "NLS.ZakharovShabat.gapSidePathIntegral_eq_boundary",
+            "NLS.ZakharovShabat.gapSidePathIntegrand_intervalIntegrable",
+            "NLS.ZakharovShabat.sourceCanonicalRootGapUpperValue_eq_neg_lower",
+            "NLS.ZakharovShabat.sourceLemma10_11",
+            "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel",
+            "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_eq_selectedFactor",
+            "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_oriented_double",
+            "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_upper_eq_neg_lower"
+          ],
+          "reviewed_claims": [
+            "The noncollapsed complex gap has actual opposite full canonical-root boundary limits on its two affine sides. Upper and lower mean positive and negative imaginary transverse coordinates after applying the complex half-gap, so rotated and vertical gaps are included. Existing common-domain boundary data supplies isolation, omitted-product analyticity and nonzero interior traces.",
+            "The new general cosine-integral theorem uses a single-valued primitive, a continuous square root of the endpoint polynomial and a left endpoint limit. Opposite angles have the same spectral point and opposite nonzero root coefficients. Continuity identifies the regular angle-primitive endpoint values, and real FTC gives a zero full cosine integral. Neither gap endpoint is assumed real.",
+            "The source specialization uses the actual critical-root quotient primitive on the entire original cut disk and its full relative endpoint limit. The regular numerator is the selected critical factor times the analytic deleted quotient. The cosine integral and both selected-factor affine side integrals therefore vanish for every complex source in the unchanged W.",
+            "The new literal kernel is the complex half-gap Jacobian times the discriminant derivative divided by the full canonical-root upper or lower boundary value. On the gap interior it equals the selected-factor kernel, and it is interval-integrable through both square-root endpoints. Its actual affine boundary integral is zero on either side.",
+            "The positive boundary orientation goes from the left endpoint to the right on the lower/right side and returns on the upper/left side. The upper kernel is pointwise the negative lower kernel, so lower minus upper equals twice lower before integrating. The originalCircle_complexCalculation theorem assembles the literal circle = twice lower integral = minus twice upper integral = zero calculation on every original circle.",
+            "The full-circle equality reuses established zero periods, and the direct boundary calculation uses the whole-cut-disk primitive. It does not add a general shrinking-contour limit theorem for arbitrary numerators. The pointwise identity fixes the sign and factor two independently of vanishing; a vertical-gap example gives nonzero partial integrals +1 and -1.",
+            "Collapsed gaps are handled separately: the affine kernels have zero Jacobian, giving the totalized zero-length integral convention; no distinct sides or nonzero boundary traces are asserted there. Analytic removability supplies a common full endpoint limit for the primitive, so arbitrary admissible return paths have zero improper integral too.",
+            "The existing endpoint-path theorems use actual truncated path integrals with independently tending start and end parameters. They apply on the whole original disk to every interior C1 admissible path and every finite piecewise interior C1 chain, including corners, loops and self-intersections. Primitive differences telescope and the common endpoint limit makes the integral zero. No absolute integrability is needed for this improper statement; the ordinary curve-integral version retains its integrability hypothesis.",
+            "This primitive route proves the final admissible-path conclusion without requiring a chosen deformation. All signed indices, finite p>1, original disks and the unchanged common W are retained. The second new example checks the literal original-circle upper-side formula and endpoint integrability at p=3/2 and n=-1, without real-type or open-gap assumptions."
+          ],
+          "qualification": "The displayed opposite traces, signs and factor two match. The literal complex boundary integrals and their integrability are new positive proofs. The original-circle equality reuses zero periods, and the final arbitrary-path conclusion follows from full relative primitive limits instead of a new general contour-deformation theorem. The actual improper integrals use independent endpoint truncation. Collapsed affine boundary integrals use the zero-length convention; arbitrary collapsed endpoint paths are covered separately by analytic removability. No source correction or refutation is added."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "65d7a9e767fc6de4c97b78d9b22b45b9883ea67fc0bdb3af04d109ab942e9f12",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_11ComplexCalculation.lean": "a870a05a2b060dc6cc8b51af26c74acdd228ce394b6681f239b45592f5b30583",
+        "NLS/ZakharovShabat/SourceCriticalRootCommonEndpointLimit.lean": "2190319df146654616127d818c5c13d65d019490adbaea39362945885dfb9635",
+        "NLS/ZakharovShabat/SourceCriticalRootOriginalDiscPrimitive.lean": "2575e67fbf6fa910d55ac95018cbe4e2b756c79e6c2513478d5b4f8df0724bbc",
+        "NLS/ZakharovShabat/SourceCanonicalRootGapSides.lean": "7718f7a511ad899907e963be4e2955ea5fdce76cc3b342bb5f4e18878256be52",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioGapSides.lean": "ffda886715c415840d0f24b0ef016ebe733cacee40a0c6ed5e0a9a5375027b12",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideIntegral.lean": "4c7d3a506a893c72b4f16e2f6e27469568d905db6af81253c950e69f3e5c67d6",
+        "NLS/ZakharovShabat/SourceStandardRootGapSideImproper.lean": "d837de9a3b8fb75739c1210fa2097f4e2a61ebfd0e01d56b7840056d60af3ae8",
+        "NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean": "d85ec3e747162698acc063da4b1e2fde69f748e72797ef962eb64f95f43a52d3",
+        "NLS/ZakharovShabat/SourceAbelianComplexEndpointLimits.lean": "fc055fa9473151b15bc1e271ced8b145101645c45b17622104af07885c556452",
+        "NLS/ZakharovShabat/SourceAbelianComplexCollapsedExtension.lean": "349b3318e0e4dd72298d3d6da4f1897b7718ad666c8d5c81551a7928b8dc86a4",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean": "1e562c8eb11de2a0d77b7226686f862dc2d79fd039bfbae9185920cffc408357",
+        "NLS/ZakharovShabat/SourceCanonicalRootBoundaryDomain.lean": "f5ff742ff0d2ab34dc98fa2718a8579d0a108e6d154d0539cbd9616d1b8f6a7a",
+        "NLS/ZakharovShabat/SourceLemma10_11.lean": "00a2cb3ac7d02ab0a6a4e8ae5823c909a3c9d8cca832e64cfd957d5014d04a6f",
+        "NLS/ComplexAnalysis/CosineGapIntegralZero.lean": "5e751122ce5839ff461d9aaa94700c69ac0c57ca2a2e74c5954b6752006dc672",
+        "NLS/ComplexAnalysis/CosinePrimitiveEndpointAgreement.lean": "0e7145ae9c401f4d2afb0501d65b3f5021fb73152f898e2bd14b170af95d424c",
+        "NLS/ComplexAnalysis/CosineRootCoefficient.lean": "e48665b8748950614198b0b1783b5f8c7178c2fe39d7a70c2168e249b7d763a9",
+        "NLS/ComplexAnalysis/PiecewiseImproperPathIntegral.lean": "b06c6c0dd3f5d79ed9672445e5b8a23ab04a2f6006b4b953914ce06906714c8f",
+        "NLS/ComplexAnalysis/ImproperPrimitivePathIntegral.lean": "e92d1386e4a607c58a685e5c392fbd609760a747fb6677cbc522a2fad04b05a2"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          60
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-060.png": "4895fb49a68006fb8059b56a25c62ac84925ee23c088747523143d8b92fb84b6"
+        }
+      },
+      "qualification": "All 52 ordered Section 10 groups are compared: 44 matched and eight corrected occurrences. The final complex side-integral calculation in Lemma 10.11 now has literal canonical-root boundary kernels, endpoint integrability, pointwise orientation and the doubled original-circle formula. Actual independently truncated integrals vanish on all admissible finite piecewise interior C1 endpoint paths in the original disks, with the common W unchanged. This finishes the ordered Section 10 comparison, not the dissertation-wide assessment. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.tendsto_truncatedIntegral_eq_zero_of_common_boundary",
+        "NLS.ComplexAnalysis.cosineRootCoefficient_neg",
+        "NLS.ComplexAnalysis.cosineRootCoefficient_sq",
+        "NLS.ComplexAnalysis.exists_cosine_gap_primitive_chart",
+        "NLS.ComplexAnalysis.integral_cosineGapPoint_eq_zero_of_primitive",
+        "NLS.ComplexAnalysis.tendsto_truncatedPathIntegral_of_primitive_boundary",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexGapSidePathIntegral_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexSideIntegral_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.complexSideKernel_intervalIntegrable",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_common_endpoint_limit",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_cosineIntegral_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_curveIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPiecewisePath_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.exists_cutDisc_primitive",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_complexCalculation",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_common_endpoint_primitive",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundaryLimits",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.canonicalBoundary_nonzero",
+        "NLS.ZakharovShabat.discriminant_derivative_div_canonicalRootGapLowerValue_eq_selectedFactor",
+        "NLS.ZakharovShabat.discriminant_derivative_div_canonicalRootGapUpperValue_eq_selectedFactor",
+        "NLS.ZakharovShabat.gapSideBoundaryIntegral_eq_primitive",
+        "NLS.ZakharovShabat.gapSidePathIntegral_eq_boundary",
+        "NLS.ZakharovShabat.gapSidePathIntegrand_intervalIntegrable",
+        "NLS.ZakharovShabat.sourceCanonicalRootGapUpperValue_eq_neg_lower",
+        "NLS.ZakharovShabat.sourceLemma10_11",
+        "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel",
+        "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_eq_selectedFactor",
+        "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_oriented_double",
+        "NLS.ZakharovShabat.sourceLemma10_11ComplexSideKernel_upper_eq_neg_lower"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44339,
+      "source_record_sha256": "137d11b8a9965a9386e415f535f537ad5d7d6a87ea348b0dba8fd1fec646c593"
     }
   }
 }

@@ -1,4 +1,5 @@
 import NLS
+import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
 /-!
 Public-API checks: the `p=1` endpoint, a Hilbert exponent, a non-Hilbert exponent,
@@ -71503,3 +71504,55 @@ example {W V : Set (CoeffPair (3/2))}
   simpa only [sourceLemma10_11RealKernel,zero_add,zpow_one,neg_one_mul] using he
 
 end Section10RealCalculationExamples
+
+
+open NLS NLS.ZakharovShabat Set Complex MeasureTheory intervalIntegral
+open scoped ENNReal
+namespace Section10ComplexCalculationExamples
+
+-- A vertical complex gap with non-real midpoint has nonzero partial side
+-- integrals of opposite signs, checking orientation before full-gap vanishing.
+example :
+    gapSidePathIntegral (1+Complex.I) Complex.I (fun z => z-(1+Complex.I)) (-1) 0 true = 1 ∧
+    gapSidePathIntegral (1+Complex.I) Complex.I (fun z => z-(1+Complex.I)) (-1) 0 false = -1 := by
+  have hi : (∫ θ in Real.arccos 0..Real.pi,
+      ((1+Complex.I)+Complex.I*(Real.cos θ:ℂ)-(1+Complex.I))) = -Complex.I := by
+    simp only [add_sub_cancel_left,intervalIntegral.integral_const_mul,
+      intervalIntegral.integral_ofReal,Real.arccos_zero,integral_cos,
+      Real.sin_pi,Real.sin_pi_div_two,zero_sub,ofReal_neg,ofReal_one,mul_neg,mul_one]
+  constructor <;>
+    rw [gapSidePathIntegral_eq_boundary _ _ _ 0 I_ne_zero (by norm_num) (by norm_num),
+      gapSideBoundaryIntegral_eq_primitive _ _ _ 0 I_ne_zero] <;>
+    rw [gapSidePrimitive,hi] <;> simp
+
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem complex_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem complex_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨complex_one_lt_half.le⟩
+
+-- The original negative-index circle retains the actual boundary formula
+-- and endpoint integrability, with no real-type or open-gap assumption.
+example {W V : Set (CoeffPair (3/2))}
+    (h : SourceLemma10_11CircleData complex_half_ne_top complex_one_lt_half W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods complex_half_ne_top complex_one_lt_half V D c)
+    (ψ : CoeffPair (3/2)) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+    (o R : ℝ) (hR : 0 < R) (hDn : D (-1) = Metric.ball (o:ℂ) R) :
+    ((∮ z in C((o:ℂ),R), sourceCriticalRootRatioJoint complex_half_ne_top complex_one_lt_half (z,ψ)) =
+      -2 * (∫ t in (-1:ℝ)..1,
+        sourceStandardRootHalfGap complex_half_ne_top complex_one_lt_half ψ (-1) *
+          (deriv (canonicalDiscriminant complex_half_ne_top (periodOnePotential ψ))
+            (sourceCanonicalRootGapPoint complex_half_ne_top complex_one_lt_half ψ (-1) t) /
+              sourceCanonicalRootGapUpperValue complex_half_ne_top complex_one_lt_half ψ (-1) t))) ∧
+    IntervalIntegrable
+      (sourceLemma10_11ComplexSideKernel complex_half_ne_top complex_one_lt_half ψ (-1) true)
+      volume (-1) 1 := by
+  have hc := h.originalCircle_complexCalculation hD ψ hψW hψV (-1) o R hR hDn
+  refine ⟨?_,h.complexSideKernel_intervalIntegrable ψ hψW (-1)
+    (hD.periodCircle ψ hψV (-1) o R hR hDn) true⟩
+  simpa only [sourceLemma10_11ComplexSideKernel,ite_true] using hc.1.trans hc.2.1
+
+end Section10ComplexCalculationExamples
