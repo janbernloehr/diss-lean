@@ -1,6 +1,37 @@
 # Implementation status
 
-## Current milestone: Section 12 opening and Theorem 12.1
+## Current milestone: literal deleted spaces and functional equation
+
+Equation (2.22) now has a public interface on the dissertation's literal
+lp spaces indexed by the integers other than n. An explicit complex linear
+isometry identifies these spaces with the existing zero-at-n model by
+restriction and zero extension. Both input and output retain their exact
+norms, coordinates and zero solutions.
+
+The functional has precisely the signed factor n-m times the raw contour
+integral. The numerator in (2.23) retains its literal -2/pi_n product for
+arbitrary complex lp inputs. Every original circle computes the same
+coordinate, and the simultaneous root family solves the full equation on
+its unchanged common domain.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+six matched mathematical groups and 61 pending. No constant correction or
+new refutation was needed in this step.
+
+Full validation passed: 8,521 build jobs, 7,595 public examples and
+44,399 transitively audited NLS declarations, with 21 inherited warnings.
+Both new modules and the four focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Next are Lemmas 12.2 and 12.3 with their explicit contour admissibility.
+Section 7's physical NLS Dirichlet motion and unrestricted psi characterization,
+the exact cited 2014 construction, Appendix G.2 norm interpretation and broader
+source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 12 opening and Theorem 12.1
 
 The opening of Section 12 and the full statement of Theorem 12.1 now have
 ordered source comparisons. One common complex neighborhood supports the

@@ -71716,3 +71716,46 @@ example (n : ℤ) :
     sourceNormalizedActionComplexExtension_zero_source]
 
 end Section11TailConvergenceExamples
+
+section Section12DeletedIndexExamples
+open NLS.ZakharovShabat Set Complex
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Zero extension preserves the fractional-exponent norm and every retained coordinate.
+example (a : DeletedIndexCoeff (ENNReal.ofReal (3/2)) 0) :
+    let b : DeletedCoeff (ENNReal.ofReal (3/2)) 0 :=
+      (DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top 0).symm a
+    ‖b‖ = ‖a‖ ∧ (b : Coeff (ENNReal.ofReal (3/2))) 0 = 0 ∧
+      (b : Coeff (ENNReal.ofReal (3/2))) (-2) = a ⟨-2,by decide⟩ := by
+  dsimp only
+  exact ⟨(DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top 0).symm.norm_map a,
+    ((DeletedCoeff.indexEquiv (p := ENNReal.ofReal (3/2)) ENNReal.ofReal_ne_top 0).symm a).property,
+    DeletedCoeff.indexEquiv_symm_apply_other (p := ENNReal.ofReal (3/2))
+      ENNReal.ofReal_ne_top 0 (-2) (by decide) a⟩
+
+-- The endpoint Banach space also has the exact norm, without a comparison constant.
+example (a : DeletedCoeff 1 (-3)) :
+    ‖DeletedCoeff.indexEquiv (by norm_num) (-3) a‖ = ‖a‖ :=
+  (DeletedCoeff.indexEquiv (by norm_num) (-3)).norm_map a
+
+-- The literal equation retains the signed factor n-m=-5, with no 2pi prefactor.
+example {W : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair 4) (hψ : ψ ∈ W) (a : DeletedIndexCoeff 4 (-2))
+    (D : SourceCriticalRootPeriodCircle (by norm_num) (by norm_num) ψ 3) :
+    sourcePsiDeletedIndexEquation (by norm_num) (by norm_num) (-2) ψ a ⟨3,by decide⟩ =
+      (-5 : ℂ) * (∮ z in C((D.center : ℂ),D.radius),
+        sourcePsiCandidate (-2) (z,((DeletedCoeff.indexEquiv (by norm_num) (-2)).symm a : Coeff 4)) /
+          sourceCanonicalRoot (by norm_num) (by norm_num) ψ z) := by
+  simpa using H.deletedIndexEquation_apply ψ hψ (-2) a ⟨3,by decide⟩ D
+
+-- The same analytic roots solve the equation after changing both sequence representations.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (H : SourceTheorem12_1Data hp hp1 W₀ W s) (hW₀ : IsOpen W₀)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourcePsiDeletedIndexEquation hp hp1 n ψ (DeletedCoeff.indexEquiv hp n (s n ψ)) = 0 :=
+  H.deletedIndexEquation_zero hW₀ ψ hψ n
+
+end Section12DeletedIndexExamples

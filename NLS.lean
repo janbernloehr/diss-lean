@@ -1060,6 +1060,7 @@ import NLS.ComplexAnalysis.RealCircleIntegralReflection
 import NLS.ComplexAnalysis.LocalRealAxisDerivative
 import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
 import NLS.SequenceSpaces.DeletedCoordinate
+import NLS.SequenceSpaces.DeletedCoordinateEquiv
 import NLS.SequenceSpaces.DeletedOperatorExtension
 import NLS.SequenceSpaces.UniformInverseBound
 import NLS.SequenceSpaces.FiniteBlockOperatorConvergence
@@ -3571,6 +3572,7 @@ import NLS.ZakharovShabat.SourcePsiOriginalSequenceBound
 import NLS.ZakharovShabat.SourcePsiOriginalEquation
 import NLS.ZakharovShabat.SourcePsiOriginalEquationAnalytic
 import NLS.ZakharovShabat.SourceLemma12_4
+import NLS.ZakharovShabat.SourcePsiDeletedIndexEquation
 import NLS.ZakharovShabat.SourcePsiDoubleOmittedProduct
 import NLS.ZakharovShabat.SourcePsiOriginalQuotientError
 import NLS.ZakharovShabat.SourcePsiOriginalRatioEstimate

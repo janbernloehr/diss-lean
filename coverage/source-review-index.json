@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T12:56:28.472391+00:00",
-  "base_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
+  "published_utc": "2026-10-30T13:28:51.285991+00:00",
+  "base_commit": "b17c18f6217f51d8a1bd5f904b668d446f44460c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 135,
-    "module_hash_checks": 2400,
-    "distinct_modules": 1462
+    "review_records": 136,
+    "module_hash_checks": 2415,
+    "distinct_modules": 1472
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f",
-    "validated_state": "Exact unchanged Lean sources and dependency locks from full gate 53499 at 1924ecd112a5f879d688eadbfde592dfd60ba88f. Documentation adds the Section 12 ordered inventory: four matched mathematical groups and 63 pending. Existing qualifications and all earlier review records are unchanged.",
+    "base_commit": "b17c18f6217f51d8a1bd5f904b668d446f44460c",
+    "validated_state": "New exact deleted-index isometry and equation transport, four public examples and ordered comparison of (2.22)-(2.23). Full gate 89324 observed successful on this exact Lean source and dependency-lock snapshot; wider qualifications remain.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8519,
-    "public_examples": 7591,
-    "transitive_NLS_declarations": 44370,
+    "build_jobs": 8521,
+    "public_examples": 7595,
+    "transitive_NLS_declarations": 44399,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4796,
-      "sha256": "598d368501f16dda355fb2926d9171816598c10a9ebb8648c85eb14a279a670d"
+      "files": 4798,
+      "sha256": "ef36a877899c63cc87443ab245e63575a17ceadaadd19d792440697298c64323"
     },
-    "qualification": "Current full build, public examples and transitive axiom audit passed; source-review integrity checks recorded evidence and do not independently certify semantic completeness.",
-    "validation_reused_from_commit": "1924ecd112a5f879d688eadbfde592dfd60ba88f"
+    "qualification": "Full build, public examples and transitive axiom audit passed. Review integrity checks recorded evidence, not mathematical completeness."
   },
   "named_statements": [
     {
@@ -33198,6 +33197,164 @@
       },
       "ordered_inventory_sha256": "900a68f17d4718447625a4bf5c262dade0733d0513eb107ba679c346e48fad99",
       "source_record_sha256": "c8411dc30a4e7cac0e9d89df08cae11dd82558dc2633b6d785536324e27ea235"
+    },
+    "Section12FunctionalSetupSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b17c18f6217f51d8a1bd5f904b668d446f44460c",
+      "updated_utc": "2026-10-30T13:28:51.285991+00:00",
+      "source_lines": [
+        [
+          4978,
+          4989
+        ],
+        [
+          4991,
+          5004
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S12-005",
+          "source_lines": [
+            4978,
+            4989
+          ],
+          "requirement": "Deleted complex coefficient spaces and the functional equation F^n=0.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.DeletedCoeff",
+            "NLS.DeletedIndexCoeff",
+            "NLS.DeletedCoeff.indexEquiv",
+            "NLS.DeletedCoeff.indexEquiv_apply",
+            "NLS.DeletedCoeff.indexEquiv_symm_apply_other",
+            "NLS.ZakharovShabat.sourcePsiOriginalEquation",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply",
+            "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation",
+            "NLS.ZakharovShabat.norm_sourcePsiDeletedIndexEquation",
+            "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation_eq_zero_iff",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.originalEquation_zero",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.deletedIndexEquation_zero"
+          ],
+          "reviewed_claims": [
+            "The source uses lp on the integers other than n. The existing DeletedCoeff is the closed kernel of coordinate evaluation in integer-indexed lp. The new DeletedCoeff.indexEquiv is an explicit complex linear isometry between these spaces for every finite Banach exponent, with restriction as forward map and zero extension as inverse.",
+            "The proof of norm equality identifies the two power sums because the omitted coordinate is zero. Both inverse laws and the retained-coordinate formulas are proved, with no norm comparison constant.",
+            "The actual original equation is a deleted lp-valued sequence, characterized by its contour coordinates for every original period circle and every input on the full original source domain. Existence there excludes the total definition's zero fallback. A positive three-displacement majorant proves actual lp membership.",
+            "The new source-first map transports both input and output to the literal retained-index spaces. It preserves the exact full equation norm and has precisely the same zero solutions. The simultaneous family of Theorem 12.1 solves this equation on the same common W."
+          ],
+          "qualification": "The functional setup matches with an explicit norm-preserving identification of the source spaces. This compares the equation and its actual sequence-valued realization, not the later printed implicit-function proof. Lemma 12.4's analyticity and uniform bounds remain separate ordered groups."
+        },
+        {
+          "ordered_group": "S12-006",
+          "source_lines": [
+            4991,
+            5004
+          ],
+          "requirement": "Exact scalar functional and numerator in equations (2.22) and (2.23).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceGapFunctional",
+            "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral",
+            "NLS.ZakharovShabat.sourceGapFunctional_candidate_circle",
+            "NLS.ZakharovShabat.tendsto_sourcePsiCandidate_literalProduct",
+            "NLS.ZakharovShabat.sourcePsiCandidate_eq_of_off_index",
+            "NLS.ZakharovShabat.sourcePsiCandidate_eq_deletedCandidate",
+            "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_deletedCoordinate",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_eq",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_circuit",
+            "NLS.ZakharovShabat.SourceTheorem12_1Data.equation_zero",
+            "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_apply"
+          ],
+          "reviewed_claims": [
+            "A_m^n is exactly (n-m) times the raw contour integral of f divided by the canonical square root. Equation (2.22) has no 1/(2pi) or imaginary normalization. The factor 2pi in the existing coordinate definition cancels the normalized period prefactor exactly.",
+            "Equation (2.23) is the literal symmetric-product limit with prefactor -2/pi_n and factors (pi*k+s_k-lambda)/pi_k for k!=n, including pi_0=1. Every arbitrary complex lp input is allowed; no gap placement or equation-zero assumption is needed.",
+            "The product and scalar coordinates ignore the omitted ambient coordinate, so coordinate deletion and the new isometric representation preserve their values. The new full-map coordinate theorem retains the signed n-m factor on every original circle.",
+            "All original circle families give the same scalar coordinate. A finite piecewise C1 circuit inside the original cut disk gives that coordinate multiplied by its actual winding. For winding one this is the printed equation; the simultaneous roots solve it."
+          ],
+          "qualification": "Both displays match with their exact signs and constants. The original contour geometry is retained, and arbitrary input roots need not lie in the spectral gaps. The next local-numerator lemmas require their separately recorded admissibility conditions; these entire-product identities do not remove those conditions."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/DeletedCoordinate.lean": "ba402aa72f451e80885a8145cd6d9e7ef4748c9785c9e140bb0da22dcb4f0632",
+        "NLS/SequenceSpaces/DeletedCoordinateEquiv.lean": "94753c776853f3fe675c4e496250d13db8b692edad5620ffdb33093e6d3c75cf",
+        "NLS/ZakharovShabat/SourceEquation2_22.lean": "b4c31638eea978470ae5e619c34a0b02c4648e67c32ed5c9c5b7605cb7775a3b",
+        "NLS/ZakharovShabat/SourcePsiDeletedCoordinate.lean": "0efb56c00132a2cd9a6b998c9d376501c83dedb2501829c2523902e7021edb0f",
+        "NLS/ZakharovShabat/SourceGapFunctional.lean": "4c35ffd3e5d906d32381699a536f55c2fe43b65f2ba1b05097da06fc75d15cb9",
+        "NLS/ZakharovShabat/SourceLemma12_4.lean": "ebe1aeff869525a6cccffa7b1bd4fb305b3b09d4d0ee2155bbde5ead6002931d",
+        "NLS/ZakharovShabat/SourcePsiOriginalEquation.lean": "023b617909d062d071f0b8ca9dac94f468749961418f99612b564d1d9b25992b",
+        "NLS/ZakharovShabat/SourcePsiContourAnalytic.lean": "417c337345525907491c35a1c09f0ed23c8e6b37a515d02dba74cc1faf658d1c",
+        "NLS/ZakharovShabat/SourcePsiOriginalSequenceBound.lean": "17ae291d01851af2c2776780f110786113c551d1bcd50323ab418b6a87410e37",
+        "NLS/ZakharovShabat/SourcePsiOriginalCoordinateBound.lean": "ce5876e8af216e1dc8e7d2dda5ad7ea8de83fb9d22de86a1dfe1466483504bc9",
+        "NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean": "cedfb323a53f4a1197aa0d9e4faa2980d4be93cbd1f66d50b5052d945e162714",
+        "NLS/ZakharovShabat/SourceTheorem12_1Functions.lean": "2867920ef43b1956b37d7b1442edead7fe9a33e7630d78ed5a5546581af04c25",
+        "NLS/ZakharovShabat/SourcePsiCandidate.lean": "e1557015a2fc310df4054fe456dc8ff5fa7ca245d943fbbbe8bb0f0fb5e6c456",
+        "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean": "641481efa3d7d4fbda54acf566f36902fe8499b17c645547a87151276e5c0857",
+        "NLS/ZakharovShabat/SourcePsiOriginalQuotientBound.lean": "51ace66e5a7c62b570ecdecadb9162f260b9faeea295a6278907e8a69837247b"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_body_comparison": {
+        "file": "work/Section12OpeningSourceComparison-2026-10-30.json",
+        "sha256": "c8411dc30a4e7cac0e9d89df08cae11dd82558dc2633b6d785536324e27ea235",
+        "modules": [
+          "NLS/ZakharovShabat/SourceTheorem12_1Functions.lean",
+          "NLS/ZakharovShabat/SourcePsiCandidate.lean",
+          "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean"
+        ]
+      },
+      "ordered_inventory": "coverage/SECTION_12_ASSERTIONS.md",
+      "resolved_declarations": [
+        "NLS.DeletedCoeff",
+        "NLS.DeletedCoeff.indexEquiv",
+        "NLS.DeletedCoeff.indexEquiv_apply",
+        "NLS.DeletedCoeff.indexEquiv_symm_apply_other",
+        "NLS.DeletedIndexCoeff",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_circuit",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_eq",
+        "NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_apply",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.deletedIndexEquation_zero",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.equation_zero",
+        "NLS.ZakharovShabat.SourceTheorem12_1Data.originalEquation_zero",
+        "NLS.ZakharovShabat.norm_sourcePsiDeletedIndexEquation",
+        "NLS.ZakharovShabat.sourceGapFunctional",
+        "NLS.ZakharovShabat.sourceGapFunctional_candidate_circle",
+        "NLS.ZakharovShabat.sourcePsiCandidate_eq_deletedCandidate",
+        "NLS.ZakharovShabat.sourcePsiCandidate_eq_of_off_index",
+        "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation",
+        "NLS.ZakharovShabat.sourcePsiDeletedIndexEquation_eq_zero_iff",
+        "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_deletedCoordinate",
+        "NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral",
+        "NLS.ZakharovShabat.sourcePsiOriginalEquation",
+        "NLS.ZakharovShabat.tendsto_sourcePsiCandidate_literalProduct"
+      ],
+      "declaration_inventory_count": 44399,
+      "qualification": "The first six of 67 ordered Section 12 groups are compared: six matched mathematical groups and 61 pending. The deleted input and output spaces now have an explicit exact linear isometry to lp on the retained integers. The actual functional preserves its full norm, signed n-m contour coordinates and zero solutions under this identification. Equations (2.22)-(2.23) retain the raw integral and -2/pi_n product normalization. The opening cited-construction attribution remains contextual. Later contour-admissibility, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          63
+        ],
+        "images": {
+          "work/tmp/pdfs/section12-opening-063.png": "76a88a3142600e0a968d02ffb040786b459aca8d77df27c9a21c97b3a278c1a8"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4798,
+        "sha256": "ef36a877899c63cc87443ab245e63575a17ceadaadd19d792440697298c64323"
+      },
+      "full_gate": {
+        "session": 89324,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12FunctionalSetupFullCheck-1.log",
+        "log_sha256": "534f97aeaadcb3d7b7f37c7cd6276f8b8fe88ff87738b9e2210b20c34ac68776"
+      },
+      "ordered_inventory_sha256": "aef46719f71acd58a3e3a3eba5bc059e55e4eb8516b12cffd7177f87ae366fda",
+      "source_record_sha256": "1001c0350587bf8d8553bb7206e71b179cf1d30db6c18e5fa78524f89ac6dea9"
     }
   }
 }

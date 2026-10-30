@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first four of 67 ordered Section 12 groups are compared: four matched mathematical groups and 63 pending. The common neighborhood, literal -2/pi_n product, 1/(2pi) Kronecker periods, analytic roots and locally uniform all-index squared-gap lp bounds match. The opening cited-construction attribution is contextual, not independently verified. Later printed proof assertions remain pending, preserving existing contour-admissibility, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first six of 67 ordered Section 12 groups are compared: six matched mathematical groups and 61 pending. The deleted input and output spaces now have an explicit exact linear isometry to lp on the retained integers. The actual functional preserves its full norm, signed n-m contour coordinates and zero solutions under this identification. Equations (2.22)-(2.23) retain the raw integral and -2/pi_n product normalization. The opening cited-construction attribution remains contextual. Later contour-admissibility, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-four groups have the semantic comparisons below. Earlier named-theorem
+six groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -17,8 +17,8 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-002 | 63 | 4946–4952 | Adaptation of the cited construction; common original circuits and collars, joint standard-root analyticity. | matched |
 | S12-003 | 63 | 4954–4965 | Theorem 12.1: one neighborhood, entire functions and exact Kronecker periods (2.21). | matched |
 | S12-004 | 63 | 4967–4975 | Theorem 12.1: analytic roots, squared-gap lp offsets uniform in the deleted index, real gap placement and free values. | matched |
-| S12-005 | 63 | 4978–4989 | Deleted complex coefficient spaces and the functional equation F^n=0. | pending |
-| S12-006 | 63 | 4991–5004 | Exact scalar functional and numerator in equations (2.22) and (2.23). | pending |
+| S12-005 | 63 | 4978–4989 | Deleted complex coefficient spaces and the functional equation F^n=0. | matched |
+| S12-006 | 63 | 4991–5004 | Exact scalar functional and numerator in equations (2.22) and (2.23). | matched |
 | S12-007 | 64 | 5006–5021 | Lemma 12.2: a zero real gap functional gives a zero of the analytic numerator in the gap. | pending |
 | S12-008 | 64 | 5025–5042 | Lemma 12.3: contour supremum bound and real mean-value identity with exact sign and constants. | pending |
 | S12-009 | 64 | 5044–5061 | Lemma 12.4: full-domain real analyticity and local lp power-sum bounds uniform in the deleted index. | pending |
@@ -171,5 +171,70 @@ source and dependency-lock snapshot matches the full validation at `1924ecd`:
 declarations, with 21 inherited warnings. Source-review integrity and local
 documentation-link checks pass for the new records.
 
-Continue with S12-005 and S12-006: the deleted coefficient spaces, functional
-equation and exact scalar normalization in (2.22)–(2.23).
+The following subsection compares the deleted spaces and equations (2.22)–(2.23).
+
+## Deleted sequence spaces and the functional equation
+
+### S12-005: Deleted complex coefficient spaces and the functional equation F^n=0.
+
+- The source uses lp on the integers other than n. The existing DeletedCoeff is the closed kernel of coordinate evaluation in integer-indexed lp. The new DeletedCoeff.indexEquiv is an explicit complex linear isometry between these spaces for every finite Banach exponent, with restriction as forward map and zero extension as inverse.
+- The proof of norm equality identifies the two power sums because the omitted coordinate is zero. Both inverse laws and the retained-coordinate formulas are proved, with no norm comparison constant.
+- The actual original equation is a deleted lp-valued sequence, characterized by its contour coordinates for every original period circle and every input on the full original source domain. Existence there excludes the total definition's zero fallback. A positive three-displacement majorant proves actual lp membership.
+- The new source-first map transports both input and output to the literal retained-index spaces. It preserves the exact full equation norm and has precisely the same zero solutions. The simultaneous family of Theorem 12.1 solves this equation on the same common W.
+
+Public declarations:
+
+- `NLS.DeletedCoeff`
+- `NLS.DeletedIndexCoeff`
+- `NLS.DeletedCoeff.indexEquiv`
+- `NLS.DeletedCoeff.indexEquiv_apply`
+- `NLS.DeletedCoeff.indexEquiv_symm_apply_other`
+- `NLS.ZakharovShabat.sourcePsiOriginalEquation`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_exists`
+- `NLS.ZakharovShabat.SourceCorollary10_6Data.originalEquation_apply`
+- `NLS.ZakharovShabat.sourcePsiDeletedIndexEquation`
+- `NLS.ZakharovShabat.norm_sourcePsiDeletedIndexEquation`
+- `NLS.ZakharovShabat.sourcePsiDeletedIndexEquation_eq_zero_iff`
+- `NLS.ZakharovShabat.SourceTheorem12_1Data.originalEquation_zero`
+- `NLS.ZakharovShabat.SourceTheorem12_1Data.deletedIndexEquation_zero`
+
+The functional setup matches with an explicit norm-preserving identification of the source spaces. This compares the equation and its actual sequence-valued realization, not the later printed implicit-function proof. Lemma 12.4's analyticity and uniform bounds remain separate ordered groups.
+
+### S12-006: Exact scalar functional and numerator in equations (2.22) and (2.23).
+
+- A_m^n is exactly (n-m) times the raw contour integral of f divided by the canonical square root. Equation (2.22) has no 1/(2pi) or imaginary normalization. The factor 2pi in the existing coordinate definition cancels the normalized period prefactor exactly.
+- Equation (2.23) is the literal symmetric-product limit with prefactor -2/pi_n and factors (pi*k+s_k-lambda)/pi_k for k!=n, including pi_0=1. Every arbitrary complex lp input is allowed; no gap placement or equation-zero assumption is needed.
+- The product and scalar coordinates ignore the omitted ambient coordinate, so coordinate deletion and the new isometric representation preserve their values. The new full-map coordinate theorem retains the signed n-m factor on every original circle.
+- All original circle families give the same scalar coordinate. A finite piecewise C1 circuit inside the original cut disk gives that coordinate multiplied by its actual winding. For winding one this is the printed equation; the simultaneous roots solve it.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourceGapFunctional`
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_raw_circleIntegral`
+- `NLS.ZakharovShabat.sourceGapFunctional_candidate_circle`
+- `NLS.ZakharovShabat.tendsto_sourcePsiCandidate_literalProduct`
+- `NLS.ZakharovShabat.sourcePsiCandidate_eq_of_off_index`
+- `NLS.ZakharovShabat.sourcePsiCandidate_eq_deletedCandidate`
+- `NLS.ZakharovShabat.sourcePsiEquationCoordinate_eq_deletedCoordinate`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_eq`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psiEquation_circuit`
+- `NLS.ZakharovShabat.SourceTheorem12_1Data.equation_zero`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.deletedIndexEquation_apply`
+
+Both displays match with their exact signs and constants. The original contour geometry is retained, and arbitrary input roots need not lie in the spectral gaps. The next local-numerator lemmas require their separately recorded admissibility conditions; these entire-product identities do not remove those conditions.
+
+The [exact sequence-space equivalence](../NLS/SequenceSpaces/DeletedCoordinateEquiv.lean)
+and [literal-index equation](../NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean)
+make the source representation explicit. The [raw functional](../NLS/ZakharovShabat/SourceGapFunctional.lean)
+and [actual original sequence](../NLS/ZakharovShabat/SourcePsiOriginalEquation.lean)
+retain the source formula and domain.
+This comparison records 15 inspected or reused module bodies and 24 resolved declarations.
+
+Full validation passed: 8,521 build jobs, 7,595 public examples and
+44,399 transitively audited NLS declarations, with 21 inherited warnings.
+Both new modules and the four focused examples add no warnings. No admitted
+proofs, additional axioms or heartbeat overrides were introduced. Source-review
+integrity and documentation-link checks pass for the new records.
+
+Continue with S12-007 and S12-008: the local numerator zero implication and
+the standard-root contour estimate, retaining explicit contour admissibility.

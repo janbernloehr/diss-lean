@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 12 comparison](coverage/SECTION_12_ASSERTIONS.md)
-matches the opening and full statement of Theorem 12.1: one common domain,
-the literal -2/pi_n product, 1/(2pi) periods and uniform squared-gap root bounds.
-Four of 67 groups are compared; 63 remain pending, starting with equations
-(2.22)–(2.23). The [completion assessment](coverage/COMPLETENESS.md)
-retains the wider qualifications.
+Latest step: the [literal deleted-index equation](NLS/ZakharovShabat/SourcePsiDeletedIndexEquation.lean)
+uses an [exact sequence-space isometry](NLS/SequenceSpaces/DeletedCoordinateEquiv.lean)
+and preserves the contour coordinates, norms and solutions of (2.22).
+The [Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) has six matched
+groups and 61 pending. Next are Lemmas 12.2–12.3. The
+[completion assessment](coverage/COMPLETENESS.md) retains wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

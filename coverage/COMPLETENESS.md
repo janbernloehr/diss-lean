@@ -179,11 +179,12 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-The first four mathematical groups match: the common neighborhood, literal
-product, exact Kronecker periods, analytic roots and uniform squared-gap lp
-bounds, including collapse. The cited-construction attribution is contextual;
-63 later groups remain pending, starting with equations (2.22)–(2.23).
-The earlier focused Section 12 comparisons and their qualifications remain.
+The first six mathematical groups match. The literal deleted-index lp spaces
+now have an exact linear isometry to the existing model; the full equation
+preserves its norms, signed contour coordinates and zero solutions. Both
+equations (2.22)–(2.23) retain their exact constants. The cited-construction
+attribution remains contextual; 61 later groups remain pending, starting
+with Lemmas 12.2–12.3. Earlier focused comparisons and qualifications remain.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
