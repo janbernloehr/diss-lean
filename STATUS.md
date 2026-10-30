@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: complete ordered Section 13 comparison
+## Current milestone: ordered Section 14 overview comparison
+
+The eighteen passage groups in Section 14's overview are now classified:
+thirteen matched, one with an explicit common-domain restriction, one
+partial external comparison and three contextual remarks.
+
+All five properties of Theorem 14.1 hold for the actual rectangular map
+on the constructed compatible complex neighborhood. The review records
+the precise domain V inside the earlier angular W, retaining the original
+root family, actions and integral-defined angles. It checks exact phases,
+complex exponent overlaps, actual canonical derivatives, injectivity,
+analytic local inverses and open dense image. The global analytic inverse
+is asserted for 1<p<=2. Native weighted proofs supply positive smoothness.
+
+The proof outline is made precise using local inverse branches for
+finite-gap collision approximation, canonical mode preimages and the
+compact-perturbation Fredholm argument. The actual angle flows give the
+stronger-exponent displacement used in the surjectivity reduction.
+
+The exact comparison with the 2014 edition of [23] remains unresolved.
+The p>2 open question is recorded as a historical statement; the proposed
+minimal decay and related-equation references are contextual.
+
+This step freshly inspected 49 module bodies and resolved 70 declarations.
+Existing proofs supply the mathematical results. No Lean theorem,
+definition, example or refutation was added.
+
+See the [ordered Section 14 ledger](coverage/SECTION_14_ASSERTIONS.md).
+
+This documentation-only step reuses the exact Lean and dependency snapshot of commit `5e8a261`. The completed full check on that snapshot passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+
+Next is Section 15, Analyticity. The overview comparison does not certify
+the later Chapter 3 arguments or the whole dissertation; wider qualifications
+remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: complete ordered Section 13 comparison
 
 All fourteen ordered passage groups in Section 13, Angles, now have
 comparisons against the existing original-domain proofs. The literal eta

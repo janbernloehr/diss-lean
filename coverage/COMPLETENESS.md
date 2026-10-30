@@ -199,8 +199,20 @@ common neighborhood, and pointwise index decay. The canonical brackets
 use actual differentials with absolutely convergent Fourier pairings;
 exponent compatibility explicitly includes the range below two.
 Existing proofs suffice, with no new correction or refutation. The exact
-cited edition of [23] remains unaudited. Next is the ordered comparison
-of Section 14, Overview; the wider qualifications below remain in force.
+cited edition of [23] remains unaudited; the wider qualifications below remain in force.
+
+The [ordered Section 14 ledger](SECTION_14_ASSERTIONS.md) classifies all
+eighteen overview groups: thirteen matched, one explicit common-domain
+restriction, one partial external comparison and three contextual remarks.
+The actual original-family map has all five Theorem 14.1 properties on the
+constructed compatible complex neighborhood V inside the preceding W.
+The review does not identify V with an arbitrarily fixed earlier W.
+Native weighted proofs cover the positive-smoothness extension. The proof
+outline records the actual local-inverse, finite-gap, Fredholm and flow
+arguments. The exact 2014 [23] comparison remains unresolved, and the
+historical open-problem and heuristic remarks are not promoted to theorems.
+Next is the ordered comparison of Section 15, Analyticity. Later Chapter 3
+arguments and the wider dissertation qualifications remain to be reviewed.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

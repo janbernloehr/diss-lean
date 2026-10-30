@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 13 comparison](coverage/SECTION_13_ASSERTIONS.md)
-matches all fourteen passage groups against the original-domain proofs.
-Actual angular integrals, local analytic representatives, uniform beta
-estimates, convergent series and canonical brackets retain the original
-domain and cover every finite p greater than one. Existing proofs supply
-the results; path regularity, open-gap domains and series quantifiers are
-recorded explicitly. Next is Section 14, Overview; wider qualifications
-remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [ordered Section 14 overview comparison](coverage/SECTION_14_ASSERTIONS.md)
+classifies eighteen passage groups. All five Theorem 14.1 properties are
+supported on the constructed compatible complex neighborhood, with its
+restriction from the earlier angular domain made explicit. The review also
+checks positive smoothness and the proof outline. The exact cited 2014
+construction comparison remains unresolved. Next is Section 15, Analyticity;
+wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

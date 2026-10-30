@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T19:57:37.982089+00:00",
-  "base_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
+  "published_utc": "2026-10-30T20:06:43.602114+00:00",
+  "base_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 152,
-    "module_hash_checks": 3175,
-    "distinct_modules": 1760
+    "review_records": 153,
+    "module_hash_checks": 3224,
+    "distinct_modules": 1785
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a",
-    "validated_state": "Documentation-only comparison of all fourteen Section 13 groups. The exact Lean and dependency-lock snapshot is unchanged from the preceding validated commit. The successful full gate is reused, not rerun. All fourteen groups match with explicit domain and quantifier scope.",
+    "base_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
+    "validated_state": "Documentation-only ordered Section 14 overview comparison. All eighteen groups are classified with the domain restriction, exact-edition gap and contextual remarks explicit. The Lean and dependency-lock snapshot is unchanged; successful full gate 21942 is reused, not rerun.",
     "command": "./scripts/check.sh",
     "build_jobs": 8557,
     "public_examples": 7631,
@@ -41,7 +41,7 @@
       "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
     },
     "qualification": "Reused successful Lean validation on this exact snapshot. Current review-integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "b05a5f219472f06fdabdbfdb6762b14fbcdfbc4a"
+    "validation_reused_from_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99"
   },
   "named_statements": [
     {
@@ -38022,6 +38022,648 @@
         "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
       },
       "source_record_sha256": "96f82b6970c571023d774568c97b5e9be0890199413c9ee2a2f5807cb372a0c8"
+    },
+    "Section14OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
+      "updated_utc": "2026-10-30T20:06:43.602114+00:00",
+      "source_lines": [
+        [
+          5921,
+          5928
+        ],
+        [
+          5930,
+          5933
+        ],
+        [
+          5934,
+          5938
+        ],
+        [
+          5940,
+          5945
+        ],
+        [
+          5947,
+          5950
+        ],
+        [
+          5954,
+          5954
+        ],
+        [
+          5956,
+          5956
+        ],
+        [
+          5958,
+          5961
+        ],
+        [
+          5963,
+          5965
+        ],
+        [
+          5968,
+          5968
+        ],
+        [
+          5970,
+          5970
+        ],
+        [
+          5972,
+          5973
+        ],
+        [
+          5983,
+          5987
+        ],
+        [
+          5989,
+          5991
+        ],
+        [
+          5992,
+          5996
+        ],
+        [
+          5997,
+          5999
+        ],
+        [
+          6000,
+          6002
+        ],
+        [
+          6003,
+          6008
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S14-001",
+          "source_lines": [
+            5921,
+            5928
+          ],
+          "printed_page": 73,
+          "requirement": "The common action domain and exact factorization 4I=xi^2*gamma^2.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.factorization",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain"
+          ],
+          "reviewed_claims": [
+            "Intersect the retained Section 12 domain with the normalized-action domain supplied from its own preceding Section 11 data. This open intersection contains the entire real locus and retains the original indexed actions, principal roots and normalized psi family.",
+            "The actual indexed action agrees with the constructed complex action there. Write a for the analytic normalized-action factor, equal to I/gamma^2 off the closed-gap locus. The identities I=gamma^2*a and xi^2=4*a give the displayed identity also at collapsed complex gaps, without dividing by a zero gap."
+          ],
+          "qualification": "Matched on a common neighborhood chosen for these objects. The Section 11 root neighborhood need not equal the preceding domain; S14-004 records the subsequent common-domain restriction explicitly."
+        },
+        {
+          "ordered_group": "S14-002",
+          "source_lines": [
+            5930,
+            5933
+          ],
+          "printed_page": 73,
+          "requirement": "The literal theta and analytic closed-gap locus.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.squared_gap_analytic",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.gapZeroLocus_isClosed"
+          ],
+          "reviewed_claims": [
+            "Theta is the original eta-plus-beta sum, with local analytic representatives modulo pi on its own open-gap locus. All these data restrict to the chosen common neighborhood.",
+            "Z_n is exactly the zero set of the actual squared canonical gap. Its defining scalar function is complex analytic and its zero set is relatively closed. This supplies the analytic-subvariety assertion in the sense of a set defined by an analytic equation."
+          ],
+          "qualification": "No smooth-manifold or nonsingularity assertion about Z_n is inferred, and no theta value at its own collapsed gap is required."
+        },
+        {
+          "ordered_group": "S14-003",
+          "source_lines": [
+            5934,
+            5938
+          ],
+          "printed_page": 73,
+          "requirement": "Equation (3.1), including exact phase and positive sine orientation.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_plus",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffWeighted_original_formula",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffXY_original_formula",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.rectangular_formula"
+          ],
+          "reviewed_claims": [
+            "The left-endpoint model normalization identifies gamma*exp(i*eta) exactly with the constructed terminal coordinate. The exact product identity identifies the negative phase as well.",
+            "Multiplication by the principal xi and the beta correction gives x=(xi*gamma/sqrt(2))*cos(theta) and y=(xi*gamma/sqrt(2))*sin(theta) at every complex open gap. The actual sequence coordinates have these same evaluations.",
+            "This uses the original 2*pi integral class to fix the phase; a local theta representative modulo pi alone would not fix the sign of the rectangular pair."
+          ],
+          "qualification": "The formula and normalization match, with the actual integral-defined theta. The later exponential sine display is reviewed in Section 15."
+        },
+        {
+          "ordered_group": "S14-004",
+          "source_lines": [
+            5940,
+            5945
+          ],
+          "printed_page": 73,
+          "requirement": "Analytic extension and a full sequence map on a common neighborhood.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_map",
+            "NLS.ZakharovShabat.sourceSection14",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.restrict"
+          ],
+          "reviewed_claims": [
+            "The original gap-weighted eta coordinates extend analytically through every collapsed complex gap in the retained angular domain. Intersecting with the normalized-action neighborhood gives analytic x and y and the exact indexed-action radius.",
+            "Uniform local spectral bounds produce the full lp pair on a union of neighborhoods of all real sources. A further union of real-centered balls provides compatible exponent domains. The final V is open, contains the entire real locus and lies inside the preceding angular W; the map functions and normalized root family remain the same.",
+            "The precise common-domain formulation is to choose this restricted V as the working neighborhood for Chapter 3. Existing proofs do not assert extension of the full sequence map to every point of an arbitrarily fixed earlier W."
+          ],
+          "qualification": "Domain correction made explicit: the printed reuse of W is implemented by a common restriction V, not an equality with the earlier W. This is a proved neighborhood containing the full real locus. No counterexample or new refutation is added."
+        },
+        {
+          "ordered_group": "S14-005",
+          "source_lines": [
+            5947,
+            5950
+          ],
+          "printed_page": 73,
+          "requirement": "Theorem 14.1(i): analytic lp-valued Birkhoff map.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection14",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_complex_inclusion",
+            "NLS.ZakharovShabat.sourceBirkhoffSequence_analytic_of_uniform_bound"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1 the constructed map is complex analytic as a map into the product of two actual lp Banach spaces on the common V. Consequently it is real analytic there.",
+            "Uniform spectral majorants prove sequence membership and exact scalar evaluations before the coordinatewise analytic criterion is applied. The total sequence constructor never uses its zero fallback on V.",
+            "Its real restriction takes values in the two real sequence spaces and its complex inclusion equals the complex map, as full sequences."
+          ],
+          "qualification": "Matched on the constructed Chapter 3 neighborhood from S14-004, with full Banach-valued analyticity rather than only scalar analyticity."
+        },
+        {
+          "ordered_group": "S14-006",
+          "source_lines": [
+            5954,
+            5954
+          ],
+          "printed_page": 73,
+          "requirement": "Theorem 14.1(ii): compatibility on the entire complex exponent intersection.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealPart_exponent",
+            "NLS.ZakharovShabat.sourceRealBallCore",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.map_real_exponent",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.map_exponent_on_realBallCore",
+            "NLS.ZakharovShabat.SourceSection14Data.exponent",
+            "NLS.ZakharovShabat.SourceSection14Data.eventually_map_exponent",
+            "NLS.ZakharovShabat.SourceSection14Data.fderiv_exponent"
+          ],
+          "reviewed_claims": [
+            "For p<=q, coefficient-preserving inclusions identify the entire output sequences at every point of the constructed complex overlap, even for independently chosen normalized families.",
+            "A point in two real-centered balls has its real-type projection in their convex overlap. Full analytic germs agree at that real projection, and analytic uniqueness propagates equality across the overlap.",
+            "There are no reality, open-gap or connected-overlap premises on the compared source. The equality also gives one full-map germ and equality of the complete Frechet derivatives after inclusion."
+          ],
+          "qualification": "The source writes q<p; the public theorem uses the reverse variable names p<=q for the same inclusion direction, and also includes equal exponents."
+        },
+        {
+          "ordered_group": "S14-007",
+          "source_lines": [
+            5956,
+            5956
+          ],
+          "printed_page": 73,
+          "requirement": "Theorem 14.1(iii): canonical rectangular coordinates.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection14OriginalData.canonical",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma15_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fderiv_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mixed_fourier_canonical",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.birkhoff_sourceBracket_canonical",
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical"
+          ],
+          "reviewed_claims": [
+            "The actual x and y coordinate derivatives have regular Fourier representatives. Their physical pairings are xx=0, xy=-Kronecker and yy=0, with frequency reversal and factor -i in the absolutely convergent Fourier sum.",
+            "Analytic rectangular coordinates and density of the simultaneous open-gap locus extend the brackets through every real collapsed gap. Restriction with identical regular coefficients covers 1<p<2."
+          ],
+          "qualification": "Canonical has the meaning specified by Lemma 15.3: all real sources, all signed index pairs and every finite p>1. It does not assert a Poisson pairing on arbitrary nonregular cotangents below two."
+        },
+        {
+          "ordered_group": "S14-008",
+          "source_lines": [
+            5958,
+            5961
+          ],
+          "printed_page": 73,
+          "requirement": "Theorem 14.1(iv): injectivity, local inverse and open dense image.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection14OriginalData.real_geometry",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_1",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_2",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_isOpenEmbedding",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.truncatePair_mem_real_map_range",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_open_dense_range"
+          ],
+          "reviewed_claims": [
+            "The real map is injective on the complete real source space. Its actual real Jacobian is a bounded equivalence at each point, and the inverse-function theorem gives analytic local inverses with both inverse identities.",
+            "The local homeomorphism and injectivity give an open embedding. Every finite target truncation is attained: above two use its Hilbert preimage and exponent inclusion; at or below two use surjectivity. Truncations converge in the actual target norm, giving density."
+          ],
+          "qualification": "All four assertions match for every finite p>1. Open dense image is not promoted to surjectivity above two."
+        },
+        {
+          "ordered_group": "S14-009",
+          "source_lines": [
+            5963,
+            5965
+          ],
+          "printed_page": 73,
+          "requirement": "Theorem 14.1(v): global bi-real-analytic inverse for 1<p<=2.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph_symm_analytic",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.global_inverse"
+          ],
+          "reviewed_claims": [
+            "An arbitrary exponent-p target has a Hilbert preimage. Finitely many admissible angle-flow moves make the selected actions small enough that the output lies in the image of the exponent-p local inverse at zero.",
+            "The total source displacement of these moves belongs to exponent p. Hilbert injectivity identifies the reduced source with the exponent-p preimage, and adding back the displacement recovers the original source in p.",
+            "The resulting actual map is a homeomorphism onto the whole real target. Its global inverse agrees locally with each analytic local inverse and is therefore real analytic everywhere."
+          ],
+          "qualification": "The full onto and inverse assertions match exactly for 1<p<=2. No stronger exponent range is inferred."
+        },
+        {
+          "ordered_group": "S14-010",
+          "source_lines": [
+            5968,
+            5968
+          ],
+          "printed_page": 73,
+          "requirement": "Remark 14.2(i): identification with the cited Hilbert-space construction.",
+          "status": "partial",
+          "ordered_status": "partial",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection14_physicalHilbert"
+          ],
+          "reviewed_claims": [
+            "The current implementation constructs the physical Hilbert map, analytic global inverse, exact physical norm normalization, complex extension and literal action-angle formulas from the same original family.",
+            "The existing comparison with inspected 2013 manuscript conventions is preserved. This ordered review does not establish identity with the exact 2014 edition cited as [23]."
+          ],
+          "qualification": "The mathematical Hilbert map is constructed, but the precise external-edition comparison remains unresolved. This row is not marked proved."
+        },
+        {
+          "ordered_group": "S14-011",
+          "source_lines": [
+            5970,
+            5970
+          ],
+          "printed_page": 73,
+          "requirement": "Remark 14.2(ii): the stated open question above two.",
+          "status": "contextual",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This is the dissertation's historical statement about surjectivity for p>2. The formalization asserts only open dense image in that range."
+          ],
+          "qualification": "No current literature-status claim, proof of surjectivity or proof of failure of surjectivity is made."
+        },
+        {
+          "ordered_group": "S14-012",
+          "source_lines": [
+            5972,
+            5973
+          ],
+          "printed_page": 73,
+          "requirement": "Remark 14.2(iii): positive-smoothness extension.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSobolevSpectralWeight_even",
+            "NLS.ZakharovShabat.sourceSection14_weighted_complex_analytic",
+            "NLS.ZakharovShabat.sourceSection14_weighted_complex_compatible",
+            "NLS.ZakharovShabat.sourceSection14_weighted_canonical",
+            "NLS.ZakharovShabat.sourceSection14_weighted_real_local_inverse",
+            "NLS.ZakharovShabat.sourceSection14_sobolev_open_dense",
+            "NLS.ZakharovShabat.sourceSection14_sobolev_global_analytic_inverse",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealMap_sobolev_range"
+          ],
+          "reviewed_claims": [
+            "The same constructed original family supplies native weighted maps. The half-scale spectral weight gives exactly (1+abs(n))^t on the period-one Fourier lattice, for every real t>=0.",
+            "The full weighted maps are analytic on open complex neighborhoods, retain their original raw coefficients, and agree on entire complex exponent overlaps. Their actual coordinate derivatives satisfy the canonical relations, and the maps have analytic two-sided local inverses at every weighted real source.",
+            "For Sobolev weights the real image is open and dense at every finite p>1. Exact source-output regularity identifies its range with the preimage of the unweighted range. For 1<p<=2 the resulting native weighted homeomorphism has analytic forward and inverse maps."
+          ],
+          "qualification": "The positive-smoothness extension matches with the original coefficient and norm conventions. Density and global surjectivity here are asserted for Sobolev weights; no global onto assertion for arbitrary spectral weights or p>2 is inferred."
+        },
+        {
+          "ordered_group": "S14-013",
+          "source_lines": [
+            5983,
+            5987
+          ],
+          "printed_page": 74,
+          "requirement": "Remark 14.2(iv): isolated spectral pairs and the proposed minimal decay.",
+          "status": "contextual",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This paragraph explains the role of isolated asymptotic eigenvalue pairs in the preceding construction and proposes Fourier decay as a minimal requirement.",
+            "The minimality wording is heuristic. It is not an additional theorem excluding all constructions without that decay."
+          ],
+          "qualification": "Retained as mathematical motivation, with no new necessity theorem or refutation requested."
+        },
+        {
+          "ordered_group": "S14-014",
+          "source_lines": [
+            5989,
+            5991
+          ],
+          "printed_page": 74,
+          "requirement": "Proof outline: analytic extension of the rectangular formulas.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_map"
+          ],
+          "reviewed_claims": [
+            "Exact original endpoint phases identify equation (3.1) off the closed-gap locus. Original annular formulas extend the weighted phases holomorphically through complex collapsed gaps, and the action-root and beta factors give the rectangular extensions.",
+            "The sequence construction and common restriction are those recorded in S14-004. Real collapsed gaps give zero rectangular coordinates; no vanishing claim at arbitrary complex collapsed gaps is made."
+          ],
+          "qualification": "The analytic-extension method matches on the chosen common neighborhood. The cited external proof is not independently certified."
+        },
+        {
+          "ordered_group": "S14-015",
+          "source_lines": [
+            5992,
+            5996
+          ],
+          "printed_page": 74,
+          "requirement": "Proof outline: sequence analyticity, canonicity and injectivity from Hilbert data.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_birkhoffSequence_analytic",
+            "NLS.ZakharovShabat.sourceBirkhoffSequence_analytic_of_uniform_bound",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_collision_mem_open",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbert_collision_of_collision",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_2"
+          ],
+          "reviewed_claims": [
+            "A common neighborhood bounds xi, the beta correction and both spectral displacement sequences. The actual x and y bounds use C=2*A*Cz*exp(H), giving locally bounded lp sequences and full sequence analyticity.",
+            "The established action-angle brackets, density of open gaps and exponent restriction give the rectangular canonical identities. The implementation proves the Hilbert theorem internally rather than importing it as an axiom.",
+            "For injectivity above two, two distinct preimages of one output have local inverse branches. Truncating the common output produces distinct finite-gap preimages with the same truncated output. Their Hilbert realizations contradict the proved Hilbert injectivity. Below two, direct exponent inclusion suffices."
+          ],
+          "qualification": "The outline is supported with the needed local-inverse step spelled out. Injectivity is not inferred from continuity and dense-set injectivity alone."
+        },
+        {
+          "ordered_group": "S14-016",
+          "source_lines": [
+            5997,
+            5999
+          ],
+          "printed_page": 74,
+          "requirement": "Proof outline: Fredholm argument and the local diffeomorphism.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_real",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_single_preimages",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_denseRange",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedJacobian_bijective",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_injective_of_le_two",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_bijective_all_exponents",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_1"
+          ],
+          "reviewed_claims": [
+            "The actual Jacobian is the exact free Fourier equivalence plus a compact operator. Finite-gap row majorants give finite-rank approximations in operator norm; finite-gap density and continuity extend compactness to every real source.",
+            "For p>=2 the canonical relations construct actual preimages of each output mode, giving dense range. The compact-perturbation Fredholm alternative then gives bijectivity. For p<2, exponent compatibility transfers a kernel vector to the Hilbert case, and the same compact alternative gives surjectivity.",
+            "The real derivative is a bounded equivalence and the inverse-function theorem supplies both analytic inverse germs at every real point."
+          ],
+          "qualification": "The Fredholm conclusion matches. The review records the implementation's precise order: mode preimages and compactness imply invertibility; it does not attribute injectivity to the canonical relations alone."
+        },
+        {
+          "ordered_group": "S14-017",
+          "source_lines": [
+            6000,
+            6002
+          ],
+          "printed_page": 74,
+          "requirement": "Proof outline: finite angle-flow reductions give surjectivity below two.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReductionSequence_small_actions",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_mem_exponent_iff",
+            "NLS.ZakharovShabat.SourceSection16OriginalData.equation3_9",
+            "NLS.ZakharovShabat.SourceSection16OriginalData.lemma17_4",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3"
+          ],
+          "reviewed_claims": [
+            "The moves are generated by the actual original theta Hamiltonian. They lower the selected action at unit speed and preserve every unselected rectangular coordinate.",
+            "Each move stops strictly before its selected action vanishes. Finitely many moves achieve any prescribed positive bounds on a finite set of actions; no move is needed for an already small or collapsed action.",
+            "The stronger-space displacement theorem and the local inverse at zero complete the surjectivity reduction without assuming the arbitrary target already has an exponent-p preimage."
+          ],
+          "qualification": "The method matches, with the previously corrected inward flow orientation retained. No new sign counterexample or refutation is added; the attribution to [36] is contextual."
+        },
+        {
+          "ordered_group": "S14-018",
+          "source_lines": [
+            6003,
+            6008
+          ],
+          "printed_page": 74,
+          "requirement": "Related-results paragraph and external equation references.",
+          "status": "contextual",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "The references to other dNLS constructions, KdV, modified KdV and Toda describe related literature. They are recorded as external attributions, not new dNLS implementation requirements."
+          ],
+          "qualification": "This pass does not formalize those other equations or independently certify the cited results. The exact [23] comparison remains the partial row S14-010."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection14Original.lean": "06488c4ec9377473b49cd8a44a15466cd1fef9356df97e7fdac4c8366ab5d3ef",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalFormula.lean": "3ab26708a03ed5b14c0be4b09798a3d6b841cbedebfa9a8de51829936d0e30b2",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalMap.lean": "313cba611de27a0ac85dfe08ae3d750e2463ca2bc350a10e690cb75f2ee45191",
+        "NLS/ZakharovShabat/SourceSection14.lean": "c9d7f10b7218389acc886f6337e3d7a312d8200659c839da1def0b7062cfa4f2",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalExponent.lean": "bfd2f4ea5e9e56540dbe37ca705e1a836d0acfb057267072106e0bd597eddbfa",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalDomain.lean": "973701a23a023a9d0446de9097dfec4da9a4acf4191e3bb094ede5b8ebe8be68",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d",
+        "NLS/ZakharovShabat/SourceRealBallCore.lean": "25ec5aa5a79e17a5734175c7e6dd4aa4240e2ca894a62fa0e172d14335f6e041",
+        "NLS/ZakharovShabat/SourceBirkhoffTheorem15_2.lean": "f8616dac478090872091fecdab225be1714d7a6fb2520c589e63719834d42d42",
+        "NLS/ZakharovShabat/SourceBirkhoffMapAnalytic.lean": "7f95798184cb5ea3b6ea543807eabef205b4e8a44f044edb52c8bd11543b4f59",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_1.lean": "02e7b632d0340b6c8ce758982581e7a52b80353faff49ebe9ae23d0b97e1c3e5",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_2.lean": "8132205b6ec09c9993a54513e1c28cd3ea8ecbf43cf2436e3e40a6ed1c3a3348",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_3.lean": "13e36514cc6e05c9fd43f6c8b9b188939aeeb3b5729043b6df43e62b5c889648",
+        "NLS/ZakharovShabat/SourceBirkhoffDenseRange.lean": "04bb31934f52c4bad120a30b3b5ddce215e568be5563107af2520eb0b483853f",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma15_3.lean": "d83103d163b380392d0d5693567d4f24f864cc11ca77fe66dc62f2d79ca96be6",
+        "NLS/ZakharovShabat/SourceBirkhoffInjectivityReduction.lean": "b39abfb6469e8da3e5f87454e5a6ec2621b562225fc19f3e652230561b6696ee",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianAllExponents.lean": "60ae81a7ca67c2813bf618f940a164999735b6675e585a2949799a632bffa381",
+        "NLS/ZakharovShabat/SourceBirkhoffGlobalInverse.lean": "12599e8c3bea5821d4632957cb33e24bb1ca333900a0c626a3d6d185de288d0d",
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+        "NLS/ZakharovShabat/SourceBirkhoffSequenceLocal.lean": "0a70d92edda09a99a506a27f6b3c472a271ad654593f81589d11ccb7bab0cb43",
+        "NLS/ZakharovShabat/SourceSection14WeightedRealInverse.lean": "bef9a4997b0a206897062c888283d7477548f8255b38c649e7242b99d2683d57",
+        "NLS/ZakharovShabat/SourceSection14WeightedLocalInverse.lean": "c227e9247dbb843571b93712a044f8a50587e28e4ed2897ffdd4300ccc36b0e0",
+        "NLS/ZakharovShabat/SourceSection14WeightedCompatibility.lean": "1400b9ee60eea5314803775adb5c320038af19aa320b51638a3a06d8c464ca56",
+        "NLS/ZakharovShabat/SourceSection14WeightedCanonical.lean": "98ab5378c75b8eeda2953505fc5ef9215517e2502700f2b669d94557458a8cac",
+        "NLS/ZakharovShabat/SourceSection14WeightedComplex.lean": "00a8e7eb44e732ef495c212f81ce0a957e3e91f743c71cadbc9083639bc30259",
+        "NLS/ZakharovShabat/SourceSection14WeightedMembership.lean": "63b6948bedeac7daca96b5f725664704f3ff3e3ba1c92b8ea63c9e08004990a2",
+        "NLS/ZakharovShabat/SourceSection14PhysicalHilbert.lean": "5e640bc77c4b6c3dc5292c4f95829d277e9391495aed24615e0adca4c0b6800e",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean": "2ca330342ac0ace4267953f6973d82e72112815f376303562ed23bb8f7b79b40",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianInvertible.lean": "328fe61811252420288b19374d63ae311f0f1524adaec9b4657dbd7aacd28f89",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_3.lean": "502fd21ed4db02e2c4a3e2412366a8b3d83cf69e1efcc6b1fac518e01e549cfa",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteGapFibers.lean": "ff05b0e34f5ac6afc89472cbaced15419efa0bffe582328aa0f537476f688878",
+        "NLS/ZakharovShabat/SourceHilbertGlobalInverse.lean": "bae65dfaf5642212fff42c6cc5f9e1571abb45ca871058c728dbc87864339d5f",
+        "NLS/ZakharovShabat/SourceBirkhoffCanonicalAllExponents.lean": "8fab3018ac891467288163a10aae4b1c434f0998723c1e6d4fdbaeae1e15aca5",
+        "NLS/ZakharovShabat/SourceBirkhoffSequence.lean": "0dc408336d6ae29ae9cfc453aa17a3032cfd20b916335c79fba50c592cb19a06",
+        "NLS/ZakharovShabat/SourceHilbertFiniteActionReduction.lean": "8a8de841c2b934cf6c4cab9d2bf80ec0a60b0b6650675bf3b96f4f568e646ea4",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevRange.lean": "58a8a940a9782e30c5103861fc4edcd9873b52e303678a8a34b9b44574743dec",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedImageInverse.lean": "7b23bbeee3020f43838ea24daf985511945e37a2653e0123ed590fca6c045e45",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalAngleFlow.lean": "d914c11d665a009f3f745735761244dbc9da0a858e78dc65055f6c3a38e484e0",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianRange.lean": "8e7fe0f4f734ab89a00a6f5179f167931376aa5496c9d41b318cd2937f5f10f3",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexExponent.lean": "b2928b8e375a05db50725545a3021bf878932b6004290cfe6c6ffafab1f3ffa0",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedRealAnalytic.lean": "5b3f4efb502d412dfd460307c0fcfe2ccffebf131179c848b14f94aeeab74667",
+        "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianCompact.lean": "0aa28a70da276af357e49b6884161b284931f1ae5356df830a33cc4f65d2bc11",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedComplexAnalytic.lean": "0044c389492459edc034da7683accefa4eb011620e2dc93356e2af0c2f307584",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevDenseRange.lean": "4767ea83f56524f803ae7590d879cc360b7dee9a5349286404de263ad78f9a9e",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedJacobianInvertible.lean": "8ffc251117fb9c1ed7e1fc9baeafe2f9820316d7b8cfed3a895398d745794b14",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedRealLocalInverse.lean": "db2cf1d5c7bc8bc78f46f9d8d986d50e254737f8f0c42ac1b1a9a557b5923076",
+        "NLS/ZakharovShabat/SourceBirkhoffClosedGapPoisson.lean": "1967035751855a72548d73b41a5b1603a535ef65d048b5e0bce088626809a1d7"
+      },
+      "reviewed_modules_read_in_full": true,
+      "reused_support_comparisons": [],
+      "ordered_inventory": "coverage/SECTION_14_ASSERTIONS.md",
+      "ordered_inventory_sha256": "9722829fc52c77187484478148ac8d9303aa377b5cd6cab414b64f77ff0a201c",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_birkhoff_regular_canonical",
+        "NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomainData.exists_local_birkhoffSequence_analytic",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.birkhoff_sourceBracket_canonical",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_collision_mem_open",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReductionSequence_small_actions",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbert_collision_of_collision",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fderiv_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_mem_exponent_iff",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_jacobianRemainder_real",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_bijective_all_exponents",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_denseRange",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_injective_of_le_two",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_single_preimages",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma15_3",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mixed_fourier_canonical",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedJacobian_bijective",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealMap_sobolev_range",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_1",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_2",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph_symm_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_complex_inclusion",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_isOpenEmbedding",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_open_dense_range",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.truncatePair_mem_real_map_range",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.gapZeroLocus_isClosed",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.squared_gap_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffWeighted_original_formula",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.birkhoffXY_original_formula",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_coordinate_domain",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.exists_original_birkhoff_map",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_analytic",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_plus",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.original_theta_common_domain",
+        "NLS.ZakharovShabat.SourceSection14Data.eventually_map_exponent",
+        "NLS.ZakharovShabat.SourceSection14Data.exponent",
+        "NLS.ZakharovShabat.SourceSection14Data.fderiv_exponent",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.canonical",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.global_inverse",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.map_exponent_on_realBallCore",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.map_real_exponent",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.real_geometry",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.rectangular_formula",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.restrict",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.equation3_9",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.lemma17_4",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.factorization",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.root_sq",
+        "NLS.ZakharovShabat.sourceActionGapZeroLocus",
+        "NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage",
+        "NLS.ZakharovShabat.sourceBirkhoffSequence_analytic_of_uniform_bound",
+        "NLS.ZakharovShabat.sourceRealBallCore",
+        "NLS.ZakharovShabat.sourceRealPart_exponent",
+        "NLS.ZakharovShabat.sourceSection14",
+        "NLS.ZakharovShabat.sourceSection14_physicalHilbert",
+        "NLS.ZakharovShabat.sourceSection14_sobolev_global_analytic_inverse",
+        "NLS.ZakharovShabat.sourceSection14_sobolev_open_dense",
+        "NLS.ZakharovShabat.sourceSection14_weighted_canonical",
+        "NLS.ZakharovShabat.sourceSection14_weighted_complex_analytic",
+        "NLS.ZakharovShabat.sourceSection14_weighted_complex_compatible",
+        "NLS.ZakharovShabat.sourceSection14_weighted_real_local_inverse",
+        "NLS.ZakharovShabat.sourceSobolevSpectralWeight_even"
+      ],
+      "declaration_inventory_count": 44598,
+      "qualification": "All eighteen Section 14 overview passage groups are classified: thirteen matched, one with an explicit common-domain restriction, one partial external comparison and three contextual remarks. The actual rectangular map retains the original root family, actions and integral-defined angles. The working Chapter 3 domain V is an open restriction containing the entire real locus, not an asserted equality with an arbitrarily fixed earlier W. All five Theorem 14.1 properties hold on this constructed compatible domain, with global surjectivity only for 1<p<=2. Native weighted results supply the positive-smoothness extension. The precise comparison with the cited 2014 edition of [23] remains unresolved; the previously inspected 2013 conventions do not settle it. Historical open-problem and minimal-decay remarks and related-equation references are contextual. The proof outline uses actual local inverses, finite-gap collision approximation, canonical mode preimages and compactness, with no new refutations. This completes classification of the overview passages, not proof of every source attribution, all later Chapter 3 arguments or the dissertation. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, Appendix G.2 norm interpretation and the broader source inventory retain their qualifications.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          73,
+          74
+        ],
+        "images": {
+          "work/tmp/pdfs/section14-073.png": "2a2d6f147bff64d243ccfd43fa2c6045ea984d5eae2f4933d70949c609ac6c16",
+          "work/tmp/pdfs/section14-074.png": "52b8013cc990111ca38d8712eeaef7fd4a652cc76541800e13b47de3da92e5f7"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4834,
+        "sha256": "4759177c72a77eef768c8812c9d52b3fb64fa22289437b73cf709ff634c51bac"
+      },
+      "validation_reused_from_commit": "5e8a2612c11ffc7baa0d1ab9dd3f03a027cf7e99",
+      "full_gate": {
+        "session": 21942,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section12ComplexNeighborhoodFullCheck-2.log",
+        "log_sha256": "3a2e8e250fede906bb2df0a32f0857576da97350e910b9a498f31612da56f109"
+      },
+      "source_record_sha256": "346e9ddb9e4763d942d3e947d77641e0cc6c961d30af5d6dd98676f2628e85fd"
     }
   }
 }
