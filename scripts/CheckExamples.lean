@@ -72512,3 +72512,56 @@ example (ψ : CoeffPair 2) (hψ : IsRealType (CoeffPair.toMax 2 ψ)) (n : ℤ) :
   sourceSignedDiscriminant_realBand_endpoints (by norm_num) (by norm_num) ψ hψ n
 
 end Section19RealCalculationExamples
+
+section Section20ActionGapQuarterExamples
+open NLS NLS.ZakharovShabat Set
+local instance : Fact (1 ≤ (8 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At p=8 the exact endpoint target is ell2, improving the previous p/3 bound.
+example (φ : CoeffPair 8) (hφ : IsRealType (CoeffPair.toMax 8 φ)) :
+    ∃ T : Set (CoeffPair 8), IsOpen T ∧ φ ∈ T ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∃ b : NLS.Coeff 2,
+        (∀ n, b n = sourceComplexAction (by norm_num) (by norm_num) n ψ -
+          (sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n)^2/4) ∧ ‖b‖ ≤ C := by
+  obtain ⟨T,hT,hφT,_,hb⟩ := exists_local_sourceActionGapQuarter (by norm_num) (by norm_num) φ hφ
+  exact ⟨T,hT,hφT,hb 2 (by norm_num) (by norm_num) (by norm_num)⟩
+
+-- The mixed remainder retains the literal quasi-normed ell(3/4) summand.
+example : ∃ U : Set (CoeffPair 3), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 3 ⊆ U ∧
+    ∀ φ ∈ U, ∃ T : Set (CoeffPair 3), IsOpen T ∧ φ ∈ T ∧ T ⊆ U ∧
+      ∃ a : CoeffPair 3 → NLS.Coeff (ENNReal.ofReal ((3 : ℝ≥0∞).toReal/4)),
+      ∃ b : CoeffPair 3 → NLS.CoeffOnePlus,
+        (∀ ψ ∈ T, ∀ n, (sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n)^2/4 =
+          sourceComplexAction (by norm_num) (by norm_num) n ψ + a ψ n + (b ψ).1 n) ∧
+        (∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ‖a ψ‖ ≤ C) ∧
+        ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+          ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ‖NLS.CoeffOnePlus.toCoeff q hq1 hq (b ψ)‖ ≤ C := by
+  obtain ⟨U,hU,hUc,hreal,_,_,hlocal⟩ := exists_sourceActionGapQuarter_mixed
+    (p := 3) (by norm_num) (by norm_num) univ isOpen_univ (subset_univ _)
+  exact ⟨U,hU,hUc,hreal,hlocal⟩
+
+-- Restriction preserves every real source inside the requested original domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (V : Set (CoeffPair p)) (hV : IsOpen V) (hrealV : realTypeSourceLocus p ⊆ V) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus p ⊆ U ∧ U ⊆ V ∧
+      ∀ n, AnalyticOnNhd ℂ (sourceComplexAction hp hp1 n) U := by
+  obtain ⟨U,hU,hUc,hreal,hUV,hA,_⟩ := exists_sourceActionGapQuarter_neighborhood hp hp1 V hV hrealV
+  exact ⟨U,hU,hUc,hreal,hUV,hA⟩
+
+-- A source exponent below two and a negative index require no open-gap premise.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)))
+    (hφ : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2 : ℝ)) φ)) :
+    ∃ T : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen T ∧ φ ∈ T ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ ψ ∈ T, ∃ b : NLS.Coeff 2,
+        b (-3) = sourceComplexAction (by norm_num) (by norm_num) (-3) ψ -
+          (sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ (-3))^2/4 ∧ ‖b‖ ≤ C := by
+  obtain ⟨T,hT,hφT,_,hb⟩ := exists_local_sourceActionGapQuarter (by norm_num) (by norm_num) φ hφ
+  obtain ⟨C,hC,hbound⟩ := hb 2 (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨T,hT,hφT,C,hC,?_⟩
+  intro ψ hψ
+  obtain ⟨b,he,hb⟩ := hbound ψ hψ
+  exact ⟨b,he (-3),hb⟩
+
+end Section20ActionGapQuarterExamples

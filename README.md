@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 20 comparison](coverage/SECTION_20_ASSERTIONS.md)
-records the corrected off-diagonal contour constants and selected-gap
-indices using existing positive proofs. All 56 passage groups are
-classified, with two positive intermediate estimates still explicit.
-The main moment and frequency theorems are already proved. This step
-changes documentation only and adds no refutations. Next are those two
-estimates, then Section 21. Wider qualifications remain in the
+Latest step: the [p/4 action-gap remainder](NLS/ZakharovShabat/SourceActionGapQuarter.lean)
+is now proved for the actual complex actions, with fixed mixed sequences,
+locally uniform bounds and all signed and collapsed gaps. Three positive
+theorems and four API examples pass the full build and axiom audit.
+This closes S20-052; the full-disc auxiliary estimate S20-030 is next.
+No new refutations were added. Wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

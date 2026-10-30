@@ -1,5 +1,32 @@
 # Section 20: original moments and renormalized frequencies
 
+## Positive quarter-exponent remainder
+
+The stronger action-gap remainder on p. 96 is now proved in
+[SourceActionGapQuarter.lean](../NLS/ZakharovShabat/SourceActionGapQuarter.lean):
+`gamma_n^2/4 = I_n + ell_n^(p/4) + ell_n^(1+)`.
+
+The proof multiplies the normalized-action deviation by the actual
+squared gap. Its sequence product estimate includes exponents below one.
+A common connected complex neighborhood can be chosen inside any
+prescribed open neighborhood of the real locus, preserving every real
+source. The two remainder sequences are fixed before all auxiliary
+exponents, with locally uniform bounds for all signed indices and
+collapsed gaps.
+
+Three positive theorems and four API examples close S20-052. The
+[Section 20 ledger](SECTION_20_ASSERTIONS.md) now has 45 matched
+groups, eight corrections or scope clarifications, one partial auxiliary
+assertion and two contextual groups. The corrected contour constants and
+the original action-image scope are preserved. No new refutation is added.
+
+The complete ./scripts/check.sh passed: 8,561 build jobs, 7,644 public examples and a transitive axiom audit of 44,618 NLS declarations. The check includes the new module and four new API examples, with 21 inherited warnings and zero new warnings. The examples cover the exact p=8 endpoint target, a p/4 exponent below one, restriction inside a prescribed source domain, and a source exponent below two at a negative gap index. Source-review hashes, declaration references and local documentation links are checked separately. These checks do not certify complete formalization.
+
+Next: the full-U_k auxiliary estimate S20-030, then Section 21. Wider
+qualifications remain in the [completion assessment](COMPLETENESS.md).
+
+The earlier ordered-review entry records both intermediate gaps before this addition.
+
 ## Ordered source comparison
 
 The [ordered Section 20 ledger](SECTION_20_ASSERTIONS.md) classifies

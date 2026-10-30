@@ -24,19 +24,20 @@ correction. It cannot be counted as a proof of the literal printed claim.
 
 ## How the next assessment proceeds
 
-The [ordered Section 20 ledger](SECTION_20_ASSERTIONS.md) now classifies
-56 groups on pp. 91–96: 44 matched, eight corrected or clarified, two
-partial intermediate assertions and two contextual groups. Existing
-positive proofs supply the corrected off-diagonal contour constants,
-selected-gap bounds and the main physical moment and frequency results.
+The [ordered Section 20 ledger](SECTION_20_ASSERTIONS.md) classifies
+56 groups on pp. 91–96: 45 matched, eight corrected or clarified, one
+partial auxiliary assertion and two contextual groups. The positive
+[quarter-exponent action-gap proof](../NLS/ZakharovShabat/SourceActionGapQuarter.lean)
+closes S20-052: the literal p/4 plus OnePlus remainder has fixed summands
+and locally uniform bounds on a common complex neighborhood, including
+all signed and collapsed gaps. The original source domain can be retained
+by restriction while preserving every real source.
 
 S20-030 still needs the auxiliary estimate on the full isolating disk U_k,
-beyond the proved actual-gap and smaller tail-disc bounds. S20-052 still
-needs a direct link or proof of the stronger p/4 action-gap remainder;
-the p/3 estimate needed for (4.12) is already proved. The action-image
-scope and the alternative minimum-exponent convolution proof are explicit.
-Next: reconcile these two positive estimates before Section 21. No new
-refutation is added.
+beyond the proved actual-gap and smaller tail-disc bounds. This is the
+next positive proof step before Section 21. The direct contour corrections,
+original action-image scope and alternate convolution proof remain
+explicit. No new refutation is added.
 
 Lemma 4.3 now also has a direct map on the original periodic distribution
 pairs with their exact finite-p norms. The full signed source and reflected
@@ -303,8 +304,8 @@ partial or pending under this comparison's stated scope.
 The physical Laurent proof uses internal WKB asymptotics, a local sinh
 inverse estimate and half-integer sampling. Individual principal-arcsine
 displays and the external [23] convention footnote are not separately
-claimed formalized. The subsequent Section 20 comparison and its two
-remaining positive intermediate estimates are recorded above.
+claimed formalized. The subsequent Section 20 comparison and its
+remaining full-disc auxiliary estimate are recorded above.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

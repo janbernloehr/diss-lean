@@ -1,9 +1,10 @@
 # Section 20 ordered assertion comparison
 
-All 56 ordered Section20 passage groups are classified: 44 matched, eight corrected or scope-clarified, two partial intermediate assertions and two contextual groups. The main moment and frequency theorems are already proved for the actual normalized roots, canonical primitive, physical Hamiltonians and original action-image domain. Direct corrections retain i/pi and -2*i/pi in the off-diagonal proof, the selected integration gap G_k, the cubic constant -3*i*H2/4, the auxiliary analytic-domain restriction, the collapsed-moment indices and the compactness reference. The regular diagonal zeta symbol in (4.9) is already correct. S20-030 retains the unlinked full-U_k auxiliary estimate; S20-052 retains the unlinked stronger p/4 action-gap remainder. The actual-gap estimate and p/3 remainder needed for the main results are already proved. The internal minimum-exponent convolution argument replaces the printed small-power derivation; its individual display is not separately claimed formalized. The action image contains all real-source actions and the nonnegative ell1 cone; the whole nonnegative ell^(p/2) cone is not asserted. No Lean changes or new refutations are added. Wider dissertation qualifications remain unresolved.
+The positive p/4 action-gap remainder closes S20-052. The Section20 ledger now has 56 groups: 45 matched, eight corrected or scope-clarified, one partial auxiliary assertion and two contextual. The new proofs use the actual complex action, actual squared gaps and normalized-action factorization, on a common connected complex neighborhood inside any prescribed open neighborhood of the real locus. All real sources and all signed indices remain, including collapsed gaps. The mixed sequence pair is fixed before every OnePlus projection exponent, with locally uniform bounds and literal p/4 quasi-norms. S20-030 still needs the full-U_k refined auxiliary estimate beyond the actual-gap and pi/8 tail-disc bounds. All earlier direct constant corrections, original action-image scope and alternate convolution-proof qualifications remain. No new refutation is added; wider qualifications remain unresolved.
 
 Source: printed pp. 91–96, text lines 7448–7960. Line numbers count newline
-characters and preserve form feeds. All six rendered source pages were inspected.
+characters and preserve form feeds. The preceding comparison inspected all six
+rendered pages; their unchanged hashes were revalidated for this proof step.
 
 | Group | Text lines | Source passage | Status |
 | --- | --- | --- | --- |
@@ -58,7 +59,7 @@ characters and preserve form feeds. All six rendered source pages were inspected
 | S20-049 | 7868–7873 | Fixed mixed sequence decomposition of the off-diagonal sum. | matched |
 | S20-050 | 7875–7884 | Diagonal summability and the final frequency correction. | matched |
 | S20-051 | 7894–7905 | Proof of Theorem 18.1: analytic descent to the original action image. | matched |
-| S20-052 | 7906–7917 | Action-gap comparison gives equation (4.12). | partial |
+| S20-052 | 7906–7917 | Action-gap comparison gives equation (4.12). | matched |
 | S20-053 | 7920–7937 | Proof of Corollary 18.2(i): Taylor derivative and local inverse. | matched |
 | S20-054 | 7938–7950 | Corrected derivative factors through a stronger target and is compact. | matched |
 | S20-055 | 7951–7952 | Fredholm index-zero consequence. | corrected |
@@ -623,7 +624,9 @@ This matches the p.96 neighborhood of the nonnegative ell1 cone. It does not enl
 
 ### S20-052: Action-gap comparison gives equation (4.12).
 
-- The exact identity omegaStar+2I = frequencyCorrection+2*(I-gamma^2/4) and the existing locally uniform p/3 bounds prove equation (4.12), with a fixed mixed sequence decomposition. The normalized-action theorem separately supplies a p/2 plus OnePlus deviation and the exact action factorization.
+- The actual action-gap correction has locally uniform sequence bounds at every finite r>1 with r>=p/4. For p>2, multiply the p/2 normalized-action deviation by the actual squared-gap sequence; the Holder product and contractive inclusion allow intermediate exponents below one. For p<=2, the established bound already gives every r>1.
+- A connected open neighborhood inside any prescribed open neighborhood of the real locus contains every real source. At each complex source point, one smaller neighborhood carries a fixed ell^(p/4) plus OnePlus decomposition of gamma_n^2/4-I_n, with uniform bounds before the auxiliary exponent and for all signed indices, including collapsed gaps.
+- Equation (4.12) retains the independently proved identity omegaStar+2I = frequencyCorrection+2*(I-gamma^2/4) and its fixed p/3 plus OnePlus remainder.
 
 Public declarations:
 
@@ -631,8 +634,11 @@ Public declarations:
 - `NLS.ZakharovShabat.exists_local_sourceActionGapCorrection`
 - `NLS.ZakharovShabat.exists_sourceActionFrequency_asymptotic`
 - `NLS.ZakharovShabat.SourceNormalizedActionUniformBounds`
+- `NLS.ZakharovShabat.exists_local_sourceActionGapQuarter`
+- `NLS.ZakharovShabat.exists_sourceActionGapQuarter_neighborhood`
+- `NLS.ZakharovShabat.exists_sourceActionGapQuarter_mixed`
 
-Partial intermediate assertion: the printed stronger remainder gamma^2/4-I in ell^(p/4)+ell^(1+) has not yet been directly linked. The inspected action-gap theorem gives targets r>=p/3, r>1, sufficient for (4.12). A positive product argument combining the p/2 normalized deviation with two actual gaps is the next step; the stronger display is not assumed.
+The displayed stronger p/4 action-gap remainder is now proved directly. The common source neighborhood may be restricted inside the original Section20 domain while preserving all real sources. The result asserts locally uniform membership and norm bounds, with fixed summands before all OnePlus exponents; it does not assert Banach analyticity at quasi-norm exponents below one.
 
 ### S20-053: Proof of Corollary 18.2(i): Taylor derivative and local inverse.
 
@@ -680,19 +686,18 @@ Invertibility holds on an open dense subset of the same connected action-image d
 ## Evidence and validation
 
 The [original package](../NLS/ZakharovShabat/SourceSection20Original.lean)
-retains the original normalized roots and canonical primitive. The
-[positive moment estimate](../NLS/ZakharovShabat/SourceAbelianMomentSecondError.lean)
-already contains the corrected off-diagonal normalization.
-The [existing action-gap bound](../NLS/ZakharovShabat/SourceActionGapCorrection.lean)
-proves the p/3 remainder used in equation (4.12); the stronger p/4 intermediate
-display remains a separate positive proof task.
+retains the original normalized roots, canonical primitive and physical frequency.
+The [positive moment estimate](../NLS/ZakharovShabat/SourceAbelianMomentSecondError.lean)
+already contains the corrected contour constants. The new
+[quarter-exponent remainder](../NLS/ZakharovShabat/SourceActionGapQuarter.lean)
+proves the stronger action-gap display on p. 96 directly.
 
-This comparison inspected 72 complete module bodies and the positive first 101 lines
-of SourceSection20Factors.lean, and resolved 99 public declaration references.
-It does not claim a fresh semantic reading of every transitive dependency.
-Historical refutations are unchanged and were not redone.
+The initial comparison inspected 72 complete module bodies and the positive
+factor excerpt, and resolved 99 declaration references. This follow-up inspected
+the new module and seven direct support modules; the updated ledger resolves
+102 declarations. A fresh reading of every transitive dependency is not claimed.
+No new refutations were added.
 
-This documentation-only step reuses the successful full check from commit 42c1d69 on the exact unchanged Lean and dependency-lock snapshot: 8,560 build jobs, 7,640 public examples and 44,615 transitively audited NLS declarations, with 21 inherited warnings and zero new warnings. No new full build is claimed. Current module hashes, declaration references, source-review integrity and local documentation links are checked separately. These checks do not certify mathematical completeness.
+The complete ./scripts/check.sh passed: 8,561 build jobs, 7,644 public examples and a transitive axiom audit of 44,618 NLS declarations. The check includes the new module and four new API examples, with 21 inherited warnings and zero new warnings. The examples cover the exact p=8 endpoint target, a p/4 exponent below one, restriction inside a prescribed source domain, and a source exponent below two at a negative gap index. Source-review hashes, declaration references and local documentation links are checked separately. These checks do not certify complete formalization.
 
-Next: reconcile the positive full-disc auxiliary bound S20-030 and the stronger
-action-gap remainder S20-052, then continue to Section 21.
+Next: prove the full-disc auxiliary bound S20-030, then continue to Section 21.
