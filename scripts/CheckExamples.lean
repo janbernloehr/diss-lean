@@ -72102,3 +72102,66 @@ example {W V : Set (CoeffPair 4)}
     congrArg₂ (fun z w : ℂ => z-w) hh.symm hg.symm
 
 end Section12ComplexExtensionExamples
+
+section Section12DiagonalEstimatesExamples
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The normalized period retains the constant 2 for a complex numerator.
+example {φ : CoeffPair 4} {m : ℤ}
+    (P : SourceCriticalRootPeriodCircle (by norm_num) (by norm_num) φ m) :
+    ‖(Complex.I/(Real.pi:ℂ))*(∮ z in C((P.center:ℂ),P.radius),
+      Complex.I/sourceStandardRoot (by norm_num) (by norm_num) φ m z)‖ ≤ 2 := by
+  simpa only [mul_one] using P.norm_standardRoot_period_le (fun _ => Complex.I)
+    (fun _ _ => analyticAt_const) 1 (fun _ _ => by simp)
+
+-- With omitted index 0 and row -2, separation cancels the factor 2 exactly.
+example {W V : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (φ : CoeffPair 4) (hφW : φ ∈ W) (hφV : φ ∈ V)
+    (hφ : IsRealType (CoeffPair.toMax 4 φ))
+    (a : Coeff 4) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (L : ℝ) (hq : ∀ z ∈ D (-2),
+      ‖sourceSingleRootQuotientJointProduct (by norm_num) (by norm_num) (-2) (z,(a,φ))‖ ≤ L) :
+    ‖sourcePsiOriginalJacobianEntry (by norm_num) (by norm_num) 0 (-2) (-2) a φ-
+      (sourcePsiOriginalLimitOperator (by norm_num) (by norm_num) a φ (lp.single 4 (-2) 1)) (-2)‖ ≤
+      c*L*(‖a 0‖+‖sourcePeriodicMidpointDisplacement (by norm_num) (by norm_num) φ (-2)‖+
+        ‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) φ (-2)‖) := by
+  have h := H.originalJacobian_diagonalDifference_bound hD φ hφW hφV hφ a ha 0 (-2) (by decide) L hq
+  rw [show ‖(((0:ℤ)-(-2):ℤ):ℂ)‖ = 2 by norm_num] at h
+  convert h using 1
+  ring
+
+-- A nonintegral exponent, negative omitted index and finite head keep the tail constants explicit.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_4Data ENNReal.ofReal_ne_top (by norm_num) W) (hW : IsOpen W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V D c) (hV : IsOpen V)
+    (φ : CoeffPair (ENNReal.ofReal (3/2))) (hφW : φ ∈ W) (hφV : φ ∈ V)
+    (hφ : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) φ))
+    (a : Coeff (ENNReal.ofReal (3/2))) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (haReal : ∀ k : ℤ, (a k).im = 0) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ S : Coeff (ENNReal.ofReal (3/2)),
+      (∀ m : ℤ, (sourcePsiOriginalLimitOperator ENNReal.ofReal_ne_top (by norm_num) a φ
+        (lp.single (ENNReal.ofReal (3/2)) m 1)) m = 2+S m) ∧
+      ‖Coeff.multiplierCLM (p := ENNReal.ofReal (3/2)) (Coeff.operatorDiagonalSymbol
+          (sourcePsiOriginalFullRootJacobian ENNReal.ofReal_ne_top (by norm_num) (-10) a φ))-
+        Coeff.multiplierCLM (p := ENNReal.ofReal (3/2)) (Coeff.operatorDiagonalSymbol
+          (sourcePsiOriginalLimitOperator ENNReal.ofReal_ne_top (by norm_num) a φ))‖ ≤
+        ‖S (-10)‖+C*(‖a (-10)‖+
+          (1/5)*(‖sourcePeriodicMidpointDisplacement ENNReal.ofReal_ne_top (by norm_num) φ‖+
+            ‖sourcePeriodicGapDisplacement ENNReal.ofReal_ne_top (by norm_num) φ‖)+
+          ‖sourcePeriodicMidpointDisplacement ENNReal.ofReal_ne_top (by norm_num) φ-
+            Coeff.truncate (Finset.Icc (-3) 3) (sourcePeriodicMidpointDisplacement ENNReal.ofReal_ne_top (by norm_num) φ)‖+
+          ‖sourcePeriodicGapDisplacement ENNReal.ofReal_ne_top (by norm_num) φ-
+            Coeff.truncate (Finset.Icc (-3) 3) (sourcePeriodicGapDisplacement ENNReal.ofReal_ne_top (by norm_num) φ)‖) := by
+  obtain ⟨C,hC,S,hS,hb⟩ := H.originalFullRootJacobian_diagonal_head_tail hW hD hV φ hφW hφV hφ a ha haReal
+  refine ⟨C,hC,S,hS,?_⟩
+  simpa only [show Int.natAbs (-10) = 10 by decide,Nat.cast_ofNat,show (2:ℝ)/10 = 1/5 by norm_num] using
+    hb (-10) (by decide) 3 (by decide)
+
+end Section12DiagonalEstimatesExamples

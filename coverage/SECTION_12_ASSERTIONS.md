@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first forty of 67 ordered Section 12 groups are compared: thirty-five matched, five with estimate, scope or gap-reference corrections, and 27 pending. Lemma 12.10 provides one common simply connected complex extension of all actual real root branches, with literal retained-index interfaces preserving the equation, real agreement and original disk placement. The exact contour multiplier, all-index limit matrix and bounded real lp operator retain their normalization and diagonal value 2. The announced operator-norm limit holds at fixed original real placed-root inputs; its detailed estimates and local-uniformity quantifiers remain in subsequent groups. Earlier contour, root-placement, selected-gap and uniform radial estimate corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Later joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first forty-three of 67 ordered Section 12 groups are compared: thirty-seven matched, six with estimate, scope or gap-reference corrections, and 24 pending. The diagonal part of Lemma 12.10 now has an exact norm split, separate contour errors with explicit factor 2*c*L, and a positive output-index tail estimate with head/tail constants 2 and 1. The diagonal operators converge in norm at every original real placed-root input, in both index directions. The common complex extension, original placement, exact contour normalization and diagonal value 2 are retained. Earlier corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Detailed off-diagonal estimates, joint-root-variable estimate, operator-limit quantifier and sine-product sign qualifications remain in subsequent groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-forty groups have the semantic comparisons below. Earlier named-theorem
+forty-three groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -53,9 +53,9 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-038 | 68 | 5417–5431 | Jacobian contour formula and exact multiplier expansion (2.28). | matched |
 | S12-039 | 68 | 5433–5446 | Limiting all-index matrix Q-star and its diagonal/off-diagonal estimates (2.29). | matched |
 | S12-040 | 68 | 5448–5454 | Bounded full-space operator and diagonal-two extension of deleted Jacobians. | matched |
-| S12-041 | 68 | 5456–5472 | Diagonal difference formula and the distinguished moving diagonal term. | pending |
-| S12-042 | 68 | 5475–5483 | Two contour terms from the multiplier difference and their local bounds. | pending |
-| S12-043 | 68 | 5484–5504 | Near/far diagonal operator-norm convergence estimate. | pending |
+| S12-041 | 68 | 5456–5472 | Diagonal difference formula and the distinguished moving diagonal term. | matched |
+| S12-042 | 68 | 5475–5483 | Two contour terms from the multiplier difference and their local bounds. | matched |
+| S12-043 | 68 | 5484–5504 | Near/far diagonal operator-norm convergence estimate. | corrected |
 | S12-044 | 68 | 5504–5513 | Off-diagonal difference split into distinguished row and remaining rows. | pending |
 | S12-045 | 69 | 5524–5532 | Distinguished-row Holder bound. | pending |
 | S12-046 | 69 | 5534–5551 | Remaining-row split into terms I and II. | pending |
@@ -1056,4 +1056,72 @@ The seven new proofs, bounded real operator and two focused examples add no warn
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-041: the diagonal and off-diagonal operator-norm estimates.
+The next subsection compares the diagonal operator-norm estimates.
+
+## Diagonal operator-norm estimates in Lemma 12.10
+
+### S12-041: Exact diagonal norm split and the moving omitted-coordinate term.
+
+- For every coefficient vector, the p-th power of the actual diagonal difference norm is exactly the omitted-coordinate contribution plus the sum of retained-coordinate contributions. The full Jacobian has value 2 on the omitted diagonal, and every retained diagonal is its original contour derivative.
+- The retained entry difference is exactly (i/pi) times the original contour of (indexRatio-1) times the analytic single quotient over the selected standard root. The literal single auxiliary product is the negative of this quotient, so this has the printed 1/(i*pi) normalization.
+- One S in lp satisfies Q-star_mm=2+S_m. The moving term is bounded by |S_n| times the input norm, with constant one, uniformly over every index and input vector. Thus its p-th power has one summable scalar coefficient, as required by the printed ell-one notation.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiOriginal_diagonalDifference_norm_rpow`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_movingDiagonal_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_diagonal_lp`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonalDifference_contour`
+
+The diagonal split and moving-coordinate estimate match, including the exact normalization and leading value 2. Bounds refer to the actual original operators; roots are real and placed in the original disks where the lp diagonal description is invoked.
+
+### S12-042: Separate contour-error bounds with explicit local constants.
+
+- Original disk separation bounds the multiplier error on the actual row gap by c*(|a_n|+|M_m|+|G_m|)/|n-m|, where M is the midpoint displacement and G the gap sequence. It also gives analyticity on the filled row disk, and the standard-root quotient is integrable on its enclosing circle.
+- Lemma 12.3 gives the explicit factor 2 for the period normalized by i/pi, for complex analytic numerators and also collapsed gaps. If the single quotient is bounded by L, the two normalized contour terms are bounded respectively by 2*c*L*|a_n|/|n-m| and 2*c*L*(|M_m|+|G_m|)/|n-m|.
+- One joint neighborhood of the root and source and one constant are chosen before both integer indices. A quotient-error majorant with norm at most Cq gives the common constant 2*c*(Cq+1). The root and spectral displacement sequences remain explicit in the bound.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_gap_error_bound`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_indexRatio_analyticOnNhd`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.standardRoot_quotient_circleIntegrable`
+- `NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_standardRoot_period_le`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.original_cauchyPeriod_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonalErrorTerms_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonalDifference_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalJacobian_diagonalDifference_locally_bounded`
+
+The local big-O statements match with positive explicit constants, retaining the denominator also for the first term. Locality is in the printed joint root/source domain. The common quotient bound does not assert uniformly vanishing lp tails on one fixed neighborhood.
+
+### S12-043: Diagonal operator-norm convergence from a corrected output-index tail estimate.
+
+- For n nonzero and 2*K<=|n|, a reciprocal column with omitted coordinate zero has norm at most (2/|n|)*norm(b)+norm(b-truncate_K(b)). Here truncate_K cuts off the output indices outside [-K,K]. The constants are 2 on the finite head and 1 on the tail. A single-coordinate application makes the same estimate uniform over the output index.
+- For the actual diagonal operators, one C>=0 and one S in lp with Q-star_mm=2+S_m give norm(Dn-Dstar)<=|S_n|+C*(|a_n|+(2/|n|)*(norm(M)+norm(G))+norm(M-truncate_K(M))+norm(G-truncate_K(G))). C and S precede n and K in the quantifiers.
+- Use the output-index tails |m|>K, with 2*K<=|n|, in place of the printed |m-n|>=|n|/2 tail. First make the two lp tails small and then increase |n|. The moving lp coefficients and the reciprocal finite head also tend to zero, yielding the claimed diagonal operator-norm limit.
+- The separate convergence interface uses the actual fixed-row limits and one uniform diagonal tail. The supporting proof controls deleted-root variation by a common analytic Lipschitz estimate, handles both open and collapsed real gaps, and gives convergence as the omitted index escapes in either direction.
+
+Public declarations:
+
+- `NLS.Coeff.norm_le_reciprocal_column_head_tail`
+- `NLS.Coeff.reciprocalEntry_le_head_tail`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_diagonal_head_tail`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_diagonal_tendsto`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_diagonal_uniformTail`
+
+The convergence conclusion is retained with the positive corrected output-index tail bound and explicit head/tail constants. The original real placed-root domain is used; no gap-containment restriction is added. This step adds no refutation and makes no stronger fixed-neighborhood uniform-convergence claim.
+
+The [original diagonal contour estimates](../NLS/ZakharovShabat/SourcePsiOriginalDiagonalDifference.lean)
+retain the exact normalization and work also with collapsed gaps.
+The [reciprocal head/tail bound](../NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean)
+gives explicit constants for the [actual diagonal operator estimate](../NLS/ZakharovShabat/SourcePsiOriginalDiagonalConvergence.lean).
+See the positive correction in the [source discrepancy notes](../SOURCE_ERRATA.md).
+This comparison records 59 inspected or reused module bodies and 17 resolved declarations.
+
+Full validation passed: 8,541 build jobs, 7,618 public examples and
+44,520 transitively audited NLS declarations, with 21 inherited warnings.
+The fifteen new proofs and three focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-044: the off-diagonal operator-norm estimates.

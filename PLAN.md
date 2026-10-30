@@ -1,6 +1,35 @@
 # Implementation plan
 
-## Current milestone: common complex extension and limiting operator
+## Current milestone: diagonal operator-norm estimates
+
+The diagonal part of Lemma 12.10 now has an exact p-th power norm split
+and a moving diagonal bound with constant one. Its two normalized contour
+errors retain the explicit factor 2*c*L, uniformly in the indices on one
+joint root/source neighborhood.
+
+The quantitative operator bound uses a finite output head with factor
+2/abs(n) and actual lp tails with factor one. This positive replacement
+for the printed tail cutoff proves the same diagonal norm-limit conclusion
+on the original real placed-root domain, in both index directions.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+thirty-seven matched groups, six with estimate, scope or gap-reference
+corrections and 24 pending. The contour normalization and leading diagonal
+value 2 remain unchanged. No new refutations were added.
+
+Full validation passed: 8,541 build jobs, 7,618 public examples and
+44,520 transitively audited NLS declarations, with 21 inherited warnings.
+The fifteen new proofs and three focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next are the off-diagonal estimates, followed by the precise local-uniformity
+and inverse-operator statements. Wider qualifications remain in the
+[completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: common complex extension and limiting operator
 
 Lemma 12.10 now has literal retained-index interfaces for all branches
 on one common simply connected complex domain. They preserve the actual

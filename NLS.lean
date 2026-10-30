@@ -3634,6 +3634,9 @@ import NLS.ZakharovShabat.SourcePsiOriginalLimitDiagonal
 import NLS.ZakharovShabat.SourceEquation2_29
 import NLS.SequenceSpaces.ReciprocalMatrixConvergence
 import NLS.ZakharovShabat.SourcePsiOriginalNormLimit
+import NLS.SequenceSpaces.ReciprocalColumnHeadTail
+import NLS.ZakharovShabat.SourcePsiOriginalDiagonalDifference
+import NLS.ZakharovShabat.SourcePsiOriginalDiagonalConvergence
 import NLS.ZakharovShabat.SourcePsiOriginalNormUniformity
 import NLS.ZakharovShabat.SourcePsiOriginalUniformityCounterexample
 import NLS.SequenceSpaces.DeletedOperatorNormDifference

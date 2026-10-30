@@ -1,5 +1,30 @@
 # Source discrepancies
 
+## Lemma 12.10 proof, p.68: diagonal output-index tail
+
+Write M for the midpoint displacement, G for the gap sequence, and
+Q-star_mm=2+S_m with S in lp. For n nonzero and 2*K<=abs(n), the actual
+diagonal operators satisfy the following bound, where truncate_K retains
+the indices in [-K,K]:
+
+    norm(Dn-Dstar) <= abs(S_n) + C*(abs(a_n)
+      + (2/abs(n))*(norm(M)+norm(G))
+      + norm(M-truncate_K(M)) + norm(G-truncate_K(G))).
+
+One C works for all n and K at the fixed original real placed-root input.
+The normalized contour estimates have the explicit factor 2*c*L; a common
+local quotient-error bound Cq permits C=2*c*(Cq+1).
+
+Use the output-index tails abs(m)>K with 2*K<=abs(n) in place of the
+printed abs(m-n)>=abs(n)/2 tail. Taking K large and then abs(n) large
+makes every term small and preserves the diagonal operator-norm limit.
+The finite-head and lp-tail factors are 2 and 1. This is a positive
+replacement estimate, without an optimality claim or a new refutation.
+
+See the [actual diagonal bound](NLS/ZakharovShabat/SourcePsiOriginalDiagonalConvergence.lean),
+[contour estimates](NLS/ZakharovShabat/SourcePsiOriginalDiagonalDifference.lean) and
+[ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Lemma 12.7 proof, p.67: uniform radial estimate
 
 Use the cutoff |m|<=floor(nu/2) on the circle of radius pi*nu+pi/2.

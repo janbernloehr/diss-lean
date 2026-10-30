@@ -179,12 +179,13 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Thirty-five match and five have estimate, scope or gap-reference corrections.
-Lemma 12.10 retains one common complex extension with original placement,
-now exposed on literal retained indices. The exact contour multiplier,
-all-index limit matrix and bounded real operator preserve the diagonal value 2.
-The remaining 27 groups start with the detailed operator-norm estimates;
-earlier corrections retain their scope.
+Thirty-seven match and six have estimate, scope or gap-reference corrections.
+The diagonal proof of Lemma 12.10 now includes the exact norm split, separate
+contour bounds with factor 2*c*L and a corrected output-index tail estimate.
+The actual diagonal operators converge in norm at each original real
+placed-root input. The remaining 24 groups start with the off-diagonal
+estimates and precise local-uniformity quantifiers; earlier corrections
+retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
