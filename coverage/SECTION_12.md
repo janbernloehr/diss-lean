@@ -1,6 +1,39 @@
 # Section 12: psi-functions
 
-## Ordered comparison: compact inverse bounds and joint complex estimates
+## Ordered comparison: global complex neighborhoods and implicit continuation
+
+The entire original real root-placement domain now has one open simply
+connected complex neighborhood inside its original isolating families.
+Inverse bounds are locally uniform throughout that domain and uniform
+in every signed index, for both full and original deleted Jacobians.
+
+The real domain contracts through the actual midpoint section. A
+nonexpansive joint real projection gives a contractible complex
+thickening. The exact Neumann condition uses the composition norm
+at most 1/2 and retains the inverse factor two, including equality.
+
+All original root maps continue to one common simply connected source
+domain inside the unchanged preceding domain. They solve the original
+equation, agree with the real solutions and retain the supplied disks
+after restricting only their source neighborhoods.
+
+The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) now has
+forty-two matched groups, eleven with estimate, scope or gap-reference
+corrections and 14 pending. No new refutations were added.
+
+Full validation passed: 8,557 build jobs, 7,631 public examples and
+44,598 transitively audited NLS declarations, with 21 inherited warnings.
+The eighteen new proofs, two definitions and five focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next are the entire family and the diagonal period proof in Lemma 12.11,
+including the individual sine-product signs. Wider qualifications remain
+in the [completion assessment](COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous ordered milestone: compact inverse bounds and joint complex estimates
 
 The actual original limit and full Jacobians now have common two-sided
 inverse bounds over the compact spectral gap product, uniformly in every

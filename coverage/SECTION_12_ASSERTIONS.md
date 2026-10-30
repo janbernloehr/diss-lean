@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first fifty-one of 67 ordered Section 12 groups are compared: forty matched, eleven with estimate, scope or gap-reference corrections, and 16 pending. The compact spectral gap product has common bounds for the actual limit and finite-Jacobian inverses, uniformly in roots and signed index. Isometric complex inclusion preserves the real limit inverse bound with factor one. The common complex neighborhood estimate uses the joint root/source distance with explicit Cauchy factor 4*C/r^2, from an equation bound C on radius 4*r. The estimate holds throughout one open neighborhood of the entire compact root set and for every reference root in that set. Earlier operator-norm limits, precise local-uniformity statements, contour normalization, diagonal value 2 and exact sine identity retain their scope. No new refutations are added. The global simply connected joint neighborhood of original real Omega remains pending in S12-052; a collection of pointwise neighborhoods is not substituted for it. Later operator-limit quantifiers and sine-product signs remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first fifty-three of 67 ordered Section 12 groups are compared: forty-two matched, eleven with estimate, scope or gap-reference corrections, and 14 pending. The exact Neumann hypothesis norm(Q-inverse composed with deltaQ)<=1/2 gives inverse norm at most 2*norm(Q-inverse). The entire original real root-placement domain now has one open simply connected complex neighborhood inside the supplied original isolating families, with locally uniform inverse bounds for every signed full and deleted Jacobian. The construction contracts the real domain through the actual midpoint section and thickens it using the nonexpansive joint real projection. All original root maps continue to one open simply connected source domain inside the unchanged preceding domain, with the original equations, exact real agreement and placement in the supplied disks after restricting only their source neighborhoods. Earlier estimate corrections retain their scope; no new refutations are added. The diagonal period proof, individual sine-product signs and later root-offset estimates remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-fifty-one groups have the semantic comparisons below. Earlier named-theorem
+fifty-three groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -64,8 +64,8 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-049 | 69 | 5587–5592 | Operator-norm convergence, precise local uniformity, continuity and invertibility of Q-star. | corrected |
 | S12-050 | 69 | 5593–5601 | Compact gap box and common inverse bounds for Q-star and all deleted Jacobians. | matched |
 | S12-051 | 69 | 5602–5609 | Cauchy derivative estimate near the source times gap box; source and independent-root variables. | corrected |
-| S12-052 | 70 | 5619–5633 | Neumann inverse bound, uniformity in the deleted index and common simply connected root-admissible domain. | pending |
-| S12-053 | 70 | 5635–5644 | Uniform implicit continuation to one simply connected source neighborhood with root placement. | pending |
+| S12-052 | 70 | 5619–5633 | Neumann inverse bound, uniformity in the deleted index and common simply connected root-admissible domain. | matched |
+| S12-053 | 70 | 5635–5644 | Uniform implicit continuation to one simply connected source neighborhood with root placement. | matched |
 | S12-054 | 70 | 5646–5649 | Assembled entire family and off-diagonal period equations. | pending |
 | S12-055 | 70 | 5651–5658 | Lemma 12.11: exact diagonal period 2pi. | pending |
 | S12-056 | 70 | 5660–5675 | Finite contour decomposition to a large exterior circle and completion by the midpoint root. | pending |
@@ -1301,4 +1301,80 @@ The nine new proofs and four focused examples add no warnings.
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-052: the global simply connected joint neighborhood and common inverse bounds; then S12-053 implicit continuation.
+The next subsection compares the exact perturbation criterion and the global complex neighborhoods.
+
+## Global complex neighborhoods and implicit continuation in Lemma 12.10
+
+### S12-052: Exact Neumann factor and one global simply connected original joint domain.
+
+- For any complex Banach space, a genuine two-sided inverse R0 of Q and the exact condition norm(R0 composed with deltaQ)<=1/2 give a genuine two-sided inverse R of Q+deltaQ with norm(R)<=2*norm(R0). The non-strict threshold and factor two are retained. No product-of-norms hypothesis replaces the displayed composition norm.
+- At each original real placed-root input, common all-index inverse and joint Lipschitz bounds M0 and L give the positive radius min(r,1/(2*(M0+1)*(L+1))). On this ball the product-of-norms estimate implies the required composition bound; the inverse norm is at most 2*M0, independently of the signed deleted index.
+- The original real Omega is the union of all supplied source/root-placement charts, with one original isolating family at every real source. Each root-placement fiber is convex over the reals. The actual spectral midpoint displacement is a continuous common section in every applicable fiber, so the whole real union contracts first to its midpoint graph and then along the real source vector space to zero. Roots need only be in the supplied original disks, not in their spectral gaps.
+- The source-first real domain embeds isometrically in the root-first complex joint space. Its actual real projection is nonexpansive and fixes the embedded real points. Choose complex balls centered at the embedded real domain inside both the original admissibility domain and the locally uniform inverse neighborhoods, keeping their real projections in Omega.
+- The union of these balls contracts along straight segments to the real projection and then through the real Omega contraction. It is one open contractible, hence simply connected, complex neighborhood of the entire embedded original Omega. It is contained in the union of the same original root-placement disks times the unchanged source domain intersected with each supplied source neighborhood.
+- At every point of this single complex domain, one smaller open neighborhood and one M>=0 control actual two-sided inverses of every full Jacobian, with M chosen before the index and the varying point. The original deleted blocks have the same property and no larger inverse norm, by the existing factor-one inverse compression theorem.
+
+Public declarations:
+
+- `NLS.inverse_norm_le_two_mul_of_composition_near`
+- `NLS.exists_inverse_norm_le_two_mul_of_composition_near`
+- `NLS.exists_inverse_norm_le_two_mul_of_perturbation`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.originalFullRootJacobian_local_inverse_bound_complex`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.originalRootJacobian_local_inverse_bound_complex`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.original_isolating_neighborhood_inverseBound`
+- `NLS.FunctionalAnalysis.contractible_of_fiber_segments`
+- `NLS.FunctionalAnalysis.contractible_iUnion_products_of_section`
+- `NLS.FunctionalAnalysis.exists_contractible_open_neighborhood_of_isometric_retract`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.convex_originalRootPlacement`
+- `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.real_midpoint_mem_originalRootPlacement`
+- `NLS.ZakharovShabat.contractible_iUnion_sourcePsiOriginalOmega`
+- `NLS.ZakharovShabat.sourcePsiOriginalRealEmbedding`
+- `NLS.ZakharovShabat.sourcePsiOriginalRealProjection`
+- `NLS.ZakharovShabat.isometry_sourcePsiOriginalRealEmbedding`
+- `NLS.ZakharovShabat.lipschitzWith_sourcePsiOriginalJointRealPart`
+- `NLS.ZakharovShabat.exists_contractible_complex_neighborhood_originalOmega`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.original_global_simplyConnected_inverseNeighborhood`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.original_global_simplyConnected_deletedInverseNeighborhood`
+- `NLS.Coeff.exists_deleted_inverse_of_extension_inverse`
+
+The exact displayed perturbation criterion, constant two, global joint-domain topology, original placement and locally uniform all-index inverse conclusion match. The theorem is parameterized by the supplied isolating families covering the full real source locus. It makes no global uniform bound over the generally unbounded whole Omega. No refutations are added.
+
+### S12-053: All original root maps continue to one simply connected source neighborhood.
+
+- One equation tube gives Cauchy constants J=2*C/r and L=4*C/r^2 and a common root inverse bound M. The derivative of the equation-and-source map has inverse norm at most B=M*(1+J)+1. The quantitative inverse theorem uses rho=min(r/2,1/(4*B*(L+1))) and source radius delta=rho/(8*B), both positive and independent of the deleted index.
+- The resulting branches are analytic, solve the actual contour equations and agree with the canonical Proposition 12.9 real roots. Uniqueness in the common root ball and real agreement identify the local branches. They glue on overlapping real-centered source balls by the complex identity principle.
+- Their common source domain contracts to the source real projection and then to zero. It is open, simply connected, contains the entire real source locus and lies in the unchanged preceding equation domain. The domain is chosen before all signed indices, not separately for each branch.
+- The existing original-domain Lemma 12.10 data retain the same Proposition 12.9 data, solve the actual original sequence equation, and agree exactly with the original real solutions. This final common extension was already compared in S12-037; its inspected proof record and unchanged hashes are reused here.
+- Compactness of the gap-root product gives a positive common margin inside every supplied original disk family. Uniform stability puts all branch roots, and the moving-midpoint fill of the omitted coordinate, in those same disks on one smaller source ball. Only the source neighborhood is restricted; the disks and comparison constant are preserved. Thus every psi in the intersection of the common complex domain and the constructed source neighborhood satisfies sigma_m^n(psi) in U_m for all m different from n.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.nonempty_sourcePsiUniformComplexBranchFamily`
+- `NLS.ComplexAnalysis.exists_triangularLinearEquiv_norm_bound`
+- `NLS.ComplexAnalysis.exists_analytic_inverse_on_uniform_ball`
+- `NLS.ZakharovShabat.SourcePsiComplexRootAtlas.isSimplyConnected_domain`
+- `NLS.ZakharovShabat.SourcePsiComplexRootAtlas.original_filled_placement_near_real`
+- `NLS.ZakharovShabat.SourceLemma12_10Data`
+- `NLS.ZakharovShabat.SourceProposition12_9Data.lemma12_10`
+- `NLS.ZakharovShabat.sourceLemma12_10`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_assignment`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.local_original_isolation`
+- `NLS.ZakharovShabat.SourceLemma12_10Data.original_filled_placement`
+
+The common implicit continuation and original root-placement statement match. The source neighborhood may be shrunk while retaining its supplied disks, explicitly recorded by original_assignment. The global source domain and the global joint inverse domain are distinct constructions, each with the full required scope. Earlier estimate corrections remain unchanged.
+
+The [exact Neumann criterion](../NLS/FunctionalAnalysis/NeumannCompositionBound.lean)
+uses the printed composition norm and factor two. The [global inverse neighborhood](../NLS/ZakharovShabat/SourcePsiOriginalGlobalInverseNeighborhood.lean)
+contains the entire original real placement domain and retains the supplied isolating disks.
+The [real-domain contraction](../NLS/ZakharovShabat/SourcePsiOriginalOmegaContractible.lean)
+and [joint real projection](../NLS/ZakharovShabat/SourcePsiOriginalJointRealProjection.lean) give its topology.
+The [common implicit continuation](../NLS/ZakharovShabat/SourceLemma12_10.lean) retains the original equation and source domain.
+This comparison records 68 inspected or reused module bodies and 31 resolved declarations.
+
+Full validation passed: 8,557 build jobs, 7,631 public examples and
+44,598 transitively audited NLS declarations, with 21 inherited warnings.
+The eighteen new proofs, two definitions and five focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-054: the entire family and diagonal period normalization in Lemma 12.11.

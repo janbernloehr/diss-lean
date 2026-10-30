@@ -72311,3 +72311,69 @@ example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   H.originalLimitRealOperator_gapUniform_inverse hW hD hV φ hφW hφV
 
 end Section12CompactInverseExamples
+
+section Section12ComplexNeighborhoodExamples
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ⊤) := ⟨le_top⟩
+
+-- Two different fiber intervals share a section and cover the whole base.
+example : ContractibleSpace
+    (⋃ i : Bool, (if i then Iio (1:ℝ) else Ioi (-1:ℝ)) ×ˢ
+      (if i then Ioo (-2:ℝ) 1 else Ioo (-1:ℝ) 2)) := by
+  apply NLS.FunctionalAnalysis.contractible_iUnion_products_of_section _ _ (fun _ => (0:ℝ)) continuous_const
+  · intro x
+    by_cases hx : x < 1
+    · exact ⟨true,hx⟩
+    · exact ⟨false,by change -1 < x; linarith⟩
+  · intro i
+    cases i <;> exact convex_Ioo _ _
+  · intro i x hx
+    cases i <;> norm_num
+
+-- The root/source order change remains an isometry even at the endpoint p=infinity.
+example (x y : realTypeSourceSubmodule ⊤ × RealCoeff ⊤) :
+    dist (sourcePsiOriginalRealEmbedding ⊤ x) (sourcePsiOriginalRealEmbedding ⊤ y) = dist x y :=
+  isometry_sourcePsiOriginalRealEmbedding.dist_eq x y
+
+-- Full inverse compression keeps the bound at a negative deleted index and p=infinity.
+example (Q : DeletedCoeff ⊤ (-7) →L[ℂ] DeletedCoeff ⊤ (-7))
+    (S : Coeff ⊤ →L[ℂ] Coeff ⊤) (M : ℝ) (hM : ‖S‖ ≤ M)
+    (hTS : (Coeff.deletedJacobianExtension (-7) Q).comp S = ContinuousLinearMap.id ℂ (Coeff ⊤))
+    (hST : S.comp (Coeff.deletedJacobianExtension (-7) Q) = ContinuousLinearMap.id ℂ (Coeff ⊤)) :
+    ∃ R : DeletedCoeff ⊤ (-7) →L[ℂ] DeletedCoeff ⊤ (-7),
+      Q.comp R = ContinuousLinearMap.id ℂ (DeletedCoeff ⊤ (-7)) ∧
+      R.comp Q = ContinuousLinearMap.id ℂ (DeletedCoeff ⊤ (-7)) ∧ ‖R‖ ≤ M := by
+  obtain ⟨R,hQR,hRQ,hR⟩ := Coeff.exists_deleted_inverse_of_extension_inverse (-7) Q S hTS hST
+  exact ⟨R,hQR,hRQ,hR.trans hM⟩
+
+-- One source radius places distinct signed-index continuations in the same supplied disks.
+example {W₀ W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n}
+    (H : SourceLemma12_10Data ENNReal.ofReal_ne_top (by norm_num) W₀ W s)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V D c) (hV : IsOpen V)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφV : φ.val ∈ V) :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ ψ ∈ ball φ.val δ,
+      ψ ∈ W ∧ displacedRoots (s (-7) ψ : Coeff (ENNReal.ofReal (3/2))) 0 ∈ D 0 ∧
+        displacedRoots (s 11 ψ : Coeff (ENNReal.ofReal (3/2))) 0 ∈ D 0 := by
+  obtain ⟨δ,hδ,hsub,hb⟩ := H.original_placement hD hV φ hφV
+  exact ⟨δ,hδ,fun ψ hψ => ⟨(hsub hψ).1,hb ψ hψ (-7) 0 (by norm_num),hb ψ hψ 11 0 (by norm_num)⟩⟩
+
+-- The non-strict composition threshold 1/2 retains the inverse bound at equality.
+example : ∃ R : ℂ →L[ℂ] ℂ,
+    ((3:ℂ) • ContinuousLinearMap.id ℂ ℂ).comp R = ContinuousLinearMap.id ℂ ℂ ∧
+    R.comp ((3:ℂ) • ContinuousLinearMap.id ℂ ℂ) = ContinuousLinearMap.id ℂ ℂ ∧ ‖R‖ ≤ 1 := by
+  let T := ContinuousLinearMap.id ℂ ℂ
+  have hQR : ((2:ℂ) • T).comp ((1/2:ℂ) • T) = T := by simp [T,smul_smul]
+  have hRQ : ((1/2:ℂ) • T).comp ((2:ℂ) • T) = T := by simp [T,smul_smul]
+  have hnorm : ‖((1/2:ℂ) • T).comp T‖ ≤ (1/2:ℝ) := by simp [T,norm_smul]
+  obtain ⟨R,hR⟩ := NLS.exists_inverse_norm_le_two_mul_of_perturbation
+    ((2:ℂ) • T) ((1/2:ℂ) • T) T hQR hRQ hnorm
+  have he : (2:ℂ) • T+T = (3:ℂ) • T := by module
+  refine ⟨R,?_⟩
+  simpa only [he,T,norm_smul,Complex.norm_div,norm_one,Complex.norm_ofNat,
+    ContinuousLinearMap.norm_id,mul_one,show (2:ℝ)*(1/2) = 1 by norm_num] using hR
+
+end Section12ComplexNeighborhoodExamples

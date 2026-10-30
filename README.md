@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [compact inverse bounds and joint complex estimates](coverage/SECTION_12_ASSERTIONS.md)
-now hold for the actual original operators, uniformly over the compact gap
-product and all indices. The corrected joint-distance bound has explicit
-factor 4*C/r^2. The ordered ledger has forty matched groups, eleven with
-corrections and 16 pending. Next is the global simply connected joint
-neighborhood; wider qualifications remain in the
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: [global complex neighborhoods and implicit continuation](coverage/SECTION_12_ASSERTIONS.md)
+now preserve the entire original real placement domain and supplied disks.
+The exact Neumann composition-norm criterion retains the factor two.
+All signed root branches share one simply connected source domain.
+The ordered ledger has forty-two matched groups, eleven with corrections
+and 14 pending. Next is the diagonal period proof; wider qualifications
+remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
