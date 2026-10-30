@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: two [intermediate gradient estimates](NLS/ZakharovShabat/SourceBirkhoffGradientReduction.lean)
-complete the corrected x/y formulas in the proof of Lemma 16.2, and two
-[own-index product estimates](NLS/ZakharovShabat/SourcePsiOwnIndexAsymptotics.lean)
-establish the separate asymptotics for every real source. The
-[ordered Section 16 comparison](coverage/SECTION_16_ASSERTIONS.md) records
-27 groups: 20 matched and seven corrected. Next is Section 17,
-Diffeomorphism property. Wider qualifications remain in the
-[completion assessment](coverage/COMPLETENESS.md).
+Latest step: the [ordered Section 17 comparison](coverage/SECTION_17_ASSERTIONS.md)
+classifies 31 passage groups, retaining the corrected constants, enumeration
+cutoff, canonical labels and inward angle flow. The actual map is locally
+invertible and globally injective for all finite p>1, and onto for p<=2.
+The exact cited 2014 construction comparison remains qualified. Next is
+Section 18, Frequencies, convexity and wellposedness. Wider qualifications
+remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

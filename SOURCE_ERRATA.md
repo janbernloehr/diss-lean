@@ -536,8 +536,9 @@ Hamiltonian, frequency, and wellposedness packages.
 
 The first display in the proof on printed p. 78 writes A K bₘ±=−d₋ₘ±.
 For the actual coordinate gradients and the exact Fourier normalization,
-the identities are A K bₘˣ=−d₋ₘʸ and A K bₘʸ=−d₋ₘˣ. The source's next
-pairing display already switches to bₘ∓. The formal theorem
+the identities are A K bₘˣ=−d₋ₘʸ and A K bₘʸ=−d₋ₘˣ. In the following
+pairing display, using bₘ∓ requires the corresponding mode d₋ₘ±. The
+swapped labels must be retained consistently in both displays. The formal theorem
 `SourceSection16OriginalData.normalizedJacobian_hamiltonian_coordinates`
 proves both corrected identities for every real source and p≥2.
 `normalizedJacobian_hamiltonian_x_ne_printed` proves the unswapped x

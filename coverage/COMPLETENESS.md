@@ -240,7 +240,21 @@ The common actual-gap majorant is chosen before both indices, so diagonal
 sampling retains lp summability for the original n-dependent root family.
 The full-complex auxiliary estimate retains its separate proof on W.
 This completes the ordered Section 16 comparison with explicit corrections;
-it does not resolve the wider dissertation qualifications. Next is Section 17.
+it does not resolve the wider dissertation qualifications.
+
+The [ordered Section 17 ledger](SECTION_17_ASSERTIONS.md) classifies all
+31 groups: 21 matched, eight corrected, one partial external comparison
+and one contextual attribution. Existing proofs establish local analytic
+inverses and global injectivity for all finite p>1, surjectivity for p<=2,
+the full original pre-collapse theta flow, its continuous displacement in
+every finite exponent above one, and the stated isospectral images.
+Corrected canonical labels, selected indices, factor two, the matching
+2N+1 enumeration cutoff and inward signs are retained directly.
+
+S17-007 remains partial only for the exact cited 2014 [23] construction
+comparison; the internal Hilbert inverse is proved. The attribution to
+[36] is recorded as contextual. No new refutation is added. Next is
+Section 18, Overview of frequencies, convexity and wellposedness.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

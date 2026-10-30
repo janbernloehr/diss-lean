@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T21:05:32.179477+00:00",
-  "base_commit": "e4f11628ec8e99a163805196cbb296f6e031cabf",
+  "published_utc": "2026-10-30T21:14:18.574470+00:00",
+  "base_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 155,
-    "module_hash_checks": 3312,
-    "distinct_modules": 1809
+    "review_records": 156,
+    "module_hash_checks": 3370,
+    "distinct_modules": 1842
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e4f11628ec8e99a163805196cbb296f6e031cabf",
-    "validated_state": "Fresh validation of four positive Section 16 gradient and own-index product estimates and four public examples. All 27 ordered groups are compared: 20 matched and seven corrected.",
+    "base_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
+    "validated_state": "Documentation-only ordered Section17 comparison: 31 groups classified with explicit corrections and the external 2014 comparison retained. Lean sources and dependency locks are unchanged; successful full gate 6799 is reused, not rerun.",
     "command": "./scripts/check.sh",
     "build_jobs": 8559,
     "public_examples": 7635,
@@ -44,7 +44,8 @@
       "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
     },
     "full_gate_log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16",
-    "qualification": "The full Lean check and axiom audit passed on this exact snapshot. Review-integrity checks verify recorded evidence, not mathematical completeness."
+    "qualification": "Successful full Lean validation is reused on this exact snapshot. Current integrity checks verify recorded evidence, not mathematical completeness.",
+    "validation_reused_from_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0"
   },
   "named_statements": [
     {
@@ -40172,6 +40173,1080 @@
         "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
       },
       "source_record_sha256": "901c49ddb940274fd3605e213bee5718fa78b5f75ad9335c4a94d617dfcad653"
+    },
+    "Section17OrderedSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
+      "updated_utc": "2026-10-30T21:14:18.574470+00:00",
+      "source_lines": [
+        [
+          6355,
+          6355
+        ],
+        [
+          6358,
+          6364
+        ],
+        [
+          6367,
+          6369
+        ],
+        [
+          6370,
+          6374
+        ],
+        [
+          6377,
+          6384
+        ],
+        [
+          6388,
+          6394
+        ],
+        [
+          6397,
+          6399
+        ],
+        [
+          6400,
+          6405
+        ],
+        [
+          6409,
+          6415
+        ],
+        [
+          6418,
+          6425
+        ],
+        [
+          6435,
+          6447
+        ],
+        [
+          6450,
+          6452
+        ],
+        [
+          6453,
+          6467
+        ],
+        [
+          6470,
+          6477
+        ],
+        [
+          6480,
+          6487
+        ],
+        [
+          6489,
+          6492
+        ],
+        [
+          6494,
+          6508
+        ],
+        [
+          6519,
+          6527
+        ],
+        [
+          6529,
+          6535
+        ],
+        [
+          6536,
+          6539
+        ],
+        [
+          6541,
+          6542
+        ],
+        [
+          6544,
+          6552
+        ],
+        [
+          6554,
+          6557
+        ],
+        [
+          6558,
+          6560
+        ],
+        [
+          6561,
+          6569
+        ],
+        [
+          6571,
+          6579
+        ],
+        [
+          6580,
+          6590
+        ],
+        [
+          6592,
+          6594
+        ],
+        [
+          6604,
+          6612
+        ],
+        [
+          6614,
+          6617
+        ],
+        [
+          6618,
+          6624
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S17-001",
+          "source_lines": [
+            6355,
+            6355
+          ],
+          "printed_page": 78,
+          "requirement": "Connection to the remaining properties of Theorem 14.1.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original-family package supplies the remaining local inverse, injectivity and stated surjectivity properties. Its constructor proves the package fields from the actual preceding source construction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection17_original",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse"
+          ],
+          "qualification": "The same normalized family and compatible Chapter 3 domain are retained. Global injectivity holds for every finite p>1; surjectivity is asserted only for p<=2."
+        },
+        {
+          "ordered_group": "S17-002",
+          "source_lines": [
+            6358,
+            6364
+          ],
+          "printed_page": 78,
+          "requirement": "Proposition 17.1: local diffeomorphism at every finite exponent above one.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every real source and every finite p>1 the actual real derivative is a bounded linear equivalence. The inverse function theorem gives an analytic local inverse with both inverse identities and the exact strict derivative of the inverse.",
+            "The complex extension also has both local inverse identities near each real source."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.proposition17_1",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.complex_localInverse",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_jacobian_bijective_all_exponents"
+          ],
+          "qualification": "No invertibility premise is supplied by the caller. The complex local result concerns neighborhoods of real sources, not every complex point of the full construction domain."
+        },
+        {
+          "ordered_group": "S17-003",
+          "source_lines": [
+            6367,
+            6369
+          ],
+          "printed_page": 78,
+          "requirement": "Normalized Jacobian equivalence and compact-perturbation Fredholm step.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Composition with the exact bounded Fourier inverse identifies invertibility of the actual Jacobian with invertibility of its normalization. The normalized operator is identity plus compact.",
+            "The compact spectral decomposition gives the needed Banach-space alternatives: dense range implies bijectivity, and injectivity implies bijectivity. This supplies the role of the printed index-zero Fredholm argument."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian_bijective_iff",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id",
+            "NLS.CompactSpectrum.bijective_of_denseRange_compact_sub_id",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_bijective_all_exponents"
+          ],
+          "qualification": "The implementation does not require a Hilbert adjoint on a general p-source space. The actual compact-perturbation alternatives retain the full finite exponent range."
+        },
+        {
+          "ordered_group": "S17-004",
+          "source_lines": [
+            6370,
+            6374
+          ],
+          "printed_page": 78,
+          "requirement": "Canonical images with consistent swapped x/y labels.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For p>=2, the actual x Hamiltonian maps to a positive y output mode, and the y Hamiltonian maps to a negative x output mode.",
+            "After exact Fourier normalization these become A K b_x=-d_y and A K b_y=-d_x, with the reflected index -m. Both labels are swapped consistently."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.jacobian_hamiltonian_coordinates",
+            "NLS.ZakharovShabat.SourceSection16OriginalData.normalizedJacobian_hamiltonian_coordinates"
+          ],
+          "qualification": "The unswapped printed labels are corrected directly. Hamiltonian source directions here require p>=2; the separate inclusion argument handles smaller exponents. Existing historical refutations are unchanged."
+        },
+        {
+          "ordered_group": "S17-005",
+          "source_lines": [
+            6377,
+            6384
+          ],
+          "printed_page": 78,
+          "requirement": "Dense modes and Jacobian invertibility, with the correct dual interpretation.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The pairing argument must use the same swapped labels as the corrected canonical images. The proof instead gives actual source preimages for both output modes, then places every finite output truncation in the Jacobian range.",
+            "For p>=2 truncation convergence gives dense range and hence bijectivity. For p<2 compatibility transports a kernel vector to the Hilbert Jacobian; its injectivity and injective coefficient inclusion kill the vector. The compact-perturbation alternative gives surjectivity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_single_preimages",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_truncate_mem_range",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_denseRange",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_exponent",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_injective_of_le_two",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_bijective_all_exponents"
+          ],
+          "qualification": "The following printed pairing display is not certified merely because it uses an opposite label. The correction is consistent in both displays, and a Holder-conjugate cotangent is not treated as an arbitrary source vector below two."
+        },
+        {
+          "ordered_group": "S17-006",
+          "source_lines": [
+            6388,
+            6394
+          ],
+          "printed_page": 78,
+          "requirement": "Proposition 17.2: global injectivity.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual real map is injective throughout every finite p>1 source space. The local-homeomorphism result then makes it an open embedding."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_2",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_isOpenEmbedding",
+            "NLS.ZakharovShabat.sourceSection17_original"
+          ],
+          "qualification": "The constructed original package has no supplied global-injectivity premise."
+        },
+        {
+          "ordered_group": "S17-007",
+          "source_lines": [
+            6397,
+            6399
+          ],
+          "printed_page": 78,
+          "requirement": "The Hilbert base case and the cited external construction.",
+          "status": "partial",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The Hilbert map is internally proved globally bijective: the action-mass identity bounds sources, coefficient compactness and actual action continuity prove properness, and the trace identity gives a singleton zero fiber.",
+            "A closed local homeomorphism with a singleton fiber over the connected target is bijective. Its inverse agrees locally with the analytic inverses.",
+            "This proves the mathematical Hilbert base case used by the section. Equality with the exact construction in the cited 2014 edition of [23], Theorem 19.3, remains unverified."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_proper",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_eq_zero_iff",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_symm_analytic",
+            "NLS.FunctionalAnalysis.bijective_of_closed_localHomeomorph_singleton_fiber"
+          ],
+          "qualification": "Partial denotes the retained external-edition comparison only. The internal Hilbert inverse is a proved theorem, not an assumption."
+        },
+        {
+          "ordered_group": "S17-008",
+          "source_lines": [
+            6400,
+            6405
+          ],
+          "printed_page": 78,
+          "requirement": "Local inverse branches and Hilbert collision reduction.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Two distinct preimages of a common output give local inverse branches. One sufficiently large finite truncation of that output lies in both inverse neighborhoods and has distinct preimages in independently prescribed source neighborhoods.",
+            "Finite output support means finitely many open spectral gaps. The finite-gap Sobolev bootstrap supplies coefficient-preserving Hilbert realizations, and exponent compatibility gives an actual Hilbert collision. Below two direct inclusion suffices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_collision_mem_open",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_of_real_map_eq_truncatePair",
+            "NLS.ZakharovShabat.sourceFiniteGap_exists_hilbert_realization",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbert_collision_of_collision",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_injective_of_hilbert"
+          ],
+          "qualification": "This supplies the regularity step behind restricting inverse branches to Hilbert space. Openness of their intersections alone is not used as a proof of Hilbert preimages."
+        },
+        {
+          "ordered_group": "S17-009",
+          "source_lines": [
+            6409,
+            6415
+          ],
+          "printed_page": 78,
+          "requirement": "Proposition 17.3: surjectivity for 1<p<=2.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every real target in exponent 1<p<=2 has a preimage under the actual source map. The full original package combines this with injectivity and analytic local inverses."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+            "NLS.ZakharovShabat.sourceSection17_original",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse"
+          ],
+          "qualification": "The upper bound p<=2 is retained in surjectivity and the global inverse."
+        },
+        {
+          "ordered_group": "S17-010",
+          "source_lines": [
+            6418,
+            6425
+          ],
+          "printed_page": 78,
+          "requirement": "Hilbert preimage and stronger-exponent membership goal.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Include the p-target into Hilbert space and apply the internally constructed Hilbert inverse. The proof then recovers membership of this actual Hilbert preimage in the original p-space.",
+            "The coefficient-preserving inclusions and map compatibility identify the final p-output with the prescribed target."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph_symm_exponent"
+          ],
+          "qualification": "The contradiction formulation (3.5) and the direct recovery of p-membership prove the same conclusion. The exact cited 2014 identification remains qualified in S17-007."
+        },
+        {
+          "ordered_group": "S17-011",
+          "source_lines": [
+            6435,
+            6447
+          ],
+          "printed_page": 79,
+          "requirement": "Origin inverse chart and the small target ball (3.6).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual real map sends zero to zero and has an open image containing zero. Hence an actual positive-radius target ball lies in its image.",
+            "The complex local inverse from Proposition 17.1 also supplies the ambient chart around zero; restricting its target neighborhood permits any smaller ball, including the source notation B_(4 epsilon)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_isOpenEmbedding",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.complex_localInverse"
+          ],
+          "qualification": "The surjectivity proof needs only the real small-ball consequence. Its radius is chosen from openness rather than fixed in advance."
+        },
+        {
+          "ordered_group": "S17-012",
+          "source_lines": [
+            6450,
+            6452
+          ],
+          "printed_page": 79,
+          "requirement": "Finite reduction strategy and source-space displacements.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Finite lists of actual Hilbert angle-flow moves are defined in their list order. Every admissible move stops strictly before its current collapse time.",
+            "The sum of the stronger-space displacements recovers both actual Fourier components of the total displacement in every finite exponent above one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.AdmissibleActionReductions",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_displacement"
+          ],
+          "qualification": "The initial Hilbert source need not itself belong to the stronger space. Membership is asserted for the displacement."
+        },
+        {
+          "ordered_group": "S17-013",
+          "source_lines": [
+            6453,
+            6467
+          ],
+          "printed_page": 79,
+          "requirement": "Original angle gradients, stronger-space Hamiltonian and (3.7).",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original theta sum has real analytic local representatives modulo pi on the selected open-gap domain, with its full branch-independent differential.",
+            "At conjugate exponents p<=2<=q, bounded recovery of the q-cotangent gives an exponent-p Hamiltonian vector analytic in the Hilbert source. Its Hilbert inclusion equals the actual theta Hamiltonian, even for independently constructed normalized families.",
+            "The lifted curve solves the original Hamiltonian equation (3.7). Only the selected gap must be open."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem13_1_original",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.analyticAt_hilbertThetaVectorInExponent",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.hilbertThetaVectorInExponent_inclusion",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_exponent",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_hilbertActionReduction_thetaHamiltonian"
+          ],
+          "qualification": "Angle values retain their period ambiguity; the vector field uses the well-defined differential. The selected open-gap condition replaces the inconsistent D_k/Z_k notation at real sources."
+        },
+        {
+          "ordered_group": "S17-014",
+          "source_lines": [
+            6470,
+            6477
+          ],
+          "printed_page": 79,
+          "requirement": "Actual finite reductions with the selected index m_n.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite selected actions can be made smaller than any prescribed positive index-dependent bounds by actual admissible flows. The finite-set induction skips already small actions and preserves all earlier bounds.",
+            "This includes the positive geometric thresholds used in the source. The selected gap and vector-field labels are m_n throughout the recursive construction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReductionSequence_small_actions",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReduction_small_action",
+            "NLS.ZakharovShabat.section17Mode_bijective"
+          ],
+          "qualification": "The occurrences of Z_n and Y_n in the selected m_n step are corrected to Z_(m_n) and Y_(m_n). No new refutation is added."
+        },
+        {
+          "ordered_group": "S17-015",
+          "source_lines": [
+            6480,
+            6487
+          ],
+          "printed_page": 79,
+          "requirement": "Selected action decreases while other actions are preserved.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Along the original theta flow, I_j(t)=I_j(0)-t when j is the selected index and I_j(t)=I_j(0) otherwise. The formula holds for all times up to collapse, including negative times.",
+            "Consequently each later distinct selected move preserves the bounds already achieved. The finite induction proves all prescribed inequalities simultaneously."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.angleFlow_action_law",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_action_le",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReductionSequence_small_actions"
+          ],
+          "qualification": "The exact action law supplies the integrated content of the canonical commutator used here. The source time derivative has the negative unit sign."
+        },
+        {
+          "ordered_group": "S17-016",
+          "source_lines": [
+            6489,
+            6492
+          ],
+          "printed_page": 79,
+          "requirement": "Untouched enumeration tail with the correct m_k index.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Every unselected rectangular coordinate is preserved through the entire finite list. Therefore its original indexed action is preserved as well.",
+            "In the enumerated tail the retained equality is I_(m_k)(phi_n)=I_(m_k)(phi_0)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_coordinates_of_not_selected",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_pairAction_eq"
+          ],
+          "qualification": "The printed right-hand index k is corrected to m_k. The finite-set formulation keeps the exact outside set."
+        },
+        {
+          "ordered_group": "S17-017",
+          "source_lines": [
+            6494,
+            6508
+          ],
+          "printed_page": 79,
+          "requirement": "Corrected coordinate-power sum constant and action budget.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For 1<p<=2 the correct pointwise bound is |x|^p+|y|^p <= 2*((x^2+y^2)/2)^(p/2). It follows from concavity of the p/2 power.",
+            "Both the coordinate-power sum and action-power sum are proved summable. The original spectral actions then satisfy the literal infinite summed bound with factor two, retaining both coordinate powers inside each summand."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.real_pair_power_le_two_action",
+            "NLS.RealCoeff.summable_pairAction_rpow",
+            "NLS.RealCoeff.coordinate_power_tsum_le_two_actions",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.corrected_action_power_sum"
+          ],
+          "qualification": "The factor two is used directly. The literal summed power is distinguished from the maximum product norm used by the target interfaces. No new optimality or failure witness is proved."
+        },
+        {
+          "ordered_group": "S17-018",
+          "source_lines": [
+            6519,
+            6527
+          ],
+          "printed_page": 80,
+          "requirement": "Summable action tails and the 2N+1 enumeration cutoff.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Actual p-coordinates give summable original action powers. The one-based ordering 0,-1,1,-2,2,... is a proved bijection after shifting its natural-number index.",
+            "Its first 2N+1 positions cover exactly the modes with absolute index at most N. The remaining enumeration sum equals the absolute-mode tail with |m|>N."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.corrected_action_power_sum",
+            "NLS.ZakharovShabat.section17Mode_initial_block",
+            "NLS.ZakharovShabat.section17Mode_tail_iff",
+            "NLS.ZakharovShabat.section17Mode_corrected_tail_sum"
+          ],
+          "qualification": "The absolute cutoff N is paired with 2N+1 enumeration positions. The actual surjectivity proof instead uses a chosen finite set and its exact complement, so both descriptions retain the same tail scope."
+        },
+        {
+          "ordered_group": "S17-019",
+          "source_lines": [
+            6529,
+            6535
+          ],
+          "printed_page": 80,
+          "requirement": "Small target estimate and identification of the reduced source (3.8).",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "With factor two and an action-power budget below 2 epsilon^p, the coordinate-power sum is below 4 epsilon^p and hence below (4 epsilon)^p for p>=1. An existing general public example proves this positive arithmetic bound.",
+            "The actual finite-action criterion gives a small p-target from small selected actions and unchanged outside coordinates, even when the candidate initially lives only in Hilbert space.",
+            "An original p-preimage exists in the small image ball. Hilbert injectivity identifies it with the reduced Hilbert source, giving (3.8)."
+          ],
+          "declarations": [
+            "NLS.RealCoeff.exists_finite_action_small_norm",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective"
+          ],
+          "qualification": "The corrected constant and matching cutoff preserve the original small-target argument. The implementation uses an arbitrary image-ball radius rather than depending on a norm equality for a product space."
+        },
+        {
+          "ordered_group": "S17-020",
+          "source_lines": [
+            6536,
+            6539
+          ],
+          "printed_page": 80,
+          "requirement": "Finite displacement recovers original p-membership.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "An admissible finite reduction preserves membership in every exponent p<=2: the reduced source is the original source plus a source-p displacement.",
+            "Subtracting that displacement from the identified p-preimage recovers the original Hilbert preimage in p, finishing surjectivity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_displacement_inclusion",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_mem_exponent_iff",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3"
+          ],
+          "qualification": "Both coefficient components and their real-type relation are retained; mere coordinatewise regularity is not substituted for source-space membership."
+        },
+        {
+          "ordered_group": "S17-021",
+          "source_lines": [
+            6541,
+            6542
+          ],
+          "printed_page": 80,
+          "requirement": "Attribution of the flow method to reference [36].",
+          "status": "contextual",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source attributes the method of the following flow lemma to reference [36], Lemma 1. The mathematical flow statement is proved internally in the next groups."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.lemma17_4"
+          ],
+          "qualification": "This records the attribution in the dissertation; it does not independently compare the external paper or certify the historical attribution."
+        },
+        {
+          "ordered_group": "S17-022",
+          "source_lines": [
+            6544,
+            6552
+          ],
+          "printed_page": 80,
+          "requirement": "Lemma 17.4: unique C1 flow and displacement in every finite exponent.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every real Hilbert source with the selected gap open, the original theta Hamiltonian has a C1 solution on the complete interval (-infinity,I_k(phi_0)).",
+            "Uniqueness holds against every ambient complex-source solution with the same initial value and actual derivative equation. The selected action tends to zero at the right endpoint.",
+            "The displacement has a continuous real-type realization in every finite exponent r>1, with equality of every actual Fourier coefficient."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.lemma17_4",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_exists_unique_and_action_limit",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_continuous_real_displacement"
+          ],
+          "qualification": "Only the selected gap is assumed open. No C1 extension through the collapse endpoint is asserted."
+        },
+        {
+          "ordered_group": "S17-023",
+          "source_lines": [
+            6554,
+            6557
+          ],
+          "printed_page": 80,
+          "requirement": "Hilbert canonical map and the original angle differential.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The Hilbert map is globally bi-real-analytic and has the actual canonical rectangular brackets. Positive-root action-angle formulas identify the original theta with the polar angle modulo its period.",
+            "On the selected open gap its full differential is (-y dx+x dy)/(2I). The identity remains valid when the map and auxiliary angle family were independently constructed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_symm_analytic",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.real_rectangular_formula",
+            "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_eq_rectangular",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.thetaDifferential_eq_map_rectangular"
+          ],
+          "qualification": "The polar angle statement uses the original cosine/sine phase and local differential, not a globally single-valued analytic principal argument."
+        },
+        {
+          "ordered_group": "S17-024",
+          "source_lines": [
+            6558,
+            6560
+          ],
+          "printed_page": 80,
+          "requirement": "Equation (3.9) with inward signs in both components.",
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual Jacobian sends the original theta Hamiltonian to the radial field with both components negative: -x_k/(x_k^2+y_k^2) and -y_k/(x_k^2+y_k^2). Every other coordinate has zero velocity.",
+            "The coordinate radial curve scales the selected pair by sqrt(1-t/I_k(phi_0)), and its derivative is this field at the current point."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection16OriginalData.equation3_9",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_thetaHamiltonian",
+            "NLS.RealCoeff.actionReductionVector",
+            "NLS.RealCoeff.hasDerivAt_actionReduction_vector"
+          ],
+          "qualification": "The positive printed x sign in (3.9) is replaced directly by the inward negative sign. Existing historical witnesses are preserved without new ones."
+        },
+        {
+          "ordered_group": "S17-025",
+          "source_lines": [
+            6561,
+            6569
+          ],
+          "printed_page": 80,
+          "requirement": "Full pre-collapse time interval, uniqueness and selected-action limit.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The positive selected action makes the radial scale smooth for every t<I_k(phi_0), including all negative times. The global analytic inverse lifts it to the actual source curve.",
+            "The vector field is C1 near every point of the reference curve. Local Lipschitz uniqueness propagates across the connected open time interval, and the exact selected-action law gives the zero limit."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.contDiffAt_hilbertActionReduction",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReduction_thetaHamiltonian_unique",
+            "NLS.FunctionalAnalysis.eqOn_of_autonomous_hasDerivAt",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.tendsto_action_hilbertActionReduction"
+          ],
+          "qualification": "The explicit curve also has a continuous source-norm collapse limit, but the differentiable ODE statement remains on the open interval."
+        },
+        {
+          "ordered_group": "S17-026",
+          "source_lines": [
+            6571,
+            6579
+          ],
+          "printed_page": 80,
+          "requirement": "Bochner integration in the stronger space gives continuous displacement.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For an exponent below two, the actual theta velocity has a continuous stronger-space realization and an actual Bochner integral on every segment from zero to t. Applying Hilbert inclusion commutes with that integral and recovers the source displacement.",
+            "Above two, continuous Hilbert inclusion supplies the displacement directly. In both cases both actual Fourier components agree, and the resulting displacement is continuous in the claimed stronger or weaker source norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_displacement_of_conjugate",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_displacement_all_exponents",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_continuous_real_displacement",
+            "NLS.FunctionalAnalysis.exists_continuous_displacement_of_hasDerivAt"
+          ],
+          "qualification": "The integral proof does not infer stronger-norm convergence from Hilbert convergence alone. The additional angle families are constructed internally and identified by exponent compatibility."
+        },
+        {
+          "ordered_group": "S17-027",
+          "source_lines": [
+            6580,
+            6590
+          ],
+          "printed_page": 80,
+          "requirement": "Original periodic isospectral sets and action tori.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The source isospectral set uses the actual periodic spectrum and algebraic multiplicities. The target torus fixes the quadratic radius at every signed index to the original spectral action.",
+            "The action-radius identity identifies the preimage of that torus with the original source action level set."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIsospectralSet",
+            "NLS.RealCoeff.actionTorus",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_pairAction_eq",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.actionLevelSet_eq_preimage_actionTorus"
+          ],
+          "qualification": "The action level set and the spectral isospectral set are distinct definitions; their equality below two is a proved later conclusion."
+        },
+        {
+          "ordered_group": "S17-028",
+          "source_lines": [
+            6592,
+            6594
+          ],
+          "printed_page": 80,
+          "requirement": "Compactness of the target torus for every finite exponent.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every action torus is closed. If nonempty, any one element supplies a single lp majorant for all coordinate magnitudes of every other element.",
+            "Uniform majorant tails and closedness give compactness in the full target norm at every finite exponent. Empty tori and infinitely many nonzero actions are included."
+          ],
+          "declarations": [
+            "NLS.RealCoeff.isClosed_actionTorus",
+            "NLS.RealCoeff.abs_coordinates_le_of_pairAction_eq",
+            "NLS.RealCoeff.isCompact_actionTorus",
+            "NLS.RealCoeff.isCompact_of_isClosed_of_majorant"
+          ],
+          "qualification": "Finite exponent is required. Coordinatewise compactness alone is not used to claim norm compactness."
+        },
+        {
+          "ordered_group": "S17-029",
+          "source_lines": [
+            6604,
+            6612
+          ],
+          "printed_page": 81,
+          "requirement": "Lemma 17.5: equality and compactness below two, inclusion above two.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<p<=2 the actual isospectral image is the entire prescribed action torus and the source isospectral set is compact in its original norm.",
+            "For every finite p>1, hence also p>2, the isospectral image is contained in the torus."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.lemma17_5",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma17_5_i",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_subset_actionTorus"
+          ],
+          "qualification": "Neither complete torus images nor source isospectral compactness above exponent two are asserted."
+        },
+        {
+          "ordered_group": "S17-030",
+          "source_lines": [
+            6614,
+            6617
+          ],
+          "printed_page": 81,
+          "requirement": "Equal periodic spectral data give equal discriminants and actions.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Equality of the actual periodic spectrum with multiplicities is equivalent to equality of the normalized discriminant. Equal endpoints also identify the canonically signed square root.",
+            "A common smaller action contour gives equality of each original indexed action, including collapsed gaps and the finite central block. This proves the all-exponent torus inclusion."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceIsospectralSet_iff_discriminant_eq",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_of_isospectral",
+            "NLS.ZakharovShabat.sourceRealAction_eq_of_isospectral",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_subset_actionTorus"
+          ],
+          "qualification": "The normalization and spectral multiplicities are retained; equality of unlabelled zero sets alone is not substituted."
+        },
+        {
+          "ordered_group": "S17-031",
+          "source_lines": [
+            6618,
+            6624
+          ],
+          "printed_page": 81,
+          "requirement": "Hilbert action rotations and transfer of torus equality below two.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "In Hilbert space the inverse map lifts every finite coordinate action rotation. Its actual source velocity is the action Hamiltonian, whose discriminant derivative is zero; every such source curve is isospectral.",
+            "Finite rotations can match any finite block of an equal-action target, and those replacements converge in the full norm. Continuity of the inverse and closedness of the actual isospectral set yield the converse inclusion.",
+            "Action and discriminant compatibility transfer this equality to p<=2. The global inverse maps the compact action torus to the compact source action level set, and the spectral set is closed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotationSequence_mem_isospectralSet",
+            "NLS.RealCoeff.closure_actionRotationSequence_range",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_actionLevelSet_subset_isospectralSet",
+            "NLS.ZakharovShabat.sourceRealActionLevelSet_subset_isospectralSet",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_eq_actionTorus",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompact_isospectralSet"
+          ],
+          "qualification": "This establishes the mathematical converse internally; the exact external [23] edition comparison remains the qualification in S17-007."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection17Original.lean": "68aaf622885d6516a72d3428760e4dbe78a7a6152bd451875c4f491173c39cb6",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_1.lean": "02e7b632d0340b6c8ce758982581e7a52b80353faff49ebe9ae23d0b97e1c3e5",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_2.lean": "8132205b6ec09c9993a54513e1c28cd3ea8ecbf43cf2436e3e40a6ed1c3a3348",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_3.lean": "13e36514cc6e05c9fd43f6c8b9b188939aeeb3b5729043b6df43e62b5c889648",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianAllExponents.lean": "60ae81a7ca67c2813bf618f940a164999735b6675e585a2949799a632bffa381",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalCanonicalImages.lean": "c8235cc9e9608708544e8de1c9ed1a075c818c9ac851285efc48efb8badbfeea",
+        "NLS/ZakharovShabat/SourceBirkhoffInjectivityReduction.lean": "b39abfb6469e8da3e5f87454e5a6ec2621b562225fc19f3e652230561b6696ee",
+        "NLS/ZakharovShabat/SourceActionPowerSum.lean": "7941bd469d3b7e4c615bcc24999ba709b4fdc4d39c0282a71e7d2f6363129073",
+        "NLS/ZakharovShabat/Section17EnumerationCutoff.lean": "6a65be7777b41b29b7ea0fe0e9267d41d8605ff6630c01319a91e9824da54a9e",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma17_5.lean": "c0858c78edafd41a10b057f99bd1663b1f760cccde20a3348f65a58792a95dac",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalAngleFlow.lean": "d914c11d665a009f3f745735761244dbc9da0a858e78dc65055f6c3a38e484e0",
+        "NLS/ZakharovShabat/SourceHilbertAngleFlowUnique.lean": "4239f9a34ea0308ebc2658a53b1a2a089c9782a8020a527994c5e15c47edf052",
+        "NLS/ZakharovShabat/SourceHilbertAngleDisplacement.lean": "28a921bbfdaaeaf6293ba5bf92119af885ff0b070254c10833406e0f4dd0d53d",
+        "NLS/SequenceSpaces/RealActionTail.lean": "c3fee49ddc63e750e78bba57959da7c8d1fd4f76ea7f66a1ebedc830ab0d7ad3",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianInvertible.lean": "328fe61811252420288b19374d63ae311f0f1524adaec9b4657dbd7aacd28f89",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianRange.lean": "8e7fe0f4f734ab89a00a6f5179f167931376aa5496c9d41b318cd2937f5f10f3",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteGapFibers.lean": "ff05b0e34f5ac6afc89472cbaced15419efa0bffe582328aa0f537476f688878",
+        "NLS/ZakharovShabat/SourceHilbertFiniteActionReduction.lean": "8a8de841c2b934cf6c4cab9d2bf80ec0a60b0b6650675bf3b96f4f568e646ea4",
+        "NLS/FunctionalAnalysis/CompactDenseRange.lean": "e0973a66ae98901e5330ccd0020bb34218d983235119216b04e3852b47e00cac",
+        "NLS/FunctionalAnalysis/IntegralDisplacement.lean": "02069b45dc41a6556d882c2b56af6232e169600eb643a026a5fd1f30011b33fe",
+        "NLS/ZakharovShabat/SourceHilbertAngleStrongRegularity.lean": "d1e583b832d6c70f9a2a4d249a55056bdf2fdb4543c60674520c3a0c4b79c6d6",
+        "NLS/ZakharovShabat/SourceHilbertAngleHamiltonian.lean": "a4aa4fd9ef7c8bde0c0b808fd40ff8b311478f612adb670245d699405fc30065",
+        "NLS/ZakharovShabat/SourceHilbertGlobalInverse.lean": "bae65dfaf5642212fff42c6cc5f9e1571abb45ca871058c728dbc87864339d5f",
+        "NLS/ZakharovShabat/SourceHilbertProperness.lean": "6e6bf4b8881c5776af4690bd52e1068ab5b4897b0923aadb06222230d28786f2",
+        "NLS/FunctionalAnalysis/ClosedLocalHomeomorph.lean": "96069d073cdb583042a933089eac542fc760372df1b2d92a056e1832cc6ad265",
+        "NLS/ZakharovShabat/SourceHilbertActionPropernessCriterion.lean": "6e151115cefd24a462ec63f9e3e4277f9e12ddb6570bc52e4eab261503561d3e",
+        "NLS/ZakharovShabat/SourceActionCoefficientContinuity.lean": "250fe0ecb76996ce2ced31a46aaf66bef08f5f8a804f46d8939ea1a7fe3f65d5",
+        "NLS/ZakharovShabat/SourceBirkhoffLocalHomeomorph.lean": "7a1007670950ba187f85c7bbb53f22afd0a9219377a026dd6302d7db1a860081",
+        "NLS/ZakharovShabat/SourceHilbertActionTrace.lean": "5cc2d8abd32276f26e50776f946830ef84be8173578020c0e7e8c36871e17cd6",
+        "NLS/ZakharovShabat/SourceHilbertCoefficientCompactness.lean": "05271f72c43836901d15b95de0c0ad87bf0594ce1b76e92c1973aef85de16c5a",
+        "NLS/ZakharovShabat/SourceCanonicalRootCoefficientContinuity.lean": "fc607b3dde40aed99d42e5a6e3bd2171a349618b1410e107fc03a36544e59b70",
+        "NLS/ZakharovShabat/SourceDiscriminantDerivativeCoefficientContinuity.lean": "2a8236da77c48dc02417338d564c1ba725f62ecd74761517b39f1e7954c948e7",
+        "NLS/ZakharovShabat/SourceHilbertActionRotation.lean": "dd088d79dc0d28f650aad450f24e550a4be754c493936f29188b4c847e70ba4f",
+        "NLS/SequenceSpaces/RealActionRotationOrbit.lean": "df61a33578bba9132b6c37d75d2c034cdc0dfc018085199c52e5279d2e17c84b",
+        "NLS/SequenceSpaces/RealActionTorus.lean": "8096eacadcbe042c94d3625fe6762dc9806f38985323d436563408fcb208d0a5",
+        "NLS/ZakharovShabat/SourceIsospectralSet.lean": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62",
+        "NLS/ZakharovShabat/SourceActionTorus.lean": "61cebcf83f64448a83a5e14c4153f125beabbbd3e1d251b54f547387155df7fa",
+        "NLS/ZakharovShabat/SourceBirkhoffGlobalInverse.lean": "12599e8c3bea5821d4632957cb33e24bb1ca333900a0c626a3d6d185de288d0d",
+        "NLS/ZakharovShabat/SourceIsospectralDirection.lean": "925a25b7737f202d83f2765dda72a5a64258a2d4b918b6478b0970f4c22984ea",
+        "NLS/SequenceSpaces/DominatedCompactness.lean": "6436190bed65b7716ee3e39f54283b9c87921414d697afaa283b82656a519aac",
+        "NLS/ZakharovShabat/SourceHilbertActionTraceReduction.lean": "47fc3fd644e6ca05d1da0a01a0a0fcb257387d5f51a254314bf1d8e23f4dc9e4",
+        "NLS/ZakharovShabat/SourceFiniteGapActionTrace.lean": "eed228d00aa0abe737e5616dc80a1d33713123d95a51da54501eeeb1f0b7d694",
+        "NLS/ZakharovShabat/SourceDiscriminantCoefficientContinuity.lean": "8ed00e7546f02cee90573f7d91a44c342e285a64910ab298f0e1b37c2e9853c7",
+        "NLS/ZakharovShabat/SourceActionSegmentCircle.lean": "4d3fec38a69bbde80f016521d2a6790bcfe4e417afa33768232bbdc13cc70562",
+        "NLS/ZakharovShabat/SourceAngularThetaHamiltonian.lean": "8a849d9922bc30f7583ad9a96713f183749de1c7415a138cecb56800cadc96f3",
+        "NLS/ZakharovShabat/SourceAngularThetaExponent.lean": "cde1005228d79f0207532b82ab98083dfdf3529f5be3f8d5bc1452588d94dbd8",
+        "NLS/ZakharovShabat/SourceAngularThetaRectangularDifferential.lean": "77d342bc1f942fff264cf6c464d357f1057145617895b816af3ac079b6283241",
+        "NLS/ZakharovShabat/SourceBirkhoffRealActionAngle.lean": "2c1deb23ac4fb92ebad7b05bdaeba755f8a02442945242611e97e99479d7ae03",
+        "NLS/ZakharovShabat/SourceBirkhoffCoordinateAngle.lean": "944c61e85f8456b9f73ebd2a4ddc4682c596a975104f027671bc18af01f97002",
+        "NLS/ZakharovShabat/SourceBirkhoffActionAngleMap.lean": "59d93d4a84019b64c21c645158aa7a226e0e72538c439a56d5608b12df55996e",
+        "NLS/ZakharovShabat/SourceHilbertActionReduction.lean": "3c24da371e09bc0cfc2febf981b7c08756c801fb0eec0cbef597978c6aebf300",
+        "NLS/ZakharovShabat/SourceTheorem13_1Original.lean": "c7bd68fdad6d8a483d71a6530cca2fb47fb9a2b0ea41bf1c96ba4e3c0ee0ad49",
+        "NLS/FunctionalAnalysis/AutonomousODEUniqueness.lean": "ebe8b944f3aa6ef428059a4bdd6422c997304a2867b33a38103e58d195a621da",
+        "NLS/SequenceSpaces/ConjugateCotangentLinear.lean": "24a7e8a6adf7fc6eb9169977bc2978f41027890b8c86da0bbd54107d730e2abe",
+        "NLS/SequenceSpaces/RealActionReduction.lean": "a9ba67dc325c009542d6b37234c30ce0a3f608cc0db6e142edf655c445ee578d",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteSupport.lean": "3bd051430a356c633c5324fd1d87e5d127273224003b20c3e9b5fd87283cd0bb",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_3.lean": "502fd21ed4db02e2c4a3e2412366a8b3d83cf69e1efcc6b1fac518e01e549cfa",
+        "NLS/ZakharovShabat/SourceFiniteGapHilbertRealization.lean": "15c653b917db6a84371ddb1a821650e291c072f89cbc914b2d7424d6e0ee4f3e"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection17Original.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_1.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_2.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffProposition17_3.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianAllExponents.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalCanonicalImages.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffInjectivityReduction.lean",
+        "NLS/ZakharovShabat/SourceActionPowerSum.lean",
+        "NLS/ZakharovShabat/Section17EnumerationCutoff.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma17_5.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffOriginalAngleFlow.lean",
+        "NLS/ZakharovShabat/SourceHilbertAngleFlowUnique.lean",
+        "NLS/ZakharovShabat/SourceHilbertAngleDisplacement.lean",
+        "NLS/SequenceSpaces/RealActionTail.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianInvertible.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianRange.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteGapFibers.lean",
+        "NLS/ZakharovShabat/SourceHilbertFiniteActionReduction.lean",
+        "NLS/FunctionalAnalysis/CompactDenseRange.lean",
+        "NLS/FunctionalAnalysis/IntegralDisplacement.lean",
+        "NLS/ZakharovShabat/SourceHilbertAngleStrongRegularity.lean",
+        "NLS/ZakharovShabat/SourceHilbertAngleHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceHilbertGlobalInverse.lean",
+        "NLS/ZakharovShabat/SourceHilbertProperness.lean",
+        "NLS/FunctionalAnalysis/ClosedLocalHomeomorph.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionPropernessCriterion.lean",
+        "NLS/ZakharovShabat/SourceActionCoefficientContinuity.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLocalHomeomorph.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionTrace.lean",
+        "NLS/ZakharovShabat/SourceHilbertCoefficientCompactness.lean",
+        "NLS/ZakharovShabat/SourceCanonicalRootCoefficientContinuity.lean",
+        "NLS/ZakharovShabat/SourceDiscriminantDerivativeCoefficientContinuity.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionRotation.lean",
+        "NLS/SequenceSpaces/RealActionRotationOrbit.lean",
+        "NLS/SequenceSpaces/RealActionTorus.lean",
+        "NLS/ZakharovShabat/SourceIsospectralSet.lean",
+        "NLS/ZakharovShabat/SourceActionTorus.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffGlobalInverse.lean",
+        "NLS/ZakharovShabat/SourceIsospectralDirection.lean",
+        "NLS/SequenceSpaces/DominatedCompactness.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionTraceReduction.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapActionTrace.lean",
+        "NLS/ZakharovShabat/SourceDiscriminantCoefficientContinuity.lean",
+        "NLS/ZakharovShabat/SourceActionSegmentCircle.lean",
+        "NLS/ZakharovShabat/SourceAngularThetaHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceAngularThetaExponent.lean",
+        "NLS/ZakharovShabat/SourceAngularThetaRectangularDifferential.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffRealActionAngle.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffCoordinateAngle.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffActionAngleMap.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionReduction.lean",
+        "NLS/ZakharovShabat/SourceTheorem13_1Original.lean",
+        "NLS/FunctionalAnalysis/AutonomousODEUniqueness.lean",
+        "NLS/SequenceSpaces/ConjugateCotangentLinear.lean",
+        "NLS/SequenceSpaces/RealActionReduction.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffFiniteSupport.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffLemma16_3.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapHilbertRealization.lean"
+      ],
+      "reviewed_source_excerpts": [
+        {
+          "file": "NLS/ZakharovShabat/SourceActionPowerConstant.lean",
+          "source_lines": [
+            1,
+            23
+          ],
+          "module_sha256": "c65ebbbb415898ecee257016136d533b087a964576a29d17a1b8161368a777f2",
+          "excerpt_sha256": "dc74bc7d00b1297c76d75c52d9fecada2d5a0510707ca0885a358a16230c9aa4",
+          "scope": "Existing positive constant proof and corrected small-target budget only."
+        },
+        {
+          "file": "scripts/CheckExamples.lean",
+          "source_lines": [
+            64492,
+            64502
+          ],
+          "module_sha256": "ceb8364ffb9df82bffcd9cf57d1fdb34403fcfb8a3f2a667ea679cfdb3b937ac",
+          "excerpt_sha256": "62ab29e5f2d23ec7c8d902e62a12c7fe265ee645104860acbf7864d10a73a656",
+          "scope": "Existing positive constant proof and corrected small-target budget only."
+        }
+      ],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/SECTION_17_ASSERTIONS.md",
+      "ordered_inventory_sha256": "b08681db75c08a966c8c3b4d072840faa5c7cc252ef679f3202fe2563f3ecdfd",
+      "resolved_declarations": [
+        "NLS.CompactSpectrum.bijective_of_denseRange_compact_sub_id",
+        "NLS.FunctionalAnalysis.bijective_of_closed_localHomeomorph_singleton_fiber",
+        "NLS.FunctionalAnalysis.eqOn_of_autonomous_hasDerivAt",
+        "NLS.FunctionalAnalysis.exists_continuous_displacement_of_hasDerivAt",
+        "NLS.RealCoeff.abs_coordinates_le_of_pairAction_eq",
+        "NLS.RealCoeff.actionReductionVector",
+        "NLS.RealCoeff.actionTorus",
+        "NLS.RealCoeff.closure_actionRotationSequence_range",
+        "NLS.RealCoeff.coordinate_power_tsum_le_two_actions",
+        "NLS.RealCoeff.exists_finite_action_small_norm",
+        "NLS.RealCoeff.hasDerivAt_actionReduction_vector",
+        "NLS.RealCoeff.isClosed_actionTorus",
+        "NLS.RealCoeff.isCompact_actionTorus",
+        "NLS.RealCoeff.isCompact_of_isClosed_of_majorant",
+        "NLS.RealCoeff.summable_pairAction_rpow",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.analyticAt_hilbertThetaVectorInExponent",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.hilbertThetaVectorInExponent_inclusion",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_eq_rectangular",
+        "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaDifferential_exponent",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.AdmissibleActionReductions",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.actionLevelSet_eq_preimage_actionTorus",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.contDiffAt_hilbertActionReduction",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.corrected_action_power_sum",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_finiteGap_collision_mem_open",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReductionSequence_small_actions",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbertActionReduction_small_action",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_hilbert_collision_of_collision",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_of_real_map_eq_truncatePair",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_hilbertActionReduction_thetaHamiltonian",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_action_le",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_coordinates_of_not_selected",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_displacement",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_displacement_inclusion",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReductionSequence_mem_exponent_iff",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionReduction_thetaHamiltonian_unique",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotationSequence_mem_isospectralSet",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_symm_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_actionLevelSet_subset_isospectralSet",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_continuous_real_displacement",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_displacement_all_exponents",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_displacement_of_conjugate",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_angleFlow_exists_unique_and_action_limit",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_pairAction_eq",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_eq_zero_iff",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_proper",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_eq_actionTorus",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_subset_actionTorus",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompactOperator_normalizedJacobian_sub_id",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompact_isospectralSet",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_bijective_all_exponents",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_denseRange",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_exponent",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_injective_of_le_two",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_single_preimages",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_truncate_mem_range",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.lemma17_5_i",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_thetaHamiltonian",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_2",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.proposition17_3",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph_symm_exponent",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_jacobian_bijective_all_exponents",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_injective_of_hilbert",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_map_isOpenEmbedding",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.real_pairAction_eq",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.tendsto_action_hilbertActionReduction",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.thetaDifferential_eq_map_rectangular",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.real_rectangular_formula",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.angleFlow_action_law",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.equation3_9",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.jacobian_hamiltonian_coordinates",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.lemma17_4",
+        "NLS.ZakharovShabat.SourceSection16OriginalData.normalizedJacobian_hamiltonian_coordinates",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.complex_localInverse",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.lemma17_5",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.proposition17_1",
+        "NLS.ZakharovShabat.mem_sourceIsospectralSet_iff_discriminant_eq",
+        "NLS.ZakharovShabat.real_pair_power_le_two_action",
+        "NLS.ZakharovShabat.section17Mode_bijective",
+        "NLS.ZakharovShabat.section17Mode_corrected_tail_sum",
+        "NLS.ZakharovShabat.section17Mode_initial_block",
+        "NLS.ZakharovShabat.section17Mode_tail_iff",
+        "NLS.ZakharovShabat.sourceBirkhoffNormalizedJacobian_bijective_iff",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_of_isospectral",
+        "NLS.ZakharovShabat.sourceFiniteGap_exists_hilbert_realization",
+        "NLS.ZakharovShabat.sourceIsospectralSet",
+        "NLS.ZakharovShabat.sourceRealActionLevelSet_subset_isospectralSet",
+        "NLS.ZakharovShabat.sourceRealAction_eq_of_isospectral",
+        "NLS.ZakharovShabat.sourceSection17_original",
+        "NLS.ZakharovShabat.sourceTheorem13_1_original"
+      ],
+      "declaration_inventory_count": 44604,
+      "qualification": "All 31 ordered Section 17 passage groups are classified: 21 matched, eight corrected, one partial external-edition comparison and one contextual attribution. The actual original map is a local analytic diffeomorphism and globally injective for every finite p>1. Surjectivity, the global analytic inverse and complete isospectral images retain 1<p<=2. The Hilbert inverse is proved internally. The exact cited 2014 construction remains unverified in S17-007; this is not an unproved Hilbert-inverse premise. Corrected swapped canonical labels, selected enumeration indices, factor two, the 2N+1 cutoff and inward angle-flow signs are retained directly. The original theta flow is unique and C1 on its full pre-collapse interval, with continuous displacement in every finite exponent above one. Existing proofs supply the results; no Lean code or new refutation is added. Earlier source qualifications and the wider dissertation inventory remain unresolved.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          78,
+          79,
+          80,
+          81
+        ],
+        "images": {
+          "work/tmp/pdfs/section17-078.png": "c92bae60308c48a1a6d3bf3c176e4e7ec75a8651cbc155b09c45f5713e681443",
+          "work/tmp/pdfs/section17-079.png": "4937505ed011647785c8b7a97192733f0747d3143818c635c8c8be886db6c33e",
+          "work/tmp/pdfs/section17-080.png": "da94d20ae81c873cbcb41b1a1899bbaef8c478e302bee0d1e4edb87b7ea77cbe",
+          "work/tmp/pdfs/section17-081.png": "c5028d7668209bfc658f6b22fd29b2dd8649cfd8e677572c398d4f21c143fa34"
+        }
+      },
+      "validation_lean_sources": {
+        "files": 4836,
+        "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
+      },
+      "validation_reused_from_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0",
+      "full_gate": {
+        "session": 6799,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section16GradientAndProductsFullCheck-2.log",
+        "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
+      },
+      "source_record_sha256": "bb568c2dcb77453e3f9a9c5c3b43b1418411ebaea06ee1b1a2a37cb17a5fa4bf"
     }
   }
 }

@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Section 16 gradients, products and ordered comparison
+## Current milestone: ordered Section 17 diffeomorphism comparison
+
+The [ordered Section 17 ledger](coverage/SECTION_17_ASSERTIONS.md) classifies
+all 31 passage groups: 21 matched, eight corrected, one partial external
+comparison and one contextual attribution.
+
+The original Birkhoff map is locally bi-real-analytic and globally injective
+for every finite p>1. Surjectivity and the global analytic inverse retain
+1<p<=2. Hilbert properness and the singleton zero fiber prove the Hilbert
+base case internally. Finite-gap collision reduction supplies the
+regularity step for injectivity above two.
+
+The corrections use swapped canonical x/y labels consistently in both
+displays, selected m_n indices, factor two in the coordinate-power sum,
+2N+1 enumeration positions for the absolute cutoff N, and inward signs
+in both components of the angle flow. Existing positive proofs support
+these corrections; no new refutation is added.
+
+The original theta flow is unique and C1 on the entire interval before
+the selected action vanishes. Its displacement is continuous in every
+finite exponent above one. Finite admissible reductions retain the actual
+outside coordinates and source-exponent membership. Target action tori
+are compact for all finite p>1; complete isospectral images and source
+compactness are asserted only for p<=2.
+
+This comparison inspected 58 module bodies and two positive-proof excerpts,
+and resolved 92 declarations. It changes documentation only. The exact
+2014 [23] construction comparison remains partial in S17-007; the internal
+Hilbert inverse is proved. The attribution to [36] is contextual.
+
+The Lean and dependency-lock snapshot is identical to pushed commit c8cbe87. Its successful full check is reused, not rerun: 8,559 build jobs, 7,635 public examples and the transitive axiom audit of 44,604 NLS declarations, with 21 inherited warnings and no new warnings. Current source hashes, declaration references, review integrity and local documentation links are checked separately. These integrity checks do not certify mathematical completeness.
+
+Next is Section 18, Overview of frequencies, convexity and wellposedness.
+Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 16 gradients, products and ordered comparison
 
 Two new positive theorems prove the intermediate estimates in Lemma 16.2:
 the x derivative differs from the normalized sum of the two eta derivatives
