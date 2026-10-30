@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T21:41:02.192421+00:00",
-  "base_commit": "1126743fb93f89fea1e4ba54c353f018d2187dcf",
+  "published_utc": "2026-10-30T22:10:00.114759+00:00",
+  "base_commit": "91e3241fb7481545ec02984aa8f7a52729db184d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,35 +18,34 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 158,
-    "module_hash_checks": 3459,
-    "distinct_modules": 1876
+    "review_records": 159,
+    "module_hash_checks": 3463,
+    "distinct_modules": 1877
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
     "Appendix G.2 does not specify the arbitrary-time interval H1 norm. The usual unnormalized integral norm gives a formal counterexample; the unit-interval consequence and a corrected estimate are proved. The intended norm still needs clarification.",
-    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage.",
-    "Section19 ordered auxiliary assertions S19-015 (strictly positive companion minimum) and S19-032 (strict signed-discriminant monotonicity on the closed real band) remain to be reconciled. The main Section19 theorems are proved independently."
+    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1126743fb93f89fea1e4ba54c353f018d2187dcf",
-    "validated_state": "Documentation-only ordered Section19 comparison: 48 classified groups with direct positive corrections and two explicit auxiliary gaps. Lean sources and dependency locks are unchanged; successful full gate6799 is reused, not rerun.",
+    "base_commit": "91e3241fb7481545ec02984aa8f7a52729db184d",
+    "validated_state": "Fresh full check after the Section19 positive real calculations. The two auxiliary assertions are proved; the ordered ledger has no remaining partial groups.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8559,
-    "public_examples": 7635,
-    "transitive_NLS_declarations": 44604,
+    "build_jobs": 8560,
+    "public_examples": 7640,
+    "transitive_NLS_declarations": 44615,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 6799,
+    "gate_session": 41528,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4836,
-      "sha256": "d7731167467cc871b9cd9014ba20c5793d292d480f78166e0f55d4aca78d44a7"
+      "files": 4837,
+      "sha256": "87e106d36fa58a1e123bfb4295c666c4cb966f8ef52c95529e18b3807a24ae77"
     },
-    "full_gate_log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16",
-    "qualification": "Successful full Lean validation is reused on this exact snapshot. Current integrity checks verify recorded evidence, not mathematical completeness.",
-    "validation_reused_from_commit": "c8cbe87470d83e8d30e0ef9e0be332d8639bb8a0"
+    "full_gate_log_sha256": "66b3112de15780b528839999cc82e72ec517400ae65bdd28dbf23c1bfbca7eda",
+    "qualification": "The full Lean build, all public examples and transitive axiom audit pass on this exact snapshot. Source qualifications remain; neither checks nor group counts certify complete formalization.",
+    "full_gate_log": "work/Section19PositiveAuxiliaryFullCheck.log"
   },
   "named_statements": [
     {
@@ -43739,6 +43738,1101 @@
         "log_sha256": "1c9825d2c59399eeb73d73695527f8682c88224754b713ea0359c20631756c16"
       },
       "source_record_sha256": "731b4596f8f6203da8c2dfd9c8ed41d345c409b595f21cbecf5e8e7adb4bd6ce"
+    },
+    "Section19PositiveAuxiliarySourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "91e3241fb7481545ec02984aa8f7a52729db184d",
+      "updated_utc": "2026-10-30T22:10:00.114759+00:00",
+      "source_lines": [
+        [
+          7085,
+          7092
+        ],
+        [
+          7293,
+          7301
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S19-015",
+          "source_lines": [
+            7085,
+            7092
+          ],
+          "requirement": "Positive real-gap companion expression.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The literal signed discriminant minus sqrt(Delta squared minus four) is strictly positive at every point of the closed real gap.",
+            "This continuous expression attains its minimum on the closed gap, and that minimum is strictly positive, including when the gap is collapsed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealGapCompanion",
+            "NLS.ZakharovShabat.sourceRealGapCompanion_pos",
+            "NLS.ZakharovShabat.sourceRealGapCompanion_positive_minimum"
+          ],
+          "qualification": "The theorem uses the actual canonical discriminant for every real source at finite p>1 and every signed index. The exact minimum is supplied, with no open-gap, differentiability-of-endpoint-labels or separately assumed positivity premise."
+        },
+        {
+          "ordered_group": "S19-032",
+          "source_lines": [
+            7293,
+            7301
+          ],
+          "requirement": "Real-band monotonicity and root sign.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The signed discriminant (-1)^(n+1)*Delta is strictly increasing on the complete closed band from lambda_n^plus to lambda_(n+1)^minus, with exact endpoint values -2 and 2.",
+            "Every interior band point avoids all actual critical points, and the canonical root has the previously proved signed imaginary square-root expression."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDiscriminant_deriv_ne_zero_on_realBand",
+            "NLS.ZakharovShabat.sourceSignedDiscriminant_realBand_endpoints",
+            "NLS.ZakharovShabat.sourceSignedDiscriminant_strictMonoOn_realBand",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand",
+            "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four"
+          ],
+          "qualification": "Complete critical-point localization excludes derivative zeros in the open band. Rolle gives injectivity, and continuity plus the exact endpoint levels gives strict increase on the closed band. All signed indices and collapsed adjacent gaps are included."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S19-001",
+          "source_lines": [
+            6980,
+            6986
+          ],
+          "requirement": "Canonical differential product (4.6).",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The full product uses the critical points lambda_m^bullet, with leading factor -i. It converges unconditionally, and symmetric cutoff products have the same limit."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_symmetricProducts"
+          ],
+          "qualification": "Restore the missing critical-point bullet in (4.6). The existing positive product theorem supplies the correction directly."
+        },
+        {
+          "ordered_group": "S19-002",
+          "source_lines": [
+            6988,
+            6992
+          ],
+          "requirement": "Primitive and finite-gap Laurent overview.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The primitive is single valued and analytic on the complement of noncollapsed gaps. At every real finite-gap source it has a convergent physical Hamiltonian Laurent expansion in an exterior region."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.spectral_analytic",
+            "NLS.ZakharovShabat.SourceSection19Data.laurent"
+          ],
+          "qualification": "The informal meromorphic statement is read at infinity. No global meromorphic continuation through open cuts is claimed."
+        },
+        {
+          "ordered_group": "S19-003",
+          "source_lines": [
+            6993,
+            6996
+          ],
+          "requirement": "Joint and filled spectral analyticity of the differential.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "One open moving-cut joint domain supports the actual quotient and primitive differential; spectral slices fill collapsed gaps."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianDifferentialData",
+            "NLS.ZakharovShabat.SourceSection19Data.spectral_analytic",
+            "NLS.ZakharovShabat.SourceSection19Data.source_derivative"
+          ],
+          "qualification": "Read the indexed union in the printed fixed-exterior domain as the union of U_m. The implementation proves joint analyticity on the larger moving-cut domain of a common restricted source neighborhood containing the full real locus."
+        },
+        {
+          "ordered_group": "S19-004",
+          "source_lines": [
+            6997,
+            7006
+          ],
+          "requirement": "Definition by the average of endpoint integrals.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The original definition is the half-average of the two actual improper endpoint integrals, and equals the same normalized primitive."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianEndpointAverage",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq",
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals"
+          ],
+          "qualification": "The factor one half is literal; no integral value is supplied as an assumption."
+        },
+        {
+          "ordered_group": "S19-005",
+          "source_lines": [
+            7007,
+            7016
+          ],
+          "requirement": "Improper convergence and admissible path independence.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Every admissible interior C1 path and finite piecewise interior C1 path from either endpoint has the same improper integral. The two truncation parameters tend independently to their endpoints."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.endpointPath_integral",
+            "NLS.ZakharovShabat.SourceSection19Data.endpointPiecewisePath_integral"
+          ],
+          "qualification": "Convergence follows from the actual primitive derivative and endpoint limits. This replaces the informal singularity argument and needs no separate absolute-integrability premise for the improper limit; interiors and intermediate corners avoid the cuts."
+        },
+        {
+          "ordered_group": "S19-006",
+          "source_lines": [
+            7017,
+            7021
+          ],
+          "requirement": "Equality of the two endpoint integrals.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Each selected endpoint integral equals F_n, including when the gap collapses."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointIntegral_eq",
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals"
+          ],
+          "qualification": "The root-complement filter is proved nontrivial at the endpoint, so equality does not come from a vacuous limit."
+        },
+        {
+          "ordered_group": "S19-007",
+          "source_lines": [
+            7031,
+            7034
+          ],
+          "requirement": "Analytic primitive despite lexicographic endpoint labels.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The endpoint-label discussion motivates constructing the analytic primitive without differentiating individual lexicographically chosen endpoints."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.analytic"
+          ],
+          "qualification": "Joint analyticity is proved. This review does not add or claim a standalone theorem that the lexicographic endpoint maps fail continuity."
+        },
+        {
+          "ordered_group": "S19-008",
+          "source_lines": [
+            7036,
+            7047
+          ],
+          "requirement": "Lemma 19.1(i): joint analyticity and source gradient.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The same primitive is jointly analytic off the moving cuts, and its source Frechet derivative is the actual discriminant cotangent divided by the canonical root."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.source_derivative",
+            "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.source_hasFDerivAt"
+          ],
+          "qualification": "The source domain may be restricted inside the original Birkhoff domain; every real source remains. Spectral analyticity includes filled collapsed gaps."
+        },
+        {
+          "ordered_group": "S19-009",
+          "source_lines": [
+            7050,
+            7057
+          ],
+          "requirement": "Lemma 19.1(ii): index shift and endpoint values.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "F_n=F_0+i*pi*n, and one relative endpoint extension has value i*pi*(n-j) at either endpoint of gap j."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift",
+            "NLS.ZakharovShabat.SourceSection19Data.endpointExtension_eqOn",
+            "NLS.ZakharovShabat.SourceSection19Data.endpointExtension_value"
+          ],
+          "qualification": "Continuity is relative to the filled spectral domain with the selected endpoint adjoined, rather than continuation through the interior of an open cut."
+        },
+        {
+          "ordered_group": "S19-010",
+          "source_lines": [
+            7059,
+            7063
+          ],
+          "requirement": "Lemma 19.1(iii): locally uniform gap bound.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "A single local source neighborhood and positive constant bound both boundary values by B*norm(gamma_n), for every signed index. The literal supremum range is bounded."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.uniform_gap_bounds",
+            "NLS.ZakharovShabat.SourceAbelianMixedGapData.uniform_boundary_sup"
+          ],
+          "qualification": "The quantifiers precede the index and side; there is no tail-only restriction."
+        },
+        {
+          "ordered_group": "S19-011",
+          "source_lines": [
+            7066,
+            7068
+          ],
+          "requirement": "Lemma 19.1(iv): analyticity of the square.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "F_n squared is analytic off the noncollapsed cuts, and also has an agreeing analytic continuation across its own selected gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.square_analytic"
+          ],
+          "qualification": "The selected-gap filling is stronger than the printed assertion, while other open gaps remain excluded."
+        },
+        {
+          "ordered_group": "S19-012",
+          "source_lines": [
+            7071,
+            7074
+          ],
+          "requirement": "Lemma 19.1(v): real arcosh boundary profiles.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "For real sources the upper and lower boundary limits are respectively plus and minus arcosh of the signed half-discriminant on the entire closed gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.real_gap_boundary"
+          ],
+          "qualification": "The limits allow arbitrary approach from the corresponding open half-plane, including approach to endpoints."
+        },
+        {
+          "ordered_group": "S19-013",
+          "source_lines": [
+            7076,
+            7076
+          ],
+          "requirement": "Lemma 19.1(vi): exact free primitive.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At zero, F_n(z)=-i*z+i*pi*n=i*w_n(z)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.zero"
+          ],
+          "qualification": "This is an exact identity, including the filled zero gap."
+        },
+        {
+          "ordered_group": "S19-014",
+          "source_lines": [
+            7078,
+            7084
+          ],
+          "requirement": "Proof of joint and spectral analyticity.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Local joint charts agree with the actual global primitive, so its full moving-cut joint differential and filled spectral slices are proved."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceFullAbelian_almostReal_differential",
+            "NLS.ZakharovShabat.SourceSection19Data.spectral_analytic"
+          ],
+          "qualification": "This supplies the analytic continuation argument internally; the reference to Appendix F is navigational."
+        },
+        {
+          "ordered_group": "S19-015",
+          "source_lines": [
+            7085,
+            7092
+          ],
+          "requirement": "Positive real-gap companion expression.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The literal signed discriminant minus sqrt(Delta squared minus four) is strictly positive at every point of the closed real gap.",
+            "This continuous expression attains its minimum on the closed gap, and that minimum is strictly positive, including when the gap is collapsed."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealGapCompanion",
+            "NLS.ZakharovShabat.sourceRealGapCompanion_pos",
+            "NLS.ZakharovShabat.sourceRealGapCompanion_positive_minimum"
+          ],
+          "qualification": "The theorem uses the actual canonical discriminant for every real source at finite p>1 and every signed index. The exact minimum is supplied, with no open-gap, differentiability-of-endpoint-labels or separately assumed positivity premise."
+        },
+        {
+          "ordered_group": "S19-016",
+          "source_lines": [
+            7094,
+            7100
+          ],
+          "requirement": "Local contour and logarithm neighborhood.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "An open neighborhood of each off-cut spectral/source point supports a normalized Floquet logarithm with the exact joint differential."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceAbelianLogChart_joint_neighborhood",
+            "NLS.ZakharovShabat.sourceAbelianLogChart_exp"
+          ],
+          "qualification": "Use the selected index n consistently in U_n prime contained in U_n minus G_n. The signed multiplier is (-1)^n*(Delta+R)/2, with R the canonical root. The implementation uses local normalized logarithms and gluing, rather than requiring the printed single principal-log annulus."
+        },
+        {
+          "ordered_group": "S19-017",
+          "source_lines": [
+            7102,
+            7117
+          ],
+          "requirement": "Logarithmic primitive and gradient formula.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The exponential normalization is exact, and restricting the joint logarithm differential gives partial Delta divided by R."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianLogChart_exp",
+            "NLS.ZakharovShabat.sourceAbelianLogChart_source_fderiv",
+            "NLS.ZakharovShabat.SourceAbelianDiscPrimitive.extension_eventually_eq_log_at_endpoint"
+          ],
+          "qualification": "Principal logarithms are used only where their branch is justified. No arbitrary additive period remains."
+        },
+        {
+          "ordered_group": "S19-018",
+          "source_lines": [
+            7118,
+            7122
+          ],
+          "requirement": "Analytic continuation of the source derivative.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The exact Floquet exponential identity propagates across the whole connected complex cut complement. Local normalized germs yield the full derivative at all off-cut points."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceFullAbelianPrimitive_exp",
+            "NLS.ZakharovShabat.SourceAbelianUniformDiscFamily.fullPrimitive_joint_hasFDerivAt"
+          ],
+          "qualification": "The argument uses proved agreement of germs and spectral uniqueness, not merely equality of squares."
+        },
+        {
+          "ordered_group": "S19-019",
+          "source_lines": [
+            7132,
+            7139
+          ],
+          "requirement": "Endpoint normalization and primitive shift.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The normalization shift and all endpoint constants are exact for every signed normalization and endpoint index."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_endpoint_limit",
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift",
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_limit"
+          ],
+          "qualification": "The real normalization is continued to complex sources on the common domain."
+        },
+        {
+          "ordered_group": "S19-020",
+          "source_lines": [
+            7141,
+            7165
+          ],
+          "requirement": "Signed finite telescoping across bands.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The adjacent-band increment is -i*pi. Successor and predecessor induction give the complete signed-index shift."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealBandIntegral_tendsto_endpoints",
+            "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_succ",
+            "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_eq_zeroIndex_add"
+          ],
+          "qualification": "Integer induction replaces the two displayed finite telescoping sums and includes negative indices."
+        },
+        {
+          "ordered_group": "S19-021",
+          "source_lines": [
+            7167,
+            7186
+          ],
+          "requirement": "Real-band canonical root and integral -i pi.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "On the band after gap n, R=-i*(-1)^n*sqrt(4-Delta^2). Independent endpoint limits of the actual quotient integral give -i*pi."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand",
+            "NLS.ZakharovShabat.sourceRealBandIntegral_tendsto_endpoints"
+          ],
+          "qualification": "The square root here is the nonnegative real root, multiplied by the displayed canonical phase. Collapsed adjacent gaps are allowed."
+        },
+        {
+          "ordered_group": "S19-022",
+          "source_lines": [
+            7189,
+            7200
+          ],
+          "requirement": "Canonical denominator in the continued shift formula.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The normalization integral and its source continuation use Delta prime divided by the canonical root R. They give F_0-F_n=-i*pi*n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianDifferential",
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift"
+          ],
+          "qualification": "Keep R in the p.89 normalization paragraph. The printed positive root sqrt(4-Delta^2) omits the canonical phase; the earlier real-band calculation retains that phase explicitly."
+        },
+        {
+          "ordered_group": "S19-023",
+          "source_lines": [
+            7201,
+            7210
+          ],
+          "requirement": "Selected-gap differential factorization (4.7).",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Separating the selected critical factor gives Delta prime/R=((lambda_n^bullet-z)/w_n)*(-i*chi_n), with chi_n analytic through the selected gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+            "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatioExtension_analytic"
+          ],
+          "qualification": "The deleted product is the actual spectral product and is analytic on the domain excluding only the other cuts."
+        },
+        {
+          "ordered_group": "S19-024",
+          "source_lines": [
+            7213,
+            7223
+          ],
+          "requirement": "Opposite boundary values and analytic square filling.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The opposite sides give opposite normalized primitive profiles. Their squares agree with an analytic continuation through the selected closed gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.square_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_lower_eq_neg_upper"
+          ],
+          "qualification": "The analytic square extension includes both endpoints and collapsed gaps; continuity alone is not assumed to imply holomorphy without the implemented extension argument."
+        },
+        {
+          "ordered_group": "S19-025",
+          "source_lines": [
+            7224,
+            7234
+          ],
+          "requirement": "Collapsed-gap clause and all-index gap bound.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "The collapsed selected gap has F_n=0; the same local all-index bound holds for every noncollapsed gap."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.endpointExtension_value",
+            "NLS.ZakharovShabat.SourceSection19Data.uniform_gap_bounds"
+          ],
+          "qualification": "In the collapsed-gap sentence, replace F by F_n. The zero-index F at gap n has value -i*pi*n. The bound uses magnitudes for complex gaps."
+        },
+        {
+          "ordered_group": "S19-026",
+          "source_lines": [
+            7235,
+            7242
+          ],
+          "requirement": "Real-gap integral and arcosh value.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The real upper-side partial quotient integral equals the positive arcosh profile; the lower-side integral is its negative. Endpoint integrability is proved."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh",
+            "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh",
+            "NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable"
+          ],
+          "qualification": "The canonical sheet orientation fixes the sign; the result holds across the whole closed real gap."
+        },
+        {
+          "ordered_group": "S19-027",
+          "source_lines": [
+            7244,
+            7248
+          ],
+          "requirement": "Free differential and free primitive.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The exact free primitive is -i*z+i*pi*n, with spectral derivative -i away from the cuts."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.zero",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_product"
+          ],
+          "qualification": "The free identity fixes both the derivative sign and the additive normalization."
+        },
+        {
+          "ordered_group": "S19-028",
+          "source_lines": [
+            7250,
+            7250
+          ],
+          "requirement": "Notation F=F0.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "F denotes F_0; the relationship F=F_n-i*pi*n is already proved."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift"
+          ],
+          "qualification": "This is a notation declaration."
+        },
+        {
+          "ordered_group": "S19-029",
+          "source_lines": [
+            7261,
+            7269
+          ],
+          "requirement": "Figure 4.1 boundary sign picture.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "Figure 4.1 illustrates boundary directions and signs, with zero endpoint values. Exact real-gap arcosh and real-band arcsine formulas provide the corresponding mathematical values."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+            "NLS.ZakharovShabat.sourceAbelianPrimitive_eq_arcsin_on_band"
+          ],
+          "qualification": "The labels +1, -1, +i and -i indicate directions/signs, not constant magnitudes. The diagram is not an additional numerical-value theorem."
+        },
+        {
+          "ordered_group": "S19-030",
+          "source_lines": [
+            7272,
+            7281
+          ],
+          "requirement": "Lemma 19.2: convergent physical Hamiltonian Laurent series.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Every real finite-gap source at finite p>1 has a convergent exterior Laurent series whose coefficients are the physical NLS Hamiltonians. One radius works for all normalization indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.laurent",
+            "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_hamiltonian_laurent"
+          ],
+          "qualification": "The smooth periodic representative and its discriminant equality are constructed, not supplied as hypotheses."
+        },
+        {
+          "ordered_group": "S19-031",
+          "source_lines": [
+            7283,
+            7292
+          ],
+          "requirement": "Finite product, exterior growth and coefficient determination.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The finitely many noncollapsed cuts have compact union. The actual quotient is bounded in an exterior region, has a normalized analytic inversion germ, and the primitive has a convergent Laurent expansion with leading term -i*z and zero additional constant."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.isCompact_compl_sourceOpenGapComplement_finiteGap",
+            "NLS.ZakharovShabat.exists_sourceFiniteGap_logDerivative_exterior_bound",
+            "NLS.ZakharovShabat.exists_sourceFiniteGap_exterior_quadratic_remainder",
+            "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_laurent"
+          ],
+          "qualification": "Exterior circle bounds, maximum modulus and the zero outer period replace the printed finite-product growth shortcut. The proof does not require a global meromorphic continuation across open cuts."
+        },
+        {
+          "ordered_group": "S19-032",
+          "source_lines": [
+            7293,
+            7301
+          ],
+          "requirement": "Real-band monotonicity and root sign.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The signed discriminant (-1)^(n+1)*Delta is strictly increasing on the complete closed band from lambda_n^plus to lambda_(n+1)^minus, with exact endpoint values -2 and 2.",
+            "Every interior band point avoids all actual critical points, and the canonical root has the previously proved signed imaginary square-root expression."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDiscriminant_deriv_ne_zero_on_realBand",
+            "NLS.ZakharovShabat.sourceSignedDiscriminant_realBand_endpoints",
+            "NLS.ZakharovShabat.sourceSignedDiscriminant_strictMonoOn_realBand",
+            "NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand",
+            "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four"
+          ],
+          "qualification": "Complete critical-point localization excludes derivative zeros in the open band. Rolle gives injectivity, and continuity plus the exact endpoint levels gives strict increase on the closed band. All signed indices and collapsed adjacent gaps are included."
+        },
+        {
+          "ordered_group": "S19-033",
+          "source_lines": [
+            7306,
+            7316
+          ],
+          "requirement": "Derivative of the real-band arcsine branch.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The real-band arcsine expression differentiates to the actual oriented canonical quotient."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.hasDerivAt_sourceRealBandArcsinPrimitive"
+          ],
+          "qualification": "The implementation writes the equivalent i*(-1)^n*arcsin(Delta/2) expression and proves the discriminant is in the open arcsine interval."
+        },
+        {
+          "ordered_group": "S19-034",
+          "source_lines": [
+            7317,
+            7337
+          ],
+          "requirement": "Exact primitive on a real spectral band.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "On each real open band, F equals the arcsine primitive minus i*pi/2-i*pi*n. The band primitive is continuous and its endpoint values are plus and minus i*pi/2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianPrimitive_eq_arcsin_on_band",
+            "NLS.ZakharovShabat.continuous_sourceRealBandArcsinPrimitive",
+            "NLS.ZakharovShabat.sourceRealBandArcsinPrimitive_left",
+            "NLS.ZakharovShabat.sourceRealBandArcsinPrimitive_right"
+          ],
+          "qualification": "Endpoint values are read through the proved relative limits. The full primitive agrees with the real-source primitive used in this formula."
+        },
+        {
+          "ordered_group": "S19-035",
+          "source_lines": [
+            7339,
+            7346
+          ],
+          "requirement": "Half-integer discriminant asymptotics.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual smooth periodic discriminant differs from 2*cos(i*sigma_N) by at most C/(2*abs(r))^N for every real abs(r)>=1, hence also at both tails of the half-integer sample sequence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_classicalDiscriminant_hamiltonian_error_bound",
+            "NLS.ZakharovShabat.nlsHamiltonianPhase"
+          ],
+          "qualification": "This is an internal all-order WKB proof with physical Hamiltonians. It does not assert an independent comparison with the exact cited edition of [23]."
+        },
+        {
+          "ordered_group": "S19-036",
+          "source_lines": [
+            7347,
+            7355
+          ],
+          "requirement": "Uniform arcsine error transfer.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At every real zero of cosine, one local inverse estimate controls small phase differences by the discriminant error, with a neighborhood independent of the sample index."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_norm_sub_le_two_mul_sinh_sub",
+            "NLS.ComplexAnalysis.norm_cosh_shift_sub",
+            "NLS.ComplexAnalysis.exists_norm_phase_sub_le_discriminant_error"
+          ],
+          "qualification": "This is an alternative proof of the required error transfer using complex sinh near zero. The displayed principal-arcsine difference is not separately exported or claimed as a literal Lean theorem."
+        },
+        {
+          "ordered_group": "S19-037",
+          "source_lines": [
+            7357,
+            7359
+          ],
+          "requirement": "Primitive approximation along half-integer points.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The normalized analytic phase has an order-N error against the physical Hamiltonian correction on every escaping positive sequence of real cosine zeros."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_nlsHamiltonian_sampled_phase_error",
+            "NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_laurent_of_classical_discriminant"
+          ],
+          "qualification": "The implemented sampled phase estimate supplies the needed approximation directly, without the intermediate principal-arcsine formula. Its discriminant identity is proved for the actual full primitive."
+        },
+        {
+          "ordered_group": "S19-038",
+          "source_lines": [
+            7361,
+            7362
+          ],
+          "requirement": "Hamiltonian convention relative to reference 23.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The footnote explains a convention change relative to reference [23]. The internal construction fixes the physical Hamiltonians through the differential recurrence."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.nlsHamiltonianPhase"
+          ],
+          "qualification": "No independent comparison of the external book conventions is claimed in this review."
+        },
+        {
+          "ordered_group": "S19-039",
+          "source_lines": [
+            7373,
+            7382
+          ],
+          "requirement": "Sine addition, branch selection and Laurent coefficients.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The half-integer sample error determines every Taylor coefficient of the normalized analytic inversion phase. These coefficients form a genuinely convergent physical Hamiltonian series."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.iteratedDeriv_nlsHamiltonian_of_discriminant",
+            "NLS.ZakharovShabat.exists_nlsHamiltonian_series_of_discriminant"
+          ],
+          "qualification": "The proof explicitly chooses pi*(j+1/2), proves cosine vanishes there, and applies analytic order uniqueness. The local sinh estimate replaces the printed sine-addition/principal-arcsine branch calculation."
+        },
+        {
+          "ordered_group": "S19-040",
+          "source_lines": [
+            7384,
+            7384
+          ],
+          "requirement": "Transition to the cubic expansion.",
+          "ordered_status": "contextual",
+          "status": "contextual",
+          "reviewed_claims": [
+            "The sentence introduces the cubic expansion used later."
+          ],
+          "declarations": [],
+          "qualification": "This is a transition, not a separate assertion."
+        },
+        {
+          "ordered_group": "S19-041",
+          "source_lines": [
+            7386,
+            7391
+          ],
+          "requirement": "Corollary 19.3: cubic Laurent part and remainder.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The cubic Laurent part is i*z^3-(3*i/2)*H1*z-(3*i/4)*H2-(3*i/8)*(H3-2*H1^2)/z. The error is bounded by K/norm(z)^2 in every exterior complex direction."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.cube_asymptotic",
+            "NLS.ZakharovShabat.SourceSection19Data.cube_isBigO"
+          ],
+          "qualification": "The shifted normalizations share one radius and one positive bound before the index is chosen."
+        },
+        {
+          "ordered_group": "S19-042",
+          "source_lines": [
+            7393,
+            7400
+          ],
+          "requirement": "Lemma 19.4: locally uniform mixed gap error.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The literal two-sided gap-error supremum equals gamma_n*(g_n+h_n), with fixed locally bounded g in ell^(p/2) and h in every finite ell^q, q>1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapErrorSup",
+            "NLS.ZakharovShabat.SourceAbelianMixedGapData.bounded",
+            "NLS.ZakharovShabat.SourceAbelianMixedGapData.mixed_displacement"
+          ],
+          "qualification": "The supremum range is bounded before sSup is used. The sequences are chosen before all auxiliary exponents, and the quasi-norm range p/2<1 is retained. No analyticity of the bounding sequences is claimed."
+        },
+        {
+          "ordered_group": "S19-043",
+          "source_lines": [
+            7403,
+            7403
+          ],
+          "requirement": "Exact zero-potential error clause.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "At zero the gap error vanishes exactly."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.zero"
+          ],
+          "qualification": "This retains the precise free normalization, with no asymptotic remainder."
+        },
+        {
+          "ordered_group": "S19-044",
+          "source_lines": [
+            7406,
+            7413
+          ],
+          "requirement": "Endpoint integral with the selected-gap product.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The actual endpoint integral uses the selected critical factor and the deleted product chi_n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension"
+          ],
+          "qualification": "The integral and factorization refer to the same canonical quotient and the same selected gap."
+        },
+        {
+          "ordered_group": "S19-045",
+          "source_lines": [
+            7416,
+            7418
+          ],
+          "requirement": "Critical displacement and refined product estimate.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "The exact squared-gap critical offset and the refined deleted-factor estimates supply locally uniform ell^(p/2)+ell^(1+) gap-error majorants."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_uniform_sourceCriticalPoint_gap_distance_bound",
+            "NLS.ZakharovShabat.exists_local_sourceFullAbelian_gap_all_exponent_tails",
+            "NLS.ZakharovShabat.SourceAbelianMixedGapData.mixed_displacement"
+          ],
+          "qualification": "The proof retains the actual critical displacement and the factor pi; quasi-norm addition is used when p/2<1. Finite central gaps are included by the final mixed-data constructor."
+        },
+        {
+          "ordered_group": "S19-046",
+          "source_lines": [
+            7419,
+            7426
+          ],
+          "requirement": "Product-error supremum estimate.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "If D bounds abs(lambda_n^bullet-z) and E bounds abs(chi_n(z)-1) over the closed gap, both boundary errors satisfy abs(F_n-i*w_n)<=pi*(D*E+abs(lambda_n^bullet-tau_n))."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_sub_root_norm_le_of_factor_error",
+            "NLS.ZakharovShabat.sourceStandardRoot_gapSideBoundaryIntegral_uniform_max_bound"
+          ],
+          "qualification": "Use norms and retain the factor pi in the p.91 estimate. The existing positive comparison theorem supplies a sufficient complete error bound directly; no optimality claim or new refutation is added."
+        },
+        {
+          "ordered_group": "S19-047",
+          "source_lines": [
+            7428,
+            7435
+          ],
+          "requirement": "Standard-root derivative and elementary primitive.",
+          "ordered_status": "corrected",
+          "status": "corrected",
+          "reviewed_claims": [
+            "Subtracting i*w_k from the primitive gives a numerator defect equal to the deleted-factor error plus the critical-to-midpoint offset. Integrating this defect yields the complete positive error bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootGapNumerator_sub_linear",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_sub_root_norm_le_of_factor_error"
+          ],
+          "qualification": "The exclusion in the printed derivative sentence must use G_k when differentiating w_k. The implementation uses the equivalent quadratic differential equation, avoiding a separate branch-dependent primitive formula."
+        },
+        {
+          "ordered_group": "S19-048",
+          "source_lines": [
+            7438,
+            7441
+          ],
+          "requirement": "Collapsed gaps and reciprocal-root integral bound.",
+          "ordered_status": "matched",
+          "status": "matched",
+          "reviewed_claims": [
+            "Collapsed gaps have zero error. For noncollapsed gaps the standard-root side-integral estimate retains pi, and the critical offset is included in the complete comparison bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_sub_root_eq_zero_of_collapsed",
+            "NLS.ZakharovShabat.sourceStandardRoot_gapSideBoundaryIntegral_uniform_max_bound",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_sub_root_norm_le_of_factor_error"
+          ],
+          "qualification": "A constant numerator in the normalized side-integral bound gives the reciprocal-root estimate. The later sequence estimate absorbs the fixed factor pi into its locally uniform majorants."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 35,
+        "corrected": 8,
+        "partial": 0,
+        "contextual": 5,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection19RealCalculation.lean": "9b34032e170b118789fdb4ab64d4f1e7584a98226408f5671fed68ebc94f84ec",
+        "NLS/ZakharovShabat/SourceRealBandGeometry.lean": "7b05c09dd67fa7eec7df1b787be9238f08eaea8e4bd4cd90600be7164df3fe54",
+        "NLS/ZakharovShabat/CanonicalCriticalInterlacing.lean": "2ca8349c0714eaadeebdb83803ece80344141926e29e4076c51514346a3e330d",
+        "NLS/ZakharovShabat/RealGapDiscriminantLevels.lean": "0a2d6bd92336aa2e264f094bda3e322e76e6c5219464421e5be1a8f30795ec4e"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection19RealCalculation.lean",
+        "NLS/ZakharovShabat/SourceRealBandGeometry.lean",
+        "NLS/ZakharovShabat/CanonicalCriticalInterlacing.lean",
+        "NLS/ZakharovShabat/RealGapDiscriminantLevels.lean"
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand",
+        "NLS.ZakharovShabat.sourceDiscriminant_deriv_ne_zero_on_realBand",
+        "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four",
+        "NLS.ZakharovShabat.sourceRealGapCompanion",
+        "NLS.ZakharovShabat.sourceRealGapCompanion_pos",
+        "NLS.ZakharovShabat.sourceRealGapCompanion_positive_minimum",
+        "NLS.ZakharovShabat.sourceSignedDiscriminant_realBand_endpoints",
+        "NLS.ZakharovShabat.sourceSignedDiscriminant_strictMonoOn_realBand"
+      ],
+      "current_ordered_resolved_declarations": [
+        "NLS.ComplexAnalysis.exists_norm_phase_sub_le_discriminant_error",
+        "NLS.ComplexAnalysis.exists_norm_sub_le_two_mul_sinh_sub",
+        "NLS.ComplexAnalysis.norm_cosh_shift_sub",
+        "NLS.ZakharovShabat.SourceAbelianDiscPrimitive.extension_eventually_eq_log_at_endpoint",
+        "NLS.ZakharovShabat.SourceAbelianMixedGapData.bounded",
+        "NLS.ZakharovShabat.SourceAbelianMixedGapData.mixed_displacement",
+        "NLS.ZakharovShabat.SourceAbelianMixedGapData.uniform_boundary_sup",
+        "NLS.ZakharovShabat.SourceAbelianUniformDiscFamily.fullPrimitive_joint_hasFDerivAt",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.source_hasFDerivAt",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointIntegral_eq",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_sub_root_eq_zero_of_collapsed",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_lower_eq_neg_upper",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapBoundary_sub_root_norm_le_of_factor_error",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.gapErrorSup",
+        "NLS.ZakharovShabat.SourceSection19Data.cube_asymptotic",
+        "NLS.ZakharovShabat.SourceSection19Data.cube_isBigO",
+        "NLS.ZakharovShabat.SourceSection19Data.endpointExtension_eqOn",
+        "NLS.ZakharovShabat.SourceSection19Data.endpointExtension_value",
+        "NLS.ZakharovShabat.SourceSection19Data.endpointPath_integral",
+        "NLS.ZakharovShabat.SourceSection19Data.endpointPiecewisePath_integral",
+        "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+        "NLS.ZakharovShabat.SourceSection19Data.endpoint_limit",
+        "NLS.ZakharovShabat.SourceSection19Data.index_shift",
+        "NLS.ZakharovShabat.SourceSection19Data.laurent",
+        "NLS.ZakharovShabat.SourceSection19Data.real_gap_boundary",
+        "NLS.ZakharovShabat.SourceSection19Data.source_derivative",
+        "NLS.ZakharovShabat.SourceSection19Data.spectral_analytic",
+        "NLS.ZakharovShabat.SourceSection19Data.square_analytic",
+        "NLS.ZakharovShabat.SourceSection19Data.uniform_gap_bounds",
+        "NLS.ZakharovShabat.SourceSection19Data.zero",
+        "NLS.ZakharovShabat.continuous_sourceRealBandArcsinPrimitive",
+        "NLS.ZakharovShabat.exists_classicalDiscriminant_hamiltonian_error_bound",
+        "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatioExtension_analytic",
+        "NLS.ZakharovShabat.exists_local_sourceFullAbelian_gap_all_exponent_tails",
+        "NLS.ZakharovShabat.exists_local_uniform_sourceCriticalPoint_gap_distance_bound",
+        "NLS.ZakharovShabat.exists_nlsHamiltonian_sampled_phase_error",
+        "NLS.ZakharovShabat.exists_nlsHamiltonian_series_of_discriminant",
+        "NLS.ZakharovShabat.exists_sourceAbelianLogChart_joint_neighborhood",
+        "NLS.ZakharovShabat.exists_sourceFiniteGap_exterior_quadratic_remainder",
+        "NLS.ZakharovShabat.exists_sourceFiniteGap_logDerivative_exterior_bound",
+        "NLS.ZakharovShabat.exists_sourceFullAbelian_almostReal_differential",
+        "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_hamiltonian_laurent",
+        "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_laurent",
+        "NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_laurent_of_classical_discriminant",
+        "NLS.ZakharovShabat.hasDerivAt_sourceRealBandArcsinPrimitive",
+        "NLS.ZakharovShabat.isCompact_compl_sourceOpenGapComplement_finiteGap",
+        "NLS.ZakharovShabat.iteratedDeriv_nlsHamiltonian_of_discriminant",
+        "NLS.ZakharovShabat.nlsHamiltonianPhase",
+        "NLS.ZakharovShabat.sourceAbelianDifferential",
+        "NLS.ZakharovShabat.sourceAbelianEndpointAverage",
+        "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_endpoint_limit",
+        "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_eq_zeroIndex_add",
+        "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_succ",
+        "NLS.ZakharovShabat.sourceAbelianLogChart_exp",
+        "NLS.ZakharovShabat.sourceAbelianLogChart_source_fderiv",
+        "NLS.ZakharovShabat.sourceAbelianPrimitive_eq_arcsin_on_band",
+        "NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand",
+        "NLS.ZakharovShabat.sourceCriticalRootGapNumerator_sub_linear",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_hasProd",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_symmetricProducts",
+        "NLS.ZakharovShabat.sourceDiscriminant_deriv_ne_zero_on_realBand",
+        "NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four",
+        "NLS.ZakharovShabat.sourceFullAbelianPrimitive_exp",
+        "NLS.ZakharovShabat.sourceRealBandArcsinPrimitive_left",
+        "NLS.ZakharovShabat.sourceRealBandArcsinPrimitive_right",
+        "NLS.ZakharovShabat.sourceRealBandIntegral_tendsto_endpoints",
+        "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+        "NLS.ZakharovShabat.sourceRealGapCompanion",
+        "NLS.ZakharovShabat.sourceRealGapCompanion_pos",
+        "NLS.ZakharovShabat.sourceRealGapCompanion_positive_minimum",
+        "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh",
+        "NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable",
+        "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh",
+        "NLS.ZakharovShabat.sourceSignedDiscriminant_realBand_endpoints",
+        "NLS.ZakharovShabat.sourceSignedDiscriminant_strictMonoOn_realBand",
+        "NLS.ZakharovShabat.sourceStandardRoot_gapSideBoundaryIntegral_uniform_max_bound"
+      ],
+      "declaration_inventory_count": 44615,
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "supersedes_partial_groups": [
+        "S19-015",
+        "S19-032"
+      ],
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "images": {
+          "work/tmp/pdfs/section19-087.png": "5edf4d9de6a857a6cb925f08486fe71c8092cf745ca7537cc1bac96d894f63d7",
+          "work/tmp/pdfs/section19-088.png": "64480203354ec9a243940374e8b102dd04bd6c997e913b6dc01d10d133f8bd49",
+          "work/tmp/pdfs/section19-089.png": "8de07f8eeaae61713680776ccf907efa2846ebe13f772d4e454866677aa51dc2",
+          "work/tmp/pdfs/section19-090.png": "fce0a74a5c1b35af1bdadd2608593f97c9b1f47983bd16b929f9ac1b6de8afdf",
+          "work/tmp/pdfs/section19-091.png": "dbe9c01848c7f5c7cd7ddfd02b7e4cd8ee80d77a824d24ac94beadd3b56ab2ad"
+        }
+      },
+      "rendered_source_reused_from": "Section19OrderedSourceComparison-2026-10-30",
+      "qualification": "The two Section19 positive auxiliary assertions are now proved directly for actual real spectral data at every finite p>1 and all signed indices. The companion expression attains a strictly positive closed-gap minimum, including collapsed gaps. The signed discriminant is strictly increasing on the closed band with exact levels -2 and 2; complete critical localization and Rolle supply the proof. Existing canonical-root signs are retained. These additions close S19-015 and S19-032 without new refutations. The ordered Section19 comparison now has35 matched,eight corrected or scope-clarified and five contextual groups; the alternative Laurent proof and external-edition qualification remain. Wider dissertation qualifications are unchanged.",
+      "ordered_inventory": "coverage/SECTION_19_ASSERTIONS.md",
+      "ordered_inventory_sha256": "eb4147505c92f3aa74054de22bf9e17ab11bc4fb6f2191f3edd01e256c5aa76f",
+      "validation_lean_sources": {
+        "files": 4837,
+        "sha256": "87e106d36fa58a1e123bfb4295c666c4cb966f8ef52c95529e18b3807a24ae77"
+      },
+      "full_gate": {
+        "session": 41528,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section19PositiveAuxiliaryFullCheck.log",
+        "log_sha256": "66b3112de15780b528839999cc82e72ec517400ae65bdd28dbf23c1bfbca7eda"
+      },
+      "new_definitions": 1,
+      "positive_theorems_integrated": 5,
+      "new_public_examples": 5,
+      "source_record_sha256": "672e0b7d225864eb1dc1eec10ae8e6ac92406e6ffce8ddbe42c63392841f9c21"
     }
   }
 }

@@ -1,5 +1,34 @@
 # Section 19: the original abelian integral
 
+## Positive auxiliary assertions completed
+
+The two remaining positive auxiliary assertions in the
+[Section 19 ledger](SECTION_19_ASSERTIONS.md) are now proved in
+[SourceSection19RealCalculation.lean](../NLS/ZakharovShabat/SourceSection19RealCalculation.lean).
+
+The literal signed discriminant minus the positive square root attains a
+strictly positive minimum on the entire closed real gap, including a
+collapsed gap. Between consecutive gaps, the signed discriminant is
+strictly increasing on the whole closed band, with exact endpoint values
+−2 and 2. Complete critical-point localization and Rolle's theorem give
+the band injectivity; continuity and endpoint levels fix the direction.
+All finite source exponents p>1 and all signed indices are included.
+
+This adds one definition, five positive theorems and five public API
+examples. The Section 19 inventory now has 35 matched groups, eight
+corrections or scope clarifications, five contextual groups and no partial
+or pending groups. The earlier π correction and canonical normalization
+are preserved, and no new refutation is added.
+
+The complete ./scripts/check.sh passed: 8,560 build jobs, 7,640 public examples and a transitive axiom audit of 44,615 NLS declarations. The check includes the new module and five new API examples, with 21 inherited warnings and zero new warnings. The examples cover a negative band index and a source exponent below two. Source-review hashes, declaration references and local documentation links are checked separately. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 20, NLS frequencies. The exact external 2014 construction
+comparison, Section 7 physical Dirichlet-motion and entire-function
+qualifications, Appendix G.2 norm interpretation and broader source
+inventory remain recorded in the [completion assessment](COMPLETENESS.md).
+
+The earlier ordered-review entry below records the two gaps before this addition.
+
 ## Ordered source comparison
 
 The [ordered Section 19 ledger](SECTION_19_ASSERTIONS.md) classifies

@@ -72455,3 +72455,60 @@ example {W₀ W : Set (CoeffPair 4)}
     (memℓp_gen_iff (p := 4) (by norm_num : 0 < (4 : ℝ≥0∞).toReal)).mp h
 
 end Section16GradientReductionExamples
+
+section Section19RealCalculationExamples
+open NLS.ZakharovShabat Set
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem section19_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem section19_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨section19_one_lt_half.le⟩
+
+-- The minimum is positive on the entire closed gap, without an open-gap premise.
+example (ψ : CoeffPair 4) (hψ : IsRealType (CoeffPair.toMax 4 ψ)) (n : ℤ) :
+    ∃ x ∈ Icc
+      (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re,
+      0 < sourceRealGapCompanion (by norm_num) ψ n x ∧
+      ∀ y ∈ Icc
+        (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re
+        (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re,
+        sourceRealGapCompanion (by norm_num) ψ n x ≤ sourceRealGapCompanion (by norm_num) ψ n y :=
+  sourceRealGapCompanion_positive_minimum (by norm_num) (by norm_num) ψ hψ n
+
+-- Below the Hilbert exponent the same positive bound includes the left endpoint.
+example (ψ : CoeffPair (3/2)) (hψ : IsRealType (CoeffPair.toMax (3/2) ψ)) (n : ℤ) :
+    0 < sourceRealGapCompanion section19_half_ne_top ψ n
+      (canonicalPeriodicLeft section19_half_ne_top section19_one_lt_half
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re := by
+  apply sourceRealGapCompanion_pos section19_half_ne_top section19_one_lt_half ψ hψ n
+  exact ⟨le_rfl,NLS.ComplexAnalysis.re_le_of_complexLexLE
+    ((canonicalPeriodicEndpoints_spec section19_half_ne_top section19_one_lt_half
+      (periodOnePotential ψ) (periodOnePotential_mem ψ)).2.1 n)⟩
+
+-- Every negative-index band also avoids all actual critical points.
+example (ψ : CoeffPair 2) (hψ : IsRealType (CoeffPair.toMax 2 ψ)) (x : ℝ)
+    (hx : x ∈ sourceRealBand (by norm_num) (by norm_num) ψ (-3)) :
+    deriv (canonicalDiscriminant (by norm_num) (periodOnePotential ψ)) (x : ℂ) ≠ 0 :=
+  sourceDiscriminant_deriv_ne_zero_on_realBand (by norm_num) (by norm_num) ψ hψ (-3) x hx
+
+-- Strict monotonicity includes both endpoints and all signed band indices.
+example (ψ : CoeffPair 4) (hψ : IsRealType (CoeffPair.toMax 4 ψ)) (n : ℤ) :
+    StrictMonoOn
+      (fun x : ℝ => (-1 : ℝ)^(n+1)*(canonicalDiscriminant (by norm_num) (periodOnePotential ψ) x).re)
+      (Icc
+        (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re
+        (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (n+1)).re) :=
+  sourceSignedDiscriminant_strictMonoOn_realBand (by norm_num) (by norm_num) ψ hψ n
+
+-- The physical endpoint levels fix the direction, not only monotonicity up to a sign.
+example (ψ : CoeffPair 2) (hψ : IsRealType (CoeffPair.toMax 2 ψ)) (n : ℤ) :
+    let f := fun x : ℝ => (-1 : ℝ)^(n+1)*(canonicalDiscriminant (by norm_num) (periodOnePotential ψ) x).re
+    f (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n).re = -2 ∧
+    f (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (n+1)).re = 2 :=
+  sourceSignedDiscriminant_realBand_endpoints (by norm_num) (by norm_num) ψ hψ n
+
+end Section19RealCalculationExamples

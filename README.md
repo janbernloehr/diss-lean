@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 19 comparison](coverage/SECTION_19_ASSERTIONS.md)
-records the corrected π gap bound and canonical normalization using existing
-positive proofs. All 48 passage groups are classified; two auxiliary proof
-details remain explicit. The main abelian-integral, Laurent and mixed-gap
-theorems are already proved. This step changes documentation only and adds
-no refutations. Next are the two positive auxiliary statements, then Section 20.
-Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
+Latest step: [Section 19's real calculations](NLS/ZakharovShabat/SourceSection19RealCalculation.lean)
+now prove the positive closed-gap companion minimum and strict closed-band
+monotonicity, closing both auxiliary gaps in the
+[ordered comparison](coverage/SECTION_19_ASSERTIONS.md). Five new positive
+theorems and five API examples pass the full build and axiom audit. The
+corrected π bound is preserved; no new refutations were added. Next is
+Section 20. Wider qualifications remain in the [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

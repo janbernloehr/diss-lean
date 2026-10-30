@@ -4835,3 +4835,4 @@ import NLS.ZakharovShabat.SourceLemma11_1RealCalculation
 import NLS.ZakharovShabat.SourceActionContourCollarClosure
 import NLS.ZakharovShabat.SourceBirkhoffGradientReduction
 import NLS.ZakharovShabat.SourcePsiOwnIndexAsymptotics
+import NLS.ZakharovShabat.SourceSection19RealCalculation

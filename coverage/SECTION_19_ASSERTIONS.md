@@ -1,9 +1,19 @@
 # Section 19 ordered assertion comparison
 
-All 48 ordered Section19 groups are classified: 33 matched, eight corrected or scope-clarified, two partial auxiliary assertions and five contextual groups. The main statements of Lemmas19.1,19.2,19.4 and Corollary19.3 are already proved for the actual canonical primitive on one original source domain. The positive gap-error comparison retains pi*(D*E+abs(critical-midpoint)); critical-point notation, canonical root normalization, selected indices and the local scope at infinity are clarified directly. S19-015 retains the unlinked positive companion minimum and S19-032 the unlinked strict band monotonicity assertion. Neither missing auxiliary statement is assumed in the existing proofs of the main conclusions. The Laurent proof uses internal WKB asymptotics, a local sinh inverse estimate and sampled analytic order in place of the printed principal-arcsine argument. No literal formalization of those intermediate principal-arcsine displays or exact external [23] comparison is claimed. No Lean changes or new refutations are added; wider qualifications remain unresolved.
+All 48 passage groups are classified: 35 matched, eight corrected or scope-clarified,
+and five contextual. The two auxiliary assertions initially marked partial are now
+proved directly: the positive closed-gap companion minimum (S19-015) and strict
+signed-discriminant monotonicity on the closed real band (S19-032).
+
+The main statements retain the same actual canonical primitive and original source
+domain. The positive gap bound includes π, and the canonical normalization, critical
+point and selected-index corrections remain. The internal WKB/local-sinh Laurent
+proof replaces the printed principal-arcsine argument; the exact external [23]
+comparison is not claimed. Wider dissertation qualifications remain unresolved.
 
 Source: printed pp. 87–91, text lines 6980–7441. Line numbers count newline
-characters and preserve form feeds. All five rendered source pages were inspected.
+characters and preserve form feeds. All five rendered source pages were inspected
+for the preceding ordered comparison; their unchanged hashes were revalidated.
 
 | Group | Text lines | Source passage | Status |
 | --- | --- | --- | --- |
@@ -21,7 +31,7 @@ characters and preserve form feeds. All five rendered source pages were inspecte
 | S19-012 | 7071–7074 | Lemma 19.1(v): real arcosh boundary profiles. | matched |
 | S19-013 | 7076–7076 | Lemma 19.1(vi): exact free primitive. | matched |
 | S19-014 | 7078–7084 | Proof of joint and spectral analyticity. | matched |
-| S19-015 | 7085–7092 | Positive real-gap companion expression. | partial |
+| S19-015 | 7085–7092 | Positive real-gap companion expression. | matched |
 | S19-016 | 7094–7100 | Local contour and logarithm neighborhood. | corrected |
 | S19-017 | 7102–7117 | Logarithmic primitive and gradient formula. | matched |
 | S19-018 | 7118–7122 | Analytic continuation of the source derivative. | matched |
@@ -38,7 +48,7 @@ characters and preserve form feeds. All five rendered source pages were inspecte
 | S19-029 | 7261–7269 | Figure 4.1 boundary sign picture. | contextual |
 | S19-030 | 7272–7281 | Lemma 19.2: convergent physical Hamiltonian Laurent series. | matched |
 | S19-031 | 7283–7292 | Finite product, exterior growth and coefficient determination. | matched |
-| S19-032 | 7293–7301 | Real-band monotonicity and root sign. | partial |
+| S19-032 | 7293–7301 | Real-band monotonicity and root sign. | matched |
 | S19-033 | 7306–7316 | Derivative of the real-band arcsine branch. | matched |
 | S19-034 | 7317–7337 | Exact primitive on a real spectral band. | matched |
 | S19-035 | 7339–7346 | Half-integer discriminant asymptotics. | matched |
@@ -214,14 +224,16 @@ This supplies the analytic continuation argument internally; the reference to Ap
 
 ### S19-015: Positive real-gap companion expression.
 
-- The normalized primitive has exact exponential and companion-multiplier identities, and the real arcosh profile is continuous with zero endpoints and positive interior.
+- The literal signed discriminant minus sqrt(Delta squared minus four) is strictly positive at every point of the closed real gap.
+- This continuous expression attains its minimum on the closed gap, and that minimum is strictly positive, including when the gap is collapsed.
 
 Public declarations:
 
-- `NLS.ZakharovShabat.SourceAbelianDiscPrimitive.extension_exp_neg`
-- `NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec`
+- `NLS.ZakharovShabat.sourceRealGapCompanion`
+- `NLS.ZakharovShabat.sourceRealGapCompanion_pos`
+- `NLS.ZakharovShabat.sourceRealGapCompanion_positive_minimum`
 
-These results support the local logarithm construction, but this review has not identified a direct Lean statement for the printed strictly positive minimum of the real companion expression over the whole closed gap. That auxiliary assertion remains to be reconciled; the gradient theorem is already proved.
+The theorem uses the actual canonical discriminant for every real source at finite p>1 and every signed index. The exact minimum is supplied, with no open-gap, differentiability-of-endpoint-labels or separately assumed positivity premise.
 
 ### S19-016: Local contour and logarithm neighborhood.
 
@@ -407,14 +419,18 @@ Exterior circle bounds, maximum modulus and the zero outer period replace the pr
 
 ### S19-032: Real-band monotonicity and root sign.
 
-- The canonical root has the exact signed imaginary square-root expression, and the discriminant lies strictly between -2 and 2 in each open real band.
+- The signed discriminant (-1)^(n+1)*Delta is strictly increasing on the complete closed band from lambda_n^plus to lambda_(n+1)^minus, with exact endpoint values -2 and 2.
+- Every interior band point avoids all actual critical points, and the canonical root has the previously proved signed imaginary square-root expression.
 
 Public declarations:
 
+- `NLS.ZakharovShabat.sourceDiscriminant_deriv_ne_zero_on_realBand`
+- `NLS.ZakharovShabat.sourceSignedDiscriminant_realBand_endpoints`
+- `NLS.ZakharovShabat.sourceSignedDiscriminant_strictMonoOn_realBand`
 - `NLS.ZakharovShabat.sourceCanonicalRoot_eq_signed_sqrt_on_realBand`
 - `NLS.ZakharovShabat.sourceDiscriminant_realBand_sq_lt_four`
 
-The printed strict monotonicity of (-1)^(n+1)*Delta on the whole closed band is not established by the two cited statements alone. A direct monotonicity theorem remains to be reconciled; the following arcsine derivative and band-value conclusions are independently proved.
+Complete critical-point localization excludes derivative zeros in the open band. Rolle gives injectivity, and continuity plus the exact endpoint levels gives strict increase on the closed band. All signed indices and collapsed adjacent gaps are included.
 
 ### S19-033: Derivative of the real-band arcsine branch.
 
@@ -597,13 +613,15 @@ retains the same primitive, source domain and normalization throughout.
 The [positive gap comparison](../NLS/ZakharovShabat/SourceFullAbelianGapComparison.lean)
 retains the factor π. The
 [sampled phase proof](../NLS/ZakharovShabat/NLSHamiltonianPrimitiveCoefficients.lean)
-identifies the physical Laurent coefficients without assuming the printed inverse-arcsine displays.
+identifies the physical Laurent coefficients. The new
+[real calculations](../NLS/ZakharovShabat/SourceSection19RealCalculation.lean)
+prove the attained positive minimum and closed-band strict monotonicity directly.
 
-This review inspected 37 complete module bodies and resolved 76 declaration references.
-It does not claim a fresh semantic reading of every transitive dependency.
-Historical refutation modules are unchanged; no new refutation was added.
+The initial comparison inspected 37 full module bodies and resolved 76 declaration
+references. The positive-auxiliary follow-up reviewed its new module and three direct
+spectral dependencies; the updated ledger resolves 81 declarations. A fresh semantic
+reading of every transitive dependency is not claimed. No new refutations were added.
 
-This documentation-only step reuses the successful full check from commit c8cbe87 on the exact unchanged Lean and dependency-lock snapshot: 8,559 build jobs, 7,635 public examples and 44,604 transitively audited NLS declarations, with 21 inherited warnings and zero new warnings. No new full build is claimed. Current module hashes, declaration references, source-review integrity and local documentation links are checked separately; these checks do not certify mathematical completeness.
+The complete ./scripts/check.sh passed: 8,560 build jobs, 7,640 public examples and a transitive axiom audit of 44,615 NLS declarations. The check includes the new module and five new API examples, with 21 inherited warnings and zero new warnings. The examples cover a negative band index and a source exponent below two. Source-review hashes, declaration references and local documentation links are checked separately. These checks do not certify complete formalization of the dissertation.
 
-Next: reconcile the two positive auxiliary assertions S19-015 and S19-032,
-then continue the ordered comparison with Section 20.
+Next: the ordered Section 20 comparison.
