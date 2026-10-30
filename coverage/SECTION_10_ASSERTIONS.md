@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 49 of 52 ordered Section 10 groups are compared: 41 matched and eight corrected occurrences, through Lemma 10.11(ii) and the collapsed-factor proof. Endpoint integrals are actual independently truncated improper limits for arbitrary admissible finite piecewise interior-C1 paths in the original disks. Closed-contour integrals vanish for every piecewise C1 loop in the original cut disk. The literal omitted product retains the factor -i, every other signed index and the unchanged common W. Both new groups match existing proofs with the path-integral convention explicit. Three proof groups remain pending: the real-locus arcosh calculation, continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 50 of 52 ordered Section 10 groups are compared: 42 matched and eight corrected occurrences, through the real-locus calculation in Lemma 10.11(ii). The literal parity-weighted positive-square-root kernel has a proved -2 arcosh partial-integral formula, endpoint integrability and the complete original-circle calculation. The original disks and unchanged common W are retained. The printed sign and coefficient match; no new correction or refutation is added. Two proof groups remain pending: continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 49
-groups, through Lemma 10.11(ii) and the collapsed-factor proof on p.60, have been compared.
-The remaining three groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 50
+groups, through the real-locus calculation in Lemma 10.11(ii) on p.60, have been compared.
+The remaining two groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -64,7 +64,7 @@ inspected to preserve figures, signs and closure bars. See
 | S10-047 | 4619–4626 | Lemma 10.11(i): extension through every collapsed gap. | matched |
 | S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | matched |
 | S10-049 | 4644–4657 | Collapsed-factor cancellation proof. | matched |
-| S10-050 | 4659–4678 | Real-locus period calculation via side deformation and arcosh. | pending |
+| S10-050 | 4659–4678 | Real-locus period calculation via side deformation and arcosh. | matched |
 | S10-051 | 4679–4689 | Analytic continuation of periods and Cauchy deformation on the common domain. | pending |
 | S10-052 | 4691–4726 | Arbitrary complex endpoint paths from opposite side traces and zero periods. | pending |
 
@@ -546,6 +546,21 @@ Public evidence: `NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_o
 
 Cancellation is performed where the selected linear factor is nonzero. At its zero the analytic omitted product supplies the extension. This retains the printed -i normalization, the literal omitted index set, the original disks and the same common W; the selected source need not be real.
 
+## S10-050: Real-locus period calculation via side deformation and arcosh.
+
+- The indexed period is analytic on the unchanged common W and is represented locally on the entire original source neighborhood by the original fixed boundary circle.
+- For every signed integer index, the real half-discriminant is exactly (-1)^n Re(Delta)/2. It equals one at both actual endpoints and is greater than one in an open gap interior, giving the printed signed-discriminant bound.
+- The new literal kernel is (-1)^(n+1) Delta prime divided by the positive real square root of Re(Delta)^2-4. It equals the lower canonical boundary quotient and the negative upper quotient on the open gap.
+- The literal kernel is interval-integrable across both actual endpoints. The proof covers collapsed gaps, where the integration interval is degenerate.
+- Twice the integral from the left endpoint to any point x of the closed gap equals -2 arcosh((-1)^n Re(Delta(x))/2). Thus the coefficient and parity sign are fixed before the full-gap endpoint values vanish.
+- The existing shrinking contour is clockwise: upper left-to-right minus right endpoint arc minus lower left-to-right minus left endpoint arc. The cut-avoiding homotopy sends it to four clockwise circle arcs, whose integral is the negative standard counterclockwise circle integral. Real upper and lower limiting integrals vanish, as do the endpoint arcs; isolated-circle transport retains the original real-centered circle.
+- The new originalCircle_realCalculation theorem assembles the exact displayed counterclockwise-circle = twice literal gap integral = -2 arcosh endpoint difference = zero chain on every original disk and the unchanged W. It reuses the already established zero-period theorem; it does not introduce a new general contour-deformation identity. The separate partial-integral theorem supplies the nonzero normalization evidence.
+- Two public examples exercise a strictly negative interior partial integral at index -1 and p=3/2, and the literal positive-circle formula on an arbitrary original central disk without an open-gap hypothesis.
+
+Public evidence: `NLS.ComplexAnalysis.stadiumCircleLoop_curveIntegral_eq_neg_circleIntegral`, `NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodCircle`, `NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_realCalculation`, `NLS.ZakharovShabat.discriminant_derivative_eq_signed_two_realGapHalfDiscriminant_deriv`, `NLS.ZakharovShabat.exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero`, `NLS.ZakharovShabat.exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral`, `NLS.ZakharovShabat.realGapCanonicalRootUpperValue_eq_signed_two_sqrt`, `NLS.ZakharovShabat.realGapHalfDiscriminant_arcosh_gap_data`, `NLS.ZakharovShabat.realGapHalfDiscriminant_eq_signed`, `NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType`, `NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_lower`, `NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_upper`, `NLS.ZakharovShabat.sourceCriticalRootRatio_lower_cosineBoundaryIntegral_eq_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_realCenteredCircleIntegral_eq_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_eq`, `NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_tendsto_zero`, `NLS.ZakharovShabat.sourceCriticalRootRatio_upper_cosineBoundaryIntegral_eq_zero`, `NLS.ZakharovShabat.sourceLemma10_11CirclePeriods`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_lower`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_intervalIntegrable`, `NLS.ZakharovShabat.sourceLemma10_11RealKernel_twice_partialIntegral`, `NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec`, `NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh`, `NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable`, `NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh`.
+
+The printed parity and coefficient -2 match. The direct literal partial-integral identity is new; the full original-circle chain reuses existing period vanishing. The existing stadium deformation has the opposite orientation to the standard positive circle, with the sign recorded explicitly. This comparison is restricted to S10-050; the following full-domain propagation and final complex side-trace proof passages remain pending.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -553,5 +568,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-050, the real-locus arcosh calculation, followed by the last two proof passages.
+Continue with S10-051, continuation of periods on the common domain, followed by the final complex endpoint-path proof passage.
 The remaining Section 10 groups and wider unresolved qualifications remain.

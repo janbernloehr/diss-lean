@@ -71451,3 +71451,55 @@ example {U : Set (Coeff (3/2) × CoeffPair (3/2))} {D : ℤ → Set ℂ}
     asymptotic_half_ne_top asymptotic_one_lt_half t.2 z n (h.domain t ht n z hz),he⟩
 
 end Section10AsymptoticProofExamples
+
+
+open NLS NLS.ZakharovShabat Set Complex MeasureTheory intervalIntegral
+open scoped ENNReal
+namespace Section10RealCalculationExamples
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem real_half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+private theorem real_one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨real_one_lt_half.le⟩
+
+-- The negative signed index gives a strictly negative partial integral
+-- inside an open gap, before endpoint evaluation makes the full integral zero.
+example (ψ : CoeffPair (3/2)) (hreal : IsRealType (CoeffPair.toMax (3/2) ψ))
+    (x : ℝ) (hx : x ∈ Ioo
+      (canonicalPeriodicLeft real_half_ne_top real_one_lt_half
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re
+      (canonicalPeriodicRight real_half_ne_top real_one_lt_half
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re) :
+    (2 * (∫ t in (canonicalPeriodicLeft real_half_ne_top real_one_lt_half
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re..x,
+      sourceLemma10_11RealKernel real_half_ne_top ψ (-1) t)).re < 0 := by
+  rw [sourceLemma10_11RealKernel_twice_partialIntegral
+    real_half_ne_top real_one_lt_half ψ hreal (-1) x ⟨hx.1.le,hx.2.le⟩]
+  have hpos := (sourceRealGapArcoshProfile_spec
+    real_half_ne_top real_one_lt_half ψ hreal (-1)).2.2.2 x hx
+  rw [sourceRealGapArcoshProfile,realGapHalfDiscriminant_eq_signed] at hpos
+  norm_num [Complex.mul_re] at hpos ⊢
+  linarith
+
+-- An arbitrary original central disk retains the literal positive-circle
+-- formula, without any open-gap assumption or replacement of the domain W.
+example {W V : Set (CoeffPair (3/2))}
+    (h : SourceLemma10_11CircleData real_half_ne_top real_one_lt_half W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods real_half_ne_top real_one_lt_half V D c)
+    (ψ : CoeffPair (3/2)) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+    (hreal : IsRealType (CoeffPair.toMax (3/2) ψ))
+    (o R : ℝ) (hR : 0 < R) (hDn : D 0 = Metric.ball (o : ℂ) R) :
+    (∮ z in C((o : ℂ),R), sourceCriticalRootRatioJoint real_half_ne_top real_one_lt_half (z,ψ)) =
+      2 * (∫ t in (canonicalPeriodicLeft real_half_ne_top real_one_lt_half
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) 0).re..
+        (canonicalPeriodicRight real_half_ne_top real_one_lt_half
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) 0).re,
+        -(deriv (canonicalDiscriminant real_half_ne_top (periodOnePotential ψ)) t) /
+          (Real.sqrt ((canonicalDiscriminant real_half_ne_top (periodOnePotential ψ) t).re^2-4) : ℂ)) := by
+  have he := (h.originalCircle_realCalculation hD ψ hψW hψV hreal 0 o R hR hDn).1
+  simpa only [sourceLemma10_11RealKernel,zero_add,zpow_one,neg_one_mul] using he
+
+end Section10RealCalculationExamples

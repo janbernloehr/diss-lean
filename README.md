@@ -5,15 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 10 comparison](coverage/SECTION_10_ASSERTIONS.md)
-now includes Lemma 10.11(ii) and its collapsed-factor proof. Actual
-improper endpoint integrals and arbitrary piecewise closed-contour
-integrals vanish on the original disks and unchanged common W.
-The omitted product keeps its exact -i normalization.
-The ledger covers 49 of 52 groups: 41 matched and eight corrected
-occurrences; three proof groups remain pending. This step records existing
-proofs. The [completion assessment](coverage/COMPLETENESS.md) retains
-Section 7's partial clauses and the wider qualifications.
+Latest step: the [literal real-gap calculation](NLS/ZakharovShabat/SourceLemma10_11RealCalculation.lean)
+proves Lemma 10.11's parity sign and -2 arcosh formula for partial gap
+integrals, then assembles the full calculation on every original circle.
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) covers
+50 of 52 groups: 42 matched and eight corrected occurrences; two proof
+groups remain pending. The [completion assessment](coverage/COMPLETENESS.md)
+retains Section 7's partial clauses and the wider qualifications.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

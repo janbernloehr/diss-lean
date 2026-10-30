@@ -1,6 +1,51 @@
 # Section 10: potentials of almost real type
 
-## Ordered comparison through Lemma 10.11(ii) and the collapsed-factor proof
+## Ordered comparison through the Lemma 10.11 real-locus calculation
+
+The real-locus calculation in Lemma 10.11(ii) now has a direct public
+formula for the printed kernel: (-1)^(n+1) times the discriminant derivative
+divided by the positive square root of the real discriminant squared minus
+four. It is the lower canonical boundary quotient and the negative upper
+quotient for every signed index.
+
+Twice its integral from the left endpoint to any point x in the closed gap
+is exactly -2 arcosh((-1)^n Delta(x)/2). The kernel is integrable across both
+endpoints. The partial formula fixes the sign and coefficient before the
+full-gap arcosh endpoint values both become zero. The complete displayed
+circle/gap/arcosh calculation holds for every original disk on the unchanged
+common W, including collapsed gaps.
+
+The existing contour proof uses a clockwise stadium and four clockwise
+circle arcs, giving the negative standard counterclockwise circle integral.
+The new full-circle calculation reuses established period vanishing; the
+partial-integral theorem independently supplies the literal normalization.
+Two public examples cover a strictly negative partial integral at signed
+index -1 and p=3/2, and an arbitrary original central disk with no open-gap
+assumption. The printed sign and coefficient match, so this step adds no
+source correction or refutation.
+
+Validation: `./scripts/check.sh` passes with 8,512 build jobs, 7,582
+public examples and a transitive axiom audit of 44,318 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and examples introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) now covers
+50 of 52 groups: 42 matched and eight corrected occurrences. Two proof
+groups remain pending: continuation of periods and the final complex
+endpoint-path argument. Section 7's physical NLS Dirichlet motion and
+unrestricted psi uniqueness, the exact cited 2014 construction, Appendix G.2
+norm interpretation and the broader source inventory remain unresolved.
+
+The [literal real-gap calculation](../NLS/ZakharovShabat/SourceLemma10_11RealCalculation.lean)
+builds on the [arcosh primitive](../NLS/ZakharovShabat/SourceRealGapArcoshPrimitive.lean),
+[boundary parity](../NLS/ZakharovShabat/SourceCanonicalRootUpperParitySign.lean),
+and [original-circle periods](../NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean).
+The [stadium circle arcs](../NLS/ComplexAnalysis/StadiumCircleCorners.lean)
+record the clockwise-to-counterclockwise sign explicitly.
+
+Earlier milestone entries retain their historical scope.
+
+## Previous comparison milestone: through Lemma 10.11(ii) and the collapsed-factor proof
 
 Lemma 10.11(ii) and the collapsed-factor proof now match the existing
 implementation, with the path-integral convention made explicit.
@@ -458,7 +503,7 @@ in the displayed proof, independently of endpoint-label analyticity.
 domain and chooses the local family before all indices and powers.
 
 The following named-statement entries retain their historical audit scope;
-they do not discharge the three ordered groups still pending.
+they do not discharge the two ordered groups still pending.
 
 This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in

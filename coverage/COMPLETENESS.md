@@ -159,16 +159,13 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-49 of 52 groups: 41 matched and eight corrected occurrences, through
-Lemma 10.11(ii) and its collapsed-factor proof. The endpoint result uses
-actual independently truncated improper integrals for the usual piecewise
-C1 contour class, allowing C1 regularity only on piece interiors. Every
-piecewise C1 closed contour in an original cut disk has zero integral.
-The omitted product retains its exact -i normalization and the unchanged W.
-Both new groups match existing proofs. Three proof groups remain pending:
-the real-locus arcosh calculation, continuation of periods and the final
-complex endpoint-path argument. Existing named theorem audits do not by
-themselves settle those passages.
+50 of 52 groups: 42 matched and eight corrected occurrences, through the
+real-locus calculation in Lemma 10.11(ii). The literal kernel has the
+printed -2 arcosh partial-integral formula, endpoint integrability and the
+complete original-circle calculation, retaining all original disks and W.
+The printed sign and coefficient match. Two proof groups remain pending:
+continuation of periods and the final complex endpoint-path argument.
+Existing named theorem audits do not by themselves settle those passages.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

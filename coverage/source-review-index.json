@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T08:37:23.242531+00:00",
-  "base_commit": "bc1a5decb29077377fa478782c51252633acec43",
+  "published_utc": "2026-10-30T09:13:22.674553+00:00",
+  "base_commit": "776e140704e6cbca243dcb096300aaf18b26eff3",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 121,
-    "module_hash_checks": 2106,
-    "distinct_modules": 1338
+    "review_records": 122,
+    "module_hash_checks": 2122,
+    "distinct_modules": 1350
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,20 +28,19 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "bc1a5decb29077377fa478782c51252633acec43",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 49 of 52 ordered Section 10 groups are compared: 41 matched and eight corrected occurrences, with three pending. Lemma 10.11(ii) retains actual independently truncated improper endpoint integrals and arbitrary piecewise closed contours on the original disks and unchanged W. The collapsed-factor proof retains the literal omitted product and exact -i normalization. Wider qualifications remain.",
+    "base_commit": "776e140704e6cbca243dcb096300aaf18b26eff3",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the literal Lemma 10.11 real-gap kernel, six public theorems and two integration examples. The printed parity and -2 arcosh coefficient hold on partial intervals; endpoint integrability and the complete original-circle calculation retain every original disk and the unchanged common W. The first 50 of 52 ordered Section 10 groups are compared: 42 matched and eight corrected occurrences. The full-domain period argument and final complex endpoint-path proof passage remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the wider source inventory and external-construction qualifications remain unresolved.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8511,
-    "public_examples": 7580,
-    "transitive_NLS_declarations": 44300,
+    "build_jobs": 8512,
+    "public_examples": 7582,
+    "transitive_NLS_declarations": 44318,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4788,
-      "sha256": "28ba7ef718e5deca076012025aca079714ca1cfdedb7b52a87e1f6df51344f44"
+      "files": 4789,
+      "sha256": "5726490ec3f6a4304d6a52075b673fc32dd96763d8880a6465987ab8bb205adb"
     },
-    "qualification": "Reused successful Lean validation of this exact source and dependency-lock snapshot. Current review-integrity checks do not independently certify semantic completeness.",
-    "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3"
+    "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
   "named_statements": [
     {
@@ -30963,6 +30962,136 @@
       "declaration_inventory_count": 44300,
       "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
       "source_record_sha256": "2e42eeb803fe0d3255b3205046657130e74a9279f70a7561be163cc978e3c03c"
+    },
+    "Section10RealCalculationSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "776e140704e6cbca243dcb096300aaf18b26eff3",
+      "updated_utc": "2026-10-30T09:13:22.674553+00:00",
+      "source_lines": [
+        [
+          4659,
+          4678
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-050",
+          "source_lines": [
+            4659,
+            4678
+          ],
+          "requirement": "Real-locus period calculation via side deformation and arcosh.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.stadiumCircleLoop_curveIntegral_eq_neg_circleIntegral",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodCircle",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_realCalculation",
+            "NLS.ZakharovShabat.discriminant_derivative_eq_signed_two_realGapHalfDiscriminant_deriv",
+            "NLS.ZakharovShabat.exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero",
+            "NLS.ZakharovShabat.exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral",
+            "NLS.ZakharovShabat.realGapCanonicalRootUpperValue_eq_signed_two_sqrt",
+            "NLS.ZakharovShabat.realGapHalfDiscriminant_arcosh_gap_data",
+            "NLS.ZakharovShabat.realGapHalfDiscriminant_eq_signed",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_lower",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_upper",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_lower_cosineBoundaryIntegral_eq_zero",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_realCenteredCircleIntegral_eq_zero",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_eq",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_tendsto_zero",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_upper_cosineBoundaryIntegral_eq_zero",
+            "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_lower",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel_intervalIntegrable",
+            "NLS.ZakharovShabat.sourceLemma10_11RealKernel_twice_partialIntegral",
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+            "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh",
+            "NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable",
+            "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh"
+          ],
+          "reviewed_claims": [
+            "The indexed period is analytic on the unchanged common W and is represented locally on the entire original source neighborhood by the original fixed boundary circle.",
+            "For every signed integer index, the real half-discriminant is exactly (-1)^n Re(Delta)/2. It equals one at both actual endpoints and is greater than one in an open gap interior, giving the printed signed-discriminant bound.",
+            "The new literal kernel is (-1)^(n+1) Delta prime divided by the positive real square root of Re(Delta)^2-4. It equals the lower canonical boundary quotient and the negative upper quotient on the open gap.",
+            "The literal kernel is interval-integrable across both actual endpoints. The proof covers collapsed gaps, where the integration interval is degenerate.",
+            "Twice the integral from the left endpoint to any point x of the closed gap equals -2 arcosh((-1)^n Re(Delta(x))/2). Thus the coefficient and parity sign are fixed before the full-gap endpoint values vanish.",
+            "The existing shrinking contour is clockwise: upper left-to-right minus right endpoint arc minus lower left-to-right minus left endpoint arc. The cut-avoiding homotopy sends it to four clockwise circle arcs, whose integral is the negative standard counterclockwise circle integral. Real upper and lower limiting integrals vanish, as do the endpoint arcs; isolated-circle transport retains the original real-centered circle.",
+            "The new originalCircle_realCalculation theorem assembles the exact displayed counterclockwise-circle = twice literal gap integral = -2 arcosh endpoint difference = zero chain on every original disk and the unchanged W. It reuses the already established zero-period theorem; it does not introduce a new general contour-deformation identity. The separate partial-integral theorem supplies the nonzero normalization evidence.",
+            "Two public examples exercise a strictly negative interior partial integral at index -1 and p=3/2, and the literal positive-circle formula on an arbitrary original central disk without an open-gap hypothesis."
+          ],
+          "qualification": "The printed parity and coefficient -2 match. The direct literal partial-integral identity is new; the full original-circle chain reuses existing period vanishing. The existing stadium deformation has the opposite orientation to the standard positive circle, with the sign recorded explicitly. This comparison is restricted to S10-050; the following full-domain propagation and final complex side-trace proof passages remain pending."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "13697c2ee76735e372135ca4035f1daeb2bfcafb079ceadc339f62aab7bbe157",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_11RealCalculation.lean": "a0ff9024620817631d2340d714e04fcaf771029cecb07ce28c02af04fc8a1ce2",
+        "NLS/ZakharovShabat/SourceRealGapArcoshPrimitive.lean": "a519770f28e88e041c7eb89300d342ef9bcb93d6b5d9d567c85198de74f39114",
+        "NLS/ZakharovShabat/SourceCanonicalRootUpperParitySign.lean": "ca467c0e9479996a0a574f42167172355e66a56337b647eb523287c05f96ce23",
+        "NLS/ZakharovShabat/SourceDiscriminantDerivativeParity.lean": "627e0db31a4e8949aaa6169415b3f6cbdbdfe6561a81bde7c20e098b5bc1a10e",
+        "NLS/ZakharovShabat/RealGapArcoshIntegral.lean": "8dfb1aed7f1cccfe63ab5007cf633b35d28e63ce88b7d2f535a0a0251d1d5876",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioStadiumIntegral.lean": "7967ca20fc763e979d794818c2c26c03a77f657d14167626dba3a2a2534d0ddc",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioStadiumCircleHomotopy.lean": "bfd472ab2f1bd1ca5c4658b7c128b4c065204dd3fb109d0651a804ba06a5c1ea",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioStadiumCircleVanishing.lean": "4d023e1d35bf75b2cd913665433e7eddc2036f194add46c753570688c5049228",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriod.lean": "4ba298999b75a8f4b974f742999f473ae8395488d0e6097bd3cbbcfb2605785c",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean": "1e562c8eb11de2a0d77b7226686f862dc2d79fd039bfbae9185920cffc408357",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioRealCenteredCircleVanishing.lean": "990b21353b9c8ca66ca9d7de56f220a58849e9d95c47a2fedc65007aad47b25c",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioEnclosingCircleVanishing.lean": "e878d2c7a02d9aca5da1eefef4458aa208d7c8be2ec35c7d02d60f0a27853aba",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioHorizontalLimit.lean": "f3d718809a24df1d51e644a40f0aca3e46fb367378994597e7544dcdc04e106e",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCosineBoundaryZero.lean": "4eb693aed419d2db73a878a3c51e532e04b9d7c08389d636c28f7d9c07afc536",
+        "NLS/ComplexAnalysis/StadiumCircleCorners.lean": "440fc041ff5fe1a47faf9b69b32270d04d397c4bdd4b696bad86e5e8d37de6ea"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          60
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-060.png": "4895fb49a68006fb8059b56a25c62ac84925ee23c088747523143d8b92fb84b6"
+        }
+      },
+      "qualification": "The first 50 of 52 ordered Section 10 groups are compared: 42 matched and eight corrected occurrences, through the real-locus calculation in Lemma 10.11(ii). The literal parity-weighted positive-square-root kernel has a proved -2 arcosh partial-integral formula, endpoint integrability and the complete original-circle calculation. The original disks and unchanged common W are retained. The printed sign and coefficient match; no new correction or refutation is added. Two proof groups remain pending: continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.stadiumCircleLoop_curveIntegral_eq_neg_circleIntegral",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.periodCircle",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.period_eq_originalCircle",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalCircle_realCalculation",
+        "NLS.ZakharovShabat.discriminant_derivative_eq_signed_two_realGapHalfDiscriminant_deriv",
+        "NLS.ZakharovShabat.exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero",
+        "NLS.ZakharovShabat.exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral",
+        "NLS.ZakharovShabat.realGapCanonicalRootUpperValue_eq_signed_two_sqrt",
+        "NLS.ZakharovShabat.realGapHalfDiscriminant_arcosh_gap_data",
+        "NLS.ZakharovShabat.realGapHalfDiscriminant_eq_signed",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_enclosingCircleIntegral_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_lower",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_horizontalIntegral_tendsto_zero_upper",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_lower_cosineBoundaryIntegral_eq_zero",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_realCenteredCircleIntegral_eq_zero",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_eq",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_stadium_curveIntegral_tendsto_zero",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_upper_cosineBoundaryIntegral_eq_zero",
+        "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_lower",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel_eq_neg_upper",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel_intervalIntegrable",
+        "NLS.ZakharovShabat.sourceLemma10_11RealKernel_twice_partialIntegral",
+        "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+        "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh",
+        "NLS.ZakharovShabat.sourceRealGap_sideQuotients_intervalIntegrable",
+        "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44318,
+      "source_record_sha256": "e24fb4373c6848ccd83ad8f56563c95b756eb6371756ec0722dc8564e6fba066"
     }
   }
 }
