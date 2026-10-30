@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: off-diagonal norm estimates and real inverse
+## Current milestone: compact inverse bounds and joint complex estimates
+
+The actual original limit and full Jacobians now have common two-sided
+inverse bounds over the compact spectral gap product, uniformly in every
+signed index. Isometric complex inclusion gives the same bound for the
+real limit inverse, with factor one.
+
+A finite cover gives one equation bound C on joint balls of radius 4*r
+around every root of a compact set. Cauchy estimates give 2*C/r for the
+root derivative and 4*C/r^2 for joint root/source variation. The latter
+bound holds throughout a common open neighborhood and against every
+reference root in the compact set, including independent root variation.
+
+The [ordered Section 12 ledger](coverage/SECTION_12_ASSERTIONS.md) now has
+forty matched groups, eleven with estimate, scope or gap-reference
+corrections and 16 pending. No new refutations were added.
+
+Full validation passed: 8,551 build jobs, 7,626 public examples and
+44,571 transitively audited NLS declarations, with 21 inherited warnings.
+The nine new proofs and four focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Next is the global simply connected joint neighborhood in S12-052,
+followed by common implicit continuation. Pointwise neighborhoods do
+not yet settle that global topology claim. Wider qualifications remain
+in the [completion assessment](coverage/COMPLETENESS.md).
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: off-diagonal norm estimates and real inverse
 
 The off-diagonal part of Lemma 12.10 now has exact norm and retained-row
 splits, with the explicit power-triangle factor 2^(p-1). Its actual contour

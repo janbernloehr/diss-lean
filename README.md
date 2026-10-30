@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [off-diagonal estimates for Lemma 12.10](coverage/SECTION_12_ASSERTIONS.md)
-now have exact decompositions, explicit constants and positive Holder and
-output-tail bounds. The precise joint local-uniformity statement and bounded
-real inverse are compared on the original domain. The ordered ledger has
-thirty-nine matched groups, ten with corrections and 18 pending. Next are
-compact gap-box inverse bounds; wider qualifications remain in the
+Latest step: [compact inverse bounds and joint complex estimates](coverage/SECTION_12_ASSERTIONS.md)
+now hold for the actual original operators, uniformly over the compact gap
+product and all indices. The corrected joint-distance bound has explicit
+factor 4*C/r^2. The ordered ledger has forty matched groups, eleven with
+corrections and 16 pending. Next is the global simply connected joint
+neighborhood; wider qualifications remain in the
 [completion assessment](coverage/COMPLETENESS.md).
 
 The physical formula comparison is complete for the inspected 2013

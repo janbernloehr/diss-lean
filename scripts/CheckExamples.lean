@@ -72250,3 +72250,64 @@ example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   simp
 
 end Section12OffDiagonalEstimatesExamples
+
+section Section12CompactInverseExamples
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ⊤) := ⟨le_top⟩
+
+-- Isometric inclusion also covers the endpoint used outside the finite-p analytic results.
+example (a : RealCoeff ⊤) : ‖RealCoeff.complexCLM ⊤ a‖ = ‖a‖ :=
+  RealCoeff.norm_complexCLM a
+
+-- Radius two and an outer radius eight give the exact first Cauchy factor one.
+example (a : DeletedCoeff 4 (-7) × CoeffPair 4) (C : ℝ)
+    (hf : DifferentiableOn ℂ
+      (fun t : DeletedCoeff 4 (-7) × CoeffPair 4 =>
+        sourcePsiOriginalEquation (by norm_num) (by norm_num) (-7) t.1 t.2) (ball a 8))
+    (hb : ∀ t ∈ ball a 8,
+      ‖sourcePsiOriginalEquation (by norm_num) (by norm_num) (-7) t.1 t.2‖ ≤ C)
+    (t : DeletedCoeff 4 (-7) × CoeffPair 4) (ht : t ∈ ball a 2) :
+    ‖sourcePsiOriginalRootJacobian (by norm_num) (by norm_num) (-7) t.1 t.2‖ ≤ C := by
+  have h := norm_sourcePsiOriginalRootJacobian_le_of_joint_ball_bound
+    (p := 4) (by norm_num) (by norm_num) (-7) a 2 C (by norm_num) (t := t)
+    (by simpa only [show (4:ℝ)*2 = 8 by norm_num] using hf)
+    (by simpa only [show (4:ℝ)*2 = 8 by norm_num] using hb) ht
+  convert h using 1
+  ring
+
+-- Even at fixed source, the common estimate retains independent root variation.
+example {W : Set (CoeffPair 4)}
+    (H : SourceLemma12_4Data (by norm_num) (by norm_num) W)
+    (φ : CoeffPair 4) (hφ : φ ∈ W) (K : Set (Coeff 4)) (hK : IsCompact K) :
+    ∃ U : Set (Coeff 4 × CoeffPair 4), IsOpen U ∧ K ×ˢ {φ} ⊆ U ∧
+      ∃ L : ℝ, 0 ≤ L ∧ ∀ n : ℤ, ∀ a ∈ K, ∀ b : Coeff 4, (b,φ) ∈ U →
+        ‖sourcePsiOriginalFullRootJacobian (by norm_num) (by norm_num) n b φ -
+          sourcePsiOriginalFullRootJacobian (by norm_num) (by norm_num) n a φ‖ ≤ L*‖b-a‖ := by
+  obtain ⟨r,C,hr,hC,U,hU,hKU,hb⟩ := H.originalFullRootJacobian_compact_complex_joint_bound φ hφ K hK
+  refine ⟨U,hU,hKU,4*C/r^2,by positivity,?_⟩
+  intro n a ha b hbU
+  have h := hb n a ha (b,φ) hbU
+  simpa only [sub_self,norm_zero,max_eq_left (norm_nonneg (b-a))] using h
+
+-- The same real inverse norm bound works for every root in the gap product at p=3/2.
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceLemma12_4Data ENNReal.ofReal_ne_top (by norm_num) W) (hW : IsOpen W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods ENNReal.ofReal_ne_top (by norm_num) V D c) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (hφW : (φ:CoeffPair (ENNReal.ofReal (3/2))) ∈ W)
+    (hφV : (φ:CoeffPair (ENNReal.ofReal (3/2))) ∈ V) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ a : RealCoeff (ENNReal.ofReal (3/2)),
+      RealCoeff.complexCLM (ENNReal.ofReal (3/2)) a ∈
+        sourcePeriodicGapRootSet ENNReal.ofReal_ne_top (by norm_num) φ →
+      ∃ S : RealCoeff (ENNReal.ofReal (3/2)) →L[ℝ] RealCoeff (ENNReal.ofReal (3/2)),
+        (sourcePsiOriginalLimitRealOperator ENNReal.ofReal_ne_top (by norm_num) a φ).comp S =
+          ContinuousLinearMap.id ℝ (RealCoeff (ENNReal.ofReal (3/2))) ∧
+        S.comp (sourcePsiOriginalLimitRealOperator ENNReal.ofReal_ne_top (by norm_num) a φ) =
+          ContinuousLinearMap.id ℝ (RealCoeff (ENNReal.ofReal (3/2))) ∧ ‖S‖ ≤ M :=
+  H.originalLimitRealOperator_gapUniform_inverse hW hD hV φ hφW hφV
+
+end Section12CompactInverseExamples

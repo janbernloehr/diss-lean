@@ -1,11 +1,11 @@
 # Section 12 ordered assertion comparison
 
-The first forty-nine of 67 ordered Section 12 groups are compared: thirty-nine matched, ten with estimate, scope or gap-reference corrections, and 18 pending. The off-diagonal part of Lemma 12.10 now has exact norm and retained-row splits, the explicit power factor 2^(p-1), normalized contour bounds with factor 2*c*K0*L, and positive absolute Holder and output-tail estimates. These retain the actual operator-norm limit on the original real placed-root domain. Joint local uniformity uses tolerance-dependent neighborhoods and implies uniform convergence on compact subsets; continuity and a bounded inverse on real lp are retained. The common complex extension, original placement, exact contour normalization and diagonal value 2 remain. Earlier corrections retain their scope, and the exact sine identity is unchanged. The opening cited-construction attribution remains contextual. Compact gap-box inverse bounds, the joint-root-variable estimate, later operator-limit quantifier and sine-product sign qualifications remain in subsequent groups. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+The first fifty-one of 67 ordered Section 12 groups are compared: forty matched, eleven with estimate, scope or gap-reference corrections, and 16 pending. The compact spectral gap product has common bounds for the actual limit and finite-Jacobian inverses, uniformly in roots and signed index. Isometric complex inclusion preserves the real limit inverse bound with factor one. The common complex neighborhood estimate uses the joint root/source distance with explicit Cauchy factor 4*C/r^2, from an equation bound C on radius 4*r. The estimate holds throughout one open neighborhood of the entire compact root set and for every reference root in that set. Earlier operator-norm limits, precise local-uniformity statements, contour normalization, diagonal value 2 and exact sine identity retain their scope. No new refutations are added. The global simply connected joint neighborhood of original real Omega remains pending in S12-052; a collection of pointwise neighborhoods is not substituted for it. Later operator-limit quantifiers and sine-product signs remain pending. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.63–71 using one-based newline positions
 in the reviewed extraction; form feeds do not add lines. The complete source
 range and rendered pages have been inspected for navigation. Only the first
-forty-nine groups have the semantic comparisons below. Earlier named-theorem
+fifty-one groups have the semantic comparisons below. Earlier named-theorem
 audits retain their own scope and do not settle all intermediate assertions.
 
 All compared mathematical claims use the original finite-p source spaces
@@ -62,8 +62,8 @@ with 1<p<infinity and preserve the Section 11 data on the original W0.
 | S12-047 | 69 | 5554–5564 | Term II: distinguished-column near/far estimate. | corrected |
 | S12-048 | 69 | 5566–5585 | Term I: joint inverse-spacing bound and lp tail estimate. | corrected |
 | S12-049 | 69 | 5587–5592 | Operator-norm convergence, precise local uniformity, continuity and invertibility of Q-star. | corrected |
-| S12-050 | 69 | 5593–5601 | Compact gap box and common inverse bounds for Q-star and all deleted Jacobians. | pending |
-| S12-051 | 69 | 5602–5609 | Cauchy derivative estimate near the source times gap box; source and independent-root variables. | pending |
+| S12-050 | 69 | 5593–5601 | Compact gap box and common inverse bounds for Q-star and all deleted Jacobians. | matched |
+| S12-051 | 69 | 5602–5609 | Cauchy derivative estimate near the source times gap box; source and independent-root variables. | corrected |
 | S12-052 | 70 | 5619–5633 | Neumann inverse bound, uniformity in the deleted index and common simply connected root-admissible domain. | pending |
 | S12-053 | 70 | 5635–5644 | Uniform implicit continuation to one simply connected source neighborhood with root placement. | pending |
 | S12-054 | 70 | 5646–5649 | Assembled entire family and off-diagonal period equations. | pending |
@@ -1242,4 +1242,63 @@ The nineteen new proofs, one operator definition and four focused examples add n
 No admitted proofs, additional axioms or heartbeat overrides were introduced.
 Source-review integrity and documentation-link checks pass for the new records.
 
-Continue with S12-050: compact gap-box inverse bounds, then joint root/source variation.
+The next subsection compares the compact inverse bounds and joint complex estimate.
+
+## Compact inverse bounds and the joint complex estimate in Lemma 12.10
+
+### S12-050: Compact gap product and inverse bounds uniform in roots and index.
+
+- At a fixed real-type source and finite 1<p<infinity, the full product of displaced real spectral gaps is compact in the lp norm. Closed coordinate constraints and uniform endpoint/gap lp tails provide norm compactness, including collapsed gaps.
+- The intrinsic limit Q-star is continuous in operator norm and bijective throughout this compact product. Its genuine two-sided inverse has one norm bound Mstar chosen before the root vector.
+- Uniform norm convergence over the compact gap product gives a common tail threshold with error at most 1/(2*(Mstar+1)). The inverse perturbation estimate then gives the explicit tail bound 2*Mstar. Each of the finitely many remaining indices has a compact continuous invertible family; the maximum of 2*Mstar and the sum of finite-head bounds controls all signed indices and all gap roots.
+- The actual original Q-star and full Q-n coincide with these intrinsic and selected operators. The deleted inverse has no larger norm than its full extension. The new original interfaces retain both inverse identities and put the norm constant before both root and index quantifiers.
+- For the real restriction of original Q-star, complex inclusion is isometric and intertwines the actual inverse. The same complex bound therefore controls the real inverse with factor one. The inclusion norm identity holds also at p=infinity, while the analytic inverse statements retain finite 1<p<infinity.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.isCompact_sourcePeriodicGapRootSet`
+- `NLS.ZakharovShabat.continuous_sourcePsiGapLimitOperator`
+- `NLS.ZakharovShabat.exists_uniform_sourcePsiGapLimitInverse_norm`
+- `NLS.ZakharovShabat.exists_uniform_sourcePsiGapJacobianInverse_norm`
+- `NLS.ZakharovShabat.exists_uniform_sourcePsiSelectedRootJacobian_gapInverse_norm`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitOperator_gapUniform_inverse`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_gapUniform_inverse`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalLimitRealOperator_gapUniform_inverse`
+- `NLS.RealCoeff.norm_complexCLM`
+
+The compactness and uniform bounded-invertibility claims match. Constants may depend on the fixed source. The proof does not replace lp norm compactness by product-topology compactness or assume uniform convergence on an ambient open set.
+
+### S12-051: Cauchy bounds on a common complex neighborhood of the compact gap product.
+
+- For any compact root set K and a fixed source phi in the original equation domain, a finite cover of half-radius local charts gives common r>0 and C>=0. Every original F-n is bounded by C on the joint ball of radius 4*r around (delete_n(a),phi), simultaneously for all a in K and signed n. Every source in those balls stays in the original domain.
+- Cauchy estimates give the actual root-Jacobian norm bound 2*C/r and its joint derivative Lipschitz factor 4*C/r^2 on inner balls of radius r. Restricting the joint derivative to roots and deleting a coordinate are contractions. The fixed omitted-coordinate diagonal 2 cancels in the full-Jacobian difference.
+- Let U be the union of the joint balls of radius r centered at K times {phi}. For every n, every a in K and every (b,psi) in U, the actual full Jacobians satisfy norm(Q-n(b,psi)-Q-n(a,phi)) <= (4*C/r^2)*max(norm(b-a),norm(psi-phi)). These constants are chosen before n, a and (b,psi).
+- The bound covers the entire common U even when (b,psi) is near a different center of K. At distance less than r from (a,phi), use the derivative Lipschitz bound. At distance at least r, the two deleted-Jacobian norm bounds sum to 4*C/r, which is at most (4*C/r^2) times that joint distance.
+- Specializing K to the compact gap product gives the source neighborhood and index uniformity. The selected joint-chart interface also has a common radius and bound over arbitrary compact K, retaining its contour geometry and actual analytic equation.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.sourcePsiJointJacobianControl.recenter`
+- `NLS.ZakharovShabat.exists_compact_sourcePsi_fullJacobian_jointLipschitz`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalEquation_compact_complex_ball_bound`
+- `NLS.ZakharovShabat.norm_sourcePsiOriginalRootJacobian_le_of_joint_ball_bound`
+- `NLS.ZakharovShabat.norm_sourcePsiOriginalRootJacobian_sub_le_of_joint_ball_bound`
+- `NLS.ZakharovShabat.SourceLemma12_4Data.originalFullRootJacobian_compact_complex_joint_bound`
+
+Use the joint root/source distance in place of the printed source-only distance for independently varying roots. The explicit positive factor is 4*C/r^2, with equation bound C on radius 4*r. No optimality claim or new refutation is added. This estimate alone does not assert a global simply connected joint neighborhood of the entire original real Omega; that is pending S12-052.
+
+The [original compact inverse interfaces](../NLS/ZakharovShabat/SourcePsiOriginalCompactInverse.lean)
+retain actual two-sided inverses. The [joint complex estimate](../NLS/ZakharovShabat/SourcePsiOriginalCompactJointBounds.lean)
+uses common equation bounds and a near/far comparison over the entire neighborhood.
+The [compact chart construction](../NLS/ZakharovShabat/SourcePsiCompactJointCharts.lean)
+also preserves the selected equations and contour geometry.
+See the positive correction in the [source discrepancy notes](../SOURCE_ERRATA.md).
+This comparison records 55 inspected or reused module bodies and 15 resolved declarations.
+
+Full validation passed: 8,551 build jobs, 7,626 public examples and
+44,571 transitively audited NLS declarations, with 21 inherited warnings.
+The nine new proofs and four focused examples add no warnings.
+No admitted proofs, additional axioms or heartbeat overrides were introduced.
+Source-review integrity and documentation-link checks pass for the new records.
+
+Continue with S12-052: the global simply connected joint neighborhood and common inverse bounds; then S12-053 implicit continuation.

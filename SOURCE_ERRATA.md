@@ -1,5 +1,35 @@
 # Source discrepancies
 
+## Lemma 12.10 proof, p.69: joint Cauchy estimate
+
+Let K be the compact spectral gap product at a fixed real-type source phi.
+Choose r>0 and C>=0 so that every actual original F-n is bounded by C on
+the joint ball of radius 4*r around (delete_n(a),phi), for all a in K and n.
+One finite cover supplies these common constants. On inner balls the
+root-Jacobian norm bound is 2*C/r and the derivative variation factor is
+4*C/r^2.
+
+There is one open U containing K times {phi} such that, for every signed
+n, every a in K and every (b,psi) in U,
+
+    norm(Qn(b,psi)-Qn(a,phi)) <= (4*C/r^2)*max(norm(b-a),norm(psi-phi)).
+
+This positive joint-distance bound replaces the printed source-only
+distance when the roots vary independently. It holds across the entire
+U, including points near a different root center: outside distance r
+from (a,phi), the two derivative bounds sum to 4*C/r and give the same
+inequality. The constant diagonal 2 cancels in the full-Jacobian difference.
+No optimality claim or new refutation is added.
+
+This estimate and the compact inverse bound prepare the complex
+perturbation argument. They do not by themselves establish the global
+simply connected joint neighborhood of the entire original real Omega;
+that separate assertion remains pending in S12-052.
+
+See the [actual joint estimate](NLS/ZakharovShabat/SourcePsiOriginalCompactJointBounds.lean),
+[compact inverse bounds](NLS/ZakharovShabat/SourcePsiOriginalCompactInverse.lean)
+and [ordered comparison](coverage/SECTION_12_ASSERTIONS.md).
+
 ## Lemma 12.10 proof, pp.68–69: off-diagonal constants and tails
 
 Write Cq for the lq norm of the punctured reciprocal integer lattice,

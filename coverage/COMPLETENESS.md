@@ -179,14 +179,15 @@ corrections and all wider qualifications remain; these comparisons do not
 certify source-wide completeness.
 
 The [ordered Section 12 ledger](SECTION_12_ASSERTIONS.md) has 67 groups.
-Thirty-nine match and ten have estimate, scope or gap-reference corrections.
-The off-diagonal proof of Lemma 12.10 now includes exact decompositions,
-explicit power and contour constants, and positive absolute Holder and
-output-tail bounds. The operator-norm limit, tolerance-dependent joint
-local uniformity, compact-subset uniformity, continuity and bounded real
-inverse are compared on the original domain. The remaining 18 groups
-start with compact gap-box inverse bounds and joint root/source variation;
-earlier corrections retain their scope.
+Forty match and eleven have estimate, scope or gap-reference corrections.
+The compact gap product now has common inverse bounds for the actual
+original operators, including the real limit inverse with factor one.
+The joint complex estimate has explicit Cauchy factor 4*C/r^2 and retains
+independent root variation throughout a common neighborhood of the
+compact set. The remaining 16 groups start with the global simply
+connected joint neighborhood of original real Omega. Pointwise inverse
+neighborhoods do not settle that topology claim. Earlier corrections
+retain their scope.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,
