@@ -167,16 +167,15 @@ collapsed endpoints. This completes that section's ordered comparison;
 continue in source order with Section 11's action construction. It does not
 settle the wider unresolved clauses or certify dissertation completeness.
 
-The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares eight
-of 22 groups: seven matched and one corrected occurrence. The full action
-and gradient statements are retained. The literal real-gap calculation now
-has exact 1/pi and 2/pi formulas on the original circuits and a proved
-endpoint-integrable real kernel. Its numerator is nonnegative on the closed
-gap, while the integrand is positive in the interior except for its unique
-critical-point zero. The actual integral remains strictly positive on open
-gaps. The new results are positive proofs; the historical strictness refutation
-is unchanged. Fourteen groups remain pending, beginning with Z_n, the contour
-figure and the analytic-zero-locus passage. All wider qualifications remain.
+The [ordered Section 11 ledger](SECTION_11_ASSERTIONS.md) now compares eleven
+of 22 groups: ten matched and one corrected occurrence. The literal Z_n,
+Figure 2.6 and analytic-zero-locus and extension introduction match. A new
+collar construction also proves the closure containment omitted from the
+earlier opening comparison, retaining the same circles and original disks.
+Z_n remains on the original W0; all normalized actions extend on one smaller
+open W containing the entire real locus. Eleven groups remain pending,
+beginning with Theorem 11.2. Existing corrections and all wider qualifications
+remain; these comparisons do not certify source-wide completeness.
 
 Classify each substantive
 claim as proved with exact scope, corrected with a proved valid replacement,

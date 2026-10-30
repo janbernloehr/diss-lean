@@ -4793,3 +4793,4 @@ import NLS.ZakharovShabat.SourceLemma10_11ComplexCalculation
 import NLS.ComplexAnalysis.SingleCriticalPointSign
 import NLS.ZakharovShabat.SourceActionIntegrandSign
 import NLS.ZakharovShabat.SourceLemma11_1RealCalculation
+import NLS.ZakharovShabat.SourceActionContourCollarClosure

@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Current milestone: Lemma 11.1 literal real-gap calculation
+## Current milestone: zero-gap locus and contour collar closures
+
+The next three Section 11 passages now match the existing proofs: the literal
+zero-gap locus Z_n, Figure 2.6, and the analytic-zero-locus and normalized-action
+extension introduction. The [ordered ledger](coverage/SECTION_11_ASSERTIONS.md)
+has eleven compared groups: ten matched and one corrected; eleven remain pending.
+
+Checking the rendered source also exposed an omitted overline in the earlier
+opening comparison. The source requires the closure of each open contour
+collar to lie inside the original disk minus the moving gap. The new
+[closed-collar proof](NLS/ZakharovShabat/SourceActionContourCollarClosure.lean)
+chooses intermediate radii around the same circles. The closures lie inside
+the existing collars and avoid every gap, uniformly on the same source
+neighborhood. Joint analyticity extends to every point of those closures.
+The circles, original disks and common source domain are retained.
+
+Z_n is the relative zero set of the actual analytic squared gap on the original
+W0, including complex collapsed gaps. The normalized actions extend on one
+smaller open W containing the entire real-type locus, and agree with the actual
+quotients off Z_n. This preserves the distinction between the two domains and
+asserts an analytic zero locus without adding a manifold or codimension claim.
+
+Validation: `./scripts/check.sh` passes with 8,518 build jobs, 7,587
+public examples and a transitive axiom audit of 44,364 NLS declarations.
+The 21 inherited warnings are unchanged; the new module and example introduce none.
+The source-review integrity and documentation-link checks also pass.
+
+Next is Theorem 11.2: its locally uniform sequence expansions, positive real-part
+bounds and principal roots. Section 7's physical NLS Dirichlet motion and
+unrestricted psi characterization, the exact cited 2014 construction,
+Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Lemma 11.1 literal real-gap calculation
 
 The displayed real-gap calculation in Lemma 11.1 now has direct proofs for
 the actual indexed action and every original winding-one piecewise C1 circuit.

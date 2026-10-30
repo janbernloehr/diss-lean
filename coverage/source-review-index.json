@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T11:06:12.250446+00:00",
-  "base_commit": "fc62dfcf83bccf9b253c94c81250cb1b550f75cb",
+  "published_utc": "2026-10-30T11:33:45.077988+00:00",
+  "base_commit": "5b82d79a8d154989db77e9ef842a94f51099f98c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 127,
-    "module_hash_checks": 2216,
-    "distinct_modules": 1391
+    "review_records": 128,
+    "module_hash_checks": 2232,
+    "distinct_modules": 1396
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,17 +28,17 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "fc62dfcf83bccf9b253c94c81250cb1b550f75cb",
-    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the general derivative-sign theorem, literal real action kernel signs and endpoint integrability, exact original-circuit and real-integral formulas, and two integration examples. Eight ordered Section 11 groups are compared: seven matched and one corrected; fourteen pending. The original W and disks are retained. Section 10 remains 44 matched and eight corrected. The wider unresolved source qualifications remain.",
+    "base_commit": "5b82d79a8d154989db77e9ef842a94f51099f98c",
+    "validated_state": "Working tree atop base_commit, identified by lean_sources; includes the smaller fixed contour collars, closure containment in every original cut disk and canonical-root domain, joint analyticity on the collar closures, and one boundary-limit integration example. Eleven ordered Section 11 groups are compared: ten matched and one corrected; eleven pending. The new comparison supplements the printed closure requirement in S11-001 and compares Z_n, Figure 2.6 and the common extension introduction. The original W0 and disks are retained; normalized actions use one smaller common W. Section 10 remains 44 matched and eight corrected. Wider unresolved qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
-    "build_jobs": 8517,
-    "public_examples": 7586,
-    "transitive_NLS_declarations": 44355,
+    "build_jobs": 8518,
+    "public_examples": 7587,
+    "transitive_NLS_declarations": 44364,
     "existing_warnings": 21,
     "gate_exit": 0,
     "lean_sources": {
-      "files": 4794,
-      "sha256": "483c3288f1f170195092d37b15de33f0026202a2f06164f2d8c5314e4186ddba"
+      "files": 4795,
+      "sha256": "a65a8a1d23e45680874458b621ffbc3b45dcdd759aeb25cd4115954c3609e22a"
     },
     "qualification": "Successful Lean validation of this exact source and dependency-lock snapshot. This integrity check does not independently certify semantic completeness."
   },
@@ -31810,6 +31810,196 @@
       ],
       "declaration_inventory_count": 44355,
       "source_record_sha256": "646cda70952768aa7955f5a5c2e020293d7a8fab5e7915c5b2feda4bec005a90"
+    },
+    "Section11ZeroLocusSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5b82d79a8d154989db77e9ef842a94f51099f98c",
+      "updated_utc": "2026-10-30T11:33:45.077988+00:00",
+      "source_lines": [
+        [
+          4737,
+          4741
+        ],
+        [
+          4786,
+          4790
+        ],
+        [
+          4795,
+          4805
+        ],
+        [
+          4816,
+          4822
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S11-001",
+          "source_lines": [
+            4737,
+            4741
+          ],
+          "requirement": "One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceActionContourFamily.analytic_integrand_on_compactCollar_closure",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_collar",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar",
+            "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar_open",
+            "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar",
+            "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures"
+          ],
+          "reviewed_claims": [
+            "The rendered opening at line 4741 requires the closure of U_n prime to lie in the original isolating disk minus the moving gap. The earlier comparison recorded only containment of an open collar. This supplement supplies the stronger printed condition.",
+            "The new compactCollar uses radii halfway between the existing inner radius and circle radius, and halfway between the circle radius and original outer radius. It is open, contains the same circle, and its entire closure lies in the existing collar.",
+            "Consequently the closed collar lies in the original cut disk and avoids all other gaps, uniformly over the same source neighborhood. The original circles, disks and common W are unchanged.",
+            "The literal weighted action integrand is jointly analytic in a neighborhood of each point of the collar closure times the source neighborhood. The strengthened neighborhood theorem makes this simultaneous for all signed indices."
+          ],
+          "qualification": "Supplement to the earlier S11-001 comparison: the source overline is now explicit and proved. This fills an implementation omission, not a correction to the dissertation. The preceding open-collar construction and its historical review are retained.",
+          "supplements_review": "Section11OpeningSourceComparison-2026-10-30"
+        },
+        {
+          "ordered_group": "S11-009",
+          "source_lines": [
+            4786,
+            4790
+          ],
+          "requirement": "Definition of Z_n as the squared-gap zero locus in the original common domain.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.action_zero_on_gapZeroLocus",
+            "NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage"
+          ],
+          "reviewed_claims": [
+            "Z_n is literally the original domain W0 intersected with the zero set of the squared canonical periodic gap, for each signed index and every finite p>1.",
+            "Membership is equivalent to membership in W0 and vanishing of the canonical gap itself. The actual indexed action vanishes on this set, including at complex collapsed gaps."
+          ],
+          "qualification": "The definition uses the original source spaces and canonical spectral coordinates. No separate ordered-endpoint analyticity, real-source restriction or smaller normalized-action domain enters Z_n."
+        },
+        {
+          "ordered_group": "S11-010",
+          "source_lines": [
+            4795,
+            4805
+          ],
+          "requirement": "Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceActionContourFamily.closedBall_subset_original",
+            "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+            "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar",
+            "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+            "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures"
+          ],
+          "reviewed_claims": [
+            "The rendered figure places each gap inside a counterclockwise circuit, with a surrounding open collar inside its original isolating disk. The chosen circles have actual winding integral one around every gap point, including a collapsed gap.",
+            "The strengthened collars contain those circles and have closures inside the original disks minus the moving gaps. One common source neighborhood supports all signed indices and every nearby complex source.",
+            "The construction uses a finite central intersection and one uniform tail neighborhood. Choosing circles and annular collars realizes the geometric requirements illustrated by the schematic noncircular drawing."
+          ],
+          "qualification": "The figure is compared as contour geometry, not as an assertion that the particular drawn shapes are the chosen contours. The original isolating families and circle orientations are retained."
+        },
+        {
+          "ordered_group": "S11-011",
+          "source_lines": [
+            4816,
+            4822
+          ],
+          "requirement": "Analytic subvariety Z_n and the normalized-action extension problem.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma11_1Data.gapZeroLocus_isClosed",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+            "NLS.ZakharovShabat.SourceLemma11_1Data.squared_gap_analytic",
+            "NLS.ZakharovShabat.SourceSection11ContourData.indexedAction_eq_complexAction_allIndices_near_real",
+            "NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient",
+            "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+            "NLS.ZakharovShabat.analyticAt_canonicalPeriodicMidpoint_squaredGap_of_sourceIsolating",
+            "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_allIndices_analytic_factor",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage",
+            "NLS.ZakharovShabat.sourceTheorem11_2"
+          ],
+          "reviewed_claims": [
+            "The actual squared gap is analytic on the whole original W0 by the retained symmetric-root package. Frozen contour trace invariants recover the midpoint and squared gap, including at collisions, and transfer their source analyticity to those canonical coordinates.",
+            "Z_n is therefore the zero locus of one explicit complex analytic scalar function on W0; its relative closedness is also proved. The analytic-subvariety terminology asserts this zero-locus description, without a smoothness or codimension claim.",
+            "One smaller open complex neighborhood W inside W0 contains the entire real-type locus and supports every normalized indexed action simultaneously. Each extension is complex analytic, hence real analytic, and equals the literal quotient I_n/(gap_n^2) off Z_n.",
+            "The common W is the union of open sets carrying all-index local data. Near each real source, a finite intersection combines common action charts and the normalized factors; a finite head and uniform tail supply all indices on one neighborhood. A countable intersection of independently chosen open sets is not used."
+          ],
+          "qualification": "This compares the zero-locus assertion and the announced common extension. The original W0 remains the domain of Z_n and Lemma 11.1; the normalized-action neighborhood W may shrink. Theorem 11.2 asymptotics, positivity and its subsequent proof passages remain separately pending."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_11_ASSERTIONS.md",
+      "ordered_inventory_sha256": "b379ea0580b31b09ca97a9ad53523a3ad3c5a1a065779f89205f7da8db61f4a0",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93",
+        "NLS/ZakharovShabat/SourceSection11Contours.lean": "fdea3098f268e548809a545fd05961ef59a42f4208fdfb497310bc37ea0c0be6",
+        "NLS/ZakharovShabat/SourceActionContourFamily.lean": "d06c03950afafd55bf2897ad22d66f14486425095302172024c654d920d71860",
+        "NLS/ZakharovShabat/SourceTheorem11_2.lean": "6a6e41520cd961dcf458069acfc31d3d3f688dae18aae64aa0d878ccfdb8ae43",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean": "cd29404bb2f4ffcb5988b549ece37674d3bd4a9c1ea2c241646e86375db12d61",
+        "NLS/ZakharovShabat/SourceIndexedActionCommonCharts.lean": "58a03d9adf93fb242414aea0ec70ef2616cd6078afdb4f63db67120c6a1e8561",
+        "NLS/ZakharovShabat/SourceNormalizedActionRootAnalytic.lean": "c00d35db777312a151d3c446d4cd32e36ac9d8b3ff653d20ee5ee649c4431dd6",
+        "NLS/ZakharovShabat/SourceNormalizedActionOnePlusDecomposition.lean": "93aaa718d5747e1bba40a8ebcf92c5bdad5a282339f402f9552908867499f980",
+        "NLS/ZakharovShabat/SourceNormalizedActionComplexExtension.lean": "79c2d1b90a43db3e6d3f23133f1ed5421410fed9e13136876d01a73f50e7b882",
+        "NLS/ZakharovShabat/SourceNormalizedIndexedActionCommon.lean": "dd5fc363065c588c547220eefade8fc272716d11a2008bd60b29ae547cabcef1",
+        "NLS/ZakharovShabat/SourceLemma10_2.lean": "b57121a1d820225062aacd65ece8dc7406dcebd963f72c3e73106a6c650907b5",
+        "NLS/ZakharovShabat/SourceEquation2_15.lean": "113f237e965cc1e6fc981a9aeecd1940bb78e682215beb2486a36d78247ed54c",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean": "d92a53a2ed4b3299577f9eafe276df92cb9e5898ce9606e32b40a705bc6ea1e4",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean": "8c7075ed20b486bdc4d92627d5303d6f8dabcea22fb6f5a58fc13923ed2baeb9",
+        "NLS/ZakharovShabat/SourceActionContourCollarClosure.lean": "b2d2b3161c01abeb97f11ad863ff6ade0bb45bfd85c5b586f44b0a086855d969"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          61,
+          62
+        ],
+        "images": {
+          "work/tmp/pdfs/section11-next-061.png": "069737e39c17d7b6805f6c6c7db0e05f4e38f22d12a6023c94b6ce5afea64b03",
+          "work/tmp/pdfs/section11-next-062.png": "798aedfb8b8479c8c75de460aae7c3e49dc4df6c040aec0609d30219e8f59a15",
+          "work/tmp/pdfs/section11-opening-closure.png": "c0146b9f85b2c40727190c6b5498fa26f783b0dccc26a5c60f90060d4325b8b3"
+        }
+      },
+      "qualification": "Eleven of 22 ordered Section 11 groups are compared: ten matched and one corrected occurrence. The literal zero-gap locus, Figure 2.6 and the analytic-zero-locus and common-extension introduction now match. A supplemental proof fills the previously omitted closure condition in S11-001: smaller fixed collars have their closures inside the original cut disks, uniformly on the same source neighborhood. Z_n is defined on the original W0; the common normalized-action neighborhood W may shrink while containing the entire real-type locus. Eleven later groups remain pending, starting with Theorem 11.2. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceActionContourFamily.analytic_integrand_on_compactCollar_closure",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closedBall_subset_original",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_collar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk",
+        "NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_rootDomain",
+        "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.compactCollar_open",
+        "NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar",
+        "NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.action_zero_on_gapZeroLocus",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.gapZeroLocus_isClosed",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions",
+        "NLS.ZakharovShabat.SourceLemma11_1Data.squared_gap_analytic",
+        "NLS.ZakharovShabat.SourceSection11ContourData.indexedAction_eq_complexAction_allIndices_near_real",
+        "NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures",
+        "NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient",
+        "NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic",
+        "NLS.ZakharovShabat.analyticAt_canonicalPeriodicMidpoint_squaredGap_of_sourceIsolating",
+        "NLS.ZakharovShabat.exists_local_sourceNormalizedAction_allIndices_analytic_factor",
+        "NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff",
+        "NLS.ZakharovShabat.sourceActionGapZeroLocus",
+        "NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage",
+        "NLS.ZakharovShabat.sourceTheorem11_2"
+      ],
+      "reviewed_modules_read_in_full": true,
+      "declaration_inventory_count": 44364,
+      "source_record_sha256": "f20be7cd095675102fdba3d80084a8ec9a677e2a86301526baf5b6d305db8bbd"
     }
   }
 }

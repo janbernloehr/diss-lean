@@ -71640,3 +71640,37 @@ example {W V : Set (CoeffPair (3/2))}
   simpa only [sourceRecenteredRealActionIntegrand,neg_add_cancel,zpow_zero,one_mul] using he
 
 end Section11RealCalculationExamples
+
+
+open NLS NLS.ZakharovShabat Set Complex Filter Topology
+open scoped ENNReal unitInterval
+namespace Section11ClosedCollarExamples
+
+-- Spectral points may converge to the collar boundary while the source
+-- varies through complex potentials. The actual kernel still converges,
+-- and the limit avoids every gap, including when the selected gap collapses.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_15Data hp hp1 W) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (C : SourceActionContourFamily hp hp1 V D)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (z : ℕ → ℂ) (a : ℂ)
+    (hzin : ∀ k, z k ∈ C.compactCollar (-1)) (hz : Tendsto z atTop (𝓝 a))
+    (χ : ℕ → CoeffPair p) (hχ : Tendsto χ atTop (𝓝 ψ)) :
+    a ∈ sourceCanonicalRootDomain hp hp1 ψ ∧
+      Tendsto (fun k => z k * deriv (canonicalDiscriminant hp (periodOnePotential (χ k))) (z k) /
+        sourceCanonicalRoot hp hp1 (χ k) (z k)) atTop
+        (𝓝 (a * deriv (canonicalDiscriminant hp (periodOnePotential ψ)) a /
+          sourceCanonicalRoot hp hp1 ψ a)) := by
+  have ha : a ∈ closure (C.compactCollar (-1)) :=
+    mem_closure_of_tendsto hz (Eventually.of_forall hzin)
+  let F : ℂ × CoeffPair p → ℂ := fun t =>
+    t.1 * deriv (canonicalDiscriminant hp (periodOnePotential t.2)) t.1 /
+      sourceCanonicalRoot hp hp1 t.2 t.1
+  have hA : AnalyticAt ℂ F (a,ψ) :=
+    C.analytic_integrand_on_compactCollar_closure H hVW hD (-1) (a,ψ) ⟨ha,hψ⟩
+  have hlim : Tendsto (fun k => (z k,χ k)) atTop (𝓝 (a,ψ)) := hz.prodMk_nhds hχ
+  refine ⟨C.closure_compactCollar_subset_rootDomain hD ψ hψ (-1) ha,?_⟩
+  exact (hA.continuousAt.tendsto.comp hlim :
+    Tendsto (fun k => F (z k,χ k)) atTop (𝓝 (F (a,ψ))))
+
+end Section11ClosedCollarExamples

@@ -1,9 +1,9 @@
 # Section 11 ordered assertion comparison
 
-Eight of 22 ordered Section 11 groups are compared: seven matched and one corrected occurrence, through the complete real-gap calculation in Lemma 11.1. The actual original-circuit and real-integral formulas have the exact 1/pi and 2/pi factors. The numerator is nonnegative on the closed gap; the integrand is positive in the interior except for its unique critical-point zero, and its integral is strictly positive on open gaps. Fourteen later groups remain pending, beginning with the squared-gap zero locus Z_n. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
+Eleven of 22 ordered Section 11 groups are compared: ten matched and one corrected occurrence. The literal zero-gap locus, Figure 2.6 and the analytic-zero-locus and common-extension introduction now match. A supplemental proof fills the previously omitted closure condition in S11-001: smaller fixed collars have their closures inside the original cut disks, uniformly on the same source neighborhood. Z_n is defined on the original W0; the common normalized-action neighborhood W may shrink while containing the entire real-type locus. Eleven later groups remain pending, starting with Theorem 11.2. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and broader source inventory remain unresolved.
 
 This inventory covers printed pp.61–62, using one-based newline positions in
-the reviewed source extraction; form feeds do not add lines. The first eight
+the reviewed source extraction; form feeds do not add lines. The first eleven
 groups have been compared to the statements and proofs identified below.
 The remaining entries provide navigation for further semantic comparison.
 Existing named-theorem audits retain their own scope; they do not automatically
@@ -15,7 +15,7 @@ finite piecewise C1 regularity is explicit when interpreting contour integrals.
 
 | Group | Printed page | Source lines | Assertion | Status |
 | --- | --- | --- | --- | --- |
-| S11-001 | 61 | 4737–4741 | One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars. | matched |
+| S11-001 | 61 | 4737–4741 | One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars whose closures avoid the gaps. | matched |
 | S11-002 | 61 | 4743–4748 | Definition (2.16): the literal action integral with coefficient 1/pi and spectral weight lambda. | matched |
 | S11-003 | 61 | 4750–4752 | Joint analyticity on each collar and independence of both circuit and original isolating family. | matched |
 | S11-004 | 61 | 4754–4761 | Lemma 11.1: action analyticity on the entire common domain and exact gradient (2.17). | matched |
@@ -23,9 +23,9 @@ finite piecewise C1 regularity is explicit when interpreting contour integrals.
 | S11-006 | 61 | 4766–4768 | Proof of action analyticity, the gradient formula and complex collapsed-gap vanishing. | matched |
 | S11-007 | 61 | 4769–4782 | Real-source recentering at the critical point and the literal positive-root gap integral. | matched |
 | S11-008 | 61 | 4782–4784 | Pointwise sign of the recentered integrand and strict positivity of its integral. | corrected |
-| S11-009 | 61 | 4786–4790 | Definition of Z_n as the squared-gap zero locus in the original common domain. | pending |
-| S11-010 | 61 | 4795–4805 | Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks. | pending |
-| S11-011 | 62 | 4816–4822 | Analytic subvariety Z_n and the normalized-action extension problem. | pending |
+| S11-009 | 61 | 4786–4790 | Definition of Z_n as the squared-gap zero locus in the original common domain. | matched |
+| S11-010 | 61 | 4795–4805 | Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks. | matched |
+| S11-011 | 62 | 4816–4822 | Analytic subvariety Z_n and the normalized-action extension problem. | matched |
 | S11-012 | 62 | 4824–4832 | Theorem 11.2: one complex neighborhood and locally uniform p/2 plus 1+ normalized-action expansion. | pending |
 | S11-013 | 62 | 4833–4842 | Positive real part bounded away from zero, analytic nonvanishing xi, its asymptotics and free value one. | pending |
 | S11-014 | 62 | 4844–4853 | Equation (2.18): selected-root factorization, literal deleted product chi and its fixed joint domain. | pending |
@@ -238,9 +238,104 @@ public examples and 44,355 transitively audited NLS declarations, with
 21 inherited warnings and no new warnings. Source-review integrity and
 documentation-link checks also pass.
 
-Continue with S11-009, the literal squared-gap zero locus Z_n, followed by
-the contour figure and analytic-zero-locus passage. Existing corrections and
+The next subsection compares the squared-gap zero locus, contour figure
+and analytic-zero-locus passage. Existing corrections and
 the [wider completion qualifications](COMPLETENESS.md) remain in force.
+
+## Zero-gap locus, closed collars and extension introduction
+
+### Supplement to S11-001: One source neighborhood with all original isolating disks, counterclockwise circuits and fixed open collars.
+
+- The rendered opening at line 4741 requires the closure of U_n prime to lie in the original isolating disk minus the moving gap. The earlier comparison recorded only containment of an open collar. This supplement supplies the stronger printed condition.
+- The new compactCollar uses radii halfway between the existing inner radius and circle radius, and halfway between the circle radius and original outer radius. It is open, contains the same circle, and its entire closure lies in the existing collar.
+- Consequently the closed collar lies in the original cut disk and avoids all other gaps, uniformly over the same source neighborhood. The original circles, disks and common W are unchanged.
+- The literal weighted action integrand is jointly analytic in a neighborhood of each point of the collar closure times the source neighborhood. The strengthened neighborhood theorem makes this simultaneous for all signed indices.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceActionContourFamily.analytic_integrand_on_compactCollar_closure`
+- `NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_collar`
+- `NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk`
+- `NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_rootDomain`
+- `NLS.ZakharovShabat.SourceActionContourFamily.compactCollar`
+- `NLS.ZakharovShabat.SourceActionContourFamily.compactCollar_open`
+- `NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar`
+- `NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures`
+
+Supplement to the earlier S11-001 comparison: the source overline is now explicit and proved. This fills an implementation omission, not a correction to the dissertation. The preceding open-collar construction and its historical review are retained.
+
+### S11-009: Definition of Z_n as the squared-gap zero locus in the original common domain.
+
+- Z_n is literally the original domain W0 intersected with the zero set of the squared canonical periodic gap, for each signed index and every finite p>1.
+- Membership is equivalent to membership in W0 and vanishing of the canonical gap itself. The actual indexed action vanishes on this set, including at complex collapsed gaps.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma11_1Data.action_zero_on_gapZeroLocus`
+- `NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff`
+- `NLS.ZakharovShabat.sourceActionGapZeroLocus`
+- `NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage`
+
+The definition uses the original source spaces and canonical spectral coordinates. No separate ordered-endpoint analyticity, real-source restriction or smaller normalized-action domain enters Z_n.
+
+### S11-010: Figure 2.6: simultaneous enclosing circuits and fixed open collars within the original disks.
+
+- The rendered figure places each gap inside a counterclockwise circuit, with a surrounding open collar inside its original isolating disk. The chosen circles have actual winding integral one around every gap point, including a collapsed gap.
+- The strengthened collars contain those circles and have closures inside the original disks minus the moving gaps. One common source neighborhood supports all signed indices and every nearby complex source.
+- The construction uses a finite central intersection and one uniform tail neighborhood. Choosing circles and annular collars realizes the geometric requirements illustrated by the schematic noncircular drawing.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceActionContourFamily.closedBall_subset_original`
+- `NLS.ZakharovShabat.SourceActionContourFamily.closure_compactCollar_subset_cutDisk`
+- `NLS.ZakharovShabat.SourceActionContourFamily.sphere_subset_compactCollar`
+- `NLS.ZakharovShabat.SourceActionContourFamily.windingIntegral_eq_one`
+- `NLS.ZakharovShabat.SourceSection11ContourData.neighborhoods_with_collar_closures`
+
+The figure is compared as contour geometry, not as an assertion that the particular drawn shapes are the chosen contours. The original isolating families and circle orientations are retained.
+
+### S11-011: Analytic subvariety Z_n and the normalized-action extension problem.
+
+- The actual squared gap is analytic on the whole original W0 by the retained symmetric-root package. Frozen contour trace invariants recover the midpoint and squared gap, including at collisions, and transfer their source analyticity to those canonical coordinates.
+- Z_n is therefore the zero locus of one explicit complex analytic scalar function on W0; its relative closedness is also proved. The analytic-subvariety terminology asserts this zero-locus description, without a smoothness or codimension claim.
+- One smaller open complex neighborhood W inside W0 contains the entire real-type locus and supports every normalized indexed action simultaneously. Each extension is complex analytic, hence real analytic, and equals the literal quotient I_n/(gap_n^2) off Z_n.
+- The common W is the union of open sets carrying all-index local data. Near each real source, a finite intersection combines common action charts and the normalized factors; a finite head and uniform tail supply all indices on one neighborhood. A countable intersection of independently chosen open sets is not used.
+
+Public declarations:
+
+- `NLS.ZakharovShabat.SourceLemma11_1Data.gapZeroLocus_isClosed`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.normalizedActions`
+- `NLS.ZakharovShabat.SourceLemma11_1Data.squared_gap_analytic`
+- `NLS.ZakharovShabat.SourceSection11ContourData.indexedAction_eq_complexAction_allIndices_near_real`
+- `NLS.ZakharovShabat.SourceSection11ContourData.normalizedActions_near_real`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.normalized_eq_quotient`
+- `NLS.ZakharovShabat.SourceTheorem11_2Data.real_analytic`
+- `NLS.ZakharovShabat.analyticAt_canonicalPeriodicMidpoint_squaredGap_of_sourceIsolating`
+- `NLS.ZakharovShabat.exists_local_sourceNormalizedAction_allIndices_analytic_factor`
+- `NLS.ZakharovShabat.sourceActionGapZeroLocus_eq_preimage`
+- `NLS.ZakharovShabat.sourceTheorem11_2`
+
+This compares the zero-locus assertion and the announced common extension. The original W0 remains the domain of Z_n and Lemma 11.1; the normalized-action neighborhood W may shrink. Theorem 11.2 asymptotics, positivity and its subsequent proof passages remain separately pending.
+
+The [closed-collar module](../NLS/ZakharovShabat/SourceActionContourCollarClosure.lean)
+strengthens the [original contour family](../NLS/ZakharovShabat/SourceActionContourFamily.lean).
+The [literal zero locus](../NLS/ZakharovShabat/SourceActionGapZeroLocus.lean)
+uses the [analytic symmetric coordinates](../NLS/ZakharovShabat/SourceSymmetricContour.lean).
+The [common normalized-action package](../NLS/ZakharovShabat/SourceTheorem11_2.lean)
+and its [local construction](../NLS/ZakharovShabat/SourceNormalizedIndexedActionLocal.lean)
+give the announced extension on one neighborhood. Sixteen module bodies are
+recorded in this comparison.
+
+The integration example lets spectral points approach a collar boundary while
+the complex source varies. The limit stays outside every gap, and the actual
+weighted action integrand converges. The full validation passes: 8,518 build jobs, 7,587
+public examples and 44,364 transitively audited NLS declarations, with
+21 inherited warnings and no new warnings. Source-review integrity and
+documentation-link checks also pass.
+
+Continue with Theorem 11.2, S11-012 and S11-013. The sequence expansions,
+positive real-part bounds and principal-root claims still require their
+ordered comparison. All [wider qualifications](COMPLETENESS.md) remain.
 
 ## Opening comparison evidence and validation
 
