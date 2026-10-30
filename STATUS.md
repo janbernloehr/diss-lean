@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Figure 2.5 and collapsed-gap continuation comparison
+## Current milestone: Lemma 10.11(ii) and collapsed-factor proof comparison
+
+Lemma 10.11(ii) and the collapsed-factor proof now match the existing
+implementation, with the path-integral convention made explicit.
+
+For every complex source in the unchanged common W and every finite p>1,
+the quotient has zero improper integral along every admissible endpoint
+path in an original disk that is C1 on its open parameter interval. The
+result also covers finite piecewise interior-C1 paths, including corners,
+loops and singular endpoint parametrizations. These are limits of actual
+truncated integrals with the two endpoint parameters approaching
+independently. A primitive on the entire original cut disk has a common
+full relative limit at both endpoints, including complex and collapsed gaps.
+When a full C1 path is integrable, its ordinary curve integral agrees with
+this improper integral. Continuous admissibility alone is not asserted to
+imply ordinary integrability.
+
+Every piecewise C1 closed contour in the original cut disk has zero actual
+integral, without a winding-number or homotopy restriction. Every original
+boundary circle also has zero period on the same W. The original disks
+and the common source neighborhood are retained.
+
+The collapsed-factor proof keeps the exact -i normalization. A collapsed
+gap's critical point equals its midpoint, and its standard root is
+midpoint minus z. Off that gap the common nonzero linear factor cancels,
+leaving the literal unconditional product over all other signed indices.
+The analytic omitted product extends the quotient throughout the original
+selected disk and agrees with the single continuation from part (i).
+
+This step changes documentation and comparison records only. The Lean
+sources and dependency lock still match commit `91abb08`, whose full
+`./scripts/check.sh` run passed 8,511 build jobs, 7,580 public examples and
+the transitive axiom audit of 44,300 NLS declarations, with 21 inherited
+warnings. That validation is reused. Current module hashes, declaration
+references, source-review integrity and documentation links are checked.
+
+The [ordered Section 10 ledger](coverage/SECTION_10_ASSERTIONS.md) now covers
+49 of 52 groups: 41 matched and eight corrected occurrences. Three proof
+groups remain pending: the real-locus arcosh calculation, continuation of
+periods and the final complex endpoint-path argument. Section 7's physical
+NLS Dirichlet motion and unrestricted psi uniqueness, the exact cited 2014
+construction, Appendix G.2 norm interpretation and the broader source
+inventory remain unresolved.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Figure 2.5 and collapsed-gap continuation comparison
 
 Figure 2.5 and Lemma 10.11(i) now match the existing implementation.
 The figure illustrates the scope of admissibility: paths may loop and

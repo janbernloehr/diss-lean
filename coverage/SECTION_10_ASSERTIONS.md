@@ -1,10 +1,10 @@
 # Section 10 ordered assertion comparison
 
-The first 47 of 52 ordered Section 10 groups are compared: 39 matched and eight corrected occurrences, through Figure 2.5 and Lemma 10.11(i). The figure is compared as an illustration of the unrestricted admissible path class. A single unconditional product supplies the analytic continuation across every collapsed gap on the unchanged common domain, including all original collapsed disks and infinitely many collapsed gaps. Both new groups match existing definitions and proofs. Five groups remain pending: the integral assertions of part (ii) and the separate proof passages. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
+The first 49 of 52 ordered Section 10 groups are compared: 41 matched and eight corrected occurrences, through Lemma 10.11(ii) and the collapsed-factor proof. Endpoint integrals are actual independently truncated improper limits for arbitrary admissible finite piecewise interior-C1 paths in the original disks. Closed-contour integrals vanish for every piecewise C1 loop in the original cut disk. The literal omitted product retains the factor -i, every other signed index and the unchanged common W. Both new groups match existing proofs with the path-integral convention explicit. Three proof groups remain pending: the real-locus arcosh calculation, continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.
 
-This ledger follows printed pp.54–60 in source order. The first 47
-groups, through Figure 2.5 and Lemma 10.11(i) on p.60, have been compared.
-The remaining five groups are navigation entries pending semantic comparison.
+This ledger follows printed pp.54–60 in source order. The first 49
+groups, through Lemma 10.11(ii) and the collapsed-factor proof on p.60, have been compared.
+The remaining three groups are navigation entries pending semantic comparison.
 Counts describe scope, not a completion percentage.
 
 Source locations refer to the cached extraction recorded in the
@@ -62,8 +62,8 @@ inspected to preserve figures, signs and closure bars. See
 | S10-045 | 4591–4596 | Quotient analytic domains and admissible-path definition. | matched |
 | S10-046 | 4606–4616 | Figure 2.5: multiple admissible endpoint paths. | matched |
 | S10-047 | 4619–4626 | Lemma 10.11(i): extension through every collapsed gap. | matched |
-| S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | pending |
-| S10-049 | 4644–4657 | Collapsed-factor cancellation proof. | pending |
+| S10-048 | 4628–4640 | Lemma 10.11(ii): zero endpoint-path integrals and closed periods. | matched |
+| S10-049 | 4644–4657 | Collapsed-factor cancellation proof. | matched |
 | S10-050 | 4659–4678 | Real-locus period calculation via side deformation and arcosh. | pending |
 | S10-051 | 4679–4689 | Analytic continuation of periods and Cauchy deformation on the common domain. | pending |
 | S10-052 | 4691–4726 | Arbitrary complex endpoint paths from opposite side traces and zero periods. | pending |
@@ -523,6 +523,29 @@ Public evidence: `NLS.ZakharovShabat.sourceOpenGapComplement`, `NLS.ZakharovShab
 
 The analytically continued function is distinct from totalized division at a collapsed endpoint; agreement with the raw quotient is asserted on its original gap complement. The construction retains W and all original disks. Part (ii) and the separate displayed proof passages remain pending in the ordered review.
 
+## S10-048: Lemma 10.11(ii): zero endpoint-path integrals and closed periods.
+
+- For every finite p>1, every complex source in the unchanged common W, every signed index and every original isolating disk, the quotient has zero improper integral along every admissible endpoint path that is C1 on its open parameter interval, and along every finite piecewise interior-C1 such path.
+- The integrals are actual truncated parameter integrals. Their two endpoint truncation parameters approach independently, and existence of the zero limit is proved. Interior corner vertices avoid all gaps; loops, self-intersections and singular endpoint parametrizations are allowed.
+- A primitive on the entire original cut disk has a common full relative limit at its two endpoints. Noncollapsed complex gaps use inverse-square-root endpoint bounds and opposite cosine-sheet coefficients. Collapsed gaps use a compatible analytic extension of the primitive.
+- Every finite piecewise C1 closed contour in the original cut disk has zero actual integral, without a prescribed winding number or homotopy. Compact smooth pieces supply integrability. Every original boundary circle also has zero integral on the same W.
+- For paths C1 up to their endpoints whose full curve integral is integrable, the improper definition agrees with that ordinary curve integral and it is zero.
+
+Public evidence: `NLS.ZakharovShabat.sourceLemma10_11`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.admissibleEndpoints`, `NLS.ZakharovShabat.sourceLemma10_11CirclePeriods`, `NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods`, `NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period`, `NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero`, `NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero`, `NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_common_endpoint_limit`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_common_endpoint_primitive`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_zero`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPiecewisePath_zero`, `NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_curveIntegral_zero`, `NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_endpoint_limits`, `NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_extension_of_derivative_extension`, `NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period`, `NLS.ComplexAnalysis.primitive_cosine_gap_boundary_values_eq`, `NLS.ComplexAnalysis.truncatedPathIntegral`, `NLS.ComplexAnalysis.truncatedPathIntegral_eq_sub`, `NLS.ComplexAnalysis.tendsto_truncatedPathIntegral_of_primitive_boundary`, `NLS.ComplexAnalysis.improperPathIntegral_eq_curveIntegral`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.truncatedIntegral`, `NLS.ComplexAnalysis.PiecewiseInteriorC1Path.tendsto_truncatedIntegral_eq_zero_of_common_boundary`, `NLS.ComplexAnalysis.PiecewiseC1Loop.integral`, `NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive`.
+
+The path-integral assertion uses the usual piecewise C1 interpretation of contour integration, with the stronger allowance of C1 only on piece interiors. Mere continuous admissibility alone is not presented as an ordinary-integrability theorem. The independently truncated improper limit needs no full-path absolute-integrability premise. The closed-contour result applies off the selected gap, as required for the original quotient. The separate proof displays are still compared in their own ordered rows.
+
+## S10-049: Collapsed-factor cancellation proof.
+
+- On the unchanged W, a zero gap places its critical point at its periodic midpoint, at every signed index including the central block.
+- The collapsed standard root is exactly midpoint minus z. Off the selected gap its critical numerator is the same nonzero linear factor, so the selected factor cancels to one.
+- The quotient is therefore -i times the literal unconditional product over m different from n. The omitted quotient is analytic on the full omitted domain, including the entire original selected disk.
+- The same single continued function from part (i) agrees with this omitted analytic product throughout that domain, including the collapsed endpoint; agreement with the raw quotient is asserted only off the original gaps.
+
+Public evidence: `NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero`, `NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap`, `NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension`, `NLS.ZakharovShabat.sourceCriticalRootRatioExtension`, `NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype`, `NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient`, `NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension`, `NLS.ZakharovShabat.SourceCorollary10_6Data.criticalRatioExtension`, `NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk`.
+
+Cancellation is performed where the selected linear factor is nonzero. At its zero the analytic omitted product supplies the extension. This retains the printed -i normalization, the literal omitted index set, the original disks and the same common W; the selected source need not be real.
+
 The preceding [weighted argument principle](../NLS/ComplexAnalysis/WeightedArgumentPrinciple.lean),
 [actual power contours](../NLS/ZakharovShabat/SourceSection10PowerContours.lean) and
 [analytic common-domain package](../NLS/ZakharovShabat/SourceSection10PowerContourAnalytic.lean)
@@ -530,5 +553,5 @@ contain eight positive theorems. Two integration examples at p=3/2 recover
 every signed moment of the free double eigenvalue at -pi from the cotangent
 integral and obtain the analytic cubic moment 2*tau^3+(3/2)*tau*gap^2.
 
-Continue with S10-048, the integral assertions of Lemma 10.11(ii), followed by its proof passages.
+Continue with S10-050, the real-locus arcosh calculation, followed by the last two proof passages.
 The remaining Section 10 groups and wider unresolved qualifications remain.

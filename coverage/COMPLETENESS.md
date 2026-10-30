@@ -159,13 +159,15 @@ operator simplicity. Full sample bounds retain the central block. The
 Section 7 and broader qualifications above remain open.
 
 The [ordered Section 10 ledger](SECTION_10_ASSERTIONS.md) compares the first
-47 of 52 groups: 39 matched and eight corrected occurrences, through
-Figure 2.5 and Lemma 10.11(i). The figure illustrates the admissible path
-class, which allows loops and self-intersections. A single unconditional
-product extends the quotient across every collapsed gap on the unchanged
-common W, including all original collapsed disks. Both new passages match
-existing definitions and proofs. Five groups remain pending: part (ii)
-and the separate proof passages. Existing named theorem audits do not by
+49 of 52 groups: 41 matched and eight corrected occurrences, through
+Lemma 10.11(ii) and its collapsed-factor proof. The endpoint result uses
+actual independently truncated improper integrals for the usual piecewise
+C1 contour class, allowing C1 regularity only on piece interiors. Every
+piecewise C1 closed contour in an original cut disk has zero integral.
+The omitted product retains its exact -i normalization and the unchanged W.
+Both new groups match existing proofs. Three proof groups remain pending:
+the real-locus arcosh calculation, continuation of periods and the final
+complex endpoint-path argument. Existing named theorem audits do not by
 themselves settle those passages.
 
 Classify each substantive

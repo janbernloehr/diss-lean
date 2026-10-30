@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T08:29:05.714905+00:00",
-  "base_commit": "7026d746ff4e03fbc0fdc30fda4c9c929473bbdf",
+  "published_utc": "2026-10-30T08:37:23.242531+00:00",
+  "base_commit": "bc1a5decb29077377fa478782c51252633acec43",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 120,
-    "module_hash_checks": 2081,
-    "distinct_modules": 1327
+    "review_records": 121,
+    "module_hash_checks": 2106,
+    "distinct_modules": 1338
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "7026d746ff4e03fbc0fdc30fda4c9c929473bbdf",
-    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 47 of 52 ordered Section 10 groups are compared: 39 matched and eight corrected occurrences, with five pending. Figure 2.5 illustrates the unrestricted admissible path class. Lemma 10.11(i) retains one analytic extension across all collapsed gaps on the unchanged common domain. Wider qualifications remain.",
+    "base_commit": "bc1a5decb29077377fa478782c51252633acec43",
+    "validated_state": "Documentation-only update; the Lean sources and dependency lock are unchanged from commit 91abb08 and identified by lean_sources. The successful full Lean gate recorded below is reused, not rerun. The first 49 of 52 ordered Section 10 groups are compared: 41 matched and eight corrected occurrences, with three pending. Lemma 10.11(ii) retains actual independently truncated improper endpoint integrals and arbitrary piecewise closed contours on the original disks and unchanged W. The collapsed-factor proof retains the literal omitted product and exact -i normalization. Wider qualifications remain.",
     "command": "bash -x ./scripts/check.sh",
     "build_jobs": 8511,
     "public_examples": 7580,
@@ -30788,6 +30788,181 @@
       "declaration_inventory_count": 44300,
       "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
       "source_record_sha256": "8c046a4da2ccdee3234ad4ba6554b3073defc1d38ba0a5bd27dbfd572c420093"
+    },
+    "Section10IntegralStatementSourceComparison-2026-10-30": {
+      "status": "current_public_source_comparison",
+      "base_commit": "bc1a5decb29077377fa478782c51252633acec43",
+      "updated_utc": "2026-10-30T08:37:23.242531+00:00",
+      "source_lines": [
+        [
+          4628,
+          4640
+        ],
+        [
+          4644,
+          4657
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S10-048",
+          "source_lines": [
+            4628,
+            4640
+          ],
+          "requirement": "Lemma 10.11(ii): zero endpoint-path integrals and closed periods.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_11",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.admissibleEndpoints",
+            "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero",
+            "NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_common_endpoint_limit",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_common_endpoint_primitive",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPiecewisePath_zero",
+            "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_curveIntegral_zero",
+            "NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_endpoint_limits",
+            "NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_extension_of_derivative_extension",
+            "NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period",
+            "NLS.ComplexAnalysis.primitive_cosine_gap_boundary_values_eq",
+            "NLS.ComplexAnalysis.truncatedPathIntegral",
+            "NLS.ComplexAnalysis.truncatedPathIntegral_eq_sub",
+            "NLS.ComplexAnalysis.tendsto_truncatedPathIntegral_of_primitive_boundary",
+            "NLS.ComplexAnalysis.improperPathIntegral_eq_curveIntegral",
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.truncatedIntegral",
+            "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.tendsto_truncatedIntegral_eq_zero_of_common_boundary",
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral",
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive"
+          ],
+          "reviewed_claims": [
+            "For every finite p>1, every complex source in the unchanged common W, every signed index and every original isolating disk, the quotient has zero improper integral along every admissible endpoint path that is C1 on its open parameter interval, and along every finite piecewise interior-C1 such path.",
+            "The integrals are actual truncated parameter integrals. Their two endpoint truncation parameters approach independently, and existence of the zero limit is proved. Interior corner vertices avoid all gaps; loops, self-intersections and singular endpoint parametrizations are allowed.",
+            "A primitive on the entire original cut disk has a common full relative limit at its two endpoints. Noncollapsed complex gaps use inverse-square-root endpoint bounds and opposite cosine-sheet coefficients. Collapsed gaps use a compatible analytic extension of the primitive.",
+            "Every finite piecewise C1 closed contour in the original cut disk has zero actual integral, without a prescribed winding number or homotopy. Compact smooth pieces supply integrability. Every original boundary circle also has zero integral on the same W.",
+            "For paths C1 up to their endpoints whose full curve integral is integrable, the improper definition agrees with that ordinary curve integral and it is zero."
+          ],
+          "qualification": "The path-integral assertion uses the usual piecewise C1 interpretation of contour integration, with the stronger allowance of C1 only on piece interiors. Mere continuous admissibility alone is not presented as an ordinary-integrability theorem. The independently truncated improper limit needs no full-path absolute-integrability premise. The closed-contour result applies off the selected gap, as required for the original quotient. The separate proof displays are still compared in their own ordered rows."
+        },
+        {
+          "ordered_group": "S10-049",
+          "source_lines": [
+            4644,
+            4657
+          ],
+          "requirement": "Collapsed-factor cancellation proof.",
+          "status": "matched",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero",
+            "NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension",
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient",
+            "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.criticalRatioExtension",
+            "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk"
+          ],
+          "reviewed_claims": [
+            "On the unchanged W, a zero gap places its critical point at its periodic midpoint, at every signed index including the central block.",
+            "The collapsed standard root is exactly midpoint minus z. Off the selected gap its critical numerator is the same nonzero linear factor, so the selected factor cancels to one.",
+            "The quotient is therefore -i times the literal unconditional product over m different from n. The omitted quotient is analytic on the full omitted domain, including the entire original selected disk.",
+            "The same single continued function from part (i) agrees with this omitted analytic product throughout that domain, including the collapsed endpoint; agreement with the raw quotient is asserted only off the original gaps."
+          ],
+          "qualification": "Cancellation is performed where the selected linear factor is nonzero. At its zero the analytic omitted product supplies the extension. This retains the printed -i normalization, the literal omitted index set, the original disks and the same common W; the selected source need not be real."
+        }
+      ],
+      "ordered_inventory": "coverage/SECTION_10_ASSERTIONS.md",
+      "ordered_inventory_sha256": "bee6ad20dc0f494e58af46af482f48a3ff5f01baaba3edd83462136756d17140",
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma10_11.lean": "00a2cb3ac7d02ab0a6a4e8ae5823c909a3c9d8cca832e64cfd957d5014d04a6f",
+        "NLS/ZakharovShabat/SourceAdmissibleEndpointPath.lean": "d85ec3e747162698acc063da4b1e2fde69f748e72797ef962eb64f95f43a52d3",
+        "NLS/ZakharovShabat/SourceCriticalRootCommonEndpointLimit.lean": "2190319df146654616127d818c5c13d65d019490adbaea39362945885dfb9635",
+        "NLS/ZakharovShabat/SourceCriticalRootOriginalDiscPrimitive.lean": "2575e67fbf6fa910d55ac95018cbe4e2b756c79e6c2513478d5b4f8df0724bbc",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodZero.lean": "1e562c8eb11de2a0d77b7226686f862dc2d79fd039bfbae9185920cffc408357",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriod.lean": "4ba298999b75a8f4b974f742999f473ae8395488d0e6097bd3cbbcfb2605785c",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioAnyCircleZero.lean": "3b1e5d3e4e8305d4fbed3782de8f471d6b518131118533081581d010b9da6a54",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/SourceAbelianComplexEndpointLimits.lean": "fc055fa9473151b15bc1e271ced8b145101645c45b17622104af07885c556452",
+        "NLS/ZakharovShabat/SourceAbelianComplexCollapsedExtension.lean": "349b3318e0e4dd72298d3d6da4f1897b7718ad666c8d5c81551a7928b8dc86a4",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCollapsed.lean": "175754bb7e9d117064b7b5957cf97e9affa7e69ef79eab6843ec000d6d04af3d",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioFactorization.lean": "ca94dc6ab5ed607a8470179da0108aa5734595154d561d1a250e33394169cb65",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioRegularizedProduct.lean": "d6d6d2dd688ddf0564b1a8786bf4a0dc41356c4d91c404e7e32f79d3cfe82fae",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioOpenGapDomain.lean": "e78185e352eb753072e8b7951376f2fa16566be47c6aba941c1801a8af1bf796",
+        "NLS/ZakharovShabat/SourceLemma10_11i.lean": "a3df0a8df954d51bf5a5f78f9fa19c0c73e265df410b5449276df9e0128f38b4",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean": "ccf1d3942e8880d2916e83bb706abda313d654260ad7cd454bc9a91188f508ce",
+        "NLS/ComplexAnalysis/CosinePrimitiveEndpointAgreement.lean": "0e7145ae9c401f4d2afb0501d65b3f5021fb73152f898e2bd14b170af95d424c",
+        "NLS/ComplexAnalysis/PrimitiveBoundaryPathIntegral.lean": "0b5cd8cf63a782866d26101e166449674f52766fb238e7e0df3b7181ca027b0e",
+        "NLS/ComplexAnalysis/ImproperPrimitivePathIntegral.lean": "e92d1386e4a607c58a685e5c392fbd609760a747fb6677cbc522a2fad04b05a2",
+        "NLS/ComplexAnalysis/PiecewiseImproperPathIntegral.lean": "b06c6c0dd3f5d79ed9672445e5b8a23ab04a2f6006b4b953914ce06906714c8f",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0",
+        "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean": "cb1b5a46815816dab3a8a4bc333f977ef854198a6ec4014e3ba50ee28c953ea6"
+      },
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          60
+        ],
+        "images": {
+          "work/tmp/pdfs/section10-next-060.png": "4895fb49a68006fb8059b56a25c62ac84925ee23c088747523143d8b92fb84b6"
+        }
+      },
+      "qualification": "The first 49 of 52 ordered Section 10 groups are compared: 41 matched and eight corrected occurrences, through Lemma 10.11(ii) and the collapsed-factor proof. Endpoint integrals are actual independently truncated improper limits for arbitrary admissible finite piecewise interior-C1 paths in the original disks. Closed-contour integrals vanish for every piecewise C1 loop in the original cut disk. The literal omitted product retains the factor -i, every other signed index and the unchanged common W. Both new groups match existing proofs with the path-integral convention explicit. Three proof groups remain pending: the real-locus arcosh calculation, continuation of periods and the final complex endpoint-path argument. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, the exact cited 2014 construction, Appendix G.2 norm interpretation and the broader source inventory remain unresolved.",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral",
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_zero_of_primitive",
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.tendsto_truncatedIntegral_eq_zero_of_common_boundary",
+        "NLS.ComplexAnalysis.PiecewiseInteriorC1Path.truncatedIntegral",
+        "NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period",
+        "NLS.ComplexAnalysis.improperPathIntegral_eq_curveIntegral",
+        "NLS.ComplexAnalysis.primitive_cosine_gap_boundary_values_eq",
+        "NLS.ComplexAnalysis.tendsto_truncatedPathIntegral_of_primitive_boundary",
+        "NLS.ComplexAnalysis.truncatedPathIntegral",
+        "NLS.ComplexAnalysis.truncatedPathIntegral_eq_sub",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.criticalRatioExtension",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.analytic_period",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_extension",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.continued_eq_quotient",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.originalCircle_integral_eq_zero",
+        "NLS.ZakharovShabat.SourceEquation2_15Data.period_eq_zero",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.critical_eq_midpoint_of_gap_zero",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.regularizedFactor_eq",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.admissibleEndpoints",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.cutDisc_common_endpoint_limit",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_curveIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPath_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.endpointPiecewisePath_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_common_endpoint_primitive",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_loopIntegral_zero",
+        "NLS.ZakharovShabat.SourceLemma10_11CircleData.originalDisk_primitive",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.continued_analytic_originalDisk",
+        "NLS.ZakharovShabat.SourceLemma10_11iData.zeroPeriods",
+        "NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_endpoint_limits",
+        "NLS.ZakharovShabat.exists_sourceAbelian_complexDisc_extension_of_derivative_extension",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.sourceCriticalRootPeriod_eq_circle",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_extension",
+        "NLS.ZakharovShabat.sourceLemma10_11",
+        "NLS.ZakharovShabat.sourceLemma10_11CirclePeriods",
+        "NLS.ZakharovShabat.sourceStandardRoot_of_zeroGap"
+      ],
+      "declaration_inventory_count": 44300,
+      "validation_reused_from_commit": "91abb08a0c098545c4c820fdf8f9c186fefd8ba3",
+      "source_record_sha256": "2e42eeb803fe0d3255b3205046657130e74a9279f70a7561be163cc978e3c03c"
     }
   }
 }
