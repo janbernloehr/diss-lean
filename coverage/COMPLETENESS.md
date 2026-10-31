@@ -86,7 +86,14 @@ chosen original family, primitive and source domain are unchanged.
 The [all-order Hamiltonian display](../NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
 also retains the exact phase and one canonical polynomial before all
 smooth complex sources, including even Hamiltonian orders and mass.
-The complete ordered Section 24 comparison remains in progress.
+The [ordered Section 24 ledger](SECTION_24_ASSERTIONS.md) now compares
+20 groups: 14 matched, two corrected and four contextual, with no partial
+or pending groups in that local ledger. It retains the full original
+complex trace domains, physical Hamiltonians and closed-gap cases.
+The real-source mass and odd-level zero-detection corrections keep
+their precise scope. No new proof or refutation is added in this
+comparison. The external book-normalization footnote is contextual;
+the exact 2014 edition qualification remains. Section 25 is next.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

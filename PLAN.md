@@ -1,6 +1,34 @@
 # Implementation plan
 
-## Current milestone: Section 24 Hamiltonian polynomial formula
+## Current milestone: ordered Section 24 trace comparison
+
+The [ordered Section 24 comparison](coverage/SECTION_24_ASSERTIONS.md)
+covers all 20 groups on pp. 106–107: 14 matched, two corrected and four
+contextual. No partial or pending groups remain in this local ledger.
+
+The original piecewise contours retain their exact normalization and
+primitive. The all-order Hamiltonian display keeps the phase and one
+canonical lower-order polynomial before every smooth complex source.
+Physical trace formulas retain absolute convergence, the mass endpoint,
+the full original complex Sobolev preimages and the sharp odd-order Hm
+scope. Real gap integrals and mean-value asymptotics include closed gaps.
+
+The zero-detection equivalence has its proved real odd-level scope, and
+collapsed complex gaps still give zero on the retained source domain.
+The squared-norm mass interpretation is real-source only; complex mass
+remains bilinear. Scalar analyticity on the earlier contour domain is
+distinguished from the retained trace domain. The external book
+normalization footnote is contextual, without an independent claim
+about the exact 2014 edition. No new Lean proof or refutation is added.
+
+The unchanged Lean snapshot reuses the successful full check at commit c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5: 8,575 build jobs, 7,679 public examples and a transitive axiom audit of 44,689 NLS declarations, with 21 inherited warnings and zero new. All 60 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 25. The [broader completion qualifications](coverage/COMPLETENESS.md)
+remain; these local ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 24 Hamiltonian polynomial formula
 
 The [literal Hamiltonian formula](NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
 on p. 107 now holds at every order. It retains the phase `(-i)^k`,

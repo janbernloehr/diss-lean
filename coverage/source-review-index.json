@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T02:44:35.690709+00:00",
-  "base_commit": "bfcfe3ac770e12d1b4cf61fea330529363b33bfa",
+  "published_utc": "2026-10-31T02:45:06.726562+00:00",
+  "base_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 172,
-    "module_hash_checks": 3759,
-    "distinct_modules": 1980
+    "review_records": 173,
+    "module_hash_checks": 3801,
+    "distinct_modules": 1987
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "bfcfe3ac770e12d1b4cf61fea330529363b33bfa",
-    "validated_state": "Fresh full check after three positive Hamiltonian polynomial theorems and three API examples.",
+    "base_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
+    "validated_state": "Section24 ordered comparison changes documentation only. The exact Lean snapshot retains the successful all-order Hamiltonian polynomial full check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8575,
     "public_examples": 7679,
@@ -44,8 +44,9 @@
       "sha256": "5e6ba8dd8d6c611c4fa22e098644e3433a8520a13d69a6d059f7c07ba592a9c7"
     },
     "full_gate_log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9",
-    "qualification": "Full build, public examples and transitive axiom audit pass on the recorded Lean snapshot. The ordered Section24 comparison and broader qualifications remain open.",
-    "full_gate_log": "work/Section24HamiltonianPolynomialFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All source corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/Section24HamiltonianPolynomialFullCheck.log",
+    "validation_reused_from_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5"
   },
   "named_statements": [
     {
@@ -54467,6 +54468,960 @@
         "log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9"
       },
       "source_record_sha256": "a10d78fe07425d36d2adf71f821ca45e59bdd4d4b0a8e37ed566b87581015565"
+    },
+    "Section24OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
+      "updated_utc": "2026-10-31T02:45:06.726562+00:00",
+      "source_lines": [
+        [
+          8666,
+          8781
+        ],
+        [
+          8794,
+          8795
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S24-001",
+          "source_lines": [
+            8668,
+            8669
+          ],
+          "requirement": "Original domain and introductory recall",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection24_original",
+            "NLS.ZakharovShabat.SourceSection23Data.section24"
+          ],
+          "reviewed_claims": [
+            "One original family and its retained source domain carry all higher actions, their analytic sequence maps and physical traces. The family is chosen before every index, action level and Sobolev order."
+          ],
+          "qualification": "Scalar contour analyticity on the earlier Section11 domain and trace statements on the retained Section19/20 domain U are distinguished below. No equality of these two domains is asserted."
+        },
+        {
+          "ordered_group": "S24-002",
+          "source_lines": [
+            8669,
+            8678
+          ],
+          "requirement": "Ordinary-action contour and orientation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionContour",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+            "NLS.ZakharovShabat.sourceActionContour_eq_of_original_circuits"
+          ],
+          "reviewed_claims": [
+            "The ordinary indexed action is the literal integral of z times the original discriminant derivative divided by the canonical root, with factor 1/pi. Every piecewise C1 winding-one circuit in an original isolating cut disk gives the same value."
+          ],
+          "qualification": "The winding-one condition represents the printed counterclockwise single traversal. Corners and different original isolating families are allowed."
+        },
+        {
+          "ordered_group": "S24-003",
+          "source_lines": [
+            8678,
+            8686
+          ],
+          "requirement": "Higher-action definition on arbitrary isolating circuits",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceHigherActionContour",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq_mul_winding"
+          ],
+          "reviewed_claims": [
+            "At Lean spectral power k, the higher action uses z^(k+1) and factor 1/((k+1)*pi), exactly printed level k+1. Every winding-one piecewise C1 circuit in the original isolating cut disk computes the original indexed higher action."
+          ],
+          "qualification": "The stronger winding formula also handles reversed and repeated traversals. All natural powers, signed indices and finite source exponents p>1 are included."
+        },
+        {
+          "ordered_group": "S24-004",
+          "source_lines": [
+            8688,
+            8688
+          ],
+          "requirement": "Level one equals ordinary action",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_zero"
+          ],
+          "reviewed_claims": [
+            "The higher action at spectral power zero is exactly the original ordinary indexed action."
+          ],
+          "qualification": "Printed level one corresponds to Lean power zero; this is equality of the original definitions."
+        },
+        {
+          "ordered_group": "S24-005",
+          "source_lines": [
+            8688,
+            8689
+          ],
+          "requirement": "Analyticity on original contour domain",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedHigherAction",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_analytic",
+            "NLS.ZakharovShabat.SourceSection24Data.sequence_analytic"
+          ],
+          "reviewed_claims": [
+            "Each original scalar higher action is complex analytic throughout the unchanged open Section11 contour domain, at every index and level. The retained Section24 family also provides analytic higher-action sequences on its full complex Sobolev preimages in the admissible range."
+          ],
+          "qualification": "The scalar statement does not shrink to the trace domain or a real-chart union. Sequence analyticity is separately quantified on the retained Section19/20 domain U."
+        },
+        {
+          "ordered_group": "S24-006",
+          "source_lines": [
+            8689,
+            8690
+          ],
+          "requirement": "Corrected zero-detection scope",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_even_eq_zero_iff",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_of_collapsed"
+          ],
+          "reviewed_claims": [
+            "The positive zero-detection equivalence holds on real-type sources at every printed odd level: the higher action vanishes exactly when the original periodic gap collapses. At every level, a collapsed complex gap gives zero on the retained Section19 domain."
+          ],
+          "qualification": "Use this precise real odd-level equivalence and the stated complex implication in place of the unrestricted printed equivalence. The central gap and m=0 are included. Historical corrections and refutations remain; no new refutation is added."
+        },
+        {
+          "ordered_group": "S24-007",
+          "source_lines": [
+            8690,
+            8700
+          ],
+          "requirement": "Integration by parts and original primitive in (5.2)",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_pow_mul_deriv_eq_neg",
+            "NLS.ZakharovShabat.sourceHigherActionContour_eq_primitive",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_piecewise_primitive",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_piecewise_primitive"
+          ],
+          "reviewed_claims": [
+            "Formula (5.2) holds with exact factor -1/pi and integrand z^k times the original Section19 primitive. Polynomial integration by parts uses actual path integrals and telescoping endpoint terms on every finite piecewise C1 loop in the original root domain. Winding-one isolating circuits give the original indexed action."
+          ],
+          "qualification": "The original family, source domain and arbitrary primitive index are retained. Analyticity is needed near the circuit only; no extension through the spectral cut is assumed. Closed gaps are included."
+        },
+        {
+          "ordered_group": "S24-008",
+          "source_lines": [
+            8701,
+            8709
+          ],
+          "requirement": "Mass trace and real-source squared-norm interpretation",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+            "NLS.ZakharovShabat.sourceHilbertMass_eq_half_norm_sq_of_realType",
+            "NLS.ZakharovShabat.sourceHilbert_sum_actions_eq_half_norm_sq",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physical_hasSum_actions",
+            "NLS.ZakharovShabat.norm_sourcePhysicalL2",
+            "NLS.ZakharovShabat.norm_sq_intervalL2Representative"
+          ],
+          "reviewed_claims": [
+            "The mass trace includes the H0 endpoint and the entire retained complex source preimage. Its Hamiltonian is the physical bilinear mass. On real-type sources it equals half the squared original two-component L2 norm, and the action series converges to that value. The squared physical norm is the sum of the two unit-interval component energies."
+          ],
+          "qualification": "The norm-square interpretation in (5.3) is restricted to the real form. The complex trace retains the bilinear mass instead of a norm square. This is a direct scope correction, with no new counterexample."
+        },
+        {
+          "ordered_group": "S24-009",
+          "source_lines": [
+            8720,
+            8722
+          ],
+          "requirement": "Historical hierarchy attribution",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level"
+          ],
+          "reviewed_claims": [
+            "The paragraph attributes the higher trace formulas to the cited literature; the mathematical identity is compared in S24-012."
+          ],
+          "qualification": "No independent formal theorem about historical priority or the cited external publication is claimed."
+        },
+        {
+          "ordered_group": "S24-010",
+          "source_lines": [
+            8723,
+            8731
+          ],
+          "requirement": "Physical mass, momentum and energy integrals",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_two",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_two_eq_periodOneSobolevMomentum",
+            "NLS.ZakharovShabat.periodOneSobolevMomentum_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "reviewed_claims": [
+            "The independently defined physical hierarchy has exactly the displayed mass, symmetrized momentum with coefficient i/2, and kinetic-plus-quartic third Hamiltonian. The corresponding established Sobolev mass, momentum and sharp H3 energy agree with these physical constructions."
+          ],
+          "qualification": "The classical integration-by-parts formulas use smooth unit-periodic complex pairs. The Sobolev bridges retain the physical derivatives and component products; the normalization is not defined through the action sum."
+        },
+        {
+          "ordered_group": "S24-011",
+          "source_lines": [
+            8733,
+            8740
+          ],
+          "requirement": "General physical hierarchy and canonical lower-jet polynomial",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.section24HamiltonianRemainder_jetOrder",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_leading_polynomial",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_leading_polynomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades"
+          ],
+          "reviewed_claims": [
+            "For every k the physical H_(k+1) is (-i)^k times the unit-interval integral of a times the kth derivative of b plus one canonical polynomial using jets through order k-1. The polynomial is explicitly -X(false,0)*R_k and is chosen before every smooth complex pair."
+          ],
+          "qualification": "The statement includes even Hamiltonian orders, not just the odd reduced hierarchy. The proof also covers k=0 and does not need periodicity for this defining unit-interval identity. The positive all-order polynomial proof and its three public examples have passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S24-012",
+          "source_lines": [
+            8742,
+            8746
+          ],
+          "requirement": "Theorem 24.1 absolute trace on complex H^(k-1)",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.SourceSection24Data.absolute_convergence",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_hamiltonian_trace",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_trace_of_real",
+            "NLS.ZakharovShabat.SourceSection19Data.isConnected_higherSobolev_domain"
+          ],
+          "reviewed_claims": [
+            "At every printed k>=1, the sum over all integer indices converges absolutely on the full retained complex H^(k-1) preimage and equals H_k/2^(k-1). The Hamiltonian is independently defined by the physical Riccati recurrence. Connectedness and real-form analytic uniqueness give the complex extension."
+          ],
+          "qualification": "The original Section19/20 source domain U is fixed before all k, and its entire Sobolev preimage is used. The mass endpoint k=1 is included. No narrower source neighborhood is chosen for each order."
+        },
+        {
+          "ordered_group": "S24-013",
+          "source_lines": [
+            8748,
+            8755
+          ],
+          "requirement": "Odd trace and physical derivative integral including m=0",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical"
+          ],
+          "reviewed_claims": [
+            "At printed odd level 2*m+1 the trace has the positive factor 1/4^m. For m>=1 the sharp complex Hm Hamiltonian agrees on real smooth sources with the integral of the squared mth derivative plus a fixed polynomial in lower jets. The mass trace supplies m=0."
+          ],
+          "qualification": "The real leading term is the squared derivative of one scalar component; the pair norm and its factor two remain explicit. The remainder polynomial is chosen before the source, and the Hm extension is proved independently of defining an action sum."
+        },
+        {
+          "ordered_group": "S24-014",
+          "source_lines": [
+            8757,
+            8758
+          ],
+          "requirement": "Use of the trace in later estimates",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace"
+          ],
+          "reviewed_claims": [
+            "The sentence announces the use of the odd trace in the estimates of Sections26 and27."
+          ],
+          "qualification": "It introduces no separate bound. The quantitative constants and source norms are assessed in those later sections."
+        },
+        {
+          "ordered_group": "S24-015",
+          "source_lines": [
+            8759,
+            8765
+          ],
+          "requirement": "Literal real gap integral and arcosh profile",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_gapIntegral",
+            "NLS.ZakharovShabat.sourceRealHigherAction_eq_gapIntegral",
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile",
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+            "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh",
+            "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh"
+          ],
+          "reviewed_claims": [
+            "Formula (5.5) is the actual endpoint-interval integral with factor 2/pi, spectral power k-1 in printed notation, and the positive discriminant arcosh profile. The original canonical upper and lower boundary values give opposite primitive signs and the required contour normalization."
+          ],
+          "qualification": "Every signed index and real finite-p source with p>1 is included. Endpoint integrability and collapsed gaps are handled; the expression is not merely a formal contour-deformation argument."
+        },
+        {
+          "ordered_group": "S24-016",
+          "source_lines": [
+            8766,
+            8766
+          ],
+          "requirement": "Reality and odd-level nonnegativity",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_real",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_even_nonneg"
+          ],
+          "reviewed_claims": [
+            "On the real form every higher action is real, and every printed odd-level action is nonnegative."
+          ],
+          "qualification": "Lean power 2*m represents printed level 2*m+1. Both open and closed gaps, including the central gap, are covered."
+        },
+        {
+          "ordered_group": "S24-017",
+          "source_lines": [
+            8766,
+            8773
+          ],
+          "requirement": "Mean-value sample in the actual periodic segment",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_power_mul_action"
+          ],
+          "reviewed_claims": [
+            "Formula (5.6) uses an actual sample in the closed interval between the original periodic endpoints and gives J_(n,2*m+1)=zeta^(2*m)*I_n. The formal result covers every natural spectral power."
+          ],
+          "qualification": "No division by I_n occurs, so collapsed gaps and vanishing actions are retained. The sample is real and belongs to the original gap."
+        },
+        {
+          "ordered_group": "S24-018",
+          "source_lines": [
+            8772,
+            8776
+          ],
+          "requirement": "Endpoint displacement and sample-power asymptotics",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_exists_asymptotic_samples",
+            "NLS.ZakharovShabat.sourceGapSample_ratio_tendsto",
+            "NLS.ZakharovShabat.sourceGapSample_power_ratio_tendsto",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "One simultaneous choice of the mean-value samples has lp displacement from n*pi, satisfies the exact action identity for every signed index, and has normalized power tending to one along both integer tails. At p=2 this supplies the printed l2 statement and the asymptotic following (5.6), including m=0."
+          ],
+          "qualification": "The cofinite filter on integers expresses |n| tending to infinity. The result includes closed gaps without division by an action. Quantitative source-uniform thresholds are deferred to Section25."
+        },
+        {
+          "ordered_group": "S24-019",
+          "source_lines": [
+            8776,
+            8778
+          ],
+          "requirement": "Transition to quantitative localization",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "The final paragraph motivates quantitative periodic-eigenvalue localization for subsequent estimates of high-level actions."
+          ],
+          "qualification": "No new uniform rate is asserted here. Section25 supplies the quantitative localization statement."
+        },
+        {
+          "ordered_group": "S24-020",
+          "source_lines": [
+            8794,
+            8795
+          ],
+          "requirement": "Footnote on comparison with external Hamiltonian normalization",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_riccati_coefficient",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_two",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three"
+          ],
+          "reviewed_claims": [
+            "The footnote states a normalization convention relative to the cited book. The implementation fixes the physical hierarchy by its Riccati integral definition and verifies the displayed low-order Hamiltonians and expansion coefficient."
+          ],
+          "qualification": "This is an internal normalization comparison, not an independent verification against the exact external 2014 book. The wider qualification about that construction remains in COMPLETENESS.md."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S24-001",
+          "source_lines": [
+            8668,
+            8669
+          ],
+          "requirement": "Original domain and introductory recall",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection24_original",
+            "NLS.ZakharovShabat.SourceSection23Data.section24"
+          ],
+          "reviewed_claims": [
+            "One original family and its retained source domain carry all higher actions, their analytic sequence maps and physical traces. The family is chosen before every index, action level and Sobolev order."
+          ],
+          "qualification": "Scalar contour analyticity on the earlier Section11 domain and trace statements on the retained Section19/20 domain U are distinguished below. No equality of these two domains is asserted."
+        },
+        {
+          "ordered_group": "S24-002",
+          "source_lines": [
+            8669,
+            8678
+          ],
+          "requirement": "Ordinary-action contour and orientation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionContour",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+            "NLS.ZakharovShabat.sourceActionContour_eq_of_original_circuits"
+          ],
+          "reviewed_claims": [
+            "The ordinary indexed action is the literal integral of z times the original discriminant derivative divided by the canonical root, with factor 1/pi. Every piecewise C1 winding-one circuit in an original isolating cut disk gives the same value."
+          ],
+          "qualification": "The winding-one condition represents the printed counterclockwise single traversal. Corners and different original isolating families are allowed."
+        },
+        {
+          "ordered_group": "S24-003",
+          "source_lines": [
+            8678,
+            8686
+          ],
+          "requirement": "Higher-action definition on arbitrary isolating circuits",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceHigherActionContour",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq_mul_winding"
+          ],
+          "reviewed_claims": [
+            "At Lean spectral power k, the higher action uses z^(k+1) and factor 1/((k+1)*pi), exactly printed level k+1. Every winding-one piecewise C1 circuit in the original isolating cut disk computes the original indexed higher action."
+          ],
+          "qualification": "The stronger winding formula also handles reversed and repeated traversals. All natural powers, signed indices and finite source exponents p>1 are included."
+        },
+        {
+          "ordered_group": "S24-004",
+          "source_lines": [
+            8688,
+            8688
+          ],
+          "requirement": "Level one equals ordinary action",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_zero"
+          ],
+          "reviewed_claims": [
+            "The higher action at spectral power zero is exactly the original ordinary indexed action."
+          ],
+          "qualification": "Printed level one corresponds to Lean power zero; this is equality of the original definitions."
+        },
+        {
+          "ordered_group": "S24-005",
+          "source_lines": [
+            8688,
+            8689
+          ],
+          "requirement": "Analyticity on original contour domain",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedHigherAction",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_analytic",
+            "NLS.ZakharovShabat.SourceSection24Data.sequence_analytic"
+          ],
+          "reviewed_claims": [
+            "Each original scalar higher action is complex analytic throughout the unchanged open Section11 contour domain, at every index and level. The retained Section24 family also provides analytic higher-action sequences on its full complex Sobolev preimages in the admissible range."
+          ],
+          "qualification": "The scalar statement does not shrink to the trace domain or a real-chart union. Sequence analyticity is separately quantified on the retained Section19/20 domain U."
+        },
+        {
+          "ordered_group": "S24-006",
+          "source_lines": [
+            8689,
+            8690
+          ],
+          "requirement": "Corrected zero-detection scope",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_even_eq_zero_iff",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_of_collapsed"
+          ],
+          "reviewed_claims": [
+            "The positive zero-detection equivalence holds on real-type sources at every printed odd level: the higher action vanishes exactly when the original periodic gap collapses. At every level, a collapsed complex gap gives zero on the retained Section19 domain."
+          ],
+          "qualification": "Use this precise real odd-level equivalence and the stated complex implication in place of the unrestricted printed equivalence. The central gap and m=0 are included. Historical corrections and refutations remain; no new refutation is added."
+        },
+        {
+          "ordered_group": "S24-007",
+          "source_lines": [
+            8690,
+            8700
+          ],
+          "requirement": "Integration by parts and original primitive in (5.2)",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_pow_mul_deriv_eq_neg",
+            "NLS.ZakharovShabat.sourceHigherActionContour_eq_primitive",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_piecewise_primitive",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_piecewise_primitive"
+          ],
+          "reviewed_claims": [
+            "Formula (5.2) holds with exact factor -1/pi and integrand z^k times the original Section19 primitive. Polynomial integration by parts uses actual path integrals and telescoping endpoint terms on every finite piecewise C1 loop in the original root domain. Winding-one isolating circuits give the original indexed action."
+          ],
+          "qualification": "The original family, source domain and arbitrary primitive index are retained. Analyticity is needed near the circuit only; no extension through the spectral cut is assumed. Closed gaps are included."
+        },
+        {
+          "ordered_group": "S24-008",
+          "source_lines": [
+            8701,
+            8709
+          ],
+          "requirement": "Mass trace and real-source squared-norm interpretation",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+            "NLS.ZakharovShabat.sourceHilbertMass_eq_half_norm_sq_of_realType",
+            "NLS.ZakharovShabat.sourceHilbert_sum_actions_eq_half_norm_sq",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physical_hasSum_actions",
+            "NLS.ZakharovShabat.norm_sourcePhysicalL2",
+            "NLS.ZakharovShabat.norm_sq_intervalL2Representative"
+          ],
+          "reviewed_claims": [
+            "The mass trace includes the H0 endpoint and the entire retained complex source preimage. Its Hamiltonian is the physical bilinear mass. On real-type sources it equals half the squared original two-component L2 norm, and the action series converges to that value. The squared physical norm is the sum of the two unit-interval component energies."
+          ],
+          "qualification": "The norm-square interpretation in (5.3) is restricted to the real form. The complex trace retains the bilinear mass instead of a norm square. This is a direct scope correction, with no new counterexample."
+        },
+        {
+          "ordered_group": "S24-009",
+          "source_lines": [
+            8720,
+            8722
+          ],
+          "requirement": "Historical hierarchy attribution",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level"
+          ],
+          "reviewed_claims": [
+            "The paragraph attributes the higher trace formulas to the cited literature; the mathematical identity is compared in S24-012."
+          ],
+          "qualification": "No independent formal theorem about historical priority or the cited external publication is claimed."
+        },
+        {
+          "ordered_group": "S24-010",
+          "source_lines": [
+            8723,
+            8731
+          ],
+          "requirement": "Physical mass, momentum and energy integrals",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_two",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_two_eq_periodOneSobolevMomentum",
+            "NLS.ZakharovShabat.periodOneSobolevMomentum_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "reviewed_claims": [
+            "The independently defined physical hierarchy has exactly the displayed mass, symmetrized momentum with coefficient i/2, and kinetic-plus-quartic third Hamiltonian. The corresponding established Sobolev mass, momentum and sharp H3 energy agree with these physical constructions."
+          ],
+          "qualification": "The classical integration-by-parts formulas use smooth unit-periodic complex pairs. The Sobolev bridges retain the physical derivatives and component products; the normalization is not defined through the action sum."
+        },
+        {
+          "ordered_group": "S24-011",
+          "source_lines": [
+            8733,
+            8740
+          ],
+          "requirement": "General physical hierarchy and canonical lower-jet polynomial",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.section24HamiltonianRemainder_jetOrder",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_leading_polynomial",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_leading_polynomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades"
+          ],
+          "reviewed_claims": [
+            "For every k the physical H_(k+1) is (-i)^k times the unit-interval integral of a times the kth derivative of b plus one canonical polynomial using jets through order k-1. The polynomial is explicitly -X(false,0)*R_k and is chosen before every smooth complex pair."
+          ],
+          "qualification": "The statement includes even Hamiltonian orders, not just the odd reduced hierarchy. The proof also covers k=0 and does not need periodicity for this defining unit-interval identity. The positive all-order polynomial proof and its three public examples have passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S24-012",
+          "source_lines": [
+            8742,
+            8746
+          ],
+          "requirement": "Theorem 24.1 absolute trace on complex H^(k-1)",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.SourceSection24Data.absolute_convergence",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_hamiltonian_trace",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_trace_of_real",
+            "NLS.ZakharovShabat.SourceSection19Data.isConnected_higherSobolev_domain"
+          ],
+          "reviewed_claims": [
+            "At every printed k>=1, the sum over all integer indices converges absolutely on the full retained complex H^(k-1) preimage and equals H_k/2^(k-1). The Hamiltonian is independently defined by the physical Riccati recurrence. Connectedness and real-form analytic uniqueness give the complex extension."
+          ],
+          "qualification": "The original Section19/20 source domain U is fixed before all k, and its entire Sobolev preimage is used. The mass endpoint k=1 is included. No narrower source neighborhood is chosen for each order."
+        },
+        {
+          "ordered_group": "S24-013",
+          "source_lines": [
+            8748,
+            8755
+          ],
+          "requirement": "Odd trace and physical derivative integral including m=0",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical"
+          ],
+          "reviewed_claims": [
+            "At printed odd level 2*m+1 the trace has the positive factor 1/4^m. For m>=1 the sharp complex Hm Hamiltonian agrees on real smooth sources with the integral of the squared mth derivative plus a fixed polynomial in lower jets. The mass trace supplies m=0."
+          ],
+          "qualification": "The real leading term is the squared derivative of one scalar component; the pair norm and its factor two remain explicit. The remainder polynomial is chosen before the source, and the Hm extension is proved independently of defining an action sum."
+        },
+        {
+          "ordered_group": "S24-014",
+          "source_lines": [
+            8757,
+            8758
+          ],
+          "requirement": "Use of the trace in later estimates",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace"
+          ],
+          "reviewed_claims": [
+            "The sentence announces the use of the odd trace in the estimates of Sections26 and27."
+          ],
+          "qualification": "It introduces no separate bound. The quantitative constants and source norms are assessed in those later sections."
+        },
+        {
+          "ordered_group": "S24-015",
+          "source_lines": [
+            8759,
+            8765
+          ],
+          "requirement": "Literal real gap integral and arcosh profile",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_gapIntegral",
+            "NLS.ZakharovShabat.sourceRealHigherAction_eq_gapIntegral",
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile",
+            "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+            "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh",
+            "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh"
+          ],
+          "reviewed_claims": [
+            "Formula (5.5) is the actual endpoint-interval integral with factor 2/pi, spectral power k-1 in printed notation, and the positive discriminant arcosh profile. The original canonical upper and lower boundary values give opposite primitive signs and the required contour normalization."
+          ],
+          "qualification": "Every signed index and real finite-p source with p>1 is included. Endpoint integrability and collapsed gaps are handled; the expression is not merely a formal contour-deformation argument."
+        },
+        {
+          "ordered_group": "S24-016",
+          "source_lines": [
+            8766,
+            8766
+          ],
+          "requirement": "Reality and odd-level nonnegativity",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_real",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_even_nonneg"
+          ],
+          "reviewed_claims": [
+            "On the real form every higher action is real, and every printed odd-level action is nonnegative."
+          ],
+          "qualification": "Lean power 2*m represents printed level 2*m+1. Both open and closed gaps, including the central gap, are covered."
+        },
+        {
+          "ordered_group": "S24-017",
+          "source_lines": [
+            8766,
+            8773
+          ],
+          "requirement": "Mean-value sample in the actual periodic segment",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_power_mul_action"
+          ],
+          "reviewed_claims": [
+            "Formula (5.6) uses an actual sample in the closed interval between the original periodic endpoints and gives J_(n,2*m+1)=zeta^(2*m)*I_n. The formal result covers every natural spectral power."
+          ],
+          "qualification": "No division by I_n occurs, so collapsed gaps and vanishing actions are retained. The sample is real and belongs to the original gap."
+        },
+        {
+          "ordered_group": "S24-018",
+          "source_lines": [
+            8772,
+            8776
+          ],
+          "requirement": "Endpoint displacement and sample-power asymptotics",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_exists_asymptotic_samples",
+            "NLS.ZakharovShabat.sourceGapSample_ratio_tendsto",
+            "NLS.ZakharovShabat.sourceGapSample_power_ratio_tendsto",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "One simultaneous choice of the mean-value samples has lp displacement from n*pi, satisfies the exact action identity for every signed index, and has normalized power tending to one along both integer tails. At p=2 this supplies the printed l2 statement and the asymptotic following (5.6), including m=0."
+          ],
+          "qualification": "The cofinite filter on integers expresses |n| tending to infinity. The result includes closed gaps without division by an action. Quantitative source-uniform thresholds are deferred to Section25."
+        },
+        {
+          "ordered_group": "S24-019",
+          "source_lines": [
+            8776,
+            8778
+          ],
+          "requirement": "Transition to quantitative localization",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "The final paragraph motivates quantitative periodic-eigenvalue localization for subsequent estimates of high-level actions."
+          ],
+          "qualification": "No new uniform rate is asserted here. Section25 supplies the quantitative localization statement."
+        },
+        {
+          "ordered_group": "S24-020",
+          "source_lines": [
+            8794,
+            8795
+          ],
+          "requirement": "Footnote on comparison with external Hamiltonian normalization",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_riccati_coefficient",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_two",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three"
+          ],
+          "reviewed_claims": [
+            "The footnote states a normalization convention relative to the cited book. The implementation fixes the physical hierarchy by its Riccati integral definition and verifies the displayed low-order Hamiltonians and expansion coefficient."
+          ],
+          "qualification": "This is an internal normalization comparison, not an independent verification against the exact external 2014 book. The wider qualification about that construction remains in COMPLETENESS.md."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 14,
+        "corrected": 2,
+        "partial": 0,
+        "contextual": 4,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection24Original.lean": "35f0a0ee06b5a60c0960254596d443ee69d7ce311bebbf8369f4806c0af19bdb",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionTrace.lean": "4356df390863fead1a780299a0c616df1d5cb48f20d277dca3f2805cfdc7cc57",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean": "952d351d05ab5cdcd1a849e8ead619f2cd8e907584eb742f7623d5f9f7b31450",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean": "1866063c9d1b1ce6572432ecd1fa889050db9244acead00bce17baa690757c4b",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean": "93a2b5ef46514beee04ca553d4f41cf9013d0d022e6dd0aa5894d64fce0f0c79",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean": "9e4aaa44fb3d1ff4d9b4259fc9047807ad01c8a3a3311316daa5bf38b0937ab4",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean": "87d5874740112bae058627577484af379cb9964b5c18860c312c5a41fde4313d",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean": "c656302f1c03029fb6a727a69c4cdb8d813cd1983cc9191c333e2843f652952b",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean": "d1025a6dac6dc595d422f65e8bbfec8efbba3e2bfbba2967f7dbc6b500edd29f",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f",
+        "NLS/ZakharovShabat/SourceSobolevEnergyCoercivity.lean": "71a36f536d6f68b3e399675acbf36a09273c9813fc921e7da925fefb80f052bc",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean": "454867eb6bd20c57a4f0eb840e8fbbca9b645e1624b78c8ecc60c357e0e44d7a",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean": "add8170c924f576cb43093073ade92bf96391d5c7ee4b6f2f8b8260f7b932ec4",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean": "385898f6c0fdfe8408e3d7be84d41bad55e5870e7ba04cb76b4a3571296929ad",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic.lean": "da4b313365bd56912772e02e7eeb612fbbb3791c869f08e81cd739009995aca0",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewiseContour.lean": "e7cd2e4711cb26f14f96e4267926b65fd3193939c41b8950bf4a700a2819abf6",
+        "NLS/ZakharovShabat/SourceRealHigherActionIntegral.lean": "fde51fbed906f0cc53005fc9028585429a34fe4c80f85dedbecbad2700e90362",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionSobolev.lean": "bb3647cfde2f25867d1d42b36b3e73044537380e87586b1eaa34700df1158ed9",
+        "NLS/ZakharovShabat/SourceHigherActionCircle.lean": "752662372cf11056032e0f0ce5dc20aa7635eeba5c7bced2b893ca7610308467",
+        "NLS/ZakharovShabat/SourceLemmaH1.lean": "01d2b83895378344134fc3822eea6868027b2a2235bae28afa42775c77bbddab",
+        "NLS/ZakharovShabat/SourceFullAbelianPrimitive.lean": "bb4900fea5fc42861e334c9a10989a228b7e27acaf55e45d2622fa71e5d751a5",
+        "NLS/ComplexAnalysis/PiecewiseContourPeriod.lean": "9c7090820c2ddd88213b7774a9aabafe385cecd403a45730c3de64ae16cf8427",
+        "NLS/ComplexAnalysis/PiecewiseContourOuterPeriod.lean": "763aa73ee472ed7270b74f4c1217cde57dd683b0f3ad37a72c1a315622e81c7b",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean": "f430fe6a6a78fbbbe02b98741e57cbe839821458a9aa91199bb7583d130916a9",
+        "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean": "d9d70fd4ffc49c2ac98d40eb98f1267d9c9541d2129f8f93a6a94cc09b5ff401",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0",
+        "NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean": "dc52fac6c7cded7253a1fad813e5b0d4931448893fdbc72bb9a0158100814aa9",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean": "ab13b895e1d4fd305ddde4c662bdfd00b2d3d5bc116cc9da8ae80d6db50b5623",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/PeriodOneSobolevMomentum.lean": "7ac1127fcc6940ac11abead44bcd309e4e2183b15ca2b678c591323357d03f88",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean": "2e26d009bdddcf348ad0e1380a0e71dbd5964c5e91162ada8c629e8650e99eaf",
+        "NLS/ZakharovShabat/SourceActionPiecewiseContour.lean": "01ec2db90ea86d29d943adfd68762972c09dab495d5c23dc1cc084f60bc1b736",
+        "NLS/ZakharovShabat/SourceHigherActionCircleAnalytic.lean": "dc1d727c7276ac4300476633b20e4351ef4e0c737d37fc0e71ef42ef29394f0d",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean": "f555d7fab5f736aa3ed036b4057c54dc261b965023cd1ed60a69f52978765bfd",
+        "NLS/ZakharovShabat/SourceHilbertMass.lean": "5180b025c68a4b1a3a1e51061bb208f1fbb769a3b9315b9a29c388c4c4473dca",
+        "NLS/ZakharovShabat/SourcePhysicalActionAngle.lean": "1e1e6b44014879038a9453e16b70c5ec3a699f350cc3449999655d70056ec686",
+        "NLS/ZakharovShabat/SourceHilbertActionTrace.lean": "5cc2d8abd32276f26e50776f946830ef84be8173578020c0e7e8c36871e17cd6",
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean": "208489701add7cc8653c972cd400e0c3ffc48c317c3c289637ad4a5599f0dff6",
+        "NLS/ZakharovShabat/PhysicalIntervalL2.lean": "a366fbf8e769c2b5579380e0d7f5378f522e95b8c726537543515054e2de3ab1",
+        "NLS/ZakharovShabat/SourceRealGapArcoshPrimitive.lean": "a519770f28e88e041c7eb89300d342ef9bcb93d6b5d9d567c85198de74f39114",
+        "NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean": "fbc354c8eca3a883f195470a84c1b1ca402238e0c16aa78aa9e2b8374c98e214"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection24Original.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionTrace.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceSobolevEnergyCoercivity.lean",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAnalytic.lean",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewiseContour.lean",
+        "NLS/ZakharovShabat/SourceRealHigherActionIntegral.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionSobolev.lean",
+        "NLS/ZakharovShabat/SourceHigherActionCircle.lean",
+        "NLS/ZakharovShabat/SourceLemmaH1.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianPrimitive.lean",
+        "NLS/ComplexAnalysis/PiecewiseContourPeriod.lean",
+        "NLS/ComplexAnalysis/PiecewiseContourOuterPeriod.lean",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean",
+        "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean",
+        "NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+        "NLS/ZakharovShabat/PeriodOneSobolevMomentum.lean",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean",
+        "NLS/ZakharovShabat/SourceActionPiecewiseContour.lean",
+        "NLS/ZakharovShabat/SourceHigherActionCircleAnalytic.lean",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean",
+        "NLS/ZakharovShabat/SourceHilbertMass.lean",
+        "NLS/ZakharovShabat/SourcePhysicalActionAngle.lean",
+        "NLS/ZakharovShabat/SourceHilbertActionTrace.lean",
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean",
+        "NLS/ZakharovShabat/PhysicalIntervalL2.lean",
+        "NLS/ZakharovShabat/SourceRealGapArcoshPrimitive.lean",
+        "NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_24_ASSERTIONS.md",
+      "ordered_inventory_sha256": "975f3c6e07b69f0771ff36b388ad04e50c3437521bd3deee1d9510cade78a7fe",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_pow_mul_deriv_eq_neg",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq_mul_winding",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexedAction_eq_circuit",
+        "NLS.ZakharovShabat.SourceSection11ContourData.analytic_indexedHigherAction",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.physical_hasSum_actions",
+        "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_hamiltonian_trace",
+        "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_of_collapsed",
+        "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_trace_of_real",
+        "NLS.ZakharovShabat.SourceSection19Data.isConnected_higherSobolev_domain",
+        "NLS.ZakharovShabat.SourceSection23Data.section24",
+        "NLS.ZakharovShabat.SourceSection24Data.absolute_convergence",
+        "NLS.ZakharovShabat.SourceSection24Data.higherAction_analytic",
+        "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_piecewise_primitive",
+        "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+        "NLS.ZakharovShabat.SourceSection24Data.sequence_analytic",
+        "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_leading_polynomial",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_riccati_coefficient",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_two",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_leading_polynomial",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+        "NLS.ZakharovShabat.norm_sourcePhysicalL2",
+        "NLS.ZakharovShabat.norm_sq_intervalL2Representative",
+        "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+        "NLS.ZakharovShabat.periodOneSobolevMomentum_eq_integral",
+        "NLS.ZakharovShabat.section24HamiltonianRemainder_jetOrder",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_two_eq_periodOneSobolevMomentum",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+        "NLS.ZakharovShabat.sourceActionContour",
+        "NLS.ZakharovShabat.sourceActionContour_eq_of_original_circuits",
+        "NLS.ZakharovShabat.sourceGapSample_power_ratio_tendsto",
+        "NLS.ZakharovShabat.sourceGapSample_ratio_tendsto",
+        "NLS.ZakharovShabat.sourceHigherActionContour",
+        "NLS.ZakharovShabat.sourceHigherActionContour_eq_primitive",
+        "NLS.ZakharovShabat.sourceHilbertMass_eq_half_norm_sq_of_realType",
+        "NLS.ZakharovShabat.sourceHilbert_sum_actions_eq_half_norm_sq",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_gapIntegral",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_piecewise_primitive",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_power_mul_action",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_even_eq_zero_iff",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_even_nonneg",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_exists_asymptotic_samples",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_real",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_zero",
+        "NLS.ZakharovShabat.sourceRealGapArcoshProfile",
+        "NLS.ZakharovShabat.sourceRealGapArcoshProfile_spec",
+        "NLS.ZakharovShabat.sourceRealGap_lowerIntegral_eq_neg_arcosh",
+        "NLS.ZakharovShabat.sourceRealGap_upperIntegral_eq_arcosh",
+        "NLS.ZakharovShabat.sourceRealHigherAction_eq_gapIntegral",
+        "NLS.ZakharovShabat.sourceSection24_original",
+        "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+      ],
+      "declaration_inventory_count": 44689,
+      "qualification": "The ordered Section 24 comparison covers 20 groups on printed pp. 106–107: 14 matched, two corrected and four contextual, with no partial or pending groups in this local ledger. The original higher actions retain arbitrary piecewise C1 circuits, the exact contour normalization and the chosen primitive and family. Scalar analyticity on the full Section 11 contour domain is distinguished from all-order traces on the retained Section 19/20 complex Sobolev preimages. The physical hierarchy keeps its independent Riccati definition, literal low-order integrals and one canonical lower-jet polynomial before all smooth complex sources. The trace includes absolute convergence, the mass endpoint and the sharp odd-order Hm identity with positive factor 1/4^m. The real arcosh gap integral, positivity, actual mean-value sample and two-sided asymptotic retain signed indices and closed gaps. Zero detection is restricted to the proved real odd-level equivalence; collapsed complex gaps still give zero on the retained domain. The norm-square mass interpretation is restricted to real sources, while complex sources keep bilinear mass. Historical attributions, later-use transitions and the external book-normalization footnote are contextual. No independent comparison with the exact 2014 book is asserted. Existing corrections and refutations are preserved; this documentation step adds no Lean proof or refutation. Broader completeness and Appendix G.2 qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          106,
+          107
+        ],
+        "images": {
+          "work/tmp/pdfs/section23-outline-106.png": "8bf19671bd778c763a96d3a8e53e0e708f266f57ffde8ae1bddc1da3f2e6dda6",
+          "work/tmp/pdfs/section24-trace-107.png": "3893348ac8904e5626bfbbc0199f996becb10fcfe3138f7652f01c8fc90b7203"
+        }
+      },
+      "preceding_review_hash": "a10d78fe07425d36d2adf71f821ca45e59bdd4d4b0a8e37ed566b87581015565",
+      "reconciled_previous_reviews": {
+        "Section24SourceComparison-2026-10-27.json": "41dca22755cb5114e943abb0289d02ab9cd909518b9f7355d3c8f5c0b7417bed",
+        "Section24PiecewisePrimitiveSourceComparison-2026-10-31.json": "05699fae00242813032b9f1261152fe8c3b30afe55853a9520d889f2fbcb81b8",
+        "Section24HamiltonianPolynomialSourceComparison-2026-10-31.json": "a10d78fe07425d36d2adf71f821ca45e59bdd4d4b0a8e37ed566b87581015565"
+      },
+      "validation_lean_sources": {
+        "files": 4852,
+        "sha256": "5e6ba8dd8d6c611c4fa22e098644e3433a8520a13d69a6d059f7c07ba592a9c7"
+      },
+      "validation_reused_from_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 96263,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section24HamiltonianPolynomialFullCheck.log",
+        "log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9"
+      },
+      "source_record_sha256": "58816045fd6b04253c4fadbff04fd12acffda9bca0e96663e46d9cb51ade43f7"
     }
   }
 }

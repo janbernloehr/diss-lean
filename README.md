@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 24 Hamiltonian polynomial formula](NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
-retains every order, the exact phase and one canonical lower-order
-polynomial for all smooth complex source pairs. Three positive theorems
-and three public examples pass the full checks. The ordered Section 24
-comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
+Latest step: the [ordered Section 24 comparison](coverage/SECTION_24_ASSERTIONS.md)
+records 14 matched groups, two corrections and four contextual groups.
+Original contours, exact factors, physical Hamiltonians and complex
+trace domains are retained. Corrections keep their precise proved scope,
+with no new refutations. Section 25 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
