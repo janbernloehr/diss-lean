@@ -73423,3 +73423,78 @@ example (r : NLS.Coeff ⊤) (a : NLS.Coeff (ENNReal.ofReal (3/2)))
     ENNReal.toReal_ofNat,show (3/2:ℝ)/2 = 3/4 by norm_num] at h
   exact h
 end AppendixDSquarePowerExamples
+
+section AppendixDExteriorSumExamples
+
+-- The endpoint estimate keeps both directions of the lattice and the half-radius tail.
+example (a : NLS.Coeff 1) {y : ℝ} (hy : 0 ≤ y) :
+    (∑' m : ℤ, ‖a m‖/(1+y+|((m+4:ℤ):ℝ)|)) ≤
+      40*(‖a‖/(5+y)+‖NLS.Coeff.fourierTail 3 a‖/(1+y)) := by
+  have h := NLS.Coeff.appendixDReciprocalSum_source_bound (by simp) a (-4) hy
+  norm_num at h ⊢
+  exact h
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+-- For p = 3/2 the scalar decay exponent is 2/3 and one constant is 56.
+example (a : NLS.Coeff (ENNReal.ofReal (3/2))) (n : ℤ) {y : ℝ} (hy : 0 ≤ y) :
+    (∑' m : ℤ, ‖a m‖/(1+y+|((m-n:ℤ):ℝ)|)) ≤
+      56*(‖a‖/(1+(n.natAbs:ℝ)^(2/3:ℝ)+y^(2/3:ℝ))+
+        ‖NLS.Coeff.fourierTail (n.natAbs/2+1) a‖/(1+y^(2/3:ℝ))) := by
+  have h := NLS.Coeff.appendixDReciprocalSum_source_bound ENNReal.ofReal_ne_top a n hy
+  norm_num at h ⊢
+  exact h
+
+end AppendixDExteriorSumExamples
+
+-- A negative head index is modified while the negative cutoff boundary is preserved.
+example (r : NLS.Coeff ⊤) (ε : ℝ) :
+    NLS.ZakharovShabat.appendixDModifiedDisk r 2 ε (-1) =
+      Metric.ball (NLS.ZakharovShabat.displacedRoots r (-1)) ε ∧
+    NLS.ZakharovShabat.appendixDModifiedDisk r 2 ε (-2) =
+      NLS.ZakharovShabat.refinedResonantDisk (-2) := by
+  norm_num [NLS.ZakharovShabat.appendixDModifiedDisk]
+
+-- One modification works before every Hilbert input and every independent disc sample.
+example (r : NLS.Coeff ⊤)
+    (hr : Function.Injective (NLS.ZakharovShabat.displacedRoots r)) {c : ℝ} {N : ℕ}
+    (hc : 0 < c) (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c N) :
+    ∃ ε C : ℝ, 0 < ε ∧ ε ≤ 1 ∧ 0 < C ∧ c ≤ C ∧ ∀ a : NLS.Coeff 2,
+      ∃ b : NLS.Coeff 2,
+        (∀ n : ℤ, ∀ z ∈ NLS.ZakharovShabat.appendixDModifiedDisk r N ε n,
+          ‖∑' m : ℤ, if m=n then 0 else a m/(NLS.ZakharovShabat.displacedRoots r m-z)‖ ≤ ‖b n‖) ∧
+        Summable (fun n : ℤ => ‖b n‖^2) := by
+  obtain ⟨ε,C,hε0,hε,hC,hcC,h⟩ :=
+    NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple
+      (by norm_num : (1:ℝ≥0∞) < 2) (by norm_num) r hr hc hsep
+  refine ⟨ε,C,hε0,hε,hC,hcC,?_⟩
+  intro a
+  obtain ⟨b,hb,_,_⟩ := h a
+  exact ⟨b,hb,by simpa only [ENNReal.toReal_ofNat,Real.rpow_two] using
+    b.property.summable (by norm_num : 0 < (2:ℝ≥0∞).toReal)⟩
+
+-- The omitted factor has zero supremum on the whole disc, for every signed index.
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff 2) (n : ℤ) :
+    NLS.ZakharovShabat.appendixDDiscNormSup n
+      (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm r a n z n) = 0 := by
+  have h := NLS.ZakharovShabat.appendixDDiscNormSup_bounds n
+    (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm r a n z n)
+    (K := 0) (by intro z _; simp [NLS.ZakharovShabat.appendixDReciprocalTerm])
+  exact le_antisymm h.2.2 h.1
+
+-- Even at p=1, one cutoff gives the literal supremum inequality with all three sums.
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff 1) {c : ℝ} {N : ℕ} (hc : 0 < c)
+    (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c N) :
+    ∃ M : ℕ, N ≤ M ∧ 0 < M ∧ ∀ n : ℤ, M ≤ n.natAbs →
+      let S := ∑' m : ℤ, NLS.ZakharovShabat.appendixDDiscNormSup n
+        (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m)
+      let A := NLS.ZakharovShabat.appendixDDiscNormSup n
+        (fun z => ∑' m : ℤ, NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m)
+      let B := ∑' m : ℤ, (NLS.ZakharovShabat.appendixDDiscNormSup n
+        (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m))^2
+      NLS.ZakharovShabat.appendixDDiscNormSup n
+        (NLS.ZakharovShabat.appendixDRelativeProductError r a n) ≤
+          A*Real.exp S+B*Real.exp (S+S^2) := by
+  exact NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound
+    (by simp) r a hc hsep

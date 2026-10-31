@@ -4864,3 +4864,6 @@ import NLS.ZakharovShabat.AppendixDPairedFactors
 import NLS.ZakharovShabat.AppendixDExteriorGeometry
 import NLS.ZakharovShabat.AppendixDFactorCutoff
 import NLS.ZakharovShabat.AppendixDSquarePower
+import NLS.SequenceSpaces.AppendixDExteriorSum
+import NLS.ZakharovShabat.AppendixDModifiedDisks
+import NLS.ZakharovShabat.AppendixDDiscSupProduct

@@ -1,5 +1,30 @@
 # Appendix D: infinite products
 
+## Scalar sums, modified discs and actual suprema
+
+The [D.5 far/near scalar estimate](../NLS/SequenceSpaces/AppendixDExteriorSum.lean)
+now has both printed decay denominators and explicit constant 8*(4*p+1).
+Its near term uses the corrected half-radius coefficient tail.
+
+The [finite modified discs](../NLS/ZakharovShabat/AppendixDModifiedDisks.lean)
+preserve all original separated tail discs. One radius and separation
+constant work before every input sequence and independent sample.
+The actual signed rows have a least ell-p majorant; its bound retains
+the finite-head separation constant explicitly.
+
+The [literal supremum estimate](../NLS/ZakharovShabat/AppendixDDiscSupProduct.lean)
+uses the actual disc norm suprema and the three source sums A, S and B.
+It proves the positive inequality A*exp(S)+B*exp(S+S^2), convergence
+of the factor-supremum sums, and the exact conjugate-kernel Holder bound.
+
+Three definitions, fifteen positive theorems and six examples add
+no new refutation.
+
+The full check passed: 8,591 build jobs, 7,709 public examples and an axiom audit of 44,794 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The thirty-group ordered Appendix D comparison remains to be reconciled.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Positive proof steps and direct constant corrections
 
 The [paired factors](../NLS/ZakharovShabat/AppendixDPairedFactors.lean) in D.4

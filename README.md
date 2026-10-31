@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix D proof steps](coverage/APPENDIX_D.md)
-add paired-product convergence, the factor-four exterior estimate,
-a uniform factor cutoff and the explicit c^p square-row bound.
-Eleven positive theorems and six examples add no new refutation.
+Latest step: [Appendix D proof details](coverage/APPENDIX_D.md)
+give the scalar far/near estimate, finite modified discs and actual
+disc-supremum inequality. Fifteen positive theorems and six examples
+retain explicit constants and directly correct the tail index.
 The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

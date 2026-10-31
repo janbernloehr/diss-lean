@@ -184,8 +184,14 @@ now provide exact paired identities and convergence, the factor-four
 exterior estimate, a uniform signed-index cutoff, the positive
 product inequality and the square-row bound with explicit c^p.
 One definition, eleven positive theorems and six examples add no
-new refutation. The thirty-group ordered Appendix D comparison
-remains in progress, including its intermediate proof assertions.
+new refutation. The [additional Appendix D proof details](APPENDIX_D.md)
+supply the actual far/near sum estimate, the finite modified discs and
+the literal product supremum inequality. Explicit constants include
+8*(4*p+1), the finite-head separation parameter and the conjugate-kernel
+Holder constant. The half-radius tail and displayed inequality are
+corrected directly. Three definitions, fifteen positive theorems and
+six examples add no new refutation. The thirty-group ordered Appendix D
+comparison remains to be reconciled.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T05:48:21.989421+00:00",
-  "base_commit": "d70d2a6c42e08485ece290747afef556a0efa887",
+  "published_utc": "2026-10-31T06:08:38.623238+00:00",
+  "base_commit": "a5b3316481cc2301cd9866bae710f9606ff29caf",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 188,
-    "module_hash_checks": 4053,
-    "distinct_modules": 2073
+    "review_records": 189,
+    "module_hash_checks": 4067,
+    "distinct_modules": 2078
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d70d2a6c42e08485ece290747afef556a0efa887",
-    "validated_state": "Fresh full check after four Appendix D proof modules and six public examples.",
+    "base_commit": "a5b3316481cc2301cd9866bae710f9606ff29caf",
+    "validated_state": "Fresh full check after three Appendix D proof-detail modules and six public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8588,
-    "public_examples": 7703,
-    "transitive_NLS_declarations": 44763,
+    "build_jobs": 8591,
+    "public_examples": 7709,
+    "transitive_NLS_declarations": 44794,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 98565,
+    "gate_session": 60002,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4865,
-      "sha256": "0cc7f9150c68ac666c84f711cb7ae4748785810e9a70a384993033b0ee9c464b"
+      "files": 4868,
+      "sha256": "90c11818b725dd9fb2cc938f61c6ddb3959f92929735a748b1f1bbad455a229c"
     },
-    "full_gate_log_sha256": "12e117cd652d61f5704e775460f0db7ee3635ed34fcf34cbc2342ef6ef06de8e",
+    "full_gate_log_sha256": "68b2890e045fce49acb0a09f17106a066b554f7b180b8c28640ffc7b51d87ddc",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix D and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixDProofStepsFullCheck.log"
+    "full_gate_log": "work/AppendixDProofDetailsFullCheck.log"
   },
   "named_statements": [
     {
@@ -63848,6 +63848,194 @@
         "log_sha256": "12e117cd652d61f5704e775460f0db7ee3635ed34fcf34cbc2342ef6ef06de8e"
       },
       "source_record_sha256": "729dedca59ab8889577e91ce015191ed696b9f03ebe083d08666ab94ec8d269d"
+    },
+    "AppendixDProofDetailsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "a5b3316481cc2301cd9866bae710f9606ff29caf",
+      "updated_utc": "2026-10-31T06:08:38.571475+00:00",
+      "source_lines": [
+        [
+          10478,
+          10493
+        ],
+        [
+          10550,
+          10563
+        ],
+        [
+          10565,
+          10572
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10478,
+            10493
+          ],
+          "declarations": [
+            "NLS.Coeff.norm_appendixDReciprocalEnvelope_le",
+            "NLS.Coeff.appendixDReciprocalEnvelope",
+            "NLS.Coeff.norm_appendixDReciprocalEnvelope_apply",
+            "NLS.Coeff.appendixDReciprocalSum_height_bound",
+            "NLS.Coeff.appendixDReciprocalSum_far_near",
+            "NLS.Coeff.appendixDReciprocalSum_source_bound"
+          ],
+          "reviewed_claims": [
+            "The actual scalar sum is absolutely convergent and splits into a distant reciprocal kernel plus the actual coefficient tail.",
+            "The two printed decay denominators hold with one explicit constant 8*(4*p.toReal+1), for every finite Banach exponent including p=1. The near term retains frequencies abs(m)>floor(abs(n)/2)."
+          ],
+          "qualification": "Correct the displayed tail index directly: the near split requires the half-radius coefficient tail. The bound retains both signed lattice directions and the printed 1/p decay powers. The existing local-uniform exterior theorem supplies the final asymptotic. No counterexample is added."
+        },
+        {
+          "source_lines": [
+            10550,
+            10563
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDDiscNormSup",
+            "NLS.ZakharovShabat.appendixDDiscNormSup_bounds",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_summable",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_sum_le",
+            "NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound"
+          ],
+          "reviewed_claims": [
+            "The actual factor norm suprema over each full open disc have convergent absolute and square sums. Their absolute sum has the exact conjugate-kernel Holder bound c*norm(kernel in p-prime)*norm(a).",
+            "One positive cutoff gives the literal product norm supremum bounded by A*exp(S)+B*exp(S+S^2), with A the supremum of the signed sum, S the sum of factor suprema and B the sum of their squares."
+          ],
+          "qualification": "Correct the displayed equality to an inequality directly. The three source sums are actual disc suprema or sums of them; no maximum-attainment assumption is used. The supremum inequality includes p=1; the exact finite conjugate-kernel Holder estimate assumes p>1 as in D.6."
+        },
+        {
+          "source_lines": [
+            10565,
+            10572
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDModifiedDisk",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated",
+            "NLS.ZakharovShabat.appendixDModifiedDisk_nonempty",
+            "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple"
+          ],
+          "reviewed_claims": [
+            "Simplicity of the bounded reference sequence permits replacing only finitely many head discs by small root-centered discs. Every original separated tail disc remains unchanged.",
+            "One positive radius and separation constant are chosen before all input sequences. All independent modified-disc samples give genuinely convergent signed rows, and their least norm majorant belongs to ell-p with an explicit C.2 bound."
+          ],
+          "qualification": "The constant retains the new finite-head separation parameter C explicitly. It is not claimed to depend only on the reference norm when head roots approach one another. The signed-row bound holds for all modified discs and every finite p>1. The original tail conclusion remains independently proved."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/ReciprocalNorm.lean": "f8757ec64d037a9d11def7a84e46f8f753cb12fa952b3d59aec203e6ca848861",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "293d6b7218f45fe21ba7178d5fe33c4c77cdf0e1567de46c0df8875fbcdbf6ed",
+        "NLS/SequenceSpaces/HolderEmbedding.lean": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8",
+        "NLS/ZakharovShabat/DisplacedRootsSeparation.lean": "6218dea92933d3a6055802dc3111e0a74d6c345c391ecf41a47e90a28411d0fd",
+        "NLS/Fourier/ModifiedHilbert.lean": "fa2242a35aecad364050c392a15f873c6abc5d0db9c7cb699ff49895c7adb359",
+        "NLS/SequenceSpaces/UniformSelectionSup.lean": "f9e5107c73b8dbf83526024d1913b577d07497e54f41a458f58e1d114d686213",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean": "20d50f9d2ae9cb384ae745839d772bfb0ce73892d640b350abc873c55faa8e4b",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean": "3cab5676f1fde6db46a0bfa5616e6a756dc472142a1489b9ff12ef961e7424b3",
+        "NLS/Fourier/AbsoluteSampledRows.lean": "fb11d366c2b38b66811c94501ae2fda7ab27c1ba426c7a4cd0afd51f99b18dea",
+        "NLS/SequenceSpaces/AppendixDExteriorSum.lean": "b1452f741b96285cc73fb40d2666e5479c16ece7b8a53038716c22442ea90f6e",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean": "f93697fb372c5eea8dc57d71594f8885a0bddfbb6d4b73e6a6ab2610f4fc9593",
+        "NLS/ZakharovShabat/AppendixDModifiedDisks.lean": "2407f8389a574f48a377b8f9e1a8b07f0d676935d788c4d8c2cfb5902e938ddd"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/SequenceSpaces/ReciprocalNorm.lean",
+        "NLS/SequenceSpaces/ReciprocalTail.lean",
+        "NLS/SequenceSpaces/HolderEmbedding.lean",
+        "NLS/SequenceSpaces/FourierTail.lean",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean",
+        "NLS/ZakharovShabat/DisplacedRootsSeparation.lean",
+        "NLS/Fourier/ModifiedHilbert.lean",
+        "NLS/SequenceSpaces/UniformSelectionSup.lean",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean",
+        "NLS/Fourier/AbsoluteSampledRows.lean",
+        "NLS/SequenceSpaces/AppendixDExteriorSum.lean",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean",
+        "NLS/ZakharovShabat/AppendixDModifiedDisks.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all thirty ordered Appendix D groups."
+      ],
+      "resolved_declarations": [
+        "NLS.Coeff.appendixDReciprocalEnvelope",
+        "NLS.Coeff.appendixDReciprocalSum_far_near",
+        "NLS.Coeff.appendixDReciprocalSum_height_bound",
+        "NLS.Coeff.appendixDReciprocalSum_source_bound",
+        "NLS.Coeff.norm_appendixDReciprocalEnvelope_apply",
+        "NLS.Coeff.norm_appendixDReciprocalEnvelope_le",
+        "NLS.ZakharovShabat.appendixDDiscNormSup",
+        "NLS.ZakharovShabat.appendixDDiscNormSup_bounds",
+        "NLS.ZakharovShabat.appendixDModifiedDisk",
+        "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le",
+        "NLS.ZakharovShabat.appendixDModifiedDisk_nonempty",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_sum_le",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_summable",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated",
+        "NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound"
+      ],
+      "declaration_inventory_count": 44794,
+      "qualification": "Three modules add three definitions, fifteen positive theorems and six examples for further intermediate D.5-D.6 proof estimates. The actual far/near reciprocal sum has the two printed decay denominators with explicit constant 8*(4*p+1); the near coefficient tail is corrected directly to the half-radius cutoff. Finite head discs are modified around the simple reference roots while all separated tail discs are preserved. One radius and separation constant precede all input sequences and samples; the actual signed rows have a least ell-p norm majorant with explicit dependence on that separation constant. The product error has the literal disc-supremum inequality with A*exp(S)+B*exp(S+S^2), convergent factor-supremum and square sums, and the exact conjugate-kernel Holder bound. The displayed equality is corrected directly. No new refutation is added. All thirty ordered Appendix D groups and the broader completeness qualifications remain to be reconciled.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          126,
+          127,
+          128,
+          129,
+          130
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc",
+          "work/tmp/pdfs/appendix-d-ordered-127.png": "b0c06b20662eec54d70c9fed5d3a3278ab7f8cc1696df37b8bdfee542bbc9241",
+          "work/tmp/pdfs/appendix-d-ordered-128.png": "8ec782ae430e2f688c540b45a2ebad051ac98b43d6cb37977201b718edf52c77",
+          "work/tmp/pdfs/appendix-d-ordered-129.png": "9f7dfbe49acaca9042c9434ae6b007f7cc064139a33ed0399c11f5ff46a563b1",
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a"
+        }
+      },
+      "preceding_review_hash": "0569f4117f96fd81f41fcf19db11eef6394233b72198012c362130f5d9513437",
+      "validation_lean_sources": {
+        "files": 4868,
+        "sha256": "90c11818b725dd9fb2cc938f61c6ddb3959f92929735a748b1f1bbad455a229c"
+      },
+      "new_definitions": 3,
+      "positive_theorems_integrated": 15,
+      "new_public_examples": 6,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.Coeff.appendixDReciprocalEnvelope._proof_1",
+        "NLS.Coeff.appendixDReciprocalEnvelope.congr_simp",
+        "NLS.Coeff.appendixDReciprocalEnvelope.eq_1",
+        "NLS.Coeff.appendixDReciprocalSum_far_near._proof_1_1",
+        "NLS.Fourier.modifiedHilbert.congr_simp",
+        "NLS.ZakharovShabat.appendixDDiscNormSup_bounds._simp_1_1",
+        "NLS.ZakharovShabat.appendixDModifiedDisk.eq_1",
+        "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le._simp_1_2",
+        "NLS.ZakharovShabat.appendixDModifiedDisk_nonempty._simp_1_2",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows._simp_1_1",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated._proof_1_3",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated._simp_1_2",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated._simp_1_4"
+      ],
+      "full_gate": {
+        "session": 60002,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixDProofDetailsFullCheck.log",
+        "log_sha256": "68b2890e045fce49acb0a09f17106a066b554f7b180b8c28640ffc7b51d87ddc"
+      },
+      "source_record_sha256": "f8d16193c8945272939e8b70bceb65f2071ee72d5dd2e73563f47712d4d09231"
     }
   }
 }
