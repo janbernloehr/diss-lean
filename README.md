@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 27 comparison](coverage/SECTION_27_ASSERTIONS.md)
-records 14 matched groups, three direct corrections and one contextual passage.
-Original actions, physical norms, the unrestricted endpoint and final
-constants are retained. Section 28 is next;
+Latest step: the [Section 28 small-ball bound](NLS/ZakharovShabat/SourceSection28SmallBall.lean)
+retains the original weighted norm and the constant 2^20 for complex
+sources on the closed small-norm ball. One positive theorem and two
+examples pass the full checks. The ordered comparison continues;
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

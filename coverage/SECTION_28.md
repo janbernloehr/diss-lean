@@ -1,5 +1,29 @@
 # Section 28: original weighted actions and gap lengths
 
+## Positive weighted small-ball estimate
+
+The [small-ball estimate](../NLS/ZakharovShabat/SourceSection28SmallBall.lean)
+now uses the same original weighted norm on the right-hand side:
+
+    sum_n w(2n)^2 * |I_n| <= 2^20 * ||a||^2,  when 8*||a||^2 <= 1.
+
+It applies to every M1 weight and every complex weighted source
+decoding into the retained common domain. The full action series
+is summable, including zero and the equality boundary.
+
+This directly corrects the H1-only quadratic factor in the
+near-zero intermediate display on p.119 to the weighted norm.
+The final real 2^20 and complex 2^21 bounds retain their scope.
+
+One positive theorem and two examples cover the source-shaped
+bound with the additional factor (1+||a||)^4 and the inclusive
+boundary budget 2^17. No new refutation is added.
+
+The full check passed: 8,582 build jobs, 7,692 public examples and an axiom audit of 44,706 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 28 comparison continues. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 This audit covers printed pp. 117–119: (5.14), (5.15), the valid final
 estimate of Lemma 28.1, Proposition 28.2, and the proof of Theorem 23.4.
 All actions are the original indexed contour actions. The physical H¹

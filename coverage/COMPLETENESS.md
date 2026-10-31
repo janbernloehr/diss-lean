@@ -128,7 +128,15 @@ positive theorem and two examples add no new refutation. The
 groups in that local ledger. It retains the original physical trace, exact
 H1 norm constant, unrestricted m=1 endpoint and coefficient-one final
 derivative estimate. The full remainder, zero-index split and final
-constant budget are corrected directly. Section 28 is next.
+constant budget are corrected directly.
+
+The [Section 28 small-ball estimate](../NLS/ZakharovShabat/SourceSection28SmallBall.lean)
+now bounds the full original weighted action sum by 2^20 times the
+squared weighted source norm, on the closed ball 8*norm(a)^2<=1.
+It includes every M1 weight and admissible complex source. This
+direct norm correction preserves the final real and complex
+estimates. One positive theorem and two examples add no new
+refutation. The ordered Section 28 comparison remains in progress.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

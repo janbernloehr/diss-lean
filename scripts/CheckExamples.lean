@@ -73261,3 +73261,34 @@ example : ∃ D : ℝ, 0 ≤ D ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
   nlinarith
 
 end Section27QuarterEnergyExamples
+
+section Section28SmallBallExamples
+open NLS NLS.ZakharovShabat Set
+variable {W₀ W V Wa B U T S : Set (CoeffPair 2)}
+  {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+
+-- The source-shaped estimate keeps the same weighted norm on its right side.
+example (Q : SourceSection28Data D A B U T S)
+    (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : normalizedWeightedSource w a ∈ S) (hsmall : 8*‖a‖^2 ≤ 1) :
+    (∑' n : ℤ, (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+      (2:ℝ)^20*(1+‖a‖)^4*‖a‖^2 := by
+  have hp : 1 ≤ (1+‖a‖)^4 := one_le_pow₀ (by linarith [norm_nonneg a])
+  apply (Q.weighted_action_small_ball w hw a ha hsmall).2.trans
+  nlinarith [mul_le_mul_of_nonneg_right hp (by positivity : 0 ≤ (2:ℝ)^20*‖a‖^2)]
+
+-- The inclusive small-ball boundary is admitted, with its numerical action budget.
+example (Q : SourceSection28Data D A B U T S)
+    (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : normalizedWeightedSource w a ∈ S) (hboundary : 8*‖a‖^2 = 1) :
+    (∑' n : ℤ, (w (2*n))^2*
+      ‖sourceIndexedAction (by simp) (by norm_num) n (normalizedWeightedSource w a)‖) ≤
+      (2:ℝ)^17 := by
+  have h := (Q.weighted_action_small_ball w hw a ha hboundary.le).2
+  norm_num at h ⊢
+  linarith
+
+end Section28SmallBallExamples

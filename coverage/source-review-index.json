@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T04:17:48.720724+00:00",
-  "base_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
+  "published_utc": "2026-10-31T04:41:19.266553+00:00",
+  "base_commit": "c39453dcae659d3c74eb28cafee206974fb504ca",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 180,
-    "module_hash_checks": 3946,
-    "distinct_modules": 2039
+    "review_records": 181,
+    "module_hash_checks": 3951,
+    "distinct_modules": 2040
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
-    "validated_state": "Section 27 ordered comparison changes documentation only. The exact Lean snapshot retains the successful positive quarter-energy proof check.",
+    "base_commit": "c39453dcae659d3c74eb28cafee206974fb504ca",
+    "validated_state": "Fresh full check after the positive Section28 small-ball theorem and two public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8581,
-    "public_examples": 7690,
-    "transitive_NLS_declarations": 44704,
+    "build_jobs": 8582,
+    "public_examples": 7692,
+    "transitive_NLS_declarations": 44706,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 61690,
+    "gate_session": 80905,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4858,
-      "sha256": "3667e56e5d703317df32a3f3abca28945207c834bc84a0218fa23b5b26f59bc1"
+      "files": 4859,
+      "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
     },
-    "full_gate_log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/Section27QuarterEnergyFullCheck.log",
-    "validation_reused_from_commit": "053f761701e1f096332b713a8c0d951b54d3e705"
+    "full_gate_log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section28 and broader completion qualifications remain open.",
+    "full_gate_log": "work/Section28SmallBallFullCheck.log"
   },
   "named_statements": [
     {
@@ -59608,6 +59607,95 @@
         "log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3"
       },
       "source_record_sha256": "a8b12b3d160ef6f18dec2b8270f043b85019ebc0a708ee4ba22654627cd97497"
+    },
+    "Section28SmallBallSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "c39453dcae659d3c74eb28cafee206974fb504ca",
+      "updated_utc": "2026-10-31T04:41:19.216698+00:00",
+      "source_lines": [
+        [
+          9890,
+          9897
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            9890,
+            9897
+          ],
+          "requirement": "Positive small-ball estimate in the same weighted source norm",
+          "reviewed_claims": [
+            "For every M1 weight and every complex weighted source in the retained common domain with 8*norm(a)^2<=1, the full weighted action series is summable and bounded by 2^20*norm(a)^2.",
+            "At cutoff N=0 the corrected inclusive tail is the whole sum. With x=norm(a)^2<=1/8, its budget 4608*(1+x)*(6*x+1152*x^3) is at most 124416*x and hence 2^20*x."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "qualification": "The near-zero step uses the original weighted source norm in its quadratic factor. For every M1 weight and every complex weighted source decoding into the retained common domain, 8*norm(a)^2<=1 implies summability of the whole original weighted action series and the bound 2^20*norm(a)^2. The corrected inclusive tail at N=0 proves this directly and includes zero and the equality boundary. The printed H1-only quadratic factor on p.119 is replaced by the weighted norm. The final real 2^20 and complex 2^21 estimates retain their scope. One positive theorem and two examples are added, with no new refutation. The ordered Section 28 comparison and broader completeness qualifications remain open."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection28TailEstimate.lean": "53d9407d688cd59ef8aefdcd0e405477d39f83f1d11dc5e2d5c4e855afe68d7b",
+        "NLS/ZakharovShabat/SourceSection28Original.lean": "d232928bd8ba57e58da65a2a81ee165834127972580199cc5f6f12765b863ac4",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean": "e0ddfb6d9f47c5e2eb3d6bc854dd01e3690208d125f337a37d78f2c94c01b103",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/SourceSection28SmallBall.lean": "524d3d6e683dbdab90d8e20387a418b5ae9151fe63d2d6005e6a378d1bdc9d5d"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection28TailEstimate.lean",
+        "NLS/ZakharovShabat/SourceSection28Original.lean",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean",
+        "NLS/ZakharovShabat/SourceFourierTail.lean",
+        "NLS/ZakharovShabat/SourceSection28SmallBall.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 30 ordered Section 28 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget",
+        "NLS.ZakharovShabat.sourceM1_gap_tail"
+      ],
+      "declaration_inventory_count": 44706,
+      "qualification": "The near-zero step uses the original weighted source norm in its quadratic factor. For every M1 weight and every complex weighted source decoding into the retained common domain, 8*norm(a)^2<=1 implies summability of the whole original weighted action series and the bound 2^20*norm(a)^2. The corrected inclusive tail at N=0 proves this directly and includes zero and the equality boundary. The printed H1-only quadratic factor on p.119 is replaced by the weighted norm. The final real 2^20 and complex 2^21 estimates retain their scope. One positive theorem and two examples are added, with no new refutation. The ordered Section 28 comparison and broader completeness qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          119
+        ],
+        "images": {
+          "work/tmp/pdfs/section28-ordered-119.png": "9b448e8945d1409ce494f14eb477ba481f37d17ee5da6bb1f8681c8c51d4e1f0"
+        }
+      },
+      "preceding_review_hash": "5bd5fd617fbb581cb7a7db1e27427218aa50ed19e598ab6a6d9e5cc5245caaf3",
+      "validation_lean_sources": {
+        "files": 4859,
+        "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 1,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 80905,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section28SmallBallFullCheck.log",
+        "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
+      },
+      "source_record_sha256": "c76e9d80504b29dabbe3893527d43e2e7d305703f9b569e3ea639438a6598dd3"
     }
   }
 }
