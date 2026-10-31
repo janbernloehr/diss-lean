@@ -73649,3 +73649,31 @@ example (a γ G d : ℂ) (hγ : ‖γ‖ = 2) (ha : ‖a‖ = 1)
   · exact lt_of_le_of_lt h.1 (lt_of_lt_of_le h.2.1 h.2.2)
 
 end AppendixFProofEstimatesExamples
+
+
+-- A single terminal point works for every signed index, including the collapsed zero gap.
+example : ∃ ν ∈ Metric.sphere (0 : ℂ) 1, ∀ k : ℤ,
+    segment ℝ (0 : ℂ) ν \ {(0 : ℂ)} ⊆
+      Metric.closedBall (0 : ℂ) 1 \ segment ℝ (-(k : ℂ)) (k : ℂ) := by
+  simpa only [zero_sub, zero_add] using
+    NLS.ComplexAnalysis.appendixF_exists_common_midpoint_spokes
+      (0 : ℂ) 1 (by norm_num) (fun _ : ℤ => (0 : ℂ)) (fun k => (k : ℂ))
+      (fun _ => by simp)
+
+
+-- The rescaling retains the branch on a purely imaginary midpoint ray.
+example : NLS.ZakharovShabat.normalizedStandardRoot 0 4 Complex.I =
+    -Complex.I * Complex.sqrt 2 := by
+  norm_num [NLS.ZakharovShabat.normalizedStandardRoot, Complex.I_sq]
+
+
+
+-- The positive bound also applies below the moving singular parameter for a complex gap.
+example : ‖(Complex.I/2-(1/4:ℂ)) /
+    NLS.ZakharovShabat.normalizedStandardRoot 0 (-1) (1/4)‖ ≤
+      Real.sqrt (3/4)/Real.sqrt (1/4) := by
+  have h := NLS.ZakharovShabat.appendixF_standard_root_quotient_majorant
+    0 Complex.I (Complex.I/2) 1 (by norm_num)
+    (by norm_num [norm_div]) (1/4) (by norm_num) (by norm_num [norm_div])
+  norm_num [norm_div, Complex.I_sq] at h ⊢
+  exact h

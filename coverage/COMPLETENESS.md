@@ -217,6 +217,14 @@ Compactness of the joint Cauchy quotient also supplies a local uniform
 constant without assuming a regular-factor bound. A corrected positive
 majorant has L1 error at most 4*sqrt(2e) and converges to one.
 Twenty-five positive theorems and four examples add no new refutation.
+The [Appendix F path limits](APPENDIX_F.md)
+now give a common boundary point for countably many gaps, actual
+standard-root rescaling and positive-parameter limits. The corrected
+majorant supplies the actual normalized-root path integral limit
+under explicit measurability and regular-factor hypotheses; eventual
+normalized-gap smallness is derived. Seventeen positive theorems and
+three examples add no new refutation. Full source-family assembly,
+other-gap exclusion and improper-path substitutions remain open.
 The 31-group ordered Appendix F comparison remains open.
 
 The direct contour corrections, original action-image scope and alternate

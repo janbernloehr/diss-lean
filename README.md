@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F proof details](coverage/APPENDIX_F.md)
-retain the full path coefficient, local complex endpoint branches
-and explicit short-piece bounds. Twenty-five positive theorems and four
-examples add no new refutation. The ordered comparison and
-[broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix F path limits](coverage/APPENDIX_F.md)
+provide a common boundary point, actual standard-root rescaling and
+collapsing-path integral convergence under explicit regular-factor
+hypotheses. Seventeen positive theorems and three examples add no new
+refutation. Source-family assembly and the ordered comparison remain
+open; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

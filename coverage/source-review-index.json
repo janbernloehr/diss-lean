@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T07:58:33.335172+00:00",
-  "base_commit": "6e0e7219d82e85cb8afb5639af79827858570314",
+  "published_utc": "2026-10-31T08:19:43.983985+00:00",
+  "base_commit": "0a48a67d521c861c20746ef9043773052da03ab0",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 194,
-    "module_hash_checks": 4159,
-    "distinct_modules": 2106
+    "review_records": 195,
+    "module_hash_checks": 4167,
+    "distinct_modules": 2110
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6e0e7219d82e85cb8afb5639af79827858570314",
-    "validated_state": "Fresh full check after seven Appendix F positive proof modules and four public examples.",
+    "base_commit": "0a48a67d521c861c20746ef9043773052da03ab0",
+    "validated_state": "Fresh full check after four Appendix F path-limit modules and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8601,
-    "public_examples": 7718,
-    "transitive_NLS_declarations": 44835,
+    "build_jobs": 8620,
+    "public_examples": 7721,
+    "transitive_NLS_declarations": 44870,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 95666,
+    "gate_session": 70625,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4878,
-      "sha256": "3335de46c93439905125ce111032c5ac3bf058b13d36e86e8773b4699297b0ab"
+      "files": 4882,
+      "sha256": "d867f6fe671bb16b2ca778c2569c4068ee93952e3d91f3d9e95447890150214a"
     },
-    "full_gate_log_sha256": "bae47aa96c81ce14b92141302a268809205fa28e75f5b65e27662b78815bc79c",
+    "full_gate_log_sha256": "e7916dd63a3ec286c468ed81e7fa75b72125cd344804a315df67763c40e812e5",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFPositiveProofsFullCheck.log"
+    "full_gate_log": "work/AppendixFPathLimitsFullCheck.log"
   },
   "named_statements": [
     {
@@ -66482,6 +66482,210 @@
         "log_sha256": "bae47aa96c81ce14b92141302a268809205fa28e75f5b65e27662b78815bc79c"
       },
       "source_record_sha256": "61597cfc72addce043afcacc59e0180cbbb48fc0fc875c3c999278738c39a614"
+    },
+    "AppendixFPathLimitsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "0a48a67d521c861c20746ef9043773052da03ab0",
+      "updated_utc": "2026-10-31T08:19:43.930823+00:00",
+      "source_lines": [
+        [
+          11008,
+          11010
+        ],
+        [
+          11010,
+          11025
+        ],
+        [
+          11043,
+          11053
+        ],
+        [
+          11027,
+          11053
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11008,
+            11010
+          ],
+          "requirement": "A common terminal point and punctured midpoint paths for a countable family",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_circle_line_finite",
+            "NLS.ComplexAnalysis.appendixF_exists_common_boundary_point",
+            "NLS.ComplexAnalysis.appendixF_midpoint_spoke_avoids_line",
+            "NLS.ComplexAnalysis.appendixF_exists_common_midpoint_spokes"
+          ],
+          "reviewed_claims": [
+            "A real affine line intersects the complex circle in finitely many points, including a degenerate line.",
+            "One boundary point lies off every line in an arbitrary countable family.",
+            "Each punctured midpoint spoke avoids its selected gap and stays in the common closed disc."
+          ],
+          "qualification": "A positive-radius circular isolating boundary and closed-disc midpoint membership are explicit. This step does not yet instantiate all source labels or prove exclusion of the other source gaps."
+        },
+        {
+          "source_lines": [
+            11010,
+            11025
+          ],
+          "requirement": "Actual standard-root rescaling and pointwise limits along midpoint paths",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_sqrt_positive_scale",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_spoke",
+            "NLS.ZakharovShabat.appendixF_normalized_root_spoke_tendsto",
+            "NLS.ZakharovShabat.appendixF_spoke_quotient_tendsto",
+            "NLS.ZakharovShabat.appendixF_spoke_integrand_tendsto"
+          ],
+          "reviewed_claims": [
+            "Positive real rescaling preserves the principal square-root branch.",
+            "The actual normalized standard root equals minus the nonzero complex terminal displacement times the rescaled principal root at each positive path parameter.",
+            "Collapsing gaps give the linear standard-root limit; a coalescing critical point makes the actual differential quotient tend to one.",
+            "A jointly continuous regular factor gives the complete rescaled path-integrand limit as both spectral point and source vary."
+          ],
+          "qualification": "Path parameters are strictly positive, as sufficient for almost-everywhere integral convergence. The singular zero parameter is not assigned an unsupported pointwise limit. The actual improper-path integral substitution and all source-family hypotheses remain to be supplied."
+        },
+        {
+          "source_lines": [
+            11043,
+            11053
+          ],
+          "requirement": "Convergence of complex integrals under the corrected positive moving majorant",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound",
+            "NLS.ComplexAnalysis.appendixF_normalized_majorant_error",
+            "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant"
+          ],
+          "reviewed_claims": [
+            "Normalizing the integrand by the majorant clipped below at one gives a fixed constant bound.",
+            "The integral of the normalization error is bounded by the constant times the L1 error of the majorant.",
+            "On a finite measure, almost-everywhere pointwise limits and majorants converging to one in L1 imply convergence of the complex integrals."
+          ],
+          "qualification": "The theorem states all measurability, integrability, almost-everywhere bounds and convergence hypotheses. The following helpers apply it to the corrected weight and actual normalized-root path integrands; complete source-family assembly remains open."
+        },
+        {
+          "source_lines": [
+            11027,
+            11053
+          ],
+          "requirement": "Apply the corrected majorant to the actual normalized-root path integrals",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_pointwise",
+            "NLS.ComplexAnalysis.appendixF_tendsto_intervalIntegral_positive_majorant",
+            "NLS.ZakharovShabat.appendixF_standard_root_quotient_majorant",
+            "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto",
+            "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto_of_gap_zero"
+          ],
+          "reviewed_claims": [
+            "The corrected positive weight tends to one at every positive parameter; its derived integrability and L1 bound supply convergence of unit-interval integrals.",
+            "The actual normalized standard-root quotient obeys the positive weight under the half-gap critical offset, away from the one moving singleton.",
+            "The rescaled midpoint-path integrals converge using their actual normalized-root denominator, with explicit measurability, pointwise regular-factor limits and one common bound.",
+            "Convergence of the gap and terminal displacement derives eventual normalized-gap smallness; no extra bound on the initial finitely many gaps is needed."
+          ],
+          "qualification": "The singular zero parameter and moving singleton are excluded only on null sets. Measurability and a common bound on terminal displacement times the regular factor are explicit. Deriving these for the complete source family and proving the improper-path substitution remain open."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/ZakharovShabat/SourceStandardRootBranch.lean": "f4308354f828ea56486ca900a3017e9280fbe2a9c520b0ab2d11efaaf65002a6",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean": "d3cc9cf08f3aa4ff329169e37e21b9bcc4762afeb7bf9abb4694f06f3c4c9fa6",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean": "5edcf7a3955cfb33b9f297796c5113aa6e33fdc3e65a5b1067f99c8fadd9662d",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5",
+        "NLS/ComplexAnalysis/AppendixFMovingDominated.lean": "13e8521050b0954a793c35234c8cbf48d6be0f8492b306fd7c71b40e8069ec1a",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean": "a9fda8e072a02be471c9ac690582f669a1139e73d27fd3e45c9114b90d60b0f0",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean": "a4274432ef21288c8b456242e33a7f6e61f02ceb737f8eb00d5d89e83e6fd211"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean",
+        "NLS/ZakharovShabat/SourceStandardRootBranch.lean",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean",
+        "NLS/ComplexAnalysis/AppendixFMovingDominated.lean",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_circle_line_finite",
+        "NLS.ComplexAnalysis.appendixF_exists_common_boundary_point",
+        "NLS.ComplexAnalysis.appendixF_exists_common_midpoint_spokes",
+        "NLS.ComplexAnalysis.appendixF_midpoint_spoke_avoids_line",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_pointwise",
+        "NLS.ComplexAnalysis.appendixF_sqrt_positive_scale",
+        "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant",
+        "NLS.ComplexAnalysis.appendixF_tendsto_intervalIntegral_positive_majorant",
+        "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto",
+        "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto_of_gap_zero",
+        "NLS.ZakharovShabat.appendixF_normalized_root_on_spoke",
+        "NLS.ZakharovShabat.appendixF_normalized_root_spoke_tendsto",
+        "NLS.ZakharovShabat.appendixF_spoke_integrand_tendsto",
+        "NLS.ZakharovShabat.appendixF_spoke_quotient_tendsto",
+        "NLS.ZakharovShabat.appendixF_standard_root_quotient_majorant"
+      ],
+      "declaration_inventory_count": 44870,
+      "qualification": "Four modules add seventeen positive theorems and three examples for the midpoint-path argument in F.2. A single circular boundary point serves any countable gap family; punctured spokes avoid their selected gaps. The actual normalized standard root has the rescaled principal-root formula and positive-parameter limits. Normalization proves finite-measure integral convergence under a moving majorant tending to one in L1. The corrected explicit weight supplies the actual normalized-root integral limit under stated measurability, pointwise regular-factor limits and one common bound; eventual normalized-gap smallness is derived. Full source-family assembly, exclusion of other source gaps and improper-path substitutions remain open. No new definition or refutation is added; historical refutations and broader completeness qualifications remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+      "validation_lean_sources": {
+        "files": 4882,
+        "sha256": "d867f6fe671bb16b2ca778c2569c4068ee93952e3d91f3d9e95447890150214a"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 17,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ComplexAnalysis.appendixF_circle_line_finite._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_circle_line_finite._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_exists_common_midpoint_spokes._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_3",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_4",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_5",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_6",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_bound._simp_1_7",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_3",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_4",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_5",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_6",
+        "NLS.ComplexAnalysis.appendixF_normalized_majorant_error._simp_1_7",
+        "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant._abel_1_1"
+      ],
+      "full_gate": {
+        "session": 70625,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFPathLimitsFullCheck.log",
+        "log_sha256": "e7916dd63a3ec286c468ed81e7fa75b72125cd344804a315df67763c40e812e5"
+      },
+      "source_record_sha256": "a9cf3271f847121846b2970a7695cde3654c6e03b1a8ad11f0e74fbf3bc438c2"
     }
   }
 }

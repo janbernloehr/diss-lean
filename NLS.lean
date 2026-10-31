@@ -4877,3 +4877,7 @@ import NLS.ZakharovShabat.AppendixFShortPiece
 import NLS.ZakharovShabat.AppendixFUniformShortPiece
 import NLS.ComplexAnalysis.AppendixFSpokeGeometry
 import NLS.ComplexAnalysis.AppendixFPositiveMajorant
+import NLS.ComplexAnalysis.AppendixFCommonBoundary
+import NLS.ZakharovShabat.AppendixFRootPath
+import NLS.ComplexAnalysis.AppendixFMovingDominated
+import NLS.ZakharovShabat.AppendixFPositiveIntegral

@@ -1,5 +1,36 @@
 # Appendix F: analyticity of the primitive
 
+## Common boundary points and collapsing path limits
+
+The [common boundary point](../NLS/ComplexAnalysis/AppendixFCommonBoundary.lean)
+works for every selected gap in any countable family. The punctured
+midpoint spokes avoid those gaps and remain in the closed isolating disc.
+
+The [standard-root path formulas](../NLS/ZakharovShabat/AppendixFRootPath.lean)
+retain the actual normalized root, arbitrary nonzero complex terminal
+displacements and positive path parameters. They give the root, quotient
+and regular-factor integrand limits as the gap collapses.
+
+The [moving-majorant convergence theorem](../NLS/ComplexAnalysis/AppendixFMovingDominated.lean)
+normalizes the integrand to a fixed bound and controls the remaining
+integral error by the majorant's L1 error. The
+[explicit interval application](../NLS/ZakharovShabat/AppendixFPositiveIntegral.lean)
+uses the corrected positive weight to prove the actual normalized-root
+path integral limit. Measurability, pointwise regular-factor limits and
+one common bound are explicit; eventual normalized-gap smallness follows
+from gap convergence. Null endpoints and moving singletons are handled
+almost everywhere.
+
+Four modules add seventeen positive theorems and three examples.
+No new refutation is added.
+
+The full check passed: 8,620 build jobs, 7,721 public examples and an axiom audit of 44,870 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Full
+source-family assembly, other-gap exclusion and improper-path
+substitutions remain to be completed. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Positive path, branch and quantitative proofs
 
 The [boundary integral identities](../NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean)
