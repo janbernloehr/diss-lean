@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix D comparison](coverage/APPENDIX_D_ASSERTIONS.md)
-records nineteen matched groups, ten direct corrections and one
-contextual passage. Literal products, suprema, uniform bounds and
-explicit constants are retained. Appendix E is next;
-[broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix E local assertions](coverage/APPENDIX_E.md)
+prove zero germs, vanishing complex iterated derivatives and zero
+power-series diagonals at real points. Three positive theorems and
+two examples use the existing complex-line argument. The ordered
+comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

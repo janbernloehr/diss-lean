@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T06:31:52.672373+00:00",
-  "base_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
+  "published_utc": "2026-10-31T07:36:57.728108+00:00",
+  "base_commit": "984e38847c140899579b35c55bf5c5d4ccbfcc02",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 191,
-    "module_hash_checks": 4123,
-    "distinct_modules": 2091
+    "review_records": 192,
+    "module_hash_checks": 4126,
+    "distinct_modules": 2093
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
-    "validated_state": "Appendix D ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix D final-helper check.",
+    "base_commit": "984e38847c140899579b35c55bf5c5d4ccbfcc02",
+    "validated_state": "Fresh full check after one Appendix E local Taylor module and two public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8593,
-    "public_examples": 7712,
-    "transitive_NLS_declarations": 44804,
+    "build_jobs": 8594,
+    "public_examples": 7714,
+    "transitive_NLS_declarations": 44807,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 15320,
+    "gate_session": 50441,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4870,
-      "sha256": "dfceb3bbe2773e4bf6aed96473c923496013e48c517be9ce6d1de76a3cb35bb6"
+      "files": 4871,
+      "sha256": "76432f491dfe883958fc447dfd9df9cc4d8445d5c82b21569bcc16f0eec82ea0"
     },
-    "full_gate_log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixDFinalHelpersFullCheck.log",
-    "validation_reused_from_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce"
+    "full_gate_log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix E and broader completeness qualifications remain open.",
+    "full_gate_log": "work/AppendixELocalTaylorFullCheckInline.log"
   },
   "named_statements": [
     {
@@ -65544,6 +65543,88 @@
         "log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe"
       },
       "source_record_sha256": "5acbfabfc2360c7009e0cbcb76aae7701c458a051fffaf2b8bd4e88d96d0b0b9"
+    },
+    "AppendixELocalTaylorSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "984e38847c140899579b35c55bf5c5d4ccbfcc02",
+      "updated_utc": "2026-10-31T07:36:57.676757+00:00",
+      "source_lines": [
+        [
+          10733,
+          10747
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10733,
+            10747
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.sourceLemmaE2_zero_germ",
+            "NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero",
+            "NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero"
+          ],
+          "reviewed_claims": [
+            "Vanishing on the real slice gives a zero germ at each real point of an open domain.",
+            "Every complex iterated derivative and every supplied local multilinear power-series diagonal vanishes, including mixed derivative evaluations and imaginary directions."
+          ],
+          "qualification": "The existing complex-line argument supplies local vanishing; derivative and series uniqueness give the consequences. No connectedness is assumed locally. This is an alternative to the printed polarization argument and does not assert that arbitrary nonsymmetric multilinear series maps are zero."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/RealComplexification.lean": "e88c6514ecd82688e09aa241ba2ef8f7b167649ed6c51cded3aba95f7691734e",
+        "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60",
+        "NLS/ComplexAnalysis/AppendixELocalTaylor.lean": "a92dc995f9692b196b9968a885186455844bdb54798f067a9e24d678dbb1593e"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/RealComplexification.lean",
+        "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean",
+        "NLS/ComplexAnalysis/AppendixELocalTaylor.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all eleven ordered Appendix E groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero",
+        "NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero",
+        "NLS.ComplexAnalysis.sourceLemmaE2_zero_germ"
+      ],
+      "declaration_inventory_count": 44807,
+      "qualification": "One module adds three positive theorems and two examples for the local assertions in the proof of E.2. A real point in the open domain has a zero germ; all complex iterated derivatives and every local multilinear power-series diagonal vanish. Continuous real complexifications and complete complex targets are retained, with no connectedness needed locally. The existing complex-line argument and uniqueness supply an alternative to the printed polarization derivation. Arbitrary nonsymmetric multilinear maps are not asserted to vanish. No new definition or refutation is added. The eleven ordered Appendix E groups and broader completeness qualifications remain to be reconciled.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          130,
+          131
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a",
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271"
+        }
+      },
+      "preceding_review_hash": "90f103b86311ac03a5f2ed641be4f991b2a8ad7a2bad81026c0dedce8fd19e0e",
+      "validation_lean_sources": {
+        "files": 4871,
+        "sha256": "76432f491dfe883958fc447dfd9df9cc4d8445d5c82b21569bcc16f0eec82ea0"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 50441,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixELocalTaylorFullCheckInline.log",
+        "log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26"
+      },
+      "source_record_sha256": "3cee54697ccf81073663f97689607f7df95ddfec1eca2f9e86e76a86a2be2689"
     }
   }
 }

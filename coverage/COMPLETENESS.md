@@ -200,7 +200,12 @@ It retains literal products, original quantifiers, exact roots and
 multiplicities, local uniformity, actual disc suprema and independent
 sampling. Direct corrections keep the half-radius tail, signed sums,
 separation constants, c^p and the p norm explicit. Historical refutations
-and broader qualifications remain unchanged. Appendix E is next.
+and broader qualifications remain unchanged. The [Appendix E local assertions](APPENDIX_E.md)
+now prove zero germs, all complex iterated derivatives and every local
+power-series diagonal at real points. The alternative complex-line
+argument requires no connectedness locally. Three positive theorems
+and two examples add no new refutation. The eleven-group ordered
+Appendix E comparison remains to be reconciled.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

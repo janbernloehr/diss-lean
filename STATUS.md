@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: ordered Appendix D comparison
+## Current milestone: Appendix E local Taylor assertions
+
+The [local E.2 assertions](NLS/ComplexAnalysis/AppendixELocalTaylor.lean)
+now include zero germs at real points, vanishing of all complex
+iterated derivatives, and zero diagonal coefficients for every
+supplied local multilinear power series.
+
+The proof uses the existing complex-line identity argument and
+uniqueness. It works for continuous real complexifications and
+complete complex targets, without connectedness of the local domain.
+Arbitrary nonsymmetric multilinear series maps are not asserted
+to vanish.
+
+One module adds three positive theorems and two examples. The examples
+cover a translated real point, a vector target, mixed third derivatives
+and a purely imaginary direction. No new refutation is added.
+
+The full check passed: 8,594 build jobs, 7,714 public examples and an axiom audit of 44,807 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The eleven-group ordered Appendix E comparison remains to be reconciled.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix D comparison
 
 The [ordered Appendix D comparison](coverage/APPENDIX_D_ASSERTIONS.md)
 covers thirty groups on pp.126-130: nineteen matched, ten directly

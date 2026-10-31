@@ -4869,3 +4869,4 @@ import NLS.ZakharovShabat.AppendixDModifiedDisks
 import NLS.ZakharovShabat.AppendixDDiscSupProduct
 import NLS.ZakharovShabat.AppendixDNearestLattice
 import NLS.ZakharovShabat.AppendixDDiscSupSquare
+import NLS.ComplexAnalysis.AppendixELocalTaylor

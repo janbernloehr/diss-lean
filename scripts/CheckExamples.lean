@@ -73540,3 +73540,35 @@ example (r : NLS.Coeff ⊤) (a : NLS.Coeff (ENNReal.ofReal (3/2)))
   exact h.2.2
 
 end AppendixDDiscSupSquareExamples
+
+section AppendixELocalTaylorExamples
+open Set Metric
+
+-- A translated real point and a vector target work without connectedness of the domain.
+example (f : ℂ → ℂ × ℂ) (hf : AnalyticOnNhd ℂ f ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ))
+    (hzero : EqOn f 0 (((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) ∩ NLS.ComplexAnalysis.scalarRealComplexification.realLocus))
+    (v : Fin 3 → ℂ) : iteratedFDeriv ℂ 3 f 2 v = 0 := by
+  have hu : (2:ℂ) ∈ ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) ∩ NLS.ComplexAnalysis.scalarRealComplexification.realLocus := by
+    constructor
+    · exact Or.inl (by simp)
+    · rw [NLS.ComplexAnalysis.scalarRealComplexification_realLocus]
+      simp
+  rw [NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero
+    NLS.ComplexAnalysis.scalarRealComplexification ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) (isOpen_ball.union isOpen_ball) hu f hf hzero]
+  simp
+
+-- The diagonal vanishes also in a purely imaginary direction for any supplied local series.
+example (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ))
+    (hzero : EqOn f 0 (((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) ∩ NLS.ComplexAnalysis.scalarRealComplexification.realLocus))
+    (P : FormalMultilinearSeries ℂ ℂ ℂ) (hP : HasFPowerSeriesAt f P 2) :
+    P 7 (fun _ => Complex.I) = 0 := by
+  have hu : (2:ℂ) ∈ ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) ∩ NLS.ComplexAnalysis.scalarRealComplexification.realLocus := by
+    constructor
+    · exact Or.inl (by simp)
+    · rw [NLS.ComplexAnalysis.scalarRealComplexification_realLocus]
+      simp
+  exact NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero
+    NLS.ComplexAnalysis.scalarRealComplexification ((Metric.ball (2:ℂ) (1/4:ℝ) ∪ Metric.ball ((2:ℂ)+Complex.I) (1/4:ℝ)) : Set ℂ) (isOpen_ball.union isOpen_ball) hu
+    f hf hzero P hP 7 Complex.I
+
+end AppendixELocalTaylorExamples
