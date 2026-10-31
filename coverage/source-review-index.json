@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T00:56:15.093543+00:00",
-  "base_commit": "6da1786e8fe8f15ae7724e8b5a5a5dffe554dd19",
+  "published_utc": "2026-10-31T01:17:27.280078+00:00",
+  "base_commit": "203dcdc7dc0f3513cdf4ca71e60e7442605488d2",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 165,
-    "module_hash_checks": 3609,
-    "distinct_modules": 1940
+    "review_records": 166,
+    "module_hash_checks": 3619,
+    "distinct_modules": 1948
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6da1786e8fe8f15ae7724e8b5a5a5dffe554dd19",
-    "validated_state": "Fresh full check after eleven positive uniform Section22 phase-estimate theorems and six API examples.",
+    "base_commit": "203dcdc7dc0f3513cdf4ca71e60e7442605488d2",
+    "validated_state": "Fresh full check after seven positive Section22 phase-separation and Hilbert-energy theorems and five API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8567,
-    "public_examples": 7658,
-    "transitive_NLS_declarations": 44658,
+    "build_jobs": 8570,
+    "public_examples": 7663,
+    "transitive_NLS_declarations": 44665,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 23136,
+    "gate_session": 94261,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4844,
-      "sha256": "6af264105027a7603ff3efb48c0e6727c51ffd21f426cdb568bc45f086cb8b08"
+      "files": 4847,
+      "sha256": "2a96210e11d54864443b0c74c77327275a69306394e586e2c48baa3321c0924e"
     },
-    "full_gate_log_sha256": "0f56873adf8e9c99419010a8eed0a7d4e05d98d5b379a3a09cd9659d1a72908b",
+    "full_gate_log_sha256": "bd9a8b484d3fdc0c92d73845110c2869cf783d48a28fa83b02db7574d5656d1b",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section22 comparison and broader completeness qualifications remain open.",
-    "full_gate_log": "work/Section22UniformEstimateFullCheck.log"
+    "full_gate_log": "work/Section22PhaseSeparationFullCheck.log"
   },
   "named_statements": [
     {
@@ -50550,6 +50550,148 @@
         "log_sha256": "0f56873adf8e9c99419010a8eed0a7d4e05d98d5b379a3a09cd9659d1a72908b"
       },
       "source_record_sha256": "0eb9bc5057ad45a73a1ec4b9d2aa465df4e16b4c6eedcbf5fe0bb2b018f72c23"
+    },
+    "Section22PhaseSeparationSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "203dcdc7dc0f3513cdf4ca71e60e7442605488d2",
+      "updated_utc": "2026-10-31T01:17:27.280078+00:00",
+      "source_lines": [
+        [
+          8282,
+          8287
+        ],
+        [
+          8289,
+          8294
+        ],
+        [
+          8296,
+          8306
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8282,
+            8287
+          ],
+          "requirement": "Hilbert energy divergence at the stipulated non-Hilbert limit",
+          "declarations": [
+            "NLS.Coeff.tendsto_energy_atTop_of_nonsummable_limit",
+            "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+            "NLS.ZakharovShabat.mem_sourceHilbertLocus_iff",
+            "NLS.ZakharovShabat.tendsto_sourceFiniteGapRealMass_atTop"
+          ],
+          "reviewed_claims": [
+            "Every pointwise Hilbert approximation to a nonsquare-summable first component has squared norm tending to infinity. The literal half-sum of the squared norms of two Hilbert components also diverges. No finite-gap premise is needed for these energy statements."
+          ],
+          "qualification": "Correct the repeated proof label to (iii). The infinite energy concerns the stipulated non-Hilbert datum, not every element of the larger sequence space. The existing original physical mass theorem retains its finite-gap model; generic complex-pair energy is not identified with physical mass off the real form."
+        },
+        {
+          "source_lines": [
+            8289,
+            8294
+          ],
+          "requirement": "Successive frequency gaps and separating times",
+          "declarations": [
+            "NLS.Dynamics.exists_frequency_gap_subsequence",
+            "NLS.Dynamics.exists_phase_separating_times",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.tendsto_finiteGapOrdinaryFrequency_atTop"
+          ],
+          "reviewed_claims": [
+            "Any frequency sequence tending to positive infinity has a strictly increasing subsequence with any prescribed lower gap. Taking the gap at least pi/T gives positive times at most T with relative phase exactly minus one. The original finite-gap application reflects these times to retain the physical first-coordinate phase on [-T,T]."
+          ],
+          "qualification": "No monotonicity of the original frequency sequence is assumed. The selected coordinate is an arbitrary signed index with nonzero amplitude; the printed restriction to positive indices is unnecessary."
+        },
+        {
+          "source_lines": [
+            8296,
+            8306
+          ],
+          "requirement": "Literal amplitude-minus-error and half-amplitude separation",
+          "declarations": [
+            "NLS.Dynamics.norm_phase_pair_lower",
+            "NLS.Coeff.exists_phase_separated_subsequence",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation"
+          ],
+          "reviewed_claims": [
+            "At each selected time, the scalar trajectory difference is bounded below by the preceding amplitude norm minus the full sequence norm of the successive amplitude difference. Convergence and a nonzero limiting amplitude give the exact eventual lower bound of half that limiting amplitude."
+          ],
+          "qualification": "The generic coefficient result allows any Banach sequence exponent, including infinity. The original source application retains the existing finite source exponent, original moment and root families, and actual finite-gap approximation. It does not enlarge the agreement scope of the existing physical nonextension theorem."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Dynamics/PhaseSubsequenceSeparation.lean": "1c22cc0aa48709ae214c0e5f2a3f065eda6af3ddf6102e994084b4679bd553f9",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean": "955a7c7cd58f9fcc504cd4fc0eb1e7f42e7dfc4f52bb3b1e51a1b019b20686c9",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean": "7b8ac07a0560a1c1b66aaf35a19eec05e68b7e3445a38943acd78076a30e1914",
+        "NLS/Dynamics/UnboundedPhaseObstruction.lean": "19e58a2a806c5d12f61c9caa974bf72dcfd7ff08637ae741a60ca5586ef3ce61",
+        "NLS/SequenceSpaces/PhaseRotation.lean": "b041c00a59f32cdbb445c335d02aea5e8b7bfaabb1c5b9d4a1774fc86f757ea7",
+        "NLS/ZakharovShabat/SourceSection22Nonextension.lean": "42265ad6c0092590ad1617bf9fd57ba58151e3144f6be6b8f2ab9f3dcb5aded4",
+        "NLS/ZakharovShabat/SourceOrdinaryTheorem22_1III.lean": "845f4cacaee0b64b23877d52b10a89720eb8eac8257efb037788cb7e9f927c88",
+        "NLS/ZakharovShabat/SourceFiniteGapMassDivergence.lean": "31dfb29fc0629ead82ccf93c90df70f4a5109127bc5f75d7f6f6bb9c67f20c14",
+        "NLS/ZakharovShabat/SourceFiniteGapOrdinaryTrajectory.lean": "98c22ca73eb622a47d0e116bdfc383b43485533ba86c2a0eaa16af50dc148993",
+        "NLS/ZakharovShabat/SourceOrdinaryCoordinateObstruction.lean": "b8238cba14c8382aeba685de2e44874bcb0f1a9c806086efdca81a2991126590"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Dynamics/PhaseSubsequenceSeparation.lean",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean",
+        "NLS/Dynamics/UnboundedPhaseObstruction.lean",
+        "NLS/SequenceSpaces/PhaseRotation.lean",
+        "NLS/ZakharovShabat/SourceSection22Nonextension.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryTheorem22_1III.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapMassDivergence.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapOrdinaryTrajectory.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryCoordinateObstruction.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete all37 ordered Section22 source groups with exact arbitrary-Hilbert and original-family scopes."
+      ],
+      "resolved_declarations": [
+        "NLS.Coeff.exists_phase_separated_subsequence",
+        "NLS.Coeff.tendsto_energy_atTop_of_nonsummable_limit",
+        "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+        "NLS.Dynamics.exists_frequency_gap_subsequence",
+        "NLS.Dynamics.exists_phase_separating_times",
+        "NLS.Dynamics.norm_phase_pair_lower",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.tendsto_finiteGapOrdinaryFrequency_atTop",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+        "NLS.ZakharovShabat.mem_sourceHilbertLocus_iff",
+        "NLS.ZakharovShabat.tendsto_sourceFiniteGapRealMass_atTop"
+      ],
+      "declaration_inventory_count": 44665,
+      "qualification": "This positive follow-up proves the successive-frequency subsequence, the amplitude-minus-sequence-error bound and eventual half-amplitude separation printed on p.100. The generic result permits arbitrary converging coefficient amplitudes and diverging real frequencies, including zero and negative selected indices. Its original-family application uses actual finite-gap source approximations and physical first-coordinate signs on [-T,T]. The separate Hilbert energy lemma covers every pointwise Hilbert approximation to a nonsquare-summable limit, with the literal half-sum pair energy; it does not require finite-gap data. General complex-pair energy is called physical mass only on the real form. The existing nonextension conclusions and their finite-gap versus all-smooth agreement scopes remain unchanged. Correct the repeated proof label, the unnecessary positive-index restriction and the overbroad mass-divergence wording directly. No new refutation is added. The ordered Section22 comparison and broader completeness qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          100
+        ],
+        "images": {
+          "work/tmp/pdfs/section22-100.png": "0b17132c2201d72ccfc4a579c4914c76a386fa3ccec15a47e785695947201970"
+        }
+      },
+      "preceding_review_hash": "0eb9bc5057ad45a73a1ec4b9d2aa465df4e16b4c6eedcbf5fe0bb2b018f72c23",
+      "validation_lean_sources": {
+        "files": 4847,
+        "sha256": "2a96210e11d54864443b0c74c77327275a69306394e586e2c48baa3321c0924e"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 7,
+      "new_public_examples": 5,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 94261,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section22PhaseSeparationFullCheck.log",
+        "log_sha256": "bd9a8b484d3fdc0c92d73845110c2869cf783d48a28fa83b02db7574d5656d1b"
+      },
+      "source_record_sha256": "ef301f1038abefe8b8c65b064fa0e26b968be27a907846db67a9cef22aa443bb"
     }
   }
 }

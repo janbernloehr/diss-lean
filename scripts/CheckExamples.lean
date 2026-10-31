@@ -72809,3 +72809,77 @@ example {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 →
   exact ⟨V',hV,hφ,χ,hχU,hr,hb⟩
 
 end Section22PhaseCoordinateExamples
+
+section Section22PhaseSeparationExamples
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal unitInterval ContDiff
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- No monotonicity is assumed of the original frequencies. The chosen
+-- subsequence is strictly increasing and its relative phase equals -1.
+example (freq : ℕ → ℝ) (hf : Tendsto freq atTop atTop) (T : ℝ) (hT : 0 < T) :
+    ∃ r : ℕ → ℕ, StrictMono r ∧ ∃ time : ℕ → ℝ,
+      (∀ m, 0 < time m ∧ time m ≤ T) ∧
+      ∀ m, Complex.exp ((((time m*(freq (r (m+1))-freq (r m)) : ℝ) : ℂ))*Complex.I) = -1 :=
+  Dynamics.exists_phase_separating_times freq hf T hT
+
+-- The exact half-amplitude separation holds at a negative coordinate,
+-- allowing arbitrary convergent amplitudes in a non-Hilbert exponent.
+example (freq : ℕ → ℝ) (hf : Tendsto freq atTop atTop)
+    (z : ℕ → Coeff 4) (z₀ : Coeff 4) (hz : Tendsto z atTop (𝓝 z₀)) (hn : z₀ (-3) ≠ 0) :
+    ∃ r : ℕ → ℕ, StrictMono r ∧ ∃ time : ℕ → ℝ,
+      (∀ m, 0 < time m ∧ time m ≤ 1) ∧
+      ∀ᶠ m : ℕ in atTop, ‖z₀ (-3)‖/2 ≤
+        ‖Complex.exp ((((time m*freq (r (m+1)) : ℝ) : ℂ))*Complex.I)*z (r (m+1)) (-3)-
+          Complex.exp ((((time m*freq (r m) : ℝ) : ℂ))*Complex.I)*z (r m) (-3)‖ := by
+  obtain ⟨r,hr,time,ht,_,he⟩ := Coeff.exists_phase_separated_subsequence
+    freq hf z z₀ hz (-3) hn 1 (by norm_num)
+  exact ⟨r,hr,time,ht,he⟩
+
+-- The source has precisely the amplitude-minus-sequence-error lower bound.
+example (freq : ℕ → ℝ) (hf : Tendsto freq atTop atTop)
+    (z : ℕ → Coeff 4) (z₀ : Coeff 4) (hz : Tendsto z atTop (𝓝 z₀)) (hn : z₀ 0 ≠ 0)
+    (T : ℝ) (hT : 0 < T) :
+    ∃ r : ℕ → ℕ, StrictMono r ∧ ∃ time : ℕ → ℝ,
+      (∀ m, 0 < time m ∧ time m ≤ T) ∧
+      ∀ m, ‖z (r m) 0‖-‖z (r (m+1))-z (r m)‖ ≤
+        ‖Complex.exp ((((time m*freq (r (m+1)) : ℝ) : ℂ))*Complex.I)*z (r (m+1)) 0-
+          Complex.exp ((((time m*freq (r m) : ℝ) : ℂ))*Complex.I)*z (r m) 0‖ := by
+  obtain ⟨r,hr,time,ht,hb,_⟩ := Coeff.exists_phase_separated_subsequence freq hf z z₀ hz 0 hn T hT
+  exact ⟨r,hr,time,ht,fun m => (hb m).2⟩
+
+-- Actual original p=4 approximations retain physical first-coordinate
+-- signs, the zero index, and the symmetric compact time interval.
+example {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 4)
+    (hφ : φ ∉ sourceHilbertLocus (by norm_num)) (ψ : ℕ → realTypeSourceSubmodule 4)
+    (hf : ∀ j, ψ j ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (hψ : Tendsto ψ atTop (𝓝 φ))
+    (hn : (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 0 ≠ 0) :
+    let freq := fun j => A.finiteGapOrdinaryFrequency (ψ j) (hf j) 0
+    let amp := fun j => (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s (ψ j).val).1
+    ∃ r : ℕ → ℕ, StrictMono r ∧ ∃ time : ℕ → ℝ,
+      (∀ m, time m ∈ Icc (-1 : ℝ) 1) ∧
+      ∀ᶠ m : ℕ in atTop, ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 0‖/2 ≤
+        ‖Complex.exp ((((-time m*freq (r (m+1)) : ℝ) : ℂ))*Complex.I)*amp (r (m+1)) 0-
+          Complex.exp ((((-time m*freq (r m) : ℝ) : ℂ))*Complex.I)*amp (r m) 0‖ := by
+  obtain ⟨r,hr,time,ht,_,he⟩ := Q.exists_finiteGap_coordinate_separation
+    (by norm_num) φ hφ ψ hf hψ 0 hn 1 (by norm_num)
+  exact ⟨r,hr,time,ht,he⟩
+
+-- The printed half-sum Hilbert energy diverges for every Hilbert
+-- approximation to a non-square-summable ell4 limit, without finite-gap data.
+example (a : Coeff 4) (ha : ¬ Summable (fun n : ℤ => ‖a n‖ ^ 2))
+    (z : ℕ → Coeff 2 × Coeff 2)
+    (hz : Tendsto (fun j => Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4) (z j).1)
+      atTop (𝓝 a)) :
+    Tendsto (fun j => (‖(z j).1‖ ^ 2+‖(z j).2‖ ^ 2)/2) atTop atTop := by
+  apply Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit (fun n => a n) ha z
+  intro n
+  have h : Tendsto (fun j =>
+      (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4) (z j).1) n) atTop (𝓝 (a n)) :=
+    (lp.evalCLM ℂ (fun _ : ℤ => ℂ) 4 n).continuous.continuousAt.tendsto.comp hz
+  simpa only [Coeff.exponentInclusion_apply] using h
+
+end Section22PhaseSeparationExamples

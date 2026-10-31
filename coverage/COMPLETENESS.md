@@ -51,7 +51,11 @@ while the [cutoff and uniform estimates](../NLS/ZakharovShabat/SourceSection22Un
 are now proved. One original complex coordinate neighborhood supports
 the mixed frequency/exponential bounds and full analytic trajectories
 bounded by `exp(R*C) * M`, with the neighborhood and constants chosen
-before every horizon.
+before every horizon. The [phase-separation estimates](../NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
+now also give the literal successive-frequency construction, amplitude-minus-error
+bound and eventual half-amplitude separation. The independent Hilbert-energy
+lemma covers arbitrary pointwise approximations; the original source application
+uses actual finite-gap approximations. The full ordered comparison is still pending.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

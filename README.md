@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [uniform Section 22 phase estimates](NLS/ZakharovShabat/SourceSection22UniformEstimates.lean)
-now supply the symmetric cutoff and time increment, a uniform mixed
-exponential bound and one actual complex coordinate neighborhood with
-full analytic trajectories bounded by `exp(R*C) * M` before every horizon.
-Eleven positive theorems and six API examples pass the full checks.
-Path codomains are corrected directly, with no new refutation.
+Latest step: [Section 22 phase separation](NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
+now supplies the successive-frequency subsequence, the exact
+amplitude-minus-error bound and eventual half-amplitude separation.
+Hilbert energy divergence also holds for arbitrary pointwise approximations.
+Seven positive theorems and five API examples pass the full checks.
+The source label, index and non-Hilbert qualifications are corrected directly.
 The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013

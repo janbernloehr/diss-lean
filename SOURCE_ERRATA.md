@@ -3320,3 +3320,17 @@ neighborhood are proved in
 [SourceSection22UniformEstimates.lean](NLS/ZakharovShabat/SourceSection22UniformEstimates.lean).
 These type corrections add no refutation and preserve the existing
 physical phase-sign correction.
+
+## Section 22 nonextension proof qualifications (page 100)
+
+The repeated proof label `(ii)` introducing the non-Hilbert argument should
+be `(iii)`. Choose any signed coordinate with nonzero amplitude; the
+printed restriction to positive indices is unnecessary. The infinite-mass
+assertion concerns the stipulated datum outside the Hilbert space, not
+every element of the larger sequence space.
+
+The positive [separation proof](NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
+retains the exact half-amplitude constant and the original physical signs.
+The [energy proof](NLS/SequenceSpaces/HilbertEnergyDivergence.lean) covers
+arbitrary pointwise Hilbert approximations. These corrections introduce
+no new refutation.

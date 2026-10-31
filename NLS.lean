@@ -4843,3 +4843,6 @@ import NLS.ZakharovShabat.SourceSection22PhaseEstimate
 import NLS.Dynamics.PhaseContinuityChoice
 import NLS.SequenceSpaces.UniformPhaseExponential
 import NLS.ZakharovShabat.SourceSection22UniformEstimates
+import NLS.Dynamics.PhaseSubsequenceSeparation
+import NLS.SequenceSpaces.HilbertEnergyDivergence
+import NLS.ZakharovShabat.SourceSection22PhaseSeparation

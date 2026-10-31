@@ -1,5 +1,34 @@
 # Section 22: original phases and physical solutions
 
+## Positive phase separation and Hilbert energy
+
+The successive-frequency construction and both separation bounds on p. 100
+are now proved in [PhaseSubsequenceSeparation.lean](../NLS/Dynamics/PhaseSubsequenceSeparation.lean).
+Any diverging real frequency sequence has a strictly increasing subsequence
+with sufficiently large gaps. At selected times of magnitude at most T,
+the relative phase is minus one. The trajectory difference has the literal
+amplitude-minus-sequence-error lower bound and is eventually at least half
+the nonzero limiting amplitude.
+
+[SourceSection22PhaseSeparation.lean](../NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
+applies these estimates to any actual finite-gap approximation in the
+original source family, retaining physical signs and every signed index.
+[HilbertEnergyDivergence.lean](../NLS/SequenceSpaces/HilbertEnergyDivergence.lean)
+also proves divergence of the squared Hilbert norm and the literal half-sum
+pair energy for arbitrary pointwise Hilbert approximations, without a
+finite-gap premise. General complex-pair energy is identified as physical
+mass only on the real form.
+
+The repeated proof label is corrected to (iii), the selected index may be
+any signed index with nonzero amplitude, and the infinite-mass statement
+is restricted to the stipulated non-Hilbert datum. Seven positive theorems
+and five API examples are integrated. No new refutation is added.
+
+The full ./scripts/check.sh passed with 8,570 build jobs, 7,663 public examples and an axiom audit of 44,665 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Five API examples cover arbitrary diverging frequencies, negative and zero indices, the exact amplitude-minus-error bound, the original p=4 physical application and arbitrary Hilbert-pair approximation. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 22 comparison remains in progress.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Positive cutoff and uniform coordinate estimates
 
 The explicit cutoff and uniform complex-neighborhood estimates on pp. 99–100
