@@ -4867,3 +4867,5 @@ import NLS.ZakharovShabat.AppendixDSquarePower
 import NLS.SequenceSpaces.AppendixDExteriorSum
 import NLS.ZakharovShabat.AppendixDModifiedDisks
 import NLS.ZakharovShabat.AppendixDDiscSupProduct
+import NLS.ZakharovShabat.AppendixDNearestLattice
+import NLS.ZakharovShabat.AppendixDDiscSupSquare

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T06:08:38.623238+00:00",
-  "base_commit": "a5b3316481cc2301cd9866bae710f9606ff29caf",
+  "published_utc": "2026-10-31T06:28:37.265375+00:00",
+  "base_commit": "31d20501facd016f87462f92fe1900ad87f653b2",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 189,
-    "module_hash_checks": 4067,
-    "distinct_modules": 2078
+    "review_records": 190,
+    "module_hash_checks": 4073,
+    "distinct_modules": 2082
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "a5b3316481cc2301cd9866bae710f9606ff29caf",
-    "validated_state": "Fresh full check after three Appendix D proof-detail modules and six public examples.",
+    "base_commit": "31d20501facd016f87462f92fe1900ad87f653b2",
+    "validated_state": "Fresh full check after two Appendix D final-helper modules and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8591,
-    "public_examples": 7709,
-    "transitive_NLS_declarations": 44794,
+    "build_jobs": 8593,
+    "public_examples": 7712,
+    "transitive_NLS_declarations": 44804,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 60002,
+    "gate_session": 15320,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4868,
-      "sha256": "90c11818b725dd9fb2cc938f61c6ddb3959f92929735a748b1f1bbad455a229c"
+      "files": 4870,
+      "sha256": "dfceb3bbe2773e4bf6aed96473c923496013e48c517be9ce6d1de76a3cb35bb6"
     },
-    "full_gate_log_sha256": "68b2890e045fce49acb0a09f17106a066b554f7b180b8c28640ffc7b51d87ddc",
+    "full_gate_log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix D and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixDProofDetailsFullCheck.log"
+    "full_gate_log": "work/AppendixDFinalHelpersFullCheck.log"
   },
   "named_statements": [
     {
@@ -64036,6 +64036,124 @@
         "log_sha256": "68b2890e045fce49acb0a09f17106a066b554f7b180b8c28640ffc7b51d87ddc"
       },
       "source_record_sha256": "f8d16193c8945272939e8b70bceb65f2071ee72d5dd2e73563f47712d4d09231"
+    },
+    "AppendixDFinalHelpersSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "31d20501facd016f87462f92fe1900ad87f653b2",
+      "updated_utc": "2026-10-31T06:28:37.213519+00:00",
+      "source_lines": [
+        [
+          10472,
+          10477
+        ],
+        [
+          10574,
+          10591
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10472,
+            10477
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice"
+          ],
+          "reviewed_claims": [
+            "One nearest real lattice index is selected before all denominator factors; it satisfies the pi/2 real-distance bound and the existing factor-four bound."
+          ],
+          "qualification": "The source exterior includes the boundaries of its excluded open discs, so the lower distance is non-strict pi/4. The helper makes the existence and quantifier order explicit."
+        },
+        {
+          "source_lines": [
+            10574,
+            10591
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_sum_le",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound"
+          ],
+          "reviewed_claims": [
+            "The sum of squared individual factor suprema is bounded by c^2 times the actual reciprocal-square convolution row.",
+            "The literal sequence, extended by zero over the finite head, belongs to ell-(p/2), has summable p/2 powers, and its energy is bounded by c^p*norm(a)^p times the reciprocal-square kernel constant to power p/2."
+          ],
+          "qualification": "The order is supremum for each factor, then sum of squares. The result covers every finite 1<p<infinity, including p<2; the example retains c^(3/2) at p=3/2. The source powers and norm label are corrected directly, with no new refutation."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean": "4de3a81219d4efe0ec68d070a013a9c5ae96ad37c949f25afaf84017c8e210e9",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean": "f93697fb372c5eea8dc57d71594f8885a0bddfbb6d4b73e6a6ab2610f4fc9593",
+        "NLS/Fourier/SquaredAbsoluteRows.lean": "0190556ffb7a5e1567aa8ebdd2d9ad2bcf8928433f66b5cd8a98fd27bcd868b2",
+        "NLS/ZakharovShabat/AppendixDDeletedRelativeProduct.lean": "e7cfe2a0399b19ab49691e195f528a6f87a588a855ea067562dc8762820dc7ff",
+        "NLS/ZakharovShabat/AppendixDNearestLattice.lean": "d107dca1f0ce015b730cd5613f924fe5ec680121741a29823a176a56f0dfad41",
+        "NLS/ZakharovShabat/AppendixDDiscSupSquare.lean": "26b1dc4b86ddda5e4225e72a42e711a1380f61818e382bccac055046a49afbe4"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean",
+        "NLS/Fourier/SquaredAbsoluteRows.lean",
+        "NLS/ZakharovShabat/AppendixDDeletedRelativeProduct.lean",
+        "NLS/ZakharovShabat/AppendixDNearestLattice.lean",
+        "NLS/ZakharovShabat/AppendixDDiscSupSquare.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all thirty ordered Appendix D groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_sum_le",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice"
+      ],
+      "declaration_inventory_count": 44804,
+      "qualification": "Two modules add three positive theorems and three examples for the remaining explicit Appendix D proof assertions. The nearest real lattice index is chosen before all denominator factors and retains the non-strict exterior boundary. The literal sum of squared factor disc suprema is bounded by the reciprocal-square convolution, lies in ell-(p/2), and has p/2 energy with c^p and the p norm, including p<2. Constants and norm labels are corrected directly. No new definition or refutation is added. The thirty ordered groups and broader completeness qualifications remain to be reconciled.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          126,
+          127,
+          128,
+          129,
+          130
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc",
+          "work/tmp/pdfs/appendix-d-ordered-127.png": "b0c06b20662eec54d70c9fed5d3a3278ab7f8cc1696df37b8bdfee542bbc9241",
+          "work/tmp/pdfs/appendix-d-ordered-128.png": "8ec782ae430e2f688c540b45a2ebad051ac98b43d6cb37977201b718edf52c77",
+          "work/tmp/pdfs/appendix-d-ordered-129.png": "9f7dfbe49acaca9042c9434ae6b007f7cc064139a33ed0399c11f5ff46a563b1",
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a"
+        }
+      },
+      "preceding_review_hash": "0569f4117f96fd81f41fcf19db11eef6394233b72198012c362130f5d9513437",
+      "validation_lean_sources": {
+        "files": 4870,
+        "sha256": "dfceb3bbe2773e4bf6aed96473c923496013e48c517be9ce6d1de76a3cb35bb6"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_1",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_2",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_3",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_4",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_5",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_6",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice._simp_1_7"
+      ],
+      "full_gate": {
+        "session": 15320,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixDFinalHelpersFullCheck.log",
+        "log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe"
+      },
+      "source_record_sha256": "54a5272e83c9ba434602062ffb5c02046036302eba9e3f3212e7058c456c6d16"
     }
   }
 }

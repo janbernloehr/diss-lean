@@ -190,8 +190,12 @@ the literal product supremum inequality. Explicit constants include
 8*(4*p+1), the finite-head separation parameter and the conjugate-kernel
 Holder constant. The half-radius tail and displayed inequality are
 corrected directly. Three definitions, fifteen positive theorems and
-six examples add no new refutation. The thirty-group ordered Appendix D
-comparison remains to be reconciled.
+six examples add no new refutation. The [squared factor-supremum estimate](APPENDIX_D.md)
+now retains c^p and the p norm in the literal half-exponent energy,
+including p<2. The nearest real lattice index is selected before all
+factors and includes exterior boundaries. Three positive theorems
+and three examples add no new refutation. The thirty-group ordered
+Appendix D comparison remains to be reconciled.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

@@ -73498,3 +73498,45 @@ example (r : NLS.Coeff ⊤) (a : NLS.Coeff 1) {c : ℝ} {N : ℕ} (hc : 0 < c)
           A*Real.exp S+B*Real.exp (S+S^2) := by
   exact NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound
     (by simp) r a hc hsep
+
+-- One lattice index works before all factors and all complex numerators.
+example {z : ℂ} (hz : z ∈ NLS.ZakharovShabat.appendixDExterior) :
+    ∃ n : ℤ, ∀ m : ℤ, ∀ a : ℂ,
+      ‖a/(z-(Real.pi:ℂ)*m)‖ ≤ 4*‖a‖/(1+|((n-m:ℤ):ℝ)|+|z.im|) := by
+  obtain ⟨n,hn,_,_⟩ := NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice hz
+  exact ⟨n,fun m a => NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le hz n hn m a⟩
+
+section AppendixDDiscSupSquareExamples
+
+-- At the free reference every disc is retained, including the zero disc.
+example (a : NLS.Coeff 2) :
+    Summable (fun n : ℤ => ∑' m : ℤ,
+      (NLS.ZakharovShabat.appendixDDiscNormSup n
+        (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm 0 a n z m))^2) := by
+  have h := NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound
+    (by norm_num : (1:ℝ≥0∞) < 2) (by norm_num) (0:NLS.Coeff ⊤) a
+    (by norm_num : (0:ℝ) < 1) NLS.ZakharovShabat.appendixD_freeReferenceSeparated
+  simpa using h.2.1
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+-- The literal sum of squared disc suprema retains c^(3/2) below the Banach target range.
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff (ENNReal.ofReal (3/2)))
+    {c : ℝ} {N : ℕ} (hc : 0 < c)
+    (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c N) :
+    let B := fun n : ℤ => if N ≤ n.natAbs then
+      ∑' m : ℤ, (NLS.ZakharovShabat.appendixDDiscNormSup n
+        (fun z => NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m))^2 else 0
+    (∑' n, (B n)^(3/4:ℝ)) ≤ c^(3/2:ℝ)*‖a‖^(3/2:ℝ)*
+      (NLS.Fourier.squaredAbsoluteRowConstant
+        (by rw [ENNReal.one_lt_ofReal]; norm_num : 1 < ENNReal.ofReal (3/2))
+        ENNReal.ofReal_ne_top)^(3/4:ℝ) := by
+  have h := NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound
+    (by rw [ENNReal.one_lt_ofReal]; norm_num : 1 < ENNReal.ofReal (3/2))
+    ENNReal.ofReal_ne_top r a hc hsep
+  norm_num only [ENNReal.toReal_div,ENNReal.toReal_ofReal (by norm_num : (0:ℝ) ≤ 3/2),
+    ENNReal.toReal_ofNat,show (3/2:ℝ)/2 = 3/4 by norm_num] at h
+  exact h.2.2
+
+end AppendixDDiscSupSquareExamples

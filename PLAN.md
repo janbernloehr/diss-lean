@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Current milestone: Appendix D proof details
+## Current milestone: Appendix D squared suprema and nearest index
+
+The [nearest lattice index](NLS/ZakharovShabat/AppendixDNearestLattice.lean)
+is chosen before all denominator factors. It retains the factor-four
+estimate and includes the boundaries of the excluded open discs.
+
+The [literal squared-supremum sum](NLS/ZakharovShabat/AppendixDDiscSupSquare.lean)
+takes each factor supremum before summing its square. The resulting
+tail sequence belongs to ell-(p/2), with explicit c^p energy and the
+p norm of the displacement. This includes p below two; the p=3/2
+example retains c^(3/2) and target exponent 3/4.
+
+Two modules add three positive theorems and three examples. Constants
+and norm labels are corrected directly, with no new refutation.
+
+The full check passed: 8,593 build jobs, 7,712 public examples and an axiom audit of 44,804 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The thirty-group ordered Appendix D comparison remains to be reconciled.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix D proof details
 
 The [D.5 far/near scalar estimate](NLS/SequenceSpaces/AppendixDExteriorSum.lean)
 now has both printed decay denominators and explicit constant 8*(4*p+1).
