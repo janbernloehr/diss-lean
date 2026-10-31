@@ -1,5 +1,27 @@
 # Appendix E: current source audit
 
+## Ordered source comparison
+
+The [ordered Appendix E comparison](APPENDIX_E_ASSERTIONS.md)
+covers eleven groups on pp.130-131: seven matched, three directly
+corrected and one contextual. No partial or pending groups remain
+in this local ledger.
+
+The comparison retains symmetric interpolation sums, diagonal-omitted
+products, actual circle suprema, finite residue identities, at-most-simple
+poles, the nonempty real slice and physical Fourier coefficients. Local
+derivative and series vanishing use the alternative complex-line argument.
+The printed polarization derivation is not separately claimed.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit 241175fdd8c504f548fb5e4f98da3675ca201130: 8,594 build jobs, 7,714 public examples and an axiom audit of 44,807 NLS declarations, with 21 inherited warnings and zero new. All 40 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix F. The [broader completion qualifications](COMPLETENESS.md)
+remain; the local counts do not certify the dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Local germs, derivatives and series diagonals
 
 The [local E.2 assertions](../NLS/ComplexAnalysis/AppendixELocalTaylor.lean)

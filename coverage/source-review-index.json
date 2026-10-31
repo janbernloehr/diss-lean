@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T07:36:57.728108+00:00",
-  "base_commit": "984e38847c140899579b35c55bf5c5d4ccbfcc02",
+  "published_utc": "2026-10-31T07:37:30.834707+00:00",
+  "base_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 192,
-    "module_hash_checks": 4126,
-    "distinct_modules": 2093
+    "review_records": 193,
+    "module_hash_checks": 4145,
+    "distinct_modules": 2098
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "984e38847c140899579b35c55bf5c5d4ccbfcc02",
-    "validated_state": "Fresh full check after one Appendix E local Taylor module and two public examples.",
+    "base_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
+    "validated_state": "Appendix E ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix E local Taylor check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8594,
     "public_examples": 7714,
@@ -44,8 +44,9 @@
       "sha256": "76432f491dfe883958fc447dfd9df9cc4d8445d5c82b21569bcc16f0eec82ea0"
     },
     "full_gate_log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix E and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixELocalTaylorFullCheckInline.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixELocalTaylorFullCheckInline.log",
+    "validation_reused_from_commit": "241175fdd8c504f548fb5e4f98da3675ca201130"
   },
   "named_statements": [
     {
@@ -65625,6 +65626,586 @@
         "log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26"
       },
       "source_record_sha256": "3cee54697ccf81073663f97689607f7df95ddfec1eca2f9e86e76a86a2be2689"
+    },
+    "AppendixEOrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
+      "updated_utc": "2026-10-31T07:37:30.774047+00:00",
+      "source_lines": [
+        [
+          10676,
+          10763
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "E-001",
+          "source_lines": [
+            10678,
+            10678
+          ],
+          "requirement": "Extension beyond p=2",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source extends the p=2 interpolation statement cited from reference [23]."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaE1_literal"
+          ],
+          "qualification": "The attribution is contextual. All finite Banach exponents are implemented, but this does not compare the precise 2014 edition of reference [23]."
+        },
+        {
+          "ordered_group": "E-002",
+          "source_lines": [
+            10680,
+            10686
+          ],
+          "requirement": "Entire numerator, circle decay and simple displaced lattice",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The numerator is entire and its actual sine-quotient norm supremum tends to zero on circles of radius N*pi+pi/2.",
+            "Every injective complex displaced lattice with finite ell-p displacement, including p=1, is allowed; evaluation points avoid all roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixESineCircleSup",
+            "NLS.ZakharovShabat.norm_sineQuotient_le_appendixESineCircleSup",
+            "NLS.ZakharovShabat.eventually_sineQuotient_small_of_sup_tendsto",
+            "NLS.ZakharovShabat.sourceLemmaE1"
+          ],
+          "qualification": "No decay rate or summability of interpolation coefficients is assumed. Analyticity supplies finiteness of the literal circle supremum."
+        },
+        {
+          "ordered_group": "E-003",
+          "source_lines": [
+            10687,
+            10691
+          ],
+          "requirement": "Omitted-index cardinal products and symmetric interpolation sums",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Each cardinal product is the literal symmetric cutoff product with its diagonal index omitted.",
+            "The symmetric outer sums of those limits converge to the numerator value; the kernel equals g(z)/(g'(sigma_n)*(z-sigma_n))."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixEInterpolationKernel",
+            "NLS.ZakharovShabat.tendsto_appendixEInterpolationKernel",
+            "NLS.ZakharovShabat.appendixEInterpolationKernel_eq_deriv",
+            "NLS.ZakharovShabat.sourceLemmaE1_literal"
+          ],
+          "qualification": "Omit the diagonal as in the source residue calculation. The outer sum is explicitly symmetric; absolute convergence and unconditional HasSum are not claimed. Historical diagonal-index evidence is retained without extending or repeating a refutation."
+        },
+        {
+          "ordered_group": "E-004",
+          "source_lines": [
+            10693,
+            10700
+          ],
+          "requirement": "Entire product, roots and circle asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The full negative product is entire with exactly the displaced roots and nonzero derivative at every root of a simple lattice.",
+            "On every sufficiently large source circle its quotient by sine has norm at least one half, so it is nonzero there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.deriv_appendixDProduct_ne_zero",
+            "NLS.ZakharovShabat.eventually_appendixDProduct_circle_lower"
+          ],
+          "qualification": "The literal negative product normalization and finite p=1 endpoint are retained. The circle estimate follows from D.5 on the full separated exterior."
+        },
+        {
+          "ordered_group": "E-005",
+          "source_lines": [
+            10701,
+            10707
+          ],
+          "requirement": "At most simple poles and quotient decay",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "At a simple denominator zero the principal part has coefficient numerator-value divided by denominator-derivative, and subtracting it leaves an analytic germ.",
+            "The numerator/sine circle decay transfers to the quotient by the displaced product, and the outer Cauchy integrals vanish uniformly on bounded evaluation sets."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_analytic_simpleQuotient_remainder",
+            "NLS.ComplexAnalysis.analyticOnNhd_simpleQuotient_remainder",
+            "NLS.ZakharovShabat.eventually_appendixEQuotient_small",
+            "NLS.ZakharovShabat.eventually_appendixE_outerCauchy_small"
+          ],
+          "qualification": "Read the poles as at most simple: a zero numerator may cancel a pole. The existing positive principal-part theorem permits zero residues. No counterexample is added. The contour estimate assumes no rate of decay."
+        },
+        {
+          "ordered_group": "E-006",
+          "source_lines": [
+            10717,
+            10726
+          ],
+          "requirement": "Finite residue identities, outer contour limit and interpolation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Large half-integer circles enclose exactly the symmetric block of displaced roots.",
+            "The finite residue identity is exact; its vanishing outer error proves the symmetric interpolation limit, uniformly for the quotient on bounded zero-free evaluation sets."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.eventually_displacedRoots_mem_centralBall_iff",
+            "NLS.ComplexAnalysis.circleIntegral_simpleQuotient_cauchy_eq_interpolation_error",
+            "NLS.ZakharovShabat.eventually_appendixE_interpolation_error",
+            "NLS.ZakharovShabat.tendstoUniformlyOn_appendixEQuotientInterpolation",
+            "NLS.ZakharovShabat.sourceLemmaE1_of_circle_decay"
+          ],
+          "qualification": "The limit of residues is interpreted through these finite symmetric sums. Root simplicity, boundary nonvanishing and the derivative normalization are established before taking the limit."
+        },
+        {
+          "ordered_group": "E-007",
+          "source_lines": [
+            10729,
+            10731
+          ],
+          "requirement": "Identity theorem with nonempty real slice",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "An analytic map on a connected open subset of any continuous real-linear complexification is determined by its values on the nonempty real slice.",
+            "A specified real base point, agreement of two maps, complete complex targets and the actual conjugate-reflected source spaces are supported."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.RealComplexification",
+            "NLS.ComplexAnalysis.sourceLemmaE2",
+            "NLS.ComplexAnalysis.sourceLemmaE2_of_real_point",
+            "NLS.ComplexAnalysis.sourceLemmaE2_eq",
+            "NLS.ZakharovShabat.sourceLemmaE2_realType"
+          ],
+          "qualification": "The real-slice intersection must be nonempty, as used in the printed proof. There is no convexity or isometric/projection-norm assumption. Historical empty-slice evidence remains unchanged; no new refutation is added."
+        },
+        {
+          "ordered_group": "E-008",
+          "source_lines": [
+            10733,
+            10747
+          ],
+          "requirement": "Taylor/polarization argument and local vanishing",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each real point in the domain the analytic map has a zero germ.",
+            "All complex iterated derivatives, including mixed derivatives, vanish there. Every supplied local multilinear power series has zero diagonal coefficients in every complex direction."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.sourceLemmaE2_zero_germ",
+            "NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero",
+            "NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero"
+          ],
+          "qualification": "These local assertions do not need connectedness. The proof uses the existing complex-line identity argument and then derivative and series uniqueness, an alternative to the printed polarization argument. It does not claim that arbitrary nonsymmetric multilinear series maps themselves are zero. The three positive helper theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "E-009",
+          "source_lines": [
+            10747,
+            10748
+          ],
+          "requirement": "Propagation over a connected domain",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The local zero germ propagates to the entire connected open domain by the analytic identity theorem."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.AnalyticOnNhd.eqOn_zero_of_continuous_real_form",
+            "NLS.ComplexAnalysis.sourceLemmaE2"
+          ],
+          "qualification": "One real point starts the argument; the domain need not contain the whole real subspace or be convex."
+        },
+        {
+          "ordered_group": "E-010",
+          "source_lines": [
+            10751,
+            10753
+          ],
+          "requirement": "Uniform Fourier-Lebesgue exponential bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual unit-interval Fourier coefficients of exp(i*nu_n*x) are uniformly bounded whenever the frequencies eventually lie within pi/4 of pi*n.",
+            "One tail constant precedes the frequency sequence and cutoff; any finite exceptional head is absorbed in a global bound. Every q>1, including infinity, is retained."
+          ],
+          "declarations": [
+            "NLS.Fourier.exponentialFourierCoefficients_apply",
+            "NLS.Fourier.sourceLemmaE3Bound",
+            "NLS.Fourier.sourceLemmaE3_tail",
+            "NLS.Fourier.sourceLemmaE3",
+            "NLS.Fourier.sourceLemmaE3_bigO"
+          ],
+          "qualification": "Complex frequencies and the inclusive displacement boundary are allowed. The unextended exponential is not required to have matching endpoint values; the physical Fourier integrals are used."
+        },
+        {
+          "ordered_group": "E-011",
+          "source_lines": [
+            10755,
+            10761
+          ],
+          "requirement": "Literal reciprocal coefficient estimate and uniform quantifiers",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal Fourier coefficient of exp(i*nu*x)-exp(i*n*pi*x) is bounded by 4*(2+5*pi/4)*exp(5*pi/4)/(1+abs(n-2*m)).",
+            "Integer modulation preserves the coefficient norm; Euclidean division handles every signed lattice index."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_intervalFourierCoefficient_exponential_difference",
+            "NLS.Fourier.exponential_shift_bracket_le",
+            "NLS.Fourier.norm_exponential_residual_frequency_le",
+            "NLS.Fourier.norm_exponentialFourierCoefficients_modulation",
+            "NLS.Fourier.norm_exponentialFourierCoefficients_near_lattice"
+          ],
+          "qualification": "The coefficient constant is independent of n and m under the pi/4 displacement hypothesis. Uniformity on the finite exceptional head is handled separately, not assumed from the tail hypothesis."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "E-001",
+          "source_lines": [
+            10678,
+            10678
+          ],
+          "requirement": "Extension beyond p=2",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source extends the p=2 interpolation statement cited from reference [23]."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaE1_literal"
+          ],
+          "qualification": "The attribution is contextual. All finite Banach exponents are implemented, but this does not compare the precise 2014 edition of reference [23]."
+        },
+        {
+          "ordered_group": "E-002",
+          "source_lines": [
+            10680,
+            10686
+          ],
+          "requirement": "Entire numerator, circle decay and simple displaced lattice",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The numerator is entire and its actual sine-quotient norm supremum tends to zero on circles of radius N*pi+pi/2.",
+            "Every injective complex displaced lattice with finite ell-p displacement, including p=1, is allowed; evaluation points avoid all roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixESineCircleSup",
+            "NLS.ZakharovShabat.norm_sineQuotient_le_appendixESineCircleSup",
+            "NLS.ZakharovShabat.eventually_sineQuotient_small_of_sup_tendsto",
+            "NLS.ZakharovShabat.sourceLemmaE1"
+          ],
+          "qualification": "No decay rate or summability of interpolation coefficients is assumed. Analyticity supplies finiteness of the literal circle supremum."
+        },
+        {
+          "ordered_group": "E-003",
+          "source_lines": [
+            10687,
+            10691
+          ],
+          "requirement": "Omitted-index cardinal products and symmetric interpolation sums",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Each cardinal product is the literal symmetric cutoff product with its diagonal index omitted.",
+            "The symmetric outer sums of those limits converge to the numerator value; the kernel equals g(z)/(g'(sigma_n)*(z-sigma_n))."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixEInterpolationKernel",
+            "NLS.ZakharovShabat.tendsto_appendixEInterpolationKernel",
+            "NLS.ZakharovShabat.appendixEInterpolationKernel_eq_deriv",
+            "NLS.ZakharovShabat.sourceLemmaE1_literal"
+          ],
+          "qualification": "Omit the diagonal as in the source residue calculation. The outer sum is explicitly symmetric; absolute convergence and unconditional HasSum are not claimed. Historical diagonal-index evidence is retained without extending or repeating a refutation."
+        },
+        {
+          "ordered_group": "E-004",
+          "source_lines": [
+            10693,
+            10700
+          ],
+          "requirement": "Entire product, roots and circle asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The full negative product is entire with exactly the displaced roots and nonzero derivative at every root of a simple lattice.",
+            "On every sufficiently large source circle its quotient by sine has norm at least one half, so it is nonzero there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.deriv_appendixDProduct_ne_zero",
+            "NLS.ZakharovShabat.eventually_appendixDProduct_circle_lower"
+          ],
+          "qualification": "The literal negative product normalization and finite p=1 endpoint are retained. The circle estimate follows from D.5 on the full separated exterior."
+        },
+        {
+          "ordered_group": "E-005",
+          "source_lines": [
+            10701,
+            10707
+          ],
+          "requirement": "At most simple poles and quotient decay",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "At a simple denominator zero the principal part has coefficient numerator-value divided by denominator-derivative, and subtracting it leaves an analytic germ.",
+            "The numerator/sine circle decay transfers to the quotient by the displaced product, and the outer Cauchy integrals vanish uniformly on bounded evaluation sets."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_analytic_simpleQuotient_remainder",
+            "NLS.ComplexAnalysis.analyticOnNhd_simpleQuotient_remainder",
+            "NLS.ZakharovShabat.eventually_appendixEQuotient_small",
+            "NLS.ZakharovShabat.eventually_appendixE_outerCauchy_small"
+          ],
+          "qualification": "Read the poles as at most simple: a zero numerator may cancel a pole. The existing positive principal-part theorem permits zero residues. No counterexample is added. The contour estimate assumes no rate of decay."
+        },
+        {
+          "ordered_group": "E-006",
+          "source_lines": [
+            10717,
+            10726
+          ],
+          "requirement": "Finite residue identities, outer contour limit and interpolation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Large half-integer circles enclose exactly the symmetric block of displaced roots.",
+            "The finite residue identity is exact; its vanishing outer error proves the symmetric interpolation limit, uniformly for the quotient on bounded zero-free evaluation sets."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.eventually_displacedRoots_mem_centralBall_iff",
+            "NLS.ComplexAnalysis.circleIntegral_simpleQuotient_cauchy_eq_interpolation_error",
+            "NLS.ZakharovShabat.eventually_appendixE_interpolation_error",
+            "NLS.ZakharovShabat.tendstoUniformlyOn_appendixEQuotientInterpolation",
+            "NLS.ZakharovShabat.sourceLemmaE1_of_circle_decay"
+          ],
+          "qualification": "The limit of residues is interpreted through these finite symmetric sums. Root simplicity, boundary nonvanishing and the derivative normalization are established before taking the limit."
+        },
+        {
+          "ordered_group": "E-007",
+          "source_lines": [
+            10729,
+            10731
+          ],
+          "requirement": "Identity theorem with nonempty real slice",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "An analytic map on a connected open subset of any continuous real-linear complexification is determined by its values on the nonempty real slice.",
+            "A specified real base point, agreement of two maps, complete complex targets and the actual conjugate-reflected source spaces are supported."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.RealComplexification",
+            "NLS.ComplexAnalysis.sourceLemmaE2",
+            "NLS.ComplexAnalysis.sourceLemmaE2_of_real_point",
+            "NLS.ComplexAnalysis.sourceLemmaE2_eq",
+            "NLS.ZakharovShabat.sourceLemmaE2_realType"
+          ],
+          "qualification": "The real-slice intersection must be nonempty, as used in the printed proof. There is no convexity or isometric/projection-norm assumption. Historical empty-slice evidence remains unchanged; no new refutation is added."
+        },
+        {
+          "ordered_group": "E-008",
+          "source_lines": [
+            10733,
+            10747
+          ],
+          "requirement": "Taylor/polarization argument and local vanishing",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each real point in the domain the analytic map has a zero germ.",
+            "All complex iterated derivatives, including mixed derivatives, vanish there. Every supplied local multilinear power series has zero diagonal coefficients in every complex direction."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.sourceLemmaE2_zero_germ",
+            "NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero",
+            "NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero"
+          ],
+          "qualification": "These local assertions do not need connectedness. The proof uses the existing complex-line identity argument and then derivative and series uniqueness, an alternative to the printed polarization argument. It does not claim that arbitrary nonsymmetric multilinear series maps themselves are zero. The three positive helper theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "E-009",
+          "source_lines": [
+            10747,
+            10748
+          ],
+          "requirement": "Propagation over a connected domain",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The local zero germ propagates to the entire connected open domain by the analytic identity theorem."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.AnalyticOnNhd.eqOn_zero_of_continuous_real_form",
+            "NLS.ComplexAnalysis.sourceLemmaE2"
+          ],
+          "qualification": "One real point starts the argument; the domain need not contain the whole real subspace or be convex."
+        },
+        {
+          "ordered_group": "E-010",
+          "source_lines": [
+            10751,
+            10753
+          ],
+          "requirement": "Uniform Fourier-Lebesgue exponential bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual unit-interval Fourier coefficients of exp(i*nu_n*x) are uniformly bounded whenever the frequencies eventually lie within pi/4 of pi*n.",
+            "One tail constant precedes the frequency sequence and cutoff; any finite exceptional head is absorbed in a global bound. Every q>1, including infinity, is retained."
+          ],
+          "declarations": [
+            "NLS.Fourier.exponentialFourierCoefficients_apply",
+            "NLS.Fourier.sourceLemmaE3Bound",
+            "NLS.Fourier.sourceLemmaE3_tail",
+            "NLS.Fourier.sourceLemmaE3",
+            "NLS.Fourier.sourceLemmaE3_bigO"
+          ],
+          "qualification": "Complex frequencies and the inclusive displacement boundary are allowed. The unextended exponential is not required to have matching endpoint values; the physical Fourier integrals are used."
+        },
+        {
+          "ordered_group": "E-011",
+          "source_lines": [
+            10755,
+            10761
+          ],
+          "requirement": "Literal reciprocal coefficient estimate and uniform quantifiers",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal Fourier coefficient of exp(i*nu*x)-exp(i*n*pi*x) is bounded by 4*(2+5*pi/4)*exp(5*pi/4)/(1+abs(n-2*m)).",
+            "Integer modulation preserves the coefficient norm; Euclidean division handles every signed lattice index."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_intervalFourierCoefficient_exponential_difference",
+            "NLS.Fourier.exponential_shift_bracket_le",
+            "NLS.Fourier.norm_exponential_residual_frequency_le",
+            "NLS.Fourier.norm_exponentialFourierCoefficients_modulation",
+            "NLS.Fourier.norm_exponentialFourierCoefficients_near_lattice"
+          ],
+          "qualification": "The coefficient constant is independent of n and m under the pi/4 displacement hypothesis. Uniformity on the finite exceptional head is handled separately, not assumed from the tail hypothesis."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 7,
+        "corrected": 3,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaE1.lean": "c9e332112076f549999aff7d7d80ae68312c394355794a9487356192e8221fe7",
+        "NLS/ZakharovShabat/AppendixEInterpolationProducts.lean": "96c9fea9b71180a40132ca2d93952993047c1a4752920bc4df91f06a1562c7da",
+        "NLS/ZakharovShabat/AppendixEInterpolationDecay.lean": "b3057bb6a7aa6cda68b82f027b907157c33317fbc1dc142001ca7d143e8ba856",
+        "NLS/ComplexAnalysis/SourceLemmaE2.lean": "03de7c99c5c002e0a8a6a02032d45484272d8fa1c554b4e4e25e160d66007f82",
+        "NLS/ComplexAnalysis/RealComplexification.lean": "e88c6514ecd82688e09aa241ba2ef8f7b167649ed6c51cded3aba95f7691734e",
+        "NLS/ZakharovShabat/SourceRealTypeIdentity.lean": "502502ba886ec51774b245d3c6922e1a7aeaf1b2facd7b600d0abd3c13198a06",
+        "NLS/Fourier/SourceLemmaE3.lean": "1ece40b16cc16293c834d78c9823b82741a4d3ebf6671f968529e9f315e273c9",
+        "NLS/Fourier/ShiftedExponentialFourier.lean": "f56a49c1c38dfbb810e62520a2c163ffbb4bdc2408a7b4e3f4ed4534b9657d7b",
+        "NLS/Fourier/ShiftedExponentialCoefficientBound.lean": "c65ce07ab69f891a722554d750559ba79ff1870567cdff81fa8474bd9dcf7c4c",
+        "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60",
+        "NLS/ComplexAnalysis/SimplePoleCauchyInterpolation.lean": "32ceb4980c43e2b7259e48c5e8119687c9103f839c2e43a1a1d30f856295d2c5",
+        "NLS/ZakharovShabat/SourceDirichletRootCircleSelection.lean": "52ebc780be92f474d3d8df19433fe1796ddc46e94b365c77b78ef77613aa0cb1",
+        "NLS/ComplexAnalysis/SimplePoleQuotient.lean": "8f500ebe481c10ce81c2b4ffbffdc41d8dd409a4764d3daa566ea79ee1597766",
+        "NLS/ZakharovShabat/AppendixDSineProducts.lean": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean": "a96736367e4224d970080953e97d9270435041e0de165a50dcea212f16e3e2b3",
+        "NLS/ZakharovShabat/CentralCircleThresholds.lean": "ab2b8a456c59709725e9735604cd6d92fae8f19dfc632a66f27723f7a1949bed",
+        "NLS/ComplexAnalysis/RealFormIdentity.lean": "b097b7daa40dac7bc212d202bad93068edde795d516ffc6f9fce540787bcba48",
+        "NLS/Fourier/UnitIntervalC1FourierLebesgue.lean": "9d6d695dc2e53c073f17e4c8023e222789e8e1cad0502a7223aa22b350cfde43",
+        "NLS/ComplexAnalysis/AppendixELocalTaylor.lean": "a92dc995f9692b196b9968a885186455844bdb54798f067a9e24d678dbb1593e"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaE1.lean",
+        "NLS/ZakharovShabat/AppendixEInterpolationProducts.lean",
+        "NLS/ZakharovShabat/AppendixEInterpolationDecay.lean",
+        "NLS/ComplexAnalysis/SourceLemmaE2.lean",
+        "NLS/ComplexAnalysis/RealComplexification.lean",
+        "NLS/ZakharovShabat/SourceRealTypeIdentity.lean",
+        "NLS/Fourier/SourceLemmaE3.lean",
+        "NLS/Fourier/ShiftedExponentialFourier.lean",
+        "NLS/Fourier/ShiftedExponentialCoefficientBound.lean",
+        "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean",
+        "NLS/ComplexAnalysis/SimplePoleCauchyInterpolation.lean",
+        "NLS/ZakharovShabat/SourceDirichletRootCircleSelection.lean",
+        "NLS/ComplexAnalysis/SimplePoleQuotient.lean",
+        "NLS/ZakharovShabat/AppendixDSineProducts.lean",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean",
+        "NLS/ZakharovShabat/CentralCircleThresholds.lean",
+        "NLS/ComplexAnalysis/RealFormIdentity.lean",
+        "NLS/Fourier/UnitIntervalC1FourierLebesgue.lean",
+        "NLS/ComplexAnalysis/AppendixELocalTaylor.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_E_ASSERTIONS.md",
+      "ordered_inventory_sha256": "864fc4cdf7c8bf3559389db83c7969684955514060293690ee4b0359298c1575",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.AnalyticOnNhd.eqOn_zero_of_continuous_real_form",
+        "NLS.ComplexAnalysis.RealComplexification",
+        "NLS.ComplexAnalysis.analyticOnNhd_simpleQuotient_remainder",
+        "NLS.ComplexAnalysis.circleIntegral_simpleQuotient_cauchy_eq_interpolation_error",
+        "NLS.ComplexAnalysis.exists_analytic_simpleQuotient_remainder",
+        "NLS.ComplexAnalysis.sourceLemmaE2",
+        "NLS.ComplexAnalysis.sourceLemmaE2_eq",
+        "NLS.ComplexAnalysis.sourceLemmaE2_iteratedFDeriv_eq_zero",
+        "NLS.ComplexAnalysis.sourceLemmaE2_of_real_point",
+        "NLS.ComplexAnalysis.sourceLemmaE2_powerSeries_diagonal_zero",
+        "NLS.ComplexAnalysis.sourceLemmaE2_zero_germ",
+        "NLS.Fourier.exponentialFourierCoefficients_apply",
+        "NLS.Fourier.exponential_shift_bracket_le",
+        "NLS.Fourier.norm_exponentialFourierCoefficients_modulation",
+        "NLS.Fourier.norm_exponentialFourierCoefficients_near_lattice",
+        "NLS.Fourier.norm_exponential_residual_frequency_le",
+        "NLS.Fourier.norm_intervalFourierCoefficient_exponential_difference",
+        "NLS.Fourier.sourceLemmaE3",
+        "NLS.Fourier.sourceLemmaE3Bound",
+        "NLS.Fourier.sourceLemmaE3_bigO",
+        "NLS.Fourier.sourceLemmaE3_tail",
+        "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+        "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+        "NLS.ZakharovShabat.appendixEInterpolationKernel",
+        "NLS.ZakharovShabat.appendixEInterpolationKernel_eq_deriv",
+        "NLS.ZakharovShabat.appendixESineCircleSup",
+        "NLS.ZakharovShabat.deriv_appendixDProduct_ne_zero",
+        "NLS.ZakharovShabat.eventually_appendixDProduct_circle_lower",
+        "NLS.ZakharovShabat.eventually_appendixEQuotient_small",
+        "NLS.ZakharovShabat.eventually_appendixE_interpolation_error",
+        "NLS.ZakharovShabat.eventually_appendixE_outerCauchy_small",
+        "NLS.ZakharovShabat.eventually_displacedRoots_mem_centralBall_iff",
+        "NLS.ZakharovShabat.eventually_sineQuotient_small_of_sup_tendsto",
+        "NLS.ZakharovShabat.norm_sineQuotient_le_appendixESineCircleSup",
+        "NLS.ZakharovShabat.sourceLemmaE1",
+        "NLS.ZakharovShabat.sourceLemmaE1_literal",
+        "NLS.ZakharovShabat.sourceLemmaE1_of_circle_decay",
+        "NLS.ZakharovShabat.sourceLemmaE2_realType",
+        "NLS.ZakharovShabat.tendstoUniformlyOn_appendixEQuotientInterpolation",
+        "NLS.ZakharovShabat.tendsto_appendixEInterpolationKernel"
+      ],
+      "declaration_inventory_count": 44807,
+      "qualification": "The ordered Appendix E comparison covers eleven groups on printed pp.130-131: seven matched, three directly corrected and one contextual. No partial or pending group remains in this local comparison. It retains literal symmetric interpolation sums and diagonal-omitted products, actual circle suprema, finite residue identities, at-most-simple poles, the nonempty real slice and actual unit-interval Fourier coefficients. Local derivative and series-diagonal vanishing use an alternative complex-line argument; the printed polarization derivation is not separately claimed. This documentation step adds no Lean proof or refutation; historical refutations and broader completeness qualifications remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          130,
+          131
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a",
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271"
+        }
+      },
+      "preceding_review_hash": "3cee54697ccf81073663f97689607f7df95ddfec1eca2f9e86e76a86a2be2689",
+      "reconciled_previous_reviews": {
+        "work/AppendixESourceComparison-2026-10-27.json": "90f103b86311ac03a5f2ed641be4f991b2a8ad7a2bad81026c0dedce8fd19e0e",
+        "work/AppendixELocalTaylorSourceComparison-2026-10-31.json": "3cee54697ccf81073663f97689607f7df95ddfec1eca2f9e86e76a86a2be2689"
+      },
+      "validation_lean_sources": {
+        "files": 4871,
+        "sha256": "76432f491dfe883958fc447dfd9df9cc4d8445d5c82b21569bcc16f0eec82ea0"
+      },
+      "validation_reused_from_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 50441,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixELocalTaylorFullCheckInline.log",
+        "log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26"
+      },
+      "source_record_sha256": "8356223b091dbe3a953cf742e924ff41c7751e225db654bcbbb212a4b1233f2d"
     }
   }
 }

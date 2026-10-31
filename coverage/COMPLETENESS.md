@@ -204,8 +204,13 @@ and broader qualifications remain unchanged. The [Appendix E local assertions](A
 now prove zero germs, all complex iterated derivatives and every local
 power-series diagonal at real points. The alternative complex-line
 argument requires no connectedness locally. Three positive theorems
-and two examples add no new refutation. The eleven-group ordered
-Appendix E comparison remains to be reconciled.
+and two examples add no new refutation. The [ordered Appendix E ledger](APPENDIX_E_ASSERTIONS.md)
+compares eleven groups: seven matched, three corrected and one contextual.
+It retains symmetric interpolation, diagonal-omitted products, actual
+circle suprema, at-most-simple poles, the nonempty real slice and physical
+Fourier coefficients. The local Taylor assertions use the alternative
+complex-line argument. Historical refutations and broader qualifications
+remain unchanged. Appendix F is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
