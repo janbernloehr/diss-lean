@@ -1,5 +1,27 @@
 # Appendix D: infinite products
 
+## Ordered source comparison
+
+The [ordered Appendix D comparison](APPENDIX_D_ASSERTIONS.md)
+covers thirty groups on pp.126-130: nineteen matched, ten directly
+corrected and one contextual. No partial or pending groups remain
+in this local ledger.
+
+The comparison retains literal products, joint analyticity, exact
+root multiplicities, locally uniform asymptotics, actual disc suprema
+and independent sampling. Corrections retain signed sums, exterior
+boundaries, the half-radius tail, uniform cutoffs, explicit separation
+constants and c^p at every finite exponent, including p below two.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit 9aa445d2e925078f5f3aaabf490e728ab7fb45ce: 8,593 build jobs, 7,712 public examples and an axiom audit of 44,804 NLS declarations, with 21 inherited warnings and zero new. All 83 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix E. The [broader completion qualifications](COMPLETENESS.md)
+remain; the local counts do not certify the dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Squared factor suprema and nearest-index selection
 
 The [nearest lattice index](../NLS/ZakharovShabat/AppendixDNearestLattice.lean)

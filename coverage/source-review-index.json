@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T06:28:37.265375+00:00",
-  "base_commit": "31d20501facd016f87462f92fe1900ad87f653b2",
+  "published_utc": "2026-10-31T06:31:52.672373+00:00",
+  "base_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 190,
-    "module_hash_checks": 4073,
-    "distinct_modules": 2082
+    "review_records": 191,
+    "module_hash_checks": 4123,
+    "distinct_modules": 2091
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "31d20501facd016f87462f92fe1900ad87f653b2",
-    "validated_state": "Fresh full check after two Appendix D final-helper modules and three public examples.",
+    "base_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
+    "validated_state": "Appendix D ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix D final-helper check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8593,
     "public_examples": 7712,
@@ -44,8 +44,9 @@
       "sha256": "dfceb3bbe2773e4bf6aed96473c923496013e48c517be9ce6d1de76a3cb35bb6"
     },
     "full_gate_log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix D and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixDFinalHelpersFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixDFinalHelpersFullCheck.log",
+    "validation_reused_from_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce"
   },
   "named_statements": [
     {
@@ -64154,6 +64155,1395 @@
         "log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe"
       },
       "source_record_sha256": "54a5272e83c9ba434602062ffb5c02046036302eba9e3f3212e7058c456c6d16"
+    },
+    "AppendixDOrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
+      "updated_utc": "2026-10-31T06:31:52.614823+00:00",
+      "source_lines": [
+        [
+          10320,
+          10674
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "D-001",
+          "source_lines": [
+            10322,
+            10330
+          ],
+          "requirement": "Absolute versus ordinary ordered products",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Absolute convergence of the ordered source products is equivalent to summability of the perturbation norms.",
+            "Absolute convergence gives genuine complex product convergence, including products with zero factors."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.source_absolute_product_limit_iff",
+            "NLS.ComplexAnalysis.source_complex_product_limit_and_bounds"
+          ],
+          "qualification": "The source uses cutoffs from 1 through N. The public theorems retain these literal cutoffs. Historical evidence separating ordinary and absolute convergence is preserved without adding or repeating a refutation."
+        },
+        {
+          "ordered_group": "D-002",
+          "source_lines": [
+            10333,
+            10341
+          ],
+          "requirement": "D.1 signed sum and square sum estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The norm of the actual complex product minus one is at most A*exp(S)+B*exp(S+S^2), with A the norm of the signed complex sum, B the sum of squared norms and S the sum of norms.",
+            "Absolute summability and the half-unit bound are retained; the printed constants and powers are unchanged."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_signed_sum"
+          ],
+          "qualification": "The result holds over any index type, hence in particular over the two-sided integer lattice. The proof controls the logarithmic remainder by B."
+        },
+        {
+          "ordered_group": "D-003",
+          "source_lines": [
+            10344,
+            10350
+          ],
+          "requirement": "D.2 exponential bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The product error is bounded by exp(S)-1, which is at most S*exp(S)."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_exp_sub_one_le"
+          ],
+          "qualification": "Absolute summability suffices; the weaker bound does not require the half-unit hypothesis."
+        },
+        {
+          "ordered_group": "D-004",
+          "source_lines": [
+            10360,
+            10366
+          ],
+          "requirement": "D.3 signed linear subtraction",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Subtract the signed complex sum in the linear term and retain its squared norm divided by two in the exponential bound."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_sub_tsum_le_signed_square"
+          ],
+          "qualification": "The symbol A in the subtraction is the complex sum, while D.1 used its norm. This is the positive corrected statement. Historical source-notation evidence is unchanged; no new refutation is added."
+        },
+        {
+          "ordered_group": "D-005",
+          "source_lines": [
+            10368,
+            10372
+          ],
+          "requirement": "Sine product normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The free sine function is the limit of the literal negative symmetric root products.",
+            "The zero-index normalization denominator is one; all nonzero denominators are pi*m."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.singleSpectralDenominator",
+            "NLS.ZakharovShabat.tendsto_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_zero"
+          ],
+          "qualification": "The negative prefactor, two-sided symmetric cutoffs and zero-index convention are retained. The product is not replaced by an arbitrarily normalized entire function."
+        },
+        {
+          "ordered_group": "D-006",
+          "source_lines": [
+            10374,
+            10380
+          ],
+          "requirement": "Finite exponent displaced roots and uniform simple-root separation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every finite Banach displacement exponent, including p=1, has the prescribed perturbed lattice.",
+            "If its roots are pairwise distinct, one strictly positive constant separates every pair of distinct roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_displacedRoots_separation",
+            "NLS.ZakharovShabat.exists_displacedRoot_separation"
+          ],
+          "qualification": "Uniform separation uses finite-exponent decay. For arbitrary bounded displacements only the individual-root isolation used later is asserted; a common global separation is not inferred from boundedness alone."
+        },
+        {
+          "ordered_group": "D-007",
+          "source_lines": [
+            10383,
+            10383
+          ],
+          "requirement": "Adaptation from p=2",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source says its presentation extends the p=2 appendix in reference [23]."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct_finite"
+          ],
+          "qualification": "The attribution is contextual. The finite-exponent conclusions are proved in the repository. This row does not claim comparison of the exact 2014 edition of reference [23]."
+        },
+        {
+          "ordered_group": "D-008",
+          "source_lines": [
+            10386,
+            10391
+          ],
+          "requirement": "D.4 joint analyticity and exact roots",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each omitted integer index, the literal negative deleted product converges and is jointly analytic in the spectral parameter and the displacement.",
+            "Its zeros are exactly the retained roots, with the count of repeated retained indices as analytic multiplicity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.appendixDDeletedProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct"
+          ],
+          "qualification": "All finite p>=1 are retained. Repeated roots are allowed in this assertion, and the omitted index is removed before counting multiplicity."
+        },
+        {
+          "ordered_group": "D-009",
+          "source_lines": [
+            10392,
+            10398
+          ],
+          "requirement": "Simple roots and reciprocal poles",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For an injective root sequence the retained zeros have analytic order one.",
+            "The reciprocal is meromorphic, has order minus one at each retained root, and is the limit of the reciprocal symmetric products away from those roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct_of_injective",
+            "NLS.ZakharovShabat.meromorphicAt_inv_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective",
+            "NLS.ZakharovShabat.tendsto_inv_appendixDDeletedProduct"
+          ],
+          "qualification": "The zero and pole locations are the original displaced roots, with no unmentioned nonvanishing assumption at the omitted index."
+        },
+        {
+          "ordered_group": "D-010",
+          "source_lines": [
+            10401,
+            10420
+          ],
+          "requirement": "Paired perturbation sums and products",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Opposite indices cancel the spectral parameter in the linear perturbation sum and give the exact square-denominator quadratic identity.",
+            "Both paired expressions are absolutely summable at every finite Banach exponent; the quadratic one is summable even for bounded displacements."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_mul_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg"
+          ],
+          "qualification": "The zero entry is totalized and unused. These statements are fixed-parameter summability results; local uniformity is supplied by the next separately proved product-convergence assertion."
+        },
+        {
+          "ordered_group": "D-011",
+          "source_lines": [
+            10421,
+            10424
+          ],
+          "requirement": "Local uniform product convergence and analyticity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Full and deleted symmetric cutoffs converge uniformly on compact spectral sets and bounded displacement sets.",
+            "Every finite cutoff is jointly analytic and its limit is jointly analytic, including p=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendstoUniformlyOn_jointSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.tendstoUniformlyOn_jointDeletedSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralPartialProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralPartialProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct_finite"
+          ],
+          "qualification": "The proof uses uniform product estimates and exponent inclusion for the summable endpoint. It proves the required local uniform convergence without treating pointwise convergence alone as sufficient."
+        },
+        {
+          "ordered_group": "D-012",
+          "source_lines": [
+            10426,
+            10428
+          ],
+          "requirement": "Free open quarter-pi discs",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The free source discs are open balls of radius pi/4 centered at pi*n, and their exterior contains the boundaries."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDExterior",
+            "NLS.ZakharovShabat.appendixDExterior_eq_compl_iUnion_ball"
+          ],
+          "qualification": "The complement is taken after the union over every signed integer index."
+        },
+        {
+          "ordered_group": "D-013",
+          "source_lines": [
+            10440,
+            10462
+          ],
+          "requirement": "D.5 locally uniform exterior asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The normalized full product is jointly analytic and has exactly the prescribed roots with their multiplicities.",
+            "For every displacement and epsilon>0, one positive neighborhood radius and one spectral threshold make the literal exterior error supremum smaller than epsilon for all displacements in that neighborhood."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDProduct",
+            "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_sup_lt"
+          ],
+          "qualification": "This retains the strict supremum statement, the full exterior including boundaries, and every finite p>=1. The threshold is chosen before varying the displacement in the neighborhood."
+        },
+        {
+          "ordered_group": "D-014",
+          "source_lines": [
+            10465,
+            10470
+          ],
+          "requirement": "Entire product divided by sine as a relative product",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Off the free lattice the sine-normalized source product equals the actual convergent relative product.",
+            "The product error is bounded by exp of the absolute reciprocal-sum norm minus one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_div_sin_eq_tprod",
+            "NLS.ZakharovShabat.norm_appendixDProduct_div_sin_sub_one_le"
+          ],
+          "qualification": "The factors are 1-a_m/(z-pi*m), equal to the printed root ratios. The quotient is evaluated only where its sine denominator is nonzero."
+        },
+        {
+          "ordered_group": "D-015",
+          "source_lines": [
+            10472,
+            10477
+          ],
+          "requirement": "Nearest lattice point and reciprocal denominator estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Each exterior point has a real nearest lattice index with real displacement at most pi/2.",
+            "For that index every reciprocal denominator satisfies the factor-four estimate, and one index works before all factors and complex numerators."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice",
+            "NLS.ZakharovShabat.appendixDExterior_denominator_le_four",
+            "NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le"
+          ],
+          "qualification": "Use the non-strict lower distance pi/4 at exterior boundary points; the source discs are open. The factor four is retained. The nearest-index helper passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "D-016",
+          "source_lines": [
+            10478,
+            10490
+          ],
+          "requirement": "Exterior reciprocal sum split into far and near indices",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual scalar reciprocal sum converges and splits into a distant kernel plus the coefficient tail.",
+            "The two printed decay denominators hold with explicit constant 8*(4*p.toReal+1), including p=1."
+          ],
+          "declarations": [
+            "NLS.Coeff.appendixDReciprocalSum_height_bound",
+            "NLS.Coeff.appendixDReciprocalSum_far_near",
+            "NLS.Coeff.appendixDReciprocalSum_source_bound"
+          ],
+          "qualification": "Correct the tail to the half-radius tail retaining abs(m)>=floor(abs(n)/2)+1. The near split only provides this half-radius information. The constant and tail index are corrected directly without proving a counterexample."
+        },
+        {
+          "ordered_group": "D-017",
+          "source_lines": [
+            10492,
+            10493
+          ],
+          "requirement": "Local uniform decay gives asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The absolute reciprocal-sum norm tends to zero at spectral infinity outside fixed free discs.",
+            "One threshold works throughout a neighborhood of any fixed displacement, yielding the required locally uniform sine asymptotic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_scalarResolventToL1_of_separated",
+            "NLS.ZakharovShabat.exists_local_threshold_scalarResolvent_small",
+            "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_bound"
+          ],
+          "qualification": "The final uniformity is proved by finite-support approximation and a common operator bound. The scalar split is also proved, but the final theorem does not depend on an unproved assertion about uniform tails over an arbitrary bounded set."
+        },
+        {
+          "ordered_group": "D-018",
+          "source_lines": [
+            10497,
+            10519
+          ],
+          "requirement": "D.6 separated tail products with uniform constants",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Two arbitrary bounded complex displacements with finite ell-p difference have genuinely convergent tail-disc relative products for finite 1<p<infinity.",
+            "One positive constant, chosen from p,c and the two norm bounds before the inputs or cutoffs, bounds both the p-power sum and the printed linear-norm right side."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaD6_multipliable",
+            "NLS.ZakharovShabat.sourceLemmaD6",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff"
+          ],
+          "qualification": "The final theorem is stronger: it permits every cutoff beyond the separated tail and does not need simplicity or the printed small-tail condition. Where the proof uses small factors, use the separately proved uniform cutoff with c on both head and tail terms; do not retain the incomplete sufficient-condition constant."
+        },
+        {
+          "ordered_group": "D-019",
+          "source_lines": [
+            10530,
+            10535
+          ],
+          "requirement": "Literal ratio perturbation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual quotient minus one is the off-diagonal displacement difference divided by the reference denominator.",
+            "Reconstructing numerator roots from their literal displacement difference gives exactly the source relative product."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDReciprocalTerm",
+            "NLS.ZakharovShabat.appendixDRelativeProductError_eq",
+            "NLS.ZakharovShabat.appendixDRelativeProductError_difference"
+          ],
+          "qualification": "Separation gives nonzero off-diagonal denominators before the division identity is used. The omitted product entry is one and the omitted sum entry is zero."
+        },
+        {
+          "ordered_group": "D-020",
+          "source_lines": [
+            10537,
+            10546
+          ],
+          "requirement": "Uniform half-unit cutoff for all retained factors",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The head/tail factor bound retains abs(n), the head coefficient 2*c/abs(n), and c multiplying the tail norm.",
+            "For every positive tolerance one positive cutoff works before every signed n, every point in its original disc, and every factor index; the half-unit bound follows."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff"
+          ],
+          "qualification": "Use signed-index magnitude and the inclusive Fourier-tail convention. The statements also hold at p=1. No source formula is disproved to establish this correction."
+        },
+        {
+          "ordered_group": "D-021",
+          "source_lines": [
+            10550,
+            10557
+          ],
+          "requirement": "Corrected product-error inequality and its three sums",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual product-error norm supremum is at most A*exp(S)+B*exp(S+S^2).",
+            "Here A is the supremum of the signed sum, S is the sum of the individual factor suprema and B is the sum of their squares; both factor sums converge."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDDiscNormSup_bounds",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_summable",
+            "NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound"
+          ],
+          "qualification": "Replace the printed equality by an inequality directly. Every supremum is over the original full open disc; no maximum-attainment assumption is imposed. A common cutoff precedes all tail indices."
+        },
+        {
+          "ordered_group": "D-022",
+          "source_lines": [
+            10559,
+            10563
+          ],
+          "requirement": "Holder bound for absolute reciprocal sum",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Holder bounds the sum of factor suprema by c times the conjugate-exponent reciprocal-kernel norm times norm(a)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_sum_le"
+          ],
+          "qualification": "Keep c explicit instead of hiding it in a symbol labeled C_p. The exact conjugate-kernel bound assumes 1<p<infinity, as in D.6. The zero kernel entry implements the omitted diagonal."
+        },
+        {
+          "ordered_group": "D-023",
+          "source_lines": [
+            10565,
+            10572
+          ],
+          "requirement": "Finite head modification and signed-row estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Simplicity permits one finite modification of the head discs, leaving the original tail discs unchanged and giving a global off-diagonal separation.",
+            "One radius and one separation constant C are chosen before all inputs. All independent samples give genuinely convergent ell-p signed rows, with a single least norm majorant over the modified discs."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDModifiedDisk",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated",
+            "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple"
+          ],
+          "qualification": "Retain C explicitly in the bound pi^(-1)*(HilbertBound+C*(2*norm(r)+1+pi/4)*norm(square kernel))*norm(a). Do not claim uniform finite-head control from the displacement norm alone. The original tail conclusion uses its own independently proved uniform bound."
+        },
+        {
+          "ordered_group": "D-024",
+          "source_lines": [
+            10574,
+            10583
+          ],
+          "requirement": "Square row at p>=2",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For finite p>=2, the literal sum of squared factor suprema has half-exponent membership and summable p/2 powers.",
+            "Its total p/2 energy is at most c^p*norm(a)^p times the reciprocal-square convolution constant to power p/2."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_squaredAbsoluteRows",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_sum_le",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound"
+          ],
+          "qualification": "Young convolution gives the half-exponent estimate. The finite head is extended by zero, so the full integer sum is exactly the selected-tail sum. The two literal-square theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "D-025",
+          "source_lines": [
+            10585,
+            10591
+          ],
+          "requirement": "Square row at p<=2",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The same literal squared-supremum sum belongs to ell-(p/2) for 1<p<=2, allowing the target exponent to be below one.",
+            "The powered bound retains c^p and the p norm of a; at p=3/2 these are c^(3/2), norm(a)^(3/2), and target exponent 3/4."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_squaredAbsoluteRows",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound"
+          ],
+          "qualification": "Correct c^2 to c^p in the powered energy and the inconsistent q norm label to p. Powered Young handles the quasi-normed range. The positive theorem passed its full check and is committed and pushed; no refutation is added."
+        },
+        {
+          "ordered_group": "D-026",
+          "source_lines": [
+            10595,
+            10602
+          ],
+          "requirement": "Combined powered product estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Combining the signed row, square row and absolute bound gives the literal product-error supremum in ell-p.",
+            "The p-power sum has a constant uniform before all bounded inputs and later cutoffs, and the linear-norm version is retained as well."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDRelativeProductPowerSup_normBall",
+            "NLS.ZakharovShabat.sourceLemmaD6"
+          ],
+          "qualification": "The final constant retains dependence on c,p,the reference norm bound and the difference norm bound. The repository proves the final estimate by uniform majorants, without relying on the printed equality or missing constant labels in intermediate displays."
+        },
+        {
+          "ordered_group": "D-027",
+          "source_lines": [
+            10605,
+            10608
+          ],
+          "requirement": "D.7 signed quadratic remainder",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "After subtracting the signed root-difference reciprocal sum, the literal tail-disc norm supremum belongs to ell-(p/2), uniformly on bounded input sets.",
+            "This implies the printed ell-(p/2)+ell-(1+) decomposition with one common zero second component."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRemarkD7Remainder_eq",
+            "NLS.ZakharovShabat.sourceRemarkD7_uniform",
+            "NLS.ZakharovShabat.sourceRemarkD7_mem",
+            "NLS.ZakharovShabat.sourceRemarkD7"
+          ],
+          "qualification": "The selected tail is extended by zero on the finite head. The half-exponent target includes p<2; the linear subtraction remains complex and signed."
+        },
+        {
+          "ordered_group": "D-028",
+          "source_lines": [
+            10611,
+            10621
+          ],
+          "requirement": "D.8 multiplicative and additive deleted-product estimates",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal positive deleted product divided by its omitted normalization denominator has both multiplicative and additive ell-p errors.",
+            "Actual error suprema and arbitrary independent samples share one bound throughout each displacement norm ball, hence locally uniformly."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_appendixDNormalizedDeletedProduct",
+            "NLS.ZakharovShabat.sourceLemmaD8_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD8_locally_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD8_off_center",
+            "NLS.ZakharovShabat.sourceLemmaD8_center"
+          ],
+          "qualification": "At free centers the sine quotient is filled by its removable value, retaining the cosine sign. Away from centers it is the literal displayed quotient. The original finite 1<p<infinity scope is retained."
+        },
+        {
+          "ordered_group": "D-029",
+          "source_lines": [
+            10635,
+            10646
+          ],
+          "requirement": "D.9 full product at arbitrary independent samples",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every independent sampling sequence in the original discs, the full negative source product differs from sine by an actual ell-p sequence.",
+            "One bound works throughout a displacement neighborhood and before all sampling sequences; literal symmetric-cutoff definitions give the same result."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaD9",
+            "NLS.ZakharovShabat.sourceLemmaD9_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_locally_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_of_cutoff_limits"
+          ],
+          "qualification": "The negative normalization and all signed integer indices are retained. No regularity or correlation is imposed on the independent sample choices. The exponent range is the original finite 1<p<infinity."
+        },
+        {
+          "ordered_group": "D-030",
+          "source_lines": [
+            10649,
+            10673
+          ],
+          "requirement": "Restoring omitted factor and estimating the sine error",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Restoring the omitted source factor gives the exact full product, and subtracting sine yields the signed free-quotient times displacement-and-relative-error identity.",
+            "The free sine quotient and the sampled displaced-root difference are uniformly bounded on the discs, so the resulting error belongs to ell-p."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_eq_deleted",
+            "NLS.ZakharovShabat.appendixDDeletedProduct_zero",
+            "NLS.ZakharovShabat.appendixDProduct_sub_sin_eq_relative_error",
+            "NLS.ZakharovShabat.sourceLemmaD8_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_mem"
+          ],
+          "qualification": "The free deleted product divided by its denominator is minus the filled sine quotient, which accounts for the sign. The final membership theorem applies also at the removable centers."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "D-001",
+          "source_lines": [
+            10322,
+            10330
+          ],
+          "requirement": "Absolute versus ordinary ordered products",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Absolute convergence of the ordered source products is equivalent to summability of the perturbation norms.",
+            "Absolute convergence gives genuine complex product convergence, including products with zero factors."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.source_absolute_product_limit_iff",
+            "NLS.ComplexAnalysis.source_complex_product_limit_and_bounds"
+          ],
+          "qualification": "The source uses cutoffs from 1 through N. The public theorems retain these literal cutoffs. Historical evidence separating ordinary and absolute convergence is preserved without adding or repeating a refutation."
+        },
+        {
+          "ordered_group": "D-002",
+          "source_lines": [
+            10333,
+            10341
+          ],
+          "requirement": "D.1 signed sum and square sum estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The norm of the actual complex product minus one is at most A*exp(S)+B*exp(S+S^2), with A the norm of the signed complex sum, B the sum of squared norms and S the sum of norms.",
+            "Absolute summability and the half-unit bound are retained; the printed constants and powers are unchanged."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_signed_sum"
+          ],
+          "qualification": "The result holds over any index type, hence in particular over the two-sided integer lattice. The proof controls the logarithmic remainder by B."
+        },
+        {
+          "ordered_group": "D-003",
+          "source_lines": [
+            10344,
+            10350
+          ],
+          "requirement": "D.2 exponential bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The product error is bounded by exp(S)-1, which is at most S*exp(S)."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_exp_sub_one_le"
+          ],
+          "qualification": "Absolute summability suffices; the weaker bound does not require the half-unit hypothesis."
+        },
+        {
+          "ordered_group": "D-004",
+          "source_lines": [
+            10360,
+            10366
+          ],
+          "requirement": "D.3 signed linear subtraction",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Subtract the signed complex sum in the linear term and retain its squared norm divided by two in the exponential bound."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_sub_tsum_le_signed_square"
+          ],
+          "qualification": "The symbol A in the subtraction is the complex sum, while D.1 used its norm. This is the positive corrected statement. Historical source-notation evidence is unchanged; no new refutation is added."
+        },
+        {
+          "ordered_group": "D-005",
+          "source_lines": [
+            10368,
+            10372
+          ],
+          "requirement": "Sine product normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The free sine function is the limit of the literal negative symmetric root products.",
+            "The zero-index normalization denominator is one; all nonzero denominators are pi*m."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.singleSpectralDenominator",
+            "NLS.ZakharovShabat.tendsto_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_zero"
+          ],
+          "qualification": "The negative prefactor, two-sided symmetric cutoffs and zero-index convention are retained. The product is not replaced by an arbitrarily normalized entire function."
+        },
+        {
+          "ordered_group": "D-006",
+          "source_lines": [
+            10374,
+            10380
+          ],
+          "requirement": "Finite exponent displaced roots and uniform simple-root separation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every finite Banach displacement exponent, including p=1, has the prescribed perturbed lattice.",
+            "If its roots are pairwise distinct, one strictly positive constant separates every pair of distinct roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_uniform_displacedRoots_separation",
+            "NLS.ZakharovShabat.exists_displacedRoot_separation"
+          ],
+          "qualification": "Uniform separation uses finite-exponent decay. For arbitrary bounded displacements only the individual-root isolation used later is asserted; a common global separation is not inferred from boundedness alone."
+        },
+        {
+          "ordered_group": "D-007",
+          "source_lines": [
+            10383,
+            10383
+          ],
+          "requirement": "Adaptation from p=2",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source says its presentation extends the p=2 appendix in reference [23]."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct_finite"
+          ],
+          "qualification": "The attribution is contextual. The finite-exponent conclusions are proved in the repository. This row does not claim comparison of the exact 2014 edition of reference [23]."
+        },
+        {
+          "ordered_group": "D-008",
+          "source_lines": [
+            10386,
+            10391
+          ],
+          "requirement": "D.4 joint analyticity and exact roots",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each omitted integer index, the literal negative deleted product converges and is jointly analytic in the spectral parameter and the displacement.",
+            "Its zeros are exactly the retained roots, with the count of repeated retained indices as analytic multiplicity."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.appendixDDeletedProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct"
+          ],
+          "qualification": "All finite p>=1 are retained. Repeated roots are allowed in this assertion, and the omitted index is removed before counting multiplicity."
+        },
+        {
+          "ordered_group": "D-009",
+          "source_lines": [
+            10392,
+            10398
+          ],
+          "requirement": "Simple roots and reciprocal poles",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For an injective root sequence the retained zeros have analytic order one.",
+            "The reciprocal is meromorphic, has order minus one at each retained root, and is the limit of the reciprocal symmetric products away from those roots."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct_of_injective",
+            "NLS.ZakharovShabat.meromorphicAt_inv_appendixDDeletedProduct",
+            "NLS.ZakharovShabat.meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective",
+            "NLS.ZakharovShabat.tendsto_inv_appendixDDeletedProduct"
+          ],
+          "qualification": "The zero and pole locations are the original displaced roots, with no unmentioned nonvanishing assumption at the omitted index."
+        },
+        {
+          "ordered_group": "D-010",
+          "source_lines": [
+            10401,
+            10420
+          ],
+          "requirement": "Paired perturbation sums and products",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Opposite indices cancel the spectral parameter in the linear perturbation sum and give the exact square-denominator quadratic identity.",
+            "Both paired expressions are absolutely summable at every finite Banach exponent; the quadratic one is summable even for bounded displacements."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_mul_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg"
+          ],
+          "qualification": "The zero entry is totalized and unused. These statements are fixed-parameter summability results; local uniformity is supplied by the next separately proved product-convergence assertion."
+        },
+        {
+          "ordered_group": "D-011",
+          "source_lines": [
+            10421,
+            10424
+          ],
+          "requirement": "Local uniform product convergence and analyticity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Full and deleted symmetric cutoffs converge uniformly on compact spectral sets and bounded displacement sets.",
+            "Every finite cutoff is jointly analytic and its limit is jointly analytic, including p=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendstoUniformlyOn_jointSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.tendstoUniformlyOn_jointDeletedSingleSpectralProduct_finite",
+            "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralPartialProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralPartialProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct_finite"
+          ],
+          "qualification": "The proof uses uniform product estimates and exponent inclusion for the summable endpoint. It proves the required local uniform convergence without treating pointwise convergence alone as sufficient."
+        },
+        {
+          "ordered_group": "D-012",
+          "source_lines": [
+            10426,
+            10428
+          ],
+          "requirement": "Free open quarter-pi discs",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The free source discs are open balls of radius pi/4 centered at pi*n, and their exterior contains the boundaries."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDExterior",
+            "NLS.ZakharovShabat.appendixDExterior_eq_compl_iUnion_ball"
+          ],
+          "qualification": "The complement is taken after the union over every signed integer index."
+        },
+        {
+          "ordered_group": "D-013",
+          "source_lines": [
+            10440,
+            10462
+          ],
+          "requirement": "D.5 locally uniform exterior asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The normalized full product is jointly analytic and has exactly the prescribed roots with their multiplicities.",
+            "For every displacement and epsilon>0, one positive neighborhood radius and one spectral threshold make the literal exterior error supremum smaller than epsilon for all displacements in that neighborhood."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+            "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+            "NLS.ZakharovShabat.analyticOrderAt_appendixDProduct",
+            "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_sup_lt"
+          ],
+          "qualification": "This retains the strict supremum statement, the full exterior including boundaries, and every finite p>=1. The threshold is chosen before varying the displacement in the neighborhood."
+        },
+        {
+          "ordered_group": "D-014",
+          "source_lines": [
+            10465,
+            10470
+          ],
+          "requirement": "Entire product divided by sine as a relative product",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Off the free lattice the sine-normalized source product equals the actual convergent relative product.",
+            "The product error is bounded by exp of the absolute reciprocal-sum norm minus one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_div_sin_eq_tprod",
+            "NLS.ZakharovShabat.norm_appendixDProduct_div_sin_sub_one_le"
+          ],
+          "qualification": "The factors are 1-a_m/(z-pi*m), equal to the printed root ratios. The quotient is evaluated only where its sine denominator is nonzero."
+        },
+        {
+          "ordered_group": "D-015",
+          "source_lines": [
+            10472,
+            10477
+          ],
+          "requirement": "Nearest lattice point and reciprocal denominator estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Each exterior point has a real nearest lattice index with real displacement at most pi/2.",
+            "For that index every reciprocal denominator satisfies the factor-four estimate, and one index works before all factors and complex numerators."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice",
+            "NLS.ZakharovShabat.appendixDExterior_denominator_le_four",
+            "NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le"
+          ],
+          "qualification": "Use the non-strict lower distance pi/4 at exterior boundary points; the source discs are open. The factor four is retained. The nearest-index helper passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "D-016",
+          "source_lines": [
+            10478,
+            10490
+          ],
+          "requirement": "Exterior reciprocal sum split into far and near indices",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual scalar reciprocal sum converges and splits into a distant kernel plus the coefficient tail.",
+            "The two printed decay denominators hold with explicit constant 8*(4*p.toReal+1), including p=1."
+          ],
+          "declarations": [
+            "NLS.Coeff.appendixDReciprocalSum_height_bound",
+            "NLS.Coeff.appendixDReciprocalSum_far_near",
+            "NLS.Coeff.appendixDReciprocalSum_source_bound"
+          ],
+          "qualification": "Correct the tail to the half-radius tail retaining abs(m)>=floor(abs(n)/2)+1. The near split only provides this half-radius information. The constant and tail index are corrected directly without proving a counterexample."
+        },
+        {
+          "ordered_group": "D-017",
+          "source_lines": [
+            10492,
+            10493
+          ],
+          "requirement": "Local uniform decay gives asymptotic",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The absolute reciprocal-sum norm tends to zero at spectral infinity outside fixed free discs.",
+            "One threshold works throughout a neighborhood of any fixed displacement, yielding the required locally uniform sine asymptotic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_scalarResolventToL1_of_separated",
+            "NLS.ZakharovShabat.exists_local_threshold_scalarResolvent_small",
+            "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_bound"
+          ],
+          "qualification": "The final uniformity is proved by finite-support approximation and a common operator bound. The scalar split is also proved, but the final theorem does not depend on an unproved assertion about uniform tails over an arbitrary bounded set."
+        },
+        {
+          "ordered_group": "D-018",
+          "source_lines": [
+            10497,
+            10519
+          ],
+          "requirement": "D.6 separated tail products with uniform constants",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Two arbitrary bounded complex displacements with finite ell-p difference have genuinely convergent tail-disc relative products for finite 1<p<infinity.",
+            "One positive constant, chosen from p,c and the two norm bounds before the inputs or cutoffs, bounds both the p-power sum and the printed linear-norm right side."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaD6_multipliable",
+            "NLS.ZakharovShabat.sourceLemmaD6",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff"
+          ],
+          "qualification": "The final theorem is stronger: it permits every cutoff beyond the separated tail and does not need simplicity or the printed small-tail condition. Where the proof uses small factors, use the separately proved uniform cutoff with c on both head and tail terms; do not retain the incomplete sufficient-condition constant."
+        },
+        {
+          "ordered_group": "D-019",
+          "source_lines": [
+            10530,
+            10535
+          ],
+          "requirement": "Literal ratio perturbation",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual quotient minus one is the off-diagonal displacement difference divided by the reference denominator.",
+            "Reconstructing numerator roots from their literal displacement difference gives exactly the source relative product."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDReciprocalTerm",
+            "NLS.ZakharovShabat.appendixDRelativeProductError_eq",
+            "NLS.ZakharovShabat.appendixDRelativeProductError_difference"
+          ],
+          "qualification": "Separation gives nonzero off-diagonal denominators before the division identity is used. The omitted product entry is one and the omitted sum entry is zero."
+        },
+        {
+          "ordered_group": "D-020",
+          "source_lines": [
+            10537,
+            10546
+          ],
+          "requirement": "Uniform half-unit cutoff for all retained factors",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The head/tail factor bound retains abs(n), the head coefficient 2*c/abs(n), and c multiplying the tail norm.",
+            "For every positive tolerance one positive cutoff works before every signed n, every point in its original disc, and every factor index; the half-unit bound follows."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff"
+          ],
+          "qualification": "Use signed-index magnitude and the inclusive Fourier-tail convention. The statements also hold at p=1. No source formula is disproved to establish this correction."
+        },
+        {
+          "ordered_group": "D-021",
+          "source_lines": [
+            10550,
+            10557
+          ],
+          "requirement": "Corrected product-error inequality and its three sums",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The actual product-error norm supremum is at most A*exp(S)+B*exp(S+S^2).",
+            "Here A is the supremum of the signed sum, S is the sum of the individual factor suprema and B is the sum of their squares; both factor sums converge."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDDiscNormSup_bounds",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_summable",
+            "NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound"
+          ],
+          "qualification": "Replace the printed equality by an inequality directly. Every supremum is over the original full open disc; no maximum-attainment assumption is imposed. A common cutoff precedes all tail indices."
+        },
+        {
+          "ordered_group": "D-022",
+          "source_lines": [
+            10559,
+            10563
+          ],
+          "requirement": "Holder bound for absolute reciprocal sum",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Holder bounds the sum of factor suprema by c times the conjugate-exponent reciprocal-kernel norm times norm(a)."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_sum_le"
+          ],
+          "qualification": "Keep c explicit instead of hiding it in a symbol labeled C_p. The exact conjugate-kernel bound assumes 1<p<infinity, as in D.6. The zero kernel entry implements the omitted diagonal."
+        },
+        {
+          "ordered_group": "D-023",
+          "source_lines": [
+            10565,
+            10572
+          ],
+          "requirement": "Finite head modification and signed-row estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Simplicity permits one finite modification of the head discs, leaving the original tail discs unchanged and giving a global off-diagonal separation.",
+            "One radius and one separation constant C are chosen before all inputs. All independent samples give genuinely convergent ell-p signed rows, with a single least norm majorant over the modified discs."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDModifiedDisk",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated",
+            "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows",
+            "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple"
+          ],
+          "qualification": "Retain C explicitly in the bound pi^(-1)*(HilbertBound+C*(2*norm(r)+1+pi/4)*norm(square kernel))*norm(a). Do not claim uniform finite-head control from the displacement norm alone. The original tail conclusion uses its own independently proved uniform bound."
+        },
+        {
+          "ordered_group": "D-024",
+          "source_lines": [
+            10574,
+            10583
+          ],
+          "requirement": "Square row at p>=2",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For finite p>=2, the literal sum of squared factor suprema has half-exponent membership and summable p/2 powers.",
+            "Its total p/2 energy is at most c^p*norm(a)^p times the reciprocal-square convolution constant to power p/2."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_squaredAbsoluteRows",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_sum_le",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound"
+          ],
+          "qualification": "Young convolution gives the half-exponent estimate. The finite head is extended by zero, so the full integer sum is exactly the selected-tail sum. The two literal-square theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "D-025",
+          "source_lines": [
+            10585,
+            10591
+          ],
+          "requirement": "Square row at p<=2",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The same literal squared-supremum sum belongs to ell-(p/2) for 1<p<=2, allowing the target exponent to be below one.",
+            "The powered bound retains c^p and the p norm of a; at p=3/2 these are c^(3/2), norm(a)^(3/2), and target exponent 3/4."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_squaredAbsoluteRows",
+            "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound"
+          ],
+          "qualification": "Correct c^2 to c^p in the powered energy and the inconsistent q norm label to p. Powered Young handles the quasi-normed range. The positive theorem passed its full check and is committed and pushed; no refutation is added."
+        },
+        {
+          "ordered_group": "D-026",
+          "source_lines": [
+            10595,
+            10602
+          ],
+          "requirement": "Combined powered product estimate",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Combining the signed row, square row and absolute bound gives the literal product-error supremum in ell-p.",
+            "The p-power sum has a constant uniform before all bounded inputs and later cutoffs, and the linear-norm version is retained as well."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDRelativeProductPowerSup_normBall",
+            "NLS.ZakharovShabat.sourceLemmaD6"
+          ],
+          "qualification": "The final constant retains dependence on c,p,the reference norm bound and the difference norm bound. The repository proves the final estimate by uniform majorants, without relying on the printed equality or missing constant labels in intermediate displays."
+        },
+        {
+          "ordered_group": "D-027",
+          "source_lines": [
+            10605,
+            10608
+          ],
+          "requirement": "D.7 signed quadratic remainder",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "After subtracting the signed root-difference reciprocal sum, the literal tail-disc norm supremum belongs to ell-(p/2), uniformly on bounded input sets.",
+            "This implies the printed ell-(p/2)+ell-(1+) decomposition with one common zero second component."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRemarkD7Remainder_eq",
+            "NLS.ZakharovShabat.sourceRemarkD7_uniform",
+            "NLS.ZakharovShabat.sourceRemarkD7_mem",
+            "NLS.ZakharovShabat.sourceRemarkD7"
+          ],
+          "qualification": "The selected tail is extended by zero on the finite head. The half-exponent target includes p<2; the linear subtraction remains complex and signed."
+        },
+        {
+          "ordered_group": "D-028",
+          "source_lines": [
+            10611,
+            10621
+          ],
+          "requirement": "D.8 multiplicative and additive deleted-product estimates",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal positive deleted product divided by its omitted normalization denominator has both multiplicative and additive ell-p errors.",
+            "Actual error suprema and arbitrary independent samples share one bound throughout each displacement norm ball, hence locally uniformly."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.tendsto_appendixDNormalizedDeletedProduct",
+            "NLS.ZakharovShabat.sourceLemmaD8_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD8_locally_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD8_off_center",
+            "NLS.ZakharovShabat.sourceLemmaD8_center"
+          ],
+          "qualification": "At free centers the sine quotient is filled by its removable value, retaining the cosine sign. Away from centers it is the literal displayed quotient. The original finite 1<p<infinity scope is retained."
+        },
+        {
+          "ordered_group": "D-029",
+          "source_lines": [
+            10635,
+            10646
+          ],
+          "requirement": "D.9 full product at arbitrary independent samples",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every independent sampling sequence in the original discs, the full negative source product differs from sine by an actual ell-p sequence.",
+            "One bound works throughout a displacement neighborhood and before all sampling sequences; literal symmetric-cutoff definitions give the same result."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaD9",
+            "NLS.ZakharovShabat.sourceLemmaD9_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_locally_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_of_cutoff_limits"
+          ],
+          "qualification": "The negative normalization and all signed integer indices are retained. No regularity or correlation is imposed on the independent sample choices. The exponent range is the original finite 1<p<infinity."
+        },
+        {
+          "ordered_group": "D-030",
+          "source_lines": [
+            10649,
+            10673
+          ],
+          "requirement": "Restoring omitted factor and estimating the sine error",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Restoring the omitted source factor gives the exact full product, and subtracting sine yields the signed free-quotient times displacement-and-relative-error identity.",
+            "The free sine quotient and the sampled displaced-root difference are uniformly bounded on the discs, so the resulting error belongs to ell-p."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_eq_deleted",
+            "NLS.ZakharovShabat.appendixDDeletedProduct_zero",
+            "NLS.ZakharovShabat.appendixDProduct_sub_sin_eq_relative_error",
+            "NLS.ZakharovShabat.sourceLemmaD8_uniform",
+            "NLS.ZakharovShabat.sourceLemmaD9_mem"
+          ],
+          "qualification": "The free deleted product divided by its denominator is minus the filled sine quotient, which accounts for the sign. The final membership theorem applies also at the removable centers."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 19,
+        "corrected": 10,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/SignedProductEstimates.lean": "ab5df282d2337d5f6cf58f0f1cee533cbf60fc557f10320561626cd6b572ca4e",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean": "a96736367e4224d970080953e97d9270435041e0de165a50dcea212f16e3e2b3",
+        "NLS/ZakharovShabat/SourceLemmaD6.lean": "b14e42efb55f948f1df66a6f9daa6bc27544da131887bd812fdfeaa8ed45f6b6",
+        "NLS/ZakharovShabat/SourceRemarkD7.lean": "1db5bcd9ccb519445417a61b5d23f9e6a50df2de27ab57cde48b51282d27eb27",
+        "NLS/ZakharovShabat/SourceLemmaD8.lean": "a0d21eafcfe62b13ad278b29edb9bcf1822ceab7896b27b2cf432b55cd3ab5ca",
+        "NLS/ZakharovShabat/SourceLemmaD9.lean": "a0af5b8a3da9eae6de4e89b01d6dcf55087a11888de276e1e14529efc655362e",
+        "NLS/ZakharovShabat/LocallyUniformExteriorResolvent.lean": "c06896773dda7f2a6eda912a69ec439df199df799f1f6a11c6bf72eb386f1385",
+        "NLS/ZakharovShabat/AppendixDRelativeProductBounds.lean": "c1e3380b478233b3c8d2c179d6b2fe969c489ecf576b02bf14aef14cc1bb5d9f",
+        "NLS/ZakharovShabat/AppendixDSineProducts.lean": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9",
+        "NLS/ZakharovShabat/AppendixDProductMultiplicities.lean": "14ffd87236eb657c545d4e995464c0e3d3a597d37eaf3ed65021823dbf50771c",
+        "NLS/ZakharovShabat/AppendixDSimpleRoots.lean": "bcf4674e9428fb85fe5e3450825fb101d79dd7894d5dceff2bf97a5cf6c83872",
+        "NLS/ZakharovShabat/AppendixDRelativeProductRows.lean": "e71835e60d6c5720894dcd831d3fdfa3ec321b7afa099e3ecbe5857f7d43cfac",
+        "NLS/ComplexAnalysis/AbsoluteProductConvergence.lean": "e8637226baf96e758c10078ab54f18781cebbfd12aabac86b3ec30b8635050df",
+        "NLS/ZakharovShabat/DisplacedRootsSeparation.lean": "6218dea92933d3a6055802dc3111e0a74d6c345c391ecf41a47e90a28411d0fd",
+        "NLS/ZakharovShabat/DisplacedProductOrders.lean": "72e15c941f39ea98452dc4f7d9dc80ed3f8053b905fb89bd752b909d5d6553a9",
+        "NLS/SequenceSpaces/CoefficientDecay.lean": "c6106c7e636f4de9b16afcf9e7125c96f942265547053ecc08b116a4b08ecd34",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean": "20d50f9d2ae9cb384ae745839d772bfb0ce73892d640b350abc873c55faa8e4b",
+        "NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean": "1024c5d877618f18c7205c9a677a4b97c387490829298991ddbc6e046e809d49",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/ZakharovShabat/FreeResolventExteriorLimit.lean": "06e9621eeed213d6c902dd5acd9f86969c0172fe442b4155a7e1456d0c3b736d",
+        "NLS/Fourier/SquaredAbsoluteRows.lean": "0190556ffb7a5e1567aa8ebdd2d9ad2bcf8928433f66b5cd8a98fd27bcd868b2",
+        "NLS/ZakharovShabat/AppendixDQuadraticRemainder.lean": "72602829490d3bb0d4a2d0cfda915e07ae40ab01e6af9f6c0f9b55022941bef5",
+        "NLS/SequenceSpaces/SquaredReciprocalRows.lean": "0d04d3a9ece604db7f6d18449abbd0944f0bc5137dda567e5851ba97ecaa5dbd",
+        "NLS/ZakharovShabat/SingleSpectralProductEndpoints.lean": "481cdf8245f8951dea6db7d27b1132f42056790a2b99f8c6e674369538ad2bf0",
+        "NLS/ZakharovShabat/SingleSpectralProducts.lean": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52",
+        "NLS/ZakharovShabat/SingleSpectralProductFamilies.lean": "f7b8c0cb83b2f774389abe36219b3d771392b660a017d9a6c3493f6998a27e13",
+        "NLS/ZakharovShabat/JointSingleSpectralProducts.lean": "9979c1745d9add86d6492b8c9d1b44343ec89b6c978c7640ea89024efd623a90",
+        "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean": "641481efa3d7d4fbda54acf566f36902fe8499b17c645547a87151276e5c0857",
+        "NLS/SequenceSpaces/ExponentEmbedding.lean": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10",
+        "NLS/Fourier/SampledHilbert.lean": "71fe6c88a4977e98d4a03c18611f97045b64b653db42609c04b26f4c0513288b",
+        "NLS/SequenceSpaces/ShiftedHolderDecay.lean": "40622952d8b9af822c354e65a11dd1ca19c782d1ed110d6d991d2d39e992f48c",
+        "NLS/SequenceSpaces/WeightedReciprocalDecay.lean": "b1f8e84ead262088d54fd82ae71e8bd0f70e5b6f5174b9b281c556ad2a774fd4",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "293d6b7218f45fe21ba7178d5fe33c4c77cdf0e1567de46c0df8875fbcdbf6ed",
+        "NLS/SequenceSpaces/ReciprocalNorm.lean": "f8757ec64d037a9d11def7a84e46f8f753cb12fa952b3d59aec203e6ca848861",
+        "NLS/SequenceSpaces/UniformHolderSums.lean": "548256b77eaff1e22277dc43668e8495e3dbe016c0830b20d4972118e7269966",
+        "NLS/ZakharovShabat/AppendixDPairedFactors.lean": "11d02219c2cba9a3e5eed93d21d5b12d87a5f12fbe1bb1e43d91edaccdb5096c",
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean": "4de3a81219d4efe0ec68d070a013a9c5ae96ad37c949f25afaf84017c8e210e9",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean": "3cab5676f1fde6db46a0bfa5616e6a756dc472142a1489b9ff12ef961e7424b3",
+        "NLS/ZakharovShabat/AppendixDSquarePower.lean": "d9cefc362378ae387704e3494b442c431589ce7c46340d9c546b0e0be78bddd1",
+        "NLS/SequenceSpaces/UniformSelectionSup.lean": "f9e5107c73b8dbf83526024d1913b577d07497e54f41a458f58e1d114d686213",
+        "NLS/Fourier/AbsoluteSampledRows.lean": "fb11d366c2b38b66811c94501ae2fda7ab27c1ba426c7a4cd0afd51f99b18dea",
+        "NLS/SequenceSpaces/HolderEmbedding.lean": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8",
+        "NLS/Fourier/ModifiedHilbert.lean": "fa2242a35aecad364050c392a15f873c6abc5d0db9c7cb699ff49895c7adb359",
+        "NLS/SequenceSpaces/AppendixDExteriorSum.lean": "b1452f741b96285cc73fb40d2666e5479c16ece7b8a53038716c22442ea90f6e",
+        "NLS/ZakharovShabat/AppendixDModifiedDisks.lean": "2407f8389a574f48a377b8f9e1a8b07f0d676935d788c4d8c2cfb5902e938ddd",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean": "f93697fb372c5eea8dc57d71594f8885a0bddfbb6d4b73e6a6ab2610f4fc9593",
+        "NLS/ZakharovShabat/AppendixDDeletedRelativeProduct.lean": "e7cfe2a0399b19ab49691e195f528a6f87a588a855ea067562dc8762820dc7ff",
+        "NLS/ZakharovShabat/AppendixDNearestLattice.lean": "d107dca1f0ce015b730cd5613f924fe5ec680121741a29823a176a56f0dfad41",
+        "NLS/ZakharovShabat/AppendixDDiscSupSquare.lean": "26b1dc4b86ddda5e4225e72a42e711a1380f61818e382bccac055046a49afbe4"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/SignedProductEstimates.lean",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceLemmaD6.lean",
+        "NLS/ZakharovShabat/SourceRemarkD7.lean",
+        "NLS/ZakharovShabat/SourceLemmaD8.lean",
+        "NLS/ZakharovShabat/SourceLemmaD9.lean",
+        "NLS/ZakharovShabat/LocallyUniformExteriorResolvent.lean",
+        "NLS/ZakharovShabat/AppendixDRelativeProductBounds.lean",
+        "NLS/ZakharovShabat/AppendixDSineProducts.lean",
+        "NLS/ZakharovShabat/AppendixDProductMultiplicities.lean",
+        "NLS/ZakharovShabat/AppendixDSimpleRoots.lean",
+        "NLS/ZakharovShabat/AppendixDRelativeProductRows.lean",
+        "NLS/ComplexAnalysis/AbsoluteProductConvergence.lean",
+        "NLS/ZakharovShabat/DisplacedRootsSeparation.lean",
+        "NLS/ZakharovShabat/DisplacedProductOrders.lean",
+        "NLS/SequenceSpaces/CoefficientDecay.lean",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean",
+        "NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean",
+        "NLS/SequenceSpaces/FourierTail.lean",
+        "NLS/ZakharovShabat/FreeResolventExteriorLimit.lean",
+        "NLS/Fourier/SquaredAbsoluteRows.lean",
+        "NLS/ZakharovShabat/AppendixDQuadraticRemainder.lean",
+        "NLS/SequenceSpaces/SquaredReciprocalRows.lean",
+        "NLS/ZakharovShabat/SingleSpectralProductEndpoints.lean",
+        "NLS/ZakharovShabat/SingleSpectralProducts.lean",
+        "NLS/ZakharovShabat/SingleSpectralProductFamilies.lean",
+        "NLS/ZakharovShabat/JointSingleSpectralProducts.lean",
+        "NLS/ZakharovShabat/JointDeletedSingleSpectralProducts.lean",
+        "NLS/SequenceSpaces/ExponentEmbedding.lean",
+        "NLS/Fourier/SampledHilbert.lean",
+        "NLS/SequenceSpaces/ShiftedHolderDecay.lean",
+        "NLS/SequenceSpaces/WeightedReciprocalDecay.lean",
+        "NLS/SequenceSpaces/ReciprocalTail.lean",
+        "NLS/SequenceSpaces/ReciprocalNorm.lean",
+        "NLS/SequenceSpaces/UniformHolderSums.lean",
+        "NLS/ZakharovShabat/AppendixDPairedFactors.lean",
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean",
+        "NLS/ZakharovShabat/AppendixDSquarePower.lean",
+        "NLS/SequenceSpaces/UniformSelectionSup.lean",
+        "NLS/Fourier/AbsoluteSampledRows.lean",
+        "NLS/SequenceSpaces/HolderEmbedding.lean",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean",
+        "NLS/Fourier/ModifiedHilbert.lean",
+        "NLS/SequenceSpaces/AppendixDExteriorSum.lean",
+        "NLS/ZakharovShabat/AppendixDModifiedDisks.lean",
+        "NLS/ZakharovShabat/AppendixDDiscSupProduct.lean",
+        "NLS/ZakharovShabat/AppendixDDeletedRelativeProduct.lean",
+        "NLS/ZakharovShabat/AppendixDNearestLattice.lean",
+        "NLS/ZakharovShabat/AppendixDDiscSupSquare.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_D_ASSERTIONS.md",
+      "ordered_inventory_sha256": "0d9d80e23a361ae80018d90aefc3b2e7c84dd02e903e94509fca69219fd5d9ee",
+      "resolved_declarations": [
+        "NLS.Coeff.appendixDReciprocalSum_far_near",
+        "NLS.Coeff.appendixDReciprocalSum_height_bound",
+        "NLS.Coeff.appendixDReciprocalSum_source_bound",
+        "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_exp_sub_one_le",
+        "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_le_signed_sum",
+        "NLS.ComplexAnalysis.norm_tprod_one_add_sub_one_sub_tsum_le_signed_square",
+        "NLS.ComplexAnalysis.source_absolute_product_limit_iff",
+        "NLS.ComplexAnalysis.source_complex_product_limit_and_bounds",
+        "NLS.Fourier.exists_squaredAbsoluteRows",
+        "NLS.ZakharovShabat.analyticOnNhd_appendixDDeletedProduct",
+        "NLS.ZakharovShabat.analyticOnNhd_appendixDProduct",
+        "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralPartialProduct",
+        "NLS.ZakharovShabat.analyticOnNhd_jointDeletedSingleSpectralProduct_finite",
+        "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralPartialProduct",
+        "NLS.ZakharovShabat.analyticOnNhd_jointSingleSpectralProduct_finite",
+        "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct",
+        "NLS.ZakharovShabat.analyticOrderAt_appendixDDeletedProduct_of_injective",
+        "NLS.ZakharovShabat.analyticOrderAt_appendixDProduct",
+        "NLS.ZakharovShabat.appendixDDeletedProduct_eq_zero_iff",
+        "NLS.ZakharovShabat.appendixDDeletedProduct_zero",
+        "NLS.ZakharovShabat.appendixDDiscNormSup_bounds",
+        "NLS.ZakharovShabat.appendixDExterior",
+        "NLS.ZakharovShabat.appendixDExterior_denominator_le_four",
+        "NLS.ZakharovShabat.appendixDExterior_eq_compl_iUnion_ball",
+        "NLS.ZakharovShabat.appendixDModifiedDisk",
+        "NLS.ZakharovShabat.appendixDModifiedDisk_displacement_le",
+        "NLS.ZakharovShabat.appendixDProduct_div_sin_eq_tprod",
+        "NLS.ZakharovShabat.appendixDProduct_eq_deleted",
+        "NLS.ZakharovShabat.appendixDProduct_eq_zero_iff",
+        "NLS.ZakharovShabat.appendixDProduct_sub_sin_eq_relative_error",
+        "NLS.ZakharovShabat.appendixDProduct_zero",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_power_bound",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_square_sum_le",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_sum_le",
+        "NLS.ZakharovShabat.appendixDReciprocalTerm_discSup_summable",
+        "NLS.ZakharovShabat.appendixDRelativeProductError_difference",
+        "NLS.ZakharovShabat.appendixDRelativeProductError_eq",
+        "NLS.ZakharovShabat.appendixDRelativeProductPowerSup_normBall",
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_add_neg",
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_mul_neg",
+        "NLS.ZakharovShabat.exists_appendixDExterior_nearest_lattice",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_rows",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisk_signed_sup_of_simple",
+        "NLS.ZakharovShabat.exists_appendixDModifiedDisks_separated",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff",
+        "NLS.ZakharovShabat.exists_appendixDRelativeProduct_discSup_signed_bound",
+        "NLS.ZakharovShabat.exists_displacedRoot_separation",
+        "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_bound",
+        "NLS.ZakharovShabat.exists_local_appendixDProduct_div_sin_sup_lt",
+        "NLS.ZakharovShabat.exists_local_threshold_scalarResolvent_small",
+        "NLS.ZakharovShabat.exists_uniform_displacedRoots_separation",
+        "NLS.ZakharovShabat.meromorphicAt_inv_appendixDDeletedProduct",
+        "NLS.ZakharovShabat.meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective",
+        "NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le",
+        "NLS.ZakharovShabat.norm_appendixDProduct_div_sin_sub_one_le",
+        "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail",
+        "NLS.ZakharovShabat.singleSpectralDenominator",
+        "NLS.ZakharovShabat.sourceLemmaD6",
+        "NLS.ZakharovShabat.sourceLemmaD6_multipliable",
+        "NLS.ZakharovShabat.sourceLemmaD8_center",
+        "NLS.ZakharovShabat.sourceLemmaD8_locally_uniform",
+        "NLS.ZakharovShabat.sourceLemmaD8_off_center",
+        "NLS.ZakharovShabat.sourceLemmaD8_uniform",
+        "NLS.ZakharovShabat.sourceLemmaD9",
+        "NLS.ZakharovShabat.sourceLemmaD9_locally_uniform",
+        "NLS.ZakharovShabat.sourceLemmaD9_mem",
+        "NLS.ZakharovShabat.sourceLemmaD9_of_cutoff_limits",
+        "NLS.ZakharovShabat.sourceLemmaD9_uniform",
+        "NLS.ZakharovShabat.sourceRemarkD7",
+        "NLS.ZakharovShabat.sourceRemarkD7Remainder_eq",
+        "NLS.ZakharovShabat.sourceRemarkD7_mem",
+        "NLS.ZakharovShabat.sourceRemarkD7_uniform",
+        "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg",
+        "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg",
+        "NLS.ZakharovShabat.tendstoUniformlyOn_jointDeletedSingleSpectralProduct_finite",
+        "NLS.ZakharovShabat.tendstoUniformlyOn_jointSingleSpectralProduct_finite",
+        "NLS.ZakharovShabat.tendsto_appendixDDeletedProduct",
+        "NLS.ZakharovShabat.tendsto_appendixDNormalizedDeletedProduct",
+        "NLS.ZakharovShabat.tendsto_appendixDProduct",
+        "NLS.ZakharovShabat.tendsto_inv_appendixDDeletedProduct",
+        "NLS.ZakharovShabat.tendsto_scalarResolventToL1_of_separated"
+      ],
+      "declaration_inventory_count": 44804,
+      "qualification": "The ordered Appendix D comparison covers thirty groups on printed pp.126-130: nineteen matched, ten directly corrected and one contextual. No partial or pending group remains in this local comparison. It retains literal symmetric products, joint analyticity including p=1, exact roots and multiplicities, locally uniform exterior asymptotics, separated tail products and actual disc suprema. Direct corrections retain the signed D.3 subtraction, exterior boundaries, half-radius Fourier tail, signed-index cutoff, inequality in the D.6 display, explicit separation constants, finite-head dependence, c^p and the p norm below exponent two. D.7-D.9 retain their actual remainders, removable centers and independent samples. This documentation step adds no Lean proof or refutation; historical refutations and broader completeness qualifications remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          126,
+          127,
+          128,
+          129,
+          130
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc",
+          "work/tmp/pdfs/appendix-d-ordered-127.png": "b0c06b20662eec54d70c9fed5d3a3278ab7f8cc1696df37b8bdfee542bbc9241",
+          "work/tmp/pdfs/appendix-d-ordered-128.png": "8ec782ae430e2f688c540b45a2ebad051ac98b43d6cb37977201b718edf52c77",
+          "work/tmp/pdfs/appendix-d-ordered-129.png": "9f7dfbe49acaca9042c9434ae6b007f7cc064139a33ed0399c11f5ff46a563b1",
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a"
+        }
+      },
+      "preceding_review_hash": "54a5272e83c9ba434602062ffb5c02046036302eba9e3f3212e7058c456c6d16",
+      "reconciled_previous_reviews": {
+        "work/AppendixDSourceComparison-2026-10-27.json": "0569f4117f96fd81f41fcf19db11eef6394233b72198012c362130f5d9513437",
+        "work/AppendixDProofStepsSourceComparison-2026-10-31.json": "729dedca59ab8889577e91ce015191ed696b9f03ebe083d08666ab94ec8d269d",
+        "work/AppendixDProofDetailsSourceComparison-2026-10-31.json": "f8d16193c8945272939e8b70bceb65f2071ee72d5dd2e73563f47712d4d09231",
+        "work/AppendixDFinalHelpersSourceComparison-2026-10-31.json": "54a5272e83c9ba434602062ffb5c02046036302eba9e3f3212e7058c456c6d16"
+      },
+      "validation_lean_sources": {
+        "files": 4870,
+        "sha256": "dfceb3bbe2773e4bf6aed96473c923496013e48c517be9ce6d1de76a3cb35bb6"
+      },
+      "validation_reused_from_commit": "9aa445d2e925078f5f3aaabf490e728ab7fb45ce",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 15320,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixDFinalHelpersFullCheck.log",
+        "log_sha256": "ed9e30ea8d721d1f0698ab553a67ba673bca6a962ee64167e0f18829844e5cbe"
+      },
+      "source_record_sha256": "5acbfabfc2360c7009e0cbcb76aae7701c458a051fffaf2b8bd4e88d96d0b0b9"
     }
   }
 }

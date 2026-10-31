@@ -194,8 +194,13 @@ six examples add no new refutation. The [squared factor-supremum estimate](APPEN
 now retains c^p and the p norm in the literal half-exponent energy,
 including p<2. The nearest real lattice index is selected before all
 factors and includes exterior boundaries. Three positive theorems
-and three examples add no new refutation. The thirty-group ordered
-Appendix D comparison remains to be reconciled.
+and three examples add no new refutation. The [ordered Appendix D ledger](APPENDIX_D_ASSERTIONS.md)
+compares thirty groups: nineteen matched, ten corrected and one contextual.
+It retains literal products, original quantifiers, exact roots and
+multiplicities, local uniformity, actual disc suprema and independent
+sampling. Direct corrections keep the half-radius tail, signed sums,
+separation constants, c^p and the p norm explicit. Historical refutations
+and broader qualifications remain unchanged. Appendix E is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

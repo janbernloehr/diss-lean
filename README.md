@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix D squared suprema](coverage/APPENDIX_D.md)
-retain c^p in the literal sum of squared factor suprema, including
-p below two. A nearest lattice index is selected before all factors.
-Three positive theorems and three examples add no new refutation.
-The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Appendix D comparison](coverage/APPENDIX_D_ASSERTIONS.md)
+records nineteen matched groups, ten direct corrections and one
+contextual passage. Literal products, suprema, uniform bounds and
+explicit constants are retained. Appendix E is next;
+[broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
