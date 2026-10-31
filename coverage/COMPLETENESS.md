@@ -136,7 +136,13 @@ squared weighted source norm, on the closed ball 8*norm(a)^2<=1.
 It includes every M1 weight and admissible complex source. This
 direct norm correction preserves the final real and complex
 estimates. One positive theorem and two examples add no new
-refutation. The ordered Section 28 comparison remains in progress.
+refutation. The [ordered Section 28 ledger](SECTION_28_ASSERTIONS.md)
+compares 30 groups: 16 matched, eight corrected, four partial and two contextual.
+The named final constants 2048, 4608, 2^20 and 2^21 remain proved. The
+reflected rational spectral bound and the printed complex adjacent-disc,
+telescoping and enclosing-root arguments remain explicitly qualified.
+The independent final proof does not establish those intermediate claims.
+Appendix A is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

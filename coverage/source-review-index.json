@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T04:41:19.266553+00:00",
-  "base_commit": "c39453dcae659d3c74eb28cafee206974fb504ca",
+  "published_utc": "2026-10-31T04:41:46.363986+00:00",
+  "base_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 181,
-    "module_hash_checks": 3951,
-    "distinct_modules": 2040
+    "review_records": 182,
+    "module_hash_checks": 3983,
+    "distinct_modules": 2055
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c39453dcae659d3c74eb28cafee206974fb504ca",
-    "validated_state": "Fresh full check after the positive Section28 small-ball theorem and two public examples.",
+    "base_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
+    "validated_state": "Section 28 ordered comparison changes documentation only. The exact Lean snapshot retains the successful positive small-ball proof check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8582,
     "public_examples": 7692,
@@ -44,8 +44,9 @@
       "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
     },
     "full_gate_log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section28 and broader completion qualifications remain open.",
-    "full_gate_log": "work/Section28SmallBallFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/Section28SmallBallFullCheck.log",
+    "validation_reused_from_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798"
   },
   "named_statements": [
     {
@@ -59696,6 +59697,1315 @@
         "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
       },
       "source_record_sha256": "c76e9d80504b29dabbe3893527d43e2e7d305703f9b569e3ea639438a6598dd3"
+    },
+    "Section28OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
+      "updated_utc": "2026-10-31T04:41:46.311345+00:00",
+      "source_lines": [
+        [
+          9632,
+          9914
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S28-001",
+          "source_lines": [
+            9634,
+            9639
+          ],
+          "requirement": "Weighted Sobolev motivation",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The introduction motivates gap estimates for general M1 weighted spaces; the actual weighted estimates keep the original indexed actions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection28_original",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "qualification": "The historical assertion that no corresponding Hamiltonian identity is known is context, not a mathematical nonexistence theorem."
+        },
+        {
+          "ordered_group": "S28-002",
+          "source_lines": [
+            9641,
+            9648
+          ],
+          "requirement": "Formula (5.14), local and bounded-set uniformity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The filled quantity 4*I_n/gamma_n^2-1 is realized by an actual l2 sequence, with one bound on a neighborhood before all indices.",
+            "Compact decoding gives one bound before all real sources in each exact physical H1 ball, and more generally in every real M1 weighted ball."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_locally_uniform",
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_uniform_H1_ball",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_uniform_weighted_ball",
+            "NLS.ZakharovShabat.isCompactOperator_normalizedWeightedSource"
+          ],
+          "qualification": "At a collapsed gap use the filled analytic quotient; the expression is not totalized 0/0. Local complex uniformity and real bounded-ball uniformity have distinct quantifiers."
+        },
+        {
+          "ordered_group": "S28-003",
+          "source_lines": [
+            9649,
+            9656
+          ],
+          "requirement": "Original contour action and deleted product",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original circuit action equals i/pi times the integral of the squared critical displacement divided by the selected standard root, multiplied by the actual deleted product.",
+            "The derivative/canonical-root quotient has the exact -i selected-factor normalization."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.factorization"
+          ],
+          "qualification": "All contours retain their admissibility and winding hypotheses. The deleted product is the existing spectral object."
+        },
+        {
+          "ordered_group": "S28-004",
+          "source_lines": [
+            9658,
+            9669
+          ],
+          "requirement": "Gap shrinking and critical coordinate integral",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original action has the straight-gap integral with the exact 2/pi coefficient and critical coordinate.",
+            "For a nonzero gap the normalized formula is the literal quotient 4*I_n/gamma_n^2. The analytic filled extension retains collapsed gaps."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_19Data.action_integral",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_integral",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.factorization",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.collapsed_limit"
+          ],
+          "qualification": "Division is confined to nonzero gaps; the following bounds use the filled formulation throughout the common domain."
+        },
+        {
+          "ordered_group": "S28-005",
+          "source_lines": [
+            9671,
+            9677
+          ],
+          "requirement": "Common critical-coordinate bound and formula (5.15)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A connected open restriction containing the entire real locus controls the critical coordinate by two before all indices.",
+            "The closed-gap integral then gives the exact factor nine, including the filled collapsed extension."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_section28_critical_coordinate_neighborhood",
+            "NLS.ZakharovShabat.section28_critical_coordinate_bound",
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_bound"
+          ],
+          "qualification": "The common L2 neighborhood precedes all weights, sources and indices; the bound is not chosen point by point on each gap."
+        },
+        {
+          "ordered_group": "S28-006",
+          "source_lines": [
+            9682,
+            9686
+          ],
+          "requirement": "Lemma 28.1 and its signed ratio",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The final Lemma 28.1 estimate holds with 2048, signed indices, the inclusive bracket threshold and the exact physical H1 norm.",
+            "The literal signed rational expression is replaced by absolute-index arithmetic where it is used as a scalar comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds",
+            "NLS.ZakharovShabat.lemma281_ratio_le_eight",
+            "NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior"
+          ],
+          "qualification": "The printed signed ratio is not asserted. A complex spectral bound by the reflected rational expression is not verified by these scalar theorems; the central complex-product steps S28-014 through S28-016 remain qualified. The independent final 2048 theorem is fully proved. No new refutation is added."
+        },
+        {
+          "ordered_group": "S28-007",
+          "source_lines": [
+            9688,
+            9697
+          ],
+          "requirement": "Inclusive cutoff and product split",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual deleted infinite product is bounded by a uniform exterior-product bound times its finite central product over -N<m<N.",
+            "Both exterior indices use the inclusive condition |m|>=N and the omitted index n is excluded. Cutoff zero makes the central product empty."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core",
+            "NLS.ZakharovShabat.sourceH1_exterior_product_le_128"
+          ],
+          "qualification": "The transfer keeps the existing product limit and its omitted-domain hypothesis, and avoids division by central factors. The displayed product decomposition is used through this positive finite-core inequality."
+        },
+        {
+          "ordered_group": "S28-008",
+          "source_lines": [
+            9700,
+            9707
+          ],
+          "requirement": "Exterior endpoint localization and separation",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The endpoints and every point of the target closed gap lie in their pi/5 localization discs at the quadratic cutoff.",
+            "The proof uses the explicit separation (3/2)*|m-n|, which suffices for the stronger coefficient-one exterior factor estimate."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_endpoints_localization",
+            "NLS.ZakharovShabat.sourceH1_gap_point_norm_localization",
+            "NLS.ZakharovShabat.localized_endpoint_separation"
+          ],
+          "qualification": "The formal proof uses the stated 3/2 separation budget instead of separately publishing the intermediate 3*pi/5 separation display. Both complex sources and signed indices are retained."
+        },
+        {
+          "ordered_group": "S28-009",
+          "source_lines": [
+            9709,
+            9713
+          ],
+          "requirement": "Individual gap and small ratio",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The original individual weighted gap estimate has the exact sqrt(12) factor at the inclusive bracket cutoff.",
+            "Exterior factor control is obtained directly from both localized endpoints and the critical-offset hypothesis."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_individual",
+            "NLS.ZakharovShabat.localized_critical_root_factor_le",
+            "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le"
+          ],
+          "qualification": "The original scalar small-ratio chain is not needed by this direct geometric proof. The replacement retains the full complex source scope and gives a stronger final single-factor coefficient."
+        },
+        {
+          "ordered_group": "S28-010",
+          "source_lines": [
+            9723,
+            9729
+          ],
+          "requirement": "Root factor and critical displacement estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The standard-root square identity bounds the midpoint distance by root norm plus half-gap.",
+            "An actual critical offset at most the gap length yields factor norm at most 1+gap/|m-n|, stronger than the printed coefficient 4/3."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.midpoint_dist_le_root_add_half_gap",
+            "NLS.ZakharovShabat.source_exterior_critical_factor_le",
+            "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le"
+          ],
+          "qualification": "Complex critical-offset hypotheses are explicit. They are provided in the chosen almost-real neighborhood; the geometry does not assume the source real."
+        },
+        {
+          "ordered_group": "S28-011",
+          "source_lines": [
+            9731,
+            9744
+          ],
+          "requirement": "Cauchy-Schwarz exterior sum",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite Cauchy-Schwarz bounds the sum of gap lengths times reciprocal distances by the product of the two square-budget roots.",
+            "The formal proof uses unweighted gap budget three and a translated reciprocal-square budget 7/2, uniformly in the omitted index."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_finite_product_le_exp_sqrt_budgets",
+            "NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le",
+            "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three"
+          ],
+          "qualification": "These directly proved budgets replace the particular weighted intermediate expression and give the same exterior constant 128. Finite products are transferred to the existing infinite limit."
+        },
+        {
+          "ordered_group": "S28-012",
+          "source_lines": [
+            9746,
+            9751
+          ],
+          "requirement": "Weighted gap-tail budget",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The inclusive weighted gap tail is bounded by 3*(1+N)^2 at every valid cutoff.",
+            "Removing the linear weight gives at most three for every finite subset of exterior gap squares, including N=0."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_cutoff_budget",
+            "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "qualification": "The proof keeps the 1152/(1+N) remainder before using 8*norm(a)^2<=1+N; both components and signed boundary indices are retained."
+        },
+        {
+          "ordered_group": "S28-013",
+          "source_lines": [
+            9753,
+            9764
+          ],
+          "requirement": "Infinite exterior product constant 128",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every finite exterior product is bounded by 128 for complex H1 sources with the explicit common critical-offset condition.",
+            "The exponential square-budget estimate fits inside 128, and uniform finite bounds transfer to the actual deleted product with its finite central part."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_exterior_product_le_128",
+            "NLS.ZakharovShabat.exterior_product_exponential_budget",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core"
+          ],
+          "qualification": "No replacement infinite-product candidate is introduced. The root-omitted domain and complex offset condition remain hypotheses of the transfer."
+        },
+        {
+          "ordered_group": "S28-014",
+          "source_lines": [
+            9767,
+            9780
+          ],
+          "requirement": "Central isolating discs and formula (5.16)",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The reviewed central-product theorem supplies a squared-norm enclosing-interval bound for real sources and real spectral points.",
+            "The complex final estimate instead uses comparison with the projected real source and uniformly controlled distant modes."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le",
+            "NLS.ZakharovShabat.exists_local_sourceM1_gapFactor_bound"
+          ],
+          "qualification": "The adjacent complex-disc distance comparison (5.16) is not proved by the reviewed support. The real theorem and independent complex final bound do not establish this printed intermediate assertion."
+        },
+        {
+          "ordered_group": "S28-015",
+          "source_lines": [
+            9783,
+            9789
+          ],
+          "requirement": "Central telescoping product",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Ordered real gaps admit a direct squared-product estimate using their actual roots and critical points."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le"
+          ],
+          "qualification": "The printed complex adjacent-factor telescoping estimate remains unverified. The real-only supporting theorem is not promoted to a complex statement."
+        },
+        {
+          "ordered_group": "S28-016",
+          "source_lines": [
+            9791,
+            9796
+          ],
+          "requirement": "Enclosing-root ratio",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Real central products can be controlled by one enclosing-interval ratio.",
+            "The final complex 2048 theorem is available by a separate local comparison argument."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le",
+            "NLS.ZakharovShabat.exists_sourceH1_lemma28_1"
+          ],
+          "qualification": "The particular complex ratio of the two enclosing standard roots on the printed disc geometry has not been established in this review. It is not inferred from the independent final estimate."
+        },
+        {
+          "ordered_group": "S28-017",
+          "source_lines": [
+            9798,
+            9802
+          ],
+          "requirement": "Inclusive boundary arithmetic",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "At n>=N the scalar rational expression is bounded by 8*(N+1). At n>=N+1 the factor two is valid.",
+            "With N<=8*P^2 the scalar chains give 8192 inclusively and 2048 strictly outside, respectively."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.lemma281_ratio_le_eight",
+            "NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior",
+            "NLS.ZakharovShabat.lemma281_scalar_constant_inclusive",
+            "NLS.ZakharovShabat.lemma281_scalar_constant_of_exterior"
+          ],
+          "qualification": "Apply the scalar formulas to |n| for signed indices. These are positive arithmetic bounds, distinct from the actual spectral 2048 theorem; no new counterexample is added."
+        },
+        {
+          "ordered_group": "S28-018",
+          "source_lines": [
+            9804,
+            9808
+          ],
+          "requirement": "Final complex chi estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original complex deleted product has bound 2048*(1+P^2) on the full closed gap at the inclusive bracket threshold.",
+            "One connected L2-open domain contains the whole real locus and is chosen before all M1 weights."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceM1_gapFactor_neighborhood",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_original_chi_neighborhood",
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds"
+          ],
+          "qualification": "The proof uses the real-source margin, compact-gap continuity, a finite intersection and uniform distant control. It does not certify the printed complex disc-ordering chain."
+        },
+        {
+          "ordered_group": "S28-019",
+          "source_lines": [
+            9819,
+            9831
+          ],
+          "requirement": "Figure 5.1 disc geometry",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "Figure 5.1 illustrates the disc geometry used to motivate the central comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le"
+          ],
+          "qualification": "The picture is contextual; the unverified complex distance and root-ratio claims are recorded explicitly in S28-014 through S28-016."
+        },
+        {
+          "ordered_group": "S28-020",
+          "source_lines": [
+            9834,
+            9836
+          ],
+          "requirement": "Proposition 28.2 action-gap estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original indexed action has the exact 4608*(1+P^2)*gap^2 estimate for |n|>=8*P^2 in the physical H1 norm.",
+            "The weighted-coordinate API also supports the inclusive bracket threshold, on the same retained domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds",
+            "NLS.ZakharovShabat.SourceSection28Data.chi_action_bound"
+          ],
+          "qualification": "The division-free proof includes collapsed complex gaps and keeps the original action family."
+        },
+        {
+          "ordered_group": "S28-021",
+          "source_lines": [
+            9839,
+            9844
+          ],
+          "requirement": "Factor four in the action proof",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The factor-nine estimate and chi bound give 4*|I_n|<=18432*(1+P^2)*gap^2.",
+            "Dividing by four then gives the proposition constant 4608."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_19Data.section28_action_bound",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_original_chi_neighborhood"
+          ],
+          "qualification": "The coefficient before division is 9*2048=18432. The final proposition retains 4608. This directly corrects the intermediate arithmetic."
+        },
+        {
+          "ordered_group": "S28-022",
+          "source_lines": [
+            9847,
+            9848
+          ],
+          "requirement": "Weighted cutoff for Theorem 23.4",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The real weighted proof chooses N=floor(8*norm(a)^2), hence N<=8*norm(a)^2<1+N.",
+            "The tail theorem needs only 8*norm(a)^2<=1+N and therefore includes N=0 and zero sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_real_weighted_actions_summable_and_le",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected"
+          ],
+          "qualification": "Allow equality in the lower cutoff inequality; the printed strict lower inequality cannot be imposed at every integer value. The source space and final constants remain unchanged."
+        },
+        {
+          "ordered_group": "S28-023",
+          "source_lines": [
+            9850,
+            9854
+          ],
+          "requirement": "Weighted action tail and its boundary",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The original weighted action tail is summable and bounded by 4608*(1+norm(a)^2) times the weighted gap-square tail.",
+            "Both sums retain the same inclusive boundary |n|>=N."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected"
+          ],
+          "qualification": "The factor one and the boundary indices are kept directly. The norm is the original weighted norm, exactly the physical H1 norm for the order-one pi-Sobolev weight. Historical refutations remain unchanged."
+        },
+        {
+          "ordered_group": "S28-024",
+          "source_lines": [
+            9856,
+            9862
+          ],
+          "requirement": "Gap tail and norm budget",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The source Fourier-tail budget has coefficients six and 1152/(1+N).",
+            "At a valid cutoff its sixth-power remainder is at most 144*norm(a)^4, giving the 6*norm(a)^2+144*norm(a)^4 scalar bound used in the action estimates."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_six_144",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+          ],
+          "qualification": "The exact Fourier tail is retained before taking the norm contraction. The following scalar bound by 144*(1+norm(a)^2)*norm(a)^2 uses nonnegativity; no source-dependent constant is introduced."
+        },
+        {
+          "ordered_group": "S28-025",
+          "source_lines": [
+            9864,
+            9870
+          ],
+          "requirement": "Weighted summability and continuity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The whole original weighted absolute action series converges throughout the weighted complex part of S.",
+            "A locally bounded l1 realization with analytic coordinates makes its norm, the actual total weighted sum, continuous there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_summable",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_continuous",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_weighted_summable_continuousAt"
+          ],
+          "qualification": "Continuity and summability hold on the full weighted part of the common domain, beyond the smaller domain needed for the explicit complex estimate."
+        },
+        {
+          "ordered_group": "S28-026",
+          "source_lines": [
+            9872,
+            9879
+          ],
+          "requirement": "Real central action estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Real central actions are controlled by the exact mass trace and the weight at 16*norm(a)^2.",
+            "The central finite sum uses -N<n<N and is empty at cutoff zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_real_central_actions_le",
+            "NLS.ZakharovShabat.source_norm_sq_le_weighted_realization"
+          ],
+          "qualification": "The proof bounds each central weight directly by the continuous extension at 16*norm(a)^2; it does not need a separate evaluation at 2N-2 when N=0. The exact pair mass factor is retained before taking the weighted bound."
+        },
+        {
+          "ordered_group": "S28-027",
+          "source_lines": [
+            9881,
+            9887
+          ],
+          "requirement": "Real weighted action constant 2^20",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The real bound has exactly 2^20 times w[16*norm(a)^2]^2 times norm(a)^2.",
+            "Every M1 weight, every real weighted source and zero are included, with absolute summability of the original indexed action series."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.section28_real_weighted_action_bound",
+            "NLS.ZakharovShabat.sourceM1_real_weighted_actions_normalized",
+            "NLS.ZakharovShabat.weighted_action_two_pow_twenty_budget"
+          ],
+          "qualification": "The original continuous weight extension and its argument are unchanged; the proof uses the stronger real action-gap coefficient 1536 in its scalar budget."
+        },
+        {
+          "ordered_group": "S28-028",
+          "source_lines": [
+            9889,
+            9890
+          ],
+          "requirement": "Complex extension near nonzero real sources",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every nonzero real weighted source, strict positivity of the action scale and continuity extend the real estimate with doubled constant 2^21.",
+            "The neighborhoods retain absolute summability."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceM1Action_bound"
+          ],
+          "qualification": "Zero is handled separately. The neighborhood is allowed to depend on the weight and the real source before the final union and connected restriction."
+        },
+        {
+          "ordered_group": "S28-029",
+          "source_lines": [
+            9890,
+            9897
+          ],
+          "requirement": "Near-zero bound and weighted norm",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every complex weighted source in the common domain with 8*norm(a)^2<=1, the full original weighted action series is summable and at most 2^20*norm(a)^2.",
+            "The new positive estimate implies the displayed source-shaped bound with the extra factor (1+norm(a))^4 and includes the equality boundary."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+          ],
+          "qualification": "The right-hand quadratic factor is the original weighted norm, replacing the printed H1-only factor. The positive small-ball theorem passed the full checks and is committed and pushed. No new refutation is added."
+        },
+        {
+          "ordered_group": "S28-030",
+          "source_lines": [
+            9899,
+            9901
+          ],
+          "requirement": "Complex weighted action constant 2^21",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each M1 weight a connected weighted-open neighborhood contains the entire real weighted locus and decodes into the common S.",
+            "The original total weighted action sum is bounded there by the exact 2^21*w[16*norm(a)^2]^2*norm(a)^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_bound",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_weighted_neighborhood",
+            "NLS.ZakharovShabat.sourceSection28_original"
+          ],
+          "qualification": "The common L2 domain precedes all weights; the smaller estimate neighborhood may depend on the weight. This distinction, the original family and the exact weight argument are retained."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S28-001",
+          "source_lines": [
+            9634,
+            9639
+          ],
+          "requirement": "Weighted Sobolev motivation",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The introduction motivates gap estimates for general M1 weighted spaces; the actual weighted estimates keep the original indexed actions."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection28_original",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "qualification": "The historical assertion that no corresponding Hamiltonian identity is known is context, not a mathematical nonexistence theorem."
+        },
+        {
+          "ordered_group": "S28-002",
+          "source_lines": [
+            9641,
+            9648
+          ],
+          "requirement": "Formula (5.14), local and bounded-set uniformity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The filled quantity 4*I_n/gamma_n^2-1 is realized by an actual l2 sequence, with one bound on a neighborhood before all indices.",
+            "Compact decoding gives one bound before all real sources in each exact physical H1 ball, and more generally in every real M1 weighted ball."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_locally_uniform",
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_uniform_H1_ball",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_uniform_weighted_ball",
+            "NLS.ZakharovShabat.isCompactOperator_normalizedWeightedSource"
+          ],
+          "qualification": "At a collapsed gap use the filled analytic quotient; the expression is not totalized 0/0. Local complex uniformity and real bounded-ball uniformity have distinct quantifiers."
+        },
+        {
+          "ordered_group": "S28-003",
+          "source_lines": [
+            9649,
+            9656
+          ],
+          "requirement": "Original contour action and deleted product",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original circuit action equals i/pi times the integral of the squared critical displacement divided by the selected standard root, multiplied by the actual deleted product.",
+            "The derivative/canonical-root quotient has the exact -i selected-factor normalization."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+            "NLS.ZakharovShabat.SourceEquation2_18Data.factorization"
+          ],
+          "qualification": "All contours retain their admissibility and winding hypotheses. The deleted product is the existing spectral object."
+        },
+        {
+          "ordered_group": "S28-004",
+          "source_lines": [
+            9658,
+            9669
+          ],
+          "requirement": "Gap shrinking and critical coordinate integral",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original action has the straight-gap integral with the exact 2/pi coefficient and critical coordinate.",
+            "For a nonzero gap the normalized formula is the literal quotient 4*I_n/gamma_n^2. The analytic filled extension retains collapsed gaps."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_19Data.action_integral",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_integral",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.factorization",
+            "NLS.ZakharovShabat.SourceEquation2_19Data.collapsed_limit"
+          ],
+          "qualification": "Division is confined to nonzero gaps; the following bounds use the filled formulation throughout the common domain."
+        },
+        {
+          "ordered_group": "S28-005",
+          "source_lines": [
+            9671,
+            9677
+          ],
+          "requirement": "Common critical-coordinate bound and formula (5.15)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A connected open restriction containing the entire real locus controls the critical coordinate by two before all indices.",
+            "The closed-gap integral then gives the exact factor nine, including the filled collapsed extension."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_section28_critical_coordinate_neighborhood",
+            "NLS.ZakharovShabat.section28_critical_coordinate_bound",
+            "NLS.ZakharovShabat.SourceSection28Data.normalized_bound"
+          ],
+          "qualification": "The common L2 neighborhood precedes all weights, sources and indices; the bound is not chosen point by point on each gap."
+        },
+        {
+          "ordered_group": "S28-006",
+          "source_lines": [
+            9682,
+            9686
+          ],
+          "requirement": "Lemma 28.1 and its signed ratio",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The final Lemma 28.1 estimate holds with 2048, signed indices, the inclusive bracket threshold and the exact physical H1 norm.",
+            "The literal signed rational expression is replaced by absolute-index arithmetic where it is used as a scalar comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds",
+            "NLS.ZakharovShabat.lemma281_ratio_le_eight",
+            "NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior"
+          ],
+          "qualification": "The printed signed ratio is not asserted. A complex spectral bound by the reflected rational expression is not verified by these scalar theorems; the central complex-product steps S28-014 through S28-016 remain qualified. The independent final 2048 theorem is fully proved. No new refutation is added."
+        },
+        {
+          "ordered_group": "S28-007",
+          "source_lines": [
+            9688,
+            9697
+          ],
+          "requirement": "Inclusive cutoff and product split",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual deleted infinite product is bounded by a uniform exterior-product bound times its finite central product over -N<m<N.",
+            "Both exterior indices use the inclusive condition |m|>=N and the omitted index n is excluded. Cutoff zero makes the central product empty."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core",
+            "NLS.ZakharovShabat.sourceH1_exterior_product_le_128"
+          ],
+          "qualification": "The transfer keeps the existing product limit and its omitted-domain hypothesis, and avoids division by central factors. The displayed product decomposition is used through this positive finite-core inequality."
+        },
+        {
+          "ordered_group": "S28-008",
+          "source_lines": [
+            9700,
+            9707
+          ],
+          "requirement": "Exterior endpoint localization and separation",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The endpoints and every point of the target closed gap lie in their pi/5 localization discs at the quadratic cutoff.",
+            "The proof uses the explicit separation (3/2)*|m-n|, which suffices for the stronger coefficient-one exterior factor estimate."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_endpoints_localization",
+            "NLS.ZakharovShabat.sourceH1_gap_point_norm_localization",
+            "NLS.ZakharovShabat.localized_endpoint_separation"
+          ],
+          "qualification": "The formal proof uses the stated 3/2 separation budget instead of separately publishing the intermediate 3*pi/5 separation display. Both complex sources and signed indices are retained."
+        },
+        {
+          "ordered_group": "S28-009",
+          "source_lines": [
+            9709,
+            9713
+          ],
+          "requirement": "Individual gap and small ratio",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The original individual weighted gap estimate has the exact sqrt(12) factor at the inclusive bracket cutoff.",
+            "Exterior factor control is obtained directly from both localized endpoints and the critical-offset hypothesis."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_individual",
+            "NLS.ZakharovShabat.localized_critical_root_factor_le",
+            "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le"
+          ],
+          "qualification": "The original scalar small-ratio chain is not needed by this direct geometric proof. The replacement retains the full complex source scope and gives a stronger final single-factor coefficient."
+        },
+        {
+          "ordered_group": "S28-010",
+          "source_lines": [
+            9723,
+            9729
+          ],
+          "requirement": "Root factor and critical displacement estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The standard-root square identity bounds the midpoint distance by root norm plus half-gap.",
+            "An actual critical offset at most the gap length yields factor norm at most 1+gap/|m-n|, stronger than the printed coefficient 4/3."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.midpoint_dist_le_root_add_half_gap",
+            "NLS.ZakharovShabat.source_exterior_critical_factor_le",
+            "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le"
+          ],
+          "qualification": "Complex critical-offset hypotheses are explicit. They are provided in the chosen almost-real neighborhood; the geometry does not assume the source real."
+        },
+        {
+          "ordered_group": "S28-011",
+          "source_lines": [
+            9731,
+            9744
+          ],
+          "requirement": "Cauchy-Schwarz exterior sum",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite Cauchy-Schwarz bounds the sum of gap lengths times reciprocal distances by the product of the two square-budget roots.",
+            "The formal proof uses unweighted gap budget three and a translated reciprocal-square budget 7/2, uniformly in the omitted index."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_finite_product_le_exp_sqrt_budgets",
+            "NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le",
+            "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three"
+          ],
+          "qualification": "These directly proved budgets replace the particular weighted intermediate expression and give the same exterior constant 128. Finite products are transferred to the existing infinite limit."
+        },
+        {
+          "ordered_group": "S28-012",
+          "source_lines": [
+            9746,
+            9751
+          ],
+          "requirement": "Weighted gap-tail budget",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The inclusive weighted gap tail is bounded by 3*(1+N)^2 at every valid cutoff.",
+            "Removing the linear weight gives at most three for every finite subset of exterior gap squares, including N=0."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_cutoff_budget",
+            "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "qualification": "The proof keeps the 1152/(1+N) remainder before using 8*norm(a)^2<=1+N; both components and signed boundary indices are retained."
+        },
+        {
+          "ordered_group": "S28-013",
+          "source_lines": [
+            9753,
+            9764
+          ],
+          "requirement": "Infinite exterior product constant 128",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every finite exterior product is bounded by 128 for complex H1 sources with the explicit common critical-offset condition.",
+            "The exponential square-budget estimate fits inside 128, and uniform finite bounds transfer to the actual deleted product with its finite central part."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_exterior_product_le_128",
+            "NLS.ZakharovShabat.exterior_product_exponential_budget",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core"
+          ],
+          "qualification": "No replacement infinite-product candidate is introduced. The root-omitted domain and complex offset condition remain hypotheses of the transfer."
+        },
+        {
+          "ordered_group": "S28-014",
+          "source_lines": [
+            9767,
+            9780
+          ],
+          "requirement": "Central isolating discs and formula (5.16)",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "The reviewed central-product theorem supplies a squared-norm enclosing-interval bound for real sources and real spectral points.",
+            "The complex final estimate instead uses comparison with the projected real source and uniformly controlled distant modes."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le",
+            "NLS.ZakharovShabat.exists_local_sourceM1_gapFactor_bound"
+          ],
+          "qualification": "The adjacent complex-disc distance comparison (5.16) is not proved by the reviewed support. The real theorem and independent complex final bound do not establish this printed intermediate assertion."
+        },
+        {
+          "ordered_group": "S28-015",
+          "source_lines": [
+            9783,
+            9789
+          ],
+          "requirement": "Central telescoping product",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Ordered real gaps admit a direct squared-product estimate using their actual roots and critical points."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le"
+          ],
+          "qualification": "The printed complex adjacent-factor telescoping estimate remains unverified. The real-only supporting theorem is not promoted to a complex statement."
+        },
+        {
+          "ordered_group": "S28-016",
+          "source_lines": [
+            9791,
+            9796
+          ],
+          "requirement": "Enclosing-root ratio",
+          "ordered_status": "partial",
+          "reviewed_claims": [
+            "Real central products can be controlled by one enclosing-interval ratio.",
+            "The final complex 2048 theorem is available by a separate local comparison argument."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le",
+            "NLS.ZakharovShabat.exists_sourceH1_lemma28_1"
+          ],
+          "qualification": "The particular complex ratio of the two enclosing standard roots on the printed disc geometry has not been established in this review. It is not inferred from the independent final estimate."
+        },
+        {
+          "ordered_group": "S28-017",
+          "source_lines": [
+            9798,
+            9802
+          ],
+          "requirement": "Inclusive boundary arithmetic",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "At n>=N the scalar rational expression is bounded by 8*(N+1). At n>=N+1 the factor two is valid.",
+            "With N<=8*P^2 the scalar chains give 8192 inclusively and 2048 strictly outside, respectively."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.lemma281_ratio_le_eight",
+            "NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior",
+            "NLS.ZakharovShabat.lemma281_scalar_constant_inclusive",
+            "NLS.ZakharovShabat.lemma281_scalar_constant_of_exterior"
+          ],
+          "qualification": "Apply the scalar formulas to |n| for signed indices. These are positive arithmetic bounds, distinct from the actual spectral 2048 theorem; no new counterexample is added."
+        },
+        {
+          "ordered_group": "S28-018",
+          "source_lines": [
+            9804,
+            9808
+          ],
+          "requirement": "Final complex chi estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original complex deleted product has bound 2048*(1+P^2) on the full closed gap at the inclusive bracket threshold.",
+            "One connected L2-open domain contains the whole real locus and is chosen before all M1 weights."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceM1_gapFactor_neighborhood",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_original_chi_neighborhood",
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds"
+          ],
+          "qualification": "The proof uses the real-source margin, compact-gap continuity, a finite intersection and uniform distant control. It does not certify the printed complex disc-ordering chain."
+        },
+        {
+          "ordered_group": "S28-019",
+          "source_lines": [
+            9819,
+            9831
+          ],
+          "requirement": "Figure 5.1 disc geometry",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "Figure 5.1 illustrates the disc geometry used to motivate the central comparison."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le"
+          ],
+          "qualification": "The picture is contextual; the unverified complex distance and root-ratio claims are recorded explicitly in S28-014 through S28-016."
+        },
+        {
+          "ordered_group": "S28-020",
+          "source_lines": [
+            9834,
+            9836
+          ],
+          "requirement": "Proposition 28.2 action-gap estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original indexed action has the exact 4608*(1+P^2)*gap^2 estimate for |n|>=8*P^2 in the physical H1 norm.",
+            "The weighted-coordinate API also supports the inclusive bracket threshold, on the same retained domain."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds",
+            "NLS.ZakharovShabat.SourceSection28Data.chi_action_bound"
+          ],
+          "qualification": "The division-free proof includes collapsed complex gaps and keeps the original action family."
+        },
+        {
+          "ordered_group": "S28-021",
+          "source_lines": [
+            9839,
+            9844
+          ],
+          "requirement": "Factor four in the action proof",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The factor-nine estimate and chi bound give 4*|I_n|<=18432*(1+P^2)*gap^2.",
+            "Dividing by four then gives the proposition constant 4608."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceEquation2_19Data.section28_action_bound",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_original_chi_neighborhood"
+          ],
+          "qualification": "The coefficient before division is 9*2048=18432. The final proposition retains 4608. This directly corrects the intermediate arithmetic."
+        },
+        {
+          "ordered_group": "S28-022",
+          "source_lines": [
+            9847,
+            9848
+          ],
+          "requirement": "Weighted cutoff for Theorem 23.4",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The real weighted proof chooses N=floor(8*norm(a)^2), hence N<=8*norm(a)^2<1+N.",
+            "The tail theorem needs only 8*norm(a)^2<=1+N and therefore includes N=0 and zero sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_real_weighted_actions_summable_and_le",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected"
+          ],
+          "qualification": "Allow equality in the lower cutoff inequality; the printed strict lower inequality cannot be imposed at every integer value. The source space and final constants remain unchanged."
+        },
+        {
+          "ordered_group": "S28-023",
+          "source_lines": [
+            9850,
+            9854
+          ],
+          "requirement": "Weighted action tail and its boundary",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The original weighted action tail is summable and bounded by 4608*(1+norm(a)^2) times the weighted gap-square tail.",
+            "Both sums retain the same inclusive boundary |n|>=N."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected"
+          ],
+          "qualification": "The factor one and the boundary indices are kept directly. The norm is the original weighted norm, exactly the physical H1 norm for the order-one pi-Sobolev weight. Historical refutations remain unchanged."
+        },
+        {
+          "ordered_group": "S28-024",
+          "source_lines": [
+            9856,
+            9862
+          ],
+          "requirement": "Gap tail and norm budget",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The source Fourier-tail budget has coefficients six and 1152/(1+N).",
+            "At a valid cutoff its sixth-power remainder is at most 144*norm(a)^4, giving the 6*norm(a)^2+144*norm(a)^4 scalar bound used in the action estimates."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_six_144",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+          ],
+          "qualification": "The exact Fourier tail is retained before taking the norm contraction. The following scalar bound by 144*(1+norm(a)^2)*norm(a)^2 uses nonnegativity; no source-dependent constant is introduced."
+        },
+        {
+          "ordered_group": "S28-025",
+          "source_lines": [
+            9864,
+            9870
+          ],
+          "requirement": "Weighted summability and continuity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The whole original weighted absolute action series converges throughout the weighted complex part of S.",
+            "A locally bounded l1 realization with analytic coordinates makes its norm, the actual total weighted sum, continuous there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_summable",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_continuous",
+            "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_weighted_summable_continuousAt"
+          ],
+          "qualification": "Continuity and summability hold on the full weighted part of the common domain, beyond the smaller domain needed for the explicit complex estimate."
+        },
+        {
+          "ordered_group": "S28-026",
+          "source_lines": [
+            9872,
+            9879
+          ],
+          "requirement": "Real central action estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Real central actions are controlled by the exact mass trace and the weight at 16*norm(a)^2.",
+            "The central finite sum uses -N<n<N and is empty at cutoff zero."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_real_central_actions_le",
+            "NLS.ZakharovShabat.source_norm_sq_le_weighted_realization"
+          ],
+          "qualification": "The proof bounds each central weight directly by the continuous extension at 16*norm(a)^2; it does not need a separate evaluation at 2N-2 when N=0. The exact pair mass factor is retained before taking the weighted bound."
+        },
+        {
+          "ordered_group": "S28-027",
+          "source_lines": [
+            9881,
+            9887
+          ],
+          "requirement": "Real weighted action constant 2^20",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The real bound has exactly 2^20 times w[16*norm(a)^2]^2 times norm(a)^2.",
+            "Every M1 weight, every real weighted source and zero are included, with absolute summability of the original indexed action series."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.section28_real_weighted_action_bound",
+            "NLS.ZakharovShabat.sourceM1_real_weighted_actions_normalized",
+            "NLS.ZakharovShabat.weighted_action_two_pow_twenty_budget"
+          ],
+          "qualification": "The original continuous weight extension and its argument are unchanged; the proof uses the stronger real action-gap coefficient 1536 in its scalar budget."
+        },
+        {
+          "ordered_group": "S28-028",
+          "source_lines": [
+            9889,
+            9890
+          ],
+          "requirement": "Complex extension near nonzero real sources",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every nonzero real weighted source, strict positivity of the action scale and continuity extend the real estimate with doubled constant 2^21.",
+            "The neighborhoods retain absolute summability."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceM1Action_bound"
+          ],
+          "qualification": "Zero is handled separately. The neighborhood is allowed to depend on the weight and the real source before the final union and connected restriction."
+        },
+        {
+          "ordered_group": "S28-029",
+          "source_lines": [
+            9890,
+            9897
+          ],
+          "requirement": "Near-zero bound and weighted norm",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every complex weighted source in the common domain with 8*norm(a)^2<=1, the full original weighted action series is summable and at most 2^20*norm(a)^2.",
+            "The new positive estimate implies the displayed source-shaped bound with the extra factor (1+norm(a))^4 and includes the equality boundary."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget"
+          ],
+          "qualification": "The right-hand quadratic factor is the original weighted norm, replacing the printed H1-only factor. The positive small-ball theorem passed the full checks and is committed and pushed. No new refutation is added."
+        },
+        {
+          "ordered_group": "S28-030",
+          "source_lines": [
+            9899,
+            9901
+          ],
+          "requirement": "Complex weighted action constant 2^21",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each M1 weight a connected weighted-open neighborhood contains the entire real weighted locus and decodes into the common S.",
+            "The original total weighted action sum is bounded there by the exact 2^21*w[16*norm(a)^2]^2*norm(a)^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection28Data.weighted_bound",
+            "NLS.ZakharovShabat.SourceSection27Data.section28_weighted_neighborhood",
+            "NLS.ZakharovShabat.sourceSection28_original"
+          ],
+          "qualification": "The common L2 domain precedes all weights; the smaller estimate neighborhood may depend on the weight. This distinction, the original family and the exact weight argument are retained."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 16,
+        "corrected": 8,
+        "partial": 4,
+        "contextual": 2,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemma28_1.lean": "93c22976181482082d8830b77e91ee7c958b5de5a30b0c3c52307ec7a774b446",
+        "NLS/ZakharovShabat/SourceSection28GapBounds.lean": "b71cec700435bedf2df9a95107495ef02cc1d5c306be2c85b81c5a87fafdce6f",
+        "NLS/ZakharovShabat/SourceSection28TailEstimate.lean": "53d9407d688cd59ef8aefdcd0e405477d39f83f1d11dc5e2d5c4e855afe68d7b",
+        "NLS/ZakharovShabat/Lemma281BoundaryArithmetic.lean": "be2c9c1b9c555c933e4fcce3076cbeda86c271c73f101612c393bdd6c5eb8295",
+        "NLS/ZakharovShabat/SourceSection28Original.lean": "d232928bd8ba57e58da65a2a81ee165834127972580199cc5f6f12765b863ac4",
+        "NLS/ZakharovShabat/SourceSection28Asymptotics.lean": "4a3139a3d972ea928f98cf0575ebb7920ed3539e5f36280e2b34f31499b21654",
+        "NLS/ZakharovShabat/NormalizedWeightedSourceCompact.lean": "3ee5f51406c1d0f0c39e6de5d18eac54d4bdec1f5ee3e60805649bb9439c9063",
+        "NLS/ZakharovShabat/SourceSection28WeightedContinuity.lean": "4acf41a81c7915d07b94c54ea965d542b5bf3a7d5f7310c6fff44526f0a3544a",
+        "NLS/ZakharovShabat/SourceSection28WeightedActions.lean": "f8fc268fe427837a614aed87cc8bee1922843f7e9de31de187a1eea33af314a2",
+        "NLS/ZakharovShabat/SourceM1ActionNeighborhood.lean": "faa72a4578801922b6d6bafc48fc0fd5321917525ef4c61d583013f54ccd35ee",
+        "NLS/ZakharovShabat/SourceM1ActionNearZero.lean": "bdce84492b2e42a2f7e5c4db1202f59eb6f9e95f3d82382e519b3ae1626afe60",
+        "NLS/ZakharovShabat/SourceM1GapFactorBound.lean": "e3bcb32fec217317651ce86f1c69fe3a89b5461ee42e14e166ffbad857e86d5e",
+        "NLS/ZakharovShabat/SourceFourierTail.lean": "727e02c869c40de53b05e4f513363a7986a784fbece5e828ed06ea11b511b8b3",
+        "NLS/ZakharovShabat/SourceH1ExteriorProductBound.lean": "51855d386ed195b043c65a48ac6a90906b73f30217fbf77b5d5132475ab9ae40",
+        "NLS/ZakharovShabat/SourceExteriorCriticalFactorBound.lean": "135a3305512c63d0fdbee93d3010432482b3a24d7b89c55670fa5b76c2ce08dc",
+        "NLS/ZakharovShabat/SourceRealCentralProduct.lean": "b09a108272a61294f932699dca75a6acd24068f45e59457e769b8bd326ba67c9",
+        "NLS/ZakharovShabat/SourceH1GapProductReduction.lean": "8711ba5e0425969e19fd085887b542941ece8a2551b39bc87caf451b13bbdad0",
+        "NLS/ZakharovShabat/SourceM1WeightedActionEstimate.lean": "e29f5651a677a083ad07c3b4eb683c30c4cdf5e81ad0abf573871727398bffb3",
+        "NLS/ZakharovShabat/SourceM1SpectralGeometry.lean": "605662a9f66ad65358c17cbb2246fbb26428a0652d3be0207ebf79217d28a5ef",
+        "NLS/ZakharovShabat/SourceRealGapFactorMargin.lean": "745e21eae0ec6e481c28400dcca8fe2dc1232c81f69ba0511c109e0ba46a0910",
+        "NLS/ZakharovShabat/SourceCriticalFactorSmallTail.lean": "b9fdd733dfc26eea11ee478ae2f852cb2c23f987ffe58edb13dfbc92104e5875",
+        "NLS/ZakharovShabat/SourceGapFactorParameterContinuity.lean": "768cc60da9eb4e9cf1a38b11cfc321b404a52656fe019f2f60b6584b835e1a08",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean": "e0ddfb6d9f47c5e2eb3d6bc854dd01e3690208d125f337a37d78f2c94c01b103",
+        "NLS/ZakharovShabat/SourceEquation2_18.lean": "98e191290f164a686969bbfe74e706bf5975070e69171efbe28f45cf2e6da3df",
+        "NLS/ZakharovShabat/SourceEquation2_19.lean": "83f79c32cf86cc42cf5eca1f24f43d37e2d56b1662446e172b684e75409dddeb",
+        "NLS/ZakharovShabat/SourceSection28SmallBall.lean": "524d3d6e683dbdab90d8e20387a418b5ae9151fe63d2d6005e6a378d1bdc9d5d",
+        "NLS/ZakharovShabat/SourceH1ExteriorFactorBound.lean": "f2d1ded5c87b26296cc34ab5d71378a25ba599bed4aa192a4ffbb653916abb96",
+        "NLS/ZakharovShabat/M1ExteriorGapBudget.lean": "1227857f92f9e6c615fc98fa4a53bcbe627e33bf8c1dce247f416c548ef3240b",
+        "NLS/SequenceSpaces/FiniteReciprocalSquareBudget.lean": "1052704e52eb20c29bc0a843994663255fc1e982c7be1cadf0340acc5932b8fb",
+        "NLS/ZakharovShabat/GapRootFactorGeometry.lean": "ca1192923a4df2966a44c366c3f391cf3d8fb5a7cd14480c1d7326ca87e9474d",
+        "NLS/ZakharovShabat/M1GapTailEstimate.lean": "9d161453186a16fb0d6b30d82dea21d0f299d22e033880cfe7c3ff10fb5930ae",
+        "NLS/ZakharovShabat/M1WeightedActionBudget.lean": "4d8ea246551a1ffe49876d031ea3b585f69571d11d5b8ddabb6f572070848107"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemma28_1.lean",
+        "NLS/ZakharovShabat/SourceSection28GapBounds.lean",
+        "NLS/ZakharovShabat/SourceSection28TailEstimate.lean",
+        "NLS/ZakharovShabat/Lemma281BoundaryArithmetic.lean",
+        "NLS/ZakharovShabat/SourceSection28Original.lean",
+        "NLS/ZakharovShabat/SourceSection28Asymptotics.lean",
+        "NLS/ZakharovShabat/NormalizedWeightedSourceCompact.lean",
+        "NLS/ZakharovShabat/SourceSection28WeightedContinuity.lean",
+        "NLS/ZakharovShabat/SourceSection28WeightedActions.lean",
+        "NLS/ZakharovShabat/SourceM1ActionNeighborhood.lean",
+        "NLS/ZakharovShabat/SourceM1ActionNearZero.lean",
+        "NLS/ZakharovShabat/SourceM1GapFactorBound.lean",
+        "NLS/ZakharovShabat/SourceFourierTail.lean",
+        "NLS/ZakharovShabat/SourceH1ExteriorProductBound.lean",
+        "NLS/ZakharovShabat/SourceExteriorCriticalFactorBound.lean",
+        "NLS/ZakharovShabat/SourceRealCentralProduct.lean",
+        "NLS/ZakharovShabat/SourceH1GapProductReduction.lean",
+        "NLS/ZakharovShabat/SourceM1WeightedActionEstimate.lean",
+        "NLS/ZakharovShabat/SourceM1SpectralGeometry.lean",
+        "NLS/ZakharovShabat/SourceRealGapFactorMargin.lean",
+        "NLS/ZakharovShabat/SourceCriticalFactorSmallTail.lean",
+        "NLS/ZakharovShabat/SourceGapFactorParameterContinuity.lean",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean",
+        "NLS/ZakharovShabat/SourceEquation2_18.lean",
+        "NLS/ZakharovShabat/SourceEquation2_19.lean",
+        "NLS/ZakharovShabat/SourceSection28SmallBall.lean",
+        "NLS/ZakharovShabat/SourceH1ExteriorFactorBound.lean",
+        "NLS/ZakharovShabat/M1ExteriorGapBudget.lean",
+        "NLS/SequenceSpaces/FiniteReciprocalSquareBudget.lean",
+        "NLS/ZakharovShabat/GapRootFactorGeometry.lean",
+        "NLS/ZakharovShabat/M1GapTailEstimate.lean",
+        "NLS/ZakharovShabat/M1WeightedActionBudget.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": false,
+      "remaining_comparisons": [
+        "S28-006",
+        "S28-014",
+        "S28-015",
+        "S28-016"
+      ],
+      "retained_partial": [
+        "S28-006",
+        "S28-014",
+        "S28-015",
+        "S28-016"
+      ],
+      "ordered_inventory": "coverage/SECTION_28_ASSERTIONS.md",
+      "ordered_inventory_sha256": "d18f99020e0ced2d3cd0702d9ad5e0f358fb426937f069ed710d82c8f1d28d43",
+      "resolved_declarations": [
+        "NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le",
+        "NLS.ZakharovShabat.M1_canonicalGap_finite_exterior_sq_le_three",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_cutoff_budget",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_six_144",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.circuit",
+        "NLS.ZakharovShabat.SourceEquation2_18Data.factorization",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.action_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.collapsed_limit",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.factorization",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.normalized_integral",
+        "NLS.ZakharovShabat.SourceEquation2_19Data.section28_action_bound",
+        "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_uniform_weighted_ball",
+        "NLS.ZakharovShabat.SourceSection11OriginalEstimates.section28_weighted_summable_continuousAt",
+        "NLS.ZakharovShabat.SourceSection27Data.section28_original_chi_neighborhood",
+        "NLS.ZakharovShabat.SourceSection27Data.section28_weighted_neighborhood",
+        "NLS.ZakharovShabat.SourceSection28Data.chi_action_bound",
+        "NLS.ZakharovShabat.SourceSection28Data.normalized_bound",
+        "NLS.ZakharovShabat.SourceSection28Data.normalized_locally_uniform",
+        "NLS.ZakharovShabat.SourceSection28Data.normalized_uniform_H1_ball",
+        "NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_small_ball",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_budget",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_action_tail_corrected",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_bound",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_continuous",
+        "NLS.ZakharovShabat.SourceSection28Data.weighted_summable",
+        "NLS.ZakharovShabat.exists_local_sourceM1Action_bound",
+        "NLS.ZakharovShabat.exists_local_sourceM1_gapFactor_bound",
+        "NLS.ZakharovShabat.exists_section28_critical_coordinate_neighborhood",
+        "NLS.ZakharovShabat.exists_sourceH1_lemma28_1",
+        "NLS.ZakharovShabat.exists_sourceM1_gapFactor_neighborhood",
+        "NLS.ZakharovShabat.exterior_product_exponential_budget",
+        "NLS.ZakharovShabat.isCompactOperator_normalizedWeightedSource",
+        "NLS.ZakharovShabat.lemma281_ratio_le_eight",
+        "NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior",
+        "NLS.ZakharovShabat.lemma281_scalar_constant_inclusive",
+        "NLS.ZakharovShabat.lemma281_scalar_constant_of_exterior",
+        "NLS.ZakharovShabat.localized_critical_root_factor_le",
+        "NLS.ZakharovShabat.localized_endpoint_separation",
+        "NLS.ZakharovShabat.midpoint_dist_le_root_add_half_gap",
+        "NLS.ZakharovShabat.norm_finite_product_le_exp_sqrt_budgets",
+        "NLS.ZakharovShabat.section28_critical_coordinate_bound",
+        "NLS.ZakharovShabat.section28_real_weighted_action_bound",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_le_finite_core",
+        "NLS.ZakharovShabat.sourceH1_exterior_critical_factor_le",
+        "NLS.ZakharovShabat.sourceH1_exterior_product_le_128",
+        "NLS.ZakharovShabat.sourceH1_gap_point_norm_localization",
+        "NLS.ZakharovShabat.sourceM1_endpoints_localization",
+        "NLS.ZakharovShabat.sourceM1_gap_individual",
+        "NLS.ZakharovShabat.sourceM1_gap_tail",
+        "NLS.ZakharovShabat.sourceM1_real_central_actions_le",
+        "NLS.ZakharovShabat.sourceM1_real_weighted_actions_normalized",
+        "NLS.ZakharovShabat.sourceM1_real_weighted_actions_summable_and_le",
+        "NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le",
+        "NLS.ZakharovShabat.sourceSection28_original",
+        "NLS.ZakharovShabat.source_exterior_critical_factor_le",
+        "NLS.ZakharovShabat.source_norm_sq_le_weighted_realization",
+        "NLS.ZakharovShabat.weighted_action_two_pow_twenty_budget"
+      ],
+      "declaration_inventory_count": 44706,
+      "qualification": "The ordered Section 28 comparison covers 30 groups on printed pp.117–119: 16 matched, eight directly corrected, four partial and two contextual, with no pending groups. Original indexed actions, exact weighted norms, the common connected L2-open domain before all weights and weight-dependent estimate neighborhoods are retained. The final complex chi bound 2048, action-gap bound 4608, real action bound 2^20 and complex action bound 2^21 are proved. Four complex intermediate passages remain partial: the reflected rational spectral bound, adjacent-disc comparison, central telescoping and enclosing-root ratio. The independent final bounds do not establish these printed arguments. The small-ball step directly uses the weighted norm. This comparison adds no Lean proof or refutation. Broader completeness and Appendix G.2 qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          117,
+          118,
+          119
+        ],
+        "images": {
+          "work/tmp/pdfs/section28-ordered-117.png": "fa82641e50d8332ff9f90f8a34e014936eeb61d094f7485219781dce2a1c47e9",
+          "work/tmp/pdfs/section28-ordered-118.png": "c093e39c041e30ad6e150aa4fa7f1985f7bce8d0a4ccd1ad84c3f4f59454bd06",
+          "work/tmp/pdfs/section28-ordered-119.png": "9b448e8945d1409ce494f14eb477ba481f37d17ee5da6bb1f8681c8c51d4e1f0"
+        }
+      },
+      "preceding_review_hash": "c76e9d80504b29dabbe3893527d43e2e7d305703f9b569e3ea639438a6598dd3",
+      "reconciled_previous_reviews": {
+        "Section28SourceComparison-2026-10-27.json": "5bd5fd617fbb581cb7a7db1e27427218aa50ed19e598ab6a6d9e5cc5245caaf3",
+        "Section28SmallBallSourceComparison-2026-10-31.json": "c76e9d80504b29dabbe3893527d43e2e7d305703f9b569e3ea639438a6598dd3"
+      },
+      "validation_lean_sources": {
+        "files": 4859,
+        "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
+      },
+      "validation_reused_from_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 80905,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section28SmallBallFullCheck.log",
+        "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
+      },
+      "source_record_sha256": "e95e3e6d6b41223264b5fd3e5cf2f8934c143415203c710ca0a903e9577dce52"
     }
   }
 }

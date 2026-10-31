@@ -1,5 +1,31 @@
 # Section 28: original weighted actions and gap lengths
 
+## Ordered source comparison
+
+The [ordered Section 28 comparison](SECTION_28_ASSERTIONS.md)
+covers 30 groups on pp.117–119: 16 matched, eight corrected, four partial
+and two contextual. No groups are pending comparison.
+
+The final chi, action-gap, real weighted and complex weighted estimates
+retain constants 2048, 4608, 2^20 and 2^21, respectively. Original actions,
+exact norms and the common domain before all weights are preserved.
+
+Direct corrections keep inclusive tails, the full positive factor, the
+factor four in the action estimate and the weighted norm near zero.
+Positive exterior-product budgets replace several intermediate estimates.
+
+Four complex intermediate passages remain partial: the reflected rational
+spectral bound, adjacent-disc comparison, central telescoping and enclosing-root
+ratio. Their proofs are not inferred from the independent final estimates.
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check at commit a315469d3324976a247ee8c1acbd8e60a99cd798: 8,582 build jobs, 7,692 public examples and an axiom audit of 44,706 NLS declarations, with 21 inherited warnings and zero new. All 58 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix A. The [broader completion qualifications](COMPLETENESS.md)
+remain; this ledger does not certify the whole dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Positive weighted small-ball estimate
 
 The [small-ball estimate](../NLS/ZakharovShabat/SourceSection28SmallBall.lean)
