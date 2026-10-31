@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix E comparison](coverage/APPENDIX_E_ASSERTIONS.md)
-records seven matched groups, three direct corrections and one contextual
-passage. Literal interpolation, local identity assertions and physical
-Fourier coefficients retain their original scope. Appendix F is next;
+Latest step: [Appendix F proof details](coverage/APPENDIX_F.md)
+retain the full path coefficient, local complex endpoint branches
+and explicit short-piece bounds. Twenty-five positive theorems and four
+examples add no new refutation. The ordered comparison and
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

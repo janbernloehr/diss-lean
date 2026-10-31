@@ -4870,3 +4870,10 @@ import NLS.ZakharovShabat.AppendixDDiscSupProduct
 import NLS.ZakharovShabat.AppendixDNearestLattice
 import NLS.ZakharovShabat.AppendixDDiscSupSquare
 import NLS.ComplexAnalysis.AppendixELocalTaylor
+import NLS.ZakharovShabat.AppendixFBoundaryIntegral
+import NLS.ZakharovShabat.AppendixFOpenGapBranches
+import NLS.ComplexAnalysis.AppendixFProofEstimates
+import NLS.ZakharovShabat.AppendixFShortPiece
+import NLS.ZakharovShabat.AppendixFUniformShortPiece
+import NLS.ComplexAnalysis.AppendixFSpokeGeometry
+import NLS.ComplexAnalysis.AppendixFPositiveMajorant

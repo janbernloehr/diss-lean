@@ -210,7 +210,14 @@ It retains symmetric interpolation, diagonal-omitted products, actual
 circle suprema, at-most-simple poles, the nonempty real slice and physical
 Fourier coefficients. The local Taylor assertions use the alternative
 complex-line argument. Historical refutations and broader qualifications
-remain unchanged. Appendix F is next.
+remain unchanged. The [Appendix F proof details](APPENDIX_F.md)
+now retain the actual path integrals and coefficients, local complex
+endpoint branches, scalar constants and short-piece bounds.
+Compactness of the joint Cauchy quotient also supplies a local uniform
+constant without assuming a regular-factor bound. A corrected positive
+majorant has L1 error at most 4*sqrt(2e) and converges to one.
+Twenty-five positive theorems and four examples add no new refutation.
+The 31-group ordered Appendix F comparison remains open.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

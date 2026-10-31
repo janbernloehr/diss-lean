@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T07:37:30.834707+00:00",
-  "base_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
+  "published_utc": "2026-10-31T07:58:33.335172+00:00",
+  "base_commit": "6e0e7219d82e85cb8afb5639af79827858570314",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 193,
-    "module_hash_checks": 4145,
-    "distinct_modules": 2098
+    "review_records": 194,
+    "module_hash_checks": 4159,
+    "distinct_modules": 2106
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "241175fdd8c504f548fb5e4f98da3675ca201130",
-    "validated_state": "Appendix E ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix E local Taylor check.",
+    "base_commit": "6e0e7219d82e85cb8afb5639af79827858570314",
+    "validated_state": "Fresh full check after seven Appendix F positive proof modules and four public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8594,
-    "public_examples": 7714,
-    "transitive_NLS_declarations": 44807,
+    "build_jobs": 8601,
+    "public_examples": 7718,
+    "transitive_NLS_declarations": 44835,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 50441,
+    "gate_session": 95666,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4871,
-      "sha256": "76432f491dfe883958fc447dfd9df9cc4d8445d5c82b21569bcc16f0eec82ea0"
+      "files": 4878,
+      "sha256": "3335de46c93439905125ce111032c5ac3bf058b13d36e86e8773b4699297b0ab"
     },
-    "full_gate_log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixELocalTaylorFullCheckInline.log",
-    "validation_reused_from_commit": "241175fdd8c504f548fb5e4f98da3675ca201130"
+    "full_gate_log_sha256": "bae47aa96c81ce14b92141302a268809205fa28e75f5b65e27662b78815bc79c",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
+    "full_gate_log": "work/AppendixFPositiveProofsFullCheck.log"
   },
   "named_statements": [
     {
@@ -66206,6 +66205,283 @@
         "log_sha256": "3d700b550c4eb7667ee9002a43b70298131830fce70dc40205cd357f89756f26"
       },
       "source_record_sha256": "8356223b091dbe3a953cf742e924ff41c7751e225db654bcbbb212a4b1233f2d"
+    },
+    "AppendixFPositiveProofsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6e0e7219d82e85cb8afb5639af79827858570314",
+      "updated_utc": "2026-10-31T07:58:33.281955+00:00",
+      "source_lines": [
+        [
+          10819,
+          10826
+        ],
+        [
+          10858,
+          10861
+        ],
+        [
+          10866,
+          10903
+        ],
+        [
+          10904,
+          10907
+        ],
+        [
+          10908,
+          10915
+        ],
+        [
+          10932,
+          10950
+        ],
+        [
+          10990,
+          11001
+        ],
+        [
+          11027,
+          11053
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate"
+          ],
+          "reviewed_claims": [
+            "For a nonzero gap, on the exact half-gap circle the quadratic remainder is at most norm(gap)^2*r/2, strictly below the leading factor when norm(gap)*r<=s and s>0."
+          ],
+          "qualification": "The displayed constants are retained directly. This scalar estimate does not by itself repeat the entire printed Rouche argument; F.1 remains independently proved by the squared-gap identity."
+        },
+        {
+          "source_lines": [
+            10858,
+            10861
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.polygonalIntegral_eq_endpointAverage_sub",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic"
+          ],
+          "reviewed_claims": [
+            "The actual polygonal connecting integral equals the difference of the literal endpoint averages.",
+            "Changing the boundary evaluation point retains the full shared-path coefficient; one source ball works for every pair of boundary points and every signed index."
+          ],
+          "qualification": "The integral is a sum of actual finite segment integrals on the original root domain, not a newly defined difference of primitive values."
+        },
+        {
+          "source_lines": [
+            10866,
+            10903
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+            "NLS.ZakharovShabat.exists_appendixFOpenGapBranches"
+          ],
+          "reviewed_claims": [
+            "An analytic midpoint and squared gap give two analytic branches through any distinct complex endpoint values, with the actual unordered pair and any prescribed positive common tolerance.",
+            "The source symmetric domain supplies these hypotheses at every complex noncollapsed canonical pair, without continuous lexicographic labels."
+          ],
+          "qualification": "The arbitrary tolerance permits the source quarter-distance restriction when its positive margin is supplied. The straight-spoke geometry is not separately claimed by this branch theorem."
+        },
+        {
+          "source_lines": [
+            10904,
+            10907
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_opposite_segments_avoid",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_avoids_gap",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc"
+          ],
+          "reviewed_claims": [
+            "Opposite real projections separate two segments away from their common endpoint.",
+            "The normalized quarter-gap and quarter-spoke tolerances keep the straight spoke off the selected gap. If both spoke endpoints lie in the original closed isolating disc, the whole spoke stays in it."
+          ],
+          "qualification": "The theorem supplies the explicit local geometry for either endpoint by exchanging the pair. Boundary-point selection and the construction of one common source neighborhood remain separate; no complete arbitrary-path assertion is inferred from this geometric lemma."
+        },
+        {
+          "source_lines": [
+            10908,
+            10915
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split"
+          ],
+          "reviewed_claims": [
+            "Every pointwise choice of a canonical endpoint gives an analytic endpoint-to-boundary integral.",
+            "The four actual endpoint and connecting integrals sum to twice the literal endpoint average."
+          ],
+          "qualification": "No regularity of the endpoint choice is assumed. Both endpoint pieces and both full connecting pieces retain their coefficients."
+        },
+        {
+          "source_lines": [
+            10932,
+            10950
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_segment_factorization",
+            "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower"
+          ],
+          "reviewed_claims": [
+            "The affine endpoint parameterization has the literal quadratic factorization.",
+            "For positive sigma and t in [0,1], the normalized base radicand is at least sigma/(1/2+sigma)>0."
+          ],
+          "qualification": "These are algebraic and real inequalities in the printed argument. The whole source-dependent square-root selection and singular-integral differentiation are not inferred from these scalar lemmas."
+        },
+        {
+          "source_lines": [
+            10990,
+            11001
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero_locally"
+          ],
+          "reviewed_claims": [
+            "The actual primitive side-boundary value is bounded by pi*M times the gap norm under the half-gap critical bound and regular-factor bound M.",
+            "With one M before all samples, the short pieces tend to zero as the gap collapses, allowing independent gap points and either side.",
+            "Independently, compactness of the fixed inner disc and joint analyticity of the Cauchy quotient produce one positive bound on a neighborhood of every complex point of the source ball, before every angle and side choice.",
+            "This derived bound gives vanishing short pieces along any filter whose sources converge inside that ball and whose gap norms tend to zero, without assuming a separate regular-factor bound or half-gap estimate."
+          ],
+          "qualification": "The pi*M bound retains its explicit regular-factor and half-gap hypotheses. The independent Cauchy-quotient bound derives local uniformity from compactness and the actual boundary formula. It applies to a fixed signed gap at arbitrary complex base points, includes collapsed gaps, and does not assert a single constant for every gap index."
+        },
+        {
+          "source_lines": [
+            11027,
+            11053
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_square_root_norm_lower",
+            "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_le",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_interval",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_distance_interval",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1"
+          ],
+          "reviewed_claims": [
+            "The quotient for any complex square-root branch is bounded by sqrt(t+norm(epsilon))/sqrt(abs(t-norm(epsilon))) whenever t>=0, the numerator offset norm is at most norm(epsilon), and t differs from the one moving singular point.",
+            "The inverse-square-root distance weight has the exact integral 2*(sqrt(e)+sqrt(1-e)) for 0<=e<=1. The corrected moving majorant is integrable on [0,1].",
+            "The majorant has L1 distance from one at most 4*sqrt(2e), and therefore converges to one in L1 along any filter with e approaching zero and eventually lying in [0,1]."
+          ],
+          "qualification": "The absolute value corrects the weight directly and retains both sides of the moving point. The scalar norm bound excludes that one point; the integral comparison discards its null singleton. This proves the positive majorant and its L1 convergence, not yet the source-dependent common terminal-point construction or the entire limit of the original spectral integrals. Historical refutations are unchanged."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaF2.lean": "dec24c4ccf8eac8c45183e893181c986057087c84f5c38603c9a94b059373715",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean": "18aa042a371dafdb55bd13c5eea593f914a2c527c0e69befdeeef42bd8861511",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean": "8c7075ed20b486bdc4d92627d5303d6f8dabcea22fb6f5a58fc13923ed2baeb9",
+        "NLS/ComplexAnalysis/QuadraticCriticalIdentity.lean": "7820feec94871e0fba7a1ff2b3b755df9d0452ba9513c88adac4eb0fb7f56520",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean": "5a39a07d56373a298298b48449e8a409529ba720a2c19820d3299d7ebc3ce902",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean": "2ed949fdf0bcc00f462615dd1c45f1bb58a8a7c90d02c0352f97ac7faa758449",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean": "c1cd9ad38d68b9113e1f6fe0827fe846d21141aecf1aeac70cd4492ea351825b",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean": "3b28c4483fd3802edec4c047cea0032fee97c659eed34780ce0075756af23610",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean": "c351375ea8c8b45ef5e092de3ab19ba5d9c192ccc2f0ea503c82957947be0427",
+        "NLS/ZakharovShabat/AppendixFShortPiece.lean": "aad32becb3d1b15f744280df00074b2c3ba2e8c010c54132cd950cb7f0af2b2f",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean": "9aa5acb5c830b6060c98219261c20e7a594d68e57531a9fa96fe9237a099991b",
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean": "6c8b099f987e88a081af9d9b47f14e356032e4d8bdeb82d62a01a95daef74243",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean": "a4274432ef21288c8b456242e33a7f6e61f02ceb737f8eb00d5d89e83e6fd211"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaF2.lean",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean",
+        "NLS/ComplexAnalysis/QuadraticCriticalIdentity.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean",
+        "NLS/ZakharovShabat/AppendixFShortPiece.lean",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean",
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+        "NLS.ComplexAnalysis.appendixF_endpoint_segment_factorization",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_distance_interval",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_interval",
+        "NLS.ComplexAnalysis.appendixF_opposite_segments_avoid",
+        "NLS.ComplexAnalysis.appendixF_perturbed_spoke_avoids_gap",
+        "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_le",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1",
+        "NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate",
+        "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+        "NLS.ComplexAnalysis.appendixF_square_root_norm_lower",
+        "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero_locally",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.polygonalIntegral_eq_endpointAverage_sub",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic",
+        "NLS.ZakharovShabat.exists_appendixFOpenGapBranches"
+      ],
+      "declaration_inventory_count": 44835,
+      "qualification": "Seven modules add twenty-five positive theorems and four examples for selected proof assertions in F.1-F.2. They retain actual boundary integrals and the full common-path coefficient, analytic branches through complex noncollapsed unordered pairs, explicit half-gap and base-radicand constants, and pi*M short-piece bounds with a common regular-factor hypothesis. An independent Cauchy-quotient argument derives a local uniform short-piece bound at every complex point of the source ball without that extra hypothesis. Quarter-gap and quarter-spoke tolerances also keep the straight segment inside the closed isolating disc and off its selected gap, except at the starting endpoint. The corrected positive majorant uses an absolute lower distance, is integrable on the whole unit interval and has L1 error at most 4*sqrt(2e), tending to zero. The 31-group ordered Appendix F comparison remains open. These helpers do not establish every remaining source-path selection or limit assertion. No new definition or refutation is added; historical refutations and broader completeness qualifications remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+      "validation_lean_sources": {
+        "files": 4878,
+        "sha256": "3335de46c93439905125ce111032c5ac3bf058b13d36e86e8773b4699297b0ab"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 25,
+      "new_public_examples": 4,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_interval._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc._simp_1_1",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 95666,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFPositiveProofsFullCheck.log",
+        "log_sha256": "bae47aa96c81ce14b92141302a268809205fa28e75f5b65e27662b78815bc79c"
+      },
+      "source_record_sha256": "61597cfc72addce043afcacc59e0180cbbb48fc0fc875c3c999278738c39a614"
     }
   }
 }

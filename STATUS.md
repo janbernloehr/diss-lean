@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: ordered Appendix E comparison
+## Current milestone: Appendix F positive proof details
+
+The [boundary integral identities](NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean)
+retain actual endpoint and connecting integrals, the full shared-path
+coefficient, and the exact four-path decomposition. One source ball
+works for all signed indices and boundary pairs.
+
+The [local endpoint branches](NLS/ZakharovShabat/AppendixFOpenGapBranches.lean)
+cover complex noncollapsed gaps with their actual unordered pair and
+any prescribed positive tolerance. No continuous endpoint labels
+are required. The [straight-spoke geometry](NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean)
+keeps explicit quarter-gap and quarter-spoke tolerances. The segment
+stays in the closed isolating disc and avoids the selected gap except
+at its starting endpoint.
+
+The [scalar estimates](NLS/ComplexAnalysis/AppendixFProofEstimates.lean)
+retain the half-gap remainder constant and positive base radicand.
+The [short-piece bound](NLS/ZakharovShabat/AppendixFShortPiece.lean)
+is pi*M times the gap norm and gives vanishing at collapse, with
+the common regular-factor bound M stated explicitly. The
+[independent uniform bound](NLS/ZakharovShabat/AppendixFUniformShortPiece.lean)
+derives one local constant from compactness of the fixed inner disc
+and the joint Cauchy quotient, with no extra regular-factor hypothesis.
+It holds at every complex point of the source ball, for all angles
+and both sides, and gives vanishing as gap norms tend to zero.
+
+The [positive moving majorant](NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean)
+uses the absolute lower distance. It bounds every complex square-root
+branch off the moving singleton, is integrable on the whole unit
+interval, and has L1 error at most 4*sqrt(2e), tending to zero.
+
+Seven modules add twenty-five positive theorems and four examples.
+No new refutation is added.
+
+The full check passed: 8,601 build jobs, 7,718 public examples and an axiom audit of 44,835 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open, including
+the common-neighborhood spoke construction and source-path limit details. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix E comparison
 
 The [ordered Appendix E comparison](coverage/APPENDIX_E_ASSERTIONS.md)
 covers eleven groups on pp.130-131: seven matched, three directly

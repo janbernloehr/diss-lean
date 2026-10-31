@@ -73572,3 +73572,80 @@ example (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f ((Metric.ball (2:ℂ) (1/4:�
     f hf hzero P hP 7 Complex.I
 
 end AppendixELocalTaylorExamples
+
+section AppendixFBoundaryIntegralExamples
+open Set Metric Complex NLS.ComplexAnalysis
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At the free source, the actual path integral has the full coefficient and correct orientation.
+example (μ ν : ℂ)
+    (hμ : μ ∈ NLS.ZakharovShabat.sourceCanonicalRootDomain (by norm_num : (2:ℝ≥0∞) ≠ ⊤)
+      (by norm_num) (0 : NLS.CoeffPair 2))
+    (hν : ν ∈ NLS.ZakharovShabat.sourceCanonicalRootDomain (by norm_num : (2:ℝ≥0∞) ≠ ⊤)
+      (by norm_num) (0 : NLS.CoeffPair 2)) :
+    polygonalIntegral
+      (NLS.ZakharovShabat.sourceAbelianDifferential (by norm_num : (2:ℝ≥0∞) ≠ ⊤)
+        (by norm_num) (0 : NLS.CoeffPair 2))
+      (NLS.ZakharovShabat.sourceCanonicalRootDomain (by norm_num : (2:ℝ≥0∞) ≠ ⊤)
+        (by norm_num) (0 : NLS.CoeffPair 2)) μ ν = -Complex.I*(ν-μ) := by
+  obtain ⟨W,_,_,hfamilies⟩ := NLS.ZakharovShabat.exists_sourceFullAbelianUniformCauchyFamilies
+    (by norm_num : (2:ℝ≥0∞) ≠ ⊤) (by norm_num)
+  obtain ⟨C,hC⟩ := hfamilies (0 : NLS.ZakharovShabat.realTypeSourceSubmodule 2)
+  have h0 : (0 : NLS.CoeffPair 2) ∈ ball C.discs.source.val C.discs.sourceRadius := by
+    rw [hC]
+    exact mem_ball_self C.discs.sourceRadius_pos
+  rw [C.polygonalIntegral_eq_endpointAverage_sub 0 h0 (-3) μ ν hμ hν,
+    NLS.ZakharovShabat.sourceAbelianEndpointAverage_zero _ _ _ ν hν,
+    NLS.ZakharovShabat.sourceAbelianEndpointAverage_zero _ _ _ μ hμ]
+  ring
+
+-- Two independently chosen boundary points on a negative-index disc share the source ball.
+example {W : Set (NLS.CoeffPair 3)}
+    (C : NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily
+      (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) W)
+    (μ ν : ℂ) (hμ : μ ∈ sphere (C.discs.center (-2)) (C.discs.outer (-2)))
+    (hν : ν ∈ sphere (C.discs.center (-2)) (C.discs.outer (-2))) :
+    AnalyticOnNhd ℂ (fun ψ => polygonalIntegral
+      (NLS.ZakharovShabat.sourceAbelianDifferential (by norm_num : (3:ℝ≥0∞) ≠ ⊤)
+        (by norm_num) ψ)
+      (NLS.ZakharovShabat.sourceCanonicalRootDomain (by norm_num : (3:ℝ≥0∞) ≠ ⊤)
+        (by norm_num) ψ) μ ν)
+      (ball C.discs.source.val C.discs.sourceRadius) :=
+  C.boundaryPolygonalIntegral_analytic (-2) μ ν hμ hν
+
+end AppendixFBoundaryIntegralExamples
+
+section AppendixFOpenGapBranchesExamples
+open Set Metric
+
+-- The prescribed gap is purely imaginary; its square lies on the principal square-root cut.
+example : ∃ V : Set ℂ, IsOpen V ∧ (1:ℂ) ∈ V ∧ V ⊆ ball 1 (1/8) ∧
+    ∃ ρ₁ ρ₂ : ℂ → ℂ, AnalyticOnNhd ℂ ρ₁ V ∧ AnalyticOnNhd ℂ ρ₂ V ∧
+      ρ₁ 1 = -Complex.I ∧ ρ₂ 1 = Complex.I ∧
+      ∀ z ∈ V, ({ρ₁ z,ρ₂ z} : Set ℂ) = {-Complex.I*z,Complex.I*z} ∧
+        ρ₁ z ≠ ρ₂ z ∧ ‖ρ₁ z+Complex.I‖ < 1/16 ∧ ‖ρ₂ z-Complex.I‖ < 1/16 := by
+  have h := NLS.ComplexAnalysis.exists_local_analytic_pair_branches
+    (fun z : ℂ => -Complex.I*z) (fun z : ℂ => Complex.I*z)
+    (ball 1 (1/8)) isOpen_ball 1 (by simp)
+    (((analyticAt_const.mul analyticAt_id).add (analyticAt_const.mul analyticAt_id)).div_const)
+    (((analyticAt_const.mul analyticAt_id).sub (analyticAt_const.mul analyticAt_id)).pow 2)
+    (by norm_num [Complex.ext_iff]) (1/16) (by norm_num)
+  simpa only [mul_one,sub_neg_eq_add] using h
+
+end AppendixFOpenGapBranchesExamples
+
+section AppendixFProofEstimatesExamples
+
+-- Equality in the smallness threshold still gives a strict boundary comparison.
+example (a γ G d : ℂ) (hγ : ‖γ‖ = 2) (ha : ‖a‖ = 1)
+    (hG : 1 ≤ ‖G‖) (hd : ‖d‖ ≤ 1/2) :
+    ‖(a^2-γ^2/4)*d‖ ≤ 1 ∧ ‖(a^2-γ^2/4)*d‖ < ‖2*a*G‖ := by
+  have h := NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate
+    a γ G d (1/2) 1 (by simpa [hγ] using ha)
+    (norm_pos_iff.mp (by rw [hγ]; norm_num)) (by norm_num) hG hd (by rw [hγ]; norm_num)
+  constructor
+  · norm_num only [hγ] at h
+    exact h.1
+  · exact lt_of_le_of_lt h.1 (lt_of_lt_of_le h.2.1 h.2.2)
+
+end AppendixFProofEstimatesExamples
