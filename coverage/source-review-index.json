@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T04:17:15.130409+00:00",
-  "base_commit": "87c75b2a9f79662339217c4090b3716fe0f6f6b5",
+  "published_utc": "2026-10-31T04:17:48.720724+00:00",
+  "base_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 179,
-    "module_hash_checks": 3915,
-    "distinct_modules": 2029
+    "review_records": 180,
+    "module_hash_checks": 3946,
+    "distinct_modules": 2039
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "87c75b2a9f79662339217c4090b3716fe0f6f6b5",
-    "validated_state": "Fresh full check after the positive Section27 quarter-energy theorem and two public examples.",
+    "base_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
+    "validated_state": "Section 27 ordered comparison changes documentation only. The exact Lean snapshot retains the successful positive quarter-energy proof check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8581,
     "public_examples": 7690,
@@ -44,8 +44,9 @@
       "sha256": "3667e56e5d703317df32a3f3abca28945207c834bc84a0218fa23b5b26f59bc1"
     },
     "full_gate_log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section27 and broader completion qualifications remain open.",
-    "full_gate_log": "work/Section27QuarterEnergyFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/Section27QuarterEnergyFullCheck.log",
+    "validation_reused_from_commit": "053f761701e1f096332b713a8c0d951b54d3e705"
   },
   "named_statements": [
     {
@@ -58729,6 +58730,884 @@
         "log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3"
       },
       "source_record_sha256": "c6f1b3238ee9aee2b02dad219f0a9e1ff8f4eff215b30200a700337c819d2fd4"
+    },
+    "Section27OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
+      "updated_utc": "2026-10-31T04:17:48.668914+00:00",
+      "source_lines": [
+        [
+          9489,
+          9631
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S27-001",
+          "source_lines": [
+            9491,
+            9492
+          ],
+          "requirement": "Converse norm-estimate objective",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every m>=1 the exact physical pair Hm norm is bounded by a constant times the highest weighted original action sum plus (1+S)^(4m-3)*M."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection27_sobolev_bound",
+            "NLS.ZakharovShabat.sourceSection27_original"
+          ],
+          "qualification": "Here M=S_0 and S=S_1 are the original signed-index action sums. The constant is chosen before every real Hm source. The retained original family and domains are unchanged."
+        },
+        {
+          "ordered_group": "S27-002",
+          "source_lines": [
+            9494,
+            9499
+          ],
+          "requirement": "Formula (5.13): pair derivative energy and actual trace",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Half the sum of both physical top-derivative energies equals 4^m times the original higher-action sum minus the actual lower-jet polynomial integral on [0,1].",
+            "The scaled original series has the independently defined physical Hamiltonian as its HasSum value."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection26Data.section27_pair_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "qualification": "The identities include every real Hm source at m>=1. The implementation action index 2m denotes source level 2m+1; absolute convergence and the positive factor 4^m are retained."
+        },
+        {
+          "ordered_group": "S27-003",
+          "source_lines": [
+            9502,
+            9508
+          ],
+          "requirement": "Central modes, fixed-mass spectral translation and H1 strategy",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source motivates H1 control of central modes using spectral translation at fixed L2 mass. The implementation supplies a positive plane-wave spectral translation identity and estimates the central modes through the physical H1 norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.sourceSection27_H1_norm"
+          ],
+          "qualification": "This is a strategy and attribution passage. The positive spectral identity and actual H1 estimates are linked; no new general impossibility theorem or refutation is claimed. The historical localization audit is unchanged."
+        },
+        {
+          "ordered_group": "S27-004",
+          "source_lines": [
+            9510,
+            9513
+          ],
+          "requirement": "Lemma 27.1 kinetic action bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every real H1 source, H3-2*H1^2 is at most the absolutely convergent sum of (2*n*pi)^2 times the original indexed action."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_energy_action_bound",
+            "NLS.ZakharovShabat.sourceSection27_kinetic_summable",
+            "NLS.ZakharovShabat.sourceH1_energy_le_kinetic_actions"
+          ],
+          "qualification": "Signed frequencies, all real H1 sources and the exact physical Hamiltonian and mass are retained. No auxiliary spectral hypothesis is introduced."
+        },
+        {
+          "ordered_group": "S27-005",
+          "source_lines": [
+            9515,
+            9519
+          ],
+          "requirement": "H3 and exact physical H1 consequences",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical Hamiltonian satisfies H3<=S+2*M^2 and the exact physical pair norm satisfies P^2/3<=S+M^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_H3_action_mass_bound",
+            "NLS.ZakharovShabat.sourceSection27_H1_norm",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "qualification": "The m=1 sharp Hamiltonian is identified with the physical H1 Hamiltonian. The norm uses the literal bracket 1+|2*n*pi| and both components, keeping the printed factor 1/3."
+        },
+        {
+          "ordered_group": "S27-006",
+          "source_lines": [
+            9529,
+            9537
+          ],
+          "requirement": "Exact cubic correction and moment positivity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical energy correction is exactly -(4/3) times the original cubic-moment sum, whose real terms are nonnegative and summable."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.sobolevPhysicalHamiltonian_identity",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_renormalizedHamiltonian_eq_real_tsum",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.summable_real_cubic_moments",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_moment_nonneg",
+            "NLS.ZakharovShabat.sourceSobolevPhysicalCorrection_nonpos"
+          ],
+          "qualification": "The H1-to-FL4 inclusion preserves coefficients. Finite-gap identification and H1 continuity give the same physical identity for every real H1 source. An actual atlas is constructed; no supplied representation premise remains."
+        },
+        {
+          "ordered_group": "S27-007",
+          "source_lines": [
+            9537,
+            9544
+          ],
+          "requirement": "Physical Fourier weight and kinetic-plus-mass identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The discrete physical Fourier weight satisfies <2*n*pi>^2 <= (3/2)*(1+(2*n*pi)^2), including n=0 and both signs.",
+            "The exact pair norm consequently obeys P^2/3 <= scalar mass plus scalar kinetic energy; the physical Hamiltonian splits into kinetic and quartic energy."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.physical_H1_weight_sq_le",
+            "NLS.ZakharovShabat.sourcePhysicalH1_fst_sq_le",
+            "NLS.ZakharovShabat.sourcePhysicalH1_norm_sq_eq_twice_fst",
+            "NLS.ZakharovShabat.sourcePhysicalH1_third_sq_le_mass_kinetic",
+            "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four"
+          ],
+          "qualification": "The factor two comes from conjugate real-source components. Physical unit-period integration is retained, so the displayed kinetic-plus-mass identity uses the same H3 and H1."
+        },
+        {
+          "ordered_group": "S27-008",
+          "source_lines": [
+            9547,
+            9553
+          ],
+          "requirement": "Quartic mass bound and final H1 estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical quartic integral dominates squared mass by nonnegative variance on the unit interval. Combining this with the exact kinetic action estimate gives P^2/3<=S+M^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.unit_interval_mean_sq_le",
+            "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+            "NLS.ZakharovShabat.periodOneSobolevMass_sq_le_quartic",
+            "NLS.ZakharovShabat.sourceH1_kinetic_actions_add_mass_le",
+            "NLS.ZakharovShabat.sourceH1_third_norm_sq_le_actions"
+          ],
+          "qualification": "The scalar mass equals the original total action. The argument covers zero mass and all real H1 sources and keeps the literal coefficient 1/3."
+        },
+        {
+          "ordered_group": "S27-009",
+          "source_lines": [
+            9555,
+            9556
+          ],
+          "requirement": "Theorem 23.2(ii) order-one branch",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The m=1 branch of Theorem 23.2(ii) follows from the H1 norm bound and M<=S, with d=sqrt(3) and the unweighted last factor M."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound",
+            "NLS.ZakharovShabat.sourceH1_action_mass_le_weighted",
+            "NLS.ZakharovShabat.exists_sourceSection27_sobolev_bound"
+          ],
+          "qualification": "The proof explicitly separates m=1 before the higher-order coercivity argument. Its constant is independent of the source and no small-action hypothesis is used."
+        },
+        {
+          "ordered_group": "S27-010",
+          "source_lines": [
+            9558,
+            9563
+          ],
+          "requirement": "Top-derivative trace identity for higher orders",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For m>=2 the half-pair derivative identity is the same original higher-action trace minus the actual physical polynomial remainder."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection26Data.section27_pair_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum"
+          ],
+          "qualification": "The stronger identity already holds at every m>=1. All sums and the physical interval integral have their original normalization."
+        },
+        {
+          "ordered_group": "S27-011",
+          "source_lines": [
+            9566,
+            9573
+          ],
+          "requirement": "Quarter-energy absorption and mass remainder",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Retain the complete remainder C*(1+M^(2m))*M from Lemma 26.3. With epsilon=1/4 it bounds quarter of the pair derivative energy by H_(2m+1) plus this remainder, uniformly for every m>=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+            "NLS.ZakharovShabat.sourceHigher_sum_actions_eq_scalar_mass",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "qualification": "This directly replaces the pure-power-only intermediate expression at 9566-9573. It retains zero and small mass without asserting that the stronger displayed remainder has been proved. The existing final theorem keeps its full scope. The positive quarter-energy theorem passed the full checks and is committed and pushed; no refutation is added."
+        },
+        {
+          "ordered_group": "S27-012",
+          "source_lines": [
+            9575,
+            9579
+          ],
+          "requirement": "Coefficient-one derivative estimate with unweighted final factor",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For m>=2, quarter of the pair top-derivative energy is at most S_m+C*(1+S)^(4m-3)*M, with coefficient one on S_m and a constant chosen before all sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_three_halves_action_bound",
+            "NLS.ZakharovShabat.section27_central_remainder_budget",
+            "NLS.ZakharovShabat.exists_sobolev_highestJet_action_bound",
+            "NLS.ZakharovShabat.exists_sourceSection27_derivative_bound"
+          ],
+          "qualification": "An adjustable frequency cutoff first gives coefficient 3/2 on S_m; epsilon=1/4 and the exact pair normalization recover coefficient one. Both terms of the full mass remainder are bounded by 2*(1+S)^(4m-3)*M. This positive argument retains the final displayed conclusion, including zero mass."
+        },
+        {
+          "ordered_group": "S27-013",
+          "source_lines": [
+            9581,
+            9581
+          ],
+          "requirement": "Transition to the auxiliary Hamiltonian estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The auxiliary all-order Hamiltonian bound used by the source has a public theorem for the original actions and the same retained family."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.SourceSection27Data.hamiltonian_estimate_literal"
+          ],
+          "qualification": "This transition adds no independent mathematical premise. The final derivative bound additionally uses the proved adjustable-cutoff estimate to retain its exact coefficient and unweighted final factor."
+        },
+        {
+          "ordered_group": "S27-014",
+          "source_lines": [
+            9584,
+            9591
+          ],
+          "requirement": "Lemma 27.2 exact all-order Hamiltonian estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every m>=1 and every real Hm source, H_(2m+1)<=S_m+(64*pi)^(2m-2)*(1+S)^(4m-3)*S, with the original higher-action trace."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.sourceSection27_endpoint",
+            "NLS.ZakharovShabat.SourceSection27Data.hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum"
+          ],
+          "qualification": "The literal m=1 endpoint is unrestricted: no smallness, collapsed-gap or supplied-profile premise remains. At m>=2 the refined physical H1 budget gives exactly the printed 64*pi constant."
+        },
+        {
+          "ordered_group": "S27-015",
+          "source_lines": [
+            9594,
+            9600
+          ],
+          "requirement": "Exterior threshold and summed comparison",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For nonzero indices at the inclusive threshold 8*P^2<=1+|n|, the original higher action satisfies 4^m*J_(n,2m+1)<=<2*n*pi>^(2m)*I_n.",
+            "A nonnegative summable majorant combines this exterior bound with the central third-action bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_le_action_add_third",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_actions_add_H1_energy"
+          ],
+          "qualification": "Make the zero-index split explicit: n=0 always uses the central-or-zero estimate, including small P. This directly corrects the cutoff presentation so that no exterior estimate is applied at zero. Threshold equality and signed nonzero indices remain included, and the summed conclusion keeps every real source."
+        },
+        {
+          "ordered_group": "S27-016",
+          "source_lines": [
+            9602,
+            9603
+          ],
+          "requirement": "Mean-value comparison relative to the third action",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original higher action equals a power of an actual closed-gap sample times the third action, without dividing by the latter."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_eq_power_mul_even_level",
+            "NLS.ZakharovShabat.sourceRealHigherAction_even_level_le"
+          ],
+          "qualification": "Choose base level l=1 and exponent 2m-2 for m>=1. The positive weighted gap measure proves the mean-value identity even for closed gaps, vanishing third action, m=1 and gaps crossing the spectral origin."
+        },
+        {
+          "ordered_group": "S27-017",
+          "source_lines": [
+            9605,
+            9612
+          ],
+          "requirement": "Central third-action budget and physical constants",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Central-or-zero modes satisfy 4^m*J_(n,2m+1)<=(16*pi)^(2m-2)*(1+P^2)^(2m-2)*4*J_(n,3).",
+            "The physical H1 norm has the stronger bound P^2<=(8/3)*(S+M^2), which supplies the margin needed for the displayed conversion to action-only constants."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_le_third",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.physical_H1_weight_sq_le_four_thirds",
+            "NLS.ZakharovShabat.sourceH1_norm_sq_le_eight_thirds_actions",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_actions_add_H1_energy"
+          ],
+          "qualification": "The exponent is 2*(m-1), including zero at m=1. The refined bound is stronger than the source H1 corollary and therefore gives its intermediate 64*pi comparison. The exact final constant uses the separate budget below."
+        },
+        {
+          "ordered_group": "S27-018",
+          "source_lines": [
+            9615,
+            9621
+          ],
+          "requirement": "Third-action trace and final constant budget",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The full third-action trace equals H3, and Lemma 27.1 gives H3<=S+2*M^2.",
+            "For m>=2, the refined H1 constant and 2*(8/3)^(2m-2)<=4^(2m-2) absorb the energy factor two and prove the exact final 64*pi remainder.",
+            "At m=1 the established global cubic inequality supplies the unrestricted endpoint H3<=2*S+S^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge",
+            "NLS.ZakharovShabat.sourceSection27_H3_action_mass_bound",
+            "NLS.ZakharovShabat.two_mul_eight_thirds_pow_le_four_pow",
+            "NLS.ZakharovShabat.lemma272_central_budget",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_weighted_actions",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_action_sq_le_cubic",
+            "NLS.ZakharovShabat.sourceH1_energy_le_quadratic_budget",
+            "NLS.ZakharovShabat.sourceH1_energy_le_lemma272",
+            "NLS.ZakharovShabat.sourceSection27_endpoint"
+          ],
+          "qualification": "The final constant calculation is supplied by these positive bounds instead of dropping the factor two. The endpoint uses the already proved actual finite-gap profile, continuity and density; it imposes no additional condition on the source. Historical arithmetic refutations remain unchanged and no new refutation or root-selection scratch is added."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S27-001",
+          "source_lines": [
+            9491,
+            9492
+          ],
+          "requirement": "Converse norm-estimate objective",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every m>=1 the exact physical pair Hm norm is bounded by a constant times the highest weighted original action sum plus (1+S)^(4m-3)*M."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection27_sobolev_bound",
+            "NLS.ZakharovShabat.sourceSection27_original"
+          ],
+          "qualification": "Here M=S_0 and S=S_1 are the original signed-index action sums. The constant is chosen before every real Hm source. The retained original family and domains are unchanged."
+        },
+        {
+          "ordered_group": "S27-002",
+          "source_lines": [
+            9494,
+            9499
+          ],
+          "requirement": "Formula (5.13): pair derivative energy and actual trace",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Half the sum of both physical top-derivative energies equals 4^m times the original higher-action sum minus the actual lower-jet polynomial integral on [0,1].",
+            "The scaled original series has the independently defined physical Hamiltonian as its HasSum value."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection26Data.section27_pair_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "qualification": "The identities include every real Hm source at m>=1. The implementation action index 2m denotes source level 2m+1; absolute convergence and the positive factor 4^m are retained."
+        },
+        {
+          "ordered_group": "S27-003",
+          "source_lines": [
+            9502,
+            9508
+          ],
+          "requirement": "Central modes, fixed-mass spectral translation and H1 strategy",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source motivates H1 control of central modes using spectral translation at fixed L2 mass. The implementation supplies a positive plane-wave spectral translation identity and estimates the central modes through the physical H1 norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.sourceSection27_H1_norm"
+          ],
+          "qualification": "This is a strategy and attribution passage. The positive spectral identity and actual H1 estimates are linked; no new general impossibility theorem or refutation is claimed. The historical localization audit is unchanged."
+        },
+        {
+          "ordered_group": "S27-004",
+          "source_lines": [
+            9510,
+            9513
+          ],
+          "requirement": "Lemma 27.1 kinetic action bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every real H1 source, H3-2*H1^2 is at most the absolutely convergent sum of (2*n*pi)^2 times the original indexed action."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_energy_action_bound",
+            "NLS.ZakharovShabat.sourceSection27_kinetic_summable",
+            "NLS.ZakharovShabat.sourceH1_energy_le_kinetic_actions"
+          ],
+          "qualification": "Signed frequencies, all real H1 sources and the exact physical Hamiltonian and mass are retained. No auxiliary spectral hypothesis is introduced."
+        },
+        {
+          "ordered_group": "S27-005",
+          "source_lines": [
+            9515,
+            9519
+          ],
+          "requirement": "H3 and exact physical H1 consequences",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical Hamiltonian satisfies H3<=S+2*M^2 and the exact physical pair norm satisfies P^2/3<=S+M^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_H3_action_mass_bound",
+            "NLS.ZakharovShabat.sourceSection27_H1_norm",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "qualification": "The m=1 sharp Hamiltonian is identified with the physical H1 Hamiltonian. The norm uses the literal bracket 1+|2*n*pi| and both components, keeping the printed factor 1/3."
+        },
+        {
+          "ordered_group": "S27-006",
+          "source_lines": [
+            9529,
+            9537
+          ],
+          "requirement": "Exact cubic correction and moment positivity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical energy correction is exactly -(4/3) times the original cubic-moment sum, whose real terms are nonnegative and summable."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.sobolevPhysicalHamiltonian_identity",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_renormalizedHamiltonian_eq_real_tsum",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.summable_real_cubic_moments",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_moment_nonneg",
+            "NLS.ZakharovShabat.sourceSobolevPhysicalCorrection_nonpos"
+          ],
+          "qualification": "The H1-to-FL4 inclusion preserves coefficients. Finite-gap identification and H1 continuity give the same physical identity for every real H1 source. An actual atlas is constructed; no supplied representation premise remains."
+        },
+        {
+          "ordered_group": "S27-007",
+          "source_lines": [
+            9537,
+            9544
+          ],
+          "requirement": "Physical Fourier weight and kinetic-plus-mass identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The discrete physical Fourier weight satisfies <2*n*pi>^2 <= (3/2)*(1+(2*n*pi)^2), including n=0 and both signs.",
+            "The exact pair norm consequently obeys P^2/3 <= scalar mass plus scalar kinetic energy; the physical Hamiltonian splits into kinetic and quartic energy."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.physical_H1_weight_sq_le",
+            "NLS.ZakharovShabat.sourcePhysicalH1_fst_sq_le",
+            "NLS.ZakharovShabat.sourcePhysicalH1_norm_sq_eq_twice_fst",
+            "NLS.ZakharovShabat.sourcePhysicalH1_third_sq_le_mass_kinetic",
+            "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four"
+          ],
+          "qualification": "The factor two comes from conjugate real-source components. Physical unit-period integration is retained, so the displayed kinetic-plus-mass identity uses the same H3 and H1."
+        },
+        {
+          "ordered_group": "S27-008",
+          "source_lines": [
+            9547,
+            9553
+          ],
+          "requirement": "Quartic mass bound and final H1 estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical quartic integral dominates squared mass by nonnegative variance on the unit interval. Combining this with the exact kinetic action estimate gives P^2/3<=S+M^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.unit_interval_mean_sq_le",
+            "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+            "NLS.ZakharovShabat.periodOneSobolevMass_sq_le_quartic",
+            "NLS.ZakharovShabat.sourceH1_kinetic_actions_add_mass_le",
+            "NLS.ZakharovShabat.sourceH1_third_norm_sq_le_actions"
+          ],
+          "qualification": "The scalar mass equals the original total action. The argument covers zero mass and all real H1 sources and keeps the literal coefficient 1/3."
+        },
+        {
+          "ordered_group": "S27-009",
+          "source_lines": [
+            9555,
+            9556
+          ],
+          "requirement": "Theorem 23.2(ii) order-one branch",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The m=1 branch of Theorem 23.2(ii) follows from the H1 norm bound and M<=S, with d=sqrt(3) and the unweighted last factor M."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound",
+            "NLS.ZakharovShabat.sourceH1_action_mass_le_weighted",
+            "NLS.ZakharovShabat.exists_sourceSection27_sobolev_bound"
+          ],
+          "qualification": "The proof explicitly separates m=1 before the higher-order coercivity argument. Its constant is independent of the source and no small-action hypothesis is used."
+        },
+        {
+          "ordered_group": "S27-010",
+          "source_lines": [
+            9558,
+            9563
+          ],
+          "requirement": "Top-derivative trace identity for higher orders",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For m>=2 the half-pair derivative identity is the same original higher-action trace minus the actual physical polynomial remainder."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection26Data.section27_pair_top_jet_identity",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum"
+          ],
+          "qualification": "The stronger identity already holds at every m>=1. All sums and the physical interval integral have their original normalization."
+        },
+        {
+          "ordered_group": "S27-011",
+          "source_lines": [
+            9566,
+            9573
+          ],
+          "requirement": "Quarter-energy absorption and mass remainder",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Retain the complete remainder C*(1+M^(2m))*M from Lemma 26.3. With epsilon=1/4 it bounds quarter of the pair derivative energy by H_(2m+1) plus this remainder, uniformly for every m>=1."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+            "NLS.ZakharovShabat.sourceHigher_sum_actions_eq_scalar_mass",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "qualification": "This directly replaces the pure-power-only intermediate expression at 9566-9573. It retains zero and small mass without asserting that the stronger displayed remainder has been proved. The existing final theorem keeps its full scope. The positive quarter-energy theorem passed the full checks and is committed and pushed; no refutation is added."
+        },
+        {
+          "ordered_group": "S27-012",
+          "source_lines": [
+            9575,
+            9579
+          ],
+          "requirement": "Coefficient-one derivative estimate with unweighted final factor",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For m>=2, quarter of the pair top-derivative energy is at most S_m+C*(1+S)^(4m-3)*M, with coefficient one on S_m and a constant chosen before all sources."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_three_halves_action_bound",
+            "NLS.ZakharovShabat.section27_central_remainder_budget",
+            "NLS.ZakharovShabat.exists_sobolev_highestJet_action_bound",
+            "NLS.ZakharovShabat.exists_sourceSection27_derivative_bound"
+          ],
+          "qualification": "An adjustable frequency cutoff first gives coefficient 3/2 on S_m; epsilon=1/4 and the exact pair normalization recover coefficient one. Both terms of the full mass remainder are bounded by 2*(1+S)^(4m-3)*M. This positive argument retains the final displayed conclusion, including zero mass."
+        },
+        {
+          "ordered_group": "S27-013",
+          "source_lines": [
+            9581,
+            9581
+          ],
+          "requirement": "Transition to the auxiliary Hamiltonian estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The auxiliary all-order Hamiltonian bound used by the source has a public theorem for the original actions and the same retained family."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.SourceSection27Data.hamiltonian_estimate_literal"
+          ],
+          "qualification": "This transition adds no independent mathematical premise. The final derivative bound additionally uses the proved adjustable-cutoff estimate to retain its exact coefficient and unweighted final factor."
+        },
+        {
+          "ordered_group": "S27-014",
+          "source_lines": [
+            9584,
+            9591
+          ],
+          "requirement": "Lemma 27.2 exact all-order Hamiltonian estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every m>=1 and every real Hm source, H_(2m+1)<=S_m+(64*pi)^(2m-2)*(1+S)^(4m-3)*S, with the original higher-action trace."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.sourceSection27_endpoint",
+            "NLS.ZakharovShabat.SourceSection27Data.hamiltonian_estimate_literal",
+            "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum"
+          ],
+          "qualification": "The literal m=1 endpoint is unrestricted: no smallness, collapsed-gap or supplied-profile premise remains. At m>=2 the refined physical H1 budget gives exactly the printed 64*pi constant."
+        },
+        {
+          "ordered_group": "S27-015",
+          "source_lines": [
+            9594,
+            9600
+          ],
+          "requirement": "Exterior threshold and summed comparison",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For nonzero indices at the inclusive threshold 8*P^2<=1+|n|, the original higher action satisfies 4^m*J_(n,2m+1)<=<2*n*pi>^(2m)*I_n.",
+            "A nonnegative summable majorant combines this exterior bound with the central third-action bound."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_le_action_add_third",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_actions_add_H1_energy"
+          ],
+          "qualification": "Make the zero-index split explicit: n=0 always uses the central-or-zero estimate, including small P. This directly corrects the cutoff presentation so that no exterior estimate is applied at zero. Threshold equality and signed nonzero indices remain included, and the summed conclusion keeps every real source."
+        },
+        {
+          "ordered_group": "S27-016",
+          "source_lines": [
+            9602,
+            9603
+          ],
+          "requirement": "Mean-value comparison relative to the third action",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original higher action equals a power of an actual closed-gap sample times the third action, without dividing by the latter."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_eq_power_mul_even_level",
+            "NLS.ZakharovShabat.sourceRealHigherAction_even_level_le"
+          ],
+          "qualification": "Choose base level l=1 and exponent 2m-2 for m>=1. The positive weighted gap measure proves the mean-value identity even for closed gaps, vanishing third action, m=1 and gaps crossing the spectral origin."
+        },
+        {
+          "ordered_group": "S27-017",
+          "source_lines": [
+            9605,
+            9612
+          ],
+          "requirement": "Central third-action budget and physical constants",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Central-or-zero modes satisfy 4^m*J_(n,2m+1)<=(16*pi)^(2m-2)*(1+P^2)^(2m-2)*4*J_(n,3).",
+            "The physical H1 norm has the stronger bound P^2<=(8/3)*(S+M^2), which supplies the margin needed for the displayed conversion to action-only constants."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_le_third",
+            "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+            "NLS.ZakharovShabat.physical_H1_weight_sq_le_four_thirds",
+            "NLS.ZakharovShabat.sourceH1_norm_sq_le_eight_thirds_actions",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_actions_add_H1_energy"
+          ],
+          "qualification": "The exponent is 2*(m-1), including zero at m=1. The refined bound is stronger than the source H1 corollary and therefore gives its intermediate 64*pi comparison. The exact final constant uses the separate budget below."
+        },
+        {
+          "ordered_group": "S27-018",
+          "source_lines": [
+            9615,
+            9621
+          ],
+          "requirement": "Third-action trace and final constant budget",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The full third-action trace equals H3, and Lemma 27.1 gives H3<=S+2*M^2.",
+            "For m>=2, the refined H1 constant and 2*(8/3)^(2m-2)<=4^(2m-2) absorb the energy factor two and prove the exact final 64*pi remainder.",
+            "At m=1 the established global cubic inequality supplies the unrestricted endpoint H3<=2*S+S^2."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge",
+            "NLS.ZakharovShabat.sourceSection27_H3_action_mass_bound",
+            "NLS.ZakharovShabat.two_mul_eight_thirds_pow_le_four_pow",
+            "NLS.ZakharovShabat.lemma272_central_budget",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_le_weighted_actions",
+            "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_action_sq_le_cubic",
+            "NLS.ZakharovShabat.sourceH1_energy_le_quadratic_budget",
+            "NLS.ZakharovShabat.sourceH1_energy_le_lemma272",
+            "NLS.ZakharovShabat.sourceSection27_endpoint"
+          ],
+          "qualification": "The final constant calculation is supplied by these positive bounds instead of dropping the factor two. The endpoint uses the already proved actual finite-gap profile, continuity and density; it imposes no additional condition on the source. Historical arithmetic refutations remain unchanged and no new refutation or root-selection scratch is added."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 14,
+        "corrected": 3,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection27Actions.lean": "add8170c924f576cb43093073ade92bf96391d5c7ee4b6f2f8b8260f7b932ec4",
+        "NLS/ZakharovShabat/SourceSection27Original.lean": "d18b8649e7bf6ae48eda6eaf411182faf1ac7417b7cb66ae533f0c63bf99b0bf",
+        "NLS/ZakharovShabat/SourceSection27SharpEndpoint.lean": "7dac40a39a5eca4389a70b99ad2ee371f2855c780956a66ff8a82dba283d2675",
+        "NLS/ZakharovShabat/SourceSection27DerivativeBound.lean": "4347bb2b30e519f3d7ed0ca987aeb0bd941a2bc3f2f81fb5ffd421e24dca685a",
+        "NLS/ZakharovShabat/SourceHamiltonianActionOnlyBound.lean": "8b3cf4e1d2cee2b66e666f343f2187dbf8adc1c8b2bf8c00618b84e53b8a79cc",
+        "NLS/ZakharovShabat/SourceActionSobolevLowerBound.lean": "4981d2d7f8e124dd5350d4f469718d53fbd47b5c044c02cc1ce56369c09120e8",
+        "NLS/ZakharovShabat/SourceH1EndpointActionBound.lean": "b5ce7e458b94124ea836233827da775eb610dbcaa4af125ba3854f703e1c7ba5",
+        "NLS/ZakharovShabat/SobolevHamiltonianThirdActionBound.lean": "cda262cf7c72976cbf6e483a75a809d27f3ebd1404e0dfa962dc1c0aed0c2470",
+        "NLS/ZakharovShabat/Lemma272ConstantBudget.lean": "41732dbc77ae3db06a545dbff79aa06b55e756b8e99920c92fa10bc68eb7649f",
+        "NLS/ZakharovShabat/SourceH1SharpEndpoint.lean": "66b7dad4033e4bf1aa876403ccf016d9c7f9a5a1b2e5ae25f82007338aa35de6",
+        "NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean": "688775af601bd6f25dc5cc4706cf57ede5935441d05f14f2c1fbf42631db6d8e",
+        "NLS/ZakharovShabat/SourceCentralThirdActionComparison.lean": "7d0eff9ace5007c822dc641f0563472a1f66939ddd229ce2b273c2f3f6b579e9",
+        "NLS/ZakharovShabat/RefinedH1ActionBound.lean": "c82f1304439c19be1bacec3488296e7a1031b36d53df2f47ca96e4507fdb9676",
+        "NLS/ZakharovShabat/SourcePrimitivePowerGlobalCubic.lean": "a5a4926da20f23ae13c0c1d404ed8d398b7c113ad6606acfe6e5435cea083a59",
+        "NLS/ZakharovShabat/SourceFiniteGapProfileIdentity.lean": "cb37bc3b873be6b9c1d84c948d3b3e26e61fec646f0241ffdc1acedbb6742d00",
+        "NLS/ZakharovShabat/SourceRelativeHigherActions.lean": "073453c6b5403149cd7560c9fe44a15a8816e94be5699f141364d7afdc8d6b94",
+        "NLS/ZakharovShabat/SourceH1ConverseActionEstimate.lean": "0bbe75cb44a36869984b9b967ce807c29f02cb0fb08e0357391eb711014b4fc0",
+        "NLS/ZakharovShabat/SourceH1ActionSums.lean": "61dd35bddc1e7a6131518273e446ec30046b9e12a85ac9e89b9c24d74605e6aa",
+        "NLS/ZakharovShabat/PhysicalH1NormBound.lean": "a5458abeb2ae7a34fa77652d7900d6098cfbe40b768ebf9bac452e5ec296cac6",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean": "454867eb6bd20c57a4f0eb840e8fbbca9b645e1624b78c8ecc60c357e0e44d7a",
+        "NLS/ZakharovShabat/SourceHamiltonianUnweightedRemainder.lean": "2f5c5ecb1cb261247eb064d61b5ffb65f34628ab384691596c3bcb177f82034d",
+        "NLS/ZakharovShabat/SourcePiSobolevCoercivity.lean": "b94e2bc7b2329290c8ba89bb2a6d22eb25e1bd3aa67459bd8200347fda68ad0a",
+        "NLS/ZakharovShabat/SourceH1EndpointMomentCriterion.lean": "127650eee862293ec2bc6fe7ec6302ee35e29b3d298eb060a1971a3b9123fa0a",
+        "NLS/ZakharovShabat/SourcePrimitivePowerPositive.lean": "3c79b2043e55f133e9981ec9f5969589a63cd6a567a8de00acd7cef1b0a94f8d",
+        "NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean": "500b75a60034eac35c329b357f14fe2f624d09b04203307300c134a18be2f872",
+        "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean": "442a9d5117daf5de594d40fa88dc06ef002439132849b3cdc1068a34954b7d23",
+        "NLS/ZakharovShabat/SourceRenormalizedHamiltonian.lean": "ac8a7bc51be01f333c47b681e0fe293e3292db636abaa06d5f19463e8701d463",
+        "NLS/ZakharovShabat/SourcePlaneWaveSpectrum.lean": "a56a8707a2060ab9e74a58114df571172b846b6e3e5ce011eb2b4f037d718d6d",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17",
+        "NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean": "20821e1c702db6b3f65967e7d1e896adbb99d9e7e010f70912e487c5702e35f6",
+        "NLS/ZakharovShabat/SourceH1HigherActionEstimates.lean": "7c1d942d51949665092607242fad0785b7ed72b4c77be097a16b7c9a019fadf2"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection27Actions.lean",
+        "NLS/ZakharovShabat/SourceSection27Original.lean",
+        "NLS/ZakharovShabat/SourceSection27SharpEndpoint.lean",
+        "NLS/ZakharovShabat/SourceSection27DerivativeBound.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianActionOnlyBound.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevLowerBound.lean",
+        "NLS/ZakharovShabat/SourceH1EndpointActionBound.lean",
+        "NLS/ZakharovShabat/SobolevHamiltonianThirdActionBound.lean",
+        "NLS/ZakharovShabat/Lemma272ConstantBudget.lean",
+        "NLS/ZakharovShabat/SourceH1SharpEndpoint.lean",
+        "NLS/ZakharovShabat/SourceH1ZeroModeMomentCriterion.lean",
+        "NLS/ZakharovShabat/SourceCentralThirdActionComparison.lean",
+        "NLS/ZakharovShabat/RefinedH1ActionBound.lean",
+        "NLS/ZakharovShabat/SourcePrimitivePowerGlobalCubic.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapProfileIdentity.lean",
+        "NLS/ZakharovShabat/SourceRelativeHigherActions.lean",
+        "NLS/ZakharovShabat/SourceH1ConverseActionEstimate.lean",
+        "NLS/ZakharovShabat/SourceH1ActionSums.lean",
+        "NLS/ZakharovShabat/PhysicalH1NormBound.lean",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean",
+        "NLS/ZakharovShabat/SourceHamiltonianUnweightedRemainder.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevCoercivity.lean",
+        "NLS/ZakharovShabat/SourceH1EndpointMomentCriterion.lean",
+        "NLS/ZakharovShabat/SourcePrimitivePowerPositive.lean",
+        "NLS/ZakharovShabat/SourceSobolevPhysicalCorrection.lean",
+        "NLS/ZakharovShabat/SourceSobolevHamiltonianIdentification.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedHamiltonian.lean",
+        "NLS/ZakharovShabat/SourcePlaneWaveSpectrum.lean",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean",
+        "NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean",
+        "NLS/ZakharovShabat/SourceH1HigherActionEstimates.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_27_ASSERTIONS.md",
+      "ordered_inventory_sha256": "9d6980e8eaf33591a47d51486b082ec041f584e0e8209641c38ac73df287f527",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.H1_gap_point_central_or_zero_bound",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_action_sq_le_cubic",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_moment_nonneg",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.real_renormalizedHamiltonian_eq_real_tsum",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.sobolevPhysicalHamiltonian_identity",
+        "NLS.ZakharovShabat.SourcePrimitivePowerAtlas.summable_real_cubic_moments",
+        "NLS.ZakharovShabat.SourceSection26Data.section27_hamiltonian_hasSum",
+        "NLS.ZakharovShabat.SourceSection26Data.section27_pair_top_jet_identity",
+        "NLS.ZakharovShabat.SourceSection26Data.section27_top_jet_identity",
+        "NLS.ZakharovShabat.SourceSection27Data.hamiltonian_estimate_literal",
+        "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+        "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_three_halves_action_bound",
+        "NLS.ZakharovShabat.exists_sobolev_highestJet_action_bound",
+        "NLS.ZakharovShabat.exists_sourceSection27_derivative_bound",
+        "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound",
+        "NLS.ZakharovShabat.exists_sourceSection27_sobolev_bound",
+        "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound",
+        "NLS.ZakharovShabat.lemma272_central_budget",
+        "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+        "NLS.ZakharovShabat.periodOneSobolevMass_sq_le_quartic",
+        "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four",
+        "NLS.ZakharovShabat.physical_H1_weight_sq_le",
+        "NLS.ZakharovShabat.physical_H1_weight_sq_le_four_thirds",
+        "NLS.ZakharovShabat.section27_central_remainder_budget",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_le_actions_add_H1_energy",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_le_weighted_actions",
+        "NLS.ZakharovShabat.sourceH1_action_mass_le_weighted",
+        "NLS.ZakharovShabat.sourceH1_energy_le_kinetic_actions",
+        "NLS.ZakharovShabat.sourceH1_energy_le_lemma272",
+        "NLS.ZakharovShabat.sourceH1_energy_le_quadratic_budget",
+        "NLS.ZakharovShabat.sourceH1_kinetic_actions_add_mass_le",
+        "NLS.ZakharovShabat.sourceH1_norm_sq_le_eight_thirds_actions",
+        "NLS.ZakharovShabat.sourceH1_third_norm_sq_le_actions",
+        "NLS.ZakharovShabat.sourceHigher_sum_actions_eq_scalar_mass",
+        "NLS.ZakharovShabat.sourcePhysicalH1_fst_sq_le",
+        "NLS.ZakharovShabat.sourcePhysicalH1_norm_sq_eq_twice_fst",
+        "NLS.ZakharovShabat.sourcePhysicalH1_third_sq_le_mass_kinetic",
+        "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_le_third",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_le_action_add_third",
+        "NLS.ZakharovShabat.sourceRealHigherAction_eq_power_mul_even_level",
+        "NLS.ZakharovShabat.sourceRealHigherAction_even_level_le",
+        "NLS.ZakharovShabat.sourceSection27_H1_norm",
+        "NLS.ZakharovShabat.sourceSection27_H3_action_mass_bound",
+        "NLS.ZakharovShabat.sourceSection27_H3_bridge",
+        "NLS.ZakharovShabat.sourceSection27_endpoint",
+        "NLS.ZakharovShabat.sourceSection27_energy_action_bound",
+        "NLS.ZakharovShabat.sourceSection27_hamiltonian_estimate_literal",
+        "NLS.ZakharovShabat.sourceSection27_kinetic_summable",
+        "NLS.ZakharovShabat.sourceSection27_original",
+        "NLS.ZakharovShabat.sourceSection27_pair_jet_norm",
+        "NLS.ZakharovShabat.sourceSobolevPhysicalCorrection_nonpos",
+        "NLS.ZakharovShabat.two_mul_eight_thirds_pow_le_four_pow",
+        "NLS.ZakharovShabat.unit_interval_mean_sq_le"
+      ],
+      "declaration_inventory_count": 44704,
+      "qualification": "The ordered Section 27 comparison covers 18 groups on printed pp.115–116: 14 matched, three directly corrected and one contextual, with no partial or pending groups in this local ledger. Original indexed actions, independently defined physical Hamiltonians, exact pair norms and all real Hm sources are retained. The quarter-energy step keeps the complete mass remainder; the zero-index split is explicit; the final constant budget uses the refined H1 estimate and the existing unrestricted endpoint proof. The literal Lemma 27.2 constant is retained for every m>=1. The final derivative estimate has coefficient one on its highest action term and the unweighted final mass factor. This documentation step adds no Lean proof or refutation. Broader completeness, the exact cited 2014 construction and Appendix G.2 qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          115,
+          116
+        ],
+        "images": {
+          "work/tmp/pdfs/section26-ordered-115.png": "23e0b629efe73f9464c104fa6bf5f6f7f2eee080e93c6c1f985e9a161b5d16a2",
+          "work/tmp/pdfs/section27-ordered-116.png": "942d02feb6805ebb7ad1a6f10c540e36ecd5236893c319e5a1fdcd96ee88ecec"
+        }
+      },
+      "preceding_review_hash": "c6f1b3238ee9aee2b02dad219f0a9e1ff8f4eff215b30200a700337c819d2fd4",
+      "reconciled_previous_reviews": {
+        "Section27SourceComparison-2026-10-27.json": "5c9191041ef18b0b9291c981aa340aa2ee4c1209313c20929611e87f700d747d",
+        "Section27QuarterEnergySourceComparison-2026-10-31.json": "c6f1b3238ee9aee2b02dad219f0a9e1ff8f4eff215b30200a700337c819d2fd4"
+      },
+      "validation_lean_sources": {
+        "files": 4858,
+        "sha256": "3667e56e5d703317df32a3f3abca28945207c834bc84a0218fa23b5b26f59bc1"
+      },
+      "validation_reused_from_commit": "053f761701e1f096332b713a8c0d951b54d3e705",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 61690,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section27QuarterEnergyFullCheck.log",
+        "log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3"
+      },
+      "source_record_sha256": "a8b12b3d160ef6f18dec2b8270f043b85019ebc0a708ee4ba22654627cd97497"
     }
   }
 }

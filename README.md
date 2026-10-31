@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 27 quarter-energy bound](NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean)
-retains the full mass remainder C*(1+M^(2m))*M uniformly on real Hm.
-One positive theorem and two examples pass the full checks. The
-ordered comparison continues; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Section 27 comparison](coverage/SECTION_27_ASSERTIONS.md)
+records 14 matched groups, three direct corrections and one contextual passage.
+Original actions, physical norms, the unrestricted endpoint and final
+constants are retained. Section 28 is next;
+[broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

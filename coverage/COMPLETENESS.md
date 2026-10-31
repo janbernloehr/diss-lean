@@ -123,7 +123,12 @@ now retains the complete remainder C*(1+M^(2m))*M. Its constant
 precedes all real Hm sources, for each m>=1. The existing final
 Sobolev and derivative estimates keep their original scope. One
 positive theorem and two examples add no new refutation. The
-ordered Section 27 comparison remains in progress.
+[ordered Section 27 ledger](SECTION_27_ASSERTIONS.md) now compares 18 groups:
+14 matched, three corrected and one contextual, with no partial or pending
+groups in that local ledger. It retains the original physical trace, exact
+H1 norm constant, unrestricted m=1 endpoint and coefficient-one final
+derivative estimate. The full remainder, zero-index split and final
+constant budget are corrected directly. Section 28 is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

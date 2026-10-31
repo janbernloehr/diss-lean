@@ -1,5 +1,27 @@
 # Section 27: original Sobolev norms from the actions
 
+## Ordered source comparison
+
+The [ordered Section 27 comparison](SECTION_27_ASSERTIONS.md)
+covers 18 groups on pp.115–116: 14 matched, three corrected and one contextual.
+No partial or pending groups remain in this local ledger.
+
+The comparison retains the physical trace, exact H1 coefficient 1/3,
+literal all-order Lemma 27.2 constant and unrestricted m=1 endpoint.
+The final derivative estimate keeps coefficient one on the highest
+action term and the unweighted final mass factor.
+
+Direct corrections retain the full mass remainder in the quarter-energy
+step, make the zero-index split explicit and supply the final constant
+budget. No new Lean proof or refutation is added in this comparison.
+
+The unchanged Lean snapshot reuses the successful full check at commit 053f761701e1f096332b713a8c0d951b54d3e705: 8,581 build jobs, 7,690 public examples and an axiom audit of 44,704 NLS declarations, with 21 inherited warnings and zero new. All 55 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 28. The [broader completion qualifications](COMPLETENESS.md)
+remain; these local ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Positive quarter-energy estimate
 
 The [quarter-energy estimate](../NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean)
