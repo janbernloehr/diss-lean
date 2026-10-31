@@ -73677,3 +73677,57 @@ example : ‖(Complex.I/2-(1/4:ℂ)) /
     (by norm_num [norm_div]) (1/4) (by norm_num) (by norm_num [norm_div])
   norm_num [norm_div, Complex.I_sq] at h ⊢
   exact h
+
+section AppendixFDeletedPairExamples
+open Set NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A non-Hilbert exponent has one full joint domain for every signed index.
+example : ∃ W : Set (NLS.CoeffPair 3), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus 3 ⊆ W ∧ ∀ n : ℤ,
+      AnalyticOnNhd ℂ (sourceDeletedPairJointProduct (by norm_num : (3:ℝ≥0∞) ≠ ⊤)
+        (by norm_num) n) (univ ×ˢ W) := by
+  obtain ⟨W,hW,hconn,hreal,H⟩ := sourceLemma10_5
+    (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+  exact ⟨W,hW,hconn,hreal,H.deletedPair_joint_full⟩
+
+-- The bounds control the logarithmic derivative, also on a negative-index disc boundary.
+example {W V : Set (NLS.CoeffPair 3)}
+    (H : SourceLemma10_5Data (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) W)
+    (hW : IsOpen W) (hV : IsOpen V) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) V D c)
+    (φ : NLS.CoeffPair 3) (hφ : φ ∈ V) :
+    ∃ U : Set (NLS.CoeffPair 3), IsOpen U ∧ φ ∈ U ∧ U ⊆ V ∧
+      ∃ K : ℝ, 0 < K ∧ ∀ ψ ∈ U, ∀ z ∈ closure (D (-2)),
+        ‖deriv (canonicalDeletedPeriodicProduct (by norm_num : (3:ℝ≥0∞) ≠ ⊤)
+          (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2)) z /
+          canonicalDeletedPeriodicProduct (by norm_num : (3:ℝ≥0∞) ≠ ⊤)
+            (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2) z‖ ≤ K := by
+  obtain ⟨U,hU,hφU,hUV,s,r,hs,hr,hb⟩ := H.deletedPair_uniform_disk_bounds hW hV hVW hD φ hφ (-2)
+  refine ⟨U,hU,hφU,hUV,r/s,div_pos hr hs,?_⟩
+  intro ψ hψ z hz
+  have h := hb ψ hψ z hz
+  rw [norm_div]
+  exact (div_le_div_of_nonneg_right h.2 (norm_nonneg _)).trans
+    (div_le_div_of_nonneg_left hr.le hs h.1)
+
+end AppendixFDeletedPairExamples
+
+
+section AppendixFEndpointRootExamples
+open Complex NLS.ZakharovShabat
+
+-- A purely imaginary gap and outward endpoint spoke retain the actual complex branch.
+example : normalizedStandardRoot 0 (-4) (-(5/4:ℂ)*Complex.I) =
+    (5/8:ℂ)*Complex.I*Complex.sqrt (36/25:ℂ) := by
+  have h := appendixF_normalized_root_on_endpoint_spoke (-Complex.I) Complex.I
+    (-(2:ℂ)*Complex.I) (1/4) (by norm_num)
+  have hsqrt4 : Real.sqrt 4 = 2 :=
+    (Real.sqrt_eq_iff_mul_self_eq (by norm_num) (by norm_num)).mpr (by norm_num)
+  norm_num at h
+  convert h using 1 <;> ring_nf <;> norm_num [Complex.I_sq,Complex.inv_I,hsqrt4]
+  ring
+
+end AppendixFEndpointRootExamples

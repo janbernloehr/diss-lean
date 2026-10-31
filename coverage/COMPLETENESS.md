@@ -225,7 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
-The 31-group ordered Appendix F comparison remains open.
+The [Appendix F domain and geometry proofs](APPENDIX_F.md)
+now retain the literal deleted product on the whole joint domain,
+its exact zero set, simultaneous original closed-disc bounds and
+the collapsed-gap smallness condition. A common original boundary
+point gives midpoint spokes avoiding all source gaps. Eleven positive
+theorems and three examples add no new refutation. Remaining branch
+assertions, source-family convergence and improper-path substitutions
+keep the 31-group ordered Appendix F comparison open.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

@@ -4881,3 +4881,6 @@ import NLS.ComplexAnalysis.AppendixFCommonBoundary
 import NLS.ZakharovShabat.AppendixFRootPath
 import NLS.ComplexAnalysis.AppendixFMovingDominated
 import NLS.ZakharovShabat.AppendixFPositiveIntegral
+import NLS.ZakharovShabat.AppendixFDeletedPair
+import NLS.ZakharovShabat.AppendixFSourceSpokes
+import NLS.ZakharovShabat.AppendixFEndpointRoot

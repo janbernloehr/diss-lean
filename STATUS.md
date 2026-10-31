@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Appendix F path limits
+## Current milestone: Appendix F full domain and source geometry
+
+The [deleted-pair product](NLS/ZakharovShabat/AppendixFDeletedPair.lean)
+is jointly analytic on the whole spectral plane times the unchanged
+source domain. Its spectral derivative has the same joint regularity,
+and its zeros are exactly the endpoints at other indices. The literal
+normalization and original isolating family are retained.
+
+On one source neighborhood, compactness supplies a positive lower
+product bound and a positive upper derivative bound throughout the
+original closed disc. At a collapsed complex source the neighborhood
+can be restricted to impose norm(gap)*r <= s with the same bounds.
+This uses squared-gap analyticity without continuous endpoint labels.
+
+The [actual source midpoint spokes](NLS/ZakharovShabat/AppendixFSourceSpokes.lean)
+share one point on the original disc boundary for any countable
+source family. Every punctured spoke stays in the closed disc and
+avoids every actual gap, including at its terminal point.
+
+The [endpoint-spoke root formula](NLS/ZakharovShabat/AppendixFEndpointRoot.lean)
+retains the actual principal square-root branch at every nonnegative
+parameter, including the initial endpoint. The base radicand is
+exactly the positive real expression used in the scalar estimate.
+
+Three modules add eleven positive theorems and three examples.
+No new refutation is added.
+
+The full check passed: 8,623 build jobs, 7,724 public examples and an axiom audit of 44,888 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Remaining
+branch assertions, source-family convergence and improper-path
+substitutions still require completion. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F path limits
 
 The [common boundary point](NLS/ComplexAnalysis/AppendixFCommonBoundary.lean)
 works for every selected gap in any countable family. The punctured

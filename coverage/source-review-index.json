@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T08:19:43.983985+00:00",
-  "base_commit": "0a48a67d521c861c20746ef9043773052da03ab0",
+  "published_utc": "2026-10-31T08:41:13.140290+00:00",
+  "base_commit": "24025a2511f2c9dc86262bd2858ac9909b511531",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 195,
-    "module_hash_checks": 4167,
-    "distinct_modules": 2110
+    "review_records": 196,
+    "module_hash_checks": 4180,
+    "distinct_modules": 2115
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0a48a67d521c861c20746ef9043773052da03ab0",
-    "validated_state": "Fresh full check after four Appendix F path-limit modules and three public examples.",
+    "base_commit": "24025a2511f2c9dc86262bd2858ac9909b511531",
+    "validated_state": "Fresh full check after three Appendix F domain and geometry modules and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8620,
-    "public_examples": 7721,
-    "transitive_NLS_declarations": 44870,
+    "build_jobs": 8623,
+    "public_examples": 7724,
+    "transitive_NLS_declarations": 44888,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 70625,
+    "gate_session": 72028,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4882,
-      "sha256": "d867f6fe671bb16b2ca778c2569c4068ee93952e3d91f3d9e95447890150214a"
+      "files": 4885,
+      "sha256": "4e60fe35ce2b12289135761983f4e0100997922a4bbd6fe32d061a63f3bd91b1"
     },
-    "full_gate_log_sha256": "e7916dd63a3ec286c468ed81e7fa75b72125cd344804a315df67763c40e812e5",
+    "full_gate_log_sha256": "e92d48d736a421670d35fcb0a7840c1543768972cecce13c9b1cd16410466c06",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFPathLimitsFullCheck.log"
+    "full_gate_log": "work/AppendixFDomainGeometryFullCheck.log"
   },
   "named_statements": [
     {
@@ -66686,6 +66686,193 @@
         "log_sha256": "e7916dd63a3ec286c468ed81e7fa75b72125cd344804a315df67763c40e812e5"
       },
       "source_record_sha256": "a9cf3271f847121846b2970a7695cde3654c6e03b1a8ad11f0e74fbf3bc438c2"
+    },
+    "AppendixFDomainGeometrySourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "24025a2511f2c9dc86262bd2858ac9909b511531",
+      "updated_utc": "2026-10-31T08:41:13.084645+00:00",
+      "source_lines": [
+        [
+          10803,
+          10813
+        ],
+        [
+          10814,
+          10817
+        ],
+        [
+          10932,
+          10950
+        ],
+        [
+          11008,
+          11010
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10803,
+            10813
+          ],
+          "requirement": "Literal deleted-pair full joint domain and exact zero set",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff"
+          ],
+          "reviewed_claims": [
+            "The literal deleted periodic-pair product and its spectral derivative are jointly analytic on all C times the unchanged source domain W.",
+            "Its zeros are precisely the actual endpoints indexed by m different from the deleted n."
+          ],
+          "qualification": "The proof combines the omitted-root square with the exact discriminant quotient, using the original common-domain isolation; it retains the deleted normalization and does not assume continuity of the endpoint labels."
+        },
+        {
+          "source_lines": [
+            10814,
+            10817
+          ],
+          "requirement": "Uniform original-disc bounds and collapsed-gap smallness",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_collapsed_disk_bounds"
+          ],
+          "reviewed_claims": [
+            "The closure of each original isolating disc avoids every other gap.",
+            "Compactness supplies one source neighborhood with a positive lower bound for the product and a positive upper bound for its spectral derivative on the whole closed disc.",
+            "At a collapsed complex source a further source restriction retains both bounds and gives norm(gap)*r <= s."
+          ],
+          "qualification": "The original spectral disc and common source domain are retained; only the local source neighborhood is restricted. Gap-norm continuity follows from analytic squared gaps, with no endpoint-label continuity assumption."
+        },
+        {
+          "source_lines": [
+            10932,
+            10950
+          ],
+          "requirement": "The literal endpoint-spoke square-root formula and positive base radicand",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_sqrt_nonnegative_scale",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_endpoint_spoke",
+            "NLS.ZakharovShabat.appendixF_endpoint_base_radicand"
+          ],
+          "reviewed_claims": [
+            "The principal square root respects multiplication by any nonnegative real factor, including zero.",
+            "The actual normalized root has the literal endpoint-spoke formula, including the initial endpoint.",
+            "For nonzero complex gap and positive real outward displacement, the base radicand is exactly sigma*(1+t*sigma)/(1/2+t*sigma)^2."
+          ],
+          "qualification": "The branch statement concerns the actual normalized root; it is not only an equality of squares. The previously proved scalar inequality supplies the explicit positive lower bound on [0,1]. Uniform nearby-source radicand control and analytic improper-integral substitution remain separate."
+        },
+        {
+          "source_lines": [
+            11008,
+            11010
+          ],
+          "requirement": "A common original boundary point for actual source midpoint spokes",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedCutDisk_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes"
+          ],
+          "reviewed_claims": [
+            "The selected cut closed disc lies inside the complement of every actual gap.",
+            "For an arbitrary countable family of actual potentials in the original local source neighborhood, one original boundary point and all punctured midpoint spokes avoid every gap."
+          ],
+          "qualification": "The construction includes complex and collapsed gaps. The common source neighborhood and isolating family are explicit. Integral substitutions and source-specific convergence hypotheses remain separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceDeletedPairJointAnalytic.lean": "cb6a43c51a5e1ed1e817f66a024b85bbf11b425c99fe3879eb66650266b6ef0e",
+        "NLS/ZakharovShabat/SourceLemma10_5.lean": "2c6ac54dc5af2b2c8951eddfc5050a43b04172719781338c3471574f554ee12c",
+        "NLS/ZakharovShabat/SourceDeletedPairOmittedSquare.lean": "acc95cd95d09d42564fbee85638c05249a471a6e1f29885e6ac0c621a3f1bae0",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean": "a9d5daec0f419f69e7657ae85cadb225cc95754df17104e21176dfefecdd3511",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean": "fae74521d284620df5e4dd15e84c4a7d11584724fdcd61dd505af97b239c5b17",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean": "2ed949fdf0bcc00f462615dd1c45f1bb58a8a7c90d02c0352f97ac7faa758449",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean": "5a39a07d56373a298298b48449e8a409529ba720a2c19820d3299d7ebc3ce902",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean": "cbc67bbfb1905fd92f1b97d9398ef093abf74b142325c3fa5aba876e422ee3fd",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean": "5edcf7a3955cfb33b9f297796c5113aa6e33fdc3e65a5b1067f99c8fadd9662d",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean": "14069040206390fd9a9b0a06dc29c94e82eeace44a059bb594febaf45887d7a3",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceDeletedPairJointAnalytic.lean",
+        "NLS/ZakharovShabat/SourceLemma10_5.lean",
+        "NLS/ZakharovShabat/SourceDeletedPairOmittedSquare.lean",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_sqrt_nonnegative_scale",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedCutDisk_subset_rootDomain",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_collapsed_disk_bounds",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand",
+        "NLS.ZakharovShabat.appendixF_normalized_root_on_endpoint_spoke"
+      ],
+      "declaration_inventory_count": 44888,
+      "qualification": "Three modules add eleven positive theorems and three examples for F.1-F.2. The literal deleted-pair product and its spectral derivative are jointly analytic on all C times the unchanged W, and the zeros are exactly the other indexed endpoints. Compactness supplies simultaneous positive lower product and upper derivative bounds on the whole original closed disc. At collapsed complex sources the same bounds persist with norm(gap)*r <= s. One original boundary point gives punctured midpoint spokes avoiding every actual gap for any countable source family. The endpoint-spoke identity retains the actual principal-root branch and exact positive base radicand. No new definition or refutation is added. Remaining branch assertions, source-family convergence and improper-path substitutions keep the ordered Appendix F comparison open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+      "validation_lean_sources": {
+        "files": 4885,
+        "sha256": "4e60fe35ce2b12289135761983f4e0100997922a4bbd6fe32d061a63f3bd91b1"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 11,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_1",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_2",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_3",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_4",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_5",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_6",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand._simp_1_7"
+      ],
+      "full_gate": {
+        "session": 72028,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFDomainGeometryFullCheck.log",
+        "log_sha256": "e92d48d736a421670d35fcb0a7840c1543768972cecce13c9b1cd16410466c06"
+      },
+      "source_record_sha256": "d8db1181507d0d12b0fa2bd49506312a6983ed297293be700356d47fa7270e50"
     }
   }
 }
