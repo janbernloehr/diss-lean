@@ -4848,3 +4848,5 @@ import NLS.SequenceSpaces.HilbertEnergyDivergence
 import NLS.ZakharovShabat.SourceSection22PhaseSeparation
 import NLS.ZakharovShabat.SourceSection22HilbertCoordinates
 import NLS.ZakharovShabat.SourceIndexedHigherActionEndpointAsymptotic
+import NLS.ComplexAnalysis.PiecewisePolynomialIntegrationByParts
+import NLS.ZakharovShabat.SourceHigherActionPiecewisePrimitive

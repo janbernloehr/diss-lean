@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T01:59:43.089506+00:00",
-  "base_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
+  "published_utc": "2026-10-31T02:23:55.924526+00:00",
+  "base_commit": "554903c617d488d69e4c9f0599dee0cf21bb7e4c",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 170,
-    "module_hash_checks": 3747,
-    "distinct_modules": 1974
+    "review_records": 171,
+    "module_hash_checks": 3755,
+    "distinct_modules": 1977
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
-    "validated_state": "Section 23 ordered comparison changes documentation only. The exact Lean snapshot retains the successful periodic-endpoint asymptotic full check.",
+    "base_commit": "554903c617d488d69e4c9f0599dee0cf21bb7e4c",
+    "validated_state": "Fresh full check after four positive Section24 piecewise primitive theorems and four API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8572,
-    "public_examples": 7672,
-    "transitive_NLS_declarations": 44674,
+    "build_jobs": 8574,
+    "public_examples": 7676,
+    "transitive_NLS_declarations": 44685,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 5319,
+    "gate_session": 92360,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4849,
-      "sha256": "e29c3a59bdd641140396b4e1a08d964f4cafd9f20a12ed0f5761b3bbc6913992"
+      "files": 4851,
+      "sha256": "8eda44a8d043ac4aa59abb93600d88bd554346ab6e16bf8b65ab727bdfb26ac4"
     },
-    "full_gate_log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac",
-    "qualification": "Unchanged Lean files and locks are hash-verified against the full successful build, public examples and transitive axiom audit. Source comparison retains all corrections and broader completeness qualifications.",
-    "full_gate_log": "work/Section23EndpointAsymptoticFullCheck.log",
-    "validation_reused_from_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe"
+    "full_gate_log_sha256": "54e8ae15aae15e698a8bd343332b695e0a84e064101c724c8a6b0586e82e1eac",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section24 comparison and broader completeness qualifications remain open.",
+    "full_gate_log": "work/Section24PiecewisePrimitiveFullCheck.log"
   },
   "named_statements": [
     {
@@ -54233,6 +54232,139 @@
         "log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac"
       },
       "source_record_sha256": "720c0e3ecbf07413371c86d1afd3c9bcd6d73be3c150dc3ac1b0094d6343453c"
+    },
+    "Section24PiecewisePrimitiveSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "554903c617d488d69e4c9f0599dee0cf21bb7e4c",
+      "updated_utc": "2026-10-31T02:23:55.924526+00:00",
+      "source_lines": [
+        [
+          8678,
+          8686
+        ],
+        [
+          8690,
+          8700
+        ],
+        [
+          8668,
+          8700
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8678,
+            8686
+          ],
+          "requirement": "Original higher actions on arbitrary isolating circuits",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceHigherActionContour",
+            "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_piecewise_primitive"
+          ],
+          "reviewed_claims": [
+            "The higher-action definition uses factor 1/((k+1)*pi), spectral power k+1 and the actual discriminant/root quotient. Winding-one piecewise C1 circuits in the original cut disk compute the original indexed higher action and now have the literal primitive formula."
+          ],
+          "qualification": "The integral is the sum of actual path integrals. Corners are allowed, and the winding-one hypothesis retains the printed orientation and single traversal around the selected gap."
+        },
+        {
+          "source_lines": [
+            8690,
+            8700
+          ],
+          "requirement": "Integration by parts with no extension through the spectral cut",
+          "declarations": [
+            "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_pow_mul_deriv_eq_neg",
+            "NLS.ZakharovShabat.sourceHigherActionContour_eq_primitive",
+            "NLS.ZakharovShabat.sourceFullAbelianPrimitive_hasDerivAt"
+          ],
+          "reviewed_claims": [
+            "Integration by parts holds on every finite piecewise C1 loop contained in the original root domain. The endpoint terms telescope at the vertices. The actual original primitive gives exactly -1/pi times the integral of z^k F(z)."
+          ],
+          "qualification": "The result includes all natural powers, any retained primitive index and every finite p>1. It assumes analyticity only near the circuit and does not remove the enclosed cut."
+        },
+        {
+          "source_lines": [
+            8668,
+            8700
+          ],
+          "requirement": "The retained original Section24 family and primitive",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_piecewise_primitive",
+            "NLS.ZakharovShabat.SourceSection23Data.section24"
+          ],
+          "reviewed_claims": [
+            "Every already-chosen original Section24 family has the piecewise primitive formula for all its source points, indices, levels, primitive indices and original winding-one isolating circuits. The original moments, roots, Birkhoff map and source domain are not reselected."
+          ],
+          "qualification": "The formula is on the existing original source domain, with no real-source assumption. The ordinary-action and closed-gap cases require no nonzero-action premise."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean": "dc52fac6c7cded7253a1fad813e5b0d4931448893fdbc72bb9a0158100814aa9",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean": "ab13b895e1d4fd305ddde4c662bdfd00b2d3d5bc116cc9da8ae80d6db50b5623",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean": "ac9c8b9921b306c57f34183399ec939af604cdd530792001aca8cb72a5efa9d0",
+        "NLS/ComplexAnalysis/PiecewiseContourPeriod.lean": "9c7090820c2ddd88213b7774a9aabafe385cecd403a45730c3de64ae16cf8427",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean": "f430fe6a6a78fbbbe02b98741e57cbe839821458a9aa91199bb7583d130916a9",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewiseContour.lean": "e7cd2e4711cb26f14f96e4267926b65fd3193939c41b8950bf4a700a2819abf6",
+        "NLS/ZakharovShabat/SourceFullAbelianPrimitive.lean": "bb4900fea5fc42861e334c9a10989a228b7e27acaf55e45d2622fa71e5d751a5",
+        "NLS/ZakharovShabat/SourceSection24Original.lean": "35f0a0ee06b5a60c0960254596d443ee69d7ce311bebbf8369f4806c0af19bdb"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean",
+        "NLS/ComplexAnalysis/PiecewiseC1Loop.lean",
+        "NLS/ComplexAnalysis/PiecewiseContourPeriod.lean",
+        "NLS/ComplexAnalysis/PiecewiseContourCongruence.lean",
+        "NLS/ZakharovShabat/SourceHigherActionPiecewiseContour.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianPrimitive.lean",
+        "NLS/ZakharovShabat/SourceSection24Original.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete all 20 ordered Section 24 groups, including the physical hierarchy and precise real/complex domains."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.PiecewiseC1Loop.integral_pow_mul_deriv_eq_neg",
+        "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.higherActionContour_eq",
+        "NLS.ZakharovShabat.SourceSection23Data.section24",
+        "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_piecewise_primitive",
+        "NLS.ZakharovShabat.sourceFullAbelianPrimitive_hasDerivAt",
+        "NLS.ZakharovShabat.sourceHigherActionContour",
+        "NLS.ZakharovShabat.sourceHigherActionContour_eq_primitive",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_piecewise_primitive"
+      ],
+      "declaration_inventory_count": 44685,
+      "qualification": "Formula (5.2) now holds on arbitrary finite piecewise C1 loops in the original canonical root domain. Polynomial integration by parts uses the actual path integrals, whose endpoint terms telescope at every vertex; no analyticity through the enclosed spectral cut is assumed. Every winding-one circuit in an original isolating cut disk gives the literal indexed higher-action primitive formula. The exact factor -1/pi, spectral power k and printed level k+1 are retained. Every natural power, finite source exponent p>1 and retained primitive index are allowed. A direct original Section24 wrapper preserves the chosen family, primitive and source domain. Four positive theorems and four public examples cover polygonal corners, the ordinary action at p=4 and a negative index, the zero source with closed gaps, and every printed odd level in the original family. No source correction or refutation is introduced. The complete ordered Section24 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          106
+        ],
+        "images": {
+          "work/tmp/pdfs/section23-outline-106.png": "8bf19671bd778c763a96d3a8e53e0e708f266f57ffde8ae1bddc1da3f2e6dda6"
+        }
+      },
+      "preceding_review_hash": "720c0e3ecbf07413371c86d1afd3c9bcd6d73be3c150dc3ac1b0094d6343453c",
+      "validation_lean_sources": {
+        "files": 4851,
+        "sha256": "8eda44a8d043ac4aa59abb93600d88bd554346ab6e16bf8b65ab727bdfb26ac4"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 4,
+      "new_public_examples": 4,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 92360,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section24PiecewisePrimitiveFullCheck.log",
+        "log_sha256": "54e8ae15aae15e698a8bd343332b695e0a84e064101c724c8a6b0586e82e1eac"
+      },
+      "source_record_sha256": "05699fae00242813032b9f1261152fe8c3b30afe55853a9520d889f2fbcb81b8"
     }
   }
 }

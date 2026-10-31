@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: ordered Section 23 Sobolev overview comparison
+## Current milestone: Section 24 piecewise primitive formula
+
+Formula (5.2) on p. 106 now holds on arbitrary piecewise C1 circuits in
+[SourceHigherActionPiecewisePrimitive.lean](NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean).
+The underlying
+[integration-by-parts lemma](NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean)
+uses actual path integrals and telescoping endpoint terms, including corners.
+
+The exact factor -1/pi, every natural spectral power and every finite
+source exponent p>1 are retained. Winding-one original isolating circuits
+compute the indexed higher action. The original Section 24 wrapper keeps
+the chosen family, primitive and source domain. No analyticity through
+the enclosed spectral cut is assumed.
+
+Four positive theorems and four public examples are integrated. The
+examples cover polygonal corners, level one at p=4 and a negative index,
+the zero source with closed gaps, and every original odd level.
+No new refutation is added.
+
+The full ./scripts/check.sh passed with 8,574 build jobs, 7,676 public examples and an axiom audit of 44,685 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Four API examples cover polygonal corners, p=4 at a negative index, the zero-source primitive and original odd levels. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 24 comparison remains in progress.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 23 Sobolev overview comparison
 
 The [ordered Section 23 comparison](coverage/SECTION_23_ASSERTIONS.md)
 now covers all 38 groups on pp. 103–106: 33 matched, three corrected and

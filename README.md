@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 23 comparison](coverage/SECTION_23_ASSERTIONS.md)
-records 33 matched groups, three corrections and two contextual groups.
-Original Sobolev and weighted norms, common constants, smoothing scope,
-physical Hamiltonians and both endpoint asymptotics are retained.
-The constant label and weight scope are corrected directly; no new
-refutation is added. Section 24 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [Section 24 piecewise primitive formula](NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean)
+retains arbitrary original isolating circuits, including corners, with
+the exact normalization and original family. Four positive theorems and
+four public examples pass the full checks. No new refutation is added.
+The ordered Section 24 comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

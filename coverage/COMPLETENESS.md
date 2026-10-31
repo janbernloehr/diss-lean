@@ -77,7 +77,13 @@ with no partial or pending groups in that local ledger. It retains the
 original map, literal norms, common constants, weighted neighborhoods,
 smoothing scope and physical higher-action outline. The constant label
 and weight scope are corrected directly; prior formula corrections remain.
-No new proof or refutation is added in this comparison. Section 24 is next.
+No new proof or refutation is added in this comparison.
+
+The [positive Section 24 primitive formula](../NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean)
+now retains arbitrary original piecewise C1 circuits, including corners,
+the exact factor -1/pi, all natural powers and every finite p>1. The
+chosen original family, primitive and source domain are unchanged.
+The complete ordered Section 24 comparison remains in progress.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

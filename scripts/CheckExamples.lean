@@ -73020,3 +73020,59 @@ example (φ : realTypeSourceSubmodule 4) :
     (sourceIndexedHigherAction_asymptotic_rightEndpoint (by norm_num) (by norm_num) φ 3)
 
 end Section23EndpointAsymptoticExamples
+
+section Section24PiecewisePrimitiveExamples
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Corners are allowed: integration by parts holds on every closed polygon.
+example (n : ℕ) (v : ℕ → ℂ) (hv : v n = v 0) :
+    (PiecewiseC1Loop.polygon n v hv).integral (fun z => z^3*Complex.exp z) =
+      -(3 : ℂ)*(PiecewiseC1Loop.polygon n v hv).integral (fun z => z^2*Complex.exp z) := by
+  have h := (PiecewiseC1Loop.polygon n v hv).integral_pow_mul_deriv_eq_neg
+    Complex.exp univ analyticOnNhd_cexp (fun _ _ => mem_univ _) 2
+  norm_num [Complex.deriv_exp] at h
+  exact h.trans (neg_mul _ _).symm
+
+-- Printed level one has the ordinary normalization, also at p=4 and a negative index.
+example {W : Set (CoeffPair 4)} (ψ : CoeffPair 4)
+    (D : SourceAbelianSpectralChart (by norm_num) (by norm_num) W ψ)
+    (C : SourceCriticalRootPeriodCircle (by norm_num) (by norm_num) ψ (-2))
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (Metric.ball (C.center : ℂ) C.radius \
+      sourcePeriodicSegment (by norm_num) (by norm_num) ψ (-2)))
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2)) = 1) :
+    sourceIndexedAction (by norm_num) (by norm_num) (-2) ψ = -(Real.pi : ℂ)⁻¹*
+      Γ.integral (fun z => sourceFullAbelianPrimitive (by norm_num) (by norm_num) W 7 (z,ψ)) := by
+  simpa only [sourceIndexedHigherAction_zero,pow_zero,one_mul] using
+    sourceIndexedHigherAction_eq_piecewise_primitive C D Γ hΓ hw 0 7
+
+-- Closed gaps require no nonzero-action assumption; the original zero-source primitive remains literal.
+example {W : Set (CoeffPair 2)}
+    (D : SourceAbelianSpectralChart (by simp) (by norm_num) W 0)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (sourceCanonicalRootDomain (by simp) (by norm_num) (0 : CoeffPair 2))) :
+    sourceHigherActionContour (by simp) (by norm_num) (0 : CoeffPair 2) Γ 3 = -(Real.pi : ℂ)⁻¹*
+      Γ.integral (fun z => z^3*(-Complex.I*z+Complex.I*(Real.pi : ℂ)*(-3))) := by
+  simpa only [sourceFullAbelianPrimitive_zero D,Int.cast_neg,Int.cast_ofNat] using
+    sourceHigherActionContour_eq_primitive (by simp) (by norm_num) W (-3) 0 D Γ hΓ 3
+
+-- The original family and primitive domain are preserved at every printed odd level.
+example {W₀ W V Wa B U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {D : SourceSection17OriginalData (by simp) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by simp) (by norm_num) Wa s}
+    (Q : SourceSection24Data D A B U) (ψ : CoeffPair 2) (hψ : ψ ∈ U)
+    (n : ℤ) (m : ℕ) (q : ℤ)
+    (C : SourceCriticalRootPeriodCircle (by simp) (by norm_num) ψ n)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (Metric.ball (C.center : ℂ) C.radius \
+      sourcePeriodicSegment (by simp) (by norm_num) ψ n))
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 1) :
+    sourceIndexedHigherAction (by simp) (by norm_num) n (2*m) ψ = -(Real.pi : ℂ)⁻¹*
+      Γ.integral (fun z => z^(2*m)*sourceFullAbelianPrimitive (by simp) (by norm_num) B q (z,ψ)) :=
+  Q.higherAction_eq_original_piecewise_primitive ψ hψ n (2*m) q C Γ hΓ hw
+
+end Section24PiecewisePrimitiveExamples
