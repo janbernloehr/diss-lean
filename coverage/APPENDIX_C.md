@@ -1,5 +1,26 @@
 # Appendix C source audit
 
+## Separate correction operators
+
+The [separate Appendix C corrections](../NLS/Fourier/ModifiedHilbertSeparateCorrections.lean)
+now give the two operators used in the proof of C.2. F uses the output
+displacement, G uses the input displacement, and A = H + F - G.
+This directly corrects the swapped labels in the displayed source decomposition.
+
+Each correction has its literal convergent row sum and norm bound
+c * norm(displacement) * norm(square kernel) * norm(input). The pointwise
+F majorant and finite-p power estimates retain c^p explicitly.
+
+Six definitions, fourteen positive theorems and three examples retain
+arbitrary bounded complex displacements under the stated separation.
+The correction operators include p = 1 and infinity; the full transform
+remains finite 1 < p < infinity. No new refutation is added.
+
+The full check passed: 8,584 build jobs, 7,697 public examples and an axiom audit of 44,742 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Appendix C comparison continues. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 The source is printed pages 125–126 of *Features of the Nonlinear Fourier
 Transform for the dNLS Equation*. Every result below uses finite 1<p<infinity.
 C.1's boundedness assertion is proved, and its isomorphism assertion is

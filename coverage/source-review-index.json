@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T05:06:55.389329+00:00",
-  "base_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
+  "published_utc": "2026-10-31T05:27:13.434185+00:00",
+  "base_commit": "2a7dfe99e1582d53c19b168aa8be49bc9db60291",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 185,
-    "module_hash_checks": 4027,
-    "distinct_modules": 2063
+    "review_records": 186,
+    "module_hash_checks": 4032,
+    "distinct_modules": 2065
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
-    "validated_state": "Appendix B ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix B positive proof-step check.",
+    "base_commit": "2a7dfe99e1582d53c19b168aa8be49bc9db60291",
+    "validated_state": "Fresh full check after the separate Appendix C correction operators and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8583,
-    "public_examples": 7694,
-    "transitive_NLS_declarations": 44709,
+    "build_jobs": 8584,
+    "public_examples": 7697,
+    "transitive_NLS_declarations": 44742,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 35818,
+    "gate_session": 80319,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4860,
-      "sha256": "885dfdfef74ba6c38f5e9325ee82560fae26926dc18e4b45d900d28afd6ecbd0"
+      "files": 4861,
+      "sha256": "30296f13d8409b89893d6313ea478802698424bad6f25f2b76470caf95b86e30"
     },
-    "full_gate_log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixBProofStepsFullCheck.log",
-    "validation_reused_from_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549"
+    "full_gate_log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix C and broader completion qualifications remain open.",
+    "full_gate_log": "work/AppendixCSeparateCorrectionsFullCheck.log"
   },
   "named_statements": [
     {
@@ -63082,6 +63081,128 @@
         "log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18"
       },
       "source_record_sha256": "dec855a2141373f07d977bb761734e17c5880625af28bad9104b912f06c0a529"
+    },
+    "AppendixCSeparateCorrectionsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "2a7dfe99e1582d53c19b168aa8be49bc9db60291",
+      "updated_utc": "2026-10-31T05:27:13.382557+00:00",
+      "source_lines": [
+        [
+          10290,
+          10314
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10290,
+            10314
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_modifiedHilbertSecondKernel_le",
+            "NLS.Fourier.norm_tsum_modifiedHilbertSecond_le",
+            "NLS.Fourier.norm_modifiedHilbertSecond_le",
+            "NLS.Fourier.modifiedHilbertF",
+            "NLS.Fourier.modifiedHilbertG",
+            "NLS.Fourier.norm_modifiedHilbertF_le",
+            "NLS.Fourier.norm_modifiedHilbertG_le",
+            "NLS.Fourier.norm_modifiedHilbertF_apply_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le_majorant",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertG_rpow_le",
+            "NLS.Fourier.modifiedHilbertF_hasSum",
+            "NLS.Fourier.modifiedHilbertG_hasSum",
+            "NLS.Fourier.modifiedHilbertCorrection_eq_F_sub_G",
+            "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G"
+          ],
+          "reviewed_claims": [
+            "F uses the output displacement, G uses the input displacement, and A=H+F-G. Each separate correction is a bounded complex linear operator with its literal convergent omitted-diagonal row sum.",
+            "The individual norm bounds retain c*norm(displacement)*norm(square kernel); the pointwise F majorant and finite-p powered F/G sums retain c^p explicitly. Corrections include both Banach endpoints; full A remains finite 1<p<infinity."
+          ],
+          "qualification": "Six definitions and fourteen positive theorems implement the two separate correction operators in the C.2 proof. F uses the output displacement and G uses the input displacement; each has the exact convergent omitted-diagonal series and norm bound c*norm(displacement)*norm(square kernel)*norm(input). The pointwise F majorant and finite-p F/G power estimates retain c^p explicitly. The decomposition is A=H+F-G, directly correcting the swapped source labels. Arbitrary bounded complex displacements satisfying the original separation are allowed. The corrections include both Banach endpoints; the full transform remains finite 1<p<infinity. Three examples cover p=infinity, p=1 and p=2. No new refutation is added. The ordered comparison and broader qualifications remain open."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/ModifiedHilbertKernel.lean": "5a8a407c3c95fd6a34a3d8e2e78ee807d109e3602f83fdd25763dbe39a657282",
+        "NLS/Fourier/ModifiedHilbert.lean": "fa2242a35aecad364050c392a15f873c6abc5d0db9c7cb699ff49895c7adb359",
+        "NLS/Fourier/PerturbedHilbertRows.lean": "e69d75926b6dcd391bda7f303bfddca2a40929df4fbc2b6e6555b6ff55dccfbb",
+        "NLS/SequenceSpaces/Multiplier.lean": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36",
+        "NLS/Fourier/ModifiedHilbertSeparateCorrections.lean": "5181823060c3bb94781d23477da0f9a74c490378fa4a53ba3142a450d256f65d"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Fourier/ModifiedHilbertKernel.lean",
+        "NLS/Fourier/ModifiedHilbert.lean",
+        "NLS/Fourier/PerturbedHilbertRows.lean",
+        "NLS/SequenceSpaces/Multiplier.lean",
+        "NLS/Fourier/ModifiedHilbertSeparateCorrections.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the nine ordered Appendix C groups."
+      ],
+      "resolved_declarations": [
+        "NLS.Fourier.norm_modifiedHilbertSecondKernel_le",
+        "NLS.Fourier.norm_tsum_modifiedHilbertSecond_le",
+        "NLS.Fourier.norm_modifiedHilbertSecond_le",
+        "NLS.Fourier.modifiedHilbertF",
+        "NLS.Fourier.modifiedHilbertG",
+        "NLS.Fourier.norm_modifiedHilbertF_le",
+        "NLS.Fourier.norm_modifiedHilbertG_le",
+        "NLS.Fourier.norm_modifiedHilbertF_apply_le",
+        "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le_majorant",
+        "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le",
+        "NLS.Fourier.tsum_norm_modifiedHilbertG_rpow_le",
+        "NLS.Fourier.modifiedHilbertF_hasSum",
+        "NLS.Fourier.modifiedHilbertG_hasSum",
+        "NLS.Fourier.modifiedHilbertCorrection_eq_F_sub_G",
+        "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G"
+      ],
+      "declaration_inventory_count": 44742,
+      "qualification": "Six definitions and fourteen positive theorems implement the two separate correction operators in the C.2 proof. F uses the output displacement and G uses the input displacement; each has the exact convergent omitted-diagonal series and norm bound c*norm(displacement)*norm(square kernel)*norm(input). The pointwise F majorant and finite-p F/G power estimates retain c^p explicitly. The decomposition is A=H+F-G, directly correcting the swapped source labels. Arbitrary bounded complex displacements satisfying the original separation are allowed. The corrections include both Banach endpoints; the full transform remains finite 1<p<infinity. Three examples cover p=infinity, p=1 and p=2. No new refutation is added. The ordered comparison and broader qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          126
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc"
+        }
+      },
+      "preceding_review_hash": "1c082e691eeeb7ab0629d9f3d7b1e8b3473aa586beb6d2da06b11cd5e835e4ad",
+      "validation_lean_sources": {
+        "files": 4861,
+        "sha256": "30296f13d8409b89893d6313ea478802698424bad6f25f2b76470caf95b86e30"
+      },
+      "new_definitions": 6,
+      "positive_theorems_integrated": 14,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.Fourier.modifiedHilbert.eq_1",
+        "NLS.Fourier.modifiedHilbertF._proof_1",
+        "NLS.Fourier.modifiedHilbertF._proof_2",
+        "NLS.Fourier.modifiedHilbertF.congr_simp",
+        "NLS.Fourier.modifiedHilbertG.congr_simp",
+        "NLS.Fourier.modifiedHilbertSecond._proof_1",
+        "NLS.Fourier.modifiedHilbertSecond.congr_simp",
+        "NLS.Fourier.modifiedHilbertSecond.eq_1",
+        "NLS.Fourier.modifiedHilbertSecondKernel.eq_1",
+        "NLS.Fourier.modifiedHilbertSecondLinear._proof_1",
+        "NLS.Fourier.modifiedHilbertSecondLinear._proof_2",
+        "NLS.Fourier.modifiedHilbertSecondLinear._proof_3",
+        "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G._abel_1_2"
+      ],
+      "full_gate": {
+        "session": 80319,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixCSeparateCorrectionsFullCheck.log",
+        "log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a"
+      },
+      "source_record_sha256": "8dd51bd781994f0d8239bf5a14b950709a15a672803c5ded3b4b01ee5ee59574"
     }
   }
 }

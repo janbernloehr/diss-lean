@@ -73312,3 +73312,35 @@ example (a : Coeff (ENNReal.ofReal 2)) (b c : Coeff (ENNReal.ofReal (8/5))) :
   simpa only [show (4:ℝ)/2 = 2 by norm_num] using mixedYoung_outer_sum_le h a b c
 
 end AppendixBProofStepsExamples
+
+-- The output-displacement correction is bounded even on the infinity endpoint.
+example (s r : NLS.Coeff ⊤) {c : ℝ} (hc : 0 < c)
+    (hsep : NLS.Fourier.HilbertLatticeSeparated s r c) (a : NLS.Coeff ⊤) (n : ℤ) :
+    HasSum (fun k : ℤ => if k = n then 0 else
+      (a k / ((k : ℂ) - n)) *
+        (s n / (NLS.Fourier.hilbertLattice r k - NLS.Fourier.hilbertLattice s n)))
+      (NLS.Fourier.modifiedHilbertF s r hc hsep a n) ∧
+    ‖NLS.Fourier.modifiedHilbertF s r hc hsep a‖ ≤
+      (c * ‖s‖ * ‖NLS.Fourier.hilbertSquareCoeffs‖) * ‖a‖ :=
+  ⟨NLS.Fourier.modifiedHilbertF_hasSum s r hc hsep a n,
+    NLS.Fourier.norm_modifiedHilbertF_le s r hc hsep a⟩
+
+-- The input-displacement correction has a genuine row sum also at p = 1.
+example (s r : NLS.Coeff ⊤) {c : ℝ} (hc : 0 < c)
+    (hsep : NLS.Fourier.HilbertLatticeSeparated s r c) (a : NLS.Coeff 1) (n : ℤ) :
+    HasSum (fun k : ℤ => if k = n then 0 else
+      (a k / ((k : ℂ) - n)) *
+        (r k / (NLS.Fourier.hilbertLattice r k - NLS.Fourier.hilbertLattice s n)))
+      (NLS.Fourier.modifiedHilbertG s r hc hsep a n) ∧
+    ‖NLS.Fourier.modifiedHilbertG s r hc hsep a‖ ≤
+      (c * ‖r‖ * ‖NLS.Fourier.hilbertSquareCoeffs‖) * ‖a‖ :=
+  ⟨NLS.Fourier.modifiedHilbertG_hasSum s r hc hsep a n,
+    NLS.Fourier.norm_modifiedHilbertG_le s r hc hsep a⟩
+
+-- The p = 2 estimate retains the square of the separation constant.
+example (s r : NLS.Coeff ⊤) {c : ℝ} (hc : 0 < c)
+    (hsep : NLS.Fourier.HilbertLatticeSeparated s r c) (a : NLS.Coeff 2) :
+    (∑' n : ℤ, ‖NLS.Fourier.modifiedHilbertF s r hc hsep a n‖ ^ (2 : ℕ)) ≤
+      c ^ 2 * ‖s‖ ^ 2 * ‖NLS.Fourier.hilbertSquareCoeffs‖ ^ 2 * ‖a‖ ^ 2 := by
+  simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using
+    NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le s r hc hsep (by simp) a

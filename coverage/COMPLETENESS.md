@@ -164,7 +164,16 @@ It retains both B.1 bounds, full B.2 Banach endpoints and the finite
 positive B.3 formula. All three nested sums converge, and the proof
 outer sum is correctly the gamma-th power of the stated left side.
 The zero auxiliary exponents and an unstated infinity/supremum
-convention remain excluded. Appendix C is next.
+convention remain excluded.
+
+The [separate Appendix C corrections](../NLS/Fourier/ModifiedHilbertSeparateCorrections.lean)
+now implement F and G with their actual convergent rows. The direct
+label correction gives A = H + F - G. Individual bounds and powered
+sums retain the separation constant c and its power c^p explicitly.
+The correction operators include both Banach endpoints; the full
+transform remains finite 1 < p < infinity. Six definitions, fourteen
+positive theorems and three examples add no new refutation.
+The ordered Appendix C comparison remains in progress.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

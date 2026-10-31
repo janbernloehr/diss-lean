@@ -1,6 +1,29 @@
 # Implementation status
 
-## Current milestone: ordered Appendix B comparison
+## Current milestone: separate Appendix C corrections
+
+The [separate Appendix C corrections](NLS/Fourier/ModifiedHilbertSeparateCorrections.lean)
+now give the two operators used in the proof of C.2. F uses the output
+displacement, G uses the input displacement, and A = H + F - G.
+This directly corrects the swapped labels in the displayed source decomposition.
+
+Each correction has its literal convergent row sum and norm bound
+c * norm(displacement) * norm(square kernel) * norm(input). The pointwise
+F majorant and finite-p power estimates retain c^p explicitly.
+
+Six definitions, fourteen positive theorems and three examples retain
+arbitrary bounded complex displacements under the stated separation.
+The correction operators include p = 1 and infinity; the full transform
+remains finite 1 < p < infinity. No new refutation is added.
+
+The full check passed: 8,584 build jobs, 7,697 public examples and an axiom audit of 44,742 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Appendix C comparison continues. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix B comparison
 
 The [ordered Appendix B comparison](coverage/APPENDIX_B_ASSERTIONS.md)
 covers 12 groups on pp.124–125: eight matched, two corrected and two

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix B comparison](coverage/APPENDIX_B_ASSERTIONS.md)
-records eight matched groups, two direct corrections and two contextual
-passages. Exact constants, convergence and the finite positive B.3
-scope are retained. Appendix C is next;
-[broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [separate Appendix C corrections](NLS/Fourier/ModifiedHilbertSeparateCorrections.lean)
+have exact convergent rows, the corrected F/G labels and explicit
+separation constants. Fourteen positive theorems and three examples
+include both Banach endpoints for the correction operators.
+The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
