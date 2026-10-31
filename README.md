@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 23 endpoint comparisons](NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean)
-retain both original periodic endpoints in the higher-action asymptotic,
-including closed gaps and both integer tails. Three positive theorems and
-four API examples pass the full checks. No new refutation is added.
-The ordered Section 23 comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
+Latest step: the [ordered Section 23 comparison](coverage/SECTION_23_ASSERTIONS.md)
+records 33 matched groups, three corrections and two contextual groups.
+Original Sobolev and weighted norms, common constants, smoothing scope,
+physical Hamiltonians and both endpoint asymptotics are retained.
+The constant label and weight scope are corrected directly; no new
+refutation is added. Section 24 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

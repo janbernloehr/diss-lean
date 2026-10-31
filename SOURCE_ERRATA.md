@@ -3350,3 +3350,18 @@ trajectories are retained in
 [SourceSection22Higher.lean](NLS/ZakharovShabat/SourceSection22Higher.lean).
 These are direct domain-notation corrections, with no new refutation.
 See the [ordered comparison](coverage/SECTION_22_ASSERTIONS.md).
+
+## Section 23 constant label and weight scope (pages 104–105)
+
+The prose after Theorem 23.1 uses `b_m` for its second constant.
+Use `d_m`, as in the theorem and Remark 23.3. The same positive pair
+is chosen before the potential and controls all four estimates in
+[SourceSection23Sobolev.lean](NLS/ZakharovShabat/SourceSection23Sobolev.lean).
+
+The prose after Theorem 23.4 says the estimates hold for all
+submultiplicative weights. Retain the theorem's `M1` assumption,
+including its exponentially growing examples. The already corrected
+growth bound is `w(n) <= w(0)*w(1)^|n|`.
+
+These are direct label and scope corrections. No new refutation is added.
+See the [ordered comparison](coverage/SECTION_23_ASSERTIONS.md).

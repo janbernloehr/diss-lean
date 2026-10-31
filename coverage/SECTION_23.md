@@ -1,5 +1,33 @@
 # Section 23: estimates for the original Birkhoff map
 
+## Ordered source comparison
+
+The [ordered Section 23 comparison](SECTION_23_ASSERTIONS.md)
+now covers all 38 groups on pp. 103–106: 33 matched, three corrected and
+two contextual. No partial or pending groups remain in this local ledger.
+
+The comparison retains the original map, literal norms, factor-two action
+identity and common constants chosen before the potential. It covers the
+native real analytic Sobolev inverse, positive-integer one-smoothing,
+full real weighted neighborhoods and the exact real-order exponents.
+The higher-action endpoint comparisons include closed gaps and both tails.
+The physical Hamiltonian polynomials and localization estimates keep their
+original objects and precise domains.
+
+The label b_m is corrected directly to d_m. The general weight-growth
+bound retains w(0)*w(1)^|n| and the theorem keeps its M1 restriction.
+The trace retains all integer indices and the positive factor 1/4^m.
+The printed rectangular oscillator signs and narrower-strip forward
+implication are valid. Fifty-five complete module bodies and 117 public
+declarations support the comparison. No new Lean proof or refutation is added.
+
+The unchanged Lean snapshot reuses the successful full check at commit 187a774df4feadf6559c1a25f240e5ccfd1a4cfe: 8,572 build jobs, 7,672 public examples and a transitive axiom audit of 44,674 NLS declarations, with 21 inherited warnings and zero new. All 117 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 24. The [broader completion qualifications](COMPLETENESS.md)
+remain; these local ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Literal periodic-endpoint comparisons
 
 The higher-action display on p. 105 now has direct positive comparisons

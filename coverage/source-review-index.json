@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T01:59:06.328291+00:00",
-  "base_commit": "5a6d95bfd34760fc3a6ae331fbd7db99aeabc32a",
+  "published_utc": "2026-10-31T01:59:43.089506+00:00",
+  "base_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 169,
-    "module_hash_checks": 3692,
-    "distinct_modules": 1964
+    "review_records": 170,
+    "module_hash_checks": 3747,
+    "distinct_modules": 1974
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "5a6d95bfd34760fc3a6ae331fbd7db99aeabc32a",
-    "validated_state": "Fresh full check after three positive Section23 endpoint-asymptotic theorems and four API examples.",
+    "base_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
+    "validated_state": "Section 23 ordered comparison changes documentation only. The exact Lean snapshot retains the successful periodic-endpoint asymptotic full check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8572,
     "public_examples": 7672,
@@ -44,8 +44,9 @@
       "sha256": "e29c3a59bdd641140396b4e1a08d964f4cafd9f20a12ed0f5761b3bbc6913992"
     },
     "full_gate_log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section23 comparison and broader completeness qualifications remain open.",
-    "full_gate_log": "work/Section23EndpointAsymptoticFullCheck.log"
+    "qualification": "Unchanged Lean files and locks are hash-verified against the full successful build, public examples and transitive axiom audit. Source comparison retains all corrections and broader completeness qualifications.",
+    "full_gate_log": "work/Section23EndpointAsymptoticFullCheck.log",
+    "validation_reused_from_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe"
   },
   "named_statements": [
     {
@@ -52513,6 +52514,1725 @@
         "log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac"
       },
       "source_record_sha256": "8346deaf21cb242d06ef9141a0c102c983bb47ec6420da337c10bab98c5184a3"
+    },
+    "Section23OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
+      "updated_utc": "2026-10-31T01:59:43.089506+00:00",
+      "source_lines": [
+        [
+          8402,
+          8665
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S23-001",
+          "source_lines": [
+            8404,
+            8406
+          ],
+          "requirement": "Transition from low to high regularity",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection23_original_estimates"
+          ],
+          "reviewed_claims": [
+            "The overview changes emphasis from low to high regularity. The original Section 20 family extends to the Section 23 estimates without choosing new moments, roots or Birkhoff maps."
+          ],
+          "qualification": "This is an introductory transition. It adds no separate quantitative assertion."
+        },
+        {
+          "ordered_group": "S23-002",
+          "source_lines": [
+            8406,
+            8409
+          ],
+          "requirement": "Original canonical bi-analytic Sobolev diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_symm_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedBirkhoff_canonical"
+          ],
+          "reviewed_claims": [
+            "The retained original map induces an onto native real Sobolev homeomorphism with globally real analytic forward and inverse maps at every nonnegative real order. Its full weighted derivatives satisfy the canonical identities."
+          ],
+          "qualification": "The Hilbert instance gives the printed Sobolev scale, including order zero. The physical bracket convention is {x_n,y_k}=-delta_nk. The precise qualification about the 2014 construction remains in the completeness record."
+        },
+        {
+          "ordered_group": "S23-003",
+          "source_lines": [
+            8409,
+            8411
+          ],
+          "requirement": "Analytic transformed Hamiltonian depending only on actions",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_domain",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_values",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_physical_identity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity"
+          ],
+          "reviewed_claims": [
+            "The transformed Hamiltonian is a real analytic function of the actual actions. Its native weighted action domain is open and contains the entire nonnegative cone. It agrees with the physical H1 Hamiltonian for every real H1 source. The standard weighted action presentation has the same values."
+          ],
+          "qualification": "The full Hamiltonian includes its kinetic and mass terms. It is not merely the renormalized correction. The native Sobolev inverse in S23-002 retains the original coordinate interpretation."
+        },
+        {
+          "ordered_group": "S23-004",
+          "source_lines": [
+            8411,
+            8414
+          ],
+          "requirement": "Real coordinate Hamilton equations and frequency derivative",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_ordinary"
+          ],
+          "reviewed_claims": [
+            "Along each original ordinary flow, the real coordinates satisfy x_dot=-omega*y and y_dot=omega*x. The actual ordinary frequency is the literal coordinate derivative of the full action Hamiltonian and is conserved along the flow."
+          ],
+          "qualification": "The printed rectangular signs are correct. They agree with z=(x-i*y)/sqrt(2) and the negative first complex phase; no sign correction is made to this display."
+        },
+        {
+          "ordered_group": "S23-005",
+          "source_lines": [
+            8416,
+            8417
+          ],
+          "requirement": "Derivative at zero is the Fourier transform",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_hasFDerivAt_zero",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+            "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates"
+          ],
+          "reviewed_claims": [
+            "The full derivative of the original physical Birkhoff map at zero is the physical Fourier transform. Both rectangular coordinate derivatives are given by the corresponding physical Fourier integrals."
+          ],
+          "qualification": "This is a derivative of the original map on its full physical space, not only a finite-coordinate restriction."
+        },
+        {
+          "ordered_group": "S23-006",
+          "source_lines": [
+            8417,
+            8422
+          ],
+          "requirement": "Exact Parseval identity and higher-order norm motivation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_parseval",
+            "NLS.ZakharovShabat.sourceSection23_original_estimates"
+          ],
+          "reviewed_claims": [
+            "Parseval holds exactly on the real Hilbert source with the literal component-sum source and target norms. The following higher-order estimates use the same original map."
+          ],
+          "qualification": "The discussion of higher-order analogues is motivation; the exact quantitative statements are S23-009 through S23-016."
+        },
+        {
+          "ordered_group": "S23-007",
+          "source_lines": [
+            8423,
+            8432
+          ],
+          "requirement": "Physical Fourier indexing and literal Sobolev source norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_fst",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_snd",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm"
+          ],
+          "reviewed_claims": [
+            "The physical source norm is the sum of both Fourier-component energies with weight (1+|2*n*pi|)^(2*s). For integer order m, sourcePiSobolevCoordinates gives the exact norm at every lower integer order k<=m. The weighted physical norm identity also retains real orders through piSobolev."
+          ],
+          "qualification": "The source uses the negative Fourier wave for its first component. Reflection of its raw coefficient label preserves the norm because the weight is even; no missing component or period factor is suppressed."
+        },
+        {
+          "ordered_group": "S23-008",
+          "source_lines": [
+            8434,
+            8443
+          ],
+          "requirement": "Literal component-sum target norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_fst",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_snd",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_zero_norm"
+          ],
+          "reviewed_claims": [
+            "The target norm is the square root of the sum of the weighted squared x and y coordinates, with the literal 2*n*pi frequency. The order-zero target norm is the source Hilbert norm."
+          ],
+          "qualification": "The norm is the component-sum Hilbert norm, not the maximum of the two scalar norms."
+        },
+        {
+          "ordered_group": "S23-009",
+          "source_lines": [
+            8454,
+            8460
+          ],
+          "requirement": "Theorem 23.1 upper Birkhoff norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper"
+          ],
+          "reviewed_claims": [
+            "For each integer m>=1 there is a positive c_m, chosen before the source, bounding the target Hm norm by c_m times the source Hm norm plus (1+the source H1 norm)^(2*m) times its H0 norm."
+          ],
+          "qualification": "The original map, exact source norm and printed exponent 2*m are retained."
+        },
+        {
+          "ordered_group": "S23-010",
+          "source_lines": [
+            8464,
+            8470
+          ],
+          "requirement": "Theorem 23.1 inverse norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower"
+          ],
+          "reviewed_claims": [
+            "For each integer m>=1 there is a positive d_m bounding the source Hm norm by d_m times the target hm norm plus (1+the target h1 norm)^(4*m-3) times its h0 norm."
+          ],
+          "qualification": "The endpoint m=1 is included. All three coordinate norms belong to the same original map."
+        },
+        {
+          "ordered_group": "S23-011",
+          "source_lines": [
+            8473,
+            8474
+          ],
+          "requirement": "Constants independent of the source; b_m label",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.c_pos",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.d_pos"
+          ],
+          "reviewed_claims": [
+            "The two positive constants are selected after m and before every potential. The prose label b_m is normalized directly to d_m, matching Theorem 23.1."
+          ],
+          "qualification": "Only this constant label is corrected. No proof that the printed label is wrong is added."
+        },
+        {
+          "ordered_group": "S23-012",
+          "source_lines": [
+            8475,
+            8482
+          ],
+          "requirement": "Highest-order linearity and uniform one-smoothing assertion",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower",
+            "NLS.ZakharovShabat.SourceSection23Data.oneSmoothing",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_literal_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_literal_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_uniform_ball",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_uniform_ball"
+          ],
+          "reviewed_claims": [
+            "At m>=2 the leading Hm/hm terms appear linearly while the other terms use lower norms. Separately, the actual original forward and inverse Fourier remainders gain one derivative, are real analytic on the native real spaces, and are bounded on every norm ball."
+          ],
+          "qualification": "One-smoothing is supported by its own positive theorems, not inferred from the norm estimates alone. Its scope here is positive integer order, with no order-zero or fractional smoothing endpoint asserted."
+        },
+        {
+          "ordered_group": "S23-013",
+          "source_lines": [
+            8483,
+            8487
+          ],
+          "requirement": "Action definition and weighted action norm relation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.indexed_action_eq_complex",
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_norm_sq",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The original indexed actions agree with the retained complex action functions on the original domain. On the real form, each action is (x_n^2+y_n^2)/2. The exact squared coordinate norm is twice the weighted action sum."
+          ],
+          "qualification": "The factor two is retained throughout the conversion of action estimates to coordinate estimates. The final lower-order action factor is the unweighted action sum."
+        },
+        {
+          "ordered_group": "S23-014",
+          "source_lines": [
+            8489,
+            8496
+          ],
+          "requirement": "Theorem 23.2 upper action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_summable",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_upper",
+            "NLS.ZakharovShabat.exists_sourceWeightedAction_sobolev_upper_bound"
+          ],
+          "reviewed_claims": [
+            "For each m>=1 the actual weighted indexed actions are summable, and their sum is bounded by c_m^2 times the source Hm norm squared plus (1+the H1 norm)^(4*m) times the H0 norm squared."
+          ],
+          "qualification": "The positive proof controls the actual physical Hamiltonian and its lower-order terms. Constants are independent of the source."
+        },
+        {
+          "ordered_group": "S23-015",
+          "source_lines": [
+            8501,
+            8503
+          ],
+          "requirement": "Theorem 23.2 lower action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_lower",
+            "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound"
+          ],
+          "reviewed_claims": [
+            "The source Hm norm squared is bounded by d_m^2 times the weighted order-2m action sum plus (1+the order-2 action sum)^(4*m-3) times the unweighted action sum."
+          ],
+          "qualification": "Both m=1 and every higher integer order are included. The last factor is not replaced by a stronger weighted action norm."
+        },
+        {
+          "ordered_group": "S23-016",
+          "source_lines": [
+            8506,
+            8506
+          ],
+          "requirement": "Remark 23.3 common constants",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolev_joint_bounds",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds"
+          ],
+          "reviewed_claims": [
+            "One common positive pair c_m,d_m simultaneously satisfies all four Birkhoff and action estimates. The pair is selected before the potential."
+          ],
+          "qualification": "The constants may depend on m. No single constant uniform in all Sobolev orders is asserted."
+        },
+        {
+          "ordered_group": "S23-017",
+          "source_lines": [
+            8509,
+            8517
+          ],
+          "requirement": "Weight class M and its four exact axioms",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.apply_neg",
+            "NLS.SpectralWeight.mono_abs",
+            "NLS.SpectralWeight.constant"
+          ],
+          "reviewed_claims": [
+            "The weight class has exactly the four displayed properties: values at least one, evenness, submultiplicativity and monotonicity in the nonnegative index."
+          ],
+          "qualification": "The printed word normalized does not impose w(0)=1. Constant weights above one are allowed."
+        },
+        {
+          "ordered_group": "S23-018",
+          "source_lines": [
+            8517,
+            8524
+          ],
+          "requirement": "Weighted source space and norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm",
+            "NLS.ZakharovShabat.mem_range_originalWeightedSourceCLM_iff",
+            "NLS.ZakharovShabat.range_originalWeightedSourceCLM_eq_normalized"
+          ],
+          "reviewed_claims": [
+            "The normalized weighted source describes exactly the original weighted Fourier range. Its norm is the literal component-sum weighted physical energy. The real locus is preserved."
+          ],
+          "qualification": "Period-one sources occupy the even Fourier labels, so the actual scalar summands use w(2*n). This is the source convention behind the printed sum over physical labels m."
+        },
+        {
+          "ordered_group": "S23-019",
+          "source_lines": [
+            8527,
+            8536
+          ],
+          "requirement": "Weighted real target and even-frequency weight",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The weighted real target consists of the original coordinates with finite sum of w(2*n)^2 times x_n^2+y_n^2. On the M1 source range this sum is twice the actual weighted action sum."
+          ],
+          "qualification": "The even-frequency weight is literal. The target norm uses both real components."
+        },
+        {
+          "ordered_group": "S23-020",
+          "source_lines": [
+            8539,
+            8539
+          ],
+          "requirement": "Real-order Sobolev weight",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.piSobolev_apply",
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm"
+          ],
+          "reviewed_claims": [
+            "For every real s>=0 the weight is exactly (1+|n*pi|)^s and its weighted physical source is the usual period-one Sobolev space with the displayed norm."
+          ],
+          "qualification": "Noninteger orders are retained; the pi factor is not absorbed into an unspecified equivalent norm."
+        },
+        {
+          "ordered_group": "S23-021",
+          "source_lines": [
+            8541,
+            8552
+          ],
+          "requirement": "Abel weight and holomorphic strip with norm traces",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.ZakharovShabat.source_abel_printed_strip_forward",
+            "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions",
+            "NLS.Fourier.hasSobolevNormStripTraces_iff_physical"
+          ],
+          "reviewed_claims": [
+            "The Abel weight is (1+|n*pi|)^s*exp(a*|n|), with s>=0 and a>0. Every source in that weighted space has the stated holomorphic extension to the printed narrower strip and Sobolev-norm boundary traces."
+          ],
+          "qualification": "The printed forward implication is valid. Under the even physical labels, the exact characterization has half-width a/pi; a/(2*pi) is only a narrower forward strip. Norm-continuous physical traces, not merely pointwise or almost-everywhere boundary values, are retained. The earlier converse correction remains unchanged."
+        },
+        {
+          "ordered_group": "S23-022",
+          "source_lines": [
+            8554,
+            8558
+          ],
+          "requirement": "Gevrey weights",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.gevrey",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey"
+          ],
+          "reviewed_claims": [
+            "The Gevrey weight is (1+|n|)^s*exp(a*|n|^sigma) and belongs to M for the printed s>=0, a>0 and 0<sigma<1. For s>=1 its linear factor gives membership in M1."
+          ],
+          "qualification": "This family uses the unscaled polynomial bracket, as printed. Its membership in M does not require s>=1."
+        },
+        {
+          "ordered_group": "S23-023",
+          "source_lines": [
+            8560,
+            8565
+          ],
+          "requirement": "Logarithmic weights and strict growth hierarchy",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.logarithmic",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.gevrey_div_logarithmic_tendsto_zero",
+            "NLS.SpectralWeight.logarithmic_div_abel_tendsto_zero",
+            "NLS.SpectralWeight.exists_coefficient_inclusion_of_ratio_tendsto_zero"
+          ],
+          "reviewed_claims": [
+            "The logarithmic weight has the exact denominator 1+(log(1+|n|))^sigma. It lies strictly between the Gevrey and Abel growth scales: the relevant weight ratios tend to zero, allowing independent polynomial orders and positive exponential parameters. These comparisons induce bounded injective coefficient inclusions preserving the coefficients."
+          ],
+          "qualification": "The direction of weighted-space inclusion reverses the weight-growth ordering. The claims retain the printed open interval for sigma."
+        },
+        {
+          "ordered_group": "S23-024",
+          "source_lines": [
+            8566,
+            8569
+          ],
+          "requirement": "Exact linear-factor subclass M1",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.withLinearFactor_apply",
+            "NLS.SpectralWeight.hasLinearFactor_piSobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.hasLinearFactor_logarithmic"
+          ],
+          "reviewed_claims": [
+            "M1 means exactly w(n)=(1+|n|)*v(n) for some v in M. The Sobolev, Abel, Gevrey and logarithmic families have this property for their stated order-at-least-one instances."
+          ],
+          "qualification": "A general lower linear bound alone is not substituted for the required factorization."
+        },
+        {
+          "ordered_group": "S23-025",
+          "source_lines": [
+            8571,
+            8572
+          ],
+          "requirement": "Piecewise linear positive extension to the real line",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.realExtension_affine",
+            "NLS.SpectralWeight.realExtension_intCast",
+            "NLS.SpectralWeight.realExtension_neg",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "reviewed_claims": [
+            "The extension agrees with every integer value, is even and strictly positive, and is affine on each unit interval."
+          ],
+          "qualification": "This is the literal piecewise linear interpolation w[t], not a floor-step extension."
+        },
+        {
+          "ordered_group": "S23-026",
+          "source_lines": [
+            8574,
+            8581
+          ],
+          "requirement": "Theorem 23.4 complex neighborhood and weighted action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+            "NLS.ZakharovShabat.exists_sourceM1Action_neighborhood",
+            "NLS.ZakharovShabat.exists_zero_sourceM1Action_bound"
+          ],
+          "reviewed_claims": [
+            "For each M1 weight there is one open complex weighted neighborhood containing the whole real weighted locus. Its decoded sources stay inside the original source domain. The actual absolute weighted action sum is summable and is bounded by 2048^2*w[16*norm^2]^2*norm^2."
+          ],
+          "qualification": "The constant is chosen before the source, and the zero potential is included without dividing by its norm. A single neighborhood contains all real sources; it is not just a neighborhood of one selected potential."
+        },
+        {
+          "ordered_group": "S23-027",
+          "source_lines": [
+            8583,
+            8587
+          ],
+          "requirement": "Theorem 23.4 target membership and map estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The restriction of the same original Birkhoff map has values in the weighted real target and norm at most 2048*w[16*norm^2]*norm. The same constant 2048 supplies the action-square bound."
+          ],
+          "qualification": "The action estimate on the complex neighborhood and the coordinate estimate on the entire real weighted locus have the distinct scopes printed in the theorem."
+        },
+        {
+          "ordered_group": "S23-028",
+          "source_lines": [
+            8590,
+            8595
+          ],
+          "requirement": "Exponential growth bound and stated weight scope",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.SpectralWeight.le_geometric",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The general positive growth bound is w(n)<=w(0)*w(1)^|n|, so the growth is at most exponential. The claimed estimates retain the theorem assumption w in M1, including its exponentially growing examples."
+          ],
+          "qualification": "Correct the displayed geometric bound directly and retain the M1 restriction in the following prose. No normalization w(0)=1 or extension of Theorem 23.4 to every M weight is introduced. No new refutation is added."
+        },
+        {
+          "ordered_group": "S23-029",
+          "source_lines": [
+            8597,
+            8601
+          ],
+          "requirement": "Corollary 23.5 complex real-order action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+            "NLS.ZakharovShabat.realSobolevEstimateConstant_pos"
+          ],
+          "reviewed_claims": [
+            "For each real r>=1 an open complex neighborhood contains the full real Hr locus, lies in the retained original domain after decoding, and satisfies the actual absolute action estimate with exponent 4*r. The positive constant is 2048*(1+17*pi)^r."
+          ],
+          "qualification": "The real order is unrestricted above one; it is not rounded to an integer. The action weight is exactly (1+|2*n*pi|)^(2*r)."
+        },
+        {
+          "ordered_group": "S23-030",
+          "source_lines": [
+            8605,
+            8607
+          ],
+          "requirement": "Corollary 23.5 real target membership and norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevCoordinates_norm_le"
+          ],
+          "reviewed_claims": [
+            "The same original map sends the real Hr source to the real hr target with norm bounded by c_r*(1+source_norm)^(2*r)*source_norm, using the same positive c_r as in the action estimate."
+          ],
+          "qualification": "Membership in the actual target and the printed exponent 2*r are both retained."
+        },
+        {
+          "ordered_group": "S23-031",
+          "source_lines": [
+            8610,
+            8612
+          ],
+          "requirement": "Higher actions and equality with ordinary actions at level one",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_zero",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_primitive"
+          ],
+          "reviewed_claims": [
+            "The higher actions use the original spectral primitive and contours. Spectral power zero is exactly the original ordinary indexed action."
+          ],
+          "qualification": "The Lean spectral power k corresponds to printed action level k+1. Thus printed odd level 2*m+1 uses power 2*m."
+        },
+        {
+          "ordered_group": "S23-032",
+          "source_lines": [
+            8612,
+            8617
+          ],
+          "requirement": "Higher-action asymptotic comparisons",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_gapSample",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "The higher action is asymptotic to either original periodic endpoint raised to the spectral power times the original action, and to (n*pi)^k times that action. More generally any sample in the original periodic segment gives the same asymptotic."
+          ],
+          "qualification": "The cofinite integer filter includes both signed tails. All natural powers and finite p>1 are allowed, including the printed m=0 case. Closed gaps are included without dividing by the action. The positive endpoint step has passed its full checks and is committed and pushed."
+        },
+        {
+          "ordered_group": "S23-033",
+          "source_lines": [
+            8619,
+            8623
+          ],
+          "requirement": "Higher-action trace indices and normalization",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_oddHamiltonian_trace"
+          ],
+          "reviewed_claims": [
+            "The corrected trace sums the original higher actions over every integer index and equals H_(2*m+1)/4^m for each m>=1. The Hamiltonian is the independently defined physical Sobolev Hamiltonian. The original complex Hm preimage and analytic extension are retained."
+          ],
+          "qualification": "Use the full integer sum and the positive factor 1/4^m, with no alternating sign. The printed level/power conversion is explicit. Existing correction and refutation records are preserved without new refutations."
+        },
+        {
+          "ordered_group": "S23-034",
+          "source_lines": [
+            8633,
+            8636
+          ],
+          "requirement": "Physical first and third Hamiltonians",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+            "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "reviewed_claims": [
+            "The first physical Hamiltonian is the period-one mass integral. The third is the kinetic-plus-quartic energy integral, and the sharp odd-Hamiltonian extension agrees with this H3."
+          ],
+          "qualification": "On the real form the second physical component is the complex conjugate of the first. The scalar mass integral is retained, with its factor relative to the two-component source norm handled explicitly."
+        },
+        {
+          "ordered_group": "S23-035",
+          "source_lines": [
+            8638,
+            8643
+          ],
+          "requirement": "General higher Hamiltonian leading term and derivative order",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_order",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.analyticAt_sobolevOddHamiltonian",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical"
+          ],
+          "reviewed_claims": [
+            "For every m>=1 one polynomial, chosen before the source, uses jets of order at most m-1. The physical H_(2*m+1) is the squared L2 norm of the mth derivative plus the integral of that lower-jet polynomial. Its entire complex Hm extension agrees with the classical expression on smooth fields."
+          ],
+          "qualification": "The polynomial is independently constructed on physical derivatives. It is not defined by subtracting an action sum or allowed to depend on the individual potential."
+        },
+        {
+          "ordered_group": "S23-036",
+          "source_lines": [
+            8643,
+            8649
+          ],
+          "requirement": "Norm comparison outline and meaning of asymptotic notation",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_upper",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_lower"
+          ],
+          "reviewed_claims": [
+            "The displayed chain of informal norm comparisons motivates replacing a formal leading-term comparison by the quantitative two-sided estimates with lower-order terms. Those precise estimates are retained above."
+          ],
+          "qualification": "The display supplies no limiting parameter for its asymptotic notation. No additional global equivalence or limit theorem is claimed from it; the explicit bounds are the mathematical conclusion."
+        },
+        {
+          "ordered_group": "S23-037",
+          "source_lines": [
+            8651,
+            8659
+          ],
+          "requirement": "Spectral localization threshold and finite low-mode error",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceSection26_exterior",
+            "NLS.ZakharovShabat.sourceSection26_central",
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.SourceSection26Data.action_estimate",
+            "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds"
+          ],
+          "reviewed_claims": [
+            "The actual complex H1 norm determines a uniform quadratic spectral threshold. Above it, both canonical periodic endpoints lie within the quantified free-lattice disks and the real higher actions have explicit comparisons. The finitely many remaining indices satisfy central estimates with an H1 error. These support the quantitative action estimates."
+          ],
+          "qualification": "The exact threshold is 8*P^2<=1+|n|; high-mode comparisons retain n!=0 and the central estimate includes n=0. The sentence about avoiding auxiliary spectral quantities describes a proof method, not a separate Lean theorem or a claim that every transitive dependency was reread."
+        },
+        {
+          "ordered_group": "S23-038",
+          "source_lines": [
+            8660,
+            8662
+          ],
+          "requirement": "Weighted gap-to-action proof outline",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceAction_gap_bound",
+            "NLS.ZakharovShabat.sourceComplexAction_le_gap_sq_of_normalized_bound",
+            "NLS.ZakharovShabat.sourceM1_complex_actions_summable_and_le",
+            "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "A uniform local bound controls each actual action by a constant times the actual squared gap, including collapsed gaps. The weighted gap estimate gives a summable majorant and a quantitative action budget. The resulting complex neighborhood estimate is the original Theorem 23.4 statement."
+          ],
+          "qualification": "The quantitative theorem retains the M1 assumption. The zero source and the rest of the real locus are both included. This comparison verifies the stated mathematical ingredients, not a claim about avoiding auxiliary quantities in every proof dependency."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S23-001",
+          "source_lines": [
+            8404,
+            8406
+          ],
+          "requirement": "Transition from low to high regularity",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection23_original_estimates"
+          ],
+          "reviewed_claims": [
+            "The overview changes emphasis from low to high regularity. The original Section 20 family extends to the Section 23 estimates without choosing new moments, roots or Birkhoff maps."
+          ],
+          "qualification": "This is an introductory transition. It adds no separate quantitative assertion."
+        },
+        {
+          "ordered_group": "S23-002",
+          "source_lines": [
+            8406,
+            8409
+          ],
+          "requirement": "Original canonical bi-analytic Sobolev diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_symm_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedBirkhoff_canonical"
+          ],
+          "reviewed_claims": [
+            "The retained original map induces an onto native real Sobolev homeomorphism with globally real analytic forward and inverse maps at every nonnegative real order. Its full weighted derivatives satisfy the canonical identities."
+          ],
+          "qualification": "The Hilbert instance gives the printed Sobolev scale, including order zero. The physical bracket convention is {x_n,y_k}=-delta_nk. The precise qualification about the 2014 construction remains in the completeness record."
+        },
+        {
+          "ordered_group": "S23-003",
+          "source_lines": [
+            8409,
+            8411
+          ],
+          "requirement": "Analytic transformed Hamiltonian depending only on actions",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_domain",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_values",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_physical_identity",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity"
+          ],
+          "reviewed_claims": [
+            "The transformed Hamiltonian is a real analytic function of the actual actions. Its native weighted action domain is open and contains the entire nonnegative cone. It agrees with the physical H1 Hamiltonian for every real H1 source. The standard weighted action presentation has the same values."
+          ],
+          "qualification": "The full Hamiltonian includes its kinetic and mass terms. It is not merely the renormalized correction. The native Sobolev inverse in S23-002 retains the original coordinate interpretation."
+        },
+        {
+          "ordered_group": "S23-004",
+          "source_lines": [
+            8411,
+            8414
+          ],
+          "requirement": "Real coordinate Hamilton equations and frequency derivative",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+            "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_ordinary"
+          ],
+          "reviewed_claims": [
+            "Along each original ordinary flow, the real coordinates satisfy x_dot=-omega*y and y_dot=omega*x. The actual ordinary frequency is the literal coordinate derivative of the full action Hamiltonian and is conserved along the flow."
+          ],
+          "qualification": "The printed rectangular signs are correct. They agree with z=(x-i*y)/sqrt(2) and the negative first complex phase; no sign correction is made to this display."
+        },
+        {
+          "ordered_group": "S23-005",
+          "source_lines": [
+            8416,
+            8417
+          ],
+          "requirement": "Derivative at zero is the Fourier transform",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_hasFDerivAt_zero",
+            "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+            "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates"
+          ],
+          "reviewed_claims": [
+            "The full derivative of the original physical Birkhoff map at zero is the physical Fourier transform. Both rectangular coordinate derivatives are given by the corresponding physical Fourier integrals."
+          ],
+          "qualification": "This is a derivative of the original map on its full physical space, not only a finite-coordinate restriction."
+        },
+        {
+          "ordered_group": "S23-006",
+          "source_lines": [
+            8417,
+            8422
+          ],
+          "requirement": "Exact Parseval identity and higher-order norm motivation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_parseval",
+            "NLS.ZakharovShabat.sourceSection23_original_estimates"
+          ],
+          "reviewed_claims": [
+            "Parseval holds exactly on the real Hilbert source with the literal component-sum source and target norms. The following higher-order estimates use the same original map."
+          ],
+          "qualification": "The discussion of higher-order analogues is motivation; the exact quantitative statements are S23-009 through S23-016."
+        },
+        {
+          "ordered_group": "S23-007",
+          "source_lines": [
+            8423,
+            8432
+          ],
+          "requirement": "Physical Fourier indexing and literal Sobolev source norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_fst",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_snd",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm"
+          ],
+          "reviewed_claims": [
+            "The physical source norm is the sum of both Fourier-component energies with weight (1+|2*n*pi|)^(2*s). For integer order m, sourcePiSobolevCoordinates gives the exact norm at every lower integer order k<=m. The weighted physical norm identity also retains real orders through piSobolev."
+          ],
+          "qualification": "The source uses the negative Fourier wave for its first component. Reflection of its raw coefficient label preserves the norm because the weight is even; no missing component or period factor is suppressed."
+        },
+        {
+          "ordered_group": "S23-008",
+          "source_lines": [
+            8434,
+            8443
+          ],
+          "requirement": "Literal component-sum target norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_fst",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_snd",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_zero_norm"
+          ],
+          "reviewed_claims": [
+            "The target norm is the square root of the sum of the weighted squared x and y coordinates, with the literal 2*n*pi frequency. The order-zero target norm is the source Hilbert norm."
+          ],
+          "qualification": "The norm is the component-sum Hilbert norm, not the maximum of the two scalar norms."
+        },
+        {
+          "ordered_group": "S23-009",
+          "source_lines": [
+            8454,
+            8460
+          ],
+          "requirement": "Theorem 23.1 upper Birkhoff norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper"
+          ],
+          "reviewed_claims": [
+            "For each integer m>=1 there is a positive c_m, chosen before the source, bounding the target Hm norm by c_m times the source Hm norm plus (1+the source H1 norm)^(2*m) times its H0 norm."
+          ],
+          "qualification": "The original map, exact source norm and printed exponent 2*m are retained."
+        },
+        {
+          "ordered_group": "S23-010",
+          "source_lines": [
+            8464,
+            8470
+          ],
+          "requirement": "Theorem 23.1 inverse norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower"
+          ],
+          "reviewed_claims": [
+            "For each integer m>=1 there is a positive d_m bounding the source Hm norm by d_m times the target hm norm plus (1+the target h1 norm)^(4*m-3) times its h0 norm."
+          ],
+          "qualification": "The endpoint m=1 is included. All three coordinate norms belong to the same original map."
+        },
+        {
+          "ordered_group": "S23-011",
+          "source_lines": [
+            8473,
+            8474
+          ],
+          "requirement": "Constants independent of the source; b_m label",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.c_pos",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.d_pos"
+          ],
+          "reviewed_claims": [
+            "The two positive constants are selected after m and before every potential. The prose label b_m is normalized directly to d_m, matching Theorem 23.1."
+          ],
+          "qualification": "Only this constant label is corrected. No proof that the printed label is wrong is added."
+        },
+        {
+          "ordered_group": "S23-012",
+          "source_lines": [
+            8475,
+            8482
+          ],
+          "requirement": "Highest-order linearity and uniform one-smoothing assertion",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower",
+            "NLS.ZakharovShabat.SourceSection23Data.oneSmoothing",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_literal_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_literal_coordinates",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_analytic",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_uniform_ball",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_uniform_ball"
+          ],
+          "reviewed_claims": [
+            "At m>=2 the leading Hm/hm terms appear linearly while the other terms use lower norms. Separately, the actual original forward and inverse Fourier remainders gain one derivative, are real analytic on the native real spaces, and are bounded on every norm ball."
+          ],
+          "qualification": "One-smoothing is supported by its own positive theorems, not inferred from the norm estimates alone. Its scope here is positive integer order, with no order-zero or fractional smoothing endpoint asserted."
+        },
+        {
+          "ordered_group": "S23-013",
+          "source_lines": [
+            8483,
+            8487
+          ],
+          "requirement": "Action definition and weighted action norm relation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.indexed_action_eq_complex",
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_norm_sq",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The original indexed actions agree with the retained complex action functions on the original domain. On the real form, each action is (x_n^2+y_n^2)/2. The exact squared coordinate norm is twice the weighted action sum."
+          ],
+          "qualification": "The factor two is retained throughout the conversion of action estimates to coordinate estimates. The final lower-order action factor is the unweighted action sum."
+        },
+        {
+          "ordered_group": "S23-014",
+          "source_lines": [
+            8489,
+            8496
+          ],
+          "requirement": "Theorem 23.2 upper action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_summable",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_upper",
+            "NLS.ZakharovShabat.exists_sourceWeightedAction_sobolev_upper_bound"
+          ],
+          "reviewed_claims": [
+            "For each m>=1 the actual weighted indexed actions are summable, and their sum is bounded by c_m^2 times the source Hm norm squared plus (1+the H1 norm)^(4*m) times the H0 norm squared."
+          ],
+          "qualification": "The positive proof controls the actual physical Hamiltonian and its lower-order terms. Constants are independent of the source."
+        },
+        {
+          "ordered_group": "S23-015",
+          "source_lines": [
+            8501,
+            8503
+          ],
+          "requirement": "Theorem 23.2 lower action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_lower",
+            "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound"
+          ],
+          "reviewed_claims": [
+            "The source Hm norm squared is bounded by d_m^2 times the weighted order-2m action sum plus (1+the order-2 action sum)^(4*m-3) times the unweighted action sum."
+          ],
+          "qualification": "Both m=1 and every higher integer order are included. The last factor is not replaced by a stronger weighted action norm."
+        },
+        {
+          "ordered_group": "S23-016",
+          "source_lines": [
+            8506,
+            8506
+          ],
+          "requirement": "Remark 23.3 common constants",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolev_joint_bounds",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds"
+          ],
+          "reviewed_claims": [
+            "One common positive pair c_m,d_m simultaneously satisfies all four Birkhoff and action estimates. The pair is selected before the potential."
+          ],
+          "qualification": "The constants may depend on m. No single constant uniform in all Sobolev orders is asserted."
+        },
+        {
+          "ordered_group": "S23-017",
+          "source_lines": [
+            8509,
+            8517
+          ],
+          "requirement": "Weight class M and its four exact axioms",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight",
+            "NLS.SpectralWeight.apply_neg",
+            "NLS.SpectralWeight.mono_abs",
+            "NLS.SpectralWeight.constant"
+          ],
+          "reviewed_claims": [
+            "The weight class has exactly the four displayed properties: values at least one, evenness, submultiplicativity and monotonicity in the nonnegative index."
+          ],
+          "qualification": "The printed word normalized does not impose w(0)=1. Constant weights above one are allowed."
+        },
+        {
+          "ordered_group": "S23-018",
+          "source_lines": [
+            8517,
+            8524
+          ],
+          "requirement": "Weighted source space and norm",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm",
+            "NLS.ZakharovShabat.mem_range_originalWeightedSourceCLM_iff",
+            "NLS.ZakharovShabat.range_originalWeightedSourceCLM_eq_normalized"
+          ],
+          "reviewed_claims": [
+            "The normalized weighted source describes exactly the original weighted Fourier range. Its norm is the literal component-sum weighted physical energy. The real locus is preserved."
+          ],
+          "qualification": "Period-one sources occupy the even Fourier labels, so the actual scalar summands use w(2*n). This is the source convention behind the printed sum over physical labels m."
+        },
+        {
+          "ordered_group": "S23-019",
+          "source_lines": [
+            8527,
+            8536
+          ],
+          "requirement": "Weighted real target and even-frequency weight",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The weighted real target consists of the original coordinates with finite sum of w(2*n)^2 times x_n^2+y_n^2. On the M1 source range this sum is twice the actual weighted action sum."
+          ],
+          "qualification": "The even-frequency weight is literal. The target norm uses both real components."
+        },
+        {
+          "ordered_group": "S23-020",
+          "source_lines": [
+            8539,
+            8539
+          ],
+          "requirement": "Real-order Sobolev weight",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.piSobolev",
+            "NLS.SpectralWeight.piSobolev_apply",
+            "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm"
+          ],
+          "reviewed_claims": [
+            "For every real s>=0 the weight is exactly (1+|n*pi|)^s and its weighted physical source is the usual period-one Sobolev space with the displayed norm."
+          ],
+          "qualification": "Noninteger orders are retained; the pi factor is not absorbed into an unspecified equivalent norm."
+        },
+        {
+          "ordered_group": "S23-021",
+          "source_lines": [
+            8541,
+            8552
+          ],
+          "requirement": "Abel weight and holomorphic strip with norm traces",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.abel_apply",
+            "NLS.ZakharovShabat.source_abel_printed_strip_forward",
+            "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions",
+            "NLS.Fourier.hasSobolevNormStripTraces_iff_physical"
+          ],
+          "reviewed_claims": [
+            "The Abel weight is (1+|n*pi|)^s*exp(a*|n|), with s>=0 and a>0. Every source in that weighted space has the stated holomorphic extension to the printed narrower strip and Sobolev-norm boundary traces."
+          ],
+          "qualification": "The printed forward implication is valid. Under the even physical labels, the exact characterization has half-width a/pi; a/(2*pi) is only a narrower forward strip. Norm-continuous physical traces, not merely pointwise or almost-everywhere boundary values, are retained. The earlier converse correction remains unchanged."
+        },
+        {
+          "ordered_group": "S23-022",
+          "source_lines": [
+            8554,
+            8558
+          ],
+          "requirement": "Gevrey weights",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.gevrey",
+            "NLS.SpectralWeight.gevrey_apply",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey"
+          ],
+          "reviewed_claims": [
+            "The Gevrey weight is (1+|n|)^s*exp(a*|n|^sigma) and belongs to M for the printed s>=0, a>0 and 0<sigma<1. For s>=1 its linear factor gives membership in M1."
+          ],
+          "qualification": "This family uses the unscaled polynomial bracket, as printed. Its membership in M does not require s>=1."
+        },
+        {
+          "ordered_group": "S23-023",
+          "source_lines": [
+            8560,
+            8565
+          ],
+          "requirement": "Logarithmic weights and strict growth hierarchy",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.logarithmic",
+            "NLS.SpectralWeight.logarithmic_apply",
+            "NLS.SpectralWeight.gevrey_div_logarithmic_tendsto_zero",
+            "NLS.SpectralWeight.logarithmic_div_abel_tendsto_zero",
+            "NLS.SpectralWeight.exists_coefficient_inclusion_of_ratio_tendsto_zero"
+          ],
+          "reviewed_claims": [
+            "The logarithmic weight has the exact denominator 1+(log(1+|n|))^sigma. It lies strictly between the Gevrey and Abel growth scales: the relevant weight ratios tend to zero, allowing independent polynomial orders and positive exponential parameters. These comparisons induce bounded injective coefficient inclusions preserving the coefficients."
+          ],
+          "qualification": "The direction of weighted-space inclusion reverses the weight-growth ordering. The claims retain the printed open interval for sigma."
+        },
+        {
+          "ordered_group": "S23-024",
+          "source_lines": [
+            8566,
+            8569
+          ],
+          "requirement": "Exact linear-factor subclass M1",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.withLinearFactor_apply",
+            "NLS.SpectralWeight.hasLinearFactor_piSobolev",
+            "NLS.SpectralWeight.hasLinearFactor_abel",
+            "NLS.SpectralWeight.hasLinearFactor_gevrey",
+            "NLS.SpectralWeight.hasLinearFactor_logarithmic"
+          ],
+          "reviewed_claims": [
+            "M1 means exactly w(n)=(1+|n|)*v(n) for some v in M. The Sobolev, Abel, Gevrey and logarithmic families have this property for their stated order-at-least-one instances."
+          ],
+          "qualification": "A general lower linear bound alone is not substituted for the required factorization."
+        },
+        {
+          "ordered_group": "S23-025",
+          "source_lines": [
+            8571,
+            8572
+          ],
+          "requirement": "Piecewise linear positive extension to the real line",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.realExtension_affine",
+            "NLS.SpectralWeight.realExtension_intCast",
+            "NLS.SpectralWeight.realExtension_neg",
+            "NLS.SpectralWeight.realExtension_pos"
+          ],
+          "reviewed_claims": [
+            "The extension agrees with every integer value, is even and strictly positive, and is affine on each unit interval."
+          ],
+          "qualification": "This is the literal piecewise linear interpolation w[t], not a floor-step extension."
+        },
+        {
+          "ordered_group": "S23-026",
+          "source_lines": [
+            8574,
+            8581
+          ],
+          "requirement": "Theorem 23.4 complex neighborhood and weighted action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+            "NLS.ZakharovShabat.exists_sourceM1Action_neighborhood",
+            "NLS.ZakharovShabat.exists_zero_sourceM1Action_bound"
+          ],
+          "reviewed_claims": [
+            "For each M1 weight there is one open complex weighted neighborhood containing the whole real weighted locus. Its decoded sources stay inside the original source domain. The actual absolute weighted action sum is summable and is bounded by 2048^2*w[16*norm^2]^2*norm^2."
+          ],
+          "qualification": "The constant is chosen before the source, and the zero potential is included without dividing by its norm. A single neighborhood contains all real sources; it is not just a neighborhood of one selected potential."
+        },
+        {
+          "ordered_group": "S23-027",
+          "source_lines": [
+            8583,
+            8587
+          ],
+          "requirement": "Theorem 23.4 target membership and map estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+            "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The restriction of the same original Birkhoff map has values in the weighted real target and norm at most 2048*w[16*norm^2]*norm. The same constant 2048 supplies the action-square bound."
+          ],
+          "qualification": "The action estimate on the complex neighborhood and the coordinate estimate on the entire real weighted locus have the distinct scopes printed in the theorem."
+        },
+        {
+          "ordered_group": "S23-028",
+          "source_lines": [
+            8590,
+            8595
+          ],
+          "requirement": "Exponential growth bound and stated weight scope",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.SpectralWeight.le_geometric",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The general positive growth bound is w(n)<=w(0)*w(1)^|n|, so the growth is at most exponential. The claimed estimates retain the theorem assumption w in M1, including its exponentially growing examples."
+          ],
+          "qualification": "Correct the displayed geometric bound directly and retain the M1 restriction in the following prose. No normalization w(0)=1 or extension of Theorem 23.4 to every M weight is introduced. No new refutation is added."
+        },
+        {
+          "ordered_group": "S23-029",
+          "source_lines": [
+            8597,
+            8601
+          ],
+          "requirement": "Corollary 23.5 complex real-order action estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+            "NLS.ZakharovShabat.realSobolevEstimateConstant_pos"
+          ],
+          "reviewed_claims": [
+            "For each real r>=1 an open complex neighborhood contains the full real Hr locus, lies in the retained original domain after decoding, and satisfies the actual absolute action estimate with exponent 4*r. The positive constant is 2048*(1+17*pi)^r."
+          ],
+          "qualification": "The real order is unrestricted above one; it is not rounded to an integer. The action weight is exactly (1+|2*n*pi|)^(2*r)."
+        },
+        {
+          "ordered_group": "S23-030",
+          "source_lines": [
+            8605,
+            8607
+          ],
+          "requirement": "Corollary 23.5 real target membership and norm estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevCoordinates_norm_le"
+          ],
+          "reviewed_claims": [
+            "The same original map sends the real Hr source to the real hr target with norm bounded by c_r*(1+source_norm)^(2*r)*source_norm, using the same positive c_r as in the action estimate."
+          ],
+          "qualification": "Membership in the actual target and the printed exponent 2*r are both retained."
+        },
+        {
+          "ordered_group": "S23-031",
+          "source_lines": [
+            8610,
+            8612
+          ],
+          "requirement": "Higher actions and equality with ordinary actions at level one",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_zero",
+            "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_primitive"
+          ],
+          "reviewed_claims": [
+            "The higher actions use the original spectral primitive and contours. Spectral power zero is exactly the original ordinary indexed action."
+          ],
+          "qualification": "The Lean spectral power k corresponds to printed action level k+1. Thus printed odd level 2*m+1 uses power 2*m."
+        },
+        {
+          "ordered_group": "S23-032",
+          "source_lines": [
+            8612,
+            8617
+          ],
+          "requirement": "Higher-action asymptotic comparisons",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_gapSample",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "The higher action is asymptotic to either original periodic endpoint raised to the spectral power times the original action, and to (n*pi)^k times that action. More generally any sample in the original periodic segment gives the same asymptotic."
+          ],
+          "qualification": "The cofinite integer filter includes both signed tails. All natural powers and finite p>1 are allowed, including the printed m=0 case. Closed gaps are included without dividing by the action. The positive endpoint step has passed its full checks and is committed and pushed."
+        },
+        {
+          "ordered_group": "S23-033",
+          "source_lines": [
+            8619,
+            8623
+          ],
+          "requirement": "Higher-action trace indices and normalization",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+            "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+            "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_oddHamiltonian_trace"
+          ],
+          "reviewed_claims": [
+            "The corrected trace sums the original higher actions over every integer index and equals H_(2*m+1)/4^m for each m>=1. The Hamiltonian is the independently defined physical Sobolev Hamiltonian. The original complex Hm preimage and analytic extension are retained."
+          ],
+          "qualification": "Use the full integer sum and the positive factor 1/4^m, with no alternating sign. The printed level/power conversion is explicit. Existing correction and refutation records are preserved without new refutations."
+        },
+        {
+          "ordered_group": "S23-034",
+          "source_lines": [
+            8633,
+            8636
+          ],
+          "requirement": "Physical first and third Hamiltonians",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+            "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four",
+            "NLS.ZakharovShabat.sourceSection27_H3_bridge"
+          ],
+          "reviewed_claims": [
+            "The first physical Hamiltonian is the period-one mass integral. The third is the kinetic-plus-quartic energy integral, and the sharp odd-Hamiltonian extension agrees with this H3."
+          ],
+          "qualification": "On the real form the second physical component is the complex conjugate of the first. The scalar mass integral is retained, with its factor relative to the two-component source norm handled explicitly."
+        },
+        {
+          "ordered_group": "S23-035",
+          "source_lines": [
+            8638,
+            8643
+          ],
+          "requirement": "General higher Hamiltonian leading term and derivative order",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_order",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.analyticAt_sobolevOddHamiltonian",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical"
+          ],
+          "reviewed_claims": [
+            "For every m>=1 one polynomial, chosen before the source, uses jets of order at most m-1. The physical H_(2*m+1) is the squared L2 norm of the mth derivative plus the integral of that lower-jet polynomial. Its entire complex Hm extension agrees with the classical expression on smooth fields."
+          ],
+          "qualification": "The polynomial is independently constructed on physical derivatives. It is not defined by subtracting an action sum or allowed to depend on the individual potential."
+        },
+        {
+          "ordered_group": "S23-036",
+          "source_lines": [
+            8643,
+            8649
+          ],
+          "requirement": "Norm comparison outline and meaning of asymptotic notation",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_upper",
+            "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_lower"
+          ],
+          "reviewed_claims": [
+            "The displayed chain of informal norm comparisons motivates replacing a formal leading-term comparison by the quantitative two-sided estimates with lower-order terms. Those precise estimates are retained above."
+          ],
+          "qualification": "The display supplies no limiting parameter for its asymptotic notation. No additional global equivalence or limit theorem is claimed from it; the explicit bounds are the mathematical conclusion."
+        },
+        {
+          "ordered_group": "S23-037",
+          "source_lines": [
+            8651,
+            8659
+          ],
+          "requirement": "Spectral localization threshold and finite low-mode error",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceSection26_exterior",
+            "NLS.ZakharovShabat.sourceSection26_central",
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.SourceSection26Data.action_estimate",
+            "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds"
+          ],
+          "reviewed_claims": [
+            "The actual complex H1 norm determines a uniform quadratic spectral threshold. Above it, both canonical periodic endpoints lie within the quantified free-lattice disks and the real higher actions have explicit comparisons. The finitely many remaining indices satisfy central estimates with an H1 error. These support the quantitative action estimates."
+          ],
+          "qualification": "The exact threshold is 8*P^2<=1+|n|; high-mode comparisons retain n!=0 and the central estimate includes n=0. The sentence about avoiding auxiliary spectral quantities describes a proof method, not a separate Lean theorem or a claim that every transitive dependency was reread."
+        },
+        {
+          "ordered_group": "S23-038",
+          "source_lines": [
+            8660,
+            8662
+          ],
+          "requirement": "Weighted gap-to-action proof outline",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceAction_gap_bound",
+            "NLS.ZakharovShabat.sourceComplexAction_le_gap_sq_of_normalized_bound",
+            "NLS.ZakharovShabat.sourceM1_complex_actions_summable_and_le",
+            "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+            "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood"
+          ],
+          "reviewed_claims": [
+            "A uniform local bound controls each actual action by a constant times the actual squared gap, including collapsed gaps. The weighted gap estimate gives a summable majorant and a quantitative action budget. The resulting complex neighborhood estimate is the original Theorem 23.4 statement."
+          ],
+          "qualification": "The quantitative theorem retains the M1 assumption. The zero source and the rest of the real locus are both included. This comparison verifies the stated mathematical ingredients, not a claim about avoiding auxiliary quantities in every proof dependency."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 33,
+        "corrected": 3,
+        "partial": 0,
+        "contextual": 2,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection23Original.lean": "a98150495f40ebe8a16dbd2873ca9848d7d8a16dac459dc4069e0adf6522b92a",
+        "NLS/ZakharovShabat/SourceSection23Sobolev.lean": "46b90512d200e2effa0535aef8a39ba4ba2ddc842de0e09c0b41dffb0b5ae1b2",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean": "385898f6c0fdfe8408e3d7be84d41bad55e5870e7ba04cb76b4a3571296929ad",
+        "NLS/ZakharovShabat/SourceSection23Weighted.lean": "e39e2070d146a56cb15f3f5e55351ae12bf3a1db3fe26ea5856168f77f33b872",
+        "NLS/ZakharovShabat/SourceSobolevCommonConstants.lean": "ded84dd19348aa1dd841153432edcaa9f52f5d8e9c540ac4cc0fdbf7f0b7d944",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean": "2ca330342ac0ace4267953f6973d82e72112815f376303562ed23bb8f7b79b40",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean": "6c1c5399272d6af75fd78f1ac969df5bd45556127a28c446f1e292203079c595",
+        "NLS/ZakharovShabat/SourceSection23OneSmoothing.lean": "303b00937b1da6af95ec4faaa629b92a24691bfe2dc54247d04d36abac4a030e",
+        "NLS/ZakharovShabat/SourceBirkhoffNativeRealRemainders.lean": "8bdfb47048a8bde0fdf0287ad44e18102f04a9bc7ae5f4b4e7f45a212b97ea89",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean": "783315cb41fda455f8d279bd0daa24de5bf84aa646d1dab09d842ea134a69dec",
+        "NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean": "35403e2af2a1beb0e60323f41920d56bd57c6395a2d905b1b41fd0ea4a214c07",
+        "NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean": "99aaa760eeea1431e5f5f20c6a9a587cdceb983427d1d7e8047ede502d96ac9e",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean": "3afae8c7bc9e64d24b76a118422bb5e44ac070bc8cd64109823011509d547679",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean": "aa78aec4466f2d2bd976c136c938fb87ac31a5086dc072d7a9a94bd4f64fb9a1",
+        "NLS/ZakharovShabat/SourceSection24Original.lean": "35f0a0ee06b5a60c0960254596d443ee69d7ce311bebbf8369f4806c0af19bdb",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean": "952d351d05ab5cdcd1a849e8ead619f2cd8e907584eb742f7623d5f9f7b31450",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean": "46bb11a67daccbb0f644f63af44893a34c687d3d8e685fcbd105125afa09fc82",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean": "87d5874740112bae058627577484af379cb9964b5c18860c312c5a41fde4313d",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean": "d1025a6dac6dc595d422f65e8bbfec8efbba3e2bfbba2967f7dbc6b500edd29f",
+        "NLS/SequenceSpaces/SpectralWeightGrowth.lean": "b3b714dab28a045f4fb151ddd5d323fd8cd9ae95c974e4c17778f69970215b8c",
+        "NLS/SequenceSpaces/SpectralWeightInterpolation.lean": "1063d4991dac51be4b8e29aa148065c1ac7c5d933339c7143e01f493c2f07228",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianReal.lean": "9b609ad09c86ee03188e6445b05cd8c24e191c466780d886d234637fda3f3365",
+        "NLS/SequenceSpaces/ExponentialSpectralWeights.lean": "97ea3bfa244ed7176b4b2cfa8966349a717c479ac46d2439d1f0f7cf241cdd22",
+        "NLS/SequenceSpaces/LogarithmicSpectralWeights.lean": "4c8339f7ae826f53a78550a9bffefe891fe9fdd3f20170ddba491afb173f9226",
+        "NLS/SequenceSpaces/SpectralWeightHierarchy.lean": "7cef406ae724a51b982fc0dbcf2026ecaa62d7905f54a53563a19ef4713821f5",
+        "NLS/SequenceSpaces/LinearSpectralWeight.lean": "8d510ca7edf805fd138c59d2b80a107a9b104bafb41d030bc9ed41c0ad421b08",
+        "NLS/ZakharovShabat/SourceAbelStripCharacterization.lean": "baa7605dad38e246209cc851297e5ddb6df8ae24bee632281c756f550446c3dc",
+        "NLS/Fourier/PhysicalSobolevStripTraces.lean": "1b1f7c3a88339732215bf8e8f531c4705c74ae994c61c35e64733c683230c45b",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean": "1866063c9d1b1ce6572432ecd1fa889050db9244acead00bce17baa690757c4b",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevCoordinates.lean": "58859de6cebfa4f34079d63fa4992ae3dafd2a4ff77a965d2d3d75343d2cdd7e",
+        "NLS/SequenceSpaces/SpectralWeight.lean": "dab4be32929019aa11217b3463ab78475bae9444a91a049732d05295470acf10",
+        "NLS/ZakharovShabat/SourceCorollary23_5.lean": "2df88dd92c647cca215c349e55775b82803ad413483fee8dacc95f2fc11b5858",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean": "93a2b5ef46514beee04ca553d4f41cf9013d0d022e6dd0aa5894d64fce0f0c79",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionTrace.lean": "4356df390863fead1a780299a0c616df1d5cb48f20d277dca3f2805cfdc7cc57",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean": "c656302f1c03029fb6a727a69c4cdb8d813cd1983cc9191c333e2843f652952b",
+        "NLS/ZakharovShabat/SourceSection25Localization.lean": "c5b19d7ed7bc313b59c7fdc70d373c2b7f338082375de27b7d9d0556c4dd0733",
+        "NLS/ZakharovShabat/SourceSection26Actions.lean": "84495a81a1b7337d04180b446c21744fa0e8f9512931a443392f34ad3acc099f",
+        "NLS/ZakharovShabat/SourceSection26Original.lean": "03ae2b6d6b986bfdb37b9c44553d4f12eed8647ea1184dabda2066bf92d08515",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126",
+        "NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean": "c2500fb57041857512cb9ea8d3deb70cbb1e49c9634fca1c35ff62e91e780bd1",
+        "NLS/ZakharovShabat/SourceTheorem23_4.lean": "68889af3d0ab3b840193a83f0dcf217305a800b21151fbc4663ec9a769d4d9d1",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean": "add8170c924f576cb43093073ade92bf96391d5c7ee4b6f2f8b8260f7b932ec4",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean": "454867eb6bd20c57a4f0eb840e8fbbca9b645e1624b78c8ecc60c357e0e44d7a",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f",
+        "NLS/ZakharovShabat/SourceSobolevEnergyCoercivity.lean": "71a36f536d6f68b3e399675acbf36a09273c9813fc921e7da925fefb80f052bc",
+        "NLS/ZakharovShabat/SourceSection25Original.lean": "0003d81dd09cb7446e6cb633c6c963e28b78268645ca111ab7c6fcf5c42538cd",
+        "NLS/ZakharovShabat/SourceM1ActionNeighborhood.lean": "faa72a4578801922b6d6bafc48fc0fd5321917525ef4c61d583013f54ccd35ee",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean": "9e4aaa44fb3d1ff4d9b4259fc9047807ad01c8a3a3311316daa5bf38b0937ab4",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean": "6eaafaa9ad3be71f1fe5bf6c9bfd3baf61cf637ddd2dc8c1ff59f561272dc1bd",
+        "NLS/ZakharovShabat/SourceActionSobolevLowerBound.lean": "4981d2d7f8e124dd5350d4f469718d53fbd47b5c044c02cc1ce56369c09120e8",
+        "NLS/ZakharovShabat/SourceM1ActionContinuity.lean": "ef5f32e3a7656ec2f785ffea85be6d217ec6e60ca798a09f4d0be0cd5c44b6e2",
+        "NLS/ZakharovShabat/SourceRealNormalizedActionGapBound.lean": "d3ee0de75739061c5b1eea24a73455819de4321f8953f636c938409de52ec555",
+        "NLS/ZakharovShabat/SourceM1ActionNearZero.lean": "bdce84492b2e42a2f7e5c4db1202f59eb6f9e95f3d82382e519b3ae1626afe60",
+        "NLS/ZakharovShabat/SourceM1ComplexActionBudget.lean": "9851def792b356e85f569bce3bed5b407ca14753eb79507a5b3460310964b613"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection23Original.lean",
+        "NLS/ZakharovShabat/SourceSection23Sobolev.lean",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean",
+        "NLS/ZakharovShabat/SourceSection23Weighted.lean",
+        "NLS/ZakharovShabat/SourceSobolevCommonConstants.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffWeightedCanonical.lean",
+        "NLS/ZakharovShabat/SourceSection23OneSmoothing.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffNativeRealRemainders.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianPhysical.lean",
+        "NLS/ZakharovShabat/SourcePhysicalFrequencyAsymptotic.lean",
+        "NLS/ZakharovShabat/PhysicalBirkhoffLinearization.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianDerivative.lean",
+        "NLS/ZakharovShabat/SourceSection24Original.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceOriginalOscillators.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean",
+        "NLS/SequenceSpaces/SpectralWeightGrowth.lean",
+        "NLS/SequenceSpaces/SpectralWeightInterpolation.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionHamiltonianReal.lean",
+        "NLS/SequenceSpaces/ExponentialSpectralWeights.lean",
+        "NLS/SequenceSpaces/LogarithmicSpectralWeights.lean",
+        "NLS/SequenceSpaces/SpectralWeightHierarchy.lean",
+        "NLS/SequenceSpaces/LinearSpectralWeight.lean",
+        "NLS/ZakharovShabat/SourceAbelStripCharacterization.lean",
+        "NLS/Fourier/PhysicalSobolevStripTraces.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffSobolevCoordinates.lean",
+        "NLS/SequenceSpaces/SpectralWeight.lean",
+        "NLS/ZakharovShabat/SourceCorollary23_5.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionTrace.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean",
+        "NLS/ZakharovShabat/SourceSection25Localization.lean",
+        "NLS/ZakharovShabat/SourceSection26Actions.lean",
+        "NLS/ZakharovShabat/SourceSection26Original.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean",
+        "NLS/ZakharovShabat/SourceStandardActionHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceTheorem23_4.lean",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean",
+        "NLS/ZakharovShabat/SobolevQuarticMassBound.lean",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean",
+        "NLS/ZakharovShabat/SourceSobolevEnergyCoercivity.lean",
+        "NLS/ZakharovShabat/SourceSection25Original.lean",
+        "NLS/ZakharovShabat/SourceM1ActionNeighborhood.lean",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevLowerBound.lean",
+        "NLS/ZakharovShabat/SourceM1ActionContinuity.lean",
+        "NLS/ZakharovShabat/SourceRealNormalizedActionGapBound.lean",
+        "NLS/ZakharovShabat/SourceM1ActionNearZero.lean",
+        "NLS/ZakharovShabat/SourceM1ComplexActionBudget.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_23_ASSERTIONS.md",
+      "ordered_inventory_sha256": "948d3849f7492e0836b76b5ed6deb0a07ea1509689f11de1a43ad9a28f78f5bb",
+      "resolved_declarations": [
+        "NLS.Fourier.hasSobolevNormStripTraces_iff_physical",
+        "NLS.SpectralWeight",
+        "NLS.SpectralWeight.HasLinearFactor",
+        "NLS.SpectralWeight.abel_apply",
+        "NLS.SpectralWeight.apply_neg",
+        "NLS.SpectralWeight.constant",
+        "NLS.SpectralWeight.exists_coefficient_inclusion_of_ratio_tendsto_zero",
+        "NLS.SpectralWeight.gevrey",
+        "NLS.SpectralWeight.gevrey_apply",
+        "NLS.SpectralWeight.gevrey_div_logarithmic_tendsto_zero",
+        "NLS.SpectralWeight.hasLinearFactor_abel",
+        "NLS.SpectralWeight.hasLinearFactor_gevrey",
+        "NLS.SpectralWeight.hasLinearFactor_logarithmic",
+        "NLS.SpectralWeight.hasLinearFactor_piSobolev",
+        "NLS.SpectralWeight.le_geometric",
+        "NLS.SpectralWeight.logarithmic",
+        "NLS.SpectralWeight.logarithmic_apply",
+        "NLS.SpectralWeight.logarithmic_div_abel_tendsto_zero",
+        "NLS.SpectralWeight.mono_abs",
+        "NLS.SpectralWeight.piSobolev",
+        "NLS.SpectralWeight.piSobolev_apply",
+        "NLS.SpectralWeight.realExtension_affine",
+        "NLS.SpectralWeight.realExtension_intCast",
+        "NLS.SpectralWeight.realExtension_neg",
+        "NLS.SpectralWeight.realExtension_pos",
+        "NLS.SpectralWeight.withLinearFactor_apply",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolev_joint_bounds",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_literal_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeForwardFourierRemainder_uniform_ball",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_literal_coordinates",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeInverseFourierRemainder_uniform_ball",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedBirkhoff_canonical",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSobolevHomeomorph_symm_analytic",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevCoordinates_norm_le",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_fst",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_norm_sq",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_snd",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevCoordinates_zero_norm",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_coordinate_derivative",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_domain",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_frequency_ordinary",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.full_action_physical_identity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_analytic",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_full_action_values",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_full_action_physical_identity",
+        "NLS.ZakharovShabat.SourceOriginalHamiltonianData.standard_real_full_action_analytic",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_fderiv_zero",
+        "NLS.ZakharovShabat.SourceSection14OriginalData.physicalBirkhoffMap_hasFDerivAt_zero",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.indexed_action_eq_complex",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.section23_parseval",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_norm_sq",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.section23_weighted_norm_sq",
+        "NLS.ZakharovShabat.SourceSection19Data.indexedHigherAction_oddHamiltonian_trace",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_frequency_conserved",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_original_rectangular_oscillators",
+        "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+        "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+        "NLS.ZakharovShabat.SourceSection23Data.oneSmoothing",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_lower",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_summable",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.action_upper",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.c_pos",
+        "NLS.ZakharovShabat.SourceSection23SobolevBounds.d_pos",
+        "NLS.ZakharovShabat.SourceSection24Data.higherAction_eq_original_primitive",
+        "NLS.ZakharovShabat.SourceSection24Data.odd_trace",
+        "NLS.ZakharovShabat.SourceSection24Data.trace_printed_level",
+        "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+        "NLS.ZakharovShabat.SourceSection26Data.action_estimate",
+        "NLS.ZakharovShabat.analyticAt_sobolevOddHamiltonian",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_real_reduced_polynomial",
+        "NLS.ZakharovShabat.exists_local_sourceAction_gap_bound",
+        "NLS.ZakharovShabat.exists_sourceM1Action_neighborhood",
+        "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds",
+        "NLS.ZakharovShabat.exists_sourceSobolev_weightedAction_lower_bound",
+        "NLS.ZakharovShabat.exists_sourceWeightedAction_sobolev_upper_bound",
+        "NLS.ZakharovShabat.exists_zero_sourceM1Action_bound",
+        "NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap_fderiv_zero_coordinates",
+        "NLS.ZakharovShabat.mem_range_originalWeightedSourceCLM_iff",
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_order",
+        "NLS.ZakharovShabat.normalizedWeightedSource_physical_norm",
+        "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+        "NLS.ZakharovShabat.periodOneSobolevMass_re_eq_integral_norm_sq",
+        "NLS.ZakharovShabat.periodOneSobolevQuartic_re_eq_integral_norm_four",
+        "NLS.ZakharovShabat.range_originalWeightedSourceCLM_eq_normalized",
+        "NLS.ZakharovShabat.realSobolevEstimateConstant_pos",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_one",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_one_eq_periodOneSobolevMass",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_classical",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+        "NLS.ZakharovShabat.sourceComplexAction_le_gap_sq_of_normalized_bound",
+        "NLS.ZakharovShabat.sourceH1_uniform_localization",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_gapSample",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_zero",
+        "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+        "NLS.ZakharovShabat.sourceM1_complex_actions_summable_and_le",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_fst",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_snd",
+        "NLS.ZakharovShabat.sourceSection23_original_estimates",
+        "NLS.ZakharovShabat.sourceSection26_central",
+        "NLS.ZakharovShabat.sourceSection26_exterior",
+        "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+        "NLS.ZakharovShabat.sourceSection27_H3_bridge",
+        "NLS.ZakharovShabat.source_abel_printed_strip_forward",
+        "NLS.ZakharovShabat.source_abel_range_iff_physical_strip_extensions"
+      ],
+      "declaration_inventory_count": 44674,
+      "qualification": "The ordered Section 23 comparison covers 38 groups on printed pp. 103–106: 33 matched, three corrected and two contextual, with no partial or pending groups in this local ledger. It retains the original family, literal physical and coordinate norms, the factor-two action identity, potential-independent common constants, full real weighted neighborhoods, the native real analytic Sobolev inverse and positive-integer one-smoothing scope. Actual Hamiltonian derivatives give the printed rectangular oscillator signs. The endpoint asymptotics include both integer tails and closed gaps. The constant label b_m is corrected directly to d_m, the weight estimate keeps the M1 hypothesis and its corrected geometric bound, and the higher-action trace uses all integer indices with positive factor 1/4^m. The printed narrower Abel strip is a valid forward statement; the exact characterization retains half-width a/pi. The informal norm-comparison chain is contextual motivation for the precise estimates with lower-order terms. Existing corrections and refutations are preserved. No new Lean proof or refutation is added in this documentation step. The exact 2014 construction, Appendix G.2 and wider dissertation-completeness qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          103,
+          104,
+          105,
+          106
+        ],
+        "images": {
+          "work/tmp/pdfs/section23-strip-103.png": "7c261106283138d7715c4f19abd2e749d50c8ee557b9d1ca9f6d17795c7a0cb2",
+          "work/tmp/pdfs/section23-weights-104.png": "514511902aca31fd8a2c5d253b4979ea1a689da90972e9a39b44c501bb858e86",
+          "work/tmp/pdfs/section23-weights-105.png": "29c32ae5e35e433637490d46c36f35363a3d6228032ab75b92f61addd6412c0a",
+          "work/tmp/pdfs/section23-outline-106.png": "8bf19671bd778c763a96d3a8e53e0e708f266f57ffde8ae1bddc1da3f2e6dda6"
+        }
+      },
+      "preceding_review_hash": "8346deaf21cb242d06ef9141a0c102c983bb47ec6420da337c10bab98c5184a3",
+      "reconciled_previous_reviews": {
+        "Section23SourceComparison-2026-10-27.json": "1fc79469f93a83f712e7fa7a377d6f23738f7a194f9095b4ae8327b65da4b007",
+        "NumberedRemarksSourceComparison-2026-10-27.json": "578069798e4d8a2858dd9bba9c232fc46e63583de832de29d7250f66c887de47",
+        "Section23EndpointAsymptoticSourceComparison-2026-10-31.json": "8346deaf21cb242d06ef9141a0c102c983bb47ec6420da337c10bab98c5184a3"
+      },
+      "validation_lean_sources": {
+        "files": 4849,
+        "sha256": "e29c3a59bdd641140396b4e1a08d964f4cafd9f20a12ed0f5761b3bbc6913992"
+      },
+      "validation_reused_from_commit": "187a774df4feadf6559c1a25f240e5ccfd1a4cfe",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 5319,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section23EndpointAsymptoticFullCheck.log",
+        "log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac"
+      },
+      "source_record_sha256": "720c0e3ecbf07413371c86d1afd3c9bcd6d73be3c150dc3ac1b0094d6343453c"
     }
   }
 }

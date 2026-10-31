@@ -64,14 +64,20 @@ with no partial or pending groups in that local ledger. It preserves the
 original physical flow and approximation-solution definitions, full norms,
 common domains, arbitrary-Hilbert estimates and precise nonextension scopes.
 The remaining domain notation is corrected directly. No new proof or
-refutation is added. The next ordered comparison is Section 23.
+refutation is added.
 
 The [positive endpoint comparisons](../NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean)
 now retain both original periodic endpoints and every periodic-gap sample
 in Section 23's higher-action asymptotic. They include closed gaps,
 both signed tails and all natural spectral powers, with the printed
-odd-level convention intact. The complete ordered Section 23 comparison
-remains in progress.
+odd-level convention intact.
+The [ordered Section 23 ledger](SECTION_23_ASSERTIONS.md) now compares
+38 groups on pp. 103–106: 33 matched, three corrected and two contextual,
+with no partial or pending groups in that local ledger. It retains the
+original map, literal norms, common constants, weighted neighborhoods,
+smoothing scope and physical higher-action outline. The constant label
+and weight scope are corrected directly; prior formula corrections remain.
+No new proof or refutation is added in this comparison. Section 24 is next.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation
