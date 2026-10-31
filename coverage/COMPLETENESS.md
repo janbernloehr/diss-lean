@@ -173,7 +173,13 @@ sums retain the separation constant c and its power c^p explicitly.
 The correction operators include both Banach endpoints; the full
 transform remains finite 1 < p < infinity. Six definitions, fourteen
 positive theorems and three examples add no new refutation.
-The ordered Appendix C comparison remains in progress.
+The [ordered Appendix C ledger](APPENDIX_C_ASSERTIONS.md)
+compares nine groups: six matched, two corrected and one contextual.
+It retains actual convergent operators, the corrected boundedness
+statement, direct F/G label correction and explicit c and c^p.
+Only the correction operators include the Banach endpoints.
+Historical refutations and broader qualifications remain unchanged.
+Appendix D is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

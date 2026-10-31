@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T05:27:13.434185+00:00",
-  "base_commit": "2a7dfe99e1582d53c19b168aa8be49bc9db60291",
+  "published_utc": "2026-10-31T05:27:38.771356+00:00",
+  "base_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 186,
-    "module_hash_checks": 4032,
-    "distinct_modules": 2065
+    "review_records": 187,
+    "module_hash_checks": 4042,
+    "distinct_modules": 2068
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "2a7dfe99e1582d53c19b168aa8be49bc9db60291",
-    "validated_state": "Fresh full check after the separate Appendix C correction operators and three public examples.",
+    "base_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
+    "validated_state": "Appendix C ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix C separate-correction check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8584,
     "public_examples": 7697,
@@ -44,8 +44,9 @@
       "sha256": "30296f13d8409b89893d6313ea478802698424bad6f25f2b76470caf95b86e30"
     },
     "full_gate_log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix C and broader completion qualifications remain open.",
-    "full_gate_log": "work/AppendixCSeparateCorrectionsFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixCSeparateCorrectionsFullCheck.log",
+    "validation_reused_from_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a"
   },
   "named_statements": [
     {
@@ -63203,6 +63204,468 @@
         "log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a"
       },
       "source_record_sha256": "8dd51bd781994f0d8239bf5a14b950709a15a672803c5ded3b4b01ee5ee59574"
+    },
+    "AppendixCOrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
+      "updated_utc": "2026-10-31T05:27:38.709047+00:00",
+      "source_lines": [
+        [
+          10247,
+          10315
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "C-001",
+          "source_lines": [
+            10249,
+            10250
+          ],
+          "requirement": "Context and classical discrete Hilbert transform",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The appendix recalls the discrete Hilbert transform on complex sequence spaces and then treats two perturbed lattices."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceLemmaC1_bounded",
+            "NLS.Fourier.sourceLemmaC2"
+          ],
+          "qualification": "The literature attribution is contextual; the public implementation supplies the actual operators and convergent series."
+        },
+        {
+          "ordered_group": "C-002",
+          "source_lines": [
+            10252,
+            10260
+          ],
+          "requirement": "C.1 corrected bounded transform statement",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every finite 1<p<infinity, there is a unique bounded complex linear operator whose output is the genuinely convergent omitted-diagonal series sum x_m/(m-n).",
+            "The signed denominator, all infinite-support inputs and absolute convergence are retained."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceHilbert_hasSum",
+            "NLS.Fourier.sourceLemmaC1_bounded",
+            "NLS.Fourier.summable_norm_hilbertSeries_of_finite"
+          ],
+          "qualification": "Use the corrected boundedness statement. The existing review records the historical correction to the printed isomorphism assertion; that evidence is preserved unchanged. This comparison adds no refutation and does not repeat or extend the obstruction proof."
+        },
+        {
+          "ordered_group": "C-003",
+          "source_lines": [
+            10263,
+            10264
+          ],
+          "requirement": "Unperturbed lattice normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The reference lattice is sigma0_n=pi*n; the modified transform includes the outer factor pi.",
+            "A common constant complex displacement in both lattices gives precisely the ordinary transform."
+          ],
+          "declarations": [
+            "NLS.Fourier.hilbertLattice",
+            "NLS.Fourier.modifiedHilbert_common_constant"
+          ],
+          "qualification": "The common displacement cancels in every off-diagonal denominator. The omitted diagonal stays omitted even when the two displaced lattices differ there."
+        },
+        {
+          "ordered_group": "C-004",
+          "source_lines": [
+            10275,
+            10278
+          ],
+          "requirement": "C.2 displacement and separation assumptions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Both displacement sequences may be arbitrary bounded complex sequences.",
+            "For c>0, the exact hypothesis is c^(-1)*norm(m-n)<=norm(rho_m-sigma_n) for every m!=n."
+          ],
+          "declarations": [
+            "NLS.Fourier.HilbertLatticeSeparated",
+            "NLS.Fourier.sourceLemmaC2"
+          ],
+          "qualification": "No smallness, reality, ordering or finite-support assumption is introduced. The separation is required only off the diagonal."
+        },
+        {
+          "ordered_group": "C-005",
+          "source_lines": [
+            10280,
+            10287
+          ],
+          "requirement": "Actual modified transform and uniform bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each finite 1<p<infinity, the actual series pi*sum_{m!=n} x_m/(rho_m-sigma_n) defines a unique bounded complex linear operator.",
+            "One bound is chosen before the two lattices from p,c and displacement norm bounds S,R; it is C_p+c*(S+R)*norm(square kernel)."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceModifiedHilbert_hasSum",
+            "NLS.Fourier.sourceLemmaC2",
+            "NLS.Fourier.norm_modifiedHilbert_le",
+            "NLS.Fourier.exists_modifiedHilbert_uniform_bound"
+          ],
+          "qualification": "The quantifier order is uniform over every separated pair with these norm bounds. The full transform is asserted only for finite 1<p<infinity; the correction operators separately extend to both Banach endpoints."
+        },
+        {
+          "ordered_group": "C-006",
+          "source_lines": [
+            10290,
+            10294
+          ],
+          "requirement": "Reciprocal kernel identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Subtracting the ordinary kernel gives exactly (s_n-r_m)/((m-n)*(rho_m-sigma_n)).",
+            "The separate two-denominator kernel is bounded by c times the summable reciprocal-square kernel, and the joint correction bound uses c*(norm(s)+norm(r))."
+          ],
+          "declarations": [
+            "NLS.Fourier.modifiedHilbertKernel_sub",
+            "NLS.Fourier.norm_modifiedHilbertKernel_sub_le",
+            "NLS.Fourier.norm_modifiedHilbertSecondKernel_le"
+          ],
+          "qualification": "The zero diagonal and signed difference are accounted for before forming the absolutely convergent row sums. The new separate-kernel bound passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "C-007",
+          "source_lines": [
+            10296,
+            10302
+          ],
+          "requirement": "Separate F/G operators with corrected labels",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "F uses the output displacement s_n and G uses the input displacement r_m in the two exact source series.",
+            "The resulting bounded operators satisfy correction=F-G and A=H+F-G."
+          ],
+          "declarations": [
+            "NLS.Fourier.modifiedHilbertF",
+            "NLS.Fourier.modifiedHilbertG",
+            "NLS.Fourier.modifiedHilbertF_hasSum",
+            "NLS.Fourier.modifiedHilbertG_hasSum",
+            "NLS.Fourier.modifiedHilbertCorrection_eq_F_sub_G",
+            "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G"
+          ],
+          "qualification": "Correct the swapped labels in the displayed decomposition directly. Both operators depend on both lattices; the labels specify which displacement appears in the numerator. These positive theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "C-008",
+          "source_lines": [
+            10305,
+            10311
+          ],
+          "requirement": "Pointwise and powered norm estimates with explicit separation constant",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The pointwise F bound is c*norm(s)*the positive square-kernel convolution of abs(x).",
+            "At every finite Banach exponent, the powered sum is bounded by c^p*norm(s)^p times the powered majorant sum.",
+            "The final F estimate retains c^p*norm(s)^p*norm(square kernel)^p*norm(x)^p explicitly."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_modifiedHilbertF_apply_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le_majorant",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le"
+          ],
+          "qualification": "The source already displays c^p in the first estimate. Keep it explicit in the final estimate as well instead of hiding its dependence in C_p. All powered sums converge; these positive theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "C-009",
+          "source_lines": [
+            10313,
+            10314
+          ],
+          "requirement": "Young convolution estimate and analogous G estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Young convolution with the summable reciprocal-square kernel bounds the majorant on every Banach coefficient space.",
+            "F and G individually have norm bounds c*norm(s or r)*norm(square kernel)*norm(x), including p=1 and infinity; the finite-p G power estimate is explicit."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_hilbertSquareMajorant_le",
+            "NLS.Fourier.norm_modifiedHilbertF_le",
+            "NLS.Fourier.norm_modifiedHilbertG_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertG_rpow_le"
+          ],
+          "qualification": "The finite-p powered G sum uses the input displacement norm. Adding the ordinary transform gives the original finite 1<p<infinity C.2 scope. These positive theorems passed their full check and are committed and pushed."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "C-001",
+          "source_lines": [
+            10249,
+            10250
+          ],
+          "requirement": "Context and classical discrete Hilbert transform",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The appendix recalls the discrete Hilbert transform on complex sequence spaces and then treats two perturbed lattices."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceLemmaC1_bounded",
+            "NLS.Fourier.sourceLemmaC2"
+          ],
+          "qualification": "The literature attribution is contextual; the public implementation supplies the actual operators and convergent series."
+        },
+        {
+          "ordered_group": "C-002",
+          "source_lines": [
+            10252,
+            10260
+          ],
+          "requirement": "C.1 corrected bounded transform statement",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For every finite 1<p<infinity, there is a unique bounded complex linear operator whose output is the genuinely convergent omitted-diagonal series sum x_m/(m-n).",
+            "The signed denominator, all infinite-support inputs and absolute convergence are retained."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceHilbert_hasSum",
+            "NLS.Fourier.sourceLemmaC1_bounded",
+            "NLS.Fourier.summable_norm_hilbertSeries_of_finite"
+          ],
+          "qualification": "Use the corrected boundedness statement. The existing review records the historical correction to the printed isomorphism assertion; that evidence is preserved unchanged. This comparison adds no refutation and does not repeat or extend the obstruction proof."
+        },
+        {
+          "ordered_group": "C-003",
+          "source_lines": [
+            10263,
+            10264
+          ],
+          "requirement": "Unperturbed lattice normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The reference lattice is sigma0_n=pi*n; the modified transform includes the outer factor pi.",
+            "A common constant complex displacement in both lattices gives precisely the ordinary transform."
+          ],
+          "declarations": [
+            "NLS.Fourier.hilbertLattice",
+            "NLS.Fourier.modifiedHilbert_common_constant"
+          ],
+          "qualification": "The common displacement cancels in every off-diagonal denominator. The omitted diagonal stays omitted even when the two displaced lattices differ there."
+        },
+        {
+          "ordered_group": "C-004",
+          "source_lines": [
+            10275,
+            10278
+          ],
+          "requirement": "C.2 displacement and separation assumptions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Both displacement sequences may be arbitrary bounded complex sequences.",
+            "For c>0, the exact hypothesis is c^(-1)*norm(m-n)<=norm(rho_m-sigma_n) for every m!=n."
+          ],
+          "declarations": [
+            "NLS.Fourier.HilbertLatticeSeparated",
+            "NLS.Fourier.sourceLemmaC2"
+          ],
+          "qualification": "No smallness, reality, ordering or finite-support assumption is introduced. The separation is required only off the diagonal."
+        },
+        {
+          "ordered_group": "C-005",
+          "source_lines": [
+            10280,
+            10287
+          ],
+          "requirement": "Actual modified transform and uniform bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For each finite 1<p<infinity, the actual series pi*sum_{m!=n} x_m/(rho_m-sigma_n) defines a unique bounded complex linear operator.",
+            "One bound is chosen before the two lattices from p,c and displacement norm bounds S,R; it is C_p+c*(S+R)*norm(square kernel)."
+          ],
+          "declarations": [
+            "NLS.Fourier.sourceModifiedHilbert_hasSum",
+            "NLS.Fourier.sourceLemmaC2",
+            "NLS.Fourier.norm_modifiedHilbert_le",
+            "NLS.Fourier.exists_modifiedHilbert_uniform_bound"
+          ],
+          "qualification": "The quantifier order is uniform over every separated pair with these norm bounds. The full transform is asserted only for finite 1<p<infinity; the correction operators separately extend to both Banach endpoints."
+        },
+        {
+          "ordered_group": "C-006",
+          "source_lines": [
+            10290,
+            10294
+          ],
+          "requirement": "Reciprocal kernel identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Subtracting the ordinary kernel gives exactly (s_n-r_m)/((m-n)*(rho_m-sigma_n)).",
+            "The separate two-denominator kernel is bounded by c times the summable reciprocal-square kernel, and the joint correction bound uses c*(norm(s)+norm(r))."
+          ],
+          "declarations": [
+            "NLS.Fourier.modifiedHilbertKernel_sub",
+            "NLS.Fourier.norm_modifiedHilbertKernel_sub_le",
+            "NLS.Fourier.norm_modifiedHilbertSecondKernel_le"
+          ],
+          "qualification": "The zero diagonal and signed difference are accounted for before forming the absolutely convergent row sums. The new separate-kernel bound passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "C-007",
+          "source_lines": [
+            10296,
+            10302
+          ],
+          "requirement": "Separate F/G operators with corrected labels",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "F uses the output displacement s_n and G uses the input displacement r_m in the two exact source series.",
+            "The resulting bounded operators satisfy correction=F-G and A=H+F-G."
+          ],
+          "declarations": [
+            "NLS.Fourier.modifiedHilbertF",
+            "NLS.Fourier.modifiedHilbertG",
+            "NLS.Fourier.modifiedHilbertF_hasSum",
+            "NLS.Fourier.modifiedHilbertG_hasSum",
+            "NLS.Fourier.modifiedHilbertCorrection_eq_F_sub_G",
+            "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G"
+          ],
+          "qualification": "Correct the swapped labels in the displayed decomposition directly. Both operators depend on both lattices; the labels specify which displacement appears in the numerator. These positive theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "C-008",
+          "source_lines": [
+            10305,
+            10311
+          ],
+          "requirement": "Pointwise and powered norm estimates with explicit separation constant",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The pointwise F bound is c*norm(s)*the positive square-kernel convolution of abs(x).",
+            "At every finite Banach exponent, the powered sum is bounded by c^p*norm(s)^p times the powered majorant sum.",
+            "The final F estimate retains c^p*norm(s)^p*norm(square kernel)^p*norm(x)^p explicitly."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_modifiedHilbertF_apply_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le_majorant",
+            "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le"
+          ],
+          "qualification": "The source already displays c^p in the first estimate. Keep it explicit in the final estimate as well instead of hiding its dependence in C_p. All powered sums converge; these positive theorems passed their full check and are committed and pushed."
+        },
+        {
+          "ordered_group": "C-009",
+          "source_lines": [
+            10313,
+            10314
+          ],
+          "requirement": "Young convolution estimate and analogous G estimate",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Young convolution with the summable reciprocal-square kernel bounds the majorant on every Banach coefficient space.",
+            "F and G individually have norm bounds c*norm(s or r)*norm(square kernel)*norm(x), including p=1 and infinity; the finite-p G power estimate is explicit."
+          ],
+          "declarations": [
+            "NLS.Fourier.norm_hilbertSquareMajorant_le",
+            "NLS.Fourier.norm_modifiedHilbertF_le",
+            "NLS.Fourier.norm_modifiedHilbertG_le",
+            "NLS.Fourier.tsum_norm_modifiedHilbertG_rpow_le"
+          ],
+          "qualification": "The finite-p powered G sum uses the input displacement norm. Adding the ordinary transform gives the original finite 1<p<infinity C.2 scope. These positive theorems passed their full check and are committed and pushed."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 6,
+        "corrected": 2,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/Fourier/AppendixCSourceTransform.lean": "48f1260373df01d224272336f5af63e86e1f0d4720628bad34371bc23e82ac1d",
+        "NLS/Fourier/ModifiedHilbertKernel.lean": "5a8a407c3c95fd6a34a3d8e2e78ee807d109e3602f83fdd25763dbe39a657282",
+        "NLS/Fourier/ModifiedHilbert.lean": "fa2242a35aecad364050c392a15f873c6abc5d0db9c7cb699ff49895c7adb359",
+        "NLS/Fourier/SampledHilbert.lean": "71fe6c88a4977e98d4a03c18611f97045b64b653db42609c04b26f4c0513288b",
+        "NLS/Fourier/HilbertSeries.lean": "95487b634c022a1a1850a9f65ba22746399103f2f338f0d7cad1c26df5c6c0f7",
+        "NLS/Fourier/HilbertBoundedness.lean": "2565bbf0f735ca68aa83a25c1912d9b0a7f128de05ed9b2d0330d18f36668a4f",
+        "NLS/Fourier/HilbertSquare.lean": "b1901e5622a997eaf021fe5f00c19704a14e5cb898215723b82583d7594d18d5",
+        "NLS/Fourier/PerturbedHilbertRows.lean": "e69d75926b6dcd391bda7f303bfddca2a40929df4fbc2b6e6555b6ff55dccfbb",
+        "NLS/SequenceSpaces/Multiplier.lean": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36",
+        "NLS/Fourier/ModifiedHilbertSeparateCorrections.lean": "5181823060c3bb94781d23477da0f9a74c490378fa4a53ba3142a450d256f65d"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Fourier/AppendixCSourceTransform.lean",
+        "NLS/Fourier/ModifiedHilbertKernel.lean",
+        "NLS/Fourier/ModifiedHilbert.lean",
+        "NLS/Fourier/SampledHilbert.lean",
+        "NLS/Fourier/HilbertSeries.lean",
+        "NLS/Fourier/HilbertBoundedness.lean",
+        "NLS/Fourier/HilbertSquare.lean",
+        "NLS/Fourier/PerturbedHilbertRows.lean",
+        "NLS/SequenceSpaces/Multiplier.lean",
+        "NLS/Fourier/ModifiedHilbertSeparateCorrections.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_C_ASSERTIONS.md",
+      "ordered_inventory_sha256": "3de37419a64dd288ddba71bbebc1c528f37994ec75815884d15f791aaaf975d1",
+      "resolved_declarations": [
+        "NLS.Fourier.HilbertLatticeSeparated",
+        "NLS.Fourier.exists_modifiedHilbert_uniform_bound",
+        "NLS.Fourier.hilbertLattice",
+        "NLS.Fourier.modifiedHilbertCorrection_eq_F_sub_G",
+        "NLS.Fourier.modifiedHilbertF",
+        "NLS.Fourier.modifiedHilbertF_hasSum",
+        "NLS.Fourier.modifiedHilbertG",
+        "NLS.Fourier.modifiedHilbertG_hasSum",
+        "NLS.Fourier.modifiedHilbertKernel_sub",
+        "NLS.Fourier.modifiedHilbert_common_constant",
+        "NLS.Fourier.modifiedHilbert_eq_H_add_F_sub_G",
+        "NLS.Fourier.norm_hilbertSquareMajorant_le",
+        "NLS.Fourier.norm_modifiedHilbertF_apply_le",
+        "NLS.Fourier.norm_modifiedHilbertF_le",
+        "NLS.Fourier.norm_modifiedHilbertG_le",
+        "NLS.Fourier.norm_modifiedHilbertKernel_sub_le",
+        "NLS.Fourier.norm_modifiedHilbertSecondKernel_le",
+        "NLS.Fourier.norm_modifiedHilbert_le",
+        "NLS.Fourier.sourceHilbert_hasSum",
+        "NLS.Fourier.sourceLemmaC1_bounded",
+        "NLS.Fourier.sourceLemmaC2",
+        "NLS.Fourier.sourceModifiedHilbert_hasSum",
+        "NLS.Fourier.summable_norm_hilbertSeries_of_finite",
+        "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le",
+        "NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le_majorant",
+        "NLS.Fourier.tsum_norm_modifiedHilbertG_rpow_le"
+      ],
+      "declaration_inventory_count": 44742,
+      "qualification": "The ordered Appendix C comparison covers nine groups on printed pp.125–126: six matched, two directly corrected and one contextual, with no partial or pending groups in this local comparison. C.1 uses the corrected boundedness statement for every finite 1<p<infinity, with actual absolutely convergent omitted-diagonal rows. C.2 retains arbitrary bounded complex displacements, the exact separation, the pi normalization and a uniform operator bound. The two correction operators have their literal rows and A=H+F-G, directly correcting the swapped source labels. Separate norm and finite-p power estimates retain c and c^p explicitly. Only the corrections include both Banach endpoints. This documentation step adds no Lean proof or refutation. Historical corrections, refutations and broader completeness qualifications remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          125,
+          126
+        ],
+        "images": {
+          "work/appendix-b-source.png": "0ac32ac101a73c95e5194b537c1194ced64be8beb691917f532f5d1763ab1dfc",
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc"
+        }
+      },
+      "preceding_review_hash": "8dd51bd781994f0d8239bf5a14b950709a15a672803c5ded3b4b01ee5ee59574",
+      "reconciled_previous_reviews": {
+        "work/AppendixCSourceComparison-2026-10-27.json": "1c082e691eeeb7ab0629d9f3d7b1e8b3473aa586beb6d2da06b11cd5e835e4ad",
+        "work/AppendixCSeparateCorrectionsSourceComparison-2026-10-31.json": "8dd51bd781994f0d8239bf5a14b950709a15a672803c5ded3b4b01ee5ee59574"
+      },
+      "validation_lean_sources": {
+        "files": 4861,
+        "sha256": "30296f13d8409b89893d6313ea478802698424bad6f25f2b76470caf95b86e30"
+      },
+      "validation_reused_from_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 80319,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixCSeparateCorrectionsFullCheck.log",
+        "log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a"
+      },
+      "source_record_sha256": "90bedbd5d74d65a9d68fbccdef02ea4d69c70022dc8b4edc12b2ded3e176e1b5"
     }
   }
 }

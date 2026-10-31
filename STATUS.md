@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: separate Appendix C corrections
+## Current milestone: ordered Appendix C comparison
+
+The [ordered Appendix C comparison](coverage/APPENDIX_C_ASSERTIONS.md)
+covers nine groups on pp.125–126: six matched, two corrected and one
+contextual. No partial or pending groups remain in this local ledger.
+
+C.1 retains the corrected bounded transform with actual convergent
+omitted-diagonal rows for every finite 1 < p < infinity. C.2 retains
+arbitrary bounded complex displacements, exact separation, the outer
+pi factor and a uniform operator bound.
+
+The separate correction operators satisfy A = H + F - G with the
+corrected labels. Their norm and powered-sum estimates retain c and
+c^p explicitly. The corrections include both Banach endpoints; the
+full transform keeps its original finite exponent scope. This
+documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit 84c1afb63ef673079ec78066d2e9fc55c2ce1e1a: 8,584 build jobs, 7,697 public examples and an axiom audit of 44,742 NLS declarations, with 21 inherited warnings and zero new. All 26 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix D. The [broader completion qualifications](coverage/COMPLETENESS.md)
+remain; the local counts do not certify the dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: separate Appendix C corrections
 
 The [separate Appendix C corrections](NLS/Fourier/ModifiedHilbertSeparateCorrections.lean)
 now give the two operators used in the proof of C.2. F uses the output
