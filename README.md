@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix A comparison](coverage/APPENDIX_A_ASSERTIONS.md)
-records 27 matched groups, four direct corrections and one contextual
-passage. Original distributions, physical normalization and exponent
-endpoints are retained. Appendix B is next;
+Latest step: the [Appendix B proof steps](NLS/SequenceSpaces/AppendixBProofSteps.lean)
+make the intermediate exponent conditions and corrected outer gamma
+power explicit. Three positive theorems and two examples retain the
+final constant one. The ordered comparison continues;
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

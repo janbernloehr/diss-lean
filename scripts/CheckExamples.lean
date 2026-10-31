@@ -73292,3 +73292,23 @@ example (Q : SourceSection28Data D A B U T S)
   linarith
 
 end Section28SmallBallExamples
+
+section AppendixBProofStepsExamples
+open NLS NLS.Coeff
+open scoped ENNReal
+
+-- The two powered Young relations recover the case below the Banach range.
+example : MixedYoungRelation (1/2) (1/2) (1/2) (1/2) (1/2) (1/2) := by
+  apply mixedYoungRelation_iff_exists_intermediate.mpr
+  refine ⟨1/2, ?_, ?_⟩ <;> constructor <;> norm_num
+
+-- Unequal nesting powers retain the fourth power of each input norm.
+example (a : Coeff (ENNReal.ofReal 2)) (b c : Coeff (ENNReal.ofReal (8/5))) :
+    Summable (fun k : ℤ => mixedYoungRow 1 2 a b c k ^ (2:ℝ)) ∧
+      (∑' k : ℤ, mixedYoungRow 1 2 a b c k ^ (2:ℝ)) ≤
+        ‖a‖ ^ (4:ℝ) * ‖b‖ ^ (4:ℝ) * ‖c‖ ^ (4:ℝ) := by
+  have h : MixedYoungRelation 1 2 4 2 (8/5) (8/5) := by
+    constructor <;> norm_num
+  simpa only [show (4:ℝ)/2 = 2 by norm_num] using mixedYoung_outer_sum_le h a b c
+
+end AppendixBProofStepsExamples

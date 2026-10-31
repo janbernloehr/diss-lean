@@ -149,7 +149,16 @@ the original distribution spaces, physical normalization and all
 stated exponent ranges. Direct corrections preserve weighted-c0
 convergence at infinity, chirp period rescaling, the Holder product
 factor C_p <= 2p and the exact Section 2 weight. No new refutation
-is added. Appendix B is next.
+is added.
+
+The [Appendix B proof steps](../NLS/SequenceSpaces/AppendixBProofSteps.lean)
+now expose both directions of the intermediate exponent conditions.
+The convergent outer sum is bounded by the gamma-th power of the
+input norm product; taking its positive gamma-th root yields B.3.
+This direct proof-normalization correction retains constant one and
+all finite positive input exponents allowed by the statement, including
+those below one. Three positive theorems and two examples add no
+new refutation. The ordered Appendix B comparison remains in progress.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

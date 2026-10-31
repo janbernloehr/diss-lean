@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: ordered Appendix A comparison
+## Current milestone: Appendix B proof steps
+
+The [Appendix B proof steps](NLS/SequenceSpaces/AppendixBProofSteps.lean)
+now make the intermediate exponent and outer power explicit.
+
+Under (B.2), q >= beta holds exactly when gamma >= p1. The combined
+mixed exponent condition is equivalent to the existence of an
+intermediate exponent satisfying both powered Young relations.
+
+The convergent outer sum is bounded by the gamma-th power of the
+product of input norms. Its positive gamma-th root is the stated
+left side of B.3. This directly corrects the proof normalization;
+the final constant remains one.
+
+Three positive theorems and two examples retain finite positive
+exponents, including inputs below one and unequal nesting powers.
+No new refutation is added.
+
+The full check passed: 8,583 build jobs, 7,694 public examples and an axiom audit of 44,709 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Appendix B comparison continues. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix A comparison
 
 The [ordered Appendix A comparison](coverage/APPENDIX_A_ASSERTIONS.md)
 covers 32 groups on pp.121–124: 27 matched, four corrected and one

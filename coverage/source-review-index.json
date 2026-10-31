@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T04:42:24.435502+00:00",
-  "base_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
+  "published_utc": "2026-10-31T05:06:25.914487+00:00",
+  "base_commit": "526f3100dff8cb3e8fa86974159e694590dbe0d4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 183,
-    "module_hash_checks": 4013,
-    "distinct_modules": 2061
+    "review_records": 184,
+    "module_hash_checks": 4018,
+    "distinct_modules": 2062
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
-    "validated_state": "Appendix A ordered comparison changes documentation only. The exact Lean snapshot retains the successful Section 28 positive small-ball proof check.",
+    "base_commit": "526f3100dff8cb3e8fa86974159e694590dbe0d4",
+    "validated_state": "Fresh full check after the positive Appendix B proof-step theorems and two public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8582,
-    "public_examples": 7692,
-    "transitive_NLS_declarations": 44706,
+    "build_jobs": 8583,
+    "public_examples": 7694,
+    "transitive_NLS_declarations": 44709,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 80905,
+    "gate_session": 35818,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4859,
-      "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
+      "files": 4860,
+      "sha256": "885dfdfef74ba6c38f5e9325ee82560fae26926dc18e4b45d900d28afd6ecbd0"
     },
-    "full_gate_log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/Section28SmallBallFullCheck.log",
-    "validation_reused_from_commit": "cec78d328ace97d075ff5832a67c11eb4da30118"
+    "full_gate_log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix B and broader completion qualifications remain open.",
+    "full_gate_log": "work/AppendixBProofStepsFullCheck.log"
   },
   "named_statements": [
     {
@@ -62458,6 +62457,97 @@
         "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
       },
       "source_record_sha256": "24ee3e630d442ea85073a9a86c0c4e0ca02ddccb554ae18ce5209b8c7e55c559"
+    },
+    "AppendixBProofStepsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "526f3100dff8cb3e8fa86974159e694590dbe0d4",
+      "updated_utc": "2026-10-31T05:06:25.863278+00:00",
+      "source_lines": [
+        [
+          10213,
+          10244
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10213,
+            10244
+          ],
+          "requirement": "Exact intermediate exponent conditions and corrected outer gamma power in the proof of B.3",
+          "reviewed_claims": [
+            "Under (B.2) with finite positive exponents, q>=beta is equivalent to gamma>=p1; the single mixed relation is equivalent to both powered Young relations for an intermediate exponent.",
+            "The outer sum is summable and bounded by norm(a)^gamma*norm(b)^gamma*norm(c)^gamma. Its positive gamma-th root is the stated B.3 left side, retaining final constant one."
+          ],
+          "declarations": [
+            "NLS.mixedYoung_intermediate_order_iff",
+            "NLS.mixedYoungRelation_iff_exists_intermediate",
+            "NLS.Coeff.mixedYoung_outer_sum_le",
+            "NLS.MixedYoungRelation.exists_intermediate",
+            "NLS.Coeff.mixedYoung_summable_and_le",
+            "NLS.Coeff.sourceLemmaB3_positive"
+          ],
+          "qualification": "Three positive theorems expose the exact proof steps of B.3. Under (B.2), q>=beta is equivalent to gamma>=p1. The single mixed exponent condition is equivalent to the existence of an intermediate exponent satisfying both powered Young relations. The convergent outer sum is bounded by the gamma-th power of the product of input norms, so its positive gamma-th root is the left side in B.3. This directly corrects the proof normalization and retains constant one. Finite positive exponents, including input exponents below one, are retained. Two examples cover the below-Banach case and unequal nesting powers. No new refutation is added. The ordered Appendix B comparison and broader completeness qualifications remain open."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/AppendixBSourceInequalities.lean": "bd6800f34b17882af061a295582d0177aa12d4463b8746731b19124c391f793e",
+        "NLS/SequenceSpaces/MixedYoungExponents.lean": "152777146475a5e12c364bae10ea0264f229adbb14ea9a7fffa0aced1837a559",
+        "NLS/SequenceSpaces/MixedYoung.lean": "355cc6671375c1d34615cf56470d4dd102aa3c72ee8968faed3e9a8a9c6833ea",
+        "NLS/SequenceSpaces/PowerYoung.lean": "2321fe290f86e14bf3b09e58b6f3ca35e47edc4d2c39ef1736a5a0296ec04cf6",
+        "NLS/SequenceSpaces/AppendixBProofSteps.lean": "6bf4371bdf41dc40eb2cb6df3ef55948b95df972dd2f57f25c60dea80156b3af"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/SequenceSpaces/AppendixBSourceInequalities.lean",
+        "NLS/SequenceSpaces/MixedYoungExponents.lean",
+        "NLS/SequenceSpaces/MixedYoung.lean",
+        "NLS/SequenceSpaces/PowerYoung.lean",
+        "NLS/SequenceSpaces/AppendixBProofSteps.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 12 ordered Appendix B groups."
+      ],
+      "resolved_declarations": [
+        "NLS.mixedYoung_intermediate_order_iff",
+        "NLS.mixedYoungRelation_iff_exists_intermediate",
+        "NLS.Coeff.mixedYoung_outer_sum_le",
+        "NLS.MixedYoungRelation.exists_intermediate",
+        "NLS.Coeff.mixedYoung_summable_and_le",
+        "NLS.Coeff.sourceLemmaB3_positive"
+      ],
+      "declaration_inventory_count": 44709,
+      "qualification": "Three positive theorems expose the exact proof steps of B.3. Under (B.2), q>=beta is equivalent to gamma>=p1. The single mixed exponent condition is equivalent to the existence of an intermediate exponent satisfying both powered Young relations. The convergent outer sum is bounded by the gamma-th power of the product of input norms, so its positive gamma-th root is the left side in B.3. This directly corrects the proof normalization and retains constant one. Finite positive exponents, including input exponents below one, are retained. Two examples cover the below-Banach case and unequal nesting powers. No new refutation is added. The ordered Appendix B comparison and broader completeness qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          125
+        ],
+        "images": {
+          "work/appendix-b-source.png": "0ac32ac101a73c95e5194b537c1194ced64be8beb691917f532f5d1763ab1dfc"
+        }
+      },
+      "preceding_review_hash": "d2ea51026fee9dd9dd64656d58199fffea3bd2f6eac94384583736129d0ab593",
+      "validation_lean_sources": {
+        "files": 4860,
+        "sha256": "885dfdfef74ba6c38f5e9325ee82560fae26926dc18e4b45d900d28afd6ecbd0"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 35818,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixBProofStepsFullCheck.log",
+        "log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18"
+      },
+      "source_record_sha256": "8f644eb19c9a00c12a9e9f096754f576a59a159242ba6f7dee8b0c9dfc7ec963"
     }
   }
 }
