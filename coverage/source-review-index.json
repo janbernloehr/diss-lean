@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T05:06:25.914487+00:00",
-  "base_commit": "526f3100dff8cb3e8fa86974159e694590dbe0d4",
+  "published_utc": "2026-10-31T05:06:55.389329+00:00",
+  "base_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 184,
-    "module_hash_checks": 4018,
-    "distinct_modules": 2062
+    "review_records": 185,
+    "module_hash_checks": 4027,
+    "distinct_modules": 2063
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "526f3100dff8cb3e8fa86974159e694590dbe0d4",
-    "validated_state": "Fresh full check after the positive Appendix B proof-step theorems and two public examples.",
+    "base_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
+    "validated_state": "Appendix B ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix B positive proof-step check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8583,
     "public_examples": 7694,
@@ -44,8 +44,9 @@
       "sha256": "885dfdfef74ba6c38f5e9325ee82560fae26926dc18e4b45d900d28afd6ecbd0"
     },
     "full_gate_log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix B and broader completion qualifications remain open.",
-    "full_gate_log": "work/AppendixBProofStepsFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixBProofStepsFullCheck.log",
+    "validation_reused_from_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549"
   },
   "named_statements": [
     {
@@ -62548,6 +62549,539 @@
         "log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18"
       },
       "source_record_sha256": "8f644eb19c9a00c12a9e9f096754f576a59a159242ba6f7dee8b0c9dfc7ec963"
+    },
+    "AppendixBOrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
+      "updated_utc": "2026-10-31T05:06:55.335495+00:00",
+      "source_lines": [
+        [
+          10158,
+          10244
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "B-001",
+          "source_lines": [
+            10160,
+            10161
+          ],
+          "requirement": "Conjugate exponent convention",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source uses the usual reciprocal conjugate-exponent convention; B.1 uses finite conjugate exponents and B.2 admits infinity."
+          ],
+          "declarations": [
+            "NLS.sourceLemmaB1",
+            "NLS.Coeff.sourceLemmaB2"
+          ],
+          "qualification": "The introductory notation is interpreted separately at the stated ranges of each lemma; it does not define the zero powers in B.3."
+        },
+        {
+          "ordered_group": "B-002",
+          "source_lines": [
+            10163,
+            10169
+          ],
+          "requirement": "Lemma B.1, both reciprocal-series bounds",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every nonnegative shift alpha and finite conjugate pair p,q>1, the actual series over m>=1 is summable.",
+            "Its sum is at most (q+alpha)/(q-1)/(1+alpha)^q, which is at most p/(1+alpha)^(q-1)."
+          ],
+          "declarations": [
+            "NLS.sourceLemmaB1",
+            "NLS.ReciprocalSeries.shifted_reciprocal_series_bounds"
+          ],
+          "qualification": "Both printed constants and the alpha=0 case are retained. The natural-index implementation uses m=n+1 exactly."
+        },
+        {
+          "ordered_group": "B-003",
+          "source_lines": [
+            10171,
+            10171
+          ],
+          "requirement": "Integral comparison retaining the first summand",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The decreasing reciprocal-power series is bounded by its first summand plus the exact improper integral."
+          ],
+          "declarations": [
+            "NLS.ReciprocalSeries.tsum_nat_shifted_rpow_le",
+            "NLS.ReciprocalSeries.tsum_nat_succ_shifted_rpow_le",
+            "NLS.ReciprocalSeries.shifted_rpow_bound_le_simple"
+          ],
+          "qualification": "The first summand is retained before the algebraic simplification; no larger unspecified constant is substituted."
+        },
+        {
+          "ordered_group": "B-004",
+          "source_lines": [
+            10183,
+            10188
+          ],
+          "requirement": "Lemma B.2, full Young inequality",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every Banach Young triple, including every infinity endpoint, gives a unique target sequence with a genuine HasSum formula at each output frequency.",
+            "The convolution is absolutely convergent in each row and its target norm is at most the product of input norms, with exact bilinear operator norm one."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB2",
+            "NLS.Coeff.summable_norm_youngConvolution_terms",
+            "NLS.Coeff.norm_youngConvolutionCLM"
+          ],
+          "qualification": "The proof applies to arbitrary sequence inputs without finite-support assumptions; finite cutoffs and the lp Fatou property construct the actual limit."
+        },
+        {
+          "ordered_group": "B-005",
+          "source_lines": [
+            10191,
+            10192
+          ],
+          "requirement": "Transition to the nested three-sequence estimate",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The next result is a nested three-sequence version of the preceding Young estimate."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB3_positive"
+          ],
+          "qualification": "The prose reference to the preceding inequality is contextual. The following statement is compared using its actual nested magnitude formula."
+        },
+        {
+          "ordered_group": "B-006",
+          "source_lines": [
+            10194,
+            10210
+          ],
+          "requirement": "Lemma B.3, finite positive exponent formula",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For finite alpha,beta>0, gamma>=p1>=beta and p2,p3>=alpha with the printed reciprocal identity, all three nested sum levels converge.",
+            "The exact displayed bound has constant one and retains the indices k-l,l-m,m and powers beta/alpha,gamma/beta,1/gamma. Input exponents below one are allowed."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB3_positive",
+            "NLS.Coeff.mixedYoung_summable_and_le",
+            "NLS.Coeff.sourceLemmaB3_constant_sharp"
+          ],
+          "qualification": "The divisions require strictly positive auxiliary exponents. The source supplies no zero-exponent definition or separate infinity/supremum convention; the implemented statement is explicitly finite and positive. Historical diagnostics remain unchanged and no new refutation is added."
+        },
+        {
+          "ordered_group": "B-007",
+          "source_lines": [
+            10213,
+            10221
+          ],
+          "requirement": "Inner sequence and corrected outer gamma power",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The inner sequence d_l is the positive alpha-th root of the actual sum of |b(l-m)*c(m)|^alpha, with its proved target membership and norm bound.",
+            "The next displayed outer sum is bounded by norm(a)^gamma*norm(d)^gamma and ultimately by norm(a)^gamma*norm(b)^gamma*norm(c)^gamma. Its positive gamma-th root is the stated B.3 left side."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_powerConvolution",
+            "NLS.Coeff.mixedYoung_row_identity",
+            "NLS.Coeff.mixedYoung_outer_sum_le"
+          ],
+          "qualification": "Correct the proof wording to the gamma-th power of the left side. Powered complex sequences mean powered magnitudes in the actual construction. The new outer-sum theorem retains summability and constant one; the positive theorem passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "B-008",
+          "source_lines": [
+            10222,
+            10226
+          ],
+          "requirement": "First powered Young relation (B.2)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The first powered Young application uses the exact relation 1/beta+1/gamma=1/p1+1/q and exponents p1,q,gamma at least beta."
+          ],
+          "declarations": [
+            "NLS.MixedYoungRelation.exists_intermediate",
+            "NLS.PowerYoungRelation.youngRelation",
+            "NLS.Coeff.exists_powerConvolution"
+          ],
+          "qualification": "The powered exponents are Banach even when original exponents are below one. The intermediate q is a positive finite real number."
+        },
+        {
+          "ordered_group": "B-009",
+          "source_lines": [
+            10228,
+            10228
+          ],
+          "requirement": "Intermediate exponent order equivalence",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Under the exact first reciprocal identity and positive finite exponents, q>=beta is equivalent to gamma>=p1."
+          ],
+          "declarations": [
+            "NLS.mixedYoung_intermediate_order_iff"
+          ],
+          "qualification": "Both directions are proved by reciprocal order, not only the direction needed by the final inequality. The positive proof step passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "B-010",
+          "source_lines": [
+            10230,
+            10237
+          ],
+          "requirement": "Second powered Young estimate and (B.3)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The second powered Young application uses 1/alpha+1/q=1/p2+1/p3, with p2,p3,q at least alpha.",
+            "It bounds the norm of d by the product of the b and c norms and preserves the exact power-norm identities."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_powerConvolution",
+            "NLS.Coeff.norm_normPower",
+            "NLS.Coeff.mixedYoung_summable_and_le"
+          ],
+          "qualification": "All inner sums are proved convergent before the positive root and the second convolution are formed."
+        },
+        {
+          "ordered_group": "B-011",
+          "source_lines": [
+            10239,
+            10239
+          ],
+          "requirement": "Intermediate exponent at least alpha",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The second reciprocal identity and p2,p3>=alpha imply that the constructed intermediate exponent q is at least alpha."
+          ],
+          "declarations": [
+            "NLS.MixedYoungRelation.exists_intermediate"
+          ],
+          "qualification": "The construction uses the positive reciprocal 1/beta+1/gamma-1/p1, proves its bound by 1/alpha, and then inverts it. Its positivity is explicit."
+        },
+        {
+          "ordered_group": "B-012",
+          "source_lines": [
+            10239,
+            10244
+          ],
+          "requirement": "Equivalence of the combined and two intermediate relations",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The single mixed exponent condition is equivalent to the existence of a q satisfying both powered Young relations.",
+            "Adding (B.2) and (B.3) and cancelling 1/q recovers the printed combined identity; the order equivalence recovers gamma>=p1."
+          ],
+          "declarations": [
+            "NLS.mixedYoungRelation_iff_exists_intermediate",
+            "NLS.MixedYoungRelation.exists_intermediate"
+          ],
+          "qualification": "The new theorem provides the reverse implication as well as the existing constructive direction. The positive proof step passed its full check and is committed and pushed."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "B-001",
+          "source_lines": [
+            10160,
+            10161
+          ],
+          "requirement": "Conjugate exponent convention",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source uses the usual reciprocal conjugate-exponent convention; B.1 uses finite conjugate exponents and B.2 admits infinity."
+          ],
+          "declarations": [
+            "NLS.sourceLemmaB1",
+            "NLS.Coeff.sourceLemmaB2"
+          ],
+          "qualification": "The introductory notation is interpreted separately at the stated ranges of each lemma; it does not define the zero powers in B.3."
+        },
+        {
+          "ordered_group": "B-002",
+          "source_lines": [
+            10163,
+            10169
+          ],
+          "requirement": "Lemma B.1, both reciprocal-series bounds",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every nonnegative shift alpha and finite conjugate pair p,q>1, the actual series over m>=1 is summable.",
+            "Its sum is at most (q+alpha)/(q-1)/(1+alpha)^q, which is at most p/(1+alpha)^(q-1)."
+          ],
+          "declarations": [
+            "NLS.sourceLemmaB1",
+            "NLS.ReciprocalSeries.shifted_reciprocal_series_bounds"
+          ],
+          "qualification": "Both printed constants and the alpha=0 case are retained. The natural-index implementation uses m=n+1 exactly."
+        },
+        {
+          "ordered_group": "B-003",
+          "source_lines": [
+            10171,
+            10171
+          ],
+          "requirement": "Integral comparison retaining the first summand",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The decreasing reciprocal-power series is bounded by its first summand plus the exact improper integral."
+          ],
+          "declarations": [
+            "NLS.ReciprocalSeries.tsum_nat_shifted_rpow_le",
+            "NLS.ReciprocalSeries.tsum_nat_succ_shifted_rpow_le",
+            "NLS.ReciprocalSeries.shifted_rpow_bound_le_simple"
+          ],
+          "qualification": "The first summand is retained before the algebraic simplification; no larger unspecified constant is substituted."
+        },
+        {
+          "ordered_group": "B-004",
+          "source_lines": [
+            10183,
+            10188
+          ],
+          "requirement": "Lemma B.2, full Young inequality",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every Banach Young triple, including every infinity endpoint, gives a unique target sequence with a genuine HasSum formula at each output frequency.",
+            "The convolution is absolutely convergent in each row and its target norm is at most the product of input norms, with exact bilinear operator norm one."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB2",
+            "NLS.Coeff.summable_norm_youngConvolution_terms",
+            "NLS.Coeff.norm_youngConvolutionCLM"
+          ],
+          "qualification": "The proof applies to arbitrary sequence inputs without finite-support assumptions; finite cutoffs and the lp Fatou property construct the actual limit."
+        },
+        {
+          "ordered_group": "B-005",
+          "source_lines": [
+            10191,
+            10192
+          ],
+          "requirement": "Transition to the nested three-sequence estimate",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The next result is a nested three-sequence version of the preceding Young estimate."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB3_positive"
+          ],
+          "qualification": "The prose reference to the preceding inequality is contextual. The following statement is compared using its actual nested magnitude formula."
+        },
+        {
+          "ordered_group": "B-006",
+          "source_lines": [
+            10194,
+            10210
+          ],
+          "requirement": "Lemma B.3, finite positive exponent formula",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For finite alpha,beta>0, gamma>=p1>=beta and p2,p3>=alpha with the printed reciprocal identity, all three nested sum levels converge.",
+            "The exact displayed bound has constant one and retains the indices k-l,l-m,m and powers beta/alpha,gamma/beta,1/gamma. Input exponents below one are allowed."
+          ],
+          "declarations": [
+            "NLS.Coeff.sourceLemmaB3_positive",
+            "NLS.Coeff.mixedYoung_summable_and_le",
+            "NLS.Coeff.sourceLemmaB3_constant_sharp"
+          ],
+          "qualification": "The divisions require strictly positive auxiliary exponents. The source supplies no zero-exponent definition or separate infinity/supremum convention; the implemented statement is explicitly finite and positive. Historical diagnostics remain unchanged and no new refutation is added."
+        },
+        {
+          "ordered_group": "B-007",
+          "source_lines": [
+            10213,
+            10221
+          ],
+          "requirement": "Inner sequence and corrected outer gamma power",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The inner sequence d_l is the positive alpha-th root of the actual sum of |b(l-m)*c(m)|^alpha, with its proved target membership and norm bound.",
+            "The next displayed outer sum is bounded by norm(a)^gamma*norm(d)^gamma and ultimately by norm(a)^gamma*norm(b)^gamma*norm(c)^gamma. Its positive gamma-th root is the stated B.3 left side."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_powerConvolution",
+            "NLS.Coeff.mixedYoung_row_identity",
+            "NLS.Coeff.mixedYoung_outer_sum_le"
+          ],
+          "qualification": "Correct the proof wording to the gamma-th power of the left side. Powered complex sequences mean powered magnitudes in the actual construction. The new outer-sum theorem retains summability and constant one; the positive theorem passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "B-008",
+          "source_lines": [
+            10222,
+            10226
+          ],
+          "requirement": "First powered Young relation (B.2)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The first powered Young application uses the exact relation 1/beta+1/gamma=1/p1+1/q and exponents p1,q,gamma at least beta."
+          ],
+          "declarations": [
+            "NLS.MixedYoungRelation.exists_intermediate",
+            "NLS.PowerYoungRelation.youngRelation",
+            "NLS.Coeff.exists_powerConvolution"
+          ],
+          "qualification": "The powered exponents are Banach even when original exponents are below one. The intermediate q is a positive finite real number."
+        },
+        {
+          "ordered_group": "B-009",
+          "source_lines": [
+            10228,
+            10228
+          ],
+          "requirement": "Intermediate exponent order equivalence",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Under the exact first reciprocal identity and positive finite exponents, q>=beta is equivalent to gamma>=p1."
+          ],
+          "declarations": [
+            "NLS.mixedYoung_intermediate_order_iff"
+          ],
+          "qualification": "Both directions are proved by reciprocal order, not only the direction needed by the final inequality. The positive proof step passed its full check and is committed and pushed."
+        },
+        {
+          "ordered_group": "B-010",
+          "source_lines": [
+            10230,
+            10237
+          ],
+          "requirement": "Second powered Young estimate and (B.3)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The second powered Young application uses 1/alpha+1/q=1/p2+1/p3, with p2,p3,q at least alpha.",
+            "It bounds the norm of d by the product of the b and c norms and preserves the exact power-norm identities."
+          ],
+          "declarations": [
+            "NLS.Coeff.exists_powerConvolution",
+            "NLS.Coeff.norm_normPower",
+            "NLS.Coeff.mixedYoung_summable_and_le"
+          ],
+          "qualification": "All inner sums are proved convergent before the positive root and the second convolution are formed."
+        },
+        {
+          "ordered_group": "B-011",
+          "source_lines": [
+            10239,
+            10239
+          ],
+          "requirement": "Intermediate exponent at least alpha",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The second reciprocal identity and p2,p3>=alpha imply that the constructed intermediate exponent q is at least alpha."
+          ],
+          "declarations": [
+            "NLS.MixedYoungRelation.exists_intermediate"
+          ],
+          "qualification": "The construction uses the positive reciprocal 1/beta+1/gamma-1/p1, proves its bound by 1/alpha, and then inverts it. Its positivity is explicit."
+        },
+        {
+          "ordered_group": "B-012",
+          "source_lines": [
+            10239,
+            10244
+          ],
+          "requirement": "Equivalence of the combined and two intermediate relations",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The single mixed exponent condition is equivalent to the existence of a q satisfying both powered Young relations.",
+            "Adding (B.2) and (B.3) and cancelling 1/q recovers the printed combined identity; the order equivalence recovers gamma>=p1."
+          ],
+          "declarations": [
+            "NLS.mixedYoungRelation_iff_exists_intermediate",
+            "NLS.MixedYoungRelation.exists_intermediate"
+          ],
+          "qualification": "The new theorem provides the reverse implication as well as the existing constructive direction. The positive proof step passed its full check and is committed and pushed."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 8,
+        "corrected": 2,
+        "partial": 0,
+        "contextual": 2,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/AppendixBSourceInequalities.lean": "bd6800f34b17882af061a295582d0177aa12d4463b8746731b19124c391f793e",
+        "NLS/SequenceSpaces/MixedYoungExponents.lean": "152777146475a5e12c364bae10ea0264f229adbb14ea9a7fffa0aced1837a559",
+        "NLS/SequenceSpaces/MixedYoung.lean": "355cc6671375c1d34615cf56470d4dd102aa3c72ee8968faed3e9a8a9c6833ea",
+        "NLS/SequenceSpaces/PowerYoung.lean": "2321fe290f86e14bf3b09e58b6f3ca35e47edc4d2c39ef1736a5a0296ec04cf6",
+        "NLS/SequenceSpaces/ReciprocalSeries.lean": "401c16b943dfbc4c51629a3baff79b6cea19a1d38324b2f5d5532f9dfd2a7768",
+        "NLS/SequenceSpaces/YoungConvolution.lean": "d86a6eeda24b38ba1892a63efc3426c239ad66d49f6ea73ffcb340527469e722",
+        "NLS/SequenceSpaces/PowerCoefficients.lean": "399ecd240c2ee1f9f2b667b86c2b42370c69a2add771b67b83164dedec5514cc",
+        "NLS/SequenceSpaces/YoungInequality.lean": "096d4b6751138e8305c202ba7c6eecfa70036ccd237ea9d08e40adca8b2065e0",
+        "NLS/SequenceSpaces/AppendixBProofSteps.lean": "6bf4371bdf41dc40eb2cb6df3ef55948b95df972dd2f57f25c60dea80156b3af"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/SequenceSpaces/AppendixBSourceInequalities.lean",
+        "NLS/SequenceSpaces/MixedYoungExponents.lean",
+        "NLS/SequenceSpaces/MixedYoung.lean",
+        "NLS/SequenceSpaces/PowerYoung.lean",
+        "NLS/SequenceSpaces/ReciprocalSeries.lean",
+        "NLS/SequenceSpaces/YoungConvolution.lean",
+        "NLS/SequenceSpaces/PowerCoefficients.lean",
+        "NLS/SequenceSpaces/YoungInequality.lean",
+        "NLS/SequenceSpaces/AppendixBProofSteps.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_B_ASSERTIONS.md",
+      "ordered_inventory_sha256": "7588777504cae4b7c4cf09901bf0c01acde3f1d90297f1cc6275839b38239cef",
+      "resolved_declarations": [
+        "NLS.Coeff.exists_powerConvolution",
+        "NLS.Coeff.mixedYoung_outer_sum_le",
+        "NLS.Coeff.mixedYoung_row_identity",
+        "NLS.Coeff.mixedYoung_summable_and_le",
+        "NLS.Coeff.norm_normPower",
+        "NLS.Coeff.norm_youngConvolutionCLM",
+        "NLS.Coeff.sourceLemmaB2",
+        "NLS.Coeff.sourceLemmaB3_constant_sharp",
+        "NLS.Coeff.sourceLemmaB3_positive",
+        "NLS.Coeff.summable_norm_youngConvolution_terms",
+        "NLS.MixedYoungRelation.exists_intermediate",
+        "NLS.PowerYoungRelation.youngRelation",
+        "NLS.ReciprocalSeries.shifted_reciprocal_series_bounds",
+        "NLS.ReciprocalSeries.shifted_rpow_bound_le_simple",
+        "NLS.ReciprocalSeries.tsum_nat_shifted_rpow_le",
+        "NLS.ReciprocalSeries.tsum_nat_succ_shifted_rpow_le",
+        "NLS.mixedYoungRelation_iff_exists_intermediate",
+        "NLS.mixedYoung_intermediate_order_iff",
+        "NLS.sourceLemmaB1"
+      ],
+      "declaration_inventory_count": 44709,
+      "qualification": "The ordered Appendix B comparison covers 12 groups on printed pp.124–125: eight matched, two directly corrected and two contextual, with no partial or pending groups in this local comparison. B.1 retains both printed reciprocal-series bounds. B.2 retains all Banach Young triples, including infinity, genuine absolute convergence and constant one. B.3 retains the finite positive exponent formula, including inputs below one, all three convergence levels and constant one. Zero auxiliary exponents and an unstated infinity/supremum convention are not asserted. The proof outer sum is correctly the gamma-th power of the stated left side; both directions of the intermediate exponent conditions are proved. This documentation step adds no Lean proof or refutation. Historical diagnostics and broader completeness qualifications, including the four Section 28 complex intermediates, remain unchanged.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          124,
+          125
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-a-ordered-124.png": "add87f0bb80903a526d5b6312f9ab10e92059773bd3010dc4a417f955f9baaa2",
+          "work/appendix-b-source.png": "0ac32ac101a73c95e5194b537c1194ced64be8beb691917f532f5d1763ab1dfc"
+        }
+      },
+      "preceding_review_hash": "8f644eb19c9a00c12a9e9f096754f576a59a159242ba6f7dee8b0c9dfc7ec963",
+      "reconciled_previous_reviews": {
+        "work/AppendixBSourceComparison-2026-10-27.json": "d2ea51026fee9dd9dd64656d58199fffea3bd2f6eac94384583736129d0ab593",
+        "work/AppendixBProofStepsSourceComparison-2026-10-31.json": "8f644eb19c9a00c12a9e9f096754f576a59a159242ba6f7dee8b0c9dfc7ec963"
+      },
+      "validation_lean_sources": {
+        "files": 4860,
+        "sha256": "885dfdfef74ba6c38f5e9325ee82560fae26926dc18e4b45d900d28afd6ecbd0"
+      },
+      "validation_reused_from_commit": "862ad929f3588bf317eff9c659e8e63a1fef9549",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 35818,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixBProofStepsFullCheck.log",
+        "log_sha256": "aae8955b575a4a8a389f074590d89a2e7d294b82dba1726c23621b85b44ebd18"
+      },
+      "source_record_sha256": "dec855a2141373f07d977bb761734e17c5880625af28bad9104b912f06c0a529"
     }
   }
 }

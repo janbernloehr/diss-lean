@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: Appendix B proof steps
+## Current milestone: ordered Appendix B comparison
+
+The [ordered Appendix B comparison](coverage/APPENDIX_B_ASSERTIONS.md)
+covers 12 groups on pp.124–125: eight matched, two corrected and two
+contextual. No partial or pending groups remain in this local ledger.
+
+B.1 retains both printed bounds. B.2 includes every Banach Young
+triple and infinity endpoint, with absolute convergence and constant
+one. B.3 retains finite positive exponents, including inputs below
+one, and proves convergence of all three nested sum levels.
+
+The outer sum in the proof is the gamma-th power of the stated
+left side. Both directions of the intermediate exponent conditions
+are now explicit. Zero auxiliary exponents and an unstated infinity
+convention remain excluded. No new Lean proof or refutation is added
+in this documentation step.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit 862ad929f3588bf317eff9c659e8e63a1fef9549: 8,583 build jobs, 7,694 public examples and an axiom audit of 44,709 NLS declarations, with 21 inherited warnings and zero new. All 19 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix C. The four Section 28 complex intermediate passages
+and the [broader completion qualifications](coverage/COMPLETENESS.md)
+remain qualified; the local counts do not certify the dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix B proof steps
 
 The [Appendix B proof steps](NLS/SequenceSpaces/AppendixBProofSteps.lean)
 now make the intermediate exponent and outer power explicit.

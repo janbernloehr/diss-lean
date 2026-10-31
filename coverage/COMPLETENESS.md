@@ -158,7 +158,13 @@ input norm product; taking its positive gamma-th root yields B.3.
 This direct proof-normalization correction retains constant one and
 all finite positive input exponents allowed by the statement, including
 those below one. Three positive theorems and two examples add no
-new refutation. The ordered Appendix B comparison remains in progress.
+new refutation. The [ordered Appendix B ledger](APPENDIX_B_ASSERTIONS.md)
+compares 12 groups: eight matched, two corrected and two contextual.
+It retains both B.1 bounds, full B.2 Banach endpoints and the finite
+positive B.3 formula. All three nested sums converge, and the proof
+outer sum is correctly the gamma-th power of the stated left side.
+The zero auxiliary exponents and an unstated infinity/supremum
+convention remain excluded. Appendix C is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
