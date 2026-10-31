@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 24 comparison](coverage/SECTION_24_ASSERTIONS.md)
-records 14 matched groups, two corrections and four contextual groups.
-Original contours, exact factors, physical Hamiltonians and complex
-trace domains are retained. Corrections keep their precise proved scope,
-with no new refutations. Section 25 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [Section 25 diagonal estimate](NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
+uses the correct product of component norms, preserving the final constants
+one and eight. Two positive theorems and two examples pass the full checks.
+No new refutation is added. The ordered Section 25 comparison is next;
+[broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

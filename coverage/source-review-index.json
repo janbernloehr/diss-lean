@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T02:45:06.726562+00:00",
-  "base_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
+  "published_utc": "2026-10-31T03:05:55.348695+00:00",
+  "base_commit": "274dbf4340471e30f7cb7fe439e84b6092f7b43d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 173,
-    "module_hash_checks": 3801,
-    "distinct_modules": 1987
+    "review_records": 174,
+    "module_hash_checks": 3806,
+    "distinct_modules": 1990
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5",
-    "validated_state": "Section24 ordered comparison changes documentation only. The exact Lean snapshot retains the successful all-order Hamiltonian polynomial full check.",
+    "base_commit": "274dbf4340471e30f7cb7fe439e84b6092f7b43d",
+    "validated_state": "Fresh full check after two positive diagonal-product theorems and two API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8575,
-    "public_examples": 7679,
-    "transitive_NLS_declarations": 44689,
+    "build_jobs": 8576,
+    "public_examples": 7681,
+    "transitive_NLS_declarations": 44691,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 96263,
+    "gate_session": 21775,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4852,
-      "sha256": "5e6ba8dd8d6c611c4fa22e098644e3433a8520a13d69a6d059f7c07ba592a9c7"
+      "files": 4853,
+      "sha256": "906678948ce12ec7df43ec06161a527daa9d9b7b03f6254535d1709def45d5c5"
     },
-    "full_gate_log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All source corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/Section24HamiltonianPolynomialFullCheck.log",
-    "validation_reused_from_commit": "c2bd47e6f9e8707f13b3aa9b2ac988ffebe084b5"
+    "full_gate_log_sha256": "0a2be5ca94d506e6757d4284ddf227b8c9328f82f351ebbaca693381561a7e6c",
+    "qualification": "The recorded Lean snapshot passes full build, public examples and transitive axiom audit. The ordered Section25 comparison and broader qualifications remain open.",
+    "full_gate_log": "work/Section25DiagonalProductFullCheck.log"
   },
   "named_statements": [
     {
@@ -55422,6 +55421,112 @@
         "log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9"
       },
       "source_record_sha256": "58816045fd6b04253c4fadbff04fd12acffda9bca0e96663e46d9cb51ade43f7"
+    },
+    "Section25DiagonalProductSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "274dbf4340471e30f7cb7fe439e84b6092f7b43d",
+      "updated_utc": "2026-10-31T03:05:55.297960+00:00",
+      "source_lines": [
+        [
+          9006,
+          9028
+        ],
+        [
+          9029,
+          9038
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            9006,
+            9028
+          ],
+          "requirement": "Corrected component-product estimate for the common diagonal",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+            "NLS.ZakharovShabat.sourceM1_diagonal_component_bound"
+          ],
+          "reviewed_claims": [
+            "Use |a_n| <= 2*norm(first)*norm(second)/(1+abs(n)). The actual convergent inverse and diagonal Fourier row prove this directly. The original-source normalization preserves each component norm exactly."
+          ],
+          "qualification": "All M1 weights, complex source pairs, signed indices and closed-strip points are included at the exact quadratic threshold. The source intermediate component-square estimates are replaced directly; no refutation is added."
+        },
+        {
+          "source_lines": [
+            9029,
+            9038
+          ],
+          "requirement": "Inverse notation and final diagonal constant one",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_parity",
+            "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+            "NLS.ZakharovShabat.norm_weightedResonantA_linear",
+            "NLS.ZakharovShabat.sourceM1_coefficients"
+          ],
+          "reviewed_claims": [
+            "Both representations retain the inverse (I-T_n^2)^-1. Applying 2ab <= a^2+b^2 to the product estimate gives the stated final bound norm(pair)^2/(1+abs(n))."
+          ],
+          "qualification": "The correction changes the intermediate proof, while the original final constant one and the off-diagonal constant eight are retained."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection25Coefficients.lean": "9fe74b9e5289411721df6e54c66bb72d5920840ad66a1bbb7735078f5ff93bba",
+        "NLS/ZakharovShabat/LinearWeightResonantCoefficients.lean": "040ff11a92c2b0f031c92d56a360e587164859e46e708b1e3abe21dc4031639f",
+        "NLS/ZakharovShabat/LinearWeightDiagonalRow.lean": "ee0c32b44fe6e43f06e4cbe0c297b599bff4f0c47d2e8a6e0e8ab84f645a3308",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean": "27290e984879c5ad4afa9a3c06cb830faee6d2883648f67e41e1268355192ccb",
+        "NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean": "8b5ca7f125032331f26336e61e771a107f9f8a0b9b66b317f45a0082b5e422e2"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection25Coefficients.lean",
+        "NLS/ZakharovShabat/LinearWeightResonantCoefficients.lean",
+        "NLS/ZakharovShabat/LinearWeightDiagonalRow.lean",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean",
+        "NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 37 ordered Section 25 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+        "NLS.ZakharovShabat.norm_weightedResonantA_linear",
+        "NLS.ZakharovShabat.sourceM1_coefficients",
+        "NLS.ZakharovShabat.sourceM1_diagonal_component_bound",
+        "NLS.ZakharovShabat.weightedResonantA_parity",
+        "NLS.ZakharovShabat.weightedResonantA_parity_zero"
+      ],
+      "declaration_inventory_count": 44691,
+      "qualification": "The proof of Lemma 25.3 now exposes the corrected positive intermediate bound 2*norm(first)*norm(second)/(1+abs(n)) for the actual common diagonal. It holds for every complex M1 weighted source and every signed index and closed-strip point at the exact quadratic threshold. Exact source normalization preserves the individual component norms. The arithmetic inequality 2ab<=a^2+b^2 recovers the final diagonal constant one; the off-diagonal constant eight remains. Both diagonal representations retain the inverse (I-T_n^2)^-1. Two positive theorems and two public examples are added. No new refutation or optimality claim is made. The ordered Section 25 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          110
+        ],
+        "images": {
+          "work/tmp/pdfs/section25-ordered-110.png": "a20010e77d7178077f2211bc59c7a3e45d9b3b9b25a2e6db42d6fd29cff62cc0"
+        }
+      },
+      "preceding_review_hash": "15947c1820834b4ec88f7b4a6b9e610f2a0c5eb9e1cef04fee2d3301e2066f78",
+      "validation_lean_sources": {
+        "files": 4853,
+        "sha256": "906678948ce12ec7df43ec06161a527daa9d9b7b03f6254535d1709def45d5c5"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 2,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 21775,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section25DiagonalProductFullCheck.log",
+        "log_sha256": "0a2be5ca94d506e6757d4284ddf227b8c9328f82f351ebbaca693381561a7e6c"
+      },
+      "source_record_sha256": "9bddab50a5ca0423c90192969ff09a48432e006673b93efe3bcf967afb55e0e6"
     }
   }
 }

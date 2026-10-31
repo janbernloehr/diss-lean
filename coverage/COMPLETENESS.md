@@ -93,7 +93,9 @@ complex trace domains, physical Hamiltonians and closed-gap cases.
 The real-source mass and odd-level zero-detection corrections keep
 their precise scope. No new proof or refutation is added in this
 comparison. The external book-normalization footnote is contextual;
-the exact 2014 edition qualification remains. Section 25 is next.
+the exact 2014 edition qualification remains. Section 25 now has a direct [component-product correction](../NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
+in the proof of Lemma 25.3, preserving the final constants one and eight.
+Its ordered comparison remains in progress.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

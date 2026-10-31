@@ -1,5 +1,21 @@
 # Source discrepancies
 
+## Lemma 25.3 proof, p.110: component product and inverse notation
+
+Use the positive intermediate estimate
+
+    |a_n| <= 2 ||phi^-||_w ||phi^+||_w / (1+|n|).
+
+This replaces the two same-component square estimates in the proof.
+Applying 2ab <= a^2+b^2 gives the stated total-norm bound with constant
+one. The off-diagonal constant eight is unchanged. Both diagonal
+representations in the following sentence use (I-T_n^2)^(-1), as in (5.7).
+
+The [positive proof](NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
+covers all complex M1 weighted sources, every signed index and the
+entire closed strip at the exact quadratic threshold. Original source
+normalization preserves each component norm. No refutation is added.
+
 ## Lemma 12.10 proof, p.69: joint Cauchy estimate
 
 Let K be the compact spectral gap product at a fixed real-type source phi.

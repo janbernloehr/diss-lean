@@ -4851,3 +4851,4 @@ import NLS.ZakharovShabat.SourceIndexedHigherActionEndpointAsymptotic
 import NLS.ComplexAnalysis.PiecewisePolynomialIntegrationByParts
 import NLS.ZakharovShabat.SourceHigherActionPiecewisePrimitive
 import NLS.ZakharovShabat.SourceSection24HamiltonianPolynomial
+import NLS.ZakharovShabat.SourceSection25DiagonalProduct

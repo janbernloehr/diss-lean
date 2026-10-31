@@ -1,5 +1,27 @@
 # Section 25: uniform localization for the original source
 
+## Corrected product estimate in Lemma 25.3
+
+The [corrected diagonal estimate](../NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
+in the proof of Lemma 25.3 uses the product of the component norms:
+
+    |a_n| <= 2 ||phi^-||_w ||phi^+||_w / (1+|n|).
+
+It holds for every complex M1 weighted source on the entire closed strip
+when 8||phi||_w^2 <= 1+|n|, including negative indices and threshold
+equality. Exact normalization preserves each original component norm.
+The inequality 2ab <= a^2+b^2 recovers the final diagonal constant one.
+The off-diagonal constant eight and both inverse representations remain.
+
+Two positive theorems and two examples cover a vanishing component and
+a negative index with a superlinear weight. The intermediate estimates
+and missing inverse notation are corrected directly, with no new refutation.
+
+The full check passed: 8,576 build jobs, 7,681 public examples and an axiom audit of 44,691 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 25 comparison remains in progress. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 This audit covers printed pp. 107–112: Theorem 25.1, Lemmas 25.2–25.4,
 Proposition 25.5, and formulas (5.7)–(5.8). The public API now states
 these estimates for the original period-one source, retaining the exact

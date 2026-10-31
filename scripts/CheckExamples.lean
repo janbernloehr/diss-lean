@@ -73112,3 +73112,31 @@ example (a b c d : ℝ → ℂ)
   exact ⟨q,hq,h a b ha hb,h c d hc hd⟩
 
 end Section24HamiltonianPolynomialExamples
+
+section Section25DiagonalProductExamples
+open NLS NLS.ZakharovShabat
+
+-- Either triangular source has zero common diagonal, including closed-strip boundary points.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : CoeffPair 2)
+    (ha : a.fst = 0 ∨ a.snd = 0) (n : ℤ) (hn : 8*‖a‖^2 ≤ 1+|(n:ℝ)|)
+    (z : ℂ) (hz : z ∈ resonantStrip n) :
+    weightedResonantAExtension (by simp) w (normalizedWeightedPeriodOne w a) n z = 0 := by
+  apply norm_eq_zero.mp
+  apply le_antisymm _ (norm_nonneg _)
+  have h := sourceM1_diagonal_component_bound w hw a n hn z hz
+  rcases ha with ha | ha
+  · simpa only [ha,norm_zero,mul_zero,zero_mul] using h
+  · simpa only [ha,norm_zero,mul_zero] using h
+
+-- The exact product constant remains valid for a negative index and a superlinear weight.
+example (a : CoeffPair 2) (ha : 8*‖a‖^2 ≤ 3)
+    (z : ℂ) (hz : z ∈ resonantStrip (-2)) :
+    ‖weightedResonantAExtension (by simp) (SpectralWeight.piSobolev 3 (by norm_num))
+      (normalizedWeightedPeriodOne (SpectralWeight.piSobolev 3 (by norm_num)) a) (-2) z‖ ≤
+        (2/3 : ℝ)*‖a.fst‖*‖a.snd‖ := by
+  have h := sourceM1_diagonal_component_bound (SpectralWeight.piSobolev 3 (by norm_num))
+    (SpectralWeight.hasLinearFactor_piSobolev 3 (by norm_num)) a (-2) (by norm_num; exact ha) z hz
+  norm_num at h ⊢
+  exact h
+
+end Section25DiagonalProductExamples

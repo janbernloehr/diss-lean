@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: ordered Section 24 trace comparison
+## Current milestone: Section 25 diagonal product correction
+
+The [corrected diagonal estimate](NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
+in the proof of Lemma 25.3 uses the product of the component norms:
+
+    |a_n| <= 2 ||phi^-||_w ||phi^+||_w / (1+|n|).
+
+It holds for every complex M1 weighted source on the entire closed strip
+when 8||phi||_w^2 <= 1+|n|, including negative indices and threshold
+equality. Exact normalization preserves each original component norm.
+The inequality 2ab <= a^2+b^2 recovers the final diagonal constant one.
+The off-diagonal constant eight and both inverse representations remain.
+
+Two positive theorems and two examples cover a vanishing component and
+a negative index with a superlinear weight. The intermediate estimates
+and missing inverse notation are corrected directly, with no new refutation.
+
+The full check passed: 8,576 build jobs, 7,681 public examples and an axiom audit of 44,691 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 25 comparison remains in progress. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 24 trace comparison
 
 The [ordered Section 24 comparison](coverage/SECTION_24_ASSERTIONS.md)
 covers all 20 groups on pp. 106–107: 14 matched, two corrected and four
