@@ -1,5 +1,28 @@
 # Appendix A: periodic distributions and Fourier Lebesgue spaces
 
+## Ordered source comparison
+
+The [ordered Appendix A comparison](APPENDIX_A_ASSERTIONS.md)
+covers 32 groups on pp.121–124: 27 matched, four corrected and one
+contextual. No partial or pending groups remain in this local ledger.
+
+Original distributions, physical Lp quotients, positive periods and
+the exact 1/L normalization are retained. The source assertions in
+A.3, A.5 and A.6 keep their actual witnesses and quantifiers.
+
+Direct corrections retain the weighted-c0 condition at infinity,
+the physical chirp rescaling, the Holder product factor C_p <= 2p
+and the original Section 2 weight. No new Lean proof or refutation
+is added in this comparison.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit cec78d328ace97d075ff5832a67c11eb4da30118: 8,582 build jobs, 7,692 public examples and an axiom audit of 44,706 NLS declarations, with 21 inherited warnings and zero new. All 104 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix B. The four Section 28 complex intermediate passages
+and the [broader completion qualifications](COMPLETENESS.md)
+remain qualified; the local counts do not certify the dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 This audit covers the test-space foundations, finite-order criterion (A.1),
 order-zero continuous extension, complex Radon representation (A.2), and L1
 action on printed page 121, plus both parts of Theorem A.1 and the distributional

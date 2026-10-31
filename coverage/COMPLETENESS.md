@@ -142,7 +142,14 @@ The named final constants 2048, 4608, 2^20 and 2^21 remain proved. The
 reflected rational spectral bound and the printed complex adjacent-disc,
 telescoping and enclosing-root arguments remain explicitly qualified.
 The independent final proof does not establish those intermediate claims.
-Appendix A is next.
+
+The [ordered Appendix A ledger](APPENDIX_A_ASSERTIONS.md) compares
+32 groups: 27 matched, four corrected and one contextual. It retains
+the original distribution spaces, physical normalization and all
+stated exponent ranges. Direct corrections preserve weighted-c0
+convergence at infinity, chirp period rescaling, the Holder product
+factor C_p <= 2p and the exact Section 2 weight. No new refutation
+is added. Appendix B is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

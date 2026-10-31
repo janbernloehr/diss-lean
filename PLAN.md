@@ -1,6 +1,29 @@
 # Implementation plan
 
-## Current milestone: ordered Section 28 weighted-action comparison
+## Current milestone: ordered Appendix A comparison
+
+The [ordered Appendix A comparison](coverage/APPENDIX_A_ASSERTIONS.md)
+covers 32 groups on pp.121–124: 27 matched, four corrected and one
+contextual. No partial or pending groups remain in this local ledger.
+
+Original distributions, physical Lp quotients, positive periods and
+the exact 1/L normalization are retained. The source assertions in
+A.3, A.5 and A.6 keep their actual witnesses and quantifiers.
+
+Direct corrections retain the weighted-c0 condition at infinity,
+the physical chirp rescaling, the Holder product factor C_p <= 2p
+and the original Section 2 weight. No new Lean proof or refutation
+is added in this comparison.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit cec78d328ace97d075ff5832a67c11eb4da30118: 8,582 build jobs, 7,692 public examples and an axiom audit of 44,706 NLS declarations, with 21 inherited warnings and zero new. All 104 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix B. The four Section 28 complex intermediate passages
+and the [broader completion qualifications](coverage/COMPLETENESS.md)
+remain qualified; the local counts do not certify the dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 28 weighted-action comparison
 
 The [ordered Section 28 comparison](coverage/SECTION_28_ASSERTIONS.md)
 covers 30 groups on pp.117–119: 16 matched, eight corrected, four partial

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T04:41:46.363986+00:00",
-  "base_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
+  "published_utc": "2026-10-31T04:42:24.435502+00:00",
+  "base_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 182,
-    "module_hash_checks": 3983,
-    "distinct_modules": 2055
+    "review_records": 183,
+    "module_hash_checks": 4013,
+    "distinct_modules": 2061
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798",
-    "validated_state": "Section 28 ordered comparison changes documentation only. The exact Lean snapshot retains the successful positive small-ball proof check.",
+    "base_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
+    "validated_state": "Appendix A ordered comparison changes documentation only. The exact Lean snapshot retains the successful Section 28 positive small-ball proof check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8582,
     "public_examples": 7692,
@@ -44,9 +44,9 @@
       "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
     },
     "full_gate_log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
     "full_gate_log": "work/Section28SmallBallFullCheck.log",
-    "validation_reused_from_commit": "a315469d3324976a247ee8c1acbd8e60a99cd798"
+    "validation_reused_from_commit": "cec78d328ace97d075ff5832a67c11eb4da30118"
   },
   "named_statements": [
     {
@@ -61006,6 +61006,1458 @@
         "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
       },
       "source_record_sha256": "e95e3e6d6b41223264b5fd3e5cf2f8934c143415203c710ca0a903e9577dce52"
+    },
+    "AppendixAOrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
+      "updated_utc": "2026-10-31T04:42:24.382111+00:00",
+      "source_lines": [
+        [
+          9915,
+          10157
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "A-001",
+          "source_lines": [
+            9919,
+            9927
+          ],
+          "requirement": "Smooth periodic test functions and derivative norms",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Tests are actual smooth complex-valued functions of arbitrary positive physical period L.",
+            "The Nth defining norm is the sum of the physical derivative sup norms from order zero through N."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.smooth",
+            "NLS.Fourier.SmoothPeriodicTest.periodic",
+            "NLS.Fourier.SmoothPeriodicTest.cNorm_apply"
+          ],
+          "qualification": "The topology and norm are on the original function carrier, with derivatives in the physical x variable."
+        },
+        {
+          "ordered_group": "A-002",
+          "source_lines": [
+            9929,
+            9932
+          ],
+          "requirement": "Frechet property and density in continuous functions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The closed compatible derivative-jet realization gives the complete, metrizable, locally convex test topology.",
+            "Original smooth periodic tests are dense in continuous functions on the physical circle."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.derivativeJetEquiv",
+            "NLS.Fourier.SmoothPeriodicTest.isClosed_range_derivativeJet",
+            "NLS.Fourier.SmoothPeriodicTest.denseRange_toContinuousCLM"
+          ],
+          "qualification": "The public completeness instances were read in full. Density is proved directly; the source citation is not an additional hypothesis."
+        },
+        {
+          "ordered_group": "A-003",
+          "source_lines": [
+            9933,
+            9939
+          ],
+          "requirement": "Original distribution dual and finite-order criterion (A.1)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A distribution is a complex-linear continuous functional on all original smooth tests.",
+            "Continuity is equivalent to one finite derivative order and one strictly positive bound chosen before all tests."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.continuous_iff_finite_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_order"
+          ],
+          "qualification": "This retains the quantifier order and the strict positivity of the constant in (A.1)."
+        },
+        {
+          "ordered_group": "A-004",
+          "source_lines": [
+            9942,
+            9943
+          ],
+          "requirement": "Least distribution order",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The order is the least natural number satisfying the finite-order estimate, including for the zero functional."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.hasOrderAtMost_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_le"
+          ],
+          "qualification": "The chosen order is minimal, rather than an arbitrary available upper bound."
+        },
+        {
+          "ordered_group": "A-005",
+          "source_lines": [
+            9944,
+            9950
+          ],
+          "requirement": "Unique continuous extension and complex measure representation (A.2)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Order zero is equivalent to a unique continuous extension to the physical continuous-function space.",
+            "Every such extension has a unique complex-measure representation with the exact factor 1/L."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_physical_extension",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_normalized_measure",
+            "NLS.Fourier.complexMeasureContinuousIntegral_surjective"
+          ],
+          "qualification": "The measure representation and continuous integral modules were read in full; the normalized action is retained."
+        },
+        {
+          "ordered_group": "A-006",
+          "source_lines": [
+            9953,
+            9956
+          ],
+          "requirement": "Regular complex Borel measures and order-zero equivalence",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Actual complex measures have finite variation and regular variation on the compact physical circle.",
+            "They correspond bijectively to original distributions of least order zero."
+          ],
+          "declarations": [
+            "NLS.Fourier.complexMeasure_finite_variation",
+            "NLS.Fourier.complexMeasure_variation_regular",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.complexMeasureOrderZeroEquiv",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_measure"
+          ],
+          "qualification": "The Radon qualification uses the actual Borel measure and its variation, not a renamed bounded functional."
+        },
+        {
+          "ordered_group": "A-007",
+          "source_lines": [
+            9956,
+            9960
+          ],
+          "requirement": "Original normalized L1 action",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "An interval-integrable function defines an order-zero original distribution with action (1/L) times the integral of the function times the test."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_order"
+          ],
+          "qualification": "The pairing is complex bilinear and contains no implicit conjugation."
+        },
+        {
+          "ordered_group": "A-008",
+          "source_lines": [
+            9971,
+            9976
+          ],
+          "requirement": "Fourier coefficients and uniqueness",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The nth coefficient is evaluation on the negative physical mode exp(-i*2*pi*n*x/L).",
+            "All coefficients determine the original distribution uniquely and agree with normalized integrals on L1 data."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.mode_apply_physical",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ext_coefficients",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_coefficient"
+          ],
+          "qualification": "Positive periods and signed indices, including zero, are retained."
+        },
+        {
+          "ordered_group": "A-009",
+          "source_lines": [
+            9978,
+            9980
+          ],
+          "requirement": "Theorem A.1(i), growth at the least order",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A distribution with finite order N has cofinite two-sided Fourier growth O(|n|^N), with the same N."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.coefficients_isBigO_of_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.hasOrderAtMost_order"
+          ],
+          "qualification": "The claim includes N=0 and applies in particular at the least order. The asymptotic does not restrict the zero Fourier coefficient."
+        },
+        {
+          "ordered_group": "A-010",
+          "source_lines": [
+            9982,
+            9988
+          ],
+          "requirement": "Theorem A.1(ii), polynomial synthesis and uniqueness",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every polynomially growing complex sequence has exactly one realization on all original smooth periodic tests."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_of_polynomial_isBigO",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.polynomial_growth_iff_existsUnique"
+          ],
+          "qualification": "The coefficient at zero is arbitrary, and uniqueness is on the full original distribution space."
+        },
+        {
+          "ordered_group": "A-011",
+          "source_lines": [
+            9990,
+            9993
+          ],
+          "requirement": "Distributional derivative and physical Fourier multiplier",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The distributional derivative is minus the transpose of the physical test derivative.",
+            "Its nth coefficient is i*2*pi*n/L times the original coefficient."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_coefficient"
+          ],
+          "qualification": "The formula includes negative and zero frequencies and arbitrary positive periods."
+        },
+        {
+          "ordered_group": "A-012",
+          "source_lines": [
+            9995,
+            10004
+          ],
+          "requirement": "Original Fourier-Lebesgue spaces, norms, completeness and reflexivity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original Fourier-Lebesgue subtype has exactly the weighted coefficient norm.",
+            "It is complete for all Banach exponents and reflexive for 1<p<infinity."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_eq",
+            "NLS.Fourier.PeriodicFourierLebesgue.completeSpace",
+            "NLS.Fourier.PeriodicFourierLebesgue.bidual_surjective"
+          ],
+          "qualification": "The Sobolev weight is the Section 2 weight (1+|n|)^s. Its tempered inverse supplies the original distribution realization."
+        },
+        {
+          "ordered_group": "A-013",
+          "source_lines": [
+            10005,
+            10011
+          ],
+          "requirement": "Fourier-series norm convergence and infinity endpoint",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite Fourier polynomials converge in the original Fourier-Lebesgue norm for every finite Banach exponent.",
+            "At infinity, this norm convergence holds exactly when the weighted coefficients tend to zero.",
+            "For every exponent, the same truncations converge when evaluated against each original smooth test."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate",
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_top_iff",
+            "NLS.Fourier.PeriodicFourierLebesgue.truncate_eq_ofContinuous",
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_action"
+          ],
+          "qualification": "Retain the weighted-c0 condition at infinity. Testwise convergence is not asserted to be strong-dual convergence. No new refutation is needed."
+        },
+        {
+          "ordered_group": "A-014",
+          "source_lines": [
+            10012,
+            10015
+          ],
+          "requirement": "Sobolev identification, physical L2 and Parseval",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The p=2 Fourier-Lebesgue norm is the Fourier definition of the Sobolev norm.",
+            "At s=0 it is isometric to the actual physical L2 quotient under normalized Haar measure, with the exact 1/L interval Parseval factor."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_norm",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_parseval_interval"
+          ],
+          "qualification": "The normalization is explicit. The later interval Sobolev equivalence is not claimed to be an isometry."
+        },
+        {
+          "ordered_group": "A-015",
+          "source_lines": [
+            10017,
+            10023
+          ],
+          "requirement": "L1 Fourier bound and interpolation transition",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every physical L1 Fourier coefficient and the FL-infinity norm are bounded by the normalized L1 norm."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_ofIntervalL1_le",
+            "NLS.Fourier.norm_fourierCoeff_le_integral_norm"
+          ],
+          "qualification": "The interpolation transition is realized by the continuous maps in A.2; the introductory comparison of spaces is context."
+        },
+        {
+          "ordered_group": "A-016",
+          "source_lines": [
+            10034,
+            10036
+          ],
+          "requirement": "Lemma A.2 conjugate exponent embedding",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<=p<=2 and conjugate q, the actual physical Lp quotient embeds continuously and injectively into original FLq, with norm at most one."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp",
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_ofLp_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp_apply_interval"
+          ],
+          "qualification": "The rendered source uses L^(p-prime) to FLp for 2<=p<=infinity. This is the same assertion after renaming the conjugate exponents; the prime is not discarded."
+        },
+        {
+          "ordered_group": "A-017",
+          "source_lines": [
+            10039,
+            10044
+          ],
+          "requirement": "Lemma A.3 one distribution in all FLp above two that is not a measure",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "One original distribution, chosen before all p>2, belongs to every such FLp including infinity and is not represented by any actual complex measure."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_fourierLebesgue_above_two_not_measure",
+            "NLS.Fourier.nonMeasureDistribution_not_measure"
+          ],
+          "qualification": "This is the source existential assertion A.3. Its witness is retained; it is not an added refutation of a printed formula."
+        },
+        {
+          "ordered_group": "A-018",
+          "source_lines": [
+            10047,
+            10052
+          ],
+          "requirement": "Absolute Fourier synthesis and continuous representative",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Original FL1 elements have absolute and uniform physical Fourier synthesis with sup norm bounded by the FL1 norm.",
+            "The resulting uniformly continuous function is the unique continuous representative of the entire distribution."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.hasSum_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_continuousRepresentative_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.uniformlyContinuous_continuousRepresentative"
+          ],
+          "qualification": "The convergence is in the actual continuous-function sup norm, at the original physical period."
+        },
+        {
+          "ordered_group": "A-019",
+          "source_lines": [
+            10054,
+            10056
+          ],
+          "requirement": "Wiener algebra and pseudomeasure dual",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Original FL1 is a complete commutative normed Wiener algebra with norm-one identity and an injective continuous representative algebra map.",
+            "FL-infinity is isometrically the continuous dual of FL1, with the bilinear pairing using opposite signed Fourier indices."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.wienerContinuousAlgHom",
+            "NLS.Fourier.PeriodicFourierLebesgue.continuousRepresentative_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureDualIsometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.unweightedDualEquiv_apply"
+          ],
+          "qualification": "The source says this algebra fact is not subsequently used; it is nevertheless implemented on the original distribution carrier."
+        },
+        {
+          "ordered_group": "A-020",
+          "source_lines": [
+            10057,
+            10060
+          ],
+          "requirement": "Lemma A.4 reverse conjugate exponent embedding",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<=p<=2, original FLp embeds continuously and injectively into the physical Lq quotient for the conjugate exponent, with norm at most one and a unique representing class."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_lpRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_lpRepresentative_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_one",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_two"
+          ],
+          "qualification": "The conjugate prime was checked on the rendered page. At p=1 the map agrees with continuous synthesis, and at p=2 with the established isometry."
+        },
+        {
+          "ordered_group": "A-021",
+          "source_lines": [
+            10063,
+            10068
+          ],
+          "requirement": "Lemma A.5 one continuous function outside all FLp below two",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every positive period, one continuous function lies outside all original FLp with 1<=p<2."
+          ],
+          "declarations": [
+            "NLS.Fourier.printedChirpAtPeriod_mem_original_iff"
+          ],
+          "qualification": "The proved membership criterion is exactly p>=2, including infinity. The same witness is used for all excluded exponents."
+        },
+        {
+          "ordered_group": "A-022",
+          "source_lines": [
+            10070,
+            10074
+          ],
+          "requirement": "Printed chirp and its physical period",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The printed coefficients exp(i*n*log n)/(sqrt(n)*log(n)^2), n>=2, give uniform convergence of ordinary positive-index cutoffs on the entire real line.",
+            "The literal phase exp(i*n*pi*x) has period two. At period L use the explicitly proved rescaling x to 2*x/L, giving phase exp(i*2*pi*n*x/L)."
+          ],
+          "declarations": [
+            "NLS.Fourier.tendstoUniformly_printedChirp_original",
+            "NLS.Fourier.periodTwoCoefficient_printedChirpFunction",
+            "NLS.Fourier.fourierCoeff_printedChirpAtPeriod",
+            "NLS.Fourier.tendstoUniformly_printedChirpAtPeriod_original"
+          ],
+          "qualification": "The physical period is corrected directly. The public uniform-convergence interfaces were read; this review does not repeat every transitive oscillatory estimate."
+        },
+        {
+          "ordered_group": "A-023",
+          "source_lines": [
+            10076,
+            10077
+          ],
+          "requirement": "Remark A.6 Riemann-Lebesgue decay",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Fourier coefficients of every physical L1 function tend to zero along the cofinite filter on signed integer frequencies."
+          ],
+          "declarations": [
+            "NLS.Fourier.tendsto_intervalFourierCoefficient_cofinite",
+            "NLS.Fourier.tendsto_fourierCoeff_cofinite",
+            "NLS.Fourier.circleL1Fourier"
+          ],
+          "qualification": "This gives the actual continuous L1-to-c0 Fourier map."
+        },
+        {
+          "ordered_group": "A-024",
+          "source_lines": [
+            10077,
+            10083
+          ],
+          "requirement": "Remark A.6 nonsurjectivity and contextual characterization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical L1-to-c0 Fourier map is not surjective; its range is dense and nonclosed.",
+            "The proof uses open mapping and actual Rudin-Shapiro polynomials."
+          ],
+          "declarations": [
+            "NLS.Fourier.circleL1Fourier_not_surjective",
+            "NLS.Fourier.denseRange_circleL1Fourier",
+            "NLS.Fourier.not_isClosed_range_circleL1Fourier"
+          ],
+          "qualification": "The source remark about a useful characterization remaining unknown is historical context, not a theorem that no characterization can exist. Nonsurjectivity itself is part of A.6."
+        },
+        {
+          "ordered_group": "A-025",
+          "source_lines": [
+            10086,
+            10094
+          ],
+          "requirement": "Convolution criterion, growth and convergence conventions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "An original distributional Fourier product exists uniquely exactly when the convolution genuinely converges at each frequency and the resulting coefficients have polynomial growth."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_fourierProduct_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_symmetricFourierProduct_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.HasFourierProduct.symmetric"
+          ],
+          "qualification": "Unordered HasSum and symmetric integer cutoffs have separate explicit criteria. Do not replace convergence by a default-valued tsum or omit output growth. Historical examples are unchanged."
+        },
+        {
+          "ordered_group": "A-026",
+          "source_lines": [
+            10105,
+            10109
+          ],
+          "requirement": "Lemma A.7 product and exact Young bound (A.3)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every Banach Young triple, including infinity endpoints, gives absolutely convergent convolution coefficients and a unique original product.",
+            "The bilinear product has exact operator norm one and is independent of the representing exponents."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct",
+            "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_youngProduct_terms",
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_unique",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_youngProductCLM",
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_eq_of_val_eq"
+          ],
+          "qualification": "Agreement with pointwise multiplication is retained for continuous factors when one factor is Wiener. The constant in (A.3) remains one."
+        },
+        {
+          "ordered_group": "A-027",
+          "source_lines": [
+            10111,
+            10118
+          ],
+          "requirement": "Lemma A.8 embedding and corrected product constant (A.4)",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For each finite Banach p, the FL^(1,p)-to-FL1 inclusion is continuous, injective and preserves the original distribution.",
+            "The product estimate retains the inverse-weight Holder factor C_p, with C_p<=2*p."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_val",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_sobolevProduct_le",
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul"
+          ],
+          "qualification": "Correct (A.4) directly to norm(u*v)<=C_p*norm(u)*norm(v). The theorem includes p=1 and adds no infinity endpoint or new refutation."
+        },
+        {
+          "ordered_group": "A-028",
+          "source_lines": [
+            10120,
+            10129
+          ],
+          "requirement": "Inverse-weight Holder factor and physical weight convention",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "C_p is the conjugate-sequence norm of the reciprocal weight (1+|n|)^(-1).",
+            "That reciprocal sequence belongs to every conjugate exponent above one, including infinity, and the original norm convention stays fixed."
+          ],
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant",
+            "NLS.Weight.inverse_sobolev_one_memlp",
+            "NLS.WeightedCoeff.norm_sobolevToL1CLM_le"
+          ],
+          "qualification": "Use the exact Section 2 weight. The physical rescaling (1+|2*n/L|) in the printed proof is not silently substituted for it. The finite factor is retained in the corrected estimate."
+        },
+        {
+          "ordered_group": "A-029",
+          "source_lines": [
+            10132,
+            10134
+          ],
+          "requirement": "Interval sources and periodic boundary mismatch",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "Arbitrary interval Sobolev data need not satisfy periodic endpoint matching; the following embeddings accept this general input."
+          ],
+          "declarations": [
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalHalfSobolev"
+          ],
+          "qualification": "Read this as motivation about general interval data, not as universal nonmembership in FL1 for every input. No new negative theorem is added."
+        },
+        {
+          "ordered_group": "A-030",
+          "source_lines": [
+            10136,
+            10140
+          ],
+          "requirement": "Lemma A.9 exponent ranges, including half regularity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0<=s<1/2, original interval data embeds into FLq whenever q>1/(s+1/2).",
+            "At s=1/2 the result holds for every q>1. L2 supplies all q>=2, including infinity, and ordinary L2 handles s=0."
+          ],
+          "declarations": [
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalHalfSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalL2",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalHalfFourierEmbedding",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalL2TargetEmbedding"
+          ],
+          "qualification": "Positive regularity uses actual finite Slobodeckij interval energy. No endpoint matching is required, and zero regularity does not use the fractional graph norm at s=0."
+        },
+        {
+          "ordered_group": "A-031",
+          "source_lines": [
+            10142,
+            10143
+          ],
+          "requirement": "Subcritical interval-periodic Sobolev identification",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0<s<1/2, the genuine intrinsic interval Sobolev space is continuously linearly equivalent to original FL^(s,2).",
+            "Both directions preserve physical representatives and have explicit analysis and synthesis norm bounds."
+          ],
+          "declarations": [
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_ofFunction_val",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_symm_represents",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_symm_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry"
+          ],
+          "qualification": "The identification retains the exact Section 2 Fourier weight and physical dilation constants; it is not asserted isometric. The s=0 case is ordinary L2."
+        },
+        {
+          "ordered_group": "A-032",
+          "source_lines": [
+            10144,
+            10155
+          ],
+          "requirement": "Holder proof, reciprocal exponent and endpoint handling",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The subcritical Holder argument gives the stated finite exponent range with explicit physical bounds.",
+            "The L2 inclusion handles q>=2 and infinity; the separate half-regularity construction handles q>1."
+          ],
+          "declarations": [
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalFourierEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalHalfFourierEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalL2TargetEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding_eq_originalSobolevEquiv_val"
+          ],
+          "qualification": "The reciprocal-exponent formula is used in its finite Holder range. The remaining endpoints use the separate verified maps, preserving the original normalized interval action."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "A-001",
+          "source_lines": [
+            9919,
+            9927
+          ],
+          "requirement": "Smooth periodic test functions and derivative norms",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Tests are actual smooth complex-valued functions of arbitrary positive physical period L.",
+            "The Nth defining norm is the sum of the physical derivative sup norms from order zero through N."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.smooth",
+            "NLS.Fourier.SmoothPeriodicTest.periodic",
+            "NLS.Fourier.SmoothPeriodicTest.cNorm_apply"
+          ],
+          "qualification": "The topology and norm are on the original function carrier, with derivatives in the physical x variable."
+        },
+        {
+          "ordered_group": "A-002",
+          "source_lines": [
+            9929,
+            9932
+          ],
+          "requirement": "Frechet property and density in continuous functions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The closed compatible derivative-jet realization gives the complete, metrizable, locally convex test topology.",
+            "Original smooth periodic tests are dense in continuous functions on the physical circle."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.derivativeJetEquiv",
+            "NLS.Fourier.SmoothPeriodicTest.isClosed_range_derivativeJet",
+            "NLS.Fourier.SmoothPeriodicTest.denseRange_toContinuousCLM"
+          ],
+          "qualification": "The public completeness instances were read in full. Density is proved directly; the source citation is not an additional hypothesis."
+        },
+        {
+          "ordered_group": "A-003",
+          "source_lines": [
+            9933,
+            9939
+          ],
+          "requirement": "Original distribution dual and finite-order criterion (A.1)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A distribution is a complex-linear continuous functional on all original smooth tests.",
+            "Continuity is equivalent to one finite derivative order and one strictly positive bound chosen before all tests."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.continuous_iff_finite_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_order"
+          ],
+          "qualification": "This retains the quantifier order and the strict positivity of the constant in (A.1)."
+        },
+        {
+          "ordered_group": "A-004",
+          "source_lines": [
+            9942,
+            9943
+          ],
+          "requirement": "Least distribution order",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The order is the least natural number satisfying the finite-order estimate, including for the zero functional."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.hasOrderAtMost_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_le"
+          ],
+          "qualification": "The chosen order is minimal, rather than an arbitrary available upper bound."
+        },
+        {
+          "ordered_group": "A-005",
+          "source_lines": [
+            9944,
+            9950
+          ],
+          "requirement": "Unique continuous extension and complex measure representation (A.2)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Order zero is equivalent to a unique continuous extension to the physical continuous-function space.",
+            "Every such extension has a unique complex-measure representation with the exact factor 1/L."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_physical_extension",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_normalized_measure",
+            "NLS.Fourier.complexMeasureContinuousIntegral_surjective"
+          ],
+          "qualification": "The measure representation and continuous integral modules were read in full; the normalized action is retained."
+        },
+        {
+          "ordered_group": "A-006",
+          "source_lines": [
+            9953,
+            9956
+          ],
+          "requirement": "Regular complex Borel measures and order-zero equivalence",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Actual complex measures have finite variation and regular variation on the compact physical circle.",
+            "They correspond bijectively to original distributions of least order zero."
+          ],
+          "declarations": [
+            "NLS.Fourier.complexMeasure_finite_variation",
+            "NLS.Fourier.complexMeasure_variation_regular",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.complexMeasureOrderZeroEquiv",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_measure"
+          ],
+          "qualification": "The Radon qualification uses the actual Borel measure and its variation, not a renamed bounded functional."
+        },
+        {
+          "ordered_group": "A-007",
+          "source_lines": [
+            9956,
+            9960
+          ],
+          "requirement": "Original normalized L1 action",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "An interval-integrable function defines an order-zero original distribution with action (1/L) times the integral of the function times the test."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_order"
+          ],
+          "qualification": "The pairing is complex bilinear and contains no implicit conjugation."
+        },
+        {
+          "ordered_group": "A-008",
+          "source_lines": [
+            9971,
+            9976
+          ],
+          "requirement": "Fourier coefficients and uniqueness",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The nth coefficient is evaluation on the negative physical mode exp(-i*2*pi*n*x/L).",
+            "All coefficients determine the original distribution uniquely and agree with normalized integrals on L1 data."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.mode_apply_physical",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ext_coefficients",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_coefficient"
+          ],
+          "qualification": "Positive periods and signed indices, including zero, are retained."
+        },
+        {
+          "ordered_group": "A-009",
+          "source_lines": [
+            9978,
+            9980
+          ],
+          "requirement": "Theorem A.1(i), growth at the least order",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "A distribution with finite order N has cofinite two-sided Fourier growth O(|n|^N), with the same N."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.coefficients_isBigO_of_order",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.hasOrderAtMost_order"
+          ],
+          "qualification": "The claim includes N=0 and applies in particular at the least order. The asymptotic does not restrict the zero Fourier coefficient."
+        },
+        {
+          "ordered_group": "A-010",
+          "source_lines": [
+            9982,
+            9988
+          ],
+          "requirement": "Theorem A.1(ii), polynomial synthesis and uniqueness",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every polynomially growing complex sequence has exactly one realization on all original smooth periodic tests."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_of_polynomial_isBigO",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.polynomial_growth_iff_existsUnique"
+          ],
+          "qualification": "The coefficient at zero is arbitrary, and uniqueness is on the full original distribution space."
+        },
+        {
+          "ordered_group": "A-011",
+          "source_lines": [
+            9990,
+            9993
+          ],
+          "requirement": "Distributional derivative and physical Fourier multiplier",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The distributional derivative is minus the transpose of the physical test derivative.",
+            "Its nth coefficient is i*2*pi*n/L times the original coefficient."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_coefficient"
+          ],
+          "qualification": "The formula includes negative and zero frequencies and arbitrary positive periods."
+        },
+        {
+          "ordered_group": "A-012",
+          "source_lines": [
+            9995,
+            10004
+          ],
+          "requirement": "Original Fourier-Lebesgue spaces, norms, completeness and reflexivity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The original Fourier-Lebesgue subtype has exactly the weighted coefficient norm.",
+            "It is complete for all Banach exponents and reflexive for 1<p<infinity."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_eq",
+            "NLS.Fourier.PeriodicFourierLebesgue.completeSpace",
+            "NLS.Fourier.PeriodicFourierLebesgue.bidual_surjective"
+          ],
+          "qualification": "The Sobolev weight is the Section 2 weight (1+|n|)^s. Its tempered inverse supplies the original distribution realization."
+        },
+        {
+          "ordered_group": "A-013",
+          "source_lines": [
+            10005,
+            10011
+          ],
+          "requirement": "Fourier-series norm convergence and infinity endpoint",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Finite Fourier polynomials converge in the original Fourier-Lebesgue norm for every finite Banach exponent.",
+            "At infinity, this norm convergence holds exactly when the weighted coefficients tend to zero.",
+            "For every exponent, the same truncations converge when evaluated against each original smooth test."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate",
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_top_iff",
+            "NLS.Fourier.PeriodicFourierLebesgue.truncate_eq_ofContinuous",
+            "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_action"
+          ],
+          "qualification": "Retain the weighted-c0 condition at infinity. Testwise convergence is not asserted to be strong-dual convergence. No new refutation is needed."
+        },
+        {
+          "ordered_group": "A-014",
+          "source_lines": [
+            10012,
+            10015
+          ],
+          "requirement": "Sobolev identification, physical L2 and Parseval",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The p=2 Fourier-Lebesgue norm is the Fourier definition of the Sobolev norm.",
+            "At s=0 it is isometric to the actual physical L2 quotient under normalized Haar measure, with the exact 1/L interval Parseval factor."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_norm",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_parseval_interval"
+          ],
+          "qualification": "The normalization is explicit. The later interval Sobolev equivalence is not claimed to be an isometry."
+        },
+        {
+          "ordered_group": "A-015",
+          "source_lines": [
+            10017,
+            10023
+          ],
+          "requirement": "L1 Fourier bound and interpolation transition",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every physical L1 Fourier coefficient and the FL-infinity norm are bounded by the normalized L1 norm."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_ofIntervalL1_le",
+            "NLS.Fourier.norm_fourierCoeff_le_integral_norm"
+          ],
+          "qualification": "The interpolation transition is realized by the continuous maps in A.2; the introductory comparison of spaces is context."
+        },
+        {
+          "ordered_group": "A-016",
+          "source_lines": [
+            10034,
+            10036
+          ],
+          "requirement": "Lemma A.2 conjugate exponent embedding",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<=p<=2 and conjugate q, the actual physical Lp quotient embeds continuously and injectively into original FLq, with norm at most one."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp",
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_ofLp_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.ofLp_apply_interval"
+          ],
+          "qualification": "The rendered source uses L^(p-prime) to FLp for 2<=p<=infinity. This is the same assertion after renaming the conjugate exponents; the prime is not discarded."
+        },
+        {
+          "ordered_group": "A-017",
+          "source_lines": [
+            10039,
+            10044
+          ],
+          "requirement": "Lemma A.3 one distribution in all FLp above two that is not a measure",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "One original distribution, chosen before all p>2, belongs to every such FLp including infinity and is not represented by any actual complex measure."
+          ],
+          "declarations": [
+            "NLS.Fourier.exists_fourierLebesgue_above_two_not_measure",
+            "NLS.Fourier.nonMeasureDistribution_not_measure"
+          ],
+          "qualification": "This is the source existential assertion A.3. Its witness is retained; it is not an added refutation of a printed formula."
+        },
+        {
+          "ordered_group": "A-018",
+          "source_lines": [
+            10047,
+            10052
+          ],
+          "requirement": "Absolute Fourier synthesis and continuous representative",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Original FL1 elements have absolute and uniform physical Fourier synthesis with sup norm bounded by the FL1 norm.",
+            "The resulting uniformly continuous function is the unique continuous representative of the entire distribution."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.hasSum_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_continuousRepresentative_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_continuousRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.uniformlyContinuous_continuousRepresentative"
+          ],
+          "qualification": "The convergence is in the actual continuous-function sup norm, at the original physical period."
+        },
+        {
+          "ordered_group": "A-019",
+          "source_lines": [
+            10054,
+            10056
+          ],
+          "requirement": "Wiener algebra and pseudomeasure dual",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Original FL1 is a complete commutative normed Wiener algebra with norm-one identity and an injective continuous representative algebra map.",
+            "FL-infinity is isometrically the continuous dual of FL1, with the bilinear pairing using opposite signed Fourier indices."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.wienerContinuousAlgHom",
+            "NLS.Fourier.PeriodicFourierLebesgue.continuousRepresentative_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureDualIsometry",
+            "NLS.Fourier.PeriodicFourierLebesgue.unweightedDualEquiv_apply"
+          ],
+          "qualification": "The source says this algebra fact is not subsequently used; it is nevertheless implemented on the original distribution carrier."
+        },
+        {
+          "ordered_group": "A-020",
+          "source_lines": [
+            10057,
+            10060
+          ],
+          "requirement": "Lemma A.4 reverse conjugate exponent embedding",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 1<=p<=2, original FLp embeds continuously and injectively into the physical Lq quotient for the conjugate exponent, with norm at most one and a unique representing class."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_lpRepresentative",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_lpRepresentative_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_one",
+            "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_two"
+          ],
+          "qualification": "The conjugate prime was checked on the rendered page. At p=1 the map agrees with continuous synthesis, and at p=2 with the established isometry."
+        },
+        {
+          "ordered_group": "A-021",
+          "source_lines": [
+            10063,
+            10068
+          ],
+          "requirement": "Lemma A.5 one continuous function outside all FLp below two",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For every positive period, one continuous function lies outside all original FLp with 1<=p<2."
+          ],
+          "declarations": [
+            "NLS.Fourier.printedChirpAtPeriod_mem_original_iff"
+          ],
+          "qualification": "The proved membership criterion is exactly p>=2, including infinity. The same witness is used for all excluded exponents."
+        },
+        {
+          "ordered_group": "A-022",
+          "source_lines": [
+            10070,
+            10074
+          ],
+          "requirement": "Printed chirp and its physical period",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The printed coefficients exp(i*n*log n)/(sqrt(n)*log(n)^2), n>=2, give uniform convergence of ordinary positive-index cutoffs on the entire real line.",
+            "The literal phase exp(i*n*pi*x) has period two. At period L use the explicitly proved rescaling x to 2*x/L, giving phase exp(i*2*pi*n*x/L)."
+          ],
+          "declarations": [
+            "NLS.Fourier.tendstoUniformly_printedChirp_original",
+            "NLS.Fourier.periodTwoCoefficient_printedChirpFunction",
+            "NLS.Fourier.fourierCoeff_printedChirpAtPeriod",
+            "NLS.Fourier.tendstoUniformly_printedChirpAtPeriod_original"
+          ],
+          "qualification": "The physical period is corrected directly. The public uniform-convergence interfaces were read; this review does not repeat every transitive oscillatory estimate."
+        },
+        {
+          "ordered_group": "A-023",
+          "source_lines": [
+            10076,
+            10077
+          ],
+          "requirement": "Remark A.6 Riemann-Lebesgue decay",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Fourier coefficients of every physical L1 function tend to zero along the cofinite filter on signed integer frequencies."
+          ],
+          "declarations": [
+            "NLS.Fourier.tendsto_intervalFourierCoefficient_cofinite",
+            "NLS.Fourier.tendsto_fourierCoeff_cofinite",
+            "NLS.Fourier.circleL1Fourier"
+          ],
+          "qualification": "This gives the actual continuous L1-to-c0 Fourier map."
+        },
+        {
+          "ordered_group": "A-024",
+          "source_lines": [
+            10077,
+            10083
+          ],
+          "requirement": "Remark A.6 nonsurjectivity and contextual characterization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The physical L1-to-c0 Fourier map is not surjective; its range is dense and nonclosed.",
+            "The proof uses open mapping and actual Rudin-Shapiro polynomials."
+          ],
+          "declarations": [
+            "NLS.Fourier.circleL1Fourier_not_surjective",
+            "NLS.Fourier.denseRange_circleL1Fourier",
+            "NLS.Fourier.not_isClosed_range_circleL1Fourier"
+          ],
+          "qualification": "The source remark about a useful characterization remaining unknown is historical context, not a theorem that no characterization can exist. Nonsurjectivity itself is part of A.6."
+        },
+        {
+          "ordered_group": "A-025",
+          "source_lines": [
+            10086,
+            10094
+          ],
+          "requirement": "Convolution criterion, growth and convergence conventions",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "An original distributional Fourier product exists uniquely exactly when the convolution genuinely converges at each frequency and the resulting coefficients have polynomial growth."
+          ],
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_fourierProduct_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_symmetricFourierProduct_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.HasFourierProduct.symmetric"
+          ],
+          "qualification": "Unordered HasSum and symmetric integer cutoffs have separate explicit criteria. Do not replace convergence by a default-valued tsum or omit output growth. Historical examples are unchanged."
+        },
+        {
+          "ordered_group": "A-026",
+          "source_lines": [
+            10105,
+            10109
+          ],
+          "requirement": "Lemma A.7 product and exact Young bound (A.3)",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every Banach Young triple, including infinity endpoints, gives absolutely convergent convolution coefficients and a unique original product.",
+            "The bilinear product has exact operator norm one and is independent of the representing exponents."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct",
+            "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_youngProduct_terms",
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_unique",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_youngProductCLM",
+            "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_eq_of_val_eq"
+          ],
+          "qualification": "Agreement with pointwise multiplication is retained for continuous factors when one factor is Wiener. The constant in (A.3) remains one."
+        },
+        {
+          "ordered_group": "A-027",
+          "source_lines": [
+            10111,
+            10118
+          ],
+          "requirement": "Lemma A.8 embedding and corrected product constant (A.4)",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "For each finite Banach p, the FL^(1,p)-to-FL1 inclusion is continuous, injective and preserves the original distribution.",
+            "The product estimate retains the inverse-weight Holder factor C_p, with C_p<=2*p."
+          ],
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_val",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_injective",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_sobolevProduct_le",
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul"
+          ],
+          "qualification": "Correct (A.4) directly to norm(u*v)<=C_p*norm(u)*norm(v). The theorem includes p=1 and adds no infinity endpoint or new refutation."
+        },
+        {
+          "ordered_group": "A-028",
+          "source_lines": [
+            10120,
+            10129
+          ],
+          "requirement": "Inverse-weight Holder factor and physical weight convention",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "C_p is the conjugate-sequence norm of the reciprocal weight (1+|n|)^(-1).",
+            "That reciprocal sequence belongs to every conjugate exponent above one, including infinity, and the original norm convention stays fixed."
+          ],
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevEmbeddingConstant",
+            "NLS.Weight.inverse_sobolev_one_memlp",
+            "NLS.WeightedCoeff.norm_sobolevToL1CLM_le"
+          ],
+          "qualification": "Use the exact Section 2 weight. The physical rescaling (1+|2*n/L|) in the printed proof is not silently substituted for it. The finite factor is retained in the corrected estimate."
+        },
+        {
+          "ordered_group": "A-029",
+          "source_lines": [
+            10132,
+            10134
+          ],
+          "requirement": "Interval sources and periodic boundary mismatch",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "Arbitrary interval Sobolev data need not satisfy periodic endpoint matching; the following embeddings accept this general input."
+          ],
+          "declarations": [
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalHalfSobolev"
+          ],
+          "qualification": "Read this as motivation about general interval data, not as universal nonmembership in FL1 for every input. No new negative theorem is added."
+        },
+        {
+          "ordered_group": "A-030",
+          "source_lines": [
+            10136,
+            10140
+          ],
+          "requirement": "Lemma A.9 exponent ranges, including half regularity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0<=s<1/2, original interval data embeds into FLq whenever q>1/(s+1/2).",
+            "At s=1/2 the result holds for every q>1. L2 supplies all q>=2, including infinity, and ordinary L2 handles s=0."
+          ],
+          "declarations": [
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalHalfSobolev",
+            "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalL2",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalHalfFourierEmbedding",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalL2TargetEmbedding"
+          ],
+          "qualification": "Positive regularity uses actual finite Slobodeckij interval energy. No endpoint matching is required, and zero regularity does not use the fractional graph norm at s=0."
+        },
+        {
+          "ordered_group": "A-031",
+          "source_lines": [
+            10142,
+            10143
+          ],
+          "requirement": "Subcritical interval-periodic Sobolev identification",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0<s<1/2, the genuine intrinsic interval Sobolev space is continuously linearly equivalent to original FL^(s,2).",
+            "Both directions preserve physical representatives and have explicit analysis and synthesis norm bounds."
+          ],
+          "declarations": [
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_ofFunction_val",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_symm_represents",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_symm_le",
+            "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry"
+          ],
+          "qualification": "The identification retains the exact Section 2 Fourier weight and physical dilation constants; it is not asserted isometric. The s=0 case is ordinary L2."
+        },
+        {
+          "ordered_group": "A-032",
+          "source_lines": [
+            10144,
+            10155
+          ],
+          "requirement": "Holder proof, reciprocal exponent and endpoint handling",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The subcritical Holder argument gives the stated finite exponent range with explicit physical bounds.",
+            "The L2 inclusion handles q>=2 and infinity; the separate half-regularity construction handles q>1."
+          ],
+          "declarations": [
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalFourierEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalHalfFourierEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalL2TargetEmbedding_le",
+            "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding_eq_originalSobolevEquiv_val"
+          ],
+          "qualification": "The reciprocal-exponent formula is used in its finite Holder range. The remaining endpoints use the separate verified maps, preserving the original normalized interval action."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 27,
+        "corrected": 4,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/Fourier/SmoothPeriodicTestSpace.lean": "6e1932e0d0f37368b62a41e6c7b45120bb1366093b7fe3f5b16162d90dd63b95",
+        "NLS/Fourier/SmoothPeriodicTestFrechet.lean": "457756acdbcac45bfea1a1602531c0ec589cea7e0595d978150602f07ce58f20",
+        "NLS/Fourier/SmoothPeriodicDistribution.lean": "8e9ea86e525e64288073691dbc95de111df7c7c6466e85794e701303e6373b66",
+        "NLS/Fourier/PeriodicDistributionPhysicalOrderZero.lean": "a6ed9d1af0039ba490e004f590648fdd578033c50d2985402abcbf4823d3c263",
+        "NLS/Fourier/PeriodicDistributionFourierGrowth.lean": "0a5d60eb41aa2f00986e7ed0c6dddc702ece8519d8959163923755a9341411d7",
+        "NLS/Fourier/PeriodicDistributionMeasure.lean": "dcc96d63911ad49df00fd9697f09128dd9773fb44a14cb70cff81f8a92e7bee1",
+        "NLS/Fourier/ComplexMeasureContinuousIntegral.lean": "1ec947ec89a577a5799088b77fc60bba691e43bdbbe50b10ec446fb5119bf8e0",
+        "NLS/Fourier/PeriodicSobolevEmbedding.lean": "27dcffa51b9228972a8520c78d2b4de6c0a6f97f0510a42b05cb62a7001ac2ad",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/Fourier/SmoothPeriodicDistributionDerivative.lean": "af09359150c238862c080908372197ef6323174e6f7b9520e3f3963ac2dba175",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean": "17de7f4fb4fa19f4d359487e9bbbac98621d87e516952352baf5e0e733eec3d9",
+        "NLS/Fourier/PeriodicFourierLebesgueDuality.lean": "d343b7c224fd64fa9fec4469d76d4cf477d30dfa0adbf9056cd05859645b5841",
+        "NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean": "75c52ed4af19523d093bb5451fe092731598eee16f7a8991be52cd18104243e7",
+        "NLS/Fourier/PeriodicFourierLebesgueEmbeddings.lean": "b8a13c9368b4940648b41a7e71eaf96fb42874877a6e10036f42d9598b067851",
+        "NLS/Fourier/PeriodicFourierLebesgueProduct.lean": "00d066c9f606c0899da795ef94ad9ad335ca995471d313b20f0865af79711b17",
+        "NLS/Fourier/PeriodicWienerAlgebra.lean": "7e410bb3f8f6a152c87f37b9326b373821a53a13bdfab26c4ce1cb60a3d9ae90",
+        "NLS/Fourier/PeriodicDistributionConvolutionProduct.lean": "023cd338b722be1eada58e1f590455597481181ef6c53c24e404aa55e6a6ce55",
+        "NLS/Fourier/PeriodicRiemannLebesgue.lean": "145029b5933d3b19d7fd200f761ce5c6a9f77107a392aaacd5bfb8ee27229d78",
+        "NLS/Fourier/PeriodicL1Fourier.lean": "d35b89c5c29bead4f0360e1ce48b3c8c1787518ef39a01b4b6e94172ce16845b",
+        "NLS/Fourier/PeriodicL1NonSurjective.lean": "a4a573d2bd2989757506d960fc6b3c629e2f7e8ea31d94f759afda3366e7f396",
+        "NLS/Fourier/ComplexMeasureRepresentation.lean": "1fffcad53ce0cb6347285342bdf3d4c44a21a376f1ea201c4affce60838ae482",
+        "NLS/Fourier/NonMeasureFourierCounterexample.lean": "b5519e135a17213dfb0f7fa30a4e89b6a8bc44d42c844443947bb5fab4540012",
+        "NLS/Fourier/PrintedChirpLiteralSeries.lean": "8b4bec31dbf0982e2de5677afa48090262c36c9066394f3ed8d5e19f872246e3",
+        "NLS/Fourier/PrintedChirpPeriodTransport.lean": "f379e61736de21996e81914a0b033fe3a7a7b461c1e2b408f3db42b3578a6b57",
+        "NLS/Fourier/PeriodicIntervalFourierLebesgue.lean": "4afa02c984e19d2a806949f96f8fd1d6a379f09b6e6995e5c80b611c3f07d549",
+        "NLS/Fourier/PeriodicIntrinsicSobolevEmbedding.lean": "971b8bcedfd5d05dfeb1751eb548d369ee81082659006c04be347cfa4ea6b60d",
+        "NLS/Fourier/PeriodicIntrinsicSobolevEquivalence.lean": "32c0044de6c46b0495302edd103dc342f7973bdddf5abf9a62d309581266e7a5",
+        "NLS/Fourier/PeriodicDistributionOrderZero.lean": "4950cd2fce8f15693d7dee5ce5a6180aa2e678ddca1f89ba296138d604629b33",
+        "NLS/SequenceSpaces/SobolevConstant.lean": "8bb7baba2cb9ecba9b0390862775ea73da4f72cec3c51ef8824a5d24e0044373",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Fourier/SmoothPeriodicTestSpace.lean",
+        "NLS/Fourier/SmoothPeriodicTestFrechet.lean",
+        "NLS/Fourier/SmoothPeriodicDistribution.lean",
+        "NLS/Fourier/PeriodicDistributionPhysicalOrderZero.lean",
+        "NLS/Fourier/PeriodicDistributionFourierGrowth.lean",
+        "NLS/Fourier/PeriodicDistributionMeasure.lean",
+        "NLS/Fourier/ComplexMeasureContinuousIntegral.lean",
+        "NLS/Fourier/PeriodicSobolevEmbedding.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean",
+        "NLS/Fourier/SmoothPeriodicDistributionDerivative.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueSeries.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueDuality.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueEndpoints.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueEmbeddings.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueProduct.lean",
+        "NLS/Fourier/PeriodicWienerAlgebra.lean",
+        "NLS/Fourier/PeriodicDistributionConvolutionProduct.lean",
+        "NLS/Fourier/PeriodicRiemannLebesgue.lean",
+        "NLS/Fourier/PeriodicL1Fourier.lean",
+        "NLS/Fourier/PeriodicL1NonSurjective.lean",
+        "NLS/Fourier/ComplexMeasureRepresentation.lean",
+        "NLS/Fourier/NonMeasureFourierCounterexample.lean",
+        "NLS/Fourier/PrintedChirpLiteralSeries.lean",
+        "NLS/Fourier/PrintedChirpPeriodTransport.lean",
+        "NLS/Fourier/PeriodicIntervalFourierLebesgue.lean",
+        "NLS/Fourier/PeriodicIntrinsicSobolevEmbedding.lean",
+        "NLS/Fourier/PeriodicIntrinsicSobolevEquivalence.lean",
+        "NLS/Fourier/PeriodicDistributionOrderZero.lean",
+        "NLS/SequenceSpaces/SobolevConstant.lean",
+        "NLS/SequenceSpaces/SobolevEmbedding.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_A_ASSERTIONS.md",
+      "ordered_inventory_sha256": "05e2044ea50ee2a874f56df792c12c9a31bdd621ab7f559d7ebed443e29e13f8",
+      "resolved_declarations": [
+        "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalFourierEmbedding_le",
+        "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalHalfFourierEmbedding_le",
+        "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalL2TargetEmbedding_le",
+        "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_le",
+        "NLS.Fourier.IntrinsicIntervalSobolev.norm_originalSobolevEquiv_symm_le",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalFourierEmbedding_eq_originalSobolevEquiv_val",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalHalfFourierEmbedding",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalL2TargetEmbedding",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_ofFunction_val",
+        "NLS.Fourier.IntrinsicIntervalSobolev.originalSobolevEquiv_symm_represents",
+        "NLS.Fourier.PeriodicFourierLebesgue.bidual_surjective",
+        "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+        "NLS.Fourier.PeriodicFourierLebesgue.completeSpace",
+        "NLS.Fourier.PeriodicFourierLebesgue.continuousRepresentative_injective",
+        "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_continuousRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.existsUnique_lpRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.hasSum_continuousRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry",
+        "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_norm",
+        "NLS.Fourier.PeriodicFourierLebesgue.l2Isometry_parseval_interval",
+        "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_injective",
+        "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_one",
+        "NLS.Fourier.PeriodicFourierLebesgue.lpRepresentative_two",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_continuousRepresentative_le",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_eq",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_lpRepresentative_le",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_ofIntervalL1_le",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_ofLp_le",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_sobolevProduct_le",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_youngProductCLM",
+        "NLS.Fourier.PeriodicFourierLebesgue.ofLp",
+        "NLS.Fourier.PeriodicFourierLebesgue.ofLp_apply_interval",
+        "NLS.Fourier.PeriodicFourierLebesgue.ofLp_injective",
+        "NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureDualIsometry",
+        "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener",
+        "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_injective",
+        "NLS.Fourier.PeriodicFourierLebesgue.sobolevToWiener_val",
+        "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_continuousRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.summable_norm_youngProduct_terms",
+        "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate",
+        "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_action",
+        "NLS.Fourier.PeriodicFourierLebesgue.tendsto_truncate_top_iff",
+        "NLS.Fourier.PeriodicFourierLebesgue.truncate_eq_ofContinuous",
+        "NLS.Fourier.PeriodicFourierLebesgue.uniformlyContinuous_continuousRepresentative",
+        "NLS.Fourier.PeriodicFourierLebesgue.unweightedDualEquiv_apply",
+        "NLS.Fourier.PeriodicFourierLebesgue.wienerContinuousAlgHom",
+        "NLS.Fourier.PeriodicFourierLebesgue.youngProduct",
+        "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_eq_of_val_eq",
+        "NLS.Fourier.PeriodicFourierLebesgue.youngProduct_unique",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.HasFourierProduct.symmetric",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.coefficients_isBigO_of_order",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.complexMeasureOrderZeroEquiv",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_apply",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.derivative_coefficient",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_normalized_measure",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.existsUnique_of_polynomial_isBigO",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_order",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_fourierProduct_iff",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.exists_unique_symmetricFourierProduct_iff",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.ext_coefficients",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.hasOrderAtMost_order",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_apply",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_coefficient",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.ofL1_order",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.order",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.order_le",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_measure",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.order_zero_iff_physical_extension",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.polynomial_growth_iff_existsUnique",
+        "NLS.Fourier.SmoothPeriodicTest.cNorm_apply",
+        "NLS.Fourier.SmoothPeriodicTest.continuous_iff_finite_order",
+        "NLS.Fourier.SmoothPeriodicTest.denseRange_toContinuousCLM",
+        "NLS.Fourier.SmoothPeriodicTest.derivativeJetEquiv",
+        "NLS.Fourier.SmoothPeriodicTest.isClosed_range_derivativeJet",
+        "NLS.Fourier.SmoothPeriodicTest.mode_apply_physical",
+        "NLS.Fourier.SmoothPeriodicTest.periodic",
+        "NLS.Fourier.SmoothPeriodicTest.smooth",
+        "NLS.Fourier.circleL1Fourier",
+        "NLS.Fourier.circleL1Fourier_not_surjective",
+        "NLS.Fourier.complexMeasureContinuousIntegral_surjective",
+        "NLS.Fourier.complexMeasure_finite_variation",
+        "NLS.Fourier.complexMeasure_variation_regular",
+        "NLS.Fourier.denseRange_circleL1Fourier",
+        "NLS.Fourier.exists_fourierLebesgue_above_two_not_measure",
+        "NLS.Fourier.fourierCoeff_printedChirpAtPeriod",
+        "NLS.Fourier.nonMeasureDistribution_not_measure",
+        "NLS.Fourier.norm_fourierCoeff_le_integral_norm",
+        "NLS.Fourier.not_isClosed_range_circleL1Fourier",
+        "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalHalfSobolev",
+        "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalL2",
+        "NLS.Fourier.ofL1_mem_fourierLebesgue_of_intervalSobolev",
+        "NLS.Fourier.periodTwoCoefficient_printedChirpFunction",
+        "NLS.Fourier.printedChirpAtPeriod_mem_original_iff",
+        "NLS.Fourier.tendstoUniformly_printedChirpAtPeriod_original",
+        "NLS.Fourier.tendstoUniformly_printedChirp_original",
+        "NLS.Fourier.tendsto_fourierCoeff_cofinite",
+        "NLS.Fourier.tendsto_intervalFourierCoefficient_cofinite",
+        "NLS.Weight.inverse_sobolev_one_memlp",
+        "NLS.WeightedCoeff.norm_sobolevToL1CLM_le",
+        "NLS.WeightedCoeff.sobolevEmbeddingConstant",
+        "NLS.WeightedCoeff.sobolevEmbeddingConstant_le_two_mul"
+      ],
+      "declaration_inventory_count": 44706,
+      "qualification": "The ordered Appendix A comparison covers 32 groups on printed pp.121–124: 27 matched, four directly corrected and one contextual, with no partial or pending groups in this local comparison. Original smooth-test distributions, physical Lp quotients, positive periods, normalized 1/L actions, exact Section 2 weights and all stated exponent ranges are retained. Corrections keep weighted-c0 norm convergence at infinity, explicitly rescale the printed chirp to the physical period, retain the Holder product factor C_p<=2*p, and use the original weight in its proof. A.3, A.5 and A.6 retain their source assertions and witnesses. This comparison adds no Lean proof or refutation and does not repeat every transitive dependency proof. The four Section 28 complex intermediate qualifications and broader completeness qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          121,
+          122,
+          123,
+          124
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-a-ordered-121.png": "39f9285eba1cc5643eb9e7fb9ffc6f905c73db7ccb336d362dfd383b918ad030",
+          "work/tmp/pdfs/appendix-a-ordered-122.png": "c0f2e28034d6f3073e4b18d97d001398b82fcb37636fb71f6831b2b7a3c8eb0a",
+          "work/tmp/pdfs/appendix-a-ordered-123.png": "16f510667f5f75126ec75830786af01bded5b8e12f072f570964a909f95ea8f2",
+          "work/tmp/pdfs/appendix-a-ordered-124.png": "add87f0bb80903a526d5b6312f9ab10e92059773bd3010dc4a417f955f9baaa2"
+        }
+      },
+      "preceding_review_hash": "2bab01fbfa94221f3f5291f1a9768a7ce3a3bce9476313ad371aa54bf905b4da",
+      "validation_lean_sources": {
+        "files": 4859,
+        "sha256": "ac18196c27d9161f53639d7e695846218c07e5b16a089b7e901afb959ce25813"
+      },
+      "validation_reused_from_commit": "cec78d328ace97d075ff5832a67c11eb4da30118",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 80905,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section28SmallBallFullCheck.log",
+        "log_sha256": "655a59f3f11b7defb6263961d18d4ced498ced67e9ce235f91486fc9e223072f"
+      },
+      "source_record_sha256": "24ee3e630d442ea85073a9a86c0c4e0ca02ddccb554ae18ce5209b8c7e55c559"
     }
   }
 }

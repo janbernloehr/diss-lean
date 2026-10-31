@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 28 comparison](coverage/SECTION_28_ASSERTIONS.md)
-records 16 matched groups, eight direct corrections, four qualified complex
-intermediate passages and two contextual passages. The named final bounds
-retain their exact constants and original scope. Appendix A is next;
+Latest step: the [ordered Appendix A comparison](coverage/APPENDIX_A_ASSERTIONS.md)
+records 27 matched groups, four direct corrections and one contextual
+passage. Original distributions, physical normalization and exponent
+endpoints are retained. Appendix B is next;
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
