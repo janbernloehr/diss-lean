@@ -72964,3 +72964,59 @@ example (φ : realTypeSourceSubmodule 4) (z : ℕ → Coeff 4 × Coeff 4)
   (Q.eventually_conjugate_coordinate_image φ z hz hr).mono (fun _ h => h.2.1)
 
 end Section22HilbertCoordinateExamples
+
+section Section23EndpointAsymptoticExamples
+open NLS NLS.ZakharovShabat Filter
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The printed odd action level 2m+1 uses spectral power 2m at both endpoints.
+example (φ : realTypeSourceSubmodule 2) (m : ℕ) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n (2*m) φ.val)
+      (fun n : ℤ =>
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n)^(2*m) *
+            sourceIndexedAction (by simp) (by norm_num) n φ.val) ∧
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n (2*m) φ.val)
+      (fun n : ℤ =>
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n)^(2*m) *
+            sourceIndexedAction (by simp) (by norm_num) n φ.val) :=
+  ⟨sourceIndexedHigherAction_asymptotic_leftEndpoint (by simp) (by norm_num) φ (2*m),
+    sourceIndexedHigherAction_asymptotic_rightEndpoint (by simp) (by norm_num) φ (2*m)⟩
+
+-- At spectral power zero the endpoint factor disappears, even at index zero.
+example (φ : realTypeSourceSubmodule 2) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 0 φ.val)
+      (fun n : ℤ => sourceIndexedAction (by simp) (by norm_num) n φ.val) := by
+  simpa only [pow_zero, one_mul] using
+    sourceIndexedHigherAction_asymptotic_leftEndpoint (by simp) (by norm_num) φ 0
+
+-- The zero source has closed gaps; no nonvanishing-action premise is needed.
+example :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ => sourceIndexedHigherAction (by simp) (by norm_num) n 4 (0 : CoeffPair 2))
+      (fun n : ℤ =>
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential (0 : CoeffPair 2))
+          (periodOnePotential_mem (0 : CoeffPair 2)) n)^4 *
+            sourceIndexedAction (by simp) (by norm_num) n (0 : CoeffPair 2)) :=
+  sourceIndexedHigherAction_asymptotic_rightEndpoint (by simp) (by norm_num) 0 4
+
+-- The comparison also joins the two endpoints above the Hilbert exponent.
+example (φ : realTypeSourceSubmodule 4) :
+    Asymptotics.IsEquivalent cofinite
+      (fun n : ℤ =>
+        (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n)^3 *
+            sourceIndexedAction (by norm_num) (by norm_num) n φ.val)
+      (fun n : ℤ =>
+        (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n)^3 *
+            sourceIndexedAction (by norm_num) (by norm_num) n φ.val) :=
+  (sourceIndexedHigherAction_asymptotic_leftEndpoint (by norm_num) (by norm_num) φ 3).symm.trans
+    (sourceIndexedHigherAction_asymptotic_rightEndpoint (by norm_num) (by norm_num) φ 3)
+
+end Section23EndpointAsymptoticExamples

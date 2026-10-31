@@ -46,8 +46,7 @@ The [positive Section 22 phase estimate](../NLS/ZakharovShabat/SourceSection22Ph
 now supplies the exact component-sum pair norm, `2^p` tail constant and
 `2*epsilon` consequence for the actual original physical trajectories.
 The repeated scalar time variable is corrected directly, with no new
-refutation. The complete ordered Section 22 comparison remains in progress,
-while the [cutoff and uniform estimates](../NLS/ZakharovShabat/SourceSection22UniformEstimates.lean)
+refutation. The [cutoff and uniform estimates](../NLS/ZakharovShabat/SourceSection22UniformEstimates.lean)
 are now proved. One original complex coordinate neighborhood supports
 the mixed frequency/exponential bounds and full analytic trajectories
 bounded by `exp(R*C) * M`, with the neighborhood and constants chosen
@@ -66,6 +65,13 @@ original physical flow and approximation-solution definitions, full norms,
 common domains, arbitrary-Hilbert estimates and precise nonextension scopes.
 The remaining domain notation is corrected directly. No new proof or
 refutation is added. The next ordered comparison is Section 23.
+
+The [positive endpoint comparisons](../NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean)
+now retain both original periodic endpoints and every periodic-gap sample
+in Section 23's higher-action asymptotic. They include closed gaps,
+both signed tails and all natural spectral powers, with the printed
+odd-level convention intact. The complete ordered Section 23 comparison
+remains in progress.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

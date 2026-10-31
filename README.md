@@ -5,13 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 22 comparison](coverage/SECTION_22_ASSERTIONS.md)
-records 23 matched groups, ten corrections and four contextual groups.
-It retains original physical flows, exact norms, image restrictions,
-arbitrary Hilbert approximations and the original solution definition.
-Domain notation is corrected directly; no new refutation is added.
-The unchanged Lean snapshot retains its full successful checks.
-Section 23 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [Section 23 endpoint comparisons](NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean)
+retain both original periodic endpoints in the higher-action asymptotic,
+including closed gaps and both integer tails. Three positive theorems and
+four API examples pass the full checks. No new refutation is added.
+The ordered Section 23 comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

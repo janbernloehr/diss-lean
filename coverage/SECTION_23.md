@@ -1,5 +1,24 @@
 # Section 23: estimates for the original Birkhoff map
 
+## Literal periodic-endpoint comparisons
+
+The higher-action display on p. 105 now has direct positive comparisons
+with both original periodic endpoints in
+[SourceIndexedHigherActionEndpointAsymptotic.lean](../NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean).
+The result also holds for every selection in the original periodic segments.
+It retains every natural spectral power, all finite source exponents p>1,
+and both integer tails. Closed gaps require no nonvanishing-action premise.
+
+Spectral power k denotes printed action level k+1, so power 2m gives the
+displayed odd-level comparison, including m=0. The existing free-lattice
+asymptotic supplies the second comparison in that display. Three positive
+theorems and four API examples are integrated. No new refutation is added.
+
+The full ./scripts/check.sh passed with 8,572 build jobs, 7,672 public examples and an axiom audit of 44,674 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Four API examples retain the odd-level convention, zero power, closed gaps and exponent 4. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 23 comparison remains in progress.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
 This audit concerns printed pp. 103–106. Theorems 23.1, 23.2, and 23.4,
 Remark 23.3, and Corollary 23.5 now hold for one retained original
 Sections 17–22 family. The exact norms and indexed actions are retained.

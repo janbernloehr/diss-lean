@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T01:38:39.215895+00:00",
-  "base_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
+  "published_utc": "2026-10-31T01:59:06.328291+00:00",
+  "base_commit": "5a6d95bfd34760fc3a6ae331fbd7db99aeabc32a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 168,
-    "module_hash_checks": 3688,
-    "distinct_modules": 1963
+    "review_records": 169,
+    "module_hash_checks": 3692,
+    "distinct_modules": 1964
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
-    "validated_state": "Section22 ordered comparison changes documentation only. The exact Lean snapshot retains the preceding successful arbitrary-Hilbert coordinate check.",
+    "base_commit": "5a6d95bfd34760fc3a6ae331fbd7db99aeabc32a",
+    "validated_state": "Fresh full check after three positive Section23 endpoint-asymptotic theorems and four API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8571,
-    "public_examples": 7668,
-    "transitive_NLS_declarations": 44671,
+    "build_jobs": 8572,
+    "public_examples": 7672,
+    "transitive_NLS_declarations": 44674,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 88874,
+    "gate_session": 5319,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4848,
-      "sha256": "f1a18ddcb7eada917e3b4cca75e656cf8aafeac3e910a9d4c4e3dde0f78b4a1f"
+      "files": 4849,
+      "sha256": "e29c3a59bdd641140396b4e1a08d964f4cafd9f20a12ed0f5761b3bbc6913992"
     },
-    "full_gate_log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437",
-    "qualification": "Unchanged Lean files and locks are hash-verified against the full successful build, public examples and transitive axiom audit. The source comparison retains all corrections and broader completeness qualifications.",
-    "full_gate_log": "work/Section22HilbertCoordinateFullCheck.log",
-    "validation_reused_from_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341"
+    "full_gate_log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section23 comparison and broader completeness qualifications remain open.",
+    "full_gate_log": "work/Section23EndpointAsymptoticFullCheck.log"
   },
   "named_statements": [
     {
@@ -52408,6 +52407,112 @@
         "log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437"
       },
       "source_record_sha256": "2d790c1e9911e399f15c5fda945da2783a22de3bc532eb677a173020da5932d6"
+    },
+    "Section23EndpointAsymptoticSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "5a6d95bfd34760fc3a6ae331fbd7db99aeabc32a",
+      "updated_utc": "2026-10-31T01:59:06.328291+00:00",
+      "source_lines": [
+        [
+          8610,
+          8617
+        ],
+        [
+          8612,
+          8617
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8610,
+            8617
+          ],
+          "requirement": "Higher-action levels and arbitrary original periodic-gap samples",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_gapSample",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_zero",
+            "NLS.ZakharovShabat.sourceGapSample_power_ratio_tendsto",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_power_mul_action"
+          ],
+          "reviewed_claims": [
+            "The original higher action at spectral power k uses printed level k+1 and equals the ordinary indexed action at k=0. Its exact real mean-value sample lies in the actual periodic segment. Every selection in those segments gives the asymptotic comparison, along both integer tails and for each natural spectral power."
+          ],
+          "qualification": "Actual real sources at every finite exponent p>1 are allowed. The comparison uses asymptotic equivalence and never divides by an action, so infinitely many closed gaps cause no restriction."
+        },
+        {
+          "source_lines": [
+            8612,
+            8617
+          ],
+          "requirement": "The literal left and right periodic-endpoint asymptotics",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint",
+            "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic"
+          ],
+          "reviewed_claims": [
+            "Both original canonical periodic endpoints have the literal higher-action asymptotic. At spectral power 2*m these are exactly the two endpoint alternatives in the printed odd-level display. Together with the existing free-lattice theorem they give the displayed chain through (n*pi)^(2*m) times the original indexed action."
+          ],
+          "qualification": "The zero source, closed gaps, m=0 and both signed tails are included. This comparison does not alter the separate corrected higher-action trace formula."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean": "1866063c9d1b1ce6572432ecd1fa889050db9244acead00bce17baa690757c4b",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean": "952d351d05ab5cdcd1a849e8ead619f2cd8e907584eb742f7623d5f9f7b31450",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean": "93a2b5ef46514beee04ca553d4f41cf9013d0d022e6dd0aa5894d64fce0f0c79",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean": "a76c61212b55dbe2425c2fd2cacf55e8fc01ac91c25c2ff5fa42c3f565ebe126"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionAsymptotic.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherActionReal.lean",
+        "NLS/ZakharovShabat/SourceIndexedHigherAction.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete all 38 ordered Section 23 source groups with literal norms, original family identity and exact scope."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.sourceGapSample_power_ratio_tendsto",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_gapSample",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_leftEndpoint",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_asymptotic_rightEndpoint",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_eq_power_mul_action",
+        "NLS.ZakharovShabat.sourceIndexedHigherAction_zero"
+      ],
+      "declaration_inventory_count": 44674,
+      "qualification": "The first displayed asymptotic in the Section 23 outline now has direct positive proofs for both original periodic endpoints. More generally every selection in the original periodic segments gives the same comparison. The proof applies to every finite p>1 and every natural spectral power, with the cofinite integer filter expressing both tails. Spectral power k is printed action level k+1; the odd-level display uses k=2*m, including m=0. Actual original indexed actions and endpoints are retained. Closed gaps are included without dividing by their vanishing actions. The free-lattice comparison remains available. Four API examples cover both odd-level endpoints, power zero, the zero source with closed gaps, and an endpoint-to-endpoint comparison at p=4. No source correction or refutation is introduced. The complete ordered Section 23 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          105
+        ],
+        "images": {
+          "work/tmp/pdfs/section23-weights-105.png": "29c32ae5e35e433637490d46c36f35363a3d6228032ab75b92f61addd6412c0a"
+        }
+      },
+      "preceding_review_hash": "2d790c1e9911e399f15c5fda945da2783a22de3bc532eb677a173020da5932d6",
+      "validation_lean_sources": {
+        "files": 4849,
+        "sha256": "e29c3a59bdd641140396b4e1a08d964f4cafd9f20a12ed0f5761b3bbc6913992"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 4,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 5319,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section23EndpointAsymptoticFullCheck.log",
+        "log_sha256": "d4766449409e03b8ba5905b82a4419117c8680223a6f6d8f6d857115c6dd84ac"
+      },
+      "source_record_sha256": "8346deaf21cb242d06ef9141a0c102c983bb47ec6420da337c10bab98c5184a3"
     }
   }
 }

@@ -1,6 +1,27 @@
 # Implementation status
 
-## Current milestone: ordered Section 22 wellposedness comparison
+## Current milestone: Section 23 periodic-endpoint asymptotics
+
+The higher-action display on p. 105 now has direct positive comparisons
+with both original periodic endpoints in
+[SourceIndexedHigherActionEndpointAsymptotic.lean](NLS/ZakharovShabat/SourceIndexedHigherActionEndpointAsymptotic.lean).
+The result also holds for every selection in the original periodic segments.
+It retains every natural spectral power, all finite source exponents p>1,
+and both integer tails. Closed gaps require no nonvanishing-action premise.
+
+Spectral power k denotes printed action level k+1, so power 2m gives the
+displayed odd-level comparison, including m=0. The existing free-lattice
+asymptotic supplies the second comparison in that display. Three positive
+theorems and four API examples are integrated. No new refutation is added.
+
+The full ./scripts/check.sh passed with 8,572 build jobs, 7,672 public examples and an axiom audit of 44,674 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Four API examples retain the odd-level convention, zero power, closed gaps and exponent 4. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 23 comparison remains in progress.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 22 wellposedness comparison
 
 The [ordered Section 22 comparison](coverage/SECTION_22_ASSERTIONS.md)
 now covers all 37 groups on pp. 98–101: 23 matched, ten corrected and four
