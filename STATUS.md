@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: ordered Appendix C comparison
+## Current milestone: Appendix D positive proof steps
+
+The [paired factors](NLS/ZakharovShabat/AppendixDPairedFactors.lean) in D.4
+now have their exact cancellation identities and absolute convergence.
+The [exterior denominator estimate](NLS/ZakharovShabat/AppendixDExteriorGeometry.lean)
+in D.5 retains the printed factor four, including disc boundaries.
+
+The [D.6 cutoff](NLS/ZakharovShabat/AppendixDFactorCutoff.lean) uses abs(n)
+and c on both head/tail terms. One cutoff works before all indices
+and disc points, giving the positive signed-product inequality.
+The [square-row energy](NLS/ZakharovShabat/AppendixDSquarePower.lean)
+retains c^p and the p norm, including the range 1 < p < 2.
+
+Four modules add one definition, eleven positive theorems and six
+examples. The constants and displayed inequality are corrected
+directly, with no new refutation.
+
+The full check passed: 8,588 build jobs, 7,703 public examples and an axiom audit of 44,763 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The thirty-group ordered Appendix D comparison remains in progress,
+including further intermediate proof assertions. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix C comparison
 
 The [ordered Appendix C comparison](coverage/APPENDIX_C_ASSERTIONS.md)
 covers nine groups on pp.125–126: six matched, two corrected and one

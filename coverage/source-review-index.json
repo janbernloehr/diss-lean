@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T05:27:38.771356+00:00",
-  "base_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
+  "published_utc": "2026-10-31T05:48:21.989421+00:00",
+  "base_commit": "d70d2a6c42e08485ece290747afef556a0efa887",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 187,
-    "module_hash_checks": 4042,
-    "distinct_modules": 2068
+    "review_records": 188,
+    "module_hash_checks": 4053,
+    "distinct_modules": 2073
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a",
-    "validated_state": "Appendix C ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix C separate-correction check.",
+    "base_commit": "d70d2a6c42e08485ece290747afef556a0efa887",
+    "validated_state": "Fresh full check after four Appendix D proof modules and six public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8584,
-    "public_examples": 7697,
-    "transitive_NLS_declarations": 44742,
+    "build_jobs": 8588,
+    "public_examples": 7703,
+    "transitive_NLS_declarations": 44763,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 80319,
+    "gate_session": 98565,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4861,
-      "sha256": "30296f13d8409b89893d6313ea478802698424bad6f25f2b76470caf95b86e30"
+      "files": 4865,
+      "sha256": "0cc7f9150c68ac666c84f711cb7ae4748785810e9a70a384993033b0ee9c464b"
     },
-    "full_gate_log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixCSeparateCorrectionsFullCheck.log",
-    "validation_reused_from_commit": "84c1afb63ef673079ec78066d2e9fc55c2ce1e1a"
+    "full_gate_log_sha256": "12e117cd652d61f5704e775460f0db7ee3635ed34fcf34cbc2342ef6ef06de8e",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix D and broader completeness qualifications remain open.",
+    "full_gate_log": "work/AppendixDProofStepsFullCheck.log"
   },
   "named_statements": [
     {
@@ -63666,6 +63665,189 @@
         "log_sha256": "1ef222476d99b091a7259293f51375b57b706f99e45dc6295fc3f79a495c126a"
       },
       "source_record_sha256": "90bedbd5d74d65a9d68fbccdef02ea4d69c70022dc8b4edc12b2ded3e176e1b5"
+    },
+    "AppendixDProofStepsSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "d70d2a6c42e08485ece290747afef556a0efa887",
+      "updated_utc": "2026-10-31T05:48:21.936245+00:00",
+      "source_lines": [
+        [
+          10401,
+          10420
+        ],
+        [
+          10472,
+          10477
+        ],
+        [
+          10537,
+          10557
+        ],
+        [
+          10574,
+          10591
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10401,
+            10420
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation",
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_mul_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg",
+            "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg"
+          ],
+          "reviewed_claims": [
+            "Opposite-index perturbations have the exact linear cancellation and quadratic square-denominator identities.",
+            "The paired linear and quadratic terms are absolutely summable for every finite Banach exponent, including p=1; quadratic summability also holds for bounded displacements."
+          ],
+          "qualification": "These are the actual zero-deleted perturbations, totalized at the unused zero entry. The statements prove fixed-parameter absolute summability; the existing product construction supplies joint analyticity. Uniform paired-term estimates are not claimed by this module."
+        },
+        {
+          "source_lines": [
+            10472,
+            10477
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDExterior_denominator_le_four",
+            "NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le"
+          ],
+          "reviewed_claims": [
+            "For each nearest real lattice point, 1+abs(n-m)+abs(Im z) is at most four times the free denominator norm.",
+            "The relative-factor estimate has the source constant four, including the boundaries of the excluded open discs."
+          ],
+          "qualification": "The original exterior and nearest-lattice hypotheses are retained. This module proves the scalar factor-four bound; it does not assert the subsequent far/near sum estimate."
+        },
+        {
+          "source_lines": [
+            10537,
+            10557
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff",
+            "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff",
+            "NLS.ZakharovShabat.exists_appendixDRelativeProduct_signed_bound"
+          ],
+          "reviewed_claims": [
+            "The head/tail bound uses abs(n) and the separation constant c on both terms. One cutoff, before all indices and disc points, gives arbitrary smallness and the half-unit bound.",
+            "D.1 gives a positive inequality for each actual relative-product error with the signed sum, absolute sum and square sum. The displayed equality is corrected directly."
+          ],
+          "qualification": "The cutoff includes finite p=1 and arbitrary bounded complex reference displacements under the given tail separation. This is a pointwise disc inequality; the existing D.6 theorem independently bounds actual disc suprema. The printed finite-head modification remains to be compared."
+        },
+        {
+          "source_lines": [
+            10574,
+            10591
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_appendixDSquaredRow_power_bound"
+          ],
+          "reviewed_claims": [
+            "The square-row majorant has summable p/2 powers with explicit c^p times norm(a)^p and the reciprocal-square kernel constant to power p/2.",
+            "The same p norm and c^p occur above and below p=2. The p=3/2 example retains the quasi-normed target exponent 3/4."
+          ],
+          "qualification": "The finite range 1<p<infinity and actual squared reciprocal rows are retained, including p<2. The constant and norm labels are corrected directly without adding a refutation."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/SampledHilbert.lean": "71fe6c88a4977e98d4a03c18611f97045b64b653db42609c04b26f4c0513288b",
+        "NLS/SequenceSpaces/ExponentEmbedding.lean": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean": "a96736367e4224d970080953e97d9270435041e0de165a50dcea212f16e3e2b3",
+        "NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean": "1024c5d877618f18c7205c9a677a4b97c387490829298991ddbc6e046e809d49",
+        "NLS/SequenceSpaces/FourierTail.lean": "38b707bd9e9d4e4f97c1d99563bb3799bcd920f5b24274d8154cde025628dd57",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean": "20d50f9d2ae9cb384ae745839d772bfb0ce73892d640b350abc873c55faa8e4b",
+        "NLS/ComplexAnalysis/SignedProductEstimates.lean": "ab5df282d2337d5f6cf58f0f1cee533cbf60fc557f10320561626cd6b572ca4e",
+        "NLS/ZakharovShabat/AppendixDPairedFactors.lean": "11d02219c2cba9a3e5eed93d21d5b12d87a5f12fbe1bb1e43d91edaccdb5096c",
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean": "4de3a81219d4efe0ec68d070a013a9c5ae96ad37c949f25afaf84017c8e210e9",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean": "3cab5676f1fde6db46a0bfa5616e6a756dc472142a1489b9ff12ef961e7424b3",
+        "NLS/ZakharovShabat/AppendixDSquarePower.lean": "d9cefc362378ae387704e3494b442c431589ce7c46340d9c546b0e0be78bddd1"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Fourier/SampledHilbert.lean",
+        "NLS/SequenceSpaces/ExponentEmbedding.lean",
+        "NLS/ZakharovShabat/AppendixDExteriorAsymptotic.lean",
+        "NLS/SequenceSpaces/ReciprocalColumnHeadTail.lean",
+        "NLS/SequenceSpaces/FourierTail.lean",
+        "NLS/ZakharovShabat/AppendixDReciprocalBounds.lean",
+        "NLS/ComplexAnalysis/SignedProductEstimates.lean",
+        "NLS/ZakharovShabat/AppendixDPairedFactors.lean",
+        "NLS/ZakharovShabat/AppendixDExteriorGeometry.lean",
+        "NLS/ZakharovShabat/AppendixDFactorCutoff.lean",
+        "NLS/ZakharovShabat/AppendixDSquarePower.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the thirty ordered Appendix D groups, including the scalar far/near sum, finite-head modification and disc-supremum display."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.appendixDExterior_denominator_le_four",
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation",
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_add_neg",
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation_mul_neg",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff",
+        "NLS.ZakharovShabat.exists_appendixDRelativeProduct_signed_bound",
+        "NLS.ZakharovShabat.exists_appendixDSquaredRow_power_bound",
+        "NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le",
+        "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail",
+        "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg",
+        "NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg"
+      ],
+      "declaration_inventory_count": 44763,
+      "qualification": "Four modules add one definition, eleven positive theorems and six examples for the proof steps in D.4-D.6. Opposite-index pairing has the exact linear and quadratic identities and absolute summability, including finite p=1; the quadratic terms also permit bounded inputs. The D.5 scalar denominator and relative-factor estimates retain the constant four and the exterior disc boundaries. D.6 has a uniform small-factor cutoff with abs(n) and c on both head/tail terms, followed by the actual pointwise signed-product inequality. The square-row p/2 energy retains c^p and the p norm, including 1<p<2. These corrections are proved directly without new refutations. The ordered Appendix D comparison, including further intermediate proof assertions, and the broader completeness qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          126,
+          127,
+          128,
+          129,
+          130
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-d-intro-126.png": "a8466771ea3ea17a3f6b965bb1ef7ce3c5aeac1ec83eb68f3f6b2c17f98986cc",
+          "work/tmp/pdfs/appendix-d-ordered-127.png": "b0c06b20662eec54d70c9fed5d3a3278ab7f8cc1696df37b8bdfee542bbc9241",
+          "work/tmp/pdfs/appendix-d-ordered-128.png": "8ec782ae430e2f688c540b45a2ebad051ac98b43d6cb37977201b718edf52c77",
+          "work/tmp/pdfs/appendix-d-ordered-129.png": "9f7dfbe49acaca9042c9434ae6b007f7cc064139a33ed0399c11f5ff46a563b1",
+          "work/tmp/pdfs/appendix-d-ordered-130.png": "f3d40426d626a2e50d996c52e937b9c247f19ef4b4697d912f4f947052450d7a"
+        }
+      },
+      "preceding_review_hash": "0569f4117f96fd81f41fcf19db11eef6394233b72198012c362130f5d9513437",
+      "validation_lean_sources": {
+        "files": 4865,
+        "sha256": "0cc7f9150c68ac666c84f711cb7ae4748785810e9a70a384993033b0ee9c464b"
+      },
+      "new_definitions": 1,
+      "positive_theorems_integrated": 11,
+      "new_public_examples": 6,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.appendixDZeroDeletedPerturbation.eq_1",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff._proof_1_1",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff._proof_1_2",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff._proof_1_3",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff._proof_1_4",
+        "NLS.ZakharovShabat.exists_appendixDReciprocalTerm_uniform_cutoff._proof_1_5",
+        "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail._proof_1_3",
+        "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail._simp_1_1",
+        "NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail._simp_1_2"
+      ],
+      "full_gate": {
+        "session": 98565,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixDProofStepsFullCheck.log",
+        "log_sha256": "12e117cd652d61f5704e775460f0db7ee3635ed34fcf34cbc2342ef6ef06de8e"
+      },
+      "source_record_sha256": "729dedca59ab8889577e91ce015191ed696b9f03ebe083d08666ab94ec8d269d"
     }
   }
 }

@@ -73344,3 +73344,82 @@ example (s r : NLS.Coeff ⊤) {c : ℝ} (hc : 0 < c)
       c ^ 2 * ‖s‖ ^ 2 * ‖NLS.Fourier.hilbertSquareCoeffs‖ ^ 2 * ‖a‖ ^ 2 := by
   simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using
     NLS.Fourier.tsum_norm_modifiedHilbertF_rpow_le s r hc hsep (by simp) a
+
+section AppendixDPairedFactorsExamples
+
+-- Opposite-index cancellation gives absolute convergence at p = 1.
+example (a : NLS.Coeff 1) (z : ℂ) :
+    Summable (fun m : ℤ =>
+      ‖NLS.ZakharovShabat.appendixDZeroDeletedPerturbation a z m +
+        NLS.ZakharovShabat.appendixDZeroDeletedPerturbation a z (-m)‖) := by
+  exact NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_add_neg
+    (by norm_num) a z
+
+-- The quadratic terms already converge for bounded perturbations.
+example (a : NLS.Coeff ⊤) (z : ℂ) :
+    Summable (fun m : ℤ =>
+      ‖NLS.ZakharovShabat.appendixDZeroDeletedPerturbation a z m *
+        NLS.ZakharovShabat.appendixDZeroDeletedPerturbation a z (-m)‖) := by
+  exact NLS.ZakharovShabat.summable_norm_appendixDZeroDeletedPerturbation_mul_neg a z
+
+end AppendixDPairedFactorsExamples
+
+-- The exterior includes the boundary point i*pi/4 of the zeroth free disc.
+example (a : ℂ) :
+    ‖a/(((Real.pi/4:ℝ):ℂ)*Complex.I)‖ ≤ 4*‖a‖/(1+Real.pi/4) := by
+  let z : ℂ := ((Real.pi/4:ℝ):ℂ)*Complex.I
+  have hz : z ∈ NLS.ZakharovShabat.appendixDExterior := by
+    intro m
+    simpa [z,abs_of_nonneg (show 0 ≤ Real.pi/4 by positivity)] using
+      Complex.abs_im_le_norm (z-(Real.pi:ℂ)*m)
+  have hn : |z.re-Real.pi*(0:ℤ)| ≤ Real.pi/2 := by
+    simp only [z,Complex.mul_re,Complex.ofReal_re,Complex.ofReal_im,Complex.I_re,
+      Complex.I_im,mul_zero,zero_mul,sub_zero,Int.cast_zero,abs_zero]
+    positivity
+  simpa [z,abs_of_nonneg (show 0 ≤ Real.pi/4 by positivity)] using
+    NLS.ZakharovShabat.norm_appendixDExterior_relativeFactor_le hz 0 hn 0 a
+
+-- Negative lattice indices use their magnitude in the head coefficient.
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff 2) {c : ℝ} (hc : 0 < c)
+    (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c 0)
+    {z : ℂ} (hz : z ∈ NLS.ZakharovShabat.refinedResonantDisk (-4)) (m : ℤ) :
+    ‖NLS.ZakharovShabat.appendixDReciprocalTerm r a (-4) z m‖ ≤
+      c*((1/2)*‖a‖+‖NLS.Coeff.fourierTail 3 a‖) := by
+  have h := NLS.ZakharovShabat.norm_appendixDReciprocalTerm_le_head_tail
+    (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) r a hc hsep (by norm_num : 0 ≤ (-4:ℤ).natAbs)
+    (by norm_num : (-4:ℤ) ≠ 0) 2 (by norm_num) hz m
+  norm_num at h ⊢
+  exact h
+
+-- The cutoff is independent of both the sampled disc point and the factor index.
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff 1) {c : ℝ} {N : ℕ} (hc : 0 < c)
+    (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c N) :
+    ∃ M : ℕ, N ≤ M ∧ 0 < M ∧ ∀ n : ℤ, M ≤ n.natAbs →
+      ∀ z ∈ NLS.ZakharovShabat.refinedResonantDisk n, ∀ m : ℤ,
+        ‖NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m‖ ≤ (1:ℝ)/2 :=
+  NLS.ZakharovShabat.exists_appendixDReciprocalTerm_half_cutoff (by simp) r a hc hsep
+
+section AppendixDSquarePowerExamples
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+-- Below p = 2, the powered square-row bound carries c^(3/2).
+example (r : NLS.Coeff ⊤) (a : NLS.Coeff (ENNReal.ofReal (3/2)))
+    {c : ℝ} {N : ℕ} (hc : 0 < c)
+    (hsep : NLS.ZakharovShabat.AppendixDReferenceSeparated r c N) :
+    ∃ Q : NLS.Coeff (ENNReal.ofReal (3/2)/2),
+      (∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ NLS.ZakharovShabat.refinedResonantDisk n,
+        (∑' m, ‖NLS.ZakharovShabat.appendixDReciprocalTerm r a n z m‖^2) ≤ c^2*‖Q n‖) ∧
+      Summable (fun n : ℤ => (c^2*‖Q n‖)^(3/4:ℝ)) ∧
+      (∑' n : ℤ, (c^2*‖Q n‖)^(3/4:ℝ)) ≤
+        c^(3/2:ℝ)*‖a‖^(3/2:ℝ)*
+          (NLS.Fourier.squaredAbsoluteRowConstant
+            (by rw [ENNReal.one_lt_ofReal]; norm_num : 1 < ENNReal.ofReal (3/2))
+            ENNReal.ofReal_ne_top)^(3/4:ℝ) := by
+  have h := NLS.ZakharovShabat.exists_appendixDSquaredRow_power_bound
+    (by rw [ENNReal.one_lt_ofReal]; norm_num : 1 < ENNReal.ofReal (3/2))
+    ENNReal.ofReal_ne_top r a hc hsep
+  norm_num only [ENNReal.toReal_div,ENNReal.toReal_ofReal (by norm_num : (0:ℝ) ≤ 3/2),
+    ENNReal.toReal_ofNat,show (3/2:ℝ)/2 = 3/4 by norm_num] at h
+  exact h
+end AppendixDSquarePowerExamples

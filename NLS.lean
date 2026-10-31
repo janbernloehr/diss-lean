@@ -4860,3 +4860,7 @@ import NLS.ZakharovShabat.SourceSection27QuarterEnergy
 import NLS.ZakharovShabat.SourceSection28SmallBall
 import NLS.SequenceSpaces.AppendixBProofSteps
 import NLS.Fourier.ModifiedHilbertSeparateCorrections
+import NLS.ZakharovShabat.AppendixDPairedFactors
+import NLS.ZakharovShabat.AppendixDExteriorGeometry
+import NLS.ZakharovShabat.AppendixDFactorCutoff
+import NLS.ZakharovShabat.AppendixDSquarePower

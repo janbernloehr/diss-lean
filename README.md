@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix C comparison](coverage/APPENDIX_C_ASSERTIONS.md)
-records six matched groups, two direct corrections and one contextual
-passage. Actual convergent operators, corrected F/G labels and explicit
-separation constants are retained. Appendix D is next;
-[broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix D proof steps](coverage/APPENDIX_D.md)
+add paired-product convergence, the factor-four exterior estimate,
+a uniform factor cutoff and the explicit c^p square-row bound.
+Eleven positive theorems and six examples add no new refutation.
+The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

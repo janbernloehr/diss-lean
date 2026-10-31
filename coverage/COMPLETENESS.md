@@ -179,7 +179,13 @@ It retains actual convergent operators, the corrected boundedness
 statement, direct F/G label correction and explicit c and c^p.
 Only the correction operators include the Banach endpoints.
 Historical refutations and broader qualifications remain unchanged.
-Appendix D is next.
+The [positive Appendix D proof steps](APPENDIX_D.md)
+now provide exact paired identities and convergence, the factor-four
+exterior estimate, a uniform signed-index cutoff, the positive
+product inequality and the square-row bound with explicit c^p.
+One definition, eleven positive theorems and six examples add no
+new refutation. The thirty-group ordered Appendix D comparison
+remains in progress, including its intermediate proof assertions.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
