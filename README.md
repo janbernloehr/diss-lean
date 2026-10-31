@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Section 21 comparison](coverage/SECTION_21_ASSERTIONS.md)
-records 27 matched groups, five corrections and two contextual groups.
-It retains the original Hamiltonian, moments, domains, frequency and
-Hessian. The opening dummy index is corrected directly; no new refutation
-is added. The unchanged Lean snapshot retains its full successful checks.
-Section 22 is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [Section 22 phase-increment estimate](NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean)
+now uses the exact finite-p pair norm and `2^p` tail constant, with both
+physical phase signs and the actual original-family image guard. Nine
+positive theorems and four API examples pass the full checks. The repeated
+time variable is corrected directly; no new refutation is added. The
+ordered Section 22 comparison remains in progress; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

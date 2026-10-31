@@ -1,6 +1,34 @@
 # Implementation status
 
-## Current milestone: ordered Section 21 Hamiltonian comparison
+## Current milestone: exact Section 22 phase-increment estimate
+
+The explicit continuity estimate on pp. 99–100 is now proved in
+[PhaseContinuityEstimate.lean](NLS/Dynamics/PhaseContinuityEstimate.lean).
+The scalar difference uses `t-s`, correcting the repeated `t` in the
+first printed exponential difference. No new refutation is added.
+
+The finite-head and tail bound uses the dissertation's component-sum
+pair norm, both physical phase signs and the exact tail constant `2^p`.
+It holds for every finite `p >= 1` and every finite set of signed indices.
+The two stated energy bounds imply the printed `2*epsilon` norm bound.
+
+[SourceSection22PhaseEstimate.lean](NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean)
+applies the estimate to the actual original moment frequencies and
+trajectories. Coordinate-parameterized paths keep the original inverse
+image condition, including above exponent two. Nine positive theorems
+and four API examples are integrated.
+
+The complete ./scripts/check.sh passed with 8,564 build jobs, 7,652 public examples and an axiom audit of 44,646 NLS declarations. The 21 inherited warnings exactly match the preceding check; no new warnings occur. Four new API examples cover the literal factor 16 at p=4, the exponent-one two-epsilon implication, arbitrary finite source exponents with symmetric signed heads, and the actual coordinate-image guard above two. Source hashes, declaration references and documentation links are checked separately. These checks do not certify complete formalization.
+
+The full ordered Section 22 comparison remains in progress. The printed
+choice of a symmetric cutoff and delta, and the uniform mixed exponential
+display, are separate comparison work; the existing norm-continuity and
+Banach trajectory analyticity results remain intact. The
+[completion qualifications](coverage/COMPLETENESS.md) are unchanged.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 21 Hamiltonian comparison
 
 The [ordered Section 21 comparison](coverage/SECTION_21_ASSERTIONS.md)
 now covers all 34 groups on pp. 96–98: 27 matched, five corrected and two

@@ -42,7 +42,13 @@ common domains, convergence, the action gradient and complex bilinear
 Hessian. The opening dummy index is normalized directly; existing sign
 and cube-constant corrections remain. No new proof or refutation is added.
 
-The next step is the ordered assertion comparison for Section 22.
+The [positive Section 22 phase estimate](../NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean)
+now supplies the exact component-sum pair norm, `2^p` tail constant and
+`2*epsilon` consequence for the actual original physical trajectories.
+The repeated scalar time variable is corrected directly, with no new
+refutation. The complete ordered Section 22 comparison remains in progress,
+including the cutoff/time-increment choice and uniform mixed exponential
+display.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

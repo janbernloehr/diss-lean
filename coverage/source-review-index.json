@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-30T23:46:18.046567+00:00",
-  "base_commit": "eda8d52513f52ce75d07b099cc67b1d3986d4523",
+  "published_utc": "2026-10-31T00:35:12.665332+00:00",
+  "base_commit": "b0ffcec8a542f3d5be53d3f632635ac043e1e9f6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 163,
-    "module_hash_checks": 3586,
-    "distinct_modules": 1929
+    "review_records": 164,
+    "module_hash_checks": 3595,
+    "distinct_modules": 1934
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "eda8d52513f52ce75d07b099cc67b1d3986d4523",
-    "validated_state": "Section21 ordered comparison changes documentation only. The exact Lean snapshot retains the preceding successful full-disc gate.",
+    "base_commit": "b0ffcec8a542f3d5be53d3f632635ac043e1e9f6",
+    "validated_state": "Fresh full check after nine positive Section22 phase-increment estimate theorems and four API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8562,
-    "public_examples": 7648,
-    "transitive_NLS_declarations": 44637,
+    "build_jobs": 8564,
+    "public_examples": 7652,
+    "transitive_NLS_declarations": 44646,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 21848,
+    "gate_session": 21139,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4839,
-      "sha256": "c45678b0c10c92cc41f9d1805c04533fd320a79dd7fbe762b4ab3a41b7275bdc"
+      "files": 4841,
+      "sha256": "6df5b1adcab9c27cc7fd82c02705064163b03839492ae6477e3e4feb2b0fd6f9"
     },
-    "full_gate_log_sha256": "2df27efda9824739677b566e5f91dd5701c964fa7fd1a5d0e4e66589a7a0619d",
-    "qualification": "Unchanged Lean files and locks are hash-verified against the full successful build, public examples and transitive axiom audit. The source comparison retains all corrections and wider completeness qualifications.",
-    "full_gate_log": "work/Section20FullDiscFullCheck2.log",
-    "validation_reused_from_commit": "eda8d52513f52ce75d07b099cc67b1d3986d4523"
+    "full_gate_log_sha256": "493e41582967302c873521058e5aff328053e989c4e83aaf437180a3780ef532",
+    "qualification": "The exact Lean snapshot passes the full build, public examples and transitive axiom audit. The ordered Section22 comparison and broader completeness qualifications remain open.",
+    "full_gate_log": "work/Section22PhaseEstimateFullCheck2.log"
   },
   "named_statements": [
     {
@@ -50221,6 +50220,162 @@
         "log_sha256": "2df27efda9824739677b566e5f91dd5701c964fa7fd1a5d0e4e66589a7a0619d"
       },
       "source_record_sha256": "fc20af3191aba3151695e636d777407f62162c6a40996388958a8317f2f8bff3"
+    },
+    "Section22PhaseEstimateSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b0ffcec8a542f3d5be53d3f632635ac043e1e9f6",
+      "updated_utc": "2026-10-31T00:35:12.665332+00:00",
+      "source_lines": [
+        [
+          8215,
+          8224
+        ],
+        [
+          8224,
+          8236
+        ],
+        [
+          8238,
+          8260
+        ],
+        [
+          8190,
+          8197
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8215,
+            8224
+          ],
+          "requirement": "Correct scalar time increment",
+          "declarations": [
+            "NLS.Coeff.norm_phaseFlow_sub_apply",
+            "NLS.Coeff.norm_phaseFlow_sub_apply_le",
+            "NLS.Birkhoff.norm_phase_increment_neg",
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_apply"
+          ],
+          "reviewed_claims": [
+            "The scalar norm difference equals norm(exp(i*(t-s)*omega)-1) times the initial amplitude norm. It is at most twice that amplitude. Reversing the phase leaves the increment norm unchanged, so both physical components have this same factor."
+          ],
+          "qualification": "The second time in the printed first exponential difference is corrected from t to s directly; no refutation or counterexample is added."
+        },
+        {
+          "source_lines": [
+            8224,
+            8236
+          ],
+          "requirement": "Exact finite-head and tail pair estimate",
+          "declarations": [
+            "NLS.Coeff.norm_phaseFlow_sub_rpow_le",
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le"
+          ],
+          "reviewed_claims": [
+            "For every finite p>=1 and any finite set of signed indices, the p-th power of the component-sum pair norm is bounded by the exact finite phase-increment energy plus 2^p times the complementary initial energy. The public example specializes the head to [-3,3], the frequencies to the unbounded quadratic lattice and the tail factor to 16 at p=4."
+          ],
+          "qualification": "The norm is the dissertation component-sum norm via CoeffPair.toMax.symm; no isometry with the maximum product norm is assumed. A symmetric cutoff is a direct instance of the arbitrary finite head."
+        },
+        {
+          "source_lines": [
+            8238,
+            8260
+          ],
+          "requirement": "Two-epsilon consequence of the energy bounds",
+          "declarations": [
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail"
+          ],
+          "reviewed_claims": [
+            "If each of the displayed head and weighted tail energies is at most epsilon^p, then the physical pair increment norm is at most 2*epsilon, for epsilon>=0 and every finite p>=1."
+          ],
+          "qualification": "This proves the quantitative implication. The separate printed existence of a cutoff and a time increment is not newly claimed here; the prior coordinatewise-continuity/uniform-tail argument already proves norm continuity."
+        },
+        {
+          "source_lines": [
+            8190,
+            8197
+          ],
+          "requirement": "Original trajectory and image-domain specialization",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_increment_rpow_le",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_increment_rpow_le"
+          ],
+          "reviewed_claims": [
+            "The estimates apply to the actual original source-parameterized physical trajectory and to the trajectory parameterized by the original real Birkhoff coordinates. The frequency is the original moment frequency plus the quadratic lattice term, and the coordinate inverse carries its actual image hypothesis above exponent two."
+          ],
+          "qualification": "The new statements concern increments on compact intervals, using the unchanged original family and the explicit component-sum norm. They do not assert global source surjectivity above two."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Dynamics/PhaseContinuityEstimate.lean": "d2fdbd3f2115c403a6e925d14ed277902fe4e0aac7cf0699831b5b6295ab5ee4",
+        "NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean": "049ae0e03de6eb1243c5a09c95fc36f837d90ab06b0dee9c11596c7d18e514dd",
+        "NLS/Dynamics/HamiltonianPhaseFlow.lean": "f2bfc913b0de6167a134122b83a039a13f59b1bea0db262d03d088c85a12214d",
+        "NLS/Dynamics/ComplexPhaseFlow.lean": "6d6f57a65f4aa4e5f131922c23c1375368bf8e318e3b952b6753017f03634685",
+        "NLS/SequenceSpaces/PhaseRotation.lean": "b041c00a59f32cdbb445c335d02aea5e8b7bfaabb1c5b9d4a1774fc86f757ea7",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/SourceSection22Phases.lean": "9f77e4cfdb5213c6a72a8f6859b7846bb23164a72654fa10dd93fb8c6f372695",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean": "ef5c9cf757c18c94a8464f5da571aea3a7869c30ec2a3f0414b6152e44d25d88",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean": "3c3a97d189eee0c38170f4fedb2a441a95329b416b000ae7f3cc1fa78f8c220f"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Dynamics/PhaseContinuityEstimate.lean",
+        "NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean",
+        "NLS/Dynamics/HamiltonianPhaseFlow.lean",
+        "NLS/Dynamics/ComplexPhaseFlow.lean",
+        "NLS/SequenceSpaces/PhaseRotation.lean",
+        "NLS/SequenceSpaces/PairNorm.lean",
+        "NLS/ZakharovShabat/SourceSection22Phases.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the ordered Section22 comparison; compare the uniform mixed exponential assertion and remaining proof displays."
+      ],
+      "resolved_declarations": [
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_apply",
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail",
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le",
+        "NLS.Birkhoff.norm_phase_increment_neg",
+        "NLS.Coeff.norm_phaseFlow_sub_apply",
+        "NLS.Coeff.norm_phaseFlow_sub_apply_le",
+        "NLS.Coeff.norm_phaseFlow_sub_rpow_le",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_increment_rpow_le",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_increment_rpow_le"
+      ],
+      "declaration_inventory_count": 44646,
+      "qualification": "This positive follow-up proves the explicit phase-increment estimates on pp. 99–100. The scalar formula uses the time difference t-s; the finite-head/complementary-tail estimate has exact factor 2^p in the component-sum pair norm and both physical phase orientations. The two-epsilon implication is proved from the two stated energy bounds. The new source and coordinate wrappers retain the original moments, roots, amplitudes and actual inverse-image guard. The general estimate allows any finite p>=1 and any finite signed-index head; the original-family interface uses finite p>1. This step does not separately formalize the source choice of a symmetric cutoff and delta, or the subsequent uniform mixed exponential display. Existing norm-continuity and Banach trajectory analyticity proofs remain valid. The 37-group Section 22 ordered comparison is still in progress. No new refutation is added; all historical corrections and broader exact 2014 construction, Appendix G.2 and dissertation-completeness qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          99,
+          100
+        ],
+        "images": {
+          "work/tmp/pdfs/section22-099.png": "ddd361057300f6fd49b84eee9826303c1fb375886cb61f8e56b98f74fad5dac8",
+          "work/tmp/pdfs/section22-100.png": "0b17132c2201d72ccfc4a579c4914c76a386fa3ccec15a47e785695947201970"
+        }
+      },
+      "preceding_review_hash": "a9285bd4b629924591e23ffe171322b76180f60947e441351453a37a8c8a7ea2",
+      "validation_lean_sources": {
+        "files": 4841,
+        "sha256": "6df5b1adcab9c27cc7fd82c02705064163b03839492ae6477e3e4feb2b0fd6f9"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 9,
+      "new_public_examples": 4,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 21139,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section22PhaseEstimateFullCheck2.log",
+        "log_sha256": "493e41582967302c873521058e5aff328053e989c4e83aaf437180a3780ef532"
+      },
+      "source_record_sha256": "5a4f5b0642793950f2e87f293482dc7ddaed2c4f7b65cfbd94913661b700f70f"
     }
   }
 }

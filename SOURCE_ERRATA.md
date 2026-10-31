@@ -3297,3 +3297,14 @@ and its absolutely convergent weighted action sum. This is a direct
 notation correction; no additional refutation is needed. The existing
 cubic coefficient and sign corrections are unchanged. See the
 [ordered Section 21 comparison](coverage/SECTION_21_ASSERTIONS.md).
+
+## Section 22 scalar time difference (page 99)
+
+The first exponential difference in the proof of Theorem 22.1(i) repeats
+`t` in both terms. Its second term must use `s`, agreeing with the following
+`t-s` expression. The positive identity and the exact pair estimate are
+proved in [PhaseContinuityEstimate.lean](NLS/Dynamics/PhaseContinuityEstimate.lean)
+and applied to the original physical trajectories in
+[SourceSection22PhaseEstimate.lean](NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean).
+The constants `2^p` and `2*epsilon` remain unchanged. No additional
+refutation is needed; the earlier physical phase-sign correction remains.

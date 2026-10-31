@@ -72630,3 +72630,70 @@ example {T : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))} {D : ℤ → Set ℂ}
   exact div_le_div_of_nonneg_right hbound Real.pi_pos.le
 
 end Section20FullDiscExamples
+
+section Section22PhaseEstimateExamples
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The actual finite-p pair norm has tail constant 2^4=16, for unbounded
+-- quadratic frequencies and a symmetric head containing negative indices.
+example (t u : ℝ) (z : Coeff 4 × Coeff 4) :
+    ‖(CoeffPair.toMax 4).symm
+      (Birkhoff.hamiltonianPhaseFlow (fun n : ℤ => (2*Real.pi*n)^2) t z-
+        Birkhoff.hamiltonianPhaseFlow (fun n : ℤ => (2*Real.pi*n)^2) u z)‖ ^ 4 ≤
+      (∑ n ∈ Finset.Icc (-3 : ℤ) 3,
+        ‖Complex.exp ((((t-u)*(2*Real.pi*n)^2 : ℝ) : ℂ)*Complex.I)-1‖ ^ 4 *
+          (‖z.1 n‖ ^ 4+‖z.2 n‖ ^ 4)) +
+      16 * ∑' n : {n : ℤ // n ∉ Finset.Icc (-3 : ℤ) 3}, (‖z.1 n.val‖ ^ 4+‖z.2 n.val‖ ^ 4) := by
+  have h := Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le (by norm_num : (4 : ℝ≥0∞) ≠ ⊤)
+    (fun n : ℤ => (2*Real.pi*n)^2) t u z (Finset.Icc (-3) 3)
+  norm_num at h
+  simpa using h
+
+-- At exponent one, each of the head and tail energy budgets is epsilon.
+example (freq : ℤ → ℝ) (t u ε : ℝ) (z : Coeff 1 × Coeff 1) (S : Finset ℤ)
+    (hε : 0 ≤ ε)
+    (hh : (∑ n ∈ S, ‖Complex.exp ((((t-u)*freq n : ℝ) : ℂ)*Complex.I)-1‖ *
+      (‖z.1 n‖+‖z.2 n‖)) ≤ ε)
+    (ht : 2 * ∑' n : {n : ℤ // n ∉ S}, (‖z.1 n.val‖+‖z.2 n.val‖) ≤ ε) :
+    ‖(CoeffPair.toMax 1).symm (Birkhoff.hamiltonianPhaseFlow freq t z-Birkhoff.hamiltonianPhaseFlow freq u z)‖ ≤ 2*ε := by
+  apply Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail (by norm_num) freq t u z S ε hε
+  · simpa using hh
+  · simpa using ht
+
+-- The retained original family supplies the estimate at every finite p>1.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W V Wa B U : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    {D : SourceSection17OriginalData hp hp1 W₀ W V s}
+    {A : SourceAbelianMomentAtlas hp hp1 Wa s} (Q : SourceSection20Data D A B U)
+    (T : ℝ) (φ : realTypeSourceSubmodule p) (t u : Icc (-T) T) (N : ℕ) :
+    ‖(CoeffPair.toMax p).symm (A.hamiltonianComplexPhaseTrajectoryOn T φ.val t-
+      A.hamiltonianComplexPhaseTrajectoryOn T φ.val u)‖ ^ p.toReal ≤
+      (∑ n ∈ Finset.Icc (-(N : ℤ)) N,
+        ‖Complex.exp ((((t.val-u.val)*A.phaseFrequency φ n : ℝ) : ℂ)*Complex.I)-1‖ ^ p.toReal *
+          (‖(sourceComplexBirkhoffMap hp hp1 s φ.val).1 n‖ ^ p.toReal+
+            ‖(sourceComplexBirkhoffMap hp hp1 s φ.val).2 n‖ ^ p.toReal)) +
+      (2 : ℝ) ^ p.toReal * ∑' n : {n : ℤ // n ∉ Finset.Icc (-(N : ℤ)) N},
+        (‖(sourceComplexBirkhoffMap hp hp1 s φ.val).1 n.val‖ ^ p.toReal+
+          ‖(sourceComplexBirkhoffMap hp hp1 s φ.val).2 n.val‖ ^ p.toReal) :=
+  Q.hamiltonian_phase_increment_rpow_le T φ t u _
+
+-- Above exponent two, the actual coordinate inverse retains its image guard.
+example {W₀ W V Wa B U : Set (CoeffPair 4)}
+    {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (T : ℝ) (z : RealCoeff 4 × RealCoeff 4)
+    (hz : z ∈ range (sourceRealBirkhoffMap (by norm_num) (by norm_num) s))
+    (t u : Icc (-T) T) (S : Finset ℤ) :
+    ‖(CoeffPair.toMax 4).symm (A.hamiltonianCoordinateTrajectoryOn D.complex T z t-
+      A.hamiltonianCoordinateTrajectoryOn D.complex T z u)‖ ^ 4 ≤
+      (∑ n ∈ S, ‖Complex.exp ((((t.val-u.val)*A.phaseFrequency (D.complex.realImageInverse z) n : ℝ) : ℂ)*Complex.I)-1‖ ^ 4 *
+        (‖(Birkhoff.encodeReal z).1 n‖ ^ 4+‖(Birkhoff.encodeReal z).2 n‖ ^ 4)) +
+      16 * ∑' n : {n : ℤ // n ∉ S}, (‖(Birkhoff.encodeReal z).1 n.val‖ ^ 4+‖(Birkhoff.encodeReal z).2 n.val‖ ^ 4) := by
+  have h := Q.hamiltonian_coordinate_increment_rpow_le T z hz t u S
+  norm_num at h
+  simpa using h
+
+end Section22PhaseEstimateExamples
