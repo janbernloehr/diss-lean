@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T08:41:13.140290+00:00",
-  "base_commit": "24025a2511f2c9dc86262bd2858ac9909b511531",
+  "published_utc": "2026-10-31T09:03:12.088958+00:00",
+  "base_commit": "d180ca8a1da2a29fcc39685efa11755dfec929b8",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 196,
-    "module_hash_checks": 4180,
-    "distinct_modules": 2115
+    "review_records": 197,
+    "module_hash_checks": 4187,
+    "distinct_modules": 2119
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "24025a2511f2c9dc86262bd2858ac9909b511531",
-    "validated_state": "Fresh full check after three Appendix F domain and geometry modules and three public examples.",
+    "base_commit": "d180ca8a1da2a29fcc39685efa11755dfec929b8",
+    "validated_state": "Fresh full check after three Appendix F endpoint analysis modules and two public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8623,
-    "public_examples": 7724,
-    "transitive_NLS_declarations": 44888,
+    "build_jobs": 8626,
+    "public_examples": 7726,
+    "transitive_NLS_declarations": 44913,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 72028,
+    "gate_session": 69115,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4885,
-      "sha256": "4e60fe35ce2b12289135761983f4e0100997922a4bbd6fe32d061a63f3bd91b1"
+      "files": 4888,
+      "sha256": "f8d7d8a813649655093f5e63225878d9f0fdbc40417d2e5f898bbfc4ccee0454"
     },
-    "full_gate_log_sha256": "e92d48d736a421670d35fcb0a7840c1543768972cecce13c9b1cd16410466c06",
+    "full_gate_log_sha256": "3f1cf4d455d90e38030c9fc0c96f143624109afdddcd41fc16007f3a3ce2b4e2",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFDomainGeometryFullCheck.log"
+    "full_gate_log": "work/AppendixFEndpointAnalysisFullCheck.log"
   },
   "named_statements": [
     {
@@ -66873,6 +66873,166 @@
         "log_sha256": "e92d48d736a421670d35fcb0a7840c1543768972cecce13c9b1cd16410466c06"
       },
       "source_record_sha256": "d8db1181507d0d12b0fa2bd49506312a6983ed297293be700356d47fa7270e50"
+    },
+    "AppendixFEndpointAnalysisSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "d180ca8a1da2a29fcc39685efa11755dfec929b8",
+      "updated_utc": "2026-10-31T09:03:12.033428+00:00",
+      "source_lines": [
+        [
+          10943,
+          10955
+        ],
+        [
+          10955,
+          10965
+        ],
+        [
+          10916,
+          10965
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10943,
+            10955
+          ],
+          "requirement": "Uniform radicand bounds and analytic principal-root factor",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_local_uniform_lower_bound",
+            "NLS.ComplexAnalysis.appendixF_sqrt_norm_lower",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches"
+          ],
+          "reviewed_claims": [
+            "The positive reference radicand and nonzero endpoint denominator admit explicit uniform lower bounds on one source neighborhood for every t in [0,1].",
+            "For analytic endpoint branches, the denominator and principal-root factor are jointly continuous, analytic in the source, and uniformly bounded away from zero."
+          ],
+          "qualification": "The endpoints may be complex and locally unordered; the theorem applies to their analytic branches and retains the entire parameter interval."
+        },
+        {
+          "source_lines": [
+            10955,
+            10965
+          ],
+          "requirement": "The inverse-square-root weighted integral",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic"
+          ],
+          "reviewed_claims": [
+            "The exact substitution t=s^2 removes the endpoint weight, with coefficient two.",
+            "Continuous regular factors yield integrable weighted integrands; joint analytic regular factors yield full Banach-analytic parameter integrals."
+          ],
+          "qualification": "The parameter domain is unchanged; the null endpoint is handled almost everywhere."
+        },
+        {
+          "source_lines": [
+            10916,
+            10965
+          ],
+          "requirement": "Literal normalized-root endpoint integrand and analytic integral",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixF_endpoint_integrand_weight",
+            "NLS.ZakharovShabat.appendixF_endpoint_integral_analytic"
+          ],
+          "reviewed_claims": [
+            "The actual normalized-root integrand equals the regular expression with inverse-square-root weight for every nonnegative path parameter.",
+            "On one source neighborhood the literal normalized-root integrand is interval integrable, and its endpoint-spoke integral with coefficient -i*(nu-rho1) is analytic."
+          ],
+          "qualification": "Analytic endpoint and critical branches and regular-factor analyticity along the actual paths are explicit. Source-family path verification and identification with the improper polygonal integral remain separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean": "c351375ea8c8b45ef5e092de3ab19ba5d9c192ccc2f0ea503c82957947be0427",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean": "66fb170452e18fe0d909daeffacec1f55bfdf1e1ede22e47720530727ea1701a",
+        "NLS/ZakharovShabat/AppendixFUniformRadicand.lean": "6098cf13919ed00baecfe79ad2bccb22db045eafdd2c07016d5697eed7e76f15",
+        "NLS/ComplexAnalysis/AppendixFWeightedIntegral.lean": "68e4a07a7acd38e057c38e89a7ed59eb17d2e2eecfd16e2edf0266891d4ffbb0",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean": "c0a73eee4197cef7eeb85a9b31832829c44dd0826f432891c8046a9582e1fb1f",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean": "14069040206390fd9a9b0a06dc29c94e82eeace44a059bb594febaf45887d7a3"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/AppendixFRootPath.lean",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFUniformRadicand.lean",
+        "NLS/ComplexAnalysis/AppendixFWeightedIntegral.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution",
+        "NLS.ComplexAnalysis.appendixF_local_uniform_lower_bound",
+        "NLS.ComplexAnalysis.appendixF_sqrt_norm_lower",
+        "NLS.ZakharovShabat.appendixF_endpoint_integral_analytic",
+        "NLS.ZakharovShabat.appendixF_endpoint_integrand_weight",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand"
+      ],
+      "declaration_inventory_count": 44913,
+      "qualification": "Three modules add nine positive theorems and two examples for the endpoint-spoke argument in F.2. Explicit uniform bounds keep the radicand in the right half-plane and the denominator nonzero on one source neighborhood. The principal-root factor is jointly continuous, source-analytic and bounded away from zero. The exact t=s^2 substitution removes the inverse-square-root weight and proves integrability and full analyticity of weighted integrals. The literal normalized-root endpoint integral is integrable and analytic under explicit branch and regular-factor hypotheses. Actual source-family path verification and identification with the improper polygonal integral remain open. No new definitions or refutations are added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+      "validation_lean_sources": {
+        "files": 4888,
+        "sha256": "f8d7d8a813649655093f5e63225878d9f0fdbc40417d2e5f898bbfc4ccee0454"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 9,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_3",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_4",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_5",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_6",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable._simp_1_7",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_1",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_2",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_3",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_4",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_5",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_6",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution._simp_1_7"
+      ],
+      "full_gate": {
+        "session": 69115,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFEndpointAnalysisFullCheck.log",
+        "log_sha256": "3f1cf4d455d90e38030c9fc0c96f143624109afdddcd41fc16007f3a3ce2b4e2"
+      },
+      "source_record_sha256": "5caa001538e4b91b73a540830f0141124829531e3175261ad765bcd7cabf36af"
     }
   }
 }

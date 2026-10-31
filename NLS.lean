@@ -4884,3 +4884,6 @@ import NLS.ZakharovShabat.AppendixFPositiveIntegral
 import NLS.ZakharovShabat.AppendixFDeletedPair
 import NLS.ZakharovShabat.AppendixFSourceSpokes
 import NLS.ZakharovShabat.AppendixFEndpointRoot
+import NLS.ZakharovShabat.AppendixFUniformRadicand
+import NLS.ComplexAnalysis.AppendixFWeightedIntegral
+import NLS.ZakharovShabat.AppendixFEndpointAnalytic

@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F endpoint analysis proofs](APPENDIX_F.md)
+now give explicit uniform denominator and radicand bounds, source-analytic
+principal roots, the exact inverse-square-root substitution, and
+integrability and analyticity of the literal normalized-root endpoint
+integral. Nine positive theorems and two examples add no new refutation.
+Actual source-family path verification and identification with the
+improper polygonal integral remain open.
+
 The [Appendix F domain and geometry proofs](APPENDIX_F.md)
 now retain the literal deleted product on the whole joint domain,
 its exact zero set, simultaneous original closed-disc bounds and

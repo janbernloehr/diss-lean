@@ -1,5 +1,34 @@
 # Appendix F: analyticity of the primitive
 
+## Uniform branches and analytic endpoint integrals
+
+The [uniform radicand bounds](../NLS/ZakharovShabat/AppendixFUniformRadicand.lean)
+keep the endpoint denominator and principal-root factor away from zero
+on one source neighborhood for every path parameter in [0,1]. The
+factors are jointly continuous and analytic in the source, including
+for complex reference endpoints.
+
+The [weighted integral proofs](../NLS/ComplexAnalysis/AppendixFWeightedIntegral.lean)
+use the exact substitution t=s^2 to remove the inverse-square-root
+weight. Continuous regular factors yield integrable weighted integrands,
+and jointly analytic factors yield analytic parameter integrals.
+
+The [literal endpoint integral](../NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean)
+retains the actual normalized-root branch and coefficient -i*(nu-rho1).
+On one source neighborhood its integrand is integrable and its value
+is analytic. Analytic endpoint and critical branches and regular-factor
+analyticity along the paths are explicit.
+
+Three modules add nine positive theorems and two examples.
+No new refutation is added.
+
+The full check passed: 8,626 build jobs, 7,726 public examples and an axiom audit of 44,913 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Actual
+source-family path verification, identification with the improper
+polygonal integral and collapsed-gap convergence remain. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Full deleted-product domain and actual source geometry
 
 The [deleted-pair product](../NLS/ZakharovShabat/AppendixFDeletedPair.lean)

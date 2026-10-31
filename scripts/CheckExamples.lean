@@ -73731,3 +73731,36 @@ example : normalizedStandardRoot 0 (-4) (-(5/4:ℂ)*Complex.I) =
   ring
 
 end AppendixFEndpointRootExamples
+
+
+-- An imaginary gap moving through complex potentials has bounds uniform over the whole spoke.
+example :
+    let ρ₁ := fun ψ : ℂ => ψ-Complex.I
+    let ρ₂ := fun ψ : ℂ => ψ+Complex.I
+    let ν := ρ₁ 0-(ρ₂ 0-ρ₁ 0)
+    let z := fun (ψ : ℂ) (t : ℝ) => ρ₁ ψ+(t:ℂ)*(ν-ρ₁ ψ)
+    let D := fun (ψ : ℂ) (t : ℝ) => (ρ₁ ψ+ρ₂ ψ)/2-z ψ t
+    let R := fun (ψ : ℂ) (t : ℝ) => (ρ₁ ψ-ν)*(ρ₂ ψ-z ψ t)/(D ψ t)^2
+    ∃ V : Set ℂ, IsOpen V ∧ 0 ∈ V ∧ ∀ ψ ∈ V, ∀ t ∈ Set.Icc (0:ℝ) 1,
+      (1/2:ℝ) < ‖D ψ t‖ ∧ (1/3:ℝ) < (R ψ t).re := by
+  have hgap : (0:ℂ)+Complex.I-((0:ℂ)-Complex.I) = 2*Complex.I := by ring
+  have hne : (0:ℂ)+Complex.I-((0:ℂ)-Complex.I) ≠ 0 := by
+    rw [hgap]
+    exact mul_ne_zero (by norm_num) Complex.I_ne_zero
+  have h := NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand
+    (fun ψ : ℂ => ψ-Complex.I) (fun ψ : ℂ => ψ+Complex.I) 0
+    (continuousAt_id.sub continuousAt_const) (continuousAt_id.add continuousAt_const)
+    hne 1 (by norm_num)
+  dsimp only at h ⊢
+  norm_num only [hgap,norm_mul,Complex.norm_ofNat,Complex.norm_I,one_mul] at h
+  norm_num at h ⊢
+  simpa only [two_mul] using h
+
+
+-- The endpoint weight permits an entire exponential family, including nonreal parameters.
+example : AnalyticOnNhd ℂ
+    (fun ψ : ℂ => ∫ t in (0:ℝ)..1, Complex.exp ((t:ℂ)*ψ)/(Real.sqrt t:ℂ)) Set.univ := by
+  exact NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic
+    (fun p : ℂ × ℂ => Complex.exp (p.1*p.2)) Set.univ isOpen_univ
+    (fun p _ => (analyticAt_fst.mul analyticAt_snd).cexp')
+    Set.univ isOpen_univ (fun _ _ _ _ => Set.mem_univ _)

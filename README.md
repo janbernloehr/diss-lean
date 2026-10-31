@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F domain and geometry](coverage/APPENDIX_F.md)
-prove the deleted product's full joint domain and exact zeros, uniform
-closed-disc bounds, and common midpoint spokes avoiding every gap.
-Eleven positive theorems and three examples add no new refutation.
-The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix F endpoint analysis](coverage/APPENDIX_F.md)
+provides uniform principal-root bounds, the inverse-square-root
+substitution, and integrability and analyticity of the literal
+normalized-root endpoint integral. Nine positive theorems and two
+examples add no new refutation. Actual source-path verification and
+the [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
