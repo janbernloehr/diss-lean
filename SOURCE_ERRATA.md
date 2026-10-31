@@ -3308,3 +3308,15 @@ and applied to the original physical trajectories in
 [SourceSection22PhaseEstimate.lean](NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean).
 The constants `2^p` and `2*epsilon` remain unchanged. No additional
 refutation is needed; the earlier physical phase-sign correction remains.
+
+## Section 22 path codomains (page 100)
+
+The scalar coordinate path in the proof of Theorem 22.1(i) takes values
+in the complex numbers, so its displayed real codomain should be `C`.
+The full path remains in Birkhoff coordinates, so the later displayed
+`FL_c^p` codomain should be the complex sequence coordinate space `ell_c^p`.
+The positive Banach trajectory statement and its actual complex inverse
+neighborhood are proved in
+[SourceSection22UniformEstimates.lean](NLS/ZakharovShabat/SourceSection22UniformEstimates.lean).
+These type corrections add no refutation and preserve the existing
+physical phase-sign correction.

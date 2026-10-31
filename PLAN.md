@@ -1,6 +1,39 @@
 # Implementation plan
 
-## Current milestone: exact Section 22 phase-increment estimate
+## Current milestone: uniform Section 22 phase estimates
+
+The explicit cutoff and uniform complex-neighborhood estimates on pp. 99–100
+are now proved in [PhaseContinuityChoice.lean](NLS/Dynamics/PhaseContinuityChoice.lean),
+[UniformPhaseExponential.lean](NLS/SequenceSpaces/UniformPhaseExponential.lean) and
+[SourceSection22UniformEstimates.lean](NLS/ZakharovShabat/SourceSection22UniformEstimates.lean).
+
+A symmetric cutoff is chosen before a positive time increment. The same
+choices work for all real time origins and, for the original family,
+before all compact horizons. The exact component-sum pair norm retains
+the constants `2^p` and `2*epsilon`.
+
+One actual complex coordinate neighborhood has an analytic original
+inverse into the original source domain. The frequency and exponential
+error have uniformly bounded `p/2 + OnePlus` decompositions there.
+The full compact-time coordinate trajectory is analytic and has norm
+at most `exp(R*C) * M`, with the neighborhood and both constants chosen
+before every horizon R. This uses the established maximum-product
+Banach trajectory norm; the preceding continuity bound uses the exact
+component-sum pair norm.
+
+The printed scalar path codomain is corrected to the complex numbers,
+and the coordinate path codomain to the complex sequence space.
+Eleven positive theorems and six API examples are integrated. No new
+refutation is added.
+
+The full ./scripts/check.sh passed with 8,567 build jobs, 7,658 public examples and an axiom audit of 44,658 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Six API examples cover unbounded quadratic frequencies, literal factor 16 at p=4, explicit complex exponential constants, the literal p=3/2 mixed exponent 3/4, the original all-horizon cutoff, and the actual complex inverse neighborhood with full uniform trajectory bounds. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 22 comparison remains in progress.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: exact Section 22 phase-increment estimate
 
 The explicit continuity estimate on pp. 99–100 is now proved in
 [PhaseContinuityEstimate.lean](NLS/Dynamics/PhaseContinuityEstimate.lean).

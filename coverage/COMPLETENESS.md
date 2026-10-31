@@ -47,8 +47,11 @@ now supplies the exact component-sum pair norm, `2^p` tail constant and
 `2*epsilon` consequence for the actual original physical trajectories.
 The repeated scalar time variable is corrected directly, with no new
 refutation. The complete ordered Section 22 comparison remains in progress,
-including the cutoff/time-increment choice and uniform mixed exponential
-display.
+while the [cutoff and uniform estimates](../NLS/ZakharovShabat/SourceSection22UniformEstimates.lean)
+are now proved. One original complex coordinate neighborhood supports
+the mixed frequency/exponential bounds and full analytic trajectories
+bounded by `exp(R*C) * M`, with the neighborhood and constants chosen
+before every horizon.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

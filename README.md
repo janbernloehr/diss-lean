@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 22 phase-increment estimate](NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean)
-now uses the exact finite-p pair norm and `2^p` tail constant, with both
-physical phase signs and the actual original-family image guard. Nine
-positive theorems and four API examples pass the full checks. The repeated
-time variable is corrected directly; no new refutation is added. The
-ordered Section 22 comparison remains in progress; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [uniform Section 22 phase estimates](NLS/ZakharovShabat/SourceSection22UniformEstimates.lean)
+now supply the symmetric cutoff and time increment, a uniform mixed
+exponential bound and one actual complex coordinate neighborhood with
+full analytic trajectories bounded by `exp(R*C) * M` before every horizon.
+Eleven positive theorems and six API examples pass the full checks.
+Path codomains are corrected directly, with no new refutation.
+The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

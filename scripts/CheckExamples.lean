@@ -72697,3 +72697,115 @@ example {W₀ W V Wa B U : Set (CoeffPair 4)}
   simpa using h
 
 end Section22PhaseEstimateExamples
+
+section Section22UniformPhaseExamples
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal unitInterval
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- A single symmetric cutoff and delta control all time origins, even for
+-- quadratic frequencies; the p=4 energy tail has literal coefficient16.
+example (z : Coeff 4 × Coeff 4) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ δ : ℝ, 0 < δ ∧
+      (16 * ∑' n : {n : ℤ // n ∉ Finset.Icc (-(N : ℤ)) N},
+        (‖z.1 n.val‖ ^ 4+‖z.2 n.val‖ ^ 4) ≤ ε ^ 4) ∧
+      ∀ t u : ℝ, |t-u| < δ →
+        ‖(CoeffPair.toMax 4).symm
+          (Birkhoff.hamiltonianPhaseFlow (fun n : ℤ => (2*Real.pi*n)^2) t z-
+            Birkhoff.hamiltonianPhaseFlow (fun n : ℤ => (2*Real.pi*n)^2) u z)‖ ≤ 2*ε := by
+  obtain ⟨N,hN,δ,hδ,ht,hb⟩ := Birkhoff.exists_symmetric_phase_continuity_estimate
+    (by norm_num : (4 : ℝ≥0∞) ≠ ⊤) (fun n : ℤ => (2*Real.pi*n)^2) z ε hε
+  refine ⟨N,hN,δ,hδ,?_,fun t u htu => (hb t u htu).2⟩
+  norm_num at ht
+  exact ht
+
+-- Uniform exponential error for complex coefficients on the whole interval.
+example (b : Coeff 2) (hb : ‖b‖ ≤ 3) (t : ℝ) (ht : |t| ≤ 2) :
+    ∃ c : Coeff 2, (∀ n, c n = Complex.exp ((t : ℂ)*Complex.I*b n)-1) ∧
+      ‖c‖ ≤ 6*Real.exp 6 := by
+  obtain ⟨c,hc,hbnd⟩ := Coeff.exists_uniform_phase_error_sequence 2 3 t (by norm_num) ht b hb
+  refine ⟨c,hc,?_⟩
+  norm_num at hbnd
+  linarith
+
+-- At source exponent3/2 the literal mixed component has exponent3/4.
+-- The original source neighborhood is chosen before every time horizon.
+example {W₀ W V Wa B U : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+    {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ V' : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen V' ∧ φ.val ∈ V' ∧ V' ⊆ U ∧
+      ∀ R : ℝ, 0 ≤ R →
+        ∃ g : ℝ × CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → Coeff (ENNReal.ofReal (3/4 : ℝ)),
+        ∃ h : ℝ × CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → CoeffOnePlus,
+          (∀ x ∈ Icc (-R) R ×ˢ V', ∀ n,
+            Complex.exp ((x.1 : ℂ)*Complex.I*A.renormalizedFrequency n x.2)-1 = g x n+(h x).1 n) ∧
+          (∃ C : ℝ, 0 ≤ C ∧ ∀ x ∈ Icc (-R) R ×ˢ V', ‖g x‖ ≤ C) ∧
+          ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+            ∃ C : ℝ, 0 ≤ C ∧ ∀ x ∈ Icc (-R) R ×ˢ V',
+              ‖CoeffOnePlus.toCoeff q hq1 hq (h x)‖ ≤ C := by
+  obtain ⟨Y,_,hr,hYU,hlocal⟩ := Q.exists_phase_error_mixed_neighborhood
+  obtain ⟨V',hV,hφ,hVY,hb⟩ := hlocal φ.val (hr φ.property)
+  refine ⟨V',hV,hφ,hVY.trans hYU,?_⟩
+  have he : (ENNReal.ofReal (3/2 : ℝ)).toReal/2 = (3/4 : ℝ) := by
+    rw [ENNReal.toReal_ofReal (by norm_num)]
+    norm_num
+  have hexp : ENNReal.ofReal ((ENNReal.ofReal (3/2 : ℝ)).toReal/2) =
+      ENNReal.ofReal (3/4 : ℝ) := congrArg ENNReal.ofReal he
+  rw [hexp] at hb
+  exact hb
+
+-- The original coordinate path has one delta for all horizons at p=4;
+-- this does not assume that its whole orbit lies in the source image.
+example {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 4) (ε : ℝ) (hε : 0 < ε) :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ T : ℝ, ∀ t u : Icc (-T) T, |t.val-u.val| < δ →
+      ‖(CoeffPair.toMax 4).symm (A.hamiltonianComplexPhaseTrajectoryOn T φ.val t-
+        A.hamiltonianComplexPhaseTrajectoryOn T φ.val u)‖ ≤ 2*ε := by
+  obtain ⟨_,_,δ,hδ,_,hb⟩ := Q.exists_hamiltonian_phase_continuity_cutoff φ ε hε
+  exact ⟨δ,hδ,fun T t u htu => (hb T t u htu).2⟩
+
+end Section22UniformPhaseExamples
+
+section Section22PhaseCoordinateExamples
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal unitInterval
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Above the globally surjective range, one actual complex coordinate
+-- neighborhood still carries the inverse and all compact-time analytic paths.
+example {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 4) :
+    ∃ V' : Set (Coeff 4 × Coeff 4), IsOpen V' ∧
+      sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val ∈ V' ∧
+      ∃ χ : (Coeff 4 × Coeff 4) → CoeffPair 4,
+        AnalyticOnNhd ℂ χ V' ∧ MapsTo χ V' U ∧
+        (∀ z ∈ V', sourceComplexBirkhoffMap (by norm_num) (by norm_num) s (χ z) = z) ∧
+        ∀ T : ℝ, AnalyticOnNhd ℂ
+          (fun z => A.hamiltonianComplexPhaseTrajectoryOn T (χ z)) V' := by
+  obtain ⟨V',hV,hφ,χ,hχ,hχU,_,hr,ha,_,_⟩ := Q.exists_complex_coordinate_phase_neighborhood φ
+  exact ⟨V',hV,hφ,χ,hχ,hχU,hr,ha⟩
+
+-- The full compact-time trajectory norm is bounded uniformly on one
+-- complex coordinate neighborhood, with constants chosen before all R.
+example {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+    {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+    (Q : SourceSection20Data D A B U) (φ : realTypeSourceSubmodule 4) :
+    ∃ V' : Set (Coeff 4 × Coeff 4), IsOpen V' ∧
+      sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val ∈ V' ∧
+      ∃ χ : (Coeff 4 × Coeff 4) → CoeffPair 4,
+        MapsTo χ V' U ∧
+        (∀ z ∈ V', sourceComplexBirkhoffMap (by norm_num) (by norm_num) s (χ z) = z) ∧
+        ∃ C M : ℝ, 0 ≤ C ∧ 0 ≤ M ∧ ∀ R : ℝ, 0 ≤ R → ∀ z ∈ V',
+          ‖A.hamiltonianComplexPhaseTrajectoryOn R (χ z)‖ ≤ Real.exp (R*C)*M := by
+  obtain ⟨V',hV,hφ,χ,_,hχU,_,hr,_,_,_,hb⟩ := Q.exists_complex_coordinate_phase_neighborhood φ
+  exact ⟨V',hV,hφ,χ,hχU,hr,hb⟩
+
+end Section22PhaseCoordinateExamples

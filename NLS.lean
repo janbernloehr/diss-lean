@@ -4840,3 +4840,6 @@ import NLS.ZakharovShabat.SourceActionGapQuarter
 import NLS.ZakharovShabat.SourcePsiRefinedFullDisc
 import NLS.Dynamics.PhaseContinuityEstimate
 import NLS.ZakharovShabat.SourceSection22PhaseEstimate
+import NLS.Dynamics.PhaseContinuityChoice
+import NLS.SequenceSpaces.UniformPhaseExponential
+import NLS.ZakharovShabat.SourceSection22UniformEstimates
