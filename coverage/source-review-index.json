@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T01:17:27.280078+00:00",
-  "base_commit": "203dcdc7dc0f3513cdf4ca71e60e7442605488d2",
+  "published_utc": "2026-10-31T01:38:02.183933+00:00",
+  "base_commit": "1cbe438782cb25ca7ae74cccd3e65d6b54df8b14",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 166,
-    "module_hash_checks": 3619,
-    "distinct_modules": 1948
+    "review_records": 167,
+    "module_hash_checks": 3629,
+    "distinct_modules": 1951
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "203dcdc7dc0f3513cdf4ca71e60e7442605488d2",
-    "validated_state": "Fresh full check after seven positive Section22 phase-separation and Hilbert-energy theorems and five API examples.",
+    "base_commit": "1cbe438782cb25ca7ae74cccd3e65d6b54df8b14",
+    "validated_state": "Fresh full check after six positive Section22 arbitrary-Hilbert coordinate theorems and five API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8570,
-    "public_examples": 7663,
-    "transitive_NLS_declarations": 44665,
+    "build_jobs": 8571,
+    "public_examples": 7668,
+    "transitive_NLS_declarations": 44671,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 94261,
+    "gate_session": 88874,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4847,
-      "sha256": "2a96210e11d54864443b0c74c77327275a69306394e586e2c48baa3321c0924e"
+      "files": 4848,
+      "sha256": "f1a18ddcb7eada917e3b4cca75e656cf8aafeac3e910a9d4c4e3dde0f78b4a1f"
     },
-    "full_gate_log_sha256": "bd9a8b484d3fdc0c92d73845110c2869cf783d48a28fa83b02db7574d5656d1b",
+    "full_gate_log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section22 comparison and broader completeness qualifications remain open.",
-    "full_gate_log": "work/Section22PhaseSeparationFullCheck.log"
+    "full_gate_log": "work/Section22HilbertCoordinateFullCheck.log"
   },
   "named_statements": [
     {
@@ -50692,6 +50692,158 @@
         "log_sha256": "bd9a8b484d3fdc0c92d73845110c2869cf783d48a28fa83b02db7574d5656d1b"
       },
       "source_record_sha256": "ef301f1038abefe8b8c65b064fa0e26b968be27a907846db67a9cef22aa443bb"
+    },
+    "Section22HilbertCoordinateSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1cbe438782cb25ca7ae74cccd3e65d6b54df8b14",
+      "updated_utc": "2026-10-31T01:38:02.183933+00:00",
+      "source_lines": [
+        [
+          8282,
+          8287
+        ],
+        [
+          8284,
+          8289
+        ],
+        [
+          8282,
+          8290
+        ],
+        [
+          8290,
+          8306
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8282,
+            8287
+          ],
+          "requirement": "Literal complex-coordinate energy equals physical Hilbert mass",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_complex_map_energy_eq_mass",
+            "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit"
+          ],
+          "reviewed_claims": [
+            "The half-sum of the squared component norms of the actual complex Hilbert Birkhoff coordinates equals the original physical mass. The generic energy divergence applies to every pointwise Hilbert approximation to a nonsquare-summable first component."
+          ],
+          "qualification": "The exact component-sum expression is used, rather than the square of the maximum-product norm. Physical mass is identified on the real form through the original action trace."
+        },
+        {
+          "source_lines": [
+            8284,
+            8289
+          ],
+          "requirement": "Arbitrary Hilbert approximations and original ordinary frequency divergence",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hilbert_coordinate_frequency_eq_ordinary",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_hilbert_coordinate_frequency_atTop",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_original_hilbert_ordinary_frequency_atTop"
+          ],
+          "reviewed_claims": [
+            "The larger-exponent original inverse and frequency, plus exactly four times the literal coordinate energy, recover the actual ordinary frequency of any original Hilbert family. This frequency tends to positive infinity along every Hilbert coordinate approximation of the stipulated non-Hilbert image point, at each signed index. The actual original Hilbert ordinary frequencies satisfy the same conclusion."
+          ],
+          "qualification": "No finite-gap or smooth assumption is placed on the approximating Hilbert data. No infinite energy is substituted into a real frequency value at the limiting point. The original moment and root families are related by their proved coefficient compatibility."
+        },
+        {
+          "source_lines": [
+            8282,
+            8290
+          ],
+          "requirement": "The inverse along real coordinate approximations is eventually genuine",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.eventually_conjugate_coordinate_image"
+          ],
+          "reviewed_claims": [
+            "Every norm-convergent real coordinate approximation to an actual image point eventually belongs to that original open image. The same original inverse then recovers each complex pair exactly and lies in the unchanged original frequency domain."
+          ],
+          "qualification": "The conclusion is stated with an explicit eventual image condition, so the total inverse fallback outside the image is not used to interpret the limiting argument."
+        },
+        {
+          "source_lines": [
+            8290,
+            8306
+          ],
+          "requirement": "Literal separation for arbitrary real Hilbert coordinate approximations",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation"
+          ],
+          "reviewed_claims": [
+            "For every convergent real Hilbert coordinate approximation of a nonsquare-summable image point and each selected nonzero signed amplitude, one strictly increasing subsequence and times in [-T,T] give the relative-phase lower bound, literal amplitude-minus-full-sequence-error bound and eventual exact half-amplitude lower bound. The actual inverse identity is also eventual along the original approximation."
+          ],
+          "qualification": "The physical first-coordinate sign is retained. Existing nonextension theorems keep their finite-gap or all-smooth agreement scopes; the new result proves the literal intermediate estimates with the broader approximation quantifier."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean": "8fd62de0a5d33ca8c8e47a2506f2872012d6dbf33228817cbb099a3a89232012",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean": "955a7c7cd58f9fcc504cd4fc0eb1e7f42e7dfc4f52bb3b1e51a1b019b20686c9",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean": "7b8ac07a0560a1c1b66aaf35a19eec05e68b7e3445a38943acd78076a30e1914",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean": "e946e2913586faf92c6c9f7c3183a59f73fc6b9e294403857640c15b6975ae67",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffExponent.lean": "f6aceb6c03ccfc8a7b0011fd724716c398d060126b132efb02ee601deb4637d6",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean": "ef5c9cf757c18c94a8464f5da571aea3a7869c30ec2a3f0414b6152e44d25d88",
+        "NLS/Dynamics/RealComplexBirkhoffCoordinates.lean": "9a1d41614256f7eec06796a297b3d35c133959652611087677d878a6f91f0839",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean": "3c3a97d189eee0c38170f4fedb2a441a95329b416b000ae7f3cc1fa78f8c220f",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffMap.lean": "add5d37e34e80b71709f00744cf32cbb77c166daff446fd3018f4d1dd12bc718",
+        "NLS/ZakharovShabat/SourceSecondMomentFrequencyTheorem20_4.lean": "554cae680a7765fc143fe3f1ce53b1566d727e01ec74d2dc8e0d6724e9c9be62"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffExponent.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean",
+        "NLS/Dynamics/RealComplexBirkhoffCoordinates.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffMap.lean",
+        "NLS/ZakharovShabat/SourceSecondMomentFrequencyTheorem20_4.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete all37 ordered Section22 source groups with exact arbitrary-Hilbert and original-family scopes."
+      ],
+      "resolved_declarations": [
+        "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_complex_map_energy_eq_mass",
+        "NLS.ZakharovShabat.SourceSection20Data.eventually_conjugate_coordinate_image",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation",
+        "NLS.ZakharovShabat.SourceSection20Data.hilbert_coordinate_frequency_eq_ordinary",
+        "NLS.ZakharovShabat.SourceSection20Data.tendsto_hilbert_coordinate_frequency_atTop",
+        "NLS.ZakharovShabat.SourceSection20Data.tendsto_original_hilbert_ordinary_frequency_atTop"
+      ],
+      "declaration_inventory_count": 44671,
+      "qualification": "This positive follow-up retains the arbitrary-Hilbert approximation quantifier in the proof on p.100. The literal half-sum energy of original complex Hilbert coordinates equals physical mass. Original ordinary frequencies agree across independently constructed Hilbert and larger-exponent families. The energy-shifted frequency diverges along every Hilbert coordinate approximation of a non-Hilbert image point, and the actual original Hilbert ordinary frequency has the same divergence. Convergent real coordinate approximations eventually lie in the original image; the actual inverse recovers their exact coordinates and stays in the original frequency neighborhood. The literal amplitude-minus-error and half-amplitude separation hold without a finite-gap or smooth premise on the approximations. Physical first-coordinate signs, signed indices and the factor-four mass shift are retained. No new refutation or source correction is introduced. Existing physical nonextension agreement scopes and broader completeness qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          100
+        ],
+        "images": {
+          "work/tmp/pdfs/section22-100.png": "0b17132c2201d72ccfc4a579c4914c76a386fa3ccec15a47e785695947201970"
+        }
+      },
+      "preceding_review_hash": "ef301f1038abefe8b8c65b064fa0e26b968be27a907846db67a9cef22aa443bb",
+      "validation_lean_sources": {
+        "files": 4848,
+        "sha256": "f1a18ddcb7eada917e3b4cca75e656cf8aafeac3e910a9d4c4e3dde0f78b4a1f"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 6,
+      "new_public_examples": 5,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 88874,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section22HilbertCoordinateFullCheck.log",
+        "log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437"
+      },
+      "source_record_sha256": "580f8731a5de93b5d370a39a1e652ddc2dcaf147ab5fa4e1366ef835cfd55cd4"
     }
   }
 }

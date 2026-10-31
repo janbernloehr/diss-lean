@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: Section 22 phase separation and Hilbert energy
+## Current milestone: arbitrary Hilbert coordinate approximations
+
+The proof on p. 100 now retains arbitrary Hilbert coordinate approximations
+in [SourceSection22HilbertCoordinates.lean](NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean).
+The exact half-sum of the squared complex-coordinate component norms is
+the physical mass. The larger-exponent inverse and renormalized frequency,
+plus four times this mass, agree with the ordinary frequency of an
+independently constructed original Hilbert family.
+
+Every Hilbert coordinate approximation to the stipulated non-Hilbert
+image point has diverging ordinary frequency. Convergent real coordinate
+approximations eventually lie in the original image, and its actual inverse
+recovers their exact coordinates while staying in the original frequency
+domain. The literal amplitude-minus-error and half-amplitude separation
+retain the physical sign and every signed index.
+
+No finite-gap or smooth assumption is imposed on the approximations.
+Six positive theorems and five API examples are integrated. No new
+refutation is added; existing physical nonextension agreement scopes remain.
+
+The full ./scripts/check.sh passed with 8,571 build jobs, 7,668 public examples and an axiom audit of 44,671 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings. Five API examples cover exact physical mass normalization, independent p=4 and p=2 families at a negative index, actual Hilbert ordinary frequency divergence, separation at index zero and the actual image inverse. Source hashes, public references and documentation links are checked separately.
+
+The complete ordered Section 22 comparison remains in progress.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 22 phase separation and Hilbert energy
 
 The successive-frequency construction and both separation bounds on p. 100
 are now proved in [PhaseSubsequenceSeparation.lean](NLS/Dynamics/PhaseSubsequenceSeparation.lean).

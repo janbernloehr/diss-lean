@@ -72883,3 +72883,84 @@ example (a : Coeff 4) (ha : ¬ Summable (fun n : ℤ => ‖a n‖ ^ 2))
   simpa only [Coeff.exponentInclusion_apply] using h
 
 end Section22PhaseSeparationExamples
+
+section Section22HilbertCoordinateExamples
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal unitInterval ContDiff
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+variable {W₀ W V Wa B U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+  {D : SourceSection17OriginalData (by norm_num) (by norm_num) W₀ W V s}
+  {A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa s}
+  (Q : SourceSection20Data D A B U)
+  {W₀₂ W₂ V₂ Wa₂ B₂ U₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+  {D₂ : SourceSection17OriginalData (by norm_num) (by norm_num) W₀₂ W₂ V₂ s₂}
+  {A₂ : SourceAbelianMomentAtlas (by norm_num) (by norm_num) Wa₂ s₂}
+  (Q₂ : SourceSection20Data D₂ A₂ B₂ U₂)
+
+-- The normalization uses the sum of component squares, not the square
+-- of the maximum-product norm.
+example (ψ : realTypeSourceSubmodule 2) :
+    (‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ ψ.val).1‖^2+
+      ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ ψ.val).2‖^2)/2 =
+      sourceOrdinaryMass (by rfl) ψ :=
+  D₂.complex.hilbert_complex_map_energy_eq_mass ψ
+
+-- Independently constructed original p=4 and p=2 families give the
+-- same ordinary frequency at a negative signed coordinate.
+example (ψ : realTypeSourceSubmodule 2) :
+    A.phaseFrequency (D.complex.realImageInverse (Birkhoff.decodeReal
+      (((Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)).prodMap
+        (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)))
+        (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ ψ.val)))) (-3) +
+      4*((‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ ψ.val).1‖^2+
+        ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ ψ.val).2‖^2)/2) =
+      A₂.ordinaryPhaseFrequency (by rfl) ψ (-3) :=
+  Q.hilbert_coordinate_frequency_eq_ordinary Q₂ (by norm_num) ψ (-3)
+
+-- No finite-gap or smooth hypothesis is imposed on these Hilbert sources.
+example (φ : realTypeSourceSubmodule 4)
+    (hφ : ¬ Summable (fun k : ℤ => ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 k‖^2))
+    (ψ : ℕ → realTypeSourceSubmodule 2)
+    (hψ : Tendsto (fun j => ((Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)).prodMap
+      (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)))
+      (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s₂ (ψ j).val)) atTop
+      (𝓝 (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val))) :
+    Tendsto (fun j => A₂.ordinaryPhaseFrequency (by rfl) (ψ j) (-3)) atTop atTop :=
+  Q.tendsto_original_hilbert_ordinary_frequency_atTop Q₂ (by norm_num) φ hφ ψ hψ (-3)
+
+-- The zero coordinate retains both the exact half-amplitude lower bound
+-- and the eventual actual inverse identity for arbitrary Hilbert pairs.
+example (φ : realTypeSourceSubmodule 4)
+    (hφ : ¬ Summable (fun k : ℤ => ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 k‖^2))
+    (z : ℕ → Coeff 2 × Coeff 2) (hr : ∀ j, Birkhoff.IsConjugatePair (z j))
+    (hz : Tendsto (fun j => ((Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)).prodMap
+      (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4))) (z j)) atTop
+      (𝓝 (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val)))
+    (hn : (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 0 ≠ 0) :
+    let emb := (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)).prodMap
+      (Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4))
+    let freq := fun j => A.phaseFrequency (D.complex.realImageInverse (Birkhoff.decodeReal (emb (z j)))) 0 +
+      4*((‖(z j).1‖^2+‖(z j).2‖^2)/2)
+    let amp := fun j => Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4) (z j).1
+    (∀ᶠ j in atTop, sourceComplexBirkhoffMap (by norm_num) (by norm_num) s
+      (D.complex.realImageInverse (Birkhoff.decodeReal (emb (z j)))).val = emb (z j)) ∧
+    ∃ r : ℕ → ℕ, StrictMono r ∧ ∃ time : ℕ → ℝ,
+      (∀ m, time m ∈ Icc (-1 : ℝ) 1) ∧
+      ∀ᶠ m : ℕ in atTop, ‖(sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val).1 0‖/2 ≤
+        ‖Complex.exp ((((-time m*freq (r (m+1)) : ℝ) : ℂ))*Complex.I)*amp (r (m+1)) 0-
+          Complex.exp ((((-time m*freq (r m) : ℝ) : ℂ))*Complex.I)*amp (r m) 0‖ := by
+  obtain ⟨hi,r,hmono,time,ht,_,he⟩ := Q.exists_hilbert_coordinate_separation
+    (by norm_num) φ hφ z hr hz 0 hn 1 (by norm_num)
+  exact ⟨hi,r,hmono,time,ht,he⟩
+
+-- Arbitrary real coordinate approximations eventually recover their
+-- exact initial coordinates through the actual original image inverse.
+example (φ : realTypeSourceSubmodule 4) (z : ℕ → Coeff 4 × Coeff 4)
+    (hz : Tendsto z atTop (𝓝 (sourceComplexBirkhoffMap (by norm_num) (by norm_num) s φ.val)))
+    (hr : ∀ j, Birkhoff.IsConjugatePair (z j)) :
+    ∀ᶠ j in atTop,
+      sourceComplexBirkhoffMap (by norm_num) (by norm_num) s
+        (D.complex.realImageInverse (Birkhoff.decodeReal (z j))).val = z j :=
+  (Q.eventually_conjugate_coordinate_image φ z hz hr).mono (fun _ h => h.2.1)
+
+end Section22HilbertCoordinateExamples

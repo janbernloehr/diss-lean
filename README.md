@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 22 phase separation](NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
-now supplies the successive-frequency subsequence, the exact
-amplitude-minus-error bound and eventual half-amplitude separation.
-Hilbert energy divergence also holds for arbitrary pointwise approximations.
-Seven positive theorems and five API examples pass the full checks.
-The source label, index and non-Hilbert qualifications are corrected directly.
+Latest step: [arbitrary Hilbert coordinate approximations](NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean)
+now retain the literal Section 22 quantifier, exact physical mass and
+ordinary frequencies across the original Hilbert and larger-exponent families.
+The actual inverse, diverging frequency and half-amplitude separation
+hold without a finite-gap premise. Six positive theorems and five API
+examples pass the full checks. No new refutation is added.
 The ordered comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013

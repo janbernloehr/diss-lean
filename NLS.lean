@@ -4846,3 +4846,4 @@ import NLS.ZakharovShabat.SourceSection22UniformEstimates
 import NLS.Dynamics.PhaseSubsequenceSeparation
 import NLS.SequenceSpaces.HilbertEnergyDivergence
 import NLS.ZakharovShabat.SourceSection22PhaseSeparation
+import NLS.ZakharovShabat.SourceSection22HilbertCoordinates

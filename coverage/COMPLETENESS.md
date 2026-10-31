@@ -54,8 +54,12 @@ bounded by `exp(R*C) * M`, with the neighborhood and constants chosen
 before every horizon. The [phase-separation estimates](../NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean)
 now also give the literal successive-frequency construction, amplitude-minus-error
 bound and eventual half-amplitude separation. The independent Hilbert-energy
-lemma covers arbitrary pointwise approximations; the original source application
-uses actual finite-gap approximations. The full ordered comparison is still pending.
+lemma covers arbitrary pointwise approximations. The
+[Hilbert coordinate extension](../NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean)
+now also retains arbitrary Hilbert approximations in the original-family
+application, with exact physical mass normalization, ordinary frequency
+compatibility, divergence and eventual actual image inverse. The full
+ordered comparison is still pending.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation
