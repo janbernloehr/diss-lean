@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T03:53:39.154804+00:00",
-  "base_commit": "22c718ec7ced6c39aaae06b7b9c88d3b7338b21f",
+  "published_utc": "2026-10-31T03:56:16.635655+00:00",
+  "base_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 177,
-    "module_hash_checks": 3876,
-    "distinct_modules": 2012
+    "review_records": 178,
+    "module_hash_checks": 3910,
+    "distinct_modules": 2027
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "22c718ec7ced6c39aaae06b7b9c88d3b7338b21f",
-    "validated_state": "Fresh full check after five positive norm and action theorems and four API examples.",
+    "base_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
+    "validated_state": "Section26 ordered comparison changes documentation only. The exact Lean snapshot retains the successful five-theorem positive norm and action check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8580,
     "public_examples": 7688,
@@ -44,8 +44,9 @@
       "sha256": "75fe53dfacceca499062661f24afa8fadb801c4592ec34bf60b729e327d4a3df"
     },
     "full_gate_log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00",
-    "qualification": "The recorded Lean snapshot passes full build, public examples and transitive axiom audit. The ordered Section26 comparison and broader qualifications remain open.",
-    "full_gate_log": "work/Section26PositiveFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/Section26PositiveFullCheck.log",
+    "validation_reused_from_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9"
   },
   "named_statements": [
     {
@@ -57422,6 +57423,1222 @@
         "log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00"
       },
       "source_record_sha256": "7af25c9365c23eec8f4d3e1722979d2ee355e61960d05c98117bf1722d22b549"
+    },
+    "Section26OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
+      "updated_utc": "2026-10-31T03:56:16.583799+00:00",
+      "source_lines": [
+        [
+          9221,
+          9488
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S26-001",
+          "source_lines": [
+            9223,
+            9224
+          ],
+          "requirement": "Quantitative action objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_original",
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.sourceSection26_exterior"
+          ],
+          "reviewed_claims": [
+            "Quantitative higher-action control follows from the original periodic-spectrum localization, on the same real source spaces and retained original family."
+          ],
+          "qualification": "The source purpose is supported by the actual gap and action estimates; the citation is historical attribution, not an additional mathematical premise."
+        },
+        {
+          "ordered_group": "S26-002",
+          "source_lines": [
+            9226,
+            9230
+          ],
+          "requirement": "Proposition 26.1 mean-value identity and radius",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.sourceSection26_meanValue"
+          ],
+          "reviewed_claims": [
+            "Every real H1 source and natural m has an actual closed-gap sample zeta with the original complex equality J_(n,2m+1)=zeta^(2m)*I_n and the exact quadratic radius at 8P^2<=1+|n|."
+          ],
+          "qualification": "P is the exact physical pair H1 norm. Signed indices, m=0, collapsed gaps and threshold equality are included. The implementation spectral-power index 2m denotes printed action level 2m+1."
+        },
+        {
+          "ordered_group": "S26-003",
+          "source_lines": [
+            9232,
+            9234
+          ],
+          "requirement": "Exterior comparison",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_exterior",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds"
+          ],
+          "reviewed_claims": [
+            "For nonzero signed n at the inclusive quadratic threshold, the two-sided action comparison retains 2^(-m), 4^m and the physical frequency weight (1+|2n*pi|)^(2m)."
+          ],
+          "qualification": "The real parts in the inequalities equal the actual real original actions; no division by an action or gap is used."
+        },
+        {
+          "ordered_group": "S26-004",
+          "source_lines": [
+            9236,
+            9239
+          ],
+          "requirement": "Central comparison",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_central",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_bound"
+          ],
+          "reviewed_claims": [
+            "At the strict complementary threshold, 4^m times the norm of the original higher action is bounded by (16*pi)^(2m)*P^(4m)*I_n."
+          ],
+          "qualification": "Every natural m and signed n, including zero, is admitted under the stated strict threshold. Zero is also handled separately in the later summation when it does not meet this threshold."
+        },
+        {
+          "ordered_group": "S26-005",
+          "source_lines": [
+            9241,
+            9244
+          ],
+          "requirement": "Actual gap sample and displacement",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_meanValue_localization",
+            "NLS.ZakharovShabat.H1_gap_point_localization",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_le_three_eighths"
+          ],
+          "reviewed_claims": [
+            "The sample lies between the canonical real endpoints, so their norm localization controls the whole closed gap. At a nonzero index the exact threshold gives radius at most 3/8, hence the printed half-unit bound."
+          ],
+          "qualification": "The nonzero integer arithmetic keeps both signs of n and includes equality at the source threshold. The stronger proved radius supplies the displayed consequence."
+        },
+        {
+          "ordered_group": "S26-006",
+          "source_lines": [
+            9245,
+            9247
+          ],
+          "requirement": "Two-sided spectral point bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.spectral_point_sq_bounds",
+            "NLS.ZakharovShabat.spectral_point_even_power_bounds"
+          ],
+          "reviewed_claims": [
+            "Half-unit localization around n*pi gives the squared two-sided comparison and every even-power comparison, with the same physical bracket and factors."
+          ],
+          "qualification": "The printed unsquared bounds are equivalent to the proved squared bounds since both sides are nonnegative; taking nonnegative square roots gives (1/sqrt(2))*<2n*pi> <= 2*|zeta| <= <2n*pi>. No spectral sign is assumed."
+        },
+        {
+          "ordered_group": "S26-007",
+          "source_lines": [
+            9249,
+            9249
+          ],
+          "requirement": "Central sample bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.H1_gap_point_central_bound"
+          ],
+          "reviewed_claims": [
+            "Every point between the central canonical endpoints satisfies |zeta|<=8*pi*P^2 under 1+|n|<8P^2."
+          ],
+          "qualification": "This is a bound on the actual closed interval, with the exact physical H1 norm and including n=0."
+        },
+        {
+          "ordered_group": "S26-008",
+          "source_lines": [
+            9259,
+            9268
+          ],
+          "requirement": "Weighted action norm and trace objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm",
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum",
+            "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound"
+          ],
+          "reviewed_claims": [
+            "The literal weighted action l1 norm is the sum of physical-weighted original action magnitudes. Summability and higher-action control lead to the original Theorem 23.2(i) upper bound."
+          ],
+          "qualification": "The weighted sum uses signed integer indices and the original indexed actions. The final exact leading-coefficient theorem passed the full checks and is committed and pushed."
+        },
+        {
+          "ordered_group": "S26-009",
+          "source_lines": [
+            9270,
+            9274
+          ],
+          "requirement": "Lemma 26.2 signed Hamiltonian term",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_action_estimate_half_mass",
+            "NLS.ZakharovShabat.sourceSection26_action_estimate",
+            "NLS.ZakharovShabat.sourceSection26_printed_estimate_of_odd"
+          ],
+          "reviewed_claims": [
+            "Lemma 26.2 has +2^m times the independently defined physical odd Hamiltonian at every m>=1. Both the printed full-mass remainder and the stronger half-mass form are proved, with absolute summability."
+          ],
+          "qualification": "Replace the alternating sign directly by the physical positive sign. At odd m the printed sign already agrees. The previous actual-source refutation is preserved unchanged and no new refutation is added."
+        },
+        {
+          "ordered_group": "S26-010",
+          "source_lines": [
+            9276,
+            9282
+          ],
+          "requirement": "Exterior summation and trace sign",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceWeightedActionTerm_le",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum",
+            "NLS.ZakharovShabat.eight_pow_mul_tsum_realHigherActions",
+            "NLS.ZakharovShabat.sourceRealHigherActions_summable"
+          ],
+          "reviewed_claims": [
+            "For nonzero exterior modes, the weighted action is at most 8^m times the nonnegative higher action. The summable trace identity is exactly 8^m*sum J_(n,2m+1)=+2^m*H_(2m+1)."
+          ],
+          "qualification": "Correct the repeated alternating sign. The pointwise proof separates n=0 before applying the nonzero exterior estimate, so small source norms need no impossible negative natural cutoff. Its summable positive majorant gives the same final bound for every source, including zero."
+        },
+        {
+          "ordered_group": "S26-011",
+          "source_lines": [
+            9284,
+            9289
+          ],
+          "requirement": "Central mass summation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.central_action_weight_le",
+            "NLS.ZakharovShabat.sourceRealActions_summable",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum"
+          ],
+          "reviewed_claims": [
+            "The central physical weight is at most <16*pi>^(2m)*(1+P)^(4m), and the ordinary action trace contributes exactly half the squared pair mass."
+          ],
+          "qualification": "The central bound admits n=0 or the strict complementary threshold. The stronger half-mass sum implies the displayed full-mass estimate; the finite-cutoff presentation is not needed to exclude any small-norm source."
+        },
+        {
+          "ordered_group": "S26-012",
+          "source_lines": [
+            9292,
+            9297
+          ],
+          "requirement": "Real pair and physical derivative energy",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.realTypeHigherSobolevSource_coefficients",
+            "NLS.ZakharovShabat.hierarchySobolevJetL2_real",
+            "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+            "NLS.ZakharovShabat.sobolevOddKinetic_real",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "reviewed_claims": [
+            "The two real-source components are physical conjugates; their derivatives retain conjugate reflection and equal L2 norms. Unit-interval Parseval identifies the scalar top-derivative integral with its coefficient norm, and the component-sum pair energy is twice it."
+          ],
+          "qualification": "The highest derivative is the actual weak derivative for arbitrary Hm data. Smooth comparison agrees with classical derivatives. The new weighted real-pair equality additionally holds at every lower integer order, including zero."
+        },
+        {
+          "ordered_group": "S26-013",
+          "source_lines": [
+            9298,
+            9301
+          ],
+          "requirement": "Physical kinetic-plus-remainder Hamiltonian",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.sobolevOddKinetic_real"
+          ],
+          "reviewed_claims": [
+            "The physical odd Hamiltonian is exactly the squared top-derivative norm plus the actual lower-jet polynomial mean, with unit-interval physical integration."
+          ],
+          "qualification": "The real Hm decomposition retains the independently defined physical Hamiltonian and its actual polynomial remainder."
+        },
+        {
+          "ordered_group": "S26-014",
+          "source_lines": [
+            9303,
+            9315
+          ],
+          "requirement": "Homogeneity and balanced monomial counts",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_totalWeight",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_fieldCharge",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+            "NLS.DifferentialPolynomial.monomial_prod_norm_lower_jets"
+          ],
+          "reviewed_claims": [
+            "The fixed reduced polynomial has weight 2m+2 when differentiation and each field count once, and charge zero. Grouping conjugate factors gives nonnegative integer jet multiplicities, weighted degree 2m+2 and even total field count."
+          ],
+          "qualification": "The finite support and conjugate norm equality preserve the exact physical polynomial and both constraints, at every m>=1."
+        },
+        {
+          "ordered_group": "S26-015",
+          "source_lines": [
+            9317,
+            9320
+          ],
+          "requirement": "Multi-index constraints",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.jetMultiplicity",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints"
+          ],
+          "reviewed_claims": [
+            "Use nonnegative integer multiplicities of the actual polynomial monomials, with sum (i+1)*mu_i=2m+2 and even sum mu_i, as specified in the preceding source prose."
+          ],
+          "qualification": "Normalize the displayed ambient notation (Z>=0/2)^m to the finite natural multi-index data actually used in the monomial proof. No unsupported half-integer factorization is claimed, and no new refutation is introduced."
+        },
+        {
+          "ordered_group": "S26-016",
+          "source_lines": [
+            9322,
+            9331
+          ],
+          "requirement": "Finite monomial majorant and uniform constants",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sobolevOddRemainderField_le",
+            "NLS.ZakharovShabat.sobolevOddRemainderMajorant",
+            "NLS.ZakharovShabat.integral_sobolevOddRemainderMajorant",
+            "NLS.DifferentialPolynomial.norm_eval_le_real_monomials"
+          ],
+          "reviewed_claims": [
+            "The norm of the actual physical polynomial is bounded pointwise and after integration by the finite sum of real monomial magnitudes times coefficient norms. Every supported coefficient is nonzero, so these constants are positive and independent of the potential."
+          ],
+          "qualification": "The actual finite support is used to collect the constrained monomials. The historical improvement over reference [59] is contextual and is not a separate priority claim."
+        },
+        {
+          "ordered_group": "S26-017",
+          "source_lines": [
+            9341,
+            9350
+          ],
+          "requirement": "Lemma 26.3 uniform physical remainder and Hamiltonian bounds",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds",
+            "NLS.ZakharovShabat.SourceSection26RemainderBounds",
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates"
+          ],
+          "reviewed_claims": [
+            "For every m>=1 and epsilon>0 one nonnegative constant, chosen before all real Hm sources, bounds the absolute physical remainder integral and Hamiltonian norm by epsilon or 1+epsilon times top-derivative energy plus the exact L2-only remainder."
+          ],
+          "qualification": "Both conclusions share a common constant. The source polynomial, physical interval, arbitrary epsilon and exact power (1+scalarMass^(4m))*scalarMass^2 are retained, with the original U and T unchanged."
+        },
+        {
+          "ordered_group": "S26-018",
+          "source_lines": [
+            9353,
+            9362
+          ],
+          "requirement": "Field-count lower bound four",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds"
+          ],
+          "reviewed_claims": [
+            "Every actual supported monomial has field count D between 4 and 2m+2. The upper weight estimate 2m+2<=m*D and evenness rule out D<=2."
+          ],
+          "qualification": "The proof follows the source argument for every m>=1, including m=1. The lower bound supplies two factors even when their indices coincide."
+        },
+        {
+          "ordered_group": "S26-019",
+          "source_lines": [
+            9363,
+            9377
+          ],
+          "requirement": "Two-factor extraction and integral estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_two_factor_split",
+            "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+            "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split",
+            "NLS.ZakharovShabat.integral_lowerSobolevJet_norm_mul_le"
+          ],
+          "reviewed_claims": [
+            "Two selected factors are extracted from the actual monomial; all residual factors use their supremum norms and the selected factors use physical L2 norms via Cauchy-Schwarz and Parseval."
+          ],
+          "qualification": "The general split includes distinct indices and repeated indices. Its multiplicities are nonnegative integers and its constants precede every source."
+        },
+        {
+          "ordered_group": "S26-020",
+          "source_lines": [
+            9381,
+            9391
+          ],
+          "requirement": "Formula (5.11) interpolation ranges",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_supremum_interpolate",
+            "NLS.ZakharovShabat.sourceSection26_L2_interpolate",
+            "NLS.ZakharovShabat.norm_sobolev_le_sourcePiSobolevScalar"
+          ],
+          "reviewed_claims": [
+            "Formula (5.11) holds in the exact physical Hm norm for i<m in the supremum estimate and i<=m in the L2 estimate, with explicit constants 4*(2*pi)^i and (2*pi)^i."
+          ],
+          "qualification": "Correct the supremum endpoint directly to the strict range used by the polynomial proof. The existing endpoint refutation is unchanged. No new counterexample construction is needed."
+        },
+        {
+          "ordered_group": "S26-021",
+          "source_lines": [
+            9392,
+            9396
+          ],
+          "requirement": "Formula (5.12) product exponents",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound",
+            "NLS.DifferentialPolynomial.prod_interpolated_powers",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "The finite product collects exactly the two interpolation powers in (5.12): two L2 factors lower the high-norm exponent by 1/m and increase the mass exponent by 1/m."
+          ],
+          "qualification": "The proof first bounds with the auxiliary norm, which is dominated by the exact physical norm. The high-norm exponent is positive, so the same constant supplies the source display. Zero inputs are treated separately and introduce no negative-power assumption."
+        },
+        {
+          "ordered_group": "S26-022",
+          "source_lines": [
+            9398,
+            9415
+          ],
+          "requirement": "Repeated-index factor extraction",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_two_factor_split",
+            "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+            "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "When both selected factors have the same derivative order k, the residual multiplicity is mu_k-2 and the two L2 factors coincide. The same exact exponent calculation gives (5.12)."
+          ],
+          "qualification": "In the single-support display, remove the unused l from the residual product restriction; the repeated-index split provides the literal intended factorization. This is a direct notation correction."
+        },
+        {
+          "ordered_group": "S26-023",
+          "source_lines": [
+            9416,
+            9425
+          ],
+          "requirement": "Highest-norm exponent",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents",
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range"
+          ],
+          "reviewed_claims": [
+            "Writing D=sum mu_i, the high-norm exponent is alpha=2-(D-2)/(2m), with 0<alpha<2. Weighted degree and 4<=D<=2m+2 give exactly this range."
+          ],
+          "qualification": "The finite-sum identities retain arbitrary supported multiplicities and repeated selections. The alpha formula is valid at every m>=1."
+        },
+        {
+          "ordered_group": "S26-024",
+          "source_lines": [
+            9427,
+            9432
+          ],
+          "requirement": "Mass exponent intermediate identity",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "The mass exponent is beta=(1+1/(2m))*(D-2)=D-2+(D-2)/(2m), matching the actual finite product of two L2 and residual supremum factors."
+          ],
+          "qualification": "Replace the intermediate numerator D-4 by D-2 directly. The final beta in the source is retained and is proved by the positive finite-sum identity; no refutation is added."
+        },
+        {
+          "ordered_group": "S26-025",
+          "source_lines": [
+            9443,
+            9447
+          ],
+          "requirement": "Combined monomial estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound",
+            "NLS.ZakharovShabat.norm_sobolev_le_sourcePiSobolevScalar",
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range"
+          ],
+          "reviewed_claims": [
+            "Each supported physical monomial has integral at most C*mass^beta*Hm^alpha with exactly alpha=2-(D-2)/(2m) and beta=(1+1/(2m))*(D-2)."
+          ],
+          "qualification": "The actual proof uses the stronger auxiliary Hm bound; monotonicity transfers it to the exact physical norm without changing C, since alpha>0. Constants depend on the fixed monomial and m, never on the source."
+        },
+        {
+          "ordered_group": "S26-026",
+          "source_lines": [
+            9449,
+            9466
+          ],
+          "requirement": "Young conjugates and exact mass power",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range",
+            "NLS.exists_geometric_absorption",
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_absorption"
+          ],
+          "reviewed_claims": [
+            "Young absorption with t=alpha/2, hence conjugates p=2/alpha and pprime=4m/(D-2), gives arbitrary epsilon times Hm squared and the exact mass power beta/(1-alpha/2)=4m+2."
+          ],
+          "qualification": "Both conjugates are finite and greater than one because 0<alpha<2. The positive absorption theorem handles nonnegative norms including zero, and its constant is chosen before all sources."
+        },
+        {
+          "ordered_group": "S26-027",
+          "source_lines": [
+            9468,
+            9471
+          ],
+          "requirement": "Uniform finite sum and physical norm splitting",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_Hm_absorption",
+            "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq",
+            "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption"
+          ],
+          "reviewed_claims": [
+            "Finite support permits summing the monomial estimates with a uniform constant. The exact physical norm splits with coefficient 2^(2m-1) into scalar mass and top-derivative energy."
+          ],
+          "qualification": "Replace the printed 2^(m-1) directly. Rescale epsilon before the norm splitting and absorb constants into the L2-only error, preserving Lemma 26.3. The positive physical splitting passed the full checks and is committed and pushed; historical refutations are unchanged."
+        },
+        {
+          "ordered_group": "S26-028",
+          "source_lines": [
+            9473,
+            9486
+          ],
+          "requirement": "Original Theorem 23.2(i) consequence",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_action_estimate",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+            "NLS.ZakharovShabat.two_mul_highestJet_sq_le_sourcePiSobolev",
+            "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound"
+          ],
+          "reviewed_claims": [
+            "The final action inequality has exactly 2^m times the squared physical pair Hm norm plus c_m^2*(1+P)^(4m) times squared pair mass, for every m>=1 and every original real Hm source."
+          ],
+          "qualification": "Correct the repeated alternating Hamiltonian sign. Epsilon=1 and the exact real-pair factor two retain the literal leading coefficient, including even orders; one nonnegative c_m is chosen before every source. The positive theorem passed the full checks and is committed and pushed."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S26-001",
+          "source_lines": [
+            9223,
+            9224
+          ],
+          "requirement": "Quantitative action objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_original",
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.sourceSection26_exterior"
+          ],
+          "reviewed_claims": [
+            "Quantitative higher-action control follows from the original periodic-spectrum localization, on the same real source spaces and retained original family."
+          ],
+          "qualification": "The source purpose is supported by the actual gap and action estimates; the citation is historical attribution, not an additional mathematical premise."
+        },
+        {
+          "ordered_group": "S26-002",
+          "source_lines": [
+            9226,
+            9230
+          ],
+          "requirement": "Proposition 26.1 mean-value identity and radius",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+            "NLS.ZakharovShabat.sourceSection26_meanValue"
+          ],
+          "reviewed_claims": [
+            "Every real H1 source and natural m has an actual closed-gap sample zeta with the original complex equality J_(n,2m+1)=zeta^(2m)*I_n and the exact quadratic radius at 8P^2<=1+|n|."
+          ],
+          "qualification": "P is the exact physical pair H1 norm. Signed indices, m=0, collapsed gaps and threshold equality are included. The implementation spectral-power index 2m denotes printed action level 2m+1."
+        },
+        {
+          "ordered_group": "S26-003",
+          "source_lines": [
+            9232,
+            9234
+          ],
+          "requirement": "Exterior comparison",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_exterior",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds"
+          ],
+          "reviewed_claims": [
+            "For nonzero signed n at the inclusive quadratic threshold, the two-sided action comparison retains 2^(-m), 4^m and the physical frequency weight (1+|2n*pi|)^(2m)."
+          ],
+          "qualification": "The real parts in the inequalities equal the actual real original actions; no division by an action or gap is used."
+        },
+        {
+          "ordered_group": "S26-004",
+          "source_lines": [
+            9236,
+            9239
+          ],
+          "requirement": "Central comparison",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_central",
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_bound"
+          ],
+          "reviewed_claims": [
+            "At the strict complementary threshold, 4^m times the norm of the original higher action is bounded by (16*pi)^(2m)*P^(4m)*I_n."
+          ],
+          "qualification": "Every natural m and signed n, including zero, is admitted under the stated strict threshold. Zero is also handled separately in the later summation when it does not meet this threshold."
+        },
+        {
+          "ordered_group": "S26-005",
+          "source_lines": [
+            9241,
+            9244
+          ],
+          "requirement": "Actual gap sample and displacement",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceRealHigherAction_H1_meanValue_localization",
+            "NLS.ZakharovShabat.H1_gap_point_localization",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_le_three_eighths"
+          ],
+          "reviewed_claims": [
+            "The sample lies between the canonical real endpoints, so their norm localization controls the whole closed gap. At a nonzero index the exact threshold gives radius at most 3/8, hence the printed half-unit bound."
+          ],
+          "qualification": "The nonzero integer arithmetic keeps both signs of n and includes equality at the source threshold. The stronger proved radius supplies the displayed consequence."
+        },
+        {
+          "ordered_group": "S26-006",
+          "source_lines": [
+            9245,
+            9247
+          ],
+          "requirement": "Two-sided spectral point bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.spectral_point_sq_bounds",
+            "NLS.ZakharovShabat.spectral_point_even_power_bounds"
+          ],
+          "reviewed_claims": [
+            "Half-unit localization around n*pi gives the squared two-sided comparison and every even-power comparison, with the same physical bracket and factors."
+          ],
+          "qualification": "The printed unsquared bounds are equivalent to the proved squared bounds since both sides are nonnegative; taking nonnegative square roots gives (1/sqrt(2))*<2n*pi> <= 2*|zeta| <= <2n*pi>. No spectral sign is assumed."
+        },
+        {
+          "ordered_group": "S26-007",
+          "source_lines": [
+            9249,
+            9249
+          ],
+          "requirement": "Central sample bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.H1_gap_point_central_bound"
+          ],
+          "reviewed_claims": [
+            "Every point between the central canonical endpoints satisfies |zeta|<=8*pi*P^2 under 1+|n|<8P^2."
+          ],
+          "qualification": "This is a bound on the actual closed interval, with the exact physical H1 norm and including n=0."
+        },
+        {
+          "ordered_group": "S26-008",
+          "source_lines": [
+            9259,
+            9268
+          ],
+          "requirement": "Weighted action norm and trace objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm",
+            "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum",
+            "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound"
+          ],
+          "reviewed_claims": [
+            "The literal weighted action l1 norm is the sum of physical-weighted original action magnitudes. Summability and higher-action control lead to the original Theorem 23.2(i) upper bound."
+          ],
+          "qualification": "The weighted sum uses signed integer indices and the original indexed actions. The final exact leading-coefficient theorem passed the full checks and is committed and pushed."
+        },
+        {
+          "ordered_group": "S26-009",
+          "source_lines": [
+            9270,
+            9274
+          ],
+          "requirement": "Lemma 26.2 signed Hamiltonian term",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_action_estimate_half_mass",
+            "NLS.ZakharovShabat.sourceSection26_action_estimate",
+            "NLS.ZakharovShabat.sourceSection26_printed_estimate_of_odd"
+          ],
+          "reviewed_claims": [
+            "Lemma 26.2 has +2^m times the independently defined physical odd Hamiltonian at every m>=1. Both the printed full-mass remainder and the stronger half-mass form are proved, with absolute summability."
+          ],
+          "qualification": "Replace the alternating sign directly by the physical positive sign. At odd m the printed sign already agrees. The previous actual-source refutation is preserved unchanged and no new refutation is added."
+        },
+        {
+          "ordered_group": "S26-010",
+          "source_lines": [
+            9276,
+            9282
+          ],
+          "requirement": "Exterior summation and trace sign",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceWeightedActionTerm_le",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum",
+            "NLS.ZakharovShabat.eight_pow_mul_tsum_realHigherActions",
+            "NLS.ZakharovShabat.sourceRealHigherActions_summable"
+          ],
+          "reviewed_claims": [
+            "For nonzero exterior modes, the weighted action is at most 8^m times the nonnegative higher action. The summable trace identity is exactly 8^m*sum J_(n,2m+1)=+2^m*H_(2m+1)."
+          ],
+          "qualification": "Correct the repeated alternating sign. The pointwise proof separates n=0 before applying the nonzero exterior estimate, so small source norms need no impossible negative natural cutoff. Its summable positive majorant gives the same final bound for every source, including zero."
+        },
+        {
+          "ordered_group": "S26-011",
+          "source_lines": [
+            9284,
+            9289
+          ],
+          "requirement": "Central mass summation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.central_action_weight_le",
+            "NLS.ZakharovShabat.sourceRealActions_summable",
+            "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum"
+          ],
+          "reviewed_claims": [
+            "The central physical weight is at most <16*pi>^(2m)*(1+P)^(4m), and the ordinary action trace contributes exactly half the squared pair mass."
+          ],
+          "qualification": "The central bound admits n=0 or the strict complementary threshold. The stronger half-mass sum implies the displayed full-mass estimate; the finite-cutoff presentation is not needed to exclude any small-norm source."
+        },
+        {
+          "ordered_group": "S26-012",
+          "source_lines": [
+            9292,
+            9297
+          ],
+          "requirement": "Real pair and physical derivative energy",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.realTypeHigherSobolevSource_coefficients",
+            "NLS.ZakharovShabat.hierarchySobolevJetL2_real",
+            "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+            "NLS.ZakharovShabat.sobolevOddKinetic_real",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm"
+          ],
+          "reviewed_claims": [
+            "The two real-source components are physical conjugates; their derivatives retain conjugate reflection and equal L2 norms. Unit-interval Parseval identifies the scalar top-derivative integral with its coefficient norm, and the component-sum pair energy is twice it."
+          ],
+          "qualification": "The highest derivative is the actual weak derivative for arbitrary Hm data. Smooth comparison agrees with classical derivatives. The new weighted real-pair equality additionally holds at every lower integer order, including zero."
+        },
+        {
+          "ordered_group": "S26-013",
+          "source_lines": [
+            9298,
+            9301
+          ],
+          "requirement": "Physical kinetic-plus-remainder Hamiltonian",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+            "NLS.ZakharovShabat.sobolevOddKinetic_real"
+          ],
+          "reviewed_claims": [
+            "The physical odd Hamiltonian is exactly the squared top-derivative norm plus the actual lower-jet polynomial mean, with unit-interval physical integration."
+          ],
+          "qualification": "The real Hm decomposition retains the independently defined physical Hamiltonian and its actual polynomial remainder."
+        },
+        {
+          "ordered_group": "S26-014",
+          "source_lines": [
+            9303,
+            9315
+          ],
+          "requirement": "Homogeneity and balanced monomial counts",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_totalWeight",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_fieldCharge",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+            "NLS.DifferentialPolynomial.monomial_prod_norm_lower_jets"
+          ],
+          "reviewed_claims": [
+            "The fixed reduced polynomial has weight 2m+2 when differentiation and each field count once, and charge zero. Grouping conjugate factors gives nonnegative integer jet multiplicities, weighted degree 2m+2 and even total field count."
+          ],
+          "qualification": "The finite support and conjugate norm equality preserve the exact physical polynomial and both constraints, at every m>=1."
+        },
+        {
+          "ordered_group": "S26-015",
+          "source_lines": [
+            9317,
+            9320
+          ],
+          "requirement": "Multi-index constraints",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.jetMultiplicity",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints"
+          ],
+          "reviewed_claims": [
+            "Use nonnegative integer multiplicities of the actual polynomial monomials, with sum (i+1)*mu_i=2m+2 and even sum mu_i, as specified in the preceding source prose."
+          ],
+          "qualification": "Normalize the displayed ambient notation (Z>=0/2)^m to the finite natural multi-index data actually used in the monomial proof. No unsupported half-integer factorization is claimed, and no new refutation is introduced."
+        },
+        {
+          "ordered_group": "S26-016",
+          "source_lines": [
+            9322,
+            9331
+          ],
+          "requirement": "Finite monomial majorant and uniform constants",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sobolevOddRemainderField_le",
+            "NLS.ZakharovShabat.sobolevOddRemainderMajorant",
+            "NLS.ZakharovShabat.integral_sobolevOddRemainderMajorant",
+            "NLS.DifferentialPolynomial.norm_eval_le_real_monomials"
+          ],
+          "reviewed_claims": [
+            "The norm of the actual physical polynomial is bounded pointwise and after integration by the finite sum of real monomial magnitudes times coefficient norms. Every supported coefficient is nonzero, so these constants are positive and independent of the potential."
+          ],
+          "qualification": "The actual finite support is used to collect the constrained monomials. The historical improvement over reference [59] is contextual and is not a separate priority claim."
+        },
+        {
+          "ordered_group": "S26-017",
+          "source_lines": [
+            9341,
+            9350
+          ],
+          "requirement": "Lemma 26.3 uniform physical remainder and Hamiltonian bounds",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds",
+            "NLS.ZakharovShabat.SourceSection26RemainderBounds",
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates"
+          ],
+          "reviewed_claims": [
+            "For every m>=1 and epsilon>0 one nonnegative constant, chosen before all real Hm sources, bounds the absolute physical remainder integral and Hamiltonian norm by epsilon or 1+epsilon times top-derivative energy plus the exact L2-only remainder."
+          ],
+          "qualification": "Both conclusions share a common constant. The source polynomial, physical interval, arbitrary epsilon and exact power (1+scalarMass^(4m))*scalarMass^2 are retained, with the original U and T unchanged."
+        },
+        {
+          "ordered_group": "S26-018",
+          "source_lines": [
+            9353,
+            9362
+          ],
+          "requirement": "Field-count lower bound four",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds"
+          ],
+          "reviewed_claims": [
+            "Every actual supported monomial has field count D between 4 and 2m+2. The upper weight estimate 2m+2<=m*D and evenness rule out D<=2."
+          ],
+          "qualification": "The proof follows the source argument for every m>=1, including m=1. The lower bound supplies two factors even when their indices coincide."
+        },
+        {
+          "ordered_group": "S26-019",
+          "source_lines": [
+            9363,
+            9377
+          ],
+          "requirement": "Two-factor extraction and integral estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_two_factor_split",
+            "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+            "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split",
+            "NLS.ZakharovShabat.integral_lowerSobolevJet_norm_mul_le"
+          ],
+          "reviewed_claims": [
+            "Two selected factors are extracted from the actual monomial; all residual factors use their supremum norms and the selected factors use physical L2 norms via Cauchy-Schwarz and Parseval."
+          ],
+          "qualification": "The general split includes distinct indices and repeated indices. Its multiplicities are nonnegative integers and its constants precede every source."
+        },
+        {
+          "ordered_group": "S26-020",
+          "source_lines": [
+            9381,
+            9391
+          ],
+          "requirement": "Formula (5.11) interpolation ranges",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_supremum_interpolate",
+            "NLS.ZakharovShabat.sourceSection26_L2_interpolate",
+            "NLS.ZakharovShabat.norm_sobolev_le_sourcePiSobolevScalar"
+          ],
+          "reviewed_claims": [
+            "Formula (5.11) holds in the exact physical Hm norm for i<m in the supremum estimate and i<=m in the L2 estimate, with explicit constants 4*(2*pi)^i and (2*pi)^i."
+          ],
+          "qualification": "Correct the supremum endpoint directly to the strict range used by the polynomial proof. The existing endpoint refutation is unchanged. No new counterexample construction is needed."
+        },
+        {
+          "ordered_group": "S26-021",
+          "source_lines": [
+            9392,
+            9396
+          ],
+          "requirement": "Formula (5.12) product exponents",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound",
+            "NLS.DifferentialPolynomial.prod_interpolated_powers",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "The finite product collects exactly the two interpolation powers in (5.12): two L2 factors lower the high-norm exponent by 1/m and increase the mass exponent by 1/m."
+          ],
+          "qualification": "The proof first bounds with the auxiliary norm, which is dominated by the exact physical norm. The high-norm exponent is positive, so the same constant supplies the source display. Zero inputs are treated separately and introduce no negative-power assumption."
+        },
+        {
+          "ordered_group": "S26-022",
+          "source_lines": [
+            9398,
+            9415
+          ],
+          "requirement": "Repeated-index factor extraction",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_two_factor_split",
+            "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+            "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "When both selected factors have the same derivative order k, the residual multiplicity is mu_k-2 and the two L2 factors coincide. The same exact exponent calculation gives (5.12)."
+          ],
+          "qualification": "In the single-support display, remove the unused l from the residual product restriction; the repeated-index split provides the literal intended factorization. This is a direct notation correction."
+        },
+        {
+          "ordered_group": "S26-023",
+          "source_lines": [
+            9416,
+            9425
+          ],
+          "requirement": "Highest-norm exponent",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+            "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds",
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents",
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range"
+          ],
+          "reviewed_claims": [
+            "Writing D=sum mu_i, the high-norm exponent is alpha=2-(D-2)/(2m), with 0<alpha<2. Weighted degree and 4<=D<=2m+2 give exactly this range."
+          ],
+          "qualification": "The finite-sum identities retain arbitrary supported multiplicities and repeated selections. The alpha formula is valid at every m>=1."
+        },
+        {
+          "ordered_group": "S26-024",
+          "source_lines": [
+            9427,
+            9432
+          ],
+          "requirement": "Mass exponent intermediate identity",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.DifferentialPolynomial.two_factor_interpolation_exponents"
+          ],
+          "reviewed_claims": [
+            "The mass exponent is beta=(1+1/(2m))*(D-2)=D-2+(D-2)/(2m), matching the actual finite product of two L2 and residual supremum factors."
+          ],
+          "qualification": "Replace the intermediate numerator D-4 by D-2 directly. The final beta in the source is retained and is proved by the positive finite-sum identity; no refutation is added."
+        },
+        {
+          "ordered_group": "S26-025",
+          "source_lines": [
+            9443,
+            9447
+          ],
+          "requirement": "Combined monomial estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound",
+            "NLS.ZakharovShabat.norm_sobolev_le_sourcePiSobolevScalar",
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range"
+          ],
+          "reviewed_claims": [
+            "Each supported physical monomial has integral at most C*mass^beta*Hm^alpha with exactly alpha=2-(D-2)/(2m) and beta=(1+1/(2m))*(D-2)."
+          ],
+          "qualification": "The actual proof uses the stronger auxiliary Hm bound; monotonicity transfers it to the exact physical norm without changing C, since alpha>0. Constants depend on the fixed monomial and m, never on the source."
+        },
+        {
+          "ordered_group": "S26-026",
+          "source_lines": [
+            9449,
+            9466
+          ],
+          "requirement": "Young conjugates and exact mass power",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.DifferentialPolynomial.monomial_interpolation_power_range",
+            "NLS.exists_geometric_absorption",
+            "NLS.ZakharovShabat.exists_sobolevRealMonomial_absorption"
+          ],
+          "reviewed_claims": [
+            "Young absorption with t=alpha/2, hence conjugates p=2/alpha and pprime=4m/(D-2), gives arbitrary epsilon times Hm squared and the exact mass power beta/(1-alpha/2)=4m+2."
+          ],
+          "qualification": "Both conjugates are finite and greater than one because 0<alpha<2. The positive absorption theorem handles nonnegative norms including zero, and its constant is chosen before all sources."
+        },
+        {
+          "ordered_group": "S26-027",
+          "source_lines": [
+            9468,
+            9471
+          ],
+          "requirement": "Uniform finite sum and physical norm splitting",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_Hm_absorption",
+            "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq",
+            "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+            "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption"
+          ],
+          "reviewed_claims": [
+            "Finite support permits summing the monomial estimates with a uniform constant. The exact physical norm splits with coefficient 2^(2m-1) into scalar mass and top-derivative energy."
+          ],
+          "qualification": "Replace the printed 2^(m-1) directly. Rescale epsilon before the norm splitting and absorb constants into the L2-only error, preserving Lemma 26.3. The positive physical splitting passed the full checks and is committed and pushed; historical refutations are unchanged."
+        },
+        {
+          "ordered_group": "S26-028",
+          "source_lines": [
+            9473,
+            9486
+          ],
+          "requirement": "Original Theorem 23.2(i) consequence",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection26_action_estimate",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+            "NLS.ZakharovShabat.two_mul_highestJet_sq_le_sourcePiSobolev",
+            "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound"
+          ],
+          "reviewed_claims": [
+            "The final action inequality has exactly 2^m times the squared physical pair Hm norm plus c_m^2*(1+P)^(4m) times squared pair mass, for every m>=1 and every original real Hm source."
+          ],
+          "qualification": "Correct the repeated alternating Hamiltonian sign. Epsilon=1 and the exact real-pair factor two retain the literal leading coefficient, including even orders; one nonnegative c_m is chosen before every source. The positive theorem passed the full checks and is committed and pushed."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 20,
+        "corrected": 8,
+        "partial": 0,
+        "contextual": 0,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection26Actions.lean": "84495a81a1b7337d04180b446c21744fa0e8f9512931a443392f34ad3acc099f",
+        "NLS/ZakharovShabat/SourceSection26Sum.lean": "007618a2d67b5fe663dc5b01380c205eda9b5020cdf2c896698834ca55a23c50",
+        "NLS/ZakharovShabat/SourceSection26Original.lean": "03ae2b6d6b986bfdb37b9c44553d4f12eed8647ea1184dabda2066bf92d08515",
+        "NLS/ZakharovShabat/SourceSection26Interpolation.lean": "01c87cb0a7082eb1075dc360465ca968baf565d987995513cae76ae6459529cf",
+        "NLS/ZakharovShabat/SobolevMonomialInterpolation.lean": "bfaab8e2e3cafb73302c67d23d03bd4eadf545a8d90cdf77268882f9e9c08767",
+        "NLS/ZakharovShabat/SobolevRemainderAbsorption.lean": "40d4a043f186f4947dfd1549cf6af10a0d51726cd8c4e151842c1aa017006078",
+        "NLS/ZakharovShabat/SourceH1HigherActionEstimates.lean": "7c1d942d51949665092607242fad0785b7ed72b4c77be097a16b7c9a019fadf2",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17",
+        "NLS/ZakharovShabat/SobolevHighestJetEnergy.lean": "2c6de455ebf5fc663fded1ada50a2c23c613f644a0f328f73b371317bf962e8b",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3",
+        "NLS/ZakharovShabat/SobolevJetNormBounds.lean": "9303ea5c2e51a93092123d9809b4a4b45f1cb515bce7ee60cf26c66de2648817",
+        "NLS/DifferentialPolynomial/MonomialInterpolationExponents.lean": "432243cb4e242d577e149ee178f88d37808df79d3ff8f3b8250f2c9960796d04",
+        "NLS/DifferentialPolynomial/TwoFactorSplit.lean": "e412fdc95f3d784cfa25031bad126ca70352fccbfd0482baae7a4389c65be745",
+        "NLS/ZakharovShabat/SourceWeightedActionMajorant.lean": "94bf2d2565a657f8dbce9d3a3b8da83958cd2f5c8143b400d4349665cfb382cb",
+        "NLS/ZakharovShabat/SourceSobolevActionEstimate.lean": "5ebb121194d3b3abfee43d910346a0fe1272cc695b136f3befa5e898d2e38476",
+        "NLS/ZakharovShabat/SobolevOddRemainderBounds.lean": "6432e7915e8c9ab11bbe27aaa850e972afe245a0a8cf7c5f6f0dfa3e54a118c3",
+        "NLS/ZakharovShabat/SobolevMonomialIntegral.lean": "94cf4b319ee2cf4eb86ab1472a1d53ee982c527f85926a84b25401d2e1ce0517",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean": "c656302f1c03029fb6a727a69c4cdb8d813cd1983cc9191c333e2843f652952b",
+        "NLS/ZakharovShabat/NonzeroQuadraticRadius.lean": "db053c275981feda8ea0664328e0cba5b75f03af79c720b50be6c517eba6ef98",
+        "NLS/ZakharovShabat/H1GapIntervalLocalization.lean": "15146655cd5ca356487890a3bee484d46a2c246e598651a8f89eeb93737e756d",
+        "NLS/ZakharovShabat/SourceSobolevCommonConstants.lean": "ded84dd19348aa1dd841153432edcaa9f52f5d8e9c540ac4cc0fdbf7f0b7d944",
+        "NLS/DifferentialPolynomial/RealMonomialBounds.lean": "45a9cb62809216ac0365e33eba401eba3bfeb1deea7f269a914191c307d8e7af",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean": "6eaafaa9ad3be71f1fe5bf6c9bfd3baf61cf637ddd2dc8c1ff59f561272dc1bd",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean": "385898f6c0fdfe8408e3d7be84d41bad55e5870e7ba04cb76b4a3571296929ad",
+        "NLS/ZakharovShabat/SourcePiSobolevNormBounds.lean": "09726cb9b244d3e31bf77f566702b75eb0eab57d8dc615c586cae39056c95428",
+        "NLS/SequenceSpaces/Reflection.lean": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef",
+        "NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean": "b8d6ad20ed39f6dab1120d1a962fb85074dbe40418514fc511344231c302875c",
+        "NLS/ZakharovShabat/SourceSection26ActionLeading.lean": "8dbac38406999d22d17b5c6ccc3434d8f10632965f465e1abab08d5ae407577f",
+        "NLS/ZakharovShabat/SobolevRealJets.lean": "e90a4c02b9f48ec75450fb4fb4bef26d302f93381c581db8364aa1ec23bc6f12",
+        "NLS/ZakharovShabat/SobolevPhysicalJets.lean": "f89bb619d798283694160945311b46e6d3e8c337f8f45fccf4da90f31b9dbbbd",
+        "NLS/SequenceSpaces/GeometricAbsorption.lean": "e643134e17fbb6d77bdc5b13057c312e912c98c87e94d4205dc0827cfc90b99b",
+        "NLS/ZakharovShabat/SobolevTopJetPhysical.lean": "844e881d115671e5800a433300d20ba539a9f155806c440f1783f807906f164b",
+        "NLS/ZakharovShabat/SobolevJetInterpolation.lean": "6834962d8db63c2604f1541744c0aa3430629a9eefd9ab29b7b784d80cc1e90b",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean": "add8170c924f576cb43093073ade92bf96391d5c7ee4b6f2f8b8260f7b932ec4"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection26Actions.lean",
+        "NLS/ZakharovShabat/SourceSection26Sum.lean",
+        "NLS/ZakharovShabat/SourceSection26Original.lean",
+        "NLS/ZakharovShabat/SourceSection26Interpolation.lean",
+        "NLS/ZakharovShabat/SobolevMonomialInterpolation.lean",
+        "NLS/ZakharovShabat/SobolevRemainderAbsorption.lean",
+        "NLS/ZakharovShabat/SourceH1HigherActionEstimates.lean",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean",
+        "NLS/ZakharovShabat/SobolevHighestJetEnergy.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean",
+        "NLS/ZakharovShabat/SobolevJetNormBounds.lean",
+        "NLS/DifferentialPolynomial/MonomialInterpolationExponents.lean",
+        "NLS/DifferentialPolynomial/TwoFactorSplit.lean",
+        "NLS/ZakharovShabat/SourceWeightedActionMajorant.lean",
+        "NLS/ZakharovShabat/SourceSobolevActionEstimate.lean",
+        "NLS/ZakharovShabat/SobolevOddRemainderBounds.lean",
+        "NLS/ZakharovShabat/SobolevMonomialIntegral.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean",
+        "NLS/ZakharovShabat/NonzeroQuadraticRadius.lean",
+        "NLS/ZakharovShabat/H1GapIntervalLocalization.lean",
+        "NLS/ZakharovShabat/SourceSobolevCommonConstants.lean",
+        "NLS/DifferentialPolynomial/RealMonomialBounds.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean",
+        "NLS/ZakharovShabat/SourceSection23Actions.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevNormBounds.lean",
+        "NLS/SequenceSpaces/Reflection.lean",
+        "NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean",
+        "NLS/ZakharovShabat/SourceSection26ActionLeading.lean",
+        "NLS/ZakharovShabat/SobolevRealJets.lean",
+        "NLS/ZakharovShabat/SobolevPhysicalJets.lean",
+        "NLS/SequenceSpaces/GeometricAbsorption.lean",
+        "NLS/ZakharovShabat/SobolevTopJetPhysical.lean",
+        "NLS/ZakharovShabat/SobolevJetInterpolation.lean",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_26_ASSERTIONS.md",
+      "ordered_inventory_sha256": "2024e4a8be713be3703eb2faf827e78b9f7baaa903f52fdbe31808584e6ee123",
+      "resolved_declarations": [
+        "NLS.DifferentialPolynomial.exists_two_factor_split",
+        "NLS.DifferentialPolynomial.jetMultiplicity",
+        "NLS.DifferentialPolynomial.monomial_interpolation_power_range",
+        "NLS.DifferentialPolynomial.monomial_prod_norm_lower_jets",
+        "NLS.DifferentialPolynomial.norm_eval_le_real_monomials",
+        "NLS.DifferentialPolynomial.prod_interpolated_powers",
+        "NLS.DifferentialPolynomial.prod_pow_two_factor_split",
+        "NLS.DifferentialPolynomial.two_factor_interpolation_exponents",
+        "NLS.ZakharovShabat.H1_gap_point_central_bound",
+        "NLS.ZakharovShabat.H1_gap_point_localization",
+        "NLS.ZakharovShabat.SourceSection26RemainderBounds",
+        "NLS.ZakharovShabat.central_action_weight_le",
+        "NLS.ZakharovShabat.eight_pow_mul_tsum_realHigherActions",
+        "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_Hm_absorption",
+        "NLS.ZakharovShabat.exists_sobolevOddRemainder_derivative_absorption",
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_absorption",
+        "NLS.ZakharovShabat.exists_sobolevRealMonomial_interpolation_bound",
+        "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound",
+        "NLS.ZakharovShabat.exists_sourceSection26_remainder_bounds",
+        "NLS.ZakharovShabat.hierarchySobolevJetL2_real",
+        "NLS.ZakharovShabat.integral_lowerSobolevJet_norm_mul_le",
+        "NLS.ZakharovShabat.integral_sobolevOddRemainderMajorant",
+        "NLS.ZakharovShabat.integral_sobolevRealMonomial_le_split",
+        "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_fieldCharge",
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_field_degree_bounds",
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_multiplicity_constraints",
+        "NLS.ZakharovShabat.nlsOddReducedPolynomial_totalWeight",
+        "NLS.ZakharovShabat.norm_sobolevOddRemainderField_le",
+        "NLS.ZakharovShabat.norm_sobolev_le_sourcePiSobolevScalar",
+        "NLS.ZakharovShabat.quadraticLocalizationRadius_le_three_eighths",
+        "NLS.ZakharovShabat.realTypeHigherSobolevSource_coefficients",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_real_decomposition",
+        "NLS.ZakharovShabat.sobolevOddKinetic_real",
+        "NLS.ZakharovShabat.sobolevOddRemainderMajorant",
+        "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm",
+        "NLS.ZakharovShabat.sourceIndexedWeightedActionTerm_eq",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+        "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq",
+        "NLS.ZakharovShabat.sourceRealActions_summable",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_central_bound",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_exterior_bounds",
+        "NLS.ZakharovShabat.sourceRealHigherAction_H1_meanValue_localization",
+        "NLS.ZakharovShabat.sourceRealHigherActions_summable",
+        "NLS.ZakharovShabat.sourceSection26_L2_interpolate",
+        "NLS.ZakharovShabat.sourceSection26_action_estimate",
+        "NLS.ZakharovShabat.sourceSection26_action_estimate_half_mass",
+        "NLS.ZakharovShabat.sourceSection26_central",
+        "NLS.ZakharovShabat.sourceSection26_exterior",
+        "NLS.ZakharovShabat.sourceSection26_meanValue",
+        "NLS.ZakharovShabat.sourceSection26_meanValue_complex",
+        "NLS.ZakharovShabat.sourceSection26_original",
+        "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+        "NLS.ZakharovShabat.sourceSection26_printed_estimate_of_odd",
+        "NLS.ZakharovShabat.sourceSection26_supremum_interpolate",
+        "NLS.ZakharovShabat.sourceSection27_pair_jet_norm",
+        "NLS.ZakharovShabat.sourceWeightedActionTerm_le",
+        "NLS.ZakharovShabat.sourceWeightedAction_summable_and_le_higher_sum",
+        "NLS.ZakharovShabat.spectral_point_even_power_bounds",
+        "NLS.ZakharovShabat.spectral_point_sq_bounds",
+        "NLS.ZakharovShabat.two_mul_highestJet_sq_le_sourcePiSobolev",
+        "NLS.exists_geometric_absorption"
+      ],
+      "declaration_inventory_count": 44702,
+      "qualification": "The ordered Section 26 comparison covers 28 groups on printed pp. 112–115: 20 matched and eight directly corrected, with no partial or pending groups in this local ledger. The original indexed actions, closed-gap mean-value points, signed indices, exact physical norms, threshold equality and all permitted orders are retained. The actual finite polynomial support, conjugate jets, unit-interval integrals, interpolation exponents and arbitrary-epsilon Young absorption are compared. Direct corrections use the positive Hamiltonian sign, natural polynomial multiplicities, the strict supremum derivative range, the repeated-factor index, mass exponent numerator D-2 and physical norm coefficient 2^(2m-1). The final action bound keeps its literal leading 2^m with a remainder constant chosen before all real Hm sources. Existing refutations remain unchanged; this documentation step adds no Lean proof or refutation. Broader completeness, the exact cited 2014 construction and Appendix G.2 qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          112,
+          113,
+          114,
+          115
+        ],
+        "images": {
+          "work/tmp/pdfs/section26-ordered-113.png": "0f92523dccf0422dddeda163600bd69e0901b0a4e32bef708c808cd69d7d14ca",
+          "work/tmp/pdfs/section26-ordered-114.png": "cc7dc4032b34124397d8c9e0cecaf1f27c97293b1ca21c87a60aa9105f3fc535",
+          "work/tmp/pdfs/section26-ordered-115.png": "23e0b629efe73f9464c104fa6bf5f6f7f2eee080e93c6c1f985e9a161b5d16a2",
+          "work/tmp/pdfs/section25-ordered-112.png": "caa418d383be6ed84abe456678c193d0d708a7111e47ff03f547b049ce0bd24c"
+        }
+      },
+      "preceding_review_hash": "7af25c9365c23eec8f4d3e1722979d2ee355e61960d05c98117bf1722d22b549",
+      "reconciled_previous_reviews": {
+        "Section26SourceComparison-2026-10-27.json": "ea5a9131f5f985baa5d6ad42ef65ee0166d137dc7ea1b96ce31280ece617c12a",
+        "Section26PositiveSourceComparison-2026-10-31.json": "7af25c9365c23eec8f4d3e1722979d2ee355e61960d05c98117bf1722d22b549"
+      },
+      "validation_lean_sources": {
+        "files": 4857,
+        "sha256": "75fe53dfacceca499062661f24afa8fadb801c4592ec34bf60b729e327d4a3df"
+      },
+      "validation_reused_from_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 47617,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section26PositiveFullCheck.log",
+        "log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00"
+      },
+      "source_record_sha256": "fce9cb3e1185b133df516de052498b4afe304609acf1249da18876353ee246fe"
     }
   }
 }

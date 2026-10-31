@@ -1,6 +1,30 @@
 # Implementation plan
 
-## Current milestone: Section 26 physical norm and leading action constant
+## Current milestone: ordered Section 26 action comparison
+
+The [ordered Section 26 comparison](coverage/SECTION_26_ASSERTIONS.md)
+covers 28 groups on pp. 112–115: 20 matched and eight corrected. No
+partial or pending groups remain in this local ledger.
+
+Original indexed actions, closed-gap samples, signed indices and exact
+physical norms retain all permitted orders and threshold equality.
+The comparison covers the actual lower-jet polynomial, finite support,
+unit-interval integrals, interpolation exponents and Young absorption.
+
+Direct corrections clarify the physical Hamiltonian sign, multiplicity
+notation, strict supremum range, repeated-factor index and mass exponent.
+The physical norm splitting uses 2^(2m-1); the final action bound
+retains exactly 2^m with a constant before all real Hm sources.
+No new Lean proof or refutation is added in this comparison.
+
+The unchanged Lean snapshot reuses the successful full check at commit ad38fb1920ad267ac19c161ac7d941e8cc276cb9: 8,580 build jobs, 7,688 public examples and an axiom audit of 44,702 NLS declarations, with 21 inherited warnings and zero new. All 63 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 27. The [broader completion qualifications](coverage/COMPLETENESS.md)
+remain; these local ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 26 physical norm and leading action constant
 
 The [physical norm splitting](NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean)
 at the end of the Lemma 26.3 proof now has a direct positive proof

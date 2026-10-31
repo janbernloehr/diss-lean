@@ -5,12 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 26 now has a direct
-[physical norm splitting](NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean)
-with corrected coefficient 2^(2m-1) and the
-[final action bound](NLS/ZakharovShabat/SourceSection26ActionLeading.lean)
-with exact leading coefficient 2^m. Five positive theorems and four
-examples pass the full checks. The ordered comparison continues;
+Latest step: the [ordered Section 26 comparison](coverage/SECTION_26_ASSERTIONS.md)
+records 20 matched groups and eight direct corrections. The original
+actions, exact physical norms and literal final action constant are
+retained. No new refutation is added. Section 27 is next;
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

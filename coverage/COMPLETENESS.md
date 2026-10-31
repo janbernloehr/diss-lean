@@ -110,8 +110,13 @@ Section 26 now has a direct [physical norm splitting](../NLS/ZakharovShabat/Sour
 with coefficient 2^(2m-1) and the [exact leading action bound](../NLS/ZakharovShabat/SourceSection26ActionLeading.lean)
 with coefficient 2^m, using the real-pair factor two. The constant
 precedes all real Hm sources and covers every m>=1. Five positive
-theorems and four examples add no new refutation. Its ordered
-comparison remains in progress.
+theorems and four examples add no new refutation. The
+[ordered Section 26 ledger](SECTION_26_ASSERTIONS.md) now compares 28 groups:
+20 matched and eight corrected, with no partial or pending groups in
+that local ledger. It retains original indexed actions, exact physical
+norms, finite polynomial support, all permitted orders and source-independent
+constants. The intermediate sign, index and exponent corrections are
+recorded directly. No new refutation is added. Section 27 is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
