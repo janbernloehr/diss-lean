@@ -4854,3 +4854,5 @@ import NLS.ZakharovShabat.SourceSection24HamiltonianPolynomial
 import NLS.ZakharovShabat.SourceSection25DiagonalProduct
 import NLS.ZakharovShabat.SourceSection25OrthogonalSplit
 import NLS.ZakharovShabat.SourceSection25DiagonalRoot
+import NLS.ZakharovShabat.SourceSection26PhysicalNormSplit
+import NLS.ZakharovShabat.SourceSection26ActionLeading

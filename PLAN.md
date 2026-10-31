@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: ordered Section 25 localization comparison
+## Current milestone: Section 26 physical norm and leading action constant
+
+The [physical norm splitting](NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean)
+at the end of the Lemma 26.3 proof now has a direct positive proof
+with coefficient 2^(2m-1). It uses the exact weight 1+|2n*pi| and
+admits every complex scalar Hm source, including order zero.
+
+The [final action bound](NLS/ZakharovShabat/SourceSection26ActionLeading.lean)
+retains the literal leading coefficient 2^m times the squared
+physical pair Hm norm. The real-pair factor two supplies the
+required half-pair derivative bound. One nonnegative remainder
+constant is chosen before all real Hm sources, for every m>=1.
+
+Five positive theorems and four examples cover the corrected H1
+coefficient, zero-order energy, real-pair normalization and the
+even-order action bound with leading coefficient four. Existing
+refutations remain unchanged; no new refutation is added.
+
+The full check passed: 8,580 build jobs, 7,688 public examples and an axiom audit of 44,702 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 26 comparison remains in progress. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 25 localization comparison
 
 The [ordered Section 25 comparison](coverage/SECTION_25_ASSERTIONS.md)
 covers 37 groups on pp. 107–112: 28 matched, seven corrected and two

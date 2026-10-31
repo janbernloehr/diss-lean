@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T03:30:14.921727+00:00",
-  "base_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
+  "published_utc": "2026-10-31T03:53:39.154804+00:00",
+  "base_commit": "22c718ec7ced6c39aaae06b7b9c88d3b7338b21f",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 176,
-    "module_hash_checks": 3868,
-    "distinct_modules": 2008
+    "review_records": 177,
+    "module_hash_checks": 3876,
+    "distinct_modules": 2012
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
-    "validated_state": "Section25 ordered comparison changes documentation only. The exact Lean snapshot retains the successful orthogonality and simple diagonal-root full check.",
+    "base_commit": "22c718ec7ced6c39aaae06b7b9c88d3b7338b21f",
+    "validated_state": "Fresh full check after five positive norm and action theorems and four API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8578,
-    "public_examples": 7684,
-    "transitive_NLS_declarations": 44695,
+    "build_jobs": 8580,
+    "public_examples": 7688,
+    "transitive_NLS_declarations": 44702,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 66050,
+    "gate_session": 47617,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4855,
-      "sha256": "7455899eaa09d70a0138b236018c1766723c9e985fbcb41a1668fcf21d82dc21"
+      "files": 4857,
+      "sha256": "75fe53dfacceca499062661f24afa8fadb801c4592ec34bf60b729e327d4a3df"
     },
-    "full_gate_log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All source corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/Section25AuxiliaryFullCheck.log",
-    "validation_reused_from_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349"
+    "full_gate_log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00",
+    "qualification": "The recorded Lean snapshot passes full build, public examples and transitive axiom audit. The ordered Section26 comparison and broader qualifications remain open.",
+    "full_gate_log": "work/Section26PositiveFullCheck.log"
   },
   "named_statements": [
     {
@@ -57305,6 +57304,124 @@
         "log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77"
       },
       "source_record_sha256": "4eb14684da07957f7f75c9c8bc7f151e37819268b70254dc70c4c078cdd8cf96"
+    },
+    "Section26PositiveSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "22c718ec7ced6c39aaae06b7b9c88d3b7338b21f",
+      "updated_utc": "2026-10-31T03:53:39.100482+00:00",
+      "source_lines": [
+        [
+          9468,
+          9471
+        ],
+        [
+          9473,
+          9486
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            9468,
+            9471
+          ],
+          "requirement": "Direct physical norm splitting with corrected coefficient",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq",
+            "NLS.ZakharovShabat.sourceSection26_physicalNorm_split"
+          ],
+          "reviewed_claims": [
+            "The exact physical scalar norm has its literal Fourier energy and is at most 2^(2m-1) times the sum of scalar mass and top derivative energy."
+          ],
+          "qualification": "All complex scalar Hm sources and the zero-order endpoint are allowed. For m>=1 this replaces the printed coefficient 2^(m-1) directly and can be absorbed into the source-independent remainder constant. No new refutation is added."
+        },
+        {
+          "source_lines": [
+            9473,
+            9486
+          ],
+          "requirement": "Exact leading action coefficient and uniform remainder",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+            "NLS.ZakharovShabat.two_mul_highestJet_sq_le_sourcePiSobolev",
+            "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound",
+            "NLS.ZakharovShabat.sourceSection26_action_estimate",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates"
+          ],
+          "reviewed_claims": [
+            "The final original indexed-action bound keeps exactly 2^m times the squared physical pair Hm norm. A nonnegative c_m is chosen before all real Hm sources, and the remainder is c_m^2*(1+P)^4m times pair mass."
+          ],
+          "qualification": "The proof uses the corrected positive Hamiltonian sign, the exact real-pair factor two, and half-pair top derivative control. Every m>=1 is covered, including even orders. The broader common-constant bound is not substituted for this sharper leading coefficient."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3",
+        "NLS/ZakharovShabat/SobolevJetNormBounds.lean": "9303ea5c2e51a93092123d9809b4a4b45f1cb515bce7ee60cf26c66de2648817",
+        "NLS/ZakharovShabat/SourcePiSobolevNormBounds.lean": "09726cb9b244d3e31bf77f566702b75eb0eab57d8dc615c586cae39056c95428",
+        "NLS/ZakharovShabat/SourceSection26Sum.lean": "007618a2d67b5fe663dc5b01380c205eda9b5020cdf2c896698834ca55a23c50",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean": "6eaafaa9ad3be71f1fe5bf6c9bfd3baf61cf637ddd2dc8c1ff59f561272dc1bd",
+        "NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean": "b8d6ad20ed39f6dab1120d1a962fb85074dbe40418514fc511344231c302875c",
+        "NLS/ZakharovShabat/SourceSection26ActionLeading.lean": "8dbac38406999d22d17b5c6ccc3434d8f10632965f465e1abab08d5ae407577f"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean",
+        "NLS/ZakharovShabat/SobolevJetNormBounds.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevNormBounds.lean",
+        "NLS/ZakharovShabat/SourceSection26Sum.lean",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean",
+        "NLS/ZakharovShabat/SourceActionSobolevUpperBound.lean",
+        "NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean",
+        "NLS/ZakharovShabat/SourceSection26ActionLeading.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 28 ordered Section 26 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+        "NLS.ZakharovShabat.exists_sourceSection26_action_leading_bound",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_real_norm_sq",
+        "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq",
+        "NLS.ZakharovShabat.sourceSection26_action_estimate",
+        "NLS.ZakharovShabat.sourceSection26_physicalNorm_split",
+        "NLS.ZakharovShabat.two_mul_highestJet_sq_le_sourcePiSobolev"
+      ],
+      "declaration_inventory_count": 44702,
+      "qualification": "The scalar norm is the exact Fourier energy with physical weight 1+|2n*pi|. The corrected splitting coefficient is 2^(2m-1), valid for every complex scalar Hm source and also the zero-order endpoint. On every real pair the squared physical norm is twice the first component energy at every lower integer order. The top derivative consequently uses at most half the pair energy. The original indexed-action estimate retains the exact leading coefficient 2^m and a nonnegative remainder constant chosen before all real Hm sources, for every m>=1 including even orders. The proof uses the positive physical Hamiltonian sign. Five positive theorems and four examples are added, with two generated simplification auxiliaries. Existing refutations and source restrictions are unchanged; no new refutation is added. The ordered Section26 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          115
+        ],
+        "images": {
+          "work/tmp/pdfs/section26-ordered-115.png": "23e0b629efe73f9464c104fa6bf5f6f7f2eee080e93c6c1f985e9a161b5d16a2"
+        }
+      },
+      "preceding_review_hash": "ea5a9131f5f985baa5d6ad42ef65ee0166d137dc7ea1b96ce31280ece617c12a",
+      "validation_lean_sources": {
+        "files": 4857,
+        "sha256": "75fe53dfacceca499062661f24afa8fadb801c4592ec34bf60b729e327d4a3df"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 5,
+      "new_public_examples": 4,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.sourcePiSobolevScalar_norm_sq._simp_1_2",
+        "NLS.ZakharovShabat.sourceSection26_physicalNorm_split._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 47617,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section26PositiveFullCheck.log",
+        "log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00"
+      },
+      "source_record_sha256": "7af25c9365c23eec8f4d3e1722979d2ee355e61960d05c98117bf1722d22b549"
     }
   }
 }

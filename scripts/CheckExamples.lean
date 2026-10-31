@@ -73172,3 +73172,50 @@ example (w : SpectralWeight) (hw : w.HasLinearFactor) (n : ℤ) :
   simpa only [he] using ho
 
 end Section25AuxiliaryExamples
+
+section Section26PhysicalNormSplitExamples
+open NLS NLS.ZakharovShabat
+
+-- The physical H1 estimate uses the corrected coefficient two for arbitrary complex inputs.
+example (a : ScalarSobolev 1) :
+    ‖sourcePiSobolevScalar 1 1 le_rfl a‖^2 ≤ 2*
+      (‖WeightedCoeff.sobolevToL2 (by norm_num) a‖^2+
+        ‖hierarchySobolevJetL2 1 1 le_rfl a‖^2) := by
+  simpa using sourceSection26_physicalNorm_split 1 a
+
+-- At order zero the exact physical energy is the unweighted scalar mass.
+example (a : ScalarSobolev 0) :
+    ‖sourcePiSobolevScalar 0 0 le_rfl a‖^2 =
+      ‖WeightedCoeff.sobolevToL2 (by norm_num) a‖^2 := by
+  have h := lp.norm_rpow_eq_tsum (by norm_num : 0 < (2:ENNReal).toReal)
+    (WeightedCoeff.sobolevToL2 (by norm_num) a)
+  simp only [ENNReal.toReal_ofNat,Real.rpow_two] at h
+  rw [sourcePiSobolevScalar_norm_sq,h]
+  apply tsum_congr
+  intro n
+  simp only [Nat.mul_zero,pow_zero,one_mul,WeightedCoeff.sobolevToL2_apply]
+
+end Section26PhysicalNormSplitExamples
+
+section Section26ActionLeadingExamples
+open NLS NLS.ZakharovShabat
+
+-- The real-pair factor two includes the mass endpoint.
+example (a : realTypeHigherSobolevSourceLocus 0) :
+    ‖sourcePiSobolevCoordinates 0 0 le_rfl a.val‖^2 =
+      2*‖sourcePiSobolevScalar 0 0 le_rfl a.val.1‖^2 :=
+  sourcePiSobolevCoordinates_real_norm_sq 0 0 le_rfl a
+
+-- At the first even Sobolev order, the leading physical coefficient is exactly four.
+example : ∃ c : ℝ, 0 ≤ c ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    (∑' n : ℤ, sourceIndexedWeightedActionTerm
+      ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) ≤
+      4*‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖^2+
+        c^2*(1+‖sourcePiSobolevCoordinates 2 1 (by omega) a.val‖)^8*
+          ‖higherSobolevSourceInclusion 2 a.val‖^2 := by
+  obtain ⟨c,hc,h⟩ := exists_sourceSection26_action_leading_bound 2 (by omega)
+  refine ⟨c,hc,?_⟩
+  intro a
+  simpa only [show (2:ℝ)^2=4 by norm_num,show (4:ℕ)*2=8 by decide] using h a
+
+end Section26ActionLeadingExamples

@@ -104,7 +104,15 @@ groups in that local ledger. It retains exact physical norms, closed strips,
 quadratic thresholds, signed indices and canonical multiplicities. Direct
 proof corrections preserve the final localization and gap constants. The
 complex global bound uses one common neighborhood before all weights and
-sources. No new refutation is added. Section 26 is next.
+sources. No new refutation is added.
+
+Section 26 now has a direct [physical norm splitting](../NLS/ZakharovShabat/SourceSection26PhysicalNormSplit.lean)
+with coefficient 2^(2m-1) and the [exact leading action bound](../NLS/ZakharovShabat/SourceSection26ActionLeading.lean)
+with coefficient 2^m, using the real-pair factor two. The constant
+precedes all real Hm sources and covers every m>=1. Five positive
+theorems and four examples add no new refutation. Its ordered
+comparison remains in progress.
+
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation
