@@ -4856,3 +4856,4 @@ import NLS.ZakharovShabat.SourceSection25OrthogonalSplit
 import NLS.ZakharovShabat.SourceSection25DiagonalRoot
 import NLS.ZakharovShabat.SourceSection26PhysicalNormSplit
 import NLS.ZakharovShabat.SourceSection26ActionLeading
+import NLS.ZakharovShabat.SourceSection27QuarterEnergy

@@ -1,5 +1,27 @@
 # Section 27: original Sobolev norms from the actions
 
+## Positive quarter-energy estimate
+
+The [quarter-energy estimate](../NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean)
+now retains the complete mass remainder from Lemma 26.3:
+
+    pair derivative energy / 4 <= H_(2m+1) + C*(1+M^(2m))*M.
+
+Here M is the total original action, equal to the scalar L2 energy.
+One nonnegative C works for every real Hm source at each m>=1,
+including zero mass. This directly corrects the intermediate
+pure-power-only remainder on p.116. The existing final derivative
+estimate retains coefficient one and the unweighted mass factor.
+
+One positive theorem and two examples cover the m=2 estimate and
+its uniform linear remainder on the closed mass ball M<=1.
+No new refutation is added.
+
+The full check passed: 8,581 build jobs, 7,690 public examples and an axiom audit of 44,704 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 27 comparison continues. The
+[broader completion qualifications](COMPLETENESS.md) remain.
+
 This audit covers formula (5.13), Lemmas 27.1–27.2, and the proof of
 Theorem 23.2(ii) on printed pp. 115–116. The original indexed actions,
 independently defined physical Hamiltonians, and exact physical Sobolev

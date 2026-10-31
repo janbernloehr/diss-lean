@@ -116,7 +116,14 @@ theorems and four examples add no new refutation. The
 that local ledger. It retains original indexed actions, exact physical
 norms, finite polynomial support, all permitted orders and source-independent
 constants. The intermediate sign, index and exponent corrections are
-recorded directly. No new refutation is added. Section 27 is next.
+recorded directly. No new refutation is added.
+
+The [Section 27 quarter-energy estimate](../NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean)
+now retains the complete remainder C*(1+M^(2m))*M. Its constant
+precedes all real Hm sources, for each m>=1. The existing final
+Sobolev and derivative estimates keep their original scope. One
+positive theorem and two examples add no new refutation. The
+ordered Section 27 comparison remains in progress.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

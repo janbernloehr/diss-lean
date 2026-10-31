@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T03:56:16.635655+00:00",
-  "base_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
+  "published_utc": "2026-10-31T04:17:15.130409+00:00",
+  "base_commit": "87c75b2a9f79662339217c4090b3716fe0f6f6b5",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 178,
-    "module_hash_checks": 3910,
-    "distinct_modules": 2027
+    "review_records": 179,
+    "module_hash_checks": 3915,
+    "distinct_modules": 2029
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9",
-    "validated_state": "Section26 ordered comparison changes documentation only. The exact Lean snapshot retains the successful five-theorem positive norm and action check.",
+    "base_commit": "87c75b2a9f79662339217c4090b3716fe0f6f6b5",
+    "validated_state": "Fresh full check after the positive Section27 quarter-energy theorem and two public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8580,
-    "public_examples": 7688,
-    "transitive_NLS_declarations": 44702,
+    "build_jobs": 8581,
+    "public_examples": 7690,
+    "transitive_NLS_declarations": 44704,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 47617,
+    "gate_session": 61690,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4857,
-      "sha256": "75fe53dfacceca499062661f24afa8fadb801c4592ec34bf60b729e327d4a3df"
+      "files": 4858,
+      "sha256": "3667e56e5d703317df32a3f3abca28945207c834bc84a0218fa23b5b26f59bc1"
     },
-    "full_gate_log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/Section26PositiveFullCheck.log",
-    "validation_reused_from_commit": "ad38fb1920ad267ac19c161ac7d941e8cc276cb9"
+    "full_gate_log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3",
+    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section27 and broader completion qualifications remain open.",
+    "full_gate_log": "work/Section27QuarterEnergyFullCheck.log"
   },
   "named_statements": [
     {
@@ -58639,6 +58638,97 @@
         "log_sha256": "8ca66437ed013c25f2c47bd3942992bc39a5de57c788d31057c371cd5e844d00"
       },
       "source_record_sha256": "fce9cb3e1185b133df516de052498b4afe304609acf1249da18876353ee246fe"
+    },
+    "Section27QuarterEnergySourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "87c75b2a9f79662339217c4090b3716fe0f6f6b5",
+      "updated_utc": "2026-10-31T04:17:15.081166+00:00",
+      "source_lines": [
+        [
+          9566,
+          9573
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            9566,
+            9573
+          ],
+          "requirement": "Quarter-pair-energy estimate with the complete mass remainder",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound",
+            "NLS.ZakharovShabat.sourceSection27_pair_jet_norm",
+            "NLS.ZakharovShabat.sourceHigher_sum_actions_eq_scalar_mass",
+            "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+            "NLS.ZakharovShabat.exists_sourceSection27_derivative_bound"
+          ],
+          "reviewed_claims": [
+            "For every m>=1 a nonnegative C, chosen before every real Hm source, bounds quarter of the pair derivative energy by the actual Hamiltonian plus C*(1+M^(2m))*M.",
+            "The original total action M equals scalar L2 energy. Epsilon=1/4 in the physical remainder estimate and the exact pair factor two prove the stated inequality."
+          ],
+          "qualification": "The quarter-pair-energy step retains the full mass remainder C*(1+M^(2m))*M from Lemma 26.3, where M is the sum of the original indexed ordinary actions and equals the scalar L2 energy. The coefficient of the independently defined physical Hamiltonian is one. One nonnegative C precedes all real Hm sources, for every m>=1, including zero mass. The pure-power-only intermediate display on p.116 is replaced directly by this proved full remainder. The existing final derivative estimate keeps coefficient one on the highest action sum and the unweighted final mass factor. One theorem and two examples are added; no new refutation is added. The full ordered Section27 comparison and broader completion qualifications remain open."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean": "20821e1c702db6b3f65967e7d1e896adbb99d9e7e010f70912e487c5702e35f6",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean": "add8170c924f576cb43093073ade92bf96391d5c7ee4b6f2f8b8260f7b932ec4",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean": "b79a2c5ec34995a8528e24ac95d283547b13fc68bdcd80a648d56151ba426d17",
+        "NLS/ZakharovShabat/SourcePiSobolevCoercivity.lean": "b94e2bc7b2329290c8ba89bb2a6d22eb25e1bd3aa67459bd8200347fda68ad0a",
+        "NLS/ZakharovShabat/SourceSection27DerivativeBound.lean": "4347bb2b30e519f3d7ed0ca987aeb0bd941a2bc3f2f81fb5ffd421e24dca685a"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean",
+        "NLS/ZakharovShabat/SourceSection27Actions.lean",
+        "NLS/ZakharovShabat/OddHamiltonianRemainderEstimate.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevCoercivity.lean",
+        "NLS/ZakharovShabat/SourceSection27DerivativeBound.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 18 ordered Section27 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound",
+        "NLS.ZakharovShabat.sourceSection27_pair_jet_norm",
+        "NLS.ZakharovShabat.sourceHigher_sum_actions_eq_scalar_mass",
+        "NLS.ZakharovShabat.exists_sobolevOddHamiltonian_energy_estimates",
+        "NLS.ZakharovShabat.exists_sourceSection27_derivative_bound"
+      ],
+      "declaration_inventory_count": 44704,
+      "qualification": "The quarter-pair-energy step retains the full mass remainder C*(1+M^(2m))*M from Lemma 26.3, where M is the sum of the original indexed ordinary actions and equals the scalar L2 energy. The coefficient of the independently defined physical Hamiltonian is one. One nonnegative C precedes all real Hm sources, for every m>=1, including zero mass. The pure-power-only intermediate display on p.116 is replaced directly by this proved full remainder. The existing final derivative estimate keeps coefficient one on the highest action sum and the unweighted final mass factor. One theorem and two examples are added; no new refutation is added. The full ordered Section27 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          116
+        ],
+        "images": {
+          "work/tmp/pdfs/section27-ordered-116.png": "942d02feb6805ebb7ad1a6f10c540e36ecd5236893c319e5a1fdcd96ee88ecec"
+        }
+      },
+      "preceding_review_hash": "5c9191041ef18b0b9291c981aa340aa2ee4c1209313c20929611e87f700d747d",
+      "validation_lean_sources": {
+        "files": 4858,
+        "sha256": "3667e56e5d703317df32a3f3abca28945207c834bc84a0218fa23b5b26f59bc1"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 1,
+      "new_public_examples": 2,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.exists_sourceSection27_quarter_energy_bound._proof_1_1"
+      ],
+      "full_gate": {
+        "session": 61690,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section27QuarterEnergyFullCheck.log",
+        "log_sha256": "a3eea3d862126f3bbcde62cfb45b536fa154fcbb0169977187758273330030c3"
+      },
+      "source_record_sha256": "c6f1b3238ee9aee2b02dad219f0a9e1ff8f4eff215b30200a700337c819d2fd4"
     }
   }
 }

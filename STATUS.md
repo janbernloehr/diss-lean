@@ -1,6 +1,30 @@
 # Implementation status
 
-## Current milestone: ordered Section 26 action comparison
+## Current milestone: Section 27 quarter-energy remainder
+
+The [quarter-energy estimate](NLS/ZakharovShabat/SourceSection27QuarterEnergy.lean)
+now retains the complete mass remainder from Lemma 26.3:
+
+    pair derivative energy / 4 <= H_(2m+1) + C*(1+M^(2m))*M.
+
+Here M is the total original action, equal to the scalar L2 energy.
+One nonnegative C works for every real Hm source at each m>=1,
+including zero mass. This directly corrects the intermediate
+pure-power-only remainder on p.116. The existing final derivative
+estimate retains coefficient one and the unweighted mass factor.
+
+One positive theorem and two examples cover the m=2 estimate and
+its uniform linear remainder on the closed mass ball M<=1.
+No new refutation is added.
+
+The full check passed: 8,581 build jobs, 7,690 public examples and an axiom audit of 44,704 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 27 comparison continues. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Section 26 action comparison
 
 The [ordered Section 26 comparison](coverage/SECTION_26_ASSERTIONS.md)
 covers 28 groups on pp. 112–115: 20 matched and eight corrected. No

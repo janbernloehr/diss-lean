@@ -73219,3 +73219,45 @@ example : ∃ c : ℝ, 0 ≤ c ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
   simpa only [show (2:ℝ)^2=4 by norm_num,show (4:ℕ)*2=8 by decide] using h a
 
 end Section26ActionLeadingExamples
+
+section Section27QuarterEnergyExamples
+open NLS NLS.ZakharovShabat
+
+-- The corrected remainder retains both mass powers at the first higher-order case.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    let M := ∑' n : ℤ, sourceIndexedWeightedActionTerm
+      ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n
+    (1/4:ℝ)*(‖hierarchySobolevJetL2 2 2 le_rfl a.val.1‖^2+
+      ‖hierarchySobolevJetL2 2 2 le_rfl a.val.2‖^2) ≤
+      (sobolevOddHamiltonian 2 (by omega) a.val).re+C*(1+M^4)*M := by
+  simpa only [show (2:ℕ)*2=4 by decide] using
+    exists_sourceSection27_quarter_energy_bound 2 (by omega)
+
+-- On the closed mass ball, the same uniform argument gives a linear mass error.
+example : ∃ D : ℝ, 0 ≤ D ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    let M := ∑' n : ℤ, sourceIndexedWeightedActionTerm
+      ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n
+    M ≤ 1 → (1/4:ℝ)*(‖hierarchySobolevJetL2 2 2 le_rfl a.val.1‖^2+
+      ‖hierarchySobolevJetL2 2 2 le_rfl a.val.2‖^2) ≤
+      (sobolevOddHamiltonian 2 (by omega) a.val).re+D*M := by
+  obtain ⟨C,hC,h⟩ := exists_sourceSection27_quarter_energy_bound 2 (by omega)
+  refine ⟨2*C,by positivity,?_⟩
+  intro a
+  let M := ∑' n : ℤ, sourceIndexedWeightedActionTerm
+    ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n
+  change M ≤ 1 → _
+  intro hM1
+  have hM : 0 ≤ M := by
+    apply tsum_nonneg
+    intro n
+    unfold sourceIndexedWeightedActionTerm
+    positivity
+  have hp := pow_le_pow_left₀ hM hM1 4
+  norm_num only [one_pow] at hp
+  have hb := h a
+  change (1/4:ℝ)*(_+_) ≤ (sobolevOddHamiltonian 2 _ a.val).re+C*(1+M^4)*M at hb
+  have he := mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left
+    (show 1+M^4 ≤ 2 by linarith) hC) hM
+  nlinarith
+
+end Section27QuarterEnergyExamples
