@@ -1,6 +1,26 @@
 # Implementation plan
 
-## Current milestone: Section 24 piecewise primitive formula
+## Current milestone: Section 24 Hamiltonian polynomial formula
+
+The [literal Hamiltonian formula](NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
+on p. 107 now holds at every order. It retains the phase `(-i)^k`,
+the leading kth derivative and one canonical polynomial using derivatives
+through order k-1. The polynomial is chosen before every smooth complex
+source pair. The proof includes even Hamiltonian orders and the mass
+endpoint, with no periodicity premise needed for this defining integral.
+
+Three positive theorems and three public examples cover mass, the exact
+momentum sign, and the same fourth-order polynomial at two independent
+complex source pairs. No new refutation is added.
+
+The full check passed: 8,575 build jobs, 7,679 public examples and an axiom audit of 44,689 NLS declarations. All 21 inherited warnings match the preceding check; there are no new warnings.
+
+The complete ordered Section 24 comparison remains in progress. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 24 piecewise primitive formula
 
 Formula (5.2) on p. 106 now holds on arbitrary piecewise C1 circuits in
 [SourceHigherActionPiecewisePrimitive.lean](NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean).

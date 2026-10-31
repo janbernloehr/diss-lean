@@ -4850,3 +4850,4 @@ import NLS.ZakharovShabat.SourceSection22HilbertCoordinates
 import NLS.ZakharovShabat.SourceIndexedHigherActionEndpointAsymptotic
 import NLS.ComplexAnalysis.PiecewisePolynomialIntegrationByParts
 import NLS.ZakharovShabat.SourceHigherActionPiecewisePrimitive
+import NLS.ZakharovShabat.SourceSection24HamiltonianPolynomial

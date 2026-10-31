@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T02:23:55.924526+00:00",
-  "base_commit": "554903c617d488d69e4c9f0599dee0cf21bb7e4c",
+  "published_utc": "2026-10-31T02:44:35.690709+00:00",
+  "base_commit": "bfcfe3ac770e12d1b4cf61fea330529363b33bfa",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 171,
-    "module_hash_checks": 3755,
-    "distinct_modules": 1977
+    "review_records": 172,
+    "module_hash_checks": 3759,
+    "distinct_modules": 1980
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "554903c617d488d69e4c9f0599dee0cf21bb7e4c",
-    "validated_state": "Fresh full check after four positive Section24 piecewise primitive theorems and four API examples.",
+    "base_commit": "bfcfe3ac770e12d1b4cf61fea330529363b33bfa",
+    "validated_state": "Fresh full check after three positive Hamiltonian polynomial theorems and three API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8574,
-    "public_examples": 7676,
-    "transitive_NLS_declarations": 44685,
+    "build_jobs": 8575,
+    "public_examples": 7679,
+    "transitive_NLS_declarations": 44689,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 92360,
+    "gate_session": 96263,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4851,
-      "sha256": "8eda44a8d043ac4aa59abb93600d88bd554346ab6e16bf8b65ab727bdfb26ac4"
+      "files": 4852,
+      "sha256": "5e6ba8dd8d6c611c4fa22e098644e3433a8520a13d69a6d059f7c07ba592a9c7"
     },
-    "full_gate_log_sha256": "54e8ae15aae15e698a8bd343332b695e0a84e064101c724c8a6b0586e82e1eac",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section24 comparison and broader completeness qualifications remain open.",
-    "full_gate_log": "work/Section24PiecewisePrimitiveFullCheck.log"
+    "full_gate_log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9",
+    "qualification": "Full build, public examples and transitive axiom audit pass on the recorded Lean snapshot. The ordered Section24 comparison and broader qualifications remain open.",
+    "full_gate_log": "work/Section24HamiltonianPolynomialFullCheck.log"
   },
   "named_statements": [
     {
@@ -54365,6 +54365,108 @@
         "log_sha256": "54e8ae15aae15e698a8bd343332b695e0a84e064101c724c8a6b0586e82e1eac"
       },
       "source_record_sha256": "05699fae00242813032b9f1261152fe8c3b30afe55853a9520d889f2fbcb81b8"
+    },
+    "Section24HamiltonianPolynomialSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "bfcfe3ac770e12d1b4cf61fea330529363b33bfa",
+      "updated_utc": "2026-10-31T02:44:35.640653+00:00",
+      "source_lines": [
+        [
+          8733,
+          8737
+        ],
+        [
+          8739,
+          8740
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8733,
+            8737
+          ],
+          "requirement": "Literal all-order physical Hamiltonian display",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSHamiltonian",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_leading_polynomial"
+          ],
+          "reviewed_claims": [
+            "The exact phase (-i)^k, kth derivative and canonical lower-order polynomial give the independently defined Hamiltonian at every smooth complex source pair."
+          ],
+          "qualification": "All natural k are included, extending to mass at k=0. Even Hamiltonian orders are included; no periodicity premise is needed for the defining unit-interval identity."
+        },
+        {
+          "source_lines": [
+            8739,
+            8740
+          ],
+          "requirement": "One canonical polynomial with lower-jet bounds",
+          "declarations": [
+            "NLS.ZakharovShabat.section24HamiltonianRemainder_jetOrder",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_leading_polynomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades"
+          ],
+          "reviewed_claims": [
+            "One polynomial -X(false,0)*R_k is chosen before all source pairs. Its individual jet orders are at most k-1, from the already proved nonlinear monomial derivative bound."
+          ],
+          "qualification": "The remainder comes from the independently defined Riccati recurrence. It is not selected separately for each source or defined from a trace sum."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean": "fbc354c8eca3a883f195470a84c1b1ca402238e0c16aa78aa9e2b8374c98e214",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean": "2e26d009bdddcf348ad0e1380a0e71dbd5964c5e91162ada8c629e8650e99eaf",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean": "f555d7fab5f736aa3ed036b4057c54dc261b965023cd1ed60a69f52978765bfd"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the20 ordered Section24 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.classicalNLSHamiltonian",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_leading_polynomial",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_leading_polynomial",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+        "NLS.ZakharovShabat.section24HamiltonianRemainder_jetOrder"
+      ],
+      "declaration_inventory_count": 44689,
+      "qualification": "The literal all-order Hamiltonian display on p.107 now has a direct positive proof. At each natural k, the independently defined H_(k+1) equals (-i)^k times the integral of a*b^(k) plus the canonical polynomial -X(false,0)*R_k. That single polynomial is chosen before all smooth complex source pairs and uses jets only through k-1. The result includes even Hamiltonian orders and extends to the mass endpoint k=0; periodicity is unnecessary for this defining unit-interval identity. Three positive theorems and three public examples are added, with no new definitions or refutations. The complete ordered Section24 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          107
+        ],
+        "images": {
+          "work/tmp/pdfs/section24-trace-107.png": "3893348ac8904e5626bfbbc0199f996becb10fcfe3138f7652f01c8fc90b7203"
+        }
+      },
+      "preceding_review_hash": "05699fae00242813032b9f1261152fe8c3b30afe55853a9520d889f2fbcb81b8",
+      "validation_lean_sources": {
+        "files": 4852,
+        "sha256": "5e6ba8dd8d6c611c4fa22e098644e3433a8520a13d69a6d059f7c07ba592a9c7"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 96263,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section24HamiltonianPolynomialFullCheck.log",
+        "log_sha256": "f537215ac8f26c0e55205794bfbf30338e99e3729b4820613a83651ac98222d9"
+      },
+      "source_record_sha256": "a10d78fe07425d36d2adf71f821ca45e59bdd4d4b0a8e37ed566b87581015565"
     }
   }
 }

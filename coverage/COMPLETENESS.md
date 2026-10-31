@@ -83,6 +83,9 @@ The [positive Section 24 primitive formula](../NLS/ZakharovShabat/SourceHigherAc
 now retains arbitrary original piecewise C1 circuits, including corners,
 the exact factor -1/pi, all natural powers and every finite p>1. The
 chosen original family, primitive and source domain are unchanged.
+The [all-order Hamiltonian display](../NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
+also retains the exact phase and one canonical polynomial before all
+smooth complex sources, including even Hamiltonian orders and mass.
 The complete ordered Section 24 comparison remains in progress.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

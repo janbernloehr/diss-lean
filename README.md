@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [Section 24 piecewise primitive formula](NLS/ZakharovShabat/SourceHigherActionPiecewisePrimitive.lean)
-retains arbitrary original isolating circuits, including corners, with
-the exact normalization and original family. Four positive theorems and
-four public examples pass the full checks. No new refutation is added.
-The ordered Section 24 comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
+Latest step: the [Section 24 Hamiltonian polynomial formula](NLS/ZakharovShabat/SourceSection24HamiltonianPolynomial.lean)
+retains every order, the exact phase and one canonical lower-order
+polynomial for all smooth complex source pairs. Three positive theorems
+and three public examples pass the full checks. The ordered Section 24
+comparison and [broader qualifications](coverage/COMPLETENESS.md) remain open.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

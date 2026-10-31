@@ -73076,3 +73076,39 @@ example {W₀ W V Wa B U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 →
   Q.higherAction_eq_original_piecewise_primitive ψ hψ n (2*m) q C Γ hΓ hw
 
 end Section24PiecewisePrimitiveExamples
+
+section Section24HamiltonianPolynomialExamples
+open NLS.ZakharovShabat NLS.DifferentialPolynomial
+open scoped ContDiff
+
+-- The mass endpoint has zero remainder and no periodicity or real-type premise.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) :
+    classicalNLSHamiltonian a b 1 = ∫ x in (0 : ℝ)..1, a x*b x := by
+  have he : evaluate a b 0 = fun _ => 0 := by
+    funext x
+    simp [evaluate]
+  simpa only [nlsRiccatiRemainder_zero,mul_zero,neg_zero,he,iteratedDeriv_zero,
+    pow_zero,one_mul,add_zero] using classicalNLSHamiltonian_leading_polynomial a b ha hb 0
+
+-- The next endpoint gives the exact unsymmetrized momentum sign.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) :
+    classicalNLSHamiltonian a b 2 = -Complex.I * ∫ x in (0 : ℝ)..1, a x*deriv b x := by
+  have he : evaluate a b 0 = fun _ => 0 := by
+    funext x
+    simp [evaluate]
+  simpa only [nlsRiccatiRemainder_one,mul_zero,neg_zero,he,iteratedDeriv_one,
+    pow_one,add_zero] using classicalNLSHamiltonian_leading_polynomial a b ha hb 1
+
+-- A single lower-jet polynomial works at an even Hamiltonian order for two unrelated complex pairs.
+example (a b c d : ℝ → ℂ)
+    (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hc : ContDiff ℝ ∞ c) (hd : ContDiff ℝ ∞ d) :
+    ∃ q : NLS.DifferentialPolynomial.Polynomial, JetOrderLE q 2 ∧
+      classicalNLSHamiltonian a b 4 = (-Complex.I)^3 *
+        (∫ x in (0 : ℝ)..1, a x*iteratedDeriv 3 b x+evaluate a b q x) ∧
+      classicalNLSHamiltonian c d 4 = (-Complex.I)^3 *
+        (∫ x in (0 : ℝ)..1, c x*iteratedDeriv 3 d x+evaluate c d q x) := by
+  obtain ⟨q,hq,h⟩ := exists_classicalNLSHamiltonian_leading_polynomial 3
+  exact ⟨q,hq,h a b ha hb,h c d hc hd⟩
+
+end Section24HamiltonianPolynomialExamples
