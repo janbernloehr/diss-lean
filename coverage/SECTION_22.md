@@ -1,5 +1,32 @@
 # Section 22: original phases and physical solutions
 
+## Ordered source comparison
+
+The [ordered Section 22 comparison](SECTION_22_ASSERTIONS.md)
+now covers all 37 groups on pp. 98–101: 23 matched, ten corrected and four
+contextual. No partial or pending groups remain in this local ledger.
+
+The comparison retains the original frequencies and physical phases,
+the factor-four mass shift, actual inverse-image restrictions, exact
+component-sum continuity constants and full Banach trajectory analyticity.
+One complex neighborhood precedes every time horizon. The original local
+and invariant small-data flows, arbitrary-Hilbert frequency divergence,
+literal separation bounds and all-smooth approximation solution definition
+are preserved. Finite-gap-only and all-smooth nonextension scopes stay explicit.
+
+The local coordinate domain, coordinate-ball ambient space and common
+small-data source domain are corrected directly. Existing formula and
+notation corrections remain. Fifty-nine complete module reads and 72 public
+declaration references support this comparison. No new Lean proof or
+refutation is added.
+
+The unchanged Lean snapshot reuses the successful full check at commit b542c02bbaaeec246fc3bc2bf5f200c0c5088341: 8,571 build jobs, 7,668 public examples and the transitive axiom audit of 44,671 NLS declarations, with 21 inherited warnings and zero new. This step changes source-comparison documentation and its integrity record. Source hashes, all 72 declaration references, the review index and local documentation links are checked again. These checks do not certify complete formalization.
+
+Next: Section 23. The [broader completion qualifications](COMPLETENESS.md)
+remain; these ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their original implementation and validation scope.
+
 ## Arbitrary Hilbert coordinate approximations
 
 The proof on p. 100 now retains arbitrary Hilbert coordinate approximations

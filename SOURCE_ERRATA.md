@@ -3334,3 +3334,19 @@ retains the exact half-amplitude constant and the original physical signs.
 The [energy proof](NLS/SequenceSpaces/HilbertEnergyDivergence.lean) covers
 arbitrary pointwise Hilbert approximations. These corrections introduce
 no new refutation.
+
+## Section 22 local and small-data domains (pages 100–101)
+
+In the local-flow argument, the initial domain of the coordinate flow
+is the coordinate neighborhood `V`, while `U` denotes a source neighborhood.
+The small invariant ball is likewise a ball in the coordinate space,
+restricted to its real form; its printed source-space ambient label should
+be the coordinate-space label. Its inverse image is the small source
+domain `U`. The final all-horizon analytic statement uses that same `U`,
+instead of the earlier local domain `U'`.
+
+The actual inverse image, invariant domain and compact-time analytic
+trajectories are retained in
+[SourceSection22Higher.lean](NLS/ZakharovShabat/SourceSection22Higher.lean).
+These are direct domain-notation corrections, with no new refutation.
+See the [ordered comparison](coverage/SECTION_22_ASSERTIONS.md).

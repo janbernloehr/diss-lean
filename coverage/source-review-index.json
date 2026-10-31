@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T01:38:02.183933+00:00",
-  "base_commit": "1cbe438782cb25ca7ae74cccd3e65d6b54df8b14",
+  "published_utc": "2026-10-31T01:38:39.215895+00:00",
+  "base_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 167,
-    "module_hash_checks": 3629,
-    "distinct_modules": 1951
+    "review_records": 168,
+    "module_hash_checks": 3688,
+    "distinct_modules": 1963
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1cbe438782cb25ca7ae74cccd3e65d6b54df8b14",
-    "validated_state": "Fresh full check after six positive Section22 arbitrary-Hilbert coordinate theorems and five API examples.",
+    "base_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
+    "validated_state": "Section22 ordered comparison changes documentation only. The exact Lean snapshot retains the preceding successful arbitrary-Hilbert coordinate check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8571,
     "public_examples": 7668,
@@ -44,8 +44,9 @@
       "sha256": "f1a18ddcb7eada917e3b4cca75e656cf8aafeac3e910a9d4c4e3dde0f78b4a1f"
     },
     "full_gate_log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Section22 comparison and broader completeness qualifications remain open.",
-    "full_gate_log": "work/Section22HilbertCoordinateFullCheck.log"
+    "qualification": "Unchanged Lean files and locks are hash-verified against the full successful build, public examples and transitive axiom audit. The source comparison retains all corrections and broader completeness qualifications.",
+    "full_gate_log": "work/Section22HilbertCoordinateFullCheck.log",
+    "validation_reused_from_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341"
   },
   "named_statements": [
     {
@@ -50844,6 +50845,1569 @@
         "log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437"
       },
       "source_record_sha256": "580f8731a5de93b5d370a39a1e652ddc2dcaf147ab5fa4e1366ef835cfd55cd4"
+    },
+    "Section22OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
+      "updated_utc": "2026-10-31T01:38:39.215895+00:00",
+      "source_lines": [
+        [
+          8124,
+          8385
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S22-001",
+          "source_lines": [
+            8126,
+            8137
+          ],
+          "requirement": "Renormalized frequency, analytic extension and global coordinate phases",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.bounded_phase_correction",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.phaseFrequency_complex",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_real",
+            "NLS.ZakharovShabat.sourceSection22_original"
+          ],
+          "reviewed_claims": [
+            "The original moment frequency extends analytically near all real sources. Adding the physical quadratic lattice gives the actual real renormalized frequency. Every initial source supplies a global coordinate phase at every finite p>1, using one original family before all sources, signed indices and horizons."
+          ],
+          "qualification": "Global coordinate trajectories do not supply a global source inverse above exponent two."
+        },
+        {
+          "ordered_group": "S22-002",
+          "source_lines": [
+            8138,
+            8146
+          ],
+          "requirement": "Complex coordinate convention, real conjugation and local space notation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.rectangularToComplex",
+            "NLS.Birkhoff.rectangularToComplex_real",
+            "NLS.ZakharovShabat.sourceComplexBirkhoffMap",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_real"
+          ],
+          "reviewed_claims": [
+            "The exact bounded complex linear change sends rectangular coordinates to z=(x-i*y)/sqrt(2), w=(x+i*y)/sqrt(2). Actual real sources give conjugate pairs at the same signed index. The complex source map is the original rectangular map composed with this fixed equivalence."
+          ],
+          "qualification": "The source Fourier real form uses reflected conjugation, whereas the Birkhoff complex real form uses same-index conjugation. These spaces are kept separate."
+        },
+        {
+          "ordered_group": "S22-003",
+          "source_lines": [
+            8148,
+            8152
+          ],
+          "requirement": "Equation 4.14 physical phase signs",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_coordinates"
+          ],
+          "reviewed_claims": [
+            "For the source coordinate convention, the physical original Hamiltonian trajectory has exp(-i*t*frequency) in the first component and exp(+i*t*frequency) in the second, with the same original amplitudes and moment frequency."
+          ],
+          "qualification": "Preserve the already established phase-sign correction and historical refutation modules unchanged. This comparison adds no refutation."
+        },
+        {
+          "ordered_group": "S22-004",
+          "source_lines": [
+            8154,
+            8155
+          ],
+          "requirement": "Joint scalar analyticity on the actual coordinate image",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.phase_coordinate_joint_analytic"
+          ],
+          "reviewed_claims": [
+            "Both scalar components are jointly real analytic in real time and initial rectangular coordinates on the actual open original Birkhoff image, for every finite p>1 and signed index."
+          ],
+          "qualification": "This is scalar analyticity; it does not claim time differentiability in the full low-regularity sequence norm."
+        },
+        {
+          "ordered_group": "S22-005",
+          "source_lines": [
+            8157,
+            8171
+          ],
+          "requirement": "Equation 4.15 guarded inverse source flow",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.trajectory_domain_iff_solution",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_solution_coordinates"
+          ],
+          "reviewed_claims": [
+            "The original inverse lift is an actual smooth-approximation solution on a compact interval exactly when the full coordinate curve stays in the original image. The frequency, initial source and inverse all belong to the same original family."
+          ],
+          "qualification": "The total inverse formula outside its actual image is not used as a physical solution."
+        },
+        {
+          "ordered_group": "S22-006",
+          "source_lines": [
+            8172,
+            8185
+          ],
+          "requirement": "Ordinary frequency, factor four mass and equation 4.16 below exponent two",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_apply",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_solution_iff_coordinates",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "The ordinary coordinate frequency adds exactly four times the original physical mass. For 1<p<=2 the original map is onto, and its inverse lift is a global ordinary physical solution with the exact ordinary coordinate law."
+          ],
+          "qualification": "Above two the ordinary nonextension statements compare finite-gap/Hilbert dynamics; an infinite mass is not substituted into a real frequency definition."
+        },
+        {
+          "ordered_group": "S22-007",
+          "source_lines": [
+            8186,
+            8187
+          ],
+          "requirement": "Transition to Theorem 18.5 coordinate properties",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This sentence introduces the comparison with the earlier Theorem18.5 coordinate properties. The following theorem and source wellposedness assertions carry the mathematical requirements."
+          ],
+          "qualification": "Organizational transition, not an additional theorem."
+        },
+        {
+          "ordered_group": "S22-008",
+          "source_lines": [
+            8190,
+            8194
+          ],
+          "requirement": "Theorem 22.1(i): norm continuity and compact-time trajectory analyticity",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_joint_continuous",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_analytic"
+          ],
+          "reviewed_claims": [
+            "The actual renormalized coordinate trajectory is continuous in the full sequence norm and has real analytic compact-time trajectory dependence on the entire actual open coordinate image. One complex source neighborhood U supports every horizon."
+          ],
+          "qualification": "Finite p>1, actual original image, full compact-time norm. Real coordinate data produce the original conjugate-pair real form."
+        },
+        {
+          "ordered_group": "S22-009",
+          "source_lines": [
+            8195,
+            8197
+          ],
+          "requirement": "Theorem 22.1(i): group and analytic diffeomorphism below exponent two",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "For 1<p<=2, the original renormalized coordinate time map is a real analytic diffeomorphism of the whole real coordinate space. Its inverse is negative time, and the original physical group laws hold for every pair of real times."
+          ],
+          "qualification": "The group law is nonlinear and uses the original preserved frequencies and source flow; global surjectivity is used only in the stated range."
+        },
+        {
+          "ordered_group": "S22-010",
+          "source_lines": [
+            8200,
+            8204
+          ],
+          "requirement": "Theorem 22.1(ii): ordinary trajectories, group and analytic diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_time_map",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_joint_continuous"
+          ],
+          "reviewed_claims": [
+            "In the Hilbert exponent range both continuity and full compact-time coordinate analyticity hold for ordinary NLS, with analytic coordinate diffeomorphisms, negative-time inverse and physical group law."
+          ],
+          "qualification": "The unchanged mass correction and original Birkhoff family are retained."
+        },
+        {
+          "ordered_group": "S22-011",
+          "source_lines": [
+            8206,
+            8211
+          ],
+          "requirement": "Theorem 22.1(iii): both scalar nonextensions at any signed index",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "At an original coordinate image point outside ell2, each scalar component with nonzero selected amplitude has no continuous compact-time extension agreeing with the actual finite-gap dynamics. Every signed index, including zero and negative indices, is allowed."
+          ],
+          "qualification": "The two components retain their separate nonvanishing hypotheses and physical time orientations. Agreement on finite-gap data suffices."
+        },
+        {
+          "ordered_group": "S22-012",
+          "source_lines": [
+            8214,
+            8214
+          ],
+          "requirement": "Historical KdV proof comparison",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "The citation to the KdV proof is historical context; no result about that external cited proof is used as an unproved project axiom."
+          ],
+          "qualification": "No bibliographic priority or external-proof comparison is claimed formalized."
+        },
+        {
+          "ordered_group": "S22-013",
+          "source_lines": [
+            8215,
+            8224
+          ],
+          "requirement": "Global scalar phases and corrected time-difference estimate",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.norm_phaseFlow_sub_apply",
+            "NLS.Coeff.norm_phaseFlow_sub_apply_le",
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_apply"
+          ],
+          "reviewed_claims": [
+            "The repeated second time variable is corrected to s. The exact scalar t-s identity and factor-two bound are proved for arbitrary real frequencies, amplitudes and times. The two physical signs have the same absolute increment."
+          ],
+          "qualification": "Direct correction only; the historical Hamiltonian sign correction is retained. No new refutation."
+        },
+        {
+          "ordered_group": "S22-014",
+          "source_lines": [
+            8224,
+            8236
+          ],
+          "requirement": "Displayed finite-head and tail p-power estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_increment_rpow_le",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_increment_rpow_le"
+          ],
+          "reviewed_claims": [
+            "The p-power of the exact component-sum pair norm is bounded by the finite-head phase energy plus exactly 2^p times the complementary initial energy. This holds for arbitrary finite signed heads; the symmetric [-N,N] head is a specialization. The original trajectory and actual image inverse are retained."
+          ],
+          "qualification": "Finite p>=1 in the generic estimate, finite p>1 in the original-family interface. No maximum-product isometry is assumed."
+        },
+        {
+          "ordered_group": "S22-015",
+          "source_lines": [
+            8238,
+            8246
+          ],
+          "requirement": "Small tail and finite-head time increment",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.exists_symmetric_phase_tail_small",
+            "NLS.Birkhoff.exists_phase_head_small",
+            "NLS.Birkhoff.exists_symmetric_phase_continuity_estimate",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hamiltonian_phase_continuity_cutoff"
+          ],
+          "reviewed_claims": [
+            "For every positive epsilon, one symmetric cutoff N>=1 is chosen before a positive delta. The weighted tail is at most epsilon^p. For all real time origins with |t-s|<delta the displayed finite-head scalar factors times the full initial pair norm are at most epsilon, and the full pair increment is at most 2*epsilon. The original-family cutoff and delta precede every compact horizon."
+          ],
+          "qualification": "The generic finite-head proof also bounds the finite phase energy by epsilon^p, directly supplying the next implication. This is a coordinate trajectory assertion and does not remove the source image condition."
+        },
+        {
+          "ordered_group": "S22-016",
+          "source_lines": [
+            8257,
+            8260
+          ],
+          "requirement": "Norm continuity and nonlinear group property",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_joint_continuous",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "The two small-energy conditions imply the printed 2*epsilon norm bound. Original coordinate curves are continuous in the full sequence norm. The actual nonlinear group law and analytic negative-time inverse hold on the whole coordinate space for 1<p<=2."
+          ],
+          "qualification": "The nonlinear group assertion uses the proved original source dynamics and preserved frequency, not merely the fixed-frequency algebraic phase law. Above two retain the image guard."
+        },
+        {
+          "ordered_group": "S22-017",
+          "source_lines": [
+            8262,
+            8264
+          ],
+          "requirement": "Scalar complex trajectory analyticity",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.phase_coordinate_joint_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The scalar trajectory has complex values. Full Banach trajectory analyticity on the actual coordinate image is stronger than analyticity after any bounded scalar coordinate projection. Scalar coordinates are jointly real analytic in time and initial coordinates."
+          ],
+          "qualification": "Correct C([-T,T],R) to C([-T,T],C). Joint scalar analyticity does not assert full sequence-valued differentiability in time at rough sources."
+        },
+        {
+          "ordered_group": "S22-018",
+          "source_lines": [
+            8265,
+            8268
+          ],
+          "requirement": "One complex neighborhood and uniform refined frequency asymptotics",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed_at_real"
+          ],
+          "reviewed_claims": [
+            "At each original real source, an actual complex coordinate neighborhood contains its complex Birkhoff image. Its analytic inverse lands in the unchanged original U and has the actual right-inverse identity. On that single neighborhood the original uncorrected frequency has a fixed p/2+OnePlus decomposition, with locally uniform norms before every OnePlus projection exponent."
+          ],
+          "qualification": "The quadratic lattice is added separately to the original renormalized moment frequency. Use the uncorrected p/2 estimate, not the distinct gap-square-corrected p/3 remainder."
+        },
+        {
+          "ordered_group": "S22-019",
+          "source_lines": [
+            8270,
+            8277
+          ],
+          "requirement": "Exponential multiplier and Banach trajectory analyticity in coordinate space",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.exists_uniform_phase_error_sequence",
+            "NLS.Coeff.exists_uniform_phase_error_onePlus_decomposition",
+            "NLS.Coeff.norm_complex_phase_mul_le",
+            "NLS.ZakharovShabat.SourceSection20Data.norm_hamiltonian_phase_trajectory_le",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood"
+          ],
+          "reviewed_claims": [
+            "On the same actual complex coordinate neighborhood chosen before every horizon, the exponential error has a fixed p/2+OnePlus decomposition uniformly for times in [-R,R]. The full coordinate trajectory is complex analytic in its Banach compact-time norm and is bounded by exp(R*C)*M, with C and M chosen before R. The fixed unbounded real quadratic phase contributes modulus one."
+          ],
+          "qualification": "Correct the printed FL_c^p path codomain to the coordinate space ell_c^p. The existing Banach trajectory uses the maximum-product norm; uniform boundedness and analyticity hold in the equivalent component-sum pair norm as well. Exact continuity constants are proved separately in the component-sum norm. Both physical signs are retained."
+        },
+        {
+          "ordered_group": "S22-020",
+          "source_lines": [
+            8278,
+            8280
+          ],
+          "requirement": "Ordinary analytic flow in the Hilbert exponent range",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "The established ordinary trajectory construction gives the corresponding analytic compact-time coordinate flow in the full range 1<p<=2."
+          ],
+          "qualification": "The actual ordinary frequency retains the factor-four physical mass."
+        },
+        {
+          "ordered_group": "S22-021",
+          "source_lines": [
+            8282,
+            8288
+          ],
+          "requirement": "Correct proof label, non-Hilbert data and divergent mass",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.tendsto_energy_atTop_of_nonsummable_limit",
+            "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_complex_map_energy_eq_mass",
+            "NLS.ZakharovShabat.SourceSection20Data.eventually_conjugate_coordinate_image",
+            "NLS.ZakharovShabat.mem_sourceHilbertLocus_iff"
+          ],
+          "reviewed_claims": [
+            "The repeated proof label is (iii). At the stipulated nonsquare-summable limit, every pointwise Hilbert approximation has diverging energy, including the exact half-sum energy of pairs. For original Hilbert complex coordinates that energy equals physical mass. Every norm-convergent real coordinate approximation is eventually in the actual original image, whose inverse recovers the exact pair and stays in the original frequency domain."
+          ],
+          "qualification": "The infinite mass is asserted only at the stipulated non-Hilbert datum. Generic complex-pair energy is identified with physical mass on the real Birkhoff form through the original Hilbert action trace. The arbitrary-Hilbert quantifier is retained; no finite-gap restriction is substituted."
+        },
+        {
+          "ordered_group": "S22-022",
+          "source_lines": [
+            8289,
+            8289
+          ],
+          "requirement": "Ordinary frequency divergence and arbitrary selected signed index",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hilbert_coordinate_frequency_eq_ordinary",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_hilbert_coordinate_frequency_atTop",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_original_hilbert_ordinary_frequency_atTop",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.tendsto_finiteGapOrdinaryFrequency_atTop",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "The original renormalized frequency, pulled back through the actual image inverse, is continuous at the limiting image point. Adding four times the literal Hilbert-pair energy gives a frequency tending to positive infinity for every Hilbert coordinate approximation. This formula equals the actual ordinary frequency of any independently constructed original Hilbert family. The physical Hilbert ordinary frequencies therefore diverge along every such approximation, at every signed index."
+          ],
+          "qualification": "Select any signed index with the corresponding nonzero amplitude, including zero or a negative index; remove the printed positive-index restriction directly. No infinite energy is substituted as a real frequency value at the limiting non-Hilbert point."
+        },
+        {
+          "ordered_group": "S22-023",
+          "source_lines": [
+            8290,
+            8294
+          ],
+          "requirement": "Oscillating subsequence and small times",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Dynamics.exists_frequency_gap_subsequence",
+            "NLS.Dynamics.exists_phase_separating_times",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation"
+          ],
+          "reviewed_claims": [
+            "Any frequency sequence tending to infinity has a strictly increasing subsequence with successive gaps at least pi/T. The times pi/gap are positive and at most T, with relative phase exactly minus one and thus phase difference of modulus at least one. Reflecting the times realizes the physical first-coordinate sign on [-T,T], both for the original finite-gap application and for arbitrary real Hilbert coordinate approximations."
+          ],
+          "qualification": "The original frequencies need not be monotone. The actual original inverse identity is eventually valid along arbitrary real coordinate approximations, so its fallback outside the image is not used to interpret the limiting argument."
+        },
+        {
+          "ordered_group": "S22-024",
+          "source_lines": [
+            8296,
+            8306
+          ],
+          "requirement": "Coordinate separation and failure of uniform trajectory convergence",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Dynamics.norm_phase_pair_lower",
+            "NLS.Coeff.exists_phase_separated_subsequence",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "The difference of successive selected scalar trajectories is bounded below by the preceding amplitude norm minus the full sequence norm of the successive amplitude difference. Convergence and a nonzero limiting amplitude give the exact eventual half-amplitude lower bound. The arbitrary-Hilbert original-coordinate application retains physical signs and all signed indices. Existing nonextension conclusions for both components remain intact."
+          ],
+          "qualification": "The original physical nonextension theorems retain their established agreement scopes. The new literal intermediate estimates supplement their positive proofs; no new refutation is introduced."
+        },
+        {
+          "ordered_group": "S22-025",
+          "source_lines": [
+            8308,
+            8308
+          ],
+          "requirement": "Transition to Theorem 18.5 via source wellposedness",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This transition states that the following source wellposedness corollary supplies the earlier Theorem18.5 result. Its three mathematical conclusions are compared in the next groups."
+          ],
+          "qualification": "No new mathematical object or independent estimate is introduced here."
+        },
+        {
+          "ordered_group": "S22-026",
+          "source_lines": [
+            8310,
+            8312
+          ],
+          "requirement": "Corollary 22.2(i): both equations globally analytically wellposed",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.global_analytic_wellposedness",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_trajectories"
+          ],
+          "reviewed_claims": [
+            "For every 1<p<=2, both ordinary and renormalized NLS have global analytic wellposedness in the original all-smooth-approximation solution definition, witnessed by the actual original source flows."
+          ],
+          "qualification": "Analyticity is in the full uniform compact-time source norm, not merely pointwise time evaluation."
+        },
+        {
+          "ordered_group": "S22-027",
+          "source_lines": [
+            8315,
+            8316
+          ],
+          "requirement": "Corollary 22.2(ii): local and small-data global renormalized solutions",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.local_analytic_wellposedness",
+            "NLS.ZakharovShabat.SourceSection20Data.small_global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "At every real source above two, one positive time and open source neighborhood give actual local renormalized solutions and analytic uniform trajectories. One invariant open neighborhood of zero containing a positive source-norm ball has global solutions for every time."
+          ],
+          "qualification": "The same small-data domain is fixed before all horizons. It does not assert global source solvability for arbitrary large data above two."
+        },
+        {
+          "ordered_group": "S22-028",
+          "source_lines": [
+            8319,
+            8323
+          ],
+          "requirement": "Corollary 22.2(iii): source nonextension including endpoint targets",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.finiteGap_source_nonextension",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ],
+          "reviewed_claims": [
+            "At each non-Hilbert source, the ordinary physical solution map has no continuous extension agreeing with all smooth solutions into any target exponent q>=1, including infinity, for every positive horizon. Forward and symmetric intervals are covered."
+          ],
+          "qualification": "The separate finite-gap-only theorem keeps finite targets q>=2, which includes all finite q>=p>2. The endpoint-inclusive theorem uses agreement with every smooth classical solution."
+        },
+        {
+          "ordered_group": "S22-029",
+          "source_lines": [
+            8325,
+            8327
+          ],
+          "requirement": "Source conjugation by the global Birkhoff diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_trajectories"
+          ],
+          "reviewed_claims": [
+            "The original Birkhoff map is a global real analytic diffeomorphism for 1<p<=2. Conjugation through that same map supplies the two global physical source flows and analytic source trajectories."
+          ],
+          "qualification": "The source solutions retain the original smooth-approximation definition; they are not redefined to be coordinate lifts."
+        },
+        {
+          "ordered_group": "S22-030",
+          "source_lines": [
+            8329,
+            8334
+          ],
+          "requirement": "Local image chart and one common time-neighborhood pair",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_local_renormalizedImageFlow",
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "Openness of the original image and joint continuity produce one positive time and a common neighborhood of the initial datum on which every phase curve remains in the image. The original inverse then gives the local physical flow."
+          ],
+          "qualification": "The coordinate flow has initial domain a coordinate neighborhood V, rather than the source neighborhood U printed in this sentence."
+        },
+        {
+          "ordered_group": "S22-031",
+          "source_lines": [
+            8336,
+            8350
+          ],
+          "requirement": "Equation 4.17 and physical compact-time analytic trajectories",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "Equation4.17 uses the same original inverse and original phase curve. For one common source neighborhood and compact time interval, it is an actual approximation solution and is analytic as a map into continuous source-valued paths."
+          ],
+          "qualification": "The full image condition is retained above two, and the path agrees with the physical inverse flow at every time."
+        },
+        {
+          "ordered_group": "S22-032",
+          "source_lines": [
+            8352,
+            8357
+          ],
+          "requirement": "Invariant small coordinate ball by norm preservation",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_small_renormalizedImageDomain",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_invariant_small_renormalizedFlow",
+            "NLS.Birkhoff.norm_phaseFlow"
+          ],
+          "reviewed_claims": [
+            "A positive ball in the complex coordinate space, restricted to its real form, is preserved by the phase norm. Its real decoding stays in the original open image. The inverse image is an invariant open source neighborhood containing a positive source-norm ball."
+          ],
+          "qualification": "Correct the printed ambient space of the ball from source space to coordinate space. The formal bound accounts for the bounded real decoder."
+        },
+        {
+          "ordered_group": "S22-033",
+          "source_lines": [
+            8359,
+            8362
+          ],
+          "requirement": "One small source domain supports all time horizons",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.small_global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "The same original small source neighborhood is invariant and supports actual global solutions, compact-time analytic trajectory maps, joint time/source continuity and the group law, for every real horizon."
+          ],
+          "qualification": "Use that same U, not the unrelated earlier U-prime, in the all-horizon analytic statement."
+        },
+        {
+          "ordered_group": "S22-034",
+          "source_lines": [
+            8364,
+            8370
+          ],
+          "requirement": "Physical nonextension proof and finite-target composition scope",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.finiteGap_source_nonextension",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all"
+          ],
+          "reviewed_claims": [
+            "The finite-target composition argument uses original source, Hilbert and target families and actual finite-gap classical agreement. A separate positive physical mass-gauge argument supplies all smooth-agreeing targets, including infinity, without requiring an infinity-exponent Birkhoff map."
+          ],
+          "qualification": "Do not attribute the endpoint result to the printed finite-target Birkhoff-composition proof. Keep finite-gap-only and all-smooth agreement scopes distinct."
+        },
+        {
+          "ordered_group": "S22-035",
+          "source_lines": [
+            8373,
+            8378
+          ],
+          "requirement": "Remark 22.3 exact solution characterization with corrected signs",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.remark22_3",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_solution_coordinates",
+            "NLS.ZakharovShabat.SourceSection20Data.trajectory_domain_iff_solution"
+          ],
+          "reviewed_claims": [
+            "Every original approximation solution satisfies the physical coordinate law. Conversely, a continuous curve with that law supplies its own original image condition, so the guarded original inverse gives the same actual approximation solution. This works for every finite p>1 and includes T=0."
+          ],
+          "qualification": "Retain the existing physical phase-sign correction. The initial condition is forced by the coordinate law at zero; no additional differentiability or restriction-space hypothesis is introduced."
+        },
+        {
+          "ordered_group": "S22-036",
+          "source_lines": [
+            8380,
+            8382
+          ],
+          "requirement": "Uniqueness in the full continuous-curve class",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_curve_unique"
+          ],
+          "reviewed_claims": [
+            "Two continuous curves on the compact interval with the same initial source and corrected original coordinate law agree everywhere on that interval. Hence uniqueness holds in the whole stated continuous-curve class."
+          ],
+          "qualification": "The proof uses the original approximation-solution characterization and uniqueness; it does not redefine the solution concept."
+        },
+        {
+          "ordered_group": "S22-037",
+          "source_lines": [
+            8382,
+            8385
+          ],
+          "requirement": "Contextual comparison with cited restriction norm spaces",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "The comparison with Grunrock and Herr restriction spaces is literature context."
+          ],
+          "qualification": "The original project proves continuous-curve uniqueness; the separate cited restriction-space construction is not claimed formalized."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S22-001",
+          "source_lines": [
+            8126,
+            8137
+          ],
+          "requirement": "Renormalized frequency, analytic extension and global coordinate phases",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.bounded_phase_correction",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.phaseFrequency_complex",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_real",
+            "NLS.ZakharovShabat.sourceSection22_original"
+          ],
+          "reviewed_claims": [
+            "The original moment frequency extends analytically near all real sources. Adding the physical quadratic lattice gives the actual real renormalized frequency. Every initial source supplies a global coordinate phase at every finite p>1, using one original family before all sources, signed indices and horizons."
+          ],
+          "qualification": "Global coordinate trajectories do not supply a global source inverse above exponent two."
+        },
+        {
+          "ordered_group": "S22-002",
+          "source_lines": [
+            8138,
+            8146
+          ],
+          "requirement": "Complex coordinate convention, real conjugation and local space notation",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.rectangularToComplex",
+            "NLS.Birkhoff.rectangularToComplex_real",
+            "NLS.ZakharovShabat.sourceComplexBirkhoffMap",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_real"
+          ],
+          "reviewed_claims": [
+            "The exact bounded complex linear change sends rectangular coordinates to z=(x-i*y)/sqrt(2), w=(x+i*y)/sqrt(2). Actual real sources give conjugate pairs at the same signed index. The complex source map is the original rectangular map composed with this fixed equivalence."
+          ],
+          "qualification": "The source Fourier real form uses reflected conjugation, whereas the Birkhoff complex real form uses same-index conjugation. These spaces are kept separate."
+        },
+        {
+          "ordered_group": "S22-003",
+          "source_lines": [
+            8148,
+            8152
+          ],
+          "requirement": "Equation 4.14 physical phase signs",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_coordinates"
+          ],
+          "reviewed_claims": [
+            "For the source coordinate convention, the physical original Hamiltonian trajectory has exp(-i*t*frequency) in the first component and exp(+i*t*frequency) in the second, with the same original amplitudes and moment frequency."
+          ],
+          "qualification": "Preserve the already established phase-sign correction and historical refutation modules unchanged. This comparison adds no refutation."
+        },
+        {
+          "ordered_group": "S22-004",
+          "source_lines": [
+            8154,
+            8155
+          ],
+          "requirement": "Joint scalar analyticity on the actual coordinate image",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.phase_coordinate_joint_analytic"
+          ],
+          "reviewed_claims": [
+            "Both scalar components are jointly real analytic in real time and initial rectangular coordinates on the actual open original Birkhoff image, for every finite p>1 and signed index."
+          ],
+          "qualification": "This is scalar analyticity; it does not claim time differentiability in the full low-regularity sequence norm."
+        },
+        {
+          "ordered_group": "S22-005",
+          "source_lines": [
+            8157,
+            8171
+          ],
+          "requirement": "Equation 4.15 guarded inverse source flow",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.trajectory_domain_iff_solution",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_solution_coordinates"
+          ],
+          "reviewed_claims": [
+            "The original inverse lift is an actual smooth-approximation solution on a compact interval exactly when the full coordinate curve stays in the original image. The frequency, initial source and inverse all belong to the same original family."
+          ],
+          "qualification": "The total inverse formula outside its actual image is not used as a physical solution."
+        },
+        {
+          "ordered_group": "S22-006",
+          "source_lines": [
+            8172,
+            8185
+          ],
+          "requirement": "Ordinary frequency, factor four mass and equation 4.16 below exponent two",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_apply",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_solution_iff_coordinates",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "The ordinary coordinate frequency adds exactly four times the original physical mass. For 1<p<=2 the original map is onto, and its inverse lift is a global ordinary physical solution with the exact ordinary coordinate law."
+          ],
+          "qualification": "Above two the ordinary nonextension statements compare finite-gap/Hilbert dynamics; an infinite mass is not substituted into a real frequency definition."
+        },
+        {
+          "ordered_group": "S22-007",
+          "source_lines": [
+            8186,
+            8187
+          ],
+          "requirement": "Transition to Theorem 18.5 coordinate properties",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This sentence introduces the comparison with the earlier Theorem18.5 coordinate properties. The following theorem and source wellposedness assertions carry the mathematical requirements."
+          ],
+          "qualification": "Organizational transition, not an additional theorem."
+        },
+        {
+          "ordered_group": "S22-008",
+          "source_lines": [
+            8190,
+            8194
+          ],
+          "requirement": "Theorem 22.1(i): norm continuity and compact-time trajectory analyticity",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_joint_continuous",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_analytic"
+          ],
+          "reviewed_claims": [
+            "The actual renormalized coordinate trajectory is continuous in the full sequence norm and has real analytic compact-time trajectory dependence on the entire actual open coordinate image. One complex source neighborhood U supports every horizon."
+          ],
+          "qualification": "Finite p>1, actual original image, full compact-time norm. Real coordinate data produce the original conjugate-pair real form."
+        },
+        {
+          "ordered_group": "S22-009",
+          "source_lines": [
+            8195,
+            8197
+          ],
+          "requirement": "Theorem 22.1(i): group and analytic diffeomorphism below exponent two",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "For 1<p<=2, the original renormalized coordinate time map is a real analytic diffeomorphism of the whole real coordinate space. Its inverse is negative time, and the original physical group laws hold for every pair of real times."
+          ],
+          "qualification": "The group law is nonlinear and uses the original preserved frequencies and source flow; global surjectivity is used only in the stated range."
+        },
+        {
+          "ordered_group": "S22-010",
+          "source_lines": [
+            8200,
+            8204
+          ],
+          "requirement": "Theorem 22.1(ii): ordinary trajectories, group and analytic diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_time_map",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_joint_continuous"
+          ],
+          "reviewed_claims": [
+            "In the Hilbert exponent range both continuity and full compact-time coordinate analyticity hold for ordinary NLS, with analytic coordinate diffeomorphisms, negative-time inverse and physical group law."
+          ],
+          "qualification": "The unchanged mass correction and original Birkhoff family are retained."
+        },
+        {
+          "ordered_group": "S22-011",
+          "source_lines": [
+            8206,
+            8211
+          ],
+          "requirement": "Theorem 22.1(iii): both scalar nonextensions at any signed index",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "At an original coordinate image point outside ell2, each scalar component with nonzero selected amplitude has no continuous compact-time extension agreeing with the actual finite-gap dynamics. Every signed index, including zero and negative indices, is allowed."
+          ],
+          "qualification": "The two components retain their separate nonvanishing hypotheses and physical time orientations. Agreement on finite-gap data suffices."
+        },
+        {
+          "ordered_group": "S22-012",
+          "source_lines": [
+            8214,
+            8214
+          ],
+          "requirement": "Historical KdV proof comparison",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "The citation to the KdV proof is historical context; no result about that external cited proof is used as an unproved project axiom."
+          ],
+          "qualification": "No bibliographic priority or external-proof comparison is claimed formalized."
+        },
+        {
+          "ordered_group": "S22-013",
+          "source_lines": [
+            8215,
+            8224
+          ],
+          "requirement": "Global scalar phases and corrected time-difference estimate",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.norm_phaseFlow_sub_apply",
+            "NLS.Coeff.norm_phaseFlow_sub_apply_le",
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_apply"
+          ],
+          "reviewed_claims": [
+            "The repeated second time variable is corrected to s. The exact scalar t-s identity and factor-two bound are proved for arbitrary real frequencies, amplitudes and times. The two physical signs have the same absolute increment."
+          ],
+          "qualification": "Direct correction only; the historical Hamiltonian sign correction is retained. No new refutation."
+        },
+        {
+          "ordered_group": "S22-014",
+          "source_lines": [
+            8224,
+            8236
+          ],
+          "requirement": "Displayed finite-head and tail p-power estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_increment_rpow_le",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_increment_rpow_le"
+          ],
+          "reviewed_claims": [
+            "The p-power of the exact component-sum pair norm is bounded by the finite-head phase energy plus exactly 2^p times the complementary initial energy. This holds for arbitrary finite signed heads; the symmetric [-N,N] head is a specialization. The original trajectory and actual image inverse are retained."
+          ],
+          "qualification": "Finite p>=1 in the generic estimate, finite p>1 in the original-family interface. No maximum-product isometry is assumed."
+        },
+        {
+          "ordered_group": "S22-015",
+          "source_lines": [
+            8238,
+            8246
+          ],
+          "requirement": "Small tail and finite-head time increment",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.exists_symmetric_phase_tail_small",
+            "NLS.Birkhoff.exists_phase_head_small",
+            "NLS.Birkhoff.exists_symmetric_phase_continuity_estimate",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hamiltonian_phase_continuity_cutoff"
+          ],
+          "reviewed_claims": [
+            "For every positive epsilon, one symmetric cutoff N>=1 is chosen before a positive delta. The weighted tail is at most epsilon^p. For all real time origins with |t-s|<delta the displayed finite-head scalar factors times the full initial pair norm are at most epsilon, and the full pair increment is at most 2*epsilon. The original-family cutoff and delta precede every compact horizon."
+          ],
+          "qualification": "The generic finite-head proof also bounds the finite phase energy by epsilon^p, directly supplying the next implication. This is a coordinate trajectory assertion and does not remove the source image condition."
+        },
+        {
+          "ordered_group": "S22-016",
+          "source_lines": [
+            8257,
+            8260
+          ],
+          "requirement": "Norm continuity and nonlinear group property",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail",
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_joint_continuous",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "The two small-energy conditions imply the printed 2*epsilon norm bound. Original coordinate curves are continuous in the full sequence norm. The actual nonlinear group law and analytic negative-time inverse hold on the whole coordinate space for 1<p<=2."
+          ],
+          "qualification": "The nonlinear group assertion uses the proved original source dynamics and preserved frequency, not merely the fixed-frequency algebraic phase law. Above two retain the image guard."
+        },
+        {
+          "ordered_group": "S22-017",
+          "source_lines": [
+            8262,
+            8264
+          ],
+          "requirement": "Scalar complex trajectory analyticity",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.phase_coordinate_joint_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The scalar trajectory has complex values. Full Banach trajectory analyticity on the actual coordinate image is stronger than analyticity after any bounded scalar coordinate projection. Scalar coordinates are jointly real analytic in time and initial coordinates."
+          ],
+          "qualification": "Correct C([-T,T],R) to C([-T,T],C). Joint scalar analyticity does not assert full sequence-valued differentiability in time at rough sources."
+        },
+        {
+          "ordered_group": "S22-018",
+          "source_lines": [
+            8265,
+            8268
+          ],
+          "requirement": "One complex neighborhood and uniform refined frequency asymptotics",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood",
+            "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed_at_real"
+          ],
+          "reviewed_claims": [
+            "At each original real source, an actual complex coordinate neighborhood contains its complex Birkhoff image. Its analytic inverse lands in the unchanged original U and has the actual right-inverse identity. On that single neighborhood the original uncorrected frequency has a fixed p/2+OnePlus decomposition, with locally uniform norms before every OnePlus projection exponent."
+          ],
+          "qualification": "The quadratic lattice is added separately to the original renormalized moment frequency. Use the uncorrected p/2 estimate, not the distinct gap-square-corrected p/3 remainder."
+        },
+        {
+          "ordered_group": "S22-019",
+          "source_lines": [
+            8270,
+            8277
+          ],
+          "requirement": "Exponential multiplier and Banach trajectory analyticity in coordinate space",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.exists_uniform_phase_error_sequence",
+            "NLS.Coeff.exists_uniform_phase_error_onePlus_decomposition",
+            "NLS.Coeff.norm_complex_phase_mul_le",
+            "NLS.ZakharovShabat.SourceSection20Data.norm_hamiltonian_phase_trajectory_le",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood"
+          ],
+          "reviewed_claims": [
+            "On the same actual complex coordinate neighborhood chosen before every horizon, the exponential error has a fixed p/2+OnePlus decomposition uniformly for times in [-R,R]. The full coordinate trajectory is complex analytic in its Banach compact-time norm and is bounded by exp(R*C)*M, with C and M chosen before R. The fixed unbounded real quadratic phase contributes modulus one."
+          ],
+          "qualification": "Correct the printed FL_c^p path codomain to the coordinate space ell_c^p. The existing Banach trajectory uses the maximum-product norm; uniform boundedness and analyticity hold in the equivalent component-sum pair norm as well. Exact continuity constants are proved separately in the component-sum norm. Both physical signs are retained."
+        },
+        {
+          "ordered_group": "S22-020",
+          "source_lines": [
+            8278,
+            8280
+          ],
+          "requirement": "Ordinary analytic flow in the Hilbert exponent range",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_analytic",
+            "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_time_map"
+          ],
+          "reviewed_claims": [
+            "The established ordinary trajectory construction gives the corresponding analytic compact-time coordinate flow in the full range 1<p<=2."
+          ],
+          "qualification": "The actual ordinary frequency retains the factor-four physical mass."
+        },
+        {
+          "ordered_group": "S22-021",
+          "source_lines": [
+            8282,
+            8288
+          ],
+          "requirement": "Correct proof label, non-Hilbert data and divergent mass",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.Coeff.tendsto_energy_atTop_of_nonsummable_limit",
+            "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+            "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_complex_map_energy_eq_mass",
+            "NLS.ZakharovShabat.SourceSection20Data.eventually_conjugate_coordinate_image",
+            "NLS.ZakharovShabat.mem_sourceHilbertLocus_iff"
+          ],
+          "reviewed_claims": [
+            "The repeated proof label is (iii). At the stipulated nonsquare-summable limit, every pointwise Hilbert approximation has diverging energy, including the exact half-sum energy of pairs. For original Hilbert complex coordinates that energy equals physical mass. Every norm-convergent real coordinate approximation is eventually in the actual original image, whose inverse recovers the exact pair and stays in the original frequency domain."
+          ],
+          "qualification": "The infinite mass is asserted only at the stipulated non-Hilbert datum. Generic complex-pair energy is identified with physical mass on the real Birkhoff form through the original Hilbert action trace. The arbitrary-Hilbert quantifier is retained; no finite-gap restriction is substituted."
+        },
+        {
+          "ordered_group": "S22-022",
+          "source_lines": [
+            8289,
+            8289
+          ],
+          "requirement": "Ordinary frequency divergence and arbitrary selected signed index",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.hilbert_coordinate_frequency_eq_ordinary",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_hilbert_coordinate_frequency_atTop",
+            "NLS.ZakharovShabat.SourceSection20Data.tendsto_original_hilbert_ordinary_frequency_atTop",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.tendsto_finiteGapOrdinaryFrequency_atTop",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "The original renormalized frequency, pulled back through the actual image inverse, is continuous at the limiting image point. Adding four times the literal Hilbert-pair energy gives a frequency tending to positive infinity for every Hilbert coordinate approximation. This formula equals the actual ordinary frequency of any independently constructed original Hilbert family. The physical Hilbert ordinary frequencies therefore diverge along every such approximation, at every signed index."
+          ],
+          "qualification": "Select any signed index with the corresponding nonzero amplitude, including zero or a negative index; remove the printed positive-index restriction directly. No infinite energy is substituted as a real frequency value at the limiting non-Hilbert point."
+        },
+        {
+          "ordered_group": "S22-023",
+          "source_lines": [
+            8290,
+            8294
+          ],
+          "requirement": "Oscillating subsequence and small times",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Dynamics.exists_frequency_gap_subsequence",
+            "NLS.Dynamics.exists_phase_separating_times",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation"
+          ],
+          "reviewed_claims": [
+            "Any frequency sequence tending to infinity has a strictly increasing subsequence with successive gaps at least pi/T. The times pi/gap are positive and at most T, with relative phase exactly minus one and thus phase difference of modulus at least one. Reflecting the times realizes the physical first-coordinate sign on [-T,T], both for the original finite-gap application and for arbitrary real Hilbert coordinate approximations."
+          ],
+          "qualification": "The original frequencies need not be monotone. The actual original inverse identity is eventually valid along arbitrary real coordinate approximations, so its fallback outside the image is not used to interpret the limiting argument."
+        },
+        {
+          "ordered_group": "S22-024",
+          "source_lines": [
+            8296,
+            8306
+          ],
+          "requirement": "Coordinate separation and failure of uniform trajectory convergence",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.Dynamics.norm_phase_pair_lower",
+            "NLS.Coeff.exists_phase_separated_subsequence",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd"
+          ],
+          "reviewed_claims": [
+            "The difference of successive selected scalar trajectories is bounded below by the preceding amplitude norm minus the full sequence norm of the successive amplitude difference. Convergence and a nonzero limiting amplitude give the exact eventual half-amplitude lower bound. The arbitrary-Hilbert original-coordinate application retains physical signs and all signed indices. Existing nonextension conclusions for both components remain intact."
+          ],
+          "qualification": "The original physical nonextension theorems retain their established agreement scopes. The new literal intermediate estimates supplement their positive proofs; no new refutation is introduced."
+        },
+        {
+          "ordered_group": "S22-025",
+          "source_lines": [
+            8308,
+            8308
+          ],
+          "requirement": "Transition to Theorem 18.5 via source wellposedness",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "This transition states that the following source wellposedness corollary supplies the earlier Theorem18.5 result. Its three mathematical conclusions are compared in the next groups."
+          ],
+          "qualification": "No new mathematical object or independent estimate is introduced here."
+        },
+        {
+          "ordered_group": "S22-026",
+          "source_lines": [
+            8310,
+            8312
+          ],
+          "requirement": "Corollary 22.2(i): both equations globally analytically wellposed",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.global_analytic_wellposedness",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_trajectories"
+          ],
+          "reviewed_claims": [
+            "For every 1<p<=2, both ordinary and renormalized NLS have global analytic wellposedness in the original all-smooth-approximation solution definition, witnessed by the actual original source flows."
+          ],
+          "qualification": "Analyticity is in the full uniform compact-time source norm, not merely pointwise time evaluation."
+        },
+        {
+          "ordered_group": "S22-027",
+          "source_lines": [
+            8315,
+            8316
+          ],
+          "requirement": "Corollary 22.2(ii): local and small-data global renormalized solutions",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.local_analytic_wellposedness",
+            "NLS.ZakharovShabat.SourceSection20Data.small_global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "At every real source above two, one positive time and open source neighborhood give actual local renormalized solutions and analytic uniform trajectories. One invariant open neighborhood of zero containing a positive source-norm ball has global solutions for every time."
+          ],
+          "qualification": "The same small-data domain is fixed before all horizons. It does not assert global source solvability for arbitrary large data above two."
+        },
+        {
+          "ordered_group": "S22-028",
+          "source_lines": [
+            8319,
+            8323
+          ],
+          "requirement": "Corollary 22.2(iii): source nonextension including endpoint targets",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.finiteGap_source_nonextension",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric"
+          ],
+          "reviewed_claims": [
+            "At each non-Hilbert source, the ordinary physical solution map has no continuous extension agreeing with all smooth solutions into any target exponent q>=1, including infinity, for every positive horizon. Forward and symmetric intervals are covered."
+          ],
+          "qualification": "The separate finite-gap-only theorem keeps finite targets q>=2, which includes all finite q>=p>2. The endpoint-inclusive theorem uses agreement with every smooth classical solution."
+        },
+        {
+          "ordered_group": "S22-029",
+          "source_lines": [
+            8325,
+            8327
+          ],
+          "requirement": "Source conjugation by the global Birkhoff diffeomorphism",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions",
+            "NLS.ZakharovShabat.SourceSection20Data.global_physical_trajectories"
+          ],
+          "reviewed_claims": [
+            "The original Birkhoff map is a global real analytic diffeomorphism for 1<p<=2. Conjugation through that same map supplies the two global physical source flows and analytic source trajectories."
+          ],
+          "qualification": "The source solutions retain the original smooth-approximation definition; they are not redefined to be coordinate lifts."
+        },
+        {
+          "ordered_group": "S22-030",
+          "source_lines": [
+            8329,
+            8334
+          ],
+          "requirement": "Local image chart and one common time-neighborhood pair",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_local_renormalizedImageFlow",
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "Openness of the original image and joint continuity produce one positive time and a common neighborhood of the initial datum on which every phase curve remains in the image. The original inverse then gives the local physical flow."
+          ],
+          "qualification": "The coordinate flow has initial domain a coordinate neighborhood V, rather than the source neighborhood U printed in this sentence."
+        },
+        {
+          "ordered_group": "S22-031",
+          "source_lines": [
+            8336,
+            8350
+          ],
+          "requirement": "Equation 4.17 and physical compact-time analytic trajectories",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "Equation4.17 uses the same original inverse and original phase curve. For one common source neighborhood and compact time interval, it is an actual approximation solution and is analytic as a map into continuous source-valued paths."
+          ],
+          "qualification": "The full image condition is retained above two, and the path agrees with the physical inverse flow at every time."
+        },
+        {
+          "ordered_group": "S22-032",
+          "source_lines": [
+            8352,
+            8357
+          ],
+          "requirement": "Invariant small coordinate ball by norm preservation",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_small_renormalizedImageDomain",
+            "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_invariant_small_renormalizedFlow",
+            "NLS.Birkhoff.norm_phaseFlow"
+          ],
+          "reviewed_claims": [
+            "A positive ball in the complex coordinate space, restricted to its real form, is preserved by the phase norm. Its real decoding stays in the original open image. The inverse image is an invariant open source neighborhood containing a positive source-norm ball."
+          ],
+          "qualification": "Correct the printed ambient space of the ball from source space to coordinate space. The formal bound accounts for the bounded real decoder."
+        },
+        {
+          "ordered_group": "S22-033",
+          "source_lines": [
+            8359,
+            8362
+          ],
+          "requirement": "One small source domain supports all time horizons",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.small_global_physical_solutions"
+          ],
+          "reviewed_claims": [
+            "The same original small source neighborhood is invariant and supports actual global solutions, compact-time analytic trajectory maps, joint time/source continuity and the group law, for every real horizon."
+          ],
+          "qualification": "Use that same U, not the unrelated earlier U-prime, in the all-horizon analytic statement."
+        },
+        {
+          "ordered_group": "S22-034",
+          "source_lines": [
+            8364,
+            8370
+          ],
+          "requirement": "Physical nonextension proof and finite-target composition scope",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.finiteGap_source_nonextension",
+            "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all"
+          ],
+          "reviewed_claims": [
+            "The finite-target composition argument uses original source, Hilbert and target families and actual finite-gap classical agreement. A separate positive physical mass-gauge argument supplies all smooth-agreeing targets, including infinity, without requiring an infinity-exponent Birkhoff map."
+          ],
+          "qualification": "Do not attribute the endpoint result to the printed finite-target Birkhoff-composition proof. Keep finite-gap-only and all-smooth agreement scopes distinct."
+        },
+        {
+          "ordered_group": "S22-035",
+          "source_lines": [
+            8373,
+            8378
+          ],
+          "requirement": "Remark 22.3 exact solution characterization with corrected signs",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.remark22_3",
+            "NLS.ZakharovShabat.SourceSection20Data.renormalized_solution_coordinates",
+            "NLS.ZakharovShabat.SourceSection20Data.trajectory_domain_iff_solution"
+          ],
+          "reviewed_claims": [
+            "Every original approximation solution satisfies the physical coordinate law. Conversely, a continuous curve with that law supplies its own original image condition, so the guarded original inverse gives the same actual approximation solution. This works for every finite p>1 and includes T=0."
+          ],
+          "qualification": "Retain the existing physical phase-sign correction. The initial condition is forced by the coordinate law at zero; no additional differentiability or restriction-space hypothesis is introduced."
+        },
+        {
+          "ordered_group": "S22-036",
+          "source_lines": [
+            8380,
+            8382
+          ],
+          "requirement": "Uniqueness in the full continuous-curve class",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection20Data.coordinate_curve_unique"
+          ],
+          "reviewed_claims": [
+            "Two continuous curves on the compact interval with the same initial source and corrected original coordinate law agree everywhere on that interval. Hence uniqueness holds in the whole stated continuous-curve class."
+          ],
+          "qualification": "The proof uses the original approximation-solution characterization and uniqueness; it does not redefine the solution concept."
+        },
+        {
+          "ordered_group": "S22-037",
+          "source_lines": [
+            8382,
+            8385
+          ],
+          "requirement": "Contextual comparison with cited restriction norm spaces",
+          "ordered_status": "contextual",
+          "declarations": [],
+          "reviewed_claims": [
+            "The comparison with Grunrock and Herr restriction spaces is literature context."
+          ],
+          "qualification": "The original project proves continuous-curve uniqueness; the separate cited restriction-space construction is not claimed formalized."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 23,
+        "corrected": 10,
+        "partial": 0,
+        "contextual": 4,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection22Original.lean": "622872ff5ddbdc4f283a0c6b9706b25e648e42278f9f1f3783afabbb486e6a62",
+        "NLS/ZakharovShabat/SourceSection22Phases.lean": "9f77e4cfdb5213c6a72a8f6859b7846bb23164a72654fa10dd93fb8c6f372695",
+        "NLS/ZakharovShabat/SourceSection22Coordinates.lean": "bb96c510f95c9fde8ac97720e700c46b46d81caf4aa10072f8b3e4d1b595dcfe",
+        "NLS/ZakharovShabat/SourceSection22Higher.lean": "67f32b0bc2afc30e133af27fcab25bdf3f4d19b53a9088494a12fc9a61b7d069",
+        "NLS/ZakharovShabat/SourceSection22Global.lean": "6f63344856f564cad9e734f5b22158d0738b60127b196c8fc60bb3c9476115b7",
+        "NLS/ZakharovShabat/SourceSection22Nonextension.lean": "42265ad6c0092590ad1617bf9fd57ba58151e3144f6be6b8f2ab9f3dcb5aded4",
+        "NLS/ZakharovShabat/SourceSection22NonextensionAll.lean": "1dea7b385005f1115707c60a3fd88a122e2a52a85cb0baf581b695adf3fa4442",
+        "NLS/ZakharovShabat/SourceSection22Solutions.lean": "cb15ac2becac2d116ea8ff2bba9a59b652000ed991883e0949a0c86100155c16",
+        "NLS/ZakharovShabat/SourceSection22Characterization.lean": "ffa53a248635fc41417769b61354242994a6ec60de40234dc308f510e62d2fbd",
+        "NLS/Dynamics/ComplexPhaseFlow.lean": "6d6f57a65f4aa4e5f131922c23c1375368bf8e318e3b952b6753017f03634685",
+        "NLS/Dynamics/AnalyticComplexPhaseTrajectory.lean": "a62a78baae4467b51cb2219ebd93fb5fc42f1a0b7936caa33c6558487a7ac762",
+        "NLS/SequenceSpaces/PhaseRotation.lean": "b041c00a59f32cdbb445c335d02aea5e8b7bfaabb1c5b9d4a1774fc86f757ea7",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean": "3c3a97d189eee0c38170f4fedb2a441a95329b416b000ae7f3cc1fa78f8c220f",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseAnalytic.lean": "0229ef8f2d64d4a5dea028f4310be712f5f511947408dc9873e2f560305ca989",
+        "NLS/SequenceSpaces/UniformTailContinuity.lean": "377bf1c7b5fab8fbbc134ed8deece65394b36a9020853fa7012a5ff3b8e97cb7",
+        "NLS/SequenceSpaces/AnalyticPhaseTrajectory.lean": "fd796faa572912b756686b51a013acbe469ad628c34697fcaf7f77bada12fbc4",
+        "NLS/ZakharovShabat/SourceOrdinaryTheorem22_1III.lean": "845f4cacaee0b64b23877d52b10a89720eb8eac8257efb037788cb7e9f927c88",
+        "NLS/Dynamics/UnboundedPhaseObstruction.lean": "19e58a2a806c5d12f61c9caa974bf72dcfd7ff08637ae741a60ca5586ef3ce61",
+        "NLS/ZakharovShabat/SmoothSourceMassDivergence.lean": "c0043b564f0e7e681c5153c2bad8cfcde4787b69eecfa53f6386b139e2ca4c18",
+        "NLS/ZakharovShabat/SmoothSourceGaugeObstruction.lean": "9e3460aac78c3dc23f70ba661957b864609264e161345f57566aa245f50b9342",
+        "NLS/Dynamics/VariableAmplitudePhaseObstruction.lean": "2268b9bc422fbcc55f889b09ea898101b8d738cc5664230f2a5f4c5993db11cb",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean": "ef5c9cf757c18c94a8464f5da571aea3a7869c30ec2a3f0414b6152e44d25d88",
+        "NLS/ZakharovShabat/HigherExponentAnalyticNLSSolutions.lean": "6af5e3753b56b3a6fdfd0198e4e97cc78d2d4699ad7a9ec856be0ef8f5c1c0bf",
+        "NLS/ZakharovShabat/SourceRenormalizedImageFlow.lean": "30c6ff7ed18c2946898485a93a55d50c7b7610bd0e4900f53bc7dd928a301505",
+        "NLS/ZakharovShabat/SourceOrdinaryCoordinateObstruction.lean": "b8238cba14c8382aeba685de2e44874bcb0f1a9c806086efdca81a2991126590",
+        "NLS/ZakharovShabat/SourceRenormalizedLocalExistence.lean": "55991263546f71baacd1d9ac37140af0064212b86b650d5a6312689f60c6598c",
+        "NLS/ZakharovShabat/SourceFiniteGapOrdinaryTrajectory.lean": "98c22ca73eb622a47d0e116bdfc383b43485533ba86c2a0eaa16af50dc148993",
+        "NLS/ZakharovShabat/SourceRenormalizedLocalFlow.lean": "d65ed7fc4ff74bc70d7a1eca7b8fbb7e44387479e84fdc1183d03907cef73cb9",
+        "NLS/ZakharovShabat/SourceFiniteGapMassDivergence.lean": "31dfb29fc0629ead82ccf93c90df70f4a5109127bc5f75d7f6f6bb9c67f20c14",
+        "NLS/SequenceSpaces/ComplexPhaseSmoothing.lean": "d66f6fdd07f1cfe8dfe1230e070bc53b322512a18e473e437d45bf271c9536ec",
+        "NLS/SequenceSpaces/ExponentialSummability.lean": "b4926cbca2064d6399f170ecad5f26f4772078e10cc8fd5896c9b18eb3c08bc4",
+        "NLS/ZakharovShabat/SourceFrequencyMixedIntroduction.lean": "46ae50be0df55b1b62a0524f21e0a08013f423464d90b053cbfa3460058a432e",
+        "NLS/ZakharovShabat/SourceSection20Frequencies.lean": "d4d8d75a91faeb825d6ab1cc88bd70908425f72d237dafcaba52fd7f0a82fe53",
+        "NLS/ZakharovShabat/SourceSection20Domain.lean": "f6952eabd138e7105bb4eb4d4def41b38f42afa65607a089fc6aedc5b963913e",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean": "9d27ac91ed0d81aa869c7ae8cb22e9cc0497a440c772e5807501ed8ba6cbd616",
+        "NLS/Dynamics/HamiltonianPhaseFlow.lean": "f2bfc913b0de6167a134122b83a039a13f59b1bea0db262d03d088c85a12214d",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/SourceFrequencySequenceAnalytic.lean": "7c20a675eca5871099f0f59e21bb6c818a0fa9cfd517aef28dad0e6e9fd9de09",
+        "NLS/SequenceSpaces/Multiplier.lean": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36",
+        "NLS/ComplexAnalysis/SharpExponentialRemainder.lean": "4840826bcf513042636141d5b6236f7c18d54b09796fa1681ce64c7a454a2ecd",
+        "NLS/ZakharovShabat/SourceFrequencySequenceBounds.lean": "2cacd5dbe9cd72a72183b5979b3373dd093880e1212e2732674e156df1a62005",
+        "NLS/Dynamics/PhaseContinuityEstimate.lean": "d2fdbd3f2115c403a6e925d14ed277902fe4e0aac7cf0699831b5b6295ab5ee4",
+        "NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean": "049ae0e03de6eb1243c5a09c95fc36f837d90ab06b0dee9c11596c7d18e514dd",
+        "NLS/ZakharovShabat/SourceSection17Original.lean": "68aaf622885d6516a72d3428760e4dbe78a7a6152bd451875c4f491173c39cb6",
+        "NLS/ZakharovShabat/SourceBirkhoffInverseChart.lean": "1499b108d12568ffac312266754cf3c49a5bde34b5ff1b7b9aed62d71decb86c",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianAllExponents.lean": "60ae81a7ca67c2813bf618f940a164999735b6675e585a2949799a632bffa381",
+        "NLS/Dynamics/ComplexBirkhoffCoordinates.lean": "d1a1207fad0a650e32859888b6735dd6596ddb06e848a5de9558433db2d07428",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffMap.lean": "add5d37e34e80b71709f00744cf32cbb77c166daff446fd3018f4d1dd12bc718",
+        "NLS/Dynamics/PhaseContinuityChoice.lean": "8d7b7d4303ad54b126a73c49abbfb651570d1c17dad822c927aa67c9cccd1379",
+        "NLS/SequenceSpaces/UniformPhaseExponential.lean": "313992d8ce2103fbcd66357f24b8bab7d073725a3f8e7c77be4c40a27df56993",
+        "NLS/ZakharovShabat/SourceSection22UniformEstimates.lean": "7383093ada127f5473f51a14cd1af2121ca1349bc6222ddfdecb0b604c8282e4",
+        "NLS/Dynamics/PhaseSubsequenceSeparation.lean": "1c22cc0aa48709ae214c0e5f2a3f065eda6af3ddf6102e994084b4679bd553f9",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean": "955a7c7cd58f9fcc504cd4fc0eb1e7f42e7dfc4f52bb3b1e51a1b019b20686c9",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean": "7b8ac07a0560a1c1b66aaf35a19eec05e68b7e3445a38943acd78076a30e1914",
+        "NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean": "8fd62de0a5d33ca8c8e47a2506f2872012d6dbf33228817cbb099a3a89232012",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean": "e946e2913586faf92c6c9f7c3183a59f73fc6b9e294403857640c15b6975ae67",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffExponent.lean": "f6aceb6c03ccfc8a7b0011fd724716c398d060126b132efb02ee601deb4637d6",
+        "NLS/Dynamics/RealComplexBirkhoffCoordinates.lean": "9a1d41614256f7eec06796a297b3d35c133959652611087677d878a6f91f0839",
+        "NLS/ZakharovShabat/SourceSecondMomentFrequencyTheorem20_4.lean": "554cae680a7765fc143fe3f1ce53b1566d727e01ec74d2dc8e0d6724e9c9be62"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection22Original.lean",
+        "NLS/ZakharovShabat/SourceSection22Phases.lean",
+        "NLS/ZakharovShabat/SourceSection22Coordinates.lean",
+        "NLS/ZakharovShabat/SourceSection22Higher.lean",
+        "NLS/ZakharovShabat/SourceSection22Global.lean",
+        "NLS/ZakharovShabat/SourceSection22Nonextension.lean",
+        "NLS/ZakharovShabat/SourceSection22NonextensionAll.lean",
+        "NLS/ZakharovShabat/SourceSection22Solutions.lean",
+        "NLS/ZakharovShabat/SourceSection22Characterization.lean",
+        "NLS/Dynamics/ComplexPhaseFlow.lean",
+        "NLS/Dynamics/AnalyticComplexPhaseTrajectory.lean",
+        "NLS/SequenceSpaces/PhaseRotation.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseTrajectory.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedPhaseAnalytic.lean",
+        "NLS/SequenceSpaces/UniformTailContinuity.lean",
+        "NLS/SequenceSpaces/AnalyticPhaseTrajectory.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryTheorem22_1III.lean",
+        "NLS/Dynamics/UnboundedPhaseObstruction.lean",
+        "NLS/ZakharovShabat/SmoothSourceMassDivergence.lean",
+        "NLS/ZakharovShabat/SmoothSourceGaugeObstruction.lean",
+        "NLS/Dynamics/VariableAmplitudePhaseObstruction.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean",
+        "NLS/ZakharovShabat/HigherExponentAnalyticNLSSolutions.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedImageFlow.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryCoordinateObstruction.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedLocalExistence.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapOrdinaryTrajectory.lean",
+        "NLS/ZakharovShabat/SourceRenormalizedLocalFlow.lean",
+        "NLS/ZakharovShabat/SourceFiniteGapMassDivergence.lean",
+        "NLS/SequenceSpaces/ComplexPhaseSmoothing.lean",
+        "NLS/SequenceSpaces/ExponentialSummability.lean",
+        "NLS/ZakharovShabat/SourceFrequencyMixedIntroduction.lean",
+        "NLS/ZakharovShabat/SourceSection20Frequencies.lean",
+        "NLS/ZakharovShabat/SourceSection20Domain.lean",
+        "NLS/SequenceSpaces/RefinedOnePlusDecomposition.lean",
+        "NLS/Dynamics/HamiltonianPhaseFlow.lean",
+        "NLS/SequenceSpaces/PairNorm.lean",
+        "NLS/ZakharovShabat/SourceFrequencySequenceAnalytic.lean",
+        "NLS/SequenceSpaces/Multiplier.lean",
+        "NLS/ComplexAnalysis/SharpExponentialRemainder.lean",
+        "NLS/ZakharovShabat/SourceFrequencySequenceBounds.lean",
+        "NLS/Dynamics/PhaseContinuityEstimate.lean",
+        "NLS/ZakharovShabat/SourceSection22PhaseEstimate.lean",
+        "NLS/ZakharovShabat/SourceSection17Original.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffInverseChart.lean",
+        "NLS/ZakharovShabat/SourceBirkhoffJacobianAllExponents.lean",
+        "NLS/Dynamics/ComplexBirkhoffCoordinates.lean",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffMap.lean",
+        "NLS/Dynamics/PhaseContinuityChoice.lean",
+        "NLS/SequenceSpaces/UniformPhaseExponential.lean",
+        "NLS/ZakharovShabat/SourceSection22UniformEstimates.lean",
+        "NLS/Dynamics/PhaseSubsequenceSeparation.lean",
+        "NLS/SequenceSpaces/HilbertEnergyDivergence.lean",
+        "NLS/ZakharovShabat/SourceSection22PhaseSeparation.lean",
+        "NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean",
+        "NLS/ZakharovShabat/SourceOrdinaryMass.lean",
+        "NLS/ZakharovShabat/SourceComplexBirkhoffExponent.lean",
+        "NLS/Dynamics/RealComplexBirkhoffCoordinates.lean",
+        "NLS/ZakharovShabat/SourceSecondMomentFrequencyTheorem20_4.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_22_ASSERTIONS.md",
+      "ordered_inventory_sha256": "c53a71a39cb35780f979583127ee9c53b3dbc896bda0385411ee75095fc96afb",
+      "resolved_declarations": [
+        "NLS.Birkhoff.exists_phase_head_small",
+        "NLS.Birkhoff.exists_symmetric_phase_continuity_estimate",
+        "NLS.Birkhoff.exists_symmetric_phase_tail_small",
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_apply",
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_le_of_head_tail",
+        "NLS.Birkhoff.norm_hamiltonianPhaseFlow_sub_rpow_le",
+        "NLS.Birkhoff.norm_phaseFlow",
+        "NLS.Birkhoff.rectangularToComplex",
+        "NLS.Birkhoff.rectangularToComplex_real",
+        "NLS.Coeff.exists_phase_separated_subsequence",
+        "NLS.Coeff.exists_uniform_phase_error_onePlus_decomposition",
+        "NLS.Coeff.exists_uniform_phase_error_sequence",
+        "NLS.Coeff.norm_complex_phase_mul_le",
+        "NLS.Coeff.norm_phaseFlow_sub_apply",
+        "NLS.Coeff.norm_phaseFlow_sub_apply_le",
+        "NLS.Coeff.tendsto_energy_atTop_of_nonsummable_limit",
+        "NLS.Coeff.tendsto_pair_energy_atTop_of_nonsummable_limit",
+        "NLS.Dynamics.exists_frequency_gap_subsequence",
+        "NLS.Dynamics.exists_phase_separating_times",
+        "NLS.Dynamics.norm_phase_pair_lower",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_invariant_small_renormalizedFlow",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_local_renormalizedImageFlow",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_small_renormalizedImageDomain",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.phaseFrequency_complex",
+        "NLS.ZakharovShabat.SourceAbelianMomentAtlas.tendsto_finiteGapOrdinaryFrequency_atTop",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_real",
+        "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_complex_map_energy_eq_mass",
+        "NLS.ZakharovShabat.SourceSection17OriginalData.global_inverse",
+        "NLS.ZakharovShabat.SourceSection20Data.bounded_phase_correction",
+        "NLS.ZakharovShabat.SourceSection20Data.coordinate_curve_unique",
+        "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_fst",
+        "NLS.ZakharovShabat.SourceSection20Data.coordinate_nonextension_snd",
+        "NLS.ZakharovShabat.SourceSection20Data.eventually_conjugate_coordinate_image",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_complex_coordinate_phase_neighborhood",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_finiteGap_coordinate_separation",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_hamiltonian_phase_continuity_cutoff",
+        "NLS.ZakharovShabat.SourceSection20Data.exists_hilbert_coordinate_separation",
+        "NLS.ZakharovShabat.SourceSection20Data.finiteGap_source_nonextension",
+        "NLS.ZakharovShabat.SourceSection20Data.frequency_mixed_at_real",
+        "NLS.ZakharovShabat.SourceSection20Data.global_analytic_wellposedness",
+        "NLS.ZakharovShabat.SourceSection20Data.global_physical_group",
+        "NLS.ZakharovShabat.SourceSection20Data.global_physical_joint_continuous",
+        "NLS.ZakharovShabat.SourceSection20Data.global_physical_solutions",
+        "NLS.ZakharovShabat.SourceSection20Data.global_physical_trajectories",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_coordinate_increment_rpow_le",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_coordinates",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_increment_rpow_le",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_joint_continuous",
+        "NLS.ZakharovShabat.SourceSection20Data.hamiltonian_phase_real",
+        "NLS.ZakharovShabat.SourceSection20Data.hilbert_coordinate_frequency_eq_ordinary",
+        "NLS.ZakharovShabat.SourceSection20Data.local_analytic_wellposedness",
+        "NLS.ZakharovShabat.SourceSection20Data.local_physical_solutions",
+        "NLS.ZakharovShabat.SourceSection20Data.norm_hamiltonian_phase_trajectory_le",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_time_map",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_coordinate_trajectory_apply",
+        "NLS.ZakharovShabat.SourceSection20Data.ordinary_solution_iff_coordinates",
+        "NLS.ZakharovShabat.SourceSection20Data.phase_coordinate_joint_analytic",
+        "NLS.ZakharovShabat.SourceSection20Data.remark22_3",
+        "NLS.ZakharovShabat.SourceSection20Data.renormalized_coordinate_time_map",
+        "NLS.ZakharovShabat.SourceSection20Data.renormalized_solution_coordinates",
+        "NLS.ZakharovShabat.SourceSection20Data.small_global_physical_solutions",
+        "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all",
+        "NLS.ZakharovShabat.SourceSection20Data.smooth_source_nonextension_all_symmetric",
+        "NLS.ZakharovShabat.SourceSection20Data.tendsto_hilbert_coordinate_frequency_atTop",
+        "NLS.ZakharovShabat.SourceSection20Data.tendsto_original_hilbert_ordinary_frequency_atTop",
+        "NLS.ZakharovShabat.SourceSection20Data.trajectory_domain_iff_solution",
+        "NLS.ZakharovShabat.mem_sourceHilbertLocus_iff",
+        "NLS.ZakharovShabat.sourceComplexBirkhoffMap",
+        "NLS.ZakharovShabat.sourceSection22_original"
+      ],
+      "declaration_inventory_count": 44671,
+      "qualification": "The ordered Section 22 comparison covers 37 groups on printed pp. 98–101: 23 matched, 10 corrected and 4 contextual, with no partial or pending groups in this local ledger. It retains the original moment/root/map families, physical phase signs and factor-four mass shift, actual inverse image restrictions above two, exact component-sum continuity constants, one complex neighborhood before all horizons, full Banach trajectory analyticity, local and invariant small-data source flows, arbitrary-Hilbert frequency divergence and literal separation, and the original all-smooth approximation solution definition. Finite-gap-only finite-target and all-smooth endpoint-inclusive nonextension scopes remain separate. The local coordinate domain, coordinate-ball ambient space and common small-data source domain are normalized directly. Existing sign, time-variable, path-codomain, proof-label, index and non-Hilbert mass corrections are preserved. The exact 2014 construction, Appendix G.2 and wider dissertation-completeness qualifications remain. No new Lean proof or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          98,
+          99,
+          100,
+          101
+        ],
+        "images": {
+          "work/tmp/pdfs/section21-098.png": "366b2ce768ffd1aac4c8eb89367ec47c8f6a470f0da189f887666cf18448afb6",
+          "work/tmp/pdfs/section22-099.png": "ddd361057300f6fd49b84eee9826303c1fb375886cb61f8e56b98f74fad5dac8",
+          "work/tmp/pdfs/section22-100.png": "0b17132c2201d72ccfc4a579c4914c76a386fa3ccec15a47e785695947201970",
+          "work/tmp/pdfs/section22-101.png": "20978570c7330e799523de883e1c2b34495fd73e2d21dc3ac12a8c19993608a7"
+        }
+      },
+      "preceding_review_hash": "580f8731a5de93b5d370a39a1e652ddc2dcaf147ab5fa4e1366ef835cfd55cd4",
+      "reconciled_previous_reviews": {
+        "Section22SourceComparison-2026-10-27.json": "a9285bd4b629924591e23ffe171322b76180f60947e441351453a37a8c8a7ea2",
+        "NumberedRemarksSourceComparison-2026-10-27.json": "578069798e4d8a2858dd9bba9c232fc46e63583de832de29d7250f66c887de47"
+      },
+      "validation_lean_sources": {
+        "files": 4848,
+        "sha256": "f1a18ddcb7eada917e3b4cca75e656cf8aafeac3e910a9d4c4e3dde0f78b4a1f"
+      },
+      "validation_reused_from_commit": "b542c02bbaaeec246fc3bc2bf5f200c0c5088341",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 88874,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section22HilbertCoordinateFullCheck.log",
+        "log_sha256": "4198afbc78b96725a2e19490032a1381ca143466465166d648fdaff463a2e437"
+      },
+      "source_record_sha256": "2d790c1e9911e399f15c5fda945da2783a22de3bc532eb677a173020da5932d6"
     }
   }
 }

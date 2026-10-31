@@ -58,8 +58,14 @@ lemma covers arbitrary pointwise approximations. The
 [Hilbert coordinate extension](../NLS/ZakharovShabat/SourceSection22HilbertCoordinates.lean)
 now also retains arbitrary Hilbert approximations in the original-family
 application, with exact physical mass normalization, ordinary frequency
-compatibility, divergence and eventual actual image inverse. The full
-ordered comparison is still pending.
+compatibility, divergence and eventual actual image inverse.
+The [ordered Section 22 ledger](SECTION_22_ASSERTIONS.md) now compares
+37 groups on pp. 98–101: 23 matched, ten corrected and four contextual,
+with no partial or pending groups in that local ledger. It preserves the
+original physical flow and approximation-solution definitions, full norms,
+common domains, arbitrary-Hilbert estimates and precise nonextension scopes.
+The remaining domain notation is corrected directly. No new proof or
+refutation is added. The next ordered comparison is Section 23.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation
