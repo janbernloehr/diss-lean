@@ -73140,3 +73140,35 @@ example (a : CoeffPair 2) (ha : 8*‖a‖^2 ≤ 3)
   exact h
 
 end Section25DiagonalProductExamples
+
+section Section25AuxiliaryExamples
+open NLS NLS.ZakharovShabat
+
+-- Orthogonality uses arbitrary complex inputs and the actual signed Fourier projections.
+example (w : Weight) (f g : WeightedCoeffPair w 2) :
+    inner ℂ (WeightedCoeff.weightIsometry w 2 (resonantProjection w (-5) f).fst)
+        (WeightedCoeff.weightIsometry w 2 (complementaryProjection w (-5) g).fst) +
+      inner ℂ (WeightedCoeff.weightIsometry w 2 (resonantProjection w (-5) f).snd)
+        (WeightedCoeff.weightIsometry w 2 (complementaryProjection w (-5) g).snd) = 0 :=
+  weightedResonantSplit_inner_eq_zero w (-5) f g
+
+-- The auxiliary diagonal root need not be real, even at the central strip.
+example : ∃ ζ : ℂ, ζ = Complex.I/16 ∧
+    analyticOrderAt (fun z : ℂ => z-Complex.I/16) ζ = 1 := by
+  obtain ⟨ζ,_,_,hζ,_,ho⟩ := exists_unique_section25DiagonalCenter 0 (fun _ => Complex.I/16)
+    (fun _ _ => analyticAt_const) (by intro z hz; norm_num)
+  refine ⟨ζ,by simpa using hζ,?_⟩
+  simpa using ho
+
+-- The free diagonal root is simple although the corresponding determinant root is double.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (n : ℤ) :
+    analyticOrderAt (fun z => z-(Real.pi : ℂ)*n-
+      weightedResonantAExtension (by simp) w (0 : WeightedCoeffPair w.toWeight 2) n z)
+        ((Real.pi : ℂ)*n) = 1 := by
+  obtain ⟨ζ,hζ,_,_,ho⟩ := linearWeight_diagonal_simple_root w hw 0 n (by simp; positivity)
+  have hd : dist ζ ((Real.pi : ℂ)*n) ≤ 0 := by
+    simpa [quadraticLocalizationRadius] using Metric.mem_closedBall.mp hζ
+  have he : ζ = (Real.pi : ℂ)*n := dist_eq_zero.mp (le_antisymm hd dist_nonneg)
+  simpa only [he] using ho
+
+end Section25AuxiliaryExamples

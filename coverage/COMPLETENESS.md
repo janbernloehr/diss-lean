@@ -95,6 +95,9 @@ their precise scope. No new proof or refutation is added in this
 comparison. The external book-normalization footnote is contextual;
 the exact 2014 edition qualification remains. Section 25 now has a direct [component-product correction](../NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
 in the proof of Lemma 25.3, preserving the final constants one and eight.
+The [orthogonal P/Q splitting](../NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean)
+and [unique simple diagonal root](../NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean)
+are also proved at the exact weighted norms and quadratic threshold.
 Its ordered comparison remains in progress.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not

@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: Section 25 diagonal product correction
+## Current milestone: Section 25 orthogonality and simple diagonal root
+
+The actual signed Fourier projections now have an explicit
+[orthogonality proof](NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean)
+in the exact weighted Hilbert norm, for arbitrary complex inputs and
+every positive weight.
+
+The [auxiliary diagonal root](NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean)
+in Lemma 25.4 is unique on the whole closed strip, lies in the printed
+source disc and has analytic order one. It retains all complex M1
+sources and signed indices at 8||phi||^2 <= 1+|n|, including equality.
+The proof uses the diagonal bound 1/8 and derivative bound 1/6.
+It also covers a double periodic determinant root.
+
+Four positive theorems and three examples cover negative-mode
+orthogonality, a nonreal diagonal root and the free-source endpoint.
+No new refutation is added.
+
+The full check passed: 8,578 build jobs, 7,684 public examples and an axiom audit of 44,695 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The ordered Section 25 comparison remains in progress. The
+[broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 25 diagonal product correction
 
 The [corrected diagonal estimate](NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean)
 in the proof of Lemma 25.3 uses the product of the component norms:

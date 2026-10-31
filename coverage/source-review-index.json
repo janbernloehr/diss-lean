@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T03:05:55.348695+00:00",
-  "base_commit": "274dbf4340471e30f7cb7fe439e84b6092f7b43d",
+  "published_utc": "2026-10-31T03:29:35.549831+00:00",
+  "base_commit": "a4c7aa7dbf20129aa67fc6e7f132a841fb9692f6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 174,
-    "module_hash_checks": 3806,
-    "distinct_modules": 1990
+    "review_records": 175,
+    "module_hash_checks": 3814,
+    "distinct_modules": 1995
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "274dbf4340471e30f7cb7fe439e84b6092f7b43d",
-    "validated_state": "Fresh full check after two positive diagonal-product theorems and two API examples.",
+    "base_commit": "a4c7aa7dbf20129aa67fc6e7f132a841fb9692f6",
+    "validated_state": "Fresh full check after four positive orthogonality and diagonal-root theorems and three API examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8576,
-    "public_examples": 7681,
-    "transitive_NLS_declarations": 44691,
+    "build_jobs": 8578,
+    "public_examples": 7684,
+    "transitive_NLS_declarations": 44695,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 21775,
+    "gate_session": 66050,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4853,
-      "sha256": "906678948ce12ec7df43ec06161a527daa9d9b7b03f6254535d1709def45d5c5"
+      "files": 4855,
+      "sha256": "7455899eaa09d70a0138b236018c1766723c9e985fbcb41a1668fcf21d82dc21"
     },
-    "full_gate_log_sha256": "0a2be5ca94d506e6757d4284ddf227b8c9328f82f351ebbaca693381561a7e6c",
+    "full_gate_log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77",
     "qualification": "The recorded Lean snapshot passes full build, public examples and transitive axiom audit. The ordered Section25 comparison and broader qualifications remain open.",
-    "full_gate_log": "work/Section25DiagonalProductFullCheck.log"
+    "full_gate_log": "work/Section25AuxiliaryFullCheck.log"
   },
   "named_statements": [
     {
@@ -55527,6 +55527,120 @@
         "log_sha256": "0a2be5ca94d506e6757d4284ddf227b8c9328f82f351ebbaca693381561a7e6c"
       },
       "source_record_sha256": "9bddab50a5ca0423c90192969ff09a48432e006673b93efe3bcf967afb55e0e6"
+    },
+    "Section25AuxiliarySourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "a4c7aa7dbf20129aa67fc6e7f132a841fb9692f6",
+      "updated_utc": "2026-10-31T03:29:35.497896+00:00",
+      "source_lines": [
+        [
+          8831,
+          8840
+        ],
+        [
+          9094,
+          9098
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            8831,
+            8840
+          ],
+          "requirement": "Orthogonal splitting in the exact weighted Hilbert norm",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedMask_inner_complement",
+            "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero",
+            "NLS.WeightedCoeffPair.norm_rpow_eq_tsum"
+          ],
+          "reviewed_claims": [
+            "The actual signed P/Q Fourier projections are orthogonal for arbitrary complex weighted inputs. The sum of the two scalar Hilbert inner products after the exact weighting isometries is zero."
+          ],
+          "qualification": "Every positive weight and signed index is allowed. The pair norm is exactly the sum-of-component-energies Hilbert norm, not a maximum-norm substitute."
+        },
+        {
+          "source_lines": [
+            9094,
+            9098
+          ],
+          "requirement": "Unique simple auxiliary diagonal root at the exact threshold",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_unique_section25DiagonalCenter",
+            "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+            "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount"
+          ],
+          "reviewed_claims": [
+            "The actual h(z)=z-n*pi-a_n(z) has one root in the printed source disc, is unique throughout the full strip, and has analytic order one at that root. The proof uses the quadratic-threshold bound 1/8 and a Cauchy derivative bound 1/6."
+          ],
+          "qualification": "All complex M1 sources, signed indices and threshold equality are retained. The auxiliary diagonal root remains simple when the periodic determinant has a double root. No additional qualitative cutoff or analytic root-selection branch is assumed."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/WeightedResonance.lean": "33cf04ca8e07bc13a55b9757b8d29a24bb4e42b11b3e417728d32bc4781aebe3",
+        "NLS/ZakharovShabat/LinearWeightRootGap.lean": "600d169773b6bffd8755a30f11b3af4641101ae76321fed8394567930d308e84",
+        "NLS/ZakharovShabat/LinearWeightCoefficientAnalytic.lean": "7a6cdce3595aab2543ed8525d459573bf51b17909a0c7df5cbd1d0646c031ee9",
+        "NLS/ZakharovShabat/LinearWeightZeroCount.lean": "d9aff95b64c567b4df8fec192ce2c70362fec9c0124ae96cd5bb9bdc3f29a83b",
+        "NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean": "3c81626a420c761ede6b3a7de80bd6cd3f14f1acf2e4fe17daef5cec31c69f1f",
+        "NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean": "238a2e13a49b7567224c7a99596d6f1bdfb3bbe2f1432631ccdbdceefc99b934"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/SequenceSpaces/Weighted.lean",
+        "NLS/SequenceSpaces/PairNorm.lean",
+        "NLS/ZakharovShabat/WeightedResonance.lean",
+        "NLS/ZakharovShabat/LinearWeightRootGap.lean",
+        "NLS/ZakharovShabat/LinearWeightCoefficientAnalytic.lean",
+        "NLS/ZakharovShabat/LinearWeightZeroCount.lean",
+        "NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean",
+        "NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete the 37 ordered Section 25 groups."
+      ],
+      "resolved_declarations": [
+        "NLS.WeightedCoeffPair.norm_rpow_eq_tsum",
+        "NLS.ZakharovShabat.exists_unique_section25DiagonalCenter",
+        "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+        "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+        "NLS.ZakharovShabat.weightedMask_inner_complement",
+        "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero"
+      ],
+      "declaration_inventory_count": 44695,
+      "qualification": "The actual signed Fourier projections are orthogonal in the exact weighted Hilbert norm for arbitrary complex inputs and every positive weight. The actual auxiliary diagonal h(z)=z-n*pi-a_n(z) has a unique root on the full closed strip, lying in the printed source disc, with analytic order one. The root theorem keeps all complex M1 sources, signed indices and equality at the exact quadratic threshold 8*norm(phi)^2<=1+abs(n). It uses the diagonal bound 1/8 and derivative bound 1/6, with no further large-index condition. The diagonal root remains simple when the periodic determinant root is double. Four positive theorems and three examples are added; no new refutations, source restrictions or analytic root-selection branches are introduced. The ordered Section25 comparison and broader completion qualifications remain open.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          108,
+          111
+        ],
+        "images": {
+          "work/tmp/pdfs/section25-ordered-108.png": "6369f49ed35bdc3f5abfb3e80572a167e62b4e1137244d599edeb1444c869071",
+          "work/tmp/pdfs/section25-ordered-111.png": "12588d06cf08619283f021d322a82b494a3d89c6b9e8678ea99b64a5e940f84d"
+        }
+      },
+      "preceding_review_hash": "15947c1820834b4ec88f7b4a6b9e610f2a0c5eb9e1cef04fee2d3301e2066f78",
+      "validation_lean_sources": {
+        "files": 4855,
+        "sha256": "7455899eaa09d70a0138b236018c1766723c9e985fbcb41a1668fcf21d82dc21"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 4,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 66050,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section25AuxiliaryFullCheck.log",
+        "log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77"
+      },
+      "source_record_sha256": "3b4ef13cbb6e3b17a022a3f2505335ff4a759e86225c2d3ee2bb6afa03124d5d"
     }
   }
 }
