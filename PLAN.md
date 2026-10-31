@@ -1,6 +1,31 @@
 # Implementation plan
 
-## Current milestone: Section 25 orthogonality and simple diagonal root
+## Current milestone: ordered Section 25 localization comparison
+
+The [ordered Section 25 comparison](coverage/SECTION_25_ASSERTIONS.md)
+covers 37 groups on pp. 107–112: 28 matched, seven corrected and two
+contextual. No partial or pending groups remain in this local ledger.
+
+The original operator, physical norms, weighted P/Q splitting and actual
+inverse coefficients retain the exact quadratic threshold on closed
+strips. Signed indices, threshold equality and coincident canonical
+roots are included. The diagonal root is unique and simple.
+
+Direct corrections preserve the final localization and gap constants.
+They use the actual denominator kernel and component-product bound,
+restore inverse notation and the imaginary factor, and keep source
+and doubled physical tail cutoffs distinct. The global complex gap
+bound uses one common neighborhood with a proved height budget.
+No new Lean proof or refutation is added in this comparison.
+
+The unchanged Lean snapshot reuses the successful full check at commit b99e74d3669fa2d4bdc76e76be15ef2729fb1349: 8,578 build jobs, 7,684 public examples and a transitive axiom audit of 44,695 NLS declarations, with 21 inherited warnings and zero new. All 99 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Section 26. The [broader completion qualifications](coverage/COMPLETENESS.md)
+remain; these local ledger counts do not certify the whole dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 25 orthogonality and simple diagonal root
 
 The actual signed Fourier projections now have an explicit
 [orthogonality proof](NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean)

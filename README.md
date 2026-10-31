@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Section 25 now has explicit
-[weighted orthogonality](NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean)
-and a [unique simple diagonal root](NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean)
-at the exact quadratic threshold. Four positive theorems and three
-examples pass the full checks. The ordered comparison is next;
+Latest step: the [ordered Section 25 comparison](coverage/SECTION_25_ASSERTIONS.md)
+records 28 matched groups, seven direct corrections and two contextual
+groups. Exact norms, thresholds, multiplicities and final constants are
+retained. No new refutation is added. Section 26 is next;
 [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

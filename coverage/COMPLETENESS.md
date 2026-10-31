@@ -98,7 +98,13 @@ in the proof of Lemma 25.3, preserving the final constants one and eight.
 The [orthogonal P/Q splitting](../NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean)
 and [unique simple diagonal root](../NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean)
 are also proved at the exact weighted norms and quadratic threshold.
-Its ordered comparison remains in progress.
+The [ordered Section 25 ledger](SECTION_25_ASSERTIONS.md) compares 37 groups:
+28 matched, seven corrected and two contextual, with no partial or pending
+groups in that local ledger. It retains exact physical norms, closed strips,
+quadratic thresholds, signed indices and canonical multiplicities. Direct
+proof corrections preserve the final localization and gap constants. The
+complex global bound uses one common neighborhood before all weights and
+sources. No new refutation is added. Section 26 is next.
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
 certify complete formalization of the dissertation. No new refutation

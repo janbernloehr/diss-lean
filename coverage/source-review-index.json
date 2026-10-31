@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T03:29:35.549831+00:00",
-  "base_commit": "a4c7aa7dbf20129aa67fc6e7f132a841fb9692f6",
+  "published_utc": "2026-10-31T03:30:14.921727+00:00",
+  "base_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 175,
-    "module_hash_checks": 3814,
-    "distinct_modules": 1995
+    "review_records": 176,
+    "module_hash_checks": 3868,
+    "distinct_modules": 2008
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "a4c7aa7dbf20129aa67fc6e7f132a841fb9692f6",
-    "validated_state": "Fresh full check after four positive orthogonality and diagonal-root theorems and three API examples.",
+    "base_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
+    "validated_state": "Section25 ordered comparison changes documentation only. The exact Lean snapshot retains the successful orthogonality and simple diagonal-root full check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8578,
     "public_examples": 7684,
@@ -44,8 +44,9 @@
       "sha256": "7455899eaa09d70a0138b236018c1766723c9e985fbcb41a1668fcf21d82dc21"
     },
     "full_gate_log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77",
-    "qualification": "The recorded Lean snapshot passes full build, public examples and transitive axiom audit. The ordered Section25 comparison and broader qualifications remain open.",
-    "full_gate_log": "work/Section25AuxiliaryFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, public examples and transitive axiom audit. All source corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/Section25AuxiliaryFullCheck.log",
+    "validation_reused_from_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349"
   },
   "named_statements": [
     {
@@ -55641,6 +55642,1669 @@
         "log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77"
       },
       "source_record_sha256": "3b4ef13cbb6e3b17a022a3f2505335ff4a759e86225c2d3ee2bb6afa03124d5d"
+    },
+    "Section25OrderedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
+      "updated_utc": "2026-10-31T03:30:14.921727+00:00",
+      "source_lines": [
+        [
+          8782,
+          8793
+        ],
+        [
+          8796,
+          9220
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S25-001",
+          "source_lines": [
+            8784,
+            8791
+          ],
+          "requirement": "Original operator and quantitative localization objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection25_original",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.SourceSection24Data.section25"
+          ],
+          "reviewed_claims": [
+            "The localization concerns the actual period-one Zakharov-Shabat source and its original periodic spectrum. The Section 25 family extends the same Section 24 data."
+          ],
+          "qualification": "The introductory purpose is quantitative control of the higher-action asymptotic; later action estimates remain in their own sections."
+        },
+        {
+          "ordered_group": "S25-002",
+          "source_lines": [
+            8791,
+            8793
+          ],
+          "requirement": "Fixed-L2-norm spectral translation and lack of uniform asymptotic localization",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+            "NLS.ZakharovShabat.sourcePlaneWave_physical_norm_sq",
+            "NLS.ZakharovShabat.not_uniform_L2_sphere_spectral_localization",
+            "NLS.ZakharovShabat.not_uniform_L2_ball_spectral_localization"
+          ],
+          "reviewed_claims": [
+            "Opposite Fourier waves translate the actual constant spectrum by n*pi while preserving the physical L2 norm. Every positive L2 ball fails uniform asymptotic free-lattice localization at a fixed positive radius scale."
+          ],
+          "qualification": "These existing source theorems are retained unchanged. The claim is failure of uniform asymptotic localization, not failure of every coarse enclosure. No new obstruction proof is added."
+        },
+        {
+          "ordered_group": "S25-003",
+          "source_lines": [
+            8806,
+            8810
+          ],
+          "requirement": "Theorem 25.1 exact high-index threshold and radius",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_lt_pi_div_five"
+          ],
+          "reviewed_claims": [
+            "At 8*P^2<=1+abs(n), both canonical endpoints are within P^2/(1+abs(n))+sqrt(2)*P/(1+abs(2*n))<pi/5 of n*pi. P is the exact original component-sum H1 norm with weight 1+abs(2*n*pi)."
+          ],
+          "qualification": "Every complex H1 source, signed index and threshold equality is included. There is no extra qualitative cutoff."
+        },
+        {
+          "ordered_group": "S25-004",
+          "source_lines": [
+            8812,
+            8814
+          ],
+          "requirement": "Theorem 25.1 central box",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.H1_canonicalEndpoints_mem_centralBox"
+          ],
+          "reviewed_claims": [
+            "Every remaining indexed eigenvalue lies in the box abs(Re z)<=(8*P^2-1/2)*pi and abs(Im z)<=P. The endpoints exhaust the full periodic spectrum."
+          ],
+          "qualification": "The same physical norm and canonical labels are used for the high-index discs and central box."
+        },
+        {
+          "ordered_group": "S25-005",
+          "source_lines": [
+            8817,
+            8821
+          ],
+          "requirement": "Historical comparison and quadratic threshold",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization"
+          ],
+          "reviewed_claims": [
+            "The remark compares previous thresholds and highlights the quadratic threshold of Theorem 25.1."
+          ],
+          "qualification": "Historical attribution and comparisons with cited publications are contextual. The actual quadratic estimate is covered in S25-003."
+        },
+        {
+          "ordered_group": "S25-006",
+          "source_lines": [
+            8822,
+            8829
+          ],
+          "requirement": "Lyapunov-Schmidt approach and free double modes",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.weighted_eigenvector_iff_resonant_det_zero"
+          ],
+          "reviewed_claims": [
+            "Each free n*pi has algebraic multiplicity two, with exactly the two signed Fourier modes. Explicit resonant reduction reconstructs actual domain eigenvectors from the two-dimensional kernel."
+          ],
+          "qualification": "The free statement includes n=0 and excludes additional Jordan chains. Historical attribution of the method is contextual."
+        },
+        {
+          "ordered_group": "S25-007",
+          "source_lines": [
+            8831,
+            8840
+          ],
+          "requirement": "Closed strips and weighted complementary mode projections",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip",
+            "NLS.ZakharovShabat.resonantProjection",
+            "NLS.ZakharovShabat.complementaryProjection",
+            "NLS.ZakharovShabat.resonant_add_complementary",
+            "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero",
+            "NLS.ZakharovShabat.resonantSynthesis_coordinates",
+            "NLS.WeightedCoeffPair.norm_rpow_eq_tsum"
+          ],
+          "reviewed_claims": [
+            "The closed strips and actual signed Fourier masks give the P/Q splitting. Its two parts are orthogonal in the exact weighted Hilbert norm, with synthesis and coordinates realizing the resonant subspace."
+          ],
+          "qualification": "Orthogonality uses the sum of the two scalar Hilbert inner products after the exact weighting isometries. The positive orthogonality proof and its public example passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S25-008",
+          "source_lines": [
+            8841,
+            8855
+          ],
+          "requirement": "Original eigenvalue equation and P/Q splitting",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedFreePencil_eq_original",
+            "NLS.ZakharovShabat.pencil_resonantSynthesis",
+            "NLS.ZakharovShabat.pencil_complementaryProjection",
+            "NLS.ZakharovShabat.weightedReconstruction_residual"
+          ],
+          "reviewed_claims": [
+            "The weighted free pencil is the restriction of the original differential pencil. It preserves both Fourier subspaces, and the complete reconstructed residual is precisely the synthesized P-equation residual."
+          ],
+          "qualification": "All vectors lie in the actual one-derivative domain; the potential and physical signs are retained."
+        },
+        {
+          "ordered_group": "S25-009",
+          "source_lines": [
+            8857,
+            8868
+          ],
+          "requirement": "Complement inverse and actual potential-resolvent operator",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_unique",
+            "NLS.ZakharovShabat.weightedPotentialInverse_eq_original",
+            "NLS.ZakharovShabat.weightedQSolution_potential_source"
+          ],
+          "reviewed_claims": [
+            "The complementary free inverse solves the Q equation in both orders, including at the resonant center. T_n is the actual potential composed with that inverse, and its equation agrees with the original source operator."
+          ],
+          "qualification": "The resonant modes are removed before inversion. Derivative gain and uniqueness are proved on the entire closed strip."
+        },
+        {
+          "ordered_group": "S25-010",
+          "source_lines": [
+            8878,
+            8882
+          ],
+          "requirement": "Uniform first-operator shifted bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_two_le"
+          ],
+          "reviewed_claims": [
+            "For every integer shift i, the actual Hilbert operator satisfies norm_i(T_n f)<=2*norm(phi)*norm_(-i)(f), uniformly at all closed-strip points."
+          ],
+          "qualification": "The reversal of the shift and exact constant two are retained; no M1 assumption is needed for this first-operator bound."
+        },
+        {
+          "ordered_group": "S25-011",
+          "source_lines": [
+            8884,
+            8889
+          ],
+          "requirement": "Regularity factor and quadratic square threshold",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.ZakharovShabat.sourceM1_square_bound",
+            "NLS.ZakharovShabat.sourceM1_square_contraction"
+          ],
+          "reviewed_claims": [
+            "An exact linear factor in the spectral weight yields a square bound decaying as 1/(1+abs(n)) and a one-half contraction at the quadratic threshold, uniformly on bounded source sets."
+          ],
+          "qualification": "The cited lower-regularity refinements are contextual. The present quantitative result covers the full M1 class."
+        },
+        {
+          "ordered_group": "S25-012",
+          "source_lines": [
+            8891,
+            8895
+          ],
+          "requirement": "Lemma 25.2 square bound with constant four",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_square_bound",
+            "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+          ],
+          "reviewed_claims": [
+            "The actual conjugated square has operator norm at most 4*norm(phi)^2/(1+abs(n)) for every M1 weight and every closed-strip parameter."
+          ],
+          "qualification": "Conjugation realizes exactly the printed shifted norm. Zero and negative indices and arbitrary complex pairs are included."
+        },
+        {
+          "ordered_group": "S25-013",
+          "source_lines": [
+            8897,
+            8910
+          ],
+          "requirement": "Actual two-resolvent Fourier expansion",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.complementarySandwich",
+            "NLS.ZakharovShabat.complementarySandwich_apply",
+            "NLS.ZakharovShabat.linearWeightAbsoluteSeries",
+            "NLS.ZakharovShabat.summable_and_linearWeightAbsoluteSeries_le"
+          ],
+          "reviewed_claims": [
+            "The double complementary inverse has the literal signed Fourier coefficient expansion, and its full weighted absolute double series is summable."
+          ],
+          "qualification": "The reciprocal symbols remove the excluded resonant modes. Actual infinite sources are allowed; no finite-support premise is imposed."
+        },
+        {
+          "ordered_group": "S25-014",
+          "source_lines": [
+            8912,
+            8917
+          ],
+          "requirement": "M1 weight inequality",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.linear_signed_ratio"
+          ],
+          "reviewed_claims": [
+            "The exact factorization w(k)=(1+abs(k))*v(k) proves the displayed signed ratio w(k-n)<=bracket(k-n)*w(k+l)*w(-l-n)/(bracket(k+l)*bracket(l+n))."
+          ],
+          "qualification": "The residual v is a normalized monotone submultiplicative spectral weight, and all three indices are arbitrary integers."
+        },
+        {
+          "ordered_group": "S25-015",
+          "source_lines": [
+            8919,
+            8930
+          ],
+          "requirement": "Weighted l1 convolution and Holder estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.summable_convolution_coeff_product_sq",
+            "NLS.ZakharovShabat.tsum_convolution_coeff_product_sq",
+            "NLS.ZakharovShabat.summable_and_linearWeightKernel_pairing_le",
+            "NLS.ZakharovShabat.summable_and_linearWeightAbsoluteSeries_le"
+          ],
+          "reviewed_claims": [
+            "The coefficient product on the two-dimensional lattice has squared sum exactly equal to the product of squared Hilbert norms. Cauchy-Schwarz gives absolute summability and the scalar bound 4/(1+abs(n))."
+          ],
+          "qualification": "The proof uses the actual complementary denominators and exact shifted component norms."
+        },
+        {
+          "ordered_group": "S25-016",
+          "source_lines": [
+            8933,
+            8938
+          ],
+          "requirement": "Two explicit summation constants",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip_denominator_lower_pi",
+            "NLS.ZakharovShabat.norm_complementarySymbol_sq_le",
+            "NLS.ZakharovShabat.tsum_linearWeightKernel_sq_le",
+            "NLS.ZakharovShabat.summable_and_linearWeightKernel_pairing_le"
+          ],
+          "reviewed_claims": [
+            "Replace the two printed auxiliary summation estimates by the verified bound for the actual denominator kernel: its squared double sum is at most 16/(1+abs(n))^2. Its square root supplies the required constant four."
+          ],
+          "qualification": "This positive estimate keeps the pi/2 denominator gain. It does not assert separate proofs of the printed constants 32/5 and 5/2, and adds no refutation of them."
+        },
+        {
+          "ordered_group": "S25-017",
+          "source_lines": [
+            8940,
+            8950
+          ],
+          "requirement": "Component estimates and squared operator bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.shiftedNorm_complementarySandwich_linear",
+            "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_linear",
+            "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+          ],
+          "reviewed_claims": [
+            "Both signed scalar components satisfy the constant-four estimate. Multiplication by the actual potential gives the squared operator estimate with constant 16 and hence Lemma 25.2."
+          ],
+          "qualification": "The actual Hilbert pair norm combines the two component energies. The alternate positive kernel estimate changes no final constant."
+        },
+        {
+          "ordered_group": "S25-018",
+          "source_lines": [
+            8960,
+            8968
+          ],
+          "requirement": "One-half contraction, inverse and Q solution",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_square_contraction",
+            "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+            "NLS.ZakharovShabat.weightedCorrection_formula",
+            "NLS.ZakharovShabat.weightedQSolution_equation",
+            "NLS.ZakharovShabat.weightedQSolution_unique",
+            "NLS.ZakharovShabat.weightedQSolution_potential_source"
+          ],
+          "reviewed_claims": [
+            "At the exact threshold the squared operator is a one-half contraction. The convergent even Neumann inverse gives a unique Q solution and the displayed identity Phi(v)=T_hat*T_n*Phi(u)."
+          ],
+          "qualification": "Both inverse orders and the original derivative domain are retained, including equality at the threshold."
+        },
+        {
+          "ordered_group": "S25-019",
+          "source_lines": [
+            8969,
+            8978
+          ],
+          "requirement": "Reduced matrix with equal diagonal coefficients",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedSourceResonantMatrix_form",
+            "NLS.ZakharovShabat.weightedSourceResonantMatrix_det",
+            "NLS.ZakharovShabat.weighted_eigenvector_iff_source_resonant_det_zero"
+          ],
+          "reviewed_claims": [
+            "The reduced matrix has the displayed common diagonal and b-plus in its upper-right entry in the source basis order. Its determinant vanishes exactly for an actual weighted eigenvector."
+          ],
+          "qualification": "Reversing both basis indices reconciles physical mode order and preserves the determinant. The equal diagonals are proved for the actual inverse."
+        },
+        {
+          "ordered_group": "S25-020",
+          "source_lines": [
+            8979,
+            8990
+          ],
+          "requirement": "Formula (5.7) literal diagonal and off-diagonal inverse series",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_parity",
+            "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder",
+            "NLS.ZakharovShabat.weightedResonantA_hasSum",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder_hasSum",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_hasSum"
+          ],
+          "reviewed_claims": [
+            "Formula (5.7) gives both diagonal representations and both Fourier remainders using the actual inverse (I-T_n^2)^-1. The corresponding parity series converge to those coefficients."
+          ],
+          "qualification": "The original first component is read at -n and the second at n after period-one normalization; physical doubled-frequency signs are explicit."
+        },
+        {
+          "ordered_group": "S25-021",
+          "source_lines": [
+            8992,
+            8994
+          ],
+          "requirement": "Joint analyticity and coefficient symmetries",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic",
+            "NLS.ZakharovShabat.weightedResonantA_conj",
+            "NLS.ZakharovShabat.weightedResonantBPlus_conj",
+            "NLS.ZakharovShabat.weightedResonantBMinus_conj"
+          ],
+          "reviewed_claims": [
+            "The coefficients are jointly analytic in the source and spectral parameter. Their conjugation symmetries exchange off-diagonal entries with the source reality sign and conjugate the common diagonal."
+          ],
+          "qualification": "The reality-sign premise is retained for both symmetry conclusions. Analyticity itself holds for arbitrary complex sources."
+        },
+        {
+          "ordered_group": "S25-022",
+          "source_lines": [
+            8996,
+            9004
+          ],
+          "requirement": "Lemma 25.3 diagonal and separate-component remainder bounds",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_coefficients",
+            "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic"
+          ],
+          "reviewed_claims": [
+            "Lemma 25.3 retains diagonal constant one and off-diagonal constant eight with each remainder using its own component norm. The analytic extensions agree with the inverse-defined coefficients throughout the full closed strip."
+          ],
+          "qualification": "All M1 weights and original complex sources are included at the exact quadratic threshold; extension defaults outside the correction domain are not used."
+        },
+        {
+          "ordered_group": "S25-023",
+          "source_lines": [
+            9006,
+            9028
+          ],
+          "requirement": "Convergent inverse and first diagonal bound",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBPlus_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBMinus_partialSum_error",
+            "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+            "NLS.ZakharovShabat.sourceM1_diagonal_component_bound"
+          ],
+          "reviewed_claims": [
+            "Uniform geometric error estimates justify the actual parity series on the entire strip. The corrected diagonal estimate is 2*norm(first)*norm(second)/(1+abs(n)), preserving both component norms."
+          ],
+          "qualification": "The exact quadratic condition supplies the half-contraction used in the geometric estimates. The positive component-product proof passed the full checks and is committed and pushed; no new refutation is added."
+        },
+        {
+          "ordered_group": "S25-024",
+          "source_lines": [
+            9029,
+            9038
+          ],
+          "requirement": "Second diagonal representation and combined constant",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_parity",
+            "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+            "NLS.ZakharovShabat.norm_weightedResonantA_linear",
+            "NLS.ZakharovShabat.sourceM1_diagonal_component_bound"
+          ],
+          "reviewed_claims": [
+            "Both diagonal expressions use (I-T_n^2)^-1. The positive product estimate and 2ab<=a^2+b^2 give the final total-norm bound with constant one."
+          ],
+          "qualification": "This directly corrects the omitted inverse exponents and the intermediate component-square estimates. The statement of Lemma 25.3 keeps its final constants."
+        },
+        {
+          "ordered_group": "S25-025",
+          "source_lines": [
+            9039,
+            9050
+          ],
+          "requirement": "Off-diagonal shifted Fourier remainder",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weighted_resonant_coordinate_le",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder_linear",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_linear"
+          ],
+          "reviewed_claims": [
+            "Evaluation of the resonant coordinate gains exactly w(2*n). The square bound and even inverse give each Fourier remainder constant eight times the squared pair norm and its own component norm."
+          ],
+          "qualification": "Both physical Fourier signs and the shifted norms are explicit; neither remainder substitutes the other component norm."
+        },
+        {
+          "ordered_group": "S25-026",
+          "source_lines": [
+            9062,
+            9075
+          ],
+          "requirement": "Lemma 25.4 exact canonical roots, multiplicities, radius and gap bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_canonical_pair",
+            "NLS.ZakharovShabat.linearWeight_exists_resonantRoots",
+            "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le"
+          ],
+          "reviewed_claims": [
+            "The actual determinant has exactly the canonical endpoint pair throughout the closed strip, with analytic order equal to the multiset count. Both roots lie in the source disc and their squared separation is at most six times the full-strip product supremum."
+          ],
+          "qualification": "The original algebraic multiplicities are retained. Coincident endpoints count twice; no analytic root branches or distinct-root premise are chosen."
+        },
+        {
+          "ordered_group": "S25-027",
+          "source_lines": [
+            9077,
+            9092
+          ],
+          "requirement": "Determinant radius from coefficient estimates",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_product_le",
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_product_bracket_le",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_localization",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_lt_pi_div_five"
+          ],
+          "reviewed_claims": [
+            "The coefficient bounds give weighted product decay and force every determinant zero into the exact radius P^2/bracket(n)+sqrt(2)*P/bracket(2*n), strictly below pi/5."
+          ],
+          "qualification": "The argument applies at threshold equality and throughout the closed strip. It uses the actual coefficients and exact Hilbert norm."
+        },
+        {
+          "ordered_group": "S25-028",
+          "source_lines": [
+            9094,
+            9107
+          ],
+          "requirement": "Rouche root count and canonical enumeration",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+            "NLS.ZakharovShabat.linearWeight_determinant_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_canonicalEndpointPair",
+            "NLS.ZakharovShabat.sourceH1_canonical_pair"
+          ],
+          "reviewed_claims": [
+            "The auxiliary function h(z)=z-n*pi-a_n(z) has exactly one simple root in the printed source disc and no other root in the strip. The determinant has total analytic multiplicity two there, identified with the original canonical endpoints."
+          ],
+          "qualification": "The auxiliary root is constructed by contraction at the exact threshold. The determinant count uses a direct Rouche comparison on the pi/4 circle followed by localization to the smaller source disc. The positive simple-root proof and its public examples passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S25-029",
+          "source_lines": [
+            9109,
+            9120
+          ],
+          "requirement": "Theorem 25.1 remaining horizontal spectral box",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.H1_canonicalEndpoints_mem_centralBox"
+          ],
+          "reviewed_claims": [
+            "Use the precise Lemma 25.4 localization at the quadratic threshold to place all remaining endpoints in the stated central horizontal box."
+          ],
+          "qualification": "The immediate reference is clarified from the printed Lemma 6.9 to Lemma 25.4. The complete original spectrum and canonical labels are retained."
+        },
+        {
+          "ordered_group": "S25-030",
+          "source_lines": [
+            9122,
+            9131
+          ],
+          "requirement": "Imaginary-part estimate from physical H1 norm",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.abs_im_le_H1_norm",
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The positive spectral-height proof gives abs(Im lambda)<=P in the exact original physical H1 norm for every complex source. In the displayed complex identity use 2*i*Im(lambda)=lambda-conj(lambda)."
+          ],
+          "qualification": "The existing proof obtains the height bound from the actual operator and coefficient estimates. It does not require the printed intermediate identity without the factor i, and no refutation is added."
+        },
+        {
+          "ordered_group": "S25-031",
+          "source_lines": [
+            9133,
+            9134
+          ],
+          "requirement": "Transition to weighted gap estimates",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.sourceM1_gap_individual"
+          ],
+          "reviewed_claims": [
+            "The sentence announces the use of the following weighted gap estimates in Section 28."
+          ],
+          "qualification": "It introduces no additional estimate; the tail and individual statements are compared below."
+        },
+        {
+          "ordered_group": "S25-032",
+          "source_lines": [
+            9136,
+            9148
+          ],
+          "requirement": "Proposition 25.5 inclusive tail with constants 6 and 1152",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le"
+          ],
+          "reviewed_claims": [
+            "For every complex M1 source and inclusive cutoff N with 8*P^2<=1+N, the weighted squared-gap tail is summable and bounded by 6*norm(R_N source)^2+1152*P^6/(1+N)."
+          ],
+          "qualification": "N=0, negative indices and both boundary frequencies are included. The tail estimate needs no extra complex neighborhood assumption."
+        },
+        {
+          "ordered_group": "S25-033",
+          "source_lines": [
+            9148,
+            9156
+          ],
+          "requirement": "Common complex neighborhood and global constant 265",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.section25_gap_neighborhood",
+            "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+            "NLS.ZakharovShabat.SourceSection24Data.section25",
+            "NLS.ZakharovShabat.sourceSection25_original"
+          ],
+          "reviewed_claims": [
+            "One open neighborhood T of the entire real source locus is chosen before every M1 weight and source. On T, the globally summable gap squares obey 265*pi^2*w[16*P^2]^2*(1+P^2)*P^2."
+          ],
+          "qualification": "T is the intersection of the retained original domain U with the spectral-height neighborhood, and T is contained in U. No weight-dependent or source-dependent replacement of T is made."
+        },
+        {
+          "ordered_group": "S25-034",
+          "source_lines": [
+            9167,
+            9183
+          ],
+          "requirement": "Squared gap and both Fourier remainder estimates",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le_parameter",
+            "NLS.ZakharovShabat.sourceM1_coefficients",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le"
+          ],
+          "reviewed_claims": [
+            "The factor-six squared-gap estimate combines with both leading Fourier terms and their separate remainder bounds. The resulting positive sums retain both component energies and the squared errors."
+          ],
+          "qualification": "The proof handles arbitrary M1 weights, including superlinear growth, and actual canonical gaps. It does not require a linear upper bound on the weight."
+        },
+        {
+          "ordered_group": "S25-035",
+          "source_lines": [
+            9185,
+            9196
+          ],
+          "requirement": "Tail summation and exact inclusive physical cutoff",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "reviewed_claims": [
+            "Use the inclusive original-source tail R_N. Its period-doubled physical realization has cutoff 2*N, with equal tail norm. Summing the squared reciprocal bracket gives the final 1152 constant."
+          ],
+          "qualification": "This keeps source and physical cutoffs distinct instead of relabeling the printed R_(2N) as the original R_N. The cutoff endpoints and N=0 are preserved."
+        },
+        {
+          "ordered_group": "S25-036",
+          "source_lines": [
+            9198,
+            9208
+          ],
+          "requirement": "Central complex gap budget and global cutoff choice",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_central_budget_of_height_one",
+            "NLS.ZakharovShabat.gap_global_265_height_budget",
+            "NLS.ZakharovShabat.M1_canonicalGap_global_summable_and_le_of_height_one",
+            "NLS.ZakharovShabat.SourceSection24Data.section25_gap_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The central complex gap budget uses horizontal packing plus bounded spectral heights. Together with the tail bound and cutoff choice it proves the printed global constant 265*pi^2 on one common neighborhood."
+          ],
+          "qualification": "This supplies a direct positive replacement for the arbitrary-isolating-disc diameter argument. No new assertion or refutation about those disc diameters is needed."
+        },
+        {
+          "ordered_group": "S25-037",
+          "source_lines": [
+            9210,
+            9217
+          ],
+          "requirement": "Formula (5.8) individual weighted gap estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_le",
+            "NLS.ZakharovShabat.sourceM1_gap_individual"
+          ],
+          "reviewed_claims": [
+            "At the exact quadratic threshold each weighted off-diagonal is at most twice its component norm, giving w(2*n)*norm(gap_n)<=sqrt(12)*P."
+          ],
+          "qualification": "Every M1 weight, including superlinear ones, and every signed index is covered. The original source gap and component-sum norm are used."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "S25-001",
+          "source_lines": [
+            8784,
+            8791
+          ],
+          "requirement": "Original operator and quantitative localization objective",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection25_original",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.SourceSection24Data.section25"
+          ],
+          "reviewed_claims": [
+            "The localization concerns the actual period-one Zakharov-Shabat source and its original periodic spectrum. The Section 25 family extends the same Section 24 data."
+          ],
+          "qualification": "The introductory purpose is quantitative control of the higher-action asymptotic; later action estimates remain in their own sections."
+        },
+        {
+          "ordered_group": "S25-002",
+          "source_lines": [
+            8791,
+            8793
+          ],
+          "requirement": "Fixed-L2-norm spectral translation and lack of uniform asymptotic localization",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+            "NLS.ZakharovShabat.sourcePlaneWave_physical_norm_sq",
+            "NLS.ZakharovShabat.not_uniform_L2_sphere_spectral_localization",
+            "NLS.ZakharovShabat.not_uniform_L2_ball_spectral_localization"
+          ],
+          "reviewed_claims": [
+            "Opposite Fourier waves translate the actual constant spectrum by n*pi while preserving the physical L2 norm. Every positive L2 ball fails uniform asymptotic free-lattice localization at a fixed positive radius scale."
+          ],
+          "qualification": "These existing source theorems are retained unchanged. The claim is failure of uniform asymptotic localization, not failure of every coarse enclosure. No new obstruction proof is added."
+        },
+        {
+          "ordered_group": "S25-003",
+          "source_lines": [
+            8806,
+            8810
+          ],
+          "requirement": "Theorem 25.1 exact high-index threshold and radius",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_lt_pi_div_five"
+          ],
+          "reviewed_claims": [
+            "At 8*P^2<=1+abs(n), both canonical endpoints are within P^2/(1+abs(n))+sqrt(2)*P/(1+abs(2*n))<pi/5 of n*pi. P is the exact original component-sum H1 norm with weight 1+abs(2*n*pi)."
+          ],
+          "qualification": "Every complex H1 source, signed index and threshold equality is included. There is no extra qualitative cutoff."
+        },
+        {
+          "ordered_group": "S25-004",
+          "source_lines": [
+            8812,
+            8814
+          ],
+          "requirement": "Theorem 25.1 central box",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.H1_canonicalEndpoints_mem_centralBox"
+          ],
+          "reviewed_claims": [
+            "Every remaining indexed eigenvalue lies in the box abs(Re z)<=(8*P^2-1/2)*pi and abs(Im z)<=P. The endpoints exhaust the full periodic spectrum."
+          ],
+          "qualification": "The same physical norm and canonical labels are used for the high-index discs and central box."
+        },
+        {
+          "ordered_group": "S25-005",
+          "source_lines": [
+            8817,
+            8821
+          ],
+          "requirement": "Historical comparison and quadratic threshold",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization"
+          ],
+          "reviewed_claims": [
+            "The remark compares previous thresholds and highlights the quadratic threshold of Theorem 25.1."
+          ],
+          "qualification": "Historical attribution and comparisons with cited publications are contextual. The actual quadratic estimate is covered in S25-003."
+        },
+        {
+          "ordered_group": "S25-006",
+          "source_lines": [
+            8822,
+            8829
+          ],
+          "requirement": "Lyapunov-Schmidt approach and free double modes",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+            "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+            "NLS.ZakharovShabat.weighted_eigenvector_iff_resonant_det_zero"
+          ],
+          "reviewed_claims": [
+            "Each free n*pi has algebraic multiplicity two, with exactly the two signed Fourier modes. Explicit resonant reduction reconstructs actual domain eigenvectors from the two-dimensional kernel."
+          ],
+          "qualification": "The free statement includes n=0 and excludes additional Jordan chains. Historical attribution of the method is contextual."
+        },
+        {
+          "ordered_group": "S25-007",
+          "source_lines": [
+            8831,
+            8840
+          ],
+          "requirement": "Closed strips and weighted complementary mode projections",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip",
+            "NLS.ZakharovShabat.resonantProjection",
+            "NLS.ZakharovShabat.complementaryProjection",
+            "NLS.ZakharovShabat.resonant_add_complementary",
+            "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero",
+            "NLS.ZakharovShabat.resonantSynthesis_coordinates",
+            "NLS.WeightedCoeffPair.norm_rpow_eq_tsum"
+          ],
+          "reviewed_claims": [
+            "The closed strips and actual signed Fourier masks give the P/Q splitting. Its two parts are orthogonal in the exact weighted Hilbert norm, with synthesis and coordinates realizing the resonant subspace."
+          ],
+          "qualification": "Orthogonality uses the sum of the two scalar Hilbert inner products after the exact weighting isometries. The positive orthogonality proof and its public example passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S25-008",
+          "source_lines": [
+            8841,
+            8855
+          ],
+          "requirement": "Original eigenvalue equation and P/Q splitting",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedFreePencil_eq_original",
+            "NLS.ZakharovShabat.pencil_resonantSynthesis",
+            "NLS.ZakharovShabat.pencil_complementaryProjection",
+            "NLS.ZakharovShabat.weightedReconstruction_residual"
+          ],
+          "reviewed_claims": [
+            "The weighted free pencil is the restriction of the original differential pencil. It preserves both Fourier subspaces, and the complete reconstructed residual is precisely the synthesized P-equation residual."
+          ],
+          "qualification": "All vectors lie in the actual one-derivative domain; the potential and physical signs are retained."
+        },
+        {
+          "ordered_group": "S25-009",
+          "source_lines": [
+            8857,
+            8868
+          ],
+          "requirement": "Complement inverse and actual potential-resolvent operator",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+            "NLS.ZakharovShabat.complementaryFreeDomainInverse_unique",
+            "NLS.ZakharovShabat.weightedPotentialInverse_eq_original",
+            "NLS.ZakharovShabat.weightedQSolution_potential_source"
+          ],
+          "reviewed_claims": [
+            "The complementary free inverse solves the Q equation in both orders, including at the resonant center. T_n is the actual potential composed with that inverse, and its equation agrees with the original source operator."
+          ],
+          "qualification": "The resonant modes are removed before inversion. Derivative gain and uniqueness are proved on the entire closed strip."
+        },
+        {
+          "ordered_group": "S25-010",
+          "source_lines": [
+            8878,
+            8882
+          ],
+          "requirement": "Uniform first-operator shifted bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_two_le"
+          ],
+          "reviewed_claims": [
+            "For every integer shift i, the actual Hilbert operator satisfies norm_i(T_n f)<=2*norm(phi)*norm_(-i)(f), uniformly at all closed-strip points."
+          ],
+          "qualification": "The reversal of the shift and exact constant two are retained; no M1 assumption is needed for this first-operator bound."
+        },
+        {
+          "ordered_group": "S25-011",
+          "source_lines": [
+            8884,
+            8889
+          ],
+          "requirement": "Regularity factor and quadratic square threshold",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.ZakharovShabat.sourceM1_square_bound",
+            "NLS.ZakharovShabat.sourceM1_square_contraction"
+          ],
+          "reviewed_claims": [
+            "An exact linear factor in the spectral weight yields a square bound decaying as 1/(1+abs(n)) and a one-half contraction at the quadratic threshold, uniformly on bounded source sets."
+          ],
+          "qualification": "The cited lower-regularity refinements are contextual. The present quantitative result covers the full M1 class."
+        },
+        {
+          "ordered_group": "S25-012",
+          "source_lines": [
+            8891,
+            8895
+          ],
+          "requirement": "Lemma 25.2 square bound with constant four",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_square_bound",
+            "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+          ],
+          "reviewed_claims": [
+            "The actual conjugated square has operator norm at most 4*norm(phi)^2/(1+abs(n)) for every M1 weight and every closed-strip parameter."
+          ],
+          "qualification": "Conjugation realizes exactly the printed shifted norm. Zero and negative indices and arbitrary complex pairs are included."
+        },
+        {
+          "ordered_group": "S25-013",
+          "source_lines": [
+            8897,
+            8910
+          ],
+          "requirement": "Actual two-resolvent Fourier expansion",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.complementarySandwich",
+            "NLS.ZakharovShabat.complementarySandwich_apply",
+            "NLS.ZakharovShabat.linearWeightAbsoluteSeries",
+            "NLS.ZakharovShabat.summable_and_linearWeightAbsoluteSeries_le"
+          ],
+          "reviewed_claims": [
+            "The double complementary inverse has the literal signed Fourier coefficient expansion, and its full weighted absolute double series is summable."
+          ],
+          "qualification": "The reciprocal symbols remove the excluded resonant modes. Actual infinite sources are allowed; no finite-support premise is imposed."
+        },
+        {
+          "ordered_group": "S25-014",
+          "source_lines": [
+            8912,
+            8917
+          ],
+          "requirement": "M1 weight inequality",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.SpectralWeight.HasLinearFactor",
+            "NLS.SpectralWeight.linear_signed_ratio"
+          ],
+          "reviewed_claims": [
+            "The exact factorization w(k)=(1+abs(k))*v(k) proves the displayed signed ratio w(k-n)<=bracket(k-n)*w(k+l)*w(-l-n)/(bracket(k+l)*bracket(l+n))."
+          ],
+          "qualification": "The residual v is a normalized monotone submultiplicative spectral weight, and all three indices are arbitrary integers."
+        },
+        {
+          "ordered_group": "S25-015",
+          "source_lines": [
+            8919,
+            8930
+          ],
+          "requirement": "Weighted l1 convolution and Holder estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.summable_convolution_coeff_product_sq",
+            "NLS.ZakharovShabat.tsum_convolution_coeff_product_sq",
+            "NLS.ZakharovShabat.summable_and_linearWeightKernel_pairing_le",
+            "NLS.ZakharovShabat.summable_and_linearWeightAbsoluteSeries_le"
+          ],
+          "reviewed_claims": [
+            "The coefficient product on the two-dimensional lattice has squared sum exactly equal to the product of squared Hilbert norms. Cauchy-Schwarz gives absolute summability and the scalar bound 4/(1+abs(n))."
+          ],
+          "qualification": "The proof uses the actual complementary denominators and exact shifted component norms."
+        },
+        {
+          "ordered_group": "S25-016",
+          "source_lines": [
+            8933,
+            8938
+          ],
+          "requirement": "Two explicit summation constants",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip_denominator_lower_pi",
+            "NLS.ZakharovShabat.norm_complementarySymbol_sq_le",
+            "NLS.ZakharovShabat.tsum_linearWeightKernel_sq_le",
+            "NLS.ZakharovShabat.summable_and_linearWeightKernel_pairing_le"
+          ],
+          "reviewed_claims": [
+            "Replace the two printed auxiliary summation estimates by the verified bound for the actual denominator kernel: its squared double sum is at most 16/(1+abs(n))^2. Its square root supplies the required constant four."
+          ],
+          "qualification": "This positive estimate keeps the pi/2 denominator gain. It does not assert separate proofs of the printed constants 32/5 and 5/2, and adds no refutation of them."
+        },
+        {
+          "ordered_group": "S25-017",
+          "source_lines": [
+            8940,
+            8950
+          ],
+          "requirement": "Component estimates and squared operator bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.shiftedNorm_complementarySandwich_linear",
+            "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_linear",
+            "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear"
+          ],
+          "reviewed_claims": [
+            "Both signed scalar components satisfy the constant-four estimate. Multiplication by the actual potential gives the squared operator estimate with constant 16 and hence Lemma 25.2."
+          ],
+          "qualification": "The actual Hilbert pair norm combines the two component energies. The alternate positive kernel estimate changes no final constant."
+        },
+        {
+          "ordered_group": "S25-018",
+          "source_lines": [
+            8960,
+            8968
+          ],
+          "requirement": "One-half contraction, inverse and Q solution",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_square_contraction",
+            "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+            "NLS.ZakharovShabat.weightedCorrection_formula",
+            "NLS.ZakharovShabat.weightedQSolution_equation",
+            "NLS.ZakharovShabat.weightedQSolution_unique",
+            "NLS.ZakharovShabat.weightedQSolution_potential_source"
+          ],
+          "reviewed_claims": [
+            "At the exact threshold the squared operator is a one-half contraction. The convergent even Neumann inverse gives a unique Q solution and the displayed identity Phi(v)=T_hat*T_n*Phi(u)."
+          ],
+          "qualification": "Both inverse orders and the original derivative domain are retained, including equality at the threshold."
+        },
+        {
+          "ordered_group": "S25-019",
+          "source_lines": [
+            8969,
+            8978
+          ],
+          "requirement": "Reduced matrix with equal diagonal coefficients",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedSourceResonantMatrix_form",
+            "NLS.ZakharovShabat.weightedSourceResonantMatrix_det",
+            "NLS.ZakharovShabat.weighted_eigenvector_iff_source_resonant_det_zero"
+          ],
+          "reviewed_claims": [
+            "The reduced matrix has the displayed common diagonal and b-plus in its upper-right entry in the source basis order. Its determinant vanishes exactly for an actual weighted eigenvector."
+          ],
+          "qualification": "Reversing both basis indices reconciles physical mode order and preserves the determinant. The equal diagonals are proved for the actual inverse."
+        },
+        {
+          "ordered_group": "S25-020",
+          "source_lines": [
+            8979,
+            8990
+          ],
+          "requirement": "Formula (5.7) literal diagonal and off-diagonal inverse series",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_parity",
+            "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder",
+            "NLS.ZakharovShabat.weightedResonantA_hasSum",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder_hasSum",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_hasSum"
+          ],
+          "reviewed_claims": [
+            "Formula (5.7) gives both diagonal representations and both Fourier remainders using the actual inverse (I-T_n^2)^-1. The corresponding parity series converge to those coefficients."
+          ],
+          "qualification": "The original first component is read at -n and the second at n after period-one normalization; physical doubled-frequency signs are explicit."
+        },
+        {
+          "ordered_group": "S25-021",
+          "source_lines": [
+            8992,
+            8994
+          ],
+          "requirement": "Joint analyticity and coefficient symmetries",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic",
+            "NLS.ZakharovShabat.weightedResonantA_conj",
+            "NLS.ZakharovShabat.weightedResonantBPlus_conj",
+            "NLS.ZakharovShabat.weightedResonantBMinus_conj"
+          ],
+          "reviewed_claims": [
+            "The coefficients are jointly analytic in the source and spectral parameter. Their conjugation symmetries exchange off-diagonal entries with the source reality sign and conjugate the common diagonal."
+          ],
+          "qualification": "The reality-sign premise is retained for both symmetry conclusions. Analyticity itself holds for arbitrary complex sources."
+        },
+        {
+          "ordered_group": "S25-022",
+          "source_lines": [
+            8996,
+            9004
+          ],
+          "requirement": "Lemma 25.3 diagonal and separate-component remainder bounds",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_coefficients",
+            "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic"
+          ],
+          "reviewed_claims": [
+            "Lemma 25.3 retains diagonal constant one and off-diagonal constant eight with each remainder using its own component norm. The analytic extensions agree with the inverse-defined coefficients throughout the full closed strip."
+          ],
+          "qualification": "All M1 weights and original complex sources are included at the exact quadratic threshold; extension defaults outside the correction domain are not used."
+        },
+        {
+          "ordered_group": "S25-023",
+          "source_lines": [
+            9006,
+            9028
+          ],
+          "requirement": "Convergent inverse and first diagonal bound",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBPlus_partialSum_error",
+            "NLS.ZakharovShabat.weightedResonantBMinus_partialSum_error",
+            "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+            "NLS.ZakharovShabat.sourceM1_diagonal_component_bound"
+          ],
+          "reviewed_claims": [
+            "Uniform geometric error estimates justify the actual parity series on the entire strip. The corrected diagonal estimate is 2*norm(first)*norm(second)/(1+abs(n)), preserving both component norms."
+          ],
+          "qualification": "The exact quadratic condition supplies the half-contraction used in the geometric estimates. The positive component-product proof passed the full checks and is committed and pushed; no new refutation is added."
+        },
+        {
+          "ordered_group": "S25-024",
+          "source_lines": [
+            9029,
+            9038
+          ],
+          "requirement": "Second diagonal representation and combined constant",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedResonantA_parity",
+            "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+            "NLS.ZakharovShabat.norm_weightedResonantA_linear",
+            "NLS.ZakharovShabat.sourceM1_diagonal_component_bound"
+          ],
+          "reviewed_claims": [
+            "Both diagonal expressions use (I-T_n^2)^-1. The positive product estimate and 2ab<=a^2+b^2 give the final total-norm bound with constant one."
+          ],
+          "qualification": "This directly corrects the omitted inverse exponents and the intermediate component-square estimates. The statement of Lemma 25.3 keeps its final constants."
+        },
+        {
+          "ordered_group": "S25-025",
+          "source_lines": [
+            9039,
+            9050
+          ],
+          "requirement": "Off-diagonal shifted Fourier remainder",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.weighted_resonant_coordinate_le",
+            "NLS.ZakharovShabat.weightedResonantBPlus_remainder_linear",
+            "NLS.ZakharovShabat.weightedResonantBMinus_remainder_linear"
+          ],
+          "reviewed_claims": [
+            "Evaluation of the resonant coordinate gains exactly w(2*n). The square bound and even inverse give each Fourier remainder constant eight times the squared pair norm and its own component norm."
+          ],
+          "qualification": "Both physical Fourier signs and the shifted norms are explicit; neither remainder substitutes the other component norm."
+        },
+        {
+          "ordered_group": "S25-026",
+          "source_lines": [
+            9062,
+            9075
+          ],
+          "requirement": "Lemma 25.4 exact canonical roots, multiplicities, radius and gap bound",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_canonical_pair",
+            "NLS.ZakharovShabat.linearWeight_exists_resonantRoots",
+            "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le"
+          ],
+          "reviewed_claims": [
+            "The actual determinant has exactly the canonical endpoint pair throughout the closed strip, with analytic order equal to the multiset count. Both roots lie in the source disc and their squared separation is at most six times the full-strip product supremum."
+          ],
+          "qualification": "The original algebraic multiplicities are retained. Coincident endpoints count twice; no analytic root branches or distinct-root premise are chosen."
+        },
+        {
+          "ordered_group": "S25-027",
+          "source_lines": [
+            9077,
+            9092
+          ],
+          "requirement": "Determinant radius from coefficient estimates",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_product_le",
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_product_bracket_le",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_localization",
+            "NLS.ZakharovShabat.quadraticLocalizationRadius_lt_pi_div_five"
+          ],
+          "reviewed_claims": [
+            "The coefficient bounds give weighted product decay and force every determinant zero into the exact radius P^2/bracket(n)+sqrt(2)*P/bracket(2*n), strictly below pi/5."
+          ],
+          "qualification": "The argument applies at threshold equality and throughout the closed strip. It uses the actual coefficients and exact Hilbert norm."
+        },
+        {
+          "ordered_group": "S25-028",
+          "source_lines": [
+            9094,
+            9107
+          ],
+          "requirement": "Rouche root count and canonical enumeration",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+            "NLS.ZakharovShabat.linearWeight_determinant_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+            "NLS.ZakharovShabat.linearWeight_canonicalEndpointPair",
+            "NLS.ZakharovShabat.sourceH1_canonical_pair"
+          ],
+          "reviewed_claims": [
+            "The auxiliary function h(z)=z-n*pi-a_n(z) has exactly one simple root in the printed source disc and no other root in the strip. The determinant has total analytic multiplicity two there, identified with the original canonical endpoints."
+          ],
+          "qualification": "The auxiliary root is constructed by contraction at the exact threshold. The determinant count uses a direct Rouche comparison on the pi/4 circle followed by localization to the smaller source disc. The positive simple-root proof and its public examples passed the full checks and are committed and pushed."
+        },
+        {
+          "ordered_group": "S25-029",
+          "source_lines": [
+            9109,
+            9120
+          ],
+          "requirement": "Theorem 25.1 remaining horizontal spectral box",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+            "NLS.ZakharovShabat.H1_canonicalEndpoints_mem_centralBox"
+          ],
+          "reviewed_claims": [
+            "Use the precise Lemma 25.4 localization at the quadratic threshold to place all remaining endpoints in the stated central horizontal box."
+          ],
+          "qualification": "The immediate reference is clarified from the printed Lemma 6.9 to Lemma 25.4. The complete original spectrum and canonical labels are retained."
+        },
+        {
+          "ordered_group": "S25-030",
+          "source_lines": [
+            9122,
+            9131
+          ],
+          "requirement": "Imaginary-part estimate from physical H1 norm",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.abs_im_le_H1_norm",
+            "NLS.ZakharovShabat.sourceH1_uniform_localization",
+            "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq"
+          ],
+          "reviewed_claims": [
+            "The positive spectral-height proof gives abs(Im lambda)<=P in the exact original physical H1 norm for every complex source. In the displayed complex identity use 2*i*Im(lambda)=lambda-conj(lambda)."
+          ],
+          "qualification": "The existing proof obtains the height bound from the actual operator and coefficient estimates. It does not require the printed intermediate identity without the factor i, and no refutation is added."
+        },
+        {
+          "ordered_group": "S25-031",
+          "source_lines": [
+            9133,
+            9134
+          ],
+          "requirement": "Transition to weighted gap estimates",
+          "ordered_status": "contextual",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.sourceM1_gap_individual"
+          ],
+          "reviewed_claims": [
+            "The sentence announces the use of the following weighted gap estimates in Section 28."
+          ],
+          "qualification": "It introduces no additional estimate; the tail and individual statements are compared below."
+        },
+        {
+          "ordered_group": "S25-032",
+          "source_lines": [
+            9136,
+            9148
+          ],
+          "requirement": "Proposition 25.5 inclusive tail with constants 6 and 1152",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceM1_gap_tail",
+            "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le"
+          ],
+          "reviewed_claims": [
+            "For every complex M1 source and inclusive cutoff N with 8*P^2<=1+N, the weighted squared-gap tail is summable and bounded by 6*norm(R_N source)^2+1152*P^6/(1+N)."
+          ],
+          "qualification": "N=0, negative indices and both boundary frequencies are included. The tail estimate needs no extra complex neighborhood assumption."
+        },
+        {
+          "ordered_group": "S25-033",
+          "source_lines": [
+            9148,
+            9156
+          ],
+          "requirement": "Common complex neighborhood and global constant 265",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection24Data.section25_gap_neighborhood",
+            "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+            "NLS.ZakharovShabat.SourceSection24Data.section25",
+            "NLS.ZakharovShabat.sourceSection25_original"
+          ],
+          "reviewed_claims": [
+            "One open neighborhood T of the entire real source locus is chosen before every M1 weight and source. On T, the globally summable gap squares obey 265*pi^2*w[16*P^2]^2*(1+P^2)*P^2."
+          ],
+          "qualification": "T is the intersection of the retained original domain U with the spectral-height neighborhood, and T is contained in U. No weight-dependent or source-dependent replacement of T is made."
+        },
+        {
+          "ordered_group": "S25-034",
+          "source_lines": [
+            9167,
+            9183
+          ],
+          "requirement": "Squared gap and both Fourier remainder estimates",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le_parameter",
+            "NLS.ZakharovShabat.sourceM1_coefficients",
+            "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le"
+          ],
+          "reviewed_claims": [
+            "The factor-six squared-gap estimate combines with both leading Fourier terms and their separate remainder bounds. The resulting positive sums retain both component energies and the squared errors."
+          ],
+          "qualification": "The proof handles arbitrary M1 weights, including superlinear growth, and actual canonical gaps. It does not require a linear upper bound on the weight."
+        },
+        {
+          "ordered_group": "S25-035",
+          "source_lines": [
+            9185,
+            9196
+          ],
+          "requirement": "Tail summation and exact inclusive physical cutoff",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+            "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le",
+            "NLS.ZakharovShabat.sourceM1_gap_tail"
+          ],
+          "reviewed_claims": [
+            "Use the inclusive original-source tail R_N. Its period-doubled physical realization has cutoff 2*N, with equal tail norm. Summing the squared reciprocal bracket gives the final 1152 constant."
+          ],
+          "qualification": "This keeps source and physical cutoffs distinct instead of relabeling the printed R_(2N) as the original R_N. The cutoff endpoints and N=0 are preserved."
+        },
+        {
+          "ordered_group": "S25-036",
+          "source_lines": [
+            9198,
+            9208
+          ],
+          "requirement": "Central complex gap budget and global cutoff choice",
+          "ordered_status": "corrected",
+          "declarations": [
+            "NLS.ZakharovShabat.M1_canonicalGap_central_budget_of_height_one",
+            "NLS.ZakharovShabat.gap_global_265_height_budget",
+            "NLS.ZakharovShabat.M1_canonicalGap_global_summable_and_le_of_height_one",
+            "NLS.ZakharovShabat.SourceSection24Data.section25_gap_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The central complex gap budget uses horizontal packing plus bounded spectral heights. Together with the tail bound and cutoff choice it proves the printed global constant 265*pi^2 on one common neighborhood."
+          ],
+          "qualification": "This supplies a direct positive replacement for the arbitrary-isolating-disc diameter argument. No new assertion or refutation about those disc diameters is needed."
+        },
+        {
+          "ordered_group": "S25-037",
+          "source_lines": [
+            9210,
+            9217
+          ],
+          "requirement": "Formula (5.8) individual weighted gap estimate",
+          "ordered_status": "matched",
+          "declarations": [
+            "NLS.ZakharovShabat.linearWeight_offDiagonal_le",
+            "NLS.ZakharovShabat.sourceM1_gap_individual"
+          ],
+          "reviewed_claims": [
+            "At the exact quadratic threshold each weighted off-diagonal is at most twice its component norm, giving w(2*n)*norm(gap_n)<=sqrt(12)*P."
+          ],
+          "qualification": "Every M1 weight, including superlinear ones, and every signed index is covered. The original source gap and component-sum norm are used."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 28,
+        "corrected": 7,
+        "partial": 0,
+        "contextual": 2,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceSection25Original.lean": "0003d81dd09cb7446e6cb633c6c963e28b78268645ca111ab7c6fcf5c42538cd",
+        "NLS/ZakharovShabat/SourceSection25Localization.lean": "c5b19d7ed7bc313b59c7fdc70d373c2b7f338082375de27b7d9d0556c4dd0733",
+        "NLS/ZakharovShabat/SourceSection25Coefficients.lean": "9fe74b9e5289411721df6e54c66bb72d5920840ad66a1bbb7735078f5ff93bba",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean": "e0ddfb6d9f47c5e2eb3d6bc854dd01e3690208d125f337a37d78f2c94c01b103",
+        "NLS/ZakharovShabat/LinearWeightSquareEstimate.lean": "d3dbff2fff44ca9cb32851689a0340ff46e87b5417d05b65cdf91aa967f9d74c",
+        "NLS/ZakharovShabat/LinearWeightCoefficientAnalytic.lean": "7a6cdce3595aab2543ed8525d459573bf51b17909a0c7df5cbd1d0646c031ee9",
+        "NLS/ZakharovShabat/QuadraticSpectralBox.lean": "8fc6703ba3b18a4b5d03de4301fc76add826bde659d052c03e4129f348c3819f",
+        "NLS/ZakharovShabat/QuadraticLocalizationRadius.lean": "82098f1a1e2d692d39b853353c13e2b0842e6714cfe7a2eeadc294ec4aaf392a",
+        "NLS/ZakharovShabat/QuadraticCanonicalPeriodicPair.lean": "10d4116d9bd4747e60502c3e2bcb258500a92754c3dbdb080de90361a01ed296",
+        "NLS/ZakharovShabat/NormalizedWeightedSourceRange.lean": "1bbd435fb9e51420f7da9f6849c93b19336e094a4429547115b6994c48ba671d",
+        "NLS/ZakharovShabat/NormalizedWeightedSource.lean": "58c5a360b9d9bf674cbb9df97e8fe45057cb36051ed8073678937cf63ff71225",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean": "49fcec03603a62e16216ab1f090a23ba273840fe2f399cad9e2f97fef9d69ed3",
+        "NLS/ZakharovShabat/LinearWeightSandwich.lean": "8287399850ff34f785fbac0292249085e244272d9eae854cc9040ecea70fcb13",
+        "NLS/ZakharovShabat/LinearWeightResonantCoefficients.lean": "040ff11a92c2b0f031c92d56a360e587164859e46e708b1e3abe21dc4031639f",
+        "NLS/ZakharovShabat/H1SpectralHeight.lean": "0663d1dbc46630b09ea252fe5473e23cc13dbf42f2d5d9d99cf2a8719ada3300",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean": "27290e984879c5ad4afa9a3c06cb830faee6d2883648f67e41e1268355192ccb",
+        "NLS/ZakharovShabat/ResonantCoefficientSeries.lean": "768bdea0c87430b225a64614564dab80059dc73a27b4f9696be5bcac7b06e02a",
+        "NLS/ZakharovShabat/M1ComplexGlobalGapEstimate.lean": "70523c80720d6d1479eab8134d15e45a609edcef4419ec0c3bc7f26225ea8f19",
+        "NLS/ZakharovShabat/LinearWeightDiagonalRow.lean": "ee0c32b44fe6e43f06e4cbe0c297b599bff4f0c47d2e8a6e0e8ab84f645a3308",
+        "NLS/ZakharovShabat/LinearWeightKernel.lean": "901269cf11bb2a7080f86a78295eb426a5d5faba489dfb72d3972cbaa57cb654",
+        "NLS/ZakharovShabat/LinearWeightDoubleSeries.lean": "33b25fd76387bd64d394d2920d270fa36c1c769bb33b5f7a397ac0aa1db52181",
+        "NLS/ZakharovShabat/M1GapTailEstimate.lean": "9d161453186a16fb0d6b30d82dea21d0f299d22e033880cfe7c3ff10fb5930ae",
+        "NLS/ZakharovShabat/M1CanonicalGap.lean": "c748b76e39032cf3e11f07e18242fa5a168bbf31e86f8f3a953c36add67e8842",
+        "NLS/ZakharovShabat/WeightedResonantReduction.lean": "22035a0ee24b6e3cc43d7ba2246748cc6fc876263d9bb4d9f1f2a30d0adf4a5c",
+        "NLS/ZakharovShabat/WeightedFreePencil.lean": "4daaece970051f5b4591b4ece1c9d05d1dbca3981595f97f4a47370f880334c5",
+        "NLS/ZakharovShabat/SourceComplementaryCorrection.lean": "0747813e300cd2b89b0477da8ef979da484e21f0823cb73e3acbf1d1b697e2d0",
+        "NLS/ZakharovShabat/SourceResonantMatrix.lean": "25c695a8043f202997a6dc95ebb857e1c362276599c0b777902428bfaa8735db",
+        "NLS/ZakharovShabat/WeightedResonance.lean": "33cf04ca8e07bc13a55b9757b8d29a24bb4e42b11b3e417728d32bc4781aebe3",
+        "NLS/ZakharovShabat/WeightedCorrection.lean": "caab7453c3a730157749e792e7d1d220541abbf99494cba53f056bd92c20ce90",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean": "e68558a5a4055e6cb4bfb674d7b0bc9388b2e937a54834b0e822bd985ce80189",
+        "NLS/ZakharovShabat/ComplementaryFreeInverse.lean": "80a4047f476909c714e7d61f676f57421eac8e6c97e0b770aea64875a58c9416",
+        "NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean": "8b5ca7f125032331f26336e61e771a107f9f8a0b9b66b317f45a0082b5e422e2",
+        "NLS/ZakharovShabat/ResonantSeriesApproximation.lean": "c64f06a10e99c5323d2e68ae96b8e2aa43e9789b0f7f047cd46e2a8d5d816f1a",
+        "NLS/ZakharovShabat/ResonantConjugation.lean": "b9c5e3b226be20e3319437847bc130bb7da188ba1ff6c924dc888404f2776237",
+        "NLS/ZakharovShabat/WeightedQEquation.lean": "3abdf8d3d40a2a2247f97835839f0259216dedf4c5afbca3fa883e581d69f8c6",
+        "NLS/ZakharovShabat/FreeMultiplicity.lean": "1f1e88d9ffd33b1714a149cfa759baeb214e5f684ebcf37c0798561fdf421638",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean": "11ef442791c63ba60700c57e7c3a82366a60255e0e2544d8708b42da113c9d44",
+        "NLS/ZakharovShabat/ComplementaryDoubleEstimate.lean": "79e75e7d2161351803dc3e3d0b125cef4532c2d87763f8741ec7e1644148d890",
+        "NLS/SequenceSpaces/LinearSpectralWeight.lean": "8d510ca7edf805fd138c59d2b80a107a9b104bafb41d030bc9ed41c0ad421b08",
+        "NLS/ZakharovShabat/LinearWeightKernelPairing.lean": "c4358b051d0ce605b8e2ed3e3c80d5e3f0fa3b7f61eb82f7ad885a32a21a3167",
+        "NLS/ZakharovShabat/LinearWeightDeterminantBounds.lean": "9690a96c453231ad9b6120ea90eef6414f030b535898e5ead4a2d2c2428ef610",
+        "NLS/ZakharovShabat/LinearWeightZeroCount.lean": "d9aff95b64c567b4df8fec192ce2c70362fec9c0124ae96cd5bb9bdc3f29a83b",
+        "NLS/ZakharovShabat/LinearWeightRoots.lean": "6cf6b3ef82cb01a01a065bab653d65e0628521c72fba7e913bd6380c5c3dce79",
+        "NLS/ZakharovShabat/LinearWeightRootGap.lean": "600d169773b6bffd8755a30f11b3af4641101ae76321fed8394567930d308e84",
+        "NLS/ZakharovShabat/SourcePlaneWaveSpectrum.lean": "a56a8707a2060ab9e74a58114df571172b846b6e3e5ce011eb2b4f037d718d6d",
+        "NLS/ZakharovShabat/SourceL2LocalizationObstruction.lean": "6cc8276657e28b1323d6da91836382f4abb172c03ea80229feb4b91eb78bd189",
+        "NLS/ZakharovShabat/WeightedResonantDiagonalCenter.lean": "f3c47210b857a857b809bb495f160d032757dea67b2a0c833e6bc67d2aa66ac6",
+        "NLS/ZakharovShabat/ResonantDiagonalCenter.lean": "d4ee73ec6e7a825bb8b3ffc4afc334f74e68e086977b61ba7d9564f0d8e50048",
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/ZakharovShabat/ComplementaryStrip.lean": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/SequenceSpaces/WeightedPairMap.lean": "4615d3045f333e0f6bd8b529991f8d3dbab813e61d166b71cbca2a86bd4e98ab",
+        "NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean": "3c81626a420c761ede6b3a7de80bd6cd3f14f1acf2e4fe17daef5cec31c69f1f",
+        "NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean": "238a2e13a49b7567224c7a99596d6f1bdfb3bbe2f1432631ccdbdceefc99b934"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceSection25Original.lean",
+        "NLS/ZakharovShabat/SourceSection25Localization.lean",
+        "NLS/ZakharovShabat/SourceSection25Coefficients.lean",
+        "NLS/ZakharovShabat/SourceSection25Gaps.lean",
+        "NLS/ZakharovShabat/LinearWeightSquareEstimate.lean",
+        "NLS/ZakharovShabat/LinearWeightCoefficientAnalytic.lean",
+        "NLS/ZakharovShabat/QuadraticSpectralBox.lean",
+        "NLS/ZakharovShabat/QuadraticLocalizationRadius.lean",
+        "NLS/ZakharovShabat/QuadraticCanonicalPeriodicPair.lean",
+        "NLS/ZakharovShabat/NormalizedWeightedSourceRange.lean",
+        "NLS/ZakharovShabat/NormalizedWeightedSource.lean",
+        "NLS/ZakharovShabat/SourcePiSobolevCoordinates.lean",
+        "NLS/ZakharovShabat/LinearWeightSandwich.lean",
+        "NLS/ZakharovShabat/LinearWeightResonantCoefficients.lean",
+        "NLS/ZakharovShabat/H1SpectralHeight.lean",
+        "NLS/ZakharovShabat/ResonantParityExpansion.lean",
+        "NLS/ZakharovShabat/ResonantCoefficientSeries.lean",
+        "NLS/ZakharovShabat/M1ComplexGlobalGapEstimate.lean",
+        "NLS/ZakharovShabat/LinearWeightDiagonalRow.lean",
+        "NLS/ZakharovShabat/LinearWeightKernel.lean",
+        "NLS/ZakharovShabat/LinearWeightDoubleSeries.lean",
+        "NLS/ZakharovShabat/M1GapTailEstimate.lean",
+        "NLS/ZakharovShabat/M1CanonicalGap.lean",
+        "NLS/ZakharovShabat/WeightedResonantReduction.lean",
+        "NLS/ZakharovShabat/WeightedFreePencil.lean",
+        "NLS/ZakharovShabat/SourceComplementaryCorrection.lean",
+        "NLS/ZakharovShabat/SourceResonantMatrix.lean",
+        "NLS/ZakharovShabat/WeightedResonance.lean",
+        "NLS/ZakharovShabat/WeightedCorrection.lean",
+        "NLS/ZakharovShabat/WeightedPotentialInverse.lean",
+        "NLS/ZakharovShabat/ComplementaryFreeInverse.lean",
+        "NLS/ZakharovShabat/SourceSection25DiagonalProduct.lean",
+        "NLS/ZakharovShabat/ResonantSeriesApproximation.lean",
+        "NLS/ZakharovShabat/ResonantConjugation.lean",
+        "NLS/ZakharovShabat/WeightedQEquation.lean",
+        "NLS/ZakharovShabat/FreeMultiplicity.lean",
+        "NLS/ZakharovShabat/ResonantCoordinates.lean",
+        "NLS/ZakharovShabat/ComplementaryDoubleEstimate.lean",
+        "NLS/SequenceSpaces/LinearSpectralWeight.lean",
+        "NLS/ZakharovShabat/LinearWeightKernelPairing.lean",
+        "NLS/ZakharovShabat/LinearWeightDeterminantBounds.lean",
+        "NLS/ZakharovShabat/LinearWeightZeroCount.lean",
+        "NLS/ZakharovShabat/LinearWeightRoots.lean",
+        "NLS/ZakharovShabat/LinearWeightRootGap.lean",
+        "NLS/ZakharovShabat/SourcePlaneWaveSpectrum.lean",
+        "NLS/ZakharovShabat/SourceL2LocalizationObstruction.lean",
+        "NLS/ZakharovShabat/WeightedResonantDiagonalCenter.lean",
+        "NLS/ZakharovShabat/ResonantDiagonalCenter.lean",
+        "NLS/SequenceSpaces/Weighted.lean",
+        "NLS/ZakharovShabat/ComplementaryStrip.lean",
+        "NLS/SequenceSpaces/PairNorm.lean",
+        "NLS/SequenceSpaces/WeightedPairMap.lean",
+        "NLS/ZakharovShabat/SourceSection25OrthogonalSplit.lean",
+        "NLS/ZakharovShabat/SourceSection25DiagonalRoot.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "retained_partial": [],
+      "ordered_inventory": "coverage/SECTION_25_ASSERTIONS.md",
+      "ordered_inventory_sha256": "46f42b52ef0339d0ca39fce89936887a9bb3064f6de33e0daf76350c91eb9ea4",
+      "resolved_declarations": [
+        "NLS.SpectralWeight.HasLinearFactor",
+        "NLS.SpectralWeight.linear_signed_ratio",
+        "NLS.WeightedCoeffPair.norm_rpow_eq_tsum",
+        "NLS.ZakharovShabat.H1_canonicalEndpoints_mem_centralBox",
+        "NLS.ZakharovShabat.M1_canonicalGap_central_budget_of_height_one",
+        "NLS.ZakharovShabat.M1_canonicalGap_global_summable_and_le_of_height_one",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le",
+        "NLS.ZakharovShabat.M1_canonicalGap_tail_summable_and_le_parameter",
+        "NLS.ZakharovShabat.SourceSection24Data.section25",
+        "NLS.ZakharovShabat.SourceSection24Data.section25_gap_neighborhood",
+        "NLS.ZakharovShabat.SourceSection25Data.gap_bound",
+        "NLS.ZakharovShabat.abs_im_le_H1_norm",
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_pencil",
+        "NLS.ZakharovShabat.complementaryFreeDomainInverse_unique",
+        "NLS.ZakharovShabat.complementaryProjection",
+        "NLS.ZakharovShabat.complementarySandwich",
+        "NLS.ZakharovShabat.complementarySandwich_apply",
+        "NLS.ZakharovShabat.gap_global_265_height_budget",
+        "NLS.ZakharovShabat.linearWeightAbsoluteSeries",
+        "NLS.ZakharovShabat.linearWeight_canonicalEndpointPair",
+        "NLS.ZakharovShabat.linearWeight_determinant_root_gap_le",
+        "NLS.ZakharovShabat.linearWeight_determinant_root_localization",
+        "NLS.ZakharovShabat.linearWeight_determinant_sourceDisc_zeroCount",
+        "NLS.ZakharovShabat.linearWeight_determinant_zeroCount",
+        "NLS.ZakharovShabat.linearWeight_diagonal_simple_root",
+        "NLS.ZakharovShabat.linearWeight_exists_resonantRoots",
+        "NLS.ZakharovShabat.linearWeight_offDiagonal_le",
+        "NLS.ZakharovShabat.linearWeight_offDiagonal_product_bracket_le",
+        "NLS.ZakharovShabat.linearWeight_offDiagonal_product_le",
+        "NLS.ZakharovShabat.norm_complementarySymbol_sq_le",
+        "NLS.ZakharovShabat.norm_weightedPairFourierTail_normalizedWeightedPeriodOne",
+        "NLS.ZakharovShabat.norm_weightedPotentialSquareInShift_linear",
+        "NLS.ZakharovShabat.norm_weightedResonantA_le_component_product",
+        "NLS.ZakharovShabat.norm_weightedResonantA_linear",
+        "NLS.ZakharovShabat.not_uniform_L2_ball_spectral_localization",
+        "NLS.ZakharovShabat.not_uniform_L2_sphere_spectral_localization",
+        "NLS.ZakharovShabat.pencil_complementaryFreeDomainInverse",
+        "NLS.ZakharovShabat.pencil_complementaryProjection",
+        "NLS.ZakharovShabat.pencil_resonantSynthesis",
+        "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
+        "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
+        "NLS.ZakharovShabat.quadraticLocalizationRadius_lt_pi_div_five",
+        "NLS.ZakharovShabat.resonantProjection",
+        "NLS.ZakharovShabat.resonantStrip",
+        "NLS.ZakharovShabat.resonantStrip_denominator_lower_pi",
+        "NLS.ZakharovShabat.resonantSynthesis_coordinates",
+        "NLS.ZakharovShabat.resonant_add_complementary",
+        "NLS.ZakharovShabat.shiftedNorm_complementarySandwich_linear",
+        "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_sq_linear",
+        "NLS.ZakharovShabat.shiftedPairNorm_weightedPotentialInverse_two_le",
+        "NLS.ZakharovShabat.sourceH1_canonical_pair",
+        "NLS.ZakharovShabat.sourceH1_spectrum_subset",
+        "NLS.ZakharovShabat.sourceH1_uniform_localization",
+        "NLS.ZakharovShabat.sourceM1_coefficients",
+        "NLS.ZakharovShabat.sourceM1_coefficients_joint_analytic",
+        "NLS.ZakharovShabat.sourceM1_diagonal_component_bound",
+        "NLS.ZakharovShabat.sourceM1_gap_individual",
+        "NLS.ZakharovShabat.sourceM1_gap_tail",
+        "NLS.ZakharovShabat.sourceM1_square_bound",
+        "NLS.ZakharovShabat.sourceM1_square_contraction",
+        "NLS.ZakharovShabat.sourcePiSobolevCoordinates_norm_sq",
+        "NLS.ZakharovShabat.sourcePlaneWave_mem_spectrum_iff_constant",
+        "NLS.ZakharovShabat.sourcePlaneWave_physical_norm_sq",
+        "NLS.ZakharovShabat.sourceSection25_original",
+        "NLS.ZakharovShabat.summable_and_linearWeightAbsoluteSeries_le",
+        "NLS.ZakharovShabat.summable_and_linearWeightKernel_pairing_le",
+        "NLS.ZakharovShabat.summable_convolution_coeff_product_sq",
+        "NLS.ZakharovShabat.tsum_convolution_coeff_product_sq",
+        "NLS.ZakharovShabat.tsum_linearWeightKernel_sq_le",
+        "NLS.ZakharovShabat.weightedCorrection_formula",
+        "NLS.ZakharovShabat.weightedEvenCorrection_hasSum",
+        "NLS.ZakharovShabat.weightedFreePencil_eq_original",
+        "NLS.ZakharovShabat.weightedPairFourierTail_normalizedWeightedPeriodOne",
+        "NLS.ZakharovShabat.weightedPotentialInverse_eq_original",
+        "NLS.ZakharovShabat.weightedQSolution_equation",
+        "NLS.ZakharovShabat.weightedQSolution_potential_source",
+        "NLS.ZakharovShabat.weightedQSolution_unique",
+        "NLS.ZakharovShabat.weightedReconstruction_residual",
+        "NLS.ZakharovShabat.weightedResonantA_conj",
+        "NLS.ZakharovShabat.weightedResonantA_hasSum",
+        "NLS.ZakharovShabat.weightedResonantA_parity",
+        "NLS.ZakharovShabat.weightedResonantA_parity_zero",
+        "NLS.ZakharovShabat.weightedResonantA_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantBMinus_conj",
+        "NLS.ZakharovShabat.weightedResonantBMinus_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder_hasSum",
+        "NLS.ZakharovShabat.weightedResonantBMinus_remainder_linear",
+        "NLS.ZakharovShabat.weightedResonantBPlus_conj",
+        "NLS.ZakharovShabat.weightedResonantBPlus_partialSum_error",
+        "NLS.ZakharovShabat.weightedResonantBPlus_remainder",
+        "NLS.ZakharovShabat.weightedResonantBPlus_remainder_hasSum",
+        "NLS.ZakharovShabat.weightedResonantBPlus_remainder_linear",
+        "NLS.ZakharovShabat.weightedResonantSplit_inner_eq_zero",
+        "NLS.ZakharovShabat.weightedSourceResonantMatrix_det",
+        "NLS.ZakharovShabat.weightedSourceResonantMatrix_form",
+        "NLS.ZakharovShabat.weighted_eigenvector_iff_resonant_det_zero",
+        "NLS.ZakharovShabat.weighted_eigenvector_iff_source_resonant_det_zero",
+        "NLS.ZakharovShabat.weighted_resonant_coordinate_le"
+      ],
+      "declaration_inventory_count": 44695,
+      "qualification": "The ordered Section 25 comparison covers 37 groups on printed pp. 107–112: 28 matched, seven corrected and two contextual, with no partial or pending groups in this local ledger. The original operator and exact physical norms, closed-strip P/Q splitting, actual inverse and matrix coefficients are retained. Every complex H1 or M1 source, signed index and equality at the quadratic threshold is included where the corresponding statement permits it. The printed localization radius, central box, canonical multiplicities and gap constants are preserved. The auxiliary diagonal root is unique and simple even when the determinant has a double root. Direct corrections use the actual denominator kernel, the component-product diagonal estimate, both inverse exponents, the immediate lemma reference, the imaginary factor and the exact inclusive Fourier-tail transport. The global complex gap estimate uses a positive horizontal-packing and spectral-height budget on one common open neighborhood chosen before all weights and sources. Historical attributions and the later-use transition are contextual. Existing refutations remain unchanged; this documentation step adds no Lean proof or refutation. Broader completeness and Appendix G.2 qualifications remain.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "images": {
+          "work/tmp/pdfs/section25-opening-107.png": "bbb07c6e92cfe439fa0f1e0eece5ec1a099e99a6c87bcca8e55d3283c265e619",
+          "work/tmp/pdfs/section25-ordered-108.png": "6369f49ed35bdc3f5abfb3e80572a167e62b4e1137244d599edeb1444c869071",
+          "work/tmp/pdfs/section25-ordered-109.png": "6d770c74be39a68b6b9095d1681a263863f4200ad278b0f6d5272b07056e44e0",
+          "work/tmp/pdfs/section25-ordered-110.png": "a20010e77d7178077f2211bc59c7a3e45d9b3b9b25a2e6db42d6fd29cff62cc0",
+          "work/tmp/pdfs/section25-ordered-111.png": "12588d06cf08619283f021d322a82b494a3d89c6b9e8678ea99b64a5e940f84d",
+          "work/tmp/pdfs/section25-ordered-112.png": "caa418d383be6ed84abe456678c193d0d708a7111e47ff03f547b049ce0bd24c"
+        }
+      },
+      "preceding_review_hash": "3b4ef13cbb6e3b17a022a3f2505335ff4a759e86225c2d3ee2bb6afa03124d5d",
+      "reconciled_previous_reviews": {
+        "Section25SourceComparison-2026-10-27.json": "15947c1820834b4ec88f7b4a6b9e610f2a0c5eb9e1cef04fee2d3301e2066f78",
+        "Section25DiagonalProductSourceComparison-2026-10-31.json": "9bddab50a5ca0423c90192969ff09a48432e006673b93efe3bcf967afb55e0e6",
+        "Section25AuxiliarySourceComparison-2026-10-31.json": "3b4ef13cbb6e3b17a022a3f2505335ff4a759e86225c2d3ee2bb6afa03124d5d"
+      },
+      "validation_lean_sources": {
+        "files": 4855,
+        "sha256": "7455899eaa09d70a0138b236018c1766723c9e985fbcb41a1668fcf21d82dc21"
+      },
+      "validation_reused_from_commit": "b99e74d3669fa2d4bdc76e76be15ef2729fb1349",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 66050,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section25AuxiliaryFullCheck.log",
+        "log_sha256": "006e7b41d06a8b5fa731b413a436c0e181f48407f83aac9634c8639357895f77"
+      },
+      "source_record_sha256": "4eb14684da07957f7f75c9c8bc7f151e37819268b70254dc70c4c078cdd8cf96"
     }
   }
 }
