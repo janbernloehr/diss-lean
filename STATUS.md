@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: Appendix F collapsed-gap formulas and limits
+## Current milestone: Appendix F actual-source integral convergence
+
+The [actual-source convergence proofs](NLS/ZakharovShabat/AppendixFSourceDomination.lean)
+derive a common bound for the literal chi_n product on the original
+closed disc, together with measurability of the differential integrand
+along each admissible midpoint spoke.
+
+The corrected positive majorant proves convergence of the actual
+normalized-root integrals, retaining the full -i*(nu-tau_n) coefficient.
+Every convergent sequence in the original source neighborhood has a
+single original boundary point with admissible spokes for all its
+members. The proof applies the local bounds on a tail and obtains
+convergence of the entire sequence.
+
+One module adds four positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,630 build jobs, 7,729 public examples and an axiom audit of 44,935 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Identification
+with the improper endpoint average, the vanishing short-piece error,
+and reconciliation of the original domains remain separate.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F collapsed-gap formulas and limits
 
 The [collapsed-gap path proofs](NLS/ZakharovShabat/AppendixFCollapsedPath.lean)
 identify the derivative of the actual filled primitive with -i times

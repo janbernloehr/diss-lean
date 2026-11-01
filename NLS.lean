@@ -4890,3 +4890,4 @@ import NLS.ZakharovShabat.AppendixFEndpointAnalytic
 import NLS.ZakharovShabat.AppendixFCollapsedPath
 import NLS.ZakharovShabat.AppendixFCollapsedAnalytic
 import NLS.ZakharovShabat.AppendixFSourceLimits
+import NLS.ZakharovShabat.AppendixFSourceDomination

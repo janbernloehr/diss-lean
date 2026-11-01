@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-01T23:19:09.944612+00:00",
-  "base_commit": "6cad77067f29ec04602a3a2464178978ff0b55af",
+  "published_utc": "2026-11-01T23:42:06.383000+00:00",
+  "base_commit": "9e78f63a8d861996e3af03a2eb78c320a1aa8a6a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 198,
-    "module_hash_checks": 4199,
-    "distinct_modules": 2125
+    "review_records": 199,
+    "module_hash_checks": 4205,
+    "distinct_modules": 2126
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6cad77067f29ec04602a3a2464178978ff0b55af",
-    "validated_state": "Fresh full check after three Appendix F collapsed-gap analysis modules and three public examples.",
+    "base_commit": "9e78f63a8d861996e3af03a2eb78c320a1aa8a6a",
+    "validated_state": "Fresh full check after one Appendix F source-integral convergence module; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8629,
+    "build_jobs": 8630,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44929,
+    "transitive_NLS_declarations": 44935,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 47767,
+    "gate_session": 35513,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4891,
-      "sha256": "ee2a18f18b014c4d8e3668d3eb103085b6ecff7b603486247c0da3ab1331c5d4"
+      "files": 4892,
+      "sha256": "df51f8801d3697e83163321fac32aa82448657d0e28de5817d49c96c9d9f9bc9"
     },
-    "full_gate_log_sha256": "073dc525aba10e7842b0f3aac5013963402d27a3fd4ae7e667f4016d208d63cc",
+    "full_gate_log_sha256": "5157213e8ff68b4ba8854f0eab9b409e1e93bf8559ba0f3f4186102a188484d6",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFCollapsedAnalysisFullCheck.log"
+    "full_gate_log": "work/AppendixFSourceDominationFullCheck.log"
   },
   "named_statements": [
     {
@@ -67200,6 +67200,122 @@
         "log_sha256": "073dc525aba10e7842b0f3aac5013963402d27a3fd4ae7e667f4016d208d63cc"
       },
       "source_record_sha256": "a6c1cf46d9e95360bf7fec7f9c3160706ba4b10465c8690d79ca6cf8d2999044"
+    },
+    "AppendixFSourceDominationSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "9e78f63a8d861996e3af03a2eb78c320a1aa8a6a",
+      "updated_utc": "2026-11-01T23:42:06.320074+00:00",
+      "source_lines": [
+        [
+          11034,
+          11044
+        ],
+        [
+          11008,
+          11053
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11034,
+            11044
+          ],
+          "requirement": "Actual source bounds and measurable integrands",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_chi_uniform_closedDisk_bound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_spoke_integrand_measurable"
+          ],
+          "reviewed_claims": [
+            "The literal chi_n product has one positive local uniform bound on the whole original closed disc.",
+            "Each admissible midpoint spoke has an almost-everywhere strongly measurable actual differential integrand, including its full coefficient."
+          ],
+          "qualification": "Both facts are derived from the source product and root analyticity; the original isolating family is retained."
+        },
+        {
+          "source_lines": [
+            11008,
+            11053
+          ],
+          "requirement": "Common original spokes and convergence of the full sequence of actual integrals",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_exists_common_convergent_spokes"
+          ],
+          "reviewed_claims": [
+            "A source neighborhood supplies the bounds and measurability needed for the corrected positive-majorant convergence argument.",
+            "Every convergent sequence in the original neighborhood has one original boundary point and admissible spokes for all its members, and the full sequence of normalized-root integrals converges to the collapsed chi_n integral."
+          ],
+          "qualification": "The local half-gap and regular-factor bounds are needed only on a tail. Identification with the improper endpoint average and its vanishing short-piece error remains separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean": "0e526f68b8e91ce5eacc092efcad08b9f92c9bb99457c1be4c07dd57209e77ec",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean": "a9fda8e072a02be471c9ac690582f669a1139e73d27fd3e45c9114b90d60b0f0",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean": "2ed949fdf0bcc00f462615dd1c45f1bb58a8a7c90d02c0352f97ac7faa758449",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean": "d397f9cd9a3aed1ad547f49bc5465ac1c78c50d0d607ea77ac8941daa1ba2a15"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_chi_uniform_closedDisk_bound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_spoke_integrand_measurable",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_exists_common_convergent_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally"
+      ],
+      "declaration_inventory_count": 44935,
+      "qualification": "One module adds four positive theorems for the actual-source dominated-convergence argument in F.2. Joint analyticity bounds the literal chi_n product uniformly on the original closed disc and gives measurable differential integrands along admissible spokes. The corrected positive majorant then proves convergence of the actual normalized-root integrals with their full -i displacement coefficient. Every convergent sequence in the original source neighborhood has one common original boundary point and admissible spokes for its entire sequence; finite prefixes need no half-gap bound. Identification with the improper endpoint average and its vanishing short-piece error remains separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "a6c1cf46d9e95360bf7fec7f9c3160706ba4b10465c8690d79ca6cf8d2999044",
+      "validation_lean_sources": {
+        "files": 4892,
+        "sha256": "df51f8801d3697e83163321fac32aa82448657d0e28de5817d49c96c9d9f9bc9"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 4,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally._simp_1_1",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally._simp_1_2"
+      ],
+      "full_gate": {
+        "session": 35513,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFSourceDominationFullCheck.log",
+        "log_sha256": "5157213e8ff68b4ba8854f0eab9b409e1e93bf8559ba0f3f4186102a188484d6"
+      },
+      "source_record_sha256": "596e9ee60cb22e0f4cbb7317b242a1ad18268fbd15450298687ebbe7f9b9c89c"
     }
   }
 }

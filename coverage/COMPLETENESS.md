@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F source-integral convergence proofs](APPENDIX_F.md)
+derive uniform chi_n bounds and measurability and give convergence of
+the actual normalized-root integrals with the full -i coefficient.
+A common original boundary point supplies admissible spokes for every
+member of the convergent source sequence. Four positive theorems add
+no new refutation. Identification with the improper endpoint average
+and the vanishing short-piece error remain separate.
+
 The [Appendix F collapsed-gap proofs](APPENDIX_F.md)
 identify the actual endpoint average with the regular chi_n integral,
 including paths through the collapsed point, and give an analytic
