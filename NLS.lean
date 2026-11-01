@@ -4887,3 +4887,6 @@ import NLS.ZakharovShabat.AppendixFEndpointRoot
 import NLS.ZakharovShabat.AppendixFUniformRadicand
 import NLS.ComplexAnalysis.AppendixFWeightedIntegral
 import NLS.ZakharovShabat.AppendixFEndpointAnalytic
+import NLS.ZakharovShabat.AppendixFCollapsedPath
+import NLS.ZakharovShabat.AppendixFCollapsedAnalytic
+import NLS.ZakharovShabat.AppendixFSourceLimits

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-10-31T09:03:12.088958+00:00",
-  "base_commit": "d180ca8a1da2a29fcc39685efa11755dfec929b8",
+  "published_utc": "2026-11-01T23:19:09.944612+00:00",
+  "base_commit": "6cad77067f29ec04602a3a2464178978ff0b55af",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 197,
-    "module_hash_checks": 4187,
-    "distinct_modules": 2119
+    "review_records": 198,
+    "module_hash_checks": 4199,
+    "distinct_modules": 2125
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d180ca8a1da2a29fcc39685efa11755dfec929b8",
-    "validated_state": "Fresh full check after three Appendix F endpoint analysis modules and two public examples.",
+    "base_commit": "6cad77067f29ec04602a3a2464178978ff0b55af",
+    "validated_state": "Fresh full check after three Appendix F collapsed-gap analysis modules and three public examples.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8626,
-    "public_examples": 7726,
-    "transitive_NLS_declarations": 44913,
+    "build_jobs": 8629,
+    "public_examples": 7729,
+    "transitive_NLS_declarations": 44929,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 69115,
+    "gate_session": 47767,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4888,
-      "sha256": "f8d7d8a813649655093f5e63225878d9f0fdbc40417d2e5f898bbfc4ccee0454"
+      "files": 4891,
+      "sha256": "ee2a18f18b014c4d8e3668d3eb103085b6ecff7b603486247c0da3ab1331c5d4"
     },
-    "full_gate_log_sha256": "3f1cf4d455d90e38030c9fc0c96f143624109afdddcd41fc16007f3a3ce2b4e2",
+    "full_gate_log_sha256": "073dc525aba10e7842b0f3aac5013963402d27a3fd4ae7e667f4016d208d63cc",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFEndpointAnalysisFullCheck.log"
+    "full_gate_log": "work/AppendixFCollapsedAnalysisFullCheck.log"
   },
   "named_statements": [
     {
@@ -67033,6 +67033,173 @@
         "log_sha256": "3f1cf4d455d90e38030c9fc0c96f143624109afdddcd41fc16007f3a3ce2b4e2"
       },
       "source_record_sha256": "5caa001538e4b91b73a540830f0141124829531e3175261ad765bcd7cabf36af"
+    },
+    "AppendixFCollapsedAnalysisSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6cad77067f29ec04602a3a2464178978ff0b55af",
+      "updated_utc": "2026-11-01T23:19:09.887697+00:00",
+      "source_lines": [
+        [
+          10966,
+          10969
+        ],
+        [
+          10966,
+          10969
+        ],
+        [
+          10983,
+          11025
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "The literal collapsed-gap endpoint formula and arbitrary regular paths",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_primitive_hasDerivAt",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_endpoint_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment"
+          ],
+          "reviewed_claims": [
+            "At collapsed sources Lemma 10.10 cancels the selected factor, leaving precisely -i times the literal chi_n product.",
+            "The derivative of the actual filled primitive has that value throughout the closed Cauchy-family disc, including the collapsed point.",
+            "Every C1 path in that closed disc is integrable and computes the actual improper endpoint integral. The literal endpoint average equals -i times the chi_n path integral, with exact coefficient -i*(nu-tau_n) on the straight segment."
+          ],
+          "qualification": "The existing common Cauchy-family disc and source ball are used. Original isolating-family comparison and general open-gap source-path assembly remain separate."
+        },
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Analytic extension of the collapsed-gap restriction",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_regular_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_analytic_extension"
+          ],
+          "reviewed_claims": [
+            "The regular chi_n segment expression is Banach analytic throughout the intersection of the common Cauchy-family source ball and the Corollary 10.6 domain.",
+            "At a fixed boundary point, this analytic function agrees with the actual endpoint average at every collapsed source in that intersection."
+          ],
+          "qualification": "This supplies an analytic extension of the restriction. It does not identify the regular chi_n formula with the endpoint average at open gaps."
+        },
+        {
+          "source_lines": [
+            10983,
+            11025
+          ],
+          "requirement": "Actual-source half-gap estimate and pointwise rescaled limits",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_gap_tendsto_zero",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_eventually_half_gap",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_source_root_spoke_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto"
+          ],
+          "reviewed_claims": [
+            "Squared-gap analyticity forces the actual complex gap to tend to zero at a collapsed source without endpoint-label continuity.",
+            "The exact analytic critical-offset identity yields the half-gap estimate (F.2) on a source neighborhood.",
+            "At each positive path parameter the actual standard root tends to the linear root, and the literal rescaled principal square root and numerator both tend to t.",
+            "Joint analyticity of the literal chi_n product on the original closed disc yields convergence of the full differential integrand, retaining -i times the moving displacement."
+          ],
+          "qualification": "These are positive-parameter pointwise limits. No singular-endpoint limit or convergence of the improper integrals is claimed here; source-family domination and integral substitution remain separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformEndpoints.lean": "1104d42137a6185991e07a0954e62d83dfff57fd8ca882741987e7d710ea936d",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean": "e8408808497ed0de6d3e57d4c9935521c511060ef16b6abca64bfc75e018fa3b",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean": "66fb170452e18fe0d909daeffacec1f55bfdf1e1ede22e47720530727ea1701a",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean": "5015384d561089ded27d840b4636606b81a9c646bf8bd6f333ce35bd8b3bcdd3",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean": "f9a26430d18ff25cd377a9dd8f74443037836a2735cdb87c144b32e2553f491a",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean": "0e526f68b8e91ce5eacc092efcad08b9f92c9bb99457c1be4c07dd57209e77ec"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformEndpoints.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean",
+        "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_analytic_extension",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_endpoint_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_primitive_hasDerivAt",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_regular_chi_integral_analytic",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_eventually_half_gap",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_gap_tendsto_zero",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_source_root_spoke_tendsto"
+      ],
+      "declaration_inventory_count": 44929,
+      "qualification": "Three modules add twelve positive theorems and three examples for the collapsed-gap argument in F.2. The filled canonical primitive has derivative -i times the literal chi_n product throughout the common-family closed disc. Every C1 path in that disc, including crossings of the collapsed point, computes the actual improper endpoint integral. The actual endpoint average has the exact -i path and -i*(nu-tau_n) segment formulas. The collapsed restriction extends to a Banach analytic regular chi_n integral on the common source intersection. Squared-gap analyticity gives actual gap convergence without endpoint-label continuity; the exact critical offset gives the local half-gap bound. The actual standard root, rescaled principal root and numerator, and full -i integrand have the stated positive-parameter limits. Original-family reconciliation, open-gap path assembly and source-specific integral convergence remain open. No new definition or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "5caa001538e4b91b73a540830f0141124829531e3175261ad765bcd7cabf36af",
+      "validation_lean_sources": {
+        "files": 4891,
+        "sha256": "ee2a18f18b014c4d8e3668d3eb103085b6ecff7b603486247c0da3ab1331c5d4"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 12,
+      "new_public_examples": 3,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path._simp_1_1",
+        "NLS.ZakharovShabat.sourceAbelianDifferential.eq_1",
+        "NLS.ZakharovShabat.sourceAbelianEndpointAverage.congr_simp",
+        "NLS.ZakharovShabat.sourceAbelianEndpointIntegral.congr_simp"
+      ],
+      "full_gate": {
+        "session": 47767,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFCollapsedAnalysisFullCheck.log",
+        "log_sha256": "073dc525aba10e7842b0f3aac5013963402d27a3fd4ae7e667f4016d208d63cc"
+      },
+      "source_record_sha256": "a6c1cf46d9e95360bf7fec7f9c3160706ba4b10465c8690d79ca6cf8d2999044"
     }
   }
 }

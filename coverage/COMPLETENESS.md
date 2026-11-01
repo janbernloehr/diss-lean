@@ -225,6 +225,15 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F collapsed-gap proofs](APPENDIX_F.md)
+identify the actual endpoint average with the regular chi_n integral,
+including paths through the collapsed point, and give an analytic
+extension of its collapsed restriction. Actual gap convergence and
+the half-gap bound give the chosen-root, numerator and full integrand
+limits at positive path parameters. Twelve positive theorems and
+three examples add no new refutation. Original-family reconciliation,
+open-gap path assembly and source integral convergence remain open.
+
 The [Appendix F endpoint analysis proofs](APPENDIX_F.md)
 now give explicit uniform denominator and radicand bounds, source-analytic
 principal roots, the exact inverse-square-root substitution, and

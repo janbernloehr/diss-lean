@@ -73764,3 +73764,84 @@ example : AnalyticOnNhd ℂ
     (fun p : ℂ × ℂ => Complex.exp (p.1*p.2)) Set.univ isOpen_univ
     (fun p _ => (analyticAt_fst.mul analyticAt_snd).cexp')
     Set.univ isOpen_univ (fun _ _ _ _ => Set.mem_univ _)
+
+section AppendixFCollapsedPathExamples
+open Set NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At the free potential the literal differential is -i, also at a negative selected index.
+example {S : Set (NLS.CoeffPair 3)}
+    (H : SourceLemma10_10Data (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) S)
+    (h0 : (0 : NLS.CoeffPair 3) ∈ S) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) 0) :
+    sourceAbelianDifferential (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) 0 z = -Complex.I := by
+  have hgap : canonicalPeriodicGap (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (periodOnePotential (0 : NLS.CoeffPair 3)) (periodOnePotential_mem 0) (-3) = 0 := by
+    simpa only [map_zero] using
+      (canonicalPeriodicGap_zero (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) (-3))
+  rw [H.appendixF_collapsed_differential 0 h0 (-3) hgap z hz,
+    sourceActionChi_zero_source _ _ _ _ (fun m _ => hz m),mul_one]
+
+end AppendixFCollapsedPathExamples
+
+section AppendixFCollapsedAnalyticExamples
+open Set Metric Filter Topology NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Along any analytic curve of collapsed potentials, the actual endpoint average is analytic.
+example {W S : Set (NLS.CoeffPair 3)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) W)
+    (H : SourceLemma10_10Data (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) S)
+    (hS : IsOpen S) (ν : ℂ) (hν : ν ∈ sphere (C.discs.center (-2)) (C.discs.outer (-2)))
+    (f : ℂ → NLS.CoeffPair 3) (U : Set ℂ) (hU : IsOpen U) (hf : AnalyticOnNhd ℂ f U)
+    (hmap : MapsTo f U (ball C.discs.source.val C.discs.sourceRadius ∩ S))
+    (hgap : ∀ z ∈ U, canonicalPeriodicGap (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (periodOnePotential (f z)) (periodOnePotential_mem (f z)) (-2) = 0) :
+    AnalyticOnNhd ℂ (fun z => sourceAbelianEndpointAverage
+      (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) (-2) ν (f z)) U := by
+  obtain ⟨G,hG,heq⟩ := C.appendixF_collapsed_average_analytic_extension H hS (-2) ν hν
+  intro z hz
+  apply ((hG (f z) (hmap hz)).comp (f := f) (hf z hz)).congr
+  filter_upwards [hU.mem_nhds hz] with w hw
+  exact heq (f w) (hmap hw) (hgap w hw)
+
+end AppendixFCollapsedAnalyticExamples
+
+section AppendixFSourceLimitsExamples
+open Set Filter Topology NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At p=3, the midpoint of a vertical unit spoke has the limit -i/2 at a negative free gap.
+example {S : Set (NLS.CoeffPair 3)}
+    (H : SourceLemma10_2Data (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) S)
+    (h0 : (0 : NLS.CoeffPair 3) ∈ S) (ψ : ℕ → NLS.CoeffPair 3)
+    (hψ : Tendsto ψ atTop (𝓝 0)) :
+    let τ := fun χ : NLS.CoeffPair 3 => canonicalPeriodicMidpoint
+      (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (periodOnePotential χ) (periodOnePotential_mem χ) (-2)
+    Tendsto (fun k => sourceStandardRoot (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (ψ k) (-2) (τ (ψ k)+(1/2:ℂ)*(τ 0+Complex.I-τ (ψ k)))) atTop (𝓝 (-Complex.I/2)) := by
+  dsimp only
+  let τ := fun χ : NLS.CoeffPair 3 => canonicalPeriodicMidpoint
+    (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num)
+    (periodOnePotential χ) (periodOnePotential_mem χ) (-2)
+  have hne : τ 0+Complex.I ≠ τ 0 := by
+    simpa only [ne_eq,add_eq_left] using Complex.I_ne_zero
+  have h := H.appendixF_source_root_spoke_tendsto 0 h0 (-2)
+    (by simpa only [map_zero] using
+      (canonicalPeriodicGap_zero (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) (-2)))
+    ψ hψ (τ 0+Complex.I) hne (1/2) (by norm_num)
+  have he : -((1/2:ℝ):ℂ)*(τ 0+Complex.I-τ 0) = -Complex.I/2 := by
+    push_cast
+    ring
+  change Tendsto (fun k => sourceStandardRoot
+    (by norm_num : (3:ℝ≥0∞) ≠ ⊤) (by norm_num) (ψ k) (-2)
+      (τ (ψ k)+((1/2:ℝ):ℂ)*(τ 0+Complex.I-τ (ψ k)))) atTop
+        (𝓝 (-((1/2:ℝ):ℂ)*(τ 0+Complex.I-τ 0))) at h
+  rw [he] at h
+  simpa only [Complex.ofReal_div,Complex.ofReal_one,Complex.ofReal_ofNat] using h
+
+end AppendixFSourceLimitsExamples

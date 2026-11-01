@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: Appendix F endpoint integral analysis
+## Current milestone: Appendix F collapsed-gap formulas and limits
+
+The [collapsed-gap path proofs](NLS/ZakharovShabat/AppendixFCollapsedPath.lean)
+identify the derivative of the actual filled primitive with -i times
+the literal chi_n product throughout the closed common-family disc.
+Every C1 path inside that disc computes the actual improper endpoint
+integral, including paths through the collapsed point. The endpoint
+average retains -i and the straight segment retains -i*(nu-tau_n).
+
+The [analytic extension](NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean)
+uses the regular chi_n segment integral on the common source
+intersection. It agrees with the actual endpoint average throughout
+the collapsed-gap locus and supplies full Banach analyticity of an
+extension of that restriction.
+
+The [actual-source limits](NLS/ZakharovShabat/AppendixFSourceLimits.lean)
+use squared-gap analyticity to obtain gap convergence without
+continuous endpoint labels. The exact critical offset yields the
+half-gap bound. The chosen root, rescaled principal root and numerator,
+and full differential integrand have their positive-parameter limits.
+
+Three modules add twelve positive theorems and three examples.
+No new refutation is added.
+
+The full check passed: 8,629 build jobs, 7,729 public examples and an axiom audit of 44,929 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Original
+isolating-family reconciliation, open-gap source-path assembly,
+improper substitutions and source-specific integral convergence remain.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F endpoint integral analysis
 
 The [uniform radicand bounds](NLS/ZakharovShabat/AppendixFUniformRadicand.lean)
 keep the endpoint denominator and principal-root factor away from zero
