@@ -754,3 +754,35 @@ are allowed. The public inventory has 1,513 entries (1,221 theorems and
 292 definitions; aliases and structures excluded), with 232 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## Complete physical action flows toward the remaining normal forms
+
+`theorem4_complete_action_flows` constructs the complete commuting
+2*pi-periodic Gardner flows of every physical J_n on the full original
+real H1 space, including closed gaps and zero mean. Their actual L2
+Gardner equation, intrinsic uniqueness, conservation of every physical
+J_m and signed original NLS I_m, and conservation of the signed mean
+are proved. A closed selected action gives a stationary trajectory.
+The construction uses opposite NLS rotations at n and -n; analytic ODE
+uniqueness proves independence of the chosen normalized NLS coordinate
+family and preservation of the actual equal-component diagonal.
+The native weighted lifts are continuous in every original integer H^s
+norm, including L2, and retain the original Fourier coefficients.
+
+This is necessary action-torus machinery, not a completed independent
+mKdV Birkhoff chart. The forward action factorization, independent mKdV
+angles, final angle-sum factorization and corrected frequency comparison
+remain open. Signed-mean conservation along each connected orbit does
+not assert signed-mean recovery from NLS actions.
+
+Validation covers 242 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 230 unchanged prefix module
+source hashes match the previous d85907d milestone; their private outputs
+were reused. Twelve added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,161 and 48,131
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,606 entries (1,300 theorems and
+306 definitions; aliases and structures excluded), with 244 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

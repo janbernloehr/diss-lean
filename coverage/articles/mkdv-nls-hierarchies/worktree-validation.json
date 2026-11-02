@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3016,
+  "audited_declarations_and_auxiliaries": 3161,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -7584,14 +7584,479 @@
       "kind": "theorem",
       "name": "equation12_spectral_native_laurent",
       "file": "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "pairedActionRotation",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairMode_actionRotation_ne",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotationVector_actionRotation_ne",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_explicit",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_zero",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_same",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_action",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotationVector_actionRotation_same",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_pairedActionRotation",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_pairedActionRotation",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotation_pairedActionRotation_comm",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_add",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_comm",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_periodic",
+      "file": "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceActionDifferenceVector",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sourceActionDifferenceVector",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hilbertPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertRealHomeomorph_pairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_zero",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_eq_rotations",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_hilbertPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_unique",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "discriminant_hilbertPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hilbertPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceActionDifferenceVector_componentSwap",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_independent",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_componentSwap",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_diagonal",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_add",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_comm",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_periodic",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicGapDisplacement_eq_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_sobolev_mem_iff_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_mem_isospectralSet",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertPairedActionFlow_sobolev_mem_iff",
+      "file": "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotation_coordinate_mul",
+      "file": "NLS/Dynamics/WeightedPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairedActionRotation_coordinate_mul",
+      "file": "NLS/Dynamics/WeightedPairedActionRotation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "weightedRealPairedActionRotation",
+      "file": "NLS/Dynamics/WeightedPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "forget_weightedRealPairedActionRotation",
+      "file": "NLS/Dynamics/WeightedPairedActionRotation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_weightedRealPairedActionRotation",
+      "file": "NLS/Dynamics/WeightedPairedActionRotation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "weightedPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourceWeightedPairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "originalWeightedRealSource_pairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourceWeightedPairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_weightedPairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourceWeightedPairedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraActionFlowFamily",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionFlowFamily",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionFlowWeight",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionWeightEquiv",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionWeightEquiv_apply",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionWeightedSource",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionInitialSource",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionInitialSource_fst",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionInitialSource_snd",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionInitialSource_diagonal",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionScalarProjection",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionScalarProjection_apply",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_coefficient",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_real",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_source",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionInitialSource_injective",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_zero",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_add",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_comm",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_periodic",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1SobolevEquiv",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1SobolevEquiv_apply",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1SobolevEquiv_symm_apply",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1SobolevReal",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionInitialSource_one",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1ActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_coefficient",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_real",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_source",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realDiagonalH1Source_injective",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_zero",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_add",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_comm",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_periodic",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraH1ActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarInclusion_miuraH1ActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraH1ActionFlow_Gardner",
+      "file": "NLS/MKdV/MiuraActionFlowGroup.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_isospectral",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_isospectral",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSAction_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_mean_square",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionFlow_mean",
+      "file": "NLS/MKdV/MiuraActionFlowInvariants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_unique",
+      "file": "NLS/MKdV/MiuraActionFlowUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionFlow_eq_self_of_action_zero",
+      "file": "NLS/MKdV/MiuraActionFlowUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_complete_action_flows",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_action_flow_commutation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_closed_action_flow",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean"
     }
   ],
-  "public_declaration_count": 1513,
-  "theorem_count": 1221,
-  "definition_count": 292,
-  "full_build": "230 article/shared modules have validated private outputs. All 224 unchanged prefix module source hashes match the prior 1fd6953 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1606,
+  "theorem_count": 1300,
+  "definition_count": 306,
+  "full_build": "242 article/shared modules have validated private outputs. All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/DiscriminantSamples.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/RealPairedActionRotation.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -7749,8 +8214,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ac49c59b5ed45a60b42db6ab5d2659bc314d20a99afed235d4317472ddb3dcec",
-    "scripts/check_mkdv_nls.py": "3d9d89e1fa1b6d933fb03e1bd2b943cf7d2edea6519ee8a3adffdad2803caf7f",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ee95d29c6f5a999a869b8a083398cf742c3ef8985a64aea0c4ff59f531d52219",
+    "scripts/check_mkdv_nls.py": "8e97d6d6893c1a3dae4de60fd2c9d927c060a08036f9a33dd937ef047ffd2357",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -7824,10 +8289,22 @@
     "NLS/ZakharovShabat/NLSHamiltonianSampledPhase.lean": "45a0d1c0964b37c6a180fc847bd40aec93bd2b5c23f72d3ce730004a1c55b084",
     "NLS/ZakharovShabat/NLSHamiltonianSpectralCoefficients.lean": "4d2304049246c8076fd946a233e07d6bfb567259942c592b6eded5b35be55669",
     "NLS/MKdV/SpectralMiuraHamiltonians.lean": "88a754b3c1e6303c5e1f00ada0d29e2d29f502e76a875b5d343373b447e238ed",
-    "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean": "62901edaee2d5445f3e2ac25bafb5c7f63563e9a86c8ef5025dc08279de4b0e2"
+    "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean": "62901edaee2d5445f3e2ac25bafb5c7f63563e9a86c8ef5025dc08279de4b0e2",
+    "NLS/SequenceSpaces/RealPairedActionRotation.lean": "c716205ab8374bb9984652c4826e431b73217573be245a65758daab20df4c181",
+    "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean": "3ab9c689652c07f113350451ecece7eaa8902366e8bb12edf7363de28e981c1c",
+    "NLS/ZakharovShabat/SourcePairedActionFlow.lean": "bc1a7e075128547c7581373f5043315bb4ec1d598987e055c32e03b23ffa0cfa",
+    "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean": "675ca3a02e573abd48deee73c9dfe26c7f50bf1c8ec18c9fe1e4ee72088dc3a1",
+    "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean": "fd566b55ed0593ce94a14fe7f21867d6d21b51a763ef97901aae6919eb0c4951",
+    "NLS/Dynamics/WeightedPairedActionRotation.lean": "6175286f6e13667142fe912254f6d3b5a32a65451110f358c88f0bbeb19558bd",
+    "NLS/ZakharovShabat/SourceWeightedPairedActionFlow.lean": "d89dc45775ff6571b4ca363d87b055a17459fe6be390cc9f0627fbc674114337",
+    "NLS/MKdV/MiuraActionFlowSobolev.lean": "932640e63a4cf0944d9885b332bbc82c1571f0b4bb94f5bf824f08f8143a3e98",
+    "NLS/MKdV/MiuraActionFlowGroup.lean": "ae9d435cd60927e084fd010b6490f2e7457eee437ceaf873d5732a461cce68d0",
+    "NLS/MKdV/MiuraActionFlowInvariants.lean": "e5c99eba4b5714565ddbb0533001e73a17081325a67684b3c2c6515759eb82ed",
+    "NLS/MKdV/MiuraActionFlowUniqueness.lean": "068bec6228bf85ea2f2b4c95939f4d63b9edc6b4d4d9d7accac0967690b665c1",
+    "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean": "5452c8ce9130785972583c9f8290fd22a80e468da3022f7206d7917559c04610"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 230,
+  "focused_module_count": 242,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -7974,12 +8451,19 @@
       "combined_NLS_audit_count": 47987,
       "aggregate_compiled": true,
       "validation_scope": "All 224 unchanged prefix module source hashes match the prior 1fd6953 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Complete commuting 2*pi-periodic physical Gardner action flows on the original real H1 domain: actual L2 equation, intrinsic uniqueness, original NLS and physical mKdV action invariants, signed-mean conservation and closed-action stationarity; coordinate-family-independent opposite NLS action rotations, diagonal preservation and continuous native integer Sobolev lifts",
+      "audit_count": 3161,
+      "combined_NLS_audit_count": 48131,
+      "aggregate_compiled": true,
+      "validation_scope": "All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 47987,
+  "combined_audited_NLS_declarations": 48131,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -7987,7 +8471,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 224 unchanged prefix module source hashes match the prior 1fd6953 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3016 declarations/auxiliaries and combined audit for 47987 NLS declarations. All 232 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3161 declarations/auxiliaries and combined audit for 48131 NLS declarations. All 244 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

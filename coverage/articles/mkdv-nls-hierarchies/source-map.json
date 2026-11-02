@@ -561,5 +561,26 @@
     "original_finite_gap_Hill_primitive_series": "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent",
     "normalization": "Source K_(s+1), s>=0; coefficient number 2*s of the small phase equals i*S_(2*s+1)=2*i*K_(s+1). Multiplication by -i/2 fixes the literal physical Hill normalization.",
     "scope": "All smooth complex periodic physical profiles for coefficient extraction; unique entire analytic extension to every full original complex H^s native domain; both Theorem 1 clauses on every complex H^(s+1) input. Source physical finite-gap primitive series uses exactly these same coefficients."
+  },
+  "complete_Gardner_action_flows": {
+    "article_package": "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
+    "native_Sobolev_flow": "NLS.MKdV.miuraActionFlow",
+    "native_Sobolev_time_continuity": "NLS.MKdV.continuous_miuraActionFlow",
+    "original_H1_flow": "NLS.MKdV.miuraH1ActionFlow",
+    "actual_H1_Gardner_ODE": "NLS.MKdV.hasDerivAt_miuraH1ActionFlow_Gardner",
+    "intrinsic_uniqueness": "NLS.MKdV.miuraH1ActionFlow_unique",
+    "global_group": "NLS.MKdV.miuraH1ActionFlow_add",
+    "commutation": "NLS.MKdV.miuraH1ActionFlow_comm",
+    "period_2pi": "NLS.MKdV.miuraH1ActionFlow_periodic",
+    "signed_mean_conservation": "NLS.MKdV.miuraActionFlow_mean",
+    "original_NLS_action_conservation": "NLS.MKdV.miuraNLSAction_miuraActionFlow",
+    "physical_mKdV_action_conservation": "NLS.MKdV.miuraMKdVAction_miuraActionFlow",
+    "closed_action_stationarity": "NLS.MKdV.miuraH1ActionFlow_eq_self_of_action_zero",
+    "coordinate_family_independence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertPairedActionFlow_independent",
+    "full_native_source_Sobolev_continuity": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_weightedPairedActionFlow",
+    "isospectral_Sobolev_membership": "NLS.ZakharovShabat.source_sobolev_mem_iff_of_isospectral",
+    "construction": "Opposite original NLS action rotations at n and -n solve the actual analytic source Hamiltonian difference field. Actual ODE uniqueness gives component-swap covariance, preservation of the original diagonal and independence of the chosen normalized NLS Birkhoff family. Gardner transfer identifies the scalar H1 equation with the independently defined physical J_n action.",
+    "scope": "Complete commuting 2*pi-periodic real action flows on each full native integer H^s, s>=0, continuous in its native norm. The actual Gardner equation, intrinsic uniqueness, all physical J_m and signed NLS I_m invariants, and signed-mean conservation are proved on the entire original real H1 domain. Closed gaps and zero mean are included. No global signed-mean factor through NLS actions is claimed.",
+    "remaining": "This is action-torus machinery needed by Theorems 3 and 4(ii)-(iii). The independent mKdV Birkhoff chart, forward factorization through J and mean, final angle-sum factorization and frequency comparison remain open."
   }
 }

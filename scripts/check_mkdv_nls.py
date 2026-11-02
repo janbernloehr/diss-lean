@@ -264,6 +264,18 @@ modules = [
     "NLS/ZakharovShabat/NLSHamiltonianSpectralCoefficients.lean",
     "NLS/MKdV/SpectralMiuraHamiltonians.lean",
     "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean",
+    "NLS/SequenceSpaces/RealPairedActionRotation.lean",
+    "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean",
+    "NLS/ZakharovShabat/SourcePairedActionFlow.lean",
+    "NLS/ZakharovShabat/SourcePairedActionFlowDiagonal.lean",
+    "NLS/ZakharovShabat/SourcePairedActionFlowSobolev.lean",
+    "NLS/Dynamics/WeightedPairedActionRotation.lean",
+    "NLS/ZakharovShabat/SourceWeightedPairedActionFlow.lean",
+    "NLS/MKdV/MiuraActionFlowSobolev.lean",
+    "NLS/MKdV/MiuraActionFlowGroup.lean",
+    "NLS/MKdV/MiuraActionFlowInvariants.lean",
+    "NLS/MKdV/MiuraActionFlowUniqueness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

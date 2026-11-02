@@ -1209,3 +1209,54 @@ are allowed. The public inventory has 1,513 entries (1,221 theorems and
 292 definitions; aliases and structures excluded), with 232 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — complete commuting physical Gardner action flows
+
+`theorem4_complete_action_flows` now constructs a complete, commuting,
+2*pi-periodic Gardner action flow for every positive physical J_n on
+the entire original real H1 space. Every trajectory stays real and
+continuous in the full H1 norm, and its actual L2 time derivative is
+the Gardner vector field of the independent physical Hill contour action.
+The spatial derivative in that vector field is the already verified
+period-one distribution derivative. No open-gap or nonzero-mean condition
+is needed for existence or the equation.
+
+The construction uses opposite original NLS action rotations at n and -n.
+The exact inverse Jacobian proves their lifted source derivative equals
+the actual Hamiltonian field of I_n-I_-n. Analytic ODE uniqueness proves
+independence of the normalized coordinate family and covariance under
+component exchange. Consequently the original equal-component diagonal
+is preserved. The established Gardner transfer gives the physical scalar
+equation. Any competing real H1 trajectory with the same initial value
+and this actual L2 equation equals the constructed trajectory.
+
+The group law, pairwise commutation and period are proved for all real
+times. Every signed original NLS action, every positive physical mKdV
+action and the literal signed mean are conserved. Signed-mean conservation
+follows from the proved mean-squared action factor and continuity on the
+connected time line; it does not assert global signed-mean recovery from
+NLS actions. If the selected physical action vanishes, its entire flow
+is stationary. The source flow preserves and reflects all nonnegative
+real Sobolev memberships. Its native weighted lift and the scalar flow
+are continuous in each full integer H^s norm, including L2; transport
+between weights retains the original Fourier coefficients.
+
+These results supply actual action-torus machinery for the remaining
+normal forms. They do not identify independent mKdV Birkhoff coordinates.
+Theorems 1 and 2 remain complete, as do Theorem 4(i), the converse J_n
+and corrected mean-squared clauses of 4(ii), and the angle-action bracket
+clause of 4(iii). Forward factorization through J and mean, independent
+mKdV angles and the final angle-sum factorization, and the corrected
+frequency comparison in Theorem 3 remain essential open obligations.
+
+Validation covers 242 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 230 unchanged prefix module
+source hashes match the previous d85907d milestone; their private outputs
+were reused. Twelve added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,161 and 48,131
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,606 entries (1,300 theorems and
+306 definitions; aliases and structures excluded), with 244 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.
