@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 489,
+    "declarations": 519,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -40,10 +40,12 @@
       "NLS.SpectralWeight.doubleIndex_apply",
       "NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right",
       "NLS.LinearVolterra.solution_add",
-      "NLS.LinearVolterra.solution_zero_initial"
+      "NLS.LinearVolterra.solution_zero_initial",
+      "NLS.ComplexAnalysis.complex_sqrt_sq",
+      "NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent"
     ]
   },
-  "full_repository_validation": "Not rerun; base dissertation validation is not replaced by this focused check.",
+  "full_repository_validation": "The current NLS.lean aggregate import check passed in the isolated worktree. A full Lake rebuild and full repository example suite were not rerun; base dissertation validation is not replaced by the article-focused checks.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
@@ -67,7 +69,7 @@
     "NLS/KdV/HillGapTail.lean": "47ab15f6cca152670aa39694c95688d788cc0e058aabe56528dee7d99854df0c",
     "NLS/KdV/ConstantUpperSpectralBridge.lean": "111451b4d47126d2007fc00591b0f564ccfbb3f4a5bc272e3d823e7be57f0b37",
     "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
-    "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+    "NLS/KdV/ClassicalDiscriminant.lean": "79ec8e092e84ead44b69b25b1fb7a25e1ad74971d78d3c287194b23c4716f2b2",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
     "NLS/KdV/HillClassicalIdentification.lean": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec",
     "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean": "32da22d51d4c04fe33e03bb9b892d5c2ab800bcc5dead91ab0917763f419fe67",
@@ -77,13 +79,18 @@
     "NLS/KdV/HillDiscriminantNecessity.lean": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
     "NLS/KdV/HillFirstOrderReduction.lean": "7826dc5c97375d87d56b0b4658116b1622584287199b04d730ccdb237971270b",
     "NLS/KdV/HillL2SpectralCriterion.lean": "0d7b94750edd667259d97fabeb18160b2809fdd74c3aff9eaa561dd9069684cd",
-    "NLS/KdV/HillDiscriminantComparison.lean": "e6ee8a6af0a2a077889065eabdabcc259ceea43de99f4ccdbdde23a1c452d986"
+    "NLS/KdV/HillDiscriminantComparison.lean": "e6ee8a6af0a2a077889065eabdabcc259ceea43de99f4ccdbdde23a1c452d986",
+    "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
+    "NLS/KdV/HillL2EnergyDiscriminant.lean": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4",
+    "NLS/KdV/HillWeightIndependence.lean": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
+    "NLS/KdV/HillPhysicalGapBounds.lean": "b8294c1b5d478b8cc9ff24edb1041397fa7841986f45cf8df01327ee4db9ab37"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The actual L2 frequency trace now has the exact Hill H2 eigenvalue zero criterion and agrees with the entire classical energy discriminant on continuous inputs. Rough energy-variable analytic descent, zero-order/operator multiplicity comparison, weighted realization independence, global labels and low central bounds remain. Actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
-  "milestone": "Full-period continuous characteristic equivalence and exact L2 constant-upper operator/monodromy spectral identification",
+  "remaining": "Main Theorems 1-3 remain unverified. Joint rough energy analyticity and auxiliary weighted realization independence are proved. Characteristic/determinant zero-order matching and Hill algebraic multiplicities, global spectral labels, real spectral ordering and low central bounds remain. Canonical roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
+  "milestone": "Joint analytic rough Hill energy discriminant, auxiliary-weight independence and physical weighted gap bounds",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
+    "NLS.ComplexAnalysis.EntireEvenSquareDescent",
     "NLS.FunctionalAnalysis.TwoDimensionalDeterminant",
     "NLS.FunctionalAnalysis.AbsoluteContinuityTranslation",
     "NLS.FunctionalAnalysis.LinearVolterraLinearity",
@@ -115,6 +122,9 @@
     "NLS.KdV.HillFirstOrderReduction",
     "NLS.KdV.HillL2SpectralCriterion",
     "NLS.KdV.HillDiscriminantComparison",
+    "NLS.KdV.HillL2EnergyDiscriminant",
+    "NLS.KdV.HillWeightIndependence",
+    "NLS.KdV.HillPhysicalGapBounds",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
   ],
   "proof_commits": [
@@ -162,13 +172,19 @@
       "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
       "scope": "Classical Hill discriminant reuse and weak H2/unit-interval scalar-flow identification",
       "pushed": true
+    },
+    {
+      "commit": "9847bfa7638b624889cfd24bbbf258a9c1873fb5",
+      "scope": "Full-period continuous characteristic equivalence and exact L2 constant-upper operator/monodromy spectral identification",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "deferred_not_run",
-    "command": "flock /tmp/diss-lean-article-build.lock lean -DautoImplicit=false -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "reason": "Shared lock occupied by other article validation. Only this chat's verified queued flock process was terminated before compilation began. No other process was stopped.",
-    "full_build_or_full_examples_claimed": false
+    "status": "passed",
+    "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "exit_code": 0,
+    "scope": "Current NLS.lean aggregate compiled with pinned Lean 4.33.1 and autoImplicit=false. Build output was written only to this worktree; canonical compiled dependencies were imported read-only.",
+    "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
     "create_worktree_result": "Rejected: canonical sourceRoot is not an exact registered chat workspace folder.",
@@ -177,15 +193,23 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All thirty-two modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All thirty-six modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 489 declarations, including the shared AC translation/Volterra additivity lemmas and the explicit L2 first-order operator identification.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 519 declarations, including the shared entire square-descent lemmas.",
     "new_module_warnings": [],
-    "aggregate_scope": "Full aggregate/build/examples remain unrerun; the earlier deferred aggregate check is not treated as a pass.",
+    "aggregate_scope": "Current NLS.lean aggregate compile passed after all thirty-six focused modules. The full Lake rebuild/example suite remains unrerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
-    "reused_source_check": "Git object hashes of the three imported KdV modules exactly match articles/kdv-convexity commit 2135a680ab46ba7c476060e9a66db7d5753f8b29; provenance is recorded in source-map.json.",
-    "mathematical_scope": "Continuous physical period-one potentials: full characteristic equivalence at every energy. Even-supported complex L2 potentials: exact actual H2 eigenvalue/physical L2 trace zero equivalence in frequency z and Hill energy z^2, with joint frequency/potential analyticity. No algebraic-multiplicity or rough energy-descent claim."
+    "reused_source_check": "The constant-upper bridge and spectral-symmetry modules remain byte-identical to articles/kdv-convexity commit 2135a68. ClassicalDiscriminant keeps the same physical definition and public statements, with its joint descent proof factored into the shared EntireEvenSquareDescent module. Original provenance and current file hashes are recorded.",
+    "mathematical_scope": "The actual L2 monodromy trace descends to a jointly analytic Hill energy discriminant, including lambda=0, and equals the actual normalized classical trace. Weighted and unit-weight finite operators/determinants agree on the checked strips and cutoffs; the weighted individual and tail estimates apply to actual physical energy-characteristic roots. Zero-order/operator multiplicity and global enumeration claims remain open."
   },
-  "warningAsError": true
+  "warningAsError": true,
+  "previous_aggregate_attempts": [
+    {
+      "status": "deferred_not_run",
+      "command": "flock /tmp/diss-lean-article-build.lock lean -DautoImplicit=false -o .lake/build/lib/lean/NLS.olean NLS.lean",
+      "reason": "Shared lock occupied by other article validation. Only this chat's verified queued flock process was terminated before compilation began. No other process was stopped.",
+      "full_build_or_full_examples_claimed": false
+    }
+  ]
 }

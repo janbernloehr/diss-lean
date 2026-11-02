@@ -249,14 +249,26 @@
     {
       "module": "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean and LinearVolterraLinearity.lean",
       "role": "Shared new interval translation and flow additivity/zero-state lemmas support the actual full-period state comparison and periodic/antiperiodic multiplier decomposition."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean",
+      "role": "Shared extraction of the classical joint energy-descent proof, used both by ClassicalDiscriminant and the actual rough L2 energy family; includes the zero energy without assuming analytic or continuous square roots."
+    },
+    {
+      "module": "NLS/SequenceSpaces/FiniteCoefficients.lean and NLS/Fourier/ContinuousSynthesis.lean",
+      "role": "Actually reused to transfer the exact even frequency trace identity from finite Fourier potentials to the full L2 coefficient space by density and continuity."
+    },
+    {
+      "module": "NLS/SequenceSpaces/WeightedMultiplier.lean and SpectralConvolution.lean",
+      "role": "Actually reused for the contractive weight-forgetting inclusion and its literal convolution compatibility; uniqueness of the existing Hill inverse closes the weighted physical realization comparison."
     }
   ],
   "next_shared_milestones": [
     "Identify the high-strip determinant root families with globally labeled periodic eigenvalues, including determinant/operator multiplicities and the remaining central bounds. Their source-normalized weighted individual and summed tail bounds are now proved.",
-    "Prove that the weighted and unit-weight two-mode determinants agree for the same physical potential, so the checked weighted gap bounds apply to the actual rough periodic characteristic roots.",
+    "Match analytic zero orders of the actual energy discriminant and the weight-independent finite determinant, then identify the relevant Hill algebraic multiplicities.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Reuse the checked exact period-one/mean-zero coefficient embedding and physical Fourier-integral adapter in the spectral-label/discriminant comparison.",
-    "Descend the jointly analytic actual rough L2 frequency trace through the squared energy, retain the checked classical normalization, and prove characteristic/product zero-order identities. Then construct canonical roots, contour actions and the physical Birkhoff map.",
+    "Use the checked jointly analytic rough energy discriminant to prove normalized product/characteristic order identities. Then construct canonical root branches, contour actions and the physical Birkhoff map.",
     "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
   ],
@@ -509,15 +521,14 @@
     "individual_gap": "For n>=1, n>=8*||q||_w and any two zeros in the stated high strip, w(2*n)*|xi_plus-xi_minus|<=6*||q||_w.",
     "summed_gap": "For N>=1 and N>=8*||q||_w, any actual determinant-root families lying in their respective high strips have summable squared weighted differences and sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2 <= 9*||R_N q||_w^2+(2304/N)*||q||_w^4. The source tail is represented by Coeff.fourierTail N applied to the actual weighted source coefficients, retaining the boundary |k|=N.",
     "constant_corrections": "Retains source individual constant 6 and coefficient-tail factor 9, with cutoff 8*||q||_w, radius-6*n real strips, and quartic coefficient 2304 replacing the printed 576. These follow from the previously corrected inverse bound 4/n rather than the printed 2/n.",
-    "qualifications": "The root hypotheses concern the constructed analytic determinant, not freely supplied spectral data. Global eigenvalue labels, their agreement with these root families, operator algebraic multiplicities and the low central estimates remain unproved. The statements do not claim Theorems 1-3."
+    "qualifications": "The weighted determinant is now proved independent of the auxiliary weight and has exactly the actual rough Hill characteristic zero condition. HillPhysicalGapBounds applies the individual and summed estimates directly to actual energy-discriminant root families. Global source eigenvalue labels, characteristic orders, operator multiplicities and low central estimates remain open."
   },
   "classical_discriminant_reuse": {
     "source_branch": "articles/kdv-convexity",
     "source_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29",
     "unchanged_source_blobs": {
       "NLS/KdV/ConstantUpperSpectralBridge.lean": "01330bc4b261c928cef33cddbd942ab357483c8d",
-      "NLS/KdV/ClassicalSpectralSymmetry.lean": "3102daaa2cf9495f572d0c29467ffe420444bee3",
-      "NLS/KdV/ClassicalDiscriminant.lean": "da51400726c5477a705099b48b397e770a3e9aad"
+      "NLS/KdV/ClassicalSpectralSymmetry.lean": "3102daaa2cf9495f572d0c29467ffe420444bee3"
     },
     "reused_modules": [
       "NLS/KdV/ConstantUpperSpectralBridge.lean",
@@ -541,7 +552,12 @@
     "actual_construction": "The imported constant-upper state map is proved to turn actual constructed ZS IVP solutions for (-1,-q) into scalar Hill solutions of -F second+q*F=lambda*F, with bijective position/derivative initial state, including lambda=0. Even descent through the spectral square proves joint complex Banach analyticity of the literal normalized scalar trace in energy and the continuous potential with its sup norm.",
     "new_comparison": "A direct scalar Volterra state flow for (F,G) prime=(G,(q-lambda)*F) is constructed and proved identical to that shared scalar IVP, with its exact trace equal to classicalHillDiscriminant. Absolute-continuity uniqueness identifies every scalar weak solution with the same actual initial state. For a continuous physical circle potential Q, every eigenvector of this branch\u2019s actual periodic H2 Hill operator has this scalar state flow on [0,1], with F its continuous representative and G its actual continuous derivative representative.",
     "source_correspondence": "Section 2 pages 8-10: physical Hill discriminant and scalar solutions. This is the continuous-potential discriminant and weak-to-classical IVP comparison, not yet the global product/action construction.",
-    "qualifications": "The full two-interval propagation, nonzero initial-state property, and continuous period-one characteristic equivalence are now proved. For arbitrary period-one L2 coefficients the identified first-order physical trace has the exact Hill eigenvalue zero condition. Analytic descent of that rough trace to the energy variable, zero-order/operator multiplicity comparison, global labels and low central bounds remain open."
+    "qualifications": "Full-period continuous characteristic equivalence, actual L2 monodromy/operator comparison, joint analytic descent to the L2 energy variable and auxiliary weight independence are proved. Characteristic zero orders, Hill algebraic multiplicities, global labels and central bounds remain open.",
+    "refactored_provenance": {
+      "file": "NLS/KdV/ClassicalDiscriminant.lean",
+      "original_blob": "da51400726c5477a705099b48b397e770a3e9aad",
+      "change": "The unchanged physical definition and API now reuse NLS/ComplexAnalysis/EntireEvenSquareDescent.lean. The former local root-square and joint-descent proofs were extracted into shared lemmas, used by both classical and rough L2 families."
+    }
   },
   "full_period_characteristic_comparison": {
     "modules": [
@@ -591,8 +607,39 @@
     ],
     "actual_operator_identification": "For arbitrary complex L2 period-two coefficient potential q, the existing first-order operator at the literal potential pair (single Fourier mode -1 at zero, -q) has a nonzero H1 pair eigenvector at z iff the actual Hill operator has a nonzero periodic H2 eigenvector at z^2. Elimination gives a_2(k)=-(pi*k+z)*a_1(k) and (z^2-pi^2*k^2)*a_1(k)=(q*a_1)(k). The first component is nonzero for a nonzero pair; the previously proved Hill regularization gives H2. Conversely the explicit bounded domain lift is (f,I*f prime-z*f), and it satisfies the actual first-order coefficient equation.",
     "rough_characteristic": "For every even-supported complex L2 q (the actual period-one embedding), this identifies the genuine periodic H2 Hill eigenvalue condition at z^2 with the actual L2 unit-monodromy trace of (-1,-q) having square equal to four. The shared first-order compact periodic spectrum theorem and the physical L2 trace/product comparison are used only after this explicit operator identification.",
-    "analyticity": "The trace family is jointly complex Banach analytic in frequency z and the raw L2 potential q. Its characteristic zero condition depends only on z^2. The trace itself has not yet been analytically descended to an energy family on the full L2 domain.",
+    "analyticity": "The actual physical frequency trace is jointly analytic in frequency and raw L2 potential. Its value, not merely its spectral zero condition, is now proved even by finite Fourier density and its exact classical comparison. The shared Cauchy-circle argument descends it to a jointly analytic energy family, including zero energy.",
     "high_strip": "On the checked unit-weight high strip and cutoff, the constructed Hill determinant vanishes iff the actual L2 trace square equals four at any square root of the energy. This closes the rough physical characteristic zero-set comparison, without a continuity hypothesis on the potential.",
-    "remaining": "Analytic energy descent and its normalization, determinant/characteristic zero orders versus Hill algebraic multiplicities, weighted-vs-unit realization independence, global labeling and low central estimates remain. No KdV Birkhoff map or main theorem is asserted."
+    "remaining": "Discriminant/determinant zero-order identities versus Hill algebraic multiplicities, global labeling and low central estimates remain. Auxiliary weighted realization independence is now proved. No KdV Birkhoff map or main theorem is asserted."
+  },
+  "energy_discriminant_and_weight_independence": {
+    "modules": [
+      "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean",
+      "NLS/KdV/HillL2EnergyDiscriminant.lean",
+      "NLS/KdV/HillWeightIndependence.lean",
+      "NLS/KdV/HillPhysicalGapBounds.lean"
+    ],
+    "source_correspondence": "Section 2 pages 8-10: the actual entire Hill energy discriminant on complex period-one L2 potentials. Appendix A pages 27-30: physical compatibility of the weighted two-mode reduction and the weighted gap estimates.",
+    "declarations": [
+      "NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent",
+      "NLS.KdV.hillL2FrequencyDiscriminant_even",
+      "NLS.KdV.hillL2Discriminant",
+      "NLS.KdV.analyticOnNhd_hillL2Discriminant_joint",
+      "NLS.KdV.hillL2Discriminant_eq_classical",
+      "NLS.KdV.hill_eigenvector_iff_l2Discriminant",
+      "NLS.KdV.hillReduced_zero_iff_l2Discriminant",
+      "NLS.KdV.hillForgetWeight_tailInverse",
+      "NLS.KdV.hillReducedOperator_weight_independent",
+      "NLS.KdV.hillReducedDeterminant_weight_independent",
+      "NLS.KdV.hillReduced_weighted_zero_iff_l2Discriminant",
+      "NLS.KdV.analyticOnNhd_weighted_hillL2Discriminant_joint",
+      "NLS.KdV.hillPeriodOne_physical_gap_le",
+      "NLS.KdV.hillPeriodOne_physical_gap_tail_bound"
+    ],
+    "energy_construction": "The actual L2 unit-monodromy trace for the identified (-1,-q) operator is even in frequency. This is proved on finite Fourier inputs using exact classical trace equality and then extended by dense finite approximation and continuity in the raw L2 norm. Its value is independent of the root used to represent energy. Defining the energy function by any square-root selection gives joint complex Banach analyticity in energy and raw L2 potential, including lambda=0, through the shared fixed-circle Cauchy descent. No continuity of the root selection is assumed.",
+    "normalization": "On every continuous physical input the new rough energy discriminant equals the previously normalized actual scalar IVP trace at every energy. For even-supported L2 potentials (the exact source period-one embedding), Delta(lambda)^2=4 is equivalent to existence of a nonzero eigenvector of the actual periodic H2 Hill operator.",
+    "weight_independence": "The contractive raw-coefficient inclusion from a SpectralWeight space to unit weight commutes with literal convolution, the complementary reciprocal multiplier, and the tail perturbation. Uniqueness of the proved two-sided inverse identifies the actual inverse solutions, effective potential and finite two-mode operator. Consequently the analytic determinant values agree at every point of the checked closed strip with cutoff n>=8*||q||_w.",
+    "weighted_characteristic": "The weighted determinant vanishes iff the same actual physical rough energy discriminant satisfies Delta(lambda)^2=4. The energy discriminant also depends jointly analytically on energy and the potential in every source weighted Banach norm via the bounded inclusion.",
+    "physical_gap_bounds": "For actual characteristic root families in the respective high strips, the exact source period-one individual estimate w(2*n)*|xi_plus-xi_minus|<=6*||q||_w and the summed estimate sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4 hold at the corrected cutoff N>=max(1,8*||q||_w). These are actual physical characteristic roots rather than caller-supplied abstract spectral data.",
+    "qualifications": "The characteristic zero condition and the weighted determinant values are identified. Analytic zero-order equality with the physical characteristic function and Hill algebraic multiplicities, global source spectral labels, low central estimates, canonical roots/actions and the physical Birkhoff map remain open. Main Theorems 1-3 remain unverified."
   }
 }

@@ -29,6 +29,10 @@ import NLS.KdV.HillDiscriminantNecessity
 import NLS.KdV.HillFirstOrderReduction
 import NLS.KdV.HillL2SpectralCriterion
 import NLS.KdV.HillDiscriminantComparison
+import NLS.ComplexAnalysis.EntireEvenSquareDescent
+import NLS.KdV.HillL2EnergyDiscriminant
+import NLS.KdV.HillWeightIndependence
+import NLS.KdV.HillPhysicalGapBounds
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -48,7 +52,9 @@ run_cmd do
     ``NLS.ReciprocalSeries.tsum_nat_reciprocal_sq_tail_le,
     ``NLS.SpectralWeight.doubleIndex, ``NLS.SpectralWeight.doubleIndex_apply,
     ``NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right,
-    ``NLS.LinearVolterra.solution_add, ``NLS.LinearVolterra.solution_zero_initial]
+    ``NLS.LinearVolterra.solution_add, ``NLS.LinearVolterra.solution_zero_initial,
+    ``NLS.ComplexAnalysis.complex_sqrt_sq,
+    ``NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

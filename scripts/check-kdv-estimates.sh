@@ -25,6 +25,7 @@ ensure_private_dir NLS/KdV
 ensure_private_dir NLS/Articles/KdVEstimates
 ensure_private_dir NLS/FunctionalAnalysis
 ensure_private_dir NLS/SequenceSpaces
+ensure_private_dir NLS/ComplexAnalysis
 for imported_entry in "$reference"/.lake/build/lib/lean/NLS/*; do
   target="$build_root/NLS/${imported_entry##*/}"
   if [[ ! -e "$target" && ! -L "$target" ]]; then
@@ -37,7 +38,7 @@ for package_lib in "$reference"/.lake/packages/*/.lake/build/lib/lean; do
 done
 cd "$project_dir"
 lean --version
-modules=(NLS/FunctionalAnalysis/TwoDimensionalDeterminant NLS/FunctionalAnalysis/AbsoluteContinuityTranslation NLS/FunctionalAnalysis/LinearVolterraLinearity NLS/SequenceSpaces/WeightedInsertion NLS/SequenceSpaces/PositiveFourierTail NLS/SequenceSpaces/ReciprocalSquareTail NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/KdV/HillSobolev NLS/KdV/HillPhysical NLS/KdV/HillAnalytic NLS/KdV/HillLocalization NLS/KdV/HillZeroCount NLS/KdV/HillWeightedCoefficients NLS/KdV/HillBilinearSymmetry NLS/KdV/HillSpectralLipschitz NLS/KdV/HillRootSeparation NLS/KdV/HillPeriodOnePotential NLS/KdV/HillGapTail NLS/KdV/ConstantUpperSpectralBridge NLS/KdV/ClassicalSpectralSymmetry NLS/KdV/ClassicalDiscriminant NLS/KdV/ClassicalHillFlow NLS/KdV/HillClassicalIdentification NLS/KdV/ClassicalHillMultipliers NLS/KdV/HillFullPeriod NLS/KdV/HillDiscriminantNecessity NLS/KdV/HillFirstOrderReduction NLS/KdV/HillL2SpectralCriterion NLS/KdV/HillDiscriminantComparison NLS/Articles/KdVEstimates/EstimateAdapter)
+modules=(NLS/ComplexAnalysis/EntireEvenSquareDescent NLS/FunctionalAnalysis/TwoDimensionalDeterminant NLS/FunctionalAnalysis/AbsoluteContinuityTranslation NLS/FunctionalAnalysis/LinearVolterraLinearity NLS/SequenceSpaces/WeightedInsertion NLS/SequenceSpaces/PositiveFourierTail NLS/SequenceSpaces/ReciprocalSquareTail NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/KdV/HillSobolev NLS/KdV/HillPhysical NLS/KdV/HillAnalytic NLS/KdV/HillLocalization NLS/KdV/HillZeroCount NLS/KdV/HillWeightedCoefficients NLS/KdV/HillBilinearSymmetry NLS/KdV/HillSpectralLipschitz NLS/KdV/HillRootSeparation NLS/KdV/HillPeriodOnePotential NLS/KdV/HillGapTail NLS/KdV/ConstantUpperSpectralBridge NLS/KdV/ClassicalSpectralSymmetry NLS/KdV/ClassicalDiscriminant NLS/KdV/ClassicalHillFlow NLS/KdV/HillClassicalIdentification NLS/KdV/ClassicalHillMultipliers NLS/KdV/HillFullPeriod NLS/KdV/HillDiscriminantNecessity NLS/KdV/HillFirstOrderReduction NLS/KdV/HillL2SpectralCriterion NLS/KdV/HillDiscriminantComparison NLS/KdV/HillL2EnergyDiscriminant NLS/KdV/HillWeightIndependence NLS/KdV/HillPhysicalGapBounds NLS/Articles/KdVEstimates/EstimateAdapter)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

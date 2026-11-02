@@ -4954,4 +4954,8 @@ import NLS.KdV.HillDiscriminantNecessity
 import NLS.KdV.HillFirstOrderReduction
 import NLS.KdV.HillL2SpectralCriterion
 import NLS.KdV.HillDiscriminantComparison
+import NLS.ComplexAnalysis.EntireEvenSquareDescent
+import NLS.KdV.HillL2EnergyDiscriminant
+import NLS.KdV.HillWeightIndependence
+import NLS.KdV.HillPhysicalGapBounds
 import NLS.Articles.KdVEstimates.EstimateAdapter
