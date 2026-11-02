@@ -39,6 +39,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
+  NLS/ComplexAnalysis/PrescribedAnalyticSquareRoot
   NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
   NLS/ComplexAnalysis/EntireLimit
   NLS/ComplexAnalysis/LocalAnalyticSquareRoot
@@ -181,7 +182,15 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalNormalizedCollapsedMoments
   NLS/KdV/ClassicalCriticalResolvent
   NLS/ComplexAnalysis/CirclePowerIntegrationByParts
-  NLS/KdV/ClassicalNormalizedMomentResolvent)
+  NLS/KdV/ClassicalNormalizedMomentResolvent
+  NLS/ComplexAnalysis/AnalyticLocalLipschitz
+  NLS/KdV/ClassicalHillFreeSquareComparison
+  NLS/ComplexAnalysis/NormalizedSquareRootBounds
+  NLS/KdV/ClassicalHighGapFamilies
+  NLS/KdV/ClassicalHillGapQuotientAsymptotics
+  NLS/ComplexAnalysis/TwoZeroCriticalLocalization
+  NLS/KdV/SquaredCoshCriticalDisc
+  NLS/KdV/ClassicalCriticalGapLocalization)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

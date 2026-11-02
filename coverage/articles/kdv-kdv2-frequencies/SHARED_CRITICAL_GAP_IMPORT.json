@@ -1,0 +1,60 @@
+{
+  "source_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+  "kind": "selected proved normalized gap quotient dependencies; local interfaces and extensions preserved",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+      "local_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541"
+    },
+    {
+      "path": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "local_sha256": "f7107b18fc5df42b7525e38c6390d3d7b0113b039b4409270eaf3920fcafe72a"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "local_sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a",
+      "local_sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillFreeSquareComparison.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb",
+      "local_sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "action": "retained_existing_compatible_interface_unused_shared_additions_not_imported",
+      "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+      "local_sha256": "2bb6abfa6e912decb75ebf991312566b32d371680c1a44257ac73289e2e51feb"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHighGapFamilies.lean",
+      "action": "retained_existing_compatible_interface_unused_shared_additions_not_imported",
+      "source_sha256": "5159acab52f9f977df82b203f95df8dd0942c194c941d5be0f8aacd3c3832928",
+      "local_sha256": "588f30118a75be821fd6f2c80d8306423edfbdaddb464bca0ab115ed65e959b0"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91",
+      "local_sha256": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapQuotientAsymptotics.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "7f8b25cac64cfe996c7df6a751cfc430d2601898d35efb124957b8cc8e5018d1",
+      "local_sha256": "7f8b25cac64cfe996c7df6a751cfc430d2601898d35efb124957b8cc8e5018d1"
+    }
+  ]
+}

@@ -135,4 +135,47 @@ theorem exists_small_analytic_classicalHillCriticalFrequencyTail (ε : ℝ) (hε
   exact ⟨N,W ∩ U,hN,hW.inter hU,⟨h0W,h0U⟩,ha.mono inter_subset_left,
     fun q hq => hUsub hq.2⟩
 
+/-- At any continuous complex source, every sufficiently high actual
+critical frequency is uniformly as close to its free center as prescribed.
+The neighborhood and cutoff are chosen before the high index. -/
+theorem exists_classicalHill_small_critical_frequency_neighborhood
+    (q0 : NLS.LinearVolterra.Curve ℂ) (epsilon : ℝ) (hepsilon : 0 < epsilon) :
+    ∃ M : ℕ, ∃ U : Set (NLS.LinearVolterra.Curve ℂ), 0 < M ∧ IsOpen U ∧ q0 ∈ U ∧
+      ∀ q ∈ U, ∀ n : ℕ+, M ≤ (n : ℕ) →
+        ‖classicalHillFrequencyCritical q n-(Real.pi : ℂ)*(n : ℕ)‖ < epsilon := by
+  obtain ⟨N,V,R,hN,hV,hq0,_,ha,_⟩ := exists_analytic_classicalHillCriticalFrequencyTail q0
+  let f := classicalHillCriticalFrequencyTail N
+  have hs : Summable (fun j : ℤ => ‖f q0 j‖^2) := by
+    simpa only [ENNReal.toReal_ofNat,Real.rpow_two] using
+      (lp.hasSum_norm (by norm_num : 0 < (2 : ENNReal).toReal) (f q0)).summable
+  have hi : Function.Injective (fun j : ℕ => (j : ℤ)) := by
+    intro i j hij
+    exact Int.ofNat_inj.mp hij
+  have hnat := hs.comp_injective hi
+  have hlim := hnat.tendsto_atTop_zero
+  obtain ⟨M,hM⟩ := eventually_atTop.mp
+    (hlim.eventually (gt_mem_nhds (by positivity : (0 : ℝ) < (epsilon/2)^2)))
+  have hc : ContinuousAt (fun q => f q-f q0) q0 :=
+    (ha q0 hq0).continuousAt.sub continuousAt_const
+  have hcont : ∀ᶠ q in 𝓝 q0, ‖f q-f q0‖ < epsilon/2 :=
+    hc.norm.eventually (gt_mem_nhds (by simpa only [sub_self,norm_zero] using (half_pos hepsilon)))
+  obtain ⟨W,hWsub,hW,hqW⟩ := _root_.mem_nhds_iff.mp hcont
+  refine ⟨max (N+1) M,V ∩ W,by omega,hV.inter hW,⟨hq0,hqW⟩,?_⟩
+  intro q hq n hn
+  have hnN : N < (n : ℕ) := by have := (le_max_left (N+1) M).trans hn;omega
+  have hnM : M ≤ (n : ℕ) := (le_max_right (N+1) M).trans hn
+  have he : f q (n : ℤ) = classicalHillFrequencyCritical q n-(Real.pi : ℂ)*(n : ℕ) := by
+    rw [classicalHillCriticalFrequencyTail_apply,if_pos (by exact_mod_cast hnN)]
+    rfl
+  have hbase : ‖f q0 (n : ℤ)‖ < epsilon/2 := by
+    have hb := hM (n : ℕ) hnM
+    change ‖f q0 (n : ℤ)‖^2 < (epsilon/2)^2 at hb
+    nlinarith [norm_nonneg (f q0 (n : ℤ))]
+  have hdiff := lp.norm_apply_le_norm (by norm_num : (2 : ENNReal) ≠ 0) (f q-f q0) (n : ℤ)
+  have ht := norm_le_norm_sub_add (f q (n : ℤ)) (f q0 (n : ℤ))
+  rw [← he]
+  change ‖f q (n : ℤ)-f q0 (n : ℤ)‖ ≤ ‖f q-f q0‖ at hdiff
+  have hsmall : ‖f q-f q0‖ < epsilon/2 := hWsub hq.2
+  linarith
+
 end NLS.KdV

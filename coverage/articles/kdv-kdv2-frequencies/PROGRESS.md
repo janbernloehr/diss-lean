@@ -588,3 +588,38 @@ article main theorems remain open. No canonical scalar L_n=1 is assumed.
 Strict validation: all 174 selected modules pass. The complete transitive
 axiom audit covers 1858 selected declarations and 14023 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+
+## Actual critical energies at quadratic gap scale
+
+Extended the actual analytic Hilbert critical tail to uniform arbitrarily
+small high-frequency confinement near any continuous complex source.
+Selected proved normalized endpoint-quotient comparisons give an actual
+quadratic gap localization on one common tail neighborhood. A fixed energy
+radius precedes every tolerance epsilon; the critical displacement is at
+most 2*epsilon*|gamma_k^2|/(pi*r*k). The simpler public consequence allows
+any prescribed coefficient eta in front of |gamma_k^2|/k.
+Actual endpoint geometry also yields |gamma_k|<=2*pi^2*k. Combined
+with the quadratic estimate, this proves the continuous-potential form
+of (37), |lambda-dot_k-tau_k|<=eta*|gamma_k|, for every eta>0 on one
+common complex tail neighborhood, including collapsed gaps.
+
+The actual critical energy lies within one quarter of the actual gap
+length from its midpoint and is at least half a gap length from the
+gap-length circle. At a collapsed actual high gap it equals the midpoint.
+The proof constructs stationarity of the squared primitive from its actual
+trace identity and squaredCosh noncriticality, then uses a whole-disc
+Cauchy bound on the normalized endpoint-deflated unit. Complex and double
+endpoints are included; no nonzero Delta-prime or RealType assumption is
+imposed at a branch point.
+
+Read `CRITICAL_GAP_LOCALIZATION.md` and the exact selected import record
+`SHARED_CRITICAL_GAP_IMPORT.json`. This prepares the diagonal pole control
+for normalized cubic-resolvent contour estimates. The weighted lp part of
+source Lemma 2.11(i), sharp normalized moment/root estimates, full rough/
+global W compatibility, physical frequency/action identification and all
+main theorems remain open.
+
+Strict validation: all 183 selected modules pass; the complete transitive
+axiom audit covers 1935 selected declarations and 14088 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

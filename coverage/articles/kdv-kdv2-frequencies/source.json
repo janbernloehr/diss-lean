@@ -658,15 +658,19 @@
     {
       "path": "NLS/KdV/ClassicalCriticalTailAnalytic.lean",
       "source_labels": [
-        "Uniform period-operator tail dependency"
+        "Uniform period-operator tail dependency",
+        "Common arbitrary-source high critical confinement"
       ],
       "source_pages": [
         14,
+        16,
+        18,
+        19,
         21
       ],
-      "scope": "Actual positive spectral-frequency critical displacement tail is Banach analytic in ℓ², norm bounded, and uniformly small near zero; not the Hamiltonian frequency map",
+      "scope": "Actual positive spectral-frequency critical displacement tail is Banach analytic in ℓ², norm bounded, and uniformly small near zero; not the Hamiltonian frequency map; extended to arbitrarily small uniform high-frequency confinement on one neighborhood of any continuous complex source using the actual analytic Hilbert displacement",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "b39cd6fe783f27bdae092ac3521f7d66544d8908f8516c1111ae3bc27ae517bc"
+      "sha256": "51985261301482aa30d71670cfe67f921f6ea14fed8a91e26dc55dc202150651"
     },
     {
       "path": "NLS/ComplexAnalysis/RightHalfPlaneSquareRoot.lean",
@@ -2403,6 +2407,137 @@
       "scope": "Constructed actual near-zero continuous-potential family before all n,k,m, exact 2*pi/(m+1) primitive-power/squared-critical-resolvent formula with the Jacobian, and an absolutely convergent positive-index series outside the contour integral justified by a Hilbert Bochner integral; retains analyticity, zeroth normalization, odd cancellation and the actual inverse norm bound. Sharp gap estimates, physical frequencies and full rough/global W remain open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "56c67005bf8f06f3b99fbb20cd65c13247eb2cc8a03513a196f41a5b8b001c24"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean",
+      "source_labels": [
+        "Shared normalized actual endpoint quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual critical gap localization, with existing local interfaces and extensions preserved",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean",
+      "source_labels": [
+        "Shared normalized actual endpoint quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual critical gap localization, with existing local interfaces and extensions preserved",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PrescribedAnalyticSquareRoot.lean",
+      "source_labels": [
+        "Existing prescribed square-root dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Existing proved prescribed analytic square-root interface directly recompiled for normalized actual endpoint units; no new source change",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eb4188b46714e5c3a556ffde4d5eb8b0b30576dbdc9ecd4559f28d1ba41a740d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoZeroCriticalLocalization.lean",
+      "source_labels": [
+        "Two-zero critical localization with a normalized analytic unit"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Whole-disc Cauchy derivative estimate and an actual stationary factorization give |critical-midpoint|<=2*epsilon*|gap|^2/R and quarter-gap confinement, including coincident complex endpoints; gap-circle critical separation follows",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "11f2ec8aa3a8b224b4323c9202572f4efb8f656460ccb96519483d9066dfe7ef"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalGapLocalization.lean",
+      "source_labels": [
+        "Actual critical gap localization for (37) and Lemma 2.11(i), partial continuous-potential scope"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "At any continuous complex source, a fixed radius precedes every tolerance, common tail neighborhood and all high indices; actual critical/midpoint/squared-gap analyticity, arbitrarily small coefficient in |critical-midpoint|<=eta*|squared gap|/k, quarter-gap confinement, gap-circle critical-pole separation, exact collapsed equality and the arbitrary relative-gap bound (37) via actual endpoint geometry. The lp remainder and full rough/global W scope remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dcbfaa0d0dfbdd8c22d85bd2d8fabc9d65b3f72544d04087ff87113ba3aed2e3"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHighGapFamilies.lean",
+      "source_labels": [
+        "Existing actual common high-gap families"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Existing actual analytic midpoint, squared-gap, moment and unordered-pair family directly recompiled; compatible local interface retained and unused shared ordered-family addition not imported",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "inspected_shared_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "588f30118a75be821fd6f2c80d8306423edfbdaddb464bca0ab115ed65e959b0"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillFreeSquareComparison.lean",
+      "source_labels": [
+        "Shared normalized actual endpoint quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual critical gap localization, with existing local interfaces and extensions preserved",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapQuotientAsymptotics.lean",
+      "source_labels": [
+        "Shared normalized actual endpoint quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual critical gap localization, with existing local interfaces and extensions preserved",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "7f8b25cac64cfe996c7df6a751cfc430d2601898d35efb124957b8cc8e5018d1"
+    },
+    {
+      "path": "NLS/KdV/SquaredCoshCriticalDisc.lean",
+      "source_labels": [
+        "Noncritical squaredCosh coordinate on the first spectral disc"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19
+      ],
+      "scope": "The derivative of the actual squared primitive coordinate is nonzero for norm less than pi^2, proved from free sine isolation and the exact derivative at zero; no principal-root analytic branch assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8eea01c21387b77dce43445c1956fbf32b8d8eca23887f4a4b9353a557a5161e"
     }
   ],
   "dependencies_needed": [
@@ -2434,15 +2569,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1858,
-    "total_declarations_audited": 14023,
+    "candidate_declarations_audited": 1935,
+    "total_declarations_audited": 14088,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 174
+    "selected_modules": 183
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2529,9 +2664,17 @@
       "commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
       "record": "SHARED_COLLAPSED_GAP_IMPORT.json",
       "kind": "selected continuous-potential collapsed-gap dependency sources; full branch not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "record": "SHARED_CRITICAL_GAP_IMPORT.json",
+      "kind": "selected continuous-potential normalized quotient dependencies; five compatible local sources retained; full branch and Miura/L2-only sources not merged"
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
   "shared_collapsed_gap_import_record": "SHARED_COLLAPSED_GAP_IMPORT.json",
-  "normalized_moment_resolvent_record": "NORMALIZED_MOMENT_RESOLVENT.md"
+  "normalized_moment_resolvent_record": "NORMALIZED_MOMENT_RESOLVENT.md",
+  "critical_gap_localization_record": "CRITICAL_GAP_LOCALIZATION.md",
+  "shared_critical_gap_import_record": "SHARED_CRITICAL_GAP_IMPORT.json"
 }

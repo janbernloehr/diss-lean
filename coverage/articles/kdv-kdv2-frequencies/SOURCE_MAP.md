@@ -394,3 +394,25 @@ This is not the physical frequency identity (69), a sharp moment estimate
 or a global/rough W extension. The canonical leading scalar remains
 unfixed at nonzero potentials. See `NORMALIZED_MOMENT_RESOLVENT.md` for
 precise scope and remaining obligations. Every main theorem stays open.
+
+
+### Actual critical gap localization for moment contour shrinking
+
+`ClassicalCriticalGapLocalization.lean` proves actual high critical
+energies lie within one quarter gap length of the actual midpoint on a
+common complex neighborhood of any continuous source. It also proves an
+arbitrarily small coefficient in the bound |lambda-dot_k-tau_k| <=
+eta*|gamma_k^2|/k, with one neighborhood and cutoff before all retained
+indices, and exact equality at an actual collapsed high gap. It also
+proves the continuous-potential version of (37), the relative bound
+|lambda-dot_k-tau_k|<=eta*|gamma_k| for every eta>0, using actual counted
+endpoint geometry. The energy/midpoint/squared-gap families retain their analyticity. The
+result supplies the critical-pole separation on gap-length circles
+needed after the exact normalized squared-resolvent moment formula.
+
+This advances the local continuous-potential form of source (37) and
+Lemma 2.11(i), PDF pages 16 and 18–19. It does not establish its lp
+remainder sequence, the full rough/global W scope, a normalized numerator
+zero estimate or a physical frequency identity. Details and selected
+source provenance are in `CRITICAL_GAP_LOCALIZATION.md` and
+`SHARED_CRITICAL_GAP_IMPORT.json`. All main theorem rows remain open.

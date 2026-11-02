@@ -1,3 +1,7 @@
+import NLS.KdV.ClassicalCriticalGapLocalization
+import NLS.KdV.SquaredCoshCriticalDisc
+import NLS.ComplexAnalysis.TwoZeroCriticalLocalization
+import NLS.KdV.ClassicalHillGapQuotientAsymptotics
 import NLS.KdV.ClassicalNormalizedMomentResolvent
 import NLS.KdV.ClassicalNormalizedCollapsedMoments
 import NLS.KdV.ClassicalNormalizedOddMoments
@@ -70,6 +74,7 @@ run_cmd do
     `NLS.ComplexAnalysis.ParametricDividedDifference,
     `NLS.ComplexAnalysis.AnalyticImplicitBanachRoot,
     `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
+    `NLS.ComplexAnalysis.PrescribedAnalyticSquareRoot,
     `NLS.ComplexAnalysis.RightHalfPlaneSquareRoot,
     `NLS.ComplexAnalysis.EntireLimit,
     `NLS.ComplexAnalysis.LocalAnalyticSquareRoot,
@@ -212,7 +217,15 @@ run_cmd do
     `NLS.KdV.ClassicalNormalizedCollapsedMoments,
     `NLS.KdV.ClassicalCriticalResolvent,
     `NLS.ComplexAnalysis.CirclePowerIntegrationByParts,
-    `NLS.KdV.ClassicalNormalizedMomentResolvent]
+    `NLS.KdV.ClassicalNormalizedMomentResolvent,
+    `NLS.ComplexAnalysis.AnalyticLocalLipschitz,
+    `NLS.KdV.ClassicalHillFreeSquareComparison,
+    `NLS.ComplexAnalysis.NormalizedSquareRootBounds,
+    `NLS.KdV.ClassicalHighGapFamilies,
+    `NLS.KdV.ClassicalHillGapQuotientAsymptotics,
+    `NLS.ComplexAnalysis.TwoZeroCriticalLocalization,
+    `NLS.KdV.SquaredCoshCriticalDisc,
+    `NLS.KdV.ClassicalCriticalGapLocalization]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

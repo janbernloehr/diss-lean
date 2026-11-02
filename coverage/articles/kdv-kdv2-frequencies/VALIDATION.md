@@ -68,8 +68,9 @@ its existing Hilbert specialization and a transitive audit.
 | Selected collapsed-gap dependencies from convexity `9d1741c` | Actual two-zero deflation including double roots, nonzero deflated units, and constructed analytic square roots on complete discs; local extensions preserved. |
 | `ClassicalHillCollapsedDifferentialMoments.lean`, `ClassicalNormalizedCollapsedMoments.lean`, extended `FrequencyMoments.lean` | Every positive actual normalized moment vanishes at each high collapsed gap on one common local family, including the diagonal; retains all-mode analyticity, exact zeroth periods and odd cancellation. |
 | `ClassicalCriticalResolvent.lean`, `CirclePowerIntegrationByParts.lean`, `ClassicalNormalizedMomentResolvent.lean` | Actual analytic Hilbert critical/squared resolvents; all-mode original contour avoidance; exact all-order 2*pi/(m+1) moment formula; absolute positive-index convergence outside the integral via a Bochner integral and Holder pairing. |
+| Selected normalized endpoint-quotient sources from convexity `135b1fa`, extended `ClassicalCriticalTailAnalytic.lean`, and new `TwoZeroCriticalLocalization.lean`, `SquaredCoshCriticalDisc.lean`, `ClassicalCriticalGapLocalization.lean` | Arbitrarily small common high critical-frequency confinement at any continuous complex source; actual critical displacement at quadratic gap scale with arbitrarily small coefficient, analytic families, collapsed equality and diagonal critical-pole separation on gap circles. |
 
-All 174 selected modules compile with pinned **Lean 4.33.1**, commit
+All 183 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -110,6 +111,7 @@ PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
+PASS NLS/ComplexAnalysis/PrescribedAnalyticSquareRoot
 PASS NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
 PASS NLS/ComplexAnalysis/EntireLimit
 PASS NLS/ComplexAnalysis/LocalAnalyticSquareRoot
@@ -253,11 +255,19 @@ PASS NLS/KdV/ClassicalNormalizedCollapsedMoments
 PASS NLS/KdV/ClassicalCriticalResolvent
 PASS NLS/ComplexAnalysis/CirclePowerIntegrationByParts
 PASS NLS/KdV/ClassicalNormalizedMomentResolvent
-Axiom audit passed: 1858 candidate declarations; 14023 declarations total.
+PASS NLS/ComplexAnalysis/AnalyticLocalLipschitz
+PASS NLS/KdV/ClassicalHillFreeSquareComparison
+PASS NLS/ComplexAnalysis/NormalizedSquareRootBounds
+PASS NLS/KdV/ClassicalHighGapFamilies
+PASS NLS/KdV/ClassicalHillGapQuotientAsymptotics
+PASS NLS/ComplexAnalysis/TwoZeroCriticalLocalization
+PASS NLS/KdV/SquaredCoshCriticalDisc
+PASS NLS/KdV/ClassicalCriticalGapLocalization
+Axiom audit passed: 1935 candidate declarations; 14088 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 174 selected modules (including generated and private declarations)
+the 183 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -815,3 +825,40 @@ normalized gap/root estimates, full W/rough-topology compatibility,
 the exact nonzero-potential canonical scalar and physical frequency/
 Hamiltonian/action/Birkhoff identification remain open. All main
 theorem inventory rows remain unverified.
+
+
+## Actual critical gap localization
+
+The current milestone is detailed in `CRITICAL_GAP_LOCALIZATION.md`.
+At every continuous complex source, one energy radius precedes all
+tolerances, common neighborhoods/cutoffs and high indices. The actual
+critical, midpoint and squared-gap families retain analyticity. The
+critical displacement is at most eta times |squared gap|/k for any
+prescribed eta>0 after choosing the common tail. It lies within one
+quarter gap length of the actual midpoint and is separated from the
+gap-length circle by at least half a gap length. Actual counted endpoint
+geometry also proves the continuous-potential form of (37) with any
+prescribed relative-gap tolerance on one common tail. At an actual collapsed
+high gap it equals the midpoint. This follows from actual uniformly
+small Hilbert critical tails, whole-disc normalized endpoint quotients,
+proved stationarity of the primitive square and a Cauchy unit estimate.
+
+The selected source record `SHARED_CRITICAL_GAP_IMPORT.json` preserves
+local extensions and compatible older interfaces. Four new proved
+continuous-potential dependencies are imported; the whole branch and
+Miura/L2-only developments are not merged. No ZS RealType input is
+imposed on the actual Hill coefficient pair.
+
+All 183 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 1935
+selected declarations and 14088 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and build/audit/coverage selections agree.
+Selected outputs are private; canonical sources and builds remain read
+only. No placeholders, new axioms, heartbeat increases, disabled linters
+or warning exceptions are introduced.
+
+The weighted lp remainder in Lemma 2.11(i), full rough/global W scope,
+sharp normalized root/moment estimates, canonical scalar L_n=1 and
+physical frequency/action/Birkhoff flow identification remain open.
+No main theorem inventory row is marked verified.
