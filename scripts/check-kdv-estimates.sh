@@ -65,6 +65,7 @@ modules+=(NLS/ComplexAnalysis/UnimodularWeightedTraceError NLS/ZakharovShabat/Cl
 modules+=(NLS/ComplexAnalysis/LocalSinhComparison NLS/ComplexAnalysis/ContinuousIntervalBranch NLS/ComplexAnalysis/WeightedCoshInverse NLS/ComplexAnalysis/ImaginaryCoshInverse NLS/ComplexAnalysis/ConnectedPhaseControl NLS/KdV/HillL2BandPhase NLS/ZakharovShabat/FreeCosineZeroAudit NLS/ZakharovShabat/NLSHamiltonianPhasePolynomial NLS/KdV/HillL2BandAnchors NLS/KdV/HillFreeUpperArcs NLS/KdV/HillL2UpperArcAsymptotics)
 modules+=(NLS/ComplexAnalysis/LaurentSquareRemainder NLS/ComplexAnalysis/UpperCircleReflection NLS/ComplexAnalysis/QuadraticContourCoefficient NLS/ComplexAnalysis/NonnegativeComplexSeries NLS/KdV/HillContinuousReality NLS/KdV/HillFreeCircleGeometry NLS/KdV/HillFreeTraceContour NLS/KdV/HillL2UpperSquareAsymptotics NLS/KdV/HillL2SquareCircleAsymptotics NLS/KdV/HillSmoothQuadraticTraceLimit NLS/KdV/HillSmoothQuadraticTrace)
 modules+=(NLS/KdV/HillRealActionContinuity)
+modules+=(NLS/SequenceSpaces/LocalSeriesContinuity NLS/KdV/HillActionTailBudget NLS/KdV/HillLocallyUniformActionTails NLS/KdV/HillWeightedActionContinuity)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

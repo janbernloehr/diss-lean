@@ -61,6 +61,41 @@ theorem hillPeriodOneAction_eq_highContourMoment (w : SpectralWeight)
     (hillPeriodOneUnitPotential_even w q) (hillPeriodOneUnitPotential_real w q hr) n hn
     (by linarith [norm_hillPeriodOneUnitPotential_le w q]) 0
 
+theorem hillPeriodOneAction_weighted_tail_of_quadratic_bound
+    (w : SpectralWeight) (p : WeightedCoeff w.doubleIndex.toWeight 2)
+    (hr : IsRealHillPotential (w.doubleIndex.toCoeff p))
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖p‖ ≤ (N : ℝ))
+    (haction : ∀ n : ℕ, N ≤ n → (n : ℝ) * hillPeriodOneAction w p hr n ≤
+      hillPeriodOneGap w p hr n ^ 2) :
+    Summable (fun k : ℕ => w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
+        (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w p hr (k + N)) ∧
+      (∑' k : ℕ, w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
+        (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w p hr (k + N)) ≤
+        (2 * Real.pi) *
+          (9 * ‖Coeff.fourierTail N (WeightedCoeff.weightEquiv w.doubleIndex.toWeight 2 p)‖ ^ 2 +
+            2304 * ‖p‖ ^ 4 / (N : ℝ)) := by
+  obtain ⟨hgap, hgapbound⟩ := hillPeriodOne_canonical_gap_tail_bound w p hr N hN hcut
+  have hpoint (k : ℕ) : w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
+      (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w p hr (k + N) ≤
+        (2 * Real.pi) * (w (2 * ((k + N : ℕ) : ℤ)) ^ 2 * hillPeriodOneGap w p hr (k + N) ^ 2) := by
+    have hb := haction (k+N) (by omega)
+    change ((k + N : ℕ) : ℝ) * hillPeriodOneAction w p hr (k + N) ≤
+      hillPeriodOneGap w p hr (k + N) ^ 2 at hb
+    calc
+      _ = (2 * Real.pi) * (w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
+          (((k + N : ℕ) : ℝ) * hillPeriodOneAction w p hr (k + N))) := by ring
+      _ ≤ _ := mul_le_mul_of_nonneg_left
+        (mul_le_mul_of_nonneg_left hb (sq_nonneg _)) (by positivity)
+  have hs := Summable.of_nonneg_of_le (fun k =>
+    mul_nonneg (mul_nonneg (sq_nonneg _) (by positivity))
+      (hillPeriodOneAction_nonneg w p hr (k + N) (by omega))) hpoint
+    (hgap.mul_left (2 * Real.pi))
+  refine ⟨hs, ?_⟩
+  have hsum := hs.tsum_le_tsum hpoint (hgap.mul_left (2 * Real.pi))
+  rw [tsum_mul_left] at hsum
+  exact hsum.trans (mul_le_mul_of_nonneg_left hgapbound (by positivity))
+
+
 /-- A potential-dependent cutoff suffices for the quantitative tail
 comparison with the corrected Appendix A.7 gap remainder. -/
 theorem exists_hillPeriodOneAction_weighted_tail_bound (w : SpectralWeight)
@@ -79,26 +114,10 @@ theorem exists_hillPeriodOneAction_weighted_tail_bound (w : SpectralWeight)
     (hillPeriodOneUnitPotential_real w q hr)
   refine ⟨N₀, hN₀, ?_⟩
   intro N hN hcut
-  obtain ⟨hgap, hgapbound⟩ := hillPeriodOne_canonical_gap_tail_bound w q hr N (hN₀.trans hN) hcut
-  have hpoint (k : ℕ) : w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
-      (2 * Real.pi * (k + N : ℕ)) * hillPeriodOneAction w q hr (k + N) ≤
-        (2 * Real.pi) * (w (2 * ((k + N : ℕ) : ℤ)) ^ 2 * hillPeriodOneGap w q hr (k + N) ^ 2) := by
-    have hb := haction (k + N) (by omega)
-    change ((k + N : ℕ) : ℝ) * hillPeriodOneAction w q hr (k + N) ≤
-      hillPeriodOneGap w q hr (k + N) ^ 2 at hb
-    calc
-      _ = (2 * Real.pi) * (w (2 * ((k + N : ℕ) : ℤ)) ^ 2 *
-          (((k + N : ℕ) : ℝ) * hillPeriodOneAction w q hr (k + N))) := by ring
-      _ ≤ _ := mul_le_mul_of_nonneg_left
-        (mul_le_mul_of_nonneg_left hb (sq_nonneg _)) (by positivity)
-  have hs := Summable.of_nonneg_of_le (fun k =>
-    mul_nonneg (mul_nonneg (sq_nonneg _) (by positivity))
-      (hillPeriodOneAction_nonneg w q hr (k + N) (by omega))) hpoint
-    (hgap.mul_left (2 * Real.pi))
-  refine ⟨hs, ?_⟩
-  have hsum := hs.tsum_le_tsum hpoint (hgap.mul_left (2 * Real.pi))
-  rw [tsum_mul_left] at hsum
-  exact hsum.trans (mul_le_mul_of_nonneg_left hgapbound (by positivity))
+  apply hillPeriodOneAction_weighted_tail_of_quadratic_bound w q hr N (hN₀.trans hN) hcut
+  intro n hn
+  have hb := haction n (hN.trans hn)
+  simpa only [hillPeriodOneAction, hillPeriodOneGap, hillPeriodOneLabels] using hb
 
 /-- The source action sequence has finite weighted l1 norm, with the
 exact source `w(2*n)^2*(2*pi*n)` factor and positive-index convention. -/

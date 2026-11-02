@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2130,
+    "declarations": 2165,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -232,10 +232,12 @@
       "NLS.ComplexAnalysis.exists_upper_circleMap_parameter",
       "NLS.ComplexAnalysis.weighted_norm_bound_on_circle_of_upper_reflection",
       "NLS.ComplexAnalysis.norm_quadratic_circle_coefficient_sub_le",
-      "NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit"
+      "NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit",
+      "NLS.continuousAt_tsum_of_locally_small_nat_tails",
+      "NLS.exists_local_nat_property_pullback"
     ]
   },
-  "full_repository_validation": "All 222 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2130-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 226 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2165-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -385,7 +387,7 @@
     "NLS/KdV/HillL2GapSquareIdentification.lean": "729120334126705cf39b981aaf7861094c6735b80382ebf5e013ba06a4f65d73",
     "NLS/KdV/HillRealGapUnitBound.lean": "338e49fedf2113939457f34ce70fac4be4dd8463f1cf5ed4496bfd5fe2a8ae80",
     "NLS/KdV/HillEventualActionGapBound.lean": "f07782f44409cfdea879a11656cb3e1988e774fe2c6b05d0cedfecfe0ca9c955",
-    "NLS/KdV/HillWeightedRealActions.lean": "9b34f86eaf7e247c3ac1d804e9d7fd97fed9db50df53490e17f0f157bbe2a7ff",
+    "NLS/KdV/HillWeightedRealActions.lean": "694558e17aafcc4ab7d2f7abea181c37f8c46397582e7c387f25f403757dd1a1",
     "NLS/KdV/ActionHamiltonianMoments.lean": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
     "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
     "NLS/KdV/ClassicalL2PrimitiveAgreement.lean": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
@@ -459,10 +461,14 @@
     "NLS/KdV/HillL2SquareCircleAsymptotics.lean": "574b845d717a5963033cee9b708e4abe24f9a08f9da44ec04c39a04a89f79b2e",
     "NLS/KdV/HillSmoothQuadraticTraceLimit.lean": "56c6a5dbf4b10fc3909ebe3fde6c256c84c39816c782c98d4f97f089a43d8893",
     "NLS/KdV/HillSmoothQuadraticTrace.lean": "63dd6ab9603422e6bea5bde9fbad382b6eca0f8fd297b6c5bac6c1c639d5f179",
-    "NLS/KdV/HillRealActionContinuity.lean": "e081523494b958c159e5c87c086d2c22286dbcc1e5994c2949e0a68eca7bbcec"
+    "NLS/KdV/HillRealActionContinuity.lean": "e081523494b958c159e5c87c086d2c22286dbcc1e5994c2949e0a68eca7bbcec",
+    "NLS/SequenceSpaces/LocalSeriesContinuity.lean": "0847132b6e75ab1c417844ce8cff3698e8c4fd29f7459ff994c9a0f3acee2808",
+    "NLS/KdV/HillActionTailBudget.lean": "84340b8836335984c07216023a2b4d4069c49a4d6fbde6e8f441f229fb028292",
+    "NLS/KdV/HillLocallyUniformActionTails.lean": "87d170317728fd5cb0626a65cc4013b412161e6bbc0bebc99d4e98693a01f9e2",
+    "NLS/KdV/HillWeightedActionContinuity.lean": "bdd586ba414887d1a3f4878d18f5bd2f9ad5f38fb0522022889cecd428b7283c"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The smooth physical quadratic action trace, L2 continuity of every fixed actual real gap moment (including collisions), and locally uniform high quadratic action-gap bounds are checked. The general real L2 quadratic trace still requires locally uniform summed action tails and a physical approximation/normalization argument. Higher physical Hamiltonian traces on their Sobolev domains, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-  "milestone": "L2 continuity and locally uniform quadratic bounds of actual Hill actions",
+  "remaining": "Main Theorems 1-3 remain unverified. The smooth physical quadratic trace and finite-action collision continuity are checked. For every admissible spectral weight, the actual native period-one weighted action tails now have locally uniform Fourier budgets and are arbitrarily small on a neighborhood; the full weighted action sum is continuous in the corresponding real weighted L2 coefficient topology. The general real L2 physical quadratic trace still requires the physical smooth approximation and exact norm normalization argument. Higher physical Hamiltonian traces on their Sobolev domains, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
+  "milestone": "Locally small weighted action tails and continuity of the full weighted action sum",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -687,7 +693,11 @@
     "NLS.KdV.HillL2SquareCircleAsymptotics",
     "NLS.KdV.HillSmoothQuadraticTraceLimit",
     "NLS.KdV.HillSmoothQuadraticTrace",
-    "NLS.KdV.HillRealActionContinuity"
+    "NLS.KdV.HillRealActionContinuity",
+    "NLS.SequenceSpaces.LocalSeriesContinuity",
+    "NLS.KdV.HillActionTailBudget",
+    "NLS.KdV.HillLocallyUniformActionTails",
+    "NLS.KdV.HillWeightedActionContinuity"
   ],
   "proof_commits": [
     {
@@ -864,6 +874,11 @@
       "commit": "b7a729668ac095029b8a7940c61b0c0326fdd553",
       "scope": "Proved the actual smooth physical quadratic Hill action trace with exact unit-interval normalization; 221 strict modules, 2124-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "c3aeb93c87a7512b7a79197dcb887ddd8d4c2cd1",
+      "scope": "Proved L2 continuity of finite actual Hill moments through collisions and locally uniform quadratic action-gap bounds; 222 strict modules, 2130-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -880,20 +895,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 222 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 226 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2130 declarations. Includes arbitrary continuous real L2 families of literal gap integrals and actual contour moments, collision continuity, the generalized neighborhood quadratic action-gap bound, its uniform real L2 cutoff, and the preserved previous bound.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2165 declarations. Includes generic pullback of locally uniform indexed properties, continuity of series from locally small tails, the refactored action summation helper, the native weighted real embedding and quadratic neighborhood bounds, the explicit vanishing Fourier tail budget, locally small summed actual weighted action tails and continuity of their full sum.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 222 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2130-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 226 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2165-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "For every continuous real even-supported L2 family, every fixed positive gap index and every nonnegative integer moment level, the literal real arcosh gap integral is continuous. A clamped arcosh argument gives a globally continuous integrand in the potential and energy and agrees with the original integrand on the actual gap. The moving-endpoint integral is the difference of two continuous primitives, so continuity includes closed gaps without a noncollision assumption. Identification with actual contour moments transfers continuity to the source-normalized complex action moments. The previous high quadratic action-gap proof is generalized to one complex coefficient neighborhood with explicit elementary index conditions. Intersecting its real L2 pullback with a norm-bounded open neighborhood yields one cutoff that works for all real potentials in that neighborhood. The old potential-dependent bound is recovered as a short corollary. Main Theorems 1-3 remain unverified. The smooth physical quadratic action trace, L2 continuity of every fixed actual real gap moment (including collisions), and locally uniform high quadratic action-gap bounds are checked. The general real L2 quadratic trace still requires locally uniform summed action tails and a physical approximation/normalization argument. Higher physical Hamiltonian traces on their Sobolev domains, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-    "scope": "All 222 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2130-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "A general topological pullback lemma transfers one common index cutoff and neighborhood property through a continuous map, with a separate equality of the indexed predicates. This transfers the intrinsic real L2 quadratic action-gap bound to native period-one weighted coefficients while keeping all proof conversions within default Lean limits. A refactored shared Hill summation theorem turns any common pointwise quadratic comparison into the corrected weighted summed tail budget. The explicit budget is continuous at fixed cutoff and tends to zero for every fixed potential. Choosing a sufficiently high cutoff and intersecting the chart neighborhood, a norm bound and a budget sublevel gives arbitrarily small summed weighted action tails on one open real weighted L2 neighborhood. Each actual action is continuous in this native topology, including collisions. A reusable finite-sum plus locally small tail lemma proves that the entire weighted action sum is continuous. The summand is exactly w(2*n)^2*(2*pi*n)*I_n, with zero at n=0 and no positive-index normalization shift. Main Theorems 1-3 remain unverified. The smooth physical quadratic trace and finite-action collision continuity are checked. For every admissible spectral weight, the actual native period-one weighted action tails now have locally uniform Fourier budgets and are arbitrarily small on a neighborhood; the full weighted action sum is continuous in the corresponding real weighted L2 coefficient topology. The general real L2 physical quadratic trace still requires the physical smooth approximation and exact norm normalization argument. Higher physical Hamiltonian traces on their Sobolev domains, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
+    "scope": "All 226 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2165-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "88c65cfd19db237d25915c6bb4a327000dc44f524d8f4b20646b58aa60acb670",
-      "scripts/check-kdv-estimates.sh": "1384d6fbdf254b46dbbca84400737653ee0798cd093bf13b8d3d663b844b3ba1",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "ec98c3a6e02c24f2638c06203df16ed0f3fbc24e0f9dcaae79f29173b098882d"
+      "NLS.lean": "6740a481796ac36c10ae4fe17d5acd46ded8e70a433f35b714ed1355125e15cd",
+      "scripts/check-kdv-estimates.sh": "60b0ac222122219eedf87b7908ee9f8f24385f6e3e1e416a0d714f9ef6dbf48c",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "946cbbe745de6d212277e1ca7444a69d7b3380e5cdd6a6fbd38138ef030df3bb"
     }
   },
   "warningAsError": true,
@@ -1000,8 +1015,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "L2 continuity and locally uniform quadratic bounds of actual Hill actions",
-    "focused_modules": 222,
-    "scope": "All 222 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2130-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Locally small weighted action tails and continuity of the full weighted action sum",
+    "focused_modules": 226,
+    "scope": "All 226 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2165-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

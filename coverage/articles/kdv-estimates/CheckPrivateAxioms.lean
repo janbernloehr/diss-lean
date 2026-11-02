@@ -1,3 +1,7 @@
+import NLS.SequenceSpaces.LocalSeriesContinuity
+import NLS.KdV.HillActionTailBudget
+import NLS.KdV.HillLocallyUniformActionTails
+import NLS.KdV.HillWeightedActionContinuity
 import NLS.KdV.HillRealActionContinuity
 import NLS.ComplexAnalysis.LaurentSquareRemainder
 import NLS.ComplexAnalysis.UpperCircleReflection
@@ -425,7 +429,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_upper_circleMap_parameter,
     ``NLS.ComplexAnalysis.weighted_norm_bound_on_circle_of_upper_reflection,
     ``NLS.ComplexAnalysis.norm_quadratic_circle_coefficient_sub_le,
-    ``NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit]
+    ``NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit,
+    ``NLS.continuousAt_tsum_of_locally_small_nat_tails,
+    ``NLS.exists_local_nat_property_pullback]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
