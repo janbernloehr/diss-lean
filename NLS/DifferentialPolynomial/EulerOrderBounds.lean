@@ -28,6 +28,12 @@ theorem pderiv {P Q : Monomial → Prop} {p : Polynomial} (hp : Supported P p) (
   · exact Supported.monomial _ _ (h m (hp m hm) hv)
 end Supported
 
+namespace JetOrderLE
+theorem pderiv {p : Polynomial} {s : ℕ} (hp : JetOrderLE p s) (v : Jet) :
+    JetOrderLE (MvPolynomial.pderiv v p) s :=
+  Supported.pderiv hp v (fun _ hm _ w hw => hm w (Finsupp.support_tsub hw))
+end JetOrderLE
+
 namespace DerivativeOrderLE
 variable {p : Polynomial} {d : ℤ}
 

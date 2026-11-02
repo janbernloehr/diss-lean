@@ -22,13 +22,16 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain",
         "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth",
         "NLS.Articles.MKdVNLSHierarchies.theorem1_smooth_miura_hierarchy",
-        "NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura"
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp"
       ],
       "limits": [
-        "The all-order scalar Hill/Miura Hamiltonians are independently defined by the scalar Riccati recurrence at u_prime+u^2, with checked K1/K2 normalization and actual first variations. Both clauses hold on all smooth complex periodic fields.",
-        "The sharp H^m extension of the even Hamiltonians and vector fields remains open for m>1.",
+        "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension; compatibility with the existing higher-regularity hierarchy and its full Frechet derivative are checked.",
+        "Both clauses are proved on all smooth complex periodic fields for independently constructed scalar Hill/Miura Hamiltonians, with K1/K2 normalization and actual first variations.",
+        "The sharp weak vector-field restriction remains open.",
         "Full identification of the independently constructed scalar Hill hierarchy with the article spectral mKdV actions/primitive asymptotics remains open."
-      ]
+      ],
+      "scalar_clause_status": "proved_exact_complex_Hm_domain"
     },
     {
       "label": "Theorem 2(i)",
@@ -173,8 +176,8 @@
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
   },
   "remaining_essential_dependencies": [
-    "sharp Sobolev extensions and spectral identification of the independently constructed all-order scalar Hill/Miura Hamiltonians",
-    "sharp Sobolev vector-field restriction",
+    "sharp weak vector-field restriction on the original complex H^m domain",
+    "spectral identification and sharp scalar Hamiltonian extension of the independently constructed all-order Hill/Miura hierarchy",
     "Hill operator spectral gap labels and action integrals",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
     "remaining frequency-sign and signed-mean qualifications in main-source statements"
@@ -198,6 +201,8 @@
     },
     "miura_gauge_identity": "NLS.DifferentialPolynomial.differentialRiccatiSeries_miura",
     "logarithmic_total_derivative": "NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient",
-    "scalar_Hill_physical_first_variation": "NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian"
+    "scalar_Hill_physical_first_variation": "NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian",
+    "endpoint_polynomial_first_variation": "NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean",
+    "sharp_even_hamiltonian": "NLS.ZakharovShabat.sobolevEvenHamiltonian"
   }
 }

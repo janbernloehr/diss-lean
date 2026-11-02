@@ -371,3 +371,67 @@ read-only pinned compiled imports and private writable outputs; the entire
 dependency tree was not rebuilt from source. No admitted proof, new axiom,
 disabled linter or caller-supplied essential variation identity was added.
 Canonical main remains clean at `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
+
+
+## 2026-11-02 — Sharp H^m even Hamiltonians and scalar Theorem 1 clause
+
+The scalar vanishing clause of Theorem 1 is now proved on its exact domain:
+for every integer m>=1 and every complex u in H^m,
+`theorem1_even_vanishing_sharp` proves `sobolevEvenHamiltonian m hm (u,u)=0`.
+There is no additional smoothness or real-type assumption.
+
+The endpoint construction extends the actual physical Hamiltonian on all
+complex H^m pairs before restricting to the diagonal. Polynomial integration
+by parts preserves the total derivative count 2m-1 and lowers individual jets
+to order m. The sharpened shared L2 realization uses the fact that at most
+one order-m jet can occur below total derivative count 2m. Removing it leaves
+only lower, continuous Sobolev jets. The former stronger-range comparison
+lemmas retain their signatures and now follow from this sharper result.
+
+`NLSEvenHamiltonianReducedPolynomial.lean` constructs one reduced polynomial
+before choosing the source. `SobolevEvenHamiltonian.lean` integrates its actual
+L2 realization using the bounded physical unit-interval integral. It proves
+entire complex analyticity, agreement with the actual classical hierarchy on
+all smooth periodic pairs, uniqueness among continuous extensions, and
+compatibility with every admissible input of the existing original hierarchy
+(`sobolevEvenHamiltonian_eq_original`). Component-swap antisymmetry then
+proves diagonal vanishing throughout H^m. This is a genuine extension of
+S_(2m), rather than assigning zero by definition on the diagonal.
+
+The shared `SobolevPolynomialVariation.lean` additionally constructs a bounded
+partial-jet covector for every density satisfying the endpoint bounds. Its
+coefficients are actual period-one Fourier coefficients of the partial jet
+L2 fields. Each covector pairs them with the corresponding weak derivative
+of the arbitrary H^m direction by bilinear Parseval. The general theorem
+`fderiv_sobolevPolynomialL2Mean` identifies this covector with the actual
+complex Frechet derivative for every complex Sobolev source and direction.
+The proof uses physical smooth first variations and density in both variables.
+`fderiv_sobolevEvenHamiltonian_eq_covector` specializes it to the sharp even
+Hamiltonians. No gradient identification is a caller hypothesis.
+
+Theorem 1 remains incomplete: its sharp weak vector-field identity and full
+spectral identification of the independently constructed scalar Hill/Miura
+hierarchy remain to be proved. Theorems 3 and 4 still need spectral action,
+coordinate, bracket and frequency comparisons, with the recorded source
+corrections. Theorem 2 retains its verified exact original Sobolev domains.
+
+The latest shared branches were inspected read-only: KdV convexity `e848349`
+adds Hill spectral reality and analytic tail summation, KdV frequencies
+`758dc7c` adds a uniform infinite Hill numerator family and analytic critical
+tails, and mKdV-below-L2 `b54fed5` adds refined H4 candidate remainders and a
+physical quartic contour. This endpoint polynomial argument reuses the
+checked physical Sobolev jets, L2 synthesis, integration by parts, smooth
+first variations and density already available in the dissertation library;
+no unrelated spectral candidate is counted as a proved main theorem here.
+
+All 63 article/shared modules and the NLS aggregate compiled with pinned
+Lean 4.33.1, `autoImplicit=false` and warnings as errors. The targeted
+transitive audit passed for 639 declarations and generated auxiliaries;
+the combined aggregate/article audit passed for 45,820 NLS declarations.
+Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The current
+public inventory contains 330 theorem/definition declarations: 256 theorems
+and 74 definitions. Validation used the shared build lock, read-only pinned
+compiled dependencies and private writable outputs, without rebuilding the
+entire dependency tree. No admitted proof, new axiom or disabled linter was
+introduced. The goal remains active while the essential vector-field and
+spectral obligations remain.

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 570,
+  "audited_declarations_and_auxiliaries": 639,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -1509,12 +1509,172 @@
       "kind": "theorem",
       "name": "theorem1_smooth_miura_hierarchy",
       "file": "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "JetOrderLE.pderiv",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMonomialL2_eq_classical_of_jetOrder",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialL2_eq_classical_of_jetOrder",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevPolynomialL2Mean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevPolynomialL2Mean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialL2Mean_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevPolynomialPartialCoefficients",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevPolynomialPartialCoefficients",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialPartialCoefficients_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevJetCovector",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevJetCovector_apply",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevPolynomialCovector",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevPolynomialCovector",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialCovector_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevPolynomialL2Mean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHamiltonianPolynomial_totalWeight",
+      "file": "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHamiltonianPolynomial_fieldCharge",
+      "file": "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_nlsEvenHamiltonian_jet_reduction",
+      "file": "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalNLSHamiltonian_even_reduced_polynomial",
+      "file": "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nlsEvenReducedPolynomial",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsEvenReducedPolynomial_order",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsEvenReducedPolynomial_derivativeOrder",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsEvenReducedPolynomial_classical",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevEvenHamiltonian",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevEvenHamiltonian",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_sobolevEvenHamiltonian",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevEvenHamiltonian_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevEvenHamiltonian_eq_covector",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevEvenHamiltonian_unique_continuous",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevEvenHamiltonian_eq_original",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevEvenHamiltonian_swap",
+      "file": "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem1_even_vanishing_sharp",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean"
     }
   ],
-  "public_declaration_count": 298,
-  "theorem_count": 230,
-  "definition_count": 68,
-  "full_build": "All 59 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 330,
+  "theorem_count": 256,
+  "definition_count": 74,
+  "full_build": "All 63 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -1537,8 +1697,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "62f309ef94d596fdadccbd0196781a1d5fb0c0919c06a7e500c124c354af2d99",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f4d584db649d94a0d7549c832b2623bd6d577527e15a835e2cc014cc789a4e5c",
+    "scripts/check_mkdv_nls.py": "34dc5ab588af324ac5ce973ba3beddf91d9a2b3a31023c0fa547b5182b7196f7",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9c9fb851e35814dd89f710f7903c263625b9003fbbfb3fb419e47cf1fea0761e",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -1548,9 +1708,9 @@
     "NLS/DifferentialPolynomial/EulerLagrange.lean": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
     "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
     "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3",
-    "NLS/DifferentialPolynomial/EulerOrderBounds.lean": "c7100d492371a5c50067f66f3e1f9cdc42c75aba3c3f3da25845532c2f2b7c82",
+    "NLS/DifferentialPolynomial/EulerOrderBounds.lean": "573ef42deb2a56e866c0a5c05dd42fd160f1add72fbacc4c0b3a96e59557c0b9",
     "NLS/Fourier/CircleUnitCoefficients.lean": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a",
-    "NLS/ZakharovShabat/SobolevPolynomialL2.lean": "f2829e526aa4056ebf8f5a20daf9e122678155a3b2a8882b967f15394ad464f3",
+    "NLS/ZakharovShabat/SobolevPolynomialL2.lean": "78bc7ddd732c2473cb4d719bf144323ed39d34e9c211e9caebebcf517381dab2",
     "NLS/ZakharovShabat/SobolevHierarchyGradient.lean": "1a8b48802cf2968eb5f674dbcb16152a7e9daf6af4002799367a6e606f403372",
     "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean": "924a9af20ba8202b238c1087562b35aad7f633cfeaf34722c92db90d68be67f9",
     "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean": "e94948ab867c62f403cada306f8e0ff19962502852d272c5864c0ca3a10e4b93",
@@ -1578,10 +1738,14 @@
     "NLS/DifferentialPolynomial/MiuraRiccati.lean": "a51622b2bf42eaf37ba8d744122e23f092fa03c3959d84361152a20f780a26b1",
     "NLS/MKdV/MiuraHierarchyHamiltonians.lean": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
     "NLS/MKdV/MiuraHierarchyFlowRestriction.lean": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409",
-    "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c"
+    "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c",
+    "NLS/ZakharovShabat/SobolevPolynomialVariation.lean": "69f9272bc1b5156b42d730b364c5c339d4657d834d2b73bcd4ae959aec0b2887",
+    "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean": "7c0d1243b92161335d410e575da004804899e0126f71e643e2f8dd67f83a2e35",
+    "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean": "32c7de01d4cf64a13d106261c982426b2e9a80a664bbe8e53b6cc22d051883ba",
+    "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean": "a5676e1168d3d4df4864ec7c240c53a6eea2f0d8afb95e793a60c336879f7ab4"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 59,
+  "focused_module_count": 63,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -1630,11 +1794,17 @@
       "audit_count": 570,
       "combined_NLS_audit_count": 45750,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "sharp Hm physical even Hamiltonians, scalar Theorem 1 vanishing and full endpoint Frechet first variations",
+      "audit_count": 639,
+      "combined_NLS_audit_count": 45820,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45750,
+  "combined_audited_NLS_declarations": 45820,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

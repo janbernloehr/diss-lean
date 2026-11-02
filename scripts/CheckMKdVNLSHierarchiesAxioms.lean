@@ -8,6 +8,7 @@ import NLS.ZakharovShabat.NLSRiccatiResolvent
 import NLS.DifferentialPolynomial.RiccatiResolventVariation
 import NLS.Articles.MKdVNLSHierarchies.GradientRecurrence
 import NLS.Articles.MKdVNLSHierarchies.SmoothHierarchy
+import NLS.Articles.MKdVNLSHierarchies.SharpEvenVanishing
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -17,6 +18,36 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.sobolevMonomialL2_eq_classical_of_jetOrder,
+    `NLS.ZakharovShabat.sobolevPolynomialL2_eq_classical_of_jetOrder,
+    `NLS.ZakharovShabat.sobolevPolynomialL2Mean,
+    `NLS.ZakharovShabat.analyticAt_sobolevPolynomialL2Mean,
+    `NLS.ZakharovShabat.sobolevPolynomialL2Mean_eq_classical,
+    `NLS.ZakharovShabat.sobolevPolynomialPartialCoefficients,
+    `NLS.ZakharovShabat.analyticAt_sobolevPolynomialPartialCoefficients,
+    `NLS.ZakharovShabat.sobolevPolynomialPartialCoefficients_eq_classical,
+    `NLS.ZakharovShabat.sobolevJetCovector,
+    `NLS.ZakharovShabat.sobolevJetCovector_apply,
+    `NLS.ZakharovShabat.sobolevPolynomialCovector,
+    `NLS.ZakharovShabat.analyticAt_sobolevPolynomialCovector,
+    `NLS.ZakharovShabat.sobolevPolynomialCovector_eq_classical,
+    `NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean,
+    `NLS.ZakharovShabat.nlsHamiltonianPolynomial_totalWeight,
+    `NLS.ZakharovShabat.nlsHamiltonianPolynomial_fieldCharge,
+    `NLS.ZakharovShabat.exists_nlsEvenHamiltonian_jet_reduction,
+    `NLS.ZakharovShabat.exists_classicalNLSHamiltonian_even_reduced_polynomial,
+    `NLS.ZakharovShabat.nlsEvenReducedPolynomial,
+    `NLS.ZakharovShabat.nlsEvenReducedPolynomial_order,
+    `NLS.ZakharovShabat.nlsEvenReducedPolynomial_derivativeOrder,
+    `NLS.ZakharovShabat.nlsEvenReducedPolynomial_classical,
+    `NLS.ZakharovShabat.sobolevEvenHamiltonian,
+    `NLS.ZakharovShabat.analyticAt_sobolevEvenHamiltonian,
+    `NLS.ZakharovShabat.continuous_sobolevEvenHamiltonian,
+    `NLS.ZakharovShabat.sobolevEvenHamiltonian_eq_classical,
+    `NLS.ZakharovShabat.fderiv_sobolevEvenHamiltonian_eq_covector,
+    `NLS.ZakharovShabat.sobolevEvenHamiltonian_unique_continuous,
+    `NLS.ZakharovShabat.sobolevEvenHamiltonian_eq_original,
+    `NLS.ZakharovShabat.sobolevEvenHamiltonian_swap,
     `NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence,
     `NLS.ZakharovShabat.coeff_nls_differentialRiccatiSeries,
     `NLS.Fourier.circleUnitCoefficients,
@@ -83,6 +114,10 @@ run_cmd do
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp,
+    ``NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean,
+    ``NLS.ZakharovShabat.fderiv_sobolevEvenHamiltonian_eq_covector,
+    ``NLS.ZakharovShabat.sobolevEvenHamiltonian_eq_original,
     ``NLS.DifferentialPolynomial.differentialRiccatiSeries_miura,
     ``NLS.DifferentialPolynomial.differentialRiccatiSequence_miura,
     ``NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient,
