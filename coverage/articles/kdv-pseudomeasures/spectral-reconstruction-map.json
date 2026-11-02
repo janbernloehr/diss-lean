@@ -97,9 +97,9 @@
   "new_definitions": 8,
   "audited_declarations": 44,
   "remaining": [
-    "Construct the exact finite physical root-chain/truncated effective Taylor-kernel equivalence.",
-    "Use eventual matrix Taylor nullity to identify actual physical algebraic multiplicities with analytic determinant zero orders.",
-    "Complete canonical spectral labels and asymptotic enumeration, endpoint gap/Dirichlet and inverse regularity estimates, original Birkhoff maps and physical KdV main theorems."
+    "Construct canonical periodic/antiperiodic spectral labels, asymptotic enumeration and eventual assignment to the corrected strips.",
+    "Prove the physical gap/Dirichlet and inverse spectral regularity estimates needed for the endpoint Birkhoff restrictions.",
+    "Construct the original Birkhoff maps and actual H-minus-one KdV flow, and complete all main Theorems1.1,1.3,1.4,5.1,5.9."
   ],
   "finite_physical_chain_jet_consequences": {
     "coverage": "spectral-chain-jets-map.json",
@@ -111,5 +111,19 @@
       "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
       "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
     ]
+  },
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
   }
 }

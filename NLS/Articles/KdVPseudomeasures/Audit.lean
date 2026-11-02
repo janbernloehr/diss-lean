@@ -1,7 +1,10 @@
 import NLS.FunctionalAnalysis.PencilRootChains
 import NLS.ComplexAnalysis.PoweredAnalyticJet
+import NLS.ComplexAnalysis.BanachFiniteJets
+import NLS.ComplexAnalysis.AffinePencilJets
 import NLS.FunctionalAnalysis.ResolventRootSpace
 import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
+import NLS.ComplexAnalysis.MatrixAnalyticJetAction
 import NLS.SequenceSpaces.SobolevConvolutionBounds
 import NLS.Fourier.PeriodicH1Multiplication
 import NLS.SequenceSpaces.HillMixedKernel
@@ -46,6 +49,8 @@ import NLS.KdV.PseudomeasureSpectrum
 import NLS.KdV.PseudomeasureRootSpaces
 import NLS.KdV.SingularHillChains
 import NLS.KdV.PseudomeasureChainJets
+import NLS.KdV.PseudomeasureTaylorKernel
+import NLS.KdV.PseudomeasureMultiplicityOrder
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
@@ -75,6 +80,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralResolvent
 import NLS.Articles.KdVPseudomeasures.SpectralReconstruction
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 import NLS.Articles.KdVPseudomeasures.SpectralChainJets
+import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 
 /-! Transitive axiom audit of every public article dependency. -/
 
@@ -99,6 +105,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_eq_zero_of_powered_germ
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_chainPolynomial
 #print axioms NLS.ComplexAnalysis.chainPolynomial_eq_zero_of_powered_germ
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet
+#print axioms NLS.ComplexAnalysis.analyticAt_chainPolynomial
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_eq_series
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_chainPolynomial
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_compCLM
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_add
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_sub
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_eq_zero_iff
+#print axioms NLS.ComplexAnalysis.factorial_mul_scalarTaylorJetMap
+#print axioms NLS.ComplexAnalysis.chainPolynomial_compCLM
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_prod
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_congr
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_scalarProduct
+#print axioms NLS.ComplexAnalysis.analyticAt_operatorApply
+#print axioms NLS.ComplexAnalysis.iteratedDeriv_t_smul_succ
+#print axioms NLS.ComplexAnalysis.normalized_iteratedDeriv_t_smul_succ
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_mem_pencilChainSpace
+#print axioms NLS.ComplexAnalysis.analyticOrderAt_const_add_zero
 #print axioms NLS.FunctionalAnalysis.mem_genEigenspace_succ_iff
 #print axioms NLS.FunctionalAnalysis.genEigenspace_le_range_of_ne_zero
 #print axioms NLS.FunctionalAnalysis.mem_genEigenspace_apply_iff_of_injective
@@ -114,6 +138,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 #print axioms NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_bot_of_injective
 #print axioms NLS.FiniteSpectralDeterminant.det_prod_formula
 #print axioms NLS.FiniteSpectralDeterminant.determinant_shift_bound
+#print axioms NLS.ComplexAnalysis.pairOperatorMatrixCLM
+#print axioms NLS.ComplexAnalysis.matrixPairAction
+#print axioms NLS.ComplexAnalysis.matrixPairAction_pairOperator
+#print axioms NLS.ComplexAnalysis.det_pairOperatorMatrix
+#print axioms NLS.ComplexAnalysis.matrixTaylorJetMap_eq_analyticFiniteJet
+#print axioms NLS.ComplexAnalysis.mem_matrixTaylorKernel_iff_derivatives
+#print axioms NLS.ComplexAnalysis.mem_pairOperatorTaylorKernel_iff_derivatives
 #print axioms NLS.WeightedCoeff.norm_sobolev_le_base_add_derivative
 #print axioms NLS.WeightedCoeff.norm_sobolevConvolution_le
 #print axioms NLS.WeightedCoeff.sobolevConvolution_add_left
@@ -639,6 +670,23 @@ import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 #print axioms NLS.KdV.endpointHillChain_reduced_derivatives_zero
 #print axioms NLS.KdV.endpointHillChain_reconstruction_derivatives_zero
 #print axioms NLS.KdV.endpointHillChainCoordinates_injective
+#print axioms NLS.KdV.endpointReducedMatrixSpectral
+#print axioms NLS.KdV.analyticAt_endpointReduced_increment
+#print axioms NLS.KdV.analyticAt_endpointReducedMatrixSpectral
+#print axioms NLS.KdV.analyticAt_endpointReconstruction_increment
+#print axioms NLS.KdV.endpointChainCoordinates_mem_TaylorKernel
+#print axioms NLS.KdV.endpointChainToTaylorKernel
+#print axioms NLS.KdV.endpointChainToTaylorKernel_injective
+#print axioms NLS.KdV.endpointChainToTaylorKernel_surjective
+#print axioms NLS.KdV.endpointChainTaylorKernelEquiv
+#print axioms NLS.KdV.finrank_endpointHillRootSpace_eq_TaylorKernel
+#print axioms NLS.KdV.convex_reducedHillStrip
+#print axioms NLS.KdV.endpointReducedDeterminant_order_ne_top
+#print axioms NLS.KdV.endpointReducedDeterminant_zero_interior
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_order_interior
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderAt
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt
+#print axioms NLS.KdV.endpointHill_strip_algebraic_count_two
 #print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
 #print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
 #print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
@@ -869,3 +917,8 @@ import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillChainCoordinates_injective
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillChain_reduced_derivatives_zero
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillChain_reconstruction_germ
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootTaylorKernelEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderAt
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count

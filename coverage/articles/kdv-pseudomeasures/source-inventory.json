@@ -93,7 +93,12 @@
         "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible",
         "NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent",
         "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_mem_iff",
-        "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion"
+        "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion",
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderAt",
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt",
+        "NLS.Articles.KdVPseudomeasures.sourceHillRootTaylorKernelEquiv",
+        "NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
       ]
     },
     {
@@ -126,7 +131,7 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "Arbitrary-weight endpoint tail/inverse/coefficient and spectral Lipschitz estimates, physical multiplication and full-domain determinant reduction are proved. Joint actual determinant analyticity, equal diagonals, the complete analytic-zero Lemma2.11 count/localization/root-separation conclusions and global endpoint inhomogeneous regularity are proved in the unit-weight main-theorem scale. Physical algebraic multiplicities/labels and gap/Dirichlet asymptotics remain open."
+      "status": "Arbitrary-weight endpoint operator estimates, physical multiplication and full-domain reduction are proved. In the unit-weight main-theorem scale, actual determinant analyticity/equal diagonals, localization/root separation and physical algebraic multiplicity equals determinant analytic order are proved, with uniform actual algebraic two-count. Canonical labels and physical gap/Dirichlet asymptotics remain open."
     },
     {
       "label": "2.2",
@@ -175,7 +180,7 @@
         11
       ],
       "content": "For every source potential at late modes, lambda in the strip is a physical Hill eigenvalue iff the explicit effective determinant vanishes.",
-      "status": "Proved with corrected radius6n strips and one cutoff uniform on the exact original source norm ball. The entire original H1 domain is retained; full spectral labels and algebraic multiplicities remain unproved.",
+      "status": "Proved with corrected radius6n strips and one cutoff uniform on the exact original source norm ball. The entire original H1 domain is retained. Physical algebraic multiplicities are now proved equal to determinant orders on these strips; canonical individual labels and asymptotic enumeration remain open.",
       "coverage": "spectral-reduction-map.json"
     },
     {
@@ -203,9 +208,11 @@
         14
       ],
       "content": "Exactly two determinant zeros by analytic multiplicity on the strip, contained in the radius4*sqrt(n) disc, with distance bounded by sqrt6 times the full-strip supremum of sqrt(abs(b_n*b_-n)).",
-      "status": "Proved for the actual determinant uniformly on original complex endpoint norm balls: exactly two zeros by analytic order on the4sqrt(n) disc and full corrected6n strip, stronger sqrt(n)/4 localization, and literal sqrt6 full-strip-supremum root separation. Physical algebraic-multiplicity correspondence and spectral labels remain open.",
+      "status": "Proved uniformly on original complex endpoint norm balls: exactly two actual physical eigenvalues counted with full original operator algebraic multiplicity on the corrected6n strip, equality with determinant analytic order, radius4sqrt(n) disc and stronger sqrt(n)/4 localization, and literal sqrt6 full-strip-supremum root separation. Canonical labels remain open.",
       "coverage": "spectral-coefficients-map.json",
-      "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform"
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform",
+      "physical_multiplicity_coverage": "spectral-multiplicity-order-map.json",
+      "physical_multiplicity_declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
     },
     {
       "label": "Appendix C spectral background (endpoint potential range)",
@@ -214,7 +221,7 @@
         42
       ],
       "content": "Original H-minus-one Schrodinger operator with full H1 domain: closed dense domain, nonempty compact resolvent, point spectrum with finite eigenspaces and finitely many values in bounded regions.",
-      "status": "Proved for every original complex endpoint potential in the main theorem range, with original normalization and arbitrary original H-minus-one right-hand sides. Canonical labels/asymptotic enumeration, periodic-antiperiodic assignment and algebraic multiplicities remain open; arbitrary H-minus-one potentials outside this endpoint range are not claimed.",
+      "status": "Proved for every original complex endpoint potential in the main theorem range, with original normalization and arbitrary original H-minus-one right-hand sides. Actual root spaces and algebraic multiplicities are globally finite; correspondence with determinant order and the actual algebraic two-count are proved on corrected high strips. Canonical labels/asymptotic enumeration and periodic-antiperiodic assignment remain open; arbitrary H-minus-one potentials outside this endpoint range are not claimed.",
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.source_singularHill_closed",
         "NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent",
@@ -231,14 +238,15 @@
         42
       ],
       "content": "Actual full domain-preserving algebraic root spaces, global finite dimensionality, eventual finite-chain stabilization and multiplicity transport to the actual compact resolvent.",
-      "status": "Proved for all original complex endpoint potentials in the main theorem range and every complex lambda, including the full actual partial-operator root chains and improved endpoint regularity of all generalized eigenvectors. Comparison with analytic two-mode determinant zero orders, canonical labels and the asymptotic enumeration remain open.",
+      "status": "Full original physical root chains, finite dimensionality/stabilization and compact-resolvent multiplicity transport are proved globally in lambda. Exact finite-chain/formal Taylor-kernel equivalence gives equality with actual determinant order on the full corrected high strips, with uniform algebraic two-count. Canonical labels and asymptotic enumeration remain open.",
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity",
         "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_stabilizes",
         "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_resolvent",
         "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular"
       ],
-      "coverage": "spectral-multiplicity-map.json"
+      "coverage": "spectral-multiplicity-map.json",
+      "determinant_order_coverage": "spectral-multiplicity-order-map.json"
     },
     {
       "label": "Analytic physical reconstruction and inhomogeneous two-mode normal form",
@@ -249,7 +257,7 @@
       ],
       "coverage": "spectral-reconstruction-map.json",
       "content": "Original H1-valued analytic reconstruction, arbitrary endpoint forcing and exact physical residual identities near actual determinant zeros.",
-      "status": "Proved as dependencies for the physical finite-root-chain/Taylor-kernel comparison. Equality of physical algebraic multiplicity and determinant analytic order remains open.",
+      "status": "Proved and consumed in the exact finite physical root-chain/formal Taylor-kernel equivalence and actual algebraic-multiplicity/determinant-order theorem.",
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointReconstruction",
         "NLS.Articles.KdVPseudomeasures.source_inhomogeneous_physical_reduction",
@@ -265,12 +273,30 @@
       ],
       "coverage": "spectral-chain-jets-map.json",
       "content": "Exact linear equivalence of full-domain finite chains with actual root-space levels, eventual physical algebraic multiplicity, exact polynomial forcing, analytic powered remainders and injective two-mode chain coefficients.",
-      "status": "Proved. Formal matrix Taylor-kernel identification/surjectivity and physical multiplicity versus determinant order remain open.",
+      "status": "Proved. Formal matrix kernel membership, surjectivity, exact linear equivalence and physical multiplicity versus determinant order are now proved; see spectral-multiplicity-order-map.json.",
       "declarations": [
         "NLS.Articles.KdVPseudomeasures.sourceHillChainRootEquiv",
         "NLS.Articles.KdVPseudomeasures.eventually_finrank_sourceHillChainSpace",
         "NLS.Articles.KdVPseudomeasures.sourceHillChainCoordinates_injective",
         "NLS.Articles.KdVPseudomeasures.sourceHillChain_reduced_derivatives_zero"
+      ]
+    },
+    {
+      "label": "Physical algebraic multiplicity equals actual determinant order; uniform physical algebraic two-count",
+      "pages": [
+        11,
+        14,
+        41,
+        42
+      ],
+      "status": "Proved on the entire corrected closed high strips for the exact original endpoint range, with a single cutoff uniform on each exact original norm ball.",
+      "coverage": "spectral-multiplicity-order-map.json",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderAt",
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt",
+        "NLS.Articles.KdVPseudomeasures.sourceHillRootTaylorKernelEquiv",
+        "NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
       ]
     }
   ],

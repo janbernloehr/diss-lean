@@ -1,5 +1,5 @@
 {
-  "source": "arXiv:1610.00278v1 Appendix C pp.41-42: spectrum and eigenvalues counted with algebraic multiplicity. This continuation constructs and verifies actual algebraic root spaces for the original endpoint Hill operator; equality with the Section2 two-mode determinant zero orders is not yet asserted.",
+  "source": "arXiv:1610.00278v1 Appendix C and Section2: actual full-domain algebraic root spaces, compact-resolvent multiplicities and equality with actual two-mode determinant analytic orders on the corrected high strips.",
   "main_theorems_verified": false,
   "domains": {
     "potential": "Every complex original period-two FourierLebesgueSpace(2,-r,infinity) distribution,0<=r<1/2. In particular this includes the real mean-zero physically one-periodic source potentials.",
@@ -72,8 +72,7 @@
     ]
   },
   "qualifications": [
-    "No equality between actual physical algebraic multiplicity and analytic order of the endpoint two-mode determinant has been proved in this continuation.",
-    "The high-strip geometric rank bound at most2 is not asserted to be an algebraic-multiplicity bound. No semisimplicity hypothesis is imposed or inferred for complex potentials.",
+    "The geometric rank bound and the multiplicity/order correspondence have distinct proofs. The latter uses exact finite-chain/Taylor-kernel equivalence and eventual dimensions. No semisimplicity hypothesis is imposed or inferred for complex potentials.",
     "Canonical periodic/antiperiodic labels, asymptotic enumeration and eventual corrected-strip assignment still need proof.",
     "The full physical algebraic conclusions apply to the endpoint range needed by the main theorems; arbitrary H-minus-one potentials outside that range are not claimed.",
     "All main Theorems1.1,1.3,1.4,5.1,5.9 remain incomplete. Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV constructions are still required."
@@ -88,7 +87,7 @@
       "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
       "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
     ],
-    "comparison_status": "The analytic reconstruction and full inhomogeneous normal form are proved. The finite-chain/Taylor-kernel equivalence and determinant-order equality are not yet proved."
+    "comparison_status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
   },
   "verified_finite_physical_chain_jet_dependencies": {
     "coverage": "spectral-chain-jets-map.json",
@@ -100,6 +99,20 @@
       "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
       "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
     ],
-    "comparison_status": "Finite physical coefficient chains are equivalent to actual finite root spaces and project injectively to two-mode jets satisfying reduced derivative vanishing. The formal matrix-kernel equivalence and determinant-order equality remain unproved."
+    "comparison_status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
+  },
+  "verified_multiplicity_order": {
+    "coverage": "spectral-multiplicity-order-map.json",
+    "results": [
+      "Normalized finite jets of Banach-valued analytic functions retain exact factorial normalization and commute with continuous linear observations, addition and subtraction. Actual scalar multiplication agrees with the existing formal scalar Taylor convolution.",
+      "The existing formal matrix Taylor action is exactly the normalized finite jet of the actual analytic two-mode matrix acting on an amplitude polynomial. Its kernel is equivalent to vanishing of all retained residual derivatives.",
+      "Vanishing affine-pencil residual derivatives imply that the actual Banach-domain Taylor coefficients form a domain-preserving physical chain. The proof retains every original domain coefficient, including the empty chain.",
+      "At every allowed interior strip point and every finite length, the original physical chain space is linearly equivalent to the actual effective-matrix Taylor kernel. The forward map is the original two-mode coefficient projection. Surjectivity uses the actual norm-analytic H1 reconstruction of an arbitrary kernel amplitude polynomial, and its original H1 Taylor coefficients.",
+      "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
+      "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
+      "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
+      "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    ],
+    "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
   }
 }
