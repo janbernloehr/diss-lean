@@ -1,7 +1,8 @@
 # The mKdV and NLS hierarchies revisited — initial verification
 
 Status: **Theorem 2 proved on its original complex Sobolev domains, with the
-matrix correction in part (ii); Theorems 1, 3 and 4 remain incomplete**.
+matrix correction in part (ii); Theorem 4(i) proved on the full original
+real H1 domain; Theorems 1, 3 and 4(ii)-(iii) remain incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
 
@@ -67,7 +68,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
-| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Central and reflection clauses proved** by `theorem4_i_central_action_zero` and `theorem4_i_action_reflection`, using the actual NLS contour actions on the full real H1 domain. At each positive index the NLS action vanishes exactly when the physical Hill gap collapses. | Identify the contour-defined mKdV actions J_n and their zero-gap criterion on this domain. |
+| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Parts (ii)-(iii), including complex-source action extensions, remain open. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | No new analytic factorization is claimed. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | Existing NLS canonical identities are potential inputs only. | Construct mKdV angle domains, handle collapsed gaps correctly, and prove bracket transfer and analytic continuation. |
 
@@ -448,7 +449,7 @@ Quot.sound are allowed. The public inventory contains 1,157 entries
 the entire dependency tree was not rebuilt from source.
 
 
-Latest milestone: Lemmas 4 and 5 hold on the entire original real H1
+Previous milestone: Lemmas 4 and 5 hold on the entire original real H1
 right-half-plane cut complement, including real spectral bands. The full
 Hill sheets are constructed as nonreal-energy limits of the independent
 physical quasi-Hill sheets. The definitions contain no NLS root or
@@ -475,3 +476,39 @@ Quot.sound are allowed. The public inventory contains 1,201 entries
 (967 theorems, 234 definitions; aliases and structures excluded), with
 177 SHA256 source/checker hashes. The checks use pinned cached imports;
 the entire dependency tree was not rebuilt from source.
+
+
+Latest milestone: **all three clauses of Theorem 4(i) are proved on the
+full original real H1 domain** by `theorem4_i`. The actual NLS central
+action vanishes exactly at zero physical mean; the positive NLS and mKdV
+actions have identical zero sets; and I_(-n)#=I_n# at every signed index.
+Zero mean and collapsed gaps are included throughout.
+
+The mKdV actions are the literal source (13) integrals of F_Hill(mu)/mu
+with factor -1/(4*pi). Actual isolating energy contours exist for every
+positive index, lie in the physical gap complement, wind once about the
+correct intrinsic Hill gap, and have winding zero about other positive
+gaps and zero. All integer levels transform with the exact Jacobian
+2*z, giving 2*J_(n,k)=I_(n,2k-2). Arbitrary close piecewise circuits satisfy
+the actual winding formula; their winding-one values are independent of
+the checked family. The positive real-gap formula is proved from these
+integrals, not used to define the action. A mean-value point in the
+positive frequency gap gives J_n=I_n/(2*zeta_n), without dividing by a
+gap length or action.
+
+Complex-source analytic action extensions, action factorization, angles,
+frequency identities and spectral Hamiltonian calibration remain open.
+Theorem 4(i) is complete; Theorems 1, 3 and 4(ii)-(iii) remain incomplete.
+
+Validation covers 186 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 175
+unchanged modules matches the previous validated milestone; their private
+outputs were reused. The eleven new modules and NLS aggregate compiled,
+and the complete audits passed for 2,581 targeted declarations and
+auxiliaries and 47,549 combined NLS declarations. The targeted prefixes
+include the reusable piecewise-contour and Cauchy-family developments.
+Only propext, Classical.choice and Quot.sound are allowed. The public
+inventory contains 1,269 entries (1,021 theorems, 248 definitions; aliases
+and structures excluded), with 188 SHA256 source/checker hashes. The
+checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.

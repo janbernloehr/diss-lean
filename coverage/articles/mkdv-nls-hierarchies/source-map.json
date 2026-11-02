@@ -33,7 +33,7 @@
         "Both clauses hold on all original complex H^m inputs with the independently constructed K_m on complex H^(m-1), including m=1. Its actual Frechet gradient is constructed on that native domain; Gardner differentiation is the genuine physical distribution derivative.",
         "The literal physical Hill trace at r^2 has all-order real-axis estimates with odd phase coefficients 2*K_m.",
         "The independently constructed physical Hill sheets now agree with the original NLS root and primitive on the entire original real H1 right-half-plane cut complement, including real bands. The physical Hill trace and energy derivative, first-band normalization, ground-endpoint limit and actual path integral are proved there. Complex H1 source analyticity remains certified on the earlier source-continuation domain. Full spectral action and Hamiltonian identification remains open.",
-        "The physical H1 Miura potential has its literal Fourier coefficient map into L2. The actual L2 Hill operator spectrum and characteristic multiplicities are identified with the original NLS periodic spectrum under squaring. Exact fixed endpoint/gap-index comparisons are proved on real H1. Full spectral action and Hamiltonian identification remains open."
+        "The physical H1 Miura potential, actual L2 Hill operator spectrum and characteristic multiplicities, fixed positive gap indices, full real-H1 sheets and real-H1 inverse-energy-weighted mKdV spectral actions are now constructed and compared. Full source spectral Hamiltonian calibration and complex source action/frequency machinery remain open."
       ],
       "scalar_clause_status": "proved_exact_complex_Hm_domain",
       "weak_flow_status": "proved_exact_complex_Hm_inputs_for_independent_scalar_Hill_Miura_hierarchy",
@@ -92,7 +92,7 @@
     {
       "label": "Theorem 4(i)",
       "page": 4,
-      "status": "partial_central_mean_and_signed_index_action_reflection_proved",
+      "status": "proved_full_original_real_H1_domain_actual_NLS_and_mKdV_spectral_contours",
       "quantifiers": "forall real u in H1; forall positive n",
       "target": "I_0#=0 iff mean=0; I_n#=0 iff J_n=0; I_(-n)#=I_n#",
       "dependencies_proved": [
@@ -100,17 +100,24 @@
         "NLS.Articles.MKdVNLSHierarchies.equation21_physical_mean_trace"
       ],
       "limits": [
-        "The central action is the original indexed NLS contour action. It vanishes exactly when the literal physical unit-interval mean, equal to the original zeroth Fourier coefficient, vanishes.",
-        "The actual restricted NLS action at every signed index -n equals that at n, including collapsed gaps and the central index.",
-        "At every positive index the NLS action vanishes exactly when the independently constructed physical Hill gap collapses. The comparison with the article contour-defined mKdV action J_n remains open."
+        "All three clauses are proved on every original real H1 input and every positive natural index, including zero mean and collapsed gaps.",
+        "The physical mKdV action contour exists for every such input; it lies in the actual Hill gap complement, has winding one about its intrinsic selected Hill gap, winding zero at other positive gaps and at the origin.",
+        "The action is independent of the checked contour family. Arbitrary close piecewise frequency circuits have the full integer-level winding formula after squaring; winding-one circuits give the same physical action.",
+        "The actual real-gap representation gives J_n=I_n/(2*zeta_n) for some positive zeta_n in the original positive frequency gap. This never divides by an action or gap length.",
+        "Complex-source analytic action neighborhoods, action factorization, angles and frequency identities belong to Theorem 4(ii)-(iii) and Theorem 3 and remain open."
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_i_central_action_zero",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_i_action_reflection",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_action_zero_iff_hillGap_collapsed"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_action_zero_iff_hillGap_collapsed",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i"
       ],
-      "action_definition": "NLS.MKdV.miuraNLSAction = original sourceIndexedAction on sobolevSourceInclusion(a,a); not a surrogate action defined through a gap criterion",
-      "mean_identification": "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve"
+      "action_definition": "NLS.MKdV.miuraNLSAction is the original sourceIndexedAction on sobolevSourceInclusion(a,a). NLS.MKdV.miuraMKdVAction is -(4*pi)^(-1) times the actual integral of mu^(-1)*canonicalMiuraHillPrimitive on a certified isolating energy loop. Neither is defined by the desired zero criterion.",
+      "mean_identification": "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve",
+      "physical_mKdV_contour": "NLS.MKdV.miuraMKdVAction_physical_contour",
+      "contour_choice_independence": "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+      "positive_gap_mean_value": "NLS.MKdV.miuraMKdVGapIntegral_eq_action_div_two_point"
     },
     {
       "label": "Theorem 4(ii)",
@@ -155,7 +162,19 @@
     },
     {
       "label": "Lemma 7",
-      "page": 12
+      "page": 12,
+      "status": "proved_real_H1_integer_level_contour_identity_complex_NLS_analytic_extension_pending",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7_integer_levels_real_H1",
+        "NLS.MKdV.two_mul_miuraHillActionContour",
+        "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding"
+      ],
+      "quantifiers": "Every original real H1 input; every positive gap index n; every integer level k, including k=1 mapping to NLS level zero. Actual positive isolating circuits and their squared energy images.",
+      "normalization": "J_(n,k)=-(4*pi)^(-1) integral(mu^(k-2)*F_Hill dmu); I_(n,2k-2)=-pi^(-1) integral(z^(2k-3)*F_NLS dz); dmu=2*z dz, hence 2*J_(n,k)=I_(n,2k-2).",
+      "limits": [
+        "The real-H1 contour identity, actual isolating geometry, integer Laurent weights and winding independence are proved.",
+        "The source in-particular assertion of an analytic NLS extension on an open neighborhood of the entire real L2 diagonal remains a further obligation."
+      ]
     },
     {
       "label": "Theorem 6",
@@ -258,7 +277,7 @@
   },
   "remaining_essential_dependencies": [
     "full source spectral primitive-sheet/action identification of the independently constructed native scalar Hill/Miura Hamiltonians",
-    "geometric eigenspace multiplicity and the inverse-energy-weighted Hill/mKdV spectral action contours (fixed-index gaps and full real-H1 spectral sheets now proved)",
+    "geometric eigenspace multiplicity and complex-source analytic mKdV action/factorization machinery (actual real-H1 weighted spectral actions, their contour invariance and Theorem 4(i) now proved)",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
     "remaining frequency-sign and signed-mean qualifications in main-source statements"
   ],
@@ -303,7 +322,7 @@
     "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
     "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
     "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
-    "remaining": "Contour-defined inverse-energy-weighted mKdV actions and spectral Hamiltonians; full original real-H1 labeled sheet comparisons are now proved."
+    "remaining": "Spectral Hamiltonian calibration, complex source action neighborhoods and frequency/bracket identities; the full real-H1 inverse-energy-weighted action contours and Theorem 4(i) are now proved."
   },
   "independent_H1_primitive": {
     "construction": "NLS.MKdV.quasiHillPrimitiveData",
@@ -316,7 +335,7 @@
     "physical_trace": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace",
     "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
     "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
-    "remaining": "weighted mKdV spectral action contours, full Hamiltonian identification, complex source action extensions and frequency identities"
+    "remaining": "full spectral Hamiltonian identification, complex source action extensions, action factorization and frequency identities"
   },
   "shared_hill_L2_labels_integration": {
     "branch": "articles/kdv-estimates",
@@ -326,7 +345,7 @@
     "actual_discriminant": "NLS.MKdV.hillL2Discriminant_miura",
     "actual_spectrum": "NLS.MKdV.miuraHill_eigenvector_iff_ZS",
     "actual_labels": "NLS.MKdV.miuraHillLabels",
-    "remaining": "geometric multiplicity, inverse-energy-weighted mKdV action contours and frequency identities"
+    "remaining": "geometric eigenspace multiplicity, complex-source action/factorization and frequency/bracket identities"
   },
   "indexed_gap_identification": {
     "endpoint_reflection": "NLS.MKdV.miuraNLSEndpoints_reflection",
@@ -335,7 +354,7 @@
     "domain": "full original real H1, no smoothness or nonzero-mean restriction",
     "indexing": "mu0=hillLabels0; mu_n_minus=hillLabels(2*n-1), mu_n_plus=hillLabels(2*n); original NLS lambda_n_minus/plus at signed integer n",
     "zero_ramification": "The positive NLS half-sequence has one central slot; original NLS multiplicity at zero is exactly twice its count. This equals twice the Hill energy characteristic order, so the independent ordered sequences also agree at zero.",
-    "limits": "analytic characteristic multiplicity only; geometric eigenspace multiplicity and spectral actions remain separate"
+    "limits": "Geometric eigenspace multiplicity and complex action/frequency identifications remain separate; the actual real-H1 weighted spectral action construction and Theorem 4(i) are proved."
   },
   "physical_zero_energy_and_actions": {
     "continuous_IVP_solution": "NLS.ZakharovShabat.classicalSolution_diagonal_zero",
@@ -346,7 +365,7 @@
     "central_action": "NLS.MKdV.miuraNLSAction_zero_iff_mean_zero",
     "reflected_actions": "NLS.MKdV.miuraNLSAction_reflection",
     "scope": "mean/trace identity on all complex H1 profiles; actual action assertions on all real H1 profiles at all signed indices; no nonzero-mean or open-gap restriction",
-    "remaining": "Contour-defined mKdV J_n and full action comparison; Theorem 4(ii)-(iii) and frequency identification"
+    "remaining": "Theorem 4(ii)-(iii), complex source action extensions and frequency identification"
   },
   "full_real_H1_Hill_sheets": {
     "independent_construction": "NLS.ComplexAnalysis.nonrealBoundaryExtension of the original physical quasi-Hill root/primitive; no NLS function appears in the definitions",
@@ -363,6 +382,23 @@
     "ground_endpoint_normalization": "NLS.MKdV.canonicalMiuraHillPrimitive_ground_limit",
     "actual_path_integral": "NLS.Articles.MKdVNLSHierarchies.equation11_physical_Hill_pathIntegral",
     "scope": "every original real H1 profile and every energy in the full physical closed-gap complement; old complex-H1 source-continuation sheets are preserved on their admissible domain",
-    "limits": "The root and primitive values on excluded cuts are not asserted; joint complex-source continuation beyond the old admissible domain and weighted action contour constructions remain separate."
+    "limits": "Values on excluded cuts are not asserted. Joint complex-source continuation beyond the old admissible domain, spectral Hamiltonian calibration and complex source action/frequency machinery remain separate; actual real-H1 inverse-energy-weighted action contours are now proved."
+  },
+  "actual_mKdV_spectral_actions": {
+    "definition": "NLS.MKdV.miuraMKdVAction",
+    "literal_physical_contour": "NLS.MKdV.miuraMKdVAction_physical_contour",
+    "all_integer_levels": "NLS.MKdV.miuraMKdVActionLevel",
+    "Jacobian_and_normalization": "NLS.MKdV.two_mul_miuraHillActionContour",
+    "contour_family_existence": "NLS.MKdV.nonempty_miuraActionContourFamily",
+    "physical_gap_winding": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_Hill_gap",
+    "other_gap_windings": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_other_Hill_gap",
+    "origin_winding": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_zero",
+    "real_gap_formula": "NLS.MKdV.miuraMKdVAction_eq_gapIntegral",
+    "family_independence": "NLS.MKdV.miuraMKdVAction_independent_family",
+    "close_piecewise_contours": "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+    "positive_mean_value": "NLS.MKdV.miuraMKdVGapIntegral_eq_action_div_two_point",
+    "main_zero_criterion": "NLS.MKdV.miuraMKdVAction_nonnegative_and_zero_iff",
+    "scope": "all original real H1 inputs and every positive gap index, including zero mean and collapsed gaps; the actions use the independently constructed physical Hill primitive and actual oriented path integrals",
+    "remaining": "complex-source analytic extensions on the required L2 source neighborhoods and the action/frequency/bracket identifications in Theorems 3 and 4(ii)-(iii)"
   }
 }

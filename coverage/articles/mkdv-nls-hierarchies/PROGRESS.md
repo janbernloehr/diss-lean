@@ -902,3 +902,74 @@ Quot.sound are allowed. The public inventory contains 1,201 entries
 (967 theorems, 234 definitions; aliases and structures excluded), with
 177 SHA256 source/checker hashes. The checks use pinned cached imports;
 the entire dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — actual weighted spectral actions and complete Theorem 4(i)
+
+`PiecewiseSquareContour.lean` maps actual finite piecewise C1 loops under
+z -> z^2 and proves the actual path-integral substitution with Jacobian
+2*z, including corners. `PiecewiseSquareWinding.lean` proves that winding
+at w^2 equals the sum of the original windings at w and -w. The checked
+positive real disc geometry then fixes the orientation and origin exclusion.
+
+`SourceWeightedPrimitiveContour.lean` generalizes the checked real-gap
+boundary calculus to every weight analytic on the closed isolating disc.
+It includes collapsed gaps. `SourceLaurentActionContour.lean` constructs
+the source's actual action contours at all integer levels, including level
+zero, and proves their real-gap formula whenever the disc excludes zero.
+The global ground-normalized and local gap-normalized primitive contours
+agree with their exact constants. `SourceLaurentActionContourPeriod.lean`
+proves the actual winding formula on arbitrary close piecewise circuits,
+including corners, repeated/reversed traversals and collapsed gaps.
+
+`MiuraLaurentContourComparison.lean` defines the physical mKdV integer-level
+action contour by -(4*pi)^(-1) times the actual integral of
+mu^(k-2)*F_Hill(mu). The canonical physical Hill primitive is independent
+of NLS. Squaring gives exactly 2*J_(n,k)=I_(n,2k-2) for every integer k.
+In particular the mKdV action k=1 uses the inverse-energy weight and the
+NLS level zero, rather than the ordinary NLS level one.
+
+`MiuraActionContourFamily.lean` constructs actual isolating circles for all
+positive indices on every original real H1 profile. The central NLS segment
+contains zero, so all other assigned discs exclude zero and lie in the
+right half-plane. Their squared contours lie in the actual Hill gap
+complement. They have winding one on the intended gap and winding zero on
+other positive gaps and at the origin. These assertions use intrinsic
+physical Hill labels, not labels defined by the contour.
+
+`MiuraSpectralActions.lean` defines J_n by this actual physical contour.
+The real-gap formula is a theorem derived from change of variables and
+Cauchy boundary calculus. A mean-value point zeta_n in the actual positive
+frequency gap proves J_n=I_n/(2*zeta_n); zeta_n is strictly positive on the
+full real H1 domain. No action or gap-length division excludes collapsed
+gaps. Thus J_n is real and nonnegative, and J_n=0 iff I_n#=0.
+`MiuraSpectralActionContours.lean` proves independence of the checked
+family and the full integer-level period formula for arbitrary close
+piecewise frequency circuits and their squared energy images.
+
+The article's `SpectralActionIdentification.lean` exports
+lemma7_integer_levels_real_H1, theorem4_i_positive_actions and the complete
+three-clause theorem4_i. The central and reflected-action clauses use the
+previously checked actual NLS action results. Theorem 4(i) is now complete
+on every original real H1 profile and every positive index, including
+zero mean and collapsed gaps.
+
+Lemma 7's real-H1 integer-level contour identity is proved. Its additional
+analytic NLS extension on a neighborhood of the entire real L2 diagonal
+remains open, as do complex-source mKdV action neighborhoods, spectral
+Hamiltonian calibration, geometric eigenspace multiplicity and the action,
+frequency and angle identities needed by Theorems 1, 3 and 4(ii)-(iii).
+The overall goal remains incomplete.
+
+Validation covers 186 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 175
+unchanged modules matches the previous validated milestone; their private
+outputs were reused. The eleven new modules and NLS aggregate compiled,
+and the complete audits passed for 2,581 targeted declarations and
+auxiliaries and 47,549 combined NLS declarations. The targeted prefixes
+include the reusable piecewise-contour and Cauchy-family developments.
+Only propext, Classical.choice and Quot.sound are allowed. The public
+inventory contains 1,269 entries (1,021 theorems, 248 definitions; aliases
+and structures excluded), with 188 SHA256 source/checker hashes. The
+checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.

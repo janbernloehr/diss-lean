@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 2223,
+  "audited_declarations_and_auxiliaries": 2581,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -6024,14 +6024,354 @@
       "kind": "theorem",
       "name": "equation11_physical_Hill_pathIntegral",
       "file": "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "squarePath",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "squarePath_extend",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiffOn_squarePath",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "curveIntegral_squarePath",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "def",
+      "name": "square",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_square",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inside_square",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareContour.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceWeightedPrimitiveCircle",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weightedPrimitiveCircle_eq_boundaryIntegral",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weightedPrimitiveCircle_eq_zero_of_collapsed",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weightedPrimitiveCircle_eq_realIntegral",
+      "file": "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceLaurentActionContour",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionContour.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceLaurentPrimitiveCircle",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceLaurentActionContour_circle_eq_local",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionContour.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "laurentPrimitiveCircle_eq_realIntegral",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionContour.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRightFrequencyDomain",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillActionContour",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSquaredContour_inside",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHill_laurent_contour_square",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_mul_miuraHillActionContour",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_mul_miuraHillActionContour_one",
+      "file": "NLS/MKdV/MiuraLaurentContourComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "radius_lt_re_of_zero_excluded",
+      "file": "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "re_pos_on_closedBall_of_radius_lt_re",
+      "file": "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circle_inside_of_sphere_subset",
+      "file": "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "windingIntegral_square",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "windingIntegral_circle_of_not_mem_closedBall",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "windingIntegral_square_circle_of_mem_ball",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "windingIntegral_square_circle_of_not_mem_closedBall",
+      "file": "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraActionContourFamily",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionContourFamily",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_mem",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "def",
+      "name": "radius",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "def",
+      "name": "frequencyContour",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "def",
+      "name": "energyContour",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "radius_bounds",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "radius_pos",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circle_rootDomain",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zero_mem_central_segment",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zero_not_mem_outer",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "outer_radius_lt_center_re",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "outer_disc_right",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequencyContour_inside",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_inside",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "opposite_not_mem_circle_disc",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_winding_gap",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_winding_other_gap",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_winding_zero",
+      "file": "NLS/MKdV/MiuraActionContourFamily.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraMKdVGapIntegral",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_mul_action_eq_realIntegral",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_one_eq_gapIntegral",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraMKdVAction",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_eq_gapIntegral",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_independent_family",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVGapIntegral_eq_action_div_two_point",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_nonnegative_and_zero_iff",
+      "file": "NLS/MKdV/MiuraSpectralActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "laurentActionContour_eq_mul_winding",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionContourPeriod.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraMKdVActionLevel",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVActionLevel_one",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_winding_Hill_gap",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyContour_winding_other_Hill_gap",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "closeContour_inside",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionLevel_independent_family",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionContour_eq_mul_winding",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVActionLevel_eq_NLSLaurent",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_physical_contour",
+      "file": "NLS/MKdV/MiuraSpectralActionContours.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma7_integer_levels_real_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_i_positive_actions",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_i",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean"
     }
   ],
-  "public_declaration_count": 1201,
-  "theorem_count": 967,
-  "definition_count": 234,
-  "full_build": "175 article/shared modules have validated private outputs. The unchanged 169-module prefix was reused after checking every source SHA256 against the prior validated milestone; six new modules and the NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1269,
+  "theorem_count": 1021,
+  "definition_count": 248,
+  "full_build": "186 article/shared modules have validated private outputs. The unchanged 175-module prefix was reused after checking every source SHA256 against the prior validated milestone; eleven new modules and the NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/NonrealBoundaryExtension.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/PiecewiseSquareContour.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -6189,8 +6529,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "98c3df29c4afa9d2ba12a2057d06c618503e9d64ca36e58ac63334f6a6536613",
-    "scripts/check_mkdv_nls.py": "14f0eb26a9a4841b6edf2a6f20bf7bbeb648349a5a464ad66a8c58dc64040b7c",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "53032dd1cab74a8155420b38644422660652a8a3cc2f6e6f060477e902806183",
+    "scripts/check_mkdv_nls.py": "b8a6f360cbab2ea78d5853fb55675de30e10526b3cf36b865140473f1baa9271",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -6209,10 +6549,21 @@
     "NLS/MKdV/MiuraHillGapComplement.lean": "d57ac437a07433abcbf7658b34f8bca2a640ae9abef780da4a335a290f3b9417",
     "NLS/MKdV/MiuraCanonicalHillSheets.lean": "c823c90560beb5a06c25e256360616fc620ff4cf883cbc8b24e3d0b91f821209",
     "NLS/MKdV/MiuraHillPrimitiveEndpoint.lean": "cddeb5ef3f6f41f2f639cf7e3f60b208a6e7f81168428d946f9cc8b746027749",
-    "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean": "cebc9eb7cdaa5350f8aa11532ad5d1c552e4fe496bed31a47b240466c07e459f"
+    "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean": "cebc9eb7cdaa5350f8aa11532ad5d1c552e4fe496bed31a47b240466c07e459f",
+    "NLS/ComplexAnalysis/PiecewiseSquareContour.lean": "ac4cffc1704db1d6588d592acc2a85c6837c9d0d5b63d0f6a67337e46832350a",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean": "26946412492d5f346f9155b8a37055e296e860d1d395cc00d37b7a5cd45e159f",
+    "NLS/ZakharovShabat/SourceLaurentActionContour.lean": "caf270ee8a77de576778834bac7ee990745214f3cff714ecea5bd57621abeef5",
+    "NLS/MKdV/MiuraLaurentContourComparison.lean": "9f6e637af949fad22328f07d2ea1fb1d488446c6a8f27840d99cacbc4b5db086",
+    "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean": "e0778a2725397d163746471c31fcde54ed6c7214913bd695c933143ba3dc1c52",
+    "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean": "ecf9d5b768108801081f9967480f71c0bdd5be99baa35828f6b9f6d4c4a46ea8",
+    "NLS/MKdV/MiuraActionContourFamily.lean": "1bfa464102cdebd0e45e2de946e9aa08011031fdc77e3d49c52554d83060587b",
+    "NLS/MKdV/MiuraSpectralActions.lean": "e8f74b979787ad786b34cef080e30ce994fc206faad5434574f10f9222024725",
+    "NLS/ZakharovShabat/SourceLaurentActionContourPeriod.lean": "5351210c576c242193f65f6c3964fbb7fd40ffb652fa84a4f56e455209fc9691",
+    "NLS/MKdV/MiuraSpectralActionContours.lean": "4b9113a39d6e7ae6bda6c14d5dcd5f626e7745eceda4c68c3c778742618c6b87",
+    "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean": "4875db9cdf6f0385cf9b6eff5793f969a0e6eccf7d2c74449330b3932126d395"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 175,
+  "focused_module_count": 186,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -6317,12 +6668,19 @@
       "combined_NLS_audit_count": 47402,
       "aggregate_compiled": true,
       "validation_scope": "source-hash-checked 169-module validated prefix reused; six new modules and aggregate compiled; complete targeted and combined audits rerun"
+    },
+    {
+      "milestone": "actual inverse-energy-weighted mKdV spectral actions on certified isolating contours; all integer-level contour identities with exact Jacobian; winding and close-contour independence; positive real gap mean value; complete Theorem 4(i) on every original real H1 input",
+      "audit_count": 2581,
+      "combined_NLS_audit_count": 47549,
+      "aggregate_compiled": true,
+      "validation_scope": "source-hash-checked 175-module validated prefix reused; eleven new modules and aggregate compiled; complete targeted and combined audits rerun with expanded shared-contour prefixes"
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 47402,
+  "combined_audited_NLS_declarations": 47549,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -6330,7 +6688,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "The 169 unchanged prefix source hashes match the previous 14377bc milestone. Six new modules and aggregate compiled with warnings as errors; targeted audit passed for 2223 declarations/auxiliaries and combined audit for 47402 NLS declarations. No mathematical source changed after validation.",
+  "last_run_notes": "The 175 unchanged prefix source hashes match the previous d368d26 milestone. Eleven new modules and aggregate compiled with warnings as errors. The targeted prefix set was expanded to include the reusable piecewise contour and Cauchy-family developments. Targeted audit passed for 2581 declarations/auxiliaries and combined audit for 47549 NLS declarations. No mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

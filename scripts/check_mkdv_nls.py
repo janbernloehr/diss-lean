@@ -209,6 +209,17 @@ modules = [
     "NLS/MKdV/MiuraCanonicalHillSheets.lean",
     "NLS/MKdV/MiuraHillPrimitiveEndpoint.lean",
     "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean",
+    "NLS/ComplexAnalysis/PiecewiseSquareContour.lean",
+    "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean",
+    "NLS/ZakharovShabat/SourceLaurentActionContour.lean",
+    "NLS/MKdV/MiuraLaurentContourComparison.lean",
+    "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean",
+    "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean",
+    "NLS/MKdV/MiuraActionContourFamily.lean",
+    "NLS/MKdV/MiuraSpectralActions.lean",
+    "NLS/ZakharovShabat/SourceLaurentActionContourPeriod.lean",
+    "NLS/MKdV/MiuraSpectralActionContours.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
