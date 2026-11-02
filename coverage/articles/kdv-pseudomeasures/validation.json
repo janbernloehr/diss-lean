@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-02",
+  "article_main_theorems_verified": false,
+  "phase": "isolated article branch; Appendix B compactness and topology",
+  "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
+  "autoImplicit": false,
+  "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
+  "modules_checked": [
+    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean",
+    "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean",
+    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean"
+  ],
+  "proved_theorems": 40,
+  "definitions": 10,
+  "axiom_audit": {
+    "method": "Lean #print axioms for every new definition and theorem; checker matches declaration set and rejects axioms outside allowlist",
+    "declarations": 50,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "result": "passed"
+  },
+  "proof_results": [
+    "Unweighted: bounded coefficientwise convergence to a bounded sequence implies actual WeakDual(Coeff 1) convergence for arbitrary filters.",
+    "Unweighted: weak-star convergence implies every coefficient converges; hence equivalence on bounded families.",
+    "Weighted: for every real s, bounded coefficientwise convergence implies WeakDual(WeightedCoeff (sobolev (-s)) 1) convergence with physical index reversal.",
+    "Weighted: finite truncations converge weak-star at infinity for every real s.",
+    "Original periodic distributions: bounded modewise convergence implies actual Wiener-predual weak-star convergence via existing pseudomeasureDualIsometry.",
+    "All real predual orders r: entire weighted endpoint norm balls are weak-star compact, metrizable and sequentially compact. Parameter r denotes predual order; source coefficient order is s=-r.",
+    "Every bounded subset has exactly its coordinate-induced topology, expressed as an actual topological embedding; criterion holds for arbitrary filters.",
+    "Arbitrary sets in this weak dual are compact iff sequentially compact iff norm-bounded and weak-star closed; sequential compactness implies boundedness by Banach-Steinhaus.",
+    "Weak-star convergence of sequences is equivalent to boundedness plus coefficient convergence; boundedness is derived in the forward direction.",
+    "For every finite ENNReal exponent p with Fact(1<=p), at (-r-t)*p.toReal>1, the lower norm realization preserves raw coefficients and induces exactly the weak-star topology on bounded sets.",
+    "Weak-star sequence convergence is equivalent to boundedness plus lower weighted norm convergence at every admissible pair (t,p).",
+    "A set is weak-star compact iff norm bounded and its actual lower weighted norm image is compact.",
+    "Real conjugate-symmetric mean-zero coefficients form a closed subset; its intersections with weighted norm balls are compact, metrizable and sequentially compact."
+  ],
+  "source_correspondence": "Appendix B.1(i)-(iv), pp.37-38: proved on the full complex weighted dual, with closed real mean-zero ball restriction. Exact paper distribution/even-mode and real-predual topology identifications remain explicit integration obligations; no KdV main theorem verified.",
+  "build_isolation": "Separate worktree .lake/article-check outputs; private import-view symlinks read canonical compiled NLS modules and pinned package compiled imports. No writing lake build, no .lake copy; focused direct compiler checks only.",
+  "canonical_checkout_modified_by_this_task": false,
+  "branch_or_worktree_created": false,
+  "publication_status": "Validated branch commit/push follows this record; no main integration.",
+  "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
+  "output_sha256": {
+    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean": "62345fed7462118a26d1cfbb8885eaff8b78b9e646073175e470dd4670a38e09",
+    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean": "ba29ff9d34943fb47a3b10b97da8f52a32ed951f0845c2c0aee304f0b79adb9f",
+    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean": "c821ef46e5e10b81899798df71e23e54a0541ab442748a4bd78e6af6079efba4",
+    "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
+    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean": "02d51b1687827c7a5f643990ffb54b88f6f2dbcba67a507f2395677f394a0854"
+  },
+  "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
+  "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+  "branch": "articles/kdv-pseudomeasures",
+  "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted."
+}

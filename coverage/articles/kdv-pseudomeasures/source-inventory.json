@@ -1,0 +1,173 @@
+{
+  "article": "On the wellposedness of the KdV equation on the space of pseudomeasures",
+  "authors": [
+    "Thomas Kappeler",
+    "Jan Molnar"
+  ],
+  "source_url": "https://arxiv.org/abs/1610.00278v1",
+  "pdf_url": "https://arxiv.org/pdf/1610.00278v1",
+  "retrieved_on": "2026-11-02",
+  "pdf_sha256": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
+  "pdf_bytes": 516074,
+  "pdf_pages": 45,
+  "private_pdf": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/1610.00278v1.pdf",
+  "private_extracted_text": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/1610.00278v1.txt",
+  "version_note": "Downloaded from the explicit v1 URL. Visible arXiv identifier says v1 / 2 Oct 2016; manuscript date is September 18, 2018; PDF producer metadata creation date is May 1, 2022. Pin identifies retrieved bytes; no identity with other revisions or journal text is asserted.",
+  "canonical_checkout_read_only": "/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls",
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "normalizations": {
+    "equation": "u_t = -u_xxx + 6 u u_x, x in R/Z, t in R",
+    "physical_spaces": "Real distributions, mean zero. Viewed as 2-periodic; e_k(x)=exp(i*k*pi*x); normalized sesquilinear distribution/test pairing extends (1/2) integral_0^2 f conjugate(g). Odd Fourier coefficients vanish for 1-periodic distributions.",
+    "weights": "<k> = 1 + |k|; norm sup_k <k>^s |q_k|. Birkhoff output weights use n, whereas potential coefficients vanish at odd k; do not silently identify coefficient q_(2n) with q_n.",
+    "reality": "z_0 = 0 and z_(-n) = conjugate(z_n), n>=1; I_n = z_n*z_(-n).",
+    "solution": "Unique H^-1 limit of smooth-data KdV solutions, for every smooth approximating sequence converging in H^-1, pointwise in time; imported existence and uniform-on-compact-time continuity must be supplied.",
+    "weak_star": "sigma(FL_0^(s,infinity), FL_0^(-s,1)); coordinate version sigma(ell_0^(s,infinity), ell_0^(-s,1)). Actual predual topology, not full-dual weak topology.",
+    "trajectory_topology": "Continuous maps on [-T,T] into the weak-star space, with compact-open/uniform-on-compact topology; pointwise-in-time dependence alone is insufficient.",
+    "library_pairing": "Library distributions act complex-linearly. Physical bilinear pairing is sum a_n*b_(-n). For the paper sesquilinear tests, conjugation changes the test variable; on real-symmetric test space reversal equals coefficient conjugation. Current lemmas are ambient complex results; paper real/mean-zero/even-mode subtype identification still to be implemented."
+  },
+  "main_statements": [
+    {
+      "label": "1.1",
+      "pages": [
+        2
+      ],
+      "quantifiers": "For every s with -1/2<s<=0, for every q in real mean-zero FL^(s,infinity), for all real t; bound may depend on s,q.",
+      "conclusions": [
+        "H^-1 KdV solution S(t,q) remains in FL_0^(s,infinity).",
+        "sup over all real t of norm S(t,q) is finite.",
+        "t maps to S(t,q) is weak-star continuous."
+      ],
+      "status": "unproved"
+    },
+    {
+      "label": "1.3",
+      "pages": [
+        2,
+        3
+      ],
+      "quantifiers": "For every admissible s, every norm-bounded KdV-invariant V, every T>0.",
+      "conclusions": [
+        "The restriction q maps to (t maps to S(t,q)) is continuous V_weakstar -> C([-T,T],V_weakstar)."
+      ],
+      "status": "unproved"
+    },
+    {
+      "label": "1.4",
+      "pages": [
+        3
+      ],
+      "quantifiers": "For every -1/2<s<=0; one restriction of the original H^-1 Birkhoff map; every norm-bounded V; every q in endpoint space.",
+      "conclusions": [
+        "Phi: FL_0^(s,infinity) -> ell_0^(s+1/2,infinity) is bijective, bounded and real analytic.",
+        "Local diffeomorphism near zero.",
+        "Phi|V: V -> Phi(V) is a weak-star homeomorphism for every norm-bounded V.",
+        "Iso(q), defined inside real mean-zero H^-1 via the full periodic spectrum, lies in and is norm-bounded in FL_0^(s,infinity); weak-star homeomorphism on Iso(q)."
+      ],
+      "source_correction": "Printed first codomain is ell_0^(s,infinity). Correct to s+1/2, as given immediately before the theorem, in its own weak-star pairing, and in Lemma 3.3. Visually confirmed PDF p.3. No refutation is being pursued.",
+      "status": "unproved"
+    },
+    {
+      "label": "5.1",
+      "pages": [
+        33
+      ],
+      "quantifiers": "For every integer N>=0, restriction of the same original Phi.",
+      "conclusions": [
+        "Phi^(N,1): real mean-zero FL^(N,1) -> ell_0^(N+1/2,1) is a global real analytic diffeomorphism and gives global Birkhoff coordinates."
+      ],
+      "status": "unproved"
+    },
+    {
+      "label": "5.9",
+      "pages": [
+        36
+      ],
+      "quantifiers": "For every integer N>=0 and every T>0.",
+      "conclusions": [
+        "The global KdV solution map FL_0^(N,1) -> C([-T,T],FL_0^(N,1)) is real analytic in the norm Banach spaces."
+      ],
+      "status": "unproved"
+    }
+  ],
+  "needed_source_dependencies": [
+    {
+      "label": "2.1",
+      "pages": [
+        6
+      ],
+      "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
+      "status": "unproved; consume shared Hill foundation and prove endpoint estimates"
+    },
+    {
+      "label": "2.2",
+      "pages": [
+        7
+      ],
+      "content": "Real mean-zero q in H^-1 and gaps gamma(q) in ell_R^(s,infinity), -1/2<s<=0 imply q and all Iso(q) lie in FL_0^(s,infinity), and Iso(q) is weak-star compact.",
+      "status": "unproved"
+    },
+    {
+      "label": "B.1",
+      "pages": [
+        37,
+        38
+      ],
+      "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
+      "status": "Compactness, metrizability, sequential compactness, bounded+coordinate and bounded+lower-norm sequence criteria, bounded-set induced topology equality proved for actual complex weighted duals; real mean-zero norm-ball restriction proved closed and compact. Source distribution/even-mode and real-predual topology identification remains."
+    }
+  ],
+  "reuse_map": [
+    {
+      "module": "NLS/SequenceSpaces/UniformDualCoefficientLimits.lean",
+      "declaration": "NLS.Coeff.eventually_small_dualPairing_of_bounded_coefficientwise",
+      "reuse": "Instantiated with finite TEST exponent p=1 and source q=infinity; existing theorem already admits infinity source. No finite-p endpoint substitution."
+    },
+    {
+      "module": "NLS/SequenceSpaces/Weighted.lean",
+      "declarations": [
+        "NLS.WeightedCoeff.weightIsometry",
+        "NLS.WeightedCoeff.norm_truncate_le",
+        "NLS.WeightedCoeff.truncate_apply"
+      ],
+      "reuse": "Exact weight and norm transport; finite truncation contraction at infinity."
+    },
+    {
+      "module": "NLS/SequenceSpaces/SobolevBilinearPairing.lean",
+      "declaration": "NLS.WeightedCoeff.sobolevBilinearPairing",
+      "reuse": "Actual opposite-weight physical predual, Fourier index reversal and exact summation identity."
+    },
+    {
+      "module": "NLS/Fourier/PeriodicFourierLebesgueDuality.lean",
+      "declaration": "NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureDualIsometry",
+      "reuse": "Already proved full isometric identification of original FL-infinity distribution space with the continuous dual of the Wiener distribution space."
+    },
+    {
+      "module": "NLS/Fourier/PeriodicWienerAlgebra.lean",
+      "reuse": "Existing complete normed commutative Wiener algebra and injective continuous representative; no need to rebuild its algebra."
+    },
+    {
+      "module": "NLS/SequenceSpaces/BoundedCoefficientWeakLimit.lean",
+      "reuse": "Inspected; full-functional theorem assumes finite source p>1. Deliberately not used as endpoint theorem."
+    },
+    {
+      "module": "Mathlib/Topology/Algebra/Module/Spaces/WeakDual.lean",
+      "declaration": "tendsto_iff_forall_eval_tendsto_topDualPairing",
+      "reuse": "Actual mathlib WeakDual convergence criterion."
+    }
+  ],
+  "remaining_obligations": [
+    "Construct and identify paper real/mean-zero/even-mode subspaces and sesquilinear convention adapters.",
+    "Complete exact paper real-predual and distribution/even-mode identifications for the generalized Appendix B lemmas.",
+    "Consume shared physical Hill spectrum and KdV Birkhoff construction, prove endpoint spectral regularity and inverse estimates.",
+    "Establish H^-1 solution extension and physical flow identification.",
+    "Prove bounded-invariant-subset uniform-in-time weak-star continuity and global orbit boundedness.",
+    "Prove Wiener Birkhoff inverse analyticity and analytic trajectory dependence, retaining N integer >=0.",
+    "Audit all main-theorem constructions transitively after isolated branch integration."
+  ],
+  "workspace": {
+    "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
+    "branch": "articles/kdv-pseudomeasures",
+    "canonical_checkout_read_only": true,
+    "approval": "Separate ordinary Git worktree authorized through coordinating chat; canonical tracked source and build outputs unchanged."
+  }
+}

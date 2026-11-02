@@ -1,0 +1,35 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, PDF/printed pp.37-38",
+  "parameter_convention": "r is Wiener predual order; data regularity s=-r. p is ENNReal with 1<=p and p!=top; threshold (s-t)*p.toReal>1. No substitution of finite-p topology for endpoint weak-star topology.",
+  "B.1(i)": [
+    "image_wienerDualRealization_closedBall",
+    "isCompact_weakStarBall",
+    "metrizable_weakStarBall",
+    "isSeqCompact_weakStarBall",
+    "isCompact_realMeanZeroWeakStarBall",
+    "metrizable_realMeanZeroWeakStarBall",
+    "isSeqCompact_realMeanZeroWeakStarBall"
+  ],
+  "B.1(ii)(a)-(b)": [
+    "tendsto_weakStar_seq_iff_bounded_coordinates"
+  ],
+  "B.1(ii)(a)-(c)": [
+    "tendsto_weakStar_seq_iff_bounded_lower"
+  ],
+  "B.1(iii)(a)-(b)-(c)": [
+    "isCompact_weakStar_iff_isSeqCompact",
+    "isCompact_weakStar_iff_bounded_closed"
+  ],
+  "B.1(iii)(a)-(d)": [
+    "isCompact_weakStar_iff_bounded_lower_compact"
+  ],
+  "B.1(iv)": [
+    "isEmbedding_lowerWeakStarRealization_on_bounded"
+  ],
+  "qualification": "Generalized actual complex-dual statements; no main-theorem verification claimed. Coordinate recovery, full dual surjectivity and norm identification use existing proved SobolevFullDuality. Closed real mean-zero ball included; exact real-predual topology and original distribution identifications remain for article interfaces.",
+  "namespace": "NLS.WeightedCoeff",
+  "new_modules": [
+    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
+    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean"
+  ]
+}

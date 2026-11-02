@@ -1,0 +1,56 @@
+import NLS.Articles.KdVPseudomeasures.WeakStarEndpoint
+import NLS.Articles.KdVPseudomeasures.WeightedWeakStarEndpoint
+import NLS.Articles.KdVPseudomeasures.PeriodicWeakStarEndpoint
+import NLS.Articles.KdVPseudomeasures.AppendixBWeakStar
+import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
+
+#print axioms NLS.Coeff.wienerWeakStar
+#print axioms NLS.Coeff.wienerWeakStar_apply
+#print axioms NLS.Coeff.tendsto_wienerWeakStar_of_bounded_coefficients
+#print axioms NLS.Coeff.tendsto_coefficients_of_wienerWeakStar
+#print axioms NLS.Coeff.tendsto_wienerWeakStar_iff_of_bounded
+#print axioms NLS.WeightedCoeff.sobolevWeakStar
+#print axioms NLS.WeightedCoeff.sobolevWeakStar_apply
+#print axioms NLS.WeightedCoeff.tendsto_sobolevWeakStar_of_bounded_coefficients
+#print axioms NLS.WeightedCoeff.tendsto_sobolevWeakStar_truncate
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
+#print axioms NLS.WeightedCoeff.wienerDualRealization
+#print axioms NLS.WeightedCoeff.weakStarCoordinates
+#print axioms NLS.WeightedCoeff.continuous_weakStarCoordinates
+#print axioms NLS.WeightedCoeff.weakStarCoordinates_injective
+#print axioms NLS.WeightedCoeff.metrizable_weakStar_compact
+#print axioms NLS.WeightedCoeff.weakStarBall
+#print axioms NLS.WeightedCoeff.image_wienerDualRealization_closedBall
+#print axioms NLS.WeightedCoeff.isCompact_weakStarBall
+#print axioms NLS.WeightedCoeff.metrizable_weakStarBall
+#print axioms NLS.WeightedCoeff.isSeqCompact_of_isCompact_weakStar
+#print axioms NLS.WeightedCoeff.isSeqCompact_weakStarBall
+#print axioms NLS.WeightedCoeff.isCompact_weakStar_iff_bounded_closed
+#print axioms NLS.WeightedCoeff.isBounded_range_of_weakStar_tendsto
+#print axioms NLS.WeightedCoeff.isEmbedding_weakStarCoordinates_on_bounded
+#print axioms NLS.WeightedCoeff.metrizable_weakStar_bounded
+#print axioms NLS.WeightedCoeff.tendsto_weakStar_subtype_iff_coordinates
+#print axioms NLS.WeightedCoeff.isBounded_of_isSeqCompact_weakStar
+#print axioms NLS.WeightedCoeff.isCompact_weakStar_iff_isSeqCompact
+#print axioms NLS.WeightedCoeff.tendsto_weakStar_iff_coordinates_of_bounded
+#print axioms NLS.WeightedCoeff.tendsto_weakStar_seq_iff_bounded_coordinates
+#print axioms NLS.WeightedCoeff.weakStarCoordinates_wienerDualRealization
+#print axioms NLS.WeightedCoeff.realMeanZeroWeakStar
+#print axioms NLS.WeightedCoeff.isClosed_realMeanZeroWeakStar
+#print axioms NLS.WeightedCoeff.isCompact_realMeanZeroWeakStarBall
+#print axioms NLS.WeightedCoeff.metrizable_realMeanZeroWeakStarBall
+#print axioms NLS.WeightedCoeff.isSeqCompact_realMeanZeroWeakStarBall
+#print axioms NLS.WeightedCoeff.endpointLowerInclusion
+#print axioms NLS.WeightedCoeff.endpointLowerInclusion_apply
+#print axioms NLS.WeightedCoeff.tendsto_lowerInclusion_of_bounded_coefficients
+#print axioms NLS.WeightedCoeff.weakStarCoeff
+#print axioms NLS.WeightedCoeff.weakStarCoeff_val
+#print axioms NLS.WeightedCoeff.lowerWeakStarRealization
+#print axioms NLS.WeightedCoeff.lowerWeakStarRealization_val
+#print axioms NLS.WeightedCoeff.lowerWeakStarRealization_injective
+#print axioms NLS.WeightedCoeff.continuous_lowerWeakStarRealization_on_bounded
+#print axioms NLS.WeightedCoeff.isEmbedding_lowerWeakStarRealization_on_bounded
+#print axioms NLS.WeightedCoeff.isCompact_iff_lowerWeakStarRealization_image
+#print axioms NLS.WeightedCoeff.tendsto_weakStar_seq_iff_bounded_lower
+#print axioms NLS.WeightedCoeff.isCompact_weakStar_iff_bounded_lower_compact
