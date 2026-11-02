@@ -81,4 +81,6 @@ The [general spectral-height corrections](SPECTRAL_OVERVIEW.md) update spectral-
 
 The [corrected-height contour proofs](SECTION_4.md) update the five remaining height-qualified proof passages in Sections 3–5, retaining all historical evidence. Full ambient and restricted contour analyticity and original-domain ranks now share the corrected-height neighborhood.
 
-The full check passed: 8,661 build jobs, 7,729 public examples and an axiom audit of 45,232 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.
+The [positive constant corrections](SECTION_3.md) update section_3-007, section_3-023 and section_3-024 with the proved pair-norm height factor and explicit near/far subsum bounds. Historical evidence is retained.
+
+The full check passed: 8,662 build jobs, 7,729 public examples and an axiom audit of 45,245 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.

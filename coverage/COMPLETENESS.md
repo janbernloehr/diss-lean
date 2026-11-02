@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [positive constant corrections](SECTION_3.md) adopt the corrected bounds in section_3-007, section_3-023 and section_3-024. The new subsum proofs include p=1 and every signed center while preserving the exact original scalar norms and Fourier remainder. Earlier evidence and the separate interpretation and reference-edition qualifications remain.
+
 The [corrected-height contour arguments](SECTION_4.md) now adopt the positive corrections in section_3-034, section_4-027, section_4-033, section_4-035 and section_5-015. The ordinary and auxiliary packages retain the original spaces, full ambient and restricted analytic families, shared neighborhoods and original-domain ranks. All earlier evidence and the separate interpretation and reference-edition qualifications remain.
 
 The [periodic and ordinary-boundary height corrections](SPECTRAL_OVERVIEW.md) are adopted directly in spectral-11, spectral-21 and section_3-003. The new period-two package retains every finite Banach exponent, including p=1, and arbitrary input. These positive corrections preserve all earlier evidence and the separate interpretation and reference-edition qualifications.

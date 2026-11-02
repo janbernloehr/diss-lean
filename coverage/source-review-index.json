@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T07:46:34.794700+00:00",
-  "base_commit": "9013309a03250329e92502c40a53bb9cb7568eb5",
+  "published_utc": "2026-11-02T08:08:08.373573+00:00",
+  "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 224,
-    "module_hash_checks": 4684,
-    "distinct_modules": 2287
+    "review_records": 225,
+    "module_hash_checks": 4695,
+    "distinct_modules": 2288
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9013309a03250329e92502c40a53bb9cb7568eb5",
-    "validated_state": "Fresh full check after the corrected-height contour proofs.",
+    "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
+    "validated_state": "Fresh full check after the positive Lemma 3.4 subsum corrections.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8661,
+    "build_jobs": 8662,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45232,
+    "transitive_NLS_declarations": 45245,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 29819,
+    "gate_session": 32997,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4923,
-      "sha256": "cbba275e56c41633ab80c89b91771dba18b42db32da07eb6f7e44a3cde0735e8"
+      "files": 4924,
+      "sha256": "4dcaf0425de74c1d9a7aa9d9d63a08657eef04e14070c28fc6784f3f332f351b"
     },
-    "full_gate_log_sha256": "20ea9c4331c229085f1f85d4248b3436ae0a31b504facc4277ac2d0e6e6242ee",
+    "full_gate_log_sha256": "33cb8ec9079472b368699f50ddda724935bc1fead5707302b95717e16c8b62f2",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/CorrectedHeightContoursFullCheck.log"
+    "full_gate_log": "work/Lemma34CorrectedSubsumFullCheck.log"
   },
   "named_statements": [
     {
@@ -79122,6 +79122,219 @@
         "log_sha256": "20ea9c4331c229085f1f85d4248b3436ae0a31b504facc4277ac2d0e6e6242ee"
       },
       "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef"
+    },
+    "Lemma34CorrectedSubsumSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
+      "updated_utc": "2026-11-02T08:08:08.334917+00:00",
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "section_3-007",
+          "source_lines": [
+            1290,
+            1301
+          ],
+          "requirement": "Lemma 3.2 with the corrected two-component height constant in the original norms.",
+          "declarations": [
+            "NLS.CoeffPair.l1Factor",
+            "NLS.CoeffPair.l1Factor_one",
+            "NLS.CoeffPair.componentNormSum_le",
+            "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip",
+            "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Adopt the existing proved factor 2^(1-1/p) multiplying 4*p/abs(Im z)^(1/p)+1/abs(Im z), for every finite Banach exponent and nonzero imaginary part. At p=1 this factor is one.",
+            "Compactness and the original 8*p/r strip bound are retained; the existing stronger 4*p/r bound is also available. This adoption adds no new counterexample or refutation."
+          ]
+        },
+        {
+          "ordered_group": "section_3-023",
+          "source_lines": [
+            1432,
+            1446
+          ],
+          "requirement": "The literal far subsum with an explicit corrected radius-dependent constant.",
+          "declarations": [
+            "NLS.ZakharovShabat.lemma34ProofFarSum",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_le_holder",
+            "NLS.ZakharovShabat.lemma34NumeratorMoment_eq",
+            "NLS.ZakharovShabat.lemma34Reciprocal",
+            "NLS.ZakharovShabat.lemma34Reciprocal_norm_apply",
+            "NLS.ZakharovShabat.norm_lemma34Reciprocal_le",
+            "NLS.ZakharovShabat.lemma34_weighted_sum_le",
+            "NLS.ZakharovShabat.summable_lemma34WeightedTerms",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected_of_ne_zero",
+            "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected",
+            "NLS.Coeff.norm_centered_reciprocal_windowTail_le_simple",
+            "NLS.Coeff.half_radius_rpow_le"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The previous exact Holder display and scalar numerator factorization are retained. The new positive theorem bounds the exact source far sum by (64*p^2/r^2)*(r+abs(n))^(-1/p)*norm(phi)*norm(f).",
+            "The bound holds for every finite Banach exponent including p=1, every signed integer n including zero, and 0<r<=1, hence throughout the printed 0<r<=pi/4 range. For n nonzero an intermediate coefficient 32*p^2/r^2 multiplies abs(n)^(-1/p).",
+            "The additive-index absolute sandwich and reciprocal window tail prove the correction using the original scalar norms. No optimality is asserted; no new refutation is introduced."
+          ]
+        },
+        {
+          "ordered_group": "section_3-024",
+          "source_lines": [
+            1448,
+            1461
+          ],
+          "requirement": "The literal near subsum with the exact Fourier remainder and corrected inverse-square radius.",
+          "declarations": [
+            "NLS.ZakharovShabat.lemma34ProofNearSum",
+            "NLS.ZakharovShabat.lemma34ProofNear_frequency_lower",
+            "NLS.ZakharovShabat.lemma34ProofNear_tail_apply",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_fourierTail",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_le_holder_tail",
+            "NLS.ZakharovShabat.lemma34ProofSum_le_corrected",
+            "NLS.ZakharovShabat.lemma34ProofNearSum_le_corrected",
+            "NLS.ZakharovShabat.sourceLemma3_4"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The exact near-frequency condition and Fourier remainder identity are retained, including the cutoff boundary. The new positive theorem bounds the exact source near sum by (4*p^2/r^2)*norm(fourierTail abs(n) phi)*norm(f).",
+            "The bound holds for every finite Banach exponent including p=1, every signed integer n including zero, and 0<r<=1. It replaces the final radius exponent while retaining the original scalar potential tail and input norm.",
+            "The already proved main Lemma 3.4 retains its original-norm pair bound with constant 64*p^2; this step supplies the explicit positive intermediate proof corrections."
+          ]
+        }
+      ],
+      "source_lines": [
+        [
+          1290,
+          1301
+        ],
+        [
+          1432,
+          1446
+        ],
+        [
+          1448,
+          1461
+        ]
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "d455cfafbff1c93408def50a3752fc58ef24bade3c87a1856a5df7a6184ce4a8",
+        "NLS/SequenceSpaces/PairComponentHolder.lean": "1c87a11e7903654184fed00d7808106319306b4639d84ad9c2aa4dd30cc788d4",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "a38555531a677d72d2e1cc820bf52760fd5835c9e5bc4464e3907c00a863150b",
+        "NLS/ZakharovShabat/SourceLemma34Holder.lean": "57fce7c9a0197b5c6c729441be83a8abc9af22176b213a56d7332f82e842f19b",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "53bdbf1c130907c78fd194e618329bce5bef97ea7fd77f19e70200df4b12c597",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "293d6b7218f45fe21ba7178d5fe33c4c77cdf0e1567de46c0df8875fbcdbf6ed",
+        "NLS/SequenceSpaces/SobolevConstant.lean": "8bb7baba2cb9ecba9b0390862775ea73da4f72cec3c51ef8824a5d24e0044373",
+        "NLS/SequenceSpaces/SandwichAbsoluteSum.lean": "05a66015f465d9396c87fa2cc755e4da6db9a643ed894024979ce14f9cb10b2d",
+        "NLS/SequenceSpaces/SandwichMajorant.lean": "921ef1515ecd8d06b6116ec8937f1ef28fa5999cd904fe7e5b9c9e545b16c541",
+        "NLS/ZakharovShabat/SourceLemma3_4.lean": "58b4ecfc0fee71ec174f880c21837d3d3f3698c49d929be3dea9bfd6c83b0e64",
+        "NLS/ZakharovShabat/SourceLemma34CorrectedSubsums.lean": "2a4136f3099fa7dda2790a9abf33edbcdfdd03238383ab08008b8b317f0f68ff"
+      },
+      "reviewed_modules_read_in_full": false,
+      "support_dependency_comparison_complete": false,
+      "support_body_scopes": {
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean": "full",
+        "NLS/SequenceSpaces/PairComponentHolder.lean": "full",
+        "NLS/ZakharovShabat/SourceLemma34Proof.lean": "lines 101-126; exact near set and literal scalar summand/subsum definitions",
+        "NLS/ZakharovShabat/SourceLemma34Holder.lean": "full",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean": "full",
+        "NLS/SequenceSpaces/ReciprocalTail.lean": "full",
+        "NLS/SequenceSpaces/SobolevConstant.lean": "full",
+        "NLS/SequenceSpaces/SandwichAbsoluteSum.lean": "full",
+        "NLS/SequenceSpaces/SandwichMajorant.lean": "full",
+        "NLS/ZakharovShabat/SourceLemma3_4.lean": "full",
+        "NLS/ZakharovShabat/SourceLemma34CorrectedSubsums.lean": "full"
+      },
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceFreeResolvent.lean",
+        "NLS/SequenceSpaces/PairComponentHolder.lean",
+        "NLS/ZakharovShabat/SourceLemma34Holder.lean",
+        "NLS/ZakharovShabat/SourceLemma34Majorization.lean",
+        "NLS/SequenceSpaces/ReciprocalTail.lean",
+        "NLS/SequenceSpaces/SobolevConstant.lean",
+        "NLS/SequenceSpaces/SandwichAbsoluteSum.lean",
+        "NLS/SequenceSpaces/SandwichMajorant.lean",
+        "NLS/ZakharovShabat/SourceLemma3_4.lean",
+        "NLS/ZakharovShabat/SourceLemma34CorrectedSubsums.lean"
+      ],
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          24,
+          25
+        ],
+        "images": {
+          "work/Section3ProofCurrentReview-024.png": "60bcb9c53a28e52ad8acfa6c2babe44eed03ba7b7867ec49a9f21a6d7ac23565",
+          "work/Section3ProofNextReview-025.png": "9b5ae7f71f8a21e0f1b0fe7996eae6e484e40f316bf70c18fbf3787325a69ca4"
+        }
+      },
+      "early_group_reconciliation": {
+        "section_3-007": {
+          "previous": "mixed_proved_and_formally_refuted",
+          "current": "corrected"
+        },
+        "section_3-023": {
+          "previous": "mixed_proved_and_formally_refuted",
+          "current": "corrected"
+        },
+        "section_3-024": {
+          "previous": "mixed_proved_and_formally_refuted",
+          "current": "corrected"
+        }
+      },
+      "resolved_declarations": [
+        "NLS.Coeff.half_radius_rpow_le",
+        "NLS.Coeff.norm_centered_reciprocal_windowTail_le_simple",
+        "NLS.CoeffPair.componentNormSum_le",
+        "NLS.CoeffPair.l1Factor",
+        "NLS.CoeffPair.l1Factor_one",
+        "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent",
+        "NLS.ZakharovShabat.lemma34NumeratorMoment_eq",
+        "NLS.ZakharovShabat.lemma34ProofFarSum",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected_of_ne_zero",
+        "NLS.ZakharovShabat.lemma34ProofFarSum_le_holder",
+        "NLS.ZakharovShabat.lemma34ProofNearSum",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_fourierTail",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_le_corrected",
+        "NLS.ZakharovShabat.lemma34ProofNearSum_le_holder_tail",
+        "NLS.ZakharovShabat.lemma34ProofNear_frequency_lower",
+        "NLS.ZakharovShabat.lemma34ProofNear_tail_apply",
+        "NLS.ZakharovShabat.lemma34ProofSum_le_corrected",
+        "NLS.ZakharovShabat.lemma34Reciprocal",
+        "NLS.ZakharovShabat.lemma34Reciprocal_norm_apply",
+        "NLS.ZakharovShabat.lemma34_weighted_sum_le",
+        "NLS.ZakharovShabat.norm_lemma34Reciprocal_le",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four",
+        "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
+        "NLS.ZakharovShabat.sourceLemma3_4",
+        "NLS.ZakharovShabat.summable_lemma34WeightedTerms"
+      ],
+      "qualification": "The literal Lemma 3.4 near sum is bounded by (4*p^2/r^2)*norm(R_n phi)*norm(f). The far sum is bounded by (64*p^2/r^2)*(r+abs(n))^(-1/p)*norm(phi)*norm(f). Both bounds use the original scalar norms and hold for every finite Banach exponent, including p=1, every signed integer n including zero, and 0<r<=1. The near bound retains the exact source Fourier remainder, including its cutoff boundary. The already proved main Lemma 3.4 pair bound retains its constant 64*p^2. Lemma 3.2 adopts the proved two-component factor 2^(1-1/p) in its height bound; the p=1 factor is one, and the nonzero imaginary-part condition is explicit. Compactness and the original strip bound remain. No optimality is asserted. Supporting declarations and selected bodies were inspected; this is not a fresh audit of every transitive dependency. Historical refutations and other source qualifications are retained.",
+      "new_definitions": 1,
+      "positive_theorems_integrated": 8,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "completion_claim": false,
+      "validation_lean_sources": {
+        "files": 4924,
+        "sha256": "4dcaf0425de74c1d9a7aa9d9d63a08657eef04e14070c28fc6784f3f332f351b"
+      },
+      "full_gate": {
+        "session": 32997,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Lemma34CorrectedSubsumFullCheck.log",
+        "log_sha256": "33cb8ec9079472b368699f50ddda724935bc1fead5707302b95717e16c8b62f2"
+      },
+      "source_record_sha256": "9584581b7f7fda6de2b053971ced71fa6379ebccd9bbcb1dc9271dfbc01f58f9"
     }
   },
   "contextual_source_records": {

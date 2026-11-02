@@ -1,6 +1,18 @@
 # Implementation status
 
-## Current milestone: corrected-height contour arguments in the original spaces
+## Current milestone: positive corrections to Lemmas 3.2 and 3.4
+
+The [positive subsum proofs](NLS/ZakharovShabat/SourceLemma34CorrectedSubsums.lean) supply explicit corrected constants for the intermediate bounds in Lemma 3.4. Eight positive theorems and one definition add no refutations or public examples.
+
+The literal Lemma 3.4 near sum is bounded by (4*p^2/r^2)*norm(R_n phi)*norm(f). The far sum is bounded by (64*p^2/r^2)*(r+abs(n))^(-1/p)*norm(phi)*norm(f). Both bounds use the original scalar norms and hold for every finite Banach exponent, including p=1, every signed integer n including zero, and 0<r<=1. The near bound retains the exact source Fourier remainder, including its cutoff boundary. The already proved main Lemma 3.4 pair bound retains its constant 64*p^2. Lemma 3.2 adopts the proved two-component factor 2^(1-1/p) in its height bound; the p=1 factor is one, and the nonzero imaginary-part condition is explicit. Compactness and the original strip bound remain. No optimality is asserted.
+
+The full check passed: 8,662 build jobs, 7,729 public examples and an axiom audit of 45,245 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections, retaining the general Hilbert-space direction and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: corrected-height contour arguments in the original spaces
 
 The [corrected-height contour proofs](NLS/ZakharovShabat/SourceCorrectedHeightContours.lean) carry the adopted constants through the actual original-norm contour arguments in Sections 3–5. Ten positive theorems and three definitions add no refutations or public examples.
 

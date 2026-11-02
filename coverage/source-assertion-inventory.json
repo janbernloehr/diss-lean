@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T07:46:35.599152+00:00",
-  "base_commit": "9013309a03250329e92502c40a53bb9cb7568eb5",
+  "updated_utc": "2026-11-02T08:08:09.182610+00:00",
+  "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "7d448b724c7d90eaf6f994054bf94d260c705d7b1bc235d7c3a953763cbae1d2",
+  "published_source_index_sha256": "27001ae6d48317ab1af903ba6a6b837080662faa5931836bd29a3a6abceec21f",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -4544,7 +4544,7 @@
     {
       "unit": "section_3",
       "document": "coverage/SECTION_3.md",
-      "document_sha256": "189bc8969370720a08a1f1fd154e147e2dc17f5f6f263345b926b45d38d99949",
+      "document_sha256": "60589346ba17a12c6516f3f38da0c67b6c6a26998b2106c761b3a55b2701054e",
       "groups": [
         {
           "group": "section_3-001",
@@ -4927,7 +4927,7 @@
         },
         {
           "group": "section_3-007",
-          "assessment": "mixed_proved_and_formally_refuted",
+          "assessment": "corrected",
           "source_lines": [
             [
               1290,
@@ -4969,6 +4969,36 @@
                   "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four",
                   "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
                   "NLS.ZakharovShabat.not_lemma3_2_ii_original_norms"
+                ]
+              }
+            },
+            {
+              "review": "Lemma34CorrectedSubsumSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 0,
+              "source_record_sha256": "9584581b7f7fda6de2b053971ced71fa6379ebccd9bbcb1dc9271dfbc01f58f9",
+              "row": {
+                "ordered_group": "section_3-007",
+                "source_lines": [
+                  1290,
+                  1301
+                ],
+                "requirement": "Lemma 3.2 with the corrected two-component height constant in the original norms.",
+                "declarations": [
+                  "NLS.CoeffPair.l1Factor",
+                  "NLS.CoeffPair.l1Factor_one",
+                  "NLS.CoeffPair.componentNormSum_le",
+                  "NLS.ZakharovShabat.isCompactOperator_sourceFreeResolvent",
+                  "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_height",
+                  "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_one_le_height",
+                  "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip",
+                  "NLS.ZakharovShabat.norm_sourceFreeResolventToL1_le_verticalStrip_four"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "Adopt the existing proved factor 2^(1-1/p) multiplying 4*p/abs(Im z)^(1/p)+1/abs(Im z), for every finite Banach exponent and nonzero imaginary part. At p=1 this factor is one.",
+                  "Compactness and the original 8*p/r strip bound are retained; the existing stronger 4*p/r bound is also available. This adoption adds no new counterexample or refutation."
                 ]
               }
             }
@@ -5875,7 +5905,7 @@
         },
         {
           "group": "section_3-023",
-          "assessment": "mixed_proved_and_formally_refuted",
+          "assessment": "corrected",
           "source_lines": [
             [
               1432,
@@ -5939,12 +5969,47 @@
                   "NLS.ZakharovShabat.summable_lemma34NumeratorMoment"
                 ]
               }
+            },
+            {
+              "review": "Lemma34CorrectedSubsumSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 1,
+              "source_record_sha256": "9584581b7f7fda6de2b053971ced71fa6379ebccd9bbcb1dc9271dfbc01f58f9",
+              "row": {
+                "ordered_group": "section_3-023",
+                "source_lines": [
+                  1432,
+                  1446
+                ],
+                "requirement": "The literal far subsum with an explicit corrected radius-dependent constant.",
+                "declarations": [
+                  "NLS.ZakharovShabat.lemma34ProofFarSum",
+                  "NLS.ZakharovShabat.lemma34ProofFarSum_le_holder",
+                  "NLS.ZakharovShabat.lemma34NumeratorMoment_eq",
+                  "NLS.ZakharovShabat.lemma34Reciprocal",
+                  "NLS.ZakharovShabat.lemma34Reciprocal_norm_apply",
+                  "NLS.ZakharovShabat.norm_lemma34Reciprocal_le",
+                  "NLS.ZakharovShabat.lemma34_weighted_sum_le",
+                  "NLS.ZakharovShabat.summable_lemma34WeightedTerms",
+                  "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected_of_ne_zero",
+                  "NLS.ZakharovShabat.lemma34ProofFarSum_le_corrected",
+                  "NLS.Coeff.norm_centered_reciprocal_windowTail_le_simple",
+                  "NLS.Coeff.half_radius_rpow_le"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The previous exact Holder display and scalar numerator factorization are retained. The new positive theorem bounds the exact source far sum by (64*p^2/r^2)*(r+abs(n))^(-1/p)*norm(phi)*norm(f).",
+                  "The bound holds for every finite Banach exponent including p=1, every signed integer n including zero, and 0<r<=1, hence throughout the printed 0<r<=pi/4 range. For n nonzero an intermediate coefficient 32*p^2/r^2 multiplies abs(n)^(-1/p).",
+                  "The additive-index absolute sandwich and reciprocal window tail prove the correction using the original scalar norms. No optimality is asserted; no new refutation is introduced."
+                ]
+              }
             }
           ]
         },
         {
           "group": "section_3-024",
-          "assessment": "mixed_proved_and_formally_refuted",
+          "assessment": "corrected",
           "source_lines": [
             [
               1448,
@@ -6032,6 +6097,37 @@
                   "NLS.ZakharovShabat.norm_sourceDoubleResolvent_le_verticalStrip",
                   "NLS.ZakharovShabat.sourceDoubleResolvent_signed_fst_apply",
                   "NLS.ZakharovShabat.sourceLemma3_4"
+                ]
+              }
+            },
+            {
+              "review": "Lemma34CorrectedSubsumSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 2,
+              "source_record_sha256": "9584581b7f7fda6de2b053971ced71fa6379ebccd9bbcb1dc9271dfbc01f58f9",
+              "row": {
+                "ordered_group": "section_3-024",
+                "source_lines": [
+                  1448,
+                  1461
+                ],
+                "requirement": "The literal near subsum with the exact Fourier remainder and corrected inverse-square radius.",
+                "declarations": [
+                  "NLS.ZakharovShabat.lemma34ProofNearSum",
+                  "NLS.ZakharovShabat.lemma34ProofNear_frequency_lower",
+                  "NLS.ZakharovShabat.lemma34ProofNear_tail_apply",
+                  "NLS.ZakharovShabat.lemma34ProofNearSum_fourierTail",
+                  "NLS.ZakharovShabat.lemma34ProofNearSum_le_holder_tail",
+                  "NLS.ZakharovShabat.lemma34ProofSum_le_corrected",
+                  "NLS.ZakharovShabat.lemma34ProofNearSum_le_corrected",
+                  "NLS.ZakharovShabat.sourceLemma3_4"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The exact near-frequency condition and Fourier remainder identity are retained, including the cutoff boundary. The new positive theorem bounds the exact source near sum by (4*p^2/r^2)*norm(fourierTail abs(n) phi)*norm(f).",
+                  "The bound holds for every finite Banach exponent including p=1, every signed integer n including zero, and 0<r<=1. It replaces the final radius exponent while retaining the original scalar potential tail and input norm.",
+                  "The already proved main Lemma 3.4 retains its original-norm pair bound with constant 64*p^2; this step supplies the explicit positive intermediate proof corrections."
                 ]
               }
             }
@@ -53578,7 +53674,7 @@
   "queued_not_published": [],
   "qualification": "This reconciles previously published assessments and inspected source navigation. It is not a new semantic review of all proof dependencies. Full source-line accounting does not imply every mathematical claim is proved. Earlier detailed qualifications and historical corrections remain unchanged. Partial/pending counts cover those explicit statuses only, not every qualified assessment.",
   "preparation_ready": true,
-  "source_inventory_draft_sha256": "a0646a43ec85be80ca2b1d48cffc0750d789f38e8687b003212e3bb3479000d4",
+  "source_inventory_draft_sha256": "2ef2c426b2fdb3096d0070190f87ee8653d8bc165d4f8accf241269bd9c8cc19",
   "gap_inspection_sha256": "c48c6ccf005af940aca0f35634990455bb7501c5a717db71d1fac01e7efb91fb",
   "tail_inspection_sha256": "f8b4bc671ff240da2f8b2543a80a39606c9c30cde0da3cb1af3d94ce13dc84fb",
   "inspected_navigation_gaps": [
@@ -57394,28 +57490,26 @@
   ],
   "unassigned_nonblank_source_lines": [],
   "all_nonblank_source_lines_assigned": true,
-  "new_lean_proofs": 10,
+  "new_lean_proofs": 8,
   "new_refutations": 0,
-  "preceding_navigation_sha256": "ae1f3bcc7cd3528cdfb07a4aac6a3f567eb181a6956b09db8677a01133f0dae1",
+  "preceding_navigation_sha256": "fba7150f30b85a64ed880834e48779ed7ec839fb38e412b695cabde7ade4745a",
   "validation_lean_sources": {
-    "files": 4923,
-    "sha256": "cbba275e56c41633ab80c89b91771dba18b42db32da07eb6f7e44a3cde0735e8"
+    "files": 4924,
+    "sha256": "4dcaf0425de74c1d9a7aa9d9d63a08657eef04e14070c28fc6784f3f332f351b"
   },
   "validation": {
-    "session": 29819,
+    "session": 32997,
     "exit": 0,
     "exit_observed": true,
-    "log": "work/CorrectedHeightContoursFullCheck.log",
-    "log_sha256": "20ea9c4331c229085f1f85d4248b3436ae0a31b504facc4277ac2d0e6e6242ee"
+    "log": "work/Lemma34CorrectedSubsumFullCheck.log",
+    "log_sha256": "33cb8ec9079472b368699f50ddda724935bc1fead5707302b95717e16c8b62f2"
   },
   "assessment_update": {
-    "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+    "review": "Lemma34CorrectedSubsumSourceComparison-2026-11-02",
     "adopted_groups": [
-      "section_3-034",
-      "section_4-027",
-      "section_4-033",
-      "section_4-035",
-      "section_5-015"
+      "section_3-007",
+      "section_3-023",
+      "section_3-024"
     ]
   }
 }

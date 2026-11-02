@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [corrected-height contour arguments](coverage/SECTION_4.md) retain full ambient and restricted analyticity and the original-domain ranks for ordinary and auxiliary boundary conditions. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
+Latest step: [positive constant corrections](coverage/SECTION_3.md) prove the literal near and far bounds in Lemma 3.4 for every finite Banach exponent, including p=1, and adopt the existing Lemma 3.2 height factor. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the
