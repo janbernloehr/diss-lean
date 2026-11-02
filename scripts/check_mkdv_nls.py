@@ -282,6 +282,11 @@ modules = [
     "NLS/MKdV/MiuraActionIndependence.lean",
     "NLS/MKdV/MiuraActionCotangentIndependence.lean",
     "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean",
+    "NLS/FunctionalAnalysis/FiniteCotangentProjection.lean",
+    "NLS/ComplexAnalysis/AnalyticSubmersionSection.lean",
+    "NLS/MKdV/MiuraFiniteActionProjection.lean",
+    "NLS/MKdV/MiuraFiniteActionSections.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

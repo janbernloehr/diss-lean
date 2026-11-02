@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.FiniteActionCoordinates
 import NLS.Articles.MKdVNLSHierarchies.ActionAngleFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.SpectralHierarchyIdentification
@@ -35,6 +36,9 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.FunctionalAnalysis.surjective_pi_of_cotangent_independent,
+    `NLS.FunctionalAnalysis.exists_continuousLinear_rightInverse_of_surjective,
+    `NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse,
     `NLS.FunctionalAnalysis.eq_scalarExponential_of_hasDerivAt,
     `NLS.ZakharovShabat.canonicalPeriodicGap_eq_of_source_isospectral,
     `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_fderiv_actionDifference,
@@ -422,7 +426,17 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections,
+    ``NLS.MKdV.miuraFiniteActionCoordinates_base,
+    ``NLS.MKdV.hasFDerivAt_miuraFiniteActionCoordinates,
+    ``NLS.MKdV.surjective_miuraFiniteActionDerivative,
+    ``NLS.MKdV.exists_miuraFiniteActionDerivative_rightInverse,
+    ``NLS.MKdV.exists_miuraFiniteAction_section,
+    ``NLS.FunctionalAnalysis.surjective_pi_of_cotangent_independent,
+    ``NLS.FunctionalAnalysis.exists_continuousLinear_rightInverse_of_surjective,
+    ``NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent,
     ``NLS.MKdV.miuraThetaPhase_miuraActionFlow,

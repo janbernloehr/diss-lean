@@ -139,7 +139,9 @@
         "NLS.Articles.MKdVNLSHierarchies.lemma7",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -600,5 +602,21 @@
     "original_H1_cotangent_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
     "cotangent_scope": "Every finite linear combination of the open physical action Frechet differentials and the actual mean differential has unique complex coefficients. All other gaps may close; zero mean is included. The ambient L2 statement uses the checked physical analytic action extensions, and density transfers it to their actual original H1 Frechet derivatives.",
     "remaining": "These are local regularity and global action-angle transport ingredients, not an independent mKdV Birkhoff chart. Forward factorization, the final independent-angle sum factorization and the corrected frequency comparison remain open."
+  },
+  "finite_local_physical_action_sections": {
+    "finite_projection": "NLS.MKdV.miuraFiniteActionCoordinates",
+    "exact_physical_base_values": "NLS.MKdV.miuraFiniteActionCoordinates_base",
+    "analyticity": "NLS.MKdV.analyticAt_miuraFiniteActionCoordinates",
+    "actual_Frechet_derivative": "NLS.MKdV.hasFDerivAt_miuraFiniteActionCoordinates",
+    "proved_derivative_surjectivity": "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
+    "constructed_bounded_linear_right_inverse": "NLS.MKdV.exists_miuraFiniteActionDerivative_rightInverse",
+    "constructed_holomorphic_sections": "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections",
+    "section_derivative": "NLS.MKdV.exists_miuraFiniteAction_section",
+    "generic_finite_cotangent_projection": "NLS.FunctionalAnalysis.surjective_pi_of_cotangent_independent",
+    "generic_bounded_linear_right_inverse": "NLS.FunctionalAnalysis.exists_continuousLinear_rightInverse_of_surjective",
+    "generic_analytic_section": "NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse",
+    "scope": "Every original real H1 base point; any finite collection of its positive open physical actions together with the literal mean. Other gaps may close and zero mean is allowed. The actual complex H1 analytic extensions have surjective derivative. A constructed holomorphic section passes through the base point, realizes all nearby selected complex action and mean values exactly, has the constructed right inverse as its actual derivative, and stays inside any prescribed open complex H1 neighborhood of the base point.",
+    "construction": "Cotangent independence proves surjectivity by injectivity of the algebraic dual map. A linear right inverse is bounded because its domain is finite dimensional. The affine H1 slice through that right inverse has identity actual derivative under the physical projection; the analytic inverse theorem constructs the section on that slice.",
+    "limits": "These are finite local complex sections at real H1 base points, not real-preserving sections or an independent global mKdV Birkhoff chart. The infinite action topology, collapsed selected-action coordinates, global forward action factorization, independent mKdV angles and final angle-sum factorization, and corrected frequency comparison remain open."
   }
 }

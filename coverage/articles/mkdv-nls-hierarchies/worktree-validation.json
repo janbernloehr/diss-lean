@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3182,
+  "audited_declarations_and_auxiliaries": 3201,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -8149,14 +8149,79 @@
       "kind": "theorem",
       "name": "theorem4_H1_action_differentials_independent",
       "file": "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "surjective_pi_of_cotangent_independent",
+      "file": "NLS/FunctionalAnalysis/FiniteCotangentProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_continuousLinear_rightInverse_of_surjective",
+      "file": "NLS/FunctionalAnalysis/FiniteCotangentProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_analytic_section_of_derivative_rightInverse",
+      "file": "NLS/ComplexAnalysis/AnalyticSubmersionSection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteActionRows",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraFiniteActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraFiniteActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "surjective_miuraFiniteActionDerivative",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraFiniteActionDerivative_rightInverse",
+      "file": "NLS/MKdV/MiuraFiniteActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteActionCoordinates_base",
+      "file": "NLS/MKdV/MiuraFiniteActionSections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraFiniteAction_section",
+      "file": "NLS/MKdV/MiuraFiniteActionSections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_finite_action_submersion",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_finite_action_sections",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean"
     }
   ],
-  "public_declaration_count": 1626,
-  "theorem_count": 1320,
-  "definition_count": 306,
-  "full_build": "248 article/shared modules have validated private outputs. All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1639,
+  "theorem_count": 1331,
+  "definition_count": 308,
+  "full_build": "253 article/shared modules have validated private outputs. All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/FunctionalAnalysis/ScalarLinearODE.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/FunctionalAnalysis/FiniteCotangentProjection.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -8314,8 +8379,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9aae3116f9af52e5ccdab03bbcb7056bacb26a51760f3d250892ab665125d6e9",
-    "scripts/check_mkdv_nls.py": "beab6777c020c3025b3dafe9b06bb5be3fbfe320959efb37e7f86888e6c36af5",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e06c369cedebd6a6f0d3666ad1239a27736dd65b3b66a4a00f5831eb873bcd40",
+    "scripts/check_mkdv_nls.py": "d8dccebc1ab9c557777a308c31e7bb11c12e102975203c9d894a080e9b70223c",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -8407,10 +8472,15 @@
     "NLS/MKdV/MiuraAngleActionFlow.lean": "5fe7c328e62a930551d1ac0a4a2f15bb34cee3206bcd67624055a37102fbb550",
     "NLS/MKdV/MiuraActionIndependence.lean": "be10500209171b5c91a06174e89efcdac41ef2da4e04589a592d66b49181dad3",
     "NLS/MKdV/MiuraActionCotangentIndependence.lean": "0ec2cc7eb2eeadd2c01890525813ae830062b5f4659a6f70413d7c737f895fd1",
-    "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39"
+    "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39",
+    "NLS/FunctionalAnalysis/FiniteCotangentProjection.lean": "42b85eb2371178a33baa78c8f7536b998a597492c72c8e324632d569ff0a54a2",
+    "NLS/ComplexAnalysis/AnalyticSubmersionSection.lean": "8f4d9f9a7ecd7d789d3353ff17774cce89b394bee7cfd16501c87edc9ee47205",
+    "NLS/MKdV/MiuraFiniteActionProjection.lean": "db26f8f63423a58820d4e578bf80d8e67e2089c4ccb71b8d3af5bd41e010b9c0",
+    "NLS/MKdV/MiuraFiniteActionSections.lean": "d4536fdb4e27229b02423eeaa3bf6611b54768959b5ee14f80e8451832c45a6d",
+    "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean": "f5782dcf6123f3d1c947bac6eb9192f4b7f18f0a95897085e710070a54e3f458"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 248,
+  "focused_module_count": 253,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -8571,12 +8641,19 @@
       "combined_NLS_audit_count": 48152,
       "aggregate_compiled": true,
       "validation_scope": "All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Constructed finite local complex H1 physical action and mean submersions at every original real H1 base point: actual derivative surjectivity from cotangent independence, constructed bounded linear right inverses and holomorphic sections through the base point inside every prescribed H1 neighborhood, exact nearby coordinate recovery and section derivative",
+      "audit_count": 3201,
+      "combined_NLS_audit_count": 48171,
+      "aggregate_compiled": true,
+      "validation_scope": "All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48152,
+  "combined_audited_NLS_declarations": 48171,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -8584,7 +8661,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3182 declarations/auxiliaries and combined audit for 48152 NLS declarations. All 250 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3201 declarations/auxiliaries and combined audit for 48171 NLS declarations. All 255 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

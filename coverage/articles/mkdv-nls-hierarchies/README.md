@@ -819,3 +819,34 @@ are allowed. The public inventory has 1,626 entries (1,320 theorems and
 306 definitions; aliases and structures excluded), with 250 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## Constructed finite local physical action sections
+
+`theorem4_finite_action_submersion` proves that any finite collection of
+open physical actions and the literal mean has a surjective actual
+Frechet derivative on the complex H1 space at every original real H1
+base point. `theorem4_finite_action_sections` constructs a holomorphic
+section through that point. It realizes every nearby selected complex
+action and mean value exactly and stays inside any prescribed H1
+neighborhood. Its actual derivative is a constructed bounded linear
+right inverse. At the base point its action values equal the independent
+physical Hill contour actions. Zero mean and arbitrary omitted closed
+gaps are included.
+
+These are finite local complex sections. Real-preserving sections,
+the infinite action topology and collapsed selected-action coordinates,
+and the independent global mKdV chart remain open, together with the
+forward factorization, final angle-sum factorization and corrected
+frequency comparison required by the remaining main theorems.
+
+Validation covers 253 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 248 unchanged prefix module
+source hashes match the previous 96c107c milestone; their private outputs
+were reused. Five added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,201 and 48,171
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,639 entries (1,331 theorems and
+308 definitions; aliases and structures excluded), with 255 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

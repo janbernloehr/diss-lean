@@ -1318,3 +1318,54 @@ are allowed. The public inventory has 1,626 entries (1,320 theorems and
 306 definitions; aliases and structures excluded), with 250 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — finite local physical action submersions and analytic sections
+
+The actual finite projection records the literal mean and an arbitrary
+finite selection of the open physical actions at any original real H1
+base point. Its action functionals are the checked complex H1 analytic
+extensions of the independent physical Hill contour actions; their base
+values are proved to equal those physical actions exactly. Its full
+complex Frechet derivative is the assembled row of the actual physical
+action derivatives and the bounded mean evaluation.
+
+`theorem4_finite_action_submersion` proves this derivative is surjective.
+The preceding independence of action and mean cotangents supplies the
+input to a reusable finite-projection theorem: a finite target dual
+functional is determined by its values on the coordinate modes, so a
+zero dual pullback gives a zero finite cotangent combination and hence
+vanishes. Injectivity of the dual map gives surjectivity. A linear right
+inverse is constructed, and its finite-dimensional domain makes it
+bounded. Neither a submersion nor a right inverse is passed in by a
+caller of the physical theorem.
+
+`theorem4_finite_action_sections` constructs local holomorphic H1 sections
+of these physical action and mean values. The affine slice through the
+constructed right inverse has identity derivative after the physical
+projection. The checked analytic inverse theorem on this slice supplies
+the actual section. It passes through the original base point, realizes
+all nearby selected complex action and mean values exactly, and remains
+inside any prescribed open H1 source neighborhood. Its actual derivative
+at the base value is precisely the constructed bounded right inverse.
+Zero mean is allowed and no condition is imposed on omitted gaps.
+
+This closes a finite local coordinate dependency for the remaining
+normal forms. The sections take values in complex H1; real-preserving
+sections have not yet been proved. This does not construct an independent
+global mKdV Birkhoff chart or settle the infinite action topology or
+selected-action collapse. Forward action factorization, independent mKdV
+angles and final angle-sum factorization, and the corrected full frequency
+comparison remain essential open obligations. Theorems 1 and 2 remain
+complete; the overall main-theorem goal remains incomplete.
+
+Validation covers 253 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 248 unchanged prefix module
+source hashes match the previous 96c107c milestone; their private outputs
+were reused. Five added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,201 and 48,171
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,639 entries (1,331 theorems and
+308 definitions; aliases and structures excluded), with 255 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.
