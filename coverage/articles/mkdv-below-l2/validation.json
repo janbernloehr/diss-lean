@@ -77,7 +77,12 @@
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder",
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification",
     "Articles/MKdVBelowL2/FourthMomentReality",
-    "Articles/MKdVBelowL2/PhysicalFourthFrequencyReality"
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyReality",
+    "ZakharovShabat/PeriodOneSobolevFourthHamiltonian",
+    "ZakharovShabat/PeriodOneSobolevFourthClassical",
+    "ZakharovShabat/SourceFiniteGapHamiltonianReality",
+    "ZakharovShabat/SourceSobolevFourthHamiltonian",
+    "ZakharovShabat/SourceSobolevFourthBirkhoff"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -1558,6 +1563,256 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.periodOneSobolevDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.periodOneSobolevDerivative_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.FourthSobolevField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.FourthSobolevSource": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevThirdDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevThirdDerivative_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevToH1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevToH1_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevFirstDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevFirstDerivative_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevCubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticAt_fourthSobolevCubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticAt_periodOneSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.continuous_periodOneSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevCubic_eq_classical_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolev_leading_eq_classical_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolev_quartic_eq_classical_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian_eq_classical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthSobolevSpectralWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.NativeFourthSobolevSource": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeFieldCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeFieldCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeSourceCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeSourceCLM_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeSourceCLM_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticOnNhd_sourceSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_eq_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.continuous_sourceSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_finiteGap_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.dense_nativeFourthSobolev_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceRealSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceRealSobolevFourthHamiltonian_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticOnNhd_sourceRealSobolevFourthHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.FourthSobolevBirkhoffTarget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevFourthBirkhoffHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevFourthBirkhoffHamiltonian_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_sobolevFourthBirkhoffHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_realSobolevFourthBirkhoffHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian_eq_birkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_sobolevFourthOpeningHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian_eq_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.second_deriv_sobolevFourthOpeningHamiltonian_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.im_eq_zero_of_continuous_weighted_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1565,7 +1820,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 77 new and consumed modules; transitive audit of 295 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused strict build of 82 new and consumed modules; transitive audit of 345 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -1574,5 +1829,6 @@
   "imported_hierarchy_commits": [
     "9b664f9",
     "09fa657"
-  ]
+  ],
+  "validation_method": "Focused ordered build; repaired suffix rechecked before the full transitive audit; unchanged checked prefix retained."
 }

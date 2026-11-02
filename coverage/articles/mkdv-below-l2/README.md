@@ -14,8 +14,10 @@ The candidate is now analytic into the weighted targets of Theorem 1.3.
 The refined actual-action remainder is checked on the same physical
 chart. Physical H₄ derivative identification is checked at all finite-gap
 inputs, including closed actions; the full H^(3/2) classical-domain
-identification remains open. The real weighted Hilbert targets are now
-verified, with exact inclusion into the same complex candidate sequence.
+identification remains open. The real weighted Hilbert targets are verified,
+with exact inclusion into the same complex candidate sequence. The physical
+H₄ Hamiltonian is now constructed and calibrated on the full H^(3/2) domain;
+its full action-derivative identification is still required.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -274,6 +276,19 @@ real weighted subspace. Its complex inclusion is the same established sequence;
 all coordinates, cross-exponent compatibility and finite-gap physical derivative
 identities are preserved. At p=2 this supplies every finite real target r>1.
 
+The new `PeriodOneSobolevFourthHamiltonian` defines physical H₄ on the full
+H^(3/2) pair using a bounded distributional third-derivative pairing and the
+H¹ cubic product. It is entire complex analytic and equals the independently
+defined Riccati H₄ for every smooth periodic coefficient-identical pair.
+`SourceSobolevFourthHamiltonian` transports this construction to the exact
+native weighted real source, proves reality by explicit finite-gap sequences
+in that weighted norm, and gives an analytic map into the actual real scalar
+codomain. `SourceSobolevFourthBirkhoff` uses the global weighted inverse on the
+full rectangular target. Its native opening-line Hamiltonian equals the
+original physical finite-gap function at every amplitude, so the closed
+second derivative keeps its independent physical normalization. No
+full-domain action-only factorization or frequency equality is claimed yet.
+
 ## Outstanding dependencies and integration order
 
 1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
@@ -284,8 +299,10 @@ identities are preserved. At p=2 this supplies every finite real target r>1.
    conjugation/reflection invariance is still needed for Theorem 1.1.
 3. The analytic weighted candidate, refined action remainder and full finite-gap
    Lemma 5.2 are now checked. Extend the physical H₄ derivative identification
-   to the original H^(3/2) domain and then assemble Theorem 1.3.
-   The real Hilbert targets are now verified with exact inclusion into the
+   to the original H^(3/2) domain and then assemble Theorem 1.3. The physical
+   fractional Hamiltonian and its native weighted Birkhoff transport are now
+   constructed; action dependence and full-domain action derivatives remain.
+   The real Hilbert targets are verified with exact inclusion into the
    same complex frequency sequence. The H₃ bounds were reused through an exact weighted
    comparison identity; they do not by themselves identify H₄.
 4. Show the physical renormalized flow is the specified rotation, preserves
@@ -310,10 +327,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 77 new article/shared modules and the
+The expanded focused checker covers 82 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (295 total), including the main Theorem 1.2 declarations;
+and consumed declarations (345 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

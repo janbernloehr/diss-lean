@@ -76,6 +76,11 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification: checked
 Articles/MKdVBelowL2/FourthMomentReality: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyReality: checked
+ZakharovShabat/PeriodOneSobolevFourthHamiltonian: checked
+ZakharovShabat/PeriodOneSobolevFourthClassical: checked
+ZakharovShabat/SourceFiniteGapHamiltonianReality: checked
+ZakharovShabat/SourceSobolevFourthHamiltonian: checked
+ZakharovShabat/SourceSobolevFourthBirkhoff: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -621,5 +626,105 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyReality: checked
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevDerivative_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.FourthSobolevField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.FourthSobolevSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevThirdDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevThirdDerivative_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevToH1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevToH1_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevFirstDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevFirstDerivative_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticAt_fourthSobolevCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticAt_periodOneSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.continuous_periodOneSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevCubic_eq_classical_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthSobolev_leading_eq_classical_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthSobolev_quartic_eq_classical_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian_eq_classical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_im_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevSpectralWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.NativeFourthSobolevSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeFieldCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeFieldCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeSourceCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeSourceCLM_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeSourceCLM_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticOnNhd_sourceSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.continuous_sourceSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_finiteGap_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.dense_nativeFourthSobolev_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceRealSobolevFourthHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceRealSobolevFourthHamiltonian_complex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.analyticOnNhd_sourceRealSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.FourthSobolevBirkhoffTarget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevFourthBirkhoffHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realSobolevFourthBirkhoffHamiltonian_complex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_sobolevFourthBirkhoffHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_realSobolevFourthBirkhoffHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian_eq_birkhoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_sobolevFourthOpeningHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.second_deriv_sobolevFourthOpeningHamiltonian_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.im_eq_zero_of_continuous_weighted_finiteGap' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

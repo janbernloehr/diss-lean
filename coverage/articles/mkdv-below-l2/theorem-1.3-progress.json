@@ -150,9 +150,34 @@
       "source": "Physical real target compatibility and finite-gap identification",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_finiteGap_actionDerivative",
       "scope": "All finite p>1 and all finite r>1 with p/2≤r. Real weighted coordinates equal independently defined normalized physical H4 action derivatives at all finite-gap inputs, including closed actions. The real sequence maps also agree for equal physical distributions across source exponents."
+    },
+    {
+      "source": "Original H4 Hamiltonian domain, H^(3/2)",
+      "declaration": "NLS.ZakharovShabat.analyticAt_periodOneSobolevFourthHamiltonian",
+      "scope": "Entire complex analytic Hamiltonian on the full pair of H^(3/2) physical Fourier fields. The third derivative is paired by the bounded H^(3/2)-H^(-3/2) distributional pairing; the quartic interaction uses the actual H1 cubic product and L2 derivative. No spectral or action assumptions."
+    },
+    {
+      "source": "Physical normalization of the fractional Hamiltonian",
+      "declaration": "NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian_eq_classical",
+      "scope": "Every smooth periodic physical pair with the same raw Fourier coefficients. Exact equality with the independently defined Riccati H4, including i, -3 and the unit-period derivative multiplier 2πin."
+    },
+    {
+      "source": "Full original real H^(3/2) source",
+      "declaration": "NLS.ZakharovShabat.analyticOnNhd_sourceRealSobolevFourthHamiltonian",
+      "scope": "Native weighted real source with the exact physical Sobolev weight, real analytic into the genuine real scalar codomain. Its complex inclusion is exactly the independent physical fractional Hamiltonian. Reality uses actual spectral finite-gap approximation in the weighted norm and the all-order physical higher-action trace."
+    },
+    {
+      "source": "Physical H4 in the original fractional Birkhoff chart",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_sobolevFourthBirkhoffHamiltonian",
+      "scope": "The actual global native weighted inverse transports physical H4 analytically to every real H^(3/2) rectangular Birkhoff target. This does not yet assert an action-only factorization."
+    },
+    {
+      "source": "Physical closed-action calibration in the fractional topology",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.second_deriv_sobolevFourthOpeningHamiltonian_finiteGap",
+      "scope": "The complete native opening-line Hamiltonian equals the original physical finite-gap Riccati H4 at every amplitude. At a closed selected finite-gap action the native second derivative equals the independently defined physical closed frequency."
     }
   ],
   "remaining": [
-    "Extend identification from finite-gap action derivatives to the original full H^(3/2) classical frequency domain, with its independent physical H4 action derivative and topology."
+    "Prove action dependence and identify the physical H4 action derivatives throughout the full original H^(3/2) domain with the chosen normalized frequency candidate, then assemble Theorem 1.3. The fractional physical Hamiltonian itself, its real analyticity and its finite-gap calibration are now verified."
   ]
 }

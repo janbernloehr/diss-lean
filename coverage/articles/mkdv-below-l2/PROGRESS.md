@@ -479,3 +479,48 @@ only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
 disabled linters or increased heartbeat limits were introduced. Validation
 uses the canonical compiled dependencies read-only and is not a fresh
 whole-repository rebuild.
+
+
+## Twelfth checkpoint: physical H₄ on the full H^(3/2) domain
+
+The independent physical Hamiltonian is now constructed at the original
+fractional regularity. The leading term pairs the H^(3/2) field with the
+H^(-3/2) third derivative, retaining the exact unit-period multiplier 2πin.
+The nonlinear term pairs the actual H¹ cubic product a²b with the L² first
+derivative b'. The result is the entire analytic polynomial i(mean(a D³b)
+−3mean(a²bb')). Its smooth periodic values equal the original Riccati H₄,
+with no spectral or action hypotheses.
+
+The native source uses the half-scale spectral weight that gives exactly
+(1+|n|)^(3/2) on the original physical lattice. Its bounded real linear
+transport preserves every raw coefficient. The full native Hamiltonian is
+real analytic and agrees with the independently defined physical finite-gap
+Hamiltonian. The all-order finite-gap higher-action trace proves physical
+reality. Explicit finite-gap approximants converge in the full weighted norm,
+so their real scalar values have the native physical Hamiltonian as their
+limit. This also realizes the Hamiltonian in its genuine real scalar codomain.
+The sequence proof avoids the kernel normalization cost of a direct closed-set
+argument; heartbeat limits and linters remain unchanged.
+
+The actual global weighted Birkhoff inverse transports this H₄ to the entire
+native rectangular H^(3/2) target, with real analytic dependence. On a native
+one-mode opening line the complete Hamiltonian function equals the original
+physical finite-gap Riccati H₄ at every amplitude. At a collapsed selected
+finite-gap action its second native derivative therefore equals the already
+independently defined physical closed frequency.
+
+Theorem 1.2 remains verified. Theorems 1.1 and 1.3 remain open. For Theorem
+1.3 the physical fractional Hamiltonian is now available on its original
+full domain. The remaining bridge is action dependence and identification
+of its action derivatives throughout that domain with the chosen normalized
+frequency candidate. Full-domain Hamiltonian analyticity, even combined with
+finite-gap derivative agreement, is not counted as that frequency identity.
+
+Strict validation for the twelfth checkpoint passed: all 82 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. After repairing
+the last modules, the affected suffix was rechecked and the full transitive
+audit was run. The 345 named declarations exactly matched `AxiomAudit.lean`
+and used only `propext`, `Classical.choice` and `Quot.sound`. No holes, new
+axioms, disabled linters or increased heartbeat limits were introduced.
+Canonical compiled dependencies were imported read-only; this is not a fresh
+whole-repository rebuild.
