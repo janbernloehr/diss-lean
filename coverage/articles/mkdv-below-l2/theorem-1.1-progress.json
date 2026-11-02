@@ -117,12 +117,37 @@
       "source": "Actual finite-p physical mKdV diagonal preservation",
       "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV",
       "scope": "Every finite p>1 and every physical real equal-distribution mKdV input. At every time in the actual open image domain, the fixed Theorem 1.2 Birkhoff inverse lift remains in the same closed physical mKdV subspace. Native finite Fourier representatives and exact phase/exponent compatibility transfer Hilbert preservation to finite Fourier inputs at arbitrary p; diagonal Fourier approximation and source-norm continuity on the actual open image domain prove the full rough-data result. Spectral finite-gap status is not asserted for Fourier truncations. This is actual source-flow preservation, with smooth physical PDE agreement still open."
+    },
+    {
+      "source": "Full weighted real-form determination of complex physical cotangents",
+      "declaration": "NLS.ZakharovShabat.weightedSourceCLM_ext_real",
+      "scope": "Every finite Banach source exponent and every spectral weight. The original weighted real subspace determines an entire complex continuous linear map. Abstract complex-coordinate transport and the verified source real-form identity theorem prove the full weighted germ identity; no complexification assumption is added."
+    },
+    {
+      "source": "Finite-gap full complex physical H4 cotangent",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_eq_finite_sum",
+      "scope": "At any native H^(3/2) real source with finite action-cotangent support, the entire independent complex physical H4 derivative is the restriction of a bounded original Hilbert cotangent. Its coefficients are the independently defined physical H4 frequencies. Original weighted ell^(3,1) action differentiation, exact coordinate derivatives, closed-gap full cotangent vanishing, the actual local action factor and weighted real-form determination prove equality on arbitrary complex native directions."
+    },
+    {
+      "source": "Certified physical H4 first variation and source Poisson field",
+      "declaration": "NLS.ZakharovShabat.sourceHamiltonianDirection_physicalFourth_coordinates",
+      "scope": "Every smooth period-one physical pair represented by the native complex Fourier source, and every original Hilbert cotangent calibrated on the full independent native H4 derivative. Actual complex Fourier-mode variations identify both reflected gradient coefficients. The original Poisson direction has exactly both Fourier coefficients of the certified third-order physical fourth vector field, retaining the 2*pi Fourier convention and Hamiltonian time orientation."
+    },
+    {
+      "source": "Actual finite-gap physical fourth field as an original Hilbert source",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteActionHamiltonianVector_eq_physicalFourth",
+      "scope": "Every native real finite-gap source and every finite cutoff supporting all action cotangents. The actual finite sum of original action Hamiltonian fields weighted by independent physical H4 frequencies equals the actual Fourier realization of the smooth physical fourth field. The Hilbert constructor recovers every original Fourier integral. Independent frequency reality is proved directly from real physical Hamiltonian curves, including the closed-action second derivative."
+    },
+    {
+      "source": "Finite-gap preservation and the fixed-family corrected cotangent ODE",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthFiniteGap_physical_cotangent_ODE",
+      "scope": "Every original real Hilbert finite-gap datum and every real time. The actual fixed fourth-frequency image lift remains finite-gap and has a native representative of the same raw fields. Its full source-norm time derivative is the original Poisson direction of L4 - 6H2*dH1 - 6H1*LP, where L4 restricts exactly to the full independent physical H4 derivative, dH1 is the independently calibrated physical mass cotangent, and LP is explicitly the finite sum of 2*pi*n times the original action cotangent on one fixed original cutoff. Identifying LP with the physical momentum cotangent is still required; this statement does not yet assert the renormalized PDE."
     }
   ],
   "remaining": [
-    "Identify the actual diagonal-preserving fourth-frequency inverse lift with smooth physical renormalized mKdV solutions, consuming the certified H4 hierarchy first variation and original mass normalization. Physical source-flow preservation is now verified for every finite p>1 at every admissible time by original Hamiltonian covariance, without assuming the auxiliary phase-angle identity of equation (50).",
+    "Complete the smooth physical renormalized mKdV PDE bridge. The full complex native physical H4 cotangent and its actual third-order source Poisson field are now calibrated. The actual fixed-family finite-gap trajectory has the corrected cotangent ODE L4 - 6H2*dH1 - 6H1*LP. Identify the explicit signed momentum-action cotangent LP with independently defined physical H2, then prove the pointwise equation and agreement for the required smooth data. The physical correction is H4 - 6H1*H2; H2 vanishing on the diagonal does not make its differential vanish.",
     "Package the actual diagonal-preserving local and invariant small-data pair trajectories as scalar real mKdV trajectories, and establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Thirteen final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 130 unchanged parent modules reused from fa047be0b6caacf63c5f7f67d447bee7cf83c434. Full transitive audit of 671 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 143 unchanged parent modules reused from 1da0001479d89ea2584a38f20d59187041ebca0f. Full transitive audit of 702 declarations uses only propext, Classical.choice and Quot.sound."
 }

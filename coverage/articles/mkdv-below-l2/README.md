@@ -117,6 +117,15 @@ without assuming the auxiliary phase-angle identity.
 The independent physical H2 momentum is now proved zero on the full original
 fractional diagonal, giving the precise mass-only fourth-flow normalization.
 
+The full complex physical H4 derivative at a finite-gap native source is now
+identified with a bounded original Hilbert cotangent, using the actual weighted
+action chain rule and independent physical frequencies. Fourier-mode first
+variations identify its Poisson direction with the certified third-order
+physical fourth field. The actual fixed-family trajectory has a corrected
+cotangent ODE with physical H4, physical mass, and the explicit signed momentum
+action sum. Identification of that last sum with the physical H2 cotangent
+remains necessary before claiming the smooth renormalized PDE.
+
 ## Physical conventions and corrections
 
 Fourier synthesis uses exp(2πinx); coefficients use exp(-2πinx). The original
@@ -139,10 +148,10 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Remaining integration order for Theorem 1.1
 
-1. Identify the actual diagonal-preserving fourth-frequency rotation lift with
-   the smooth physical renormalized mKdV evolution, using the certified H4
-   variation and original mass normalization. Full finite-p physical diagonal
-   preservation is now verified by original Hamiltonian covariance.
+1. Complete physical momentum calibration in the actual corrected finite-gap
+   cotangent ODE, then prove the pointwise smooth renormalized PDE and agreement
+   for the required smooth data. The full complex H4 cotangent and its physical
+   third-order Poisson field are now verified, as is full finite-p preservation.
 2. Package the local and invariant small-data trajectories in the scalar real
    mKdV phase space and prove the exact smooth-approximation solution property,
    uniqueness and continuity in the uniform trajectory norm.
@@ -151,13 +160,13 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Validation
 
-The focused checker `check.sh` lists 143 article/shared modules and the
+The focused checker `check.sh` lists 152 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The eighteenth checkpoint strictly checks all 13
-final new modules and reuses 130 parent modules after verifying their sources
-are unchanged from `fa047be0b6caacf63c5f7f67d447bee7cf83c434`.
+and `warningAsError=true`. The nineteenth checkpoint strictly checks all 9
+final new modules and reuses 143 parent modules after verifying their sources
+are unchanged from `1da0001479d89ea2584a38f20d59187041ebca0f`.
 
-The fresh full transitive audit checks all 671 named declarations, including
+The fresh full transitive audit checks all 702 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

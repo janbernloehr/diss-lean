@@ -837,3 +837,61 @@ comparison. The full fresh transitive audit checks 671 named declarations,
 with only propext, Classical.choice and Quot.sound. The checker lists 143
 modules. No holes, added axioms, disabled linters or increased heartbeat or
 recursion limits were introduced. Canonical compiled dependencies are read-only.
+
+
+## Nineteenth checkpoint: full physical H4 cotangent and actual corrected ODE
+
+The original weighted real form now determines full complex analytic germs
+and cotangents for every spectral weight and finite Banach source exponent.
+An abstract coordinate transport isolates the analytic identity argument;
+explicit normalized real membership and inverse lemmas keep the concrete
+weighted proof within the default kernel limits.
+
+The actual native physical action map into ell^(3,1) is differentiated in
+its full norm. Coordinate derivatives are the original complex action
+cotangents on unchanged raw source directions. A single finite cutoff
+supporting the original action cotangents supports this entire weighted
+sequence derivative, including arbitrary directions opening closed gaps.
+The genuine local H4 action factor gives the physical native derivative as
+the finite sum weighted by the independent physical H4 frequencies. Real-form
+determination upgrades the equality to the entire complex native derivative.
+It is the restriction of a bounded original Hilbert cotangent at finite gaps.
+
+The native polynomial along every represented smooth complex perturbation
+line agrees with the independent physical Riccati H4. Its derivatives are
+therefore the previously certified physical gradient integrals. Testing all
+signed Fourier modes identifies both Hilbert cotangent components with the
+reflected physical gradient. Applying the original source Poisson operator
+gives exactly both Fourier integrals of the certified physical third-order
+fourth vector field. Actual finite-gap smooth representatives have native
+fractional lifts, and the field's total Hilbert constructor recovers every
+physical Fourier integral. The finite original action Hamiltonian sum with
+independent H4 frequencies is exactly this physical source field.
+
+Reality of the independent H4 frequency is also proved directly throughout
+the full native domain from its real physical Hamiltonian curves, including
+the closed-action second amplitude derivative. It does not depend on the
+article's normalized moment candidate.
+
+Actual action-invariant image lifts preserve finite-gap regularity at all
+admissible times, retaining one fixed original cutoff for every full action
+cotangent. For the fixed article fourth family, the actual finite-gap
+source-norm time derivative is now the original Poisson direction of
+L4 - 6H2*dH1 - 6H1*LP. L4 is calibrated on the full physical fractional H4
+derivative and dH1 is the actual physical mass cotangent. LP remains the
+explicit finite signed sum of 2*pi*n times original action cotangents.
+Identifying LP with the physical momentum cotangent is still necessary.
+The corresponding physical correction is H4 - 6H1*H2; H2=0 on the diagonal
+does not make dH2 vanish.
+
+Theorem 1.1 remains incomplete. Physical momentum calibration, pointwise
+smooth PDE agreement, the scalar trajectory and exact smooth-approximation
+solution/uniqueness requirements, and fixed-time divergent-mass nonextension
+remain open. Theorems 1.2 and 1.3 remain verified.
+
+All nine final new modules pass strict Lean 4.33.1 checks; 143 unchanged
+parent modules reuse 1da0001479d89ea2584a38f20d59187041ebca0f after source
+comparison. A fresh full transitive audit checks 702 declarations, only
+propext, Classical.choice and Quot.sound. The checker now lists 152 modules.
+No holes, added axioms, disabled linters or increased heartbeat or recursion
+limits were introduced. Canonical compiled dependencies remain read-only.

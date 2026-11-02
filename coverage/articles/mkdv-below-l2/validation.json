@@ -143,7 +143,16 @@
     "ZakharovShabat/SourceActionPhaseSwap",
     "ZakharovShabat/SourceActionPhaseExponent",
     "ZakharovShabat/SourceActionPhaseDiagonalApproximation",
-    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation"
+    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation",
+    "ZakharovShabat/SourceWeightedHolomorphicRealGerm",
+    "ZakharovShabat/SourceSobolevFourthActionDifferential",
+    "ZakharovShabat/SourceSobolevFourthPhysicalCotangent",
+    "ZakharovShabat/SourceSobolevFourthClassicalVariation",
+    "ZakharovShabat/PhysicalFourthCotangent",
+    "ZakharovShabat/SourceSobolevFourthFrequencyReality",
+    "ZakharovShabat/SourceFiniteGapPhysicalFourthCoefficients",
+    "ZakharovShabat/SourceActionPhaseFiniteGap",
+    "Articles/MKdVBelowL2/FourthFiniteGapPhysicalCotangent"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -3495,6 +3504,161 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "NLS.ZakharovShabat.eventuallyEq_of_source_real_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.eventuallyEq_weightedSource_of_analyticAt_of_real_agreement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.weightedSourceCLM_ext_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticAt_nativeFourthActions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions_fderiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions_fderiv_eq_finite_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_fderiv_eq_finite_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_eq_finite_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sourceSobolevFourth_finiteGap_physical_cotangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeComplexSourceCLM_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fourthNativeComplexSourceCLM_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hasDerivAt_sourceComplexSobolevFourthHamiltonian_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hasDerivAt_sourceComplexSobolevFourthHamiltonian_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.cotangentCoefficients_physicalFourth_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.cotangentCoefficients_physicalFourth_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHamiltonianDirection_physicalFourth_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_ofReal_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_nativeFourth_of_sourceFiniteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthVectorField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHamiltonianDirection_finiteGapPhysicalFourth_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients_eq_HamiltonianDirection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteActionHamiltonianVector_eq_physicalFourth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_closed_gap_and_action_differential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_action_differential_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthFiniteGap_physical_cotangent_ODE": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "NLS.ZakharovShabat.componentSwapBoundary": [],
     "NLS.ZakharovShabat.componentSwapBoundary_involutive": []
   },
@@ -3503,7 +3667,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 13 new modules checked strictly; 130 unchanged modules reuse parent validation. Full transitive audit of 671 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 9 new modules checked strictly; 143 unchanged modules reuse parent validation. Full transitive audit of 702 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -3513,8 +3677,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 13 final new modules and a full transitive audit; 130 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "fa047be0b6caacf63c5f7f67d447bee7cf83c434",
+  "validation_method": "Incremental strict checks of 9 final new modules and a full transitive audit; 143 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "1da0001479d89ea2584a38f20d59187041ebca0f",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -3645,9 +3809,7 @@
     "ZakharovShabat/SourceWeightedFiniteSupport",
     "ZakharovShabat/SourceSobolevFourthDiagonalFrequency",
     "Articles/MKdVBelowL2/PhysicalFourthFourierApproximation",
-    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry",
     "ZakharovShabat/SourceComponentSwapActionDifferential",
     "ZakharovShabat/SourceComponentSwapPoisson",
     "ZakharovShabat/SourceSobolevFourthRenormalizedSwap",
@@ -3661,6 +3823,17 @@
     "ZakharovShabat/SourceActionPhaseExponent",
     "ZakharovShabat/SourceActionPhaseDiagonalApproximation",
     "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation"
+  ],
+  "modules_checked_this_checkpoint": [
+    "ZakharovShabat/SourceWeightedHolomorphicRealGerm",
+    "ZakharovShabat/SourceSobolevFourthActionDifferential",
+    "ZakharovShabat/SourceSobolevFourthPhysicalCotangent",
+    "ZakharovShabat/SourceSobolevFourthClassicalVariation",
+    "ZakharovShabat/PhysicalFourthCotangent",
+    "ZakharovShabat/SourceSobolevFourthFrequencyReality",
+    "ZakharovShabat/SourceFiniteGapPhysicalFourthCoefficients",
+    "ZakharovShabat/SourceActionPhaseFiniteGap",
+    "Articles/MKdVBelowL2/FourthFiniteGapPhysicalCotangent"
   ],
   "checked_source_sha256": {
     "ComplexAnalysis/RelativeProductComparison": "9fde40048b371faeaaf6824bad52dc3777f14114339734bbaa9e83d5061ee22d",
@@ -3805,6 +3978,15 @@
     "ZakharovShabat/SourceActionPhaseSwap": "dc2798eed4f712f2d582b048e70592d8eca7aef8a9a50feb78c405a8cda5c0b4",
     "ZakharovShabat/SourceActionPhaseExponent": "11b5ff982144aaaa9e1513e56bb38c493eebea06d75ad3f6bb18c56a2fddf006",
     "ZakharovShabat/SourceActionPhaseDiagonalApproximation": "ad3b2e0337d0c46d463a2b6a8661597ee9382144e9d96d9d6adab30670447d0a",
-    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation": "671babbcde53597a8f1b00edac74c65532e5fb00935c5a5250b78e3a8d056ac2"
+    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation": "671babbcde53597a8f1b00edac74c65532e5fb00935c5a5250b78e3a8d056ac2",
+    "ZakharovShabat/SourceWeightedHolomorphicRealGerm": "47f5343fcdde95e188a071112004ba415479aa735985184043b595bd4ecaa880",
+    "ZakharovShabat/SourceSobolevFourthActionDifferential": "de0e73927ebd5e07d6de5b02e81cc088964098c331e67f6fe85d68666c776237",
+    "ZakharovShabat/SourceSobolevFourthPhysicalCotangent": "77ab2f38e4db6ca8e791940d4f9a5a6526f8a35ab3fd01a7747688fd7b1122e6",
+    "ZakharovShabat/SourceSobolevFourthClassicalVariation": "00dda2ee32765b6a9f757855a6a82c8c69e4beb16747ba706cf44619f8aa1608",
+    "ZakharovShabat/PhysicalFourthCotangent": "10b00c4b82dacb2a653f881e5e0fe791a803e47ac1090673b1645c80cca5786c",
+    "ZakharovShabat/SourceSobolevFourthFrequencyReality": "a718937f6f984881f33136d8ec56456da9da3018919dd6b34e4462ca851d3029",
+    "ZakharovShabat/SourceFiniteGapPhysicalFourthCoefficients": "5142048e4b93501ef55c9174e9f0c667f08e5697d172dbfdbc595139f31d90c0",
+    "ZakharovShabat/SourceActionPhaseFiniteGap": "eee0645602260effdf728133f6162896d4378f031d8235cdbde4478691b97de6",
+    "Articles/MKdVBelowL2/FourthFiniteGapPhysicalCotangent": "6e1c299dbff7b1f3ad19b3d0beb68a6125d56062f152889933f00f7a0e09264c"
   }
 }

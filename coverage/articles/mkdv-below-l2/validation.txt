@@ -1,18 +1,14 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 130 unchanged modules reuse commit fa047be0b6caacf63c5f7f67d447bee7cf83c434; 13 final new modules checked strictly below.
-ZakharovShabat/SourceComponentSwapActionDifferential: checked
-ZakharovShabat/SourceComponentSwapPoisson: checked
-ZakharovShabat/SourceSobolevFourthRenormalizedSwap: checked
-ZakharovShabat/SourceComponentSwapRealTopology: checked
-Articles/MKdVBelowL2/FourthFrequencySwap: checked
-ZakharovShabat/SourceFiniteActionSwap: checked
-ZakharovShabat/SourceActionPhaseGlobalODE: checked
-Dynamics/ScalarPhaseUniqueness: checked
-ZakharovShabat/SourceFiniteActionODEUniqueness: checked
-ZakharovShabat/SourceActionPhaseSwap: checked
-ZakharovShabat/SourceActionPhaseExponent: checked
-ZakharovShabat/SourceActionPhaseDiagonalApproximation: checked
-Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation: checked
+Incremental validation: 143 unchanged modules reuse commit 1da0001479d89ea2584a38f20d59187041ebca0f; 9 final new modules checked strictly below.
+ZakharovShabat/SourceWeightedHolomorphicRealGerm: checked
+ZakharovShabat/SourceSobolevFourthActionDifferential: checked
+ZakharovShabat/SourceSobolevFourthPhysicalCotangent: checked
+ZakharovShabat/SourceSobolevFourthClassicalVariation: checked
+ZakharovShabat/PhysicalFourthCotangent: checked
+ZakharovShabat/SourceSobolevFourthFrequencyReality: checked
+ZakharovShabat/SourceFiniteGapPhysicalFourthCoefficients: checked
+ZakharovShabat/SourceActionPhaseFiniteGap: checked
+Articles/MKdVBelowL2/FourthFiniteGapPhysicalCotangent: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1290,5 +1286,82 @@ Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation: checked
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.fourthImageFlow_preserves_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.eventuallyEq_of_source_real_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.eventuallyEq_weightedSource_of_analyticAt_of_real_agreement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.weightedSourceCLM_ext_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticAt_nativeFourthActions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions_fderiv_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.nativeFourthActions_fderiv_eq_finite_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_fderiv_eq_finite_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_eq_finite_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sourceSobolevFourth_finiteGap_physical_cotangent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthNativeComplexSourceCLM_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeComplexSourceCLM_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.hasDerivAt_sourceComplexSobolevFourthHamiltonian_fst' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.hasDerivAt_sourceComplexSobolevFourthHamiltonian_snd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.cotangentCoefficients_physicalFourth_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.cotangentCoefficients_physicalFourth_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceHamiltonianDirection_physicalFourth_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_ofReal_re' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_nativeFourth_of_sourceFiniteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthVectorField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceHamiltonianDirection_finiteGapPhysicalFourth_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients_eq_HamiltonianDirection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapPhysicalFourthCoefficients_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteActionHamiltonianVector_eq_physicalFourth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_closed_gap_and_action_differential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_action_differential_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthFiniteGap_physical_cotangent_ODE' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
