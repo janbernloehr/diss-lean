@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Actual joint high-endpoint squared-primitive matching, unique normalized germs, exact joint derivative and preservation of physical endpoint multiplicities",
+  "milestone": "Uniform bounded joint analytic squares across complete actual high complex gaps, with exact radicand zero sets and a common potential neighborhood",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -44,6 +44,10 @@
     "NLS.KdV.ClassicalHillHighEndpointNormalization",
     "NLS.KdV.ClassicalBranchPrimitive",
     "NLS.KdV.ClassicalHillSquaredPrimitiveMatching",
+    "NLS.KdV.ClassicalCoshStripControl",
+    "NLS.KdV.ClassicalHillSmallDiscTrace",
+    "NLS.KdV.ClassicalHillSmallGapCoverage",
+    "NLS.KdV.ClassicalHillWholeGapSquares",
     "NLS.KdV.ClassicalTraceAsymptotics",
     "NLS.KdV.ActionHamiltonianMoments",
     "NLS.KdV.ClassicalContourMoments",
@@ -61,7 +65,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 435,
+    "declarations": 456,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -95,6 +99,7 @@
     "NLS/KdV/ClassicalBranchPrimitive.lean": "ecbdd60e5f496199b23d31e6d9024c3ea239f7c64c8f012c0b08ed186a1a2e68",
     "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
     "NLS/KdV/ClassicalContourMoments.lean": "e566ce44ade32b02ecd53fc7bb0ecb914db88121a8431898ff397c94c5e8fbe0",
+    "NLS/KdV/ClassicalCoshStripControl.lean": "91d1711d9d44ba3eaa547f2d9bd9aa138c8cbcea750799d64194358aa79ce9db",
     "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
     "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
     "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6",
@@ -112,8 +117,11 @@
     "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
     "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
     "NLS/KdV/ClassicalHillReality.lean": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f",
+    "NLS/KdV/ClassicalHillSmallDiscTrace.lean": "0b3000b01b892f67fb1927c537e9d5563ff96704f6b075e0645472217524e57c",
+    "NLS/KdV/ClassicalHillSmallGapCoverage.lean": "dc905b799da8b91815ebf4a90a9ae1caac9078322b7c288eaf6aa07055dd310b",
     "NLS/KdV/ClassicalHillSpectrum.lean": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
     "NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean": "2c081969580ba524e62c6cf2e51e3258323f9c269c33f28504e73ad22bffa52d",
+    "NLS/KdV/ClassicalHillWholeGapSquares.lean": "5c605cf2a1b7c2521d7d51bef2b4ea897c71f0bfa687f9161f247bd2e9e6c40b",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
     "NLS/KdV/ClassicalSourcePrimitive.lean": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
     "NLS/KdV/ClassicalSpectralEmbedding.lean": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
@@ -123,31 +131,31 @@
     "NLS/KdV/RiccatiEnergy.lean": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
     "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "253499e7c761b4dde6e604cf87cc769f1b1ccd82d9e1bb7d0f54c3c7d849aff5",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "15922edc900d437a67b3f3844aca7329c412b91b5a86fd6bbd5b89e21d37583c",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
-    "scripts/check-kdv-convexity.sh": "18c8b78eef01c92833aea009c85d5433fe1c22d79fd2e12fa50df79a1a052694"
+    "scripts/check-kdv-convexity.sh": "435fe9da07ce605051f7f01e684ec91adeeb89174889d86ca70e83d12932f7df"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-squared-matching.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-whole-gap-squares.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
   "dissertation_validation_replaced": false,
   "shared_foundation_inspected": {
     "branch": "articles/kdv-estimates",
-    "commit": "78200b7544a7badd3e554a9a1a67df99017c8678",
-    "available": "Actual periodic H2 weak Hill operator and period-one L2 characteristic, Fourier spectral equivalence, real high pairs and physical multiplicities; wide high-tail coverage and lower/central spectral bounds; exact central count 2*N-1 and ordered global real L2 characteristic labels with high pairs in slots 2*n-1 and 2*n; weighted physical gap bounds and tails. These modules are available on the shared branch, not duplicated or validated in this focused build.",
-    "not_yet_available": "Required continuity/analyticity and identification of the global L2 labels in the rough source topology, H^-1 spectral/action/Birkhoff construction."
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "available": "Actual periodic H2 weak Hill operator and period-one L2 characteristic, Fourier spectral equivalence, physical multiplicities, central count 2*N-1 and global real characteristic labels; labels now intrinsic and independent of cutoff, lowest energy characterized intrinsically, canonical weighted individual and tail gap bounds. New shared modules are available on that branch, not duplicated or validated in this focused build.",
+    "not_yet_available": "Required continuity/analyticity and identification of the intrinsic L2 labels in the rough source topology, H^-1 spectral/action/Birkhoff construction."
   },
   "limits": [
     "All main theorems remain unverified.",
-    "Actual high endpoint limits now allow joint variation of energy and complex continuous potential. At each high branch point, an analytic squared-primitive chart agrees with actual F_n^2 on the admissible part of an open joint patch. Normalized charts are unique as joint germs, have dK=(-1)^n*dDelta, and preserve the physical radicand analytic order, including collapsed double roots. This is local endpoint matching; entire-gap gluing, central endpoint normalization, unsquared endpoint filling, nonpositivity and gap-scale bounds, rough Hill/Birkhoff identification and weighted action descent remain open.",
+    "One bounded joint analytic K_n now covers a complete energy disc enclosing both actual high endpoints and the entire straight complex gap segment. The radius, cutoff and complex potential neighborhood are chosen before the whole tail. Norm(K_n)<1, K_n vanishes exactly at actual radicand zeros, and equals actual F_n^2 wherever source continuation is admissible. Collapsed pairs and complex perturbations are included. Gap-length-dependent quotient estimates, central squares, the full unsquared canonical primitive, nonpositivity, rough Hill/Birkhoff identification and weighted action descent remain open.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global analytic reduction now allows locally chosen finite spectral cutoffs. The physical action extension still needs actual contour moment action descent and uniform complex-neighborhood tail quadratic bounds; no origin vanishing is inferred from a tail bound alone.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed."
   ],
-  "previous_progress_commit": "d12831411f4ad00777304b6623dbb3226730b4eb",
+  "previous_progress_commit": "1aede0e449d55e63e251553caa9e599e52494c59",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -211,7 +219,12 @@
     "NLS.KdV.hasDerivAt_squaredCosh_zero",
     "AnalyticAt.analyticOrderAt_comp",
     "analyticOrderAt_congr",
-    "AnalyticAt.analyticOrderAt_eq_one_of_zero_deriv_ne_zero"
+    "AnalyticAt.analyticOrderAt_eq_one_of_zero_deriv_ne_zero",
+    "NLS.ZakharovShabat.exists_uniform_exterior_canonicalProducts",
+    "NLS.ZakharovShabat.verticalStrip_denominator_lower",
+    "NLS.KdV.exists_classicalHill_source_disc_trace_approximation",
+    "Filter.HasBasis.eventually_iff",
+    "Convex.segment_subset"
   ],
   "other_shared_branch_inspected": {
     "branch": "articles/mkdv-nls-hierarchies",
@@ -231,7 +244,8 @@
     "action_descent_proved": false,
     "matching": "The local squared primitive agrees with the square of every sufficiently small normalized branch satisfying 2*cosh(F)=sigma*Delta, sigma^2=1.",
     "actual_high_squared_primitive_identified_on_joint_endpoint_charts": true,
-    "actual_high_squared_primitive_multiplicities_identified": true
+    "actual_high_squared_primitive_multiplicities_identified": true,
+    "analytic_squared_primitive_on_whole_high_energy_discs": true
   },
   "reused_shared_modules": [
     {
@@ -357,7 +371,7 @@
     "endpoint_minus_i_n_pi_limits_proved_for_high_real_continuous_spectrum": true
   },
   "high_endpoint_progress": {
-    "potential_space": "C([0,1], C), real-valued locus, common complex potential neighborhood",
+    "potential_space": "C([0,1], C), common complex potential neighborhood; unsquared off-real endpoint limits additionally assume real q.",
     "uniform_trace_error_on_complete_high_discs": true,
     "uniform_trace_error_along_all_source_paths": true,
     "parity_trace_real_part_positive": true,
@@ -374,11 +388,31 @@
     "joint_squared_primitive_matching_proved": true,
     "Hminus1_or_action_space_extension_proved": false,
     "joint_energy_potential_endpoint_limit_proved": true,
-    "joint_squared_primitive_matching_scope": "Local open joint charts at every high branch point, agreeing with actual F_n^2 on admissible parameters of the high energy region; no entire-gap gluing yet.",
+    "joint_squared_primitive_matching_scope": "One joint analytic square on a complete energy disc enclosing the actual straight complex high-gap segment, agreeing with actual F_n^2 on admissible parameters. Central gaps and unsquared cut complement not covered.",
     "normalized_squared_chart_unique_as_joint_germ": true,
     "full_joint_squared_chart_derivative": "dK=(-1)^n*dDelta",
     "squared_chart_energy_order_equals_actual_radicand_order": true,
     "actual_high_pair_multiplicities_retained_including_double_zeros": true,
-    "entire_gap_squared_primitive_gluing_proved": false
+    "entire_gap_squared_primitive_gluing_proved": true
+  },
+  "whole_high_gap_square_progress": {
+    "potential_space": "C([0,1], C), complex sup-norm topology",
+    "quantifiers": "For every q, exists r>0, N>0 and complex open V containing q, before all n>=N, all a in V and their actual gap pairs.",
+    "frequency_radius": "0<r<=pi/4, chosen once for the entire high tail.",
+    "energy_disc": "closedBall((n*pi)^2,n*pi*r)",
+    "joint_analytic_on_neighborhood_of_complete_energy_disc_times_V": true,
+    "uniform_square_norm_bound": "norm(K_n)<1",
+    "actual_square_agreement_on_admissible_source_domain": true,
+    "square_zero_iff_actual_radicand_zero": true,
+    "all_actual_high_roots_in_arbitrarily_small_frequency_discs": true,
+    "actual_high_pair_constructed_on_same_neighborhood": true,
+    "full_straight_complex_gap_segment_strictly_inside_energy_disc": true,
+    "collapsed_gaps_included": true,
+    "analytic_individual_endpoints_assumed": false,
+    "real_type_ZS_assumption": false,
+    "gap_length_dependent_quotient_bound_proved": false,
+    "central_gap_squares_constructed": false,
+    "Hminus1_extension_proved": false,
+    "action_descent_proved": false
   }
 }

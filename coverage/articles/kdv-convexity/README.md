@@ -20,6 +20,8 @@ cubic moments. Uniform high-disc approximation now fixes the shifted
 primitive strip and its indexed limits at every actual high branch point,
 including double roots. Joint analytic endpoint charts now agree with the
 actual shifted primitive square and preserve physical multiplicities.
+One bounded analytic square now covers a full energy disc containing
+each complete high complex gap, on a common potential neighborhood.
 The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
@@ -317,7 +319,7 @@ construction also covers collapsed gaps and complex potential perturbations.
 
 These results provide local spectral charts needed for Lemmas 4.3 and 4.6.
 They do not construct a globally normalized Hill primitive on the full gap
-complement, continue its square along a whole isolating disc, identify the
+complement, handle the central square extensions, identify the
 continuous-potential discriminant with the shared rough Fourier operator,
 or descend moments to the weighted action space. In particular the global
 analytic extension around the entire positive ell2 quadrant is still open.
@@ -481,8 +483,8 @@ trace-level theorem. It holds for complex potentials, without imposing
 the NLS real-type condition. It fixes the trace sign; the global primitive
 limits `F -> -i*n*pi` at these high endpoints are now proved below from
 both nonreal energy half-planes. The joint endpoint squared-primitive charts are now matched below.
-Gluing across the entire gaps and matching the complete canonical cuts
-remain required.
+The whole high-gap square construction is now proved below. Matching the
+complete canonical cuts and central gaps remains required.
 
 The energy midpoint and squared gap are constructed from the intrinsic
 frequency midpoint `m` and squared gap `g` by the exact formulas
@@ -645,8 +647,9 @@ Both energy half-planes are included in the same limit. Simple and double
 zeros are treated identically. No value of the total source-domain formula
 at an excluded branch point is asserted: the theorem constructs the
 normalized boundary limit. The joint analytic squared-primitive matching is now proved below.
-Continuous unsquared endpoint filling, entire-gap gluing, central endpoints,
-the gap-scale estimates and the H^-1/action identification remain required.
+The whole high-gap squares are now constructed below. Continuous unsquared
+endpoint filling, central endpoints, gap-scale estimates and the H^-1/action
+identification remain required.
 
 ## Actual joint squared-primitive matching at high endpoints
 
@@ -674,8 +677,9 @@ Thus the local inverse is identified with the actual squared primitive,
 not an arbitrary cosh branch. This includes collapsed gaps and complex
 potential perturbations. The equality is on an actual open joint patch
 intersected with the constructed admissible high domain, not only along
-one selected spectral sequence. It does not yet glue these endpoint
-patches across an entire gap or fill a full canonical cut complement.
+one selected spectral sequence. The subsequent whole-disc construction
+below identifies these germs with one square per entire high gap. A full
+canonical unsquared cut complement remains to be constructed.
 
 Normalized squared-primitive charts are unique as joint germs, including
 on the branch locus, by the local squared-cosh inverse. Their exact full
@@ -684,6 +688,53 @@ is proved equal to that of the actual radicand. In particular, the actual
 high-pair multiplicity theorem transfers unchanged: a double collapsed
 endpoint gives analytic order two for K. These conclusions impose no
 nonzero energy derivative and do not assume simple zeros.
+
+## Uniform analytic squares across complete high gaps
+
+[`ClassicalCoshStripControl.lean`](../../../NLS/KdV/ClassicalCoshStripControl.lean)
+proves a uniform implication on the canonical strip: for every epsilon>0,
+one delta>0 ensures `|cosh(z)-1|<delta` implies `|z|<epsilon` whenever
+`|Im(z)|<pi/2`. The proof uses the squared sinh identity and the fixed
+logarithm strip, so the threshold applies to every point and every index.
+
+[`ClassicalHillSmallDiscTrace.lean`](../../../NLS/KdV/ClassicalHillSmallDiscTrace.lean)
+chooses one positive frequency radius, cutoff and complex potential
+neighborhood putting `(-1)^n*Delta/2` in any chosen neighborhood of one
+on all complete high discs and every straight source path.
+[`ClassicalHillSmallGapCoverage.lean`](../../../NLS/KdV/ClassicalHillSmallGapCoverage.lean)
+uses the uniform canonical periodic-product exterior estimate to prove
+that all actual high roots lie in arbitrarily small discs about their own
+free center. It applies to complex potentials and actual radicand zeros.
+
+[`ClassicalHillWholeGapSquares.lean`](../../../NLS/KdV/ClassicalHillWholeGapSquares.lean)
+constructs one inverse-based function K_n per high index, with the radius r,
+cutoff N and complex open potential neighborhood V chosen before all
+indices, potentials and roots. Writing c=n*pi, its exact domain is
+
+```
+E_n = closedBall(c^2, c*r),
+K_n analytic on a neighborhood of E_n x V,
+|K_n| < 1,
+squaredCosh(K_n) = (-1)^n * Delta/2,
+K_n = 0 iff Delta^2-4 = 0,
+K_n = (F+i*n*pi)^2 wherever the actual source continuation is admissible.
+```
+
+The energy-to-frequency inclusion follows from the exact factored square
+root denominator, using its nonnegative real part. Confining both actual
+endpoints to a smaller frequency disc puts them strictly inside the energy
+disc. Its convexity then contains the **entire straight complex gap
+segment**. `exists_classicalHill_whole_gap_squares` also constructs the
+actual two-root pair on the same V and cutoff, including a repeated endpoint.
+Thus one joint analytic function covers both endpoints and the full gap;
+no gluing of independently chosen endpoint branches is assumed.
+
+The bound one is uniform throughout the entire tail. Gap-length-dependent
+bounds still require removing the exact two endpoint factors and estimating
+the resulting quotient. This construction concerns continuous complex
+potentials. Central gap squares, the full unsquared canonical primitive,
+nonpositivity, the H^-1/action extension and the physical Hamiltonian
+identification remain open.
 
 ## Earlier checked local consequences
 
@@ -712,10 +763,10 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    proved, including actual unordered high energy pairs, their analytic
    symmetric data, real ordering, global off-real primitive coverage and common
    high-contour coverage in the continuous potential norm; complete global
-   spectral matching, central endpoint normalization, entire-gap gluing of
-   the identified joint squared-primitive charts and rough-operator
-   identification remain. The high indexed endpoint limits and local
-   joint squared-primitive matching are now proved.
+   spectral matching, central endpoint normalization, the full canonical
+   unsquared primitive and rough-operator identification remain. The high
+   indexed endpoint limits, joint squared-primitive matching and bounded
+   analytic squares across entire high gaps are now proved.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
@@ -732,7 +783,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `78200b7`.
+The `kdv-estimates` branch was re-inspected through commit `5da8934`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -743,7 +794,10 @@ physical characteristic multiplicities and ordered high pairs at a checked
 linear cutoff. Its latest work bounds the central spectrum, counts the
 central characteristic roots as `2*N-1`, sorts them with multiplicities,
 and appends the high pairs to construct global nondecreasing real L2
-characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those new
+characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those
+labels are now intrinsic and independent of the cutoff, with the lowest
+energy characterized intrinsically and canonical weighted gap estimates
+proved directly for the actual labeled gaps. Those new
 Fourier/L2 modules are available on that branch and have not been duplicated
 or validated as part of this branch's focused check. The scalar flow module
 is reused here unchanged. Identification of those L2 labels with this
@@ -761,10 +815,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All forty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All forty-four modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-435 constants in their two namespaces, including generated declarations,
+456 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class

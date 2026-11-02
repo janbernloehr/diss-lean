@@ -153,10 +153,16 @@
         "NLS.KdV.classicalHill_squared_primitive_fderiv",
         "NLS.KdV.classicalHill_squared_primitive_energy_order",
         "NLS.KdV.ClassicalHillHighGapPair.squared_primitive_multiplicity",
-        "NLS.KdV.exists_classicalHill_high_squared_primitive_matching"
+        "NLS.KdV.exists_classicalHill_high_squared_primitive_matching",
+        "NLS.KdV.tendsto_zero_of_cosh_tendsto_one_in_strip",
+        "NLS.KdV.exists_delta_cosh_strip_control",
+        "NLS.KdV.exists_classicalHill_small_disc_normalized_trace",
+        "NLS.KdV.exists_classicalHill_small_gap_coverage",
+        "NLS.KdV.exists_classicalHill_whole_disc_squares",
+        "NLS.KdV.exists_classicalHill_whole_gap_squares"
       ],
       "remaining": [
-        "Glue the identified joint endpoint squared-primitive charts across entire gaps and canonical cuts; fill the unsquared endpoint values, handle central endpoints and identify the shared global L2 labels. Prove nonpositivity and gap-scale bounds for actual moments.",
+        "Remove the exact two endpoint factors from the bounded whole high-gap squares and prove the gap-length estimates. Construct the full unsquared canonical primitive, handle central gaps and identify the shared intrinsic real L2 labels in the rough source topology. Prove nonpositivity for actual moments.",
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
         "Prove locally common complex-neighborhood bounds |8*n*pi*R_n| <= C*|I_n|^2 for those moments.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -292,7 +298,8 @@
     "action_descent_proved": false,
     "matching": "The local squared primitive agrees with the square of every sufficiently small normalized branch satisfying 2*cosh(F)=sigma*Delta, sigma^2=1.",
     "actual_high_squared_primitive_identified_on_joint_endpoint_charts": true,
-    "actual_high_squared_primitive_multiplicities_identified": true
+    "actual_high_squared_primitive_multiplicities_identified": true,
+    "analytic_squared_primitive_on_whole_high_energy_discs": true
   },
   "source_continuation_progress": {
     "domain": "Energy in the complex slit plane; Delta(lambda,s*q)^2-4 nonzero for every real s in [0,1].",
@@ -396,7 +403,7 @@
     "endpoint_minus_i_n_pi_limits_proved_for_high_real_continuous_spectrum": true
   },
   "high_endpoint_progress": {
-    "potential_space": "C([0,1], C), real-valued locus, common complex potential neighborhood",
+    "potential_space": "C([0,1], C), common complex potential neighborhood; unsquared off-real endpoint limits additionally assume real q.",
     "uniform_trace_error_on_complete_high_discs": true,
     "uniform_trace_error_along_all_source_paths": true,
     "parity_trace_real_part_positive": true,
@@ -413,11 +420,31 @@
     "joint_squared_primitive_matching_proved": true,
     "Hminus1_or_action_space_extension_proved": false,
     "joint_energy_potential_endpoint_limit_proved": true,
-    "joint_squared_primitive_matching_scope": "Local open joint charts at every high branch point, agreeing with actual F_n^2 on admissible parameters of the high energy region; no entire-gap gluing yet.",
+    "joint_squared_primitive_matching_scope": "One joint analytic square on a complete energy disc enclosing the actual straight complex high-gap segment, agreeing with actual F_n^2 on admissible parameters. Central gaps and unsquared cut complement not covered.",
     "normalized_squared_chart_unique_as_joint_germ": true,
     "full_joint_squared_chart_derivative": "dK=(-1)^n*dDelta",
     "squared_chart_energy_order_equals_actual_radicand_order": true,
     "actual_high_pair_multiplicities_retained_including_double_zeros": true,
-    "entire_gap_squared_primitive_gluing_proved": false
+    "entire_gap_squared_primitive_gluing_proved": true
+  },
+  "whole_high_gap_square_progress": {
+    "potential_space": "C([0,1], C), complex sup-norm topology",
+    "quantifiers": "For every q, exists r>0, N>0 and complex open V containing q, before all n>=N, all a in V and their actual gap pairs.",
+    "frequency_radius": "0<r<=pi/4, chosen once for the entire high tail.",
+    "energy_disc": "closedBall((n*pi)^2,n*pi*r)",
+    "joint_analytic_on_neighborhood_of_complete_energy_disc_times_V": true,
+    "uniform_square_norm_bound": "norm(K_n)<1",
+    "actual_square_agreement_on_admissible_source_domain": true,
+    "square_zero_iff_actual_radicand_zero": true,
+    "all_actual_high_roots_in_arbitrarily_small_frequency_discs": true,
+    "actual_high_pair_constructed_on_same_neighborhood": true,
+    "full_straight_complex_gap_segment_strictly_inside_energy_disc": true,
+    "collapsed_gaps_included": true,
+    "analytic_individual_endpoints_assumed": false,
+    "real_type_ZS_assumption": false,
+    "gap_length_dependent_quotient_bound_proved": false,
+    "central_gap_squares_constructed": false,
+    "Hminus1_extension_proved": false,
+    "action_descent_proved": false
   }
 }
