@@ -119,10 +119,10 @@
     "No actual KdV frequency, Birkhoff map or physical solution flow is inferred from these spectral dependencies."
   ],
   "remaining": [
-    "Prove original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing. Global real canonical enumeration, actual multiplicities, cutoff independence and full real unit-extra-weight direct gap regularity are now proved.",
-    "Complete physical Dirichlet comparisons, complex-potential and arbitrary extra-weight spectral estimates as needed for the full source Theorem2.1, endpoint inverse regularity and original norm-bounded isospectral sets.",
-    "Construct the original Birkhoff maps with global bijectivity, real analyticity and the stated weak-star homeomorphisms, and identify the actual H-minus-one smooth-approximation KdV flow.",
-    "Prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses and quantifiers. All remain unproved."
+    "Construct the source complex canonical spectral labeling and its exact slot/multiplicity correspondence using the proved actual uniform complex disk count and tight high localization. The real global canonical labels and full real unit-extra-weight direct gap estimates are already proved. Identify the complex disk central block with the required source ordering; do not silently equate it with a real-part sublevel.",
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing, physical Dirichlet comparisons, full complex/arbitrary-extra-weight estimates, endpoint inverse regularity and original norm-bounded isospectral sets.",
+    "Construct the original Birkhoff maps and actual H-minus-one smooth-approximation KdV flow with all stated analytic, invariance, weak-star and trajectory properties.",
+    "State and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with full original hypotheses and quantifiers. All remain unproved."
   ],
   "validation": {
     "modules_checked": 100,
@@ -151,6 +151,17 @@
         "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
         "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
         "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-count-map.json",
+      "results": [
+        "A shared algebraic theorem proves that a commuting idempotent annihilating an ordinary eigenspace annihilates every finite generalized chain and the full algebraic root space. Applying it to1-P proves identity on the full root space from identity on ordinary eigenvectors. No finite-dimensional ambient space or semisimplicity is assumed.",
+        "For every original COMPLEX endpoint potential, the actual operator-valued Riesz projection fixes ALL enclosed physical algebraic root vectors and kills ALL root vectors outside the closed disk. The actual finite-dimensional projection range equals the sum of enclosed full physical algebraic root spaces. The full original H1 domain in H-minus-one is unchanged.",
+        "The actual finite enclosed spectrum and its actual algebraic count are constructed for every complex original potential. Independence of full root spaces identifies the actual projection rank with that count, including nontrivial Jordan chains. Hence the ACTUAL count is invariant on any preconnected continuous complex potential family with a common physical resolvent circle.",
+        "The wide-strip covering and tight sqrt(n)/4 localization hold for the ENTIRE sufficiently high complex spectrum, without a reality hypothesis. Pure free-lattice geometry shows every such localized complex disk avoids every high separator circle of radius pi^2*N^2-12N.",
+        "For each EXACT ORIGINAL complex endpoint norm ball, ONE zero-centered physical resolvent circle is chosen BEFORE q. Low real parts are excluded using the proved uniform full spectral sector bound; all remaining spectral points are excluded by complex high localization and separator geometry.",
+        "The ACTUAL free enclosed count on that circle is proved equal to the existing physical count2N-1, by equality of the actual finite spectral sets and actual full algebraic multiplicities. The ORIGINAL homotopy t*q transports the actual complex count. source_uniform_complex_algebraic_count gives exactly2N-1 on every original complex norm ball, with a common circle and index chosen before q."
       ]
     }
   ]

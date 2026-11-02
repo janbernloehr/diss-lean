@@ -229,6 +229,18 @@ theorem endpointHillSpectrum_wide_localization (hzsp : z ∈ endpointHillSpectru
   simp only [Complex.sub_re,Complex.ofReal_re] at hRe
   linarith
 
+/-- Wide-strip coverage and tight localization hold for the full complex spectrum. -/
+theorem endpointHillSpectrum_complex_high_cover (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)
+    (q : WeightedCoeff (SpectralWeight.one.negativeSobolev r) ⊤)
+    (N : ℕ) (hN : 2 ≤ N)
+    (hs : ∀ n : ℕ, N ≤ n → 13*endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2)
+    (z : ℂ) (hz : z ∈ endpointHillSpectrum r hr1 q)
+    (hhigh : freeHillValue N-12*(N:ℝ) ≤ z.re) :
+    ∃ n : ℕ, N ≤ n ∧ z ∈ reducedHillStrip n ∧ ‖z-(freeHillValue n:ℂ)‖ ≤ Real.sqrt (n:ℝ)/4 := by
+  obtain ⟨n, hn, hwide⟩ := exists_wideHillStrip_of_ge_lower_edge N hN z.re hhigh
+  have hw : z ∈ wideHillStrip n := hwide
+  exact ⟨n, hn, endpointHillSpectrum_wide_localization r hr hr1 n (hN.trans hn) z hw q (hs n hn) hz⟩
+
 /-- Every sufficiently high actual real-endpoint spectral point lies in a
 narrow strip, so none can occur in the gaps between the constructed high strips. -/
 theorem endpointHillSpectrum_real_high_cover (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)

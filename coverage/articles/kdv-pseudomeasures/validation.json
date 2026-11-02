@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Original physical compact-set topology; canonical real singular labels and full endpoint gap bounds",
+  "phase": "Actual complex singular Riesz root spaces, rank/count equality and uniform original complex norm-ball algebraic counting",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -18,6 +18,7 @@
     "NLS/ComplexAnalysis/BanachFiniteJets.lean",
     "NLS/ComplexAnalysis/AffinePencilJets.lean",
     "NLS/FunctionalAnalysis/ResolventRootSpace.lean",
+    "NLS/FunctionalAnalysis/IdempotentRootSpaces.lean",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
     "NLS/ComplexAnalysis/MatrixAnalyticJetAction.lean",
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean",
@@ -81,6 +82,8 @@
     "NLS/KdV/PseudomeasureMultiplicityOrder.lean",
     "NLS/KdV/PseudomeasureRealSpectrum.lean",
     "NLS/KdV/PseudomeasureRieszRange.lean",
+    "NLS/KdV/PseudomeasureComplexRiesz.lean",
+    "NLS/KdV/PseudomeasureComplexCounting.lean",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean",
     "NLS/KdV/PseudomeasureRootSeparation.lean",
     "NLS/KdV/PseudomeasureRealPairs.lean",
@@ -123,6 +126,7 @@
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralComplexCounting.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean",
@@ -132,11 +136,11 @@
     "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 993,
-  "definitions": 223,
+  "proved_theorems": 1014,
+  "definitions": 226,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 1216,
+    "declarations": 1240,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -332,10 +336,16 @@
     "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure.",
     "Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact.",
     "Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained.",
-    "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm."
+    "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm.",
+    "A shared algebraic theorem proves that a commuting idempotent annihilating an ordinary eigenspace annihilates every finite generalized chain and the full algebraic root space. Applying it to1-P proves identity on the full root space from identity on ordinary eigenvectors. No finite-dimensional ambient space or semisimplicity is assumed.",
+    "For every original COMPLEX endpoint potential, the actual operator-valued Riesz projection fixes ALL enclosed physical algebraic root vectors and kills ALL root vectors outside the closed disk. The actual finite-dimensional projection range equals the sum of enclosed full physical algebraic root spaces. The full original H1 domain in H-minus-one is unchanged.",
+    "The actual finite enclosed spectrum and its actual algebraic count are constructed for every complex original potential. Independence of full root spaces identifies the actual projection rank with that count, including nontrivial Jordan chains. Hence the ACTUAL count is invariant on any preconnected continuous complex potential family with a common physical resolvent circle.",
+    "The wide-strip covering and tight sqrt(n)/4 localization hold for the ENTIRE sufficiently high complex spectrum, without a reality hypothesis. Pure free-lattice geometry shows every such localized complex disk avoids every high separator circle of radius pi^2*N^2-12N.",
+    "For each EXACT ORIGINAL complex endpoint norm ball, ONE zero-centered physical resolvent circle is chosen BEFORE q. Low real parts are excluded using the proved uniform full spectral sector bound; all remaining spectral points are excluded by complex high localization and separator geometry.",
+    "The ACTUAL free enclosed count on that circle is proved equal to the existing physical count2N-1, by equality of the actual finite spectral sets and actual full algebraic multiplicities. The ORIGINAL homotopy t*q transports the actual complex count. source_uniform_complex_algebraic_count gives exactly2N-1 on every original complex norm ball, with a common circle and index chosen before q."
   ],
-  "source_correspondence": "All Appendix B.1(i)-(iv) are already proved. The new compact-set consequences retain exact physical norms, distributions and all strict lower-exponent thresholds. Original native real canonical spectral labels and full actual unit-extra-weight endpoint gaps are now proved. The full complex/arbitrary-extra-weight source Theorem2.1 and every main theorem remain open.",
-  "build_isolation": "All125 modules rebuilt in a fresh empty private output view. Canonical and package imports are read-only symlinks; all compiler destinations are private. The exact1216-declaration transitive audit passed without warnings or tactic suggestions. No canonical source or build output was written.",
+  "source_correspondence": "Actual original COMPLEX singular Riesz range/root-space equality and rank/count equality are proved without semisimplicity. A common physical resolvent circle is constructed uniformly on each EXACT original complex endpoint norm ball BEFORE q. The ACTUAL enclosed algebraic count on the circle of radius pi^2*N^2-12N is exactly2N-1 by original t*q homotopy and actual free counting. This is a disk count; its equivalence to the required complex global source ordering is not asserted. Physical source parity, complex/arbitrary-weight gap/Dirichlet estimates, inverse regularity, Birkhoff maps and every main theorem remain open.",
+  "build_isolation": "All129 modules rebuilt in a fresh empty private output view. Canonical and package imports remain read-only symlinks; every compiler destination is private. The exact1240-declaration transitive audit passed without warnings or tactic suggestions. No canonical source or build output was written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -353,6 +363,7 @@
     "NLS/ComplexAnalysis/BanachFiniteJets.lean": "acb5c1d03b08e9cdf61f4db6f0e6592ecc72f8386c50bab66ed4bbc5053a3146",
     "NLS/ComplexAnalysis/AffinePencilJets.lean": "3670ac9abad65b6268bce85f8142ea106b0b53a68b99fbe56224a4903a3a5194",
     "NLS/FunctionalAnalysis/ResolventRootSpace.lean": "293c79c78a088a0d750c84225ab6057a2e26ae2be82c281c5c467b85953984ba",
+    "NLS/FunctionalAnalysis/IdempotentRootSpaces.lean": "e6138d193387dc683905c997c3b35d6505cbc9ec36a8a8172e980981439d6dd0",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/ComplexAnalysis/MatrixAnalyticJetAction.lean": "1a9092b39a64066db7eb82c4224a3fb616c591428dc9b9b493c1913ae8cbfcb8",
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
@@ -368,7 +379,7 @@
     "NLS/SequenceSpaces/SignedSobolevConvolution.lean": "2a59cc5b9417182e3bcb4438af84ddfc4d12641fc34eae24bf68c436cada6fcd",
     "NLS/SequenceSpaces/ShiftReflection.lean": "60240db4cfe2229c4c4d112815163341636552473ef588295432f0b24c0df676",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
-    "NLS/KdV/FreeHillWideGeometry.lean": "5a5a7cbc63c979b6fe7edef092f8d3a21b4315ce4e847bbea79e70d51023363d",
+    "NLS/KdV/FreeHillWideGeometry.lean": "fe5a315099ef5989302719f3effc824c815f32f3e013ffac906755b2227b2f25",
     "NLS/KdV/HillComplement.lean": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd",
     "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
     "NLS/KdV/FreeHillRegularity.lean": "3381c7cdacbab7032a648f01132cbde618bd5bea46763d9851dc939fddb7b235",
@@ -416,10 +427,12 @@
     "NLS/KdV/PseudomeasureMultiplicityOrder.lean": "b75f4d4e01a6ad2cf080da3fe4c4da28f56a87939e891ce4ad6194843699f3ed",
     "NLS/KdV/PseudomeasureRealSpectrum.lean": "892e69f480e43eae347bd0d43145dc7a233f68b7a232ad806e193e0c14c0e7ac",
     "NLS/KdV/PseudomeasureRieszRange.lean": "a5be912ae1830da3af4b04077bb0f76b6e0a6e55ca09ca90a3984ef8e531f08f",
+    "NLS/KdV/PseudomeasureComplexRiesz.lean": "e4c922402d917fbb63ef933e126504789dbf194698233f0374c4fb566f63d1c5",
+    "NLS/KdV/PseudomeasureComplexCounting.lean": "c99764c0aebeb52f3d015af04e526494135d0320bbd3ea056f106e50445d6b33",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
     "NLS/KdV/PseudomeasureRootSeparation.lean": "ac7df1ef009060957d100aa5f140d4fe2dcddd5a3ca80c4787a25a5cd543aca3",
     "NLS/KdV/PseudomeasureRealPairs.lean": "b6a18bf103df09e0a5580425cf75d5f7561bc7bb285446106b1dd1eae8af1803",
-    "NLS/KdV/PseudomeasureWideLocalization.lean": "585c42e05dcdd2a771c6f48c5e79e4abcca779832a8f2b02948a3fabe25f492f",
+    "NLS/KdV/PseudomeasureWideLocalization.lean": "9827c1a7cb0a98e43514c11f33beb8a10556d42288863fc981a13123eb4d0122",
     "NLS/KdV/PseudomeasureLowerSpectrum.lean": "6e789b05fb6f2b790811990137e46a3f4edb67902cc5eb222e3a743ef54176cf",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean": "d0cd997aec48bbc96a77797449dd8a5f46552e918c1bff17e6aa8fba9cc291ba",
@@ -458,6 +471,7 @@
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean": "6970d2a80adbecff3ce7e0ac7e291ae279e2307349b42b519176f73340e6162d",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean": "6ef29dc4418c2038f990f5967e7bcd96620088da524912139c4f502f3a0818d7",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean": "c230e5b67050a8f1e7d2bf2356cb23cdc05da63ff412688933530906f6ce2c15",
+    "NLS/Articles/KdVPseudomeasures/SpectralComplexCounting.lean": "7db6a510cf7ecb5659b1f8e19034ad5aaed280f3a46afcfc9786f83aaea7b0eb",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean": "23bd781e26f30d812e4f5259fc81c837586a32248312240c825ab9d8311df133",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean": "1ae52bd7c03d1f7710fb75dfc76db7cb85c474fd3b4b94ea14f37088c6f2562f",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean": "a4706327fa10485c2d983799112f4c87d67ea1d320b27288c2ba0c9f131438b5",
@@ -465,7 +479,7 @@
     "NLS/Articles/KdVPseudomeasures/SpectralLabelUniqueness.lean": "c9644752a494c408c3110dd25ec96ec636d642e8e53aba04c7fe78fd1b996f76",
     "NLS/Articles/KdVPseudomeasures/SpectralCanonicalLabels.lean": "0ed2db7e47f73720e595b6f06023faea0839f1f2c6376de1bbe32a243b32b6f8",
     "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean": "3b1e7a8493cfa65f9fb1a9b7a1f0b9c09646c8062727fa61b35b347e647a7ea5",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ab9d514188808284cc3ea7f07828b371b1d2dbeb5d3df31f0690d8aba2aef6c8"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d9e605ec1056345c00b94c57b5647a1d1469e548cdd78b42f63b09a9d0f524c8"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -473,25 +487,14 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1158,
-    "newly_checked_declarations_this_continuation": 58,
-    "newly_authored_declarations_this_continuation": 53,
-    "new_theorems": 50,
-    "new_definitions": 8,
-    "shared_declarations_copied_this_continuation": 5,
-    "total_checked_declarations": 1216,
-    "requested_appendix_follow_on": {
-      "new_theorems": 8,
-      "new_definitions": 0
-    },
-    "carried_forward_spectral_work": {
-      "checked_declarations": 50,
-      "authored_declarations": 45,
-      "copied_generic_declarations": 5,
-      "theorems": 42,
-      "definitions": 8
-    },
-    "additional_structure": "SourceHillRealLabeling is a Prop structure; its factory and property theorems are audited transitively. Structures are not separately counted by the standard definition/theorem inventory."
+    "previous_checked_declarations": 1216,
+    "newly_checked_declarations_this_continuation": 24,
+    "newly_authored_declarations_this_continuation": 24,
+    "new_theorems": 21,
+    "new_definitions": 3,
+    "shared_declarations_copied_this_continuation": 0,
+    "total_checked_declarations": 1240,
+    "previous_reuse": "Actual singular compact-resolvent root transport, full physical eigenvector Riesz action, idempotence, finite invariant range decomposition, actual root-space independence, rank transport, complex form sector bounds, wide-strip inversion, exact original free multiplicities/count. No regular physical spectrum is substituted."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -522,7 +525,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-compact-sets.log",
+  "validation_log": ".lake/article-check/logs/validation-complex-count.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

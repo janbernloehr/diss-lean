@@ -104,4 +104,66 @@ theorem freeHillCentralEdge_between (N : ℕ) (hN : 2 ≤ N) :
   simp only [freeHillValue,Int.cast_natCast,Nat.cast_sub hN1,Nat.cast_one,Int.cast_sub,Int.cast_one]
   constructor <;> nlinarith
 
+/-- The high central separator is strictly positive. -/
+theorem freeHillCentralEdge_pos (N : ℕ) (hN : 2 ≤ N) :
+    0 < freeHillValue N-12*(N:ℝ) := by
+  have hNR : (2:ℝ) ≤ N := by exact_mod_cast hN
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  have hp := mul_pos (sub_pos.mpr hpi) (sq_pos_of_pos (show (0:ℝ) < N by linarith))
+  dsimp [freeHillValue]
+  push_cast
+  nlinarith [sq_nonneg ((N:ℝ)-2)]
+
+/-- The high central separator exceeds its unsigned Fourier index. -/
+theorem natCast_lt_freeHillCentralEdge (N : ℕ) (hN : 2 ≤ N) :
+    (N:ℝ) < freeHillValue N-12*(N:ℝ) := by
+  have hNR : (2:ℝ) ≤ N := by exact_mod_cast hN
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  have hp := mul_pos (sub_pos.mpr hpi) (sq_pos_of_pos (show (0:ℝ) < N by linarith))
+  dsimp [freeHillValue]
+  push_cast
+  nlinarith [sq_nonneg ((N:ℝ)-2)]
+
+/-- Tight complex high-mode disks avoid every high central separator circle. -/
+theorem norm_ne_freeHillCentralEdge_of_localized (N n : ℕ) (hN : 2 ≤ N) (hn : 2 ≤ n)
+    (z : ℂ) (hz : ‖z-(freeHillValue n:ℂ)‖ ≤ Real.sqrt (n:ℝ)/4) :
+    ‖z‖ ≠ freeHillValue N-12*(N:ℝ) := by
+  have hNR : (2:ℝ) ≤ N := by exact_mod_cast hN
+  have hnR : (2:ℝ) ≤ n := by exact_mod_cast hn
+  have hsqrt : Real.sqrt (n:ℝ) ≤ n :=
+    Real.sqrt_le_iff.mpr ⟨by positivity, by nlinarith⟩
+  have hfree : 0 ≤ freeHillValue n := by unfold freeHillValue; positivity
+  have hnorm : ‖(freeHillValue n:ℂ)‖ = freeHillValue n := by
+    rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg hfree]
+  have hupper : ‖z‖ ≤ freeHillValue n+(n:ℝ)/4 := by
+    have ht := norm_add_le (z-(freeHillValue n:ℂ)) (freeHillValue n:ℂ)
+    rw [sub_add_cancel, hnorm] at ht
+    linarith
+  have hlower : freeHillValue n-(n:ℝ)/4 ≤ ‖z‖ := by
+    have ht := norm_sub_norm_le (freeHillValue n:ℂ) z
+    rw [hnorm, norm_sub_rev] at ht
+    linarith
+  intro he
+  rw [he] at hupper hlower
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  by_cases hnN : n < N
+  · have hlt' : (n:ℝ)+1 ≤ (N:ℝ) := by exact_mod_cast (show n+1 ≤ N from hnN)
+    have hlt : (n:ℝ) ≤ (N:ℝ)-1 := by linarith
+    have hsq := mul_nonneg (show 0 ≤ (N:ℝ)-1-(n:ℝ) by linarith)
+      (show 0 ≤ (N:ℝ)-1+(n:ℝ) by linarith)
+    have hp := mul_nonneg (sq_nonneg Real.pi) hsq
+    have hp' := mul_pos (sub_pos.mpr hpi) (show 0 < 2*(N:ℝ)-1 by linarith)
+    dsimp [freeHillValue] at hupper
+    push_cast at hupper
+    nlinarith
+  · have hle : (N:ℝ) ≤ n := by exact_mod_cast (Nat.le_of_not_gt hnN)
+    have hsq := mul_nonneg (show 0 ≤ (n:ℝ)-(N:ℝ) by linarith)
+      (show 0 ≤ (n:ℝ)+(N:ℝ)-1 by linarith)
+    have hp := mul_nonneg (sq_nonneg Real.pi) hsq
+    have hp' := mul_nonneg (show 0 ≤ Real.pi^2-1 by linarith)
+      (show 0 ≤ (n:ℝ)-(N:ℝ) by linarith)
+    dsimp [freeHillValue] at hlower
+    push_cast at hlower
+    nlinarith
+
 end NLS.KdV

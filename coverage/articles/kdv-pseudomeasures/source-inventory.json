@@ -414,6 +414,18 @@
         "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-map.json"
+    },
+    {
+      "label": "Actual uniform complex original singular algebraic counting",
+      "content": "A shared algebraic theorem proves that a commuting idempotent annihilating an ordinary eigenspace annihilates every finite generalized chain and the full algebraic root space. Applying it to1-P proves identity on the full root space from identity on ordinary eigenvectors. No finite-dimensional ambient space or semisimplicity is assumed. For every original COMPLEX endpoint potential, the actual operator-valued Riesz projection fixes ALL enclosed physical algebraic root vectors and kills ALL root vectors outside the closed disk. The actual finite-dimensional projection range equals the sum of enclosed full physical algebraic root spaces. The full original H1 domain in H-minus-one is unchanged. The actual finite enclosed spectrum and its actual algebraic count are constructed for every complex original potential. Independence of full root spaces identifies the actual projection rank with that count, including nontrivial Jordan chains. Hence the ACTUAL count is invariant on any preconnected continuous complex potential family with a common physical resolvent circle. The wide-strip covering and tight sqrt(n)/4 localization hold for the ENTIRE sufficiently high complex spectrum, without a reality hypothesis. Pure free-lattice geometry shows every such localized complex disk avoids every high separator circle of radius pi^2*N^2-12N. For each EXACT ORIGINAL complex endpoint norm ball, ONE zero-centered physical resolvent circle is chosen BEFORE q. Low real parts are excluded using the proved uniform full spectral sector bound; all remaining spectral points are excluded by complex high localization and separator geometry. The ACTUAL free enclosed count on that circle is proved equal to the existing physical count2N-1, by equality of the actual finite spectral sets and actual full algebraic multiplicities. The ORIGINAL homotopy t*q transports the actual complex count. source_uniform_complex_algebraic_count gives exactly2N-1 on every original complex norm ball, with a common circle and index chosen before q.",
+      "status": "Proved: actual complex Riesz range/count and uniform norm-ball disk count2N-1. Source complex ordering and all main theorems remain open.",
+      "modules": [
+        "NLS/FunctionalAnalysis/IdempotentRootSpaces.lean",
+        "NLS/KdV/PseudomeasureComplexRiesz.lean",
+        "NLS/KdV/PseudomeasureComplexCounting.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralComplexCounting.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-complex-count-map.json"
     }
   ],
   "reuse_map": [

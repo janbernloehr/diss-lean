@@ -10,6 +10,7 @@ import NLS.ComplexAnalysis.PoweredAnalyticJet
 import NLS.ComplexAnalysis.BanachFiniteJets
 import NLS.ComplexAnalysis.AffinePencilJets
 import NLS.FunctionalAnalysis.ResolventRootSpace
+import NLS.FunctionalAnalysis.IdempotentRootSpaces
 import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.ComplexAnalysis.MatrixAnalyticJetAction
 import NLS.SequenceSpaces.SobolevConvolutionBounds
@@ -73,6 +74,8 @@ import NLS.KdV.PseudomeasureTaylorKernel
 import NLS.KdV.PseudomeasureMultiplicityOrder
 import NLS.KdV.PseudomeasureRealSpectrum
 import NLS.KdV.PseudomeasureRieszRange
+import NLS.KdV.PseudomeasureComplexRiesz
+import NLS.KdV.PseudomeasureComplexCounting
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.KdV.PseudomeasureRealPairs
@@ -115,6 +118,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralWideLocalization
 import NLS.Articles.KdVPseudomeasures.SpectralLowerBound
 import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
 import NLS.Articles.KdVPseudomeasures.SpectralFreeCount
+import NLS.Articles.KdVPseudomeasures.SpectralComplexCounting
 import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
 import NLS.Articles.KdVPseudomeasures.SpectralCentralCounting
 import NLS.Articles.KdVPseudomeasures.SpectralCentralRoots
@@ -214,6 +218,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 #print axioms NLS.FunctionalAnalysis.pencilRootSpaceTop_smul
 #print axioms NLS.FunctionalAnalysis.pencilRootSpace_eq_bot_of_injective
 #print axioms NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_bot_of_injective
+#print axioms NLS.FunctionalAnalysis.idempotent_eq_zero_on_genEigenspace_nat
+#print axioms NLS.FunctionalAnalysis.idempotent_eq_zero_on_genEigenspace_top
+#print axioms NLS.FunctionalAnalysis.idempotent_eq_self_on_genEigenspace_top
 #print axioms NLS.FiniteSpectralDeterminant.det_prod_formula
 #print axioms NLS.FiniteSpectralDeterminant.determinant_shift_bound
 #print axioms NLS.ComplexAnalysis.pairOperatorMatrixCLM
@@ -357,6 +364,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 #print axioms NLS.KdV.exists_wideHillStrip_of_ge
 #print axioms NLS.KdV.exists_wideHillStrip_of_ge_lower_edge
 #print axioms NLS.KdV.freeHillCentralEdge_between
+#print axioms NLS.KdV.freeHillCentralEdge_pos
+#print axioms NLS.KdV.natCast_lt_freeHillCentralEdge
+#print axioms NLS.KdV.norm_ne_freeHillCentralEdge_of_localized
 #print axioms NLS.KdV.reducedHillSymbol_memlp_two
 #print axioms NLS.KdV.reducedHillHilbertSymbol
 #print axioms NLS.KdV.reducedHillHilbertSymbol_apply
@@ -909,6 +919,16 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 #print axioms NLS.KdV.endpointHillRootSpaceTop_eq_resolvent_all
 #print axioms NLS.KdV.independent_endpointHillRootSpaceTop
 #print axioms NLS.KdV.endpointHillRieszProjection_range_eq_roots
+#print axioms NLS.KdV.endpointHillRieszProjection_root_inside
+#print axioms NLS.KdV.endpointHillRieszProjection_root_outside
+#print axioms NLS.KdV.endpointHillRieszProjection_range_eq_roots_complex
+#print axioms NLS.KdV.finite_endpointHillSpectrum_in_ball
+#print axioms NLS.KdV.endpointHillEnclosedSpectrum
+#print axioms NLS.KdV.mem_endpointHillEnclosedSpectrum
+#print axioms NLS.KdV.endpointHillEnclosedAlgebraicCount
+#print axioms NLS.KdV.endpointHillRieszProjection_range_eq_enclosed_roots
+#print axioms NLS.KdV.endpointHillRieszProjection_rank_eq_algebraicCount
+#print axioms NLS.KdV.endpointHillEnclosedAlgebraicCount_eq_on_preconnected
 #print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
 #print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
 #print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
@@ -964,6 +984,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 #print axioms NLS.KdV.endpointHill_small_of_wide_small
 #print axioms NLS.KdV.singularHillEigenvector_localization_wide
 #print axioms NLS.KdV.endpointHillSpectrum_wide_localization
+#print axioms NLS.KdV.endpointHillSpectrum_complex_high_cover
 #print axioms NLS.KdV.endpointHillSpectrum_real_high_cover
 #print axioms NLS.KdV.endpointHillSpectrum_high_iff_pair
 #print axioms NLS.KdV.endpointHillSpectrum_re_lower_bound
@@ -1275,6 +1296,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 #print axioms NLS.Articles.KdVPseudomeasures.mem_sourceCentralSpectrum_zero_iff
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralSpectrum_zero_eq
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_complex_high_cover
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCircle_subset_resolvent
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceComplex_resolvent_circle
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCircleAlgebraicCount
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCircleAlgebraicCount_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCircleAlgebraicCount_eq
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_complex_algebraic_count
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralCircleCenter
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralCircleRadius
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralCircleRadius_pos
