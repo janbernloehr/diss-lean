@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: Appendix F collapsed formulas on original domains
+## Current milestone: Appendix F midpoint identity and convergence
+
+The [midpoint-spoke proofs](NLS/ZakharovShabat/AppendixFMidpointIdentity.lean)
+derive eventual integrability from the actual source data and the
+corrected positive majorant. A common original boundary point gives
+admissible spokes and a side for every open gap in the source sequence.
+
+The literal improper endpoint average equals the midpoint-spoke
+integral with its full -i*(nu-tau_n) coefficient plus the approached
+midpoint boundary value. This exact short-piece remainder tends to
+zero when the gap collapses.
+
+Combining the identity with source-integral convergence and the
+original-disc collapsed formula proves convergence of the actual
+improper endpoint averages at the chosen common boundary point.
+The final sequence theorem assumes neither a uniform chi_n bound
+nor integrability; both are derived on a tail.
+
+One module adds seven positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,632 build jobs, 7,729 public examples and an axiom audit of 44,948 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Transfer to
+an arbitrary fixed original boundary point, mixed collapsed and
+open-gap sequences, and open-gap endpoint path assembly remain.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F collapsed formulas on original domains
 
 The [original-domain collapsed-gap proofs](NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean)
 extend the derivative formula -i*chi_n throughout the whole omitted-gap

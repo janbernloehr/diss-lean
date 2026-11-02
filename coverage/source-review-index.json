@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T00:04:28.780298+00:00",
-  "base_commit": "65221e23e6cb65897a8d5f2f766a55e8a95ebc49",
+  "published_utc": "2026-11-02T00:26:44.295615+00:00",
+  "base_commit": "42517cbbf7354b44176cdbf40099b9ad7ebf94a4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 200,
-    "module_hash_checks": 4210,
-    "distinct_modules": 2127
+    "review_records": 201,
+    "module_hash_checks": 4218,
+    "distinct_modules": 2128
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "65221e23e6cb65897a8d5f2f766a55e8a95ebc49",
-    "validated_state": "Fresh full check after one Appendix F original-domain collapsed-gap formulas module; public examples unchanged.",
+    "base_commit": "42517cbbf7354b44176cdbf40099b9ad7ebf94a4",
+    "validated_state": "Fresh full check after one Appendix F midpoint identity and convergence module; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8631,
+    "build_jobs": 8632,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44941,
+    "transitive_NLS_declarations": 44948,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 82483,
+    "gate_session": 67800,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4893,
-      "sha256": "fd7869fdc776b3cf341ee8134cb60225db3b6be8d20ac924b7d5b4088a553bf7"
+      "files": 4894,
+      "sha256": "b3227e2dc47ce2d09629adac3124cc07bf14c6d5557542eea157151e2794c2e8"
     },
-    "full_gate_log_sha256": "e64d6d46779f2c91396f25879f7ebd4f56a857cd74aed6282cf29ec7ce596c4e",
+    "full_gate_log_sha256": "403d912cbf76aadea72c8f0e807f22986a9bd290e7078ad3ae8ad4d7a06f9ec9",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFOriginalCollapsedFullCheck.log"
+    "full_gate_log": "work/AppendixFMidpointIdentityFullCheck.log"
   },
   "named_statements": [
     {
@@ -67448,6 +67448,165 @@
         "log_sha256": "e64d6d46779f2c91396f25879f7ebd4f56a857cd74aed6282cf29ec7ce596c4e"
       },
       "source_record_sha256": "1f26630861e4dcf6ad722cd365b3e1b8c74acac6ae34fbebd517875bbb9fd259"
+    },
+    "AppendixFMidpointIdentitySourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "42517cbbf7354b44176cdbf40099b9ad7ebf94a4",
+      "updated_utc": "2026-11-02T00:26:44.242098+00:00",
+      "source_lines": [
+        [
+          11034,
+          11044
+        ],
+        [
+          11008,
+          11020
+        ],
+        [
+          10990,
+          11005
+        ],
+        [
+          11043,
+          11056
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11034,
+            11044
+          ],
+          "requirement": "Actual spoke integrability from the corrected majorant",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_source_spoke_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_eventually_intervalIntegrable"
+          ],
+          "reviewed_claims": [
+            "The corrected positive majorant gives integrability of the actual differential on admissible spokes.",
+            "Source analyticity supplies the regular-factor bound, half-gap estimate and normalized-gap smallness on a tail of a collapsing sequence."
+          ],
+          "qualification": "The eventual theorem assumes only source data, convergence and admissibility; no regular-factor bound or integrability is supplied."
+        },
+        {
+          "source_lines": [
+            11008,
+            11020
+          ],
+          "requirement": "Common original spokes with source-dependent sides",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixF_midpoint_spoke_mem_side",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_exists_common_sided_spokes"
+          ],
+          "reviewed_claims": [
+            "A midpoint ray remains on its terminal point’s chosen side.",
+            "One original boundary point supplies an admissible spoke and a side for each open gap of a countable source sequence."
+          ],
+          "qualification": "The side may vary with the source; the terminal point is fixed for the sequence and every other gap is excluded."
+        },
+        {
+          "source_lines": [
+            10990,
+            11005
+          ],
+          "requirement": "Exact corrected F.3 decomposition and vanishing short-piece remainder",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero"
+          ],
+          "reviewed_claims": [
+            "The actual improper endpoint average equals the full -i displacement-weighted midpoint integral plus the approached midpoint gap-boundary value.",
+            "The exact remainder tends to zero as the source gap collapses, even when its side varies."
+          ],
+          "qualification": "The identity first states integrability and side hypotheses explicitly; the surrounding source lemmas derive them for the final sequence argument."
+        },
+        {
+          "source_lines": [
+            11043,
+            11056
+          ],
+          "requirement": "Assembled convergence of the actual improper endpoint averages",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit"
+          ],
+          "reviewed_claims": [
+            "Every sequence of open source gaps approaching a collapsed source has a common original boundary point where the actual improper endpoint averages converge to the collapsed value.",
+            "The proof combines the corrected majorant limit, exact short-piece identity and original-disc collapsed formula, with all bounds and integrability derived on a tail."
+          ],
+          "qualification": "A source Cauchy chart contains the limiting source. The terminal point is selected for the sequence. Transfer to an arbitrary fixed original boundary point and mixed sequences remain separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean": "9aa5acb5c830b6060c98219261c20e7a594d68e57531a9fa96fe9237a099991b",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean": "0e526f68b8e91ce5eacc092efcad08b9f92c9bb99457c1be4c07dd57209e77ec",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean": "d397f9cd9a3aed1ad547f49bc5465ac1c78c50d0d607ea77ac8941daa1ba2a15",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean": "5edcf7a3955cfb33b9f297796c5113aa6e33fdc3e65a5b1067f99c8fadd9662d",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean": "db44f7d2fa36e91f471efe3d0cc52ddb47e0c4e27b665c47591b77eab3f70c22",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean": "bc1727ebed1e10e265296535361d0bde5b3e9fa8aab363155b09b23b002ee0e8"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_source_spoke_intervalIntegrable",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_exists_common_sided_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_eventually_intervalIntegrable",
+        "NLS.ZakharovShabat.appendixF_midpoint_spoke_mem_side"
+      ],
+      "declaration_inventory_count": 44948,
+      "qualification": "One module adds seven positive theorems assembling the corrected midpoint-spoke argument. The positive majorant proves actual spoke integrability, and source analyticity derives all required bounds on a tail. One original boundary point gives admissible spokes and a side for every open gap in the sequence. The literal improper endpoint average equals the actual midpoint-spoke integral, with full -i displacement coefficient, plus the approached midpoint boundary value. That exact short-piece remainder tends to zero. Combined with source-integral convergence and the original-disc collapsed formula, the actual improper endpoint averages converge at the chosen common boundary point. The final theorem assumes neither a regular-factor bound nor integrability. Transfer to an arbitrary fixed original boundary point, mixed sequences and open-gap path assembly remain separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "1f26630861e4dcf6ad722cd365b3e1b8c74acac6ae34fbebd517875bbb9fd259",
+      "validation_lean_sources": {
+        "files": 4894,
+        "sha256": "b3227e2dc47ce2d09629adac3124cc07bf14c6d5557542eea157151e2794c2e8"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 7,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 67800,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFMidpointIdentityFullCheck.log",
+        "log_sha256": "403d912cbf76aadea72c8f0e807f22986a9bd290e7078ad3ae8ad4d7a06f9ec9"
+      },
+      "source_record_sha256": "739e92529dc1980a5cf6384e68dc636d76c366dc8159dd5b9cfd628bccd1755a"
     }
   }
 }

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F original-domain formulas](coverage/APPENDIX_F.md)
-proves the collapsed endpoint formula on the original isolating disc
-and an analytic extension on the original source neighborhood under
-an explicit chart-cover hypothesis. Five positive theorems add no
-new refutation. The midpoint-spoke decomposition and the
-[broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix F midpoint identities](coverage/APPENDIX_F.md)
+proves the exact improper-integral decomposition, its vanishing
+short-piece remainder, and actual endpoint-average convergence at
+a common original boundary point. Seven positive theorems derive
+the required bounds and integrability and add no new refutation.
+The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -225,6 +225,15 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F midpoint-identity proofs](APPENDIX_F.md)
+derive eventual spoke integrability and identify the actual improper
+endpoint average with the full-coefficient midpoint integral plus its
+vanishing short-piece boundary value. At a common original boundary
+point, the actual endpoint averages converge without supplied bounds
+or integrability. Seven positive theorems add no new refutation.
+Transfer to any fixed boundary point, mixed source sequences and
+open-gap endpoint path assembly remain separate.
+
 The [Appendix F original-domain collapsed-gap proofs](APPENDIX_F.md)
 identify the actual endpoint average along every C1 path in the original
 closed disc. The regular chi_n formula is analytic on the original V;
