@@ -1,5 +1,6 @@
 import NLS.KdV.ClassicalTraceAsymptotics
 import NLS.KdV.ClassicalBranchPrimitive
+import NLS.KdV.ClassicalContourMoments
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries

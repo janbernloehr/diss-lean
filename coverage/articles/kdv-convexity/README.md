@@ -6,8 +6,10 @@ proved, with the physical contour moments and their spectral estimates
 retained as explicit missing inputs. The physical smooth KdV energy
 coefficients, the actual scalar Hill solution bridge and its all-order real-axis trace estimates are also
 proved. The actual discriminant is now jointly entire in energy and continuous
-potential. Local primitive charts and analytic squared primitive charts at
-both signs of the branch locus are constructed. The earlier local
+potential. A free-normalized primitive is now constructed on an explicit
+joint open source-continuation domain, with analytic cubic moments near
+each admissible fixed circle. Analytic squared primitive charts at
+both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
 This record does not reopen the completed dissertation verification.
 
@@ -222,9 +224,11 @@ error term of the same order. Its N=0 specialization is also checked.
 These are real-spectral-axis estimates in the complex scalar norm; an
 all-complex exterior Laurent expansion is not claimed here.
 
-Next mathematical step for Lemma 4.4: construct the normalized analytic
-inversion remainder of the actual finite-gap Hill primitive and prove
-its hyperbolic-cosine trace identity. The existing generic theorem
+Next mathematical step for Lemma 4.4: continue the constructed free-normalized
+primitive from its source-continuation domain to the canonical finite-gap
+cut complement, establish its exterior square, and construct its normalized
+analytic inversion remainder. Its hyperbolic-cosine trace identity is now
+proved on the source-continuation domain described below. The existing generic theorem
 `ZakharovShabat.exists_nlsHamiltonian_laurent_of_discriminant` in
 `NLS/ZakharovShabat/NLSHamiltonianPrimitiveCoefficients.lean` then recovers
 the convergent physical coefficients from this classical trace without
@@ -286,6 +290,76 @@ continuous-potential discriminant with the shared rough Fourier operator,
 or descend moments to the weighted action space. In particular the global
 analytic extension around the entire positive ell2 quadrant is still open.
 
+## Free-normalized source continuation and actual contour moments
+
+[`NLS/KdV/ClassicalFreePrimitive.lean`](../../../NLS/KdV/ClassicalFreePrimitive.lean)
+computes the actual free Hill trace from IVP uniqueness and a scalar
+integrating factor. The free scalar potential corresponds to the nonzero
+triangular ZS pair `(-1,0)`, so the zero-ZS-potential formula cannot simply
+be substituted. The checked trace is `Delta(0,lambda)=2*cos(sqrt(lambda))`.
+It then defines `F0=-i*sqrt(lambda)` on the slit plane and its root
+`r0=2*sinh(F0)`, proving `r0^2=Delta(0,lambda)^2-4` and the exact multiplier
+identity `exp(F0)=(Delta(0,lambda)+r0)/2`.
+
+[`NLS/KdV/ClassicalHillFlow.lean`](../../../NLS/KdV/ClassicalHillFlow.lean)
+is reused unchanged from the `kdv-estimates` branch at `194ec4b`. It
+constructs the scalar state flow directly, identifies it with this branch's
+constant-upper solutions and discriminant, and proves weak AC uniqueness.
+[`NLS/KdV/ClassicalHillSpectrum.lean`](../../../NLS/KdV/ClassicalHillSpectrum.lean)
+then transfers the original monodromy determinant criterion for every
+energy and multiplier. In particular `Delta^2-4=0` is equivalent to the
+existence of a nonzero initial state whose actual scalar solution has
+periodic or antiperiodic endpoint data. No simplicity assumption is made.
+
+[`NLS/KdV/ClassicalSourcePrimitive.lean`](../../../NLS/KdV/ClassicalSourcePrimitive.lean)
+defines one concrete open joint domain `classicalHillContinuationDomain`:
+energy lies in the complex slit plane and the actual radicand remains
+nonzero at every potential `s*q`, `0<=s<=1`. A proved equivalent condition
+is the absence of actual periodic and antiperiodic scalar solutions along
+that entire source segment. This domain is preserved by
+taking initial subsegments of the same potential path. On it, the existing
+`ParametricSourceLogDomain` library constructs an analytic source increment
+`L` for the actual radicand. The actual continued root is
+
+```text
+r(lambda,q) = r0(lambda)*exp(L(lambda,q)/2).
+```
+
+Its square is proved equal to the actual radicand. A second source logarithm
+continues `F0` through the multiplier `(Delta+r)/2`. The resulting
+`classicalHillContinuedPrimitive` is jointly analytic and satisfies
+
+```text
+F(lambda,0) = -i*sqrt(lambda), exp(F) = (Delta+r)/2,
+2*cosh(F) = Delta, 2*sinh(F) = r,
+dF = r^(-1)*dDelta
+```
+
+for the complete joint Frechet differential, including arbitrary potential
+directions. Continuous logarithm uniqueness proves compatibility with any
+other branch on a connected overlap having the same sheet and one free
+anchor value. Compact spectral sets give a single open complex potential
+neighborhood by the existing tube lemma. No primitive or root is supplied
+as a mathematical hypothesis in this construction.
+
+[`NLS/KdV/ClassicalContourMoments.lean`](../../../NLS/KdV/ClassicalContourMoments.lean)
+proves zero circle periods of the actual spectral derivative `Delta'/r`
+inside this domain. It defines the literal cubic moment of `F+i*n*pi`,
+with factor `1/pi`, and proves analytic dependence in the continuous
+potential norm near every admissible fixed circle. All free moments
+vanish on discs contained in the energy slit plane, including discs
+through a free collapsed gap. The earlier local logarithm construction
+now reuses `NormalizedLogChart` rather than duplicating its calculation.
+
+The domain is not yet proved to contain the paper's chosen contours for
+every potential. In particular it excludes energies at which the free
+radicand vanishes. Its formula supplies normalized exterior/annular
+primitives once spectral contour avoidance is established; continuation
+to the canonical cuts, endpoint values `-i*n*pi`, the rough Hill operator
+identification, action descent, and uniform action bounds remain open.
+The constructed contour moments have not been identified with the physical
+action-indexed `R_n` on the paper's full weighted action neighborhood.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -303,13 +377,15 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
 
 ## Remaining essential KdV work
 
-1. Continue and globally normalize the constructed local primitive charts,
-   prove their endpoint values and compatibility across the actual gap
-   complement, and construct the physical contour moments
+1. Continue the constructed free-normalized primitive from its explicit
+   source-segment domain to the canonical gap complement, prove contour
+   avoidance and the indexed endpoint values, and identify the constructed
+   contour integrals with the physical gap moments
    R_n=(1/pi)*integral Gamma_n F_n^3, F_n=F+i*n*pi (4.8), using the shared
-   Hill discriminant and normalized primitive. The local discriminant and
-   primitive/squared-primitive constructions above are now proved; global
-   spectral labels, normalization and rough-operator identification remain.
+   Hill discriminant and normalized primitive. The discriminant, local
+   squared primitive and free-normalized source continuation above are now
+   proved; global spectral labels, endpoint matching and rough-operator
+   identification remain.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
@@ -326,14 +402,16 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `99fa6ee`.
+The `kdv-estimates` branch was re-inspected through commit `194ec4b`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
-two-mode reduction, joint analytic determinant and high-strip two-zero
-localization. Its coverage still leaves global spectral labels,
-discriminant/actions/Birkhoff data unconstructed. The constant-upper
-bridge here reuses classical IVP solutions for the energy calculation;
-it does not replace that Fourier/Hill development. Its identification
-with the shared operator and rough-distribution domain is still required.
+two-mode reduction, joint analytic determinant, high-strip two-zero
+localization, spectral Lipschitz control, weighted root separation and
+source-normalized gap tails. Its new scalar flow reuses the discriminant
+constructed on this branch, and its weak H2 eigenvectors are identified
+with that flow on the unit interval. The flow module is reused here
+unchanged; the separate Fourier/Hill modules are not duplicated. The
+period-two spectral equivalence, global labels and multiplicities, the
+rough-distribution domain, and action/Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
 ## Validation and worktree
@@ -345,10 +423,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All fifteen modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All twenty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-198 constants in their two namespaces, including generated declarations,
+268 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 See `validation.json` for exact file hashes and scope.

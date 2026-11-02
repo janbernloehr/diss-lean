@@ -1,5 +1,6 @@
 import NLS.KdV.ClassicalDiscriminant
 import NLS.ComplexAnalysis.LocalAnalyticSquareRoot
+import NLS.ComplexAnalysis.NormalizedLogChart
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 
@@ -33,17 +34,20 @@ private theorem exists_local_analytic_logarithm
   have hg : AnalyticAt ℂ g a := hf.div_const
   have hga : g a = 1 := div_self hfa
   have hslit : g a ∈ slitPlane := by rw [hga]; simp
-  let F : E → ℂ := fun b => log (g b) + log (f a)
-  have hF : AnalyticAt ℂ F a := ((analyticAt_clog hslit).comp (f := g) hg).add analyticAt_const
+  let F : E → ℂ := ComplexAnalysis.normalizedLogChart f a (log (f a))
+  have hF : AnalyticAt ℂ F a := ComplexAnalysis.normalizedLogChart_analyticAt f a a
+    (log (f a)) hf hslit
   have hgood : ∀ᶠ b in 𝓝 a, AnalyticAt ℂ F b ∧ g b ∈ slitPlane :=
     hF.eventually_analyticAt.and (hg.continuousAt.preimage_mem_nhds (isOpen_slitPlane.mem_nhds hslit))
   obtain ⟨V,hsub,hV,ha⟩ := _root_.mem_nhds_iff.mp hgood
   refine ⟨V,hV,ha,F,(fun b hb => (hsub hb).1),?_,?_⟩
-  · simp [F,hga]
+  · exact ComplexAnalysis.normalizedLogChart_base f a (log (f a)) hfa
   intro b hb
-  dsimp only [F]
-  rw [exp_add,exp_log (slitPlane_ne_zero (hsub hb).2),exp_log hfa]
-  exact div_mul_cancel₀ (f b) hfa
+  have hfb : f b ≠ 0 := by
+    intro hz
+    exact slitPlane_ne_zero (hsub hb).2 (by simp [g,hz])
+  rw [ComplexAnalysis.exp_normalizedLogChart f a b (log (f a)) hfa hfb,exp_log hfa]
+  exact mul_div_cancel_left₀ (f b) hfa
 
 private theorem multiplier_product (D r : ℂ) (hsq : r^2 = D^2-4) :
     ((D+r)/2)*((D-r)/2) = 1 := by
