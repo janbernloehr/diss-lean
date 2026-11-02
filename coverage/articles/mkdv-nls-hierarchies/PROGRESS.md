@@ -685,3 +685,59 @@ aggregate and axiom audits. This validation checked the unchanged prefix,
 repaired an H1 adapter elaboration, then resumed there; both complete
 audits passed. Validation uses pinned cached imports, not a rebuild of the
 entire dependency tree.
+
+
+## 2026-11-02 — the full H1 Miura potential inside the actual L2 Hill spectrum
+
+Integrated 41 unchanged checked modules from `articles/kdv-estimates` at
+`5da8934e019a8a08f314988c311661754b89e925`. These construct the original
+periodic H2 Hill operator, its actual L2 monodromy discriminant, entire
+energy descent, characteristic root counts and intrinsic ordered real
+labels with analytic multiplicities. The copied sources are byte-for-byte
+identical to that pinned branch; the checker orders all source dependencies
+before their consumers.
+
+`SobolevMiuraPotential.lean` constructs the literal analytic H1-to-L2
+Miura map. Its original period-one coefficient is 2*pi*i*n*u_n plus the
+actual convolution sum. On every complex H1 input, the coefficients equal
+the actual Fourier integrals of u_prime+u_squared. Even insertion retains
+these at ambient index 2*n, fixing the Hill period normalization.
+
+`MiuraL2HillDiscriminant.lean` proves equality of the independently
+constructed L2 Hill and quasi-Hill monodromy traces on every original
+complex H1 input and every complex energy, including zero. Physical IVP
+uniqueness proves the smooth comparison; norm continuity and finite
+Fourier density extend it to H1. Thus the shared physical H2 Hill operator
+now applies to this article's actual rough Miura potential.
+
+`MiuraHillSpectralIdentification.lean` identifies its eigenvalue condition
+with the original ZS periodic spectrum at squared energy, without a reality
+restriction. Analytic characteristic orders equal the original ZS algebraic
+multiplicities away from zero. At zero the frequency order is exactly
+twice the energy order, accounting for the square-map ramification. For
+real H1 profiles, every Hill characteristic root is real and nonnegative.
+
+`MiuraHillRealLabels.lean` proves Fourier reality of the actual rough
+potential, then instantiates the intrinsic ordered real Hill labels. The
+labels exhaust its physical characteristic zero set, retain exact analytic
+multiplicities and are all nonnegative. The article exports the stronger
+physical L2 form of Theorem 5 and the spectral-set, positivity and analytic
+multiplicity parts of Lemma 3.
+
+Matching each fixed Hill endpoint label with the corresponding original
+NLS endpoint square, the printed geometric-multiplicity comparison,
+real-band primitive extension and spectral action integrals remain open.
+Theorem 1 for the source spectral hierarchy and Theorems 3 and 4 remain
+incomplete. These results do not assert an action or Birkhoff identification.
+
+All 156 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The final targeted
+transitive axiom audit passed for 2,025 declarations and generated
+auxiliaries; the combined audit passed for 47,204 NLS declarations. Only
+propext, Classical.choice and Quot.sound are allowed. The public theorem/
+definition inventory contains 1,082 entries (860 theorems, 222 definitions;
+aliases and structure declarations excluded), with 158 SHA256 source/checker
+hashes. The complete run used pinned read-only cached imports; the final
+targeted prefix inventory was expanded and audited again independently.
+The entire dependency tree was not rebuilt from source. Canonical main
+remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.

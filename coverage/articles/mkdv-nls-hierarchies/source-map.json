@@ -32,7 +32,8 @@
         "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension, compatible with the original higher-regularity hierarchy.",
         "Both clauses hold on all original complex H^m inputs with the independently constructed K_m on complex H^(m-1), including m=1. Its actual Frechet gradient is constructed on that native domain; Gardner differentiation is the genuine physical distribution derivative.",
         "The literal physical Hill trace at r^2 has all-order real-axis estimates with odd phase coefficients 2*K_m.",
-        "The independent actual Hill root and primitive agree with the NLS root and primitive on the full real H1 domain at nonreal frequencies with Re z>0. Exact physical trace and energy derivative identities and complex H1 source analyticity on the source-continuation domain are proved. Full labeled gap/action identification and mKdV spectral Hamiltonians remain open."
+        "The independent actual Hill root and primitive agree with the NLS root and primitive on the full real H1 domain at nonreal frequencies with Re z>0. Exact physical trace and energy derivative identities and complex H1 source analyticity on the source-continuation domain are proved. Full labeled gap/action identification and mKdV spectral Hamiltonians remain open.",
+        "The physical H1 Miura potential now has its literal Fourier coefficient map into L2. The actual L2 Hill operator spectrum and characteristic multiplicities are identified with the original NLS periodic spectrum under squaring. Fixed gap-index and action comparisons remain open."
       ],
       "scalar_clause_status": "proved_exact_complex_Hm_domain",
       "weak_flow_status": "proved_exact_complex_Hm_inputs_for_independent_scalar_Hill_Miura_hierarchy",
@@ -114,14 +115,15 @@
     {
       "label": "Theorem 5",
       "page": 9,
-      "status": "verified_physical_H1_IVP_discriminant_identity",
+      "status": "verified_full_complex_H1_physical_L2_Hill_operator_discriminant_identity",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity",
         "NLS.Articles.MKdVNLSHierarchies.hill_column_spec",
-        "NLS.MKdV.physicalMiuraSolution_unique"
+        "NLS.MKdV.physicalMiuraSolution_unique",
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_operator_discriminant_identity"
       ],
       "quantifiers": "forall original complex period-one H1 input a, forall complex z, including z=0",
-      "physical_identification": "Independent Hill columns have initial conditions (1,0) and (0,1) in position/derivative coordinates; both column and derivative are absolutely continuous; the actual equation -g_second+(u_prime+u_squared)*g=mu*g holds almost everywhere; physical uniqueness is proved."
+      "physical_identification": "Independent Hill columns have initial conditions (1,0) and (0,1) in position/derivative coordinates; both column and derivative are absolutely continuous; the actual equation -g_second+(u_prime+u_squared)*g=mu*g holds almost everywhere; physical uniqueness is proved. The literal Miura coefficients define an analytic H1-to-L2 potential map. The shared L2 Hill monodromy and H2 periodic Hill operator are identified with the original quasi-Hill IVP at all complex energies, including zero."
     },
     {
       "label": "Proposition 6",
@@ -186,6 +188,27 @@
       "quantifiers": "forall original period-one H1 coefficient input a with a_n=conjugate(a_-n), forall complex z with Re z>0 and Im z!=0",
       "limits": [
         "The independent quasi-Hill primitive is constructed from its actual IVP discriminant by source logarithmic integrals. It agrees with the shared scalar Hill primitive for C1 periodic profiles. The full real H1 domain is included; extension to real bands and the entire labeled gap complement remains open."
+      ]
+    },
+    {
+      "label": "Lemma 3",
+      "page": 10,
+      "status": "partial_spectral_set_analytic_multiplicity_and_intrinsic_real_labels",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_spectral_set",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_real_spectrum_nonnegative",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_nonzero",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_zero",
+        "NLS.MKdV.miuraHillLabels_root_iff",
+        "NLS.MKdV.miuraHillLabels_multiplicity",
+        "NLS.MKdV.miuraHillLabels_nonnegative"
+      ],
+      "quantifiers": "All original complex H1 inputs for spectral sets and analytic multiplicities; all conjugate-reflected real H1 inputs for nonnegativity and intrinsic ordered labels.",
+      "limits": [
+        "Every actual H2 Hill eigenvalue condition is equivalent to the original ZS periodic spectral condition at squared frequency, including zero.",
+        "At nonzero frequency the energy characteristic order is the original ZS algebraic multiplicity; at zero the frequency multiplicity is exactly twice the energy order.",
+        "The intrinsic ordered real Hill labels have the exact characteristic zero set and analytic multiplicities and are nonnegative.",
+        "Matching each fixed Hill label with the corresponding canonical NLS endpoint square and the printed geometric-multiplicity comparison remain open. No action-integral comparison is asserted."
       ]
     }
   ],
@@ -267,5 +290,15 @@
     "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
     "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
     "remaining": "real bands, canonical gap labels, spectral action and frequency identifications"
+  },
+  "shared_hill_L2_labels_integration": {
+    "branch": "articles/kdv-estimates",
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "unchanged_source_modules": 41,
+    "actual_potential": "NLS.MKdV.sobolevMiuraUnitPotential_physical",
+    "actual_discriminant": "NLS.MKdV.hillL2Discriminant_miura",
+    "actual_spectrum": "NLS.MKdV.miuraHill_eigenvector_iff_ZS",
+    "actual_labels": "NLS.MKdV.miuraHillLabels",
+    "remaining": "fixed NLS endpoint/gap labels, geometric multiplicity, real-band primitive extension and action/frequency identities"
   }
 }

@@ -346,7 +346,7 @@ outputs; the entire dependency tree was not rebuilt from source. Canonical
 main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
 
 
-Latest milestone: the independent physical Hill root and primitive agree
+Previous milestone: the independent physical Hill root and primitive agree
 with the original NLS functions on the full real H1 coefficient domain at
 nonreal frequencies with Re z>0. This removes the C1 restriction on the
 profile. Both sheets are constructed from the independent quasi-Hill IVP
@@ -368,3 +368,27 @@ aggregate and axiom audits. This validation checked the unchanged prefix,
 repaired an H1 adapter elaboration, then resumed there; both complete
 audits passed. Validation uses pinned cached imports, not a rebuild of the
 entire dependency tree.
+
+
+Latest milestone: the actual H1-to-L2 Miura potential and shared physical
+H2 Hill operator are identified with the original ZS periodic spectrum.
+The discriminant comparison holds on every complex H1 input at every
+complex energy. Multiplicities are preserved away from zero, with exact
+ramification factor two at zero. Real H1 profiles have intrinsic ordered
+nonnegative Hill labels with their exact characteristic multiplicities.
+The 41 checked L2 Hill modules are reused unchanged from
+`articles/kdv-estimates` at `5da8934e019a8a08f314988c311661754b89e925`.
+Fixed endpoint indices, geometric multiplicity and action/frequency
+identifications remain open.
+
+All 156 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The final targeted
+transitive axiom audit passed for 2,025 declarations and generated
+auxiliaries; the combined audit passed for 47,204 NLS declarations. Only
+propext, Classical.choice and Quot.sound are allowed. The public theorem/
+definition inventory contains 1,082 entries (860 theorems, 222 definitions;
+aliases and structure declarations excluded), with 158 SHA256 source/checker
+hashes. The complete run used pinned read-only cached imports; the final
+targeted prefix inventory was expanded and audited again independently.
+The entire dependency tree was not rebuilt from source. Canonical main
+remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.

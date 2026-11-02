@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 1250,
+  "audited_declarations_and_auxiliaries": 2025,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -3329,12 +3329,2112 @@
       "kind": "theorem",
       "name": "hillPrimitive_hasDerivAt",
       "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "freeHillValue",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHillValue_neg",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "reducedHillStrip",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_mul_nat_sub_one_le_abs_sq_sub_sq",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nat_le_abs_sq_sub_sq",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHill_denominator_lower",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHill_denominator_ge_index",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHill_denominator_ne_zero",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "reducedHillSymbol",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "reducedHillResolvent",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reducedHillResolvent_apply",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reducedHillResolvent_right_inverse",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_reducedHillResolvent_apply_le",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "weightedReducedHillResolvent",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weightedReducedHillResolvent_apply",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_weightedReducedHillResolvent_apply_le",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reducedHillResolvent_unique",
+      "file": "NLS/KdV/FreeHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReciprocalHilbertSymbolOfLower",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReciprocalHilbertSymbolOfLower_apply",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillReciprocalHilbertSymbolOfLower_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reducedHillSymbol_memlp_two",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "reducedHillHilbertSymbol",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reducedHillHilbertSymbol_apply",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_reducedHillHilbertSymbol_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillComplementToL1",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillComplementToL1_apply",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillComplementToL1_apply_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillComplementToL1_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillTailPerturbation",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailPerturbation_apply",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillTailPerturbation_apply_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillTailPerturbation_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillTailPerturbation_le",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillTailPerturbation_le_half",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillTailCorrection",
+      "file": "NLS/KdV/HillComplement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillTailInverse",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailInverse_left",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailInverse_right",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillTailInverse_le",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailInverse_unique",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillModes",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModes_apply",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModes_pos",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModes_neg",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillModeCoordinates",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModeCoordinates_apply",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModeCoordinates_modes",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillModePotential",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillEffectivePotential",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReducedOperator",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReconstruct",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillModeCoordinates_reconstruct",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReconstruct_injective",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "convolution_hillReconstruct",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsHillFourierEigenvector",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReconstruct_isEigenvector",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFourierEigenvector_decompose",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFourierEigenvector_potential",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFourierEigenvector_reduced",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFourierEigenvector_reconstruct",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillFourierEigenvector_iff",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_det_eq_zero_iff",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedOperator_zero",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_det_zero_potential",
+      "file": "NLS/KdV/HillReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memlp_sobolev_two_of_hillMoment",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDomainToH1",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDomainToL1",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainToL1_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDomainToL2",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainToL2_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainToL2_injective",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLaplacian",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLaplacian_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillOperator",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillOperator_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDomainAsSummable",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainAsSummable_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainAsSummable_injective",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillOperator_eigen_iff",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFourierEigenvector_memlp_sobolev_two",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillEigenvectorLift",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvectorLift_apply",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomainAsSummable_eigenvectorLift",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_det_eq_zero_iff_domainEigenvector",
+      "file": "NLS/KdV/HillSobolev.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRepresentative",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_coefficient",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_periodic",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_H1",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillFirstDerivative",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstDerivative_apply",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDerivativeRepresentative",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDerivativeRepresentative_H1",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_deriv_ae",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "HasPeriodicHillH2",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_H2",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_injective",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasPeriodicHillH2_iff_domain",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_distribution_first_derivative",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_distribution_second_derivative",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalHillOperator",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillOperator_pointwise",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Synthesis_hillOperator",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRepresentative_toLp",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillOperator_eigen_iff",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillOperator_eigen_ae",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_det_eq_zero_iff_physicalEigenvector",
+      "file": "NLS/KdV/HillPhysical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillFirstOrderPotential",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_operator_fst_apply",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_operator_snd_apply",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_eigen_equations",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_scalar_equation",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillEigenvector_of_firstOrder",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillFirstOrderLift",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderLift_fst_apply",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderLift_snd_apply",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderLift_injective",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderLift_eigen",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_eigenvector_iff_firstOrder",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_eigenvector_iff_firstOrder_spectrum",
+      "file": "NLS/KdV/HillFirstOrderReduction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "openHillStrip",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_openHillStrip",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "openHillStrip_subset",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReciprocal",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReciprocal_eq_symbol",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReciprocal_apply",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillReciprocal_le",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillReciprocal",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillComplementFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillComplementFamily_eq",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillComplementFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillTailFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailFamily_eq",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillTailFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isUnit_one_sub_hillTailFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillInverseFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillInverseFamily_eq",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillInverseFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillEffectiveFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReducedFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedFamily_eq",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillReducedFamily",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillReducedDeterminant",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillReducedDeterminant",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_eq",
+      "file": "NLS/KdV/HillAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillTailInverse_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_convolution_single",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_modulation_cancel",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_coefficient_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCorrectedMode",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCorrectedMode_pos",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCorrectedMode_neg",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillCorrectedMode_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCorrectedMode_coefficient_error",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDiagonal",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillOppositeDiagonal",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillUpperCoupling",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLowerCoupling",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDiagonal_error_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDiagonal_le_of_mean_zero",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillUpperCoupling_error_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowerCoupling_error_le",
+      "file": "NLS/KdV/HillWeightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillBilinear",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "summable_hillBilinear",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillBilinear_add_left",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillBilinear_single",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillBilinear_convolution_symmetric",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillResonantResidual",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillResonantResidual_apply",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReconstruct_residual_equation",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillBilinear_residual",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_bilinearSymmetry",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDiagonal_eq_opposite",
+      "file": "NLS/KdV/HillBilinearSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_weightedReducedHillResolvent_le",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillComplementToL1_sub",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillComplementToL1_sub_le",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillTailPerturbation_sub_le",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillTailInverse_sub",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "shiftedNorm_hillCorrectedMode_sub_le",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDiagonal_sub_le",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDiagonal_sub_le_quarter",
+      "file": "NLS/KdV/HillSpectralLipschitz.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "det_prod_formula",
+      "file": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "determinant_shift_bound",
+      "file": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEffectivePotential_decompose",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedOperator_apply",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_factorization",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillUpperCoupling_le",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowerCoupling_le",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_root_shift_bound",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_roots_weighted_separation",
+      "file": "NLS/KdV/HillRootSeparation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "Weight.pullback",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "Weight.pullback_apply",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "def",
+      "name": "insertIsometry",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "insertIsometry_image",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "insertIsometry_outside",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_insertIsometry",
+      "file": "NLS/SequenceSpaces/WeightedInsertion.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SpectralWeight.doubleIndex",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SpectralWeight.doubleIndex_apply",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPeriodOnePotential",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOnePotential_even",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOnePotential_odd",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillPeriodOnePotential",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "toCoeff_hillPeriodOnePotential",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOnePotential_zero",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOnePotential_reality",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOnePotential_physical_coefficients",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOneSobolevWeight",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOne_weighted_coefficient_sq",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOne_sobolev_norm_sq",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOne_roots_weighted_separation",
+      "file": "NLS/KdV/HillPeriodOnePotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderPotential_mem_even",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2FrequencyDiscriminant",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2FrequencyDiscriminant_joint",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_eigenvector_iff_l2FrequencyDiscriminant",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_zero_iff_l2FrequencyDiscriminant",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDiscriminant_spectral_condition_of_sq_eq",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOne_eigenvector_iff_l2FrequencyDiscriminant",
+      "file": "NLS/KdV/HillL2SpectralCriterion.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillUnitPotentialCurve",
+      "file": "NLS/KdV/HillClassicalIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_eq_classicalFlow",
+      "file": "NLS/KdV/HillClassicalIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_comp_add_right",
+      "file": "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPhysicalState",
+      "file": "NLS/KdV/HillFullPeriod.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillSecondPotentialCurve",
+      "file": "NLS/KdV/HillFullPeriod.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_secondFlow",
+      "file": "NLS/KdV/HillFullPeriod.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPhysicalState_two",
+      "file": "NLS/KdV/HillFullPeriod.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_fullPeriod",
+      "file": "NLS/KdV/HillFullPeriod.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "solution_add",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "solution_zero_initial",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_add",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_zero_initial",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillFlow_multiplier_iff",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_two_iff_flow",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_neg_two_iff_flow",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_eq_zero_iff_flow",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_zero_of_double_fixed",
+      "file": "NLS/KdV/ClassicalHillMultipliers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_initial_ne_zero",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_discriminant_zero",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillContinuousCoefficients",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillContinuousCoefficients_apply",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2Synthesis_hillContinuousCoefficients",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_zero_implies_classicalDiscriminant_zero",
+      "file": "NLS/KdV/HillDiscriminantNecessity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_continuous_compatibility",
+      "file": "NLS/KdV/HillDiscriminantComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDiscriminant_eq_classical",
+      "file": "NLS/KdV/HillDiscriminantComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillContinuousCoefficients_mem_even",
+      "file": "NLS/KdV/HillDiscriminantComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_iff_classicalDiscriminant",
+      "file": "NLS/KdV/HillDiscriminantComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complex_sqrt_sq",
+      "file": "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_entire_even_square_descent",
+      "file": "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillL2FrequencyDiscriminant_joint",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDiscriminant_even",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDiscriminant_eq_of_sq_eq",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2Discriminant",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_eq_of_sq",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_sq",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2Discriminant_joint",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2Discriminant",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_eq_classical",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_eigenvector_iff_l2Discriminant",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_zero_iff_l2Discriminant",
+      "file": "NLS/KdV/HillL2EnergyDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillForgetWeight",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_apply",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillForgetWeight_le",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "toCoeff_hillForgetWeight",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_convolution",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_complement",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_tail",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_tailInverse",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_modes",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_modePotential",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillForgetWeight_effectivePotential",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedOperator_weight_independent",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_weight_independent",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_weighted_zero_iff_l2Discriminant",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_weighted_hillL2Discriminant_joint",
+      "file": "NLS/KdV/HillWeightIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillModes_one_le",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillModeCoordinates_one_le",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_hillEffectiveCorrection_one_le",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_kernel_localization",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_zero_localization",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalHillEigenvector_localization",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillReducedDeterminant_spectral",
+      "file": "NLS/KdV/HillLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_free_error_le",
+      "file": "NLS/KdV/HillZeroCount.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillClosedBall_subset_openStrip",
+      "file": "NLS/KdV/HillZeroCount.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_two_zeros",
+      "file": "NLS/KdV/HillZeroCount.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReducedDeterminant_strip_two_zeros",
+      "file": "NLS/KdV/HillZeroCount.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isLocallyConstant_analyticZeroCount",
+      "file": "NLS/ComplexAnalysis/ZeroCountHomotopy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticZeroCount_eq_of_homotopy",
+      "file": "NLS/ComplexAnalysis/ZeroCountHomotopy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_eq_of_two_zero_counts",
+      "file": "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2Radicand",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2Radicand_joint",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2Radicand",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_zero",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_zero",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_free_order",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_free_two_zeros",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_zero_localization",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_two_zeros",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_ne_zero_on_sphere",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_strip_two_zeros",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_order_eq_l2Radicand",
+      "file": "NLS/KdV/HillCharacteristicZeros.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHillValue_natAbs",
+      "file": "NLS/KdV/HillFreeSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "strictMono_freeHillValue",
+      "file": "NLS/KdV/HillFreeSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_free_zero_iff",
+      "file": "NLS/KdV/HillFreeSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_free_order_zero",
+      "file": "NLS/KdV/HillFreeSpectrum.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsRealHillPotential",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "IsRealHillPotential.smul_real",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isRealHillPotential_of_physical",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomain_pairing_conj",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomain_pairing_self",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDomain_pairing_self_re_pos",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLaplacian_pairing_symmetric",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillOperator_pairing_symmetric",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillOperator_quadratic_im_zero",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvalue_im_zero",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvectors_orthogonal",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvector_no_associatedVector",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_root_im_zero",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillReduced_real_root_im_zero",
+      "file": "NLS/KdV/HillRealSpectrum.lean"
+    },
+    {
+      "kind": "def",
+      "name": "wideHillStrip",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHill_denominator_lower_wide",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvector_localization_of_denominator_lower",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvector_localization_wide",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_wideHillStrip_of_ge",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_wideHillStrip_of_ge_lower_edge",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvalue_real_high_cover",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_real_high_cover",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillEigenvalue_re_lower_bound",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_re_lower_bound",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_high_index_unique",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_real_high_index",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_ne_zero_on_central_separator",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_real_central_or_high",
+      "file": "NLS/KdV/HillWideLocalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ofReal_mem_realDiameter_closedBall_iff",
+      "file": "NLS/ComplexAnalysis/RealDiameterDisc.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ofReal_mem_realDiameter_sphere_iff",
+      "file": "NLS/ComplexAnalysis/RealDiameterDisc.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ne_zero_on_realDiameter_sphere",
+      "file": "NLS/ComplexAnalysis/RealDiameterDisc.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCentralSeparator",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCentralCenter",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCentralRadius",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCentralDisc",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHillValue_lt_centralSeparator",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCentralSeparator_pos",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCentralRadius_pos",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ofReal_mem_hillCentralDisc_iff",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeHillValue_mem_hillCentralDisc_iff",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_free_central_count",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_ne_zero_on_central_sphere",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_central_count",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_central_interval_count",
+      "file": "NLS/KdV/HillCentralCounting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillCentralRootSupport",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRealCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "count_hillCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillCentralRoots_imp",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "card_hillRealCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_ofReal_hillRealCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "count_hillRealCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillRealCentralRoots_iff",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_ordered_hillCentralRoots",
+      "file": "NLS/KdV/HillCentralRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillRealHighGapPair",
+      "file": "NLS/KdV/HillRealGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealHighGapPair.endpoints_unique",
+      "file": "NLS/KdV/HillRealGapPairs.lean"
+    },
+    {
+      "kind": "def",
+      "name": "appendPairedTail",
+      "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendPairedTail_prefix",
+      "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendPairedTail_even",
+      "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "appendPairedTail_odd",
+      "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monotone_appendPairedTail",
+      "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealHighGapPair.localization",
+      "file": "NLS/KdV/HillGlobalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealHighGapPair.above_centralSeparator",
+      "file": "NLS/KdV/HillGlobalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealHighGapPair.separated",
+      "file": "NLS/KdV/HillGlobalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillRealCharacteristicLabels",
+      "file": "NLS/KdV/HillGlobalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillRealCharacteristicLabeling",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cutoff_eight",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "root",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "high_slot",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tail_above_separator",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "occurrence_mem_pair",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finite_support_and_multiplicity",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finite_fiber",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tail_agrees",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unique",
+      "file": "NLS/KdV/HillRealLabelingUniqueness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRealLabelCutoff",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabelCutoff_ge_two",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabelCutoff_bound",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRealLabels",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_spec",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_congr",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_spec_at",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monotone_hillRealLabels",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_root_iff",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_global_multiplicity",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_high_pair",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLowestEnergy",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowestEnergy_root",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowestEnergy_le_root",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowestEnergy_mem_centralInterval",
+      "file": "NLS/KdV/HillCanonicalRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_add_of_intervalIntegrable",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMiuraUnitPotential",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraUnitPotential_apply",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevMiuraUnitPotential",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraUnitPotential_physical",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMiuraHillPotential",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevMiuraHillPotential",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraHillPotential_even",
+      "file": "NLS/MKdV/SobolevMiuraPotential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_miura_smooth",
+      "file": "NLS/MKdV/MiuraL2HillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_miura",
+      "file": "NLS/MKdV/MiuraL2HillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMiuraWeightedPotential",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "toCoeff_sobolevMiuraWeightedPotential",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_miura_eq_canonical",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHill_eigenvector_iff_ZS",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_miuraHillRadicand_sq",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_miuraHillRadicand_energy",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRadicand_zero_multiplicity",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRadicand_root_nonnegative",
+      "file": "NLS/MKdV/MiuraHillSpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraHillPotential_real",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillLabels",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monotone_miuraHillLabels",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_root_iff",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_nonnegative",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_multiplicity",
+      "file": "NLS/MKdV/MiuraHillRealLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem5_operator_discriminant_identity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_spectral_set",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_real_spectrum_nonnegative",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_multiplicity_nonzero",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_multiplicity_zero",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
     }
   ],
-  "public_declaration_count": 662,
-  "theorem_count": 514,
-  "definition_count": 148,
-  "full_build": "All 110 article/shared modules and NLS aggregate compiled using pinned cached imports, with the unchanged prefix checked in the initial run and the repaired suffix checked by --resume-from. Complete combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1082,
+  "theorem_count": 860,
+  "definition_count": 222,
+  "full_build": "All 156 article/shared modules and NLS aggregate compiled using pinned cached imports; complete combined aggregate/article audit passed under the shared lock. The final expanded targeted prefix audit also passed independently. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -3349,7 +5449,12 @@
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
     "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c",
     "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean": "ec30c5cfe97ddc06c06a82da4483526da98aab3447ff3b9fd028f6ba9ffd8958",
+    "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean": "ddc6202e9be0a77b9235dbc7858edb4c4d0a1a8fc3da0d5aa4ebe7e36bb27271",
+    "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
+    "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
+    "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
+    "NLS/ComplexAnalysis/ZeroCountHomotopy.lean": "876ae2e371d9f1a4bbd204778774942405991cac35e70d199197fbf42407fe0e",
     "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f",
     "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
     "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
@@ -3373,8 +5478,11 @@
     "NLS/Fourier/PeriodOneDistributionDerivative.lean": "63388da28ec4f50b25fd5c3a8343e576d9ecf5977ca05688c004b82ee8d1a7e8",
     "NLS/Fourier/PeriodOneSobolevDistribution.lean": "a5c691f51c3f7b793e7ff627a1ea38f0c6f677b5f0bc1d44573fce68d42695c3",
     "NLS/Fourier/PeriodicVariationalUniqueness.lean": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d",
+    "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean": "32da22d51d4c04fe33e03bb9b892d5c2ab800bcc5dead91ab0917763f419fe67",
     "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
+    "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean": "bdcf939efdbed48af7a0a2e3da786c511ccc81cfdd1bb930e6185225c05f0b45",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
+    "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/FunctionalAnalysis/UnitIntervalMean.lean": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6",
     "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
     "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
@@ -3384,6 +5492,7 @@
     "NLS/KdV/ClassicalHillConjugation.lean": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
     "NLS/KdV/ClassicalHillGreen.lean": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+    "NLS/KdV/ClassicalHillMultipliers.lean": "a3605c650ee4c1390cd54a297ad944a3aa50b748ce80a2bc05747258ab28ec68",
     "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
     "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
     "NLS/KdV/ClassicalHillReality.lean": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f",
@@ -3393,7 +5502,38 @@
     "NLS/KdV/ClassicalSpectralEmbedding.lean": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
     "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
     "NLS/KdV/ConstantUpperSpectralBridge.lean": "111451b4d47126d2007fc00591b0f564ccfbb3f4a5bc272e3d823e7be57f0b37",
+    "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
+    "NLS/KdV/HillAnalytic.lean": "597b1af3e1c6ed8a970121c493235cbd5c621f033ebb7bab86592f3ac67fecbc",
+    "NLS/KdV/HillBilinearSymmetry.lean": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff",
+    "NLS/KdV/HillCanonicalRealLabels.lean": "de7f7dd148d4043a2559d0005a791aaf7cf0c2b65f6ee8b98695a5b5e7ccd230",
+    "NLS/KdV/HillCentralCounting.lean": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+    "NLS/KdV/HillCentralRoots.lean": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+    "NLS/KdV/HillCharacteristicZeros.lean": "1331838aafcea2eeaeb93e3fff6de558054ea26a28677a7d1c676c875542bb5a",
+    "NLS/KdV/HillClassicalIdentification.lean": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec",
+    "NLS/KdV/HillComplement.lean": "977b565954ef98d7eff06760f6efdf7a70db3d5e615b97d9514172f99d998ff5",
+    "NLS/KdV/HillDiscriminantComparison.lean": "e6ee8a6af0a2a077889065eabdabcc259ceea43de99f4ccdbdde23a1c452d986",
+    "NLS/KdV/HillDiscriminantNecessity.lean": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
+    "NLS/KdV/HillFirstOrderReduction.lean": "7826dc5c97375d87d56b0b4658116b1622584287199b04d730ccdb237971270b",
+    "NLS/KdV/HillFreeSpectrum.lean": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+    "NLS/KdV/HillFullPeriod.lean": "651d93e8060125c8b02f685cd61738e74f4f29263b150c9a69d77d9d531cfc11",
+    "NLS/KdV/HillGlobalRealLabels.lean": "4ead52510c68e8128942abee2d28507ca724bbfab50d10f75e4ff20357774939",
+    "NLS/KdV/HillL2EnergyDiscriminant.lean": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4",
+    "NLS/KdV/HillL2SpectralCriterion.lean": "0d7b94750edd667259d97fabeb18160b2809fdd74c3aff9eaa561dd9069684cd",
+    "NLS/KdV/HillLocalization.lean": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9",
     "NLS/KdV/HillNLSPrimitivePathComparison.lean": "d4f3956a7ea0d1c98299ceae7c11891abf5672976d4ab3947ea93b08feb25d66",
+    "NLS/KdV/HillPeriodOnePotential.lean": "f806822d2c04863914268753ed469438257e3c7583064c99cd85ac5589bd7ec8",
+    "NLS/KdV/HillPhysical.lean": "5634227fb1ed59ef6c4827408fdd3878586333e2e82dcf489275efd429650d5c",
+    "NLS/KdV/HillRealGapPairs.lean": "49bf5521c9310f09dad54e20258ef386ba8703ecd9d7fe9dd47634d38b2787bc",
+    "NLS/KdV/HillRealLabelingUniqueness.lean": "80523cb580e94c0c1afd5c9a6255853e4009c34dc5d6123e393f4e57beec40bc",
+    "NLS/KdV/HillRealSpectrum.lean": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+    "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
+    "NLS/KdV/HillRootSeparation.lean": "8e13327f8ef25ee2f7329610789523cf7e26d1a3031a54e53e2e90281f0e3911",
+    "NLS/KdV/HillSobolev.lean": "962ea2adfbac0dd2e833f5fb591cd1a6199674d241c3b4c97b85206f2425198c",
+    "NLS/KdV/HillSpectralLipschitz.lean": "3deedd7aaace983a156285c4e5d19243f32f767722bf792f619e586b6bdc4248",
+    "NLS/KdV/HillWeightIndependence.lean": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
+    "NLS/KdV/HillWeightedCoefficients.lean": "a9d6c10608dbea6e59c59d65333da9f264ed00288dbe6d762f56f87e687aafa5",
+    "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+    "NLS/KdV/HillZeroCount.lean": "da4b4839b24a194cacfd83e8d9fc6b9aef14c690ddccad03f006ff4e61ff1929",
     "NLS/MKdV/ClassicalEnergyVariation.lean": "1c8340633e26be0c870faaad5cffd32dcbc2fc4ca62a006dff4bebd4bbf77d2d",
     "NLS/MKdV/ClassicalFourthFlowRestriction.lean": "52e10d66dd8d0e009feda41ff23f68d0bd3dfe30b353fa8a5877e69475e01558",
     "NLS/MKdV/HierarchyGradientRecurrence.lean": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80",
@@ -3404,8 +5544,11 @@
     "NLS/MKdV/MiuraHierarchyHamiltonians.lean": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
     "NLS/MKdV/MiuraHillHamiltonianTrace.lean": "4887fc79a1153bb3fe9a463d141037e897a309d4d73ade6d9cdc00622814369a",
     "NLS/MKdV/MiuraHillPrimitiveComparison.lean": "63fbd88e5268b7b53dbb486887d463e3cff336e6c581db157e78f3d5aa56f39e",
+    "NLS/MKdV/MiuraHillRealLabels.lean": "241cf40ecd5242e56e931ff1e5aa7977af8be4b829fc3fe3941ed569fc358a59",
     "NLS/MKdV/MiuraHillRiccatiRemainder.lean": "f31f58259f585d8ce8c58c86ea88a6038a51f7d1da340e0101692fa8b6e93cca",
     "NLS/MKdV/MiuraHillSpectralBridge.lean": "4d673ea7fd0d58bb4b77608c82e2387b259506720cbfb59b1cde1e02a669da71",
+    "NLS/MKdV/MiuraHillSpectralIdentification.lean": "f94d2602e89aed1f6506e0723e4fb92e90eb30cf9b23099b144934dc6aa63bfc",
+    "NLS/MKdV/MiuraL2HillDiscriminant.lean": "06e9de1a0ab42755acb5de2ef5dc878ceea45ef1a24aea5223660a8f56eb12d9",
     "NLS/MKdV/NativeMiuraHillGradient.lean": "794e236aa305dacc823cd7c45b73ec2489da46346b4c7c6207dc240ed0ee90af",
     "NLS/MKdV/NativeMiuraHillHamiltonian.lean": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c",
     "NLS/MKdV/PhysicalHillDiscriminant.lean": "297660f9d77db5e24a4ab61cc6ed2b7e890c4f0ddd3ccb8bb554fac302aee9aa",
@@ -3419,8 +5562,11 @@
     "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
     "NLS/MKdV/SobolevMiuraHillFlowRestriction.lean": "21dda2d38b28e0979b669046de531276ce0f31491be942a3637d8abe3c306e83",
     "NLS/MKdV/SobolevMiuraHillHamiltonian.lean": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd",
+    "NLS/MKdV/SobolevMiuraPotential.lean": "c27e1e6d766f413d1957fa2edd74d5e5fd8e1eb25a43ed9c9770c5207272f938",
     "NLS/MKdV/SobolevMiuraPrimitive.lean": "c2ab4e9b959535776a6b58c01f2443df9a75feafcc91c6d16a71136d83200c11",
     "NLS/MKdV/SobolevQuasiHill.lean": "6233ab01fc3fd86933062f2f374db91e8464fcc25c6fd0a6a6e9655b208905a3",
+    "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+    "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
@@ -3448,11 +5594,11 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e1b4db86046fc3f92d89cacb1e2ae5833388482be3d950c67d8cea130dec890a",
-    "scripts/check_mkdv_nls.py": "ad95b7ad35963ba3da975d500d89d5bad3888fce205dab727e8b0bf4a4aabfed"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "fe217ab934fe2e71e2cf768c5edbf0a60b8acf5487514c9414f94353be883313",
+    "scripts/check_mkdv_nls.py": "150b0f5c3d3485b245c9b3c75604738b312fb9ef5c8b9d2e6b5d2338740ed1ca"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 110,
+  "focused_module_count": 156,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -3531,12 +5677,18 @@
       "audit_count": 1250,
       "combined_NLS_audit_count": 46434,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "literal analytic H1-to-L2 Miura potential; actual L2 Hill discriminant and H2 operator spectrum comparison; analytic multiplicities including zero ramification; intrinsic nonnegative ordered real Hill labels",
+      "audit_count": 2025,
+      "combined_NLS_audit_count": 47204,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 46434,
+  "combined_audited_NLS_declarations": 47204,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -3544,5 +5696,11 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "Initial full run checked the unchanged prefix, then the H1 adapter elaboration was fixed and validation resumed there with --full-audit --resume-from NLS/MKdV/SobolevMiuraPrimitive.lean. The aggregate and both complete axiom audits include all 110 modules."
+  "last_run_notes": "Full topologically ordered 156-module run, aggregate compilation and combined audit passed. The targeted audit was then expanded to include the double-index weight adapter explicitly and rerun successfully for 2025 declarations/auxiliaries; no mathematical source changed after the full run.",
+  "shared_Hill_L2_source": {
+    "branch": "articles/kdv-estimates",
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "module_count": 41,
+    "all_copied_sources_identical": true
+  }
 }
