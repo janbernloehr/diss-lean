@@ -3,6 +3,7 @@ import NLS.Dynamics.FixedTimePhaseObstruction
 import NLS.KdV.ClassicalUniformCriticalBasis
 import NLS.KdV.ClassicalPeriodIntegrationByParts
 import NLS.KdV.ClassicalPeriodInverse
+import NLS.KdV.ClassicalNormalizedDifferentials
 import NLS.KdV.ClassicalUniformPeriodBounds
 import NLS.KdV.ClassicalUniformCriticalLocalization
 import NLS.KdV.ClassicalCriticalTailAnalytic
@@ -71,6 +72,14 @@ run_cmd do
     `NLS.KdV.ClassicalAllContourPeriodBounds,
     `NLS.KdV.ClassicalPeriodOperator,
     `NLS.KdV.ClassicalPeriodInverse,
+    `NLS.SequenceSpaces.AnalyticReciprocalTail,
+    `NLS.SequenceSpaces.LocallyBoundedRealization,
+    `NLS.SequenceSpaces.FiniteHeadTailBound,
+    `NLS.SequenceSpaces.ConjugateDuality,
+    `NLS.ComplexAnalysis.BilinearCircleIntegral,
+    `NLS.KdV.ClassicalNumeratorHilbert,
+    `NLS.KdV.ClassicalHilbertPeriod,
+    `NLS.KdV.ClassicalNormalizedDifferentials,
     `NLS.KdV.ClassicalHillFlow,
     `NLS.KdV.ClassicalHillSpectrum,
     `NLS.KdV.ClassicalSourcePrimitive,

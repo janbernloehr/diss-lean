@@ -244,3 +244,14 @@ selected critical/numerator data. See
 [ANALYTIC_PERIOD_INVERSE.md](ANALYTIC_PERIOD_INVERSE.md). The convergent
 entire normalized family, canonical products, rough/global compatibility
 and all main-theorem rows remain open.
+
+The infinite normalized entire family is now constructed near zero in
+the complex continuous-potential norm. The actual numerator basis has a
+jointly analytic ℓ² realization; inverse-column pairings converge
+absolutely over positive indices and give entire numerators with the
+exact free slice. Every literal period on the constructed squared
+frequency contours equals delta_nk, including the mapped energy-path
+formula with exact 1/(2*pi). See
+[INFINITE_NORMALIZED_DIFFERENTIALS.md](INFINITE_NORMALIZED_DIFFERENTIALS.md).
+This proves the local normalization step underlying (53); canonical
+products (52), global/rough compatibility and all main rows remain open.

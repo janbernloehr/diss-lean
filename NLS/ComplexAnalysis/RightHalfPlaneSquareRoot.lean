@@ -4,6 +4,11 @@ import NLS.ComplexAnalysis.PrescribedAnalyticSquareRoot
 noncomputable section
 namespace NLS.ComplexAnalysis
 
+theorem sq_sqrt (z : ℂ) : (Complex.sqrt z)^2 = z := by
+  have h := Complex.cpow_nat_inv_pow z (Nat.succ_ne_zero 1)
+  norm_num at h
+  simpa only [Complex.sqrt,one_div] using h
+
 /-- Squaring and taking the principal root cancel in the open right
 half-plane. This fixes the sign in frequency-to-energy contour pullbacks. -/
 theorem sqrt_sq_of_re_pos (z : ℂ) (hz : 0 < z.re) : Complex.sqrt (z^2) = z := by

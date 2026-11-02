@@ -18,6 +18,11 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/BoundedCoordinateAnalytic
   NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/SequenceSpaces/ConvolutionDominatedMatrix
+  NLS/SequenceSpaces/LocallyBoundedRealization
+  NLS/SequenceSpaces/FiniteHeadTailBound
+  NLS/SequenceSpaces/AnalyticReciprocalTail
+  NLS/SequenceSpaces/ConjugateDuality
+  NLS/ComplexAnalysis/BilinearCircleIntegral
   NLS/SequenceSpaces/ConvolutionMatrixAnalytic
   NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/ParametricDividedDifference
@@ -70,6 +75,9 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalAllContourPeriodBounds
   NLS/KdV/ClassicalPeriodOperator
   NLS/KdV/ClassicalPeriodInverse
+  NLS/KdV/ClassicalNumeratorHilbert
+  NLS/KdV/ClassicalHilbertPeriod
+  NLS/KdV/ClassicalNormalizedDifferentials
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

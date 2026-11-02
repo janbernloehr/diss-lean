@@ -343,3 +343,22 @@ are the next obligation. Canonical products, rough/global compatibility
 and the full main-theorem inventory remain open. The strict 70-module
 check and complete transitive audit are recorded in `VALIDATION.md` and
 `source.json`.
+
+## Actual infinite normalized entire-family milestone
+
+The actual numerator basis is now a jointly analytic ℓ²-valued entire
+map, with membership proved by quadratic critical growth and locally
+uniform reciprocal numerator tails. Pairing it with the actual inverse
+columns constructs absolutely convergent positive-index normalized sums.
+
+The literal Bochner contour functional is identified with the actual
+period-operator row on every coefficient vector. The inverse identity
+therefore proves every positive normalization period, both in frequency
+coordinates and on the mapped energy paths, with exact source constants.
+The entire free slice and positive support of inverse columns are proved.
+See [INFINITE_NORMALIZED_DIFFERENTIALS.md](INFINITE_NORMALIZED_DIFFERENTIALS.md).
+
+This constructs the local continuous-potential infinite family. Canonical
+products, global/rough compatibility and all main-theorem rows remain
+open. The strict 78-module build and complete transitive audit are recorded
+in `VALIDATION.md` and `source.json`.

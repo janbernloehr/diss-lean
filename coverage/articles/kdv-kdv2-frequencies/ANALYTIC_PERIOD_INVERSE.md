@@ -114,3 +114,9 @@ Global and rough spectral compatibility, sharp moment sums, physical
 Hamiltonian-frequency identities, action descent, weighted asymptotics,
 compact derivatives and actual Birkhoff/PDE flow identification also
 remain essential. No main theorem is marked verified by this milestone.
+
+The subsequent [infinite normalized-family milestone](INFINITE_NORMALIZED_DIFFERENTIALS.md)
+constructs the joint Hilbert numerator basis and convergent entire
+differentials, with every actual normalization period and positive inverse
+column support. Canonical products, global/rough compatibility and the
+main theorems remain open.

@@ -679,7 +679,7 @@
       ],
       "scope": "Principal energy square root cancels squaring in the open right half-plane, fixing the pullback sign",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "6a1581f7d85e12cbbbf3770e6267b5da52bf8ce915f819e1f21f7c3cff97bd94"
+      "sha256": "5e1387c5b187eb84488bd889ebb957526fc906da5e1f4c6f5aea5746ad847d0f"
     },
     {
       "path": "NLS/ComplexAnalysis/RationalCircleIntegrationByParts.lean",
@@ -1057,10 +1057,114 @@
       "scope": "Existing Banach analyticity theorem for locally bounded sequence maps with analytic scalar coordinates",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticReciprocalTail.lean",
+      "source_labels": [
+        "Infinite entire-family Hilbert realization dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Locally uniform reciprocal tails and analytic finite heads construct actual l2 membership, exact coordinates and joint Banach analyticity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "437db1aea2735f6ba4043c7e36c74c800041fd6f8d91c43c4ce8cbdd931cf04e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNumeratorHilbert.lean",
+      "source_labels": [
+        "Equation (53) actual entire Hilbert numerator basis"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual quadratic critical energy growth and reciprocal numerator tails construct the jointly analytic l2-valued entire basis on complex energy times the selected potential neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e6d133df2b2ffbcafe5a26f7aec9f98a7c0132552faae636350a389aa30e74fd"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHilbertPeriod.lean",
+      "source_labels": [
+        "Equation (53) actual infinite contour interchange"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed Bochner l2 contour functional equals the actual period-operator row on every coefficient vector, proved by basis equality",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "02335a53fafd8aee927eca4a110e34819e01caaca5854f3ee5fad91f45a85e9c"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedDifferentials.lean",
+      "source_labels": [
+        "Equation (53) local actual infinite normalized entire family"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed absolutely convergent positive-index inverse-column pairings, joint analyticity and entire energy slices, exact free functions, positive inverse-column support and every literal frequency/energy-contour normalization; canonical products and rough/global version remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a97a696b1599dbf24744fc5674e471031fb07339b0fc90739135b94e99df0996"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocallyBoundedRealization.lean",
+      "source_labels": [
+        "Analytic actual Hilbert realization dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing total sequence realization and local bounded coordinate analyticity, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f57395af182636a2841237f97a3e0501cd5abbc9a7ed89fa646f4b441213456"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteHeadTailBound.lean",
+      "source_labels": [
+        "Actual reciprocal Hilbert tail dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing genuine membership and norm bound from finite heads and coefficient tail majorants",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e4280707bf1078a770e002f81be557df1e0c6de121862f28e7f823724a1d83bc"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ConjugateDuality.lean",
+      "source_labels": [
+        "Convergent normalized coefficient pairing dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing complex bilinear Holder duality, absolute summability and norm bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0dc486257891804ccb604bba1acbb80332621455b3a53f28a78dd3c1f2c1ad85"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BilinearCircleIntegral.lean",
+      "source_labels": [
+        "Literal normalized contour functional dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing continuous linear and bilinear map interchange with actual Bochner circle integrals",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ec97ea1b6afee053adb4b46206b1de87dceca1f332c50a193a13c57afd83c905"
     }
   ],
   "dependencies_needed": [
-    "convergent entire normalized differentials from the actual analytic inverse columns, l2-valued numerator analyticity, positive-subspace compatibility and contour interchange, then canonical products; the full bounded operator and analytic two-sided inverse are now constructed",
+    "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -1088,15 +1192,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 869,
-    "total_declarations_audited": 12291,
+    "candidate_declarations_audited": 949,
+    "total_declarations_audited": 12358,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 70
+    "selected_modules": 78
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1160,5 +1264,6 @@
   "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md",
   "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md",
   "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md",
-  "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md"
+  "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md",
+  "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md"
 }

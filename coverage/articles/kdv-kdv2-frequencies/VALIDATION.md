@@ -41,8 +41,11 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/SequenceSpaces/ConvolutionDominatedMatrix.lean`, `ConvolutionMatrixAnalytic.lean`, `ReciprocalSquareKernel.lean` | Constructed bounded matrix actions, bounded linear matrix-symbol assembly, genuine operator-norm analyticity and a nonvanishing summable reciprocal-square majorant. |
 | `NLS/KdV/ClassicalAllContourPeriods.lean`, `ClassicalAllContourPeriodBounds.lean`, `ClassicalPeriodOperator.lean`, `ClassicalPeriodInverse.lean` | One all-mode actual spectral family, full matrix bounds including the diagonal, the constructed analytic period operator and its analytic two-sided inverse of norm at most two near zero. |
 | Six newly selected existing sequence modules | Multipliers, convolution, punctured reciprocal lattice, Holder products, operator basis equality and bounded-coordinate Banach analyticity; all directly recompiled before their consumers. |
+| `NLS/SequenceSpaces/AnalyticReciprocalTail.lean`, `NLS/KdV/ClassicalNumeratorHilbert.lean` | Actual local reciprocal numerator tails, genuine l2 membership and a jointly Banach analytic entire numerator basis. |
+| `NLS/KdV/ClassicalHilbertPeriod.lean`, `ClassicalNormalizedDifferentials.lean` | Actual Bochner period/row equality, absolutely convergent positive-index normalized entire functions, exact free slice and every normalization period on both frequency circles and mapped energy paths. |
+| Four newly selected existing sequence/integral modules and the square-root identity | Local realizations, finite head/tail membership, bilinear Holder duality, Bochner circle interchange, and the general public principal-root square identity are directly recompiled. |
 
-All seventy selected modules compile with pinned **Lean 4.33.1**, commit
+All seventy-eight selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -62,6 +65,11 @@ PASS NLS/SequenceSpaces/OperatorBasisExt
 PASS NLS/SequenceSpaces/BoundedCoordinateAnalytic
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
 PASS NLS/SequenceSpaces/ConvolutionDominatedMatrix
+PASS NLS/SequenceSpaces/LocallyBoundedRealization
+PASS NLS/SequenceSpaces/FiniteHeadTailBound
+PASS NLS/SequenceSpaces/AnalyticReciprocalTail
+PASS NLS/SequenceSpaces/ConjugateDuality
+PASS NLS/ComplexAnalysis/BilinearCircleIntegral
 PASS NLS/SequenceSpaces/ConvolutionMatrixAnalytic
 PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
@@ -114,6 +122,9 @@ PASS NLS/KdV/ClassicalAllContourPeriods
 PASS NLS/KdV/ClassicalAllContourPeriodBounds
 PASS NLS/KdV/ClassicalPeriodOperator
 PASS NLS/KdV/ClassicalPeriodInverse
+PASS NLS/KdV/ClassicalNumeratorHilbert
+PASS NLS/KdV/ClassicalHilbertPeriod
+PASS NLS/KdV/ClassicalNormalizedDifferentials
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -122,11 +133,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 869 candidate declarations; 12291 declarations total.
+Axiom audit passed: 949 candidate declarations; 12358 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the seventy selected modules (including generated and private declarations)
+the seventy-eight selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -385,3 +396,22 @@ warnings, default heartbeats, private outputs and read-only canonical imports
 are retained. No warnings are waived, linters disabled or axioms added.
 Convergent normalized entire differentials, canonical products and all main
 theorems remain open. No full dissertation build is claimed.
+
+
+The actual infinite normalized entire-family milestone is detailed in
+`INFINITE_NORMALIZED_DIFFERENTIALS.md`. It proves the actual Hilbert basis,
+convergence, joint analyticity and every literal normalization period
+near zero in the continuous-potential norm.
+
+Final strict run: all 78 selected modules pass; the complete transitive audit
+passes for 949 selected declarations and 12358 declarations including
+all imported NLS dependencies. Only `propext`, `Classical.choice` and
+`Quot.sound` are permitted. All 78 source hashes match the checked files,
+and the checker, axiom audit and coverage selections agree exactly.
+
+The modified mapped-energy normalization is included in the final full run;
+it also passes a focused strict recheck. Explicit composition arguments
+keep the joint analytic pairing proof within the default heartbeat budget.
+No heartbeat increases, warning exceptions, disabled linters or additional
+axioms are introduced. Canonical products, global/rough compatibility and
+all main-theorem statuses remain open. Canonical sources/builds are read only.
