@@ -1050,3 +1050,53 @@ inventory has 1,376 entries (1,107 theorems and 269 definitions; aliases
 and structures excluded), with 202 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
+
+
+## 2026-11-02 — Theorem 4(iii) angle-action clause on its original domain
+
+`theorem4_iii_angle_action` proves the printed +delta_mn Gardner bracket
+for every original real H1 profile and all positive m,n where the angle
+at m is defined. The domain is the exact nonzero condition on its own
+physical action J_m; the action index n may have a closed gap. Zero mean
+is included. The actual normalized NLS phase supplies the restricted
+angle, whose logarithmic differential is proved to be the pullback of
+the original local angle differential. No angle cotangent or canonical
+bracket is left as an input hypothesis.
+
+The scalar action is the common analytic L2 extension of the independently
+constructed physical Hill contour. Its full Frechet derivative constructs
+the scalar bilinear gradient. This gradient's spatial derivative is
+proved square summable and equal to the actual period-one tempered
+distribution derivative. The literal Gardner field has diagonal equal
+to the original NLS Hamiltonian direction of I_n-I_(-n). The transfer
+formula holds for every bounded source cotangent.
+
+The proof differentiates the genuine integer Laurent contours and
+integrates the physical discriminant-gradient Fourier recurrence. This
+retains all integer levels, all Fourier modes, the 2*pi*i*m multiplier
+and the action factor 1/2. Four checked component-swap root/action/
+differential/Poisson modules are reused unchanged from
+`articles/mkdv-below-l2` at `9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc`.
+Original NLS canonical brackets then prove the angle-action clause.
+Original NLS action commutation also proves
+`theorem4_ii_restricted_action_invariance` for every signed restricted
+NLS action, including the central action, against every positive J_n.
+
+The final Theorem 4(iii) assertion about the independently constructed
+mKdV angle sum factoring through actions and mean remains open. Theorem
+4(ii)'s normal-form factorization and mean correction, Theorem 1's source
+spectral Hamiltonian full native-domain identification, and Theorem 3's
+frequency identification remain essential obligations. Theorems 1, 3 and
+4(ii)-(iii) as whole statements are still incomplete.
+
+Validation covers 216 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 200 unchanged prefix module
+source hashes match the previous 01cdacc milestone; their private outputs
+were reused. Sixteen added modules (four unchanged shared integrations and
+twelve new modules) and the NLS aggregate compiled. The complete targeted
+and combined audits passed for 2,905 and 47,874 declarations respectively.
+Only propext, Classical.choice and Quot.sound are allowed. The public
+inventory has 1,452 entries (1,171 theorems and 281 definitions; aliases
+and structures excluded), with 218 SHA256 source/checker hashes. The
+checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.

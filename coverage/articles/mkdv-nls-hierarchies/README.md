@@ -2,7 +2,9 @@
 
 Status: **Theorem 2 proved on its original complex Sobolev domains, with the
 matrix correction in part (ii); Theorem 4(i) proved on the full original
-real H1 domain; Theorems 1, 3 and 4(ii)-(iii) remain incomplete**.
+real H1 domain; Theorem 4(iii)'s angle-action bracket clause proved on its
+original real H1 angle domain. Theorems 1, 3 and 4(ii)-(iii) as whole
+statements remain incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
 
@@ -67,10 +69,10 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_native_miura_hierarchy` proves both clauses on every complex H^m input using independently constructed K_m on its full native H^(m-1) domain, with actual Frechet gradients and the genuine distribution derivative. `proposition6_native_miura` proves the odd factor-two identity on all complex H^(m-1), including the L2 mass endpoint. The literal Hill discriminant now has an all-order trace estimate with phase coefficients 2*K_m. | Finite-gap spectral Laurent calibration is now proved with the native K coefficients; complete the extension/uniqueness identification on the entire original native complex Sobolev domains. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
-| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Complete action factorization, angle/bracket transfer and frequency identification with the recorded sign correction. |
+| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Complete action factorization and independent mKdV angle/frequency identification with the recorded sign correction; the actual Gardner bracket transfer is proved. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Parts (ii)-(iii) remain open; the common complex-source action extensions are now proved by Lemma 7. |
-| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | No new analytic factorization is claimed. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
-| Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | Existing NLS canonical identities are potential inputs only. | Construct mKdV angle domains, handle collapsed gaps correctly, and prove bracket transfer and analytic continuation. |
+| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | Actual restricted NLS actions commute with every physical mKdV action under the genuine Gardner bracket, including central and closed actions. No analytic factorization is inferred from this alone. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
+| Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
 
 The main dependencies singled out by the article are Theorem 5 (p. 9,
 Miura/Hill versus diagonal ZS discriminants), Proposition 6 (p. 12,
@@ -553,7 +555,7 @@ The checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
 
 
-Latest milestone: **Lemma 7 is complete**, including its ambient complex
+Previous milestone: **Lemma 7 is complete**, including its ambient complex
 L2 analytic-extension clause. `lemma7` chooses one open subset of the full
 complex L2 pair-source space containing the entire real L2 diagonal before
 any index or level is chosen. Every positive index n and every integer
@@ -594,5 +596,53 @@ and combined audits passed for 2,770 and 47,739 declarations respectively.
 Only propext, Classical.choice and Quot.sound are allowed. The public
 inventory has 1,376 entries (1,107 theorems and 269 definitions; aliases
 and structures excluded), with 202 SHA256 source/checker hashes. The
+checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.
+
+
+Latest milestone: **the angle-action bracket clause of Theorem 4(iii) is
+proved on its full original real H1 angle domain** by
+`theorem4_iii_angle_action`. For all positive m,n, whenever the angle's own
+physical mKdV action J_m is nonzero, the actual restricted NLS angle has
+Gardner bracket +delta_mn with J_n. No open-gap condition is imposed on
+the action index n. Zero mean is included. The final assertion about the
+independent mKdV angle plus this restricted NLS angle factoring through
+actions and mean remains open, so Theorem 4(iii) as a whole is incomplete.
+
+The scalar action is the complex L2 extension of the previously independent
+physical Hill contour. Its actual Frechet derivative supplies its bilinear
+L2 gradient. The gradient's spatial derivative is proved square summable
+and identified with the actual period-one tempered distribution derivative.
+This literal Gardner direction is proved to have diagonal equal to the
+original NLS Hamiltonian direction of I_n-I_(-n), with the original signs.
+The angle differential is constructed from the actual normalized NLS phase
+and proved to be its pullback; it is not prescribed by the bracket identity.
+
+The proof first differentiates the genuine integer-level Laurent contours,
+then integrates the physical discriminant-gradient recurrence at every
+Fourier mode. The 2*pi*i*m multiplier and the action's factor 1/2 remain
+explicit. The resulting transfer holds for every actual bounded source
+cotangent. Original NLS canonical identities give the angle bracket, and
+original NLS action commutation shows that every signed restricted NLS
+action, including I_0, commutes with every J_n under the Gardner bracket.
+This invariance is a dependency of Theorem 4(ii); its normal-form
+factorization still needs proof.
+
+Four further checked component-swap modules are integrated unchanged from
+`articles/mkdv-below-l2` at `9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc`.
+They supply the actual reflected action differential and anti-Poisson sign,
+including closed gaps. Theorem 1's source spectral Hamiltonian extension/
+uniqueness step, mKdV angle/action factorizations, corrected mean recovery
+and frequency identification remain essential open obligations.
+
+Validation covers 216 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 200 unchanged prefix module
+source hashes match the previous 01cdacc milestone; their private outputs
+were reused. Sixteen added modules (four unchanged shared integrations and
+twelve new modules) and the NLS aggregate compiled. The complete targeted
+and combined audits passed for 2,905 and 47,874 declarations respectively.
+Only propext, Classical.choice and Quot.sound are allowed. The public
+inventory has 1,452 entries (1,171 theorems and 281 definitions; aliases
+and structures excluded), with 218 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.

@@ -234,6 +234,22 @@ modules = [
     "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean",
     "NLS/MKdV/MiuraActionLevelExtension.lean",
     "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentDerivative.lean",
+    "NLS/Fourier/UnitIntervalDerivativeCoefficient.lean",
+    "NLS/MKdV/DiagonalDiscriminantGradient.lean",
+    "NLS/MKdV/MiuraDiscriminantCotangent.lean",
+    "NLS/MKdV/MiuraActionGradientRecurrence.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapRoots.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapActions.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapActionDifferential.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapPoisson.lean",
+    "NLS/Poisson/L2Gardner.lean",
+    "NLS/MKdV/MiuraL2Actions.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentOrdinaryDifferential.lean",
+    "NLS/MKdV/MiuraGardnerTransfer.lean",
+    "NLS/MKdV/MiuraAngleActionBracket.lean",
+    "NLS/MKdV/MiuraRestrictedActionBrackets.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GardnerBracketIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

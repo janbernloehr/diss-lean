@@ -127,21 +127,34 @@
     {
       "label": "Theorem 4(ii)",
       "page": 4,
-      "status": "unproved_signed_mean_branch_open",
+      "status": "partial_Gardner_invariance_proved_factorization_and_mean_correction_open",
       "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
       "source_issue": "Global signed mean recovery from NLS actions alone needs a branch restriction or sign-invariant correction.",
       "proved_dependencies": [
-        "NLS.Articles.MKdVNLSHierarchies.lemma7"
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance"
+      ],
+      "limits": [
+        "Every original restricted NLS action at every signed index, including zero, commutes with every positive actual mKdV action under the genuine Gardner bracket on real H1. The normal-form factorization is not inferred merely from this commutation; it remains to be proved. The signed-mean correction/branch remains necessary."
       ]
     },
     {
       "label": "Theorem 4(iii)",
       "page": 4,
-      "status": "unproved",
-      "quantifiers": "forall positive n,m on the domains of the relevant angle variables",
+      "status": "partial_original_angle_action_clause_proved_angle_sum_factorization_open",
+      "quantifiers": "Every original real H1 input; every positive m,n; the angle at m is defined when its own actual mKdV action J_m is nonzero. No nonzero/open-gap hypothesis is imposed on the action J_n.",
       "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean.",
       "proved_dependencies": [
         "NLS.Articles.MKdVNLSHierarchies.lemma7"
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative"
+      ],
+      "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential.",
+      "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
+      "limits": [
+        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The concluding assertion about the independently constructed mKdV angle vartheta_m plus theta_m# being an analytic function of mKdV actions and mean still requires mKdV angle construction and factorization. Theorem 4(iii) as a whole remains incomplete."
       ]
     }
   ],
@@ -197,7 +210,16 @@
     },
     {
       "label": "Lemma 10",
-      "page": 16
+      "page": 16,
+      "status": "partial_exact_diagonal_integer_level_gradient_recurrence_proved",
+      "proved": [
+        "NLS.MKdV.miuraLaurentActionGradient_fourier",
+        "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action"
+      ],
+      "scope": "Actual full source Frechet derivatives on every real H1 diagonal, all noncentral indices, all integer levels and every physical Fourier mode. The specialized sum/difference recurrence is sufficient for the proved Gardner transfer.",
+      "limits": [
+        "No claim of the full arbitrary-source phase/spatial-reflection variants of Lemma 10."
+      ]
     },
     {
       "label": "Proposition 11",
@@ -291,10 +313,10 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "full source spectral primitive-sheet/action identification of the independently constructed native scalar Hill/Miura Hamiltonians",
-    "geometric eigenspace multiplicity; analytic mKdV action factorization and angle/bracket transfer (the actual action contours, Theorem 4(i), common ambient L2 Laurent-action extensions and complete Lemma 7 are proved)",
-    "mKdV Birkhoff coordinates, brackets and frequency identification",
-    "remaining frequency-sign and signed-mean qualifications in main-source statements"
+    "full native Sobolev extension/uniqueness identification of the source spectral scalar Hill/Miura Hamiltonians; real finite-gap spectral calibration and native physical hierarchy identities are proved",
+    "analytic factorization through independent mKdV action coordinates and the corrected sign-invariant mean data",
+    "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
+    "recorded frequency-sign and signed-mean corrections in the main source statements; geometric eigenspace multiplicity in the auxiliary spectral comparison remains distinct from the proved characteristic multiplicity"
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -414,7 +436,7 @@
     "positive_mean_value": "NLS.MKdV.miuraMKdVGapIntegral_eq_action_div_two_point",
     "main_zero_criterion": "NLS.MKdV.miuraMKdVAction_nonnegative_and_zero_iff",
     "scope": "all original real H1 inputs and every positive gap index, including zero mean and collapsed gaps; the actions use the independently constructed physical Hill primitive and actual oriented path integrals",
-    "remaining": "action factorization, mKdV angle construction and frequency/bracket identification in Theorems 3 and 4(ii)-(iii); the required ambient complex L2 analytic extension of every integer level is now proved",
+    "remaining": "analytic action factorization, independent mKdV angle construction, final angle-sum factorization and frequency identification; the actual Gardner transfer and Theorem 4(iii) angle-action bracket clause are now proved",
     "common_L2_analytic_extension": "NLS.Articles.MKdVNLSHierarchies.lemma7"
   },
   "finite_gap_spectral_Hamiltonian_calibration": {
@@ -445,7 +467,7 @@
     "actual_Frechet_derivative": "NLS.MKdV.hasFDerivAt_miuraComplexActionLevel",
     "scope": "common open full complex L2 pair-source neighborhood of every real L2 diagonal, all nonzero signed indices and all integer levels; generic construction works for all finite source exponents p>1; exact real H1 physical Hill-contour comparison at all positive indices, including closed gaps and zero mean",
     "central_index": "excluded, consistently with the positive-index Lemma 7; no negative-weight assertion about a central contour enclosing zero",
-    "remaining": "spectral Hamiltonian extension/uniqueness, normal-form factorization, angles and frequency/bracket identities"
+    "remaining": "source spectral Hamiltonian full native-domain extension/uniqueness, action normal-form factorizations, independent mKdV angles and full frequency identities; the original angle-action Gardner bracket clause is proved"
   },
   "shared_component_swap_integration": {
     "branch": "articles/mkdv-below-l2",
@@ -457,5 +479,36 @@
       "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
     ],
     "use": "original fixed-index endpoint reflection places zero in the central cut at every real diagonal source; all noncentral isolating discs then exclude zero simultaneously"
+  },
+  "actual_Gardner_bracket_transfer": {
+    "L2_extension": "NLS.MKdV.miuraL2Action",
+    "physical_contour_agreement": "NLS.MKdV.miuraL2Action_eq_physical",
+    "actual_scalar_gradient": "NLS.Poisson.l2ScalarGradient",
+    "full_differential_representation": "NLS.Poisson.l2ScalarGradient_represents",
+    "physical_discriminant_recurrence": "NLS.MKdV.miuraDiscriminantCotangent_fourier",
+    "actual_Laurent_action_derivative": "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action",
+    "integer_level_recurrence": "NLS.MKdV.miuraLaurentActionGradient_fourier",
+    "Gardner_derivative_regular": "NLS.MKdV.miuraActionGardner_memlp",
+    "genuine_distribution_derivative": "NLS.MKdV.miuraActionGardner_distribution",
+    "NLS_direction_identification": "NLS.MKdV.miuraActionDifference_direction",
+    "arbitrary_cotangent_transfer": "NLS.MKdV.miuraGardner_cotangent_transfer",
+    "normalization": "Y_Jn is the actual spatial derivative of the gradient of J_n; its coefficientwise diagonal equals X_(I_n-I_-n) with NLS cross-gradient sign -i and period-one differentiation symbol 2*pi*i*m",
+    "restricted_NLS_phase": "NLS.MKdV.miuraThetaPhase",
+    "actual_angle_pullback": "NLS.MKdV.miuraThetaDifferential_eq_source",
+    "angle_action_bracket": "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
+    "action_invariance": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
+    "scope": "all original real H1 inputs and every positive action index, including zero mean and closed action gaps; only the chosen angle action must be nonzero",
+    "remaining": "independent mKdV angles and normal-form factorizations, including the final angle-sum assertion; full spectral Hamiltonian native-domain identification and frequencies"
+  },
+  "shared_action_swap_integration": {
+    "branch": "articles/mkdv-below-l2",
+    "commit": "9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc",
+    "unchanged_source_modules": [
+      "NLS/ZakharovShabat/SourceComponentSwapRoots.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapActions.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapActionDifferential.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapPoisson.lean"
+    ],
+    "use": "actual source action differential reflection at every real source, including closed gaps, and the original anti-Poisson swap sign"
   }
 }
