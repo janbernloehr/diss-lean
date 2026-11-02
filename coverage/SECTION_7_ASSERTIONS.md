@@ -5,8 +5,9 @@ source space and its physical spectral realization are retained. All 21 passage
 groups have now been compared: eighteen are matched, two are corrected and one
 is partial. These counts describe review scope, not a completion percentage.
 
-S7-002 now has a physical NLS nonconservation proof; its rough sheet-sign
-direction clause remains unresolved. S7-013 now has a proved corrected
+S7-002 retains the physical NLS nonconservation proof and now has the exact
+smooth physical velocity formula. The general Hilbert-space direction
+interpretation remains unresolved. S7-013 now has a proved corrected
 product, exact periods and uniqueness of the entire function among all
 stated complex products, without root placement or root reality assumptions. The corrected
 real codimension in S7-014 is two. The exact cited 2014 construction remains
@@ -57,13 +58,16 @@ The conservation conclusion is proved through the physical solution and uniquene
 - Each actual Hilbert isospectral set is homeomorphic to the product of its signed Dirichlet gap sheets. The base coordinate is the original Dirichlet eigenvalue, and the sign is its actual anti-discriminant sign.
 - Every allowable full signed data family determines a unique source in that isospectral set. The two sheet branches are glued at the endpoints, where the sign is zero.
 - A global smooth physical NLS solution changes its actual central Dirichlet eigenvalue at a positive time. Its original source trajectory satisfies the all-smooth-sequence solution definition for 1<p<=2, including the Hilbert case.
-- The rough description of sheet signs as directions of physical NLS motion remains unresolved.
+- Every smooth classical physical NLS trajectory has velocity -delta*P/chi_prime at every signed Dirichlet index. Here P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0)).
+- The velocity sign is the sheet sign multiplied by sign(-P/Re(chi_prime)), including zeros and gap endpoints. The physical Fourier source derivative and its representative are derived from the PDE.
 
 Public evidence: `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph`, `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_base`, `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_sign`, `NLS.ZakharovShabat.existsUnique_isospectral_source_with_signed_dirichletData`, `NLS.ZakharovShabat.sourceSignedDirichletSheet_sign_zero_iff_endpoint`, `NLS.ZakharovShabat.isQuotientMap_sourceSignedDirichletSheet_branches`.
 
 Additional public evidence: `NLS.ZakharovShabat.section7_exists_physicalNLS_dirichlet_motion`, `NLS.ZakharovShabat.section7_exists_ordinaryNLSSolution_dirichlet_motion`; the [physical phase and Fourier-source construction](../NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) supplies both.
 
-The parameterization uses the original Hilbert topology and includes infinitely many open gaps and endpoint data. The new existential nonconservation proof uses a genuine physical NLS trajectory and the exact approximation-solution notion. It does not assert motion for every solution or identify the sheet sign with an unqualified velocity sign. That rough direction clause remains unresolved, so this passage is partial.
+Additional velocity evidence: `NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_dirichletRoot`, `NLS.ZakharovShabat.IsClassicalNLSTrajectory.dirichletRoot_velocity_sign`, `NLS.ZakharovShabat.SmoothNLSData.hasDerivAt_ordinarySource_dirichletRoot`, `NLS.ZakharovShabat.SmoothNLSData.ordinarySource_dirichletRoot_velocity_sign`; the [physical NLS trajectory proof](../NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean) supplies these statements.
+
+The parameterization retains the original Hilbert topology, infinitely many open gaps and endpoint data. The physical nonconservation result retains the exact approximation-solution notion. The informal direction description is replaced by the explicit velocity multiplier for smooth classical solutions, including the constructed global ordinary solution. Differentiability for arbitrary rough Hilbert trajectories is not asserted. The general Hilbert-space direction interpretation remains unresolved, so this group stays partial.
 
 ### S7-003: Compact connected tori, exact dimension and generic infinitely many gaps
 
@@ -255,9 +259,10 @@ and [the actual real rough source](../NLS/ZakharovShabat/SourceSection7RoughInpu
 
 ## Remaining work
 
-Resolve the rough sheet-sign direction-of-motion clause in S7-002.
-Physical NLS Dirichlet nonconservation and the unrestricted psi-function
-characterization are proved. The exact cited 2014 Birkhoff construction
+Resolve the general Hilbert-space direction interpretation in S7-002.
+The exact smooth physical NLS velocity and sign formula are now proved.
+Physical Dirichlet nonconservation and the unrestricted psi-function
+characterization remain proved. The exact cited 2014 Birkhoff construction
 and the broader source reconciliation remain open. Appendix G.2 adopts
 the proved explicit integral-norm correction while retaining the source
 convention qualification. These remaining qualifications are recorded in

@@ -5,7 +5,8 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [bibliographic source context](coverage/BIBLIOGRAPHY.md) records 67 attributions separately from mathematical reviews. The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Section 7 physical NLS velocity](coverage/SECTION_7.md). Exact physical NLS Dirichlet velocity and sheet multiplier for every smooth classical trajectory and the constructed global solution, with original Fourier sources and signed indices. The general Hilbert-space direction clause remains open.
+The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

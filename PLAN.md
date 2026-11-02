@@ -1,6 +1,23 @@
 # Implementation plan
 
-## Current milestone: bibliographic source context
+## Current milestone: Section 7 physical NLS velocity
+
+The [physical Lax transport](NLS/ZakharovShabat/ClassicalNLSDirichletMotion.lean) is derived from the actual NLS vector field. Its monodromy commutator gives the Dirichlet velocity -delta*P/chi_prime, where delta is the original terminal anti-discriminant and chi_prime is the original characteristic derivative. For a real pair and real Dirichlet point mu, P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0)).
+
+The [indexed source differential](NLS/ZakharovShabat/SourceNLSDirichletVelocity.lean) retains the original Hilbert source, signed labels and normalization. The velocity sign equals the sheet sign times sign(-P/Re(chi_prime)), including zeros.
+
+The [bounded Fourier source map](NLS/ZakharovShabat/SmoothNLSSourceDerivative.lean) derives its tangent from physical time differentiation. The [physical trajectory theorem](NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean) then supplies the exact derivative and sign at every time and index of every classical NLS solution, including the constructed global ordinary solution. The physical representative and tangent are proved from the PDE.
+
+Twenty-four positive theorems and seven definitions add no public examples or refutations. S7-002 now has the exact smooth physical direction formula. Its general Hilbert-space direction interpretation remains unresolved, so the Section 7 ledger retains eighteen matched, two corrected and one partial group. No differentiability claim for arbitrary rough Hilbert solutions is inferred.
+
+The full check passed: 8,658 build jobs, 7,729 public examples and an axiom audit of 45,195 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the general Hilbert-space direction interpretation in S7-002 and the whole-dissertation source reconciliation. Retain the exact cited 2014 construction qualification. Correct constants directly and commit and push each completed step.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: bibliographic source context
 
 The [bibliographic source context](coverage/BIBLIOGRAPHY.md) records the 67 source attributions on pp.141–144 with their exact text locations. These contextual records are separate from mathematical proof reviews.
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T05:58:18.916635+00:00",
-  "base_commit": "6076e9f22f5d7b4ba21f2a151f0690dfab2f0b08",
+  "published_utc": "2026-11-02T06:20:27.025280+00:00",
+  "base_commit": "f62531ea51f378265e04df3bf396a3870b297a55",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 220,
-    "module_hash_checks": 4613,
-    "distinct_modules": 2260
+    "review_records": 221,
+    "module_hash_checks": 4643,
+    "distinct_modules": 2277
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6076e9f22f5d7b4ba21f2a151f0690dfab2f0b08",
-    "validated_state": "Bibliographic context changes documentation only; the exact Lean snapshot retains its full check.",
+    "base_commit": "f62531ea51f378265e04df3bf396a3870b297a55",
+    "validated_state": "Fresh full check after Section 7 physical NLS velocity.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8654,
+    "build_jobs": 8658,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45116,
+    "transitive_NLS_declarations": 45195,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 30705,
+    "gate_session": 82734,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4916,
-      "sha256": "399b5add3a6ef88137ff1576297dfa1338b8e0af55905c404e1d5f7fc09542a2"
+      "files": 4920,
+      "sha256": "b66bb2702457a681eefd4db95e42c7f67dc7c5338c2b89a4478a29a325999960"
     },
-    "full_gate_log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca",
+    "full_gate_log_sha256": "e738e906ee5f0e8de0c63e85fe0bd976530a7898dc7e70f9786a1bc5a4e6a7e3",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/NativePeriodicConjugationFullCheck.log",
-    "validation_reused_from_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e"
+    "full_gate_log": "work/Section7PhysicalNLSVelocityFullCheck.log"
   },
   "named_statements": [
     {
@@ -78049,6 +78048,464 @@
         "log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca"
       },
       "source_record_sha256": "3f9b5a7b20b7ee5bfd9a7abe30c08950de36f862c8c88023054d1e81d283c7c7"
+    },
+    "Section7PhysicalNLSVelocitySourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "f62531ea51f378265e04df3bf396a3870b297a55",
+      "updated_utc": "2026-11-02T06:20:26.971611+00:00",
+      "source_lines": [
+        [
+          3312,
+          3316
+        ],
+        [
+          3312,
+          3316
+        ],
+        [
+          3312,
+          3316
+        ],
+        [
+          3312,
+          3316
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Physical Lax transport and exact characteristic velocity",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalNLSTransport",
+            "NLS.ZakharovShabat.classicalNLSTransport_endpoints",
+            "NLS.ZakharovShabat.continuous_classicalNLSTransport_solution",
+            "NLS.ZakharovShabat.hasDerivAt_classicalNLSTransport_solution",
+            "NLS.ZakharovShabat.classicalNLS_potentialVariation_eq",
+            "NLS.ZakharovShabat.classicalNLSTimeMatrix",
+            "NLS.ZakharovShabat.fderiv_classicalMonodromy_physicalNLS_commutator",
+            "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor",
+            "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root",
+            "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real",
+            "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_physicalNLS",
+            "NLS.ZakharovShabat.hasDerivAt_classicalDirichletRoot_physicalNLS"
+          ],
+          "reviewed_claims": [
+            "The time Lax matrix is verified against the physical NLS vector field and the original spatial ODE. Uniqueness identifies the actual potential variation.",
+            "Periodic endpoints give the actual monodromy commutator. At a Dirichlet zero the characteristic variation equals terminal anti-discriminant times P; a simple root has velocity -delta*P/chi_prime.",
+            "For the real pair, P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0))."
+          ],
+          "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
+        },
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Original indexed Hilbert root differential and sheet multiplier",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_differential",
+            "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier",
+            "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_real_differential",
+            "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_velocity_sign",
+            "NLS.ZakharovShabat.hasDerivAt_sourceDirichletRoot_physicalNLS"
+          ],
+          "reviewed_claims": [
+            "Continuous representatives identify the differential of every original indexed Hilbert Dirichlet root.",
+            "The velocity multiplier is -P/Re(chi_prime). The original sheet sign enters the velocity sign multiplicatively, including zeros."
+          ],
+          "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
+        },
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Continuous physical Fourier source and its actual time derivative",
+          "declarations": [
+            "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM",
+            "NLS.ZakharovShabat.physicalNLSUnitFourierCLM",
+            "NLS.ZakharovShabat.physicalNLSUnitFourierCLM_apply",
+            "NLS.ZakharovShabat.physicalNLSSourceCLM",
+            "NLS.ZakharovShabat.physicalNLSSourceCLM_fst",
+            "NLS.ZakharovShabat.physicalNLSSourceCLM_snd",
+            "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_smoothSource",
+            "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_hilbertSource"
+          ],
+          "reviewed_claims": [
+            "The physical Fourier source map is bounded and real linear in the continuous physical norm, with the original unit-period coefficient normalization.",
+            "Uniform physical time differentiability gives the derivative of the exact smooth Hilbert source."
+          ],
+          "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
+        },
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Actual classical NLS trajectory and global-solution direction formula",
+          "declarations": [
+            "NLS.ZakharovShabat.physicalNLSSourceCLM_representative",
+            "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_extend",
+            "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_dirichletRoot",
+            "NLS.ZakharovShabat.IsClassicalNLSTrajectory.dirichletRoot_velocity_sign",
+            "NLS.ZakharovShabat.SmoothNLSData.hasDerivAt_ordinarySource_dirichletRoot",
+            "NLS.ZakharovShabat.SmoothNLSData.ordinarySource_dirichletRoot_velocity_sign"
+          ],
+          "reviewed_claims": [
+            "Literal Fourier coefficients reconstruct the physical source and its tangent on the original unit interval.",
+            "Every IsClassicalNLSTrajectory supplies the required physical representative and tangent from its PDE.",
+            "At every real time and signed index the exact root derivative and sign formula hold. The constructed global ordinary solution satisfies the same formula."
+          ],
+          "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added.",
+          "status": "matched_subclause"
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/ClassicalDiscriminantMonodromyFlow.lean": "b01ad2bc18294f31132a59ede832c82f03b16e058f2bbd68983424ed5d3e0a6e",
+        "NLS/ZakharovShabat/ClassicalDiscriminantBoundaryFlow.lean": "c1bed7ce67e43972d3f4d12b812bba9af5ca18eb2707a950a731d0129f9d53df",
+        "NLS/ZakharovShabat/ClassicalDirichletRootGradient.lean": "c00733e5633ddf7a8ca4a0c08afa2b8aeac535572c59e769e8f3c3e5637f2b98",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": "0b24b5cd21ab246633be338bfe929b19ff8e51bfa948700744ac918d1270493f",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "a7306ddd0e52031dc727feab083c3d4d14f397340242bf3946abaf0e58095a8f",
+        "NLS/ZakharovShabat/SourceDirichletSignData.lean": "15565c1bc1afda3e6c7e6880a9976eb419f84a21a4a570b91944c2fa6bb604fb",
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryGradient.lean": "e640b2cd2f427628c1fa92bbaf5df4512739c67a91199de7f9e72e3378983349",
+        "NLS/ZakharovShabat/SourceBoundarySimpleDifferential.lean": "2d0af574735472e6d52fb5bd07ba929d9ca4b88eebf01a2db82e2663d505468d",
+        "NLS/ZakharovShabat/ContinuousSourceAntiDiscriminantGradient.lean": "05ce09054f377cf433606c7834de04dd0179502d7d08cae4b047641d95a60076",
+        "NLS/ZakharovShabat/SourceBoundarySimpleNeighborhood.lean": "db906d19d79ec8aa3bb9a27b05bc6f122b54a97b2cb813167916a00653c8645b",
+        "NLS/ZakharovShabat/SmoothNLSData.lean": "8a972daa1507ad18eeda71f81f9c17c7fe9748c7affe91764836a9735f0e3f90",
+        "NLS/ZakharovShabat/SmoothPeriodOneSource.lean": "9e896fb6f2ceb74460141ba67f07365081c306ccf213a6bccbc2b671a4881d60",
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean": "208489701add7cc8653c972cd400e0c3ffc48c317c3c289637ad4a5599f0dff6",
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryRealization.lean": "1226589ba4a8247bc001505312481e645167774350b4241d9120522037a7a499",
+        "NLS/ZakharovShabat/SourceAbelStripCharacterization.lean": "baa7605dad38e246209cc851297e5ddb6df8ae24bee632281c756f550446c3dc",
+        "NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean": "826bb46285e362c05cce821aa58958ac900d2095860fc6e5601912862a625874",
+        "NLS/Fourier/PeriodOneCoefficients.lean": "1d792e7e0b7676544f2f7075c6f30c36325de00bf79d516de85229db2cef12ee",
+        "NLS/Fourier/IntervalCoefficientScaling.lean": "0b51ff973e86ebb6bd234d8e8da67af29b1c58b259489aa130cb89a76b77452f",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean": "7d1deb0d17f8594b42fbaa3bfbeb4ad3a250a845ca3708dd9495222c73698cea",
+        "NLS/ZakharovShabat/ClassicalPotentialVariation.lean": "d717d959041f64d4310c78fdd878beba0b4792019fe24f7e0a43c63ba9d8716d",
+        "NLS/ZakharovShabat/SourceBoundaryNormalizedRootVariation.lean": "761d5605ea851970abdff0ff25759cb53c123a8782a376809fbb9e1a3e9fabd1",
+        "NLS/ZakharovShabat/SourceBoundaryRootDifferential.lean": "a7b664db5866409dcd1e810e666786e8708a6cf345de04cf028b59b3a5890488",
+        "NLS/ZakharovShabat/ClassicalNLSUniqueness.lean": "99ca7dbca229a4c5b20ef892e17d05ebc4dc09249d7b64aa70cf35392a3fb740",
+        "NLS/ZakharovShabat/ClassicalNLSDifferenceEstimate.lean": "645cb69a5d5486ba5c0a3ba89e5e9230dffad23ec371f331ce55d7f07049ee75",
+        "NLS/ZakharovShabat/NLSWKBComparison.lean": "209b1d5b02b9b331d07455ce5766b90c2f8ef97419fa5a5ebfb5fa126ba5be1b",
+        "NLS/FunctionalAnalysis/LinearVolterra.lean": "4c3e05f163df364637dc6ac7ec61b924853ddbecc995802644a6f98349860843",
+        "NLS/ZakharovShabat/ClassicalNLSDirichletMotion.lean": "8292c8bdedd7b0aba6268d3536919fc2e9cd2b54d286043a4fce1c9044e12640",
+        "NLS/ZakharovShabat/SourceNLSDirichletVelocity.lean": "c8c2f476ef6498a4d79e3f0c1e8d8e9665939e772141aaf5fc723502e220374f",
+        "NLS/ZakharovShabat/SmoothNLSSourceDerivative.lean": "2b7678d5d36f30100c480ee6623a4ba4d5d083cbbbf5d63f48a5feb51c05b6e7",
+        "NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean": "141f24520211fb802fcf656c36c0d11316b28f7ae65362878a7a2d7833c4446c"
+      },
+      "reviewed_modules_read_in_full": false,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/ClassicalDiscriminantMonodromyFlow.lean",
+        "NLS/ZakharovShabat/ClassicalDiscriminantBoundaryFlow.lean",
+        "NLS/ZakharovShabat/ClassicalDirichletRootGradient.lean",
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean",
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean",
+        "NLS/ZakharovShabat/SourceDirichletSignData.lean",
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryGradient.lean",
+        "NLS/ZakharovShabat/SourceBoundarySimpleDifferential.lean",
+        "NLS/ZakharovShabat/ContinuousSourceAntiDiscriminantGradient.lean",
+        "NLS/ZakharovShabat/SourceBoundarySimpleNeighborhood.lean",
+        "NLS/ZakharovShabat/SmoothNLSData.lean",
+        "NLS/ZakharovShabat/SmoothPeriodOneSource.lean",
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean",
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryRealization.lean",
+        "NLS/ZakharovShabat/SourceAbelStripCharacterization.lean",
+        "NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean",
+        "NLS/Fourier/PeriodOneCoefficients.lean",
+        "NLS/Fourier/IntervalCoefficientScaling.lean",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean",
+        "NLS/ZakharovShabat/ClassicalNLSDirichletMotion.lean",
+        "NLS/ZakharovShabat/SourceNLSDirichletVelocity.lean",
+        "NLS/ZakharovShabat/SmoothNLSSourceDerivative.lean",
+        "NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": false,
+      "support_body_scopes": {
+        "NLS/ZakharovShabat/ClassicalDiscriminantMonodromyFlow.lean": {
+          "scope": "full",
+          "chunks": [
+            "ca0023"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalDiscriminantBoundaryFlow.lean": {
+          "scope": "full",
+          "chunks": [
+            "5165b9"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalDirichletRootGradient.lean": {
+          "scope": "full",
+          "chunks": [
+            "804270"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalNLSVectorField.lean": {
+          "scope": "full",
+          "chunks": [
+            "1c95de"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": {
+          "scope": "full",
+          "chunks": [
+            "6e6195"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceDirichletSignData.lean": {
+          "scope": "full",
+          "chunks": [
+            "d3ac27"
+          ]
+        },
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryGradient.lean": {
+          "scope": "full",
+          "chunks": [
+            "9d1c5e"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceBoundarySimpleDifferential.lean": {
+          "scope": "full",
+          "chunks": [
+            "9d1c5e"
+          ]
+        },
+        "NLS/ZakharovShabat/ContinuousSourceAntiDiscriminantGradient.lean": {
+          "scope": "full",
+          "chunks": [
+            "efa52d"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceBoundarySimpleNeighborhood.lean": {
+          "scope": "full",
+          "chunks": [
+            "a76d5b"
+          ]
+        },
+        "NLS/ZakharovShabat/SmoothNLSData.lean": {
+          "scope": "full",
+          "chunks": [
+            "67feb1"
+          ]
+        },
+        "NLS/ZakharovShabat/SmoothPeriodOneSource.lean": {
+          "scope": "full",
+          "chunks": [
+            "7ac504"
+          ]
+        },
+        "NLS/ZakharovShabat/SourcePhysicalL2Equiv.lean": {
+          "scope": "full",
+          "chunks": [
+            "cb3f02"
+          ]
+        },
+        "NLS/ZakharovShabat/ContinuousSourceBoundaryRealization.lean": {
+          "scope": "full",
+          "chunks": [
+            "7392b7"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceAbelStripCharacterization.lean": {
+          "scope": "full",
+          "chunks": [
+            "052830"
+          ]
+        },
+        "NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean": {
+          "scope": "full",
+          "chunks": [
+            "67feb1"
+          ]
+        },
+        "NLS/Fourier/PeriodOneCoefficients.lean": {
+          "scope": "full",
+          "chunks": [
+            "1c95de"
+          ]
+        },
+        "NLS/Fourier/IntervalCoefficientScaling.lean": {
+          "scope": "full",
+          "chunks": [
+            "7392b7"
+          ]
+        },
+        "NLS/Fourier/UnitIntervalL2Equiv.lean": {
+          "scope": "full",
+          "chunks": [
+            "208876"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalPotentialVariation.lean": {
+          "scope": "1-115",
+          "chunks": [
+            "6cbf3b"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceBoundaryNormalizedRootVariation.lean": {
+          "scope": "105-160",
+          "chunks": [
+            "befcc4"
+          ]
+        },
+        "NLS/ZakharovShabat/SourceBoundaryRootDifferential.lean": {
+          "scope": "113-144",
+          "chunks": [
+            "befcc4"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalNLSUniqueness.lean": {
+          "scope": "60-115; structure and velocity_periodic",
+          "chunks": [
+            "1c95de"
+          ]
+        },
+        "NLS/ZakharovShabat/ClassicalNLSDifferenceEstimate.lean": {
+          "scope": "38-47; scalar field definition and equality",
+          "chunks": [
+            "052830"
+          ]
+        },
+        "NLS/ZakharovShabat/NLSWKBComparison.lean": {
+          "scope": "1-75; continuous restriction and apply",
+          "chunks": [
+            "208876"
+          ]
+        },
+        "NLS/FunctionalAnalysis/LinearVolterra.lean": {
+          "scope": "15-35; Curve, extend, extend_coe, continuity",
+          "chunks": [
+            "2d7700"
+          ]
+        }
+      },
+      "ordered_group_reconciliation": {
+        "group": "S7-002",
+        "previous": "partial",
+        "current": "partial",
+        "scope": "The smooth physical NLS derivative and multiplier are proved. The general Hilbert-space interpretation of the informal direction clause remains unresolved; no narrower statement is counted as completing the full group."
+      },
+      "remaining_comparisons": [
+        "S7-002 general Hilbert-space direction interpretation; exact cited 2014 construction and whole-source reconciliation."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.IsClassicalNLSTrajectory.dirichletRoot_velocity_sign",
+        "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_dirichletRoot",
+        "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_hilbertSource",
+        "NLS.ZakharovShabat.SmoothNLSData.hasDerivAt_ordinarySource_dirichletRoot",
+        "NLS.ZakharovShabat.SmoothNLSData.ordinarySource_dirichletRoot_velocity_sign",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real",
+        "NLS.ZakharovShabat.classicalNLSTimeMatrix",
+        "NLS.ZakharovShabat.classicalNLSTransport",
+        "NLS.ZakharovShabat.classicalNLSTransport_endpoints",
+        "NLS.ZakharovShabat.classicalNLS_potentialVariation_eq",
+        "NLS.ZakharovShabat.continuous_classicalNLSTransport_solution",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_physicalNLS",
+        "NLS.ZakharovShabat.fderiv_classicalMonodromy_physicalNLS_commutator",
+        "NLS.ZakharovShabat.hasDerivAt_classicalDirichletRoot_physicalNLS",
+        "NLS.ZakharovShabat.hasDerivAt_classicalNLSTransport_solution",
+        "NLS.ZakharovShabat.hasDerivAt_sourceDirichletRoot_physicalNLS",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_extend",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_smoothSource",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM_fst",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM_representative",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM_snd",
+        "NLS.ZakharovShabat.physicalNLSUnitFourierCLM",
+        "NLS.ZakharovShabat.physicalNLSUnitFourierCLM_apply",
+        "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_differential",
+        "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_real_differential",
+        "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_velocity_sign",
+        "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier"
+      ],
+      "declaration_inventory_count": 45195,
+      "qualification": "The [physical Lax transport](NLS/ZakharovShabat/ClassicalNLSDirichletMotion.lean) is derived from the actual NLS vector field. Its monodromy commutator gives the Dirichlet velocity -delta*P/chi_prime, where delta is the original terminal anti-discriminant and chi_prime is the original characteristic derivative. For a real pair and real Dirichlet point mu, P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0)).\n\nThe [indexed source differential](NLS/ZakharovShabat/SourceNLSDirichletVelocity.lean) retains the original Hilbert source, signed labels and normalization. The velocity sign equals the sheet sign times sign(-P/Re(chi_prime)), including zeros.\n\nThe [bounded Fourier source map](NLS/ZakharovShabat/SmoothNLSSourceDerivative.lean) derives its tangent from physical time differentiation. The [physical trajectory theorem](NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean) then supplies the exact derivative and sign at every time and index of every classical NLS solution, including the constructed global ordinary solution. The physical representative and tangent are proved from the PDE.\n\nTwenty-four positive theorems and seven definitions add no public examples or refutations. S7-002 now has the exact smooth physical direction formula. Its general Hilbert-space direction interpretation remains unresolved, so the Section 7 ledger retains eighteen matched, two corrected and one partial group. No differentiability claim for arbitrary rough Hilbert solutions is inferred. The exact cited 2014 construction and broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          45
+        ],
+        "images": {
+          "work/Section7OrderedReview-045.png": "7138431a7e4339274003766dcee4759703f6de882a328881e1a1943ab4e10749"
+        }
+      },
+      "preceding_review_hash": "014e3d78edcbd9c2d48e8f7daf4f59f36905972b0007ee7218f06d383517dd00",
+      "validation_lean_sources": {
+        "files": 4920,
+        "sha256": "b66bb2702457a681eefd4db95e42c7f67dc7c5338c2b89a4478a29a325999960"
+      },
+      "new_definitions": 7,
+      "positive_theorems_integrated": 24,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor.eq_1",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_2",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_3",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_4",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_5",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_6",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_7",
+        "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real._simp_1_8",
+        "NLS.ZakharovShabat.classicalNLSTimeMatrix.eq_1",
+        "NLS.ZakharovShabat.classicalNLSTransport._proof_1",
+        "NLS.ZakharovShabat.classicalNLSTransport.eq_1",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_1",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_10",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_11",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_12",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_13",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_2",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_3",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_4",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_7",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_8",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root._simp_1_9",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM._proof_1",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM._proof_2",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM._proof_3",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM._proof_4",
+        "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM._proof_5",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_1",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_10",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_11",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_12",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_13",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_2",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_3",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_4",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_5",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_6",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_7",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_8",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM._proof_9",
+        "NLS.ZakharovShabat.physicalNLSSourceCLM.eq_1",
+        "NLS.ZakharovShabat.physicalNLSUnitFourierCLM._proof_1",
+        "NLS.ZakharovShabat.physicalNLSUnitFourierCLM._proof_2",
+        "NLS.ZakharovShabat.physicalNLSUnitFourierCLM._proof_3",
+        "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier._proof_1",
+        "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier._proof_2",
+        "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier._proof_3",
+        "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier._proof_4"
+      ],
+      "full_gate": {
+        "session": 82734,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section7PhysicalNLSVelocityFullCheck.log",
+        "log_sha256": "e738e906ee5f0e8de0c63e85fe0bd976530a7898dc7e70f9786a1bc5a4e6a7e3"
+      },
+      "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b"
     }
   },
   "contextual_source_records": {

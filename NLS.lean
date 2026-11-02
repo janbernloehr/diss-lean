@@ -4915,3 +4915,7 @@ import NLS.ZakharovShabat.Section28ComplexChiRatio
 import NLS.ZakharovShabat.Section7EntirePeriodUniqueness
 import NLS.ZakharovShabat.Section7PsiPeriodUniqueness
 import NLS.Fourier.NativePeriodicConjugation
+import NLS.ZakharovShabat.ClassicalNLSDirichletMotion
+import NLS.ZakharovShabat.SourceNLSDirichletVelocity
+import NLS.ZakharovShabat.SmoothNLSSourceDerivative
+import NLS.ZakharovShabat.SmoothNLSDirichletVelocity

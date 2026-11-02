@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Section 7 physical NLS velocity](SECTION_7.md) proofs add 24 checked positive theorems. Continue the general Hilbert-space direction interpretation in S7-002 and the whole-dissertation source reconciliation. Retain the exact cited 2014 construction qualification. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
+
 The [bibliographic source context](BIBLIOGRAPHY.md) records all 67 attributions separately from mathematical reviews. This documentation step leaves the exact 2014 edition comparison, rough physical sheet-sign direction clause and whole-source reconciliation open.
 
 The [notation-page comparison](NOTATIONS_ASSERTIONS.md) maps all 38 notation groups with their explicit domains and qualifications. It reconciles the native distribution conjugation, psi product and original Hamiltonian integral publications. The whole-source reconciliation, contextual bibliography and previously recorded unresolved comparisons remain.
@@ -371,17 +373,17 @@ additional counterexamples are not required. Continue with Section 7, then
 later sections in source order.
 
 All 21 groups in the [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md)
-have now been compared: eighteen matched, two corrected and one partial.
-The corrected product, constructed angle path sum and actual real rough
-source have direct interfaces. Physical NLS Dirichlet nonconservation is
-now proved in the exact approximation-solution sense. S7-002 retains the
-rough sheet-sign direction-of-motion clause. S7-013 now proves the corrected
-product and exact periods together with uniqueness of the entire function
-among arbitrary complex lp products, without root placement or reality
-assumptions. This holds at every real source for finite p>1, including p=2,
-and on every admissible original winding-one circuit family. The corrected
-real codimension in S7-014 is two. The remaining S7-002 direction clause
-prevents treating Section 7 as fully resolved.
+have been compared: eighteen matched, two corrected and one partial. S7-002 retains
+the actual all-Hilbert signed-sheet parameterization and physical Dirichlet
+nonconservation in the precise approximation-solution sense. The direction
+explanation has the proved smooth physical velocity -delta*P/chi_prime
+and sign multiplier sign(-P/Re(chi_prime)). It imposes no differentiability
+claim on arbitrary rough Hilbert trajectories; its general Hilbert-space
+interpretation remains unresolved. S7-013 proves the corrected
+product and normalized periods uniquely characterize the entire function
+among arbitrary complex lp products at real sources for finite p>1. The
+real codimension correction in S7-014 is two. The exact cited 2014
+construction comparison and wider source reconciliation remain separate.
 
 The [ordered Section 8 ledger](SECTION_8_ASSERTIONS.md) now compares all
 36 groups: 28 matched and eight corrected. The exact full-exterior sine
@@ -391,7 +393,7 @@ are reconciled with the source, retaining full multiplicities and collapsed
 gaps. The neighboring-band endpoint is corrected to n+1 and the midpoint
 factorization uses -4. No additional constant refutation was added. This
 section-level result does not settle the broader source inventory or
-Section 7's two unresolved clauses.
+the remaining Section 7 direction clause.
 
 The [ordered Section 9 ledger](SECTION_9_ASSERTIONS.md) compares all fifteen
 groups: twelve matched and three corrected occurrences of the existing
