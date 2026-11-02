@@ -181,15 +181,31 @@
     {
       "module": "NLS/FunctionalAnalysis/SchurComplement.lean and SourceSchurComplement.lean",
       "role": "Inspected for the next finite-mode reduction; reuse these bounded-block elimination theorems rather than duplicating them. No physical Hill block identification has yet been supplied."
+    },
+    {
+      "module": "NLS/SequenceSpaces/SobolevDerivative.lean and SobolevEmbedding.lean",
+      "role": "Actually reused for Sobolev inclusions, the summability embedding, and the physical H2 converse. The use of the generic signed derivative symbol in the ZakharovShabat namespace does not identify its first-order spectral operator with Hill."
+    },
+    {
+      "module": "NLS/Fourier/PhysicalConvolution.lean",
+      "role": "Actually reused: circleMul_continuousSynthesis identifies the literal l2 convolution with the actual physical product."
+    },
+    {
+      "module": "NLS/Fourier/SobolevDistributionDerivative.lean",
+      "role": "Actually reused twice to identify the first and second genuine distributional derivatives."
+    },
+    {
+      "module": "NLS/Fourier/SobolevIdentification.lean and SobolevDerivative.lean",
+      "role": "Actually reused for absolute continuity, actual derivative membership, coefficient recovery and the unique periodic H2 realization."
     }
   ],
   "next_shared_milestones": [
-    "Identify solutions of the literal Fourier equation with the genuine period-two Hill differential operator, including H2 regularity and the period-one potential embedding.",
-    "Prove analytic parameter dependence of the constructed complementary inverse and effective two-mode determinant; prove the symmetry of its diagonal correction.",
-    "Use quantitative determinant estimates and Rouche theory to prove spectral labels, multiplicities and localization.",
+    "Prove analytic dependence of the constructed complementary inverse and effective two-mode determinant, including the diagonal symmetry and quantitative coefficient bounds.",
+    "Establish the spectral facts needed for contour counting and global labeling, including compactness/self-adjointness where used; prove localization with Rouche theory.",
+    "Apply the period-one/mean-zero potential embedding in the exact source norm and weighted w_(2n) convention.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
-    "Prove the hierarchy trace identity and tame action estimates for Theorem 2; connect Theorem 1 through the checked adapters.",
-    "Prove weighted gap/action bounds and piecewise interpolated weight evaluations required for Theorem 3."
+    "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments from the convexity branch when their literal primitive inputs have been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
+    "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
   "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
@@ -204,7 +220,7 @@
       "When n>=8*||q||_w, the tail operator has norm at most 1/2, and id minus that operator admits an actual two-sided bounded inverse of norm at most 2. The existence proof reuses NLS.exists_inverse_norm_le_two_mul_of_composition_near."
     ],
     "constant_changes": "Uses 4/n for the summability and tail estimates, cutoff 8*||q||, and strip radius 6*n; no assertion of the printed 2/n estimate or radius 12*n follows.",
-    "essential_missing_identifications": "This is the period-two Fourier coefficient realization for a general weighted potential sequence. Physical function/operator domain identification, embedding of period-one potentials with the source w_(2n) convention, two-mode Schur complement and eigenvalue counting/localization remain to be proved.",
+    "essential_missing_identifications": "The physical H2 operator realization is now proved in HillSobolev/HillPhysical, and the two-mode Fourier reduction in HillReduction. The source period-one potential embedding with w_(2n), analytic determinant, and eigenvalue labeling/counting/localization remain outstanding.",
     "main_theorems_verified": false
   },
   "two_mode_reduction": {
@@ -237,7 +253,7 @@
     "statement": "For a positive integer n, |Re(z)-pi^2*n^2|<=6*n, and n>=8*||q||_w, the determinant of the constructed operator on C x C vanishes iff there exists a nonzero weighted l1 sequence f with (z-pi^2*k^2)*f_k=(q*f)_k for every integer k. Reconstruction and resonant coefficient extraction recover the solutions in both directions. The full potential is the literal weighted convolution.",
     "free_case": "At zero potential the constructed operator is (z-pi^2*n^2)*id, and its determinant is exactly (z-pi^2*n^2)^2.",
     "not_assumed": "No unspecified finite block, arbitrary spectral package, or unproved inverse hypothesis is supplied by a caller. The bounded inverse is chosen from the previously proved existence theorem.",
-    "remaining_qualifications": "No claim yet that a zero of this determinant has the corresponding algebraic multiplicity as a physical periodic Hill eigenvalue. Analytic dependence on z and q, equality of the two diagonal correction terms, the H2 differential-operator domain identification, and eigenvalue labeling/localization remain to be proved."
+    "remaining_qualifications": "The physical H2 operator/domain identification is now proved in HillSobolev/HillPhysical. Analytic dependence on z and q, equality of diagonal correction terms, spectral multiplicity as the order of a determinant zero, and eigenvalue labeling/localization remain to be proved."
   },
   "other_article_branches_inspected": [
     {
@@ -254,6 +270,55 @@
       "branch": "articles/kdv-pseudomeasures",
       "commit": "fd8828689696949ee18fbd81f45e797496c13150",
       "finding": "Weak-star topology and compactness results; no competing Hill reduction."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "5b9a06b",
+      "modules": [
+        "NLS/KdV/ActionHamiltonianMoments.lean",
+        "NLS/KdV/ActionHamiltonianTrace.lean",
+        "NLS/KdV/ActionHamiltonianFiniteGap.lean"
+      ],
+      "finding": "Shared primitive-action integration by parts, quartic gap period and finite-gap contour trace proofs inspected. Reserve these for reuse after constructing the literal Hill primitive; they are not imported into this operator-domain milestone and do not by themselves establish the physical energy trace."
     }
-  ]
+  ],
+  "physical_hill_realization": {
+    "modules": [
+      "NLS/KdV/HillSobolev.lean",
+      "NLS/KdV/HillPhysical.lean"
+    ],
+    "source_correspondence": "The periodic Hill operator -d^2/dx^2+q on [0,2], Section 2 page 8 and Appendix A pages 25-28. The domain is the periodic H2 space and the ambient physical space is complex L2 with normalized period-two Fourier coefficients.",
+    "proved_domain_declarations": [
+      "NLS.KdV.memlp_sobolev_two_of_hillMoment",
+      "NLS.KdV.HillSobolevDomain",
+      "NLS.KdV.hillDomainToL1",
+      "NLS.KdV.hillDomainToL2",
+      "NLS.KdV.hillLaplacian",
+      "NLS.KdV.hillOperator",
+      "NLS.KdV.hillOperator_eigen_iff",
+      "NLS.KdV.hillFourierEigenvector_memlp_sobolev_two",
+      "NLS.KdV.hillEigenvectorLift",
+      "NLS.KdV.hillReduced_det_eq_zero_iff_domainEigenvector"
+    ],
+    "proved_physical_declarations": [
+      "NLS.KdV.hillRepresentative",
+      "NLS.KdV.hillFirstDerivative",
+      "NLS.KdV.hillRepresentative_deriv_ae",
+      "NLS.KdV.HasPeriodicHillH2",
+      "NLS.KdV.hillRepresentative_H2",
+      "NLS.KdV.hasPeriodicHillH2_iff_domain",
+      "NLS.KdV.hill_distribution_first_derivative",
+      "NLS.KdV.hill_distribution_second_derivative",
+      "NLS.KdV.physicalHillOperator",
+      "NLS.KdV.physicalHillOperator_pointwise",
+      "NLS.KdV.l2Synthesis_hillOperator",
+      "NLS.KdV.physicalHillOperator_eigen_iff",
+      "NLS.KdV.physicalHillOperator_eigen_ae",
+      "NLS.KdV.hillReduced_det_eq_zero_iff_physicalEigenvector"
+    ],
+    "domain_description": "WeightedCoeff (Weight.sobolev 2) 2, with its actual Hilbert norm. Its continuous physical representative F has a continuous periodic representative G of the first derivative; F and G are absolutely continuous on [0,2] and have square-integrable derivatives there. F prime equals G almost everywhere. Conversely every such physical periodic H2 function has a unique coefficient-domain representative.",
+    "operator_description": "The free part has symbol pi^2*k^2. It is the negative second derivative as a genuine tempered distribution. The potential term is the actual L2 product of the potential and the continuous H2 representative, by the existing physical convolution theorem. The physical output equals -G prime + q*F almost everywhere.",
+    "eigenvector_regularization": "Every unit-weight summable solution of the full Fourier eigen-equation automatically has Sobolev order two. The two-mode determinant therefore vanishes exactly when the constructed physical H2 Hill operator has a nonzero domain eigenvector on the stated strips and cutoff.",
+    "scope_qualifications": "The result works for arbitrary complex L2 potentials on the period-two circle. Source period-one/mean-zero potential restrictions still need their explicit application adapter. No compact resolvent, self-adjointness, eigenvalue labeling/counting/multiplicity, analytic determinant, or physical Birkhoff map is asserted by this milestone."
+  }
 }

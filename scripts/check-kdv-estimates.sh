@@ -18,7 +18,7 @@ for package_lib in "$reference"/.lake/packages/*/.lake/build/lib/lean; do
 done
 cd "$project_dir"
 lean --version
-modules=(NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/Articles/KdVEstimates/EstimateAdapter)
+modules=(NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/KdV/HillSobolev NLS/KdV/HillPhysical NLS/Articles/KdVEstimates/EstimateAdapter)
 for module in "${modules[@]}"; do
   lean -DautoImplicit=false -o "$build_root/$module.olean" "$module.lean"
 done
