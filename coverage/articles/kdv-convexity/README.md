@@ -14,7 +14,9 @@ have actual two-root Hill pairs with exact analytic multiplicities and parity
 trace levels, and analytic energy midpoints and squared gaps. For real continuous
 potentials all actual unit-modulus Floquet energies are now proved real; the
 primitive covers both complete nonreal energy half-planes, and the high pairs
-are ordered. The analytic summation also allows a local finite spectral cutoff.
+are ordered. The actual half-plane sheets and reflected primitive are now
+identified from the free normalization, giving reality of the actual high
+cubic moments. The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
@@ -539,6 +541,50 @@ neighborhood. Complete central/global labels and the endpoint normalization
 `F(lambda_n^+/-)=-i*n*pi` remain unproved. These reality results concern
 continuous potentials; no L2 or H^-1 extension of the Green proof is claimed.
 
+## Physical primitive sheets, reflection and moment reality
+
+[`ClassicalHillConjugation.lean`](../../../NLS/KdV/ClassicalHillConjugation.lean)
+proves conjugation of the actual scalar flow by IVP uniqueness, and hence
+Schwarz symmetry of the actual discriminant and radicand for real
+continuous potentials. The free primitive and root have the exact reflected
+signs on the energy slit plane.
+
+[`ClassicalHillPrimitiveSheets.lean`](../../../NLS/KdV/ClassicalHillPrimitiveSheets.lean)
+proves the free square-root sign directly. The imaginary Green identity
+prevents the real part of the actual continued primitive from vanishing
+along any real source path `s*q`. The intermediate value theorem then gives
+
+```
+Im(lambda) * Re(F(lambda,q)) > 0,  Im(lambda) != 0.
+```
+
+Thus `Re(F)>0` and the actual Floquet multiplier has norm greater than one
+in the upper energy half-plane. In the lower half-plane both inequalities
+reverse. The real potential may have arbitrary continuous norm; these are
+actual sheet identifications, not assumed branch conventions.
+
+[`ClassicalHillPrimitiveReflection.lean`](../../../NLS/KdV/ClassicalHillPrimitiveReflection.lean)
+proves conjugation invariance of the entire source-continuation domain at
+real continuous q. Connected source paths, the nonvanishing root and its
+free anchor give `r(conj(lambda),q)=-conj(r(lambda,q))`. Continuous logarithm
+uniqueness anchored at zero potential then proves
+`F(conj(lambda),q)=-conj(F(lambda,q))` on that full domain, including
+admissible real energies. At those real energies the primitive is purely
+imaginary and its actual Floquet multiplier has unit modulus. This does
+not assert that a real gap is already filled by a common boundary value.
+
+[`ClassicalHillMomentReality.lean`](../../../NLS/KdV/ClassicalHillMomentReality.lean)
+retains the exact shift `F_n=F+i*n*pi` and proves its anti-conjugate
+reflection law. The existing real-circle reflection theorem reverses
+orientation as well, proving that the literal normalized cubic moments
+are real on admissible real-centered energy circles. The same calculation
+applies to the actual squared-frequency contours, with the exact Jacobian
+`2*z`. One cutoff and one complex open potential neighborhood support all
+analytic high moments, real at every real potential in that neighborhood.
+Nonpositivity, endpoint values `F(lambda_n^+/-)=-i*n*pi`, the gap-scale
+bounds and weighted action descent remain unproved. No L2 or H^-1 extension
+of these primitive results is asserted here.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -584,12 +630,15 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `b209737`.
+The `kdv-estimates` branch was re-inspected through commit `82b3467`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
 agrees with the continuous discriminant, and its zeros are identified with
-actual Fourier Hill eigenvectors and the reduced determinant. Those new
+actual Fourier Hill eigenvectors and the reduced determinant. It now also
+proves reality for real L2 Hill potentials by Fourier operator symmetry,
+physical characteristic multiplicities and ordered high pairs at a checked
+linear cutoff. Those new
 Fourier/L2 modules are available on that branch and have not been duplicated
 or validated as part of this branch's focused check. The scalar flow module
 is reused here unchanged. Complete globally ordered labels, central bounds,
@@ -605,10 +654,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All thirty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All thirty-four modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-374 constants in their two namespaces, including generated declarations,
+399 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class

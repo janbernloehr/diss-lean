@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Global analytic summation with local spectral cutoffs; actual scalar Hill Green identity, real ordered high pairs, and complete nonreal energy primitive coverage for real continuous potentials",
+  "milestone": "Actual Hill primitive half-plane sheet signs, source-domain reflection and reality of the normalized cubic contour moments at real continuous potentials",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -34,11 +34,15 @@
     "NLS.KdV.ClassicalContourCoverage",
     "NLS.KdV.ClassicalHighGapPairs",
     "NLS.KdV.ClassicalHillReality",
+    "NLS.KdV.ClassicalHillConjugation",
+    "NLS.KdV.ClassicalHillPrimitiveSheets",
+    "NLS.KdV.ClassicalHillPrimitiveReflection",
     "NLS.KdV.ClassicalBranchPrimitive",
     "NLS.KdV.ClassicalTraceAsymptotics",
     "NLS.KdV.ActionHamiltonianMoments",
     "NLS.KdV.ClassicalContourMoments",
     "NLS.KdV.ClassicalHighContourMoments",
+    "NLS.KdV.ClassicalHillMomentReality",
     "NLS.KdV.ClassicalHighGapFamilies",
     "NLS.KdV.ActionHamiltonianTrace",
     "NLS.KdV.ActionHamiltonianFiniteGap",
@@ -51,7 +55,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 374,
+    "declarations": 399,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -90,8 +94,12 @@
     "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6",
     "NLS/KdV/ClassicalHighGapFamilies.lean": "5159acab52f9f977df82b203f95df8dd0942c194c941d5be0f8aacd3c3832928",
     "NLS/KdV/ClassicalHighGapPairs.lean": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074",
+    "NLS/KdV/ClassicalHillConjugation.lean": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
     "NLS/KdV/ClassicalHillGreen.lean": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+    "NLS/KdV/ClassicalHillMomentReality.lean": "28634829d60a4078de9f536625e982d0df158f8f30c76ccffa8f0a09106d46a3",
+    "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
+    "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
     "NLS/KdV/ClassicalHillReality.lean": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f",
     "NLS/KdV/ClassicalHillSpectrum.lean": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
@@ -103,31 +111,31 @@
     "NLS/KdV/RiccatiEnergy.lean": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
     "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "3b1a0edf5ddbacda84038a9699468d0581742261653b9dc7b424a38b5b8980d0",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "1a9275a0bf649c1ca590bf2459e66def5cf6c3c9af31e8b2fcbdc6db51befc44",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
-    "scripts/check-kdv-convexity.sh": "5b5cc12b0449ace1273ce20c217a1a93757c3fbf7919a6a93e59da7350b5eef1"
+    "scripts/check-kdv-convexity.sh": "14208e4097a724f3a5363c8a1877abf2e6fe3c9d3eba1a8c3dcf7a268cccd6d7"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-reality-tail.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-primitive-sheets.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
   "dissertation_validation_replaced": false,
   "shared_foundation_inspected": {
     "branch": "articles/kdv-estimates",
-    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
-    "available": "Actual periodic H2 weak Hill operator and two-mode reduction; jointly entire period-one L2 energy discriminant agreeing with continuous scalar trace; equivalence of its zeros with Fourier Hill eigenvectors and reduced determinant; weighted physical gap bounds and tails. New Fourier/L2 modules are available on the shared branch, not duplicated or validated in this focused build.",
+    "commit": "82b34672c3c689555a78eba599cea210ebd38e1b",
+    "available": "Actual periodic H2 weak Hill operator and two-mode reduction; jointly entire period-one L2 energy discriminant and actual Fourier characteristic criterion; physical multiplicity comparison with the reduced determinant, Fourier-symmetry proof of reality for real L2 potentials, ordered real high pairs at the checked linear cutoff, weighted physical gap bounds and tails. These new Fourier/L2 modules are available on the shared branch, not duplicated or validated in this focused build.",
     "not_yet_available": "Complete globally ordered labels and central bounds, H^-1 Hill/action/Birkhoff construction."
   },
   "limits": [
     "All main theorems remain unverified.",
-    "For real continuous potentials the actual Green identity proves all unit-modulus Floquet energies real; the high pairs are ordered and cannot cross. The free-normalized primitive is analytic throughout both nonreal energy half-planes. Complete central/global labels, endpoint values -i*n*pi, L2/H^-1 reality extension, rough Hill/Birkhoff identification and weighted action descent remain unproved.",
+    "At real continuous potentials the actual primitive half-plane sheets are now fixed globally by the free anchor, and the root and logarithm satisfy their reflected signs on the complete admissible source domain. The actual normalized cubic moments are real, including the squared-frequency Jacobian. Complete central/global labels, endpoint values -i*n*pi, nonpositivity and gap-scale bounds, rough Hill/Birkhoff identification and weighted action descent remain unproved. The shared branch has L2 spectral reality, not imported into this primitive construction.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global analytic reduction now allows locally chosen finite spectral cutoffs. The physical action extension still needs actual contour moment action descent and uniform complex-neighborhood tail quadratic bounds; no origin vanishing is inferred from a tail bound alone.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed."
   ],
-  "previous_progress_commit": "963d5bb053684ec65427e0a319ffb729beaaa9f0",
+  "previous_progress_commit": "e848349c4d93aa6ffd4912235b8c345d26006318",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -171,7 +179,13 @@
     "Matrix.mulVec_injective_of_det_ne_zero",
     "intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le",
     "intervalIntegral.integral_lt_integral_of_continuousOn_of_le_of_exists_lt",
-    "Summable.congr_cofinite"
+    "Summable.congr_cofinite",
+    "NLS.LinearVolterra.solution_unique",
+    "Complex.conj_cpow",
+    "Complex.cpow_inv_two_re",
+    "intermediate_value_Icc'",
+    "IsPreconnected.eq_of_sq_eq",
+    "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj"
   ],
   "other_shared_branch_inspected": {
     "branch": "articles/mkdv-nls-hierarchies",
@@ -218,7 +232,14 @@
     "high_squared_frequency_contours_covered_on_common_neighborhood": true,
     "all_nonreal_energies_at_real_continuous_potentials_covered": true,
     "continued_exponential_is_actual_Floquet_multiplier": true,
-    "primitive_real_part_nonzero_at_nonreal_energy_for_real_continuous_q": true
+    "primitive_real_part_nonzero_at_nonreal_energy_for_real_continuous_q": true,
+    "domain_invariant_under_energy_conjugation_at_real_continuous_q": true,
+    "half_plane_sheets_fixed_by_free_normalization": true,
+    "upper_half_plane_primitive_real_part_positive": true,
+    "lower_half_plane_primitive_real_part_negative": true,
+    "continued_root_conjugation": "r(conj(lambda),q)=-conj(r(lambda,q)) on the admissible source domain at real continuous q.",
+    "continued_primitive_conjugation": "F(conj(lambda),q)=-conj(F(lambda,q)) on the admissible source domain at real continuous q.",
+    "primitive_pure_imaginary_at_admissible_real_energies": true
   },
   "private_overlay": "Real private KdV and ZakharovShabat output directories. Reference ZakharovShabat files are symlinked for imports only; output-file links are removed before compilation. Canonical build products are not compilation targets.",
   "high_contour_progress": {
@@ -238,7 +259,9 @@
     "rough_Hill_operator_spectral_equivalence_proved": false,
     "weighted_action_descent_proved": false,
     "uniform_quadratic_action_bounds_proved": false,
-    "actual_unordered_high_energy_pairs_identified": true
+    "actual_unordered_high_energy_pairs_identified": true,
+    "actual_moments_real_at_real_continuous_potentials_on_common_tail_neighborhood": true,
+    "nonpositivity_of_actual_moments_proved": false
   },
   "high_energy_pair_progress": {
     "potential_space": "C([0,1], C), with complex sup-norm topology",
@@ -283,5 +306,17 @@
     "all_unit_modulus_Floquet_energies_real": true,
     "periodic_and_antiperiodic_energies_real": true,
     "L2_or_Hminus1_reality_extension_proved": false
+  },
+  "primitive_sheet_progress": {
+    "potential_space": "C([0,1], C), real-valued locus, no norm smallness assumption",
+    "proof_method": "Actual scalar IVP conjugation, Green identity, connected real source continuation and free anchoring.",
+    "expanding_multiplier_upper_energy_half_plane": true,
+    "contracting_multiplier_lower_energy_half_plane": true,
+    "continued_root_and_logarithm_reflection_without_new_branch_choices": true,
+    "actual_cubic_moments_real_including_exact_shift_weight_and_Jacobian": true,
+    "complete_real_gap_boundary_values_constructed": false,
+    "endpoint_minus_i_n_pi_matching_proved": false,
+    "nonpositive_cubic_moments_proved": false,
+    "action_descent_proved": false
   }
 }

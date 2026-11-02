@@ -124,9 +124,23 @@
         "NLS.KdV.classicalHillContinuedPrimitive_re_ne_zero_off_real",
         "NLS.KdV.exists_ordered_classicalHillHighGapPair_of_counting",
         "NLS.KdV.ClassicalHillHighGapPair.right_lt_left_of_index_lt",
-        "NLS.KdV.exists_analytic_ordered_classicalHillHighGapFamilies"
+        "NLS.KdV.exists_analytic_ordered_classicalHillHighGapFamilies",
+        "NLS.KdV.classicalHillFlow_conj",
+        "NLS.KdV.classicalHillDiscriminant_conj",
+        "NLS.KdV.classicalHillFreePrimitive_conj",
+        "NLS.KdV.classicalHillContinuedPrimitive_re_sign",
+        "NLS.KdV.one_lt_norm_classicalHillContinuedMultiplier",
+        "NLS.KdV.norm_classicalHillContinuedMultiplier_lt_one",
+        "NLS.KdV.mem_classicalHillContinuationDomain_conj",
+        "NLS.KdV.classicalHillContinuedRoot_conj",
+        "NLS.KdV.classicalHillContinuedPrimitive_conj",
+        "NLS.KdV.classicalHillContinuedPrimitive_re_eq_zero_of_im_eq_zero",
+        "NLS.KdV.classicalHillContinuedMoment_im_eq_zero",
+        "NLS.KdV.classicalHillHighContourMoment_im_eq_zero_of_coverage",
+        "NLS.KdV.exists_analytic_real_classicalHillHighContourMoments"
       ],
       "remaining": [
+        "Match the canonical indexed primitive endpoint values F(lambda_n^+/-)=-i*n*pi, including collapsed gaps and the central spectrum; prove nonpositivity and gap-scale bounds for the actual moments. The continuous-potential high moments are now proved real on a common analytic neighborhood.",
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
         "Prove locally common complex-neighborhood bounds |8*n*pi*R_n| <= C*|I_n|^2 for those moments.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -281,7 +295,14 @@
     "high_squared_frequency_contours_covered_on_common_neighborhood": true,
     "all_nonreal_energies_at_real_continuous_potentials_covered": true,
     "continued_exponential_is_actual_Floquet_multiplier": true,
-    "primitive_real_part_nonzero_at_nonreal_energy_for_real_continuous_q": true
+    "primitive_real_part_nonzero_at_nonreal_energy_for_real_continuous_q": true,
+    "domain_invariant_under_energy_conjugation_at_real_continuous_q": true,
+    "half_plane_sheets_fixed_by_free_normalization": true,
+    "upper_half_plane_primitive_real_part_positive": true,
+    "lower_half_plane_primitive_real_part_negative": true,
+    "continued_root_conjugation": "r(conj(lambda),q)=-conj(r(lambda,q)) on the admissible source domain at real continuous q.",
+    "continued_primitive_conjugation": "F(conj(lambda),q)=-conj(F(lambda,q)) on the admissible source domain at real continuous q.",
+    "primitive_pure_imaginary_at_admissible_real_energies": true
   },
   "high_contour_progress": {
     "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
@@ -300,7 +321,9 @@
     "rough_Hill_operator_spectral_equivalence_proved": false,
     "weighted_action_descent_proved": false,
     "uniform_quadratic_action_bounds_proved": false,
-    "actual_unordered_high_energy_pairs_identified": true
+    "actual_unordered_high_energy_pairs_identified": true,
+    "actual_moments_real_at_real_continuous_potentials_on_common_tail_neighborhood": true,
+    "nonpositivity_of_actual_moments_proved": false
   },
   "high_energy_pair_progress": {
     "potential_space": "C([0,1], C), with complex sup-norm topology",
@@ -333,5 +356,17 @@
     "all_unit_modulus_Floquet_energies_real": true,
     "periodic_and_antiperiodic_energies_real": true,
     "L2_or_Hminus1_reality_extension_proved": false
+  },
+  "primitive_sheet_progress": {
+    "potential_space": "C([0,1], C), real-valued locus, no norm smallness assumption",
+    "proof_method": "Actual scalar IVP conjugation, Green identity, connected real source continuation and free anchoring.",
+    "expanding_multiplier_upper_energy_half_plane": true,
+    "contracting_multiplier_lower_energy_half_plane": true,
+    "continued_root_and_logarithm_reflection_without_new_branch_choices": true,
+    "actual_cubic_moments_real_including_exact_shift_weight_and_Jacobian": true,
+    "complete_real_gap_boundary_values_constructed": false,
+    "endpoint_minus_i_n_pi_matching_proved": false,
+    "nonpositive_cubic_moments_proved": false,
+    "action_descent_proved": false
   }
 }
