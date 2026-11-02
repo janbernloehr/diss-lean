@@ -190,6 +190,13 @@ modules = [
     "NLS/MKdV/MiuraHillSpectralIdentification.lean",
     "NLS/MKdV/MiuraHillRealLabels.lean",
     "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean",
+    "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean",
+    "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean",
+    "NLS/MKdV/MiuraNLSPositiveEndpoints.lean",
+    "NLS/MKdV/MiuraPositiveMultiplicity.lean",
+    "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean",
+    "NLS/MKdV/MiuraGapIdentification.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

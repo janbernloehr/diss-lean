@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GapIdentification
 import NLS.Articles.MKdVNLSHierarchies.SpectralIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevPrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.PrimitiveIdentification
@@ -24,6 +25,9 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ordered_natural_enumeration_unique,
+    `NLS.ZakharovShabat.canonicalPeriodicMultiplicity_neg_of_even,
+    `NLS.ZakharovShabat.canonicalPeriodicEndpoints_neg_of_even,
     `NLS.FiniteSpectralDeterminant,
     `NLS.SpectralWeight.doubleIndex,
     `NLS.SpectralWeight.doubleIndex_apply,

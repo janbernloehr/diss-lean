@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 2025,
+  "audited_declarations_and_auxiliaries": 2130,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -5429,12 +5429,267 @@
       "kind": "theorem",
       "name": "lemma3_multiplicity_zero",
       "file": "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ordered_natural_enumeration_unique",
+      "file": "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalPeriodicMultiplicity_neg_of_even",
+      "file": "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalPeriodicEndpoints_neg_of_even",
+      "file": "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNLSLeft",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNLSRight",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalPeriodicProduct_miura",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSEndpoints_reflection",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSEndpoints_real",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSEndpoints_within",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSEndpoints_between",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSRight_zero_nonnegative",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSLeft_pos",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPositiveFrequency",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_zero",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_odd",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_even",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monotone_miuraPositiveFrequency",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_nonnegative",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSRight_neg",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_endpoint",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_pos",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_left",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_right",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSEndpoint_index_unique",
+      "file": "NLS/MKdV/MiuraNLSPositiveEndpoints.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNLSPairCount",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSPairCount_global",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSPairCount_other",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSMultiplicity_eq_pair",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_fiber_pair",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_finite_fiber",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_count_pair",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_count_ground",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_count_pos",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_count_zero",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveFrequency_zero_multiplicity",
+      "file": "NLS/MKdV/MiuraPositiveMultiplicity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSquaredNLS",
+      "file": "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "monotone_miuraSquaredNLS",
+      "file": "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSquaredNLS_finite_fiber",
+      "file": "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSquaredNLS_multiplicity",
+      "file": "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_eq_squaredNLS",
+      "file": "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_ground",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_left",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_right",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_ground_complex",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillLabels_endpoints_complex",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillGap_collapsed_iff",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillGap_square_image",
+      "file": "NLS/MKdV/MiuraGapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_ground_endpoints",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_indexed_endpoints",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_gap_square_image",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma3_gap_collapsed_iff",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean"
     }
   ],
-  "public_declaration_count": 1082,
-  "theorem_count": 860,
-  "definition_count": 222,
-  "full_build": "All 156 article/shared modules and NLS aggregate compiled using pinned cached imports; complete combined aggregate/article audit passed under the shared lock. The final expanded targeted prefix audit also passed independently. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1133,
+  "theorem_count": 906,
+  "definition_count": 227,
+  "full_build": "All 163 article/shared modules and NLS aggregate compiled using pinned cached imports; complete targeted and combined aggregate/article audits passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -5594,11 +5849,18 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "fe217ab934fe2e71e2cf768c5edbf0a60b8acf5487514c9414f94353be883313",
-    "scripts/check_mkdv_nls.py": "150b0f5c3d3485b245c9b3c75604738b312fb9ef5c8b9d2e6b5d2338740ed1ca"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "a6c4cf42a87ccc54a8536436ac88eb09885993891a52ea3260eea6f128cad156",
+    "scripts/check_mkdv_nls.py": "5bdc7b66dbf62253354982b0133ba6fdf2b025f99b45c9f7e38a85f049d5bd72",
+    "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
+    "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
+    "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
+    "NLS/MKdV/MiuraPositiveMultiplicity.lean": "d3791e39dd0071917f0885d67a320228191d4c7cfccccd2a0c7f1484d1dd3194",
+    "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean": "e0554afb01cb964e25c830774149d8c7bbf3bf4391a7408fa77e0645e002ed8c",
+    "NLS/MKdV/MiuraGapIdentification.lean": "c51510ad6d5e8640f862c7c386d4bb05715eae0dc7e40445720abe372a95201b",
+    "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean": "bab5430d3369c07b0ec16b848bde657c904f250b17264cacf3ac23eb088f1804"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 156,
+  "focused_module_count": 163,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -5683,12 +5945,18 @@
       "audit_count": 2025,
       "combined_NLS_audit_count": 47204,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "exact fixed-index Miura Hill/NLS endpoint squares on full real H1; signed reflection; finite-fiber ordered enumeration uniqueness; ground-slot ramification; closed gap square images and collapse equivalence",
+      "audit_count": 2130,
+      "combined_NLS_audit_count": 47309,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 47204,
+  "combined_audited_NLS_declarations": 47309,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -5696,7 +5964,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "Full topologically ordered 156-module run, aggregate compilation and combined audit passed. The targeted audit was then expanded to include the double-index weight adapter explicitly and rerun successfully for 2025 declarations/auxiliaries; no mathematical source changed after the full run.",
+  "last_run_notes": "Full topologically ordered 163-module run, NLS aggregate compilation, targeted audit for 2130 declarations/auxiliaries and combined audit for 47309 NLS declarations passed with warnings as errors. No mathematical source changed after this run. Canonical main remains clean at the recorded base commit.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

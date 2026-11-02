@@ -741,3 +741,52 @@ hashes. The complete run used pinned read-only cached imports; the final
 targeted prefix inventory was expanded and audited again independently.
 The entire dependency tree was not rebuilt from source. Canonical main
 remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+## 2026-11-02 — exact indexed endpoint and gap identification on real H1
+
+`CanonicalPeriodicEvenReflection.lean` proves exact signed-index reflection
+for an even original periodic characteristic. Global root multiplicities,
+the original l2 lattice displacement and ordered-pair uniqueness fix each
+reflected index, including the central pair. This applies to every complex
+H1 Miura input; reality is imposed only for the positive real enumeration.
+
+`OrderedNaturalEnumerationUnique.lean` supplies a reusable uniqueness result:
+ordered natural enumerations with finite fibers and equal multiplicities
+agree at every index. Its proof isolates the first differing slot by a
+strict fiber-cardinality inequality. No tail cutoff or unproved indexing
+offset enters the comparison.
+
+The positive NLS enumeration starts with lambda_0_plus, followed by both
+endpoints of each positive pair. Strict separation excludes extra
+occurrences from other pairs. `MiuraPositiveMultiplicity.lean` proves its
+exact counts: positive frequencies retain their full original NLS
+multiplicity, while the count at zero is exactly half the original NLS
+multiplicity. Combining this with the checked square-map ramification
+proves that the squared positive sequence has the same multiplicities as
+the independently constructed actual Hill labels, including energy zero.
+
+`MiuraSquaredEndpointMultiplicity.lean` then identifies the entire two
+natural enumerations. `MiuraGapIdentification.lean` derives the exact
+fixed-index endpoint identities, both central identities, square images of
+closed positive gaps and collapse equivalence. The article exports these
+as lemma3_ground_endpoints, lemma3_indexed_endpoints,
+lemma3_gap_square_image and lemma3_gap_collapsed_iff. All original real H1
+inputs and every positive index are included without smoothness or
+nonzero-mean restrictions.
+
+The printed geometric-eigenspace multiplicity comparison is still separate
+from these analytic characteristic multiplicities. Full real-band sheet
+extension, spectral action integrals, spectral Hamiltonian identification
+and Theorems 3 and 4 remain open. The goal remains incomplete.
+
+All 163 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 2,130 declarations and generated auxiliaries; the
+combined audit passed for 47,309 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 1,133 entries (906 theorems, 227 definitions; aliases and
+structure declarations excluded), with 165 SHA256 source/checker hashes.
+The complete sequential run used pinned read-only cached imports under the
+shared build lock; the entire dependency tree was not rebuilt from source.
+Canonical main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.

@@ -67,7 +67,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
-| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | Existing physical NLS actions are available, not an mKdV action identification. | Prove the Miura/Hill discriminant and action comparison with fixed gap labels. |
+| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | The actual H1 Miura/Hill discriminant, every fixed endpoint index and exact gap-collapse correspondence are proved. Existing physical NLS actions are available. | Connect the actual Hill actions and central mean; prove action reflection. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | No new analytic factorization is claimed. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | Existing NLS canonical identities are potential inputs only. | Construct mKdV angle domains, handle collapsed gaps correctly, and prove bracket transfer and analytic continuation. |
 
@@ -370,7 +370,7 @@ audits passed. Validation uses pinned cached imports, not a rebuild of the
 entire dependency tree.
 
 
-Latest milestone: the actual H1-to-L2 Miura potential and shared physical
+Previous milestone: the actual H1-to-L2 Miura potential and shared physical
 H2 Hill operator are identified with the original ZS periodic spectrum.
 The discriminant comparison holds on every complex H1 input at every
 complex energy. Multiplicities are preserved away from zero, with exact
@@ -392,3 +392,30 @@ hashes. The complete run used pinned read-only cached imports; the final
 targeted prefix inventory was expanded and audited again independently.
 The entire dependency tree was not rebuilt from source. Canonical main
 remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+Latest milestone: every intrinsic Miura Hill endpoint now equals the square
+of the corresponding original canonical NLS endpoint on the full real H1
+domain. The central Hill label is the square of either central NLS
+endpoint. For every positive index the full closed Hill gap is exactly the
+square image of the NLS gap, and the gaps collapse simultaneously.
+
+The proof uses shared ordered-enumeration uniqueness, exact signed NLS
+reflection, and analytic multiplicities, including the factor two at zero.
+The Hill labels are constructed independently from the physical L2 Hill
+operator; they are not defined by squaring the NLS endpoints. See
+`GapIdentification.lean` in the article directory for the four source
+exports. Geometric eigenspace multiplicity, real-band sheet extension and
+spectral action/frequency identities remain open. Theorems 1, 3 and 4
+remain incomplete.
+
+All 163 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 2,130 declarations and generated auxiliaries; the
+combined audit passed for 47,309 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 1,133 entries (906 theorems, 227 definitions; aliases and
+structure declarations excluded), with 165 SHA256 source/checker hashes.
+The complete sequential run used pinned read-only cached imports under the
+shared build lock; the entire dependency tree was not rebuilt from source.
+Canonical main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
