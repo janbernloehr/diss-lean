@@ -1,6 +1,12 @@
 # Implementation status
 
-## Current milestone: accepted reference and closed tracked requirements
+## Current milestone: main theorems verified
+
+The accepted goal is verification of Theorems 0.1–0.3. Their source statements and quantified Lean constructions have been checked: all three are verified under the accepted reference and documented normalizations. The [focused report](coverage/MAIN_THEOREMS.md) connects each result to its proof, independently of whole-document coverage counts.
+
+A fresh transitive axiom check passed for 16 principal declarations, including the three existence constructions and the local frequency inverse. The unchanged full-library snapshot retains its successful build, 7,729 public examples and 45,245-declaration axiom audit. No new Lean theorem or refutation was needed. The accepted main-theorem completion criterion is satisfied.
+
+## Previous milestone: accepted reference and closed tracked requirements
 
 The user accepted the supplied Grébert–Kappeler manuscript as the reference and removed the published-edition identity requirement. The [reference correspondence](coverage/ACCEPTED_REFERENCE.md) connects its formulas and theorems to the existing physical Hilbert and Sobolev maps. S14-010, S17-007 and S18-003 are now matched. Together with the accepted smooth-solution interpretation of S7-002, this closes all explicitly partial or pending source groups.
 

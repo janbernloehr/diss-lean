@@ -1,17 +1,17 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T08:52:26.426628+00:00",
-  "base_commit": "68e63a1a562261d436eb6ce102f18dfccaabc6e4",
+  "updated_utc": "2026-11-02T09:10:41.114043+00:00",
+  "base_commit": "357aa87e364e7e14192f365e8e1281f5e583cbb0",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "7beb4fb95f8517f0cee253c98c10985f77e5a121019f046eed7f846e4daf46a4",
+  "published_source_index_sha256": "5a9c14115829e7cf8d113439f187236aa36ab7c9ad0e952279035fdd590d0526",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
     {
       "unit": "abstracts",
       "document": "coverage/INTRODUCTION.md",
-      "document_sha256": "13e6ee8e3852896a84cbbb631d434f0ca5e7e621eb003d7653ff77b018aeac74",
+      "document_sha256": "0e4122c1804f8b8d27ea75a0267578cbdf4232e1a60612fc6263327fe2c22f46",
       "groups": [
         {
           "group": "abstracts-001",
@@ -321,7 +321,7 @@
     {
       "unit": "introduction",
       "document": "coverage/INTRODUCTION.md",
-      "document_sha256": "13e6ee8e3852896a84cbbb631d434f0ca5e7e621eb003d7653ff77b018aeac74",
+      "document_sha256": "0e4122c1804f8b8d27ea75a0267578cbdf4232e1a60612fc6263327fe2c22f46",
       "groups": [
         {
           "group": "intro-01",
@@ -57230,7 +57230,7 @@
   },
   "current_completion_assessment": {
     "document": "coverage/COMPLETENESS.md",
-    "scope": "All tracked requirements resolved under the accepted manuscript, smooth interpretation and explicit source corrections.",
+    "scope": "Verification of main Theorems 0.1–0.3; exhaustive whole-dissertation semantic coverage is outside the accepted completion criterion.",
     "completion_claim": false,
     "proof_snapshot_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
     "accepted_scope_complete": true
@@ -57276,5 +57276,18 @@
     "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted.",
     "new_lean_proofs": 0,
     "new_refutations": 0
+  },
+  "accepted_completion_scope": {
+    "status": "satisfied",
+    "decision_date": "2026-11-02",
+    "criterion": "Verify the main theorems",
+    "theorems": [
+      "Theorem 0.1",
+      "Theorem 0.2",
+      "Theorem 0.3"
+    ],
+    "verification_record": "coverage/main-theorems-verification.json",
+    "verification_record_sha256": "dbc5aa055d44b1866246d7fe60f981179a92342218c10a2c2a674aad0c4558bc",
+    "exhaustive_whole_dissertation_audit_required": false
   }
 }

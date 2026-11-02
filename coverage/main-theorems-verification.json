@@ -1,0 +1,143 @@
+{
+  "status": "main_theorems_verified",
+  "reviewed_utc": "2026-11-02T09:10:41.114043+00:00",
+  "base_commit": "357aa87e364e7e14192f365e8e1281f5e583cbb0",
+  "completion_criterion": "Verify the dissertation main theorems, as accepted by the user on 2026-11-02.",
+  "document": "coverage/MAIN_THEOREMS.md",
+  "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+  "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
+  "accepted_reference": {
+    "status": "accepted_by_user",
+    "date": "2026-11-02",
+    "title": "The defocusing NLS equation and its normal form",
+    "authors": [
+      "Benoît Grébert",
+      "Thomas Kappeler"
+    ],
+    "pdf_pages": 141,
+    "preface_date": "July 2013",
+    "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+    "decision": "Use the supplied manuscript as the reference; verification of identity with the 2014 edition is not required.",
+    "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+    "groups": [
+      "S14-010",
+      "S17-007",
+      "S18-003"
+    ],
+    "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted.",
+    "new_lean_proofs": 0,
+    "new_refutations": 0
+  },
+  "theorems": [
+    {
+      "label": "Theorem 0.1",
+      "source_lines": [
+        326,
+        342
+      ],
+      "printed_and_pdf_page": 11,
+      "status": "verified",
+      "requirement": "One retained original Birkhoff map, all integer orders m>=1, positive constants before the potential, both inequalities with exponents 2m and 4m-3 and only order-one and order-zero remainders.",
+      "declarations": [
+        "SourceSection23SobolevBounds",
+        "SourceSection17OriginalData.section23_sobolev_bounds",
+        "sourceSection23_original_estimates"
+      ],
+      "qualification": "Uses the original physical Birkhoff map identified with the accepted manuscript; constants depend on the integer order, not the potential."
+    },
+    {
+      "label": "Theorem 0.2",
+      "source_lines": [
+        406,
+        417
+      ],
+      "printed_and_pdf_page": 12,
+      "status": "verified",
+      "requirement": "The same original renormalized Hamiltonian is real analytic and nonpositive on nonnegative summable actions, vanishes only at zero, extends near zero in ell2, and satisfies the quantitative real-Hessian concavity bound in every ell2 direction.",
+      "declarations": [
+        "SourceOriginalHamiltonianData",
+        "sourceSection18_original_hamiltonian",
+        "SourceOriginalHamiltonianData.real_summable_extension",
+        "SourceOriginalHamiltonianData.physical_identity"
+      ],
+      "qualification": "The same physical renormalized Hamiltonian is used throughout; concavity is local near zero, as stated."
+    },
+    {
+      "label": "Theorem 0.3",
+      "source_lines": [
+        453,
+        473
+      ],
+      "printed_and_pdf_page": 13,
+      "status": "verified",
+      "requirement": "One frequency on the summable positive cone has all target exponents r>1; for every finite p>2 the same frequency extends analytically on ell(p/2), has an analytic inverse on neighborhoods of zero, and has the stated p/3 or ell(1+) correction.",
+      "declarations": [
+        "sourceSection18_original_frequencies",
+        "SourceOriginalHilbertFrequencyData.realizations_all",
+        "SourceOriginalFrequencyData.eq_hilbert_on_positive",
+        "SourceOriginalFrequencyData.refined",
+        "SourceOriginalFrequencyData.local_open_inverse"
+      ],
+      "qualification": "Every finite p>2 is covered. The same frequency agrees on the nonnegative summable cone and has a local analytic inverse. No global injectivity or infinity source exponent is claimed."
+    }
+  ],
+  "statement_review": "Read the source statements and eight complete implementation modules, including the quantified data fields and unconditional existence constructions. The earlier module hashes are unchanged.",
+  "reviewed_module_hashes": {
+    "NLS/ZakharovShabat/SourceSection23Sobolev.lean": "46b90512d200e2effa0535aef8a39ba4ba2ddc842de0e09c0b41dffb0b5ae1b2",
+    "NLS/ZakharovShabat/SourceSection23Original.lean": "a98150495f40ebe8a16dbd2873ca9848d7d8a16dac459dc4069e0adf6522b92a",
+    "NLS/ZakharovShabat/SourceHamiltonianOriginal.lean": "3634039e9ba6f89538f139d5145de9a2370e6a2e521e6b4258bf9f24a2dbd4a2",
+    "NLS/ZakharovShabat/SourceOriginalActionDomains.lean": "f6c29119235ea286d0a224989985c3d5dabd4c7927472352988af44f8d35f492",
+    "NLS/ZakharovShabat/SourceFrequencyOriginalAsymptotic.lean": "6b89add470de464115e55e6699f76e4e8db128e5f69fe8f9a4b875e69db5f9ae",
+    "NLS/ZakharovShabat/SourceFrequencyOriginalHilbert.lean": "116260ef422acccd5299bf524734ff3e16309854700795b15a45515874869e08",
+    "NLS/ZakharovShabat/SourceFrequencyOriginalHilbertTop.lean": "196f4c70aac3cb357fad8fe144341f1a3136c0492686c6cd1126e0260c698119",
+    "NLS/ZakharovShabat/SourceFrequencyOpenInverse.lean": "327e3a5a79707e6a78386edddb0c20430e418e9cad6987ae5354bc31db5ab516"
+  },
+  "focused_axiom_check": {
+    "exit": 0,
+    "exit_observed": true,
+    "declarations": [
+      "NLS.ZakharovShabat.sourceSection23_original_estimates",
+      "NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds",
+      "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_upper",
+      "NLS.ZakharovShabat.SourceSection23SobolevBounds.birkhoff_lower",
+      "NLS.ZakharovShabat.sourceSection18_original_hamiltonian",
+      "NLS.ZakharovShabat.SourceOriginalHamiltonianData.real_summable_extension",
+      "NLS.ZakharovShabat.SourceOriginalHamiltonianData.physical_identity",
+      "NLS.ZakharovShabat.SourceOriginalHamiltonianData.concavity",
+      "NLS.ZakharovShabat.sourceSection18_original_frequencies",
+      "NLS.ZakharovShabat.SourceSection17OriginalData.exists_frequency_asymptotic",
+      "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.realizations_all",
+      "NLS.ZakharovShabat.SourceOriginalFrequencyData.eq_hilbert_on_positive",
+      "NLS.ZakharovShabat.SourceOriginalFrequencyData.refined",
+      "NLS.ZakharovShabat.SourceOriginalFrequencyData.derivative_zero",
+      "NLS.ZakharovShabat.SourceOriginalFrequencyData.local_open_inverse",
+      "NLS.ZakharovShabat.SourceSection14OriginalData.intrinsicPhysicalBirkhoffMap_eq"
+    ],
+    "checked_count": 16,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "script_sha256": "e96ca7e609adc39e66045e5345fe8d8ea65658374dec16a0676f772f685469fe",
+    "output": "Main-theorem interface and transitive axiom check passed for 16 declarations.",
+    "log_sha256": "c83d3bb00a9faaf8bf94b7e3da8eb28deec09169337d3b554c694d2b65d60b3f"
+  },
+  "full_validation": {
+    "reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
+    "lean_sources": {
+      "files": 4924,
+      "sha256": "4dcaf0425de74c1d9a7aa9d9d63a08657eef04e14070c28fc6784f3f332f351b"
+    },
+    "build_jobs": 8662,
+    "public_examples": 7729,
+    "audited_NLS_declarations": 45245,
+    "inherited_warnings": 21,
+    "log_sha256": "33cb8ec9079472b368699f50ddda724935bc1fead5707302b95717e16c8b62f2",
+    "exit": 0,
+    "exit_observed": true
+  },
+  "claim_limit": "This certifies the recorded correspondence and Lean proofs for Theorems 0.1–0.3, not every assertion in the PDF.",
+  "new_lean_declarations": 0,
+  "new_refutations": 0
+}

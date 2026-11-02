@@ -5,13 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-The recorded implementation and source reviews are complete under the
-[accepted manuscript reference](coverage/ACCEPTED_REFERENCE.md), the precise
-smooth-solution interpretation of Section 7, and the documented corrections.
-There are no remaining partial or pending groups in the current inventory.
-The [completion assessment](coverage/COMPLETENESS.md) retains the exact domains,
-norm conventions and qualifications; this does not assert every printed claim
-verbatim.
+The dissertation's three main theorems, **0.1–0.3**, are verified in Lean:
+uniform tame Sobolev estimates, the renormalized Hamiltonian's local
+concavity, and the renormalized frequency map's local inverse and asymptotics.
+Their precise scopes and proof entry points are in
+[main-theorem verification](coverage/MAIN_THEOREMS.md).
+
+This satisfies the accepted completion criterion. The supplied manuscript
+is the [accepted reference](coverage/ACCEPTED_REFERENCE.md); recorded
+corrections and qualifications remain explicit. An exhaustive verification
+of every statement in the PDF is outside this completion criterion.
 
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the introduction main-results audit](coverage/INTRODUCTION.md),

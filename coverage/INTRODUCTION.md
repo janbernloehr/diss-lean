@@ -1,5 +1,7 @@
 # Introduction: the three main theorems and their qualifications
 
+Current completion criterion: verify **Theorems 0.1–0.3**. The [focused verification](MAIN_THEOREMS.md) records the completed source-to-statement comparison and proof checks. The supplied manuscript is the accepted reference; older mentions below of waiting for the exact 2014 edition or an exhaustive source audit describe previous scope. The main-theorem criterion is satisfied.
+
 This audit covers the three main results, their analytic setup on printed
 pp. 10–13, the method-of-proof outline on pp. 13–15, and the dNLS
 frequency discussion and organizational synopsis on pp. 15–16. The main-results
@@ -741,9 +743,7 @@ from `SourceSection17OriginalData.section23_parseval` in
 Global native real Sobolev analyticity in both directions is proved in
 [`SourceBirkhoffSobolevGlobalInverse.lean`](../NLS/ZakharovShabat/SourceBirkhoffSobolevGlobalInverse.lean).
 
-The comparison with the inspected 2013 external construction has precise
-physical identifications. Agreement with the exact 2014 cited edition
-remains unverified; the introduction audit does not remove that qualification.
+The physical map is identified with the [accepted manuscript conventions](ACCEPTED_REFERENCE.md). Identity with the published 2014 edition is outside the agreed completion criterion.
 
 ## Theorem 0.2 and the retained Hamiltonian
 

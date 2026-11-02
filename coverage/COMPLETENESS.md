@@ -1,8 +1,8 @@
 # Current completion assessment
 
-The recorded implementation and source-review workflow is complete under the accepted reference, interpretations and explicit corrections below. The current inventory has no partial or pending groups and no unpublished implementation queue. This closes the tracked requirements; it is not a claim that every printed assertion is true verbatim.
+The accepted completion criterion is verification of the dissertation's three main theorems, **0.1–0.3**. That criterion is satisfied: the source statements, quantified interfaces and existence constructions were checked against the current Lean library. The [main-theorem verification](MAIN_THEOREMS.md) gives the precise results and proof entry points; its [verification record](main-theorems-verification.json) pins the evidence.
 
-The [whole-dissertation index](WHOLE_DISSERTATION.md) connects 41 units and 1,229 source groups to their comparisons, with every nonblank source line accounted for and 293 separately inspected navigation fragments. The 161 named comparisons and these navigation counts describe scope, not proof-completion percentages. The mathematical evidence and exact qualifications remain in the individual reviews.
+The broader [source inventory](WHOLE_DISSERTATION.md) remains useful navigation through 41 units and 1,229 groups. Its lack of partial or pending entries is not the basis for the main-theorem conclusion, and neither its counts nor source-line accounting certify every substantive claim in the PDF. An exhaustive whole-dissertation semantic audit is outside the accepted completion criterion.
 
 ## Accepted scope and retained qualifications
 
@@ -18,7 +18,7 @@ The unchanged Lean and dependency snapshot passed 8,662 build jobs, all 7,729 pu
 
 The final integrity checks verify the [source review index](source-review-index.json), all source-inventory evidence references, current document hashes, documentation links and unchanged Lean snapshot. Every historical proof-evidence row is retained. The source line accounting, scope decisions and proof validation are distinct checks.
 
-Each completed implementation step is committed and pushed. The current source inventory has no outstanding implementation requirement. Earlier statements below about waiting for the exact 2014 edition or the Section 7 interpretation describe previous scope and are superseded by the accepted choices above.
+Each completed implementation step is committed and pushed. No further implementation or audit is required to satisfy the accepted main-theorem criterion. Earlier statements below about waiting for the exact 2014 edition or the Section 7 interpretation describe previous scope and are superseded by the accepted choices above.
 
 ## Historical assessments
 

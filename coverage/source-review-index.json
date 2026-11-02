@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T08:52:26.426628+00:00",
-  "base_commit": "68e63a1a562261d436eb6ce102f18dfccaabc6e4",
+  "published_utc": "2026-11-02T09:10:41.114043+00:00",
+  "base_commit": "357aa87e364e7e14192f365e8e1281f5e583cbb0",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -80224,9 +80224,22 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "scope_resolution": {
-    "status": "all_tracked_requirements_resolved",
-    "document": "coverage/COMPLETENESS.md",
+    "status": "main_theorems_verified_under_accepted_scope",
+    "document": "coverage/MAIN_THEOREMS.md",
     "preserves_literal_source_qualifications": true,
     "does_not_certify_every_printed_assertion_verbatim": true
+  },
+  "accepted_completion_scope": {
+    "status": "satisfied",
+    "decision_date": "2026-11-02",
+    "criterion": "Verify the main theorems",
+    "theorems": [
+      "Theorem 0.1",
+      "Theorem 0.2",
+      "Theorem 0.3"
+    ],
+    "verification_record": "coverage/main-theorems-verification.json",
+    "verification_record_sha256": "dbc5aa055d44b1866246d7fe60f981179a92342218c10a2c2a674aad0c4558bc",
+    "exhaustive_whole_dissertation_audit_required": false
   }
 }
