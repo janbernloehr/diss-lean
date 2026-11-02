@@ -66,6 +66,7 @@ modules+=(NLS/ComplexAnalysis/LocalSinhComparison NLS/ComplexAnalysis/Continuous
 modules+=(NLS/ComplexAnalysis/LaurentSquareRemainder NLS/ComplexAnalysis/UpperCircleReflection NLS/ComplexAnalysis/QuadraticContourCoefficient NLS/ComplexAnalysis/NonnegativeComplexSeries NLS/KdV/HillContinuousReality NLS/KdV/HillFreeCircleGeometry NLS/KdV/HillFreeTraceContour NLS/KdV/HillL2UpperSquareAsymptotics NLS/KdV/HillL2SquareCircleAsymptotics NLS/KdV/HillSmoothQuadraticTraceLimit NLS/KdV/HillSmoothQuadraticTrace)
 modules+=(NLS/KdV/HillRealActionContinuity)
 modules+=(NLS/SequenceSpaces/LocalSeriesContinuity NLS/KdV/HillActionTailBudget NLS/KdV/HillLocallyUniformActionTails NLS/KdV/HillWeightedActionContinuity)
+modules+=(NLS/KdV/HillFinitePhysicalPotential NLS/KdV/HillRealWeightedTruncation NLS/KdV/HillL2QuadraticTrace)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

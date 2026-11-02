@@ -5148,3 +5148,6 @@ import NLS.SequenceSpaces.LocalSeriesContinuity
 import NLS.KdV.HillActionTailBudget
 import NLS.KdV.HillLocallyUniformActionTails
 import NLS.KdV.HillWeightedActionContinuity
+import NLS.KdV.HillFinitePhysicalPotential
+import NLS.KdV.HillRealWeightedTruncation
+import NLS.KdV.HillL2QuadraticTrace
