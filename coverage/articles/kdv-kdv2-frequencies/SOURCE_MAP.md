@@ -146,6 +146,13 @@ Search base: canonical `NLS/SequenceSpaces`, `NLS/Dynamics`,
   Hamiltonians/concavity belong to `kdv-convexity`. This candidate introduces
   no competing spectral or action-Hamiltonian construction.
 
+The endpoint-mass and compact-time coordinate nonextension dependencies
+have since been proved in `SignedMassDivergence.lean`; see
+[MASS_NONEXTENSION.md](MASS_NONEXTENSION.md). The coordinate mass-divergence
+and approximation obligations are discharged there. Actual spectral
+correction and physical Birkhoff-flow obligations in the main-theorem rows
+remain open.
+
 ## Integration boundary
 
 The following describes the initial private stage; the subsequent user-approved

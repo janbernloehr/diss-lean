@@ -49,7 +49,7 @@ bash scripts/check-kdv-kdv2-frequencies.sh
 ```
 
 The checker uses pinned Lean 4.33.1/mathlib v4.33.1 and rejects warnings.
-It compiles all four article-step modules and runs
+It compiles the article modules and required shared sequence modules, and runs
 `scripts/CheckKdVKdV2FrequencyCandidates.lean`, auditing their declarations
 and all imported `NLS` declarations transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` are allowed. See `VALIDATION.md` for the
@@ -66,9 +66,11 @@ relative to the original checkout. Expensive full validations still require
 
 ## Next main-theorem requirements
 
-The KdV foundation branches were inspected before this step and still pointed
-to the shared article-plan base; no committed Hill/Birkhoff additions were
-available to consume at that inspection. No cross-chat message was sent.
+The original inspection found no foundation commits beyond the shared plan.
+A subsequent inspection found the Hill line through `0b58631` and the action
+contour analytic-summation line through `be9eba0`. These do not yet supply
+the physical Birkhoff map and actual spectral frequency identities needed
+by the main theorems. No cross-chat message was sent.
 
 1. Consume the shared physical Hill/Birkhoff construction from
    `kdv-estimates` and action Hamiltonians from `kdv-convexity` when published.
@@ -84,11 +86,30 @@ available to consume at that inspection. No cross-chat message was sent.
    fixed-mass leaves and the stated bounded-set uniform estimates. For
    (iii)-(iv), construct physical separating pairs in every nonempty open
    set, preserving fixed mass where required.
-5. For (v), prove divergence of physical mass along suitable smooth
-   approximants to every non-L2 datum and transfer the checked phase
-   obstruction through the actual Birkhoff map. Preserve the distinction
+5. For (v), transfer the now-proved signed endpoint mass-divergence and
+   finite-truncation obstruction to actual physical smooth approximants
+   through the constructed Birkhoff map. Preserve the distinction
    between compact-time and fixed-time nonextension claims.
 
 The detailed endpoint and quantifier inventory remains in `SOURCE_MAP.md`.
 All actual article main theorems remain open; no unproved spectral or physical
 assumption is counted as a verified main theorem.
+
+
+## Endpoint-mass milestone
+
+`SignedMassDivergence.lean` now proves the exact positive-index mass/endpoint
+regularity equivalence, mass divergence for every coefficientwise
+endpoint-regular approximation, and signed finite-truncation construction
+and native norm convergence. Its compact-time nonextension theorem no longer
+assumes mass divergence or the existence of approximants: both are proved.
+The remaining frequency-correction and physical phase identity inputs stay
+explicit. See [the detailed source correspondence](MASS_NONEXTENSION.md).
+
+The finite-partial-sum argument was generalized to
+`NLS/SequenceSpaces/NonnegativeEnergyDivergence.lean`, and the existing
+Hilbert energy-divergence theorem now calls it with its statement unchanged.
+The seven-module focused checker passes with warnings rejected; the
+transitive audit covers 139 candidate declarations and 1343 declarations
+including imported NLS dependencies. No article main theorem is yet marked
+verified.

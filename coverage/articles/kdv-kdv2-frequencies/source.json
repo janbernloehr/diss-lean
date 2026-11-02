@@ -183,6 +183,44 @@
       "scope": "Actual smooth differential identities, mean-shift formulas and periodic spatial mean/mass balances; spectral flow identification and time differentiation of solution integrals remain open",
       "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
       "sha256": "5d543fac7fe00c9e39c2ad84fb2a55bceecabb23c63231ad9acf62ccff30d0f4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/NonnegativeEnergyDivergence.lean",
+      "source_labels": [
+        "Theorem 1.12(v) generic dependency"
+      ],
+      "source_pages": [
+        8,
+        54
+      ],
+      "scope": "Nonnegative finite-partial-sum divergence under coordinatewise convergence; reused by existing Hilbert energy proof",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "76c70d7ba980e0d4875d4b9e24f2a9502db277c41c544dcad7d091c783d8efe5"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertEnergyDivergence.lean",
+      "source_labels": [
+        "Existing dissertation dependency"
+      ],
+      "source_pages": [],
+      "scope": "Proof refactored to the shared generic lemma, existing theorem statements unchanged",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "faf9dbdad128e36d4bb523b45259259b1801562a2f60526760769fae25e738a2"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence.lean",
+      "source_labels": [
+        "Theorem 1.12(v) coordinate dependencies",
+        "Theorem 4.14(v) compact-time dependency"
+      ],
+      "source_pages": [
+        8,
+        51,
+        54
+      ],
+      "scope": "Endpoint equivalence and mass-divergent signed norm approximants proved; spectral correction and physical identification still required",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "f8b0a9b8b0da6217804339c037142f5b19608decf48ce2484aeb4eee87d95a52"
     }
   ],
   "dependencies_needed": [
@@ -213,8 +251,8 @@
       "-DautoImplicit=false",
       "-E warning"
     ],
-    "candidate_declarations_audited": 107,
-    "total_declarations_audited": 1302,
+    "candidate_declarations_audited": 139,
+    "total_declarations_audited": 1343,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -256,5 +294,10 @@
       73
     ]
   },
-  "progress_record": "PROGRESS.md"
+  "progress_record": "PROGRESS.md",
+  "endpoint_mass_record": "MASS_NONEXTENSION.md",
+  "shared_developments_inspected": {
+    "articles/kdv-estimates": "0b58631c37a1bf066ea0d21d5179b1a43844ed5c",
+    "articles/kdv-convexity": "be9eba062019e5eb715d4eaf62ce25b0038140fb"
+  }
 }

@@ -8,25 +8,19 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/cache/mathlib}"
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
-modules=(NLS/Dynamics/ActionDependentWeightedPhaseFlow
+modules=(NLS/SequenceSpaces/NonnegativeEnergyDivergence
+  NLS/SequenceSpaces/HilbertEnergyDivergence
+  NLS/Dynamics/ActionDependentWeightedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
-  NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities)
+  NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
+  NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
 reference = Path(sys.argv[1]) / '.lake/build/lib/lean/NLS'
 overlay, build = Path(sys.argv[2]), Path(sys.argv[3])
 modules = sys.argv[4:]
-for module in modules:
-    target = build / (module + '.olean')
-    target.parent.mkdir(parents=True, exist_ok=True)
-    if target.is_symlink() or not target.parent.resolve().is_relative_to(build.resolve()):
-        raise SystemExit(f'Expected a private build output: {target}')
-    link = overlay / (module + '.olean')
-    link.parent.mkdir(parents=True, exist_ok=True)
-    if not link.is_symlink():
-        link.symlink_to(target)
 def fill(source, dest):
     for item in source.iterdir():
         target = dest / item.name
@@ -37,6 +31,30 @@ def fill(source, dest):
                 fill(item, target)
         else:
             target.symlink_to(item, target_is_directory=item.is_dir())
+def local_directory(path):
+    if path == overlay:
+        path.mkdir(parents=True, exist_ok=True)
+        return
+    local_directory(path.parent)
+    if path.is_symlink():
+        source = path.resolve()
+        path.unlink()
+        path.mkdir()
+        fill(source, path)
+    else:
+        path.mkdir(exist_ok=True)
+for module in modules:
+    target = build / (module + '.olean')
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.is_symlink() or not target.parent.resolve().is_relative_to(build.resolve()):
+        raise SystemExit(f'Expected a private build output: {target}')
+    link = overlay / (module + '.olean')
+    local_directory(link.parent)
+    if link.is_symlink():
+        link.unlink()
+    elif link.exists():
+        raise SystemExit(f'Expected an import symlink: {link}')
+    link.symlink_to(target)
 fill(reference, overlay / 'NLS')
 PY
 export LEAN_PATH="$article_imports:$reference_root/.lake/build/lib/lean"
