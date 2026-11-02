@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "article_id": "mkdv-nls-hierarchies",
+  "status": "partial_not_main_theorem_complete",
+  "source": {
+    "abstract_url": "https://arxiv.org/abs/1601.07580v1",
+    "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
+    "version": "v1",
+    "pdf_pages": 20,
+    "pdf_sha256": "df935943f7c35bec35b6dd2e79e89eb7e3cc144e76fdb2d26fe3a051021f87ca",
+    "private_pdf": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/source/1601.07580v1.pdf",
+    "private_text": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/source/1601.07580v1.txt"
+  },
+  "main_statements": [
+    {
+      "label": "Theorem 1",
+      "page": 3,
+      "status": "partial",
+      "quantifiers": "forall integer m>=1, forall complex u in H^m",
+      "target": "X_(S_(2m))# = (Y_(K_m),Y_(K_m)); S_(2m)# = 0",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth"
+      ],
+      "limits": [
+        "Scalar vanishing only on H^(2m-1); equals the printed domain when m=1.",
+        "Physical vector-field identity and all-order independent K_m identification remain open.",
+        "Both clauses proved at m=2 for smooth complex period-one functions, using gradients certified by actual physical first variations; full H2 extension remains open."
+      ]
+    },
+    {
+      "label": "Theorem 2(i)",
+      "page": 3,
+      "status": "covector_symmetries_proved_gradient_identification_pending",
+      "quantifiers": "forall integer k>=1, forall phi in complex H^(k-1) pairs, forall real alpha",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors"
+      ],
+      "limits": [
+        "Complex Frechet-covector identities; not yet a physical L2-gradient/vector-field adapter."
+      ]
+    },
+    {
+      "label": "Theorem 2(ii)",
+      "page": 3,
+      "status": "unproved_source_matrix_correction_recorded",
+      "quantifiers": "forall integer m>=1, forall phi in complex H^(2m-1) pairs, if exists real alpha with P phi=R_alpha phi",
+      "candidate_corrected_target": "R partial S_(2m) = partial_x partial S_(2m-1), R=diag(i,-i)",
+      "source_issue": "The printed -iJ matrix differs from the R matrix obtained in the p.18 proof."
+    },
+    {
+      "label": "Theorem 3",
+      "page": 4,
+      "status": "unproved_normalization_open",
+      "quantifiers": "forall integers n>=1 and m>=1, on real H^(m-1)",
+      "printed_target": "(-1)^m omega_(n,2m)# = eta_(n,m)",
+      "source_issue": "The p.18 proof gives eta=omega without this parity factor; reconcile the physical conventions before formalizing."
+    },
+    {
+      "label": "Theorem 4(i)",
+      "page": 4,
+      "status": "unproved",
+      "quantifiers": "forall real u in H1; forall positive n",
+      "target": "I_0#=0 iff mean=0; I_n#=0 iff J_n=0; I_(-n)#=I_n#"
+    },
+    {
+      "label": "Theorem 4(ii)",
+      "page": 4,
+      "status": "unproved_signed_mean_branch_open",
+      "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
+      "source_issue": "Global signed mean recovery from NLS actions alone needs a branch restriction or sign-invariant correction."
+    },
+    {
+      "label": "Theorem 4(iii)",
+      "page": 4,
+      "status": "unproved",
+      "quantifiers": "forall positive n,m on the domains of the relevant angle variables",
+      "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean."
+    }
+  ],
+  "dependency_labels": [
+    {
+      "label": "Theorem 5",
+      "page": 9
+    },
+    {
+      "label": "Proposition 6",
+      "page": 12
+    },
+    {
+      "label": "Lemma 7",
+      "page": 12
+    },
+    {
+      "label": "Theorem 6",
+      "page": 13
+    },
+    {
+      "label": "Lemma 10",
+      "page": 16
+    },
+    {
+      "label": "Proposition 11",
+      "page": 17
+    }
+  ],
+  "normalization": {
+    "period": 1,
+    "fourier_derivative": "2*pi*i*n",
+    "nls_hamiltonian": "H_(n+1)=(-i)^(n+2) integral(a*u_n), u_0=-b",
+    "mkdv_mass": "K1=integral(u^2)/2",
+    "mkdv_energy": "K2=integral((u_prime)^2+u^4)/2",
+    "higher_action_trace": "sum I_(j,k)=S_k/2^(k-1)",
+    "nls_coordinate_bracket": -1,
+    "mkdv_coordinate_bracket": 1
+  },
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "workspace": "Separate standard Git worktree authorized and created; branch articles/mkdv-nls-hierarchies; app-managed attachment unavailable.",
+  "spectral_adapter_pending": {
+    "article_upper_right_potential": "phi2",
+    "library_classicalODECoefficient_upper_right": "i*phi.1",
+    "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
+  }
+}

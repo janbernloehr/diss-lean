@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-02",
+  "scope": "Focused standalone compilation and transitive audit of new declarations; not a full project build or a completed article verification.",
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib_version": "v4.33.1",
+  "command": "python3 outputs/check_private.py",
+  "options": {
+    "autoImplicit": false,
+    "warningAsError": true
+  },
+  "modules": [
+    "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean",
+    "NLS/MKdV/HierarchyRestriction.lean",
+    "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+  ],
+  "checks": {
+    "all_modules_compiled": true,
+    "transitive_axiom_audit_passed": true,
+    "audited_declarations_including_auxiliaries": 35,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "canonical_git_clean": true,
+    "patch_applies_to_pinned_canonical_commit": true,
+    "final_focused_recheck_passed": true
+  },
+  "public_declarations": [
+    {
+      "kind": "theorem",
+      "name": "theorem1_even_vanishing_original_domain",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_swap_covectors",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean"
+    },
+    {
+      "kind": "def",
+      "name": "phaseRotation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_phase_covectors",
+      "file": "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyDiagonal",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyDiagonal_apply",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "diagonalNLSHamiltonian",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_diagonalNLSHamiltonian",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "diagonalNLSHamiltonian_even_eq_zero",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "diagonalNLSHamiltonian_one",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMKdVMass",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMKdVEnergy",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHamiltonian_one_diagonal",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHamiltonian_three_diagonal",
+      "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyComponentSwap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyComponentSwap_apply",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHamiltonian_neg",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHamiltonian_swap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevNLSHamiltonian_swap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyReciprocalScaling",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyReciprocalScaling_apply",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevNLSHamiltonian_reciprocal_scaling",
+      "file": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean"
+    }
+  ],
+  "public_declaration_count": 22,
+  "theorem_count": 15,
+  "definition_count": 7,
+  "new_build_artifact_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/check/lib/lean",
+  "logs_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/work/check/logs",
+  "sha256": {
+    "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean": "743e4e169ec2fdb2b8b08a06f778dc91672bff3c1bbc9063feca15ec3c034edd",
+    "NLS/MKdV/HierarchyRestriction.lean": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853",
+    "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca",
+    "CheckPrivateAxioms.lean": "cdd5b76175826590d1297eed1dc977ed296c71cb98f33ede724878688eb809db",
+    "check_private.py": "f5c947b871901313db0e1083a723e20920866acac43cb5336abc55d2817f1efb",
+    "coverage/articles/mkdv-nls-hierarchies/README.md": "549a38145054d589ec8290125299215096e98f857f4415740b1b7332c3f3b46c",
+    "coverage/articles/mkdv-nls-hierarchies/source-map.json": "051e057faa42f2d2a3413cdcb21243d7a860ca33f3bd8995844b9f0bfce063aa"
+  }
+}
