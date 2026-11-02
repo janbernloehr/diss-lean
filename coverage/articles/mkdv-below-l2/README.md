@@ -90,6 +90,25 @@ actual finite-gap regularity and Fourier uniqueness, not finite input Fourier
 support. The divergent-mass approximation and fixed-time phase separation
 steps remain open.
 
+The actual physical mKdV diagonal is now a named closed complete Banach
+subspace of equal original distribution fields. Fourier uniqueness identifies
+it with the unsigned-component-swap fixed source slice. Symmetric Fourier
+cutoffs preserve it and converge in the original physical norm. The exact
+unsigned-swap covariance is proved from the physical ODE and extended to all
+finite source exponents. Dirichlet and Neumann conditions exchange under this
+spectral reflection. Original algebraic multiplicities and complete ordering
+fix the signed labels: the swapped left endpoint at n is minus the original
+right endpoint at -n, and conversely, including every collision.
+
+The principal standard-root branches and the full canonical root now have
+their exact reflected signs. All original higher actions have spectral-power
+parity. In particular, actual physical mKdV gaps and original Birkhoff action
+products are even in n and the canonical root is odd in the spectral variable.
+The phase-angle identity and odd normalized-frequency identity are still
+open; even actions alone are not counted as diagonal-flow preservation.
+The independent physical H2 momentum is now proved zero on the full original
+fractional diagonal, giving the precise mass-only fourth-flow normalization.
+
 ## Physical conventions and corrections
 
 Fourier synthesis uses exp(2πinx); coefficients use exp(-2πinx). The original
@@ -112,8 +131,12 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Remaining integration order for Theorem 1.1
 
-1. Prove the smaller physical mKdV diagonal's Birkhoff conjugation/reflection
-   symmetry and invariance, consuming the verified smooth hierarchy bridge.
+1. Prove preservation of the actual smaller mKdV diagonal and the required
+   odd normalized-frequency identity. The physical diagonal model, unsigned
+   swap covariance, signed periodic endpoints, root branches and even actions
+   are now verified. The Birkhoff phase-angle correspondence remains open;
+   a complete alternative proof via Hamiltonian swap covariance must prove
+   the same actual source-flow preservation.
 2. Identify the verified fourth-frequency rotation lift with the smooth
    physical renormalized evolution. The common local interval, invariant
    small neighborhood and uniform-norm trajectory continuity are now proved
@@ -125,13 +148,13 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Validation
 
-The focused checker `check.sh` lists 112 article/shared modules and the
+The focused checker `check.sh` lists 122 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The fifteenth checkpoint strictly checks all 8
-final new modules and reuses 104 parent modules after verifying their sources
-are unchanged from `020ba7305cbfaabc0ac2be0c8398c16ec1995cd6`.
+and `warningAsError=true`. The sixteenth checkpoint strictly checks all 10
+final new modules and reuses 112 parent modules after verifying their sources
+are unchanged from `7558905e3dd119f6cd09294d54a21ebf522fd09d`.
 
-The fresh full transitive audit checks all 522 named declarations, including
+The fresh full transitive audit checks all 600 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

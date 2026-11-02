@@ -152,6 +152,16 @@ modules=(
   Articles/MKdVBelowL2/PhysicalFourthImageIdentities
   ZakharovShabat/SourceBirkhoffNonzeroIndex
   Articles/MKdVBelowL2/PhysicalNonzeroBirkhoffIndex
+  ZakharovShabat/ClassicalComponentSwap
+  ZakharovShabat/SourceComponentSwap
+  ZakharovShabat/SourceComponentSwapSpectralData
+  ZakharovShabat/SourceComponentSwapEndpoints
+  ZakharovShabat/SourceComponentSwapRoots
+  ZakharovShabat/SourceComponentSwapActions
+  ZakharovShabat/PeriodOneSobolevMomentumSymmetry
+  ZakharovShabat/SourceSobolevFourthDiagonal
+  Articles/MKdVBelowL2/PhysicalMKdVDiagonal
+  Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

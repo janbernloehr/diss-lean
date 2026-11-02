@@ -677,3 +677,68 @@ that their sources are unchanged. The fresh full transitive audit checks all
 `Classical.choice` and `Quot.sound` occur. No holes, new axioms, disabled
 linters or increased heartbeat limits were introduced. The focused checker
 now lists 112 modules. The canonical checkout remains untouched.
+
+## Sixteenth checkpoint: the actual mKdV swap, indexed roots and even actions
+
+The unsigned physical component exchange is now treated directly. The
+classical first-order equation is intertwined by the signed solution-vector
+exchange (y2,-y1), with spectral parameter reflected by z -> -z. ODE uniqueness
+proves the complete solution and monodromy covariance. Dirichlet and Neumann
+boundary conditions exchange, with the exact minus sign in their sine-normalized
+characteristics. The discriminant is unchanged under the combined transformation;
+the anti-discriminant changes sign. Finite Fourier agreement and continuity
+extend these actual physical identities to every finite source exponent p>1.
+
+Original algebraic spectral multiplicities are preserved, by the analytic
+vanishing order of the original discriminant square minus four. Central root
+counts, distant quarter-pi discs and strips, lp displacements, and complete
+lexicographic endpoint ordering give the exact signed endpoint reflection:
+the swapped left endpoint at n is the negative original right endpoint at -n,
+and conversely. Every repeated endpoint and closed gap is included. This is
+stronger than equality of the unordered spectral sets.
+
+The exact standard-root branch now transforms under this same reflection.
+Actual midpoints change sign, oriented gaps do not, and the principal-root
+radicand is unchanged. Nonzero-index factors exchange in pairs; the central
+factor supplies the minus sign of the full canonical root. These identities
+hold at every complex source and spectral parameter, with no division by a gap.
+On the actual mKdV diagonal the canonical root is odd and the indexed gaps
+are even.
+
+The positive real gap profile reflects by theta -> pi-theta. Every original
+real higher action has the corresponding spectral-power parity. At level zero
+the proved positive-gap representation equals the original contour-defined
+action, so ordinary actions reflect exactly by n -> -n, including closed gaps.
+The actual products of the fixed Theorem 1.2 physical Birkhoff coordinates are
+therefore even on every physical mKdV datum. This does not infer equality of
+the Birkhoff phases from even actions alone.
+
+The actual physical mKdV diagonal is now a named closed complete Banach
+subspace: the two original period-one distribution fields are equal. Fourier
+uniqueness identifies it precisely with the unsigned-swap fixed source slice.
+Symmetric Fourier cutoffs preserve this same diagonal, retain finite actual
+Fourier support, and converge in the original physical norm at every finite
+exponent. No spectral finite-gap claim is made for these Fourier cutoffs.
+
+The independently defined physical H2 momentum is antisymmetric under
+component exchange on the whole H1 pair space. It vanishes on the true H1
+diagonal. The bounded original H^(3/2) inclusion preserves equal fields, hence
+H2 vanishes on the full original fractional physical diagonal. Its fourth-flow
+rotation frequency is exactly the independent physical H4 action derivative
+minus the physical 12*pi*n*H1 translation shift.
+
+Theorem 1.1 remains open. The Birkhoff phase-angle part of equation (50), the
+necessary odd normalized-frequency identity and actual source-flow diagonal
+preservation have not yet been proved. A complete proof of preservation via
+Hamiltonian swap covariance would also need to establish the same source-flow
+statement. Smooth PDE agreement, the exact scalar smooth-approximation solution
+notion, and the controlled divergent-mass fixed-time obstruction remain open.
+Theorems 1.2 and 1.3 remain verified.
+
+All 10 final new modules pass strict Lean 4.33.1 checks. The 112 parent modules
+reuse the validation at `7558905e3dd119f6cd09294d54a21ebf522fd09d` after verifying
+that their sources are unchanged. The fresh full transitive audit checks all
+600 declarations, exactly matching `AxiomAudit.lean`; only `propext`,
+`Classical.choice` and `Quot.sound` occur. No holes, new axioms, disabled
+linters or increased heartbeat or recursion limits were introduced. The
+focused checker now lists 122 modules. The canonical checkout remains untouched.

@@ -1,3 +1,13 @@
+import NLS.ZakharovShabat.ClassicalComponentSwap
+import NLS.ZakharovShabat.SourceComponentSwap
+import NLS.ZakharovShabat.SourceComponentSwapSpectralData
+import NLS.ZakharovShabat.SourceComponentSwapEndpoints
+import NLS.ZakharovShabat.SourceComponentSwapRoots
+import NLS.ZakharovShabat.SourceComponentSwapActions
+import NLS.ZakharovShabat.PeriodOneSobolevMomentumSymmetry
+import NLS.ZakharovShabat.SourceSobolevFourthDiagonal
+import NLS.Articles.MKdVBelowL2.PhysicalMKdVDiagonal
+import NLS.Articles.MKdVBelowL2.PhysicalMKdVSpectralSymmetry
 import NLS.ZakharovShabat.SourceActionPhaseFlow
 import NLS.ZakharovShabat.SourceActionPhaseLocalFlow
 import NLS.ZakharovShabat.SourceActionPhaseTrajectories
@@ -646,3 +656,82 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative
 #print axioms NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative_of_finiteGap
 #print axioms NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index
+
+#print axioms NLS.ZakharovShabat.classicalComponentSwap
+#print axioms NLS.ZakharovShabat.classicalComponentSwap_apply
+#print axioms NLS.ZakharovShabat.classicalComponentSwap_involutive
+#print axioms NLS.ZakharovShabat.componentSwapVector
+#print axioms NLS.ZakharovShabat.classicalODECoefficient_componentSwap
+#print axioms NLS.ZakharovShabat.classicalSolution_componentSwap
+#print axioms NLS.ZakharovShabat.classicalMonodromy_componentSwap
+#print axioms NLS.ZakharovShabat.classicalDiscriminant_componentSwap
+#print axioms NLS.ZakharovShabat.componentSwapBoundary
+#print axioms NLS.ZakharovShabat.componentSwapBoundary_involutive
+#print axioms NLS.ZakharovShabat.classicalSeparatedCharacteristic_componentSwap
+#print axioms NLS.ZakharovShabat.classicalAntiDiscriminant_componentSwap
+#print axioms NLS.ZakharovShabat.sourceComponentSwap
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_fst
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_snd
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_involutive
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_realType
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_eq_self_iff
+#print axioms NLS.ZakharovShabat.realSourceComponentSwap
+#print axioms NLS.ZakharovShabat.realSourceComponentSwap_val
+#print axioms NLS.ZakharovShabat.realSourceComponentSwap_involutive
+#print axioms NLS.ZakharovShabat.sourceComponentSwap_ofFinsupp
+#print axioms NLS.ZakharovShabat.finiteSourceCurve_componentSwap
+#print axioms NLS.ZakharovShabat.sourceDiscriminant_componentSwap
+#print axioms NLS.ZakharovShabat.sourceBoundaryCharacteristic_componentSwap
+#print axioms NLS.ZakharovShabat.sourceAntiDiscriminant_componentSwap
+#print axioms NLS.ZakharovShabat.sourceDiscriminant_even_of_diagonal
+#print axioms NLS.ZakharovShabat.sourceAntiDiscriminant_odd_of_diagonal
+#print axioms NLS.ZakharovShabat.sourcePeriodicSpectrum_componentSwap
+#print axioms NLS.ZakharovShabat.sourcePeriodicMultiplicity_componentSwap
+#print axioms NLS.ZakharovShabat.neg_mem_centralSpectralBox_iff
+#print axioms NLS.ZakharovShabat.sourceCentralPeriodicSpectrum_componentSwap
+#print axioms NLS.ZakharovShabat.sourceCentralPeriodicRoots_count_componentSwap
+#print axioms NLS.ZakharovShabat.sourceDiscriminant_deriv_componentSwap
+#print axioms NLS.ZakharovShabat.neg_mem_refinedResonantDisk_iff
+#print axioms NLS.ZakharovShabat.neg_mem_resonantStrip_iff
+#print axioms NLS.ZakharovShabat.componentSwap_periodicEndpointPair
+#print axioms NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_componentSwap
+#print axioms NLS.ZakharovShabat.sourcePeriodicGap_componentSwap
+#print axioms NLS.ZakharovShabat.sourcePeriodicGapDisplacement_componentSwap
+#print axioms NLS.ZakharovShabat.sourceStandardRootMidpoint_componentSwap
+#print axioms NLS.ZakharovShabat.sourceStandardRootHalfGap_componentSwap
+#print axioms NLS.ZakharovShabat.normalizedStandardRoot_neg_midpoint
+#print axioms NLS.ZakharovShabat.sourceStandardRoot_componentSwap
+#print axioms NLS.ZakharovShabat.sourceStandardRootPairedFactor_componentSwap
+#print axioms NLS.ZakharovShabat.sourceStandardRootPairedProduct_componentSwap
+#print axioms NLS.ZakharovShabat.sourceCanonicalRoot_componentSwap
+#print axioms NLS.ZakharovShabat.sourcePeriodicGapDisplacement_even_of_diagonal
+#print axioms NLS.ZakharovShabat.sourceCanonicalRoot_odd_of_diagonal
+#print axioms NLS.ZakharovShabat.realGapAffinePoint_componentSwap
+#print axioms NLS.ZakharovShabat.realGapHalfDiscriminant_componentSwap
+#print axioms NLS.ZakharovShabat.sourceRealGapArcoshProfile_componentSwap
+#print axioms NLS.ZakharovShabat.sourceRealGapCosineProfile_componentSwap
+#print axioms NLS.ZakharovShabat.sourceRealHigherAction_componentSwap
+#print axioms NLS.ZakharovShabat.sourceRealAction_componentSwap
+#print axioms NLS.ZakharovShabat.sourceComplexAction_componentSwap
+#print axioms NLS.ZakharovShabat.sourceComplexAction_even_of_diagonal
+#print axioms NLS.ZakharovShabat.periodOneSobolevMomentum_swap
+#print axioms NLS.ZakharovShabat.periodOneSobolevMomentum_diagonal
+#print axioms NLS.ZakharovShabat.fourthNativeH1PairCLM_components_eq_of_diagonal
+#print axioms NLS.ZakharovShabat.sourceFourthSobolevMomentum_eq_zero_of_diagonal
+#print axioms NLS.Articles.MKdVBelowL2.physicalComponentDifferenceCLM
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdVSubspace
+#print axioms NLS.Articles.MKdVBelowL2.PhysicalMKdVInput
+#print axioms NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff
+#print axioms NLS.Articles.MKdVBelowL2.isClosed_physicalMKdVSubspace
+#print axioms NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_source
+#print axioms NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_componentSwap
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdVTruncate
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdVTruncate_mem
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdVTruncate_finite
+#print axioms NLS.Articles.MKdVBelowL2.tendsto_physicalMKdVTruncate
+#print axioms NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdV_discriminant_even
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdV_periodicGap_even
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdV_canonicalRoot_odd
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdV_complexAction_even
+#print axioms NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even

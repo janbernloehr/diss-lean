@@ -1,13 +1,15 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 104 unchanged modules reuse commit 020ba7305cbfaabc0ac2be0c8398c16ec1995cd6; 8 final new modules checked strictly below.
-ZakharovShabat/SourceActionPhaseFlow: checked
-ZakharovShabat/SourceActionPhaseLocalFlow: checked
-ZakharovShabat/SourceActionPhaseTrajectories: checked
-Articles/MKdVBelowL2/FourthHamiltonianPhaseFamily: checked
-Articles/MKdVBelowL2/PhysicalFourthImageFlow: checked
-Articles/MKdVBelowL2/PhysicalFourthImageIdentities: checked
-ZakharovShabat/SourceBirkhoffNonzeroIndex: checked
-Articles/MKdVBelowL2/PhysicalNonzeroBirkhoffIndex: checked
+Incremental validation: 112 unchanged modules reuse commit 7558905e3dd119f6cd09294d54a21ebf522fd09d; 10 final new modules checked strictly below.
+ZakharovShabat/ClassicalComponentSwap: checked
+ZakharovShabat/SourceComponentSwap: checked
+ZakharovShabat/SourceComponentSwapSpectralData: checked
+ZakharovShabat/SourceComponentSwapEndpoints: checked
+ZakharovShabat/SourceComponentSwapRoots: checked
+ZakharovShabat/SourceComponentSwapActions: checked
+ZakharovShabat/PeriodOneSobolevMomentumSymmetry: checked
+ZakharovShabat/SourceSobolevFourthDiagonal: checked
+Articles/MKdVBelowL2/PhysicalMKdVDiagonal: checked
+Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1006,3 +1008,109 @@ Articles/MKdVBelowL2/PhysicalNonzeroBirkhoffIndex: checked
 'NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.ZakharovShabat.classicalComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalComponentSwap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalComponentSwap_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.componentSwapVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalODECoefficient_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalSolution_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalMonodromy_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalDiscriminant_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.componentSwapBoundary' does not depend on any axioms
+'NLS.ZakharovShabat.componentSwapBoundary_involutive' does not depend on any axioms
+'NLS.ZakharovShabat.classicalSeparatedCharacteristic_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.classicalAntiDiscriminant_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_realType' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_eq_self_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwap_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwap_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComponentSwap_ofFinsupp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.finiteSourceCurve_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceDiscriminant_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceBoundaryCharacteristic_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceAntiDiscriminant_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceDiscriminant_even_of_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceAntiDiscriminant_odd_of_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePeriodicSpectrum_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePeriodicMultiplicity_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.neg_mem_centralSpectralBox_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceCentralPeriodicSpectrum_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceCentralPeriodicRoots_count_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceDiscriminant_deriv_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.neg_mem_refinedResonantDisk_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.neg_mem_resonantStrip_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.componentSwap_periodicEndpointPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourcePeriodicGap_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePeriodicGapDisplacement_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceStandardRootMidpoint_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceStandardRootHalfGap_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.normalizedStandardRoot_neg_midpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceStandardRoot_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceStandardRootPairedFactor_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceStandardRootPairedProduct_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceCanonicalRoot_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePeriodicGapDisplacement_even_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceCanonicalRoot_odd_of_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realGapAffinePoint_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realGapHalfDiscriminant_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceRealGapArcoshProfile_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceRealGapCosineProfile_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceRealHigherAction_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceRealAction_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComplexAction_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComplexAction_even_of_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevMomentum_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.periodOneSobolevMomentum_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeH1PairCLM_components_eq_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMomentum_eq_zero_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalComponentDifferenceCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdVSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.PhysicalMKdVInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClosed_physicalMKdVSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdVTruncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdVTruncate_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdVTruncate_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendsto_physicalMKdVTruncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_discriminant_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_periodicGap_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_canonicalRoot_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_complexAction_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even' depends on axioms: [propext, Classical.choice, Quot.sound]

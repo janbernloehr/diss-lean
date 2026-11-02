@@ -32,13 +32,48 @@
       "source": "Nonzero signed mode required by the fixed-time obstruction",
       "declaration": "NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index",
       "scope": "Every actual physical real-type pair outside the physical Hilbert domain has a nonzero first complex Birkhoff coordinate at some n!=0. The Hilbert domain is defined by existence of a real FL² pair representing exactly the same two original distributions. Finite first-coordinate support forces actual finite-gap regularity and a coefficient-preserving physical Hilbert representative. The mass-dependent phase at n=0 is not used."
+    },
+    {
+      "source": "Actual mKdV diagonal and physical Fourier approximation",
+      "declaration": "NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_componentSwap",
+      "scope": "The closed complete physical mKdV subspace is exactly equality of the two original period-one distributions, and exactly the unsigned-component-swap fixed source slice. Symmetric Fourier truncations preserve this same diagonal, have finite actual Fourier support and converge in the full physical norm at every finite exponent. This does not assert spectral finite-gap support for a Fourier truncation."
+    },
+    {
+      "source": "Physical ODE covariance underlying the spectral symmetry",
+      "declaration": "NLS.ZakharovShabat.classicalSolution_componentSwap",
+      "scope": "Unsigned exchange of the physical potential fields intertwines the actual first-order equation with spectral reflection and the signed solution-vector exchange (y2,-y1). The full monodromy, discriminant, anti-discriminant and Dirichlet/Neumann characteristic transformations are verified. The two boundary conditions exchange with a minus sign in the characteristic."
+    },
+    {
+      "source": "Full Fourier-Lebesgue source symmetry",
+      "declaration": "NLS.ZakharovShabat.sourceDiscriminant_componentSwap",
+      "scope": "Every finite p>1, every original complex source pair and every spectral parameter. Actual finite-Fourier classical agreement and continuity prove covariance of the original discriminant and both boundary characteristics, retaining the anti-discriminant sheet sign."
+    },
+    {
+      "source": "Exact signed periodic endpoint labels",
+      "declaration": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_componentSwap",
+      "scope": "Every finite p>1 and every original complex source. The n-th left endpoint of the swapped source is the negative of the (-n)-th original right endpoint, and conversely. Algebraic multiplicities, central root counts, distant discs and strips, lp displacements and complete lexicographic ordering are retained; all collisions and closed gaps are included."
+    },
+    {
+      "source": "Canonical square-root branch parity",
+      "declaration": "NLS.ZakharovShabat.sourceCanonicalRoot_componentSwap",
+      "scope": "Every complex source and spectral parameter at every finite p>1. Midpoint and gap identities give exact principal standard-root reflection, paired factors are unchanged and the central factor supplies the full root minus sign. The actual mKdV canonical root is odd and its signed gaps are even."
+    },
+    {
+      "source": "Actual original action parity on the physical diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even",
+      "scope": "The real gap profile reflects by theta -> pi-theta. All original real higher actions have their spectral-power parity, and the original contour-defined ordinary complex actions reflect n -> -n. Thus the actual action products of the fixed Theorem 1.2 physical family are even on every physical mKdV input. No Birkhoff phase-angle identity is assumed or inferred from even actions alone."
+    },
+    {
+      "source": "Vanishing H2 shift in the original mKdV normalization",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative",
+      "scope": "Physical H1 momentum is antisymmetric under exchange of its actual fields and vanishes on the whole H1 diagonal. The native H^(3/2) inclusion preserves equality of the original fields, so the constructed rotation frequency equals the independent physical H4 action derivative minus only 12*pi*n*H1 on every original fractional mKdV datum."
     }
   ],
   "remaining": [
-    "Prove the actual Birkhoff correspondence for the smaller real mKdV diagonal, its preserved phase symmetry and the necessary odd fourth-frequency identity; the existing reflection-fixed source slice is a different slice.",
-    "Prove that the constructed fourth-frequency inverse lifts agree with smooth physical renormalized mKdV solutions, consuming the verified hierarchy first-variation bridge and the actual physical mass and momentum normalizations.",
+    "Prove preservation of the actual smaller real mKdV diagonal by the fourth-frequency rotation lift and the necessary odd normalized-frequency identity. The original unsigned-swap spectral covariance, exact signed endpoints, root branches, even actions, diagonal model and Fourier approximation are now verified. The Birkhoff phase-angle part of equation (50) remains open; even actions alone do not prove preservation. A complete alternative proof via actual Hamiltonian swap covariance would also need to establish the same source-flow preservation.",
+    "Prove that the constructed fourth-frequency inverse lifts agree with smooth physical renormalized mKdV solutions, consuming the verified hierarchy first-variation bridge and actual mass normalization. Vanishing of the physical H2 momentum on the full original fractional diagonal is now verified.",
     "Restrict the actual rotation-lift local and small-data trajectory results to the scalar real mKdV phase space and establish the exact smooth-approximation solution and uniqueness requirements of the source.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 104 unchanged parent modules reused from 020ba7305cbfaabc0ac2be0c8398c16ec1995cd6. Full transitive audit of 522 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Ten final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 112 unchanged parent modules reused from 7558905e3dd119f6cd09294d54a21ebf522fd09d. Full transitive audit of 600 declarations uses only propext, Classical.choice and Quot.sound."
 }
