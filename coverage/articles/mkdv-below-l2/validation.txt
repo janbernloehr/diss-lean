@@ -1,18 +1,12 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 152 unchanged modules reuse commit 9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc; 13 final new modules checked strictly below.
-ZakharovShabat/SourceNativeFunctionalActionDependence: checked
-ZakharovShabat/SourceNativeMomentumBirkhoff: checked
-ZakharovShabat/SourceNativeMomentumComplexGerm: checked
-ZakharovShabat/SourceNativeMomentumActionFactors: checked
-ZakharovShabat/SourceNativeMomentumActionDerivatives: checked
-ZakharovShabat/SourceWeightedCotangentUniqueness: checked
-ZakharovShabat/SourceNativeMomentumCotangent: checked
-ZakharovShabat/SourceActionPhaseHilbertMass: checked
-Articles/MKdVBelowL2/FourthFiniteGapRenormalizedODE: checked
-ZakharovShabat/SourceActionPhaseSobolevTime: checked
-Fourier/PeriodOneCoefficientLinear: checked
-Articles/MKdVBelowL2/ClassicalRenormalizedFourthRegularity: checked
-Articles/MKdVBelowL2/FourthFiniteGapPointwiseMKdV: checked
+Incremental validation: 165 unchanged modules reuse commit 606aece4a8207eee0a27d57d41520f9337b723f7; 7 final new modules checked strictly below.
+ZakharovShabat/SourceWeightedRealSourceInclusion: checked
+ZakharovShabat/SourceActionPhaseSobolevLift: checked
+Articles/MKdVBelowL2/PhysicalScalarRealInput: checked
+Articles/MKdVBelowL2/ScalarFourthTrajectory: checked
+Articles/MKdVBelowL2/ScalarFourthApproximation: checked
+Articles/MKdVBelowL2/FourthFiniteGapFullPhysicalODE: checked
+Articles/MKdVBelowL2/FourthSobolevTrajectory: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1488,3 +1482,82 @@ Articles/MKdVBelowL2/FourthFiniteGapPointwiseMKdV: checked
 'NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.ZakharovShabat.originalWeightedRealSourceCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.originalWeightedRealSourceCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.continuous_originalWeightedRealSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.sobolevImageFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.originalWeightedRealSource_sobolevImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.sobolevImageFlow_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_sobolevImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.sobolevTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_sobolevTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.tendstoUniformly_sobolevImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarDiagonalCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarRealSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalScalarRealSubspace_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClosed_physicalScalarRealSubspace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarRealInputCompleteSpace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarDiagonal_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarDiagonal_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarPairCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.zero_mem_fourthScalarImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isOpen_fourthScalarImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuousOn_fourthScalarImageFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isOpen_fourthScalarTrajectoryDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuousOn_fourthScalarTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_local_fourthScalarTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_global_small_fourthScalarTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarTruncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarTruncate_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarTruncate_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendsto_physicalScalarTruncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarTruncate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_limit_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_fullPhysical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_fourthSobolevTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendsto_fourthSobolevTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]

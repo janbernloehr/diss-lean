@@ -1,3 +1,10 @@
+import NLS.ZakharovShabat.SourceWeightedRealSourceInclusion
+import NLS.ZakharovShabat.SourceActionPhaseSobolevLift
+import NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput
+import NLS.Articles.MKdVBelowL2.ScalarFourthTrajectory
+import NLS.Articles.MKdVBelowL2.ScalarFourthApproximation
+import NLS.Articles.MKdVBelowL2.FourthFiniteGapFullPhysicalODE
+import NLS.Articles.MKdVBelowL2.FourthSobolevTrajectory
 import NLS.ZakharovShabat.SourceNativeFunctionalActionDependence
 import NLS.ZakharovShabat.SourceNativeMomentumBirkhoff
 import NLS.ZakharovShabat.SourceNativeMomentumComplexGerm
@@ -931,3 +938,51 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.fourthFiniteGapPhysicalFlow_im_eq_zero
 #print axioms NLS.Articles.MKdVBelowL2.fourthFiniteGapMass_eq_integral_square
 #print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV
+
+#print axioms NLS.ZakharovShabat.originalWeightedRealSourceCLM
+#print axioms NLS.ZakharovShabat.originalWeightedRealSourceCLM_apply
+#print axioms NLS.ZakharovShabat.continuous_originalWeightedRealSource
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.sobolevImageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.originalWeightedRealSource_sobolevImageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.sobolevImageFlow_zero
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuous_sobolevImageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.sobolevTrajectoryOn
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuous_sobolevTrajectoryOn
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.tendstoUniformly_sobolevImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarDiagonalCLM
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarRealSubspace
+#print axioms NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput
+#print axioms NLS.Articles.MKdVBelowL2.mem_physicalScalarRealSubspace_iff
+#print axioms NLS.Articles.MKdVBelowL2.isClosed_physicalScalarRealSubspace
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarRealInputCompleteSpace
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarDiagonal
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarDiagonal_fst
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarDiagonal_snd
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarPairCLM
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_pair
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_val
+#print axioms NLS.Articles.MKdVBelowL2.zero_mem_fourthScalarImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_zero
+#print axioms NLS.Articles.MKdVBelowL2.isOpen_fourthScalarImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.continuousOn_fourthScalarImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.isOpen_fourthScalarTrajectoryDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn_apply
+#print axioms NLS.Articles.MKdVBelowL2.continuousOn_fourthScalarTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.exists_local_fourthScalarTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.exists_global_small_fourthScalarTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarTruncate
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarTruncate_pair
+#print axioms NLS.Articles.MKdVBelowL2.physicalScalarTruncate_finite
+#print axioms NLS.Articles.MKdVBelowL2.tendsto_physicalScalarTruncate
+#print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarTruncate
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_limit_unique
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_fullPhysical
+#print axioms NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthSobolevTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.tendsto_fourthSobolevTrajectoryOn

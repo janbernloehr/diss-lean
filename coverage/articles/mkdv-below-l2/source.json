@@ -26,7 +26,7 @@
   ],
   "status": "theorems_1_2_and_1_3_verified_theorem_1_1_open",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 749,
+  "audited_declarations": 796,
   "verified_dependencies": [
     "NLS.ZakharovShabat.sourceProposition4_1",
     "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
@@ -57,6 +57,14 @@
     "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_renormalized",
     "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV",
     "NLS.Articles.MKdVBelowL2.fourthFiniteGapMass_eq_integral_square",
-    "NLS.Articles.MKdVBelowL2.fourthFiniteGapPhysicalFlow_im_eq_zero"
+    "NLS.Articles.MKdVBelowL2.fourthFiniteGapPhysicalFlow_im_eq_zero",
+    "NLS.Articles.MKdVBelowL2.physicalScalarDiagonal",
+    "NLS.Articles.MKdVBelowL2.exists_local_fourthScalarTrajectory",
+    "NLS.Articles.MKdVBelowL2.exists_global_small_fourthScalarTrajectory",
+    "NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarTruncate",
+    "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_limit_unique",
+    "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_fullPhysical",
+    "NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical",
+    "NLS.Articles.MKdVBelowL2.tendsto_fourthSobolevTrajectoryOn"
   ]
 }

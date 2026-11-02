@@ -152,12 +152,37 @@
       "source": "Pointwise renormalized mKdV on the actual fixed finite-gap flow",
       "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV",
       "scope": "Every original Hilbert finite-gap datum with equal physical fields, every real time and every spatial point. The actual fixed fourth trajectory has pointwise velocity -u_xxx+6*(u^2-M)*u_x, with the original period-one constants. The physical field is real at all times and M equals the integral over [0,1] of the square of its initial physical field. Strong H1 time differentiability and Fourier uniqueness establish the equation. Arbitrary smooth non-finite-gap data are not yet covered."
+    },
+    {
+      "source": "Scalar real physical Fourier-Lebesgue phase space",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalScalarDiagonal",
+      "scope": "The input is a single original period-one distribution, with conjugate-reflection reality on its Fourier modes and the inherited physical Fourier norm. The equal-pair map is a real linear isometry equivalence onto the closed physical mKdV diagonal. The scalar space is complete."
+    },
+    {
+      "source": "Scalar local and invariant small-data trajectories",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_global_small_fourthScalarTrajectory",
+      "scope": "Actual scalar fourth inverse-lift trajectories on the proved image domain. A common positive time and open neighborhood exist at every scalar datum. One invariant open neighborhood of zero is selected before every compact time interval. Complete scalar trajectories vary continuously in the original uniform norm, not merely pointwise in time. Arbitrary smooth PDE identification remains open."
+    },
+    {
+      "source": "Scalar approximation and uniqueness of actual lift limits",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_limit_unique",
+      "scope": "Symmetric scalar real Fourier cutoffs have finite actual physical Fourier support and converge in the original norm. Their actual scalar lift trajectories converge uniformly on every common admissible interval. Every convergent family of scalar inputs has the same uniform lift limit, and any asserted pointwise limit agrees with it. This does not assume that arbitrary smooth PDE solutions have already been identified with the lift."
+    },
+    {
+      "source": "Full physical corrected fourth ODE away from the smaller diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_fullPhysical",
+      "scope": "Every finite-gap original real-type pair and every real time. The actual source-norm time derivative is the independent physical H4 field plus 6 times physical H2 times the original phase direction, minus 6 times conserved physical H1 times the positive spatial derivative. Both corrections from H4 - 6H1H2 are retained. No scalar diagonal hypothesis is required."
+    },
+    {
+      "source": "All nonnegative Sobolev orders of the fixed actual physical fourth flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical",
+      "scope": "Every nonnegative native Sobolev order and every compact real time interval. Forgetting the weighted path gives exactly the same original physical distribution pair under the same fixed Birkhoff family. Initial-data dependence is continuous in the full uniform weighted norm. Every given convergent family, including any given spectral finite-gap approximating family, has convergent whole trajectories in this norm. Weighted spectral finite-gap density is verified separately. No diagonal-preservation assertion for spectral approximants is made. Smooth PDE passage to this limit remains required."
     }
   ],
   "remaining": [
-    "Extend the actual pointwise finite-gap renormalized mKdV PDE agreement to the required arbitrary smooth data and exact smooth-approximation solution notion. Physical H4 and H2 cotangents, the conserved original mass, the positive spatial derivative normalization and the scalar finite-gap equation are now verified.",
-    "Package the actual diagonal-preserving local and invariant small-data pair trajectories as scalar real mKdV trajectories, and establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1.",
+    "Extend the verified full finite-gap physical corrected ODE and scalar pointwise equation to arbitrary smooth data. Full native Sobolev trajectory continuity, uniform convergence for given approximating families, and weighted spectral finite-gap density are now available. The general pair correction retains the momentum phase term, so spectral approximants need not be assumed diagonal.",
+    "Establish the exact smooth-approximation solution and PDE uniqueness requirements of Theorem 1.1 using the verified scalar real phase space, local and invariant small-data uniform trajectories, and uniqueness of actual lift limits. Actual lift-limit uniqueness alone is not yet arbitrary smooth PDE agreement.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Thirteen final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 152 unchanged parent modules reused from 9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc after source comparison. Full transitive audit of 749 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Seven final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 165 unchanged parent modules reused from 606aece4a8207eee0a27d57d41520f9337b723f7 after source comparison. Fresh full transitive audit of 796 declarations uses only propext, Classical.choice and Quot.sound."
 }

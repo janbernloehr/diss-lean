@@ -154,25 +154,44 @@ The nonextension argument must select n≠0: the mass-dependent phase in
 Theorem 7.1(iii) vanishes at n=0. Corollary 7.2's reference to item (iv) of
 Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
+The scalar physical adapter is now isometric onto the actual equal-pair space.
+Its reality condition is stated on the original distribution Fourier modes.
+The actual scalar fourth lift has local continuous uniform-norm trajectories
+at every finite p>1, and one invariant open neighborhood of zero works before
+every time interval. Scalar real Fourier cutoffs converge in the physical
+norm and their actual lift trajectories converge uniformly. Any pointwise
+limit of such actual lift trajectories is unique. Identifying arbitrary
+smooth PDE trajectories with these lifts is still required.
+
+The same fixed fourth family now preserves every nonnegative native Sobolev
+regularity, with continuous dependence in the complete compact-time weighted
+norm. Original coefficient inclusion proves agreement with the actual
+physical distribution lift. Every given convergent family of native Sobolev
+inputs has convergent whole trajectories in the same uniform weighted norm.
+Weighted spectral finite-gap density is available separately. No assertion
+that such spectral approximants preserve the smaller diagonal is made.
+The full finite-gap physical ODE on general real-type pairs retains both
+corrections from H4 - 6H1H2: positive 6H2 phase and negative 6H1 spatial translation.
+
 ## Remaining integration order for Theorem 1.1
 
 1. Extend the verified pointwise finite-gap renormalized PDE agreement to the
    required arbitrary smooth data and exact smooth-approximation solution notion.
-2. Package the local and invariant small-data trajectories in the scalar real
-   mKdV phase space and prove the exact smooth-approximation solution property,
-   uniqueness and continuity in the uniform trajectory norm.
+2. Use the verified scalar real adapter and uniform trajectories to establish
+   the exact smooth-approximation solution property and PDE uniqueness. The
+   scalar lift and approximation limits themselves are already constructed.
 3. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
    smooth approximations, tunable divergent mass and a nonzero signed mode.
 
 ## Validation
 
-The focused checker `check.sh` lists 165 article/shared modules and the
+The focused checker `check.sh` lists 172 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twentieth checkpoint strictly checks all 13
-final new modules and reuses 152 parent modules after verifying their sources
-are unchanged from `9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc`.
+and `warningAsError=true`. The twenty-first checkpoint strictly checks all 7
+final new modules and reuses 165 parent modules after verifying their sources
+are unchanged from `606aece4a8207eee0a27d57d41520f9337b723f7`.
 
-The fresh full transitive audit checks all 749 named declarations, including
+The fresh full transitive audit checks all 796 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

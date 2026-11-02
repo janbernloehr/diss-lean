@@ -205,6 +205,13 @@ modules=(
   Fourier/PeriodOneCoefficientLinear
   Articles/MKdVBelowL2/ClassicalRenormalizedFourthRegularity
   Articles/MKdVBelowL2/FourthFiniteGapPointwiseMKdV
+  ZakharovShabat/SourceWeightedRealSourceInclusion
+  ZakharovShabat/SourceActionPhaseSobolevLift
+  Articles/MKdVBelowL2/PhysicalScalarRealInput
+  Articles/MKdVBelowL2/ScalarFourthTrajectory
+  Articles/MKdVBelowL2/ScalarFourthApproximation
+  Articles/MKdVBelowL2/FourthFiniteGapFullPhysicalODE
+  Articles/MKdVBelowL2/FourthSobolevTrajectory
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

@@ -932,3 +932,50 @@ Classical.choice and Quot.sound. The checker lists 165 modules. No holes,
 new axioms, disabled linters or increased heartbeat or recursion limits were
 introduced. Canonical compiled dependencies remain read-only. This is an
 incremental focused validation, not a fresh whole-repository rebuild.
+
+
+## Twenty-first checkpoint: scalar physical trajectories and Sobolev persistence
+
+A scalar datum is now a single original period-one distribution with its
+actual conjugate-reflection Fourier reality condition. Its equal physical
+pair gives a real linear isometry equivalence onto the original mKdV diagonal.
+The scalar real source is a complete Banach space with the original physical
+Fourier norm. The actual fourth inverse lift gives scalar paths on the proved
+open image domain. At every input one neighborhood and positive time work
+for all nearby inputs. One invariant open neighborhood of zero works before
+every time interval. Initial-data dependence is in the full uniform scalar
+trajectory norm. Original symmetric real Fourier cutoffs converge in the
+physical norm, their actual lift paths converge uniformly, and any pointwise
+limit of actual lift paths is the fixed lift limit. This is not yet an
+identification of arbitrary smooth PDE solutions with those paths.
+
+For any action-invariant frequency family, the original weighted Birkhoff
+inverse now lifts the same source flow in every nonnegative native Sobolev
+order in the global p<=2 range. Coordinatewise frequency continuity suffices
+for joint continuity in the full weighted source norm. Complete compact-time
+paths vary continuously in their native uniform norm. Given any convergent
+family of native Sobolev data, its whole trajectories converge in this norm.
+The fixed article fourth family and physical coefficient adapter inherit
+these results. Weighted spectral finite-gap density is available separately;
+combining it with this continuity supports the next smooth PDE limit. A
+convenience theorem choosing the entire approximating sequence is not part
+of this checkpoint. No assertion that spectral approximants preserve the
+smaller diagonal is made.
+
+The actual finite-gap source ODE is also calibrated on general real-type
+pairs, retaining both corrections from H4 - 6H1H2: positive 6H2 phase and
+negative 6H1 spatial translation. This supports passage from full pair
+finite-gap approximants to arbitrary smooth data before diagonal restriction.
+Such passage and the exact smooth-approximation/PDE uniqueness requirements
+remain open, as does every-fixed-time nonextension outside L². Theorem 1.1
+is incomplete; Theorems 1.2 and 1.3 remain verified.
+
+Seven final new modules pass strict Lean 4.33.1 checks; 165 unchanged focused
+parent modules reuse 606aece4a8207eee0a27d57d41520f9337b723f7 after source comparison.
+The fresh full transitive audit checks 796 named declarations, only propext,
+Classical.choice and Quot.sound. The checker lists 172 modules. No holes,
+new axioms, disabled linters or increased heartbeat or recursion limits were
+introduced. Canonical compiled dependencies remain read-only. The existing
+shared real-inclusion source was restored unchanged after a filename collision;
+the new bounded helper has a separate file and its consumers were rebuilt.
+Validation is incremental and focused, not a fresh whole-repository rebuild.
