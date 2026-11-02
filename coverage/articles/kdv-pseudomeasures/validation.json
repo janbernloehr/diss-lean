@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "shared endpoint dynamics, physical weak-star identification and compact-open trajectory transfer",
+  "phase": "exact physical source constraints and bounded real-Wiener predual topology",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -12,6 +12,9 @@
     "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean",
+    "NLS/Fourier/PeriodicDistributionParity.lean",
+    "NLS/Fourier/RealMeanZeroPeriodOne.lean",
+    "NLS/Fourier/PeriodicEndpointLowerInclusion.lean",
     "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
     "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean",
     "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean",
@@ -20,13 +23,15 @@
     "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
     "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean",
     "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
+    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 73,
-  "definitions": 21,
+  "proved_theorems": 105,
+  "definitions": 37,
   "axiom_audit": {
-    "method": "Lean #print axioms on all 94 checked definitions/theorems. Checker derives the declaration inventory from source and matches it exactly to audit entries and output before checking the allowlist.",
-    "declarations": 94,
+    "method": "Lean #print axioms for every inventoried definition and theorem, including qualified declaration names and nested namespaces. Exact source/audit/output set comparison; all axioms checked against allowlist.",
+    "declarations": 142,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -55,13 +60,20 @@
     "On bounded input families, coordinatewise continuous realized frequencies give joint weak-star continuity and continuous dependence in the compact-open compact-time trajectory space.",
     "For bounded invariant subsets, continuous dependence is proved with codomain C([-T,T],V), retaining the weak-star subtype topology. Odd frequencies preserve the real mean-zero locus.",
     "Existing PeriodicSobolevDuality transports to a proved coefficientWeakDualHomeomorph. Weighted original-distribution norm balls are compact in the actual original Wiener weak dual; smooth-test evaluation is exactly the original normalized distribution action.",
-    "The compact-open trajectory topology is induced by the lower realization on all bounded subsets. Article specialization gives the H^-1 coefficient trajectory topology exactly for s>-1/2."
+    "The compact-open trajectory topology is induced by the lower realization on all bounded subsets. Article specialization gives the H^-1 coefficient trajectory topology exactly for s>-1/2.",
+    "For arbitrary period-two tempered distributions, physical period one is equivalent to vanishing of all odd normalized Fourier coefficients; no lp or measure hypothesis is used.",
+    "Reality on all original smooth tests, zero mean and physical period one are exactly the signed-real, zero-mode and even-mode coefficient conditions.",
+    "Potential(r), with data order s=-r, is an actual original-distribution subtype. Its bijection to the constrained coefficient weak dual preserves the exact norm. Its coordinate norm balls are closed, compact, metrizable and sequentially compact.",
+    "RealWienerTest(r) is bijective and norm preserving with the entire original real mean-zero physically one-periodic Wiener space. The proof is not restricted to finite tests.",
+    "The physical action of source potentials on real Wiener tests is real valued, so the real-part evaluation used for sigma topology loses no information.",
+    "On every norm-bounded source subset, actual original real-Wiener test evaluations form a topological embedding. This proves the exact real-predual weak-star topology and arbitrary-filter convergence criterion on the bounded sets needed by main Theorems 1.1, 1.3 and 1.4.",
+    "At 0<=r<1/2, the original source potential embeds into original H^-1 as literally the same smooth-test distribution; all physical source restrictions and normalization are unchanged."
   ],
-  "source_correspondence": "Appendix B endpoint results plus dynamical/topological dependencies for Theorems 1.1 and 1.3. Weighted coefficient/original complex distribution weak-star identification now proved. Generic action flow is not identified with KdV. Paper real-predual and period-two even-mode source restrictions remain to finish. No article main theorem is verified.",
-  "build_isolation": "Worktree-local .lake/article-check outputs. The focused checker expands read-only reference import symlinks only where local outputs are needed and asserts that no output path traverses a symlink outside the private build root. All 15 focused module checks and transitive audits passed; no writing build or .lake copy in canonical checkout.",
+  "source_correspondence": "Appendix B and source-domain/topology dependencies for Theorems 1.1, 1.3 and 1.4. Exact real/even/mean-zero original distributions and full real Wiener tests are identified, with equality of induced weak-star topologies on every bounded subset. No physical KdV main theorem is yet proved.",
+  "build_isolation": "All 20 focused modules passed with worktree-local compiler outputs and immutable canonical compiled imports; complete 142-declaration transitive axiom audit passed. No canonical tracked-source or build-output edits.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
-  "publication_status": "Validated milestone ready for branch commit and push; main integration is separate.",
+  "publication_status": "Validated source-identification milestone ready for branch commit/push; main integration remains separate.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
     "NLS/SequenceSpaces/WienerWeakStar.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
@@ -70,6 +82,9 @@
     "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean": "ba8dc80200df71f8b0caca6517a85bedfe4a772afd87f1ca394e2178063ee5af",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean": "d0cd997aec48bbc96a77797449dd8a5f46552e918c1bff17e6aa8fba9cc291ba",
+    "NLS/Fourier/PeriodicDistributionParity.lean": "4121127cdee0b0ac620cd83446b9918fa2b9d59be9d5fc3ff8739f2f89083b27",
+    "NLS/Fourier/RealMeanZeroPeriodOne.lean": "9a0e2d259da4b7ae61b5612c186c8cf8905990cd0f0a8a5db330d19ea9978bc3",
+    "NLS/Fourier/PeriodicEndpointLowerInclusion.lean": "a4e1b84cc2bae282d42f3beefb571d948c5cad1f852aaa2a7190d5a21e895f53",
     "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean": "291e9ae1fca267a2338b4bc8ef45b102bf1157213480e79c828d4b1eb163e895",
     "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean": "50c2152b061e6fc41fc5794708b1d4619cc1ee288a0de75a0bce8590782b784e",
     "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean": "71117c48b2360252e23bf9fc45f502776f6439bc81d6803c3231bc609062d655",
@@ -78,7 +93,9 @@
     "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean": "dea711737323aa539b8c8e8c0868017a47e32200033efddaec50d360820096c6",
     "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean": "7f14bb7e852aadfccbc01e6605aa0831a3d4c952388c68c5485f519b122e3222",
     "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean": "2fb656b877222b76070bebe4820f8f1076bf04da513df28cdbbe49181a64891a",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "526113c0834e46ac57d5ade24272cf826d49bf5fd44b474c3328a63ad5e51242"
+    "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean": "6edca9a208e8907aea31c16bfed9259409a5dfadb403a4d9c5776cef104cda83",
+    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean": "b4f9aee7596cc594a209d0416acbe5a8e7b72daf1d0f9e183f707cee24394cbc",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "3ea7dfa2ee9ebfd8ac5267b963d1196ef4f42f9e9c1623a7b58cd2d133989a48"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -86,9 +103,9 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "prior_moved_declarations": 50,
-    "reused_shared_flow_declarations": 14,
-    "additional_declarations": 30
+    "prior_checked_declarations": 94,
+    "additional_declarations": 48,
+    "reused_shared_flow_declarations_in_total": 14
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -98,11 +115,12 @@
   },
   "shared_spectral_state_inspected": {
     "branch": "articles/kdv-estimates",
-    "head": "5b29695",
+    "head": "0b58631",
     "available": [
       "NLS/KdV/FreeHill.lean",
-      "NLS/KdV/HillComplement.lean"
+      "NLS/KdV/HillComplement.lean",
+      "NLS/KdV/HillReduction.lean"
     ],
-    "remaining": "Physical Hill spectrum, Birkhoff map and endpoint spectral estimates are not supplied by these modules."
+    "remaining": "The shared branch now proves a two-mode Fourier determinant reduction. It does not yet supply the physical spectrum, Birkhoff map or negative-regularity endpoint spectral estimates."
   }
 }

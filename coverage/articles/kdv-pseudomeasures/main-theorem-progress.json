@@ -25,7 +25,6 @@
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
-    "Exact paper real-predual/even-mode source identifications.",
     "Wiener Birkhoff diffeomorphism and actual KdV analytic trajectory map."
   ],
   "no_completion_claim": "The generic frequency functional \u03a9 is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -36,5 +35,11 @@
     "AppendixBLowerTopology": "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean",
     "PeriodicWeakStarEndpoint": "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean"
   },
-  "goal_status": "active"
+  "goal_status": "active",
+  "completed_source_identifications": [
+    "Original distribution reality, zero mean and physical period one exactly characterize the constrained coefficient locus.",
+    "Full real Wiener predual original-distribution equivalence with exact norm.",
+    "On bounded source subsets, equality of real-Wiener test and complex weak-star induced topologies.",
+    "Original H^-1 inclusion changes neither the physical distribution nor the source restrictions."
+  ]
 }

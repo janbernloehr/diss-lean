@@ -4,6 +4,9 @@ import NLS.SequenceSpaces.WeightedWeakStarCompactness
 import NLS.SequenceSpaces.WeightedWeakStarLowerTopology
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
 import NLS.Fourier.PeriodicWeightedWeakStar
+import NLS.Fourier.PeriodicDistributionParity
+import NLS.Fourier.RealMeanZeroPeriodOne
+import NLS.Fourier.PeriodicEndpointLowerInclusion
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.WeightedWeakStarPhaseFlow
 import NLS.Articles.KdVPseudomeasures.WeakStarEndpoint
@@ -12,6 +15,8 @@ import NLS.Articles.KdVPseudomeasures.PeriodicWeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.AppendixBWeakStar
 import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
 import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
+import NLS.Articles.KdVPseudomeasures.SourceSpaces
+import NLS.Articles.KdVPseudomeasures.RealPredualTopology
 
 #print axioms NLS.Coeff.wienerWeakStar
 #print axioms NLS.Coeff.wienerWeakStar_apply
@@ -72,6 +77,16 @@ import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevPseudomeasureWeakStar_ofSmooth
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.isCompact_sobolevPseudomeasureWeakStar_closedBall
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients
+#print axioms NLS.Fourier.IsPeriodTwoDistribution.translate_coefficientTest
+#print axioms NLS.Fourier.IsPeriodTwoDistribution.period_one_iff_odd
+#print axioms NLS.Fourier.SmoothPeriodicTest.Distribution.toTempered_coefficient_two
+#print axioms NLS.Fourier.SmoothPeriodicTest.Distribution.toTempered_period_one_iff_odd
+#print axioms NLS.Fourier.SmoothPeriodicTest.Distribution.IsRealMeanZeroPeriodOne
+#print axioms NLS.Fourier.SmoothPeriodicTest.Distribution.isRealMeanZeroPeriodOne_iff_coefficients
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.endpointLowerInclusion
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.endpointLowerInclusion_coefficient
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.endpointLowerInclusion_val
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.endpointLowerInclusion_injective
 #print axioms NLS.WeightedCoeff.continuous_phaseFlow_family
 #print axioms NLS.WeightedCoeff.squaredAmplitudes
 #print axioms NLS.WeightedCoeff.squaredAmplitudes_phaseFlow
@@ -107,3 +122,41 @@ import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne
+#print axioms NLS.Articles.KdVPseudomeasures.AdmissiblePredualOrder
+#print axioms NLS.Articles.KdVPseudomeasures.Potential
+#print axioms NLS.Articles.KdVPseudomeasures.potentialCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.potentialCoordinates_apply
+#print axioms NLS.Articles.KdVPseudomeasures.potentialCoordinateLocus
+#print axioms NLS.Articles.KdVPseudomeasures.mem_potentialCoordinateLocus_iff
+#print axioms NLS.Articles.KdVPseudomeasures.norm_potentialCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.potentialFromCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.potentialCoordinates_fromCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.potentialFromCoordinates_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_potentialCoordinateLocus
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_potentialCoordinateBall
+#print axioms NLS.Articles.KdVPseudomeasures.metrizable_potentialCoordinateBall
+#print axioms NLS.Articles.KdVPseudomeasures.isSeqCompact_potentialCoordinateBall
+#print axioms NLS.Articles.KdVPseudomeasures.admissible_hminusOne_threshold
+#print axioms NLS.Articles.KdVPseudomeasures.potentialHminusOne
+#print axioms NLS.Articles.KdVPseudomeasures.potentialHminusOne_val
+#print axioms NLS.Articles.KdVPseudomeasures.potentialHminusOne_source_conditions
+#print axioms NLS.Articles.KdVPseudomeasures.RealWienerTest
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerTest_original
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerEvaluations
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_realWienerEvaluations
+#print axioms NLS.Articles.KdVPseudomeasures.wienerPair
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerPair
+#print axioms NLS.Articles.KdVPseudomeasures.eval_wienerSingle
+#print axioms NLS.Articles.KdVPseudomeasures.eval_wienerPair
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerEvaluations_injective_on_locus
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_realWienerEvaluations_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.OriginalRealWienerTest
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerTestOriginalEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.norm_realWienerTestOriginalEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.originalRealWienerEvaluations
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerEvaluations_eq_original
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.realWienerAction_im_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalRealWienerAction_im_zero
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_originalRealWienerTests

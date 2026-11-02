@@ -1,6 +1,22 @@
 """Focused pinned Lean checks with read-only reference imports and private outputs."""
 from pathlib import Path
 import os, re, subprocess, sys
+def declaration_names(text):
+    """Inventory declarations, including those inside nested namespaces."""
+    stack, names = [], []
+    for line in text.splitlines():
+        ns = re.match(r'^namespace (\S+)\s*$', line)
+        end = re.match(r'^end(?: (\S+))?\s*$', line)
+        decl = re.match(r'^(?:@\[[^\n]*\]\s*)?(?:def|theorem)\s+([\w.]+)', line)
+        if ns:
+            stack.append(ns.group(1))
+        elif end and stack and end.group(1) == stack[-1]:
+            stack.pop()
+        elif decl:
+            assert stack, decl.group(1)
+            names.append('.'.join(stack + [decl.group(1)]))
+    return names
+
 root = Path(__file__).resolve().parent.parent
 repo = Path(os.environ.get('DISS_LEAN_REFERENCE_ROOT', '/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls'))
 elan = Path(os.environ.get('DISS_LEAN_ELAN_HOME', str(repo.parent.parent / 'work/tooling/elan')))
@@ -15,11 +31,14 @@ modules = [
     'NLS.SequenceSpaces.WeightedWeakStarLowerTopology',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
     'NLS.Fourier.PeriodicWeightedWeakStar',
+    'NLS.Fourier.PeriodicDistributionParity',
+    'NLS.Fourier.RealMeanZeroPeriodOne',
+    'NLS.Fourier.PeriodicEndpointLowerInclusion',
     'NLS.Dynamics.ActionDependentWeightedPhaseFlow',
     'NLS.Dynamics.WeightedWeakStarPhaseFlow',
 ] + ['NLS.Articles.KdVPseudomeasures.' + m for m in [
     'WeakStarEndpoint', 'WeightedWeakStarEndpoint', 'PeriodicWeakStarEndpoint',
-    'AppendixBWeakStar', 'AppendixBLowerTopology', 'TrajectoryTopology', 'Audit']]
+    'AppendixBWeakStar', 'AppendixBLowerTopology', 'TrajectoryTopology', 'SourceSpaces', 'RealPredualTopology', 'Audit']]
 # Expand only directories that need local compiled outputs. All reference
 # imports remain symlinks; no compiler output may traverse those symlinks.
 def local_directory(path):
@@ -72,10 +91,7 @@ for module in selected:
             if checked.endswith('.Audit'):
                 continue
             text = (root / Path(*checked.split('.'))).with_suffix('.lean').read_text()
-            namespaces = re.findall(r'^namespace (\S+)\s*$', text, re.M)
-            if namespaces:
-                assert len(namespaces) == 1, (checked, namespaces)
-                inventory += [namespaces[0] + '.' + n for n in re.findall(r'^(?:@\[[^\n]*\]\s*)?(?:def|theorem)\s+(\w+)', text, re.M)]
+            inventory += declaration_names(text)
         assert len(inventory) == len(set(inventory)), inventory
         assert set(expected) == set(inventory), (set(expected) ^ set(inventory))
         assert {d for d, _ in reports} == set(expected), reports

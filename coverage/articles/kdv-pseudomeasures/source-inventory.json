@@ -23,7 +23,7 @@
     "solution": "Unique H^-1 limit of smooth-data KdV solutions, for every smooth approximating sequence converging in H^-1, pointwise in time; imported existence and uniform-on-compact-time continuity must be supplied.",
     "weak_star": "sigma(FL_0^(s,infinity), FL_0^(-s,1)); coordinate version sigma(ell_0^(s,infinity), ell_0^(-s,1)). Actual predual topology, not full-dual weak topology.",
     "trajectory_topology": "Continuous maps on [-T,T] into the weak-star space, with compact-open/uniform-on-compact topology; pointwise-in-time dependence alone is insufficient.",
-    "library_pairing": "Library distributions act complex-linearly with physical bilinear pairing sum a_n*b_(-n). The coefficient/original complex Wiener weak duals are now proved homeomorphic using the existing full Sobolev dual isometry. Smooth-test action has the exact original normalization. Real-predual, mean-zero and even-mode source restriction identifications remain."
+    "library_pairing": "Original distribution reality is equality with native physical conjugation on all smooth tests. Physical period one is equivalent to zero odd modes in the period-two normalized coefficients. The complex coefficient/original Wiener weak dual homeomorphism and equality with the full original real mean-zero period-one Wiener test topology on bounded source subsets are now proved. The action on real Wiener tests is real valued."
   },
   "main_statements": [
     {
@@ -41,7 +41,10 @@
       "proved_dependencies": [
         "NLS.Fourier.PeriodicFourierLebesgue.continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients",
         "NLS.WeightedCoeff.continuous_weakStarActionPhaseFlow_orbit",
-        "NLS.WeightedCoeff.norm_weakStarActionPhaseFlow"
+        "NLS.WeightedCoeff.norm_weakStarActionPhaseFlow",
+        "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
+        "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
       ]
     },
     {
@@ -57,7 +60,10 @@
       "status": "unproved",
       "proved_dependencies": [
         "NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne",
-        "NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory"
+        "NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory",
+        "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
+        "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
       ],
       "qualification": "These are proved topology/generic flow dependencies, not the physical KdV main theorem."
     },
@@ -74,7 +80,12 @@
         "Iso(q), defined inside real mean-zero H^-1 via the full periodic spectrum, lies in and is norm-bounded in FL_0^(s,infinity); weak-star homeomorphism on Iso(q)."
       ],
       "source_correction": "Printed first codomain is ell_0^(s,infinity). Correct to s+1/2, as given immediately before the theorem, in its own weak-star pairing, and in Lemma 3.3. Visually confirmed PDF p.3. No refutation is being pursued.",
-      "status": "unproved"
+      "status": "unproved",
+      "proved_dependencies": [
+        "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
+        "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
+      ]
     },
     {
       "label": "5.1",
@@ -123,7 +134,7 @@
         38
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
-      "status": "Generalized endpoint compactness/topology results proved in shared library; real mean-zero ball restriction proved. Full complex coefficient-to-original distribution weak-star homeomorphism now proved. Paper real-predual/even-mode restriction still to finish."
+      "status": "Generalized endpoint compactness/topology results proved; real/even/mean-zero physical source characterization and exact original real-Wiener testing topology on bounded source subsets now proved. Full physical KdV constructions remain outside Appendix B."
     }
   ],
   "reuse_map": [
@@ -179,8 +190,8 @@
     }
   ],
   "remaining_obligations": [
-    "Finish the paper real-predual, mean-zero and period-two even-mode source restrictions; complex coefficient/original distribution weak-star homeomorphism is now proved.",
-    "Transfer the generalized Appendix B statements through the remaining exact paper real/even-mode source subtype identifications.",
+    "Construct real Banach source/target models for the analytic Birkhoff assertions, retaining the proved exact original-distribution identifications.",
+    "Use the now-proved bounded real-Wiener topology/source identifications in the actual KdV main-theorem constructions; no physical KdV flow exists in this branch yet.",
     "Consume shared physical Hill spectrum and KdV Birkhoff construction, prove endpoint spectral regularity and inverse estimates.",
     "Establish H^-1 solution extension and physical flow identification.",
     "Identify the verified generic weak-star action flow with actual KdV (if using normal forms), or supply physical H^-1 solution continuity and invariant bounded endpoint sets for the checked trajectory-topology transfer. No unknown KdV frequency map is assumed proved.",

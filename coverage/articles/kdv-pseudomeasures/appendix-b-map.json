@@ -26,11 +26,17 @@
   "B.1(iv)": [
     "isEmbedding_lowerWeakStarRealization_on_bounded"
   ],
-  "qualification": "Generalized complex-dual statements and real mean-zero ball restriction. Weighted original periodic distribution/coefficient weak duals now identified by a proved homeomorphism; exact real-predual/even-mode source restrictions remain.",
+  "qualification": "Generalized endpoint statements plus exact physical source identification. Real/even/mean-zero conditions and full original real Wiener predual test topology are now identified on every bounded source subset. No KdV main theorem completion is inferred.",
   "namespace": "NLS.WeightedCoeff",
   "new_modules": [
     "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
     "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean"
   ],
-  "physical_weak_star_adapter": "NLS/Fourier/PeriodicWeightedWeakStar.lean"
+  "physical_weak_star_adapter": "NLS/Fourier/PeriodicWeightedWeakStar.lean",
+  "source_constraints_adapter": [
+    "NLS/Fourier/PeriodicDistributionParity.lean",
+    "NLS/Fourier/RealMeanZeroPeriodOne.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
+    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean"
+  ]
 }
