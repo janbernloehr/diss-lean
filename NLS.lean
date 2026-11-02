@@ -5015,4 +5015,9 @@ import NLS.ComplexAnalysis.CoshSquareCoordinate
 import NLS.KdV.HillL2CutPrimitiveSquare
 import NLS.KdV.HillL2CutSquareTrace
 import NLS.KdV.HillL2CutSquareDeflation
+import NLS.ComplexAnalysis.RealTwoZeroUnit
+import NLS.ComplexAnalysis.RealEndpointRootBoundary
+import NLS.KdV.HillL2CutPrimitiveUnit
+import NLS.KdV.HillL2CutUnitOrientation
+import NLS.KdV.HillL2GapBoundaryValues
 import NLS.Articles.KdVEstimates.EstimateAdapter

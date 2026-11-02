@@ -7,6 +7,15 @@ open Set Metric Complex
 open scoped ComplexConjugate
 namespace NLS.ComplexAnalysis
 
+theorem im_eq_zero_of_mem_real_segment (a b : ℝ) (z : ℂ)
+    (hz : z ∈ segment ℝ (a : ℂ) b) : z.im = 0 := by
+  obtain ⟨t,_,rfl⟩ := by rw [segment_eq_image_lineMap] at hz; exact hz
+  simp only [AffineMap.lineMap_apply_module,Complex.real_smul,add_im,mul_im,
+    ofReal_im,mul_zero,zero_mul,add_zero]
+
+theorem not_mem_real_segment_of_im_ne_zero (a b : ℝ) (z : ℂ) (hz : z.im ≠ 0) :
+    z ∉ segment ℝ (a : ℂ) b := fun hs => hz (im_eq_zero_of_mem_real_segment a b z hs)
+
 theorem conj_mem_real_cut (c r l u : ℝ) (z : ℂ)
     (hz : z ∈ ball (c : ℂ) r \ segment ℝ (l : ℂ) u) :
     conj z ∈ ball (c : ℂ) r \ segment ℝ (l : ℂ) u := by

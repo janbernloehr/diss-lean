@@ -91,6 +91,11 @@ import NLS.ComplexAnalysis.CoshSquareCoordinate
 import NLS.KdV.HillL2CutPrimitiveSquare
 import NLS.KdV.HillL2CutSquareTrace
 import NLS.KdV.HillL2CutSquareDeflation
+import NLS.ComplexAnalysis.RealTwoZeroUnit
+import NLS.ComplexAnalysis.RealEndpointRootBoundary
+import NLS.KdV.HillL2CutPrimitiveUnit
+import NLS.KdV.HillL2CutUnitOrientation
+import NLS.KdV.HillL2GapBoundaryValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -175,7 +180,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.coshSquareCoordinate_re_le_one_of_nonpos,
     ``NLS.ComplexAnalysis.cosh_add_I_nat_pi,
     ``NLS.ComplexAnalysis.deriv_coshSquareCoordinate_zero,
-    ``NLS.ComplexAnalysis.deriv_ne_zero_of_analyticOrderNatAt_eq_one]
+    ``NLS.ComplexAnalysis.deriv_ne_zero_of_analyticOrderNatAt_eq_one,
+    ``NLS.ComplexAnalysis.im_eq_zero_of_mem_real_segment,
+    ``NLS.ComplexAnalysis.not_mem_real_segment_of_im_ne_zero,
+    ``NLS.ComplexAnalysis.real_two_zero_unit_conj,
+    ``NLS.ComplexAnalysis.endpointRoot_real_gap_limits,
+    ``NLS.ZakharovShabat.normalizedStandardRoot_re_neg_of_gt_rightEndpoint,
+    ``NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_upper_side,
+    ``NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_lower_side]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
