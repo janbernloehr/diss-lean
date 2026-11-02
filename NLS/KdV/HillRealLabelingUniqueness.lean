@@ -16,7 +16,7 @@ namespace NLS.KdV
 structure HillRealCharacteristicLabeling
     (q : WeightedCoeff SpectralWeight.one.toWeight 2) (N : ℕ) (lambda : ℕ → ℝ) : Prop where
   cutoff_ge_two : 2 ≤ N
-  cutoff_bound : 16*‖q‖ ≤ (N : ℝ)
+  cutoff_bound : 8*‖q‖ ≤ (N : ℝ)
   monotone : Monotone lambda
   roots : ∀ z : ℂ, hillL2Radicand (SpectralWeight.one.toCoeff q) z = 0 ↔
     ∃ j : ℕ, z = (lambda j : ℂ)
@@ -31,7 +31,7 @@ theorem exists_hillRealCharacteristicLabeling
     (q : WeightedCoeff SpectralWeight.one.toWeight 2)
     (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
     (hreal : IsRealHillPotential (SpectralWeight.one.toCoeff q))
-    (N : ℕ) (hN : 2 ≤ N) (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (N : ℕ) (hN : 2 ≤ N) (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     ∃ lambda : ℕ → ℝ, HillRealCharacteristicLabeling q N lambda := by
   obtain ⟨lambda,hm,hr,hp,hc,hb⟩ := exists_hillRealCharacteristicLabels q hq hreal N hN hcut
   refine ⟨lambda,⟨hN,hcut,hm,hr,?_,hc,hb⟩⟩

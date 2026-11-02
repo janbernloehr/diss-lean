@@ -60,6 +60,20 @@ theorem nat_le_abs_sq_sub_sq {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
   have hn' : (1 : ℝ) ≤ n := by exact_mod_cast hn
   linarith
 
+/-- The actual free energy spacing is strictly greater than the index.
+This strict inequality separates perturbed pairs at the cutoff `8*‖q‖`. -/
+theorem index_lt_freeHillValue_gap {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
+    (hk : k.natAbs ≠ n) : (n : ℝ) < |freeHillValue n-freeHillValue k| := by
+  have hd := nat_le_abs_sq_sub_sq hn hk
+  have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  have he : |freeHillValue n-freeHillValue k| =
+      Real.pi^2*|(n : ℝ)^2-(k : ℝ)^2| := by
+    simp only [freeHillValue, Int.cast_natCast]
+    rw [← mul_sub, abs_mul, abs_of_nonneg (sq_nonneg Real.pi)]
+  rw [he]
+  nlinarith
+
 /-- The quadratic Hill lattice remains separated on the chosen strip. -/
 theorem freeHill_denominator_lower {n : ℕ} (hn : 1 ≤ n) {z : ℂ}
     (hz : z ∈ reducedHillStrip n) {k : ℤ} (hk : k.natAbs ≠ n) :

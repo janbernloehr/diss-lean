@@ -312,7 +312,6 @@
     }
   ],
   "next_shared_milestones": [
-    "Sharpen the actual high characteristic count and intrinsic-pair adapter from cutoff 16*||q|| to 8*||q|| using the boundary-zero-free potential homotopy. The source Theorem 3 proof uses N>=8*||q||_w^(3/2-r), hence exactly w(16*||q||_w^(3/2-r)); an extra factor two in that weight argument cannot in general be absorbed into a constant for arbitrary admissible weights. The existing canonical-gap cutoff 16 is a checked weaker prerequisite, not yet sufficient for the final exact weighted argument.",
     "Construct the free-normalized physical Hill root and logarithmic primitive on the rough L2 source domains, reusing the shared source-log continuation library and inspected classical Hill primitive developments. Prove the required high-contour coverage and define the actual actions with the source normalization.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
@@ -723,7 +722,7 @@
       "NLS.KdV.HillRealHighGapPair.endpoints_unique"
     ],
     "reality": "Fourier reality means q(-k)=conj(q(k)), obtained from a.e. reality of the actual synthesized L2 potential. The exact convolution adjoint identity and real kinetic symbol prove symmetry on the actual H2 domain; no first-order ZS real-type assertion replaces this calculation. Nonzero Hilbert energy proves real eigenvalues, orthogonality for distinct energies and absence of a length-two Jordan chain on the actual H2 domain.",
-    "physical_multiplicities": "hillL2Radicand is the actual rough Delta(lambda)^2-4. Its free formula is -4*sin(sqrt(lambda))^2 and each nonzero free lattice energy has analytic order two. The homotopy t*q preserves boundary nonvanishing using the verified localization. For every complex even-supported L2 q and n>=max(1,16*||q||_2), the actual characteristic count in the radius-n energy disc and entire checked strip is two. A shared two-zero comparison gives equality of the unit-weight determinant and physical characteristic analytic orders throughout the strip, including a double root.",
+    "physical_multiplicities": "hillL2Radicand is the actual rough Delta(lambda)^2-4. Its free formula is -4*sin(sqrt(lambda))^2 and each nonzero free lattice energy has analytic order two. Boundary-zero-free potential homotopy proves count two in the radius-n disc and whole checked strip for complex even-supported L2 q at n>=max(1,8*||q||_2). The separately proved determinant/characteristic analytic-order comparison retains its cutoff 16*||q||_2; its Rouch\u00e9 argument has not been sharpened.",
     "ordered_real_pairs": "For real even-supported L2 q the two actual roots are real. HillRealHighGapPair constructs the ordered endpoints, their exact multiset orders in the disc and exhaustion of the entire checked strip. Ordered endpoints are unique; a collapsed gap is represented by the same endpoint twice.",
     "reused_modules": [
       {
@@ -797,7 +796,7 @@
     "free_normalization": "The actual free characteristic vanishes exactly at pi^2*n^2 for n>=0. The energy zero at 0 has analytic order one, proved using the ramified square-coordinate composition and the exact free frequency sine formula. Positive free roots retain the previously checked order two.",
     "central_contour": "For N>=max(2,8*||q||_2), use the circle with real diameter [-N^2,pi^2*N^2-12*N]. The endpoints are excluded by the checked left bound and vertical separator. A real potential has only real actual characteristic roots, including along t*q, so the whole circle is zero-free. Compact-contour homotopy invariance transfers the free count 1+2*(N-1)=2*N-1 to the actual rough L2 characteristic. The same count holds on the actual open real central interval.",
     "root_multisets": "The finite central root multiset is constructed from the analytic orders of the actual Delta^2-4. On real inputs, mapping to real parts and back loses neither roots nor orders. Its cardinality is proved to be 2*N-1, and the existing shared finite-multiset sorting theorem gives an actual ordered enumeration with exact counts.",
-    "global_labels": "For each real even-supported L2 potential and N>=max(2,16*||q||_2), a global lambda:Nat->Real is constructed. It is nondecreasing; Delta(z)^2=4 iff z=(lambda(j):Complex) for some j. The first 2*N-1 slots are in the explicit central interval and enumerate its exact analytic multiplicities. For each n=N+k, slots 2*n-1 and 2*n equal the actual unique ordered high pair, whose record carries the exact physical characteristic orders. Localization proves strict separation between distinct high pairs and between the central block and high tail.",
+    "global_labels": "For each real even-supported L2 potential and N>=max(2,8*||q||_2), a global lambda:Nat->Real is constructed. It is nondecreasing; Delta(z)^2=4 iff z=(lambda(j):Complex) for some j. The first 2*N-1 slots are in the explicit central interval and enumerate its exact analytic multiplicities. For each n=N+k, slots 2*n-1 and 2*n equal the actual unique ordered high pair, whose record carries the exact physical characteristic orders. Localization proves strict separation between distinct high pairs and between the central block and high tail.",
     "shared_proofs": [
       "NLS.ComplexAnalysis.ofReal_mem_realDiameter_closedBall_iff",
       "NLS.ComplexAnalysis.ofReal_mem_realDiameter_sphere_iff",
@@ -834,13 +833,13 @@
       "NLS.KdV.hillPeriodOne_canonical_gap_tail_bound"
     ],
     "intrinsic_labels": "A checked labeling record packages the constructed monotone real root enumeration, central counts, interval bounds and actual high pairs. For every real energy x the occurrence fiber is finite and its global natural counting sum equals the analytic order of the actual Delta^2-4. High roots can occur only in their own two slots; central roots occur only in the finite prefix. The actual high pair is unique, so two admissible constructions have the same tail. The existing shared ordered finite-exception uniqueness theorem proves equality of the entire label functions at arbitrary admissible cutoffs.",
-    "canonical_definition": "Existence at N=max(2,ceil(16*||q||_2)) defines hillRealLabels. The result satisfies the same physical labeling record at every N>=max(2,16*||q||_2), independently of all choices. It exhausts the actual characteristic zero set and has the full global analytic multiplicities, not only separate local-cluster counts.",
+    "canonical_definition": "Existence at N=max(2,ceil(8*||q||_2)) defines hillRealLabels. The result satisfies the same physical labeling record at every N>=max(2,8*||q||_2), independently of all choices. It exhausts the actual characteristic zero set and has the full global analytic multiplicities, not only separate local-cluster counts.",
     "lowest_energy": "hillLowestEnergy is canonical label(0). It is an actual characteristic root, is at most the real part of every other actual characteristic root, and belongs to (-N^2,pi^2*N^2-12*N) at every N>=max(2,8*||q||_2). Its analytic simplicity is not asserted.",
     "source_weight_independence": "The period-one source potential in the w(2*k) norm is inserted at the even period-two indices and contractively included in unit weight. Its Fourier reality and even support are checked. The resulting canonical labels and gaps are identical when the same raw source Fourier coefficients are realized in any other admissible spectral weight; the auxiliary weight does not change the spectral object.",
-    "canonical_gap_bounds": "gamma_n=label(2*n)-label(2*n-1) is nonnegative. For each n>=max(2,16*||q||_w), w(2*n)*gamma_n<=6*||q||_w. For N at the same cutoff the actual canonical gap squares are summable and sum_{k>=0} w(2*(k+N))^2*gamma_(k+N)^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4. These statements require only the actual real weighted potential; they do not assume any supplied root or endpoint families.",
-    "cutoff_qualification": "The general root-family estimates retain their earlier cutoff 8*||q||_w. Specialization to the intrinsic labeled pairs uses the checked characteristic count and therefore the explicit cutoff max(2,16*||q||_w). The remainder coefficient is the previously corrected 2304, not the printed 576.",
+    "canonical_gap_bounds": "gamma_n=label(2*n)-label(2*n-1) is nonnegative. For each n>=max(2,8*||q||_w), w(2*n)*gamma_n<=6*||q||_w. For N at the same cutoff the actual canonical gap squares are summable and sum_{k>=0} w(2*(k+N))^2*gamma_(k+N)^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4. These statements require only the actual real weighted potential; they do not assume any supplied root or endpoint families.",
+    "cutoff_qualification": "Both the actual root-family estimates and intrinsic canonical gaps now use cutoff 8*||q||_w (with n>=2 for the global labeled adapter). The strict free-energy spacing separates neighboring pairs already at this cutoff. The corrected remainder coefficient remains 2304, not the printed 576.",
     "qualifications": "Intrinsic cutoff/weight-independent labels, full analytic multiplicities, L2 continuity, source trace parity, strict adjacent-band separation, lowest-root simplicity and open/closed endpoint orders are now proved. The operator algebraic-multiplicity comparison and sharper mean-zero low-energy estimates remain separate. Canonical global root branches/actions, Birkhoff coordinates, hierarchy trace identities and Theorems 1-3 remain unverified.",
-    "weighted_cutoff_constraint": "Inspection of the source proof on PDF page 24 confirms N>=8*||q||_w^(3/2-r) and low-index weight w(2*N-2)<=w(16*||q||_w^(3/2-r)). For large input norms the intrinsic high-pair cutoff therefore needs the sharper linear constant 8, rather than the current proved 16, to retain the exact source weight argument uniformly over admissible weights. The zero-free-boundary homotopy can potentially supply the sharper count without the larger Rouch\u00e9 comparison constant. This improvement remains a necessary quantitative proof obligation."
+    "weighted_cutoff_constraint": "The source proof on PDF page 24 uses N>=8*||q||_w^(3/2-r), hence low-index weight w(2*N-2)<=w(16*||q||_w^(3/2-r)). The actual high characteristic count and intrinsic-pair bounds are now sharpened to 8*||q||_w by zero-free-boundary homotopy, satisfying this quantitative prerequisite. The weighted action argument itself is not yet proved."
   },
   "continuous_real_spectral_order": {
     "modules": [
@@ -874,5 +873,25 @@
     "strict_bands": "For every n>=0, label(2*n)<label(2*n+1). Opposite trace levels rule out equality, while intrinsic monotonicity supplies the weak order. Closed gaps inside slots 2*n-1 and 2*n remain allowed.",
     "orders": "The lowest characteristic root has analytic order one, because strict separation from slot 1 and global multiplicity preservation leave only slot 0 in its fiber. Every non-lowest root can occur only in its own two gap slots. Thus open-gap endpoints each have order one and a closed gap has order two, including central pairs.",
     "qualifications": "These are analytic characteristic orders and the actual normalized trace levels. No abstract unbounded-operator algebraic multiplicity theorem or analyticity of individual labels at closed gaps is asserted. Canonical global products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified."
+  },
+  "sharp_characteristic_cutoff": {
+    "files": [
+      "NLS/KdV/FreeHill.lean",
+      "NLS/KdV/HillCharacteristicZeros.lean",
+      "NLS/KdV/HillRealGapPairs.lean",
+      "NLS/KdV/HillGlobalRealLabels.lean",
+      "NLS/KdV/HillRealLabelingUniqueness.lean",
+      "NLS/KdV/HillCanonicalRealLabels.lean",
+      "NLS/KdV/HillCanonicalGapBounds.lean",
+      "NLS/KdV/HillLabelContinuity.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.index_lt_freeHillValue_gap",
+      "NLS.KdV.hillL2Radicand_two_zeros",
+      "NLS.KdV.hillRealLabels_high_pair",
+      "NLS.KdV.hillPeriodOne_canonical_gap_le",
+      "NLS.KdV.hillPeriodOne_canonical_gap_tail_bound"
+    ],
+    "result": "The physical characteristic count and all intrinsic labeled pair/gap bounds use 8*||q||. The canonical definition now chooses max(2,ceil(8*||q||)); proved cutoff independence identifies the same actual labeling. L2 continuity and trace-parity dependents are rechecked with the sharper cutoff. Main Theorems 1-3 remain unverified."
   }
 }

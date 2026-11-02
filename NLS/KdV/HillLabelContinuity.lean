@@ -37,15 +37,15 @@ theorem continuousAt_hillRealLabels_family
     (hq : ∀ t, SpectralWeight.one.toCoeff (Q t) ∈ Coeff.paritySubspace 0)
     (hreal : ∀ t, IsRealHillPotential (SpectralWeight.one.toCoeff (Q t))) (t0 : T) (j : ℕ) :
     ContinuousAt (fun t => hillRealLabels (Q t) (hq t) (hreal t) j) t0 := by
-  let N := max (j+2) (2+⌈16*‖Q t0‖⌉₊)
+  let N := max (j+2) (2+⌈8*‖Q t0‖⌉₊)
   have hN : 2 ≤ N := by dsimp [N]; omega
   have hj : j < 2*N-1 := by dsimp [N]; omega
-  have hcut0 : 16*‖Q t0‖ < (N : ℝ) := by
-    have hc := Nat.le_ceil (16*‖Q t0‖)
-    have hn : (2+⌈16*‖Q t0‖⌉₊ : ℕ) ≤ N := le_max_right _ _
-    have hn' : (2 : ℝ)+(⌈16*‖Q t0‖⌉₊ : ℝ) ≤ (N : ℝ) := by exact_mod_cast hn
+  have hcut0 : 8*‖Q t0‖ < (N : ℝ) := by
+    have hc := Nat.le_ceil (8*‖Q t0‖)
+    have hn : (2+⌈8*‖Q t0‖⌉₊ : ℕ) ≤ N := le_max_right _ _
+    have hn' : (2 : ℝ)+(⌈8*‖Q t0‖⌉₊ : ℝ) ≤ (N : ℝ) := by exact_mod_cast hn
     linarith
-  have hevent : ∀ᶠ t in 𝓝 t0, 16*‖Q t‖ < (N : ℝ) :=
+  have hevent : ∀ᶠ t in 𝓝 t0, 8*‖Q t‖ < (N : ℝ) :=
     (continuous_const.mul hQ.norm).continuousAt.preimage_mem_nhds (isOpen_Iio.mem_nhds hcut0)
   let labels (t : T) := hillRealLabels (Q t) (hq t) (hreal t)
   have hs0 := hillRealLabels_spec_at (Q t0) (hq t0) (hreal t0) N hN hcut0.le

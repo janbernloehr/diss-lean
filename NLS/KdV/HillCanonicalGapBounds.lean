@@ -107,10 +107,10 @@ theorem hillPeriodOneLabels_root (w : SpectralWeight) (q : WeightedCoeff w.doubl
 
 theorem hillPeriodOneLabels_high_strip (w : SpectralWeight) (q : WeightedCoeff w.doubleIndex.toWeight 2)
     (hreal : IsRealHillPotential (w.doubleIndex.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     (hillPeriodOneLabels w q hreal (2*n-1) : ℂ) ∈ reducedHillStrip n ∧
       (hillPeriodOneLabels w q hreal (2*n) : ℂ) ∈ reducedHillStrip n := by
-  have hc : 16*‖hillPeriodOneUnitPotential w q‖ ≤ (n : ℝ) := by
+  have hc : 8*‖hillPeriodOneUnitPotential w q‖ ≤ (n : ℝ) := by
     linarith [norm_hillPeriodOneUnitPotential_le w q]
   obtain ⟨p,hl,hr⟩ := hillRealLabels_high_pair (hillPeriodOneUnitPotential w q)
     (hillPeriodOneUnitPotential_even w q) (hillPeriodOneUnitPotential_real w q hreal) n hn hc
@@ -125,7 +125,7 @@ source weight, with no supplied endpoint roots. -/
 theorem hillPeriodOne_canonical_gap_le (w : SpectralWeight)
     (q : WeightedCoeff w.doubleIndex.toWeight 2)
     (hreal : IsRealHillPotential (w.doubleIndex.toCoeff q)) (n : ℕ) (hn : 2 ≤ n)
-    (hcut : 16*‖q‖ ≤ (n : ℝ)) :
+    (hcut : 8*‖q‖ ≤ (n : ℝ)) :
     w (2*(n : ℤ))*hillPeriodOneGap w q hreal n ≤ 6*‖q‖ := by
   obtain ⟨hm,hp⟩ := hillPeriodOneLabels_high_strip w q hreal n hn hcut
   have h := hillPeriodOne_physical_gap_le w q n (by omega)
@@ -137,7 +137,7 @@ theorem hillPeriodOne_canonical_gap_le (w : SpectralWeight)
 theorem hillPeriodOne_canonical_gap_tail_bound (w : SpectralWeight)
     (q : WeightedCoeff w.doubleIndex.toWeight 2)
     (hreal : IsRealHillPotential (w.doubleIndex.toCoeff q)) (N : ℕ) (hN : 2 ≤ N)
-    (hcut : 16*‖q‖ ≤ (N : ℝ)) :
+    (hcut : 8*‖q‖ ≤ (N : ℝ)) :
     Summable (fun k : ℕ => (w (2*((k+N : ℕ) : ℤ)))^2*hillPeriodOneGap w q hreal (k+N)^2) ∧
       (∑' k : ℕ, (w (2*((k+N : ℕ) : ℤ)))^2*hillPeriodOneGap w q hreal (k+N)^2) ≤
         9*‖Coeff.fourierTail N (WeightedCoeff.weightEquiv w.doubleIndex.toWeight 2 q)‖^2+
