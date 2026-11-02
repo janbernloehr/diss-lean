@@ -64,14 +64,16 @@ locally uniformly. The p/3 quasi-norm is retained for 2<p<3. The asymptotic
 identity is stated at n≠0, as appropriate at infinity; the separately proved
 exact all-index formula retains the actual singleton term at n=0.
 
-**Theorem 1.1, p. 3, open.** For each finite p>2 the remaining target is local
-C⁰ wellposedness of the renormalized mKdV equation on every real FL^p datum,
-with a common neighborhood and T>0 and a continuous map into trajectories
-in the uniform norm. The global clause requires one neighborhood of zero
-working before every T>0. Smooth approximations must give the same
-pointwise-in-time limit curve. The original equation must have no continuous
-extension at any datum in FL^p outside L², at each fixed t>0 as stated in
-Corollary 7.2(iii).
+**Theorem 1.1, p. 3, partially verified.** Both renormalized wellposedness
+clauses are proved in `MainTheorem11Wellposedness.lean`: local C⁰ wellposedness
+at every original real FL^p datum, for every finite p>2, and global C⁰
+wellposedness on one invariant open neighborhood of zero chosen before all
+T>0. The trajectory topology is the full uniform norm. The solution definition
+requires convergence for every smooth real sequence in the original physical
+Fourier norm. The classical smooth solution map exists and is proved unique
+on smooth data by the physical PDE, independently of the approximation limit.
+The original unrenormalized equation's nonextension at every FL^p datum
+outside L², at each fixed t>0, remains unproved. The full theorem remains open.
 
 The actual cubic-plus-normalized H4 rotations now have physical distribution
 source lifts through the fixed Birkhoff image. A common local interval works
@@ -189,9 +191,9 @@ u_t=-u_xxx+6(u²-M)u_x at every real time and spatial point. Its physical field
 is real, and M is exactly the original unit-period square integral at time
 zero. Every signed Fourier integral of both physical fields agrees with the
 actual original distribution lift of the fixed Theorem 1.2 family. This
-establishes the constructed flow's PDE on the full native H⁴ diagonal;
-classical PDE uniqueness and the precise smooth-data/finite-p solution
-identification required by Theorem 1.1 are not inferred from it.
+establishes the constructed flow's PDE on the full native H⁴ diagonal.
+The independent classical uniqueness and smooth-data identification needed
+for Theorem 1.1 are now proved as described below.
 
 Every smooth real physical period-one field now has a native real source at
 every integer Sobolev order, with its actual Fourier integrals. The original
@@ -214,34 +216,52 @@ Original scalar Fourier cutoffs are now certified as actual smooth real
 periodic distributions. They give norm-convergent smooth sequences at every
 finite-p datum. Every convergent smooth family has uniformly convergent
 actual scalar trajectories on a common admissible compact interval. The
-curve with the all-smooth-sequences limit property for this constructed
-smooth physical flow is uniquely the actual lift. The remaining classical
-identification must establish uniqueness against arbitrary classical PDE
-trajectories, so that this constructed smooth map is the source's canonical
-smooth solution map. Fixed-time nonextension outside L² is also still open.
+curve with the all-smooth-sequences limit property is uniquely the actual
+lift. This is now the article's solution notion for the classical smooth
+physical mKdV map, rather than only a limit property for an unidentified lift.
 
-## Remaining integration order for Theorem 1.1
+Classical PDE uniqueness is proved by the actual periodic L² difference
+energy. Periodic integration by parts removes the third derivative and the
+fixed mass translation. The remaining coefficient is bounded by 18R², giving
+|E'|<=36R² E when both fields and first derivatives have uniform bound R.
+These bounds are obtained on each compact time interval from continuity;
+they are not extra assumptions on the trajectories. Two-sided Grönwall gives
+uniqueness from equal values at any time. Ordinary jointly smooth physical
+solutions satisfy all regularity hypotheses. For the constructed fourth flow,
+the Banach-valued fundamental theorem of calculus upgrades the continuous
+pointwise velocity to the uniform-norm time derivative. The actual first
+Sobolev jet is a continuous family of spatial derivatives. Every smooth real
+periodic datum therefore has exactly one classical global renormalized mKdV
+trajectory with its original initial square mass.
 
-1. Prove the remaining classical PDE uniqueness/identification with the
-   source's canonical smooth solution map. Native representation of every
-   smooth real physical datum, spatial smoothness of the constructed PDE
-   trajectory, and its scalar finite-p identification are now verified.
-2. Integrate that canonical smooth-map identification with the precise
-   smooth-approximation solution clause and the local/small-data uniform
-   trajectory statements. Smooth density, uniform convergence of all actual
-   smooth lift approximants, and uniqueness of their limit are already proved.
-3. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
-   smooth approximations, tunable divergent mass and a nonzero signed mode.
+`ScalarClassicalFourthAdapter.lean` proves that any classical physical smooth
+solution agrees with the scalar Birkhoff lift as an original distribution at
+every real time, for every finite p>=2. `MainTheorem11Wellposedness.lean`
+then proves uniform convergence of every smooth sequence for any such
+classical smooth solution map, characterizes solutions by the article's
+all-smooth-sequences definition, and proves uniqueness of that limit path.
+The same file packages local C⁰ wellposedness at every datum and global C⁰
+wellposedness on one invariant open zero neighborhood for every finite p>2.
+The existence theorem for a classical smooth map discharges its availability;
+classical uniqueness shows that the results apply to any canonical choice.
+
+## Remaining obligation for Theorem 1.1
+
+Prove nonextension of the original unrenormalized equation at every FL^p
+datum outside L², for each fixed t>0, using controlled smooth approximations,
+tunable divergent physical mass and a nonzero signed Birkhoff mode.
+The verified renormalized wellposedness clauses do not discharge this
+unrenormalized fixed-time claim. The full main theorem stays marked open.
 
 ## Validation
 
-The focused checker `check.sh` lists 189 article/shared modules and the
+The focused checker `check.sh` lists 198 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twenty-third checkpoint strictly checks all 8
-final new modules and reuses 181 parent modules after verifying their sources
-are unchanged from `88199cb1afc52ebfe569c6f43fd63a124860c0c1`.
+and `warningAsError=true`. The twenty-fourth checkpoint strictly checks all 9
+final new modules and reuses 189 parent modules after verifying their sources
+are unchanged from `d2227b25f90ed23676b0f21cc4628190a623c086`.
 
-The fresh full transitive audit checks all 877 named declarations, including
+The fresh full transitive audit checks all 917 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

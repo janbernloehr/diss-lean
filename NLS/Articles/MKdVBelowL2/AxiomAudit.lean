@@ -1,3 +1,12 @@
+import NLS.FunctionalAnalysis.ContinuousMapTimeDerivative
+import NLS.FunctionalAnalysis.PeriodicContinuousFamily
+import NLS.MKdV.ClassicalDifferenceEnergy
+import NLS.MKdV.ClassicalDifferenceEstimate
+import NLS.MKdV.ClassicalUniqueness
+import NLS.MKdV.JointlySmoothClassicalTrajectory
+import NLS.Articles.MKdVBelowL2.FourthClassicalUniqueness
+import NLS.Articles.MKdVBelowL2.ScalarClassicalFourthAdapter
+import NLS.Articles.MKdVBelowL2.MainTheorem11Wellposedness
 import NLS.ZakharovShabat.SourceNativeSmoothRealization
 import NLS.ZakharovShabat.SourceActionPhaseImageInclusion
 import NLS.Articles.MKdVBelowL2.PhysicalFourthExponentFlow
@@ -1086,3 +1095,44 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.exists_smoothPhysicalScalar_sequence
 #print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow_of_smooth
 #print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation
+
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise
+#print axioms NLS.FunctionalAnalysis.continuous_periodic_lift_family
+#print axioms NLS.FunctionalAnalysis.periodicContinuousFamily
+#print axioms NLS.FunctionalAnalysis.periodicContinuousFamily_apply
+#print axioms NLS.FunctionalAnalysis.continuous_periodicContinuousFamily
+#print axioms NLS.MKdV.scalarClassicalMKdVField
+#print axioms NLS.MKdV.integral_mul_deriv_periodic_zero
+#print axioms NLS.MKdV.integral_mul_deriv3_periodic_zero
+#print axioms NLS.MKdV.integral_weighted_mul_deriv_periodic
+#print axioms NLS.MKdV.integral_third_order_transport_energy
+#print axioms NLS.MKdV.classicalMKdVDifferenceCoefficient
+#print axioms NLS.MKdV.periodic_scalarClassicalMKdVField
+#print axioms NLS.MKdV.scalarClassicalMKdVField_sub
+#print axioms NLS.MKdV.integral_scalarClassicalMKdV_difference
+#print axioms NLS.MKdV.norm_classicalMKdVDifferenceCoefficient_le
+#print axioms NLS.MKdV.abs_scalarClassicalMKdV_difference_energy_le
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.velocity_periodic
+#print axioms NLS.MKdV.classicalMKdVDifferenceEnergy
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.hasDerivAt_difference_energy
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.abs_deriv_difference_energy_le
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.eq_of_eq_at
+#print axioms NLS.MKdV.classicalRegularity_of_jointly_smooth
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.of_jointly_smooth
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalFlow_fst
+#print axioms NLS.Articles.MKdVBelowL2.isClassicalMKdVTrajectory_fourthClassicalPhysicalFlow
+#print axioms NLS.Articles.MKdVBelowL2.classicalMKdVTrajectory_eq_fourthClassicalPhysicalFlow
+#print axioms NLS.Articles.MKdVBelowL2.existsUnique_classicalMKdVTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory.unique
+#print axioms NLS.Articles.MKdVBelowL2.isClassicalPhysicalScalarTrajectory_fourthScalarImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical
+#print axioms NLS.Articles.MKdVBelowL2.IsClassicalScalarSolutionMap
+#print axioms NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation
+#print axioms NLS.Articles.MKdVBelowL2.isClassicalScalarSolutionMap_fourthScalarImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_classicalScalarSolutionMap
+#print axioms NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff
+#print axioms NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation
+#print axioms NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation
+#print axioms NLS.MKdV.IsClassicalMKdVTrajectory.mk

@@ -189,7 +189,16 @@
     "Articles/MKdVBelowL2/SmoothPhysicalMKdV",
     "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory",
     "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth",
-    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation"
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation",
+    "FunctionalAnalysis/ContinuousMapTimeDerivative",
+    "FunctionalAnalysis/PeriodicContinuousFamily",
+    "MKdV/ClassicalDifferenceEnergy",
+    "MKdV/ClassicalDifferenceEstimate",
+    "MKdV/ClassicalUniqueness",
+    "MKdV/JointlySmoothClassicalTrajectory",
+    "Articles/MKdVBelowL2/FourthClassicalUniqueness",
+    "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter",
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -4571,6 +4580,206 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.continuous_periodic_lift_family": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.periodicContinuousFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.periodicContinuousFamily_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.continuous_periodicContinuousFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.scalarClassicalMKdVField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.integral_mul_deriv_periodic_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.integral_mul_deriv3_periodic_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.integral_weighted_mul_deriv_periodic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.integral_third_order_transport_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVDifferenceCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.periodic_scalarClassicalMKdVField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.scalarClassicalMKdVField_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.integral_scalarClassicalMKdV_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.norm_classicalMKdVDifferenceCoefficient_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.abs_scalarClassicalMKdV_difference_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.velocity_periodic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVDifferenceEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.hasDerivAt_difference_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.abs_deriv_difference_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.eq_of_eq_at": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalRegularity_of_jointly_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.of_jointly_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalFlow_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isClassicalMKdVTrajectory_fourthClassicalPhysicalFlow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.classicalMKdVTrajectory_eq_fourthClassicalPhysicalFlow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.existsUnique_classicalMKdVTrajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory.unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isClassicalPhysicalScalarTrajectory_fourthScalarImageFlow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.IsClassicalScalarSolutionMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isClassicalScalarSolutionMap_fourthScalarImageFlow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.tendstoUniformly_classicalScalarSolutionMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.IsClassicalMKdVTrajectory.mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "NLS.ZakharovShabat.componentSwapBoundary": [],
     "NLS.ZakharovShabat.componentSwapBoundary_involutive": []
   },
@@ -4579,7 +4788,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 8 new modules checked strictly; 181 unchanged modules reuse parent validation. Full transitive audit of 877 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 9 new modules checked strictly; 189 unchanged modules reuse parent validation. Full transitive audit of 917 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -4589,8 +4798,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 8 final new modules and a full transitive audit; 181 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "88199cb1afc52ebfe569c6f43fd63a124860c0c1",
+  "validation_method": "Incremental strict checks of 9 final new modules and a full transitive audit; 189 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "d2227b25f90ed23676b0f21cc4628190a623c086",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -4772,9 +4981,7 @@
     "Articles/MKdVBelowL2/FourthNativePhysicalField",
     "Articles/MKdVBelowL2/FourthClassicalPhysicalFlow",
     "Articles/MKdVBelowL2/FourthClassicalTimeEquation",
-    "Articles/MKdVBelowL2/FourthClassicalMKdV"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/FourthClassicalMKdV",
     "ZakharovShabat/SourceNativeSmoothRealization",
     "ZakharovShabat/SourceActionPhaseImageInclusion",
     "Articles/MKdVBelowL2/PhysicalFourthExponentFlow",
@@ -4783,6 +4990,17 @@
     "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory",
     "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth",
     "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation"
+  ],
+  "modules_checked_this_checkpoint": [
+    "FunctionalAnalysis/ContinuousMapTimeDerivative",
+    "FunctionalAnalysis/PeriodicContinuousFamily",
+    "MKdV/ClassicalDifferenceEnergy",
+    "MKdV/ClassicalDifferenceEstimate",
+    "MKdV/ClassicalUniqueness",
+    "MKdV/JointlySmoothClassicalTrajectory",
+    "Articles/MKdVBelowL2/FourthClassicalUniqueness",
+    "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter",
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness"
   ],
   "checked_source_sha256": {
     "ComplexAnalysis/RelativeProductComparison": "9fde40048b371faeaaf6824bad52dc3777f14114339734bbaa9e83d5061ee22d",
@@ -4973,6 +5191,15 @@
     "Articles/MKdVBelowL2/SmoothPhysicalMKdV": "6751b41e17c5cb4ba37f8f9beb9ba83ab15979f66fc90198f8e986037312d1b6",
     "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory": "ad4fbdc67adeef8087408c90dd13260299b47d1fe4eaf45fb2ebdd6e79b1ed14",
     "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth": "b58892c04899cc94f9282bd528c66e33bc6e362396532c38b8589ef450fd674f",
-    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation": "41e8f518c27504a9e98284b9fe0170dd9657938a5c42e08efefa625c3a6b1fc5"
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation": "41e8f518c27504a9e98284b9fe0170dd9657938a5c42e08efefa625c3a6b1fc5",
+    "FunctionalAnalysis/ContinuousMapTimeDerivative": "f7695cfa3463226f7489cb0eb04a143c9bf57d85a4f2f571cc8403b7bdad6705",
+    "FunctionalAnalysis/PeriodicContinuousFamily": "f62c559ae0dafa22deaa92d02b3054067ab4e9208c42c6f31a86df291995b512",
+    "MKdV/ClassicalDifferenceEnergy": "15b02d45e939d42420c4cb6a7a944f76629f00fdfd1a8279fdbf2055bb2d5fac",
+    "MKdV/ClassicalDifferenceEstimate": "bb594f07916936643a3d38ad8831f696cef4444576bfe6c45f50aa91e8afad9e",
+    "MKdV/ClassicalUniqueness": "910ff23c0d04550ec8976b976f5925b4a1c9640c5d7e63c09324847de0b42bb1",
+    "MKdV/JointlySmoothClassicalTrajectory": "fd3520b1c0388397dbc0029667bb82807f5eb5f32c09568d15de2e1b6a1b2fe4",
+    "Articles/MKdVBelowL2/FourthClassicalUniqueness": "5fb916a5792f0640c85376fbcb190f8a6b511d13af4f59fefe0ff58fd9d61c99",
+    "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter": "347e8c3eafb3a66b766aa9783435dd52a35e9fadb36e471d85afa0070bb0e6ca",
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness": "bfdc30e02b3ebb1ded60ef2f8b1fb443914de9dcb75009897cc1834b99ea6345"
   }
 }

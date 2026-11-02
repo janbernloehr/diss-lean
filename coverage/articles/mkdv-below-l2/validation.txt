@@ -1,13 +1,14 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 181 unchanged modules reuse commit 88199cb1afc52ebfe569c6f43fd63a124860c0c1; 8 final new modules checked strictly below.
-ZakharovShabat/SourceNativeSmoothRealization: checked
-ZakharovShabat/SourceActionPhaseImageInclusion: checked
-Articles/MKdVBelowL2/PhysicalFourthExponentFlow: checked
-ZakharovShabat/SourceNativeSobolevSmoothness: checked
-Articles/MKdVBelowL2/SmoothPhysicalMKdV: checked
-Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory: checked
-Articles/MKdVBelowL2/PhysicalScalarSmoothFourth: checked
-Articles/MKdVBelowL2/ScalarSmoothFourierApproximation: checked
+Incremental validation: 189 unchanged modules reuse commit d2227b25f90ed23676b0f21cc4628190a623c086; 9 final new modules checked strictly below.
+FunctionalAnalysis/ContinuousMapTimeDerivative: checked
+FunctionalAnalysis/PeriodicContinuousFamily: checked
+MKdV/ClassicalDifferenceEnergy: checked
+MKdV/ClassicalDifferenceEstimate: checked
+MKdV/ClassicalUniqueness: checked
+MKdV/JointlySmoothClassicalTrajectory: checked
+Articles/MKdVBelowL2/FourthClassicalUniqueness: checked
+Articles/MKdVBelowL2/ScalarClassicalFourthAdapter: checked
+Articles/MKdVBelowL2/MainTheorem11Wellposedness: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1727,3 +1728,77 @@ Articles/MKdVBelowL2/ScalarSmoothFourierApproximation: checked
 'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.FunctionalAnalysis.hasDerivAt_continuousMap_of_pointwise' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.FunctionalAnalysis.continuous_periodic_lift_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.FunctionalAnalysis.periodicContinuousFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.FunctionalAnalysis.periodicContinuousFamily_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.FunctionalAnalysis.continuous_periodicContinuousFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.scalarClassicalMKdVField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.integral_mul_deriv_periodic_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.integral_mul_deriv3_periodic_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.integral_weighted_mul_deriv_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.integral_third_order_transport_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalMKdVDifferenceCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.periodic_scalarClassicalMKdVField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.scalarClassicalMKdVField_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.integral_scalarClassicalMKdV_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.norm_classicalMKdVDifferenceCoefficient_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.abs_scalarClassicalMKdV_difference_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.velocity_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalMKdVDifferenceEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.hasDerivAt_difference_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.abs_deriv_difference_energy_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.eq_of_eq_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalRegularity_of_jointly_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.of_jointly_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalFlow_fst' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClassicalMKdVTrajectory_fourthClassicalPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalMKdVTrajectory_eq_fourthClassicalPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.existsUnique_classicalMKdVTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalPhysicalScalarTrajectory.unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClassicalPhysicalScalarTrajectory_fourthScalarImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalScalarSolutionMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClassicalScalarSolutionMap_fourthScalarImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendstoUniformly_classicalScalarSolutionMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.MKdV.IsClassicalMKdVTrajectory.mk' depends on axioms: [propext, Classical.choice, Quot.sound]

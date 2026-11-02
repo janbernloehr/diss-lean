@@ -237,12 +237,59 @@
       "source": "Uniform smooth-approximation limits and their uniqueness for the constructed physical flow",
       "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation",
       "scope": "On every common admissible compact interval, every norm-convergent smooth scalar family has uniformly convergent actual scalar trajectories; smooth approximant times are globally admissible. Any curve with the all-smooth-sequences pointwise limit property for these actual smooth physical lifts is uniquely the fixed scalar lift. Smooth approximation sequences exist, so the property is not vacuous. Classical PDE uniqueness is still needed to identify this constructed smooth map with the source canonical smooth solution map."
+    },
+    {
+      "source": "Periodic physical mKdV difference-energy bound",
+      "declaration": "NLS.MKdV.abs_scalarClassicalMKdV_difference_energy_le",
+      "scope": "Two smooth real period-one fields and any fixed complex mass. Periodic integration by parts removes the full third-order and translation terms. Uniform bounds R for both fields and their first spatial derivatives give the exact bound 36*R^2 times the original unit-period squared L2 distance."
+    },
+    {
+      "source": "Uniqueness against classical physical PDE trajectories",
+      "declaration": "NLS.MKdV.IsClassicalMKdVTrajectory.eq_of_eq_at",
+      "scope": "Any real periodic classical trajectories with the same fixed mass and equal values at one time agree at every real time. The actual PDE supplies the L2 energy derivative. Continuity in the uniform norm of the fields and of their first spatial derivative families supplies all compact-time bounds. Two-sided Gronwall handles both time directions. No energy bound is a solution hypothesis."
+    },
+    {
+      "source": "Ordinary jointly smooth solutions satisfy classical uniqueness regularity",
+      "declaration": "NLS.MKdV.IsClassicalMKdVTrajectory.of_jointly_smooth",
+      "scope": "Joint C-infinity regularity of the physical time-space cover gives norm-continuous circle families for both partial derivatives by the open spatial quotient and compact-open topology. The continuous velocity and pointwise time derivative imply uniform-norm differentiability by the Banach fundamental theorem of calculus. Thus arbitrary ordinary smooth real periodic solutions of the actual PDE belong to the uniqueness class."
+    },
+    {
+      "source": "Uniform time derivative of the actual full H4 physical trajectory",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalFlow_fst",
+      "scope": "Every native real-type H4 source. The actual fixed Birkhoff trajectory has the original corrected continuous physical velocity as its derivative in C(AddCircle 2, C) with the uniform norm. It is derived from pointwise derivatives and velocity continuity, not assumed and not restricted to finite-gap data."
+    },
+    {
+      "source": "The actual smooth-data fourth flow is the unique global classical mKdV solution",
+      "declaration": "NLS.Articles.MKdVBelowL2.existsUnique_classicalMKdVTrajectory",
+      "scope": "Every smooth real period-one original physical initial field. There is exactly one real periodic classical global trajectory with that initial field and the original initial square integral. The fixed native H4 fourth flow satisfies the uniform time, spatial smoothness, continuous first derivative family and actual PDE hypotheses. All assumptions of classical uniqueness are proved for the constructed flow."
+    },
+    {
+      "source": "Identification with any canonical smooth scalar physical map",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical",
+      "scope": "Every smooth original real scalar distribution and every finite exponent p>=2. Any classical physical scalar trajectory with the exact initial Fourier coefficients and initial physical square mass equals the fixed scalar Birkhoff lift as an original distribution at every real time. Uniqueness is a consequence of the physical PDE and Fourier uniqueness. It does not merely assert uniqueness of a chosen approximation limit."
+    },
+    {
+      "source": "Exact all-smooth-sequences solution characterization",
+      "declaration": "NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff",
+      "scope": "Any canonical classical scalar smooth solution map, any nonnegative compact time interval, every original datum in the actual common trajectory domain, and every continuous path. The path starts at the datum and is the pointwise-time limit for every smooth real sequence converging in the original norm if and only if it is the actual fixed scalar trajectory. The canonical classical map exists, so the hypothesis is discharged by verified classical existence. All convergent smooth sequences in fact converge uniformly on the interval."
+    },
+    {
+      "source": "Theorem 1.1 local C0 wellposedness clause",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
+      "scope": "For every finite p>2, any canonical classical smooth solution map and every original real FLp datum, there is a positive time and one open neighborhood. Every datum in that neighborhood has exactly one continuous path in the all-smooth-sequences solution sense, and the actual solution map is continuous in the full uniform trajectory norm. The smooth map is available by the verified isClassicalScalarSolutionMap_fourthScalarImageFlow."
+    },
+    {
+      "source": "Theorem 1.1 global small-data C0 wellposedness clause",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+      "scope": "For every finite p>2 and any canonical classical smooth solution map, one invariant open neighborhood of zero is chosen before all T>0. On that same neighborhood every compact interval has the unique all-smooth-sequences solution, with continuous dependence in the full uniform trajectory norm. All compact paths are restrictions of the same actual scalar flow, which preserves the neighborhood at every real time."
     }
   ],
   "remaining": [
-    "Prove uniqueness/identification against arbitrary classical mKdV PDE trajectories, thereby identifying the constructed smooth physical flow with the canonical smooth solution map used by the source. Every smooth real datum now has the exact native representation, spatially smooth real periodic pointwise PDE trajectory, and globally admissible scalar finite-p lift with unchanged original distributions.",
-    "Integrate the canonical smooth-map identification into the exact Theorem 1.1 smooth-approximation solution clause and its local and invariant small-data uniform trajectory maps. Genuine smooth Fourier approximants, density, all-smooth-family uniform actual lift convergence and uniqueness of the approximation limit are now verified.",
-    "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
+    "Prove nonextension of the original unrenormalized mKdV solution map at every FLp datum outside L2, for each fixed t>0. Construct controlled smooth approximations with tunable divergent physical mass and use the verified nonzero signed Birkhoff mode. Renormalized wellposedness and a trajectory obstruction do not alone prove this fixed-time claim."
   ],
-  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 181 unchanged parent modules reused from 88199cb1afc52ebfe569c6f43fd63a124860c0c1 after source comparison. Fresh full transitive audit of 877 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 189 unchanged parent modules reused from d2227b25f90ed23676b0f21cc4628190a623c086 after source comparison. Fresh full transitive audit of 917 declarations uses only propext, Classical.choice and Quot.sound.",
+  "verified_clauses": {
+    "local_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
+    "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"
+  }
 }

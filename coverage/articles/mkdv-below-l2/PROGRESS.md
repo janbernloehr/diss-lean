@@ -1083,3 +1083,53 @@ Classical.choice and Quot.sound. The checker lists 189 modules. No holes, new
 axioms, disabled linters or increased heartbeat/recursion limits were added.
 Canonical compiled dependencies remain read-only. Validation is incremental
 and focused, not a fresh whole-repository rebuild.
+
+
+## Twenty-fourth checkpoint: classical uniqueness and renormalized wellposedness
+
+The classical real periodic mKdV difference-energy identity is proved by
+periodic integration by parts. The third-order term and fixed-mass translation
+vanish. The remaining coefficient is bounded by 18R² when both fields and
+first spatial derivatives have uniform bound R; the actual squared L²
+energy derivative is therefore bounded by 36R² times the energy. Classical
+uniform-norm time differentiability gives this derivative through the actual
+Hilbert pairing, with no assumed energy inequality. Continuity supplies all
+bounds on compact time intervals and two-sided Grönwall gives uniqueness
+from agreement at any real time.
+
+Ordinary jointly smooth physical fields meet these classical regularity
+hypotheses. Joint partial derivatives descend through the open spatial
+quotient into continuous circle families, and the compact-open topology gives
+uniform-norm continuity. A Banach-valued fundamental theorem of calculus
+upgrades pointwise time derivatives with continuous uniform velocity to
+uniform-norm differentiability. For the actual native H⁴ Birkhoff trajectory,
+this proves the time derivative without an added assumption. Its first actual
+Sobolev jet is a continuous family of classical spatial derivatives. Every
+smooth real period-one datum thus has exactly one classical global physical
+renormalized mKdV trajectory with the exact initial square mass.
+
+The scalar finite-p adapter now identifies any canonical classical smooth
+physical trajectory with the actual fixed scalar Birkhoff lift at every real
+time, as original distributions. The article's all-smooth-sequences solution
+notion is defined on continuous compact paths and proved equivalent to being
+the actual trajectory. Genuine smooth approximation sequences exist at every
+datum; every convergent smooth family in fact converges uniformly in time.
+The canonical classical smooth solution map is available by proved existence
+and unique on smooth data by the physical PDE, so it is not an unproved
+availability assumption or merely a label for approximation-limit uniqueness.
+
+Both positive clauses of Theorem 1.1 are packaged: local C⁰ wellposedness at
+every original real FL^p datum for every finite p>2, and global C⁰
+wellposedness on one invariant open neighborhood of zero chosen before all
+T>0. Dependence is continuous in the full uniform trajectory norm. The
+remaining obligation is the original unrenormalized equation's nonextension
+at every datum outside L² for each fixed t>0. The full Theorem 1.1 remains
+marked unverified; Theorems 1.2 and 1.3 remain verified.
+
+Nine final new modules pass strict Lean 4.33.1 checks; 189 unchanged parent
+focused modules reuse d2227b25f90ed23676b0f21cc4628190a623c086 after source comparison.
+The fresh full transitive audit checks 917 named declarations and uses only
+propext, Classical.choice and Quot.sound. The checker lists 198 focused
+modules. No holes, new axioms, disabled linters or increased heartbeat or
+recursion limits were introduced. Canonical dependencies remain read-only.
+Validation is incremental and focused, not a fresh whole-repository rebuild.
