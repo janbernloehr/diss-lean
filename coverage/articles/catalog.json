@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "source": "https://janbernloehr.de/academia/publications",
+  "scope": "Main theorems of the seven articles; the two theses are not new article tasks.",
+  "repository_strategy": "One repository and shared NLS library, with equation-specific and article-facing modules.",
+  "articles": [
+    {
+      "id": "dnls-estimates",
+      "chat_title": "Lean: dNLS Fourier estimates",
+      "source_url": "https://arxiv.org/abs/1403.1369v2",
+      "pdf_url": "https://arxiv.org/pdf/1403.1369v2",
+      "module_directory": "NLS/Articles/DNLSEstimates",
+      "coverage_directory": "coverage/articles/dnls-estimates",
+      "initial_responsibility": "Closest dissertation overlap: compare every main article estimate with Section 23 and Theorem 0.1 before proving anything new.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "kdv-estimates",
+      "chat_title": "Lean: KdV Fourier estimates",
+      "source_url": "https://arxiv.org/abs/1502.04550v1",
+      "pdf_url": "https://arxiv.org/pdf/1502.04550v1",
+      "module_directory": "NLS/Articles/KdVEstimates",
+      "coverage_directory": "coverage/articles/kdv-estimates",
+      "initial_responsibility": "Lead the shared Hill/KdV spectral and Birkhoff foundation. Publish reusable validated foundations early for the other KdV tasks.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "kdv-convexity",
+      "chat_title": "Lean: KdV Hamiltonian convexity",
+      "source_url": "https://arxiv.org/abs/1502.05857v1",
+      "pdf_url": "https://arxiv.org/pdf/1502.05857v1",
+      "module_directory": "NLS/Articles/KdVConvexity",
+      "coverage_directory": "coverage/articles/kdv-convexity",
+      "initial_responsibility": "Own the KdV action Hamiltonian and convexity development. Consume the shared Hill/KdV foundation; exploit generic concavity and analytic-inverse proofs.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "mkdv-nls-hierarchies",
+      "chat_title": "Lean: mKdV–NLS hierarchies",
+      "source_url": "https://arxiv.org/abs/1601.07580v1",
+      "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
+      "module_directory": "NLS/Articles/MKdVNLSHierarchies",
+      "coverage_directory": "coverage/articles/mkdv-nls-hierarchies",
+      "initial_responsibility": "Lead the shared mKdV hierarchy and NLS restriction. Reuse the existing Riccati Hamiltonians, differential polynomials and all-order trace identities.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "kdv-kdv2-frequencies",
+      "chat_title": "Lean: KdV/KdV2 frequencies",
+      "source_url": "https://arxiv.org/abs/1605.06690v1",
+      "pdf_url": "https://arxiv.org/pdf/1605.06690v1",
+      "module_directory": "NLS/Articles/KdVKdV2Frequencies",
+      "coverage_directory": "coverage/articles/kdv-kdv2-frequencies",
+      "initial_responsibility": "Own the KdV/KdV2 frequency maps and their wellposedness main theorems. Consume Hill/KdV and KdV action-Hamiltonian foundations. The linked preprint has a different title from the journal article; pin the actual source statements.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "mkdv-below-l2",
+      "chat_title": "Lean: mKdV below L²",
+      "source_url": "https://arxiv.org/abs/1606.07052v1",
+      "pdf_url": "https://arxiv.org/pdf/1606.07052v1",
+      "module_directory": "NLS/Articles/MKdVBelowL2",
+      "coverage_directory": "coverage/articles/mkdv-below-l2",
+      "initial_responsibility": "Own mKdV low-regularity frequencies, renormalized flow and the main nonextension/illposedness statement. Consume the mKdV/NLS hierarchy restriction; prove the actual physical identification before transferring solution claims.",
+      "status": "not_yet_verified"
+    },
+    {
+      "id": "kdv-pseudomeasures",
+      "chat_title": "Lean: KdV pseudomeasures",
+      "source_url": "https://arxiv.org/abs/1610.00278v1",
+      "pdf_url": "https://arxiv.org/pdf/1610.00278v1",
+      "module_directory": "NLS/Articles/KdVPseudomeasures",
+      "coverage_directory": "coverage/articles/kdv-pseudomeasures",
+      "initial_responsibility": "Own weak-star pseudomeasure and Wiener endpoint analysis. Consume the shared Hill/KdV foundation; do not substitute strong-norm or finite-p statements for weak-star endpoint theorems.",
+      "status": "not_yet_verified"
+    }
+  ]
+}

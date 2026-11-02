@@ -16,6 +16,11 @@ is the [accepted reference](coverage/ACCEPTED_REFERENCE.md); recorded
 corrections and qualifications remain explicit. An exhaustive verification
 of every statement in the PDF is outside this completion criterion.
 
+Verification of the seven related articles is tracked separately in the
+[article plan and shared-proof map](coverage/articles/README.md). These tasks
+reuse this library and add KdV and mKdV developments in the same repository;
+their main theorems are not yet marked verified.
+
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the introduction main-results audit](coverage/INTRODUCTION.md),
 [the Section 12 audit](coverage/SECTION_12.md),
