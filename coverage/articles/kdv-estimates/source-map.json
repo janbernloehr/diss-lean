@@ -273,11 +273,15 @@
     {
       "module": "NLS/KdV/ClassicalLocalPrimitive.lean; NLS/KdV/ClassicalFreePrimitive.lean",
       "role": "Unchanged verified article-branch reuse. Actual free scalar Hill trace and locally analytic Floquet root/logarithm charts, with no abstract trace assumed."
+    },
+    {
+      "module": "NLS/KdV/HillComplement.lean: hillReciprocalHilbertSymbolOfLower and its norm bound",
+      "role": "The existing reciprocal-envelope proof is factored through its actual denominator hypothesis. The original radius-6*n complement and the supplementary radius-12*n localization both use the same L2 reciprocal norm estimate 4/n; no summability argument is duplicated."
     }
   ],
   "next_shared_milestones": [
-    "Identify the analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and construct the source global labels by controlling the central spectrum and the regions between the checked narrow strips.",
-    "Extend the local ordered real high-strip enumeration to the global spectral order and prove the necessary low central estimates. Do not infer global contour coverage from the radius-6*n strips.",
+    "Count the roots in the bounded central interval and extend the unique real high-tail indices to the source global spectral labels, including the lowest root. The new wide-strip argument proves actual high real coverage and a coarse central bound; it does not count the central roots.",
+    "Identify analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and prove any sharper mean-zero low-energy bounds required by the source estimates.",
     "Use the jointly analytic rough energy discriminant, its checked high-strip characteristic multiplicities and exact period-one embedding to prove the normalized product and canonical root identities.",
     "Reuse the checked actual local/free Hill primitives and inspect the upstream branch continuation results to construct globally normalized branches and contour actions on the required rough domains.",
     "Reuse shared ActionHamiltonianMoments/Trace/FiniteGap results after identifying the actual Hill actions; prove the physical KdV Birkhoff map, hierarchy trace identities and tame action estimates for Theorem 2.",
@@ -388,7 +392,7 @@
         "NLS/KdV/ClassicalLocalPrimitive.lean",
         "NLS/KdV/ClassicalFreePrimitive.lean"
       ],
-      "finding": "Imported these two modules unchanged. Direct IVP uniqueness computes the actual free Hill trace for (-1,0); local analytic root/logarithm charts and their physical derivative normalization are shared. This branch uses the exact free normalization in the rough characteristic homotopy count. The upstream high-contour/high-pair developments were inspected for future reuse; they are not imported or claimed by this milestone."
+      "finding": "Imported these two modules unchanged. Direct IVP uniqueness computes the actual free Hill trace for (-1,0); local analytic root/logarithm charts and their physical derivative normalization are shared. This branch uses the exact free normalization in the rough characteristic homotopy count. The upstream high-contour developments were inspected for future reuse; they are not imported or claimed by this milestone."
     }
   ],
   "physical_hill_realization": {
@@ -705,5 +709,33 @@
       }
     ],
     "qualifications": "Characteristic analytic multiplicities are proved, not a full abstract operator algebraic multiplicity or self-adjoint realization theorem. Thin high strips do not cover the high half-plane. Global source spectral labels and central/exterior bounds, canonical global roots/actions, Birkhoff coordinates, hierarchy trace identities and main Theorems 1-3 remain incomplete."
+  },
+  "global_real_spectral_cover": {
+    "modules": [
+      "NLS/KdV/HillWideLocalization.lean",
+      "NLS/KdV/FreeHill.lean",
+      "NLS/KdV/HillComplement.lean"
+    ],
+    "source_correspondence": "High spectral ordering and localization needed for the page 8 setup and Appendix A applications, including exclusion of additional roots between the original narrow strips and control of the remaining central region.",
+    "proved_declarations": [
+      "NLS.KdV.two_mul_nat_sub_one_le_abs_sq_sub_sq",
+      "NLS.KdV.hillReciprocalHilbertSymbolOfLower",
+      "NLS.KdV.norm_hillReciprocalHilbertSymbolOfLower_le",
+      "NLS.KdV.freeHill_denominator_lower_wide",
+      "NLS.KdV.hillEigenvector_localization_of_denominator_lower",
+      "NLS.KdV.exists_wideHillStrip_of_ge_lower_edge",
+      "NLS.KdV.hillL2Radicand_real_high_cover",
+      "NLS.KdV.hillL2Radicand_re_lower_bound",
+      "NLS.KdV.hillL2Radicand_high_index_unique",
+      "NLS.KdV.hillL2Radicand_real_high_index",
+      "NLS.KdV.hillL2Radicand_ne_zero_on_central_separator",
+      "NLS.KdV.hillL2Radicand_real_central_or_high"
+    ],
+    "strip_convention": "The existing reducedHillStrip remains exactly radius 6*n, and all earlier theorem statements retain that convention. A distinct wideHillStrip has radius 12*n; its denominator estimate explicitly requires n>=2. No radius-12 assertion is made at n=1, where the zero free mode would invalidate it.",
+    "denominator_and_localization": "Distinct squared modes differ by at least 2*n-1. For n>=2 this yields the same denominator lower bound on the radius-12*n supplementary strip. The generalized reciprocal envelope retains norm<=4/n. A direct decomposition of an actual nonzero H2 eigenvector into its two resonant coefficients and complementary reciprocal product proves |lambda-pi^2*n^2|<=4*||q||_2 under n>=8*||q||_2, without presupposing the narrow-strip reduction.",
+    "real_high_coverage": "The wide strips geometrically cover [pi^2*N^2-12*N,infinity) for N>=2. Therefore every real physical characteristic root in that half-line lies in an original narrow strip with index n>=N. That index is unique at N>=8*||q||_2. This closes the real gaps between narrow strips; no coverage of the complex high half-plane is inferred.",
+    "central_bound": "For every complex even-supported L2 potential, N>=max(1,8*||q||_2) implies every physical characteristic root satisfies Re(lambda)>-N^2. The actual denominator estimate in this left half-plane proves this directly; neither reality nor mean zero is assumed for this bound. For real potentials and N>=max(2,8*||q||_2), every root is real and belongs either to (-N^2,pi^2*N^2-12*N) or to a unique high strip.",
+    "separator": "The vertical line Re(lambda)=pi^2*N^2-12*N contains no actual characteristic roots uniformly on the even-supported complex L2 ball at N>=max(2,8*||q||_2). This is ready for a potential-homotopy central counting argument.",
+    "qualifications": "The bounded central cluster has not yet been counted or ordered, so the high free indices are not yet identified with a complete enumeration starting at lambda_0^+. The coarse -N^2 bound is not the source sharper mean-zero low-energy estimate. Full operator algebraic multiplicities, normalized global products/roots/actions, the KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified."
   }
 }

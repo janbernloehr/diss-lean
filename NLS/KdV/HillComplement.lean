@@ -73,17 +73,18 @@ private theorem norm_reciprocalEnvelope_le (n : ℕ) :
         (add_le_add norm_reciprocalLattice_le norm_reciprocalLattice_le) (by positivity)
     _ = _ := by ring
 
-private theorem reciprocal_symbol_le_envelope {n : ℕ} (hn : 1 ≤ n) {z : ℂ}
-    (hz : z ∈ reducedHillStrip n) (k : ℤ) :
-    ‖reducedHillSymbol n hn z hz k‖ ≤ ‖reciprocalEnvelope n k‖ := by
-  change ‖if k.natAbs = n then (0 : ℂ) else _‖ ≤ _
+private theorem reciprocal_symbol_le_envelope_of_lower {n : ℕ} (hn : 1 ≤ n) (z : ℂ)
+    (hdenom : ∀ k : ℤ, k.natAbs ≠ n → |(n : ℝ)^2-(k : ℝ)^2| ≤
+      ‖z-(freeHillValue k : ℂ)‖) (k : ℤ) :
+    ‖if k.natAbs = n then (0 : ℂ) else (z-(freeHillValue k : ℂ))⁻¹‖ ≤
+      ‖reciprocalEnvelope n k‖ := by
   by_cases hk : k.natAbs = n
   · simp only [if_pos hk, norm_zero]; exact norm_nonneg _
   rw [if_neg hk, norm_inv, norm_reciprocalEnvelope_apply]
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   have hkn : k ≠ (n : ℤ) := by intro h; apply hk; simp [h]
   have hkn' : k ≠ -(n : ℤ) := by intro h; apply hk; simp [h]
-  have hden := freeHill_denominator_lower hn hz hk
+  have hden := hdenom k hk
   by_cases hkpos : 0 ≤ k
   · have hkpos' : (0 : ℝ) ≤ k := by exact_mod_cast hkpos
     have hdpos : 0 < |((k - (n : ℤ) : ℤ) : ℝ)| := by
@@ -98,6 +99,7 @@ private theorem reciprocal_symbol_le_envelope {n : ℕ} (hn : 1 ≤ n) {z : ℂ}
     rw [mul_inv_rev] at hi
     have hother : 0 ≤ (n : ℝ)⁻¹ * |((k + (n : ℤ) : ℤ) : ℝ)|⁻¹ := by positivity
     nlinarith
+
   · have hkneg : (k : ℝ) ≤ 0 := by exact_mod_cast (show k ≤ 0 by omega)
     have hdpos : 0 < |((k + (n : ℤ) : ℤ) : ℝ)| := by
       exact abs_pos.mpr (by exact_mod_cast (show k + (n : ℤ) ≠ 0 by omega))
@@ -112,6 +114,33 @@ private theorem reciprocal_symbol_le_envelope {n : ℕ} (hn : 1 ≤ n) {z : ℂ}
     have hother : 0 ≤ (n : ℝ)⁻¹ * |((k - (n : ℤ) : ℤ) : ℝ)|⁻¹ := by positivity
     nlinarith
 
+private theorem reciprocal_symbol_le_envelope {n : ℕ} (hn : 1 ≤ n) {z : ℂ}
+    (hz : z ∈ reducedHillStrip n) (k : ℤ) :
+    ‖reducedHillSymbol n hn z hz k‖ ≤ ‖reciprocalEnvelope n k‖ :=
+  reciprocal_symbol_le_envelope_of_lower hn z (fun _ hk => freeHill_denominator_lower hn hz hk) k
+
+/-- The complementary reciprocal belongs to L2 under the actual denominator
+bound alone. This permits a second spectral region without changing the
+checked narrow-strip convention. -/
+def hillReciprocalHilbertSymbolOfLower (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
+    (hdenom : ∀ k : ℤ, k.natAbs ≠ n → |(n : ℝ)^2-(k : ℝ)^2| ≤
+      ‖z-(freeHillValue k : ℂ)‖) : Coeff 2 :=
+  ⟨(fun k => if k.natAbs = n then 0 else (z-(freeHillValue k : ℂ))⁻¹),
+    (lp.memℓp (reciprocalEnvelope n)).mono'
+      (reciprocal_symbol_le_envelope_of_lower hn z hdenom)⟩
+
+@[simp] theorem hillReciprocalHilbertSymbolOfLower_apply (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
+    (hdenom : ∀ k : ℤ, k.natAbs ≠ n → |(n : ℝ)^2-(k : ℝ)^2| ≤
+      ‖z-(freeHillValue k : ℂ)‖) (k : ℤ) :
+    hillReciprocalHilbertSymbolOfLower n hn z hdenom k =
+      if k.natAbs = n then 0 else (z-(freeHillValue k : ℂ))⁻¹ := rfl
+
+theorem norm_hillReciprocalHilbertSymbolOfLower_le (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
+    (hdenom : ∀ k : ℤ, k.natAbs ≠ n → |(n : ℝ)^2-(k : ℝ)^2| ≤
+      ‖z-(freeHillValue k : ℂ)‖) :
+    ‖hillReciprocalHilbertSymbolOfLower n hn z hdenom‖ ≤ 4/(n : ℝ) :=
+  (lp.norm_mono (by norm_num : (2 : ℝ≥0∞) ≠ 0)
+    (reciprocal_symbol_le_envelope_of_lower hn z hdenom)).trans (norm_reciprocalEnvelope_le n)
 /-- Square summability of the actual complementary Hill reciprocal symbol. -/
 theorem reducedHillSymbol_memlp_two (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
     (hz : z ∈ reducedHillStrip n) : Memℓp (fun k => reducedHillSymbol n hn z hz k) 2 :=

@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 609,
+    "declarations": 648,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -48,11 +48,11 @@
       "NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts"
     ]
   },
-  "full_repository_validation": "The current NLS.lean aggregate import check passed in the isolated worktree after all forty-three focused modules. A full Lake rebuild and full repository example suite were not rerun; base dissertation validation is not replaced by article-focused checks.",
+  "full_repository_validation": "All 44 focused modules and the 648-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because another task held the shared lock; the previous aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
-    "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
-    "NLS/KdV/HillComplement.lean": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd",
+    "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
+    "NLS/KdV/HillComplement.lean": "977b565954ef98d7eff06760f6efdf7a70db3d5e615b97d9514172f99d998ff5",
     "NLS/Articles/KdVEstimates/EstimateAdapter.lean": "d6b2f6e78b438e5ada6499c28149a64509d0df78ad6760258042804ec9633fec",
     "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
     "NLS/KdV/HillSobolev.lean": "962ea2adfbac0dd2e833f5fb591cd1a6199674d241c3b4c97b85206f2425198c",
@@ -93,10 +93,11 @@
     "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
     "NLS/KdV/HillRealSpectrum.lean": "75d2ac52d84726c262564cc54734edcaaaca587092b5c5295e0c327a8d2d372b",
     "NLS/KdV/HillCharacteristicZeros.lean": "1331838aafcea2eeaeb93e3fff6de558054ea26a28677a7d1c676c875542bb5a",
-    "NLS/KdV/HillRealGapPairs.lean": "49bf5521c9310f09dad54e20258ef386ba8703ecd9d7fe9dd47634d38b2787bc"
+    "NLS/KdV/HillRealGapPairs.lean": "49bf5521c9310f09dad54e20258ef386ba8703ecd9d7fe9dd47634d38b2787bc",
+    "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Actual H2 symmetry, real eigenvalues, orthogonality, absence of length-two associated vectors, high-strip physical characteristic counts, unit determinant/characteristic analytic-order matching, and unique ordered real high-strip pairs are proved. Identification with Hill operator algebraic multiplicities, global source spectral labels and low central/exterior bounds remain. Canonical global roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
-  "milestone": "Actual real Hill spectral symmetry, high-strip physical characteristic multiplicities and unique ordered real endpoint pairs",
+  "remaining": "Main Theorems 1-3 remain unverified. Actual high characteristic counts, unit determinant/characteristic analytic-order matching and unique ordered real high pairs are proved. Supplementary wide-strip localization now proves all real high roots belong to a unique original narrow strip, with a coarse lower bound and a zero-free separator bounding the remaining central cluster. Its exact root count and ordered global source labels, operator algebraic multiplicities and sharper mean-zero low-energy bounds remain. Canonical global roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
+  "milestone": "Global real high-tail coverage, unique high indices and explicit bounded central spectral region",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -142,7 +143,8 @@
     "NLS.KdV.ClassicalFreePrimitive",
     "NLS.KdV.HillRealSpectrum",
     "NLS.KdV.HillCharacteristicZeros",
-    "NLS.KdV.HillRealGapPairs"
+    "NLS.KdV.HillRealGapPairs",
+    "NLS.KdV.HillWideLocalization"
   ],
   "proof_commits": [
     {
@@ -199,14 +201,20 @@
       "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
       "scope": "Joint analytic rough energy discriminant, auxiliary-weight independence and weighted physical characteristic gap bounds",
       "pushed": true
+    },
+    {
+      "commit": "82b34672c3c689555a78eba599cea210ebd38e1b",
+      "scope": "Actual H2 Hill spectral symmetry, high-strip physical characteristic multiplicities and unique ordered real endpoint pairs",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "passed",
+    "status": "deferred_not_run",
     "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "exit_code": 0,
-    "scope": "Current NLS.lean aggregate compiled after all forty-three focused modules, with pinned Lean 4.33.1 and autoImplicit=false. Build output was written only to this worktree; canonical compiled dependencies were imported read-only.",
-    "full_lake_build_or_full_examples_claimed": false
+    "exit_code": 75,
+    "scope": "Two nonblocking attempts returned flock exit 75 before Lean started, because the shared article aggregate-build lock was held by another task. No other process was stopped and the serialization lock was not bypassed. All 44 focused modules and the 648-declaration audit passed.",
+    "full_lake_build_or_full_examples_claimed": false,
+    "reason": "Shared aggregate-build lock occupied."
   },
   "worktree_attachment": {
     "create_worktree_result": "Rejected: canonical sourceRoot is not an exact registered chat workspace folder.",
@@ -215,15 +223,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All forty-three modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All forty-four modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 609 declarations, including the new shared homotopy/count and two-zero order-comparison theorems.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 648 declarations, including the denominator-hypothesis reciprocal constructor and the actual global real high-tail/central-bound theorems.",
     "new_module_warnings": [],
-    "aggregate_scope": "Current NLS.lean aggregate compiled successfully after all forty-three focused modules and the 609-declaration axiom audit. The full Lake rebuild/example suite remains unrerun.",
+    "aggregate_scope": "The current 44-module aggregate run was deferred before Lean started because the shared lock was occupied on two bounded nonblocking attempts. The last successful NLS.lean aggregate covers commit 82b3467 and 43 focused modules. The current strict 44-module checks and 648-declaration audit passed; full Lake/example suite not rerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded.",
-    "mathematical_scope": "The physical L2 characteristic function Delta^2-4 has count two in each checked high-energy disc/strip at n>=max(1,16*||q||_2), by a boundary-zero-free potential homotopy from its exact free formula. Unit determinant and physical characteristic analytic orders agree, including a collision. On real even-supported potentials, actual H2 symmetry gives real characteristic roots and unique ordered high-strip endpoint pairs with the exact multiset orders. Operator algebraic multiplicities, self-adjoint realization, the global labels and main Theorems 1-3 are not claimed."
+    "mathematical_scope": "The supplementary radius-12*n estimates explicitly require n>=2 and retain the reciprocal norm 4/n. Actual H2 eigenvectors localize under n>=8*||q||_2 by a direct complementary-product decomposition. Every real physical characteristic root above pi^2*N^2-12*N belongs to a unique original radius-6*n strip n>=N. Every complex physical characteristic root satisfies Re(lambda)>-N^2 at the same cutoff; the right central vertical separator is zero-free. Real roots therefore lie in an explicit bounded central interval or a unique high strip. The central root count, global ordering from the lowest root, operator algebraic multiplicities and main Theorems 1-3 remain unproved."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -232,6 +240,19 @@
       "command": "flock /tmp/diss-lean-article-build.lock lean -DautoImplicit=false -o .lake/build/lib/lean/NLS.olean NLS.lean",
       "reason": "Shared lock occupied by other article validation. Only this chat's verified queued flock process was terminated before compilation began. No other process was stopped.",
       "full_build_or_full_examples_claimed": false
+    },
+    {
+      "status": "deferred_not_run",
+      "milestone": "Global real high-tail coverage and central bounds",
+      "nonblocking_attempts": 2,
+      "exit_code": 75,
+      "reason": "Another task held /tmp/diss-lean-article-build.lock. No aggregate compilation began."
     }
-  ]
+  ],
+  "last_successful_aggregate_check": {
+    "status": "passed",
+    "commit": "82b34672c3c689555a78eba599cea210ebd38e1b",
+    "focused_modules": 43,
+    "scope": "The NLS.lean aggregate passed after the real characteristic multiplicity/ordered-pair milestone. The subsequent 44th module and refactored dependencies passed the strict focused build and audit; the latest aggregate run was not started because the shared build lock was occupied."
+  }
 }

@@ -30,11 +30,11 @@ def freeHillValue (k : ℤ) : ℝ := Real.pi ^ 2 * (k : ℝ) ^ 2
 def reducedHillStrip (n : ℕ) : Set ℂ :=
   {z | |z.re - freeHillValue n| ≤ 6 * (n : ℝ)}
 
-/-- Distinct squared integer modes have a gap at least the positive mode index. -/
-theorem nat_le_abs_sq_sub_sq {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
+/-- Exact nearest-neighbor lower bound for distinct squared integer modes. -/
+theorem two_mul_nat_sub_one_le_abs_sq_sub_sq {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
     (hk : k.natAbs ≠ n) :
-    (n : ℝ) ≤ |(n : ℝ) ^ 2 - (k : ℝ) ^ 2| := by
-  have h : (n : ℤ) ≤ |(n : ℤ) ^ 2 - k ^ 2| := by
+    2*(n : ℝ)-1 ≤ |(n : ℝ) ^ 2 - (k : ℝ) ^ 2| := by
+  have h : 2*(n : ℤ)-1 ≤ |(n : ℤ) ^ 2 - k ^ 2| := by
     have hkn : |k| ≠ (n : ℤ) := by
       intro he
       apply hk
@@ -52,6 +52,13 @@ theorem nat_le_abs_sq_sub_sq {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
       rw [abs_of_nonpos (show (n : ℤ)^2-k^2 ≤ 0 by nlinarith)]
       nlinarith
   exact_mod_cast h
+
+/-- Distinct squared integer modes have a gap at least the positive mode index. -/
+theorem nat_le_abs_sq_sub_sq {n : ℕ} (hn : 1 ≤ n) {k : ℤ}
+    (hk : k.natAbs ≠ n) : (n : ℝ) ≤ |(n : ℝ)^2-(k : ℝ)^2| := by
+  have h := two_mul_nat_sub_one_le_abs_sq_sub_sq hn hk
+  have hn' : (1 : ℝ) ≤ n := by exact_mod_cast hn
+  linarith
 
 /-- The quadratic Hill lattice remains separated on the chosen strip. -/
 theorem freeHill_denominator_lower {n : ℕ} (hn : 1 ≤ n) {z : ℂ}

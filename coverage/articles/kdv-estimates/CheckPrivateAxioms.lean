@@ -40,6 +40,7 @@ import NLS.KdV.ClassicalFreePrimitive
 import NLS.KdV.HillRealSpectrum
 import NLS.KdV.HillCharacteristicZeros
 import NLS.KdV.HillRealGapPairs
+import NLS.KdV.HillWideLocalization
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
