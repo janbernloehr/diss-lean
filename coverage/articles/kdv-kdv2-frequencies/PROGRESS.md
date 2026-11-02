@@ -17,6 +17,21 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual rough normalization progress
+
+The actual infinite period operator and its analytic two-sided inverse
+are now constructed on an Hminus1-open neighborhood of zero. Hilbert
+realization of the critical basis and genuine Bochner contour duality
+construct normalized entire numerators, their absolutely convergent
+series, exact free values and every original contour normalization.
+All literal normalized moments are analytic on one common rough-open
+neighborhood before all positive indices and moment orders; their
+zeroth periods are exactly normalized. This is a local rough result,
+with full W continuation and physical frequency identification still
+open. See `HMINUS_NORMALIZED_MOMENTS.md` for exact declarations, estimates,
+source correspondence and remaining obligations. No main theorem is
+marked verified.
+
 ## Checked mathematical progress
 
 The initial validated patch has been applied and checked again in this
@@ -720,3 +735,8 @@ inventory row is verified.
 Strict validation: all 318 selected modules pass; the complete transitive
 axiom audit covers 3895 selected declarations and 25200 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+Current strict validation: all 334 selected modules pass, with 4052
+selected declarations and 25355 imported NLS declarations in the
+transitive axiom audit. See `HMINUS_NORMALIZED_MOMENTS.md`, `VALIDATION.md`
+and `source.json`. All main theorems remain open.

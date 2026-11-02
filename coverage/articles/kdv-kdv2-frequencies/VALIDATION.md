@@ -72,8 +72,9 @@ its existing Hilbert specialization and a transitive audit.
 | Selected cut-root and contour-homotopy sources from convexity `135b1fa`, existing affine/nested circle dependencies, and five new weighted-period/Hilbert/moment modules | Actual all-order high-gap critical kernel bounds and quadratic basis-period bounds; constructed normalized second moments with quadratic diagonal and quartic off-diagonal gap-length bounds, retaining all original periods and cancellations on one local family. |
 | `DiagonalBilinearPairing.lean`, `AnalyticTailSummation.lean`, `ClassicalTwoWeightedMomentBounds.lean`, `ClassicalFrequencyGapMajorant.lean`, `ClassicalNormalizedFrequencySeries.lean`, and the existing canonical gap identification | Actual weighted high second-moment bound and locally bounded l1 frequency-gap majorant; constructed normalized second-moment series is absolutely convergent, analytic and locally uniformly convergent near zero for every output index. Physical frequency identification and full rough/global scope remain open. |
 | Selected actual Hminus1 trace/Miura/source-sheet dependencies from convexity `08db7a5`, `AnalyticSimpleCriticalBranch.lean`, `HillHminusOneCriticalPoints.lean`, `HillHminusOneCriticalNumerators.lean`, and `HillHminusOnePeriodEntries.lean` | Actual simple high critical energies at arbitrary complex rough sources; exact free labels; a common entire critical basis and all original contour/analytic period entries on one Hminus1-open neighborhood, with the full free identity matrix. Rough operator inversion and normalized moments remain open. |
+| `HillHminusOneCriticalControl`, `HillHminusOneUniformPrimitiveBounds`, `HillHminusOnePeriodBounds`, `HillHminusOnePeriodInverse`, `HillHminusOneNumeratorHilbert`, `HillHminusOneHilbertPeriod`, `HillHminusOneNormalizedDifferentials`, `HillHminusOneNormalizedMoments` and shared elementary bounds | Actual rough uniform contour estimates; constructed bounded analytic period operator and two-sided inverse; normalized entire differentials and all-order moment analyticity with exact zeroth periods on one Hminus1-open neighborhood of zero. Full W and physical frequencies remain open. |
 
-All 318 selected modules compile with pinned **Lean 4.33.1**, commit
+All 334 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -401,11 +402,27 @@ PASS NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch
 PASS NLS/KdV/HillHminusOneCriticalPoints
 PASS NLS/KdV/HillHminusOneCriticalNumerators
 PASS NLS/KdV/HillHminusOnePeriodEntries
-Axiom audit passed: 3895 candidate declarations; 25200 declarations total.
+PASS NLS/ZakharovShabat/UniformSmallCriticalDisplacements
+PASS NLS/KdV/HillHminusOneCriticalControl
+PASS NLS/KdV/HillHminusOneTraceControl
+PASS NLS/ComplexAnalysis/LogarithmStripNormalization
+PASS NLS/KdV/HillHminusOnePrimitiveStrip
+PASS NLS/ComplexAnalysis/CoshStripBounds
+PASS NLS/ZakharovShabat/SourceSection8SineEstimates
+PASS NLS/ComplexAnalysis/CompactSliceBounds
+PASS NLS/KdV/HillHminusOneUniformPrimitiveBounds
+PASS NLS/ComplexAnalysis/CriticalBasisPeriodBounds
+PASS NLS/KdV/HillHminusOnePeriodBounds
+PASS NLS/KdV/HillHminusOnePeriodInverse
+PASS NLS/KdV/HillHminusOneNumeratorHilbert
+PASS NLS/KdV/HillHminusOneHilbertPeriod
+PASS NLS/KdV/HillHminusOneNormalizedDifferentials
+PASS NLS/KdV/HillHminusOneNormalizedMoments
+Axiom audit passed: 4052 candidate declarations; 25355 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 318 selected modules (including generated and private declarations)
+the 334 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1103,3 +1120,44 @@ Rough operator bounds/inversion, agreement with the continuous normalized
 family, rough moments/summation and full W continuation remain open,
 as do physical frequency/action/Birkhoff identification and the other
 main theorem obligations. No main-theorem inventory row is verified.
+
+
+## Actual normalized entire differentials and moments in Hminus1
+
+The current milestone is detailed in `HMINUS_NORMALIZED_MOMENTS.md`.
+Actual uniform critical and primitive bounds give summable bounds for
+the literal period matrix. Its bounded operator and analytic two-sided
+inverse are constructed on one rough-open neighborhood of zero.
+Actual Hilbert numerator realization and vector-valued Bochner period
+duality construct normalized entire differentials with every exact
+original contour normalization and free slice. All literal moments
+are analytic on one common Hminus1-open neighborhood before all indices
+and orders, with the exact zeroth normalization.
+
+All 334 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 4052
+selected declarations and 25355 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and ordered checker/audit/PASS selections
+agree. Selected outputs are private. The canonical main checkout remains
+unchanged and clean. All 318 previously selected Lean source files remain
+byte-identical, and the five earlier import records remain valid.
+
+The three newly selected rough trace/primitive strip sources from
+convexity `08db7a5` are unchanged, as recorded in
+`SHARED_HMINUS_PRIMITIVE_IMPORT.json`. Existing ZS critical displacement
+and cosine bound sources are directly selected for strict recompilation.
+There is no whole-branch merge, placeholder, new axiom, heartbeat increase,
+disabled linter or warning exception.
+
+The earlier milestone paragraphs above describe their historical scope;
+rough period inversion and local normalized moment construction are now
+proved. Continuous-family compatibility, full W continuation, rough odd
+and collapsed-even cancellation, sharp moment estimates and frequency
+summation still remain open, as do physical frequency/action/Birkhoff
+identifications and the other complete source main-theorem obligations.
+No main-theorem inventory row is verified.
+
+A final trailing-blank-line cleanup in `CompactSliceBounds.lean` was strictly
+recompiled; its compiled object is byte-identical to the fully audited
+object. The source hash was refreshed and all final checks passed.

@@ -1,0 +1,24 @@
+{
+  "source_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+  "kind": "three selected actual rough primitive strip/trace dependencies; existing rough closure and local interfaces retained; full branch not merged",
+  "files": [
+    {
+      "path": "NLS/KdV/HillHminusOneTraceControl.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
+      "local_sha256": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LogarithmStripNormalization.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
+      "local_sha256": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePrimitiveStrip.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+      "local_sha256": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed"
+    }
+  ]
+}

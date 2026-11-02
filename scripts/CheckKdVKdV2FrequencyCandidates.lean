@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneNormalizedMoments
 import NLS.KdV.HillHminusOnePeriodEntries
 import NLS.KdV.HillHminusOneCriticalNumerators
 import NLS.KdV.HillHminusOneAnnulusCoverage
@@ -370,7 +371,23 @@ run_cmd do
     `NLS.ComplexAnalysis.AnalyticSimpleCriticalBranch,
     `NLS.KdV.HillHminusOneCriticalPoints,
     `NLS.KdV.HillHminusOneCriticalNumerators,
-    `NLS.KdV.HillHminusOnePeriodEntries]
+    `NLS.KdV.HillHminusOnePeriodEntries,
+    `NLS.ZakharovShabat.UniformSmallCriticalDisplacements,
+    `NLS.KdV.HillHminusOneCriticalControl,
+    `NLS.KdV.HillHminusOneTraceControl,
+    `NLS.ComplexAnalysis.LogarithmStripNormalization,
+    `NLS.KdV.HillHminusOnePrimitiveStrip,
+    `NLS.ComplexAnalysis.CoshStripBounds,
+    `NLS.ZakharovShabat.SourceSection8SineEstimates,
+    `NLS.ComplexAnalysis.CompactSliceBounds,
+    `NLS.KdV.HillHminusOneUniformPrimitiveBounds,
+    `NLS.ComplexAnalysis.CriticalBasisPeriodBounds,
+    `NLS.KdV.HillHminusOnePeriodBounds,
+    `NLS.KdV.HillHminusOnePeriodInverse,
+    `NLS.KdV.HillHminusOneNumeratorHilbert,
+    `NLS.KdV.HillHminusOneHilbertPeriod,
+    `NLS.KdV.HillHminusOneNormalizedDifferentials,
+    `NLS.KdV.HillHminusOneNormalizedMoments]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

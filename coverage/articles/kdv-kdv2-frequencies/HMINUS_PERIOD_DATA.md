@@ -1,5 +1,11 @@
 # Actual critical basis and period entries in the Hminus1 topology
 
+This records the earlier critical-basis/period-entry milestone. The later
+[rough normalization milestone](HMINUS_NORMALIZED_MOMENTS.md) proves the
+local rough operator bounds, inverse, normalized entire numerators and
+moment analyticity listed as open below. Full W and physical frequency
+identification remain open.
+
 `exists_hillHminus_all_contour_period_data` constructs an actual critical
 numerator basis and all of its original contour period entries on one
 complex Hminus1-open neighborhood of zero. The domain is the library's

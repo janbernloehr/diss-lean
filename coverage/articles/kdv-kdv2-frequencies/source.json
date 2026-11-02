@@ -5506,6 +5506,233 @@
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
       "sha256": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CompactSliceBounds.lean",
+      "source_labels": [
+        "Generic compact parameter norm bounds"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "A strict scalar norm bound on a compact slice of an open parameter domain persists on one parameter neighborhood; applies to arbitrary complex normed parameter spaces",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f3864ec245317e21908e7b042e3b40bbe125cc874979518f503337514b823305"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshStripBounds.lean",
+      "source_labels": [
+        "Generic hyperbolic cosine norm bound"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "For every complex w, norm(w) <= 2 norm(cosh w)+1+abs(im w), with no strip or source assumptions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18c6f3df076f7b6a886d6bb611284e35b6d0015babd5182565b6a6322b006340"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CriticalBasisPeriodBounds.lean",
+      "source_labels": [
+        "Generic exact critical-basis integration by parts and norm bound"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Literal period normalization 1/(2*pi), exact quadratic energy Jacobian 2*z and squared-resolvent primitive integral; only circle analyticity and actual factor/derivative identities are hypotheses",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "31da57c90a5600a4b6ff324dfc1881bf99494a5ba9dbe08762e15ea6faa2927a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LogarithmStripNormalization.lean",
+      "source_labels": [
+        "Selected actual rough primitive strip/trace dependency"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual rough trace approximation or primitive strip normalization; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalControl.lean",
+      "source_labels": [
+        "Actual rough uniform critical energy control"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "On one Hminus1-open neighborhood before all positive indices, actual principal square roots of selected critical energies are within pi/8 of free centers; exact fixed Miura energy translation and finite head retained",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6af27cdcbeeac2bcc05e5577235cc2ac6062d418d4984d6cf32cc6b2bc4ef086"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHilbertPeriod.lean",
+      "source_labels": [
+        "Actual rough Bochner period duality"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Literal vector-valued contour integration and continuous bilinear duality identify the integral functional with the actual period operator row on every l2 vector",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "00408b8c76e42d0de0ec99c220f5010653ff8a4be11bc56a37bfa4b118166463"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedDifferentials.lean",
+      "source_labels": [
+        "Actual rough infinite normalized entire differentials"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs normalized entire numerators by actual inverse columns paired with the actual Hilbert basis, with absolute positive/integer series, joint analyticity, exact free slices and every original and mapped energy contour period equal to the Kronecker delta on one rough-open neighborhood of zero",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c176b0d36978dfd30394b1204f03e6a6a812bcfc481277d580d233a106fdd03"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedMoments.lean",
+      "source_labels": [
+        "Actual rough analytic normalized moments"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "One constructed Hminus1-open neighborhood precedes all positive numerator and contour indices and all nonnegative moment orders; literal moments are analytic and zeroth periods exactly normalized, with mapped energy contour identity. Full W, cancellation and physical frequency identification remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c43ae8bcec637e87c534824612d86f1e94e9588eb1b7ea04f8cf6e2e605d155"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNumeratorHilbert.lean",
+      "source_labels": [
+        "Actual rough Hilbert numerator realization"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Quadratic actual critical energy growth and reciprocal tails construct genuine l2 coordinate membership and joint energy/rough-potential analyticity of the entire critical numerator basis",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9aa71a78616f5358c0a747f905db99d61460710299bfffc1d297faa2d0daa78e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePeriodBounds.lean",
+      "source_labels": [
+        "Actual rough all-mode period bounds"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Exact primitive integration by parts for actual basis integrals, all-mode critical separation, diagonal bound 80*A/pi and off-diagonal bound (5*A/pi)/abs(k-n)^2 on one constructed rough neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "19b7ec9d4dee0d69fe728a66c9c336a14daaa331de9e17a178fb2a03a8c00fc6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePeriodInverse.lean",
+      "source_labels": [
+        "Actual rough infinite period operator and inverse"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs the actual bounded matrix operator on coefficient l2 with operator-norm analyticity and exact free identity, then a two-sided analytic inverse of norm at most 2 on a smaller Hminus1-open neighborhood, retaining all actual contour data",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe65af64cf935981af022956e2e4a53686a0ffbbf2c2f4c45d7d7b2b68b59111"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePrimitiveStrip.lean",
+      "source_labels": [
+        "Selected actual rough primitive strip/trace dependency"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual rough trace approximation or primitive strip normalization; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceControl.lean",
+      "source_labels": [
+        "Selected actual rough primitive strip/trace dependency"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual rough trace approximation or primitive strip normalization; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneUniformPrimitiveBounds.lean",
+      "source_labels": [
+        "Actual rough uniform primitive contour bound"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "A proved common primitive norm bound on every original frequency circle, using actual high rough trace approximation and primitive strip plus finite compact source tubes; packages actual critical control and all contour data",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f502465adfd63dc26d9c1148d11d765626d616aeea8a870936ad14a5fc50c470"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceSection8SineEstimates.lean",
+      "source_labels": [
+        "Selected existing proved complex cosine dependency"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Existing unchanged complex trigonometric norm estimate directly selected and strictly recompiled for actual rough high primitive bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed9c04237d3dedbd64ca108cad93619efb22b13583189d220262e0dfcefc8203"
+    },
+    {
+      "path": "NLS/ZakharovShabat/UniformSmallCriticalDisplacements.lean",
+      "source_labels": [
+        "Selected existing proved uniform critical displacement dependency"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Existing unchanged generic complex ZS displacement bounds directly selected and strictly recompiled for actual rough critical control; no RealType inference for the Hill pair",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e547e0d72c356745374af558241d499450546be931a2e9981536261c08fb0e84"
     }
   ],
   "dependencies_needed": [
@@ -5537,15 +5764,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 3895,
-    "total_declarations_audited": 25200,
+    "candidate_declarations_audited": 4052,
+    "total_declarations_audited": 25355,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 318
+    "selected_modules": 334
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -5650,6 +5877,12 @@
       "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
       "record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json",
       "kind": "selected actual complex Hminus1 trace, Miura chart, source-sheet and contour-coverage dependencies; six local interfaces/extensions retained; one explicit import in new EulerLagrange source and two inherited heartbeat overrides removed; full branch not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json",
+      "kind": "three unchanged proved actual rough trace/primitive strip dependencies; existing rough dependency closure retained; full branch not merged"
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -5661,5 +5894,7 @@
   "shared_critical_period_gap_import_record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json",
   "normalized_frequency_series_record": "NORMALIZED_FREQUENCY_SERIES.md",
   "hminus_period_data_record": "HMINUS_PERIOD_DATA.md",
-  "shared_hminus_normalization_import_record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json"
+  "shared_hminus_normalization_import_record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json",
+  "hminus_normalized_moments_record": "HMINUS_NORMALIZED_MOMENTS.md",
+  "shared_hminus_primitive_import_record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json"
 }
