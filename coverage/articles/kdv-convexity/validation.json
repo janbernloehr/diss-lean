@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Free-normalized actual Hill primitive on a joint source-continuation domain, scalar Floquet characterization and analytic contour moments",
+  "milestone": "Uniform high-contour coverage at every continuous complex potential, through the existing physical ZS spectrum, and analytic mapped energy-contour moments",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -18,6 +18,7 @@
   "focused_command": "ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
   "focused_exit_code": 0,
   "focused_modules": [
+    "NLS.ZakharovShabat.ContinuousPotentialL2Bound",
     "NLS.KdV.RiccatiEnergy",
     "NLS.KdV.ConstantUpperSpectralBridge",
     "NLS.KdV.ClassicalSpectralSymmetry",
@@ -27,10 +28,13 @@
     "NLS.KdV.ClassicalHillFlow",
     "NLS.KdV.ClassicalHillSpectrum",
     "NLS.KdV.ClassicalSourcePrimitive",
+    "NLS.KdV.ClassicalSpectralEmbedding",
+    "NLS.KdV.ClassicalContourCoverage",
     "NLS.KdV.ClassicalBranchPrimitive",
     "NLS.KdV.ClassicalTraceAsymptotics",
     "NLS.KdV.ActionHamiltonianMoments",
     "NLS.KdV.ClassicalContourMoments",
+    "NLS.KdV.ClassicalHighContourMoments",
     "NLS.KdV.ActionHamiltonianTrace",
     "NLS.KdV.ActionHamiltonianFiniteGap",
     "NLS.Articles.KdVConvexity.LocalConsequences",
@@ -41,7 +45,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 268,
+    "declarations": 301,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -53,6 +57,11 @@
     "namespaces": [
       "NLS.Articles.KdVConvexity",
       "NLS.KdV"
+    ],
+    "additional_shared_declarations": [
+      "NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm",
+      "NLS.ZakharovShabat.continuousPotentialL2CLM",
+      "NLS.ZakharovShabat.continuousPotentialL2CLM_apply"
     ]
   },
   "files": {
@@ -67,9 +76,9 @@
     "NLS/Articles/KdVConvexity/BaseContourSeries.lean": "8a84db27117c935608f186e0f0c1396f38b0126611a9a98b1b57d19b5762001e",
     "NLS/Articles/KdVConvexity/GlobalExtension.lean": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
     "NLS/Articles/KdVConvexity/LocalConsequences.lean": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "0dd3564b197d21f85becbead8ea8c5d9534d07b57384b87c19c58262931a40be",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "6cb034e301ad86d54f0a1176e93511b35cbdbf223e9fb1fa968e1b03b889b261",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
-    "scripts/check-kdv-convexity.sh": "26e0b2876cbc375590709c4a41a2e03f951b15f5d43b8c9a95d1c0c25903b45e",
+    "scripts/check-kdv-convexity.sh": "bf0b40296933bcbb1ec2cf8eeaa78a3f93e66c56888aa5817e00ebca7cef68c8",
     "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
     "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
@@ -78,10 +87,14 @@
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
     "NLS/KdV/ClassicalHillSpectrum.lean": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
     "NLS/KdV/ClassicalSourcePrimitive.lean": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
-    "NLS/KdV/ClassicalContourMoments.lean": "e566ce44ade32b02ecd53fc7bb0ecb914db88121a8431898ff397c94c5e8fbe0"
+    "NLS/KdV/ClassicalContourMoments.lean": "e566ce44ade32b02ecd53fc7bb0ecb914db88121a8431898ff397c94c5e8fbe0",
+    "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
+    "NLS/KdV/ClassicalSpectralEmbedding.lean": "f032f822d7144f48b63103ca7ecb27bbbede4f001d0dfb5e8df5f644d6017f71",
+    "NLS/KdV/ClassicalContourCoverage.lean": "b537c10a6c5894f9081032fe9275425e25779a2eb6699d42a9b02c63f4420464",
+    "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-source-primitive.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-high-contours.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -94,13 +107,13 @@
   },
   "limits": [
     "All main theorems remain unverified.",
-    "The actual Hill radicand detects constructed scalar periodic/antiperiodic IVP solutions at every energy. A free-normalized primitive and actual contour moments are constructed on the explicit joint source-continuation domain; canonical contour coverage, endpoint matching, full period-two Fourier spectral equivalence and rough-distribution/Birkhoff identification remain unproved.",
+    "The literal pair (-1,-q) is identified with the existing physical periodic complex ZS spectrum at lambda=z^2. Every continuous complex potential has a common complex neighborhood and cutoff covering all high mapped energy contours. The paper's exact Hill gap labels, finite central contours, endpoint matching, rough-distribution/Birkhoff identification and action descent remain unproved.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global action extension still needs actual contour moment action descent and uniform complex-neighborhood spectral/action bounds.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed."
   ],
-  "previous_progress_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29",
+  "previous_progress_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -122,7 +135,15 @@
     "NLS.ComplexAnalysis.exp_parametricSourceLogExtension",
     "NLS.ComplexAnalysis.continuousLogarithms_eqOn",
     "NLS.ZakharovShabat.det_classicalMonodromy_sub_scalar_eq_zero_iff",
-    "NLS.KdV.classicalHillFlow_eq_constantUpper"
+    "NLS.KdV.classicalHillFlow_eq_constantUpper",
+    "NLS.ZakharovShabat.continuousPotentialL2LinearMap",
+    "NLS.ZakharovShabat.sourcePhysicalL2Equiv",
+    "NLS.ZakharovShabat.canonicalDiscriminant_eq_l2_source",
+    "NLS.ZakharovShabat.l2Discriminant_of_continuous",
+    "NLS.ZakharovShabat.canonicalDiscriminant_sq_eq_four_iff",
+    "NLS.ZakharovShabat.exists_uniform_periodicCountingData",
+    "NLS.ComplexAnalysis.holomorphicPathPullback_integral_and_integrability",
+    "NLS.ComplexAnalysis.curveIntegral_circlePath"
   ],
   "other_shared_branch_inspected": {
     "branch": "articles/mkdv-nls-hierarchies",
@@ -165,6 +186,26 @@
     "indexed_endpoint_values_proved": false,
     "action_indexed_Rn_identified": false,
     "action_descent_proved": false,
-    "uniform_action_quadratic_bounds_proved": false
+    "uniform_action_quadratic_bounds_proved": false,
+    "high_squared_frequency_contours_covered_on_common_neighborhood": true
+  },
+  "private_overlay": "Real private KdV and ZakharovShabat output directories. Reference ZakharovShabat files are symlinked for imports only; output-file links are removed before compilation. Canonical build products are not compilation targets.",
+  "high_contour_progress": {
+    "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
+    "physical_class_inclusion_bounded": true,
+    "actual_physical_ZS_trace_identification": true,
+    "real_type_ZS_assumption": false,
+    "uniform_counting_neighborhood_near_compact_potential_sets": true,
+    "high_contour_family": "Image under lambda=z^2 of the counterclockwise circle C(n*pi,pi/4), n>N.",
+    "quantifiers": "For every q, exists N>0 and complex open V containing q, before every a in V and every n>N. All source potentials s*a with 0<=s<=1 avoid the actual branch locus on those contours.",
+    "exact_energy_jacobian": "2*z",
+    "actual_curve_integral_equality_proved": true,
+    "moment_analyticity_on_same_V_for_entire_tail": true,
+    "free_high_contour_moments_zero": true,
+    "source_exact_gap_labels_identified": false,
+    "central_contour_coverage_proved": false,
+    "rough_Hill_operator_spectral_equivalence_proved": false,
+    "weighted_action_descent_proved": false,
+    "uniform_quadratic_action_bounds_proved": false
   }
 }
