@@ -309,10 +309,17 @@
     {
       "module": "Mathlib.Topology.Algebra.Field: IsPreconnected.eq_of_sq_eq",
       "role": "Actually reused to transport the nonzero free trace level along the continuous real-potential segment. The trace squares to four at every actual canonical root, so its \u00b12 value is fixed by the exact free normalization."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503",
+      "module": "NLS/KdV/ClassicalSourcePrimitive.lean",
+      "blob": "7885ecb19ca33beb55138da03787ce99e3c18315",
+      "role": "The complete two-source-log construction was read and generalized to the reusable TracePrimitiveFamily over any complex normed source space. The actual rough L2 Hill trace is an instance; the classical file itself was not copied or imported here. Existing ParametricSourceLogDomain and ContinuousLogarithmUnique are reused directly."
     }
   ],
   "next_shared_milestones": [
-    "Construct the free-normalized physical Hill root and logarithmic primitive on the rough L2 source domains, reusing the shared source-log continuation library and inspected classical Hill primitive developments. Prove the required high-contour coverage and define the actual actions with the source normalization.",
+    "Extend/glue the checked rough L2 source primitive across the required real bands and identify its high-contour moments with the globally canonical KdV actions. Prove contour independence, endpoint normalization, positivity and quantitative action-gap estimates.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -893,5 +900,45 @@
       "NLS.KdV.hillPeriodOne_canonical_gap_tail_bound"
     ],
     "result": "The physical characteristic count and all intrinsic labeled pair/gap bounds use 8*||q||. The canonical definition now chooses max(2,ceil(8*||q||)); proved cutoff independence identifies the same actual labeling. L2 continuity and trace-parity dependents are rechecked with the sharper cutoff. Main Theorems 1-3 remain unverified."
+  },
+  "rough_source_primitive_and_contour_moments": {
+    "modules": [
+      "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean",
+      "NLS/KdV/HillL2SourcePrimitive.lean",
+      "NLS/KdV/HillL2HighContourMoments.lean"
+    ],
+    "shared_declarations": [
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_root",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.root_sq",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_primitive",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_trace",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.hasFDerivAt_primitive",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.hasDerivAt_primitive",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_unique",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.exists_continuation_neighborhood"
+    ],
+    "physical_declarations": [
+      "NLS.KdV.hillL2SourceFamily",
+      "NLS.KdV.mem_hillL2ContinuationDomain_iff",
+      "NLS.KdV.analyticOnNhd_hillL2ContinuedPrimitive",
+      "NLS.KdV.hillL2ContinuedPrimitive_base",
+      "NLS.KdV.hillL2ContinuedRoot_sq",
+      "NLS.KdV.hillL2ContinuedPrimitive_trace",
+      "NLS.KdV.hasFDerivAt_hillL2ContinuedPrimitive",
+      "NLS.KdV.hasDerivAt_hillL2ContinuedPrimitive",
+      "NLS.KdV.mem_hillL2ContinuationDomain_of_im_ne_zero",
+      "NLS.KdV.analyticOnNhd_hillL2ContinuedPrimitive_off_real",
+      "NLS.KdV.mem_hillL2ContinuationDomain_high_sphere",
+      "NLS.KdV.exists_hillL2Continuation_high_contour_neighborhood",
+      "NLS.KdV.hillL2HighContourMoment",
+      "NLS.KdV.analyticAt_hillL2HighContourMoment",
+      "NLS.KdV.hillL2HighContourMoment_zero",
+      "NLS.KdV.hillL2HighContourMoment_arnold"
+    ],
+    "source_correspondence": "Section 2, source PDF pages 9-12: canonical-root/primitive normalization, Arnold contour integrand and polynomial primitive moments. This milestone proves the stated rough source-domain prerequisites and explicit high-contour functional; it does not prove the source global product/root identification or all action properties.",
+    "domain": "Open subset of Complex x actual raw L2 coefficients: lambda is in the principal slit plane and Delta(lambda,s*q)^2-4 stays nonzero for every real s in [0,1]. The root and primitive are jointly Banach analytic on this domain. Every nonreal lambda lies in it for a real even-supported potential. At n>=max(1,8*||q||_2), the entire radius-n circle around pi^2*n^2 lies in it even for complex even-supported q, with one common open complex L2 potential neighborhood.",
+    "normalization": "F(lambda,0)=-i*sqrt(lambda), R(lambda,0)=2*sinh(-i*sqrt(lambda)); R^2=Delta^2-4, 2*cosh(F)=Delta, 2*sinh(F)=R. The exact full differential is R^-1 times the differential of the actual physical trace; the energy derivative is Delta_prime/R.",
+    "moments": "M_(n,m)(q)=-pi^-1 integral_{|lambda-pi^2*n^2|=n} lambda^m F(lambda,q) d_lambda for m>=0. All fixed-circle moments are complex Banach analytic near each even-supported q at the cutoff and vanish at q=0. At m=0, integration by parts proves M_(n,0)=pi^-1 integral lambda*Delta_prime/R with the exact Arnold normalization.",
+    "qualifications": "No global action function, global canonical product/root matching, contour independence, positivity, action-gap bound, full real-band extension, KdV Birkhoff map, Hamiltonian hierarchy identity or main Theorem 1-3 is claimed."
   }
 }

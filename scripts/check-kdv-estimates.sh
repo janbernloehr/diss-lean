@@ -44,6 +44,7 @@ modules+=(NLS/KdV/HillWideLocalization)
 modules+=(NLS/ComplexAnalysis/RealDiameterDisc NLS/SequenceSpaces/OrderedOneSidedEnumeration NLS/KdV/HillFreeSpectrum NLS/KdV/HillCentralCounting NLS/KdV/HillCentralRoots NLS/KdV/HillGlobalRealLabels)
 modules+=(NLS/KdV/HillRealLabelingUniqueness NLS/KdV/HillCanonicalRealLabels NLS/KdV/HillCanonicalGapBounds)
 modules+=(NLS/SequenceSpaces/OrderedFiniteContinuity NLS/KdV/HillCumulativeCounts NLS/KdV/HillLabelContinuity NLS/KdV/HillCanonicalFreeLabels NLS/KdV/HillRealTraceParity)
+modules+=(NLS/ComplexAnalysis/TracePrimitiveContinuation NLS/KdV/HillL2SourcePrimitive NLS/KdV/HillL2HighContourMoments)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

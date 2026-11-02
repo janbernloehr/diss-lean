@@ -55,6 +55,9 @@ import NLS.KdV.HillCumulativeCounts
 import NLS.KdV.HillLabelContinuity
 import NLS.KdV.HillCanonicalFreeLabels
 import NLS.KdV.HillRealTraceParity
+import NLS.ComplexAnalysis.TracePrimitiveContinuation
+import NLS.KdV.HillL2SourcePrimitive
+import NLS.KdV.HillL2HighContourMoments
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -92,6 +95,7 @@ run_cmd do
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
+        (`NLS.ComplexAnalysis.TracePrimitiveFamily).isPrefixOf name ||
         shared.contains name then
       let axioms ← collectAxioms name
       for ax in axioms do

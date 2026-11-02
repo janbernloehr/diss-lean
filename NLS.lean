@@ -4980,4 +4980,7 @@ import NLS.KdV.HillCumulativeCounts
 import NLS.KdV.HillLabelContinuity
 import NLS.KdV.HillCanonicalFreeLabels
 import NLS.KdV.HillRealTraceParity
+import NLS.ComplexAnalysis.TracePrimitiveContinuation
+import NLS.KdV.HillL2SourcePrimitive
+import NLS.KdV.HillL2HighContourMoments
 import NLS.Articles.KdVEstimates.EstimateAdapter
