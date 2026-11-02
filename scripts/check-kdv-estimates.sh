@@ -53,6 +53,7 @@ modules+=(NLS/ComplexAnalysis/TraceRootPrimitive NLS/ComplexAnalysis/RealCutConj
 modules+=(NLS/ComplexAnalysis/LogarithmStripNormalization NLS/KdV/HillL2RealSourcePhase NLS/KdV/HillL2CutRealPhase NLS/KdV/HillL2CutEndpointNormalization)
 modules+=(NLS/ComplexAnalysis/GapPrimitiveSquare NLS/ComplexAnalysis/CoshSquareCoordinate NLS/KdV/HillL2CutPrimitiveSquare NLS/KdV/HillL2CutSquareTrace NLS/KdV/HillL2CutSquareDeflation)
 modules+=(NLS/ComplexAnalysis/RealTwoZeroUnit NLS/ComplexAnalysis/RealEndpointRootBoundary NLS/KdV/HillL2CutPrimitiveUnit NLS/KdV/HillL2CutUnitOrientation NLS/KdV/HillL2GapBoundaryValues)
+modules+=(NLS/ComplexAnalysis/RealGapEllipse NLS/ComplexAnalysis/RealGapEllipseHomotopy NLS/ComplexAnalysis/RealGapEllipseIntegral NLS/ComplexAnalysis/RealGapEllipseLimit NLS/ComplexAnalysis/RealCutCircleIntegral NLS/ComplexAnalysis/NestedCircleHomotopy NLS/ComplexAnalysis/AnalyticCutContour NLS/KdV/HillL2GapContourIntegral NLS/KdV/HillL2HighGapMoments)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

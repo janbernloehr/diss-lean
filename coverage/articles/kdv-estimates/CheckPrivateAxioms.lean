@@ -97,6 +97,15 @@ import NLS.KdV.HillL2CutPrimitiveUnit
 import NLS.KdV.HillL2CutUnitOrientation
 import NLS.KdV.HillL2GapBoundaryValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
+import NLS.ComplexAnalysis.RealGapEllipse
+import NLS.ComplexAnalysis.RealGapEllipseHomotopy
+import NLS.ComplexAnalysis.RealGapEllipseIntegral
+import NLS.ComplexAnalysis.RealGapEllipseLimit
+import NLS.ComplexAnalysis.RealCutCircleIntegral
+import NLS.ComplexAnalysis.NestedCircleHomotopy
+import NLS.ComplexAnalysis.AnalyticCutContour
+import NLS.KdV.HillL2GapContourIntegral
+import NLS.KdV.HillL2HighGapMoments
 import Lean.Util.CollectAxioms
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
@@ -187,7 +196,40 @@ run_cmd do
     ``NLS.ComplexAnalysis.endpointRoot_real_gap_limits,
     ``NLS.ZakharovShabat.normalizedStandardRoot_re_neg_of_gt_rightEndpoint,
     ``NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_upper_side,
-    ``NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_lower_side]
+    ``NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_lower_side,
+    ``NLS.ComplexAnalysis.realGapEllipse,
+    ``NLS.ComplexAnalysis.realGapEllipse_re,
+    ``NLS.ComplexAnalysis.realGapEllipse_im,
+    ``NLS.ComplexAnalysis.realGapEllipse_zero,
+    ``NLS.ComplexAnalysis.realGapEllipse_two_pi,
+    ``NLS.ComplexAnalysis.hasDerivAt_realGapEllipse,
+    ``NLS.ComplexAnalysis.realGapEllipse_mem_closedBall,
+    ``NLS.ComplexAnalysis.re_mem_Icc_of_mem_real_segment,
+    ``NLS.ComplexAnalysis.realGapEllipse_not_mem_segment,
+    ``NLS.ComplexAnalysis.tendsto_realGapEllipse,
+    ``NLS.ComplexAnalysis.realGapEllipsePath,
+    ``NLS.ComplexAnalysis.realGapEllipsePath_contDiffOn,
+    ``NLS.ComplexAnalysis.circlePath_symm_apply,
+    ``NLS.ComplexAnalysis.circlePath_symm_contDiffOn,
+    ``NLS.ComplexAnalysis.realGapEllipse_affine_coordinates,
+    ``NLS.ComplexAnalysis.realGapEllipse_affine_mem_closedBall,
+    ``NLS.ComplexAnalysis.realGapEllipse_affine_not_mem_segment,
+    ``NLS.ComplexAnalysis.curveIntegral_realGapEllipse_eq_neg_circleIntegral,
+    ``NLS.ComplexAnalysis.curveIntegral_realGapEllipse_eq_intervalIntegral,
+    ``NLS.ComplexAnalysis.realGapEllipse_limit_mem_Icc,
+    ``NLS.ComplexAnalysis.tendsto_realGapEllipse_lower,
+    ``NLS.ComplexAnalysis.tendsto_realGapEllipse_upper,
+    ``NLS.ComplexAnalysis.tendsto_deriv_realGapEllipse,
+    ``NLS.ComplexAnalysis.norm_deriv_realGapEllipse_le,
+    ``NLS.ComplexAnalysis.tendsto_realGapEllipse_intervalIntegral,
+    ``NLS.ComplexAnalysis.integral_real_cosine_pullback,
+    ``NLS.ComplexAnalysis.tendsto_curveIntegral_realGapEllipse,
+    ``NLS.ComplexAnalysis.exists_norm_bound_of_continuous_square_on_compact,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_neg_real_cut_jump,
+    ``NLS.ComplexAnalysis.lineMap_circleMap_centers_radii,
+    ``NLS.ComplexAnalysis.affineCircleHomotopy_ne_of_mem_both_balls,
+    ``NLS.ComplexAnalysis.affineCircleHomotopy_mem_outer_closedBall,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 1252,
+    "declarations": 1302,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -117,10 +117,43 @@
       "NLS.ComplexAnalysis.endpointRoot_real_gap_limits",
       "NLS.ZakharovShabat.normalizedStandardRoot_re_neg_of_gt_rightEndpoint",
       "NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_upper_side",
-      "NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_lower_side"
+      "NLS.ZakharovShabat.normalizedStandardRoot_tendsto_gap_lower_side",
+      "NLS.ComplexAnalysis.realGapEllipse",
+      "NLS.ComplexAnalysis.realGapEllipse_re",
+      "NLS.ComplexAnalysis.realGapEllipse_im",
+      "NLS.ComplexAnalysis.realGapEllipse_zero",
+      "NLS.ComplexAnalysis.realGapEllipse_two_pi",
+      "NLS.ComplexAnalysis.hasDerivAt_realGapEllipse",
+      "NLS.ComplexAnalysis.realGapEllipse_mem_closedBall",
+      "NLS.ComplexAnalysis.re_mem_Icc_of_mem_real_segment",
+      "NLS.ComplexAnalysis.realGapEllipse_not_mem_segment",
+      "NLS.ComplexAnalysis.tendsto_realGapEllipse",
+      "NLS.ComplexAnalysis.realGapEllipsePath",
+      "NLS.ComplexAnalysis.realGapEllipsePath_contDiffOn",
+      "NLS.ComplexAnalysis.circlePath_symm_apply",
+      "NLS.ComplexAnalysis.circlePath_symm_contDiffOn",
+      "NLS.ComplexAnalysis.realGapEllipse_affine_coordinates",
+      "NLS.ComplexAnalysis.realGapEllipse_affine_mem_closedBall",
+      "NLS.ComplexAnalysis.realGapEllipse_affine_not_mem_segment",
+      "NLS.ComplexAnalysis.curveIntegral_realGapEllipse_eq_neg_circleIntegral",
+      "NLS.ComplexAnalysis.curveIntegral_realGapEllipse_eq_intervalIntegral",
+      "NLS.ComplexAnalysis.realGapEllipse_limit_mem_Icc",
+      "NLS.ComplexAnalysis.tendsto_realGapEllipse_lower",
+      "NLS.ComplexAnalysis.tendsto_realGapEllipse_upper",
+      "NLS.ComplexAnalysis.tendsto_deriv_realGapEllipse",
+      "NLS.ComplexAnalysis.norm_deriv_realGapEllipse_le",
+      "NLS.ComplexAnalysis.tendsto_realGapEllipse_intervalIntegral",
+      "NLS.ComplexAnalysis.integral_real_cosine_pullback",
+      "NLS.ComplexAnalysis.tendsto_curveIntegral_realGapEllipse",
+      "NLS.ComplexAnalysis.exists_norm_bound_of_continuous_square_on_compact",
+      "NLS.ComplexAnalysis.circleIntegral_eq_neg_real_cut_jump",
+      "NLS.ComplexAnalysis.lineMap_circleMap_centers_radii",
+      "NLS.ComplexAnalysis.affineCircleHomotopy_ne_of_mem_both_balls",
+      "NLS.ComplexAnalysis.affineCircleHomotopy_mem_outer_closedBall",
+      "NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles"
     ]
   },
-  "full_repository_validation": "All 99 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1252-declaration transitive axiom audit. The aggregate import check did not start: the nonblocking attempt and bounded 60-second shared-lock wait returned flock exit 75. The lock was not bypassed. The last successful aggregate remains the 80-module cut-primitive milestone. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 108 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1302-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -221,10 +254,19 @@
     "NLS/ComplexAnalysis/RealEndpointRootBoundary.lean": "5fcaa227986a59d10867718211859ff575a1ce964a69bfe053d316a6cc5ab5bd",
     "NLS/KdV/HillL2CutPrimitiveUnit.lean": "7201391ec1cbad6902a3d9d303860adaf78da29076cb76541d9661b73a37aefc",
     "NLS/KdV/HillL2CutUnitOrientation.lean": "c1f7b3ca9c2cd9ebe5f3a2dc4750f28e46603c4a3ed0e6dfa8637c0e5e39b66b",
-    "NLS/KdV/HillL2GapBoundaryValues.lean": "ce20959c31f15307bf8d84a3ad63fae20daf64986ee424d3d5c0c0d131d8867d"
+    "NLS/KdV/HillL2GapBoundaryValues.lean": "ce20959c31f15307bf8d84a3ad63fae20daf64986ee424d3d5c0c0d131d8867d",
+    "NLS/ComplexAnalysis/RealGapEllipse.lean": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
+    "NLS/ComplexAnalysis/RealGapEllipseHomotopy.lean": "c8f638ceaa5242cb321229ed322b6da4997b93540223730497ca8f32a99e175e",
+    "NLS/ComplexAnalysis/RealGapEllipseIntegral.lean": "441fe23a8cfe8494f04c9c74c7c05b76267a186692dad7f3bdd075400fa3a595",
+    "NLS/ComplexAnalysis/RealGapEllipseLimit.lean": "67bc46c93fbda0c3533b474d3db2a21a8df016cb1bd238415855678eda2e1615",
+    "NLS/ComplexAnalysis/RealCutCircleIntegral.lean": "9cfaef9ee5c5adfa9cecd18e2b43a6578e12da64ff4d5e2c998e7f88bb76f196",
+    "NLS/ComplexAnalysis/NestedCircleHomotopy.lean": "b6a978ee1257a635b54c8ec60843a44d76ad5b9a414670e2bc5684522f42639f",
+    "NLS/ComplexAnalysis/AnalyticCutContour.lean": "715b508e233c4c76c1e59deacc13f6e256c2e18a4558f469236f6df29848f0ae",
+    "NLS/KdV/HillL2GapContourIntegral.lean": "128b3f400aece8867d950d5794e13df11987dbdd8423d1cdeef87be4aa2c8209",
+    "NLS/KdV/HillL2HighGapMoments.lean": "3fb856aedcfe5a568e671f163a4380aee9c7a38a29c07a266e55dc1f778041fa"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
-  "milestone": "Oriented full half-plane boundary values and exact jump of actual rough high Hill cut primitives",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
+  "milestone": "Actual high Hill contour-to-gap identity, positivity and all-level mean-value relation",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -326,7 +368,16 @@
     "NLS.ComplexAnalysis.RealEndpointRootBoundary",
     "NLS.KdV.HillL2CutPrimitiveUnit",
     "NLS.KdV.HillL2CutUnitOrientation",
-    "NLS.KdV.HillL2GapBoundaryValues"
+    "NLS.KdV.HillL2GapBoundaryValues",
+    "NLS.ComplexAnalysis.RealGapEllipse",
+    "NLS.ComplexAnalysis.RealGapEllipseHomotopy",
+    "NLS.ComplexAnalysis.RealGapEllipseIntegral",
+    "NLS.ComplexAnalysis.RealGapEllipseLimit",
+    "NLS.ComplexAnalysis.RealCutCircleIntegral",
+    "NLS.ComplexAnalysis.NestedCircleHomotopy",
+    "NLS.ComplexAnalysis.AnalyticCutContour",
+    "NLS.KdV.HillL2GapContourIntegral",
+    "NLS.KdV.HillL2HighGapMoments"
   ],
   "proof_commits": [
     {
@@ -448,13 +499,18 @@
       "commit": "f804d28461992ce6cf88bfab026510c3264070b3",
       "scope": "Actual high shifted-primitive square, full cut extension and reflection, exact positive arcosh-square profile and analytic nonzero two-zero unit; 94 strict modules and the 1234-declaration audit passed; aggregate deferred on shared lock.",
       "pushed": true
+    },
+    {
+      "commit": "0a64af6ba85b92eeb480b500ef11cfa90ae69ece",
+      "scope": "Full oriented half-plane boundary values and jump for actual rough high Hill gaps; all 99 strict focused modules and the 1252-declaration audit passed; aggregate was deferred at that checkpoint.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "deferred_not_run",
-    "command": "flock -w 60 -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "exit_code": 75,
-    "scope": "All 99 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1252-declaration transitive axiom audit. The aggregate import check did not start: the nonblocking attempt and bounded 60-second shared-lock wait returned flock exit 75. The lock was not bypassed. The last successful aggregate remains the 80-module cut-primitive milestone. Full Lake rebuild and full repository examples were not rerun.",
+    "status": "passed",
+    "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "exit_code": 0,
+    "scope": "All 108 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1302-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
@@ -464,16 +520,21 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 99 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 108 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 1252 declarations, including the actual matched analytic unit root, its positive imaginary orientation, full upper/lower gap boundary values, literal jump, and the reused generic standard-root real-exterior/joint-boundary results.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 1302 declarations, including every public ellipse/jump comparison, reused nested-circle deformation and actual high Hill contour-to-gap, positivity and mean-value theorem.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 99 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1252-declaration transitive axiom audit. The aggregate import check did not start: the nonblocking attempt and bounded 60-second shared-lock wait returned flock exit 75. The lock was not bypassed. The last successful aggregate remains the 80-module cut-primitive milestone. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 108 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1302-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
-    "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results.",
-    "mathematical_scope": "For an actual open real high pair at n>=2 and 8*||q||_2<=n, the analytic nonzero two-zero unit Q of the filled shifted-primitive square has an analytic root H on the full open radius-7*n/8 disc. Connected square-root uniqueness fixes one sign so that F+i*n*pi=endpointRoot(left,right)*H on the entire cut complement. Reflection of the two-zero factorization shows Q is real on the real diameter; its negative value in the gap and nonvanishing propagate negativity along that whole diameter. Thus H is purely imaginary and nonzero there. The source-normalized phase on the right band, together with the generic negative real sign of the standard endpoint root, selects Im(H)>0 everywhere on the real diameter. The existing joint standard-root boundary theorem is rewritten in actual real endpoint coordinates: its upper/lower limits are respectively -i*sqrt((x-left)*(right-x)) and the opposite sign. Multiplication by the continuous oriented H gives full half-plane limits of the actual shifted primitive. The filled-square arcosh identity and nonnegative real orientation identify the limits exactly as +arcosh((-1)^n*Re(Delta)/2) above and its negative below, at every point of the closed actual gap, including both zero endpoints. The limits allow arbitrary nonreal approaches within the given half-plane, with fixed potential. Their difference along vertical approaches is exactly twice this profile; the index constant cancels. No NLS real-type property is imposed on the Hill first-order pair, no positive gap-length lower bound is assumed, and no joint endpoint chart or uniform action-gap bound is claimed. Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
-    "scope": "All 99 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1252-declaration transitive axiom audit. The aggregate import check did not start: the nonblocking attempt and bounded 60-second shared-lock wait returned flock exit 75. The lock was not bypassed. The last successful aggregate remains the 80-module cut-primitive milestone. Full Lake rebuild and full repository examples were not rerun."
+    "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact.",
+    "mathematical_scope": "A reusable clockwise ellipse z=c+(d+epsilon)*cos(theta)-i*epsilon*sin(theta) is smooth, avoids the entire enclosed real segment for d,epsilon>0, and stays in the radius-(d+epsilon) closed disc. Its affine homotopy to the reversed circle keeps the horizontal projection fixed, stays inside that disc and avoids both endpoints and the full cut. Holomorphic homotopy invariance identifies its integral with the negative standard circle integral. The original angle parameter integral, limiting cosine tangent, lower/upper half-plane approaches and uniform tangent bound are proved. A constant majorant and Lebesgue dominated convergence on the two angular halves give the integral of the upper-minus-lower jump; cosine substitution fixes the left-to-right orientation. Annular Cauchy deformation yields a generic bounded-holomorphic real-cut circle-to-jump theorem. A continuous filled square bounds either branch uniformly on a compact set. For the actual rough high Hill primitive, the analytic extension of z^(2*m)*(F+i*n*pi)^2 provides this bound on a midpoint disc. Intrinsic endpoint localization gives |midpoint-pi^2*n^2| + halfgap <= 4*||q||_2, so nested enclosing circles stay in the checked radius-7*n/8 analytic domain at cutoff eight. The reused nested-circle theorem transfers the midpoint contour to the original source circle. The full gap-side limits then give -2 times the real weighted arcosh-profile integral. The polynomial index shift has zero circle integral. Multiplication by -1/pi proves source formula (7) exactly for every high open gap; the previously checked collapsed-gap theorem handles collisions without division by the gap. The actual contour moments inherit even-level nonnegativity, level-zero positivity iff the intrinsic gap is open, and source formula (8), with its mean-value point in the closed actual gap, at every integer hierarchy level. Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
+    "scope": "All 108 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1302-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "validation_input_sha256": {
+      "NLS.lean": "4618d31ed43b073359041197e3cec67bd33b13a644e0d10f9ff34613af07f583",
+      "scripts/check-kdv-estimates.sh": "63b9b9eae3cd9f424d2efd620f2ba0b0d9973c1892bc0ad8f44797a5d8a44f28",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "bcd04afbcd24ff2ebb9f13a1bb4c4ad57faa679ce2a64f889f386477870dfb6b"
+    }
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -559,8 +620,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Actual source-matched high cut roots, full cut-domain primitives and moment identification, finite open-gap endpoint limits, and exact collapsed-gap contour/real-integral equality",
-    "focused_modules": 80,
-    "scope": "The complete current NLS.lean aggregate passed after the actual high cut-root/primitive, endpoint-limit and collapsed-gap comparison modules were added. All 80 focused modules and the expanded 1137-declaration audit pass."
+    "milestone": "Actual high Hill contour-to-gap identity, positivity and all-level mean-value relation",
+    "focused_modules": 108,
+    "scope": "All 108 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1302-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

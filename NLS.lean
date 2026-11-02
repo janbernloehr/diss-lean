@@ -5021,3 +5021,13 @@ import NLS.KdV.HillL2CutPrimitiveUnit
 import NLS.KdV.HillL2CutUnitOrientation
 import NLS.KdV.HillL2GapBoundaryValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
+
+import NLS.ComplexAnalysis.RealGapEllipse
+import NLS.ComplexAnalysis.RealGapEllipseHomotopy
+import NLS.ComplexAnalysis.RealGapEllipseIntegral
+import NLS.ComplexAnalysis.RealGapEllipseLimit
+import NLS.ComplexAnalysis.RealCutCircleIntegral
+import NLS.ComplexAnalysis.NestedCircleHomotopy
+import NLS.ComplexAnalysis.AnalyticCutContour
+import NLS.KdV.HillL2GapContourIntegral
+import NLS.KdV.HillL2HighGapMoments
