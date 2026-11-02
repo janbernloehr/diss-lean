@@ -1,6 +1,23 @@
 # Implementation status
 
-## Current milestone: ordered Appendix H comparison
+## Current milestone: Appendix I weighted uniform cutoffs
+
+The [weighted uniform cutoff proofs](NLS/SequenceSpaces/AppendixIUniformCutoff.lean) use the exact tail |n|>N in the original weighted norm. Compactness gives a quarter bound at a source point, and continuity gives a half bound on a neighborhood, with the same cutoff valid for every larger N.
+
+One cutoff works near a compact parameter set. For the actual real-analytic source atlas it gives a relative quarter bound and an ambient complex half-bound neighborhood for every germ along that set. The complex germs and their derivatives come from the existing real-atlas construction. Compactness is assumed only at the source points.
+
+The lower block acts on the tail space Y_N and has norm at most the full output tail, with constant one. This adopts the corrected space in the proof display directly.
+
+Eight positive theorems and one bounded tail-operator definition add no new examples or refutations.
+
+The full check passed: 8,646 build jobs, 7,729 public examples and an axiom audit of 45,015 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed eighteen-group ordered Appendix I comparison, retaining the corrected Schur premise, signs and lower-block space, and the local analytic proof on the original nonnegative cone. Then reconcile the whole-dissertation ledger and its remaining qualifications.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix H comparison
 
 The [ordered Appendix H comparison](coverage/APPENDIX_H_ASSERTIONS.md) covers 14 groups on pp.138–139: twelve matched, one directly corrected and one contextual. No partial or pending groups remain in this local ledger.
 

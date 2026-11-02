@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T03:34:55.384309+00:00",
-  "base_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
+  "published_utc": "2026-11-02T04:02:20.765210+00:00",
+  "base_commit": "829617b1fe3c30d9edda3515dc68110197d38432",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 212,
-    "module_hash_checks": 4468,
-    "distinct_modules": 2213
+    "review_records": 213,
+    "module_hash_checks": 4476,
+    "distinct_modules": 2217
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
-    "validated_state": "Appendix H ordered comparison changes documentation only; the exact Lean snapshot retains the successful physical Hamiltonian integral check.",
+    "base_commit": "829617b1fe3c30d9edda3515dc68110197d38432",
+    "validated_state": "Fresh full check after Appendix I weighted uniform cutoffs.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8645,
+    "build_jobs": 8646,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45003,
+    "transitive_NLS_declarations": 45015,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 7558,
+    "gate_session": 48290,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4907,
-      "sha256": "2d67a19a460f3c58ecda7878959498d184a8b3a7ffe1ac25d8f7d72d76e05748"
+      "files": 4908,
+      "sha256": "44cd60e6119b813894622c77fab316f381fffc8d0e468efe60483a58a6645559"
     },
-    "full_gate_log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92",
-    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixHPhysicalHamiltonianFullCheck.log",
-    "validation_reused_from_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848"
+    "full_gate_log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4",
+    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
+    "full_gate_log": "work/AppendixIUniformCutoffFullCheck.log"
   },
   "named_statements": [
     {
@@ -73167,6 +73166,165 @@
         "log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92"
       },
       "source_record_sha256": "d1bace4285f43b8bd6afe2527d73a7a9a42d322968a7202ab3f07a02b52b0c3e"
+    },
+    "AppendixIUniformCutoffSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "829617b1fe3c30d9edda3515dc68110197d38432",
+      "updated_utc": "2026-11-02T04:02:20.717092+00:00",
+      "source_lines": [
+        [
+          11486,
+          11493
+        ],
+        [
+          11495,
+          11499
+        ],
+        [
+          11502,
+          11509
+        ],
+        [
+          11516,
+          11518
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11486,
+            11493
+          ],
+          "requirement": "Exact weighted operator tail",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_tailOperator",
+            "NLS.WeightedCoeff.appendixI_tailOperator_apply",
+            "NLS.WeightedCoeff.appendixI_compact_tail_cutoff"
+          ],
+          "reviewed_claims": [
+            "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter."
+          ],
+          "qualification": "The weighted operator is the exact I.3 tail. All input columns remain present. The cutoff works for every larger N and for any positive error, including 1/4."
+        },
+        {
+          "source_lines": [
+            11495,
+            11499
+          ],
+          "requirement": "Quarter-to-half neighborhood on the actual source germ",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_local_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_local_derivative_cutoff"
+          ],
+          "reviewed_claims": [
+            "Continuity improves the center quarter bound to a half bound on a complex neighborhood."
+          ],
+          "qualification": "The complex neighborhood belongs to the constructed local extension of the original real map. The norm is the original weighted operator norm. Compactness is not assumed on that ambient complex neighborhood."
+        },
+        {
+          "source_lines": [
+            11502,
+            11509
+          ],
+          "requirement": "One cutoff along compact source sets",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_norm_tailOperator_comp_antitone",
+            "NLS.WeightedCoeff.appendixI_compact_family_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_compact_derivative_cutoff"
+          ],
+          "reviewed_claims": [
+            "A common cutoff works along a compact path and on neighborhoods of its points."
+          ],
+          "qualification": "The compact-family theorem gives one cutoff on an open neighborhood whenever a continuous ambient family is given. For the actual source atlas, one cutoff gives a relative quarter bound near any compact subset and a complex half-bound neighborhood for each of its germs. The final density proof uses these intrinsic local germs and local Schur determinants; it does not assert a single globally chosen holomorphic extension along the whole path."
+        },
+        {
+          "source_lines": [
+            11516,
+            11518
+          ],
+          "requirement": "Lower-block norm on the tail space",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_tail_block_norm"
+          ],
+          "reviewed_claims": [
+            "The lower block acts on the tail space Y and its norm is at most the full output-tail norm."
+          ],
+          "qualification": "Use L(Y_N), correcting the displayed L(X_N). The positive theorem constructs D on the actual range of the tail projection and proves the bound with constant one. Combining it with the half bound gives the strict premise of I.2."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/SequenceSpaces/SourceLemmaI3.lean": "be8b7788b70aab7f91f52ac94dc1352a92e48c8bfc7ad64ba62b03a04c744e93",
+        "NLS/SequenceSpaces/WeightedSourceLemmaI3.lean": "2c9831b8d34cd3f1e4ad271cd9bc06b37c5027eb44c9a5cd797ab24a512573d0",
+        "NLS/SequenceSpaces/SourceCompactProjection.lean": "611f37208aadcccfd525784f3aefee36c486933b66aa4f8b00834d76e0b45a4c",
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/SequenceSpaces/WeightedRealAnalyticAtlas.lean": "6fd9cbc1048deefdac40255230579dfb5be3697011f39dee0375390b3d21f187",
+        "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
+        "NLS/SequenceSpaces/RealAtlasComplexification.lean": "e2167bdceccfd8d66a1b0376d4e79ed5ec8c8677048ba455766829e877a295c1",
+        "NLS/SequenceSpaces/AppendixIUniformCutoff.lean": "24df41859dd7f7086b7f4bc4caba3b025e441e9a2cec31286c564aadc95caa35"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/SequenceSpaces/SourceLemmaI3.lean",
+        "NLS/SequenceSpaces/WeightedSourceLemmaI3.lean",
+        "NLS/SequenceSpaces/SourceCompactProjection.lean",
+        "NLS/SequenceSpaces/Weighted.lean",
+        "NLS/SequenceSpaces/WeightedRealAnalyticAtlas.lean",
+        "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean",
+        "NLS/SequenceSpaces/RealAtlasComplexification.lean",
+        "NLS/SequenceSpaces/AppendixIUniformCutoff.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Publish the ordered Appendix I comparison and continue the broader source ledger."
+      ],
+      "resolved_declarations": [
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_compact_derivative_cutoff",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_local_derivative_cutoff",
+        "NLS.WeightedCoeff.appendixI_compact_family_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_compact_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_local_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_norm_tailOperator_comp_antitone",
+        "NLS.WeightedCoeff.appendixI_tailOperator",
+        "NLS.WeightedCoeff.appendixI_tailOperator_apply",
+        "NLS.WeightedCoeff.appendixI_tail_block_norm"
+      ],
+      "declaration_inventory_count": 45015,
+      "qualification": "The [weighted uniform cutoff proofs](NLS/SequenceSpaces/AppendixIUniformCutoff.lean) use the exact tail |n|>N in the original weighted norm. Compactness gives a quarter bound at a source point, and continuity gives a half bound on a neighborhood, with the same cutoff valid for every larger N.\n\nOne cutoff works near a compact parameter set. For the actual real-analytic source atlas it gives a relative quarter bound and an ambient complex half-bound neighborhood for every germ along that set. The complex germs and their derivatives come from the existing real-atlas construction. Compactness is assumed only at the source points.\n\nThe lower block acts on the tail space Y_N and has norm at most the full output tail, with constant one. This adopts the corrected space in the proof display directly.\n\nEight positive theorems and one bounded tail-operator definition add no new examples or refutations. The eighteen-group ordered Appendix I comparison and the broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          139,
+          140
+        ],
+        "images": {
+          "work/AppendixHPage139.png": "2d3d4d8b726c1f7d8292ec9ce0764b0c22b1074862e2f5ff2f7fff1f989a9649",
+          "work/tmp/pdfs/appendix-i-ordered-140.png": "a623cac68fc7cf95a962d514452c2ee5ae0a0ec57292fef3f4148aaeb5b4ca45"
+        }
+      },
+      "preceding_review_hash": "d1bace4285f43b8bd6afe2527d73a7a9a42d322968a7202ab3f07a02b52b0c3e",
+      "validation_lean_sources": {
+        "files": 4908,
+        "sha256": "44cd60e6119b813894622c77fab316f381fffc8d0e468efe60483a58a6645559"
+      },
+      "new_definitions": 1,
+      "positive_theorems_integrated": 8,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.WeightedCoeff.appendixI_compact_tail_cutoff._simp_1_1",
+        "NLS.WeightedCoeff.appendixI_tailOperator._proof_1",
+        "NLS.WeightedCoeff.appendixI_tailOperator._proof_2"
+      ],
+      "full_gate": {
+        "session": 48290,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixIUniformCutoffFullCheck.log",
+        "log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4"
+      },
+      "source_record_sha256": "96116d74fc52b890a61bde534b318db3ac7882325807c49a936b8548bc85d3d4"
     }
   }
 }

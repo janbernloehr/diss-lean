@@ -4906,3 +4906,4 @@ import NLS.ZakharovShabat.AppendixGWholeSequenceH1
 import NLS.Fourier.AppendixGFreeFourier
 import NLS.ZakharovShabat.AppendixGGradientAlgebra
 import NLS.ZakharovShabat.AppendixHPhysicalHamiltonian
+import NLS.SequenceSpaces.AppendixIUniformCutoff
