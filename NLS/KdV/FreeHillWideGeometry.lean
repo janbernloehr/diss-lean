@@ -93,4 +93,15 @@ theorem exists_wideHillStrip_of_ge_lower_edge (N : ℕ) (hN : 2 ≤ N) (lambda :
     linarith
 
 
+/-- The high-region lower edge separates the last central free mode from the first tail mode. -/
+theorem freeHillCentralEdge_between (N : ℕ) (hN : 2 ≤ N) :
+    freeHillValue ((N-1:ℕ):ℤ) < freeHillValue N-12*(N:ℝ) ∧
+      freeHillValue N-12*(N:ℝ) < freeHillValue N := by
+  have hN1 : 1 ≤ N := by omega
+  have hNR : (2:ℝ) ≤ N := by exact_mod_cast hN
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  have hp := mul_pos (sub_pos.mpr hpi) (show (0:ℝ) < 2*(N:ℝ)-1 by linarith)
+  simp only [freeHillValue,Int.cast_natCast,Nat.cast_sub hN1,Nat.cast_one,Int.cast_sub,Int.cast_one]
+  constructor <;> nlinarith
+
 end NLS.KdV

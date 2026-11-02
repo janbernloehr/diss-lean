@@ -177,5 +177,27 @@
       "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
     ],
     "qualifications": "Topology equivalences accept arbitrary filters, assuming eventual membership in a specified original endpoint norm ball. Existence and specified-bound retention require a nontrivial filter. All lower norm exponents satisfy finite p>=1 and (-r-t)*p.toReal>1. Weak-star convergence alone is not asserted to imply eventual endpoint norm boundedness."
+  },
+  "completion_review": {
+    "status": "All clauses of Lemma B.1(i)-(iv) are proved; no remaining Appendix B proof obligation was found in the source clause review.",
+    "source_checked": "Private local text of arXiv:1610.00278v1, Appendix B, printed pages 37-38.",
+    "parameters": "All real s (represented by r=-s), finite p>=1 and the exact strict threshold (s-sigma)*p>1. Existential clauses retain sigma<s and choose sigma=s-2,p=1 in the forward direction.",
+    "source_topology": "The exact original physical distribution is retained. Bounded original real Wiener tests induce the same weak-star topology. Lower norm topology is identified only on norm-bounded sets.",
+    "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 107,
+      "audited_declarations": 1064,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": ".lake/article-check/logs/validation-lower-spectrum.log"
+    },
+    "canonical_checkout": "Sources and build outputs kept read-only.",
+    "main_theorems_verified": false
   }
 }

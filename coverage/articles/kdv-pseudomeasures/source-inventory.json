@@ -342,6 +342,21 @@
         "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-wide-localization-map.json"
+    },
+    {
+      "label": "Original lower spectrum and uniform central physical resolvent boundary",
+      "content": "Every original complex endpoint spectrum has lower real/sector bounds and finite central sublevels. Real physical sources have a lowest eigenvalue. One rectangle works uniformly on each original complex norm ball, with full H1/H-minus-one resolvent on every side and all actual central spectral values strictly inside.",
+      "status": "Proved in the full original domains/norms. The actual finite central algebraic count is defined, but its value2N-1 and invariance still need proof; canonical global slots and main theorems remain open.",
+      "modules": [
+        "NLS/SequenceSpaces/HilbertProductTame.lean",
+        "NLS/Fourier/PeriodicH1FormBound.lean",
+        "NLS/KdV/SingularHillEnergy.lean",
+        "NLS/KdV/SingularHillSemibounded.lean",
+        "NLS/KdV/PseudomeasureLowerSpectrum.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-lower-bound-map.json"
     }
   ],
   "reuse_map": [

@@ -119,10 +119,10 @@
     "No actual KdV frequency, Birkhoff map or physical solution flow is inferred from these spectral dependencies."
   ],
   "remaining": [
-    "Prove a uniform lower bound for the original real singular spectrum, or an equivalent actual finite central spectral-region argument, and the exact central algebraic count fixing the low-mode offset.",
-    "Identify the exhaustive ordered high pairs with global canonical periodic/antiperiodic slots, including the actual period-one source parity/boundary-condition identification.",
+    "Prove invariance of the ACTUAL finite central algebraic count through the original potential homotopy, together with its exact free value2N-1. The full original complex norm ball now has a common verified resolvent boundary and finite enclosed spectrum, but the counting/transport theorem still needs proof.",
+    "Use the exact central count to fix global canonical periodic/antiperiodic label slots and the low-mode offset; prove the actual period-one source parity/boundary-condition identification.",
     "Complete physical gap/Dirichlet and inverse spectral regularity estimates, the original Birkhoff maps and the actual H-minus-one KdV flow.",
-    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full source domains, quantifiers, normalization and topology. They remain unproved."
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with full source domains, quantifiers, normalization and topology. These remain unproved."
   ],
   "validation": {
     "modules_checked": 100,
@@ -141,5 +141,6 @@
     "warnings": 0,
     "tactic_suggestions": 0,
     "log": ".lake/article-check/logs/validation-wide-spectrum.log"
-  }
+  },
+  "subsequent_progress": "High exhaustion, original lower spectral bounds, finite complex central spectra, a lowest real eigenvalue and a common original complex norm-ball central resolvent boundary are now proved. Exact central algebraic counting remains open; see spectral-lower-bound-map.json."
 }
