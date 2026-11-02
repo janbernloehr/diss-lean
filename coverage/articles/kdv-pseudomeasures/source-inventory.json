@@ -239,6 +239,22 @@
         "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular"
       ],
       "coverage": "spectral-multiplicity-map.json"
+    },
+    {
+      "label": "Analytic physical reconstruction and inhomogeneous two-mode normal form",
+      "pages": [
+        11,
+        41,
+        42
+      ],
+      "coverage": "spectral-reconstruction-map.json",
+      "content": "Original H1-valued analytic reconstruction, arbitrary endpoint forcing and exact physical residual identities near actual determinant zeros.",
+      "status": "Proved as dependencies for the physical finite-root-chain/Taylor-kernel comparison. Equality of physical algebraic multiplicity and determinant analytic order remains open.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointReconstruction",
+        "NLS.Articles.KdVPseudomeasures.source_inhomogeneous_physical_reduction",
+        "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual_germ"
+      ]
     }
   ],
   "reuse_map": [

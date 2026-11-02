@@ -1,0 +1,104 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 two-mode reduction, Appendix C original H1/H-minus-one singular Hill domain; necessary dependencies for determinant-order/physical algebraic-multiplicity comparison.",
+  "main_theorems_verified": false,
+  "phase": "Norm-analytic original H1 reconstruction and exact full-domain inhomogeneous physical two-mode reduction, including spectral germs at determinant zeros",
+  "parameter_domain": {
+    "potential": "Every original complex FourierLebesgueSpace(2,-r,infinity) potential with0<=r<1/2; includes all physical real mean-zero period-one potentials.",
+    "forcing": "Every original complex endpoint right-hand side, with no resonant orthogonality hypothesis.",
+    "solution": "Every original H1 vector satisfying the physical inhomogeneous equation; no artificial endpoint-domain premise.",
+    "spectral": "Every complex point on the corrected closed radius6n strip, n>=1, under the existing uniform half-contraction cutoff. Analyticity includes determinant zeros. Germ identities require an interior point; every actual determinant zero is proved interior from the existing localization."
+  },
+  "modules": [
+    "NLS/KdV/PseudomeasureH1Analytic.lean",
+    "NLS/KdV/PseudomeasureReconstructionAnalytic.lean",
+    "NLS/KdV/PseudomeasureInhomogeneousReduction.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean"
+  ],
+  "declarations": [
+    "NLS.KdV.endpointInverseH1Weight",
+    "NLS.KdV.endpointH1Symbol_weight_identity",
+    "NLS.KdV.endpointH1SymbolFamily",
+    "NLS.KdV.endpointH1SymbolFamily_apply",
+    "NLS.KdV.analyticAt_endpointH1SymbolFamily",
+    "NLS.KdV.endpointH1ResolventFamily",
+    "NLS.KdV.endpointH1ResolventFamily_coefficient",
+    "NLS.KdV.endpointH1ResolventFamily_eq",
+    "NLS.KdV.analyticAt_endpointH1ResolventFamily",
+    "NLS.KdV.endpointH1ResolventFamily_toWiener",
+    "NLS.KdV.endpointH1ResolventFamily_free_residual",
+    "NLS.KdV.endpointPhysicalPencilFamily",
+    "NLS.KdV.analyticAt_endpointPhysicalPencilFamily",
+    "NLS.KdV.endpointReconstructionFamily",
+    "NLS.KdV.endpointReconstructionFamily_eq",
+    "NLS.KdV.analyticAt_endpointReconstructionFamily",
+    "NLS.KdV.endpointReconstructionFamily_coordinates",
+    "NLS.KdV.endpointReconstructionFamily_residual",
+    "NLS.KdV.analyticAt_endpointReconstruction_spectral",
+    "NLS.KdV.eventually_mem_reducedHillStrip",
+    "NLS.KdV.endpointReconstructionFamily_residual_germ",
+    "NLS.KdV.endpointReconstructionFamily_coordinates_germ",
+    "NLS.KdV.endpointResponseFamily",
+    "NLS.KdV.analyticAt_endpointResponseFamily",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_coefficient",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_decompose",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_totalForcing",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_reconstruct",
+    "NLS.KdV.endpointResponseFamily_coordinates",
+    "NLS.KdV.endpointResponseFamily_residual",
+    "NLS.KdV.endpointHillH1Coordinates_modes",
+    "NLS.KdV.endpointPhysicalPencil_reconstruction_iff",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_reduced",
+    "NLS.KdV.endpointPhysicalPencil_inhomogeneous_iff",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointResponse",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointReconstruction",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointResponse",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_sourcePhysicalPencil",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_coordinates",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual",
+    "NLS.Articles.KdVPseudomeasures.source_inhomogeneous_physical_reduction",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_zero_interior",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual_germ"
+  ],
+  "proof_details": [
+    "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+    "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+    "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+    "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+    "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+  ],
+  "inhomogeneous_normal_form": {
+    "pencil": "P(lambda)=lambda*J-L(q)",
+    "reconstruction": "F=Modes+R*K*V*Modes",
+    "complementary_response": "G=R*K",
+    "identities": [
+      "C*F=id",
+      "C*G=0",
+      "P*F=J*Modes*B",
+      "P*G=I_endpoint-J*Modes*C_endpoint*K",
+      "P*f=I_endpoint*g iff f=F*C*f+G*g and B*C*f=C_endpoint*K*g"
+    ],
+    "original_domain_preserved": true,
+    "effective_matrix_inverted": false
+  },
+  "shared_reuse": {
+    "branch": "articles/kdv-estimates",
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "inspected": [
+      "NLS/ComplexAnalysis/BanachHolomorphicAffineLineTaylor.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorMultiplication.lean",
+      "NLS/ComplexAnalysis/ScalarTaylorAlgebra.lean",
+      "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean"
+    ],
+    "qualification": "No existing physical finite-chain/Taylor-kernel equivalence was found in the inspected shared tree. No unverified physical multiplicity theorem is imported."
+  },
+  "new_theorems": 36,
+  "new_definitions": 8,
+  "audited_declarations": 44,
+  "remaining": [
+    "Construct the exact finite physical root-chain/truncated effective Taylor-kernel equivalence.",
+    "Use eventual matrix Taylor nullity to identify actual physical algebraic multiplicities with analytic determinant zero orders.",
+    "Complete canonical spectral labels and asymptotic enumeration, endpoint gap/Dirichlet and inverse regularity estimates, original Birkhoff maps and physical KdV main theorems."
+  ]
+}

@@ -32,9 +32,12 @@ import NLS.KdV.PseudomeasureEllipticRegularity
 import NLS.KdV.PseudomeasureTailInverse
 import NLS.KdV.PseudomeasureReduction
 import NLS.KdV.PseudomeasureAnalytic
+import NLS.KdV.PseudomeasureH1Analytic
 import NLS.KdV.PseudomeasureBilinearSymmetry
 import NLS.KdV.PseudomeasureLocalization
 import NLS.KdV.PseudomeasureCoefficients
+import NLS.KdV.PseudomeasureReconstructionAnalytic
+import NLS.KdV.PseudomeasureInhomogeneousReduction
 import NLS.KdV.PseudomeasureZeroCount
 import NLS.KdV.PseudomeasureResolvent
 import NLS.KdV.PseudomeasureSpectrum
@@ -65,6 +68,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 import NLS.Articles.KdVPseudomeasures.SpectralCoefficients
 import NLS.Articles.KdVPseudomeasures.SpectralResolvent
+import NLS.Articles.KdVPseudomeasures.SpectralReconstruction
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 
 /-! Transitive axiom audit of every public article dependency. -/
@@ -480,6 +484,17 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.KdV.endpointReducedDeterminant
 #print axioms NLS.KdV.analyticAt_endpointReducedDeterminant
 #print axioms NLS.KdV.endpointReducedDeterminant_eq_zero_iff
+#print axioms NLS.KdV.endpointInverseH1Weight
+#print axioms NLS.KdV.endpointH1Symbol_weight_identity
+#print axioms NLS.KdV.endpointH1SymbolFamily
+#print axioms NLS.KdV.endpointH1SymbolFamily_apply
+#print axioms NLS.KdV.analyticAt_endpointH1SymbolFamily
+#print axioms NLS.KdV.endpointH1ResolventFamily
+#print axioms NLS.KdV.endpointH1ResolventFamily_coefficient
+#print axioms NLS.KdV.endpointH1ResolventFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointH1ResolventFamily
+#print axioms NLS.KdV.endpointH1ResolventFamily_toWiener
+#print axioms NLS.KdV.endpointH1ResolventFamily_free_residual
 #print axioms NLS.KdV.endpointHillH1Modes_eq
 #print axioms NLS.KdV.singularHillPairing_mode
 #print axioms NLS.KdV.endpointHillResonantResidual
@@ -508,6 +523,29 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.KdV.endpointCoupling_errors_le
 #print axioms NLS.KdV.analyticAt_endpointEffective_coefficient
 #print axioms NLS.KdV.analyticAt_endpointCoefficients
+#print axioms NLS.KdV.endpointPhysicalPencilFamily
+#print axioms NLS.KdV.analyticAt_endpointPhysicalPencilFamily
+#print axioms NLS.KdV.endpointReconstructionFamily
+#print axioms NLS.KdV.endpointReconstructionFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointReconstructionFamily
+#print axioms NLS.KdV.endpointReconstructionFamily_coordinates
+#print axioms NLS.KdV.endpointReconstructionFamily_residual
+#print axioms NLS.KdV.analyticAt_endpointReconstruction_spectral
+#print axioms NLS.KdV.eventually_mem_reducedHillStrip
+#print axioms NLS.KdV.endpointReconstructionFamily_residual_germ
+#print axioms NLS.KdV.endpointReconstructionFamily_coordinates_germ
+#print axioms NLS.KdV.endpointResponseFamily
+#print axioms NLS.KdV.analyticAt_endpointResponseFamily
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_coefficient
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_decompose
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_totalForcing
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_reconstruct
+#print axioms NLS.KdV.endpointResponseFamily_coordinates
+#print axioms NLS.KdV.endpointResponseFamily_residual
+#print axioms NLS.KdV.endpointHillH1Coordinates_modes
+#print axioms NLS.KdV.endpointPhysicalPencil_reconstruction_iff
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_reduced
+#print axioms NLS.KdV.endpointPhysicalPencil_inhomogeneous_iff
 #print axioms NLS.KdV.sobolev_two_mode_le
 #print axioms NLS.KdV.endpoint_effective_column_small
 #print axioms NLS.KdV.endpointHillDisc_subset_strip
@@ -761,6 +799,16 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_finite_norm_le
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointResponse
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointReconstruction
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointResponse
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourcePhysicalPencil
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual
+#print axioms NLS.Articles.KdVPseudomeasures.source_inhomogeneous_physical_reduction
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_zero_interior
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual_germ
 #print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceHillRootSpaceTop
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_stabilizes
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity

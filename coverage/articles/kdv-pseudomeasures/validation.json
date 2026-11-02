@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Appendix B consequences: exact endpoint bounds under weak-star and lower norm limits, bounded sequential closures and uniform compact-time physical trajectory topology",
+  "phase": "Norm-analytic original H1 reconstruction and exact full-domain inhomogeneous physical two-mode reduction, including spectral germs at determinant zeros",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -40,9 +40,12 @@
     "NLS/KdV/PseudomeasureTailInverse.lean",
     "NLS/KdV/PseudomeasureReduction.lean",
     "NLS/KdV/PseudomeasureAnalytic.lean",
+    "NLS/KdV/PseudomeasureH1Analytic.lean",
     "NLS/KdV/PseudomeasureBilinearSymmetry.lean",
     "NLS/KdV/PseudomeasureLocalization.lean",
     "NLS/KdV/PseudomeasureCoefficients.lean",
+    "NLS/KdV/PseudomeasureReconstructionAnalytic.lean",
+    "NLS/KdV/PseudomeasureInhomogeneousReduction.lean",
     "NLS/KdV/PseudomeasureZeroCount.lean",
     "NLS/KdV/PseudomeasureResolvent.lean",
     "NLS/KdV/PseudomeasureSpectrum.lean",
@@ -73,14 +76,15 @@
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 552,
-  "definitions": 148,
+  "proved_theorems": 588,
+  "definitions": 156,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 700,
+    "declarations": 744,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -187,10 +191,16 @@
     "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
     "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
     "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
-    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
+    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm.",
+    "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+    "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+    "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+    "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+    "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
   ],
-  "source_correspondence": "All Appendix B.1(i)-(iv) conclusions were already proved. This continuation adds exact original endpoint bound preservation, lower norm limit recovery, bounded sequential closure/continuity criteria and explicit uniform compact-time trajectory criteria. All distribution normalizations and physical constraints are retained. No actual KdV flow is assumed or constructed by these topology lemmas. The existing singular Hill spectral and root-space results are unchanged; their remaining determinant-order, spectral-label and main-theorem obligations remain open. All main theorem completion flags remain false.",
-  "build_isolation": "All69 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact700-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "The actual physical H1 reconstruction and complementary response are now jointly operator-norm analytic and give an exact necessary-and-sufficient inhomogeneous reduction for every original H1 solution and arbitrary original endpoint forcing. The same reconstruction identities hold as spectral germs at every actual determinant zero. This supplies analytic and full-domain converse dependencies for the physical finite-root-chain/Taylor-kernel comparison; that comparison and equality of physical algebraic multiplicity with determinant analytic order remain open. Canonical labels/asymptotic enumeration, eventual strip assignment, physical gap/Dirichlet estimates, inverse regularity, Birkhoff maps and actual KdV main theorem constructions remain open. All main theorem completion flags remain false.",
+  "build_isolation": "All73 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact744-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -230,9 +240,12 @@
     "NLS/KdV/PseudomeasureTailInverse.lean": "687364671778fca0082f2abc0f487b03d4447c9ac15a9483011a799f510a3bc9",
     "NLS/KdV/PseudomeasureReduction.lean": "90794b1f914252d92694b0f64cce51236e979f3490bcef0c1a97956214c4fcfe",
     "NLS/KdV/PseudomeasureAnalytic.lean": "4f32cf077bcb8aa7730ceb0ea19f9b63b31842adc1fa195857bf0f810c3e90c8",
+    "NLS/KdV/PseudomeasureH1Analytic.lean": "cffbf93f62621e66bbffc0df46933813d9fa2839188fc42e4eac63edb32ac336",
     "NLS/KdV/PseudomeasureBilinearSymmetry.lean": "7b12c7c40eff1328937cc5e03357eb483ed72b289473e92f40501f28e59284dc",
     "NLS/KdV/PseudomeasureLocalization.lean": "678c89d336fc0d609ad70c850e951ed7e8c8ffb11cb5a45663695741dcd5eed5",
     "NLS/KdV/PseudomeasureCoefficients.lean": "360479ad68465bb2f3ce8b0cbf9526de6e400ca37916e6ae48638d65bdbf841f",
+    "NLS/KdV/PseudomeasureReconstructionAnalytic.lean": "2865d5489a41277cf250cffd6ef7062768958e4fde704425857e2b71c4497724",
+    "NLS/KdV/PseudomeasureInhomogeneousReduction.lean": "5444be52063524cb219dc7ebfd920e2cd2008d12b5af0692e5b7e215a9b5962c",
     "NLS/KdV/PseudomeasureZeroCount.lean": "e1110debbe210e87826986ace226ef39eb37af81f59dee27571ea7c89f99d3dc",
     "NLS/KdV/PseudomeasureResolvent.lean": "d718ad1cfc3be699c035e23672c43ab1f2bd44a32e366b73e13b380856abf9bc",
     "NLS/KdV/PseudomeasureSpectrum.lean": "22c430fe535e39da8ebbd4109c6717dc01d069f53f025ab53210823809abeb5a",
@@ -263,8 +276,9 @@
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean": "adfb2bfa36acc624c77753f9b1756b6b14602e5a17c364d5dd5f948f6378bf1c",
     "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
     "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean": "942a045acfdb02962e3da1aee171a52b9656c6ba46d375a031725b13b145c652",
+    "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean": "7979cae356f20afbab1b4a20847373c86b42f0e84f2d679eec37f6d9c6aaf85b",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean": "dee6bd768ae0e46dc60501527061e7741ce80012972674dcb3d2c6318fc95661",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "b8cd7619bf46591a9f9a8145096d4a2b79d8184150c9eae4ff153ac60f31bb2c"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "00a93db74aa39e34254cbfe5483074241b2d9c8a4628c77b2853ea2977edd0cf"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -272,13 +286,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 682,
-    "newly_authored_declarations_this_continuation": 18,
-    "new_theorems": 18,
-    "new_definitions": 0,
+    "previous_checked_declarations": 700,
+    "newly_authored_declarations_this_continuation": 44,
+    "new_theorems": 36,
+    "new_definitions": 8,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 700,
-    "previous_reuse": "Existing verified imports remain unchanged and are covered by the transitive axiom audit."
+    "total_checked_declarations": 744,
+    "previous_reuse": "Existing verified imports remain unchanged and are covered by the transitive axiom audit. Shared scalar/matrix Taylor algebra inspected for the remaining finite-chain bridge."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -309,7 +323,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-source-limits-trajectories.log",
+  "validation_log": ".lake/article-check/logs/validation-analytic-reconstruction.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -385,5 +399,16 @@
       "NLS/ComplexAnalysis/MatrixTaylorNullity.lean",
       "NLS/ComplexAnalysis/MatrixTaylorEquivalence.lean"
     ]
+  },
+  "shared_reconstruction_state_inspected": {
+    "branch": "articles/kdv-estimates",
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "inspected": [
+      "NLS/ComplexAnalysis/BanachHolomorphicAffineLineTaylor.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorMultiplication.lean",
+      "NLS/ComplexAnalysis/ScalarTaylorAlgebra.lean",
+      "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean"
+    ],
+    "qualification": "No existing physical finite-chain/Taylor-kernel equivalence was found in the inspected shared tree. No unverified physical multiplicity theorem is imported."
   }
 }

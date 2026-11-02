@@ -47,5 +47,22 @@
     "Analytic orders of determinant zeros are NOT yet identified with algebraic multiplicities of the physical operator.",
     "Global singular spectrum, periodic/antiperiodic labels, eventual corrected-strip inclusion and the Birkhoff/KdV main theorem constructions remain open.",
     "The analytic statement is in the exact endpoint NORM topology. It does not claim Banach analyticity in the weak-star topology or identify a real Banach manifold structure on the constrained source subtype."
-  ]
+  ],
+  "full_H1_reconstruction_and_inhomogeneous_reduction": {
+    "coverage": "spectral-reconstruction-map.json",
+    "proof_details": [
+      "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+      "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+      "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+      "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+      "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+      "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+    ],
+    "modules": [
+      "NLS/KdV/PseudomeasureH1Analytic.lean",
+      "NLS/KdV/PseudomeasureReconstructionAnalytic.lean",
+      "NLS/KdV/PseudomeasureInhomogeneousReduction.lean",
+      "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean"
+    ]
+  }
 }

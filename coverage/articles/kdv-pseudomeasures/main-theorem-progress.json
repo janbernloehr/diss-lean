@@ -47,7 +47,10 @@
       "sourceHillAlgebraicMultiplicity",
       "sourceHillAlgebraicMultiplicity_eq_resolvent",
       "sourceHillRootSpace_stabilizes",
-      "sourceHillRootSpaceTop_regular"
+      "sourceHillRootSpaceTop_regular",
+      "analyticAt_sourceEndpointReconstruction",
+      "source_inhomogeneous_physical_reduction",
+      "sourceEndpointReconstruction_residual_germ"
     ]
   },
   "essential_open_obligations": [
@@ -105,7 +108,13 @@
     "Every finite physical root-chain level and the complete algebraic root space equal the generalized eigenspaces of any actual compact base resolvent at1/(lambda-a). The converse retains actual domain representatives at every step.",
     "Full physical algebraic root spaces are finite dimensional and stabilize after finitely many steps. Actual algebraic multiplicity is defined from these spaces, is independent of resolvent realization, and is positive exactly on the actual physical spectrum.",
     "Every physical generalized eigenvector has endpoint regularity2-r in the infinity norm, as the identical original distribution. This follows from the proved full-chain H1 domain property and AppendixC.2.",
-    "Actual algebraic multiplicity is not yet identified with the analytic order of the endpoint determinant; no algebraic bound2 or semisimplicity is inferred from the geometric rank theorem."
+    "Actual algebraic multiplicity is not yet identified with the analytic order of the endpoint determinant; no algebraic bound2 or semisimplicity is inferred from the geometric rank theorem.",
+    "The order-two infinity symbol multiplied by the inverse Sobolev order1-r weight in l2 gives a total operator-norm analytic complementary inverse from endpoint data into the original full H1 space. It equals the existing physical inverse and agrees with the analytic Wiener realization.",
+    "The original physical pencil lambda*J-L(q) is jointly operator-norm analytic. The actual reconstruction from two amplitudes into original H1 is jointly analytic at every closed-strip parameter allowed by the existing cutoff, including effective determinant zeros.",
+    "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
+    "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
+    "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
+    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
