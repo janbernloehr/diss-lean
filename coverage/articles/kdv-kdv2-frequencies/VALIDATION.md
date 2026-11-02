@@ -55,8 +55,11 @@ its existing Hilbert specialization and a transitive audit.
 | `CoordinateQuadraticDerivative.lean`, `ClassicalNormalizedRootBranches.lean` | Actual bounded identity derivative and a constructed analytic Hilbert displacement solving every retained infinite root equation on one source neighborhood for fixed n. |
 | `ClassicalNormalizedZeroIdentity.lean`, `ClassicalNormalizedZeros.lean` | Literal normalized numerator zeros, including filled critical energies; distinct analytic energy zeros with exact free values and all original actual periods retained. |
 | Four newly selected existing sequence/implicit-function modules | Two-majorant membership, translated reciprocal rows, actual coordinate Frechet derivatives and verified analytic Banach implicit roots are directly recompiled. |
+| `ClassicalCandidateNumeratorUnits.lean`, `ClassicalNormalizedZeroFactorization.lean` | Nonzero filled critical basis factors and an exact normalized numerator/zero-equation factor identity throughout the candidate domain, retaining multiplicities. |
+| `ClassicalNormalizedZeroDerivative.lean`, `ClassicalNormalizedSimpleZeros.lean` | Constructed invertibility of the actual operator-norm analytic partial map, proved diagonal structure and nonzero energy derivatives of all retained actual normalized zeros on one source neighborhood for fixed n. |
+| `ClassicalCandidateRootProducts.lean` and two newly selected existing reflection/product modules | Genuine l2 signed free displacement and locally uniform entire signed product with its exact simple root set; this still includes zero/omitted placeholders and is not the Psi_n product identity. |
 
-All 116 selected modules compile with pinned **Lean 4.33.1**, commit
+All 123 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -68,6 +71,7 @@ Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 ```text
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
+PASS NLS/SequenceSpaces/Reflection
 PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/SequenceSpaces/Multiplier
 PASS NLS/SequenceSpaces/PositiveIndexWeight
@@ -172,6 +176,12 @@ PASS NLS/KdV/ClassicalNormalizedRootBranches
 PASS NLS/KdV/ClassicalNormalizedZeroIdentity
 PASS NLS/KdV/ClassicalNormalizedZeros
 PASS NLS/KdV/ClassicalSignedCriticalProduct
+PASS NLS/KdV/ClassicalCandidateNumeratorUnits
+PASS NLS/KdV/ClassicalNormalizedZeroFactorization
+PASS NLS/KdV/ClassicalNormalizedZeroDerivative
+PASS NLS/KdV/ClassicalNormalizedSimpleZeros
+PASS NLS/ZakharovShabat/SourceGapInterpolationProduct
+PASS NLS/KdV/ClassicalCandidateRootProducts
 PASS NLS/KdV/ClassicalCriticalEnergyProduct
 PASS NLS/KdV/ClassicalCriticalBasisProduct
 PASS NLS/KdV/FrequencyPrimitiveContinuation
@@ -182,11 +192,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1332 candidate declarations; 12712 declarations total.
+Axiom audit passed: 1395 candidate declarations; 13537 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 116 selected modules (including generated and private declarations)
+the 123 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -556,3 +566,34 @@ The zero subneighborhood may depend on n. Completeness, simplicity, real
 gap placement, exact canonical product/prefactor (52), omitted-index
 uniformity, the full rough/global domain and every main theorem remain
 open. No main-theorem inventory row is closed by this local result.
+
+
+The actual simple normalized zero and selected signed product milestone
+is detailed in `SIMPLE_NORMALIZED_ZEROS.md`. A proved filled identity with
+nonzero critical basis factors transports the actual nonzero diagonal
+partial derivatives to nonzero energy derivatives of Psi_n. The partial
+Hilbert map is operator-norm analytic and has a constructed inverse on
+one smaller source neighborhood, before every retained index. The
+analytic zero family, free values, distinctness and original periods are
+retained for each fixed omitted n.
+
+The signed selected roots also have genuine l2 free-lattice displacement.
+The reused arbitrary-complex product theorem gives local uniform cutoff
+convergence and precisely those simple product roots. This product still
+contains zero and omitted-mode placeholders; no completeness or canonical
+product identity for Psi_n is inferred from it.
+
+Final strict run: all 123 selected modules pass; the complete transitive
+audit passes for 1395 selected declarations and 13537 declarations
+including all imported NLS dependencies. All 123 checked source hashes
+match, and the checker, audit and coverage selections agree exactly.
+The reflection and generic product dependencies are directly recompiled.
+Only `propext`, `Classical.choice` and `Quot.sound` are permitted. There
+are no new axioms, placeholders, heartbeat increases, disabled linters or
+warning exceptions. Canonical sources/builds remain clean and read only.
+The full validation is serialized by the shared build lock.
+
+The source subneighborhood can depend on omitted n. Completeness for
+Psi_n, its exact canonical product/prefactor, real gap placement, omitted-
+index uniformity, full rough/global compatibility and all main theorems
+remain open. No main-theorem inventory row is closed by this local result.

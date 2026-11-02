@@ -10,6 +10,7 @@ article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
 modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/Convolution
+  NLS/SequenceSpaces/Reflection
   NLS/ZakharovShabat/ClassicalHorizontalStripBounds
   NLS/SequenceSpaces/Multiplier
   NLS/SequenceSpaces/PositiveIndexWeight
@@ -114,6 +115,12 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalNormalizedZeroIdentity
   NLS/KdV/ClassicalNormalizedZeros
   NLS/KdV/ClassicalSignedCriticalProduct
+  NLS/KdV/ClassicalCandidateNumeratorUnits
+  NLS/KdV/ClassicalNormalizedZeroFactorization
+  NLS/KdV/ClassicalNormalizedZeroDerivative
+  NLS/KdV/ClassicalNormalizedSimpleZeros
+  NLS/ZakharovShabat/SourceGapInterpolationProduct
+  NLS/KdV/ClassicalCandidateRootProducts
   NLS/KdV/ClassicalCriticalEnergyProduct
   NLS/KdV/ClassicalCriticalBasisProduct
   NLS/KdV/FrequencyPrimitiveContinuation

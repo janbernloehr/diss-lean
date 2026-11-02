@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalCandidateRootProducts
 import NLS.KdV.ClassicalNormalizedZeros
 import NLS.KdV.ClassicalNormalizedResidues
 import NLS.KdV.ClassicalWeightedNormalizedCoefficients
@@ -35,6 +36,7 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let modules := #[`NLS.ComplexAnalysis.BanachTaylorBounds,
     `NLS.SequenceSpaces.Convolution,
+    `NLS.SequenceSpaces.Reflection,
     `NLS.ZakharovShabat.ClassicalHorizontalStripBounds,
     `NLS.SequenceSpaces.Multiplier,
     `NLS.SequenceSpaces.PositiveIndexWeight,
@@ -139,6 +141,12 @@ run_cmd do
     `NLS.KdV.ClassicalNormalizedZeroIdentity,
     `NLS.KdV.ClassicalNormalizedZeros,
     `NLS.KdV.ClassicalSignedCriticalProduct,
+    `NLS.KdV.ClassicalCandidateNumeratorUnits,
+    `NLS.KdV.ClassicalNormalizedZeroFactorization,
+    `NLS.KdV.ClassicalNormalizedZeroDerivative,
+    `NLS.KdV.ClassicalNormalizedSimpleZeros,
+    `NLS.ZakharovShabat.SourceGapInterpolationProduct,
+    `NLS.KdV.ClassicalCandidateRootProducts,
     `NLS.KdV.ClassicalCriticalEnergyProduct,
     `NLS.KdV.ClassicalCriticalBasisProduct,
     `NLS.KdV.FrequencyPrimitiveContinuation,

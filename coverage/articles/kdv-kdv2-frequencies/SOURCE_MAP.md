@@ -298,3 +298,15 @@ including at a filled own critical energy. See
 [NORMALIZED_ZEROS.md](NORMALIZED_ZEROS.md). U_n may depend on n; complete
 zeros, simplicity, exact canonical product/prefactor (52), all-n common
 source uniformity, the rough/global domain and all main rows remain open.
+
+The selected actual normalized zeros are now proved simple on one source
+subneighborhood for each fixed omitted n. An exact filled factor identity
+and an actually invertible, operator-norm analytic Hilbert partial map
+prove the literal energy derivatives nonzero for every k!=n. The selected
+signed frequencies have l2 free-lattice displacement and their full
+signed product has exactly those simple roots, with locally uniform
+literal cutoffs. See [SIMPLE_NORMALIZED_ZEROS.md](SIMPLE_NORMALIZED_ZEROS.md).
+The product still includes zero and omitted-mode placeholders; it has not
+yet been identified with the canonical Psi_n product. Completeness for
+Psi_n, the exact prefactor, full omitted-index uniformity, rough/global
+compatibility and every main row remain open.

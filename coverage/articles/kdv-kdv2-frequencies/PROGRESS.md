@@ -437,3 +437,27 @@ canonical products/prefactors, full omitted-index uniformity, rough/global
 compatibility and every main theorem remain open. The strict 116-module
 build and transitive axiom audit are recorded in `VALIDATION.md` and
 `source.json`.
+
+## Simple actual normalized zeros and selected signed products
+
+The normalized zero equation now has an exact filled factor identity
+with the literal Psi_n. The critical basis factor is proved nonzero on
+the full candidate domain, including its filled own critical energy.
+The partial Hilbert derivative is operator-norm analytic, equals Id at
+the free source and has a constructed inverse along the root graph on
+one source subneighborhood. Its exact diagonal structure proves every
+retained scalar derivative nonzero.
+
+Thus every selected actual normalized energy zero is simple, simultaneously
+for all k!=n on one neighborhood for the chosen omitted n. The analytic
+l2 branch, distinctness, free values and original periods are retained.
+The reflected selected root sequence also has genuine l2 free-lattice
+displacement; its full signed product converges locally uniformly and has
+exactly those simple roots. See
+[SIMPLE_NORMALIZED_ZEROS.md](SIMPLE_NORMALIZED_ZEROS.md).
+
+The signed product still includes zero and the omitted-mode placeholders.
+Completeness and canonical products of Psi_n, exact prefactors, omitted-
+index uniformity, rough/global compatibility and every main theorem remain
+open. The strict 123-module check and full transitive audit are recorded
+in `VALIDATION.md` and `source.json`.

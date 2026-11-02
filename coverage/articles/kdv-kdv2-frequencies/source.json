@@ -1617,6 +1617,90 @@
       "scope": "Existing verified analytic Banach implicit root construction from a jointly analytic equation, a literal zero and a proved bijective partial derivative, directly recompiled",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCandidateNumeratorUnits.lean",
+      "source_labels": [
+        "Equation (52) actual nonzero critical factors"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Complete selected signed critical labels exclude any different critical energy from the candidate disc, and the actual second derivative gives the nonzero filled own-center numerator value",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0dde66b8365762565eac39efd81ecbc1d8feecaf595c771c4bc400459f1921fe"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedZeroFactorization.lean",
+      "source_labels": [
+        "Equation (52) exact filled normalized zero identity"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Exact identity throughout the candidate domain: (lambda_k-mu_n)*Psi_n=(2*n*xi_k/k)*B_k*F_k, including own critical energy; retains multiplicities rather than only a zero implication",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eed13b2b300927df95b866f063d42ee7375485529fa7b9e2d577228ba66e25da"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedZeroDerivative.lean",
+      "source_labels": [
+        "Equation (52) actual regular partial Hilbert map"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The actual partial derivative is operator-norm analytic with free Id; analytic inversion constructs a common regular root neighborhood, while actual coordinate locality gives zero off-diagonal entries and nonzero diagonal derivatives",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6cd48bc15ecf6a833dc3b03a4120277d12b60be450232506d354fe3585fc2677"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedSimpleZeros.lean",
+      "source_labels": [
+        "Equation (52) actual local infinite simple normalized zero families"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The exact filled identity transfers nonzero scalar partial derivatives to the literal energy derivative of Psi_n at every retained constructed root; one source subneighborhood for each omitted n retains analytic l2 branch, free values, distinctness and every original normalization period",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c6ac48da94786adae0253fbe64f06d29be05057de1a123dddc0983bac6ce8964"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCandidateRootProducts.lean",
+      "source_labels": [
+        "Equation (52) selected signed candidate products"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Actual selected signed roots have genuine l2 free-lattice displacement and are injective; their full signed product is entire with locally uniform literal cutoffs and precisely those simple roots; zero and omitted-mode placeholders are still included and the Psi_n product identity remains open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a34a07d78a6c3999a07150477a518281c2bf33f7a5f0daaf199f3ca461cbab70"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Reflection.lean",
+      "source_labels": [
+        "Candidate signed spectral displacement dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing frequency reflection is a genuine linear isometry, directly recompiled; it is used for a spectral labeling rather than a physical Birkhoff-coordinate claim",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapInterpolationProduct.lean",
+      "source_labels": [
+        "Candidate complex spectral product dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing generic product zero-set and simplicity theorems for arbitrary l^p-displaced injective sequences, directly recompiled; the particular theorems used require no real-type or gap placement hypothesis",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75e10c53dbd3e5c4898a26653dc90d78051cad142b5e0d0cf7523616e147ce3e"
     }
   ],
   "dependencies_needed": [
@@ -1648,15 +1732,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1332,
-    "total_declarations_audited": 12712,
+    "candidate_declarations_audited": 1395,
+    "total_declarations_audited": 13537,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 116
+    "selected_modules": 123
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1725,5 +1809,6 @@
   "critical_products_record": "CRITICAL_PRODUCTS.md",
   "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md",
   "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md",
-  "normalized_zeros_record": "NORMALIZED_ZEROS.md"
+  "normalized_zeros_record": "NORMALIZED_ZEROS.md",
+  "simple_normalized_zeros_record": "SIMPLE_NORMALIZED_ZEROS.md"
 }

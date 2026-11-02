@@ -139,3 +139,13 @@ in (54) and the following lemmas remain open. Sharp normalized moments,
 physical Hamiltonian-frequency identities, action descent, weighted
 asymptotics, compact derivatives and Birkhoff/PDE identification remain
 essential. No main-theorem inventory row is closed by this local result.
+
+## Subsequent simple-zero milestone
+
+Simplicity of the selected actual zero family is now proved on a smaller
+source neighborhood for each n, retaining the same types of analytic
+branch and all actual periods. Its free-lattice spectral displacement is
+in l2 and the full signed candidate product is constructed. See
+[SIMPLE_NORMALIZED_ZEROS.md](SIMPLE_NORMALIZED_ZEROS.md). Completeness and
+the exact canonical product identity of Psi_n, omitted-index uniformity,
+rough/global compatibility and all main-theorem rows remain open.
