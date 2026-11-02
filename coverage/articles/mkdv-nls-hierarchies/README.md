@@ -1,7 +1,7 @@
 # The mKdV and NLS hierarchies revisited — initial verification
 
-Status: **Theorem 2(i) proved on its original domain; the remaining main
-statements are incomplete**.
+Status: **Theorem 2 proved on its original complex Sobolev domains, with the
+matrix correction in part (ii); Theorems 1, 3 and 4 remain incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
 
@@ -64,8 +64,8 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | `theorem1_even_vanishing_original_domain` proves scalar vanishing on H^(2m-1), including the exact H^1 endpoint m=1. `classicalNLSHamiltonian_one_diagonal` and `classicalNLSHamiltonian_three_diagonal` prove the physical factor-two identities for K1 and K2. `theorem1_m2_smooth` now proves both clauses on smooth complex periodic potentials. | All-order independent mKdV/Hill Hamiltonian identification; physical gradients and vector fields; the sharper H^m even-order extension for m>1. |
-| Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None for part (i); part (ii) remains separate. |
-| Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the stated even/odd gradient recurrence. | Existing analytic Hamiltonians and new symmetries are available. | Resolve the matrix correction below and prove the physical gradient recurrence. No caller-supplied hierarchy-identification assumption is used as a substitute. |
+| Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
+| Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | Existing physical NLS actions are available, not an mKdV action identification. | Prove the Miura/Hill discriminant and action comparison with fixed gap labels. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | No new analytic factorization is claimed. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
@@ -78,15 +78,16 @@ Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
 These are dependencies of the four main theorems, not extra completion targets.
 
-The all-order Riccati resolvent bridge toward Theorem 2(ii) is now checked.
+The all-order Riccati resolvent bridge proving Theorem 2(ii) is now checked.
 `constructed_riccati_resolvent_identities` proves its coupled coefficient
 recurrences, and `riccati_resolvent_coefficient_variation` proves the variation
 formula modulo an explicit total spatial derivative. The diagonal coupling
 has zero even coefficients. Its canonical Riccati input is proved equal to
-the existing NLS hierarchy polynomials. The remaining step is to identify its
-two components with the already certified physical Euler gradients for
-arbitrary jet perturbations, then extend the corrected recurrence to the
-printed Sobolev domain. These formal results alone do not complete part (ii).
+the existing NLS hierarchy polynomials. Independent variation jets now prove
+the actual physical integral variation, and Fourier test uniqueness identifies
+both components with the certified Euler gradients. Smooth density extends
+the diagonal recurrence to the exact Sobolev domain. Reciprocal phase scaling
+and the actual distribution derivative give the corrected part (ii).
 
 Theorem 5 is now proved as
 `NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
@@ -101,7 +102,7 @@ existing even-insertion map. No Hill/ZS discriminant equality is an input to
 the construction. The Hilbert operator spectrum, gap labels, action integrals
 and Birkhoff identification required by Theorem 4 are still separate obligations.
 
-## Source corrections still to resolve
+## Source corrections and remaining qualifications
 
 These observations are recorded to prevent an incorrect formal target. No Lean
 counterexample modules or refutations have been added.
@@ -110,8 +111,9 @@ counterexample modules or refutations have been added.
    while the summation proof on p. 18 yields `R*partial S_(2m) =
    partial_x partial S_(2m-1)`, with `R=diag(i,-i)` defined on p. 13.
    The subsequent proof of Theorem 1 uses precisely this R identity, followed
-   by multiplication by P. The corrected R recurrence is the candidate target;
-   its all-order physical proof remains open.
+   by multiplication by P. The corrected R recurrence is now proved at every
+   order on the full printed complex Sobolev domain, with the actual derivative
+   and no additional smoothness or real-type hypothesis.
 2. Theorem 3 prints the factor `(-1)^m`. Its proof on p. 18 ends with
    `eta_(n,m)=omega_(n,2m)#` using the stated angle brackets and Theorem 1.
    A final target must use one consistent Hamiltonian/frequency convention;
@@ -128,8 +130,8 @@ counterexample modules or refutations have been added.
   Hamiltonians, entire analyticity, mass and momentum calibration.
 - `NLS/ZakharovShabat/SobolevNLSHierarchyTrace.lean`: physical all-order
   higher-action trace, including a common open complex neighborhood and
-  absolute convergence. This is a trace identity, not the missing gradient
-  recurrence or an mKdV identification.
+  absolute convergence. This trace identity does not identify the independent
+  mKdV Hamiltonians.
 - `NLS/ZakharovShabat/NLSRiccatiHierarchy.lean`: the exact differential
   recurrence and its uniqueness; its polynomial realization is in
   `NLSRiccatiPolynomials.lean`.
@@ -170,8 +172,8 @@ generated auxiliaries; its initial audit passed for 35 declarations and allows o
 
 The subsequent physical smooth m=2 identification, independent H¹ Hill/ZS
 discriminant identity, all-order smooth physical first variations and expanded validation are
-recorded in [the progress log](PROGRESS.md). The original full main theorems
-remain incomplete.
+recorded in [the progress log](PROGRESS.md). Theorem 2 is now proved with its
+matrix correction; the other main theorems remain incomplete.
 
 ## Worktree integration and reproduction
 

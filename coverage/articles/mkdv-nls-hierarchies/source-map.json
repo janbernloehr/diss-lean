@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_not_main_theorem_complete",
+  "status": "partial_main_theorems_1_3_4_incomplete",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -42,7 +42,7 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields"
       ],
       "limits": [
-        "No smoothness restriction, real-type restriction, nonzero-action assumption or caller-supplied gradient identification is required. Theorem 2(ii) is a separate unproved recurrence."
+        "The full printed complex Sobolev domain is included. Part (ii) is proved separately with the matrix correction recorded there."
       ],
       "gradient_dependency": {
         "proved": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient",
@@ -57,10 +57,18 @@
     {
       "label": "Theorem 2(ii)",
       "page": 3,
-      "status": "unproved_source_matrix_correction_recorded",
+      "status": "proved_on_original_domain_with_corrected_matrix",
       "quantifiers": "forall integer m>=1, forall phi in complex H^(2m-1) pairs, if exists real alpha with P phi=R_alpha phi",
-      "candidate_corrected_target": "R partial S_(2m) = partial_x partial S_(2m-1), R=diag(i,-i)",
-      "source_issue": "The printed -iJ matrix differs from the R matrix obtained in the p.18 proof."
+      "source_issue": "The printed -iJ matrix differs from the R matrix obtained in the p.18 proof.",
+      "corrected_target": "R partial S_(2m) = partial_x partial S_(2m-1), R=diag(i,-i)",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected_coefficients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "physical_derivative": "Mathlib TemperedDistribution.derivCLM of the actual period-one L2 field; the result is represented by R times the certified even L2 gradient. Exact physical Fourier multiplier 2*pi*i*j.",
+      "limits": [
+        "The printed -iJ is corrected to R=diag(i,-i), matching the p.18 summation proof. No smoothness or real-type restriction is imposed."
+      ]
     },
     {
       "label": "Theorem 3",
@@ -155,11 +163,11 @@
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
   },
   "remaining_essential_dependencies": [
-    "all-order independent mKdV/Hill Hamiltonian identification and corrected even/odd physical variational recurrence",
+    "all-order independent mKdV/Hill Hamiltonian identification",
     "sharp Sobolev vector-field restriction",
     "Hill operator spectral gap labels and action integrals",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
-    "recorded main-source matrix/sign/signed-mean qualifications"
+    "remaining frequency-sign and signed-mean qualifications in main-source statements"
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -172,8 +180,11 @@
       "constructed_recurrence": "NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities",
       "all_order_variation": "NLS.DifferentialPolynomial.riccati_resolvent_coefficient_variation",
       "diagonal_coupling_vanishes": "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_diagonal",
-      "scope": "Canonical formal Riccati resolvent over a differential coefficient algebra; all-order variation modulo an explicit total derivative for commuting variation/spatial derivations; diagonal parity and raw coefficient recurrences.",
-      "remaining": "Construct arbitrary jet perturbations and identify both resolvent components with the certified physical Euler gradients. Then apply phase covariance and exact-domain continuity to the corrected Theorem 2(ii). No new main-theorem completion is claimed by this formal bridge."
+      "scope": "Constructed formal Riccati resolvent, arbitrary independent jet perturbations, actual physical Euler-gradient identification at every order, and corrected even/odd recurrence on the full complex H^(2m-1) domain.",
+      "physical_gradient": "NLS.ZakharovShabat.classicalNLSHierarchyGradient_eq_resolvent",
+      "independent_jet_variation": "NLS.DifferentialPolynomial.evaluate_independentJetVariation",
+      "physical_integral_variation": "NLS.ZakharovShabat.integral_firstVariationDensity_eq_resolvent",
+      "exact_domain_recurrence": "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
     }
   }
 }

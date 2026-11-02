@@ -264,3 +264,50 @@ corrected Theorem 2(ii), construct arbitrary jet perturbations, identify A_n
 and B_n with the certified physical Euler gradients, and transfer the diagonal
 identity through phase covariance and exact-domain continuity. Theorem 1's
 sharp diagonal flow/Hamiltonian identification and Theorems 3–4 remain open.
+
+## 2026-11-02 — corrected Theorem 2(ii) on the original complex Sobolev domain
+
+Theorem 2 is now proved on its original domains, with the matrix in part (ii)
+corrected from the printed `-iJ` to `R=diag(i,-i)`, as required by the paper's
+own summation proof on p. 18.
+
+`NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected` proves, for every m≥1
+and every complex H^(2m−1) pair satisfying `P phi=R_alpha phi` for some real α,
+that R times the actual even Hamiltonian gradient equals the actual spatial
+derivative of the odd gradient. The derivative is Mathlib's
+`TemperedDistribution.derivCLM` of the physical period-one L2 field. Its result
+is represented by the certified even L2 gradient. The companion
+`theorem2_ii_corrected_coefficients` gives the exact `2*pi*i*j` multiplier
+identity. No smoothness, real-type, nonzero-potential or caller-supplied
+gradient-identification hypothesis is imposed.
+
+The missing variational bridge is fully constructed. The shared multi-field
+jet algebra adds independent background and variation jets; its evolutionary
+derivation commutes with spatial differentiation. Differential coefficient
+maps preserve the constructed Riccati resolvent. These facts instantiate the
+all-order variation identity for arbitrary actual smooth periodic directions.
+The explicit total derivative integrates to zero. Smooth Fourier tests then
+identify the resolvent components pointwise with the already certified Euler
+gradients. `classicalNLSHierarchyGradient_eq_resolvent` retains the original
+factor `(-i)^(n+2)` at every Hamiltonian order.
+
+The diagonal parity cancellation now yields the normalized physical gradient
+recurrence at every order. Smooth density extends its Fourier identity to all
+original diagonal H^(2m−1) inputs. Reciprocal scaling extends it to proportional
+components; the printed phase hypothesis supplies exactly such a scaling via
+`exp(i*alpha/2)`. Finally, the established Fourier distribution derivative
+identifies the coefficient recurrence with the genuine physical derivative.
+
+All 54 article/shared modules and the NLS aggregate pass with Lean 4.33.1,
+`autoImplicit=false` and warnings as errors. The targeted transitive audit
+passes for 515 declarations and auxiliaries, and the combined NLS/article
+audit passes for 45,695 declarations. Only `propext`, `Classical.choice` and
+`Quot.sound` are allowed. The check ran under the shared build lock against
+read-only pinned compiled dependencies, with local writable outputs; it did
+not rebuild the whole dependency tree from source. The inventory contains
+265 theorem/definition declarations: 207 theorems and 58 definitions.
+
+The goal remains incomplete. Theorems 1, 3 and 4 still require the independent
+all-order mKdV/Hill Hamiltonian identification, the sharp H^m diagonal flow
+extension, and the spectral action, coordinate, bracket and frequency
+comparisons, including the remaining source sign/mean qualifications.

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 434,
+  "audited_declarations_and_auxiliaries": 515,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -1064,12 +1064,292 @@
       "kind": "theorem",
       "name": "coeff_nls_differentialRiccatiSeries",
       "file": "NLS/ZakharovShabat/NLSRiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "multiSpatialDerivative",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "multiSpatialDerivative_X",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "iterate_multiSpatialDerivative_X",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "def",
+      "name": "evolutionaryDerivative",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evolutionaryDerivative_X",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evolutionaryDerivative_commute",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "def",
+      "name": "renameFields",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "renameFields_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "def",
+      "name": "evaluateMulti",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_C",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_add",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_mul",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_X",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_sub",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_evaluateMulti",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_evaluateMulti",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_evaluateMulti",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_evaluateMulti_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/MultiJet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "derivation_aeval_mvPolynomial",
+      "file": "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "backgroundEmbedding",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "backgroundEmbedding_X",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "backgroundEmbedding_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "independentJetVariation",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independentJetVariation_background_X",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independentJetVariation_commute",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "variationFields",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluateMulti_backgroundEmbedding",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_independentJetVariation",
+      "file": "NLS/DifferentialPolynomial/IndependentJetVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "iterate_spatialDerivative_C_mul",
+      "file": "NLS/DifferentialPolynomial/EulerScalar.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eulerDerivative_C_mul",
+      "file": "NLS/DifferentialPolynomial/EulerScalar.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_differentialRiccatiSequence",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_differentialRiccatiSeries",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_riccatiResolventDenominator",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_riccatiResolventInverse",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_riccatiResolventA",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_riccatiResolventB",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_riccatiResolventCoupling",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_of_periodic_integral_mul_eq",
+      "file": "NLS/Fourier/PeriodicVariationalUniqueness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneL2Distribution",
+      "file": "NLS/Fourier/PeriodOneDistributionDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneL2Distribution_derivative_eq",
+      "file": "NLS/Fourier/PeriodOneDistributionDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nlsResolventCoefficientA",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nlsResolventCoefficientB",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "backgroundEmbedding_nlsResolventA",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "backgroundEmbedding_nlsResolventB",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_nlsResolvent_jet_variation",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_firstVariationDensity_eq_resolvent",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_euler_nlsRiccati_density_fst",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_euler_nlsRiccati_density_snd",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyGradient_eq_resolvent",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_nlsResolventA_odd_diagonal",
+      "file": "NLS/MKdV/HierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_nlsResolventB_odd_diagonal",
+      "file": "NLS/MKdV/HierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHierarchyGradient_diagonal_recurrence",
+      "file": "NLS/MKdV/HierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevHierarchyGradient_diagonal_recurrence",
+      "file": "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevHierarchyGradient_proportional_recurrence",
+      "file": "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_ii_corrected_coefficients",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_ii_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean"
     }
   ],
-  "public_declaration_count": 209,
-  "theorem_count": 161,
-  "definition_count": 48,
-  "full_build": "All 42 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 265,
+  "theorem_count": 207,
+  "definition_count": 58,
+  "full_build": "All 54 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -1092,8 +1372,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "c916d2252ddd58c85df412d5e73e80ac31aabba0db11438cbbe9e24f5f7f4e0e",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "2e4461d990d593d79da0db889bff50ad2161369b5b5b9fe226c1369731c6c698",
+    "scripts/check_mkdv_nls.py": "1ca9832a0371f97faa630f82fa2c381dbfe8e1daaa1d7fb8b52da8c0777ed79a",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "5e73eef25e7e5add6361d1ea0b0eb90e233535922eabd40c722828a6264024f6",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -1116,10 +1396,22 @@
     "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
     "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "df7bee1d370d3c77a2f8a2c6ad100982f97ae78238cfa694e629e65dc1a7e658",
     "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc",
-    "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c"
+    "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
+    "NLS/DifferentialPolynomial/MultiJet.lean": "585b347d3267cb858b8002e3d92750d9b409eafe5b0f5a58a23ce05dae039843",
+    "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f",
+    "NLS/DifferentialPolynomial/IndependentJetVariation.lean": "3c326915c7e37843a9d0356c167a10e0210c870a48255ff5ae3d68a8e4111d61",
+    "NLS/DifferentialPolynomial/EulerScalar.lean": "d9ea3583259ef6c15d44c88cbefb20f86df001ab0483e781f750eddec49eb908",
+    "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean": "15f7b972b8f3ad68432c86257f9ce5068a378ce7a0ed0ba54d2d4df92833afae",
+    "NLS/Fourier/PeriodicVariationalUniqueness.lean": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d",
+    "NLS/Fourier/PeriodOneDistributionDerivative.lean": "63388da28ec4f50b25fd5c3a8343e576d9ecf5977ca05688c004b82ee8d1a7e8",
+    "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
+    "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
+    "NLS/MKdV/HierarchyGradientRecurrence.lean": "d263ef32f6b8d996f6f2e730f59d972fe2a5b1aba090f27e85d4cefccc002b10",
+    "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
+    "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 42,
+  "focused_module_count": 54,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -1156,11 +1448,17 @@
       "audit_count": 434,
       "combined_NLS_audit_count": 45611,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "Theorem 2(ii) on the original complex Sobolev domain with corrected matrix",
+      "audit_count": 515,
+      "combined_NLS_audit_count": 45695,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45611,
+  "combined_audited_NLS_declarations": 45695,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

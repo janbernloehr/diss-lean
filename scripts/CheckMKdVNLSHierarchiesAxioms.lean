@@ -6,6 +6,7 @@ import NLS.ZakharovShabat.ClassicalNLSHierarchyVariation
 import NLS.Articles.MKdVNLSHierarchies.GradientSymmetries
 import NLS.ZakharovShabat.NLSRiccatiResolvent
 import NLS.DifferentialPolynomial.RiccatiResolventVariation
+import NLS.Articles.MKdVNLSHierarchies.GradientRecurrence
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -18,6 +19,17 @@ run_cmd do
     `NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence,
     `NLS.ZakharovShabat.coeff_nls_differentialRiccatiSeries,
     `NLS.Fourier.circleUnitCoefficients,
+    `NLS.Fourier.eq_of_periodic_integral_mul_eq,
+    `NLS.Fourier.periodOneL2Distribution,
+    `NLS.ZakharovShabat.nlsResolventCoefficientA,
+    `NLS.ZakharovShabat.nlsResolventCoefficientB,
+    `NLS.ZakharovShabat.backgroundEmbedding_nlsResolventA,
+    `NLS.ZakharovShabat.backgroundEmbedding_nlsResolventB,
+    `NLS.ZakharovShabat.exists_nlsResolvent_jet_variation,
+    `NLS.ZakharovShabat.integral_firstVariationDensity_eq_resolvent,
+    `NLS.ZakharovShabat.evaluate_euler_nlsRiccati_density_fst,
+    `NLS.ZakharovShabat.evaluate_euler_nlsRiccati_density_snd,
+    `NLS.ZakharovShabat.classicalNLSHierarchyGradient_eq_resolvent,
     `NLS.ZakharovShabat.topSobolevJetCircleL2,
     `NLS.ZakharovShabat.sobolevMonomialL2,
     `NLS.ZakharovShabat.analyticAt_sobolevMonomialL2,
@@ -80,6 +92,9 @@ run_cmd do
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected_coefficients,
+    ``NLS.ZakharovShabat.classicalNLSHierarchyGradient_eq_resolvent,
     ``NLS.MKdV.classicalNLSHamiltonian_three_diagonal,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors,
