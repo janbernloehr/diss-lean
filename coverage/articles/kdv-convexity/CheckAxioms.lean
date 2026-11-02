@@ -13,6 +13,7 @@ import NLS.KdV.ClassicalL2ContourAgreement
 import NLS.KdV.HillL2DiscAsymptotics
 import NLS.KdV.HillL2GapSquareFamilies
 import NLS.KdV.HillL2HighMomentFamilies
+import NLS.KdV.HillL2ArnoldActionComparison
 import NLS.KdV.ClassicalHillGapQuotientAsymptotics
 import NLS.KdV.ClassicalHillArnoldActionComparison
 import NLS.KdV.ActionHamiltonianFiniteGap

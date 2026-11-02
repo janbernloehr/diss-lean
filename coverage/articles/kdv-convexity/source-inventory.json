@@ -306,12 +306,30 @@
         "NLS.KdV.exists_hillL2_source_small_gap_coverage",
         "NLS.KdV.exists_hillL2_high_annulus_neighborhood",
         "NLS.KdV.exists_hillL2_high_energy_annulus_neighborhood",
-        "NLS.KdV.exists_analytic_hillL2HighContourMomentFamilies"
+        "NLS.KdV.exists_analytic_hillL2HighContourMomentFamilies",
+        "NLS.KdV.HillL2HighGapPair.squared_primitive_multiplicity",
+        "NLS.KdV.exists_hillL2_gap_quotient_bounds",
+        "NLS.KdV.exists_hillL2_gap_scaled_primitive_bounds",
+        "NLS.KdV.exists_hillL2_cut_root_local_sign",
+        "NLS.KdV.exists_hillL2_gap_cut_roots",
+        "NLS.KdV.exists_hillL2_high_power_period_radius_independence",
+        "NLS.KdV.hillL2HighContourMoment_zero_eq_shifted_period",
+        "NLS.KdV.hillL2_power_period_eq_signed_cut_period",
+        "NLS.KdV.exists_hillL2_high_cubic_gap_bounds",
+        "NLS.KdV.exists_hillL2_high_weighted_cubic_gap_bounds",
+        "NLS.KdV.exists_analytic_hillL2_moments_with_gap_bounds",
+        "NLS.KdV.exists_hillL2_free_square_comparison",
+        "NLS.KdV.exists_hillL2_quadratic_square_comparison",
+        "NLS.KdV.exists_hillL2_normalized_gap_quotients",
+        "NLS.KdV.exists_hillL2_near_free_gap_units",
+        "NLS.KdV.exists_hillL2_high_action_gap_comparison_and_zero_locus",
+        "NLS.KdV.exists_hillL2_high_action_gap_comparison",
+        "NLS.KdV.exists_analytic_hillL2_moments_with_action_bounds"
       ],
       "remaining": [
-        "Use the constructed actual L2 high pairs, full-gap analytic squares, exact multiplicities and uniform root confinement to prove uniform L2 deflated-unit, quartic-moment and action-gap estimates; extend to H^-1. Complete central gaps, the full canonical unsquared primitive, intrinsic global label identification and nonpositivity.",
-        "The actual high source moments now form analytic families on common complex L2 neighborhoods, and original continuous contours agree with their L2 energy-circle realizations. Extend to physical H^-1 spectral/action data and prove analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
-        "Prove the quantitative quartic and quadratic action estimates uniformly on the constructed L2 neighborhoods. Identify the level-zero period with the global H^-1 Birkhoff actions and descend to the common weighted action neighborhood.",
+        "Extend the actual L2 spectral periods and their proved uniform quartic, gap/action and quadratic weighted moment bounds to H^-1. Complete central gaps, full canonical unsquared continuation, intrinsic global label identification and nonpositivity.",
+        "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
+        "Prove that the discriminant-dependent cubic moments descend analytically to one common complex neighborhood of the weighted nonnegative action cone. Pull back to positive-index ell2 and apply the checked global analytic summation theorem.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
         "Identify its bilinear Hilbert gradient with physical KdV frequencies minus 8*pi^3*n^3 on the full common domain.",
         "Prove the KdV quadratic Taylor coefficients giving -6*Id.",
@@ -482,7 +500,8 @@
     "joint_energy_potential_high_endpoint_limit_proved": true,
     "actual_high_squared_primitive_joint_local_matching_proved": true,
     "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
-    "continuous_Arnold_period_quadratic_bounds_proved": true
+    "continuous_Arnold_period_quadratic_bounds_proved": true,
+    "L2_Arnold_period_quadratic_bounds_proved": true
   },
   "high_contour_progress": {
     "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
@@ -506,7 +525,8 @@
     "L2_Hill_operator_spectral_equivalence_proved": true,
     "Hminus1_Hill_operator_spectral_equivalence_proved": false,
     "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
-    "continuous_Arnold_period_quadratic_bounds_proved": true
+    "continuous_Arnold_period_quadratic_bounds_proved": true,
+    "L2_Arnold_period_quadratic_bounds_proved": true
   },
   "high_energy_pair_progress": {
     "potential_space": "C([0,1], C), with complex sup-norm topology",
@@ -533,7 +553,8 @@
     "primitive_endpoint_limits_minus_i_n_pi_proved": true,
     "endpoint_limit_scope": "At every actual high radicand zero, for real continuous potentials on a common complex neighborhood and cutoff, from both nonreal energy half-planes; no simplicity assumed. Literal values at excluded branch points not asserted.",
     "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
-    "continuous_Arnold_period_quadratic_bounds_proved": true
+    "continuous_Arnold_period_quadratic_bounds_proved": true,
+    "L2_Arnold_period_quadratic_bounds_proved": true
   },
   "spectral_reality_progress": {
     "potential_space": "C([0,1], C), real-valued locus",
@@ -661,7 +682,9 @@
     "physical_renormalized_Hamiltonian_identification_proved": false,
     "physical_action_gap_comparison_scope": "Global H^-1/Birkhoff action identification and bounds; still open.",
     "continuous_Arnold_period_gap_comparison_proved": true,
-    "continuous_Arnold_period_quadratic_moment_bound_proved": true
+    "continuous_Arnold_period_quadratic_moment_bound_proved": true,
+    "L2_Arnold_period_gap_comparison_proved": true,
+    "L2_Arnold_period_quadratic_moment_bound_proved": true
   },
   "physical_L2_primitive_agreement_progress": {
     "shared_branch": "articles/kdv-estimates",
@@ -687,17 +710,18 @@
     "actual_periodic_H2_operator_L2_characteristic_equivalence_reused": true,
     "L2_spectral_reality_reused": true,
     "global_intrinsic_labels_imported_in_this_milestone": false,
-    "uniform_L2_quartic_gap_bound_proved": false,
+    "uniform_L2_quartic_gap_bound_proved": true,
     "Hminus1_extension_proved": false,
-    "actual_action_gap_lower_comparison_proved": false,
+    "actual_action_gap_lower_comparison_proved": true,
     "global_Birkhoff_action_identification_proved": false,
     "analytic_weighted_action_descent_proved": false,
-    "action_gap_comparison_scope": "Uniform L2 topology comparison; not inferred from the stronger continuous-potential norm.",
+    "action_gap_comparison_scope": "Uniform complex L2 neighborhoods for the actual source-normalized energy-circle Arnold periods. Global H^-1/Birkhoff action identification remains open.",
     "original_frequency_Arnold_and_cubic_contours_identified_with_L2_energy_contours": true,
     "period_comparison_uniform_in_continuous_topology": true,
     "local_L2_Banach_analyticity_of_each_checked_cubic_period": true,
     "whole_high_gap_squares_and_joint_indexed_branch_limits_in_L2_proved": true,
-    "all_actual_high_Arnold_and_cubic_periods_analytic_on_one_complex_L2_neighborhood": true
+    "all_actual_high_Arnold_and_cubic_periods_analytic_on_one_complex_L2_neighborhood": true,
+    "uniform_L2_quadratic_weighted_moment_bound_proved": true
   },
   "free_gap_quotient_normalization_progress": {
     "potential_space": "C([0,1], C), complex sup-norm topology",
@@ -728,7 +752,8 @@
     "Hminus1_extension_proved": false,
     "weighted_action_descent_proved": false,
     "actual_action_gap_lower_comparison_scope": "Constructed continuous-potential Arnold period on the original high contour; not yet the global H^-1 Birkhoff action.",
-    "global_Birkhoff_action_identification_proved": false
+    "global_Birkhoff_action_identification_proved": false,
+    "L2_endpoint_quotient_and_unit_root_extension_proved": true
   },
   "arnold_action_comparison_progress": {
     "potential_space": "C([0,1], C), complex sup-norm topology",
@@ -751,7 +776,7 @@
     "analytic_individual_endpoint_labels_assumed": false,
     "globally_fixed_positive_unsquared_sheet_assumed": false,
     "real_action_nonnegativity_proved": false,
-    "uniform_L2_topology_extension_proved": false,
+    "uniform_L2_topology_extension_proved": true,
     "Hminus1_extension_proved": false,
     "global_Birkhoff_action_identification_proved": false,
     "weighted_action_descent_proved": false,
@@ -789,8 +814,8 @@
     "actual_L2_period_zero_iff_collapsed_classical_gap_proved": true,
     "quadratic_L2_period_bound_in_continuous_topology_proved": true,
     "bound": "norm(8*n*pi*hillL2HighCubicContourMoment n q)<=C*norm(hillL2HighContourMoment n 0 q)^2",
-    "uniform_estimate_topology": "Complex continuous-potential sup norm; not the L2 norm.",
-    "uniform_L2_topology_extension_proved": false,
+    "uniform_estimate_topology": "Complex L2 norm; proved directly for actual L2 periods, without inference from continuous-potential bounds.",
+    "uniform_L2_topology_extension_proved": true,
     "canonical_L2_global_label_identification_proved": false,
     "Hminus1_extension_proved": false,
     "global_Birkhoff_action_identification_proved": false,
@@ -812,7 +837,7 @@
     "source_path_uniformity_proved": true,
     "source_path": "Same N,V work for every (s:C)*a with real 0<=s<=1",
     "affine_realization_assumed_to_preserve_zero": false,
-    "uniform_L2_gap_square_root_and_quartic_moment_bounds_proved": false,
+    "uniform_L2_gap_square_root_and_quartic_moment_bounds_proved": true,
     "Hminus1_extension_proved": false,
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
@@ -846,9 +871,9 @@
     "real_period_one_L2_pair_ordering_proved": true,
     "real_ordering_uses_actual_L2_operator_reality": true,
     "canonical_intrinsic_global_label_identification_proved": false,
-    "uniform_L2_deflated_unit_root_estimates_proved": false,
-    "uniform_L2_quartic_moment_bound_proved": false,
-    "uniform_L2_action_gap_lower_bound_proved": false,
+    "uniform_L2_deflated_unit_root_estimates_proved": true,
+    "uniform_L2_quartic_moment_bound_proved": true,
+    "uniform_L2_action_gap_lower_bound_proved": true,
     "full_canonical_unsquared_primitive_domain_constructed": false,
     "Hminus1_extension_proved": false,
     "global_Birkhoff_action_identification_proved": false,
@@ -867,7 +892,46 @@
     "actual_shifted_cubic_moments_analytic_on_the_same_L2_neighborhood": true,
     "cubic_contour": "(1/pi)*integral_energy_circle(F+i*n*pi)^3, center (n*pi)^2 and radius n",
     "Arnold_action_contour": "hillL2HighContourMoment n 0 = -(1/pi)*integral_energy_circle F",
-    "uniform_L2_quartic_or_quadratic_action_estimates_proved": false,
+    "uniform_L2_quartic_or_quadratic_action_estimates_proved": true,
     "analytic_action_space_descent_proved": false
+  },
+  "L2_quantitative_period_progress": {
+    "potential_space": "Full complex Coeff 2 with its L2 norm; physical period-one inputs are the even-supported subspace of the period-two Fourier model.",
+    "requires_continuous_potential": false,
+    "requires_real_or_even_supported_input": false,
+    "quantifiers": "For each q there are C>0, N>0 and a complex L2-open V containing q, before every n>=N and every nearby a in V. The actual cubic and level-zero Arnold periods are analytic on that same V.",
+    "actual_Arnold_period_A_n": "hillL2HighContourMoment n 0 = -(1/pi)*integral_energy_circle F, center (n*pi)^2 and radius n",
+    "actual_cubic_period_R_n": "hillL2HighCubicContourMoment n = (1/pi)*integral_energy_circle(F+i*n*pi)^3, same center and radius",
+    "uniform_filled_quotient_bound": "norm(Q_n)<=4/(n*pi*r)^2 on the full closed energy disc",
+    "actual_endpoint_confinement": "norm(endpoint-(n*pi)^2)<(n*pi*r)/32",
+    "uniform_primitive_square_gap_bound": "norm(K_n)<=9*norm(gamma_n)^2/(n*pi*r)^2 on the full gap-length disc",
+    "uniform_admissible_primitive_gap_bound": "norm(F+i*n*pi)<=C*norm(gamma_n)/n",
+    "full_local_cut_root_constructed": true,
+    "collapsed_cut_root_extends_through_endpoint": true,
+    "uniform_energy_radius_independence_all_integer_powers_proved": true,
+    "cut_matching_circle": "radius R/4 where R=n*pi*r; R/4<=n because r<=pi/4 and pi<4",
+    "cut_sign_matching": "One sign on a connected energy circle; no global sign on all overlap components is assumed.",
+    "quartic_cubic_moment_bound": "norm(R_n)<=C*norm(gamma_n)^4/n^3",
+    "weighted_gap_bound": "norm(8*n*pi*R_n)<=Cprime*(norm(gamma_n)^2/n)^2",
+    "fixed_radius_before_free_comparison_tolerance": true,
+    "free_scalar_models_reused": "classicalHillFreeShiftedSquare and classicalHillFreeQuadraticModel are pure energy/index scalar functions, with no continuous-potential input.",
+    "free_square_comparison": "norm(K_n-(-(sqrt(lambda)-n*pi)^2))<=epsilon*r^2",
+    "quadratic_model_comparison": "norm(K_n-(-(lambda-(n*pi)^2)^2/(4*(n*pi)^2)))<=epsilon*r^2",
+    "normalized_quotient_comparison": "norm(4*(n*pi)^2*Q_n+1)<=epsilon on the full closed energy disc",
+    "energy_analytic_unit_root": "H_n^2=Q_n and norm(H_n-i/(2*n*pi))<=epsilon/(2*n*pi), uniformly in nearby complex L2 potentials",
+    "joint_potential_analyticity_of_deflated_unit_root_proved": false,
+    "one_neighborhood_for_every_error_tolerance_asserted": false,
+    "actual_action_gap_lower_bound": "norm(gamma_n)^2/n<=16*pi*norm(A_n)",
+    "exact_zero_locus": "A_n=0 iff the actual high pair collapses",
+    "weighted_quadratic_action_bound": "norm(8*n*pi*R_n)<=C*norm(A_n)^2",
+    "same_L2_neighborhood_for_analyticity_and_quadratic_bound": true,
+    "collapsed_gaps_included": true,
+    "analytic_individual_endpoint_labels_assumed": false,
+    "real_action_nonnegativity_or_cubic_nonpositivity_proved": false,
+    "canonical_global_label_identification_proved": false,
+    "Hminus1_extension_proved": false,
+    "A_n_identified_with_global_Birkhoff_I_n": false,
+    "analytic_weighted_action_descent_proved": false,
+    "global_ell2_physical_Hamiltonian_extension_proved": false
   }
 }

@@ -46,7 +46,8 @@ concavity/inverse preparation is preserved.
 The original Arnold and cubic periods now agree exactly with the shared
 L2 energy-circle periods. The actual L2 trace also admits uniform free
 approximation on full high discs and source paths in complex L2 neighborhoods;
-the corresponding quantitative uniform L2 moment bounds remain open.
+the corresponding quartic gap, Arnold-period comparison and quadratic
+weighted moment bounds are now proved on complex L2 neighborhoods.
 The high analytic square construction, complete actual L2 gap containment,
 joint indexed branch limits and common high-moment analytic domains are
 now proved in the L2 topology as well.
@@ -914,9 +915,9 @@ the energy circle with center pi^2*n^2 and radius n. The same identity
 holds with the exact indexed shift F+i*n*pi. The shared L2 integration by
 parts theorem supplies the Arnold integrand lambda*Delta_prime/root
 with factor 1/pi. These are checked contour identities and local L2
-analyticity; they do not yet identify a global Birkhoff action map or
-prove the quantitative comparison in the L2 topology. The comparison
-for the constructed continuous-potential high Arnold periods is proved below.
+analyticity; they do not yet identify the global H^-1 Birkhoff action
+coordinates. The quantitative comparison
+is now proved directly in the L2 topology below.
 
 ## Actual Arnold periods and quadratic moment control
 
@@ -990,12 +991,12 @@ comparison, exact collapsed-gap zero locus, and quadratic bound
   <= C*|hillL2HighContourMoment n 0 q|^2.
 ```
 
-The common neighborhood controlling this inequality uses the continuous
-sup norm. The common L2 high-moment analytic domain is now proved below; a
-quantitative uniform L2 tail bound still does not follow from analyticity
-alone. Uniform rough-topology estimates, H^-1 extension, canonical global
-labels, Birkhoff action identification and analytic weighted-action descent
-remain open; the global ell2 Hamiltonian extension is not yet asserted.
+This earlier comparison used the continuous sup norm. The same bound
+for the actual periods is now proved directly on complex L2 neighborhoods
+below, together with their common analytic domain. H^-1 extension,
+canonical global labels, Birkhoff action identification and analytic
+weighted-action descent remain open; the global ell2 Hamiltonian
+extension is not yet asserted.
 
 ## Uniform high-disc trace control in the L2 topology
 
@@ -1022,7 +1023,7 @@ The proof transfers the established exterior ZS estimate and applies the
 maximum-modulus principle. This now supplies the full L2 gap-square
 construction described below.
 Uniform L2 endpoint-deflated unit-root, action-gap and quadratic moment
-estimates, and the H^-1 extension, remain to be proved.
+estimates are now proved below. The H^-1 extension remains open.
 
 ## Actual whole-gap squares and moment domains in L2
 
@@ -1072,10 +1073,65 @@ assertion includes the even-support and reality hypotheses explicitly.
 
 The squared primitive is filled across the whole energy disc; the
 unsquared source primitive is still compared only on its checked source
-domain. Uniform L2 endpoint-deflated unit estimates, quartic moment and
-action-gap bounds, full canonical unsquared continuation, H^-1 extension,
-Birkhoff action identification and weighted-action descent remain open.
+domain. The quantitative uniform L2 estimates are now proved below.
+Full canonical unsquared continuation, H^-1 extension, Birkhoff action
+identification and weighted-action descent remain open.
 The global physical ell2 Hamiltonian extension is not yet proved.
+
+## Quantitative actual L2 periods on common complex neighborhoods
+
+`HillL2GapQuotients.lean` constructs the actual filled endpoint quotient
+Q_n, with |Q_n|<=4/(n*pi*r)^2 throughout the full closed energy disc.
+It handles collapsed pairs using their exact order two. The actual
+endpoints lie inside radius R/32, where R=n*pi*r. Here gamma_n=|l_n-u_n|.
+`HillL2GapScaleBounds.lean` gives |K_n|<=9*gamma_n^2/R^2 on the
+whole gap-length disc, and |F+i*n*pi|<=C*gamma_n/n wherever admissible.
+`HillL2GapCutRoots.lean` constructs the corresponding analytic cut roots,
+with the same scale bound and analytic extension through collapsed gaps.
+
+`HillL2MomentRadius.lean` proves uniform energy-radius independence for
+every integer power of the shifted actual primitive. The connected
+energy-circle comparison in `HillL2MomentCutRoot.lean` uses one fixed
+sign on that circle. Its radius R/4 lies within the original
+radius-n energy circle. The actual cubic period then shrinks to the
+gap-length circle in `HillL2CubicGapBounds.lean`, giving
+
+```
+|R_n| <= C*gamma_n^4/n^3,
+|8*n*pi*R_n| <= Cprime*(gamma_n^2/n)^2.
+```
+
+`HillL2FreeSquareComparison.lean` fixes a radius before the error tolerance
+and compares the actual filled square with the exact free square and its
+quadratic model. `HillL2GapQuotientAsymptotics.lean` proves
+|4*(n*pi)^2*Q_n+1|<=epsilon on each full high disc and constructs an
+energy-analytic unit root within epsilon/(2*n*pi) of i/(2*n*pi).
+The constants and neighborhoods are uniform over nearby complex L2
+potentials and high indices; the neighborhood may depend on epsilon.
+Joint potential analyticity of this chosen unit root is not asserted.
+
+`HillL2ArnoldActionComparison.lean` applies the exact oriented endpoint-root
+period to the actual level-zero Arnold period A_n. It proves
+
+```
+gamma_n^2/n <= 16*pi*|A_n|,
+A_n=0 iff the actual high pair collapses,
+|8*n*pi*R_n| <= C*|A_n|^2.
+```
+
+For every input potential, one C>0, one N>0 and one complex L2-open V
+are chosen before every n>=N and every nearby potential in V. Both
+actual periods are analytic on this same V. Their definitions use the
+energy circle centered at (n*pi)^2 with radius n: A_n=-(1/pi)*integral F
+and R_n=(1/pi)*integral(F+i*n*pi)^3. These are the same source-normalized
+periods already identified with the original continuous contours.
+No continuous representative, reality, even Fourier support, analytic
+individual labels or globally fixed cut-root sign is assumed.
+
+This proves the uniform quantitative bounds in the L2 topology. H^-1
+extension, identification with the global Birkhoff actions, analytic
+weighted-action descent, real nonpositivity and physical Hamiltonian
+identification remain open. Theorem 1.1 is not yet proved.
 
 ## Earlier checked local consequences
 
@@ -1114,11 +1170,10 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Extend the proved **complex-neighborhood** bound
-   |R_n|=O(gamma_n^4/n^3) from continuous potentials to the required rough
-   action setting. The continuous-potential Arnold periods now satisfy
-   gamma_n^2/n<=16*pi*|A_n| and the resulting quadratic weighted moment
-   estimate, uniformly in n and nearby complex potentials. Extend this to
-   the rough topology and identify A_n with the global Birkhoff actions I_n.
+   |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
+   |8*n*pi*R_n|<=C*|A_n|^2 from the proved complex L2 neighborhoods
+   to H^-1. Identify A_n with the global Birkhoff actions I_n and descend
+   the moments analytically to the common weighted action neighborhood.
 3. Apply the checked analytic reduction to those actual moments. Then prove
    the identification of the exterior quartic coefficient with the physical
    energy from (4.7). The contour decomposition and calculation in
@@ -1165,12 +1220,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 114 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 123 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in fourteen additional shared modules:
-1364 declarations in total, transitively. Only `propext`,
+1427 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
