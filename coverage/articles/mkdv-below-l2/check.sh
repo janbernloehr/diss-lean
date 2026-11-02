@@ -10,7 +10,21 @@ export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Code
 lean_bin="${LEAN_BIN:-$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean}"
 build_root="${MKDV_BUILD_ROOT:-$project_dir/.lake/mkdv-below-l2/lib/lean}"
 mkdir -p "$build_root/NLS/Articles/MKdVBelowL2"
-# Symlink established namespaces for imports only; all new outputs stay local.
+# New modules coexist with read-only symlinks to the established namespaces.
+for namespace in FunctionalAnalysis ZakharovShabat MKdV Dynamics Poisson; do
+  target="$build_root/NLS/$namespace"
+  if [[ -L "$target" ]]; then
+    rm "$target"
+  fi
+  mkdir -p "$target"
+  if [[ -d "$canonical/.lake/build/lib/lean/NLS/$namespace" ]]; then
+    for entry in "$canonical/.lake/build/lib/lean/NLS/$namespace"/*; do
+      if [[ ! -e "$target/${entry##*/}" ]]; then
+        ln -s "$entry" "$target/${entry##*/}"
+      fi
+    done
+  fi
+done
 for entry in "$canonical"/.lake/build/lib/lean/NLS/*; do
   name="${entry##*/}"
   if [[ "$name" != Articles && ! -e "$build_root/NLS/$name" ]]; then
@@ -25,9 +39,37 @@ for pkg in "$canonical"/.lake/packages/*; do
 done
 cd "$project_dir"
 "$lean_bin" --version
-for module in SmoothRenormalization TranslationFourier PhysicalBirkhoff FourthMomentSummability; do
-  "$lean_bin" -o "$build_root/NLS/Articles/MKdVBelowL2/$module.olean" \
-    "NLS/Articles/MKdVBelowL2/$module.lean"
+modules=(
+  FunctionalAnalysis/ComplexRealEquiv
+  Dynamics/ComplexBirkhoffCoordinatesExponent
+  Dynamics/ConjugatePairEquiv
+  Poisson/ComplexCanonicalCoordinates
+  ZakharovShabat/SourceRealBallCoreIdentity
+  ZakharovShabat/SourceComplexBirkhoffCanonical
+  ZakharovShabat/SobolevHierarchySymmetries
+  MKdV/HierarchyRestriction
+  ZakharovShabat/ClassicalNLSFourthHamiltonian
+  ZakharovShabat/ClassicalNLSFourthVariation
+  MKdV/ClassicalEnergyVariation
+  MKdV/ClassicalFourthFlowRestriction
+  Articles/MKdVBelowL2/SmoothRenormalization
+  Articles/MKdVBelowL2/TranslationFourier
+  Articles/MKdVBelowL2/PhysicalBirkhoff
+  Articles/MKdVBelowL2/CompatibleBirkhoffFamily
+  Articles/MKdVBelowL2/PhysicalBirkhoffCanonical
+  Articles/MKdVBelowL2/HilbertBirkhoffIdentification
+  Articles/MKdVBelowL2/RealBirkhoffFamily
+  Articles/MKdVBelowL2/Theorem12
+  Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow
+  Articles/MKdVBelowL2/FourthMomentSummability
+)
+for module in "${modules[@]}"; do
+  mkdir -p "$build_root/NLS/$(dirname "$module")"
+  if [[ -L "$build_root/NLS/$module.olean" ]]; then
+    printf 'Refusing to write through canonical import symlink: %s\n' "$module" >&2
+    exit 1
+  fi
+  "$lean_bin" -DautoImplicit=false -DwarningAsError=true -o "$build_root/NLS/$module.olean" "NLS/$module.lean"
   printf '%s: checked\n' "$module"
 done
-"$lean_bin" NLS/Articles/MKdVBelowL2/AxiomAudit.lean
+"$lean_bin" -DautoImplicit=false -DwarningAsError=true NLS/Articles/MKdVBelowL2/AxiomAudit.lean

@@ -1,9 +1,12 @@
 # mKdV below L² — initial private verification step
 
-Status: **main theorems not yet verified**. The first private step checked four
-classical/Fourier translation lemmas. The second step adds the physical
-Birkhoff input adapter and absolute convergence of the H₄ candidate moment sum
-for 1<p≤3. See [the current progress record](PROGRESS.md).
+Status: **Theorem 1.2 is verified under the accepted manuscript reference.**
+Theorems 1.1 and 1.3 remain unverified. The physical Birkhoff family now has
+precise article statements, complex-domain compatibility and canonicality,
+complete real source/target models, analytic inverses and accepted Hilbert
+identification. The earlier H₄ candidate convergence remains at 1<p≤3.
+See [the current progress record](PROGRESS.md) and the
+[Theorem 1.2 clause map](theorem-1.2.json).
 
 The user approved separate worktrees on 2026-11-02. Work is now on
 `articles/mkdv-below-l2`, based on `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
@@ -120,10 +123,10 @@ as an operator on real FL^p distributions remains separate work.
   injectivity, analytic image inverse, and zero value. The weighted variants
   `SourceBirkhoffWeightedImageInverse.lean` and
   `SourceBirkhoffWeightedComplexAnalytic.lean` retain native coefficient
-  values and analytic domains. They are promising Theorem 1.2 dependencies,
-  not yet an article theorem: instantiate their constructed physical data,
-  identify rectangular vs complex coordinates, physical FL^p, cross-p
-  agreement, canonical sign, dense image and p=2 surjectivity together.
+  values and analytic domains. These supplied Theorem 1.2's physical family,
+  with the constructed data, complex coordinate change, cross-p agreement,
+  canonical sign, dense image and p=2 comparison now assembled in
+  `NLS/Articles/MKdVBelowL2/Theorem12.lean`.
 * `NLS/Dynamics/PhaseContinuityEstimate.lean`, `PhaseContinuityChoice.lean`,
   and `NLS/SequenceSpaces/SpatialTranslation.lean`: reusable finite-head/tail
   phase control and continuous translation. No new competing proofs needed.
@@ -141,11 +144,12 @@ as an operator on real FL^p distributions remains separate work.
 
 ## Outstanding dependencies and integration order
 
-1. Consume the mKdV–NLS hierarchy task's H₄ restriction, diagonal symmetry,
-   Poisson normalization and physical Hamiltonian identification. Do not
-   create an alternative hierarchy bridge.
-2. Finish Theorem 1.2's exact physical FL^p/Birkhoff adapter from the existing
-   constructions, including dense image and conjugation/reflection symmetry.
+1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
+   branch. Continue its use for the diagonal Birkhoff symmetry and frequency
+   identification; do not create an alternative hierarchy bridge.
+2. Theorem 1.2's physical FL^p/Birkhoff family, canonicality, dense image and
+   accepted Hilbert comparison are now implemented. The smaller mKdV diagonal's
+   conjugation/reflection invariance is still needed for Theorem 1.1.
 3. Build the H₄ frequency representation and locally uniform estimates of
    Section 5 (Theorem 5.4, pp. 25–26), then prove Theorem 1.3. Existing
    dissertation H₃ frequency bounds are not this theorem.
@@ -158,9 +162,9 @@ as an operator on real FL^p distributions remains separate work.
    should select n≠0. Corollary 7.2(iii) needs such a mode, available outside
    L² after the physical coordinate identification. Its reference to item
    (iv) of Theorem 7.1 is a cross-reference typo; 7.1 has three items.
-6. After checkout authorization: integrate on `articles/mkdv-below-l2`,
-   validate focused modules and imports, audit all main-theorem dependencies,
-   then commit/push validated steps. Main integration remains sequential.
+6. Continue on the authorized `articles/mkdv-below-l2` worktree, validate and
+   audit each main-theorem milestone, and commit/push it. Main integration
+   remains sequential.
 
 ## Validation
 
@@ -171,8 +175,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-All four proof modules check without diagnostics. `AxiomAudit.lean` audits all
-30 new definitions, abbreviations and theorem declarations transitively;
+The expanded focused checker covers 22 new article/shared modules and the
+consumed smooth hierarchy foundations, with `autoImplicit=false` and
+`warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
+and consumed declarations (120 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

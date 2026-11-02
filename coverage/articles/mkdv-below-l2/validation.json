@@ -1,0 +1,648 @@
+{
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "modules_checked": [
+    "FunctionalAnalysis/ComplexRealEquiv",
+    "Dynamics/ComplexBirkhoffCoordinatesExponent",
+    "Dynamics/ConjugatePairEquiv",
+    "Poisson/ComplexCanonicalCoordinates",
+    "ZakharovShabat/SourceRealBallCoreIdentity",
+    "ZakharovShabat/SourceComplexBirkhoffCanonical",
+    "ZakharovShabat/SobolevHierarchySymmetries",
+    "MKdV/HierarchyRestriction",
+    "ZakharovShabat/ClassicalNLSFourthHamiltonian",
+    "ZakharovShabat/ClassicalNLSFourthVariation",
+    "MKdV/ClassicalEnergyVariation",
+    "MKdV/ClassicalFourthFlowRestriction",
+    "Articles/MKdVBelowL2/SmoothRenormalization",
+    "Articles/MKdVBelowL2/TranslationFourier",
+    "Articles/MKdVBelowL2/PhysicalBirkhoff",
+    "Articles/MKdVBelowL2/CompatibleBirkhoffFamily",
+    "Articles/MKdVBelowL2/PhysicalBirkhoffCanonical",
+    "Articles/MKdVBelowL2/HilbertBirkhoffIdentification",
+    "Articles/MKdVBelowL2/RealBirkhoffFamily",
+    "Articles/MKdVBelowL2/Theorem12",
+    "Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow",
+    "Articles/MKdVBelowL2/FourthMomentSummability"
+  ],
+  "strict_options": [
+    "autoImplicit=false",
+    "warningAsError=true"
+  ],
+  "audited_declarations": {
+    "NLS.FunctionalAnalysis.complexRealEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.complexRealEquiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.FunctionalAnalysis.complexRealEquiv_symm_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.rectangularToComplex_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.conjugatePairSubmodule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.conjugatePairEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.conjugatePairEquiv_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.isClosed_conjugatePairSubmodule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Birkhoff.conjugatePairCompleteSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Poisson.complexMinusCotangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Poisson.complexPlusCotangent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Poisson.complexCoordinateScale_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Poisson.complex_canonical_of_rectangular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Poisson.RegularSourceCotangent.bivector_eq_sourceBivector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.eqOn_sourceRealBallCore_of_real_agreement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_regular_canonical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_coordinates_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_canonical_on_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hierarchyComponentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hierarchyComponentSwap_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sobolevNLSHamiltonian_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sobolevNLSHamiltonian_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hierarchyReciprocalScaling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hierarchyReciprocalScaling_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_reciprocal_scaling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.hierarchyDiagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.hierarchyDiagonal_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.diagonalNLSHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.analyticAt_diagonalNLSHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.diagonalNLSHamiltonian_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalNLSHamiltonian_one_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalNLSHamiltonian_three_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.nlsRiccatiDensity_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.classicalNLSHamiltonian_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.classicalNLSFourthGradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.classicalNLSHamiltonian_four_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.classicalNLSHamiltonian_four_variation_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVEnergyGradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalMKdVEnergy_variation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.hasDerivAt_classicalMKdVEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.deriv_classicalMKdVEnergyGradient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalNLSFourthVectorField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalNLSFourthVectorField_formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.MKdV.classicalNLSFourthVectorField_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.originalDifferential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.hasDerivAt_renormalizing_translation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.renormalizedDifferential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.hasDerivAt_original_translation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.coefficient_renormalizing_translation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.coefficient_original_translation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.PhysicalFL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalCoefficients_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalBirkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalBirkhoff_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalBirkhoff_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_physicalBirkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealSubspace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.PhysicalRealInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isClosed_physicalRealSubspace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealInputCompleteSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealCoefficientsCL": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealCoefficientsCL_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.range_physicalRealBirkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_geometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalBirkhoff_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalBirkhoff_real_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_isOpenEmbedding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_physicalRealBirkhoff_geometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_localInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.OriginalBirkhoffChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_originalBirkhoffChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.originalBirkhoffChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain_open_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalCoefficients_exponent_of_same_distributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_eq_on_intersection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_coordinates_on_intersection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_canonical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFLBracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_canonical_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalHilbertRealization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalHilbertRealization_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalHilbertRealization_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_eq_intrinsic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalHilbertPairEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFLBracket_eq_integral_bracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_geometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_localInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_globalInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_2_compatible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField_gardner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_summable_cube": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.norm_index_ratio_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.summable_weighted_moment_of_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_weighted_moment_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthFrequencyCandidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_of_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "Focused build of 22 new and consumed modules; transitive audit of 120 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "main_theorems": {
+    "1.1": "not_verified",
+    "1.2": "verified_under_accepted_reference",
+    "1.3": "not_verified"
+  },
+  "imported_hierarchy_commits": [
+    "9b664f9",
+    "09fa657"
+  ]
+}

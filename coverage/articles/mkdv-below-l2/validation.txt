@@ -1,8 +1,94 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-SmoothRenormalization: checked
-TranslationFourier: checked
-PhysicalBirkhoff: checked
-FourthMomentSummability: checked
+FunctionalAnalysis/ComplexRealEquiv: checked
+Dynamics/ComplexBirkhoffCoordinatesExponent: checked
+Dynamics/ConjugatePairEquiv: checked
+Poisson/ComplexCanonicalCoordinates: checked
+ZakharovShabat/SourceRealBallCoreIdentity: checked
+ZakharovShabat/SourceComplexBirkhoffCanonical: checked
+ZakharovShabat/SobolevHierarchySymmetries: checked
+MKdV/HierarchyRestriction: checked
+ZakharovShabat/ClassicalNLSFourthHamiltonian: checked
+ZakharovShabat/ClassicalNLSFourthVariation: checked
+MKdV/ClassicalEnergyVariation: checked
+MKdV/ClassicalFourthFlowRestriction: checked
+Articles/MKdVBelowL2/SmoothRenormalization: checked
+Articles/MKdVBelowL2/TranslationFourier: checked
+Articles/MKdVBelowL2/PhysicalBirkhoff: checked
+Articles/MKdVBelowL2/CompatibleBirkhoffFamily: checked
+Articles/MKdVBelowL2/PhysicalBirkhoffCanonical: checked
+Articles/MKdVBelowL2/HilbertBirkhoffIdentification: checked
+Articles/MKdVBelowL2/RealBirkhoffFamily: checked
+Articles/MKdVBelowL2/Theorem12: checked
+Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow: checked
+Articles/MKdVBelowL2/FourthMomentSummability: checked
+'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.rectangularToComplex_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.conjugatePairSubmodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.conjugatePairEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.conjugatePairEquiv_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.isClosed_conjugatePairSubmodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.conjugatePairCompleteSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Poisson.complexMinusCotangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Poisson.complexPlusCotangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Poisson.complexCoordinateScale_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Poisson.complex_canonical_of_rectangular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Poisson.RegularSourceCotangent.bivector_eq_sourceBivector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.eqOn_sourceRealBallCore_of_real_agreement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_regular_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_coordinates_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_canonical_on_core' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.hierarchyComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.hierarchyComponentSwap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sobolevNLSHamiltonian_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sobolevNLSHamiltonian_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.hierarchyReciprocalScaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.hierarchyReciprocalScaling_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_reciprocal_scaling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.MKdV.hierarchyDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.hierarchyDiagonal_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.diagonalNLSHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.analyticAt_diagonalNLSHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.diagonalNLSHamiltonian_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalMKdVMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalMKdVEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalNLSHamiltonian_one_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalNLSHamiltonian_three_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.nlsRiccatiDensity_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalNLSHamiltonian_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalNLSFourthGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalNLSHamiltonian_four_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.classicalNLSHamiltonian_four_variation_fst' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.MKdV.classicalMKdVEnergyGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalMKdVEnergy_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.hasDerivAt_classicalMKdVEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.deriv_classicalMKdVEnergyGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalNLSFourthVectorField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalNLSFourthVectorField_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.MKdV.classicalNLSFourthVectorField_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.originalDifferential' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.hasDerivAt_renormalizing_translation' depends on axioms: [propext,
  Classical.choice,
@@ -20,7 +106,12 @@ FourthMomentSummability: checked
 'NLS.Articles.MKdVBelowL2.physicalBirkhoff_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalBirkhoff_action' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.exists_physicalBirkhoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.PhysicalRealInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClosed_physicalRealSubspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealInputCompleteSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealCoefficientsCL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealCoefficientsCL_val' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalRealCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalRealBirkhoff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.range_physicalRealBirkhoff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -32,6 +123,57 @@ FourthMomentSummability: checked
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.exists_physicalRealBirkhoff_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealBirkhoff_localInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.OriginalBirkhoffChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_originalBirkhoffChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.originalBirkhoffChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain_open_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalCoefficients_exponent_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_eq_on_intersection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_coordinates_on_intersection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFLBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_canonical_complex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalHilbertRealization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalHilbertRealization_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalHilbertRealization_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_eq_intrinsic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalHilbertPairEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFLBracket_eq_integral_bracket' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily_localInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.realBirkhoffFamily_globalInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalRenormalizedFourthField_gardner' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.exists_summable_cube' depends on axioms: [propext, Classical.choice, Quot.sound]

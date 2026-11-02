@@ -1,7 +1,8 @@
 # Progress on 2026-11-02
 
-Main Theorems 1.1–1.3 remain unverified. This commit adds actual proved
-supporting constructions, not conditional main-theorem wrappers.
+The first checkpoint below left all main theorems open. The third checkpoint
+implements Theorem 1.2; Theorems 1.1 and 1.3 remain open. Validation status is
+recorded in the current README and theorem-1.2.json.
 
 ## Physical Birkhoff adapter — Theorem 1.2 dependencies
 
@@ -66,3 +67,51 @@ the unregistered canonical source folder, so the approved ordinary Git
 worktree fallback was used. Commands explicitly target this path. The
 canonical main checkout and its build products were not edited. All compiler
 outputs remain separate; no full build or aggregate NLS import was added.
+
+
+## Third checkpoint — Theorem 1.2 and consumed physical fourth-flow bridge
+
+Theorem 1.2 now has direct article statements in `Theorem12.lean`:
+`theorem1_2_at_exponent`, `theorem1_2_compatible`, `theorem1_2_hilbert` and
+`theorem1_2_hilbert_globalInverse`. The fixed family is constructed from
+original spectral charts, then pulled back to original period-one
+distributions. Domain shrinking to real-centered ball cores makes the
+cross-exponent compatibility true on full complex intersections. The real
+source and conjugate-pair target have explicit complete real Banach structures.
+The statement includes actual analytic local inverse maps and a global
+bi-real-analytic Hilbert inverse for the same family.
+
+The canonical clause is proved on the entire complex domain by analytic
+continuation of the verified real canonical identities. Full coordinate
+differentials have regular Hilbert Fourier witnesses. The complex mixed
+bracket is exactly -i delta; `physicalFLBracket_eq_integral_bracket` proves
+that the physical Fourier bracket is the existing integral bracket in the
+Hilbert case. `compatibleBirkhoff_eq_intrinsic` identifies the p=2 family
+member with the accepted intrinsic action-angle map.
+`physicalHilbertRealization_coefficients` verifies each input distribution's
+actual unit-period Fourier coefficients in that comparison.
+
+Reusable scalar restriction, complex coordinate inclusion, conjugate-pair
+coordinates, canonical cotangent algebra and real-core uniqueness proofs
+live in FunctionalAnalysis, Dynamics, Poisson and ZakharovShabat modules.
+They are imported by the article rather than redefined inside a main theorem.
+
+The shared hierarchy commits `9b664f9` and `09fa657` were merged intact,
+preserving their ownership and proof provenance. The new
+`ClassicalRenormalizedFourthFlow.lean` consumes their physical Hamiltonian
+first-variation/field construction. Subtracting the common 6M translation
+generator yields exactly the smooth renormalized mKdV velocity, while
+retaining the physical Gardner energy-gradient identity. This does not
+identify the low-regularity sequence flow with physical solutions.
+
+Theorems 1.1 and 1.3 remain open. The H₄ candidate still has only the earlier
+1<p≤3 absolute-convergence proof; its physical frequency identification,
+all-finite-p estimates and analytic sequence bounds remain outstanding.
+Theorem 1.1 additionally needs the diagonal Birkhoff invariance,
+smooth-approximation identification, and fixed-time nonextension proof.
+
+Strict validation for the third checkpoint passed: all 22 modules compiled with
+warnings treated as errors, and all 120 audited declarations used only the
+three permitted standard axioms. Theorem 1.2 is marked verified under the
+accepted manuscript reference in `theorem-1.2.json`; Theorems 1.1 and 1.3 are
+explicitly unverified. `validation.json` stores every audited declaration.

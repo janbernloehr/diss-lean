@@ -1,3 +1,4 @@
+import NLS.FunctionalAnalysis.ComplexRealEquiv
 import NLS.Fourier.PeriodicFourierLebesgueEndpoints
 import NLS.ZakharovShabat.SourceBirkhoffDenseRange
 import NLS.ZakharovShabat.SourceBirkhoffImageInverse
@@ -12,7 +13,7 @@ existing spectral Birkhoff construction. No sequence-flow identification
 with mKdV is assumed. -/
 noncomputable section
 set_option autoImplicit false
-open Set Topology
+open Set Topology Filter
 open scoped ENNReal
 namespace NLS.Articles.MKdVBelowL2
 open NLS.Fourier NLS.Fourier.SmoothPeriodicTest NLS.ZakharovShabat
@@ -70,14 +71,36 @@ theorem exists_physicalBirkhoff (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exact ⟨W₀,B,W,s,D,D.source_open.preimage (physicalCoefficients (p := p)).continuous,
     physicalBirkhoff_analytic D⟩
 
-/-- The physical real-type pair locus, expressed on the actual distribution inputs.
-This is the NLS real form; the smaller real diagonal for mKdV is a further restriction. -/
-abbrev PhysicalRealInput (p : ℝ≥0∞) [Fact (1 ≤ p)] :=
-  {u : PhysicalFL p × PhysicalFL p // physicalCoefficients u ∈ realTypeSourceLocus p}
+/-- The NLS real form on actual physical distributions as a real Banach subspace. -/
+def physicalRealSubspace (p : ℝ≥0∞) [Fact (1 ≤ p)] :
+    Submodule ℝ (PhysicalFL p × PhysicalFL p) :=
+  let e : (PhysicalFL p × PhysicalFL p) ≃L[ℝ] CoeffPair p :=
+    NLS.FunctionalAnalysis.complexRealEquiv (physicalCoefficients (p := p))
+  Submodule.comap e.toLinearMap (realTypeSourceSubmodule p)
 
-/-- Fourier transport is a homeomorphism on the physical real form as well. -/
+/-- The physical real-type pair locus. The mKdV real diagonal is a further restriction. -/
+abbrev PhysicalRealInput (p : ℝ≥0∞) [Fact (1 ≤ p)] := ↥(physicalRealSubspace p)
+
+/-- The physical real form is closed in the complete Fourier coefficient norm. -/
+theorem isClosed_physicalRealSubspace :
+    IsClosed (physicalRealSubspace p : Set (PhysicalFL p × PhysicalFL p)) :=
+  isClosed_realTypeSourceLocus.preimage (physicalCoefficients (p := p)).continuous
+
+instance physicalRealInputCompleteSpace : CompleteSpace (PhysicalRealInput p) :=
+  isClosed_physicalRealSubspace.completeSpace_coe
+
+/-- Fourier transport respects the real Banach structures. -/
+def physicalRealCoefficientsCL : PhysicalRealInput p ≃L[ℝ] realTypeSourceSubmodule p :=
+  let e : (PhysicalFL p × PhysicalFL p) ≃L[ℝ] CoeffPair p :=
+    NLS.FunctionalAnalysis.complexRealEquiv (physicalCoefficients (p := p))
+  e.ofSubmodule' (realTypeSourceSubmodule p)
+
+@[simp] theorem physicalRealCoefficientsCL_val (u : PhysicalRealInput p) :
+    (physicalRealCoefficientsCL u).val = physicalCoefficients u.val := rfl
+
+/-- The same Fourier transport viewed as a homeomorphism. -/
 def physicalRealCoefficients : PhysicalRealInput p ≃ₜ realTypeSourceSubmodule p :=
-  (physicalCoefficients (p := p)).toHomeomorph.subtype (fun _ => Iff.rfl)
+  physicalRealCoefficientsCL.toHomeomorph
 
 /-- The existing real rectangular coordinates, now on actual physical distributions. -/
 def physicalRealBirkhoff (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -145,5 +168,37 @@ theorem exists_physicalRealBirkhoff_geometry (hp : p ≠ ⊤) (hp1 : 1 < p) :
   obtain ⟨W₀,B,W,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic hp hp1
   exact ⟨W₀,B,W,s,D,physicalRealBirkhoff_isOpenEmbedding D,
     (physicalRealBirkhoff_geometry D).2.2⟩
+
+/-- Full Banach-space real analyticity on the physical NLS real form. -/
+theorem physicalRealBirkhoff_analytic
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) :
+    AnalyticOnNhd ℝ (physicalRealBirkhoff hp hp1 s) univ := by
+  intro u _
+  exact (D.real_map_analytic _ (mem_univ _)).comp (physicalRealCoefficientsCL.analyticAt u)
+
+/-- The local inverse has the actual physical distribution space as codomain. -/
+theorem physicalRealBirkhoff_localInverse
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s) (u : PhysicalRealInput p) :
+    ∃ g : (RealCoeff p × RealCoeff p) → PhysicalRealInput p,
+      AnalyticAt ℝ g (physicalRealBirkhoff hp hp1 s u) ∧
+      g (physicalRealBirkhoff hp hp1 s u) = u ∧
+      (∀ᶠ v in 𝓝 u, g (physicalRealBirkhoff hp hp1 s v) = v) ∧
+      (∀ᶠ z in 𝓝 (physicalRealBirkhoff hp hp1 s u), physicalRealBirkhoff hp hp1 s (g z) = z) := by
+  obtain ⟨g,hg,hu,hl,hr,_⟩ := D.proposition17_1 (physicalRealCoefficientsCL u)
+  refine ⟨fun z => physicalRealCoefficientsCL.symm (g z),
+    ((physicalRealCoefficientsCL (p := p)).symm.analyticAt _).comp hg,?_,?_,?_⟩
+  · change physicalRealCoefficientsCL.symm (g (sourceRealBirkhoffMap hp hp1 s
+      (physicalRealCoefficientsCL u))) = u
+    rw [hu,ContinuousLinearEquiv.symm_apply_apply]
+  · filter_upwards [physicalRealCoefficientsCL.continuous.continuousAt.preimage_mem_nhds hl]
+      with v hv
+    change g (sourceRealBirkhoffMap hp hp1 s (physicalRealCoefficientsCL v)) =
+      physicalRealCoefficientsCL v at hv
+    change physicalRealCoefficientsCL.symm (g (sourceRealBirkhoffMap hp hp1 s
+      (physicalRealCoefficientsCL v))) = v
+    rw [hv,ContinuousLinearEquiv.symm_apply_apply]
+  · filter_upwards [hr] with z hz
+    simpa only [physicalRealBirkhoff,physicalRealCoefficients,ContinuousLinearEquiv.coe_toHomeomorph,
+      ContinuousLinearEquiv.apply_symm_apply] using hz
 
 end NLS.Articles.MKdVBelowL2
