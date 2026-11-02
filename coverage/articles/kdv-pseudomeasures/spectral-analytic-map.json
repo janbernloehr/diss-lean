@@ -1,5 +1,5 @@
 {
-  "source": "arXiv:1610.00278v1, Section2.2 equation(19) analytic-family dependency (p.12), and Lemma2.11 zero-count/localization conclusions (p.14)",
+  "source": "arXiv:1610.00278v1 Section2.2 analytic-family and Lemma2.11 zero-count/localization dependencies; see spectral-coefficients-map.json for equal diagonals and the completed root-separation estimate (23).",
   "main_theorems_verified": false,
   "parameter_domain": {
     "r": "0<=r<1/2; exact source order s=-r, including s=0",
@@ -43,7 +43,7 @@
     "public_declarations": 2
   },
   "qualifications": [
-    "The full root-separation estimate(23) of Lemma2.11 is still open. This report covers its zero-count and localization conclusions.",
+    "The full root-separation estimate(23) is now proved; see spectral-coefficients-map.json and sourceLemma2_11_uniform. Physical spectral labels and algebraic-multiplicity correspondence remain open.",
     "Analytic orders of determinant zeros are NOT yet identified with algebraic multiplicities of the physical operator.",
     "Global singular spectrum, periodic/antiperiodic labels, eventual corrected-strip inclusion and the Birkhoff/KdV main theorem constructions remain open.",
     "The analytic statement is in the exact endpoint NORM topology. It does not claim Banach analyticity in the weak-star topology or identify a real Banach manifold structure on the constrained source subtype."

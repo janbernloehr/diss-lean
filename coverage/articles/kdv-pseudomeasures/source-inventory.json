@@ -121,7 +121,7 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "Arbitrary-weight endpoint tail bounds, physical multiplication and inverse identities are proved. The full-domain determinant reduction, global endpoint inhomogeneous regularity, joint actual determinant analyticity and two-zero count/localization are proved in the unit-weight main-theorem scale. Spectral algebraic multiplicities/labels and gap/Dirichlet asymptotics remain open."
+      "status": "Arbitrary-weight endpoint tail/inverse/coefficient and spectral Lipschitz estimates, physical multiplication and full-domain determinant reduction are proved. Joint actual determinant analyticity, equal diagonals, the complete analytic-zero Lemma2.11 count/localization/root-separation conclusions and global endpoint inhomogeneous regularity are proved in the unit-weight main-theorem scale. Physical algebraic multiplicities/labels and gap/Dirichlet asymptotics remain open."
     },
     {
       "label": "2.2",
@@ -170,22 +170,24 @@
       "coverage": "spectral-reduction-map.json"
     },
     {
-      "label": "2.9 (analytic-family dependency)",
+      "label": "2.9 (unit-weight source coefficients; arbitrary-weight library coefficient errors)",
       "pages": [
         12
       ],
-      "content": "The source effective coefficients are analytic on the spectral strip.",
-      "status": "Joint bounded-operator and determinant analyticity proved on neighborhoods of every corrected closed-strip point, in the exact original endpoint potential norm. Quantitative diagonal/off-diagonal correction bounds and diagonal symmetry remain open.",
-      "coverage": "spectral-analytic-map.json"
+      "content": "Actual source coefficient analyticity and explicit correction bounds in the main-theorem unit-weight scale; arbitrary-weight corrected-mode coefficient errors in the shared library.",
+      "status": "Joint actual coefficient analyticity, equal complex diagonals and explicit source coefficient errors are proved in the main-theorem unit-weight scale. Arbitrary source spectral weights are retained in the library corrected-mode coefficient errors. The sharper all-weight diagonal estimate with unweighted potential norm is not claimed.",
+      "coverage": "spectral-coefficients-map.json",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit"
     },
     {
-      "label": "2.11 (zero count and localization)",
+      "label": "2.11",
       "pages": [
         14
       ],
-      "content": "Exactly two determinant zeros by analytic multiplicity on the strip, contained in the radius4*sqrt(n) disc.",
-      "status": "Proved uniformly on exact original source norm balls with corrected radius6n strips, under the existing cutoff. The root-separation estimate(23), physical algebraic-multiplicity correspondence and spectral labels remain open.",
-      "coverage": "spectral-analytic-map.json"
+      "content": "Exactly two determinant zeros by analytic multiplicity on the strip, contained in the radius4*sqrt(n) disc, with distance bounded by sqrt6 times the full-strip supremum of sqrt(abs(b_n*b_-n)).",
+      "status": "Proved for the actual determinant uniformly on original complex endpoint norm balls: exactly two zeros by analytic order on the4sqrt(n) disc and full corrected6n strip, stronger sqrt(n)/4 localization, and literal sqrt6 full-strip-supremum root separation. Physical algebraic-multiplicity correspondence and spectral labels remain open.",
+      "coverage": "spectral-coefficients-map.json",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform"
     }
   ],
   "reuse_map": [

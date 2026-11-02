@@ -32,11 +32,15 @@
       "endpointHillKernelEquiv",
       "analyticAt_sourceEndpointDeterminant",
       "source_uniform_analytic_physical_reduction",
-      "sourceLemma2_11_uniform_zero_count"
+      "sourceLemma2_11_uniform_zero_count",
+      "singularHillPencil_bilinear",
+      "endpointHillEffectivePotential_diagonals_eq",
+      "sourceLemma2_9_unit",
+      "sourceLemma2_11_uniform"
     ]
   },
   "essential_open_obligations": [
-    "Identify analytic determinant zero orders with physical algebraic multiplicities and construct/label the actual singular spectrum and eventual corrected-strip inclusion; prove diagonal symmetry, root-separation and gap/Dirichlet estimates.",
+    "Identify analytic determinant zero orders with physical algebraic multiplicities and construct/label the actual singular spectrum and eventual corrected-strip inclusion; prove physical gap/Dirichlet estimates.",
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -76,7 +80,12 @@
     "The actual source determinant is jointly complex Banach analytic in the original endpoint potential norm and lambda, including zeros and every point of the corrected closed strip.",
     "The chosen original-carrier tail inverse obeys the norm bound two in both opposite shifted norms for every source weight.",
     "The actual effective determinant has exactly two zeros by analytic order in the radius4*sqrt(n) disc and in the entire corrected strip. Every such zero lies within sqrt(n)/4 under the existing source cutoff.",
-    "The joint analytic determinant retains the full original H1 physical eigenvector criterion, uniformly on exact original source norm balls."
+    "The joint analytic determinant retains the full original H1 physical eigenvector criterion, uniformly on exact original source norm balls.",
+    "The physical singular Hill pencil has the full bilinear Green identity on original H1 for every complex original H-minus-one potential. The actual endpoint reconstruction has exactly its finite resonant physical residual.",
+    "The actual effective determinant has equal diagonal corrections for complex as well as real potentials, and the exact scalar factorization is proved.",
+    "The arbitrary-weight corrected resonant coefficients and their spectral variations obey proved endpoint shifted norm bounds. In the unit scale all scalar entries are jointly endpoint norm analytic with source coefficient errors.",
+    "Under the existing cutoff the actual diagonal varies with spectral Lipschitz constant1/8 on the full corrected closed strip. The actual full-strip coupling supremum is finite; any two determinant zeros satisfy the literal sqrt6 separation estimate.",
+    "sourceLemma2_11_uniform combines the two-zero analytic-order count, source-disc localization and full root separation uniformly on exact original complex endpoint norm balls. It does not assert physical spectral labels or algebraic-multiplicity correspondence."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

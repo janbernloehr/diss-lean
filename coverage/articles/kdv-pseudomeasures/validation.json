@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Appendix B.1 compactness and topology directly on original physical potentials, retaining the preceding analytic endpoint determinant milestone",
+  "phase": "Actual singular Hill Green symmetry, endpoint coefficient estimates and full determinant root separation",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -21,6 +21,7 @@
     "NLS/KdV/FreeHillRegularity.lean",
     "NLS/KdV/FreeHillAnalytic.lean",
     "NLS/KdV/SingularHillPhysical.lean",
+    "NLS/KdV/SingularHillBilinear.lean",
     "NLS/KdV/PseudomeasureKernel.lean",
     "NLS/KdV/PseudomeasurePerturbation.lean",
     "NLS/SequenceSpaces/WienerWeakStar.lean",
@@ -33,8 +34,12 @@
     "NLS/KdV/PseudomeasureTailInverse.lean",
     "NLS/KdV/PseudomeasureReduction.lean",
     "NLS/KdV/PseudomeasureAnalytic.lean",
+    "NLS/KdV/PseudomeasureBilinearSymmetry.lean",
     "NLS/KdV/PseudomeasureLocalization.lean",
+    "NLS/KdV/PseudomeasureCoefficients.lean",
     "NLS/KdV/PseudomeasureZeroCount.lean",
+    "NLS/KdV/PseudomeasureSpectralLipschitz.lean",
+    "NLS/KdV/PseudomeasureRootSeparation.lean",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean",
     "NLS/Fourier/PeriodicDistributionParity.lean",
@@ -55,13 +60,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 396,
-  "definitions": 120,
+  "proved_theorems": 439,
+  "definitions": 129,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 516,
+    "declarations": 568,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -137,10 +143,17 @@
     "The literal existential sequence and compactness criteria preserve finite exponents, strict thresholds and norm-boundedness; a uniform lower-space witness is p=1 and t=-r-2.",
     "Every norm-bounded original source set has compact weak-star closure and every bounded source sequence has a convergent strictly increasing subsequence with a physical source limit. Lower norm realization commutes with closure and detects ambient closedness on bounded sets.",
     "The original real Wiener tests and every admissible original lower distribution realization induce the exact source topology on bounded sets, for arbitrary filters and full compact-open trajectories. The lower distribution is the identical smooth-test distribution and its H^-1 specialization equals potentialHminusOne.",
-    "All 50 modules were compiled from a fresh empty private output view; all 516 public definitions/theorems were audited with exact source/audit/report set equality. No warnings, sorryAx or nonstandard axioms occurred."
+    "All 50 modules were compiled from a fresh empty private output view; all 516 public definitions/theorems were audited with exact source/audit/report set equality. No warnings, sorryAx or nonstandard axioms occurred.",
+    "For every original complex H-minus-one potential, the full original H1 spectral pencil satisfies the normalized physical bilinear Green identity. Commutativity is proved for the actual original H1 product.",
+    "Every reconstructed endpoint amplitude solves the actual physical spectral pencil with exactly its finite resonant residual. Its effective matrix inherits Green symmetry and has equal diagonal corrections for complex as well as real potentials.",
+    "Arbitrary source weights are retained in the corrected-mode coefficient errors and both shifted spectral Lipschitz bounds. The main-theorem unit-weight scalar entries are jointly analytic in the exact endpoint norm and lambda, with explicit diagonal/coupling errors.",
+    "The complementary Fourier resolvent identity is proved for the original absolutely convergent endpoint rows and canonical tail inverses. The existing cutoff gives spectral Lipschitz constant1/8 for the actual diagonal across the full corrected closed strip.",
+    "The actual equal-diagonal determinant factorization and finiteness of the actual full-strip coupling supremum are proved. Any two determinant zeros satisfy both the constant6 squared bound and the literal source sqrt6 separation estimate, without choosing root branches or assuming spectral labels.",
+    "sourceLemma2_11_uniform combines the analytic-order two-zero counts on the source4sqrt(n) disc and entire corrected6n strip, stronger sqrt(n)/4 localization and full estimate(23). Its cutoff is uniform on exact original complex endpoint norm balls, including the source real/mean-zero/period-one subspaces.",
+    "All56 modules were rebuilt from a fresh empty private output view. The exact568-public-definition/theorem source, audit and axiom-report sets agree; all transitive dependencies use only propext, Classical.choice and Quot.sound. No warnings or diagnostic suggestions occurred."
   ],
-  "source_correspondence": "Appendix B.1(i)-(iv), including every literal existential clause, are proved directly in the original physically constrained distribution source with exact endpoint norms. Closure, subsequences, original real-Wiener testing and compact-open lower-distribution trajectories are also proved. The preceding actual analytic spectral determinant and two-zero-count dependencies are rechecked. None of main Theorems 1.1, 1.3, 1.4, 5.1 or 5.9 is claimed complete; physical spectrum labels/algebraic multiplicities, gap/Dirichlet estimates, Birkhoff maps and actual KdV constructions remain open.",
-  "build_isolation": "All 50 modules rebuilt in a fresh empty private output view; canonical/package imports are read-only symlinks. Compiler destinations are checked to remain inside the private view. Exact 516-declaration audit passed without warnings. Canonical sources and build outputs were not written.",
+  "source_correspondence": "AppendixB.1 and physical source topology remain proved. The unit-weight source coefficient analyticity/error bounds, actual complex equal-diagonal identity and full Lemma2.11 analytic-determinant zero count/localization/root separation are now proved on exact original norm balls, with corrected6n strips and the literal sqrt6 separation constant. Generic corrected-mode coefficient/spectral Lipschitz bounds retain arbitrary source weights. Equality of determinant zero orders with physical algebraic multiplicities, actual singular spectral labels and corrected-strip inclusion, physical gap/Dirichlet estimates, inverse regularity, Birkhoff maps and actual KdV constructions remain open. No main theorem is marked verified.",
+  "build_isolation": "All56 modules rebuilt in a fresh empty private output view; canonical/package imports remain read-only symlinks and compiler destinations are checked to stay private. The exact568-declaration audit passed without warnings. Canonical sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -161,6 +174,7 @@
     "NLS/KdV/FreeHillRegularity.lean": "3381c7cdacbab7032a648f01132cbde618bd5bea46763d9851dc939fddb7b235",
     "NLS/KdV/FreeHillAnalytic.lean": "13b1d8e49c4f717a8bee34c476917f18cf41b22b988904f027e1ae1d52404190",
     "NLS/KdV/SingularHillPhysical.lean": "1887043fee01b890e56eebe82898d2af3ccdfcdcb203faafd802cc9821db8655",
+    "NLS/KdV/SingularHillBilinear.lean": "a175144c88790df0d560a5ddd250e5520dc533bd036ae181f5e57daf6df71159",
     "NLS/KdV/PseudomeasureKernel.lean": "f01c07d26885a0f79ee7ca89c786174d27cc1ec121eff8366b2eb2125a76aa8b",
     "NLS/KdV/PseudomeasurePerturbation.lean": "8a02466f93b8d9e3280cb298001b67a5e8e69c0ae4692a660298506b4cc04068",
     "NLS/SequenceSpaces/WienerWeakStar.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
@@ -173,8 +187,12 @@
     "NLS/KdV/PseudomeasureTailInverse.lean": "687364671778fca0082f2abc0f487b03d4447c9ac15a9483011a799f510a3bc9",
     "NLS/KdV/PseudomeasureReduction.lean": "90794b1f914252d92694b0f64cce51236e979f3490bcef0c1a97956214c4fcfe",
     "NLS/KdV/PseudomeasureAnalytic.lean": "4f32cf077bcb8aa7730ceb0ea19f9b63b31842adc1fa195857bf0f810c3e90c8",
+    "NLS/KdV/PseudomeasureBilinearSymmetry.lean": "7b12c7c40eff1328937cc5e03357eb483ed72b289473e92f40501f28e59284dc",
     "NLS/KdV/PseudomeasureLocalization.lean": "678c89d336fc0d609ad70c850e951ed7e8c8ffb11cb5a45663695741dcd5eed5",
+    "NLS/KdV/PseudomeasureCoefficients.lean": "360479ad68465bb2f3ce8b0cbf9526de6e400ca37916e6ae48638d65bdbf841f",
     "NLS/KdV/PseudomeasureZeroCount.lean": "e1110debbe210e87826986ace226ef39eb37af81f59dee27571ea7c89f99d3dc",
+    "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
+    "NLS/KdV/PseudomeasureRootSeparation.lean": "514f840ea04fc243b5e3da1dacfe7e24b24fb6fd8090bdcd80900a2107f7a205",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean": "d0cd997aec48bbc96a77797449dd8a5f46552e918c1bff17e6aa8fba9cc291ba",
     "NLS/Fourier/PeriodicDistributionParity.lean": "4121127cdee0b0ac620cd83446b9918fa2b9d59be9d5fc3ff8739f2f89083b27",
@@ -195,7 +213,8 @@
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31",
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean": "adfb2bfa36acc624c77753f9b1756b6b14602e5a17c364d5dd5f948f6378bf1c",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "25350012a76b2f6f88ca911827304c66bfa1e2a417583f7cd758a5c88eded20e"
+    "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "261435528470cbc91c0d72d8d90f172fbfc50daabf0227cf11ef7e58307fe234"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -203,18 +222,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 485,
-    "newly_authored_declarations_this_continuation": 31,
-    "new_appendix_b_theorems": 27,
-    "new_appendix_b_definitions": 4,
-    "total_checked_declarations": 516,
-    "last_committed_checked_declarations": 423,
-    "preceding_uncommitted_analytic_milestone": {
-      "newly_authored": 60,
-      "shared_reused_unchanged": 2,
-      "total_checked": 485
-    },
-    "previous_reuse": "Earlier FreeHill, action-dependent phase-flow, HillComplement and HillReduction reuse is retained and rechecked."
+    "previous_checked_declarations": 516,
+    "newly_authored_declarations_this_continuation": 52,
+    "new_theorems": 43,
+    "new_definitions": 9,
+    "shared_declarations_copied_this_continuation": 0,
+    "total_checked_declarations": 568,
+    "previous_reuse": "The prior pinned FreeHill, phase-flow, HillComplement/HillReduction and two-dimensional determinant copies are retained and freshly rechecked."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -245,7 +259,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-source-appendix-b.log",
+  "validation_log": ".lake/article-check/logs/validation-endpoint-root-separation.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -270,5 +284,16 @@
     "branch": "articles/kdv-estimates",
     "byte_identical": true,
     "checked_declarations": 2
+  },
+  "shared_spectral_method_adaptation": {
+    "branch": "articles/kdv-estimates",
+    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+    "inspected": [
+      "NLS/KdV/HillBilinearSymmetry.lean",
+      "NLS/KdV/HillWeightedCoefficients.lean",
+      "NLS/KdV/HillSpectralLipschitz.lean",
+      "NLS/KdV/HillRootSeparation.lean"
+    ],
+    "qualification": "Their regular L2-potential proofs are not imported as singular-potential assertions. New singular proofs reuse the physical Green/resolvent strategy and already verified shared finite-dimensional determinant formula. All52 public declarations added in this continuation are newly authored."
   }
 }

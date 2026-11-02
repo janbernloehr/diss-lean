@@ -13,6 +13,7 @@ import NLS.KdV.HillReduction
 import NLS.KdV.FreeHillRegularity
 import NLS.KdV.FreeHillAnalytic
 import NLS.KdV.SingularHillPhysical
+import NLS.KdV.SingularHillBilinear
 import NLS.KdV.PseudomeasureKernel
 import NLS.KdV.PseudomeasurePerturbation
 import NLS.SequenceSpaces.WienerWeakStar
@@ -25,8 +26,12 @@ import NLS.KdV.PseudomeasureEllipticRegularity
 import NLS.KdV.PseudomeasureTailInverse
 import NLS.KdV.PseudomeasureReduction
 import NLS.KdV.PseudomeasureAnalytic
+import NLS.KdV.PseudomeasureBilinearSymmetry
 import NLS.KdV.PseudomeasureLocalization
+import NLS.KdV.PseudomeasureCoefficients
 import NLS.KdV.PseudomeasureZeroCount
+import NLS.KdV.PseudomeasureSpectralLipschitz
+import NLS.KdV.PseudomeasureRootSeparation
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
 import NLS.Fourier.PeriodicWeightedWeakStar
 import NLS.Fourier.PeriodicDistributionParity
@@ -47,6 +52,7 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology
 import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 import NLS.Articles.KdVPseudomeasures.SpectralReduction
 import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
+import NLS.Articles.KdVPseudomeasures.SpectralCoefficients
 
 /-! Exact public-declaration transitive axiom audit. -/
 
@@ -220,6 +226,15 @@ import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 #print axioms NLS.KdV.singularHillOperator_eigen_iff
 #print axioms NLS.KdV.singularHillEigenspace
 #print axioms NLS.KdV.mem_singularHillEigenspace_iff
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.h1Product_comm
+#print axioms NLS.KdV.singularHillPairing
+#print axioms NLS.KdV.singularHillPairing_add_left
+#print axioms NLS.KdV.singularHillPairing_smul_left
+#print axioms NLS.KdV.singularHillDomainInclusion_bilinear
+#print axioms NLS.KdV.singularHillLaplacian_bilinear
+#print axioms NLS.KdV.singularHillMultiplication_bilinear
+#print axioms NLS.KdV.singularHillOperator_bilinear
+#print axioms NLS.KdV.singularHillPencil_bilinear
 #print axioms NLS.KdV.sobolev_factor_sq_le
 #print axioms NLS.KdV.freeHill_inverse_norm_le_product
 #print axioms NLS.KdV.hill_resonance_iff
@@ -397,6 +412,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 #print axioms NLS.KdV.endpointReducedDeterminant
 #print axioms NLS.KdV.analyticAt_endpointReducedDeterminant
 #print axioms NLS.KdV.endpointReducedDeterminant_eq_zero_iff
+#print axioms NLS.KdV.endpointHillH1Modes_eq
+#print axioms NLS.KdV.singularHillPairing_mode
+#print axioms NLS.KdV.endpointHillResonantResidual
+#print axioms NLS.KdV.endpointHillReconstruct_residual_equation
+#print axioms NLS.KdV.endpointHillPairing_residual
+#print axioms NLS.KdV.endpointHillReduced_bilinearSymmetry
+#print axioms NLS.KdV.endpointHillEffectivePotential_diagonals_eq
 #print axioms NLS.KdV.norm_apply_le_negativeShiftedNorm_one
 #print axioms NLS.KdV.endpointHillModePotential_basis_pos
 #print axioms NLS.KdV.endpointHillModePotential_basis_neg
@@ -404,6 +426,20 @@ import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 #print axioms NLS.KdV.endpointHillEffectiveCorrection_columns_le
 #print axioms NLS.KdV.endpointReducedDeterminant_free_error_le
 #print axioms NLS.KdV.endpointHillReduced_kernel_localization
+#print axioms NLS.KdV.negativeShiftedNorm_coefficient_le
+#print axioms NLS.KdV.endpointHillCorrectedMode
+#print axioms NLS.KdV.negativeShiftedNorm_endpointHillCorrectedMode_le
+#print axioms NLS.KdV.endpointHillCorrectedMode_coefficient_error
+#print axioms NLS.KdV.endpointHillCorrectedMode_pos
+#print axioms NLS.KdV.endpointHillCorrectedMode_neg
+#print axioms NLS.KdV.endpointEffectiveFamily_eq
+#print axioms NLS.KdV.endpointDiagonal
+#print axioms NLS.KdV.endpointUpperCoupling
+#print axioms NLS.KdV.endpointLowerCoupling
+#print axioms NLS.KdV.endpointDiagonal_error_le
+#print axioms NLS.KdV.endpointCoupling_errors_le
+#print axioms NLS.KdV.analyticAt_endpointEffective_coefficient
+#print axioms NLS.KdV.analyticAt_endpointCoefficients
 #print axioms NLS.KdV.sobolev_two_mode_le
 #print axioms NLS.KdV.endpoint_effective_column_small
 #print axioms NLS.KdV.endpointHillDisc_subset_strip
@@ -411,6 +447,22 @@ import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 #print axioms NLS.KdV.endpointReducedDeterminant_zero_localization
 #print axioms NLS.KdV.endpointReducedDeterminant_two_zeros
 #print axioms NLS.KdV.endpointReducedDeterminant_strip_two_zeros
+#print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
+#print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
+#print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
+#print axioms NLS.KdV.negativeShiftedNorm_endpointHillPerturbation_sub_le
+#print axioms NLS.KdV.endpointHillTailInverse_sub
+#print axioms NLS.KdV.negativeShiftedNorm_endpointHillCorrectedMode_sub_le
+#print axioms NLS.KdV.endpointDiagonal_sub_le
+#print axioms NLS.KdV.endpointDiagonal_sub_le_eighth
+#print axioms NLS.KdV.endpointReducedDeterminant_factorization
+#print axioms NLS.KdV.endpointCouplingRadius
+#print axioms NLS.KdV.bddAbove_endpointCouplingRadii
+#print axioms NLS.KdV.sqrt_endpointCouplingProduct_le_radius
+#print axioms NLS.KdV.endpointCouplingRadius_nonneg
+#print axioms NLS.KdV.endpointReduced_root_shift_bound
+#print axioms NLS.KdV.endpointReduced_roots_separation
+#print axioms NLS.KdV.endpointReduced_roots_separation_sqrt
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.coefficientWeakDualHomeomorph
@@ -566,3 +618,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 #print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_eq_zero_iff
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_analytic_physical_reduction
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_zero_count
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointEntries
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointEntries
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_factorization
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCouplingRadius
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform

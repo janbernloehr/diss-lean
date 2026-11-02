@@ -1,0 +1,59 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.2 equations (20)-(21), Lemma2.9 pp.12-13, Lemma2.11 pp.14-15 including estimate (23)",
+  "main_theorems_verified": false,
+  "parameter_domain": {
+    "predual_order": "0<=r<1/2; source data order s=-r, including s=0",
+    "potential": "Every complex original period-two FourierLebesgueSpace(2,-r,infinity) distribution, with its exact original endpoint norm. This includes the source complex mean-zero period-one subspace and the real physical source. No reality or mean-zero hypothesis is needed for the proved determinant conclusion.",
+    "spectral_domain": "The entire corrected CLOSED strip abs(Re(lambda)-pi^2*n^2)<=6*n; boundary points and all imaginary parts included.",
+    "cutoff": "The existing numerical criterion C_r*n^(r-1/2)*norm(q)<=1/2. sourceLemma2_11_uniform chooses N before q,n,lambda on each exact original norm ball; no new smallness hypothesis.",
+    "weighted_estimates": "endpointHillCorrectedMode_coefficient_error and the shifted spectral Lipschitz bounds allow every source SpectralWeight w. The full original H1 reconstruction, source scalar families and determinant conclusions are in the unit-weight main-theorem scale."
+  },
+  "normalization": "Physical period two, exp(i*pi*k*x), original coefficient q(mode(-k)), normalized original dual action with factor1/2. The upper source coupling is at q(mode(-2*n)) and the lower coupling is at q(mode(2*n)); the factor2 is retained.",
+  "declarations": {
+    "actual_H1_product_commutativity": "NLS.Fourier.PeriodicFourierLebesgue.h1Product_comm",
+    "full_singular_physical_Green_identity": "NLS.KdV.singularHillPencil_bilinear",
+    "actual_reconstruction_finite_residual": "NLS.KdV.endpointHillReconstruct_residual_equation",
+    "effective_Green_symmetry": "NLS.KdV.endpointHillReduced_bilinearSymmetry",
+    "equal_diagonals_for_complex_potentials": "NLS.KdV.endpointHillEffectivePotential_diagonals_eq",
+    "arbitrary_weight_coefficient_error": "NLS.KdV.endpointHillCorrectedMode_coefficient_error",
+    "actual_diagonal_error": "NLS.KdV.endpointDiagonal_error_le",
+    "actual_off_diagonal_error": "NLS.KdV.endpointCoupling_errors_le",
+    "joint_coefficient_analyticity": "NLS.KdV.analyticAt_endpointCoefficients",
+    "original_distribution_coefficient_interface": "NLS.Articles.KdVPseudomeasures.sourceLemma2_9_unit",
+    "endpoint_resolvent_identity": "NLS.KdV.unshiftedEndpointHillPerturbation_sub",
+    "both_shifted_spectral_Lipschitz_bounds": "NLS.KdV.negativeShiftedNorm_endpointHillCorrectedMode_sub_le",
+    "diagonal_Lipschitz_eighth_under_existing_cutoff": "NLS.KdV.endpointDiagonal_sub_le_eighth",
+    "actual_equal_diagonal_factorization": "NLS.KdV.endpointReducedDeterminant_factorization",
+    "finite_actual_full_strip_supremum": "NLS.KdV.bddAbove_endpointCouplingRadii",
+    "literal_constant6_squared_bound": "NLS.KdV.endpointReduced_roots_separation",
+    "literal_sqrt6_bound": "NLS.KdV.endpointReduced_roots_separation_sqrt",
+    "original_source_factorization": "NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_factorization",
+    "source_full_Lemma2_11_uniform_original_complex_norm_balls": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform"
+  },
+  "proof_details": [
+    "Full original H-minus-one/H1 duality and commutativity of actual H1 multiplication give the singular Green identity for every complex H-minus-one potential. No endpoint sum interchange is postulated.",
+    "Every reconstructed H1 amplitude satisfies the actual physical spectral pencil with exactly its finite two-mode residual. The inherited off-diagonal bilinear symmetry forces equality of the two actual diagonal corrections.",
+    "The original two-sided endpoint tail inverse and both opposite shifted norms yield the uniform coefficient error 2*C_r*n^(r-1/2)*norm(q)^2, with every source spectral weight retained.",
+    "The genuine complementary Fourier resolvent identity controls spectral variation globally on the corrected closed strip, using absolutely convergent original rows and both shifted inverse bounds.",
+    "The existing cutoff makes the actual diagonal a Lipschitz contraction with constant1/8. No Cauchy estimate based on the printed12n strip is needed.",
+    "The actual determinant factors as (lambda-pi^2*n^2-a_n)^2-b_n*b_-n. Its full-strip coupling supremum is proved finite. Each root shift is bounded by that actual supremum; diagonal contraction and the triangle inequality yield the literal source sqrt6 root-separation constant.",
+    "sourceLemma2_11_uniform combines the existing two-zero analytic-order counts on the source4sqrt(n) disc and entire strip, the stronger sqrt(n)/4 localization, and the full source root-separation estimate. The cutoff precedes every original complex potential in the norm ball."
+  ],
+  "qualifications": [
+    "Multiplicity in the zero count is analytic order of the actual effective determinant. Equality with algebraic multiplicity of the physical singular Hill operator remains open.",
+    "Actual global singular spectrum, periodic/antiperiodic labels and eventual corrected-strip inclusion remain open. No labeled physical spectral gap is substituted for the determinant-root separation.",
+    "The scalar original-distribution Lemma2.9 wrapper is explicitly the unit spectral weight scale. The arbitrary-weight coefficient error is proved separately; the sharper source weighted diagonal bound involving the unweighted potential norm is not claimed here.",
+    "Main Theorems1.1,1.3,1.4,5.1,5.9 remain incomplete; gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV constructions are still required."
+  ],
+  "shared_method_reuse": {
+    "branch": "articles/kdv-estimates",
+    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+    "inspected": [
+      "NLS/KdV/HillBilinearSymmetry.lean",
+      "NLS/KdV/HillWeightedCoefficients.lean",
+      "NLS/KdV/HillSpectralLipschitz.lean",
+      "NLS/KdV/HillRootSeparation.lean"
+    ],
+    "qualification": "Their regular L2-potential proofs are not imported as singular-potential assertions. New singular proofs reuse the physical Green/resolvent strategy and already verified shared finite-dimensional determinant formula. All52 public declarations added in this continuation are newly authored."
+  }
+}

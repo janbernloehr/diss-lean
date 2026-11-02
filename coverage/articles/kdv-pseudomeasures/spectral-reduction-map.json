@@ -46,9 +46,9 @@
   ],
   "remaining": [
     "Identify analytic determinant orders with algebraic multiplicities and prove actual singular spectral labels and corrected-strip inclusion.",
-    "Prove the source diagonal symmetry, root-separation estimate(23), gap/Dirichlet bounds and inverse spectral regularity.",
+    "Prove physical gap/Dirichlet bounds and inverse spectral regularity after establishing actual spectral labels.",
     "Construct the Birkhoff maps and actual KdV main theorem proofs."
   ],
   "qualification": "The determinant criterion concerns the physical point eigen-equation, not an asserted equality between the full spectrum and a labeled sequence. The rank bound is geometric; no equality between algebraic multiplicity and determinant-zero order is inferred.",
-  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity and the two-zero count/localization are now proved; see spectral-analytic-map.json."
+  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity, actual equal-diagonal determinant factorization, coefficient bounds and full Lemma2.11 analytic-zero count/localization/root separation are proved; see spectral-analytic-map.json and spectral-coefficients-map.json."
 }

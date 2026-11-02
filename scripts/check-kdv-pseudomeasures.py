@@ -40,6 +40,7 @@ modules = [
     'NLS.KdV.FreeHillRegularity',
     'NLS.KdV.FreeHillAnalytic',
     'NLS.KdV.SingularHillPhysical',
+    'NLS.KdV.SingularHillBilinear',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
     'NLS.SequenceSpaces.WienerWeakStar',
@@ -52,8 +53,12 @@ modules = [
     'NLS.KdV.PseudomeasureTailInverse',
     'NLS.KdV.PseudomeasureReduction',
     'NLS.KdV.PseudomeasureAnalytic',
+    'NLS.KdV.PseudomeasureBilinearSymmetry',
     'NLS.KdV.PseudomeasureLocalization',
+    'NLS.KdV.PseudomeasureCoefficients',
     'NLS.KdV.PseudomeasureZeroCount',
+    'NLS.KdV.PseudomeasureSpectralLipschitz',
+    'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
     'NLS.Fourier.PeriodicWeightedWeakStar',
     'NLS.Fourier.PeriodicDistributionParity',
@@ -74,6 +79,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralEndpoint',
     'NLS.Articles.KdVPseudomeasures.SpectralReduction',
     'NLS.Articles.KdVPseudomeasures.SpectralAnalytic',
+    'NLS.Articles.KdVPseudomeasures.SpectralCoefficients',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
