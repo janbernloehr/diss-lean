@@ -404,3 +404,46 @@ only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
 disabled linters or increased heartbeat limits were introduced. Validation
 uses the canonical compiled dependencies read-only and is not a fresh
 whole-repository rebuild.
+
+
+## Tenth checkpoint: physical H₄ action derivatives and Lemma 5.2
+
+Lemma 5.2 is now verified for independently defined physical H₄ finite-gap
+frequencies, including every closed selected action. The open frequency is
+minus the derivative of physical H₄ along the actual Birkhoff action-reduction
+curve. Differentiating the fixed quartic contour uses the already calibrated
+physical H₁ and H₂ derivatives and gives exactly 6H₂+12πnH₁. The actual cubic
+psi contour expands into the weighted second moments and the cubic free
+frequency, with coefficient −12 and dispersion (2πn)³.
+
+The closed frequency is the second physical amplitude derivative, with the
+exact opening action t²/2. The new curve lemmas prove analyticity of physical
+H₂ and H₄ on any analytic real source curve with fixed finite gap support.
+The weighted moment sum passes to the opening limit on that same finite
+support. The amplitude derivative limit then gives the closed moment formula,
+without defining the frequency through that formula or assuming H₄ continuity
+in the rough source norm. The resulting frequency is independent of the
+chosen compatible Birkhoff realization.
+
+The unique coefficient-preserving Hilbert model transports the physical
+frequency to every finite p>1 and preserves the original smooth physical
+pair and every hierarchy Hamiltonian. The chosen article adapter now identifies
+its candidate with this actual normalized physical H₄ frequency at every real
+finite-gap physical input, with the same fixed Hilbert Birkhoff member used
+in Theorem 1.2. The clause map is recorded in `lemma-5.2.json`.
+
+Theorem 1.2 remains verified. Theorems 1.1 and 1.3 remain open. The remaining
+Theorem 1.3 obligations are identification throughout the original full
+H^(3/2) classical frequency domain, and a real-coefficient realization in the
+Hilbert weighted targets. The complex candidate analytic maps, refined
+actual-action remainder and finite-gap physical derivative identity are all
+verified; they are not used to claim the still-unproved full-domain bridge.
+
+
+Strict validation for the tenth checkpoint passed: all 75 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. The transitive
+audit of 286 named declarations exactly matched `AxiomAudit.lean` and used
+only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
+disabled linters or increased heartbeat limits were introduced. Validation
+uses the canonical compiled dependencies read-only and is not a fresh
+whole-repository rebuild.

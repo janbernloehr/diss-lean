@@ -45,6 +45,16 @@ modules=(
   ComplexAnalysis/QuarticInversionRemainder
   ComplexAnalysis/QuarticInversionContour
   ZakharovShabat/SourceFullAbelianFourthHamiltonianContour
+  ZakharovShabat/SourceFullAbelianFourthContourPoisson
+  ZakharovShabat/SourceFullAbelianFourthContourLocal
+  ZakharovShabat/SourceAbelianMomentCubicShift
+  ZakharovShabat/SourceAbelianMomentFourthContour
+  ZakharovShabat/SourceFiniteGapFourthOpenFrequency
+  ZakharovShabat/SourceFiniteGapFourthOpenMoments
+  ZakharovShabat/SourceFiniteGapFourthOpening
+  ZakharovShabat/SourceFiniteGapFourthClosedFrequency
+  ZakharovShabat/SourceLemma5_2
+  ZakharovShabat/SourceFiniteGapFourthFrequencyExponent
   ZakharovShabat/SourceSingleRootRelativeComparison
   ZakharovShabat/SourcePsiCriticalRootComparison
   ZakharovShabat/SourceCriticalRelativeComparison
@@ -104,6 +114,7 @@ modules=(
   Articles/MKdVBelowL2/FourthMomentActionRemainder
   Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
   Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder
+  Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

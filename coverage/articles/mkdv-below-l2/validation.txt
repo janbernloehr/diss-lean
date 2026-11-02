@@ -4,6 +4,16 @@ ComplexAnalysis/RootPeriodComparison: checked
 ComplexAnalysis/QuarticInversionRemainder: checked
 ComplexAnalysis/QuarticInversionContour: checked
 ZakharovShabat/SourceFullAbelianFourthHamiltonianContour: checked
+ZakharovShabat/SourceFullAbelianFourthContourPoisson: checked
+ZakharovShabat/SourceFullAbelianFourthContourLocal: checked
+ZakharovShabat/SourceAbelianMomentCubicShift: checked
+ZakharovShabat/SourceAbelianMomentFourthContour: checked
+ZakharovShabat/SourceFiniteGapFourthOpenFrequency: checked
+ZakharovShabat/SourceFiniteGapFourthOpenMoments: checked
+ZakharovShabat/SourceFiniteGapFourthOpening: checked
+ZakharovShabat/SourceFiniteGapFourthClosedFrequency: checked
+ZakharovShabat/SourceLemma5_2: checked
+ZakharovShabat/SourceFiniteGapFourthFrequencyExponent: checked
 ZakharovShabat/SourceSingleRootRelativeComparison: checked
 ZakharovShabat/SourcePsiCriticalRootComparison: checked
 ZakharovShabat/SourceCriticalRelativeComparison: checked
@@ -63,6 +73,7 @@ Articles/MKdVBelowL2/FourthMomentSequence: checked
 Articles/MKdVBelowL2/FourthMomentActionRemainder: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
+Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -493,3 +504,93 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
  Classical.choice,
  Quot.sound]
 'NLS.Coeff.exists_index_quotient_of_bounded_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFullAbelianFourthContour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianDifferentialData.analyticAt_fourthContour' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianDifferentialData.exists_fourthContour_eq_physical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_fourthContour_eq_cubic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFullAbelianFourthContour_eq_physical_of_enclosing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianDifferentialData.eventually_fourthContour_eq_physical_of_gap_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceAbelianMomentCircle_cubic_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.unshifted_cubic_circle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_positive_moment_hasSum_of_gap_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_positive_moment_sum_tendsto_of_eventually_fixed_gap_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.cubic_contour_sum_renormalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_cubic_contour_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_physicalActionReductionHamiltonian_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_eq_fourthContour_bracket' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_renormalized_eq_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_independent_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.analyticAt_sourceFiniteGapHamiltonian_two_on_curve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.analyticAt_sourceFiniteGapHamiltonian_four_on_curve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_physicalGapOpeningHamiltonian_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.deriv_physicalGapOpeningHamiltonian_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthClosedFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthClosedFrequency_eq_limit_and_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_lemma5_2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequency_independent_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent_independent_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_moments_eq_physical_fourth_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFiniteGapFourthFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

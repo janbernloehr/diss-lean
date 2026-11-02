@@ -119,9 +119,26 @@
       "source": "Lemma 5.2, physical quartic Hamiltonian contour",
       "declaration": "NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart",
       "scope": "Every real finite-gap source and every actual ambient spectral chart: H4−6H1H2 equals (2i/π) times the exterior F^4 contour on every sufficiently large circle. The independently defined physical Hamiltonians supply all Taylor coefficients. No frequency or action-derivative identity is assumed."
+    },
+    {
+      "source": "Lemma 5.2, pp. 21–22",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_lemma5_2",
+      "scope": "Actual physical H4 action derivatives at every real finite-gap Hilbert source and every selected index, including closed selected actions; exact 6H2, 12πnH1 and cubic free-dispersion terms. All analytic, contour and opening inputs constructed from verified data.",
+      "verified": true
+    },
+    {
+      "source": "Physical finite-gap exponent transport",
+      "declaration": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_moments_eq_physical_fourth_finiteGap",
+      "scope": "Every finite p>1 and every actual normalized moment atlas. The coefficient-preserving Hilbert representative has exactly the same physical pair and H1,H2,H4 values."
+    },
+    {
+      "source": "Chosen physical family identification at finite gaps",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative",
+      "scope": "The previously chosen analytic refined candidate agrees with the independently defined normalized physical H4 frequency for every real finite-gap physical distribution pair, including closed selected actions. Uses the same fixed Hilbert Birkhoff family as Theorem 1.2."
     }
   ],
   "remaining": [
-    "Identify the analytic refined candidate with the independently defined physical normalized H4 action derivative. The quartic contour value is verified; its action derivative, conversion to weighted moments, and closed-action endpoint still require proof."
+    "Extend identification from finite-gap action derivatives to the original full H^(3/2) classical frequency domain, with its independent physical H4 action derivative and topology.",
+    "Prove real-valued coefficients and realize the p=2 frequency in each weighted real target specified by Theorem 1.3; complex weighted analyticity of the candidate is already verified."
   ]
 }

@@ -6,6 +6,16 @@
     "ComplexAnalysis/QuarticInversionRemainder",
     "ComplexAnalysis/QuarticInversionContour",
     "ZakharovShabat/SourceFullAbelianFourthHamiltonianContour",
+    "ZakharovShabat/SourceFullAbelianFourthContourPoisson",
+    "ZakharovShabat/SourceFullAbelianFourthContourLocal",
+    "ZakharovShabat/SourceAbelianMomentCubicShift",
+    "ZakharovShabat/SourceAbelianMomentFourthContour",
+    "ZakharovShabat/SourceFiniteGapFourthOpenFrequency",
+    "ZakharovShabat/SourceFiniteGapFourthOpenMoments",
+    "ZakharovShabat/SourceFiniteGapFourthOpening",
+    "ZakharovShabat/SourceFiniteGapFourthClosedFrequency",
+    "ZakharovShabat/SourceLemma5_2",
+    "ZakharovShabat/SourceFiniteGapFourthFrequencyExponent",
     "ZakharovShabat/SourceSingleRootRelativeComparison",
     "ZakharovShabat/SourcePsiCriticalRootComparison",
     "ZakharovShabat/SourceCriticalRelativeComparison",
@@ -64,7 +74,8 @@
     "Articles/MKdVBelowL2/FourthMomentSequence",
     "Articles/MKdVBelowL2/FourthMomentActionRemainder",
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate",
-    "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder"
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -1340,6 +1351,166 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFullAbelianFourthContour": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.analyticAt_fourthContour": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.exists_fourthContour_eq_physical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.theta_fourthContour_eq_cubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFullAbelianFourthContour_eq_physical_of_enclosing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceFullAbelianDifferentialData.eventually_fourthContour_eq_physical_of_gap_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceAbelianMomentCircle_cubic_shift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.unshifted_cubic_circle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_positive_moment_hasSum_of_gap_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_positive_moment_sum_tendsto_of_eventually_fixed_gap_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.cubic_contour_sum_renormalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_finiteGap_cubic_contour_formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_physicalActionReductionHamiltonian_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_eq_fourthContour_bracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_renormalized_eq_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency_independent_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticAt_sourceFiniteGapHamiltonian_two_on_curve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticAt_sourceFiniteGapHamiltonian_four_on_curve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticOnNhd_physicalGapOpeningHamiltonian_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.deriv_physicalGapOpeningHamiltonian_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthClosedFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthClosedFrequency_eq_limit_and_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_lemma5_2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequency_independent_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthFrequencyAtExponent_independent_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_moments_eq_physical_fourth_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFiniteGapFourthFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1347,7 +1518,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 64 new and consumed modules; transitive audit of 254 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused strict build of 75 new and consumed modules; transitive audit of 286 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

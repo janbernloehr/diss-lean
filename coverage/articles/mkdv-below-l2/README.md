@@ -12,7 +12,9 @@ comparison period. Proposition 4.1's all-finite-p root bootstrap is now
 verified. The full Lemma 5.3 moment bounds are checked for every finite p≥2.
 The candidate is now analytic into the weighted targets of Theorem 1.3.
 The refined actual-action remainder is checked on the same physical
-chart. Physical H₄ derivative identification remains open.
+chart. Physical H₄ derivative identification is checked at all finite-gap
+inputs, including closed actions; the full H^(3/2) classical-domain
+identification and real Hilbert targets remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -244,14 +246,25 @@ with a zero fallback gives simultaneous refined bounds and hence one fixed
 both maps to the same physical chart and uses the actual products of the
 chosen Birkhoff coordinates as actions. Its nonzero-index reconstruction is
 exact; the all-index version retains the actual zero coordinate explicitly.
-Equality with the physical normalized H₄ action derivative remains open.
+Equality with the independently defined physical normalized H₄ derivative
+is now verified at every real finite-gap input, including closed selected
+actions. Identification throughout the original H^(3/2) domain remains open.
 
 `QuarticInversionRemainder` and `QuarticInversionContour` prove the quartic
 Laurent coefficient and its exact contour period. The source theorem
 `exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart` identifies
 the exterior contour with the independently defined physical H₄−6H₁H₂,
 with normalization 2i/π. This is the physical-value input to Lemma 5.2;
-its action derivative and conversion to the weighted moments remain open.
+its action derivative and conversion to weighted moments are now verified.
+`SourceLemma5_2` defines open frequencies by the negative physical H₄ action
+reduction derivative and closed frequencies by the physical second amplitude
+derivative. Fixed finite-support contour identities give analyticity of H₂
+and H₄ on the opening line, and the exact action t²/2 fixes the closed limit.
+The actual cubic psi contour expansion supplies −12 times the weighted moments
+and (2πn)³. The result is independent of Birkhoff realization and transports
+across every finite source exponent above one. The chosen physical adapter
+consumes it in `PhysicalFourthFrequencyIdentification`. See the
+[Lemma 5.2 clause map](lemma-5.2.json).
 
 ## Outstanding dependencies and integration order
 
@@ -261,9 +274,11 @@ its action derivative and conversion to the weighted moments remain open.
 2. Theorem 1.2's physical FL^p/Birkhoff family, canonicality, dense image and
    accepted Hilbert comparison are now implemented. The smaller mKdV diagonal's
    conjugation/reflection invariance is still needed for Theorem 1.1.
-3. Build the H₄ frequency representation and locally uniform estimates of
-   Section 5 (Theorem 5.4, pp. 25–26), then prove Theorem 1.3. Existing
-   dissertation H₃ frequency bounds are not this theorem.
+3. The analytic weighted candidate, refined action remainder and full finite-gap
+   Lemma 5.2 are now checked. Extend the physical H₄ derivative identification
+   to the original H^(3/2) domain, realize the real Hilbert targets, and then
+   assemble Theorem 1.3. The H₃ bounds were reused through an exact weighted
+   comparison identity; they do not by themselves identify H₄.
 4. Show the physical renormalized flow is the specified rotation, preserves
    the diagonal, and stays locally in the open Birkhoff image. A small ball
    gives the global-near-zero clause; prove smooth-approximation agreement.
@@ -286,10 +301,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 64 new article/shared modules and the
+The expanded focused checker covers 75 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (254 total), including the main Theorem 1.2 declarations;
+and consumed declarations (286 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article
