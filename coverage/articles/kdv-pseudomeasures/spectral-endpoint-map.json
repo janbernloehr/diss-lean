@@ -44,9 +44,8 @@
   "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
   "verified_scope": "Actual weighted endpoint operators, absolute row summability, both shifted estimates, uniform tail inverses, two-derivative gain, original H1 resolvent domain, and equality with physical H-minus-one multiplication defined by full H1 duality. The singular Hill operator equals minus the genuine distributional second derivative plus the potential product, and its original H-minus-one eigen-equation is equivalent to the Fourier equation for every actual H1 domain element. No spectral enumeration, eigenvalue localization or Birkhoff map is assumed proved.",
   "remaining_physical_obligations": [
-    "Construct the analytic endpoint determinant family and prove zero localization/counting.",
-    "Prove actual singular spectral enumeration, algebraic multiplicities and eventual corrected-strip inclusion.",
-    "Complete gap and Dirichlet asymptotics and inverse regularity needed by Theorems 2.1, 2.2 and 1.4."
+    "Identify determinant analytic orders with physical algebraic multiplicities; prove actual singular spectral enumeration and eventual corrected-strip inclusion.",
+    "Complete diagonal symmetry, root-separation, gap/Dirichlet asymptotics and inverse regularity needed by Theorems2.1,2.2 and1.4."
   ],
   "physical_normalization": {
     "period": 2,
@@ -55,5 +54,5 @@
     "resolvent_bound": "For every n>=1 and z in the corrected strip, sobolev(2,k)*norm(d_n(z,k)) <= 4+2*norm(z), valid for all imaginary parts.",
     "orders": "All real r in the two-derivative gain; r<1/2 for endpoint-to-H1 and H-minus-one inclusion; 0<=r<1/2 for endpoint perturbation physical identification."
   },
-  "further_verified_dependencies": "See spectral-reduction-map.json for the full-domain unit-weight determinant criterion and global inhomogeneous regularity."
+  "further_verified_dependencies": "See spectral-reduction-map.json and spectral-analytic-map.json for the full-domain determinant criterion, global inhomogeneous regularity, actual analytic family and two-zero count."
 }

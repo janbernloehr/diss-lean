@@ -45,9 +45,10 @@
     }
   ],
   "remaining": [
-    "Analytic parameter family of the endpoint determinant and localization/counting of its zeros.",
-    "Actual singular spectrum, spectral labels, algebraic multiplicities and eventual corrected-strip inclusion.",
-    "Gap and Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV main theorem proofs."
+    "Identify analytic determinant orders with algebraic multiplicities and prove actual singular spectral labels and corrected-strip inclusion.",
+    "Prove the source diagonal symmetry, root-separation estimate(23), gap/Dirichlet bounds and inverse spectral regularity.",
+    "Construct the Birkhoff maps and actual KdV main theorem proofs."
   ],
-  "qualification": "The determinant criterion concerns the physical point eigen-equation, not an asserted equality between the full spectrum and a labeled sequence. The rank bound is geometric; no equality between algebraic multiplicity and determinant-zero order is inferred."
+  "qualification": "The determinant criterion concerns the physical point eigen-equation, not an asserted equality between the full spectrum and a labeled sequence. The rank bound is geometric; no equality between algebraic multiplicity and determinant-zero order is inferred.",
+  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity and the two-zero count/localization are now proved; see spectral-analytic-map.json."
 }

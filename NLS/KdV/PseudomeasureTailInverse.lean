@@ -194,4 +194,44 @@ theorem endpointHillTailInverse_unique (w : SpectralWeight) (r : ℝ) (hr : 0 �
     a = endpointHillTailInverse w r hr hr1 n hn z hz q hsmall b := by
   rw [← hab, endpointHillTailInverse_left]
 
+/-- The canonical inverse has the source's norm bound two in both opposite
+shifted norms, on the same original carrier and for every source weight. -/
+theorem negativeShiftedNorm_endpointHillTailInverse_le (w : SpectralWeight)
+    (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2) (n : ℕ) (hn : 1 ≤ n)
+    (z : ℂ) (hz : z ∈ reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hs : endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2)
+    (a : WeightedCoeff (w.negativeSobolev r) ⊤) :
+    w.negativeShiftedNorm r hr (n:ℤ) ⊤ (endpointHillTailInverse w r hr hr1 n hn z hz q hs a) ≤
+        2*w.negativeShiftedNorm r hr (n:ℤ) ⊤ a ∧
+      w.negativeShiftedNorm r hr (-(n:ℤ)) ⊤ (endpointHillTailInverse w r hr hr1 n hn z hz q hs a) ≤
+        2*w.negativeShiftedNorm r hr (-(n:ℤ)) ⊤ a := by
+  constructor
+  · let e := w.negativeShiftEquiv r hr (n:ℤ) ⊤
+    let K := Classical.choose (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hs)
+    change ‖e (e.symm (K (e a)))‖ ≤ 2*‖e a‖
+    rw [ContinuousLinearEquiv.apply_symm_apply]
+    exact (K.le_opNorm (e a)).trans (mul_le_mul_of_nonneg_right
+      (Classical.choose_spec (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hs)).2.2
+        (norm_nonneg _))
+  · let e := w.negativeShiftEquiv r hr (-(n:ℤ)) ⊤
+    let K := Classical.choose (exists_endpointHill_tail_inverseMinus w r hr hr1 n hn z hz q hs)
+    let y := endpointHillTailInverse w r hr hr1 n hn z hz q hs a
+    have he := congrArg e (endpointHillTailInverse_right w r hr hr1 n hn z hz q hs a)
+    rw [map_sub] at he
+    change e y-e (unshiftedEndpointHillPerturbation w r hr hr1 n hn z hz q y) = e a at he
+    change w.negativeShiftEquiv r hr (-(n:ℤ)) ⊤ y -
+      w.negativeShiftEquiv r hr (-(n:ℤ)) ⊤
+        (unshiftedEndpointHillPerturbation w r hr hr1 n hn z hz q y) = e a at he
+    rw [negativeShift_unshiftedEndpointHillPerturbation] at he
+    have hL := congrArg (fun T => T (e y))
+      (Classical.choose_spec (exists_endpointHill_tail_inverseMinus w r hr hr1 n hn z hz q hs)).2.1
+    change K (e y-endpointHillPerturbationMinus w r hr hr1 n hn z hz q (e y)) = e y at hL
+    rw [he] at hL
+    change ‖e y‖ ≤ 2*‖e a‖
+    rw [← hL]
+    exact (K.le_opNorm (e a)).trans (mul_le_mul_of_nonneg_right
+      (Classical.choose_spec (exists_endpointHill_tail_inverseMinus w r hr hr1 n hn z hz q hs)).2.2
+        (norm_nonneg _))
+
 end NLS.KdV

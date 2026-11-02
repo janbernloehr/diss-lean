@@ -19,7 +19,9 @@
       "continuous_weakStarTrajectory_iff_lower",
       "continuous_trajectory_iff_hminusOne",
       "continuous_weakStarInvariantActionTrajectory",
-      "continuous_trajectory_iff_originalHminusOne"
+      "continuous_trajectory_iff_originalHminusOne",
+      "isEmbedding_sourceLowerDistributionTrajectory",
+      "continuous_sourceTrajectory_iff_lowerDistribution"
     ],
     "1.4": [
       "sourceLemma2_4_physical_identification",
@@ -27,11 +29,14 @@
       "sourceCorollary2_5_coefficient_tail_invertible",
       "sourceLemma2_7_uniform_physical_reduction",
       "sourceLemmaC_2",
-      "endpointHillKernelEquiv"
+      "endpointHillKernelEquiv",
+      "analyticAt_sourceEndpointDeterminant",
+      "source_uniform_analytic_physical_reduction",
+      "sourceLemma2_11_uniform_zero_count"
     ]
   },
   "essential_open_obligations": [
-    "Prove analytic dependence and zero localization/counting for the endpoint reduced determinant; construct singular spectral enumeration and algebraic multiplicities, corrected-strip inclusion and gap/Dirichlet estimates.",
+    "Identify analytic determinant zero orders with physical algebraic multiplicities and construct/label the actual singular spectrum and eventual corrected-strip inclusion; prove diagonal symmetry, root-separation and gap/Dirichlet estimates.",
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -67,13 +72,20 @@
     "The actual endpoint two-mode operator has a nontrivial kernel exactly when the physical singular Hill equation has a nonzero vector in its entire original H1 domain. Every such vector is reconstructed from its two physical amplitudes.",
     "The effective kernel and physical eigenspace are linearly equivalent; late-strip physical eigenspaces are finite dimensional with geometric multiplicity at most two.",
     "A cutoff uniform on exact original source norm balls precedes q, n and lambda in the physical determinant criterion.",
-    "Appendix C.2 regularity is proved for every complex spectral parameter and every endpoint right-hand side; the original inhomogeneous solution gains two endpoint orders with identical smooth-test action."
+    "Appendix C.2 regularity is proved for every complex spectral parameter and every endpoint right-hand side; the original inhomogeneous solution gains two endpoint orders with identical smooth-test action.",
+    "The actual source determinant is jointly complex Banach analytic in the original endpoint potential norm and lambda, including zeros and every point of the corrected closed strip.",
+    "The chosen original-carrier tail inverse obeys the norm bound two in both opposite shifted norms for every source weight.",
+    "The actual effective determinant has exactly two zeros by analytic order in the radius4*sqrt(n) disc and in the entire corrected strip. Every such zero lies within sqrt(n)/4 under the existing source cutoff.",
+    "The joint analytic determinant retains the full original H1 physical eigenvector criterion, uniformly on exact original source norm balls."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
     "Bounded weak-star closure compactness and convergent subsequence extraction.",
-    "Weak-star closure commutes with every admissible lower norm realization; bounded weak-star closedness is equivalent to lower-image closedness."
+    "Weak-star closure commutes with every admissible lower norm realization; bounded weak-star closedness is equivalent to lower-image closedness.",
+    "WeakStarPotential explicitly equips the original constrained distribution space with its full Wiener weak-star topology. Source B.1(i)-(iv) now have direct original-norm/original-distribution statements, including all literal existential clauses.",
+    "Bounded original source subsets are metrizable; physical weak-star subsequential limits stay within the original source space. Closure and ambient closedness commute with every admissible original lower norm realization.",
+    "On bounded original physical source sets, all original real Wiener tests and every admissible lower norm distribution realization induce the same topology, including arbitrary filters and compact-open trajectory spaces."
   ],
-  "workspace_status": "Existing private worktree and article branch retained; canonical source checkout and build outputs remain read-only. Validated milestone publication follows the active goal instruction to commit and push to this article branch; no workspace attachment or canonical source integration is performed.",
+  "workspace_status": "Existing private article worktree retained; validated milestones are committed and pushed on its article branch under the active goal. The pending workspace decision does not change canonical source/build read-only isolation. No workspace attachment or canonical integration is performed.",
   "goal_turn_classification": "progress"
 }

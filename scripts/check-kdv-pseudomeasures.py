@@ -25,6 +25,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.FunctionalAnalysis.TwoDimensionalDeterminant',
     'NLS.SequenceSpaces.SobolevConvolutionBounds',
     'NLS.Fourier.PeriodicH1Multiplication',
     'NLS.SequenceSpaces.HillMixedKernel',
@@ -37,6 +38,7 @@ modules = [
     'NLS.KdV.HillComplement',
     'NLS.KdV.HillReduction',
     'NLS.KdV.FreeHillRegularity',
+    'NLS.KdV.FreeHillAnalytic',
     'NLS.KdV.SingularHillPhysical',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
@@ -49,6 +51,9 @@ modules = [
     'NLS.KdV.PseudomeasureEllipticRegularity',
     'NLS.KdV.PseudomeasureTailInverse',
     'NLS.KdV.PseudomeasureReduction',
+    'NLS.KdV.PseudomeasureAnalytic',
+    'NLS.KdV.PseudomeasureLocalization',
+    'NLS.KdV.PseudomeasureZeroCount',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
     'NLS.Fourier.PeriodicWeightedWeakStar',
     'NLS.Fourier.PeriodicDistributionParity',
@@ -65,8 +70,10 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.TrajectoryTopology',
     'NLS.Articles.KdVPseudomeasures.SourceSpaces',
     'NLS.Articles.KdVPseudomeasures.RealPredualTopology',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology',
     'NLS.Articles.KdVPseudomeasures.SpectralEndpoint',
     'NLS.Articles.KdVPseudomeasures.SpectralReduction',
+    'NLS.Articles.KdVPseudomeasures.SpectralAnalytic',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

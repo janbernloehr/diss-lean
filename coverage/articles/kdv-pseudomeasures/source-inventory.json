@@ -63,7 +63,9 @@
         "NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory",
         "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
         "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
-        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val",
+        "NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistributionTrajectory",
+        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution"
       ],
       "qualification": "These are proved topology/generic flow dependencies, not the physical KdV main theorem."
     },
@@ -119,7 +121,7 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "Arbitrary-weight endpoint tail estimates, physical multiplication and inverse identities are proved. The full-domain physical determinant reduction is proved in the unit-weight main-theorem scale, with global endpoint inhomogeneous regularity. Singular spectral enumeration/localization, gap and midpoint-Dirichlet asymptotics remain unproved."
+      "status": "Arbitrary-weight endpoint tail bounds, physical multiplication and inverse identities are proved. The full-domain determinant reduction, global endpoint inhomogeneous regularity, joint actual determinant analyticity and two-zero count/localization are proved in the unit-weight main-theorem scale. Spectral algebraic multiplicities/labels and gap/Dirichlet asymptotics remain open."
     },
     {
       "label": "2.2",
@@ -136,7 +138,7 @@
         38
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
-      "status": "Generalized endpoint B.1(i)-(iv) proved, including literal existential lower-exponent formulations, bounded weak-star closure/subsequence extraction, and ambient lower-norm closure/closedness. The topology is transported to original lower order distributions with unchanged smooth-test action, full real-Wiener testing on bounded physical source sets, and compact-open trajectories. Physical KdV main constructions remain open."
+      "status": "Proved in generalized weighted endpoint spaces and directly on WeakStarPotential(r), which retains the original physical distribution. All B.1(i)-(iv) conclusions include exact original norms, finite-p strict thresholds and literal existential clauses. Bounded closure, subsequences, ambient lower-image closedness, original real-Wiener testing and compact-open trajectory topology are proved. No physical KdV main theorem completion is inferred."
     },
     {
       "label": "2.4 / 2.5",
@@ -166,6 +168,24 @@
       "content": "For every lambda in C, endpoint q and g, any original H1 solution of (L(q)-lambda)f=g has endpoint regularity s+2.",
       "status": "Generic complex coefficient theorem and exact original physical source-potential interface proved, with every lambda and endpoint right-hand side; the original distribution is unchanged.",
       "coverage": "spectral-reduction-map.json"
+    },
+    {
+      "label": "2.9 (analytic-family dependency)",
+      "pages": [
+        12
+      ],
+      "content": "The source effective coefficients are analytic on the spectral strip.",
+      "status": "Joint bounded-operator and determinant analyticity proved on neighborhoods of every corrected closed-strip point, in the exact original endpoint potential norm. Quantitative diagonal/off-diagonal correction bounds and diagonal symmetry remain open.",
+      "coverage": "spectral-analytic-map.json"
+    },
+    {
+      "label": "2.11 (zero count and localization)",
+      "pages": [
+        14
+      ],
+      "content": "Exactly two determinant zeros by analytic multiplicity on the strip, contained in the radius4*sqrt(n) disc.",
+      "status": "Proved uniformly on exact original source norm balls with corrected radius6n strips, under the existing cutoff. The root-separation estimate(23), physical algebraic-multiplicity correspondence and spectral labels remain open.",
+      "coverage": "spectral-analytic-map.json"
     }
   ],
   "reuse_map": [
@@ -236,6 +256,12 @@
       "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
       "source_branch": "articles/kdv-estimates",
       "reuse": "Imported byte-identically and freshly checked; shared two-mode coordinates, finite amplitudes and determinant foundations are used directly in the singular endpoint reduction."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+      "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+      "source_branch": "articles/kdv-estimates",
+      "reuse": "Copied byte-identically and used directly for the actual endpoint determinant perturbation bound; the existing Rouche/ZeroCountComparison library supplies the scalar two-zero count."
     }
   ],
   "remaining_obligations": [

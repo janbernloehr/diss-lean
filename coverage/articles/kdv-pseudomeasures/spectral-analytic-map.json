@@ -1,0 +1,51 @@
+{
+  "source": "arXiv:1610.00278v1, Section2.2 equation(19) analytic-family dependency (p.12), and Lemma2.11 zero-count/localization conclusions (p.14)",
+  "main_theorems_verified": false,
+  "parameter_domain": {
+    "r": "0<=r<1/2; exact source order s=-r, including s=0",
+    "complex_potential": "The full endpoint weighted coefficient Banach space in the unit spectral weight convention, and its exact original FourierLebesgueSpace(2,-r,infinity) realization.",
+    "physical_source": "Original Potential(r): real, mean-zero, physically period-one distributions.",
+    "spectral_parameter": "Every point of the corrected CLOSED strip abs(Re(lambda)-pi^2*n^2)<=6*n, including boundary points and determinant zeros.",
+    "cutoff": "The existing explicit half-contraction criterion C_r*n^(r-1/2)*norm(q)<=1/2. A single cutoff is chosen before q, n, lambda on every exact original source norm ball."
+  },
+  "normalization": "Period two, exp(i*pi*k*x) modes, original coefficient q(mode(-k)), source endpoint norm preserved exactly, free symbol pi^2*k^2. The determinant uses the actual constructed two-mode reduction and original H1/H^-1 physical multiplication.",
+  "declarations": {
+    "normalized_free_symbol_analyticity": "NLS.KdV.analyticAt_hillOrderTwoSymbolFamily",
+    "actual_endpoint_tail_family": "NLS.KdV.endpointTailFamily_eq",
+    "joint_endpoint_norm_analyticity": "NLS.KdV.analyticAt_endpointTailFamily",
+    "actual_inverse_family": "NLS.KdV.endpointInverseFamily_eq",
+    "analytic_effective_matrix": "NLS.KdV.analyticAt_endpointReducedFamily",
+    "analytic_actual_determinant": "NLS.KdV.analyticAt_endpointReducedDeterminant",
+    "original_distribution_norm_analyticity": "NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointDeterminant",
+    "uniform_original_physical_criterion": "NLS.Articles.KdVPseudomeasures.source_uniform_analytic_physical_reduction",
+    "both_shifted_norm_inverse_bounds": "NLS.KdV.negativeShiftedNorm_endpointHillTailInverse_le",
+    "effective_matrix_column_bound": "NLS.KdV.endpointHillEffectiveCorrection_columns_le",
+    "determinant_free_error_bound": "NLS.KdV.endpointReducedDeterminant_free_error_le",
+    "disc_zero_count": "NLS.KdV.endpointReducedDeterminant_two_zeros",
+    "entire_strip_zero_count": "NLS.KdV.endpointReducedDeterminant_strip_two_zeros",
+    "zero_localization": "NLS.KdV.endpointReducedDeterminant_zero_localization",
+    "uniform_original_source_count": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_zero_count"
+  },
+  "proof_details": [
+    "The free denominators retain a half-unit gap on a ball about every closed-strip point. Uniform local infinity bounds and the existing bounded-coordinate analytic theorem give Banach, not just scalar coordinate, analyticity.",
+    "The regular Wiener resolvent is assembled from its proved l1 reciprocal symbol; signed Sobolev convolution is a bounded bilinear map. The total tail family is jointly analytic and equals the existing Fourier/physical operator.",
+    "The total ring inverse equals the actual tail inverse wherever the already proved cutoff applies. The effective two-mode determinant remains analytic at its zeros; the singular effective matrix itself is not inverted.",
+    "The canonical inverse on the original endpoint carrier has norm at most two in BOTH opposite shifted norms, for every source spectral weight. Opposite modulation of each resonant source column exactly cancels its norm shift.",
+    "Each effective column has norm <=2*<2n>^r*norm(q). Since C_r>=24, the original half-contraction criterion implies that this is <=sqrt(n)/8. No extra norm-smallness or cutoff premise is imposed.",
+    "The shared two-dimensional determinant estimate and existing Rouche zero-count theorem prove exactly two zeros by analytic order in the source disc of radius4*sqrt(n). Localization puts every strip zero within sqrt(n)/4, so the same two zeros exhaust the whole unbounded corrected strip."
+  ],
+  "shared_reuse": {
+    "module": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+    "branch": "articles/kdv-estimates",
+    "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+    "byte_identical": true,
+    "sha256": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
+    "public_declarations": 2
+  },
+  "qualifications": [
+    "The full root-separation estimate(23) of Lemma2.11 is still open. This report covers its zero-count and localization conclusions.",
+    "Analytic orders of determinant zeros are NOT yet identified with algebraic multiplicities of the physical operator.",
+    "Global singular spectrum, periodic/antiperiodic labels, eventual corrected-strip inclusion and the Birkhoff/KdV main theorem constructions remain open.",
+    "The analytic statement is in the exact endpoint NORM topology. It does not claim Banach analyticity in the weak-star topology or identify a real Banach manifold structure on the constrained source subtype."
+  ]
+}

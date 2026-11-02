@@ -105,4 +105,41 @@ def signedSobolevConvolutionCLM (r : ℝ) (hr : 0 ≤ r)
     (b : WeightedCoeff (Weight.sobolev r) 1) :
     signedSobolevConvolutionCLM r hr a b = signedSobolevConvolution r hr a b := rfl
 
+/-- Linearity also holds in the distribution input of the actual Banach series. -/
+theorem signedSobolevConvolution_add_left (r : ℝ) (hr : 0 ≤ r)
+    (a c : WeightedCoeff (SpectralWeight.one.negativeSobolev r) p)
+    (b : WeightedCoeff (Weight.sobolev r) 1) :
+    signedSobolevConvolution r hr (a+c) b =
+      signedSobolevConvolution r hr a b + signedSobolevConvolution r hr c b := by
+  simp only [signedSobolevConvolution, map_add, smul_add]
+  exact (summable_norm_signedSobolevConvolution_terms r hr a b).of_norm.tsum_add
+    (summable_norm_signedSobolevConvolution_terms r hr c b).of_norm
+
+/-- Complex linearity in the distribution input. -/
+theorem signedSobolevConvolution_smul_left (r : ℝ) (hr : 0 ≤ r) (c : ℂ)
+    (a : WeightedCoeff (SpectralWeight.one.negativeSobolev r) p)
+    (b : WeightedCoeff (Weight.sobolev r) 1) :
+    signedSobolevConvolution r hr (c • a) b = c • signedSobolevConvolution r hr a b := by
+  simp only [signedSobolevConvolution, map_smul, smul_comm (b.val _) c]
+  exact (summable_norm_signedSobolevConvolution_terms r hr a b).of_norm.tsum_const_smul c
+
+/-- Bounded bilinear multiplication on opposite orders, retaining infinity. -/
+def signedSobolevConvolutionBilinear (r : ℝ) (hr : 0 ≤ r) :
+    WeightedCoeff (SpectralWeight.one.negativeSobolev r) p →L[ℂ]
+      WeightedCoeff (Weight.sobolev r) 1 →L[ℂ]
+        WeightedCoeff (SpectralWeight.one.negativeSobolev r) p :=
+  (LinearMap.mk₂ ℂ (signedSobolevConvolution r hr) (signedSobolevConvolution_add_left r hr)
+    (fun c a b => signedSobolevConvolution_smul_left r hr c a b)
+    (signedSobolevConvolution_add_right r hr)
+    (fun c a b => signedSobolevConvolution_smul_right r hr c a b)).mkContinuous₂ 1
+      (fun a b => by simpa only [LinearMap.mk₂_apply, one_mul] using
+        norm_signedSobolevConvolution_le r hr a b)
+
+/-- The analytic bilinear realization is exactly the existing fixed-input operator. -/
+theorem signedSobolevConvolutionBilinear_eq (r : ℝ) (hr : 0 ≤ r)
+    (a : WeightedCoeff (SpectralWeight.one.negativeSobolev r) p) :
+    signedSobolevConvolutionBilinear r hr a = signedSobolevConvolutionCLM r hr a := by
+  ext b
+  rfl
+
 end NLS.WeightedCoeff

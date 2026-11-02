@@ -1,3 +1,4 @@
+import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.SequenceSpaces.SobolevConvolutionBounds
 import NLS.Fourier.PeriodicH1Multiplication
 import NLS.SequenceSpaces.HillMixedKernel
@@ -10,6 +11,7 @@ import NLS.KdV.FreeHill
 import NLS.KdV.HillComplement
 import NLS.KdV.HillReduction
 import NLS.KdV.FreeHillRegularity
+import NLS.KdV.FreeHillAnalytic
 import NLS.KdV.SingularHillPhysical
 import NLS.KdV.PseudomeasureKernel
 import NLS.KdV.PseudomeasurePerturbation
@@ -22,6 +24,9 @@ import NLS.KdV.PseudomeasureMultiplication
 import NLS.KdV.PseudomeasureEllipticRegularity
 import NLS.KdV.PseudomeasureTailInverse
 import NLS.KdV.PseudomeasureReduction
+import NLS.KdV.PseudomeasureAnalytic
+import NLS.KdV.PseudomeasureLocalization
+import NLS.KdV.PseudomeasureZeroCount
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
 import NLS.Fourier.PeriodicWeightedWeakStar
 import NLS.Fourier.PeriodicDistributionParity
@@ -38,9 +43,15 @@ import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
 import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 import NLS.Articles.KdVPseudomeasures.SourceSpaces
 import NLS.Articles.KdVPseudomeasures.RealPredualTopology
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology
 import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 import NLS.Articles.KdVPseudomeasures.SpectralReduction
+import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
 
+/-! Exact public-declaration transitive axiom audit. -/
+
+#print axioms NLS.FiniteSpectralDeterminant.det_prod_formula
+#print axioms NLS.FiniteSpectralDeterminant.determinant_shift_bound
 #print axioms NLS.WeightedCoeff.norm_sobolev_le_base_add_derivative
 #print axioms NLS.WeightedCoeff.norm_sobolevConvolution_le
 #print axioms NLS.WeightedCoeff.sobolevConvolution_add_left
@@ -107,6 +118,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.SpectralWeight.negativeModulation
 #print axioms NLS.SpectralWeight.negativeModulation_apply
 #print axioms NLS.SpectralWeight.norm_negativeModulation_le
+#print axioms NLS.SpectralWeight.negativeShiftedNorm_negativeModulation
 #print axioms NLS.WeightedCoeff.hasSum_weighted_norm
 #print axioms NLS.WeightedCoeff.summable_norm_signedSobolevConvolution_terms
 #print axioms NLS.WeightedCoeff.signedSobolevConvolution
@@ -116,6 +128,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.WeightedCoeff.signedSobolevConvolution_smul_right
 #print axioms NLS.WeightedCoeff.signedSobolevConvolutionCLM
 #print axioms NLS.WeightedCoeff.signedSobolevConvolutionCLM_apply
+#print axioms NLS.WeightedCoeff.signedSobolevConvolution_add_left
+#print axioms NLS.WeightedCoeff.signedSobolevConvolution_smul_left
+#print axioms NLS.WeightedCoeff.signedSobolevConvolutionBilinear
+#print axioms NLS.WeightedCoeff.signedSobolevConvolutionBilinear_eq
 #print axioms NLS.WeightedCoeff.weightReflection
 #print axioms NLS.WeightedCoeff.weightReflection_apply
 #print axioms NLS.WeightedCoeff.shiftReflection
@@ -184,6 +200,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.KdV.sobolev_two_le_freeHillValue
 #print axioms NLS.KdV.sobolev_two_reducedHillSymbol_bound
 #print axioms NLS.KdV.exists_sobolevReducedHillResolvent
+#print axioms NLS.KdV.freeHill_denominator_near
+#print axioms NLS.KdV.hillOrderTwoRaw_bound
+#print axioms NLS.KdV.hillOrderTwoSymbolFamily
+#print axioms NLS.KdV.hillOrderTwoSymbolFamily_apply_of_gap
+#print axioms NLS.KdV.norm_hillOrderTwoSymbolFamily_le
+#print axioms NLS.KdV.hillOrderTwoSymbolFamily_eq_symbol
+#print axioms NLS.KdV.analyticAt_hillOrderTwoSymbolFamily
 #print axioms NLS.KdV.singularHillLaplacian_weight_bound
 #print axioms NLS.KdV.singularHillLaplacian
 #print axioms NLS.KdV.singularHillLaplacian_coefficient
@@ -324,6 +347,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.KdV.endpointHillTailInverse_left
 #print axioms NLS.KdV.endpointHillTailInverse_right
 #print axioms NLS.KdV.endpointHillTailInverse_unique
+#print axioms NLS.KdV.negativeShiftedNorm_endpointHillTailInverse_le
 #print axioms NLS.KdV.endpointHillH1Modes
 #print axioms NLS.KdV.endpointHillH1Modes_coefficient
 #print axioms NLS.KdV.endpointHillH1Coordinates
@@ -347,6 +371,46 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.KdV.endpointHillKernelEquiv
 #print axioms NLS.KdV.finiteDimensional_singularHillEigenspace
 #print axioms NLS.KdV.finrank_singularHillEigenspace_le_two
+#print axioms NLS.KdV.endpointInverseWienerWeight
+#print axioms NLS.KdV.endpointWienerSymbol_weight_identity
+#print axioms NLS.KdV.endpointWienerSymbolFamily
+#print axioms NLS.KdV.endpointWienerSymbolFamily_apply
+#print axioms NLS.KdV.analyticAt_endpointWienerSymbolFamily
+#print axioms NLS.KdV.endpointWienerResolventFamily
+#print axioms NLS.KdV.endpointWienerResolventFamily_apply
+#print axioms NLS.KdV.endpointWienerResolventFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointWienerResolventFamily
+#print axioms NLS.KdV.endpointTailFamily
+#print axioms NLS.KdV.endpointTailFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointTailFamily
+#print axioms NLS.KdV.isUnit_one_sub_endpointTailFamily
+#print axioms NLS.KdV.endpointInverseFamily
+#print axioms NLS.KdV.endpointInverseFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointInverseFamily
+#print axioms NLS.KdV.endpointModePotentialFamily
+#print axioms NLS.KdV.endpointModePotentialFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointModePotentialFamily
+#print axioms NLS.KdV.endpointEffectiveFamily
+#print axioms NLS.KdV.endpointReducedFamily
+#print axioms NLS.KdV.endpointReducedFamily_eq
+#print axioms NLS.KdV.analyticAt_endpointReducedFamily
+#print axioms NLS.KdV.endpointReducedDeterminant
+#print axioms NLS.KdV.analyticAt_endpointReducedDeterminant
+#print axioms NLS.KdV.endpointReducedDeterminant_eq_zero_iff
+#print axioms NLS.KdV.norm_apply_le_negativeShiftedNorm_one
+#print axioms NLS.KdV.endpointHillModePotential_basis_pos
+#print axioms NLS.KdV.endpointHillModePotential_basis_neg
+#print axioms NLS.KdV.endpointHillEffectivePotential_basis_shifted
+#print axioms NLS.KdV.endpointHillEffectiveCorrection_columns_le
+#print axioms NLS.KdV.endpointReducedDeterminant_free_error_le
+#print axioms NLS.KdV.endpointHillReduced_kernel_localization
+#print axioms NLS.KdV.sobolev_two_mode_le
+#print axioms NLS.KdV.endpoint_effective_column_small
+#print axioms NLS.KdV.endpointHillDisc_subset_strip
+#print axioms NLS.KdV.analyticOnNhd_endpointReducedDeterminant_spectral
+#print axioms NLS.KdV.endpointReducedDeterminant_zero_localization
+#print axioms NLS.KdV.endpointReducedDeterminant_two_zeros
+#print axioms NLS.KdV.endpointReducedDeterminant_strip_two_zeros
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.coefficientWeakDualHomeomorph
@@ -448,6 +512,37 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_originalRealWienerTests
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_originalRealWienerTests_iff_lowerDistribution
 #print axioms NLS.Articles.KdVPseudomeasures.lowerWeakStarDistribution_source_conditions
+#print axioms NLS.Articles.KdVPseudomeasures.weakStarPotentialCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_weakStarPotentialCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.PotentialNormBounded
+#print axioms NLS.Articles.KdVPseudomeasures.potentialNormBounded_iff_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_source_iff_bounded_closed
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_source_iff_isSeqCompact
+#print axioms NLS.Articles.KdVPseudomeasures.metrizable_source_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.metrizable_sourceNormBall
+#print axioms NLS.Articles.KdVPseudomeasures.isSeqCompact_sourceNormBall
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_seq_iff_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_val
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_source_conditions
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistribution_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_seq_iff_bounded_lower
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_source_iff_bounded_lower_compact
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_seq_iff_bounded_some_lower
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_source_iff_bounded_some_lower_compact
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_source_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_subseq_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.closure_sourceLowerDistribution_image
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_sourceRealWienerTests_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_realWienerTests
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_injective
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_source_iff_lower_image
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistributionMapOn
+#print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistributionTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_eq_potentialHminusOne
 #print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant
 #print axioms NLS.Articles.KdVPseudomeasures.source_negativeWeight_apply
 #print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_one_le
@@ -464,3 +559,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralReduction
 #print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_HminusOne
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemmaC_2
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficientsCLM
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficientsCLM_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceEndpointDeterminant
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_eq_zero_iff
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_analytic_physical_reduction
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_zero_count

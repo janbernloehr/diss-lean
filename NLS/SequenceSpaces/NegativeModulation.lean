@@ -48,4 +48,20 @@ theorem norm_negativeModulation_le (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r)
     (mul_nonneg (w.positive i).le ((Weight.sobolev r).positive i).le)
     (fun k => w.negativeSobolev_shift_le r hr i k) a
 
+/-- Shifting the norm opposite to an actual Fourier modulation recovers the
+original norm exactly, for every signed source weight and Banach exponent. -/
+theorem negativeShiftedNorm_negativeModulation (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r)
+    (i : ℤ) (a : WeightedCoeff (w.negativeSobolev r) p) :
+    w.negativeShiftedNorm r hr (-i) p (w.negativeModulation r hr i a) = ‖a‖ := by
+  have he : WeightedCoeff.weightEquiv ((w.negativeSobolev r).shift (-i)) p
+      (w.negativeShiftEquiv r hr (-i) p (w.negativeModulation r hr i a)) =
+        Coeff.shift i (WeightedCoeff.weightEquiv (w.negativeSobolev r) p a) := by
+    ext k
+    simp only [WeightedCoeff.weightEquiv_apply, negativeShiftEquiv_apply, negativeModulation_apply,
+      Weight.shift_apply, Coeff.shift_apply, sub_eq_add_neg]
+  change ‖WeightedCoeff.weightEquiv ((w.negativeSobolev r).shift (-i)) p
+    (w.negativeShiftEquiv r hr (-i) p (w.negativeModulation r hr i a))‖ = ‖a‖
+  rw [he, Coeff.norm_shift]
+  rfl
+
 end NLS.SpectralWeight
