@@ -38,8 +38,13 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors"
       ],
       "limits": [
-        "Complex Frechet-covector identities; not yet a physical L2-gradient/vector-field adapter."
-      ]
+        "Frechet-covector symmetries hold on the printed Sobolev domain. Actual all-order physical gradients are now certified on smooth fields. Sharp Sobolev L2 gradients and the induced gradient/vector-field covariance remain open."
+      ],
+      "gradient_dependency": {
+        "proved": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
+        "scope": "Every hierarchy order, arbitrary smooth complex period-one fields and smooth complex periodic variations; actual complex derivative equals the integral pairing with classicalNLSHierarchyGradient.",
+        "remaining": "Extension of the L2 gradient to the exact H^(k-1) domain and gradient/vector-field covariance."
+      }
     },
     {
       "label": "Theorem 2(ii)",
@@ -142,10 +147,16 @@
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
   },
   "remaining_essential_dependencies": [
-    "all-order physical Hamiltonian identification and variational recurrence",
+    "all-order independent mKdV/Hill Hamiltonian identification and physical variational recurrence; exact-domain L2-gradient extension",
     "sharp Sobolev vector-field restriction",
     "Hill operator spectral gap labels and action integrals",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
     "recorded main-source matrix/sign/signed-mean qualifications"
-  ]
+  ],
+  "shared_variational_calculus": {
+    "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
+    "physical_first_variation": "NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler",
+    "riccati_adapter": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
+    "scope": "All polynomial and Hamiltonian orders on smooth complex periodic fields; no caller-supplied first-variation identity or order bound."
+  }
 }

@@ -32,6 +32,15 @@ version = subprocess.check_output([args.lean, "--version"], text=True).strip()
 if not version.startswith("Lean (version 4.33.1,"):
     parser.error(f"Expected pinned Lean 4.33.1, got {version}")
 modules = [
+    "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean",
+    "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+    "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean",
+    "NLS/ZakharovShabat/SobolevPhysicalJets.lean",
+    "NLS/FunctionalAnalysis/UnitIntervalMean.lean",
+    "NLS/DifferentialPolynomial/PolynomialVariation.lean",
+    "NLS/DifferentialPolynomial/EulerLagrange.lean",
+    "NLS/DifferentialPolynomial/SmoothVariation.lean",
+    "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean",
     "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean",
     "NLS/MKdV/HierarchyRestriction.lean",
     "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean",

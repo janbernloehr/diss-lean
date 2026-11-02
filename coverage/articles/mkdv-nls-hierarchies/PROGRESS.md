@@ -125,3 +125,42 @@ There are now 96 public declarations in the article's shared/interface modules:
 the four introductory main theorems. All-order Hamiltonian identification and
 gradients, the sharp Sobolev flow restrictions, and the spectral actions,
 coordinates and frequencies required by the main theorems remain incomplete.
+
+## 2026-11-02 — all-order smooth physical variational gradients
+
+The shared differential-polynomial library now proves the Euler–Lagrange
+first-variation formula at every polynomial order. A generic chain rule in a
+normed complex algebra is applied to continuous physical jet curves; their
+bounded complex-linear unit-interval integral commutes with differentiation.
+Repeated periodic integration by parts transfers all derivatives off each
+variation. The proof uses the finite set of jets occurring in the polynomial
+and imposes no maximum order.
+
+`NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian` applies this result to
+the existing Riccati Hamiltonians, with their exact powers of `-i`. For every
+order and every smooth complex periodic pair, its actual complex derivative
+along arbitrary smooth periodic variations is the integral pairing with
+`classicalNLSHierarchyGradient`. The two gradient components are proved smooth
+and periodic. The physical Hamiltonian or its first variation is not supplied
+as an identification hypothesis.
+
+Reusable periodic derivative and integration-by-parts results were moved into
+`NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean`; existing equation
+APIs retain wrappers. The polynomial variation and Euler calculus live in
+`NLS/DifferentialPolynomial`, and the bounded curve integral in
+`NLS/FunctionalAnalysis/UnitIntervalMean.lean`.
+
+All 28 article/shared modules and the NLS aggregate compile with Lean 4.33.1,
+`autoImplicit=false` and warnings as errors. The expanded targeted transitive
+audit passes for 278 declarations and generated auxiliaries, including the
+imported shared differential-polynomial namespace. The combined NLS/article
+audit passes for 45,434 declarations. Both allow only `propext`,
+`Classical.choice` and `Quot.sound`. This is compilation against the pinned
+read-only dependency cache, not a fresh rebuild of all dependencies. The full
+validation ran under the shared build lock and wrote only local artifacts.
+
+The public article/shared inventory contains 126 declarations: 94 theorems
+and 32 definitions. Main Theorems 1–4 remain incomplete. The next gradient
+obligation is the exact H^(k-1) L² extension and symmetry/vector-field
+identification; the even/odd hierarchy recurrence and independent all-order
+mKdV Hamiltonian identification also remain open.

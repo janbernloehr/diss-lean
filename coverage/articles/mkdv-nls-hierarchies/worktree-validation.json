@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 141,
+  "audited_declarations_and_auxiliaries": 278,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -499,12 +499,162 @@
       "kind": "theorem",
       "name": "classicalDiscriminant_eq_flowTrace",
       "file": "NLS/ZakharovShabat/ClassicalVolterraTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_deriv",
+      "file": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_iteratedDeriv",
+      "file": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiff_iteratedDeriv",
+      "file": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_deriv_mul_periodic",
+      "file": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_iteratedDeriv_mul_periodic",
+      "file": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "unitIntervalMean",
+      "file": "NLS/FunctionalAnalysis/UnitIntervalMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitIntervalMean_apply",
+      "file": "NLS/FunctionalAnalysis/UnitIntervalMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mkDerivation_eq_sum_pderiv",
+      "file": "NLS/DifferentialPolynomial/PolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_eval_mvPolynomial",
+      "file": "NLS/DifferentialPolynomial/PolynomialVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_aeval_mvPolynomial",
+      "file": "NLS/DifferentialPolynomial/PolynomialVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "eulerDerivative",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "def",
+      "name": "firstVariationDensity",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiff_evaluate",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_iterate_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "evaluate_eulerDerivative",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_firstVariationDensity",
+      "file": "NLS/DifferentialPolynomial/EulerLagrange.lean"
+    },
+    {
+      "kind": "def",
+      "name": "fieldCurve",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitIntervalMean_fieldCurve",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "jetCurve",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "jetCurve_apply",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "aeval_jetCurve",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "iteratedDeriv_affine",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_integral_evaluate",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_integral_evaluate_euler",
+      "file": "NLS/DifferentialPolynomial/SmoothVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nlsHamiltonianPolynomial",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_evaluate_nlsHamiltonianPolynomial",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalNLSHierarchyGradient",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalNLSHamiltonian",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiff_classicalNLSHierarchyGradient",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_classicalNLSHierarchyGradient",
+      "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
     }
   ],
-  "public_declaration_count": 96,
-  "theorem_count": 71,
-  "definition_count": 25,
-  "full_build": "All 19 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 126,
+  "theorem_count": 94,
+  "definition_count": 32,
+  "full_build": "All 28 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -527,11 +677,20 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "16713db2ccf183e9853457156b6ad5fff769072b37cd8676c8c69644ed7d50d2",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "cb213baf112b84c815348f8b102dde41814db64771b524e33b82c251f16e300f"
+    "scripts/check_mkdv_nls.py": "a3024a66396ce193670f2d25b20f4b04a7df53fb9e4bc268237320951a33de34",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e0d6c190fa7b3a6a9ba4a085cc8bb6ef715f332ef17cef7458a146944fe8d7c6",
+    "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
+    "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
+    "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
+    "NLS/ZakharovShabat/SobolevPhysicalJets.lean": "12a42ff7e7bbbf571f4b73bc1a0719db655b41179fcce9539ae6565f7717e51c",
+    "NLS/FunctionalAnalysis/UnitIntervalMean.lean": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6",
+    "NLS/DifferentialPolynomial/PolynomialVariation.lean": "edca1e4571cc50d7e1549da618aa0407808cb25df9afc14ed9c09f686f312a15",
+    "NLS/DifferentialPolynomial/EulerLagrange.lean": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
+    "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
+    "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 19,
+  "focused_module_count": 28,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -550,11 +709,17 @@
       "audit_count": 141,
       "combined_NLS_audit_count": 45386,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "all-order smooth physical variational gradients",
+      "audit_count": 278,
+      "combined_NLS_audit_count": 45434,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45386,
+  "combined_audited_NLS_declarations": 45434,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

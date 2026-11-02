@@ -2,6 +2,7 @@ import NLS.Articles.MKdVNLSHierarchies.InitialChecks
 import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
 import NLS.MKdV.MiuraBoundaryTransfer
 import NLS.Articles.MKdVNLSHierarchies.DiscriminantIdentity
+import NLS.ZakharovShabat.ClassicalNLSHierarchyVariation
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -10,6 +11,20 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+    `NLS.DifferentialPolynomial,
+    `NLS.FunctionalAnalysis.periodic_deriv,
+    `NLS.FunctionalAnalysis.periodic_iteratedDeriv,
+    `NLS.FunctionalAnalysis.contDiff_iteratedDeriv,
+    `NLS.FunctionalAnalysis.integral_deriv_mul_periodic,
+    `NLS.FunctionalAnalysis.integral_iteratedDeriv_mul_periodic,
+    `NLS.LinearVolterra.unitIntervalMean,
+    `NLS.LinearVolterra.unitIntervalMean_apply,
+    `NLS.ZakharovShabat.nlsHamiltonianPolynomial,
+    `NLS.ZakharovShabat.integral_evaluate_nlsHamiltonianPolynomial,
+    `NLS.ZakharovShabat.classicalNLSHierarchyGradient,
+    `NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian,
+    `NLS.ZakharovShabat.contDiff_classicalNLSHierarchyGradient,
+    `NLS.ZakharovShabat.periodic_classicalNLSHierarchyGradient,
     `NLS.ZakharovShabat.hierarchyComponentSwap,
     `NLS.ZakharovShabat.hierarchyComponentSwap_apply,
     `NLS.ZakharovShabat.sobolevNLSHamiltonian_neg,
@@ -34,6 +49,8 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
+    ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
+    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian,
     ``NLS.MKdV.classicalNLSHamiltonian_three_diagonal,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors,

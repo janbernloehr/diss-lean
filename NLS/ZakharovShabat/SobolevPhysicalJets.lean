@@ -59,10 +59,8 @@ theorem hierarchySobolevJetContinuous_periodic (s k : ℕ) (hk : k < s) (a : Sca
 
 /-- Smoothness of every classical iterated derivative. -/
 theorem contDiff_iteratedDeriv_of_smooth (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (k : ℕ) :
-    ContDiff ℝ ∞ (iteratedDeriv k f) := by
-  induction k with
-  | zero => simpa using hf
-  | succ k ih => rw [iteratedDeriv_succ]; exact (contDiff_infty_iff_deriv.mp ih).2
+    ContDiff ℝ ∞ (iteratedDeriv k f) :=
+  NLS.FunctionalAnalysis.contDiff_iteratedDeriv f hf k
 
 /-- The kth classical derivative has exactly the kth Fourier multiplier. -/
 theorem periodOneCoefficient_iteratedDeriv_of_smooth (f : ℝ → ℂ)
