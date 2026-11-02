@@ -18,8 +18,10 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/Dynamics/FixedTimePhaseObstruction.lean` | A relative phase tending to pi rules out a common fixed-time output limit, independently of convergence of the individual frequencies. |
 | `NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean` | Finite signed perturbations with an exact prescribed mass increment; endpoint regularity; norm convergence for every sigma<1/2. |
 | `NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean` | Fixed-time coordinate nonextension via two constructed approximating families, given the actual correction and endpoint phase identity. |
+| `NLS/KdV/FrequencyMoments.lean` | Literal weighted moments, Banach analyticity, odd and analytic-removal cancellations, norm estimate and binomial period expansions. |
+| `NLS/KdV/FrequencyContourDecomposition.lean` | Exact cubic/fifth-power coefficients and finite-gap normalized exterior-period decompositions, using the proved finite-hole Cauchy theorem. |
 
-All ten selected modules compile with pinned **Lean 4.33.1**, commit
+All twelve selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -33,17 +35,19 @@ PASS NLS/SequenceSpaces/NonnegativeEnergyDivergence
 PASS NLS/SequenceSpaces/HilbertEnergyDivergence
 PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
 PASS NLS/Dynamics/FixedTimePhaseObstruction
+PASS NLS/KdV/FrequencyMoments
+PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
 PASS NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
 PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 191 candidate declarations; 1489 declarations total.
+Axiom audit passed: 218 candidate declarations; 1593 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the ten selected modules (including generated and private declarations)
+the twelve selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -70,6 +74,8 @@ NLS/SequenceSpaces/NonnegativeEnergyDivergence.olean
 NLS/SequenceSpaces/HilbertEnergyDivergence.olean
 NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
 NLS/Dynamics/FixedTimePhaseObstruction.olean
+NLS/KdV/FrequencyMoments.olean
+NLS/KdV/FrequencyContourDecomposition.olean
 NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.olean
 NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.olean
 NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.olean
@@ -127,3 +133,12 @@ The warning policy was corrected in the fixed-time milestone: the previous
 run uses Lean's actual `warningAsError=true` option and passes without
 warnings. Previous passing logs contained no warnings, and their axiom
 audits remain valid; no linter is disabled by this correction.
+
+
+The frequency-contour milestone is detailed in `FREQUENCY_MOMENTS.md`.
+It checks the actual contour algebra, not construction of spectral factors
+or physical frequencies. Zeroth-period normalization and spectral analytic
+properties remain explicit hypotheses to be discharged by their
+construction. Neither finite sums nor the general contour norm estimate
+replace the sharp spectral bounds and locally uniform infinite-series
+convergence needed for Theorems 1.2 and 1.9.

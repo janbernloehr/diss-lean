@@ -130,3 +130,23 @@ axiom audit covers 191 selected-module declarations and 1489 declarations
 including imported NLS dependencies. The earlier `-E warning` option was
 replaced because it did not enforce the intended warning policy. No
 main theorem for the actual equation is yet marked verified.
+
+
+## Frequency-moment contour milestone
+
+`NLS/KdV/FrequencyMoments.lean` now defines the literal source moments and
+proves Banach analyticity on fixed-contour neighborhoods, odd-moment
+cancellation and the analytic-removal criterion for positive moments.
+`FrequencyContourDecomposition.lean` proves the cubic and fifth-power
+single-gap calculations and finite-gap exterior-period decompositions
+with the exact source coefficients. It uses the existing finite-hole
+Cauchy theorem rather than assuming a deformation identity. See
+[FREQUENCY_MOMENTS.md](FREQUENCY_MOMENTS.md) for the theorem-by-theorem map.
+
+These are reusable KdV contour proofs. Actual spectral factors, zeroth
+period normalization and physical Hamiltonian-frequency identities remain
+unconstructed, as do the sharp estimates and infinite-series convergence
+required by the main theorems. All twelve selected modules pass strict
+checks; the transitive audit covers 218 selected-module declarations and
+1593 declarations including imported NLS dependencies. Main-theorem
+completion remains unset.

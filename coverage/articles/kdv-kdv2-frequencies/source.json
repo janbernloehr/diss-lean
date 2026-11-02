@@ -258,6 +258,39 @@
       "scope": "Fixed-time obstruction proved given the actual correction continuity and endpoint phase identity; physical main theorem remains open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "282c44242a07a92387bbc708bfa91665b6f655807b011777ea153ceda49bfa27"
+    },
+    {
+      "path": "NLS/KdV/FrequencyMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(ii)-(iv)",
+        "Lemmas 3.2 and 4.1 binomial contour dependencies"
+      ],
+      "source_pages": [
+        25,
+        26,
+        27,
+        40,
+        41
+      ],
+      "scope": "Literal weighted contours, Banach analyticity and continuation criteria; actual spectral factors and their continuation remain to be constructed",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "911877f4f7302efd0602cb89d74c859242e4dc83890f6ffdd112ef8867daf1cf"
+    },
+    {
+      "path": "NLS/KdV/FrequencyContourDecomposition.lean",
+      "source_labels": [
+        "Lemma 3.2 contour identity",
+        "Lemma 4.1 contour identity"
+      ],
+      "source_pages": [
+        26,
+        27,
+        40,
+        41
+      ],
+      "scope": "Finite-hole deformation and exact normalized coefficients; zeroth spectral periods and Hamiltonian-frequency identity still required",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cb7817eb75d37a18fd90e08227f1f7e4abfc72ae04537cd68d3d59692bd8821e"
     }
   ],
   "dependencies_needed": [
@@ -288,8 +321,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 191,
-    "total_declarations_audited": 1489,
+    "candidate_declarations_audited": 218,
+    "total_declarations_audited": 1593,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -337,5 +370,6 @@
     "articles/kdv-estimates": "0b58631c37a1bf066ea0d21d5179b1a43844ed5c",
     "articles/kdv-convexity": "be9eba062019e5eb715d4eaf62ce25b0038140fb"
   },
-  "fixed_time_record": "FIXED_TIME_NONEXTENSION.md"
+  "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
+  "frequency_moment_record": "FREQUENCY_MOMENTS.md"
 }

@@ -90,7 +90,7 @@ verified merely because it has a generic analogue.
 | Theorem 1.12(ii) / 7 | For every `s≥1/2`, every `d>0`, globally real analytic and uniformly `C^0` wellposed on `M^s_(0,d)={u∈H^s_0:H_0(u)=d}`. The supporting Theorem 4.14(ii) specifies uniform continuity on bounded subsets, while the introduction uses unqualified uniform-continuity language; retain the bounded-set qualification explicitly when matching the proof. | Fixed-mass correction analytic into bounded sequences; bounds uniform on bounded subsets; analytic trajectory transfer and level-set identification. |
 | Theorem 1.12(iii) / 7 | For every `s≥1/2` and fixed `t>0`, the time-slice map on `H^s_0` is nowhere locally uniformly continuous. Consequently not `C^1` or uniformly `C^0` wellposed there. | Explicit pairs of physical initial data in every nonempty open subset, tending together while images separate at that fixed time. |
 | Theorem 1.12(iv) / 7–8 | For every `0≤s<1/2`, `d>0`, `t>0`, the time slice on `M^s_(0,d)` is nowhere locally uniformly continuous, with the corresponding failure of `C^1` and uniform `C^0` wellposedness. | Preserve the fixed mass exactly in the separating pairs. Use the main statement's `d>0`; later Theorem 4.14(iv) prints `d≥0`. |
-| Theorem 1.12(v) / 8 | For each `-1<s<0`, the solution map has no continuous extension to any datum of `H^s_0\L²_0`. The correction extends analytically but `ω_2,n=(2nπ)^5+20(2nπ)H_0+ω_2*,n` has a diverging mass contribution at every positive mode. | Physical smooth approximation with diverging mass and a nonzero limiting mode, actual frequency formula, and transfer of nonextension to the physical trajectory map. The checked obstruction below addresses uniform compact-time convergence, not the stronger fixed-time coordinate assertion of 4.14(v). |
+| Theorem 1.12(v) / 8 | For each `-1<s<0`, the solution map has no continuous extension to any datum of `H^s_0\L²_0`. The correction extends analytically but `ω_2,n=(2nπ)^5+20(2nπ)H_0+ω_2*,n` has a diverging mass contribution at every positive mode. | Physical smooth approximation with diverging mass and a nonzero limiting mode, actual frequency formula, and transfer of nonextension to the physical trajectory map. The compact-time and fixed-time coordinate obstruction cores are now proved; actual spectral correction and physical transfer remain open. |
 | Theorem 3.10(i) / 36 | For every finite `p≥2` and `-1/2≤s≤0`, KdV is globally real analytically wellposed on `Fℓ^{s,p}_0`. | Actual KdV frequencies with bounded analytic correction; Fourier–Lebesgue Birkhoff diffeomorphism and physical identification. |
 | Theorem 3.10(ii)–(iii) / 36–37 | For `-2/3≤s<-1/2`, each fixed `t>0` time slice on `H^s_0` is nowhere locally uniformly continuous. For `-1<s<-2/3`, each `T>0` trajectory map to `C([-T,T],H^s_0)` has that property. Not `C^k` wellposed for any `k≥1`. | Retain this fixed-time/trajectory distinction and the `-2/3` endpoint; prove spectral remainder and explicit separation constructions. |
 | Theorem 4.12 / 49–50 | KdV2 renormalized Hamiltonian extends analytically to the nonnegative action space `h^1_+`. Its gradient is the actual `ω_2*`, naturally paired in `h^-1,h^1`. Near zero it is strictly concave, bounded by `(1/2)⟨ΛJ,J⟩` with `Λ=diag(-80n²π²)`. | Source formula has a derivative notation ambiguity in the displayed quadratic inequality; implement the well-typed Hessian/frequency-derivative form and prove its identification. Consume shared action Hamiltonians, not the dNLS Hamiltonian. |
@@ -158,6 +158,12 @@ been proved with constructed mass-shifted finite approximants and explicit
 correction/phase-agreement inputs; see
 [FIXED_TIME_NONEXTENSION.md](FIXED_TIME_NONEXTENSION.md). This does not
 mark the actual spectral or PDE main theorems verified.
+
+The frequency-moment analytic and contour-decomposition steps of Lemmas
+3.1, 3.2 and 4.1 have since been proved in the shared `NLS/KdV` layer;
+see [FREQUENCY_MOMENTS.md](FREQUENCY_MOMENTS.md). The actual spectral
+factors, zeroth periods, physical frequency identification, sharp estimates
+and infinite-series convergence remain open.
 
 ## Integration boundary
 

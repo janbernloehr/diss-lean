@@ -1,5 +1,7 @@
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.FixedTimePhaseObstruction
+import NLS.KdV.FrequencyMoments
+import NLS.KdV.FrequencyContourDecomposition
 import NLS.Articles.KdVKdV2Frequencies.SignedPhaseFlow
 import NLS.Articles.KdVKdV2Frequencies.MassPhaseObstruction
 import NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities
@@ -20,6 +22,8 @@ run_cmd do
     `NLS.SequenceSpaces.HilbertEnergyDivergence,
     `NLS.Dynamics.ActionDependentWeightedPhaseFlow,
     `NLS.Dynamics.FixedTimePhaseObstruction,
+    `NLS.KdV.FrequencyMoments,
+    `NLS.KdV.FrequencyContourDecomposition,
     `NLS.Articles.KdVKdV2Frequencies.SignedPhaseFlow,
     `NLS.Articles.KdVKdV2Frequencies.MassPhaseObstruction,
     `NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities,

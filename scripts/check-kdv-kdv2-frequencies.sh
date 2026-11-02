@@ -12,6 +12,8 @@ modules=(NLS/SequenceSpaces/NonnegativeEnergyDivergence
   NLS/SequenceSpaces/HilbertEnergyDivergence
   NLS/Dynamics/ActionDependentWeightedPhaseFlow
   NLS/Dynamics/FixedTimePhaseObstruction
+  NLS/KdV/FrequencyMoments
+  NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
   NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
