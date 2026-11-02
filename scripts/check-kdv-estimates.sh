@@ -37,7 +37,7 @@ for package_lib in "$reference"/.lake/packages/*/.lake/build/lib/lean; do
 done
 cd "$project_dir"
 lean --version
-modules=(NLS/FunctionalAnalysis/TwoDimensionalDeterminant NLS/SequenceSpaces/WeightedInsertion NLS/SequenceSpaces/PositiveFourierTail NLS/SequenceSpaces/ReciprocalSquareTail NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/KdV/HillSobolev NLS/KdV/HillPhysical NLS/KdV/HillAnalytic NLS/KdV/HillLocalization NLS/KdV/HillZeroCount NLS/KdV/HillWeightedCoefficients NLS/KdV/HillBilinearSymmetry NLS/KdV/HillSpectralLipschitz NLS/KdV/HillRootSeparation NLS/KdV/HillPeriodOnePotential NLS/KdV/HillGapTail NLS/Articles/KdVEstimates/EstimateAdapter)
+modules=(NLS/FunctionalAnalysis/TwoDimensionalDeterminant NLS/SequenceSpaces/WeightedInsertion NLS/SequenceSpaces/PositiveFourierTail NLS/SequenceSpaces/ReciprocalSquareTail NLS/KdV/FreeHill NLS/KdV/HillComplement NLS/KdV/HillReduction NLS/KdV/HillSobolev NLS/KdV/HillPhysical NLS/KdV/HillAnalytic NLS/KdV/HillLocalization NLS/KdV/HillZeroCount NLS/KdV/HillWeightedCoefficients NLS/KdV/HillBilinearSymmetry NLS/KdV/HillSpectralLipschitz NLS/KdV/HillRootSeparation NLS/KdV/HillPeriodOnePotential NLS/KdV/HillGapTail NLS/KdV/ConstantUpperSpectralBridge NLS/KdV/ClassicalSpectralSymmetry NLS/KdV/ClassicalDiscriminant NLS/KdV/ClassicalHillFlow NLS/KdV/HillClassicalIdentification NLS/Articles/KdVEstimates/EstimateAdapter)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

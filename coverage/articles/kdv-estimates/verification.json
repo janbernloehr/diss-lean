@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 349,
+    "declarations": 424,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -61,10 +61,15 @@
     "NLS/SequenceSpaces/PositiveFourierTail.lean": "4ccf11f81e53f1a5913fcad1a5d4db66fa5173a7f46be936f1e8d0e02d792a37",
     "NLS/SequenceSpaces/ReciprocalSquareTail.lean": "9a28254634336ce0922a7f97ad59c7798c5168eeaa5c8503a7aba5365e6bc90d",
     "NLS/KdV/HillPeriodOnePotential.lean": "f806822d2c04863914268753ed469438257e3c7583064c99cd85ac5589bd7ec8",
-    "NLS/KdV/HillGapTail.lean": "47ab15f6cca152670aa39694c95688d788cc0e058aabe56528dee7d99854df0c"
+    "NLS/KdV/HillGapTail.lean": "47ab15f6cca152670aa39694c95688d788cc0e058aabe56528dee7d99854df0c",
+    "NLS/KdV/ConstantUpperSpectralBridge.lean": "111451b4d47126d2007fc00591b0f564ccfbb3f4a5bc272e3d823e7be57f0b37",
+    "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
+    "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+    "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
+    "NLS/KdV/HillClassicalIdentification.lean": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Global periodic spectral labels, determinant/operator multiplicity comparison and low central bounds remain; the source-normalized individual and summed high-strip determinant-root gap bounds are proved. Discriminant/H2 comparison, actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
-  "milestone": "Exact period-one weighted potential/Sobolev normalization and individual/summed high-frequency root-gap bounds",
+  "remaining": "Main Theorems 1-3 remain unverified. Full period-two characteristic equivalence, L2-potential discriminant extension, global periodic spectral labels, determinant/operator multiplicities and low central bounds remain. Source-normalized individual/summed high-strip determinant-root gap bounds are proved. Actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
+  "milestone": "Reuse of jointly analytic classical Hill discriminant, exact scalar-flow trace and weak periodic H2/unit-interval IVP comparison",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -86,6 +91,11 @@
     "NLS.KdV.HillRootSeparation",
     "NLS.KdV.HillPeriodOnePotential",
     "NLS.KdV.HillGapTail",
+    "NLS.KdV.ConstantUpperSpectralBridge",
+    "NLS.KdV.ClassicalSpectralSymmetry",
+    "NLS.KdV.ClassicalDiscriminant",
+    "NLS.KdV.ClassicalHillFlow",
+    "NLS.KdV.HillClassicalIdentification",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
   ],
   "proof_commits": [
@@ -123,6 +133,11 @@
       "commit": "1806362e18c4924a0e58e902455a42d8dc8c90d3",
       "scope": "Spectral Lipschitz control, determinant factorization and weighted two-root separation",
       "pushed": true
+    },
+    {
+      "commit": "d99001033aacd7906901da0acb487cc6af5a5e43",
+      "scope": "Exact source period-one normalization and individual/summed weighted high-strip root-gap bounds",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -138,13 +153,14 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All nineteen modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All twenty-four modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 349 declarations, including all new shared weight insertion and tail lemmas.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 424 declarations, including the reused classical Hill construction and all new shared helpers.",
     "new_module_warnings": [],
     "aggregate_scope": "Full aggregate/build/examples remain unrerun; the earlier deferred aggregate check is not treated as a pass.",
-    "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets."
+    "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
+    "reused_source_check": "Git object hashes of the three imported KdV modules exactly match articles/kdv-convexity commit 2135a680ab46ba7c476060e9a66db7d5753f8b29; provenance is recorded in source-map.json."
   },
   "warningAsError": true
 }

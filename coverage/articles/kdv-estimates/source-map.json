@@ -229,13 +229,21 @@
     {
       "module": "NLS/SequenceSpaces/FourierTail.lean and ReciprocalSeries.lean",
       "role": "Actually reused for the exact source Fourier remainder and the integral-test bound sum_{n>=N} 1/n^2<=2/N."
+    },
+    {
+      "module": "NLS/KdV/ConstantUpperSpectralBridge.lean, ClassicalSpectralSymmetry.lean and ClassicalDiscriminant.lean",
+      "role": "Imported unchanged from articles/kdv-convexity at 2135a68. Actual scalar Hill IVP trace and joint analyticity, including zero energy, reused by the new weak/classical flow comparison."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/LinearVolterraSolution.lean and LinearVolterraRegularity.lean",
+      "role": "Actually reused to construct the direct scalar position/derivative state flow and prove absolute-continuity uniqueness; no unproved IVP or monodromy identity is assumed."
     }
   ],
   "next_shared_milestones": [
     "Identify the high-strip determinant root families with globally labeled periodic eigenvalues, including determinant/operator multiplicities and the remaining central bounds. Their source-normalized weighted individual and summed tail bounds are now proved.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Reuse the checked exact period-one/mean-zero coefficient embedding and physical Fourier-integral adapter in the spectral-label/discriminant comparison.",
-    "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
+    "Extend the checked weak/classical scalar-flow comparison to full period-two endpoints and L2 potentials; prove the characteristic/product identities, canonical root branches and contour actions, then construct the physical Birkhoff map with exact conventions.",
     "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
   ],
@@ -330,7 +338,7 @@
         "NLS/KdV/ClassicalSpectralSymmetry.lean",
         "NLS/KdV/ClassicalDiscriminant.lean"
       ],
-      "finding": "New actual scalar normalized Hill IVP trace and joint analyticity inspected for immediate reuse in the next discriminant/operator comparison. The source itself explicitly does not identify the rough Fourier Hill spectrum or global gap labels."
+      "finding": "Three actual scalar Hill bridge/symmetry/discriminant modules imported unchanged and checked in this branch. Their construction is reused by the new weak H2/unit-interval state comparison. Rough L2 extension and global periodic spectral labels remain open."
     },
     {
       "branch": "articles/mkdv-nls-hierarchies",
@@ -489,5 +497,37 @@
     "summed_gap": "For N>=1 and N>=8*||q||_w, any actual determinant-root families lying in their respective high strips have summable squared weighted differences and sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2 <= 9*||R_N q||_w^2+(2304/N)*||q||_w^4. The source tail is represented by Coeff.fourierTail N applied to the actual weighted source coefficients, retaining the boundary |k|=N.",
     "constant_corrections": "Retains source individual constant 6 and coefficient-tail factor 9, with cutoff 8*||q||_w, radius-6*n real strips, and quartic coefficient 2304 replacing the printed 576. These follow from the previously corrected inverse bound 4/n rather than the printed 2/n.",
     "qualifications": "The root hypotheses concern the constructed analytic determinant, not freely supplied spectral data. Global eigenvalue labels, their agreement with these root families, operator algebraic multiplicities and the low central estimates remain unproved. The statements do not claim Theorems 1-3."
+  },
+  "classical_discriminant_reuse": {
+    "source_branch": "articles/kdv-convexity",
+    "source_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29",
+    "unchanged_source_blobs": {
+      "NLS/KdV/ConstantUpperSpectralBridge.lean": "01330bc4b261c928cef33cddbd942ab357483c8d",
+      "NLS/KdV/ClassicalSpectralSymmetry.lean": "3102daaa2cf9495f572d0c29467ffe420444bee3",
+      "NLS/KdV/ClassicalDiscriminant.lean": "da51400726c5477a705099b48b397e770a3e9aad"
+    },
+    "reused_modules": [
+      "NLS/KdV/ConstantUpperSpectralBridge.lean",
+      "NLS/KdV/ClassicalSpectralSymmetry.lean",
+      "NLS/KdV/ClassicalDiscriminant.lean"
+    ],
+    "new_modules": [
+      "NLS/KdV/ClassicalHillFlow.lean",
+      "NLS/KdV/HillClassicalIdentification.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.classicalHillDiscriminant",
+      "NLS.KdV.analyticOnNhd_classicalHillDiscriminant_joint",
+      "NLS.KdV.classicalHillDiscriminant_eq_scalar_trace",
+      "NLS.KdV.classicalHillFlow",
+      "NLS.KdV.classicalHillFlow_eq_constantUpper",
+      "NLS.KdV.classicalHillFlow_trace",
+      "NLS.KdV.classicalHillFlow_unique_of_ac",
+      "NLS.KdV.physicalHillEigenvector_eq_classicalFlow"
+    ],
+    "actual_construction": "The imported constant-upper state map is proved to turn actual constructed ZS IVP solutions for (-1,-q) into scalar Hill solutions of -F second+q*F=lambda*F, with bijective position/derivative initial state, including lambda=0. Even descent through the spectral square proves joint complex Banach analyticity of the literal normalized scalar trace in energy and the continuous potential with its sup norm.",
+    "new_comparison": "A direct scalar Volterra state flow for (F,G) prime=(G,(q-lambda)*F) is constructed and proved identical to that shared scalar IVP, with its exact trace equal to classicalHillDiscriminant. Absolute-continuity uniqueness identifies every scalar weak solution with the same actual initial state. For a continuous physical circle potential Q, every eigenvector of this branch\u2019s actual periodic H2 Hill operator has this scalar state flow on [0,1], with F its continuous representative and G its actual continuous derivative representative.",
+    "source_correspondence": "Section 2 pages 8-10: physical Hill discriminant and scalar solutions. This is the continuous-potential discriminant and weak-to-classical IVP comparison, not yet the global product/action construction.",
+    "qualifications": "The H2 comparison is proved on the unit interval. The full period-two endpoint comparison, periodic/antiperiodic characteristic equivalence with the Fourier determinant, equality of zero orders/multiplicities, global labels and L2-potential extension remain open. The source Theorem 3 includes L2 inputs, so the continuous-potential result cannot silently replace that domain."
   }
 }

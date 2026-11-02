@@ -16,6 +16,11 @@ import NLS.SequenceSpaces.PositiveFourierTail
 import NLS.SequenceSpaces.ReciprocalSquareTail
 import NLS.KdV.HillPeriodOnePotential
 import NLS.KdV.HillGapTail
+import NLS.KdV.ConstantUpperSpectralBridge
+import NLS.KdV.ClassicalSpectralSymmetry
+import NLS.KdV.ClassicalDiscriminant
+import NLS.KdV.ClassicalHillFlow
+import NLS.KdV.HillClassicalIdentification
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
