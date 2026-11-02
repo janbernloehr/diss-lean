@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F source-neighborhood and continuity proofs](APPENDIX_F.md)
+construct chart coverage for the collapsed restriction and transport
+the corrected midpoint limit to any fixed original boundary point.
+The actual connecting integral is analytic via the joint primitive.
+Mixed collapsed and open-gap sequences give continuity at a collapsed
+source. Eight positive theorems add no new refutation. The open-gap
+endpoint path assembly and half-gap root-count comparison remain.
+
 The [Appendix F rescaled-integral identities](APPENDIX_F.md)
 give the exact principal-root substitution and retain the full -i
 displacement coefficient. The actual improper endpoint average equals

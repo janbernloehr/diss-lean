@@ -1,6 +1,36 @@
 # Implementation plan
 
-## Current milestone: Appendix F rescaled-integral identities
+## Current milestone: Appendix F source neighborhoods and continuity
+
+The [source-chart construction](NLS/ZakharovShabat/AppendixFSourceChartCover.lean)
+provides a connected neighborhood of the real source locus within
+the Section 10 domain. Its local isolating discs support analytic
+extensions of the collapsed endpoint-average restriction, with one
+source neighborhood for every index and original boundary point.
+The construction supplies the chart cover instead of assuming it.
+
+The [fixed-boundary argument](NLS/ZakharovShabat/AppendixFFixedBoundary.lean)
+proves analyticity of the actual connecting polygonal integral from
+its joint-primitive identity. Adding its limit transfers the corrected
+midpoint convergence to any fixed original boundary point.
+
+A subsequence argument handles arbitrary mixtures of collapsed
+and open gaps. The sequence criterion then proves continuity of the
+actual endpoint average at a collapsed source.
+
+Two modules add eight positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,635 build jobs, 7,729 public examples and an axiom audit of 44,961 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Common
+open-gap endpoint spokes, the actual singular endpoint integral
+assembly and the half-gap root-count comparison remain separate.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F rescaled-integral identities
 
 The [rescaled-integral identities](NLS/ZakharovShabat/AppendixFRescaledIdentity.lean)
 identify the actual normalized-root quotient with the literal

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T00:51:18.990327+00:00",
-  "base_commit": "4b04eacf9fa647fb685588343a1b449b42a01aea",
+  "published_utc": "2026-11-02T01:14:43.395800+00:00",
+  "base_commit": "4caa9805d9e1021dcbf46c7f33312331464611cb",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 202,
-    "module_hash_checks": 4221,
-    "distinct_modules": 2129
+    "review_records": 203,
+    "module_hash_checks": 4228,
+    "distinct_modules": 2131
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "4b04eacf9fa647fb685588343a1b449b42a01aea",
-    "validated_state": "Fresh full check after one Appendix F rescaled-integral identities module; public examples unchanged.",
+    "base_commit": "4caa9805d9e1021dcbf46c7f33312331464611cb",
+    "validated_state": "Fresh full check after two Appendix F source-neighborhood and continuity modules; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8633,
+    "build_jobs": 8635,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44952,
+    "transitive_NLS_declarations": 44961,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 56459,
+    "gate_session": 35069,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4895,
-      "sha256": "ffb4f5cd2a36dab93ad3a575570e3c26958a908bc5798dba146981992441f24f"
+      "files": 4897,
+      "sha256": "281eb49630bb2deeba8d1b34837aafdbbed87083e053cd7c87b08817893f699d"
     },
-    "full_gate_log_sha256": "078676dfe28bfe17baaed41ba0e4bd77e4d33d46edb2734e6ba39bc6467041c9",
+    "full_gate_log_sha256": "a27ae663fb730e1a4015641a624675996fd7d37729fc4e2d4afc1f1f16f78def",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFRescaledIdentityFullCheckRetry.log"
+    "full_gate_log": "work/AppendixFSourceAssemblyFullCheck.log"
   },
   "named_statements": [
     {
@@ -67714,6 +67714,151 @@
         "log_sha256": "078676dfe28bfe17baaed41ba0e4bd77e4d33d46edb2734e6ba39bc6467041c9"
       },
       "source_record_sha256": "4631839966b7d8a9c930a64ea5ba14ad7ba08489c1ee33c6c9f54b959dc9f593"
+    },
+    "AppendixFSourceAssemblySourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4caa9805d9e1021dcbf46c7f33312331464611cb",
+      "updated_utc": "2026-11-02T01:14:43.342764+00:00",
+      "source_lines": [
+        [
+          10966,
+          10969
+        ],
+        [
+          11043,
+          11057
+        ],
+        [
+          10970,
+          10972
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Constructed source charts and collapsed analytic extensions",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_appendixF_source_chart_cover",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_local_collapsed_analytic_extensions",
+            "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions"
+          ],
+          "reviewed_claims": [
+            "Cauchy source charts cover a connected open neighborhood of the real locus inside the prescribed source domain.",
+            "Restricting only the local source neighborhood retains the original isolating discs and supplies analytic extensions of the collapsed restriction.",
+            "The final existence theorem constructs both Section 10 data and the chart cover, with one local source neighborhood for all indices and boundary points."
+          ],
+          "qualification": "This instantiates the prior chart-cover hypothesis. The auxiliary Cauchy chart is not required to contain the original spectral disc."
+        },
+        {
+          "source_lines": [
+            11043,
+            11057
+          ],
+          "requirement": "Passage from the chosen boundary point to any fixed original boundary point",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_frontier_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_original_boundary_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit"
+          ],
+          "reviewed_claims": [
+            "Every original isolating boundary avoids all actual gaps.",
+            "The actual finite connecting polygonal integral is analytic on the original source neighborhood inside a Cauchy chart.",
+            "Its limit transports the corrected midpoint convergence to any fixed original boundary point."
+          ],
+          "qualification": "The connecting-integral analyticity follows directly from the independent joint primitive and the exact polygonal-integral identity; endpoint-average continuity is not assumed."
+        },
+        {
+          "source_lines": [
+            10970,
+            10972
+          ],
+          "requirement": "Mixed source sequences and continuity at the collapsed locus",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpointAverage_continuousAt_collapsed"
+          ],
+          "reviewed_claims": [
+            "A subsequence argument combines the open-gap limit with analyticity of the collapsed restriction for arbitrary mixed sequences.",
+            "The sequence criterion gives continuity of the actual endpoint average at each collapsed source and any fixed original boundary point."
+          ],
+          "qualification": "The proof retains the original isolating disc and derives all midpoint bounds and integrability through the preceding source lemmas. Open-gap endpoint path assembly remains separate."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean": "e8408808497ed0de6d3e57d4c9935521c511060ef16b6abca64bfc75e018fa3b",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean": "c1cd9ad38d68b9113e1f6fe0827fe846d21141aecf1aeac70cd4492ea351825b",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean": "db44f7d2fa36e91f471efe3d0cc52ddb47e0c4e27b665c47591b77eab3f70c22",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean": "bc1727ebed1e10e265296535361d0bde5b3e9fa8aab363155b09b23b002ee0e8",
+        "NLS/ZakharovShabat/AppendixFSourceChartCover.lean": "174403603bd6b5462dc2fc2915dcf1c009e8b3d343a2db84ab0230c291210ce1",
+        "NLS/ZakharovShabat/AppendixFFixedBoundary.lean": "e65c79fbc6f0fd1166e5166f599a5bbac7d413a388b33b25c2336850ee02b86a"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean",
+        "NLS/ZakharovShabat/AppendixFSourceChartCover.lean",
+        "NLS/ZakharovShabat/AppendixFFixedBoundary.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpointAverage_continuousAt_collapsed",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_original_boundary_integral_analytic",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_frontier_subset_rootDomain",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_local_collapsed_analytic_extensions",
+        "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions",
+        "NLS.ZakharovShabat.exists_appendixF_source_chart_cover"
+      ],
+      "declaration_inventory_count": 44961,
+      "qualification": "Two modules add eight positive theorems constructing source neighborhoods and completing the collapsed-source continuity argument. Cauchy charts cover a connected neighborhood of the real locus inside the prescribed Section 10 domain. The original isolating discs give analytic extensions of the collapsed restriction on a single local source neighborhood for every index and boundary point. The actual finite connecting polygonal integral is analytic by its joint-primitive identity, transporting the corrected midpoint limit to any fixed original boundary point. A subsequence argument handles arbitrary mixtures of collapsed and open gaps, and the sequence criterion proves continuity at a collapsed source. The source-neighborhood existence theorem constructs its chart coverage and Section 10 data; the connecting-integral proof uses the independent joint primitive directly, without assuming endpoint-average continuity. The open-gap endpoint path assembly and remaining ordered comparisons are separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "4631839966b7d8a9c930a64ea5ba14ad7ba08489c1ee33c6c9f54b959dc9f593",
+      "validation_lean_sources": {
+        "files": 4897,
+        "sha256": "281eb49630bb2deeba8d1b34837aafdbbed87083e053cd7c87b08817893f699d"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 8,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 35069,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFSourceAssemblyFullCheck.log",
+        "log_sha256": "a27ae663fb730e1a4015641a624675996fd7d37729fc4e2d4afc1f1f16f78def"
+      },
+      "source_record_sha256": "655caab6b135d9c605f9c46fbf92e3f55c346c1ff9c66027327a965438141fd4"
     }
   }
 }

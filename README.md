@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F rescaled-integral identities](coverage/APPENDIX_F.md)
-proves the exact principal-root substitution with the full -i
-displacement coefficient and expresses the actual improper endpoint
-average as that integral plus its short-piece term. Four positive
-theorems add no new refutation.
+Latest step: [Appendix F source neighborhoods and continuity](coverage/APPENDIX_F.md)
+constructs the collapsed restriction's source neighborhoods, transports
+the corrected midpoint limit to any fixed original boundary point,
+and proves continuity through mixed collapsed and open-gap sequences.
+Eight positive theorems add no new refutation.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
