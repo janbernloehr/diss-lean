@@ -56,7 +56,10 @@ potential, with mass uniform on bounded balls, exact constant energy translation
 and H1 regularity when the Miura image is L2. Physical spectral matching
 through these charts and gluing of the jointly entire H^-1 trace are now proved;
 uniform H^-1 trace estimates and common high-moment analytic domains are now proved.
-Quartic-gap and quadratic-action moment bounds remain open.
+Actual two-root counts, exact multiplicities, quartic-gap and
+quadratic-Arnold-period bounds are now proved on common complex H^-1
+neighborhoods. Global KdV Birkhoff action identification and analytic
+weighted-action descent remain open.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -422,7 +425,9 @@ whole tail of actual energy contours at every continuous complex potential.
 The paper's finitely many central contours and exact gap labels still need
 to be matched. Continuation
 to the canonical cuts, endpoint values `-i*n*pi`, the rough Hill operator
-identification, action descent, and uniform action bounds remain open.
+identification and action descent remain open. The high indexed branch
+limits and uniform quadratic bounds for the actual Arnold periods are
+proved in the later H^-1 sections below.
 The constructed contour moments have not been identified with the physical
 action-indexed `R_n` on the paper's full weighted action neighborhood.
 
@@ -1245,13 +1250,13 @@ Fourier evaluation module is recompiled. Three compatible private source
 differences are retained and documented: two original independent proofs
 and the additional proved strict free-Hill spacing lemma. The original
 37-source manifest remains unchanged. The focused validation covers
-212 source modules; this is not a full 2,393-module or repository build.
+222 source modules; this is not a full 2,393-module or repository build.
 
 Uniform H^-1 high-disc/source-path trace estimates, full analytic primitive
 squares and common high-moment analytic domains are now proved below.
-The full quartic-gap and quadratic-action bounds, intrinsic singular-operator
-characteristic identification, global Birkhoff actions and analytic
-weighted-action descent remain open.
+The full quartic-gap and quadratic-Arnold-period bounds are now proved below.
+Intrinsic singular-operator characteristic identification, global Birkhoff
+actions and analytic weighted-action descent remain open.
 Theorem 1.1 and the positive-ell2 physical Hamiltonian extension remain
 unverified.
 
@@ -1311,10 +1316,60 @@ every integer power of the shifted primitive on the same checked energy
 shells; the indexed shift contributes no constant Arnold period.
 
 The actual H^-1 two-root cluster construction and uniform quartic-gap /
-quadratic-action moment bounds remain open. Analyticity of the individual
-periods on one common domain does not yet prove convergence of the
-Hamiltonian series. Global Birkhoff action identification and analytic
-weighted-action descent remain required for Theorem 1.1.
+quadratic-Arnold-period bounds are now proved below. Global Birkhoff action
+identification and analytic weighted-action descent remain required before
+the checked positive-ell2 summation theorem applies to the physical Hamiltonian.
+
+## Actual H^-1 high pairs and quadratic period bounds
+
+`QuadraticClusterCount.lean` proves that a scalar analytic function within
+r²/16 of the model -(lambda-c²)²/(4*c²) on the boundary of the energy disc
+has exactly two zeros, with repetition and exact analytic multiplicities.
+Its boundary is nonvanishing and both roots lie in the open disc.
+`HillHminusOneHighGapPairs.lean` applies this to the actual filled square.
+The radius is fixed before the tolerance; one H^-1-open neighborhood and
+cutoff support every high index. The pair has the exact multiplicities of
+the actual radicand and both trace values equal 2*(-1)^n.
+`HillHminusOnePairUniqueness.lean` identifies the unordered pair across
+any two local radii. The actual radicand has total zero count two on each
+closed disc. No analytic ordering of individual endpoints is assumed.
+
+`HillHminusOneGapQuotients.lean` removes both endpoint factors, including
+a double root, and proves an analytic nonzero quotient with uniform bound
+4/(n*pi*r)². `HillHminusOneGapScaleBounds.lean` gives the filled square and
+source primitive bounds on the full gap-sized disc.
+`HillHminusOneGapCutRoots.lean` constructs an analytic root off the entire
+straight complex gap, extending through a collapsed gap.
+`HillHminusOneMomentCutRoot.lean` fixes one sign on a connected integration
+circle and matches the actual source period with the cut-root period.
+`HillHminusOneCubicGapBounds.lean` proves, uniformly on one complex H^-1
+neighborhood and above one cutoff,
+
+```
+|R_n| <= C*|lambda_minus-lambda_plus|^4/n^3.
+```
+
+`HillHminusOneGapQuotientAsymptotics.lean` normalizes the filled quotient
+against -1/(4*n²*pi²) and prescribes its energy-analytic unit square root
+near +i/(2*n*pi). The radius precedes the tolerance, but the neighborhood
+may depend on that tolerance. Joint potential analyticity of this chosen
+unit root is not asserted.
+`HillHminusOneArnoldActionComparison.lean` proves the exact estimates
+
+```
+|lambda_minus-lambda_plus|^2/n <= 16*pi*|A_n|,
+A_n = 0 iff lambda_minus = lambda_plus,
+|8*n*pi*R_n| <= C*|A_n|^2.
+```
+
+Both actual periods are analytic on the same common complex H^-1
+neighborhood. All estimates include collapsed gaps. They concern the
+literal source-normalized contour periods. Identifying A_n with the
+same global KdV Birkhoff map's actions, descending R_n analytically to a
+common neighborhood of the full weighted nonnegative action cone,
+central contours, the full canonical unsquared domain, real nonpositivity
+and the physical energy/frequency identities remain required. Theorem 1.1
+and all main theorem completion flags remain false.
 
 ## Earlier checked local consequences
 
@@ -1352,11 +1407,11 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    of the original high contours are now established for moment estimates.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
-2. Extend the proved **complex-neighborhood** bound
+2. The **complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
-   |8*n*pi*R_n|<=C*|A_n|^2 from the proved complex L2 neighborhoods
-   to H^-1. Identify A_n with the global Birkhoff actions I_n and descend
-   the moments analytically to the common weighted action neighborhood.
+   |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
+   global KdV Birkhoff actions I_n and descend the moments analytically
+   to the common weighted action neighborhood.
 3. Apply the checked analytic reduction to those actual moments. Then prove
    the identification of the exterior quartic coefficient with the physical
    energy from (4.7). The contour decomposition and calculation in
@@ -1403,12 +1458,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 212 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 222 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in eighty-nine additional shared modules:
-2537 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in ninety additional shared modules:
+2629 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

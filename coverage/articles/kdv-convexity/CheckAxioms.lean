@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneArnoldActionComparison
 import NLS.KdV.HillHminusOneMomentRadius
 import NLS.KdV.HillHminusOneFreeSquareComparison
 import NLS.KdV.HillHminusOneSourcePrimitive
@@ -56,7 +57,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let additionalModules := #[`NLS.ComplexAnalysis.ShiftedSquareRootBounds,
+  let additionalModules := #[`NLS.ComplexAnalysis.QuadraticClusterCount,
+    `NLS.ComplexAnalysis.ShiftedSquareRootBounds,
     `NLS.MKdV.MiuraClassicalSolution,
     `NLS.MKdV.SobolevMiuraPotential,
     `NLS.FunctionalAnalysis.LinearVolterraFlow,
