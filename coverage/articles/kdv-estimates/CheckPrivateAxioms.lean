@@ -21,6 +21,14 @@ import NLS.KdV.ClassicalSpectralSymmetry
 import NLS.KdV.ClassicalDiscriminant
 import NLS.KdV.ClassicalHillFlow
 import NLS.KdV.HillClassicalIdentification
+import NLS.FunctionalAnalysis.AbsoluteContinuityTranslation
+import NLS.FunctionalAnalysis.LinearVolterraLinearity
+import NLS.KdV.ClassicalHillMultipliers
+import NLS.KdV.HillFullPeriod
+import NLS.KdV.HillDiscriminantNecessity
+import NLS.KdV.HillFirstOrderReduction
+import NLS.KdV.HillL2SpectralCriterion
+import NLS.KdV.HillDiscriminantComparison
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -38,7 +46,9 @@ run_cmd do
     ``NLS.Coeff.pair_sq_le_norm_sq, ``NLS.Coeff.positive_pair_tail_sq,
     ``NLS.ReciprocalSeries.summable_nat_reciprocal_sq_tail,
     ``NLS.ReciprocalSeries.tsum_nat_reciprocal_sq_tail_le,
-    ``NLS.SpectralWeight.doubleIndex, ``NLS.SpectralWeight.doubleIndex_apply]
+    ``NLS.SpectralWeight.doubleIndex, ``NLS.SpectralWeight.doubleIndex_apply,
+    ``NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right,
+    ``NLS.LinearVolterra.solution_add, ``NLS.LinearVolterra.solution_zero_initial]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

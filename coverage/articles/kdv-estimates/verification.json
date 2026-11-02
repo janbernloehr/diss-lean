@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 424,
+    "declarations": 489,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -37,7 +37,10 @@
       "NLS.ReciprocalSeries.summable_nat_reciprocal_sq_tail",
       "NLS.ReciprocalSeries.tsum_nat_reciprocal_sq_tail_le",
       "NLS.SpectralWeight.doubleIndex",
-      "NLS.SpectralWeight.doubleIndex_apply"
+      "NLS.SpectralWeight.doubleIndex_apply",
+      "NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right",
+      "NLS.LinearVolterra.solution_add",
+      "NLS.LinearVolterra.solution_zero_initial"
     ]
   },
   "full_repository_validation": "Not rerun; base dissertation validation is not replaced by this focused check.",
@@ -66,14 +69,24 @@
     "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
     "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
-    "NLS/KdV/HillClassicalIdentification.lean": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec"
+    "NLS/KdV/HillClassicalIdentification.lean": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec",
+    "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean": "32da22d51d4c04fe33e03bb9b892d5c2ab800bcc5dead91ab0917763f419fe67",
+    "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean": "bdcf939efdbed48af7a0a2e3da786c511ccc81cfdd1bb930e6185225c05f0b45",
+    "NLS/KdV/ClassicalHillMultipliers.lean": "a3605c650ee4c1390cd54a297ad944a3aa50b748ce80a2bc05747258ab28ec68",
+    "NLS/KdV/HillFullPeriod.lean": "651d93e8060125c8b02f685cd61738e74f4f29263b150c9a69d77d9d531cfc11",
+    "NLS/KdV/HillDiscriminantNecessity.lean": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
+    "NLS/KdV/HillFirstOrderReduction.lean": "7826dc5c97375d87d56b0b4658116b1622584287199b04d730ccdb237971270b",
+    "NLS/KdV/HillL2SpectralCriterion.lean": "0d7b94750edd667259d97fabeb18160b2809fdd74c3aff9eaa561dd9069684cd",
+    "NLS/KdV/HillDiscriminantComparison.lean": "e6ee8a6af0a2a077889065eabdabcc259ceea43de99f4ccdbdde23a1c452d986"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Full period-two characteristic equivalence, L2-potential discriminant extension, global periodic spectral labels, determinant/operator multiplicities and low central bounds remain. Source-normalized individual/summed high-strip determinant-root gap bounds are proved. Actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
-  "milestone": "Reuse of jointly analytic classical Hill discriminant, exact scalar-flow trace and weak periodic H2/unit-interval IVP comparison",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual L2 frequency trace now has the exact Hill H2 eigenvalue zero criterion and agrees with the entire classical energy discriminant on continuous inputs. Rough energy-variable analytic descent, zero-order/operator multiplicity comparison, weighted realization independence, global labels and low central bounds remain. Actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
+  "milestone": "Full-period continuous characteristic equivalence and exact L2 constant-upper operator/monodromy spectral identification",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
     "NLS.FunctionalAnalysis.TwoDimensionalDeterminant",
+    "NLS.FunctionalAnalysis.AbsoluteContinuityTranslation",
+    "NLS.FunctionalAnalysis.LinearVolterraLinearity",
     "NLS.SequenceSpaces.WeightedInsertion",
     "NLS.SequenceSpaces.PositiveFourierTail",
     "NLS.SequenceSpaces.ReciprocalSquareTail",
@@ -96,6 +109,12 @@
     "NLS.KdV.ClassicalDiscriminant",
     "NLS.KdV.ClassicalHillFlow",
     "NLS.KdV.HillClassicalIdentification",
+    "NLS.KdV.ClassicalHillMultipliers",
+    "NLS.KdV.HillFullPeriod",
+    "NLS.KdV.HillDiscriminantNecessity",
+    "NLS.KdV.HillFirstOrderReduction",
+    "NLS.KdV.HillL2SpectralCriterion",
+    "NLS.KdV.HillDiscriminantComparison",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
   ],
   "proof_commits": [
@@ -138,6 +157,11 @@
       "commit": "d99001033aacd7906901da0acb487cc6af5a5e43",
       "scope": "Exact source period-one normalization and individual/summed weighted high-strip root-gap bounds",
       "pushed": true
+    },
+    {
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "scope": "Classical Hill discriminant reuse and weak H2/unit-interval scalar-flow identification",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -153,14 +177,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All twenty-four modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All thirty-two modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 424 declarations, including the reused classical Hill construction and all new shared helpers.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 489 declarations, including the shared AC translation/Volterra additivity lemmas and the explicit L2 first-order operator identification.",
     "new_module_warnings": [],
     "aggregate_scope": "Full aggregate/build/examples remain unrerun; the earlier deferred aggregate check is not treated as a pass.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
-    "reused_source_check": "Git object hashes of the three imported KdV modules exactly match articles/kdv-convexity commit 2135a680ab46ba7c476060e9a66db7d5753f8b29; provenance is recorded in source-map.json."
+    "reused_source_check": "Git object hashes of the three imported KdV modules exactly match articles/kdv-convexity commit 2135a680ab46ba7c476060e9a66db7d5753f8b29; provenance is recorded in source-map.json.",
+    "mathematical_scope": "Continuous physical period-one potentials: full characteristic equivalence at every energy. Even-supported complex L2 potentials: exact actual H2 eigenvalue/physical L2 trace zero equivalence in frequency z and Hill energy z^2, with joint frequency/potential analyticity. No algebraic-multiplicity or rough energy-descent claim."
   },
   "warningAsError": true
 }

@@ -237,13 +237,26 @@
     {
       "module": "NLS/FunctionalAnalysis/LinearVolterraSolution.lean and LinearVolterraRegularity.lean",
       "role": "Actually reused to construct the direct scalar position/derivative state flow and prove absolute-continuity uniqueness; no unproved IVP or monodromy identity is assumed."
+    },
+    {
+      "module": "NLS/ZakharovShabat/Operator.lean and PeriodicSpectrum.lean",
+      "role": "Actually reused after literal (-1,-q) elimination and the inverse H2-to-H1 lift: the existing first-order periodic spectral condition is exactly the physical Hill H2 eigenvalue condition at squared energy."
+    },
+    {
+      "module": "NLS/ZakharovShabat/L2Discriminant.lean and SourcePhysicalL2.lean",
+      "role": "Actually reused: the monodromy is the constructed physical L2 trace, jointly analytic in frequency and L2 data, with exact periodic-spectrum zero criterion. Continuous class compatibility identifies this trace with the shared classical scalar Hill discriminant."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean and LinearVolterraLinearity.lean",
+      "role": "Shared new interval translation and flow additivity/zero-state lemmas support the actual full-period state comparison and periodic/antiperiodic multiplier decomposition."
     }
   ],
   "next_shared_milestones": [
     "Identify the high-strip determinant root families with globally labeled periodic eigenvalues, including determinant/operator multiplicities and the remaining central bounds. Their source-normalized weighted individual and summed tail bounds are now proved.",
+    "Prove that the weighted and unit-weight two-mode determinants agree for the same physical potential, so the checked weighted gap bounds apply to the actual rough periodic characteristic roots.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Reuse the checked exact period-one/mean-zero coefficient embedding and physical Fourier-integral adapter in the spectral-label/discriminant comparison.",
-    "Extend the checked weak/classical scalar-flow comparison to full period-two endpoints and L2 potentials; prove the characteristic/product identities, canonical root branches and contour actions, then construct the physical Birkhoff map with exact conventions.",
+    "Descend the jointly analytic actual rough L2 frequency trace through the squared energy, retain the checked classical normalization, and prove characteristic/product zero-order identities. Then construct canonical roots, contour actions and the physical Birkhoff map.",
     "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
   ],
@@ -528,6 +541,58 @@
     "actual_construction": "The imported constant-upper state map is proved to turn actual constructed ZS IVP solutions for (-1,-q) into scalar Hill solutions of -F second+q*F=lambda*F, with bijective position/derivative initial state, including lambda=0. Even descent through the spectral square proves joint complex Banach analyticity of the literal normalized scalar trace in energy and the continuous potential with its sup norm.",
     "new_comparison": "A direct scalar Volterra state flow for (F,G) prime=(G,(q-lambda)*F) is constructed and proved identical to that shared scalar IVP, with its exact trace equal to classicalHillDiscriminant. Absolute-continuity uniqueness identifies every scalar weak solution with the same actual initial state. For a continuous physical circle potential Q, every eigenvector of this branch\u2019s actual periodic H2 Hill operator has this scalar state flow on [0,1], with F its continuous representative and G its actual continuous derivative representative.",
     "source_correspondence": "Section 2 pages 8-10: physical Hill discriminant and scalar solutions. This is the continuous-potential discriminant and weak-to-classical IVP comparison, not yet the global product/action construction.",
-    "qualifications": "The H2 comparison is proved on the unit interval. The full period-two endpoint comparison, periodic/antiperiodic characteristic equivalence with the Fourier determinant, equality of zero orders/multiplicities, global labels and L2-potential extension remain open. The source Theorem 3 includes L2 inputs, so the continuous-potential result cannot silently replace that domain."
+    "qualifications": "The full two-interval propagation, nonzero initial-state property, and continuous period-one characteristic equivalence are now proved. For arbitrary period-one L2 coefficients the identified first-order physical trace has the exact Hill eigenvalue zero condition. Analytic descent of that rough trace to the energy variable, zero-order/operator multiplicity comparison, global labels and low central bounds remain open."
+  },
+  "full_period_characteristic_comparison": {
+    "modules": [
+      "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean",
+      "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean",
+      "NLS/KdV/ClassicalHillMultipliers.lean",
+      "NLS/KdV/HillFullPeriod.lean",
+      "NLS/KdV/HillDiscriminantNecessity.lean",
+      "NLS/KdV/HillDiscriminantComparison.lean"
+    ],
+    "source_correspondence": "Section 2 page 8: the physical period-two Hill eigenvalue criterion Delta(lambda)^2-4=0 for period-one potentials, and the Appendix A reduction determinant comparison.",
+    "declarations": [
+      "NLS.KdV.classicalHillDiscriminant_eq_two_iff_flow",
+      "NLS.KdV.classicalHillDiscriminant_eq_neg_two_iff_flow",
+      "NLS.KdV.classicalHillRadicand_zero_of_double_fixed",
+      "NLS.KdV.physicalHillEigenvector_secondFlow",
+      "NLS.KdV.physicalHillEigenvector_fullPeriod",
+      "NLS.KdV.physicalHillEigenvector_initial_ne_zero",
+      "NLS.KdV.physicalHillEigenvector_discriminant_zero",
+      "NLS.KdV.hillReduced_zero_implies_classicalDiscriminant_zero",
+      "NLS.KdV.hillL2FrequencyDiscriminant_eq_classical",
+      "NLS.KdV.physicalHillEigenvector_iff_classicalDiscriminant"
+    ],
+    "full_period": "The actual H2 position/derivative state is propagated on [0,1] and [1,2] by the two literal scalar IVPs. Its period-two endpoint equals its initial state. A nonzero H2 eigenvector has nonzero initial state, since zero initial data force both halves and all actual Fourier coefficients to vanish.",
+    "period_one": "For a continuous physical potential Q with actual period one, the two interval coefficient curves coincide. A state fixed by two iterations supplies a nonzero +1 or -1 multiplier. The scalar IVP multiplier criteria identify these with the actual discriminant values +2 and -2, including zero energy.",
+    "complete_continuous_characteristic": "For every complex continuous period-one circle potential and every complex energy lambda, there exists a nonzero actual periodic H2 Hill eigenvector iff the normalized classical Hill discriminant squared equals four. The converse reuses the independently proved rough first-order/operator equivalence and the actual physical L2 monodromy criterion.",
+    "trace_agreement": "The unit-interval physical L2 restriction of the specific coefficient potential (-1,-q) equals the continuous constant-upper coefficient class. Therefore the actual L2 trace in frequency z equals the shared classical Hill discriminant at energy z^2. This equality is for values, not merely zero sets.",
+    "qualifications": "These are characteristic zero/existence equivalences. Equality of analytic zero orders and operator algebraic multiplicities, global spectral labels, gap endpoints and central estimates are not supplied by them."
+  },
+  "l2_first_order_hill_identification": {
+    "modules": [
+      "NLS/KdV/HillFirstOrderReduction.lean",
+      "NLS/KdV/HillL2SpectralCriterion.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.hillFirstOrder_eigen_equations",
+      "NLS.KdV.hillFirstOrder_scalar_equation",
+      "NLS.KdV.exists_hillEigenvector_of_firstOrder",
+      "NLS.KdV.hillFirstOrderLift",
+      "NLS.KdV.hillFirstOrderLift_eigen",
+      "NLS.KdV.hill_eigenvector_iff_firstOrder",
+      "NLS.KdV.hill_eigenvector_iff_firstOrder_spectrum",
+      "NLS.KdV.analyticOnNhd_hillL2FrequencyDiscriminant_joint",
+      "NLS.KdV.hill_eigenvector_iff_l2FrequencyDiscriminant",
+      "NLS.KdV.hillReduced_zero_iff_l2FrequencyDiscriminant",
+      "NLS.KdV.hillPeriodOne_eigenvector_iff_l2FrequencyDiscriminant"
+    ],
+    "actual_operator_identification": "For arbitrary complex L2 period-two coefficient potential q, the existing first-order operator at the literal potential pair (single Fourier mode -1 at zero, -q) has a nonzero H1 pair eigenvector at z iff the actual Hill operator has a nonzero periodic H2 eigenvector at z^2. Elimination gives a_2(k)=-(pi*k+z)*a_1(k) and (z^2-pi^2*k^2)*a_1(k)=(q*a_1)(k). The first component is nonzero for a nonzero pair; the previously proved Hill regularization gives H2. Conversely the explicit bounded domain lift is (f,I*f prime-z*f), and it satisfies the actual first-order coefficient equation.",
+    "rough_characteristic": "For every even-supported complex L2 q (the actual period-one embedding), this identifies the genuine periodic H2 Hill eigenvalue condition at z^2 with the actual L2 unit-monodromy trace of (-1,-q) having square equal to four. The shared first-order compact periodic spectrum theorem and the physical L2 trace/product comparison are used only after this explicit operator identification.",
+    "analyticity": "The trace family is jointly complex Banach analytic in frequency z and the raw L2 potential q. Its characteristic zero condition depends only on z^2. The trace itself has not yet been analytically descended to an energy family on the full L2 domain.",
+    "high_strip": "On the checked unit-weight high strip and cutoff, the constructed Hill determinant vanishes iff the actual L2 trace square equals four at any square root of the energy. This closes the rough physical characteristic zero-set comparison, without a continuity hypothesis on the potential.",
+    "remaining": "Analytic energy descent and its normalization, determinant/characteristic zero orders versus Hill algebraic multiplicities, weighted-vs-unit realization independence, global labeling and low central estimates remain. No KdV Birkhoff map or main theorem is asserted."
   }
 }

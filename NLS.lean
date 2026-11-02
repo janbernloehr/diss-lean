@@ -4946,4 +4946,12 @@ import NLS.KdV.ClassicalSpectralSymmetry
 import NLS.KdV.ClassicalDiscriminant
 import NLS.KdV.ClassicalHillFlow
 import NLS.KdV.HillClassicalIdentification
+import NLS.FunctionalAnalysis.AbsoluteContinuityTranslation
+import NLS.FunctionalAnalysis.LinearVolterraLinearity
+import NLS.KdV.ClassicalHillMultipliers
+import NLS.KdV.HillFullPeriod
+import NLS.KdV.HillDiscriminantNecessity
+import NLS.KdV.HillFirstOrderReduction
+import NLS.KdV.HillL2SpectralCriterion
+import NLS.KdV.HillDiscriminantComparison
 import NLS.Articles.KdVEstimates.EstimateAdapter
