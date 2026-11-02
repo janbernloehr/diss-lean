@@ -1,8 +1,9 @@
 {
   "source_branch": "articles/kdv-estimates",
-  "source_commit": "1b982605ff5c9308a527887f709b0de579c1b245",
+  "source_commit": "80ac538a3bf105feb1bcc5133efe35e70b55f816",
   "source_files_unchanged": true,
   "dependency_order": [
+    "NLS/ComplexAnalysis/LogarithmStripNormalization.lean",
     "NLS/KdV/FreeHill.lean",
     "NLS/KdV/HillComplement.lean",
     "NLS/KdV/HillReduction.lean",
@@ -41,6 +42,7 @@
     "NLS/KdV/HillL2ContourDeformation.lean"
   ],
   "files": {
+    "NLS/ComplexAnalysis/LogarithmStripNormalization.lean": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
     "NLS/KdV/HillComplement.lean": "977b565954ef98d7eff06760f6efdf7a70db3d5e615b97d9514172f99d998ff5",
     "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
@@ -120,6 +122,6 @@
   ],
   "existing_import_boundary_identical": true,
   "private_validation": "scripts/check-kdv-convexity.sh",
-  "previous_source_commit": "44071d89de13be985a6aa106b65801293ddbe27d",
-  "upgrade_scope": "All 36 imported sources exactly match the pinned shared commit. Two prior modules are upgraded; TracePrimitiveMoments and HillL2ContourDeformation are newly imported. All existing import boundaries remain byte-identical."
+  "previous_source_commit": "1b982605ff5c9308a527887f709b0de579c1b245",
+  "upgrade_scope": "All 37 imported sources exactly match the pinned shared commit. The 36 previous sources are unchanged; LogarithmStripNormalization is newly imported. Existing NLS import boundaries remain byte-identical."
 }

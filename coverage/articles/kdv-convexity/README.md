@@ -46,7 +46,10 @@ concavity/inverse preparation is preserved.
 The original Arnold and cubic periods now agree exactly with the shared
 L2 energy-circle periods. The actual L2 trace also admits uniform free
 approximation on full high discs and source paths in complex L2 neighborhoods;
-the corresponding uniform L2 moment estimates remain open.
+the corresponding quantitative uniform L2 moment bounds remain open.
+The high analytic square construction, complete actual L2 gap containment,
+joint indexed branch limits and common high-moment analytic domains are
+now proved in the L2 topology as well.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -889,7 +892,7 @@ are now proved below. Global Birkhoff action identification remains open.
 
 The dependency closure of the shared L2 primitive and contour moments
 is imported exactly from `articles/kdv-estimates`, now pinned to commit
-`1b98260`: 36 modules, including the actual Hill operator, monodromy trace,
+`80ac538`: 37 modules, including the actual Hill operator, monodromy trace,
 characteristic equivalence, L2 spectral reality and source continuation.
 Every existing import at the boundary was identical to that commit.
 [`shared-imports.json`](shared-imports.json) records the exact files and
@@ -958,9 +961,9 @@ summation theorem to the physical Hamiltonian.
 ## Exact agreement with the L2 energy-circle periods
 
 The shared `TracePrimitiveMoments.lean` and `HillL2ContourDeformation.lean`
-are imported unchanged at `1b98260`. They supply all-level Arnold formulas
-and invariance on the actual source annuli. All 36 imported source modules
-match that commit byte for byte, including the two upgraded source files.
+are imported unchanged in the pinned `80ac538` snapshot. They supply all-level Arnold formulas
+and invariance on the actual source annuli. The original 36-source closure and the additionally reused generic
+phase barrier now match the pinned `80ac538` snapshot byte for byte.
 
 `HillL2CubicContourMoments.lean` defines the actual cubic period
 (1/pi)*integral (F(lambda,q)+i*n*pi)^3 on the energy circle centered at
@@ -988,8 +991,9 @@ comparison, exact collapsed-gap zero locus, and quadratic bound
 ```
 
 The common neighborhood controlling this inequality uses the continuous
-sup norm. Individual L2 analyticity does not supply a uniform L2 tail
-bound. Uniform rough-topology estimates, H^-1 extension, canonical global
+sup norm. The common L2 high-moment analytic domain is now proved below; a
+quantitative uniform L2 tail bound still does not follow from analyticity
+alone. Uniform rough-topology estimates, H^-1 extension, canonical global
 labels, Birkhoff action identification and analytic weighted-action descent
 remain open; the global ell2 Hamiltonian extension is not yet asserted.
 
@@ -1015,9 +1019,63 @@ The same theorem is proved uniformly near compact L2 sets and along all
 straight source paths s*a, 0<=s<=1, on one neighborhood and cutoff. No
 continuity or parity hypothesis on q is needed for these trace estimates.
 The proof transfers the established exterior ZS estimate and applies the
-maximum-modulus principle. This supplies an actual L2 starting point for
-the gap-square construction; uniform L2 unit-root, action-gap and quadratic
-moment estimates, and the H^-1 extension, remain to be proved.
+maximum-modulus principle. This now supplies the full L2 gap-square
+construction described below.
+Uniform L2 endpoint-deflated unit-root, action-gap and quadratic moment
+estimates, and the H^-1 extension, remain to be proved.
+
+## Actual whole-gap squares and moment domains in L2
+
+`HillL2TraceControl.lean` fixes the parity half-plane of the actual trace
+on entire high frequency discs, including every straight source path.
+`HillL2PrimitiveStrip.lean` uses the shared logarithmic phase barrier to
+prove |Im(F+i*n*pi)|<pi/2 on all admissible high-disc points, with one
+complex L2 neighborhood and one cutoff before the spectral index.
+
+`HillL2WholeGapSquares.lean` constructs, for each B>0, one radius
+0<r<=pi/4, a cutoff N, and a complex L2-open V around the input potential.
+For every n>=N there is a function K_n jointly analytic near the full
+closed energy disc centered at (n*pi)^2 with radius n*pi*r, times V.
+It satisfies |K_n|<B, squaredCosh(K_n)=(-1)^n*Delta/2, and
+K_n=0 exactly at the actual radicand zeros. At every source-admissible
+point it equals the square of the actual shifted primitive F+i*n*pi.
+Its energy multiplicities equal the actual radicand multiplicities.
+The actual F tends jointly to -i*n*pi at every branch point in these
+discs, through admissible nearby energies and L2 potentials. No simple
+zero or continuous potential representative is assumed.
+
+`HillL2HighGapPairs.lean` transfers actual high roots and multiplicities
+from the checked first-order realization, including double endpoints.
+The pair is unique up to exchange, has the exact parity trace level,
+and its energy midpoint and squared gap are analytic L2 functions.
+`HillL2SmallGapCoverage.lean` confines all high roots inside arbitrarily
+small prescribed frequency discs uniformly in a complex L2 neighborhood.
+`HillL2GapSquareFamilies.lean` combines these with the analytic squares:
+the full straight segment joining each actual complex pair lies strictly
+inside its square disc, including when the pair collapses. For real
+period-one L2 potentials, the actual weak Hill operator reality theorem
+proves that both endpoints are real; they can therefore be ordered.
+This does not yet identify them with the shared intrinsic global labels.
+
+`HillL2AnnulusCoverage.lean` proves actual source coverage on complete
+high frequency annuli and on energy shells rho*n<=|lambda-(n*pi)^2|<=n
+for every fixed 0<rho<=1. `HillL2HighMomentFamilies.lean` then proves
+that all actual polynomial primitive moments and the shifted cubic
+moment are analytic on one common complex L2 neighborhood, before all
+high indices and all polynomial levels. These complex constructions
+require neither reality nor even Fourier support.
+
+`Coeff 2` here is the library's period-two Fourier realization. Physical
+period-one inputs form its even-supported subspace. The complex trace
+constructions work on the entire ambient space; the real ordered-pair
+assertion includes the even-support and reality hypotheses explicitly.
+
+The squared primitive is filled across the whole energy disc; the
+unsquared source primitive is still compared only on its checked source
+domain. Uniform L2 endpoint-deflated unit estimates, quartic moment and
+action-gap bounds, full canonical unsquared continuation, H^-1 extension,
+Birkhoff action identification and weighted-action descent remain open.
+The global physical ell2 Hamiltonian extension is not yet proved.
 
 ## Earlier checked local consequences
 
@@ -1072,7 +1130,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `1b98260`.
+The `kdv-estimates` branch was re-inspected through commit `80ac538`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -1086,10 +1144,10 @@ and appends the high pairs to construct global nondecreasing real L2
 characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those
 labels are now intrinsic and independent of the cutoff, with the lowest
 energy characterized intrinsically and canonical weighted gap estimates
-proved directly for the actual labeled gaps. The 36-module dependency
-closure for its L2 source primitive, contour moments and annular deformation
-is now reused and validated here. Two prior shared sources were upgraded
-and two shared modules were added, all exactly matching the pinned commit.
+proved directly for the actual labeled gaps. The 37-module dependency
+closure for the L2 source/moment construction and generic phase barrier is
+now reused and validated here. All 36 prior shared sources are unchanged;
+the generic logarithm-strip normalization module is newly imported.
 The additional intrinsic global-label and canonical
 gap-tail modules remain available on that branch and are not imported
 in this focused build. Identification of those L2 labels with this
@@ -1107,12 +1165,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 105 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 114 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in thirteen additional shared modules:
-1284 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in fourteen additional shared modules:
+1364 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
