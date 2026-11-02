@@ -1,3 +1,14 @@
+import NLS.ComplexAnalysis.LaurentSquareRemainder
+import NLS.ComplexAnalysis.UpperCircleReflection
+import NLS.ComplexAnalysis.QuadraticContourCoefficient
+import NLS.ComplexAnalysis.NonnegativeComplexSeries
+import NLS.KdV.HillContinuousReality
+import NLS.KdV.HillFreeCircleGeometry
+import NLS.KdV.HillFreeTraceContour
+import NLS.KdV.HillL2UpperSquareAsymptotics
+import NLS.KdV.HillL2SquareCircleAsymptotics
+import NLS.KdV.HillSmoothQuadraticTraceLimit
+import NLS.KdV.HillSmoothQuadraticTrace
 import NLS.ComplexAnalysis.LocalSinhComparison
 import NLS.ComplexAnalysis.ContinuousIntervalBranch
 import NLS.ComplexAnalysis.WeightedCoshInverse
@@ -404,7 +415,16 @@ run_cmd do
     ``NLS.ZakharovShabat.analyticAt_nlsHamiltonianCorrection,
     ``NLS.ZakharovShabat.nlsHamiltonianPhase_eq_correction,
     ``NLS.ZakharovShabat.nlsHamiltonianCorrection_tendsto,
-    ``NLS.ZakharovShabat.iteratedDeriv_nlsHamiltonianCorrection]
+    ``NLS.ZakharovShabat.iteratedDeriv_nlsHamiltonianCorrection,
+    ``NLS.ComplexAnalysis.inverse_power_ratio_le_one,
+    ``NLS.ComplexAnalysis.norm_weighted_laurent_term_le,
+    ``NLS.ComplexAnalysis.norm_square_model_laurent_error_le,
+    ``NLS.ComplexAnalysis.norm_square_error_of_phase_error,
+    ``NLS.ComplexAnalysis.norm_square_laurent_error_of_phase_error,
+    ``NLS.ComplexAnalysis.exists_upper_circleMap_parameter,
+    ``NLS.ComplexAnalysis.weighted_norm_bound_on_circle_of_upper_reflection,
+    ``NLS.ComplexAnalysis.norm_quadratic_circle_coefficient_sub_le,
+    ``NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

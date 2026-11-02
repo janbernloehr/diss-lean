@@ -5132,3 +5132,14 @@ import NLS.KdV.HillL2BandPhase
 import NLS.KdV.HillL2BandAnchors
 import NLS.KdV.HillFreeUpperArcs
 import NLS.KdV.HillL2UpperArcAsymptotics
+import NLS.ComplexAnalysis.LaurentSquareRemainder
+import NLS.ComplexAnalysis.UpperCircleReflection
+import NLS.ComplexAnalysis.QuadraticContourCoefficient
+import NLS.ComplexAnalysis.NonnegativeComplexSeries
+import NLS.KdV.HillContinuousReality
+import NLS.KdV.HillFreeCircleGeometry
+import NLS.KdV.HillFreeTraceContour
+import NLS.KdV.HillL2UpperSquareAsymptotics
+import NLS.KdV.HillL2SquareCircleAsymptotics
+import NLS.KdV.HillSmoothQuadraticTraceLimit
+import NLS.KdV.HillSmoothQuadraticTrace
