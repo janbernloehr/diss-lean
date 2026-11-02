@@ -18,11 +18,17 @@
       "isEmbedding_lowerWeakStarTrajectory",
       "continuous_weakStarTrajectory_iff_lower",
       "continuous_trajectory_iff_hminusOne",
-      "continuous_weakStarInvariantActionTrajectory"
+      "continuous_weakStarInvariantActionTrajectory",
+      "continuous_trajectory_iff_originalHminusOne"
+    ],
+    "1.4": [
+      "sourceLemma2_4_physical_identification",
+      "sourceHill_eigen_iff",
+      "sourceCorollary2_5_coefficient_tail_invertible"
     ]
   },
   "essential_open_obligations": [
-    "Identify the actual negative-regularity endpoint Fourier perturbation with singular physical Hill multiplication and eigen-equations; establish corrected strip inclusion and gap estimates.",
+    "Construct the singular-potential two-mode determinant reduction on the original H1 domain; prove spectral discreteness/enumeration, corrected-strip inclusion and gap estimates.",
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -41,11 +47,25 @@
     "Original distribution reality, zero mean and physical period one exactly characterize the constrained coefficient locus.",
     "Full real Wiener predual original-distribution equivalence with exact norm.",
     "On bounded source subsets, equality of real-Wiener test and complex weak-star induced topologies.",
-    "Original H^-1 inclusion changes neither the physical distribution nor the source restrictions."
+    "Original H^-1 inclusion changes neither the physical distribution nor the source restrictions.",
+    "Every admissible lower norm realization is literally the same original smooth-test distribution; original real-Wiener testing and lower distribution norm convergence agree on bounded source sets.",
+    "The compact-open weak-star trajectory topology is induced by original H^-1 distribution trajectories."
   ],
   "verified_endpoint_spectral_dependencies": [
     "Exact weighted-infinity Fourier operators and absolute convergence, including negative weights and both shifts.",
     "Coefficient-space sourceLemma2_4_shiftedNorm_bounds on the original unshifted source Banach space, with corrected radius6n.",
-    "Uniform half-contraction cutoff preceding all weights/potentials/lambdas and bounded two-sided endpoint tail inverses."
-  ]
+    "Uniform half-contraction cutoff preceding all weights/potentials/lambdas and bounded two-sided endpoint tail inverses.",
+    "The reduced free Hill inverse gains two exact Sobolev orders for arbitrary source spectral weights and every Banach exponent, including infinity.",
+    "For s>-1/2, the reduced inverse of endpoint data lies in the original physical H1 space, with unchanged original distribution and Fourier coefficients.",
+    "Bounded physical multiplication H1 times H1 to H1 is constructed using the existing convolution and Leibniz rule; transposition gives V_q:H1 to H^-1 for every original singular H^-1 potential.",
+    "The singular potential product has genuinely absolutely convergent Fourier coefficients. The endpoint Fourier perturbation equals V_q after the original H1 reduced inverse as a bounded-operator equality.",
+    "The singular Hill operator is minus the actual second distributional derivative plus V_q on the entire original H1 domain. Its H^-1 eigen-equation is equivalent to the source Fourier equation."
+  ],
+  "verified_appendix_b_additions": [
+    "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
+    "Bounded weak-star closure compactness and convergent subsequence extraction.",
+    "Weak-star closure commutes with every admissible lower norm realization; bounded weak-star closedness is equivalent to lower-image closedness."
+  ],
+  "workspace_status": "Existing private worktree and article branch retained; canonical source checkout and build outputs remain read-only. Validated milestone publication follows the active goal instruction to commit and push to this article branch; no workspace attachment or canonical source integration is performed.",
+  "goal_turn_classification": "progress"
 }

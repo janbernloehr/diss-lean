@@ -17,31 +17,6 @@ open Set Filter Topology
 open scoped ENNReal
 namespace NLS.WeightedCoeff
 
-@[simp] theorem weakStarCoeff_wienerDualRealization (r : ℝ)
-    (a : WeightedCoeff (Weight.sobolev (-r)) ⊤) :
-    weakStarCoeff r (wienerDualRealization r a) = a := by
-  change sobolevCotangent (q := ⊤) r (by simp)
-    ((sobolevBilinearPairing (p := 1) (q := ⊤) r).flip a) = a
-  exact sobolevCotangent_pairing r (by simp) a
-
-@[simp] theorem wienerDualRealization_weakStarCoeff (r : ℝ)
-    (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :
-    wienerDualRealization r (weakStarCoeff r f) = f := by
-  apply (WeakDual.toStrongDual (𝕜 := ℂ)).injective
-  change sobolevDualityIsometry (p := 1) (q := ⊤) r (by simp)
-    (sobolevCotangent r (by simp) f.toStrongDual) = f.toStrongDual
-  rw [← sobolevDualityIsometry_symm_apply, LinearIsometryEquiv.apply_symm_apply]
-
-@[simp] theorem norm_weakStarCoeff (r : ℝ)
-    (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :
-    ‖weakStarCoeff r f‖ = ‖f.toStrongDual‖ :=
-  norm_sobolevCotangent r (by simp) f.toStrongDual
-
-@[simp] theorem norm_wienerDualRealization (r : ℝ)
-    (a : WeightedCoeff (Weight.sobolev (-r)) ⊤) :
-    ‖(wienerDualRealization r a).toStrongDual‖ = ‖a‖ :=
-  (sobolevDualityIsometry (p := 1) (q := ⊤) r (by simp)).norm_map a
-
 /-- The actual weighted endpoint realization of the shared nonlinear flow. -/
 def weakStarActionPhaseFlow (r : ℝ) (Ω : (ℤ → ℝ) → ℤ → ℝ) (t : ℝ)
     (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :

@@ -85,6 +85,31 @@ def weakStarCoeff (r : ℝ)
     (weakStarCoeff r f).val n = weakStarCoordinates r f n :=
   sobolevCotangent_val r (by simp) f.toStrongDual n
 
+@[simp] theorem weakStarCoeff_wienerDualRealization (r : ℝ)
+    (a : WeightedCoeff (Weight.sobolev (-r)) ⊤) :
+    weakStarCoeff r (wienerDualRealization r a) = a := by
+  change sobolevCotangent (q := ⊤) r (by simp)
+    ((sobolevBilinearPairing (p := 1) (q := ⊤) r).flip a) = a
+  exact sobolevCotangent_pairing r (by simp) a
+
+@[simp] theorem wienerDualRealization_weakStarCoeff (r : ℝ)
+    (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :
+    wienerDualRealization r (weakStarCoeff r f) = f := by
+  apply (WeakDual.toStrongDual (𝕜 := ℂ)).injective
+  change sobolevDualityIsometry (p := 1) (q := ⊤) r (by simp)
+    (sobolevCotangent r (by simp) f.toStrongDual) = f.toStrongDual
+  rw [← sobolevDualityIsometry_symm_apply, LinearIsometryEquiv.apply_symm_apply]
+
+@[simp] theorem norm_weakStarCoeff (r : ℝ)
+    (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :
+    ‖weakStarCoeff r f‖ = ‖f.toStrongDual‖ :=
+  norm_sobolevCotangent r (by simp) f.toStrongDual
+
+@[simp] theorem norm_wienerDualRealization (r : ℝ)
+    (a : WeightedCoeff (Weight.sobolev (-r)) ⊤) :
+    ‖(wienerDualRealization r a).toStrongDual‖ = ‖a‖ :=
+  (sobolevDualityIsometry (p := 1) (q := ⊤) r (by simp)).norm_map a
+
 /-- The lower norm realization of the actual weak-star functional. -/
 def lowerWeakStarRealization (r t : ℝ) (hp : p ≠ ⊤)
     (h : 1 < (-r-t)*p.toReal)
@@ -220,6 +245,78 @@ theorem isCompact_weakStar_iff_bounded_lower_compact (r t : ℝ) (hp : p ≠ ⊤
     exact ⟨hb, (isCompact_iff_lowerWeakStarRealization_image r t hp h A hb).mp hA⟩
   · rintro ⟨hb, hc⟩
     exact (isCompact_iff_lowerWeakStarRealization_image r t hp h A hb).mpr hc
+
+/-- The literal existential formulation in Appendix B.1(ii)(c). -/
+theorem tendsto_weakStar_seq_iff_bounded_some_lower (r : ℝ)
+    (x : ℕ → WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1))
+    (a : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)) :
+    Tendsto x atTop (𝓝 a) ↔ Bornology.IsBounded (range x) ∧
+      ∃ (t : ℝ) (p : ℝ≥0∞) (hp1 : 1 ≤ p) (hp : p ≠ ⊤)
+        (h : 1 < (-r-t)*p.toReal), t < -r ∧
+        letI : Fact (1 ≤ p) := ⟨hp1⟩
+        Tendsto (fun k => lowerWeakStarRealization r t hp h (x k)) atTop
+          (𝓝 (lowerWeakStarRealization r t hp h a)) := by
+  constructor
+  · intro hx
+    have h : 1 < (-r-(-r-2))*(1:ℝ≥0∞).toReal := by norm_num
+    have ht := (tendsto_weakStar_seq_iff_bounded_lower r (-r-2)
+      (p := 1) (by simp) h x a).mp hx
+    exact ⟨ht.1, -r-2, 1, le_rfl, by simp, h, by linarith, ht.2⟩
+  · rintro ⟨hb, t, p, hp1, hp, h, _, ht⟩
+    let : Fact (1 ≤ p) := ⟨hp1⟩
+    exact (tendsto_weakStar_seq_iff_bounded_lower r t hp h x a).mpr ⟨hb, ht⟩
+
+/-- The literal existential formulation in Appendix B.1(iii)(d).
+The lower exponent is supplied uniformly, independently of the set. -/
+theorem isCompact_weakStar_iff_bounded_some_lower_compact (r : ℝ)
+    (A : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1))) :
+    IsCompact A ↔ Bornology.IsBounded A ∧
+      ∃ (t : ℝ) (p : ℝ≥0∞) (hp1 : 1 ≤ p) (hp : p ≠ ⊤)
+        (h : 1 < (-r-t)*p.toReal), t < -r ∧
+        letI : Fact (1 ≤ p) := ⟨hp1⟩
+        IsCompact (lowerWeakStarRealization r t hp h '' A) := by
+  constructor
+  · intro hA
+    have h : 1 < (-r-(-r-2))*(1:ℝ≥0∞).toReal := by norm_num
+    have ht := (isCompact_weakStar_iff_bounded_lower_compact r (-r-2)
+      (p := 1) (by simp) h A).mp hA
+    exact ⟨ht.1, -r-2, 1, le_rfl, by simp, h, by linarith, ht.2⟩
+  · rintro ⟨hb, t, p, hp1, hp, h, _, ht⟩
+    let : Fact (1 ≤ p) := ⟨hp1⟩
+    exact (isCompact_weakStar_iff_bounded_lower_compact r t hp h A).mpr ⟨hb, ht⟩
+
+/-- On bounded sets, taking the weak-star closure and then the lower norm
+realization is the same as taking the lower norm closure of the image. -/
+theorem closure_lowerWeakStarRealization_image (r t : ℝ) (hp : p ≠ ⊤)
+    (h : 1 < (-r-t)*p.toReal)
+    (A : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)))
+    (hb : Bornology.IsBounded A) :
+    closure (lowerWeakStarRealization r t hp h '' A) =
+      lowerWeakStarRealization r t hp h '' closure A := by
+  have hb' := WeakDual.isBounded_closure hb
+  have hc : ContinuousOn (lowerWeakStarRealization r t hp h) (closure A) :=
+    continuousOn_iff_continuous_domRestrict.mpr
+      (continuous_lowerWeakStarRealization_on_bounded r t hp h (closure A) hb')
+  have hK := (isCompact_iff_lowerWeakStarRealization_image r t hp h (closure A) hb').mp
+    (isCompact_closure_weakStar_of_bounded r A hb)
+  exact subset_antisymm (closure_minimal (image_mono subset_closure) hK.isClosed)
+    hc.image_closure
+
+/-- For a bounded set, weak-star closedness can be checked in any admissible
+lower norm space, with ambient closedness on both sides. -/
+theorem isClosed_weakStar_iff_lower_image (r t : ℝ) (hp : p ≠ ⊤)
+    (h : 1 < (-r-t)*p.toReal)
+    (A : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)))
+    (hb : Bornology.IsBounded A) :
+    IsClosed A ↔ IsClosed (lowerWeakStarRealization r t hp h '' A) := by
+  constructor
+  · intro hA
+    exact ((isCompact_iff_lowerWeakStarRealization_image r t hp h A hb).mp
+      ((isCompact_weakStar_iff_bounded_closed r A).mpr ⟨hb, hA⟩)).isClosed
+  · intro hA
+    rw [← closure_eq_iff_isClosed]
+    apply (lowerWeakStarRealization_injective r t hp h).image_injective
+    rw [← closure_lowerWeakStarRealization_image r t hp h A hb, hA.closure_eq]
 
 /-- Lower realization on a norm-bounded weak-star subset, as a continuous map. -/
 def lowerWeakStarMapOn (r t : ℝ) (hp : p ≠ ⊤)

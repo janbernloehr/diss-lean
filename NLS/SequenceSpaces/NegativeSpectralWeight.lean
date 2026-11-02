@@ -30,6 +30,47 @@ theorem negativeSobolev_eq_product (w : SpectralWeight) (r : ℝ) (k : ℤ) :
     w.negativeSobolev r (-k) = w.negativeSobolev r k := by
   simp only [negativeSobolev_apply, w.neg_eq, Weight.sobolev_neg]
 
+/-- Subtracting an order in the predual convention adds that many powers
+to the data weight, for arbitrary real orders. -/
+theorem negativeSobolev_sub (w : SpectralWeight) (r d : ℝ) (k : ℤ) :
+    w.negativeSobolev (r-d) k = w.negativeSobolev r k * Weight.sobolev d k := by
+  rw [negativeSobolev_eq_product, negativeSobolev_eq_product,
+    show -(r-d) = -r+d by ring]
+  simp only [Weight.sobolev_apply, Real.rpow_add (by positivity : 0 < 1+|(k:ℝ)|)]
+  ring
+
+/-- Forgetting the spectral weight decreases the exact source norm. -/
+theorem sobolev_neg_le_negativeSobolev (w : SpectralWeight) (r : ℝ) (k : ℤ) :
+    Weight.sobolev (-r) k ≤ w.negativeSobolev r k := by
+  rw [negativeSobolev_eq_product]
+  exact le_mul_of_one_le_left ((Weight.sobolev (-r)).positive k).le (w.one_le k)
+
+/-- Every signed source weight admits the existing original tempered
+distribution realization; no polynomial upper bound on w is needed. -/
+theorem hasTemperedInverse_negativeSobolev (w : SpectralWeight) (r : ℝ) :
+    (w.negativeSobolev r).HasTemperedInverse := by
+  obtain ⟨K,C,hC,h⟩ := Weight.hasTemperedInverse_sobolev (-r)
+  refine ⟨K,C,hC,fun k => ?_⟩
+  exact (one_div_le_one_div_of_le ((Weight.sobolev (-r)).positive k)
+    (w.sobolev_neg_le_negativeSobolev r k)).trans (h k)
+
+/-- The coefficient-preserving inclusion into the unweighted Sobolev scale. -/
+def negativeSobolevToSobolev (w : SpectralWeight) (r : ℝ)
+    (p : ℝ≥0∞) [Fact (1 ≤ p)] :
+    WeightedCoeff (w.negativeSobolev r) p →L[ℂ] WeightedCoeff (Weight.sobolev (-r)) p :=
+  WeightedCoeff.inclusionCLM _ _ (w.sobolev_neg_le_negativeSobolev r)
+
+@[simp] theorem negativeSobolevToSobolev_apply (w : SpectralWeight) (r : ℝ)
+    (p : ℝ≥0∞) [Fact (1 ≤ p)] (a : WeightedCoeff (w.negativeSobolev r) p) (k : ℤ) :
+    (w.negativeSobolevToSobolev r p a).val k = a.val k :=
+  WeightedCoeff.inclusionCLM_apply _ _ _ a k
+
+/-- No constant is lost when forgetting the extra spectral weight. -/
+theorem norm_negativeSobolevToSobolev_le (w : SpectralWeight) (r : ℝ)
+    (p : ℝ≥0∞) [Fact (1 ≤ p)] (a : WeightedCoeff (w.negativeSobolev r) p) :
+    ‖w.negativeSobolevToSobolev r p a‖ ≤ ‖a‖ :=
+  WeightedCoeff.norm_inclusionCLM_le _ _ _ a
+
 /-- The negative weight ratio in the shifted convolution row has exactly
 one squared positive Sobolev factor. No constant depends on w or the shift. -/
 theorem negativeSobolev_shift_ratio_le (w : SpectralWeight) (r : ℝ) (hr : 0≤r)

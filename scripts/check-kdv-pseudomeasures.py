@@ -25,13 +25,18 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.SobolevConvolutionBounds',
+    'NLS.Fourier.PeriodicH1Multiplication',
     'NLS.SequenceSpaces.HillMixedKernel',
     'NLS.SequenceSpaces.InfinityMatrix',
     'NLS.SequenceSpaces.NegativeSpectralWeight',
     'NLS.SequenceSpaces.ShiftReflection',
     'NLS.KdV.FreeHill',
+    'NLS.KdV.FreeHillRegularity',
+    'NLS.KdV.SingularHillPhysical',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
+    'NLS.KdV.PseudomeasureRegularity',
     'NLS.KdV.PseudomeasureTailInverse',
     'NLS.SequenceSpaces.WienerWeakStar',
     'NLS.SequenceSpaces.WeightedWienerWeakStar',
@@ -42,6 +47,7 @@ modules = [
     'NLS.Fourier.PeriodicDistributionParity',
     'NLS.Fourier.RealMeanZeroPeriodOne',
     'NLS.Fourier.PeriodicEndpointLowerInclusion',
+    'NLS.Fourier.PeriodicWeakStarLowerTopology',
     'NLS.Dynamics.ActionDependentWeightedPhaseFlow',
     'NLS.Dynamics.WeightedWeakStarPhaseFlow',
 ] + ['NLS.Articles.KdVPseudomeasures.' + m for m in [

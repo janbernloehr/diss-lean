@@ -1,4 +1,6 @@
 import NLS.KdV.PseudomeasureTailInverse
+import NLS.KdV.PseudomeasureRegularity
+import NLS.KdV.SingularHillPhysical
 
 /-!
 # The article's shifted-infinity Hill bounds
@@ -10,8 +12,9 @@ range -1/2<s<=0 and arbitrary source spectral weight are retained.
 Correction: the strip radius is 6*n, as in the shared verified free Hill
 foundation. This replaces the printed radius 12*n; all eventual spectral
 arguments must establish their eigenvalue inclusion in this corrected strip.
-Physical singular-potential multiplication and the spectral eigenvalue
-identification remain separate obligations, not hypotheses hidden here.
+The endpoint perturbation is identified below with physical singular-potential
+multiplication after the original H1 reduced inverse. The perturbed spectrum
+and its eigenvalue inclusion still require further proofs.
 -/
 noncomputable section
 open Set
@@ -86,5 +89,33 @@ theorem sourceLemma2_4_shiftedNorm_bounds (w : SpectralWeight)
   simpa only [spectralEndpointConstant, he] using
     NLS.KdV.negativeShiftedNorm_endpointHillPerturbation_le w (-s) (by linarith) (by linarith)
       n hn z hz q f
+
+/-- The source's T_n(lambda)=V A_lambda^(-1) Q_n is the previously bounded
+endpoint operator, with V defined by full physical H1/H-minus-one duality. -/
+theorem sourceLemma2_4_physical_identification (w : SpectralWeight)
+    (s : ℝ) (hs : -(1:ℝ)/2<s) (hs0 : s≤0)
+    (n : ℕ) (hn : 1≤n) (z : ℂ) (hz : z ∈ NLS.KdV.reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev (-s)) ⊤) :
+    (NLS.KdV.endpointHillHminusOne w (-s) (by linarith)).comp
+      (NLS.KdV.unshiftedEndpointHillPerturbation w (-s) (by linarith) (by linarith)
+        n hn z hz q) =
+      (NLS.Fourier.PeriodicFourierLebesgue.hminusOneMultiplication
+        (NLS.KdV.endpointHillHminusOne w (-s) (by linarith) q)).comp
+          (NLS.KdV.endpointReducedHillResolventH1Original w (-s) (by linarith) n hn z hz) :=
+  NLS.KdV.endpointHillPerturbation_physicalOperator w (-s) (by linarith) (by linarith)
+    n hn z hz q
+
+/-- Section 2's singular Hill eigen-equation on the actual H1 domain, for
+every weighted endpoint potential in the entire strict source range. -/
+theorem sourceHill_eigen_iff (w : SpectralWeight) (s : ℝ) (hs : -(1:ℝ)/2<s)
+    (q : WeightedCoeff (w.negativeSobolev (-s)) ⊤) (z : ℂ)
+    (f : NLS.Fourier.FourierLebesgueSpace (2:ℝ) 1 2) :
+    NLS.KdV.singularHillOperator (NLS.KdV.endpointHillHminusOne w (-s) (by linarith) q) f =
+      z • NLS.KdV.singularHillDomainInclusion f ↔
+        ∀ m : ℤ, (z-(NLS.KdV.freeHillValue m:ℂ))*
+          f.val (NLS.Fourier.SmoothPeriodicTest.mode (-m)) =
+          ∑' k : ℤ, q.val (m-k)*f.val (NLS.Fourier.SmoothPeriodicTest.mode (-k)) := by
+  rw [NLS.KdV.singularHillOperator_eigen_iff]
+  simp only [NLS.KdV.endpointHillHminusOne_coefficient]
 
 end NLS.Articles.KdVPseudomeasures

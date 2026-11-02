@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.WeightedWeakStarLowerTopology
+import NLS.Fourier.PeriodicWeakStarLowerTopology
 
 /-!
 # H-minus-one trajectory topology on bounded pseudomeasure sets
@@ -40,5 +41,18 @@ theorem continuous_trajectory_iff_hminusOne (s : ℝ) (hs : -(1:ℝ)/2 < s)
     Continuous S ↔ Continuous (fun x => (hminusOneMapOn s hs V hb).comp (S x)) :=
   WeightedCoeff.continuous_weakStarTrajectory_iff_lower (-s) (-1) (by norm_num)
     (hminusOne_threshold s hs) V hb S
+
+/-- The same compact-open topology transfer in the actual original H-minus-one
+distribution space, with its normalized physical action unchanged. -/
+theorem continuous_trajectory_iff_originalHminusOne (s : ℝ) (hs : -(1:ℝ)/2 < s)
+    (V : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev (-s)) 1)))
+    (hb : Bornology.IsBounded V) (T : ℝ)
+    {X : Type*} [TopologicalSpace X] (S : X → C(Icc (-T) T,V)) :
+    Continuous S ↔ Continuous (fun x =>
+      (NLS.Fourier.PeriodicFourierLebesgue.lowerWeakStarDistributionMapOn
+        (L := 2) (-s) (-1) (p := 2) (by norm_num)
+        (hminusOne_threshold s hs) V hb).comp (S x)) :=
+  NLS.Fourier.PeriodicFourierLebesgue.continuous_weakStarTrajectory_iff_lowerDistribution
+    (-s) (-1) (by norm_num) (hminusOne_threshold s hs) V hb S
 
 end NLS.Articles.KdVPseudomeasures

@@ -14,19 +14,21 @@
     "tendsto_weakStar_seq_iff_bounded_coordinates"
   ],
   "B.1(ii)(a)-(c)": [
-    "tendsto_weakStar_seq_iff_bounded_lower"
+    "tendsto_weakStar_seq_iff_bounded_lower",
+    "tendsto_weakStar_seq_iff_bounded_some_lower"
   ],
   "B.1(iii)(a)-(b)-(c)": [
     "isCompact_weakStar_iff_isSeqCompact",
     "isCompact_weakStar_iff_bounded_closed"
   ],
   "B.1(iii)(a)-(d)": [
-    "isCompact_weakStar_iff_bounded_lower_compact"
+    "isCompact_weakStar_iff_bounded_lower_compact",
+    "isCompact_weakStar_iff_bounded_some_lower_compact"
   ],
   "B.1(iv)": [
     "isEmbedding_lowerWeakStarRealization_on_bounded"
   ],
-  "qualification": "Generalized endpoint statements plus exact physical source identification. Real/even/mean-zero conditions and full original real Wiener predual test topology are now identified on every bounded source subset. No KdV main theorem completion is inferred.",
+  "qualification": "Generalized endpoint B.1(i)-(iv), including literal existential lower-exponent statements, plus exact physical source identification. Original lower norm distribution spaces preserve the whole distribution, reality, mean zero and period one. The full original real Wiener testing topology agrees on bounded source subsets, including arbitrary filters and compact-open trajectories. This is Appendix B dependency progress; no physical KdV main theorem completion is inferred.",
   "namespace": "NLS.WeightedCoeff",
   "new_modules": [
     "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
@@ -37,6 +39,38 @@
     "NLS/Fourier/PeriodicDistributionParity.lean",
     "NLS/Fourier/RealMeanZeroPeriodOne.lean",
     "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
-    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean"
-  ]
+    "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
+    "NLS/Fourier/PeriodicWeakStarLowerTopology.lean"
+  ],
+  "bounded_closure_and_subsequences": [
+    "isCompact_closure_weakStar_of_bounded",
+    "exists_weakStar_subseq_of_bounded",
+    "closure_lowerWeakStarRealization_image",
+    "isClosed_weakStar_iff_lower_image"
+  ],
+  "original_lower_distribution_topology": {
+    "module": "NLS/Fourier/PeriodicWeakStarLowerTopology.lean",
+    "exact_distribution": [
+      "lowerWeakStarDistribution_val",
+      "lowerWeakStarDistribution_realization"
+    ],
+    "topology": [
+      "isEmbedding_lowerWeakStarDistribution_on_bounded",
+      "tendsto_weakStar_subtype_iff_lowerDistribution"
+    ],
+    "compactness_and_closure": [
+      "isCompact_weakStar_iff_bounded_lowerDistribution_compact",
+      "closure_lowerWeakStarDistribution_image"
+    ],
+    "compact_open_trajectories": [
+      "isEmbedding_lowerWeakStarDistributionTrajectory",
+      "continuous_weakStarTrajectory_iff_lowerDistribution"
+    ]
+  },
+  "real_source_lower_topology": [
+    "tendsto_originalRealWienerTests_iff_lowerDistribution",
+    "lowerWeakStarDistribution_source_conditions",
+    "continuous_trajectory_iff_originalHminusOne"
+  ],
+  "quantifier_check": "The source existential formulations for some sigma<s and finite p>=1 are explicit theorems. The forward witnesses are sigma=s-2 and p=1 for every real s. Reverse implications accept every admissible witness. Norm boundedness is retained. Fixed-exponent theorems establish the stronger result for every admissible pair."
 }

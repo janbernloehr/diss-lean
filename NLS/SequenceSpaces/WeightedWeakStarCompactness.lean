@@ -103,6 +103,23 @@ theorem isCompact_weakStar_iff_bounded_closed (r : ℝ)
   · rintro ⟨hb, hc⟩
     exact WeakDual.isCompact_of_bounded_of_closed hb hc
 
+/-- Every bounded set has compact weak-star closure. -/
+theorem isCompact_closure_weakStar_of_bounded (r : ℝ)
+    (A : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)))
+    (hb : Bornology.IsBounded A) : IsCompact (closure A) :=
+  WeakDual.isCompact_of_bounded_of_closed (WeakDual.isBounded_closure hb) isClosed_closure
+
+/-- Every norm-bounded endpoint sequence admits a weak-star convergent
+subsequence whose limit lies in the weak-star closure of its range. -/
+theorem exists_weakStar_subseq_of_bounded (r : ℝ)
+    (x : ℕ → WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1))
+    (hb : Bornology.IsBounded (range x)) :
+    ∃ a ∈ closure (range x), ∃ φ : ℕ → ℕ,
+      StrictMono φ ∧ Tendsto (x ∘ φ) atTop (𝓝 a) :=
+  (isSeqCompact_of_isCompact_weakStar r
+    (isCompact_closure_weakStar_of_bounded r (range x) hb))
+      (fun n => subset_closure (mem_range_self n))
+
 /-- Weak-star convergent sequences are norm bounded; this is a sequential
 statement and does not assert global boundedness of arbitrary convergent nets. -/
 theorem isBounded_range_of_weakStar_tendsto (r : ℝ)

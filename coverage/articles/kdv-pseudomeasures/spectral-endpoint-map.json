@@ -28,14 +28,29 @@
       "NLS.KdV.exists_endpointHill_tail_inverse",
       "NLS.KdV.exists_endpointHill_tail_inverseMinus"
     ],
-    "uniform_tail_invertibility": "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
+    "uniform_tail_invertibility": "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible",
+    "two_derivative_resolvent_bound": "NLS.KdV.sobolev_two_reducedHillSymbol_bound",
+    "source_weighted_gain": "NLS.KdV.endpointReducedHillResolventGain",
+    "original_H1_domain": "NLS.KdV.endpointReducedHillResolventH1Original",
+    "physical_multiplication": "NLS.Fourier.PeriodicFourierLebesgue.hminusOneMultiplication",
+    "physical_multiplication_Fourier_product": "NLS.Fourier.PeriodicFourierLebesgue.hasFourierProduct_hminusOneProduct",
+    "endpoint_physical_operator_identification": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification",
+    "singular_Hill_operator": "NLS.KdV.singularHillOperator",
+    "actual_distributional_expression": "NLS.KdV.singularHillOperator_val",
+    "source_physical_eigen_equation": "NLS.Articles.KdVPseudomeasures.sourceHill_eigen_iff"
   },
   "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
-  "verified_scope": "Literal complex Fourier-coefficient operators, absolute row summability, both shifted estimates on one original source space, and uniform inverse consequences. No unknown mathematical estimate or inverse is supplied by a caller.",
+  "verified_scope": "Actual weighted endpoint operators, absolute row summability, both shifted estimates, uniform tail inverses, two-derivative gain, original H1 resolvent domain, and equality with physical H-minus-one multiplication defined by full H1 duality. The singular Hill operator equals minus the genuine distributional second derivative plus the potential product, and its original H-minus-one eigen-equation is equivalent to the Fourier equation for every actual H1 domain element. No spectral enumeration, eigenvalue localization or Birkhoff map is assumed proved.",
   "remaining_physical_obligations": [
-    "Identify the constructed Fourier product with multiplication by the singular original distribution q on the physical H1 Hill domain.",
-    "Prove resolvent regularity gain and equivalence with the physical Hill eigen-equation for these rough potentials.",
-    "Extend/consume shared analytic determinant reduction, zero localization, and labels in the corrected strip for singular potentials.",
-    "Complete the gap and Dirichlet asymptotics and inverse regularity needed by Theorems 2.1, 2.2 and 1.4."
-  ]
+    "Construct/extend the two-mode determinant reduction for singular endpoint potentials, including the physical domain of every recovered eigenvector.",
+    "Prove spectral discreteness/enumeration, determinant zero correspondence with multiplicities, and eventual inclusion of the actual singular-potential periodic eigenvalues in the corrected strip.",
+    "Complete gap and Dirichlet asymptotics and inverse regularity needed by Theorems 2.1, 2.2 and 1.4."
+  ],
+  "physical_normalization": {
+    "period": 2,
+    "free_symbol": "pi^2*k^2",
+    "original_pairing": "Full native complex-linear distribution action; the bilinear H1 duality identity is (q*f)(g)=q(f*g). H1 multiplication is proved to be the pointwise product of original continuous representatives. Conjugating g gives the source sesquilinear convention.",
+    "resolvent_bound": "For every n>=1 and z in the corrected strip, sobolev(2,k)*norm(d_n(z,k)) <= 4+2*norm(z), valid for all imaginary parts.",
+    "orders": "All real r in the two-derivative gain; r<1/2 for endpoint-to-H1 and H-minus-one inclusion; 0<=r<1/2 for endpoint perturbation physical identification."
+  }
 }

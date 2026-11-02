@@ -1,4 +1,5 @@
 import NLS.Articles.KdVPseudomeasures.SourceSpaces
+import NLS.Fourier.PeriodicWeakStarLowerTopology
 
 /-! # Real Wiener testing on the physical source locus
 
@@ -253,5 +254,32 @@ theorem tendsto_source_iff_originalRealWienerTests (r : ℝ)
         (𝓝 (originalRealWienerEvaluations r a.val u)) := by
   rw [(isEmbedding_originalRealWienerEvaluations_on_bounded r A hb hA).tendsto_nhds_iff]
   exact tendsto_pi_nhds
+
+/-- On bounded physical source sets, the original real Wiener testing
+criterion equals convergence in every admissible original lower norm space. -/
+theorem tendsto_originalRealWienerTests_iff_lowerDistribution (r t : ℝ)
+    {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h : 1 < (-r-t)*p.toReal)
+    (A : Set (WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1)))
+    (hb : Bornology.IsBounded A) (hA : A ⊆ potentialCoordinateLocus r)
+    {X : Type*} {l : Filter X} (f : X → A) (a : A) :
+    (∀ u : OriginalRealWienerTest r,
+      Tendsto (fun x => originalRealWienerEvaluations r (f x).val u) l
+        (𝓝 (originalRealWienerEvaluations r a.val u))) ↔
+      Tendsto (fun x => lowerWeakStarDistribution (L := 2) r t hp h (f x).val) l
+        (𝓝 (lowerWeakStarDistribution r t hp h a.val)) :=
+  (tendsto_source_iff_originalRealWienerTests r A hb hA f a).symm.trans
+    (tendsto_weakStar_subtype_iff_lowerDistribution r t hp h A hb f a)
+
+/-- The lower realization preserves all physical source restrictions on
+the whole smooth-test distribution. -/
+theorem lowerWeakStarDistribution_source_conditions (r t : ℝ)
+    {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h : 1 < (-r-t)*p.toReal)
+    (f : WeakDual ℂ (WeightedCoeff (Weight.sobolev r) 1))
+    (hf : f ∈ potentialCoordinateLocus r) :
+    (lowerWeakStarDistribution (L := 2) r t hp h f).val.IsRealMeanZeroPeriodOne := by
+  rw [lowerWeakStarDistribution_val]
+  change (potentialFromCoordinates r f).val.IsRealMeanZeroPeriodOne
+  apply (mem_potentialCoordinateLocus_iff r _).mp
+  simpa only [potentialCoordinates_fromCoordinates] using hf
 
 end NLS.Articles.KdVPseudomeasures

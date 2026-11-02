@@ -136,7 +136,7 @@
         38
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
-      "status": "Generalized endpoint compactness/topology results proved; real/even/mean-zero physical source characterization and exact original real-Wiener testing topology on bounded source subsets now proved. Full physical KdV constructions remain outside Appendix B."
+      "status": "Generalized endpoint B.1(i)-(iv) proved, including literal existential lower-exponent formulations, bounded weak-star closure/subsequence extraction, and ambient lower-norm closure/closedness. The topology is transported to original lower order distributions with unchanged smooth-test action, full real-Wiener testing on bounded physical source sets, and compact-open trajectories. Physical KdV main constructions remain open."
     },
     {
       "label": "2.4 / 2.5",
@@ -144,7 +144,7 @@
         9,
         10
       ],
-      "status": "Verified coefficient-operator bounds and uniform tail inverses; physical operator identification and singular spectral strip inclusion remain.",
+      "status": "Exact endpoint estimates and uniform tail inverses proved on the corrected radius-6n strip. Two-derivative gain, original H1 resolvent domain, physical singular-potential multiplication by full duality, and equality of the endpoint operator with V A^-1 Q are now proved. The original H1/H^-1 Hill eigen-equation equals the Fourier equation. Actual singular spectral enumeration/localization and Birkhoff constructions remain open.",
       "coverage": "spectral-endpoint-map.json",
       "constant": "C_s=8+16/(1+2s)",
       "strip_correction": "Radius6n instead of printed12n; actual eigenvalue inclusion must be proved separately."
