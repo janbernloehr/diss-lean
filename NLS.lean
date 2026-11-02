@@ -4958,4 +4958,11 @@ import NLS.ComplexAnalysis.EntireEvenSquareDescent
 import NLS.KdV.HillL2EnergyDiscriminant
 import NLS.KdV.HillWeightIndependence
 import NLS.KdV.HillPhysicalGapBounds
+import NLS.ComplexAnalysis.ZeroCountHomotopy
+import NLS.ComplexAnalysis.TwoZeroOrderComparison
+import NLS.KdV.ClassicalLocalPrimitive
+import NLS.KdV.ClassicalFreePrimitive
+import NLS.KdV.HillRealSpectrum
+import NLS.KdV.HillCharacteristicZeros
+import NLS.KdV.HillRealGapPairs
 import NLS.Articles.KdVEstimates.EstimateAdapter

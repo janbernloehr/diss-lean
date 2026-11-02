@@ -32,7 +32,7 @@
     "topologies": "Sobolev and weighted Hilbert norm topologies; weighted actions use the indicated l1 norm. Bi-analyticity means real analytic maps with real analytic inverse in these norm topologies.",
     "poisson": "Gardner bracket integral (d_u F)*partial_x(d_u G); {x_n,y_m}=delta_nm, {x_n,x_m}={y_n,y_m}=0. This sign must not be inherited from the accepted NLS convention.",
     "hill": "L(q)=-d^2/dx^2+q on [0,2] with periodic boundary conditions, q period one. Fourier basis exp(i*pi*k*x); free spectral value pi^2*k^2. Formula (2), page 5, fixes the second derivative; the page-8 display has an omitted exponent.",
-    "spectral_labels": "lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1, ordered lexicographically for complex q. Free n=0 is simple and n>=1 double; no perturbed multiplicity theorem is proved by the candidate.",
+    "spectral_labels": "Source: lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1, ordered lexicographically for complex q. Free n=0 is simple and n>=1 double. Actual high-strip characteristic counts, unit determinant/characteristic analytic orders and unique ordered real high-strip pairs are now proved at n>=max(1,16*||q||_2). Their global enumeration from the lowest root and operator algebraic multiplicities remain open.",
     "canonical_root": "-2*i*sqrt_+(lambda-lambda_0^+) times product_{k>=1} varsigma_k(lambda)/(k^2*pi^2)",
     "contour_action": "I_n=(1/pi) integral_Gamma_n lambda*Delta'(lambda)/sqrt_c(Delta(lambda)^2-4) d_lambda, with the branch/circuit conventions on pages 9-10. Higher actions J_(n,m) have lambda^(m+1)/((m+1)*pi)."
   },
@@ -261,16 +261,27 @@
     {
       "module": "NLS/SequenceSpaces/WeightedMultiplier.lean and SpectralConvolution.lean",
       "role": "Actually reused for the contractive weight-forgetting inclusion and its literal convolution compatibility; uniqueness of the existing Hill inverse closes the weighted physical realization comparison."
+    },
+    {
+      "module": "NLS/SequenceSpaces/Pairing.lean",
+      "role": "The absolutely convergent convolution conjugate-reflection adjoint identity proves actual Hill H2 symmetry. Positive normalized Hilbert energy then gives real eigenvalues, orthogonality and exclusion of a length-two associated vector."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ZeroCountHomotopy.lean and TwoZeroOrderComparison.lean",
+      "role": "New reusable theorems: zero count is locally constant in an arbitrary continuous parameter family with nonvanishing compact contour; preconnected parameters preserve the count. Two nontrivial analytic functions of total count two with the same zeros have identical individual analytic orders, including collisions."
+    },
+    {
+      "module": "NLS/KdV/ClassicalLocalPrimitive.lean; NLS/KdV/ClassicalFreePrimitive.lean",
+      "role": "Unchanged verified article-branch reuse. Actual free scalar Hill trace and locally analytic Floquet root/logarithm charts, with no abstract trace assumed."
     }
   ],
   "next_shared_milestones": [
-    "Identify the high-strip determinant root families with globally labeled periodic eigenvalues, including determinant/operator multiplicities and the remaining central bounds. Their source-normalized weighted individual and summed tail bounds are now proved.",
-    "Match analytic zero orders of the actual energy discriminant and the weight-independent finite determinant, then identify the relevant Hill algebraic multiplicities.",
-    "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
-    "Reuse the checked exact period-one/mean-zero coefficient embedding and physical Fourier-integral adapter in the spectral-label/discriminant comparison.",
-    "Use the checked jointly analytic rough energy discriminant to prove normalized product/characteristic order identities. Then construct canonical root branches, contour actions and the physical Birkhoff map.",
-    "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
-    "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
+    "Identify the analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and construct the source global labels by controlling the central spectrum and the regions between the checked narrow strips.",
+    "Extend the local ordered real high-strip enumeration to the global spectral order and prove the necessary low central estimates. Do not infer global contour coverage from the radius-6*n strips.",
+    "Use the jointly analytic rough energy discriminant, its checked high-strip characteristic multiplicities and exact period-one embedding to prove the normalized product and canonical root identities.",
+    "Reuse the checked actual local/free Hill primitives and inspect the upstream branch continuation results to construct globally normalized branches and contour actions on the required rough domains.",
+    "Reuse shared ActionHamiltonianMoments/Trace/FiniteGap results after identifying the actual Hill actions; prove the physical KdV Birkhoff map, hierarchy trace identities and tame action estimates for Theorem 2.",
+    "Connect Theorem 1 through the checked adapters and prove the weighted action estimates and interpolated weight evaluations for Theorem 3."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
   "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
@@ -285,7 +296,7 @@
       "When n>=8*||q||_w, the tail operator has norm at most 1/2, and id minus that operator admits an actual two-sided bounded inverse of norm at most 2. The existence proof reuses NLS.exists_inverse_norm_le_two_mul_of_composition_near."
     ],
     "constant_changes": "Uses 4/n for the summability and tail estimates, cutoff 8*||q||, and strip radius 6*n; no assertion of the printed 2/n estimate or radius 12*n follows.",
-    "essential_missing_identifications": "Physical H2 realization, actual two-mode reduction, analytic determinant and corrected-constant high-strip zero localization/count are proved. The source period-one/mean-zero weighted embedding, full spectral multiplicity/labeling, and central spectral estimates remain outstanding.",
+    "essential_missing_identifications": "The physical H2 realization, source period-one weighted embedding, exact reduction, rough physical discriminant and high-strip analytic characteristic multiplicities are proved. Operator algebraic multiplicities, global labels and central/exterior estimates remain outstanding.",
     "main_theorems_verified": false
   },
   "two_mode_reduction": {
@@ -369,6 +380,15 @@
       "branch": "articles/mkdv-nls-hierarchies",
       "commit": "80e7592c95785b3cc1361068435182c4078fcc78",
       "finding": "Independent physical Miura-Hill IVP/discriminant identification has now been constructed on the complex H1 Miura domain. The direct constant-upper bridge of the KdV convexity branch is more appropriate for arbitrary Hill potentials here."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "84cae568525bd9909405a8add2beca105e01bbce",
+      "modules": [
+        "NLS/KdV/ClassicalLocalPrimitive.lean",
+        "NLS/KdV/ClassicalFreePrimitive.lean"
+      ],
+      "finding": "Imported these two modules unchanged. Direct IVP uniqueness computes the actual free Hill trace for (-1,0); local analytic root/logarithm charts and their physical derivative normalization are shared. This branch uses the exact free normalization in the rough characteristic homotopy count. The upstream high-contour/high-pair developments were inspected for future reuse; they are not imported or claimed by this milestone."
     }
   ],
   "physical_hill_realization": {
@@ -444,7 +464,7 @@
     ],
     "zero_count_scope": "For n>=1 and n>=16*||q||, the actual determinant has analyticZeroCount=2 on the closed radius-n disc about pi^2*n^2. The quantitative bound |D(z)-(z-pi^2*n^2)^2|<=8*|z-pi^2*n^2|*||q||+32*||q||^2 proves the strict Rouche inequality. Localization proves the same count exhausts the whole closed radius-6*n real strip. This includes q=0 without a separate positive-norm assumption and allows colliding roots.",
     "corrections": "The complementary inverse strip remains radius 6*n. Localization uses cutoff 8*||q|| and bound 4*||q||. The two-zero count uses cutoff 16*||q|| and a radius-n counting circle. No assertion of the printed wider strip or printed cutoff follows by notation alone.",
-    "multiplicity_qualification": "Analytic orders of this specific determinant are counted. Their equality with operator algebraic multiplicities, global periodic spectral labels, and the Hill discriminant zero orders remain outstanding."
+    "multiplicity_qualification": "The original reduced-determinant count is now complemented by the actual L2 characteristic count two at the same cutoff n>=16*||q||_2. Their analytic orders agree in the checked strip. These are characteristic analytic multiplicities; identification with operator algebraic multiplicities and global labeling remains open."
   },
   "weighted_effective_coefficients": {
     "modules": [
@@ -521,7 +541,7 @@
     "individual_gap": "For n>=1, n>=8*||q||_w and any two zeros in the stated high strip, w(2*n)*|xi_plus-xi_minus|<=6*||q||_w.",
     "summed_gap": "For N>=1 and N>=8*||q||_w, any actual determinant-root families lying in their respective high strips have summable squared weighted differences and sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2 <= 9*||R_N q||_w^2+(2304/N)*||q||_w^4. The source tail is represented by Coeff.fourierTail N applied to the actual weighted source coefficients, retaining the boundary |k|=N.",
     "constant_corrections": "Retains source individual constant 6 and coefficient-tail factor 9, with cutoff 8*||q||_w, radius-6*n real strips, and quartic coefficient 2304 replacing the printed 576. These follow from the previously corrected inverse bound 4/n rather than the printed 2/n.",
-    "qualifications": "The weighted determinant is now proved independent of the auxiliary weight and has exactly the actual rough Hill characteristic zero condition. HillPhysicalGapBounds applies the individual and summed estimates directly to actual energy-discriminant root families. Global source eigenvalue labels, characteristic orders, operator multiplicities and low central estimates remain open."
+    "qualifications": "Auxiliary-weight independence and the actual physical characteristic root condition are checked. Unique ordered real high-strip endpoint pairs are now constructed, and the unit-weight determinant/characteristic analytic orders match. Global source labels, operator algebraic multiplicities and low central estimates remain open."
   },
   "classical_discriminant_reuse": {
     "source_branch": "articles/kdv-convexity",
@@ -552,7 +572,7 @@
     "actual_construction": "The imported constant-upper state map is proved to turn actual constructed ZS IVP solutions for (-1,-q) into scalar Hill solutions of -F second+q*F=lambda*F, with bijective position/derivative initial state, including lambda=0. Even descent through the spectral square proves joint complex Banach analyticity of the literal normalized scalar trace in energy and the continuous potential with its sup norm.",
     "new_comparison": "A direct scalar Volterra state flow for (F,G) prime=(G,(q-lambda)*F) is constructed and proved identical to that shared scalar IVP, with its exact trace equal to classicalHillDiscriminant. Absolute-continuity uniqueness identifies every scalar weak solution with the same actual initial state. For a continuous physical circle potential Q, every eigenvector of this branch\u2019s actual periodic H2 Hill operator has this scalar state flow on [0,1], with F its continuous representative and G its actual continuous derivative representative.",
     "source_correspondence": "Section 2 pages 8-10: physical Hill discriminant and scalar solutions. This is the continuous-potential discriminant and weak-to-classical IVP comparison, not yet the global product/action construction.",
-    "qualifications": "Full-period continuous characteristic equivalence, actual L2 monodromy/operator comparison, joint analytic descent to the L2 energy variable and auxiliary weight independence are proved. Characteristic zero orders, Hill algebraic multiplicities, global labels and central bounds remain open.",
+    "qualifications": "Full-period continuous characteristic equivalence, actual L2 monodromy/operator comparison, joint analytic rough energy descent and auxiliary weight independence are proved. The new high-strip physical counts and unit determinant/characteristic analytic-order identities are recorded separately. Hill operator algebraic multiplicities, global source labels and central bounds remain open.",
     "refactored_provenance": {
       "file": "NLS/KdV/ClassicalDiscriminant.lean",
       "original_blob": "da51400726c5477a705099b48b397e770a3e9aad",
@@ -585,7 +605,7 @@
     "period_one": "For a continuous physical potential Q with actual period one, the two interval coefficient curves coincide. A state fixed by two iterations supplies a nonzero +1 or -1 multiplier. The scalar IVP multiplier criteria identify these with the actual discriminant values +2 and -2, including zero energy.",
     "complete_continuous_characteristic": "For every complex continuous period-one circle potential and every complex energy lambda, there exists a nonzero actual periodic H2 Hill eigenvector iff the normalized classical Hill discriminant squared equals four. The converse reuses the independently proved rough first-order/operator equivalence and the actual physical L2 monodromy criterion.",
     "trace_agreement": "The unit-interval physical L2 restriction of the specific coefficient potential (-1,-q) equals the continuous constant-upper coefficient class. Therefore the actual L2 trace in frequency z equals the shared classical Hill discriminant at energy z^2. This equality is for values, not merely zero sets.",
-    "qualifications": "These are characteristic zero/existence equivalences. Equality of analytic zero orders and operator algebraic multiplicities, global spectral labels, gap endpoints and central estimates are not supplied by them."
+    "qualifications": "Continuous full-period and rough L2 characteristic existence equivalences are proved. High-strip physical characteristic counts and unit determinant/characteristic analytic orders are now checked separately. Hill algebraic multiplicities, global labels and central estimates remain open."
   },
   "l2_first_order_hill_identification": {
     "modules": [
@@ -609,7 +629,8 @@
     "rough_characteristic": "For every even-supported complex L2 q (the actual period-one embedding), this identifies the genuine periodic H2 Hill eigenvalue condition at z^2 with the actual L2 unit-monodromy trace of (-1,-q) having square equal to four. The shared first-order compact periodic spectrum theorem and the physical L2 trace/product comparison are used only after this explicit operator identification.",
     "analyticity": "The actual physical frequency trace is jointly analytic in frequency and raw L2 potential. Its value, not merely its spectral zero condition, is now proved even by finite Fourier density and its exact classical comparison. The shared Cauchy-circle argument descends it to a jointly analytic energy family, including zero energy.",
     "high_strip": "On the checked unit-weight high strip and cutoff, the constructed Hill determinant vanishes iff the actual L2 trace square equals four at any square root of the energy. This closes the rough physical characteristic zero-set comparison, without a continuity hypothesis on the potential.",
-    "remaining": "Discriminant/determinant zero-order identities versus Hill algebraic multiplicities, global labeling and low central estimates remain. Auxiliary weighted realization independence is now proved. No KdV Birkhoff map or main theorem is asserted."
+    "remaining": "High-strip unit determinant/characteristic analytic orders and unique ordered real endpoint pairs are now proved. Their identification with Hill operator algebraic multiplicities, the global labels and low central/exterior bounds remain. Auxiliary weighted realization independence is proved. No physical KdV Birkhoff map or main theorem is asserted.",
+    "qualifications": "These exact operator/monodromy and H2 eigenvector equivalences are now supplemented by a direct Hill symmetry proof, real roots and unique ordered real high-strip endpoints with analytic characteristic orders. Operator algebraic multiplicities, the global ordering and central bounds remain open."
   },
   "energy_discriminant_and_weight_independence": {
     "modules": [
@@ -640,6 +661,49 @@
     "weight_independence": "The contractive raw-coefficient inclusion from a SpectralWeight space to unit weight commutes with literal convolution, the complementary reciprocal multiplier, and the tail perturbation. Uniqueness of the proved two-sided inverse identifies the actual inverse solutions, effective potential and finite two-mode operator. Consequently the analytic determinant values agree at every point of the checked closed strip with cutoff n>=8*||q||_w.",
     "weighted_characteristic": "The weighted determinant vanishes iff the same actual physical rough energy discriminant satisfies Delta(lambda)^2=4. The energy discriminant also depends jointly analytically on energy and the potential in every source weighted Banach norm via the bounded inclusion.",
     "physical_gap_bounds": "For actual characteristic root families in the respective high strips, the exact source period-one individual estimate w(2*n)*|xi_plus-xi_minus|<=6*||q||_w and the summed estimate sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4 hold at the corrected cutoff N>=max(1,8*||q||_w). These are actual physical characteristic roots rather than caller-supplied abstract spectral data.",
-    "qualifications": "The characteristic zero condition and the weighted determinant values are identified. Analytic zero-order equality with the physical characteristic function and Hill algebraic multiplicities, global source spectral labels, low central estimates, canonical roots/actions and the physical Birkhoff map remain open. Main Theorems 1-3 remain unverified."
+    "qualifications": "The rough energy discriminant and auxiliary weighted realization are identified. Unit-weight determinant/physical-characteristic analytic orders now agree in high strips at n>=16*||q||_2. Operator algebraic multiplicities, global labels, low central estimates, canonical global roots/actions and the physical Birkhoff map remain open. Main Theorems 1-3 remain unverified."
+  },
+  "real_hill_characteristic_multiplicities": {
+    "modules": [
+      "NLS/KdV/HillRealSpectrum.lean",
+      "NLS/KdV/HillCharacteristicZeros.lean",
+      "NLS/KdV/HillRealGapPairs.lean"
+    ],
+    "source_correspondence": "Real Hill spectral setup and ordered high-frequency periodic/antiperiodic pairs on pages 8-10; Appendix A high-frequency root identification/counting needed before physical gap and action estimates.",
+    "proved_declarations": [
+      "NLS.KdV.isRealHillPotential_of_physical",
+      "NLS.KdV.hillOperator_pairing_symmetric",
+      "NLS.KdV.hillEigenvalue_im_zero",
+      "NLS.KdV.hillEigenvectors_orthogonal",
+      "NLS.KdV.hillEigenvector_no_associatedVector",
+      "NLS.KdV.hillL2Discriminant_root_im_zero",
+      "NLS.KdV.hillL2Discriminant_zero",
+      "NLS.KdV.hillL2Radicand_free_order",
+      "NLS.KdV.hillL2Radicand_two_zeros",
+      "NLS.KdV.hillL2Radicand_strip_two_zeros",
+      "NLS.KdV.hillReduced_order_eq_l2Radicand",
+      "NLS.KdV.exists_hillRealHighGapPair",
+      "NLS.KdV.HillRealHighGapPair.endpoints_unique"
+    ],
+    "reality": "Fourier reality means q(-k)=conj(q(k)), obtained from a.e. reality of the actual synthesized L2 potential. The exact convolution adjoint identity and real kinetic symbol prove symmetry on the actual H2 domain; no first-order ZS real-type assertion replaces this calculation. Nonzero Hilbert energy proves real eigenvalues, orthogonality for distinct energies and absence of a length-two Jordan chain on the actual H2 domain.",
+    "physical_multiplicities": "hillL2Radicand is the actual rough Delta(lambda)^2-4. Its free formula is -4*sin(sqrt(lambda))^2 and each nonzero free lattice energy has analytic order two. The homotopy t*q preserves boundary nonvanishing using the verified localization. For every complex even-supported L2 q and n>=max(1,16*||q||_2), the actual characteristic count in the radius-n energy disc and entire checked strip is two. A shared two-zero comparison gives equality of the unit-weight determinant and physical characteristic analytic orders throughout the strip, including a double root.",
+    "ordered_real_pairs": "For real even-supported L2 q the two actual roots are real. HillRealHighGapPair constructs the ordered endpoints, their exact multiset orders in the disc and exhaustion of the entire checked strip. Ordered endpoints are unique; a collapsed gap is represented by the same endpoint twice.",
+    "reused_modules": [
+      {
+        "path": "NLS/KdV/ClassicalLocalPrimitive.lean",
+        "branch": "articles/kdv-convexity",
+        "commit": "84cae568525bd9909405a8add2beca105e01bbce",
+        "source_git_blob": "62bb36bbb7404e0d19dd57b8ada942d1040b8e8c",
+        "imported_unchanged": true
+      },
+      {
+        "path": "NLS/KdV/ClassicalFreePrimitive.lean",
+        "branch": "articles/kdv-convexity",
+        "commit": "84cae568525bd9909405a8add2beca105e01bbce",
+        "source_git_blob": "f4f1bbc7a688be3cb7dd8f5d60328f6fc55f2f1d",
+        "imported_unchanged": true
+      }
+    ],
+    "qualifications": "Characteristic analytic multiplicities are proved, not a full abstract operator algebraic multiplicity or self-adjoint realization theorem. Thin high strips do not cover the high half-plane. Global source spectral labels and central/exterior bounds, canonical global roots/actions, Birkhoff coordinates, hierarchy trace identities and main Theorems 1-3 remain incomplete."
   }
 }

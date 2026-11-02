@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 519,
+    "declarations": 609,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -42,17 +42,20 @@
       "NLS.LinearVolterra.solution_add",
       "NLS.LinearVolterra.solution_zero_initial",
       "NLS.ComplexAnalysis.complex_sqrt_sq",
-      "NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent"
+      "NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent",
+      "NLS.ComplexAnalysis.isLocallyConstant_analyticZeroCount",
+      "NLS.ComplexAnalysis.analyticZeroCount_eq_of_homotopy",
+      "NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts"
     ]
   },
-  "full_repository_validation": "The current NLS.lean aggregate import check passed in the isolated worktree. A full Lake rebuild and full repository example suite were not rerun; base dissertation validation is not replaced by the article-focused checks.",
+  "full_repository_validation": "The current NLS.lean aggregate import check passed in the isolated worktree after all forty-three focused modules. A full Lake rebuild and full repository example suite were not rerun; base dissertation validation is not replaced by article-focused checks.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
     "NLS/KdV/HillComplement.lean": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd",
     "NLS/Articles/KdVEstimates/EstimateAdapter.lean": "d6b2f6e78b438e5ada6499c28149a64509d0df78ad6760258042804ec9633fec",
     "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
-    "NLS/KdV/HillSobolev.lean": "5600e5993044383e575f8a6278f38e13ab65fafa66cac8aadd12a23baf07b07a",
+    "NLS/KdV/HillSobolev.lean": "962ea2adfbac0dd2e833f5fb591cd1a6199674d241c3b4c97b85206f2425198c",
     "NLS/KdV/HillPhysical.lean": "5634227fb1ed59ef6c4827408fdd3878586333e2e82dcf489275efd429650d5c",
     "NLS/KdV/HillAnalytic.lean": "597b1af3e1c6ed8a970121c493235cbd5c621f033ebb7bab86592f3ac67fecbc",
     "NLS/KdV/HillLocalization.lean": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9",
@@ -83,10 +86,17 @@
     "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
     "NLS/KdV/HillL2EnergyDiscriminant.lean": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4",
     "NLS/KdV/HillWeightIndependence.lean": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
-    "NLS/KdV/HillPhysicalGapBounds.lean": "b8294c1b5d478b8cc9ff24edb1041397fa7841986f45cf8df01327ee4db9ab37"
+    "NLS/KdV/HillPhysicalGapBounds.lean": "b8294c1b5d478b8cc9ff24edb1041397fa7841986f45cf8df01327ee4db9ab37",
+    "NLS/ComplexAnalysis/ZeroCountHomotopy.lean": "876ae2e371d9f1a4bbd204778774942405991cac35e70d199197fbf42407fe0e",
+    "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
+    "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
+    "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
+    "NLS/KdV/HillRealSpectrum.lean": "75d2ac52d84726c262564cc54734edcaaaca587092b5c5295e0c327a8d2d372b",
+    "NLS/KdV/HillCharacteristicZeros.lean": "1331838aafcea2eeaeb93e3fff6de558054ea26a28677a7d1c676c875542bb5a",
+    "NLS/KdV/HillRealGapPairs.lean": "49bf5521c9310f09dad54e20258ef386ba8703ecd9d7fe9dd47634d38b2787bc"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Joint rough energy analyticity and auxiliary weighted realization independence are proved. Characteristic/determinant zero-order matching and Hill algebraic multiplicities, global spectral labels, real spectral ordering and low central bounds remain. Canonical roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
-  "milestone": "Joint analytic rough Hill energy discriminant, auxiliary-weight independence and physical weighted gap bounds",
+  "remaining": "Main Theorems 1-3 remain unverified. Actual H2 symmetry, real eigenvalues, orthogonality, absence of length-two associated vectors, high-strip physical characteristic counts, unit determinant/characteristic analytic-order matching, and unique ordered real high-strip pairs are proved. Identification with Hill operator algebraic multiplicities, global source spectral labels and low central/exterior bounds remain. Canonical global roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
+  "milestone": "Actual real Hill spectral symmetry, high-strip physical characteristic multiplicities and unique ordered real endpoint pairs",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -125,7 +135,14 @@
     "NLS.KdV.HillL2EnergyDiscriminant",
     "NLS.KdV.HillWeightIndependence",
     "NLS.KdV.HillPhysicalGapBounds",
-    "NLS.Articles.KdVEstimates.EstimateAdapter"
+    "NLS.Articles.KdVEstimates.EstimateAdapter",
+    "NLS.ComplexAnalysis.ZeroCountHomotopy",
+    "NLS.ComplexAnalysis.TwoZeroOrderComparison",
+    "NLS.KdV.ClassicalLocalPrimitive",
+    "NLS.KdV.ClassicalFreePrimitive",
+    "NLS.KdV.HillRealSpectrum",
+    "NLS.KdV.HillCharacteristicZeros",
+    "NLS.KdV.HillRealGapPairs"
   ],
   "proof_commits": [
     {
@@ -177,13 +194,18 @@
       "commit": "9847bfa7638b624889cfd24bbbf258a9c1873fb5",
       "scope": "Full-period continuous characteristic equivalence and exact L2 constant-upper operator/monodromy spectral identification",
       "pushed": true
+    },
+    {
+      "commit": "b2097376825d45ff2468d2c2db239c95b61dea59",
+      "scope": "Joint analytic rough energy discriminant, auxiliary-weight independence and weighted physical characteristic gap bounds",
+      "pushed": true
     }
   ],
   "aggregate_check": {
     "status": "passed",
     "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
     "exit_code": 0,
-    "scope": "Current NLS.lean aggregate compiled with pinned Lean 4.33.1 and autoImplicit=false. Build output was written only to this worktree; canonical compiled dependencies were imported read-only.",
+    "scope": "Current NLS.lean aggregate compiled after all forty-three focused modules, with pinned Lean 4.33.1 and autoImplicit=false. Build output was written only to this worktree; canonical compiled dependencies were imported read-only.",
     "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
@@ -193,15 +215,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All thirty-six modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All forty-three modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 519 declarations, including the shared entire square-descent lemmas.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 609 declarations, including the new shared homotopy/count and two-zero order-comparison theorems.",
     "new_module_warnings": [],
-    "aggregate_scope": "Current NLS.lean aggregate compile passed after all thirty-six focused modules. The full Lake rebuild/example suite remains unrerun.",
+    "aggregate_scope": "Current NLS.lean aggregate compiled successfully after all forty-three focused modules and the 609-declaration axiom audit. The full Lake rebuild/example suite remains unrerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
-    "reused_source_check": "The constant-upper bridge and spectral-symmetry modules remain byte-identical to articles/kdv-convexity commit 2135a68. ClassicalDiscriminant keeps the same physical definition and public statements, with its joint descent proof factored into the shared EntireEvenSquareDescent module. Original provenance and current file hashes are recorded.",
-    "mathematical_scope": "The actual L2 monodromy trace descends to a jointly analytic Hill energy discriminant, including lambda=0, and equals the actual normalized classical trace. Weighted and unit-weight finite operators/determinants agree on the checked strips and cutoffs; the weighted individual and tail estimates apply to actual physical energy-characteristic roots. Zero-order/operator multiplicity and global enumeration claims remain open."
+    "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded.",
+    "mathematical_scope": "The physical L2 characteristic function Delta^2-4 has count two in each checked high-energy disc/strip at n>=max(1,16*||q||_2), by a boundary-zero-free potential homotopy from its exact free formula. Unit determinant and physical characteristic analytic orders agree, including a collision. On real even-supported potentials, actual H2 symmetry gives real characteristic roots and unique ordered high-strip endpoint pairs with the exact multiset orders. Operator algebraic multiplicities, self-adjoint realization, the global labels and main Theorems 1-3 are not claimed."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [

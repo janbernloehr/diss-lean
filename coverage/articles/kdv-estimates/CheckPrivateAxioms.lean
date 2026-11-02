@@ -33,6 +33,13 @@ import NLS.ComplexAnalysis.EntireEvenSquareDescent
 import NLS.KdV.HillL2EnergyDiscriminant
 import NLS.KdV.HillWeightIndependence
 import NLS.KdV.HillPhysicalGapBounds
+import NLS.ComplexAnalysis.ZeroCountHomotopy
+import NLS.ComplexAnalysis.TwoZeroOrderComparison
+import NLS.KdV.ClassicalLocalPrimitive
+import NLS.KdV.ClassicalFreePrimitive
+import NLS.KdV.HillRealSpectrum
+import NLS.KdV.HillCharacteristicZeros
+import NLS.KdV.HillRealGapPairs
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -54,7 +61,10 @@ run_cmd do
     ``NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right,
     ``NLS.LinearVolterra.solution_add, ``NLS.LinearVolterra.solution_zero_initial,
     ``NLS.ComplexAnalysis.complex_sqrt_sq,
-    ``NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent]
+    ``NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent,
+    ``NLS.ComplexAnalysis.isLocallyConstant_analyticZeroCount,
+    ``NLS.ComplexAnalysis.analyticZeroCount_eq_of_homotopy,
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

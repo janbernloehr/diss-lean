@@ -57,6 +57,12 @@ def hillDomainToL2 : HillSobolevDomain →L[ℂ] Coeff 2 :=
 @[simp] theorem hillDomainToL2_apply (f : HillSobolevDomain) (k : ℤ) :
     hillDomainToL2 f k = f.val k := WeightedCoeff.sobolevToL2_apply _ f k
 
+theorem hillDomainToL2_injective : Function.Injective hillDomainToL2 := by
+  intro f g he
+  apply Subtype.ext
+  funext k
+  simpa only [hillDomainToL2_apply] using congrArg (fun a : Coeff 2 => a k) he
+
 /-- The positive free Hill operator, with symbol pi^2*k^2, on its H2 domain. -/
 def hillLaplacian : HillSobolevDomain →L[ℂ] Coeff 2 :=
   (WeightedCoeff.weightIsometry Weight.one 2).toContinuousLinearEquiv.toContinuousLinearMap.comp
