@@ -71,8 +71,9 @@ its existing Hilbert specialization and a transitive audit.
 | Selected normalized endpoint-quotient sources from convexity `135b1fa`, extended `ClassicalCriticalTailAnalytic.lean`, and new `TwoZeroCriticalLocalization.lean`, `SquaredCoshCriticalDisc.lean`, `ClassicalCriticalGapLocalization.lean` | Arbitrarily small common high critical-frequency confinement at any continuous complex source; actual critical displacement at quadratic gap scale with arbitrarily small coefficient, analytic families, collapsed equality and diagonal critical-pole separation on gap circles. |
 | Selected cut-root and contour-homotopy sources from convexity `135b1fa`, existing affine/nested circle dependencies, and five new weighted-period/Hilbert/moment modules | Actual all-order high-gap critical kernel bounds and quadratic basis-period bounds; constructed normalized second moments with quadratic diagonal and quartic off-diagonal gap-length bounds, retaining all original periods and cancellations on one local family. |
 | `DiagonalBilinearPairing.lean`, `AnalyticTailSummation.lean`, `ClassicalTwoWeightedMomentBounds.lean`, `ClassicalFrequencyGapMajorant.lean`, `ClassicalNormalizedFrequencySeries.lean`, and the existing canonical gap identification | Actual weighted high second-moment bound and locally bounded l1 frequency-gap majorant; constructed normalized second-moment series is absolutely convergent, analytic and locally uniformly convergent near zero for every output index. Physical frequency identification and full rough/global scope remain open. |
+| Selected actual Hminus1 trace/Miura/source-sheet dependencies from convexity `08db7a5`, `AnalyticSimpleCriticalBranch.lean`, `HillHminusOneCriticalPoints.lean`, `HillHminusOneCriticalNumerators.lean`, and `HillHminusOnePeriodEntries.lean` | Actual simple high critical energies at arbitrary complex rough sources; exact free labels; a common entire critical basis and all original contour/analytic period entries on one Hminus1-open neighborhood, with the full free identity matrix. Rough operator inversion and normalized moments remain open. |
 
-All 201 selected modules compile with pinned **Lean 4.33.1**, commit
+All 318 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -283,11 +284,128 @@ PASS NLS/ZakharovShabat/CanonicalWeightedGapSummability
 PASS NLS/KdV/ClassicalFrequencyGapMajorant
 PASS NLS/SequenceSpaces/AnalyticTailSummation
 PASS NLS/KdV/ClassicalNormalizedFrequencySeries
-Axiom audit passed: 2167 candidate declarations; 14311 declarations total.
+PASS NLS/FunctionalAnalysis/PeriodicIntegrationByParts
+PASS NLS/MKdV/MiuraClassicalSolution
+PASS NLS/MKdV/SobolevMiuraPotential
+PASS NLS/FunctionalAnalysis/LinearVolterraFlow
+PASS NLS/MKdV/QuasiHillDiscriminant
+PASS NLS/MKdV/MiuraBoundaryTransfer
+PASS NLS/ZakharovShabat/ClassicalVolterraTrace
+PASS NLS/MKdV/QuasiHillZSComparison
+PASS NLS/MKdV/QuasiHillJointAnalytic
+PASS NLS/ComplexAnalysis/SourceDiscriminantPrimitive
+PASS NLS/ZakharovShabat/ContinuousPotentialSource
+PASS NLS/MKdV/QuasiHillSourcePrimitive
+PASS NLS/DifferentialPolynomial/UngradedIntegrationByParts
+PASS NLS/DifferentialPolynomial/PowerSeriesDerivation
+PASS NLS/DifferentialPolynomial/DifferentialRiccati
+PASS NLS/DifferentialPolynomial/RiccatiResolvent
+PASS NLS/DifferentialPolynomial/LogarithmicDerivative
+PASS NLS/DifferentialPolynomial/MiuraRiccati
+PASS NLS/DifferentialPolynomial/ConstructedRiccatiResolvent
+PASS NLS/DifferentialPolynomial/RiccatiResolventNaturality
+PASS NLS/DifferentialPolynomial/MultiJet
+PASS NLS/ZakharovShabat/SobolevHierarchySymmetries
+PASS NLS/MKdV/HierarchyRestriction
+PASS NLS/DifferentialPolynomial/RiccatiResolventParity
+PASS NLS/ZakharovShabat/NLSRiccatiResolvent
+PASS NLS/MKdV/MiuraHierarchyHamiltonians
+PASS NLS/DifferentialPolynomial/PolynomialVariation
+PASS NLS/DifferentialPolynomial/AlgebraicPolynomialVariation
+PASS NLS/DifferentialPolynomial/EulerLagrange
+PASS NLS/DifferentialPolynomial/IndependentJetVariation
+PASS NLS/DifferentialPolynomial/RiccatiResolventVariation
+PASS NLS/ZakharovShabat/NLSRiccatiResolventVariation
+PASS NLS/FunctionalAnalysis/UnitIntervalMean
+PASS NLS/DifferentialPolynomial/SmoothVariation
+PASS NLS/ZakharovShabat/ClassicalNLSHierarchyVariation
+PASS NLS/DifferentialPolynomial/EulerScalar
+PASS NLS/Fourier/PeriodicVariationalUniqueness
+PASS NLS/ZakharovShabat/NLSRiccatiResolventGradient
+PASS NLS/MKdV/HierarchyGradientRecurrence
+PASS NLS/MKdV/MiuraHierarchyFlowRestriction
+PASS NLS/DifferentialPolynomial/EulerOrderBounds
+PASS NLS/ZakharovShabat/SobolevPolynomialL2
+PASS NLS/Fourier/CircleUnitCoefficients
+PASS NLS/ZakharovShabat/SobolevPolynomialVariation
+PASS NLS/ZakharovShabat/SobolevSourceCotangent
+PASS NLS/ZakharovShabat/SobolevSmoothFirstVariation
+PASS NLS/MKdV/SobolevMiuraHillHamiltonian
+PASS NLS/MKdV/MiuraHillRiccatiRemainder
+PASS NLS/Fourier/CircleBilinearMean
+PASS NLS/ZakharovShabat/SobolevPolynomialEndpointMean
+PASS NLS/ZakharovShabat/SobolevScalarSmoothDensity
+PASS NLS/MKdV/NativeMiuraHillHamiltonian
+PASS NLS/MKdV/QuasiHillPhysicalEquation
+PASS NLS/MKdV/QuasiHillPhysicalUniqueness
+PASS NLS/MKdV/PhysicalHillDiscriminant
+PASS NLS/MKdV/MiuraHillHamiltonianTrace
+PASS NLS/MKdV/MiuraHillSpectralBridge
+PASS NLS/KdV/HillNLSPrimitivePathComparison
+PASS NLS/MKdV/MiuraHillPrimitiveComparison
+PASS NLS/MKdV/QuasiHillPrimitiveComparison
+PASS NLS/MKdV/SobolevQuasiHill
+PASS NLS/MKdV/SobolevMiuraPrimitive
+PASS NLS/KdV/FreeHill
+PASS NLS/KdV/HillComplement
+PASS NLS/KdV/HillReduction
+PASS NLS/KdV/HillSobolev
+PASS NLS/KdV/HillPhysical
+PASS NLS/KdV/HillFirstOrderReduction
+PASS NLS/KdV/HillAnalytic
+PASS NLS/KdV/HillWeightedCoefficients
+PASS NLS/KdV/HillBilinearSymmetry
+PASS NLS/KdV/HillSpectralLipschitz
+PASS NLS/FunctionalAnalysis/TwoDimensionalDeterminant
+PASS NLS/KdV/HillRootSeparation
+PASS NLS/SequenceSpaces/WeightedInsertion
+PASS NLS/KdV/HillPeriodOnePotential
+PASS NLS/KdV/HillL2SpectralCriterion
+PASS NLS/KdV/HillClassicalIdentification
+PASS NLS/FunctionalAnalysis/AbsoluteContinuityTranslation
+PASS NLS/KdV/HillFullPeriod
+PASS NLS/FunctionalAnalysis/LinearVolterraLinearity
+PASS NLS/KdV/ClassicalHillMultipliers
+PASS NLS/KdV/HillDiscriminantNecessity
+PASS NLS/KdV/HillDiscriminantComparison
+PASS NLS/ComplexAnalysis/EntireEvenSquareDescent
+PASS NLS/KdV/HillL2EnergyDiscriminant
+PASS NLS/MKdV/MiuraL2HillDiscriminant
+PASS NLS/SequenceSpaces/PeriodOneMassResolvent
+PASS NLS/SequenceSpaces/PeriodOneMiuraQuadratic
+PASS NLS/ComplexAnalysis/SmallQuadraticInverse
+PASS NLS/SequenceSpaces/PeriodOneMiuraCharts
+PASS NLS/SequenceSpaces/PeriodOneMiuraRegularity
+PASS NLS/SequenceSpaces/PeriodOneMiuraShift
+PASS NLS/KdV/HillL2ConstantShift
+PASS NLS/KdV/HillMiuraL2Discriminant
+PASS NLS/SequenceSpaces/PeriodOneHminusOneDensity
+PASS NLS/KdV/HillHminusOneDiscriminant
+PASS NLS/ComplexAnalysis/ShiftedSquareRootBounds
+PASS NLS/KdV/HillFreeEnergyShift
+PASS NLS/KdV/HillHminusOneDiscAsymptotics
+PASS NLS/KdV/HillWeightIndependence
+PASS NLS/KdV/HillLocalization
+PASS NLS/KdV/HillZeroCount
+PASS NLS/ComplexAnalysis/ZeroCountHomotopy
+PASS NLS/ComplexAnalysis/TwoZeroOrderComparison
+PASS NLS/KdV/HillCharacteristicZeros
+PASS NLS/KdV/HillRealSpectrum
+PASS NLS/ComplexAnalysis/TracePrimitiveContinuation
+PASS NLS/KdV/HillL2SourcePrimitive
+PASS NLS/ComplexAnalysis/TracePrimitiveFunctoriality
+PASS NLS/KdV/HillHminusOneSourcePrimitive
+PASS NLS/KdV/HillHminusOneSmallGapCoverage
+PASS NLS/KdV/HillHminusOneAnnulusCoverage
+PASS NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch
+PASS NLS/KdV/HillHminusOneCriticalPoints
+PASS NLS/KdV/HillHminusOneCriticalNumerators
+PASS NLS/KdV/HillHminusOnePeriodEntries
+Axiom audit passed: 3895 candidate declarations; 25200 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 201 selected modules (including generated and private declarations)
+the 318 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -946,3 +1064,42 @@ Theorem 3.4, (73), PDF page 31. Physical identity (69), rough/global W
 continuation, action descent, sharp two-index and diagonal asymptotics,
 KdV2 series and main frequency/flow theorem obligations remain open.
 No main-theorem inventory row is marked verified.
+
+
+## Actual critical basis and period entries in Hminus1
+
+The current milestone is detailed in `HMINUS_PERIOD_DATA.md`. At every
+complex rough source, a proved local Miura chart constructs the actual
+analytic/simple high critical energy family with unique shifted-disc
+labels. Exact calculus retains its energy shift and proves unshifted
+free values near zero. Finite implicit charts and high rough source
+coverage give one Hminus1-open neighborhood before every critical,
+numerator and original contour index. The actual critical basis is
+entire jointly in energy and rough potential, has nonzero filled centers
+and exact free slices. Every original scalar period entry is analytic
+there, and its whole free matrix is the identity. No rough operator
+inverse or normalized Psi_n is assumed or claimed in this result.
+
+All 318 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 3895
+selected declarations and 25200 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and checker/audit/coverage selections agree.
+Selected outputs are private; canonical sources and builds remain read
+only. No placeholders, new axioms, heartbeat increases, disabled linters
+or warning exceptions are introduced. All 201 previously selected source
+files remain byte-identical.
+
+`SHARED_HMINUS_NORMALIZATION_IMPORT.json` records 113 new proved selected
+sources from convexity `08db7a5`, with six compatible local files retained.
+The new Euler-Lagrange source adds a direct proved integration-by-parts
+import; its proof statements and bodies are unchanged. Two inherited
+heartbeat overrides are removed and the unchanged proofs pass at the
+default budget. Nine initially
+inspected but unused new sources were removed. The full branch is not
+merged. All four earlier selected-source provenance records remain valid.
+
+Rough operator bounds/inversion, agreement with the continuous normalized
+family, rough moments/summation and full W continuation remain open,
+as do physical frequency/action/Birkhoff identification and the other
+main theorem obligations. No main-theorem inventory row is verified.

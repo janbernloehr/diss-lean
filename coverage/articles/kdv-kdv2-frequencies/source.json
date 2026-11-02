@@ -2819,6 +2819,2693 @@
       "scope": "Existing proved complex even-potential canonical squared-gap/contour identification directly selected and recompiled; no source change or new external source import",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "75e0a6a94410ec671c8f111596855343f8df3c2998b4a5c2f8443ff30ab24ddd"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch.lean",
+      "source_labels": [
+        "Generic Banach analytic simple critical branches"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Joint entire scalar energy family and an actual simple critical point give a constructed analytic branch retaining criticality and simplicity on an open Banach parameter neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e76987ff2b193b2cdd9cd7aa5573f7c052a917bc290ea9ab3ba0696804b84cde"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ShiftedSquareRootBounds.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "1b3b73455080ec61b2c502efba60594420f74ad88b2a64499809f58e576c4fad"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SmallQuadraticInverse.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "b80f65288f227a47708607e20fee79d5f17569f995d61d7ec03581f96f05d7f0"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ZeroCountHomotopy.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "48d8c4918fdbdb7c3b476841513b1fc4991c0520b171eb322c6a6dde33c82a7e"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/DifferentialRiccati.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/EulerLagrange.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency_with_explicit_periodic_integration_import; full branch not merged; Direct import restores availability of the proved periodic integration-by-parts lemmas without changing the retained local ClassicalNLSHamiltonians interface or any proof statement/body.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "44318ffa3231616fcf936a7d98948482d15e533a6201e4198e8e6c8de81b9baa"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/EulerOrderBounds.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "573ef42deb2a56e866c0a5c05dd42fd160f1add72fbacc4c0b3a96e59557c0b9"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/EulerScalar.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "d9ea3583259ef6c15d44c88cbefb20f86df001ab0483e781f750eddec49eb908"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/IndependentJetVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "3c326915c7e37843a9d0356c167a10e0210c870a48255ff5ae3d68a8e4111d61"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/LogarithmicDerivative.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "f015066fe2957161d29a531cb11300365f6e92f239bc5b692e0262980cc64880"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/MiuraRiccati.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a51622b2bf42eaf37ba8d744122e23f092fa03c3959d84361152a20f780a26b1"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/MultiJet.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "585b347d3267cb858b8002e3d92750d9b409eafe5b0f5a58a23ce05dae039843"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/PolynomialVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "edca1e4571cc50d7e1549da618aa0407808cb25df9afc14ed9c09f686f312a15"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "6434ba24b8a86ab9e4cfcae4b371e01b73f07d0056137cc7893ad562bab71809"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/RiccatiResolvent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "872b0969d07ef40a70c763dc7db0a706aefac6d0130614751675e60a5e8dab38"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "15f7b972b8f3ad68432c86257f9ce5068a378ce7a0ed0ba54d2d4df92833afae"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "3228af34816ef7bc0fc31f43bd4c2fa6bfd94b93c79dd303f2e2a351b6a60de4"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/SmoothVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/UngradedIntegrationByParts.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "1964b724472e912f35df9d768289b9a9050688cddf2f2ef797815817912504ef"
+    },
+    {
+      "path": "NLS/Fourier/CircleBilinearMean.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "89eab9297d3cc3a345ce9a837e115251dd44c929b2e842445153034298bb1fea"
+    },
+    {
+      "path": "NLS/Fourier/CircleUnitCoefficients.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a"
+    },
+    {
+      "path": "NLS/Fourier/PeriodicVariationalUniqueness.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "32da22d51d4c04fe33e03bb9b892d5c2ab800bcc5dead91ab0917763f419fe67"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "bdcf939efdbed48af7a0a2e3da786c511ccc81cfdd1bb930e6185225c05f0b45"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalMean.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillMultipliers.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a3605c650ee4c1390cd54a297ad944a3aa50b748ce80a2bc05747258ab28ec68"
+    },
+    {
+      "path": "NLS/KdV/FreeHill.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1"
+    },
+    {
+      "path": "NLS/KdV/HillAnalytic.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "597b1af3e1c6ed8a970121c493235cbd5c621f033ebb7bab86592f3ac67fecbc"
+    },
+    {
+      "path": "NLS/KdV/HillBilinearSymmetry.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency_without_resource_override; full branch not merged; Removed the source-local maxHeartbeats 800000 override; the unchanged proof statement/body compiles at the default heartbeat budget with warnings as errors.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "2b0e7f9ae07056c448603bbcb086776fcbbef4c4c90d3e870963e00bd3dc665b"
+    },
+    {
+      "path": "NLS/KdV/HillCharacteristicZeros.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498"
+    },
+    {
+      "path": "NLS/KdV/HillClassicalIdentification.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "f89770265da1d49f3e366bcacd98b0347ae904867dd91c991c1bf3223711c1ec"
+    },
+    {
+      "path": "NLS/KdV/HillComplement.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "977b565954ef98d7eff06760f6efdf7a70db3d5e615b97d9514172f99d998ff5"
+    },
+    {
+      "path": "NLS/KdV/HillDiscriminantComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e6ee8a6af0a2a077889065eabdabcc259ceea43de99f4ccdbdde23a1c452d986"
+    },
+    {
+      "path": "NLS/KdV/HillDiscriminantNecessity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency_without_resource_override; full branch not merged; Removed the source-local maxHeartbeats 800000 override; the unchanged proof statement/body compiles at the default heartbeat budget with warnings as errors.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "c78b4bc2057447032ab29705cb0bb9255e15d87f330acc73e8e344ffd1b5675e"
+    },
+    {
+      "path": "NLS/KdV/HillFirstOrderReduction.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "7826dc5c97375d87d56b0b4658116b1622584287199b04d730ccdb237971270b"
+    },
+    {
+      "path": "NLS/KdV/HillFreeEnergyShift.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "ab196b8264b383bdb492c908baf75a4ed6de411acd38c0d08d9f77092d8cd420"
+    },
+    {
+      "path": "NLS/KdV/HillFullPeriod.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "651d93e8060125c8b02f685cd61738e74f4f29263b150c9a69d77d9d531cfc11"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneAnnulusCoverage.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "916c9437bf30dfc5fee301e79168604c9cc83a6ccbb8518d0aac0d96ce6e7ffe"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalNumerators.lean",
+      "source_labels": [
+        "Actual common entire Hminus1 critical numerator basis"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Finite implicit free critical charts join the actual high family before every positive index on one Hminus1-open neighborhood. Filled moving division gives joint entire basis analyticity, exact free values/factor identity and nonzero critical centers, with the chart-domain inclusion and actual high contour coverage retained",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "611d106f1eb27568a97d681682dd18d3d654b8cb40ce353e6b7d2d07b173459b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalPoints.lean",
+      "source_labels": [
+        "Actual simple high Hminus1 critical energies"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "At any complex rough source a proved shifted Miura chart and actual canonical ZS critical family construct analytic/simple physical Hill critical energies on one common rough neighborhood and shifted-disc uniqueness; exact unshifted free energies are proved near zero without discarding the chart energy shift",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b498f0375c8d1217cf5c32b22ca235c7641cd3bdfe3ca81f176e026254942cf8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDiscAsymptotics.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "dd94b601b7f0a76227ace8f10fdd7356bb697aa05af802877546c66b7a6140b7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDiscriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "99de415ddf7a75270281e46a1908745aba77fb24efc94d8ca497d60867533387"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePeriodEntries.lean",
+      "source_labels": [
+        "Actual rough all-mode analytic period entries"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs common Hminus1-open source coverage of every original frequency circle through high rough annuli and finite-head compact tubes; all actual scalar basis period entries are analytic and the entire free matrix is the identity with 1/(2*pi) and exact 2*z Jacobian. Rough bounded period operator/inverse and normalized moments remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1d46e8e7e5423ffad065331edc8ae64059010b5aa693261c3626a647003a344c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneSmallGapCoverage.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "5989c880c8684c721597d98cbd91194db8bc7cce9439f77344888bf737ca8181"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneSourcePrimitive.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "ac170dc3e2bbcf8e1a68ead90f4c2a04b4a5eea90d156154f5c61c69b718989c"
+    },
+    {
+      "path": "NLS/KdV/HillL2ConstantShift.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8479f27d70e0b715218ef547b7c3a0473a525d6b0442d67901cec23322cd08df"
+    },
+    {
+      "path": "NLS/KdV/HillL2EnergyDiscriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4"
+    },
+    {
+      "path": "NLS/KdV/HillL2SourcePrimitive.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471"
+    },
+    {
+      "path": "NLS/KdV/HillL2SpectralCriterion.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "0d7b94750edd667259d97fabeb18160b2809fdd74c3aff9eaa561dd9069684cd"
+    },
+    {
+      "path": "NLS/KdV/HillLocalization.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraL2Discriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a45830d4397b68634ccb2e5d6aed13657af2e2285fcf91cd2b419ea0cd1ae5c7"
+    },
+    {
+      "path": "NLS/KdV/HillNLSPrimitivePathComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "d4f3956a7ea0d1c98299ceae7c11891abf5672976d4ab3947ea93b08feb25d66"
+    },
+    {
+      "path": "NLS/KdV/HillPeriodOnePotential.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "f806822d2c04863914268753ed469438257e3c7583064c99cd85ac5589bd7ec8"
+    },
+    {
+      "path": "NLS/KdV/HillPhysical.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "5634227fb1ed59ef6c4827408fdd3878586333e2e82dcf489275efd429650d5c"
+    },
+    {
+      "path": "NLS/KdV/HillRealSpectrum.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476"
+    },
+    {
+      "path": "NLS/KdV/HillReduction.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f"
+    },
+    {
+      "path": "NLS/KdV/HillRootSeparation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8e13327f8ef25ee2f7329610789523cf7e26d1a3031a54e53e2e90281f0e3911"
+    },
+    {
+      "path": "NLS/KdV/HillSobolev.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "962ea2adfbac0dd2e833f5fb591cd1a6199674d241c3b4c97b85206f2425198c"
+    },
+    {
+      "path": "NLS/KdV/HillSpectralLipschitz.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "3deedd7aaace983a156285c4e5d19243f32f767722bf792f619e586b6bdc4248"
+    },
+    {
+      "path": "NLS/KdV/HillWeightIndependence.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438"
+    },
+    {
+      "path": "NLS/KdV/HillWeightedCoefficients.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a9d6c10608dbea6e59c59d65333da9f264ed00288dbe6d762f56f87e687aafa5"
+    },
+    {
+      "path": "NLS/KdV/HillZeroCount.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "da4b4839b24a194cacfd83e8d9fc6b9aef14c690ddccad03f006ff4e61ff1929"
+    },
+    {
+      "path": "NLS/MKdV/HierarchyGradientRecurrence.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80"
+    },
+    {
+      "path": "NLS/MKdV/HierarchyRestriction.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853"
+    },
+    {
+      "path": "NLS/MKdV/MiuraBoundaryTransfer.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "d8747dde2efaa7415650cc8f00b1f3a15c8345f34ed1b3812ed4ba7f6fd5fc2d"
+    },
+    {
+      "path": "NLS/MKdV/MiuraClassicalSolution.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHierarchyHamiltonians.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHillHamiltonianTrace.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "4887fc79a1153bb3fe9a463d141037e897a309d4d73ade6d9cdc00622814369a"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHillPrimitiveComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "63fbd88e5268b7b53dbb486887d463e3cff336e6c581db157e78f3d5aa56f39e"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHillRiccatiRemainder.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "f31f58259f585d8ce8c58c86ea88a6038a51f7d1da340e0101692fa8b6e93cca"
+    },
+    {
+      "path": "NLS/MKdV/MiuraHillSpectralBridge.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "4d673ea7fd0d58bb4b77608c82e2387b259506720cbfb59b1cde1e02a669da71"
+    },
+    {
+      "path": "NLS/MKdV/MiuraL2HillDiscriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "06e9de1a0ab42755acb5de2ef5dc878ceea45ef1a24aea5223660a8f56eb12d9"
+    },
+    {
+      "path": "NLS/MKdV/NativeMiuraHillHamiltonian.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c"
+    },
+    {
+      "path": "NLS/MKdV/PhysicalHillDiscriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "297660f9d77db5e24a4ab61cc6ed2b7e890c4f0ddd3ccb8bb554fac302aee9aa"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillDiscriminant.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "ee370b555779313027d7ee306269031630a2ce465c90cecadac8ae7fe1a6b726"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillJointAnalytic.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "03c31e06422cedbaa5403c5095cc11b820daf3c66594aec33664dab6a1d3395a"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillPhysicalEquation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "d0d58280e8aec3c56f89343c37f938f934892f2ea93f75a24e92cda86bd983d0"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillPhysicalUniqueness.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "349d7cba9f46de07507714abb474d5cef01c1be8488181d43e8190f72fd87f89"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillPrimitiveComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "10f23299731b004572742b40945325007dbe0e636f93f719d477d14f9c16fa08"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillSourcePrimitive.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "7b57ffb08d81b2a2d6fd8e05829f5b2634b90a879bea371e0071fbed5310d365"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillZSComparison.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "0731af226de4d930dbc04de21ceb8cf0c363a68ab4cfb788760064c23ea2cf0c"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraHillHamiltonian.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraPotential.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "c27e1e6d766f413d1957fa2edd74d5e5fd8e1eb25a43ed9c9770c5207272f938"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraPrimitive.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "c2ab4e9b959535776a6b58c01f2443df9a75feafcc91c6d16a71136d83200c11"
+    },
+    {
+      "path": "NLS/MKdV/SobolevQuasiHill.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "6233ab01fc3fd86933062f2f374db91e8464fcc25c6fd0a6a6e9655b208905a3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusOneDensity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "dcd17986879a7b0bb0b09e3b9eff010abe83917d23e07d733ddaee63cd32529f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMassResolvent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "7e8c64a8b535962849b44aefa64aba1d7359db3a1aec67a060a30800e8a906bb"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraCharts.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e9c902a51594e44575dddde9b4751a48f5ac18a60297eba156dad413348c61d2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraQuadratic.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "efa890da64cf9f325942194279219b0fcd481f3a12bd82a4c9ec1811b29a1928"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraRegularity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "abe78ffb8b2f41e983def118242a3c36ac189b82abe29c7645b0b2592de3d6d1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraShift.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "aa461cff521373d50348323027d894ac73cff4b03c9bc01542afee633f81cdf8"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedInsertion.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalVolterraTrace.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ContinuousPotentialSource.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "e2a52ba52fceb22cc075719d475a237d1eb6bd0dcfecec9691f7ef44d89f03e6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSRiccatiResolvent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "8982fbecf5cc9815eab3d5a624c79779df71d577aaddfac79f7df24d2805bba5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevPolynomialL2.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "78bc7ddd732c2473cb4d719bf144323ed39d34e9c211e9caebebcf517381dab2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevPolynomialVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "69f9272bc1b5156b42d730b364c5c339d4657d834d2b73bcd4ae959aec0b2887"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SobolevSourceCotangent.lean",
+      "source_labels": [
+        "Selected actual Hminus1 Hill spectral dependency"
+      ],
+      "source_pages": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Selected proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for the physical Miura/L2, analytic rough trace/chart/source-sheet and contour-coverage dependency closure; imported_new_proved_dependency; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "sha256": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4"
     }
   ],
   "dependencies_needed": [
@@ -2850,15 +5537,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 2167,
-    "total_declarations_audited": 14311,
+    "candidate_declarations_audited": 3895,
+    "total_declarations_audited": 25200,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 201
+    "selected_modules": 318
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2897,7 +5584,7 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+    "articles/kdv-convexity": "08db7a5b181084e4436959d1e84b2596bd5d9338",
     "articles/kdv-estimates": "7a4fea39ed9ee1114b58dadf112a9acf2eb47ac8"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
@@ -2957,6 +5644,12 @@
       "commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
       "record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json",
       "kind": "selected continuous-potential cut-root and contour-homotopy dependencies; three local extensions retained; full branch and Miura/L2-only sources not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json",
+      "kind": "selected actual complex Hminus1 trace, Miura chart, source-sheet and contour-coverage dependencies; six local interfaces/extensions retained; one explicit import in new EulerLagrange source and two inherited heartbeat overrides removed; full branch not merged"
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -2966,5 +5659,7 @@
   "shared_critical_gap_import_record": "SHARED_CRITICAL_GAP_IMPORT.json",
   "normalized_second_gap_bounds_record": "NORMALIZED_SECOND_GAP_BOUNDS.md",
   "shared_critical_period_gap_import_record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json",
-  "normalized_frequency_series_record": "NORMALIZED_FREQUENCY_SERIES.md"
+  "normalized_frequency_series_record": "NORMALIZED_FREQUENCY_SERIES.md",
+  "hminus_period_data_record": "HMINUS_PERIOD_DATA.md",
+  "shared_hminus_normalization_import_record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json"
 }

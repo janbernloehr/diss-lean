@@ -454,3 +454,25 @@ estimate uses the actual compatible twice-weighted inverse and a locally
 bounded l1 frequency-scale squared-gap sequence; it does not infer
 unscaled energy-gap summability. See `NORMALIZED_FREQUENCY_SERIES.md`.
 All main theorem inventory rows remain unverified.
+
+
+### Actual Hminus1 critical basis and original period entries
+
+`exists_analytic_hillHminus_high_critical_points` constructs the actual
+simple high energy critical family near any complex Hminus1 potential.
+`exists_hillHminus_high_critical_points_free` proves its exact unshifted
+free labels despite the auxiliary chart energy shift. The generic
+analytic critical-branch theorem and a finite intersection yield
+`exists_hillHminus_uniform_numerator_basis`: an entire actual critical
+basis with its exact factor and free identities before all indices.
+
+`exists_hillHminus_all_contour_period_data` then constructs one common
+Hminus1-open neighborhood of zero covering every original frequency
+circle. Every literal 1/(2*pi) period entry is analytic there, and the
+full free matrix is exactly the identity. This supplies rough ingredients
+for the differential/period construction before Lemma 3.1 (PDF26–27)
+and the rough extension in Theorem 3.4 (PDF31). These are basis periods;
+the nonzero-potential infinite normalization equations have not yet been
+inverted in Hminus1. Full W continuation, rough normalized moments and
+physical frequency identities remain open. No main row is closed.
+See `HMINUS_PERIOD_DATA.md` and `SHARED_HMINUS_NORMALIZATION_IMPORT.json`.

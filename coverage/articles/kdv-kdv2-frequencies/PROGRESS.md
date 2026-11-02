@@ -681,3 +681,42 @@ main theorem inventory rows remain open.
 Strict validation: all 201 selected modules pass; the complete transitive
 axiom audit covers 2167 selected declarations and 14311 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+
+## Actual rough critical basis and all-mode period entries
+
+Constructed actual analytic high critical energies on one Hminus1-open
+neighborhood of every complex rough source using the proved shifted
+Miura trace identity and general complex canonical ZS critical labels.
+Exact first/second derivative formulas retain the fixed chart energy
+shift. High critical energies are simple and uniquely labeled on shifted
+discs; at zero they have the exact unshifted free energy values.
+
+A generic analytic simple-critical-branch theorem constructs the finite
+head. One finite intersection joins it to the high tail before every
+positive index. Filled division supplies an entire actual critical
+numerator basis, its exact factor identity/nonzero center, and its exact
+free normalized slice on one complex Hminus1-open neighborhood. Actual
+rough annulus coverage and compact source tubes cover every original
+frequency contour, including the finite head. All scalar period entries
+are analytic on that same neighborhood; their whole free matrix is the
+identity with the exact original 1/(2*pi) normalization and Jacobian 2*z.
+
+Read `HMINUS_PERIOD_DATA.md` and `SHARED_HMINUS_NORMALIZATION_IMPORT.json`.
+The selected dependency closure imports the proved physical Miura/L2
+comparisons, analytic rough charts, actual jointly entire Hminus1 trace,
+source sheets and contour coverage from convexity `08db7a5`. Six local
+interfaces/extensions remain intact; the new Euler-Lagrange module adds
+one explicit import to retain the proved periodic integration lemmas.
+Two inherited heartbeat overrides are removed; both unchanged proofs
+pass at the default budget. The 201 prior selected sources remain byte-identical.
+
+The rough basis has not yet been normalized by an operator inverse.
+Rough operator bounds/inversion, continuous/rough normalized agreement,
+rough moments/summation, full source-domain continuation and physical
+frequency/action/Birkhoff identification remain open. No main theorem
+inventory row is verified.
+
+Strict validation: all 318 selected modules pass; the complete transitive
+axiom audit covers 3895 selected declarations and 25200 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
