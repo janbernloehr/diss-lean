@@ -4966,4 +4966,10 @@ import NLS.KdV.HillRealSpectrum
 import NLS.KdV.HillCharacteristicZeros
 import NLS.KdV.HillRealGapPairs
 import NLS.KdV.HillWideLocalization
+import NLS.ComplexAnalysis.RealDiameterDisc
+import NLS.SequenceSpaces.OrderedOneSidedEnumeration
+import NLS.KdV.HillFreeSpectrum
+import NLS.KdV.HillCentralCounting
+import NLS.KdV.HillCentralRoots
+import NLS.KdV.HillGlobalRealLabels
 import NLS.Articles.KdVEstimates.EstimateAdapter

@@ -19,6 +19,11 @@ namespace NLS.KdV
 coefficients need not be real. -/
 def IsRealHillPotential (q : Coeff 2) : Prop := ∀ k : ℤ, q (-k) = conj (q k)
 
+theorem IsRealHillPotential.smul_real {q : Coeff 2} (hq : IsRealHillPotential q) (t : ℝ) :
+    IsRealHillPotential ((t : ℂ) • q) := by
+  intro k
+  simp only [lp.coeFn_smul, Pi.smul_apply, smul_eq_mul, map_mul, Complex.conj_ofReal, hq k]
+
 /-- Almost-everywhere reality of the actual L2 function gives precisely
 the conjugate-reflected Fourier condition used below. -/
 theorem isRealHillPotential_of_physical (q : Coeff 2)

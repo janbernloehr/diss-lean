@@ -41,6 +41,12 @@ import NLS.KdV.HillRealSpectrum
 import NLS.KdV.HillCharacteristicZeros
 import NLS.KdV.HillRealGapPairs
 import NLS.KdV.HillWideLocalization
+import NLS.ComplexAnalysis.RealDiameterDisc
+import NLS.SequenceSpaces.OrderedOneSidedEnumeration
+import NLS.KdV.HillFreeSpectrum
+import NLS.KdV.HillCentralCounting
+import NLS.KdV.HillCentralRoots
+import NLS.KdV.HillGlobalRealLabels
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -65,7 +71,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent,
     ``NLS.ComplexAnalysis.isLocallyConstant_analyticZeroCount,
     ``NLS.ComplexAnalysis.analyticZeroCount_eq_of_homotopy,
-    ``NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts]
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts,
+    ``NLS.ComplexAnalysis.ofReal_mem_realDiameter_closedBall_iff,
+    ``NLS.ComplexAnalysis.ofReal_mem_realDiameter_sphere_iff,
+    ``NLS.ComplexAnalysis.ne_zero_on_realDiameter_sphere,
+    ``NLS.appendPairedTail, ``NLS.appendPairedTail_prefix,
+    ``NLS.appendPairedTail_even, ``NLS.appendPairedTail_odd,
+    ``NLS.monotone_appendPairedTail]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

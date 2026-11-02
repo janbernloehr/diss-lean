@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 648,
+    "declarations": 726,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -45,10 +45,18 @@
       "NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent",
       "NLS.ComplexAnalysis.isLocallyConstant_analyticZeroCount",
       "NLS.ComplexAnalysis.analyticZeroCount_eq_of_homotopy",
-      "NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts"
+      "NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts",
+      "NLS.ComplexAnalysis.ofReal_mem_realDiameter_closedBall_iff",
+      "NLS.ComplexAnalysis.ofReal_mem_realDiameter_sphere_iff",
+      "NLS.ComplexAnalysis.ne_zero_on_realDiameter_sphere",
+      "NLS.appendPairedTail",
+      "NLS.appendPairedTail_prefix",
+      "NLS.appendPairedTail_even",
+      "NLS.appendPairedTail_odd",
+      "NLS.monotone_appendPairedTail"
     ]
   },
-  "full_repository_validation": "All 44 focused modules and the 648-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because another task held the shared lock; the previous aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 50 focused modules and the 726-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because another task held the shared lock; the previous successful aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -91,13 +99,19 @@
     "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
     "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
-    "NLS/KdV/HillRealSpectrum.lean": "75d2ac52d84726c262564cc54734edcaaaca587092b5c5295e0c327a8d2d372b",
+    "NLS/KdV/HillRealSpectrum.lean": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
     "NLS/KdV/HillCharacteristicZeros.lean": "1331838aafcea2eeaeb93e3fff6de558054ea26a28677a7d1c676c875542bb5a",
     "NLS/KdV/HillRealGapPairs.lean": "49bf5521c9310f09dad54e20258ef386ba8703ecd9d7fe9dd47634d38b2787bc",
-    "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032"
+    "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+    "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+    "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+    "NLS/KdV/HillFreeSpectrum.lean": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+    "NLS/KdV/HillCentralCounting.lean": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+    "NLS/KdV/HillCentralRoots.lean": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+    "NLS/KdV/HillGlobalRealLabels.lean": "4ead52510c68e8128942abee2d28507ca724bbfab50d10f75e4ff20357774939"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Actual high characteristic counts, unit determinant/characteristic analytic-order matching and unique ordered real high pairs are proved. Supplementary wide-strip localization now proves all real high roots belong to a unique original narrow strip, with a coarse lower bound and a zero-free separator bounding the remaining central cluster. Its exact root count and ordered global source labels, operator algebraic multiplicities and sharper mean-zero low-energy bounds remain. Canonical global roots/actions, the physical KdV Birkhoff construction, hierarchy trace identities and the main norm estimates remain outstanding.",
-  "milestone": "Global real high-tail coverage, unique high indices and explicit bounded central spectral region",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual central cluster now has exact count 2*N-1 and a constructed ordered multiset enumeration preserving analytic orders. A global nondecreasing labeling exhausts all real physical characteristic roots and places each high pair in slots 2*n-1 and 2*n. Cutoff-independent canonical labeling, source multiplier parity, strict central band separation, perturbed lowest-root simplicity and operator algebraic multiplicities remain. Normalized entire products/canonical roots/actions, the physical KdV Birkhoff map, hierarchy trace identities and the main norm estimates remain outstanding.",
+  "milestone": "Exact actual central characteristic count, ordered central multisets and a global nondecreasing real Hill labeling",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -144,7 +158,13 @@
     "NLS.KdV.HillRealSpectrum",
     "NLS.KdV.HillCharacteristicZeros",
     "NLS.KdV.HillRealGapPairs",
-    "NLS.KdV.HillWideLocalization"
+    "NLS.KdV.HillWideLocalization",
+    "NLS.ComplexAnalysis.RealDiameterDisc",
+    "NLS.SequenceSpaces.OrderedOneSidedEnumeration",
+    "NLS.KdV.HillFreeSpectrum",
+    "NLS.KdV.HillCentralCounting",
+    "NLS.KdV.HillCentralRoots",
+    "NLS.KdV.HillGlobalRealLabels"
   ],
   "proof_commits": [
     {
@@ -206,13 +226,18 @@
       "commit": "82b34672c3c689555a78eba599cea210ebd38e1b",
       "scope": "Actual H2 Hill spectral symmetry, high-strip physical characteristic multiplicities and unique ordered real endpoint pairs",
       "pushed": true
+    },
+    {
+      "commit": "f8812447fbc1430f8b3be41d7c68feac860eed89",
+      "scope": "Actual real high-tail coverage, unique high indices, left spectral bound and zero-free central separator",
+      "pushed": true
     }
   ],
   "aggregate_check": {
     "status": "deferred_not_run",
     "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
     "exit_code": 75,
-    "scope": "Two nonblocking attempts returned flock exit 75 before Lean started, because the shared article aggregate-build lock was held by another task. No other process was stopped and the serialization lock was not bypassed. All 44 focused modules and the 648-declaration audit passed.",
+    "scope": "The current nonblocking attempt returned flock exit 75 before Lean started because another task held /tmp/diss-lean-article-build.lock. No other process was stopped and the lock was not bypassed. All 50 focused modules and the 726-declaration audit passed.",
     "full_lake_build_or_full_examples_claimed": false,
     "reason": "Shared aggregate-build lock occupied."
   },
@@ -223,15 +248,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All forty-four modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All fifty modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 648 declarations, including the denominator-hypothesis reciprocal constructor and the actual global real high-tail/central-bound theorems.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 726 declarations, including the shared real-diameter contour geometry and ordered one-sided paired-tail construction.",
     "new_module_warnings": [],
-    "aggregate_scope": "The current 44-module aggregate run was deferred before Lean started because the shared lock was occupied on two bounded nonblocking attempts. The last successful NLS.lean aggregate covers commit 82b3467 and 43 focused modules. The current strict 44-module checks and 648-declaration audit passed; full Lake/example suite not rerun.",
+    "aggregate_scope": "The current 50-module NLS.lean aggregate was deferred before Lean started because another task held the shared article build lock. The last successful aggregate covers commit 82b3467 and 43 focused modules. All current 50 focused modules and the 726-declaration audit passed; full Lake/example suite not rerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded.",
-    "mathematical_scope": "The supplementary radius-12*n estimates explicitly require n>=2 and retain the reciprocal norm 4/n. Actual H2 eigenvectors localize under n>=8*||q||_2 by a direct complementary-product decomposition. Every real physical characteristic root above pi^2*N^2-12*N belongs to a unique original radius-6*n strip n>=N. Every complex physical characteristic root satisfies Re(lambda)>-N^2 at the same cutoff; the right central vertical separator is zero-free. Real roots therefore lie in an explicit bounded central interval or a unique high strip. The central root count, global ordering from the lowest root, operator algebraic multiplicities and main Theorems 1-3 remain unproved."
+    "mathematical_scope": "The actual free characteristic has the exact quadratic lattice zero set and a simple energy zero at 0. A real diameter circle and a boundary-zero-free rough real-potential homotopy prove the actual central characteristic count 2*N-1 at N>=max(2,8*||q||_2). Its root multiset is constructed and sorted with exact analytic multiplicities. At N>=max(2,16*||q||_2), a global nondecreasing real lambda:Nat->Real exhausts the actual characteristic zeros; its central prefix has the exact orders and interval bounds, and slots 2*n-1 and 2*n equal the actual high pair. Canonical cutoff independence, source parity/strict central band separation/lowest-root simplicity, full operator algebraic multiplicities, Birkhoff coordinates and main Theorems 1-3 are not claimed."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -245,6 +270,13 @@
       "status": "deferred_not_run",
       "milestone": "Global real high-tail coverage and central bounds",
       "nonblocking_attempts": 2,
+      "exit_code": 75,
+      "reason": "Another task held /tmp/diss-lean-article-build.lock. No aggregate compilation began."
+    },
+    {
+      "status": "deferred_not_run",
+      "milestone": "Central characteristic count and global ordered real labeling",
+      "nonblocking_attempts": 1,
       "exit_code": 75,
       "reason": "Another task held /tmp/diss-lean-article-build.lock. No aggregate compilation began."
     }

@@ -32,7 +32,7 @@
     "topologies": "Sobolev and weighted Hilbert norm topologies; weighted actions use the indicated l1 norm. Bi-analyticity means real analytic maps with real analytic inverse in these norm topologies.",
     "poisson": "Gardner bracket integral (d_u F)*partial_x(d_u G); {x_n,y_m}=delta_nm, {x_n,x_m}={y_n,y_m}=0. This sign must not be inherited from the accepted NLS convention.",
     "hill": "L(q)=-d^2/dx^2+q on [0,2] with periodic boundary conditions, q period one. Fourier basis exp(i*pi*k*x); free spectral value pi^2*k^2. Formula (2), page 5, fixes the second derivative; the page-8 display has an omitted exponent.",
-    "spectral_labels": "Source: lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1, ordered lexicographically for complex q. Free n=0 is simple and n>=1 double. Actual high-strip characteristic counts, unit determinant/characteristic analytic orders and unique ordered real high-strip pairs are now proved at n>=max(1,16*||q||_2). Their global enumeration from the lowest root and operator algebraic multiplicities remain open.",
+    "spectral_labels": "Source: lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1. A global nondecreasing real characteristic labeling is now constructed: lambda_0 corresponds to slot 0, and the actual high pair n occupies slots 2*n-1 and 2*n. The central cluster has exact analytic count 2*N-1 and all its multiplicities are retained. Strict central band separation, source multiplier parity, perturbed lowest-root simplicity and cutoff-independent canonical labeling still need their explicit proofs; operator algebraic multiplicities are not asserted.",
     "canonical_root": "-2*i*sqrt_+(lambda-lambda_0^+) times product_{k>=1} varsigma_k(lambda)/(k^2*pi^2)",
     "contour_action": "I_n=(1/pi) integral_Gamma_n lambda*Delta'(lambda)/sqrt_c(Delta(lambda)^2-4) d_lambda, with the branch/circuit conventions on pages 9-10. Higher actions J_(n,m) have lambda^(m+1)/((m+1)*pi)."
   },
@@ -67,7 +67,7 @@
         "A_m^2 <= d_m^2*(Q_(2*m+1)+(1+Q_(2*m-1))^m*Q_(2*m-1))"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Construct physical Hill actions and hierarchy trace identities, complete global spectral/gap estimates, and prove the forward/inverse action bounds. The corrected-constant high-strip operator localization is now checked, but is not the theorem itself.",
+      "remaining": "Construct canonical physical Hill actions and hierarchy trace identities, complete the source labeling details (lowest-root simplicity, multiplier parity and strict central band separation), and prove the forward/inverse action bounds. Actual global nondecreasing real characteristic labels, the central count, high-strip orders and weighted high-gap bounds are checked, but do not prove Theorem 2.",
       "status": "not_verified"
     },
     {
@@ -277,13 +277,25 @@
     {
       "module": "NLS/KdV/HillComplement.lean: hillReciprocalHilbertSymbolOfLower and its norm bound",
       "role": "The existing reciprocal-envelope proof is factored through its actual denominator hypothesis. The original radius-6*n complement and the supplementary radius-12*n localization both use the same L2 reciprocal norm estimate 4/n; no summability argument is duplicated."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+      "role": "New shared real-diameter geometry: membership and boundary endpoints, and zero-free diameter circles for functions with real zeros. Used to isolate the entire actual central Hill cluster along the rough-potential homotopy."
+    },
+    {
+      "module": "NLS/SequenceSpaces/OrderedFiniteEnumeration.lean",
+      "role": "The existing actual finite-multiset sorting theorem enumerates the constructed real central root multiset with all repeated analytic orders retained; no supplied central labels or cardinality are assumed."
+    },
+    {
+      "module": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean",
+      "role": "New shared ordered finite-block/paired-tail construction with exact prefix, even and odd slot identities and a monotonicity theorem. Used to join the actual central roots to the actual high Hill endpoint pairs."
     }
   ],
   "next_shared_milestones": [
-    "Count the roots in the bounded central interval and extend the unique real high-tail indices to the source global spectral labels, including the lowest root. The new wide-strip argument proves actual high real coverage and a coarse central bound; it does not count the central roots.",
-    "Identify analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and prove any sharper mean-zero low-energy bounds required by the source estimates.",
-    "Use the jointly analytic rough energy discriminant, its checked high-strip characteristic multiplicities and exact period-one embedding to prove the normalized product and canonical root identities.",
-    "Reuse the checked actual local/free Hill primitives and inspect the upstream branch continuation results to construct globally normalized branches and contour actions on the required rough domains.",
+    "Complete the source real spectral labeling details: prove simplicity of the lowest perturbed root, periodic/antiperiodic multiplier parity and strict separation of neighboring bands, then prove intrinsic labeling independence from the auxiliary cutoff. The actual global ordered characteristic labels and exact central count are now constructed.",
+    "Identify analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and prove sharper mean-zero low-energy bounds required by the source estimates.",
+    "Use the jointly analytic rough energy discriminant, exact global real root enumeration and checked period-one embedding to prove the normalized entire product and canonical root identities.",
+    "Reuse the checked actual local/free Hill primitives and inspected upstream branch continuation results to construct globally normalized branches and contour actions on the required rough domains.",
     "Reuse shared ActionHamiltonianMoments/Trace/FiniteGap results after identifying the actual Hill actions; prove the physical KdV Birkhoff map, hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted action estimates and interpolated weight evaluations for Theorem 3."
   ],
@@ -708,7 +720,7 @@
         "imported_unchanged": true
       }
     ],
-    "qualifications": "Characteristic analytic multiplicities are proved, not a full abstract operator algebraic multiplicity or self-adjoint realization theorem. Thin high strips do not cover the high half-plane. Global source spectral labels and central/exterior bounds, canonical global roots/actions, Birkhoff coordinates, hierarchy trace identities and main Theorems 1-3 remain incomplete."
+    "qualifications": "Characteristic analytic multiplicities, exact real central counting and an actual global nondecreasing labeling are now proved. The labels retain central multiset orders and the actual high-pair orders in slots 2*n-1 and 2*n. Source multiplier parity, strict central band separation, perturbed lowest-root simplicity, intrinsic cutoff independence and full operator algebraic multiplicities remain. Canonical roots/actions, Birkhoff coordinates and Theorems 1-3 remain unverified."
   },
   "global_real_spectral_cover": {
     "modules": [
@@ -736,6 +748,45 @@
     "real_high_coverage": "The wide strips geometrically cover [pi^2*N^2-12*N,infinity) for N>=2. Therefore every real physical characteristic root in that half-line lies in an original narrow strip with index n>=N. That index is unique at N>=8*||q||_2. This closes the real gaps between narrow strips; no coverage of the complex high half-plane is inferred.",
     "central_bound": "For every complex even-supported L2 potential, N>=max(1,8*||q||_2) implies every physical characteristic root satisfies Re(lambda)>-N^2. The actual denominator estimate in this left half-plane proves this directly; neither reality nor mean zero is assumed for this bound. For real potentials and N>=max(2,8*||q||_2), every root is real and belongs either to (-N^2,pi^2*N^2-12*N) or to a unique high strip.",
     "separator": "The vertical line Re(lambda)=pi^2*N^2-12*N contains no actual characteristic roots uniformly on the even-supported complex L2 ball at N>=max(2,8*||q||_2). This is ready for a potential-homotopy central counting argument.",
-    "qualifications": "The bounded central cluster has not yet been counted or ordered, so the high free indices are not yet identified with a complete enumeration starting at lambda_0^+. The coarse -N^2 bound is not the source sharper mean-zero low-energy estimate. Full operator algebraic multiplicities, normalized global products/roots/actions, the KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified."
+    "qualifications": "The central cluster is now counted and enumerated in order, and the high pairs occupy slots 2*n-1 and 2*n in a global nondecreasing characteristic labeling. The new central/global result is recorded separately. Source multiplier parity, strict central band separation, perturbed lowest-root simplicity and intrinsic cutoff independence remain. The coarse -N^2 bound is not the sharper mean-zero source estimate. Full operator algebraic multiplicities, normalized products/roots/actions, Birkhoff coordinates and main Theorems 1-3 remain unverified."
+  },
+  "central_count_and_global_real_labels": {
+    "modules": [
+      "NLS/KdV/HillFreeSpectrum.lean",
+      "NLS/KdV/HillCentralCounting.lean",
+      "NLS/KdV/HillCentralRoots.lean",
+      "NLS/KdV/HillGlobalRealLabels.lean"
+    ],
+    "source_correspondence": "The page 8 real periodic spectral enumeration and subsequent gap labels used on pages 9-10 and in Appendix A; this fixes the central offset in the actual physical high-pair labeling.",
+    "proved_declarations": [
+      "NLS.KdV.hillL2Radicand_free_zero_iff",
+      "NLS.KdV.hillL2Radicand_free_order_zero",
+      "NLS.KdV.hillL2Radicand_free_central_count",
+      "NLS.KdV.hillL2Radicand_ne_zero_on_central_sphere",
+      "NLS.KdV.hillL2Radicand_central_count",
+      "NLS.KdV.hillL2Radicand_central_interval_count",
+      "NLS.KdV.hillCentralRoots",
+      "NLS.KdV.card_hillRealCentralRoots",
+      "NLS.KdV.map_ofReal_hillRealCentralRoots",
+      "NLS.KdV.count_hillRealCentralRoots",
+      "NLS.KdV.exists_ordered_hillCentralRoots",
+      "NLS.KdV.HillRealHighGapPair.separated",
+      "NLS.KdV.exists_hillRealCharacteristicLabels"
+    ],
+    "free_normalization": "The actual free characteristic vanishes exactly at pi^2*n^2 for n>=0. The energy zero at 0 has analytic order one, proved using the ramified square-coordinate composition and the exact free frequency sine formula. Positive free roots retain the previously checked order two.",
+    "central_contour": "For N>=max(2,8*||q||_2), use the circle with real diameter [-N^2,pi^2*N^2-12*N]. The endpoints are excluded by the checked left bound and vertical separator. A real potential has only real actual characteristic roots, including along t*q, so the whole circle is zero-free. Compact-contour homotopy invariance transfers the free count 1+2*(N-1)=2*N-1 to the actual rough L2 characteristic. The same count holds on the actual open real central interval.",
+    "root_multisets": "The finite central root multiset is constructed from the analytic orders of the actual Delta^2-4. On real inputs, mapping to real parts and back loses neither roots nor orders. Its cardinality is proved to be 2*N-1, and the existing shared finite-multiset sorting theorem gives an actual ordered enumeration with exact counts.",
+    "global_labels": "For each real even-supported L2 potential and N>=max(2,16*||q||_2), a global lambda:Nat->Real is constructed. It is nondecreasing; Delta(z)^2=4 iff z=(lambda(j):Complex) for some j. The first 2*N-1 slots are in the explicit central interval and enumerate its exact analytic multiplicities. For each n=N+k, slots 2*n-1 and 2*n equal the actual unique ordered high pair, whose record carries the exact physical characteristic orders. Localization proves strict separation between distinct high pairs and between the central block and high tail.",
+    "shared_proofs": [
+      "NLS.ComplexAnalysis.ofReal_mem_realDiameter_closedBall_iff",
+      "NLS.ComplexAnalysis.ofReal_mem_realDiameter_sphere_iff",
+      "NLS.ComplexAnalysis.ne_zero_on_realDiameter_sphere",
+      "NLS.appendPairedTail",
+      "NLS.appendPairedTail_prefix",
+      "NLS.appendPairedTail_even",
+      "NLS.appendPairedTail_odd",
+      "NLS.monotone_appendPairedTail"
+    ],
+    "qualifications": "This proves existence of actual global nondecreasing real characteristic labels with the correct central offset and cluster multiplicities. It does not yet prove strict separation of all central neighboring bands, source periodic/antiperiodic parity, simplicity of the lowest perturbed root, or a cutoff-independent canonical choice. It does not identify characteristic analytic orders with abstract operator algebraic multiplicities. Canonical global products/roots/actions, the physical KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified."
   }
 }
