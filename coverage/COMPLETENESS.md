@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Appendix G whole-sequence remainder bounds](APPENDIX_G.md) add 4 checked positive theorems. Publish the seven free-mode Fourier and pointwise gradient-algebra proofs, then the ordered Appendix G comparison. The broader completeness qualifications below remain.
+
 The [Appendix G Born and Volterra derivatives](APPENDIX_G.md) add 12 checked positive theorems. Publish the four whole-sequence H1 and uniform-time bounds, then the seven free-mode and gradient-algebra proofs and the ordered Appendix G comparison. The broader completeness qualifications below remain.
 
 The dissertation formalization is not yet certified complete. The public

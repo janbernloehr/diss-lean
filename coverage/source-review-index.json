@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T02:24:52.792680+00:00",
-  "base_commit": "e1f357cb82f0079eab28da3dde091475bdac9725",
+  "published_utc": "2026-11-02T02:46:28.997172+00:00",
+  "base_commit": "e557e8c0a15138f8704e2fd1bbd27aba604b3285",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 207,
-    "module_hash_checks": 4339,
-    "distinct_modules": 2155
+    "review_records": 208,
+    "module_hash_checks": 4347,
+    "distinct_modules": 2159
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e1f357cb82f0079eab28da3dde091475bdac9725",
-    "validated_state": "Fresh full check after Appendix G Born and Volterra derivatives.",
+    "base_commit": "e557e8c0a15138f8704e2fd1bbd27aba604b3285",
+    "validated_state": "Fresh full check after Appendix G whole-sequence remainder bounds.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8641,
+    "build_jobs": 8642,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44984,
+    "transitive_NLS_declarations": 44990,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 8379,
+    "gate_session": 44795,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4903,
-      "sha256": "c18d608db6d7aa1214a39dbf0ae55ba1887979656755c9176dcedc64e6628a9f"
+      "files": 4904,
+      "sha256": "3edab37883fac9fe9451f4f0044619273a9c87f6427b5e5ab1d0f7c2374420bb"
     },
-    "full_gate_log_sha256": "881d094cdf46105bbf421f3b616e8cec43d8b0789731b4bb27a6b8d047adf8e9",
+    "full_gate_log_sha256": "2d8e427ae6988833569762338a38f2619ca53f7adce0aaa5a37bda7eed7c8c70",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/AppendixGBornDerivativeFullCheck.log"
+    "full_gate_log": "work/AppendixGWholeSequenceH1FullCheck.log"
   },
   "named_statements": [
     {
@@ -70036,6 +70036,125 @@
         "log_sha256": "881d094cdf46105bbf421f3b616e8cec43d8b0789731b4bb27a6b8d047adf8e9"
       },
       "source_record_sha256": "2d4370d4d79a9dfde136f54a12fd8520e3e3a3f8b359300cb3ee5b997016aad3"
+    },
+    "AppendixGWholeSequenceH1SourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e557e8c0a15138f8704e2fd1bbd27aba604b3285",
+      "updated_utc": "2026-11-02T02:46:28.950465+00:00",
+      "source_lines": [
+        [
+          11152,
+          11156
+        ],
+        [
+          11204,
+          11207
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11152,
+            11156
+          ],
+          "requirement": "Whole-sequence physical H1 bound",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_remainder_H1_coarse_bound",
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_coarse_bound",
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence"
+          ],
+          "reviewed_claims": [
+            "A coarse physical H1 estimate holds at every complex frequency, including zero.",
+            "Combining the finite initial frequencies with the common tail gives one bound over every index and every source in the exact original H1 ball."
+          ],
+          "qualification": "The constant may depend on the fixed spectral sequence, including its finite initial frequencies. The source-ball and index quantifiers remain uniform."
+        },
+        {
+          "source_lines": [
+            11204,
+            11207
+          ],
+          "requirement": "Uniform-in-time inverse-index remainder decay",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_source_remainder_uniform_time_decay"
+          ],
+          "reviewed_claims": [
+            "One cutoff precedes both the source and the spectral sequence; at all later indices the actual Hermitian operator remainder is bounded at every time in the closed unit interval by 4*C(2*M,B)/abs(n)."
+          ],
+          "qualification": "The positive cutoff excludes n=0. This is an asymptotic estimate; no finite-index inverse-zero claim is made."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaG3.lean": "1c7704bc4592676dd74792135005c27e59925ddb495c8f984d79bee7f578c9ba",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientBounds.lean": "8e5d2aeaeee0f36e3a6ac812cf5b6c5d531728becd44f3f5a5cde19aee16be07",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean": "ad1b0060eba0c90ceaca0c88e9cc2b9400bed098cadcfa3343b35acb580f444a",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderSequenceBounds.lean": "b47fe2347856f4b32f76dd1b8002e22b1fbdf29b6c941c45ef634057312383fb",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderTimeBounds.lean": "2664d722670a8d372f8e875dc90cee436ad1ce85351bdd1d146d92459cde12e7",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean": "e42389d9b65addb53b2c80e6d09a4b9717f4d7e38f8c4a6332d6b9c82e110c2a",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean": "0973068a70996d182dfec2e14a459d2e2936afcbe416edffaccf39cd1fbb3879",
+        "NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean": "9eabdc477a61a02d7332a56d85fa0014656ec624d5c10ed010a50bbc044d6210"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaG3.lean",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientBounds.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderSequenceBounds.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderTimeBounds.lean",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean",
+        "NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Publish the ordered Appendix G comparison and continue the broader source ledger."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.appendixG_remainder_H1_coarse_bound",
+        "NLS.ZakharovShabat.appendixG_source_remainder_H1_coarse_bound",
+        "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence",
+        "NLS.ZakharovShabat.appendixG_source_remainder_uniform_time_decay"
+      ],
+      "declaration_inventory_count": 44990,
+      "qualification": "The [whole-sequence estimates](NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean) prove a coarse physical H1 bound at every complex frequency, including zero. Combining it with the existing common tail estimate gives one bound for every index of a fixed near-free spectral sequence and every potential in the exact original H1 source ball. The constant may depend on that sequence's finite initial frequencies.\n\nThe actual Hermitian operator remainder also has uniform inverse-index decay at every time in [0,1]. One positive cutoff precedes both the source and the spectral sequence, so the bound applies simultaneously to the whole source ball and every sequence with the stated tail displacement.\n\nFour positive theorems add no new definitions, examples or refutations. The forty-one-group ordered Appendix G comparison and the broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          135,
+          136,
+          137,
+          138
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-g-ordered-135.png": "3aa9ddd5b56601e03dd422fbed9d444a6977c4270c93cb6fb4fff5408efbee6a",
+          "work/tmp/pdfs/appendix-g-ordered-136.png": "6ee80e78324217ac2dd95f12b01dba89b8022776a69d728fe8ecbe91b2405edb",
+          "work/tmp/pdfs/appendix-g-ordered-137.png": "78c63bdefcfcb05a2a44f7f1da21db149137183d278db3fc763ccca490c92db9",
+          "work/tmp/pdfs/appendix-g-ordered-138.png": "2107406ce69dacef0417629d9a05f2d49c82987ac3f6c20495f09f8226b8b336"
+        }
+      },
+      "preceding_review_hash": "2d4370d4d79a9dfde136f54a12fd8520e3e3a3f8b359300cb3ee5b997016aad3",
+      "validation_lean_sources": {
+        "files": 4904,
+        "sha256": "3edab37883fac9fe9451f4f0044619273a9c87f6427b5e5ab1d0f7c2374420bb"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 4,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence._proof_1_1",
+        "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence._proof_1_2"
+      ],
+      "full_gate": {
+        "session": 44795,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixGWholeSequenceH1FullCheck.log",
+        "log_sha256": "2d8e427ae6988833569762338a38f2619ca53f7adce0aaa5a37bda7eed7c8c70"
+      },
+      "source_record_sha256": "16b116d1e7c2c2c3849f85e6f23be1e05470694abef9e8360c0a8cc116f88cb4"
     }
   }
 }

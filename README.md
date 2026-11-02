@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix G Born and Volterra derivatives](coverage/APPENDIX_G.md). Exact Born derivative and half-weighted endpoints; explicit interval-length and periodic source constants; actual operator norm and differentiated Volterra identity. Twelve positive proofs.
+Latest step: [Appendix G whole-sequence remainder bounds](coverage/APPENDIX_G.md). Physical H1 bound at all frequencies and every index of a fixed sequence; common-cutoff inverse-index operator remainder bound at every unit-interval time. Four positive proofs.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

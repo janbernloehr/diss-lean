@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Current milestone: Appendix G Born and Volterra derivatives
+## Current milestone: Appendix G whole-sequence remainder bounds
+
+The [whole-sequence estimates](NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean) prove a coarse physical H1 bound at every complex frequency, including zero. Combining it with the existing common tail estimate gives one bound for every index of a fixed near-free spectral sequence and every potential in the exact original H1 source ball. The constant may depend on that sequence's finite initial frequencies.
+
+The actual Hermitian operator remainder also has uniform inverse-index decay at every time in [0,1]. One positive cutoff precedes both the source and the spectral sequence, so the bound applies simultaneously to the whole source ball and every sequence with the stated tail displacement.
+
+Four positive theorems add no new definitions, examples or refutations.
+
+The full check passed: 8,642 build jobs, 7,729 public examples and an axiom audit of 44,990 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the seven free-mode Fourier and pointwise gradient-algebra proofs, then the ordered Appendix G comparison.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix G Born and Volterra derivatives
 
 The [scalar Born derivative](NLS/ComplexAnalysis/AppendixGBornDerivative.lean) retains both half-weighted endpoint terms. The [operator identities](NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean) give the actual derivative and its Hermitian norm, with the corrected -R/(2*z) integration-by-parts coefficient. The multiplied identity also holds at zero frequency.
 
