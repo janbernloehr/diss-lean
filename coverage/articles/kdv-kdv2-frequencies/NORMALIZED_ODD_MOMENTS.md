@@ -104,3 +104,9 @@ normalization remain open. So do the physical Hamiltonian-frequency and
 Birkhoff flow identifications, global/rough extension, weighted compact
 derivatives and all main theorem rows. No source-wide Lemma 3.1 claim
 is inferred from this local construction.
+
+Subsequent progress: `NORMALIZED_COLLAPSED_MOMENTS.md` proves that every
+positive normalized moment vanishes at actual collapsed high gaps,
+including the diagonal case, while retaining all the moment properties
+above. Only the low even collapsed contours remain for the local
+collapsed-moment clause; full rough/global source scope is still open.

@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalNormalizedCollapsedMoments
 import NLS.KdV.ClassicalNormalizedOddMoments
 import NLS.KdV.ClassicalNormalizedProductConstant
 import NLS.KdV.ClassicalNormalizedProductQuotient
@@ -188,6 +189,7 @@ run_cmd do
     `NLS.KdV.ClassicalHighGapPairs,
     `NLS.KdV.ClassicalHillReality,
     `NLS.KdV.ClassicalHillConjugation,
+    `NLS.ComplexAnalysis.ContinuousSquareRootPath,
     `NLS.KdV.ClassicalHillPrimitiveSheets,
     `NLS.KdV.ClassicalHillPrimitiveReflection,
     `NLS.KdV.ClassicalHillBandNormalization,
@@ -200,7 +202,13 @@ run_cmd do
     `NLS.KdV.ClassicalNormalizedMoments,
     `NLS.KdV.ClassicalHillOddDifferentialMoments,
     `NLS.KdV.ClassicalHillLowOddDifferentialMoments,
-    `NLS.KdV.ClassicalNormalizedOddMoments]
+    `NLS.KdV.ClassicalNormalizedOddMoments,
+    `NLS.ComplexAnalysis.TwoRootQuotientDiscBound,
+    `NLS.ComplexAnalysis.TwoZeroDeflation,
+    `NLS.KdV.ClassicalHillGapQuotients,
+    `NLS.ComplexAnalysis.AnalyticDiscSquareRoot,
+    `NLS.KdV.ClassicalHillCollapsedDifferentialMoments,
+    `NLS.KdV.ClassicalNormalizedCollapsedMoments]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -540,3 +540,27 @@ frequency/flow identities and every main theorem remain open.
 Strict validation: all 164 selected modules pass; the complete transitive
 axiom audit covers 1778 selected declarations and 13953 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+## Positive moments at actual collapsed high gaps
+
+Every positive normalized moment now vanishes on a collapsed actual high
+gap, including the diagonal numerator. The hypothesis is the literal
+analytic squared-gap function being zero. Shared actual endpoint
+deflation constructs a nonzero analytic quotient even at a double zero;
+a disc square root and one fixed circle sign extend the actual shifted
+primitive. The existing filled primitive/root quotient then gives an
+analytic positive-order integrand and Cauchy cancellation.
+
+The constructed local normalized family keeps all-mode analyticity,
+zeroth periods and every odd cancellation on the same neighborhood,
+with one cutoff only for the new collapsed positive-moment clause. See
+[NORMALIZED_COLLAPSED_MOMENTS.md](NORMALIZED_COLLAPSED_MOMENTS.md) and
+`SHARED_COLLAPSED_GAP_IMPORT.json` for selected shared source provenance.
+
+The low even collapsed contours, full rough/global scope, sharp moment/
+root estimates, exact canonical scalar, physical frequency/flow identities
+and every article main theorem remain open.
+
+Strict validation: all 171 selected modules pass; the complete transitive
+axiom audit covers 1811 selected declarations and 13976 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

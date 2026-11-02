@@ -274,7 +274,7 @@
       ],
       "scope": "Literal weighted contours, Banach analyticity and continuation criteria; actual spectral factors and their continuation remain to be constructed",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "789a5dfa1d9b98e9010b400002ea0a1d1335d379de52f266e2e86120ce3162e7"
+      "sha256": "8f7b89cfa5d056f7a38cfc1cdd0fc57d54fe647ba75ff18f4b256cd693a2f57e"
     },
     {
       "path": "NLS/KdV/FrequencyContourDecomposition.lean",
@@ -2257,6 +2257,107 @@
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
       "sha256": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean",
+      "source_labels": [
+        "Shared actual collapsed-gap dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848; imported_new_proved_dependency; directly recompiled for actual normalized positive moment cancellation; no Hill RealType assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "sha256": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousSquareRootPath.lean",
+      "source_labels": [
+        "Shared connected-set square-root sign"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Existing shared proved dependency directly recompiled to match the actual primitive to its analytic filled square root on a connected contour",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5593088f9755068f9e648f0f1bf89af439422827947205288de0c5ee1a765474"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoRootQuotientDiscBound.lean",
+      "source_labels": [
+        "Shared analytic two-root deflation bound"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Existing shared proved dependency directly recompiled for actual collapsed-gap deflation",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "92801a223aefe1e9305c9f097c815ac71d69c2df6647670a32339d03ff46fae4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoZeroDeflation.lean",
+      "source_labels": [
+        "Shared actual collapsed-gap dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848; imported_new_proved_dependency; directly recompiled for actual normalized positive moment cancellation; no Hill RealType assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "sha256": "8faa25c184aa51d1406b6868e009b7bd5fda84147d3d95c41b928e9cd022ee42"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillCollapsedDifferentialMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(iv) actual high collapsed differential moments"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "One neighborhood at any continuous complex source before all high contours, entire energy numerators and positive orders; actual squared-gap zero forces endpoint equality, an analytic square root of the deflated actual primitive square and all positive moment cancellation, including the diagonal",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bf8cb78385f8d3f4a6e88c23c01942e603466de265ff0f78282d861f47a24996"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapQuotients.lean",
+      "source_labels": [
+        "Shared actual collapsed-gap dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848; imported_new_proved_dependency; directly recompiled for actual normalized positive moment cancellation; no Hill RealType assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "sha256": "6c3183f3b83034a9d79fcdaedbbb15fde26eb11ad36ccab37432ab1eb1b316cc"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedCollapsedMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(iv) actual normalized collapsed tail"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Constructed actual inverse and one near-zero continuous-potential neighborhood retaining all-mode analyticity, exact zeroth periods and odd cancellation, plus all positive moments zero at each actual high collapsed gap; finite low even collapsed contours and full rough/global W scope remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6110781bc41b7c07893b33c19d95d50087edd60bdfb10b427ca43bfe60ff972f"
     }
   ],
   "dependencies_needed": [
@@ -2288,15 +2389,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1778,
-    "total_declarations_audited": 13953,
+    "candidate_declarations_audited": 1811,
+    "total_declarations_audited": 13976,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 164
+    "selected_modules": 171
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2377,6 +2478,14 @@
       "commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
       "record": "SHARED_WHOLE_GAP_IMPORT.json",
       "kind": "selected continuous-potential dependency sources; full branch not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "record": "SHARED_COLLAPSED_GAP_IMPORT.json",
+      "kind": "selected continuous-potential collapsed-gap dependency sources; full branch not merged"
     }
-  ]
+  ],
+  "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
+  "shared_collapsed_gap_import_record": "SHARED_COLLAPSED_GAP_IMPORT.json"
 }

@@ -65,8 +65,10 @@ its existing Hilbert specialization and a transitive audit.
 | Selected proved whole-gap/annulus dependencies from convexity `4b8896c`, with local derivative additions preserved | Actual continuous-potential whole-gap analytic squares, source-strip normalization, branch matching and complete annulus source coverage; imported provenance and qualifications recorded separately. |
 | `ClassicalHillWholeGapQuotients.lean`, `ClassicalHillOddDifferentialMoments.lean`, `ClassicalHillLowOddDifferentialMoments.lean` | Nonzero analytic filled quotients on complete high gaps, exact sheet/endpoints, actual differential radius independence, uniform high cancellation and finite-head source tubes yielding all-mode common-neighborhood odd cancellation. |
 | `ClassicalNormalizedMoments.lean`, `ClassicalNormalizedOddMoments.lean`, extended `FrequencyMoments.lean` | Literal actual normalized moments, exact mapped energy contour and Jacobian, all-mode moment analyticity, exact original zeroth periods and every odd cancellation on one near-zero complex continuous-potential neighborhood. |
+| Selected collapsed-gap dependencies from convexity `9d1741c` | Actual two-zero deflation including double roots, nonzero deflated units, and constructed analytic square roots on complete discs; local extensions preserved. |
+| `ClassicalHillCollapsedDifferentialMoments.lean`, `ClassicalNormalizedCollapsedMoments.lean`, extended `FrequencyMoments.lean` | Every positive actual normalized moment vanishes at each high collapsed gap on one common local family, including the diagonal; retains all-mode analyticity, exact zeroth periods and odd cancellation. |
 
-All 164 selected modules compile with pinned **Lean 4.33.1**, commit
+All 171 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -227,6 +229,7 @@ PASS NLS/KdV/ClassicalHillGreen
 PASS NLS/KdV/ClassicalHighGapPairs
 PASS NLS/KdV/ClassicalHillReality
 PASS NLS/KdV/ClassicalHillConjugation
+PASS NLS/ComplexAnalysis/ContinuousSquareRootPath
 PASS NLS/KdV/ClassicalHillPrimitiveSheets
 PASS NLS/KdV/ClassicalHillPrimitiveReflection
 PASS NLS/KdV/ClassicalHillBandNormalization
@@ -240,11 +243,17 @@ PASS NLS/KdV/ClassicalNormalizedMoments
 PASS NLS/KdV/ClassicalHillOddDifferentialMoments
 PASS NLS/KdV/ClassicalHillLowOddDifferentialMoments
 PASS NLS/KdV/ClassicalNormalizedOddMoments
-Axiom audit passed: 1778 candidate declarations; 13953 declarations total.
+PASS NLS/ComplexAnalysis/TwoRootQuotientDiscBound
+PASS NLS/ComplexAnalysis/TwoZeroDeflation
+PASS NLS/KdV/ClassicalHillGapQuotients
+PASS NLS/ComplexAnalysis/AnalyticDiscSquareRoot
+PASS NLS/KdV/ClassicalHillCollapsedDifferentialMoments
+PASS NLS/KdV/ClassicalNormalizedCollapsedMoments
+Axiom audit passed: 1811 candidate declarations; 13976 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 164 selected modules (including generated and private declarations)
+the 171 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -739,3 +748,35 @@ its even collapsed-moment clause, sharp moment/root estimates or the
 exact nonzero-potential canonical leading scalar. Physical frequency/
 Hamiltonian/Birkhoff flow identification and all main theorem rows
 remain open. No main inventory row is marked verified.
+
+
+## Positive normalized moments at actual collapsed high gaps
+
+The current milestone is detailed in `NORMALIZED_COLLAPSED_MOMENTS.md`.
+One actual normalized family retains all-mode analyticity, exact zeroth
+periods and odd cancellation. On the same neighborhood, every positive
+moment vanishes at each actual high collapsed gap, including diagonal
+numerators. The actual squared-gap zero criterion forces the two roots
+to coincide. Literal deflation constructs a nonzero analytic unit, its
+disc square root supplies an analytic primitive extension, and a fixed
+sign on the connected circle identifies the actual primitive. The
+already constructed primitive/root quotient then fills the integrand.
+
+`SHARED_COLLAPSED_GAP_IMPORT.json` records the selected proved sources
+from convexity `9d1741c`; existing local extensions are preserved. The
+whole branch and L2-only modules are not merged. No ZS RealType result
+is applied to the Hill coefficient pair.
+
+All 171 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 1811
+selected declarations and 13976 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound. All
+171 source hashes and checker/audit/coverage selections agree. There are
+no placeholders, new axioms, heartbeat increases, disabled linters or
+warning exceptions. The full run uses the shared build lock and private
+selected outputs; canonical sources/builds remain read only.
+
+Finite low even collapsed contours, full W/rough-topology compatibility,
+sharp normalized estimates, the exact nonzero-potential canonical scalar,
+and physical frequency/Hamiltonian/action/Birkhoff flow identification
+remain open. Every article main theorem remains unverified.

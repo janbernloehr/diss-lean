@@ -359,3 +359,20 @@ The full W domain/rough topology of Lemma 3.1, its collapsed even-moment
 clause (iv), sharp moment/root estimates, exact leading scalar at nonzero
 potentials, physical frequency/flow identifications and every main
 inventory row remain open.
+
+The local actual normalized family now also satisfies the high-tail
+part of Lemma 3.1(iv): if the actual analytic squared gap vanishes and
+k is above one common cutoff, every positive moment vanishes for every
+output n, including n=k. The actual double-root quotient and its disc
+square root are constructed from shared verified results. All previous
+moment analyticity, zeroth periods and all-mode odd cancellations remain
+on the same source neighborhood. See
+[NORMALIZED_COLLAPSED_MOMENTS.md](NORMALIZED_COLLAPSED_MOMENTS.md),
+`exists_classicalHill_normalized_moments_with_collapsed_tail` and
+`SHARED_COLLAPSED_GAP_IMPORT.json`.
+
+The low even collapsed contours and full W/rough-topology version of
+Lemma 3.1 remain open. No main inventory row is closed. Sharp normalized
+moment/root bounds, exact canonical leading scalar, physical frequency/
+Hamiltonian/action identities and the source main flow statements still
+require their actual proofs.

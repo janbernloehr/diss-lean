@@ -159,6 +159,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalHighGapPairs
   NLS/KdV/ClassicalHillReality
   NLS/KdV/ClassicalHillConjugation
+  NLS/ComplexAnalysis/ContinuousSquareRootPath
   NLS/KdV/ClassicalHillPrimitiveSheets
   NLS/KdV/ClassicalHillPrimitiveReflection
   NLS/KdV/ClassicalHillBandNormalization
@@ -171,7 +172,13 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalNormalizedMoments
   NLS/KdV/ClassicalHillOddDifferentialMoments
   NLS/KdV/ClassicalHillLowOddDifferentialMoments
-  NLS/KdV/ClassicalNormalizedOddMoments)
+  NLS/KdV/ClassicalNormalizedOddMoments
+  NLS/ComplexAnalysis/TwoRootQuotientDiscBound
+  NLS/ComplexAnalysis/TwoZeroDeflation
+  NLS/KdV/ClassicalHillGapQuotients
+  NLS/ComplexAnalysis/AnalyticDiscSquareRoot
+  NLS/KdV/ClassicalHillCollapsedDifferentialMoments
+  NLS/KdV/ClassicalNormalizedCollapsedMoments)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

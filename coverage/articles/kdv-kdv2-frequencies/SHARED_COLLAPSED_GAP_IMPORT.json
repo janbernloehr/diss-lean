@@ -1,0 +1,42 @@
+{
+  "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+  "kind": "selected proved collapsed-gap dependencies; existing local extensions preserved",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+      "local_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541"
+    },
+    {
+      "path": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "local_sha256": "f7107b18fc5df42b7525e38c6390d3d7b0113b039b4409270eaf3920fcafe72a"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "action": "retained_local_extension_with_original_interface",
+      "source_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "local_sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoZeroDeflation.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "8faa25c184aa51d1406b6868e009b7bd5fda84147d3d95c41b928e9cd022ee42",
+      "local_sha256": "8faa25c184aa51d1406b6868e009b7bd5fda84147d3d95c41b928e9cd022ee42"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapQuotients.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "6c3183f3b83034a9d79fcdaedbbb15fde26eb11ad36ccab37432ab1eb1b316cc",
+      "local_sha256": "6c3183f3b83034a9d79fcdaedbbb15fde26eb11ad36ccab37432ab1eb1b316cc"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b",
+      "local_sha256": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b"
+    }
+  ]
+}

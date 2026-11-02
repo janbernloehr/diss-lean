@@ -56,6 +56,21 @@ theorem frequencyMoment_odd_eq_zero_of_continuations
     rw [pow_add,pow_mul,pow_one]
     ring
 
+/-- Filled analytic circle extensions of the primitive and its product
+with the differential kill every positive moment. -/
+theorem frequencyMoment_pos_eq_zero_of_continuations
+    (F G J H : ℂ → ℂ) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hJ : AnalyticOnNhd ℂ J (closedBall c r)) (hH : AnalyticOnNhd ℂ H (closedBall c r))
+    (hmatch : ∀ z ∈ sphere c r, J z = F z ∧ H z = F z*G z) (m : ℕ) :
+    frequencyMoment F G c r (m+1) = 0 := by
+  have ha : AnalyticOnNhd ℂ (fun z => J z^m*H z) (closedBall c r) := (hJ.pow m).mul hH
+  unfold frequencyMoment
+  rw [circleIntegral.integral_congr hr (fun z hz => ?_)]
+  · exact circleIntegral_eq_zero_of_differentiable_on_off_countable hr countable_empty
+      ha.continuousOn (fun z hz => (ha z (ball_subset_closedBall hz.1)).differentiableAt)
+  · rw [(hmatch z hz).1,(hmatch z hz).2,pow_succ]
+    ring
+
 /-- When F itself continues analytically through a collapsed gap, and its
 product with G does too, all positive moments vanish, including the
 diagonal case where G alone may still have a pole. -/
