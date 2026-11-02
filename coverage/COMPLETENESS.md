@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Section 28 complex enclosing-root ratio](SECTION_28.md) proofs add 7 checked positive theorems. Continue the remaining whole-dissertation reconciliation, retaining S28-006, S28-014 and S28-015, the Section 7 rough sheet-sign clause and unrestricted psi uniqueness, and the recorded broader qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
+
 The [Section 7 physical Dirichlet motion](SECTION_7.md) proofs add 12 checked positive theorems. Continue the remaining whole-dissertation reconciliation. Retain the unresolved rough sheet-sign direction clause in S7-002 and unrestricted entire-product uniqueness in S7-013, together with the other recorded source qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
 
 The [ordered Appendix I ledger](APPENDIX_I_ASSERTIONS.md) compares 18 groups: thirteen matched, three corrected and two contextual. The direct corrections retain lower-block invertibility, the Schur signs and the tail-space domain. Uniform weighted cutoffs connect the actual real source atlas to its complex local germs. The final density proof uses local Schur determinants and cone uniqueness, with actual real inverse maps. The exact 2014 reference comparison and the final whole-dissertation reconciliation remain open.
@@ -155,10 +157,11 @@ It includes every M1 weight and admissible complex source. This
 direct norm correction preserves the final real and complex
 estimates. One positive theorem and two examples add no new
 refutation. The [ordered Section 28 ledger](SECTION_28_ASSERTIONS.md)
-compares 30 groups: 16 matched, eight corrected, four partial and two contextual.
+compares 30 groups: 17 matched, eight corrected, three partial and two contextual.
 The named final constants 2048, 4608, 2^20 and 2^21 remain proved. The
-reflected rational spectral bound and the printed complex adjacent-disc,
-telescoping and enclosing-root arguments remain explicitly qualified.
+complex enclosing-root ratio is now proved for signed indices with its exact
+constants and inclusive boundary. The reflected rational bound for chi,
+adjacent-disc comparison and central telescoping remain explicitly qualified.
 The independent final proof does not establish those intermediate claims.
 
 The [ordered Appendix A ledger](APPENDIX_A_ASSERTIONS.md) compares

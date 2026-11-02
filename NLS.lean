@@ -4908,3 +4908,4 @@ import NLS.ZakharovShabat.AppendixGGradientAlgebra
 import NLS.ZakharovShabat.AppendixHPhysicalHamiltonian
 import NLS.SequenceSpaces.AppendixIUniformCutoff
 import NLS.ZakharovShabat.Section7PhysicalNLSMotion
+import NLS.ZakharovShabat.Section28ComplexEnclosingRoot

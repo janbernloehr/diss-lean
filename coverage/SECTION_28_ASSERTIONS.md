@@ -1,6 +1,6 @@
 # Section 28 ordered assertion comparison
 
-The ordered Section 28 comparison covers 30 groups on printed pp.117–119: 16 matched, eight directly corrected, four partial and two contextual, with no pending groups. Original indexed actions, exact weighted norms, the common connected L2-open domain before all weights and weight-dependent estimate neighborhoods are retained. The final complex chi bound 2048, action-gap bound 4608, real action bound 2^20 and complex action bound 2^21 are proved. Four complex intermediate passages remain partial: the reflected rational spectral bound, adjacent-disc comparison, central telescoping and enclosing-root ratio. The independent final bounds do not establish these printed arguments. The small-ball step directly uses the weighted norm. This comparison adds no Lean proof or refutation. Broader completeness and Appendix G.2 qualifications remain.
+The ordered Section 28 comparison covers 30 groups on printed pp.117–119: 17 matched, eight directly corrected, three partial and two contextual, with no pending groups. Original indexed actions, exact weighted norms and all domain qualifications are retained. The final complex chi bound 2048, action-gap bound 4608, real action bound 2^20 and complex action bound 2^21 remain proved. The complex enclosing-root ratio is now proved with the exact constants 2/5 and 3/10, signed indices and the inclusive boundary. Three complex intermediate passages remain partial: the reflected rational bound for chi, adjacent-disc comparison and central telescoping. Seven positive enclosing-root theorems add no new refutation. Broader completeness qualifications remain.
 
 Source: printed pp. 117–119, text lines 9632–9914. Line numbers count
 newline characters and preserve form feeds. All three rendered pages were inspected.
@@ -22,7 +22,7 @@ newline characters and preserve form feeds. All three rendered pages were inspec
 | S28-013 | 9753–9764 | Infinite exterior product constant 128 | matched |
 | S28-014 | 9767–9780 | Central isolating discs and formula (5.16) | partial |
 | S28-015 | 9783–9789 | Central telescoping product | partial |
-| S28-016 | 9791–9796 | Enclosing-root ratio | partial |
+| S28-016 | 9791–9796 | Enclosing-root ratio | matched |
 | S28-017 | 9798–9802 | Inclusive boundary arithmetic | corrected |
 | S28-018 | 9804–9808 | Final complex chi estimate | matched |
 | S28-019 | 9819–9831 | Figure 5.1 disc geometry | contextual |
@@ -115,7 +115,7 @@ Public declarations:
 - `NLS.ZakharovShabat.lemma281_ratio_le_eight`
 - `NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior`
 
-The printed signed ratio is not asserted. A complex spectral bound by the reflected rational expression is not verified by these scalar theorems; the central complex-product steps S28-014 through S28-016 remain qualified. The independent final 2048 theorem is fully proved. No new refutation is added.
+The printed signed ratio is not asserted. A complex spectral bound by the reflected rational expression is not verified by these scalar theorems; the adjacent-factor and central telescoping steps S28-014 and S28-015 remain qualified. The independent final 2048 theorem is fully proved. No new refutation is added.
 
 ### S28-007: Inclusive cutoff and product split
 
@@ -231,15 +231,17 @@ The printed complex adjacent-factor telescoping estimate remains unverified. The
 
 ### S28-016: Enclosing-root ratio
 
-- Real central products can be controlled by one enclosing-interval ratio.
-- The final complex 2048 theorem is available by a separate local comparison argument.
+- On every complex H1 source and every positive exterior gap n>=N>=1, the actual ratio of roots -N and N-1 has the printed bound (n+N+2/5)/(n-N+3/10).
+- Either boundary root divided by any central root obeys the corresponding absolute-index estimate on both exterior sides. The negative case uses roots N and -N+1 of the same source.
+- Actual endpoint localization supplies pi/5 and the central half-step strip bound. The denominator is proved strictly positive, including |n|=N.
 
 Public declarations:
 
-- `NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le`
-- `NLS.ZakharovShabat.exists_sourceH1_lemma28_1`
+- `NLS.ZakharovShabat.section28_complex_enclosing_root_ratio`
+- `NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed`
+- `NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative`
 
-The particular complex ratio of the two enclosing standard roots on the printed disc geometry has not been established in this review. It is not inferred from the independent final estimate.
+The [complex root estimates](../NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) retain the exact original weighted norm through its period-one source realization. They impose no reality or source-reflection premise. The central product is empty at N=0; the enclosing-root application concerns N>=1. This result does not discharge the adjacent-disc comparison or telescoping product.
 
 ### S28-017: Inclusive boundary arithmetic
 
@@ -276,7 +278,7 @@ Public declarations:
 
 - `NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le`
 
-The picture is contextual; the unverified complex distance and root-ratio claims are recorded explicitly in S28-014 through S28-016.
+The picture is contextual; the unverified complex distance and telescoping claims remain in S28-014 and S28-015. The enclosing-root ratio S28-016 is now proved.
 
 ### S28-020: Proposition 28.2 action-gap estimate
 

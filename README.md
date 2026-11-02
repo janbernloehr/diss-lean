@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 7 physical Dirichlet motion](coverage/SECTION_7.md). A global smooth physical NLS solution changes its actual central Dirichlet eigenvalue at a positive time; the same trajectory satisfies the exact approximation-solution definition for 1<p<=2. The rough sheet-sign clause remains open.
+Latest step: [Section 28 complex enclosing-root ratio](coverage/SECTION_28.md). Actual complex H1 enclosing-root ratio with constants 2/5 and 3/10, signed indices, the full target gap and the equality boundary. S28-016 is matched; three other Section 28 groups remain partial.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

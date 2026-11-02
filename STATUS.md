@@ -1,6 +1,21 @@
 # Implementation status
 
-## Current milestone: Section 7 physical Dirichlet motion
+## Current milestone: Section 28 complex enclosing-root ratio
+
+The [complex enclosing-root proof](NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) establishes the actual standard-root ratio in Section 28 with the exact constants 2/5 and 3/10. It uses complex H1 sources, the full target gap and the inclusive boundary index.
+
+Endpoint localization gives the numerator bound. The central half-step strip gives a strictly positive denominator bound. The signed theorem controls either boundary root divided by any central root; the negative case uses the opposite enclosing roots of the same source. No reality or reflection assumption is imposed.
+
+Seven positive theorems add no definitions, examples or refutations. S28-016 changes from partial to matched. The 30-group ledger consequently has 17 matched, eight corrected, three partial and two contextual groups. The rational bound for chi, adjacent-disc comparison and central telescoping passage remain partial.
+
+The full check passed: 8,648 build jobs, 7,729 public examples and an axiom audit of 45,037 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the remaining whole-dissertation reconciliation, retaining S28-006, S28-014 and S28-015, the Section 7 rough sheet-sign clause and unrestricted psi uniqueness, and the recorded broader qualifications. Correct constants directly and commit and push each completed step.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 7 physical Dirichlet motion
 
 The [physical Dirichlet motion proof](NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) constructs a smooth constant-in-space NLS solution and identifies its exact phase rotation by classical uniqueness. Literal Fourier integrals identify its original source at every exponent. A positive time changes its actual central Dirichlet eigenvalue.
 

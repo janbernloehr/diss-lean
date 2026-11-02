@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T04:26:10.571840+00:00",
-  "base_commit": "4d47ecc168caebe48c3f7c0bd5129c36f527165d",
+  "published_utc": "2026-11-02T04:48:54.138755+00:00",
+  "base_commit": "bc01c6ce1768c9593f0bb1ba9ff70ba7755884df",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 215,
-    "module_hash_checks": 4514,
-    "distinct_modules": 2235
+    "review_records": 216,
+    "module_hash_checks": 4521,
+    "distinct_modules": 2238
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "4d47ecc168caebe48c3f7c0bd5129c36f527165d",
-    "validated_state": "Fresh full check after Section 7 physical Dirichlet motion.",
+    "base_commit": "bc01c6ce1768c9593f0bb1ba9ff70ba7755884df",
+    "validated_state": "Fresh full check after Section 28 complex enclosing-root ratio.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8647,
+    "build_jobs": 8648,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45027,
+    "transitive_NLS_declarations": 45037,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 73382,
+    "gate_session": 3864,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4909,
-      "sha256": "c0ececfee7d2db6e643c17cbad15897e4a615e9830db4c8bc6a34311f008d376"
+      "files": 4910,
+      "sha256": "d66f787f5ad6e58576d8f98147014c6b37f94fd21ab09771f30a77900dce0eef"
     },
-    "full_gate_log_sha256": "fb35456644b61effb1c8116b7973cc1a0fce4eb6ce172fbd2eb24151c628bf71",
+    "full_gate_log_sha256": "ed2bdc3e428a90e973537ae275c4311b07ae1e64e2a224eabc2955460b1e226d",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section7PhysicalNLSMotionFullCheck.log"
+    "full_gate_log": "work/Section28ComplexEnclosingRootFullCheck.log"
   },
   "named_statements": [
     {
@@ -74409,6 +74409,158 @@
         "log_sha256": "fb35456644b61effb1c8116b7973cc1a0fce4eb6ce172fbd2eb24151c628bf71"
       },
       "source_record_sha256": "361485177d4f2f809153ecaad68bf5aced23990033bb39be091b8877e5927a53"
+    },
+    "Section28ComplexEnclosingRootSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "bc01c6ce1768c9593f0bb1ba9ff70ba7755884df",
+      "updated_utc": "2026-11-02T04:48:54.088694+00:00",
+      "source_lines": [
+        [
+          9791,
+          9796
+        ],
+        [
+          9791,
+          9796
+        ],
+        [
+          9791,
+          9796
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S28-016",
+          "source_lines": [
+            9791,
+            9796
+          ],
+          "requirement": "Exact norm estimates for complex standard roots",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_standardRoot_norm_upper",
+            "NLS.ZakharovShabat.section28_standardRoot_norm_lower_of_re",
+            "NLS.ZakharovShabat.section28_localized_distance_upper",
+            "NLS.ZakharovShabat.section28_standardRoot_norm_lower_of_abs_re"
+          ],
+          "reviewed_claims": [
+            "Endpoint-distance upper bounds control the standard-root norm, including its midpoint.",
+            "Endpoint real-part half-plane and strip bounds give quantitative root lower bounds.",
+            "The real-centered localization discs give a complex point-distance upper bound."
+          ],
+          "qualification": "No endpoint or source reality is assumed."
+        },
+        {
+          "ordered_group": "S28-016",
+          "source_lines": [
+            9791,
+            9796
+          ],
+          "requirement": "The literal positive-index enclosing-root ratio",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio"
+          ],
+          "reviewed_claims": [
+            "The actual source roots -N and N-1 satisfy the displayed rational bound with constants 2/5 and 3/10 for every n>=N>=1.",
+            "Actual complex H1 localization supplies the endpoint radius pi/5 and the central half-step strip bound; the full target gap and equality boundary are retained."
+          ],
+          "qualification": "The exact original weighted norm is retained through weightedBaseToPair phi = periodOnePotential psi. The empty central product at N=0 is already separate."
+        },
+        {
+          "ordered_group": "S28-016",
+          "source_lines": [
+            9791,
+            9796
+          ],
+          "requirement": "Both signed exterior cases on the unchanged complex source",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed",
+            "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative"
+          ],
+          "reviewed_claims": [
+            "Either boundary root divided by any central root obeys the absolute-index rational estimate.",
+            "The negative case uses roots N and -N+1 of the same source, without any symmetry or reflection premise."
+          ],
+          "qualification": "This enclosing-root estimate does not imply the adjacent-disc comparison or the central telescoping bound."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/ZakharovShabat/SourceStandardRootNorm.lean": "abc0f774d4a024f0748cc7dba974ee24e01b0811578e3cda19f96ca54596ac61",
+        "NLS/ZakharovShabat/SourceH1CentralProductBound.lean": "160b2dc8d80c33d8ff847927412a1499556434cea43fd864ddced486aa84bd88",
+        "NLS/ZakharovShabat/H1CutoffCentralStrip.lean": "13b98ae4d1edfac913a427b5507dc79f8ec8990bc9c5e521fa562c27863986ce",
+        "NLS/ZakharovShabat/SourceH1ExteriorFactorBound.lean": "f2d1ded5c87b26296cc34ab5d71378a25ba599bed4aa192a4ffbb653916abb96",
+        "NLS/ZakharovShabat/QuadraticSpectralBox.lean": "8fc6703ba3b18a4b5d03de4301fc76add826bde659d052c03e4129f348c3819f",
+        "NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean": "9db01bdf3081538211daf35a8da761ed0a1aee0c8e3890ce961ee43d0a4d6ee7"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean",
+        "NLS/ZakharovShabat/SourceStandardRootNorm.lean",
+        "NLS/ZakharovShabat/SourceH1CentralProductBound.lean",
+        "NLS/ZakharovShabat/H1CutoffCentralStrip.lean",
+        "NLS/ZakharovShabat/SourceH1ExteriorFactorBound.lean",
+        "NLS/ZakharovShabat/QuadraticSpectralBox.lean",
+        "NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "S28-006 complex chi bound by the reflected rational expression.",
+        "S28-014 adjacent complex-disc distance comparison (5.16).",
+        "S28-015 complex central telescoping product."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed",
+        "NLS.ZakharovShabat.section28_localized_distance_upper",
+        "NLS.ZakharovShabat.section28_standardRoot_norm_lower_of_abs_re",
+        "NLS.ZakharovShabat.section28_standardRoot_norm_lower_of_re",
+        "NLS.ZakharovShabat.section28_standardRoot_norm_upper"
+      ],
+      "declaration_inventory_count": 45037,
+      "qualification": "The [complex enclosing-root proof](NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) establishes the actual standard-root ratio in Section 28 with the exact constants 2/5 and 3/10. It uses complex H1 sources, the full target gap and the inclusive boundary index.\n\nEndpoint localization gives the numerator bound. The central half-step strip gives a strictly positive denominator bound. The signed theorem controls either boundary root divided by any central root; the negative case uses the opposite enclosing roots of the same source. No reality or reflection assumption is imposed.\n\nSeven positive theorems add no definitions, examples or refutations. S28-016 changes from partial to matched. The 30-group ledger consequently has 17 matched, eight corrected, three partial and two contextual groups. The rational bound for chi, adjacent-disc comparison and central telescoping passage remain partial. The enclosing-root passage S28-016 is matched; S28-006, S28-014 and S28-015 remain partial. The broader dissertation audit remains separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          118
+        ],
+        "images": {
+          "work/tmp/pdfs/section28-ordered-118.png": "c093e39c041e30ad6e150aa4fa7f1985f7bce8d0a4ccd1ad84c3f4f59454bd06"
+        }
+      },
+      "preceding_review_hash": "361485177d4f2f809153ecaad68bf5aced23990033bb39be091b8877e5927a53",
+      "validation_lean_sources": {
+        "files": 4910,
+        "sha256": "d66f787f5ad6e58576d8f98147014c6b37f94fd21ab09771f30a77900dce0eef"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 7,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio._proof_1_1",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative._proof_1_1",
+        "NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative._proof_1_2"
+      ],
+      "full_gate": {
+        "session": 3864,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section28ComplexEnclosingRootFullCheck.log",
+        "log_sha256": "ed2bdc3e428a90e973537ae275c4311b07ae1e64e2a224eabc2955460b1e226d"
+      },
+      "ordered_group_reconciliation": {
+        "group": "S28-016",
+        "previous": "partial",
+        "current": "matched",
+        "matched": 17,
+        "corrected": 8,
+        "partial": 3,
+        "contextual": 2
+      },
+      "source_record_sha256": "d804b47271d3d71baf6dc335f528a6d377265f8c550bfc1c0c8f8551482be47a"
     }
   }
 }
