@@ -36,6 +36,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/RankOneDominatedMatrix
   NLS/SequenceSpaces/MixedMajorantMatrix
   NLS/SequenceSpaces/ReciprocalSquareKernel
+  NLS/ComplexAnalysis/AffineLoopHomotopy
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -62,6 +63,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalHillFlow
   NLS/KdV/ClassicalHillSpectrum
   NLS/KdV/ClassicalSourcePrimitive
+  NLS/ComplexAnalysis/NestedCircleHomotopy
   NLS/KdV/ClassicalSpectralEmbedding
   NLS/KdV/ClassicalContourCoverage
   NLS/KdV/ActionHamiltonianMoments
@@ -190,7 +192,17 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalHillGapQuotientAsymptotics
   NLS/ComplexAnalysis/TwoZeroCriticalLocalization
   NLS/KdV/SquaredCoshCriticalDisc
-  NLS/KdV/ClassicalCriticalGapLocalization)
+  NLS/KdV/ClassicalCriticalGapLocalization
+  NLS/KdV/ClassicalHillGapScaleBounds
+  NLS/ComplexAnalysis/AnalyticTwoZeroRoot
+  NLS/KdV/ClassicalHillGapCutRoots
+  NLS/ComplexAnalysis/SquaredCircleHomotopy
+  NLS/ComplexAnalysis/AnalyticCutContour
+  NLS/KdV/ClassicalHillWeightedCutPeriods
+  NLS/KdV/WeightedCutGapBounds
+  NLS/KdV/ClassicalCriticalPrimitivePeriods
+  NLS/SequenceSpaces/HilbertCoordinateRemainder
+  NLS/KdV/ClassicalNormalizedGapMomentBounds)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

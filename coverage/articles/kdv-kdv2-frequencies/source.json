@@ -2538,6 +2538,191 @@
       "scope": "The derivative of the actual squared primitive coordinate is nonzero for norm less than pi^2, proved from free sine isolation and the exact derivative at zero; no principal-root analytic branch assumption",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "8eea01c21387b77dce43445c1956fbf32b8d8eca23887f4a4b9353a557a5161e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AffineLoopHomotopy.lean",
+      "source_labels": [
+        "Existing affine-loop homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Existing proved affine homotopy circle-integral interface directly selected and recompiled; no source change",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "86338cda7ea69dbeab68a41e04ce1b76d433280b4acb68266d4e04f2ff4512d1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticCutContour.lean",
+      "source_labels": [
+        "Selected actual cut-root and contour-homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual normalized second-gap bounds, preserving existing local extensions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "715b508e233c4c76c1e59deacc13f6e256c2e18a4558f469236f6df29848f0ae"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean",
+      "source_labels": [
+        "Selected actual cut-root and contour-homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual normalized second-gap bounds, preserving existing local extensions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "c770ee26b8bb2bf1ce4272b9e07fa0eb20aacae8989983249607215279e38f22"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NestedCircleHomotopy.lean",
+      "source_labels": [
+        "Existing nested-circle homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Existing proved nested-circle contour deformation directly selected and recompiled; no source change",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b6a978ee1257a635b54c8ec60843a44d76ad5b9a414670e2bc5684522f42639f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SquaredCircleHomotopy.lean",
+      "source_labels": [
+        "Selected actual cut-root and contour-homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual normalized second-gap bounds, preserving existing local extensions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "c865d50c33550ea88b1f6c7ea40200c2ad89bbe88dff7ce816a8080057ead502"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalPrimitivePeriods.lean",
+      "source_labels": [
+        "Actual critical-kernel high-gap bounds"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Constructs actual common cut data from normalized Hill family; all-order diagonal and off-diagonal critical primitive kernel bounds, including collapsed gaps; actual quadratic off-diagonal basis-period row bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b87a5d01420027d0c0b423994a4fb1cda4afbc466cdaa06c20bcbb31a228962c"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapCutRoots.lean",
+      "source_labels": [
+        "Selected actual cut-root and contour-homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual normalized second-gap bounds, preserving existing local extensions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "8ae434046744a72a93fc4db630119388b26ee1e03628f3e0f93686a6cc4421b7"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGapScaleBounds.lean",
+      "source_labels": [
+        "Selected actual cut-root and contour-homotopy dependency"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Selected proved continuous-potential source from convexity 135b1fa75525f1bf29841c56722aa528d49de7dc; imported_new_proved_dependency; directly compiled for actual normalized second-gap bounds, preserving existing local extensions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "sha256": "085763c78b98ad625822821eb1cd7ea6839898a14c68191c490414f262611e3e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWeightedCutPeriods.lean",
+      "source_labels": [
+        "Actual weighted primitive cut periods"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Actual weighted primitive power radius independence and energy cut-period identity with a fixed sign, exact lambda=z^2 Jacobian and annular analyticity allowing interior poles",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "36ed2d92c295f8c6d268243dbafcca65d1c60d3719eec50cdaf028fe10f95f6e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedGapMomentBounds.lean",
+      "source_labels": [
+        "Actual normalized second moments at high-gap scale, partial Lemma 3.3"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Constructs one local complex continuous-potential actual normalized family before all indices, with quadratic diagonal and quartic off-diagonal gap-length bounds; retains every original zeroth period, all-mode analyticity/odd cancellation and all positive high collapsed-gap cancellations. Sharp index dependence, diagonal leading coefficient, full rough/global W and physical frequency identities remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b83113c542702ab0349178fc0b4fa5c302ba3d5510a121f772936b3ac8d22e85"
+    },
+    {
+      "path": "NLS/KdV/WeightedCutGapBounds.lean",
+      "source_labels": [
+        "Power/resolvent contour estimates at gap scale"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Constructed nested cut-circle deformation and all-order power estimates; diagonal critical pole included in excluded cut, with quarter-gap separation; collapsed analytic removal",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e787f981b356eeb52a0913e4b4970f43069245f1dc038d728d34f53d72146c4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertCoordinateRemainder.lean",
+      "source_labels": [
+        "Hilbert coordinate remainder and zero-pairing bounds"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Unconjugated pairing coordinate split, coordinate control from a zero pairing, punctured lattice Hilbert majorant, and diagonal coordinate lower bound for an operator close to identity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "13e057b5a200d9bcfd1de4861c114e41e329b5e8e02f5ac34d6dfc0d0089fb01"
     }
   ],
   "dependencies_needed": [
@@ -2569,15 +2754,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1935,
-    "total_declarations_audited": 14088,
+    "candidate_declarations_audited": 2095,
+    "total_declarations_audited": 14239,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 183
+    "selected_modules": 195
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2670,11 +2855,19 @@
       "commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
       "record": "SHARED_CRITICAL_GAP_IMPORT.json",
       "kind": "selected continuous-potential normalized quotient dependencies; five compatible local sources retained; full branch and Miura/L2-only sources not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+      "record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json",
+      "kind": "selected continuous-potential cut-root and contour-homotopy dependencies; three local extensions retained; full branch and Miura/L2-only sources not merged"
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
   "shared_collapsed_gap_import_record": "SHARED_COLLAPSED_GAP_IMPORT.json",
   "normalized_moment_resolvent_record": "NORMALIZED_MOMENT_RESOLVENT.md",
   "critical_gap_localization_record": "CRITICAL_GAP_LOCALIZATION.md",
-  "shared_critical_gap_import_record": "SHARED_CRITICAL_GAP_IMPORT.json"
+  "shared_critical_gap_import_record": "SHARED_CRITICAL_GAP_IMPORT.json",
+  "normalized_second_gap_bounds_record": "NORMALIZED_SECOND_GAP_BOUNDS.md",
+  "shared_critical_period_gap_import_record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json"
 }

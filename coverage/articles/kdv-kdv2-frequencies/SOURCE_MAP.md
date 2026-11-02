@@ -416,3 +416,22 @@ remainder sequence, the full rough/global W scope, a normalized numerator
 zero estimate or a physical frequency identity. Details and selected
 source provenance are in `CRITICAL_GAP_LOCALIZATION.md` and
 `SHARED_CRITICAL_GAP_IMPORT.json`. All main theorem rows remain open.
+
+
+### Actual high-gap bounds for normalized second moments
+
+`exists_classicalHill_normalized_second_gap_bounds` constructs one actual
+local complex continuous-potential normalized family. With
+x_k=norm(classicalHillHighSquaredGap q k)/k², its diagonal second moments
+are bounded by B*x_k and distinct-index second moments by B*x_k², for one
+B and high cutoff before all q,n,k. All-mode moment analyticity, exact
+zeroth periods, odd cancellation and positive high collapsed-gap
+cancellation hold on the same neighborhood. Weighted cut-period
+homotopies, critical-pole gap-circle separation, all-order actual
+critical-kernel bounds and a Hilbert remainder estimate provide the proof.
+
+This is progress toward Lemma 3.3 (PDF pages 27–30), without its full
+sharp index dependence or diagonal leading term. It does not identify
+physical frequencies through (69), prove the rough/global W statement,
+or close a main theorem. See `NORMALIZED_SECOND_GAP_BOUNDS.md` and
+`SHARED_CRITICAL_PERIOD_GAP_IMPORT.json` for exact scope and provenance.

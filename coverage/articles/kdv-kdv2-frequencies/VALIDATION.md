@@ -69,8 +69,9 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalHillCollapsedDifferentialMoments.lean`, `ClassicalNormalizedCollapsedMoments.lean`, extended `FrequencyMoments.lean` | Every positive actual normalized moment vanishes at each high collapsed gap on one common local family, including the diagonal; retains all-mode analyticity, exact zeroth periods and odd cancellation. |
 | `ClassicalCriticalResolvent.lean`, `CirclePowerIntegrationByParts.lean`, `ClassicalNormalizedMomentResolvent.lean` | Actual analytic Hilbert critical/squared resolvents; all-mode original contour avoidance; exact all-order 2*pi/(m+1) moment formula; absolute positive-index convergence outside the integral via a Bochner integral and Holder pairing. |
 | Selected normalized endpoint-quotient sources from convexity `135b1fa`, extended `ClassicalCriticalTailAnalytic.lean`, and new `TwoZeroCriticalLocalization.lean`, `SquaredCoshCriticalDisc.lean`, `ClassicalCriticalGapLocalization.lean` | Arbitrarily small common high critical-frequency confinement at any continuous complex source; actual critical displacement at quadratic gap scale with arbitrarily small coefficient, analytic families, collapsed equality and diagonal critical-pole separation on gap circles. |
+| Selected cut-root and contour-homotopy sources from convexity `135b1fa`, existing affine/nested circle dependencies, and five new weighted-period/Hilbert/moment modules | Actual all-order high-gap critical kernel bounds and quadratic basis-period bounds; constructed normalized second moments with quadratic diagonal and quartic off-diagonal gap-length bounds, retaining all original periods and cancellations on one local family. |
 
-All 183 selected modules compile with pinned **Lean 4.33.1**, commit
+All 195 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -108,6 +109,7 @@ PASS NLS/SequenceSpaces/ConvolutionMatrixAnalytic
 PASS NLS/SequenceSpaces/RankOneDominatedMatrix
 PASS NLS/SequenceSpaces/MixedMajorantMatrix
 PASS NLS/SequenceSpaces/ReciprocalSquareKernel
+PASS NLS/ComplexAnalysis/AffineLoopHomotopy
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -134,6 +136,7 @@ PASS NLS/KdV/ClassicalFreePrimitive
 PASS NLS/KdV/ClassicalHillFlow
 PASS NLS/KdV/ClassicalHillSpectrum
 PASS NLS/KdV/ClassicalSourcePrimitive
+PASS NLS/ComplexAnalysis/NestedCircleHomotopy
 PASS NLS/KdV/ClassicalSpectralEmbedding
 PASS NLS/KdV/ClassicalContourCoverage
 PASS NLS/KdV/ActionHamiltonianMoments
@@ -263,11 +266,21 @@ PASS NLS/KdV/ClassicalHillGapQuotientAsymptotics
 PASS NLS/ComplexAnalysis/TwoZeroCriticalLocalization
 PASS NLS/KdV/SquaredCoshCriticalDisc
 PASS NLS/KdV/ClassicalCriticalGapLocalization
-Axiom audit passed: 1935 candidate declarations; 14088 declarations total.
+PASS NLS/KdV/ClassicalHillGapScaleBounds
+PASS NLS/ComplexAnalysis/AnalyticTwoZeroRoot
+PASS NLS/KdV/ClassicalHillGapCutRoots
+PASS NLS/ComplexAnalysis/SquaredCircleHomotopy
+PASS NLS/ComplexAnalysis/AnalyticCutContour
+PASS NLS/KdV/ClassicalHillWeightedCutPeriods
+PASS NLS/KdV/WeightedCutGapBounds
+PASS NLS/KdV/ClassicalCriticalPrimitivePeriods
+PASS NLS/SequenceSpaces/HilbertCoordinateRemainder
+PASS NLS/KdV/ClassicalNormalizedGapMomentBounds
+Axiom audit passed: 2095 candidate declarations; 14239 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 183 selected modules (including generated and private declarations)
+the 195 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -862,3 +875,37 @@ The weighted lp remainder in Lemma 2.11(i), full rough/global W scope,
 sharp normalized root/moment estimates, canonical scalar L_n=1 and
 physical frequency/action/Birkhoff flow identification remain open.
 No main theorem inventory row is marked verified.
+
+
+## Actual normalized second moments at high-gap scale
+
+The current milestone is detailed in `NORMALIZED_SECOND_GAP_BOUNDS.md`.
+One constructed local complex continuous-potential normalized family has
+quadratic diagonal and quartic off-diagonal second-moment gap-length
+bounds on every high contour, uniformly before all numerator indices.
+Every original zeroth period, all-mode analyticity and odd cancellation,
+and every positive high collapsed-gap cancellation are retained.
+The actual diagonal zeroth-period lower bound is constructed from
+operator-norm continuity at the free identity. Actual cut-period
+homotopies avoid critical poles; the exact Bochner resolvent formula
+and zeroth normalization preserve the additional off-diagonal gap factor.
+
+All 195 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 2095
+selected declarations and 14239 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and checker/audit/coverage selections agree.
+Selected outputs are private; canonical sources and builds remain read
+only. No placeholders, new axioms, heartbeat increases, disabled linters
+or warning exceptions are introduced.
+
+`SHARED_CRITICAL_PERIOD_GAP_IMPORT.json` records five proved selected
+cut-root/contour dependencies from convexity `135b1fa` and three retained
+local extensions. Existing affine/nested circle dependencies are directly
+recompiled. The whole branch and Miura/L2-only modules are not imported.
+No ZS RealType wrapper is imposed on the Hill coefficient pair.
+
+Full sharp index dependence, diagonal asymptotics, finite low even
+collapsed contours, rough/global W compatibility, canonical scalar L_n=1
+and physical frequency/action/Birkhoff identification remain open.
+No main-theorem inventory row is marked verified.

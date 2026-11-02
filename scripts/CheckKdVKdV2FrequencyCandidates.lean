@@ -1,3 +1,8 @@
+import NLS.KdV.ClassicalNormalizedGapMomentBounds
+import NLS.KdV.ClassicalCriticalPrimitivePeriods
+import NLS.ComplexAnalysis.AnalyticCutContour
+import NLS.ComplexAnalysis.SquaredCircleHomotopy
+import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ClassicalCriticalGapLocalization
 import NLS.KdV.SquaredCoshCriticalDisc
 import NLS.ComplexAnalysis.TwoZeroCriticalLocalization
@@ -71,6 +76,7 @@ run_cmd do
     `NLS.SequenceSpaces.RankOneDominatedMatrix,
     `NLS.SequenceSpaces.MixedMajorantMatrix,
     `NLS.SequenceSpaces.ReciprocalSquareKernel,
+    `NLS.ComplexAnalysis.AffineLoopHomotopy,
     `NLS.ComplexAnalysis.ParametricDividedDifference,
     `NLS.ComplexAnalysis.AnalyticImplicitBanachRoot,
     `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
@@ -97,6 +103,7 @@ run_cmd do
     `NLS.KdV.ClassicalHillFlow,
     `NLS.KdV.ClassicalHillSpectrum,
     `NLS.KdV.ClassicalSourcePrimitive,
+    `NLS.ComplexAnalysis.NestedCircleHomotopy,
     `NLS.KdV.ClassicalSpectralEmbedding,
     `NLS.KdV.ClassicalContourCoverage,
     `NLS.KdV.ActionHamiltonianMoments,
@@ -225,7 +232,17 @@ run_cmd do
     `NLS.KdV.ClassicalHillGapQuotientAsymptotics,
     `NLS.ComplexAnalysis.TwoZeroCriticalLocalization,
     `NLS.KdV.SquaredCoshCriticalDisc,
-    `NLS.KdV.ClassicalCriticalGapLocalization]
+    `NLS.KdV.ClassicalCriticalGapLocalization,
+    `NLS.KdV.ClassicalHillGapScaleBounds,
+    `NLS.ComplexAnalysis.AnalyticTwoZeroRoot,
+    `NLS.KdV.ClassicalHillGapCutRoots,
+    `NLS.ComplexAnalysis.SquaredCircleHomotopy,
+    `NLS.ComplexAnalysis.AnalyticCutContour,
+    `NLS.KdV.ClassicalHillWeightedCutPeriods,
+    `NLS.KdV.WeightedCutGapBounds,
+    `NLS.KdV.ClassicalCriticalPrimitivePeriods,
+    `NLS.SequenceSpaces.HilbertCoordinateRemainder,
+    `NLS.KdV.ClassicalNormalizedGapMomentBounds]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -623,3 +623,32 @@ main theorems remain open.
 Strict validation: all 183 selected modules pass; the complete transitive
 axiom audit covers 1935 selected declarations and 14088 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+
+## Actual normalized second moments at high-gap scale
+
+The constructed normalized family now has quadratic diagonal and quartic
+off-diagonal second-moment bounds at every sufficiently high actual gap.
+Writing x_k=norm(actual squared gap)/k², one constant B gives
+norm(Omega_kk^2)<=B*x_k and norm(Omega_nk^2)<=B*x_k² for n!=k.
+One neighborhood, cutoff and constant precede all numerator/contour
+indices. Exact zeroth periods, all-mode analyticity and odd cancellation,
+and every positive high collapsed-gap cancellation remain on that family.
+
+Actual weighted primitive powers are deformed to gap circles without
+crossing critical poles; the previously proved quarter-gap localization
+handles the diagonal. All-order critical-kernel bounds and quadratic
+basis-period row bounds are proved first. The exact Hilbert resolvent
+formula and zeroth normalization then preserve the extra gap factor
+for distinct numerator/contour indices. The diagonal zeroth-period lower
+bound is constructed from actual operator continuity at the free identity.
+
+Read `NORMALIZED_SECOND_GAP_BOUNDS.md` and the selected shared-source
+record `SHARED_CRITICAL_PERIOD_GAP_IMPORT.json`. Full sharp n,k dependence,
+diagonal asymptotics, rough/global W compatibility, the canonical scalar
+and physical frequency/action/Birkhoff identification remain open. Every
+main theorem remains unverified.
+
+Strict validation: all 195 selected modules pass; the complete transitive
+axiom audit covers 2095 selected declarations and 14239 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
