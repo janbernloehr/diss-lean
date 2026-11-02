@@ -55,24 +55,28 @@ theorem exists_classicalHill_cut_root_local_sign
 
 theorem exists_classicalHill_gap_cut_roots (q : Curve ℂ) :
     ∃ r C : ℝ, ∃ N : ℕ, ∃ V : Set (Curve ℂ),
-      0 < r ∧ 0 < C ∧ 0 < N ∧ IsOpen V ∧ q ∈ V ∧
+      0 < r ∧ r ≤ Real.pi/4 ∧ 0 < C ∧ 0 < N ∧ IsOpen V ∧ q ∈ V ∧
       ∀ n : ℕ+, N ≤ (n : ℕ) → ∃ K : ℂ × Curve ℂ → ℂ,
         AnalyticOnNhd ℂ K (classicalHillGapSquareDisc n r ×ˢ V) ∧
         (∀ t ∈ (classicalHillGapSquareDisc n r ×ˢ V) ∩ classicalHillContinuationDomain,
           K t = (classicalHillContinuedPrimitive t+I*(n : ℂ)*Real.pi)^2) ∧
         ∀ a ∈ V, ∃ l u : ℂ, ∃ B : ℂ → ℂ,
           ClassicalHillHighGapPair a n l u ∧
+          l ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8) ∧
+          u ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8) ∧
           closedBall ((l+u)/2) ‖l-u‖ ⊆
             ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r) ∧
           AnalyticOnNhd ℂ B
             (ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r) \ segment ℝ l u) ∧
           (∀ z ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r) \ segment ℝ l u,
             B z ≠ 0 ∧ B z^2 = K (z,a)) ∧
+          (l = u → AnalyticOnNhd ℂ B
+            (ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r))) ∧
           ∀ z ∈ closedBall ((l+u)/2) ‖l-u‖ \ segment ℝ l u,
             ‖B z‖ ≤ C*‖l-u‖/(n : ℕ) := by
-  obtain ⟨r,N,V,hr,_,hN,hV,hq,hfamily⟩ := exists_classicalHill_gap_quotient_bounds q
+  obtain ⟨r,N,V,hr,hrpi,hN,hV,hq,hfamily⟩ := exists_classicalHill_gap_quotient_bounds q
   let C : ℝ := 3/(Real.pi*r)
-  refine ⟨r,C,N,V,hr,by dsimp only [C]; positivity,hN,hV,hq,?_⟩
+  refine ⟨r,C,N,V,hr,hrpi,by dsimp only [C]; positivity,hN,hV,hq,?_⟩
   intro n hn
   obtain ⟨K,hK,_,_,hmatch,hpairs⟩ := hfamily n hn
   refine ⟨K,hK,hmatch,?_⟩
@@ -83,13 +87,13 @@ theorem exists_classicalHill_gap_cut_roots (q : Curve ℂ) :
   have hR : 0 < R := by dsimp only [R]; positivity
   have hQball : AnalyticOnNhd ℂ (twoZeroQuotient (fun z => K (z,a)) l u) (ball c R) :=
     hQ.mono ball_subset_closedBall
-  obtain ⟨B,hB,hBsq⟩ := exists_analytic_squareRoot_on_two_zero_cut
+  obtain ⟨B,hB,hBsq,hBcollapsed⟩ := exists_analytic_squareRoot_on_two_zero_cut
     (fun z => K (z,a)) (twoZeroQuotient (fun z => K (z,a)) l u) l u c R hR
       hQball hunit (fun z _ => hfactor z)
   have hl' : ‖l-c‖ ≤ R/8 := (show ‖l-c‖ < R/8 by simpa only [mem_ball,dist_eq_norm] using hl).le
   have hu' : ‖u-c‖ ≤ R/8 := (show ‖u-c‖ < R/8 by simpa only [mem_ball,dist_eq_norm] using hu).le
   have hsub := closed_gap_ball_subset_energy_ball l u c R hR hl' hu'
-  refine ⟨l,u,B,hpair,hsub,hB,hBsq,?_⟩
+  refine ⟨l,u,B,hpair,hl,hu,hsub,hB,hBsq,hBcollapsed,?_⟩
   intro z hz
   have hzin := hsub hz.1
   have hk := norm_two_zero_square_on_gap_ball (fun z => K (z,a))

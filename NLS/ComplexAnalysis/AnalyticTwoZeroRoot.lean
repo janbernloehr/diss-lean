@@ -41,24 +41,34 @@ theorem exists_analytic_squareRoot_on_two_zero_cut
     (hne : ∀ z ∈ ball c R, Q z ≠ 0)
     (hfactor : ∀ z ∈ ball c R, f z = (z-a)*(z-b)*Q z) :
     ∃ B : ℂ → ℂ, AnalyticOnNhd ℂ B (ball c R \ segment ℝ a b) ∧
-      ∀ z ∈ ball c R \ segment ℝ a b, B z ≠ 0 ∧ B z^2 = f z := by
+      (∀ z ∈ ball c R \ segment ℝ a b, B z ≠ 0 ∧ B z^2 = f z) ∧
+      (a = b → AnalyticOnNhd ℂ B (ball c R)) := by
   obtain ⟨h,hh,hsq⟩ := exists_analytic_squareRoot_on_ball Q c R hR hQ hne
   let B : ℂ → ℂ := fun z => endpointRoot a b z*h z
   have hB : AnalyticOnNhd ℂ B (ball c R \ segment ℝ a b) := by
     intro z hz
     exact (analyticOnNhd_endpointRoot a b z hz.2).mul (hh z hz.1)
-  refine ⟨B,hB,?_⟩
-  intro z hz
-  have hbsq : B z^2 = f z := by
-    dsimp only [B]
-    rw [mul_pow,endpointRoot_sq a b z hz.2,(hsq z hz.1).2,hfactor z hz.1]
-  have hza : z ≠ a := fun he => hz.2 (he ▸ left_mem_segment ℝ a b)
-  have hzb : z ≠ b := fun he => hz.2 (he ▸ right_mem_segment ℝ a b)
-  have hfne : f z ≠ 0 := by
-    rw [hfactor z hz.1]
-    exact mul_ne_zero (mul_ne_zero (sub_ne_zero.mpr hza) (sub_ne_zero.mpr hzb)) (hne z hz.1)
-  refine ⟨?_,hbsq⟩
-  intro he
-  exact hfne (by rw [← hbsq,he]; simp)
+  refine ⟨B,hB,?_,?_⟩
+  · intro z hz
+    have hbsq : B z^2 = f z := by
+      dsimp only [B]
+      rw [mul_pow,endpointRoot_sq a b z hz.2,(hsq z hz.1).2,hfactor z hz.1]
+    have hza : z ≠ a := fun he => hz.2 (he ▸ left_mem_segment ℝ a b)
+    have hzb : z ≠ b := fun he => hz.2 (he ▸ right_mem_segment ℝ a b)
+    have hfne : f z ≠ 0 := by
+      rw [hfactor z hz.1]
+      exact mul_ne_zero (mul_ne_zero (sub_ne_zero.mpr hza) (sub_ne_zero.mpr hzb)) (hne z hz.1)
+    refine ⟨?_,hbsq⟩
+    intro he
+    exact hfne (by rw [← hbsq,he]; simp)
+  · intro hab
+    subst b
+    have he : B = fun z => (a-z)*h z := by
+      funext z
+      simp only [B,endpointRoot,sub_self,zero_pow (by norm_num : 2 ≠ 0),
+        NLS.ZakharovShabat.normalizedStandardRoot_zeroGap,
+        show (a+a)/2 = a by ring]
+    rw [he]
+    exact (analyticOnNhd_const.sub analyticOnNhd_id).mul hh
 
 end NLS.ComplexAnalysis

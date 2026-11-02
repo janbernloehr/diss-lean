@@ -27,6 +27,10 @@ norm at most 4/(n*pi*r)^2. This gives the gap-length bound for the actual
 primitive wherever admissible, and constructs analytic roots with the
 same bound on the full local cut domain. Their physical sign is fixed
 locally at any admissible regular anchor; global matching remains open.
+The actual high cubic moments now satisfy the quartic gap bound on a
+common complex potential neighborhood, by fixing one sign on a connected
+small circle and deforming that circle. This does not require global
+matching on every overlap component.
 The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
@@ -772,9 +776,51 @@ thus constructs B_n analytic on the entire open energy disc minus the
 straight gap, with B_n^2=K_n and |B_n|<=C*gamma/n on the gap-sized part.
 At any admissible regular anchor one of its two signs agrees as a germ
 with the actual shifted primitive. The same sign on all overlap
-components, physical contour deformation, and the cubic moment bound
-O(gamma^4/n^3) are not yet proved. Central gaps, the H^-1/action extension,
-nonpositivity and physical Hamiltonian identification also remain open.
+components remains unproved. The moment deformation and cubic bound are
+now obtained by the circle normalization below. Central gaps, the
+H^-1/action extension, nonpositivity and physical Hamiltonian identification
+remain open.
+
+### Actual high-contour deformation and the quartic gap bound
+
+[`ClassicalHillAnnulusCoverage.lean`](../../../NLS/KdV/ClassicalHillAnnulusCoverage.lean)
+confines all high roots uniformly along the compact straight source
+segments of nearby complex potentials. The whole high annulus outside
+any prescribed positive inner frequency radius belongs to the actual
+source-continuation domain.
+[`ClassicalHillMomentRadius.lean`](../../../NLS/KdV/ClassicalHillMomentRadius.lean)
+then shrinks the original quarter-pi frequency contour without changing
+the literal moment, including the exact energy Jacobian 2*z.
+
+[`SquaredCircleHomotopy.lean`](../../../NLS/ComplexAnalysis/SquaredCircleHomotopy.lean)
+deforms the squared frequency circle to the energy circle with center
+c^2 and radius 2*c*rho. Its compact image stays between radii c*rho and
+3*c*rho. The exact pullback integral, rather than a relabeling of the
+frequency contour as an energy circle, is proved.
+[`ClassicalHillMomentCutRoot.lean`](../../../NLS/KdV/ClassicalHillMomentCutRoot.lean)
+fixes one sign on the connected frequency circle of radius r/4. It proves
+the original high moment equals k^3 times the cut-root cubic moment on
+the energy circle of radius n*pi*r/2, with k=1 or -1.
+
+[`AnalyticCutContour.lean`](../../../NLS/ComplexAnalysis/AnalyticCutContour.lean)
+supplies deformation between nested circles enclosing the same cut.
+[`ClassicalHillCubicGapBounds.lean`](../../../NLS/KdV/ClassicalHillCubicGapBounds.lean)
+uses it to shrink to the circle of radius gamma=|l-u| about the gap
+midpoint. The primitive bound contributes gamma^3/n^3 and the circle
+radius contributes gamma. If the gap collapses, the constructed root
+extends analytically through it and the cubic moment vanishes. Thus
+
+```
+|classicalHillHighContourMoment n a| <= C*|l_n-u_n|^4/n^3,
+|8*n*pi*classicalHillHighContourMoment n a| <= C'*(|l_n-u_n|^2/n)^2.
+```
+
+The constants, cutoff and complex open potential neighborhood are chosen
+before all high indices and nearby complex potentials. Analyticity of
+the literal moment and its weighted gap estimate hold on the same
+neighborhood. The potential space is still C([0,1],C); identifying actual
+actions, proving gamma^2/n<=C*|I_n| and descending analytically to the
+weighted action space remain essential for Theorem 1.1.
 
 ## Earlier checked local consequences
 
@@ -808,13 +854,15 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    indexed endpoint limits, joint squared-primitive matching and bounded
    analytic squares across entire high gaps are now proved. Endpoint
    deflation and analytic roots on the local cut domain are also proved;
-   match their physical sign across the relevant overlaps and deform
-   the original contours.
+   their physical sign on a connected small circle and the deformation
+   of the original high contours are now established for moment estimates.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
-2. Prove their **complex-neighborhood** quadratic action bounds, including
-   |R_n|=O(gamma_n^4/n^3) and gamma_n^2/n=O(I_n), with local constants
-   uniform in n. Real-axis estimates alone cannot supply these hypotheses.
+2. Extend the proved **complex-neighborhood** bound
+   |R_n|=O(gamma_n^4/n^3) from continuous potentials to the required rough
+   action setting, and prove gamma_n^2/n=O(|I_n|). The latter comparison
+   converts the checked exact weighted gap estimate into the quadratic
+   action estimate, with local constants uniform in n.
 3. Apply the checked analytic reduction to those actual moments. Then prove
    the identification of the exterior quartic coefficient with the physical
    energy from (4.7). The contour decomposition and calculation in
@@ -858,15 +906,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All fifty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All fifty-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers: 503 declarations in total, transitively. Only `propext`,
+helpers: 539 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
-included in the same transitive audit, together with all thirteen new
+included in the same transitive audit, together with all nineteen
 public complex-analysis declarations.
 See `validation.json` for exact file hashes and scope.
 

@@ -7,6 +7,7 @@ import NLS.KdV.ClassicalHillHighEndpointNormalization
 import NLS.KdV.ClassicalHillSquaredPrimitiveMatching
 import NLS.KdV.ClassicalHillWholeGapSquares
 import NLS.KdV.ClassicalHillGapCutRoots
+import NLS.KdV.ClassicalHillCubicGapBounds
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
@@ -32,7 +33,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.midpoint_mem_complex_segment,
     ``NLS.ComplexAnalysis.endpointRoot_sq,
     ``NLS.ComplexAnalysis.analyticOnNhd_endpointRoot,
-    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_two_zero_cut]
+    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_two_zero_cut,
+    ``NLS.ComplexAnalysis.norm_sq_sub_sq_of_small_sphere,
+    ``NLS.ComplexAnalysis.square_circleMap_sub_linear,
+    ``NLS.ComplexAnalysis.squaredCirclePath_contDiffOn,
+    ``NLS.ComplexAnalysis.squaredCircleHomotopy_annulus,
+    ``NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
