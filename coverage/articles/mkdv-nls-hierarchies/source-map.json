@@ -32,7 +32,7 @@
         "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension, compatible with the original higher-regularity hierarchy.",
         "Both clauses hold on all original complex H^m inputs with the independently constructed K_m on complex H^(m-1), including m=1. Its actual Frechet gradient is constructed on that native domain; Gardner differentiation is the genuine physical distribution derivative.",
         "The literal physical Hill trace at r^2 has all-order real-axis estimates with odd phase coefficients 2*K_m.",
-        "Full identification with the source free-normalized spectral primitive sheets, action/gap labels and mKdV spectral Hamiltonians remains open."
+        "The actual independently constructed free-normalized Hill root and primitive agree with the NLS root and primitive for real C1 profiles at nonreal frequencies with Re z>0. Full complex Sobolev extension, labeled Hill primitive/action identification and mKdV spectral Hamiltonians remain open."
       ],
       "scalar_clause_status": "proved_exact_complex_Hm_domain",
       "weak_flow_status": "proved_exact_complex_Hm_inputs_for_independent_scalar_Hill_Miura_hierarchy",
@@ -161,6 +161,30 @@
         "The scalar equation and actual IVP intertwining are proved; the independent physical discriminant comparison has now been proved on original H1 inputs.",
         "Hilbert operator spectrum/gap labels and the paper literal matrix-conjugacy formula are not claimed as separate completed declarations."
       ]
+    },
+    {
+      "label": "Lemma 4",
+      "page": 11,
+      "status": "qualified_real_C1_nonreal_right_half_plane",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane"
+      ],
+      "quantifiers": "forall real-valued complex C1 period-one u, forall complex z with Re z>0 and Im z!=0",
+      "limits": [
+        "The shared Hill root is continued from its literal free value along actual real potential paths. The original full H1 domain and the entire labeled gap complement remain open."
+      ]
+    },
+    {
+      "label": "Lemma 5",
+      "page": 11,
+      "status": "qualified_real_C1_nonreal_right_half_plane",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_C1_right_halfPlane"
+      ],
+      "quantifiers": "forall real-valued complex C1 period-one u, forall complex z with Re z>0 and Im z!=0",
+      "limits": [
+        "Exact equality of actual independently constructed free-normalized primitives, with no additive logarithm period. Identification with the complete labeled Hill gap primitive, its boundary values and spectral actions remains open."
+      ]
     }
   ],
   "normalization": {
@@ -219,5 +243,14 @@
     "native_weak_flow": "NLS.MKdV.nativeMiuraHillFlowRestriction",
     "endpoint_two_top_factor_mean": "NLS.ZakharovShabat.sobolevPolynomialEndpointMean",
     "actual_Hill_trace_calibration": "NLS.MKdV.exists_physicalMiuraDiscriminant_hamiltonian_error_bound"
+  },
+  "shared_hill_primitive_integration": {
+    "branch": "articles/kdv-convexity",
+    "commit": "d12831411f4ad00777304b6623dbb3226730b4eb",
+    "unchanged_source_modules": 19,
+    "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
+    "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
+    "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
+    "remaining": "Full Sobolev and labeled gap/action identifications."
   }
 }

@@ -578,3 +578,56 @@ still essential. Theorems 3 and 4 also require fixed spectral gap labels,
 action comparisons, mKdV coordinates, brackets and frequency identification,
 with the recorded source sign and signed-mean qualifications. Theorem 2
 retains its verified exact original complex Sobolev domains.
+
+
+## 2026-11-02 — actual free-normalized Miura/Hill and NLS sheet comparison
+
+Integrated 19 unchanged checked shared modules from `articles/kdv-convexity`,
+pinned at `d12831411f4ad00777304b6623dbb3226730b4eb`. These provide the
+independent scalar Hill IVP, physical Green identity and spectral reality,
+free-normalized source-continuation root and primitive, half-plane signs,
+reflection and band normalization. Their imported source files are
+byte-for-byte identical to the pinned branch.
+
+`MiuraHillSpectralBridge.lean` proves equality between the existing physical
+Miura solution state and the shared scalar Hill state by physical weak IVP
+uniqueness. Its discriminant identity holds at every complex energy, including
+zero, whenever the continuous Hill potential agrees almost everywhere with
+the physical Miura potential of an absolutely continuous profile. In
+particular every complex C1 profile has this independent operator comparison;
+periodicity then gives the exact diagonal ZS trace identity.
+
+`ContinuousPotentialSource.lean` supplies the bounded map from an actual
+continuous interval pair to its original physical Fourier source. Both its
+canonical discriminant agreement and its real-type preservation are proved.
+`HillNLSPrimitivePathComparison.lean` transfers physical trace equality to
+exact root and primitive equality along continuous real source paths from
+zero, using nonvanishing and the literal free values to fix the sign and the
+additive logarithm period.
+
+`MiuraHillPrimitiveComparison.lean` instantiates these results on the actual
+Miura image of s*u: q_s=s*u_prime+s_squared*u_squared. This quadratic path
+is continuous in the curve norm, remains real, and has the same actual trace
+as the original Fourier source of s*u. The independently constructed Hill
+root and primitive at z_squared therefore equal the NLS canonical root and
+abelian primitive at z for every real C1 period-one profile and every
+nonreal z with positive real part. The article exports these as
+`lemma4_root_real_C1_right_halfPlane` and
+`lemma5_primitive_real_C1_right_halfPlane`.
+
+These are qualified results. The original full H1 domains, real bands and
+boundary points of the labeled gap complement, action integrals and mKdV
+Birkhoff/frequency identification remain essential obligations. Theorem 1 is
+still recorded as partial for the source spectral hierarchy; Theorems 3 and 4
+remain incomplete. No completeness claim or new axiom is introduced.
+
+All 104 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 1,122 declarations and generated auxiliaries; the
+combined audit passed for 46,306 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 598 declarations (470 theorems, 128 definitions; aliases
+excluded), with SHA256 hashes for all 104 checked sources and both checker
+files. Validation uses read-only pinned cached imports and private build
+outputs; the entire dependency tree was not rebuilt from source. Canonical
+main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.

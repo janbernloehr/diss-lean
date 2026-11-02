@@ -308,7 +308,7 @@ identification, native scalar extension, and the remaining main-theorem
 obligations are in [the progress log](PROGRESS.md).
 
 
-Latest milestone: the scalar hierarchy is independently constructed on its
+Previous milestone: the scalar hierarchy is independently constructed on its
 native complex H^(m-1) domains, including the L2 mass endpoint. The native
 Proposition 6 identity holds there; the Theorem 1 comparison uses its native
 gradient on all complex H^m inputs. The literal physical Hill trace has
@@ -321,3 +321,26 @@ declarations (326 theorems, 98 definitions; aliases excluded). Validation
 used pinned cached imports, not a rebuild of the entire dependency tree.
 Remaining source primitive/action and main-theorem obligations are in
 [the progress log](PROGRESS.md).
+
+
+Latest milestone: the actual free-normalized Hill root and primitive equal
+the original NLS canonical root and abelian primitive for real C1 periodic
+Miura profiles at nonreal frequencies with Re z>0. Physical IVP uniqueness
+identifies the independent Hill constructions, including zero energy for
+the discriminant. The root sign and logarithm period are fixed by continuity
+from the free potential along the quadratic Miura image of s*u.
+The checked shared Hill primitive developments are reused unchanged from
+`articles/kdv-convexity` at `d12831411f4ad00777304b6623dbb3226730b4eb`.
+The full Sobolev and labeled gap/action extensions remain open; see
+[the progress log](PROGRESS.md).
+
+All 104 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 1,122 declarations and generated auxiliaries; the
+combined audit passed for 46,306 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 598 declarations (470 theorems, 128 definitions; aliases
+excluded), with SHA256 hashes for all 104 checked sources and both checker
+files. Validation uses read-only pinned cached imports and private build
+outputs; the entire dependency tree was not rebuilt from source. Canonical
+main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.

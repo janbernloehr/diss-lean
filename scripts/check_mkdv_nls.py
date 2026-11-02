@@ -32,6 +32,27 @@ version = subprocess.check_output([args.lean, "--version"], text=True).strip()
 if not version.startswith("Lean (version 4.33.1,"):
     parser.error(f"Expected pinned Lean 4.33.1, got {version}")
 modules = [
+    "NLS/KdV/ConstantUpperSpectralBridge.lean",
+    "NLS/KdV/ClassicalSpectralSymmetry.lean",
+    "NLS/KdV/ClassicalDiscriminant.lean",
+    "NLS/KdV/ClassicalHillFlow.lean",
+    "NLS/KdV/ClassicalLocalPrimitive.lean",
+    "NLS/KdV/ClassicalHillSpectrum.lean",
+    "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean",
+    "NLS/KdV/ClassicalHillGreen.lean",
+    "NLS/KdV/ClassicalFreePrimitive.lean",
+    "NLS/KdV/ClassicalSourcePrimitive.lean",
+    "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean",
+    "NLS/KdV/ClassicalSpectralEmbedding.lean",
+    "NLS/KdV/ClassicalContourCoverage.lean",
+    "NLS/KdV/ClassicalHighGapPairs.lean",
+    "NLS/KdV/ClassicalHillReality.lean",
+    "NLS/KdV/ClassicalHillConjugation.lean",
+    "NLS/KdV/ClassicalHillPrimitiveSheets.lean",
+    "NLS/KdV/ClassicalHillPrimitiveReflection.lean",
+    "NLS/KdV/ClassicalHillBandNormalization.lean",
+    "NLS/KdV/HillNLSPrimitivePathComparison.lean",
+    "NLS/ZakharovShabat/ContinuousPotentialSource.lean",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean",
@@ -111,6 +132,9 @@ modules = [
     "NLS/MKdV/SobolevQuasiHill.lean",
     "NLS/MKdV/PhysicalHillDiscriminant.lean",
     "NLS/MKdV/MiuraHillHamiltonianTrace.lean",
+    "NLS/MKdV/MiuraHillSpectralBridge.lean",
+    "NLS/MKdV/MiuraHillPrimitiveComparison.lean",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean",
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean",
 ]
 if args.full_audit:

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 854,
+  "audited_declarations_and_auxiliaries": 1122,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -2139,100 +2139,994 @@
       "kind": "theorem",
       "name": "theorem1_native_miura_hierarchy",
       "file": "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperPotential",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperPotential_apply",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperPosition",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperStateMap",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperStateMap_apply",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperInitialVector",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperStateMap_initialVector",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperInitialVector_stateMap",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperStateMap_injective",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_constantUpperPosition",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_deriv_constantUpperPosition",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_equation_constantUpperPosition",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperHillState",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperHillState_eq",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperHillState_initial",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpper_floquet_condition_iff",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperHillTrace",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperHillTrace_eq_discriminant",
+      "file": "NLS/KdV/ConstantUpperSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperSpectralTransition",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperSpectralTransition_apply",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperSpectralTransition_ode",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_constantUpper_transition",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_constantUpper_eq_of_sq_eq",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_constantUpper_even",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperHillTrace_eq_of_sq_eq",
+      "file": "NLS/KdV/ClassicalSpectralSymmetry.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperLinearPotential",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "constantUpperOrigin",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantUpperPotential_eq_affine",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_constantUpperPotential",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_constantUpperTrace_joint",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillDiscriminant",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_of_sq",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_sq",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillDiscriminant_joint",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillDiscriminant",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_scalar_trace",
+      "file": "NLS/KdV/ClassicalDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillCoefficient",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillCoefficient_apply",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillCoefficientCurve",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillFlow",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_zero",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalHillFlow",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillCoefficient_stateMap",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_eq_constantUpper",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_trace",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_unique_of_ac",
+      "file": "NLS/KdV/ClassicalHillFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillRadicand",
+      "file": "NLS/KdV/ClassicalLocalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillRadicand",
+      "file": "NLS/KdV/ClassicalLocalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalHill_local_primitive",
+      "file": "NLS/KdV/ClassicalLocalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHill_local_primitive",
+      "file": "NLS/KdV/ClassicalLocalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHill_local_primitive_of_radicand_ne_zero",
+      "file": "NLS/KdV/ClassicalLocalPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_characteristic_eq_zero_iff",
+      "file": "NLS/KdV/ClassicalHillSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_two_iff",
+      "file": "NLS/KdV/ClassicalHillSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_eq_neg_two_iff",
+      "file": "NLS/KdV/ClassicalHillSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_eq_zero_iff",
+      "file": "NLS/KdV/ClassicalHillSpectrum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_injective_initial",
+      "file": "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_eq_zero_imp_initial_eq_zero",
+      "file": "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_classicalHillFlow",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_eq_zero_imp_initial_eq_zero",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillFlow_position_ne_zero",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_classicalHillFlow_position_normSq_pos",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalHillGreen_im",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillGreen_im_identity",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_energy_im_eq_zero_of_unit_multiplier",
+      "file": "NLS/KdV/ClassicalHillGreen.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_constantUpper_zero_first",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_constantUpper_zero_snd",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_constantUpper_zero",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_zero",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillFreePrimitive",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillFreeRoot",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillFreePrimitive",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillFreeRoot",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "two_cosh_classicalHillFreePrimitive",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreeRoot_sq",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exp_classicalHillFreePrimitive",
+      "file": "NLS/KdV/ClassicalFreePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillRootDomain",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_classicalHillRootDomain",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillContinuationDomain",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_classicalHillContinuationDomain",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuationDomain_subset",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_classicalHillContinuationDomain_iff",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuationDomain_segment",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillContinuedRoot",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillContinuedRoot",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedRoot_base",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedRoot_sq",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedRoot_ne_zero",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillContinuedMultiplier",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillContinuedMultiplier",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedMultiplier_product",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedMultiplier_ne_zero",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillContinuedPrimitive",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillContinuedPrimitive",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_base",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exp_classicalHillContinuedPrimitive",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_trace",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalHillContinuedPrimitive",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_classicalHillContinuedPrimitive",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_unique",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillContinuation_neighborhood",
+      "file": "NLS/KdV/ClassicalSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_continuousPotentialL2Class_le_two_norm",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean"
+    },
+    {
+      "kind": "def",
+      "name": "continuousPotentialL2CLM",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuousPotentialL2CLM_apply",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillCoefficientPotential",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_classicalHillCoefficientPotential",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillCoefficientPotential",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillCoefficientPotential_even",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalDiscriminant_classicalHillCoefficientPotential",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_sq_eq_zero_iff_periodicSpectrum",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_classicalHillRadicand_sq",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_classicalHillRadicand_energy",
+      "file": "NLS/KdV/ClassicalSpectralEmbedding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillCounting_near_compact",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "re_pos_of_high_closedBall",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sq_mem_slitPlane_of_high_closedBall",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sq_injOn_high_closedBall",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sq_mem_slitPlane_of_high_circle",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHill_high_contour_neighborhood",
+      "file": "NLS/KdV/ClassicalContourCoverage.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillHighEnergyRegion",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillHighMidpoint",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillHighSquaredGap",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ClassicalHillHighGapPair.swap",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_high_root_level",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillHighGapPair_of_counting",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ClassicalHillHighGapPair.eq_or_swap",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_classicalHillHigh_symmetric",
+      "file": "NLS/KdV/ClassicalHighGapPairs.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_energy_im_eq_zero",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_classicalHillContinuationDomain_of_im_ne_zero",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_classicalHillContinuedPrimitive_off_real",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_classicalHillContinued_floquet_vector",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_re_ne_zero_off_real",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ClassicalHillHighGapPair.im_eq_zero",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_ordered_classicalHillHighGapPair_of_counting",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillHighEnergyRegion_real_bounds",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillHighEnergyRegion_real_order",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ClassicalHillHighGapPair.right_lt_left_of_index_lt",
+      "file": "NLS/KdV/ClassicalHillReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_conj",
+      "file": "NLS/KdV/ClassicalHillConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_conj",
+      "file": "NLS/KdV/ClassicalHillConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillRadicand_conj",
+      "file": "NLS/KdV/ClassicalHillConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreePrimitive_conj",
+      "file": "NLS/KdV/ClassicalHillConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreeRoot_conj",
+      "file": "NLS/KdV/ClassicalHillConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreePrimitive_re_sign",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_re_sign",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_re_pos",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_re_neg",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "one_lt_norm_classicalHillContinuedMultiplier",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_classicalHillContinuedMultiplier_lt_one",
+      "file": "NLS/KdV/ClassicalHillPrimitiveSheets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_classicalHillContinuationDomain_conj",
+      "file": "NLS/KdV/ClassicalHillPrimitiveReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedRoot_conj",
+      "file": "NLS/KdV/ClassicalHillPrimitiveReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_conj",
+      "file": "NLS/KdV/ClassicalHillPrimitiveReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_re_eq_zero_of_im_eq_zero",
+      "file": "NLS/KdV/ClassicalHillPrimitiveReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_classicalHillContinuedMultiplier_eq_one_of_im_eq_zero",
+      "file": "NLS/KdV/ClassicalHillPrimitiveReflection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreePrimitive_ofReal_sq",
+      "file": "NLS/KdV/ClassicalHillBandNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFreePrimitive_sq_of_re_pos",
+      "file": "NLS/KdV/ClassicalHillBandNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_im_ne_int_pi",
+      "file": "NLS/KdV/ClassicalHillBandNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_im_in_free_band",
+      "file": "NLS/KdV/ClassicalHillBandNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_ofReal_sq_band",
+      "file": "NLS/KdV/ClassicalHillBandNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedRoot_eq_NLS_along_path",
+      "file": "NLS/KdV/HillNLSPrimitivePathComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillContinuedPrimitive_eq_NLS_along_path",
+      "file": "NLS/KdV/HillNLSPrimitivePathComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "continuousPotentialSource",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialSource.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalDiscriminant_continuousPotentialSource",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialSource.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuousPotentialSource_realType",
+      "file": "NLS/ZakharovShabat/ContinuousPotentialSource.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraState_eq_classicalHillFlow",
+      "file": "NLS/MKdV/MiuraHillSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraDiscriminant_eq_classicalHill",
+      "file": "NLS/MKdV/MiuraHillSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillProfileCurve",
+      "file": "NLS/MKdV/MiuraHillSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraDiscriminant_profile_eq_classicalHill",
+      "file": "NLS/MKdV/MiuraHillSpectralBridge.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillDiscriminant_miura_eq_ZS",
+      "file": "NLS/MKdV/MiuraHillSpectralBridge.lean"
+    },
+    {
+      "kind": "def",
+      "name": "realDiagonalProfileSource",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraScaledHillProfileCurve",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraScaledHillProfileCurve",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraScaledHillProfileCurve_eq",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraScaledHillProfileCurve_real",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHill_sheets_eq_NLS",
+      "file": "NLS/MKdV/MiuraHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma4_root_real_C1_right_halfPlane",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma5_primitive_real_C1_right_halfPlane",
+      "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean"
     }
   ],
-  "public_declaration_count": 424,
-  "theorem_count": 326,
-  "definition_count": 98,
-  "full_build": "All 80 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 598,
+  "theorem_count": 470,
+  "definition_count": 128,
+  "full_build": "All 104 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
+    "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
+    "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1",
+    "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean": "743e4e169ec2fdb2b8b08a06f778dc91672bff3c1bbc9063feca15ec3c034edd",
+    "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean": "7c3522738c8d507d80afc3f9f87cbf24304b17a50d0adeee4a1e842f6ae40e08",
+    "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean": "15ea93920c81e58b86cc6f064412d79d8777827a22a979356bd84f45db08f994",
+    "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean": "a5676e1168d3d4df4864ec7c240c53a6eea2f0d8afb95e793a60c336879f7ab4",
+    "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
+    "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
+    "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c",
+    "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f",
+    "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
+    "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
+    "NLS/DifferentialPolynomial/EulerLagrange.lean": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
+    "NLS/DifferentialPolynomial/EulerOrderBounds.lean": "573ef42deb2a56e866c0a5c05dd42fd160f1add72fbacc4c0b3a96e59557c0b9",
+    "NLS/DifferentialPolynomial/EulerScalar.lean": "d9ea3583259ef6c15d44c88cbefb20f86df001ab0483e781f750eddec49eb908",
+    "NLS/DifferentialPolynomial/IndependentJetVariation.lean": "3c326915c7e37843a9d0356c167a10e0210c870a48255ff5ae3d68a8e4111d61",
+    "NLS/DifferentialPolynomial/LogarithmicDerivative.lean": "f015066fe2957161d29a531cb11300365f6e92f239bc5b692e0262980cc64880",
+    "NLS/DifferentialPolynomial/MiuraRiccati.lean": "a51622b2bf42eaf37ba8d744122e23f092fa03c3959d84361152a20f780a26b1",
+    "NLS/DifferentialPolynomial/MultiJet.lean": "585b347d3267cb858b8002e3d92750d9b409eafe5b0f5a58a23ce05dae039843",
+    "NLS/DifferentialPolynomial/PolynomialVariation.lean": "edca1e4571cc50d7e1549da618aa0407808cb25df9afc14ed9c09f686f312a15",
+    "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean": "6434ba24b8a86ab9e4cfcae4b371e01b73f07d0056137cc7893ad562bab71809",
+    "NLS/DifferentialPolynomial/RiccatiResolvent.lean": "872b0969d07ef40a70c763dc7db0a706aefac6d0130614751675e60a5e8dab38",
+    "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean": "15f7b972b8f3ad68432c86257f9ce5068a378ce7a0ed0ba54d2d4df92833afae",
+    "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "3228af34816ef7bc0fc31f43bd4c2fa6bfd94b93c79dd303f2e2a351b6a60de4",
+    "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc",
+    "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
+    "NLS/DifferentialPolynomial/UngradedIntegrationByParts.lean": "1964b724472e912f35df9d768289b9a9050688cddf2f2ef797815817912504ef",
+    "NLS/Fourier/CircleBilinearMean.lean": "89eab9297d3cc3a345ce9a837e115251dd44c929b2e842445153034298bb1fea",
+    "NLS/Fourier/CircleUnitCoefficients.lean": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a",
+    "NLS/Fourier/PeriodOneDistributionDerivative.lean": "63388da28ec4f50b25fd5c3a8343e576d9ecf5977ca05688c004b82ee8d1a7e8",
+    "NLS/Fourier/PeriodOneSobolevDistribution.lean": "a5c691f51c3f7b793e7ff627a1ea38f0c6f677b5f0bc1d44573fce68d42695c3",
+    "NLS/Fourier/PeriodicVariationalUniqueness.lean": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d",
+    "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
+    "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
+    "NLS/FunctionalAnalysis/UnitIntervalMean.lean": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6",
+    "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
+    "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+    "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
+    "NLS/KdV/ClassicalHighGapPairs.lean": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074",
+    "NLS/KdV/ClassicalHillBandNormalization.lean": "6fba685e4b7c13fb68960248ebe7b21a19ba22fd88021edb8ca68e1e489bd3f2",
+    "NLS/KdV/ClassicalHillConjugation.lean": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
+    "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
+    "NLS/KdV/ClassicalHillGreen.lean": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+    "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
+    "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
+    "NLS/KdV/ClassicalHillReality.lean": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f",
+    "NLS/KdV/ClassicalHillSpectrum.lean": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
+    "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
+    "NLS/KdV/ClassicalSourcePrimitive.lean": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
+    "NLS/KdV/ClassicalSpectralEmbedding.lean": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
+    "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
+    "NLS/KdV/ConstantUpperSpectralBridge.lean": "111451b4d47126d2007fc00591b0f564ccfbb3f4a5bc272e3d823e7be57f0b37",
+    "NLS/KdV/HillNLSPrimitivePathComparison.lean": "d4f3956a7ea0d1c98299ceae7c11891abf5672976d4ab3947ea93b08feb25d66",
     "NLS/MKdV/ClassicalEnergyVariation.lean": "1c8340633e26be0c870faaad5cffd32dcbc2fc4ca62a006dff4bebd4bbf77d2d",
     "NLS/MKdV/ClassicalFourthFlowRestriction.lean": "52e10d66dd8d0e009feda41ff23f68d0bd3dfe30b353fa8a5877e69475e01558",
+    "NLS/MKdV/HierarchyGradientRecurrence.lean": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80",
     "NLS/MKdV/HierarchyRestriction.lean": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853",
     "NLS/MKdV/MiuraBoundaryTransfer.lean": "d8747dde2efaa7415650cc8f00b1f3a15c8345f34ed1b3812ed4ba7f6fd5fc2d",
     "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
+    "NLS/MKdV/MiuraHierarchyFlowRestriction.lean": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409",
+    "NLS/MKdV/MiuraHierarchyHamiltonians.lean": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
+    "NLS/MKdV/MiuraHillHamiltonianTrace.lean": "4887fc79a1153bb3fe9a463d141037e897a309d4d73ade6d9cdc00622814369a",
+    "NLS/MKdV/MiuraHillPrimitiveComparison.lean": "63fbd88e5268b7b53dbb486887d463e3cff336e6c581db157e78f3d5aa56f39e",
+    "NLS/MKdV/MiuraHillRiccatiRemainder.lean": "f31f58259f585d8ce8c58c86ea88a6038a51f7d1da340e0101692fa8b6e93cca",
+    "NLS/MKdV/MiuraHillSpectralBridge.lean": "4d673ea7fd0d58bb4b77608c82e2387b259506720cbfb59b1cde1e02a669da71",
+    "NLS/MKdV/NativeMiuraHillGradient.lean": "794e236aa305dacc823cd7c45b73ec2489da46346b4c7c6207dc240ed0ee90af",
+    "NLS/MKdV/NativeMiuraHillHamiltonian.lean": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c",
     "NLS/MKdV/PhysicalHillDiscriminant.lean": "297660f9d77db5e24a4ab61cc6ed2b7e890c4f0ddd3ccb8bb554fac302aee9aa",
     "NLS/MKdV/QuasiHillDiscriminant.lean": "ee370b555779313027d7ee306269031630a2ce465c90cecadac8ae7fe1a6b726",
     "NLS/MKdV/QuasiHillPhysicalEquation.lean": "d0d58280e8aec3c56f89343c37f938f934892f2ea93f75a24e92cda86bd983d0",
     "NLS/MKdV/QuasiHillPhysicalUniqueness.lean": "349d7cba9f46de07507714abb474d5cef01c1be8488181d43e8190f72fd87f89",
     "NLS/MKdV/QuasiHillZSComparison.lean": "0731af226de4d930dbc04de21ceb8cf0c363a68ab4cfb788760064c23ea2cf0c",
+    "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
+    "NLS/MKdV/SobolevMiuraHillFlowRestriction.lean": "21dda2d38b28e0979b669046de531276ce0f31491be942a3637d8abe3c306e83",
+    "NLS/MKdV/SobolevMiuraHillHamiltonian.lean": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd",
     "NLS/MKdV/SobolevQuasiHill.lean": "6233ab01fc3fd86933062f2f374db91e8464fcc25c6fd0a6a6e9655b208905a3",
-    "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
-    "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean": "743e4e169ec2fdb2b8b08a06f778dc91672bff3c1bbc9063feca15ec3c034edd",
-    "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
-    "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
-    "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca",
+    "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
-    "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "ea5876f754001fb47e22a7d51f3dc56f380f7fd5dc469923f8a7c51ce9c16175",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "85f04b5033a758ffb0d703f898887c9fccccf89782d9959b87b0b420999f969d",
-    "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
-    "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
-    "NLS/ZakharovShabat/SobolevPhysicalJets.lean": "12a42ff7e7bbbf571f4b73bc1a0719db655b41179fcce9539ae6565f7717e51c",
-    "NLS/FunctionalAnalysis/UnitIntervalMean.lean": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6",
-    "NLS/DifferentialPolynomial/PolynomialVariation.lean": "edca1e4571cc50d7e1549da618aa0407808cb25df9afc14ed9c09f686f312a15",
-    "NLS/DifferentialPolynomial/EulerLagrange.lean": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
-    "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
     "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3",
-    "NLS/DifferentialPolynomial/EulerOrderBounds.lean": "573ef42deb2a56e866c0a5c05dd42fd160f1add72fbacc4c0b3a96e59557c0b9",
-    "NLS/Fourier/CircleUnitCoefficients.lean": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a",
-    "NLS/ZakharovShabat/SobolevPolynomialL2.lean": "78bc7ddd732c2473cb4d719bf144323ed39d34e9c211e9caebebcf517381dab2",
-    "NLS/ZakharovShabat/SobolevHierarchyGradient.lean": "1a8b48802cf2968eb5f674dbcb16152a7e9daf6af4002799367a6e606f403372",
-    "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean": "924a9af20ba8202b238c1087562b35aad7f633cfeaf34722c92db90d68be67f9",
-    "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean": "e94948ab867c62f403cada306f8e0ff19962502852d272c5864c0ca3a10e4b93",
-    "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1",
-    "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean": "6434ba24b8a86ab9e4cfcae4b371e01b73f07d0056137cc7893ad562bab71809",
-    "NLS/DifferentialPolynomial/RiccatiResolvent.lean": "872b0969d07ef40a70c763dc7db0a706aefac6d0130614751675e60a5e8dab38",
-    "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
-    "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
-    "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "3228af34816ef7bc0fc31f43bd4c2fa6bfd94b93c79dd303f2e2a351b6a60de4",
-    "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc",
-    "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
-    "NLS/DifferentialPolynomial/MultiJet.lean": "585b347d3267cb858b8002e3d92750d9b409eafe5b0f5a58a23ce05dae039843",
-    "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f",
-    "NLS/DifferentialPolynomial/IndependentJetVariation.lean": "3c326915c7e37843a9d0356c167a10e0210c870a48255ff5ae3d68a8e4111d61",
-    "NLS/DifferentialPolynomial/EulerScalar.lean": "d9ea3583259ef6c15d44c88cbefb20f86df001ab0483e781f750eddec49eb908",
-    "NLS/DifferentialPolynomial/RiccatiResolventNaturality.lean": "15f7b972b8f3ad68432c86257f9ce5068a378ce7a0ed0ba54d2d4df92833afae",
-    "NLS/Fourier/PeriodicVariationalUniqueness.lean": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d",
-    "NLS/Fourier/PeriodOneDistributionDerivative.lean": "63388da28ec4f50b25fd5c3a8343e576d9ecf5977ca05688c004b82ee8d1a7e8",
-    "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
-    "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
-    "NLS/MKdV/HierarchyGradientRecurrence.lean": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80",
-    "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
-    "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
-    "NLS/DifferentialPolynomial/LogarithmicDerivative.lean": "f015066fe2957161d29a531cb11300365f6e92f239bc5b692e0262980cc64880",
-    "NLS/DifferentialPolynomial/MiuraRiccati.lean": "a51622b2bf42eaf37ba8d744122e23f092fa03c3959d84361152a20f780a26b1",
-    "NLS/MKdV/MiuraHierarchyHamiltonians.lean": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
-    "NLS/MKdV/MiuraHierarchyFlowRestriction.lean": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409",
-    "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c",
-    "NLS/ZakharovShabat/SobolevPolynomialVariation.lean": "69f9272bc1b5156b42d730b364c5c339d4657d834d2b73bcd4ae959aec0b2887",
+    "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
+    "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
+    "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
+    "NLS/ZakharovShabat/ContinuousPotentialSource.lean": "e2a52ba52fceb22cc075719d475a237d1eb6bd0dcfecec9691f7ef44d89f03e6",
     "NLS/ZakharovShabat/NLSEvenHamiltonianReducedPolynomial.lean": "7c0d1243b92161335d410e575da004804899e0126f71e643e2f8dd67f83a2e35",
+    "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
+    "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
+    "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
     "NLS/ZakharovShabat/SobolevEvenHamiltonian.lean": "32c7de01d4cf64a13d106261c982426b2e9a80a664bbe8e53b6cc22d051883ba",
-    "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean": "a5676e1168d3d4df4864ec7c240c53a6eea2f0d8afb95e793a60c336879f7ab4",
-    "NLS/DifferentialPolynomial/UngradedIntegrationByParts.lean": "1964b724472e912f35df9d768289b9a9050688cddf2f2ef797815817912504ef",
-    "NLS/Fourier/PeriodOneSobolevDistribution.lean": "a5c691f51c3f7b793e7ff627a1ea38f0c6f677b5f0bc1d44573fce68d42695c3",
-    "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevEvenHierarchyGradient.lean": "95493d9096b0b83695acc899d0cfea22ccbef1bf6c09b853dbcde1aea48c41e8",
-    "NLS/MKdV/SobolevMiuraHillHamiltonian.lean": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd",
-    "NLS/MKdV/SobolevMiuraHillFlowRestriction.lean": "21dda2d38b28e0979b669046de531276ce0f31491be942a3637d8abe3c306e83",
-    "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
-    "NLS/Fourier/CircleBilinearMean.lean": "89eab9297d3cc3a345ce9a837e115251dd44c929b2e842445153034298bb1fea",
-    "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean": "8982fbecf5cc9815eab3d5a624c79779df71d577aaddfac79f7df24d2805bba5",
-    "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
+    "NLS/ZakharovShabat/SobolevHierarchyGradient.lean": "1a8b48802cf2968eb5f674dbcb16152a7e9daf6af4002799367a6e606f403372",
+    "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean": "e94948ab867c62f403cada306f8e0ff19962502852d272c5864c0ca3a10e4b93",
+    "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean": "924a9af20ba8202b238c1087562b35aad7f633cfeaf34722c92db90d68be67f9",
+    "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca",
     "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean": "cb0c21d44ff1cadb023ac89f1a700915c9c7f49200ce5b4f5edbe55b0ad974b8",
-    "NLS/MKdV/MiuraHillRiccatiRemainder.lean": "f31f58259f585d8ce8c58c86ea88a6038a51f7d1da340e0101692fa8b6e93cca",
-    "NLS/MKdV/NativeMiuraHillHamiltonian.lean": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c",
-    "NLS/MKdV/NativeMiuraHillGradient.lean": "794e236aa305dacc823cd7c45b73ec2489da46346b4c7c6207dc240ed0ee90af",
-    "NLS/MKdV/MiuraHillHamiltonianTrace.lean": "4887fc79a1153bb3fe9a463d141037e897a309d4d73ade6d9cdc00622814369a",
-    "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean": "7c3522738c8d507d80afc3f9f87cbf24304b17a50d0adeee4a1e842f6ae40e08"
+    "NLS/ZakharovShabat/SobolevPhysicalJets.lean": "12a42ff7e7bbbf571f4b73bc1a0719db655b41179fcce9539ae6565f7717e51c",
+    "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean": "8982fbecf5cc9815eab3d5a624c79779df71d577aaddfac79f7df24d2805bba5",
+    "NLS/ZakharovShabat/SobolevPolynomialL2.lean": "78bc7ddd732c2473cb4d719bf144323ed39d34e9c211e9caebebcf517381dab2",
+    "NLS/ZakharovShabat/SobolevPolynomialVariation.lean": "69f9272bc1b5156b42d730b364c5c339d4657d834d2b73bcd4ae959aec0b2887",
+    "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
+    "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
+    "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "659dfbf5359ff5f66a24b8c8a79e05ec956fa81be56ba48f7ac921f4750be72f",
+    "scripts/check_mkdv_nls.py": "15ef03ee1363390156ad7e2f64e677e2c72d2b14c47e4fa960e50508435798f9"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 80,
+  "focused_module_count": 104,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -2299,11 +3193,23 @@
       "audit_count": 854,
       "combined_NLS_audit_count": 46038,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "actual physical Miura/shared Hill IVP and trace comparison, unchanged checked Hill primitive integration, and exact free-normalized root/primitive equality with NLS on real C1 profiles in the nonreal right frequency half-plane",
+      "audit_count": 1122,
+      "combined_NLS_audit_count": 46306,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 46038,
-  "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
+  "combined_audited_NLS_declarations": 46306,
+  "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
+  "shared_primitive_source": {
+    "branch": "articles/kdv-convexity",
+    "commit": "d12831411f4ad00777304b6623dbb3226730b4eb",
+    "module_count": 19,
+    "all_copied_sources_identical": true
+  }
 }

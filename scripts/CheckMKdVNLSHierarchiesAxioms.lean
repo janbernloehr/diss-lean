@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.PrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.InitialChecks
 import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
 import NLS.MKdV.MiuraBoundaryTransfer
@@ -19,8 +20,16 @@ The traversal includes all imported dependencies of each checked declaration. -/
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+  let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.continuousPotentialSource,
+    `NLS.ZakharovShabat.continuousPotentialSource_realType,
+    `NLS.ZakharovShabat.canonicalDiscriminant_continuousPotentialSource,
+    `NLS.ZakharovShabat.continuousPotentialL2CLM,
+    `NLS.ZakharovShabat.continuousPotentialL2CLM_apply,
+    `NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm,
+    `NLS.ZakharovShabat.classicalSolution_injective_initial,
+    `NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero,
     `NLS.Fourier.circleBilinearMean,
     `NLS.Fourier.circleBilinearMean_eq_classical,
     `NLS.ZakharovShabat.sobolevTopMonomialProduct,
@@ -150,7 +159,10 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_C1_right_halfPlane,
+    ``NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill,
+    ``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
     ``NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura,
     ``NLS.Articles.MKdVNLSHierarchies.theorem1_native_miura_hierarchy,
