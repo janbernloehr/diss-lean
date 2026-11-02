@@ -1,0 +1,22 @@
+NLS.Articles.DNLSEstimates.actionMoment._proof_2: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.theorems_one_two: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.corollary_one: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.paper_weighted_source_norm_sq: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.actionMoment._proof_1: [propext]
+NLS.Articles.DNLSEstimates.actionMoment_zero: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.theorem_three: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.actionMoment: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.actionMoment_summable: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.exists_main_estimate_family: [propext, Classical.choice, Quot.sound]
+NLS.Articles.DNLSEstimates.actionMoment_eq_half_birkhoff_norm_sq: [propext, Classical.choice, Quot.sound]
+Transitive axiom audit passed for 11 article declarations.
+'NLS.ZakharovShabat.sourceSection23_original_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceSection17OriginalData.section23_sobolev_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

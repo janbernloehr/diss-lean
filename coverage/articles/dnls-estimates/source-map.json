@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "article_id": "dnls-estimates",
+  "status": "main_theorems_verified",
+  "source": {
+    "title": "New estimates of the nonlinear Fourier transform for the defocusing NLS equation",
+    "author": "Jan-Cornelius Molnar",
+    "version": "arXiv:1403.1369v2",
+    "abstract_url": "https://arxiv.org/abs/1403.1369v2",
+    "pdf_url": "https://arxiv.org/pdf/1403.1369v2",
+    "sha256": "6862e6c30dffaa55f4a73b48155576310682c78e154ffcc1dbeeaf3eb0dd277b",
+    "pdf_pages": 38,
+    "retrieved_date": "2026-11-02",
+    "visual_check_pages": [
+      3,
+      4
+    ],
+    "served_file_note": "The version banner says 6 Oct 2015; the served PDF has a June 1, 2021 footer. The SHA-256 pins the actual downloaded binary.",
+    "private_source_retention": "PDF and extracted text retained in originating chat work/sources; not distributed in repository."
+  },
+  "baseline": {
+    "repository": "https://github.com/janbernloehr/diss-lean",
+    "commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "access": "read_only_reference_snapshot; implementation in separate articles/dnls-estimates worktree",
+    "lean": "4.33.1",
+    "mathlib": "v4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "accepted_reference": "coverage/ACCEPTED_REFERENCE.md"
+  },
+  "normalizations": {
+    "physical_period": 1,
+    "spectral_boundary_interval": [
+      0,
+      2
+    ],
+    "integer_source_norm_squared": "sum_n (1+|2*n*pi|)^(2*m) * (|a_minus(n)|^2+|a_plus(n)|^2)",
+    "pair_norm": "component-sum Hilbert norm, not a product maximum",
+    "paper_first_component_fourier_exponent": "-i*2*n*pi*x; library uses +i*2*n*pi*x in both components, so reflect the first coefficient index",
+    "reflection_proof": "NLS.Articles.DNLSEstimates.paper_weighted_source_norm_sq",
+    "action": "I_n=(x_n^2+y_n^2)/2",
+    "moment": "sum_n (1+|2*n*pi|)^(2*k) * |I_n|",
+    "moment_normalization_proof": "NLS.Articles.DNLSEstimates.actionMoment_eq_half_birkhoff_norm_sq",
+    "weighted_source_coordinates": "a represents phi_n=a_n/w(2*n), with norm(phi)_w=norm(a)",
+    "weighted_domain_topology": "norm topology in weighted coordinates, not the ambient L2 topology",
+    "real_form": "realTypeSourceLocus 2; conjugate-reflected coefficients in the library convention",
+    "weight_class": "SpectralWeight: one_le, neg_eq, add_le, monotone_nat; w(0)=1 is not imposed",
+    "linear_factor": "SpectralWeight.HasLinearFactor: exists v in M, w(n)=(1+|n|)*v(n)",
+    "real_weight_extension": "SpectralWeight.realExtension: piecewise affine interpolation along |t|"
+  },
+  "statements": [
+    {
+      "label": "Theorem 1",
+      "pdf_page": 3,
+      "printed_page": 3,
+      "quantifiers": "One original map, then for every natural m>=1 choose c_m,d_m>0, then every real H^m source.",
+      "bounds": [
+        "Q_m <= c_m*(P_m+(1+P_1)^(2*m)*P_0)",
+        "P_m <= d_m*(Q_m+(1+Q_1)^(4*m-3)*Q_0)"
+      ],
+      "existing": "NLS.ZakharovShabat.SourceSection23SobolevBounds",
+      "fields": [
+        "birkhoff_upper",
+        "birkhoff_lower",
+        "c_pos",
+        "d_pos"
+      ],
+      "adapter": "NLS.Articles.DNLSEstimates.theorems_one_two",
+      "checked": true
+    },
+    {
+      "label": "Theorem 2 and common-constant remark",
+      "pdf_page": 3,
+      "printed_page": 3,
+      "quantifiers": "The same c_m,d_m as Theorem 1, before every real H^m source, for every natural m>=1.",
+      "bounds": [
+        "M_m <= c_m^2*(P_m^2+(1+P_1)^(4*m)*P_0^2)",
+        "P_m^2 <= d_m^2*(M_m+(1+M_1)^(4*m-3)*M_0)"
+      ],
+      "existing": "NLS.ZakharovShabat.SourceSection23SobolevBounds",
+      "fields": [
+        "action_upper",
+        "action_lower",
+        "action_summable"
+      ],
+      "adapter": "NLS.Articles.DNLSEstimates.theorems_one_two",
+      "checked": true
+    },
+    {
+      "label": "Theorem 3",
+      "pdf_page": 4,
+      "printed_page": 4,
+      "quantifiers": "For every w in M^1 choose c_w>0 and a complex open neighborhood T of the entire real weighted subspace. Action bound for every complex source in T; Birkhoff bound for every real weighted source.",
+      "bounds": [
+        "sum_n w(2*n)^2*|I_n| <= c_w^2*w[16*P_w^2]^2*P_w^2",
+        "Q_w <= c_w*w[16*P_w^2]*P_w"
+      ],
+      "existing": "NLS.ZakharovShabat.SourceSection20Data.section23_weighted_neighborhood",
+      "adapter": "NLS.Articles.DNLSEstimates.theorem_three",
+      "constant": 2048,
+      "checked": true
+    },
+    {
+      "label": "Corollary 1",
+      "pdf_page": 4,
+      "printed_page": 4,
+      "quantifiers": "For every real r>=1 choose c_r>0 and a complex open H^r neighborhood of the entire real H^r subspace. Action bound there, coordinate bound on real H^r.",
+      "bounds": [
+        "M_r <= c_r^2*(1+P_r)^(4*r)*P_r^2",
+        "Q_r <= c_r*(1+P_r)^(2*r)*P_r"
+      ],
+      "existing": "NLS.ZakharovShabat.SourceSection20Data.section23_realSobolev_neighborhood",
+      "adapter": "NLS.Articles.DNLSEstimates.corollary_one",
+      "constant": "2048*(1+17*pi)^r",
+      "checked": true
+    }
+  ],
+  "notation": {
+    "P_k": "physical source Sobolev norm of order k",
+    "Q_k": "same original Birkhoff image norm of order k",
+    "M_k": "weighted action l1 moment of order 2*k"
+  },
+  "existence": {
+    "adapter": "NLS.Articles.DNLSEstimates.exists_main_estimate_family",
+    "reused": "NLS.ZakharovShabat.sourceSection23_original_estimates",
+    "order": "The original family is chosen once before all integer orders, real orders, weights and potentials."
+  },
+  "remaining": [
+    "Sequential integration of articles/dnls-estimates into main is a separate repository operation."
+  ],
+  "missing_mathematical_dependencies_found": [],
+  "scope_note": "Verified main statements of the pinned arXiv v2 source under the accepted Birkhoff-map reference; no journal-edition identity or audit of every intermediate statement is claimed."
+}
