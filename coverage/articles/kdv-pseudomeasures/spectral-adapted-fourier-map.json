@@ -1,0 +1,114 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.6 actual Omega^(m),Proposition2.18 and dependencies of Proposition2.19/Theorem2.2.",
+  "main_theorems_verified": false,
+  "full_source_propositions_2_18_2_19_verified": false,
+  "actual_complex_adapted_map_verified": true,
+  "weighted_banach_analyticity_verified": true,
+  "closed_half_ball_image_coverage_verified": true,
+  "analytic_inverse_near_closed_half_ball_verified": true,
+  "real_type_symmetry_verified": false,
+  "base_to_weighted_inverse_regularity_gain_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/EvenTailReplacement.lean",
+    "NLS/ComplexAnalysis/NearIdentityBallInverse.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralAdaptedFourier.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralAdaptedInverse.lean"
+  ],
+  "declarations": [
+    "NLS.evenTailReplacement",
+    "NLS.evenTailReplacement_zero",
+    "NLS.evenTailReplacement_odd",
+    "NLS.evenTailReplacement_low",
+    "NLS.evenTailReplacement_pos",
+    "NLS.evenTailReplacement_neg",
+    "NLS.evenTailReplacement_error_le",
+    "NLS.WeightedCoeff.exists_infty_of_bound",
+    "NLS.WeightedCoeff.exists_evenTailReplacement",
+    "NLS.ComplexAnalysis.norm_fderiv_sub_id_le_of_ball_error",
+    "NLS.ComplexAnalysis.norm_error_sub_le_of_ball_error",
+    "NLS.ComplexAnalysis.exists_analytic_inverse_of_ball_error",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedPair",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourierValues",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_sourceAdaptedFourierValues",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_spec",
+    "NLS.Articles.KdVPseudomeasures.analyticOnNhd_sourceWeightedAdaptedFourier",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_zero",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_adaptedFourier",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_preserves_complex_source",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_high_pair",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_low",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_weight_agreement",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_adaptedFourier_inverse"
+  ],
+  "results": [
+    "The shared evenTailReplacement replaces only signed even Fourier modes +/-2n for n>=N,n>=1,retaining every low and odd mode and the mean. Actual pairwise weighted errors assemble into a genuine weighted endpoint sequence with the SAME uniform error bound.",
+    "sourceAdaptedFourierValues uses the ACTUAL physical b_plus/minus at the constructed intrinsic alpha_n(q). sourceWeightedAdaptedFourier realizes these coefficients in the EXACT original weighted distribution Banach space; on the proved balls its total-constructor fallback is excluded by an actual membership proof.",
+    "Every actual raw coefficient is complex analytic. The verified shared weighted analytic-realization theorem upgrades this to BANACH-VALUED complex analyticity,including exponent infinity. Analyticity is proved on an actual open norm ball,not merely coordinatewise or in a weaker topology.",
+    "ONE cutoff is chosen BEFORE BOTH w and q. For all original weighted norm balls of radius R>0,the ACTUAL Fourier map has error at most R/64,including on the closed ball boundary. Its value at zero is exactly zero. High pairs are exactly the physical adapted couplings;all low modes,all odd modes and the original mean are preserved.",
+    "The adapted map preserves original physical period one in BOTH directions and preserves the exact original mean. Changing source weights leaves the ENTIRE adapted distribution unchanged whenever the original input distribution is the same and both verified norm bounds hold.",
+    "The shared NearIdentityBallInverse theorem derives the1/16 operator derivative bound on the CLOSED radius-m ball from the actual m/32 error on the OPEN double ball,using Cauchy. It proves source injectivity by the error Lipschitz bound,constructs genuine inverse images by Banach contraction,and proves their local complex analyticity via the checked Banach implicit-function theorem.",
+    "source_uniform_adaptedFourier_inverse constructs the actual weighted analytic inverse with ONE cutoff BEFORE BOTH weights and potentials. The forward map is analytic on the open radius2m ball,its derivative differs from Id by at most1/16 on the CLOSED radius-m ball,and its norm is between one half and twice the exact original input norm.",
+    "The actual map is injective on the CLOSED source radius-m ball. Its proved inverse is analytic on the OPEN target radius3m/4 ball and has genuine inverse images in the OPEN radius-m source ball for EVERY target of norm<=3m/4. This includes the source CLOSED half-ball coverage and a neighborhood of every such target. Both inverse identities hold on their stated domains;the inverse preserves zero mean and period one for targets of norm<=m/2."
+  ],
+  "domains": {
+    "potentials": "Full original complex period-two PeriodicFourierLebesgue(2,w.negativeSobolev(r),infinity),0<=r<1/2. Mean-zero physically period-one source subspaces are preserved in both forward and inverse half-ball statements.",
+    "normalization": "Exact original smooth-test distributions and weighted endpoint norms,period-two exp(i*pi*k*x),high pairs at +/-2n,no frequency or norm substitution.",
+    "cutoff": "Choose N>=1 with C_r*n^(r-1/2)*(64R)<=1/2 for every n>=N. N precedes BOTH the weight and the potential. For source radius m,use R=2m. This more conservative cutoff retains all source required smallness conclusions.",
+    "map": "At +/-2n,n>=N,n>=1,use the actual b_plus/minus(alpha_n(q),q);preserve all other coefficients. The n=0 pair value is unused. The total ofFunctionOrZero definition has its fallback excluded everywhere in the asserted balls.",
+    "source_analyticity": "Complex Banach analyticity on open radius2m ball,in each exact original weighted norm,including infinity.",
+    "source_derivative": "Operator difference from Id<=1/16 on CLOSED source radius-m ball.",
+    "source_norms": "One half norm(q)<=norm(Omega(q))<=2norm(q) on CLOSED source radius-m ball.",
+    "inverse": "Complex analytic on OPEN target radius3m/4 ball;for ALL targets of norm<=3m/4,its value is in OPEN source radius-m ball and is an actual preimage. Source injectivity holds on CLOSED radius-m ball. The left inverse identity holds for source norm<=m whose image norm<=3m/4.",
+    "inverse_constraints": "For target norm<=m/2,the inverse has exactly the original target mean and is period-one iff the target is period-one. Real-type symmetry is not yet proved.",
+    "weight_compatibility": "Forward maps at different weights give identical ENTIRE output distributions for identical inputs in the verified balls. This is not yet the base-to-stronger-weight inverse regularity conclusion."
+  },
+  "constants": {
+    "error": "R/64 on closed radiusR ball;hence m/32 on double source ball.",
+    "derivative": "Cauchy on ball centered at each norm<=m point,radiusm;error differences<=m/16;derivative<=1/16.",
+    "inverse_contraction": "Identity-minus-map error contracts by1/16 on closed radiusm ball. Targets norm<=3m/4 map into this ball;the actual fixed point has norm<m.",
+    "source_bounds": "Derivative1/16 implies error Lipschitz1/16 and the source norm bounds1/2 and2 since Omega(0)=0."
+  },
+  "unchanged_shared_reuse": [
+    {
+      "file": "NLS/SequenceSpaces/WeightedAnalyticRealization.lean",
+      "private_source_commit": "f5f81a32532ecce1b33bcc2b79ecc4d03cea7e6d"
+    },
+    {
+      "file": "NLS/ComplexAnalysis/AnalyticImplicitBanachRoot.lean",
+      "private_source_commit": "a54a951a787b277066ae9375fed25c82a2cd306b"
+    },
+    {
+      "file": "NLS/ComplexAnalysis/NearIdentityAnalyticInverse.lean",
+      "private_source_commit": "53caea12e0b4e92a061a17ee45b19da6f6662f2c"
+    }
+  ],
+  "qualifications": [
+    "No root,adapted map,image coverage,injectivity or analytic inverse is supplied as a caller assumption. All come from the actual original physical coefficients and proved uniform errors.",
+    "Source Proposition2.18 is not marked fully complete:real-type symmetry and the full-image inverse formulation remain open. The proved complex inverse covers a larger open target ball than the source closed half ball.",
+    "Source Proposition2.19 base-to-weighted inverse restriction and source Theorem2.2 are not claimed from the separate weighted inverse factories alone.",
+    "Full source Theorem2.1(i) and all AppendixB clauses remain complete. Original Dirichlet Theorem2.1(ii),inverse Theorem2.2 and all MAIN theorems remain unproved."
+  ],
+  "remaining": [
+    "Prove physical conjugation/real-type symmetry: alpha_n(q) is real for real physical q,and the actual adapted Fourier map and its inverse preserve the real locus. Complex analyticity and real-scalar analyticity into complex numbers do not imply this.",
+    "Complete the source Proposition2.18 full-image analytic inverse formulation and source Proposition2.19 weighted inverse restriction. The actual weighted Fourier map,source derivative/norm bounds,injectivity,closed half-ball coverage and complex analytic inverse near that target ball are now proved. Forward equality of the ENTIRE adapted distributions across weights is also proved;the inverse regularity gain for a merely base-space source is not yet proved.",
+    "Use the actual adapted map/inverse with spectral gap lower comparisons and the finite-p original inverse spectral input to prove source Theorem2.2 regularity and original norm-bounded/weak-star-compact isospectral sets. Complete actual physical boundary parity,required low interlacing and original Dirichlet comparison source Theorem2.1(ii). The full direct general-weight gap Theorem2.1(i) and AppendixB remain complete.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 157,
+    "audited_declarations": 1425,
+    "theorems": 1171,
+    "definitions": 254,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-adapted-fourier.log"
+  }
+}

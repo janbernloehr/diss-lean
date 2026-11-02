@@ -31,8 +31,13 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.WeightedAnalyticRealization',
+    'NLS.SequenceSpaces.EvenTailReplacement',
     'NLS.ComplexAnalysis.JointSpectralDerivative',
     'NLS.ComplexAnalysis.AnalyticImplicitRoot',
+    'NLS.ComplexAnalysis.AnalyticImplicitBanachRoot',
+    'NLS.ComplexAnalysis.NearIdentityAnalyticInverse',
+    'NLS.ComplexAnalysis.NearIdentityBallInverse',
     'NLS.FunctionalAnalysis.ContractingSelection',
     'NLS.ComplexAnalysis.LexicographicOrder',
     'NLS.SequenceSpaces.OrderedOneSidedEnumeration',
@@ -179,6 +184,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceWeightedSpectral',
     'NLS.Articles.KdVPseudomeasures.SpectralDiagonalRoot',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedCoefficients',
+    'NLS.Articles.KdVPseudomeasures.SpectralAdaptedFourier',
+    'NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]

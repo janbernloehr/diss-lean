@@ -1,5 +1,10 @@
+import NLS.SequenceSpaces.WeightedAnalyticRealization
+import NLS.SequenceSpaces.EvenTailReplacement
 import NLS.ComplexAnalysis.JointSpectralDerivative
 import NLS.ComplexAnalysis.AnalyticImplicitRoot
+import NLS.ComplexAnalysis.AnalyticImplicitBanachRoot
+import NLS.ComplexAnalysis.NearIdentityAnalyticInverse
+import NLS.ComplexAnalysis.NearIdentityBallInverse
 import NLS.FunctionalAnalysis.ContractingSelection
 import NLS.ComplexAnalysis.LexicographicOrder
 import NLS.SequenceSpaces.OrderedOneSidedEnumeration
@@ -146,13 +151,36 @@ import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
 import NLS.Articles.KdVPseudomeasures.SourceWeightedSpectral
 import NLS.Articles.KdVPseudomeasures.SpectralDiagonalRoot
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedCoefficients
+import NLS.Articles.KdVPseudomeasures.SpectralAdaptedFourier
+import NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 
-/-! Exact transitive axiom audit of every selected public definition and theorem. -/
+/-! Exact transitive axiom audit of all selected public definitions and theorems. -/
 
+#print axioms NLS.WeightedCoeff.ofFunctionOrZero
+#print axioms NLS.WeightedCoeff.ofFunctionOrZero_eq_of_coordinates
+#print axioms NLS.WeightedCoeff.analytic_realization_of_bound
+#print axioms NLS.evenTailReplacement
+#print axioms NLS.evenTailReplacement_zero
+#print axioms NLS.evenTailReplacement_odd
+#print axioms NLS.evenTailReplacement_low
+#print axioms NLS.evenTailReplacement_pos
+#print axioms NLS.evenTailReplacement_neg
+#print axioms NLS.evenTailReplacement_error_le
+#print axioms NLS.WeightedCoeff.exists_infty_of_bound
+#print axioms NLS.WeightedCoeff.exists_evenTailReplacement
 #print axioms NLS.ComplexAnalysis.deriv_spectral_section_eq_fderiv
 #print axioms NLS.ComplexAnalysis.continuousOn_spectral_deriv_of_analyticOnNhd
 #print axioms NLS.ComplexAnalysis.analyticAt_implicitRoot
+#print axioms NLS.ComplexAnalysis.bijective_banach_triangular_derivative
+#print axioms NLS.ComplexAnalysis.analyticAt_implicitBanachRoot
+#print axioms NLS.ComplexAnalysis.exists_analytic_implicitBanachRoot
+#print axioms NLS.ComplexAnalysis.exists_continuousLinearEquiv_of_norm_sub_id_le_half
+#print axioms NLS.ComplexAnalysis.exists_analytic_inverse_of_derivative_near_id
+#print axioms NLS.ComplexAnalysis.norm_sub_le_two_mul_norm_image_sub_of_derivative_near_id
+#print axioms NLS.ComplexAnalysis.norm_fderiv_sub_id_le_of_ball_error
+#print axioms NLS.ComplexAnalysis.norm_error_sub_le_of_ball_error
+#print axioms NLS.ComplexAnalysis.exists_analytic_inverse_of_ball_error
 #print axioms NLS.FunctionalAnalysis.norm_sub_fixedPoints_le
 #print axioms NLS.FunctionalAnalysis.continuousAt_of_contracting_fixedPoints
 #print axioms NLS.ComplexAnalysis.complexLexKey
@@ -1130,6 +1158,11 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_mem_realMeanZero
 #print axioms NLS.WeightedCoeff.weakStarInvariantActionTrajectory
 #print axioms NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory
+
+
+
+
+
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne
@@ -1527,6 +1560,19 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_weighted_errors
 #print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_at_diagonalRoot
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_adapted_coupling_errors
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedPair
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedFourierValues
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceAdaptedFourierValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_spec
+#print axioms NLS.Articles.KdVPseudomeasures.analyticOnNhd_sourceWeightedAdaptedFourier
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_zero
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_adaptedFourier
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_preserves_complex_source
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_high_pair
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_low
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_weight_agreement
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_adaptedFourier_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGapValues_high_le
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapBound
