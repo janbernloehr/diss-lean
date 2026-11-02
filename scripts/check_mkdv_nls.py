@@ -293,6 +293,16 @@ modules = [
     "NLS/MKdV/MiuraFiniteRealActionProjection.lean",
     "NLS/MKdV/MiuraFiniteRealActionSections.lean",
     "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean",
+    "NLS/ComplexAnalysis/LatticeDiscInverseBound.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentCosine.lean",
+    "NLS/ZakharovShabat/SourceDiagonalReciprocalGapBound.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentZeroBound.lean",
+    "NLS/ZakharovShabat/SourceWeightedZeroLaurentBound.lean",
+    "NLS/ZakharovShabat/SourceWeightedZeroLaurentAnalytic.lean",
+    "NLS/MKdV/MiuraSobolevActionSequence.lean",
+    "NLS/MKdV/MiuraH1ActionSequence.lean",
+    "NLS/MKdV/MiuraActionSequenceTopology.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ActionSequenceIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

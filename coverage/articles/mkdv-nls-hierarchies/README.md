@@ -835,7 +835,7 @@ physical Hill contour actions. Zero mean and arbitrary omitted closed
 gaps are included.
 
 These finite local complex sections are now complemented by the real-preserving
-sections described below. The infinite action topology, collapsed selected-action
+sections described below. The global inverse action-coordinate geometry, collapsed selected-action
 coordinates and independent global mKdV chart remain open, together with forward
 factorization, final angle-sum factorization and corrected frequency comparison.
 
@@ -867,8 +867,8 @@ reflection, with the original H1 norm. The physical real projection,
 closed Banach real form, action-value reality and actual derivative
 reality are proved. The real analytic inverse theorem supplies the
 section on a constructed affine slice. No real chart or inverse is an
-extra hypothesis. The independent global mKdV chart, infinite action
-topology and collapsed selected-action coordinates, forward factorization,
+extra hypothesis. The independent global mKdV chart, inverse action-coordinate
+geometry and collapsed selected-action coordinates, forward factorization,
 final angle-sum factorization and corrected frequency comparison remain
 open; the main-theorem goal remains incomplete.
 
@@ -882,3 +882,37 @@ are allowed. The public inventory has 1,662 entries (1,349 theorems and
 313 definitions; aliases and structures excluded), with 261 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## Full native weighted action sequence
+
+The entire action sequence is now constructed in its native norm:
+`miuraSobolevActionSequence s` takes values in weighted complex l1 with
+weight (1+n)^(2s+1) on positive indices. One open complex H^s neighborhood
+of the whole physical real form carries this analytic map for every
+integer s>=0. Coordinatewise analyticity is upgraded to actual Banach
+analyticity using a locally uniform weighted l1 bound. Central and
+negative entries are zero solely to encode the positive-index target
+inside Z.
+
+On every original real H1 input, `miuraH1ActionSequence_physical` identifies
+every positive coordinate with the independently defined physical Hill
+contour action. The weight is exactly (1+n)^3. The literal weighted
+absolute series is summable, and the whole action sequence together with
+the signed mean has one complex H1 analytic extension. The complete
+physical Gardner action flows conserve this entire weighted action/mean
+map. Zero mean and arbitrary collapsed gaps are included.
+
+The full native action map and its topology are therefore available.
+Global inverse action-coordinate geometry and the independent mKdV
+Birkhoff chart, forward factorization, final angle-sum factorization and
+corrected frequency comparison remain open.
+
+The exact paper weight is also supplied. `miuraPaperSobolevActionSequence s`
+uses 1+|n|^(2s+1), with a coefficient-preserving continuous linear
+equivalence to the normalized spectral-estimate weight. The checked
+comparison constants are 1 and 2^(2s). Thus the full action-map result
+retains the original topology, including the action target associated
+with the paper's h^s_* model.
+
+Validation: all 259 unchanged prefix source hashes match c1ee709; their private outputs were reused. The ten added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,333 and 48,303 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,707 declarations (1,382 theorems and 325 definitions; aliases and structures excluded), with 271 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.

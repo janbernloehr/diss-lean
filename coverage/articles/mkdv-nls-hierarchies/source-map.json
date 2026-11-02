@@ -143,7 +143,9 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -619,7 +621,7 @@
     "generic_analytic_section": "NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse",
     "scope": "Every original real H1 base point; any finite collection of its positive open physical actions together with the literal mean. Other gaps may close and zero mean is allowed. The actual complex H1 analytic extensions have surjective derivative. A constructed holomorphic section passes through the base point, realizes all nearby selected complex action and mean values exactly, has the constructed right inverse as its actual derivative, and stays inside any prescribed open complex H1 neighborhood of the base point.",
     "construction": "Cotangent independence proves surjectivity by injectivity of the algebraic dual map. A linear right inverse is bounded because its domain is finite dimensional. The affine H1 slice through that right inverse has identity actual derivative under the physical projection; the analytic inverse theorem constructs the section on that slice.",
-    "limits": "The finite complex sections are complemented by constructed real-preserving sections below. These do not construct an independent global mKdV Birkhoff chart. The infinite action topology, collapsed selected-action coordinates, global forward action factorization, independent mKdV angles and final angle-sum factorization, and corrected frequency comparison remain open."
+    "limits": "The full native weighted l1 action map is now constructed separately. These finite local sections do not construct the independent global mKdV Birkhoff chart or its inverse action-coordinate geometry. Collapsed selected-action Cartesian coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
   },
   "real_finite_physical_action_sections": {
     "physical_real_Banach_space": "NLS.WeightedCoeff.physicalRealSubmodule",
@@ -638,6 +640,32 @@
     "scope": "Every original real H1 base point, including zero mean; any finite collection of its open positive physical actions; arbitrary other gaps may close. A constructed real analytic section into the closed physical real H1 space passes through that point, remains inside any prescribed real H1 neighborhood, realizes the literal signed mean and independent physical Hill contour actions exactly, keeps selected actions positive and has the constructed bounded real right inverse as its actual derivative.",
     "physical_reality_convention": "Fourier conjugate reflection a_j=conj(a_-j), not coordinatewise real Fourier coefficients. The real form is a closed real Banach subspace with the original H1 norm.",
     "construction": "Real gap formulas prove the physical action values real. Differentiating their imaginary parts along original real H1 lines proves reality of the actual complex cotangents. Exact physical real/imaginary decomposition shows that projecting any complex derivative lift to its physical real part preserves the real target. The real analytic inverse theorem on this constructed affine slice supplies the section.",
-    "limits": "This proves finite real local action geometry, not the independent global mKdV Birkhoff chart. The infinite action topology and collapsed selected-action coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
+    "limits": "The full native weighted l1 action map is now constructed separately. These finite local sections do not construct the independent global mKdV Birkhoff chart or its inverse action-coordinate geometry. Collapsed selected-action Cartesian coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
+  },
+  "native_mKdV_action_sequence": {
+    "integer_Laurent_complex_boundary": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.exists_ball_all_laurent_actions_eq_boundaryIntegral",
+    "zero_excluding_disc_geometry": "NLS.ComplexAnalysis.exists_latticeDisc_inverse_bound",
+    "uniform_reciprocal_gap_frequency": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.exists_diagonal_gapPoint_inverse_bound",
+    "actual_Laurent_level_zero_bound": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.exists_local_zeroLevel_inverse_frequency_bound",
+    "weighted_l1_norm_bound": "NLS.ZakharovShabat.exists_local_sourceWeightedZeroLaurent_bound",
+    "actual_weighted_l1_analytic_realization": "NLS.ZakharovShabat.exists_local_sourceWeightedZeroLaurentSequence_analytic",
+    "native_action_weight": "NLS.MKdV.miuraSpectralActionWeight",
+    "native_action_sequence": "NLS.MKdV.miuraSobolevActionSequence",
+    "one_complex_neighborhood_at_every_native_order": "NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_analytic",
+    "original_H1_physical_sequence": "NLS.MKdV.miuraH1ActionSequence",
+    "literal_independent_Hill_action_coordinates": "NLS.MKdV.miuraH1ActionSequence_physical",
+    "original_H1_action_mean_map": "NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic",
+    "literal_positive_action_weighted_summability": "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability",
+    "whole_sequence_and_signed_mean_conservation": "NLS.Articles.MKdVNLSHierarchies.theorem4_action_mean_sequence_conserved",
+    "target_topology": "At each integer Sobolev order s>=0 the analytic action extensions take values in the literal paper-weighted l1 space with weight 1+|n|^(2*s+1). The equivalent normalized weight (1+|n|)^(2*s+1) is used for the spectral estimate; a proved coefficient-preserving continuous linear equivalence gives exactly the paper topology. Positive indices are represented inside Z with zero central and negative entries. Original H1 has action weight 1+n^3, equivalently (1+n)^3.",
+    "uniform_estimate": "One common complex source neighborhood gives |I_(n,0)| <= C*|gamma_n|^2/(1+|n|), every signed n!=0. Symmetric endpoint cosine means keep the formula analytic through collapsed gaps. Fixed zero-excluding lattice discs supply the reciprocal frequency bound; no action or gap length is divided out.",
+    "normalization": "The physical J_n is exactly one-half the actual original NLS Laurent level zero. The weighting equivalence is undone after taking the positive half of the signed sequence, so the raw returned coordinates are the physical actions, not their weighted multiples.",
+    "scope": "All nonnegative integer native complex Sobolev spaces have one open analytic action-sequence neighborhood containing their entire physical real form, with actual Laurent coordinates. On every original real H1 input the positive coordinates equal the independent physical Hill contour actions. The actual signed mean is included in the H1 analytic map. Zero mean and arbitrary closed gaps are included.",
+    "remaining": "The full native action map and its topology are now constructed. This does not prove global inverse action-coordinate geometry, collapsed selected-action Cartesian coordinates, forward NLS action factorization, independent mKdV angles and final angle-sum factorization, or the corrected frequency comparison.",
+    "paper_action_weight": "NLS.MKdV.miuraPaperActionWeight",
+    "coefficient_preserving_topology_equivalence": "NLS.MKdV.miuraActionTopologyEquiv",
+    "literal_paper_weighted_sequence": "NLS.MKdV.miuraPaperSobolevActionSequence",
+    "exact_paper_topology_interface": "NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_paper_topology",
+    "printed_weight_comparison": "1+|n|^(2*s+1) <= (1+|n|)^(2*s+1) <= 2^(2*s)*(1+|n|^(2*s+1)); both bounded linear directions preserve every raw action coordinate."
   }
 }

@@ -1420,3 +1420,61 @@ are allowed. The public inventory has 1,662 entries (1,349 theorems and
 313 definitions; aliases and structures excluded), with 261 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — full native weighted physical action sequence
+
+The infinite action-space map is now constructed, rather than only its
+individual analytic coordinates or finite projections. At every integer
+Sobolev order s>=0, `miuraSobolevActionSequence s` takes values in the
+native weighted l1 target with weight (1+n)^(2s+1). A single open complex
+H^s domain contains the whole physical real form and supports the actual
+analytic sequence. Its positive coordinates are one-half the literal
+NLS Laurent level zero; central and negative entries are zero only as
+a representation of the original positive-index target inside Z.
+
+The complex Laurent boundary formula is proved on one common source
+ball for all signed noncentral indices and every integer level. It uses
+analytic symmetric endpoint cosine means, so it survives a collapsed
+complex gap without choosing analytic individual endpoints. Real-source
+contour identities and real-form uniqueness identify this mean with the
+actual global Laurent contour functions. A real diagonal point inside
+a common Cauchy-family ball excludes zero from every noncentral outer
+disc, even when the family's chosen center itself is not diagonal.
+
+The uniform reciprocal estimate is geometric. The fixed isolating discs
+have bounded radii and centers with bounded displacement from n*pi.
+High-index discs give a bound of order 1/(1+|n|); the finitely many low
+noncentral discs have a positive distance from zero. Consequently the
+actual level-zero action satisfies |I_(n,0)| <= C*|gamma_n|^2/(1+|n|) on
+one complex source neighborhood. No action or gap length is divided out.
+The checked weighted Hilbert squared-gap bound then controls the full
+weighted l1 sequence. Locally bounded analytic sequence realization
+upgrades the scalar contour analyticity to Banach analyticity in the
+original native Sobolev norm.
+
+`theorem4_mkdv_action_mean_map_analytic` supplies the exact original H1
+interface. Every positive coordinate equals the independent physical
+Hill contour action, with its factor one half retained. The action
+weight is exactly (1+n)^3, and the literal positive-index weighted norm
+series is summable. The signed mean pairs with the full action sequence
+in one complex analytic H1 map. The actual complete Gardner action
+flows conserve that entire weighted action/mean map, not just each
+individual coordinate. Zero mean and arbitrary closed gaps are included.
+
+This closes the native infinite action-map/topology dependency. It does
+not prove its global inverse geometry or construct the independent
+mKdV Birkhoff chart. Forward restricted-NLS-action factorization,
+independent mKdV angles and final angle-sum factorization, and corrected
+full frequency comparison remain essential open obligations. Theorems 1
+and 2 remain complete; the overall main-theorem goal remains incomplete.
+
+The literal printed action-space weight 1+|n|^(2s+1) is supplied as well.
+Its comparison with (1+|n|)^(2s+1) has explicit constants 1 and 2^(2s).
+`miuraActionTopologyEquiv` is a continuous linear equivalence preserving
+every raw coordinate in both directions, and
+`native_mkdv_action_sequence_paper_topology` gives the actual analytic
+sequence in the printed weighted space. No identification of distinct
+norm topologies is left as an assumption.
+
+Validation: all 259 unchanged prefix source hashes match c1ee709; their private outputs were reused. The ten added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,333 and 48,303 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,707 declarations (1,382 theorems and 325 definitions; aliases and structures excluded), with 271 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.
