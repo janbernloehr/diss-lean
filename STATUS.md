@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: Appendix F open-gap endpoint assembly
+## Current milestone: Appendix F half-gap root count
+
+The [half-gap root count](NLS/ZakharovShabat/AppendixFHalfGapCount.lean)
+retains the exact derivative normalization and the one-half quadratic
+remainder bound. The strict boundary comparison and Rouche theorem
+give exactly one zero counted with analytic multiplicity.
+
+Near a collapsed actual source gap, midpoint and gap-norm continuity
+place every nearby half-gap disc inside the original isolating disc.
+The source deleted-product bounds then prove the count for the literal
+derivative of Delta squared minus four, divided by four.
+
+The indexed critical-point half-gap bound retains its existing
+independent squared-gap proof. This step supplies the literal
+differentiated-discriminant count appearing in the printed argument.
+
+One module adds three positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,638 build jobs, 7,729 public examples and an axiom audit of 44,972 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The final 31-group ordered Appendix F reconciliation and publication
+remain separate. The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F open-gap endpoint assembly
 
 The [common endpoint spokes](NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean)
 choose both outward rays on the original isolating boundary and analytic

@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F half-gap root-count proofs](APPENDIX_F.md)
+connect the exact boundary estimate to Rouche and prove one analytic
+zero of the literal differentiated discriminant on nearby actual
+source half-gap discs. The original isolating disc supplies the
+uniform source bounds. The indexed critical-point bound retains its
+independent squared-gap proof. Three positive theorems add no new
+refutation. Final ordered reconciliation and publication remain separate.
+
 The [Appendix F open-gap source assembly](APPENDIX_F.md)
 constructs both original-boundary endpoint spokes with the printed
 quarter-distance margins. The actual improper integrals equal the

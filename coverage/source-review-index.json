@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T01:36:01.167080+00:00",
-  "base_commit": "1970205b1b9b371981d285b36818c44fd338d6a6",
+  "published_utc": "2026-11-02T01:59:30.210614+00:00",
+  "base_commit": "8fd4808cec41b48d557137ef8db711f32b9f7b4a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 204,
-    "module_hash_checks": 4236,
-    "distinct_modules": 2133
+    "review_records": 205,
+    "module_hash_checks": 4243,
+    "distinct_modules": 2135
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "1970205b1b9b371981d285b36818c44fd338d6a6",
-    "validated_state": "Fresh full check after two Appendix F open-gap source-assembly modules; public examples unchanged.",
+    "base_commit": "8fd4808cec41b48d557137ef8db711f32b9f7b4a",
+    "validated_state": "Fresh full check after one Appendix F half-gap root-count module; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8637,
+    "build_jobs": 8638,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44968,
+    "transitive_NLS_declarations": 44972,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 77010,
+    "gate_session": 59119,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4899,
-      "sha256": "29b1ea7b531bd40b38f4b6d7583e2582f7e46674931fa097f5fdffe0f8bfd282"
+      "files": 4900,
+      "sha256": "e95d8d8f529c515e1f8bcf2a0d5db63966fa66e3cf7c88705532caf85cb17fa3"
     },
-    "full_gate_log_sha256": "df42c383075381ddfe194847f0b3cbc89977e5d6074083b1b3f532dc58f0ce5a",
+    "full_gate_log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFOpenGapAssemblyFullCheck.log"
+    "full_gate_log": "work/AppendixFHalfGapCountFullCheck.log"
   },
   "named_statements": [
     {
@@ -68002,6 +68002,138 @@
         "log_sha256": "df42c383075381ddfe194847f0b3cbc89977e5d6074083b1b3f532dc58f0ce5a"
       },
       "source_record_sha256": "1bca5b98ecf8d26eb945407acd28e471d2a8a42267ae20bd8e90996f0b5590a1"
+    },
+    "AppendixFHalfGapCountSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "8fd4808cec41b48d557137ef8db711f32b9f7b4a",
+      "updated_utc": "2026-11-02T01:59:30.156758+00:00",
+      "source_lines": [
+        [
+          10819,
+          10826
+        ],
+        [
+          10819,
+          10826
+        ],
+        [
+          10819,
+          10826
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "requirement": "Differentiated quadratic factorization with its exact normalization",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_quadratic_derivative"
+          ],
+          "reviewed_claims": [
+            "Differentiating the actual -4 quadratic factorization gives the normalized derivative used in F.1."
+          ],
+          "qualification": "The formula is an equality, with no root-selection or nonzero-gap hypothesis."
+        },
+        {
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "requirement": "Half-gap boundary comparison and Rouche count",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_half_gap_zero_count"
+          ],
+          "reviewed_claims": [
+            "The exact one-half quadratic estimate gives a strict boundary perturbation.",
+            "The comparison function has a single simple zero at the midpoint; Rouche transfers its analytic multiplicity count."
+          ],
+          "qualification": "The scalar theorem assumes the explicit lower and derivative bounds and gap smallness."
+        },
+        {
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "requirement": "Actual-source half-gap discs near a collapsed gap",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_5Data.appendixF_local_half_gap_zero_count"
+          ],
+          "reviewed_claims": [
+            "Continuity places every nearby half-gap disc inside the original isolating disc.",
+            "The actual source deleted-product bounds give one analytic zero of the literal normalized differentiated discriminant."
+          ],
+          "qualification": "The indexed critical-point half-gap conclusion retains the existing independent squared-gap proof. This theorem establishes the printed differentiated-discriminant count."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean": "c351375ea8c8b45ef5e092de3ab19ba5d9c192ccc2f0ea503c82957947be0427",
+        "NLS/ComplexAnalysis/IsolatedOrderStability.lean": "1a55544296c42be5662b29875a87637de7b80da95ead7379aaa52c899025ea46",
+        "NLS/ComplexAnalysis/Rouche.lean": "f1178a82592f7f1a7b06b8729403ee1b8d9fb3033fca9c84bba839b499b3a8f8",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean": "cbc67bbfb1905fd92f1b97d9398ef093abf74b142325c3fa5aba876e422ee3fd",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5",
+        "NLS/ZakharovShabat/SourceLemmaF1.lean": "03d88a2c94fae5f033094fa5d358a3a7359e885355508310b560bcc39ed7cd76",
+        "NLS/ZakharovShabat/AppendixFHalfGapCount.lean": "a012b1c10447bc8f94d91e2cfa346ff07de5658b8957563becb217822ab46c88"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean",
+        "NLS/ComplexAnalysis/IsolatedOrderStability.lean",
+        "NLS/ComplexAnalysis/Rouche.lean",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean",
+        "NLS/ZakharovShabat/SourceLemmaF1.lean",
+        "NLS/ZakharovShabat/AppendixFHalfGapCount.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_half_gap_zero_count",
+        "NLS.ComplexAnalysis.appendixF_quadratic_derivative",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.appendixF_local_half_gap_zero_count"
+      ],
+      "declaration_inventory_count": 44972,
+      "qualification": "One module adds three positive theorems for the half-gap root-count passage. Differentiating the quadratic factorization gives the literal derivative of Delta squared minus four divided by four. The exact one-half remainder estimate yields the strict boundary comparison, and Rouche gives one zero counted with analytic multiplicity. For the actual source near a collapsed gap, midpoint and gap-norm continuity place nearby half-gap discs inside the original isolating disc. The existing deleted-product bounds supply the lower bound, derivative bound and smallness condition on one source neighborhood. The indexed critical-point half-gap conclusion retains its existing independent squared-gap proof; this step establishes the literal differentiated-discriminant count. No new definition, example or refutation is added. The final ordered Appendix F reconciliation remains separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "1bca5b98ecf8d26eb945407acd28e471d2a8a42267ae20bd8e90996f0b5590a1",
+      "validation_lean_sources": {
+        "files": 4900,
+        "sha256": "e95d8d8f529c515e1f8bcf2a0d5db63966fa66e3cf7c88705532caf85cb17fa3"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ComplexAnalysis.appendixF_half_gap_zero_count._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 59119,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFHalfGapCountFullCheck.log",
+        "log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438"
+      },
+      "source_record_sha256": "e31741e9665e9e3208586ee147c1847031687537dd2c02c7b72e5999e857a445"
     }
   }
 }

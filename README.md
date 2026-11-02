@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F open-gap endpoint assembly](coverage/APPENDIX_F.md)
-constructs both original-boundary spokes and proves analyticity of
-both actual improper endpoint integrals on one source neighborhood.
-The exact parameter integral retains its full -i displacement coefficient.
-Six positive theorems add no new refutation.
-The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix F half-gap root count](coverage/APPENDIX_F.md)
+connects the exact quadratic estimate to Rouche and proves the literal
+differentiated-discriminant count on nearby actual source half-gap discs.
+Three positive theorems add no new refutation. The indexed critical-point
+bound retains its independent squared-gap proof; final ordered
+reconciliation and the [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -4898,3 +4898,4 @@ import NLS.ZakharovShabat.AppendixFSourceChartCover
 import NLS.ZakharovShabat.AppendixFFixedBoundary
 import NLS.ZakharovShabat.AppendixFOpenGapSpokes
 import NLS.ZakharovShabat.AppendixFSourceEndpointAnalytic
+import NLS.ZakharovShabat.AppendixFHalfGapCount
