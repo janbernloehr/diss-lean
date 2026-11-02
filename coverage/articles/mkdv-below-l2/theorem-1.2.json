@@ -7,8 +7,8 @@
   "declared_family": "NLS.Articles.MKdVBelowL2.compatibleBirkhoff",
   "domain": "NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain",
   "source_space": "Original period-one distributions, pair of FourierLebesgue spaces with Weight.one; physicalRealSubspace has a complete real Banach structure",
-  "target_space": "Coeff p \u00d7 Coeff p, with real target Birkhoff.conjugatePairSubmodule p; complete in the inherited norm",
-  "quantifiers": "One chosen original spectral chart at every finite p\u22652; all compatibility and geometry statements use this fixed family",
+  "target_space": "Coeff p × Coeff p, with real target Birkhoff.conjugatePairSubmodule p; complete in the inherited norm",
+  "quantifiers": "One chosen original spectral chart at every finite p≥2; all compatibility and geometry statements use this fixed family",
   "clauses": [
     {
       "source": "Zero normalization and (i)",
@@ -48,14 +48,14 @@
   ],
   "normalization": "Complex coordinates z-=(x-iy)/sqrt(2), z+=(x+iy)/sqrt(2); mixed Poisson bracket -i delta, physical Fourier reversal retained. physicalFLBracket matches the existing physical integral bracket at p=2.",
   "topology": "Norm topology on original physical Fourier coefficients; full Banach analyticity, not merely coordinatewise analyticity",
-  "qualification": "The theorem is proved under the accepted Gr\u00e9bert\u2013Kappeler manuscript reference. PDF edition identity is outside the agreed scope. Real and complex product-norm models are connected by explicit continuous linear equivalences.",
+  "qualification": "The theorem is proved under the accepted Grébert–Kappeler manuscript reference. PDF edition identity is outside the agreed scope. Real and complex product-norm models are connected by explicit continuous linear equivalences.",
   "other_main_theorems": {
-    "1.1": "not_verified",
-    "1.3": "not_verified"
+    "1.1": "verified_under_accepted_reference",
+    "1.3": "verified_under_accepted_reference"
   },
   "validation": {
-    "modules_checked": 22,
-    "audited_declarations": 120,
+    "modules_checked": 219,
+    "audited_declarations": 1007,
     "evidence": "validation.json"
   }
 }

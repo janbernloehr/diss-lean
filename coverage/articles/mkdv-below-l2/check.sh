@@ -244,6 +244,21 @@ modules=(
   Articles/MKdVBelowL2/ScalarSmoothMassApproximants
   Articles/MKdVBelowL2/FixedTimeScalarMassObstruction
   Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction
+  ZakharovShabat/SourceHilbertMassActionInvariance
+  Articles/MKdVBelowL2/OrdinaryFourthHamiltonianPhaseFamily
+  Articles/MKdVBelowL2/OrdinaryFourthFiniteGapPhysicalODE
+  Articles/MKdVBelowL2/OrdinaryFourthFiniteGapPointwise
+  Articles/MKdVBelowL2/OrdinaryFourthClassicalPhysicalFlow
+  Articles/MKdVBelowL2/OrdinaryFourthClassicalTimeEquation
+  Articles/MKdVBelowL2/OrdinaryFourthClassicalMKdV
+  Articles/MKdVBelowL2/SmoothSpatialOrdinaryFourthTrajectory
+  Articles/MKdVBelowL2/OrdinaryFourthClassicalUniqueness
+  Articles/MKdVBelowL2/OrdinaryFourthScalarCoordinates
+  Articles/MKdVBelowL2/OrdinaryScalarClassicalAdapter
+  Articles/MKdVBelowL2/PhysicalScalarL2Locus
+  Articles/MKdVBelowL2/FixedTimeScalarLocalMassObstruction
+  Articles/MKdVBelowL2/OrdinaryMKdVFixedTimeNonextension
+  Articles/MKdVBelowL2/Theorem11
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

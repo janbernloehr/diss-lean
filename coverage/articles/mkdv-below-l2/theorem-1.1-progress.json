@@ -1,7 +1,7 @@
 {
   "main_theorem": "1.1",
   "source_page": 3,
-  "verified": false,
+  "verified": true,
   "checked_dependencies": [
     {
       "source": "Hamiltonian time orientation for the renormalized mKdV frequency",
@@ -317,14 +317,63 @@
       "source": "Fixed-time obstruction for the mass-restored fourth coordinate phase",
       "declaration": "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate",
       "scope": "Every non-Hilbert real scalar datum at every finite p>=2 and every fixed t>0. Some actual signed nonzero Birkhoff mode has no continuous scalar extension agreeing on smooth controlled native inputs with the normalized coordinate phase times exp(-12*pi*i*n*t*M). The proof uses the exact physical mass and the independently fixed normalized coordinate family. Identification of this restored coordinate formula with arbitrary ordinary physical mKdV PDE solutions is still a separate remaining obligation; the full physical nonextension theorem is not claimed from this declaration alone."
+    },
+    {
+      "source": "The mass-restored frequency family on the actual Hilbert source",
+      "declaration": "NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency_eq_physical_derivative",
+      "scope": "The actual normalized fourth frequency plus 12*pi*n times the independently defined real Hilbert mass is a continuous action-invariant Hilbert family. Its complex value equals the independent original H4 action derivative minus 6 times physical momentum, on the full native H^(3/2) domain. Component-swap covariance and global Hilbert source inversion preserve the original equal-field diagonal."
+    },
+    {
+      "source": "The actual ordinary physical equation at every native H4 input",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue_mKdV",
+      "scope": "The restored finite-gap source cotangent is the physical H4 cotangent minus 6*P times the mass cotangent; the mass-dependent spatial term cancels. The independent physical Hamiltonian direction and strong H1 derivative give the actual finite-gap pointwise equation. Joint native path and velocity continuity pass it to every H4 real-type input. On the original scalar diagonal the remaining physical momentum is zero, giving u_t=-u_xxx+6*u^2*u_x at every real time and space, with no finite-gap assumption."
+    },
+    {
+      "source": "Global ordinary classical PDE existence and uniqueness",
+      "declaration": "NLS.Articles.MKdVBelowL2.existsUnique_classicalOrdinaryMKdVTrajectory",
+      "scope": "Every smooth real period-one physical field has exactly one ordinary classical global solution with its exact original initial field. All-order native Sobolev representations and fixed-family source equality prove spatial C-infinity at every time. The actual norm-continuous velocity gives the full uniform-norm time derivative; the first actual Sobolev jet is a continuous first spatial derivative family. Classical uniqueness at zero translation parameter identifies arbitrary ordinary classical solutions, including every ordinary jointly smooth solution."
+    },
+    {
+      "source": "Exact original scalar Birkhoff coordinates of the ordinary physical flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_ordinaryFourthClassicalSourceFlow",
+      "scope": "For every finite p>=2, every native H4 diagonal datum, every signed mode and every real time, the actual scalar physical distribution has exactly the normalized fourth coordinate phase multiplied by exp(-12*pi*i*n*t*M). The same fixed Theorem 1.2 family is used at both Hilbert and p exponents. All source images needed here are discharged by the actual Hilbert source flow; no global rough-data inverse is assumed."
+    },
+    {
+      "source": "Canonical ordinary smooth scalar physical map and its coordinates",
+      "declaration": "NLS.Articles.MKdVBelowL2.classicalOrdinaryScalarSolutionMap_coordinates",
+      "scope": "A classical ordinary scalar physical solution map exists for every finite p>=2. Physical PDE uniqueness and Fourier uniqueness make the smooth choice unique. Any such map has precisely the calibrated mass-restored fourth coordinates on every genuine smooth native original scalar input. Thus the previously proved coordinate obstruction now applies to arbitrary canonical ordinary smooth PDE solutions."
+    },
+    {
+      "source": "The literal original L2 domain",
+      "declaration": "NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_iff_l2_function",
+      "scope": "The original real scalar distribution belongs to physicalScalarL2Locus exactly when the same original distribution functional is represented by an actual physical period-one L2 function. The construction uses the verified physical Fourier isometry and actual circle integral representation. A physical Hilbert pair representing both original scalar distributions implies this literal L2 condition; this discharges the non-Hilbert premise of the mass-phase obstruction at every datum outside L2."
+    },
+    {
+      "source": "Local relative-continuity fixed-time obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension_within",
+      "scope": "Every finite p>2, every original real scalar datum outside physical L2, every selected t>0, any ordinary canonical smooth physical map, and every candidate physical extension. Agreement with smooth classical values is required only on a neighborhood of the datum. The candidate cannot be continuous there even relative to any set containing those nearby smooth data. Two genuine smooth sequences eventually enter that neighborhood and give opposite exact mass phases; composing with the fixed actual Birkhoff coordinate gives the contradiction."
+    },
+    {
+      "source": "Even a one-point smooth extension is impossible at each fixed time",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+      "scope": "Every finite p>2, every original real datum outside literal physical L2 and every t>0. Any candidate map agreeing with the canonical ordinary smooth physical values on all smooth data fails relative continuity on the union of smooth data with that one rough datum. This is the fixed-time claim, not only a uniform trajectory-norm obstruction."
+    },
+    {
+      "source": "Full main Theorem 1.1",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1",
+      "scope": "For every finite p>2, actual canonical renormalized and ordinary classical smooth physical maps exist. The renormalized flow is locally C0 wellposed at every original real scalar datum in the all-smooth-sequences sense, with one positive common time and one open initial-data neighborhood and full uniform trajectory-norm continuity. One invariant open zero neighborhood is chosen before all positive compact time intervals for global C0 wellposedness. At every original real datum outside actual physical L2 and every selected t>0, the original ordinary smooth map has no continuous extension, even on smooth data plus that point. All physical PDE and Birkhoff calibration premises are discharged."
     }
   ],
-  "remaining": [
-    "Prove that arbitrary classical smooth original unrenormalized mKdV solutions have exactly the mass-restored fourth-coordinate evolution used by FixedTimeFourthCoordinateObstruction, and construct an ordinary smooth classical solution map so its agreement condition is nonvacuous. Compose any hypothetical continuous physical fixed-time extension with the fixed Birkhoff coordinate to conclude nonextension at every non-Hilbert datum and each t>0. The actual controlled smooth mass-phase approximants and fixed-time coordinate obstruction are now proved; those alone are not substituted for physical PDE calibration."
-  ],
-  "validation": "Six final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 198 unchanged parent modules reused from 03e1d56b8d1810825c7c140bca6f84f0a2f2f070 after source comparison. Fresh full transitive audit of 948 declarations uses only propext, Classical.choice and Quot.sound.",
+  "remaining": [],
+  "validation": "Final incremental strict Lean 4.33.1 validation: 15 new modules checked with autoImplicit=false and warningAsError=true; 204 unchanged modules reused from ef4b1eb1c007ed660156037a999289daa3ae7948 after byte comparison. Fresh full transitive audit of 1007 named declarations, including every main theorem, uses only propext, Classical.choice and Quot.sound.",
   "verified_clauses": {
     "local_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
-    "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"
-  }
+    "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+    "fixed_time_nonextension": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+    "global_continuous_solution_curves": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves"
+  },
+  "completed_by": [
+    "NLS.Articles.MKdVBelowL2.theorem1_1"
+  ],
+  "history_note": "Earlier dependency scopes record what was established at their respective checkpoints; later entries discharge their then-open obligations. Current complete clause mapping is theorem-1.1.json."
 }

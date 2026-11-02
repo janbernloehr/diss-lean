@@ -1,11 +1,20 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 198 unchanged modules reuse commit 03e1d56b8d1810825c7c140bca6f84f0a2f2f070; 6 final new modules checked strictly below.
-Dynamics/FixedTimeMassPhaseTuning: checked
-ZakharovShabat/SourceHilbertMassDivergence: checked
-Articles/MKdVBelowL2/ScalarSmoothMassPhases: checked
-Articles/MKdVBelowL2/ScalarSmoothMassApproximants: checked
-Articles/MKdVBelowL2/FixedTimeScalarMassObstruction: checked
-Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction: checked
+Incremental validation: 204 unchanged modules reuse commit ef4b1eb1c007ed660156037a999289daa3ae7948; 15 final new modules checked strictly below.
+ZakharovShabat/SourceHilbertMassActionInvariance: checked
+Articles/MKdVBelowL2/OrdinaryFourthHamiltonianPhaseFamily: checked
+Articles/MKdVBelowL2/OrdinaryFourthFiniteGapPhysicalODE: checked
+Articles/MKdVBelowL2/OrdinaryFourthFiniteGapPointwise: checked
+Articles/MKdVBelowL2/OrdinaryFourthClassicalPhysicalFlow: checked
+Articles/MKdVBelowL2/OrdinaryFourthClassicalTimeEquation: checked
+Articles/MKdVBelowL2/OrdinaryFourthClassicalMKdV: checked
+Articles/MKdVBelowL2/SmoothSpatialOrdinaryFourthTrajectory: checked
+Articles/MKdVBelowL2/OrdinaryFourthClassicalUniqueness: checked
+Articles/MKdVBelowL2/OrdinaryFourthScalarCoordinates: checked
+Articles/MKdVBelowL2/OrdinaryScalarClassicalAdapter: checked
+Articles/MKdVBelowL2/PhysicalScalarL2Locus: checked
+Articles/MKdVBelowL2/FixedTimeScalarLocalMassObstruction: checked
+Articles/MKdVBelowL2/OrdinaryMKdVFixedTimeNonextension: checked
+Articles/MKdVBelowL2/Theorem11: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1852,3 +1861,164 @@ Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction: checked
 'NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertMass_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceHilbertMass_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency_eq_physical_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthHilbertImageFlow_preserves_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_ordinaryFourthFiniteGap_physical_cotangent_ODE' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthFiniteGapSourceFlow_physical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthFiniteGapPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthFiniteGapPhysicalFlow_corrected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalSourceFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalSourceFlow_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.originalWeightedRealSource_ordinaryFourthClassicalSourceFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_ordinaryFourthClassicalSourceFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalVelocity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_ordinaryFourthClassicalPhysicalValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_ordinaryFourthClassicalPhysicalVelocity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalSourceFlow_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalMomentum_flow_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalMass_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalVelocity_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalSourceFlow_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalMomentum_flow_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue_mKdV' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.ordinaryFourthClassicalPhysicalValue_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.periodOneCoefficient_ordinaryFourthClassicalPhysicalValue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.contDiff_ordinaryFourthClassicalPhysicalValue_of_smooth_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalFlow_fst' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClassicalMKdVTrajectory_ordinaryFourthClassicalPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalOrdinaryMKdVTrajectory_eq_ordinaryFourthClassicalPhysicalFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.existsUnique_classicalOrdinaryMKdVTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_fourthClassicalScalarInput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_ordinaryFourthClassicalSourceFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalOrdinaryPhysicalScalarTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalOrdinaryPhysicalScalarTrajectory.unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.contDiff_nativePhysical_of_isSmoothPhysicalScalarInput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isClassicalOrdinaryPhysicalScalarTrajectory_ordinaryFourthClassicalSourceFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_classicalOrdinaryPhysicalScalarTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsClassicalOrdinaryScalarSolutionMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_classicalOrdinaryScalarSolutionMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.classicalOrdinaryScalarSolutionMap_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalScalarL2Locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_of_pair_hilbert' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_iff_l2_function' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.not_continuousWithinAt_fixed_scalar_mass_phase_extension_of_mem_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension_of_mem_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension_within' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves' depends on axioms: [propext, Classical.choice, Quot.sound]

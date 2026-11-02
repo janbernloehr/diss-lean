@@ -1184,3 +1184,53 @@ propext, Classical.choice and Quot.sound. The checker lists 204 focused
 modules. No holes, new axioms, disabled linters or increased heartbeat or
 recursion limits were introduced. Canonical dependencies remain read-only.
 Validation is incremental and focused, not a fresh whole-repository rebuild.
+
+
+## Twenty-sixth checkpoint: all three main theorems verified
+
+The ordinary fourth source family restores 12*pi*n times the original
+physical Hilbert mass. The mass is continuous, fixed on actual action levels,
+and invariant under unsigned component exchange. Hence the restored Hilbert
+family has a global source lift and preserves the original equal-field
+scalar diagonal. Its exact independent physical H4 derivative retains only
+the momentum phase term on general real pairs. At finite gaps the physical
+cotangent and original Poisson direction remove the mass-dependent spatial
+translation. Strong H1 differentiation gives the pointwise physical equation.
+Joint path and velocity continuity pass it to every native H4 input. On the
+scalar diagonal physical momentum is zero, giving ordinary mKdV at every
+real time and space without a finite-gap assumption.
+
+All-order native representatives give spatial C-infinity at every time.
+The actual continuous uniform velocity gives the Banach time derivative,
+and the first actual Sobolev jet is a continuous spatial derivative family.
+Thus every smooth real periodic datum has a unique global ordinary classical
+solution. Its original physical scalar distributions exist at every larger
+finite exponent and have exactly the restored Birkhoff coordinate phase.
+Classical PDE uniqueness identifies any ordinary canonical smooth map with
+this actual flow. Smooth ordinary maps exist, so the agreement condition
+used by nonextension is not vacuous.
+
+The literal physical L2 locus is identified with actual L2 functions
+representing the unchanged original distribution. At every point outside
+that locus and each fixed t>0, composing a proposed physical extension with
+a nonzero signed Birkhoff coordinate contradicts the two exact mass-phase
+limits along genuine smooth real norm-convergent approximants. Only local
+smooth agreement is needed. The relative-continuity version rules out even
+adjoining a single rough point to the smooth domain. This completes the
+original unrenormalized fixed-time consequence, rather than substituting a
+coordinate model or a whole-trajectory obstruction for it.
+
+Theorem11.lean bundles both renormalized wellposedness clauses and the
+ordinary fixed-time nonextension consequence, with actual classical smooth
+maps proved to exist. Theorems 1.1, 1.2 and 1.3 are now all marked verified
+under the accepted intrinsic Birkhoff reference and recorded normalization
+qualifications. Current clause maps and the completion audit record the
+source domains, quantifiers, topology, corrections and qualifications.
+
+The final checkpoint strictly checks 15 new modules and source-compares
+204 unchanged modules against ef4b1eb1c007ed660156037a999289daa3ae7948.
+A fresh full transitive audit of 1007 named declarations includes every main
+theorem and uses only propext, Classical.choice and Quot.sound. There are
+219 focused modules. No holes, new axioms, disabled linters or increased
+heartbeat/recursion limits were introduced. Canonical compiled dependencies
+remain read-only; validation is incremental, not a whole-repository rebuild.

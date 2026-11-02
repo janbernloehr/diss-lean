@@ -11,14 +11,15 @@
     {
       "label": "1.1",
       "page": 3,
-      "verified": false,
+      "verified": true,
       "verified_clauses": {
         "local_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
-        "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"
+        "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+        "fixed_time_nonextension": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+        "global_continuous_solution_curves": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves"
       },
-      "remaining": [
-        "Prove that arbitrary classical smooth original unrenormalized mKdV solutions have exactly the mass-restored fourth-coordinate evolution used by FixedTimeFourthCoordinateObstruction, and construct an ordinary smooth classical solution map so its agreement condition is nonvacuous. Compose any hypothetical continuous physical fixed-time extension with the fixed Birkhoff coordinate to conclude nonextension at every non-Hilbert datum and each t>0. The actual controlled smooth mass-phase approximants and fixed-time coordinate obstruction are now proved; those alone are not substituted for physical PDE calibration."
-      ]
+      "remaining": [],
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1"
     },
     {
       "label": "1.2",
@@ -31,9 +32,9 @@
       "verified": true
     }
   ],
-  "status": "theorems_1_2_and_1_3_verified_theorem_1_1_open",
+  "status": "main_theorems_1_1_1_2_1_3_verified_under_accepted_reference",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 948,
+  "audited_declarations": 1007,
   "verified_dependencies": [
     "NLS.ZakharovShabat.sourceProposition4_1",
     "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
@@ -104,6 +105,15 @@
     "NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence",
     "NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension",
     "NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate",
-    "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate"
+    "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate",
+    "NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency_eq_physical_derivative",
+    "NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue_mKdV",
+    "NLS.Articles.MKdVBelowL2.existsUnique_classicalOrdinaryMKdVTrajectory",
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_ordinaryFourthClassicalSourceFlow",
+    "NLS.Articles.MKdVBelowL2.classicalOrdinaryScalarSolutionMap_coordinates",
+    "NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_iff_l2_function",
+    "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension_within",
+    "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+    "NLS.Articles.MKdVBelowL2.theorem1_1"
   ]
 }

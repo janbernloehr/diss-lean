@@ -1,296 +1,98 @@
-# mKdV below L² — private verification
+# mKdV below L² — main-theorem verification
 
-Status: **Theorems 1.2 and 1.3 are verified under the accepted intrinsic
-Birkhoff reference. Theorem 1.1 remains open.**
+**Theorems 1.1, 1.2 and 1.3 are verified under the accepted intrinsic
+Birkhoff reference and the normalization qualifications recorded below.**
 
-Work is confined to the authorized private worktree on
-`articles/mkdv-below-l2`, based on canonical commit
-`c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. The canonical checkout and its
-compiled dependencies are unchanged. The workspace decision remains separate.
+The work is on the private `articles/mkdv-below-l2` branch, based on canonical
+commit `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. The canonical checkout and
+its compiled dependencies are unchanged. The workspace decision remains separate.
 
-See the [Theorem 1.2 clause map](theorem-1.2.json),
-[Theorem 1.3 clause map](theorem-1.3.json),
-[H4 dependency history](theorem-1.3-progress.json),
-[Theorem 1.1 progress](theorem-1.1-progress.json), and
-[checkpoint history](PROGRESS.md).
-
-## Pinned source
+## Source and clause maps
 
 Kappeler–Molnar, *On the wellposedness of the defocusing mKdV equation below L²*,
-[arXiv:1606.07052v1](https://arxiv.org/abs/1606.07052v1),
-[PDF](https://arxiv.org/pdf/1606.07052v1), downloaded 2026-11-02.
-33 PDF pages; printed page numbers equal PDF page numbers.
-SHA-256: `7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1`.
-The served PDF displays November 14, 2021 although the watermark and requested
-version are v1, 22 June 2016. The hash pins the actual served bytes.
-Downloaded PDF/text and compiler outputs are not tracked.
+[arXiv:1606.07052v1](https://arxiv.org/abs/1606.07052v1).
+The served 33-page PDF was downloaded on 2026-11-02 and has SHA-256
+`7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1`.
+It displays November 14, 2021 although the requested version and watermark
+are v1, 22 June 2016. The hash pins the actual served bytes.
 
-## Main statements and coverage
+| Source theorem | Lean declarations | Clause map |
+| --- | --- | --- |
+| 1.1, p. 3 | `theorem1_1` | [Theorem 1.1](theorem-1.1.json) |
+| 1.2, p. 5 | `theorem1_2_at_exponent`, `theorem1_2_compatible`, Hilbert clauses | [Theorem 1.2](theorem-1.2.json) |
+| 1.3, p. 6 | `theorem1_3_hilbert`, `theorem1_3_extension`, `theorem1_3_asymptotic` | [Theorem 1.3](theorem-1.3.json) |
 
-All spaces are on T = R/Z; indices range over Z. Physical FL^p consists of
-periodic distributions with their Fourier coefficient ell^p norm. FL_c^p is
-the complex pair space; FL_r^p is the conjugate-reflection real form. The
-smaller real mKdV diagonal is E_r^p. Weighted sequence norms use (1+|n|)^s.
+All declarations are in namespace `NLS.Articles.MKdVBelowL2`.
 
-**Theorem 1.2, p. 5, verified.** For every finite p≥2, the fixed compatible
-physical Birkhoff family is analytic on a complex open neighborhood of all
-FL_r^p, fixes zero and is canonical for the physical Fourier bracket. The
-maps agree on common complex domains at every pair of exponents. Their real
-restrictions are injective local diffeomorphisms with open dense image in the
-actual conjugate-pair Banach target. At p=2 the map equals the accepted
-intrinsic Hilbert map and has a global real analytic inverse.
+## Theorem 1.1
 
-**Theorem 1.3, p. 6, verified.** The normalized physical H₄ frequency map
-extends to all real physical FL², takes values in every actual real weighted
-ell^(-1,r), 1<r≤infinity, and is real analytic into each target. For every
-finite p>2 it extends real analytically on all FL_r^p into the literal complex
-ell^(-1,p/2) target. Equal physical distributions have the same coordinates.
-These are the physical H₄ action frequencies: the extensions agree with the
-independently constructed original H^(3/2) Hamiltonian derivatives at every
-source and index, including closed actions.
+For every finite p>2, renormalized physical mKdV is locally C⁰-wellposed at
+every original real scalar Fourier–Lebesgue datum and globally C⁰-wellposed
+on one invariant open neighborhood of zero chosen before all T>0. Dependence
+on initial data is continuous in the full uniform trajectory norm.
+The solution definition quantifies over every smooth real initial-data
+sequence converging in the original physical Fourier norm. Genuine smooth
+sequences exist at every datum, and all such approximants converge uniformly
+on the common compact time interval. Classical physical PDE uniqueness
+identifies the smooth solution map, so it is not an assumed flow label.
 
-The original H₄ has local complex analytic factors in the actual ell^(3,1)
-actions. Its physical open-action frequency is the derivative along unit-speed
-action reduction. Its closed-action frequency is the second amplitude
-derivative, with action exactly t²/2. Both equal the same raw unit action
-partial derivative. This proves full-source real analyticity and continuity
-across collapsed gaps. Actual spectral finite-gap approximation in the native
-weighted norm then extends Lemma 5.2 to the full domain. The chosen article
-moment atlas and physical distribution adapter preserve this identity.
+The original ordinary mKdV smooth solution map has no continuous extension
+at any original real datum outside physical L², for each selected t>0.
+This also holds for relative continuity on smooth data plus one rough point,
+and even when smooth agreement is required only near the point.
+The L² locus is identified with actual period-one L² functions representing
+the same original distribution. A mass-restored Hilbert phase family solves
+the ordinary physical PDE and has the exact fixed Birkhoff coordinate law.
+Controlled smooth real approximants converge in the original scalar norm
+while giving exactly opposite mass phases at that same selected time.
 
-The refined asymptotic has fixed ell^(p/3) and OnePlus remainder maps, with
-one neighborhood and both maps preceding all finite q>1. Their bounds hold
-locally uniformly. The p/3 quasi-norm is retained for 2<p<3. The asymptotic
-identity is stated at n≠0, as appropriate at infinity; the separately proved
-exact all-index formula retains the actual singleton term at n=0.
+## Theorems 1.2 and 1.3
 
-**Theorem 1.1, p. 3, partially verified.** Both renormalized wellposedness
-clauses are proved in `MainTheorem11Wellposedness.lean`: local C⁰ wellposedness
-at every original real FL^p datum, for every finite p>2, and global C⁰
-wellposedness on one invariant open neighborhood of zero chosen before all
-T>0. The trajectory topology is the full uniform norm. The solution definition
-requires convergence for every smooth real sequence in the original physical
-Fourier norm. The classical smooth solution map exists and is proved unique
-on smooth data by the physical PDE, independently of the approximation limit.
-The original unrenormalized equation's nonextension at every FL^p datum
-outside L², at each fixed t>0, remains unproved. The full theorem remains open.
+Theorem 1.2 uses one compatible family on original period-one distributions.
+It has the stated complex analytic domains, canonical physical brackets,
+zero normalization, injective real analytic local inverses, and open dense
+real image in the actual conjugate-pair target. At p=2 it agrees with the
+accepted intrinsic Hilbert map and has a global real analytic inverse.
 
-The actual cubic-plus-normalized H4 rotations now have physical distribution
-source lifts through the fixed Birkhoff image. A common local interval works
-for nearby data; one invariant neighborhood of zero works before every time
-interval. The full compact-time source trajectory maps are continuous in the
-uniform norm, and convergent approximants have uniformly convergent lift
-trajectories. The same physical Birkhoff coordinates, original action products,
-time-addition law and admissible inverse steps are verified. The full physical diagonal is preserved at every admissible time. The actual
-flow now satisfies the scalar renormalized mKdV equation pointwise on the full
-native H⁴ diagonal, without a finite-gap hypothesis. Identifying arbitrary
-classical PDE solutions with this constructed flow remains open.
+Theorem 1.3 gives real analyticity of the normalized physical H₄ frequencies
+into every stated Hilbert weighted target and the literal ell^(-1,p/2)
+target for finite p>2. The frequencies equal the independent full native
+H^(3/2) Hamiltonian action derivatives, including closed actions. One
+neighborhood and both remainder maps precede every finite q>1 in the locally
+uniform asymptotic; the p/3 quasi-norm is retained when 2<p<3.
 
-Every physical input outside the Hilbert pair space now has a nonzero first
-Birkhoff mode at n≠0. Here Hilbert membership means that exactly the same two
-original distributions are represented by a real FL² input. The proof uses
-actual finite-gap regularity and Fourier uniqueness, not finite input Fourier
-support. The divergent-mass approximation and fixed-time phase separation
-steps remain open.
+## Qualifications and corrections
 
-The actual physical mKdV diagonal is now a named closed complete Banach
-subspace of equal original distribution fields. Fourier uniqueness identifies
-it with the unsigned-component-swap fixed source slice. Symmetric Fourier
-cutoffs preserve it and converge in the original physical norm. The exact
-unsigned-swap covariance is proved from the physical ODE and extended to all
-finite source exponents. Dirichlet and Neumann conditions exchange under this
-spectral reflection. Original algebraic multiplicities and complete ordering
-fix the signed labels: the swapped left endpoint at n is minus the original
-right endpoint at -n, and conversely, including every collision.
+The accepted Grébert–Kappeler manuscript reference used for the intrinsic
+Hilbert Birkhoff map is retained; PDF edition identity is outside the agreed
+scope. Real and complex norm models are connected by explicit continuous
+linear equivalences. This reference qualification adds no axiom.
 
-The principal standard-root branches and the full canonical root now have
-their exact reflected signs. All original higher actions have spectral-power
-parity. In particular, actual physical mKdV gaps and original Birkhoff action
-products are even in n and the canonical root is odd in the spectral variable.
-The normalized physical frequency is now proved odd on the entire finite-p
-diagonal, including closed gaps and the zero index. Native physical H4
-antisymmetry, the actual action derivatives and original-distribution Fourier
-approximants give this identity without an angle hypothesis. Both actual
-weighted sequence realizations and the cubic-plus-normalized phase frequency
-retain oddness. Actual source-flow preservation is now proved on the full
-finite-p physical diagonal at every admissible time. The full complex action
-cotangent and anti-Poisson swap transport the actual finite action ODE;
-Birkhoff-coordinate ODE uniqueness and norm approximation give preservation
-without assuming the auxiliary phase-angle identity.
-The independent physical H2 momentum is now proved zero on the full original
-fractional diagonal, giving the precise mass-only fourth-flow normalization.
+The physical first Hamiltonian phase has the negative sign. The ordinary
+frequency restores 12*pi*n times the actual physical mass; both the ordinary
+and renormalized displayed PDEs are proved directly. This avoids an apparent
+spatial translation sign inconsistency in the source prose. The proof of
+Corollary 7.2(iii) cites a nonexistent item (iv) of Theorem 7.1; the formal
+proof supplies the required fixed-time argument and physical calibration.
 
-The full complex physical H4 derivative at a finite-gap native source is now
-identified with a bounded original Hilbert cotangent, using the actual weighted
-action chain rule and independent physical frequencies. Fourier-mode first
-variations identify its Poisson direction with the certified third-order
-physical fourth field. The actual fixed-family trajectory has a corrected
-cotangent ODE with physical H4, physical mass, and the explicit signed momentum
-action sum. The signed action sum is now identified with the independently defined physical
-H2 cotangent, including closed actions. Native momentum action dependence, actual
-local analytic action factors, original angle-momentum normalization and full
-complex cotangent uniqueness prove this identity. The fixed finite-gap trajectory
-therefore has the physical H4 velocity minus 6M times the positive spatial
-derivative. Its strong H1 time derivative and Fourier uniqueness give the
-pointwise scalar equation at every real time and spatial point. The physical
-field is real, and M is exactly the unit-period integral of the square of the
-initial physical field. This is finite-gap PDE agreement; the arbitrary smooth
-data requirement remains open.
+The printed n-times-remainder expression is an asymptotic at infinity. Its
+Lean asymptotic clause uses n!=0; the exact all-index formula separately
+retains the actual singleton contribution at n=0. No general complex
+zero-frequency vanishing or Banach assumption at p/3<1 is inserted.
 
-## Physical conventions and corrections
+## Validation and scope
 
-Fourier synthesis uses exp(2πinx); coefficients use exp(-2πinx). The original
-equation is u_t=-u_xxx+6u²u_x. The renormalized equation is
-u_t=-u_xxx+6(u²-M)u_x, with M=integral from 0 to 1 of u².
-Original-to-renormalized translation is v(t,x)=u(t,x-6Mt), with inverse
-x+6Mt and coefficient multiplier exp(-12πinMt). This sign directly satisfies
-the equations and corrects the conversion discussed on p. 29.
+The focused checker lists 219 shared/article modules. The final checkpoint
+strictly checks 15 new modules with Lean 4.33.1, `autoImplicit=false` and
+`warningAsError=true`, and reuses 204 unchanged modules after byte comparison
+with `ef4b1eb1c007ed660156037a999289daa3ae7948`.
+A fresh full transitive audit checks 1007 named declarations, including all
+main theorems. Only `propext`, `Classical.choice` and `Quot.sound` occur.
+No holes, new axioms, disabled linters or increased heartbeat/recursion limits
+were introduced. Canonical compiled dependencies are imported read-only.
+This is incremental focused validation, not a fresh whole-repository rebuild.
 
-The action normalization is
-omega4star_n = dH4/dI_n - (2πn)^3 - 6H2 - 12πnH1.
-The actual moment expression is -12 sum_k k Omega²_nk. It is not the H₃
-frequency. H₁ is the physical mass and H₂ the physical momentum, retaining
-the original period-one constants. On the mKdV diagonal H₂ vanishes where
-classically defined, and omegaSharp_n=(2πn)^3+omega4star_n.
-
-The nonextension argument must select n≠0: the mass-dependent phase in
-Theorem 7.1(iii) vanishes at n=0. Corollary 7.2's reference to item (iv) of
-Theorem 7.1 is a cross-reference typo; that theorem has three items.
-
-The scalar physical adapter is now isometric onto the actual equal-pair space.
-Its reality condition is stated on the original distribution Fourier modes.
-The actual scalar fourth lift has local continuous uniform-norm trajectories
-at every finite p>1, and one invariant open neighborhood of zero works before
-every time interval. Scalar real Fourier cutoffs converge in the physical
-norm and their actual lift trajectories converge uniformly. Any pointwise
-limit of such actual lift trajectories is unique. Identifying arbitrary
-smooth PDE trajectories with these lifts is still required.
-
-The same fixed fourth family now preserves every nonnegative native Sobolev
-regularity, with continuous dependence in the complete compact-time weighted
-norm. Original coefficient inclusion proves agreement with the actual
-physical distribution lift. Every given convergent family of native Sobolev
-inputs has convergent whole trajectories in the same uniform weighted norm.
-Weighted spectral finite-gap density is available separately. No assertion
-that such spectral approximants preserve the smaller diagonal is made.
-The full finite-gap physical ODE on general real-type pairs retains both
-corrections from H4 - 6H1H2: positive 6H2 phase and negative 6H1 spatial translation.
-
-The physical time equation now holds for every original real-type H⁴ input,
-not only finite-gap data. A shared dense-parameter derivative theorem passes
-the actual equation through joint path and velocity continuity, using the
-neighborhood filter of the dense set directly. Normalized source coordinates
-keep the proof in one fixed Hilbert topology. For every integer source order,
-all consecutive lower bounded physical jets are proved to be actual classical
-spatial derivatives. At order four the complete corrected physical field is
-continuous, retains independent mass and momentum, and equals its classical
-third-order expression on the full source.
-
-The actual H⁴ diagonal trajectory therefore satisfies
-u_t=-u_xxx+6(u²-M)u_x at every real time and spatial point. Its physical field
-is real, and M is exactly the original unit-period square integral at time
-zero. Every signed Fourier integral of both physical fields agrees with the
-actual original distribution lift of the fixed Theorem 1.2 family. This
-establishes the constructed flow's PDE on the full native H⁴ diagonal.
-The independent classical uniqueness and smooth-data identification needed
-for Theorem 1.1 are now proved as described below.
-
-Every smooth real physical period-one field now has a native real source at
-every integer Sobolev order, with its actual Fourier integrals. The original
-initial physical function is recovered exactly. All weighted lifts forget
-to the same source trajectory, so Fourier uniqueness and all-order regularity
-prove that this constructed trajectory stays spatially C∞ at every real time.
-It is real, periodic, and satisfies pointwise renormalized mKdV with the
-original initial square mass.
-
-Admissibility itself now transfers under increasing source exponents: the
-included actual source trajectory is a witness in the larger Birkhoff image.
-Hilbert data therefore have global actual lifts in every larger finite
-exponent, with exactly the same two evolved original distributions. For any
-smooth scalar physical input at finite p>=2, its actual scalar lift is
-globally admissible and has precisely the Fourier coefficients of the same
-spatially smooth physical mKdV trajectory. This does not assert a global
-inverse at arbitrary rough data.
-
-Original scalar Fourier cutoffs are now certified as actual smooth real
-periodic distributions. They give norm-convergent smooth sequences at every
-finite-p datum. Every convergent smooth family has uniformly convergent
-actual scalar trajectories on a common admissible compact interval. The
-curve with the all-smooth-sequences limit property is uniquely the actual
-lift. This is now the article's solution notion for the classical smooth
-physical mKdV map, rather than only a limit property for an unidentified lift.
-
-Classical PDE uniqueness is proved by the actual periodic L² difference
-energy. Periodic integration by parts removes the third derivative and the
-fixed mass translation. The remaining coefficient is bounded by 18R², giving
-|E'|<=36R² E when both fields and first derivatives have uniform bound R.
-These bounds are obtained on each compact time interval from continuity;
-they are not extra assumptions on the trajectories. Two-sided Grönwall gives
-uniqueness from equal values at any time. Ordinary jointly smooth physical
-solutions satisfy all regularity hypotheses. For the constructed fourth flow,
-the Banach-valued fundamental theorem of calculus upgrades the continuous
-pointwise velocity to the uniform-norm time derivative. The actual first
-Sobolev jet is a continuous family of spatial derivatives. Every smooth real
-periodic datum therefore has exactly one classical global renormalized mKdV
-trajectory with its original initial square mass.
-
-`ScalarClassicalFourthAdapter.lean` proves that any classical physical smooth
-solution agrees with the scalar Birkhoff lift as an original distribution at
-every real time, for every finite p>=2. `MainTheorem11Wellposedness.lean`
-then proves uniform convergence of every smooth sequence for any such
-classical smooth solution map, characterizes solutions by the article's
-all-smooth-sequences definition, and proves uniqueness of that limit path.
-The same file packages local C⁰ wellposedness at every datum and global C⁰
-wellposedness on one invariant open zero neighborhood for every finite p>2.
-The existence theorem for a classical smooth map discharges its availability;
-classical uniqueness shows that the results apply to any canonical choice.
-
-Fixed-time mass control is now proved with actual smooth real scalar
-approximants. The Hilbert mass diverges along every Hilbert-source
-approximation of a non-Hilbert real source. At each positive phase scale c,
-rounding the mass to (ceil(cM)+delta)/c changes it by a bounded amount; the
-square-root amplitude adjustment tends to one. This retains the original
-finite-p limit while setting the mass phase exactly. The native sources
-remain diagonal and have actual smooth real physical fields. Their scalar
-distributions converge in the original scalar Fourier norm, retaining all
-original signed coefficients.
-
-The offsets delta=0 and delta=1/2 give phases +1 and -1 at the same selected
-time. For any continuous nonzero amplitude, a function agreeing with these
-mass-modulated smooth values cannot be continuous at the rough datum.
-This is a fixed-time obstruction, not only a trajectory-norm obstruction.
-The actual normalized fourth coordinate phase is continuous for every fixed
-real time before source inversion. Restoring its physical 12*pi*n*M term
-therefore has the fixed-time obstruction at every nonzero initial mode;
-every non-Hilbert scalar datum has at least one such signed n!=0 mode.
-No global rough-data inverse at that selected time is assumed.
-
-## Remaining obligation for Theorem 1.1
-
-Complete the original unrenormalized physical PDE calibration: prove that
-an arbitrary classical smooth mKdV solution has exactly the restored fourth
-coordinate evolution used in `FixedTimeFourthCoordinateObstruction.lean`.
-Then compose a hypothetical continuous physical fixed-time extension with
-the fixed Birkhoff coordinate to obtain the contradiction. Constructing an
-ordinary smooth classical solution map also makes its smooth-agreement
-hypothesis nonvacuous. The actual phase-tuned smooth approximants and their
-fixed-time coordinate obstruction are now proved; they have not been
-substituted for this remaining physical PDE identification. The full main
-Theorem 1.1 stays marked open.
-
-## Validation
-
-The focused checker `check.sh` lists 204 article/shared modules and the
-consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twenty-fifth checkpoint strictly checks all 6
-final new modules and reuses 198 parent modules after verifying their sources
-are unchanged from `03e1d56b8d1810825c7c140bca6f84f0a2f2f070`.
-
-The fresh full transitive audit checks all 948 named declarations, including
-the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
-`Quot.sound` occur. No holes, new axioms, disabled linters or increased
-heartbeat limits were introduced. `validation.txt` captures the checks;
-`validation.json` records the build basis, source hashes and audit results.
-Canonical compiled dependencies are imported read-only. This is incremental
-focused validation, not a fresh whole-repository build or a completed
-verification of the entire article.
+See [validation evidence](validation.json), [compiler and audit output](validation.txt),
+[completion audit](completion-audit.json), and [checkpoint history](PROGRESS.md).
+The goal covers these main theorems and their necessary dependencies, rather
+than every remark or ancillary statement in the article.
