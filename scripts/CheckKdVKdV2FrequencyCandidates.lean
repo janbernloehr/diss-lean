@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalNormalizedMomentResolvent
 import NLS.KdV.ClassicalNormalizedCollapsedMoments
 import NLS.KdV.ClassicalNormalizedOddMoments
 import NLS.KdV.ClassicalNormalizedProductConstant
@@ -208,7 +209,10 @@ run_cmd do
     `NLS.KdV.ClassicalHillGapQuotients,
     `NLS.ComplexAnalysis.AnalyticDiscSquareRoot,
     `NLS.KdV.ClassicalHillCollapsedDifferentialMoments,
-    `NLS.KdV.ClassicalNormalizedCollapsedMoments]
+    `NLS.KdV.ClassicalNormalizedCollapsedMoments,
+    `NLS.KdV.ClassicalCriticalResolvent,
+    `NLS.ComplexAnalysis.CirclePowerIntegrationByParts,
+    `NLS.KdV.ClassicalNormalizedMomentResolvent]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

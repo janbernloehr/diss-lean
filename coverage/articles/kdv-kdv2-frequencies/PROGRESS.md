@@ -564,3 +564,27 @@ and every article main theorem remain open.
 Strict validation: all 171 selected modules pass; the complete transitive
 axiom audit covers 1811 selected declarations and 13976 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+
+## Exact all-order normalized moment resolvents
+
+Constructed the jointly analytic actual Hilbert critical resolvent and
+its negative energy derivative, with literal j/(lambda-mu_j)^2 positive
+coordinates. Complete selected critical labeling and all-mode separation
+prove the original contours avoid every critical pole, including the
+finite head. Closed-circle power integration by parts gives the exact
+2*pi/(m+1) coefficient for all actual normalized moments. A genuine
+Hilbert-valued Bochner integral and Holder summability prove the literal
+absolutely convergent positive-index series outside the contour integral.
+The constructed family retains moment analyticity, exact zeroth periods,
+all-mode odd cancellation and the actual analytic inverse of norm at most
+two on one near-zero continuous-potential neighborhood.
+
+Read `NORMALIZED_MOMENT_RESOLVENT.md`. The order-two formula prepares the
+sharp cubic-primitive/gap estimates; those sharp estimates are not yet
+proved. Physical frequency identities, full rough/global W scope and all
+article main theorems remain open. No canonical scalar L_n=1 is assumed.
+
+Strict validation: all 174 selected modules pass. The complete transitive
+axiom audit covers 1858 selected declarations and 14023 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

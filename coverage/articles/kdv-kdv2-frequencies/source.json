@@ -2358,6 +2358,51 @@
       "scope": "Constructed actual inverse and one near-zero continuous-potential neighborhood retaining all-mode analyticity, exact zeroth periods and odd cancellation, plus all positive moments zero at each actual high collapsed gap; finite low even collapsed contours and full rough/global W scope remain open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "6110781bc41b7c07893b33c19d95d50087edd60bdfb10b427ca43bfe60ff972f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CirclePowerIntegrationByParts.lean",
+      "source_labels": [
+        "Closed-circle power integration by parts"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Exact all-order coefficient from the derivative of F^(m+1)*G; requires analyticity only near the circle and permits interior singularities",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d6758f73ecda0c82cd982fdbd1c0adce7bd6922e7f6d4b93df4e402215f64b14"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalResolvent.lean",
+      "source_labels": [
+        "Actual Hilbert critical resolvents for normalized moment estimates"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Constructed jointly analytic actual numerator/Delta-prime Hilbert resolvent, exact positive and zero nonpositive coordinates, genuine negative energy derivative with squared denominators, and actual all-mode original-contour avoidance from complete selected critical labels and separation",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dd2fce4ef9f7a526302dd6cb4cedd2be7562f308687c44f56726b03dbd3c2b6a"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedMomentResolvent.lean",
+      "source_labels": [
+        "Actual all-order normalized moment representation for Lemma 3.3 estimates"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "scope": "Constructed actual near-zero continuous-potential family before all n,k,m, exact 2*pi/(m+1) primitive-power/squared-critical-resolvent formula with the Jacobian, and an absolutely convergent positive-index series outside the contour integral justified by a Hilbert Bochner integral; retains analyticity, zeroth normalization, odd cancellation and the actual inverse norm bound. Sharp gap estimates, physical frequencies and full rough/global W remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "56c67005bf8f06f3b99fbb20cd65c13247eb2cc8a03513a196f41a5b8b001c24"
     }
   ],
   "dependencies_needed": [
@@ -2389,15 +2434,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1811,
-    "total_declarations_audited": 13976,
+    "candidate_declarations_audited": 1858,
+    "total_declarations_audited": 14023,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 171
+    "selected_modules": 174
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2436,8 +2481,8 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
-    "articles/kdv-estimates": "0a64af6ba85b92eeb480b500ef11cfa90ae69ece"
+    "articles/kdv-convexity": "135b1fa75525f1bf29841c56722aa528d49de7dc",
+    "articles/kdv-estimates": "7a4fea39ed9ee1114b58dadf112a9acf2eb47ac8"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
@@ -2487,5 +2532,6 @@
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
-  "shared_collapsed_gap_import_record": "SHARED_COLLAPSED_GAP_IMPORT.json"
+  "shared_collapsed_gap_import_record": "SHARED_COLLAPSED_GAP_IMPORT.json",
+  "normalized_moment_resolvent_record": "NORMALIZED_MOMENT_RESOLVENT.md"
 }

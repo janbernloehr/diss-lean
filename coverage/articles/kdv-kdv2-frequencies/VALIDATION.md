@@ -67,8 +67,9 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalNormalizedMoments.lean`, `ClassicalNormalizedOddMoments.lean`, extended `FrequencyMoments.lean` | Literal actual normalized moments, exact mapped energy contour and Jacobian, all-mode moment analyticity, exact original zeroth periods and every odd cancellation on one near-zero complex continuous-potential neighborhood. |
 | Selected collapsed-gap dependencies from convexity `9d1741c` | Actual two-zero deflation including double roots, nonzero deflated units, and constructed analytic square roots on complete discs; local extensions preserved. |
 | `ClassicalHillCollapsedDifferentialMoments.lean`, `ClassicalNormalizedCollapsedMoments.lean`, extended `FrequencyMoments.lean` | Every positive actual normalized moment vanishes at each high collapsed gap on one common local family, including the diagonal; retains all-mode analyticity, exact zeroth periods and odd cancellation. |
+| `ClassicalCriticalResolvent.lean`, `CirclePowerIntegrationByParts.lean`, `ClassicalNormalizedMomentResolvent.lean` | Actual analytic Hilbert critical/squared resolvents; all-mode original contour avoidance; exact all-order 2*pi/(m+1) moment formula; absolute positive-index convergence outside the integral via a Bochner integral and Holder pairing. |
 
-All 171 selected modules compile with pinned **Lean 4.33.1**, commit
+All 174 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -249,11 +250,14 @@ PASS NLS/KdV/ClassicalHillGapQuotients
 PASS NLS/ComplexAnalysis/AnalyticDiscSquareRoot
 PASS NLS/KdV/ClassicalHillCollapsedDifferentialMoments
 PASS NLS/KdV/ClassicalNormalizedCollapsedMoments
-Axiom audit passed: 1811 candidate declarations; 13976 declarations total.
+PASS NLS/KdV/ClassicalCriticalResolvent
+PASS NLS/ComplexAnalysis/CirclePowerIntegrationByParts
+PASS NLS/KdV/ClassicalNormalizedMomentResolvent
+Axiom audit passed: 1858 candidate declarations; 14023 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 171 selected modules (including generated and private declarations)
+the 174 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -780,3 +784,34 @@ Finite low even collapsed contours, full W/rough-topology compatibility,
 sharp normalized estimates, the exact nonzero-potential canonical scalar,
 and physical frequency/Hamiltonian/action/Birkhoff flow identification
 remain open. Every article main theorem remains unverified.
+
+
+## Exact all-order normalized moment resolvent formulas
+
+The current milestone is detailed in `NORMALIZED_MOMENT_RESOLVENT.md`.
+The jointly analytic actual Hilbert critical resolvent is constructed
+from the entire basis divided by Delta-prime. Its negative energy
+derivative has the literal squared-denominator coordinates. Complete
+selected critical labeling proves all original contours avoid every
+critical point, including the finite head. Closed-circle power
+integration by parts supplies the exact coefficient 2*pi/(m+1). A
+genuine Hilbert Bochner contour integral and Holder summability prove
+the absolutely convergent positive-index series outside the integral.
+The actual normalized family retains all-mode moment analyticity,
+exact zeroth normalization, odd cancellation and inverse norm at most
+two on one local continuous-potential neighborhood.
+
+All 174 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 1858
+selected declarations and 14023 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All selected source hashes, provenance hashes and build/audit/coverage
+selections agree; selected outputs are private. No placeholders, new
+axioms, heartbeat increases, disabled linters or warning exceptions
+are introduced. Canonical sources and builds remain read only.
+
+The new formula does not discard the diagonal critical summand. Sharp
+normalized gap/root estimates, full W/rough-topology compatibility,
+the exact nonzero-potential canonical scalar and physical frequency/
+Hamiltonian/action/Birkhoff identification remain open. All main
+theorem inventory rows remain unverified.

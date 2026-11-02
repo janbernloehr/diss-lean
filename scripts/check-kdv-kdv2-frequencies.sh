@@ -178,7 +178,10 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalHillGapQuotients
   NLS/ComplexAnalysis/AnalyticDiscSquareRoot
   NLS/KdV/ClassicalHillCollapsedDifferentialMoments
-  NLS/KdV/ClassicalNormalizedCollapsedMoments)
+  NLS/KdV/ClassicalNormalizedCollapsedMoments
+  NLS/KdV/ClassicalCriticalResolvent
+  NLS/ComplexAnalysis/CirclePowerIntegrationByParts
+  NLS/KdV/ClassicalNormalizedMomentResolvent)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

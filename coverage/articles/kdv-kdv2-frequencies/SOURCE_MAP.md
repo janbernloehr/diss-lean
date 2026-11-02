@@ -376,3 +376,21 @@ Lemma 3.1 remain open. No main inventory row is closed. Sharp normalized
 moment/root bounds, exact canonical leading scalar, physical frequency/
 Hamiltonian/action identities and the source main flow statements still
 require their actual proofs.
+
+
+### Exact normalized squared-resolvent moment representation
+
+`ClassicalCriticalResolvent.lean`, `CirclePowerIntegrationByParts.lean`
+and `ClassicalNormalizedMomentResolvent.lean` prove an actual all-order
+representation useful for the estimates after Lemma 3.2 and in Lemma 3.3
+(PDF pages 27–30). On one constructed local continuous-potential family,
+Omega_nk^m equals 2*pi/(m+1) times the absolutely convergent positive sum
+of j*(R e_n)_j times the literal F_k^(m+1)/(lambda-mu_j)^2 contour
+integrals. All original modes and the exact Jacobian are retained; mu_j
+here is the critical energy, not the source Dirichlet label. The series
+outside the integral is justified by an actual Hilbert Bochner integral.
+
+This is not the physical frequency identity (69), a sharp moment estimate
+or a global/rough W extension. The canonical leading scalar remains
+unfixed at nonzero potentials. See `NORMALIZED_MOMENT_RESOLVENT.md` for
+precise scope and remaining obligations. Every main theorem stays open.
