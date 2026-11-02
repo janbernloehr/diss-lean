@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-convexity",
+  "date": "2026-11-02",
+  "milestone": "Positive-index analytic summation and weighted-action inclusion for the global Hamiltonian extension",
+  "main_theorems_verified": false,
+  "theorem_1_1_global_physical_extension_verified": false,
+  "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
+  "branch": "articles/kdv-convexity",
+  "worktree_kind": "ordinary Git worktree, explicitly authorized after managed sourceRoot rejection",
+  "lean_version": "4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_version": "v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "autoImplicit": false,
+  "warningAsError": true,
+  "focused_command": "ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
+  "focused_exit_code": 0,
+  "focused_modules": [
+    "NLS.Articles.KdVConvexity.ActionEmbedding",
+    "NLS.Articles.KdVConvexity.AnalyticSeries",
+    "NLS.Articles.KdVConvexity.BaseContourSeries",
+    "NLS.Articles.KdVConvexity.GlobalExtension",
+    "NLS.Articles.KdVConvexity.LocalConsequences"
+  ],
+  "positive_index_inverse_example": "passed",
+  "axiom_audit": {
+    "namespace": "NLS.Articles.KdVConvexity",
+    "declarations": 60,
+    "includes_generated_declarations": true,
+    "transitive": true,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "result": "passed"
+  },
+  "files": {
+    "NLS/Articles/KdVConvexity/ActionEmbedding.lean": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037",
+    "NLS/Articles/KdVConvexity/AnalyticSeries.lean": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b",
+    "NLS/Articles/KdVConvexity/BaseContourSeries.lean": "8a84db27117c935608f186e0f0c1396f38b0126611a9a98b1b57d19b5762001e",
+    "NLS/Articles/KdVConvexity/GlobalExtension.lean": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
+    "NLS/Articles/KdVConvexity/LocalConsequences.lean": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "b11ffd478afe54a6561a94418cda1b9e14266598e571466f0899a1a799fd3044",
+    "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
+    "scripts/check-kdv-convexity.sh": "945aecfbb4ba242fa2f57a2b0066a4aa21bfe4568ec9b2b7e59e6bba7092e170"
+  },
+  "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation.log",
+  "canonical_checkout_branch_or_tracked_files_changed": false,
+  "canonical_build_products_changed": false,
+  "full_repository_build_run": false,
+  "dissertation_validation_replaced": false,
+  "shared_foundation_inspected": {
+    "branch": "articles/kdv-estimates",
+    "commit": "47ae6bb",
+    "available": "Free Hill resolvent and weighted complementary inversion",
+    "not_yet_available": "Physical discriminant/actions/Birkhoff construction and nonlinear contour moments"
+  },
+  "limits": [
+    "Global spectral contour moments, their common complex-neighborhood quadratic estimates, and the physical energy identity remain unproved.",
+    "The checked global sum theorem takes those inputs as explicit hypotheses.",
+    "Theorems 1.2 and 1.3 are not proved."
+  ]
+}

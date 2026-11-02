@@ -1,0 +1,141 @@
+{
+  "article_id": "kdv-convexity",
+  "title": "On the convexity of the KdV Hamiltonian",
+  "authors": [
+    "Thomas Kappeler",
+    "Alberto Maspero",
+    "Jan-Cornelius Molnar",
+    "Peter Topalov"
+  ],
+  "source_url": "https://arxiv.org/abs/1502.05857v1",
+  "pdf_url": "https://arxiv.org/pdf/1502.05857v1",
+  "arxiv_version": "1502.05857v1",
+  "arxiv_submission_date": "2015-02-20",
+  "retrieved_date": "2026-11-02",
+  "pdf_printed_date": "2022-03-08",
+  "pdf_pages": 48,
+  "pdf_sha256": "38ee7f287ee8b790b794865accc8ad51d1083e414b82a73c4a543147a7ec4688",
+  "private_pdf_path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/source/1502.05857v1.pdf",
+  "private_text_path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/source/1502.05857v1.txt",
+  "date_note": "The versioned arXiv PDF is labelled v1/20 February 2015 but prints March 8, 2022; the downloaded bytes, rather than an assumed typesetting date, are pinned.",
+  "baseline_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_input_rev": "v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "main_theorems": [
+    {
+      "label": "Theorem 1.1",
+      "printed_pages": [
+        3,
+        4
+      ],
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "proof_pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "statement_components": [
+        "One complex open neighborhood V of the entire nonnegative ell2 action quadrant and an analytic extension of the physical renormalized KdV Hamiltonian to V.",
+        "The bilinear Hilbert gradient agrees coordinatewise with the existing KdV frequencies minus 8*pi^3*n^3 on V intersect V0.",
+        "Gradient at zero is zero and its full bounded derivative is -6 times identity.",
+        "An analytic local diffeomorphism near zero on complex ell2.",
+        "One positive radius, chosen before I and J, for the real Hessian bound d2H(I)[J,J] <= -norm(J)^2 on nonnegative ell2 actions, for every real ell2 direction J."
+      ],
+      "domain": "Positive-index actions (I_n) for n >= 1; nonnegative includes zero coordinates; original Hkdv on weighted ell^(3,1)_+.",
+      "topology": "Norm topology on complex ell2; open ambient extension around every cone point.",
+      "status": "not_verified",
+      "checked_preparation": [
+        "NLS.Articles.KdVConvexity.gradient_derivative_of_basis_hessian",
+        "NLS.Articles.KdVConvexity.exists_ball_hessian_le_neg_three_norm_sq",
+        "NLS.Articles.KdVConvexity.local_concavity_of_derivative_neg_six",
+        "NLS.Articles.KdVConvexity.local_open_inverse_of_derivative_neg_six",
+        "NLS.Articles.KdVConvexity.analyticOnNhd_tsum_of_local_quadratic_bound",
+        "NLS.Articles.KdVConvexity.exists_global_analytic_sum_of_local_quadratic_bounds",
+        "NLS.Articles.KdVConvexity.hasFDerivAt_tsum_zero",
+        "NLS.Articles.KdVConvexity.baseActionInclusion",
+        "NLS.Articles.KdVConvexity.norm_baseActionInclusion",
+        "NLS.Articles.KdVConvexity.preimage_base_neighborhood",
+        "NLS.Articles.KdVConvexity.global_analytic_contour_sum_from_base_moments"
+      ],
+      "remaining": [
+        "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
+        "Prove locally common complex-neighborhood bounds |8*n*pi*R_n| <= C*|I_n|^2 for those moments.",
+        "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
+        "Identify its bilinear Hilbert gradient with physical KdV frequencies minus 8*pi^3*n^3 on the full common domain.",
+        "Prove the KdV quadratic Taylor coefficients giving -6*Id.",
+        "Complete positive-index Hessian and real-cone transport for the earlier Coeff-based local concavity adapter."
+      ]
+    },
+    {
+      "label": "Theorem 1.2",
+      "printed_pages": [
+        4
+      ],
+      "pdf_pages": [
+        4
+      ],
+      "proof_pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "statement_components": [
+        "For every real s in [-1/2,0] and every finite p >= 2, the same global H^-1 KdV Birkhoff map restricts to a real analytic diffeomorphism from L_0^(s,p) onto ell_0^(s+1/2,p)."
+      ],
+      "domain": "Real, mean-zero periodic distributions; two-sided complex sequence coordinates with z_0=0 and z_-n=conj(z_n).",
+      "topology": "Fourier-Lebesgue and weighted sequence Banach norm topologies; not weak-star endpoints.",
+      "status": "not_verified",
+      "remaining": [
+        "Consume shared Hill/KdV Birkhoff construction",
+        "Fourier-Lebesgue spectral asymptotics and analytic restriction",
+        "Invertibility of every restricted derivative",
+        "Surjectivity by action reduction, plus inverse regularity",
+        "Preserve physical canonical normalization"
+      ]
+    },
+    {
+      "label": "Theorem 1.3",
+      "printed_pages": [
+        5
+      ],
+      "pdf_pages": [
+        5
+      ],
+      "proof_pages": [],
+      "statement_components": [
+        "For every s in [-1/2,0] and every finite p >= 2 the KdV initial value problem is globally C0 well-posed on the real mean-zero Fourier-Lebesgue space L_0^(s,p)."
+      ],
+      "domain": "All real initial data in L_0^(s,p), all real times; solutions interpreted through the distributional H^-1 framework referenced by the paper.",
+      "topology": "Continuity of trajectories and dependence on initial data in the Fourier-Lebesgue norm, compatible with the H^-1 solution notion.",
+      "proof_note": "Presented in the introduction as an immediate application of Theorem 1.2 and the previously constructed KdV frequency/solution theory; no separately labelled proof later.",
+      "status": "not_verified",
+      "remaining": [
+        "Theorem 1.2",
+        "Physical KdV frequency reality and coordinate continuity",
+        "Conjugation of sequence phase flow by the same physical KdV Birkhoff map",
+        "Agreement/uniqueness with accepted H^-1 distributional solution theory"
+      ]
+    }
+  ],
+  "completion_status": "partial_article_verification_global_analytic_summation_proved_physical_inputs_missing",
+  "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
+  "branch": "articles/kdv-convexity",
+  "global_extension_progress": {
+    "source": "Proposition 4.7(ii), p. 30",
+    "analytic_reduction_proved": true,
+    "actual_physical_extension_verified": false,
+    "positive_index_action_space": true,
+    "base_action_norm": "sum_{n>=1} |I_n|/(1+n)",
+    "exact_weighted_summand": "8*n*pi*R_n",
+    "derivative_at_zero_from_quadratic_bound_proved": true
+  }
+}
