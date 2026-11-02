@@ -1,0 +1,86 @@
+{
+  "source": "Intrinsic source spectrum/labels used across Section2.7 endpoint regularity gain and AppendixB compactness;arXiv:1610.00278v1.",
+  "main_theorems_verified": false,
+  "source_theorem_2_2_verified": false,
+  "cross_order_original_operator_spectrum_and_multiplicity_verified": true,
+  "cross_order_real_canonical_labels_and_gaps_verified": true,
+  "cross_order_complex_canonical_labels_and_gaps_verified": true,
+  "endpoint_bootstrap_preserves_entire_canonical_spectrum_verified": true,
+  "original_finite_p_inverse_spectral_input_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/OrderedNatEnumerationUnique.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean"
+  ],
+  "declarations": [
+    "NLS.multiplicity_lt_of_first_ordered_discrepancy",
+    "NLS.ordered_nat_enumeration_eq_of_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillOperator_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum"
+  ],
+  "results": [
+    "Shared ordered_nat_enumeration_eq_of_multiplicity proves that two monotone natural-number enumerations in ANY linear order,with finite fibers and equal global multiplicities,are identical. No common tail or cutoff is assumed. The proof uses the first strict discrepancy and counts occurrences in the finite preceding prefix,including repeated entries.",
+    "For any TWO admissible predual orders r,t,and original complex endpoint realizations with ENTIRE smooth-test distribution equality,the original H-minus-one potentials and full original H1-to-H-minus-one operators are equal. Consequently the entire physical complex spectra,every finite root-chain level,the full algebraic root spaces,and their ACTUAL finite multiplicities are equal.",
+    "The ENTIRE real canonical label enumerations of the same original physical distribution agree across arbitrary admissible orders,with all actual algebraic repetitions and NO shared cutoff assumption. This follows from the physical multiplicity equality and the new shared global ordered-count uniqueness theorem.",
+    "The complete COMPLEX canonical labels also agree across arbitrary admissible endpoint orders. The order is exactly the source lexicographic order(real part first,imaginary part second),implemented locally by lifting the injective existing complexLexKey;the standard complex partial order is not substituted.",
+    "Both real and complex entire signed canonical gap sequences agree across endpoint orders,including zero and negative modes and every collapsed gap. Exact period-two Fourier normalization and canonical slots2n-1,2n are retained.",
+    "source_uniform_endpoint_bootstrap_preserves_spectrum now DERIVES the target Potential(t),its uniform original norm bound,ENTIRE distribution equality,and equality of the ENTIRE canonical label and gap sequences. Constants are still chosen BEFORE q;no target membership,open-gap assumption,shared root table or common cutoff is supplied."
+  ],
+  "domains": {
+    "orders": "ANY two admissible orders0<=r<1/2 and0<=t<1/2;neither order inequality nor common cutoff is required for intrinsic equality.",
+    "complex_potentials": "Original complex period-two FourierLebesgueSpace(2,-r,infinity) and FourierLebesgueSpace(2,-t,infinity),with ENTIRE smooth-test distribution equality.",
+    "real_potentials": "Original real,mean-zero,physically period-one Potential(r) and Potential(t) representing that SAME entire distribution.",
+    "operator": "Original singularHillOperator on unchanged original H1 domain with original H-minus-one codomain. All finite root-chain levels and full root spaces remain literally equal.",
+    "labels": "Entire natural-number canonical enumerations,not merely high pairs. Multiplicities are dimensions of the ACTUAL full physical algebraic root spaces. Complex order is real-first,imaginary-second lexicographic.",
+    "gaps": "Entire signed sequences,zero mode0,even extension to negative modes,and original slots2n-1,2n;closed gaps included.",
+    "bootstrap": "0<=t<=r<1/2,original base norm<=R and actual stronger canonical gap boundG. Target membership and bound are derived,with constants before q."
+  },
+  "conclusions": {
+    "sourceComplexHminusOne_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_eq_of_distribution_eq",
+    "sourceHillOperator_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillOperator_eq_of_distribution_eq",
+    "sourceHillSpectrum_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_of_distribution_eq",
+    "sourceHillRootSpace_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_of_distribution_eq",
+    "sourceHillRootSpaceTop_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_of_distribution_eq",
+    "sourceHillAlgebraicMultiplicity_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_of_distribution_eq",
+    "sourceHillLabels_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_of_distribution_eq",
+    "sourceCanonicalGapValues_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_eq_of_distribution_eq",
+    "sourceHillComplexLabels_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq",
+    "sourceComplexCanonicalGapValues_eq_of_distribution_eq": "NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq",
+    "source_uniform_endpoint_bootstrap_preserves_spectrum": "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum"
+  },
+  "shared_uniqueness": "NLS.ordered_nat_enumeration_eq_of_multiplicity",
+  "qualifications": [
+    "Equality of ENTIRE original distributions is the hypothesis. This is not an inverse uniqueness assertion from spectra to potentials.",
+    "No common cutoff,common supplied tail,open-gap or simple-root premise is used. The ordered-count proof handles all repeated entries.",
+    "The actual original finite-p inverse spectral/isospectral compactness input is still missing. Source Theorem2.2,full Lemma2.21 and ALL MAINs remain open."
+  ],
+  "remaining": [
+    "Source Theorem2.2 and full Lemma2.21 remain unproved. Uniform endpoint bootstrap,its ENTIRE canonical spectral invariance across predual orders,and conditional AppendixB compactness transfer are now PROVED. The verified ORIGINAL finite-p inverse spectral regularity and actual isospectral compactness input cited as[7,Corollaries3-4] is still required;construct the actual compact finite-p realization for the original H-minus-one isospectral set.",
+    "Complete original physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source Theorem2.1(ii). General-weight direct Theorem2.1(i),endpoint Propositions2.18-2.19,REAL source Lemma2.20 and all AppendixB clauses remain proved. The general complex-ratio Lemma2.20 remains unproved.",
+    "Construct and verify the ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 178,
+    "audited_declarations": 1524,
+    "theorems": 1260,
+    "definitions": 264,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-cross-order.log"
+  }
+}

@@ -117,6 +117,7 @@ import NLS.Fourier.PeriodicEndpointLowerInclusion
 import NLS.Fourier.PeriodicWeakStarLowerTopology
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.WeightedWeakStarPhaseFlow
+import NLS.SequenceSpaces.OrderedNatEnumerationUnique
 import NLS.Articles.KdVPseudomeasures.WeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.WeightedWeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.PeriodicWeakStarEndpoint
@@ -170,6 +171,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralRealAdapted
 import NLS.Articles.KdVPseudomeasures.SpectralInverseRestriction
 import NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointBootstrap
+import NLS.Articles.KdVPseudomeasures.SpectralCrossOrder
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
@@ -1221,6 +1223,8 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_mem_realMeanZero
 #print axioms NLS.WeightedCoeff.weakStarInvariantActionTrajectory
 #print axioms NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory
+#print axioms NLS.multiplicity_lt_of_first_ordered_discrepancy
+#print axioms NLS.ordered_nat_enumeration_eq_of_multiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne
@@ -1667,6 +1671,17 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.source_inverse_cutoff_ge_two
 #print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_scaled_weight_bound
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillOperator_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum
 #print axioms NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact
 #print axioms NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization
